@@ -1,0 +1,31 @@
+<%
+ let classes = locals.classes || [];
+ classes.push(prefix + '-callout');
+
+ if (locals.icon !== undefined) classes.push(prefix + '-fi-' + icon);
+ if (locals.color !== undefined) classes.push(prefix + '-callout--' + color);
+
+ let pClasses = [prefix + '-callout__text'];
+
+ if (locals.size === 'lg') pClasses.push(prefix + '-callout__text--lg');
+
+ %>
+
+
+<div <%- includeClasses(classes); %>>
+
+  <% if(locals.title !== undefined) { %>
+    <h4 class="rf-callout__title"><%= title %></h4>
+  <% } %>
+
+  <p <%- includeClasses(pClasses); %>>
+    <%= text %>
+  </p>
+  <% if(locals.button !== undefined) {
+        if (button.icon === undefined) button.icon = undefined;
+  %>
+    <%- include('../../../buttons/tests/templates/button.ejs', button); %>
+  <% } else if (locals.buttonTpl !== undefined) { %>
+    <%- include('../../../' + buttonTpl, {icon:undefined}); %>
+  <% } %>
+</div>

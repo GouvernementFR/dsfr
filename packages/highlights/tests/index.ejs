@@ -1,0 +1,22 @@
+<%
+let title = 'Titre mise en avant';
+let buttonTpl = 'buttons/tests/samples/button-default';
+let icon = 'information-line';
+let color = 'green-warm';
+
+let samples = [
+  { title:'Exergue taille md', sample:'./samples/highlight-default'},
+  { title:'Exergue taille sm', sample:'./samples/highlight-sm'},
+  { title:'Exergue taille lg', sample:'./samples/highlight-lg'},
+
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<%- include(sample.sample, sample.data); %>
+<%- snippet(include(sample.sample, sample.data)); %>
+<% } %>

@@ -1,0 +1,20 @@
+{
+  "name": "@frds/search",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Barre de recherche",
+  "config": {
+    "wrapper": "col-8"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0",
+    "@frds/schemes": "^0.0.0",
+    "@frds/forms": "^0.0.0",
+    "@frds/inputs": "^0.0.0",
+    "@frds/buttons": "^0.0.0",
+    "@frds/icons": "^0.0.0"
+  }
+}

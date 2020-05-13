@@ -1,0 +1,22 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": "./packages/icons/generated/_icons.scss",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "no-descending-specificity": null,
+    "unit-case": null,
+    "unit-no-unknown": [true, { "ignoreFunctions": ["space", "calc"], "ignoreUnits": ["N", "/x[0-9]+/"] }],
+    "at-rule-empty-line-before": null,
+    "declaration-empty-line-before": null,
+     "font-family-no-missing-generic-family-keyword": [
+        true,
+        {
+          "ignoreFontFamilies": ["icons"]
+        }
+    ]
+  }
+}

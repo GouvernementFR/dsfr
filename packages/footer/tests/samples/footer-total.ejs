@@ -1,0 +1,34 @@
+<%
+let data = {
+    top: {
+      categories: { label: 'Nom de la catégorie', link: 'Lien de navigation'}
+    },
+    brand: {
+      logo: {
+          title: 'république<br>française',
+          href: '#'
+      },
+    },
+    content: {
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      links: [
+        {label: 'legifrance.gouv.fr'},
+        {label: 'gouvernement.fr'},
+        {label: 'service-public.fr'},
+        {label: 'data.gouv.fr'}
+      ]
+    },
+    bottom: {
+      links: [
+        {label: 'Plan du site'},
+        {label: 'Accessibilité: non/partiellement/totalement conforme'},
+        {label: 'Mentions légales'},
+        {label: 'Données personnelles'},
+        {label: 'Gestion des cookies'}
+      ],
+      copyright: '© République Française 2020'
+    }
+}
+%>
+
+<%- include('../templates/footer', data); %>

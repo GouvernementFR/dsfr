@@ -1,0 +1,24 @@
+<%
+let title = 'Titre mise en avant';
+let buttonTpl = 'buttons/tests/samples/button-default';
+let icon = 'information-line';
+let color = 'scheme-soft-green-warm';
+
+let samples = [
+    { title:'Mise en avant avec texte seul', sample:'./samples/callout-default'},
+    { title:'Mise en avant avec texte seul en lg', sample:'./samples/callout-lg'},
+    { title:'Mise en avant avec titre et texte', sample:'./samples/callout-default', data:{title:title}},
+    { title:'Mise en avant avec titre, bouton et texte', sample:'./samples/callout-default', data:{title:title, buttonTpl:buttonTpl}},
+    { title:'Mise en avant avec titre, bouton, icône et texte', sample:'./samples/callout-default', data:{title:title, buttonTpl:buttonTpl, icon: icon}},
+    { title:'Mise en avant avec titre, bouton, icône et texte -- Variante colorée green warm', sample:'./samples/callout-default', data:{title:title, buttonTpl:buttonTpl, icon: icon, color: color}},
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+    let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<%- include(sample.sample, sample.data); %>
+<%- snippet(include(sample.sample, sample.data)); %>
+<% } %>

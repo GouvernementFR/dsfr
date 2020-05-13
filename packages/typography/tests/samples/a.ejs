@@ -1,0 +1,15 @@
+<%
+    let data = {};
+
+    if (locals.blank === true) {
+        data.title = locals.title || 'titre lien externe - nouvelle fenêtre';
+        data.label = locals.label || 'lien externe - nouvelle fenêtre';
+    } else {
+        data.title = locals.title || 'titre lien interne';
+        data.label = locals.label || 'lien interne';
+    }
+
+    data.href = locals.href || '#';
+%>
+
+<%- include('../templates/a', data); %>

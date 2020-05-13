@@ -1,0 +1,482 @@
+.#{$prefix}-nav {
+  //z-index: 15000;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    @include respond-from(md) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin: 0 (- space(2N));
+    }
+  }
+
+  &__item {
+    margin: 0;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+
+    @include respond-from(md) {
+      box-shadow: none;
+
+      &--align-right {
+        align-items: flex-end;
+      }
+    }
+
+    &::before {
+      content: none;
+    }
+
+    @include respond-from(md) {
+      &:first-child:nth-last-child(2) ~ &,
+      &:first-child:nth-last-child(3) ~ &,
+      &:first-child:nth-last-child(4) ~ & {
+        margin-left: space(2-5N);
+      }
+    }
+
+    & > .#{$prefix}-link,
+    & > .#{$prefix}-btn {
+      display: flex;
+      align-items: center;
+      font-size: font-size(14);
+      line-height: 1rem;
+      text-align: left;
+      height: space(6N);
+      padding: 0;
+      width: 100%;
+      justify-content: space-between;
+      font-weight: bold;
+
+      @include scheme-element-bg-color(t-plain, true, after);
+      @include scheme-element-text-color(g800);
+      @include scheme-element-focus();
+
+      @include respond-from(md) {
+        padding: space(2-5N) space(2N);
+        margin: 0;
+        width: auto;
+        height: 100%;
+        justify-content: flex-start;
+        font-weight: normal;
+      }
+
+      &:focus {
+        z-index: 25000;
+      }
+    }
+
+    & > .#{$prefix}-link {
+
+      flex-direction: row;
+      box-shadow: none;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    & > .#{$prefix}-btn {
+      flex-direction: row-reverse;
+
+      @include respond-from(md) {
+        padding: space(1-5N) space(3N);
+      }
+
+      @include font-icon(arrow-down-s-line, md) {
+        margin-left: space(1N);
+        margin-right: - space(0-5N);
+        transition: transform 0.3s;
+      }
+
+      &[aria-expanded="true"] {
+
+        &::before {
+          transform: rotate(-180deg);
+        }
+
+        &::after {
+          content: none;
+        }
+
+        @include respond-from(md) {
+          @include scheme-element-text-color(bf500-plain);
+          @include scheme-element-bg-color(bf200-bf300);
+        }
+      }
+    }
+
+    &--active {
+      position: relative;
+
+      &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: space(3N);
+        top: space(1-5N);
+        left: - space(2N);
+        @include scheme-element-bg-color(bf500);
+      }
+
+      @include respond-from(md) {
+        &:before {
+          content: none;
+        }
+      }
+
+      & > .#{$prefix}-link,
+      & > .#{$prefix}-btn {
+        @include scheme-element-text-color(bf500);
+
+        @include respond-from(md) {
+          @include scheme-element-box-shadow-color(bf500, true, inset 0 -2px 0 0 $COLOR);
+        }
+      }
+
+      & > .#{$prefix}-link {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.#{$prefix}-menu {
+
+  @include collapse();
+
+  z-index: 20000;
+  margin: 0 (- space(2N));
+  padding: 0 space(2N);
+  box-sizing: content-box;
+  width: 100%;
+
+  @include respond-from(md){
+    position: absolute;
+    top: 100%;
+    width: 20rem;
+    margin: -4px -2rem -2rem;
+    padding: 4px 2rem 2rem;
+    box-sizing: content-box;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 4px 2rem 2rem;
+      z-index: -1;
+      @include scheme-element-bg-color(w-g750);
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: space(1N) 0 space(3N);
+
+    @include respond-from(md) {
+      padding: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin: 0;
+
+    &,
+    & > .#{$prefix}-link {
+      padding: space(2N);
+      font-size: font-size(14);
+      line-height: 1rem;
+      text-align: left;
+      box-shadow: none;
+      @include scheme-element-text-color(g800);
+
+      &::before {
+        content: none;
+      }
+    }
+
+    & > .#{$prefix}-link {
+      display: block;
+      margin: - space(2N);
+      @include scheme-element-bg-color(t-plain, true, after);
+      @include scheme-element-focus();
+    }
+
+    @include respond-from(md) {
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 space(2N);
+        height: 1px;
+        @include scheme-element-bg-color(g300, true);
+      }
+    }
+
+
+    &--active {
+      &,
+      & > .#{$prefix}-link {
+        @include scheme-element-text-color(bf500);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: currentColor;
+        margin: space(1-5N) 0;
+      }
+    }
+  }
+}
+
+.#{$prefix}-mega-menu {
+
+  @include collapse();
+
+  z-index: 20000;
+
+  @include scheme-element-bg-color(w-g750);
+
+  margin: 0 (- space(2N)) 1px;
+  padding: 0 space(2N);
+
+  @include respond-from(md) {
+    position: absolute;
+    width: 100vw;
+    left: calc(50% - 50vw);
+    //right: 0;
+    top: 100%;
+    margin: -0.125rem 0 0;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include respond-from(md) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: calc(#{$container-max-width} + #{space(4N)});
+      max-width: 100vw;
+      height: 0.125rem;
+      transform: translateX(-50%);
+      @include scheme-element-bg-color(bf200-bf300);
+    }
+  }
+
+
+
+  > .#{$prefix}-container {
+    padding: space(1N) space(2N) space(3N);
+
+    @include respond-from(md) {
+      position: relative;
+      padding: (space(4N) + 0.125rem) space(4N) space(2N);
+    }
+
+    @include respond-from(xl) {
+      padding: (space(4N) + 0.125rem) 0 space(2N);
+    }
+  }
+
+  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+    display: none;
+    position: absolute;
+    margin-top: space(2N);
+    margin-right: - space(2N);
+    top: 0;
+    right: space(4N);
+    @include scheme-element-bg-color(t-plain, true);
+    @include scheme-element-text-color(bf500);
+
+    @include respond-from(md) {
+      display: inline-flex;
+    }
+
+    @include respond-from(xl) {
+      right:0;
+    }
+  }
+
+  p:not([class*="#{$prefix}-h"]) {
+    display: none;
+
+    @include respond-from(md) {
+      display: block;
+    }
+  }
+
+  &__category {
+    position: relative;
+    margin: 0 (- space(2N));
+
+    @include respond-from(md) {
+      margin: 0;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        margin-left: space(1N);
+        @include scheme-element-bg-color(g300);
+      }
+    }
+
+    &,
+    & > .#{$prefix}-link {
+      padding: space(2N);
+      font-size: font-size(14);
+      line-height: space(2N);
+      font-weight: bold;
+      text-align: left;
+      box-shadow: none;
+      @include scheme-element-text-color(g800);
+
+      @include respond-from(md) {
+        padding: space(1-5N) space(1N);
+      }
+    }
+
+    & > .#{$prefix}-link {
+      display: block;
+      box-shadow: none;
+      margin: (- space(2N));
+      @include scheme-element-bg-color(t-plain, true, after);
+      @include scheme-element-focus();
+
+      @include respond-from(md) {
+        margin: (- space(1-5N)) (- space(1N));
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &--active {
+      &,
+      & > .#{$prefix}-link {
+        @include scheme-element-text-color(bf500);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: currentColor;
+        margin: space(1-5N) 0;
+
+        @include respond-from(md) {
+          margin: space(1N) 0;
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin: 0 (- space(2N));
+    //padding: 0 space(2N);
+
+    @include respond-from(md) {
+      margin: space(2N) 0 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin: 0;
+
+    @include respond-from(md) {
+      margin: 0 0 space(1N) 0;
+    }
+
+
+    &::before {
+      content: none;
+    }
+
+    &,
+    & > .#{$prefix}-link {
+      padding: space(1-5N) space(2N);
+      font-size: font-size(14);
+      line-height: 1rem;
+      text-align: left;
+      box-shadow: none;
+      @include scheme-element-text-color(g800);
+
+      @include respond-from(md) {
+        padding: space(1N);
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+
+    & > .#{$prefix}-link {
+      display: block;
+      margin: (- space(1-5N)) (- space(2N));
+
+      @include scheme-element-bg-color(t-plain, true, after);
+      @include scheme-element-focus();
+
+      @include respond-from(md) {
+        margin: - space(1N);
+      }
+    }
+
+    &--active {
+      &,
+      & > .#{$prefix}-link {
+        @include scheme-element-text-color(bf500);
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: currentColor;
+        margin: space(1-5N) 0;
+
+        @include respond-from(md) {
+          margin: space(1N) 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "standard",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "semi": [2, "always"],
+    "no-template-curly-in-string": "off"
+  }
+}

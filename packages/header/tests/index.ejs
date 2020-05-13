@@ -1,0 +1,28 @@
+<%
+ samples = [
+     {title:'Header avec Navigation complète', sample:'./samples/header.ejs', data:{ service:true, shortcuts:true, search: true, navigation: true }, snippet: false},
+     {title:'Header minimal', sample:'./samples/header.ejs', data:{ navigation: 'min' }},
+     {title:'Header avec nom de service, lien d’accès', sample:'./samples/header.ejs', data:{ logo:'diplomacy', service: true, shortcuts: true, navigation: 'min' }},
+     {title:'Header avec opérateur vertical, nom de service, recherche', sample:'./samples/header.ejs', data:{ operator:{img: '/img/logo-operator-v.png', style:'width:3.5rem; height:auto;'}, service: true, search: true, navigation: 'min' }},
+     {title:'Header avec opérateur horizontal, nom de service, lien d’accès, recherche', sample:'./samples/header.ejs', data:{ operator:{img: '/img/logo-operator-h.png', style:'width:9.0625rem; height:auto;'}, service: true, shortcuts:true, search: true, navigation: 'min' }},
+     {title:'Header avec logo du service, lien d’accès, recherche', sample:'./samples/header.ejs', data:{ service: {img: '/img/logo-service.svg', style:'width:8rem; height:auto;'}, shortcuts:true, search: true, navigation: 'min' }},
+
+
+ ]
+ %>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+    let sample = samples[i];
+%>
+<div class="<%= prefix %>-container" >
+    <h4><%= sample.title %></h4>
+</div>
+<%- include(sample.sample, sample.data); %>
+
+<div class="<%= prefix %>-container rf-margin-top-15N" >
+    <% if (sample.snippet !== false) { %>
+    <%- snippet(include(sample.sample, { ... sample.data, short: true})); %>
+    <% } %>
+</div>
+<% } %>

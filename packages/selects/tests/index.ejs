@@ -1,0 +1,25 @@
+<%
+let samples = [
+  {title:'Default select', data:{ id:'select'}},
+  {title:'Select disabled', data:{ id:'select-disabled', disabled:true}},
+  {title:'With hint', data:{ id:'select-hint', hint: true, group:true}},
+  {title:'Valid with text', data:{ id:'select-valid', valid: true, group:true}},
+  {title:'Error with text', data:{ id:'select-error', error: true, group:true}},
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<%- include('./samples/select', sample.data); %>
+<%- snippet(include('./samples/select', sample.data)); %>
+<% } %>
+
+<h4>Multiple input group</h4>
+<%- include('./samples/select', { id:'select-group1', hint: true, group:true}); %>
+<%- include('./samples/select', { id:'select-group2', valid: true, group:true}); %>
+<%- include('./samples/select', { id:'select-group3', error: true, group:true}); %>
+<%- include('./samples/select', { id:'select-group4', hint: true, group:true}); %>
+<%- include('./samples/select', { id:'select-group5', valid: true, group:true}); %>

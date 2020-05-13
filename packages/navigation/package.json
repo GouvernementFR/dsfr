@@ -1,0 +1,19 @@
+{
+  "name": "@frds/navigation",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Navigation",
+  "config": {
+    "wrapper": "container"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0",
+    "@frds/utilities": "^0.0.0",
+    "@frds/schemes": "^0.0.0",
+    "@frds/buttons": "^0.0.0",
+    "@frds/icons": "^0.0.0"
+  }
+}

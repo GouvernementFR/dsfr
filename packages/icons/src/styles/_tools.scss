@@ -1,0 +1,76 @@
+////
+/// Icons Group Annotations
+/// @group icons
+////
+
+/// Return icon size from map
+///
+/// @param {String} $size ["md"] - Icon size from `$icon-size-map` (Default to "md" = 16px)
+///
+/// @example scss - Set icon size to `SM` (12px)
+///   .foo {
+///     width: icons-size(sm);
+///     height: icons-size(sm);
+///   }
+@function icon-size($size: md) {
+  @return px-rem(map-get($icon-size-map, $size));
+}
+
+/// Set icon dimensions for each size
+///
+/// @example
+///   .foo {
+///     @include icons-size();
+///   }
+@mixin icons-size() {
+  @each $name, $value in $icon-size-map {
+    @if $name == "md" {
+      width: px-rem($value);
+      height: px-rem($value);
+    }
+    @else {
+      &--#{$name} {
+        width: px-rem($value);
+        height: px-rem($value);
+      }
+    }
+  }
+}
+
+@mixin custom-icons($icon-size:md) {
+  &[class^="#{$prefix}-fi-"],
+  &[class*=" #{$prefix}-fi-"] {
+    @include font-icon(null, $icon-size) {
+      @content;
+    }
+  }
+}
+
+@mixin font-icon-content($icon) {
+  @extend .#{$prefix}-fi-#{$icon}:before;
+}
+
+@mixin font-icon($icon:null, $icon-size:md, $pseudo:before) {
+  @if $pseudo != after and $pseudo != before {
+    @error '$pseudo mutst be before or after element';
+  }
+
+  &::#{$pseudo} {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-size: icon-size($icon-size);
+
+    @if $icon != null {
+      @include font-icon-content($icon);
+    }
+
+    @content;
+  }
+}

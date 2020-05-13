@@ -1,0 +1,106 @@
+/**
+un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
+ */
+.#{$prefix}-breadcrumb {
+  margin: calc(#{space(2N)} - 0.5rem) (- 0.5rem) calc(#{space(3N)} - 0.5rem);
+  padding: 0.5rem;
+  overflow: hidden;
+  font-size: font-size(12);
+  line-height: 1;
+  position: relative;
+
+  &__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: font-size(12);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    @include scheme-element-text-color(g600);
+    @include scheme-element-bg-color(t-plain);
+    @include scheme-element-focus();
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: font-size(12);
+    line-height: 1;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  /**
+  margin-bottom de 1N pour créer cet espace entre chaque ligne
+   */
+  &__item {
+    display: inline;
+    margin-bottom: space(1N);
+    line-height: 1.125rem;
+
+    &:first-child::before {
+      content: none;
+    }
+
+    /**
+    flèche séparatrice en svg avec un espace à la suite
+     */
+    &:not(:first-child) {
+
+      @include font-icon(arrow-right-s-line, md);
+
+      &::before {
+        @include scheme-element-text-color(g600);
+        margin-right: 0;
+        margin-top: 0.0625rem;
+        margin-bottom: 0.5625rem;
+        vertical-align: sub;
+      }
+    }
+  }
+
+  &__item a {
+    display: inline;
+    vertical-align: top;
+  }
+
+  /**
+    on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
+   */
+  &__item:not(:last-child)::after {
+    margin-right: 0;
+    content: '';
+  }
+
+  &__item:not(:last-child) a {
+    @include scheme-element-text-color(g600);
+  }
+
+  /**
+    lien actuel non clickable, bold et sans underline
+     */
+  &__item--current {
+    pointer-events: none;
+  }
+
+  &__item--current a {
+    @include scheme-element-text-color(g800);
+    text-decoration: none;
+  }
+
+  /**
+  Mobile first, le label du "button" mobile est caché à partir du breakpoint md
+   */
+
+  @include respond-from(md) {
+    margin-bottom: calc(#{space(4N)} - 0.5rem);
+  }
+}

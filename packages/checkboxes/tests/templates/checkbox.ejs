@@ -1,0 +1,6 @@
+<%
+ let checkboxAttrs = locals.checkboxAttrs || [];
+ %>
+<input <%- includeAttrs(checkboxAttrs); %> type="checkbox" id="<%= id %>" name="<%= id %>">
+<%- include('../../../forms/tests/templates/label'); %>
+<%- include('../../../forms/tests/templates/message'); %>

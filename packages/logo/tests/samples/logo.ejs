@@ -1,0 +1,7 @@
+<%
+ let data = locals.data || {}
+ if (locals.title === undefined) data.title = 'république<br>française';
+ if (locals.href === undefined) data.href = '#';
+ %>
+
+<%- include('../templates/logo', data);%>

@@ -1,0 +1,19 @@
+<%- include('./btn'); %>
+<div class="<%= prefix %>-menu" id="<%= collapseId %>" >
+    <ul class="<%= prefix %>-menu__list" >
+        <%
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            let classes = [prefix + '-menu__item'];
+
+            if (item.active) classes.push(prefix + '-menu__item--active');
+        %>
+        <li <%- includeClasses(classes); %>>
+            <% if (!item.active) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                <%- item.label %>
+            <% if (!item.active) { %></a><% } %>
+        </li>
+        <% } %>
+    </ul>
+</div>
+

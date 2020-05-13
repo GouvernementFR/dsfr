@@ -1,0 +1,220 @@
+@font-face {
+    font-family: "icons";
+    src: url("data:font/truetype;charset=utf-8;base64,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") format("truetype");
+}
+
+span[class^="#{$prefix}-fi-"]:before, span[class*=" #{$prefix}-fi-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$prefix}-fi-account-fill:before {
+    content: "\f101";
+}
+.#{$prefix}-fi-account-line:before {
+    content: "\f102";
+}
+.#{$prefix}-fi-add-circle-line:before {
+    content: "\f103";
+}
+.#{$prefix}-fi-alert-fill:before {
+    content: "\f104";
+}
+.#{$prefix}-fi-alert-line:before {
+    content: "\f105";
+}
+.#{$prefix}-fi-arrow-down-line:before {
+    content: "\f106";
+}
+.#{$prefix}-fi-arrow-down-s-line:before {
+    content: "\f107";
+}
+.#{$prefix}-fi-arrow-left-line:before {
+    content: "\f108";
+}
+.#{$prefix}-fi-arrow-left-s-first-line:before {
+    content: "\f109";
+}
+.#{$prefix}-fi-arrow-left-s-line-double:before {
+    content: "\f10a";
+}
+.#{$prefix}-fi-arrow-left-s-line:before {
+    content: "\f10b";
+}
+.#{$prefix}-fi-arrow-right-line:before {
+    content: "\f10c";
+}
+.#{$prefix}-fi-arrow-right-s-last-line:before {
+    content: "\f10d";
+}
+.#{$prefix}-fi-arrow-right-s-line-double:before {
+    content: "\f10e";
+}
+.#{$prefix}-fi-arrow-right-s-line:before {
+    content: "\f10f";
+}
+.#{$prefix}-fi-arrow-right-up-line:before {
+    content: "\f110";
+}
+.#{$prefix}-fi-arrow-up-line:before {
+    content: "\f111";
+}
+.#{$prefix}-fi-arrow-up-s-line:before {
+    content: "\f112";
+}
+.#{$prefix}-fi-calendar-fill:before {
+    content: "\f113";
+}
+.#{$prefix}-fi-calendar-line:before {
+    content: "\f114";
+}
+.#{$prefix}-fi-check-line:before {
+    content: "\f115";
+}
+.#{$prefix}-fi-checkbox-line:before {
+    content: "\f116";
+}
+.#{$prefix}-fi-close-circle-line:before {
+    content: "\f117";
+}
+.#{$prefix}-fi-close-line:before {
+    content: "\f118";
+}
+.#{$prefix}-fi-delete-fill:before {
+    content: "\f119";
+}
+.#{$prefix}-fi-delete-line:before {
+    content: "\f11a";
+}
+.#{$prefix}-fi-download-line:before {
+    content: "\f11b";
+}
+.#{$prefix}-fi-edit-fill:before {
+    content: "\f11c";
+}
+.#{$prefix}-fi-edit-line:before {
+    content: "\f11d";
+}
+.#{$prefix}-fi-external-link-line:before {
+    content: "\f11e";
+}
+.#{$prefix}-fi-eye-line:before {
+    content: "\f11f";
+}
+.#{$prefix}-fi-eye-off-line:before {
+    content: "\f120";
+}
+.#{$prefix}-fi-file-download-fill:before {
+    content: "\f121";
+}
+.#{$prefix}-fi-file-download-line:before {
+    content: "\f122";
+}
+.#{$prefix}-fi-file-fill:before {
+    content: "\f123";
+}
+.#{$prefix}-fi-file-line:before {
+    content: "\f124";
+}
+.#{$prefix}-fi-file-pdf-fill:before {
+    content: "\f125";
+}
+.#{$prefix}-fi-file-pdf-line:before {
+    content: "\f126";
+}
+.#{$prefix}-fi-information-fill:before {
+    content: "\f127";
+}
+.#{$prefix}-fi-information-line:before {
+    content: "\f128";
+}
+.#{$prefix}-fi-lock-fill:before {
+    content: "\f129";
+}
+.#{$prefix}-fi-lock-line:before {
+    content: "\f12a";
+}
+.#{$prefix}-fi-mail-fill:before {
+    content: "\f12b";
+}
+.#{$prefix}-fi-mail-line:before {
+    content: "\f12c";
+}
+.#{$prefix}-fi-menu-2-fill:before {
+    content: "\f12d";
+}
+.#{$prefix}-fi-menu-fill:before {
+    content: "\f12e";
+}
+.#{$prefix}-fi-pause-circle-fill:before {
+    content: "\f12f";
+}
+.#{$prefix}-fi-pause-circle-line:before {
+    content: "\f130";
+}
+.#{$prefix}-fi-play-fill:before {
+    content: "\f131";
+}
+.#{$prefix}-fi-play-line:before {
+    content: "\f132";
+}
+.#{$prefix}-fi-printer-fill:before {
+    content: "\f133";
+}
+.#{$prefix}-fi-printer-line:before {
+    content: "\f134";
+}
+.#{$prefix}-fi-question-fill:before {
+    content: "\f135";
+}
+.#{$prefix}-fi-question-line:before {
+    content: "\f136";
+}
+.#{$prefix}-fi-refresh-fill:before {
+    content: "\f137";
+}
+.#{$prefix}-fi-refresh-line:before {
+    content: "\f138";
+}
+.#{$prefix}-fi-save-fill:before {
+    content: "\f139";
+}
+.#{$prefix}-fi-save-line:before {
+    content: "\f13a";
+}
+.#{$prefix}-fi-search-fill:before {
+    content: "\f13b";
+}
+.#{$prefix}-fi-search-line:before {
+    content: "\f13c";
+}
+.#{$prefix}-fi-user-fill:before {
+    content: "\f13d";
+}
+.#{$prefix}-fi-user-line:before {
+    content: "\f13e";
+}
+.#{$prefix}-fi-volume-down-fill:before {
+    content: "\f13f";
+}
+.#{$prefix}-fi-volume-down-line:before {
+    content: "\f140";
+}
+.#{$prefix}-fi-volume-mute-fill:before {
+    content: "\f141";
+}
+.#{$prefix}-fi-volume-mute-line:before {
+    content: "\f142";
+}
+.#{$prefix}-fi-volume-up-fill:before {
+    content: "\f143";
+}
+.#{$prefix}-fi-volume-up-line:before {
+    content: "\f144";
+}

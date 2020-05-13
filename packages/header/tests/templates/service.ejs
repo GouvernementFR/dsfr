@@ -1,0 +1,7 @@
+<div class="<%= prefix %>-service" >
+    <a class="<%= prefix %>-service__title" href="<%- href %>" title="<%- title %>">
+        <% if (locals.img !== undefined) { %><img src="<%= img %>" alt="<%- alt %>" style="<%- style %>"><% }
+        else if (locals.title !== undefined) { %><%- title %><% } %>
+    </a>
+    <% if (locals.tagline !== undefined) { %><p class="<%= prefix %>-service__tagline"><%- tagline %></p><% } %>
+</div>

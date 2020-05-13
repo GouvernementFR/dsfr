@@ -1,0 +1,12 @@
+<%
+
+let data = {
+  detail: locals.detail !== false ? 'Détail' : undefined,
+  title: 'Qu’est-ce que le Pass Culture et comment l’obtenir ?',
+  description: locals.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
+  arrow:locals.arrow !== false
+}
+
+%>
+
+<%- include('../templates/card', data); %>

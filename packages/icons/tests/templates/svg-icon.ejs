@@ -1,0 +1,7 @@
+<svg class="<%= prefix %>-icon <% switch(locals.size) {
+case 'sm': %><%= prefix %>-icon--sm<% break;
+case 'lg': %><%= prefix %>-icon--lg<% break;
+case 'xl': %><%= prefix %>-icon--xl<% break;
+} %>" aria-hidden="true" focusable="false">
+    <use xlink:href="/icons/sprite.svg#<%= icon %>"></use>
+</svg>

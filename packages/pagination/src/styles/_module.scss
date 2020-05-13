@@ -1,0 +1,179 @@
+.#{$prefix}-pagination {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0 - (space(0-5N) * 0.5);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: space(2N);
+    min-width: space(4N);
+    height: space(4N);
+    padding: 0 space(1-5N);
+    margin: (space(0-5N) * 0.5) (space(0-5N) * 0.5) space(1N);
+    @include scheme-element-text-color(g800);
+
+    &:not(&--first):not(&--prev)::before,
+    &:not(&--next):not(&--last)::after {
+      content: none;
+      margin: 0;
+      display: none;
+    }
+
+    &--from-md {
+      display: none;
+
+      @include respond-from(md) {
+        display: flex;
+      }
+    }
+
+    &--active {
+      @include scheme-element-bg-color(bf500, true, true);
+      @include scheme-element-text-color(w-bf500);
+      border-radius: space(2N);
+      pointer-events: none;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      @include scheme-element-text-color(g600-g500);
+    }
+
+    &--first + &:not(&--prev),
+    &--prev + &,
+    &--next,
+    &:not(&--next) + &--last {
+      margin-left: space(1-5N);
+    }
+
+    &--first,
+    &--prev,
+    &--next,
+    &--last {
+      padding-left: space(0-5N);
+      padding-right: space(0-5N);
+    }
+
+    &--first {
+      @include font-icon(arrow-left-s-first-line, lg) {
+        display: block;
+        width: space(3N);
+        height: space(3N);
+        margin: 0;
+      }
+    }
+
+    &--prev {
+      @include font-icon(arrow-left-s-line, lg) {
+        display: block;
+        width: space(3N);
+        height: space(3N);
+        margin: 0;
+      }
+    }
+
+    &--next {
+      @include font-icon(arrow-right-s-line, lg, after) {
+        display: block;
+        width: space(3N);
+        height: space(3N);
+        margin: 0;
+      }
+    }
+
+    &--last {
+      @include font-icon(arrow-right-s-last-line, lg, after) {
+        display: block;
+        width: space(3N);
+        height: space(3N);
+        margin: 0;
+      }
+    }
+  }
+
+  &__item--first &__label,
+  &__item--prev &__label,
+  &__item--next &__label,
+  &__item--last &__label {
+    display: none;
+    @include respond-from(md) {
+      display: inline;
+    }
+  }
+
+  &__item--first &__label,
+  &__item--prev &__label {
+    padding: 0 space(1N) 0 space(0-5N);
+  }
+
+  &__item--next &__label,
+  &__item--last &__label {
+    padding: 0 space(0-5N) 0 space(1N);
+    display: none;
+
+    @include respond-from(md) {
+      display: inline;
+    }
+  }
+
+  &__item--first &__link,
+  &__item--prev &__link {
+    margin-left: - space(3-5N);
+    padding-left: space(3-5N);
+    margin-right: - space(0-5N);
+    padding-right: space(0-5N);
+  }
+
+  &__item--next &__link,
+  &__item--last &__link {
+    margin-right: - space(3-5N);
+    padding-right: space(3-5N);
+    margin-left: - space(0-5N);
+    padding-left: space(0-5N);
+  }
+
+  &__item--disabled &__link {
+    pointer-events: none;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 space(1-5N);
+    margin: 0 (- space(1-5N));
+    min-width: space(4N);
+    height: space(4N);
+    box-shadow: none;
+    @include scheme-element-bg-color(t-plain, true, true);
+
+    &::before {
+      border-radius: space(2N);
+    }
+
+    /**
+    &:focus {
+      outline: none !important;
+      &::after {
+        content:'';
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+        border-radius: calc(2rem + 8px);
+        @include scheme-element-border-color(focus, true, null, $COLOR solid 2px);
+      }
+    }
+     */
+  }
+}

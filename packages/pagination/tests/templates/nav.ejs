@@ -1,0 +1,18 @@
+<%
+let classes = locals.classes || [];
+
+switch (locals.type) {
+    case 'first':
+    case 'prev':
+    case 'next':
+    case 'last':
+        classes.push(prefix + '-pagination__item--' + type);
+        break;
+}
+
+let data = {classes: classes};
+
+if (locals.text !== undefined) data.text = '<span class="' + prefix + '-pagination__label" >' + text + '</span>';
+%>
+
+<%- include('./item', data) %>

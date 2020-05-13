@@ -1,0 +1,24 @@
+@include ie-hack() {
+  //navigation fix alignement des menus sur la droite
+  .#{$prefix}-nav {
+    @include respond-from(md) {
+      &--align-right {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  //sidenav fix
+  .#{$prefix}-sidenav {
+    height: auto;
+  }
+
+  .skip-links {
+    &.focus-within {
+      position: relative;
+      transform: translateY(0);
+    }
+  }
+}
+
+

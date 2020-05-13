@@ -1,0 +1,11 @@
+<%
+    let attributes = locals.attributes || {};
+    attributes.pattern = '[0-9]*';
+    attributes.inputmode = 'numeric';
+    let data = {
+         type:'tel',
+         attributes:attributes
+     }
+ %>
+
+<%- include('./input-text', data); %>

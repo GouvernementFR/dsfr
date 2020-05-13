@@ -1,0 +1,24 @@
+<%
+let samples = [
+  {title:'Ensemble de boutons radio', sample:'./samples/radios.ejs', data:{ id:'radio'}},
+  {title:'Ensemble de boutons radio, petite taille', sample:'./samples/radios.ejs', data:{ id:'radio-small', size:'sm'}},
+  {title:'Ensemble de boutons radio désactivées', sample:'./samples/radios.ejs', data:{ id:'radio-disabled', disabled:true}},
+  {title:'Ensemble de boutons radio en ligne', sample:'./samples/radios.ejs', data:{ id:'radio-inline', inline: true}},
+  {title:'Ensemble de boutons radio avec texte d‘aide', sample:'./samples/radios.ejs', data:{ id:'radio-hint', hint: true}},
+  {title:'Ensemble de boutons radio avec erreur', sample:'./samples/radios.ejs', data:{ id:'radio-error', error: true}},
+  {title:'Ensemble de boutons radio avec erreur, en ligne', sample:'./samples/radios.ejs', data:{ id:'radio-error-inline', error: true, inline:true}},
+  {title:'Ensemble de boutons radio validés', sample:'./samples/radios.ejs', data:{ id:'radio-valid', valid: true}},
+  {title:'Ensemble de boutons radio validés, en ligne', sample:'./samples/radios.ejs', data:{ id:'radio-valid-inline', valid: true, inline:true}},
+  {title:'Ensemble de boutons radio avec texte d‘aide spécifique', sample:'./samples/radios.ejs', data:{ id:'radio-hint-element', element: { hint:true }}},
+  {title:'Ensemble de boutons radio avec texte d‘aide spécifique, petite taille', sample:'./samples/radios.ejs', data:{ id:'radio-hint-el-sm', size: 'sm', element: { hint:true }}},
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<%- include(sample.sample, sample.data); %>
+<%- snippet(include(sample.sample, sample.data)); %>
+<% } %>

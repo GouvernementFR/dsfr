@@ -1,0 +1,11 @@
+<% if(locals.error != undefined) { %>
+    <p id="<%= id %>-desc-error" class="<%= prefix %>-error-text" >
+        <%= error %>
+    </p>
+<% } %>
+
+<% if(locals.valid != undefined) { %>
+    <p id="<%= id %>-desc-valid" class="<%= prefix %>-valid-text" >
+        <%= valid %>
+    </p>
+<% } %>

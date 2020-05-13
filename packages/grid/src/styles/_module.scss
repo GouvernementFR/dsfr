@@ -1,0 +1,112 @@
+.#{$prefix}-container {
+
+  @include container();
+
+  &-fluid {
+    width: 100%;
+  }
+}
+
+.#{$prefix}-grid-row {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  // Vertical alignment
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  // Horizontal alignment
+  &--start {
+    justify-content: flex-start;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  // Gutters
+  &--gutters {
+    margin: 0 calc(-#{map-get($grid-gutter-width, xs)} / 2);
+
+    @include respond-from(md) {
+      margin: 0 calc(-#{map-get($grid-gutter-width, md)} / 2);
+    }
+
+    @include respond-from(lg) {
+      margin: 0 calc(-#{map-get($grid-gutter-width, lg)} / 2);
+    }
+
+    [class|="rf-col"] {
+      padding: calc(#{map-get($grid-gutter-width, xs)} / 2);
+
+      @include respond-from(md) {
+        padding: calc(#{map-get($grid-gutter-width, md)} / 2);
+      }
+
+      @include respond-from(lg) {
+        padding: calc(#{map-get($grid-gutter-width, lg)} / 2);
+      }
+    }
+  }
+}
+
+.#{$prefix}-col {
+  flex: 1;
+
+  // alignment
+  &--top {
+    align-self: flex-start;
+  }
+
+  &--bottom {
+    align-self: flex-end;
+  }
+
+  &--center {
+    align-self: center;
+  }
+}
+
+// Generate cols and offsets
+@include grid-generator();
+@include grid-generator(xs);
+
+@include grid-offset-generator();
+@include grid-offset-generator(xs);
+
+// Generate responsive cols and offsets
+@include respond-from(sm) {
+  @include grid-generator(sm);
+  @include grid-offset-generator(sm);
+}
+
+@include respond-from(md) {
+  @include grid-generator(md);
+  @include grid-offset-generator(md);
+}
+
+@include respond-from(lg) {
+  @include grid-generator(lg);
+  @include grid-offset-generator(lg);
+}
+
+@include respond-from(xl) {
+  @include grid-generator(xl);
+  @include grid-offset-generator(xl);
+}

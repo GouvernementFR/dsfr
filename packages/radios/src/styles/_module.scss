@@ -1,0 +1,132 @@
+.#{$prefix}-radio-group {
+  .#{$prefix}-hint-text {
+    margin-left: space(4N);
+    margin-top: -(space(1-5N));
+  }
+
+  &:first-child {
+    margin-top: -(space(1-5N));
+  }
+
+  &:last-child {
+    margin-bottom: -(space(1-5N));
+  }
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+
+    + label {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      padding: space(1-5N) 0;
+      font-size: font-size(14);
+      -webkit-tap-highlight-color: transparent;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        flex-shrink: 0;
+        width: space(3N);
+        height: space(3N);
+        margin-right: space(1N);
+        border-radius: 50%;
+        @include scheme-element-border-color(g800);
+        transform-origin: center;
+        transition: transform 0.3s;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        flex-shrink: 0;
+        left: calc(#{space(1-5N)} / 2);
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50%;
+        width: space(1-5N);
+        height: space(1-5N);
+        background: transparent;
+        transform-origin: center;
+        transition: transform 0.3s;
+      }
+    }
+
+    &:checked {
+      + label::after {
+        @include scheme-element-bg-color(bf500);
+      }
+    }
+
+    // &:checked,
+    // &:active {
+    //   + label::after {
+    //     @include scheme-element-bg-color(bf500);
+    //   }
+    // }
+
+    &:focus {
+      + label::before {
+        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
+        outline-offset: 2px;
+        z-index: 100;
+      }
+    }
+
+    // &:active {
+    //   + label {
+    //     &::before {
+    //       @include scheme-element-bg-color(active-radio, false);
+    //       @include scheme-element-border-color(transparent);
+    //       transform: scale(1.2);
+    //     }
+
+    //     &::after {
+    //       @include scheme-element-bg-color(bf500);
+    //       transform: scale(1.3);
+    //     }
+    //   }
+    // }
+
+    &[disabled],
+    &:disabled {
+      + label {
+        @include scheme-element-text-color(g600, false);
+
+        &::before {
+          @include scheme-element-border-color(g500, false);
+          @include scheme-element-bg-color(g300, false);
+        }
+      }
+
+      &:hover + label {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &--sm {
+    input[type="radio"] {
+      + label {
+        &::before {
+          width: space(2N);
+          height: space(2N);
+        }
+
+        &::after {
+          left: calc(#{space(1N)} / 2);
+          width: space(1N);
+          height: space(1N);
+        }
+      }
+    }
+
+    .rf-hint-text {
+      margin-left: space(3N);
+    }
+  }
+}

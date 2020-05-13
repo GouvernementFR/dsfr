@@ -1,0 +1,350 @@
+$header-box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1), 0 0.5rem 1rem -1rem rgba(0, 0, 0, 0.32);
+
+.#{$prefix}-header {
+  width: 100%;
+  box-shadow: $header-box-shadow;
+  @include scheme-element-bg-color(w-g750);
+
+  /*
+  &__head {
+    margin: 0 calc(50% - 50vw);
+    padding: 0 calc(50vw - 50%);
+    @include scheme-element-bg-color(beige);
+
+    .#{$prefix}-btn[data-toggle] {
+      display: block;
+      margin: 0 0 0 (- space(1-5N));
+      padding: space(1N) space(1-5N);
+      text-transform: uppercase;
+      text-align: left;
+      font-size: 10px; //font-size(10); TODO: implémenter la taille 10px dans core
+      line-height: 1rem;
+
+      @include scheme-element-bg-color(t-plain, true, true);
+      @include scheme-element-text-color(g800);
+    }
+
+    .#{$prefix}-collapse {
+      overflow: hidden;
+
+      &::before {
+        margin-top: -1000px;
+        display: block;
+        content: '';
+      }
+    }
+  }
+   */
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0 (- space(1-5N));
+    padding: space(1-5N) 0;
+
+    @include respond-from(md) {
+      flex-wrap: nowrap;
+      margin: 0 (- space(2-5N));
+      padding: space(3N) 0;
+    }
+  }
+
+  &__brand {
+    padding: 0 space(1-5N);
+    @include logo(sm, none) {
+      margin: -1em;
+    }
+  }
+
+  &__operator {
+    padding: 0 space(1-5N);
+  }
+
+  &__navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: space(2N) space(0-5N) 0;
+    width: 100%;
+    padding: space(1-5N) 0 0;
+    position: relative;
+
+    @include respond-from(md) {
+      flex: 1 1 auto;
+      margin: 0 space(0-5N);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      margin: 0 space(1N);
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      @include scheme-element-bg-color(g300);
+
+      @include respond-from(md) {
+        content: none;
+        display: none;
+      }
+    }
+
+    .#{$prefix}-service {
+      margin: (- space(1-5N)) auto (- space(1-5N)) (- space(0-5N));
+      padding: space(1-5N);
+      position: relative;
+
+      @include respond-from(md) {
+        margin: - space(1-5N);
+      }
+
+      &__title {
+        position: static;
+        font-size: font-size(14);
+        line-height: line-height(normal);
+        font-weight: bold;
+        @include scheme-element-text-color(g800);
+        margin: 0;
+        box-shadow: none;
+
+        @include respond-from(md) {
+          font-size: font-size(20);
+          line-height: line-height(normal);
+        }
+
+        &::before {
+          display: block;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+        }
+
+        &:focus {
+          outline-offset: -9999px;
+
+          &::before {
+            @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
+            outline-offset: 2px;
+            z-index: 100;
+          }
+        }
+      }
+
+      &__tagline {
+        font-size: font-size(14);
+        line-height: line-height(normal);
+        margin: 0;
+      }
+
+      &__title + &__tagline {
+        margin-top: space(0-5N);
+      }
+    }
+
+    .#{$prefix}-btn {
+      @include scheme-element-bg-color(t-plain, true);
+      @include scheme-element-text-color(bf500);
+      flex: 0 0 auto;
+
+      &.#{$prefix}-fi-menu-fill {
+        @include scheme-element-text-color(g700);
+      }
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      @include respond-from(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__brand,
+  &__operator,
+  &__navbar,
+  &__tools {
+    @include respond-from(md) {
+      padding: 0 space(2-5N);
+    }
+  }
+
+  &__brand,
+  &__operator,
+  &__tools {
+    @include respond-from(md) {
+      flex: 1 0 auto;
+    }
+  }
+
+  &__popin {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    bottom: 100vh;
+    left: 0;
+    padding: 0 space(2N);
+    overflow: auto;
+    transition: bottom 0.3s, visibility 0.3s;
+    @include scheme-element-bg-color(w-g750);
+    z-index: 30000;
+    visibility: hidden;
+
+    --focus-z-index: 35000;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: space(9N);
+    }
+
+    &--expanded {
+      bottom: 0;
+      visibility: visible;
+    }
+
+    .#{$prefix}-btn.#{$prefix}-fi-close-line {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-top: space(2N);
+      margin-right: 0;
+    }
+  }
+
+  &__tools:not(&__popin) {
+    display: none;
+    @include respond-from(md) {
+      display: flex;
+    }
+  }
+
+  &__tools {
+    .#{$prefix}-shortcuts {
+      display: none;
+    }
+
+    @include respond-from(md) {
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 0 0 0 auto;
+      text-align: right;
+
+      .#{$prefix}-shortcuts {
+        display: block;
+      }
+
+      .#{$prefix}-shortcuts + .#{$prefix}-search-bar {
+        margin-top: space(2N);
+      }
+    }
+  }
+
+  .#{$prefix}-search-bar {
+    margin-top: space(2-5N);
+
+    @include respond-from(md) {
+      width: 23.667rem;
+      margin-top: 0;
+      box-shadow: none;
+    }
+  }
+
+  .#{$prefix}-nav:not(&__popin) {
+    display: none;
+    @include respond-from(md) {
+      display: block;
+    }
+  }
+
+  .#{$prefix}-nav {
+    @include respond-from(md) {
+      margin: 0 calc(50% - 50vw);
+      padding: 0 calc(50vw - 50%);
+      z-index: 15000;
+
+      @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
+
+      .#{$prefix}-menu::after,
+      .#{$prefix}-mega-menu {
+        box-shadow: $header-box-shadow;
+      }
+    }
+  }
+
+  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+    @include scheme-element-bg-color(t-plain, true);
+    @include scheme-element-text-color(bf500);
+  }
+}
+
+.#{$prefix}-shortcuts {
+  @include respond-from(md) {
+    margin: 0 (- space(3N));
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-from(md) {
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin: 0 0 (- space(1N));
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: font-size(14);
+    padding: 0;
+    margin: 0;
+    @include scheme-element-text-color(bf500);
+    @include custom-icons(md);
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+
+    @include respond-from(md) {
+      padding: 0 space(3N);
+      margin: 0 0 space(1N);
+      line-height: space(3N);
+      box-shadow: none;
+
+      &:not(:first-child) {
+        @include scheme-element-border-color(g300, true, left);
+      }
+    }
+
+    &::before {
+      content: none;
+    }
+
+    > .#{$prefix}-link {
+      line-height: space(3N);
+      font-size: font-size(14);
+      width: 100%;
+      padding: space(1-5N) 0;
+
+      @include respond-from(md) {
+        white-space: nowrap;
+        width: auto;
+        padding: 0;
+      }
+    }
+  }
+}

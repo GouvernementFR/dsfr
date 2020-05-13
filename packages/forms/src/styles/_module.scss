@@ -1,0 +1,197 @@
+.#{$prefix}-select-group,
+.#{$prefix}-input-group {
+  &:not(:last-child) {
+    margin-bottom: space(3N);
+  }
+
+  &--valid {
+    .#{$prefix}-label {
+      @include scheme-element-text-color(success);
+    }
+  }
+
+  &--error {
+    .#{$prefix}-label {
+      @include scheme-element-text-color(error);
+    }
+  }
+
+  &--disabled {
+    .#{$prefix}-label {
+      @include scheme-element-text-color(g600-g500);
+    }
+  }
+}
+
+.#{$prefix}-label {
+  display: block;
+  font-size: font-size(14);
+  line-height: line-height(normal);
+  font-family: $font-family-sans;
+  @include scheme-element-text-color(g800);
+
+  &--error {
+    @include scheme-element-text-color(error);
+  }
+
+  & + .#{$prefix}-input,
+  & + .#{$prefix}-select {
+    margin-top: space(1N);
+  }
+}
+
+.#{$prefix}-hint-text {
+  font-size: font-size(12);
+  line-height: line-height(normal);
+  font-family: $font-family-sans;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include scheme-element-text-color(g600);
+
+  & + .#{$prefix}-input,
+  & + .#{$prefix}-input-wrap,
+  & + .#{$prefix}-select {
+    margin-top: space(1N);
+  }
+}
+
+.#{$prefix}-error-text {
+  display: flex;
+  align-items: center;
+  font-size: font-size(12);
+  line-height: line-height(normal);
+  font-family: $font-family-sans;
+  margin-top: space(1N);
+
+  @include scheme-element-text-color(error);
+
+  @include font-icon(alert-line, sm) {
+
+    display: inline-block;
+    margin-right: space(0-5N);
+  }
+}
+
+.#{$prefix}-valid-text {
+  display: flex;
+  align-items: center;
+  font-size: font-size(12);
+  line-height: line-height(normal);
+  font-family: $font-family-sans;
+  margin-top: space(1N);
+
+  @include scheme-element-text-color(success);
+
+  @include font-icon(check-line, sm) {
+    display: inline-block;
+    margin-right: space(0-5N);
+  }
+}
+
+.#{$prefix}-form-group {
+  margin-bottom: space(4N);
+}
+
+.#{$prefix}-fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  @include scheme-element-text-color(g800, true);
+
+  .#{$prefix}-hint-text {
+    margin-bottom: space(2N);
+  }
+
+  &__legend {
+    margin-bottom: space(2N);
+    font-weight: 700;
+
+    + .#{$prefix}-hint-text {
+      margin-top: -(space(1N));
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    // + .#{$prefix}-error-text {
+    //   margin-top: space(2N);
+    // }
+
+    > .#{$prefix}-input-group:first-child {
+      margin-top: space(2N);
+    }
+  }
+
+  &--inline {
+    .#{$prefix}-radio-group,
+    .#{$prefix}-checkbox-group {
+      display: inline-flex;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: space(3N);
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .#{$prefix}-fieldset__legend {
+      margin-bottom: space(0-5N);
+    }
+
+    .#{$prefix}-error-text,
+    .#{$prefix}-valid-text {
+      margin-top: -(space(0-5N));
+    }
+  }
+
+  &--error {
+    .#{$prefix}-fieldset__content {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        top: space(1-5N);
+        bottom: space(1-5N);
+        left: -(space(1N));
+        @include scheme-element-bg-color(error);
+      }
+    }
+
+    .#{$prefix}-label {
+      @include scheme-element-text-color(error);
+    }
+  }
+
+  &--valid {
+    .#{$prefix}-fieldset__content {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        top: space(1-5N);
+        bottom: space(1-5N);
+        left: -(space(1N));
+        @include scheme-element-bg-color(success);
+      }
+    }
+
+    .#{$prefix}-label {
+      @include scheme-element-text-color(success);
+    }
+  }
+
+  //&:disabled &__legend,
+  &:disabled .#{$prefix}-label {
+    @include scheme-element-text-color(g600-g500);
+  }
+}

@@ -1,0 +1,200 @@
+account-fill:
+    title: "Compte"
+
+account-line:
+    title: "Compte"
+
+add-circle-line:
+    title: "Ajouter"
+
+alert-fill:
+    title: "Alerte"
+
+alert-line:
+    title: "Alerte"
+
+arrow-down-line:
+    title: "Flèche vers le bas"
+
+arrow-down-s-line:
+    title: "Flèche vers le bas"
+
+arrow-left-line:
+    title: "Flèche vers la gauche"
+
+arrow-left-s-first-line:
+    title: "Première"
+
+arrow-left-s-line:
+    title: "Flèche vers la gauche"
+
+arrow-left-s-line-double:
+    title: "Double flèche vers la gauche"
+
+arrow-right-line:
+    title: "Flèche vers la droite"
+
+arrow-right-s-last-line:
+    title: "Dernière"
+
+arrow-right-s-line:
+    title: "Flèche vers la droite"
+
+arrow-right-s-line-double:
+    title: "Double flèche vers la droite"
+
+arrow-up-line:
+    title: "Flèche vers le haut"
+
+arrow-up-s-line:
+    title: "Flèche vers le haut"
+
+calendar-fill:
+    title: "Calendrier"
+
+calendar-line:
+    title: "Calendrier"
+
+check-line:
+    title: "Coché"
+
+checkbox-line:
+    title: "Coché"
+
+close-circle-line:
+    title: "Fermer"
+
+close-line:
+    title: "Fermer"
+
+delete-fill:
+    title: "Supprimer"
+
+delete-line:
+    title: "Supprimer"
+
+download-line:
+    title: "Télécharger"
+
+edit-fill:
+    title: "Editer"
+
+edit-line:
+    title: "Editer"
+
+external-link-line:
+    title: "Lien externe"
+
+eye-line:
+    title: "Oeil"
+
+eye-off-line:
+    title: "Oeil"
+
+file-download-fill:
+    title: "Télécharger le fichier"
+
+file-download-line:
+    title: "Téléchargement fichier"
+
+file-fill:
+    title: "Fichier"
+
+file-line:
+    title: "Fichier"
+
+file-pdf-fill:
+    title: "Fichier PDF"
+
+file-pdf-line:
+    title: "Fichier PDF"
+
+information-fill:
+    title: "Information"
+
+information-line:
+    title: "Information"
+
+lock-fill:
+    title: "Cadenas"
+
+lock-line:
+    title: "Cadenas"
+
+mail-fill:
+    title: "Courriel"
+
+mail-line:
+    title: "Courriel"
+
+menu-fill:
+    title: "Menu"
+
+menu-2-fill:
+    title: "Menu"
+
+pause-circle-fill:
+    title: "Mettre en pause"
+
+pause-circle-line:
+    title: "Mettre en pause"
+
+play-fill:
+    title: "Lire"
+
+play-line:
+    title: "Lire"
+
+printer-fill:
+    title: "Imprimer"
+
+printer-line:
+    title: "Imprimer"
+
+question-fill:
+    title: "Question"
+
+question-line:
+    title: "Question"
+
+refresh-fill:
+    title: "Actualiser"
+
+refresh-line:
+    title: "Actualiser"
+
+save-fill:
+    title: "Sauvegarder"
+
+save-line:
+    title: "Sauvegarder"
+
+search-fill:
+    title: "Rechercher"
+
+search-line:
+    title: "Rechercher"
+
+user-fill:
+    title: "Utilisateur"
+
+user-line:
+    title: "Utilisateur"
+
+volume-down-fill:
+    title: "Baisser le son"
+
+volume-down-line:
+    title: "Baisser le son"
+
+volume-mute-fill:
+    title: "Couper le son"
+
+volume-mute-line:
+    title: "Couper le son"
+
+volume-up-fill:
+    title: "Monter le son"
+
+volume-up-line:
+    title: "Monter le son"

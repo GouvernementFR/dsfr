@@ -1,0 +1,112 @@
+.#{$prefix}-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  @include scheme-element-bg-color(beige);
+
+  .#{$prefix}-grid-row & {
+    height: 100%;
+  }
+
+  &__link {
+    position: static;
+    text-decoration: none;
+    display: inline-flex;
+    box-shadow: none;
+    width: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &:focus {
+      outline-offset: -9999px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    margin: space(6N) space(6N) 0;
+    flex: 0 0 auto;
+
+    &::before {
+      display: block;
+      content: '';
+      padding-bottom: map_get($ratio-scale, 1x1);
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: 50% 50%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__body {
+    padding: space(2N);
+    flex-grow: 1;
+  }
+
+  &__img + &__body {
+    padding: space(3N) space(2N);
+  }
+
+  &__title {
+    @include text-styles(md);
+    font-weight: font-weight(bold);
+    margin: 0;
+
+    + .#{$prefix}-tile__desc {
+      margin: space(1N) 0 0;
+      @include text-styles(sm);
+    }
+  }
+
+  &__desc {
+    margin: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: space(0-5N);
+    left: 0;
+    bottom: 0;
+    @include scheme-element-bg-color(bf500);
+  }
+
+  &:focus-within {
+    @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
+    outline-offset: 2px;
+    z-index: 100;
+  }
+
+  @include respond-from(md) {
+    &--horizontal {
+      flex-direction: row;
+
+      .#{$prefix}-tile__img {
+        margin: space(4N) 0 space(4N) space(4N);
+        flex-grow: 1;
+        flex-basis: auto;
+        width: auto;
+      }
+
+      .#{$prefix}-tile__body {
+        padding: space(4N);
+        flex-basis: 70%;
+      }
+    }
+  }
+}

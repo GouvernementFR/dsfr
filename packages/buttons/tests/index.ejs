@@ -1,0 +1,42 @@
+<%
+let sizes = {
+    small : {size:'sm', label: 'Label bouton SM'},
+    medium : {label: 'Label bouton MD'},
+    large : {size:'lg', label: 'Label bouton LG'}
+};
+
+let samples = [
+    { title:'Bouton simple', data:{sizes:sizes}},
+    { title:'Bouton désactivé', data:{disabled:true, sizes:sizes}},
+    { title:'Bouton icon à gauche', data:{icon :'checkbox-line', iconPlace:'left', sizes:sizes}},
+    { title:'Bouton icon à droite', data:{icon :'checkbox-line', iconPlace:'right', sizes:sizes}},
+    { title:'Bouton icon seule', data:{icon :'checkbox-line',sizes:sizes}},
+    { title:'Bouton secondaire', data:{secondary:true, sizes:sizes}},
+    { title:'Bouton secondaire désactivé', data:{secondary:true, disabled:true, sizes:sizes}},
+    { title:'Bouton secondaire icon à gauche', data:{secondary:true, icon :'checkbox-line', iconPlace:'left', sizes:sizes}},
+    { title:'Bouton secondaire icon à droite', data:{secondary:true, icon :'checkbox-line', iconPlace:'right', sizes:sizes}},
+    { title:'Bouton secondaire icon seule', data:{secondary:true, icon :'checkbox-line',sizes:sizes}}
+
+]
+
+%>
+
+<% for (let i = 0; i < samples.length; i++) {
+    let sample = samples[i];
+%>
+    <h4><%= sample.title %></h4>
+    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--middle" >
+        <div class="<%= prefix %>-col-md-3 <%= prefix %>-col-12 <%= prefix %>-margin-bottom-2N" style="text-align: center" >
+            <%- include('./samples/button-sm', sample.data) %>
+        </div>
+        <div class="<%= prefix %>-col-md-4 <%= prefix %>-col-12 <%= prefix %>-margin-bottom-2N" style="text-align: center" >
+            <%- include('./samples/button-default', sample.data) %>
+        </div>
+        <div class="<%= prefix %>-col-md-5 <%= prefix %>-col-12 <%= prefix %>-margin-bottom-2N" style="text-align: center" >
+            <%- include('./samples/button-lg', sample.data) %>
+        </div>
+    </div>
+    <%- snippet(include('./samples/button-sm', sample.data)); %>
+    <%- snippet(include('./samples/button-default', sample.data)); %>
+    <%- snippet(include('./samples/button-lg', sample.data)); %>
+<% } %>

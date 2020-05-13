@@ -1,0 +1,17 @@
+<h4 class="<%= prefix %>-footer__partners-title"><%- title %></h4>
+<div class="<%= prefix %>-footer__partners-logos">
+  <div class="<%= prefix %>-footer__partners-main">
+      <a href="#">
+          <img class="<%= prefix %>-footer__logo" src="<%= mainPartner.src %>" alt="<%= mainPartner.alt %>">
+      </a>
+  </div>
+  <div class="<%= prefix %>-footer__partners-sub">
+      <%
+      for (let i = 0; i < subPartners.length; i++) {
+    %>
+      <a href="#">
+        <img class="<%= prefix %>-footer__logo" src="<%= subPartners[i].src %>" alt="<%= subPartners[i].alt %>">
+      </a>
+    <% } %>
+  </div>
+</div>

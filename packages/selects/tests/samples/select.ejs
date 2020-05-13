@@ -1,0 +1,18 @@
+<%
+    let data = JSON.parse(include('../../../forms/tests/samples/data'));
+    data.placeholder = '- Select -';
+    data.label = 'Label pour liste déroulante'
+
+    data.options = [
+        {value:'1', label:'Burgers & sandwiches'},
+        {value:'2', label:'Build your own'},
+        {value:'3', label:'Friendly meals'},
+        {value:'4', label:'Save menu & more'}
+            ];
+%>
+<% if (locals.group === true) { %>
+<%- include('../templates/select-group', data); %>
+<% }
+else { %>
+<%- include('../templates/select', data); %>
+<% } %>

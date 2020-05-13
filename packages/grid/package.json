@@ -1,0 +1,14 @@
+{
+  "name": "@frds/grid",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Grille",
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "config": {
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0"
+  }
+}

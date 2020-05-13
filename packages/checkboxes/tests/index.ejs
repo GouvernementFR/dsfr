@@ -1,0 +1,27 @@
+<%
+let samples = [
+  {title:'Case à cocher seule sans erreur', sample:'./samples/checkbox.ejs', data:{ id:'checkbox'}},
+  {title:'Case à cocher seule, validée', sample:'./samples/checkbox.ejs', data:{ id:'checkbox-valid', valid:true}},
+  {title:'Case à cocher seule avec erreur', sample:'./samples/checkbox.ejs', data:{ id:'checkbox-error', error:true}},
+  {title:'Ensemble de cases à cocher', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes'}},
+  {title:'Ensemble de cases à cocher, petite taille', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-small', size:'sm'}},
+  {title:'Ensemble de cases à cocher désactivées', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-disabled', disabled:true}},
+  {title:'Ensemble de cases à cocher en ligne', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-inline', inline: true}},
+  {title:'Ensemble de cases à cocher avec texte d‘aide', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-hint', hint: true}},
+  {title:'Ensemble de cases à cocher avec erreur', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-error', error: true}},
+  {title:'Ensemble de cases à cocher validées', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-valid', valid: true}},
+  {title:'Ensemble de cases à cocher avec erreur, en ligne', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-error-inline', error: true, inline:true}},
+  {title:'Ensemble de cases à cocher validées, en ligne', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-valid-inline', valid: true, inline:true}},
+  {title:'Ensemble de cases à cocher avec texte d‘aide spécifique', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-hint-element', element: { hint:true }}},
+  {title:'Ensemble de cases à cocher avec texte d‘aide spécifique, petite taille', sample:'./samples/checkboxes.ejs', data:{ id:'checkboxes-hint-el-sm', size: 'sm', element: { hint:true }}},
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<%- include(sample.sample, sample.data); %>
+<%- snippet(include(sample.sample, sample.data)); %>
+<% } %>

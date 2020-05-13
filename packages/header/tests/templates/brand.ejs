@@ -1,0 +1,14 @@
+<div class="<%= prefix %>-header__brand">
+    <%
+    switch(typeof locals.logo) {
+    case 'string': %>
+    <%- include(locals.logo); %>
+    <% break;
+
+    case 'object': %>
+    <%- include('../../../logo/tests/templates/logo', locals.logo); %>
+    <% break;
+    }
+    %>
+
+</div>

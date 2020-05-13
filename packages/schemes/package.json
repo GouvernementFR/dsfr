@@ -1,0 +1,12 @@
+{
+  "name": "@frds/schemes",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Combinaison de couleur",
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0"
+  }
+}

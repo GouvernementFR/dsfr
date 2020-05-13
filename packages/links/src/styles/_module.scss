@@ -1,0 +1,58 @@
+.#{$prefix}-link {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: none;
+  @include text-styles();
+  @include scheme-element-text-color(bf500, true);
+  @include scheme-element-focus();
+
+  @include font-icon() {
+    margin-left: space(1N);
+  }
+
+  &:not([class*="#{$prefix}-fi-"])::before {
+    @include font-icon-content(arrow-right-line);
+  }
+
+  &--icon-left {
+    flex-direction: row;
+
+    &::before {
+      margin-left: 0;
+      margin-right: space(1N);
+    }
+  }
+
+  //&#{&} nécessaire pour overrider l'icone
+  &#{&}--icon-left:not([class*="#{$prefix}-fi-"])::before {
+    @include font-icon-content(arrow-left-line);
+  }
+
+  &--lg {
+    @include text-styles(lg);
+
+    &::before {
+      font-size: icon-size(lg);
+    }
+  }
+
+  &--sm {
+    @include text-styles(sm);
+
+    /*
+    &::before {
+      font-size: icon-size(sm);
+    }
+     */
+  }
+
+  &[disabled],
+  &:disabled {
+    @include scheme-element-bg-color(g300, false);
+    @include scheme-element-text-color(g600, false);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}

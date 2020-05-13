@@ -1,0 +1,110 @@
+@import 'node_modules/sass-true/sass/true';
+$true-terminal-output: false;
+
+@import '../src/styles/settings';
+@import '../src/styles/tools';
+
+// Functions
+
+@include describe('[function] clean-unit') {
+  @include it('Should return a number when passing a unit value') {
+    @include assert-equal(clean-unit(16px), 16);
+  }
+}
+
+@include describe('[function] px-rem') {
+  @include it('Should return a converted rem value from pixel value input') {
+    @include assert-equal(px-rem(16px), 1rem);
+  }
+
+  @include it('Should return a rem value from pixel value input specifying a root font size') {
+    @include assert-equal(px-rem(18px, 12px), 1.5rem);
+  }
+}
+
+@include describe('[function] font-size') {
+  @include it('Should return a rem value when passing a type scale map value') {
+    @include assert-equal(font-size(16), 1rem);
+  }
+}
+
+@include describe('[function] line-height') {
+  @include it('Should return a unitless line-height value passing a scale map key') {
+    @include assert-equal(line-height("loose"), 2);
+  }
+}
+
+@include describe('[function] space') {
+  @include it('Should return a rem value passing a space scale number value') {
+    @include assert-equal(space(3N), 1.5rem);
+  }
+}
+
+// Mixins
+
+@include describe('[mixin] font-size') {
+  @include it('Should output a rem font-size based on a given input') {
+    @include assert {
+      @include output {
+        @include font-size(24);
+      }
+
+      @include expect {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@include describe('[mixin] line-height') {
+  @include it('Should output a default standard line height of 1.5') {
+    @include assert {
+      @include output {
+        @include line-height();
+      }
+
+      @include expect {
+        line-height: 1.5;
+      }
+    }
+  }
+
+  @include it('Should output a "loose" line-height of 2') {
+    @include assert {
+      @include output {
+        @include line-height("loose");
+      }
+
+      @include expect {
+        line-height: 2;
+      }
+    }
+  }
+}
+
+@include describe('[mixin] space') {
+  @include it('Should output a default margin of 8px (0.5rem)') {
+    @include assert {
+      @include output {
+        @include space();
+      }
+
+      @include expect {
+        margin: 0.5rem;
+      }
+    }
+  }
+
+  @include it('Should output a vertical padding (bottom and top) of 12px (0.75rem)') {
+    @include assert {
+      @include output {
+        @include space("padding", 1-5N, "y");
+      }
+
+      @include expect {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+      }
+    }
+  }
+}

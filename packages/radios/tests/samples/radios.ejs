@@ -1,0 +1,18 @@
+<%
+let element = {
+  path: 'radios/tests/samples/radio',
+    data:locals.element || {}
+}
+
+element.data.name = id;
+
+let fields = {
+    elements: [
+        { ...element, data: { ...element.data, id: id + '-1' } },
+        { ...element, data: { ...element.data, id: id + '-2' } },
+        { ...element, data: { ...element.data, id: id + '-3' } },
+    ]
+}
+%>
+
+<%- include('../../../forms/tests/samples/fieldset', fields) %>

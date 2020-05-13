@@ -1,0 +1,20 @@
+<%
+    let pages = [];
+    let i;
+
+    for (i = 1; i < 4; i++) pages.push({text:i, title:'Page ' + i, href:'#', fromMd: i > 2});
+    pages.push({text:'…', fromMd:true});
+    for (i = 130; i < 133; i++) pages.push({text:i, title:'Page ' + i, href:'#', fromMd: i < 132});
+
+    if (locals.index !== undefined) pages[index].active = true;
+
+    let data = {
+        first: { title: 'Première page', href:'#' },
+        prev: { title: 'Page précédente', text:'Précédente', href:'#' },
+        next: { title: 'Page suivante', text:'Suivante', href:'#' },
+        last: { title: 'Dernière page', href:'#' },
+        pages : pages
+    }
+%>
+
+<%- include('../templates/pagination', data); %>

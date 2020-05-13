@@ -1,0 +1,73 @@
+.#{$prefix}-input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: space(0-5N) space(0-5N) 0 0;
+  font-size: font-size(14);
+  line-height: 1.5rem;
+  font-family: $font-family-sans;
+  padding: space(1N) space(2N);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  @include scheme-element-text-color(g800);
+  @include scheme-element-bg-color(g200);
+  @include scheme-element-box-shadow-color(g800,true,inset 0 -2px 0 0 $COLOR);
+  @include scheme-element-focus();
+
+  @include placeholder {
+    @include scheme-element-text-color(g600-g500, false);
+  }
+
+  &--valid {
+    @include scheme-element-box-shadow-color(success,false,inset 0 -2px 0 0 $COLOR);
+  }
+
+  &--error,
+  &:invalid {
+    @include scheme-element-box-shadow-color(error,false,inset 0 -2px 0 0 $COLOR);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+
+    @include scheme-element-text-color(g600-g500);
+    @include scheme-element-bg-color(g300);
+    @include scheme-element-box-shadow-color(g500,true,inset 0 -2px 0 0 $COLOR);
+  }
+
+  &:not(textarea) {
+    max-height: 2.5rem;
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    @include scheme-element-box-shadow-color(g200,true,inset 0 0 0 100px $COLOR);
+    @include _scheme-element(g800, -webkit-text-fill-color, true);
+  }
+}
+
+.#{$prefix}-input-wrap {
+  position: relative;
+  display: block;
+
+  @include custom-icons() {
+    position: absolute;
+    right: space(1-5N);
+    top: space(1-5N);
+    bottom: space(1-5N);
+    margin: auto;
+  }
+
+  .#{$prefix}-input {
+    padding-right: space(5N);
+  }
+}

@@ -1,0 +1,29 @@
+<div class="<%= prefix %>-header__tools">
+    <% if (locals.shortcuts !== undefined) { %>
+    <div class="<%= prefix %>-shortcuts">
+        <ul class="<%= prefix %>-shortcuts__list">
+            <%
+                let item;
+                for (let i = 0; i < shortcuts.items.length; i++) {
+                  item = shortcuts.items[i];
+            %>
+            <li class="<%= prefix %>-shortcuts__item" >
+                <%- include('../../../links/tests/templates/link', { ... item, left: true }); %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <% }%>
+    <%
+    switch(typeof locals.search) {
+    case 'string' : %>
+    <%- include(search, {id: 'header-search' }); %>
+    <% break;
+
+    case 'object':
+        search.id = search.id || 'header-search'; %>
+    <%- include( '../../../search/tests/templates/search', search); %>
+    <% break;
+    }
+    %>
+</div>

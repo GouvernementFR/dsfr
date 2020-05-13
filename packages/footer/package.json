@@ -1,0 +1,14 @@
+{
+  "name": "@frds/footer",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Footer",
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0",
+    "@frds/schemes": "^0.0.0",
+    "@frds/logo": "^0.0.0"
+  }
+}

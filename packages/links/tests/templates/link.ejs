@@ -1,0 +1,41 @@
+<%#
+# paramètres link
+
+* label (string, required) : contenu texte
+
+* href (string, required) : adresse url du lien
+
+* blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
+
+* left (bool, optionnal) : modifer icon à gauche
+
+* icon (string, optional) : icon du lien
+
+%>
+
+<%
+ let classes = locals.classes || [];
+
+ classes.push(prefix + '-link');
+
+ let attributes = {};
+
+ if (locals.icon !== undefined) classes.push(prefix + '-fi-' + icon);
+
+ switch(locals.size) {
+     case 'sm':
+       classes.push(prefix + '-link--sm');
+       break;
+
+     case 'lg':
+         classes.push(prefix + '-link--lg');
+         break;
+ }
+
+ if (locals.left !== undefined) classes.push(prefix +'-link--icon-left');
+
+ attributes.target = locals.blank === true ? '_blank' : '_self';
+
+ %>
+
+<a href="#" <%- includeClasses(classes)%> <%- includeAttrs(attributes); %>><%- label %></a>

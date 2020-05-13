@@ -1,0 +1,165 @@
+body {
+  font-family: $font-family-sans;
+  @include scheme-element-text-color(g700);
+}
+
+// Headings
+h1,
+.#{$prefix}-h1 {
+  @include heading(44, 'tight', bold, 48);
+}
+
+h2,
+.#{$prefix}-h2 {
+  @include heading(32, 'tight', bold);
+}
+
+h3,
+.#{$prefix}-h3 {
+  @include heading(24, 'tight', bold);
+}
+
+h4,
+.#{$prefix}-h4 {
+  @include heading(22, 'snug', bold);
+}
+
+// Display helpers
+.#{$prefix}-display-xl {
+  @include heading(96);
+}
+
+.#{$prefix}-display-lg {
+  @include heading(88);
+}
+
+.#{$prefix}-display-md {
+  @include heading(72);
+}
+
+.#{$prefix}-display-sm {
+  @include heading(64);
+}
+
+.#{$prefix}-display-xs {
+  @include heading(56);
+}
+
+// Paragraphs
+p {
+  font-size: font-size();
+  line-height: line-height();
+}
+
+.#{$prefix}-text {
+  font-size: font-size();
+  line-height: line-height();
+
+  &--alt {
+    font-family: $font-family-serif;
+  }
+}
+
+// Links
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 0 0 currentColor;
+  @include scheme-element-focus();
+
+  // Icon for external links
+  &[target="_blank"] {
+    @include font-icon(external-link-line, md, after) {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 2px 0.1rem space(0-5N);
+      height: 1em;
+      width: 1em;
+    }
+  }
+}
+
+// Lists
+ul,
+ol {
+  font-size: font-size();
+  line-height: line-height();
+  margin: 0 0 space(1N);
+  padding: 0;
+
+  li {
+    margin-bottom: space(1N);
+  }
+
+  ul,
+  ol {
+    margin: space(1N) 0 space(2N);
+  }
+}
+
+ul {
+  list-style-type: none;
+
+  li {
+    &::before {
+      content: "\2022";
+      font-size: 1.4em;
+      margin-right: space(1N);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: space(1N) 0 space(1N) space(3N);
+
+    li {
+      &::before {
+        content: "•";
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: list-number;
+
+  ol {
+    padding-left: space(3N);
+
+    li {
+      &::before {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  li {
+    counter-increment: list-number;
+
+    &::before {
+      content: counters(list-number, ".") ".";
+      font-weight: 700;
+      margin-right: space(1N);
+    }
+  }
+}
+
+// Text styles - chapo, lg, sm et xs
+.#{$prefix}-text--lead {
+  @include text-styles(lead);
+}
+
+.#{$prefix}-text--lg {
+  @include text-styles(lg);
+}
+
+.#{$prefix}-text--sm {
+  @include text-styles(sm);
+}
+
+.#{$prefix}-text--xs {
+  @include text-styles(xs);
+}

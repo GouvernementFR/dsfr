@@ -1,0 +1,49 @@
+// Utilities
+
+// Spacing
+@mixin spacing-utilities($attribute: 'margin', $separator: '-') {
+
+  $class-prefix : 'margin';
+  @if $attribute == 'padding' {
+    $class-prefix : 'padding';
+  }
+
+  $sides: '', '-top', '-right', '-bottom', '-left';
+
+  @each $side in $sides {
+    @each $name, $value in $space-scale {
+
+      .#{$prefix}-#{$attribute}#{$side}#{$separator}#{$name} {
+        #{$attribute}#{$side}: $value !important;
+      }
+    }
+  }
+}
+
+// Collapse
+@mixin collapse($className: collapse) {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 99999px;
+  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
+
+  &::before {
+    display: block;
+    content: '';
+    margin-top: -100vh;
+    transition: margin-top 0.3s;
+  }
+
+  &#{&}--expanded {
+    opacity: 1;
+
+    &::before {
+      margin-top: 0;
+    }
+  }
+
+  &:not(#{&}--expanded) {
+    visibility: hidden;
+    max-height: 0;
+  }
+}

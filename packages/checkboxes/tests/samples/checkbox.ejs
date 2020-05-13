@@ -1,0 +1,12 @@
+<%
+let data = JSON.parse(include('../../../forms/tests/samples/data'));
+
+data.label = 'Label checkbox';
+
+%>
+<% if (/*locals.group === */true) { %>
+    <%- include('../templates/checkbox-group', data); %>
+<% }
+else { %>
+    <%- include('../templates/checkbox', data); %>
+<% } %>

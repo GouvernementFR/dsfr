@@ -1,0 +1,31 @@
+<%#
+# paramètres navigation
+
+* id (string, required)
+
+* items
+
+%>
+<%
+let attributes = locals.attributes || {};
+
+attributes.id = locals.id;
+%>
+
+<nav class="<%= prefix %>-nav" role="navigation" aria-label="Menu principal" <%- includeAttrs(attributes); %> >
+    <ul class="<%= prefix %>-nav__list">
+        <%
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i];
+                item.collapseId = prefix + '-nav-item-' + i;
+
+                let classes = [prefix + '-nav__item'];
+                if (item.active === true) classes.push(prefix + '-nav__item--active');
+                if (item.align === 'right') classes.push(prefix + '-nav__item--align-right');
+        %>
+        <li <%- includeClasses(classes); %>>
+            <%- include('./' + item.type, item); %>
+        </li>
+        <% } %>
+    </ul>
+</nav>

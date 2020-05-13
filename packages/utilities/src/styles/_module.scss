@@ -1,0 +1,10 @@
+// @include color-utilities();
+// @include color-utilities('background-color');
+// @include color-utilities('fill');
+
+@include spacing-utilities();
+@include spacing-utilities('padding');
+
+.#{$prefix}-collapse {
+  @include collapse();
+}

@@ -1,0 +1,9 @@
+<%
+let content = locals.short === true ? 'Lorem [...] elit, ' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ';
+
+if (locals.insert !== undefined) content += insert;
+
+content += locals.short === true ? ' incididunt [...] morbi.' : ' incididunt ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing elit ut. At quis risus sed vulputate odio ut enim blandit. Maecenas ultricies mi eget mauris pharetra. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Dolor sit amet consectetur adipiscing elit. Facilisi morbi tempus iaculis urna id. Leo integer malesuada nunc vel risus. Vulputate mi sit amet mauris. Amet tellus cras adipiscing enim eu turpis egestas. In tellus integer feugiat scelerisque varius morbi.';
+ %>
+
+<%- include('../templates/p', {content:content}); %>

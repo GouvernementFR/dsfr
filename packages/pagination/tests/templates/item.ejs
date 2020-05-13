@@ -1,0 +1,23 @@
+<%
+let classes = locals.classes || [];
+let attrs = locals.attrs || {};
+
+classes.push(prefix + '-pagination__item');
+let active = locals.active === true;
+let hasLink = (!active) && (locals.href !== undefined) && (locals.disabled !== true);
+if (active) {
+  classes.push(prefix + '-pagination__item--active');
+  attrs['aria-current'] = 'page';
+}
+if (locals.disabled === true) classes.push(prefix + '-pagination__item--disabled');
+if (locals.fromMd === true) classes.push(prefix + '-pagination__item--from-md');
+
+let linkClasses = locals.linkClasses || [];
+linkClasses.push(prefix + '-pagination__link')
+%>
+
+<li <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
+    <% if (hasLink) { %><a class="<%= prefix %>-pagination__link" href="<%- href %>" aria-label="<%= title %>" title="<%= title %>"><% } %>
+    <% if (locals.text !== undefined ) { %><%- text %><% } %>
+    <% if (hasLink) { %></a><% } %>
+</li>

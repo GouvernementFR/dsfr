@@ -1,0 +1,17 @@
+{
+  "name": "@frds/core",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "core",
+  "config": {
+    "wrapper": "col-8"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
+    "postinstall": "node ./post-install.js"
+  },
+  "dependencies": {
+    "gently-copy": "^3.2.0",
+    "prompt": "^1.0.0"
+  }
+}

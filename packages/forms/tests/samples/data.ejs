@@ -1,0 +1,9 @@
+<%
+ let data = {};
+
+ if (locals.error === true) data.error = 'Texte d’erreur obligatoire';
+ if (locals.valid === true) data.valid = 'Texte de validation';
+ if (locals.hint === true) data.hint = 'Texte de description additionnel';
+ %>
+
+<%- JSON.stringify(data); %>

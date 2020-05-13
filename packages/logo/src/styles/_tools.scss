@@ -1,0 +1,13 @@
+@mixin logo($size: md, $size-md: none) {
+  .#{$prefix}-logo {
+    font-size: map_get($logo-sizes, $size);
+
+    @if $size-md != none {
+      @include respond-from(md) {
+        font-size: map_get($logo-sizes, $size-md);
+      }
+    }
+
+    @content;
+  }
+}

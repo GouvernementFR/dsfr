@@ -1,0 +1,143 @@
+.#{$prefix}-checkbox-group {
+  position: relative;
+
+  .#{$prefix}-hint-text {
+    margin-left: space(4N);
+    margin-top: -(space(1-5N));
+  }
+
+  .#{$prefix}-error-text,
+  .#{$prefix}-valid-text {
+    // si un élément suit, il va venir sur le texte d'erreur avec absolute
+    //position: absolute;
+    margin-top: -(space(0-5N));
+  }
+
+  &--sm {
+    input[type="checkbox"] {
+      + label {
+        &::before {
+          width: space(2N);
+          height: space(2N);
+        }
+
+        &::after {
+          left: 0;
+        }
+      }
+    }
+
+    .#{$prefix}-hint-text {
+      margin-left: space(3N);
+    }
+  }
+
+  &--error {
+    input[type="checkbox"] + label {
+      @include scheme-element-text-color(error);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      top: space(1-5N);
+      height: space(3N);
+      left: -(space(1N));
+      @include scheme-element-bg-color(error);
+    }
+  }
+
+  &--valid {
+    input[type="checkbox"] + label {
+      @include scheme-element-text-color(success);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      top: space(1-5N);
+      height: space(3N);
+      left: -(space(1N));
+      @include scheme-element-bg-color(success);
+    }
+  }
+
+  &:first-child {
+    margin-top: -(space(1-5N));
+  }
+
+  &:last-child {
+    margin-bottom: -(space(1-5N));
+  }
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+
+  + label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding: space(1-5N) 0;
+    font-size: font-size(14);
+    -webkit-tap-highlight-color: transparent;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      flex-shrink: 0;
+      width: space(3N);
+      height: space(3N);
+      margin-right: space(1N);
+      border-radius: space(0-5N);
+      @include scheme-element-border-color(g800);
+      transition: background-color 0.1s;
+    }
+
+    @include font-icon(check-line, md, after) {
+      @include scheme-element-text-color(g100);
+      position: absolute;
+      opacity: 0;
+      left: space(0-5N);
+      transition: opacity 0.1s;
+    }
+  }
+
+  &:checked,
+  &:active {
+    + label::before {
+      @include scheme-element-bg-color(bf500);
+    }
+
+    + label::after {
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    + label::before {
+      @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
+      outline-offset: 2px;
+    }
+  }
+
+  &[disabled],
+  &:disabled {
+    + label {
+      @include scheme-element-text-color(g600, false);
+
+      &::before {
+        @include scheme-element-border-color(g500, false);
+        @include scheme-element-bg-color(g300, false);
+      }
+    }
+
+    &:hover + label {
+      cursor: not-allowed;
+    }
+  }
+}

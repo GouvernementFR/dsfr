@@ -1,0 +1,6 @@
+<%
+ let radioAttrs = locals.radioAttrs || [];
+ %>
+<input <%- includeAttrs(radioAttrs); %> type="radio" id="<%= id %>" name="<%= name %>">
+<%- include('../../../forms/tests/templates/label'); %>
+<%- include('../../../forms/tests/templates/message'); %>

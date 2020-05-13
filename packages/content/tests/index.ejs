@@ -1,0 +1,26 @@
+<%
+let samples = [
+  { title:'Media image edito', sample:'./samples/media-img'},
+  { title:'Media image edito, petite taille', sample:'./samples/media-img', data: {size:'sm'}},
+  { title:'Media image edito, grande taille', sample:'./samples/media-img', data: {size:'lg'}},
+  { title:'Media video edito, ratio d‘aspect 16/9 par défaut', sample:'./samples/media-vid-default'},
+  { title:'Media video edito, ratio d‘aspect 16/9 par défaut, petite taille', sample:'./samples/media-vid-default', data: {size:'sm'}},
+  { title:'Media video edito, ratio d‘aspect 16/9 par défaut, grande taille', sample:'./samples/media-vid-default', data: {size:'lg'}},
+  { title:'Media video edito, ratio d‘aspect 4x3', sample:'./samples/media-vid-4x3'},
+  { title:'Media video edito, ratio d‘aspect 4x3, petite taille', sample:'./samples/media-vid-4x3', data: {size:'sm'}},
+  { title:'Media video edito, ratio d‘aspect 4x3, grande taille', sample:'./samples/media-vid-4x3', data: {size:'lg'}},
+  { title:'Media video edito, ratio d‘aspect 1x1', sample:'./samples/media-vid-1x1'},
+  { title:'Media video edito, ratio d‘aspect 1x1, petite taille', sample:'./samples/media-vid-1x1', data: {size:'sm'}},
+  { title:'Media video edito, ratio d‘aspect 1x1, grande taille', sample:'./samples/media-vid-1x1', data: {size:'lg'}},
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+<%- include(sample.sample, sample.data); %>
+<%- snippet(include(sample.sample, sample.data)); %>
+<% } %>

@@ -1,0 +1,12 @@
+<ul class="<%= prefix %>-footer__bottom-list">
+  <%
+    for (let i = 0; i < links.length; i++) {
+  %>
+    <li>
+      <a href="#"><%= links[i].label %></a>
+    </li>
+  <% } %>
+</ul>
+<div class="<%= prefix %>-footer__bottom-copy">
+    <%- copyright %>
+</div>
