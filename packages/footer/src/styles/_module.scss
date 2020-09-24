@@ -146,39 +146,38 @@
   }
 
   &__bottom-list {
-    display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 0 0 (-(space(2N)));
     padding: space(1N) 0;
-    width: calc(100% + #{space(2N)});
+    width: 100%;
+    margin: 0;
 
     > li {
       position: relative;
-      margin: space(1N) 0 0 space(2N);
+      margin: space(1N) 0 0 space(1N);
+      display: inline;
 
       &::before {
-        content: none;
-      }
-
-      &::after {
         content: "";
-        position: absolute;
-        right: -(space(1N));
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        height: 70%;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        height: space(2N);
         width: 1px;
+        margin-right: space(1N);
         @include scheme-element-bg-color(g400);
 
         @include respond-from(sm) {
-          right: -(space(2N));
+          margin-right: space(0-5N);
         }
       }
 
-      &:last-child::after {
-        content: none;
+      &:first-child {
+        margin: space(1N) 0 0;
+
+        &::before {
+          content: none;
+        }
       }
 
       > a {
@@ -188,13 +187,11 @@
       }
 
       @include respond-from(sm) {
-        margin: 0 0 0 space(4N);
+        margin: space(1N) 0 0 space(0-5N);
       }
     }
 
     @include respond-from(sm) {
-      margin-left: -(space(4N));
-      width: calc(100% + #{space(4N)});
       padding: space(2N) 0;
     }
   }
