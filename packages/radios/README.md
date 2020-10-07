@@ -1,8 +1,11 @@
-# @frds/radios
+# @gouvfr/radios
 
-## Dépendance
+Les boutons radios permettent à l’utilisateur de sélectionner une seule option dans une liste.
+
+## Dépendances
 ```shell
 radios
+└─ schemes
 └─ core
 └─ forms
 ```
@@ -10,20 +13,13 @@ radios
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/radios
+npm install @gouvfr/radios
 ```
 Via Yarn :
 ```
-yarn add install @frds/radios
+yarn add install @gouvfr/radios
 ```
 
-## Utilisation
-Afin d'utilise le composant `radios`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/forms/main';
-@import 'node_modules/@frds/radios/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur les boutons radios
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button) sur les boutons radio

@@ -1,26 +1,24 @@
-# @frds/typography
+# @gouvfr/typography
 
-## Dépendance
+Les typographies Marianne® et Spectral sont les typographies officielles de la charte de l'État. Leur usage crée une cohérence entre les interfaces et offre une expérience positive à l’utilisateur. Leur respect renforce également la reconnaissance de la parole de l’État.
+
+## Dépendances
 ```shell
 typography
+└─ core
+└─ schemes
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/typography
+npm install @gouvfr/typography
 ```
 Via Yarn :
 ```
-yarn add install @frds/typography
+yarn add install @gouvfr/typography
 ```
 
-## Utilisation
-Afin d'utilise le composant `typography`, il est nécessaire d'importer le composant :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/typography/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur la typography
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019527/Typographie+-+Typography) sur les typographies

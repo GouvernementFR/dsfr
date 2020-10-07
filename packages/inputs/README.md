@@ -1,30 +1,26 @@
-# @frds/inputs
+# @gouvfr/inputs
 
-## Dépendance
+Les champs  permettent à un utilisateur d'entrer du contenu et données.
+
+## Dépendances
 ```shell
 inputs
+└─ schemes
 └─ core
+└─ icons
 └─ forms
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/inputs
+npm install @gouvfr/inputs
 ```
 Via Yarn :
 ```
-yarn add install @frds/inputs
-```
-
-## Utilisation
-Afin d'utilise le composant `inputs`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/forms/main';
-@import 'node_modules/@frds/inputs/main';
+yarn add install @gouvfr/inputs
 ```
 
 ## Documentation
 
-Consulter [la documentation](#) sur les inputs
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input) sur les champs de saisie

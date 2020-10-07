@@ -1,27 +1,27 @@
-# @frds/content
+# @gouvfr/content
 
-## Dépendance
+Les médias désignent vos contenus photos et vidéos. Lorsqu’ils sont intégré à une page de contenu, il est recommandé de suivre les règles décrites ci-dessous.
+
+## Dépendances
 ```shell
 content
+└─ schemes
 └─ core
+└─ buttons
+└─ medias
+└─ typography
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/content
+npm install @gouvfr/content
 ```
 Via Yarn :
 ```
-yarn add install @frds/content
+yarn add install @gouvfr/content
 ```
 
-## Utilisation
-Afin d'utilise le composant `content`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/content/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur le content
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias) sur les médias intégrés dans un contenu

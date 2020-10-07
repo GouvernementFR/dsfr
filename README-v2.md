@@ -29,8 +29,6 @@ Il est également possible d'installer les composants avec [Yarn](https://yarnpk
 yarn add @gouvfr/design-system
 ```
 
-Il est à noter que pour chaque package installé, l'ensemble des dépendances de celui-ci seront également installées. De ce fait, l'installation du package `inputs` par exemple téléchargera également automatiquement le package `forms`.
-
 ### Arborescence du projet
 
 Lors de la création de votre projet, il est nécessaire d’adopter l’arborescence prévue par le Design System de l'Etat, à savoir les fichiers HTML à la racine du projet, et les différentes sources dans des dossiers spécifiques :
@@ -108,8 +106,6 @@ L'ensemble du **DS** est divisé en différents composants qu'il vous est possib
 Pour des instructions complètes afin de contribuer au code source du **DS**, vous pouvez vous référer
 au fichier  [CONTRIBUTING.md](CONTRIBUTING.md).
 Ces instructions vous permettrons également d'installer une copie locale du Design System de l'Etat pour le développement d'un nouveau composant.
-
-## Liste des composants
 
 ## Documentations Confluence
 

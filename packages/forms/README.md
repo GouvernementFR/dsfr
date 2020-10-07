@@ -1,26 +1,25 @@
-# @frds/forms
+# @gouvfr/forms
 
-## Dépendance
+Ce package permet de mettre en forme les différents champs d'un formulaire, notamment en ce qui concerne les espacements et texte d'aide et d'erreur.
+
+## Dépendances
 ```shell
 forms
+└─ schemes
 └─ core
+└─ icons
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/forms
+npm install @gouvfr/forms
 ```
 Via Yarn :
 ```
-yarn add install @frds/forms
+yarn add install @gouvfr/forms
 ```
 
-## Utilisation
-Afin d'utilise le composant `forms`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/forms/main';
-```
 ## Documentation
 
 Consulter [la documentation](#) sur les formulaires

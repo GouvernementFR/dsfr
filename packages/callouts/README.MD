@@ -1,28 +1,26 @@
-# @frds/callouts
+# @gouvfr/callouts
 
-## Dépendance
+La mise en avant permet à l’utilisateur de distinguer rapidement une information qui vient compléter le contenu consulté.
+
+## Dépendances
 ```shell
 callouts
+└─ schemes
+└─ core
+└─ icons
+└─ typography
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/callouts
+npm install @gouvfr/callouts
 ```
 Via Yarn :
 ```
-yarn add install @frds/callouts
+yarn add install @gouvfr/callouts
 ```
 
-## Utilisation
-Afin d'utilise le composant `callouts`, il est nécessaire d'importer le composant :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/content/main';
-@import 'node_modules/@frds/icons/main';
-@import 'node_modules/@frds/callouts/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur les callouts
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331196/Mise+en+avant+-+Call-out) sur les mises en avant

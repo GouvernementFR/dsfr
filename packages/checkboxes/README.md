@@ -1,29 +1,27 @@
-# @frds/checkboxes
+# @gouvfr/checkboxes
 
-## Dépendance
+Les cases à cocher permettent à l’utilisateur de sélectionner une ou plusieurs options dans une liste.
+Elles sont utilisées pour effectuer des sélections multiples (de 0 à N éléments), ou bien pour permettre un choix binaire, lorsque l’utilisateur peut sélectionner ou désélectionner une seule option.
+
+## Dépendances
 ```shell
 checkboxes
+└─ schemes
 └─ core
+└─ icons
 └─ forms
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/checkboxes
+npm install @gouvfr/checkboxes
 ```
 Via Yarn :
 ```
-yarn add install @frds/checkboxes
+yarn add install @gouvfr/checkboxes
 ```
 
-## Utilisation
-Afin d'utilise le composant `checkboxes`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/forms/main';
-@import 'node_modules/@frds/checkboxes/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur les checkboxes
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217251933/Case+cocher+-+Checkbox) sur les cases à cocher

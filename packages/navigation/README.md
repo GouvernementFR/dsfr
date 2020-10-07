@@ -1,29 +1,27 @@
-# @frds/navigation
+# @gouvfr/navigation
 
-## Dépendance
+La navigation principale est l'élément central de la navigation au sein du site, il oriente l’utilisateur à travers les grandes sections du site et sur éventuellement plusieurs niveaux de profondeur.
+
+## Dépendances
 ```shell
-buttons
+navigation
+└─ schemes
 └─ core
-└─ scheme
+└─ icons
+└─ utilities
+└─ buttons
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/navigation
+npm install @gouvfr/navigation
 ```
 Via Yarn :
 ```
-yarn add install @frds/navigation
+yarn add install @gouvfr/navigation
 ```
 
-## Utilisation
-Afin d'utilise le composant `breadcrumb`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/scheme/main';
-@import 'node_modules/@frds/navigation/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur la navigation
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789853/Navigation+principale+-+Main+navigation) sur la navigation principale

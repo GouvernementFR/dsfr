@@ -1,6 +1,8 @@
-# @frds/core
+# @gouvfr/core
 
-## Dépendance
+Le package core est utilisé comme fondation du Design System, il sert de base aux autres packages, et ne peut être utilisé seul.
+
+## Dépendances
 ```shell
 core
 ```
@@ -8,18 +10,9 @@ core
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/core
+npm install @gouvfr/core
 ```
 Via Yarn :
 ```
-yarn add install @frds/core
+yarn add install @gouvfr/core
 ```
-
-## Utilisation
-Afin d'utilise le composant `core`, il est nécessaire d'importer le composant :
-```scss
-@import 'node_modules/@frds/core/main';
-```
-## Documentation
-
-Consulter [la documentation](#)

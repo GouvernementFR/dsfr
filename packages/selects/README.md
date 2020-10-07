@@ -1,45 +1,25 @@
-# @frds/selects
+# @gouvfr/selects
 
-## Dépendance
+La liste déroulante permet à un utilisateur de choisir un élément dans une liste donnée.
+
+## Dépendances
 ```shell
 selects
 └─ core
+└─ schemes
 └─ forms
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/selects
+npm install @gouvfr/selects
 ```
 Via Yarn :
 ```
-yarn add install @frds/selects
-```
-
-## Utilisation
-Afin d'utilise le composant `selects`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/forms/main';
-@import 'node_modules/@frds/selects/main';
-```
-
-Liste déroulante
-pour le placeholder, ajoutez une première option avec les attributs selected disabled et hidden.
-
-Exemple :
-
-```html
-<label class="rf-label" for="unique-id">Label for select</label>
-<select class="rf-select" id="unique-id">
-    <option value="" selected disabled hidden>- placeholder -</option>
-    <option value="1">option 1</option>
-    <option value="2">option 2</option>
-    <option value="3">option 3</option>
-</select>
+yarn add install @gouvfr/selects
 ```
 
 ## Documentation
 
-Consulter [la documentation](#) sur les selects
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019306/Liste+d+roulante+-+Select) sur les listes déroulantes

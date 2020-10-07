@@ -1,27 +1,22 @@
-# @frds/logo
+# @gouvfr/logo
 
-## Dépendance
+Logo
+
+## Dépendances
 ```shell
-inputs
-└─ core
+logo
 └─ schemes
+└─ core
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/search
+npm install @gouvfr/logo
 ```
 Via Yarn :
 ```
-yarn add install @frds/search
-```
-
-## Utilisation
-Afin d'utilise le composant `logo`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/schemes/main';
+yarn add install @gouvfr/logo
 ```
 
 ## Documentation

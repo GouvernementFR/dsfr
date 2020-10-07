@@ -1,34 +1,28 @@
-# @frds/header
+# @gouvfr/header
 
-## Dépendance
+L’en-tête permet aux utilisateurs d’identifier sur quel site ils se trouvent. Il peut donner accès à la recherche et à certaines pages ou fonctionnalités clés.
+
+## Dépendances
 ```shell
-buttons
+header
+└─ schemes
 └─ core
-└─ scheme
-└─ navigation
+└─ icons
+└─ logo
 └─ search
+└─ navigation
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/header
+npm install @gouvfr/header
 ```
 Via Yarn :
 ```
-yarn add install @frds/header
+yarn add install @gouvfr/header
 ```
 
-## Utilisation
-Afin d'utilise le composant `header`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/scheme/main';
-@import 'node_modules/@frds/buttons/main';
-@import 'node_modules/@frds/inputs/main';
-@import 'node_modules/@frds/search/main';
-@import 'node_modules/@frds/navigation/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur le header
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header) sur l'en-tête

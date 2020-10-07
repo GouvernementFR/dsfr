@@ -1,25 +1,23 @@
-# @frds/grid
+# @gouvfr/grid
 
-## Dépendance
+La grille proposée par le design system vous permet de structurer vos pages et vos contenus simplement.
+
+## Dépendances
 ```shell
 grid
+└─ core
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/grid
+npm install @gouvfr/grid
 ```
 Via Yarn :
 ```
-yarn add install @frds/grid
+yarn add install @gouvfr/grid
 ```
 
-## Utilisation
-Afin d'utilise le composant `grid`, il est nécessaire d'importer le composant :
-```scss
-@import 'node_modules/@frds/grid/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur la grille
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331372/Grille+et+points+de+rupture+-+Grid+and+breakpoints) sur les grilles

@@ -1,27 +1,25 @@
-# @frds/highlights
+# @gouvfr/highlights
 
-## Dépendance
+La mise en exergue permet à l’utilisateur de distinguer et repérer une information facilement.
+
+## Dépendances
 ```shell
 highlights
+└─ schemes
 └─ core
+└─ typography
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/highlights
+npm install @gouvfr/highlights
 ```
 Via Yarn :
 ```
-yarn add install @frds/highlights
+yarn add install @gouvfr/highlights
 ```
 
-## Utilisation
-Afin d'utilise le composant `highlights`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/highlights/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur les highlights
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019199/Mise+en+exergue+-+Highlight) sur la mise en exergue

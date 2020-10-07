@@ -1,14 +1,23 @@
-# @frds/ie11
+# @gouvfr/ie11
+
+Ce package est utilisé de manière globale pour la compatibilité Internet Explorer 11 du Design System de l'Etat.
+
+## Dépendances
+```shell
+ie11
+└─ core
+```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/ie11
+npm install @gouvfr/ie11
 ```
 Via Yarn :
 ```
-yarn add install @frds/ie11
+yarn add install @gouvfr/ie11
 ```
 
-## Utilisation
-Afin d'utilise le composant `search`, il est nécessaire d'importer le composant ainsi que ses 
+## Documentation
+
+Consulter [la documentation](#) sur la compatibilité IE11

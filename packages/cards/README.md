@@ -1,37 +1,26 @@
-# @frds/cards
+# @gouvfr/cards
 
-## Dépendance
+La carte donne des aperçus cliquables d’une page de contenu à l’utilisateur. Elle fait généralement partie d'une collection ou liste d’aperçus de contenu similaires. La carte n’est jamais présentée de manière isolée.
+
+## Dépendances
 ```shell
-inputs
-└─ core
+cards
 └─ schemes
-└─ grid
-└─ typography
+└─ core
 └─ icons
-└─ links
+└─ typography
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/cards
+npm install @gouvfr/cards
 ```
 Via Yarn :
 ```
-yarn add install @frds/cards
-```
-
-## Utilisation
-Afin d'utilise le composant `search`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/schemes/main';
-@import 'node_modules/@frds/grid/main';
-@import 'node_modules/@frds/typography/main';
-@import 'node_modules/@frds/icons/main';
-@import 'node_modules/@frds/links/main';
+yarn add install @gouvfr/cards
 ```
 
 ## Documentation
 
-Consulter [la documentation](#) sur les cards
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331445/Carte+-+Card) sur les cartes

@@ -1,29 +1,25 @@
-# @frds/buttons
+# @gouvfr/buttons
 
-## Dépendance
+Le bouton est un élément d’interaction avec l’interface permettant à l’utilisateur d’effectuer une action.
+
+## Dépendances
 ```shell
 buttons
+└─ schemes
 └─ core
-└─ icons (optionnel)
+└─ icons
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/buttons
+npm install @gouvfr/buttons
 ```
 Via Yarn :
 ```
-yarn add install @frds/buttons
+yarn add install @gouvfr/buttons
 ```
 
-## Utilisation
-Afin d'utilise le composant `buttons`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/icons/main'; // Optionnel
-@import 'node_modules/@frds/buttons/main';
-```
 ## Documentation
 
-Consulter [la documentation](#) sur les boutons
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons) sur les boutons

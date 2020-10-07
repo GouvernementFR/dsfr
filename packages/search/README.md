@@ -1,10 +1,13 @@
-# @frds/search
+# @gouvfr/search
 
-## Dépendance
+La barre de recherche est un système de navigation qui permet à l'utilisateur d’accéder rapidement à un contenu en lançant une recherche sur un mot clé ou une expression.
+
+## Dépendances
 ```shell
-inputs
+search
 └─ core
 └─ schemes
+└─ icons
 └─ forms
 └─ inputs
 └─ buttons
@@ -13,23 +16,13 @@ inputs
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/search
+npm install @gouvfr/search
 ```
 Via Yarn :
 ```
-yarn add install @frds/search
-```
-
-## Utilisation
-Afin d'utilise le composant `search`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/schemes/main';
-@import 'node_modules/@frds/forms/main';
-@import 'node_modules/@frds/inputs/main';
-@import 'node_modules/@frds/buttons/main';
+yarn add install @gouvfr/search
 ```
 
 ## Documentation
 
-Consulter [la documentation](#) sur la barre de recherche
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186376/Barre+de+recherche+-+Search+bar) sur la barre de recherche

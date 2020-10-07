@@ -1,37 +1,26 @@
-# @frds/cards
+# @gouvfr/tiles
 
-## Dépendance
+La tuile est un raccourci ou point d’entrée qui redirige les utilisateurs vers des pages de contenu. Elle fait généralement partie d'une collection ou liste de tuiles similaires. La tuile n’est jamais présentée de manière isolée.
+
+## Dépendances
 ```shell
-inputs
+tiles
 └─ core
 └─ schemes
-└─ grid
-└─ typography
 └─ icons
-└─ links
+└─ typography
 ```
 
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/tiles
+npm install @gouvfr/tiles
 ```
 Via Yarn :
 ```
-yarn add install @frds/tiles
-```
-
-## Utilisation
-Afin d'utilise le composant `tiles`, il est nécessaire d'importer le composant ainsi que ses dépendances :
-```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/schemes/main';
-@import 'node_modules/@frds/grid/main';
-@import 'node_modules/@frds/typography/main';
-@import 'node_modules/@frds/icons/main';
-@import 'node_modules/@frds/links/main';
+yarn add install @gouvfr/tiles
 ```
 
 ## Documentation
 
-Consulter [la documentation](#) sur les tiles
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331438/Tuile+-+Tile) sur les tuiles
