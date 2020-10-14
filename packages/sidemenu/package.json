@@ -1,0 +1,16 @@
+{
+  "name": "@frds/sidemenu",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Menu latéral",
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0",
+    "@frds/utilities": "^0.0.0",
+    "@frds/schemes": "^0.0.0",
+    "@frds/buttons": "^0.0.0",
+    "@frds/icons": "^0.0.0"
+  }
+}

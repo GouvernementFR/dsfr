@@ -1,0 +1,61 @@
+<%
+
+let link = {
+  type: 'link',
+  label: 'Accès direct'
+}
+
+let sublink = {
+    type: 'link',
+    label: 'Accès direct niveau 2'
+}
+
+let subsublink = { label: 'Accès direct niveau 3' };
+
+let subitems = [subsublink, subsublink, subsublink, subsublink, subsublink, subsublink];
+
+let submenu = {
+    type: 'submenu',
+    label: 'Niveau 2',
+    subitems: subitems
+}
+
+let items = [sublink, sublink, submenu, sublink, sublink, sublink, sublink];
+
+let menu = {
+    type: 'menu',
+    label: 'Niveau 1',
+    items: items
+}
+
+let itemsAct = items.slice();
+itemsAct[3] = { ...sublink, active: true }
+
+let active = {
+    ...menu,
+    active: true,
+    label: 'Entrée menu active',
+    items: itemsAct
+};
+
+let modifier;
+
+if (locals.modifier === 'right') {
+    modifier = '--right'
+} else if (locals.modifier === 'sticky') {
+    modifier = '--sticky'
+} else if (locals.modifier === 'full-height') {
+    modifier = '--sticky-full-height'
+} else if (locals.modifier === 'full-border') {
+    modifier = '--full-border'
+} else {
+    modifier = ''
+}
+
+let data = {
+    items: [menu, active, link, menu, menu, link, menu, menu, link, menu],
+    modifier
+}
+%>
+
+<%- include('../templates/sidemenu', data); %>
