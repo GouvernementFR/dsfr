@@ -1,0 +1,19 @@
+<%
+let link = {
+  anchor: 'titre-ancre',
+  label: 'Titre de l’ancre'
+}
+%>
+
+<nav class="<%= prefix %>-summary" role="navigation" aria-label="Sommaire">
+  <div class="<%= prefix %>-summary__title">Sommaire</div>
+  <ol class="<%= prefix %>-summary__list">
+    <%
+      for (let i = 1; i < 9; i++) {
+    %>
+    <li >
+      <a class="<%= prefix %>-link" href="#<%- link.anchor %>-<%- i %>"><%- link.label %></a>
+    </li>
+    <% } %>
+  </ol>
+</nav>

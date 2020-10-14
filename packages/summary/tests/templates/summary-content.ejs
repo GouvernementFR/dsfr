@@ -1,0 +1,15 @@
+<%
+let link = {
+  anchor: 'titre-ancre',
+  label: 'Titre de l’ancre'
+}
+%>
+
+<%
+  for (let i = 1; i < 9; i++) {
+%>
+<div id="<%- link.anchor %>-<%- i %>">
+  <h2><%- link.label %> <%- i %></h2>
+  <p>Mollit amet eu elit id. Nulla culpa anim laborum voluptate voluptate occaecat consectetur magna. Consectetur pariatur amet et enim ad aliqua.</p>
+</div>
+<% } %>
