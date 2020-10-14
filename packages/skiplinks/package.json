@@ -1,0 +1,16 @@
+{
+  "name": "@frds/skiplinks",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Liens d'évitement",
+  "config": {
+    "prepend": true
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0",
+    "@frds/schemes": "^0.0.0"
+  }
+}

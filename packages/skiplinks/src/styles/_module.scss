@@ -1,0 +1,41 @@
+.#{$prefix}-skiplinks {
+  position: absolute;
+  padding: space(2N) 0;
+  @include scheme-element-bg-color(g200, true);
+  transform: translateY(-100%);
+
+  &:focus-within {
+    position: relative;
+    transform: translateY(0);
+  }
+}
+
+.#{$prefix}-skiplinks__list {
+  margin: 0 (-(space(2N))) (-(space(2N)));
+  display: flex;
+  flex-direction: column;
+
+  > li {
+    margin: 0 space(2N) space(2N);
+
+    &::before {
+      content: none;
+    }
+
+    > .#{$prefix}-link {
+      &::before {
+        content: none;
+      }
+    }
+
+    @include respond-from(sm) {
+      margin: 0 space(2N);
+    }
+  }
+
+  @include respond-from(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 (-(space(2N)));
+  }
+}
