@@ -1,21 +1,13 @@
 {
   "name": "@gouvfr/design-system",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Design System de l'Etat",
   "repository": "git@github.com:GouvernementFR/design-system.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
   "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "config": {
     "prefix": "rf"
   },
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc packages/**/src/styles/*.scss",
     "sprite": "svg-sprite --svg-xmldecl false --svg-dimattrs false --symbol -D packages/icons/src -m icons/icons_data.yml --symbol-dest icons --symbol-sprite sprite.svg --symbol-bust false icons/*.svg",
