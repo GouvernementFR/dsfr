@@ -66,7 +66,6 @@
       @content;
     }
     @else {
-      @debug $settings;
       @include _extend-responsive-link($from, $size, $place, $settings, $border-radius, $align-on-content) {
         @content;
       }

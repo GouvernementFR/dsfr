@@ -6,7 +6,16 @@
   $min-height: map_get($size-settings, min-height);
   min-height: $min-height;
 
-  $space-y: max($line-height, icon-size(map_get($size-settings, icon-only)));
+  $max-icon-height: icon-size(md);
+
+  @if map_has_key($size-settings, icon-only) {
+    $max-icon-height: icon-size(map_get($size-settings, icon-only));
+  }
+  @else if map_has_key($size-settings, icon) {
+    $max-icon-height: icon-size(map_get($size-settings, icon));
+  }
+
+  $space-y: max($line-height, $max-icon-height);
 
   padding: (#{($min-height - $space-y) / 2}) (map_get($size-settings, padding-x));
 
