@@ -1,0 +1,78 @@
+////
+/// Schemes Settings : Sets
+/// @group schemes
+////
+
+/// configuration des blocs de couleur
+/// @type map
+/// Il y a 4 types de combinaisons de couleur :
+/// - light : les couleurs claires proches du blanc
+/// - dark : les couleurs foncées proches du noir
+/// - soft : les couleurs claires avec une teinte
+/// - strong : les couleurs foncées avec une teinte (non implémentée à ce stade)
+///
+/// pour chaque combinaison de couuleur, on définit pour chaque type une couleur
+/// Si un type n'est pas défini, la couleur de type light (la première) remplace
+$scheme-sets: (
+  bf500: $blue-france-500 $blue-france-300 $grey-700 $grey-200,
+  bf500-plain: $blue-france-500,
+  w-bf500: $white $blue-france-500,
+  bf300-plain: $blue-france-300,
+  bf200-bf300: $blue-france-200 $blue-france-300,
+  t-plain: transparent,
+  t-w: transparent $white,
+  g800: $grey-800 $white,
+  g700: $grey-700 $grey-200,
+  g600: $grey-600 $grey-300,
+  g500: $grey-500 $grey-400,
+  g400: $grey-400 $grey-500,
+  g300: $grey-300 $grey-600,
+  g200: $grey-200 $grey-700,
+  g100: $grey-100 $grey-750,
+  w: $white $grey-800,
+  beige: $beige $grey-750 $grey-100,
+  g800-plain: $grey-800,
+  g600-g500: $grey-600 $grey-500,
+  g400-t: $grey-400 transparent,
+  g100-g800: $grey-100 $grey-800,
+  w-g750: $white $grey-750,
+  focus:$color-focus $color-focus-dark-mode,
+  info:$info $info-dark-mode,
+  success:$success $success-dark-mode,
+  warning:$warning $warning-dark-mode,
+  error:$error $error-dark-mode,
+  rm300: $red-marianne-300 $grey-700,
+  rm500: $red-marianne-500 $red-marianne-300,
+  b300: $brown-300 $grey-700,
+  b500: $brown-500 $brown-300,
+  bs300: $blue-soft-300 $grey-700,
+  bs500: $blue-soft-500 $blue-soft-300,
+  bd300: $blue-dark-300 $grey-700,
+  bd500: $blue-dark-500 $blue-dark-300,
+  gl300: $green-light-300 $grey-700,
+  gl500: $green-light-500 $green-light-300,
+  gm300: $green-medium-300 $grey-700,
+  gm500: $green-medium-500 $green-medium-300,
+  gs300: $green-light-300 $grey-700,
+  gs500: $green-light-500 $green-light-300,
+  gw300: $green-warm-300 $grey-700,
+  gw500: $green-warm-500 $green-warm-300,
+  od300: $orange-dark-300 $grey-700,
+  od500: $orange-dark-500 $orange-dark-300,
+  om300: $orange-dark-300 $grey-700,
+  om500: $orange-medium-500 $orange-medium-500,
+  os300: $orange-soft-300 $grey-700,
+  os500: $orange-soft-500 $orange-soft-300,
+  p300: $purple-300 $grey-700,
+  p500: $purple-500 $purple-300,
+  pd300: $pink-dark-300 $grey-700,
+  pd500: $pink-dark-500 $pink-dark-300,
+  pl300: $pink-light-300 $grey-700,
+  pl500: $pink-light-500 $pink-light-300,
+  ps300: $pink-soft-300 $grey-700,
+  ps500: $pink-soft-500 $pink-soft-300,
+  yd300: $yellow-dark-300 $grey-700,
+  yd500: $yellow-dark-500 $yellow-dark-300,
+  ym300: $yellow-medium-300 $grey-700,
+  ym500: $yellow-medium-500 $yellow-medium-300,
+) !global;

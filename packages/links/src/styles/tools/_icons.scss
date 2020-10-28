@@ -1,0 +1,58 @@
+@mixin _build-link-icon($size-settings, $place, $size:md, $font-icon: false, $reverse: false) {
+
+  $icon-size: map_get($size-settings, icon);
+
+  @if $place == only {
+    $icon-size: map_get($size-settings, icon-only);
+  }
+
+  @if $font-icon {
+    @include font-icon(null, $icon-size, before);
+  }
+  @else {
+    &::before {
+      font-size: icon-size($icon-size);
+    }
+  }
+
+  @if $reverse {
+    flex-direction: row-reverse;
+  }
+
+  @if $place == left {
+    &::before {
+      margin-left: -(icon-size(map_get($size-settings, icon)) / 4);
+      margin-right: map_get($size-settings, icon-margin-x);
+    }
+  }
+  @else if $place == right {
+    &::before {
+      margin-right: -(icon-size(map_get($size-settings, icon)) / 4);
+      margin-left: map_get($size-settings, icon-margin-x);
+    }
+  }
+  @else if $place == only {
+    $icon-size: icon-size(map_get($size-settings, icon-only));
+    $min-height: map_get($size-settings, min-height);
+    $padding-x: ($min-height - $icon-size) / 2;
+
+    width: $min-height;
+    min-height: auto;
+    height: $min-height;
+    padding-left: $padding-x;
+    padding-right: $padding-x;
+
+    &::before {
+      margin-left: 0;
+      margin-right: $padding-x;
+    }
+  }
+}
+
+@mixin _link-default-icons($places) {
+  @each $place, $icon in $places {
+    &--icon-#{$place}:not([class*="#{$prefix}-fi-"])::before {
+      @include font-icon-content($icon);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+&__popin {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  right: 0;
+  bottom: 100vh;
+  left: 0;
+  padding: 0 space(2N);
+  overflow: auto;
+  transition: bottom 0.3s, visibility 0.3s;
+  @include scheme-element-bg-color(w-g750, true);
+  z-index: 30000;
+  visibility: hidden;
+
+  --focus-z-index: 35000;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: space(9N);
+  }
+
+  &--expanded {
+    bottom: 0;
+    visibility: visible;
+  }
+
+  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: space(2N);
+    margin-right: 0;
+  }
+}

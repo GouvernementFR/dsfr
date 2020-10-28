@@ -5,7 +5,7 @@
 class ObjectFitPolyfill {
   constructor ($selectors) {
     for (let i = 0; i < $selectors.length; i++) {
-      let images = document.querySelectorAll($selectors[i]);
+      const images = [];// document.querySelectorAll($selectors[i]); TODO: erreur sur IE11
       let img;
       for (let j = 0; j < images.length; j++) {
         img = images[i];

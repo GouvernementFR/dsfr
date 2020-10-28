@@ -1,0 +1,60 @@
+
+.#{$prefix}-shortcuts {
+  //display: none;
+
+  @include respond-from(md) {
+    margin: 0 (- space(3N));
+    //display: block;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-from(md) {
+      flex-direction: row;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin: 0 0 (- space(1N));
+    }
+  }
+
+  //TODO: icon dans le link, dépendance sur rf-links
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //font-size: font-size(14);
+    padding: 0;
+    margin: 0;
+    //@include scheme-element-text-color(bf500, true);
+    //@include custom-icons(md);
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+
+    @include respond-from(md) {
+      padding: 0 space(1-5N);
+      margin: 0 0 space(1N);
+      line-height: space(3N);
+      box-shadow: none;
+
+      &:not(:first-child) {
+        @include scheme-element-border-color(g300, true, left);
+      }
+    }
+
+    &::before {
+      content: none;
+    }
+
+    @include link(sm, left) {
+      line-height: space(3N);
+      width: 100%;
+      padding: space(1-5N) space(0-5N);
+    }
+
+    @include link(sm, left, null, md);
+  }
+}

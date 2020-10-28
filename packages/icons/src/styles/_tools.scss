@@ -50,20 +50,28 @@
   @extend .#{$prefix}-fi-#{$icon}:before;
 }
 
+@mixin _font-icon() {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%font-icon {
+  @include _font-icon();
+}
+
 @mixin font-icon($icon:null, $icon-size:md, $pseudo:before) {
   @if $pseudo != after and $pseudo != before {
-    @error '$pseudo mutst be before or after element';
+    @error '$pseudo must be before or after element';
   }
 
   &::#{$pseudo} {
-    font-family: icons !important;
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @extend %font-icon;
 
     font-size: icon-size($icon-size);
 

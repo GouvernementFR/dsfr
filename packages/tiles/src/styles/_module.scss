@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  @include scheme-element-bg-color(beige);
+  @include scheme-element-bg-color(beige, true);
 
   .#{$prefix}-grid-row & {
     height: 100%;
@@ -83,7 +83,7 @@
     height: space(0-5N);
     left: 0;
     bottom: 0;
-    @include scheme-element-bg-color(bf500);
+    @include scheme-element-bg-color(bf500, true);
   }
 
   &:focus-within {

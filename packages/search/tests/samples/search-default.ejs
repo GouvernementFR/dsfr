@@ -1,2 +1,6 @@
-<% let data = {label:'Label de la barre de recherche', placeholder:locals.placeholder !== undefined ? placeholder : 'Rechercher', button:{label:'Rechercher'}, id: locals.id || 'search'} %>
+<%
+let button = locals.button || {spanClasses:['sr-only']};
+button.label = 'Rechercher';
+
+let data = {label:'Label de la barre de recherche', placeholder:locals.placeholder !== undefined ? placeholder : 'Rechercher', button: button, id: locals.id || 'search'} %>
 <%- include('../templates/search.ejs', data); %>

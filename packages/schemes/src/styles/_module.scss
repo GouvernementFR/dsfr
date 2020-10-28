@@ -1,62 +1,23 @@
-:root {
-  @include _get-hover-vars($grey-800);
-}
-
-@include define-vars();
-
-@include scheme-wrappers();
+////
+/// Schemes Module
+/// @group schemes
+////
 
 /**
-Dark mode toggle switch
+ * Définition de la valeur des custom properties d'hover par défaut au niveau du :root
  */
-input[type=checkbox]##{$prefix}-dark-mode-toggle-switch {
-  position: absolute;
-  opacity: 0;
-
-  & + label {
-    display: block;
-    position: relative;
-    background-color: var(--g200);
-    border-radius: 875rem;
-    height: 1.75rem;
-    width: 3.5rem;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath fill='%23#{str_slice(inspect($blue-france-200), 2)}' d='M14.327,5.826A6.136,6.136,0,1,0,22.694,14.8q.158-.148.306-.306a8.181,8.181,0,1,1-8.673-8.673Z'/%3E%3Cpath fill='%23#{str_slice(inspect($blue-france-500), 2)}' d='M42,18.909A4.909,4.909,0,1,1,46.909,14,4.909,4.909,0,0,1,42,18.909ZM41.182,5h1.636V7.455H41.182Zm0,15.545h1.636V23H41.182ZM35.058,8.215l1.157-1.157L37.95,8.793,36.793,9.95,35.058,8.215ZM46.05,19.207l1.157-1.157,1.735,1.735-1.157,1.157Zm1.735-12.15,1.157,1.158L47.207,9.95,46.05,8.793l1.735-1.735ZM36.793,18.05l1.157,1.157-1.735,1.735-1.157-1.157ZM51,13.182v1.636H48.545V13.182Zm-15.545,0v1.636H33V13.182Z'/%3E%3C/svg%3E");
-
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 1.25rem;
-      height: 1.25rem;
-      background-color: $white;
-      top: 0.25rem;
-      left: 0.25rem;
-      border-radius: 50%;
-      border: solid 1px var(--g300);
-    }
-
-    #{$theme-transition-selector} & {
-      transition: background-color $theme-transition-duration;
-
-      &::before {
-        transition: left $theme-transition-duration, border-color $theme-transition-duration;
-      }
-    }
-
-    &::after {
-      content: none;
-    }
-  }
-
-  &:checked + label {
-    //background-color: $grey-700;
-
-    &::before {
-      left: 2rem;
-    }
-  }
+:root {
+  @include _get-hover-vars($white, true);
 }
+
+/**
+ * Définition des customs properties de combinaisons de couleur
+ */
+@include define-vars();
+
+/**
+ * Déclaration des blocks de combinaison de couleur
+ */
+@include scheme-blocks();
+
+@import 'modules/toggle-switch';

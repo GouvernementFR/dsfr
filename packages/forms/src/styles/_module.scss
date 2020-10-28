@@ -28,7 +28,7 @@
   font-size: font-size(14);
   line-height: line-height(normal);
   font-family: $font-family-sans;
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(g800, true);
 
   &--error {
     @include scheme-element-text-color(error);
@@ -47,7 +47,7 @@
   margin-top: 0;
   margin-bottom: 0;
 
-  @include scheme-element-text-color(g600);
+  @include scheme-element-text-color(g600, true);
 
   & + .#{$prefix}-input,
   & + .#{$prefix}-input-wrap,
@@ -64,7 +64,7 @@
   font-family: $font-family-sans;
   margin-top: space(1N);
 
-  @include scheme-element-text-color(error);
+  @include scheme-element-text-color(error, true);
 
   @include font-icon(alert-line, sm) {
 
@@ -81,7 +81,7 @@
   font-family: $font-family-sans;
   margin-top: space(1N);
 
-  @include scheme-element-text-color(success);
+  @include scheme-element-text-color(success, true);
 
   @include font-icon(check-line, sm) {
     display: inline-block;
@@ -163,7 +163,7 @@
         top: space(1-5N);
         bottom: space(1-5N);
         left: -(space(1N));
-        @include scheme-element-bg-color(error);
+        @include scheme-element-bg-color(error, true);
       }
     }
 

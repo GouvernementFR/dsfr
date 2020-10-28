@@ -1,5 +1,6 @@
 <%
- let labelClasses = [prefix + '-label'];
+ let labelClasses = locals.labelClasses || [];
+ labelClasses.push(prefix + '-label');
  let labelAttrs = {};
  let describedby = [];
 

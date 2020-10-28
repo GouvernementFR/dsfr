@@ -21,7 +21,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     border: none;
     text-decoration: underline;
     cursor: pointer;
-    @include scheme-element-text-color(g600);
+    @include scheme-element-text-color(g600, true);
     @include scheme-element-bg-color(t-plain);
     @include scheme-element-focus();
   }
@@ -45,6 +45,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     display: inline;
     margin-bottom: space(1N);
     line-height: 1.125rem;
+    vertical-align: middle;
 
     &:first-child::before {
       content: none;
@@ -58,18 +59,18 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       @include font-icon(arrow-right-s-line, md);
 
       &::before {
-        @include scheme-element-text-color(g600);
+        @include scheme-element-text-color(g600, true);
         margin-right: 0;
-        margin-top: 0.0625rem;
-        margin-bottom: 0.5625rem;
-        vertical-align: sub;
+        //margin-top: 0.0625rem;
+        //margin-bottom: 0.5625rem;
+        vertical-align: middle;
       }
     }
   }
 
   &__item a {
     display: inline;
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   /**
@@ -81,7 +82,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   &__item:not(:last-child) a {
-    @include scheme-element-text-color(g600);
+    @include scheme-element-text-color(g600, true);
   }
 
   /**
@@ -92,7 +93,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   &__item--current a {
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(g800, true);
     text-decoration: none;
   }
 

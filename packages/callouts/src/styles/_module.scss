@@ -54,7 +54,7 @@
   &__title {
     font-size: font-size(22);
     line-height: line-height("snug");
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(g800, true);
     margin: 0 0 space(1N);
   }
 

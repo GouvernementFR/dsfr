@@ -1,0 +1,41 @@
+////
+/// Schemes Module : Vars
+/// @group schemes
+////
+
+/// Définition des custom properties de couleur
+/// @access public
+@mixin define-vars {
+  /* valeurs des couleurs en dark mode */
+  #{$dark-theme-selector} {
+    @each $name, $set in $scheme-sets {
+      --#{$name}: #{_scheme-set-color($set, dark)};
+    }
+  }
+
+  /* valeur des couleurs par défaut */
+  :root {
+    @each $name, $set in $scheme-sets {
+      --#{$name}: #{_scheme-set-color($set, light)};
+    }
+  }
+
+  /* valeur des couleurs dans des blocs de combinaison */
+  #{$not-dark-theme-selector} {
+    $i: 0;
+    @each $type, $variation in $scheme-blocks {
+      $i: ($i + 1);
+
+      /* le sélecteur est un bloc de combinaison de couleur du type défini */
+      [class*="#{$base-scheme}-#{$type}"],
+      /* le selecteur contient un modifier de bloc de couleur du type défini */
+      [class*="--scheme-#{$type}-"] {
+        @each $name, $set in $scheme-sets {
+          @if length($set) >= $i {
+            --#{$name}: #{_scheme-set-color($set, $type)};
+          }
+        }
+      }
+    }
+  }
+}

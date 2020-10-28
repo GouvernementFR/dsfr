@@ -8279,9 +8279,9 @@ interpret@1.2.0:
   integrity sha512-mT34yGKMNceBQUoVn7iCDKDntA7SC6gycMAWzGx1z/CMCTV7b2AAtXlo3nRyHZ1FelRkQbQjprHSYGwzLtkVbw==
 
 interpret@^1.0.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.3.0.tgz#6f637617cf307760be422ab9f4d13cc8a35eca1a"
-  integrity sha512-RDVhhDkycLoSQtE9o0vpK/vOccVDsCbWVzRxArGYnlQLcihPl2loFbPyiH7CM0m2/ijOJU3+PZbnBPaB6NJ1MA==
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.4.0.tgz#665ab8bc4da27a774a40584e812e3e0fa45b1a1e"
+  integrity sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==
 
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"

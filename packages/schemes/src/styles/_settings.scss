@@ -1,117 +1,39 @@
+////
+/// Schemes Settings
+/// @group schemes
+////
+
+/// Attribut utilisé pour le dark mode
+/// @type String
 $dt: '[data-theme="dark"]';
+
+/// Sélecteur du dark mode
+/// @type String
 $dark-theme-selector: ':root#{$dt}';
+
+/// Sélecteur du light mode
+/// @type String
 $not-dark-theme-selector: ':root:not(#{$dt})';
+
+/// Base de construction de classe de block de combinaison
+/// @type String
 $base-scheme: '#{$prefix}-scheme';
+
+/// Base de construction de sélecteur de block de combinaison
+/// @type String
 $base-scheme-selector: '.#{$base-scheme}';
+
+/// Sélecteur de transition de couleur
+/// @type String
 $theme-transition-selector: ':root[data-transition]';
+
+/// Durée de transition de couleur
+/// @type Time
 $theme-transition-duration: 0.3s;
+
+/// Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
+/// @type String
 $COLOR:unquote('$COLOR') !global;
 
-/**
-Schemes wrapper
-4 colors :
-1 - scheme color in normal mode
-3 - scheme border color in normal mode
-2 - scheme color in dark mode
-4 - scheme border color in dark mode
- */
-$scheme-wrappers : (
-  light:(
-    white: w bf500,
-    grey-100: g100-g800 bf500,
-    grey-200: g200 bf500,
-    beige: beige bf500
-  ),
-  dark:(
-    grey-800: g800-plain bf500-plain
-  ),
-  soft:(
-    brown: b300 b500,
-    blue-soft: bs300 bs500,
-    blue-dark: bd300 bd500,
-    green-light: gl300 gl500,
-    green-medium: gm300 gm500,
-    green-soft: gs300 gs500,
-    green-warm: gw300 gw500,
-    orange-dark: od300 od500,
-    orange-medium: om300 om500,
-    orange-soft: os300 os500,
-    purple: p300 p500,
-    pink-dark: pd300 pd500,
-    pink-light: pl300 pl500,
-    pink-soft: ps300 ps500,
-    yellow-dark: yd300 yd500,
-    yellow-medium: ym300 ym500,
-  )
-) !global;
-
-/**
-Scheme sets
-3 colors :
-1 - light
-2 - dark //if missing, takes light version value
-3 - chromatic //if missing, takes light version value
- */
-
-$scheme-sets : (
-  bf500: $blue-france-500 $blue-france-300 $grey-700,
-  bf500-plain: $blue-france-500,
-  w-bf500: $white $blue-france-500,
-  bf200-bf300: $blue-france-200 $blue-france-300,
-  t-plain: transparent,
-  t-w: transparent $white,
-  g800: $grey-800 $white,
-  g700: $grey-700 $grey-200,
-  g600: $grey-600 $grey-300,
-  g500: $grey-500 $grey-400,
-  g400: $grey-400 $grey-500,
-  g300: $grey-300 $grey-600,
-  g200: $grey-200 $grey-700,
-  g100: $grey-100 $grey-750,
-  w: $white $grey-800,
-  beige: $beige $grey-750 $grey-100,
-  g800-plain: $grey-800,
-  g600-g500: $grey-600 $grey-500,
-  g400-t: $grey-400 transparent,
-  g100-g800: $grey-100 $grey-800,
-  w-g750: $white $grey-750,
-  focus:$color-focus $color-focus-dark-mode,
-  info:$info $info-dark-mode,
-  success:$success $success-dark-mode,
-  warning:$warning $warning-dark-mode,
-  error:$error $error-dark-mode,
-  rm300: $red-marianne-300 $grey-700,
-  rm500: $red-marianne-500 $red-marianne-300,
-  b300: $brown-300 $grey-700,
-  b500: $brown-500 $brown-300,
-  bs300: $blue-soft-300 $grey-700,
-  bs500: $blue-soft-500 $blue-soft-300,
-  bd300: $blue-dark-300 $grey-700,
-  bd500: $blue-dark-500 $blue-dark-300,
-  gl300: $green-light-300 $grey-700,
-  gl500: $green-light-500 $green-light-300,
-  gm300: $green-medium-300 $grey-700,
-  gm500: $green-medium-500 $green-medium-300,
-  gs300: $green-light-300 $grey-700,
-  gs500: $green-light-500 $green-light-300,
-  gw300: $green-warm-300 $grey-700,
-  gw500: $green-warm-500 $green-warm-300,
-  od300: $orange-dark-300 $grey-700,
-  od500: $orange-dark-500 $orange-dark-300,
-  om300: $orange-dark-300 $grey-700,
-  om500: $orange-medium-500 $orange-medium-500,
-  os300: $orange-soft-300 $grey-700,
-  os500: $orange-soft-500 $orange-soft-300,
-  p300: $purple-300 $grey-700,
-  p500: $purple-500 $purple-300,
-  pd300: $pink-dark-300 $grey-700,
-  pd500: $pink-dark-500 $pink-dark-300,
-  pl300: $pink-light-300 $grey-700,
-  pl500: $pink-light-500 $pink-light-300,
-  ps300: $pink-soft-300 $grey-700,
-  ps500: $pink-soft-500 $pink-soft-300,
-  yd300: $yellow-dark-300 $grey-700,
-  yd500: $yellow-dark-500 $yellow-dark-300,
-  ym300: $yellow-medium-300 $grey-700,
-  ym500: $yellow-medium-500 $yellow-medium-300,
-) !global;
+@import 'settings/sets';
+@import 'settings/blocks';

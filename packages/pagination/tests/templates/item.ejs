@@ -17,7 +17,7 @@ linkClasses.push(prefix + '-pagination__link')
 %>
 
 <li <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
-    <% if (hasLink) { %><a class="<%= prefix %>-pagination__link" href="<%- href %>" aria-label="<%= title %>" title="<%= title %>"><% } %>
+    <% if (hasLink) { %><a class="<%= prefix %>-pagination__link" href="<%- href %>" title="<%= title %>"><% } %>
     <% if (locals.text !== undefined ) { %><%- text %><% } %>
     <% if (hasLink) { %></a><% } %>
 </li>

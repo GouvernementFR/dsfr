@@ -1,0 +1,9 @@
+.#{$prefix}-search-bar {
+  margin-top: space(2-5N);
+
+  @include respond-from(md) {
+    width: 23.667rem;
+    margin-top: 0;
+    box-shadow: none;
+  }
+}

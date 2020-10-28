@@ -1,0 +1,42 @@
+@mixin _build-link-size($size-settings, $border-radius: false) {
+  @include font-size(map_get($size-settings, font-size));
+  $line-height: map_get($size-settings, line-height);
+  line-height: $line-height;
+
+  $min-height: map_get($size-settings, min-height);
+  min-height: $min-height;
+
+  $space-y: max($line-height, icon-size(map_get($size-settings, icon-only)));
+
+  padding: (#{($min-height - $space-y) / 2}) (map_get($size-settings, padding-x));
+
+  @if $border-radius {
+    border-radius: #{$min-height / 2};
+  }
+}
+
+@mixin _link-align-on-content($size, $place, $size-settings) {
+  $padding-x: map_get($size-settings, padding-x);
+  $icon-margin: icon-size(map_get($size-settings, icon)) / 4;
+
+  @if $place == null {
+    margin-left: -($padding-x);
+    margin-right: -($padding-x);
+  }
+  @else if $place == left {
+    margin-left: -($padding-x - $icon-margin);
+    margin-right: -($padding-x);
+  }
+  @else if $place == right {
+    margin-left: -($padding-x);
+    margin-right: -($padding-x - $icon-margin);
+  }
+  @else if $place == only {
+    $icon-size: icon-size(map_get($size-settings, icon-only));
+    $min-height: map_get($size-settings, min-height);
+    $padding-x: ($min-height - $icon-size) / 2;
+
+    margin-left: -($padding-x);
+    margin-right: -($padding-x);
+  }
+}

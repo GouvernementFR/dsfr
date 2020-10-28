@@ -1,142 +1,21 @@
 .#{$prefix}-btn {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  font-family: $font-family-sans;
-  font-weight: font-weight(regular);
-  overflow: hidden;
-  cursor: pointer;
-  border: 0;
-  font-size: font-size(16);
-  padding: space(1-5N) space(3N);
-  -webkit-appearance: none;
-  line-height: line-height(none);
-  z-index: 1;
+
+  @include build-btn();
 
   @include scheme-element-text-color(w-bf500, true);
-  @include scheme-element-focus();
+  @include scheme-element-bg-color(bf500, true, true);
 
-  &:not(&--secondary) {
-    @include scheme-element-bg-color(bf500, true, after);
-  }
+  @include disabled(g600, g300);
 
-  &[disabled],
-  &:disabled {
-    @include scheme-element-bg-color(g300, false);
-    @include scheme-element-text-color(g600, false);
-    cursor: not-allowed;
-  }
-
-  // Icons
-  @include custom-icons();
-
-  /*
-  .#{$prefix}-icon {
-    width: icon-size(lg);
-    height: icon-size(lg);
-    flex-shrink: 0;
-  }
-   */
-
-  &.#{$prefix}-btn--icon-right {
-    /*
-    .#{$prefix}-icon {
-      margin-left: space(1N);
-    }
-     */
-
-    &::before {
-      order: 1;
-      margin-left: space(1N);
-      font-size: font-size(24);
-    }
-  }
-
-  &.#{$prefix}-btn--icon-left {
-    /*
-    .#{$prefix}-icon {
-      margin-right: space(1N);
-    }
-     */
-
-    &::before {
-      margin-right: space(1N);
-      font-size: font-size(24);
-    }
-  }
-
+  $button:&;
   // Outline variant
   &--secondary {
-    @include scheme-element-bg-color(t-plain, true, after);
+    @include scheme-element-bg-color(t-plain, false, override);
     @include scheme-element-text-color(bf500);
-    @include scheme-element-box-shadow-color(bf500);
+    @include scheme-element-box-shadow-color(bf500, $button);
 
-    &[disabled],
-    &:disabled {
-      @include scheme-element-text-color(g600-g500, false);
-      @include scheme-element-box-shadow-color(g500, false);
-    }
-  }
-
-  // Buttons sizes and spaces
-  &--sm {
-    font-size: font-size(14);
-    padding: space(1N) space(2N);
-
-    &.#{$prefix}-btn--icon-right::before,
-    &.#{$prefix}-btn--icon-left::before {
-      font-size: font-size(16);
-    }
-
-    &.#{$prefix}-btn--icon {
-      padding: space(1N);
-
-      .#{$prefix}-icon {
-        width: icon-size(md);
-        height: icon-size(md);
-      }
-
-      &::before {
-        font-size: font-size(16);
-      }
-    }
-
-    .#{$prefix}-icon {
-      width: icon-size(md);
-      height: icon-size(md);
-    }
-  }
-
-  &--lg {
-    font-size: font-size(20);
-    padding: space(2N) space(4N);
-
-    &.#{$prefix}-btn--icon {
-      padding: space(1-5N);
-    }
-
-    .#{$prefix}-icon {
-      width: icon-size(lg);
-      height: icon-size(lg);
-    }
-
-    &::before {
-      font-size: font-size(24);
-    }
-  }
-
-  &.#{$prefix}-btn--icon {
-    padding: space(1N);
-
-    /*
-    .#{$prefix}-icon {
-      width: icon-size(lg);
-      height: icon-size(lg);
-    }
-     */
-
-    &::before {
-      font-size: font-size(24);
+    @include disabled(g600) {
+      @include scheme-element-box-shadow-color(g500);
     }
   }
 }

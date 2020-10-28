@@ -56,7 +56,6 @@
       justify-content: space-between;
       font-weight: bold;
 
-      @include scheme-element-bg-color(t-plain, true, after);
       @include scheme-element-text-color(g800);
       @include scheme-element-focus();
 
@@ -78,6 +77,9 @@
 
       flex-direction: row;
       box-shadow: none;
+      border-radius: 0;
+
+      @include scheme-element-bg-color(t-plain, false, true); //TODO: override ?
 
       &::before {
         content: none;
@@ -86,6 +88,8 @@
 
     & > .#{$prefix}-btn {
       flex-direction: row-reverse;
+
+      @include scheme-element-bg-color(t-plain, false, override);
 
       @include respond-from(md) {
         padding: space(1-5N) space(3N);
@@ -139,7 +143,7 @@
         @include scheme-element-text-color(bf500);
 
         @include respond-from(md) {
-          @include scheme-element-box-shadow-color(bf500, true, inset 0 -2px 0 0 $COLOR);
+          @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR); //TODO: transition
         }
       }
 
@@ -178,7 +182,7 @@
       left: 0;
       margin: 4px 2rem 2rem;
       z-index: -1;
-      @include scheme-element-bg-color(w-g750);
+      @include scheme-element-bg-color(w-g750, true);
     }
   }
 
@@ -202,7 +206,7 @@
       line-height: 1rem;
       text-align: left;
       box-shadow: none;
-      @include scheme-element-text-color(g800);
+      @include scheme-element-text-color(g800, true);
 
       &::before {
         content: none;
@@ -212,7 +216,8 @@
     & > .#{$prefix}-link {
       display: block;
       margin: - space(2N);
-      @include scheme-element-bg-color(t-plain, true, after);
+      border-radius: 0;
+      @include scheme-element-bg-color(t-plain, true, true); // override ?
       @include scheme-element-focus();
     }
 
@@ -256,7 +261,7 @@
 
   z-index: 20000;
 
-  @include scheme-element-bg-color(w-g750);
+  @include scheme-element-bg-color(w-g750, true);
 
   margin: 0 (- space(2N)) 1px;
   padding: 0 space(2N);
@@ -285,7 +290,7 @@
       max-width: 100vw;
       height: 0.125rem;
       transform: translateX(-50%);
-      @include scheme-element-bg-color(bf200-bf300);
+      @include scheme-element-bg-color(bf200-bf300, true);
     }
   }
 
@@ -311,7 +316,7 @@
     margin-right: - space(2N);
     top: 0;
     right: space(4N);
-    @include scheme-element-bg-color(t-plain, true);
+    @include scheme-element-bg-color(t-plain);
     @include scheme-element-text-color(bf500);
 
     @include respond-from(md) {
@@ -347,7 +352,7 @@
         bottom: 0;
         height: 2px;
         margin-left: space(1N);
-        @include scheme-element-bg-color(g300);
+        @include scheme-element-bg-color(g300, true);
       }
     }
 
@@ -370,7 +375,8 @@
       display: block;
       box-shadow: none;
       margin: (- space(2N));
-      @include scheme-element-bg-color(t-plain, true, after);
+      border-radius: 0;
+      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
       @include scheme-element-focus();
 
       @include respond-from(md) {
@@ -448,8 +454,9 @@
     & > .#{$prefix}-link {
       display: block;
       margin: (- space(1-5N)) (- space(2N));
+      border-radius: 0;
 
-      @include scheme-element-bg-color(t-plain, true, after);
+      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
       @include scheme-element-focus();
 
       @include respond-from(md) {

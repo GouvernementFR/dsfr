@@ -40,27 +40,22 @@
          break;
  }
 
- let span = locals.span;
- let spanClasses = locals.spanClasses || [];
+ if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
 
- if (locals.icon !== undefined)
+ if (locals.iconPlace !== undefined) switch(locals.iconPlace)
  {
-     btnClasses.push(prefix + '-fi-' + locals.icon);
 
-     switch(locals.iconPlace) {
-         case 'left':
-             btnClasses.push(prefix + '-btn--icon-left');
-             break;
+     case 'left':
+         btnClasses.push(prefix + '-btn--icon-left');
+         break;
 
-         case 'right':
-             btnClasses.push(prefix + '-btn--icon-right');
-             break;
+     case 'right':
+         btnClasses.push(prefix + '-btn--icon-right');
+         break;
 
-         default:
-             btnClasses.push(prefix + '-btn--icon');
-             span = true;
-             spanClasses.push('sr-only');
-     }
+     case 'only':
+         btnClasses.push(prefix + '-btn--icon-only');
+
  }
 
  if (locals.secondary === true) btnClasses.push(prefix +'-btn--secondary');
@@ -71,7 +66,5 @@
  %>
 
 <button <%- includeClasses(btnClasses) %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
-    <% if (span) { %><span <%- includeClasses(spanClasses) %>><% } %>
     <%= label %>
-    <% if (span) { %></span><% } %>
 </button>

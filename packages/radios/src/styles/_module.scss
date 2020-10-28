@@ -33,7 +33,7 @@
         height: space(3N);
         margin-right: space(1N);
         border-radius: 50%;
-        @include scheme-element-border-color(g800);
+        @include scheme-element-border-color(g800, true);
         transform-origin: center;
         transition: transform 0.3s;
       }
@@ -58,7 +58,7 @@
 
     &:checked {
       + label::after {
-        @include scheme-element-bg-color(bf500);
+        @include scheme-element-bg-color(bf500, true);
       }
     }
 
@@ -95,11 +95,11 @@
     &[disabled],
     &:disabled {
       + label {
-        @include scheme-element-text-color(g600, false);
+        @include scheme-element-text-color(g600);
 
         &::before {
-          @include scheme-element-border-color(g500, false);
-          @include scheme-element-bg-color(g300, false);
+          @include scheme-element-border-color(g500);
+          @include scheme-element-bg-color(g300);
         }
       }
 

@@ -1,0 +1,28 @@
+&__head {
+  margin: 0 calc(50% - 50vw);
+  padding: 0 calc(50vw - 50%);
+  @include scheme-element-bg-color(beige, true);
+
+  .#{$prefix}-btn[data-toggle] {
+    display: block;
+    margin: 0 0 0 (- space(1-5N));
+    padding: space(1N) space(1-5N);
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 10px; //font-size(10); TODO: implémenter la taille 10px dans core
+    line-height: 1rem;
+
+    @include scheme-element-bg-color(t-plain, true, true);
+    @include scheme-element-text-color(g800);
+  }
+
+  .#{$prefix}-collapse {
+    overflow: hidden;
+
+    &::before {
+      margin-top: -1000px;
+      display: block;
+      content: '';
+    }
+  }
+}

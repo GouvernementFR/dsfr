@@ -1,88 +1,21 @@
-@font-face {
-  font-family: 'Marianne';
-  src:
-    url('#{$static-font-path}/Marianne-Light.woff2') format('woff2'),
-    url('#{$static-font-path}/Marianne-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
+@import 'modules/reset';
 
-@font-face {
-  font-family: 'Marianne';
-  src:
-    url('#{$static-font-path}/Marianne-Light_Italic.woff2') format('woff2'),
-    url('#{$static-font-path}/Marianne-Light_Italic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Marianne';
-  src:
-    url('#{$static-font-path}/Marianne-Regular.woff2') format('woff2'),
-    url('#{$static-font-path}/Marianne-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Marianne';
-  src:
-    url('#{$static-font-path}/Marianne-Regular_Italic.woff2') format('woff2'),
-    url('#{$static-font-path}/Marianne-Regular_Italic.woff') format('woff');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Marianne';
-  src:
-    url('#{$static-font-path}/Marianne-Bold.woff2') format('woff2'),
-    url('#{$static-font-path}/Marianne-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Marianne';
-  src:
-    url('#{$static-font-path}/Marianne-Bold_Italic.woff2') format('woff2'),
-    url('#{$static-font-path}/Marianne-Bold_Italic.woff') format('woff');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Spectral';
-  src:
-    url('#{$static-font-path}/Spectral-Regular.woff2') format('woff2'),
-    url('#{$static-font-path}/Spectral-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Spectral';
-  src:
-    url('#{$static-font-path}/Spectral-ExtraBold.woff2') format('woff2'),
-    url('#{$static-font-path}/Spectral-ExtraBold.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
-  border: 0;
-}
+@include font-face('Marianne', 'Marianne-Light', 300);
+@include font-face('Marianne', 'Marianne-Light_Italic', 300, italic);
+@include font-face('Marianne', 'Marianne-Regular', 400);
+@include font-face('Marianne', 'Marianne-Regular_Italic', 400, italic);
+@include font-face('Marianne', 'Marianne-Bold', 700);
+@include font-face('Marianne', 'Marianne-Bold_Italic', 700, italic);
+@include font-face('Spectral', 'Spectral-Regular', 400);
+@include font-face('Spectral', 'Spectral-ExtraBold', 900);
 
 @include font-weight();
+
+.sr-only {
+  @include sr-only();
+}
+
+@include sr-only-responsive();
 
 :root {
   --focus-z-index: 25000;

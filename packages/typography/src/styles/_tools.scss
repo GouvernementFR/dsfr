@@ -1,7 +1,7 @@
 @mixin heading($font-size, $line-height:"tight", $font-weight:null, $from-md-font-size:null) {
   font-size: font-size($font-size);
   line-height: line-height($line-height);
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(g800, true);
 
   @if $font-weight != null {
     font-weight: $font-weight;

@@ -1,6 +1,6 @@
 .#{$prefix}-skiplinks {
   position: absolute;
-  padding: space(2N) 0;
+  padding: space(1-5N) 0;
   @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
 
@@ -16,17 +16,13 @@
   flex-direction: column;
 
   > li {
-    margin: 0 space(2N) space(2N);
+    margin: 0 space(2N) space(0-5N);
 
     &::before {
       content: none;
     }
 
-    > .#{$prefix}-link {
-      &::before {
-        content: none;
-      }
-    }
+    @include link(md, null, null, null, true);
 
     @include respond-from(sm) {
       margin: 0 space(2N);

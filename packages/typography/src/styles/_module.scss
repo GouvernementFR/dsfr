@@ -1,6 +1,6 @@
 body {
   font-family: $font-family-sans;
-  @include scheme-element-text-color(g700);
+  @include scheme-element-text-color(g700, true);
 }
 
 // Headings
@@ -71,11 +71,8 @@ a {
   // Icon for external links
   &[target="_blank"] {
     @include font-icon(external-link-line, md, after) {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 2px 0.1rem space(0-5N);
-      height: 1em;
-      width: 1em;
+      margin-left: space(0-5N);
+      vertical-align: baseline;
     }
   }
 }

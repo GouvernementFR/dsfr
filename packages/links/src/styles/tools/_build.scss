@@ -1,0 +1,109 @@
+%base-link {
+  @extend %inline-flex-center;
+  @include scheme-element-focus();
+
+  overflow: hidden;
+  z-index: 1;
+}
+
+@function _sort-sizes($sizes) {
+  $sorted-map: (
+    md: map_get($sizes, md)
+  );
+
+  @each $size, $size-settings in $sizes {
+    @if $size != md {
+      $sorted-map: map-merge($sorted-map, ($size: $size-settings));
+    }
+  }
+
+  @return $sorted-map;
+}
+
+@mixin _build-link-placeholders($settings, $module, $border-radius:false) {
+  $align: #{$module}-align-on-content;
+  $sizes: _sort-sizes(map_get($settings, sizes));
+  $places: map_get($settings, places);
+
+  @each $size, $size-settings in $sizes {
+    @at-root {
+      %#{$module}--#{$size} {
+        @include _build-link-size($size-settings, $border-radius);
+      }
+
+      %#{$align}--#{$size} {
+        @include _link-align-on-content($size, null, $size-settings);
+      }
+    }
+  }
+
+  @each $place, $icon in $places {
+    @each $size, $size-settings in $sizes {
+      @at-root {
+        %#{$module}--icon-#{$place}--#{$size} {
+          @include _build-link-icon($size-settings, $place, $size, $size == md, $size == md and $place == right);
+        }
+
+        %#{$align}--#{$place}--#{$size} {
+          @include _link-align-on-content($size, $place, $size-settings);
+        }
+      }
+    }
+  }
+}
+
+@include _build-link-placeholders($links-settings, link, true);
+
+@mixin _build-link($settings, $module, $border-radius:false) {
+  $align: #{$module}-align-on-content;
+  $sizes: map_get($settings, sizes);
+  $places: map_get($settings, places);
+
+  @extend %font-smoothing;
+  @extend %base-link;
+
+  @at-root {
+    a#{&} {
+      @extend %a-reset;
+    }
+
+    button#{&} {
+      @extend %btn-reset;
+    }
+  }
+
+  @each $size, $size-settings in $sizes {
+    $placeholder: #{$module}--#{$size};
+
+    @if $size == md {
+      @extend %#{$placeholder};
+    }
+    @else {
+      &--#{$size} {
+        @extend %#{$placeholder};
+      }
+    }
+  }
+
+  @each $place, $icon in $places {
+
+    @each $size, $size-settings in $sizes {
+      @if $size == md {
+        &--icon-#{$place} {
+          @extend %#{$module}--icon-#{$place}--md;
+        }
+      }
+      @else {
+        &--icon-#{$place}#{&}--#{$size} {
+          @extend %#{$module}--icon-#{$place}--#{$size};
+        }
+      }
+    }
+  }
+
+  @include _link-default-icons($places);
+}
+
+@mixin build-link() {
+  @include _build-link($links-settings, link, true);
+}

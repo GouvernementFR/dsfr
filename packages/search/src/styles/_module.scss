@@ -3,67 +3,26 @@
   flex-direction: row;
 
   .#{$prefix}-label {
-    position: absolute;
-    overflow: hidden;
-    text-indent: -9999px;
+    @include sr-only();
   }
 
   .#{$prefix}-input {
-    @include scheme-element-box-shadow-color(bf500,true,inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
     margin-top: 0;
     border-radius: space(0-5N) 0 0;
+    max-height: none;
 
     &::placeholder {
       font-style: italic;
     }
   }
 
-  .#{$prefix}-btn {
+  @include btn(md, only, search-line) {
     flex: 1 0 auto;
-    display: flex;
-    flex-direction: row;
-    padding: space(1N) 0 space(1N) space(1N);
     border-radius: 0 space(0-5N) 0 0;
-
-    > span {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @include font-icon(search-line, lg) {
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-right: space(1N);
-      @include scheme-element-text-color(w-bf500);
-    }
   }
 
-  @include respond-from(md) {
-    &--lg {
-      .#{$prefix}-input {
-        padding: space(2N);
-        max-height: none;
-      }
-
-      .#{$prefix}-btn {
-        > span {
-          position: relative;
-          width: auto;
-          height: auto;
-          padding: 0;
-          margin: auto;
-          overflow: visible;
-          clip: unset;
-        }
-        padding: space(2N) space(4N);
-      }
-    }
+  &--lg {
+    @include btn(lg, left, null, md);
   }
 }

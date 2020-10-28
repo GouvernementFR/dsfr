@@ -1,0 +1,36 @@
+$btns-settings:(
+  sizes: (
+    sm: (
+      font-size: 14,
+      line-height: space(2N),
+      min-height: space(4N),
+      padding-x: space(2N),
+      icon: md,
+      icon-margin-x: space(1N),
+      icon-only: md,
+    ),
+    md: (
+      font-size: 16,
+      line-height: space(2-5N),
+      min-height: space(5N),
+      padding-x: space(3N),
+      icon: md,
+      icon-margin-x: space(1N),
+      icon-only: lg,
+    ),
+    lg: (
+      font-size: 20,
+      line-height: space(3N),
+      min-height: space(7N),
+      padding-x: space(4N),
+      icon: lg,
+      icon-margin-x: space(1N),
+      icon-only: xl,
+    )
+  ),
+  places: (
+    left: checkbox-line,
+    right: checkbox-line,
+    only: checkbox-line
+  )
+);

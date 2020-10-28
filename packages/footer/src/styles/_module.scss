@@ -165,7 +165,7 @@
         height: space(2N);
         width: 1px;
         margin-right: space(1N);
-        @include scheme-element-bg-color(g400);
+        @include scheme-element-bg-color(g400, true);
 
         @include respond-from(sm) {
           margin-right: space(0-5N);
@@ -183,7 +183,7 @@
       > a {
         box-shadow: none;
         font-size: font-size(12);
-        @include scheme-element-text-color(g600);
+        @include scheme-element-text-color(g600, true);
       }
 
       @include respond-from(sm) {
@@ -199,13 +199,13 @@
   &__link {
     box-shadow: none;
     font-size: font-size(12);
-    @include scheme-element-text-color(g600);
+    @include scheme-element-text-color(g600, true);
   }
 
   &__bottom-copy {
     flex-shrink: 0;
     font-size: font-size(12);
-    @include scheme-element-text-color(g600);
+    @include scheme-element-text-color(g600, true);
     margin-top: space(2N);
 
     @include respond-from(sm) {
@@ -216,7 +216,7 @@
 
   &__top {
     display: flex;
-    @include scheme-element-bg-color(beige);
+    @include scheme-element-bg-color(beige, true);
     margin: -(space(5N)) 0 space(5N);
     padding: space(2N) 0;
   }
@@ -244,7 +244,7 @@
       > a {
         box-shadow: none;
         font-size: font-size(12);
-        @include scheme-element-text-color(g600);
+        @include scheme-element-text-color(g600, true);
       }
     }
 

@@ -1,0 +1,44 @@
+////
+/// Schemes Module : Hover
+/// @group schemes
+////
+
+/// Définit les couleurs d'hover
+/// @access private
+/// @param {Color} $color: couleur de l'élément
+/// @param {Bool} $is-block: est-ce que cette définition se fait au niveau d'un block de combinaison ?
+@mixin _get-hover-vars($color, $is-block: false) {
+
+  @if opacity($color) != 0 {
+
+    $prop: color;
+
+    @if $is-block {
+      $prop: block-color;
+    }
+
+    --#{$prop}-hover: #{ overlay-color($color, 1) };
+    --#{$prop}-active: #{ overlay-color($color, 2) };
+  }
+  @else {
+    --color-hover: var(--block-color-hover);
+    --color-active: var(--block-color-active);
+  }
+}
+
+/// Applique le hover sur un élément
+/// @acces private
+@mixin _scheme-element-hover() {
+  @media (hover: hover) and (pointer: fine) {
+    &:not([disabled]),
+    &:not(:disabled) {
+      &:hover {
+        background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
+      }
+
+      &:active {
+        background-image: linear-gradient(0deg, var(--color-active), var(--color-active));
+      }
+    }
+  }
+}

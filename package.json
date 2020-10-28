@@ -12,10 +12,14 @@
   "config": {
     "prefix": "rf"
   },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc packages/**/src/styles/*.scss",
     "sprite": "svg-sprite --svg-xmldecl false --svg-dimattrs false --symbol -D packages/icons/src -m icons/icons_data.yml --symbol-dest icons --symbol-sprite sprite.svg --symbol-bust false icons/*.svg",
-    "icon-font": "svgo -f icons/ --config .svgo.yml && icon-font-generator icons/*.svg -o packages/icons/font --html false --types woff -j false --csspath packages/icons/generated/_icons.scss --cssfontsurl '#{$icon-font-path}' -p '#{$prefix}-fi' -t span --height 100 && b64-cli encode packages/icons/font/icons.woff && replace-in-file --configFile=replaceFont.js",
+    "icon-font": "svgo -f icons/ --config .svgo.yml && icon-font-generator icons/*.svg -o packages/icons/font --html false --types woff -j false --csspath packages/icons/generated/_icons.scss --cssfontsurl '#{$icon-font-path}' -p '#{$prefix}-fi' -t span --height 1200 --descent 240 --normalize true && b64-cli encode packages/icons/font/icons.woff && replace-in-file --configFile=replaceFont.js",
     "publish-npm": "npm run test && npx lerna publish",
     "test:sass": "jest",
     "test:pa11y": "node ./scripts/pa11y",

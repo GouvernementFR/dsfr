@@ -1,5 +1,5 @@
 ////
-/// Core Group Annotations
+/// Core Tools
 /// @group core
 ////
 
@@ -115,6 +115,17 @@ $fontsizes-helpers-map: (
   MIXINS
 ````````````````````` */
 
+@mixin font-face($name, $filename, $font-weight: 400, $font-style: normal) {
+  @font-face {
+    font-family: #{$name};
+    src:
+            url('#{$static-font-path}/#{$filename}.woff2') format('woff2'),
+            url('#{$static-font-path}/#{$filename}.woff') format('woff');
+    font-weight: #{$font-weight};
+    font-style: #{$font-style};
+  }
+}
+
 /// Set font size
 ///
 /// @param {Number} $size [16] - Type scale value from `$type-scale` (Default to 16 = 16px)
@@ -174,47 +185,6 @@ $fontsizes-helpers-map: (
   }
 }
 
-/// Set media query styles
-///
-/// @param {String} $media [md] - Layout size `["xs", "sm", "md", "lg", "xl"]`
-///
-/// @example scss -
-///   .foo {
-///     @include respond-from(md) {
-///     }
-///   }
-
-@mixin respond-from($media) {
-  @if $media == xs {
-    @media (min-width: 0) {
-      @content;
-    }
-  }
-  @else if $media == sm {
-    @media (min-width: $bp-sm) {
-      @content;
-    }
-  }
-  @else if $media == md {
-    @media (min-width: $bp-md) {
-      @content;
-    }
-  }
-  @else if $media == lg {
-    @media (min-width: $bp-lg) {
-      @content;
-    }
-  }
-  @else if $media == xl {
-    @media (min-width: $bp-xl) {
-      @content;
-    }
-  }
-  @else if $media == null {
-    @content;
-  }
-}
-
 /// Set text style
 ///
 /// @param {String} $type [md] - text types `["xs, "sm", "md", "lg", "lead"]` - (Default to "md")
@@ -244,7 +214,7 @@ $fontsizes-helpers-map: (
   @else if ($type == xs) {
     font-size: font-size(12);
     line-height: line-height();
-    @include scheme-element-text-color(g600);
+    @include scheme-element-text-color(g600, true);
   }
   @else if ($type == lead) {
     font-size: font-size(20);
@@ -263,3 +233,12 @@ $fontsizes-helpers-map: (
     }
   }
 }
+
+@import 'tools/breakpoints';
+@import 'tools/disabled';
+@import 'tools/display';
+@import 'tools/overlay';
+@import 'tools/pseudo';
+@import 'tools/resets';
+@import 'tools/smoothing';
+@import 'tools/sr-only';

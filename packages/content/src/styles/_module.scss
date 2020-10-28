@@ -40,11 +40,19 @@
   }
 
   &__transcription {
-    @include text-styles(sm);
+    @include link(sm, right, menu-2-fill, null, true);
 
-    .#{$prefix}-btn {
+    //@include text-styles(sm);
+
+    /*
+    .#{$prefix}-link {
+      @extend %link--icon-right--sm;
+
+      @include font-icon-content(menu-2-fill);
+
+      /*
       @include scheme-element-text-color(bf500);
-      @include scheme-element-bg-color(t-plain, true, after);
+      @include scheme-element-bg-color(t-plain, false, override);
       @include scheme-element-focus();
       height: 2rem;
       padding: space(1N) space(1-5N);
@@ -61,7 +69,9 @@
         display: inline-block;
         vertical-align: middle;
       }
+
     }
+    */
   }
 
   &--sm &__img,

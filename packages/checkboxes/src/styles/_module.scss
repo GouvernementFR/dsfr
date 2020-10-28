@@ -94,7 +94,7 @@ input[type="checkbox"] {
       height: space(3N);
       margin-right: space(1N);
       border-radius: space(0-5N);
-      @include scheme-element-border-color(g800);
+      @include scheme-element-border-color(g800, true);
       transition: background-color 0.1s;
     }
 

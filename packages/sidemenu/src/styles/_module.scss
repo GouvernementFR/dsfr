@@ -140,6 +140,7 @@
       text-align: left;
       flex-direction: row;
       box-shadow: none;
+      border-radius: 0;
       @include scheme-element-text-color(g800);
       @include scheme-element-bg-color(t-plain, true, after);
       @include scheme-element-focus();
@@ -212,6 +213,7 @@
     }
 
     @include font-icon(arrow-down-s-line, md) {
+      @include _font-icon(); //fix bug sass placeholder
       margin-left: auto;
       margin-right: space(2N);
       transition: transform 0.3s;
@@ -327,6 +329,7 @@
       .#{$prefix}-link {
         padding: space(1-5N) 0;
         font-weight: font-weight();
+        border-radius: 0;
 
         @include respond-from(md) {
           padding: space(1-5N);

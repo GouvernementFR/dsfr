@@ -11,22 +11,22 @@
   -moz-appearance: none;
   appearance: none;
 
-  @include scheme-element-text-color(g800);
-  @include scheme-element-bg-color(g200);
-  @include scheme-element-box-shadow-color(g800,true,inset 0 -2px 0 0 $COLOR);
+  @include scheme-element-text-color(g800, true);
+  @include scheme-element-bg-color(g200, true);
+  @include scheme-element-box-shadow-color(g800, true, inset 0 -2px 0 0 $COLOR);
   @include scheme-element-focus();
 
   @include placeholder {
-    @include scheme-element-text-color(g600-g500, false);
+    @include scheme-element-text-color(g600-g500, true);
   }
 
   &--valid {
-    @include scheme-element-box-shadow-color(success,false,inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(success, false, inset 0 -2px 0 0 $COLOR);
   }
 
   &--error,
   &:invalid {
-    @include scheme-element-box-shadow-color(error,false,inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
   }
 
   &:disabled {
@@ -35,7 +35,7 @@
 
     @include scheme-element-text-color(g600-g500);
     @include scheme-element-bg-color(g300);
-    @include scheme-element-box-shadow-color(g500,true,inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(g500, false, inset 0 -2px 0 0 $COLOR);
   }
 
   &:not(textarea) {
@@ -50,7 +50,7 @@
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    @include scheme-element-box-shadow-color(g200,true,inset 0 0 0 100px $COLOR);
+    @include scheme-element-box-shadow-color(g200, true, inset 0 0 0 100px $COLOR);
     @include _scheme-element(g800, -webkit-text-fill-color, true);
   }
 }

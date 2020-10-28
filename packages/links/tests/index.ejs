@@ -16,8 +16,23 @@ for (let i = 0; i < samples.length; i++) {
   <%- include(sample.sample); %>
 </div>
 <div>
-  <%- include(sample.sample, {left: true}); %>
+  <%- include(sample.sample, {iconPlace: 'left'}); %>
+</div>
+<div>
+  <%- include(sample.sample, {iconPlace: 'right'}); %>
+</div>
+<div>
+  <%- include(sample.sample, {iconPlace: 'only'}); %>
 </div>
 <%- snippet(include(sample.sample)); %>
-<%- snippet(include(sample.sample, {left: true})); %>
+<%- snippet(include(sample.sample, {iconPlace: 'left'})); %>
+<%- snippet(include(sample.sample, {iconPlace: 'right'})); %>
+<%- snippet(include(sample.sample, {iconPlace: 'only'})); %>
 <% } %>
+
+<%
+data = {insert: 'lorem ipsum dolor sit amet' + include('./samples/link-default', {iconPlace: 'right'})};
+
+%>
+
+<%- include('../../typography/tests/samples/p', data); %>
