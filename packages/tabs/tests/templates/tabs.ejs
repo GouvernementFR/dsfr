@@ -1,0 +1,46 @@
+<%#
+# paramètres Tabs
+
+* tabs (integer, required)
+
+* icon (string, optionnal) : nom de l'icone dans le bouton
+
+%>
+
+<%
+let tabsClasses = locals.classes || [];
+let tabsAttrs = locals.attributes || {};
+let activeClass = '';
+tabsClasses.push(prefix + '-tabs');
+
+if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
+
+%>
+
+<div <%- includeClasses(tabsClasses) %> <%- includeAttrs(tabsAttrs); %> >
+    <ul class="<%= prefix + '-tabs__list' %>" role="tablist">
+        <% for (let i = 0; i < locals.tabs; i++) { %>
+            <% if (i == 0) activeClass = true %>
+            <li>
+                <button class="<%= prefix + '-tabs__tab' %>" aria-selected="<%= activeClass %>" tabindex="<%= activeClass ? '0' : '-1' %>" aria-controls="tabpanel-<%= i %>" role="tab">intitulé de l'onglet</button>
+            </li>
+            <% activeClass = false %>
+        <% } %>
+    </ul>
+    <div class="<%= prefix + '-tabs__panels' %>">
+        <% for (let i = 0; i < locals.tabs; i++) { %>
+            <% if (i == 0) activeClass = true %>
+            <div class="<%= prefix + '-tabs__panel' %>" role="tabpanel" hidden="<%= activeClass ? 'false' : 'true' %>" tabindex="0" aria-selected="<%= activeClass %>">
+                <h3 hidden="true" aria-labelledby="tab-<%= i %>" tabindex="0">intitulé de l'onglet (pour l'accessibilité)</h3>
+
+                <!-- données de test -->
+                <div>
+                    <img src="https://picsum.photos/3<%= i*20 %>" alt="">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore eligendi temporibus voluptatem
+                    numquam sint vero quod autem sunt illo, at sed explicabo nemo velit, est tenetur culpa nesciunt dignissimos quia?</p>
+                </div>
+            </div>
+            <% activeClass = false %>
+        <% } %>
+    </div>
+</div>
