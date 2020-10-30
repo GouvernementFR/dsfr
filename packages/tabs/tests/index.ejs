@@ -1,0 +1,16 @@
+<%
+let data = {
+    tabs: 4
+};
+
+let samples = [
+    { title:'tabs simple', data:data}
+]
+
+%>
+
+<% sample = samples[0] %>
+<h4><%= sample.title %></h4>
+<%- include('./templates/tabs', sample.data) %>
+<%- snippet(include('./templates/tabs', sample.data)); %>
+
