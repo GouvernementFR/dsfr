@@ -1,0 +1,46 @@
+.#{$prefix}-tabs {
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    list-style: none;
+    position: relative;
+    // to overflow focus outline
+    width: calc(100% + 4px);
+    margin: -4px;
+    padding: 4px;
+
+    &::after {
+      content: '';
+      display: block;
+      flex: 1 1 auto;
+      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 -0.125rem 0 0 $COLOR');
+    }
+
+    li {
+      display: block;
+      flex: 0 0 auto;
+      margin: 0;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &__tab {
+    @include build-tab();
+    @include scheme-element-bg-color(t-plain, true, true);
+    @include scheme-element-text-color(bf500);
+    @include disabled(g600, g300);
+    @include scheme-element-box-shadow-color(bf500, true, 'inset 0 -0.125rem 0 0 $COLOR');
+
+    &[aria-selected=true] {
+      @include scheme-element-box-shadow-color(bf500, true, 'inset 0.125rem 0 0 0 $COLOR, inset -0.125rem 0.125rem 0 0 $COLOR');
+    }
+  }
+
+  &__panels {
+    max-height: 999px;
+    transition: max-height 0.3s;
+  }
+}
