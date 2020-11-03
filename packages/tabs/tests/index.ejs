@@ -1,10 +1,17 @@
 <%
 let data = {
-    tabs: 4
+    tabs: 4,
+    starterId: 1
+};
+
+let data2 = {
+    tabs: 2,
+    starterId: 5
 };
 
 let samples = [
-    { title:'tabs simple', data:data}
+    { title:'tabs 4 col', data:data},
+    { title:'tabs 2 col', data:data2}
 ]
 
 %>
@@ -12,5 +19,7 @@ let samples = [
 <% sample = samples[0] %>
 <h4><%= sample.title %></h4>
 <%- include('./templates/tabs', sample.data) %>
+<%- include('./templates/tabs', samples[1].data) %>
+
 <%- snippet(include('./templates/tabs', sample.data)); %>
 
