@@ -20,6 +20,7 @@
       display: block;
       flex: 0 0 auto;
       margin: 0;
+      cursor: pointer;
 
       &::before {
         content: none;
@@ -40,7 +41,18 @@
   }
 
   &__panels {
-    max-height: 999px;
-    transition: max-height 0.3s;
+    // transition: max-height 0.3s;
+  }
+
+  &__panel {
+    display: block;
+    transition: all ease-out 0.2s;
+    opacity: 1;
+    max-height: 10000px;
+
+    &[hidden] {
+      opacity: 0;
+      max-height: 0;
+    }
   }
 }
