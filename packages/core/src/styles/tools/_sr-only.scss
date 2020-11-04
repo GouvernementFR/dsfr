@@ -10,18 +10,24 @@
   border: 0;
 }
 
-@mixin sr-only-responsive() {
+@mixin sr-only-from() {
   @each $bp, $limits in $breakpoints {
-    .sr-only-#{$bp} {
+    .#{$prefix}-sr-only-#{$bp} {
       @include respond-from($bp) {
-        @include sr-only();
-      }
-    }
-
-    .sr-only-to-#{$bp} {
-      @include respond-to($bp) {
         @include sr-only();
       }
     }
   }
 }
+
+@mixin sr-only-to() {
+  @each $bp, $limits in $breakpoints {
+    .#{$prefix}-sr-only-to-#{$bp} {
+      @include respond-to($bp) {
+      @include sr-only();
+    }
+  }
+}
+}
+
+

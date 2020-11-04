@@ -118,12 +118,7 @@ input[type="checkbox"] {
     }
   }
 
-  &:focus {
-    + label::before {
-      @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-      outline-offset: 2px;
-    }
-  }
+  @include scheme-element-focus(false, '+ label::before');
 
   &[disabled],
   &:disabled {

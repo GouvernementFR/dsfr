@@ -76,16 +76,11 @@
 
     @include pseudo-element() {
       @include absolute-overlay();
+      @include scheme-element-focus();
     }
 
     &:focus {
-      outline-offset: -9999px;
-
-      &::before {
-        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-        outline-offset: 2px;
-        z-index: 100;
-      }
+      outline-offset: 9999px;
     }
   }
 
@@ -94,16 +89,6 @@
     display: inline-flex;
     box-shadow: none;
     width: 100%;
-
-    &:focus {
-      outline-offset: -9999px;
-
-      &::before {
-        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-        outline-offset: 2px;
-        z-index: 100;
-      }
-    }
   }
 
   @include respond-from(md) {

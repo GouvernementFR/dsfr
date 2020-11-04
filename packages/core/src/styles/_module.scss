@@ -11,11 +11,12 @@
 
 @include font-weight();
 
-.sr-only {
+.#{$prefix}-sr-only {
   @include sr-only();
 }
 
-@include sr-only-responsive();
+//@include sr-only-from();
+//@include sr-only-to();
 
 :root {
   --focus-z-index: 25000;

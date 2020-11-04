@@ -88,12 +88,7 @@ class HeaderPopin {
     button.setAttribute('class', '${prefix}-btn ${prefix}-fi-' + icon + ' ${prefix}-btn--icon' + (hasLabel ? '-right' : '') + ' ' + (size !== undefined ? '${prefix}-btn--' + size : ''));
     button.setAttribute('title', title);
     button.setAttribute('aria-controls', this.id);
-
-    const span = document.createElement('span');
-    if (!hasLabel) span.setAttribute('class', 'sr-only');
-    span.innerHTML = title;
-
-    button.append(span);
+    button.innerHTML = title;
 
     return button;
   }

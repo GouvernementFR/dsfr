@@ -69,13 +69,7 @@
     //   }
     // }
 
-    &:focus {
-      + label::before {
-        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-        outline-offset: 2px;
-        z-index: 100;
-      }
-    }
+    @include scheme-element-focus(false, '+ label::before');
 
     // &:active {
     //   + label {

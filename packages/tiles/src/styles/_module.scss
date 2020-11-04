@@ -26,7 +26,7 @@
     }
 
     &:focus {
-      outline-offset: -9999px;
+      outline-offset: 9999px;
     }
   }
 
@@ -86,11 +86,7 @@
     @include scheme-element-bg-color(bf500, true);
   }
 
-  &:focus-within {
-    @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-    outline-offset: 2px;
-    z-index: 100;
-  }
+  @include scheme-element-focus(true);
 
   @include respond-from(md) {
     &--horizontal {

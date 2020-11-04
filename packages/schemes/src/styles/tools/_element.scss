@@ -136,10 +136,32 @@ $scheme-elements-transitions:() !global;
 
 /// Ajout d'un focus sur l'élément
 /// @access public
-@mixin scheme-element-focus() {
-  &:focus {
+/// @param {Bool} $within: si true, le sélecteur est construit avec :focus-within au lieuu de :focus
+/// @param {String} $nest: élément ajouté à la fin du sélecteur
+@mixin scheme-element-focus($within: false, $nest: null) {
+  $focus: ':focus';
+  @if $within {
+    $focus: ':focus-within';
+  }
+
+  $selector: selector_append(&, $focus);
+
+  @if $nest != null {
+    $selector: selector_nest($selector, $nest);
+  }
+  @else {
+    @each $pseudo in ('::before' '::after') {
+      @if str_index(quote(&), $pseudo) {
+        $selector: selector_replace(&, $pseudo, $focus + $pseudo);
+      }
+    }
+  }
+
+  @at-root #{$selector} {
     @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
     outline-offset: 2px;
     z-index: var(--focus-z-index);
+
   }
+
 }
