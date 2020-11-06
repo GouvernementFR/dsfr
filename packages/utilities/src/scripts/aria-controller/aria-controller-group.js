@@ -1,32 +1,43 @@
 class AriaControllerGroup {
   constructor () {
     this.controllers = [];
-    this.current = null;
+    this._current = null;
   }
 
   add (controller) {
     this.controllers.push(controller);
     controller.setGroup(this);
+
+    console.log('group add', this.current, controller.active, !controller.active);
+
+    switch (true) {
+      case this.current !== null:
+      case !controller.active:
+        console.log('not current');
+        controller.apply(false);
+        break;
+
+      default:
+        this.current = controller;
+        console.log('current');
+        controller.apply(true);
+    }
+  }
+
+  get current () { return this._current; }
+
+  set current (controller) {
+    if (this._current !== null && this._current !== controller) this._current.apply(false);
+    this._current = controller;
+    if (this._current !== null) this._current.apply(true);
   }
 
   select (controller) {
-    if (this.current !== null) this.current.deactivate(true);
     this.current = controller;
   }
 
-  unselect (controller) {
-    if (this.current === controller) this.current = null;
-  }
-
-  deactivate () {
-    this.controllers.forEach((controller) => {
-      controller.deactivate(true);
-    });
-  }
-
-  get hasFocus () {
-    if (this.current === undefined) return null;
-    return this.current.hasFocus;
+  unselect () {
+    this.current = null;
   }
 }
 
