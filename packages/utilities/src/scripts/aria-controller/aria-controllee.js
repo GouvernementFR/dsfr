@@ -1,20 +1,24 @@
 import { addClass, removeClass } from '../';
 
 class AriaControllee {
-  constructor(element, modifier) {
+  constructor (element, modifier) {
     this.element = element;
     this.modifier = modifier;
     this.id = element.id;
   }
 
-  activate() {
+  activate () {
     addClass(this.element, this.modifier);
-    //this.element
+    // fermer les enfants
   }
 
-  deactivate() {
+  deactivate () {
     removeClass(this.element, this.modifier);
+  }
 
+  apply (value) {
+    if (value) this.activate();
+    else this.deactivate();
   }
 }
 
