@@ -1,59 +1,82 @@
 import { AriaControllerButton } from './aria-controller-button';
 
 class AriaController {
-  constructor (id, attributeName) {
-    this.id = id;
-    this.attributeName = attributeName;
+  constructor (controllee, type, factory) {
+    this.controllee = controllee;
+    this.type = type;
+    this.attributeName = 'aria-' + type;
     this.buttons = [];
     this.active = null;
 
-    const buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
+    const buttons = document.querySelectorAll('[aria-controls="' + this.controllee.id + '"]');
+
+    if (factory === undefined) factory = (element, controller) => new AriaControllerButton(element, controller);
 
     if (buttons.length > 0) {
       let button;
       for (let i = 0; i < buttons.length; i++) {
-        button = new AriaControllerButton(buttons[i], this);
-        if (button.isToggle) {
+        button = factory(buttons[i], this);
+        if (button.hasAttribute) {
           if (this.active === null) {
             this.active = button.activation;
-            this.toggle = button;
-          }
-          else button.change(this.active);
+            this.primary = button;
+          } else button.apply(this.active);
         }
         this.buttons.push(button);
       }
-      this.init();
     }
-    this.active = this.active || false;
+
+    this.active = this.active === true;
+
+    this.apply(this.active);
   }
 
-  activate(ignore) {
+  activate () {
     if (this.active) return;
-    if (!ignore && this.group !== null) this.group.select(this);
-    if (this.controllee !== null) this.controllee.activate();
 
+    if (this.group !== null) this.group.select(this);
+    this.apply(true);
   }
 
-  deactivate(ignore) {
+  deactivate () {
     if (!this.active) return;
-    if (!ignore && this.group != null) this.group.unselect(this);
-    if (this.controllee !== null) this.controllee.deactivate();
 
+    if (this.group != null) this.group.unselect(this);
+    this.apply(false);
   }
 
-  change(value) {
-
+  apply (value) {
+    this.active = value;
+    this.controllee.apply(value);
+    for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
   }
 
-  setGroup(group) {
+  change (hasAttribute) {
+    switch (this.type) {
+      case AriaController.EXPAND:
+        switch (true) {
+          case !hasAttribute:
+          case this.active:
+            this.deactivate();
+            break;
+
+          default:
+            this.activate();
+        }
+        break;
+
+      case AriaController.SELECT:
+        this.activate();
+        break;
+    }
+  }
+
+  setGroup (group) {
     this.group = group;
-  }
-
-  setControllee(controllee) {
-    this.controllee = controllee;
   }
 }
 
-
+AriaController.EXPAND = 'expanded';
+AriaController.SELECT = 'selected';
 
 export { AriaController };
