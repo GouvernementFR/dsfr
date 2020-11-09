@@ -1,7 +1,7 @@
-import { AriaControllee } from '../aria-controller/aria-controllee';
+import { Disclosure } from '../disclosure/aria-controllee';
 import { COLLAPSE, MODIFIER } from './collapse-constants';
 
-class CollapseControllee extends AriaControllee {
+class CollapseControllee extends Disclosure {
   constructor (element) {
     super(element, COLLAPSE + MODIFIER);
   }

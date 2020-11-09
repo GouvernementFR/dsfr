@@ -1,21 +1,21 @@
-import { AriaControllerGroup } from '@frds/utilities/src/scripts/';
-import { PANEL } from './tabs-constants';
-import { TabController } from './tab-controlller';
+import { Tab } from './tab';
+import { Disclosure, DisclosuresGroup } from '@frds/utilities/src/scripts';
 
-class TabsGroup extends AriaControllerGroup {
+const PANEL = '.${prefix}-tabs__panel';
+
+class TabsGroup extends DisclosuresGroup {
   constructor (wrapper) {
     super();
     this._index = -1;
-    this.wrapper = wrapper;
-    const panels = wrapper.querySelectorAll('.' + PANEL);
 
-    let controller;
-    for (let i = 0; i < panels.length; i++) {
-      controller = new TabController(panels[i]);
-      this.add(controller);
-    }
+    console.log('build');
+    this.build(wrapper, PANEL, Disclosure.SELECT);
 
     if (this.current === null) this.index = 0;
+  }
+
+  disclosureFactory (element, type, selector) {
+    return new Tab(element, type, selector);
   }
 
   get index () { return this._index; }
