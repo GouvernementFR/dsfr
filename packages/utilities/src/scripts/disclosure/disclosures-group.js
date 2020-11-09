@@ -4,7 +4,7 @@ const groups = {};
 
 class DisclosuresGroup {
   constructor () {
-    this.controllers = [];
+    this.disclosures = [];
     this._current = null;
   }
 
@@ -33,7 +33,7 @@ class DisclosuresGroup {
   }
 
   add (disclosure) {
-    this.controllers.push(disclosure);
+    this.disclosures.push(disclosure);
     disclosure.setGroup(this);
 
     console.log('group add', this.current, disclosure.disclosed, !disclosure.disclosed);
