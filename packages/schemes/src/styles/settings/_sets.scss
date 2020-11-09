@@ -39,7 +39,7 @@ $scheme-sets: (
   focus:$color-focus $color-focus-dark-mode,
   info:$info $info-dark-mode,
   success:$success $success-dark-mode,
-  warning:$warning $warning-dark-mode,
+  // warning:$warning $warning-dark-mode, // not used for now
   error:$error $error-dark-mode,
   rm300: $red-marianne-300 $grey-700,
   rm500: $red-marianne-500 $red-marianne-300,

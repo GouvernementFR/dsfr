@@ -5,7 +5,7 @@
   @include scheme-element-text-color(w-bf500, true);
   @include scheme-element-bg-color(bf500, true, true);
 
-  @include disabled(g600, g300);
+  @include disabled(g600, g200);
 
   $button:&;
   // Outline variant
@@ -15,7 +15,7 @@
     @include scheme-element-box-shadow-color(bf500, $button);
 
     @include disabled(g600) {
-      @include scheme-element-box-shadow-color(g500);
+      @include scheme-element-box-shadow-color(g600);
     }
   }
 }
