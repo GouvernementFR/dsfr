@@ -56,7 +56,7 @@ module.exports = merge(common, {
         use: {
           loader: 'file-loader',
           options: {
-            name: '/fonts/[name].[ext]',
+            name: 'packages/core/fonts/[name].[ext]',
           },
         },
       },
