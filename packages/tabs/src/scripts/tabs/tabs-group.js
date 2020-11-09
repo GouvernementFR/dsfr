@@ -59,6 +59,10 @@ class TabsGroup extends DisclosuresGroup {
     });
   }
 
+  disclosureFactory (element, type, selector) {
+    return new Tab(element, type, selector);
+  }
+
   get index () { return this._index; }
 
   set index (value) {
