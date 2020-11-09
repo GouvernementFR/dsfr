@@ -6,7 +6,7 @@ class Disclosure {
   constructor (element, type, selector) {
     this.element = element;
     this.type = type;
-    this.modifier = selector + type;
+    this.modifier = selector + '--' + type;
     this.id = element.id;
     this.attributeName = 'aria-' + this.type;
     this.buttons = [];

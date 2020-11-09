@@ -21,16 +21,16 @@ class TabsGroup extends DisclosuresGroup {
   get index () { return this._index; }
 
   set index (value) {
-    if (value < 0 || value >= this.controllers.length || this._index === value) return;
+    if (value < 0 || value >= this.disclosures.length || this._index === value) return;
     this._index = value;
-    this.current = this.controllers[value];
+    this.current = this.disclosures[value];
   }
 
   get current () { return super.current; }
 
   set current (controller) {
     super.current = controller;
-    this._index = this.controllers.indexOf(controller);
+    this._index = this.disclosures.indexOf(controller);
   }
 }
 
