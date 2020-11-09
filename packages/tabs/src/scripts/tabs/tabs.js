@@ -1,5 +1,7 @@
 import { TabsGroup } from './tabs-group';
 
+const WRAPPER = '.${prefix}-tabs';
+
 class Tabs {
   constructor () {
     this.groups = [];
@@ -7,7 +9,8 @@ class Tabs {
   }
 
   init () {
-    const wrappers = document.querySelectorAll('.${prefix}-tabs');
+    console.log('init');
+    const wrappers = document.querySelectorAll(WRAPPER);
 
     for (let i = 0; i < wrappers.length; i++) this.groups.push(new TabsGroup(wrappers[i]));
 

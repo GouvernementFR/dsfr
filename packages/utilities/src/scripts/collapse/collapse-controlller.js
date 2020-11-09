@@ -1,7 +1,7 @@
-import { AriaController } from '../aria-controller/aria-controller';
+import { DisclosureController } from '../disclosure/disclosure-controller';
 import { CollapseControllee } from './collapse-controlllee';
 
-class CollapseController extends AriaController {
+class CollapseController extends DisclosureController {
   constructor (element) {
     super(new CollapseControllee(element), 'aria-expanded');
   }
