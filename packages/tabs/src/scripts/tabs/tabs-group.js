@@ -63,6 +63,42 @@ class TabsGroup extends DisclosuresGroup {
     return new Tab(element, type, selector);
   }
 
+  _attachEvents () {
+    this.element.addEventListener('keydown', e => {
+      switch (e.keyCode) {
+        case KEY_BINDS.RIGHT:
+          // If we're at the end, go to the start
+          if (this.index < this.disclosures.length - 1) {
+            this.index++;
+          } else {
+            this.index = 0;
+          }
+          e.preventDefault();
+          break;
+
+        case KEY_BINDS.LEFT:
+          // If we're at the start, move to the end
+          if (this.index > 0) {
+            this.index--;
+          } else {
+            this.index = this.disclosures.length - 1;
+          }
+          e.preventDefault();
+          break;
+
+        case KEY_BINDS.HOME:
+          this.index = 0;
+          e.preventDefault();
+          break;
+
+        case KEY_BINDS.END:
+          this.index = this.disclosures.length - 1;
+          e.preventDefault();
+          break;
+      };
+    });
+  }
+
   get index () { return this._index; }
 
   set index (value) {
