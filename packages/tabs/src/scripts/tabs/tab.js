@@ -10,7 +10,6 @@ class Tab extends Disclosure {
     return new TabButton(element, this);
   }
 
-
   /**
   * apply(true), show tab
   * apply(false), hide tab
