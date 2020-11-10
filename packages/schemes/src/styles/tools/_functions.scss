@@ -85,10 +85,10 @@
   $c: #000;
 
   @if $brightness > 50% {
-    $c: darken($color, (12% * $factor ) / ($brightness / 100%));
+    $c: darken($color, (12% * $factor ) * (100% / $brightness));
   }
   @else {
-    $c: lighten($color, (16% * $factor ) / ((100% - $brightness) / 100%));
+    $c: lighten($color, (16% * $factor ) * (100% / (100% - $brightness)));
   }
 
   @return adjust_color($c, $alpha: -0.5);
