@@ -1,7 +1,9 @@
 import { TabsGroup } from './tabs-group';
+import { TABS_SELECTOR } from './tabs-constants';
 
-const WRAPPER = '.${prefix}-tabs';
-
+/**
+* Main class, initialize all Tabs element (TabsGroup) in the page
+*/
 class Tabs {
   constructor () {
     this.groups = [];
@@ -9,21 +11,19 @@ class Tabs {
   }
 
   init () {
-    console.log('init');
-    const wrappers = document.querySelectorAll(WRAPPER);
+    const wrappers = document.querySelectorAll(TABS_SELECTOR);
 
     for (let i = 0; i < wrappers.length; i++) this.groups.push(new TabsGroup(wrappers[i]));
 
     this.changing = this.change.bind(this);
     window.addEventListener('resize', this.changing);
-    this.change();
+    window.addEventListener('load', this.changing);
+    // this.change();
   }
 
   change () {
-    this.isMedium = window.matchMedia('(min-width: 48em)').matches;
-
-    if (this.isMedium) {
-    } else {
+    for (let i = 0; i < this.groups.length; i++) {
+      this.groups[i].setPanelHeight();
     }
   }
 }
