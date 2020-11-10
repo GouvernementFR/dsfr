@@ -17,7 +17,7 @@
   @include scheme-element-focus();
 
   @include placeholder {
-    @include scheme-element-text-color(g600-g500, true);
+    @include scheme-element-text-color(g600-g400, true);
   }
 
   &--valid {
@@ -29,14 +29,7 @@
     @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 1;
-
-    @include scheme-element-text-color(g600-g500);
-    @include scheme-element-bg-color(g300);
-    @include scheme-element-box-shadow-color(g500, false, inset 0 -2px 0 0 $COLOR);
-  }
+  @include disabled-form-field(input, true, false, true);
 
   &:not(textarea) {
     max-height: 2.5rem;

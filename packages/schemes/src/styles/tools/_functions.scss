@@ -8,6 +8,7 @@
 /// @param {String} $stack: chaine de caractère où chercher
 /// @param {String} $needle: élément à chercher
 /// @param {String} $content: élément de remplacement
+/// @return {String} la chaîne de caractères transformée
 @function _str-replace($stack, $needle, $content) {
   $is:quote($stack);
   $in:quote($needle);
@@ -28,6 +29,7 @@
 /// @param {String} $value: chaine de caractère dans laquelle remplacer la variable
 /// @param {Color} $hex: couleur de remplacement
 /// @param {Boolean} $url-encode: si true, la couleur est url-encodé
+/// @return {String} retourne la variable avec la couleur intégrée
 @function _replace_color($value, $hex, $url-encode:true) {
   @if $url-encode == true {
     $hex:unquote('%23' + str_slice(inspect($hex), 2));
@@ -36,10 +38,11 @@
   @return _str-replace($value, $COLOR, $hex);
 }
 
-/// Retourne la couleur correspondant au $type dans un set de couleur définit dans settings/sets
+/// Obtenir une couleur dans un set
 /// @access private
 /// @param {String} $set: combinaison de couleur
 /// @param {String} $type: type de combinaison (light, dark, soft, strong)
+/// @return {String} Retourne la couleur correspondant au $type dans un set de couleur définit dans settings/sets
 @function _scheme-set-color($set, $type) {
   $result:null;
   $i: 0;
@@ -54,11 +57,12 @@
   @return nth($set, 1);
 }
 
-/// Retourne la configuration d'un bloc comme définit dans settings/blocks
+/// Obtenir la configuration d'un block de combinaison
 /// @access private
 /// @param {String} $type: type de combinaison (light, dark, soft, strong)
 /// @param {String} $name: nom de la variation de bloc
 /// @param {Int} $index: si un index est définit, retourne l'élément à l'index dans la variation, sinon retourne l'ensemble de la variation (liste)
+/// @return {String} Retourne la configuration d'un bloc comme définit dans settings/blocks
 @function _get-scheme($type, $name, $index:0) {
   $list: map_get(map_get($scheme-blocks, $type), $name);
 
@@ -69,10 +73,11 @@
   @return nth($list, $index);
 }
 
-/// Retourne la couleur modifiée pour le hover avec une transparence de 0.5
+/// Obtenir la couleur d'hover
 /// @access private
 /// @param {Color} $color: couleur de base
 /// @param {Number} $factor: mutliplicateur permettant d'amplifier l'effet
+/// @return Retourne la couleur modifiée pour le hover avec une transparence de 0.5
 @function overlay-color($color, $factor: 1) {
   $sum: red($color) + green($color) + blue($color);
   $brightness: percentage($sum / (255*3));

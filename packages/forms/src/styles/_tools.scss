@@ -1,0 +1,11 @@
+@mixin disabled-form-field($element:input, $text:true, $background:false, $box-shadow: false, $descendant: null) {
+  @at-root #{selector_unify(&, $element)} {
+    @if $box-shadow == true {
+      $box-shadow: inset 0 -2px 0 0 $COLOR;
+    }
+    @include disabled($text, $background, $box-shadow, $descendant) {
+      opacity: 1; /* override de l'opacité chrome sur un élément disabled */
+      @content;
+    }
+  }
+}
