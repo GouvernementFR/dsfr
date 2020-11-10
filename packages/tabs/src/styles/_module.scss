@@ -1,33 +1,47 @@
+////
+/// Tabs Module
+/// @group tabs
+////
+
 .#{$prefix}-tabs {
+  position: relative;
+
+  /**
+   * ul : srollable button element
+   */
   &__list {
     display: flex;
     overflow-x: auto;
     list-style: none;
-    position: relative;
-    // to overflow focus outline
+
+    /**
+    * overflow 4px for focus
+    */
     width: calc(100% + 4px);
     margin: -4px;
     padding: 4px;
 
-    &::after {
-      content: '';
-      display: block;
+    transition: margin-bottom 0.3s; // Todo: change animation
+
+    @include pseudo-element() {
       flex: 1 1 auto;
       @include scheme-element-box-shadow-color(bf500, true, 'inset 0 -0.125rem 0 0 $COLOR');
     }
 
+    /**
+    * Reset default li behaviour
+    */
     li {
       display: block;
       flex: 0 0 auto;
       margin: 0;
-      cursor: pointer;
-
-      &::before {
-        content: none;
-      }
+      @include pseudo-element(before, none);
     }
   }
 
+  /**
+  * Tab button
+  */
   &__tab {
     @include build-tab();
     @include scheme-element-bg-color(t-plain, true, true);
@@ -40,19 +54,26 @@
     }
   }
 
-  &__panels {
-    // transition: max-height 0.3s;
-  }
-
+  /**
+  * Tab Panel
+  */
   &__panel {
     display: block;
-    transition: all ease-out 0.2s;
-    opacity: 1;
-    max-height: 10000px;
+    height: auto;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    visibility: visible;
+    transition: all ease-out 0.2s; // Todo: channge animation
+
+    &--selected {
+      opacity: 1;
+    }
 
     &[hidden] {
       opacity: 0;
-      max-height: 0;
+      pointer-events: none;
+      visibility: hidden;
     }
   }
 }
