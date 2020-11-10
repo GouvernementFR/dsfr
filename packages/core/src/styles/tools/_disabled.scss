@@ -1,37 +1,43 @@
 %disabled {
-  //pointer-events: none;
   cursor: not-allowed;
 }
 
-@mixin disabled-colors($text:true, $background:false, $box-shadow: false) {
+@function get-disabled-color($type) {
+  @return map_get($disabled-color-sets, $type);
+}
+
+@mixin disabled-colors($text:true, $background:false, $box-shadow-border: false) {
   @if $text {
-    @include scheme-element-text-color(g600-g400);
+    @include scheme-element-text-color(get-disabled-color(text));
   }
 
   @if $background {
-    @include scheme-element-bg-color(g200);
+    @include scheme-element-bg-color(get-disabled-color(background));
   }
 
-  @if $box-shadow == true {
-    @include scheme-element-box-shadow-color(g400);
+  @if $box-shadow-border == true {
+    @include scheme-element-box-shadow-color(get-disabled-color(border));
   }
-  @else if $box-shadow != false {
-    @include scheme-element-box-shadow-color(g400, false, $box-shadow);
+  @else if $box-shadow-border == border {
+    @include scheme-element-border-color(get-disabled-color(border));
+  }
+  @else if $box-shadow-border != false {
+    @include scheme-element-box-shadow-color(get-disabled-color(border), false, $box-shadow-border);
   }
 }
 
-@mixin disabled($text:true, $background:false, $box-shadow: false, $descendant:null) {
+@mixin disabled($text:true, $background:false, $box-shadow-border: false, $descendant:null) {
   &[disabled],
   &:disabled {
     @if $descendant != null {
       #{$descendant} {
-        @include disabled-colors($text, $background, $box-shadow);
+        @include disabled-colors($text, $background, $box-shadow-border);
         @extend %disabled;
         @content;
       }
     }
     @else {
-      @include disabled-colors($text, $background, $box-shadow);
+      @include disabled-colors($text, $background, $box-shadow-border);
       @extend %disabled;
       @content;
     }

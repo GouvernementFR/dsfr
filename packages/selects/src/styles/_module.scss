@@ -31,8 +31,8 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
     @include scheme-element-box-shadow-color(error,false,inset 0 -2px 0 0 $COLOR);
   }
 
-  @include disabled-form-field(select, true, false, true) {
-    @include scheme-element-data-uri-svg(g600-g400, $svg, background-image);
+  @include disabled-form-field(select) {
+    @include scheme-element-data-uri-svg(get-disabled-color(border), $svg, background-image);
   }
 
   &:-webkit-autofill,

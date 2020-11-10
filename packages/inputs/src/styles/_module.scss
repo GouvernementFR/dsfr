@@ -29,7 +29,7 @@
     @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
   }
 
-  @include disabled-form-field(input, true, false, true);
+  @include disabled-form-field(input);
 
   &:not(textarea) {
     max-height: 2.5rem;
