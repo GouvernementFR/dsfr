@@ -116,7 +116,7 @@ Ces instructions vous permettrons également d'installer une copie locale du Des
 - [Grid](packages/grid/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331372/Grille+et+points+de+rupture+-+Grid+and+breakpoints)
 - [Icons](packages/icons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396/Ic+nes+-+Icons)
 - [Content](packages/content/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias)
-- [Typography](packages/typography/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019527/Typographie+-+Typography)
+- [Body](packages/body/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019527/Typographie+-+Typography)
 - [Search](packages/search/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186376/Barre+de+recherche+-+Search+bar)
 - [Buttons](packages/buttons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons)
 - [Radios](packages/radios/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button)

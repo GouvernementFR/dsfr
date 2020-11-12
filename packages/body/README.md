@@ -1,10 +1,10 @@
-# @gouvfr/typography
+# @gouvfr/body
 
 Les typographies Marianne® et Spectral sont les typographies officielles de la charte de l'État. Leur usage crée une cohérence entre les interfaces et offre une expérience positive à l’utilisateur. Leur respect renforce également la reconnaissance de la parole de l’État.
 
 ## Dépendances
 ```shell
-typography
+body
 └─ core
 └─ schemes
 ```
@@ -12,11 +12,11 @@ typography
 ## Installation
 Installation via NPM:
 ```
-npm install @gouvfr/typography
+npm install @gouvfr/body
 ```
 Via Yarn :
 ```
-yarn add install @gouvfr/typography
+yarn add install @gouvfr/body
 ```
 
 ## Documentation
