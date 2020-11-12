@@ -13,6 +13,7 @@
     vertical-align: middle;
     transform: translateX(-0.1em);
     display: inline-block;
+    @include scheme-element-text-color(g800);
   }
 
   &::before {
