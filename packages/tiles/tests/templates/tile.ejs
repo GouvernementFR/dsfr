@@ -21,12 +21,15 @@
  if (locals.horizontal !== undefined) {
    classes.push(prefix +'-tile--horizontal');
  }
+ if (locals.mobileVertical) {
+    classes.push(prefix +'-tile--mobile-vertical');
+  }
 
  %>
 
 <div <%- includeClasses(classes)%>>
     <% if (locals.img !== undefined) { %>
-    <div class="<%= prefix %>-tile__img">
+    <div class="<%= prefix %>-tile__img-wrap">
         <img src="<%= img %>" titre="<%= alt %>" alt="<%= alt %>"/>
     </div>
     <% } %>

@@ -1,28 +1,42 @@
+////
+/// Tiles Module
+/// @group tiles
+////
+
 .#{$prefix}-tile {
   position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  @include scheme-element-bg-color(beige, true);
+  @include scheme-element-bg-color(beige, true, true);
+  @include scheme-element-focus(true);
+  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(0-5N)}) 0 0 $COLOR);
 
+  /**
+   * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
+   */
   .#{$prefix}-grid-row & {
     height: 100%;
   }
 
+  &:not(&--horizontal) {
+    text-align: center;
+
+    .#{$prefix}-tile__link {
+      justify-content: center;
+    }
+  }
+
   &__link {
     position: static;
-    text-decoration: none;
     display: inline-flex;
-    box-shadow: none;
     width: 100%;
+    box-shadow: none;
+    text-decoration: none;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
+    @include pseudo-element() {
+      @include absolute-overlay();
+      @include scheme-element-focus();
     }
 
     &:focus {
@@ -30,78 +44,80 @@
     }
   }
 
-  &__img {
-    position: relative;
-    margin: space(6N) space(6N) 0;
-    flex: 0 0 auto;
+  /**
+   * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
+   * ne respectant pas cette taille :
+   * Si l'image est plus grande, elle sera croppée afin de ne jamais dépasser 80x80.
+   * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
+   */
+  &__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin: space(4N) auto 0;
+    overflow: hidden;
 
-    &::before {
-      display: block;
-      content: '';
-      padding-bottom: map_get($ratio-scale, 1x1);
-    }
-
-    img {
-      position: absolute;
+    /**
+     * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
+     */
+    > svg {
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: 50% 50%;
-      top: 0;
-      left: 0;
     }
   }
 
   &__body {
-    padding: space(2N);
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-  }
+    align-items: center;
+    justify-content: center;
+    padding: space(2N);
 
-  &__img + &__body {
-    padding: space(3N) space(2N);
-  }
-
-  &__title {
-    @include text-styles(md);
-    font-weight: font-weight(bold);
-    margin: 0;
-
-    + .#{$prefix}-tile__desc {
-      margin: space(1N) 0 0;
-      @include text-styles(sm);
+    @include respond-from(sm) {
+      padding: space(3N);
     }
   }
 
-  &__desc {
+  &__title {
     margin: 0;
+    @include text-styles(md);
+    font-weight: font-weight(bold);
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: space(0-5N);
-    left: 0;
-    bottom: 0;
-    @include scheme-element-bg-color(bf500, true);
+  &__desc {
+    margin: space(1N) 0 0;
+    @include text-styles(sm);
   }
 
-  @include scheme-element-focus(true);
+  &--horizontal {
+    flex-direction: row;
 
-  @include respond-from(md) {
-    &--horizontal {
-      flex-direction: row;
+    .#{$prefix}-tile__img-wrap {
+      width: 48px;
+      height: 48px;
+      margin: auto 0 auto space(3N);
 
-      .#{$prefix}-tile__img {
-        margin: space(4N) 0 space(4N) space(4N);
-        flex-grow: 1;
-        flex-basis: auto;
-        width: auto;
+      + .#{$prefix}-tile__body {
+        min-height: 80px;
       }
 
-      .#{$prefix}-tile__body {
-        padding: space(4N);
-        flex-basis: 70%;
+      @include respond-from(sm) {
+        width: 80px;
+        height: 80px;
+        margin: auto 0 auto space(4N);
+      }
+    }
+
+    .#{$prefix}-tile__body {
+      align-items: flex-start;
+      padding: 0;
+      margin: space(3N);
+
+      @include respond-from(sm) {
+        margin: space(4N);
       }
     }
   }
