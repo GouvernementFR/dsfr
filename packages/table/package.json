@@ -1,0 +1,17 @@
+{
+  "name": "@frds/table",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "Tableaux",
+  "config": {
+    "wrapper": "container"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@frds/core": "^0.0.0",
+    "@frds/schemes": "^0.0.0",
+    "@frds/typography": "^0.0.0"
+  }
+}
