@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/*
+  Variables :
+    -> Unit
+    -> Colors
+    -> Typography
+    -> Spacing
+*/
+/* `````````````````````
+  Typography
+````````````````````` */
+/* `````````````````````
+  Spacing
+````````````````````` */
+/* `````````````````````
+  FUNCTIONS
+````````````````````` */
+/* `````````````````````
+  MIXINS
+````````````````````` */
+a[target="_blank"]::after {
+  content: "\f11f"; }
+
+a[target="_blank"]::after {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+body {
+  font-family: "Marianne", arial, sans-serif;
+  color: var(--g700); }
+  :root[data-transition] body {
+    transition: color 0.3s; }
+
+h1,
+.rf-h1 {
+  font-size: 2.75rem;
+  line-height: 1.25;
+  color: var(--g800);
+  font-weight: bold; }
+  :root[data-transition] h1, :root[data-transition]
+  .rf-h1 {
+    transition: color 0.3s; }
+  @media (min-width: 48em) {
+    h1,
+    .rf-h1 {
+      font-size: 3rem; } }
+
+h2,
+.rf-h2 {
+  font-size: 2rem;
+  line-height: 1.25;
+  color: var(--g800);
+  font-weight: bold; }
+  :root[data-transition] h2, :root[data-transition]
+  .rf-h2 {
+    transition: color 0.3s; }
+
+h3,
+.rf-h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--g800);
+  font-weight: bold; }
+  :root[data-transition] h3, :root[data-transition]
+  .rf-h3 {
+    transition: color 0.3s; }
+
+h4,
+.rf-h4 {
+  font-size: 1.375rem;
+  line-height: 1.375;
+  color: var(--g800);
+  font-weight: bold; }
+  :root[data-transition] h4, :root[data-transition]
+  .rf-h4 {
+    transition: color 0.3s; }
+
+.rf-display-xl {
+  font-size: 6rem;
+  line-height: 1.25;
+  color: var(--g800); }
+  :root[data-transition] .rf-display-xl {
+    transition: color 0.3s; }
+
+.rf-display-lg {
+  font-size: 5.5rem;
+  line-height: 1.25;
+  color: var(--g800); }
+  :root[data-transition] .rf-display-lg {
+    transition: color 0.3s; }
+
+.rf-display-md {
+  font-size: 4.5rem;
+  line-height: 1.25;
+  color: var(--g800); }
+  :root[data-transition] .rf-display-md {
+    transition: color 0.3s; }
+
+.rf-display-sm {
+  font-size: 4rem;
+  line-height: 1.25;
+  color: var(--g800); }
+  :root[data-transition] .rf-display-sm {
+    transition: color 0.3s; }
+
+.rf-display-xs {
+  font-size: 3.5rem;
+  line-height: 1.25;
+  color: var(--g800); }
+  :root[data-transition] .rf-display-xs {
+    transition: color 0.3s; }
+
+p {
+  font-size: 1rem;
+  line-height: 1.5; }
+
+.rf-text {
+  font-size: 1rem;
+  line-height: 1.5; }
+  .rf-text--alt {
+    font-family: "Spectral", georgia, serif; }
+
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 1px 0 0 currentColor; }
+  a:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    z-index: var(--focus-z-index); }
+  a[target="_blank"]::after {
+    font-size: 1rem;
+    margin-left: 0.25rem;
+    vertical-align: baseline; }
+
+ul,
+ol {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+  padding: 0; }
+  ul li,
+  ol li {
+    margin-bottom: 0.5rem; }
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin: 0.5rem 0 1rem; }
+
+ul {
+  list-style-type: none; }
+  ul li::before {
+    content: "\2022";
+    font-size: 1.4em;
+    margin-right: 0.5rem; }
+  ul ul {
+    list-style-type: none;
+    margin: 0.5rem 0 0.5rem 1.5rem; }
+    ul ul li::before {
+      content: "•";
+      font-size: 0.9em; }
+
+ol {
+  list-style: none;
+  counter-reset: list-number; }
+  ol ol {
+    padding-left: 1.5rem; }
+    ol ol li::before {
+      font-size: 0.9em; }
+  ol li {
+    counter-increment: list-number; }
+    ol li::before {
+      content: counters(list-number, ".") ".";
+      font-weight: 700;
+      margin-right: 0.5rem; }
+
+.rf-text--lead {
+  font-size: 1.25rem;
+  line-height: 1.375; }
+  @media (min-width: 48em) {
+    .rf-text--lead {
+      font-size: 1.5rem; } }
+
+.rf-text--lg {
+  font-size: 1.125rem;
+  line-height: 1.5; }
+  @media (min-width: 48em) {
+    .rf-text--lg {
+      font-size: 1.25rem; } }
+
+.rf-text--sm {
+  font-size: 0.875rem;
+  line-height: 1.5; }
+
+.rf-text--xs {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--g600); }
+  :root[data-transition] .rf-text--xs {
+    transition: color 0.3s; }
+
+
+/*# sourceMappingURL=typography.css.map*/

@@ -13,6 +13,7 @@
     "@frds/core": "^0.0.0",
     "@frds/schemes": "^0.0.0",
     "@frds/forms": "^0.0.0",
-    "@frds/icons": "^0.0.0"
+    "@frds/icons": "^0.0.0",
+    "@frds/typography": "^0.0.0"
   }
 }

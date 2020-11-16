@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*
+  Variables :
+    -> Unit
+    -> Colors
+    -> Typography
+    -> Spacing
+*/
+/* `````````````````````
+  Typography
+````````````````````` */
+/* `````````````````````
+  Spacing
+````````````````````` */
+/* `````````````````````
+  FUNCTIONS
+````````````````````` */
+/* `````````````````````
+  MIXINS
+````````````````````` */
+.rf-breadcrumb__item:not(:first-child)::before {
+  content: "\f110"; }
+
+.rf-breadcrumb__item:not(:first-child)::before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+/**
+un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
+ */
+.rf-breadcrumb {
+  margin: calc(1rem - 0.5rem) -0.5rem calc(1.5rem - 0.5rem);
+  padding: 0.5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  line-height: 1;
+  position: relative;
+  /**
+  margin-bottom de 1N pour créer cet espace entre chaque ligne
+   */
+  /**
+    on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
+   */
+  /**
+    lien actuel non clickable, bold et sans underline
+     */
+  /**
+  Mobile first, le label du "button" mobile est caché à partir du breakpoint md
+   */ }
+  .rf-breadcrumb__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--g600);
+    background-color: var(--t-plain); }
+    :root[data-transition] .rf-breadcrumb__button {
+      transition: color 0.3s; }
+    .rf-breadcrumb__button:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+  .rf-breadcrumb__list {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1; }
+    .rf-breadcrumb__list[hidden] {
+      display: none; }
+  .rf-breadcrumb__item {
+    display: inline;
+    margin-bottom: 0.5rem;
+    line-height: 1.125rem;
+    vertical-align: middle;
+    /**
+    flèche séparatrice en svg avec un espace à la suite
+     */ }
+    .rf-breadcrumb__item:first-child::before {
+      content: none; }
+    .rf-breadcrumb__item:not(:first-child)::before {
+      font-size: 1rem; }
+    .rf-breadcrumb__item:not(:first-child)::before {
+      color: var(--g600);
+      margin-right: 0;
+      vertical-align: middle; }
+      :root[data-transition] .rf-breadcrumb__item:not(:first-child)::before {
+        transition: color 0.3s; }
+  .rf-breadcrumb__item a {
+    display: inline;
+    vertical-align: middle; }
+  .rf-breadcrumb__item:not(:last-child)::after {
+    margin-right: 0;
+    content: ''; }
+  .rf-breadcrumb__item:not(:last-child) a {
+    color: var(--g600); }
+    :root[data-transition] .rf-breadcrumb__item:not(:last-child) a {
+      transition: color 0.3s; }
+  .rf-breadcrumb__item--current {
+    pointer-events: none; }
+  .rf-breadcrumb__item--current a {
+    color: var(--g800);
+    text-decoration: none; }
+    :root[data-transition] .rf-breadcrumb__item--current a {
+      transition: color 0.3s; }
+  @media (min-width: 48em) {
+    .rf-breadcrumb {
+      margin-bottom: calc(2rem - 0.5rem); } }
+
+
+/*# sourceMappingURL=breadcrumb.css.map*/

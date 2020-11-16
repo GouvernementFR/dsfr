@@ -1,0 +1,415 @@
+@charset "UTF-8";
+/*
+  Variables :
+    -> Unit
+    -> Colors
+    -> Typography
+    -> Spacing
+*/
+/* `````````````````````
+  Typography
+````````````````````` */
+/* `````````````````````
+  Spacing
+````````````````````` */
+/* `````````````````````
+  FUNCTIONS
+````````````````````` */
+/* `````````````````````
+  MIXINS
+````````````````````` */
+.rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+  content: "\f108"; }
+
+.rf-sidemenu::before {
+  content: "\f12e"; }
+
+.rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+.rf-sidemenu {
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
+  background-color: var(--w-g750);
+  /**
+   * Ajout de l'icône de menu en mode mobile (provisoire)
+   */
+  /**
+   * Ce wrapper ne sert que pour la version mobile
+   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+   */
+  /**
+   * Titre facultatif
+   */ }
+  :root[data-transition] .rf-sidemenu {
+    transition: background-color 0.3s; }
+  .rf-sidemenu::before {
+    font-size: 1rem;
+    position: absolute;
+    top: 0.75rem;
+    margin-left: 0.5rem;
+    transform: translateY(1px); }
+  .rf-sidemenu__wrapper {
+    margin: 0 1rem;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 99999px;
+    transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
+    .rf-sidemenu__wrapper::before {
+      display: block;
+      content: '';
+      margin-top: -100vh;
+      transition: margin-top 0.3s; }
+    .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded {
+      opacity: 1; }
+      .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded::before {
+        margin-top: 0; }
+    .rf-sidemenu__wrapper:not(.rf-sidemenu__wrapper--expanded) {
+      visibility: hidden;
+      max-height: 0; }
+    .rf-sidemenu__wrapper--expanded {
+      max-height: 100%; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__wrapper {
+        overflow: initial;
+        max-height: initial;
+        margin: 0;
+        opacity: 1; }
+        .rf-sidemenu__wrapper::before {
+          display: none; }
+        .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded {
+          opacity: 1; }
+        .rf-sidemenu__wrapper:not(.rf-sidemenu__wrapper--expanded) {
+          max-height: initial;
+          visibility: visible; } }
+  .rf-sidemenu__title {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--g800);
+    background-color: var(--t-plain);
+    border-bottom: 1px solid var(--g300); }
+    :root[data-transition] .rf-sidemenu__title {
+      transition: background-color 0.3s; }
+    :root[data-transition] .rf-sidemenu__title {
+      transition: background-color 0.3s, border-bottom 0.3s; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__title {
+        margin: 0 0 1.5rem;
+        padding: 0;
+        font-size: 1.25rem;
+        border: 0; } }
+  .rf-sidemenu__list {
+    font-weight: 700; }
+    .rf-sidemenu__list .rf-sidemenu__list {
+      margin: 0 0 0 1rem;
+      font-weight: 400; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__list {
+        margin: 0; } }
+  .rf-sidemenu__item {
+    margin: 0.25rem;
+    border-bottom: 1px solid var(--g300); }
+    :root[data-transition] .rf-sidemenu__item {
+      transition: border-bottom 0.3s; }
+    .rf-sidemenu__item::before {
+      content: none; }
+    .rf-sidemenu__item:last-child {
+      border: 0; }
+      .rf-sidemenu__item:last-child .rf-sidemenu__btn {
+        border-bottom: 1px solid var(--t-plain); }
+        :root[data-transition] .rf-sidemenu__item:last-child .rf-sidemenu__btn {
+          transition: border-bottom 0.3s; }
+    .rf-sidemenu__item--active > .rf-sidemenu__btn {
+      color: var(--bf500); }
+    .rf-sidemenu__item--active > .rf-sidemenu__link {
+      color: var(--bf500); }
+      .rf-sidemenu__item--active > .rf-sidemenu__link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -0.5rem;
+        bottom: 0;
+        width: 2px;
+        margin: 0.75rem 0;
+        background-color: currentColor; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__item {
+        margin: 0.5rem 0;
+        border: 0; } }
+  @media (min-width: 48em) {
+    .rf-sidemenu__inner {
+      padding: 0 2rem 0 0.25rem;
+      border-right: 1px solid var(--g300); }
+      :root[data-transition] .rf-sidemenu__inner {
+        transition: border-right 0.3s; } }
+  @media (min-width: 48em) {
+    .rf-sidemenu {
+      background-color: var(--t-plain); }
+      :root[data-transition] .rf-sidemenu {
+        transition: background-color 0.3s, background-color 0.3s; } }
+
+/**
+ * Wrapper des listes déployables niveau 1 et 2
+ */
+.rf-sidemenu__content {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 99999px;
+  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
+  max-height: 100%;
+  padding: 0.25rem;
+  margin: -0.25rem;
+  transition: max-height 0.3s;
+  /**
+  * Styles spécifiques aux items de liste de niveaux 2 et 3
+  */ }
+  .rf-sidemenu__content::before {
+    display: block;
+    content: '';
+    margin-top: -100vh;
+    transition: margin-top 0.3s; }
+  .rf-sidemenu__content.rf-sidemenu__content--expanded {
+    opacity: 1; }
+    .rf-sidemenu__content.rf-sidemenu__content--expanded::before {
+      margin-top: 0; }
+  .rf-sidemenu__content:not(.rf-sidemenu__content--expanded) {
+    visibility: hidden;
+    max-height: 0; }
+  .rf-sidemenu__content:not(.rf-sidemenu__content--expanded) .rf-sidemenu__item {
+    max-height: 0;
+    margin-bottom: 0; }
+  .rf-sidemenu__content__list {
+    margin: 0 0 0 1rem; }
+  .rf-sidemenu__content__item {
+    margin: 0; }
+    .rf-sidemenu__content__item .rf-sidemenu__btn {
+      padding: 0.75rem 0; }
+      .rf-sidemenu__content__item .rf-sidemenu__btn::before {
+        font-size: 1rem;
+        margin-right: 0; }
+      @media (min-width: 48em) {
+        .rf-sidemenu__content__item .rf-sidemenu__btn {
+          padding: 0.75rem 1rem 0.75rem 0.75rem; } }
+    .rf-sidemenu__content__item .rf-sidemenu__link {
+      padding: 0.75rem 0;
+      font-weight: 400; }
+      @media (min-width: 48em) {
+        .rf-sidemenu__content__item .rf-sidemenu__link {
+          padding: 0.75rem; } }
+
+/**
+ * Variantes du sidemenu proposées juste à partir du breakpoint md
+ */
+@media (min-width: 48em) {
+  .rf-sidemenu {
+    padding-right: 2rem;
+    box-shadow: none;
+    /**
+     * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
+     * La bordure se met sur la gauche
+     */
+    /**
+     * Modificateur pour que le sidemenu soit sticky
+     */
+    /**
+     * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
+     */
+    /**
+     * Modificateur pour avoir une bordure tout autour du sidemenu
+     */ }
+    .rf-sidemenu::before {
+      content: none; }
+    .rf-sidemenu--right {
+      padding-left: 2rem;
+      padding-right: 0; }
+      .rf-sidemenu--right .rf-sidemenu__inner {
+        padding: 0 1rem 0 2rem;
+        border-right: 0;
+        border-left: 1px solid var(--g300); }
+        :root[data-transition] .rf-sidemenu--right .rf-sidemenu__inner {
+          transition: border-left 0.3s; }
+    .rf-sidemenu--sticky {
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      height: 100vh;
+      max-height: 100%; }
+    .rf-sidemenu--sticky-full-height {
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      height: 100vh;
+      max-height: 100%; }
+      .rf-sidemenu--sticky-full-height .rf-sidemenu__inner {
+        overflow: auto;
+        height: 100vh; }
+    .rf-sidemenu--full-border .rf-sidemenu__title {
+      margin-top: 0.5rem; }
+    .rf-sidemenu--full-border .rf-sidemenu__inner {
+      border: 1px solid var(--g300); }
+      :root[data-transition] .rf-sidemenu--full-border .rf-sidemenu__inner {
+        transition: border 0.3s; } }
+    @media (min-width: 48em) and (min-width: 48em) {
+      .rf-sidemenu--full-border .rf-sidemenu__inner {
+        padding: 0 0.25rem 0 0.25rem; } }
+
+/**
+ * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
+ * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
+ */
+.rf-sidemenu__btn {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: calc(100% - 1rem);
+  height: 100%;
+  padding: 0.75rem 0;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: 700;
+  background: 0;
+  line-height: 1.5;
+  border: 0;
+  color: var(--g800);
+  /**
+    * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
+    * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
+    */ }
+  .rf-sidemenu__btn::before {
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: 0;
+    transition: transform 0.3s; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__btn::before {
+        margin-right: -1.5rem; } }
+  .rf-sidemenu__btn:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    z-index: var(--focus-z-index); }
+  .rf-sidemenu__btn[aria-expanded="true"] {
+    border-bottom: 1px solid var(--t-plain); }
+    :root[data-transition] .rf-sidemenu__btn[aria-expanded="true"] {
+      transition: border-bottom 0.3s; }
+    .rf-sidemenu__btn[aria-expanded="true"]::before {
+      transform: rotate(-180deg); }
+  .rf-sidemenu__btn--sidemenu-toggle {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: 0.75rem 0 0.75rem 2rem;
+    border: 0;
+    color: var(--g800);
+    background-color: var(--w-g750); }
+    :root[data-transition] .rf-sidemenu__btn--sidemenu-toggle {
+      transition: background-color 0.3s; }
+    .rf-sidemenu__btn--sidemenu-toggle:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+    .rf-sidemenu__btn--sidemenu-toggle[hidden] {
+      display: none; }
+    .rf-sidemenu__btn--sidemenu-toggle::before {
+      font-size: 1rem;
+      margin-left: auto;
+      margin-right: 1rem;
+      transition: transform 0.3s; }
+    .rf-sidemenu__btn--sidemenu-toggle[aria-expanded="true"]::before {
+      transform: rotate(-180deg); }
+  @media (min-width: 48em) {
+    .rf-sidemenu__btn {
+      width: 100%;
+      padding: 0.5rem 2rem 0.5rem 0.5rem;
+      border: 0;
+      background-color: var(--t-plain); } }
+  @media (min-width: 48em) and (hover: hover) and (pointer: fine) {
+    .rf-sidemenu__btn:not([disabled]):hover, .rf-sidemenu__btn:not(:disabled):hover {
+      background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+    .rf-sidemenu__btn:not([disabled]):active, .rf-sidemenu__btn:not(:disabled):active {
+      background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+  @media (min-width: 48em) {
+      :root:not([data-theme="dark"]) .rf-sidemenu__btn {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-sidemenu__btn,
+      :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-sidemenu__btn {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-sidemenu__btn,
+      :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-sidemenu__btn {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-sidemenu__btn,
+      :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-sidemenu__btn {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root[data-theme="dark"] .rf-sidemenu__btn {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root[data-transition] .rf-sidemenu__btn {
+        transition: background-color 0.3s; } }
+
+/**
+ * Style du lien d'accès direct du sidemnu
+ */
+.rf-sidemenu__link {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 1rem);
+  margin: 0 0.5rem;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  text-align: left;
+  box-shadow: none;
+  color: var(--g800);
+  background-color: var(--t-plain); }
+  @media (hover: hover) and (pointer: fine) {
+    .rf-sidemenu__link:not([disabled]):hover, .rf-sidemenu__link:not(:disabled):hover {
+      background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+    .rf-sidemenu__link:not([disabled]):active, .rf-sidemenu__link:not(:disabled):active {
+      background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+  :root:not([data-theme="dark"]) .rf-sidemenu__link {
+    --color-hover: var(--block-color-hover);
+    --color-active: var(--block-color-active); }
+  :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-sidemenu__link,
+  :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-sidemenu__link {
+    --color-hover: var(--block-color-hover);
+    --color-active: var(--block-color-active); }
+  :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-sidemenu__link,
+  :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-sidemenu__link {
+    --color-hover: var(--block-color-hover);
+    --color-active: var(--block-color-active); }
+  :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-sidemenu__link,
+  :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-sidemenu__link {
+    --color-hover: var(--block-color-hover);
+    --color-active: var(--block-color-active); }
+  :root[data-theme="dark"] .rf-sidemenu__link {
+    --color-hover: var(--block-color-hover);
+    --color-active: var(--block-color-active); }
+  :root[data-transition] .rf-sidemenu__link {
+    transition: background-color 0.3s; }
+  .rf-sidemenu__link:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    z-index: var(--focus-z-index); }
+  .rf-sidemenu__link::before {
+    content: none; }
+  @media (min-width: 48em) {
+    .rf-sidemenu__link {
+      width: 100%;
+      padding: 0.5rem 2rem 0.75rem 0.5rem;
+      margin: 0; } }
+
+
+/*# sourceMappingURL=sidemenu.css.map*/
