@@ -251,18 +251,6 @@ article > * + * {
 .rf-fi--xl::before {
   font-size: icon-size(xl); }
 
-.rf-fi--sm::before {
-  font-size: icon-size(sm); }
-
-.rf-fi--md::before {
-  font-size: icon-size(md); }
-
-.rf-fi--lg::before {
-  font-size: icon-size(lg); }
-
-.rf-fi--xl::before {
-  font-size: icon-size(xl); }
-
 /* ------------------------------------ *\
   SCHEMES
 \* ------------------------------------ */
