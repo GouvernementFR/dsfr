@@ -5,24 +5,75 @@
 class KeyListener {
   constructor (element) {
     this.element = element;
+    this.types = {};
   }
 
   /**
    * key: la touche de clavier
-   * action: la function à appliquer
-   * event: event type, optionnel, si c'est en down, up ou press
-   * stopPropagation: Boolean, permet d'empecher le comportement par default de l'evenement
+   * closure: la function à appliquer
+   * type: event type, optionnel, si c'est en down, up ou press
+   * stopPropagation: Boolean, permet d'empêcher le comportement par default de l'evenement
    */
-  add (key, action, event, stopPropagation) {
-    if (!this.element) this.element = document;
-    this.element.addEventListener('key' + event, e => {
-      if (e.keyCode === key) {
-        action();
-        if (stopPropagation) {
-          e.preventDefault();
-        }
+  _add (type, action) {
+    if (this.types[type] === undefined) this.types[type] = new KeyActionType(type, this.element);
+    this.types[type].add(action);
+  }
+
+  down (key, closure, stopPropagation) {
+    this._add('down', new KeyAction(key, closure, stopPropagation));
+  }
+
+  up (key, closure, stopPropagation) {
+    this._add('up', new KeyAction(key, closure, stopPropagation));
+  }
+
+  press (key, closure, stopPropagation) {
+    this._add('press', new KeyAction(key, closure, stopPropagation));
+  }
+
+  dispose () {
+    for (const type of this.types) type.dispose();
+    this.types = null;
+  }
+}
+
+class KeyActionType {
+  constructor (type, element) {
+    this.type = type;
+    this.element = element;
+    this.actions = [];
+    this.binding = this.handle.bind(this);
+    element.addEventListener('key' + type, this.binding);
+  }
+
+  add (action) {
+    this.actions.push(action);
+  }
+
+  handle (e) {
+    for (const action of this.actions) action.handle(e);
+  }
+
+  dispose () {
+    this.element.removeEventListener('key' + this.type, this.binding);
+    this.actions = null;
+  }
+}
+
+class KeyAction {
+  constructor (key, closure, stopPropagation) {
+    this.key = key;
+    this.closure = closure;
+    this.stopPropagation = stopPropagation === true;
+  }
+
+  handle (e) {
+    if (e.keyCode === this.key) {
+      this.closure();
+      if (this.stopPropagation) {
+        e.preventDefault();
       }
-    });
+    }
   }
 }
 

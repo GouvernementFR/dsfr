@@ -1,7 +1,6 @@
 import { Tab } from './tab';
-import { Disclosure, DisclosuresGroup } from '@frds/utilities/src/scripts';
+import { Disclosure, DisclosuresGroup, KeyListener } from '@frds/utilities/src/scripts';
 import { PANEL_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
-import { KeyListener } from '@frds/utilities/src/scripts/key-listener/key-listener';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
@@ -26,10 +25,10 @@ class TabsGroup extends DisclosuresGroup {
 
   _attachEvents () {
     this.keyEvents = new KeyListener(this.element);
-    this.keyEvents.add(KeyListener.RIGHT, this.arrowRightPress.bind(this), 'down', true);
-    this.keyEvents.add(KeyListener.LEFT, this.arrowLeftPress.bind(this), 'down', true);
-    this.keyEvents.add(KeyListener.HOME, this.homePress.bind(this), 'down', true);
-    this.keyEvents.add(KeyListener.END, this.endPress.bind(this), 'down', true);
+    this.keyEvents.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true);
+    this.keyEvents.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true);
+    this.keyEvents.down(KeyListener.HOME, this.homePress.bind(this), true);
+    this.keyEvents.down(KeyListener.END, this.endPress.bind(this), true);
   }
 
   arrowRightPress () {
