@@ -141,7 +141,8 @@ var ObjectFitPolyfill = function ObjectFitPolyfill($selectors) {
   _classCallCheck(this, ObjectFitPolyfill);
 
   for (var i = 0; i < $selectors.length; i++) {
-    var images = document.querySelectorAll($selectors[i]);
+    var images = []; // document.querySelectorAll($selectors[i]); TODO: erreur sur IE11
+
     var img = void 0;
 
     for (var j = 0; j < images.length; j++) {

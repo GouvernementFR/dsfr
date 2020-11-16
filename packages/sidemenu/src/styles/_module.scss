@@ -213,7 +213,6 @@
     }
 
     @include font-icon(arrow-down-s-line, md) {
-      @include _font-icon(); //fix bug sass placeholder
       margin-left: auto;
       margin-right: space(2N);
       transition: transform 0.3s;
