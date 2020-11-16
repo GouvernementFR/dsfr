@@ -1,0 +1,34 @@
+////
+/// Sidemenu Module : link
+/// @group sidemenu
+////
+
+/**
+ * Style du lien d'accès direct du sidemnu
+ */
+
+.#{$prefix}-sidemenu__link {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - #{space(2N)});
+  margin: 0 space(1N);
+  padding: space(1-5N) 0;
+  font-size: font-size();
+  text-align: left;
+  box-shadow: none;
+  @include scheme-element-text-color(g800);
+  @include scheme-element-bg-color(t-plain, true, after);
+  @include scheme-element-focus();
+  // @include scheme-element-border-color(g300, true, bottom);
+
+  &::before {
+    content: none;
+  }
+
+  @include respond-from(md) {
+    width: 100%;
+    padding: space(1N) space(4N) space(1-5N) space(1N);
+    margin: 0;
+    // @include scheme-element-border-color(t-plain, true, bottom);
+  }
+}

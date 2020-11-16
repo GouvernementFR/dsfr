@@ -1,0 +1,86 @@
+////
+/// Sidemenu Module : button
+/// @group sidemenu
+////
+
+/**
+ * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
+ * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
+ */
+.#{$prefix}-sidemenu__btn {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: calc(100% - #{space(2N)});
+  height: 100%;
+  padding: space(1-5N) 0;
+  margin: 0 auto;
+  text-align: left;
+  font-weight: font-weight(bold);
+  background: 0;
+  line-height: line-height();
+  border: 0;
+  // @include scheme-element-border-color(g300, true, bottom);
+
+  @include font-icon(arrow-down-s-line, md) {
+    margin-left: auto;
+    margin-right: 0;
+    transition: transform 0.3s;
+
+    @include respond-from(md) {
+      margin-right: -(space(3N));
+    }
+  }
+
+  @include scheme-element-text-color(g800);
+  @include scheme-element-focus();
+
+  &[aria-expanded="true"] {
+    @include scheme-element-border-color(t-plain, true, bottom);
+
+    &::before {
+      transform: rotate(-180deg);
+    }
+  }
+
+  /**
+    * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
+    * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
+    */
+  &--sidemenu-toggle {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: space(1-5N) 0 space(1-5N) space(4N);
+    border: 0;
+    @include scheme-element-text-color(g800);
+    @include scheme-element-bg-color(w-g750, true);
+    @include scheme-element-focus();
+
+    &[hidden] {
+      display: none;
+    }
+
+    @include font-icon(arrow-down-s-line, md) {
+      margin-left: auto;
+      margin-right: space(2N);
+      transition: transform 0.3s;
+    }
+
+    &[aria-expanded="true"] {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  @include respond-from(md) {
+    width: 100%;
+    padding: space(1N) space(4N) space(1N) space(1N);
+    border: 0;
+    @include scheme-element-bg-color(t-plain, true, after);
+  }
+}

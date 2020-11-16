@@ -1,31 +1,39 @@
+////
+/// Sidemenu Module
+/// @group sidemenu
+////
+
 .#{$prefix}-sidemenu {
   position: relative;
   box-shadow: $shadow-md;
   @include scheme-element-bg-color(w-g750, true);
 
+  /**
+   * Ajout de l'icône de menu en mode mobile (provisoire)
+   */
   @include font-icon(menu-2-fill, md) {
-    margin-left: space(1N);
-    transform: translateY(1px);
     position: absolute;
     top: space(1-5N);
+    margin-left: space(1N);
+    transform: translateY(1px);
   }
 
-  @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true);
-  }
-
+  /**
+   * Ce wrapper ne sert que pour la version mobile
+   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+   */
   &__wrapper {
-    @include collapse();
     margin: 0 space(2N);
+    @include collapse();
 
     &--expanded {
       max-height: 100%;
     }
 
     @include respond-from(md) {
-      margin: 0;
-      max-height: initial;
       overflow: initial;
+      max-height: initial;
+      margin: 0;
       opacity: 1;
 
       &::before {
@@ -37,26 +45,29 @@
       }
 
       &:not(#{&}--expanded) {
-        visibility: visible;
         max-height: initial;
+        visibility: visible;
       }
     }
   }
 
+  /**
+   * Titre facultatif
+   */
   &__title {
-    font-size: font-size(18);
-    font-weight: font-weight(bold);
     margin: 0;
     padding: space(2N) 0;
+    font-size: font-size(18);
+    font-weight: font-weight(bold);
     line-height: line-height(normal);
     @include scheme-element-text-color(g800);
     @include scheme-element-bg-color(t-plain, true);
     @include scheme-element-border-color(g300, true, bottom);
 
     @include respond-from(md) {
-      font-size: font-size(20);
       margin: 0 0 space(3N);
       padding: 0;
+      font-size: font-size(20);
       border: 0;
     }
   }
@@ -65,8 +76,8 @@
     font-weight: font-weight('bold');
 
     .#{$prefix}-sidemenu__list {
-      font-weight: font-weight();
       margin: 0 0 0 space(2N);
+      font-weight: font-weight();
     }
 
     @include respond-from(md) {
@@ -76,93 +87,25 @@
 
   &__item {
     margin: space(0-5N);
+    @include scheme-element-border-color(g300, true, bottom);
 
     &::before {
       content: none;
     }
 
     &:last-child {
-      .#{$prefix}-btn {
-        @include scheme-element-border-color(t-plain, true, bottom);
-      }
-    }
-
-    .#{$prefix}-btn {
-      display: flex;
-      position: relative;
-      flex-direction: row-reverse;
-      align-items: center;
-      text-align: left;
-      font-weight: font-weight(bold);
-      background: 0;
-      line-height: line-height();
       border: 0;
-      width: calc(100% - #{space(2N)});
-      height: 100%;
-      padding: space(1-5N) 0;
-      margin: 0 auto;
-      @include scheme-element-border-color(g300, true, bottom);
 
-      @include font-icon(arrow-down-s-line, md) {
-        margin-left: auto;
-        margin-right: 0;
-        transition: transform 0.3s;
-
-        @include respond-from(md) {
-          margin-right: -(space(3N));
-        }
-      }
-
-      @include scheme-element-text-color(g800);
-      @include scheme-element-focus();
-
-      &[aria-expanded="true"] {
-        @include scheme-element-border-color(t-plain, true, bottom);
-
-        &::before {
-          transform: rotate(-180deg);
-        }
-      }
-
-      @include respond-from(md) {
-        width: 100%;
-        padding: space(1N) space(4N) space(1N) space(1N);
-        border: 0;
-        @include scheme-element-bg-color(t-plain, true, after);
-      }
-    }
-
-    .#{$prefix}-link {
-      width: calc(100% - #{space(2N)});
-      padding: space(1-5N) 0;
-      font-size: font-size();
-      margin: 0 space(1N);
-      text-align: left;
-      flex-direction: row;
-      box-shadow: none;
-      border-radius: 0;
-      @include scheme-element-text-color(g800);
-      @include scheme-element-bg-color(t-plain, true, after);
-      @include scheme-element-focus();
-      @include scheme-element-border-color(g300, true, bottom);
-
-      &::before {
-        content: none;
-      }
-
-      @include respond-from(md) {
-        width: 100%;
-        padding: space(1N);
-        margin: 0;
+      .#{$prefix}-sidemenu__btn {
         @include scheme-element-border-color(t-plain, true, bottom);
       }
     }
 
     &--active {
-      & > .#{$prefix}-btn {
+      & > .#{$prefix}-sidemenu__btn {
         @include scheme-element-text-color(bf500);
       }
-      & > .#{$prefix}-link {
+      & > .#{$prefix}-sidemenu__link {
         @include scheme-element-text-color(bf500);
 
         &::before {
@@ -172,61 +115,19 @@
           left: -(space(1N));
           bottom: 0;
           width: 2px;
-          background-color: currentColor;
           margin: space(1-5N) 0;
+          background-color: currentColor;
         }
       }
     }
 
     @include respond-from(md) {
       margin: space(1N) 0;
-    }
-
-    .#{$prefix}__item {
-      .#{prefix}-sidemenu__content {
-        .#{$prefix}-link {
-          padding: space(1-5N) 0;
-          font-weight: font-weight();
-
-          @include respond-from(md) {
-            padding: space(1-5N);
-          }
-        }
-      }
-    }
-  }
-
-  &__button {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    text-align: left;
-    border: 0;
-    width: 100%;
-    padding: space(1-5N) 0 space(1-5N) space(4N);
-    @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(w-g750, true);
-    @include scheme-element-focus();
-
-    &[hidden] {
-      display: none;
-    }
-
-    @include font-icon(arrow-down-s-line, md) {
-      margin-left: auto;
-      margin-right: space(2N);
-      transition: transform 0.3s;
-    }
-
-    &[aria-expanded="true"] {
-      &::before {
-        transform: rotate(-180deg);
-      }
+      border: 0;
     }
   }
 
   &__inner {
-
     @include respond-from(md) {
       padding: 0 space(4N) 0 space(0-5N);
       @include scheme-element-border-color(g300, true, right);
@@ -234,123 +135,11 @@
   }
 
   @include respond-from(md) {
-    padding-right: space(4N);
-    box-shadow: none;
-
-    &::before {
-      content: none;
-    }
-
-    &--right {
-      padding-left: space(4N);
-      padding-right: 0;
-
-      .#{$prefix}-sidemenu__inner {
-        border-right: 0;
-        padding: 0 space(2N) 0 space(4N);
-        @include scheme-element-border-color(g300, true, left);
-      }
-    }
-
-    &--sticky {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%;
-    }
-
-    &--sticky-full-height {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%;
-
-      .#{$prefix}-sidemenu__inner {
-        height: 100vh;
-        overflow: auto;
-      }
-    }
-
-    &--full-border {
-
-      .#{$prefix}-sidemenu__title {
-        margin-top: space(1N);
-      }
-      .#{$prefix}-sidemenu__inner {
-        @include scheme-element-border-color(g300, true);
-
-        @include respond-from(md) {
-          padding: 0 space(0-5N) 0 space(0-5N);
-        }
-      }
-    }
-  }
-
-  &__content {
-    @include collapse();
-    padding: space(0-5N);
-    margin: -(space(0-5N));
-    max-height: 100%;
-    transition: max-height 0.3s;
-
-    &:not(&--expanded) {
-      .#{$prefix}-sidemenu__item {
-        margin-bottom: 0;
-        max-height: 0;
-      }
-    }
-
-    &__list {
-      margin: 0 0 0 space(2N);
-    }
-
-    &__item {
-      margin: 0;
-
-      &::before {
-        content: none;
-      }
-
-      .#{$prefix}-btn {
-        padding: space(1-5N) 0;
-
-        @include font-icon(arrow-down-s-line, md) {
-          margin-right: 0;
-        }
-
-        @include respond-from(md) {
-          padding: space(1-5N) space(2N) space(1-5N) space(1-5N);
-        }
-      }
-
-      .#{$prefix}-link {
-        padding: space(1-5N) 0;
-        font-weight: font-weight();
-        border-radius: 0;
-
-        @include respond-from(md) {
-          padding: space(1-5N);
-        }
-      }
-
-      &--active {
-        & > .#{$prefix}-link {
-          @include scheme-element-text-color(bf500);
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -(space(1N));
-            bottom: 0;
-            width: 2px;
-            background-color: currentColor;
-            margin: space(1-5N) 0;
-          }
-        }
-      }
-    }
+    @include scheme-element-bg-color(t-plain, true);
   }
 }
+
+@import 'modules/collapse-wrapper';
+@import 'modules/variants';
+@import 'modules/btn';
+@import 'modules/link';
