@@ -21,6 +21,7 @@
   background: 0;
   line-height: line-height();
   border: 0;
+  font-size: font-size(16);
   // @include scheme-element-border-color(g300, true, bottom);
 
   @include font-icon(arrow-down-s-line, md) {
