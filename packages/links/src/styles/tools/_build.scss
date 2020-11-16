@@ -6,6 +6,22 @@
   z-index: 1;
 }
 
+@mixin _reset-links-tags($tags) {
+  @at-root {
+    @if index($tags, a) != null {
+      #{selector_unify(&, a)} {
+        @extend %a-reset;
+      }
+    }
+
+    @if index($tags, button) != null {
+      #{selector_unify(&, button)} {
+        @extend %btn-reset;
+      }
+    }
+  }
+}
+
 @function _sort-sizes($sizes) {
   $sorted-map: (
     md: map_get($sizes, md)
@@ -24,6 +40,11 @@
   $align: #{$module}-align-on-content;
   $sizes: _sort-sizes(map_get($settings, sizes));
   $places: map_get($settings, places);
+
+  %#{$module}--md {
+    @extend %font-smoothing;
+    @extend %base-link;
+  }
 
   @each $size, $size-settings in $sizes {
     @at-root {
@@ -54,23 +75,12 @@
 
 @include _build-link-placeholders($links-settings, link, true);
 
-@mixin _build-link($settings, $module, $border-radius:false) {
+@mixin _build-link($settings, $module, $border-radius:false, $tags:a button) {
   $align: #{$module}-align-on-content;
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
-  @extend %font-smoothing;
-  @extend %base-link;
-
-  @at-root {
-    a#{&} {
-      @extend %a-reset;
-    }
-
-    button#{&} {
-      @extend %btn-reset;
-    }
-  }
+  @include _reset-links-tags($tags);
 
   @each $size, $size-settings in $sizes {
     $placeholder: #{$module}--#{$size};

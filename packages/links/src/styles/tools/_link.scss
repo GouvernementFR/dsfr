@@ -1,7 +1,7 @@
-@mixin _extend-link($size, $place, $module, $align-on-content) {
+@mixin _extend-link($size, $place, $module, $align-on-content, $force-md) {
   $align: #{$module}-align-on-content;
 
-  @if $size != md {
+  @if $size != md or $force-md {
     @extend %#{$module}--#{$size};
   }
 
@@ -53,7 +53,7 @@
   }
 }
 
-@mixin _link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true) {
+@mixin _link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
   .#{$prefix}-#{$module} {
     @if $icon != null {
       &::before {
@@ -62,7 +62,7 @@
     }
 
     @if $from == null {
-      @include _extend-link($size, $place, $module, $align-on-content);
+      @include _extend-link($size, $place, $module, $align-on-content, $force-md);
       @content;
     }
     @else {
