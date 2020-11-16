@@ -144,6 +144,11 @@
       }
     }
 
+    .#{$prefix}-hint-text {
+      margin-top: space(0-5N);
+      margin-bottom: space(0-5N);
+    }
+
     .#{$prefix}-fieldset__legend {
       margin-bottom: space(0-5N);
     }
