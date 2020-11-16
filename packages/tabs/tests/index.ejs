@@ -23,6 +23,6 @@ let samples = [
 
 <% sample = samples[1] %>
 <h4><%= sample.title %></h4>
-<%- include('./templates/tabs', samples.data) %>
-<%- snippet(include('./templates/tabs', samples.data)); %>
+<%- include('./templates/tabs', sample.data) %>
+<%- snippet(include('./templates/tabs', sample.data)); %>
 

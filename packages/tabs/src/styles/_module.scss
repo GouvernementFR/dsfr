@@ -7,7 +7,7 @@
   position: relative;
 
   /**
-   * ul : srollable button element
+   * ul : element srollable des boutons
    */
   &__list {
     display: flex;
@@ -15,7 +15,7 @@
     list-style: none;
 
     /**
-    * overflow 4px for focus
+    * overflow de 4px pour le focus
     */
     width: calc(100% + 4px);
     margin: -4px;
@@ -23,19 +23,19 @@
 
     transition: margin-bottom 0.3s; // Todo: change animation
 
-    @include pseudo-element() {
+    @include after(block, '') {
       flex: 1 1 auto;
       @include scheme-element-box-shadow-color(bf500, true, 'inset 0 -0.125rem 0 0 $COLOR');
     }
 
     /**
-    * Reset default li behaviour
+    * Reset du style par défaut du li
     */
     li {
       display: block;
       flex: 0 0 auto;
       margin: 0;
-      @include pseudo-element(before, none);
+      @include before(none, none);
     }
   }
 

@@ -25,7 +25,7 @@
 }
 
 @mixin after($display: null, $content: null) {
-  @include _pseudo(before, $display, $content) {
+  @include _pseudo(after, $display, $content) {
     @content
   };
 }

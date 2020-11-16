@@ -1,6 +1,7 @@
 import { Tab } from './tab';
 import { Disclosure, DisclosuresGroup } from '@frds/utilities/src/scripts';
-import { KEY_BINDS, PANEL_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
+import { PANEL_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
+import { KeyListener } from '@frds/utilities/src/scripts/key-listener/key-listener';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
@@ -25,80 +26,38 @@ class TabsGroup extends DisclosuresGroup {
   }
 
   _attachEvents () {
-    this.element.addEventListener('keydown', e => {
-      switch (e.keyCode) {
-        case KEY_BINDS.RIGHT:
-          // Si on est a la fin retourne au debut
-          if (this.index < this.disclosures.length - 1) {
-            this.index++;
-          } else {
-            this.index = 0;
-          }
-          e.preventDefault();
-          break;
-
-        case KEY_BINDS.LEFT:
-          //  Si on est au debut retourne a la fin
-          if (this.index > 0) {
-            this.index--;
-          } else {
-            this.index = this.disclosures.length - 1;
-          }
-          e.preventDefault();
-          break;
-
-        case KEY_BINDS.HOME:
-          this.index = 0;
-          e.preventDefault();
-          break;
-
-        case KEY_BINDS.END:
-          this.index = this.disclosures.length - 1;
-          e.preventDefault();
-          break;
-      };
-    });
+    this.keyEvents = new KeyListener(this.element);
+    this.keyEvents.add(KeyListener.RIGHT, this.arrowRightPress.bind(this), 'down', true);
+    this.keyEvents.add(KeyListener.LEFT, this.arrowLeftPress.bind(this), 'down', true);
+    this.keyEvents.add(KeyListener.HOME, this.homePress.bind(this), 'down', true);
+    this.keyEvents.add(KeyListener.END, this.endPress.bind(this), 'down', true);
   }
 
-  disclosureFactory (element, type, selector) {
-    return new Tab(element, type, selector);
-  }
+  arrowRightPress () {
+    // Si on est a la fin retourne au debut
+    if (this.index < this.disclosures.length - 1) {
+      this.index++;
+    } else {
+      this.index = 0;
+    }
+  };
 
-  _attachEvents () {
-    this.element.addEventListener('keydown', e => {
-      switch (e.keyCode) {
-        case KEY_BINDS.RIGHT:
-          // If we're at the end, go to the start
-          if (this.index < this.disclosures.length - 1) {
-            this.index++;
-          } else {
-            this.index = 0;
-          }
-          e.preventDefault();
-          break;
+  arrowLeftPress () {
+    //  Si on est au debut retourne a la fin
+    if (this.index > 0) {
+      this.index--;
+    } else {
+      this.index = this.disclosures.length - 1;
+    }
+  };
 
-        case KEY_BINDS.LEFT:
-          // If we're at the start, move to the end
-          if (this.index > 0) {
-            this.index--;
-          } else {
-            this.index = this.disclosures.length - 1;
-          }
-          e.preventDefault();
-          break;
+  homePress () {
+    this.index = 0;
+  };
 
-        case KEY_BINDS.HOME:
-          this.index = 0;
-          e.preventDefault();
-          break;
-
-        case KEY_BINDS.END:
-          this.index = this.disclosures.length - 1;
-          e.preventDefault();
-          break;
-      };
-    });
-  }
+  endPress () {
+    this.index = this.disclosures.length - 1;
+  };
 
   get index () { return this._index; }
 
