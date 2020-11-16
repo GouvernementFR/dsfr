@@ -15,7 +15,7 @@ class KeyListener {
    * stopPropagation: Boolean, permet d'empêcher le comportement par default de l'evenement
    */
   _add (type, action) {
-    if (this.types[type] === undefined) this.types[type] = new KeyActionType(type, this.element);
+    if (this.types[type] === undefined) this.types[type] = new KeyActionCollection(type, this.element);
     this.types[type].add(action);
   }
 
@@ -37,7 +37,7 @@ class KeyListener {
   }
 }
 
-class KeyActionType {
+class KeyActionCollection {
   constructor (type, element) {
     this.type = type;
     this.element = element;
