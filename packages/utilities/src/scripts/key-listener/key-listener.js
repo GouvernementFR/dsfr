@@ -11,6 +11,7 @@ class KeyListener {
    * key: la touche de clavier
    * action: la function à appliquer
    * event: event type, optionnel, si c'est en down, up ou press
+   * stopPropagation: Boolean, permet d'empecher le comportement par default de l'evenement
    */
   add (key, action, event, stopPropagation) {
     if (!this.element) this.element = document;

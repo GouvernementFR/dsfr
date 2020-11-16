@@ -13,7 +13,6 @@ class TabsGroup extends DisclosuresGroup {
     this._index = -1;
     this.element = wrapper;
 
-    console.log('build');
     this.build(wrapper, PANEL_SELECTOR, Disclosure.SELECT);
 
     if (this.current === null) this.index = 0;

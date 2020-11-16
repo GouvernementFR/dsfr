@@ -64,10 +64,11 @@
     width: 100%;
     position: absolute;
     visibility: visible;
-    transition: all ease-out 0.2s; // Todo: change animation
+    transition: opacity ease-out 0.2s, visibility ease-out 0.2s; // Todo: change animation
 
     &--selected {
       opacity: 1;
+      @include scheme-element-focus();
     }
 
     &[hidden] {

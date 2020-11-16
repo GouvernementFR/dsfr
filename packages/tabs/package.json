@@ -2,7 +2,7 @@
   "name": "@frds/tabs",
   "version": "0.0.0",
   "license": "MIT",
-  "description": "Onglets / tabs",
+  "description": "Onglets",
   "config": {
     "wrapper": "col-8"
   },
