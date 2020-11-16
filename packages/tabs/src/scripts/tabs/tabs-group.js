@@ -3,7 +3,8 @@ import { Disclosure, DisclosuresGroup } from '@frds/utilities/src/scripts';
 import { KEY_BINDS, PANEL_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
 
 /**
-* TabGroup is the class form 1 tabs with multiple tab-button & Tab (panel)
+* TabGroup est la classe étendue de DiscosuresGroup
+* Correspond a un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
 class TabsGroup extends DisclosuresGroup {
   constructor (wrapper) {
@@ -27,7 +28,7 @@ class TabsGroup extends DisclosuresGroup {
     this.element.addEventListener('keydown', e => {
       switch (e.keyCode) {
         case KEY_BINDS.RIGHT:
-          // If we're at the end, go to the start
+          // Si on est a la fin retourne au debut
           if (this.index < this.disclosures.length - 1) {
             this.index++;
           } else {
@@ -37,7 +38,7 @@ class TabsGroup extends DisclosuresGroup {
           break;
 
         case KEY_BINDS.LEFT:
-          // If we're at the start, move to the end
+          //  Si on est au debut retourne a la fin
           if (this.index > 0) {
             this.index--;
           } else {

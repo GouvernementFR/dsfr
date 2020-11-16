@@ -1,7 +1,9 @@
 import { DisclosureButton } from '@frds/utilities/src/scripts';
 
 /**
-  * TabButton, extends DisclosureButton that add aria-selected, and add attributte tabindex and the focus if current button
+  * TabButton correspond au bouton cliquable qui change le panel
+  * TabButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-selected,
+  * Et change l'attributte tabindex a 0 si le boutton est actif (value=true), -1 s'il n'est pas actif (value=false)
  */
 class TabButton extends DisclosureButton {
   apply (value) {

@@ -3,7 +3,9 @@ import { Disclosure } from '@frds/utilities/src/scripts';
 const HIDDEN = 'hidden';
 
 /**
-  * Tab (tab panel), extends disclosure that add modifier --selected, and add attributte hidden, to the panel
+  * Tab coorespond au panel d'un élement Tabs (tab panel)
+  * Tab étend disclosure qui ajoute/enleve le modifier --selected,
+  * et ajoute/eleve l'attribut hidden, sur le panel
   */
 class Tab extends Disclosure {
   buttonFactory (element) {
@@ -11,8 +13,8 @@ class Tab extends Disclosure {
   }
 
   /**
-  * apply(true), show tab
-  * apply(false), hide tab
+  * apply(true), Affiche le panel
+  * apply(false), Cache le panel
   */
   apply (value) {
     super.apply(value);

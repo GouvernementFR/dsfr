@@ -2,7 +2,7 @@ import { TabsGroup } from './tabs-group';
 import { TABS_SELECTOR } from './tabs-constants';
 
 /**
-* Main class, initialize all Tabs element (TabsGroup) in the page
+* Classe principale des Tabs, initialise tout les éléments Tabs (TabsGroup) dans la page
 */
 class Tabs {
   constructor () {
