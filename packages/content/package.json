@@ -14,6 +14,6 @@
     "@frds/schemes": "^0.0.0",
     "@frds/buttons": "^0.0.0",
     "@frds/medias": "^0.0.0",
-    "@frds/typography": "^0.0.0"
+    "@frds/body": "^0.0.0"
   }
 }

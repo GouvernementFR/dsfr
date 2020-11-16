@@ -1,3 +1,30 @@
+$selectors: '';
+$separator: '';
+
+@each $attr in ('[class^="#{$prefix}-"]' '[class*="#{$prefix}-"]') {
+  @each $descendant in ('' ' *') {
+    @each $pseudo in ('' '::before' '::after') {
+      $selectors: '#{$selectors}#{$separator}#{$attr}#{$descendant}#{$pseudo}';
+      $separator:',';
+
+    }
+  }
+}
+
+#{$selectors} {
+  box-sizing: border-box;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@debug $selectors;
+
+
+
+
+
 /**
  * Prevent adjustments of font size after orientation changes in iOS.
  */
