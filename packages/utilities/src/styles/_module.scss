@@ -1,9 +1,4 @@
-// @include color-utilities();
-// @include color-utilities('background-color');
-// @include color-utilities('fill');
-
-@include spacing-utilities();
-@include spacing-utilities('padding');
+@include create-spacing-properties($spacing-settings);
 
 .#{$prefix}-collapse {
   @include collapse();
