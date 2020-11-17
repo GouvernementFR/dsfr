@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/navigation",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "Navigation",
   "publishConfig": {
@@ -13,11 +13,11 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/core": "^0.2.0",
-    "@gouvfr/schemes": "^0.2.0",
-    "@gouvfr/icons": "^0.2.0",
-    "@gouvfr/typography": "^0.2.0",
-    "@gouvfr/utilities": "^0.2.0",
-    "@gouvfr/buttons": "^0.2.0"
+    "@gouvfr/buttons": "^0.3.0",
+    "@gouvfr/core": "^0.3.0",
+    "@gouvfr/icons": "^0.3.0",
+    "@gouvfr/schemes": "^0.3.0",
+    "@gouvfr/typography": "^0.3.0",
+    "@gouvfr/utilities": "^0.3.0"
   }
 }

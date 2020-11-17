@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/grid",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "Grille",
   "publishConfig": {
@@ -9,9 +9,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
-  "config": {
-  },
+  "config": {},
   "dependencies": {
-    "@gouvfr/core": "^0.2.0"
+    "@gouvfr/core": "^0.3.0"
   }
 }
