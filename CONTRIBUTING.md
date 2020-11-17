@@ -1,12 +1,17 @@
 # Contributing
 ## Installation
 ### Installation locale
-Le Design System de l'Etat est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit de cloner ce repository et d'installer les dépendances NPM avec la commande `yarn`.  Pour lancer le serveur local et travailler sur le Design System, il est ensuite nécessaire de sélectionner le package sur lequel travailler, et lancer la commande `yarn start` :
+Le Design System de l'Etat est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
 
-```
-cd packages/buttons
-yarn start
-```
+Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il est de ce fait indispensable de par exemple lier son compte Github à son numéro de téléphone.
+
+Afin d'utiliser la 2FA en ligne de commande, il est possible d'avoir un générer un token. Sur github, il est possible d'en générer un de cette façon :
+
+- Aller dans Settings > Developer settings > Personal access tokens > Generate new token
+- Ajouter un nom et cocher l’accès au repo.
+- Enregistrer et copier coller le token à la place du mot de passe lors de l’authentification dans la console.
+
+Une fois le repository cloné en local, bien penser à basculer sur la branche `dev`, à partir de laquelle il est nécessaire de créer de nouvelles branches de travail pour l'ajout et la modification de packages. (Voir la section Utilisation > Git, pour le fontionnement détaillé).
 
 ### Packages
 
@@ -39,6 +44,16 @@ Le dossier **src** comprend les fichiers de style .scss, ainsi que des fichiers 
 Le dossier **tests** comprend les fichiers .ejs permettant la génération des pages de test au format HTML.
 
 ## Utilisation
+
+Après avoir cloné le repository, Il faut ensuite installer les dépendances NPM avec la commande `yarn`. Pour lancer le serveur local et travailler sur le Design System, il est ensuite nécessaire de sélectionner le package sur lequel travailler, et lancer la commande `yarn start` :
+
+```
+cd packages/buttons
+yarn start
+```
+
+Un serveur local sera alors lancé sur l'adresse `localhost:8080`, afin de voir en live reload les modifications apportées au package.
+
 ### Sass
 Le Design System utilise Sass pour la génération automatique des styles liés à chaque composant. Chacun d'entre eux possède une structure identique à ce niveau, par exemple le composant `core` :
 
@@ -70,8 +85,6 @@ Certains packages font utilisation de javascript, afin d'apporter une couche int
 Nous utilisons au sein du Design System, le langage de template EJS, permettant la génération des pages de tests au format HTML, ainsi que les snippets de code de manière automatisée.
 
 **A compléter par @Bertrand**
-
-
 
 ### Git
 
@@ -128,10 +141,6 @@ BREAKING CHANGE: new name for the mixin my-mixin
 git commit -m "build: add webpack" --no-verify
 ```
 
-#### Pull requests
-
-Une fois la branche de `dev` validée, il est désormais possible de faire un pull request sur le repository de production, afin de pouvoir valider définitivement ces nouveaux changements.
-
 ## Compilation
 La compilation des sources permet de créer un dossier `dist` à la racine du projet, comprenant les fichiers CSS et JS compilés, ainsi que l'ensemble des fonts utilisées au sein du Design System.
 
@@ -151,7 +160,7 @@ yarn run styleguide
 Cette commande permet la génération de la doc dans le dossier `sassdoc`, à la racine du projet.
 
 ### Tests
-Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du Design System reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM
+Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du Design System reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM.
 
 #### Sass
 Afin de tester les différentes `functions` et `mixins`, nous utilisons jest et sass-true, afin d'effectuer une batterie de tests, présents dans un fichier `tests/_sass-tests.scss` au sein de certains packages.
@@ -171,7 +180,8 @@ Pour tester de manière automatisée l'accessibilité des composants du Design S
 yarn run test:pa11y
 ```
 
-Afin d'exclure un élément de ces tests, il est possible de lui attribuer une class spécifique `.is-pa11y-hidden`
+Afin d'exclure un élément à tester au niveau des pages de test, il est possible de lui attribuer une class spécifique `.is-pa11y-hidden`
+Les tests se jouent automatiquement sur chaque page de test de package, en mode normal puis en Darkmode
 
 ### Icônes
 La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS. Celle-ci est générée automatiquement à partir de fichiers `.svg` se trouvant dans le dossier `/icons` à la racine du Design System. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en lançant la commande suivante :
