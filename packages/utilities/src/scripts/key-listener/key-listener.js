@@ -5,7 +5,7 @@
 class KeyListener {
   constructor (element) {
     this.element = element;
-    this.types = {};
+    this.collections = {};
   }
 
   /**
@@ -15,24 +15,24 @@ class KeyListener {
    * stopPropagation: Boolean, permet d'empêcher le comportement par default de l'evenement
    */
   _add (type, action) {
-    if (this.types[type] === undefined) this.types[type] = new KeyActionCollection(type, this.element);
-    this.types[type].add(action);
+    if (this.collections[type] === undefined) this.collections[type] = new KeyActionCollection(type, this.element);
+    this.collections[type].add(action);
   }
 
-  down (key, closure, stopPropagation) {
-    this._add('down', new KeyAction(key, closure, stopPropagation));
+  down (key, closure, preventDefault, stopPropagation) {
+    this._add('down', new KeyAction(key, closure, preventDefault, stopPropagation));
   }
 
-  up (key, closure, stopPropagation) {
-    this._add('up', new KeyAction(key, closure, stopPropagation));
+  up (key, closure, preventDefault, stopPropagation) {
+    this._add('up', new KeyAction(key, closure, preventDefault, stopPropagation));
   }
 
-  press (key, closure, stopPropagation) {
-    this._add('press', new KeyAction(key, closure, stopPropagation));
+  press (key, closure, preventDefault, stopPropagation) {
+    this._add('press', new KeyAction(key, closure, preventDefault, stopPropagation));
   }
 
   dispose () {
-    for (const type of this.types) type.dispose();
+    for (const collection of this.collections) collection.dispose();
     this.types = null;
   }
 }
@@ -43,7 +43,7 @@ class KeyActionCollection {
     this.element = element;
     this.actions = [];
     this.binding = this.handle.bind(this);
-    element.addEventListener('key' + type, this.binding);
+    this.element.addEventListener('key' + type, this.binding);
   }
 
   add (action) {
@@ -61,17 +61,21 @@ class KeyActionCollection {
 }
 
 class KeyAction {
-  constructor (key, closure, stopPropagation) {
+  constructor (key, closure, preventDefault, stopPropagation) {
     this.key = key;
     this.closure = closure;
+    this.preventDefault = preventDefault === true;
     this.stopPropagation = stopPropagation === true;
   }
 
   handle (e) {
     if (e.keyCode === this.key) {
       this.closure();
-      if (this.stopPropagation) {
+      if (this.preventDefault) {
         e.preventDefault();
+      }
+      if (this.stopPropagation) {
+        e.stopPropagation();
       }
     }
   }
@@ -81,6 +85,8 @@ KeyListener.ESCAPE = 27;
 KeyListener.END = 35;
 KeyListener.HOME = 36;
 KeyListener.LEFT = 37;
+KeyListener.UP = 38;
 KeyListener.RIGHT = 39;
+KeyListener.DOWN = 40;
 
 export { KeyListener };
