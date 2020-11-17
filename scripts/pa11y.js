@@ -17,7 +17,7 @@ const displayResults = (results, darkmode) => {
 
     process.exit(1);
   }else {
-    console.log('no errors');
+    console.log('No errors');
   }
 };
 
@@ -32,23 +32,26 @@ const runPa11yTests = async(urls) => {
     await Pa11y(url, {
       browser,
       page,
-      hideElements: '.is-pa11y-hidden'
+      timeout: 60000,
+      ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
+      hideElements: '.is-pa11y-hidden, .code-toolbar'
     }).then(results => {
       displayResults(results);
     });
 
     // pa11y - dark mode
-    // await Pa11y(url, {
-    //   browser,
-    //   page,
-    //   hideElements: '.is-pa11y-hidden',
-    //   actions: [
-    //     'check field #rf-dark-mode-toggle-switch'
-    //   ],
-    //   wait: 300
-    // }).then(results => {
-    //   displayResults(results, true);
-    // });
+    await Pa11y(url, {
+      browser,
+      page,
+      timeout: 60000,
+      hideElements: '.is-pa11y-hidden, .code-toolbar',
+      ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
+      actions: [
+        'check field #rf-dark-mode-toggle-switch'
+      ],
+    }).then(results => {
+      displayResults(results, true);
+    });
 
     await page.close();
   });
@@ -63,13 +66,13 @@ const runPa11yTests = async(urls) => {
   // Start server
   const app = Express();
   const server = app.listen('8080');
-  app.use(Express.static('./dist/'));
+  app.use(Express.static('./test/'));
 
   // Get all packages
   const urls = [];
   const packages = FS.readdirSync('./packages', {withFileTypes: true}).filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
   packages.map(pkg => {
-    if(FS.existsSync(`./packages/${pkg}/tests/index.html`)) {
+    if(FS.existsSync(`./test/${pkg}/index.html`)) {
       urls.push(`http://localhost:8080/${pkg}/`);
     }
   });

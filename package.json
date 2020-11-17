@@ -21,9 +21,9 @@
     "sprite": "svg-sprite --svg-xmldecl false --svg-dimattrs false --symbol -D icons -m icons/config/icons_data.yml --symbol-dest font --symbol-sprite sprite.svg --symbol-bust false icons/svg/*.svg",
     "icon-font": "svgo -f icons/svg/ --config icons/config/.svgo.yml && icon-font-generator icons/svg/*.svg -o icons/font --csstp icons/config/template.hbs --html false --types woff -j false --csspath packages/icons/generated/_icons.scss --cssfontsurl '#{$icon-font-path}'  --height 1200 --descent 240 --normalize true && b64-cli encode icons/font/icons.woff && replace-in-file --configFile=icons/config/replaceFont.js",
     "publish-npm": "npm run test && npx lerna publish",
-    "test:sass": "jest",
+    "test:sass": "jest tests-sass/sass.test.js",
     "test:pa11y": "node ./scripts/pa11y",
-    "test-sass": "run-s build test:*",
+    "test": "run-s build-test test:*",
     "build-test": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.test.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
   },
@@ -97,7 +97,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
