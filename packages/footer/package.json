@@ -11,5 +11,6 @@
     "@frds/schemes": "^0.0.0",
     "@frds/typography": "^0.0.0",
     "@frds/logo": "^0.0.0"
+    "@frds/grid": "^0.0.0"
   }
 }
