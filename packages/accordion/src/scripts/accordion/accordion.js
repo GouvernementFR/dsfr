@@ -1,4 +1,4 @@
-import { CollapseElement, CollapseGroup } from '@frds/utilities/src/scripts/';
+import { CollapseElement, CollapseGroup } from '@gouvfr/utilities/src/scripts/';
 
 const ACCORDION_GROUP = '.${prefix}-accordion-group';
 const ACCORDION_COLLAPSE = '.${prefix}-accordion__body';

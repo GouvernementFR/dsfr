@@ -6368,6 +6368,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   background: 0;
   line-height: 1.5;
   border: 0;
+  font-size: 1rem;
   color: var(--g800);
   /**
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu

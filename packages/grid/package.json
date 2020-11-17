@@ -1,14 +1,17 @@
 {
-  "name": "@frds/grid",
-  "version": "0.0.0",
+  "name": "@gouvfr/grid",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Grille",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "config": {
   },
   "dependencies": {
-    "@frds/core": "^0.0.0"
+    "@gouvfr/core": "^0.2.0"
   }
 }

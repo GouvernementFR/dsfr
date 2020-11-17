@@ -1,8 +1,11 @@
 {
-  "name": "@frds/core",
-  "version": "0.0.0",
+  "name": "@gouvfr/core",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "core",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },

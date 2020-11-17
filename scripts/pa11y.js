@@ -32,7 +32,7 @@ const runPa11yTests = async(urls) => {
     await Pa11y(url, {
       browser,
       page,
-      timeout: 60000,
+      timeout: 120000,
       ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
       hideElements: '.is-pa11y-hidden, .code-toolbar'
     }).then(results => {
@@ -43,7 +43,7 @@ const runPa11yTests = async(urls) => {
     await Pa11y(url, {
       browser,
       page,
-      timeout: 60000,
+      timeout: 120000,
       hideElements: '.is-pa11y-hidden, .code-toolbar',
       ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
       actions: [

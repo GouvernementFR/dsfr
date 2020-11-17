@@ -1,4 +1,4 @@
-import '@frds/all/_dist.scss';
+import '@gouvfr/all/_dist.scss';
 
 import ie11 from '../../../ie11/src/scripts/distGlobal';
 import schemes from '../../../schemes/src/scripts/distGlobal';

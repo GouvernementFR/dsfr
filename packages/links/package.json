@@ -1,8 +1,11 @@
 {
-  "name": "@frds/links",
-  "version": "0.0.0",
+  "name": "@gouvfr/links",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Liens",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },
@@ -10,9 +13,9 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/icons": "^0.0.0",
-    "@frds/typography": "^0.0.0"
+    "@gouvfr/core": "^0.2.0",
+    "@gouvfr/schemes": "^0.2.0",
+    "@gouvfr/icons": "^0.2.0",
+    "@gouvfr/typography": "^0.2.0"
   }
 }

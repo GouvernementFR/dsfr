@@ -12,10 +12,6 @@
   "config": {
     "prefix": "rf"
   },
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc packages/**/src/styles/*.scss",
     "sprite": "svg-sprite --svg-xmldecl false --svg-dimattrs false --symbol -D icons -m icons/config/icons_data.yml --symbol-dest font --symbol-sprite sprite.svg --symbol-bust false icons/svg/*.svg",

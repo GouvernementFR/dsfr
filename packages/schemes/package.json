@@ -1,12 +1,15 @@
 {
-  "name": "@frds/schemes",
-  "version": "0.0.0",
+  "name": "@gouvfr/schemes",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Combinaison de couleur",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0"
+    "@gouvfr/core": "^0.2.0"
   }
 }

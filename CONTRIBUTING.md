@@ -22,7 +22,7 @@ Pour faire cohabiter l'ensemble des packages, nous utilisons l'outil [Lerna](htt
 Afin d'ajouter une dépendance à un package, il est nécessaire d'utiliser la commande `lerna add`. Ainsi, pour ajouter par exemple le package `core` en tant que dépendance du package `buttons`, il faut utiliser la commande suivante :
 
 ```
-lerna add @frds/core --scope=@frds/buttons
+lerna add @gouvfr/core --scope=@gouvfr/buttons
 ```
 
 Un composant doit avoir une arborescence de type :

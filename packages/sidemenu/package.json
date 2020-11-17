@@ -1,16 +1,19 @@
 {
-  "name": "@frds/sidemenu",
-  "version": "0.0.0",
+  "name": "@gouvfr/sidemenu",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Menu latéral",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/utilities": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/buttons": "^0.0.0",
-    "@frds/icons": "^0.0.0"
+    "@gouvfr/core": "^0.2.0",
+    "@gouvfr/utilities": "^0.2.0",
+    "@gouvfr/schemes": "^0.2.0",
+    "@gouvfr/buttons": "^0.2.0",
+    "@gouvfr/icons": "^0.2.0"
   }
 }

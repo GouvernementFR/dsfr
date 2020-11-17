@@ -1,16 +1,19 @@
 {
-  "name": "@frds/footer",
-  "version": "0.0.0",
+  "name": "@gouvfr/footer",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Footer",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/typography": "^0.0.0",
-    "@frds/logo": "^0.0.0"
-    "@frds/grid": "^0.0.0"
+    "@gouvfr/core": "^0.2.0",
+    "@gouvfr/schemes": "^0.2.0",
+    "@gouvfr/typography": "^0.2.0",
+    "@gouvfr/logo": "^0.2.0",
+    "@gouvfr/grid": "^0.2.0"
   }
 }

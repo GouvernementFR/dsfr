@@ -1,4 +1,4 @@
-import { CollapseElement, CollapseGroup } from '@frds/utilities/src/scripts/';
+import { CollapseElement, CollapseGroup } from '@gouvfr/utilities/src/scripts/';
 
 const NAV_COLLAPSE = '.${prefix}-sidemenu__wrapper > .${prefix}-sidemenu__list > .${prefix}-sidemenu__item > .${prefix}-sidemenu__content';
 const SUBNAV_COLLAPSE = '.${prefix}-sidemenu__item .${prefix}-sidemenu__item .${prefix}-sidemenu__content';

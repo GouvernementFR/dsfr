@@ -1,8 +1,11 @@
 {
-  "name": "@frds/search",
-  "version": "0.0.0",
+  "name": "@gouvfr/search",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Barre de recherche",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },
@@ -10,12 +13,12 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/icons": "^0.0.0",
-    "@frds/typography": "^0.0.0",
-    "@frds/forms": "^0.0.0",
-    "@frds/inputs": "^0.0.0",
-    "@frds/buttons": "^0.0.0"
+    "@gouvfr/core": "^0.2.0",
+    "@gouvfr/schemes": "^0.2.0",
+    "@gouvfr/icons": "^0.2.0",
+    "@gouvfr/typography": "^0.2.0",
+    "@gouvfr/forms": "^0.2.0",
+    "@gouvfr/inputs": "^0.2.0",
+    "@gouvfr/buttons": "^0.2.0"
   }
 }
