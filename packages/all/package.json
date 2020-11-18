@@ -10,6 +10,7 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
+    "@gouvfr/accordion": "^0.3.0",
     "@gouvfr/breadcrumb": "^0.3.0",
     "@gouvfr/buttons": "^0.3.0",
     "@gouvfr/callouts": "^0.3.0",
@@ -34,6 +35,8 @@
     "@gouvfr/schemes": "^0.3.0",
     "@gouvfr/search": "^0.3.0",
     "@gouvfr/selects": "^0.3.0",
+    "@gouvfr/table": "^0.3.0",
+    "@gouvfr/tags": "^0.3.0",
     "@gouvfr/tiles": "^0.3.0",
     "@gouvfr/typography": "^0.3.0",
     "@gouvfr/utilities": "^0.3.0"

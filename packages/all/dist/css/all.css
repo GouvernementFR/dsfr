@@ -21,12 +21,12 @@
 .rf-link[disabled], .rf-btn[disabled] {
   cursor: not-allowed; }
 
-.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn {
+.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag {
   display: inline-flex;
   flex-direction: row;
   align-items: center; }
 
-button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn {
+button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf-tag {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -34,11 +34,11 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn {
   border: none;
   cursor: pointer; }
 
-a.rf-link, a.rf-btn {
+a.rf-link, a.rf-btn, a.rf-tag {
   text-decoration: none;
   box-shadow: none; }
 
-.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn {
+.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -891,7 +891,7 @@ input[type=checkbox]#rf-dark-mode-toggle-switch {
 .rf-fi-arrow-down-s-line::before, .rf-nav__item > .rf-btn::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
   content: "\f108"; }
 
-.rf-fi-arrow-left-line::before, .rf-link--icon-left:not([class*="rf-fi-"])::before {
+.rf-fi-arrow-left-line::before, .rf-link--icon-left:not([class*="rf-fi-"])::before, .rf-tag--icon-left:not([class*="rf-fi-"])::before {
   content: "\f109"; }
 
 .rf-fi-arrow-left-s-first-line::before, .rf-pagination__item--first::before {
@@ -903,7 +903,7 @@ input[type=checkbox]#rf-dark-mode-toggle-switch {
 .rf-fi-arrow-left-s-line::before, .rf-pagination__item--prev::before {
   content: "\f10c"; }
 
-.rf-fi-arrow-right-line::before, .rf-link--icon-right:not([class*="rf-fi-"])::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after {
+.rf-fi-arrow-right-line::before, .rf-link--icon-right:not([class*="rf-fi-"])::before, .rf-tag--icon-right:not([class*="rf-fi-"])::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after {
   content: "\f10d"; }
 
 .rf-fi-arrow-right-s-last-line::before, .rf-pagination__item--last::after {
@@ -1077,7 +1077,7 @@ input[type=checkbox]#rf-dark-mode-toggle-switch {
 .rf-fi-volume-up-line::before {
   content: "\f146"; }
 
-span[class^="rf-fi-"]::before, span[class*=" rf-fi-"]::before, a[target="_blank"]::after, .rf-link--icon-left::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right::before, .rf-content-media__transcription .rf-link::before, .rf-link--icon-only::before, .rf-error-text::before, .rf-valid-text::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, input[type="checkbox"] + label::after, .rf-btn--icon-left::before, .rf-btn--icon-right::before, .rf-btn--icon-only::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-accordion .rf-accordion__btn::before, .rf-nav__item > .rf-btn::before, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+span[class^="rf-fi-"]::before, span[class*=" rf-fi-"]::before, a[target="_blank"]::after, .rf-link--icon-left::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right::before, .rf-content-media__transcription .rf-link::before, .rf-link--icon-only::before, .rf-error-text::before, .rf-valid-text::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, input[type="checkbox"] + label::after, .rf-btn--icon-left::before, .rf-btn--icon-right::before, .rf-btn--icon-only::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-accordion .rf-accordion__btn::before, .rf-tag--icon-left::before, .rf-tag--icon-right::before, .rf-nav__item > .rf-btn::before, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -3764,10 +3764,10 @@ ol {
   .rf-col-offset-xl-12 {
     margin-left: 100%; } }
 
-.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn {
+.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag {
   overflow: hidden;
   z-index: 1; }
-  .rf-link:focus, .rf-btn:focus, .rf-accordion .rf-accordion__btn:focus {
+  .rf-link:focus, .rf-btn:focus, .rf-accordion .rf-accordion__btn:focus, .rf-tag:focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
@@ -4953,6 +4953,111 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       display: block;
       overflow-y: hidden;
       overflow-x: auto; }
+
+/* ------------------------------------ *\
+  TAGS
+\* ------------------------------------ */
+.rf-tag {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  min-height: 2rem;
+  padding: 0.375rem 1rem;
+  border-radius: 1rem; }
+
+.rf-tag--sm {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  min-height: 1.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.75rem; }
+
+.rf-tag--icon-left::before {
+  font-size: 1rem; }
+
+.rf-tag--icon-left::before {
+  margin-left: -0.25rem;
+  margin-right: 0.25rem; }
+
+.rf-tag--icon-left.rf-tag--sm::before {
+  font-size: 1rem; }
+
+.rf-tag--icon-left.rf-tag--sm::before {
+  margin-left: -0.25rem;
+  margin-right: 0.25rem; }
+
+.rf-tag--icon-right {
+  flex-direction: row-reverse; }
+  .rf-tag--icon-right::before {
+    font-size: 1rem; }
+  .rf-tag--icon-right::before {
+    margin-right: -0.25rem;
+    margin-left: 0.25rem; }
+
+.rf-tag--icon-right.rf-tag--sm::before {
+  font-size: 1rem; }
+
+.rf-tag--icon-right.rf-tag--sm::before {
+  margin-right: -0.25rem;
+  margin-left: 0.25rem; }
+
+a.rf-tag {
+  color: var(--bf500-plain);
+  background-color: var(--bf200-bf300);
+  box-shadow: none; }
+  :root[data-transition] a.rf-tag {
+    transition: color 0.3s; }
+  @media (hover: hover) and (pointer: fine) {
+    a.rf-tag:not([disabled]):hover, a.rf-tag:not(:disabled):hover {
+      background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+    a.rf-tag:not([disabled]):active, a.rf-tag:not(:disabled):active {
+      background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+  :root:not([data-theme="dark"]) a.rf-tag {
+    --color-hover: rgba(182, 182, 224, 0.5);
+    --color-active: rgba(135, 135, 204, 0.5); }
+  :root:not([data-theme="dark"]) [class*="rf-scheme-light"] a.rf-tag,
+  :root:not([data-theme="dark"]) [class*="--scheme-light-"] a.rf-tag {
+    --color-hover: rgba(182, 182, 224, 0.5);
+    --color-active: rgba(135, 135, 204, 0.5); }
+  :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] a.rf-tag,
+  :root:not([data-theme="dark"]) [class*="--scheme-dark-"] a.rf-tag {
+    --color-hover: rgba(138, 138, 204, 0.5);
+    --color-active: rgba(84, 84, 180, 0.5); }
+  :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] a.rf-tag,
+  :root:not([data-theme="dark"]) [class*="--scheme-soft-"] a.rf-tag {
+    --color-hover: rgba(182, 182, 224, 0.5);
+    --color-active: rgba(135, 135, 204, 0.5); }
+  :root[data-theme="dark"] a.rf-tag {
+    --color-hover: rgba(138, 138, 204, 0.5);
+    --color-active: rgba(84, 84, 180, 0.5); }
+  :root[data-transition] a.rf-tag {
+    transition: color 0.3s, background-color 0.3s; }
+
+span.rf-tag {
+  color: var(--g-800);
+  background-color: var(--g200); }
+  :root[data-transition] span.rf-tag {
+    transition: color 0.3s; }
+  :root[data-transition] span.rf-tag {
+    transition: color 0.3s, background-color 0.3s; }
+
+.rf-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0; }
+  .rf-tag-list > li {
+    display: inline-flex;
+    margin-bottom: 0; }
+    .rf-tag-list > li::before {
+      content: none; }
+  .rf-tag-list a.rf-tag {
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem; }
+    .rf-tag-list a.rf-tag--sm {
+      margin-right: 1.5rem;
+      margin-bottom: 1.5rem; }
+  .rf-tag-list span.rf-tag {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem; }
 
 .rf-nav__list {
   display: flex;
