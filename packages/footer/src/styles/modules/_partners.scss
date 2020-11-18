@@ -1,0 +1,101 @@
+////
+/// Footer module : Partners
+/// @group Footer
+////
+
+&__partners {
+  margin-top: space(5N);
+  padding-top: space(2N);
+  @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background: $white;
+    padding: space(2N);
+    box-shadow: none;
+
+    @include respond-from(sm) {
+      width: 160px;
+      height: 90px;
+    }
+
+    @include respond-from(md) {
+      margin: space(2N);
+    }
+  }
+
+  .#{$prefix}-footer__logo {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(90px - #{space(2N)});
+  }
+}
+
+&__partners-title {
+  flex-basis: 100%;
+  font-size: font-size(14);
+  font-weight: font-weight();
+  margin: 0;
+  text-align: center;
+
+  @include respond-from(sm) {
+    text-align: left;
+  }
+}
+
+&__partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include respond-from(md) {
+    flex-wrap: nowrap;
+    margin: 0 (-(space(2N)));
+  }
+}
+
+&__partners-main {
+  flex-basis: 100%;
+  padding-top: space(4N);
+
+  + .#{$prefix}-footer__partners-sub {
+
+    @include respond-from(md) {
+      justify-content: flex-end;
+      padding-left: space(6N);
+    }
+  }
+
+  @include respond-from(sm) {
+    flex-basis: auto;
+  }
+}
+
+&__partners-sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-basis: 100%;
+  padding-top: space(4N);
+
+  > a {
+    box-shadow: none;
+    margin: 0 0 space(2N);
+
+    @include respond-from(sm) {
+      margin: space(2N);
+    }
+  }
+
+  @include respond-from(sm) {
+    margin: 0 (-(space(2N)));
+  }
+
+  @include respond-from(md) {
+    margin: 0;
+  }
+}

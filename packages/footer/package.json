@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@gouvfr/core": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
     "@gouvfr/grid": "^0.3.1",
     "@gouvfr/logo": "^0.3.1",
-    "@gouvfr/schemes": "^0.3.1",
-    "@gouvfr/typography": "^0.3.1"
+    "@gouvfr/typography": "^0.3.1",
+    "@gouvfr/links": "^0.3.1"
   }
 }
