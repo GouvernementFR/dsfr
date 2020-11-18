@@ -1,8 +1,10 @@
 <%
 
 let samples = [
-  { title:'Tuiles verticales', sample:'./samples/tile-default'},
-  { title:'Tuiles horizontales', sample:'./samples/tile-horizontal'}
+  { title:'Tuiles verticales', sample:'./samples/tile-default', type:'vertical'},
+  { title:'Tuiles verticales, horizontales en dessous du breakpoint md', sample:'./samples/tile-vertical-md', type:'vertical'},
+  { title:'Tuiles horizontales', sample:'./samples/tile-horizontal', type:'horizontal'},
+  { title:'Tuiles horizontales, verticales en dessous du breakpoint md', sample:'./samples/tile-horizontal-md', type:'horizontal'},
 ]
 
   let datas = [
@@ -25,12 +27,12 @@ for (let i = 0; i < samples.length; i++) {
   <%
     for (let j = 0; j < total; j++) {
   %>
-    <% if( j%4 == 0 && sample.title.includes('horizontales')) { %>
+    <% if( j%4 == 0 && sample.type == 'horizontal') { %>
       <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-8 <%= (i > 0) ? prefix  +'-col-lg-10' : prefix + '-col-md-6 rf-col-lg-3' %>">
         <%- include(sample.sample, datas[j]); %>
       </div>
-    <% } else if (sample.title.includes('verticales')) { %>
-      <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= (i > 0) ? prefix  +'-col-md-8 rf-col-lg-10' : prefix + '-col-md-6 rf-col-lg-3' %>">
+    <% } else if (sample.type == 'vertical') { %>
+      <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= prefix %>-col-md-6 <%= prefix %>-col-lg-3">
         <%- include(sample.sample, datas[j]); %>
       </div>
     <% } %>
