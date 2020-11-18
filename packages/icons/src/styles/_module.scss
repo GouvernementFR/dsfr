@@ -1,30 +1,42 @@
-.#{$prefix}-icon {
-  @include icons-size();
-  fill: currentColor;
+@font-face {
+  font-family: "icons";
+  src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
+}
+
+span[class^="#{$prefix}-fi-"],
+span[class*=" #{$prefix}-fi-"] {
+  @include before {
+    @extend %font-icon;
+  }
+
+  $not:'';
+
+  @each $size, $value in $icon-size-map {
+    @if $size != md {
+      $not:'#{$not}:not([class*="#{$prefix}-fi--#{$size}"])';
+    }
+  }
+
+  &#{$not} {
+    @include before {
+      font-size: icon-size(md);
+    }
+  }
 }
 
 /*
-[class*="#{$prefix}-fi-"] {
-  display: inline-block;
-  font: normal normal normal 16px/1 "icons";
-  font-size: inherit;
-}
+* @var: $icons-mames - générée dans generated/_icons.scss
 */
+@include generate-icons-content($icons-names);
 
 .#{$prefix}-fi {
-  &--sm::before {
-    font-size: icon-size(sm);
-  }
-
-  &--md::before {
-    font-size: icon-size(md);
-  }
-
-  &--lg::before {
-    font-size: icon-size(lg);
-  }
-
-  &--xl::before {
-    font-size: icon-size(xl);
+  @each $size, $value in $icon-size-map {
+    @if $size != md {
+      &--#{$size} {
+        @include before {
+          font-size: icon-size($size);
+        }
+      }
+    }
   }
 }

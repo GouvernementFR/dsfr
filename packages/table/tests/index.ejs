@@ -1,0 +1,110 @@
+<%
+let sample;
+let data = { caption: 'Caption du tableau (accessibilité)', col: 6, row: 3};
+let dataBordered = { caption: 'Caption du tableau (accessibilité)', bordered: true, col: 6, row: 3};
+let dataNoScroll = { caption: 'Caption tableau non scrollable', noscroll: true, col: 6};
+let dataLayoutFixed = { caption: 'Caption tableau fixé', layout: "fixed", col: 6};
+let dataNoCaption = { caption: 'Caption cachée', nocaption: true, col: 6};
+let dataCaptionBottom = { caption: 'Caption en bas', captionBottom: true, col: 6};
+let samples = [
+    { title: 'Tableau par défaut', sample: './samples/table-default', data: data },
+    { title: 'Tableau avec bordure', sample: './samples/table-default', data: dataBordered },
+    { title: 'Tableau non scrollable', sample: './samples/table-default', data: dataNoScroll },
+    { title: 'Tableau colonnes fixées (layout-fixed)', sample: './samples/table-default', data: dataLayoutFixed },
+    { title: 'Tableau caption invisible', sample: './samples/table-default', data: dataNoCaption },
+    { title: 'Tableau caption Bottom', sample: './samples/table-default', data: dataCaptionBottom },
+];
+%>
+
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+    <% sample = samples[0]; %>
+    <div class="<%= prefix %>-col-12">
+        <h4><%= sample.title %></h4>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <% sample.data.col = 2; %>
+    <div class="<%= prefix %>-col-12">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- snippet(include('./samples/table-default.ejs', sample.data)); %>
+    </div>
+
+    <% sample = samples[1]; %>
+    <div class="<%= prefix %>-col-12">
+        <h4><%= sample.title %></h4>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <% sample.data.col = 2; %>
+    <div class="<%= prefix %>-col-12">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- snippet(include('./samples/table-default.ejs', sample.data)); %>
+    </div>
+
+    <% sample = samples[2]; %>
+    <div class="<%= prefix %>-col-12">
+        <h4><%= sample.title %></h4>
+    </div>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <% sample.data.col = 2; %>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- snippet(include('./samples/table-default.ejs', sample.data)); %>
+    </div>
+
+    <% sample = samples[3]; %>
+    <div class="<%= prefix %>-col-12">
+        <h4><%= sample.title %></h4>
+    </div>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <% sample.data.col = 2; %>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- snippet(include('./samples/table-default.ejs', sample.data)); %>
+    </div>
+
+    <% sample = samples[4]; %>
+    <div class="<%= prefix %>-col-12">
+        <h4><%= sample.title %></h4>
+    </div>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <% sample.data.col = 2; %>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- snippet(include('./samples/table-default.ejs', sample.data)); %>
+    </div>
+
+    <% sample = samples[5]; %>
+    <div class="<%= prefix %>-col-12">
+        <h4><%= sample.title %></h4>
+    </div>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <% sample.data.col = 2; %>
+    <div class="<%= prefix %>-col-12 ">
+        <%- include(sample.sample, sample.data); %>
+    </div>
+    <div class="<%= prefix %>-col-12">
+        <%- snippet(include('./samples/table-default.ejs', sample.data)); %>
+    </div>
+
+</div>

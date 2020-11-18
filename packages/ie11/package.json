@@ -1,8 +1,11 @@
 {
-  "name": "@frds/ie11",
-  "version": "0.0.0",
+  "name": "@gouvfr/ie11",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "ie11 (support)",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },
@@ -10,6 +13,6 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0"
+    "@gouvfr/core": "^0.3.0"
   }
 }

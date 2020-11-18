@@ -1,0 +1,53 @@
+/*
+  Variables :
+    -> Unit
+    -> Colors
+    -> Typography
+    -> Spacing
+*/
+/* `````````````````````
+  Typography
+````````````````````` */
+/* `````````````````````
+  Spacing
+````````````````````` */
+/* `````````````````````
+  FUNCTIONS
+````````````````````` */
+/* `````````````````````
+  MIXINS
+````````````````````` */
+.rf-skiplinks__list > li .rf-link {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem; }
+
+.rf-skiplinks {
+  position: absolute;
+  padding: 0.75rem 0;
+  background-color: var(--g200);
+  transform: translateY(-100%); }
+  :root[data-transition] .rf-skiplinks {
+    transition: background-color 0.3s; }
+  .rf-skiplinks:focus-within {
+    position: relative;
+    transform: translateY(0); }
+
+.rf-skiplinks__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -1rem -1rem; }
+  .rf-skiplinks__list > li {
+    margin: 0 1rem 0.25rem; }
+    .rf-skiplinks__list > li::before {
+      content: none; }
+    @media (min-width: 36em) {
+      .rf-skiplinks__list > li {
+        margin: 0 1rem; } }
+  @media (min-width: 36em) {
+    .rf-skiplinks__list {
+      margin: 0 -1rem;
+      flex-direction: row;
+      flex-wrap: wrap; } }
+
+
+/*# sourceMappingURL=skiplinks.css.map*/

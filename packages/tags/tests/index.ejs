@@ -1,0 +1,50 @@
+<%
+
+let samples = [
+  { title:'Tag seul cliquable', sample:'./samples/tag-default', clickable: true},
+  { title:'Tag seul cliquable SM', sample:'./samples/tag-sm', clickable: true},
+  { title:'Tag seul non cliquable', sample:'./samples/tag-default'},
+  { title:'Tag seul non cliquable SM', sample:'./samples/tag-sm'},
+]
+
+let groupSamples = [
+  { title:'Groupe de tags cliquables', sample:'./samples/tag-default', clickable: true, group: true},
+  { title:'Groupe de tags cliquables SM', sample:'./samples/tag-sm', clickable: true, group: true},
+  { title:'Groupe de tags non cliquables', sample:'./samples/tag-default', group: true},
+  { title:'Groupe de tags non cliquables SM', sample:'./samples/tag-sm', group: true},
+]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+<h4><%= sample.title %></h4>
+<div>
+  <%- include(sample.sample, {clickable: sample.clickable}); %>
+</div>
+<div class="rf-margin-top-4N">
+  <%- include(sample.sample, {iconPlace: 'left', clickable: sample.clickable}); %>
+</div>
+<div class="rf-margin-top-4N">
+  <%- include(sample.sample, {iconPlace: 'right', clickable: sample.clickable}); %>
+</div>
+<div class="rf-margin-top-4N">
+  <%- snippet(include(sample.sample, {clickable: sample.clickable})); %>
+  <%- snippet(include(sample.sample, {iconPlace: 'left', clickable: sample.clickable})); %>
+  <%- snippet(include(sample.sample, {iconPlace: 'right', clickable: sample.clickable})); %>
+</div>
+<% } %>
+
+<%
+for (let i = 0; i < groupSamples.length; i++) {
+  let groupSample = groupSamples[i];
+%>
+<h4 class="rf-margin-top-8N"><%= groupSample.title %></h4>
+<div class="rf-col-6">
+  <%- include(groupSample.sample, {clickable: groupSample.clickable, group: groupSample.group}); %>
+</div>
+<div class="rf-margin-top-4N">
+  <%- snippet(include(groupSample.sample, {clickable: groupSample.clickable, group: groupSample.group})); %>
+</div>
+<% } %>

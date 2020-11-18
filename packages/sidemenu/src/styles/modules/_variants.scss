@@ -1,0 +1,77 @@
+////
+/// Sidemenu Module : variants
+/// @group sidemenu
+////
+
+/**
+ * Variantes du sidemenu proposées juste à partir du breakpoint md
+ */
+.#{$prefix}-sidemenu {
+  @include respond-from(md) {
+    padding-right: space(4N);
+    box-shadow: none;
+
+    &::before {
+      content: none;
+    }
+
+    /**
+     * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
+     * La bordure se met sur la gauche
+     */
+    &--right {
+      padding-left: space(4N);
+      padding-right: 0;
+
+      .#{$prefix}-sidemenu__inner {
+        padding: 0 space(2N) 0 space(4N);
+        border-right: 0;
+        @include scheme-element-border-color(g300, true, left);
+      }
+    }
+
+    /**
+     * Modificateur pour que le sidemenu soit sticky
+     */
+    &--sticky {
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      height: 100vh;
+      max-height: 100%;
+    }
+
+    /**
+     * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
+     */
+    &--sticky-full-height {
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      height: 100vh;
+      max-height: 100%;
+
+      .#{$prefix}-sidemenu__inner {
+        overflow: auto;
+        height: 100vh;
+      }
+    }
+
+    /**
+     * Modificateur pour avoir une bordure tout autour du sidemenu
+     */
+    &--full-border {
+
+      .#{$prefix}-sidemenu__title {
+        margin-top: space(1N);
+      }
+      .#{$prefix}-sidemenu__inner {
+        @include scheme-element-border-color(g300, true);
+
+        @include respond-from(md) {
+          padding: 0 space(0-5N) 0 space(0-5N);
+        }
+      }
+    }
+  }
+}

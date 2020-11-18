@@ -1,8 +1,11 @@
 {
-  "name": "@frds/buttons",
-  "version": "0.0.0",
+  "name": "@gouvfr/buttons",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "Boutons",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },
@@ -10,9 +13,9 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/icons": "^0.0.0",
-    "@frds/links": "^0.0.0"
+    "@gouvfr/core": "^0.3.0",
+    "@gouvfr/icons": "^0.3.0",
+    "@gouvfr/links": "^0.3.0",
+    "@gouvfr/schemes": "^0.3.0"
   }
 }

@@ -1,8 +1,11 @@
 {
-  "name": "@frds/tiles",
-  "version": "0.0.0",
+  "name": "@gouvfr/tiles",
+  "version": "0.3.0",
   "license": "MIT",
   "description": "Tuiles",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },

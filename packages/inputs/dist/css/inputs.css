@@ -1,0 +1,106 @@
+/*
+  Variables :
+    -> Unit
+    -> Colors
+    -> Typography
+    -> Spacing
+*/
+/* `````````````````````
+  Typography
+````````````````````` */
+/* `````````````````````
+  Spacing
+````````````````````` */
+/* `````````````````````
+  FUNCTIONS
+````````````````````` */
+/* `````````````````````
+  MIXINS
+````````````````````` */
+.rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+/* stylelint-disable */
+.rf-input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-family: "Marianne", arial, sans-serif;
+  padding: 0.5rem 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--g800);
+  background-color: var(--g200);
+  box-shadow: inset 0 -2px 0 0 var(--g800); }
+  :root[data-transition] .rf-input {
+    transition: color 0.3s; }
+  :root[data-transition] .rf-input {
+    transition: color 0.3s, background-color 0.3s; }
+  :root[data-transition] .rf-input {
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s; }
+  .rf-input:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    z-index: var(--focus-z-index); }
+  .rf-input::-webkit-input-placeholder {
+    color: var(--g600-g500); }
+    :root[data-transition] .rf-input::-webkit-input-placeholder {
+      transition: color 0.3s; }
+  .rf-input:-moz-placeholder {
+    color: var(--g600-g500); }
+    :root[data-transition] .rf-input:-moz-placeholder {
+      transition: color 0.3s; }
+  .rf-input::-moz-placeholder {
+    color: var(--g600-g500); }
+    :root[data-transition] .rf-input::-moz-placeholder {
+      transition: color 0.3s; }
+  .rf-input:-ms-input-placeholder {
+    color: var(--g600-g500); }
+    :root[data-transition] .rf-input:-ms-input-placeholder {
+      transition: color 0.3s; }
+  .rf-input--valid {
+    box-shadow: inset 0 -2px 0 0 var(--success); }
+  .rf-input--error, .rf-input:invalid {
+    box-shadow: inset 0 -2px 0 0 var(--error); }
+  .rf-input:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+    color: var(--g600-g500);
+    background-color: var(--g300);
+    box-shadow: inset 0 -2px 0 0 var(--g500); }
+  .rf-input:not(textarea) {
+    max-height: 2.5rem; }
+  .rf-input::-webkit-inner-spin-button, .rf-input::-webkit-calendar-picker-indicator {
+    display: none; }
+  .rf-input:-webkit-autofill, .rf-input:-webkit-autofill:hover, .rf-input:-webkit-autofill:focus {
+    box-shadow: inset 0 0 0 100px var(--g200);
+    -webkit-text-fill-color: var(--g800); }
+    :root[data-transition] .rf-input:-webkit-autofill, :root[data-transition] .rf-input:-webkit-autofill:hover, :root[data-transition] .rf-input:-webkit-autofill:focus {
+      transition: box-shadow 0.3s; }
+    :root[data-transition] .rf-input:-webkit-autofill, :root[data-transition] .rf-input:-webkit-autofill:hover, :root[data-transition] .rf-input:-webkit-autofill:focus {
+      transition: box-shadow 0.3s, -webkit-text-fill-color 0.3s; }
+
+.rf-input-wrap {
+  position: relative;
+  display: block; }
+  .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before {
+    font-size: 1rem;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    margin: auto; }
+  .rf-input-wrap .rf-input {
+    padding-right: 2.5rem; }
+
+
+/*# sourceMappingURL=inputs.css.map*/

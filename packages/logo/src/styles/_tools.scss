@@ -11,3 +11,15 @@
     @content;
   }
 }
+
+@function _svg-encode($svg) {
+  @each $char, $encoded in $encoding-reference {
+    $svg: _str-replace($svg, $char, $encoded);
+  }
+  @return 'data:image/svg+xml,' + $svg;
+}
+
+@function _color-marianne($blue, $red) {
+  $tmp: _str-replace($svg-marianne, '$BLUE', $blue);
+  @return _str-replace($tmp, '$RED', $red);
+}
