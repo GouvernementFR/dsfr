@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/grid",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Grille",
   "publishConfig": {
@@ -11,6 +11,6 @@
   },
   "config": {},
   "dependencies": {
-    "@gouvfr/core": "^0.3.0"
+    "@gouvfr/core": "^0.3.1"
   }
 }

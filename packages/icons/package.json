@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/icons",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Icônes",
   "publishConfig": {
@@ -14,8 +14,8 @@
     "postinstall": "node ./post-install.js"
   },
   "dependencies": {
-    "@gouvfr/core": "^0.3.0",
-    "@gouvfr/schemes": "^0.3.0",
-    "@gouvfr/typography": "^0.3.0"
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1"
   }
 }
