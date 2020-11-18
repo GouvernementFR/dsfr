@@ -1,0 +1,17 @@
+@mixin all() {
+  $selectors: '';
+  $separator: '';
+
+  @each $attr in ('[class^="#{$prefix}-"]' '[class*="#{$prefix}-"]') {
+    @each $descendant in ('' ' *') {
+      @each $pseudo in ('' '::before' '::after') {
+        $selectors: '#{$selectors}#{$separator}#{$attr}#{$descendant}#{$pseudo}';
+        $separator:',';
+      }
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}

@@ -85,19 +85,6 @@ $fontsizes-helpers-map: (
   @return map-get($line-height-scale, $scale);
 }
 
-/// Return font-weight value from font-weight map.
-///
-/// @param {String} $scale ["regular"] - Type scale value from `$weight-scale` (Default to "regular" = 400)
-///
-/// @example scss - Set font-weight to bold (700)
-///   .foo {
-///     font-weight: font-weight("bold");
-///   }
-
-@function font-weight($scale: regular) {
-  @return map-get($weight-scale, $scale);
-}
-
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $scale [2] - Space scale value from `$space-scale` (Default to  1N = 8px)
@@ -115,16 +102,7 @@ $fontsizes-helpers-map: (
   MIXINS
 ````````````````````` */
 
-@mixin font-face($name, $filename, $font-weight: 400, $font-style: normal) {
-  @font-face {
-    font-family: #{$name};
-    src:
-            url('#{$static-font-path}/#{$filename}.woff2') format('woff2'),
-            url('#{$static-font-path}/#{$filename}.woff') format('woff');
-    font-weight: #{$font-weight};
-    font-style: #{$font-style};
-  }
-}
+
 
 /// Set font size
 ///
@@ -226,19 +204,13 @@ $fontsizes-helpers-map: (
   }
 }
 
-@mixin font-weight() {
-  @each $name, $test in $weight-scale {
-    .#{$prefix}-text--#{$name} {
-      font-weight: $test;
-    }
-  }
-}
-
+@import 'tools/all';
 @import 'tools/breakpoints';
 @import 'tools/disabled';
 @import 'tools/display';
+@import 'tools/font-face';
+@import 'tools/font-weight';
 @import 'tools/overlay';
 @import 'tools/pseudo';
 @import 'tools/resets';
-@import 'tools/smoothing';
 @import 'tools/sr-only';

@@ -1,0 +1,22 @@
+@mixin font-face($name, $filename, $font-weight: 400, $font-style: normal) {
+  @font-face {
+    font-family: #{$name};
+    src:
+      url('#{$static-font-path}/#{$filename}.woff2') format('woff2'),
+      url('#{$static-font-path}/#{$filename}.woff') format('woff');
+    font-weight: #{$font-weight};
+    font-style: #{$font-style};
+  }
+}
+
+@mixin font-faces($name, $settings) {
+  @each $filename, $variation in $settings {
+    $font-weight: nth($variation, 1);
+    $font-style: normal;
+
+    @if length($variation) > 1 {
+      $font-style: nth($variation, 2);
+    }
+    @include font-face ($name, $filename, $font-weight, $font-style);
+  }
+}

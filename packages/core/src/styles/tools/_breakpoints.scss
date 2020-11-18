@@ -1,4 +1,3 @@
-
 /// Set media query styles
 ///
 /// @param {String} $media [md] - Layout size `["xs", "sm", "md", "lg", "xl"]`
@@ -16,8 +15,7 @@
     @media (min-width: nth($limits, 1)) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
@@ -32,6 +30,9 @@
 ///     }
 ///   }
 @mixin respond-to($media) {
+
+  @debug 'afin de rester mobile first, n‘utiliser la mixin respond-to uniquement s‘il n‘y a pas d‘autre alternative, lui préférer systématiquement la mixin respond-from';
+
   $limits: map_get($breakpoints, $media);
 
   @if $limits != null and length($limits) == 2 {
