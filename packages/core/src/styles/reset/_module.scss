@@ -1,0 +1,8 @@
+@include all-selector() {
+  font-family: $font-family-sans;
+  // @include scheme-element-text-color($base-font-color-set, true);
+  box-sizing: border-box;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

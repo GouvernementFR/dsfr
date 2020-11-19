@@ -94,19 +94,6 @@ $fontsizes-helpers-map: (
 ///     margin-bottom: space(3N);
 ///   }
 
-@function str-to-num($value, $max:100) {
-  @for $i from 0 to $max {
-    @if $value == quote($i) {
-      @return $i;
-    }
-    @else if $value == quote(-$i) {
-      @return -$i;
-    }
-  }
-
-  @return null;
-}
-
 @function space($value) {
 
   $v: quote($value);
@@ -235,8 +222,6 @@ $fontsizes-helpers-map: (
 @import 'tools/breakpoints';
 @import 'tools/disabled';
 @import 'tools/display';
-@import 'tools/font-face';
-@import 'tools/font-weight';
 @import 'tools/fit';
 @import 'tools/overlay';
 @import 'tools/pseudo';

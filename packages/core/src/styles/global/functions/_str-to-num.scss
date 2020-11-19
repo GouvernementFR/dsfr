@@ -1,0 +1,12 @@
+@function str-to-num($value, $max:100) {
+  @for $i from 0 to $max {
+    @if $value == quote($i) {
+      @return $i;
+    }
+    @else if $value == quote(-$i) {
+      @return -$i;
+    }
+  }
+
+  @return null;
+}

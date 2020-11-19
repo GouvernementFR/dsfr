@@ -1,0 +1,16 @@
+//extend from typo
+h1 {
+  @include heading(44, 'tight', bold, 48);
+}
+
+h2 {
+  @include heading(32, 'tight', bold);
+}
+
+h3 {
+  @include heading(24, 'tight', bold);
+}
+
+h4 {
+  @include heading(22, 'snug', bold);
+}

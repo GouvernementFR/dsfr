@@ -20,12 +20,12 @@
 
 @mixin before($display: null, $content: null) {
   @include _pseudo(before, $display, $content) {
-    @content
-  };
+    @content;
+  }
 }
 
 @mixin after($display: null, $content: null) {
   @include _pseudo(after, $display, $content) {
-    @content
-  };
+    @content;
+  }
 }
