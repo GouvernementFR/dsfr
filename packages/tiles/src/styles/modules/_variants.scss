@@ -4,51 +4,6 @@
 ////
 
 /**
- * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
- **/
-&--vertical-md {
-  flex-direction: row;
-
-  .#{$prefix}-tile__img-wrap {
-    width: space(6N);
-    height: space(6N);
-    margin: auto 0 auto space(3N);
-
-    + .#{$prefix}-tile__body {
-      min-height: space(6N);
-
-      @include respond-from(md) {
-        min-height: initial;
-      }
-    }
-
-    @include respond-from(md) {
-      width: 80px;
-      height: 80px;
-      margin: space(4N) auto 0;
-    }
-  }
-
-  .#{$prefix}-tile__body {
-    align-items: flex-start;
-    padding: 0;
-    margin: space(3N);
-    text-align: left;
-
-    @include respond-from(md) {
-      align-items: center;
-      padding: space(3N);
-      margin: 0;
-      text-align: center;
-    }
-  }
-
-  @include respond-from(md) {
-    flex-direction: column;
-  }
-}
-
-/**
  * Modificateur tuile horizontale
  **/
 &--horizontal {
@@ -83,6 +38,52 @@
     @include respond-from(md) {
       margin: space(4N);
     }
+  }
+}
+
+/**
+ * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
+ **/
+&--vertical-md {
+  flex-direction: row;
+
+  .#{$prefix}-tile__img-wrap {
+    width: space(6N);
+    height: space(6N);
+    margin: auto 0 auto space(3N);
+
+    + .#{$prefix}-tile__body {
+      min-height: space(6N);
+
+      @include respond-from(md) {
+        min-height: initial;
+        text-align: center;
+      }
+    }
+
+    @include respond-from(md) {
+      width: 80px;
+      height: 80px;
+      margin: space(4N) auto 0;
+    }
+  }
+
+  .#{$prefix}-tile__body {
+    align-items: flex-start;
+    padding: 0;
+    margin: space(3N);
+    text-align: left;
+
+    @include respond-from(md) {
+      align-items: center;
+      padding: space(3N);
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  @include respond-from(md) {
+    flex-direction: column;
   }
 }
 
