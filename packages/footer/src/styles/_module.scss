@@ -82,6 +82,15 @@
     height: auto;
   }
 
+<<<<<<< HEAD
+=======
+  &__link {
+    box-shadow: none;
+    font-size: font-size(12);
+    @include scheme-element-text-color(g600, true);
+  }
+
+>>>>>>> 87637d56aec13175e43f54d1638042ac18f67c00
   @import 'modules/content';
   @import 'modules/top';
   @import 'modules/bottom';
