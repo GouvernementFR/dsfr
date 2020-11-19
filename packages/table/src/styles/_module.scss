@@ -1,0 +1,129 @@
+////
+/// Table Module
+/// @group Table
+////
+
+/// Selecteur de tableaux
+/// @type String
+$table: "#{$prefix}-table";
+
+.#{$table} {
+  position: relative;
+
+  &:not(#{$table}--no-scroll) {
+    overflow: hidden;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  table {
+    border-spacing: 0;
+  }
+
+  caption {
+    font-size: 1.375rem;
+    line-height: 1.375;
+    color: var(--g800);
+    font-weight: bold;
+    text-align: left;
+    padding: space(2N) 0;
+  }
+
+  td,
+  th {
+    text-align: left;
+    vertical-align: middle;
+    display: table-cell;
+    border: 0;
+    padding: space(1-5N);
+    font-size: font-size(14);
+
+    @include respond-from(md) {
+      padding: space(2N);
+    }
+  }
+
+  th {
+    font-weight: font-weight('bold');
+  }
+
+  thead {
+    td,
+    th {
+      font-weight: font-weight('bold');
+      @include scheme-element-border-color(g600, true, bottom, 0.125rem solid $COLOR);
+      @include scheme-element-bg-color(beige);
+      @include scheme-element-text-color(g700);
+    }
+  }
+
+  tbody tr:nth-child(even) {
+    @include scheme-element-bg-color(beige);
+  }
+
+  tbody tr:nth-child(odd) {
+    @include scheme-element-bg-color(white);
+  }
+
+  /*
+  * Style bodered, enleve le style even/odd et ajoute des bordures entre chaque ligne
+  */
+  &--bordered {
+    tbody {
+      td,
+      th {
+        border: 0;
+        @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
+      }
+
+      tr {
+        &:nth-child(odd),
+        &:nth-child(even) {
+          @include scheme-element-bg-color(t-plain);
+        }
+      }
+    }
+  }
+
+  /*
+  * Cache la caption
+  */
+  &--no-caption {
+    caption {
+      @include sr-only();
+    }
+  }
+
+  /*
+  * Fixe le caption en bas du tableau
+  */
+  &--caption-bottom {
+    caption {
+      caption-side: bottom;
+    }
+  }
+
+  /*
+  * pas de scroll ni de shadow
+  */
+  &--no-scroll {
+    min-width: auto;
+
+    caption {
+      max-width: calc(100vw - 2rem); // eol in mobile even if table overflow
+    }
+  }
+
+  /*
+  * Fixe la taille des colonnes du tableau
+  */
+  &--layout-fixed {
+    table {
+      table-layout: fixed;
+    }
+  }
+
+  @import 'modules/table-shadow';
+}

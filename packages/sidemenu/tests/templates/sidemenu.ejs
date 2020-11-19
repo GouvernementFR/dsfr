@@ -1,6 +1,6 @@
 <nav class="<%= prefix %>-sidemenu<% if(modifier){%> <%= prefix %>-sidemenu<%- modifier %><%}%>" role="navigation" aria-label="Menu latéral">
 	<div class="<%= prefix %>-sidemenu__inner">
-		<button class="<%= prefix %>-sidemenu__button" hidden aria-controls="sidemenuWrapper<%- modifier %>" aria-expanded="false">Dans cette rubrique</button>
+		<button class="<%= prefix %>-sidemenu__btn--sidemenu-toggle" hidden aria-controls="sidemenuWrapper<%- modifier %>" aria-expanded="false">Dans cette rubrique</button>
 		<div class="<%= prefix %>-sidemenu__wrapper" id="sidemenuWrapper<%- modifier %>">
 			<div class="<%= prefix %>-sidemenu__title">Titre de rubrique</div>
 			<ul class="<%= prefix %>-sidemenu__list">

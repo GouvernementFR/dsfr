@@ -5,7 +5,7 @@
 - [Mise à jour](#mise-à-jour)
 - [Fonctionnement](#fonctionnement)
 - [Utilisation](#utilisation)
-- [Contribuer](#contribuer)
+- [Contribuer](#contribution)
 
 ## Installation
 L'installation du Design System de l'Etat (ci-après, le **DS**) peut se faire de deux manières différentes. En téléchargeant l'ensemble des fichiers nécessaires à son utilisation, ou en utilisant le gestionnaire de paquets **NPM**.
@@ -14,13 +14,13 @@ L'installation du Design System de l'Etat (ci-après, le **DS**) peut se faire d
 Il est possible de télécharger l'ensemble du Design System de l'Etat au format zip à [cette adresse](#). Le zip contient un ensemble de fichiers CSS et Javascript, ainsi que les différentes polices web utilisées, à savoir la Marianne et la Spectral.
 
 ### NPM
-Un package complet du Design System de l'Etat est disponible sur NPM, permettant de télécharger l'ensemble des fichiers nécessaires.
+Le Design System de l'Etat est disponible sur **NPM** via un ensemble de packages qu'il est possible d'ajouter directement à votre projet.
 Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org/en/), et d'avoir un fichier `package.json` à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).
 
-Une fois en place, il suffit d'installer le package du Design System de l'Etat via la commande suivante :
+Une fois en place, il suffit d'installer les packages du Design System de l'Etat dont vous avez besoin via la commande suivante, l'ensemble des packages nécessaires devant être séparés d'une virgule :
 
 ```
-npm install @gouvfr/design-system
+npm install @gouvfr/header @gouvfr/footer
 ```
 
 Il est également possible d'installer les composants avec [Yarn](https://yarnpkg.com/) :
@@ -43,7 +43,9 @@ Lors de la création de votre projet, il est nécessaire d’adopter l’arbor
 index.html
 ```
 
-En cas d'installation via NPM, il est important de récupérer les polices web dans le dossier node_modules/@gouvfr/design-system/dist/fonts, ou de les [télécharger directement ici](#).
+En cas d'installation via NPM, il est important de récupérer les polices web dans le dossier node_modules/@gouvfr/core/fonts, ou de les [télécharger directement ici](#).
+
+Il est ensuite nécéssaire, via votre outil de build, de charger l'ensemble des fichiers css et js des packages à utiliser.
 
 ### Template HTML de base
 Le point de départ de l’utilisation du DS est la création de fichiers HTML afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. Voici un exemple de code HTML minimal pour utiliser le DS, chargeant les polices et styles précisés dans la précédente section :
@@ -73,15 +75,15 @@ En cas d'installation simple via des fichiers statiques, il est possible de mett
 
 ### NPM
 
-Afin de mettre à jour la version de package utilisée via NPM, il est nécessaire de récupérer la dernière version, à l'aide de la commande NPM suivante :
+Afin de mettre à jour la version de package utilisée via NPM, il est nécessaire de récupérer la dernière version, à l'aide de la commande NPM suivante, en précisant chaque package présent dans votre fichier `package.json` :
 
 ```
-npm install @gouvfr/design-system@latest
+npm install @gouvfr/header@latest @gouvfr/footer@latest
 ```
 
-ou via Yarn :
+ou via Yarn, de mettre à jour automatiquement tous les packages du **DS** :
 ```
-yarn add @gouvfr/design-system@latest
+yarn upgrade -S @gouvfr --latest  
 ```
 
 ## Fonctionnement
@@ -112,26 +114,29 @@ Ces instructions vous permettrons également d'installer une copie locale du Des
 ## Liste des composants
 
 ## Documentations Confluence
-
-- [Grid](packages/grid/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331372/Grille+et+points+de+rupture+-+Grid+and+breakpoints)
-- [Icons](packages/icons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396/Ic+nes+-+Icons)
-- [Content](packages/content/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias)
-- [Body](packages/body/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019527/Typographie+-+Typography)
-- [Search](packages/search/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186376/Barre+de+recherche+-+Search+bar)
-- [Buttons](packages/buttons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons)
-- [Radios](packages/radios/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button)
-- [Checkboxes](packages/checkboxes/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217251933/Case+cocher+-+Checkbox)
-- [Cards](packages/cards/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331445/Carte+-+Card)
-- [Inputs](packages/inputs/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input)
-- [Header](packages/header/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header)
+- [Accordion](packages/accordion/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509)
+- [All](packages/all/README.md)
 - [Breadcrumb](packages/breadcrumb/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019278/Fil+d+Ariane+-+Breadcrumb)
-- [Links](packages/links/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284725/Liens+-+Links)
-- [Skiplinks](packages/skiplinks/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789880/Liens+d+vitement+-+Skip+links)
-- [Selects](packages/selects/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019306/Liste+d+roulante+-+Select)
-- [Medias](packages/medias/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias)
+- [Buttons](packages/buttons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons)
 - [Callouts](packages/callouts/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331196/Mise+en+avant+-+Call-out)
+- [Cards](packages/cards/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331445/Carte+-+Card)
+- [Checkboxes](packages/checkboxes/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217251933/Case+cocher+-+Checkbox)
+- [Content](packages/content/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias)
+- [Footer](packages/footer/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331413/Pied+de+page+-+Footer)
+- [Grid](packages/grid/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331372/Grille+et+points+de+rupture+-+Grid+and+breakpoints)
+- [Header](packages/header/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header)
 - [Highlights](packages/highlights/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019199/Mise+en+exergue+-+Highlight)
+- [Icons](packages/icons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396/Ic+nes+-+Icons)
+- [Inputs](packages/inputs/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input)
+- [Links](packages/links/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284725/Liens+-+Links)
+- [Medias](packages/medias/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias)
 - [Navigation](packages/navigation/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789853/Navigation+principale+-+Main+navigation)
 - [Pagination](packages/pagination/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223051980/Pagination+-+Pagination)
-- [Footer](packages/footer/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331413/Pied+de+page+-+Footer)
+- [Radios](packages/radios/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button)
+- [Search](packages/search/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186376/Barre+de+recherche+-+Search+bar)
+- [Selects](packages/selects/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019306/Liste+d+roulante+-+Select)
+- [Skiplinks](packages/skiplinks/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789880/Liens+d+vitement+-+Skip+links)
+- [Table](packages/table/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312016971)
+- [Tags](packages/tags/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/310706305)
 - [Tiles](packages/tiles/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331438/Tuile+-+Tile)
+- [Typography](packages/typography/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019527/Typographie+-+Typography)

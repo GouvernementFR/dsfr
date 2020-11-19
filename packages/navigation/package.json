@@ -1,8 +1,11 @@
 {
-  "name": "@frds/navigation",
-  "version": "0.0.0",
+  "name": "@gouvfr/navigation",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Navigation",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "container"
   },
@@ -10,10 +13,11 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/utilities": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/buttons": "^0.0.0",
-    "@frds/icons": "^0.0.0"
+    "@gouvfr/buttons": "^0.3.1",
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/icons": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1",
+    "@gouvfr/utilities": "^0.3.1"
   }
 }

@@ -1,4 +1,4 @@
-# @frds/sidemenu
+# @gouvfr/sidemenu
 
 ## Dépendance
 ```shell
@@ -10,18 +10,18 @@ inputs
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/sidemenu
+npm install @gouvfr/sidemenu
 ```
 Via Yarn :
 ```
-yarn add install @frds/sidemenu
+yarn add install @gouvfr/sidemenu
 ```
 
 ## Utilisation
 Afin d'utilise le composant `sidemenu`, il est nécessaire d'importer le composant ainsi que ses dépendances :
 ```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/schemes/main';
+@import 'node_modules/@gouvfr/core/main';
+@import 'node_modules/@gouvfr/schemes/main';
 ```
 
 ## Documentation

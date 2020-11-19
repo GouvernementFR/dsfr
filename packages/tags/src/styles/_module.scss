@@ -1,0 +1,50 @@
+////
+/// Tags Module
+/// @group tags
+////
+
+.#{$prefix}-tag {
+  @include build-tag();
+
+  @at-root {
+    a#{&} {
+      @include scheme-element-text-color(bf500-plain, true);
+      @include scheme-element-bg-color(bf200-bf300, true, true);
+      box-shadow: none;
+    }
+    span#{&} {
+      @include scheme-element-text-color(g-800, true);
+      @include scheme-element-bg-color(g200, true);
+    }
+  }
+}
+
+.#{$prefix}-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+
+  > li {
+    display: inline-flex;
+    margin-bottom: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+
+  a.#{$prefix}-tag {
+    margin-right: space(1-5N);
+    margin-bottom: space(1-5N);
+
+    &--sm {
+      margin-right: space(3N);
+      margin-bottom: space(3N);
+    }
+  }
+
+  span.#{$prefix}-tag {
+    margin-right: space(1N);
+    margin-bottom: space(1N);
+  }
+}

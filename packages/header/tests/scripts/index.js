@@ -1,10 +1,10 @@
 /* eslint-disable no-new */
 
 import '../style.scss';
-import '@frds/schemes/src/scripts/dist';
-import '@frds/header/src/scripts/dist';
-import '@frds/navigation/src/scripts/dist';
-import { addClass } from '@frds/utilities/src/scripts/';
+import '@gouvfr/schemes/src/scripts/dist';
+import '@gouvfr/header/src/scripts/dist';
+import '@gouvfr/navigation/src/scripts/dist';
+import { addClass } from '@gouvfr/utilities/src/scripts/';
 import { Header } from '../../src/scripts';
 
 addClass(document.body, '${prefix}-scheme-light-grey-100');

@@ -14,13 +14,16 @@
 /// pour chaque combinaison de couuleur, on définit pour chaque type une couleur
 /// Si un type n'est pas défini, la couleur de type light (la première) remplace
 $scheme-sets: (
+  /// Bleu France, couleur primaire
   bf500: $blue-france-500 $blue-france-300 $grey-700 $grey-200,
   bf500-plain: $blue-france-500,
   w-bf500: $white $blue-france-500,
   bf300-plain: $blue-france-300,
   bf200-bf300: $blue-france-200 $blue-france-300,
+  /// Transparence
   t-plain: transparent,
   t-w: transparent $white,
+  /// Échelle des gris
   g800: $grey-800 $white,
   g700: $grey-700 $grey-200,
   g600: $grey-600 $grey-300,
@@ -32,17 +35,21 @@ $scheme-sets: (
   w: $white $grey-800,
   beige: $beige $grey-750 $grey-100,
   g800-plain: $grey-800,
-  g600-g500: $grey-600 $grey-500,
+  g600-g400: $grey-600 $grey-400,
   g400-t: $grey-400 transparent,
   g100-g800: $grey-100 $grey-800,
   w-g750: $white $grey-750,
+  /// Focus
   focus:$color-focus $color-focus-dark-mode,
+  /// Couleurs fonctionnelles
   info:$info $info-dark-mode,
   success:$success $success-dark-mode,
   // warning:$warning $warning-dark-mode, // inutilisé pour le moment
   error:$error $error-dark-mode,
+  /// Rouge Marianne
   rm300: $red-marianne-300 $grey-700,
   rm500: $red-marianne-500 $red-marianne-300,
+  /// Couleurs illustratives
   b300: $brown-300 $grey-700,
   b500: $brown-500 $brown-300,
   bs300: $blue-soft-300 $grey-700,
@@ -75,4 +82,6 @@ $scheme-sets: (
   yd500: $yellow-dark-500 $yellow-dark-300,
   ym300: $yellow-medium-300 $grey-700,
   ym500: $yellow-medium-500 $yellow-medium-300,
+  /// Ombre du scroll des tableaux. basé sur la couleur $grey-800 pour
+  scroll-shadow: rgba(red($grey-800), green($grey-800), blue($grey-800), 0.16) rgba(red($grey-800), green($grey-800), blue($grey-800), 1),
 ) !global;

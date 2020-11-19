@@ -1,0 +1,24 @@
+$tags-settings:(
+  sizes: (
+    sm: (
+      font-size: 12,
+      line-height: space(2N),
+      min-height: space(3N),
+      padding-x: space(1N),
+      icon: md,
+      icon-margin-x: space(0-5N)
+    ),
+    md: (
+      font-size: 14,
+      line-height: space(2-5N),
+      min-height: space(4N),
+      padding-x: space(2N),
+      icon: md,
+      icon-margin-x: space(0-5N)
+    )
+  ),
+  places: (
+    left: arrow-left-line,
+    right: arrow-right-line
+  )
+);

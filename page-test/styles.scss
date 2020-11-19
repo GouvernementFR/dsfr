@@ -1,12 +1,11 @@
-$static-font-path: '~@frds/core/fonts';
-$icon-font-path: '~@frds/icons/fonts';
+$static-font-path: '~@gouvfr/core/fonts';
+$icon-font-path: '/icons/font';
 
-@import '~@frds/core/main';
-@import '~@frds/icons/main';
-@import '~@frds/schemes/main';
-@import '~@frds/grid/main';
-@import '~@frds/body/main';
-@import '~@frds/utilities/main';
+@import '~@gouvfr/core/main';
+@import '~@gouvfr/icons/main';
+@import '~@gouvfr/schemes/main';
+@import '~@gouvfr/grid/main';
+@import '~@gouvfr/utilities/main';
 
 code[class*="language-"],
 pre[class*="language-"] {

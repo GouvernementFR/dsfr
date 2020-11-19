@@ -1,0 +1,15 @@
+<%
+
+let data = {
+  caption: locals.caption || undefined,
+  bordered: locals.bordered || false,
+  noscroll: locals.noscroll || false,
+  nocaption: locals.nocaption || false,
+  captionBottom: locals.captionBottom || false,
+  col: locals.col || 2,
+  row: locals.row || 2,
+}
+
+%>
+
+<%- include('../templates/table', data); %>

@@ -7,7 +7,7 @@
           let classes = [prefix + '-sidemenu__item'];
       %>
       <li <%- includeClasses(classes); %>>
-          <% if (!subitem.active) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+          <% if (!subitem.active) { %><a class="<%= prefix%>-sidemenu__link" href="#" target="_self" ><% } %>
               <%- subitem.label %>
           <% if (!subitem.active) { %></a><% } %>
       </li>

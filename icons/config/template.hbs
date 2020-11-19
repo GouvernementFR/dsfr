@@ -1,0 +1,8 @@
+$icons-base64: "{{{ src }}}";
+$icons-names: {{# each codepoints }}{{ @key }}, {{/ each }};
+
+{{# each codepoints }}
+%{{ @key }} {
+  content: "\\{{ this }}";
+}
+{{/ each }}

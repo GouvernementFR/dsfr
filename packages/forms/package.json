@@ -1,8 +1,11 @@
 {
-  "name": "@frds/forms",
-  "version": "0.0.0",
+  "name": "@gouvfr/forms",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Formulaire",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },
@@ -10,8 +13,9 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/icons": "^0.0.0"
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/icons": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1"
   }
 }

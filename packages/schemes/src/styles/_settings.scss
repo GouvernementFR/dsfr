@@ -35,5 +35,6 @@ $theme-transition-duration: 0.3s;
 /// @type String
 $COLOR:unquote('$COLOR') !global;
 
+@import 'settings/colors';
 @import 'settings/sets';
 @import 'settings/blocks';

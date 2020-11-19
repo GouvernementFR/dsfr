@@ -18,7 +18,7 @@
 
   &--disabled {
     .#{$prefix}-label {
-      @include scheme-element-text-color(g600-g500);
+      @include disabled-colors(true);
     }
   }
 }
@@ -144,6 +144,11 @@
       }
     }
 
+    .#{$prefix}-hint-text {
+      margin-top: space(0-5N);
+      margin-bottom: space(0-5N);
+    }
+
     .#{$prefix}-fieldset__legend {
       margin-bottom: space(0-5N);
     }
@@ -190,8 +195,5 @@
     }
   }
 
-  //&:disabled &__legend,
-  &:disabled .#{$prefix}-label {
-    @include scheme-element-text-color(g600-g500);
-  }
+  @include disabled(true, false, false, '.#{$prefix}-label');
 }

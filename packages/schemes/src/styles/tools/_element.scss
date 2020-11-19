@@ -161,7 +161,5 @@ $scheme-elements-transitions:() !global;
     @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
     outline-offset: 2px;
     z-index: var(--focus-z-index);
-
   }
-
 }

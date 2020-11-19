@@ -1,0 +1,11 @@
+<ul class="<%= prefix %>-accordion-group" id="<%= groupCollapseId %>">
+<%
+  for (let i = 0; i < items.length; i++) {
+  let item = items[i];
+  item.collapseId = groupCollapseId + '-body-' + i;
+%>
+  <li class="<%= prefix %>-accordion-group__item">
+    <%- include('./' + item.type, item); %>
+  </li>
+<% } %>
+</ul>
