@@ -1,12 +1,13 @@
+////
+/// Callouts Module
+/// @group callouts
+////
+
 .#{$prefix}-callout {
   position: relative;
   font-family: $font-family-sans;
   padding: space(3N);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(0-5N));
-
-  @include respond-from(md) {
-    padding: space(4N) space(6N);
-  }
 
   @include custom-icons(lg) {
     display: block;
@@ -27,30 +28,6 @@
     }
   }
 
-  /*
-  > .#{$prefix}-icon {
-    @include respond-from(md) {
-
-    }
-  }
-
-  > .#{$prefix}-fi {
-    @include font-size(24);
-    margin: -(space(1N)) 0 space(1N);
-
-    @include respond-from(md) {
-      position: absolute;
-      top: space(2N);
-      left: space(2N);
-      margin: 0;
-    }
-  }
-   */
-
-  .#{$prefix}-btn {
-    margin-top: space(2N);
-  }
-
   &__title {
     font-size: font-size(22);
     line-height: line-height("snug");
@@ -68,4 +45,12 @@
   }
 
   @include component-as-scheme-modifiers(soft, 0 0 0 space(0-5N));
+
+  .#{$prefix}-btn {
+    margin-top: space(2N);
+  }
+
+  @include respond-from(md) {
+    padding: space(4N) space(6N);
+  }
 }

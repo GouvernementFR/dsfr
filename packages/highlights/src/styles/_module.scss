@@ -1,3 +1,8 @@
+////
+/// Highlights Module
+/// @group Highlights
+////
+
 .#{$prefix}-highlight {
   @include space("padding", 2N, "left");
   @include scheme-element-border-color(bf500, true, left, space(0-5N) solid $COLOR);
