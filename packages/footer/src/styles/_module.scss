@@ -24,7 +24,14 @@
       margin: -1em;
     }
 
-    a + a {
+    /**
+     * Si on ajoute un logo opérateur à côté du logo principal, on lui applique une marge à gauche
+     * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
+     * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
+     */
+    > a + a,
+    > a + img,
+    > a + svg {
       margin-left: space(3N);
       box-shadow: none;
 
@@ -73,12 +80,6 @@
   &__logo {
     width: 200px;
     height: auto;
-  }
-
-  &__link {
-    box-shadow: none;
-    font-size: font-size(12);
-    @include scheme-element-text-color(g600, true);
   }
 
   @import 'modules/content';

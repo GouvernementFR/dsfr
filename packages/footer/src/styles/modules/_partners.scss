@@ -4,7 +4,7 @@
 ////
 
 &__partners {
-  margin-top: space(5N);
+  margin-top: space(4N);
   padding-top: space(2N);
   @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
 
@@ -24,7 +24,7 @@
     }
 
     @include respond-from(md) {
-      margin: space(2N);
+      margin: 0 0 0 space(2N);
     }
   }
 
@@ -54,13 +54,13 @@
 
   @include respond-from(md) {
     flex-wrap: nowrap;
-    margin: 0 (-(space(2N)));
+    margin: 0 (-(space(2N))) (-(space(4N)));
   }
 }
 
 &__partners-main {
   flex-basis: 100%;
-  padding-top: space(4N);
+  padding-top: space(1N);
 
   + .#{$prefix}-footer__partners-sub {
 
@@ -72,6 +72,8 @@
 
   @include respond-from(sm) {
     flex-basis: auto;
+    padding-top: 0;
+    margin-top: space(1N);
   }
 }
 
@@ -87,15 +89,20 @@
     margin: 0 0 space(2N);
 
     @include respond-from(sm) {
-      margin: space(2N);
+      margin: 0 space(2N) space(4N);
+    }
+
+    @include respond-from(md) {
+      margin: 0 space(2N) space(3N);
     }
   }
 
   @include respond-from(sm) {
-    margin: 0 (-(space(2N)));
+    margin: space(2N) (-(space(2N))) 0;
   }
 
   @include respond-from(md) {
-    margin: 0;
+    margin: space(1N) 0 0;
+    padding-top: 0;
   }
 }
