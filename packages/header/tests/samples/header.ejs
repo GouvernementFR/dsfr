@@ -13,7 +13,7 @@ switch (typeof locals.logo) {
     case 'object':
         data.brand = { logo: locals.logo };
         break;
-        
+
     default:
         data.brand = { logo: '../../../logo/tests/samples/logo' };
 }
@@ -72,6 +72,10 @@ switch (true) {
 
     case locals.navigation === true:
         data.navigation = '../../../navigation/tests/samples/navigation'
+        break;
+
+    case locals.navigation === false:
+        data.navigation = false
         break;
 
     case typeof locals.navigation === 'object':

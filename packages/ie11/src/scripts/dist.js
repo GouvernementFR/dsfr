@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 
-import '@frds/ie11/_dist.scss';
+import '@gouvfr/ie11/_dist.scss';
 
 import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill';
 

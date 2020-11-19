@@ -12,19 +12,15 @@
   "config": {
     "prefix": "rf"
   },
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc packages/**/src/styles/*.scss",
-    "sprite": "svg-sprite --svg-xmldecl false --svg-dimattrs false --symbol -D packages/icons/src -m icons/icons_data.yml --symbol-dest icons --symbol-sprite sprite.svg --symbol-bust false icons/*.svg",
-    "icon-font": "svgo -f icons/ --config .svgo.yml && icon-font-generator icons/*.svg -o packages/icons/font --html false --types woff -j false --csspath packages/icons/generated/_icons.scss --cssfontsurl '#{$icon-font-path}' -p '#{$prefix}-fi' -t span --height 1200 --descent 240 --normalize true && b64-cli encode packages/icons/font/icons.woff && replace-in-file --configFile=replaceFont.js",
+    "sprite": "svg-sprite --svg-xmldecl false --svg-dimattrs false --symbol -D icons -m icons/config/icons_data.yml --symbol-dest font --symbol-sprite sprite.svg --symbol-bust false icons/svg/*.svg",
+    "icon-font": "svgo -f icons/svg/ --config icons/config/.svgo.yml && icon-font-generator icons/svg/*.svg -o icons/font --csstp icons/config/template.hbs --html false --types woff -j false --csspath packages/icons/generated/_icons.scss --cssfontsurl '#{$icon-font-path}'  --height 1200 --descent 240 --normalize true && b64-cli encode icons/font/icons.woff && replace-in-file --configFile=icons/config/replaceFont.js",
     "publish-npm": "npm run test && npx lerna publish",
-    "test:sass": "jest",
+    "test:sass": "jest tests-sass/sass.test.js",
     "test:pa11y": "node ./scripts/pa11y",
-    "test-sass": "run-s build test:*",
-    "test": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.test.js",
+    "test": "run-s build-test test:*",
+    "build-test": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.test.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
   },
   "devDependencies": {
@@ -42,6 +38,7 @@
     "core-js": "3",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
+    "css-minimizer-webpack-plugin": "^1.1.5",
     "csso-webpack-plugin": "^2.0.0-beta.1",
     "ejs": "^3.1.3",
     "eslint": "^7.5.0",
@@ -63,7 +60,7 @@
     "jest": "^26.0.1",
     "js-beautify": "^1.11.0",
     "lerna": "^3.21.0",
-    "mini-css-extract-plugin": "^0.9.0",
+    "mini-css-extract-plugin": "^0.12.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
@@ -85,21 +82,21 @@
     "svg-sprite": "^1.5.0",
     "svg-sprite-loader": "^4.2.5",
     "terser-webpack-plugin": "^2.3.5",
+    "unminified-webpack-plugin": "^2.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
+    "webpack-fix-style-only-entries": "^0.5.1",
     "webpack-merge": "^4.2.2",
     "webpack-polyfills-plugin": "jesse1983/webpack-polyfills-plugin",
     "webpack-watch-files-plugin": "^1.0.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {
-    "remove-files-webpack-plugin": "^1.4.4",
     "sassdoc": "^2.7.2"
   }
 }

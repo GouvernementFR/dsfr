@@ -30,7 +30,7 @@ const plugins = [
       templateParameters:data
    }),
     new CopyWebpackPlugin({ patterns: [
-        { from: path.resolve(__dirname, '../packages/icons/src/icons'), to: 'icons'},
+        { from: path.resolve(__dirname, '../icons/font'), to: 'icons'},
         { from: path.resolve(__dirname, '../assets/img'), to: 'img'}
       ] }),
     new Webpack.optimize.ModuleConcatenationPlugin(),

@@ -11,9 +11,6 @@ module.exports = {
       name: false,
     },
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-  ],
   module: {
     rules: [
       {

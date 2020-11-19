@@ -73,7 +73,7 @@
     position: static;
     margin-top: auto;
 
-    @include pseudo-element() {
+    @include before(block, '') {
       @include absolute-overlay();
       @include scheme-element-focus();
     }

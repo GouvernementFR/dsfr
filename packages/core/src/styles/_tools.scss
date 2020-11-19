@@ -107,8 +107,35 @@ $fontsizes-helpers-map: (
 ///     margin-bottom: space(3N);
 ///   }
 
-@function space($scale) {
-  @return px-rem(map-get($space-scale, $scale));
+@function str-to-num($value, $max:100) {
+  @for $i from 0 to $max {
+    @if $value == quote($i) {
+      @return $i;
+    }
+    @else if $value == quote(-$i) {
+      @return -$i;
+    }
+  }
+
+  @return null;
+}
+
+@function space($value) {
+
+  $v: quote($value);
+  $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
+  $unit: str_slice($v, str-length($v), str_length($v));
+
+  @if $unit == 'v' {
+    @return #{$q * .25}rem;
+  }
+  @else if $unit == 'w' {
+    @return #{$q * .5rem};
+  }
+
+  @return px-rem(map-get($space-scale, $value));
+
+  //@return null;
 }
 
 /* `````````````````````

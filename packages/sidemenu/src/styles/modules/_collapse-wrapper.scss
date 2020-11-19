@@ -1,0 +1,54 @@
+////
+/// Sidemenu Module : collapse wrapper for level 1 and 2
+/// @group sidemenu
+////
+
+/**
+ * Wrapper des listes déployables niveau 1 et 2
+ */
+.#{$prefix}-sidemenu__content {
+  @include collapse();
+  max-height: 100%;
+  padding: space(0-5N);
+  margin: -(space(0-5N));
+  transition: max-height 0.3s;
+
+  &:not(&--expanded) {
+    .#{$prefix}-sidemenu__item {
+      max-height: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    margin: 0 0 0 space(2N);
+  }
+
+  /**
+  * Styles spécifiques aux items de liste de niveaux 2 et 3
+  */
+  &__item {
+    margin: 0;
+
+    .#{$prefix}-sidemenu__btn {
+      padding: space(1-5N) 0;
+
+      @include font-icon(arrow-down-s-line, md) {
+        margin-right: 0;
+      }
+
+      @include respond-from(md) {
+        padding: space(1-5N) space(2N) space(1-5N) space(1-5N);
+      }
+    }
+
+    .#{$prefix}-sidemenu__link {
+      padding: space(1-5N) 0;
+      font-weight: font-weight();
+
+      @include respond-from(md) {
+        padding: space(1-5N);
+      }
+    }
+  }
+}

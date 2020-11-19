@@ -1,8 +1,11 @@
 {
-  "name": "@frds/cards",
-  "version": "0.0.0",
+  "name": "@gouvfr/cards",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Cards",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "container"
   },
@@ -10,10 +13,10 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0",
-    "@frds/typography": "^0.0.0",
-    "@frds/icons": "^0.0.0",
-    "@frds/medias": "^0.0.0"
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/icons": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1",
+    "@gouvfr/medias": "^0.3.1"
   }
 }

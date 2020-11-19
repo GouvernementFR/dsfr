@@ -21,3 +21,21 @@
 :root {
   --focus-z-index: 25000;
 }
+
+.#{$prefix}-fi {
+  &--sm::before {
+    font-size: icon-size(sm);
+  }
+
+  &--md::before {
+    font-size: icon-size(md);
+  }
+
+  &--lg::before {
+    font-size: icon-size(lg);
+  }
+
+  &--xl::before {
+    font-size: icon-size(xl);
+  }
+}

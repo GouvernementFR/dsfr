@@ -1,8 +1,11 @@
 {
-  "name": "@frds/icons",
-  "version": "0.0.0",
+  "name": "@gouvfr/icons",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Icônes",
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "wrapper": "col-8"
   },
@@ -11,7 +14,8 @@
     "postinstall": "node ./post-install.js"
   },
   "dependencies": {
-    "@frds/core": "^0.0.0",
-    "@frds/schemes": "^0.0.0"
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1"
   }
 }

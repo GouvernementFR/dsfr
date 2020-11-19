@@ -1,0 +1,20 @@
+{
+  "name": "@gouvfr/table",
+  "version": "0.3.1",
+  "license": "MIT",
+  "description": "Tableaux",
+  "publishConfig": {
+    "access": "public"
+  },
+  "config": {
+    "wrapper": "container"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1"
+  }
+}

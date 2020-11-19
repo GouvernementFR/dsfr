@@ -1,0 +1,42 @@
+/*
+  Variables :
+    -> Unit
+    -> Colors
+    -> Typography
+    -> Spacing
+*/
+/* `````````````````````
+  Typography
+````````````````````` */
+/* `````````````````````
+  Spacing
+````````````````````` */
+/* `````````````````````
+  FUNCTIONS
+````````````````````` */
+/* `````````````````````
+  MIXINS
+````````````````````` */
+.rf-highlight {
+  padding-left: 1rem;
+  border-left: 0.25rem solid var(--bf500);
+  font-size: 1rem;
+  line-height: 1.5; }
+  :root[data-transition] .rf-highlight {
+    transition: border-left 0.3s; }
+  @media (min-width: 48em) {
+    .rf-highlight {
+      padding-left: 2rem;
+      margin-left: 2rem; } }
+  .rf-highlight--lg {
+    font-size: 1.125rem;
+    line-height: 1.5; }
+    @media (min-width: 48em) {
+      .rf-highlight--lg {
+        font-size: 1.25rem; } }
+  .rf-highlight--sm {
+    font-size: 0.875rem;
+    line-height: 1.5; }
+
+
+/*# sourceMappingURL=highlights.css.map*/

@@ -1,6 +1,11 @@
+////
+/// Summary Module
+/// @group summary
+////
+
 .#{$prefix}-summary {
-  @include scheme-element-bg-color(beige, true);
   padding: space(3N);
+  @include scheme-element-bg-color(beige, true);
 
   @include respond-from(md) {
     padding: space(4N) space(5N) space(3N);
@@ -8,10 +13,10 @@
 }
 
 .#{$prefix}-summary__title {
+  margin: 0 0 space(2N);
   @include text-styles(xs);
   font-weight: font-weight(bold);
   text-transform: uppercase;
-  margin: 0 0 space(2N);
   @include scheme-element-text-color(g800, true);
 }
 
@@ -27,7 +32,7 @@
     }
   }
 
-  a {
+  > li > a {
     display: inline-flex;
     padding: space(1N);
     margin: 0 (-(space(1N)));
@@ -36,8 +41,8 @@
     @include scheme-element-bg-color(t-plain, true, after);
 
     &::before {
-      content: counters(list-number, ".") ".";
       margin-right: space(1N);
+      content: counters(list-number, ".") ".";
     }
   }
 }
