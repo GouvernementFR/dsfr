@@ -3,7 +3,7 @@
   @include scheme-element-focus();
 
   overflow: hidden;
-  z-index: 1;
+  @include z-index(over);
 }
 
 @mixin _reset-links-tags($tags) {

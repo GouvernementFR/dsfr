@@ -9,7 +9,7 @@
   overflow: auto;
   transition: bottom 0.3s, visibility 0.3s;
   @include scheme-element-bg-color(w-g750, true);
-  z-index: 30000;
+  @include z-index(menu);
   visibility: hidden;
 
   --focus-z-index: 35000;

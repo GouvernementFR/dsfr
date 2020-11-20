@@ -24,7 +24,7 @@ $shadow-wrapper: "#{$prefix}-table__wrapper";
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 1;
+        @include z-index(over);
         opacity: 1;
         pointer-events: none;
         @include scheme-element-box-shadow-color(scroll-shadow, false, 'inset 0 0 0 transparent, inset 0 0 0 transparent');
