@@ -7,7 +7,7 @@
   width: 100%;
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
   @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
-  padding-top: space(5N);
+  padding-top: space(5w);
   line-height: line-height();
 
   &__body {
@@ -32,11 +32,11 @@
     > a + a,
     > a + img,
     > a + svg {
-      margin-left: space(3N);
+      margin-left: space(3w);
       box-shadow: none;
 
       @include respond-from(md) {
-        margin-left: space(6N);
+        margin-left: space(6w);
       }
     }
 
@@ -73,7 +73,7 @@
 
     @include respond-from(md) {
       flex-basis: calc(100% / 3);
-      padding-right: space(2N);
+      padding-right: space(2w);
     }
   }
 
@@ -82,15 +82,6 @@
     height: auto;
   }
 
-<<<<<<< HEAD
-=======
-  &__link {
-    box-shadow: none;
-    font-size: font-size(12);
-    @include scheme-element-text-color(g600, true);
-  }
-
->>>>>>> 87637d56aec13175e43f54d1638042ac18f67c00
   @import 'modules/content';
   @import 'modules/top';
   @import 'modules/bottom';

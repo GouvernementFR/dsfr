@@ -20,13 +20,13 @@
 &__bottom-list {
   flex-wrap: wrap;
   align-items: center;
-  padding: space(1N) 0;
+  padding: space(1w) 0;
   width: 100%;
   margin: 0;
 
   > li {
     position: relative;
-    margin: space(1N) 0 0 space(1N);
+    margin: space(1w) 0 0 space(1w);
     display: inline;
 
     &::before {
@@ -34,18 +34,18 @@
       display: inline-block;
       vertical-align: middle;
       position: relative;
-      height: space(2N);
+      height: space(2w);
       width: 1px;
-      margin-right: space(1N);
+      margin-right: space(1w);
       @include scheme-element-bg-color(g400, true);
 
       @include respond-from(sm) {
-        margin-right: space(0-5N);
+        margin-right: space(1v);
       }
     }
 
     &:first-child {
-      margin: space(1N) 0 0;
+      margin: space(1w) 0 0;
 
       &::before {
         content: none;
@@ -59,12 +59,12 @@
     }
 
     @include respond-from(sm) {
-      margin: space(1N) 0 0 space(0-5N);
+      margin: space(1w) 0 0 space(1v);
     }
   }
 
   @include respond-from(sm) {
-    padding: space(2N) 0;
+    padding: space(2w) 0;
   }
 }
 
@@ -72,10 +72,10 @@
   flex-shrink: 0;
   font-size: font-size(12);
   @include scheme-element-text-color(g600, true);
-  margin-top: space(2N);
+  margin-top: space(2w);
 
   @include respond-from(sm) {
     margin-top: 0;
-    margin-left: space(4N);
+    margin-left: space(4w);
   }
 }

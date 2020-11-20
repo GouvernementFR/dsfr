@@ -6,12 +6,12 @@
 &__top {
   display: flex;
   @include scheme-element-bg-color(beige, true);
-  margin: -(space(5N)) 0 space(5N);
-  padding: space(2N) 0;
+  margin: -(space(5w)) 0 space(5w);
+  padding: space(2w) 0;
 }
 
 &__top-cat {
-  margin: 0 0 space(1N);
+  margin: 0 0 space(1w);
   font-size: font-size(12);
   font-weight: font-weight(bold);
   text-align: center;

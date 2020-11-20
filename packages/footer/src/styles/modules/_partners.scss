@@ -4,8 +4,8 @@
 ////
 
 &__partners {
-  margin-top: space(4N);
-  padding-top: space(2N);
+  margin-top: space(4w);
+  padding-top: space(2w);
   @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
 
   a {
@@ -15,7 +15,7 @@
     width: 100%;
     height: auto;
     background: $white;
-    padding: space(2N);
+    padding: space(2w);
     box-shadow: none;
 
     @include respond-from(sm) {
@@ -24,7 +24,7 @@
     }
 
     @include respond-from(md) {
-      margin: 0 0 0 space(2N);
+      margin: 0 0 0 space(2w);
     }
   }
 
@@ -32,7 +32,7 @@
     width: auto;
     max-width: 100%;
     height: auto;
-    max-height: calc(90px - #{space(2N)});
+    max-height: calc(90px - #{space(2w)});
   }
 }
 
@@ -54,26 +54,26 @@
 
   @include respond-from(md) {
     flex-wrap: nowrap;
-    margin: 0 (-(space(2N))) (-(space(4N)));
+    margin: 0 (-(space(2w))) (-(space(4w)));
   }
 }
 
 &__partners-main {
   flex-basis: 100%;
-  padding-top: space(1N);
+  padding-top: space(1w);
 
   + .#{$prefix}-footer__partners-sub {
 
     @include respond-from(md) {
       justify-content: flex-end;
-      padding-left: space(6N);
+      padding-left: space(6w);
     }
   }
 
   @include respond-from(sm) {
     flex-basis: auto;
     padding-top: 0;
-    margin-top: space(1N);
+    margin-top: space(1w);
   }
 }
 
@@ -82,27 +82,27 @@
   flex-wrap: wrap;
   align-items: center;
   flex-basis: 100%;
-  padding-top: space(4N);
+  padding-top: space(4w);
 
   > a {
     box-shadow: none;
-    margin: 0 0 space(2N);
+    margin: 0 0 space(2w);
 
     @include respond-from(sm) {
-      margin: 0 space(2N) space(4N);
+      margin: 0 space(2w) space(4w);
     }
 
     @include respond-from(md) {
-      margin: 0 space(2N) space(3N);
+      margin: 0 space(2w) space(3w);
     }
   }
 
   @include respond-from(sm) {
-    margin: space(2N) (-(space(2N))) 0;
+    margin: space(2w) (-(space(2w))) 0;
   }
 
   @include respond-from(md) {
-    margin: space(1N) 0 0;
+    margin: space(1w) 0 0;
     padding-top: 0;
   }
 }
