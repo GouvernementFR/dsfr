@@ -4,13 +4,13 @@
 ////
 
 .#{$prefix}-highlight {
-  @include space("padding", 2N, "left");
-  @include scheme-element-border-color(bf500, true, left, space(0-5N) solid $COLOR);
+  padding-left: space(2w);
+  @include scheme-element-border-color(bf500, true, left, space(1v) solid $COLOR);
   @include text-styles();
 
   @include respond-from(md) {
-    @include space("padding", 4N, "left");
-    @include space("margin", 4N, "left");
+    padding-left: space(4w);
+    margin-left: space(4w);
   }
 
   &--lg {
