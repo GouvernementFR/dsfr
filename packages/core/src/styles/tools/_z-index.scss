@@ -1,7 +1,0 @@
-
-/**
-* Mixin de gestion des z-index
-*/
-@mixin z-index($indexName) {
-  z-index: map-get($z-indexes, $indexName);
-}

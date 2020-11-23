@@ -1,5 +1,4 @@
 .#{$prefix}-nav {
-
   &__list {
     display: flex;
     flex-direction: column;
@@ -66,10 +65,6 @@
         justify-content: flex-start;
         font-weight: normal;
       }
-
-      &:focus {
-        z-index: var(--focus-z-index);
-      }
     }
 
     & > .#{$prefix}-link {
@@ -101,7 +96,6 @@
       }
 
       &[aria-expanded="true"] {
-
         &::before {
           transform: rotate(-180deg);
         }
@@ -132,7 +126,7 @@
       }
 
       @include respond-from(md) {
-        &:before {
+        &::before {
           content: none;
         }
       }
@@ -157,13 +151,13 @@
 
   @include collapse();
 
-  @include z-index(menu);
+  @include z-index(menu, true);
   margin: 0 (- space(2N));
   padding: 0 space(2N);
   box-sizing: content-box;
   width: 100%;
 
-  @include respond-from(md){
+  @include respond-from(md) {
     position: absolute;
     top: 100%;
     width: 20rem;
@@ -233,7 +227,6 @@
       }
     }
 
-
     &--active {
       &,
       & > .#{$prefix}-link {
@@ -258,7 +251,7 @@
 
   @include collapse();
 
-  @include z-index(menu);
+  @include z-index(menu, true);
 
   @include scheme-element-bg-color(w-g750, true);
 
@@ -293,8 +286,6 @@
     }
   }
 
-
-
   > .#{$prefix}-container {
     padding: space(1N) space(2N) space(3N);
 
@@ -323,7 +314,7 @@
     }
 
     @include respond-from(xl) {
-      right:0;
+      right: 0;
     }
   }
 
@@ -426,7 +417,6 @@
     @include respond-from(md) {
       margin: 0 0 space(1N) 0;
     }
-
 
     &::before {
       content: none;

@@ -9,10 +9,8 @@
   overflow: auto;
   transition: bottom 0.3s, visibility 0.3s;
   @include scheme-element-bg-color(w-g750, true);
-  @include z-index(menu);
+  @include z-index(modal, true);
   visibility: hidden;
-
-  --focus-z-index: 35000;
 
   &::before,
   &::after {

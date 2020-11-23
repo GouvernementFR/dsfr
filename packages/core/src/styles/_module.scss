@@ -18,10 +18,6 @@
 //@include sr-only-from();
 //@include sr-only-to();
 
-:root {
-  --focus-z-index: 25000;
-}
-
 .#{$prefix}-fi {
   &--sm::before {
     font-size: icon-size(sm);
@@ -39,3 +35,5 @@
     font-size: icon-size(xl);
   }
 }
+
+@import 'z-index/module';
