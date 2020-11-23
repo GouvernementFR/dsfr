@@ -18,7 +18,7 @@
 
   &--disabled {
     .#{$prefix}-label {
-      @include scheme-element-text-color(g600-g500);
+      @include disabled-colors(true);
     }
   }
 }
@@ -195,8 +195,5 @@
     }
   }
 
-  //&:disabled &__legend,
-  &:disabled .#{$prefix}-label {
-    @include scheme-element-text-color(g600-g500);
-  }
+  @include disabled(true, false, false, '.#{$prefix}-label');
 }

@@ -34,7 +34,7 @@ $table: "#{$prefix}-table";
   td,
   th {
     text-align: left;
-    vertical-align: text-top;
+    vertical-align: middle;
     display: table-cell;
     border: 0;
     padding: space(1-5N);
@@ -52,7 +52,6 @@ $table: "#{$prefix}-table";
   thead {
     td,
     th {
-      vertical-align: text-bottom;
       font-weight: font-weight('bold');
       @include scheme-element-border-color(g600, true, bottom, 0.125rem solid $COLOR);
       @include scheme-element-bg-color(beige);

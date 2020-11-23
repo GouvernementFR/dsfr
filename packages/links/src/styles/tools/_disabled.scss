@@ -1,0 +1,7 @@
+@mixin disabled-link($text:true, $background:false, $box-shadow-border: false, $descendant: null) {
+  @at-root #{selector_unify(&, button)} {
+    @include disabled($text, $background, $box-shadow-border, $descendant) {
+      @content;
+    }
+  }
+}
