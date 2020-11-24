@@ -24,11 +24,6 @@ span[class*=" #{$prefix}-fi-"] {
   }
 }
 
-/*
-* @var: $icons-mames - générée dans generated/_icons.scss
-*/
-@include generate-icons-content($icons-names);
-
 .#{$prefix}-fi {
   @each $size, $value in $icon-size-map {
     @if $size != md {
@@ -40,3 +35,8 @@ span[class*=" #{$prefix}-fi-"] {
     }
   }
 }
+
+/*
+* @var: $icons-mames - générée dans generated/_icons.scss
+*/
+@include generate-icons-content($icons-names);
