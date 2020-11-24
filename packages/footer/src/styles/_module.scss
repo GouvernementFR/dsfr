@@ -40,6 +40,9 @@
       }
     }
 
+    /**
+     * Styles quand un logo opérateur est présent
+     */
     .#{$prefix}-footer__body--operator & {
       flex-basis: 100%;
 
@@ -77,6 +80,9 @@
     }
   }
 
+  /**
+   * On fixe une largeur maximale pour le logo opérateur
+   */
   &__logo {
     width: 200px;
     height: auto;

@@ -8,6 +8,9 @@
   padding-top: space(2w);
   @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
 
+  /**
+   * Style des liens qui entourent les logos partenaires
+   */
   a {
     display: flex;
     align-items: center;
@@ -28,6 +31,9 @@
     }
   }
 
+  /**
+   * On surcharge le style du logo de base
+   */
   .#{$prefix}-footer__logo {
     width: auto;
     max-width: 100%;
@@ -48,6 +54,9 @@
   }
 }
 
+/**
+ * Container des logos partenaires (principaux et secondaires)
+ */
 &__partners-logos {
   display: flex;
   flex-wrap: wrap;
@@ -58,6 +67,9 @@
   }
 }
 
+/**
+ * Container des logos partenaires principaux
+ */
 &__partners-main {
   flex-basis: 100%;
   padding-top: space(1w);
@@ -77,6 +89,9 @@
   }
 }
 
+/**
+ * Container des logos partenaires secondaires
+ */
 &__partners-sub {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +99,9 @@
   flex-basis: 100%;
   padding-top: space(4w);
 
+  /**
+   * On surcharge le style du lien pour les logos secondaires
+   */
   > a {
     box-shadow: none;
     margin: 0 0 space(2w);
