@@ -9,6 +9,9 @@
   padding: space(3w);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
+  /**
+   * Inclusion de l'icône (optionnel)
+   */
   @include custom-icons(lg) {
     display: block;
     margin: -(space(1w)) 0 space(1w);
@@ -21,6 +24,9 @@
     }
   }
 
+  /**
+   * Si une icône est présente, on rajoute du padding à partir du breakpoint md
+   */
   &[class^="#{$prefix}-fi"],
   &[class*=" #{$prefix}-fi"] {
     @include respond-from(md) {
@@ -40,12 +46,18 @@
     @include text-styles();
   }
 
+  /**
+   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   */
   &__text#{&}__text--lg {
     @include text-styles(lg);
   }
 
   @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
 
+  /**
+   * Ajout de marge quand on inclut un bouton (optionnel)
+   */
   .#{$prefix}-btn {
     margin-top: space(2w);
   }

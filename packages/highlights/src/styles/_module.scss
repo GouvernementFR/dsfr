@@ -13,10 +13,16 @@
     margin-left: space(4w);
   }
 
+  /**
+   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   */
   &--lg {
     @include text-styles(lg);
   }
 
+  /**
+   * Modificateur pour la taille du texte (sm: 14px/0.875rem)
+   */
   &--sm {
     @include text-styles(sm);
   }
