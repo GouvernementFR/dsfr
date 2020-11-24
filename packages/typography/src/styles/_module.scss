@@ -1,3 +1,8 @@
+////
+/// Typography Module
+/// @group typography
+////
+
 body {
   font-family: $font-family-sans;
   @include scheme-element-text-color(g700, true);

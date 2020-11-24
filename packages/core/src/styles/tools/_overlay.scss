@@ -1,3 +1,8 @@
+////
+/// Core Tools : overlay
+/// @group core
+////
+
 @mixin absolute-overlay($size: 100% 100%, $position: 0 0 0 0, $is-media-query:false) {
 
   @if $is-media-query == false and $size == (100% 100%) and $position == (0 0 0 0) {

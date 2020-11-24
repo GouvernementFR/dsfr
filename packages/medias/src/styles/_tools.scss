@@ -1,3 +1,8 @@
+////
+/// Medias Tools
+/// @group medias
+////
+
 /// @param $ratio {String}: key du ratio attendu selon la map $ratio-scale
 /// @param $block {Size | Bool}: détermine si le block est créé et sa taille correspondante
 @mixin aspect-ratio($ratio: 16x9, $block: 100%) {

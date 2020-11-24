@@ -1,3 +1,8 @@
+////
+/// Typography Tools
+/// @group typography
+////
+
 @mixin heading($font-size, $line-height:"tight", $font-weight:null, $from-md-font-size:null) {
   font-size: font-size($font-size);
   line-height: line-height($line-height);
