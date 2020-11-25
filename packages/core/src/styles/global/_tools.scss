@@ -1,2 +1,20 @@
+////
+/// Core Tools : Global
+/// @group core
+////
 
-@import 'functions/str-to-num';
+@import 'functions/maps';
+@import 'functions/strings';
+@import 'functions/units';
+
+@import 'tools/breakpoints';
+@import 'tools/disabled';
+@import 'tools/display';
+@import 'tools/fit';
+@import 'tools/position';
+@import 'tools/pseudo';
+@import 'tools/reset';
+@import 'tools/selectors';
+@import 'tools/shadow';
+@import 'tools/sr-only';
+@import 'tools/z-index';

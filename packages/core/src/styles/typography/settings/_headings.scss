@@ -1,1 +1,34 @@
-/// mettre en place les settings des headings
+
+$headings: (
+  h1: (
+    default: (
+      font-size: 44,
+      line-height: 'tight',
+      font-weight: 700,
+    ),
+    md: (
+      font-size: 48
+    )
+  ),
+  h2: (
+    default: (
+      font-size: 32,
+      line-height: 'tight',
+      font-weight: 700,
+    )
+  ),
+  h3: (
+    default: (
+      font-size: 24,
+      line-height: 'tight',
+      font-weight: 700,
+    )
+  ),
+  h4: (
+    default: (
+      font-size: 22,
+      line-height: 'snug',
+      font-weight: 700,
+    )
+  )
+);

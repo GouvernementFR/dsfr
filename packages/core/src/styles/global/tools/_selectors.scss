@@ -1,0 +1,57 @@
+@mixin class-start-with($start) {
+  $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin class-not-start-with($start) {
+  $selector: ':not([class^="#{$start}-"]):not([class*=" #{$start}"])';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin dse-class() {
+  @include class-start-with('#{$prefix}-') {
+    @content;
+  }
+}
+
+@mixin not-dse-class() {
+  @include class-not-start-with('#{$prefix}-') {
+    @content;
+  }
+}
+
+@mixin selector-insert($selectors...) {
+  $selector: '&';
+  @for $i from 0 to length($selectors) {
+    $selector: '#{$selector}, #{nth($selectors, $i + 1)}';
+  }
+  @at-root {
+    #{&} {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
+
+/// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
+/// @access public
+@mixin dse-all-selector() {
+  @include dse-class {
+    @include selector-insert('& *') {
+      @include selector-insert('&::before', '&::after') {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+////
+/// Core Tools : Typography font-size
+/// @group core
+////
+
+/// Return font-size value from type map and convert to rem.
+///
+/// @param {Number} $size [16] - Type scale value from `$type-scale` (Default to 16 = 16px)
+///
+/// @example scss - Set font-size to 1.5rem (24px)
+///   .foo {
+///     font-size: font-size(24);
+///   }
+@function font-size($size: 16) {
+  @return px-rem(map-get($type-scale, $size));
+}
+
+/// Set font size
+///
+/// @param {Number} $size [16] - Type scale value from `$type-scale` (Default to 16 = 16px)
+///
+/// @require {variable} $type-scale
+///
+/// @example scss - Set font-size to 1.5rem (24px)
+///   .foo {
+///     @include font-size(24);
+///   }
+@mixin font-size($size) {
+  font-size: font-size($size);
+}
+
+/// Return line-height value from line-height map.
+///
+/// @param {String} $scale ["normal"] - Type scale value from `$line-height-scale` (Default to "normal" = 1.5)
+///
+/// @example scss - Set line-height to loose (2)
+///   .foo {
+///     line-height: line-height("loose");
+///   }
+
+@function line-height($scale: normal) {
+  @return map-get($line-height-scale, $scale);
+}
+
+/// Set line-height
+///
+/// @param {String} $scale ["normal"] - Type scale value from `$line-height-scale` (Default to "normal" = 1.5)
+///
+/// @example scss - Set line-height to loose (2)
+///   .foo {
+///     @include line-height(2);
+///   }
+
+@mixin line-height($value: normal) {
+  line-height: line-height($value);
+}
+
+/// Set text style
+///
+/// @param {String} $type [md] - text types `["xs, "sm", "md", "lg", "lead"]` - (Default to "md")
+///
+/// @example scss -
+///   .foo {
+///     @include text-styles(lg);
+///   }
+
+@mixin text-styles($type: md) {
+  @if ($type == md) {
+    font-size: font-size();
+    line-height: line-height();
+  }
+  @else if ($type == lg) {
+    font-size: font-size(18);
+    line-height: line-height();
+
+    @include respond-from(md) {
+      font-size: font-size(20);
+    }
+  }
+  @else if ($type == sm) {
+    font-size: font-size(14);
+    line-height: line-height();
+  }
+  @else if ($type == xs) {
+    font-size: font-size(12);
+    line-height: line-height();
+    @include scheme-element-text-color(g600, true);
+  }
+  @else if ($type == lead) {
+    font-size: font-size(20);
+    line-height: line-height("snug");
+
+    @include respond-from(md) {
+      font-size: font-size(24);
+    }
+  }
+}

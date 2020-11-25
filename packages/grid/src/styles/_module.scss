@@ -1,12 +1,3 @@
-.#{$prefix}-container {
-
-  @include container();
-
-  &-fluid {
-    width: 100%;
-  }
-}
-
 .#{$prefix}-grid-row {
   display: flex;
   flex-wrap: wrap;

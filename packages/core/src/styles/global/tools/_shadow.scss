@@ -1,0 +1,3 @@
+@mixin shadow($type) {
+  box-shadow: map_get($shadows-settings, $type);
+}

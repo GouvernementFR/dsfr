@@ -1,0 +1,53 @@
+/// Return space value from type map and convert to rem.
+///
+/// @param {Number} $scale [2] - Space scale value from `$space-scale` (Default to  1N = 8px)
+///
+/// @example scss - Set margin-bottom to 24px
+///   .foo {
+///     margin-bottom: space(3N);
+///   }
+@function space($value) {
+
+  $v: quote($value);
+  $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
+  $unit: str_slice($v, str-length($v), str_length($v));
+
+  @if $unit == 'v' {
+    @return #{$q * 0.25}rem;
+  }
+  @else if $unit == 'w' {
+    @return #{$q * 0.5rem};
+  }
+
+  @return px-rem(map-get($space-scale, $value));
+}
+
+/// Set space property
+///
+/// @param {String} $property ["margin"] - Property to apply spacing `["margin", "padding"]`
+/// @param {Number} $scale [2] - Space scale value from `$space-scale` (Default to  2 = 8px)
+/// @param {String} $direction - Direction of the spacing `["top", "right", "bottom", "left"]`
+///
+/// @example scss - Set margin-bottom to 24px
+///   .foo {
+///     @include space("margin", 3N, "bottom");
+///   }
+@mixin space($property: margin, $size: 1N, $direction: null) {
+  $scale: px-rem(map-get($space-scale, $size));
+  @if $direction {
+    @if $direction == 'x' {
+      #{$property}-left: $scale;
+      #{$property}-right: $scale;
+    }
+    @else if $direction == 'y' {
+      #{$property}-top: $scale;
+      #{$property}-bottom: $scale;
+    }
+    @else {
+      #{$property}-#{$direction}: $scale;
+    }
+  }
+  @else {
+    #{$property}: $scale;
+  }
+}

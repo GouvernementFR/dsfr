@@ -25,7 +25,7 @@
     @include aspect-ratio(16x9);
 
     img {
-      @include absolute-overlay() {
+      @include absolute(0, 0, 0, 0, 100%, 100%) {
         @extend %fit-cover-center;
       }
       position: absolute;
@@ -74,7 +74,7 @@
     margin-top: auto;
 
     @include before(block, '') {
-      @include absolute-overlay();
+      @include absolute(0, 0, 0, 0, 100%, 100%);
       @include scheme-element-focus();
     }
 

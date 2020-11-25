@@ -3,24 +3,10 @@
   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
 }
 
-span[class^="#{$prefix}-fi-"],
-span[class*=" #{$prefix}-fi-"] {
+@include class-start-with('#{$prefix}-fi-') {
   @include before {
     @extend %font-icon;
-  }
-
-  $not:'';
-
-  @each $size, $value in $icon-size-map {
-    @if $size != md {
-      $not:'#{$not}:not([class*="#{$prefix}-fi--#{$size}"])';
-    }
-  }
-
-  &#{$not} {
-    @include before {
-      font-size: icon-size(md);
-    }
+    font-size: icon-size(md);
   }
 }
 
@@ -36,7 +22,8 @@ span[class*=" #{$prefix}-fi-"] {
   }
 }
 
-/*
-* @var: $icons-mames - générée dans generated/_icons.scss
-*/
+/**
+ * Définitions des symboles des icones
+ **/
+/// @var: $icons-mames - générée dans generated/_icons.scss
 @include generate-icons-content($icons-names);

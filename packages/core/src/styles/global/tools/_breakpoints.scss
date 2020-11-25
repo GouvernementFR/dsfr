@@ -1,3 +1,8 @@
+////
+/// Core Tools : Global breakpoints
+/// @group core
+////
+
 /// Set media query styles
 ///
 /// @param {String} $media [md] - Layout size `["xs", "sm", "md", "lg", "xl"]`
@@ -7,7 +12,6 @@
 ///     @include respond-from(md) {
 ///     }
 ///   }
-
 @mixin respond-from($media) {
   $limits: map_get($breakpoints, $media);
 
@@ -15,7 +19,8 @@
     @media (min-width: nth($limits, 1)) {
       @content;
     }
-  } @else {
+  }
+  @else {
     @content;
   }
 }

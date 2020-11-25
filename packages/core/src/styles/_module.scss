@@ -1,32 +1,8 @@
+////
+/// Core Module
+/// @group core
+////
 
-@import 'reset/module';
-@import 'typography/module';
-
-
-
-.#{$prefix}-sr-only {
-  @include sr-only();
-}
-
-//@include sr-only-from();
-//@include sr-only-to();
-
-.#{$prefix}-fi {
-  &--sm::before {
-    font-size: icon-size(sm);
-  }
-
-  &--md::before {
-    font-size: icon-size(md);
-  }
-
-  &--lg::before {
-    font-size: icon-size(lg);
-  }
-
-  &--xl::before {
-    font-size: icon-size(xl);
-  }
-}
-
-@import 'z-index/module';
+@import 'global/module';
+@import 'grid/module';
+// @import 'typography/module';

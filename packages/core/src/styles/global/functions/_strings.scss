@@ -1,0 +1,41 @@
+////
+/// Core Tools : Global strings
+/// @group core
+////
+
+/// Fonction de transformation d'une string en nombre intégral
+/// @access public
+/// @param {String} $value - le nombre en chaîne de caractères
+/// @param {Number} $max - maximum d'itération de la boucle à partir de laquelle l'action est abandandonnée
+@function str-to-num($value, $max:100) {
+  @for $i from 0 to $max {
+    @if $value == quote($i) {
+      @return $i;
+    }
+    @else if $value == quote(-$i) {
+      @return -$i;
+    }
+  }
+  @return null;
+}
+
+/// Remplacement dans une chaine de caractères
+/// @access public
+/// @param {String} $stack - chaine de caractère où chercher
+/// @param {String} $needle - élément à chercher
+/// @param {String} $content - élément de remplacement
+/// @return {String} la chaîne de caractères transformée
+@function str-replace($stack, $needle, $content) {
+  $is:quote($stack);
+  $in:quote($needle);
+  $ic:quote($content);
+
+  $i:str-index($is, $in);
+
+  @while $i != null {
+    $is:unquote(str_slice($is, 1, $i - 1) + $ic + str_slice($is, $i + str-length($in), str_length($is)));
+    $i:str-index($is, $in);
+  }
+
+  @return unquote($is);
+}

@@ -1,0 +1,29 @@
+////
+/// Core Tools : Global units
+/// @group core
+////
+
+/// Retourne la valeur numérique sans unité.
+/// @access public
+/// @param {String} $value - la valeur avec unité
+/// @example
+///   clean-unit(12px);
+@function clean-unit($value) {
+  @if (is-null($value)) {
+    @return $value;
+  }
+  @return ($value / ($value * 0 + 1));
+}
+
+/// Return rem from px
+///
+/// @param {String} $px - Font size in pixels
+/// @param {String} $root-font-size [$base-font-size-px] - Pixel font size for conversion
+///
+/// @example scss - Get 1rem conversion from 16px, using $base-font-size-px
+///   .foo {
+///     font-size: px-rem(12px);
+///   }
+@function px-rem($px, $root-font-size: $base-font-size-px) {
+  @return clean-unit($px / $root-font-size) * 1rem;
+}

@@ -1,15 +1,17 @@
 a {
-  position: relative;
-  color: inherit;
-  text-decoration: none;
-  box-shadow: 0 1px 0 0 currentColor;
-  @include scheme-element-focus();
+  @include not-dse-class() {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 1px 0 0 currentColor;
+    @include scheme-element-focus();
 
-  // Icon for external links
-  &[target="_blank"] {
-    @include font-icon(external-link-line, md, after) {
-      margin-left: space(0-5N);
-      vertical-align: baseline;
+    // Icon for external links
+    &[target="_blank"] {
+      @include font-icon(external-link-line, md, after) {
+        margin-left: space(0-5N);
+        vertical-align: baseline;
+      }
     }
   }
 }

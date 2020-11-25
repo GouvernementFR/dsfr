@@ -1,0 +1,8 @@
+.#{$prefix}-container {
+
+  @include container();
+
+  &-fluid {
+    width: 100%;
+  }
+}

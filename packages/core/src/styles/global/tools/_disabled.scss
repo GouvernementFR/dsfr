@@ -1,3 +1,8 @@
+////
+/// Core Tools : Global disabled
+/// @group core
+////
+
 %disabled {
   cursor: not-allowed;
 }
@@ -31,14 +36,14 @@
   &:disabled {
     @if $descendant != null {
       #{$descendant} {
-        @include disabled-colors($text, $background, $box-shadow-border);
         @extend %disabled;
+        @include disabled-colors($text, $background, $box-shadow-border);
         @content;
       }
     }
     @else {
-      @include disabled-colors($text, $background, $box-shadow-border);
       @extend %disabled;
+      @include disabled-colors($text, $background, $box-shadow-border);
       @content;
     }
   }

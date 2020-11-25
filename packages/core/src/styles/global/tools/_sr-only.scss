@@ -24,10 +24,8 @@
   @each $bp, $limits in $breakpoints {
     .#{$prefix}-sr-only-to-#{$bp} {
       @include respond-to($bp) {
-      @include sr-only();
+        @include sr-only();
+      }
     }
   }
 }
-}
-
-

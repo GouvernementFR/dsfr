@@ -13,7 +13,7 @@
   }
 
   @include after(block, '') {
-    @include absolute-overlay(auto 1px, 0 0 auto 0) {
+    @include absolute(0, 0, auto, 0, auto, 1px) {
       margin: 0 space(1N);
 
       @include scheme-element-bg-color(g300, true);
@@ -53,7 +53,7 @@
       }
 
       @include before(block, '') {
-        @include absolute-overlay();
+        @include absolute(0, 0, 0, 0, 100%, 100%);
         @include scheme-element-focus();
       }
     }

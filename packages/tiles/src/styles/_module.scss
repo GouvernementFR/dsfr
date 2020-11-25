@@ -38,7 +38,7 @@
     @include aspect-ratio(1x1);
 
     img {
-      @include absolute-overlay() {
+      @include absolute(0, 0, 0, 0, 100%, 100%) {
         @extend %fit-cover-center;
       }
     }
