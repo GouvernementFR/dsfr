@@ -5,38 +5,38 @@
 
 .#{$prefix}-skiplinks {
   position: absolute;
-  padding: space(1-5N) 0;
+  padding: space(2w) 0;
   @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 (-(space(2w))) (-(space(3w)));
+
+    > li {
+      margin: 0 space(1v) space(3w);
+      /**
+       * Provisoire : on annule le before du ul global (en attente du rf-body)
+       */
+      &::before {
+        content: none;
+      }
+
+      @include respond-from(md) {
+        margin: 0 space(1v);
+      }
+    }
+
+    @include respond-from(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 (-(space(2w)));
+    }
+  }
 
   &:focus-within {
     position: relative;
     transform: translateY(0);
-  }
-}
-
-.#{$prefix}-skiplinks__list {
-  display: flex;
-  flex-direction: column;
-  margin: 0 (-(space(2N))) (-(space(2N)));
-
-  > li {
-    margin: 0 space(2N) space(0-5N);
-
-    &::before {
-      content: none;
-    }
-
-    @include link(md, null, null, null, true);
-
-    @include respond-from(sm) {
-      margin: 0 space(2N);
-    }
-  }
-
-  @include respond-from(sm) {
-    margin: 0 (-(space(2N)));
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 }
