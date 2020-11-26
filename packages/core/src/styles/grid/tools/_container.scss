@@ -3,12 +3,12 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-right: map-get($grid-gutter-width, xs);
-  padding-left: map-get($grid-gutter-width, xs);
+  padding-right: #{space(map-get($grid-gutter-width, xs))};
+  padding-left: #{space(map-get($grid-gutter-width, xs))};
 
   @include respond-from(sm) {
-    padding-right: map-get($grid-gutter-width, lg);
-    padding-left: map-get($grid-gutter-width, lg);
+    padding-right: #{space(map-get($grid-gutter-width, lg))};
+    padding-left: #{space(map-get($grid-gutter-width, lg))};
   }
 
   @include respond-from(xl) {
