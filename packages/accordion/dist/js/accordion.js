@@ -1,6 +1,66 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		0: 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -79,9 +139,18 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push([36,32]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,82 +162,7 @@
 
 /***/ }),
 
-/***/ 1:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Initializer", function() { return Initializer; });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Initializer = /*#__PURE__*/function () {
-  function Initializer(selector, classes) {
-    _classCallCheck(this, Initializer);
-
-    this.selector = selector;
-    this.classes = classes;
-    this.instances = [];
-    if (document.readyState !== 'loading') this.start();else document.addEventListener('DOMContentLoaded', this.start.bind(this));
-  }
-
-  _createClass(Initializer, [{
-    key: "start",
-    value: function start() {
-      if (this.instances.length > 0) return;
-
-      if (document.querySelectorAll(this.selector).length > 0) {
-        for (var i = 0; i < this.classes.length; i++) {
-          this.instances.push(new this.classes[i]());
-        }
-      }
-    }
-  }]);
-
-  return Initializer;
-}();
-
-
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
-var modifiyClass = function modifiyClass(element, className, remove) {
-  if (className.charAt(0) === '.') className = className.substr(1);
-  var classNames = element.className.split(' ');
-  var index = classNames.indexOf(className);
-
-  if (remove === true) {
-    if (index > -1) classNames.splice(index, 1);
-  } else if (index === -1) classNames.push(className);
-
-  element.className = classNames.join(' ');
-};
-
-var addClass = function addClass(element, className) {
-  return modifiyClass(element, className);
-};
-
-
-
-var removeClass = function removeClass(element, className) {
-  return modifiyClass(element, className, true);
-};
-
-
-
-/***/ }),
-
-/***/ 37:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -181,8 +175,8 @@ var _dist = __webpack_require__(0);
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 1 modules
-var scripts = __webpack_require__(45);
+// EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
+var scripts = __webpack_require__(35);
 
 // CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
@@ -289,269 +283,6 @@ var accordion_Accordion = /*#__PURE__*/function () {
 
 
 new Initializer["Initializer"]('.rf-accordion', [accordion_Accordion]);
-
-/***/ }),
-
-/***/ 45:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "Initializer", function() { return /* reexport */ Initializer["Initializer"]; });
-__webpack_require__.d(__webpack_exports__, "Collapse", function() { return /* reexport */ Collapse; });
-__webpack_require__.d(__webpack_exports__, "CollapseGroup", function() { return /* reexport */ CollapseGroup; });
-__webpack_require__.d(__webpack_exports__, "CollapseElement", function() { return /* reexport */ collapse_CollapseElement; });
-__webpack_require__.d(__webpack_exports__, "addClass", function() { return /* reexport */ classes["addClass"]; });
-__webpack_require__.d(__webpack_exports__, "removeClass", function() { return /* reexport */ classes["removeClass"]; });
-
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
-var Initializer = __webpack_require__(1);
-
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/collapse/collapse.js
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-var COLLAPSE = '.rf-collapse';
-var MODIFIER = COLLAPSE + '--expanded';
-var TOGGLE = 'toggle_event';
-var REDUCE = 'reduce_event';
-var EXPAND = 'expand_event';
-
-var Collapse = /*#__PURE__*/function () {
-  function Collapse() {
-    _classCallCheck(this, Collapse);
-
-    this.elements = [];
-    this.groups = {};
-    this.init();
-  }
-
-  _createClass(Collapse, [{
-    key: "init",
-    value: function init() {
-      var elements = document.querySelectorAll(COLLAPSE);
-      var collapse, groupId, group;
-
-      for (var i = 0; i < elements.length; i++) {
-        collapse = new collapse_CollapseElement(elements[i], MODIFIER);
-        this.elements.push(collapse);
-        groupId = collapse.element.getAttribute('data-group');
-
-        if (groupId !== null) {
-          group = this.groups[groupId];
-
-          if (group === undefined) {
-            group = new CollapseGroup();
-            this.groups[groupId] = group;
-          }
-
-          group.add(collapse);
-        }
-      }
-    }
-  }]);
-
-  return Collapse;
-}();
-
-var collapse_CollapseElement = /*#__PURE__*/function () {
-  function CollapseElement(element, modifier) {
-    _classCallCheck(this, CollapseElement);
-
-    this.element = element;
-    this.modifier = modifier;
-    this.id = element.id;
-    var buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
-
-    if (buttons.length > 0) {
-      this.buttons = [];
-
-      for (var i = 0; i < buttons.length; i++) {
-        this.buttons.push(new CollapseButton(buttons[i]));
-      }
-
-      this.init();
-    }
-  }
-
-  _createClass(CollapseElement, [{
-    key: "init",
-    value: function init() {
-      var _this = this;
-
-      // this.element.addEventListener('transitionend', this.transitionEnd.bind(this));
-      var toggles = this.buttons.filter(function (button) {
-        return button.type === TOGGLE;
-      });
-      if (toggles.length > 0) this.expanded = toggles[0].expanded;
-      this.buttons.forEach(function (button) {
-        button.element.addEventListener(TOGGLE, _this.toggle.bind(_this));
-        button.element.addEventListener(REDUCE, _this.reduce.bind(_this));
-      });
-    }
-  }, {
-    key: "toggle",
-    value: function toggle(e) {
-      this.expanded = !this.expanded;
-    }
-  }, {
-    key: "reduce",
-    value: function reduce(e) {
-      this.expanded = false;
-
-      for (var i = 0; i < this.buttons.length; i++) {
-        if (this.buttons[i].type === TOGGLE) {
-          this.buttons[i].focus();
-          break;
-        }
-      }
-    }
-  }, {
-    key: "transitionEnd",
-    value: function transitionEnd() {// if (!this._expanded) this.element.setAttribute('hidden', '');
-    }
-  }, {
-    key: "hasFocus",
-    get: function get() {
-      if (this.element === document.activeElement) return true;
-      if (this.element.querySelectorAll(':focus').length > 0) return true;
-      if (this.buttons.some(function (button) {
-        return button.hasFocus;
-      })) return true;
-      return false;
-    }
-  }, {
-    key: "expanded",
-    get: function get() {
-      return this._expanded === true;
-    },
-    set: function set(value) {
-      var _this2 = this;
-
-      var bool = value === true;
-      if (this._expanded === bool) return;
-      this._expanded = bool;
-      this.buttons.forEach(function (button) {
-        button.expanded = _this2._expanded;
-      });
-
-      if (this._expanded) {
-        // this.element.removeAttribute('hidden');
-        // requestAnimationFrame(() => addClass(this.element, EXPANDED));
-        Object(classes["addClass"])(this.element, this.modifier);
-        this.element.dispatchEvent(new Event(EXPAND));
-      } else {
-        Object(classes["removeClass"])(this.element, this.modifier);
-        this.element.dispatchEvent(new Event(REDUCE));
-      }
-    }
-  }]);
-
-  return CollapseElement;
-}();
-
-var CollapseButton = /*#__PURE__*/function () {
-  function CollapseButton(element) {
-    _classCallCheck(this, CollapseButton);
-
-    this.element = element;
-    this.type = element.hasAttribute('aria-expanded') ? TOGGLE : REDUCE;
-    this.element.addEventListener('click', this.click.bind(this));
-  }
-
-  _createClass(CollapseButton, [{
-    key: "click",
-    value: function click(e) {
-      this.element.dispatchEvent(new Event(this.type));
-    }
-  }, {
-    key: "focus",
-    value: function focus() {
-      this.element.focus();
-    }
-  }, {
-    key: "expanded",
-    set: function set(value) {
-      if (this.type === TOGGLE) this.element.setAttribute('aria-expanded', value);
-    },
-    get: function get() {
-      if (this.type === TOGGLE) return this.element.getAttribute('aria-expanded') === 'true';
-      return null;
-    }
-  }, {
-    key: "hasFocus",
-    get: function get() {
-      return this.element === document.activeElement;
-    }
-  }]);
-
-  return CollapseButton;
-}();
-
-var CollapseGroup = /*#__PURE__*/function () {
-  function CollapseGroup() {
-    _classCallCheck(this, CollapseGroup);
-
-    this.collapses = [];
-  }
-
-  _createClass(CollapseGroup, [{
-    key: "add",
-    value: function add(collapse) {
-      this.collapses.push(collapse);
-      collapse.element.addEventListener(EXPAND, this.onExpand.bind(this));
-      collapse.element.addEventListener(REDUCE, this.onReduce.bind(this));
-    }
-  }, {
-    key: "onExpand",
-    value: function onExpand(e) {
-      var _this3 = this;
-
-      this.collapses.forEach(function (collapse) {
-        if (collapse.element === e.target) _this3.current = collapse;else collapse.expanded = false;
-      });
-    }
-  }, {
-    key: "onReduce",
-    value: function onReduce(e) {
-      if (this.collapses.every(function (collapse) {
-        return !collapse.expanded;
-      })) this.current = undefined;
-    }
-  }, {
-    key: "reduce",
-    value: function reduce() {
-      if (this.current !== undefined) this.current.expanded = false;
-    }
-  }, {
-    key: "hasFocus",
-    get: function get() {
-      if (this.current === undefined) return null;
-      return this.current.hasFocus;
-    }
-  }]);
-
-  return CollapseGroup;
-}();
-
-
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/manipulation/classes.js
-var classes = __webpack_require__(2);
-
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/index.js
-
-
-
-
-
-
 
 /***/ })
 

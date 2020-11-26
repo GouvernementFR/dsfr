@@ -58,7 +58,7 @@ $scheme-elements-transitions:() !global;
   #{$prop}: _replace_color($value, var(--#{$set-name}), false);
 
   // transitions
-  @if $transition != false {
+  @if $transition != false and $theme-allow-transition != false {
     @if $transition == true {
       $transition: $element;
     }

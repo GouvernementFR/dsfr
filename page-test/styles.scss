@@ -1,9 +1,8 @@
 $static-font-path: '~@gouvfr/core/fonts';
 $icon-font-path: '/icons/font';
 
-@import '~@gouvfr/core/main';
-@import '~@gouvfr/icons/main';
 @import '~@gouvfr/schemes/main';
+@import '~@gouvfr/core/main';
 @import '~@gouvfr/grid/main';
 @import '~@gouvfr/utilities/main';
 

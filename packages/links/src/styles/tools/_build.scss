@@ -42,7 +42,6 @@
   $places: map_get($settings, places);
 
   %#{$module}--md {
-    @extend %font-smoothing;
     @extend %base-link;
   }
 

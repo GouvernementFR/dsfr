@@ -31,6 +31,10 @@ $theme-transition-selector: ':root[data-transition]';
 /// @type Time
 $theme-transition-duration: 0.3s;
 
+/// Les transitions sont incluses dans le code
+/// @type Bool
+$theme-allow-transition: false;
+
 /// Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
 /// @type String
 $COLOR:unquote('$COLOR') !global;
