@@ -5,6 +5,8 @@ let samples = [
   { title:'Tag seul cliquable SM', sample:'./samples/tag-sm', clickable: true},
   { title:'Tag seul non cliquable', sample:'./samples/tag-default'},
   { title:'Tag seul non cliquable SM', sample:'./samples/tag-sm'},
+  { title:'Tag seul désactivé', sample:'./samples/tag-default', button:true, disabled:true},
+  { title:'Tag seul désactivé SM', sample:'./samples/tag-sm', button:true, disabled:true},
 ]
 
 let groupSamples = [
@@ -21,18 +23,18 @@ for (let i = 0; i < samples.length; i++) {
 %>
 <h4><%= sample.title %></h4>
 <div>
-  <%- include(sample.sample, {clickable: sample.clickable}); %>
+  <%- include(sample.sample, sample); %>
 </div>
-<div class="rf-margin-top-4N">
-  <%- include(sample.sample, {iconPlace: 'left', clickable: sample.clickable}); %>
+<div class="<%= prefix %>-mt-4w">
+  <%- include(sample.sample, { ...sample, iconPlace: 'left'}); %>
 </div>
-<div class="rf-margin-top-4N">
-  <%- include(sample.sample, {iconPlace: 'right', clickable: sample.clickable}); %>
+<div class="<%= prefix %>-mt-4w">
+  <%- include(sample.sample, { ...sample, iconPlace: 'right'}); %>
 </div>
-<div class="rf-margin-top-4N">
-  <%- snippet(include(sample.sample, {clickable: sample.clickable})); %>
-  <%- snippet(include(sample.sample, {iconPlace: 'left', clickable: sample.clickable})); %>
-  <%- snippet(include(sample.sample, {iconPlace: 'right', clickable: sample.clickable})); %>
+<div class="<%= prefix %>-mt-4w">
+  <%- snippet(include(sample.sample, sample)); %>
+  <%- snippet(include(sample.sample, { ...sample, iconPlace: 'left'})); %>
+  <%- snippet(include(sample.sample, { ...sample, iconPlace: 'right'})); %>
 </div>
 <% } %>
 
@@ -40,11 +42,11 @@ for (let i = 0; i < samples.length; i++) {
 for (let i = 0; i < groupSamples.length; i++) {
   let groupSample = groupSamples[i];
 %>
-<h4 class="rf-margin-top-8N"><%= groupSample.title %></h4>
+<h4 class="<%= prefix %>-mt-8w"><%= groupSample.title %></h4>
 <div class="rf-col-6">
   <%- include(groupSample.sample, {clickable: groupSample.clickable, group: groupSample.group}); %>
 </div>
-<div class="rf-margin-top-4N">
+<div class="<%= prefix %>-mt-4w">
   <%- snippet(include(groupSample.sample, {clickable: groupSample.clickable, group: groupSample.group})); %>
 </div>
 <% } %>
