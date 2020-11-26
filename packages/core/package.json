@@ -7,7 +7,7 @@
     "access": "public"
   },
   "config": {
-    "wrapper": "col-8"
+    "noBody": true
   },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",

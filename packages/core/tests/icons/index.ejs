@@ -40,7 +40,7 @@
     for (let i = 0; i < samples.length; i++) {
         let sample = samples[i];
 %>
-    <h4><%= sample.title %></h4>
+    <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 
     <%
         sample.collections.forEach((collection) => {
@@ -53,7 +53,7 @@
 
 <% } %>
 
-<h4>Test de tailles (Icon font / SVG symbols)</h4>
+<h4 class="<%= prefix %>-h4">Test de tailles (Icon font / SVG symbols)</h4>
 <%
     let sizes = ['xl', 'lg', undefined, 'sm'];
     for (let i = 0; i < sizes.length; i++) { %>

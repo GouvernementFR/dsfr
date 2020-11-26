@@ -39,3 +39,17 @@
 
   @return unquote($is);
 }
+
+@function str-to-list($string, $separator:',') {
+  $tmp: str-slice($string, 1);
+  $list: ();
+  $index: str-index($string, $separator);
+
+  @if $index == null {
+    $list: ($string);
+  }
+  @else {
+    $list: join((str-slice($string, 1, $index - 1)), str-to-list(str-slice($string, $index + 1)));
+  }
+  @return $list;
+}

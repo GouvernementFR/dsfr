@@ -1,3 +1,4 @@
+/// TODO: refactor
 ul,
 ol {
   font-size: font-size();
@@ -53,7 +54,8 @@ ol {
 
   li {
     counter-increment: list-number;
-    @include before (null, counters(list-number, ".") ".") {
+    @include before () {
+      content: counters(list-number, ".") ".";
       font-weight: 700;
       margin-right: space(1N);
     }

@@ -10,12 +10,13 @@
 }
 
 @mixin font-faces($name, $settings) {
-  @each $filename, $variation in $settings {
-    $font-weight: nth($variation, 1);
-    $font-style: normal;
+  @each $type, $variation in $settings {
+    $font-weight: map_get($variation, font-weight);
+    $font-style: map_get($variation, font-style);
+    $filename: map_get($variation, file);
 
-    @if length($variation) > 1 {
-      $font-style: nth($variation, 2);
+    @if $font-style == null {
+      $font-style: normal;
     }
     @include font-face ($name, $filename, $font-weight, $font-style);
   }

@@ -11,7 +11,7 @@
     }
 
     @if $content != null {
-      content: '#{$content}';
+      content: $content;
     }
 
     @content;

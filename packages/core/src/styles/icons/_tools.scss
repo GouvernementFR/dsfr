@@ -24,8 +24,18 @@
   }
 }
 
+@mixin generate-icons-placeholder($icons) {
+  @each $icon, $code in $icons {
+    %#{$icon} {
+      content: '#{$code}';
+    }
+  }
+}
+
+@include generate-icons-placeholder($icons-settings);
+
 @mixin generate-icons-content($icons) {
-  @each $icon in $icons {
+  @each $icon, $code in $icons {
     .#{$prefix}-fi-#{$icon} {
       @include before {
         @extend %#{$icon};

@@ -1,1 +1,56 @@
-<p>Bonjour le monde</p>
+<%
+  const elements = [
+    {
+      path:'body',
+      title:'Body',
+      wrapper: 'col-8'
+    },
+    {
+      path:'typography',
+      title:'Typography',
+      wrapper: 'col-8'
+    },
+    {
+      path:'icons',
+      title:'Icons',
+      wrapper: 'col-8'
+    }
+  ];
+%>
+
+<ul style="padding: 0; margin: 0;">
+
+    <% for (let i = 0; i < elements.length; i++) {
+
+      let element = elements[i];
+      let id = 'collapsed-' + i;
+
+      const button = {
+        label:element.title,
+        attributes: {
+          'aria-expanded': 'false',
+          'aria-controls': id
+        }
+      }
+    %>
+    <li class="<%= prefix %>-mb-2w" style="list-style: none;">
+        <div class="<%= prefix %>-container" >
+            <%- include('../../buttons/tests/templates/button.ejs', button); %>
+        </div>
+        <div class="<%= prefix %>-collapse" id="<%= id %>" data-group="core">
+            <% if (element.wrapper === 'col-8') { %>
+                <div class="<%= prefix %>-container" >
+                    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
+                        <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
+                            <%- include(element.path + '/index'); %>
+                        </div>
+                    </div>
+                </div>
+            <% } else { %>
+                <%- include(element.path + '/index'); %>
+            <% } %>
+        </div>
+     </li>
+    <% }%>
+
+</ul>

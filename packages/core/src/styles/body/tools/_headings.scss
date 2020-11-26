@@ -1,0 +1,12 @@
+////
+/// Core Tools : Body headings
+/// @group core
+////
+
+@mixin extend-headings($settings) {
+  @each $element, $variation in $settings {
+    #{$element} {
+      @extend .#{$prefix}-#{$element};
+    }
+  }
+}
