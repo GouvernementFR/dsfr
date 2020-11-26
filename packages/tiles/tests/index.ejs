@@ -2,7 +2,7 @@
 
 let samples = [
   { title:'Tuiles verticales', sample:'./samples/tile-default', type:'vertical'},
-  { title:'Tuiles horizontales, verticales au dessus du breakpoint md', sample:'./samples/tile-vertical-md', type:'vertical'},
+  { title:'Tuiles horizontales, verticales au dessus du breakpoint md', sample:'./samples/tile-vertical-md', type:'vertical', variant: 'horizontal'},
   { title:'Tuiles horizontales', sample:'./samples/tile-horizontal', type:'horizontal'},
   { title:'Tuiles verticales, horizontales au dessus du breakpoint md', sample:'./samples/tile-horizontal-md', type:'horizontal'},
 ]
@@ -32,7 +32,7 @@ for (let i = 0; i < samples.length; i++) {
         <%- include(sample.sample, datas[j]); %>
       </div>
     <% } else if (sample.type == 'vertical') { %>
-      <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= prefix %>-col-md-6 <%= prefix %>-col-lg-3">
+      <div class="<%= sample.variant == 'horizontal' ? prefix  +'-col-xs-8 ' + prefix  +'-col-sm-6' : prefix + '-col-xs-6' %> <%= prefix %>-col-lg-3">
         <%- include(sample.sample, datas[j]); %>
       </div>
     <% } %>
