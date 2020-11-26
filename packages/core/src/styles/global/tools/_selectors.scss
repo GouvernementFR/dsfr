@@ -9,7 +9,7 @@
 }
 
 @mixin class-not-start-with($start) {
-  $selector: ':not([class^="#{$start}-"]):not([class*=" #{$start}"])';
+  $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
   @if & != null {
     $selector:  #{selector-unify(&, $selector)};
   }

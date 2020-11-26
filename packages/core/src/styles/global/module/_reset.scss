@@ -17,3 +17,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+ul {
+  @include dse-class() {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+li {
+  @include dse-class() {
+    list-style: none;
+  }
+}
