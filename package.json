@@ -21,7 +21,7 @@
     "test:pa11y": "node ./scripts/pa11y",
     "test": "run-s build-test test:*",
     "build-test": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.test.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
+    "build": "node ./webpack/test.js && cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",

@@ -21,7 +21,6 @@ const cssEntriesPck = {};
 
 packages.forEach((pck) => {
   let id = pck.id;
-
   if (fs.existsSync('./packages/' + id + '/src/scripts/dist.js') && id !== 'all') {
     jsEntriesPck[id] = './packages/' + id + '/src/scripts/dist.js'; 
   } else {
