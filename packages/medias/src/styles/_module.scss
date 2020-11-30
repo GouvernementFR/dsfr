@@ -7,28 +7,17 @@
   position: relative;
   width: 100%;
 
-  &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-bottom: map_get($ratio-scale, 16x9);
+  @include aspect-ratio();
+
+  &--4x3 {
+    @include aspect-ratio(4x3, false);
   }
 
-  &--4x3::before {
-    padding-bottom: map_get($ratio-scale, 4x3);
-  }
-
-  &--1x1::before {
-    padding-bottom: map_get($ratio-scale, 1x1);
+  &--1x1 {
+    @include aspect-ratio(1x1, false);
   }
 
   &__player {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    top: 0;
-    left: 0;
+    @extend %media-overlay-cover;
   }
 }

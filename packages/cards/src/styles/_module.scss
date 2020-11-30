@@ -22,13 +22,12 @@
     position: relative;
     width: 100%;
 
-    &::before {
-      display: block;
-      content: '';
-      padding-bottom: map_get($ratio-scale, 16x9);
-    }
+    @include aspect-ratio(16x9);
 
     img {
+      @include absolute-overlay() {
+        @extend %fit-cover-center;
+      }
       position: absolute;
       width: 100%;
       height: 100%;

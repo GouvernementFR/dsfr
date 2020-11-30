@@ -5,5 +5,5 @@
   @include scheme-element-text-color(bf500, true);
   @include scheme-element-bg-color(t-plain, false, true);
 
-  @include disabled();
+  @include disabled-link(true, false, false);
 }

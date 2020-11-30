@@ -35,20 +35,12 @@
     margin: space(6N) space(6N) 0;
     flex: 0 0 auto;
 
-    &::before {
-      display: block;
-      content: '';
-      padding-bottom: map_get($ratio-scale, 1x1);
-    }
+    @include aspect-ratio(1x1);
 
     img {
-      position: absolute;
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: 50% 50%;
-      top: 0;
-      left: 0;
+      @include absolute-overlay() {
+        @extend %fit-cover-center;
+      }
     }
   }
 

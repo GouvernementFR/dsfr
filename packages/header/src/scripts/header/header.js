@@ -1,4 +1,4 @@
-import { addClass, removeClass } from '@frds/utilities/src/scripts/manipulation/classes';
+import { addClass, removeClass } from '@gouvfr/utilities/src/scripts/manipulation/classes';
 
 let count = 0;
 
@@ -26,6 +26,10 @@ class Header {
 
     const append = this.numId === 0 ? '' : '-' + this.numId;
 
+    this.shortcuts = this.header.querySelector('.${prefix}-header__tools .${prefix}-shortcuts');
+
+    this.navList = this.header.querySelector('.${prefix}-nav .${prefix}-nav__list');
+
     if (this.searchBar) {
       this.popins.push(new HeaderPopin(
         'header-tools-popin' + append,
@@ -36,7 +40,7 @@ class Header {
       ));
     }
 
-    if (this.navItems.length > 0) {
+    if (this.navItems.length > 0 || this.shortcuts != null) {
       this.popins.push(new HeaderPopin(
         'header-nav-popin' + append,
         'menu-fill',
@@ -45,9 +49,6 @@ class Header {
         navbar
       ));
     }
-
-    this.shortcuts = this.header.querySelector('.${prefix}-header__tools .${prefix}-shortcuts');
-    this.navList = this.header.querySelector('.${prefix}-nav .${prefix}-nav__list');
 
     this.changing = this.change.bind(this);
 

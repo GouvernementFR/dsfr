@@ -5,15 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { sassVarsLoader, jsVarsLoader } = require('./varsLoaders');
 
 module.exports = {
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      name: false,
-    },
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-  ],
   module: {
     rules: [
       {

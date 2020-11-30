@@ -22,4 +22,4 @@ yarn add install @gouvfr/table
 
 ## Documentation
 
-Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/70090927/Tableau+v1) sur les tableaux
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/289472530/Tableau+v4) sur les tableaux

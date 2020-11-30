@@ -1,0 +1,24 @@
+<% 
+  label = 'Intitulé accordéon'
+  accordionContent = 'Qui elit in aliqua exercitation. Sint exercitation incididunt duis eu mollit sunt id dolor ullamco excepteur adipisicing deserunt. Dolore mollit ullamco laboris nulla qui ad officia. Ad deserunt ex magna esse culpa ea occaecat sit tempor.'
+%>
+<section class="<%= prefix %>-accordion">
+  <h3 class="<%= prefix %>-accordion__title">
+    <button class="<%= prefix %>-accordion__btn <%= prefix %>-accordion__btn--icon-right" aria-expanded="false" aria-controls="<%= collapseId %>" ><%- label %></button>
+  </h3>
+  <div class="<%= prefix %>-accordion__body" id="<%= collapseId %>">
+    <div class="<%= prefix %>-accordion__inner">
+      <% if(locals.title){ %>
+        <h4>Titre niveau 4</h4>
+      <% } %>
+      <p><%= accordionContent %></p>
+      <% if(locals.image){ %>
+        <%- include('../../../medias/tests/samples/img'); %>
+      <% } %>
+      <p><%= accordionContent %></p>
+      <% if(locals.button){ %>
+        <%- include('../../../buttons/tests/samples/button-default'); %>
+      <% } %>
+    </div>
+  </div>
+</section>

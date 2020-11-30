@@ -1,4 +1,4 @@
-# @frds/cards
+# @gouvfr/cards
 
 ## Dépendance
 ```shell
@@ -10,18 +10,18 @@ inputs
 ## Installation
 Installation via NPM:
 ```
-npm install @frds/summary
+npm install @gouvfr/summary
 ```
 Via Yarn :
 ```
-yarn add install @frds/summary
+yarn add install @gouvfr/summary
 ```
 
 ## Utilisation
 Afin d'utilise le composant `summary`, il est nécessaire d'importer le composant ainsi que ses dépendances :
 ```scss
-@import 'node_modules/@frds/core/main';
-@import 'node_modules/@frds/schemes/main';
+@import 'node_modules/@gouvfr/core/main';
+@import 'node_modules/@gouvfr/schemes/main';
 ```
 
 ## Documentation

@@ -1,0 +1,44 @@
+{
+  "name": "@gouvfr/all",
+  "version": "0.3.1",
+  "license": "MIT",
+  "description": "All",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@gouvfr/accordion": "^0.3.1",
+    "@gouvfr/breadcrumb": "^0.3.1",
+    "@gouvfr/buttons": "^0.3.1",
+    "@gouvfr/callouts": "^0.3.1",
+    "@gouvfr/cards": "^0.3.1",
+    "@gouvfr/checkboxes": "^0.3.1",
+    "@gouvfr/content": "^0.3.1",
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/footer": "^0.3.1",
+    "@gouvfr/forms": "^0.3.1",
+    "@gouvfr/grid": "^0.3.1",
+    "@gouvfr/header": "^0.3.1",
+    "@gouvfr/highlights": "^0.3.1",
+    "@gouvfr/icons": "^0.3.1",
+    "@gouvfr/ie11": "^0.3.1",
+    "@gouvfr/inputs": "^0.3.1",
+    "@gouvfr/links": "^0.3.1",
+    "@gouvfr/logo": "^0.3.1",
+    "@gouvfr/medias": "^0.3.1",
+    "@gouvfr/navigation": "^0.3.1",
+    "@gouvfr/pagination": "^0.3.1",
+    "@gouvfr/radios": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/search": "^0.3.1",
+    "@gouvfr/selects": "^0.3.1",
+    "@gouvfr/table": "^0.3.1",
+    "@gouvfr/tags": "^0.3.1",
+    "@gouvfr/tiles": "^0.3.1",
+    "@gouvfr/typography": "^0.3.1",
+    "@gouvfr/utilities": "^0.3.1"
+  }
+}

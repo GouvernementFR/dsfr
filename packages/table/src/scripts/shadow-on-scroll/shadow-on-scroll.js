@@ -1,4 +1,4 @@
-import { addClass, removeClass } from '@frds/utilities/src/scripts/manipulation/classes';
+import { addClass, removeClass } from '@gouvfr/utilities/src/scripts/manipulation/classes';
 
 const TABLE = '.${prefix}-table:not(.${prefix}-table--no-scroll)';
 const LEFT = 'left';

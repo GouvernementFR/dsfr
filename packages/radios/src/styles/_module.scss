@@ -86,21 +86,7 @@
     //   }
     // }
 
-    &[disabled],
-    &:disabled {
-      + label {
-        @include scheme-element-text-color(g600);
-
-        &::before {
-          @include scheme-element-border-color(g500);
-          @include scheme-element-bg-color(g300);
-        }
-      }
-
-      &:hover + label {
-        cursor: not-allowed;
-      }
-    }
+    @include disabled-form-choice();
   }
 
   &--sm {
