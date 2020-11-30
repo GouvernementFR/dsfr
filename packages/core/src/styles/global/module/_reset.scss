@@ -18,7 +18,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-ul, ol {
+ul,
+ol {
   @include dse-class() {
     list-style: none;
   }
