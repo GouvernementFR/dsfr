@@ -11,7 +11,7 @@ folders.forEach((folder) => {
             let raw = fs.readFileSync(json);
             let pck = JSON.parse(raw);
 
-            packages.push({id:folder, name:pck.description, dependencies: pck.dependencies});
+            packages.push({id:folder, name:pck.description, level: pck.level, dependencies: pck.dependencies});
         }
     } catch(err) {
         console.error(err)
