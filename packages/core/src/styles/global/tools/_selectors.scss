@@ -4,7 +4,13 @@
 ////
 
 @mixin class-contains($patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
   $selectors: '';
+
   @each $pattern in $patterns {
     $selectors: '#{$selectors}[class*="#{$pattern}"]';
   }
@@ -17,6 +23,11 @@
 }
 
 @mixin class-not-contains($patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
   $selectors: '';
   @each $pattern in $patterns {
     $selectors: '#{$selectors}:not([class*="#{$pattern}"])';

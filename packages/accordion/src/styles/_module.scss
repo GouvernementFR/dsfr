@@ -9,8 +9,8 @@
   @include scheme-element-border-color(g300, true, bottom);
 
   // add heading style for accessibility concerns and reset margins
-  &__title {
-    margin: 0;
+  @include title {
+    @include margin(0);
   }
 
   @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
@@ -20,16 +20,16 @@
     @include scheme-element-text-color(g700, true);
     @include scheme-element-bg-color(t-plain, true, after);
 
-    &::before {
-      margin-right: 0;
-      margin-left: auto;
+    @include before {
+      @include margin-right(0);
+      @include margin-left(auto);
     }
 
     &[aria-expanded="true"] {
-      font-weight: font-weight('bold');
+      @include font-weight('bold');
       border: 0;
 
-      &::before {
+      @include before {
         @include font-icon-content(subtract-line);
       }
     }
@@ -39,37 +39,37 @@
     }
   }
 
-  &__body {
+  @include body {
     @include collapse();
-    margin: 0 (-(space(0-5N)));
-    padding: 0 space(0-5N);
+    @include margin(0 -1v);
+    @include padding(0 1v);
   }
 
   &__inner {
-    padding: space(1N) 0 space(3N);
+    @include padding(2v 0 6v);
 
     @include respond-from(md) {
-      padding: space(1N) space(2N) space(4N);
+      @include padding(2v 4v 8v);
     }
   }
-}
 
-.#{$prefix}-accordion-group {
-  &__item {
-    margin: 0;
+  $accordion: &;
 
-    .#{$prefix}-accordion {
-      border-bottom: 0;
-    }
+  @include group {
+    @include group-item {
+      @include margin(0);
 
-    &:last-child {
-      .#{$prefix}-accordion {
-        @include scheme-element-border-color(g300, true, bottom);
+      #{$accordion} {
+        border-bottom: 0;
       }
-    }
 
-    &::before {
-      content: none;
+      &:last-child {
+        #{$accordion} {
+          @include scheme-element-border-color(g300, true, bottom);
+        }
+      }
+
+      @include before(null, none);
     }
   }
 }

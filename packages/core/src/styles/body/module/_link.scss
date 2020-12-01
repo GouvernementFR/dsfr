@@ -4,7 +4,7 @@
 ////
 
 a {
-  @include class-not-contains('link', 'btn', 'tag') {
+  @include class-not-contains($link-prevent-stylization-list) {
     position: relative;
     color: inherit;
     text-decoration: none;

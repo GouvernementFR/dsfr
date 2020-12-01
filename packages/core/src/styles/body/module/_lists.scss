@@ -3,28 +3,25 @@
 /// @group core
 ////
 
-ul,
-ol {
-  @include class-not-end-with('__list') {
-    font-size: font-size();
-    line-height: line-height();
-    margin: 0 0 space(1N);
-    padding: 0;
+%base-body-list {
+  font-size: font-size();
+  line-height: line-height();
+  margin: 0 0 space(1N);
+  padding: 0;
 
-    li {
-      margin-bottom: space(1N);
-    }
+  li {
+    margin-bottom: space(1N);
+  }
 
-    ul,
-    ol {
-      margin: space(1N) 0 space(2N);
-    }
+  ul,
+  ol {
+    margin: space(1N) 0 space(2N);
   }
 }
 
 ul {
-  @include class-not-end-with('__list') {
-    list-style-type: none;
+  @include class-not-contains($lists-prevent-stylization-list) {
+    @extend %base-body-list;
 
     li {
       @include before(null, '\2022') {
@@ -47,8 +44,8 @@ ul {
 }
 
 ol {
-  @include class-not-end-with('__list') {
-    list-style: none;
+  @include class-not-contains($lists-prevent-stylization-list) {
+    @extend %base-body-list;
     counter-reset: list-number;
 
     ol {

@@ -16,6 +16,10 @@
   @return map-get($font-weight-scale, $scale);
 }
 
+@mixin font-weight($scale) {
+  font-weight: font-weight($scale);
+}
+
 @mixin font-weights() {
   @each $name, $weight in $font-weight-scale {
     .#{$prefix}-text--#{$name} {

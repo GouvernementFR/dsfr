@@ -16,11 +16,16 @@
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  ul,
+  ol {
+    @extend %list-reset;
+  }
 }
 
 ul,
 ol {
   @include dse-class() {
-    list-style: none;
+    @extend %list-reset;
   }
 }
