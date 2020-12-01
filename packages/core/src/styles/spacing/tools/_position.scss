@@ -6,23 +6,19 @@
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
   position: #{$position};
   @if $top != null {
-    top: #{$top};
+    top: #{space($top)};
   }
   @if $right != null {
-    right: #{$right};
+    right: #{space($right)};
   }
   @if $bottom != null {
-    bottom: #{$bottom};
+    bottom: #{space($bottom)};
   }
   @if $left != null {
-    left: #{$left};
+    left: #{space($left)};
   }
-  @if $width != null {
-    width: #{$width};
-  }
-  @if $height != null {
-    height: #{$height};
-  }
+
+  @include size($width, $height);
 
   @content;
 }

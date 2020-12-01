@@ -1,3 +1,8 @@
+////
+/// Core Tools : Typography build
+/// @group core
+////
+
 @mixin text($font-size, $line-height: null, $color-set: null, $font-weight: null) {
   font-size: font-size($font-size);
 
@@ -39,7 +44,7 @@
   }
 }
 
-@mixin text-selectors($settings, $name:null, $is-modifier: false) {
+@mixin text-selectors($settings, $name:null, $is-modifier: false, $with-placeholder: false) {
   @each $element, $variation in $settings {
     $main: $element;
     $alt: map_get($variation, alt);
@@ -70,7 +75,15 @@
       $selector: '#{$selector}, .#{$prefix}-#{$alt}';
     }
 
-    @include text-selector($selector, $variation);
+    @if $with-placeholder {
+      @include text-selector('%#{$main}', $variation);
+      @at-root #{$selector} {
+        @extend %#{$main};
+      }
+    }
+    @else {
+      @include text-selector($selector, $variation);
+    }
   }
 }
 

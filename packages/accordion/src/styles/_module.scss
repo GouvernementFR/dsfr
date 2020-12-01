@@ -13,7 +13,7 @@
     margin: 0;
   }
 
-  @include _link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
+  @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
     @include _reset-links-tags(button);
     width: 100%;
     text-align: left;

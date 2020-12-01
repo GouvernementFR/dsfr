@@ -53,7 +53,7 @@
   }
 }
 
-@mixin _link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
+@mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
   .#{$prefix}-#{$module} {
     @if $icon != null {
       &::before {
@@ -73,8 +73,8 @@
   }
 }
 
-@mixin link($size:md, $place: null, $icon:null, $from: null,  $align-on-content: false) {
-  @include _link(link, $size, $place, $icon, $from, $align-on-content) {
+@mixin nest-link($size:md, $place: null, $icon:null, $from: null,  $align-on-content: false) {
+  @include _nest-link(link, $size, $place, $icon, $from, $align-on-content) {
     @content;
   }
 }

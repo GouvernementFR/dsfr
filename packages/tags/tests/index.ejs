@@ -18,6 +18,9 @@ let groupSamples = [
 %>
 
 <%
+const left = {iconPlace: 'left', icon: 'arrow-left-line'};
+const right = {iconPlace: 'right', icon: 'arrow-right-line'};
+
 for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
 %>
@@ -26,15 +29,15 @@ for (let i = 0; i < samples.length; i++) {
   <%- include(sample.sample, sample); %>
 </div>
 <div class="<%= prefix %>-mt-4w">
-  <%- include(sample.sample, { ...sample, iconPlace: 'left'}); %>
+  <%- include(sample.sample, { ...sample, ...left}); %>
 </div>
 <div class="<%= prefix %>-mt-4w">
-  <%- include(sample.sample, { ...sample, iconPlace: 'right'}); %>
+  <%- include(sample.sample, { ...sample, ...right}); %>
 </div>
 <div class="<%= prefix %>-mt-4w">
   <%- snippet(include(sample.sample, sample)); %>
-  <%- snippet(include(sample.sample, { ...sample, iconPlace: 'left'})); %>
-  <%- snippet(include(sample.sample, { ...sample, iconPlace: 'right'})); %>
+  <%- snippet(include(sample.sample, { ...sample, ...left})); %>
+  <%- snippet(include(sample.sample, { ...sample, ...right})); %>
 </div>
 <% } %>
 

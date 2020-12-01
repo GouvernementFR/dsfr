@@ -1,3 +1,8 @@
+////
+/// Core Tools : Typography font-face
+/// @group core
+////
+
 @mixin font-face($name, $filename, $font-weight: 400, $font-style: normal) {
   @font-face {
     font-family: #{$name};

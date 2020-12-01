@@ -3,6 +3,8 @@
 
 * label (string, required) : label du bouton
 
+* tag (string) : si non défini, button
+
 * secondary (boolean, optionnal) : si valeur true, bouton secondaire
 
 * type (string, optionnal) type du bouton
@@ -28,6 +30,8 @@
  let btnClasses = locals.classes || [];
  let btnAttrs = locals.attributes || {};
 
+ const tag = locals.tag || 'button';
+
  btnClasses.push(prefix + '-btn');
 
  switch(locals.size) {
@@ -52,10 +56,6 @@
      case 'right':
          btnClasses.push(prefix + '-btn--icon-right');
          break;
-
-     case 'only':
-         btnClasses.push(prefix + '-btn--icon-only');
-
  }
 
  if (locals.secondary === true) btnClasses.push(prefix +'-btn--secondary');
@@ -65,6 +65,6 @@
  if (locals.type !== undefined) btnAttrs['type'] = type;
  %>
 
-<button <%- includeClasses(btnClasses) %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
+<<%= tag %> <%- includeClasses(btnClasses) %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
     <%= label %>
-</button>
+</<%= tag %>>

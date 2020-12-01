@@ -28,9 +28,5 @@ $links-settings:(
       icon-only: xl,
     )
   ),
-  places: (
-    left: arrow-left-line,
-    right: arrow-right-line,
-    only: arrow-down-line
-  )
+  places: only left right
 );

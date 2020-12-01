@@ -1,3 +1,7 @@
+////
+/// Core Tools : Global pseudo
+/// @group core
+////
 
 @mixin _pseudo($type:before, $display:null, $content:null) {
   @if $type != after and $type != before {

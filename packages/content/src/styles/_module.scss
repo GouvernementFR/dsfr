@@ -29,7 +29,7 @@
   }
 
   &__transcription {
-    @include link(sm, right, menu-2-fill, null, true);
+    @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
   $medias: (&__img, '.#{$prefix}-responsive-vid');

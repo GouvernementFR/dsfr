@@ -1,53 +1,132 @@
+////
+/// Core Tools : Spacing space
+/// @group core
+////
+
 /// Return space value from type map and convert to rem.
 ///
-/// @param {Number} $scale [2] - Space scale value from `$space-scale` (Default to  1N = 8px)
+/// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
 ///
 /// @example scss - Set margin-bottom to 24px
 ///   .foo {
-///     margin-bottom: space(3N);
+///     margin-bottom: space(6v);
 ///   }
 @function space($value) {
+  @if $value == 0 {
+    @return $value;
+  }
 
   $v: quote($value);
+
+  @if is-basic-unit($value) {
+    @return $value;
+  }
+
   $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
   $unit: str_slice($v, str-length($v), str_length($v));
 
-  @if $unit == 'v' {
+  @if is-unit($value, v) {
     @return #{$q * 0.25}rem;
   }
-  @else if $unit == 'w' {
+  @else if is-unit($value, w) {
     @return #{$q * 0.5rem};
   }
-
-  @return px-rem(map-get($space-scale, $value));
+  @else if is-unit($value, n) {
+    @return px-rem(map-get($space-scale, $value));
+  }
+  @return $value;
 }
 
 /// Set space property
 ///
-/// @param {String} $property ["margin"] - Property to apply spacing `["margin", "padding"]`
-/// @param {Number} $scale [2] - Space scale value from `$space-scale` (Default to  2 = 8px)
-/// @param {String} $direction - Direction of the spacing `["top", "right", "bottom", "left"]`
+/// @param {String} $property ["margin"] - propriété à appliquer à l'espacement `["margin", "padding"]`
+/// @param {Number | list} $value [2] - valeur de l'espacement en v ou w. peut être une liste si la direction n'est pas renseignée
+/// @param {String} $direction - direction de l'espacement `["x", "y", "top", "right", "bottom", "left"]`
 ///
 /// @example scss - Set margin-bottom to 24px
 ///   .foo {
-///     @include space("margin", 3N, "bottom");
+///     @include _spacing("margin", 6v, "bottom");
 ///   }
-@mixin space($property: margin, $size: 1N, $direction: null) {
-  $scale: px-rem(map-get($space-scale, $size));
-  @if $direction {
+@mixin _spacing($property: margin, $value: 0, $direction: null) {
+
+  @if $direction != null {
+    $v: space($value);
+
     @if $direction == 'x' {
-      #{$property}-left: $scale;
-      #{$property}-right: $scale;
+      #{$property}-left: $v;
+      #{$property}-right: $v;
     }
     @else if $direction == 'y' {
-      #{$property}-top: $scale;
-      #{$property}-bottom: $scale;
+      #{$property}-top: $v;
+      #{$property}-bottom: $v;
     }
     @else {
-      #{$property}-#{$direction}: $scale;
+      #{$property}-#{$direction}: $v;
     }
   }
   @else {
-    #{$property}: $scale;
+    $spaces: ();
+
+    @each $v in $value {
+      $spaces: append($spaces, $v);
+    }
+
+    #{$property}: $spaces;
   }
+}
+
+@mixin padding($values: 0 0 0 0) {
+  @include _spacing(padding, $values);
+}
+
+@mixin padding-x($value: 0) {
+  @include _spacing(padding, $value, 'x');
+}
+
+@mixin padding-y($value: 0) {
+  @include _spacing(padding, $value, 'y');
+}
+
+@mixin padding-top($value: 0) {
+  @include _spacing(padding, $value, 'top');
+}
+
+@mixin padding-right($value: 0) {
+  @include _spacing(padding, $value, 'right');
+}
+
+@mixin padding-bottom($value: 0) {
+  @include _spacing(padding, $value, 'bottom');
+}
+
+@mixin padding-left($value: 0) {
+  @include _spacing(padding, $value, 'left');
+}
+
+@mixin margin($values: 0 0 0 0) {
+  @include _spacing(margin, $values);
+}
+
+@mixin margin-x($value: 0) {
+  @include _spacing(margin, $value, 'x');
+}
+
+@mixin margin-y($value: 0) {
+  @include _spacing(margin, $value, 'y');
+}
+
+@mixin margin-top($value: 0) {
+  @include _spacing(margin, $value, 'top');
+}
+
+@mixin margin-right($value: 0) {
+  @include _spacing(margin, $value, 'right');
+}
+
+@mixin margin-bottom($value: 0) {
+  @include _spacing(margin, $value, 'bottom');
+}
+
+@mixin margin-left($value: 0) {
+  @include _spacing(margin, $value, 'left');
 }

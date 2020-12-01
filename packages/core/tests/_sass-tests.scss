@@ -82,15 +82,15 @@ $true-terminal-output: false;
   }
 }
 
-@include describe('[mixin] space') {
-  @include it('Should output a default margin of 8px (0.5rem)') {
+@include describe('[mixin] _spacing') {
+  @include it('Should output a default margin of 0') {
     @include assert {
       @include output {
-        @include space();
+        @include _spacing();
       }
 
       @include expect {
-        margin: 0.5rem;
+        margin: 0;
       }
     }
   }
@@ -98,7 +98,7 @@ $true-terminal-output: false;
   @include it('Should output a vertical padding (bottom and top) of 12px (0.75rem)') {
     @include assert {
       @include output {
-        @include space("padding", 1-5N, "y");
+        @include _spacing("padding", 3v, "y");
       }
 
       @include expect {

@@ -6,7 +6,11 @@
 @mixin extend-headings($settings) {
   @each $element, $variation in $settings {
     #{$element} {
-      @extend .#{$prefix}-#{$element};
+      @extend %#{$element};
     }
   }
+}
+
+@mixin override-body-link() {
+  @content;
 }

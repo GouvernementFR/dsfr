@@ -28,9 +28,5 @@ $btns-settings:(
       icon-only: xl,
     )
   ),
-  places: (
-    left: checkbox-line,
-    right: checkbox-line,
-    only: checkbox-line
-  )
+  places: only left right
 );

@@ -8,6 +8,10 @@ let samples = [
 %>
 
 <%
+const left = {iconPlace: 'left', icon: 'arrow-left-line'};
+const right = {iconPlace: 'right', icon: 'arrow-right-line'};
+const only = {icon: 'arrow-down-line'};
+
 for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
 %>
@@ -16,18 +20,18 @@ for (let i = 0; i < samples.length; i++) {
   <%- include(sample.sample); %>
 </div>
 <div>
-  <%- include(sample.sample, {iconPlace: 'left'}); %>
+  <%- include(sample.sample, left); %>
 </div>
 <div>
-  <%- include(sample.sample, {iconPlace: 'right'}); %>
+  <%- include(sample.sample, right); %>
 </div>
 <div>
-  <%- include(sample.sample, {iconPlace: 'only'}); %>
+  <%- include(sample.sample, only); %>
 </div>
 <%- snippet(include(sample.sample)); %>
-<%- snippet(include(sample.sample, {iconPlace: 'left'})); %>
-<%- snippet(include(sample.sample, {iconPlace: 'right'})); %>
-<%- snippet(include(sample.sample, {iconPlace: 'only'})); %>
+<%- snippet(include(sample.sample, left)); %>
+<%- snippet(include(sample.sample, right)); %>
+<%- snippet(include(sample.sample, only)); %>
 <% } %>
 
 <%

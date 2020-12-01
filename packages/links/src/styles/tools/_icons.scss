@@ -1,3 +1,4 @@
+
 @mixin _build-link-icon($size-settings, $place, $size:md, $font-icon: false, $reverse: false) {
 
   $icon-size: map_get($size-settings, icon);
@@ -45,14 +46,6 @@
     &::before {
       margin-left: 0;
       margin-right: $padding-x;
-    }
-  }
-}
-
-@mixin _link-default-icons($places) {
-  @each $place, $icon in $places {
-    &--icon-#{$place}:not([class*="#{$prefix}-fi-"])::before {
-      @include font-icon-content($icon);
     }
   }
 }

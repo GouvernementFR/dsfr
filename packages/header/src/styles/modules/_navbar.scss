@@ -68,7 +68,7 @@
     }
   }
 
-  @include btn(md, only) {
+  @include nest-btn(md, only) {
     @include scheme-element-bg-color(t-plain, false, override);
     @include scheme-element-text-color(bf500);
     flex: 0 0 auto;

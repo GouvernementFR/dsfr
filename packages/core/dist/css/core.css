@@ -19,6 +19,10 @@
   SM 64px => 80px
   XS 56px => 72px
  */
+.rf-responsive-vid__player {
+  object-fit: cover;
+  object-position: 50% 50%; }
+
 .rf-fi-account-fill::before {
   content: ""; }
 
@@ -109,7 +113,7 @@
 .rf-fi-edit-line::before {
   content: ""; }
 
-.rf-fi-external-link-line::before, .rf-body a:not([class^="rf-"]):not([class*=" rf-"])[target="_blank"]::after {
+.rf-fi-external-link-line::before, .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"])[target="_blank"]::after {
   content: ""; }
 
 .rf-fi-eye-line::before {
@@ -229,13 +233,22 @@
 .rf-fi-volume-up-line::before {
   content: ""; }
 
-[class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-body a:not([class^="rf-"]):not([class*=" rf-"])[target="_blank"]::after {
+[class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"])[target="_blank"]::after {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
   font-variant: normal;
   text-transform: none;
   line-height: 1; }
+
+.rf-responsive-vid__player {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 .rf-sr-only {
   position: absolute;
@@ -268,11 +281,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-ul[class^="rf-"], ul[class*=" rf-"] {
-  padding: 0;
-  margin: 0; }
-
-li[class^="rf-"], li[class*=" rf-"] {
+ul[class^="rf-"], ul[class*=" rf-"], ol[class^="rf-"], ol[class*=" rf-"] {
   list-style: none; }
 
 @font-face {
@@ -415,7 +424,7 @@ li[class^="rf-"], li[class*=" rf-"] {
   font-size: 0.875rem;
   line-height: 1.5; }
 
-.rf-text, .rf-body p {
+.rf-text, .rf-body p:not([class^="rf-"]):not([class*=" rf-"]) {
   font-size: 1rem;
   line-height: 1.5; }
 
@@ -436,55 +445,55 @@ li[class^="rf-"], li[class*=" rf-"] {
 .rf-text--alt {
   font-family: "Spectral", georgia, serif; }
 
-.rf-body a:not([class^="rf-"]):not([class*=" rf-"]) {
+.rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]) {
   position: relative;
   color: inherit;
   text-decoration: none;
   box-shadow: 0 1px 0 0 currentColor; }
-  .rf-body a:not([class^="rf-"]):not([class*=" rf-"]):focus {
+  .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
-  .rf-body a:not([class^="rf-"]):not([class*=" rf-"])[target="_blank"]::after {
+  .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"])[target="_blank"]::after {
     font-size: 1rem;
     margin-left: 0.25rem;
     vertical-align: baseline; }
 
-.rf-body ul:not([class^="rf-"]):not([class*=" rf-"]), .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) {
+.rf-body ul:not([class$="__list"]):not([class*="__list "]), .rf-body ol:not([class$="__list"]):not([class*="__list "]) {
   font-size: 1rem;
   line-height: 1.5;
   margin: 0 0 0.5rem;
   padding: 0; }
-  .rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) li, .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) li {
+  .rf-body ul:not([class$="__list"]):not([class*="__list "]) li, .rf-body ol:not([class$="__list"]):not([class*="__list "]) li {
     margin-bottom: 0.5rem; }
-  .rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) ul,
-  .rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) ol, .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) ul,
-  .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) ol {
+  .rf-body ul:not([class$="__list"]):not([class*="__list "]) ul,
+  .rf-body ul:not([class$="__list"]):not([class*="__list "]) ol, .rf-body ol:not([class$="__list"]):not([class*="__list "]) ul,
+  .rf-body ol:not([class$="__list"]):not([class*="__list "]) ol {
     margin: 0.5rem 0 1rem; }
 
-.rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) {
+.rf-body ul:not([class$="__list"]):not([class*="__list "]) {
   list-style-type: none; }
-  .rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) li::before {
+  .rf-body ul:not([class$="__list"]):not([class*="__list "]) li::before {
     content: "•";
     font-size: 1.4em;
     margin-right: 0.5rem; }
-  .rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) ul {
+  .rf-body ul:not([class$="__list"]):not([class*="__list "]) ul {
     list-style-type: none;
     margin: 0.5rem 0 0.5rem 1.5rem; }
-    .rf-body ul:not([class^="rf-"]):not([class*=" rf-"]) ul li::before {
+    .rf-body ul:not([class$="__list"]):not([class*="__list "]) ul li::before {
       content: "•";
       font-size: 0.9em; }
 
-.rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) {
+.rf-body ol:not([class$="__list"]):not([class*="__list "]) {
   list-style: none;
   counter-reset: list-number; }
-  .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) ol {
+  .rf-body ol:not([class$="__list"]):not([class*="__list "]) ol {
     padding-left: 1.5rem; }
-    .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) ol li::before {
+    .rf-body ol:not([class$="__list"]):not([class*="__list "]) ol li::before {
       font-size: 0.9em; }
-  .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) li {
+  .rf-body ol:not([class$="__list"]):not([class*="__list "]) li {
     counter-increment: list-number; }
-    .rf-body ol:not([class^="rf-"]):not([class*=" rf-"]) li::before {
+    .rf-body ol:not([class$="__list"]):not([class*="__list "]) li::before {
       content: counters(list-number, ".") ".";
       font-weight: 700;
       margin-right: 0.5rem; }
@@ -493,12 +502,12 @@ li[class^="rf-"], li[class*=" rf-"] {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-right: space(2N);
-  padding-left: space(2N); }
+  padding-right: 1rem;
+  padding-left: 1rem; }
   @media (min-width: 36em) {
     .rf-container {
-      padding-right: space(4N);
-      padding-left: space(4N); } }
+      padding-right: 2rem;
+      padding-left: 2rem; } }
   @media (min-width: 75em) {
     .rf-container {
       max-width: 1136px;
@@ -506,6 +515,23 @@ li[class^="rf-"], li[class*=" rf-"] {
       padding-left: 0; } }
   .rf-container-fluid {
     width: 100%; }
+
+.rf-responsive-img {
+  width: 100%;
+  height: auto; }
+
+.rf-responsive-vid {
+  position: relative;
+  width: 100%; }
+  .rf-responsive-vid::before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-bottom: 56.25%; }
+  .rf-responsive-vid--4x3::before {
+    padding-bottom: 75%; }
+  .rf-responsive-vid--1x1::before {
+    padding-bottom: 100%; }
 
 
 /*# sourceMappingURL=core.css.map*/

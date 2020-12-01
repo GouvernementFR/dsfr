@@ -1,0 +1,17 @@
+////
+/// Core Tools : Global list
+/// @group core
+////
+
+@mixin list() {
+  &__list {
+    @extend %list-reset;
+    @content;
+  }
+}
+
+@mixin list-item() {
+  &__item {
+    @content;
+  }
+}

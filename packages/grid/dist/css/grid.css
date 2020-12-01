@@ -37,21 +37,21 @@
   .rf-grid-row--center {
     justify-content: center; }
   .rf-grid-row--gutters {
-    margin: 0 calc(-space(2N) / 2); }
+    margin: 0 -0.5rem; }
     @media (min-width: 48em) {
       .rf-grid-row--gutters {
-        margin: 0 calc(-space(3N) / 2); } }
+        margin: 0 -0.75rem; } }
     @media (min-width: 62em) {
       .rf-grid-row--gutters {
-        margin: 0 calc(-space(4N) / 2); } }
+        margin: 0 -1rem; } }
     .rf-grid-row--gutters [class|="rf-col"] {
-      padding: calc(space(2N) / 2); }
+      padding: 0.5rem; }
       @media (min-width: 48em) {
         .rf-grid-row--gutters [class|="rf-col"] {
-          padding: calc(space(3N) / 2); } }
+          padding: 0.75rem; } }
       @media (min-width: 62em) {
         .rf-grid-row--gutters [class|="rf-col"] {
-          padding: calc(space(4N) / 2); } }
+          padding: 1rem; } }
 
 .rf-col {
   flex: 1; }

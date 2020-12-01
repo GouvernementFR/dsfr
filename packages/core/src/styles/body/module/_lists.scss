@@ -1,7 +1,11 @@
-/// TODO: refactor
+////
+/// Core Module : Body lists
+/// @group core
+////
+
 ul,
 ol {
-  @include not-dse-class() {
+  @include class-not-end-with('__list') {
     font-size: font-size();
     line-height: line-height();
     margin: 0 0 space(1N);
@@ -19,7 +23,7 @@ ol {
 }
 
 ul {
-  @include not-dse-class() {
+  @include class-not-end-with('__list') {
     list-style-type: none;
 
     li {
@@ -43,7 +47,7 @@ ul {
 }
 
 ol {
-  @include not-dse-class() {
+  @include class-not-end-with('__list') {
     list-style: none;
     counter-reset: list-number;
 
@@ -59,8 +63,7 @@ ol {
 
     li {
       counter-increment: list-number;
-      @include before() {
-        content: counters(list-number, ".") ".";
+      @include before(null, counters(list-number, ".") ".") {
         font-weight: 700;
         margin-right: space(1N);
       }

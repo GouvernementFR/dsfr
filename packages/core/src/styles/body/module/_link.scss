@@ -1,5 +1,10 @@
+////
+/// Core Module : Body link
+/// @group core
+////
+
 a {
-  @include not-dse-class() {
+  @include class-not-contains('link', 'btn', 'tag') {
     position: relative;
     color: inherit;
     text-decoration: none;

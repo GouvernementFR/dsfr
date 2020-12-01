@@ -1,3 +1,34 @@
+////
+/// Core Tools : Global selectors
+/// @group core
+////
+
+@mixin class-contains($patterns...) {
+  $selectors: '';
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}[class*="#{$pattern}"]';
+  }
+  @if & != null {
+    $selectors:  #{selector-unify(&, $selectors)};
+  }
+  @at-root #{$selectors} {
+    @content;
+  }
+}
+
+@mixin class-not-contains($patterns...) {
+  $selectors: '';
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
+  }
+  @if & != null {
+    $selectors:  #{selector-unify(&, $selectors)};
+  }
+  @at-root #{$selectors} {
+    @content;
+  }
+}
+
 @mixin class-start-with($start) {
   $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
   @if & != null {
@@ -10,6 +41,26 @@
 
 @mixin class-not-start-with($start) {
   $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin class-end-with($end) {
+  $selector: '[class$="#{$end}"], [class*="#{$end} "]';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin class-not-end-with($end) {
+  $selector: ':not([class$="#{$end}"]):not([class*="#{$end} "])';
   @if & != null {
     $selector:  #{selector-unify(&, $selector)};
   }
