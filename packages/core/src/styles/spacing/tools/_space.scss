@@ -68,65 +68,76 @@
     $spaces: ();
 
     @each $v in $value {
-      $spaces: append($spaces, $v);
+      $spaces: append($spaces, space($v));
     }
 
     #{$property}: $spaces;
   }
 }
 
-@mixin padding($values: 0 0 0 0) {
-  @include _spacing(padding, $values);
+@mixin _spacing-from($property: margin, $value: 0, $direction: null, $from: null) {
+  @if $from == null {
+    @include _spacing($property, $value, $direction);
+  }
+  @else {
+    @include respond-from($from) {
+      @include _spacing($property, $value, $direction);
+    }
+  }
 }
 
-@mixin padding-x($value: 0) {
-  @include _spacing(padding, $value, 'x');
+@mixin padding($values: 0 0 0 0, $from: null) {
+  @include _spacing-from(padding, $values, null, $from);
 }
 
-@mixin padding-y($value: 0) {
-  @include _spacing(padding, $value, 'y');
+@mixin padding-x($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'x', $from);
 }
 
-@mixin padding-top($value: 0) {
-  @include _spacing(padding, $value, 'top');
+@mixin padding-y($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'y', $from);
 }
 
-@mixin padding-right($value: 0) {
-  @include _spacing(padding, $value, 'right');
+@mixin padding-top($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'top', $from);
 }
 
-@mixin padding-bottom($value: 0) {
-  @include _spacing(padding, $value, 'bottom');
+@mixin padding-right($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'right', $from);
 }
 
-@mixin padding-left($value: 0) {
-  @include _spacing(padding, $value, 'left');
+@mixin padding-bottom($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'bottom', $from);
 }
 
-@mixin margin($values: 0 0 0 0) {
-  @include _spacing(margin, $values);
+@mixin padding-left($value: 0, $from: null) {
+  @include _spacing-from(padding, $value, 'left', $from);
 }
 
-@mixin margin-x($value: 0) {
-  @include _spacing(margin, $value, 'x');
+@mixin margin($values: 0 0 0 0, $from: null) {
+  @include _spacing-from(margin, $values, null, $from);
 }
 
-@mixin margin-y($value: 0) {
-  @include _spacing(margin, $value, 'y');
+@mixin margin-x($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'x', $from);
 }
 
-@mixin margin-top($value: 0) {
-  @include _spacing(margin, $value, 'top');
+@mixin margin-y($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'y', $from);
 }
 
-@mixin margin-right($value: 0) {
-  @include _spacing(margin, $value, 'right');
+@mixin margin-top($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'top', $from);
 }
 
-@mixin margin-bottom($value: 0) {
-  @include _spacing(margin, $value, 'bottom');
+@mixin margin-right($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'right', $from);
 }
 
-@mixin margin-left($value: 0) {
-  @include _spacing(margin, $value, 'left');
+@mixin margin-bottom($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'bottom', $from);
+}
+
+@mixin margin-left($value: 0, $from: null) {
+  @include _spacing-from(margin, $value, 'left', $from);
 }

@@ -15,10 +15,10 @@
 
   @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
     @include _reset-links-tags(button);
-    width: 100%;
-    text-align: left;
     @include scheme-element-text-color(g700, true);
     @include scheme-element-bg-color(t-plain, true, after);
+    width: 100%;
+    text-align: left;
 
     @include before {
       @include margin-right(0);
@@ -34,9 +34,7 @@
       }
     }
 
-    @include respond-from(md) {
-      padding: space(1-5N) space(2N);
-    }
+    @include margin(3v 4v, md);
   }
 
   @include body {
@@ -47,10 +45,7 @@
 
   &__inner {
     @include padding(2v 0 6v);
-
-    @include respond-from(md) {
-      @include padding(2v 4v 8v);
-    }
+    @include padding(2v 4v 8v, md);
   }
 
   $accordion: &;
