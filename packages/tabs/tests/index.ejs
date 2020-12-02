@@ -1,4 +1,5 @@
 <%
+
 let data = {
     tabs: 4,
     starterId: 1
@@ -9,20 +10,32 @@ let data2 = {
     starterId: 5
 };
 
+let data3 = {
+    tabs: 2,
+    starterId: 7
+};
+
 let samples = [
     { title:'tabs 4 col', data:data},
-    { title:'tabs 2 col', data:data2}
+    { title:'tabs 2 col', data:data2},
+    { title:'tabs dans tabs', data:data3}
 ]
 
 %>
 
 <% sample = samples[0] %>
 <h4><%= sample.title %></h4>
-<%- include('./templates/tabs', sample.data) %>
-
+<%- include('./samples/tabs-default', sample.data) %>
 
 <% sample = samples[1] %>
 <h4><%= sample.title %></h4>
-<%- include('./templates/tabs', sample.data) %>
-<%- snippet(include('./templates/tabs', sample.data)); %>
+<%- include('./samples/tabs-default', sample.data) %>
+<%- snippet(include('./samples/tabs-default', sample.data)); %>
+
+
+<% sample = samples[2] %>
+<h4><%= sample.title %></h4>
+<%- include('./samples/tabs-in-tabs', sample.data) %>
+<%- snippet(include('./samples/tabs-in-tabs', sample.data)); %>
+
 

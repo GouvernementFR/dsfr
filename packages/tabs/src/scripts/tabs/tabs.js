@@ -12,10 +12,13 @@ class Tabs {
 
   init () {
     const wrappers = document.querySelectorAll(TABS_SELECTOR);
-
-    for (let i = 0; i < wrappers.length; i++) this.groups.push(new TabsGroup(wrappers[i]));
-
     this.changing = this.change.bind(this);
+
+    for (let i = 0; i < wrappers.length; i++) {
+      this.groups.push(new TabsGroup(wrappers[i]));
+      wrappers[i].addEventListener('setHeight', this.changing);
+    }
+
     window.addEventListener('resize', this.changing);
     window.addEventListener('load', this.changing);
     // this.change();

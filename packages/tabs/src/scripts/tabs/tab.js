@@ -1,5 +1,6 @@
 import { TabButton } from './tab-button';
-import { Disclosure } from '@frds/utilities/src/scripts';
+import { TRANSITION_TIME, TABS_SELECTOR } from './tabs-constants';
+import { Disclosure } from '@gouvfr/utilities/src/scripts';
 const HIDDEN = 'hidden';
 
 /**
@@ -20,6 +21,14 @@ class Tab extends Disclosure {
     super.apply(value);
     if (value) {
       this.element.removeAttribute(HIDDEN);
+      // resize all elements after animation finish
+      const tabs = document.querySelectorAll(TABS_SELECTOR);
+      for (let i = 0; i < tabs.length; i++) {
+        setTimeout(() => {
+          tabs[i].dispatchEvent(new Event('setHeight'));
+          console.log('resize');
+        }, TRANSITION_TIME * i);
+      }
     } else {
       this.element.setAttribute(HIDDEN, true);
     }

@@ -1,6 +1,6 @@
 import { Tab } from './tab';
-import { Disclosure, DisclosuresGroup, KeyListener } from '@frds/utilities/src/scripts';
-import { PANEL_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
+import { Disclosure, DisclosuresGroup, KeyListener } from '@gouvfr/utilities/src/scripts';
+import { TAB_CLASSNAME, PANEL_SELECTOR, TABS_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
@@ -12,7 +12,7 @@ class TabsGroup extends DisclosuresGroup {
     this._index = -1;
     this.element = wrapper;
 
-    this.build(wrapper, PANEL_SELECTOR, Disclosure.SELECT);
+    this.build(wrapper, TABS_SELECTOR, PANEL_SELECTOR, Disclosure.SELECT);
 
     if (this.current === null) this.index = 0;
 
@@ -25,36 +25,56 @@ class TabsGroup extends DisclosuresGroup {
 
   _attachEvents () {
     this.keyEvents = new KeyListener(this.element);
-    this.keyEvents.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true);
-    this.keyEvents.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true);
-    this.keyEvents.down(KeyListener.HOME, this.homePress.bind(this), true);
-    this.keyEvents.down(KeyListener.END, this.endPress.bind(this), true);
+    this.keyEvents.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
+    this.keyEvents.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
+    this.keyEvents.down(KeyListener.HOME, this.homePress.bind(this), true, true);
+    this.keyEvents.down(KeyListener.END, this.endPress.bind(this), true, true);
   }
 
+  /**
+   * Selectionne l'element suivant de la liste si on est sur un bouton
+   * Si on est à la fin on retourne au début
+   */
   arrowRightPress () {
-    // Si on est a la fin retourne au debut
-    if (this.index < this.disclosures.length - 1) {
-      this.index++;
-    } else {
+    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+      if (this.index < this.disclosures.length - 1) {
+        this.index++;
+      } else {
+        this.index = 0;
+      }
+    }
+  };
+
+  /**
+   * Selectionne l'element précédent de la liste si on est sur un bouton
+   * Si on est au debut retourne a la fin
+   */
+  arrowLeftPress () {
+    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+      if (this.index > 0) {
+        this.index--;
+      } else {
+        this.index = this.disclosures.length - 1;
+      }
+    }
+  };
+
+  /**
+   * Selectionne le permier element de la liste si on est sur un bouton
+   */
+  homePress () {
+    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
       this.index = 0;
     }
   };
 
-  arrowLeftPress () {
-    //  Si on est au debut retourne a la fin
-    if (this.index > 0) {
-      this.index--;
-    } else {
+  /**
+   * Selectionne le dernier element de la liste si on est sur un bouton
+   */
+  endPress () {
+    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
       this.index = this.disclosures.length - 1;
     }
-  };
-
-  homePress () {
-    this.index = 0;
-  };
-
-  endPress () {
-    this.index = this.disclosures.length - 1;
   };
 
   get index () { return this._index; }
@@ -74,8 +94,23 @@ class TabsGroup extends DisclosuresGroup {
     this.setPanelHeight();
   }
 
+  /**
+   * Adapte la hauteur du panel en ajoutant un margin-bottom sous la liste
+   * Remonte sur le parent en cas de tabs dans tabs
+   */
   setPanelHeight () {
-    this.element.querySelector(TABS_LIST_SELECTOR).style.marginBottom = getComputedStyle(this.current.element).height;
+    const offsetFocus = 4;
+    const panelHeight = this.current.element.offsetHeight - offsetFocus;
+    this.element.querySelector(TABS_LIST_SELECTOR).style.marginBottom = panelHeight + 'px';
+
+    // const nestedParent = this.element.parentNode.closest(TABS_SELECTOR);
+    // if (nestedParent && nestedParent !== this.element) {
+    //   const currentParent = nestedParent.querySelector(PANEL_SELECTOR + '--' + Disclosure.SELECT);
+    //   const parentHeight = currentParent.offsetHeight;
+    //   console.log(parentHeight);
+    //   nestedParent.querySelector(TABS_LIST_SELECTOR).style.marginBottom = parentHeight + 'px';
+
+    // }
   }
 }
 

@@ -1,4 +1,4 @@
-import { DisclosureButton } from '@frds/utilities/src/scripts';
+import { DisclosureButton } from '@gouvfr/utilities/src/scripts';
 
 /**
   * TabButton correspond au bouton cliquable qui change le panel
@@ -10,7 +10,7 @@ class TabButton extends DisclosureButton {
     super.apply(value);
     if (this.hasAttribute) {
       this.element.setAttribute('tabindex', value ? '0' : '-1');
-      if (value) this.element.focus();
+      if (value) this.element.focus({ preventScroll: false });
     }
   }
 }

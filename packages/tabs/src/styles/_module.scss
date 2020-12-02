@@ -6,6 +6,16 @@
 .#{$prefix}-tabs {
   position: relative;
 
+  // remove container padding in mobile
+  @include respond-to(sm) {
+    margin-left: -(space(4v));
+    margin-right: -(space(4v));
+    .#{$prefix}-tabs {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
   /**
    * ul : element srollable des boutons
    */
@@ -13,20 +23,18 @@
     display: flex;
     overflow-x: auto;
     list-style: none;
+    width: 100%;
 
     /**
-    * overflow de 4px pour le focus
+    * overflow vertical de 4px pour le focus
     */
-    width: calc(100% + 4px);
-    margin: -4px;
-    padding: 4px;
+    margin: -4px 0;
+    padding: 4px 0.5rem;
 
-    transition: margin-bottom 0.3s; // Todo: change animation
-
-    @include after(block, '') {
-      flex: 1 1 auto;
-      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 -0.125rem 0 0 $COLOR');
-    }
+    /**
+    * Animation de la hauteur du panel
+    */
+    transition: margin-bottom 0.1s; // Todo: change animation
 
     /**
     * Reset du style par défaut du li
@@ -34,8 +42,16 @@
     li {
       display: block;
       flex: 0 0 auto;
-      margin: 0;
+      margin: 0 0.5rem;
       @include before(none, none);
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        padding-right: space(4v);
+      }
     }
   }
 
@@ -44,13 +60,43 @@
   */
   &__tab {
     @include build-tab();
-    @include scheme-element-bg-color(t-plain, true, true);
-    @include scheme-element-text-color(bf500);
-    @include disabled(g600, g300);
-    @include scheme-element-box-shadow-color(bf500, true, 'inset 0 -0.125rem 0 0 $COLOR');
+    position: relative;
+    overflow: visible;
+    font-weight: bold;
+    @include z-index(over);
+
+    &:not([aria-selected=true]) {
+      @include scheme-element-bg-color(bf100-g750, true, true);
+      @include scheme-element-text-color(g700);
+      @include disabled(g600, g300);
+      @include scheme-element-focus(t-plain);
+    }
 
     &[aria-selected=true] {
-      @include scheme-element-box-shadow-color(bf500, true, 'inset 0.125rem 0 0 0 $COLOR, inset -0.125rem 0.125rem 0 0 $COLOR');
+      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0.125rem 0 0 $COLOR');
+      @include scheme-element-bg-color(t-plain, true, true);
+      @include scheme-element-text-color(bf500);
+      cursor: default;
+
+      @include before(block, '') {
+        @extend %absolute-overlay;
+        @include scheme-element-box-shadow-color(g300, true, 'inset 1px 0 0 0 $COLOR, inset -1px 0 0 0 $COLOR');
+        @include z-index(over);
+        top: 0.125rem;
+        height: auto;
+        pointer-events: none;
+      }
+      @include after(block, '') {
+        @extend %absolute-overlay;
+        @include scheme-element-box-shadow-color(w, true, 'inset 0 -3px 0 0 $COLOR');
+        @include z-index(over);
+        pointer-events: none;
+        top: 2px;
+        left: 1px;
+        right: 1px;
+        bottom: auto;
+        width: auto;
+      }
     }
   }
 
@@ -64,11 +110,24 @@
     width: 100%;
     position: absolute;
     visibility: visible;
-    transition: opacity ease-out 0.2s, visibility ease-out 0.2s; // Todo: change animation
+    padding: space(4v);
+    @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
+    transition: opacity 0.1s, visibility 0.1s; // Todo: change animation
+
+    @include respond-from(md) {
+      padding: space(8v);
+    }
 
     &--selected {
       opacity: 1;
       @include scheme-element-focus();
+
+      &:focus {
+        outline-offset: calc(-1rem + 2px);
+        @include respond-from(md) {
+          outline-offset: calc(-2rem + 2px);
+        }
+      }
     }
 
     &[hidden] {
