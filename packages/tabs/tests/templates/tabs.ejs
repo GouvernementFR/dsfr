@@ -11,9 +11,11 @@
 let tabsClasses = locals.classes || [];
 let tabsAttrs = locals.attributes || {};
 let activeClass = '';
+let btnClasses = [];
+let btnAttr = [];
 tabsClasses.push(prefix + '-tabs');
+btnClasses.push(prefix + '-tabs__tab');
 
-if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
 
 %>
 <div <%- includeClasses(tabsClasses) %> <%- includeAttrs(tabsAttrs); %> >
@@ -21,7 +23,11 @@ if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
         <% for (let i = 0; i < locals.tabs; i++) { %>
             <% let activeClass = i === 0 %>
             <li>
-                <button class="<%= prefix + '-tabs__tab' %>" aria-selected="<%= activeClass %>" tabindex="<%= activeClass ? '0' : '-1' %>" aria-controls="tabpanel-<%= (i + locals.starterId) %>" role="tab">intitulé de l'onglet</button>
+                <% btnAttr['aria-selected'] =  activeClass; %>
+                <% btnAttr['tabindex'] = activeClass ? '0' : '-1'; %>
+                <% btnAttr['aria-controls'] = 'tabpanel-' + (i + locals.starterId); %>
+                <% btnAttr['role'] = 'tab'; %>
+                <%- include('../../../buttons/tests/samples/button-default', {attributes: btnAttr, classes: btnClasses, icon: locals.icon, iconPlace:'left', sizes: locals.sizes}) %>
                 <div id="tabpanel-<%= (i + locals.starterId) %>" class="<%= prefix + '-tabs__panel' %>" role="tabpanel" tabindex="0" >
                     <!-- données de test -->
                     <div>

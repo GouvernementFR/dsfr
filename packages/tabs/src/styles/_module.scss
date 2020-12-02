@@ -6,7 +6,7 @@
 .#{$prefix}-tabs {
   position: relative;
 
-  // remove container padding in mobile
+  // retire le padding du container en mobile
   @include respond-to(sm) {
     margin-left: -(space(4v));
     margin-right: -(space(4v));
@@ -21,6 +21,7 @@
    */
   &__list {
     display: flex;
+    align-items: flex-end;
     overflow-x: auto;
     list-style: none;
     width: 100%;
@@ -36,6 +37,14 @@
     */
     transition: margin-bottom 0.1s; // Todo: change animation
 
+    @include after(block, '') {
+      flex: 1 1 auto;
+      height: 1px;
+      margin-left: -(space(2v));
+      margin-right: -(space(2v));
+      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+    }
+
     /**
     * Reset du style par défaut du li
     */
@@ -47,10 +56,40 @@
 
       &:not(:first-child) {
         margin-left: 0;
+        @include before(block, '') {
+          position: sticky;
+          margin-left: -(space(2v));
+          width: space(2v);
+          top: 100%;
+          height: 1px;
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
       }
 
       &:last-child {
         padding-right: space(4v);
+
+        @include after(block, '') {
+          min-width: 1rem;
+          margin-left: 100%;
+          flex: 1 1 auto;
+          width: auto;
+          top: 100%;
+          height: 1px;
+          margin-top: -1px;
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+
+      &:first-child {
+        @include before(block, '') {
+          position: sticky;
+          margin-left: -100%;
+          width: 100%;
+          top: 100%;
+          height: 1px;
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
       }
     }
   }
@@ -70,6 +109,7 @@
       @include scheme-element-text-color(g700);
       @include disabled(g600, g300);
       @include scheme-element-focus(t-plain);
+      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
     }
 
     &[aria-selected=true] {
@@ -78,24 +118,17 @@
       @include scheme-element-text-color(bf500);
       cursor: default;
 
-      @include before(block, '') {
-        @extend %absolute-overlay;
-        @include scheme-element-box-shadow-color(g300, true, 'inset 1px 0 0 0 $COLOR, inset -1px 0 0 0 $COLOR');
-        @include z-index(over);
-        top: 0.125rem;
-        height: auto;
-        pointer-events: none;
-      }
       @include after(block, '') {
         @extend %absolute-overlay;
-        @include scheme-element-box-shadow-color(w, true, 'inset 0 -3px 0 0 $COLOR');
+        @include scheme-element-box-shadow-color(g300, true, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
+        // @include scheme-element-box-shadow-color(w, true, 'inset 0 -3px 0 0 $COLOR');
         @include z-index(over);
-        pointer-events: none;
-        top: 2px;
         left: 1px;
         right: 1px;
-        bottom: auto;
+        top: 2px;
+        bottom: 0;
         width: auto;
+        height: calc(100% - 1px);
       }
     }
   }
@@ -111,7 +144,7 @@
     position: absolute;
     visibility: visible;
     padding: space(4v);
-    @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
+    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
     transition: opacity 0.1s, visibility 0.1s; // Todo: change animation
 
     @include respond-from(md) {
