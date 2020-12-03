@@ -27,7 +27,7 @@
       content: none;
     }
 
-    @include link(md, null, null, null, true);
+    @include nest-link(md, null, null, null, true);
 
     @include respond-from(sm) {
       margin: 0 space(2N);

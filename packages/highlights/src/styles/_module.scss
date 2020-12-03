@@ -1,17 +1,28 @@
+////
+/// Highlights Module
+/// @group Highlights
+////
+
 .#{$prefix}-highlight {
-  @include space("padding", 2N, "left");
+  @include padding-left(4v);
   @include scheme-element-border-color(bf500, true, left, space(0-5N) solid $COLOR);
   @include text-styles();
 
   @include respond-from(md) {
-    @include space("padding", 4N, "left");
-    @include space("margin", 4N, "left");
+    @include padding-left(8v);
+    @include margin-left(8v);
   }
 
+  /**
+   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   */
   &--lg {
     @include text-styles(lg);
   }
 
+  /**
+   * Modificateur pour la taille du texte (sm: 14px/0.875rem)
+   */
   &--sm {
     @include text-styles(sm);
   }

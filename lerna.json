@@ -6,7 +6,7 @@
   "useWorkspaces": true,
   "command": {
     "publish": {
-      "message": "chore(packages): release"
+      "message": "chore(release): %s"
     }
   },
   "version": "0.3.1"

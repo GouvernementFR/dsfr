@@ -1,23 +1,24 @@
 @charset "UTF-8";
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
 .rf-table {
   position: relative;
   /*
@@ -54,7 +55,7 @@
   .rf-table td,
   .rf-table th {
     text-align: left;
-    vertical-align: text-top;
+    vertical-align: middle;
     display: table-cell;
     border: 0;
     padding: 0.75rem;
@@ -67,14 +68,10 @@
     font-weight: 700; }
   .rf-table thead td,
   .rf-table thead th {
-    vertical-align: text-bottom;
     font-weight: 700;
     border-bottom: 0.125rem solid var(--g600);
     background-color: var(--beige);
     color: var(--g700); }
-    :root[data-transition] .rf-table thead td, :root[data-transition]
-    .rf-table thead th {
-      transition: border-bottom 0.3s; }
   .rf-table tbody tr:nth-child(even) {
     background-color: var(--beige); }
   .rf-table tbody tr:nth-child(odd) {
@@ -83,9 +80,6 @@
   .rf-table--bordered tbody th {
     border: 0;
     border-bottom: 1px solid var(--g400); }
-    :root[data-transition] .rf-table--bordered tbody td, :root[data-transition]
-    .rf-table--bordered tbody th {
-      transition: border-bottom 0.3s; }
   .rf-table--bordered tbody tr:nth-child(odd), .rf-table--bordered tbody tr:nth-child(even) {
     background-color: var(--t-plain); }
   .rf-table--no-caption caption {

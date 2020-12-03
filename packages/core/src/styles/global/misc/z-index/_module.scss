@@ -1,0 +1,11 @@
+////
+/// Core Module : Global z-index
+/// @group core
+////
+
+/**
+ * Définition du z-index de focus
+ */
+:root {
+  --focus-z-index: #{z-index(focus)};
+}

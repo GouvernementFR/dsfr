@@ -1,3 +1,8 @@
+////
+/// Logo Tools
+/// @group logo
+////
+
 @mixin logo($size: md, $size-md: none) {
   .#{$prefix}-logo {
     font-size: map_get($logo-sizes, $size);
@@ -14,12 +19,12 @@
 
 @function _svg-encode($svg) {
   @each $char, $encoded in $encoding-reference {
-    $svg: _str-replace($svg, $char, $encoded);
+    $svg: str-replace($svg, $char, $encoded);
   }
   @return 'data:image/svg+xml,' + $svg;
 }
 
 @function _color-marianne($blue, $red) {
-  $tmp: _str-replace($svg-marianne, '$BLUE', $blue);
-  @return _str-replace($tmp, '$RED', $red);
+  $tmp: str-replace($svg-marianne, '$BLUE', $blue);
+  @return str-replace($tmp, '$RED', $red);
 }

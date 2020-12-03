@@ -3,6 +3,8 @@
 
 * label (string, required) : contenu texte
 
+* tag (string) : si non défini, a
+
 * href (string, required) : adresse url du lien
 
 * blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
@@ -22,6 +24,8 @@
 <%
  let linkClasses = locals.classes || [];
  let linkAttrs = locals.attributes || {};
+
+ const tag = locals.tag || 'a';
 
  linkClasses.push(prefix + '-link');
 
@@ -47,14 +51,11 @@
      case 'right':
          linkClasses.push(prefix + '-link--icon-right');
          break;
-
-     case 'only':
-         linkClasses.push(prefix + '-link--icon-only');
-
  }
 
  linkAttrs.target = locals.blank === true ? '_blank' : '_self';
+ if (tag === 'a') linkAttrs.href = locals.href || '#';
 
  %>
 
-<a href="#" <%- includeClasses(linkClasses)%> <%- includeAttrs(linkAttrs); %>><%- label %></a>
+<<%= tag %> <%- includeClasses(linkClasses)%> <%- includeAttrs(linkAttrs); %>><%- label %></<%= tag %>>

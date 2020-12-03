@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
 </head>
-<body class="<%= prefix %>-margin-bottom-15N" >
+<body class="<%= prefix %>-mb-12w <% if (locals.config === undefined || config.noBody !== true) { %><%= prefix %>-body<% }%>" >
 
     <% if (locals.config && locals.config.prepend === true) { %>
         <%- include(dir + 'prepend') %>
@@ -15,10 +15,10 @@
 
 
     <div class="<%= prefix %>-container">
-        <div class="<%= prefix %>-margin-top-4N <%= prefix %>-margin-bottom-4N" >
+        <div class="<%= prefix %>-mt-4w <%= prefix %>-mb-4w" >
             <input type="checkbox" id="rf-dark-mode-toggle-switch" ><label for="rf-dark-mode-toggle-switch" ></label>
         </div>
-        <h1><%= desc %> - Design System</h1>
+        <h1 class="<%= prefix %>-h1" ><%= desc %> - Design System</h1>
     </div>
 
     <% if (locals.config === undefined || config.wrapper === undefined) { %>

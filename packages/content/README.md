@@ -9,7 +9,7 @@ content
 └─ core
 └─ buttons
 └─ medias
-└─ typography
+└─ body
 ```
 
 ## Installation

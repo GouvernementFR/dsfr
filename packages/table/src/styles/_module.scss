@@ -67,9 +67,7 @@ $table: "#{$prefix}-table";
     @include scheme-element-bg-color(white);
   }
 
-  /*
-  * Style bodered, enleve le style even/odd et ajoute des bordures entre chaque ligne
-  */
+  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
   &--bordered {
     tbody {
       td,

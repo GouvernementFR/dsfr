@@ -1,11 +1,7 @@
-.#{$prefix}-container {
-
-  @include container();
-
-  &-fluid {
-    width: 100%;
-  }
-}
+////
+/// Grid Module
+/// @group grid
+////
 
 .#{$prefix}-grid-row {
   display: flex;
@@ -42,25 +38,25 @@
 
   // Gutters
   &--gutters {
-    margin: 0 calc(-#{map-get($grid-gutter-width, xs)} / 2);
+    margin: 0 #{space(map-get($grid-gutter-width, xs)) * - 0.5};
 
     @include respond-from(md) {
-      margin: 0 calc(-#{map-get($grid-gutter-width, md)} / 2);
+      margin: 0 #{space(map-get($grid-gutter-width, md)) * - 0.5};
     }
 
     @include respond-from(lg) {
-      margin: 0 calc(-#{map-get($grid-gutter-width, lg)} / 2);
+      margin: 0 #{space(map-get($grid-gutter-width, lg)) * - 0.5};
     }
 
     [class|="rf-col"] {
-      padding: calc(#{map-get($grid-gutter-width, xs)} / 2);
+      padding: #{space(map-get($grid-gutter-width, xs)) * 0.5};
 
       @include respond-from(md) {
-        padding: calc(#{map-get($grid-gutter-width, md)} / 2);
+        padding: #{space(map-get($grid-gutter-width, md)) * 0.5};
       }
 
       @include respond-from(lg) {
-        padding: calc(#{map-get($grid-gutter-width, lg)} / 2);
+        padding: #{space(map-get($grid-gutter-width, lg)) * 0.5};
       }
     }
   }
