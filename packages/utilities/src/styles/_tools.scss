@@ -1,4 +1,7 @@
-// Utilities
+////
+/// Utilities Module
+/// @group tools
+////
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
   $start: str_slice($prop, 1, 1);

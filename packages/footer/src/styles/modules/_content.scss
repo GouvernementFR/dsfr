@@ -1,0 +1,65 @@
+////
+/// Footer module : Content
+/// @group Footer
+////
+
+&__content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  margin-top: space(3w);
+
+  @include respond-from(md) {
+    margin-top: 0;
+    flex-basis: calc(100% - (100% / 3));
+  }
+
+  .#{$prefix}-footer__body--operator & {
+    margin-top: space(3w);
+
+    @include respond-from(lg) {
+      margin-top: 0;
+      flex-basis: 50%;
+    }
+  }
+}
+
+&__content-desc {
+  margin: 0 0 space(2w);
+  line-height: line-height(normal);
+}
+
+&__content-links {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-bottom: -(space(2w));
+
+  > li {
+    margin-right: space(3w);
+    margin-top: space(1w);
+
+    &::before {
+      content: none;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    > a {
+      display: inline-flex;
+      font-weight: font-weight(bold);
+      box-shadow: none;
+    }
+
+    @include respond-from(sm) {
+      margin-right: space(7w);
+    }
+  }
+
+  @include respond-from(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

@@ -1,3 +1,8 @@
+////
+/// IE11 Module
+/// @group ie11
+////
+
 @include ie-hack() {
   //navigation fix alignement des menus sur la droite
   .#{$prefix}-nav {

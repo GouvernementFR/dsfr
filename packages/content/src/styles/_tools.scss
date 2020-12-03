@@ -1,3 +1,8 @@
+////
+/// Content Tools
+/// @group content
+////
+
 @mixin content-media-sizes($medias, $captions, $gap) {
   @each $size in $content-sizes {
     $g: $gap;
