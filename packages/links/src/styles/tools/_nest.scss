@@ -33,13 +33,13 @@
 
     @include _build-link-size($size-settings, $border-radius);
 
-    width: auto;
-    height: auto;
+    @if $place != only {
+      max-width: none;
+      max-height: none;
+    }
 
     @if $place == null {
-      &::before {
-        content: none;
-      }
+      @include before(null, none);
     }
     @else {
       @include _build-link-icon($size-settings, $place, $size, false, $place == right);

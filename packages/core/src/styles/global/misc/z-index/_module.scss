@@ -7,5 +7,5 @@
  * Définition du z-index de focus
  */
 :root {
-  --focus-z-index: z-index(focus);
+  --focus-z-index: #{z-index(focus)};
 }

@@ -3,8 +3,7 @@
 /// @group schemes
 ////
 
-/// configuration des blocs de couleur
-/// @type map
+/// Configuration des blocs de couleur
 /// Il y a 4 types de combinaisons de couleur :
 /// - light : les couleurs claires proches du blanc
 /// - dark : les couleurs foncées proches du noir
@@ -13,6 +12,7 @@
 ///
 /// pour chaque combinaison de couuleur, on définit pour chaque type une couleur
 /// Si un type n'est pas défini, la couleur de type light (la première) remplace
+/// @type map
 $scheme-sets: (
   // Bleu France, couleur primaire
   bf500: $blue-france-500 $blue-france-300 $grey-700 $grey-200,

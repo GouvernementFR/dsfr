@@ -40,7 +40,7 @@
   @return unquote($is);
 }
 
-@function str-to-list($string, $separator:',') {
+@function str-split($string, $separator:',') {
   $tmp: str-slice($string, 1);
   $list: ();
   $index: str-index($string, $separator);
@@ -49,7 +49,7 @@
     $list: ($string);
   }
   @else {
-    $list: join((str-slice($string, 1, $index - 1)), str-to-list(str-slice($string, $index + 1)));
+    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1)));
   }
   @return $list;
 }

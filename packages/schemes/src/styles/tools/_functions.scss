@@ -56,8 +56,8 @@
 /// @access private
 /// @param {Color} $color - couleur de base
 /// @param {Number} $factor - mutliplicateur permettant d'amplifier l'effet
-/// @return Retourne la couleur modifiée pour le hover avec une transparence de 0.5
-@function overlay-color($color, $factor: 1) {
+/// @return {Color} Retourne la couleur modifiée pour le hover avec une transparence de 0.5
+@function _overlay-color($color, $factor: 1) {
   $sum: red($color) + green($color) + blue($color);
   $brightness: percentage($sum / (255*3));
 

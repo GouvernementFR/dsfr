@@ -17,8 +17,8 @@
       $prop: block-color;
     }
 
-    --#{$prop}-hover: #{ overlay-color($color, 1) };
-    --#{$prop}-active: #{ overlay-color($color, 2) };
+    --#{$prop}-hover: #{ _overlay-color($color, 1) };
+    --#{$prop}-active: #{ _overlay-color($color, 2) };
   }
   @else {
     --color-hover: var(--block-color-hover);
@@ -27,7 +27,7 @@
 }
 
 /// Applique le hover sur un élément
-/// @acces private
+/// @access private
 @mixin _scheme-element-hover() {
   @media (hover: hover) and (pointer: fine) {
     &:not([disabled]),

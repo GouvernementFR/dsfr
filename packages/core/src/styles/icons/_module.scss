@@ -30,5 +30,5 @@
 /**
  * Définitions des symboles des icones
  **/
-/// @var: $icons-mames - générée dans generated/_icons.scss
+// $icons-settings est générée dans generated/_icons.scss
 @include generate-icons-content($icons-settings);

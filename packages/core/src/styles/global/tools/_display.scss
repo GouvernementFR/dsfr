@@ -3,8 +3,32 @@
 /// @group core
 ////
 
+@mixin display-flex($inline: false, $flex-direction: row, $align-items: null, $justify-content: null, $flex-wrap: null) {
+
+  @if $inline == true {
+    display: inline-flex;
+  }
+  @else {
+    display: flex;
+  }
+
+  @if $flex-direction != null {
+    flex-direction: #{$flex-direction};
+  }
+
+  @if $align-items != null {
+    align-items: #{$align-items};
+  }
+
+  @if $justify-content != null {
+    justify-content: #{$justify-content};
+  }
+
+  @if $flex-wrap != null {
+    flex-wrap: #{$flex-wrap};
+  }
+}
+
 %inline-flex-center {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
+  @include display-flex(true, row, center);
 }

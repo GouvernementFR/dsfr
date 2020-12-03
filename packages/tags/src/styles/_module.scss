@@ -3,25 +3,21 @@
 /// @group tags
 ////
 
-.#{$prefix}-tag {
+#{prefixed-class(tag)} {
   @include build-tag();
 
-  @at-root {
-    a#{&} {
-      @include scheme-element-text-color(bf500-plain, true);
-      @include scheme-element-bg-color(bf200-bf300, true, true);
-      box-shadow: none;
-    }
-    span#{&} {
-      @include scheme-element-text-color(g-800, true);
-      @include scheme-element-bg-color(g200, true);
-    }
+  @include scheme-element-text-color(g-800, true);
+  @include scheme-element-bg-color(g200, true);
+
+  @include when-element-tag-name-is(a, button) {
+    @include scheme-element-text-color(bf500-plain, true);
+    @include scheme-element-bg-color(bf200-bf300, true, true);
   }
 
   @include disabled-link(true, true);
 }
 
-.#{$prefix}-tag-list {
+#{prefixed-group-class(tags)} {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0;
@@ -35,18 +31,19 @@
     }
   }
 
-  a.#{$prefix}-tag {
-    margin-right: space(1-5N);
-    margin-bottom: space(1-5N);
-
-    &--sm {
-      margin-right: space(3N);
-      margin-bottom: space(3N);
-    }
+  .#{$prefix}-tag {
+    @include margin-right(2v);
+    @include margin-bottom(2v);
   }
 
-  span.#{$prefix}-tag {
-    margin-right: space(1N);
-    margin-bottom: space(1N);
+  a.#{$prefix}-tag,
+  button.#{$prefix}-tag {
+    @include margin-right(3v);
+    @include margin-bottom(3v);
+
+    &--sm {
+      @include margin-right(6v);
+      @include margin-bottom(6v);
+    }
   }
 }

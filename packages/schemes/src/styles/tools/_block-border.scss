@@ -15,7 +15,7 @@
 
   @if $lw == 0 and $tw == 0 {
     @if $rw == 0 and $bw == 0 {
-      //no action
+      // no action
     }
     @else {
       box-shadow: inset #{-($rw)} #{-($bw)} 0 0 $var;

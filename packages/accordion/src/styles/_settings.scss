@@ -7,11 +7,11 @@ $ac-btn-settings:(
   sizes: (
     md: (
       font-size: 16,
-      line-height: space(3N),
-      min-height: space(6N),
-      padding-x: space(2N),
+      line-height: 6v,
+      min-height: 12v,
+      padding-x: 4v,
       icon: md,
-      icon-margin-x: space(0-5N)
+      icon-margin-x: 1v
     )
   ),
   places: right

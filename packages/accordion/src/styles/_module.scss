@@ -17,7 +17,7 @@
     @include _reset-links-tags(button);
     @include scheme-element-text-color(g700, true);
     @include scheme-element-bg-color(t-plain, true, after);
-    width: 100%;
+    @include size(100%);
     text-align: left;
 
     @include before {
@@ -34,7 +34,7 @@
       }
     }
 
-    @include margin(3v 4v, md);
+    @include padding(3v 4v, md);
   }
 
   @include body {

@@ -103,19 +103,18 @@
     $modifier: '#{&}[class*="#{$prefix}-fi-"]#{&}--icon-#{$place}';
 
     @if $place == only {
-      $modifier: '#{&}[class*="#{$prefix}-fi-"]:not(#{&}--icon-left):not(#{&}--icon-right)';
+      $modifier: '#{&}[class*="#{$prefix}-fi-"]:not([class*="#{$module}--icon-"])';
     }
 
     @each $size, $size-settings in $sizes {
-      @if $size == md {
-        @at-root #{$modifier} {
-          @extend %#{$module}--icon-#{$place}--md;
-        }
+      $selector: '#{$modifier}';
+
+      @if $size != md {
+        $selector: '#{$modifier}#{&}--#{$size}';
       }
-      @else {
-        @at-root #{$modifier}#{&}--#{$size} {
-          @extend %#{$module}--icon-#{$place}--#{$size};
-        }
+
+      @at-root #{$selector} {
+        @extend %#{$module}--icon-#{$place}--#{$size};
       }
     }
   }

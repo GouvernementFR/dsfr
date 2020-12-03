@@ -21,6 +21,10 @@
   ol {
     @extend %list-reset;
   }
+
+  a {
+    @extend %a-reset;
+  }
 }
 
 ul,

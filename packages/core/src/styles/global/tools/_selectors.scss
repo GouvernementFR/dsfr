@@ -117,3 +117,19 @@
     }
   }
 }
+
+@mixin when-element-tag-name-is($tag-names...) {
+  $selectors:();
+
+  $parts: selector_parse(&);
+
+  @debug nth($parts, length($parts));
+
+  @each $tag-name in $tag-names {
+    $selectors: append($selectors, #{$tag-name}#{&}, $separator: comma);
+  }
+
+  @at-root #{$selectors} {
+    @content;
+  }
+}
