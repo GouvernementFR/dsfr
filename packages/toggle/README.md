@@ -7,6 +7,8 @@ Le toggle est un bouton permettant de passer d'un état activé à un état dés
 toggle
 └─ schemes
 └─ core
+└─ icons
+└─ forms
 └─ typography
 ```
 

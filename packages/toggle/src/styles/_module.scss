@@ -3,6 +3,119 @@
 /// @group toggle
 ////
 
-.test {
-  background: red;
+.#{$prefix}-toggle {
+  display: flex;
+  position: relative;
+  padding: space(2w) 0;
+
+  /*
+   * On utilise un input de type checkbox pour gérer le toggle
+   * On reset ses styles afin de ne garder que son fonctionnement et son espacement
+   * On l'utilisera égalemement pour afficher l'état du toggle (optionnel)
+   */
+  &__input {
+    flex-shrink: 0;
+    @include z-index(under);
+    width: space(7w);
+    height: space(3w);
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    @include scheme-element-focus(false, '+ label::before');
+    @include disabled-form-choice();
+
+    /*
+     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
+     * On récupère le text via l'attribut [data-rf-unchecked-label]
+     */
+    &::before {
+      content: attr(data-rf-unchecked-label);
+      display: block;
+      font-family: $font-family-sans;
+      margin-top: calc(#{space(3w)} + #{space(1v)});
+      font-size: font-size(12);
+      line-height: line-height(none);
+      @include scheme-element-text-color(bf500);
+    }
+
+    /*
+     * On ajoute des espacements au label si on a mis des attributs
+     * pour spécifier l'état du bouton (optionnel)
+     */
+    &[data-#{$prefix}-unchecked-label],
+    &[data-#{$prefix}-checked-label] {
+      ~ .#{$prefix}-toggle__label {
+        padding-left: space(2w);
+        margin-bottom: space(1w);
+      }
+    }
+
+    /*
+     * On applique des styles aux pseudo-elements du label quand l'input est check
+     * On récupère le texte d'état check (optionnel) via le data-attribute data-rf-checked-label
+     */
+    &:checked {
+      &::before {
+        content: attr(data-#{$prefix}-checked-label);
+      }
+
+      ~ .#{$prefix}-toggle__label::before {
+        @include scheme-element-bg-color(bf500);
+      }
+
+      ~ .#{$prefix}-toggle__label::after {
+        transform: translateX(space(2w));
+        text-indent: 0;
+      }
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    min-height: space(3w);
+
+    /*
+     * On construit le background du bouton dans un pseudo-element before
+     */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: space(5w);
+      height: space(3w);
+      border-radius: space(5w);
+      @include scheme-element-border-color(bf500);
+    }
+
+    /*
+     * On inclut l'icône check dans un pseudo-element after
+     * On la cache via un text-indent quand l'input n'est pas check
+     */
+    @include font-icon(check-line, md, after) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: space(2w);
+      left: 0;
+      border-radius: 50%;
+      width: space(3w);
+      height: space(3w);
+      text-indent: -9999px;
+      @include scheme-element-text-color(bf500);
+      @include scheme-element-border-color(bf500);
+      @include scheme-element-bg-color(w-g750);
+      @include z-index(over);
+    }
+  }
+
+  /*
+   * Import des modificateurs (séparateur et label à gauche)
+   */
+  @import 'modules/variants';
 }
+
+/*
+ * Provisoire: à enlever quand rf-body sera en place
+ */
+@import 'modules/group';

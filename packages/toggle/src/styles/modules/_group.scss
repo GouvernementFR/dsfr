@@ -1,0 +1,20 @@
+////
+/// Toggle Module : Group
+/// @group toggle
+////
+
+/*
+ * On surcharge les styles de base (provisoire)
+ */
+
+.#{$prefix}-toggle-list {
+  margin: 0;
+
+  > li {
+    margin-bottom: 0;
+
+    &::before {
+      content: none;
+    }
+  }
+}

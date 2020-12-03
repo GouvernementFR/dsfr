@@ -1,1 +1,49 @@
-coucou
+<%
+  let toggleId;
+  locals.toggleId = toggleId;
+
+  let toggleGroupId;
+  locals.toggleGroupId = toggleGroupId;
+
+  let state;
+  locals.state = state;
+
+  let border;
+  locals.border = border;
+
+  let left;
+  locals.left = left;
+
+  let disabled;
+  locals.left = disabled;
+
+  let samples = [
+    {title:'Toggle simple avec bouton + label à droite', sample:'./samples/toggle-default.ejs', state: false, toggleId: 'toggle-'},
+    {title:'Toggle simple avec bouton + label à droite + état', sample:'./samples/toggle-default.ejs', state: true, toggleId: 'toggle-'},
+    {title:'Toggle simple avec bouton + label à droite + état + séparateur', sample:'./samples/toggle-default.ejs', state: true, border: true, toggleId: 'toggle-'},
+    {title:'Toggle simple disabled avec bouton + label à droite', sample:'./samples/toggle-default.ejs', state: false, toggleId: 'toggle-', disabled: true},
+    {title:'Toggle simple disabled avec bouton + label à droite + état', sample:'./samples/toggle-default.ejs', state: true, toggleId: 'toggle-', disabled: true},
+    {title:'Groupe de toggles simple avec bouton + label à droite + séparateur', sample:'./samples/toggle-group.ejs', border:true, groupToggleId: 'group-1-'},
+    {title:'Groupe de toggles simple avec bouton + label à droite + état + séparateur', sample:'./samples/toggle-group.ejs', border: true, state: true, groupToggleId: 'group-2-'},
+    {title:'Toggle simple avec bouton + label à gauche', sample:'./samples/toggle-default.ejs', state: false, toggleId: 'toggle-', left: true},
+    {title:'Toggle simple avec bouton + label à gauche + état', sample:'./samples/toggle-default.ejs', state: true, toggleId: 'toggle-', left: true},
+    {title:'Toggle simple disabled avec bouton + label à gauche', sample:'./samples/toggle-default.ejs', state: false, toggleId: 'toggle-', left: true, disabled: true},
+    {title:'Toggle simple disabled avec bouton + label à gauche + état', sample:'./samples/toggle-default.ejs', state: true, toggleId: 'toggle-', left: true, disabled: true},
+    {title:'Toggle simple avec bouton + label à gauche + état + séparateur', sample:'./samples/toggle-default.ejs', state: true, border: true, toggleId: 'toggle-', left: true},
+    {title:'Groupe de toggles simple avec bouton + label à gauche + séparateur', sample:'./samples/toggle-group.ejs', border:true, groupToggleId: 'group-3-', left: true},
+    {title:'Groupe de toggles simple avec bouton + label à gauche + état + séparateur', sample:'./samples/toggle-group.ejs', border: true, state: true, groupToggleId: 'group-4-', left: true},
+  ]
+%>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+  let sample = samples[i];
+%>
+  <h4 class="<%= prefix %>-mt-8w"><%= sample.title %></h4>
+  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= prefix %>-col-md-4 <%= prefix %>-col-lg-3">
+    <%- include(sample.sample, {toggleId : sample.toggleId + i, state: sample.state, border: sample.border, groupToggleId : sample.groupToggleId, left: sample.left, disabled: sample.disabled}); %>
+  </div>
+  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-9 <%= prefix %>-mt-3w">
+    <%- snippet(include(sample.sample, {toggleId : sample.toggleId + i, state: sample.state, border: sample.border, groupToggleId : sample.groupToggleId, left: sample.left, disabled: sample.disabled})); %>
+  </div>
+<% } %>

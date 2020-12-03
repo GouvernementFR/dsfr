@@ -10,8 +10,15 @@
 @mixin disabled-form-choice() {
   @at-root #{selector_unify(&, input)} {
     @include disabled(true, false, false, '+ label') {
-      &::before {
+      &::before,
+      &::after {
         @include disabled-colors(false, true, border);
+      }
+      @content;
+    }
+    @include disabled(true, false, false) {
+      &::before {
+        @include disabled-colors();
       }
       @content;
     }

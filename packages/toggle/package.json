@@ -2,12 +2,12 @@
   "name": "@gouvfr/toggle",
   "version": "0.3.1",
   "license": "MIT",
-  "description": "Bouton à bascule",
+  "description": "Interrupteur",
   "publishConfig": {
     "access": "public"
   },
   "config": {
-    "wrapper": "col-8"
+    "wrapper": "container"
   },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
@@ -15,6 +15,8 @@
   "dependencies": {
     "@gouvfr/core": "^0.3.1",
     "@gouvfr/schemes": "^0.3.1",
+    "@gouvfr/icons": "^0.3.1",
+    "@gouvfr/forms": "^0.3.1",
     "@gouvfr/typography": "^0.3.1"
   }
 }

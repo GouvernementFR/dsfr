@@ -1,0 +1,10 @@
+<ul class="<%= prefix %>-toggle-list">
+  <%
+    for (let i = 0; i < 5; i++) {
+      let groupToggleId = 'group-' + i
+  %>
+    <li>
+        <%- include('./toggle', {toggleId: 'toggle-' + i} ); %>
+    </li>
+  <% } %>
+</ul>
