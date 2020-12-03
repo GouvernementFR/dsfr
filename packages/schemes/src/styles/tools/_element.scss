@@ -9,12 +9,12 @@ $scheme-elements-transitions:() !global;
 
 /// Ajout d'une combinaison de couleur sur un élément pour un propriété donnée
 /// @access private
-/// @param {String} $set-name: nom de la combinaison comme défini dans settings/sets
-/// @@param {String} $prop: propriété affectée
-/// @param {Bool | String} $transition: objet auqel la transition de couleur est associée
-/// @param {Bool | String} $hover: si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
-/// @param {String | list}  $value: la valeur appliquée à la propriété. la variable $COLOR est remplacée par la custom property de la combinaison de couleur
-/// @param {String}  $element: le sélécteur de l'élément
+/// @param {String} $set-name - nom de la combinaison comme défini dans settings/sets
+/// @@param {String} $prop - propriété affectée
+/// @param {Bool | String} $transition - objet auqel la transition de couleur est associée
+/// @param {Bool | String} $hover - si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
+/// @param {String | list}  $value - la valeur appliquée à la propriété. la variable $COLOR est remplacée par la custom property de la combinaison de couleur
+/// @param {String}  $element - le sélécteur de l'élément
 
 @mixin _scheme-element($set-name, $prop, $transition:false, $hover:false, $value:$COLOR, $element:&) {
   // hover
@@ -58,7 +58,7 @@ $scheme-elements-transitions:() !global;
   #{$prop}: _replace_color($value, var(--#{$set-name}), false);
 
   // transitions
-  @if $transition != false {
+  @if $transition != false and $theme-allow-transition != false {
     @if $transition == true {
       $transition: $element;
     }
@@ -79,35 +79,35 @@ $scheme-elements-transitions:() !global;
 
 /// Ajout d'une couleur de background sur un élément
 /// @access public
-/// @param {String}  $set-name: nom de la combinaison comme défini dans settings/sets
-/// @param {Bool | String}  $transition: si true, une transition de couleur est appliquée sur la propriété
-/// @param {Bool | String} $hover: si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
+/// @param {String}  $set-name - nom de la combinaison comme défini dans settings/sets
+/// @param {Bool | String} $transition - si true, une transition de couleur est appliquée sur la propriété
+/// @param {Bool | String} $hover - si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
 @mixin scheme-element-bg-color($set-name, $transition:false, $hover:false) {
   @include _scheme-element($set-name, background-color, $transition, $hover);
 }
 
 /// Ajout d'une couleur de texte sur un élément
 /// @access public
-/// @param {String}  $set-name: nom de la combinaison comme défini dans settings/sets
-/// @param {Bool | String}  $transition: si true, une transition de couleur est appliquée sur la propriété
+/// @param {String}  $set-name - nom de la combinaison comme défini dans settings/sets
+/// @param {Bool | String}  $transition - si true, une transition de couleur est appliquée sur la propriété
 @mixin scheme-element-text-color($set-name, $transition:false) {
   @include _scheme-element($set-name, color, $transition);
 }
 
 /// Ajout d'une couleur de fill sur un élément
 /// @access public
-/// @param {String}  $set-name: nom de la combinaison comme défini dans settings/sets
-/// @param {Bool | String}  $transition: si true, une transition de couleur est appliquée sur la propriété
+/// @param {String}  $set-name - nom de la combinaison comme défini dans settings/sets
+/// @param {Bool | String}  $transition - si true, une transition de couleur est appliquée sur la propriété
 @mixin scheme-element-fill-color($set-name, $transition:false) {
   @include _scheme-element($set-name, fill, $transition);
 }
 
 /// Ajout d'une couleur de border sur un élément
 /// @access public
-/// @param {String}  $set-name: nom de la combinaison comme défini dans settings/sets
-/// @param {Bool | String}  $transition: si true, une transition de couleur est appliquée sur la propriété
-/// @param {String} $side: le côté affecté. valeurs: top, right, bottom, left
-/// @param {List} $value: définition des propriétés de border
+/// @param {String}  $set-name - nom de la combinaison comme défini dans settings/sets
+/// @param {Bool | String}  $transition - si true, une transition de couleur est appliquée sur la propriété
+/// @param {String} $side - le côté affecté. valeurs: top, right, bottom, left
+/// @param {List} $value - définition des propriétés de border
 @mixin scheme-element-border-color($set-name, $transition:false, $side:null, $value:1px solid $COLOR) {
   $prop:border;
   @if $side != null {
@@ -118,26 +118,26 @@ $scheme-elements-transitions:() !global;
 
 /// Ajout d'une couleur d'outline sur un élément
 /// @access public
-/// @param {String}  $set-name: nom de la combinaison comme défini dans settings/sets
-/// @param {Bool | String}  $transition: si true, une transition de couleur est appliquée sur la propriété
-/// @param {List} $value: définition des propriétés d'outline
+/// @param {String}  $set-name - nom de la combinaison comme défini dans settings/sets
+/// @param {Bool | String}  $transition - si true, une transition de couleur est appliquée sur la propriété
+/// @param {List} $value - définition des propriétés d'outline
 @mixin scheme-element-outline-color($set-name, $transition:false, $value:1px solid $COLOR) {
   @include _scheme-element($set-name, outline, $transition, false, $value);
 }
 
 /// Ajout d'une couleur de box-shadow sur un élément
 /// @access public
-/// @param {String}  $set-name: nom de la combinaison comme défini dans settings/sets
-/// @param {Bool | String}  $transition: si true, une transition de couleur est appliquée sur la propriété
-/// @param {List} $value: définition des propriétés de box-shadow
+/// @param {String}  $set-name - nom de la combinaison comme défini dans settings/sets
+/// @param {Bool | String}  $transition - si true, une transition de couleur est appliquée sur la propriété
+/// @param {List} $value - définition des propriétés de box-shadow
 @mixin scheme-element-box-shadow-color($set-name, $transition:false, $value:inset 0 0 0 1px $COLOR) {
   @include _scheme-element($set-name, box-shadow, $transition, false, $value);
 }
 
 /// Ajout d'un focus sur l'élément
 /// @access public
-/// @param {Bool} $within: si true, le sélecteur est construit avec :focus-within au lieuu de :focus
-/// @param {String} $nest: élément ajouté à la fin du sélecteur
+/// @param {Bool} $within - si true, le sélecteur est construit avec :focus-within au lieuu de :focus
+/// @param {String} $nest - élément ajouté à la fin du sélecteur
 @mixin scheme-element-focus($within: false, $nest: null) {
   $focus: ':focus';
   @if $within {

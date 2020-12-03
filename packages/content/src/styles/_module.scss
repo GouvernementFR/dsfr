@@ -15,7 +15,7 @@
     position: relative;
 
     //le padding permettant de définir le ratio d'aspect est appliqué sur un pseudo-élément before qui hérite de la modification de taille --lg et --sm de l'élément img ou vid
-    //@include aspect-ratio();
+    @include aspect-ratio();
   }
 
   &__img img {
@@ -34,7 +34,7 @@
   }
 
   &__transcription {
-    @include link(sm, right, menu-2-fill, null, true);
+    @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
   $medias: (&__img, '.#{$prefix}-responsive-vid');

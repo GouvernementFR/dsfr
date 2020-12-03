@@ -20,7 +20,7 @@
 
     .#{$prefix}-menu::after,
     .#{$prefix}-mega-menu {
-      box-shadow: $header-box-shadow;
+      @include shadow(md);
     }
   }
 }

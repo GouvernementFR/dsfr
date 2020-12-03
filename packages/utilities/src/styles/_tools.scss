@@ -48,7 +48,7 @@
 
 @mixin _spacing-property-variations($prop:margin, $value:1, $breakpoint: null) {
 
-  $v: space('#{$value}v');
+  $v: space('#{$value}v') !important;
 
   #{_spacing-selectors($prop, null, $value, $breakpoint)} {
     #{$prop}: $v;

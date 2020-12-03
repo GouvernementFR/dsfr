@@ -1,0 +1,16 @@
+////
+/// Core Tools : Global group
+/// @group core
+////
+
+@mixin group() {
+  @at-root #{&}-group {
+    @content;
+  }
+}
+
+@mixin group-item() {
+  &__item {
+    @content;
+  }
+}

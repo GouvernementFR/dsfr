@@ -1,0 +1,42 @@
+////
+/// Core Settings : Typography displays
+/// @group core
+////
+
+$displays-settings: (
+  xs: (
+    default: (
+      font-size: 56,
+      line-height: 'tight',
+      color-set: g800
+    )
+  ),
+  sm: (
+    default: (
+      font-size: 64,
+      line-height: 'tight',
+      color-set: g800
+    )
+  ),
+  md: (
+    default: (
+      font-size: 72,
+      line-height: 'tight',
+      color-set: g800
+    )
+  ),
+  lg: (
+    default: (
+      font-size: 88,
+      line-height: 'tight',
+      color-set: g800
+    )
+  ),
+  xl: (
+    default: (
+      font-size: 96,
+      line-height: 'tight',
+      color-set: g800
+    )
+  ),
+);

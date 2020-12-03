@@ -1,0 +1,35 @@
+////
+/// Core Tools : Global pseudo
+/// @group core
+////
+
+@mixin _pseudo($type:before, $display:null, $content:null) {
+  @if $type != after and $type != before {
+    @error '$type must be before or after element';
+  }
+  $pseudo: '::' + quote($type);
+  @at-root #{selector_append(&, $pseudo)} {
+
+    @if $display != null {
+      display: #{$display};
+    }
+
+    @if $content != null {
+      content: $content;
+    }
+
+    @content;
+  }
+}
+
+@mixin before($display: null, $content: null) {
+  @include _pseudo(before, $display, $content) {
+    @content;
+  }
+}
+
+@mixin after($display: null, $content: null) {
+  @include _pseudo(after, $display, $content) {
+    @content;
+  }
+}

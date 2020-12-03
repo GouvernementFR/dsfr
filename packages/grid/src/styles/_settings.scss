@@ -5,10 +5,3 @@
 
 /// $grid-columns
 $grid-columns: 12 !default;
-
-/// $grid-gutter-width
-$grid-gutter-width: (
-  xs: space(2N),
-  md: space(3N),
-  lg: space(4N)
-) !default;

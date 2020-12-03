@@ -85,22 +85,3 @@
     }
   }
 }
-
-@mixin container() {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: map-get($grid-gutter-width, xs);
-  padding-left: map-get($grid-gutter-width, xs);
-
-  @include respond-from(sm) {
-    padding-right: map-get($grid-gutter-width, lg);
-    padding-left: map-get($grid-gutter-width, lg);
-  }
-
-  @include respond-from(xl) {
-    max-width: $container-max-width;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}

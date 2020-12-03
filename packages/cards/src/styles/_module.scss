@@ -24,22 +24,12 @@
   }
 
   &__img {
-    position: relative;
-    width: 100%;
-
+    @include relative(null, null, null, null, 100%, null);
     @include aspect-ratio(16x9);
 
     img {
-      @include absolute-overlay() {
-        @extend %fit-cover-center;
-      }
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 50%;
-      top: 0;
-      left: 0;
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      @extend %fit-cover-center;
     }
   }
 
@@ -64,7 +54,7 @@
   &__lead {
     margin-top: 0;
     margin-bottom: space(1N);
-    @include text-styles(lead);
+    @include text-styles(xl);
   }
 
   &__desc {
@@ -79,7 +69,7 @@
     margin-top: auto;
 
     @include before(block, '') {
-      @include absolute-overlay();
+      @include absolute(0, 0, 0, 0, 100%, 100%);
       @include scheme-element-focus();
     }
 

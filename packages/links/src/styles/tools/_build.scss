@@ -47,7 +47,6 @@
   $places: map_get($settings, places);
 
   %#{$module}--md {
-    @extend %font-smoothing;
     @extend %base-link;
   }
 
@@ -63,7 +62,7 @@
     }
   }
 
-  @each $place, $icon in $places {
+  @each $place in $places {
     @each $size, $size-settings in $sizes {
       @at-root {
         %#{$module}--icon-#{$place}--#{$size} {
@@ -80,12 +79,16 @@
 
 @include _build-link-placeholders($links-settings, link, true);
 
-@mixin _build-link($settings, $module, $border-radius:false, $tags:a button) {
+@mixin _build-link($settings, $module, $border-radius:false, $cursor: pointer, $tags:a button) {
   $align: #{$module}-align-on-content;
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
   @include _reset-links-tags($tags);
+
+  @if $cursor != null {
+    cursor: #{$cursor};
+  }
 
   @each $size, $size-settings in $sizes {
     $placeholder: #{$module}--#{$size};
@@ -100,23 +103,26 @@
     }
   }
 
-  @each $place, $icon in $places {
+  @each $place in $places {
+
+    $modifier: '#{&}[class*="#{$prefix}-fi-"]#{&}--icon-#{$place}';
+
+    @if $place == only {
+      $modifier: '#{&}[class*="#{$prefix}-fi-"]:not([class*="#{$module}--icon-"])';
+    }
 
     @each $size, $size-settings in $sizes {
-      @if $size == md {
-        &--icon-#{$place} {
-          @extend %#{$module}--icon-#{$place}--md;
-        }
+      $selector: '#{$modifier}';
+
+      @if $size != md {
+        $selector: '#{$modifier}#{&}--#{$size}';
       }
-      @else {
-        &--icon-#{$place}#{&}--#{$size} {
-          @extend %#{$module}--icon-#{$place}--#{$size};
-        }
+
+      @at-root #{$selector} {
+        @extend %#{$module}--icon-#{$place}--#{$size};
       }
     }
   }
-
-  @include _link-default-icons($places);
 }
 
 @mixin build-link() {
