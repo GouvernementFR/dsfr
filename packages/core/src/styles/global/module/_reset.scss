@@ -23,7 +23,10 @@
   }
 
   a {
-    @extend %a-reset;
+    @include not-dse-class {
+      @extend %a-reset;
+      color: inherit;
+    }
   }
 }
 

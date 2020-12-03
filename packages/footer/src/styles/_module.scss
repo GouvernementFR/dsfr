@@ -22,6 +22,7 @@
     a + a {
       margin-left: space(3N);
       box-shadow: none;
+      text-decoration: none;
 
       @include respond-from(md) {
         margin-left: space(6N);
@@ -96,7 +97,7 @@
     line-height: line-height(normal);
   }
 
-  &__content-links {
+  &__content-list {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
@@ -202,6 +203,10 @@
     @include scheme-element-text-color(g600, true);
   }
 
+  &__bottom-link {
+    text-decoration: none;
+  }
+
   &__bottom-copy {
     flex-shrink: 0;
     font-size: font-size(12);
@@ -251,6 +256,10 @@
     @include respond-from(sm) {
       text-align: left;
     }
+  }
+
+  &__top-link {
+    text-decoration: none;
   }
 
   &__partners {

@@ -3,4 +3,10 @@
 /// @group core
 ////
 
-@include extend-headings($headings-settings);
+@each $heading, $variation in ($headings-settings) {
+  #{$heading} {
+    @include class-not-contains($headings-prevent-stylization-list) {
+      @extend %#{$heading};
+    }
+  }
+}

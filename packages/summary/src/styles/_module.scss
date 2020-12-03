@@ -21,6 +21,7 @@
 }
 
 .#{$prefix}-summary__list {
+  @extend %body-ordered-list;
   @include text-styles(xs);
 
   > li {
@@ -45,4 +46,8 @@
       content: counters(list-number, ".") ".";
     }
   }
+}
+
+.#{$prefix}-summary__link {
+  text-decoration: none;
 }
