@@ -10,22 +10,11 @@
     position: relative;
 
     //le padding permettant de définir le ratio d'aspect est appliqué sur un pseudo-élément before qui hérite de la modification de taille --lg et --sm de l'élément img ou vid
-    &::before {
-      content: '';
-      display: block;
-      width: 100%;
-      padding-bottom: map_get($ratio-scale, 16x9);
-    }
+    @include aspect-ratio();
   }
 
   &__img img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    top: 0;
-    left: 0;
+    @extend %media-overlay-cover;
   }
 
   &__caption,
@@ -40,69 +29,11 @@
   }
 
   &__transcription {
-    @include link(sm, right, menu-2-fill, null, true);
-
-    //@include text-styles(sm);
-
-    /*
-    .#{$prefix}-link {
-      @extend %link--icon-right--sm;
-
-      @include font-icon-content(menu-2-fill);
-
-      /*
-      @include scheme-element-text-color(bf500);
-      @include scheme-element-bg-color(t-plain, false, override);
-      @include scheme-element-focus();
-      height: 2rem;
-      padding: space(1N) space(1-5N);
-      margin: (- space(1N)) (- space(1-5N));
-      flex-direction: row-reverse;
-      font-size: font-size(14);
-
-      &::after {
-        border-radius: 1rem;
-      }
-
-      @include font-icon(menu-2-fill, sm, before) {
-        margin-left: space(1N);
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-    }
-    */
+    @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
-  &--sm &__img,
-  &--sm .#{$prefix}-responsive-vid,
-  &--sm &__caption,
-  &--sm &__transcription {
-    width: 83.333%;
+  $medias: (&__img, '.#{$prefix}-responsive-vid');
+  $captions: (&__caption, &__transcription);
 
-    @include respond-from(md) {
-      width: 75%;
-    }
-  }
-
-  &--lg &__img,
-  &--lg .#{$prefix}-responsive-vid,
-  &--lg &__caption,
-  &--lg &__transcription {
-    width: 116.666%;
-
-    @include respond-from(md) {
-      width: 125%;
-    }
-  }
-
-  &--lg &__img,
-  &--lg .#{$prefix}-responsive-vid {
-    max-width: 100vw;
-  }
-
-  &--lg &__caption,
-  &--lg &__transcription {
-    max-width: calc(100vw - #{space(4N)});
-  }
+  @include content-media-sizes($medias, $captions, 25%);
 }

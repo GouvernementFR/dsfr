@@ -4,8 +4,8 @@
   @include _build-link($btns-settings, btn);
 }
 
-@mixin btn($size:md, $place: null, $icon:null, $from: null, $align-on-content: false) {
-  @include _link(btn, $size, $place, $icon, $from, $align-on-content, $btns-settings, false) {
+@mixin nest-btn($size:md, $place: null, $icon:null, $from: null, $align-on-content: false) {
+  @include _nest-link(btn, $size, $place, $icon, $from, $align-on-content, $btns-settings, false) {
     @content;
   }
 }

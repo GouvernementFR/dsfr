@@ -2,35 +2,31 @@ $links-settings:(
   sizes: (
     sm: (
       font-size: 14,
-      line-height: space(2N),
-      min-height: space(4N),
-      padding-x: space(1-5N),
+      line-height: 4v,
+      min-height: 8v,
+      padding-x: 3v,
       icon: md,
-      icon-margin-x: space(1N),
+      icon-margin-x: 2v,
       icon-only: md,
     ),
     md: (
       font-size: 16,
-      line-height: space(2-5N),
-      min-height: space(4N),
-      padding-x: space(1-5N),
+      line-height: 5v,
+      min-height: 8v,
+      padding-x: 3v,
       icon: md,
-      icon-margin-x: space(1N),
+      icon-margin-x: 2v,
       icon-only: lg,
     ),
     lg: (
       font-size: 20,
-      line-height: space(3N),
-      min-height: space(6N),
-      padding-x: space(2N),
+      line-height: 6v,
+      min-height: 12v,
+      padding-x: 4v,
       icon: lg,
-      icon-margin-x: space(1N),
+      icon-margin-x: 2v,
       icon-only: xl,
     )
   ),
-  places: (
-    left: arrow-left-line,
-    right: arrow-right-line,
-    only: arrow-down-line
-  )
+  places: only left right
 );

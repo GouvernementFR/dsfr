@@ -26,10 +26,18 @@ npm install @gouvfr/header @gouvfr/footer
 Il est également possible d'installer les composants avec [Yarn](https://yarnpkg.com/) :
 
 ```
-yarn add @gouvfr/header @gouvfr/footer
+yarn add @gouvfr/design-system
 ```
 
 Il est à noter que pour chaque package installé, l'ensemble des dépendances de celui-ci seront également installées. De ce fait, l'installation du package `inputs` par exemple téléchargera également automatiquement le package `forms`.
+
+Un package `all` est également disponibe afin de récupérer sur NPM l'ensemble du **DS** en une seule fois :
+
+```
+npm install @gouvfr/all
+// ou avec Yarn :
+yarn add @gouvfr/all
+```
 
 ### Arborescence du projet
 

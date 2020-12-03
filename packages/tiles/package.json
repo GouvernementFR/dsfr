@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/tiles",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "description": "Tuiles",
   "publishConfig": {
@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@gouvfr/core": "^0.3.0",
-    "@gouvfr/schemes": "^0.3.0",
-    "@gouvfr/typography": "^0.3.0"
+    "@gouvfr/schemes": "^0.3.0"
   }
 }

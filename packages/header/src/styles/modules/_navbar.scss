@@ -13,15 +13,14 @@
   }
 
   @include after(block, '') {
-    @include absolute-overlay(auto 1px, 0 0 auto 0) {
-      margin: 0 space(1N);
+    @include absolute(0, 0, auto, 0, auto, 1px);
+    margin: 0 space(1N);
 
-      @include scheme-element-bg-color(g300, true);
+    @include scheme-element-bg-color(g300, true);
 
-      @include respond-from(md) {
-        content: none;
-        display: none;
-      }
+    @include respond-from(md) {
+      content: none;
+      display: none;
     }
   }
 
@@ -53,7 +52,7 @@
       }
 
       @include before(block, '') {
-        @include absolute-overlay();
+        @include absolute(0, 0, 0, 0, 100%, 100%);
         @include scheme-element-focus();
       }
     }
@@ -69,7 +68,7 @@
     }
   }
 
-  @include btn(md, only) {
+  @include nest-btn(md, only) {
     @include scheme-element-bg-color(t-plain, false, override);
     @include scheme-element-text-color(bf500);
     flex: 0 0 auto;

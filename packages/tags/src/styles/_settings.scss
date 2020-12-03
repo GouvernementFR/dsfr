@@ -2,23 +2,20 @@ $tags-settings:(
   sizes: (
     sm: (
       font-size: 12,
-      line-height: space(2N),
-      min-height: space(3N),
-      padding-x: space(1N),
+      line-height: 4v,
+      min-height: 6v,
+      padding-x: 2v,
       icon: md,
-      icon-margin-x: space(0-5N)
+      icon-margin-x: 1v
     ),
     md: (
       font-size: 14,
-      line-height: space(2-5N),
-      min-height: space(4N),
-      padding-x: space(2N),
+      line-height: 5v,
+      min-height: 8v,
+      padding-x: 4v,
       icon: md,
-      icon-margin-x: space(0-5N)
+      icon-margin-x: 1v
     )
   ),
-  places: (
-    left: arrow-left-line,
-    right: arrow-right-line
-  )
+  places: left right
 );

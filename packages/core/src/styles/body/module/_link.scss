@@ -1,0 +1,22 @@
+////
+/// Core Module : Body link
+/// @group core
+////
+
+a {
+  @include class-not-contains($link-prevent-stylization-list) {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 1px 0 0 currentColor;
+    @include scheme-element-focus();
+
+    // Icon for external links
+    &[target="_blank"] {
+      @include font-icon(external-link-line, md, after) {
+        margin-left: space(0-5N);
+        vertical-align: baseline;
+      }
+    }
+  }
+}

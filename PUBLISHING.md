@@ -41,6 +41,14 @@ Pour publier la nouvelle version, utilisez la commande suivante :
 npx lerna publish
 ```
 
+Lerna créera un commit de release sous la forme `chore(release): %s`, ou `%s` sera remplacé par le numéro de verion (Ex : `chore(release): v0.3.0`)
+
+A noter qu'il est possible de préciser un message de commit personnalisé, en précisant à la commande de ne pas prendre en compte les hooks de pre-commit :
+
+```
+npx lerna publish -m "v0.3.0 Design System de l'Etat" --no-commit-hooks
+```
+
 L'outil vous demandera ensuite sur quelle numéro de version passer (Montée majeure, mineure, ou patch), et déterminer quels packages sont impactés par cette nouvelle publication.
 
 Il est à noter que pour tout changement de version majeur, l'ensemble des packages sera mis à jour, même si certains n'ont pas évolué depuis la dernière publication.

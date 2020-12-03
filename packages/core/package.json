@@ -1,13 +1,13 @@
 {
   "name": "@gouvfr/core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
-  "description": "core",
+  "description": "Core",
   "publishConfig": {
     "access": "public"
   },
   "config": {
-    "wrapper": "col-8"
+    "noBody": true
   },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",

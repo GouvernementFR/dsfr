@@ -1,0 +1,94 @@
+////
+/// Core Tools : Typography build
+/// @group core
+////
+
+@mixin text($font-size, $line-height: null, $color-set: null, $font-weight: null) {
+  font-size: font-size($font-size);
+
+  @if $line-height != null {
+    line-height: line-height($line-height);
+  }
+
+  @if $color-set != null {
+    @include scheme-element-text-color($color-set, true);
+  }
+
+  @if $font-weight != null {
+    font-weight: $font-weight;
+  }
+}
+
+@mixin text-variation($variation) {
+  $font-size: map_get($variation, font-size);
+  $color-set: map_get($variation, color-set);
+  $line-height: map_get($variation, line-height);
+  $font-weight: map_get($variation, font-weight);
+
+  @include text($font-size, $line-height, $color-set, $font-weight);
+}
+
+@mixin text-selector($selector, $settings) {
+  @at-root #{$selector} {
+    $default: map_get($settings, default);
+    @include text-variation($default);
+
+    $responsive: map_get($settings, responsive);
+    @if $responsive != null {
+      @each $breakpoint, $variation in $responsive {
+        @include respond-from($breakpoint) {
+          @include text-variation($variation);
+        }
+      }
+    }
+  }
+}
+
+@mixin text-selectors($settings, $name:null, $is-modifier: false, $with-placeholder: false) {
+  @each $element, $variation in $settings {
+    $main: $element;
+    $alt: map_get($variation, alt);
+
+    @if $name != null {
+      @if $is-modifier == true {
+        @if $element == md {
+          $main: $name;
+        }
+        @else {
+          $main: '#{$name}--#{$element}';
+          @if $alt != null {
+            $alt: '#{$name}--#{$alt}';
+          }
+        }
+      }
+      @else {
+        $main: '#{$name}-#{$element}';
+        @if $alt != null {
+          $alt: '#{$name}-#{$alt}';
+        }
+      }
+    }
+
+    $selector: '.#{$prefix}-#{$main}';
+
+    @if $alt != null {
+      $selector: '#{$selector}, .#{$prefix}-#{$alt}';
+    }
+
+    @if $with-placeholder {
+      @include text-selector('%#{$main}', $variation);
+      @at-root #{$selector} {
+        @extend %#{$main};
+      }
+    }
+    @else {
+      @include text-selector($selector, $variation);
+    }
+  }
+}
+
+@mixin text-styles($size: md) {
+  $variation: map_deep-get($texts-settings, $size, default);
+
+  @include text-variation($variation);
+}
