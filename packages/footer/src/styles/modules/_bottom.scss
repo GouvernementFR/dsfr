@@ -52,12 +52,6 @@
       }
     }
 
-    > a {
-      box-shadow: none;
-      font-size: font-size(12);
-      @include scheme-element-text-color(g600, true);
-    }
-
     @include respond-from(sm) {
       margin: space(1w) 0 0 space(1v);
     }
@@ -66,6 +60,12 @@
   @include respond-from(sm) {
     padding: space(2w) 0;
   }
+}
+
+&__bottom-link {
+  text-decoration: none;
+  font-size: font-size(12);
+  @include scheme-element-text-color(g600, true);
 }
 
 &__bottom-copy {

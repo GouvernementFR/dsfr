@@ -29,15 +29,15 @@
     &::before {
       content: none;
     }
-
-    > a {
-      box-shadow: none;
-      font-size: font-size(12);
-      @include scheme-element-text-color(g600, true);
-    }
   }
 
   @include respond-from(sm) {
     text-align: left;
   }
+}
+
+&__top-link {
+  text-decoration: none;
+  font-size: font-size(12);
+  @include scheme-element-text-color(g600, true);
 }
