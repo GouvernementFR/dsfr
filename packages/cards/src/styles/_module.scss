@@ -46,7 +46,7 @@
     @include scheme-element-text-color(g600, true);
   }
 
-  &__lead {
+  &__title {
     margin-top: 0;
     margin-bottom: space(1N);
     @include text-styles(xl);
