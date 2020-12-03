@@ -1,33 +1,33 @@
 <%- include('./templates/accordion.ejs', {collapseId: 'accordionDefault0', title: true, image: true, button: true}); %>
-<div class="rf-margin-top-9N rf-margin-bottom-9N" >
+<div class="<%= prefix %>-mt-9w <%= prefix %>-mb-9w" >
     <%- snippet(include('./templates/accordion.ejs', {short:true, collapseId: 'accordionDefault0', title: true, image: true, button: true})); %>
 </div>
 
 <%- include('./samples/accordion-group.ejs', {groupCollapseId: prefix + '-accordion-group-0', button: true}); %>
-<div class="rf-margin-top-9N rf-margin-bottom-9N" >
+<div class="<%= prefix %>-mt-9w <%= prefix %>-mb-9w" >
     <%- snippet(include('./samples/accordion-group.ejs', {short:true, groupCollapseId: prefix + '-accordion-group-0', button: true})); %>
 </div>
 
-<div class="rf-margin-top-9N" >
+<div class="<%= prefix %>-mt-9w" >
     <h2>Accordéons simples multiples</h2>
 </div>
 
 <%
   for (let i = 1; i < 6; i++) {
 %>
-    <div class="rf-margin-top-4N rf-margin-bottom-6N" >
+    <div class="<%= prefix %>-mt-4w <%= prefix %>-mb-6w" >
         <%- include('./templates/accordion.ejs', {collapseId: 'accordionDefault' + i, image: true}); %>
     </div>
 <% } %>
 
-<div class="rf-margin-top-9N" >
+<div class="<%= prefix %>-mt-9w" >
     <h2>Accordéons groupes multiples</h2>
 </div>
 
 <%
   for (let i = 1; i < 6; i++) {
 %>
-    <div class="rf-margin-top-9N" >
+    <div class="<%= prefix %>-mt-9w" >
         <%- include('./samples/accordion-group.ejs', {groupCollapseId: prefix + '-accordion-group-' + i, button: true}); %>
     </div>
 <% } %>

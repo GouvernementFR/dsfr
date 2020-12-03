@@ -1,27 +1,26 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
 .rf-summary {
   padding: 1.5rem;
   background-color: var(--beige); }
-  :root[data-transition] .rf-summary {
-    transition: background-color 0.3s; }
   @media (min-width: 48em) {
     .rf-summary {
       padding: 2rem 2.5rem 1.5rem; } }
@@ -34,17 +33,11 @@
   font-weight: 700;
   text-transform: uppercase;
   color: var(--g800); }
-  :root[data-transition] .rf-summary__title {
-    transition: color 0.3s; }
-  :root[data-transition] .rf-summary__title {
-    transition: color 0.3s, color 0.3s; }
 
 .rf-summary__list {
   font-size: 0.75rem;
   line-height: 1.5;
   color: var(--g600); }
-  :root[data-transition] .rf-summary__list {
-    transition: color 0.3s; }
   .rf-summary__list > li {
     margin: 0;
     line-height: 1.375; }
@@ -57,8 +50,6 @@
     box-shadow: none;
     color: var(--g800);
     background-color: var(--t-plain); }
-    :root[data-transition] .rf-summary__list > li > a {
-      transition: color 0.3s; }
     @media (hover: hover) and (pointer: fine) {
       .rf-summary__list > li > a:not([disabled]):hover, .rf-summary__list > li > a:not(:disabled):hover {
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
@@ -82,8 +73,6 @@
     :root[data-theme="dark"] .rf-summary__list > li > a {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root[data-transition] .rf-summary__list > li > a {
-      transition: color 0.3s, background-color 0.3s; }
     .rf-summary__list > li > a::before {
       margin-right: 0.5rem;
       content: counters(list-number, ".") "."; }

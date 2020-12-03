@@ -1,0 +1,12 @@
+////
+/// Core Module : Grid container
+/// @group core
+////
+
+.#{$prefix}-container {
+  @include container();
+
+  &-fluid {
+    width: 100%;
+  }
+}
