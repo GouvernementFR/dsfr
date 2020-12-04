@@ -8,7 +8,7 @@ callouts
 └─ schemes
 └─ core
 └─ icons
-└─ typography
+└─ body
 ```
 
 ## Installation

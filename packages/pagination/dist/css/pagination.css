@@ -1,33 +1,35 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+@charset "UTF-8";
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
 .rf-pagination__item--first::before {
-  content: "\f10a"; }
+  content: ""; }
 
 .rf-pagination__item--prev::before {
-  content: "\f10c"; }
+  content: ""; }
 
 .rf-pagination__item--last::after {
-  content: "\f10e"; }
+  content: ""; }
 
 .rf-pagination__item--next::after {
-  content: "\f110"; }
+  content: ""; }
 
 .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after {
   font-family: icons !important;
@@ -93,8 +95,6 @@
     :root[data-theme="dark"] .rf-pagination__item--active {
       --color-hover: rgba(138, 138, 204, 0.5);
       --color-active: rgba(84, 84, 180, 0.5); }
-    :root[data-transition] .rf-pagination__item--active {
-      transition: background-color 0.3s; }
   .rf-pagination__item--disabled {
     cursor: not-allowed;
     color: var(--g600-g500); }
@@ -221,8 +221,6 @@
   :root[data-theme="dark"] .rf-pagination__link {
     --color-hover: var(--block-color-hover);
     --color-active: var(--block-color-active); }
-  :root[data-transition] .rf-pagination__link {
-    transition: background-color 0.3s; }
   .rf-pagination__link::before {
     border-radius: 1rem; }
 

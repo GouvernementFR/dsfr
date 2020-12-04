@@ -1,0 +1,44 @@
+////
+/// Core Settings : Typography headings
+/// @group core
+////
+
+$headings-settings: (
+  h1: (
+    default: (
+      font-size: 44,
+      line-height: 'tight',
+      color-set: g800,
+      font-weight: bold,
+    ),
+    responsive: (
+      md: (
+        font-size: 48
+      )
+    )
+  ),
+  h2: (
+    default: (
+      font-size: 32,
+      line-height: 'tight',
+      color-set: g800,
+      font-weight: bold,
+    )
+  ),
+  h3: (
+    default: (
+      font-size: 24,
+      line-height: 'tight',
+      color-set: g800,
+      font-weight: bold,
+    )
+  ),
+  h4: (
+    default: (
+      font-size: 22,
+      line-height: 'snug',
+      color-set: g800,
+      font-weight: bold,
+    )
+  )
+);

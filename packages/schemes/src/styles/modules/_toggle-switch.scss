@@ -3,7 +3,7 @@
 /// @group schemes
 ////
 
-/// @TODO nouveau système de switch
+// @TODO nouveau système de switch
 input[type=checkbox]##{$prefix}-dark-mode-toggle-switch {
   position: absolute;
   opacity: 0;
@@ -48,7 +48,7 @@ input[type=checkbox]##{$prefix}-dark-mode-toggle-switch {
   }
 
   &:checked + label {
-    //background-color: $grey-700;
+    // background-color: $grey-700;
 
     &::before {
       left: 2rem;

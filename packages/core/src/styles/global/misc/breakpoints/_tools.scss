@@ -1,0 +1,51 @@
+////
+/// Core Tools : Global breakpoints
+/// @group core
+////
+
+/// Set media query styles
+///
+/// @param {String} $media [md] - Layout size `["xs", "sm", "md", "lg", "xl"]`
+///
+/// @example scss -
+///   .foo {
+///     @include respond-from(md) {
+///     }
+///   }
+@mixin respond-from($media) {
+  $limits: map_get($breakpoints, $media);
+
+  @if $limits != null {
+    @media (min-width: nth($limits, 1)) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+/// Set media query styles
+///
+/// @param {String} $media [md] - Layout size `["xs", "sm", "md", "lg", "xl"]`
+///
+/// @example scss -
+///   .foo {
+///     @include respond-to(md) {
+///     }
+///   }
+@mixin respond-to($media) {
+
+  @debug 'afin de rester mobile first, n‘utiliser la mixin respond-to uniquement s‘il n‘y a pas d‘autre alternative, lui préférer systématiquement la mixin respond-from';
+
+  $limits: map_get($breakpoints, $media);
+
+  @if $limits != null and length($limits) == 2 {
+    @media (max-width: nth($limits, 2)) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}

@@ -1,9 +1,14 @@
+////
+/// Links Tools : sizes
+/// @group links
+////
+
 @mixin _build-link-size($size-settings, $border-radius: false) {
   @include font-size(map_get($size-settings, font-size));
-  $line-height: map_get($size-settings, line-height);
+  $line-height: space(map_get($size-settings, line-height));
   line-height: $line-height;
 
-  $min-height: map_get($size-settings, min-height);
+  $min-height: space(map_get($size-settings, min-height));
   min-height: $min-height;
 
   $max-icon-height: icon-size(md);
@@ -16,17 +21,22 @@
   }
 
   $space-y: max($line-height, $max-icon-height);
+  $padding-x: space(map_get($size-settings, padding-x));
 
-  padding: (#{($min-height - $space-y) / 2}) (map_get($size-settings, padding-x));
+  padding: #{($min-height - $space-y) / 2} #{$padding-x};
 
   @if $border-radius {
     border-radius: #{$min-height / 2};
   }
 }
 
+@function _link-icon-margin($size) {
+  @return icon-size($size) / 4;
+}
+
 @mixin _link-align-on-content($size, $place, $size-settings) {
-  $padding-x: map_get($size-settings, padding-x);
-  $icon-margin: icon-size(map_get($size-settings, icon)) / 4;
+  $padding-x: space(map_get($size-settings, padding-x));
+  $icon-margin: _link-icon-margin(map_get($size-settings, icon));
 
   @if $place == null {
     margin-left: -($padding-x);
@@ -42,7 +52,7 @@
   }
   @else if $place == only {
     $icon-size: icon-size(map_get($size-settings, icon-only));
-    $min-height: map_get($size-settings, min-height);
+    $min-height: space(map_get($size-settings, min-height));
     $padding-x: ($min-height - $icon-size) / 2;
 
     margin-left: -($padding-x);

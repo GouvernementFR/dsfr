@@ -8,7 +8,7 @@ tiles
 └─ core
 └─ schemes
 └─ icons
-└─ typography
+└─ body
 ```
 
 ## Installation
