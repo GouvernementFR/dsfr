@@ -8,7 +8,6 @@ const EXPANDED = '--expanded';
 class Accordion {
   constructor () {
     this.init();
-    console.log('accordion');
   }
 
   init () {
