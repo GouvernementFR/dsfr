@@ -42,16 +42,18 @@ const plugins = [
 packages.forEach((pck) => {
 
   let id = pck.id;
-  entries[id] = './packages/' + id + '/tests/scripts/index.js';
 
-  let content = renderPage(id);
+  if (pck.id !== 'all') {
+    entries[id] = './packages/' + id + '/tests/scripts/index.js';
+    let content = renderPage(id);
 
-  plugins.push(new HtmlWebpackPlugin({
-    inject: true,
-    chunks: [id],
-    filename: id + '/index.html',
-    templateContent: content,
-  }));
+    plugins.push(new HtmlWebpackPlugin({
+      inject: true,
+      chunks: [id],
+      filename: id + '/index.html',
+      templateContent: content,
+    }));
+  }
 });
 
 module.exports = merge(common, {
