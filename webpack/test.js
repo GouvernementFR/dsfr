@@ -73,7 +73,6 @@ createFile(pathAll + '/package.json', JSON.stringify(allPackageFileContent));
 // Each package dists
 
 const importsArr = [
-  '/generated/icons',
   '/src/styles/settings',
   '/src/styles/tools'
 ]
@@ -84,7 +83,7 @@ packages.forEach(function (pck) {
   let pckDistMainContent = [];
 
   if (pck.id !== 'all' && pck.id !== 'newall') {
-    pckDistDepsContent = Object.keys(pck.dependencies).map(value => "@import '~" + value + importsArr[0] + "'; @import '~" + value + importsArr[1] + "'; @import '~" + value + importsArr[2] + "'").join(";") + ";";
+    pckDistDepsContent = Object.keys(pck.dependencies).map(value => "@import '~" + value + importsArr[0] + "'; @import '~" + value + importsArr[1] + "';").join(";");
 
     var mainDatas = fs.readFileSync('./packages/' + pck.id + '/_main.scss', 'utf8');
     pckDistMainContent.push(mainDatas)
