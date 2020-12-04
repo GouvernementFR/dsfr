@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
   XS : 12px -> 16px
   SM : 14px -> 20px
@@ -30,33 +31,23 @@
   position: relative;
   font-family: "Marianne", arial, sans-serif;
   padding: 1.5rem;
-  /*
-  > .rf-icon {
-    @include respond-from(md) {
-
-    }
-  }
-
-  > .rf-fi {
-    @include font-size(24);
-    margin: -(space(1N)) 0 space(1N);
-
-    @include respond-from(md) {
-      position: absolute;
-      top: space(2N);
-      left: space(2N);
-      margin: 0;
-    }
-  }
+  /**
+   * Inclusion de l'icône (optionnel)
    */
-  box-shadow: inset 0.25rem 0 0 0 var(--scheme-border); }
+  /**
+   * Si une icône est présente, on rajoute du padding à partir du breakpoint md
+   */
+  /**
+   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   */
+  box-shadow: inset 0.25rem 0 0 0 var(--scheme-border);
+  /**
+   * Ajout de marge quand on inclut un bouton (optionnel)
+   */ }
   .rf-callout {
     background-color: var(--g200);
     --scheme-border: var(--bf500);
     box-shadow: inset 0.25rem 0 0 0 var(--scheme-border); }
-  @media (min-width: 48em) {
-    .rf-callout {
-      padding: 2rem 3rem; } }
   .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before {
     font-size: 1.5rem;
     display: block;
@@ -70,8 +61,6 @@
   @media (min-width: 48em) {
     .rf-callout[class^="rf-fi"], .rf-callout[class*=" rf-fi"] {
       padding: 3.5rem 3rem 2.5rem; } }
-  .rf-callout .rf-btn {
-    margin-top: 1rem; }
   .rf-callout__title {
     font-size: 1.375rem;
     line-height: 1.375;
@@ -132,6 +121,11 @@
   .rf-callout--scheme-soft-yellow-medium {
     background-color: var(--ym300);
     --scheme-border: var(--ym500); }
+  .rf-callout .rf-btn {
+    margin-top: 1rem; }
+  @media (min-width: 48em) {
+    .rf-callout {
+      padding: 2rem 3rem; } }
 
 
 /*# sourceMappingURL=callouts.css.map*/

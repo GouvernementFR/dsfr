@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
   XS : 12px -> 16px
   SM : 14px -> 20px
@@ -23,25 +24,49 @@
   border-top: 2px solid var(--bf500);
   border-bottom: 1px solid var(--g400);
   padding-top: 2.5rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+  /**
+   * On fixe une largeur maximale pour le logo opérateur
+   */
+  /**
+ * Container des logos partenaires (principaux et secondaires)
+ */
+  /**
+ * Container des logos partenaires principaux
+ */
+  /**
+ * Container des logos partenaires secondaires
+ */ }
   .rf-footer__body {
     display: flex;
     flex-wrap: wrap; }
   .rf-footer__brand {
     display: flex;
     align-items: center;
-    flex-basis: 100%; }
+    flex-basis: 100%;
+    /**
+     * Si on ajoute un logo opérateur à côté du logo principal, on lui applique une marge à gauche
+     * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
+     * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
+     */
+    /**
+     * Styles quand un logo opérateur est présent
+     */ }
     .rf-footer__brand .rf-logo {
       font-size: 1rem;
       margin: -1em; }
       @media (min-width: 48em) {
         .rf-footer__brand .rf-logo {
           font-size: 1.25rem; } }
-    .rf-footer__brand a + a {
+    .rf-footer__brand > a + a,
+    .rf-footer__brand > a + img,
+    .rf-footer__brand > a + svg {
       margin-left: 1.5rem;
-      box-shadow: none; }
+      text-decoration: none; }
       @media (min-width: 48em) {
-        .rf-footer__brand a + a {
+        .rf-footer__brand > a + a,
+        .rf-footer__brand > a + img,
+        .rf-footer__brand > a + svg {
           margin-left: 3rem; } }
     .rf-footer__body--operator .rf-footer__brand {
       flex-basis: 100%; }
@@ -87,29 +112,54 @@
   .rf-footer__content-desc {
     margin: 0 0 1rem;
     line-height: 1.5; }
-  .rf-footer__content-links {
+  .rf-footer__content-list {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
     margin-bottom: -1rem; }
-    .rf-footer__content-links > li {
+    .rf-footer__content-list > li {
       margin-right: 1.5rem;
       margin-top: 0.5rem; }
-      .rf-footer__content-links > li::before {
+      .rf-footer__content-list > li::before {
         content: none; }
-      .rf-footer__content-links > li:last-child {
+      .rf-footer__content-list > li:last-child {
         margin-right: 0; }
-      .rf-footer__content-links > li > a {
+      .rf-footer__content-list > li > a {
         display: inline-flex;
         font-weight: 700;
         box-shadow: none; }
       @media (min-width: 36em) {
-        .rf-footer__content-links > li {
+        .rf-footer__content-list > li {
           margin-right: 3.5rem; } }
     @media (min-width: 36em) {
-      .rf-footer__content-links {
+      .rf-footer__content-list {
         flex-direction: row;
         flex-wrap: wrap; } }
+  .rf-footer__top {
+    display: flex;
+    background-color: var(--beige);
+    margin: -2.5rem 0 2.5rem;
+    padding: 1rem 0; }
+  .rf-footer__top-cat {
+    margin: 0 0 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center; }
+    @media (min-width: 36em) {
+      .rf-footer__top-cat {
+        text-align: left; } }
+  .rf-footer__top-list {
+    text-align: center;
+    margin: 0; }
+    .rf-footer__top-list > li::before {
+      content: none; }
+    @media (min-width: 36em) {
+      .rf-footer__top-list {
+        text-align: left; } }
+  .rf-footer__top-link {
+    text-decoration: none;
+    font-size: 0.75rem;
+    color: var(--g600); }
   .rf-footer__bottom {
     display: flex;
     flex-wrap: wrap;
@@ -147,18 +197,14 @@
         margin: 0.5rem 0 0; }
         .rf-footer__bottom-list > li:first-child::before {
           content: none; }
-      .rf-footer__bottom-list > li > a {
-        box-shadow: none;
-        font-size: 0.75rem;
-        color: var(--g600); }
       @media (min-width: 36em) {
         .rf-footer__bottom-list > li {
           margin: 0.5rem 0 0 0.25rem; } }
     @media (min-width: 36em) {
       .rf-footer__bottom-list {
         padding: 1rem 0; } }
-  .rf-footer__link {
-    box-shadow: none;
+  .rf-footer__bottom-link {
+    text-decoration: none;
     font-size: 0.75rem;
     color: var(--g600); }
   .rf-footer__bottom-copy {
@@ -170,35 +216,16 @@
       .rf-footer__bottom-copy {
         margin-top: 0;
         margin-left: 2rem; } }
-  .rf-footer__top {
-    display: flex;
-    background-color: var(--beige);
-    margin: -2.5rem 0 2.5rem;
-    padding: 1rem 0; }
-  .rf-footer__top-cat {
-    margin: 0 0 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-align: center; }
-    @media (min-width: 36em) {
-      .rf-footer__top-cat {
-        text-align: left; } }
-  .rf-footer__top-list {
-    text-align: center;
-    margin: 0; }
-    .rf-footer__top-list > li::before {
-      content: none; }
-    .rf-footer__top-list > li > a {
-      box-shadow: none;
-      font-size: 0.75rem;
-      color: var(--g600); }
-    @media (min-width: 36em) {
-      .rf-footer__top-list {
-        text-align: left; } }
   .rf-footer__partners {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--g400); }
+    border-top: 1px solid var(--g400);
+    /**
+   * Style des liens qui entourent les logos partenaires
+   */
+    /**
+   * On surcharge le style du logo de base
+   */ }
     .rf-footer__partners a {
       display: flex;
       align-items: center;
@@ -214,7 +241,7 @@
           height: 90px; } }
       @media (min-width: 48em) {
         .rf-footer__partners a {
-          margin: 1rem; } }
+          margin: 0 0 0 1rem; } }
     .rf-footer__partners .rf-footer__logo {
       width: auto;
       max-width: 100%;
@@ -235,35 +262,44 @@
     @media (min-width: 48em) {
       .rf-footer__partners-logos {
         flex-wrap: nowrap;
-        margin: 0 -1rem; } }
+        margin: 0 -1rem -2rem; } }
   .rf-footer__partners-main {
     flex-basis: 100%;
-    padding-top: 2rem; }
+    padding-top: 0.5rem; }
     @media (min-width: 48em) {
       .rf-footer__partners-main + .rf-footer__partners-sub {
         justify-content: flex-end;
         padding-left: 3rem; } }
     @media (min-width: 36em) {
       .rf-footer__partners-main {
-        flex-basis: auto; } }
+        flex-basis: auto;
+        padding-top: 0;
+        margin-top: 0.5rem; } }
   .rf-footer__partners-sub {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex-basis: 100%;
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    /**
+   * On surcharge le style du lien pour les logos secondaires
+   */ }
     .rf-footer__partners-sub > a {
       box-shadow: none;
       margin: 0 0 1rem; }
       @media (min-width: 36em) {
         .rf-footer__partners-sub > a {
-          margin: 1rem; } }
+          margin: 0 1rem 2rem; } }
+      @media (min-width: 48em) {
+        .rf-footer__partners-sub > a {
+          margin: 0 1rem 1.5rem; } }
     @media (min-width: 36em) {
       .rf-footer__partners-sub {
-        margin: 0 -1rem; } }
+        margin: 1rem -1rem 0; } }
     @media (min-width: 48em) {
       .rf-footer__partners-sub {
-        margin: 0; } }
+        margin: 0.5rem 0 0;
+        padding-top: 0; } }
 
 
 /*# sourceMappingURL=footer.css.map*/

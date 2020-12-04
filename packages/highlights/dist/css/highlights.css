@@ -22,7 +22,13 @@
   padding-left: 1rem;
   border-left: 0.25rem solid var(--bf500);
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+  /**
+   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   */
+  /**
+   * Modificateur pour la taille du texte (sm: 14px/0.875rem)
+   */ }
   @media (min-width: 48em) {
     .rf-highlight {
       padding-left: 2rem;

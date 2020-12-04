@@ -77,5 +77,8 @@
       margin-right: 0.5rem;
       content: counters(list-number, ".") "."; }
 
+.rf-summary__link {
+  text-decoration: none; }
+
 
 /*# sourceMappingURL=summary.css.map*/

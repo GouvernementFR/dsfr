@@ -48,9 +48,8 @@
   margin-right: 0.5rem; }
 
 .rf-header__navbar .rf-btn {
-  width: 2.5rem;
-  min-height: auto;
-  height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
   .rf-header__navbar .rf-btn::before {
@@ -270,8 +269,8 @@
         min-height: 2rem;
         padding: 0.5rem 0.75rem;
         border-radius: 1rem;
-        width: auto;
-        height: auto; }
+        max-width: none;
+        max-height: none; }
         .rf-header .rf-shortcuts__item .rf-link::before {
           font-size: 1rem; }
         .rf-header .rf-shortcuts__item .rf-link::before {

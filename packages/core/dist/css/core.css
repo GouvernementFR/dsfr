@@ -23,6 +23,18 @@
   object-fit: cover;
   object-position: 50% 50%; }
 
+[class^="rf-"] a:not([class^="rf-"]):not([class*=" rf-"]), [class*=" rf-"] a:not([class^="rf-"]):not([class*=" rf-"]) {
+  text-decoration: none; }
+
+[class^="rf-"] ul,
+[class^="rf-"] ol, [class*=" rf-"] ul,
+[class*=" rf-"] ol, ul[class^="rf-"], ul[class*=" rf-"], ol[class^="rf-"], ol[class*=" rf-"] {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
 .rf-fi-account-fill::before {
   content: ""; }
 
@@ -113,7 +125,7 @@
 .rf-fi-edit-line::before {
   content: ""; }
 
-.rf-fi-external-link-line::before, .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"])[target="_blank"]::after {
+.rf-fi-external-link-line::before, .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):not([class*="logo"]):not([class*="title"])[target="_blank"]::after {
   content: ""; }
 
 .rf-fi-eye-line::before {
@@ -233,7 +245,7 @@
 .rf-fi-volume-up-line::before {
   content: ""; }
 
-[class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"])[target="_blank"]::after {
+[class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):not([class*="logo"]):not([class*="title"])[target="_blank"]::after {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -266,7 +278,7 @@
  * Définition du z-index de focus
  */
 :root {
-  --focus-z-index: z-index(focus); }
+  --focus-z-index: 2000; }
 
 /**
  * Reset global des éléments du design system
@@ -280,9 +292,8 @@
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-
-ul[class^="rf-"], ul[class*=" rf-"], ol[class^="rf-"], ol[class*=" rf-"] {
-  list-style: none; }
+  [class^="rf-"] a:not([class^="rf-"]):not([class*=" rf-"]), [class*=" rf-"] a:not([class^="rf-"]):not([class*=" rf-"]) {
+    color: inherit; }
 
 @font-face {
   font-family: "icons";
@@ -363,28 +374,28 @@ ul[class^="rf-"], ul[class*=" rf-"], ol[class^="rf-"], ol[class*=" rf-"] {
 .rf-text--xx-bold {
   font-weight: 900; }
 
-.rf-h1, .rf-body h1 {
+.rf-h1, .rf-body h1:not([class*="title"]) {
   font-size: 2.75rem;
   line-height: 1.25;
   color: var(--g800);
   font-weight: bold; }
   @media (min-width: 48em) {
-    .rf-h1, .rf-body h1 {
+    .rf-h1, .rf-body h1:not([class*="title"]) {
       font-size: 3rem; } }
 
-.rf-h2, .rf-body h2 {
+.rf-h2, .rf-body h2:not([class*="title"]) {
   font-size: 2rem;
   line-height: 1.25;
   color: var(--g800);
   font-weight: bold; }
 
-.rf-h3, .rf-body h3 {
+.rf-h3, .rf-body h3:not([class*="title"]) {
   font-size: 1.5rem;
   line-height: 1.25;
   color: var(--g800);
   font-weight: bold; }
 
-.rf-h4, .rf-body h4 {
+.rf-h4, .rf-body h4:not([class*="title"]) {
   font-size: 1.375rem;
   line-height: 1.375;
   color: var(--g800);
@@ -445,55 +456,53 @@ ul[class^="rf-"], ul[class*=" rf-"], ol[class^="rf-"], ol[class*=" rf-"] {
 .rf-text--alt {
   font-family: "Spectral", georgia, serif; }
 
-.rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]) {
+.rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):not([class*="logo"]):not([class*="title"]) {
   position: relative;
   color: inherit;
   text-decoration: none;
   box-shadow: 0 1px 0 0 currentColor; }
-  .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):focus {
+  .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):not([class*="logo"]):not([class*="title"]):focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
-  .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"])[target="_blank"]::after {
+  .rf-body a:not([class*="link"]):not([class*="btn"]):not([class*="tag"]):not([class*="logo"]):not([class*="title"])[target="_blank"]::after {
     font-size: 1rem;
     margin-left: 0.25rem;
     vertical-align: baseline; }
 
-.rf-body ul:not([class$="__list"]):not([class*="__list "]), .rf-body ol:not([class$="__list"]):not([class*="__list "]) {
+.rf-body ul:not([class*="list"]):not([class*="group"]), .rf-body ol:not([class*="list"]):not([class*="group"]) {
   font-size: 1rem;
   line-height: 1.5;
   margin: 0 0 0.5rem;
   padding: 0; }
-  .rf-body ul:not([class$="__list"]):not([class*="__list "]) li, .rf-body ol:not([class$="__list"]):not([class*="__list "]) li {
+  .rf-body ul:not([class*="list"]):not([class*="group"]) li, .rf-body ol:not([class*="list"]):not([class*="group"]) li {
     margin-bottom: 0.5rem; }
-  .rf-body ul:not([class$="__list"]):not([class*="__list "]) ul,
-  .rf-body ul:not([class$="__list"]):not([class*="__list "]) ol, .rf-body ol:not([class$="__list"]):not([class*="__list "]) ul,
-  .rf-body ol:not([class$="__list"]):not([class*="__list "]) ol {
+  .rf-body ul:not([class*="list"]):not([class*="group"]) ul, .rf-body ol:not([class*="list"]):not([class*="group"]) ul,
+  .rf-body ul:not([class*="list"]):not([class*="group"]) ol,
+  .rf-body ol:not([class*="list"]):not([class*="group"]) ol {
     margin: 0.5rem 0 1rem; }
 
-.rf-body ul:not([class$="__list"]):not([class*="__list "]) {
-  list-style-type: none; }
-  .rf-body ul:not([class$="__list"]):not([class*="__list "]) li::before {
-    content: "•";
-    font-size: 1.4em;
-    margin-right: 0.5rem; }
-  .rf-body ul:not([class$="__list"]):not([class*="__list "]) ul {
-    list-style-type: none;
-    margin: 0.5rem 0 0.5rem 1.5rem; }
-    .rf-body ul:not([class$="__list"]):not([class*="__list "]) ul li::before {
-      content: "•";
-      font-size: 0.9em; }
+.rf-body ul:not([class*="list"]):not([class*="group"]) li::before {
+  content: "•";
+  font-size: 1.4em;
+  margin-right: 0.5rem; }
 
-.rf-body ol:not([class$="__list"]):not([class*="__list "]) {
-  list-style: none;
+.rf-body ul:not([class*="list"]):not([class*="group"]) ul {
+  list-style-type: none;
+  margin: 0.5rem 0 0.5rem 1.5rem; }
+  .rf-body ul:not([class*="list"]):not([class*="group"]) ul li::before {
+    content: "•";
+    font-size: 0.9em; }
+
+.rf-body ol:not([class*="list"]):not([class*="group"]) {
   counter-reset: list-number; }
-  .rf-body ol:not([class$="__list"]):not([class*="__list "]) ol {
+  .rf-body ol:not([class*="list"]):not([class*="group"]) ol {
     padding-left: 1.5rem; }
-    .rf-body ol:not([class$="__list"]):not([class*="__list "]) ol li::before {
+    .rf-body ol:not([class*="list"]):not([class*="group"]) ol li::before {
       font-size: 0.9em; }
-  .rf-body ol:not([class$="__list"]):not([class*="__list "]) li {
+  .rf-body ol:not([class*="list"]):not([class*="group"]) li {
     counter-increment: list-number; }
-    .rf-body ol:not([class$="__list"]):not([class*="__list "]) li::before {
+    .rf-body ol:not([class*="list"]):not([class*="group"]) li::before {
       content: counters(list-number, ".") ".";
       font-weight: 700;
       margin-right: 0.5rem; }

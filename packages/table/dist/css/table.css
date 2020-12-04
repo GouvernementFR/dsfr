@@ -21,9 +21,7 @@
  */
 .rf-table {
   position: relative;
-  /*
-  * Style bodered, enleve le style even/odd et ajoute des bordures entre chaque ligne
-  */
+  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
   /*
   * Cache la caption
   */
@@ -37,7 +35,7 @@
   * Fixe la taille des colonnes du tableau
   */
   /*
-* Ombres ajoutées en Js si le conntenu est plus grand que le conteneur
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */ }
   .rf-table:not(rf-table--no-scroll) {
     overflow: hidden; }

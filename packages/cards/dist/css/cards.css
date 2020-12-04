@@ -98,7 +98,7 @@
     font-size: 0.875rem;
     line-height: 1.5;
     color: var(--g600); }
-  .rf-card__lead {
+  .rf-card__title {
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;

@@ -37,7 +37,7 @@ button.rf-btn {
 a.rf-btn {
   text-decoration: none; }
 
-.rf-btn:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before, .rf-btn.rf-btn--icon-left[class*="rf-fi-"]::before, .rf-btn.rf-btn--icon-right[class*="rf-fi-"]::before {
+.rf-btn:not([class*="btn--icon-"])[class*="rf-fi-"]::before, .rf-btn.rf-btn--icon-left[class*="rf-fi-"]::before, .rf-btn.rf-btn--icon-right[class*="rf-fi-"]::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -71,39 +71,36 @@ a.rf-btn {
   min-height: 3.5rem;
   padding: 0.75rem 2rem; }
 
-.rf-btn[class*="rf-fi-"]:not(.rf-btn--icon-left):not(.rf-btn--icon-right) {
-  width: 2.5rem;
-  min-height: auto;
-  height: 2.5rem;
+.rf-btn[class*="rf-fi-"]:not([class*="btn--icon-"]) {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
-  .rf-btn:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
+  .rf-btn:not([class*="btn--icon-"])[class*="rf-fi-"]::before {
     font-size: 1.5rem; }
-  .rf-btn:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
+  .rf-btn:not([class*="btn--icon-"])[class*="rf-fi-"]::before {
     margin-left: 0;
     margin-right: 0.5rem; }
 
-.rf-btn.rf-btn--sm[class*="rf-fi-"]:not(.rf-btn--icon-left):not(.rf-btn--icon-right) {
-  width: 2rem;
-  min-height: auto;
-  height: 2rem;
+.rf-btn.rf-btn--sm[class*="rf-fi-"]:not([class*="btn--icon-"]) {
+  max-width: 2rem;
+  max-height: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
-  .rf-btn.rf-btn--sm:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
+  .rf-btn.rf-btn--sm:not([class*="btn--icon-"])[class*="rf-fi-"]::before {
     font-size: 1rem; }
-  .rf-btn.rf-btn--sm:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
+  .rf-btn.rf-btn--sm:not([class*="btn--icon-"])[class*="rf-fi-"]::before {
     margin-left: 0;
     margin-right: 0.5rem; }
 
-.rf-btn.rf-btn--lg[class*="rf-fi-"]:not(.rf-btn--icon-left):not(.rf-btn--icon-right) {
-  width: 3.5rem;
-  min-height: auto;
-  height: 3.5rem;
+.rf-btn.rf-btn--lg[class*="rf-fi-"]:not([class*="btn--icon-"]) {
+  max-width: 3.5rem;
+  max-height: 3.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem; }
-  .rf-btn.rf-btn--lg:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
+  .rf-btn.rf-btn--lg:not([class*="btn--icon-"])[class*="rf-fi-"]::before {
     font-size: 2rem; }
-  .rf-btn.rf-btn--lg:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
+  .rf-btn.rf-btn--lg:not([class*="btn--icon-"])[class*="rf-fi-"]::before {
     margin-left: 0;
     margin-right: 0.75rem; }
 

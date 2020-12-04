@@ -75,10 +75,10 @@
   .rf-accordion__title {
     margin: 0; }
   .rf-accordion .rf-accordion__btn {
-    width: 100%;
-    text-align: left;
     color: var(--g700);
-    background-color: var(--t-plain); }
+    background-color: var(--t-plain);
+    width: 100%;
+    text-align: left; }
     @media (hover: hover) and (pointer: fine) {
       .rf-accordion .rf-accordion__btn:not([disabled]):hover, .rf-accordion .rf-accordion__btn:not(:disabled):hover {
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
@@ -135,15 +135,14 @@
     @media (min-width: 48em) {
       .rf-accordion__inner {
         padding: 0.5rem 1rem 2rem; } }
-
-.rf-accordion-group__item {
-  margin: 0; }
-  .rf-accordion-group__item .rf-accordion {
-    border-bottom: 0; }
-  .rf-accordion-group__item:last-child .rf-accordion {
-    border-bottom: 1px solid var(--g300); }
-  .rf-accordion-group__item::before {
-    content: none; }
+  .rf-accordion-group__item {
+    margin: 0; }
+    .rf-accordion-group__item .rf-accordion {
+      border-bottom: 0; }
+    .rf-accordion-group__item:last-child .rf-accordion {
+      border-bottom: 1px solid var(--g300); }
+    .rf-accordion-group__item::before {
+      content: none; }
 
 
 /*# sourceMappingURL=accordion.css.map*/

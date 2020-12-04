@@ -30,8 +30,9 @@ const allPackageFileContent = {
 }
 
 ////////////////////////////
-// All packages dist
-const pathAll = './packages/newall';
+// Generate an ‘all’ package
+////////////////////////////
+const pathAll = './packages/all';
 const allPckMains = [];
 const allPckDeps = {};
 const allPckJs = [];
@@ -44,7 +45,7 @@ packages.sort(function(a, b){
 // Then push in the allPckMains with ascending levels
 // and add dependancies name and version
 packages.forEach(function (pck) {
-  if (pck.id !== 'all' && pck.id !== 'newall') {
+  if (pck.id !== 'all') {
     allPckMains.push("@import '../" + pck.id + "/main");
   } 
 
@@ -54,7 +55,7 @@ packages.forEach(function (pck) {
 
   allPckDeps[pckDep.name] = pckDep.version;
 
-  if (fs.existsSync('./packages/' + pck.id + '/src/scripts/dist.js') && pck.id !== 'all' && pck.id !== 'newall') {
+  if (fs.existsSync('./packages/' + pck.id + '/src/scripts/dist.js') && pck.id !== 'all') {
     allPckJs.push("import " + pck.id + " from '../../../" + pck.id + "/src/scripts/distGlobal'")
   }
 });
@@ -64,32 +65,37 @@ allPackageFileContent.dependencies = allPckDeps;
 // Create path and files for package all
 createDir(pathAll);
 createDir(pathAll + '/src/scripts/');
-createFile(pathAll + '/src/scripts/' + 'dist.js', allPckJs.map(item => item).join(";") + ";")
-createFile(pathAll + '/_dist.scss', allPckMains.map(item => item).join("';") + "';");
+createFile(pathAll + '/src/scripts/' + 'dist.js', "import '@gouvfr/all/_dist.scss';\r\n" + allPckJs.map(item => item).join(";\r\n") + ";\r\n")
+createFile(pathAll + '/_dist.scss', allPckMains.map(item => item).join("';\r\n") + "';\r\n");
 createFile(pathAll + '/package.json', JSON.stringify(allPackageFileContent));
 
 
 ////////////////////////////
-// Each package dists
-
+// Generate dist for all packages
+////////////////////////////
 const importsArr = [
   '/src/styles/settings',
   '/src/styles/tools'
 ]
   
-
 packages.forEach(function (pck) {
   let pckDistDepsContent = [];
   let pckDistMainContent = [];
 
-  if (pck.id !== 'all' && pck.id !== 'newall') {
-    pckDistDepsContent = Object.keys(pck.dependencies).map(value => "@import '~" + value + importsArr[0] + "'; @import '~" + value + importsArr[1] + "';").join(";");
+  if (pck.id !== 'all') {
+    pckDistDepsContent = Object.keys(pck.dependencies).map(function(value){
+      if (value.includes('forms') || value.includes('utilities')) {
+        return "@import '~" + value + importsArr[1] + "';\r\n"
+      } else {
+        return "@import '~" + value + importsArr[0] + "';\r\n" + "@import '~" + value + importsArr[1] + "';\r\n"
+      }
+    }).join("\r\n");
 
-    var mainDatas = fs.readFileSync('./packages/' + pck.id + '/_main.scss', 'utf8');
-    pckDistMainContent.push(mainDatas)
+    const mainDatas = fs.readFileSync('./packages/' + pck.id + '/_main.scss', 'utf8');
+    pckDistMainContent.push(mainDatas.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g,''))
 
     pckDistContent = pckDistDepsContent.concat(pckDistMainContent)
 
-    fs.writeFileSync('./packages/' + pck.id + '/_test.scss', pckDistContent);
+    fs.writeFileSync('./packages/' + pck.id + '/_dist.scss', pckDistContent);
   }
 });

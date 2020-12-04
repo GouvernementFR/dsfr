@@ -101,44 +101,8 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./packages/all/_dist.scss
 var _dist = __webpack_require__(0);
 
-// CONCATENATED MODULE: ./packages/ie11/src/scripts/object-fit-polyfill/object-fit-polyfill.js
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Polyfill pour IE11 qui ne supporte pas object-fit. On met l'image en background sur l'élément img et un svg vide en source
- */
-var ObjectFitPolyfill = function ObjectFitPolyfill($selectors) {
-  _classCallCheck(this, ObjectFitPolyfill);
-
-  for (var i = 0; i < $selectors.length; i++) {
-    var images = []; // document.querySelectorAll($selectors[i]); TODO: erreur sur IE11
-
-    var img = void 0;
-
-    for (var j = 0; j < images.length; j++) {
-      img = images[i];
-      (img.runtimeStyle || img.style).background = 'url("' + img.src + '") no-repeat 50%/cover';
-      img.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'' + img.width + '\' height=\'' + img.height + '\' %3E%3C/svg%3E';
-    }
-  }
-};
-
-
-// CONCATENATED MODULE: ./packages/ie11/src/scripts/distGlobal.js
-/* eslint-disable no-new */
-
-
-if (window.MSInputMethodContext && document.documentMode) {
-  var scripts = ['https://unpkg.com/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js', 'https://polyfill.io/v3/polyfill.min.js?features=Event', 'https://unpkg.com/focus-within-polyfill/dist/focus-within-polyfill.js'];
-
-  for (var distGlobal_i = 0; distGlobal_i < scripts.length; distGlobal_i++) {
-    document.write('<script src="' + scripts[distGlobal_i] + '"><\x2fscript>');
-  }
-
-  new ObjectFitPolyfill('.rf-content-media__img img', '.rf-card__img img', 'rf-responsive-vid');
-}
 // CONCATENATED MODULE: ./packages/utilities/src/scripts/init/Initializer.js
-function Initializer_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
@@ -146,7 +110,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var Initializer = /*#__PURE__*/function () {
   function Initializer(selector, classes) {
-    Initializer_classCallCheck(this, Initializer);
+    _classCallCheck(this, Initializer);
 
     this.selector = selector;
     this.classes = classes;
@@ -521,15 +485,18 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 
   disclosures_group_createClass(DisclosuresGroup, [{
     key: "build",
-    value: function build(wrapper, selector, type) {
+    value: function build(wrapper, wrapperSelector, selector, type) {
+      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
       this.wrapper = wrapper;
       var elements = wrapper.querySelectorAll(selector);
       var disclosure;
 
       for (var i = 0; i < elements.length; i++) {
-        // vérifier qu'il n'y a pas 2 fois le selecteur entre le wrapper et l'élément.
-        disclosure = this.disclosureFactory(elements[i], type, selector);
-        this.add(disclosure);
+        // on l'ajoute qu'au wrapper le plus proche
+        if (elements[i].closest(wrapperSelector) === this.wrapper) {
+          disclosure = this.disclosureFactory(elements[i], type, selector);
+          this.add(disclosure);
+        }
       }
     }
   }, {
@@ -951,115 +918,110 @@ KeyListener.DOWN = 40;
 
 
 new Initializer('.rf-collapse', [Collapse]);
-// CONCATENATED MODULE: ./packages/navigation/src/scripts/navigation/navigation.js
-function navigation_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || accordion_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-function navigation_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function navigation_createClass(Constructor, protoProps, staticProps) { if (protoProps) navigation_defineProperties(Constructor.prototype, protoProps); if (staticProps) navigation_defineProperties(Constructor, staticProps); return Constructor; }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return accordion_arrayLikeToArray(arr); }
+
+function accordion_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = accordion_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function accordion_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return accordion_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return accordion_arrayLikeToArray(o, minLen); }
+
+function accordion_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function accordion_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function accordion_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function accordion_createClass(Constructor, protoProps, staticProps) { if (protoProps) accordion_defineProperties(Constructor.prototype, protoProps); if (staticProps) accordion_defineProperties(Constructor, staticProps); return Constructor; }
 
 
-
-var NAV_COLLAPSE = '.rf-nav .rf-menu, .rf-nav .rf-mega-menu';
-var NAV_LIST = '.rf-nav > .rf-nav__list';
-var MENU = 'rf-menu';
-var MEGA = 'rf-mega-menu';
+var ACCORDION_GROUP = '.rf-accordion-group';
+var ACCORDION_COLLAPSE = '.rf-accordion__body';
+var ACCORDION_BODY = 'rf-accordion__body';
 var EXPANDED = '--expanded';
-var RIGHT = 'rf-nav__item--align-right';
 
-var navigation_Navigation = /*#__PURE__*/function () {
-  function Navigation() {
-    navigation_classCallCheck(this, Navigation);
+var accordion_Accordion = /*#__PURE__*/function () {
+  function Accordion() {
+    accordion_classCallCheck(this, Accordion);
 
     this.init();
   }
 
-  navigation_createClass(Navigation, [{
+  accordion_createClass(Accordion, [{
     key: "init",
     value: function init() {
-      this.group = new CollapseGroup();
-      this.menus = [];
-      this.navList = document.querySelector(NAV_LIST);
-      var elements = document.querySelectorAll(NAV_COLLAPSE);
-      var element, collapseElement;
+      var accordionGroups = document.querySelectorAll(ACCORDION_GROUP);
+      var elements = document.querySelectorAll(ACCORDION_COLLAPSE);
+      var element, collapseElement, collapseGroup;
+      this.collapseGroupsElements = [];
+      this.collapseGroupElements = [];
+      this.collapseGroupsArray = []; // Get accordions groups, set data attribute and create collapse group to each
 
-      for (var i = 0; i < elements.length; i++) {
-        element = elements[i];
+      for (var i = 0; i < accordionGroups.length; i++) {
+        accordionGroups[i].setAttribute('data-rf-ac', 'rf-ac-group-' + i);
+        this.collapseGroupsElements.push(accordionGroups[i]);
+        collapseGroup = new CollapseGroup();
+        this.collapseGroupsArray.push(collapseGroup);
+      } // Get collapsible elements in groups
 
-        switch (true) {
-          case element.className.indexOf(MENU) > -1:
-            collapseElement = new collapse_CollapseElement(element, MENU + EXPANDED);
-            this.menus.push(new navigation_NavMenu(collapseElement));
-            break;
 
-          case element.className.indexOf(MEGA) > -1:
-            collapseElement = new collapse_CollapseElement(element, MEGA + EXPANDED);
-            break;
+      for (var _i = 0; _i < this.collapseGroupsElements.length; _i++) {
+        var _iterator = accordion_createForOfIteratorHelper(this.collapseGroupsElements[_i].querySelectorAll(ACCORDION_COLLAPSE)),
+            _step;
 
-          default:
-            continue;
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var _element = _step.value;
+            this.collapseGroupElements.push(_element);
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
         }
+      } // Get accordion elements in groups only and create new set
 
-        this.group.add(collapseElement);
+
+      var elementsGroupOnly = new Set(this.collapseGroupElements); // Get accordion elements and create new array with accordion elements that are not in groups
+
+      var elementsSingleOnly = _toConsumableArray(new Set(_toConsumableArray(elements).filter(function (x) {
+        return !elementsGroupOnly.has(x);
+      }))); // Single accordion element(s) collapse individually
+
+
+      for (var _i2 = 0; _i2 < elementsSingleOnly.length; _i2++) {
+        element = elementsSingleOnly[_i2];
+        collapseElement = new collapse_CollapseElement(element, ACCORDION_BODY + EXPANDED);
+      } // Grouped accordion elements collapse
+
+
+      for (var _i3 = 0; _i3 < this.collapseGroupElements.length; _i3++) {
+        element = this.collapseGroupElements[_i3];
+        var groupAttr = element.closest('.rf-accordion-group').dataset.rfAc;
+        element.setAttribute('data-rf-ac', groupAttr);
+        collapseElement = new collapse_CollapseElement(element, ACCORDION_BODY + EXPANDED);
+        this.collapseGroupsArray[element.dataset.rfAc.slice(-1)].add(collapseElement);
       }
-
-      document.addEventListener('focusout', this.focusOut.bind(this));
-      window.addEventListener('resize', this.resize.bind(this));
-      window.addEventListener('orientationchange', this.resize.bind(this));
-      this.resize();
-    }
-  }, {
-    key: "focusOut",
-    value: function focusOut(e) {
-      var _this = this;
-
-      requestAnimationFrame(function () {
-        if (!_this.group.hasFocus) _this.group.reduce();
-      });
-    }
-  }, {
-    key: "resize",
-    value: function resize() {
-      var right = this.navList.getBoundingClientRect().right;
-      this.menus.forEach(function (menu) {
-        menu.place(right);
-      });
     }
   }]);
 
-  return Navigation;
-}();
-
-var navigation_NavMenu = /*#__PURE__*/function () {
-  function NavMenu(collapseElement) {
-    navigation_classCallCheck(this, NavMenu);
-
-    this.element = collapseElement.element;
-    this.btn = collapseElement.buttons[0].element;
-  }
-
-  navigation_createClass(NavMenu, [{
-    key: "place",
-    value: function place(right) {
-      var styles = getComputedStyle(this.element);
-      var width = parseFloat(styles.width);
-      var left = this.btn.getBoundingClientRect().left;
-      if (left + width > right) addClass(this.btn.parentElement, RIGHT);else removeClass(this.btn.parentElement, RIGHT);
-    }
-  }]);
-
-  return NavMenu;
+  return Accordion;
 }();
 
 
-// CONCATENATED MODULE: ./packages/navigation/src/scripts/index.js
+// CONCATENATED MODULE: ./packages/accordion/src/scripts/index.js
 
 
-// CONCATENATED MODULE: ./packages/navigation/src/scripts/distGlobal.js
+// CONCATENATED MODULE: ./packages/accordion/src/scripts/distGlobal.js
 /* eslint-disable no-new */
 
 
-new Initializer('.rf-nav', [navigation_Navigation]);
+new Initializer('.rf-accordion', [accordion_Accordion]);
 // CONCATENATED MODULE: ./packages/breadcrumb/src/scripts/breadcrumb-button/breadcrumb-button.js
 function breadcrumb_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1143,6 +1105,403 @@ var BreadcrumbButton = /*#__PURE__*/function () {
 
 
 new Initializer('.rf-breadcrumb__button', [BreadcrumbButton]);
+// CONCATENATED MODULE: ./packages/table/src/scripts/shadow-on-scroll/shadow-on-scroll.js
+function shadow_on_scroll_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function shadow_on_scroll_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function shadow_on_scroll_createClass(Constructor, protoProps, staticProps) { if (protoProps) shadow_on_scroll_defineProperties(Constructor.prototype, protoProps); if (staticProps) shadow_on_scroll_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+var TABLE = '.rf-table:not(.rf-table--no-scroll)';
+var LEFT = 'left';
+var RIGHT = 'right';
+var SHADOW_CLASS = 'rf-table--shadow';
+var SHADOW_RIGHT_CLASS = 'rf-table--shadow-right';
+var SHADOW_LEFT_CLASS = 'rf-table--shadow-left';
+var WRAPPER_NAME = 'rf-table__wrapper';
+var TABLE_CAPTION_BOTTOM = 'rf-table--caption-bottom';
+var SCROLL_OFFSET = 1; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
+
+var ShadowOnScroll = /*#__PURE__*/function () {
+  function ShadowOnScroll() {
+    shadow_on_scroll_classCallCheck(this, ShadowOnScroll);
+
+    this.init();
+  }
+
+  shadow_on_scroll_createClass(ShadowOnScroll, [{
+    key: "init",
+    value: function init() {
+      var tableNodes = document.querySelectorAll(TABLE);
+      this.tables = [];
+
+      for (var i = 0; i < tableNodes.length; i++) {
+        this.tables.push(new shadow_on_scroll_Table(tableNodes[i]));
+      }
+
+      this.changing = this.change.bind(this);
+      window.addEventListener('resize', this.changing);
+      window.addEventListener('orientationchange', this.changing);
+      this.change();
+    }
+  }, {
+    key: "change",
+    value: function change() {
+      for (var i = 0; i < this.tables.length; i++) {
+        this.tables[i].change();
+      }
+    }
+  }]);
+
+  return ShadowOnScroll;
+}();
+
+var shadow_on_scroll_Table = /*#__PURE__*/function () {
+  function Table(table) {
+    shadow_on_scroll_classCallCheck(this, Table);
+
+    this.init(table);
+  }
+
+  shadow_on_scroll_createClass(Table, [{
+    key: "init",
+    value: function init(table) {
+      this.table = table;
+      this.tableElem = this.table.querySelector('table');
+      this.tableContent = this.tableElem.querySelector('tbody');
+      this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
+      this.caption = this.tableElem.querySelector('caption');
+      this.captionHeight = 0;
+      this.wrap();
+      var scrolling = this.change.bind(this);
+      this.tableElem.addEventListener('scroll', scrolling);
+      this.change();
+    }
+  }, {
+    key: "change",
+    value: function change() {
+      var newScroll = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
+      var firstTimeScrollable = this.tableElem.offsetWidth > this.table.offsetWidth;
+
+      if (newScroll || firstTimeScrollable) {
+        this.scroll();
+        this.handleCaption();
+      } else {
+        if (newScroll !== this.isScrollable) this.delete();
+      }
+
+      this.isScrollable = newScroll;
+      firstTimeScrollable = false;
+    }
+  }, {
+    key: "delete",
+    value: function _delete() {
+      removeClass(this.table, SHADOW_RIGHT_CLASS);
+      removeClass(this.table, SHADOW_LEFT_CLASS);
+      removeClass(this.table, SHADOW_CLASS);
+
+      if (this.caption) {
+        this.tableElem.style.marginTop = '';
+        this.caption.style.top = '';
+        this.tableElem.style.marginBottom = '';
+        this.caption.style.bottom = '';
+      }
+    }
+  }, {
+    key: "scroll",
+    value: function scroll() {
+      addClass(this.table, SHADOW_CLASS);
+      this.setShadowPosition();
+    }
+    /* ajoute un wrapper autour du tableau */
+
+  }, {
+    key: "wrap",
+    value: function wrap() {
+      var wrapperHtml = document.createElement('div');
+      wrapperHtml.className = WRAPPER_NAME;
+      this.table.insertBefore(wrapperHtml, this.tableElem);
+      wrapperHtml.appendChild(this.tableElem);
+      this.tableInnerWrapper = wrapperHtml;
+    }
+    /* affiche les blocs shadow en fonction de la position du scroll, en ajoutant la classe visible */
+
+  }, {
+    key: "setShadowPosition",
+    value: function setShadowPosition() {
+      var tableScrollLeft = this.getScrollPosition(LEFT);
+      var tableScrollRight = this.getScrollPosition(RIGHT); // on inverse en cas de lecture droite - gauche
+
+      if (document.documentElement.getAttribute('dir') === 'rtl') {
+        this.setShadowVisibility(RIGHT, tableScrollLeft);
+        this.setShadowVisibility(LEFT, tableScrollRight);
+      } else {
+        this.setShadowVisibility(LEFT, tableScrollLeft);
+        this.setShadowVisibility(RIGHT, tableScrollRight);
+      }
+    }
+    /* Donne le nombre de pixels scrollés honrizontalement dans un element scrollable */
+
+  }, {
+    key: "getScrollPosition",
+    value: function getScrollPosition(side) {
+      var inverter = 1; // on inverse en cas de lecture droite - gauche pour que la valeur de scroll soit toujours positive
+
+      if (document.documentElement.getAttribute('dir') === 'rtl') {
+        inverter = -1;
+      }
+
+      switch (side) {
+        case LEFT:
+          return this.tableElem.scrollLeft * inverter;
+
+        case RIGHT:
+          return this.tableContent.offsetWidth - this.tableElem.offsetWidth - this.tableElem.scrollLeft * inverter;
+
+        default:
+          return false;
+      }
+    }
+    /* positionne la caption en top négatif et ajoute un margin-top au wrapper */
+
+  }, {
+    key: "handleCaption",
+    value: function handleCaption() {
+      if (this.caption) {
+        var style = getComputedStyle(this.caption);
+        var newHeight = this.caption.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
+        this.captionHeight = newHeight;
+
+        if (this.table.classList.contains(TABLE_CAPTION_BOTTOM)) {
+          this.tableElem.style.marginBottom = this.captionHeight + 'px';
+          this.caption.style.bottom = -this.captionHeight + 'px';
+        } else {
+          this.tableElem.style.marginTop = this.captionHeight + 'px';
+          this.caption.style.top = -this.captionHeight + 'px';
+        }
+      }
+    }
+    /* ajoute la classe rf-table--shadow-right ou rf-table--shadow-right sur rf-table
+      en fonction d'une valeur de scroll et du sens (right, left) */
+
+  }, {
+    key: "setShadowVisibility",
+    value: function setShadowVisibility(side, scrollPosition) {
+      // si on a pas scroll, ou qu'on scroll jusqu'au bout
+      if (scrollPosition <= SCROLL_OFFSET) {
+        if (side === LEFT) removeClass(this.table, SHADOW_LEFT_CLASS);else if (side === RIGHT) removeClass(this.table, SHADOW_RIGHT_CLASS);
+      } else {
+        if (side === LEFT) addClass(this.table, SHADOW_LEFT_CLASS);else if (side === RIGHT) addClass(this.table, SHADOW_RIGHT_CLASS);
+      }
+    }
+  }]);
+
+  return Table;
+}();
+
+
+// CONCATENATED MODULE: ./packages/table/src/scripts/index.js
+
+
+// CONCATENATED MODULE: ./packages/table/src/scripts/distGlobal.js
+/* eslint-disable no-new */
+
+
+new Initializer('.rf-table--responsive', [ShadowOnScroll]);
+// CONCATENATED MODULE: ./packages/navigation/src/scripts/navigation/navigation.js
+function navigation_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function navigation_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function navigation_createClass(Constructor, protoProps, staticProps) { if (protoProps) navigation_defineProperties(Constructor.prototype, protoProps); if (staticProps) navigation_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var NAV_COLLAPSE = '.rf-nav .rf-menu, .rf-nav .rf-mega-menu';
+var NAV_LIST = '.rf-nav > .rf-nav__list';
+var MENU = 'rf-menu';
+var MEGA = 'rf-mega-menu';
+var navigation_EXPANDED = '--expanded';
+var navigation_RIGHT = 'rf-nav__item--align-right';
+
+var navigation_Navigation = /*#__PURE__*/function () {
+  function Navigation() {
+    navigation_classCallCheck(this, Navigation);
+
+    this.init();
+  }
+
+  navigation_createClass(Navigation, [{
+    key: "init",
+    value: function init() {
+      this.group = new CollapseGroup();
+      this.menus = [];
+      this.navList = document.querySelector(NAV_LIST);
+      var elements = document.querySelectorAll(NAV_COLLAPSE);
+      var element, collapseElement;
+
+      for (var i = 0; i < elements.length; i++) {
+        element = elements[i];
+
+        switch (true) {
+          case element.className.indexOf(MENU) > -1:
+            collapseElement = new collapse_CollapseElement(element, MENU + navigation_EXPANDED);
+            this.menus.push(new navigation_NavMenu(collapseElement));
+            break;
+
+          case element.className.indexOf(MEGA) > -1:
+            collapseElement = new collapse_CollapseElement(element, MEGA + navigation_EXPANDED);
+            break;
+
+          default:
+            continue;
+        }
+
+        this.group.add(collapseElement);
+      }
+
+      document.addEventListener('focusout', this.focusOut.bind(this));
+      window.addEventListener('resize', this.resize.bind(this));
+      window.addEventListener('orientationchange', this.resize.bind(this));
+      this.resize();
+    }
+  }, {
+    key: "focusOut",
+    value: function focusOut(e) {
+      var _this = this;
+
+      requestAnimationFrame(function () {
+        if (!_this.group.hasFocus) _this.group.reduce();
+      });
+    }
+  }, {
+    key: "resize",
+    value: function resize() {
+      var right = this.navList.getBoundingClientRect().right;
+      this.menus.forEach(function (menu) {
+        menu.place(right);
+      });
+    }
+  }]);
+
+  return Navigation;
+}();
+
+var navigation_NavMenu = /*#__PURE__*/function () {
+  function NavMenu(collapseElement) {
+    navigation_classCallCheck(this, NavMenu);
+
+    this.element = collapseElement.element;
+    this.btn = collapseElement.buttons[0].element;
+  }
+
+  navigation_createClass(NavMenu, [{
+    key: "place",
+    value: function place(right) {
+      var styles = getComputedStyle(this.element);
+      var width = parseFloat(styles.width);
+      var left = this.btn.getBoundingClientRect().left;
+      if (left + width > right) addClass(this.btn.parentElement, navigation_RIGHT);else removeClass(this.btn.parentElement, navigation_RIGHT);
+    }
+  }]);
+
+  return NavMenu;
+}();
+
+
+// CONCATENATED MODULE: ./packages/navigation/src/scripts/index.js
+
+
+// CONCATENATED MODULE: ./packages/navigation/src/scripts/distGlobal.js
+/* eslint-disable no-new */
+
+
+new Initializer('.rf-nav', [navigation_Navigation]);
+// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/sidemenu/sidemenu.js
+function sidemenu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function sidemenu_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function sidemenu_createClass(Constructor, protoProps, staticProps) { if (protoProps) sidemenu_defineProperties(Constructor.prototype, protoProps); if (staticProps) sidemenu_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+var sidemenu_NAV_COLLAPSE = '.rf-sidemenu__wrapper > .rf-sidemenu__list > .rf-sidemenu__item > .rf-sidemenu__content';
+var SUBNAV_COLLAPSE = '.rf-sidemenu__item .rf-sidemenu__item .rf-sidemenu__content';
+var sidemenu_MENU = 'rf-sidemenu__content';
+var sidemenu_EXPANDED = '--expanded';
+var SIDENAV_WRAPPER = 'rf-sidemenu__wrapper';
+
+var sidemenu_SideMenu = /*#__PURE__*/function () {
+  function SideMenu() {
+    sidemenu_classCallCheck(this, SideMenu);
+
+    this.init();
+  }
+
+  sidemenu_createClass(SideMenu, [{
+    key: "init",
+    value: function init() {
+      this.group = new CollapseGroup();
+      this.subGroup = new CollapseGroup();
+      var elements = document.querySelectorAll(sidemenu_NAV_COLLAPSE);
+      var subElements = document.querySelectorAll(SUBNAV_COLLAPSE);
+      var sideMenuWrappers = document.querySelectorAll('.rf-sidemenu__wrapper');
+      this.buttons = document.querySelectorAll('.rf-sidemenu__btn--sidemenu-toggle');
+      var element, subElement, sideMenuWrapper, collapseElement, collapseSubElement;
+
+      for (var i = 0; i < elements.length; i++) {
+        element = elements[i];
+        collapseElement = new collapse_CollapseElement(element, sidemenu_MENU + sidemenu_EXPANDED);
+        this.group.add(collapseElement);
+      }
+
+      for (var _i = 0; _i < subElements.length; _i++) {
+        subElement = subElements[_i];
+        collapseSubElement = new collapse_CollapseElement(subElement, sidemenu_MENU + sidemenu_EXPANDED);
+        this.subGroup.add(collapseSubElement);
+      }
+
+      for (var _i2 = 0; _i2 < sideMenuWrappers.length; _i2++) {
+        sideMenuWrapper = sideMenuWrappers[_i2];
+        this.collapseSideNav = new collapse_CollapseElement(sideMenuWrapper, SIDENAV_WRAPPER + sidemenu_EXPANDED);
+      }
+
+      this.changing = this.change.bind(this);
+      window.addEventListener('resize', this.changing);
+      this.change();
+    }
+  }, {
+    key: "change",
+    value: function change() {
+      this.isMedium = window.matchMedia('(min-width: 48em)').matches;
+
+      if (this.isMedium) {
+        for (var i = 0; i < this.buttons.length; i++) {
+          this.button = this.buttons[i];
+          this.button.setAttribute('hidden', '');
+        }
+      } else {
+        for (var _i3 = 0; _i3 < this.buttons.length; _i3++) {
+          this.button = this.buttons[_i3];
+          this.button.removeAttribute('hidden');
+        }
+      }
+    }
+  }]);
+
+  return SideMenu;
+}();
+
+
+// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/index.js
+
+
+// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/distGlobal.js
+/* eslint-disable no-new */
+
+
+new Initializer('.rf-sidemenu', [sidemenu_SideMenu]);
 // CONCATENATED MODULE: ./packages/header/src/scripts/header/header.js
 function header_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1287,398 +1646,42 @@ var header_HeaderPopin = /*#__PURE__*/function () {
 
 
 new Initializer('.rf-header', [Header]);
-// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/sidemenu/sidemenu.js
-function sidemenu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// CONCATENATED MODULE: ./packages/ie11/src/scripts/object-fit-polyfill/object-fit-polyfill.js
+function object_fit_polyfill_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function sidemenu_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+/**
+ * Polyfill pour IE11 qui ne supporte pas object-fit. On met l'image en background sur l'élément img et un svg vide en source
+ */
+var ObjectFitPolyfill = function ObjectFitPolyfill($selectors) {
+  object_fit_polyfill_classCallCheck(this, ObjectFitPolyfill);
 
-function sidemenu_createClass(Constructor, protoProps, staticProps) { if (protoProps) sidemenu_defineProperties(Constructor.prototype, protoProps); if (staticProps) sidemenu_defineProperties(Constructor, staticProps); return Constructor; }
+  for (var i = 0; i < $selectors.length; i++) {
+    var images = []; // document.querySelectorAll($selectors[i]); TODO: erreur sur IE11
 
+    var img = void 0;
 
-var sidemenu_NAV_COLLAPSE = '.rf-sidemenu__wrapper > .rf-sidemenu__list > .rf-sidemenu__item > .rf-sidemenu__content';
-var SUBNAV_COLLAPSE = '.rf-sidemenu__item .rf-sidemenu__item .rf-sidemenu__content';
-var sidemenu_MENU = 'rf-sidemenu__content';
-var sidemenu_EXPANDED = '--expanded';
-var SIDENAV_WRAPPER = 'rf-sidemenu__wrapper';
-
-var sidemenu_SideMenu = /*#__PURE__*/function () {
-  function SideMenu() {
-    sidemenu_classCallCheck(this, SideMenu);
-
-    this.init();
+    for (var j = 0; j < images.length; j++) {
+      img = images[i];
+      (img.runtimeStyle || img.style).background = 'url("' + img.src + '") no-repeat 50%/cover';
+      img.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'' + img.width + '\' height=\'' + img.height + '\' %3E%3C/svg%3E';
+    }
   }
-
-  sidemenu_createClass(SideMenu, [{
-    key: "init",
-    value: function init() {
-      this.group = new CollapseGroup();
-      this.subGroup = new CollapseGroup();
-      var elements = document.querySelectorAll(sidemenu_NAV_COLLAPSE);
-      var subElements = document.querySelectorAll(SUBNAV_COLLAPSE);
-      var sideMenuWrappers = document.querySelectorAll('.rf-sidemenu__wrapper');
-      this.buttons = document.querySelectorAll('.rf-sidemenu__btn--sidemenu-toggle');
-      var element, subElement, sideMenuWrapper, collapseElement, collapseSubElement;
-
-      for (var i = 0; i < elements.length; i++) {
-        element = elements[i];
-        collapseElement = new collapse_CollapseElement(element, sidemenu_MENU + sidemenu_EXPANDED);
-        this.group.add(collapseElement);
-      }
-
-      for (var _i = 0; _i < subElements.length; _i++) {
-        subElement = subElements[_i];
-        collapseSubElement = new collapse_CollapseElement(subElement, sidemenu_MENU + sidemenu_EXPANDED);
-        this.subGroup.add(collapseSubElement);
-      }
-
-      for (var _i2 = 0; _i2 < sideMenuWrappers.length; _i2++) {
-        sideMenuWrapper = sideMenuWrappers[_i2];
-        this.collapseSideNav = new collapse_CollapseElement(sideMenuWrapper, SIDENAV_WRAPPER + sidemenu_EXPANDED);
-      }
-
-      this.changing = this.change.bind(this);
-      window.addEventListener('resize', this.changing);
-      this.change();
-    }
-  }, {
-    key: "change",
-    value: function change() {
-      this.isMedium = window.matchMedia('(min-width: 48em)').matches;
-
-      if (this.isMedium) {
-        for (var i = 0; i < this.buttons.length; i++) {
-          this.button = this.buttons[i];
-          this.button.setAttribute('hidden', '');
-        }
-      } else {
-        for (var _i3 = 0; _i3 < this.buttons.length; _i3++) {
-          this.button = this.buttons[_i3];
-          this.button.removeAttribute('hidden');
-        }
-      }
-    }
-  }]);
-
-  return SideMenu;
-}();
+};
 
 
-// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/index.js
-
-
-// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/distGlobal.js
+// CONCATENATED MODULE: ./packages/ie11/src/scripts/distGlobal.js
 /* eslint-disable no-new */
 
 
-new Initializer('.rf-sidemenu', [sidemenu_SideMenu]);
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || accordion_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+if (window.MSInputMethodContext && document.documentMode) {
+  var scripts = ['https://unpkg.com/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js', 'https://polyfill.io/v3/polyfill.min.js?features=Event', 'https://unpkg.com/focus-within-polyfill/dist/focus-within-polyfill.js'];
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return accordion_arrayLikeToArray(arr); }
-
-function accordion_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = accordion_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function accordion_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return accordion_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return accordion_arrayLikeToArray(o, minLen); }
-
-function accordion_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function accordion_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function accordion_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function accordion_createClass(Constructor, protoProps, staticProps) { if (protoProps) accordion_defineProperties(Constructor.prototype, protoProps); if (staticProps) accordion_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-var ACCORDION_GROUP = '.rf-accordion-group';
-var ACCORDION_COLLAPSE = '.rf-accordion__body';
-var ACCORDION_BODY = 'rf-accordion__body';
-var accordion_EXPANDED = '--expanded';
-
-var accordion_Accordion = /*#__PURE__*/function () {
-  function Accordion() {
-    accordion_classCallCheck(this, Accordion);
-
-    this.init();
+  for (var distGlobal_i = 0; distGlobal_i < scripts.length; distGlobal_i++) {
+    document.write('<script src="' + scripts[distGlobal_i] + '"><\x2fscript>');
   }
 
-  accordion_createClass(Accordion, [{
-    key: "init",
-    value: function init() {
-      var accordionGroups = document.querySelectorAll(ACCORDION_GROUP);
-      var elements = document.querySelectorAll(ACCORDION_COLLAPSE);
-      var element, collapseElement, collapseGroup;
-      this.collapseGroupsElements = [];
-      this.collapseGroupElements = [];
-      this.collapseGroupsArray = []; // Get accordions groups, set data attribute and create collapse group to each
-
-      for (var i = 0; i < accordionGroups.length; i++) {
-        accordionGroups[i].setAttribute('data-rf-ac', 'rf-ac-group-' + i);
-        this.collapseGroupsElements.push(accordionGroups[i]);
-        collapseGroup = new CollapseGroup();
-        this.collapseGroupsArray.push(collapseGroup);
-      } // Get collapsible elements in groups
-
-
-      for (var _i = 0; _i < this.collapseGroupsElements.length; _i++) {
-        var _iterator = accordion_createForOfIteratorHelper(this.collapseGroupsElements[_i].querySelectorAll(ACCORDION_COLLAPSE)),
-            _step;
-
-        try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var _element = _step.value;
-            this.collapseGroupElements.push(_element);
-          }
-        } catch (err) {
-          _iterator.e(err);
-        } finally {
-          _iterator.f();
-        }
-      } // Get accordion elements in groups only and create new set
-
-
-      var elementsGroupOnly = new Set(this.collapseGroupElements); // Get accordion elements and create new array with accordion elements that are not in groups
-
-      var elementsSingleOnly = _toConsumableArray(new Set(_toConsumableArray(elements).filter(function (x) {
-        return !elementsGroupOnly.has(x);
-      }))); // Single accordion element(s) collapse individually
-
-
-      for (var _i2 = 0; _i2 < elementsSingleOnly.length; _i2++) {
-        element = elementsSingleOnly[_i2];
-        collapseElement = new collapse_CollapseElement(element, ACCORDION_BODY + accordion_EXPANDED);
-      } // Grouped accordion elements collapse
-
-
-      for (var _i3 = 0; _i3 < this.collapseGroupElements.length; _i3++) {
-        element = this.collapseGroupElements[_i3];
-        var groupAttr = element.closest('.rf-accordion-group').dataset.rfAc;
-        element.setAttribute('data-rf-ac', groupAttr);
-        collapseElement = new collapse_CollapseElement(element, ACCORDION_BODY + accordion_EXPANDED);
-        this.collapseGroupsArray[element.dataset.rfAc.slice(-1)].add(collapseElement);
-      }
-    }
-  }]);
-
-  return Accordion;
-}();
-
-
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/index.js
-
-
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/distGlobal.js
-/* eslint-disable no-new */
-
-
-new Initializer('.rf-accordion', [accordion_Accordion]);
-// CONCATENATED MODULE: ./packages/table/src/scripts/shadow-on-scroll/shadow-on-scroll.js
-function shadow_on_scroll_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function shadow_on_scroll_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function shadow_on_scroll_createClass(Constructor, protoProps, staticProps) { if (protoProps) shadow_on_scroll_defineProperties(Constructor.prototype, protoProps); if (staticProps) shadow_on_scroll_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-var TABLE = '.rf-table:not(.rf-table--no-scroll)';
-var LEFT = 'left';
-var shadow_on_scroll_RIGHT = 'right';
-var SHADOW_CLASS = 'rf-table--shadow';
-var SHADOW_RIGHT_CLASS = 'rf-table--shadow-right';
-var SHADOW_LEFT_CLASS = 'rf-table--shadow-left';
-var WRAPPER_NAME = 'rf-table__wrapper';
-var TABLE_CAPTION_BOTTOM = 'rf-table--caption-bottom';
-var SCROLL_OFFSET = 1; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
-
-var ShadowOnScroll = /*#__PURE__*/function () {
-  function ShadowOnScroll() {
-    shadow_on_scroll_classCallCheck(this, ShadowOnScroll);
-
-    this.init();
-  }
-
-  shadow_on_scroll_createClass(ShadowOnScroll, [{
-    key: "init",
-    value: function init() {
-      var tableNodes = document.querySelectorAll(TABLE);
-      this.tables = [];
-
-      for (var i = 0; i < tableNodes.length; i++) {
-        this.tables.push(new shadow_on_scroll_Table(tableNodes[i]));
-      }
-
-      this.changing = this.change.bind(this);
-      window.addEventListener('resize', this.changing);
-      window.addEventListener('orientationchange', this.changing);
-      this.change();
-    }
-  }, {
-    key: "change",
-    value: function change() {
-      for (var i = 0; i < this.tables.length; i++) {
-        this.tables[i].change();
-      }
-    }
-  }]);
-
-  return ShadowOnScroll;
-}();
-
-var shadow_on_scroll_Table = /*#__PURE__*/function () {
-  function Table(table) {
-    shadow_on_scroll_classCallCheck(this, Table);
-
-    this.init(table);
-  }
-
-  shadow_on_scroll_createClass(Table, [{
-    key: "init",
-    value: function init(table) {
-      this.table = table;
-      this.tableElem = this.table.querySelector('table');
-      this.tableContent = this.tableElem.querySelector('tbody');
-      this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
-      this.caption = this.tableElem.querySelector('caption');
-      this.captionHeight = 0;
-      this.wrap();
-      var scrolling = this.change.bind(this);
-      this.tableElem.addEventListener('scroll', scrolling);
-      this.change();
-    }
-  }, {
-    key: "change",
-    value: function change() {
-      var newScroll = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
-      var firstTimeScrollable = this.tableElem.offsetWidth > this.table.offsetWidth;
-
-      if (newScroll || firstTimeScrollable) {
-        this.scroll();
-        this.handleCaption();
-      } else {
-        if (newScroll !== this.isScrollable) this.delete();
-      }
-
-      this.isScrollable = newScroll;
-      firstTimeScrollable = false;
-    }
-  }, {
-    key: "delete",
-    value: function _delete() {
-      removeClass(this.table, SHADOW_RIGHT_CLASS);
-      removeClass(this.table, SHADOW_LEFT_CLASS);
-      removeClass(this.table, SHADOW_CLASS);
-
-      if (this.caption) {
-        this.tableElem.style.marginTop = '';
-        this.caption.style.top = '';
-        this.tableElem.style.marginBottom = '';
-        this.caption.style.bottom = '';
-      }
-    }
-  }, {
-    key: "scroll",
-    value: function scroll() {
-      addClass(this.table, SHADOW_CLASS);
-      this.setShadowPosition();
-    }
-    /* ajoute un wrapper autour du tableau */
-
-  }, {
-    key: "wrap",
-    value: function wrap() {
-      var wrapperHtml = document.createElement('div');
-      wrapperHtml.className = WRAPPER_NAME;
-      this.table.insertBefore(wrapperHtml, this.tableElem);
-      wrapperHtml.appendChild(this.tableElem);
-      this.tableInnerWrapper = wrapperHtml;
-    }
-    /* affiche les blocs shadow en fonction de la position du scroll, en ajoutant la classe visible */
-
-  }, {
-    key: "setShadowPosition",
-    value: function setShadowPosition() {
-      var tableScrollLeft = this.getScrollPosition(LEFT);
-      var tableScrollRight = this.getScrollPosition(shadow_on_scroll_RIGHT); // on inverse en cas de lecture droite - gauche
-
-      if (document.documentElement.getAttribute('dir') === 'rtl') {
-        this.setShadowVisibility(shadow_on_scroll_RIGHT, tableScrollLeft);
-        this.setShadowVisibility(LEFT, tableScrollRight);
-      } else {
-        this.setShadowVisibility(LEFT, tableScrollLeft);
-        this.setShadowVisibility(shadow_on_scroll_RIGHT, tableScrollRight);
-      }
-    }
-    /* Donne le nombre de pixels scrollés honrizontalement dans un element scrollable */
-
-  }, {
-    key: "getScrollPosition",
-    value: function getScrollPosition(side) {
-      var inverter = 1; // on inverse en cas de lecture droite - gauche pour que la valeur de scroll soit toujours positive
-
-      if (document.documentElement.getAttribute('dir') === 'rtl') {
-        inverter = -1;
-      }
-
-      switch (side) {
-        case LEFT:
-          return this.tableElem.scrollLeft * inverter;
-
-        case shadow_on_scroll_RIGHT:
-          return this.tableContent.offsetWidth - this.tableElem.offsetWidth - this.tableElem.scrollLeft * inverter;
-
-        default:
-          return false;
-      }
-    }
-    /* positionne la caption en top négatif et ajoute un margin-top au wrapper */
-
-  }, {
-    key: "handleCaption",
-    value: function handleCaption() {
-      if (this.caption) {
-        var style = getComputedStyle(this.caption);
-        var newHeight = this.caption.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
-        this.captionHeight = newHeight;
-
-        if (this.table.classList.contains(TABLE_CAPTION_BOTTOM)) {
-          this.tableElem.style.marginBottom = this.captionHeight + 'px';
-          this.caption.style.bottom = -this.captionHeight + 'px';
-        } else {
-          this.tableElem.style.marginTop = this.captionHeight + 'px';
-          this.caption.style.top = -this.captionHeight + 'px';
-        }
-      }
-    }
-    /* ajoute la classe rf-table--shadow-right ou rf-table--shadow-right sur rf-table
-      en fonction d'une valeur de scroll et du sens (right, left) */
-
-  }, {
-    key: "setShadowVisibility",
-    value: function setShadowVisibility(side, scrollPosition) {
-      // si on a pas scroll, ou qu'on scroll jusqu'au bout
-      if (scrollPosition <= SCROLL_OFFSET) {
-        if (side === LEFT) removeClass(this.table, SHADOW_LEFT_CLASS);else if (side === shadow_on_scroll_RIGHT) removeClass(this.table, SHADOW_RIGHT_CLASS);
-      } else {
-        if (side === LEFT) addClass(this.table, SHADOW_LEFT_CLASS);else if (side === shadow_on_scroll_RIGHT) addClass(this.table, SHADOW_RIGHT_CLASS);
-      }
-    }
-  }]);
-
-  return Table;
-}();
-
-
-// CONCATENATED MODULE: ./packages/table/src/scripts/index.js
-
-
-// CONCATENATED MODULE: ./packages/table/src/scripts/distGlobal.js
-/* eslint-disable no-new */
-
-
-new Initializer('.rf-table--responsive', [ShadowOnScroll]);
+  new ObjectFitPolyfill('.rf-content-media__img img', '.rf-card__img img', 'rf-responsive-vid');
+}
 // CONCATENATED MODULE: ./packages/all/src/scripts/dist.js
 
 

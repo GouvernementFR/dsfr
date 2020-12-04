@@ -21,7 +21,7 @@
 }
 
 .#{$prefix}-summary__list {
-  @extend %body-ordered-list;
+  // @extend %body-ordered-list;
   @include text-styles(xs);
 
   > li {
