@@ -3,7 +3,7 @@
 /// @group tags
 ////
 
-#{prefixed-class(tag)} {
+#{dse-class(tag)} {
   @include build-tag();
 
   @include scheme-element-text-color(g-800, true);
@@ -17,7 +17,7 @@
   @include disabled-link(true, true);
 }
 
-#{prefixed-group-class(tags)} {
+#{dse-group-class(tags)} {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0;

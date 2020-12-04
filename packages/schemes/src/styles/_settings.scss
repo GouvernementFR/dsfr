@@ -4,7 +4,7 @@
 ////
 
 // Attribut utilisé pour le dark mode
-$dt: '[data-theme="dark"]';
+$dt: '[data-#{$prefix}-theme="dark"]';
 
 // Sélecteur du dark mode
 $dark-theme-selector: ':root#{$dt}';
@@ -19,7 +19,7 @@ $base-scheme: '#{$prefix}-scheme';
 $base-scheme-selector: '.#{$base-scheme}';
 
 // Sélecteur de transition de couleur
-$theme-transition-selector: ':root[data-transition]';
+$theme-transition-selector: ':root[data-#{$prefix}-transition]';
 
 // Durée de transition de couleur
 $theme-transition-duration: 0.3s;

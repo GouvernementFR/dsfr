@@ -3,10 +3,18 @@
 /// @group core
 ////
 
-@function prefixed-class($name) {
-  @return '.#{$prefix}-#{$name}';
+$is-declared-in-body: true;
+
+@function dse-class($name) {
+  $class-name: '.#{$prefix}-#{$name}';
+
+  @if $is-declared-in-body {
+    @return '#{$class-name}, .#{$prefix}-body #{$class-name}';
+  }
+
+  @return $class-name;
 }
 
-@function prefixed-group-class($name) {
-  @return '#{prefixed-class($name)}-group';
+@function dse-group-class($name) {
+  @return dse-class('#{$name}-group');
 }

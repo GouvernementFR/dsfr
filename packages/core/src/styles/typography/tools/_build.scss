@@ -69,10 +69,10 @@
       }
     }
 
-    $selector: '.#{$prefix}-#{$main}';
+    $selector: dse-class($main);
 
     @if $alt != null {
-      $selector: '#{$selector}, .#{$prefix}-#{$alt}';
+      $selector: '#{$selector}, #{dse-class($alt)}';
     }
 
     @if $with-placeholder {

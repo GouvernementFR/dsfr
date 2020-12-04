@@ -12,7 +12,7 @@
 
 @include text-selectors($displays-settings, display, false);
 
-@include text-selectors($texts-settings, text, true);
+@include text-selectors($texts-settings, text, true, true);
 
 .#{$prefix}-text--alt {
   font-family: $font-family-serif;

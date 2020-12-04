@@ -3,7 +3,7 @@
 /// @group buttons
 ////
 
-.#{$prefix}-btn {
+#{dse-class(btn)} {
 
   @include build-btn();
 

@@ -3,7 +3,7 @@
 /// @group accordion
 ////
 
-.#{$prefix}-accordion {
+#{dse-class(accordion)} {
   position: relative;
   @include scheme-element-border-color(g300, true, top);
   @include scheme-element-border-color(g300, true, bottom);

@@ -6,7 +6,7 @@
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
-.#{$prefix}-breadcrumb {
+#{dse-class(breadcrumb)} {
   margin: calc(#{space(2N)} - 0.5rem) (- 0.5rem) calc(#{space(3N)} - 0.5rem);
   padding: 0.5rem;
   overflow: hidden;
@@ -88,6 +88,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
   &__item:not(:last-child) a {
     @include scheme-element-text-color(g600, true);
+    @include link-underline;
   }
 
   /**

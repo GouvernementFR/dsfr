@@ -25,7 +25,7 @@
   a {
     @include not-dse-class {
       @extend %a-reset;
-      color: inherit;
+      @include scheme-element-focus();
     }
   }
 }

@@ -5,8 +5,6 @@
 
 @each $heading, $variation in ($headings-settings) {
   #{$heading} {
-    @include class-not-contains($headings-prevent-stylization-list) {
-      @extend %#{$heading};
-    }
+    @extend %#{$heading};
   }
 }
