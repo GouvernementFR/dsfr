@@ -16,75 +16,83 @@
   &__input {
     flex-shrink: 0;
     @include z-index(under);
-    width: space(7w);
+    width: space(5w);
     height: space(3w);
+    border-radius: space(5w);
+    @include scheme-element-border-color(bf500);
     margin: 0;
     outline: none;
     -webkit-appearance: none;
-    @include scheme-element-focus(false, '+ label::before');
-    @include disabled-form-choice();
-
-    /*
-     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
-     * On récupère le text via l'attribut [data-rf-unchecked-label]
-     */
-    &::before {
-      content: attr(data-rf-unchecked-label);
-      display: block;
-      font-family: $font-family-sans;
-      margin-top: calc(#{space(3w)} + #{space(1v)});
-      font-size: font-size(12);
-      line-height: line-height(none);
-      @include scheme-element-text-color(bf500);
-    }
-
-    /*
-     * On ajoute des espacements au label si on a mis des attributs
-     * pour spécifier l'état du bouton (optionnel)
-     */
-    &[data-#{$prefix}-unchecked-label],
-    &[data-#{$prefix}-checked-label] {
-      ~ .#{$prefix}-toggle__label {
-        padding-left: space(2w);
-        margin-bottom: space(1w);
-      }
-    }
+    @include scheme-element-focus();
+    @include disabled-toggle-choice();
 
     /*
      * On applique des styles aux pseudo-elements du label quand l'input est check
      * On récupère le texte d'état check (optionnel) via le data-attribute data-rf-checked-label
      */
     &:checked {
-      &::before {
-        content: attr(data-#{$prefix}-checked-label);
-      }
+      @include scheme-element-bg-color(bf500);
 
-      ~ .#{$prefix}-toggle__label::before {
-        @include scheme-element-bg-color(bf500);
+      ~ .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
+      ~ .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
+        content: attr(data-rf-checked-label) '\A' attr(data-rf-unchecked-label);
       }
 
       ~ .#{$prefix}-toggle__label::after {
         transform: translateX(space(2w));
         text-indent: 0;
       }
+
+      &::-ms-check {
+        background: blue;
+        text-indent: 9999px;
+        color: blue;
+        @include scheme-element-bg-color(bf500);
+      }
+    }
+
+    /*
+     * Hack pour IE11
+     */
+
+    &::-ms-check {
+      width: space(5w);
+      border-radius: space(5w);
+      border: 1px solid blue;
+      text-indent: 9999px;
+      // @include scheme-element-border-color(bf500);
     }
   }
 
   &__label {
     display: inline-flex;
     min-height: space(3w);
+    padding-left: space(2w);
+
+    &[data-#{$prefix}-unchecked-label],
+    &[data-#{$prefix}-checked-label] {
+      padding-left: 0;
+
+      &::before {
+        content: attr(data-rf-unchecked-label) '\A' attr(data-rf-checked-label);
+      }
+    }
 
     /*
-     * On construit le background du bouton dans un pseudo-element before
+     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
+     * On récupère le text via l'attribut [data-rf-unchecked-label]
      */
     &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: space(5w);
-      height: space(3w);
-      border-radius: space(5w);
-      @include scheme-element-border-color(bf500);
+      font-family: $font-family-sans;
+      height: calc(#{space(3v)} - 1px);
+      margin-top: calc(#{space(3w)} + #{space(1v)});
+      margin-left: -(space(5w));
+      margin-right: space(2w);
+      font-size: font-size(12);
+      line-height: line-height(none);
+      @include scheme-element-text-color(bf500);
+      white-space: pre-wrap;
+      overflow: hidden;
     }
 
     /*

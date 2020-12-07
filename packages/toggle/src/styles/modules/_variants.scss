@@ -8,16 +8,17 @@
  */
 &--border-bottom {
   @include scheme-element-box-shadow-color(g300, false, inset 0 -1px 0 0 $COLOR);
+
+  .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
+  .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
+    margin-bottom: -(space(1w));
+  }
 }
 
 &--label-left {
   .#{$prefix}-toggle__input {
     order: 1;
     margin: 0 0 0 auto;
-
-    &::before {
-      text-align: right;
-    }
   }
 
   .#{$prefix}-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
@@ -25,9 +26,18 @@
     padding-right: space(2w);
   }
 
-  .#{$prefix}-toggle__label::before {
-    left: auto;
-    right: 0;
+  .#{$prefix}-toggle__label {
+    justify-content: space-between;
+    padding-left: 0;
+    width: calc(100% + #{space(5w)});
+
+    &::before {
+      flex-shrink: 0;
+      order: 1;
+      margin-right: -(space(5w));
+      margin-left: space(2w);
+      text-align: right;
+    }
   }
 
   .#{$prefix}-toggle__label::after {

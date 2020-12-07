@@ -12,6 +12,6 @@
 %>
 
 <div <%- includeClasses(classes)%>>
-  <input type="checkbox" class="<%= prefix %>-toggle__input" id="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>" <% if(locals.state){ %> data-<%= prefix %>-checked-label="activé" data-<%= prefix %>-unchecked-label="désactivé" <% } %><% if(locals.disabled){ %>disabled="disabled"<%}%>>
-  <label class="<%= prefix %>-toggle__label" for="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>"><%- label %></label>
+  <input type="checkbox" class="<%= prefix %>-toggle__input" id="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>"<% if(locals.disabled){ %>disabled="disabled"<%}%>>
+  <label class="<%= prefix %>-toggle__label" for="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>" <% if(locals.state){ %> data-<%= prefix %>-checked-label="activé" data-<%= prefix %>-unchecked-label="désactivé" <% } %>><%- label %></label>
 </div>

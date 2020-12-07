@@ -16,11 +16,5 @@
       }
       @content;
     }
-    @include disabled(true, false, false) {
-      &::before {
-        @include disabled-colors();
-      }
-      @content;
-    }
   }
 }
