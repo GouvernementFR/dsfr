@@ -1,15 +1,15 @@
 .#{$prefix}-radio-group {
   .#{$prefix}-hint-text {
-    margin-left: space(4N);
-    margin-top: -(space(1-5N));
+    margin-left: space(8v);
+    margin-top: -(space(3v));
   }
 
   &:first-child {
-    margin-top: -(space(1-5N));
+    margin-top: -(space(3v));
   }
 
   &:last-child {
-    margin-bottom: -(space(1-5N));
+    margin-bottom: -(space(3v));
   }
 
   input[type="radio"] {
@@ -21,44 +21,97 @@
       display: inline-flex;
       align-items: center;
       cursor: pointer;
-      padding: space(1-5N) 0;
+      padding: space(3v) 0;
       font-size: font-size(14);
       -webkit-tap-highlight-color: transparent;
 
-      &::before {
+      @include radio-rich() {
+        min-height: space(22v);
+        width: 100%;
+        @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
+        padding-left: space(7v);
+        padding-top: space(2v);
+        padding-bottom: space(2v);
+        padding-right: space(26v);
+        background-position: calc(100% - #{space(1v)}) center;
+        background-size: space(20v) space(20v);
+        background-repeat: no-repeat;
+        @include scheme-element-bg-color(bf500, true, true);
+
+        // hover
+        &:hover,
+        &:active {
+          // @include scheme-element-bg-color(block-color-hover, true);
+        }
+
+        // sm
+        @include before() {
+          width: space(4v);
+          height: space(4v);
+          margin-right: space(3v);
+        }
+
+        @include after(flex, '') {
+          position: absolute;
+          right: 0;
+          margin: space(1v);
+          padding-left: space(1v);
+          vertical-align: middle;
+          justify-content: center;
+          align-items: center;
+          height: space(20v);
+          width: space(21v);
+          @include scheme-element-box-shadow-color(g300, true, 'inset 1px 0 0 0 $COLOR');
+          // TODO: insérer la font icon ilustrative ifi
+          font-size: space(20v); // ?
+        }
+
+        // sm
+        ~ .rf-hint-text {
+          margin-left: space(6v);
+        }
+      }
+
+      @include before() {
         content: '';
         display: inline-block;
         flex-shrink: 0;
-        width: space(3N);
-        height: space(3N);
+        width: space(6v);
+        height: space(6v);
+        border: 1px solid;
         margin-right: space(1N);
         border-radius: 50%;
         @include scheme-element-border-color(g800, true);
         transform-origin: center;
         transition: transform 0.3s;
       }
-
-      &::after {
-        content: '';
-        position: absolute;
-        display: inline-block;
-        flex-shrink: 0;
-        left: calc(#{space(1-5N)} / 2);
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        border-radius: 50%;
-        width: space(1-5N);
-        height: space(1-5N);
-        background: transparent;
-        transform-origin: center;
-        transition: transform 0.3s;
-      }
     }
 
     &:checked {
-      + label::after {
-        @include scheme-element-bg-color(bf500, true);
+      + label {
+        @include before() {
+          @include scheme-element-box-shadow-color(w, true, 'inset 0 0 0 5px $COLOR');
+          @include scheme-element-bg-color(bf500, true);
+        }
+
+        @include radio-rich() {
+          @include before() {
+            @include scheme-element-box-shadow-color(w, true, 'inset 0 0 0 3px $COLOR');
+            @include scheme-element-bg-color(bf500, true);
+          }
+        }
+
+        @include radio-rich() {
+          width: 100%;
+          @include scheme-element-bg-color(bf500);
+          @include scheme-element-text-color(w-bf500, true);
+          @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
+          @include before() {
+            @include scheme-element-border-color(w-bf500, true);
+            @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 3px $COLOR');
+            @include scheme-element-bg-color(w-bf500, true);
+          }
+        }
       }
     }
 
@@ -89,24 +142,58 @@
     @include disabled-form-choice();
   }
 
+  /**
+  * Taille SM et taille radio riche
+  */
   &--sm {
     input[type="radio"] {
-      + label {
+      & + label {
         &::before {
-          width: space(2N);
-          height: space(2N);
-        }
-
-        &::after {
-          left: calc(#{space(1N)} / 2);
-          width: space(1N);
-          height: space(1N);
+          width: space(4v);
+          height: space(4v);
         }
       }
     }
 
     .rf-hint-text {
-      margin-left: space(3N);
+      margin-left: space(6v);
+    }
+  }
+}
+
+.#{$prefix}-fieldset {
+  .#{$prefix}-radio-group {
+    &:first-child {
+      input[type="radio"] + label {
+        @include radio-rich() {
+          margin-top: space(3v);
+        }
+      }
+    }
+
+    &:last-child {
+      input[type="radio"] + label {
+        @include radio-rich() {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    input[type="radio"] + label {
+      @include radio-rich() {
+        margin-top: space(2v);
+        margin-bottom: space(2v);
+      }
+    }
+  }
+
+  &--inline {
+    .#{$prefix}-radio-group:not(:last-child) {
+      input[type="radio"] + label {
+        @include radio-rich() {
+          margin-right: space(3v);
+        }
+      }
     }
   }
 }

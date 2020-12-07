@@ -126,22 +126,36 @@
   }
 
   &--inline {
+    .#{$prefix}--fieldset__content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
     .#{$prefix}-radio-group,
     .#{$prefix}-checkbox-group {
       display: inline-flex;
       margin-bottom: 0;
 
       &:not(:last-child) {
-        margin-right: space(3N);
+        input[type="radio"] + label {
+          margin-right: space(3N);
+        }
       }
 
       &:first-child {
-        margin-top: 0;
+        input[type="radio"] + label {
+          margin-top: 0;
+        }
       }
 
       &:last-child {
-        margin-bottom: 0;
+        input[type="radio"] + label {
+          margin-bottom: 0;
+        }
       }
+
     }
 
     .#{$prefix}-hint-text {

@@ -1,6 +1,12 @@
 <%
  let radioAttrs = locals.radioAttrs || [];
+ let labelAttr = {};
+ let labelClass = locals.labelClasses || [];
+ locals.customIcon ? labelAttr['style'] = locals.customIcon : labelAttr = {};
+ if (locals.icon) labelClass.push(prefix + '-ifi-' + locals.icon);
+
  %>
+
 <input <%- includeAttrs(radioAttrs); %> type="radio" id="<%= id %>" name="<%= name %>">
-<%- include('../../../forms/tests/templates/label'); %>
+<%- include('../../../forms/tests/templates/label', {labelClasses: labelClass, labelAttributes: labelAttr}); %>
 <%- include('../../../forms/tests/templates/message'); %>

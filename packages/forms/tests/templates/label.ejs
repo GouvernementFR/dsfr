@@ -1,7 +1,7 @@
 <%
  let labelClasses = locals.labelClasses || [];
  labelClasses.push(prefix + '-label');
- let labelAttrs = {};
+ let labelAttrs = locals.labelAttributes || {};
  let describedby = [];
 
  if (locals.error != undefined && locals.group !== true) labelClasses.push(prefix + '-label--error');
