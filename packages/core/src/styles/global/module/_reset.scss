@@ -23,10 +23,8 @@
   }
 
   a {
-    @include not-dse-class {
-      @extend %a-reset;
-      @include scheme-element-focus();
-    }
+    @extend %a-reset;
+    @include scheme-element-focus();
   }
 }
 

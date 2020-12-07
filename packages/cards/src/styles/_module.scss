@@ -3,22 +3,20 @@
 /// @group cards
 ////
 
-.#{$prefix}-card {
-  display: flex;
-  flex-direction: column;
+#{dse-class(card)} {
+  @include display-flex(column);
   position: relative;
   @include scheme-element-bg-color(beige, true, true);
 
-  .#{$prefix}-grid-row & {
-    height: 100%;
+  #{dse-class(grid-row)} & {
+    @include size(null, 100%);
   }
 
   &:not(&--no-arrow) &__body {
     @include font-icon(arrow-right-line, lg, after) {
-      width: space(3N);
-      height: space(3N);
-      margin-top: auto;
-      margin-left: auto;
+      @include size(6v, 6v);
+      @include margin-top(auto);
+      @include margin-left(auto);
       @include scheme-element-text-color(bf500, true);
     }
   }
@@ -34,39 +32,34 @@
   }
 
   &__body {
-    display: flex;
-    flex-direction: column;
+    @include display-flex(column);
     flex: 1 1 auto;
-    padding: space(3N);
-  }
-
-  &__img + &__body {
-    $bs:inset 1px 0 0 0 $COLOR, inset -1px -1px 0 0 $COLOR;
+    @include padding(6v);
   }
 
   &__detail {
-    margin-top: 0;
-    margin-bottom: space(2N);
+    @include margin-top(0);
+    @include margin-bottom(4v);
     @include text-styles(sm);
     @include scheme-element-text-color(g600, true);
   }
 
   &__title {
-    margin-top: 0;
-    margin-bottom: space(1N);
+    @include margin-top(0);
+    @include margin-bottom(2v);
     @include text-styles(xl);
   }
 
   &__desc {
-    margin-top: 0;
-    margin-bottom: space(2N);
+    @include margin-top(0);
+    @include margin-bottom(4v);
     @include text-styles(sm);
   }
 
-  .#{$prefix}-link,
+  #{dse-class(link)},
   &__link {
     position: static;
-    margin-top: auto;
+    @include margin-top(auto);
 
     @include before(block, '') {
       @include absolute(0, 0, 0, 0, 100%, 100%);
@@ -79,10 +72,9 @@
   }
 
   &__link {
-    text-decoration: none;
+    @include remove-body-link-style;
     display: inline-flex;
-    box-shadow: none;
-    width: 100%;
+    @include size(100%);
   }
 
   @include respond-from(md) {
@@ -91,11 +83,7 @@
     }
 
     &--horizontal &__img {
-      width: 40.78%;
-    }
-
-    &--horizontal &__img + &__body {
-      $bs:inset 0 1px 0 0 $COLOR, inset -1px -1px 0 0 $COLOR;
+      @include size(40.78%);
     }
   }
 }
