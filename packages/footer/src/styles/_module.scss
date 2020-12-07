@@ -3,25 +3,23 @@
 /// @group footer
 ////
 
-.#{$prefix}-footer {
+#{dse(footer)} {
   width: 100%;
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
   @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
-  padding-top: space(5w);
+  @include padding-top(10v);
   line-height: line-height();
 
   &__body {
-    display: flex;
-    flex-wrap: wrap;
+    @include display-flex(row, null, null, wrap);
   }
 
   &__brand {
-    display: flex;
-    align-items: center;
+    @include display-flex(row, center);
     flex-basis: 100%;
 
     @include logo(md, lg) {
-      margin: -1em;
+      @include margin(-1em);
     }
 
     /**
@@ -32,23 +30,23 @@
     > a + a,
     > a + img,
     > a + svg {
-      margin-left: space(3w);
-      text-decoration: none;
+      @include margin-left(6v);
+      @include margin-left(12v, md);
+    }
 
-      @include respond-from(md) {
-        margin-left: space(6w);
-      }
+    > a + a {
+      @include override-body-link-style;
     }
 
     /**
      * Styles quand un logo opérateur est présent
      */
-    .#{$prefix}-footer__body--operator & {
+    #{dse(footer__body--operator)} & {
       flex-basis: 100%;
 
-      .#{$prefix}-footer__link + .#{$prefix}-footer__link {
+      #{dse(footer__link)} + #{dse($prefix)} {
 
-        .#{$prefix}-footer__logo {
+        #{dse(footer__logo)} {
           width: auto;
           min-width: initial;
           max-height: 100px;

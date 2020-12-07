@@ -69,20 +69,17 @@
       }
     }
 
-    $selector: dse-class($main);
+    $selector: dse($main);
 
     @if $alt != null {
-      $selector: '#{$selector}, #{dse-class($alt)}';
+      $selector: '#{$selector}, #{dse($alt)}';
     }
 
-    @if $with-placeholder {
-      @include text-selector('%#{$main}', $variation);
-      @at-root #{$selector} {
+    @include text-selector('%#{$main}', $variation);
+    @at-root #{$selector} {
+      @include override-body {
         @extend %#{$main};
       }
-    }
-    @else {
-      @include text-selector($selector, $variation);
     }
   }
 }

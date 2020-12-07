@@ -3,7 +3,7 @@
 /// @group callouts
 ////
 
-#{dse-class(callout)} {
+#{dse(callout)} {
   position: relative;
   font-family: $font-family-sans;
   padding: space(3w);
@@ -35,22 +35,25 @@
   }
 
   &__title {
-    font-size: font-size(22);
-    line-height: line-height("snug");
-    @include scheme-element-text-color(g800, true);
-    margin: 0 0 space(1w);
+    @include override-body-heading {
+      font-size: font-size(22);
+      line-height: line-height("snug");
+      @include scheme-element-text-color(g800, true);
+      @include margin(0 0 2v);
+    }
   }
 
   &__text {
-    margin: 0;
-    @include text-styles();
+    @include override-body-text-style(md) {
+      @include margin(0);
+    }
   }
 
   /**
    * Modificateur pour la taille du texte (lg: 18px/1.25rem)
    */
-  &__text#{&}__text--lg {
-    @include text-styles(lg);
+  &__text--lg {
+    @include override-body-text-style(lg);
   }
 
   @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
@@ -58,11 +61,9 @@
   /**
    * Ajout de marge quand on inclut un bouton (optionnel)
    */
-  .#{$prefix}-btn {
-    margin-top: space(2w);
+  #{dse(btn)} {
+    @include margin-top(4v);
   }
 
-  @include respond-from(md) {
-    padding: space(4w) space(6w);
-  }
+  @include padding(8v 12v, md);
 }

@@ -3,7 +3,7 @@
 /// @group accordion
 ////
 
-#{dse-class(accordion)} {
+#{dse(accordion)} {
   position: relative;
   @include scheme-element-border-color(g300, true, top);
   @include scheme-element-border-color(g300, true, bottom);
@@ -51,19 +51,14 @@
   $accordion: &;
 
   @include group {
+    @include override-body-ol-style;
+
     @include group-item {
-      @include margin(0);
-
-      #{$accordion} {
-        border-bottom: 0;
-      }
-
       &:last-child {
         #{$accordion} {
           @include scheme-element-border-color(g300, true, bottom);
         }
       }
-
       @include before(null, none);
     }
   }

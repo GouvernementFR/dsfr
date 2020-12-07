@@ -80,39 +80,32 @@
   }
 }
 
-@mixin dse-class() {
+@mixin class-is-dse() {
   @include class-start-with('#{$prefix}-') {
     @content;
   }
 }
 
-@mixin not-dse-class() {
+@mixin class-is-not-dse() {
   @include class-not-start-with('#{$prefix}-') {
     @content;
   }
 }
 
-@mixin selector-insert($selectors...) {
-  $selector: '&';
-  @for $i from 0 to length($selectors) {
-    $selector: '#{$selector}, #{nth($selectors, $i + 1)}';
-  }
-  @at-root {
-    #{&} {
-      #{$selector} {
-        @content;
-      }
-    }
-  }
-}
-
 /// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
 /// @access public
-@mixin dse-all-selector() {
-  @include dse-class {
-    @include selector-insert('& *') {
-      @include selector-insert('&::before', '&::after') {
-        @content;
+@mixin all-dse-elements-selector() {
+  @include class-is-dse {
+    @at-root {
+      &,
+      & * {
+        @at-root {
+          &,
+          &::before,
+          &::after {
+            @content;
+          }
+        }
       }
     }
   }

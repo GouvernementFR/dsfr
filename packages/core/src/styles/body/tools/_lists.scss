@@ -6,16 +6,30 @@
 %base-body-list {
   font-size: font-size();
   line-height: line-height();
-  margin: 0 0 space(1N);
-  padding: 0;
+  @include margin(0 0 2v);
+  @include padding(0);
 
   li {
-    margin-bottom: space(1N);
+    @include margin-bottom(2v);
   }
 
   ul,
   ol {
-    margin: space(1N) 0 space(2N);
+    @include margin(2v 0 4v);
+  }
+}
+
+%override-base-body-list {
+  font-size: inherit;
+  @include margin(0);
+
+  li {
+    @include margin-bottom(0);
+  }
+
+  ul,
+  ol {
+    @include margin(0);
   }
 }
 
@@ -25,17 +39,38 @@
   li {
     @include before(null, '\2022') {
       font-size: 1.4em;
-      margin-right: space(1N);
+      @include margin-right(2v);
     }
   }
 
   ul {
     list-style-type: none;
-    margin: space(1N) 0 space(1N) space(3N);
+    @include margin(2v 0 2v 6v);
 
     li {
       @include before(null, '•') {
         font-size: 0.9em;
+      }
+    }
+  }
+}
+
+%override-body-unordered-list {
+  @extend %override-base-body-list;
+
+  li {
+    @include before(null, none) {
+      font-size: inherit;
+      @include margin-right(0);
+    }
+  }
+
+  ul {
+    @include margin(0);
+
+    li {
+      @include before(null, none) {
+        font-size: inherit;
       }
     }
   }
@@ -46,7 +81,7 @@
   counter-reset: list-number;
 
   ol {
-    padding-left: space(3N);
+    @include padding-left(6v);
 
     li {
       @include before {
@@ -59,7 +94,30 @@
     counter-increment: list-number;
     @include before(null, counters(list-number, ".") ".") {
       font-weight: 700;
-      margin-right: space(1N);
+      @include margin-right(2v);
+    }
+  }
+}
+
+%override-body-ordered-list {
+  @extend %override-base-body-list;
+  counter-reset: none;
+
+  ol {
+    @include padding-left(0);
+
+    li {
+      @include before {
+        font-size: inherit;
+      }
+    }
+  }
+
+  li {
+    counter-increment: none;
+    @include before(null, none) {
+      font-weight: inherit;
+      @include margin-right(0);
     }
   }
 }

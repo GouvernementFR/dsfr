@@ -30,5 +30,5 @@
 }
 
 %inline-flex-center {
-  @include display-flex(true, row, center);
+  @include display-flex(row, center, null, null, true);
 }

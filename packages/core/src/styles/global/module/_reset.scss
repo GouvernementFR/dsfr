@@ -6,11 +6,11 @@
 /**
  * Reset global des éléments du design system
  */
-@include dse-all-selector() {
+@include all-dse-elements-selector {
   box-sizing: border-box;
 }
 
-@include dse-class() {
+@include class-is-dse {
   font-family: $font-family-sans;
   @include scheme-element-text-color(g700, true);
   text-rendering: optimizeSpeed;
@@ -24,13 +24,13 @@
 
   a {
     @extend %a-reset;
-    @include scheme-element-focus();
+    @include scheme-element-focus;
   }
 }
 
 ul,
 ol {
-  @include dse-class() {
+  @include class-is-dse {
     @extend %list-reset;
   }
 }

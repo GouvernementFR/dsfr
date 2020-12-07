@@ -15,6 +15,7 @@
   @at-root {
     @if index($tags, a) != null {
       #{selector_unify(&, a)} {
+        @include override-body-link-style;
         @extend %a-reset;
       }
     }

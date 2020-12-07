@@ -3,12 +3,12 @@
 /// @group cards
 ////
 
-#{dse-class(card)} {
+#{dse(card)} {
   @include display-flex(column);
   position: relative;
   @include scheme-element-bg-color(beige, true, true);
 
-  #{dse-class(grid-row)} & {
+  #{dse(grid-row)} & {
     @include size(null, 100%);
   }
 
@@ -40,11 +40,15 @@
   &__detail {
     @include margin-top(0);
     @include margin-bottom(4v);
-    @include text-styles(sm);
+    @include override-body-text-style(sm);
     @include scheme-element-text-color(g600, true);
   }
 
   &__title {
+    @include override-body-text-style(xl) {
+      @include scheme-element-text-color(g800);
+      @include font-weight(bold);
+    }
     @include margin-top(0);
     @include margin-bottom(2v);
     @include text-styles(xl);
@@ -53,28 +57,27 @@
   &__desc {
     @include margin-top(0);
     @include margin-bottom(4v);
-    @include text-styles(sm);
+    @include override-body-text-style(sm);
   }
 
-  #{dse-class(link)},
   &__link {
-    position: static;
+    @include override-body-link-style(static) {
+      @at-root #{selector-unify(&, a)} {
+        color: inherit;
+
+        &:focus {
+          outline-offset: 9999px;
+        }
+      }
+    }
+    display: inline-flex;
+    @include size(100%);
     @include margin-top(auto);
 
     @include before(block, '') {
       @include absolute(0, 0, 0, 0, 100%, 100%);
       @include scheme-element-focus();
     }
-
-    &:focus {
-      outline-offset: 9999px;
-    }
-  }
-
-  &__link {
-    @include remove-body-link-style;
-    display: inline-flex;
-    @include size(100%);
   }
 
   @include respond-from(md) {

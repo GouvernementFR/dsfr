@@ -4,11 +4,14 @@
 ////
 
 .#{$prefix}-link {
-
   @include build-link();
 
-  @include scheme-element-text-color(bf500, true);
-  @include scheme-element-bg-color(t-plain, false, true);
+  @include override-body {
+    @include scheme-element-text-color(bf500, true);
+    @include scheme-element-bg-color(t-plain, false, true);
+  }
+
+
 
   @include disabled-link(true, false, false);
 }

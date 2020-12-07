@@ -3,10 +3,10 @@
 /// @group logo
 ////
 
-.#{$prefix}-logo {
+#{dse(logo)} {
+  @include override-body-link-style;
   display: inline-block;
   font-size: 1rem;
-  box-shadow: none;
   padding: 1em;
 
   &__title {

@@ -3,15 +3,18 @@
 /// @group tags
 ////
 
-#{dse-class(tag)} {
+#{dse(tag)} {
   @include build-tag();
 
   @include scheme-element-text-color(g-800, true);
   @include scheme-element-bg-color(g200, true);
 
-  @include when-element-tag-name-is(a, button) {
-    @include scheme-element-text-color(bf500-plain, true);
-    @include scheme-element-bg-color(bf200-bf300, true, true);
+  @at-root {
+    #{selector-unify(&, a)},
+    #{selector-unify(&, button)} {
+      @include scheme-element-text-color(bf500-plain, true);
+      @include scheme-element-bg-color(bf200-bf300, true, true);
+    }
   }
 
   @include disabled-link(true, true);

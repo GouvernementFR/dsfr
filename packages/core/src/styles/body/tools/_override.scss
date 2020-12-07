@@ -1,0 +1,80 @@
+////
+/// Core Tools : Body lists
+/// @group core
+////
+
+@mixin override-body {
+  @at-root {
+    #{&},
+    .#{$prefix}-body & {
+      @content;
+    }
+  }
+}
+
+@mixin override-body-link-style($position: static, $color-set: null) {
+  @include override-body {
+    box-shadow: none;
+    @if $position != null {
+      position: #{$position};
+    }
+    @if $color-set != null {
+      @include scheme-element-text-color($color-set);
+    }
+    @content;
+  }
+}
+
+@mixin override-body-ul-style {
+  @include override-body {
+    @extend %override-body-unordered-list;
+    @content;
+  }
+}
+
+@mixin override-body-ol-style {
+  @include override-body {
+    @extend %override-body-ordered-list;
+    @content;
+  }
+}
+
+@mixin _override-body-heading($font-size: null, $line-height: null,$font-weight: null, $color-set: null) {
+  @if $font-size != null {
+    font-size: font-size($font-size);
+  }
+  @if $line-height != null {
+    line-height: line-height($line-height);
+  }
+  @if $font-weight != null {
+    font-weight: font-weight($font-weight);
+  }
+  @if $color-set != null {
+    @include scheme-element-text-color($color-set);
+  }
+  @content;
+}
+
+@mixin override-body-heading($font-size: null, $line-height: null,$font-weight: null, $color-set: null, $from: null) {
+  @include override-body {
+    @if $from {
+      @include respond-from(md) {
+        @include _override-body-heading($font-size, $line-height, $font-weight, $color-set) {
+          @content;
+        }
+      }
+    }
+    @else {
+      @include _override-body-heading($font-size, $line-height, $font-weight, $color-set) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin override-body-text-style($size) {
+  @include override-body {
+    @include text-styles($size);
+    @content;
+  }
+}
