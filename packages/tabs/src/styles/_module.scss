@@ -116,6 +116,7 @@
       @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0.125rem 0 0 $COLOR');
       @include scheme-element-bg-color(t-plain, true, true);
       @include scheme-element-text-color(bf500);
+      @include remove-hover();
       cursor: default;
 
       @include after(block, '') {
