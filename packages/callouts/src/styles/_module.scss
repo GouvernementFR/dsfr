@@ -14,24 +14,19 @@
    */
   @include custom-icons(lg) {
     display: block;
-    margin: -(space(1w)) 0 space(1w);
+    @include margin(-2v 0 2v);
 
     @include respond-from(md) {
-      position: absolute;
-      top: space(2w);
-      left: space(2w);
-      margin: 0;
+      @include absolute(4v, null, null, 4v);
+      @include margin(0);
     }
   }
 
   /**
    * Si une icône est présente, on rajoute du padding à partir du breakpoint md
    */
-  &[class^="#{$prefix}-fi"],
-  &[class*=" #{$prefix}-fi"] {
-    @include respond-from(md) {
-      padding: space(7w) space(6w) space(5w);
-    }
+  @include has-icon {
+    @include padding(14v 12v 10v, md);
   }
 
   &__title {

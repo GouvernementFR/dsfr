@@ -53,6 +53,10 @@
   @include group {
     @include override-body-ol-style;
 
+    #{$accordion} {
+      border-bottom: 0;
+    }
+
     @include group-item {
       &:last-child {
         #{$accordion} {

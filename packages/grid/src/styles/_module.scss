@@ -3,7 +3,7 @@
 /// @group grid
 ////
 
-.#{$prefix}-grid-row {
+#{dse(grid-row)} {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -62,7 +62,7 @@
   }
 }
 
-.#{$prefix}-col {
+#{dse(col)} {
   flex: 1;
 
   // alignment

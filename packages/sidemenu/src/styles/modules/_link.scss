@@ -7,7 +7,7 @@
  * Style du lien d'accès direct du sidemnu
  */
 
-.#{$prefix}-sidemenu__link {
+#{dse(sidemenu__link)} {
   display: flex;
   flex-direction: row;
   width: calc(100% - #{space(2N)});

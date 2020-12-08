@@ -81,13 +81,19 @@
 }
 
 @mixin class-is-dse() {
-  @include class-start-with('#{$prefix}-') {
+  @include class-start-with(dse('', '')) {
     @content;
   }
 }
 
 @mixin class-is-not-dse() {
-  @include class-not-start-with('#{$prefix}-') {
+  @include class-not-start-with(dse('', '')) {
+    @content;
+  }
+}
+
+@mixin has-icon() {
+  @include class-start-with(dse(fi-, '')) {
     @content;
   }
 }
@@ -107,6 +113,19 @@
           }
         }
       }
+    }
+  }
+}
+
+@mixin specify($tags...) {
+  $selectors: (&);
+
+  @each $tag in $tags {
+    $selectors: append($selectors, selector-unify(&, $tag));
+  }
+  @at-root {
+    #{$selectors} {
+      @content;
     }
   }
 }

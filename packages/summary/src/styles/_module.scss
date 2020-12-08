@@ -3,7 +3,7 @@
 /// @group summary
 ////
 
-.#{$prefix}-summary {
+#{dse(summary)} {
   padding: space(3N);
   @include scheme-element-bg-color(beige, true);
 
@@ -12,7 +12,7 @@
   }
 }
 
-.#{$prefix}-summary__title {
+#{dse(summary__title)} {
   margin: 0 0 space(2N);
   @include text-styles(xs);
   font-weight: font-weight(bold);
@@ -20,7 +20,7 @@
   @include scheme-element-text-color(g800, true);
 }
 
-.#{$prefix}-summary__list {
+#{dse(summary__list)} {
   @extend %body-ordered-list;
   @include text-styles(xs);
 
@@ -48,6 +48,6 @@
   }
 }
 
-.#{$prefix}-summary__link {
+#{dse(summary__link)} {
   text-decoration: none;
 }

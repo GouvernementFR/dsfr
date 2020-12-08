@@ -34,13 +34,13 @@
     }
   }
 
-  .#{$prefix}-tag {
+  #{dse(tag)} {
     @include margin-right(2v);
     @include margin-bottom(2v);
   }
 
-  a.#{$prefix}-tag,
-  button.#{$prefix}-tag {
+  a#{dse(tag)},
+  button#{dse(tag)} {
     @include margin-right(3v);
     @include margin-bottom(3v);
 

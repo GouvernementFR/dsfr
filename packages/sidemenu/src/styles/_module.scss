@@ -3,7 +3,7 @@
 /// @group sidemenu
 ////
 
-.#{$prefix}-sidemenu {
+#{dse(sidemenu)} {
   position: relative;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
@@ -75,7 +75,7 @@
   &__list {
     font-weight: font-weight('bold');
 
-    .#{$prefix}-sidemenu__list {
+    #{dse(sidemenu__list)} {
       margin: 0 0 0 space(2N);
       font-weight: font-weight();
     }
@@ -96,16 +96,16 @@
     &:last-child {
       border: 0;
 
-      .#{$prefix}-sidemenu__btn {
+      #{dse(sidemenu__btn)} {
         @include scheme-element-border-color(t-plain, true, bottom);
       }
     }
 
     &--active {
-      & > .#{$prefix}-sidemenu__btn {
+      & > #{dse(sidemenu__btn)} {
         @include scheme-element-text-color(bf500);
       }
-      & > .#{$prefix}-sidemenu__link {
+      & > #{dse(sidemenu__link)} {
         @include scheme-element-text-color(bf500);
 
         &::before {

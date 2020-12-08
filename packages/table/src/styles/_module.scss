@@ -5,12 +5,11 @@
 
 /// Selecteur de tableaux
 /// @type String
-$table: "#{$prefix}-table";
 
-.#{$table} {
+#{dse(table)} {
   position: relative;
 
-  &:not(#{$table}--no-scroll) {
+  &:not(#{dse(table--no-scroll)}) {
     overflow: hidden;
 
     table {

@@ -57,7 +57,7 @@
 }
 
 [data-mourning] {
-  .#{$prefix}-logo {
+  #{dse(logo)} {
     &::before {
       $svg-mariane: _color-marianne(black, black);
       background-image: url(_svg-encode($svg-mariane));

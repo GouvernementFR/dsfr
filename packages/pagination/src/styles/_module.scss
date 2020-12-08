@@ -3,7 +3,7 @@
 /// @group pagination
 ////
 
-.#{$prefix}-pagination {
+#{dse(pagination)} {
   &__list {
     display: flex;
     flex-direction: row;

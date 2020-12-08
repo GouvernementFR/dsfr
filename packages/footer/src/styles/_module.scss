@@ -53,7 +53,7 @@
         }
       }
 
-      .#{$prefix}-footer__logo {
+      #{dse(footer__logo)} {
         min-width: initial;
         max-width: 100%;
 

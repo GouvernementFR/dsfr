@@ -5,16 +5,21 @@
 
 $is-declared-in-body: true;
 
-@function dse($name) {
-  $class-name: '.#{$prefix}-#{$name}';
+@function dse($name, $notation: '.') {
+  $class-name: $notation + $prefix + '-' + $name;
   @return $class-name;
 }
 
 @function dse-group($name) {
-  @return dse('#{$name}-group');
+  @return dse($name + '-group');
 }
 
-@function dse-attr($name) {
-  @return 'data-#{dse($name)}';
+@function dse-attr($name, $value: null) {
+  $attr: 'data-#{dse($name, "")}';
+  @if $value == null {
+    @return '[' + $attr + ']';
+  }
+  @else {
+    @return '[' + $attr + '="' + $value + '"]';
+  }
 }
-

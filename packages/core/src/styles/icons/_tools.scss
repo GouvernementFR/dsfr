@@ -16,8 +16,7 @@
 }
 
 @mixin custom-icons($icon-size:md) {
-  &[class^="#{dse(fi-)}"],
-  &[class*=" #{dse(fi-)}"] {
+  @include has-icon {
     @include font-icon(null, $icon-size) {
       @content;
     }

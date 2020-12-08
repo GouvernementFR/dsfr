@@ -7,7 +7,7 @@
  * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
  * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
  */
-.#{$prefix}-sidemenu__btn {
+#{dse(sidemenu__btn)}- {
   position: relative;
   display: flex;
   flex-direction: row-reverse;

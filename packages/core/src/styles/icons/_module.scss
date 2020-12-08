@@ -8,7 +8,7 @@
   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
 }
 
-@include class-start-with('#{$prefix}-fi-') {
+@include has-icon {
   @include before {
     @extend %font-icon;
     font-size: icon-size(md);

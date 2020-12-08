@@ -34,7 +34,7 @@
   /**
    * On surcharge le style du logo de base
    */
-  .#{$prefix}-footer__logo {
+  #{dse(footer__logo)} {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -74,7 +74,7 @@
   flex-basis: 100%;
   padding-top: space(1w);
 
-  + .#{$prefix}-footer__partners-sub {
+  + #{dse(footer__partners-sub)} {
 
     @include respond-from(md) {
       justify-content: flex-end;

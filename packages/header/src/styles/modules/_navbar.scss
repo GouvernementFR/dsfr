@@ -29,7 +29,7 @@
     }
   }
 
-  .#{$prefix}-service {
+  #{dse(service)} {
     margin: (- space(1-5N)) auto (- space(1-5N)) (- space(0-5N));
     padding: space(1-5N);
     position: relative;
@@ -79,7 +79,7 @@
     flex: 0 0 auto;
 
     &--menu,
-    &.#{$prefix}-fi-menu-fill {
+    &#{dse(fi-menu-fill)} {
       @include scheme-element-text-color(g700);
       //@include font-icon-content(menu-fill);
     }

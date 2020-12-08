@@ -114,7 +114,7 @@
   &__content {
     position: relative;
 
-    // + .#{$prefix}-error-text {
+    // + #{dse(error-text)} {
     //   margin-top: space(2N);
     // }
 
@@ -182,5 +182,5 @@
     }
   }
 
-  @include disabled(true, false, false, '.#{$prefix}-label');
+  @include disabled(true, false, false, #{dse(label)});
 }

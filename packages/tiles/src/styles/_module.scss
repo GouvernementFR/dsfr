@@ -3,14 +3,14 @@
 /// @group tiles
 ////
 
-.#{$prefix}-tile {
+#{dse(tile)} {
   position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   @include scheme-element-bg-color(beige, true);
 
-  .#{$prefix}-grid-row & {
+  #{dse(grid-row)} & {
     height: 100%;
   }
 
@@ -62,7 +62,7 @@
     font-weight: font-weight(bold);
     margin: 0;
 
-    + .#{$prefix}-tile__desc {
+    + #{dse(tile__desc)} {
       margin: space(1N) 0 0;
       @include text-styles(sm);
     }
@@ -88,14 +88,14 @@
     &--horizontal {
       flex-direction: row;
 
-      .#{$prefix}-tile__img {
+      #{dse(tile__img)} {
         margin: space(4N) 0 space(4N) space(4N);
         flex-grow: 1;
         flex-basis: auto;
         width: auto;
       }
 
-      .#{$prefix}-tile__body {
+      #{dse(tile__body)} {
         padding: space(4N);
         flex-basis: 70%;
       }

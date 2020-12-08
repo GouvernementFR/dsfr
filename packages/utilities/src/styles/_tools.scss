@@ -37,10 +37,10 @@
     $w: abs($value) / 2;
   }
 
-  $selectors:'.#{$prefix}-#{_spacing-name($prop, $side, $value, v, $breakpoint)}';
+  $selectors:'#{dse(_spacing-name($prop, $side, $value, v, $breakpoint))}';
 
   @if $w != null {
-    $selectors: '#{$selectors},.#{$prefix}-#{_spacing-name($prop, $side, $value / 2, w, $breakpoint)}';
+    $selectors: '#{$selectors},#{dse(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
   }
 
   @return $selectors;

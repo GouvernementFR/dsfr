@@ -104,7 +104,6 @@
     }
   }
 
-  $has-icon: '[class*="#{$prefix}-fi-"]';
   $not-sided: ':not([class*="#{$module}--icon-"])';
 
   @each $place in $places {
@@ -112,29 +111,37 @@
     @each $size, $size-settings in $sizes {
       $placeholder: '#{$module}--icon-#{$place}--#{$size}';
 
-      @at-root #{&}{
+      @at-root #{&} {
         @if $place == only {
           @if $size == md {
-            &#{$has-icon}#{$not-sided} {
-              @extend %#{$placeholder}
+            &#{$not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
             }
           }
           @else {
-            &--#{$size}#{$has-icon}#{$not-sided} {
-              @extend %#{$placeholder}
+            &--#{$size + $not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
             }
           }
         }
         @else {
           @if $size == md {
-            &--icon-#{$place}#{$has-icon} {
-              @extend %#{$placeholder};
+            &--icon-#{$place} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
             }
           }
           @else {
-            &--#{$size}#{&}--icon-#{$place}#{$has-icon}#{$not-sided} {
-               @extend %#{$placeholder};
-             }
+            &--#{$size}#{&}--icon-#{$place + $not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
           }
         }
       }

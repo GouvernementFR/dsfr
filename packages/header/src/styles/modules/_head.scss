@@ -8,7 +8,7 @@
   padding: 0 calc(50vw - 50%);
   @include scheme-element-bg-color(beige, true);
 
-  .#{$prefix}-btn[data-toggle] {
+  #{dse(btn)}[data-toggle] {
     display: block;
     margin: 0 0 0 (- space(1-5N));
     padding: space(1N) space(1-5N);
@@ -21,7 +21,7 @@
     @include scheme-element-text-color(g800);
   }
 
-  .#{$prefix}-collapse {
+  .#{dse(collapse)} {
     overflow: hidden;
 
     &::before {

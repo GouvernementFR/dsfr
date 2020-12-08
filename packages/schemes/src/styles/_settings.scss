@@ -3,8 +3,11 @@
 /// @group schemes
 ////
 
+// TODO: import à enlever après intégration des schemes dans le core
+@import "~@gouvfr/core/src/styles/global/functions/selectors";
+
 // Attribut utilisé pour le dark mode
-$dt: '[data-#{$prefix}-theme="dark"]';
+$dt: '#{dse-attr(theme, "dark")}';
 
 // Sélecteur du dark mode
 $dark-theme-selector: ':root#{$dt}';
@@ -13,13 +16,13 @@ $dark-theme-selector: ':root#{$dt}';
 $not-dark-theme-selector: ':root:not(#{$dt})';
 
 // Base de construction de classe de block de combinaison
-$base-scheme: '#{$prefix}-scheme';
+$base-scheme: #{dse(scheme, '')};
 
 // Base de construction de sélecteur de block de combinaison
-$base-scheme-selector: '.#{$base-scheme}';
+$base-scheme-selector: #{dse(scheme)};
 
 // Sélecteur de transition de couleur
-$theme-transition-selector: ':root[data-#{$prefix}-transition]';
+$theme-transition-selector: ':root#{dse-attr(transition)}';
 
 // Durée de transition de couleur
 $theme-transition-duration: 0.3s;
