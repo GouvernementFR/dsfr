@@ -1,9 +1,16 @@
+////
+/// Tags Tools
+/// @group tags
+////
+
 @include _build-link-placeholders($tags-settings, tag, true);
+
 @mixin build-tag() {
-  @include _build-link($tags-settings, tag);
+  @include _build-link($tags-settings, tag, false, null);
 }
-@mixin tag($size:md, $place: null, $icon:null, $from: null, $align-on-content: false) {
-  @include _link(tag, $size, $place, $icon, $from, $align-on-content, $tags-settings) {
+
+@mixin nest-tag($size:md, $place: null, $icon:null, $from: null, $align-on-content: false) {
+  @include _nest-link(tag, $size, $place, $icon, $from, $align-on-content, $tags-settings) {
     @content;
   }
 }

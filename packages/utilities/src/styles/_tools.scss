@@ -1,4 +1,7 @@
-// Utilities
+////
+/// Utilities Module
+/// @group tools
+////
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
   $start: str_slice($prop, 1, 1);
@@ -45,7 +48,7 @@
 
 @mixin _spacing-property-variations($prop:margin, $value:1, $breakpoint: null) {
 
-  $v: space('#{$value}v');
+  $v: space('#{$value}v') !important;
 
   #{_spacing-selectors($prop, null, $value, $breakpoint)} {
     #{$prop}: $v;

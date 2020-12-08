@@ -3,60 +3,12 @@
 /// @group core
 ////
 
-/*
-  Variables :
-    -> Unit
-    -> Typography
-    -> Spacing
-*/
+@import '../../generated/icons';
 
-@import "settings/disabled";
-@import "settings/typography";
-@import "z-index/settings";
-
-/* `````````````````````
-  Spacing
-````````````````````` */
-$base-unit: 8px;
-
-/// $space-scale
-$space-scale: (
-  0: 0,
-  0-5N: 4px,
-  1N: 8px,
-  1-5N: 12px,
-  2N: 16px,
-  2-5N: 20px,
-  3N: 24px,
-  3-5N: 28px,
-  4N: 32px,
-  5N: 40px,
-  6N: 48px,
-  7N: 56px,
-  8N: 64px,
-  9N: 72px,
-  12N: 96px,
-  15N: 120px
-);
-
-// Transition
-$base-transition-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-
-// Breakpoints
-$breakpoints: (
-  xs: 0 35.98em,
-  sm: 36em 47.98em,
-  md: 48em 61.98em,
-  lg: 62em 74.98em,
-  xl: 75em,
-) !default;
-
-
-
-// shadows
-$shadow-sm: 0 1px 4px 0 rgba(0, 0, 0, 0.23), 0 2px 0 -2px rgba(0, 0, 0, 0.16), 0 1px 1px 0 rgba(0, 0, 0, 0.16);
-$shadow-md: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
-
-/// $container-max-width
-$container-max-width: 1136px !default;
-
+@import 'body/settings';
+@import 'global/settings';
+@import 'grid/settings';
+@import 'icons/settings';
+@import 'medias/settings';
+@import 'spacing/settings';
+@import 'typography/settings';

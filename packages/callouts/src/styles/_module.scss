@@ -1,61 +1,44 @@
+////
+/// Callouts Module
+/// @group callouts
+////
+
 .#{$prefix}-callout {
   position: relative;
   font-family: $font-family-sans;
-  padding: space(3N);
-  @include component-as-scheme(light, grey-200, false, 0 0 0 space(0-5N));
+  padding: space(3w);
+  @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
-  @include respond-from(md) {
-    padding: space(4N) space(6N);
-  }
-
+  /**
+   * Inclusion de l'icône (optionnel)
+   */
   @include custom-icons(lg) {
     display: block;
-    margin: -(space(1N)) 0 space(1N);
+    margin: -(space(1w)) 0 space(1w);
 
     @include respond-from(md) {
       position: absolute;
-      top: space(2N);
-      left: space(2N);
+      top: space(2w);
+      left: space(2w);
       margin: 0;
     }
   }
 
+  /**
+   * Si une icône est présente, on rajoute du padding à partir du breakpoint md
+   */
   &[class^="#{$prefix}-fi"],
   &[class*=" #{$prefix}-fi"] {
     @include respond-from(md) {
-      padding: space(7N) space(6N) space(5N);
+      padding: space(7w) space(6w) space(5w);
     }
-  }
-
-  /*
-  > .#{$prefix}-icon {
-    @include respond-from(md) {
-
-    }
-  }
-
-  > .#{$prefix}-fi {
-    @include font-size(24);
-    margin: -(space(1N)) 0 space(1N);
-
-    @include respond-from(md) {
-      position: absolute;
-      top: space(2N);
-      left: space(2N);
-      margin: 0;
-    }
-  }
-   */
-
-  .#{$prefix}-btn {
-    margin-top: space(2N);
   }
 
   &__title {
     font-size: font-size(22);
     line-height: line-height("snug");
     @include scheme-element-text-color(g800, true);
-    margin: 0 0 space(1N);
+    margin: 0 0 space(1w);
   }
 
   &__text {
@@ -63,9 +46,23 @@
     @include text-styles();
   }
 
+  /**
+   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   */
   &__text#{&}__text--lg {
     @include text-styles(lg);
   }
 
-  @include component-as-scheme-modifiers(soft, 0 0 0 space(0-5N));
+  @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
+
+  /**
+   * Ajout de marge quand on inclut un bouton (optionnel)
+   */
+  .#{$prefix}-btn {
+    margin-top: space(2w);
+  }
+
+  @include respond-from(md) {
+    padding: space(4w) space(6w);
+  }
 }

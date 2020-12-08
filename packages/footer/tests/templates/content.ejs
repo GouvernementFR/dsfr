@@ -1,11 +1,11 @@
 <div class="<%= prefix %>-footer__content" >
 	<p class="<%= prefix %>-footer__content-desc"><%- desc %></p>
-	<ul class="<%= prefix %>-footer__content-links">
+	<ul class="<%= prefix %>-footer__content-list">
 		<%
 			for (let i = 0; i < links.length; i++) {
 		%>
 		<li>
-			<a href="http://<%= links[i].label %>"><%= links[i].label %></a>
+			<a class="footer_content-link" href="http://<%= links[i].label %>"><%= links[i].label %></a>
 		</li>
 		<% } %>
 	</ul>

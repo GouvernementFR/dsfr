@@ -1,0 +1,38 @@
+////
+/// Core Module : Global reset
+/// @group core
+////
+
+/**
+ * Reset global des éléments du design system
+ */
+@include dse-all-selector() {
+  box-sizing: border-box;
+}
+
+@include dse-class() {
+  font-family: $font-family-sans;
+  @include scheme-element-text-color(g700, true);
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ul,
+  ol {
+    @extend %list-reset;
+  }
+
+  a {
+    @include not-dse-class {
+      @extend %a-reset;
+      color: inherit;
+    }
+  }
+}
+
+ul,
+ol {
+  @include dse-class() {
+    @extend %list-reset;
+  }
+}

@@ -1,0 +1,77 @@
+////
+/// Core Module : Body lists
+/// @group core
+////
+
+%base-body-list {
+  font-size: font-size();
+  line-height: line-height();
+  margin: 0 0 space(1N);
+  padding: 0;
+
+  li {
+    margin-bottom: space(1N);
+  }
+
+  ul,
+  ol {
+    margin: space(1N) 0 space(2N);
+  }
+}
+
+@at-root %body-unordered-list {
+  @extend %base-body-list;
+
+  li {
+    @include before(null, '\2022') {
+      font-size: 1.4em;
+      margin-right: space(1N);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: space(1N) 0 space(1N) space(3N);
+
+    li {
+      @include before(null, '•') {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+@at-root %body-ordered-list {
+  @extend %base-body-list;
+  counter-reset: list-number;
+
+  ol {
+    padding-left: space(3N);
+
+    li {
+      @include before {
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  li {
+    counter-increment: list-number;
+    @include before(null, counters(list-number, ".") ".") {
+      font-weight: 700;
+      margin-right: space(1N);
+    }
+  }
+}
+
+ul {
+  @include class-not-contains($lists-prevent-stylization-list) {
+    @extend %body-unordered-list;
+  }
+}
+
+ol {
+  @include class-not-contains($lists-prevent-stylization-list) {
+    @extend %body-ordered-list;
+  }
+}

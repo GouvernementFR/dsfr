@@ -9,7 +9,7 @@
 
   $sets: _get-scheme(light, white);
 
-  /// Par défault, on applique le scheme light white sur le body
+  // Par défault, on applique le scheme light white sur le body
   @at-root body {
     background-color: var(--#{nth($sets, 1)});
 
@@ -18,7 +18,7 @@
     }
   }
 
-  /// On créé un nouveau bloc de couleur pour chaque type présent dans la configuration
+  // On créé un nouveau bloc de couleur pour chaque type présent dans la configuration
   @each $type, $variation in $scheme-blocks {
     $base: #{$base-scheme-selector}-#{$type};
 
@@ -31,17 +31,17 @@
 
         --scheme-border: var(--#{nth($sets, 2)});
 
-        /// Définition des variables de couleur de l'hover par rapport à la couleur de fond du block pour l'hover d'un élément transparent
+        // Définition des variables de couleur de l'hover par rapport à la couleur de fond du block pour l'hover d'un élément transparent
         @include _get-hover-vars(_scheme-set-color($set, light), true);
 
-        /// Les variables de couleur hover en version dark-mode
+        // Les variables de couleur hover en version dark-mode
         #{$dark-theme-selector} & {
           @include _get-hover-vars(_scheme-set-color($set, dark), true);
         }
       }
     }
 
-    /// Ajout de border et de transition associés au type de la combinaison
+    // Ajout de border et de transition associés au type de la combinaison
     @at-root [class*="#{$base-scheme}-#{$type}"] {
       @include _scheme-block-border(#{$base-scheme-selector}, space(0-5N));
 

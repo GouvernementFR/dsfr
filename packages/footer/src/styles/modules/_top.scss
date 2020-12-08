@@ -1,0 +1,43 @@
+////
+/// Footer module : Top
+/// @group Footer
+////
+
+&__top {
+  display: flex;
+  @include scheme-element-bg-color(beige, true);
+  margin: -(space(5w)) 0 space(5w);
+  padding: space(2w) 0;
+}
+
+&__top-cat {
+  margin: 0 0 space(1w);
+  font-size: font-size(12);
+  font-weight: font-weight(bold);
+  text-align: center;
+
+  @include respond-from(sm) {
+    text-align: left;
+  }
+}
+
+&__top-list {
+  text-align: center;
+  margin: 0;
+
+  > li {
+    &::before {
+      content: none;
+    }
+  }
+
+  @include respond-from(sm) {
+    text-align: left;
+  }
+}
+
+&__top-link {
+  text-decoration: none;
+  font-size: font-size(12);
+  @include scheme-element-text-color(g600, true);
+}

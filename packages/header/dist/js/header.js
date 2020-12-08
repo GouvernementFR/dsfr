@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 37);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,7 +161,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 39:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -207,17 +207,17 @@ var Header = /*#__PURE__*/function () {
       this.nav = this.header.querySelector('.rf-nav');
       this.navItems = this.header.querySelectorAll('.rf-nav .rf-nav__item') || [];
       var append = this.numId === 0 ? '' : '-' + this.numId;
+      this.shortcuts = this.header.querySelector('.rf-header__tools .rf-shortcuts');
+      this.navList = this.header.querySelector('.rf-nav .rf-nav__list');
 
       if (this.searchBar) {
         this.popins.push(new header_HeaderPopin('header-tools-popin' + append, 'search-line', 'Rechercher', this.tools, navbar));
       }
 
-      if (this.navItems.length > 0) {
+      if (this.navItems.length > 0 || this.shortcuts != null) {
         this.popins.push(new header_HeaderPopin('header-nav-popin' + append, 'menu-fill', 'Ouvrir le menu', this.nav, navbar));
       }
 
-      this.shortcuts = this.header.querySelector('.rf-header__tools .rf-shortcuts');
-      this.navList = this.header.querySelector('.rf-nav .rf-nav__list');
       this.changing = this.change.bind(this);
       window.addEventListener('resize', this.changing);
       window.addEventListener('orientationchange', this.changing);
