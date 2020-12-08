@@ -15,23 +15,37 @@
    */
   &__input {
     flex-shrink: 0;
-    @include z-index(under);
     width: space(5w);
     height: space(3w);
     border-radius: space(5w);
-    @include scheme-element-border-color(bf500);
     margin: 0;
     outline: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
     @include scheme-element-focus();
     @include disabled-toggle-choice();
 
     /*
-     * On applique des styles aux pseudo-elements du label quand l'input est check
-     * On récupère le texte d'état check (optionnel) via le data-attribute data-rf-checked-label
+    * Provisoire pour tester sur IE11
+    */
+    @include ie-hack() {
+      box-shadow: inset 0 0 0 1px blue;
+    }
+
+    /*
+     * On applique des styles aux pseudo-elements du label quand l'input est check.
+     * On change l'ordre du texte d'état du label dans le content pour afficher
+     * la valeur correspondant à l'état checked (optionnel).
      */
     &:checked {
       @include scheme-element-bg-color(bf500);
+
+      @include ie-hack() {
+        background: blue;
+      }
 
       ~ .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
       ~ .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
@@ -42,25 +56,13 @@
         transform: translateX(space(2w));
         text-indent: 0;
       }
-
-      &::-ms-check {
-        background: blue;
-        text-indent: 9999px;
-        color: blue;
-        @include scheme-element-bg-color(bf500);
-      }
     }
 
     /*
      * Hack pour IE11
      */
-
     &::-ms-check {
-      width: space(5w);
-      border-radius: space(5w);
-      border: 1px solid blue;
-      text-indent: 9999px;
-      // @include scheme-element-border-color(bf500);
+      display: none;
     }
   }
 
@@ -69,6 +71,10 @@
     min-height: space(3w);
     padding-left: space(2w);
 
+    /*
+     * Si les data attributes sont présents, on assigne un content au pseudo element before,
+     * et on enlève le padding left du label.
+     */
     &[data-#{$prefix}-unchecked-label],
     &[data-#{$prefix}-checked-label] {
       padding-left: 0;
@@ -93,6 +99,13 @@
       @include scheme-element-text-color(bf500);
       white-space: pre-wrap;
       overflow: hidden;
+
+      /*
+      * Provisoire pour tester sur IE11
+      */
+      @include ie-hack() {
+        color: blue;
+      }
     }
 
     /*
@@ -114,6 +127,11 @@
       @include scheme-element-border-color(bf500);
       @include scheme-element-bg-color(w-g750);
       @include z-index(over);
+      @include ie-hack() {
+        color: blue;
+        border: 1px solid blue;
+        background: #fff;
+      }
     }
   }
 

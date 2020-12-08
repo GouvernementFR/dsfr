@@ -15,6 +15,9 @@
   }
 }
 
+/*
+ * Passage du label ferré à gauche, le toggle ferré à droite
+ */
 &--label-left {
   .#{$prefix}-toggle__input {
     order: 1;
