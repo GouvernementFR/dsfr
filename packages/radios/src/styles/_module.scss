@@ -52,8 +52,10 @@
       -ms-grid-row: 2;
       -ms-grid-column: 2;
       align-items: center;
-      -ms-grid-columns: space(8v) 1fr;
-      grid-template-columns: space(8v) 1fr;
+      -ms-grid-columns: 1fr space(8v);
+      grid-template-columns: 1fr space(8v);
+      text-align: left;
+      direction: rtl;
 
       @include radio-rich() {
         justify-content: center;
@@ -103,9 +105,9 @@
         margin: 0;
         // flex: 0 0 auto;
         grid-row: 2;
-        grid-column: 2;
+        grid-column: 1;
         -ms-grid-row: 2;
-        -ms-grid-column: 2;
+        -ms-grid-column: 1;
       }
 
       @include before() {
@@ -124,8 +126,8 @@
         transition: transform 0.3s;
         grid-row: 1;
         -ms-grid-row: 1;
-        grid-column: 1;
-        -ms-grid-column: 1;
+        grid-column: 2;
+        -ms-grid-column: 2;
         align-items: center;
         -ms-align-items: center;
       }
