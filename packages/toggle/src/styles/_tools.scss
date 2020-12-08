@@ -1,7 +1,7 @@
 @mixin disabled-toggle-choice() {
   @at-root #{selector_unify(&, input)} {
     @include disabled(true, false, false) {
-      @include disabled-colors(false, true, border);
+      @include disabled-colors(false, true, true);
       @content;
     }
     @include disabled(true, false, false, '+ label') {
