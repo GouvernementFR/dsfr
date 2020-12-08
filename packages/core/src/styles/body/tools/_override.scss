@@ -6,7 +6,7 @@
 @mixin override-body {
   @at-root {
     #{&},
-    .#{$prefix}-body & {
+    #{dse(body)} & {
       @content;
     }
   }

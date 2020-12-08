@@ -13,3 +13,8 @@ $is-declared-in-body: true;
 @function dse-group($name) {
   @return dse('#{$name}-group');
 }
+
+@function dse-attr($name) {
+  @return 'data-#{dse($name)}';
+}
+

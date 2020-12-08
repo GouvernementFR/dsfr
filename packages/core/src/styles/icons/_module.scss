@@ -15,7 +15,7 @@
   }
 }
 
-.#{$prefix}-fi {
+#{dse(fi)} {
   @each $size, $value in $icon-size-map {
     @if $size != md {
       &--#{$size} {

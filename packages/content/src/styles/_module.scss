@@ -3,7 +3,7 @@
 /// @group content
 ////
 
-.#{$prefix}-content-media {
+#{dse(content-media)} {
   width: 100%;
   margin: space(5N) 0;
   display: flex;
@@ -37,7 +37,7 @@
     @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
-  $medias: (&__img, '.#{$prefix}-responsive-vid');
+  $medias: (&__img, dse(responsive-vid));
   $captions: (&__caption, &__transcription);
 
   @include content-media-sizes($medias, $captions, 25%);
