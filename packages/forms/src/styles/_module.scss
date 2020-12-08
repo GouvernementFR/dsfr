@@ -51,7 +51,7 @@
   font-family: $font-family-sans;
   margin-top: 0;
   margin-bottom: 0;
-  flex: 100%;
+  display: block;
 
   @include scheme-element-text-color(g600, true);
 
