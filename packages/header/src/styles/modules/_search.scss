@@ -3,7 +3,7 @@
 /// @group header
 ////
 
-.#{dse(search-bar)} {
+#{dse(search-bar)} {
   margin-top: space(2-5N);
 
   @include respond-from(md) {
