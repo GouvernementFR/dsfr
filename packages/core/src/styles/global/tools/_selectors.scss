@@ -1,0 +1,135 @@
+////
+/// Core Tools : Global selectors
+/// @group core
+////
+
+@mixin class-contains($patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}[class*="#{$pattern}"]';
+  }
+  @if & != null {
+    $selectors:  #{selector-unify(&, $selectors)};
+  }
+  @at-root #{$selectors} {
+    @content;
+  }
+}
+
+@mixin class-not-contains($patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
+  }
+  @if & != null {
+    $selectors:  #{selector-unify(&, $selectors)};
+  }
+  @at-root #{$selectors} {
+    @content;
+  }
+}
+
+@mixin class-start-with($start) {
+  $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin class-not-start-with($start) {
+  $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin class-end-with($end) {
+  $selector: '[class$="#{$end}"], [class*="#{$end} "]';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin class-not-end-with($end) {
+  $selector: ':not([class$="#{$end}"]):not([class*="#{$end} "])';
+  @if & != null {
+    $selector:  #{selector-unify(&, $selector)};
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+@mixin dse-class() {
+  @include class-start-with('#{$prefix}-') {
+    @content;
+  }
+}
+
+@mixin not-dse-class() {
+  @include class-not-start-with('#{$prefix}-') {
+    @content;
+  }
+}
+
+@mixin selector-insert($selectors...) {
+  $selector: '&';
+  @for $i from 0 to length($selectors) {
+    $selector: '#{$selector}, #{nth($selectors, $i + 1)}';
+  }
+  @at-root {
+    #{&} {
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
+
+/// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
+/// @access public
+@mixin dse-all-selector() {
+  @include dse-class {
+    @include selector-insert('& *') {
+      @include selector-insert('&::before', '&::after') {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin when-element-tag-name-is($tag-names...) {
+  $selectors:();
+
+  $parts: selector_parse(&);
+
+  @debug nth($parts, length($parts));
+
+  @each $tag-name in $tag-names {
+    $selectors: append($selectors, #{$tag-name}#{&}, $separator: comma);
+  }
+
+  @at-root #{$selectors} {
+    @content;
+  }
+}

@@ -1,0 +1,77 @@
+<%- include('./samples/headings'); %>
+<%- snippet(include('./samples/headings')); %>
+
+<%- include('./samples/displays'); %>
+<%- snippet(include('./samples/displays')); %>
+
+<%
+    const sizes = [
+        {
+            title: 'Style Chapo',
+            size: 'lead'
+        },
+        {
+            title: 'Style LG',
+            size: 'lg'
+        },
+        {
+            title: 'Style MD'
+        },
+        {
+            title: 'Style SM',
+            size: 'sm'
+        },
+        {
+            title: 'Style XS',
+            size: 'xs'
+        }
+    ];
+
+    for (var i = 0; i < sizes.length; i++) {
+      let data = { ... sizes[i], title: undefined}
+%>
+
+    <h4 class="<%= prefix %>-h4" ><%= sizes[i].title %></h4>
+    <%- include('./samples/p', data) %>
+    <%- include('./samples/snippet-p', data) %>
+<% } %>
+
+ <%
+     const weights = [
+         {
+             title: 'Graisse light',
+             weight: 'light'
+         },
+         {
+             title: 'Graisse regular',
+             weight: 'regular'
+         },
+         {
+             title: 'Graisse bold',
+             weight: 'bold'
+         },
+         {
+             title: 'Fonte Spectral, graisse regular',
+             weight: 'regular',
+             alt:true
+         },
+         {
+             title: 'Fonte Spectral, graisse extra-bold',
+             weight: 'xx-bold',
+             alt:true
+         }
+     ];
+
+     for (var i = 0; i < weights.length; i++) {
+       let data = { ... weights[i], title: undefined};
+ %>
+
+<h4 class="<%= prefix %>-h4" ><%= weights[i].title %></h4>
+<%- include('./samples/p', data) %>
+<%- include('./samples/snippet-p', data) %>
+<% } %>
+
+
+
+
+

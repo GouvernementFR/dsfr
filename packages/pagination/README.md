@@ -8,7 +8,7 @@ pagination
 └─ schemes
 └─ core
 └─ icons
-└─ typography
+└─ body
 ```
 
 ## Installation

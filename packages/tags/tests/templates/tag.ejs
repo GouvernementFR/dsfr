@@ -45,12 +45,14 @@
 
  }
 
+ if (locals.disabled === true) tagAttrs.disabled = true;
+
  tagAttrs.target = locals.blank === true ? '_blank' : '_self';
 
  %>
 
 <% if(locals.group) { %>
-    <ul class="<%= prefix %>-tag-list">
+    <ul class="<%= prefix %>-tags-group">
     <% for (let i = 0; i < 9; i++) { %>
         <li>
             <% if(locals.clickable) { %>
@@ -64,6 +66,8 @@
 <% } else { %>
     <% if(locals.clickable) { %>
         <a href="#" <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></a>
+    <% } else if (locals.button) { %>
+        <button <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></button>
     <% } else { %>
         <span <%- includeClasses(tagClasses)%>><%- label %></span>
     <% } %>

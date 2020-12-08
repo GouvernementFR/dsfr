@@ -1,32 +1,29 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
 .rf-footer {
   width: 100%;
   border-top: 2px solid var(--bf500);
   border-bottom: 1px solid var(--g400);
   padding-top: 2.5rem;
   line-height: 1.5; }
-  :root[data-transition] .rf-footer {
-    transition: border-top 0.3s; }
-  :root[data-transition] .rf-footer {
-    transition: border-top 0.3s, border-bottom 0.3s; }
   .rf-footer__body {
     display: flex;
     flex-wrap: wrap; }
@@ -120,8 +117,6 @@
     margin-top: 2.5rem;
     padding: 0 0 1rem;
     border-top: 1px solid var(--g400); }
-    :root[data-transition] .rf-footer__bottom {
-      transition: border-top 0.3s; }
     @media (min-width: 36em) {
       .rf-footer__bottom {
         flex-wrap: nowrap;
@@ -145,8 +140,6 @@
         width: 1px;
         margin-right: 0.5rem;
         background-color: var(--g400); }
-        :root[data-transition] .rf-footer__bottom-list > li::before {
-          transition: background-color 0.3s; }
         @media (min-width: 36em) {
           .rf-footer__bottom-list > li::before {
             margin-right: 0.25rem; } }
@@ -158,8 +151,6 @@
         box-shadow: none;
         font-size: 0.75rem;
         color: var(--g600); }
-        :root[data-transition] .rf-footer__bottom-list > li > a {
-          transition: color 0.3s; }
       @media (min-width: 36em) {
         .rf-footer__bottom-list > li {
           margin: 0.5rem 0 0 0.25rem; } }
@@ -170,15 +161,11 @@
     box-shadow: none;
     font-size: 0.75rem;
     color: var(--g600); }
-    :root[data-transition] .rf-footer__link {
-      transition: color 0.3s; }
   .rf-footer__bottom-copy {
     flex-shrink: 0;
     font-size: 0.75rem;
     color: var(--g600);
     margin-top: 1rem; }
-    :root[data-transition] .rf-footer__bottom-copy {
-      transition: color 0.3s; }
     @media (min-width: 36em) {
       .rf-footer__bottom-copy {
         margin-top: 0;
@@ -188,8 +175,6 @@
     background-color: var(--beige);
     margin: -2.5rem 0 2.5rem;
     padding: 1rem 0; }
-    :root[data-transition] .rf-footer__top {
-      transition: background-color 0.3s; }
   .rf-footer__top-cat {
     margin: 0 0 0.5rem;
     font-size: 0.75rem;
@@ -207,8 +192,6 @@
       box-shadow: none;
       font-size: 0.75rem;
       color: var(--g600); }
-      :root[data-transition] .rf-footer__top-list > li > a {
-        transition: color 0.3s; }
     @media (min-width: 36em) {
       .rf-footer__top-list {
         text-align: left; } }
@@ -216,8 +199,6 @@
     margin-top: 2.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--g400); }
-    :root[data-transition] .rf-footer__partners {
-      transition: border-top 0.3s; }
     .rf-footer__partners a {
       display: flex;
       align-items: center;

@@ -5,10 +5,10 @@
 
 /// Component as scheme permet de conférer à un composant le statut de block de combinaison de couleur
 /// @access public
-/// @param {String} $type: le type de combinaison, voir settings blocks
-/// @param {String} $color: la couleur du type
-/// @param {Boolean} $modifier: est-ce que la couleur est assignée au composant par un modifier
-/// @param {List} $width: ajout d'une border avec la propriété width déterminant la taille de chacun des 4 côté (comme la propriété css border-width)
+/// @param {String} $type - le type de combinaison, voir settings blocks
+/// @param {String} $color - la couleur du type
+/// @param {Boolean} $modifier - est-ce que la couleur est assignée au composant par un modifier
+/// @param {List} $width - ajout d'une border avec la propriété width déterminant la taille de chacun des 4 côté (comme la propriété css border-width)
 @mixin component-as-scheme($type:light, $color:grey-100, $modifier:false, $width: none) {
 
   $selector: &;
@@ -33,8 +33,8 @@
 
 /// Cette mixin permet d'assigner à un composant tous les modifiers d'un type de combinaison
 /// @access public
-/// @param {String} $type: le type de combinaison, voir settings blocks
-/// @param {List} $width: ajout d'une border avec la propriété width déterminant la taille de chacun des 4 côté (comme la propriété css border-width)
+/// @param {String} $type - le type de combinaison, voir settings blocks
+/// @param {List} $width - ajout d'une border avec la propriété width déterminant la taille de chacun des 4 côté (comme la propriété css border-width)
 @mixin component-as-scheme-modifiers($type, $width: none) {
   $variation: map_get($scheme-blocks, $type);
 

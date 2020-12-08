@@ -1,0 +1,15 @@
+////
+/// Core Settings : Icons
+/// @group core
+////
+
+/// $icon-size-map
+$icon-size-map: (
+  sm: 12px,
+  md: 16px,
+  lg: 24px,
+  xl: 32px
+);
+
+/// $sprite-path
+$sprite-path: 'assets/sprite/' !default;

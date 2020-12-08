@@ -1,39 +1,11 @@
-@import 'modules/reset';
+////
+/// Core Module
+/// @group core
+////
 
-@include font-face('Marianne', 'Marianne-Light', 300);
-@include font-face('Marianne', 'Marianne-Light_Italic', 300, italic);
-@include font-face('Marianne', 'Marianne-Regular', 400);
-@include font-face('Marianne', 'Marianne-Regular_Italic', 400, italic);
-@include font-face('Marianne', 'Marianne-Bold', 700);
-@include font-face('Marianne', 'Marianne-Bold_Italic', 700, italic);
-@include font-face('Spectral', 'Spectral-Regular', 400);
-@include font-face('Spectral', 'Spectral-ExtraBold', 900);
-
-@include font-weight();
-
-.#{$prefix}-sr-only {
-  @include sr-only();
-}
-
-//@include sr-only-from();
-//@include sr-only-to();
-
-.#{$prefix}-fi {
-  &--sm::before {
-    font-size: icon-size(sm);
-  }
-
-  &--md::before {
-    font-size: icon-size(md);
-  }
-
-  &--lg::before {
-    font-size: icon-size(lg);
-  }
-
-  &--xl::before {
-    font-size: icon-size(xl);
-  }
-}
-
-@import 'z-index/module';
+@import 'global/module';
+@import 'icons/module';
+@import 'typography/module';
+@import 'body/module';
+@import 'grid/module';
+@import 'medias/module';

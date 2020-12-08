@@ -1,27 +1,32 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+@charset "UTF-8";
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
+.rf-fieldset[disabled] .rf-label, .rf-fieldset:disabled .rf-label {
+  cursor: not-allowed; }
+
 .rf-error-text::before {
-  content: "\f106"; }
+  content: ""; }
 
 .rf-valid-text::before {
-  content: "\f116"; }
+  content: ""; }
 
 .rf-error-text::before, .rf-valid-text::before {
   font-family: icons !important;
@@ -45,7 +50,7 @@
 
 .rf-select-group--disabled .rf-label,
 .rf-input-group--disabled .rf-label {
-  color: var(--g600-g500); }
+  color: var(--g600-g400); }
 
 .rf-label {
   display: block;
@@ -53,8 +58,6 @@
   line-height: 1.5;
   font-family: "Marianne", arial, sans-serif;
   color: var(--g800); }
-  :root[data-transition] .rf-label {
-    transition: color 0.3s; }
   .rf-label--error {
     color: var(--error); }
   .rf-label + .rf-input,
@@ -68,8 +71,6 @@
   margin-top: 0;
   margin-bottom: 0;
   color: var(--g600); }
-  :root[data-transition] .rf-hint-text {
-    transition: color 0.3s; }
   .rf-hint-text + .rf-input,
   .rf-hint-text + .rf-input-wrap,
   .rf-hint-text + .rf-select {
@@ -83,8 +84,6 @@
   font-family: "Marianne", arial, sans-serif;
   margin-top: 0.5rem;
   color: var(--error); }
-  :root[data-transition] .rf-error-text {
-    transition: color 0.3s; }
   .rf-error-text::before {
     font-size: 0.75rem;
     display: inline-block;
@@ -98,8 +97,6 @@
   font-family: "Marianne", arial, sans-serif;
   margin-top: 0.5rem;
   color: var(--success); }
-  :root[data-transition] .rf-valid-text {
-    transition: color 0.3s; }
   .rf-valid-text::before {
     font-size: 0.75rem;
     display: inline-block;
@@ -114,8 +111,6 @@
   padding: 0;
   border: 0;
   color: var(--g800); }
-  :root[data-transition] .rf-fieldset {
-    transition: color 0.3s; }
   .rf-fieldset .rf-hint-text {
     margin-bottom: 1rem; }
   .rf-fieldset__legend {
@@ -156,8 +151,6 @@
     bottom: 0.75rem;
     left: -0.5rem;
     background-color: var(--error); }
-    :root[data-transition] .rf-fieldset--error .rf-fieldset__content::before {
-      transition: background-color 0.3s; }
   .rf-fieldset--error .rf-label {
     color: var(--error); }
   .rf-fieldset--valid .rf-fieldset__content::before {
@@ -170,8 +163,8 @@
     background-color: var(--success); }
   .rf-fieldset--valid .rf-label {
     color: var(--success); }
-  .rf-fieldset:disabled .rf-label {
-    color: var(--g600-g500); }
+  .rf-fieldset[disabled] .rf-label, .rf-fieldset:disabled .rf-label {
+    color: var(--g600-g400); }
 
 
 /*# sourceMappingURL=forms.css.map*/

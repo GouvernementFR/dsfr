@@ -7,7 +7,7 @@ La mise en exergue permet à l’utilisateur de distinguer et repérer une infor
 highlights
 └─ schemes
 └─ core
-└─ typography
+└─ body
 ```
 
 ## Installation

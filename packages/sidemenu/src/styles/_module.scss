@@ -5,7 +5,7 @@
 
 .#{$prefix}-sidemenu {
   position: relative;
-  box-shadow: $shadow-md;
+  @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
 
   /**
