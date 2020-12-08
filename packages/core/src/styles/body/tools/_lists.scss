@@ -19,20 +19,6 @@
   }
 }
 
-%override-base-body-list {
-  font-size: inherit;
-  @include margin(0);
-
-  li {
-    @include margin-bottom(0);
-  }
-
-  ul,
-  ol {
-    @include margin(0);
-  }
-}
-
 %body-unordered-list {
   @extend %base-body-list;
 
@@ -50,27 +36,6 @@
     li {
       @include before(null, '•') {
         font-size: 0.9em;
-      }
-    }
-  }
-}
-
-%override-body-unordered-list {
-  @extend %override-base-body-list;
-
-  li {
-    @include before(null, none) {
-      font-size: inherit;
-      @include margin-right(0);
-    }
-  }
-
-  ul {
-    @include margin(0);
-
-    li {
-      @include before(null, none) {
-        font-size: inherit;
       }
     }
   }
@@ -95,29 +60,6 @@
     @include before(null, counters(list-number, ".") ".") {
       font-weight: 700;
       @include margin-right(2v);
-    }
-  }
-}
-
-%override-body-ordered-list {
-  @extend %override-base-body-list;
-  counter-reset: none;
-
-  ol {
-    @include padding-left(0);
-
-    li {
-      @include before {
-        font-size: inherit;
-      }
-    }
-  }
-
-  li {
-    counter-increment: none;
-    @include before(null, none) {
-      font-weight: inherit;
-      @include margin-right(0);
     }
   }
 }

@@ -30,6 +30,7 @@
 }
 
 &__content-list {
+  @include override-body-ul-style;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -47,12 +48,6 @@
       margin-right: 0;
     }
 
-    > a {
-      display: inline-flex;
-      font-weight: font-weight(bold);
-      box-shadow: none;
-    }
-
     @include respond-from(sm) {
       margin-right: space(7w);
     }
@@ -62,4 +57,12 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+
+&__content-link {
+  @include override-body-link-style;
+  @include scheme-element-text-color(g800);
+  display: inline-flex;
+  font-weight: font-weight(bold);
+  //box-shadow: none;
 }

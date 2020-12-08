@@ -18,54 +18,41 @@
 }
 
 &__bottom-list {
+  @include override-body-ul-style('');
   flex-wrap: wrap;
   align-items: center;
-  padding: space(1w) 0;
-  width: 100%;
-  margin: 0;
+  @include padding(2v 0);
+  @include padding(4v 0, md);
+  @include size(100%);
+  @include margin(0);
+}
 
-  > li {
+&__bottom-item {
+  position: relative;
+  @include margin(2v 0 0 2v);
+  @include margin(2v 0 0 1v, sm);
+  display: inline;
+
+  @include before(inline, '') {
+    vertical-align: middle;
     position: relative;
-    margin: space(1w) 0 0 space(1w);
-    display: inline;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      vertical-align: middle;
-      position: relative;
-      height: space(2w);
-      width: 1px;
-      margin-right: space(1w);
-      @include scheme-element-bg-color(g400, true);
-
-      @include respond-from(sm) {
-        margin-right: space(1v);
-      }
-    }
-
-    &:first-child {
-      margin: space(1w) 0 0;
-
-      &::before {
-        content: none;
-      }
-    }
-
-    @include respond-from(sm) {
-      margin: space(1w) 0 0 space(1v);
-    }
+    @include size(1px, 4v);
+    @include margin-right(2v);
+    @include margin-right(1v, sm);
+    @include scheme-element-bg-color(g400, true);
   }
 
-  @include respond-from(sm) {
-    padding: space(2w) 0;
+  &:first-child {
+    @include margin(2v 0 0);
+    @include before(null, none);
   }
 }
 
 &__bottom-link {
-  text-decoration: none;
+  @include override-body-link-style {
+    @include scheme-element-text-color(g600, true);
+  }
   font-size: font-size(12);
-  @include scheme-element-text-color(g600, true);
 }
 
 &__bottom-copy {
