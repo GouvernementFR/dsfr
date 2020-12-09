@@ -30,25 +30,22 @@
   }
 
   &__title {
-    @include override-body-heading {
-      font-size: font-size(22);
-      line-height: line-height("snug");
-      @include scheme-element-text-color(g800, true);
-      @include margin(0 0 2v);
-    }
+    font-size: font-size(22);
+    line-height: line-height("snug");
+    @include scheme-element-text-color(g800, true);
+    @include margin(0 0 2v);
   }
 
   &__text {
-    @include override-body-text-style(md) {
-      @include margin(0);
-    }
+    @include text-styles(md);
+    @include margin(0);
   }
 
   /**
    * Modificateur pour la taille du texte (lg: 18px/1.25rem)
    */
   &__text--lg {
-    @include override-body-text-style(lg);
+    @include text-styles(lg);
   }
 
   @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));

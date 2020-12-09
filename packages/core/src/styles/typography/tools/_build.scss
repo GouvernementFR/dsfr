@@ -77,9 +77,7 @@
 
     @include text-selector('%#{$main}', $variation);
     @at-root #{$selector} {
-      @include override-body {
-        @extend %#{$main};
-      }
+      @extend %#{$main};
     }
   }
 }

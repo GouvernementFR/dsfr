@@ -40,15 +40,15 @@
   &__detail {
     @include margin-top(0);
     @include margin-bottom(4v);
-    @include override-body-text-style(sm);
+    @include text-styles(sm);
     @include scheme-element-text-color(g600, true);
   }
 
   &__title {
-    @include override-body-text-style(xl) {
-      @include scheme-element-text-color(g800);
-      @include font-weight(bold);
-    }
+    @include text-styles(xl);
+    @include scheme-element-text-color(g800);
+    @include font-weight(bold);
+
     @include margin-top(0);
     @include margin-bottom(2v);
     @include text-styles(xl);
@@ -57,17 +57,15 @@
   &__desc {
     @include margin-top(0);
     @include margin-bottom(4v);
-    @include override-body-text-style(sm);
+    @include text-styles(sm);
   }
 
   &__link {
-    @include override-body-link-style(static) {
-      @at-root #{selector-unify(&, a)} {
-        color: inherit;
+    @at-root #{selector-unify(&, a)} {
+      color: inherit;
 
-        &:focus {
-          outline-offset: 9999px;
-        }
+      &:focus {
+        outline-offset: 9999px;
       }
     }
     display: inline-flex;

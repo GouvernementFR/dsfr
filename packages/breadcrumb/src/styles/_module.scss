@@ -32,9 +32,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   &__list {
-    @include override-body-ol-style {
-      line-height: 1.5;
-    }
+
+    line-height: 1.5;
+
     display: block;
     font-size: font-size(12);
     line-height: 1;
@@ -57,21 +57,19 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     /**
     flèche séparatrice en svg avec un espace à la suite
      */
-    @include override-body {
-      @include margin-bottom(2v);
-      line-height: 1.125rem;
-      vertical-align: middle;
+    @include margin-bottom(2v);
+    line-height: 1.125rem;
+    vertical-align: middle;
 
-      &:not(:first-child) {
-        @include font-icon(arrow-right-s-line, md);
+    &:not(:first-child) {
+      @include font-icon(arrow-right-s-line, md);
 
-        &::before {
-          @include scheme-element-text-color(g600, true);
-          margin-right: 0;
-          //margin-top: 0.0625rem;
-          //margin-bottom: 0.5625rem;
-          vertical-align: middle;
-        }
+      &::before {
+        @include scheme-element-text-color(g600, true);
+        margin-right: 0;
+        //margin-top: 0.0625rem;
+        //margin-bottom: 0.5625rem;
+        vertical-align: middle;
       }
     }
   }
@@ -91,7 +89,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
   &__item:not(:last-child) a {
     @include scheme-element-text-color(g600, true);
-    @include link-underline;
+    // @include link-underline;
   }
 
   /**

@@ -18,7 +18,6 @@
 }
 
 &__bottom-list {
-  @include override-body-ul-style('');
   flex-wrap: wrap;
   align-items: center;
   @include padding(2v 0);
@@ -49,9 +48,7 @@
 }
 
 &__bottom-link {
-  @include override-body-link-style {
-    @include scheme-element-text-color(g600, true);
-  }
+  @include scheme-element-text-color(g600, true);
   font-size: font-size(12);
 }
 

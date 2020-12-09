@@ -3,8 +3,6 @@
 /// @group core
 ////
 
-$is-declared-in-body: true;
-
 @function dse($name, $notation: '.') {
   $class-name: $notation + $prefix + '-' + $name;
   @return $class-name;

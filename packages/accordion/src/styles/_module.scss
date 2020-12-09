@@ -51,7 +51,6 @@
   $accordion: &;
 
   @include group {
-    @include override-body-ol-style;
 
     #{$accordion} {
       border-bottom: 0;

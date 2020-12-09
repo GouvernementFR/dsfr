@@ -45,9 +45,9 @@
 }
 
 #{dse(hint-text)} {
-  @include override-body-text-style(xs) {
-    @include scheme-element-text-color(g600, true);
-  }
+  @include text-styles(xs);
+  @include scheme-element-text-color(g600, true);
+
   @include margin-y(0);
 
   & + #{dse(input)},
@@ -59,9 +59,9 @@
 
 #{dse(error-text)} {
   @include display-flex(row, center);
-  @include override-body-text-style(xs) {
-    @include scheme-element-text-color(error, true);
-  }
+  @include text-styles(xs);
+  @include scheme-element-text-color(error, true);
+
   @include margin-top(2v);
 
 
@@ -74,9 +74,9 @@
 
 #{dse(valid-text)} {
   @include display-flex(row, center);
-  @include override-body-text-style(xs) {
-    @include scheme-element-text-color(success, true);
-  }
+  @include text-styles(xs);
+  @include scheme-element-text-color(success, true);
+
   @include margin-top(2v);
 
 
