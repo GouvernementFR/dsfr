@@ -46,6 +46,7 @@
       @include scheme-element-text-color(g800, true);
       margin: 0;
       box-shadow: none;
+      text-decoration: none;
 
       @include respond-from(md) {
         font-size: font-size(20);

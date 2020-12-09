@@ -55,9 +55,15 @@
 
     @include nest-link(sm, left) {
       line-height: space(3N);
-      width: 100%;
-      padding: space(1-5N) space(0-5N);
       border-radius: 0;
+      min-width: 100%;
+      min-height: 3rem;
+      padding: space(3v) 0;
+      max-height: none;
+
+      @include before() {
+        margin-left: space(1v);
+      }
     }
 
     @include nest-link(sm, left, null, md);
