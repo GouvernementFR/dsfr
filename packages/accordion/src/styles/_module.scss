@@ -51,6 +51,7 @@
   $accordion: &;
 
   @include group {
+    @extend %list-reset;
 
     #{$accordion} {
       border-bottom: 0;

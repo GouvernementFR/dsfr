@@ -21,7 +21,7 @@ for (let i = 0; i < samples.length; i++) {
 %>
 <h4><%= sample.title %></h4>
 <div>
-  <%- include(sample.sample, {sample}); %>
+  <%- include(sample.sample, sample); %>
 </div>
 <div>
   <%- include(sample.sample, left); %>
@@ -32,7 +32,7 @@ for (let i = 0; i < samples.length; i++) {
 <div>
   <%- include(sample.sample, only); %>
 </div>
-<%- snippet(include(sample.sample, {sample})); %>
+<%- snippet(include(sample.sample, sample)); %>
 <%- snippet(include(sample.sample, left)); %>
 <%- snippet(include(sample.sample, right)); %>
 <%- snippet(include(sample.sample, only)); %>

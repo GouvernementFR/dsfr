@@ -31,3 +31,9 @@
   -moz-osx-font-smoothing: grayscale;
   @include scheme-element-text-color(g700, true);
 }
+
+@mixin override-reset-link-style() {
+  &[target="_blank"]::after {
+    content: none;
+  }
+}

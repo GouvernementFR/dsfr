@@ -22,16 +22,10 @@
     padding: 0;
   }
 
-  a {
-    @extend %a;
-  }
-
   @import '../prose/module/headings';
   @import '../prose/module/paragraph';
+  @import '../prose/module/link';
 
-  p {
-    @import '../prose/module/link';
-  }
 }
 
 @include class-start-with(dse('', ''), false) {

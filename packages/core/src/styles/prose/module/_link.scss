@@ -7,7 +7,7 @@
 a {
   @extend %a;
 
-  &[target="_blank"]:not(#{dse-attr(no-blank-icon)}) {
+  &[target="_blank"] {
     @include font-icon(external-link-line, md, after) {
       @include margin-left(1v);
       vertical-align: baseline;
