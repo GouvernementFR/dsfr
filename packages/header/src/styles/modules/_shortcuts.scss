@@ -41,7 +41,7 @@
     @include respond-from(md) {
       padding: 0 space(1-5N);
       margin: 0 0 space(1N);
-      line-height: space(3N);
+      line-height: space(4v);
       box-shadow: none;
 
       &:not(:first-child) {
@@ -54,7 +54,7 @@
     }
 
     @include nest-link(sm, left) {
-      line-height: space(3N);
+      line-height: space(4v);
       border-radius: 0;
       min-width: 100%;
       min-height: 3rem;
