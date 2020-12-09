@@ -17,3 +17,15 @@
 #{dse(text--alt)} {
   font-family: $font-family-serif;
 }
+
+#{dse(list)} {
+  @extend %list-reset;
+
+  @at-root ul#{&} {
+    @extend %unordered-list;
+  }
+
+  @at-root ol#{&} {
+    @extend %ordered-list;
+  }
+}

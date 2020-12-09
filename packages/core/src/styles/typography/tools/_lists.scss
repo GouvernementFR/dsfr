@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-%base-body-list {
+%base-list {
   font-size: font-size();
   line-height: line-height();
   @include margin(0 0 2v);
@@ -19,8 +19,8 @@
   }
 }
 
-%body-unordered-list {
-  @extend %base-body-list;
+%unordered-list {
+  @extend %base-list;
 
   li {
     @include before(null, '\2022') {
@@ -41,8 +41,8 @@
   }
 }
 
-%body-ordered-list {
-  @extend %base-body-list;
+%ordered-list {
+  @extend %base-list;
   counter-reset: list-number;
 
   ol {

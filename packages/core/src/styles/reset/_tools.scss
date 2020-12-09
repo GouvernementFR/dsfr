@@ -33,7 +33,11 @@
 }
 
 @mixin override-reset-link-style() {
-  &[target="_blank"]::after {
-    content: none;
+  @at-root #{selector-unify(&, a)} {
+    box-shadow: none;
+
+    &[target="_blank"]::after {
+      content: none;
+    }
   }
 }

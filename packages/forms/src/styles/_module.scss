@@ -45,8 +45,9 @@
 }
 
 #{dse(hint-text)} {
-  @include text-styles(xs);
-  @include scheme-element-text-color(g600, true);
+  @include specify(p) {
+    @include text-styles(xs, g600);
+  }
 
   @include margin-y(0);
 
@@ -59,12 +60,11 @@
 
 #{dse(error-text)} {
   @include display-flex(row, center);
-  @include text-styles(xs);
-  @include scheme-element-text-color(error, true);
+  @include specify(p) {
+    @include text-styles(xs, error);
+  }
 
   @include margin-top(2v);
-
-
 
   @include font-icon(alert-line, sm) {
     display: inline-block;
@@ -74,12 +74,11 @@
 
 #{dse(valid-text)} {
   @include display-flex(row, center);
-  @include text-styles(xs);
-  @include scheme-element-text-color(success, true);
+  @include specify(p) {
+    @include text-styles(xs, success);
+  }
 
   @include margin-top(2v);
-
-
 
   @include font-icon(check-line, sm) {
     display: inline-block;

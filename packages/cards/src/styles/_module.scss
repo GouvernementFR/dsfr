@@ -61,9 +61,9 @@
   }
 
   &__link {
+    @extend %a-reset;
+    @include override-reset-link-style;
     @at-root #{selector-unify(&, a)} {
-      color: inherit;
-
       &:focus {
         outline-offset: 9999px;
       }

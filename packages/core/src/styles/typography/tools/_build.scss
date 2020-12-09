@@ -19,12 +19,15 @@
   }
 }
 
-@mixin text-variation($variation) {
+@mixin text-variation($variation, $color-set: null, $font-weight: null) {
   $font-size: map_get($variation, font-size);
-  $color-set: map_get($variation, color-set);
   $line-height: map_get($variation, line-height);
-  $font-weight: map_get($variation, font-weight);
-
+  @if $color-set == null {
+    $color-set: map_get($variation, color-set);
+  }
+  @if $font-weight == null {
+    $font-weight: map_get($variation, font-weight);
+  }
   @include text($font-size, $line-height, $color-set, $font-weight);
 }
 
@@ -82,8 +85,8 @@
   }
 }
 
-@mixin text-styles($size: md) {
+@mixin text-styles($size: md, $color-set: null, $font-weight: null) {
   $variation: map_deep-get($texts-settings, $size, default);
 
-  @include text-variation($variation);
+  @include text-variation($variation, $color-set, $font-weight);
 }

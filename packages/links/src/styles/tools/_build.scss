@@ -12,12 +12,12 @@
 }
 
 @mixin _reset-links-tags($tags) {
+  @include override-reset-link-style;
+
   @at-root {
     @if index($tags, a) != null {
       #{selector_unify(&, a)} {
         @extend %a-reset;
-        box-shadow: none;
-        @include override-reset-link-style;
       }
     }
 

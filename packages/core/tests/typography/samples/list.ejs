@@ -2,7 +2,7 @@
  let tag = locals.ordered === true ? 'ol' : 'ul';
  %>
 
-<<%= tag %>>
+<<%= tag %> <%- includeClasses(locals.classes); %>>
     <% for (let i = 0; i < lis.length; i++) {
         let li = lis[i];
     %>
