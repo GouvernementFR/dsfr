@@ -4,11 +4,8 @@
 ////
 
 // Icon for external links
-p a {
-  @extend %a-reset;
-  @include link-underline;
-  color: inherit;
-  @include scheme-element-focus;
+a {
+  @extend %a;
 
   &[target="_blank"]:not(#{dse-attr(no-blank-icon)}) {
     @include font-icon(external-link-line, md, after) {
