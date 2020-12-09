@@ -24,10 +24,8 @@
 
   a {
     @extend %a-reset;
-    @include scheme-element-focus;
-  }
-
-  button {
+    @include link-underline;
+    color: inherit;
     @include scheme-element-focus;
   }
 
@@ -48,9 +46,4 @@
   }
 
   @extend %body-reset;
-
-  a {
-    @extend %a-reset;
-    @include scheme-element-focus;
-  }
 }

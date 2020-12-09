@@ -1,0 +1,8 @@
+////
+/// Core Tools : Prose link
+/// @group core
+////
+
+@mixin link-underline {
+  box-shadow: 0 1px 0 0 currentColor;
+}
