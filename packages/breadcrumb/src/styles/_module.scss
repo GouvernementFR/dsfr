@@ -32,12 +32,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   &__list {
-
+    @extend %list-reset;
     line-height: 1.5;
-
     display: block;
     font-size: font-size(12);
-    line-height: 1;
 
     &[hidden] {
       display: none;
@@ -75,6 +73,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   &__item a {
+    @extend %a;
     display: inline;
     vertical-align: middle;
   }
