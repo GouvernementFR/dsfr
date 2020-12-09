@@ -15,6 +15,10 @@
     flex-wrap: wrap;
   }
 
+  /**
+   * Conteneur du bloc marque, avec le logo principal et éventuellement
+   * un logo opérateur
+   */
   &__brand {
     display: flex;
     align-items: center;

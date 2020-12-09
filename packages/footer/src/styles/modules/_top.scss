@@ -3,6 +3,11 @@
 /// @group Footer
 ////
 
+/**
+ * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
+ * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
+ */
+
 &__top {
   display: flex;
   @include scheme-element-bg-color(beige, true);
@@ -10,6 +15,9 @@
   padding: space(2w) 0;
 }
 
+/**
+ * Catégorie (optionnel)
+ */
 &__top-cat {
   margin: 0 0 space(1w);
   font-size: font-size(12);
@@ -21,6 +29,9 @@
   }
 }
 
+/**
+ * Style de la liste
+ */
 &__top-list {
   text-align: center;
   margin: 0;
@@ -36,6 +47,9 @@
   }
 }
 
+/**
+ * Style du lien
+ */
 &__top-link {
   text-decoration: none;
   font-size: font-size(12);

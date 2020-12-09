@@ -3,6 +3,11 @@
 /// @group Footer
 ////
 
+/**
+ * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
+ * ainsi que du copyright (ferré à droite)
+ */
+
 &__bottom {
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +22,9 @@
   }
 }
 
+/**
+ * Liste de liens avec séparateur
+ */
 &__bottom-list {
   flex-wrap: wrap;
   align-items: center;
@@ -62,12 +70,18 @@
   }
 }
 
+/**
+ * Style du lien de la liste
+ */
 &__bottom-link {
   text-decoration: none;
   font-size: font-size(12);
   @include scheme-element-text-color(g600, true);
 }
 
+/**
+ * Copyright
+ */
 &__bottom-copy {
   flex-shrink: 0;
   font-size: font-size(12);

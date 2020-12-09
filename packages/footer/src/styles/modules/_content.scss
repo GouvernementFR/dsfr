@@ -3,6 +3,11 @@
 /// @group Footer
 ////
 
+/**
+ * La partie "content" représente les informations sous forme de texte rajoutées dans le footer
+ * ainsi que les éventuels liens simples
+ */
+
 &__content {
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +19,9 @@
     flex-basis: calc(100% - (100% / 3));
   }
 
+  /**
+   * Si un logo opérateur est présent, on passe le content à 50% de la largeur disponible
+   */
   .#{$prefix}-footer__body--operator & {
     margin-top: space(3w);
 
@@ -24,11 +32,17 @@
   }
 }
 
+/**
+ * Contenu texte simple
+ */
 &__content-desc {
   margin: 0 0 space(2w);
   line-height: line-height(normal);
 }
 
+/**
+ * Liste des liens situés en dessous de la partie texte
+ */
 &__content-list {
   display: flex;
   flex-direction: column;
