@@ -77,6 +77,8 @@ const importsArr = [
   '/src/styles/settings',
   '/src/styles/tools'
 ]
+
+const pckCapitalized = (pck) => {return pck.charAt(0).toUpperCase() + pck.slice(1) }
   
 packages.forEach(function (pck) {
   let pckDistDepsContent = [];
@@ -96,6 +98,13 @@ packages.forEach(function (pck) {
 
     pckDistContent = pckDistDepsContent.concat(pckDistMainContent)
 
-    fs.writeFileSync('./packages/' + pck.id + '/_dist.scss', pckDistContent);
+    createFile('./packages/' + pck.id + '/_dist.scss', pckDistContent)
+
+    if (fs.existsSync('./packages/' + pck.id + '/src/scripts')) {
+      const jsDistContent = "/* eslint-disable no-new *\/\r\nimport '@gouvfr/" + pck.id + "/_dist.scss';\r\nimport { Initializer } from '@gouvfr/utilities/src/scripts/init/Initializer';\r\nimport { " + pckCapitalized(pck.id) + " } from './index';\r\nnew Initializer('.${prefix}-" + pck.id + "', [" + pckCapitalized(pck.id) + "]);";
+      const jsDistGlobalContent = "/* eslint-disable no-new *\/\r\nimport { Initializer } from '@gouvfr/utilities/src/scripts/init/Initializer';\r\nimport { " + pckCapitalized(pck.id) + " } from './index';\r\nnew Initializer('.${prefix}-" + pck.id + "', [" + pckCapitalized(pck.id) + "]);";
+      createFile('./packages/' + pck.id + '/src/scripts/dist-test.js', jsDistContent)
+      createFile('./packages/' + pck.id + '/src/scripts/dist-global-test.js', jsDistGlobalContent)
+    }    
   }
 });
