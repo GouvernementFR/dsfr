@@ -1,3 +1,8 @@
+////
+/// Tiles Module
+/// @group tiles
+////
+
 .#{$prefix}-tile {
   position: relative;
   display: flex;
@@ -38,9 +43,8 @@
     @include aspect-ratio(1x1);
 
     img {
-      @include absolute-overlay() {
-        @extend %fit-cover-center;
-      }
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      @extend %fit-cover-center;
     }
   }
 

@@ -1,0 +1,36 @@
+<%
+ let lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et.'
+ %>
+
+<%- include('./samples/headings'); %>
+<%- snippet(include('./samples/headings')); %>
+
+<h4 class="<%= prefix %>-h4" >Test de paragraphe et de lien</h4>
+<%- include('./samples/paragraph'); %>
+<%- snippet(include('./samples/paragraph')); %>
+
+<h4 class="<%= prefix %>-h4" >Test de liste non ordonnée</h4>
+<%
+ let ul = {
+   lis:[{
+       lis:[{}, {}, {}]
+     }, {text:lorem}, {}
+   ]}
+ %>
+
+<%- include('./samples/ul', ul);%>
+<%- snippet(include('./samples/ul'));%>
+
+<h4 class="<%= prefix %>-h4" >Test de liste ordonnée</h4>
+<%
+let ol = {
+  lis:[{
+      lis:[{
+        lis:[{}, {}, {}]
+      }, {text:lorem}, {}]
+    }, {}, {}
+  ]}
+%>
+
+<%- include('./samples/ol', ol);%>
+<%- snippet(include('./samples/ol'));%>

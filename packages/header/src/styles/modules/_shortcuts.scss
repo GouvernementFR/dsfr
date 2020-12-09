@@ -1,3 +1,7 @@
+////
+/// Header Module : shortcuts
+/// @group header
+////
 
 .#{$prefix}-shortcuts {
   //display: none;
@@ -49,13 +53,13 @@
       content: none;
     }
 
-    @include link(sm, left) {
+    @include nest-link(sm, left) {
       line-height: space(3N);
       width: 100%;
       padding: space(1-5N) space(0-5N);
       border-radius: 0;
     }
 
-    @include link(sm, left, null, md);
+    @include nest-link(sm, left, null, md);
   }
 }

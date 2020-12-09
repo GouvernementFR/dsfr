@@ -12,7 +12,7 @@ let link = {
       for (let i = 1; i < 9; i++) {
     %>
     <li >
-      <a href="#<%- link.anchor %>-<%- i %>"><%- link.label %></a>
+      <a class="<%= prefix %>-summary__link" href="#<%- link.anchor %>-<%- i %>"><%- link.label %></a>
     </li>
     <% } %>
   </ol>

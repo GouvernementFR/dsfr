@@ -1,0 +1,12 @@
+////
+/// Core Tools : Global selector
+/// @group core
+////
+
+@function prefixed-class($name) {
+  @return '.#{$prefix}-#{$name}';
+}
+
+@function prefixed-group-class($name) {
+  @return '#{prefixed-class($name)}-group';
+}

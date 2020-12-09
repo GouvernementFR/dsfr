@@ -1,23 +1,24 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
-.rf-btn[disabled] {
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
+button.rf-btn[disabled], button.rf-btn:disabled, button.rf-btn--secondary[disabled], button.rf-btn--secondary:disabled {
   cursor: not-allowed; }
 
 .rf-btn {
@@ -34,17 +35,9 @@ button.rf-btn {
   cursor: pointer; }
 
 a.rf-btn {
-  text-decoration: none;
-  box-shadow: none; }
+  text-decoration: none; }
 
-.rf-btn {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.rf-btn--icon-left:not([class*="rf-fi-"])::before, .rf-btn--icon-right:not([class*="rf-fi-"])::before, .rf-btn--icon-only:not([class*="rf-fi-"])::before {
-  content: "\f117"; }
-
-.rf-btn--icon-left::before, .rf-btn--icon-right::before, .rf-btn--icon-only::before {
+.rf-btn:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before, .rf-btn.rf-btn--icon-left[class*="rf-fi-"]::before, .rf-btn.rf-btn--icon-right[class*="rf-fi-"]::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -78,90 +71,89 @@ a.rf-btn {
   min-height: 3.5rem;
   padding: 0.75rem 2rem; }
 
-.rf-btn--icon-left::before {
-  font-size: 1rem; }
-
-.rf-btn--icon-left::before {
-  margin-left: -0.25rem;
-  margin-right: 0.5rem; }
-
-.rf-btn--icon-left.rf-btn--sm::before {
-  font-size: 1rem; }
-
-.rf-btn--icon-left.rf-btn--sm::before {
-  margin-left: -0.25rem;
-  margin-right: 0.5rem; }
-
-.rf-btn--icon-left.rf-btn--lg::before {
-  font-size: 1.5rem; }
-
-.rf-btn--icon-left.rf-btn--lg::before {
-  margin-left: -0.375rem;
-  margin-right: 0.5rem; }
-
-.rf-btn--icon-right {
-  flex-direction: row-reverse; }
-  .rf-btn--icon-right::before {
-    font-size: 1rem; }
-  .rf-btn--icon-right::before {
-    margin-right: -0.25rem;
-    margin-left: 0.5rem; }
-
-.rf-btn--icon-right.rf-btn--sm::before {
-  font-size: 1rem; }
-
-.rf-btn--icon-right.rf-btn--sm::before {
-  margin-right: -0.25rem;
-  margin-left: 0.5rem; }
-
-.rf-btn--icon-right.rf-btn--lg::before {
-  font-size: 1.5rem; }
-
-.rf-btn--icon-right.rf-btn--lg::before {
-  margin-right: -0.375rem;
-  margin-left: 0.5rem; }
-
-.rf-btn--icon-only {
+.rf-btn[class*="rf-fi-"]:not(.rf-btn--icon-left):not(.rf-btn--icon-right) {
   width: 2.5rem;
   min-height: auto;
   height: 2.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
-  .rf-btn--icon-only::before {
+  .rf-btn:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
     font-size: 1.5rem; }
-  .rf-btn--icon-only::before {
+  .rf-btn:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
     margin-left: 0;
     margin-right: 0.5rem; }
 
-.rf-btn--icon-only.rf-btn--sm {
+.rf-btn.rf-btn--sm[class*="rf-fi-"]:not(.rf-btn--icon-left):not(.rf-btn--icon-right) {
   width: 2rem;
   min-height: auto;
   height: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
-  .rf-btn--icon-only.rf-btn--sm::before {
+  .rf-btn.rf-btn--sm:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
     font-size: 1rem; }
-  .rf-btn--icon-only.rf-btn--sm::before {
+  .rf-btn.rf-btn--sm:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
     margin-left: 0;
     margin-right: 0.5rem; }
 
-.rf-btn--icon-only.rf-btn--lg {
+.rf-btn.rf-btn--lg[class*="rf-fi-"]:not(.rf-btn--icon-left):not(.rf-btn--icon-right) {
   width: 3.5rem;
   min-height: auto;
   height: 3.5rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem; }
-  .rf-btn--icon-only.rf-btn--lg::before {
+  .rf-btn.rf-btn--lg:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
     font-size: 2rem; }
-  .rf-btn--icon-only.rf-btn--lg::before {
+  .rf-btn.rf-btn--lg:not(.rf-btn--icon-right):not(.rf-btn--icon-left)[class*="rf-fi-"]::before {
     margin-left: 0;
     margin-right: 0.75rem; }
 
+.rf-btn.rf-btn--icon-left[class*="rf-fi-"]::before {
+  font-size: 1rem; }
+
+.rf-btn.rf-btn--icon-left[class*="rf-fi-"]::before {
+  margin-left: -0.25rem;
+  margin-right: 0.5rem; }
+
+.rf-btn.rf-btn--icon-left.rf-btn--sm[class*="rf-fi-"]::before {
+  font-size: 1rem; }
+
+.rf-btn.rf-btn--icon-left.rf-btn--sm[class*="rf-fi-"]::before {
+  margin-left: -0.25rem;
+  margin-right: 0.5rem; }
+
+.rf-btn.rf-btn--icon-left.rf-btn--lg[class*="rf-fi-"]::before {
+  font-size: 1.5rem; }
+
+.rf-btn.rf-btn--icon-left.rf-btn--lg[class*="rf-fi-"]::before {
+  margin-left: -0.375rem;
+  margin-right: 0.5rem; }
+
+.rf-btn.rf-btn--icon-right[class*="rf-fi-"] {
+  flex-direction: row-reverse; }
+  .rf-btn.rf-btn--icon-right[class*="rf-fi-"]::before {
+    font-size: 1rem; }
+  .rf-btn.rf-btn--icon-right[class*="rf-fi-"]::before {
+    margin-right: -0.25rem;
+    margin-left: 0.5rem; }
+
+.rf-btn.rf-btn--icon-right.rf-btn--sm[class*="rf-fi-"]::before {
+  font-size: 1rem; }
+
+.rf-btn.rf-btn--icon-right.rf-btn--sm[class*="rf-fi-"]::before {
+  margin-right: -0.25rem;
+  margin-left: 0.5rem; }
+
+.rf-btn.rf-btn--icon-right.rf-btn--lg[class*="rf-fi-"]::before {
+  font-size: 1.5rem; }
+
+.rf-btn.rf-btn--icon-right.rf-btn--lg[class*="rf-fi-"]::before {
+  margin-right: -0.375rem;
+  margin-left: 0.5rem; }
+
 .rf-btn {
+  cursor: pointer;
   color: var(--w-bf500);
   background-color: var(--bf500); }
-  :root[data-transition] .rf-btn {
-    transition: color 0.3s; }
   @media (hover: hover) and (pointer: fine) {
     .rf-btn:not([disabled]):hover, .rf-btn:not(:disabled):hover {
       background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
@@ -185,10 +177,8 @@ a.rf-btn {
   :root[data-theme="dark"] .rf-btn {
     --color-hover: rgba(138, 138, 204, 0.5);
     --color-active: rgba(84, 84, 180, 0.5); }
-  :root[data-transition] .rf-btn {
-    transition: color 0.3s, background-color 0.3s; }
-  .rf-btn[disabled], .rf-btn:disabled {
-    color: var(--g600);
+  button.rf-btn[disabled], button.rf-btn:disabled {
+    color: var(--g600-g400);
     background-color: var(--g200); }
   .rf-btn--secondary {
     background-color: var(--t-plain);
@@ -212,11 +202,10 @@ a.rf-btn {
     :root[data-theme="dark"] .rf-btn--secondary {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root[data-transition] .rf-btn--secondary {
-      transition: color 0.3s, background-color 0.3s, box-shadow 0.3s; }
-    .rf-btn--secondary[disabled], .rf-btn--secondary:disabled {
-      color: var(--g600);
-      box-shadow: inset 0 0 0 1px var(--g600); }
+    button.rf-btn--secondary[disabled], button.rf-btn--secondary:disabled {
+      color: var(--g600-g400);
+      box-shadow: inset 0 0 0 1px var(--g400);
+      background-color: var(--t-plain); }
 
 
 /*# sourceMappingURL=buttons.css.map*/

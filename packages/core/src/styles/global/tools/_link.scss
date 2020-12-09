@@ -1,0 +1,11 @@
+////
+/// Core Tools : Global link
+/// @group core
+////
+
+@mixin link() {
+  &__link {
+    @extend %a-reset;
+    @content;
+  }
+}

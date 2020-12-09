@@ -4,7 +4,6 @@
 ////
 
 /// configuration des blocs de couleur
-/// @type map
 /// Il y a 4 types de combinaisons de couleur :
 /// - light : les couleurs claires proches du blanc
 /// - dark : les couleurs foncées proches du noir
@@ -14,6 +13,7 @@
 /// pour chaque bloc, on définit 2 combinaisons de couleurs :
 /// la première pour le fond du wrapper
 /// la seconde pour les bordures du wrapper
+/// @type map
 $scheme-blocks : (
   light:(
     white: w bf500,

@@ -1,8 +1,11 @@
-$header-box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1), 0 0.5rem 1rem -1rem rgba(0, 0, 0, 0.32);
+////
+/// Header Module
+/// @group header
+////
 
 .#{$prefix}-header {
   width: 100%;
-  box-shadow: $header-box-shadow;
+  @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
 
   //@import 'modules/head';
@@ -77,7 +80,6 @@ $header-box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1), 0 0.5rem 1rem -1rem rgba(0
 
   @import 'modules/shortcuts';
   @import 'modules/search';
-
   @import 'modules/nav';
 
   //TODO: rf-link

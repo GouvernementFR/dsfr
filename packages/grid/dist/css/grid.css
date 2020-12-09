@@ -1,40 +1,23 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
-.rf-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 1rem;
-  padding-left: 1rem; }
-  @media (min-width: 36em) {
-    .rf-container {
-      padding-right: 2rem;
-      padding-left: 2rem; } }
-  @media (min-width: 75em) {
-    .rf-container {
-      max-width: 1136px;
-      padding-right: 0;
-      padding-left: 0; } }
-  .rf-container-fluid {
-    width: 100%; }
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
 
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
 .rf-grid-row {
   display: flex;
   flex-wrap: wrap;
@@ -54,21 +37,21 @@
   .rf-grid-row--center {
     justify-content: center; }
   .rf-grid-row--gutters {
-    margin: 0 calc(-1rem / 2); }
+    margin: 0 -0.5rem; }
     @media (min-width: 48em) {
       .rf-grid-row--gutters {
-        margin: 0 calc(-1.5rem / 2); } }
+        margin: 0 -0.75rem; } }
     @media (min-width: 62em) {
       .rf-grid-row--gutters {
-        margin: 0 calc(-2rem / 2); } }
+        margin: 0 -1rem; } }
     .rf-grid-row--gutters [class|="rf-col"] {
-      padding: calc(1rem / 2); }
+      padding: 0.5rem; }
       @media (min-width: 48em) {
         .rf-grid-row--gutters [class|="rf-col"] {
-          padding: calc(1.5rem / 2); } }
+          padding: 0.75rem; } }
       @media (min-width: 62em) {
         .rf-grid-row--gutters [class|="rf-col"] {
-          padding: calc(2rem / 2); } }
+          padding: 1rem; } }
 
 .rf-col {
   flex: 1; }

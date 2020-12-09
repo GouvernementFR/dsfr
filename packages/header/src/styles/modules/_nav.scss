@@ -1,3 +1,8 @@
+////
+/// Header Module : navigation
+/// @group header
+////
+
 .#{$prefix}-nav:not(&__popin) {
   display: none;
   @include respond-from(md) {
@@ -15,7 +20,7 @@
 
     .#{$prefix}-menu::after,
     .#{$prefix}-mega-menu {
-      box-shadow: $header-box-shadow;
+      @include shadow(md);
     }
   }
 }

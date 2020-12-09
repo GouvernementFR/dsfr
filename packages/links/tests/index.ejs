@@ -4,35 +4,44 @@ let samples = [
   { title:'Lien seul', sample:'./samples/link-default'},
   { title:'Lien seul SM', sample:'./samples/link-sm'},
   { title:'Lien seul LG', sample:'./samples/link-lg'},
+  { title:'Lien seul button', sample:'./samples/link-default', tag: 'button'},
+  { title:'Lien seul div', sample:'./samples/link-default', tag:'div'}
 ]
 %>
 
 <%
+
+
 for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
+
+  const left = {iconPlace: 'left', icon: 'arrow-left-line', ... sample};
+  const right = {iconPlace: 'right', icon: 'arrow-right-line', ... sample};
+  const only = {icon: 'arrow-down-line', ... sample};
 %>
 <h4><%= sample.title %></h4>
 <div>
-  <%- include(sample.sample); %>
+  <%- include(sample.sample, {sample}); %>
 </div>
 <div>
-  <%- include(sample.sample, {iconPlace: 'left'}); %>
+  <%- include(sample.sample, left); %>
 </div>
 <div>
-  <%- include(sample.sample, {iconPlace: 'right'}); %>
+  <%- include(sample.sample, right); %>
 </div>
 <div>
-  <%- include(sample.sample, {iconPlace: 'only'}); %>
+  <%- include(sample.sample, only); %>
 </div>
-<%- snippet(include(sample.sample)); %>
-<%- snippet(include(sample.sample, {iconPlace: 'left'})); %>
-<%- snippet(include(sample.sample, {iconPlace: 'right'})); %>
-<%- snippet(include(sample.sample, {iconPlace: 'only'})); %>
+<%- snippet(include(sample.sample, {sample})); %>
+<%- snippet(include(sample.sample, left)); %>
+<%- snippet(include(sample.sample, right)); %>
+<%- snippet(include(sample.sample, only)); %>
 <% } %>
 
 <%
-data = {insert: 'lorem ipsum dolor sit amet' + include('./samples/link-default', {iconPlace: 'right'})};
+data = {insert: 'lorem ipsum dolor sit amet' + include('./samples/link-default', {iconPlace: 'right', icon: 'arrow-right-line'})};
 
 %>
+<h4>Lien seul mis en situation dans un texte</h4>
 
-<%- include('../../typography/tests/samples/p', data); %>
+<%- include('../../core/tests/typography/samples/p', data); %>
