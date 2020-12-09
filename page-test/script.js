@@ -1,10 +1,8 @@
 /* eslint-disable no-new */
 import '@gouvfr/schemes/src/scripts/dist';
 
-import { addClass, removeClass } from '@gouvfr/utilities/src/scripts';
-
 const schemeAttr = 'data-${prefix}-theme';
-const bodyClass = '${prefix}-body';
+const resetAttr = 'data-${prefix}-reset';
 
 class DemoCheckbox {
   constructor (id) {
@@ -18,40 +16,65 @@ class DemoCheckbox {
   change () {}
 }
 
-class ThemeCheckbox extends DemoCheckbox {
-  init () {
-    const theme = document.documentElement.getAttribute(schemeAttr);
-    if (theme === 'dark') this.checkbox.checked = true;
-
-    this.observer = new MutationObserver(this.mutate.bind(this));
-    this.observer.observe(document.documentElement, { attributes: true });
+class AttributeDemoCheckbox extends DemoCheckbox {
+  constructor (id, attributeName, checkedValue, uncheckedValue) {
+    super(id);
+    this.attributeName = attributeName;
+    this.checkedValue = checkedValue;
+    this.uncheckedValue = uncheckedValue;
   }
 
-  change () {
-    document.documentElement.setAttribute(schemeAttr, this.checkbox.checked ? 'dark' : 'light');
+  init () {
+    this.observer = new MutationObserver(this.mutate.bind(this));
+    this.observer.observe(document.documentElement, { attributes: true });
+    this.checkbox.checked = this.state;
+  }
+
+  get state () {
+    const value = document.documentElement.getAttribute(this.attributeName);
+    const has = document.documentElement.hasAttribute(this.attributeName);
+
+    switch (true) {
+      case this.checkedValue === value:
+        return true;
+
+      case this.uncheckedValue === value:
+        return false;
+
+      case this.checkedValue === true && has :
+        return true;
+
+      case this.uncheckedValue === true && has :
+        return true;
+    }
+    return false;
   }
 
   mutate (mutations) {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === schemeAttr) {
-        const scheme = document.documentElement.getAttribute(schemeAttr);
-        if (scheme === 'dark') {
-          this.checkbox.checked = true;
-        } else if (scheme === 'light') {
-          this.checkbox.checked = false;
-        }
-      }
+      if (mutation.type === 'attributes' && mutation.attributeName === this.attributeName) this.checkbox.checked = this.state;
     });
   }
-}
 
-new ThemeCheckbox('theme-checkbox');
-
-class BodyCheckbox extends DemoCheckbox {
   change () {
-    if (this.checkbox.checked) addClass(document.body, bodyClass);
-    else removeClass(document.body, bodyClass);
+    const value = this.checkbox.checked ? this.checkedValue : this.uncheckedValue;
+
+    console.log(value);
+
+    switch (value) {
+      case null:
+        document.documentElement.removeAttribute(this.attributeName);
+        break;
+
+      case true:
+        document.documentElement.setAttribute(this.attributeName, '');
+        break;
+
+      default:
+        document.documentElement.setAttribute(this.attributeName, value);
+    }
   }
 }
 
-new BodyCheckbox('body-checkbox');
+new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'light', 'dark');
+new AttributeDemoCheckbox('reset-checkbox', resetAttr, true, null);

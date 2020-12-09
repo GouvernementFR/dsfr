@@ -3,7 +3,25 @@
 /// @group core
 ////
 
-@mixin class-contains($patterns...) {
+@mixin _class-pattern($selector, $unify: true) {
+  @if & == null {
+    @at-root #{$selector} {
+      @content;
+    }
+  }
+  @else if $unify {
+    @at-root #{selector-unify(&, $selector)} {
+      @content;
+    }
+  }
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+@mixin class-contains($unify: true, $patterns...) {
 
   @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
     $patterns: nth($patterns, 1);
@@ -14,15 +32,13 @@
   @each $pattern in $patterns {
     $selectors: '#{$selectors}[class*="#{$pattern}"]';
   }
-  @if & != null {
-    $selectors:  #{selector-unify(&, $selectors)};
-  }
-  @at-root #{$selectors} {
+
+  @include _class-pattern($selectors, $unify) {
     @content;
   }
 }
 
-@mixin class-not-contains($patterns...) {
+@mixin class-not-contains($unify: true, $patterns...) {
 
   @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
     $patterns: nth($patterns, 1);
@@ -32,50 +48,37 @@
   @each $pattern in $patterns {
     $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
   }
-  @if & != null {
-    $selectors:  #{selector-unify(&, $selectors)};
-  }
-  @at-root #{$selectors} {
+
+  @include _class-pattern($selectors, $unify) {
     @content;
   }
 }
 
-@mixin class-start-with($start) {
+@mixin class-start-with($start, $unify: true) {
   $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+
+  @include _class-pattern($selector, $unify) {
     @content;
   }
 }
 
-@mixin class-not-start-with($start) {
+@mixin class-not-start-with($start, $unify: true) {
   $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+  @include _class-pattern($selector, $unify) {
     @content;
   }
 }
 
-@mixin class-end-with($end) {
+@mixin class-end-with($end, $unify: true) {
   $selector: '[class$="#{$end}"], [class*="#{$end} "]';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+  @include _class-pattern($selector, $unify) {
     @content;
   }
 }
 
-@mixin class-not-end-with($end) {
+@mixin class-not-end-with($end, $unify: true) {
   $selector: ':not([class$="#{$end}"]):not([class*="#{$end} "])';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+  @include _class-pattern($selector, $unify) {
     @content;
   }
 }
@@ -101,7 +104,7 @@
 /// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
 /// @access public
 @mixin all-dse-elements-selector() {
-  @include class-is-dse {
+  @include class-start-with(dse('', ''), false) {
     @at-root {
       &,
       & * {

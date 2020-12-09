@@ -7,7 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
 </head>
-<body class="<%= prefix %>-mb-12w <% if (locals.config === undefined || config.noBody !== true) { %><%= prefix %>-body<% }%>" >
+<body class="<%= prefix %>-mb-12w" >
 
     <div class="test-controls" >
         <div class="rf-form-group">
@@ -18,8 +18,8 @@
                         <label class="rf-label" for="theme-checkbox">Thème clair / sombre</label>
                     </div>
                     <div class="rf-checkbox-group">
-                        <input type="checkbox" id="body-checkbox" name="checkboxes-inline-2" checked>
-                        <label class="rf-label" for="body-checkbox">body</label>
+                        <input type="checkbox" id="reset-checkbox" name="checkboxes-inline-2" checked>
+                        <label class="rf-label" for="reset-checkbox">reset</label>
                     </div>
                 </div>
             </fieldset>

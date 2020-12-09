@@ -1,0 +1,12 @@
+////
+/// Core Module : Prose link
+/// @group core
+////
+
+// Icon for external links
+p a[target="_blank"]:not(#{dse-attr(no-blank-icon)}) {
+  @include font-icon(external-link-line, md, after) {
+    @include margin-left(1v);
+    vertical-align: baseline;
+  }
+}

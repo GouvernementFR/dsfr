@@ -1,5 +1,5 @@
 ////
-/// Core Tools : Global reset
+/// Core Tools : Reset
 /// @group core
 ////
 
@@ -14,6 +14,8 @@
 
 %a-reset {
   text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 0 0 currentColor;
 }
 
 %list-reset {
@@ -22,4 +24,12 @@
   margin-block-end: 0;
   padding-inline-start: 0;
   padding-inline-end: 0;
+}
+
+%body-reset {
+  font-family: $font-family-sans;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include scheme-element-text-color(g700, true);
 }
