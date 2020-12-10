@@ -10,6 +10,11 @@
     @extend %#{$module}--#{$size};
   }
 
+  @if $place != only {
+    max-width: none;
+    max-height: none;
+  }
+
   @if $place != null {
     $placeholder: #{$module}--icon-#{$place};
 

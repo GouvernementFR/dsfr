@@ -20,7 +20,7 @@
     @include scheme-element-text-color(g800);
   }
 
-  &::before {
+  @include before() {
     display: block;
     content: '';
     width: 2.75em;
@@ -34,7 +34,7 @@
     background-image: url(_svg-encode($svg-marianne-colored));
   }
 
-  &::after {
+  @include specify-after-reset-link-style() {
     display: block;
     content: '';
     width: 2.625em;
@@ -57,7 +57,7 @@
 
 [data-mourning] {
   #{dse(logo)} {
-    &::before {
+    @include before {
       $svg-mariane: _color-marianne(black, black);
       background-image: url(_svg-encode($svg-mariane));
       @include scheme-element-box-shadow-color(t-w, true, 0 0 0 1px $COLOR);

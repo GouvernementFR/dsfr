@@ -45,13 +45,14 @@
   }
 
   &__title {
-    @include text-styles(xl);
+    @include force-over-reset {
+      @include text-styles(xl);
+    }
     @include scheme-element-text-color(g800);
     @include font-weight(bold);
 
     @include margin-top(0);
     @include margin-bottom(2v);
-    @include text-styles(xl);
   }
 
   &__desc {

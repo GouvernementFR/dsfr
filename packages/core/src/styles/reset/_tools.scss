@@ -32,12 +32,45 @@
   @include scheme-element-text-color(g700, true);
 }
 
-@mixin override-reset-link-style() {
+@mixin override-reset-link-style($remove-blank: true) {
   @at-root #{selector-unify(&, a)} {
     box-shadow: none;
 
-    &[target="_blank"]::after {
-      content: none;
+    @if $remove-blank {
+      &[target="_blank"] {
+        @include after(null, none) {
+          @include margin-left(0);
+        }
+      }
     }
+  }
+}
+
+@mixin specify-after-reset-link-style($remove-underline: true) {
+  $link: &;
+
+  @at-root #{selector-unify(&, a)} {
+    @if $remove-underline {
+      box-shadow: none;
+    }
+
+    &[target="_blank"] {
+      @at-root {
+        &,
+        #{$link} {
+          @include after {
+            @include margin-left(0);
+            font-size: inherit;
+            @content;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin force-over-reset() {
+  @at-root :root & {
+    @content;
   }
 }

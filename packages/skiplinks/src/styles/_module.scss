@@ -16,6 +16,7 @@
 }
 
 #{dse(skiplinks__list)} {
+  @extend %list-reset;
   display: flex;
   flex-direction: column;
   margin: 0 (-(space(2N))) (-(space(2N)));

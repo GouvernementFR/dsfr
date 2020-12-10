@@ -15,10 +15,10 @@
   }
 
   &__link {
+    @extend %a-reset;
+    @include override-reset-link-style;
     position: static;
-    text-decoration: none;
     display: inline-flex;
-    box-shadow: none;
     width: 100%;
 
     &::after {
@@ -58,8 +58,9 @@
   }
 
   &__title {
-    @include text-styles(md);
-    font-weight: font-weight(bold);
+    @include force-over-reset {
+      @include text-styles(md, null, bold);
+    }
     margin: 0;
 
     + #{dse(tile__desc)} {

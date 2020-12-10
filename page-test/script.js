@@ -76,5 +76,5 @@ class AttributeDemoCheckbox extends DemoCheckbox {
   }
 }
 
-new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'light', 'dark');
+new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'dark', 'light');
 new AttributeDemoCheckbox('reset-checkbox', resetAttr, true, null);
