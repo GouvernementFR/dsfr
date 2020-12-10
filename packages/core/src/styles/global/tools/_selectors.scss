@@ -83,14 +83,14 @@
   }
 }
 
-@mixin class-is-dse() {
-  @include class-start-with(dse('', '')) {
+@mixin class-is-dse($unify: true) {
+  @include class-start-with(dse('', ''), $unify) {
     @content;
   }
 }
 
-@mixin class-is-not-dse() {
-  @include class-not-start-with(dse('', '')) {
+@mixin class-is-not-dse($unify: true) {
+  @include class-not-start-with(dse('', ''), $unify) {
     @content;
   }
 }

@@ -5,6 +5,7 @@
 
 #{dse(nav)} {
   &__list {
+    @extend %list-reset;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -185,6 +186,7 @@
   }
 
   &__list {
+    @extend %list-reset;
     margin: 0;
     padding: space(1N) 0 space(3N);
 
@@ -409,6 +411,7 @@
   }
 
   &__list {
+    @extend %list-reset;
     margin: 0 (- space(2N));
     //padding: 0 space(2N);
 
