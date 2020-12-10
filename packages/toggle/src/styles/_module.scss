@@ -89,6 +89,7 @@
      * On récupère le text via l'attribut [data-rf-unchecked-label]
      */
     &::before {
+      flex-shrink: 0;
       font-family: $font-family-sans;
       height: calc(#{space(3v)} - 1px);
       margin-top: calc(#{space(3w)} + #{space(1v)});
