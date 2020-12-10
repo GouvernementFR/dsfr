@@ -73,6 +73,7 @@
   }
 
   &__list {
+    @extend %list-reset;
     font-weight: font-weight('bold');
 
     #{dse(sidemenu__list)} {
@@ -86,6 +87,7 @@
   }
 
   &__item {
+    position: relative;
     margin: space(0-5N);
     @include scheme-element-border-color(g300, true, bottom);
 
