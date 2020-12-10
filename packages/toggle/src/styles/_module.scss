@@ -5,6 +5,7 @@
 
 .#{$prefix}-toggle {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   padding: space(2w) 0;
 
@@ -30,8 +31,8 @@
     @include disabled-toggle-choice();
 
     /*
-    * Provisoire pour tester sur IE11
-    */
+     * Provisoire pour tester sur IE11
+     */
     @include ie-hack() {
       box-shadow: inset 0 0 0 1px blue;
     }
@@ -82,6 +83,10 @@
 
       &::before {
         content: attr(data-rf-unchecked-label) '\A' attr(data-rf-checked-label);
+      }
+
+      + .#{$prefix}-hint-text {
+        margin-top: space(1w);
       }
     }
 
@@ -135,6 +140,12 @@
         background: #fff;
       }
     }
+  }
+
+  .#{$prefix}-hint-text {
+    @extend %hint-text;
+    flex-basis: 100%;
+    margin-top: space(2w);
   }
 
   /*

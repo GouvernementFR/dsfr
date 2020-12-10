@@ -9,9 +9,15 @@
 &--border-bottom {
   @include scheme-element-box-shadow-color(g300, false, inset 0 -1px 0 0 $COLOR);
 
-  .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
-  .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
-    margin-bottom: -(space(1w));
+  .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label],
+  .#{$prefix}-toggle__label[data-#{$prefix}-checked-label] {
+    &::before {
+      margin-bottom: -(space(1w));
+    }
+
+    + .#{$prefix}-hint-text {
+      margin-top: space(2w);
+    }
   }
 }
 
@@ -32,7 +38,7 @@
   .#{$prefix}-toggle__label {
     justify-content: space-between;
     padding-left: 0;
-    width: calc(100% + #{space(5w)});
+    width: calc(100% - #{space(5w)});
 
     &::before {
       flex-shrink: 0;
@@ -46,5 +52,9 @@
   .#{$prefix}-toggle__label::after {
     left: auto;
     right: space(2w);
+  }
+
+  .#{$prefix}-hint-text {
+    order: 2;
   }
 }

@@ -4,7 +4,7 @@
       let groupToggleId = 'group-' + i
   %>
     <li>
-        <%- include('./toggle', {toggleId: 'toggle-' + i} ); %>
+        <%- include('./toggle', {toggleId: hint ? 'toggle-hint-' + i : 'toggle-' + i} ); %>
     </li>
   <% } %>
 </ul>
