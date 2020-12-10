@@ -4,11 +4,10 @@
 ////
 
 #{dse(content-media)} {
+  @extend %default-text-color;
   width: 100%;
   margin: space(5N) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include display-flex(column, center);
 
   &__img {
     width: 100%;

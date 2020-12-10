@@ -4,6 +4,7 @@
 ////
 
 #{dse(checkbox-group)} {
+  @extend %default-text-color;
   position: relative;
 
   #{dse(hint-text)} {

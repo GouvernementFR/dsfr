@@ -4,12 +4,10 @@
 ////
 
 #{dse(summary)} {
-  padding: space(3N);
+  @extend %default-text-color;
   @include scheme-element-bg-color(beige, true);
-
-  @include respond-from(md) {
-    padding: space(4N) space(5N) space(3N);
-  }
+  @include padding(6v);
+  @include padding(8v 10v 6v, md);
 }
 
 #{dse(summary__title)} {

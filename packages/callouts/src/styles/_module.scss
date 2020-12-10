@@ -4,8 +4,8 @@
 ////
 
 #{dse(callout)} {
+  @extend %default-text-color;
   position: relative;
-  font-family: $font-family-sans;
   padding: space(3w);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 

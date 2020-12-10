@@ -4,6 +4,7 @@
 ////
 
 #{dse(card)} {
+  @extend %default-text-color;
   @include display-flex(column);
   position: relative;
   @include scheme-element-bg-color(beige, true, true);

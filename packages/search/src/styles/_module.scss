@@ -4,6 +4,7 @@
 ////
 
 #{dse(search-bar)} {
+  @extend %default-text-color;
   display: flex;
   flex-direction: row;
 

@@ -4,6 +4,7 @@
 ////
 
 #{dse(footer)} {
+  @extend %default-text-color;
   width: 100%;
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
   @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
@@ -34,8 +35,9 @@
       @include margin-left(12v, md);
     }
 
-    > a + a {
-
+    &-link {
+      @extend %a-reset;
+      @include override-reset-link-style;
     }
 
     /**

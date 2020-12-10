@@ -9,6 +9,7 @@
 }
 
 @include has-icon {
+  @extend %default-text-color;
   @include before {
     @extend %font-icon;
     font-size: icon-size(md);

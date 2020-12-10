@@ -7,6 +7,7 @@
 /// @type String
 
 #{dse(table)} {
+  @extend %default-text-color;
   position: relative;
 
   &:not(#{dse(table--no-scroll)}) {

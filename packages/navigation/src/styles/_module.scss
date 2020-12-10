@@ -4,6 +4,8 @@
 ////
 
 #{dse(nav)} {
+  @extend %default-text-color;
+
   &__list {
     @extend %list-reset;
     display: flex;

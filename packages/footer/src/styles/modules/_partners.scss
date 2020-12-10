@@ -43,9 +43,10 @@
 }
 
 &__partners-title {
+  @include force-over-reset {
+    @include text-styles(sm, null, regular);
+  }
   flex-basis: 100%;
-  font-size: font-size(14);
-  font-weight: font-weight();
   margin: 0;
   text-align: center;
 

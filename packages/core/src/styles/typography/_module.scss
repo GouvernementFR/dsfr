@@ -19,6 +19,7 @@
 }
 
 #{dse(list)} {
+  @extend %default-text-color;
   @extend %list-reset;
 
   @at-root ul#{&} {

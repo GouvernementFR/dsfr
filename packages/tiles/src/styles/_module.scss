@@ -4,6 +4,7 @@
 ////
 
 #{dse(tile)} {
+  @extend %default-text-color;
   position: relative;
   display: flex;
   flex-direction: column;

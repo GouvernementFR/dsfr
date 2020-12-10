@@ -29,11 +29,19 @@
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+%default-text-color {
   @include scheme-element-text-color(g700, true);
 }
 
-@mixin override-reset-link-style($remove-blank: true) {
-  @at-root #{selector-unify(&, a)} {
+@mixin override-reset-link-style($remove-blank: true, $unify: true) {
+  $selector: &;
+  @if $unify {
+    $selector: #{selector-unify(&, a)};
+  }
+
+  @at-root #{$selector} {
     box-shadow: none;
 
     @if $remove-blank {

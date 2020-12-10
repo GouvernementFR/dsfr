@@ -30,6 +30,7 @@
 }
 
 &__content-list {
+  @extend %list-reset;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -59,6 +60,8 @@
 }
 
 &__content-link {
+  @extend %a-reset;
+  @include override-reset-link-style;
   @include scheme-element-text-color(g800);
   display: inline-flex;
   font-weight: font-weight(bold);

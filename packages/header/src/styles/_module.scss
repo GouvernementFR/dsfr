@@ -4,6 +4,7 @@
 ////
 
 #{dse(header)} {
+  @extend %default-text-color;
   width: 100%;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);

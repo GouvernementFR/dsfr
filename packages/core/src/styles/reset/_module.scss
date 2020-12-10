@@ -17,6 +17,7 @@
 
   body {
     @extend %body-reset;
+    @extend %default-text-color;
     @include scheme-body;
     margin: 0;
     padding: 0;

@@ -4,6 +4,8 @@
 ////
 
 #{dse(pagination)} {
+  @extend %default-text-color;
+
   &__list {
     display: flex;
     flex-direction: row;

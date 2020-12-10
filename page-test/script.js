@@ -59,8 +59,6 @@ class AttributeDemoCheckbox extends DemoCheckbox {
   change () {
     const value = this.checkbox.checked ? this.checkedValue : this.uncheckedValue;
 
-    console.log(value);
-
     switch (value) {
       case null:
         document.documentElement.removeAttribute(this.attributeName);

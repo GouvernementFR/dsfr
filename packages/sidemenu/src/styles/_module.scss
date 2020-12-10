@@ -4,6 +4,7 @@
 ////
 
 #{dse(sidemenu)} {
+  @extend %default-text-color;
   position: relative;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
