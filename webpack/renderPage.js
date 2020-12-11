@@ -2,13 +2,15 @@ const global = require('../package.json').config;
 const ejs = require('ejs');
 const fs = require('fs');
 const beautify = require('js-beautify').html;
-//const cleaner = require('clean-html');
+const packages = require('./packages');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
 beautyOpts.indent_inner_html = true;
 beautyOpts.indent_handlebars = true;
-beautyOpts.inline = []
+beautyOpts.inline = [];
+
+let count = 0;
 
 function includeAttrs(attrs) {
     let html = '';
@@ -23,6 +25,12 @@ function includeClasses(classes) {
     return '';
 }
 
+function getPackage(id) {
+    for (let i = 0; i < packages.length; i++) {
+        if (packages[i].id === id) return packages[i];
+    }
+}
+
 function snippet(html) {
     html = beautify(html, beautyOpts);
 
@@ -31,27 +39,25 @@ function snippet(html) {
     html = html.replace(/</g, '&lt;');
     html = html.replace(/>/g, '&gt;');
 
-    return '<pre class=" language-html"><code>' + html + '</code></pre>';
+    count++;
+
+    return '<div class="rf-my-2v"><button class="rf-link" aria-expanded="false" aria-controls="snippet-' + count + '">Snippet de code</button><div class="rf-collapse" id="snippet-' + count + '"><pre class=" language-html"><code>' + html + '</code></pre></div></div>';
 }
 
 function renderPage(id) {
     let pagePath = __dirname + '/../page-test/page.ejs';
     let page = fs.readFileSync(pagePath , {encoding:'utf8', flag:'r'});
 
-    let jsonPath = __dirname + '/../packages/' + id + '/package.json';
-    let raw = fs.readFileSync(jsonPath);
-    let json = JSON.parse(raw);
-
     let options = {... global};
 
-    options.desc = json.description;
-    options.config = json.config;
-    options.dir =  __dirname + '/../packages/' + id + '/tests/';
+    options.pck = getPackage(id);
+    options.packages = packages;
+    options.dir =  __dirname;
     options.root =  __dirname + '/../';
     options.includeAttrs = includeAttrs;
     options.includeClasses = includeClasses;
     options.snippet = snippet;
-    
+
     let html = ejs.render(page, options);
 
     return beautify(html, beautyOpts);
