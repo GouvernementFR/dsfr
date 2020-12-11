@@ -2,16 +2,14 @@ $tabs-settings:(
   sizes: (
     md: (
       font-size: 16,
-      line-height: space(3N),
-      min-height: space(5N),
-      padding-x: space(2N),
-      padding-y: space(1N),
+      line-height: 6v,
+      min-height: 10v,
+      padding-x: 4v,
+      padding-y: 2v,
       icon: md,
-      icon-margin-x: space(1N),
+      icon-margin-x: 2v,
       icon-only: md
     )
   ),
-  places: (
-    left: checkbox-line,
-  )
+  places: left
 );

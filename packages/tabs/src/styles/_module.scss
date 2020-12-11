@@ -120,16 +120,10 @@
       cursor: default;
 
       @include after(block, '') {
-        @extend %absolute-overlay;
+        @include absolute(2px, 1px, 0, 1px, auto, calc(100% - 1px));
         @include scheme-element-box-shadow-color(g300, true, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
         // @include scheme-element-box-shadow-color(w, true, 'inset 0 -3px 0 0 $COLOR');
         @include z-index(over);
-        left: 1px;
-        right: 1px;
-        top: 2px;
-        bottom: 0;
-        width: auto;
-        height: calc(100% - 1px);
       }
     }
   }
