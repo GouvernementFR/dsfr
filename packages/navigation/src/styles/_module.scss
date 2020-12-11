@@ -51,16 +51,20 @@
       display: flex;
       align-items: center;
       font-size: font-size(14);
-      line-height: 1rem;
+      line-height: space(4v);;
       text-align: left;
-      height: space(6N);
-      padding: 0;
+      min-height: space(6N);
+      padding: space(3v) 0;
       width: 100%;
       justify-content: space-between;
       font-weight: bold;
 
       @include scheme-element-text-color(g800);
       @include scheme-element-focus();
+
+      @include before() {
+        margin-right: 0;
+      }
 
       @include respond-from(md) {
         padding: space(2-5N) space(2N);
@@ -96,7 +100,7 @@
 
       @include font-icon(arrow-down-s-line, md) {
         margin-left: space(1N);
-        margin-right: - space(0-5N);
+        margin-right: 0;
         transition: transform 0.3s;
       }
 
@@ -201,7 +205,7 @@
     & > .#{$prefix}-link {
       padding: space(2N);
       font-size: font-size(14);
-      line-height: 1rem;
+      line-height: space(4v);
       text-align: left;
       box-shadow: none;
       @include scheme-element-text-color(g800, true);
@@ -355,7 +359,7 @@
     & > .#{$prefix}-link {
       padding: space(2N);
       font-size: font-size(14);
-      line-height: space(2N);
+      line-height: space(4v);
       font-weight: bold;
       text-align: left;
       box-shadow: none;
@@ -431,7 +435,7 @@
     & > .#{$prefix}-link {
       padding: space(1-5N) space(2N);
       font-size: font-size(14);
-      line-height: 1rem;
+      line-height: space(4v);
       text-align: left;
       box-shadow: none;
       @include scheme-element-text-color(g800);
