@@ -34,7 +34,7 @@
     }
   }
 
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(g700);
   @include scheme-element-focus();
 
   &[aria-expanded="true"] {
@@ -57,7 +57,7 @@
     width: 100%;
     padding: space(1-5N) 0 space(1-5N) space(4N);
     border: 0;
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(g700);
     @include scheme-element-bg-color(w-g750, true);
     @include scheme-element-focus();
 

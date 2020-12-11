@@ -31,19 +31,23 @@
   @include text($font-size, $line-height, $color-set, $font-weight);
 }
 
-@mixin text-selector($selector, $settings) {
-  @at-root #{$selector} {
-    $default: map_get($settings, default);
-    @include text-variation($default);
+@mixin _iterate-variations($settings, $color-set: null, $font-weight: null) {
+  $default: map_get($settings, default);
+  @include text-variation($default, $color-set, $font-weight);
 
-    $responsive: map_get($settings, responsive);
-    @if $responsive != null {
-      @each $breakpoint, $variation in $responsive {
-        @include respond-from($breakpoint) {
-          @include text-variation($variation);
-        }
+  $responsive: map_get($settings, responsive);
+  @if $responsive != null {
+    @each $breakpoint, $variation in $responsive {
+      @include respond-from($breakpoint) {
+        @include text-variation($variation, $color-set, $font-weight);
       }
     }
+  }
+}
+
+@mixin text-selector($selector, $settings) {
+  @at-root #{$selector} {
+    @include _iterate-variations($settings);
   }
 }
 
@@ -79,14 +83,12 @@
     }
 
     @include text-selector('%#{$main}', $variation);
-    @at-root #{$selector} {
+    @at-root & #{$selector} {
       @extend %#{$main};
     }
   }
 }
 
 @mixin text-styles($size: md, $color-set: null, $font-weight: null) {
-  $variation: map_deep-get($texts-settings, $size, default);
-
-  @include text-variation($variation, $color-set, $font-weight);
+  @include _iterate-variations(map-get($texts-settings, $size), $color-set, $font-weight);
 }

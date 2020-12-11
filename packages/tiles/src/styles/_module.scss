@@ -22,17 +22,14 @@
     display: inline-flex;
     width: 100%;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
+    @include after(null, '') {
+      @include absolute(0, 0, 0, 0);
     }
 
-    &:focus {
-      outline-offset: 9999px;
+    @include force-over-reset {
+      &:focus {
+        outline-offset: 9999px;
+      }
     }
   }
 

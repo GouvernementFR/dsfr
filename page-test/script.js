@@ -1,5 +1,6 @@
 /* eslint-disable no-new */
 import '@gouvfr/schemes/src/scripts/dist';
+import '@gouvfr/utilities/src/scripts/dist';
 
 const schemeAttr = 'data-${prefix}-theme';
 const resetAttr = 'data-${prefix}-reset';

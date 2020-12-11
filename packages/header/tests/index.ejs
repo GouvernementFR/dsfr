@@ -17,7 +17,7 @@ for (let i = 0; i < samples.length; i++) {
     let sample = samples[i];
 %>
 <div class="<%= prefix %>-container" >
-    <h4><%= sample.title %></h4>
+    <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 </div>
 <%- include(sample.sample, sample.data); %>
 

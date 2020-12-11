@@ -5,6 +5,7 @@ let samples = [
   { title:'Lien seul SM', sample:'./samples/link-sm'},
   { title:'Lien seul LG', sample:'./samples/link-lg'},
   { title:'Lien seul button', sample:'./samples/link-default', tag: 'button'},
+  { title:'Lien seul button désactivé', sample:'./samples/link-default', tag: 'button', disabled: true},
   { title:'Lien seul div', sample:'./samples/link-default', tag:'div'}
 ]
 %>
@@ -19,7 +20,7 @@ for (let i = 0; i < samples.length; i++) {
   const right = {iconPlace: 'right', icon: 'arrow-right-line', ... sample};
   const only = {icon: 'arrow-down-line', ... sample};
 %>
-<h4><%= sample.title %></h4>
+<h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 <div>
   <%- include(sample.sample, sample); %>
 </div>
@@ -32,16 +33,13 @@ for (let i = 0; i < samples.length; i++) {
 <div>
   <%- include(sample.sample, only); %>
 </div>
-<%- snippet(include(sample.sample, sample)); %>
-<%- snippet(include(sample.sample, left)); %>
-<%- snippet(include(sample.sample, right)); %>
-<%- snippet(include(sample.sample, only)); %>
+<%- snippet(include(sample.sample, sample) + include(sample.sample, left) + include(sample.sample, right) + include(sample.sample, only)); %>
 <% } %>
 
 <%
 data = {insert: 'lorem ipsum dolor sit amet' + include('./samples/link-default', {iconPlace: 'right', icon: 'arrow-right-line'})};
 
 %>
-<h4>Lien seul mis en situation dans un texte</h4>
+<h4 class="<%= prefix %>-h4">Lien seul mis en situation dans un texte</h4>
 
 <%- include('../../core/tests/typography/samples/p', data); %>

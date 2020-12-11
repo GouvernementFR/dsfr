@@ -29,6 +29,8 @@
 
  linkClasses.push(prefix + '-link');
 
+ if (locals.disabled === true) linkAttrs['disabled'] = '';
+
  switch(locals.size) {
      case 'sm':
          linkClasses.push(prefix + '-link--sm');

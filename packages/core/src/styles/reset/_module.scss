@@ -38,6 +38,10 @@
     box-sizing: inherit;
   }
 
+  a {
+    @extend %a;
+  }
+
   * {
     @include class-is-not-dse(false) {
       box-sizing: inherit;

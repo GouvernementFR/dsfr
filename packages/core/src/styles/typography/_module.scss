@@ -6,16 +6,18 @@
 @include font-faces('Marianne', $marianne-font-face-settings);
 @include font-faces('Spectral', $spectral-font-face-settings);
 
-@include font-weights();
+:root {
+  @include font-weights();
 
-@include text-selectors($headings-settings, null, false, true);
+  @include text-selectors($headings-settings, null, false, true);
 
-@include text-selectors($displays-settings, display, false);
+  @include text-selectors($displays-settings, display, false);
 
-@include text-selectors($texts-settings, text, true, true);
+  @include text-selectors($texts-settings, text, true, true);
 
-#{dse(text--alt)} {
-  font-family: $font-family-serif;
+  #{dse(text--alt)} {
+    font-family: $font-family-serif;
+  }
 }
 
 #{dse(list)} {
