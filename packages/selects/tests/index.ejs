@@ -12,12 +12,12 @@ let samples = [
 for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
 %>
-<h4><%= sample.title %></h4>
+<h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 <%- include('./samples/select', sample.data); %>
 <%- snippet(include('./samples/select', sample.data)); %>
 <% } %>
 
-<h4>Multiple input group</h4>
+<h4 class="<%= prefix %>-h4">Multiple input group</h4>
 <%- include('./samples/select', { id:'select-group1', hint: true, group:true}); %>
 <%- include('./samples/select', { id:'select-group2', valid: true, group:true}); %>
 <%- include('./samples/select', { id:'select-group3', error: true, group:true}); %>

@@ -17,7 +17,7 @@
 
 @mixin sr-only-from() {
   @each $bp, $limits in $breakpoints {
-    .#{$prefix}-sr-only-#{$bp} {
+    #{dse('sr-only-' + $bp)} {
       @include respond-from($bp) {
         @include sr-only();
       }
@@ -27,7 +27,7 @@
 
 @mixin sr-only-to() {
   @each $bp, $limits in $breakpoints {
-    .#{$prefix}-sr-only-to-#{$bp} {
+    #{dse('sr-only-to-' + $bp)} {
       @include respond-to($bp) {
         @include sr-only();
       }

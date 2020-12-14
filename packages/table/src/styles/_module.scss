@@ -5,12 +5,12 @@
 
 /// Selecteur de tableaux
 /// @type String
-$table: "#{$prefix}-table";
 
-.#{$table} {
+#{dse(table)} {
+  @extend %default-text-color;
   position: relative;
 
-  &:not(#{$table}--no-scroll) {
+  &:not(#{dse(table--no-scroll)}) {
     overflow: hidden;
 
     table {

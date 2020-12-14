@@ -1,0 +1,12 @@
+////
+/// Core Module : Prose
+/// @group core
+////
+
+#{dse(prose)} {
+  @extend %default-text-color;
+  @import 'module/headings';
+  @import 'module/paragraph';
+  @import 'module/link';
+  @import 'module/lists';
+}

@@ -3,7 +3,7 @@
 /// @group header
 ////
 
-.#{$prefix}-shortcuts {
+#{dse(shortcuts)} {
   //display: none;
 
   @include respond-from(md) {

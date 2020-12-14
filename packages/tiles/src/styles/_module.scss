@@ -3,35 +3,33 @@
 /// @group tiles
 ////
 
-.#{$prefix}-tile {
+#{dse(tile)} {
+  @extend %default-text-color;
   position: relative;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   @include scheme-element-bg-color(beige, true);
 
-  .#{$prefix}-grid-row & {
+  #{dse(grid-row)} & {
     height: 100%;
   }
 
   &__link {
+    @extend %a-reset;
+    @include override-reset-link-style;
     position: static;
-    text-decoration: none;
     display: inline-flex;
-    box-shadow: none;
     width: 100%;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
+    @include after(null, '') {
+      @include absolute(0, 0, 0, 0);
     }
 
-    &:focus {
-      outline-offset: 9999px;
+    @include force-over-reset {
+      &:focus {
+        outline-offset: 9999px;
+      }
     }
   }
 
@@ -58,11 +56,12 @@
   }
 
   &__title {
-    @include text-styles(md);
-    font-weight: font-weight(bold);
+    @include force-over-reset {
+      @include text-styles(md, null, bold);
+    }
     margin: 0;
 
-    + .#{$prefix}-tile__desc {
+    + #{dse(tile__desc)} {
       margin: space(1N) 0 0;
       @include text-styles(sm);
     }
@@ -88,14 +87,14 @@
     &--horizontal {
       flex-direction: row;
 
-      .#{$prefix}-tile__img {
+      #{dse(tile__img)} {
         margin: space(4N) 0 space(4N) space(4N);
         flex-grow: 1;
         flex-basis: auto;
         width: auto;
       }
 
-      .#{$prefix}-tile__body {
+      #{dse(tile__body)} {
         padding: space(4N);
         flex-basis: 70%;
       }

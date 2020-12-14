@@ -3,7 +3,8 @@
 /// @group Highlights
 ////
 
-.#{$prefix}-highlight {
+#{dse(highlight)} {
+  @extend %default-text-color;
   @include padding-left(4v);
   @include scheme-element-border-color(bf500, true, left, space(0-5N) solid $COLOR);
   @include text-styles();

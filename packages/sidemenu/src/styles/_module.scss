@@ -3,7 +3,8 @@
 /// @group sidemenu
 ////
 
-.#{$prefix}-sidemenu {
+#{dse(sidemenu)} {
+  @extend %default-text-color;
   position: relative;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
@@ -73,9 +74,10 @@
   }
 
   &__list {
+    @extend %list-reset;
     font-weight: font-weight('bold');
 
-    .#{$prefix}-sidemenu__list {
+    #{dse(sidemenu__list)} {
       margin: 0 0 0 space(2N);
       font-weight: font-weight();
     }
@@ -86,6 +88,7 @@
   }
 
   &__item {
+    position: relative;
     margin: space(0-5N);
     @include scheme-element-border-color(g300, true, bottom);
 
@@ -96,16 +99,16 @@
     &:last-child {
       border: 0;
 
-      .#{$prefix}-sidemenu__btn {
+      #{dse(sidemenu__btn)} {
         @include scheme-element-border-color(t-plain, true, bottom);
       }
     }
 
     &--active {
-      & > .#{$prefix}-sidemenu__btn {
+      & > #{dse(sidemenu__btn)} {
         @include scheme-element-text-color(bf500);
       }
-      & > .#{$prefix}-sidemenu__link {
+      & > #{dse(sidemenu__link)} {
         @include scheme-element-text-color(bf500);
 
         &::before {

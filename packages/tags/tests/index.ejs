@@ -24,7 +24,7 @@ const right = {iconPlace: 'right', icon: 'arrow-right-line'};
 for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
 %>
-<h4><%= sample.title %></h4>
+<h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 <div>
   <%- include(sample.sample, sample); %>
 </div>
@@ -46,7 +46,7 @@ for (let i = 0; i < groupSamples.length; i++) {
   let groupSample = groupSamples[i];
 %>
 <h4 class="<%= prefix %>-mt-8w"><%= groupSample.title %></h4>
-<div class="rf-col-6">
+<div class="<%= prefix%>-col-6">
   <%- include(groupSample.sample, {clickable: groupSample.clickable, group: groupSample.group}); %>
 </div>
 <div class="<%= prefix %>-mt-4w">

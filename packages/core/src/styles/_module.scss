@@ -3,9 +3,10 @@
 /// @group core
 ////
 
+@import 'reset/module';
 @import 'global/module';
 @import 'icons/module';
 @import 'typography/module';
-@import 'body/module';
+@import 'prose/module';
 @import 'grid/module';
 @import 'medias/module';

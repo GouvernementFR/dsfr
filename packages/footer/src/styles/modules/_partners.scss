@@ -34,7 +34,7 @@
   /**
    * On surcharge le style du logo de base
    */
-  .#{$prefix}-footer__logo {
+  #{dse(footer__logo)} {
     width: auto;
     max-width: 100%;
     height: auto;
@@ -43,9 +43,10 @@
 }
 
 &__partners-title {
+  @include force-over-reset {
+    @include text-styles(sm, null, regular);
+  }
   flex-basis: 100%;
-  font-size: font-size(14);
-  font-weight: font-weight();
   margin: 0;
   text-align: center;
 
@@ -74,7 +75,7 @@
   flex-basis: 100%;
   padding-top: space(1w);
 
-  + .#{$prefix}-footer__partners-sub {
+  + #{dse(footer__partners-sub)} {
 
     @include respond-from(md) {
       justify-content: flex-end;
