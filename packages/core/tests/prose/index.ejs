@@ -2,38 +2,43 @@
  let lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et.'
  %>
 
-<div class="<%= prefix %>-prose" >
+<%
+function includeProse(path, data) {
+  return `<div class="${prefix}-prose" >${include(path, data)}</div>`;
+}
 
-    <%- include('./samples/headings'); %>
-    <%- snippet(include('./samples/headings')); %>
+%>
 
-    <h4 class="<%= prefix %>-h4" >Test de paragraphe et de lien</h4>
-    <%- include('./samples/paragraph'); %>
-    <%- snippet(include('./samples/paragraph')); %>
+<%- includeProse('./samples/headings'); %>
+<%- snippet(includeProse('./samples/headings')); %>
 
-    <h4 class="<%= prefix %>-h4" >Test de liste non ordonnée</h4>
-    <%
-     let ul = {
-       lis:[{
-           lis:[{}, {}, {}]
-         }, {text:lorem}, {}
-       ]}
-     %>
+<h4 class="<%= prefix %>-h4" >Test de paragraphe et de lien</h4>
+<%- includeProse('./samples/paragraph'); %>
+<%- snippet(includeProse('./samples/paragraph')); %>
 
-    <%- include('./../typography/samples/ul', ul);%>
-    <%- snippet(include('./../typography/samples/ul'));%>
+<h4 class="<%= prefix %>-h4" >Test de liste non ordonnée</h4>
+<%
+ let ul = {
+   lis:[{
+       lis:[{}, {}, {}]
+     }, {text:lorem}, {}
+   ]}
+ %>
 
-    <h4 class="<%= prefix %>-h4" >Test de liste ordonnée</h4>
-    <%
-    let ol = {
+<%- includeProse('./../typography/samples/ul', ul);%>
+<%- snippet(includeProse('./../typography/samples/ul')) %>
+
+<h4 class="<%= prefix %>-h4" >Test de liste ordonnée</h4>
+<%
+let ol = {
+  lis:[{
       lis:[{
-          lis:[{
-            lis:[{}, {}, {}]
-          }, {text:lorem}, {}]
-        }, {}, {}
-      ]}
-    %>
+        lis:[{}, {}, {}]
+      }, {text:lorem}, {}]
+    }, {}, {}
+  ]}
+%>
 
-    <%- include('./../typography/samples/ol', ol);%>
-    <%- snippet(include('./../typography/samples/ol'));%>
-</div>
+<%- includeProse('./../typography/samples/ol', ol);%>
+<%- snippet(includeProse('./../typography/samples/ol'));%>
+

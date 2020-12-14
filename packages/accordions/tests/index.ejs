@@ -1,12 +1,10 @@
 <%- include('./templates/accordion.ejs', {collapseId: 'accordionDefault0', title: true, image: true, button: true}); %>
-<div class="<%= prefix %>-mt-9w <%= prefix %>-mb-9w" >
-    <%- snippet(include('./templates/accordion.ejs', {short:true, collapseId: 'accordionDefault0', title: true, image: true, button: true})); %>
-</div>
+<%- snippet(include('./templates/accordion.ejs', {short:true, collapseId: 'accordionDefault0', title: true, image: true, button: true})); %>
+
 
 <%- include('./samples/accordion-group.ejs', {groupCollapseId: prefix + '-accordion-group-0', button: true}); %>
-<div class="<%= prefix %>-mt-9w <%= prefix %>-mb-9w" >
-    <%- snippet(include('./samples/accordion-group.ejs', {short:true, groupCollapseId: prefix + '-accordion-group-0', button: true})); %>
-</div>
+<%- snippet(include('./samples/accordion-group.ejs', {short:true, groupCollapseId: prefix + '-accordion-group-0', button: true})); %>
+
 
 <div class="<%= prefix %>-mt-9w" >
     <h4 class="<%= prefix %>-h4">Accordéons simples multiples</h4>
