@@ -9,10 +9,10 @@
 #{dse(table)} {
   @extend %default-text-color;
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
 
   &:not(#{dse(table--no-scroll)}) {
-    overflow: hidden;
-
     table {
       width: 100%;
     }
