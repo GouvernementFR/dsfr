@@ -98,7 +98,7 @@
           align-items: center;
           height: space(20v);
           width: space(21v);
-          @include scheme-element-box-shadow-color(g300, true, 'inset 1px 0 0 0 $COLOR');
+          @include scheme-element-border-color(g300, true, left);
           // TODO: insérer la font icon ilustrative ifi
           font-size: space(20v); // ?
         }
