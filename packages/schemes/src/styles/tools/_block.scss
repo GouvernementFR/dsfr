@@ -29,7 +29,7 @@
       $set: map_get($scheme-sets, nth($sets, 1));
       $selector: #{$base}-#{$color};
 
-      @at-root #{$selector} {
+      @at-root :root #{$selector} {
         background-color: var(--#{nth($sets, 1)});
 
         --scheme-border: var(--#{nth($sets, 2)});
