@@ -18,7 +18,7 @@ for (let i = 0; i < samples.length; i++) {
 %>
 <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 <%- include(sample.sample, sample.data); %>
-<div class="rf-my-8w">
+<div class="<%= prefix %>-my-8w">
   <%- snippet(include(sample.sample, sample.data)); %>
 </div>
 <% } %>

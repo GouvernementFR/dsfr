@@ -48,7 +48,7 @@
       margin: 0 #{space(map-get($grid-gutter-width, lg)) * - 0.5};
     }
 
-    [class|="rf-col"] {
+    @include class-start-with(#{$prefix}-col, false) {
       padding: #{space(map-get($grid-gutter-width, xs)) * 0.5};
 
       @include respond-from(md) {

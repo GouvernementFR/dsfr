@@ -110,7 +110,7 @@
       }
     }
 
-    .rf-hint-text {
+    #{dse(hint-text)} {
       margin-left: space(3N);
     }
   }

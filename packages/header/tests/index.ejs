@@ -21,7 +21,7 @@ for (let i = 0; i < samples.length; i++) {
 </div>
 <%- include(sample.sample, sample.data); %>
 
-<div class="<%= prefix %>-container rf-margin-top-15N" >
+<div class="<%= prefix %>-container <%= prefix %>-mt-20v" >
     <% if (sample.snippet !== false) { %>
     <%- snippet(include(sample.sample, { ... sample.data, short: true})); %>
     <% } %>
