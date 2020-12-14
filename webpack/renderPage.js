@@ -44,7 +44,7 @@ function snippet (html) {
 
   const prefix = global.prefix;
 
-  return `<section class="${prefix}-accordion ${prefix}-py-3w"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="snippet-${count}">Snippet de code</button></h3><div class="${prefix}-accordion__body" id="snippet-${count}"><div class="${prefix}-accordion__inner"><pre class=" language-html"><code>${html}</code></pre></div></div></section>`;
+  return `<section class="${prefix}-accordion ${prefix}-my-3w"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="snippet-${count}">Snippet de code</button></h3><div class="${prefix}-accordion__body" id="snippet-${count}"><div class="${prefix}-accordion__inner"><pre class=" language-html"><code>${html}</code></pre></div></div></section>`;
   // return '<div class="rf-my-2v"><button class="rf-link" aria-expanded="false" aria-controls="snippet-' + count + '">Snippet de code</button><div class="rf-collapse" id="snippet-' + count + '"><pre class=" language-html"><code>' + html + '</code></pre></div></div>';
 }
 
