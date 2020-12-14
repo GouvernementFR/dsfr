@@ -36,20 +36,16 @@
   text-transform: none;
   line-height: 1; }
 
-.rf-select-group:not(:last-child),
-.rf-input-group:not(:last-child) {
+.rf-select-group:not(:last-child), .rf-input-group:not(:last-child) {
   margin-bottom: 1.5rem; }
 
-.rf-select-group--valid .rf-label,
-.rf-input-group--valid .rf-label {
+.rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
   color: var(--success); }
 
-.rf-select-group--error .rf-label,
-.rf-input-group--error .rf-label {
+.rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
   color: var(--error); }
 
-.rf-select-group--disabled .rf-label,
-.rf-input-group--disabled .rf-label {
+.rf-select-group--disabled .rf-label, .rf-input-group--disabled .rf-label {
   color: var(--g600-g400); }
 
 .rf-label {
@@ -65,12 +61,12 @@
     margin-top: 0.5rem; }
 
 .rf-hint-text {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
   margin-top: 0;
-  margin-bottom: 0;
-  color: var(--g600); }
+  margin-bottom: 0; }
+  .rf-hint-text, p.rf-hint-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--g600); }
   .rf-hint-text + .rf-input,
   .rf-hint-text + .rf-input-wrap,
   .rf-hint-text + .rf-select {
@@ -78,12 +74,13 @@
 
 .rf-error-text {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
-  margin-top: 0.5rem;
-  color: var(--error); }
+  margin-top: 0.5rem; }
+  .rf-error-text, p.rf-error-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--error); }
   .rf-error-text::before {
     font-size: 0.75rem;
     display: inline-block;
@@ -91,12 +88,13 @@
 
 .rf-valid-text {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
-  margin-top: 0.5rem;
-  color: var(--success); }
+  margin-top: 0.5rem; }
+  .rf-valid-text, p.rf-valid-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--success); }
   .rf-valid-text::before {
     font-size: 0.75rem;
     display: inline-block;
@@ -146,20 +144,20 @@
   .rf-fieldset--error .rf-fieldset__content::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
     bottom: 0.75rem;
     left: -0.5rem;
+    width: 2px;
     background-color: var(--error); }
   .rf-fieldset--error .rf-label {
     color: var(--error); }
   .rf-fieldset--valid .rf-fieldset__content::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
     bottom: 0.75rem;
     left: -0.5rem;
+    width: 2px;
     background-color: var(--success); }
   .rf-fieldset--valid .rf-label {
     color: var(--success); }

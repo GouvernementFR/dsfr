@@ -18,6 +18,13 @@
   SM 64px => 80px
   XS 56px => 72px
  */
+.rf-skiplinks__list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
 .rf-skiplinks__list > li .rf-link {
   margin-left: -0.75rem;
   margin-right: -0.75rem; }
@@ -39,6 +46,9 @@
     margin: 0 1rem 0.25rem; }
     .rf-skiplinks__list > li::before {
       content: none; }
+    .rf-skiplinks__list > li .rf-link {
+      max-width: none;
+      max-height: none; }
     @media (min-width: 36em) {
       .rf-skiplinks__list > li {
         margin: 0 1rem; } }

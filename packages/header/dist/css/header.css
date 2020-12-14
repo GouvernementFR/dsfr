@@ -26,6 +26,12 @@
   text-transform: none;
   line-height: 1; }
 
+.rf-header__navbar .rf-service__title {
+  text-decoration: none; }
+
+.rf-header {
+  color: var(--g700); }
+
 .rf-header .rf-shortcuts__item .rf-link {
   font-size: 0.875rem;
   line-height: 1rem;
@@ -48,9 +54,8 @@
   margin-right: 0.5rem; }
 
 .rf-header__navbar .rf-btn {
-  width: 2.5rem;
-  min-height: auto;
-  height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
   .rf-header__navbar .rf-btn::before {
@@ -61,7 +66,7 @@
 
 .rf-header {
   width: 100%;
-  box-shadow: "0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32)";
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
   background-color: var(--w-g750); }
   .rf-header__body {
     display: flex;
@@ -145,8 +150,12 @@
         line-height: 1.5;
         font-weight: bold;
         color: var(--g800);
-        margin: 0;
-        box-shadow: none; }
+        margin: 0; }
+        .rf-header__navbar a.rf-service__title {
+          box-shadow: none; }
+          .rf-header__navbar a.rf-service__title[target="_blank"]::after {
+            content: none;
+            margin-left: 0; }
         @media (min-width: 48em) {
           .rf-header__navbar .rf-service__title {
             font-size: 1.25rem;
@@ -177,22 +186,22 @@
       background-color: var(--t-plain);
       color: var(--bf500);
       flex: 0 0 auto; }
-      :root:not([data-theme="dark"]) .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-header__navbar .rf-btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-header__navbar .rf-btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-header__navbar .rf-btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-header__navbar .rf-btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-header__navbar .rf-btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-header__navbar .rf-btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root[data-theme="dark"] .rf-header__navbar .rf-btn {
+      :root[data-rf-theme="dark"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
       .rf-header__navbar .rf-btn--menu, .rf-header__navbar .rf-btn.rf-fi-menu-fill {
@@ -260,6 +269,8 @@
     .rf-header .rf-shortcuts__item::before {
       content: none; }
     .rf-header .rf-shortcuts__item .rf-link {
+      max-width: none;
+      max-height: none;
       line-height: 1.5rem;
       width: 100%;
       padding: 0.75rem 0.25rem; }
@@ -270,8 +281,8 @@
         min-height: 2rem;
         padding: 0.5rem 0.75rem;
         border-radius: 1rem;
-        width: auto;
-        height: auto; }
+        max-width: none;
+        max-height: none; }
         .rf-header .rf-shortcuts__item .rf-link::before {
           font-size: 1rem; }
         .rf-header .rf-shortcuts__item .rf-link::before {
@@ -297,26 +308,26 @@
       box-shadow: inset 0 1px 0 0 var(--g300); }
       .rf-header .rf-nav .rf-menu::after,
       .rf-header .rf-nav .rf-mega-menu {
-        box-shadow: "0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32)"; } }
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32); } }
   .rf-header .rf-btn.rf-fi-close-line {
     background-color: var(--t-plain);
     color: var(--bf500); }
-    :root:not([data-theme="dark"]) .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-header .rf-btn.rf-fi-close-line,
-    :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-header .rf-btn.rf-fi-close-line,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-header .rf-btn.rf-fi-close-line,
-    :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-header .rf-btn.rf-fi-close-line,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-header .rf-btn.rf-fi-close-line,
-    :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-header .rf-btn.rf-fi-close-line,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root[data-theme="dark"] .rf-header .rf-btn.rf-fi-close-line {
+    :root[data-rf-theme="dark"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
 

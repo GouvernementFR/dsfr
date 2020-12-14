@@ -19,7 +19,7 @@ for (let i = 0; i < samples.length; i++) {
   <%
     for (let j = 0; j < total; j++) {
   %>
-  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= (i > 0) ? '<%= prefix%>--col-md-8 <%= prefix%>-col-lg-10' : '<%= prefix%>--col-md-4 <%= prefix%>-col-lg-3' %>">
+  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <% if (i > 0) { %><%= prefix%>-col-md-8 <%= prefix%>-col-lg-10 <% } else { %><%= prefix%>-col-md-4 <%= prefix%>-col-lg-3<% } %>">
     <%- include(sample.sample, datas[j % 4]); %>
   </div>
   <% } %>

@@ -1,4 +1,4 @@
-# @gouvfr/accordion
+# @gouvfr/accordions
 
 ## Dépendance
 ```shell
@@ -10,11 +10,11 @@ inputs
 ## Installation
 Installation via NPM:
 ```
-npm install @gouvfr/accordion
+npm install @gouvfr/accordions
 ```
 Via Yarn :
 ```
-yarn add install @gouvfr/accordion
+yarn add install @gouvfr/accordions
 ```
 
 ## Utilisation
