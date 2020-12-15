@@ -14,7 +14,7 @@
     flex-basis: calc(100% - (100% / 3));
   }
 
-  .#{$prefix}-footer__body--operator & {
+  #{dse(footer__body--operator)} & {
     margin-top: space(3w);
 
     @include respond-from(lg) {
@@ -30,6 +30,7 @@
 }
 
 &__content-list {
+  @extend %list-reset;
   display: flex;
   flex-direction: column;
   align-self: flex-end;
@@ -47,12 +48,6 @@
       margin-right: 0;
     }
 
-    > a {
-      display: inline-flex;
-      font-weight: font-weight(bold);
-      box-shadow: none;
-    }
-
     @include respond-from(sm) {
       margin-right: space(7w);
     }
@@ -62,4 +57,13 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+
+&__content-link {
+  @extend %a-reset;
+  @include override-reset-link-style;
+  @include scheme-element-text-color(g800);
+  display: inline-flex;
+  font-weight: font-weight(bold);
+  //box-shadow: none;
 }

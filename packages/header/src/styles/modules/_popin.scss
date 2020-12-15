@@ -30,7 +30,7 @@
     visibility: visible;
   }
 
-  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+  #{dse(btn) + dse(fi-close-line)} {
     position: absolute;
     top: 0;
     right: 0;

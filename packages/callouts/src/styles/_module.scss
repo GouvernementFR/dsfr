@@ -3,9 +3,9 @@
 /// @group callouts
 ////
 
-.#{$prefix}-callout {
+#{dse(callout)} {
+  @extend %default-text-color;
   position: relative;
-  font-family: $font-family-sans;
   padding: space(3w);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
@@ -14,42 +14,37 @@
    */
   @include custom-icons(lg) {
     display: block;
-    margin: -(space(1w)) 0 space(1w);
+    @include margin(-2v 0 2v);
 
     @include respond-from(md) {
-      position: absolute;
-      top: space(2w);
-      left: space(2w);
-      margin: 0;
+      @include absolute(4v, null, null, 4v);
+      @include margin(0);
     }
   }
 
   /**
    * Si une icône est présente, on rajoute du padding à partir du breakpoint md
    */
-  &[class^="#{$prefix}-fi"],
-  &[class*=" #{$prefix}-fi"] {
-    @include respond-from(md) {
-      padding: space(7w) space(6w) space(5w);
-    }
+  @include has-icon {
+    @include padding(14v 12v 10v, md);
   }
 
   &__title {
     font-size: font-size(22);
     line-height: line-height("snug");
     @include scheme-element-text-color(g800, true);
-    margin: 0 0 space(1w);
+    @include margin(0 0 2v);
   }
 
   &__text {
-    margin: 0;
-    @include text-styles();
+    @include text-styles(md);
+    @include margin(0);
   }
 
   /**
    * Modificateur pour la taille du texte (lg: 18px/1.25rem)
    */
-  &__text#{&}__text--lg {
+  &__text--lg {
     @include text-styles(lg);
   }
 
@@ -58,11 +53,9 @@
   /**
    * Ajout de marge quand on inclut un bouton (optionnel)
    */
-  .#{$prefix}-btn {
-    margin-top: space(2w);
+  #{dse(btn)} {
+    @include margin-top(4v);
   }
 
-  @include respond-from(md) {
-    padding: space(4w) space(6w);
-  }
+  @include padding(8v 12v, md);
 }

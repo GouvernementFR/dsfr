@@ -3,21 +3,25 @@
 /// @group tags
 ////
 
-#{prefixed-class(tag)} {
+#{dse(tag)} {
   @include build-tag();
 
   @include scheme-element-text-color(g-800, true);
   @include scheme-element-bg-color(g200, true);
 
-  @include when-element-tag-name-is(a, button) {
-    @include scheme-element-text-color(bf500-plain, true);
-    @include scheme-element-bg-color(bf200-bf300, true, true);
+  @at-root {
+    #{selector-unify(&, a)},
+    #{selector-unify(&, button)} {
+      @include scheme-element-text-color(bf500-plain, true);
+      @include scheme-element-bg-color(bf200-bf300, true, true);
+    }
   }
 
   @include disabled-link(true, true);
 }
 
-#{prefixed-group-class(tags)} {
+#{dse-group(tags)} {
+  @extend %list-reset;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0;
@@ -31,13 +35,13 @@
     }
   }
 
-  .#{$prefix}-tag {
+  #{dse(tag)} {
     @include margin-right(2v);
     @include margin-bottom(2v);
   }
 
-  a.#{$prefix}-tag,
-  button.#{$prefix}-tag {
+  a#{dse(tag)},
+  button#{dse(tag)} {
     @include margin-right(3v);
     @include margin-bottom(3v);
 

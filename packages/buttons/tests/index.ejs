@@ -28,7 +28,7 @@ let samples = [
 <% for (let i = 0; i < samples.length; i++) {
     let sample = samples[i];
 %>
-    <h4><%= sample.title %></h4>
+    <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
     <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--middle" >
         <div class="<%= prefix %>-col-md-3 <%= prefix %>-col-12 <%= prefix %>-mb-2w" style="text-align: center" >
             <%- include('./samples/button-sm', sample.data) %>

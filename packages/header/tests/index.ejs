@@ -18,11 +18,11 @@ for (let i = 0; i < samples.length; i++) {
     let sample = samples[i];
 %>
 <div class="<%= prefix %>-container" >
-    <h4><%= sample.title %></h4>
+    <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 </div>
 <%- include(sample.sample, sample.data); %>
 
-<div class="<%= prefix %>-container rf-margin-top-15N" >
+<div class="<%= prefix %>-container <%= prefix %>-mt-20v" >
     <% if (sample.snippet !== false) { %>
     <%- snippet(include(sample.sample, { ... sample.data, short: true})); %>
     <% } %>

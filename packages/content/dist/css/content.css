@@ -34,6 +34,9 @@
   text-transform: none;
   line-height: 1; }
 
+.rf-content-media {
+  color: var(--g700); }
+
 .rf-content-media__img img {
   position: absolute;
   top: 0;
@@ -91,6 +94,9 @@
     font-size: 0.75rem;
     line-height: 1.5;
     color: var(--g600); }
+  .rf-content-media__transcription .rf-link {
+    max-width: none;
+    max-height: none; }
   .rf-content-media--sm .rf-content-media __img, .rf-content-media--sm .rf-responsive-vid,
   .rf-content-media--sm .rf-content-media __caption, .rf-content-media--sm .rf-content-media __transcription {
     width: 83.33333%; }

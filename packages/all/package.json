@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/accordion": "^0.3.1",
+    "@gouvfr/accordions": "^0.3.1",
     "@gouvfr/breadcrumb": "^0.3.1",
     "@gouvfr/buttons": "^0.3.1",
     "@gouvfr/callouts": "^0.3.1",

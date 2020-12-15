@@ -30,11 +30,32 @@
   text-transform: none;
   line-height: 1; }
 
+.rf-breadcrumb__item a {
+  box-shadow: 0 1px 0 0 currentColor;
+  color: inherit; }
+  .rf-breadcrumb__item a:focus {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    z-index: var(--focus-z-index); }
+
+.rf-breadcrumb__item a {
+  text-decoration: none; }
+
+.rf-breadcrumb__list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
+.rf-breadcrumb {
+  color: var(--g700); }
+
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
 .rf-breadcrumb {
-  margin: calc(1rem - 0.5rem) -0.5rem calc(1.5rem - 0.5rem);
+  margin: 0.5rem -0.5rem 1rem;
   padding: 0.5rem;
   overflow: hidden;
   font-size: 0.75rem;
@@ -71,21 +92,19 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       outline-offset: 2px;
       z-index: var(--focus-z-index); }
   .rf-breadcrumb__list {
-    margin: 0;
-    padding: 0;
+    line-height: 1.5;
     display: block;
-    font-size: 0.75rem;
-    line-height: 1; }
+    font-size: 0.75rem; }
     .rf-breadcrumb__list[hidden] {
       display: none; }
   .rf-breadcrumb__item {
     display: inline;
-    margin-bottom: 0.5rem;
-    line-height: 1.125rem;
-    vertical-align: middle;
     /**
     flèche séparatrice en svg avec un espace à la suite
-     */ }
+     */
+    margin-bottom: 0.5rem;
+    line-height: 1.125rem;
+    vertical-align: middle; }
     .rf-breadcrumb__item:first-child::before {
       content: none; }
     .rf-breadcrumb__item:not(:first-child)::before {
@@ -105,11 +124,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-breadcrumb__item--current {
     pointer-events: none; }
   .rf-breadcrumb__item--current a {
-    color: var(--g800);
-    text-decoration: none; }
+    color: var(--g800); }
   @media (min-width: 48em) {
     .rf-breadcrumb {
-      margin-bottom: calc(2rem - 0.5rem); } }
+      margin-bottom: 1.5rem; } }
 
 
 /*# sourceMappingURL=breadcrumb.css.map*/

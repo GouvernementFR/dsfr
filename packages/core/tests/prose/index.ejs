@@ -1,0 +1,44 @@
+<%
+ let lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et.'
+ %>
+
+<%
+function includeProse(path, data) {
+  return `<div class="${prefix}-prose" >${include(path, data)}</div>`;
+}
+
+%>
+
+<%- includeProse('./samples/headings'); %>
+<%- snippet(includeProse('./samples/headings')); %>
+
+<h4 class="<%= prefix %>-h4" >Test de paragraphe et de lien</h4>
+<%- includeProse('./samples/paragraph'); %>
+<%- snippet(includeProse('./samples/paragraph')); %>
+
+<h4 class="<%= prefix %>-h4" >Test de liste non ordonnée</h4>
+<%
+ let ul = {
+   lis:[{
+       lis:[{}, {}, {}]
+     }, {text:lorem}, {}
+   ]}
+ %>
+
+<%- includeProse('./../typography/samples/ul', ul);%>
+<%- snippet(includeProse('./../typography/samples/ul')) %>
+
+<h4 class="<%= prefix %>-h4" >Test de liste ordonnée</h4>
+<%
+let ol = {
+  lis:[{
+      lis:[{
+        lis:[{}, {}, {}]
+      }, {text:lorem}, {}]
+    }, {}, {}
+  ]}
+%>
+
+<%- includeProse('./../typography/samples/ol', ol);%>
+<%- snippet(includeProse('./../typography/samples/ol'));%>
+

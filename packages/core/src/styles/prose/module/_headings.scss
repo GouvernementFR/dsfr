@@ -1,0 +1,10 @@
+////
+/// Core Module : Prose headings
+/// @group core
+////
+
+@each $heading, $variation in ($headings-settings) {
+  #{$heading} {
+    @extend %#{$heading};
+  }
+}

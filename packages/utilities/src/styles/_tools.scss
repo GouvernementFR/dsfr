@@ -37,10 +37,10 @@
     $w: abs($value) / 2;
   }
 
-  $selectors:'.#{$prefix}-#{_spacing-name($prop, $side, $value, v, $breakpoint)}';
+  $selectors:'#{dse(_spacing-name($prop, $side, $value, v, $breakpoint))}';
 
   @if $w != null {
-    $selectors: '#{$selectors},.#{$prefix}-#{_spacing-name($prop, $side, $value / 2, w, $breakpoint)}';
+    $selectors: '#{$selectors},#{dse(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
   }
 
   @return $selectors;
@@ -94,7 +94,8 @@
 @mixin collapse($className: collapse) {
   overflow: hidden;
   opacity: 0;
-  max-height: 99999px;
+  max-height: 0;
+  visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
 
   &::before {
@@ -104,16 +105,13 @@
     transition: margin-top 0.3s;
   }
 
-  &#{&}--expanded {
+  &--expanded {
     opacity: 1;
+    max-height: 99999px;
+    visibility: visible;
 
     &::before {
       margin-top: 0;
     }
-  }
-
-  &:not(#{&}--expanded) {
-    visibility: hidden;
-    max-height: 0;
   }
 }

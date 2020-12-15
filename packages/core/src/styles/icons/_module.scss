@@ -8,14 +8,15 @@
   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
 }
 
-@include class-start-with('#{$prefix}-fi-') {
+@include has-icon {
+  @extend %default-text-color;
   @include before {
     @extend %font-icon;
     font-size: icon-size(md);
   }
 }
 
-.#{$prefix}-fi {
+#{dse(fi)} {
   @each $size, $value in $icon-size-map {
     @if $size != md {
       &--#{$size} {

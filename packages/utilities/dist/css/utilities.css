@@ -1937,20 +1937,20 @@
 .rf-collapse {
   overflow: hidden;
   opacity: 0;
-  max-height: 99999px;
+  max-height: 0;
+  visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
   .rf-collapse::before {
     display: block;
     content: '';
     margin-top: -100vh;
     transition: margin-top 0.3s; }
-  .rf-collapse.rf-collapse--expanded {
-    opacity: 1; }
-    .rf-collapse.rf-collapse--expanded::before {
+  .rf-collapse--expanded {
+    opacity: 1;
+    max-height: 99999px;
+    visibility: visible; }
+    .rf-collapse--expanded::before {
       margin-top: 0; }
-  .rf-collapse:not(.rf-collapse--expanded) {
-    visibility: hidden;
-    max-height: 0; }
 
 
 /*# sourceMappingURL=utilities.css.map*/

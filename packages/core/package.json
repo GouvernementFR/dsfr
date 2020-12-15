@@ -6,9 +6,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "config": {
-    "noBody": true
-  },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
     "postinstall": "node ./post-install.js"
