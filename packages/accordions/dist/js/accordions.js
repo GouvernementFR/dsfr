@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 37);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -168,7 +168,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 34:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -876,7 +876,7 @@ KeyListener.DOWN = 40;
 
 /***/ }),
 
-/***/ 35:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -890,7 +890,7 @@ var _dist = __webpack_require__(0);
 var Initializer = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
-var scripts = __webpack_require__(34);
+var scripts = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
