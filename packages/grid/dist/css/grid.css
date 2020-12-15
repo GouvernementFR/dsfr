@@ -1,40 +1,3 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
-.rf-container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 1rem;
-  padding-left: 1rem; }
-  @media (min-width: 36em) {
-    .rf-container {
-      padding-right: 2rem;
-      padding-left: 2rem; } }
-  @media (min-width: 75em) {
-    .rf-container {
-      max-width: 1136px;
-      padding-right: 0;
-      padding-left: 0; } }
-  .rf-container-fluid {
-    width: 100%; }
-
 .rf-grid-row {
   display: flex;
   flex-wrap: wrap;
@@ -54,21 +17,21 @@
   .rf-grid-row--center {
     justify-content: center; }
   .rf-grid-row--gutters {
-    margin: 0 calc(-1rem / 2); }
+    margin: 0 -0.5rem; }
     @media (min-width: 48em) {
       .rf-grid-row--gutters {
-        margin: 0 calc(-1.5rem / 2); } }
+        margin: 0 -0.75rem; } }
     @media (min-width: 62em) {
       .rf-grid-row--gutters {
-        margin: 0 calc(-2rem / 2); } }
-    .rf-grid-row--gutters [class|="rf-col"] {
-      padding: calc(1rem / 2); }
+        margin: 0 -1rem; } }
+    .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
+      padding: 0.5rem; }
       @media (min-width: 48em) {
-        .rf-grid-row--gutters [class|="rf-col"] {
-          padding: calc(1.5rem / 2); } }
+        .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
+          padding: 0.75rem; } }
       @media (min-width: 62em) {
-        .rf-grid-row--gutters [class|="rf-col"] {
-          padding: calc(2rem / 2); } }
+        .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
+          padding: 1rem; } }
 
 .rf-col {
   flex: 1; }

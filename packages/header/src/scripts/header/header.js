@@ -26,6 +26,10 @@ class Header {
 
     const append = this.numId === 0 ? '' : '-' + this.numId;
 
+    this.shortcuts = this.header.querySelector('.${prefix}-header__tools .${prefix}-shortcuts');
+
+    this.navList = this.header.querySelector('.${prefix}-nav .${prefix}-nav__list');
+
     if (this.searchBar) {
       this.popins.push(new HeaderPopin(
         'header-tools-popin' + append,
@@ -36,7 +40,14 @@ class Header {
       ));
     }
 
-    if (this.navItems.length > 0) {
+    if (this.navItems.length > 0 || this.shortcuts !== null) {
+      // si on des raccourcis mais pas de nav, on la créé
+      if (!this.nav) {
+        this.nav = document.createElement('nav');
+        this.nav.setAttribute('role', 'navigation');
+        this.nav.setAttribute('aria-label', 'Menu principal');
+        this.header.appendChild(this.nav);
+      }
       this.popins.push(new HeaderPopin(
         'header-nav-popin' + append,
         'menu-fill',
@@ -45,9 +56,6 @@ class Header {
         navbar
       ));
     }
-
-    this.shortcuts = this.header.querySelector('.${prefix}-header__tools .${prefix}-shortcuts');
-    this.navList = this.header.querySelector('.${prefix}-nav .${prefix}-nav__list');
 
     this.changing = this.change.bind(this);
 

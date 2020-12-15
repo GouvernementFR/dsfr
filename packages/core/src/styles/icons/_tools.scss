@@ -1,0 +1,71 @@
+////
+/// Core Tools : Icons
+/// @group core
+////
+
+/// Return icon size from map
+/// @param {String} $size ["md"] - Icon size from `$icon-size-map` (Default to "md" = 16px)
+///
+/// @example scss - Set icon size to `SM` (12px)
+///   .foo {
+///     width: icons-size(sm);
+///     height: icons-size(sm);
+///   }
+@function icon-size($size: md) {
+  @return px-rem(map-get($icon-size-map, $size));
+}
+
+@mixin custom-icons($icon-size:md) {
+  @include has-icon {
+    @include font-icon(null, $icon-size) {
+      @content;
+    }
+  }
+}
+
+@mixin generate-icons-placeholder($icons) {
+  @each $icon, $code in $icons {
+    %#{$icon} {
+      content: '#{$code}';
+    }
+  }
+}
+
+@include generate-icons-placeholder($icons-settings);
+
+@mixin generate-icons-content($icons) {
+  @each $icon, $code in $icons {
+    #{dse('fi-' + $icon)} {
+      @include before {
+        @extend %#{$icon};
+      }
+    }
+  }
+}
+
+@mixin font-icon-content($icon) {
+  @extend %#{$icon};
+}
+
+%font-icon {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+@mixin font-icon($icon:null, $icon-size:md, $pseudo:before) {
+  @include _pseudo($pseudo) {
+    @extend %font-icon;
+
+    font-size: icon-size($icon-size);
+
+    @if $icon != null {
+      @include font-icon-content($icon);
+    }
+
+    @content;
+  }
+}

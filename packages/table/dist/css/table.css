@@ -1,28 +1,12 @@
 @charset "UTF-8";
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+.rf-table {
+  color: var(--g700); }
+
 .rf-table {
   position: relative;
-  /*
-  * Style bodered, enleve le style even/odd et ajoute des bordures entre chaque ligne
-  */
+  overflow: hidden;
+  max-width: 100%;
+  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
   /*
   * Cache la caption
   */
@@ -36,12 +20,10 @@
   * Fixe la taille des colonnes du tableau
   */
   /*
-* Ombres ajoutées en Js si le conntenu est plus grand que le conteneur
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */ }
-  .rf-table:not(rf-table--no-scroll) {
-    overflow: hidden; }
-    .rf-table:not(rf-table--no-scroll) table {
-      width: 100%; }
+  .rf-table:not(.rf-table--no-scroll) table {
+    width: 100%; }
   .rf-table table {
     border-spacing: 0; }
   .rf-table caption {
@@ -54,7 +36,7 @@
   .rf-table td,
   .rf-table th {
     text-align: left;
-    vertical-align: text-top;
+    vertical-align: middle;
     display: table-cell;
     border: 0;
     padding: 0.75rem;
@@ -67,14 +49,10 @@
     font-weight: 700; }
   .rf-table thead td,
   .rf-table thead th {
-    vertical-align: text-bottom;
     font-weight: 700;
     border-bottom: 0.125rem solid var(--g600);
     background-color: var(--beige);
     color: var(--g700); }
-    :root[data-transition] .rf-table thead td, :root[data-transition]
-    .rf-table thead th {
-      transition: border-bottom 0.3s; }
   .rf-table tbody tr:nth-child(even) {
     background-color: var(--beige); }
   .rf-table tbody tr:nth-child(odd) {
@@ -83,9 +61,6 @@
   .rf-table--bordered tbody th {
     border: 0;
     border-bottom: 1px solid var(--g400); }
-    :root[data-transition] .rf-table--bordered tbody td, :root[data-transition]
-    .rf-table--bordered tbody th {
-      transition: border-bottom 0.3s; }
   .rf-table--bordered tbody tr:nth-child(odd), .rf-table--bordered tbody tr:nth-child(even) {
     background-color: var(--t-plain); }
   .rf-table--no-caption caption {

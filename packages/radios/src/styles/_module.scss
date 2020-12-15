@@ -1,5 +1,10 @@
-.#{$prefix}-radio-group {
-  .#{$prefix}-hint-text {
+////
+/// Radios Module
+/// @group radios
+////
+
+#{dse-group(radio)} {
+  #{dse(hint-text)} {
     margin-left: space(4N);
     margin-top: -(space(1-5N));
   }
@@ -86,21 +91,7 @@
     //   }
     // }
 
-    &[disabled],
-    &:disabled {
-      + label {
-        @include scheme-element-text-color(g600);
-
-        &::before {
-          @include scheme-element-border-color(g500);
-          @include scheme-element-bg-color(g300);
-        }
-      }
-
-      &:hover + label {
-        cursor: not-allowed;
-      }
-    }
+    @include disabled-form-choice();
   }
 
   &--sm {
@@ -119,7 +110,7 @@
       }
     }
 
-    .rf-hint-text {
+    #{dse(hint-text)} {
       margin-left: space(3N);
     }
   }

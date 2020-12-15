@@ -1,14 +1,32 @@
 $static-font-path: '~@gouvfr/core/fonts';
 $icon-font-path: '/icons/font';
 
-@import '~@gouvfr/core/main';
-@import '~@gouvfr/icons/main';
 @import '~@gouvfr/schemes/main';
+@import '~@gouvfr/core/main';
 @import '~@gouvfr/grid/main';
-@import '~@gouvfr/typography/main';
 @import '~@gouvfr/utilities/main';
+@import '~@gouvfr/forms/main';
+@import '~@gouvfr/checkboxes/main';
+@import '~@gouvfr/links/main';
+@import '~@gouvfr/accordions/main';
 
 code[class*="language-"],
 pre[class*="language-"] {
   white-space: pre-wrap;
+}
+
+.test-controls {
+  z-index: 100000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, 0.1), 0 -8px 16px -16px rgba(0, 0, 0, 0.32);
+  padding: 0.25rem 2rem;
+
+  @include scheme-element-bg-color(w-g750);
+
+  .#{$prefix}-form-group {
+    margin-bottom: 0;
+  }
 }

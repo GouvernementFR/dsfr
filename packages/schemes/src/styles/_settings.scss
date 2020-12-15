@@ -3,37 +3,36 @@
 /// @group schemes
 ////
 
-/// Attribut utilisé pour le dark mode
-/// @type String
-$dt: '[data-theme="dark"]';
+// TODO: import à enlever après intégration des schemes dans le core
+@import "~@gouvfr/core/src/styles/global/functions/selectors";
 
-/// Sélecteur du dark mode
-/// @type String
+// Attribut utilisé pour le dark mode
+$dt: '#{dse-attr(theme, "dark")}';
+
+// Sélecteur du dark mode
 $dark-theme-selector: ':root#{$dt}';
 
-/// Sélecteur du light mode
-/// @type String
+// Sélecteur du light mode
 $not-dark-theme-selector: ':root:not(#{$dt})';
 
-/// Base de construction de classe de block de combinaison
-/// @type String
-$base-scheme: '#{$prefix}-scheme';
+// Base de construction de classe de block de combinaison
+$base-scheme: #{dse(scheme, '')};
 
-/// Base de construction de sélecteur de block de combinaison
-/// @type String
-$base-scheme-selector: '.#{$base-scheme}';
+// Base de construction de sélecteur de block de combinaison
+$base-scheme-selector: #{dse(scheme)};
 
-/// Sélecteur de transition de couleur
-/// @type String
-$theme-transition-selector: ':root[data-transition]';
+// Sélecteur de transition de couleur
+$theme-transition-selector: ':root#{dse-attr(transition)}';
 
-/// Durée de transition de couleur
-/// @type Time
+// Durée de transition de couleur
 $theme-transition-duration: 0.3s;
 
-/// Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
-/// @type String
+// Les transitions sont incluses dans le code
+$theme-allow-transition: false;
+
+// Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
 $COLOR:unquote('$COLOR') !global;
 
+@import 'settings/colors';
 @import 'settings/sets';
 @import 'settings/blocks';

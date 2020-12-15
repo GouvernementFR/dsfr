@@ -1,4 +1,11 @@
-.#{$prefix}-pagination {
+////
+/// Pagination Module
+/// @group pagination
+////
+
+#{dse(pagination)} {
+  @extend %default-text-color;
+
   &__list {
     display: flex;
     flex-direction: row;
@@ -145,10 +152,9 @@
   }
 
   &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    @extend %a-reset;
+    @include override-reset-link-style;
+    @include display-flex(row, center, center);
     padding: 0 space(1-5N);
     margin: 0 (- space(1-5N));
     min-width: space(4N);

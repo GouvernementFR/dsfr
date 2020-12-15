@@ -1,0 +1,16 @@
+////
+/// Core Module : Prose link
+/// @group core
+////
+
+// Icon for external links
+a {
+  @extend %a;
+
+  &[target="_blank"] {
+    @include font-icon(external-link-line, md, after) {
+      @include margin-left(1v);
+      vertical-align: baseline;
+    }
+  }
+}

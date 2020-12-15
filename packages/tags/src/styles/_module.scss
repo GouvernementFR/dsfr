@@ -3,23 +3,25 @@
 /// @group tags
 ////
 
-.#{$prefix}-tag {
+#{dse(tag)} {
   @include build-tag();
 
+  @include scheme-element-text-color(g-800, true);
+  @include scheme-element-bg-color(g200, true);
+
   @at-root {
-    a#{&} {
+    #{selector-unify(&, a)},
+    #{selector-unify(&, button)} {
       @include scheme-element-text-color(bf500-plain, true);
       @include scheme-element-bg-color(bf200-bf300, true, true);
-      box-shadow: none;
-    }
-    span#{&} {
-      @include scheme-element-text-color(g-800, true);
-      @include scheme-element-bg-color(g200, true);
     }
   }
+
+  @include disabled-link(true, true);
 }
 
-.#{$prefix}-tag-list {
+#{dse-group(tags)} {
+  @extend %list-reset;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0;
@@ -33,18 +35,19 @@
     }
   }
 
-  a.#{$prefix}-tag {
-    margin-right: space(1-5N);
-    margin-bottom: space(1-5N);
-
-    &--sm {
-      margin-right: space(3N);
-      margin-bottom: space(3N);
-    }
+  #{dse(tag)} {
+    @include margin-right(2v);
+    @include margin-bottom(2v);
   }
 
-  span.#{$prefix}-tag {
-    margin-right: space(1N);
-    margin-bottom: space(1N);
+  a#{dse(tag)},
+  button#{dse(tag)} {
+    @include margin-right(3v);
+    @include margin-bottom(3v);
+
+    &--sm {
+      @include margin-right(6v);
+      @include margin-bottom(6v);
+    }
   }
 }

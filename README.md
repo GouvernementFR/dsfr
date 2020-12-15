@@ -26,10 +26,18 @@ npm install @gouvfr/header @gouvfr/footer
 Il est également possible d'installer les composants avec [Yarn](https://yarnpkg.com/) :
 
 ```
-yarn add @gouvfr/header @gouvfr/footer
+yarn add @gouvfr/design-system
 ```
 
 Il est à noter que pour chaque package installé, l'ensemble des dépendances de celui-ci seront également installées. De ce fait, l'installation du package `inputs` par exemple téléchargera également automatiquement le package `forms`.
+
+Un package `all` est également disponibe afin de récupérer sur NPM l'ensemble du **DS** en une seule fois :
+
+```
+npm install @gouvfr/all
+// ou avec Yarn :
+yarn add @gouvfr/all
+```
 
 ### Arborescence du projet
 
@@ -114,7 +122,7 @@ Ces instructions vous permettrons également d'installer une copie locale du Des
 ## Liste des composants
 
 ## Documentations Confluence
-- [Accordion](packages/accordion/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509)
+- [Accordion](packages/accordions/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509)
 - [All](packages/all/README.md)
 - [Breadcrumb](packages/breadcrumb/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019278/Fil+d+Ariane+-+Breadcrumb)
 - [Buttons](packages/buttons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons)

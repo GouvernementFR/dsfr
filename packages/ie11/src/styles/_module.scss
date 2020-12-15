@@ -1,6 +1,11 @@
+////
+/// IE11 Module
+/// @group ie11
+////
+
 @include ie-hack() {
   //navigation fix alignement des menus sur la droite
-  .#{$prefix}-nav {
+  #{dse(nav)} {
     @include respond-from(md) {
       &--align-right {
         transform: translateX(-100%);
@@ -9,7 +14,7 @@
   }
 
   //sidenav fix
-  .#{$prefix}-sidenav {
+  #{dse(sidenav)} {
     height: auto;
   }
 

@@ -1,21 +1,31 @@
-.#{$prefix}-btn {
+////
+/// Buttons Module
+/// @group buttons
+////
+
+#{dse(btn)} {
 
   @include build-btn();
 
-  @include scheme-element-text-color(w-bf500, true);
+  $button:&;
+
+  @include specify(a) {
+    @include scheme-element-text-color(w-bf500, true);
+  }
   @include scheme-element-bg-color(bf500, true, true);
 
-  @include disabled(g600, g200);
+  @include disabled-link(true, true);
 
-  $button:&;
   // Outline variant
   &--secondary {
     @include scheme-element-bg-color(t-plain, false, override);
-    @include scheme-element-text-color(bf500);
-    @include scheme-element-box-shadow-color(bf500, $button);
+    @include specify(a) {
+      @include scheme-element-text-color(bf500);
+      @include scheme-element-box-shadow-color(bf500, $button);
+    }
 
-    @include disabled(g600) {
-      @include scheme-element-box-shadow-color(g600);
+    @include disabled-link(true, false, true) {
+      @include scheme-element-bg-color(t-plain, false);
     }
   }
 }

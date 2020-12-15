@@ -1,6 +1,11 @@
+////
+/// Selects Module
+/// @group selects
+////
+
 $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='$COLOR' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
 
-.#{$prefix}-select {
+#{dse(select)} {
   display: block;
   appearance: none;
   -moz-appearance: none;
@@ -31,13 +36,8 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
     @include scheme-element-box-shadow-color(error,false,inset 0 -2px 0 0 $COLOR);
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 1; /* override de l'opacité chrome sur un select disabled */
-
-    @include scheme-element-text-color(g600-g500);
-    @include scheme-element-box-shadow-color(g300,true,inset 0 -2px 0 0 $COLOR);
-    @include scheme-element-data-uri-svg(g600-g500, $svg, background-image);
+  @include disabled-form-field(select) {
+    @include scheme-element-data-uri-svg(get-disabled-color(border), $svg, background-image);
   }
 
   &:-webkit-autofill,

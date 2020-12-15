@@ -11,11 +11,15 @@ let samples = [
     { title:'Bouton icon à gauche', data:{icon :'checkbox-line', iconPlace:'left', sizes:sizes}},
     { title:'Bouton icon à droite', data:{icon :'checkbox-line', iconPlace:'right', sizes:sizes}},
     { title:'Bouton icon seule', data:{icon :'checkbox-line', iconPlace:'only',sizes:sizes}},
+    { title:'Bouton tag a href', data:{sizes:sizes, tag:'a'}},
+    { title:'Bouton tag div', data:{sizes:sizes, tag:'div'}},
     { title:'Bouton secondaire', data:{secondary:true, sizes:sizes}},
     { title:'Bouton secondaire désactivé', data:{secondary:true, disabled:true, sizes:sizes}},
     { title:'Bouton secondaire icon à gauche', data:{secondary:true, icon :'checkbox-line', iconPlace:'left', sizes:sizes}},
     { title:'Bouton secondaire icon à droite', data:{secondary:true, icon :'checkbox-line', iconPlace:'right', sizes:sizes}},
-    { title:'Bouton secondaire icon seule', data:{secondary:true, iconPlace:'only', sizes:sizes}}
+    { title:'Bouton secondaire icon seule', data:{secondary:true, icon :'checkbox-line', sizes:sizes}},
+    { title:'Bouton secondaire tag a href', data:{secondary:true,sizes:sizes, tag:'a'}},
+    { title:'Bouton secondaire tag div', data:{secondary:true,sizes:sizes, tag:'div'}}
 
 ]
 
@@ -24,15 +28,15 @@ let samples = [
 <% for (let i = 0; i < samples.length; i++) {
     let sample = samples[i];
 %>
-    <h4><%= sample.title %></h4>
+    <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
     <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--middle" >
-        <div class="<%= prefix %>-col-md-3 <%= prefix %>-col-12 <%= prefix %>-margin-bottom-2N" style="text-align: center" >
+        <div class="<%= prefix %>-col-md-3 <%= prefix %>-col-12 <%= prefix %>-mb-2w" style="text-align: center" >
             <%- include('./samples/button-sm', sample.data) %>
         </div>
-        <div class="<%= prefix %>-col-md-4 <%= prefix %>-col-12 <%= prefix %>-margin-bottom-2N" style="text-align: center" >
+        <div class="<%= prefix %>-col-md-4 <%= prefix %>-col-12 <%= prefix %>-mb-2w" style="text-align: center" >
             <%- include('./samples/button-default', sample.data) %>
         </div>
-        <div class="<%= prefix %>-col-md-5 <%= prefix %>-col-12 <%= prefix %>-margin-bottom-2N" style="text-align: center" >
+        <div class="<%= prefix %>-col-md-5 <%= prefix %>-col-12 <%= prefix %>-mb-2w" style="text-align: center" >
             <%- include('./samples/button-lg', sample.data) %>
         </div>
     </div>

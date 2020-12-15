@@ -1,24 +1,6 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+@charset "UTF-8";
 .rf-search-bar .rf-btn::before {
-  content: "\f13d"; }
+  content: ""; }
 
 .rf-search-bar .rf-btn::before {
   font-family: icons !important;
@@ -28,10 +10,12 @@
   text-transform: none;
   line-height: 1; }
 
+.rf-search-bar {
+  color: var(--g700); }
+
 .rf-search-bar .rf-btn {
-  width: 2.5rem;
-  min-height: auto;
-  height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
   .rf-search-bar .rf-btn::before {
@@ -70,8 +54,8 @@
       line-height: 1.5rem;
       min-height: 3.5rem;
       padding: 0.75rem 2rem;
-      width: auto;
-      height: auto; }
+      max-width: none;
+      max-height: none; }
       .rf-search-bar--lg .rf-btn::before {
         font-size: 1.5rem; }
       .rf-search-bar--lg .rf-btn::before {

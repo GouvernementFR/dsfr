@@ -1,7 +1,13 @@
-.#{$prefix}-nav {
-  //z-index: 15000;
+////
+/// Navigation Module
+/// @group navigation
+////
+
+#{dse(nav)} {
+  @extend %default-text-color;
 
   &__list {
+    @extend %list-reset;
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -43,21 +49,25 @@
       }
     }
 
-    & > .#{$prefix}-link,
-    & > .#{$prefix}-btn {
+    & > #{dse(link)},
+    & > #{dse(btn)} {
       display: flex;
       align-items: center;
       font-size: font-size(14);
-      line-height: 1rem;
+      line-height: space(4v);;
       text-align: left;
-      height: space(6N);
-      padding: 0;
+      min-height: space(6N);
+      padding: space(3v) 0;
       width: 100%;
       justify-content: space-between;
       font-weight: bold;
 
       @include scheme-element-text-color(g800);
       @include scheme-element-focus();
+
+      @include before() {
+        margin-right: 0;
+      }
 
       @include respond-from(md) {
         padding: space(2-5N) space(2N);
@@ -67,13 +77,9 @@
         justify-content: flex-start;
         font-weight: normal;
       }
-
-      &:focus {
-        z-index: 25000;
-      }
     }
 
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
 
       flex-direction: row;
       box-shadow: none;
@@ -86,7 +92,7 @@
       }
     }
 
-    & > .#{$prefix}-btn {
+    & > #{dse(btn)} {
       flex-direction: row-reverse;
 
       @include scheme-element-bg-color(t-plain, false, override);
@@ -97,12 +103,11 @@
 
       @include font-icon(arrow-down-s-line, md) {
         margin-left: space(1N);
-        margin-right: - space(0-5N);
+        margin-right: 0;
         transition: transform 0.3s;
       }
 
       &[aria-expanded="true"] {
-
         &::before {
           transform: rotate(-180deg);
         }
@@ -133,13 +138,13 @@
       }
 
       @include respond-from(md) {
-        &:before {
+        &::before {
           content: none;
         }
       }
 
-      & > .#{$prefix}-link,
-      & > .#{$prefix}-btn {
+      & > #{dse(link)},
+      & > #{dse(btn)} {
         @include scheme-element-text-color(bf500);
 
         @include respond-from(md) {
@@ -147,24 +152,24 @@
         }
       }
 
-      & > .#{$prefix}-link {
+      & > #{dse(link)} {
         pointer-events: none;
       }
     }
   }
 }
 
-.#{$prefix}-menu {
+#{dse(menu)} {
 
   @include collapse();
 
-  z-index: 20000;
+  @include z-index(menu, true);
   margin: 0 (- space(2N));
   padding: 0 space(2N);
   box-sizing: content-box;
   width: 100%;
 
-  @include respond-from(md){
+  @include respond-from(md) {
     position: absolute;
     top: 100%;
     width: 20rem;
@@ -181,12 +186,13 @@
       bottom: 0;
       left: 0;
       margin: 4px 2rem 2rem;
-      z-index: -1;
+      @include z-index(under);
       @include scheme-element-bg-color(w-g750, true);
     }
   }
 
   &__list {
+    @extend %list-reset;
     margin: 0;
     padding: space(1N) 0 space(3N);
 
@@ -200,10 +206,10 @@
     margin: 0;
 
     &,
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
       padding: space(2N);
       font-size: font-size(14);
-      line-height: 1rem;
+      line-height: space(4v);
       text-align: left;
       box-shadow: none;
       @include scheme-element-text-color(g800, true);
@@ -213,7 +219,7 @@
       }
     }
 
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
       display: block;
       margin: - space(2N);
       border-radius: 0;
@@ -234,10 +240,9 @@
       }
     }
 
-
     &--active {
       &,
-      & > .#{$prefix}-link {
+      & > #{dse(link)} {
         @include scheme-element-text-color(bf500);
       }
 
@@ -255,11 +260,11 @@
   }
 }
 
-.#{$prefix}-mega-menu {
+#{dse(mega-menu)} {
 
   @include collapse();
 
-  z-index: 20000;
+  @include z-index(menu, true);
 
   @include scheme-element-bg-color(w-g750, true);
 
@@ -294,9 +299,7 @@
     }
   }
 
-
-
-  > .#{$prefix}-container {
+  > #{dse(container)} {
     padding: space(1N) space(2N) space(3N);
 
     @include respond-from(md) {
@@ -309,7 +312,7 @@
     }
   }
 
-  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+  #{dse(btn) + dse(fi-close-line)} {
     display: none;
     position: absolute;
     margin-top: space(2N);
@@ -324,15 +327,17 @@
     }
 
     @include respond-from(xl) {
-      right:0;
+      right: 0;
     }
   }
 
-  p:not([class*="#{$prefix}-h"]) {
-    display: none;
+  p {
+    @include class-not-start-with(dse(h, '')) {
+      display: none;
 
-    @include respond-from(md) {
-      display: block;
+      @include respond-from(md) {
+        display: block;
+      }
     }
   }
 
@@ -357,10 +362,10 @@
     }
 
     &,
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
       padding: space(2N);
       font-size: font-size(14);
-      line-height: space(2N);
+      line-height: space(4v);
       font-weight: bold;
       text-align: left;
       box-shadow: none;
@@ -371,7 +376,7 @@
       }
     }
 
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
       display: block;
       box-shadow: none;
       margin: (- space(2N));
@@ -390,7 +395,7 @@
 
     &--active {
       &,
-      & > .#{$prefix}-link {
+      & > #{dse(link)} {
         @include scheme-element-text-color(bf500);
       }
 
@@ -412,6 +417,7 @@
   }
 
   &__list {
+    @extend %list-reset;
     margin: 0 (- space(2N));
     //padding: 0 space(2N);
 
@@ -428,16 +434,15 @@
       margin: 0 0 space(1N) 0;
     }
 
-
     &::before {
       content: none;
     }
 
     &,
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
       padding: space(1-5N) space(2N);
       font-size: font-size(14);
-      line-height: 1rem;
+      line-height: space(4v);
       text-align: left;
       box-shadow: none;
       @include scheme-element-text-color(g800);
@@ -451,7 +456,7 @@
       }
     }
 
-    & > .#{$prefix}-link {
+    & > #{dse(link)} {
       display: block;
       margin: (- space(1-5N)) (- space(2N));
       border-radius: 0;
@@ -466,7 +471,7 @@
 
     &--active {
       &,
-      & > .#{$prefix}-link {
+      & > #{dse(link)} {
         @include scheme-element-text-color(bf500);
       }
 
