@@ -33,11 +33,12 @@ let samples = [
 <h4><%= sample.title %></h4>
 <%- include('./samples/tabs-default', sample.data) %>
 
+<br><br>
+
 <% sample = samples[1] %>
 <h4><%= sample.title %></h4>
 <%- include('./samples/tabs-default', sample.data) %>
 <%- snippet(include('./samples/tabs-default', sample.data)); %>
-
 
 <% sample = samples[2] %>
 <h4><%= sample.title %></h4>
