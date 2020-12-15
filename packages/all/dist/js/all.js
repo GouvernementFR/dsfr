@@ -1189,7 +1189,15 @@ var Header = /*#__PURE__*/function () {
         this.popins.push(new header_HeaderPopin('header-tools-popin' + append, 'search-line', 'Rechercher', this.tools, navbar));
       }
 
-      if (this.navItems.length > 0 || this.shortcuts != null) {
+      if (this.navItems.length > 0 || this.shortcuts !== null) {
+        // si on des raccourcis mais pas de nav, on la créé
+        if (!this.nav) {
+          this.nav = document.createElement('nav');
+          this.nav.setAttribute('role', 'navigation');
+          this.nav.setAttribute('aria-label', 'Menu principal');
+          this.header.appendChild(this.nav);
+        }
+
         this.popins.push(new header_HeaderPopin('header-nav-popin' + append, 'menu-fill', 'Ouvrir le menu', this.nav, navbar));
       }
 
