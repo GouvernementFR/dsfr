@@ -19,6 +19,7 @@
   --w-bf500: #000091;
   --bf300-plain: #bfbfe3;
   --bf200-bf300: #bfbfe3;
+  --bf100-g750: #2a2a2a;
   --t-plain: transparent;
   --t-w: #fff;
   --g800: #fff;
@@ -83,6 +84,7 @@
   --w-bf500: #fff;
   --bf300-plain: #bfbfe3;
   --bf200-bf300: #e5e5f4;
+  --bf100-g750: #f2f2f9;
   --t-plain: transparent;
   --t-w: transparent;
   --g800: #1e1e1e;
@@ -152,6 +154,7 @@
     --w-bf500: #fff;
     --bf300-plain: #bfbfe3;
     --bf200-bf300: #e5e5f4;
+    --bf100-g750: #f2f2f9;
     --t-plain: transparent;
     --t-w: transparent;
     --g800: #1e1e1e;
@@ -213,6 +216,7 @@
     --bf500: #bfbfe3;
     --w-bf500: #000091;
     --bf200-bf300: #bfbfe3;
+    --bf100-g750: #2a2a2a;
     --t-w: #fff;
     --g800: #fff;
     --g700: #f0f0f0;
@@ -578,26 +582,6 @@
 /* ------------------------------------ *\
   CORE
 \* ------------------------------------ */
-/**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
-
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
-
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
- */
 button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-label, .rf-fieldset:disabled .rf-label, input.rf-input[disabled], input.rf-input:disabled, .rf-checkbox-group input[type="checkbox"][disabled] + label, .rf-checkbox-group input[type="checkbox"]:disabled + label, .rf-radio-group input[type="radio"][disabled] + label, .rf-radio-group input[type="radio"]:disabled + label, select.rf-select[disabled], select.rf-select:disabled, button.rf-btn[disabled], button.rf-btn:disabled, button.rf-btn--secondary[disabled], button.rf-btn--secondary:disabled, button.rf-tag[disabled], button.rf-tag:disabled {
   cursor: not-allowed; }
 
@@ -3756,6 +3740,7 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   margin-left: 0.5rem; }
 
 .rf-link {
+  margin: 0;
   cursor: pointer;
   background-color: var(--t-plain); }
   a.rf-link {
@@ -4294,6 +4279,7 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   margin-left: 0.5rem; }
 
 .rf-btn {
+  margin: 0;
   cursor: pointer;
   background-color: var(--bf500); }
   a.rf-btn {
@@ -4631,6 +4617,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 \* ------------------------------------ */
 .rf-table {
   position: relative;
+  overflow: hidden;
+  max-width: 100%;
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
   /*
   * Cache la caption
@@ -4647,10 +4635,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */ }
-  .rf-table:not(.rf-table--no-scroll) {
-    overflow: hidden; }
-    .rf-table:not(.rf-table--no-scroll) table {
-      width: 100%; }
+  .rf-table:not(.rf-table--no-scroll) table {
+    width: 100%; }
   .rf-table table {
     border-spacing: 0; }
   .rf-table caption {
@@ -4802,6 +4788,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   margin-left: 0.25rem; }
 
 .rf-tag {
+  margin: 0;
   color: var(--g-800);
   background-color: var(--g200); }
   a.rf-tag {
@@ -4905,8 +4892,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     font-size: 0.875rem;
     line-height: 1rem;
     text-align: left;
-    height: 3rem;
-    padding: 0;
+    min-height: 3rem;
+    padding: 0.75rem 0;
     width: 100%;
     justify-content: space-between;
     font-weight: bold;
@@ -4915,6 +4902,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       outline: 2px solid var(--focus);
       outline-offset: 2px;
       z-index: var(--focus-z-index); }
+    .rf-nav__item > .rf-link::before, .rf-nav__item > .rf-btn::before {
+      margin-right: 0; }
     @media (min-width: 48em) {
       .rf-nav__item > .rf-link,
       .rf-nav__item > .rf-btn {
@@ -4981,7 +4970,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-nav__item > .rf-btn::before {
       font-size: 1rem;
       margin-left: 0.5rem;
-      margin-right: -0.25rem;
+      margin-right: 0;
       transition: transform 0.3s; }
     .rf-nav__item > .rf-btn[aria-expanded="true"]::before {
       transform: rotate(-180deg); }
@@ -6914,7 +6903,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       .rf-header .rf-shortcuts__item {
         padding: 0 0.75rem;
         margin: 0 0 0.5rem;
-        line-height: 1.5rem;
+        line-height: 1rem;
         box-shadow: none; }
         .rf-header .rf-shortcuts__item:not(:first-child) {
           border-left: 1px solid var(--g300); } }
@@ -6923,9 +6912,14 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-header .rf-shortcuts__item .rf-link {
       max-width: none;
       max-height: none;
-      line-height: 1.5rem;
-      width: 100%;
-      padding: 0.75rem 0.25rem; }
+      line-height: 1rem;
+      border-radius: 0;
+      min-width: 100%;
+      min-height: 3rem;
+      padding: 0.75rem 0;
+      max-height: none; }
+      .rf-header .rf-shortcuts__item .rf-link::before {
+        margin-left: 0.25rem; }
     @media (min-width: 48em) {
       .rf-header .rf-shortcuts__item .rf-link {
         font-size: 0.875rem;
