@@ -57,6 +57,7 @@
       ~ .#{$prefix}-toggle__label::after {
         transform: translateX(space(2w));
         text-indent: 0;
+        @include z-index(focus);
       }
     }
 
