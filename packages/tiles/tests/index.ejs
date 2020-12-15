@@ -14,12 +14,12 @@ for (let i = 0; i < samples.length; i++) {
 %>
 <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
   <div class="<%= prefix %>-col-12">
-    <h4><%= sample.title %></h4>
+    <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
   </div>
   <%
     for (let j = 0; j < total; j++) {
   %>
-  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= (i > 0) ? prefix  +'-col-md-8 rf-col-lg-10' : prefix + '-col-md-4 rf-col-lg-3' %>">
+  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <% if (i > 0) { %><%= prefix%>-col-md-8 <%= prefix%>-col-lg-10 <% } else { %><%= prefix%>-col-md-4 <%= prefix%>-col-lg-3<% } %>">
     <%- include(sample.sample, datas[j % 4]); %>
   </div>
   <% } %>

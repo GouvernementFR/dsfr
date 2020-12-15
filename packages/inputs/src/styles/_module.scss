@@ -3,7 +3,7 @@
 /// @group inputs
 ////
 
-.#{$prefix}-input {
+#{dse(input)} {
   display: block;
   width: 100%;
   border: 0;
@@ -53,7 +53,7 @@
   }
 }
 
-.#{$prefix}-input-wrap {
+#{dse(input-wrap)} {
   position: relative;
   display: block;
 
@@ -65,7 +65,7 @@
     margin: auto;
   }
 
-  .#{$prefix}-input {
+  #{dse(input)} {
     padding-right: space(5N);
   }
 }

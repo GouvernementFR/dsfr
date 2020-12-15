@@ -3,8 +3,8 @@
 /// @group radios
 ////
 
-.#{$prefix}-radio-group {
-  .#{$prefix}-hint-text {
+#{dse-group(radio)} {
+  #{dse(hint-text)} {
     margin-left: space(8v);
     margin-top: -(space(3v));
   }

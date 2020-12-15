@@ -22,14 +22,9 @@
 }
 
 &__top-list {
+  @extend %list-reset;
   text-align: center;
   margin: 0;
-
-  > li {
-    &::before {
-      content: none;
-    }
-  }
 
   @include respond-from(sm) {
     text-align: left;
@@ -37,7 +32,10 @@
 }
 
 &__top-link {
-  text-decoration: none;
+  @extend %a-reset;
+  @include override-reset-link-style;
   font-size: font-size(12);
-  @include scheme-element-text-color(g600, true);
+  @include force-over-reset {
+    @include scheme-element-text-color(g600, true);
+  }
 }

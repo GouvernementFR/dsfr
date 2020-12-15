@@ -29,7 +29,7 @@
     }
   }
 
-  .#{$prefix}-service {
+  #{dse(service)} {
     margin: (- space(1-5N)) auto (- space(1-5N)) (- space(0-5N));
     padding: space(1-5N);
     position: relative;
@@ -39,13 +39,14 @@
     }
 
     &__title {
+      @extend %a-reset;
+      @include override-reset-link-style;
       position: static;
       font-size: font-size(14);
       line-height: line-height(normal);
       font-weight: bold;
       @include scheme-element-text-color(g800, true);
       margin: 0;
-      box-shadow: none;
 
       @include respond-from(md) {
         font-size: font-size(20);
@@ -79,7 +80,7 @@
     flex: 0 0 auto;
 
     &--menu,
-    &.#{$prefix}-fi-menu-fill {
+    &#{dse(fi-menu-fill)} {
       @include scheme-element-text-color(g700);
       //@include font-icon-content(menu-fill);
     }

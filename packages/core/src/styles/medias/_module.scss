@@ -3,12 +3,12 @@
 /// @group core
 ////
 
-.#{$prefix}-responsive-img {
+#{dse(responsive-img)} {
   width: 100%;
   height: auto;
 }
 
-.#{$prefix}-responsive-vid {
+#{dse(responsive-vid)} {
   position: relative;
   width: 100%;
 
