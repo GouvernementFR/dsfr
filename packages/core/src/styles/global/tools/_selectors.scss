@@ -1,0 +1,134 @@
+////
+/// Core Tools : Global selectors
+/// @group core
+////
+
+@mixin _class-pattern($selector, $unify: true) {
+  @if & == null {
+    @at-root #{$selector} {
+      @content;
+    }
+  }
+  @else if $unify {
+    @at-root #{selector-unify(&, $selector)} {
+      @content;
+    }
+  }
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+@mixin class-contains($unify: true, $patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}[class*="#{$pattern}"]';
+  }
+
+  @include _class-pattern($selectors, $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-contains($unify: true, $patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
+  }
+
+  @include _class-pattern($selectors, $unify) {
+    @content;
+  }
+}
+
+@mixin class-start-with($start, $unify: true) {
+  $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
+
+  @include _class-pattern($selector, $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-start-with($start, $unify: true) {
+  $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
+  @include _class-pattern($selector, $unify) {
+    @content;
+  }
+}
+
+@mixin class-end-with($end, $unify: true) {
+  $selector: '[class$="#{$end}"], [class*="#{$end} "]';
+  @include _class-pattern($selector, $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-end-with($end, $unify: true) {
+  $selector: ':not([class$="#{$end}"]):not([class*="#{$end} "])';
+  @include _class-pattern($selector, $unify) {
+    @content;
+  }
+}
+
+@mixin class-is-dse($unify: true) {
+  @include class-start-with(dse('', ''), $unify) {
+    @content;
+  }
+}
+
+@mixin class-is-not-dse($unify: true) {
+  @include class-not-start-with(dse('', ''), $unify) {
+    @content;
+  }
+}
+
+@mixin has-icon() {
+  @include class-start-with(dse(fi-, '')) {
+    @content;
+  }
+}
+
+/// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
+/// @access public
+@mixin all-dse-elements-selector() {
+  @include class-start-with(dse('', ''), false) {
+    @at-root {
+      &,
+      & * {
+        @at-root {
+          &,
+          &::before,
+          &::after {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin specify($tags...) {
+  $selectors: (&);
+
+  @each $tag in $tags {
+    $selectors: append($selectors, selector-unify(&, $tag));
+  }
+  @at-root {
+    #{$selectors} {
+      @content;
+    }
+  }
+}

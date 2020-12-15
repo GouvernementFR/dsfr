@@ -1,5 +1,10 @@
-.#{$prefix}-radio-group {
-  .#{$prefix}-hint-text {
+////
+/// Radios Module
+/// @group radios
+////
+
+#{dse-group(radio)} {
+  #{dse(hint-text)} {
     margin-left: space(4N);
     margin-top: -(space(1-5N));
   }
@@ -105,7 +110,7 @@
       }
     }
 
-    .rf-hint-text {
+    #{dse(hint-text)} {
       margin-left: space(3N);
     }
   }

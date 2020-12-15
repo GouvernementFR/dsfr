@@ -1,5 +1,10 @@
+////
+/// Utilities Module
+/// @group utilities
+////
+
 @include create-spacing-properties($spacing-settings);
 
-.#{$prefix}-collapse {
+#{dse(collapse)} {
   @include collapse();
 }

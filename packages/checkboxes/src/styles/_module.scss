@@ -1,13 +1,19 @@
-.#{$prefix}-checkbox-group {
+////
+/// Checkboxes Module
+/// @group checkboxes
+////
+
+#{dse(checkbox-group)} {
+  @extend %default-text-color;
   position: relative;
 
-  .#{$prefix}-hint-text {
+  #{dse(hint-text)} {
     margin-left: space(4N);
     margin-top: -(space(1-5N));
   }
 
-  .#{$prefix}-error-text,
-  .#{$prefix}-valid-text {
+  #{dse(error-text)},
+  #{dse(valid-text)} {
     // si un élément suit, il va venir sur le texte d'erreur avec absolute
     //position: absolute;
     margin-top: -(space(0-5N));
@@ -27,7 +33,7 @@
       }
     }
 
-    .#{$prefix}-hint-text {
+    #{dse(hint-text)} {
       margin-left: space(3N);
     }
   }

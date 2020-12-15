@@ -1,3 +1,8 @@
+////
+/// Header Module : popin
+/// @group header
+////
+
 &__popin {
   position: fixed;
   width: 100vw;
@@ -25,7 +30,7 @@
     visibility: visible;
   }
 
-  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+  #{dse(btn) + dse(fi-close-line)} {
     position: absolute;
     top: 0;
     right: 0;

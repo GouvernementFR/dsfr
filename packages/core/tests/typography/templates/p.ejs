@@ -1,0 +1,49 @@
+<%
+ let classes = locals.classes || [];
+
+ switch(locals.size) {
+     case 'xs' :
+       classes.push(prefix + '-text--xs');
+       break;
+
+     case 'sm' :
+         classes.push(prefix + '-text--sm');
+         break;
+
+     case 'md':
+         classes.push(prefix + '-text');
+         break;
+
+
+     case 'lg' :
+         classes.push(prefix + '-text--lg');
+         break;
+
+     case 'lead' :
+         classes.push(prefix + '-text--lead');
+         break;
+ }
+
+ switch(locals.weight) {
+     case 'light' :
+         classes.push(prefix + '-text--light');
+         break;
+
+     case 'regular' :
+         classes.push(prefix + '-text--regular');
+         break;
+
+     case 'bold' :
+         classes.push(prefix + '-text--bold');
+         break;
+
+     case 'xx-bold' :
+         classes.push(prefix + '-text--xx-bold');
+         break;
+ }
+
+ if (locals.alt === true) classes.push(prefix + '-text--alt');
+
+ %>
+
+<p <%- includeClasses(classes); %>><%- locals.content || '' %></p>

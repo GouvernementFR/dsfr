@@ -1,54 +1,95 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+@charset "UTF-8";
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
+.rf-footer__brand-link, .rf-footer__content-link, .rf-footer__top-link, .rf-footer__bottom-link {
+  text-decoration: none; }
+
+.rf-footer__content-list, .rf-footer__top-list, .rf-footer__bottom-list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
+.rf-footer {
+  color: var(--g700); }
+
 .rf-footer {
   width: 100%;
   border-top: 2px solid var(--bf500);
   border-bottom: 1px solid var(--g400);
   padding-top: 2.5rem;
-  line-height: 1.5; }
-  :root[data-transition] .rf-footer {
-    transition: border-top 0.3s; }
-  :root[data-transition] .rf-footer {
-    transition: border-top 0.3s, border-bottom 0.3s; }
+  line-height: 1.5;
+  /**
+   * On fixe une largeur maximale pour le logo opérateur
+   */
+  /**
+ * Container des logos partenaires (principaux et secondaires)
+ */
+  /**
+ * Container des logos partenaires principaux
+ */
+  /**
+ * Container des logos partenaires secondaires
+ */ }
   .rf-footer__body {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap; }
   .rf-footer__brand {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-basis: 100%; }
+    flex-basis: 100%;
+    /**
+     * Si on ajoute un logo opérateur à côté du logo principal, on lui applique une marge à gauche
+     * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
+     * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
+     */
+    /**
+     * Styles quand un logo opérateur est présent
+     */ }
     .rf-footer__brand .rf-logo {
       font-size: 1rem;
       margin: -1em; }
       @media (min-width: 48em) {
         .rf-footer__brand .rf-logo {
           font-size: 1.25rem; } }
-    .rf-footer__brand a + a {
-      margin-left: 1.5rem;
-      box-shadow: none; }
+    .rf-footer__brand > a + a,
+    .rf-footer__brand > a + img,
+    .rf-footer__brand > a + svg {
+      margin-left: 1.5rem; }
       @media (min-width: 48em) {
-        .rf-footer__brand a + a {
+        .rf-footer__brand > a + a,
+        .rf-footer__brand > a + img,
+        .rf-footer__brand > a + svg {
           margin-left: 3rem; } }
+    a.rf-footer__brand-link {
+      box-shadow: none; }
+      a.rf-footer__brand-link[target="_blank"]::after {
+        content: none;
+        margin-left: 0; }
     .rf-footer__body--operator .rf-footer__brand {
       flex-basis: 100%; }
-      .rf-footer__body--operator .rf-footer__brand .rf-footer__link + .rf-footer__link .rf-footer__logo {
+      .rf-footer__body--operator .rf-footer__brand .rf-footer__link + .rf-rf .rf-footer__logo {
         width: auto;
         min-width: initial;
         max-height: 100px; }
@@ -90,106 +131,39 @@
   .rf-footer__content-desc {
     margin: 0 0 1rem;
     line-height: 1.5; }
-  .rf-footer__content-links {
+  .rf-footer__content-list {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
     margin-bottom: -1rem; }
-    .rf-footer__content-links > li {
+    .rf-footer__content-list > li {
       margin-right: 1.5rem;
       margin-top: 0.5rem; }
-      .rf-footer__content-links > li::before {
+      .rf-footer__content-list > li::before {
         content: none; }
-      .rf-footer__content-links > li:last-child {
+      .rf-footer__content-list > li:last-child {
         margin-right: 0; }
-      .rf-footer__content-links > li > a {
-        display: inline-flex;
-        font-weight: 700;
-        box-shadow: none; }
       @media (min-width: 36em) {
-        .rf-footer__content-links > li {
+        .rf-footer__content-list > li {
           margin-right: 3.5rem; } }
     @media (min-width: 36em) {
-      .rf-footer__content-links {
+      .rf-footer__content-list {
         flex-direction: row;
         flex-wrap: wrap; } }
-  .rf-footer__bottom {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 2.5rem;
-    padding: 0 0 1rem;
-    border-top: 1px solid var(--g400); }
-    :root[data-transition] .rf-footer__bottom {
-      transition: border-top 0.3s; }
-    @media (min-width: 36em) {
-      .rf-footer__bottom {
-        flex-wrap: nowrap;
-        padding: 0; } }
-  .rf-footer__bottom-list {
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0.5rem 0;
-    width: 100%;
-    margin: 0; }
-    .rf-footer__bottom-list > li {
-      position: relative;
-      margin: 0.5rem 0 0 0.5rem;
-      display: inline; }
-      .rf-footer__bottom-list > li::before {
-        content: "";
-        display: inline-block;
-        vertical-align: middle;
-        position: relative;
-        height: 1rem;
-        width: 1px;
-        margin-right: 0.5rem;
-        background-color: var(--g400); }
-        :root[data-transition] .rf-footer__bottom-list > li::before {
-          transition: background-color 0.3s; }
-        @media (min-width: 36em) {
-          .rf-footer__bottom-list > li::before {
-            margin-right: 0.25rem; } }
-      .rf-footer__bottom-list > li:first-child {
-        margin: 0.5rem 0 0; }
-        .rf-footer__bottom-list > li:first-child::before {
-          content: none; }
-      .rf-footer__bottom-list > li > a {
-        box-shadow: none;
-        font-size: 0.75rem;
-        color: var(--g600); }
-        :root[data-transition] .rf-footer__bottom-list > li > a {
-          transition: color 0.3s; }
-      @media (min-width: 36em) {
-        .rf-footer__bottom-list > li {
-          margin: 0.5rem 0 0 0.25rem; } }
-    @media (min-width: 36em) {
-      .rf-footer__bottom-list {
-        padding: 1rem 0; } }
-  .rf-footer__link {
-    box-shadow: none;
-    font-size: 0.75rem;
-    color: var(--g600); }
-    :root[data-transition] .rf-footer__link {
-      transition: color 0.3s; }
-  .rf-footer__bottom-copy {
-    flex-shrink: 0;
-    font-size: 0.75rem;
-    color: var(--g600);
-    margin-top: 1rem; }
-    :root[data-transition] .rf-footer__bottom-copy {
-      transition: color 0.3s; }
-    @media (min-width: 36em) {
-      .rf-footer__bottom-copy {
-        margin-top: 0;
-        margin-left: 2rem; } }
+  .rf-footer__content-link {
+    color: var(--g800);
+    display: inline-flex;
+    font-weight: 700; }
+    a.rf-footer__content-link {
+      box-shadow: none; }
+      a.rf-footer__content-link[target="_blank"]::after {
+        content: none;
+        margin-left: 0; }
   .rf-footer__top {
     display: flex;
     background-color: var(--beige);
     margin: -2.5rem 0 2.5rem;
     padding: 1rem 0; }
-    :root[data-transition] .rf-footer__top {
-      transition: background-color 0.3s; }
   .rf-footer__top-cat {
     margin: 0 0 0.5rem;
     font-size: 0.75rem;
@@ -201,23 +175,89 @@
   .rf-footer__top-list {
     text-align: center;
     margin: 0; }
-    .rf-footer__top-list > li::before {
-      content: none; }
-    .rf-footer__top-list > li > a {
-      box-shadow: none;
-      font-size: 0.75rem;
-      color: var(--g600); }
-      :root[data-transition] .rf-footer__top-list > li > a {
-        transition: color 0.3s; }
     @media (min-width: 36em) {
       .rf-footer__top-list {
         text-align: left; } }
-  .rf-footer__partners {
+  .rf-footer__top-link {
+    font-size: 0.75rem; }
+    a.rf-footer__top-link {
+      box-shadow: none; }
+      a.rf-footer__top-link[target="_blank"]::after {
+        content: none;
+        margin-left: 0; }
+    :root .rf-footer__top-link {
+      color: var(--g600); }
+  .rf-footer__bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-top: 2.5rem;
-    padding-top: 1rem;
+    padding: 0 0 1rem;
     border-top: 1px solid var(--g400); }
-    :root[data-transition] .rf-footer__partners {
-      transition: border-top 0.3s; }
+    @media (min-width: 36em) {
+      .rf-footer__bottom {
+        flex-wrap: nowrap;
+        padding: 0; } }
+  .rf-footer__bottom-list {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.5rem 0;
+    width: 100%;
+    margin: 0; }
+    @media (min-width: 48em) {
+      .rf-footer__bottom-list {
+        padding: 1rem 0; } }
+  .rf-footer__bottom-item {
+    position: relative;
+    margin: 0.5rem 0 0 0.5rem;
+    display: inline; }
+    @media (min-width: 36em) {
+      .rf-footer__bottom-item {
+        margin: 0.5rem 0 0 0.25rem; } }
+    .rf-footer__bottom-item::before {
+      display: inline-block;
+      content: "";
+      vertical-align: middle;
+      position: relative;
+      width: 1px;
+      height: 1rem;
+      margin-right: 0.5rem;
+      background-color: var(--g400); }
+      @media (min-width: 36em) {
+        .rf-footer__bottom-item::before {
+          margin-right: 0.25rem; } }
+    .rf-footer__bottom-item:first-child {
+      margin: 0.5rem 0 0; }
+      .rf-footer__bottom-item:first-child::before {
+        content: none; }
+  .rf-footer__bottom-link {
+    font-size: 0.75rem; }
+    a.rf-footer__bottom-link {
+      box-shadow: none; }
+      a.rf-footer__bottom-link[target="_blank"]::after {
+        content: none;
+        margin-left: 0; }
+    :root .rf-footer__bottom-link {
+      color: var(--g600); }
+  .rf-footer__bottom-copy {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    color: var(--g600);
+    margin-top: 1rem; }
+    @media (min-width: 36em) {
+      .rf-footer__bottom-copy {
+        margin-top: 0;
+        margin-left: 2rem; } }
+  .rf-footer__partners {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--g400);
+    /**
+   * Style des liens qui entourent les logos partenaires
+   */
+    /**
+   * On surcharge le style du logo de base
+   */ }
     .rf-footer__partners a {
       display: flex;
       align-items: center;
@@ -233,7 +273,7 @@
           height: 90px; } }
       @media (min-width: 48em) {
         .rf-footer__partners a {
-          margin: 1rem; } }
+          margin: 0 0 0 1rem; } }
     .rf-footer__partners .rf-footer__logo {
       width: auto;
       max-width: 100%;
@@ -241,10 +281,12 @@
       max-height: calc(90px - 1rem); }
   .rf-footer__partners-title {
     flex-basis: 100%;
-    font-size: 0.875rem;
-    font-weight: 400;
     margin: 0;
     text-align: center; }
+    :root .rf-footer__partners-title {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      font-weight: regular; }
     @media (min-width: 36em) {
       .rf-footer__partners-title {
         text-align: left; } }
@@ -254,35 +296,44 @@
     @media (min-width: 48em) {
       .rf-footer__partners-logos {
         flex-wrap: nowrap;
-        margin: 0 -1rem; } }
+        margin: 0 -1rem -2rem; } }
   .rf-footer__partners-main {
     flex-basis: 100%;
-    padding-top: 2rem; }
+    padding-top: 0.5rem; }
     @media (min-width: 48em) {
       .rf-footer__partners-main + .rf-footer__partners-sub {
         justify-content: flex-end;
         padding-left: 3rem; } }
     @media (min-width: 36em) {
       .rf-footer__partners-main {
-        flex-basis: auto; } }
+        flex-basis: auto;
+        padding-top: 0;
+        margin-top: 0.5rem; } }
   .rf-footer__partners-sub {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     flex-basis: 100%;
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    /**
+   * On surcharge le style du lien pour les logos secondaires
+   */ }
     .rf-footer__partners-sub > a {
       box-shadow: none;
       margin: 0 0 1rem; }
       @media (min-width: 36em) {
         .rf-footer__partners-sub > a {
-          margin: 1rem; } }
+          margin: 0 1rem 2rem; } }
+      @media (min-width: 48em) {
+        .rf-footer__partners-sub > a {
+          margin: 0 1rem 1.5rem; } }
     @media (min-width: 36em) {
       .rf-footer__partners-sub {
-        margin: 0 -1rem; } }
+        margin: 1rem -1rem 0; } }
     @media (min-width: 48em) {
       .rf-footer__partners-sub {
-        margin: 0; } }
+        margin: 0.5rem 0 0;
+        padding-top: 0; } }
 
 
 /*# sourceMappingURL=footer.css.map*/

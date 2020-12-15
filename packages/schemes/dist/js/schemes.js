@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 41);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -128,7 +128,7 @@ var Initializer = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 41:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -141,24 +141,21 @@ var _dist = __webpack_require__(7);
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
-// CONCATENATED MODULE: ./packages/schemes/src/scripts/dark-mode-toggle-switch/dark-mode-toggle-switch.js
+// CONCATENATED MODULE: ./packages/schemes/src/scripts/scheme/scheme.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var DM = 'rf-dark-mode';
-var DTA = 'data-theme';
-
-var DarkModeToggleSwitch = /*#__PURE__*/function () {
-  function DarkModeToggleSwitch() {
-    _classCallCheck(this, DarkModeToggleSwitch);
+var Scheme = /*#__PURE__*/function () {
+  function Scheme() {
+    _classCallCheck(this, Scheme);
 
     this.init();
   }
 
-  _createClass(DarkModeToggleSwitch, [{
+  _createClass(Scheme, [{
     key: "init",
     value: function init() {
       var _this = this;
@@ -175,37 +172,46 @@ var DarkModeToggleSwitch = /*#__PURE__*/function () {
       this.root = document.documentElement;
 
       if (this.scheme === 'dark') {
-        if (!this.root.hasAttribute('data-transition')) this.root.setAttribute(DTA, 'dark');else {
-          this.root.removeAttribute('data-transition');
-          this.root.setAttribute(DTA, 'dark');
+        if (!this.root.hasAttribute(Scheme.TRANSITION_ATTRIBUTE)) {
+          this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
+        } else {
+          this.root.removeAttribute(Scheme.TRANSITION_ATTRIBUTE);
+          this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
           setTimeout(function () {
-            _this.root.setAttribute('data-transition', '');
+            _this.root.setAttribute(Scheme.TRANSITION_ATTRIBUTE, '');
           }, 300);
         }
-      }
+      } else this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'light');
 
-      this.checkbox = document.getElementById(DM + '-toggle-switch');
-      if (this.scheme === 'dark') this.checkbox.checked = true;
-      this.checkbox.addEventListener('change', this.change.bind(this));
+      this.observer = new MutationObserver(this.mutate.bind(this));
+      this.observer.observe(this.root, {
+        attributes: true
+      });
     }
   }, {
-    key: "change",
-    value: function change() {
-      if (this.checkbox.checked) {
-        this.scheme = 'dark';
-        localStorage.setItem('scheme', 'dark');
-        this.root.setAttribute(DTA, 'dark');
-      } else {
-        this.scheme = 'light';
-        localStorage.setItem('scheme', 'light');
-        this.root.removeAttribute(DTA);
-      }
+    key: "mutate",
+    value: function mutate(mutations) {
+      var _this2 = this;
+
+      mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === Scheme.SCHEME_ATTRIBUTE) {
+          var scheme = _this2.root.getAttribute(Scheme.SCHEME_ATTRIBUTE);
+
+          if (scheme === 'dark') {
+            localStorage.setItem('scheme', 'dark');
+          } else if (scheme === 'light') {
+            localStorage.setItem('scheme', 'light');
+          }
+        }
+      });
     }
   }]);
 
-  return DarkModeToggleSwitch;
+  return Scheme;
 }();
 
+Scheme.SCHEME_ATTRIBUTE = 'data-rf-theme';
+Scheme.TRANSITION_ATTRIBUTE = 'data-rf-transition';
 
 // CONCATENATED MODULE: ./packages/schemes/src/scripts/index.js
 
@@ -215,7 +221,7 @@ var DarkModeToggleSwitch = /*#__PURE__*/function () {
 
 
 
-new Initializer["Initializer"]('#rf-dark-mode-toggle-switch', [DarkModeToggleSwitch]);
+new Initializer["Initializer"](':root[' + Scheme.SCHEME_ATTRIBUTE + ']', [Scheme]);
 
 /***/ }),
 

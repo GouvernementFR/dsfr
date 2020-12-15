@@ -19,7 +19,7 @@ let samples = [
 for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
 %>
-<h4><%= sample.title %></h4>
+<h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
 <%- include(sample.sample, sample.data); %>
 <%- snippet(include(sample.sample, sample.data)); %>

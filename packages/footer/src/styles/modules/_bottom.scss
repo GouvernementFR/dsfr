@@ -1,0 +1,70 @@
+////
+/// Footer module : Bottom
+/// @group Footer
+////
+
+&__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: space(5N);
+  padding: 0 0 space(2N);
+  @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
+
+  @include respond-from(sm) {
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+}
+
+&__bottom-list {
+  @extend %list-reset;
+  flex-wrap: wrap;
+  align-items: center;
+  @include padding(2v 0);
+  @include padding(4v 0, md);
+  @include size(100%);
+  @include margin(0);
+}
+
+&__bottom-item {
+  position: relative;
+  @include margin(2v 0 0 2v);
+  @include margin(2v 0 0 1v, sm);
+  display: inline;
+
+  @include before(inline-block, '') {
+    vertical-align: middle;
+    position: relative;
+    @include size(1px, 4v);
+    @include margin-right(2v);
+    @include margin-right(1v, sm);
+    @include scheme-element-bg-color(g400, true);
+  }
+
+  &:first-child {
+    @include margin(2v 0 0);
+    @include before(null, none);
+  }
+}
+
+&__bottom-link {
+  @extend %a-reset;
+  @include override-reset-link-style;
+  @include force-over-reset {
+    @include scheme-element-text-color(g600, true);
+  }
+  font-size: font-size(12);
+}
+
+&__bottom-copy {
+  flex-shrink: 0;
+  font-size: font-size(12);
+  @include scheme-element-text-color(g600, true);
+  margin-top: space(2w);
+
+  @include respond-from(sm) {
+    margin-top: 0;
+    margin-left: space(4w);
+  }
+}

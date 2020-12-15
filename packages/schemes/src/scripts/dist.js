@@ -3,6 +3,6 @@
 import '@gouvfr/schemes/_dist.scss';
 
 import { Initializer } from '@gouvfr/utilities/src/scripts/init/Initializer';
-import { DarkModeToggleSwitch } from './index';
+import { Scheme } from './index';
 
-new Initializer('#${prefix}-dark-mode-toggle-switch', [DarkModeToggleSwitch]);
+new Initializer(':root[' + Scheme.SCHEME_ATTRIBUTE + ']', [Scheme]);

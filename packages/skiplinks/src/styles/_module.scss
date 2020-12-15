@@ -3,7 +3,7 @@
 /// @group skiplinks
 ////
 
-.#{$prefix}-skiplinks {
+#{dse(skiplinks)} {
   position: absolute;
   padding: space(1-5N) 0;
   @include scheme-element-bg-color(g200, true);
@@ -15,7 +15,8 @@
   }
 }
 
-.#{$prefix}-skiplinks__list {
+#{dse(skiplinks__list)} {
+  @extend %list-reset;
   display: flex;
   flex-direction: column;
   margin: 0 (-(space(2N))) (-(space(2N)));
@@ -27,7 +28,7 @@
       content: none;
     }
 
-    @include link(md, null, null, null, true);
+    @include nest-link(md, null, null, null, true);
 
     @include respond-from(sm) {
       margin: 0 space(2N);

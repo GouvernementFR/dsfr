@@ -1,29 +1,33 @@
-.#{$prefix}-select-group,
-.#{$prefix}-input-group {
+////
+/// Forms Module
+/// @group forms
+////
+
+#{dse-group(select), dse-group(input)} {
   &:not(:last-child) {
-    margin-bottom: space(3N);
+    @include margin-bottom(6v);
   }
 
   &--valid {
-    .#{$prefix}-label {
+    #{dse(label)} {
       @include scheme-element-text-color(success);
     }
   }
 
   &--error {
-    .#{$prefix}-label {
+    #{dse(label)} {
       @include scheme-element-text-color(error);
     }
   }
 
   &--disabled {
-    .#{$prefix}-label {
+    #{dse(label)} {
       @include disabled-colors(true);
     }
   }
 }
 
-.#{$prefix}-label {
+#{dse(label)} {
   display: block;
   font-size: font-size(14);
   line-height: line-height(normal);
@@ -34,160 +38,148 @@
     @include scheme-element-text-color(error);
   }
 
-  & + .#{$prefix}-input,
-  & + .#{$prefix}-select {
-    margin-top: space(1N);
+  & + #{dse(input)},
+  & + #{dse(select)} {
+    @include margin-top(2v);
   }
 }
 
-.#{$prefix}-hint-text {
-  @extend %hint-text;
+#{dse(hint-text)} {
+  @include specify(p) {
+    @include text-styles(xs, g600);
+  }
 
-  & + .#{$prefix}-input,
-  & + .#{$prefix}-input-wrap,
-  & + .#{$prefix}-select {
-    margin-top: space(1N);
+  @include margin-y(0);
+
+  & + #{dse(input)},
+  & + #{dse(input-wrap)},
+  & + #{dse(select)} {
+    @include margin-top(2v);
   }
 }
 
-.#{$prefix}-error-text {
-  display: flex;
-  align-items: center;
-  font-size: font-size(12);
-  line-height: line-height(normal);
-  font-family: $font-family-sans;
-  margin-top: space(1N);
+#{dse(error-text)} {
+  @include display-flex(row, center);
+  @include specify(p) {
+    @include text-styles(xs, error);
+  }
 
-  @include scheme-element-text-color(error, true);
+  @include margin-top(2v);
 
   @include font-icon(alert-line, sm) {
-
     display: inline-block;
-    margin-right: space(0-5N);
+    @include margin-right(1v);
   }
 }
 
-.#{$prefix}-valid-text {
-  display: flex;
-  align-items: center;
-  font-size: font-size(12);
-  line-height: line-height(normal);
-  font-family: $font-family-sans;
-  margin-top: space(1N);
+#{dse(valid-text)} {
+  @include display-flex(row, center);
+  @include specify(p) {
+    @include text-styles(xs, success);
+  }
 
-  @include scheme-element-text-color(success, true);
+  @include margin-top(2v);
 
   @include font-icon(check-line, sm) {
     display: inline-block;
-    margin-right: space(0-5N);
+    @include margin-right(1v);
   }
 }
 
-.#{$prefix}-form-group {
-  margin-bottom: space(4N);
+#{dse-group(form)} {
+  @include margin-bottom(8v);
 }
 
-.#{$prefix}-fieldset {
+#{dse(fieldset)} {
   position: relative;
-  margin: 0;
-  padding: 0;
+  @include margin(0);
+  @include padding(0);
   border: 0;
   @include scheme-element-text-color(g800, true);
 
-  .#{$prefix}-hint-text {
-    margin-bottom: space(2N);
+  #{dse(hint-text)} {
+    @include margin-bottom(4v);
   }
 
   &__legend {
-    margin-bottom: space(2N);
-    font-weight: 700;
+    @include margin-bottom(4v);
+    @include font-weight(bold);
 
-    + .#{$prefix}-hint-text {
-      margin-top: -(space(1N));
+    + #{dse(hint-text)} {
+      @include margin-top(-2v);
     }
   }
 
   &__content {
     position: relative;
 
-    // + .#{$prefix}-error-text {
+    // + #{dse(error-text)} {
     //   margin-top: space(2N);
     // }
 
-    > .#{$prefix}-input-group:first-child {
-      margin-top: space(2N);
+    > #{dse-group(input)}:first-child {
+      @include margin-top(4v);
     }
   }
 
   &--inline {
-    .#{$prefix}-radio-group,
-    .#{$prefix}-checkbox-group {
+    #{dse-group(radio)},
+    #{dse-group(checkbox)} {
       display: inline-flex;
-      margin-bottom: 0;
+      @include margin-bottom(0);
 
       &:not(:last-child) {
-        margin-right: space(3N);
+        @include margin-right(6v);
       }
 
       &:first-child {
-        margin-top: 0;
+        @include margin-top(0);
       }
 
       &:last-child {
-        margin-bottom: 0;
+        @include margin-bottom(0);
       }
     }
 
-    .#{$prefix}-hint-text {
-      margin-top: space(0-5N);
-      margin-bottom: space(0-5N);
+    #{dse(hint-text)} {
+      @include margin-y(1v);
     }
 
-    .#{$prefix}-fieldset__legend {
-      margin-bottom: space(0-5N);
+    #{dse(fieldset__legend)} {
+      @include margin-bottom(1v);
     }
 
-    .#{$prefix}-error-text,
-    .#{$prefix}-valid-text {
-      margin-top: -(space(0-5N));
+    #{dse(error-text)},
+    #{dse(valid-text)} {
+      @include margin-top(-1v);
     }
   }
 
   &--error {
-    .#{$prefix}-fieldset__content {
-      &::before {
-        content: "";
-        position: absolute;
-        width: 2px;
-        top: space(1-5N);
-        bottom: space(1-5N);
-        left: -(space(1N));
+    #{dse(fieldset__content)} {
+      @include before(null, '') {
+        @include absolute(3v, null, 3v, -2v, 2px);
         @include scheme-element-bg-color(error, true);
       }
     }
 
-    .#{$prefix}-label {
+    #{dse(label)} {
       @include scheme-element-text-color(error);
     }
   }
 
   &--valid {
-    .#{$prefix}-fieldset__content {
-      &::before {
-        content: "";
-        position: absolute;
-        width: 2px;
-        top: space(1-5N);
-        bottom: space(1-5N);
-        left: -(space(1N));
+    #{dse(fieldset__content)} {
+      @include before(null, '') {
+        @include absolute(3v, null, 3v, -2v, 2px);
         @include scheme-element-bg-color(success);
       }
     }
 
-    .#{$prefix}-label {
+    #{dse(label)} {
       @include scheme-element-text-color(success);
     }
   }
 
-  @include disabled(true, false, false, '.#{$prefix}-label');
+  @include disabled(true, false, false, #{dse(label)});
 }

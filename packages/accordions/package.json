@@ -1,0 +1,20 @@
+{
+  "name": "@gouvfr/accordions",
+  "version": "0.3.1",
+  "license": "MIT",
+  "description": "Accordéon",
+  "publishConfig": {
+    "access": "public"
+  },
+  "config": {
+    "wrapper": "col-8"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/links": "^0.3.1",
+    "@gouvfr/schemes": "^0.3.1"
+  }
+}

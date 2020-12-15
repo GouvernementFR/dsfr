@@ -1,5 +1,5 @@
 ////
-/// Grid Group Annotations
+/// Grid Tools
 /// @group grid
 ////
 
@@ -49,12 +49,12 @@
 @mixin grid-generator($size: null, $columns: $grid-columns) {
   @for $i from 1 through $grid-columns {
     @if $size == null {
-      .#{$prefix}-col-#{$i} {
+      #{dse('col-' + $i)} {
         @include grid-col($i);
       }
     }
     @else {
-      .#{$prefix}-col-#{$size}-#{$i} {
+      #{dse('col-' + $size + '-' + $i)} {
         @include grid-col($i);
       }
     }
@@ -74,33 +74,14 @@
 @mixin grid-offset-generator($size: null, $columns: $grid-columns) {
   @for $i from 1 through $grid-columns {
     @if $size == null {
-      .#{$prefix}-col-offset-#{$i} {
+      #{dse('col-offset-' + $i)} {
         @include grid-col-offset($i);
       }
     }
     @else {
-      .#{$prefix}-col-offset-#{$size}-#{$i} {
+      #{dse('col-offset-' + $size + '-' + $i)} {
         @include grid-col-offset($i);
       }
     }
-  }
-}
-
-@mixin container() {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: map-get($grid-gutter-width, xs);
-  padding-left: map-get($grid-gutter-width, xs);
-
-  @include respond-from(sm) {
-    padding-right: map-get($grid-gutter-width, lg);
-    padding-left: map-get($grid-gutter-width, lg);
-  }
-
-  @include respond-from(xl) {
-    max-width: $container-max-width;
-    padding-right: 0;
-    padding-left: 0;
   }
 }

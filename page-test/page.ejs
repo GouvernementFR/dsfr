@@ -1,43 +1,42 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-<%= prefix %>-theme>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= desc %> - Design System</title>
+    <title><%= pck.name %> - Design System</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
 </head>
-<body class="<%= prefix %>-margin-bottom-15N" >
+<body class="<%= prefix %>-mb-12w" style="margin:0; padding:0;">
 
-    <% if (locals.config && locals.config.prepend === true) { %>
-        <%- include(dir + 'prepend') %>
+    <div class="test-controls" >
+        <div class="rf-form-group">
+            <fieldset class="rf-fieldset rf-fieldset--inline">
+                <div class="rf-fieldset__content">
+                    <div class="rf-checkbox-group">
+                        <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
+                        <label class="rf-label" for="theme-checkbox">Thème clair / sombre</label>
+                    </div>
+                    <div class="rf-checkbox-group">
+                        <input type="checkbox" id="reset-checkbox" name="checkboxes-inline-2" checked>
+                        <label class="rf-label" for="reset-checkbox">reset</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <% if (pck.config && pck.config.prepend === true) { %>
+        <%- include(dir + '/../packages/' + pck.id + '/tests/prepend') %>
     <% } %>
 
 
     <div class="<%= prefix %>-container">
-        <div class="<%= prefix %>-margin-top-4N <%= prefix %>-margin-bottom-4N" >
-            <input type="checkbox" id="rf-dark-mode-toggle-switch" ><label for="rf-dark-mode-toggle-switch" ></label>
-        </div>
-        <h1><%= desc %> - Design System</h1>
+
+        <h1 class="<%= prefix %>-h1" ><%= pck.name %> - Design System</h1>
     </div>
 
-    <% if (locals.config === undefined || config.wrapper === undefined) { %>
-        <%- include(dir + 'index'); %>
-    <% } else if (config.wrapper === 'col-8') { %>
-        <div class="<%= prefix %>-container">
-            <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
-                <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
-                    <%- include(dir + 'index'); %>
-                </div>
-            </div>
-        </div>
-    <% } else if (config.wrapper === 'container') { %>
-        <div class="<%= prefix %>-container">
-            <%- include(dir + 'index'); %>
-        </div>
-    <% } %>
-
-
+    <%- include(dir + '/../page-test/wrapper', pck ); %>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>

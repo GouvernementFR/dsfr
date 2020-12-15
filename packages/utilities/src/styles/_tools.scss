@@ -1,4 +1,7 @@
-// Utilities
+////
+/// Utilities Module
+/// @group tools
+////
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
   $start: str_slice($prop, 1, 1);
@@ -34,10 +37,10 @@
     $w: abs($value) / 2;
   }
 
-  $selectors:'.#{$prefix}-#{_spacing-name($prop, $side, $value, v, $breakpoint)}';
+  $selectors:'#{dse(_spacing-name($prop, $side, $value, v, $breakpoint))}';
 
   @if $w != null {
-    $selectors: '#{$selectors},.#{$prefix}-#{_spacing-name($prop, $side, $value / 2, w, $breakpoint)}';
+    $selectors: '#{$selectors},#{dse(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
   }
 
   @return $selectors;
@@ -45,7 +48,7 @@
 
 @mixin _spacing-property-variations($prop:margin, $value:1, $breakpoint: null) {
 
-  $v: space('#{$value}v');
+  $v: space('#{$value}v') !important;
 
   #{_spacing-selectors($prop, null, $value, $breakpoint)} {
     #{$prop}: $v;
@@ -91,7 +94,8 @@
 @mixin collapse($className: collapse) {
   overflow: hidden;
   opacity: 0;
-  max-height: 99999px;
+  max-height: 0;
+  visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
 
   &::before {
@@ -101,16 +105,13 @@
     transition: margin-top 0.3s;
   }
 
-  &#{&}--expanded {
+  &--expanded {
     opacity: 1;
+    max-height: 99999px;
+    visibility: visible;
 
     &::before {
       margin-top: 0;
     }
-  }
-
-  &:not(#{&}--expanded) {
-    visibility: hidden;
-    max-height: 0;
   }
 }
