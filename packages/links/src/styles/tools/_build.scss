@@ -86,6 +86,8 @@
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
+  margin: 0;
+
   @include _reset-links-tags($tags);
 
   @if $cursor != null {
