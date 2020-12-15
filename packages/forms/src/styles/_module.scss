@@ -8,18 +8,34 @@
     @include margin-bottom(6v);
   }
 
+  #{dse(label)} {
+    #{dse(hint-text)} {
+      @include margin-top(1v);
+      @include margin-bottom(3v);
+    }
+  }
+
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+   */
   &--valid {
     #{dse(label)} {
       @include scheme-element-text-color(success);
     }
   }
 
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+   */
   &--error {
     #{dse(label)} {
       @include scheme-element-text-color(error);
     }
   }
 
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+   */
   &--disabled {
     #{dse(label)} {
       @include disabled-colors(true);
@@ -34,6 +50,9 @@
   font-family: $font-family-sans;
   @include scheme-element-text-color(g800, true);
 
+  /**
+   * Modificateur au niveau du label pour appliquer un état d'erreur au label
+   */
   &--error {
     @include scheme-element-text-color(error);
   }
@@ -44,7 +63,11 @@
   }
 }
 
+/**
+ * Style du texte d'aide
+ */
 #{dse(hint-text)} {
+  display: block;
   @include specify(p) {
     @include text-styles(xs, g600);
   }
@@ -58,6 +81,9 @@
   }
 }
 
+/**
+ * Style du texte d'erreur
+ */
 #{dse(error-text)} {
   @include display-flex(row, center);
   @include specify(p) {
@@ -72,6 +98,9 @@
   }
 }
 
+/**
+ * Style du texte de l'état validé
+ */
 #{dse(valid-text)} {
   @include display-flex(row, center);
   @include specify(p) {
@@ -90,6 +119,9 @@
   @include margin-bottom(8v);
 }
 
+/**
+ * Style d'un ensemble de champs
+ */
 #{dse(fieldset)} {
   position: relative;
   @include margin(0);
@@ -122,22 +154,46 @@
     }
   }
 
+  /**
+   * Modificateur pour afficher les éléments en inline
+   */
   &--inline {
-    #{dse-group(radio)},
+    .#{$prefix}--fieldset__content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+
     #{dse-group(checkbox)} {
       display: inline-flex;
       @include margin-bottom(0);
 
       &:not(:last-child) {
-        @include margin-right(6v);
+        margin-right: space(5v);
+      }
+    }
+
+    #{dse-group(radio)} {
+      display: inline-flex;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        input[type="radio"] + label {
+          @include margin-right(7v);
+        }
       }
 
       &:first-child {
-        @include margin-top(0);
+        input[type="radio"] + label {
+          @include margin-top(0);
+        }
       }
 
       &:last-child {
-        @include margin-bottom(0);
+        input[type="radio"] + label {
+          @include margin-bottom(0);
+        }
       }
     }
 
@@ -155,6 +211,9 @@
     }
   }
 
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
   &--error {
     #{dse(fieldset__content)} {
       @include before(null, '') {
@@ -168,6 +227,9 @@
     }
   }
 
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
   &--valid {
     #{dse(fieldset__content)} {
       @include before(null, '') {
@@ -181,5 +243,8 @@
     }
   }
 
+  /**
+   * Mixin disabled pour gérer l'état disabled
+   */
   @include disabled(true, false, false, #{dse(label)});
 }
