@@ -16,6 +16,7 @@
   --w-bf500: #000091;
   --bf300-plain: #bfbfe3;
   --bf200-bf300: #bfbfe3;
+  --bf100-g750: #2a2a2a;
   --t-plain: transparent;
   --t-w: #fff;
   --g800: #fff;
@@ -80,6 +81,7 @@
   --w-bf500: #fff;
   --bf300-plain: #bfbfe3;
   --bf200-bf300: #e5e5f4;
+  --bf100-g750: #f2f2f9;
   --t-plain: transparent;
   --t-w: transparent;
   --g800: #1e1e1e;
@@ -149,6 +151,7 @@
     --w-bf500: #fff;
     --bf300-plain: #bfbfe3;
     --bf200-bf300: #e5e5f4;
+    --bf100-g750: #f2f2f9;
     --t-plain: transparent;
     --t-w: transparent;
     --g800: #1e1e1e;
@@ -210,6 +213,7 @@
     --bf500: #bfbfe3;
     --w-bf500: #000091;
     --bf200-bf300: #bfbfe3;
+    --bf100-g750: #2a2a2a;
     --t-w: #fff;
     --g800: #fff;
     --g700: #f0f0f0;

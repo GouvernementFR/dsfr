@@ -24,10 +24,21 @@
 @mixin disabled-form-choice() {
   @at-root #{selector_unify(&, input)} {
     @include disabled(true, false, false, '+ label') {
-      &::before {
+      &::before,
+      &::after {
         @include disabled-colors(false, true, border);
       }
       @content;
     }
   }
+}
+
+%hint-text {
+  font-size: font-size(12);
+  line-height: line-height(normal);
+  font-family: $font-family-sans;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include scheme-element-text-color(g600, true);
 }
