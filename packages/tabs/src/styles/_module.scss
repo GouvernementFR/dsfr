@@ -3,8 +3,9 @@
 /// @group tabs
 ////
 
-.#{$prefix}-tabs {
+#{dse(tabs)} {
   position: relative;
+  @include padding-bottom(1px); // fix next element margin
 
   // retire le padding du container en mobile
   @include respond-to(sm) {
