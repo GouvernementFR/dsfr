@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 37);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -869,7 +869,11 @@ KeyListener.DOWN = 40;
 
 /***/ }),
 
+<<<<<<< HEAD
+/***/ 37:
+=======
 /***/ 40:
+>>>>>>> release
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

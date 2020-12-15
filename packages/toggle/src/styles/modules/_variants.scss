@@ -1,0 +1,60 @@
+////
+/// Toggle Module : Variants
+/// @group toggle
+////
+
+/*
+ * Ajout d'un séparateur
+ */
+&--border-bottom {
+  @include scheme-element-box-shadow-color(g300, false, inset 0 -1px 0 0 $COLOR);
+
+  .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label],
+  .#{$prefix}-toggle__label[data-#{$prefix}-checked-label] {
+    &::before {
+      margin-bottom: -(space(1w));
+    }
+
+    + .#{$prefix}-hint-text {
+      margin-top: space(2w);
+    }
+  }
+}
+
+/*
+ * Passage du label ferré à gauche, le toggle ferré à droite
+ */
+&--label-left {
+  .#{$prefix}-toggle__input {
+    order: 1;
+    margin: 0 0 0 auto;
+  }
+
+  .#{$prefix}-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
+    padding-left: 0;
+    padding-right: space(2w);
+  }
+
+  .#{$prefix}-toggle__label {
+    justify-content: space-between;
+    padding-left: 0;
+    width: calc(100% - #{space(5w)});
+
+    &::before {
+      flex-shrink: 0;
+      order: 1;
+      margin-right: -(space(5w));
+      margin-left: space(2w);
+      text-align: right;
+    }
+  }
+
+  .#{$prefix}-toggle__label::after {
+    left: auto;
+    right: space(2w);
+  }
+
+  .#{$prefix}-hint-text {
+    order: 2;
+  }
+}

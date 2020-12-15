@@ -2,4 +2,4 @@
 
 import '../style.scss';
 import '../../../../page-test/script';
-import '../../src/scripts/dist';
+

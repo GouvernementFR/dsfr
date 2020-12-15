@@ -81,10 +81,17 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
 
 /***/ 1:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -161,7 +168,11 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+/***/ 34:
+=======
 /***/ 36:
+>>>>>>> release:packages/accordions/dist/js/accordions.js
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -438,18 +449,28 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 
   disclosures_group_createClass(DisclosuresGroup, [{
     key: "build",
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+    value: function build(wrapper, selector, type) {
+=======
     value: function build(wrapper, wrapperSelector, selector, type) {
       // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
+>>>>>>> release:packages/accordions/dist/js/accordions.js
       this.wrapper = wrapper;
       var elements = wrapper.querySelectorAll(selector);
       var disclosure;
 
       for (var i = 0; i < elements.length; i++) {
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+        // vérifier qu'il n'y a pas 2 fois le selecteur entre le wrapper et l'élément.
+        disclosure = this.disclosureFactory(elements[i], type, selector);
+        this.add(disclosure);
+=======
         // on l'ajoute qu'au wrapper le plus proche
         if (elements[i].closest(wrapperSelector) === this.wrapper) {
           disclosure = this.disclosureFactory(elements[i], type, selector);
           this.add(disclosure);
         }
+>>>>>>> release:packages/accordions/dist/js/accordions.js
       }
     }
   }, {
@@ -869,27 +890,51 @@ KeyListener.DOWN = 40;
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 40:
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+/***/ 35:
 =======
-/***/ 42:
->>>>>>> release
+/***/ 37:
+>>>>>>> release:packages/accordions/dist/js/accordions.js
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./packages/sidemenu/_dist.scss
-var _dist = __webpack_require__(8);
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+// EXTERNAL MODULE: ./packages/accordion/_dist.scss
+=======
+// EXTERNAL MODULE: ./packages/accordions/_dist.scss
+>>>>>>> release:packages/accordions/dist/js/accordions.js
+var _dist = __webpack_require__(0);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+var scripts = __webpack_require__(34);
+
+// CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
+=======
 var scripts = __webpack_require__(36);
 
-// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/sidemenu/sidemenu.js
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
+>>>>>>> release:packages/accordions/dist/js/accordions.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -897,90 +942,96 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
-var NAV_COLLAPSE = '.rf-sidemenu__wrapper > .rf-sidemenu__list > .rf-sidemenu__item > .rf-sidemenu__content';
-var SUBNAV_COLLAPSE = '.rf-sidemenu__item .rf-sidemenu__item .rf-sidemenu__content';
-var MENU = 'rf-sidemenu__content';
+var ACCORDION_GROUP = '.rf-accordion-group';
+var ACCORDION_COLLAPSE = '.rf-accordion__body';
+var ACCORDION_BODY = 'rf-accordion__body';
 var EXPANDED = '--expanded';
-var SIDENAV_WRAPPER = 'rf-sidemenu__wrapper';
 
-var sidemenu_SideMenu = /*#__PURE__*/function () {
-  function SideMenu() {
-    _classCallCheck(this, SideMenu);
+var accordion_Accordion = /*#__PURE__*/function () {
+  function Accordion() {
+    _classCallCheck(this, Accordion);
 
     this.init();
   }
 
-  _createClass(SideMenu, [{
+  _createClass(Accordion, [{
     key: "init",
     value: function init() {
-      this.group = new scripts["CollapseGroup"]();
-      this.subGroup = new scripts["CollapseGroup"]();
-      var elements = document.querySelectorAll(NAV_COLLAPSE);
-      var subElements = document.querySelectorAll(SUBNAV_COLLAPSE);
-      var sideMenuWrappers = document.querySelectorAll('.rf-sidemenu__wrapper');
-      this.buttons = document.querySelectorAll('.rf-sidemenu__btn--sidemenu-toggle');
-      var element, subElement, sideMenuWrapper, collapseElement, collapseSubElement;
+      var accordionGroups = document.querySelectorAll(ACCORDION_GROUP);
+      var elements = document.querySelectorAll(ACCORDION_COLLAPSE);
+      var element, collapseElement, collapseGroup;
+      this.collapseGroupsElements = [];
+      this.collapseGroupElements = [];
+      this.collapseGroupsArray = []; // Get accordions groups, set data attribute and create collapse group to each
 
-      for (var i = 0; i < elements.length; i++) {
-        element = elements[i];
-        collapseElement = new scripts["CollapseElement"](element, MENU + EXPANDED);
-        this.group.add(collapseElement);
-      }
+      for (var i = 0; i < accordionGroups.length; i++) {
+        accordionGroups[i].setAttribute('data-rf-ac', 'rf-ac-group-' + i);
+        this.collapseGroupsElements.push(accordionGroups[i]);
+        collapseGroup = new scripts["CollapseGroup"]();
+        this.collapseGroupsArray.push(collapseGroup);
+      } // Get collapsible elements in groups
 
-      for (var _i = 0; _i < subElements.length; _i++) {
-        subElement = subElements[_i];
-        collapseSubElement = new scripts["CollapseElement"](subElement, MENU + EXPANDED);
-        this.subGroup.add(collapseSubElement);
-      }
 
-      for (var _i2 = 0; _i2 < sideMenuWrappers.length; _i2++) {
-        sideMenuWrapper = sideMenuWrappers[_i2];
-        this.collapseSideNav = new scripts["CollapseElement"](sideMenuWrapper, SIDENAV_WRAPPER + EXPANDED);
-      }
+      for (var _i = 0; _i < this.collapseGroupsElements.length; _i++) {
+        var _iterator = _createForOfIteratorHelper(this.collapseGroupsElements[_i].querySelectorAll(ACCORDION_COLLAPSE)),
+            _step;
 
-      this.changing = this.change.bind(this);
-      window.addEventListener('resize', this.changing);
-      this.change();
-    }
-  }, {
-    key: "change",
-    value: function change() {
-      this.isMedium = window.matchMedia('(min-width: 48em)').matches;
-
-      if (this.isMedium) {
-        for (var i = 0; i < this.buttons.length; i++) {
-          this.button = this.buttons[i];
-          this.button.setAttribute('hidden', '');
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var _element = _step.value;
+            this.collapseGroupElements.push(_element);
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
         }
-      } else {
-        for (var _i3 = 0; _i3 < this.buttons.length; _i3++) {
-          this.button = this.buttons[_i3];
-          this.button.removeAttribute('hidden');
-        }
+      } // Get accordion elements in groups only and create new set
+
+
+      var elementsGroupOnly = new Set(this.collapseGroupElements); // Get accordion elements and create new array with accordion elements that are not in groups
+
+      var elementsSingleOnly = _toConsumableArray(new Set(_toConsumableArray(elements).filter(function (x) {
+        return !elementsGroupOnly.has(x);
+      }))); // Single accordion element(s) collapse individually
+
+
+      for (var _i2 = 0; _i2 < elementsSingleOnly.length; _i2++) {
+        element = elementsSingleOnly[_i2];
+        collapseElement = new scripts["CollapseElement"](element, ACCORDION_BODY + EXPANDED);
+      } // Grouped accordion elements collapse
+
+
+      for (var _i3 = 0; _i3 < this.collapseGroupElements.length; _i3++) {
+        element = this.collapseGroupElements[_i3];
+        var groupAttr = element.closest('.rf-accordion-group').dataset.rfAc;
+        element.setAttribute('data-rf-ac', groupAttr);
+        collapseElement = new scripts["CollapseElement"](element, ACCORDION_BODY + EXPANDED);
+        this.collapseGroupsArray[element.dataset.rfAc.slice(-1)].add(collapseElement);
       }
     }
   }]);
 
-  return SideMenu;
+  return Accordion;
 }();
 
 
-// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/index.js
+<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
+// CONCATENATED MODULE: ./packages/accordion/src/scripts/index.js
 
 
-// CONCATENATED MODULE: ./packages/sidemenu/src/scripts/dist.js
+// CONCATENATED MODULE: ./packages/accordion/src/scripts/dist.js
+=======
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/index.js
+
+
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/dist.js
+>>>>>>> release:packages/accordions/dist/js/accordions.js
 /* eslint-disable no-new */
 
 
 
-new Initializer["Initializer"]('.rf-sidemenu', [sidemenu_SideMenu]);
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
+new Initializer["Initializer"]('.rf-accordion', [accordion_Accordion]);
 
 /***/ })
 

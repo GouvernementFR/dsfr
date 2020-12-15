@@ -1,0 +1,18 @@
+<%
+  let classes = locals.classes || [];
+ 
+  classes.push(prefix + '-toggle');
+ 
+  if (locals.border !== undefined) {
+    classes.push(prefix +'-toggle--border-bottom');
+  }
+  if (locals.left !== undefined) {
+    classes.push(prefix +'-toggle--label-left');
+  }
+%>
+
+<div <%- includeClasses(classes)%>>
+  <input type="checkbox" class="<%= prefix %>-toggle__input" id="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>"<% if(locals.disabled){ %>disabled="disabled"<%}%>>
+  <label class="<%= prefix %>-toggle__label" for="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>" <% if(locals.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- label %></label>
+  <% if(locals.hint){ %><p class="<%= prefix %>-hint-text">Texte d’aide pour clarifier l’action Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><% } %>
+</div>
