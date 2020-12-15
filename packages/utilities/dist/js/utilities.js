@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gouvfr_utilities_dist_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /* harmony import */ var _gouvfr_utilities_dist_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_gouvfr_utilities_dist_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _gouvfr_utilities_src_scripts_init_Initializer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 /* eslint-disable no-new */
 
 
@@ -185,7 +185,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 36:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

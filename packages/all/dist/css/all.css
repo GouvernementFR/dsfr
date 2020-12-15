@@ -657,7 +657,7 @@ button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-la
 .rf-fi-calendar-line::before {
   content: ""; }
 
-.rf-fi-check-line::before, .rf-valid-text::before, .rf-checkbox-group input[type="checkbox"] + label::after {
+.rf-fi-check-line::before, .rf-valid-text::before, .rf-checkbox-group input[type="checkbox"] + label::before {
   content: ""; }
 
 .rf-fi-checkbox-line::before {
@@ -804,7 +804,7 @@ button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-la
 .rf-fi-volume-up-line::before {
   content: ""; }
 
-[data-rf-reset] a[target="_blank"]::after, [class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-prose a[target="_blank"]::after, .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--icon-left[class^="rf-fi-"]::before, .rf-link--icon-left[class*=" rf-fi-"]::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right[class^="rf-fi-"]::before, .rf-link--icon-right[class*=" rf-fi-"]::before, .rf-content-media__transcription .rf-link::before, .rf-error-text::before, .rf-valid-text::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, .rf-checkbox-group input[type="checkbox"] + label::after, .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-accordion .rf-accordion__btn::before, .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before, .rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--icon-right[class*=" rf-fi-"]::before, .rf-nav__item > .rf-btn::before, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+[data-rf-reset] a[target="_blank"]::after, [class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-prose a[target="_blank"]::after, .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--icon-left[class^="rf-fi-"]::before, .rf-link--icon-left[class*=" rf-fi-"]::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right[class^="rf-fi-"]::before, .rf-link--icon-right[class*=" rf-fi-"]::before, .rf-content-media__transcription .rf-link::before, .rf-error-text::before, .rf-valid-text::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, .rf-checkbox-group input[type="checkbox"] + label::before, .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-accordion .rf-accordion__btn::before, .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before, .rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--icon-right[class*=" rf-fi-"]::before, .rf-nav__item > .rf-btn::before, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -3779,31 +3779,54 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
 /* ------------------------------------ *\
   FORMS
 \* ------------------------------------ */
-.rf-select-group:not(:last-child), .rf-input-group:not(:last-child) {
-  margin-bottom: 1.5rem; }
-
-.rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
-  color: var(--success); }
-
-.rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
-  color: var(--error); }
-
-.rf-select-group--disabled .rf-label, .rf-input-group--disabled .rf-label {
-  color: var(--g600-g400); }
+/**
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+ */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
+.rf-select-group, .rf-input-group {
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+   */
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+   */
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+   */ }
+  .rf-select-group:not(:last-child), .rf-input-group:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .rf-select-group .rf-label .rf-hint-text, .rf-input-group .rf-label .rf-hint-text {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem; }
+  .rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
+    color: var(--success); }
+  .rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
+    color: var(--error); }
+  .rf-select-group--disabled .rf-label, .rf-input-group--disabled .rf-label {
+    color: var(--g600-g400); }
 
 .rf-label {
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;
   font-family: "Marianne", arial, sans-serif;
-  color: var(--g800); }
+  color: var(--g800);
+  /**
+   * Modificateur au niveau du label pour appliquer un état d'erreur au label
+   */ }
   .rf-label--error {
     color: var(--error); }
   .rf-label + .rf-input,
   .rf-label + .rf-select {
     margin-top: 0.5rem; }
 
+/**
+ * Style du texte d'aide
+ */
 .rf-hint-text {
+  display: block;
   margin-top: 0;
   margin-bottom: 0; }
   .rf-hint-text, p.rf-hint-text {
@@ -3815,6 +3838,9 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   .rf-hint-text + .rf-select {
     margin-top: 0.5rem; }
 
+/**
+ * Style du texte d'erreur
+ */
 .rf-error-text {
   display: flex;
   flex-direction: row;
@@ -3829,6 +3855,9 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
     display: inline-block;
     margin-right: 0.25rem; }
 
+/**
+ * Style du texte de l'état validé
+ */
 .rf-valid-text {
   display: flex;
   flex-direction: row;
@@ -3846,12 +3875,27 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
 .rf-form-group {
   margin-bottom: 2rem; }
 
+/**
+ * Style d'un ensemble de champs
+ */
 .rf-fieldset {
   position: relative;
   margin: 0;
   padding: 0;
   border: 0;
-  color: var(--g800); }
+  color: var(--g800);
+  /**
+   * Modificateur pour afficher les éléments en inline
+   */
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+  /**
+   * Mixin disabled pour gérer l'état disabled
+   */ }
   .rf-fieldset .rf-hint-text {
     margin-bottom: 1rem; }
   .rf-fieldset__legend {
@@ -3863,18 +3907,24 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
     position: relative; }
     .rf-fieldset__content > .rf-input-group:first-child {
       margin-top: 1rem; }
-  .rf-fieldset--inline .rf-radio-group,
+  .rf-fieldset--inline .rf--fieldset__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start; }
   .rf-fieldset--inline .rf-checkbox-group {
     display: inline-flex;
     margin-bottom: 0; }
-    .rf-fieldset--inline .rf-radio-group:not(:last-child),
     .rf-fieldset--inline .rf-checkbox-group:not(:last-child) {
-      margin-right: 1.5rem; }
-    .rf-fieldset--inline .rf-radio-group:first-child,
-    .rf-fieldset--inline .rf-checkbox-group:first-child {
+      margin-right: 1.25rem; }
+  .rf-fieldset--inline .rf-radio-group {
+    display: inline-flex;
+    margin-bottom: 0; }
+    .rf-fieldset--inline .rf-radio-group:not(:last-child) input[type="radio"] + label {
+      margin-right: 1.75rem; }
+    .rf-fieldset--inline .rf-radio-group:first-child input[type="radio"] + label {
       margin-top: 0; }
-    .rf-fieldset--inline .rf-radio-group:last-child,
-    .rf-fieldset--inline .rf-checkbox-group:last-child {
+    .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label {
       margin-bottom: 0; }
   .rf-fieldset--inline .rf-hint-text {
     margin-top: 0.25rem;
@@ -3945,8 +3995,10 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   input.rf-input[disabled], input.rf-input:disabled {
     color: var(--g600-g400);
     box-shadow: inset 0 -2px 0 0 var(--g400);
-    opacity: 1;
-    /* override de l'opacité chrome sur un élément disabled */ }
+    /**
+       * Override de l'opacité chrome sur un élément disabled
+       */
+    opacity: 1; }
   .rf-input:not(textarea) {
     max-height: 2.5rem; }
   .rf-input::-webkit-inner-spin-button, .rf-input::-webkit-calendar-picker-indicator {
@@ -4015,116 +4067,229 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
     opacity: 0; }
     .rf-checkbox-group input[type="checkbox"] + label {
       position: relative;
-      display: inline-flex;
-      align-items: center;
       cursor: pointer;
       padding: 0.75rem 0;
       font-size: 0.875rem;
-      -webkit-tap-highlight-color: transparent; }
+      -webkit-tap-highlight-color: transparent;
+      display: grid;
+      display: -ms-grid;
+      grid-row: 1;
+      -ms-grid-row: 2;
+      grid-column: 2;
+      -ms-grid-column: 2;
+      align-items: center;
+      -ms-align-items: center;
+      grid-template-columns: 1fr 2rem;
+      -ms-grid-columns: 1fr 2rem;
+      text-align: left;
+      direction: rtl; }
       .rf-checkbox-group input[type="checkbox"] + label::before {
-        content: '';
-        display: inline-block;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 0.5rem;
         border-radius: 0.25rem;
         border: 1px solid var(--g800);
-        transition: background-color 0.1s; }
-      .rf-checkbox-group input[type="checkbox"] + label::after {
-        font-size: 1rem;
-        color: var(--g100);
-        position: absolute;
-        opacity: 0;
-        left: 0.25rem;
-        transition: opacity 0.1s; }
+        color: transparent;
+        transition: background-color 0.1s, color 0.1s;
+        grid-row: 1;
+        -ms-grid-row: 1;
+        grid-column: 2;
+        -ms-grid-column: 2;
+        -ms-align-items: center; }
+      .rf-checkbox-group input[type="checkbox"] + label .rf-hint-text {
+        margin: 0;
+        grid-row: 2;
+        grid-column: 1;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1; }
     .rf-checkbox-group input[type="checkbox"]:checked + label::before, .rf-checkbox-group input[type="checkbox"]:active + label::before {
-      background-color: var(--bf500); }
-    .rf-checkbox-group input[type="checkbox"]:checked + label::after, .rf-checkbox-group input[type="checkbox"]:active + label::after {
-      opacity: 1; }
+      background-color: var(--bf500);
+      color: var(--g100); }
     .rf-checkbox-group input[type="checkbox"]:focus + label::before {
       outline: 2px solid var(--focus);
       outline-offset: 2px;
       z-index: var(--focus-z-index); }
     .rf-checkbox-group input[type="checkbox"][disabled] + label, .rf-checkbox-group input[type="checkbox"]:disabled + label {
       color: var(--g600-g400); }
-      .rf-checkbox-group input[type="checkbox"][disabled] + label::before, .rf-checkbox-group input[type="checkbox"]:disabled + label::before {
+      .rf-checkbox-group input[type="checkbox"][disabled] + label::before, .rf-checkbox-group input[type="checkbox"][disabled] + label::after, .rf-checkbox-group input[type="checkbox"]:disabled + label::before, .rf-checkbox-group input[type="checkbox"]:disabled + label::after {
         background-color: var(--g200);
         border: 1px solid var(--g400); }
 
-/* ------------------------------------ *\
-  RADIOS
-\* ------------------------------------ */
-.rf-radio-group .rf-hint-text {
-  margin-left: 2rem;
-  margin-top: -0.75rem; }
+.rf-radio-group {
+  /**
+  * Taille SM et taille radio riche
+  */ }
+  .rf-radio-group .rf-hint-text {
+    margin-left: 2rem;
+    margin-top: -0.75rem; }
+  .rf-radio-group:first-child {
+    margin-top: -0.75rem; }
+    .rf-radio-group:first-child input[type="radio"] + label {
+      margin-top: 0; }
+  .rf-radio-group:last-child {
+    margin-bottom: -0.75rem; }
+    .rf-radio-group:last-child input[type="radio"] + label[style*='background-image:'], .rf-radio-group:last-child input[type="radio"] + label[class^="rf-ifi-"], .rf-radio-group:last-child input[type="radio"] + label[class*=" rf-ifi-"] {
+      margin-bottom: 1.5rem; }
+  .rf-radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0; }
+    .rf-radio-group input[type="radio"] + label {
+      position: relative;
+      cursor: pointer;
+      padding: 0.75rem 0;
+      font-size: 0.875rem;
+      -webkit-tap-highlight-color: transparent;
+      display: grid;
+      display: -ms-grid;
+      grid-row: 1;
+      -ms-grid-row: 2;
+      grid-column: 2;
+      -ms-grid-column: 2;
+      align-items: center;
+      -ms-align-items: center;
+      grid-template-columns: 1fr 2rem;
+      -ms-grid-columns: 1fr 2rem;
+      text-align: left;
+      direction: rtl; }
+      .rf-radio-group input[type="radio"] + label[style*='background-image:'], .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+        padding-left: 3.5rem;
+        min-height: 5.5rem;
+        height: 1px;
+        width: 100%;
+        box-shadow: inset 0 0 0 1px var(--g300);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-right: 6.5rem;
+        background-position: calc(100% - 0.25rem) center;
+        background-size: 5rem 5rem;
+        background-repeat: no-repeat;
+        background-color: var(--w);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center; }
+        @media (hover: hover) and (pointer: fine) {
+          .rf-radio-group input[type="radio"] + label[style*='background-image:']:not([disabled]):hover, .rf-radio-group input[type="radio"] + label[style*='background-image:']:not(:disabled):hover, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]:not([disabled]):hover, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]:not(:disabled):hover, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]:not([disabled]):hover, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]:not(:disabled):hover {
+            background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+          .rf-radio-group input[type="radio"] + label[style*='background-image:']:not([disabled]):active, .rf-radio-group input[type="radio"] + label[style*='background-image:']:not(:disabled):active, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]:not([disabled]):active, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]:not(:disabled):active, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]:not([disabled]):active, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]:not(:disabled):active {
+            background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+        :root:not([data-rf-theme="dark"]) .rf-radio-group input[type="radio"] + label[style*='background-image:'], :root:not([data-rf-theme="dark"]) .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], :root:not([data-rf-theme="dark"]) .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+          --color-hover: rgba(224, 224, 224, 0.5);
+          --color-active: rgba(194, 194, 194, 0.5); }
+        :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-radio-group input[type="radio"] + label[style*='background-image:'], :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-radio-group input[type="radio"] + label[style*='background-image:'],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+          --color-hover: rgba(224, 224, 224, 0.5);
+          --color-active: rgba(194, 194, 194, 0.5); }
+        :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-radio-group input[type="radio"] + label[style*='background-image:'], :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-radio-group input[type="radio"] + label[style*='background-image:'],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+          --color-hover: rgba(76, 76, 76, 0.5);
+          --color-active: rgba(122, 122, 122, 0.5); }
+        :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-radio-group input[type="radio"] + label[style*='background-image:'], :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-radio-group input[type="radio"] + label[style*='background-image:'],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"],
+        :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+          --color-hover: rgba(224, 224, 224, 0.5);
+          --color-active: rgba(194, 194, 194, 0.5); }
+        :root[data-rf-theme="dark"] .rf-radio-group input[type="radio"] + label[style*='background-image:'], .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+          --color-hover: rgba(76, 76, 76, 0.5);
+          --color-active: rgba(122, 122, 122, 0.5); }
+        .rf-radio-group input[type="radio"] + label[style*='background-image:']::before, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]::before, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]::before {
+          width: 1rem;
+          height: 1rem;
+          position: absolute;
+          left: 1.75rem; }
+        .rf-radio-group input[type="radio"] + label[style*='background-image:']::after, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]::after, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]::after {
+          display: flex;
+          content: "";
+          position: absolute;
+          right: 0;
+          margin: 0.25rem;
+          padding-left: 0.25rem;
+          vertical-align: middle;
+          justify-content: center;
+          align-items: center;
+          height: 5rem;
+          width: 5.25rem;
+          border-left: 1px solid var(--g300);
+          font-size: 5rem; }
+      .rf-radio-group input[type="radio"] + label .rf-hint-text {
+        margin: 0;
+        grid-row: 2;
+        grid-column: 1;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1; }
+      .rf-radio-group input[type="radio"] + label::before {
+        content: '';
+        display: inline-block;
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid;
+        margin-right: 0.5rem;
+        border-radius: 50%;
+        border: 1px solid var(--g800);
+        transform-origin: center;
+        transition: transform 0.3s;
+        grid-row: 1;
+        -ms-grid-row: 1;
+        grid-column: 2;
+        -ms-grid-column: 2;
+        align-items: center;
+        -ms-align-items: center; }
+    .rf-radio-group input[type="radio"]:checked + label::before {
+      box-shadow: inset 0 0 0 5px var(--w);
+      background-color: var(--bf500); }
+    .rf-radio-group input[type="radio"]:checked + label[style*='background-image:'], .rf-radio-group input[type="radio"]:checked + label[class^="rf-ifi-"], .rf-radio-group input[type="radio"]:checked + label[class*=" rf-ifi-"] {
+      width: 100%;
+      background-color: var(--bf500);
+      color: var(--w-bf500);
+      box-shadow: inset 0 0 0 1px var(--bf500); }
+      .rf-radio-group input[type="radio"]:checked + label[style*='background-image:']::before, .rf-radio-group input[type="radio"]:checked + label[class^="rf-ifi-"]::before, .rf-radio-group input[type="radio"]:checked + label[class*=" rf-ifi-"]::before {
+        border: 1px solid var(--w-bf500);
+        box-shadow: inset 0 0 0 3px var(--bf500);
+        background-color: var(--w-bf500); }
+      .rf-radio-group input[type="radio"]:checked + label[style*='background-image:'] .rf-hint-text, .rf-radio-group input[type="radio"]:checked + label[class^="rf-ifi-"] .rf-hint-text, .rf-radio-group input[type="radio"]:checked + label[class*=" rf-ifi-"] .rf-hint-text {
+        color: var(--g200); }
+    .rf-radio-group input[type="radio"]:focus + label::before {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+    .rf-radio-group input[type="radio"][disabled] + label, .rf-radio-group input[type="radio"]:disabled + label {
+      color: var(--g600-g400); }
+      .rf-radio-group input[type="radio"][disabled] + label::before, .rf-radio-group input[type="radio"][disabled] + label::after, .rf-radio-group input[type="radio"]:disabled + label::before, .rf-radio-group input[type="radio"]:disabled + label::after {
+        background-color: var(--g200);
+        border: 1px solid var(--g400); }
+  .rf-radio-group--sm input[type="radio"] + label::before {
+    width: 1rem;
+    height: 1rem; }
+  .rf-radio-group--sm input[type="radio"]:checked + label::before {
+    box-shadow: inset 0 0 0 3px var(--w); }
 
-.rf-radio-group:first-child {
-  margin-top: -0.75rem; }
+.rf-fieldset .rf-radio-group:first-child input[type="radio"] + label[style*='background-image:'], .rf-fieldset .rf-radio-group:first-child input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset .rf-radio-group:first-child input[type="radio"] + label[class*=" rf-ifi-"] {
+  margin-top: 0.5rem; }
 
-.rf-radio-group:last-child {
-  margin-bottom: -0.75rem; }
+.rf-fieldset .rf-radio-group input[type="radio"] + label[style*='background-image:'], .rf-fieldset .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem; }
 
-.rf-radio-group input[type="radio"] {
-  position: absolute;
-  opacity: 0; }
-  .rf-radio-group input[type="radio"] + label {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 0.75rem 0;
-    font-size: 0.875rem;
-    -webkit-tap-highlight-color: transparent; }
-    .rf-radio-group input[type="radio"] + label::before {
-      content: '';
-      display: inline-block;
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-right: 0.5rem;
-      border-radius: 50%;
-      border: 1px solid var(--g800);
-      transform-origin: center;
-      transition: transform 0.3s; }
-    .rf-radio-group input[type="radio"] + label::after {
-      content: '';
-      position: absolute;
-      display: inline-block;
-      flex-shrink: 0;
-      left: calc(0.75rem / 2);
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      border-radius: 50%;
-      width: 0.75rem;
-      height: 0.75rem;
-      background: transparent;
-      transform-origin: center;
-      transition: transform 0.3s; }
-  .rf-radio-group input[type="radio"]:checked + label::after {
-    background-color: var(--bf500); }
-  .rf-radio-group input[type="radio"]:focus + label::before {
-    outline: 2px solid var(--focus);
-    outline-offset: 2px;
-    z-index: var(--focus-z-index); }
-  .rf-radio-group input[type="radio"][disabled] + label, .rf-radio-group input[type="radio"]:disabled + label {
-    color: var(--g600-g400); }
-    .rf-radio-group input[type="radio"][disabled] + label::before, .rf-radio-group input[type="radio"]:disabled + label::before {
-      background-color: var(--g200);
-      border: 1px solid var(--g400); }
+.rf-fieldset--inline .rf-radio-group:not(:last-child) input[type="radio"] + label[style*='background-image:'], .rf-fieldset--inline .rf-radio-group:not(:last-child) input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset--inline .rf-radio-group:not(:last-child) input[type="radio"] + label[class*=" rf-ifi-"] {
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem; }
 
-.rf-radio-group--sm input[type="radio"] + label::before {
-  width: 1rem;
-  height: 1rem; }
+.rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[style*='background-image:'], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class*=" rf-ifi-"] {
+  margin-bottom: 1.25rem; }
 
-.rf-radio-group--sm input[type="radio"] + label::after {
-  left: calc(0.5rem / 2);
-  width: 0.5rem;
-  height: 0.5rem; }
-
-.rf-radio-group--sm .rf-hint-text {
-  margin-left: 1.5rem; }
+.rf-fieldset--inline .rf-radio-group:first-child input[type="radio"] + label[style*='background-image:'], .rf-fieldset--inline .rf-radio-group:first-child input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset--inline .rf-radio-group:first-child input[type="radio"] + label[class*=" rf-ifi-"] {
+  margin-top: 1.25rem; }
 
 /* ------------------------------------ *\
   SELECTS
@@ -4167,8 +4332,10 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   select.rf-select[disabled], select.rf-select:disabled {
     color: var(--g600-g400);
     box-shadow: inset 0 -2px 0 0 var(--g400);
+    /**
+       * Override de l'opacité chrome sur un élément disabled
+       */
     opacity: 1;
-    /* override de l'opacité chrome sur un élément disabled */
     --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%23cecece' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
     background-image: var(--data-uri-svg); }
     :root[data-rf-theme="dark"] select.rf-select[disabled], :root[data-rf-theme="dark"] select.rf-select:disabled {
@@ -6980,6 +7147,11 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 /* ------------------------------------ *\
   IE11
 \* ------------------------------------ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * fix Navigation
+  */ }
+
 @media all and (-ms-high-contrast: none) and (min-width: 48em), (-ms-high-contrast: active) and (min-width: 48em) {
   .rf-nav--align-right {
     transform: translateX(-100%); } }
@@ -6989,7 +7161,12 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     height: auto; }
   .skip-links.focus-within {
     position: relative;
-    transform: translateY(0); } }
+    transform: translateY(0); }
+  /**
+  * fix radios
+  */
+  .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[style*='background-image:'], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class*=" rf-ifi-"] {
+    margin-bottom: 0.5rem !important; } }
 
 
 /*# sourceMappingURL=all.css.map*/

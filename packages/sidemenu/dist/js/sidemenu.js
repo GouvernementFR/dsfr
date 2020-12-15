@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,7 +161,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 36:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -869,11 +869,7 @@ KeyListener.DOWN = 40;
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 40:
-=======
-/***/ 42:
->>>>>>> release
+/***/ 41:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -887,7 +883,7 @@ var _dist = __webpack_require__(8);
 var Initializer = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
-var scripts = __webpack_require__(36);
+var scripts = __webpack_require__(37);
 
 // CONCATENATED MODULE: ./packages/sidemenu/src/scripts/sidemenu/sidemenu.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }

@@ -81,11 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-<<<<<<< HEAD
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
-=======
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
->>>>>>> release
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -172,15 +168,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 36:
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-/***/ 34:
-=======
-/***/ 36:
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -457,39 +445,18 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 
   disclosures_group_createClass(DisclosuresGroup, [{
     key: "build",
-<<<<<<< HEAD
     value: function build(wrapper, wrapperSelector, selector, type) {
       // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-    value: function build(wrapper, selector, type) {
-=======
-    value: function build(wrapper, wrapperSelector, selector, type) {
-      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
       this.wrapper = wrapper;
       var elements = wrapper.querySelectorAll(selector);
       var disclosure;
 
       for (var i = 0; i < elements.length; i++) {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-        // vérifier qu'il n'y a pas 2 fois le selecteur entre le wrapper et l'élément.
-        disclosure = this.disclosureFactory(elements[i], type, selector);
-        this.add(disclosure);
-=======
->>>>>>> release
         // on l'ajoute qu'au wrapper le plus proche
         if (elements[i].closest(wrapperSelector) === this.wrapper) {
           disclosure = this.disclosureFactory(elements[i], type, selector);
           this.add(disclosure);
         }
-<<<<<<< HEAD
-=======
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
       }
     }
   }, {
@@ -909,51 +876,23 @@ KeyListener.DOWN = 40;
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 38:
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-/***/ 35:
-=======
-/***/ 37:
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-<<<<<<< HEAD
 // EXTERNAL MODULE: ./packages/accordions/_dist.scss
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-// EXTERNAL MODULE: ./packages/accordion/_dist.scss
-=======
-// EXTERNAL MODULE: ./packages/accordions/_dist.scss
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
 var _dist = __webpack_require__(0);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
-<<<<<<< HEAD
-var scripts = __webpack_require__(36);
+var scripts = __webpack_require__(37);
 
 // CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-var scripts = __webpack_require__(34);
-
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
-=======
-var scripts = __webpack_require__(36);
-
-// CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1049,23 +988,10 @@ var accordion_Accordion = /*#__PURE__*/function () {
 }();
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:packages/accordions/dist/js/accordion.js
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/index.js
-
-
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/dist.js
-=======
->>>>>>> release
 // CONCATENATED MODULE: ./packages/accordions/src/scripts/index.js
 
 
 // CONCATENATED MODULE: ./packages/accordions/src/scripts/dist.js
-<<<<<<< HEAD
-=======
->>>>>>> release:packages/accordions/dist/js/accordions.js
->>>>>>> release
 /* eslint-disable no-new */
 
 

@@ -8,6 +8,13 @@
     @include margin-bottom(6v);
   }
 
+  #{dse(label)} {
+    #{dse(hint-text)} {
+      @include margin-top(1v);
+      @include margin-bottom(3v);
+    }
+  }
+
   /**
    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
    */
@@ -60,6 +67,7 @@
  * Style du texte d'aide
  */
 #{dse(hint-text)} {
+  display: block;
   @include specify(p) {
     @include text-styles(xs, g600);
   }
