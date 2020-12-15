@@ -25,6 +25,7 @@
 
   @include nest-btn(md, only, search-line) {
     flex: 1 0 auto;
+    margin: 0;
     border-radius: 0 space(0-5N) 0 0;
   }
 
