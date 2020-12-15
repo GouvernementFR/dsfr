@@ -81,17 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 38);
+/******/ 	return __webpack_require__(__webpack_require__.s = 35);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
 
 /***/ 1:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -135,6 +128,13 @@ var Initializer = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -165,6 +165,423 @@ var removeClass = function removeClass(element, className) {
 };
 
 
+
+/***/ }),
+
+/***/ 35:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./packages/tabs/_dist.scss
+var _dist = __webpack_require__(10);
+
+// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+var Initializer = __webpack_require__(1);
+
+// EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
+var scripts = __webpack_require__(36);
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tab-button.js
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+/**
+  * TabButton correspond au bouton cliquable qui change le panel
+  * TabButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-selected,
+  * Et change l'attributte tabindex a 0 si le boutton est actif (value=true), -1 s'il n'est pas actif (value=false)
+ */
+
+var TabButton = /*#__PURE__*/function (_DisclosureButton) {
+  _inherits(TabButton, _DisclosureButton);
+
+  var _super = _createSuper(TabButton);
+
+  function TabButton() {
+    _classCallCheck(this, TabButton);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(TabButton, [{
+    key: "apply",
+    value: function apply(value) {
+      _get(_getPrototypeOf(TabButton.prototype), "apply", this).call(this, value);
+
+      if (this.hasAttribute) {
+        this.element.setAttribute('tabindex', value ? '0' : '-1');
+        if (value) this.element.focus({
+          preventScroll: false
+        });
+      }
+    }
+  }]);
+
+  return TabButton;
+}(scripts["DisclosureButton"]);
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tabs-constants.js
+var TABS_SELECTOR = '.rf-tabs';
+var TAB_CLASSNAME = 'rf-tabs__tab';
+var PANEL_SELECTOR = '.rf-tabs__panel';
+var TABS_LIST_SELECTOR = '.rf-tabs__list';
+var TRANSITION_TIME = 100;
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tab.js
+function tab_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { tab_typeof = function _typeof(obj) { return typeof obj; }; } else { tab_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return tab_typeof(obj); }
+
+function tab_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tab_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tab_createClass(Constructor, protoProps, staticProps) { if (protoProps) tab_defineProperties(Constructor.prototype, protoProps); if (staticProps) tab_defineProperties(Constructor, staticProps); return Constructor; }
+
+function tab_get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { tab_get = Reflect.get; } else { tab_get = function _get(target, property, receiver) { var base = tab_superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return tab_get(target, property, receiver || target); }
+
+function tab_superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = tab_getPrototypeOf(object); if (object === null) break; } return object; }
+
+function tab_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) tab_setPrototypeOf(subClass, superClass); }
+
+function tab_setPrototypeOf(o, p) { tab_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return tab_setPrototypeOf(o, p); }
+
+function tab_createSuper(Derived) { var hasNativeReflectConstruct = tab_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = tab_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = tab_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return tab_possibleConstructorReturn(this, result); }; }
+
+function tab_possibleConstructorReturn(self, call) { if (call && (tab_typeof(call) === "object" || typeof call === "function")) { return call; } return tab_assertThisInitialized(self); }
+
+function tab_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function tab_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function tab_getPrototypeOf(o) { tab_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return tab_getPrototypeOf(o); }
+
+
+
+
+var HIDDEN = 'hidden';
+/**
+  * Tab coorespond au panel d'un élement Tabs (tab panel)
+  * Tab étend disclosure qui ajoute/enleve le modifier --selected,
+  * et ajoute/eleve l'attribut hidden, sur le panel
+  */
+
+var tab_Tab = /*#__PURE__*/function (_Disclosure) {
+  tab_inherits(Tab, _Disclosure);
+
+  var _super = tab_createSuper(Tab);
+
+  function Tab() {
+    tab_classCallCheck(this, Tab);
+
+    return _super.apply(this, arguments);
+  }
+
+  tab_createClass(Tab, [{
+    key: "buttonFactory",
+    value: function buttonFactory(element) {
+      return new TabButton(element, this);
+    }
+    /**
+    * apply(true), Affiche le panel
+    * apply(false), Cache le panel
+    */
+
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      var _this = this;
+
+      tab_get(tab_getPrototypeOf(Tab.prototype), "apply", this).call(this, value);
+
+      if (value) {
+        (function () {
+          _this.element.removeAttribute(HIDDEN); // resize all elements after animation finish
+
+
+          var tabs = document.querySelectorAll(TABS_SELECTOR);
+
+          var _loop = function _loop(i) {
+            setTimeout(function () {
+              tabs[i].dispatchEvent(new Event('setHeight'));
+              console.log('resize');
+            }, TRANSITION_TIME * i);
+          };
+
+          for (var i = 0; i < tabs.length; i++) {
+            _loop(i);
+          }
+        })();
+      } else {
+        this.element.setAttribute(HIDDEN, true);
+      }
+    }
+  }]);
+
+  return Tab;
+}(scripts["Disclosure"]);
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tabs-group.js
+function tabs_group_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { tabs_group_typeof = function _typeof(obj) { return typeof obj; }; } else { tabs_group_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return tabs_group_typeof(obj); }
+
+function tabs_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tabs_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tabs_group_createClass(Constructor, protoProps, staticProps) { if (protoProps) tabs_group_defineProperties(Constructor.prototype, protoProps); if (staticProps) tabs_group_defineProperties(Constructor, staticProps); return Constructor; }
+
+function set(target, property, value, receiver) { if (typeof Reflect !== "undefined" && Reflect.set) { set = Reflect.set; } else { set = function set(target, property, value, receiver) { var base = tabs_group_superPropBase(target, property); var desc; if (base) { desc = Object.getOwnPropertyDescriptor(base, property); if (desc.set) { desc.set.call(receiver, value); return true; } else if (!desc.writable) { return false; } } desc = Object.getOwnPropertyDescriptor(receiver, property); if (desc) { if (!desc.writable) { return false; } desc.value = value; Object.defineProperty(receiver, property, desc); } else { _defineProperty(receiver, property, value); } return true; }; } return set(target, property, value, receiver); }
+
+function _set(target, property, value, receiver, isStrict) { var s = set(target, property, value, receiver || target); if (!s && isStrict) { throw new Error('failed to set property'); } return value; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function tabs_group_get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { tabs_group_get = Reflect.get; } else { tabs_group_get = function _get(target, property, receiver) { var base = tabs_group_superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return tabs_group_get(target, property, receiver || target); }
+
+function tabs_group_superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = tabs_group_getPrototypeOf(object); if (object === null) break; } return object; }
+
+function tabs_group_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) tabs_group_setPrototypeOf(subClass, superClass); }
+
+function tabs_group_setPrototypeOf(o, p) { tabs_group_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return tabs_group_setPrototypeOf(o, p); }
+
+function tabs_group_createSuper(Derived) { var hasNativeReflectConstruct = tabs_group_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = tabs_group_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = tabs_group_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return tabs_group_possibleConstructorReturn(this, result); }; }
+
+function tabs_group_possibleConstructorReturn(self, call) { if (call && (tabs_group_typeof(call) === "object" || typeof call === "function")) { return call; } return tabs_group_assertThisInitialized(self); }
+
+function tabs_group_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function tabs_group_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function tabs_group_getPrototypeOf(o) { tabs_group_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return tabs_group_getPrototypeOf(o); }
+
+
+
+
+/**
+* TabGroup est la classe étendue de DiscosuresGroup
+* Correspond a un objet Tabs avec plusieurs tab-button & Tab (panel)
+*/
+
+var tabs_group_TabsGroup = /*#__PURE__*/function (_DisclosuresGroup) {
+  tabs_group_inherits(TabsGroup, _DisclosuresGroup);
+
+  var _super = tabs_group_createSuper(TabsGroup);
+
+  function TabsGroup(wrapper) {
+    var _this;
+
+    tabs_group_classCallCheck(this, TabsGroup);
+
+    _this = _super.call(this);
+    _this._index = -1;
+    _this.element = wrapper;
+
+    _this.build(wrapper, TABS_SELECTOR, PANEL_SELECTOR, scripts["Disclosure"].SELECT);
+
+    if (_this.current === null) _this.index = 0;
+
+    _this._attachEvents();
+
+    return _this;
+  }
+
+  tabs_group_createClass(TabsGroup, [{
+    key: "disclosureFactory",
+    value: function disclosureFactory(element, type, selector) {
+      return new tab_Tab(element, type, selector);
+    }
+  }, {
+    key: "_attachEvents",
+    value: function _attachEvents() {
+      this.keyEvents = new scripts["KeyListener"](this.element);
+      this.keyEvents.down(scripts["KeyListener"].RIGHT, this.arrowRightPress.bind(this), true, true);
+      this.keyEvents.down(scripts["KeyListener"].LEFT, this.arrowLeftPress.bind(this), true, true);
+      this.keyEvents.down(scripts["KeyListener"].HOME, this.homePress.bind(this), true, true);
+      this.keyEvents.down(scripts["KeyListener"].END, this.endPress.bind(this), true, true);
+    }
+    /**
+     * Selectionne l'element suivant de la liste si on est sur un bouton
+     * Si on est à la fin on retourne au début
+     */
+
+  }, {
+    key: "arrowRightPress",
+    value: function arrowRightPress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        if (this.index < this.disclosures.length - 1) {
+          this.index++;
+        } else {
+          this.index = 0;
+        }
+      }
+    }
+  }, {
+    key: "arrowLeftPress",
+
+    /**
+     * Selectionne l'element précédent de la liste si on est sur un bouton
+     * Si on est au debut retourne a la fin
+     */
+    value: function arrowLeftPress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        if (this.index > 0) {
+          this.index--;
+        } else {
+          this.index = this.disclosures.length - 1;
+        }
+      }
+    }
+  }, {
+    key: "homePress",
+
+    /**
+     * Selectionne le permier element de la liste si on est sur un bouton
+     */
+    value: function homePress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        this.index = 0;
+      }
+    }
+  }, {
+    key: "endPress",
+
+    /**
+     * Selectionne le dernier element de la liste si on est sur un bouton
+     */
+    value: function endPress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        this.index = this.disclosures.length - 1;
+      }
+    }
+  }, {
+    key: "setPanelHeight",
+
+    /**
+     * Adapte la hauteur du panel en ajoutant un margin-bottom sous la liste
+     * Remonte sur le parent en cas de tabs dans tabs
+     */
+    value: function setPanelHeight() {
+      var offsetFocus = 4;
+      var panelHeight = this.current.element.offsetHeight - offsetFocus;
+      this.element.querySelector(TABS_LIST_SELECTOR).style.marginBottom = panelHeight + 'px'; // const nestedParent = this.element.parentNode.closest(TABS_SELECTOR);
+      // if (nestedParent && nestedParent !== this.element) {
+      //   const currentParent = nestedParent.querySelector(PANEL_SELECTOR + '--' + Disclosure.SELECT);
+      //   const parentHeight = currentParent.offsetHeight;
+      //   console.log(parentHeight);
+      //   nestedParent.querySelector(TABS_LIST_SELECTOR).style.marginBottom = parentHeight + 'px';
+      // }
+    }
+  }, {
+    key: "index",
+    get: function get() {
+      return this._index;
+    },
+    set: function set(value) {
+      if (value < 0 || value >= this.disclosures.length || this._index === value) return;
+      this._index = value;
+      this.current = this.disclosures[value];
+      this.setPanelHeight();
+    }
+  }, {
+    key: "current",
+    get: function get() {
+      return tabs_group_get(tabs_group_getPrototypeOf(TabsGroup.prototype), "current", this);
+    },
+    set: function set(controller) {
+      _set(tabs_group_getPrototypeOf(TabsGroup.prototype), "current", controller, this, true);
+
+      this._index = this.disclosures.indexOf(controller);
+      this.setPanelHeight();
+    }
+  }]);
+
+  return TabsGroup;
+}(scripts["DisclosuresGroup"]);
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tabs.js
+function tabs_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tabs_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tabs_createClass(Constructor, protoProps, staticProps) { if (protoProps) tabs_defineProperties(Constructor.prototype, protoProps); if (staticProps) tabs_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+/**
+* Classe principale des Tabs, initialise tout les éléments Tabs (TabsGroup) dans la page
+*/
+
+var tabs_Tabs = /*#__PURE__*/function () {
+  function Tabs() {
+    tabs_classCallCheck(this, Tabs);
+
+    this.groups = [];
+    this.init();
+  }
+
+  tabs_createClass(Tabs, [{
+    key: "init",
+    value: function init() {
+      var wrappers = document.querySelectorAll(TABS_SELECTOR);
+      this.changing = this.change.bind(this);
+
+      for (var i = 0; i < wrappers.length; i++) {
+        this.groups.push(new tabs_group_TabsGroup(wrappers[i]));
+        wrappers[i].addEventListener('setHeight', this.changing);
+      }
+
+      window.addEventListener('resize', this.changing);
+      window.addEventListener('load', this.changing); // this.change();
+    }
+  }, {
+    key: "change",
+    value: function change() {
+      for (var i = 0; i < this.groups.length; i++) {
+        this.groups[i].setPanelHeight();
+      }
+    }
+  }]);
+
+  return Tabs;
+}();
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/index.js
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/dist.js
+/* eslint-disable no-new */
+
+
+
+new Initializer["Initializer"]('.rf-tabs', [tabs_Tabs]);
 
 /***/ }),
 
@@ -873,130 +1290,6 @@ KeyListener.DOWN = 40;
 
 
 
-
-/***/ }),
-
-/***/ 38:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./packages/accordions/_dist.scss
-var _dist = __webpack_require__(0);
-
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
-var Initializer = __webpack_require__(1);
-
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
-var scripts = __webpack_require__(36);
-
-// CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-var ACCORDION_GROUP = '.rf-accordion-group';
-var ACCORDION_COLLAPSE = '.rf-accordion__body';
-var ACCORDION_BODY = 'rf-accordion__body';
-var EXPANDED = '--expanded';
-
-var accordion_Accordion = /*#__PURE__*/function () {
-  function Accordion() {
-    _classCallCheck(this, Accordion);
-
-    this.init();
-  }
-
-  _createClass(Accordion, [{
-    key: "init",
-    value: function init() {
-      var accordionGroups = document.querySelectorAll(ACCORDION_GROUP);
-      var elements = document.querySelectorAll(ACCORDION_COLLAPSE);
-      var element, collapseElement, collapseGroup;
-      this.collapseGroupsElements = [];
-      this.collapseGroupElements = [];
-      this.collapseGroupsArray = []; // Get accordions groups, set data attribute and create collapse group to each
-
-      for (var i = 0; i < accordionGroups.length; i++) {
-        accordionGroups[i].setAttribute('data-rf-ac', 'rf-ac-group-' + i);
-        this.collapseGroupsElements.push(accordionGroups[i]);
-        collapseGroup = new scripts["CollapseGroup"]();
-        this.collapseGroupsArray.push(collapseGroup);
-      } // Get collapsible elements in groups
-
-
-      for (var _i = 0; _i < this.collapseGroupsElements.length; _i++) {
-        var _iterator = _createForOfIteratorHelper(this.collapseGroupsElements[_i].querySelectorAll(ACCORDION_COLLAPSE)),
-            _step;
-
-        try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var _element = _step.value;
-            this.collapseGroupElements.push(_element);
-          }
-        } catch (err) {
-          _iterator.e(err);
-        } finally {
-          _iterator.f();
-        }
-      } // Get accordion elements in groups only and create new set
-
-
-      var elementsGroupOnly = new Set(this.collapseGroupElements); // Get accordion elements and create new array with accordion elements that are not in groups
-
-      var elementsSingleOnly = _toConsumableArray(new Set(_toConsumableArray(elements).filter(function (x) {
-        return !elementsGroupOnly.has(x);
-      }))); // Single accordion element(s) collapse individually
-
-
-      for (var _i2 = 0; _i2 < elementsSingleOnly.length; _i2++) {
-        element = elementsSingleOnly[_i2];
-        collapseElement = new scripts["CollapseElement"](element, ACCORDION_BODY + EXPANDED);
-      } // Grouped accordion elements collapse
-
-
-      for (var _i3 = 0; _i3 < this.collapseGroupElements.length; _i3++) {
-        element = this.collapseGroupElements[_i3];
-        var groupAttr = element.closest('.rf-accordion-group').dataset.rfAc;
-        element.setAttribute('data-rf-ac', groupAttr);
-        collapseElement = new scripts["CollapseElement"](element, ACCORDION_BODY + EXPANDED);
-        this.collapseGroupsArray[element.dataset.rfAc.slice(-1)].add(collapseElement);
-      }
-    }
-  }]);
-
-  return Accordion;
-}();
-
-
-// CONCATENATED MODULE: ./packages/accordions/src/scripts/index.js
-
-
-// CONCATENATED MODULE: ./packages/accordions/src/scripts/dist.js
-/* eslint-disable no-new */
-
-
-
-new Initializer["Initializer"]('.rf-accordion', [accordion_Accordion]);
 
 /***/ })
 
