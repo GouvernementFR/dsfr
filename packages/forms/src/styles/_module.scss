@@ -9,18 +9,27 @@
     margin-bottom: space(3N);
   }
 
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+   */
   &--valid {
     .#{$prefix}-label {
       @include scheme-element-text-color(success);
     }
   }
 
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+   */
   &--error {
     .#{$prefix}-label {
       @include scheme-element-text-color(error);
     }
   }
 
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+   */
   &--disabled {
     .#{$prefix}-label {
       @include disabled-colors(true);
@@ -35,6 +44,9 @@
   font-family: $font-family-sans;
   @include scheme-element-text-color(g800, true);
 
+  /**
+   * Modificateur au niveau du label pour appliquer un état d'erreur au label
+   */
   &--error {
     @include scheme-element-text-color(error);
   }
@@ -45,6 +57,9 @@
   }
 }
 
+/**
+ * Style du texte d'aide
+ */
 .#{$prefix}-hint-text {
   font-size: font-size(12);
   line-height: line-height(normal);
@@ -62,6 +77,9 @@
   }
 }
 
+/**
+ * Style du texte d'erreur
+ */
 .#{$prefix}-error-text {
   display: flex;
   align-items: center;
@@ -79,6 +97,9 @@
   }
 }
 
+/**
+ * Style du texte de l'état validé
+ */
 .#{$prefix}-valid-text {
   display: flex;
   align-items: center;
@@ -99,6 +120,9 @@
   margin-bottom: space(4N);
 }
 
+/**
+ * Style d'un ensemble de champs
+ */
 .#{$prefix}-fieldset {
   position: relative;
   margin: 0;
@@ -122,15 +146,14 @@
   &__content {
     position: relative;
 
-    // + .#{$prefix}-error-text {
-    //   margin-top: space(2N);
-    // }
-
     > .#{$prefix}-input-group:first-child {
       margin-top: space(2N);
     }
   }
 
+  /**
+   * Modificateur pour afficher les éléments en inline
+   */
   &--inline {
     .#{$prefix}--fieldset__content {
       display: flex;
@@ -169,7 +192,6 @@
           margin-bottom: 0;
         }
       }
-
     }
 
     .#{$prefix}-hint-text {
@@ -187,6 +209,9 @@
     }
   }
 
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
   &--error {
     .#{$prefix}-fieldset__content {
       &::before {
@@ -205,6 +230,9 @@
     }
   }
 
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
   &--valid {
     .#{$prefix}-fieldset__content {
       @include before() {
@@ -223,5 +251,8 @@
     }
   }
 
+  /**
+   * Mixin disabled pour gérer l'état disabled
+   */
   @include disabled(true, false, false, '.#{$prefix}-label');
 }
