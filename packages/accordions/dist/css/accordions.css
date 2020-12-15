@@ -1,9 +1,49 @@
 @charset "UTF-8";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:packages/accordions/dist/css/accordion.css
+/**
+  XS : 12px -> 16px
+  SM : 14px -> 20px
+  MD : 16px -> 24px
+  LG mob : 18px -> 28px
+  LG desk : 20px -> 32px
+  XL mob : 20px -> 32px
+  XL desk : 24px -> 36px => chapo
+
+  H1 48px 44px => 60px 56px
+  H2 32px => 40px
+  H3 24px => 32px
+  H4 22px => 32px
+
+  XL 88px => 104px
+  LG 80px => 96px
+  MD 72px => 88px
+  SM 64px => 80px
+  XS 56px => 72px
+ */
+=======
+>>>>>>> release:packages/accordions/dist/css/accordions.css
+>>>>>>> release
 .rf-accordion .rf-accordion__btn {
   display: inline-flex;
   flex-direction: row;
   align-items: center; }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:packages/accordions/dist/css/accordion.css
+.rf-accordion button.rf-accordion__btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  border: none;
+  cursor: pointer; }
+
+=======
+>>>>>>> release:packages/accordions/dist/css/accordions.css
+>>>>>>> release
 .rf-accordion .rf-accordion__btn::before {
   content: ""; }
 
@@ -65,6 +105,12 @@
     max-width: none;
     max-height: none;
     color: var(--g700);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:packages/accordions/dist/css/accordion.css
+    background-color: var(--t-plain); }
+=======
+>>>>>>> release
     background-color: var(--t-plain);
     width: 100%;
     text-align: left; }
@@ -73,6 +119,10 @@
       .rf-accordion a.rf-accordion__btn[target="_blank"]::after {
         content: none;
         margin-left: 0; }
+<<<<<<< HEAD
+=======
+>>>>>>> release:packages/accordions/dist/css/accordions.css
+>>>>>>> release
     @media (hover: hover) and (pointer: fine) {
       .rf-accordion .rf-accordion__btn:not([disabled]):hover, .rf-accordion .rf-accordion__btn:not(:disabled):hover {
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
