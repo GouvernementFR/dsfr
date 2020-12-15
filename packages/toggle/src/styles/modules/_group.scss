@@ -9,6 +9,7 @@
 
 .#{$prefix}-toggle-list {
   margin: 0;
+  @extend %list-reset;
 
   > li {
     margin-bottom: 0;
