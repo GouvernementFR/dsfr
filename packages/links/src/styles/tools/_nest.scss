@@ -1,8 +1,18 @@
+////
+/// Links Tools : link
+/// @group links
+////
+
 @mixin _extend-link($size, $place, $module, $align-on-content, $force-md) {
   $align: #{$module}-align-on-content;
 
   @if $size != md or $force-md {
     @extend %#{$module}--#{$size};
+  }
+
+  @if $place != only {
+    max-width: none;
+    max-height: none;
   }
 
   @if $place != null {
@@ -54,7 +64,7 @@
 }
 
 @mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
-  .#{$prefix}-#{$module} {
+  #{dse($module)} {
     @if $icon != null {
       &::before {
         @include font-icon-content($icon);

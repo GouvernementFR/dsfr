@@ -3,35 +3,39 @@
 /// @group tiles
 ////
 
-.#{$prefix}-tile {
+#{dse(tile)} {
+  @extend %default-text-color;
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   @include scheme-element-bg-color(beige, true, true);
   @include scheme-element-focus(true);
-  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(0-5N)}) 0 0 $COLOR);
+  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
 
   /**
    * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
    */
-  .#{$prefix}-grid-row & {
+  #{dse(grid-row)} & {
     height: 100%;
   }
 
   &__link {
+    @extend %a-reset;
+    @include override-reset-link-style;
     position: static;
     display: inline-flex;
     width: 100%;
     box-shadow: none;
     text-decoration: none;
 
-    @include before(block, '') {
-      @include absolute-overlay();
-      @include scheme-element-focus();
+    @include after(null, '') {
+      @include absolute(0, 0, 0, 0);
     }
 
-    &:focus {
-      outline-offset: 9999px;
+    @include force-over-reset {
+      &:focus {
+        outline-offset: 9999px;
+      }
     }
   }
 
@@ -46,9 +50,9 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    margin: space(4N) auto 0;
+    width: space(10w);
+    height: space(10w);
+    margin: space(4w) auto 0;
     overflow: hidden;
 
     /**
@@ -59,30 +63,50 @@
     }
   }
 
+  /**
+   * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
+   */
   &__body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    padding: space(2N);
+    padding: space(2w);
     text-align: center;
 
     @include respond-from(md) {
-      padding: space(3N);
+      padding: space(3w);
     }
   }
 
+  /**
+   * Titre de la tuile
+   */
   &__title {
+    @include force-over-reset {
+      @include text-styles(md, null, bold);
+    }
     margin: 0;
-    @include text-styles(md);
-    font-weight: font-weight(bold);
+
+    + #{dse(tile__desc)} {
+      margin: space(1w) 0 0;
+      @include text-styles(sm);
+    }
   }
 
+  /**
+   * Description de la tuile
+   */
   &__desc {
-    margin: space(1N) 0 0;
+    margin: space(1w) 0 0;
     @include text-styles(sm);
   }
+
+  /**
+   * Mixin pour gérer le focus
+   **/
+  @include scheme-element-focus(true);
 
   @import 'modules/variants';
 }

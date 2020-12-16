@@ -1,3 +1,8 @@
+////
+/// Tags Tools
+/// @group tags
+////
+
 @include _build-link-placeholders($tags-settings, tag, true);
 
 @mixin build-tag() {

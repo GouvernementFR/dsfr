@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 43);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,7 +161,14 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 37:
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -214,7 +221,15 @@ var Header = /*#__PURE__*/function () {
         this.popins.push(new header_HeaderPopin('header-tools-popin' + append, 'search-line', 'Rechercher', this.tools, navbar));
       }
 
-      if (this.navItems.length > 0 || this.shortcuts != null) {
+      if (this.navItems.length > 0 || this.shortcuts !== null) {
+        // si on des raccourcis mais pas de nav, on la créé
+        if (!this.nav) {
+          this.nav = document.createElement('nav');
+          this.nav.setAttribute('role', 'navigation');
+          this.nav.setAttribute('aria-label', 'Menu principal');
+          this.header.appendChild(this.nav);
+        }
+
         this.popins.push(new header_HeaderPopin('header-nav-popin' + append, 'menu-fill', 'Ouvrir le menu', this.nav, navbar));
       }
 
@@ -322,13 +337,6 @@ var header_HeaderPopin = /*#__PURE__*/function () {
 
 
 new Initializer["Initializer"]('.rf-header', [Header]);
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

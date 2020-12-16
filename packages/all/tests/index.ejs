@@ -1,0 +1,7 @@
+<% for (let i = 0; i < packages.length; i++) {
+  let pck = packages[i];
+  if (pck.id === 'all') continue;
+%>
+<%- include('../../../page-test/wrapper', pck); %>
+
+<% } %>

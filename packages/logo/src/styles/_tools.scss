@@ -1,5 +1,10 @@
+////
+/// Logo Tools
+/// @group logo
+////
+
 @mixin logo($size: md, $size-md: none) {
-  .#{$prefix}-logo {
+  #{dse(logo)} {
     font-size: map_get($logo-sizes, $size);
 
     @if $size-md != none {

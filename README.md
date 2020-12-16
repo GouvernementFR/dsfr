@@ -122,7 +122,7 @@ Ces instructions vous permettrons également d'installer une copie locale du Des
 ## Liste des composants
 
 ## Documentations Confluence
-- [Accordion](packages/accordion/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509)
+- [Accordion](packages/accordions/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509)
 - [All](packages/all/README.md)
 - [Breadcrumb](packages/breadcrumb/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019278/Fil+d+Ariane+-+Breadcrumb)
 - [Buttons](packages/buttons/README.md) - [Documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Buttons)

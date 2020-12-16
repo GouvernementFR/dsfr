@@ -171,24 +171,21 @@ var Initializer = /*#__PURE__*/function () {
 }();
 
 
-// CONCATENATED MODULE: ./packages/schemes/src/scripts/dark-mode-toggle-switch/dark-mode-toggle-switch.js
-function dark_mode_toggle_switch_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// CONCATENATED MODULE: ./packages/schemes/src/scripts/scheme/scheme.js
+function scheme_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function dark_mode_toggle_switch_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function scheme_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function dark_mode_toggle_switch_createClass(Constructor, protoProps, staticProps) { if (protoProps) dark_mode_toggle_switch_defineProperties(Constructor.prototype, protoProps); if (staticProps) dark_mode_toggle_switch_defineProperties(Constructor, staticProps); return Constructor; }
+function scheme_createClass(Constructor, protoProps, staticProps) { if (protoProps) scheme_defineProperties(Constructor.prototype, protoProps); if (staticProps) scheme_defineProperties(Constructor, staticProps); return Constructor; }
 
-var DM = 'rf-dark-mode';
-var DTA = 'data-theme';
-
-var DarkModeToggleSwitch = /*#__PURE__*/function () {
-  function DarkModeToggleSwitch() {
-    dark_mode_toggle_switch_classCallCheck(this, DarkModeToggleSwitch);
+var Scheme = /*#__PURE__*/function () {
+  function Scheme() {
+    scheme_classCallCheck(this, Scheme);
 
     this.init();
   }
 
-  dark_mode_toggle_switch_createClass(DarkModeToggleSwitch, [{
+  scheme_createClass(Scheme, [{
     key: "init",
     value: function init() {
       var _this = this;
@@ -205,37 +202,46 @@ var DarkModeToggleSwitch = /*#__PURE__*/function () {
       this.root = document.documentElement;
 
       if (this.scheme === 'dark') {
-        if (!this.root.hasAttribute('data-transition')) this.root.setAttribute(DTA, 'dark');else {
-          this.root.removeAttribute('data-transition');
-          this.root.setAttribute(DTA, 'dark');
+        if (!this.root.hasAttribute(Scheme.TRANSITION_ATTRIBUTE)) {
+          this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
+        } else {
+          this.root.removeAttribute(Scheme.TRANSITION_ATTRIBUTE);
+          this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
           setTimeout(function () {
-            _this.root.setAttribute('data-transition', '');
+            _this.root.setAttribute(Scheme.TRANSITION_ATTRIBUTE, '');
           }, 300);
         }
-      }
+      } else this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'light');
 
-      this.checkbox = document.getElementById(DM + '-toggle-switch');
-      if (this.scheme === 'dark') this.checkbox.checked = true;
-      this.checkbox.addEventListener('change', this.change.bind(this));
+      this.observer = new MutationObserver(this.mutate.bind(this));
+      this.observer.observe(this.root, {
+        attributes: true
+      });
     }
   }, {
-    key: "change",
-    value: function change() {
-      if (this.checkbox.checked) {
-        this.scheme = 'dark';
-        localStorage.setItem('scheme', 'dark');
-        this.root.setAttribute(DTA, 'dark');
-      } else {
-        this.scheme = 'light';
-        localStorage.setItem('scheme', 'light');
-        this.root.removeAttribute(DTA);
-      }
+    key: "mutate",
+    value: function mutate(mutations) {
+      var _this2 = this;
+
+      mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === Scheme.SCHEME_ATTRIBUTE) {
+          var scheme = _this2.root.getAttribute(Scheme.SCHEME_ATTRIBUTE);
+
+          if (scheme === 'dark') {
+            localStorage.setItem('scheme', 'dark');
+          } else if (scheme === 'light') {
+            localStorage.setItem('scheme', 'light');
+          }
+        }
+      });
     }
   }]);
 
-  return DarkModeToggleSwitch;
+  return Scheme;
 }();
 
+Scheme.SCHEME_ATTRIBUTE = 'data-rf-theme';
+Scheme.TRANSITION_ATTRIBUTE = 'data-rf-transition';
 
 // CONCATENATED MODULE: ./packages/schemes/src/scripts/index.js
 
@@ -244,7 +250,7 @@ var DarkModeToggleSwitch = /*#__PURE__*/function () {
 /* eslint-disable no-new */
 
 
-new Initializer('#rf-dark-mode-toggle-switch', [DarkModeToggleSwitch]);
+new Initializer(':root[' + Scheme.SCHEME_ATTRIBUTE + ']', [Scheme]);
 // CONCATENATED MODULE: ./packages/utilities/src/scripts/collapse/collapse.js
 function collapse_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -521,15 +527,18 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 
   disclosures_group_createClass(DisclosuresGroup, [{
     key: "build",
-    value: function build(wrapper, selector, type) {
+    value: function build(wrapper, wrapperSelector, selector, type) {
+      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
       this.wrapper = wrapper;
       var elements = wrapper.querySelectorAll(selector);
       var disclosure;
 
       for (var i = 0; i < elements.length; i++) {
-        // vérifier qu'il n'y a pas 2 fois le selecteur entre le wrapper et l'élément.
-        disclosure = this.disclosureFactory(elements[i], type, selector);
-        this.add(disclosure);
+        // on l'ajoute qu'au wrapper le plus proche
+        if (elements[i].closest(wrapperSelector) === this.wrapper) {
+          disclosure = this.disclosureFactory(elements[i], type, selector);
+          this.add(disclosure);
+        }
       }
     }
   }, {
@@ -1180,7 +1189,15 @@ var Header = /*#__PURE__*/function () {
         this.popins.push(new header_HeaderPopin('header-tools-popin' + append, 'search-line', 'Rechercher', this.tools, navbar));
       }
 
-      if (this.navItems.length > 0 || this.shortcuts != null) {
+      if (this.navItems.length > 0 || this.shortcuts !== null) {
+        // si on des raccourcis mais pas de nav, on la créé
+        if (!this.nav) {
+          this.nav = document.createElement('nav');
+          this.nav.setAttribute('role', 'navigation');
+          this.nav.setAttribute('aria-label', 'Menu principal');
+          this.header.appendChild(this.nav);
+        }
+
         this.popins.push(new header_HeaderPopin('header-nav-popin' + append, 'menu-fill', 'Ouvrir le menu', this.nav, navbar));
       }
 
@@ -1371,7 +1388,7 @@ var sidemenu_SideMenu = /*#__PURE__*/function () {
 
 
 new Initializer('.rf-sidemenu', [sidemenu_SideMenu]);
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || accordion_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -1467,10 +1484,10 @@ var accordion_Accordion = /*#__PURE__*/function () {
 }();
 
 
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/index.js
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/index.js
 
 
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/distGlobal.js
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/distGlobal.js
 /* eslint-disable no-new */
 
 

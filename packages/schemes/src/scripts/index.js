@@ -1,3 +1,3 @@
-import { DarkModeToggleSwitch } from './dark-mode-toggle-switch/dark-mode-toggle-switch';
+import { Scheme } from './scheme/scheme';
 
-export { DarkModeToggleSwitch };
+export { Scheme };

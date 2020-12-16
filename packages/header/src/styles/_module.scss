@@ -1,4 +1,10 @@
-.#{$prefix}-header {
+////
+/// Header Module
+/// @group header
+////
+
+#{dse(header)} {
+  @extend %default-text-color;
   width: 100%;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
@@ -43,7 +49,7 @@
       margin: 0 0 0 auto;
       text-align: right;
 
-      .#{$prefix}-shortcuts + .#{$prefix}-search-bar {
+      #{dse(shortcuts)} + #{dse(search-bar)} {
         margin-top: space(2N);
       }
     }
@@ -78,7 +84,7 @@
   @import 'modules/nav';
 
   //TODO: rf-link
-  .#{$prefix}-btn.#{$prefix}-fi-close-line {
+  #{dse(btn) + dse(fi-close-line)} {
     @include scheme-element-bg-color(t-plain, false, override);
     @include scheme-element-text-color(bf500, false);
   }

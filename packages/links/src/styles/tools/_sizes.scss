@@ -1,3 +1,8 @@
+////
+/// Links Tools : sizes
+/// @group links
+////
+
 @mixin _build-link-size($size-settings, $border-radius: false) {
   @include font-size(map_get($size-settings, font-size));
   $line-height: space(map_get($size-settings, line-height));

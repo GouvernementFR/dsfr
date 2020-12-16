@@ -1,3 +1,8 @@
+////
+/// Links Tools : build
+/// @group links
+////
+
 %base-link {
   @extend %inline-flex-center;
   @include scheme-element-focus();
@@ -7,6 +12,8 @@
 }
 
 @mixin _reset-links-tags($tags) {
+  @include override-reset-link-style;
+
   @at-root {
     @if index($tags, a) != null {
       #{selector_unify(&, a)} {
@@ -79,6 +86,8 @@
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
+  margin: 0;
+
   @include _reset-links-tags($tags);
 
   @if $cursor != null {
@@ -98,23 +107,46 @@
     }
   }
 
+  $not-sided: ':not([class*="#{$module}--icon-"])';
+
   @each $place in $places {
 
-    $modifier: '#{&}[class*="#{$prefix}-fi-"]#{&}--icon-#{$place}';
-
-    @if $place == only {
-      $modifier: '#{&}[class*="#{$prefix}-fi-"]:not([class*="#{$module}--icon-"])';
-    }
-
     @each $size, $size-settings in $sizes {
-      $selector: '#{$modifier}';
+      $placeholder: '#{$module}--icon-#{$place}--#{$size}';
 
-      @if $size != md {
-        $selector: '#{$modifier}#{&}--#{$size}';
-      }
-
-      @at-root #{$selector} {
-        @extend %#{$module}--icon-#{$place}--#{$size};
+      @at-root #{&} {
+        @if $place == only {
+          @if $size == md {
+            &#{$not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
+          @else {
+            &--#{$size + $not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
+        }
+        @else {
+          @if $size == md {
+            &--icon-#{$place} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
+          @else {
+            &--#{$size}#{&}--icon-#{$place + $not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
+        }
       }
     }
   }

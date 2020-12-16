@@ -3,10 +3,21 @@
 /// @group core
 ////
 
-@function prefixed-class($name) {
-  @return '.#{$prefix}-#{$name}';
+@function dse($name, $notation: '.') {
+  $class-name: $notation + $prefix + '-' + $name;
+  @return $class-name;
 }
 
-@function prefixed-group-class($name) {
-  @return '#{prefixed-class($name)}-group';
+@function dse-group($name) {
+  @return dse($name + '-group');
+}
+
+@function dse-attr($name, $value: null) {
+  $attr: 'data-#{dse($name, "")}';
+  @if $value == null {
+    @return '[' + $attr + ']';
+  }
+  @else {
+    @return '[' + $attr + '="' + $value + '"]';
+  }
 }

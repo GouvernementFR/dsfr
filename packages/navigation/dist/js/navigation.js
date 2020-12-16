@@ -161,7 +161,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 34:
+/***/ 37:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -438,15 +438,18 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 
   disclosures_group_createClass(DisclosuresGroup, [{
     key: "build",
-    value: function build(wrapper, selector, type) {
+    value: function build(wrapper, wrapperSelector, selector, type) {
+      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
       this.wrapper = wrapper;
       var elements = wrapper.querySelectorAll(selector);
       var disclosure;
 
       for (var i = 0; i < elements.length; i++) {
-        // vérifier qu'il n'y a pas 2 fois le selecteur entre le wrapper et l'élément.
-        disclosure = this.disclosureFactory(elements[i], type, selector);
-        this.add(disclosure);
+        // on l'ajoute qu'au wrapper le plus proche
+        if (elements[i].closest(wrapperSelector) === this.wrapper) {
+          disclosure = this.disclosureFactory(elements[i], type, selector);
+          this.add(disclosure);
+        }
       }
     }
   }, {
@@ -880,7 +883,7 @@ var _dist = __webpack_require__(6);
 var Initializer = __webpack_require__(1);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
-var scripts = __webpack_require__(34);
+var scripts = __webpack_require__(37);
 
 // EXTERNAL MODULE: ./packages/utilities/src/scripts/manipulation/classes.js
 var classes = __webpack_require__(2);

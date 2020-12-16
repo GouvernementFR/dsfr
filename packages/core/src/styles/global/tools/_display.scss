@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@mixin display-flex($inline: false, $flex-direction: row, $align-items: null, $justify-content: null, $flex-wrap: null) {
+@mixin display-flex($flex-direction: row, $align-items: null, $justify-content: null, $flex-wrap: null, $inline: false) {
 
   @if $inline == true {
     display: inline-flex;
@@ -30,5 +30,5 @@
 }
 
 %inline-flex-center {
-  @include display-flex(true, row, center);
+  @include display-flex(row, center, null, null, true);
 }

@@ -1,0 +1,7 @@
+#{dse(no-before)} {
+  @include before(none);
+}
+
+#{dse(no-after)} {
+  @include after(none);
+}

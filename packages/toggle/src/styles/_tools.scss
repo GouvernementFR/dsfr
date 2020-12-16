@@ -1,0 +1,29 @@
+////
+/// Toggle Tools
+/// @group toggle
+////
+
+/*
+ * Mixin pour gérer les styles quand le toggle est inactif
+ */
+@mixin disabled-toggle-choice() {
+  @at-root #{selector_unify(&, input)} {
+    @include disabled(true, false, false) {
+      @include disabled-colors(false, true, true);
+      @content;
+    }
+    @include disabled(true, false, false, '+ label') {
+      @include disabled-colors(false, false);
+    }
+    @include disabled(true, false, false, '+ label::before') {
+      &::before {
+        @include disabled-colors(false, true);
+      }
+      @content;
+    }
+    @include disabled(true, false, false, '+ label::after') {
+      @include disabled-colors(false, true, border);
+      @content;
+    }
+  }
+}

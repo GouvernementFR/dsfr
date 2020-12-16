@@ -42,3 +42,12 @@
     }
   }
 }
+
+@mixin remove-hover() {
+  &:hover, &:active {
+    &:not([disabled]),
+    &:not(:disabled) {
+      background-image: none;
+    }
+  }
+}

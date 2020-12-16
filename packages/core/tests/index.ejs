@@ -1,8 +1,8 @@
 <%
   const elements = [
     {
-      path:'body',
-      title:'Body',
+      path:'prose',
+      title:'Prose',
       wrapper: 'col-8'
     },
     {
@@ -38,7 +38,7 @@
         }
       }
     %>
-    <li class="<%= prefix %>-mb-2w" style="list-style: none;">
+    <li class="<%= prefix %>-mb-2w <%= prefix %>-no-before" >
         <div class="<%= prefix %>-container" >
             <%- include('../../buttons/tests/templates/button.ejs', button); %>
         </div>

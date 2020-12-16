@@ -1,23 +1,15 @@
+@charset "UTF-8";
 /**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
-
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
-
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
  */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * fix Navigation
+  */ }
+
 @media all and (-ms-high-contrast: none) and (min-width: 48em), (-ms-high-contrast: active) and (min-width: 48em) {
   .rf-nav--align-right {
     transform: translateX(-100%); } }
@@ -27,7 +19,12 @@
     height: auto; }
   .skip-links.focus-within {
     position: relative;
-    transform: translateY(0); } }
+    transform: translateY(0); }
+  /**
+  * fix radios
+  */
+  .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[style*='background-image:'], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class*=" rf-ifi-"] {
+    margin-bottom: 0.5rem !important; } }
 
 
 /*# sourceMappingURL=ie11.css.map*/
