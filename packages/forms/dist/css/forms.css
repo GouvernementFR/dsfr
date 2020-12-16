@@ -16,31 +16,54 @@
   text-transform: none;
   line-height: 1; }
 
-.rf-select-group:not(:last-child), .rf-input-group:not(:last-child) {
-  margin-bottom: 1.5rem; }
-
-.rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
-  color: var(--success); }
-
-.rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
-  color: var(--error); }
-
-.rf-select-group--disabled .rf-label, .rf-input-group--disabled .rf-label {
-  color: var(--g600-g400); }
+/**
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+ */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
+.rf-select-group, .rf-input-group {
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+   */
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+   */
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+   */ }
+  .rf-select-group:not(:last-child), .rf-input-group:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .rf-select-group .rf-label .rf-hint-text, .rf-input-group .rf-label .rf-hint-text {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem; }
+  .rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
+    color: var(--success); }
+  .rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
+    color: var(--error); }
+  .rf-select-group--disabled .rf-label, .rf-input-group--disabled .rf-label {
+    color: var(--g600-g400); }
 
 .rf-label {
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;
   font-family: "Marianne", arial, sans-serif;
-  color: var(--g800); }
+  color: var(--g800);
+  /**
+   * Modificateur au niveau du label pour appliquer un état d'erreur au label
+   */ }
   .rf-label--error {
     color: var(--error); }
   .rf-label + .rf-input,
   .rf-label + .rf-select {
     margin-top: 0.5rem; }
 
+/**
+ * Style du texte d'aide
+ */
 .rf-hint-text {
+  display: block;
   margin-top: 0;
   margin-bottom: 0; }
   .rf-hint-text, p.rf-hint-text {
@@ -52,6 +75,9 @@
   .rf-hint-text + .rf-select {
     margin-top: 0.5rem; }
 
+/**
+ * Style du texte d'erreur
+ */
 .rf-error-text {
   display: flex;
   flex-direction: row;
@@ -66,6 +92,9 @@
     display: inline-block;
     margin-right: 0.25rem; }
 
+/**
+ * Style du texte de l'état validé
+ */
 .rf-valid-text {
   display: flex;
   flex-direction: row;
@@ -83,12 +112,27 @@
 .rf-form-group {
   margin-bottom: 2rem; }
 
+/**
+ * Style d'un ensemble de champs
+ */
 .rf-fieldset {
   position: relative;
   margin: 0;
   padding: 0;
   border: 0;
-  color: var(--g800); }
+  color: var(--g800);
+  /**
+   * Modificateur pour afficher les éléments en inline
+   */
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+  /**
+   * Mixin disabled pour gérer l'état disabled
+   */ }
   .rf-fieldset .rf-hint-text {
     margin-bottom: 1rem; }
   .rf-fieldset__legend {
@@ -100,18 +144,24 @@
     position: relative; }
     .rf-fieldset__content > .rf-input-group:first-child {
       margin-top: 1rem; }
-  .rf-fieldset--inline .rf-radio-group,
+  .rf-fieldset--inline .rf--fieldset__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start; }
   .rf-fieldset--inline .rf-checkbox-group {
     display: inline-flex;
     margin-bottom: 0; }
-    .rf-fieldset--inline .rf-radio-group:not(:last-child),
     .rf-fieldset--inline .rf-checkbox-group:not(:last-child) {
-      margin-right: 1.5rem; }
-    .rf-fieldset--inline .rf-radio-group:first-child,
-    .rf-fieldset--inline .rf-checkbox-group:first-child {
+      margin-right: 1.25rem; }
+  .rf-fieldset--inline .rf-radio-group {
+    display: inline-flex;
+    margin-bottom: 0; }
+    .rf-fieldset--inline .rf-radio-group:not(:last-child) input[type="radio"] + label {
+      margin-right: 1.75rem; }
+    .rf-fieldset--inline .rf-radio-group:first-child input[type="radio"] + label {
       margin-top: 0; }
-    .rf-fieldset--inline .rf-radio-group:last-child,
-    .rf-fieldset--inline .rf-checkbox-group:last-child {
+    .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label {
       margin-bottom: 0; }
   .rf-fieldset--inline .rf-hint-text {
     margin-top: 0.25rem;
