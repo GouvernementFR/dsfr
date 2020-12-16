@@ -7,5 +7,5 @@ import navigation from '../../../navigation/src/scripts/distGlobal';
 import breadcrumb from '../../../breadcrumb/src/scripts/distGlobal';
 import header from '../../../header/src/scripts/distGlobal';
 import sidemenu from '../../../sidemenu/src/scripts/distGlobal';
-import accordion from '../../../accordions/src/scripts/distGlobal';
+import accordions from '../../../accordions/src/scripts/distGlobal';
 import table from '../../../table/src/scripts/distGlobal';
