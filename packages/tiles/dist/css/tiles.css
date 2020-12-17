@@ -1,7 +1,4 @@
-.rf-tile__img img {
-  object-fit: cover;
-  object-position: 50% 50%; }
-
+@charset "UTF-8";
 .rf-tile__link {
   text-decoration: none; }
 
@@ -12,14 +9,73 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-  background-color: var(--beige); }
+  background-color: var(--beige);
+  box-shadow: inset 0 -0.25rem 0 0 var(--bf500);
+  /**
+   * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
+   */
+  /**
+   * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
+   * ne respectant pas cette taille :
+   * Si l'image est plus grande, elle sera croppée afin de ne jamais dépasser 80x80.
+   * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
+   */
+  /**
+   * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
+   */
+  /**
+   * Titre de la tuile
+   */
+  /**
+   * Description de la tuile
+   */
+  /**
+   * Mixin pour gérer le focus
+   **/
+  /**
+ * Modificateur tuile horizontale
+ **/
+  /**
+ * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
+ **/
+  /**
+ * Modificateur horizontal à partir du breakpoint md -> vertical en dessous du breakpoint md
+ **/ }
+  @media (hover: hover) and (pointer: fine) {
+    .rf-tile:not([disabled]):hover, .rf-tile:not(:disabled):hover {
+      background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+    .rf-tile:not([disabled]):active, .rf-tile:not(:disabled):active {
+      background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+  :root:not([data-rf-theme="dark"]) .rf-tile {
+    --color-hover: rgba(224, 219, 208, 0.5);
+    --color-active: rgba(199, 189, 170, 0.5); }
+  :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-tile,
+  :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-tile {
+    --color-hover: rgba(224, 219, 208, 0.5);
+    --color-active: rgba(199, 189, 170, 0.5); }
+  :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-tile,
+  :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-tile {
+    --color-hover: rgba(91, 91, 91, 0.5);
+    --color-active: rgba(140, 140, 140, 0.5); }
+  :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-tile,
+  :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-tile {
+    --color-hover: rgba(217, 217, 217, 0.5);
+    --color-active: rgba(185, 185, 185, 0.5); }
+  :root[data-rf-theme="dark"] .rf-tile {
+    --color-hover: rgba(91, 91, 91, 0.5);
+    --color-active: rgba(140, 140, 140, 0.5); }
+  .rf-tile:focus-within {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    z-index: var(--focus-z-index); }
   .rf-grid-row .rf-tile {
     height: 100%; }
   .rf-tile__link {
     position: static;
     display: inline-flex;
-    width: 100%; }
+    width: 100%;
+    box-shadow: none;
+    text-decoration: none; }
     a.rf-tile__link {
       box-shadow: none; }
       a.rf-tile__link[target="_blank"]::after {
@@ -34,28 +90,31 @@
       left: 0; }
     :root .rf-tile__link:focus {
       outline-offset: 9999px; }
-  .rf-tile__img {
-    position: relative;
-    margin: 3rem 3rem 0;
-    flex: 0 0 auto; }
-    .rf-tile__img::before {
-      display: block;
-      content: '';
-      width: 100%;
-      padding-bottom: 100%; }
-    .rf-tile__img img {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
+  .rf-tile__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 5rem;
+    height: 5rem;
+    margin: 2rem auto 0;
+    overflow: hidden;
+    /**
+     * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
+     */ }
+    .rf-tile__img-wrap > svg {
+      width: 100%; }
   .rf-tile__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
-    flex-grow: 1; }
-  .rf-tile__img + .rf-tile__body {
-    padding: 1.5rem 1rem; }
+    text-align: center; }
+    @media (min-width: 48em) {
+      .rf-tile__body {
+        padding: 1.5rem; } }
   .rf-tile__title {
     margin: 0; }
     :root .rf-tile__title {
@@ -67,30 +126,98 @@
       font-size: 0.875rem;
       line-height: 1.5; }
   .rf-tile__desc {
-    margin: 0; }
-  .rf-tile::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0.25rem;
-    left: 0;
-    bottom: 0;
-    background-color: var(--bf500); }
+    margin: 0.5rem 0 0;
+    font-size: 0.875rem;
+    line-height: 1.5; }
   .rf-tile:focus-within {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
-  @media (min-width: 48em) {
-    .rf-tile--horizontal {
-      flex-direction: row; }
-      .rf-tile--horizontal .rf-tile__img {
-        margin: 2rem 0 2rem 2rem;
-        flex-grow: 1;
-        flex-basis: auto;
-        width: auto; }
-      .rf-tile--horizontal .rf-tile__body {
-        padding: 2rem;
-        flex-basis: 70%; } }
+  .rf-tile--horizontal {
+    flex-direction: row; }
+    .rf-tile--horizontal .rf-tile__img-wrap {
+      width: 3rem;
+      height: 3rem;
+      margin: auto 0 auto 1.5rem; }
+      .rf-tile--horizontal .rf-tile__img-wrap + .rf-tile__body {
+        min-height: 3rem;
+        text-align: left; }
+        @media (min-width: 48em) {
+          .rf-tile--horizontal .rf-tile__img-wrap + .rf-tile__body {
+            min-height: 5rem; } }
+      @media (min-width: 48em) {
+        .rf-tile--horizontal .rf-tile__img-wrap {
+          width: 5rem;
+          height: 5rem;
+          margin: auto 0 auto 2rem; } }
+    .rf-tile--horizontal .rf-tile__body {
+      align-items: flex-start;
+      padding: 0;
+      margin: 1.5rem; }
+      @media (min-width: 48em) {
+        .rf-tile--horizontal .rf-tile__body {
+          margin: 2rem; } }
+  .rf-tile--vertical-md {
+    flex-direction: row; }
+    .rf-tile--vertical-md .rf-tile__img-wrap {
+      width: 3rem;
+      height: 3rem;
+      margin: auto 0 auto 1.5rem; }
+      .rf-tile--vertical-md .rf-tile__img-wrap + .rf-tile__body {
+        min-height: 3rem; }
+        @media (min-width: 48em) {
+          .rf-tile--vertical-md .rf-tile__img-wrap + .rf-tile__body {
+            min-height: initial;
+            text-align: center; } }
+      @media (min-width: 48em) {
+        .rf-tile--vertical-md .rf-tile__img-wrap {
+          width: 5rem;
+          height: 5rem;
+          margin: 2rem auto 0; } }
+    .rf-tile--vertical-md .rf-tile__body {
+      align-items: flex-start;
+      padding: 0;
+      margin: 1.5rem;
+      text-align: left; }
+      @media (min-width: 48em) {
+        .rf-tile--vertical-md .rf-tile__body {
+          align-items: center;
+          padding: 1.5rem;
+          margin: 0;
+          text-align: center; } }
+    @media (min-width: 48em) {
+      .rf-tile--vertical-md {
+        flex-direction: column; } }
+  .rf-tile--horizontal-md {
+    flex-direction: column; }
+    .rf-tile--horizontal-md .rf-tile__img-wrap {
+      width: 5rem;
+      height: 5rem;
+      margin: 2rem auto 0; }
+      .rf-tile--horizontal-md .rf-tile__img-wrap + .rf-tile__body {
+        min-height: initial; }
+        @media (min-width: 48em) {
+          .rf-tile--horizontal-md .rf-tile__img-wrap + .rf-tile__body {
+            padding: 0;
+            min-height: 5rem;
+            margin: 2rem; } }
+      @media (min-width: 48em) {
+        .rf-tile--horizontal-md .rf-tile__img-wrap {
+          margin: auto 0 auto 2rem; } }
+    .rf-tile--horizontal-md .rf-tile__body {
+      align-items: center;
+      padding: 1rem;
+      margin: 0;
+      text-align: center; }
+      @media (min-width: 48em) {
+        .rf-tile--horizontal-md .rf-tile__body {
+          align-items: flex-start;
+          padding: 0;
+          margin: 2rem;
+          text-align: left; } }
+    @media (min-width: 48em) {
+      .rf-tile--horizontal-md {
+        flex-direction: row; } }
 
 
 /*# sourceMappingURL=tiles.css.map*/

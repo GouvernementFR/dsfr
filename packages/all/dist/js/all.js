@@ -1696,7 +1696,405 @@ var shadow_on_scroll_Table = /*#__PURE__*/function () {
 
 
 new Initializer('.rf-table--responsive', [ShadowOnScroll]);
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tab-button.js
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function tab_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tab_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tab_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) tab_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) tab_button_defineProperties(Constructor, staticProps); return Constructor; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+/**
+  * TabButton correspond au bouton cliquable qui change le panel
+  * TabButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-selected,
+  * Et change l'attributte tabindex a 0 si le boutton est actif (value=true), -1 s'il n'est pas actif (value=false)
+ */
+
+var TabButton = /*#__PURE__*/function (_DisclosureButton) {
+  _inherits(TabButton, _DisclosureButton);
+
+  var _super = _createSuper(TabButton);
+
+  function TabButton() {
+    tab_button_classCallCheck(this, TabButton);
+
+    return _super.apply(this, arguments);
+  }
+
+  tab_button_createClass(TabButton, [{
+    key: "apply",
+    value: function apply(value) {
+      _get(_getPrototypeOf(TabButton.prototype), "apply", this).call(this, value);
+
+      if (this.hasAttribute) {
+        this.element.setAttribute('tabindex', value ? '0' : '-1');
+        if (value) this.element.focus({
+          preventScroll: false
+        });
+      }
+    }
+  }]);
+
+  return TabButton;
+}(disclosure_button_DisclosureButton);
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tabs-constants.js
+var TABS_SELECTOR = '.rf-tabs';
+var TAB_CLASSNAME = 'rf-tabs__tab';
+var PANEL_SELECTOR = '.rf-tabs__panel';
+var TABS_LIST_SELECTOR = '.rf-tabs__list';
+var TRANSITION_TIME = 100;
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tab.js
+function tab_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { tab_typeof = function _typeof(obj) { return typeof obj; }; } else { tab_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return tab_typeof(obj); }
+
+function tab_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tab_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tab_createClass(Constructor, protoProps, staticProps) { if (protoProps) tab_defineProperties(Constructor.prototype, protoProps); if (staticProps) tab_defineProperties(Constructor, staticProps); return Constructor; }
+
+function tab_get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { tab_get = Reflect.get; } else { tab_get = function _get(target, property, receiver) { var base = tab_superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return tab_get(target, property, receiver || target); }
+
+function tab_superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = tab_getPrototypeOf(object); if (object === null) break; } return object; }
+
+function tab_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) tab_setPrototypeOf(subClass, superClass); }
+
+function tab_setPrototypeOf(o, p) { tab_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return tab_setPrototypeOf(o, p); }
+
+function tab_createSuper(Derived) { var hasNativeReflectConstruct = tab_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = tab_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = tab_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return tab_possibleConstructorReturn(this, result); }; }
+
+function tab_possibleConstructorReturn(self, call) { if (call && (tab_typeof(call) === "object" || typeof call === "function")) { return call; } return tab_assertThisInitialized(self); }
+
+function tab_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function tab_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function tab_getPrototypeOf(o) { tab_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return tab_getPrototypeOf(o); }
+
+
+
+
+var HIDDEN = 'hidden';
+/**
+  * Tab coorespond au panel d'un élement Tabs (tab panel)
+  * Tab étend disclosure qui ajoute/enleve le modifier --selected,
+  * et ajoute/eleve l'attribut hidden, sur le panel
+  */
+
+var tab_Tab = /*#__PURE__*/function (_Disclosure) {
+  tab_inherits(Tab, _Disclosure);
+
+  var _super = tab_createSuper(Tab);
+
+  function Tab() {
+    tab_classCallCheck(this, Tab);
+
+    return _super.apply(this, arguments);
+  }
+
+  tab_createClass(Tab, [{
+    key: "buttonFactory",
+    value: function buttonFactory(element) {
+      return new TabButton(element, this);
+    }
+    /**
+    * apply(true), Affiche le panel
+    * apply(false), Cache le panel
+    */
+
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      var _this = this;
+
+      tab_get(tab_getPrototypeOf(Tab.prototype), "apply", this).call(this, value);
+
+      if (value) {
+        (function () {
+          _this.element.removeAttribute(HIDDEN); // resize all elements after animation finish
+
+
+          var tabs = document.querySelectorAll(TABS_SELECTOR);
+
+          var _loop = function _loop(i) {
+            setTimeout(function () {
+              tabs[i].dispatchEvent(new Event('setHeight'));
+              console.log('resize');
+            }, TRANSITION_TIME * i);
+          };
+
+          for (var i = 0; i < tabs.length; i++) {
+            _loop(i);
+          }
+        })();
+      } else {
+        this.element.setAttribute(HIDDEN, true);
+      }
+    }
+  }]);
+
+  return Tab;
+}(disclosure_Disclosure);
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tabs-group.js
+function tabs_group_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { tabs_group_typeof = function _typeof(obj) { return typeof obj; }; } else { tabs_group_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return tabs_group_typeof(obj); }
+
+function tabs_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tabs_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tabs_group_createClass(Constructor, protoProps, staticProps) { if (protoProps) tabs_group_defineProperties(Constructor.prototype, protoProps); if (staticProps) tabs_group_defineProperties(Constructor, staticProps); return Constructor; }
+
+function tabs_group_set(target, property, value, receiver) { if (typeof Reflect !== "undefined" && Reflect.set) { tabs_group_set = Reflect.set; } else { tabs_group_set = function set(target, property, value, receiver) { var base = tabs_group_superPropBase(target, property); var desc; if (base) { desc = Object.getOwnPropertyDescriptor(base, property); if (desc.set) { desc.set.call(receiver, value); return true; } else if (!desc.writable) { return false; } } desc = Object.getOwnPropertyDescriptor(receiver, property); if (desc) { if (!desc.writable) { return false; } desc.value = value; Object.defineProperty(receiver, property, desc); } else { _defineProperty(receiver, property, value); } return true; }; } return tabs_group_set(target, property, value, receiver); }
+
+function _set(target, property, value, receiver, isStrict) { var s = tabs_group_set(target, property, value, receiver || target); if (!s && isStrict) { throw new Error('failed to set property'); } return value; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function tabs_group_get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { tabs_group_get = Reflect.get; } else { tabs_group_get = function _get(target, property, receiver) { var base = tabs_group_superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return tabs_group_get(target, property, receiver || target); }
+
+function tabs_group_superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = tabs_group_getPrototypeOf(object); if (object === null) break; } return object; }
+
+function tabs_group_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) tabs_group_setPrototypeOf(subClass, superClass); }
+
+function tabs_group_setPrototypeOf(o, p) { tabs_group_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return tabs_group_setPrototypeOf(o, p); }
+
+function tabs_group_createSuper(Derived) { var hasNativeReflectConstruct = tabs_group_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = tabs_group_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = tabs_group_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return tabs_group_possibleConstructorReturn(this, result); }; }
+
+function tabs_group_possibleConstructorReturn(self, call) { if (call && (tabs_group_typeof(call) === "object" || typeof call === "function")) { return call; } return tabs_group_assertThisInitialized(self); }
+
+function tabs_group_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function tabs_group_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function tabs_group_getPrototypeOf(o) { tabs_group_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return tabs_group_getPrototypeOf(o); }
+
+
+
+
+/**
+* TabGroup est la classe étendue de DiscosuresGroup
+* Correspond a un objet Tabs avec plusieurs tab-button & Tab (panel)
+*/
+
+var tabs_group_TabsGroup = /*#__PURE__*/function (_DisclosuresGroup) {
+  tabs_group_inherits(TabsGroup, _DisclosuresGroup);
+
+  var _super = tabs_group_createSuper(TabsGroup);
+
+  function TabsGroup(wrapper) {
+    var _this;
+
+    tabs_group_classCallCheck(this, TabsGroup);
+
+    _this = _super.call(this);
+    _this._index = -1;
+    _this.element = wrapper;
+
+    _this.build(wrapper, TABS_SELECTOR, PANEL_SELECTOR, disclosure_Disclosure.SELECT);
+
+    if (_this.current === null) _this.index = 0;
+
+    _this._attachEvents();
+
+    return _this;
+  }
+
+  tabs_group_createClass(TabsGroup, [{
+    key: "disclosureFactory",
+    value: function disclosureFactory(element, type, selector) {
+      return new tab_Tab(element, type, selector);
+    }
+  }, {
+    key: "_attachEvents",
+    value: function _attachEvents() {
+      this.keyEvents = new KeyListener(this.element);
+      this.keyEvents.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
+      this.keyEvents.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
+      this.keyEvents.down(KeyListener.HOME, this.homePress.bind(this), true, true);
+      this.keyEvents.down(KeyListener.END, this.endPress.bind(this), true, true);
+    }
+    /**
+     * Selectionne l'element suivant de la liste si on est sur un bouton
+     * Si on est à la fin on retourne au début
+     */
+
+  }, {
+    key: "arrowRightPress",
+    value: function arrowRightPress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        if (this.index < this.disclosures.length - 1) {
+          this.index++;
+        } else {
+          this.index = 0;
+        }
+      }
+    }
+  }, {
+    key: "arrowLeftPress",
+
+    /**
+     * Selectionne l'element précédent de la liste si on est sur un bouton
+     * Si on est au debut retourne a la fin
+     */
+    value: function arrowLeftPress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        if (this.index > 0) {
+          this.index--;
+        } else {
+          this.index = this.disclosures.length - 1;
+        }
+      }
+    }
+  }, {
+    key: "homePress",
+
+    /**
+     * Selectionne le permier element de la liste si on est sur un bouton
+     */
+    value: function homePress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        this.index = 0;
+      }
+    }
+  }, {
+    key: "endPress",
+
+    /**
+     * Selectionne le dernier element de la liste si on est sur un bouton
+     */
+    value: function endPress() {
+      if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+        this.index = this.disclosures.length - 1;
+      }
+    }
+  }, {
+    key: "setPanelHeight",
+
+    /**
+     * Adapte la hauteur du panel en ajoutant un margin-bottom sous la liste
+     * Remonte sur le parent en cas de tabs dans tabs
+     */
+    value: function setPanelHeight() {
+      var offsetFocus = 4;
+      var panelHeight = this.current.element.offsetHeight - offsetFocus;
+      this.element.querySelector(TABS_LIST_SELECTOR).style.marginBottom = panelHeight + 'px'; // const nestedParent = this.element.parentNode.closest(TABS_SELECTOR);
+      // if (nestedParent && nestedParent !== this.element) {
+      //   const currentParent = nestedParent.querySelector(PANEL_SELECTOR + '--' + Disclosure.SELECT);
+      //   const parentHeight = currentParent.offsetHeight;
+      //   console.log(parentHeight);
+      //   nestedParent.querySelector(TABS_LIST_SELECTOR).style.marginBottom = parentHeight + 'px';
+      // }
+    }
+  }, {
+    key: "index",
+    get: function get() {
+      return this._index;
+    },
+    set: function set(value) {
+      if (value < 0 || value >= this.disclosures.length || this._index === value) return;
+      this._index = value;
+      this.current = this.disclosures[value];
+      this.setPanelHeight();
+    }
+  }, {
+    key: "current",
+    get: function get() {
+      return tabs_group_get(tabs_group_getPrototypeOf(TabsGroup.prototype), "current", this);
+    },
+    set: function set(controller) {
+      _set(tabs_group_getPrototypeOf(TabsGroup.prototype), "current", controller, this, true);
+
+      this._index = this.disclosures.indexOf(controller);
+      this.setPanelHeight();
+    }
+  }]);
+
+  return TabsGroup;
+}(disclosures_group_DisclosuresGroup);
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tabs.js
+function tabs_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function tabs_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function tabs_createClass(Constructor, protoProps, staticProps) { if (protoProps) tabs_defineProperties(Constructor.prototype, protoProps); if (staticProps) tabs_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+/**
+* Classe principale des Tabs, initialise tout les éléments Tabs (TabsGroup) dans la page
+*/
+
+var tabs_Tabs = /*#__PURE__*/function () {
+  function Tabs() {
+    tabs_classCallCheck(this, Tabs);
+
+    this.groups = [];
+    this.init();
+  }
+
+  tabs_createClass(Tabs, [{
+    key: "init",
+    value: function init() {
+      var wrappers = document.querySelectorAll(TABS_SELECTOR);
+      this.changing = this.change.bind(this);
+
+      for (var i = 0; i < wrappers.length; i++) {
+        this.groups.push(new tabs_group_TabsGroup(wrappers[i]));
+        wrappers[i].addEventListener('setHeight', this.changing);
+      }
+
+      window.addEventListener('resize', this.changing);
+      window.addEventListener('load', this.changing); // this.change();
+    }
+  }, {
+    key: "change",
+    value: function change() {
+      for (var i = 0; i < this.groups.length; i++) {
+        this.groups[i].setPanelHeight();
+      }
+    }
+  }]);
+
+  return Tabs;
+}();
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/index.js
+
+
+// CONCATENATED MODULE: ./packages/tabs/src/scripts/distGlobal.js
+/* eslint-disable no-new */
+
+
+new Initializer('.rf-tabs', [tabs_Tabs]);
 // CONCATENATED MODULE: ./packages/all/src/scripts/dist.js
+
 
 
 

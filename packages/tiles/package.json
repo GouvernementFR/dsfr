@@ -13,7 +13,7 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/core": "^0.3.1",
-    "@gouvfr/schemes": "^0.3.1"
+    "@gouvfr/core": "^0.3.0",
+    "@gouvfr/schemes": "^0.3.0"
   }
 }

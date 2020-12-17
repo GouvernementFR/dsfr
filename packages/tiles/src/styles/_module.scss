@@ -8,9 +8,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-  @include scheme-element-bg-color(beige, true);
+  @include scheme-element-bg-color(beige, true, true);
+  @include scheme-element-focus(true);
+  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
 
+  /**
+   * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
+   */
   #{dse(grid-row)} & {
     height: 100%;
   }
@@ -21,6 +25,8 @@
     position: static;
     display: inline-flex;
     width: 100%;
+    box-shadow: none;
+    text-decoration: none;
 
     @include after(null, '') {
       @include absolute(0, 0, 0, 0);
@@ -33,28 +39,50 @@
     }
   }
 
-  &__img {
-    position: relative;
-    margin: space(6N) space(6N) 0;
-    flex: 0 0 auto;
+  /**
+   * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
+   * ne respectant pas cette taille :
+   * Si l'image est plus grande, elle sera croppée afin de ne jamais dépasser 80x80.
+   * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
+   */
+  &__img-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: space(10w);
+    height: space(10w);
+    margin: space(4w) auto 0;
+    overflow: hidden;
 
-    @include aspect-ratio(1x1);
-
-    img {
-      @include absolute(0, 0, 0, 0, 100%, 100%);
-      @extend %fit-cover-center;
+    /**
+     * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
+     */
+    > svg {
+      width: 100%;
     }
   }
 
+  /**
+   * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
+   */
   &__body {
-    padding: space(2N);
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    padding: space(2w);
+    text-align: center;
+
+    @include respond-from(md) {
+      padding: space(3w);
+    }
   }
 
-  &__img + &__body {
-    padding: space(3N) space(2N);
-  }
-
+  /**
+   * Titre de la tuile
+   */
   &__title {
     @include force-over-reset {
       @include text-styles(md, null, bold);
@@ -62,42 +90,23 @@
     margin: 0;
 
     + #{dse(tile__desc)} {
-      margin: space(1N) 0 0;
+      margin: space(1w) 0 0;
       @include text-styles(sm);
     }
   }
 
+  /**
+   * Description de la tuile
+   */
   &__desc {
-    margin: 0;
+    margin: space(1w) 0 0;
+    @include text-styles(sm);
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: space(0-5N);
-    left: 0;
-    bottom: 0;
-    @include scheme-element-bg-color(bf500, true);
-  }
-
+  /**
+   * Mixin pour gérer le focus
+   **/
   @include scheme-element-focus(true);
 
-  @include respond-from(md) {
-    &--horizontal {
-      flex-direction: row;
-
-      #{dse(tile__img)} {
-        margin: space(4N) 0 space(4N) space(4N);
-        flex-grow: 1;
-        flex-basis: auto;
-        width: auto;
-      }
-
-      #{dse(tile__body)} {
-        padding: space(4N);
-        flex-basis: 70%;
-      }
-    }
-  }
+  @import 'modules/variants';
 }
