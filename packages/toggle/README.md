@@ -24,4 +24,4 @@ yarn add install @gouvfr/toggle
 
 ## Documentation
 
-Consulter [la documentation]() sur les toggles
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935138/Interrupteur+-+Toggle+switch) sur les interrupteurs

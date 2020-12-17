@@ -19,7 +19,3 @@ Via Yarn :
 ```
 yarn add install @gouvfr/forms
 ```
-
-## Documentation
-
-Consulter [la documentation](#) sur les formulaires
