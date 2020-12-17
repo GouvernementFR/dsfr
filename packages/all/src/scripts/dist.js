@@ -9,3 +9,4 @@ import header from '../../../header/src/scripts/distGlobal';
 import sidemenu from '../../../sidemenu/src/scripts/distGlobal';
 import accordion from '../../../accordions/src/scripts/distGlobal';
 import table from '../../../table/src/scripts/distGlobal';
+import tabs from '../../../tabs/src/scripts/distGlobal';
