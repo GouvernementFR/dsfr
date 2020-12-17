@@ -5,8 +5,8 @@
 
 #{dse-attr(reset)} {
   // font-size: 16px;
-  margin: 0;
-  padding: 0;
+  @include margin(0);
+  @include padding(0);
   box-sizing: border-box;
 
   *,
@@ -16,11 +16,12 @@
   }
 
   body {
-    @extend %body-reset;
+    @extend %text-reset;
     @extend %default-text-color;
     @include scheme-body;
-    margin: 0;
-    padding: 0;
+    @include margin(0);
+    @include padding(0);
+    @include line-height(normal);
   }
 
   @import '../prose/module/headings';
@@ -38,6 +39,8 @@
     box-sizing: inherit;
   }
 
+  @extend %text-reset;
+
   a {
     @extend %a;
   }
@@ -47,6 +50,4 @@
       box-sizing: inherit;
     }
   }
-
-  @extend %body-reset;
 }

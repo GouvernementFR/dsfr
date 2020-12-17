@@ -307,7 +307,8 @@ ol.rf-list, .rf-prose ol {
   [data-rf-reset] body {
     background-color: var(--w);
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    line-height: 1.5; }
     :root[data-rf-transition] [data-rf-reset] body {
       transition: background-color 0.3s; }
   [data-rf-reset] a[target="_blank"]::after {
