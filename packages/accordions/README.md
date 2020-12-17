@@ -26,4 +26,4 @@ Afin d'utilise le composant `accordion`, il est nécessaire d'importer le compos
 
 ## Documentation
 
-Consulter [la documentation](#) sur le accordion
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509/Accord+on+-+Accordion) sur les accordéons.

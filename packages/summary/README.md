@@ -1,4 +1,4 @@
-# @gouvfr/cards
+# @gouvfr/summary
 
 ## Dépendance
 ```shell
@@ -26,4 +26,4 @@ Afin d'utilise le composant `summary`, il est nécessaire d'importer le composan
 
 ## Documentation
 
-Consulter [la documentation](#) sur le sommaire
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/262898307/Sommaire+-+Summary) sur le sommaire

@@ -20,4 +20,4 @@ yarn add install @gouvfr/tabs
 
 ## Documentation
 
-Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/365559813/Onglets+V2) sur les Onglets (tabs)
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/367985267/Onglets+-+Tabs) sur les Onglets (tabs)

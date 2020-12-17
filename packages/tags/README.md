@@ -21,4 +21,4 @@ yarn add install @gouvfr/tags
 
 ## Documentation
 
-Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331445/Carte+-+Card) sur les tags
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/310706305/Tag) sur les tags
