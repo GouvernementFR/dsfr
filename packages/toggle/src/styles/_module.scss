@@ -60,6 +60,7 @@
 
   &__label {
     display: inline-flex;
+    flex-basis: calc(100% - #{space(5w)});
     min-height: space(3w);
     padding-left: space(2w);
 
