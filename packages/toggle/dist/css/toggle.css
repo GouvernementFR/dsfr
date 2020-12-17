@@ -70,9 +70,6 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
     appearance: none;
     box-shadow: inset 0 0 0 1px var(--bf500);
     /*
-     * Provisoire pour tester sur IE11
-     */
-    /*
      * On applique des styles aux pseudo-elements du label quand l'input est check.
      * On change l'ordre du texte d'état du label dans le content pour afficher
      * la valeur correspondant à l'état checked (optionnel).
@@ -98,14 +95,8 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       color: var(--g600-g400);
       background-color: var(--g200);
       border: 1px solid var(--g400); }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .rf-toggle__input {
-        box-shadow: inset 0 0 0 1px blue; } }
     .rf-toggle__input:checked {
       background-color: var(--bf500); }
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        .rf-toggle__input:checked {
-          background: blue; } }
       .rf-toggle__input:checked ~ .rf-toggle__label[data-rf-unchecked-label]::before,
       .rf-toggle__input:checked ~ .rf-toggle__label[data-rf-checked-label]::before {
         content: attr(data-rf-checked-label) "\a" attr(data-rf-unchecked-label); }
@@ -148,13 +139,7 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       line-height: 1;
       color: var(--bf500);
       white-space: pre-wrap;
-      overflow: hidden;
-      /*
-      * Provisoire pour tester sur IE11
-      */ }
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        .rf-toggle__label::before {
-          color: blue; } }
+      overflow: hidden; }
     .rf-toggle__label::after {
       font-size: 1rem;
       display: flex;
@@ -171,11 +156,6 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       border: 1px solid var(--bf500);
       background-color: var(--w);
       z-index: 1; }
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        .rf-toggle__label::after {
-          color: blue;
-          border: 1px solid blue;
-          background: #fff; } }
   .rf-toggle .rf-hint-text {
     flex-basis: 100%;
     margin-top: 1rem; }

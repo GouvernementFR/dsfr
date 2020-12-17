@@ -582,10 +582,10 @@
 /* ------------------------------------ *\
   CORE
 \* ------------------------------------ */
-button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-label, .rf-fieldset:disabled .rf-label, input.rf-input[disabled], input.rf-input:disabled, .rf-checkbox-group input[type="checkbox"][disabled] + label, .rf-checkbox-group input[type="checkbox"]:disabled + label, .rf-radio-group input[type="radio"][disabled] + label, .rf-radio-group input[type="radio"]:disabled + label, select.rf-select[disabled], select.rf-select:disabled, button.rf-btn[disabled], button.rf-btn:disabled, button.rf-btn--secondary[disabled], button.rf-btn--secondary:disabled, button.rf-tag[disabled], button.rf-tag:disabled {
+button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-label, .rf-fieldset:disabled .rf-label, input.rf-input[disabled], input.rf-input:disabled, .rf-checkbox-group input[type="checkbox"][disabled] + label, .rf-checkbox-group input[type="checkbox"]:disabled + label, .rf-radio-group input[type="radio"][disabled] + label, .rf-radio-group input[type="radio"]:disabled + label, select.rf-select[disabled], select.rf-select:disabled, button.rf-btn[disabled], button.rf-btn:disabled, button.rf-btn--secondary[disabled], button.rf-btn--secondary:disabled, button.rf-tag[disabled], button.rf-tag:disabled, input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-toggle__input[disabled] + label, input.rf-toggle__input:disabled + label, input.rf-toggle__input[disabled] + label::before, input.rf-toggle__input:disabled + label::before, input.rf-toggle__input[disabled] + label::after, input.rf-toggle__input:disabled + label::after, .rf-tabs__tab:not([aria-selected=true])[disabled], .rf-tabs__tab:not([aria-selected=true]):disabled {
   cursor: not-allowed; }
 
-.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag {
+.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag, .rf-tabs__tab {
   display: inline-flex;
   flex-direction: row;
   align-items: center; }
@@ -657,7 +657,7 @@ button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-la
 .rf-fi-calendar-line::before {
   content: ""; }
 
-.rf-fi-check-line::before, .rf-valid-text::before, .rf-checkbox-group input[type="checkbox"] + label::before {
+.rf-fi-check-line::before, .rf-valid-text::before, .rf-checkbox-group input[type="checkbox"] + label::before, .rf-toggle__label::after {
   content: ""; }
 
 .rf-fi-checkbox-line::before {
@@ -804,7 +804,7 @@ button.rf-link[disabled], button.rf-link:disabled, .rf-fieldset[disabled] .rf-la
 .rf-fi-volume-up-line::before {
   content: ""; }
 
-[data-rf-reset] a[target="_blank"]::after, [class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-prose a[target="_blank"]::after, .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--icon-left[class^="rf-fi-"]::before, .rf-link--icon-left[class*=" rf-fi-"]::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right[class^="rf-fi-"]::before, .rf-link--icon-right[class*=" rf-fi-"]::before, .rf-content-media__transcription .rf-link::before, .rf-error-text::before, .rf-valid-text::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, .rf-checkbox-group input[type="checkbox"] + label::before, .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-accordion .rf-accordion__btn::before, .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before, .rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--icon-right[class*=" rf-fi-"]::before, .rf-nav__item > .rf-btn::before, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+[data-rf-reset] a[target="_blank"]::after, [class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-prose a[target="_blank"]::after, .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--icon-left[class^="rf-fi-"]::before, .rf-link--icon-left[class*=" rf-fi-"]::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right[class^="rf-fi-"]::before, .rf-link--icon-right[class*=" rf-fi-"]::before, .rf-content-media__transcription .rf-link::before, .rf-error-text::before, .rf-valid-text::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, .rf-checkbox-group input[type="checkbox"] + label::before, .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-accordion .rf-accordion__btn::before, .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before, .rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--icon-right[class*=" rf-fi-"]::before, .rf-toggle__label::after, .rf-nav__item > .rf-btn::before, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before, .rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -860,7 +860,7 @@ ol.rf-list, .rf-prose ol, .rf-summary__list {
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
 
-button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf-tag {
+button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf-tag, button.rf-tabs__tab {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -868,10 +868,10 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   border: none;
   cursor: pointer; }
 
-[data-rf-reset] a, [class^="rf-"] a, [class*=" rf-"] a, .rf-prose a, .rf-breadcrumb__item a, a.rf-link, a.rf-btn, a.rf-tag, .rf-card__link, .rf-pagination__link, .rf-tile__link, .rf-sidemenu__link, .rf-footer__brand-link, .rf-footer__content-link, .rf-footer__top-link, .rf-footer__bottom-link, .rf-header__navbar .rf-service__title {
+[data-rf-reset] a, [class^="rf-"] a, [class*=" rf-"] a, .rf-prose a, .rf-breadcrumb__item a, a.rf-link, a.rf-btn, a.rf-tag, .rf-card__link, .rf-pagination__link, .rf-tile__link, .rf-sidemenu__link, a.rf-tabs__tab, .rf-footer__brand-link, .rf-footer__content-link, .rf-footer__top-link, .rf-footer__bottom-link, .rf-header__navbar .rf-service__title {
   text-decoration: none; }
 
-.rf-list, .rf-prose ul, .rf-prose ol, .rf-breadcrumb__list, .rf-skiplinks__list, .rf-accordion-group, .rf-tags-group, .rf-nav__list, .rf-menu__list, .rf-mega-menu__list, .rf-sidemenu__list, .rf-summary__list, .rf-footer__content-list, .rf-footer__top-list, .rf-footer__bottom-list {
+.rf-list, .rf-prose ul, .rf-prose ol, .rf-breadcrumb__list, .rf-skiplinks__list, .rf-accordion-group, .rf-tags-group, .rf-toggle-list, .rf-nav__list, .rf-menu__list, .rf-mega-menu__list, .rf-sidemenu__list, .rf-summary__list, .rf-footer__content-list, .rf-footer__top-list, .rf-footer__bottom-list {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -3626,10 +3626,10 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
 /* ------------------------------------ *\
   LINKS
 \* ------------------------------------ */
-.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag {
+.rf-link, .rf-btn, .rf-accordion .rf-accordion__btn, .rf-tag, .rf-tabs__tab {
   overflow: hidden;
   z-index: 1; }
-  .rf-link:focus, .rf-btn:focus, .rf-accordion .rf-accordion__btn:focus, .rf-tag:focus {
+  .rf-link:focus, .rf-btn:focus, .rf-accordion .rf-accordion__btn:focus, .rf-tag:focus, .rf-tabs__tab:focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
@@ -3785,6 +3785,15 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
 /**
  * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
  */
+.rf-toggle .rf-hint-text {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-family: "Marianne", arial, sans-serif;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--g600); }
+
 .rf-select-group, .rf-input-group {
   /**
    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
@@ -5017,6 +5026,176 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-tags-group button.rf-tag--sm {
       margin-right: 1.5rem;
       margin-bottom: 1.5rem; }
+
+/* ------------------------------------ *\
+  TOGGLE
+\* ------------------------------------ */
+/*
+ * Mixin pour gérer les styles quand le toggle est inactif
+ */
+.rf-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 1rem 0;
+  /*
+   * On utilise un input de type checkbox pour gérer le toggle
+   * On reset ses styles afin de ne garder que son fonctionnement et son espacement
+   * On l'utilisera égalemement pour afficher l'état du toggle (optionnel)
+   */
+  /*
+   * Import des modificateurs (séparateur et label à gauche)
+   */
+  /*
+ * Ajout d'un séparateur
+ */
+  /*
+ * Passage du label ferré à gauche, le toggle ferré à droite
+ */ }
+  .rf-toggle__input {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 1.5rem;
+    border: 0;
+    border-radius: 2.5rem;
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: inset 0 0 0 1px var(--bf500);
+    /*
+     * On applique des styles aux pseudo-elements du label quand l'input est check.
+     * On change l'ordre du texte d'état du label dans le content pour afficher
+     * la valeur correspondant à l'état checked (optionnel).
+     */
+    /*
+     * Hack pour IE11
+     */ }
+    .rf-toggle__input:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+    input.rf-toggle__input[disabled], input.rf-toggle__input:disabled {
+      color: var(--g600-g400);
+      background-color: var(--g200);
+      box-shadow: inset 0 0 0 1px var(--g400); }
+    input.rf-toggle__input[disabled] + label, input.rf-toggle__input:disabled + label {
+      color: var(--g600-g400); }
+    input.rf-toggle__input[disabled] + label::before, input.rf-toggle__input:disabled + label::before {
+      color: var(--g600-g400); }
+      input.rf-toggle__input[disabled] + label::before::before, input.rf-toggle__input:disabled + label::before::before {
+        background-color: var(--g200); }
+    input.rf-toggle__input[disabled] + label::after, input.rf-toggle__input:disabled + label::after {
+      color: var(--g600-g400);
+      background-color: var(--g200);
+      border: 1px solid var(--g400); }
+    .rf-toggle__input:checked {
+      background-color: var(--bf500); }
+      .rf-toggle__input:checked ~ .rf-toggle__label[data-rf-unchecked-label]::before,
+      .rf-toggle__input:checked ~ .rf-toggle__label[data-rf-checked-label]::before {
+        content: attr(data-rf-checked-label) "\a" attr(data-rf-unchecked-label); }
+      .rf-toggle__input:checked ~ .rf-toggle__label::after {
+        transform: translateX(1rem);
+        text-indent: 0;
+        z-index: 2000; }
+    .rf-toggle__input::-ms-check {
+      display: none; }
+  .rf-toggle__label {
+    display: inline-flex;
+    min-height: 1.5rem;
+    padding-left: 1rem;
+    /*
+     * Si les data attributes sont présents, on assigne un content au pseudo element before,
+     * et on enlève le padding left du label.
+     */
+    /*
+     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
+     * On récupère le text via l'attribut [data-rf-unchecked-label]
+     */
+    /*
+     * On inclut l'icône check dans un pseudo-element after
+     * On la cache via un text-indent quand l'input n'est pas check
+     */ }
+    .rf-toggle__label[data-rf-unchecked-label], .rf-toggle__label[data-rf-checked-label] {
+      padding-left: 0; }
+      .rf-toggle__label[data-rf-unchecked-label]::before, .rf-toggle__label[data-rf-checked-label]::before {
+        content: attr(data-rf-unchecked-label) "\a" attr(data-rf-checked-label); }
+      .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text, .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
+        margin-top: 0.5rem; }
+    .rf-toggle__label::before {
+      flex-shrink: 0;
+      font-family: "Marianne", arial, sans-serif;
+      height: calc(0.75rem - 1px);
+      margin-top: calc(1.5rem + 0.25rem);
+      margin-left: -2.5rem;
+      margin-right: 1rem;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: var(--bf500);
+      white-space: pre-wrap;
+      overflow: hidden; }
+    .rf-toggle__label::after {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 1rem;
+      left: 0;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-indent: -9999px;
+      color: var(--bf500);
+      border: 1px solid var(--bf500);
+      background-color: var(--w);
+      z-index: 1; }
+  .rf-toggle .rf-hint-text {
+    flex-basis: 100%;
+    margin-top: 1rem; }
+  .rf-toggle--border-bottom {
+    box-shadow: inset 0 -1px 0 0 var(--g300); }
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before,
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
+      margin-bottom: -0.5rem; }
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text,
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
+      margin-top: 1rem; }
+  .rf-toggle--label-left .rf-toggle__input {
+    order: 1;
+    margin: 0 0 0 auto; }
+  .rf-toggle--label-left .rf-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
+    padding-left: 0;
+    padding-right: 1rem; }
+  .rf-toggle--label-left .rf-toggle__label {
+    justify-content: space-between;
+    padding-left: 0;
+    width: calc(100% - 2.5rem); }
+    .rf-toggle--label-left .rf-toggle__label::before {
+      flex-shrink: 0;
+      order: 1;
+      margin-right: -2.5rem;
+      margin-left: 1rem;
+      text-align: right; }
+  .rf-toggle--label-left .rf-toggle__label::after {
+    left: auto;
+    right: 1rem; }
+  .rf-toggle--label-left .rf-hint-text {
+    order: 2; }
+
+/*
+ * Provisoire: à enlever quand rf-body sera en place
+ */
+/*
+ * On surcharge les styles de base (provisoire)
+ */
+.rf-toggle-list {
+  margin: 0; }
+  .rf-toggle-list > li {
+    margin-bottom: 0; }
+    .rf-toggle-list > li::before {
+      content: none; }
 
 /* ------------------------------------ *\
   NAVIGATION
@@ -6692,6 +6871,221 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
 .rf-summary__link {
   text-decoration: none; }
+
+.rf-tabs__tab {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem; }
+
+.rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
+  font-size: 1rem; }
+
+.rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
+  margin-left: -0.25rem;
+  margin-right: 0.5rem; }
+
+.rf-tabs {
+  position: relative;
+  padding-bottom: 1px;
+  /**
+   * ul : element srollable des boutons
+   */
+  /**
+  * Tab button
+  */
+  /**
+  * Tab Panel
+  */ }
+  @media (max-width: 47.98em) {
+    .rf-tabs {
+      margin-left: -1rem;
+      margin-right: -1rem; }
+      .rf-tabs .rf-tabs {
+        margin-left: 0;
+        margin-right: 0; } }
+  .rf-tabs__list {
+    display: flex;
+    align-items: flex-end;
+    overflow-x: auto;
+    list-style: none;
+    width: 100%;
+    /**
+    * overflow vertical de 4px pour le focus
+    */
+    margin: -4px 0;
+    padding: 4px 0.5rem;
+    /**
+    * Animation de la hauteur du panel
+    */
+    transition: margin-bottom 0.1s;
+    /**
+    * Reset du style par défaut du li
+    */ }
+    .rf-tabs__list::after {
+      display: block;
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      margin-left: -0.5rem;
+      margin-right: -0.5rem;
+      box-shadow: 0 1px 0 0 var(--g300); }
+    .rf-tabs__list li {
+      display: block;
+      flex: 0 0 auto;
+      margin: 0 0.5rem; }
+      .rf-tabs__list li::before {
+        display: none;
+        content: none; }
+      .rf-tabs__list li:not(:first-child) {
+        margin-left: 0; }
+        .rf-tabs__list li:not(:first-child)::before {
+          display: block;
+          content: "";
+          position: sticky;
+          margin-left: -0.5rem;
+          width: 0.5rem;
+          top: 100%;
+          height: 1px;
+          box-shadow: 0 1px 0 0 var(--g300); }
+      .rf-tabs__list li:last-child {
+        padding-right: 1rem; }
+        .rf-tabs__list li:last-child::after {
+          display: block;
+          content: "";
+          min-width: 1rem;
+          margin-left: 100%;
+          flex: 1 1 auto;
+          width: auto;
+          top: 100%;
+          height: 1px;
+          margin-top: -1px;
+          box-shadow: 0 1px 0 0 var(--g300); }
+      .rf-tabs__list li:first-child::before {
+        display: block;
+        content: "";
+        position: sticky;
+        margin-left: -100%;
+        width: 100%;
+        top: 100%;
+        height: 1px;
+        box-shadow: 0 1px 0 0 var(--g300); }
+  .rf-tabs__tab {
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    font-weight: bold;
+    z-index: 1; }
+    a.rf-tabs__tab {
+      box-shadow: none; }
+      a.rf-tabs__tab[target="_blank"]::after {
+        content: none;
+        margin-left: 0; }
+    .rf-tabs__tab:not([aria-selected=true]) {
+      background-color: var(--bf100-g750);
+      color: var(--g700);
+      box-shadow: 0 1px 0 0 var(--g300); }
+      @media (hover: hover) and (pointer: fine) {
+        .rf-tabs__tab:not([aria-selected=true]):not([disabled]):hover, .rf-tabs__tab:not([aria-selected=true]):not(:disabled):hover {
+          background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+        .rf-tabs__tab:not([aria-selected=true]):not([disabled]):active, .rf-tabs__tab:not([aria-selected=true]):not(:disabled):active {
+          background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+      :root:not([data-rf-theme="dark"]) .rf-tabs__tab:not([aria-selected=true]) {
+        --color-hover: rgba(198, 198, 229, 0.5);
+        --color-active: rgba(155, 155, 209, 0.5); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-tabs__tab:not([aria-selected=true]),
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-tabs__tab:not([aria-selected=true]) {
+        --color-hover: rgba(198, 198, 229, 0.5);
+        --color-active: rgba(155, 155, 209, 0.5); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-tabs__tab:not([aria-selected=true]),
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-tabs__tab:not([aria-selected=true]) {
+        --color-hover: rgba(91, 91, 91, 0.5);
+        --color-active: rgba(140, 140, 140, 0.5); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-tabs__tab:not([aria-selected=true]),
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-tabs__tab:not([aria-selected=true]) {
+        --color-hover: rgba(198, 198, 229, 0.5);
+        --color-active: rgba(155, 155, 209, 0.5); }
+      :root[data-rf-theme="dark"] .rf-tabs__tab:not([aria-selected=true]) {
+        --color-hover: rgba(91, 91, 91, 0.5);
+        --color-active: rgba(140, 140, 140, 0.5); }
+      .rf-tabs__tab:not([aria-selected=true])[disabled], .rf-tabs__tab:not([aria-selected=true]):disabled {
+        color: var(--g600-g400);
+        background-color: var(--g200); }
+      .rf-tabs__tab:not([aria-selected=true]):focus-within {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+        z-index: var(--focus-z-index); }
+    .rf-tabs__tab[aria-selected=true] {
+      box-shadow: inset 0 0.125rem 0 0 var(--bf500);
+      background-color: var(--t-plain);
+      color: var(--bf500);
+      cursor: default; }
+      @media (hover: hover) and (pointer: fine) {
+        .rf-tabs__tab[aria-selected=true]:not([disabled]):hover, .rf-tabs__tab[aria-selected=true]:not(:disabled):hover {
+          background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+        .rf-tabs__tab[aria-selected=true]:not([disabled]):active, .rf-tabs__tab[aria-selected=true]:not(:disabled):active {
+          background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+      :root:not([data-rf-theme="dark"]) .rf-tabs__tab[aria-selected=true] {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-tabs__tab[aria-selected=true],
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-tabs__tab[aria-selected=true] {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-tabs__tab[aria-selected=true],
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-tabs__tab[aria-selected=true] {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-tabs__tab[aria-selected=true],
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-tabs__tab[aria-selected=true] {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root[data-rf-theme="dark"] .rf-tabs__tab[aria-selected=true] {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      .rf-tabs__tab[aria-selected=true]:hover:not([disabled]), .rf-tabs__tab[aria-selected=true]:hover:not(:disabled), .rf-tabs__tab[aria-selected=true]:active:not([disabled]), .rf-tabs__tab[aria-selected=true]:active:not(:disabled) {
+        background-image: none; }
+      .rf-tabs__tab[aria-selected=true]::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 2px;
+        right: 1px;
+        bottom: 0;
+        left: 1px;
+        width: auto;
+        height: calc(100% - 1px);
+        box-shadow: -1px 0 0 0 var(--g300), 1px 0 0 0 var(--g300);
+        z-index: 1; }
+  .rf-tabs__panel {
+    display: block;
+    height: auto;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    visibility: visible;
+    padding: 1rem;
+    box-shadow: inset 1px -1px 0 0 var(--g300), inset -1px 0 0 var(--g300);
+    transition: opacity 0.1s, visibility 0.1s; }
+    @media (min-width: 48em) {
+      .rf-tabs__panel {
+        padding: 2rem; } }
+    .rf-tabs__panel--selected {
+      opacity: 1; }
+      .rf-tabs__panel--selected:focus {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+        z-index: var(--focus-z-index); }
+      .rf-tabs__panel--selected:focus {
+        outline-offset: calc(-1rem + 2px); }
+        @media (min-width: 48em) {
+          .rf-tabs__panel--selected:focus {
+            outline-offset: calc(-2rem + 2px); } }
+    .rf-tabs__panel[hidden] {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden; }
 
 /* ------------------------------------ *\
   FOOTER
