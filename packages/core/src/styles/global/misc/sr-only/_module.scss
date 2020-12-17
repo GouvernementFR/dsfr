@@ -1,0 +1,11 @@
+////
+/// Core Module : Global sr-only
+/// @group core
+////
+
+#{dse(sr-only)} {
+  @include sr-only();
+}
+
+// @include sr-only-from();
+// @include sr-only-to();

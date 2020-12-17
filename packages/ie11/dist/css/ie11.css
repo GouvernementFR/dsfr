@@ -1,22 +1,15 @@
-/*
-  Variables :
-    -> Unit
-    -> Colors
-    -> Typography
-    -> Spacing
-*/
-/* `````````````````````
-  Typography
-````````````````````` */
-/* `````````````````````
-  Spacing
-````````````````````` */
-/* `````````````````````
-  FUNCTIONS
-````````````````````` */
-/* `````````````````````
-  MIXINS
-````````````````````` */
+@charset "UTF-8";
+/**
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+ */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * fix Navigation
+  */ }
+
 @media all and (-ms-high-contrast: none) and (min-width: 48em), (-ms-high-contrast: active) and (min-width: 48em) {
   .rf-nav--align-right {
     transform: translateX(-100%); } }
@@ -26,7 +19,12 @@
     height: auto; }
   .skip-links.focus-within {
     position: relative;
-    transform: translateY(0); } }
+    transform: translateY(0); }
+  /**
+  * fix radios
+  */
+  .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[style*='background-image:'], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class^="rf-ifi-"], .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label[class*=" rf-ifi-"] {
+    margin-bottom: 0.5rem !important; } }
 
 
 /*# sourceMappingURL=ie11.css.map*/

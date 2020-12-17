@@ -1,0 +1,28 @@
+////
+/// Core Module : Medias
+/// @group core
+////
+
+#{dse(responsive-img)} {
+  width: 100%;
+  height: auto;
+}
+
+#{dse(responsive-vid)} {
+  position: relative;
+  width: 100%;
+
+  @include aspect-ratio();
+
+  &--4x3 {
+    @include aspect-ratio(4x3, false);
+  }
+
+  &--1x1 {
+    @include aspect-ratio(1x1, false);
+  }
+
+  &__player {
+    @extend %media-overlay-cover;
+  }
+}

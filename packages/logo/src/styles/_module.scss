@@ -1,7 +1,11 @@
-.#{$prefix}-logo {
+////
+/// Logo Module
+/// @group logo
+////
+
+#{dse(logo)} {
   display: inline-block;
   font-size: 1rem;
-  box-shadow: none;
   padding: 1em;
 
   &__title {
@@ -16,7 +20,7 @@
     @include scheme-element-text-color(g800);
   }
 
-  &::before {
+  @include before() {
     display: block;
     content: '';
     width: 2.75em;
@@ -30,7 +34,7 @@
     background-image: url(_svg-encode($svg-marianne-colored));
   }
 
-  &::after {
+  @include specify-after-reset-link-style() {
     display: block;
     content: '';
     width: 2.625em;
@@ -52,8 +56,8 @@
 }
 
 [data-mourning] {
-  .#{$prefix}-logo {
-    &::before {
+  #{dse(logo)} {
+    @include before {
       $svg-mariane: _color-marianne(black, black);
       background-image: url(_svg-encode($svg-mariane));
       @include scheme-element-box-shadow-color(t-w, true, 0 0 0 1px $COLOR);

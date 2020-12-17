@@ -1,12 +1,18 @@
-.#{$prefix}-search-bar {
+////
+/// Search Module
+/// @group search
+////
+
+#{dse(search-bar)} {
+  @extend %default-text-color;
   display: flex;
   flex-direction: row;
 
-  .#{$prefix}-label {
+  #{dse(label)} {
     @include sr-only();
   }
 
-  .#{$prefix}-input {
+  #{dse(input)} {
     @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
     margin-top: 0;
     border-radius: space(0-5N) 0 0;
@@ -17,12 +23,12 @@
     }
   }
 
-  @include btn(md, only, search-line) {
+  @include nest-btn(md, only, search-line) {
     flex: 1 0 auto;
     border-radius: 0 space(0-5N) 0 0;
   }
 
   &--lg {
-    @include btn(lg, left, null, md);
+    @include nest-btn(lg, left, null, md);
   }
 }

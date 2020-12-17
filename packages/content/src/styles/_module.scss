@@ -1,16 +1,20 @@
-.#{$prefix}-content-media {
+////
+/// Content Module
+/// @group content
+////
+
+#{dse(content-media)} {
+  @extend %default-text-color;
   width: 100%;
   margin: space(5N) 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include display-flex(column, center);
 
   &__img {
     width: 100%;
     position: relative;
 
     //le padding permettant de définir le ratio d'aspect est appliqué sur un pseudo-élément before qui hérite de la modification de taille --lg et --sm de l'élément img ou vid
-    //@include aspect-ratio();
+    @include aspect-ratio();
   }
 
   &__img img {
@@ -29,10 +33,10 @@
   }
 
   &__transcription {
-    @include link(sm, right, menu-2-fill, null, true);
+    @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
-  $medias: (&__img, '.#{$prefix}-responsive-vid');
+  $medias: (&__img, dse(responsive-vid));
   $captions: (&__caption, &__transcription);
 
   @include content-media-sizes($medias, $captions, 25%);

@@ -1,13 +1,10 @@
-@import '../core/main';
 @import '../schemes/main';
+@import '../core/main';
 
-@import '../icons/main';
-@import '../typography/main';
 @import '../utilities/main';
 @import '../grid/main';
 
 @import '../links/main';
-@import '../medias/main';
 @import '../forms/main';
 
 @import '../inputs/main';
@@ -18,9 +15,10 @@
 @import '../logo/main';
 @import '../breadcrumb/main';
 @import '../skiplinks/main';
-@import '../accordion/main';
+@import '../accordions/main';
 @import '../table/main';
 @import '../tags/main';
+@import '../toggle/main';
 
 @import '../navigation/main';
 @import '../callouts/main';
@@ -32,6 +30,7 @@
 @import '../tiles/main';
 @import '../sidemenu/main';
 @import '../summary/main';
+@import '../tabs/main';
 
 @import '../footer/main';
 @import '../header/main';

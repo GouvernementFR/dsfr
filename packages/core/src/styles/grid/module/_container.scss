@@ -1,0 +1,12 @@
+////
+/// Core Module : Grid container
+/// @group core
+////
+
+#{dse(container)} {
+  @include container();
+
+  &-fluid {
+    width: 100%;
+  }
+}

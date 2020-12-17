@@ -15,7 +15,7 @@
 <div <%- includeClasses(classes); %>>
 
   <% if(locals.title !== undefined) { %>
-    <h4 class="rf-callout__title"><%= title %></h4>
+    <h4 class="<%= prefix%>-callout__title"><%= title %></h4>
   <% } %>
 
   <p <%- includeClasses(pClasses); %>>

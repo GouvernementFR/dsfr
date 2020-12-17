@@ -171,24 +171,21 @@ var Initializer = /*#__PURE__*/function () {
 }();
 
 
-// CONCATENATED MODULE: ./packages/schemes/src/scripts/dark-mode-toggle-switch/dark-mode-toggle-switch.js
-function dark_mode_toggle_switch_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// CONCATENATED MODULE: ./packages/schemes/src/scripts/scheme/scheme.js
+function scheme_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function dark_mode_toggle_switch_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function scheme_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function dark_mode_toggle_switch_createClass(Constructor, protoProps, staticProps) { if (protoProps) dark_mode_toggle_switch_defineProperties(Constructor.prototype, protoProps); if (staticProps) dark_mode_toggle_switch_defineProperties(Constructor, staticProps); return Constructor; }
+function scheme_createClass(Constructor, protoProps, staticProps) { if (protoProps) scheme_defineProperties(Constructor.prototype, protoProps); if (staticProps) scheme_defineProperties(Constructor, staticProps); return Constructor; }
 
-var DM = 'rf-dark-mode';
-var DTA = 'data-theme';
-
-var DarkModeToggleSwitch = /*#__PURE__*/function () {
-  function DarkModeToggleSwitch() {
-    dark_mode_toggle_switch_classCallCheck(this, DarkModeToggleSwitch);
+var Scheme = /*#__PURE__*/function () {
+  function Scheme() {
+    scheme_classCallCheck(this, Scheme);
 
     this.init();
   }
 
-  dark_mode_toggle_switch_createClass(DarkModeToggleSwitch, [{
+  scheme_createClass(Scheme, [{
     key: "init",
     value: function init() {
       var _this = this;
@@ -205,37 +202,46 @@ var DarkModeToggleSwitch = /*#__PURE__*/function () {
       this.root = document.documentElement;
 
       if (this.scheme === 'dark') {
-        if (!this.root.hasAttribute('data-transition')) this.root.setAttribute(DTA, 'dark');else {
-          this.root.removeAttribute('data-transition');
-          this.root.setAttribute(DTA, 'dark');
+        if (!this.root.hasAttribute(Scheme.TRANSITION_ATTRIBUTE)) {
+          this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
+        } else {
+          this.root.removeAttribute(Scheme.TRANSITION_ATTRIBUTE);
+          this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
           setTimeout(function () {
-            _this.root.setAttribute('data-transition', '');
+            _this.root.setAttribute(Scheme.TRANSITION_ATTRIBUTE, '');
           }, 300);
         }
-      }
+      } else this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'light');
 
-      this.checkbox = document.getElementById(DM + '-toggle-switch');
-      if (this.scheme === 'dark') this.checkbox.checked = true;
-      this.checkbox.addEventListener('change', this.change.bind(this));
+      this.observer = new MutationObserver(this.mutate.bind(this));
+      this.observer.observe(this.root, {
+        attributes: true
+      });
     }
   }, {
-    key: "change",
-    value: function change() {
-      if (this.checkbox.checked) {
-        this.scheme = 'dark';
-        localStorage.setItem('scheme', 'dark');
-        this.root.setAttribute(DTA, 'dark');
-      } else {
-        this.scheme = 'light';
-        localStorage.setItem('scheme', 'light');
-        this.root.removeAttribute(DTA);
-      }
+    key: "mutate",
+    value: function mutate(mutations) {
+      var _this2 = this;
+
+      mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === Scheme.SCHEME_ATTRIBUTE) {
+          var scheme = _this2.root.getAttribute(Scheme.SCHEME_ATTRIBUTE);
+
+          if (scheme === 'dark') {
+            localStorage.setItem('scheme', 'dark');
+          } else if (scheme === 'light') {
+            localStorage.setItem('scheme', 'light');
+          }
+        }
+      });
     }
   }]);
 
-  return DarkModeToggleSwitch;
+  return Scheme;
 }();
 
+Scheme.SCHEME_ATTRIBUTE = 'data-rf-theme';
+Scheme.TRANSITION_ATTRIBUTE = 'data-rf-transition';
 
 // CONCATENATED MODULE: ./packages/schemes/src/scripts/index.js
 
@@ -244,7 +250,7 @@ var DarkModeToggleSwitch = /*#__PURE__*/function () {
 /* eslint-disable no-new */
 
 
-new Initializer('#rf-dark-mode-toggle-switch', [DarkModeToggleSwitch]);
+new Initializer(':root[' + Scheme.SCHEME_ATTRIBUTE + ']', [Scheme]);
 // CONCATENATED MODULE: ./packages/utilities/src/scripts/collapse/collapse.js
 function collapse_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -501,7 +507,448 @@ var removeClass = function removeClass(element, className) {
 };
 
 
+// CONCATENATED MODULE: ./packages/utilities/src/scripts/disclosure/disclosures-group.js
+function disclosures_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function disclosures_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function disclosures_group_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosures_group_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosures_group_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+var groups = {};
+
+var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
+  function DisclosuresGroup() {
+    disclosures_group_classCallCheck(this, DisclosuresGroup);
+
+    this.disclosures = [];
+    this._current = null;
+  }
+
+  disclosures_group_createClass(DisclosuresGroup, [{
+    key: "build",
+    value: function build(wrapper, wrapperSelector, selector, type) {
+      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
+      this.wrapper = wrapper;
+      var elements = wrapper.querySelectorAll(selector);
+      var disclosure;
+
+      for (var i = 0; i < elements.length; i++) {
+        // on l'ajoute qu'au wrapper le plus proche
+        if (elements[i].closest(wrapperSelector) === this.wrapper) {
+          disclosure = this.disclosureFactory(elements[i], type, selector);
+          this.add(disclosure);
+        }
+      }
+    }
+  }, {
+    key: "disclosureFactory",
+    value: function disclosureFactory(element, type, selector) {
+      return new disclosure_Disclosure(element, type, selector);
+    }
+  }, {
+    key: "add",
+    value: function add(disclosure) {
+      this.disclosures.push(disclosure);
+      disclosure.setGroup(this);
+      console.log('group add', this.current, disclosure.disclosed, !disclosure.disclosed);
+      if (this.type === undefined) this.type = disclosure.type;else if (this.type !== disclosure.type) throw Error('A DisclosureGroup cannot contain 2 different Disclosure types');
+
+      switch (true) {
+        case this.current !== null:
+        case !disclosure.disclosed:
+          console.log('not current');
+          disclosure.apply(false);
+          break;
+
+        default:
+          this.current = disclosure;
+          console.log('current');
+          disclosure.apply(true);
+      }
+    }
+  }, {
+    key: "conceal",
+    value: function conceal() {// close children
+    }
+  }, {
+    key: "current",
+    get: function get() {
+      return this._current;
+    },
+    set: function set(disclosure) {
+      if (this._current !== null && this._current !== disclosure) this._current.apply(false);
+      this._current = disclosure;
+      if (this._current !== null) this._current.apply(true);
+    }
+  }], [{
+    key: "group",
+    value: function group(disclosure, factory) {
+      var id = disclosure.element.getAttribute('data-group');
+      if (factory === undefined) factory = function factory() {
+        return new DisclosuresGroup();
+      };
+      if (groups[id] === undefined) groups[id] = factory();
+      groups[id].add(disclosure);
+    }
+  }]);
+
+  return DisclosuresGroup;
+}();
+
+
+// CONCATENATED MODULE: ./packages/utilities/src/scripts/disclosure/disclosure-button.js
+function disclosure_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function disclosure_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function disclosure_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_button_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
+  function DisclosureButton(element, disclosure) {
+    disclosure_button_classCallCheck(this, DisclosureButton);
+
+    this.element = element;
+    this.disclosure = disclosure;
+    this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
+    this.element.addEventListener('click', this.click.bind(this));
+
+    switch (this.disclosure.type) {
+      case disclosure_Disclosure.EXPAND:
+        this.observer = new MutationObserver(this.mutate.bind(this));
+        this.observe();
+        break;
+    }
+  }
+
+  disclosure_button_createClass(DisclosureButton, [{
+    key: "observe",
+    value: function observe() {
+      this.observer.observe(this.element, {
+        attributes: true
+      });
+    }
+  }, {
+    key: "click",
+    value: function click(e) {
+      console.log('click');
+      this.disclosure.change(this.hasAttribute);
+    }
+  }, {
+    key: "mutate",
+    value: function mutate(mutations) {
+      var _this = this;
+
+      mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === _this.disclosure.attributeName) _this.disclosure.change(_this.disclosed); // TODO
+      });
+    }
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      if (!this.hasAttribute) return;
+      if (this.observer) this.observer.disconnect();
+      this.element.setAttribute(this.disclosure.attributeName, value);
+      if (this.observer) this.observe();
+    }
+  }, {
+    key: "disclosed",
+    get: function get() {
+      return this.element.getAttribute(this.disclosure.attributeName) === 'true';
+    }
+  }]);
+
+  return DisclosureButton;
+}();
+
+
+// CONCATENATED MODULE: ./packages/utilities/src/scripts/disclosure/disclosure.js
+function disclosure_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function disclosure_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function disclosure_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var disclosure_Disclosure = /*#__PURE__*/function () {
+  function Disclosure(element, type, selector) {
+    disclosure_classCallCheck(this, Disclosure);
+
+    this.element = element;
+    this.type = type;
+    this.modifier = selector + '--' + type;
+    this.id = element.id;
+    this.attributeName = 'aria-' + this.type;
+    this.buttons = [];
+    this.disclosed = null;
+    if (this.element.hasAttribute('data-group')) disclosures_group_DisclosuresGroup.group(this, this.groupFactory);
+    var buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
+
+    if (buttons.length > 0) {
+      var button;
+
+      for (var i = 0; i < buttons.length; i++) {
+        button = this.buttonFactory(buttons[i]);
+
+        if (button.hasAttribute) {
+          if (this.disclosed === null) {
+            this.disclosed = button.disclosed;
+            this.primary = button;
+          } else button.apply(this.disclosed);
+        }
+
+        this.buttons.push(button);
+      }
+    }
+
+    this.disclosed = this.disclosed === true;
+    this.apply(this.disclosed);
+  }
+
+  disclosure_createClass(Disclosure, [{
+    key: "groupFactory",
+    value: function groupFactory() {
+      return new disclosures_group_DisclosuresGroup();
+    }
+  }, {
+    key: "buttonFactory",
+    value: function buttonFactory(button) {
+      return disclosure_button_DisclosureButton(button, this);
+    }
+  }, {
+    key: "disclose",
+    value: function disclose() {
+      console.log('disclose', this.disclosed);
+      if (this.disclosed) return;
+      if (this.group !== null) this.group.current = this;
+      this.apply(true);
+    }
+  }, {
+    key: "conceal",
+    value: function conceal() {
+      console.log('conceal', this.disclosed);
+      if (!this.disclosed) return;
+      if (this.group != null) this.group.current = null;
+      this.apply(false);
+    }
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      this.disclosed = value;
+      if (value) addClass(this.element, this.modifier);else removeClass(this.element, this.modifier);
+
+      for (var i = 0; i < this.buttons.length; i++) {
+        this.buttons[i].apply(value);
+      }
+    }
+  }, {
+    key: "change",
+    value: function change(hasAttribute) {
+      console.log('change', hasAttribute, this.type);
+
+      switch (this.type) {
+        case Disclosure.EXPAND:
+          switch (true) {
+            case !hasAttribute:
+            case this.disclosed:
+              this.conceal();
+              break;
+
+            default:
+              this.disclose();
+          }
+
+          break;
+
+        case Disclosure.SELECT:
+          this.disclose();
+          break;
+      }
+    }
+  }, {
+    key: "setGroup",
+    value: function setGroup(group) {
+      this.group = group;
+    }
+  }]);
+
+  return Disclosure;
+}();
+
+disclosure_Disclosure.EXPAND = 'expanded';
+disclosure_Disclosure.SELECT = 'selected';
+
+// CONCATENATED MODULE: ./packages/utilities/src/scripts/key-listener/key-listener.js
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function key_listener_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function key_listener_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function key_listener_createClass(Constructor, protoProps, staticProps) { if (protoProps) key_listener_defineProperties(Constructor.prototype, protoProps); if (staticProps) key_listener_defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * Utilitaire de gestion des évenements clavier
+ * Utiliser KeyListener.add() pour ajouter un event listener
+ */
+var KeyListener = /*#__PURE__*/function () {
+  function KeyListener(element) {
+    key_listener_classCallCheck(this, KeyListener);
+
+    this.element = element;
+    this.collections = {};
+  }
+  /**
+   * key: la touche de clavier
+   * closure: la function à appliquer
+   * type: event type, optionnel, si c'est en down, up ou press
+   * stopPropagation: Boolean, permet d'empêcher le comportement par default de l'evenement
+   */
+
+
+  key_listener_createClass(KeyListener, [{
+    key: "_add",
+    value: function _add(type, action) {
+      if (this.collections[type] === undefined) this.collections[type] = new KeyActionCollection(type, this.element);
+      this.collections[type].add(action);
+    }
+  }, {
+    key: "down",
+    value: function down(key, closure, preventDefault, stopPropagation) {
+      this._add('down', new KeyAction(key, closure, preventDefault, stopPropagation));
+    }
+  }, {
+    key: "up",
+    value: function up(key, closure, preventDefault, stopPropagation) {
+      this._add('up', new KeyAction(key, closure, preventDefault, stopPropagation));
+    }
+  }, {
+    key: "press",
+    value: function press(key, closure, preventDefault, stopPropagation) {
+      this._add('press', new KeyAction(key, closure, preventDefault, stopPropagation));
+    }
+  }, {
+    key: "dispose",
+    value: function dispose() {
+      var _iterator = _createForOfIteratorHelper(this.collections),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var collection = _step.value;
+          collection.dispose();
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      this.types = null;
+    }
+  }]);
+
+  return KeyListener;
+}();
+
+var KeyActionCollection = /*#__PURE__*/function () {
+  function KeyActionCollection(type, element) {
+    key_listener_classCallCheck(this, KeyActionCollection);
+
+    this.type = type;
+    this.element = element;
+    this.actions = [];
+    this.binding = this.handle.bind(this);
+    this.element.addEventListener('key' + type, this.binding);
+  }
+
+  key_listener_createClass(KeyActionCollection, [{
+    key: "add",
+    value: function add(action) {
+      this.actions.push(action);
+    }
+  }, {
+    key: "handle",
+    value: function handle(e) {
+      var _iterator2 = _createForOfIteratorHelper(this.actions),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var action = _step2.value;
+          action.handle(e);
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+    }
+  }, {
+    key: "dispose",
+    value: function dispose() {
+      this.element.removeEventListener('key' + this.type, this.binding);
+      this.actions = null;
+    }
+  }]);
+
+  return KeyActionCollection;
+}();
+
+var KeyAction = /*#__PURE__*/function () {
+  function KeyAction(key, closure, preventDefault, stopPropagation) {
+    key_listener_classCallCheck(this, KeyAction);
+
+    this.key = key;
+    this.closure = closure;
+    this.preventDefault = preventDefault === true;
+    this.stopPropagation = stopPropagation === true;
+  }
+
+  key_listener_createClass(KeyAction, [{
+    key: "handle",
+    value: function handle(e) {
+      if (e.keyCode === this.key) {
+        this.closure();
+
+        if (this.preventDefault) {
+          e.preventDefault();
+        }
+
+        if (this.stopPropagation) {
+          e.stopPropagation();
+        }
+      }
+    }
+  }]);
+
+  return KeyAction;
+}();
+
+KeyListener.ESCAPE = 27;
+KeyListener.END = 35;
+KeyListener.HOME = 36;
+KeyListener.LEFT = 37;
+KeyListener.UP = 38;
+KeyListener.RIGHT = 39;
+KeyListener.DOWN = 40;
+
 // CONCATENATED MODULE: ./packages/utilities/src/scripts/index.js
+
+
+
+
+
+
 
 
 
@@ -735,17 +1182,25 @@ var Header = /*#__PURE__*/function () {
       this.nav = this.header.querySelector('.rf-nav');
       this.navItems = this.header.querySelectorAll('.rf-nav .rf-nav__item') || [];
       var append = this.numId === 0 ? '' : '-' + this.numId;
+      this.shortcuts = this.header.querySelector('.rf-header__tools .rf-shortcuts');
+      this.navList = this.header.querySelector('.rf-nav .rf-nav__list');
 
       if (this.searchBar) {
         this.popins.push(new header_HeaderPopin('header-tools-popin' + append, 'search-line', 'Rechercher', this.tools, navbar));
       }
 
-      if (this.navItems.length > 0) {
+      if (this.navItems.length > 0 || this.shortcuts !== null) {
+        // si on des raccourcis mais pas de nav, on la créé
+        if (!this.nav) {
+          this.nav = document.createElement('nav');
+          this.nav.setAttribute('role', 'navigation');
+          this.nav.setAttribute('aria-label', 'Menu principal');
+          this.header.appendChild(this.nav);
+        }
+
         this.popins.push(new header_HeaderPopin('header-nav-popin' + append, 'menu-fill', 'Ouvrir le menu', this.nav, navbar));
       }
 
-      this.shortcuts = this.header.querySelector('.rf-header__tools .rf-shortcuts');
-      this.navList = this.header.querySelector('.rf-nav .rf-nav__list');
       this.changing = this.change.bind(this);
       window.addEventListener('resize', this.changing);
       window.addEventListener('orientationchange', this.changing);
@@ -933,20 +1388,20 @@ var sidemenu_SideMenu = /*#__PURE__*/function () {
 
 
 new Initializer('.rf-sidemenu', [sidemenu_SideMenu]);
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/accordion/accordion.js
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/accordion/accordion.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || accordion_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return accordion_arrayLikeToArray(arr); }
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function accordion_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = accordion_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function accordion_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return accordion_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return accordion_arrayLikeToArray(o, minLen); }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function accordion_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function accordion_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -986,7 +1441,7 @@ var accordion_Accordion = /*#__PURE__*/function () {
 
 
       for (var _i = 0; _i < this.collapseGroupsElements.length; _i++) {
-        var _iterator = _createForOfIteratorHelper(this.collapseGroupsElements[_i].querySelectorAll(ACCORDION_COLLAPSE)),
+        var _iterator = accordion_createForOfIteratorHelper(this.collapseGroupsElements[_i].querySelectorAll(ACCORDION_COLLAPSE)),
             _step;
 
         try {
@@ -1029,10 +1484,10 @@ var accordion_Accordion = /*#__PURE__*/function () {
 }();
 
 
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/index.js
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/index.js
 
 
-// CONCATENATED MODULE: ./packages/accordion/src/scripts/distGlobal.js
+// CONCATENATED MODULE: ./packages/accordions/src/scripts/distGlobal.js
 /* eslint-disable no-new */
 
 

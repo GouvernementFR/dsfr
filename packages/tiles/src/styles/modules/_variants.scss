@@ -1,0 +1,133 @@
+////
+/// Tiles module : Variants
+/// @group Tiles
+////
+
+/**
+ * Modificateur tuile horizontale
+ **/
+&--horizontal {
+  flex-direction: row;
+
+  #{dse(tile__img-wrap)} {
+    width: space(6w);
+    height: space(6w);
+    margin: auto 0 auto space(3w);
+
+    + #{dse(tile__body)} {
+      min-height: space(6w);
+      text-align: left;
+
+      @include respond-from(md) {
+        min-height: space(10w);
+      }
+    }
+
+    @include respond-from(md) {
+      width: space(10w);
+      height: space(10w);
+      margin: auto 0 auto space(4w);
+    }
+  }
+
+  #{dse(tile__body)} {
+    align-items: flex-start;
+    padding: 0;
+    margin: space(3w);
+
+    @include respond-from(md) {
+      margin: space(4w);
+    }
+  }
+}
+
+/**
+ * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
+ **/
+&--vertical-md {
+  flex-direction: row;
+
+  #{dse(tile__img-wrap)} {
+    width: space(6w);
+    height: space(6w);
+    margin: auto 0 auto space(3w);
+
+    + #{dse(tile__body)} {
+      min-height: space(6w);
+
+      @include respond-from(md) {
+        min-height: initial;
+        text-align: center;
+      }
+    }
+
+    @include respond-from(md) {
+      width: space(10w);
+      height: space(10w);
+      margin: space(4w) auto 0;
+    }
+  }
+
+  #{dse(tile__body)} {
+    align-items: flex-start;
+    padding: 0;
+    margin: space(3w);
+    text-align: left;
+
+    @include respond-from(md) {
+      align-items: center;
+      padding: space(3w);
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  @include respond-from(md) {
+    flex-direction: column;
+  }
+}
+
+/**
+ * Modificateur horizontal à partir du breakpoint md -> vertical en dessous du breakpoint md
+ **/
+&--horizontal-md {
+  flex-direction: column;
+
+  #{dse(tile__img-wrap)} {
+    width: space(10w);
+    height: space(10w);
+    margin: space(4w) auto 0;
+
+    + #{dse(tile__body)} {
+      min-height: initial;
+
+      @include respond-from(md) {
+        padding: 0;
+        min-height: space(10w);
+        margin: space(4w);
+      }
+    }
+
+    @include respond-from(md) {
+      margin: auto 0 auto space(4w);
+    }
+  }
+
+  #{dse(tile__body)} {
+    align-items: center;
+    padding: space(2w);
+    margin: 0;
+    text-align: center;
+
+    @include respond-from(md) {
+      align-items: flex-start;
+      padding: 0;
+      margin: space(4w);
+      text-align: left;
+    }
+  }
+
+  @include respond-from(md) {
+    flex-direction: row;
+  }
+}

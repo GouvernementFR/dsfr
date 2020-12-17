@@ -1,93 +1,83 @@
-.#{$prefix}-card {
-  display: flex;
-  flex-direction: column;
+////
+/// Cards Module
+/// @group cards
+////
+
+#{dse(card)} {
+  @extend %default-text-color;
+  @include display-flex(column);
   position: relative;
   @include scheme-element-bg-color(beige, true, true);
 
-  .#{$prefix}-grid-row & {
-    height: 100%;
+  #{dse(grid-row)} & {
+    @include size(null, 100%);
   }
 
   &:not(&--no-arrow) &__body {
     @include font-icon(arrow-right-line, lg, after) {
-      width: space(3N);
-      height: space(3N);
-      margin-top: auto;
-      margin-left: auto;
+      @include size(6v, 6v);
+      @include margin-top(auto);
+      @include margin-left(auto);
       @include scheme-element-text-color(bf500, true);
     }
   }
 
   &__img {
-    position: relative;
-    width: 100%;
-
+    @include relative(null, null, null, null, 100%, null);
     @include aspect-ratio(16x9);
 
     img {
-      @include absolute-overlay() {
-        @extend %fit-cover-center;
-      }
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 50%;
-      top: 0;
-      left: 0;
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      @extend %fit-cover-center;
     }
   }
 
   &__body {
-    display: flex;
-    flex-direction: column;
+    @include display-flex(column);
     flex: 1 1 auto;
-    padding: space(3N);
-  }
-
-  &__img + &__body {
-    $bs:inset 1px 0 0 0 $COLOR, inset -1px -1px 0 0 $COLOR;
+    @include padding(6v);
   }
 
   &__detail {
-    margin-top: 0;
-    margin-bottom: space(2N);
+    @include margin-top(0);
+    @include margin-bottom(4v);
     @include text-styles(sm);
     @include scheme-element-text-color(g600, true);
   }
 
-  &__lead {
-    margin-top: 0;
-    margin-bottom: space(1N);
-    @include text-styles(lead);
+  &__title {
+    @include force-over-reset {
+      @include text-styles(xl);
+    }
+    @include scheme-element-text-color(g800);
+    @include font-weight(bold);
+
+    @include margin-top(0);
+    @include margin-bottom(2v);
   }
 
   &__desc {
-    margin-top: 0;
-    margin-bottom: space(2N);
+    @include margin-top(0);
+    @include margin-bottom(4v);
     @include text-styles(sm);
   }
 
-  .#{$prefix}-link,
   &__link {
-    position: static;
-    margin-top: auto;
+    @extend %a-reset;
+    @include override-reset-link-style;
+    @include force-over-reset {
+      &:focus {
+        outline-offset: 9999px;
+      }
+    }
+    display: inline-flex;
+    @include size(100%);
+    @include margin-top(auto);
 
     @include before(block, '') {
-      @include absolute-overlay();
+      @include absolute(0, 0, 0, 0, 100%, 100%);
       @include scheme-element-focus();
     }
-
-    &:focus {
-      outline-offset: 9999px;
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-    display: inline-flex;
-    box-shadow: none;
-    width: 100%;
   }
 
   @include respond-from(md) {
@@ -96,11 +86,7 @@
     }
 
     &--horizontal &__img {
-      width: 40.78%;
-    }
-
-    &--horizontal &__img + &__body {
-      $bs:inset 0 1px 0 0 $COLOR, inset -1px -1px 0 0 $COLOR;
+      @include size(40.78%);
     }
   }
 }

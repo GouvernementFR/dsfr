@@ -3,17 +3,17 @@
 /// @group Table
 ////
 
-$shadow-wrapper: "#{$prefix}-table__wrapper";
+$shadow-wrapper: #{dse(table__wrapper)};
 
 /*
-* Ombres ajoutées en Js si le conntenu est plus grand que le conteneur
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */
 &--shadow {
   caption {
     position: absolute;
   }
 
-  .#{$shadow-wrapper} {
+  #{$shadow-wrapper} {
     overflow: visible;
     position: relative;
 
@@ -36,7 +36,7 @@ $shadow-wrapper: "#{$prefix}-table__wrapper";
   /**
    * Modifier ombre à gauche
    **/
-  &-left .#{$shadow-wrapper} table {
+  &-left #{$shadow-wrapper} table {
     @include before(block, '') {
       @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(4N) 0 space(2N) (-(space(3N))) $COLOR, inset 0 0 0 transparent));
     }
@@ -45,7 +45,7 @@ $shadow-wrapper: "#{$prefix}-table__wrapper";
   /**
    * Modifier ombre à droite
    **/
-  &-right .#{$shadow-wrapper} table {
+  &-right #{$shadow-wrapper} table {
     @include before(block, '') {
       @include scheme-element-box-shadow-color(scroll-shadow, false, (inset 0 0 0 transparent, inset (-(space(4N))) 0 space(2N) (-(space(3N))) $COLOR));
     }
@@ -54,7 +54,7 @@ $shadow-wrapper: "#{$prefix}-table__wrapper";
   /**
    * Modifier combinaison ombre à gauche et ombre à droite
    **/
-  &-left#{&}-right .#{$shadow-wrapper} table {
+  &-left#{&}-right #{$shadow-wrapper} table {
     @include before(block, '') {
       @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(4N) 0 space(2N) (-(space(3N))) $COLOR, inset (-(space(4N))) 0 space(2N) (-(space(3N))) $COLOR));
     }

@@ -1,0 +1,138 @@
+////
+/// Toggle Module
+/// @group toggle
+////
+
+.#{$prefix}-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: space(2w) 0;
+
+  /*
+   * On utilise un input de type checkbox pour gérer le toggle
+   * On reset ses styles afin de ne garder que son fonctionnement et son espacement
+   * On l'utilisera égalemement pour afficher l'état du toggle (optionnel)
+   */
+  &__input {
+    flex-shrink: 0;
+    width: space(5w);
+    height: space(3w);
+    border: 0;
+    border-radius: space(5w);
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
+    @include scheme-element-focus();
+    @include disabled-toggle-choice();
+
+    /*
+     * On applique des styles aux pseudo-elements du label quand l'input est check.
+     * On change l'ordre du texte d'état du label dans le content pour afficher
+     * la valeur correspondant à l'état checked (optionnel).
+     */
+    &:checked {
+      @include scheme-element-bg-color(bf500);
+
+      ~ .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
+      ~ .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
+        content: attr(data-rf-checked-label) '\A' attr(data-rf-unchecked-label);
+      }
+
+      ~ .#{$prefix}-toggle__label::after {
+        transform: translateX(space(2w));
+        text-indent: 0;
+        @include z-index(focus);
+      }
+    }
+
+    /*
+     * Hack pour IE11
+     */
+    &::-ms-check {
+      display: none;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    min-height: space(3w);
+    padding-left: space(2w);
+
+    /*
+     * Si les data attributes sont présents, on assigne un content au pseudo element before,
+     * et on enlève le padding left du label.
+     */
+    &[data-#{$prefix}-unchecked-label],
+    &[data-#{$prefix}-checked-label] {
+      padding-left: 0;
+
+      &::before {
+        content: attr(data-rf-unchecked-label) '\A' attr(data-rf-checked-label);
+      }
+
+      + .#{$prefix}-hint-text {
+        margin-top: space(1w);
+      }
+    }
+
+    /*
+     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
+     * On récupère le text via l'attribut [data-rf-unchecked-label]
+     */
+    &::before {
+      flex-shrink: 0;
+      font-family: $font-family-sans;
+      height: calc(#{space(3v)} - 1px);
+      margin-top: calc(#{space(3w)} + #{space(1v)});
+      margin-left: -(space(5w));
+      margin-right: space(2w);
+      font-size: font-size(12);
+      line-height: line-height(none);
+      @include scheme-element-text-color(bf500);
+      white-space: pre-wrap;
+      overflow: hidden;
+    }
+
+    /*
+     * On inclut l'icône check dans un pseudo-element after
+     * On la cache via un text-indent quand l'input n'est pas check
+     */
+    @include font-icon(check-line, md, after) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: space(2w);
+      left: 0;
+      border-radius: 50%;
+      width: space(3w);
+      height: space(3w);
+      text-indent: -9999px;
+      @include scheme-element-text-color(bf500);
+      @include scheme-element-border-color(bf500);
+      @include scheme-element-bg-color(w);
+      @include z-index(over);
+    }
+  }
+
+  .#{$prefix}-hint-text {
+    @extend %hint-text;
+    flex-basis: 100%;
+    margin-top: space(2w);
+  }
+
+  /*
+   * Import des modificateurs (séparateur et label à gauche)
+   */
+  @import 'modules/variants';
+}
+
+/*
+ * Provisoire: à enlever quand rf-body sera en place
+ */
+@import 'modules/group';

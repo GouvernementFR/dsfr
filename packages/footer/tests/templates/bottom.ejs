@@ -2,8 +2,8 @@
   <%
     for (let i = 0; i < links.length; i++) {
   %>
-    <li>
-      <a href="#"><%= links[i].label %></a>
+    <li class="<%= prefix %>-footer__bottom-item">
+      <a class="<%= prefix %>-footer__bottom-link" href="#"><%= links[i].label %></a>
     </li>
   <% } %>
 </ul>

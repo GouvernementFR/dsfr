@@ -1,0 +1,56 @@
+////
+/// Core Settings : Typography font-size
+/// @group core
+////
+
+/// $type-scale
+/// @deprecated
+$type-scale: (
+  12: 12px,
+  14: 14px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+  22: 22px,
+  24: 24px,
+  28: 28px,
+  32: 32px,
+  44: 44px,
+  48: 48px,
+  56: 56px,
+  64: 64px,
+  72: 72px,
+  88: 88px,
+  96: 96px
+);
+
+/// $line-height-scale
+/// @deprecated
+$line-height-scale: (
+  none: 1,
+  tight: 1.25,
+  snug: 1.375,
+  normal: 1.5,
+  relaxed: 1.625,
+  loose: 2
+);
+
+/// font-size + line-height, nouvelle version line-height
+$font-size-settings: (
+  12: 12px 4v,
+  14: 14px 5v,
+  16: 16px 6v,
+  18: 18px 7v,
+  20: 20px 8v,
+  22: 22px 8v,
+  24: 24px 9v,
+  28: 28px 9v,
+  32: 32px 10v,
+  44: 44px 14v,
+  48: 48px 15v,
+  56: 56px 18v,
+  64: 64px 20v,
+  72: 72px 22v,
+  80: 80px 24v,
+  88: 88px 26v,
+);

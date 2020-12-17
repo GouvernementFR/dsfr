@@ -1,3 +1,8 @@
+////
+/// Links Tools : build
+/// @group links
+////
+
 %base-link {
   @extend %inline-flex-center;
   @include scheme-element-focus();
@@ -7,6 +12,8 @@
 }
 
 @mixin _reset-links-tags($tags) {
+  @include override-reset-link-style;
+
   @at-root {
     @if index($tags, a) != null {
       #{selector_unify(&, a)} {
@@ -42,7 +49,6 @@
   $places: map_get($settings, places);
 
   %#{$module}--md {
-    @extend %font-smoothing;
     @extend %base-link;
   }
 
@@ -58,7 +64,7 @@
     }
   }
 
-  @each $place, $icon in $places {
+  @each $place in $places {
     @each $size, $size-settings in $sizes {
       @at-root {
         %#{$module}--icon-#{$place}--#{$size} {
@@ -75,12 +81,18 @@
 
 @include _build-link-placeholders($links-settings, link, true);
 
-@mixin _build-link($settings, $module, $border-radius:false, $tags:a button) {
+@mixin _build-link($settings, $module, $border-radius:false, $cursor: pointer, $tags:a button) {
   $align: #{$module}-align-on-content;
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
+  margin: 0;
+
   @include _reset-links-tags($tags);
+
+  @if $cursor != null {
+    cursor: #{$cursor};
+  }
 
   @each $size, $size-settings in $sizes {
     $placeholder: #{$module}--#{$size};
@@ -95,23 +107,49 @@
     }
   }
 
-  @each $place, $icon in $places {
+  $not-sided: ':not([class*="#{$module}--icon-"])';
+
+  @each $place in $places {
 
     @each $size, $size-settings in $sizes {
-      @if $size == md {
-        &--icon-#{$place} {
-          @extend %#{$module}--icon-#{$place}--md;
+      $placeholder: '#{$module}--icon-#{$place}--#{$size}';
+
+      @at-root #{&} {
+        @if $place == only {
+          @if $size == md {
+            &#{$not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
+          @else {
+            &--#{$size + $not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
         }
-      }
-      @else {
-        &--icon-#{$place}#{&}--#{$size} {
-          @extend %#{$module}--icon-#{$place}--#{$size};
+        @else {
+          @if $size == md {
+            &--icon-#{$place} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
+          @else {
+            &--#{$size}#{&}--icon-#{$place + $not-sided} {
+              @include has-icon {
+                @extend %#{$placeholder};
+              }
+            }
+          }
         }
       }
     }
   }
-
-  @include _link-default-icons($places);
 }
 
 @mixin build-link() {

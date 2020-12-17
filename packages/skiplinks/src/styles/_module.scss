@@ -3,36 +3,42 @@
 /// @group skiplinks
 ////
 
-.#{$prefix}-skiplinks {
+#{dse(skiplinks)} {
   position: absolute;
   padding: space(2w) 0;
   @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    margin: 0 (-(space(2w))) (-(space(3w)));
+  &:focus-within {
+    position: relative;
+    transform: translateY(0);
+  }
+}
 
-    > li {
-      margin: 0 space(1v) space(3w);
-      /**
-       * Provisoire : on annule le before du ul global (en attente du rf-body)
-       */
-      &::before {
-        content: none;
-      }
+#{dse(skiplinks__list)} {
+  @extend %list-reset;
+  display: flex;
+  flex-direction: column;
+  margin: 0 (-(space(2w))) (-(space(2w)));
 
-      @include respond-from(md) {
-        margin: 0 space(1v);
-      }
+  > li {
+    margin: 0 space(2w) space(1v);
+
+    &::before {
+      content: none;
     }
 
-    @include respond-from(md) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 0 (-(space(2w)));
+    @include nest-link(md, null, null, null, true);
+
+    @include respond-from(sm) {
+      margin: 0 space(2w);
     }
+  }
+
+  @include respond-from(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 (-(space(2w)));
   }
 
   &:focus-within {

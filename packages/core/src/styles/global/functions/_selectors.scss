@@ -1,0 +1,23 @@
+////
+/// Core Tools : Global selector
+/// @group core
+////
+
+@function dse($name, $notation: '.') {
+  $class-name: $notation + $prefix + '-' + $name;
+  @return $class-name;
+}
+
+@function dse-group($name) {
+  @return dse($name + '-group');
+}
+
+@function dse-attr($name, $value: null) {
+  $attr: 'data-#{dse($name, "")}';
+  @if $value == null {
+    @return '[' + $attr + ']';
+  }
+  @else {
+    @return '[' + $attr + '="' + $value + '"]';
+  }
+}

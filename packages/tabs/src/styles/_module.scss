@@ -1,0 +1,168 @@
+////
+/// Tabs Module
+/// @group tabs
+////
+
+#{dse(tabs)} {
+  position: relative;
+  @include padding-bottom(1px); // fix next element margin
+
+  // retire le padding du container en mobile
+  @include respond-to(sm) {
+    margin-left: -(space(4v));
+    margin-right: -(space(4v));
+    .#{$prefix}-tabs {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  /**
+   * ul : element srollable des boutons
+   */
+  &__list {
+    display: flex;
+    align-items: flex-end;
+    overflow-x: auto;
+    list-style: none;
+    width: 100%;
+
+    /**
+    * overflow vertical de 4px pour le focus
+    */
+    margin: -4px 0;
+    padding: 4px 0.5rem;
+
+    /**
+    * Animation de la hauteur du panel
+    */
+    transition: margin-bottom 0.1s; // Todo: change animation
+
+    @include after(block, '') {
+      flex: 1 1 auto;
+      height: 1px;
+      margin-left: -(space(2v));
+      margin-right: -(space(2v));
+      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+    }
+
+    /**
+    * Reset du style par défaut du li
+    */
+    li {
+      display: block;
+      flex: 0 0 auto;
+      margin: 0 0.5rem;
+      @include before(none, none);
+
+      &:not(:first-child) {
+        margin-left: 0;
+        @include before(block, '') {
+          position: sticky;
+          margin-left: -(space(2v));
+          width: space(2v);
+          top: 100%;
+          height: 1px;
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+
+      &:last-child {
+        padding-right: space(4v);
+
+        @include after(block, '') {
+          min-width: 1rem;
+          margin-left: 100%;
+          flex: 1 1 auto;
+          width: auto;
+          top: 100%;
+          height: 1px;
+          margin-top: -1px;
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+
+      &:first-child {
+        @include before(block, '') {
+          position: sticky;
+          margin-left: -100%;
+          width: 100%;
+          top: 100%;
+          height: 1px;
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+    }
+  }
+
+  /**
+  * Tab button
+  */
+  &__tab {
+    @include build-tab();
+    position: relative;
+    overflow: visible;
+    font-weight: bold;
+    @include z-index(over);
+
+    &:not([aria-selected=true]) {
+      @include scheme-element-bg-color(bf100-g750, true, true);
+      @include scheme-element-text-color(g700);
+      @include disabled(g600, g300);
+      @include scheme-element-focus(t-plain);
+      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+    }
+
+    &[aria-selected=true] {
+      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0.125rem 0 0 $COLOR');
+      @include scheme-element-bg-color(t-plain, true, true);
+      @include scheme-element-text-color(bf500);
+      @include remove-hover();
+      cursor: default;
+
+      @include after(block, '') {
+        @include absolute(2px, 1px, 0, 1px, auto, calc(100% - 1px));
+        @include scheme-element-box-shadow-color(g300, true, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
+        // @include scheme-element-box-shadow-color(w, true, 'inset 0 -3px 0 0 $COLOR');
+        @include z-index(over);
+      }
+    }
+  }
+
+  /**
+  * Tab Panel
+  */
+  &__panel {
+    display: block;
+    height: auto;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    visibility: visible;
+    padding: space(4v);
+    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
+    transition: opacity 0.1s, visibility 0.1s; // Todo: change animation
+
+    @include respond-from(md) {
+      padding: space(8v);
+    }
+
+    &--selected {
+      opacity: 1;
+      @include scheme-element-focus();
+
+      &:focus {
+        outline-offset: calc(-1rem + 2px);
+        @include respond-from(md) {
+          outline-offset: calc(-2rem + 2px);
+        }
+      }
+    }
+
+    &[hidden] {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+}

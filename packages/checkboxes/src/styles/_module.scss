@@ -1,13 +1,19 @@
-.#{$prefix}-checkbox-group {
+////
+/// Checkboxes Module
+/// @group checkboxes
+////
+
+#{dse(checkbox-group)} {
+  @extend %default-text-color;
   position: relative;
 
-  .#{$prefix}-hint-text {
+  #{dse(hint-text)} {
     margin-left: space(4N);
     margin-top: -(space(1-5N));
   }
 
-  .#{$prefix}-error-text,
-  .#{$prefix}-valid-text {
+  #{dse(error-text)},
+  #{dse(valid-text)} {
     // si un élément suit, il va venir sur le texte d'erreur avec absolute
     //position: absolute;
     margin-top: -(space(0-5N));
@@ -27,7 +33,7 @@
       }
     }
 
-    .#{$prefix}-hint-text {
+    #{dse(hint-text)} {
       margin-left: space(3N);
     }
   }
@@ -37,7 +43,7 @@
       @include scheme-element-text-color(error);
     }
 
-    &::before {
+    @include before() {
       content: "";
       position: absolute;
       width: 2px;
@@ -53,7 +59,7 @@
       @include scheme-element-text-color(success);
     }
 
-    &::before {
+    @include before() {
       content: "";
       position: absolute;
       width: 2px;
@@ -78,42 +84,58 @@
 
     + label {
       position: relative;
-      display: inline-flex;
-      align-items: center;
       cursor: pointer;
       padding: space(1-5N) 0;
       font-size: font-size(14);
       -webkit-tap-highlight-color: transparent;
+      display: grid;
+      display: -ms-grid;
+      grid-row: 1;
+      -ms-grid-row: 2;
+      grid-column: 2;
+      -ms-grid-column: 2;
+      align-items: center;
+      -ms-align-items: center;
+      grid-template-columns: 1fr space(8v);
+      -ms-grid-columns: 1fr space(8v);
+      text-align: left;
+      direction: rtl;
 
-      &::before {
-        content: '';
-        display: inline-block;
+      @include font-icon(check-line, md, before) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex-shrink: 0;
         width: space(3N);
         height: space(3N);
         margin-right: space(1N);
         border-radius: space(0-5N);
         @include scheme-element-border-color(g800, true);
-        transition: background-color 0.1s;
+        color: transparent;
+        transition: background-color 0.1s, color 0.1s;
+        grid-row: 1;
+        -ms-grid-row: 1;
+        grid-column: 2;
+        -ms-grid-column: 2;
+        -ms-align-items: center;
       }
 
-      @include font-icon(check-line, md, after) {
-        @include scheme-element-text-color(g100);
-        position: absolute;
-        opacity: 0;
-        left: space(0-5N);
-        transition: opacity 0.1s;
+      .rf-hint-text {
+        margin: 0;
+        grid-row: 2;
+        grid-column: 1;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
       }
     }
 
     &:checked,
     &:active {
-      + label::before {
-        @include scheme-element-bg-color(bf500);
-      }
-
-      + label::after {
-        opacity: 1;
+      + label {
+        @include before() {
+          @include scheme-element-bg-color(bf500);
+          @include scheme-element-text-color(g100);
+        }
       }
     }
 
