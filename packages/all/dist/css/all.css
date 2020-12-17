@@ -4663,7 +4663,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 \* ------------------------------------ */
 .rf-skiplinks {
   position: absolute;
-  padding: 0.75rem 0;
+  padding: 1rem 0;
   background-color: var(--g200);
   transform: translateY(-100%); }
   .rf-skiplinks:focus-within {
@@ -4684,11 +4684,14 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @media (min-width: 36em) {
       .rf-skiplinks__list > li {
         margin: 0 1rem; } }
-  @media (min-width: 36em) {
+  @media (min-width: 48em) {
     .rf-skiplinks__list {
-      margin: 0 -1rem;
       flex-direction: row;
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      margin: 0 -1rem; } }
+  .rf-skiplinks__list:focus-within {
+    position: relative;
+    transform: translateY(0); }
 
 /* ------------------------------------ *\
   ACCORDIONS
