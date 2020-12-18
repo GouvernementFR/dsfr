@@ -36,8 +36,8 @@
     @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
-  $medias: (&__img, dse(responsive-vid));
-  $captions: (&__caption, &__transcription);
-
+  $medias: (#{&}__img, dse(responsive-vid));
+  $captions: (#{&}__caption, #{&}__transcription);
+  @debug $medias;
   @include content-media-sizes($medias, $captions, 25%);
 }
