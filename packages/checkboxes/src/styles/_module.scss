@@ -7,77 +7,6 @@
   @extend %default-text-color;
   position: relative;
 
-  #{dse(hint-text)} {
-    margin-left: space(4N);
-    margin-top: -(space(1-5N));
-  }
-
-  #{dse(error-text)},
-  #{dse(valid-text)} {
-    // si un élément suit, il va venir sur le texte d'erreur avec absolute
-    //position: absolute;
-    margin-top: -(space(0-5N));
-  }
-
-  &--sm {
-    input[type="checkbox"] {
-      + label {
-        &::before {
-          width: space(2N);
-          height: space(2N);
-        }
-
-        &::after {
-          left: 0;
-        }
-      }
-    }
-
-    #{dse(hint-text)} {
-      margin-left: space(3N);
-    }
-  }
-
-  &--error {
-    input[type="checkbox"] + label {
-      @include scheme-element-text-color(error);
-    }
-
-    @include before() {
-      content: "";
-      position: absolute;
-      width: 2px;
-      top: space(1-5N);
-      height: space(3N);
-      left: -(space(1N));
-      @include scheme-element-bg-color(error);
-    }
-  }
-
-  &--valid {
-    input[type="checkbox"] + label {
-      @include scheme-element-text-color(success);
-    }
-
-    @include before() {
-      content: "";
-      position: absolute;
-      width: 2px;
-      top: space(1-5N);
-      height: space(3N);
-      left: -(space(1N));
-      @include scheme-element-bg-color(success);
-    }
-  }
-
-  &:first-child {
-    margin-top: -(space(1-5N));
-  }
-
-  &:last-child {
-    margin-bottom: -(space(1-5N));
-  }
-
   input[type="checkbox"] {
     position: absolute;
     opacity: 0;
@@ -142,5 +71,76 @@
     @include scheme-element-focus(false, '+ label::before');
 
     @include disabled-form-choice();
+  }
+
+  &:first-child {
+    margin-top: -(space(1-5N));
+  }
+
+  &:last-child {
+    margin-bottom: -(space(1-5N));
+  }
+
+  #{dse(hint-text)} {
+    margin-left: space(4N);
+    margin-top: -(space(1-5N));
+  }
+
+  #{dse(error-text)},
+  #{dse(valid-text)} {
+    // si un élément suit, il va venir sur le texte d'erreur avec absolute
+    //position: absolute;
+    margin-top: -(space(0-5N));
+  }
+
+  &--sm {
+    input[type="checkbox"] {
+      + label {
+        &::before {
+          width: space(2N);
+          height: space(2N);
+        }
+
+        &::after {
+          left: 0;
+        }
+      }
+    }
+
+    #{dse(hint-text)} {
+      margin-left: space(3N);
+    }
+  }
+
+  &--error {
+    input[type="checkbox"] + label {
+      @include scheme-element-text-color(error);
+    }
+
+    @include before() {
+      content: "";
+      position: absolute;
+      width: 2px;
+      top: space(1-5N);
+      height: space(3N);
+      left: -(space(1N));
+      @include scheme-element-bg-color(error);
+    }
+  }
+
+  &--valid {
+    input[type="checkbox"] + label {
+      @include scheme-element-text-color(success);
+    }
+
+    @include before() {
+      content: "";
+      position: absolute;
+      width: 2px;
+      top: space(1-5N);
+      height: space(3N);
+      left: -(space(1N));
+      @include scheme-element-bg-color(success);
+    }
   }
 }

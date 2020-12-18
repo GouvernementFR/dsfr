@@ -108,6 +108,7 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       display: none; }
   .rf-toggle__label {
     display: inline-flex;
+    flex-basis: calc(100% - 2.5rem);
     min-height: 1.5rem;
     padding-left: 1rem;
     /*
