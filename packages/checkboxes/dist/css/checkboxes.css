@@ -24,43 +24,6 @@
  */
 .rf-checkbox-group {
   position: relative; }
-  .rf-checkbox-group .rf-hint-text {
-    margin-left: 2rem;
-    margin-top: -0.75rem; }
-  .rf-checkbox-group .rf-error-text,
-  .rf-checkbox-group .rf-valid-text {
-    margin-top: -0.25rem; }
-  .rf-checkbox-group--sm input[type="checkbox"] + label::before {
-    width: 1rem;
-    height: 1rem; }
-  .rf-checkbox-group--sm input[type="checkbox"] + label::after {
-    left: 0; }
-  .rf-checkbox-group--sm .rf-hint-text {
-    margin-left: 1.5rem; }
-  .rf-checkbox-group--error input[type="checkbox"] + label {
-    color: var(--error); }
-  .rf-checkbox-group--error::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    top: 0.75rem;
-    height: 1.5rem;
-    left: -0.5rem;
-    background-color: var(--error); }
-  .rf-checkbox-group--valid input[type="checkbox"] + label {
-    color: var(--success); }
-  .rf-checkbox-group--valid::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    top: 0.75rem;
-    height: 1.5rem;
-    left: -0.5rem;
-    background-color: var(--success); }
-  .rf-checkbox-group:first-child {
-    margin-top: -0.75rem; }
-  .rf-checkbox-group:last-child {
-    margin-bottom: -0.75rem; }
   .rf-checkbox-group input[type="checkbox"] {
     position: absolute;
     opacity: 0; }
@@ -118,6 +81,43 @@
       .rf-checkbox-group input[type="checkbox"][disabled] + label::before, .rf-checkbox-group input[type="checkbox"][disabled] + label::after, .rf-checkbox-group input[type="checkbox"]:disabled + label::before, .rf-checkbox-group input[type="checkbox"]:disabled + label::after {
         background-color: var(--g200);
         border: 1px solid var(--g400); }
+  .rf-checkbox-group:first-child {
+    margin-top: -0.75rem; }
+  .rf-checkbox-group:last-child {
+    margin-bottom: -0.75rem; }
+  .rf-checkbox-group .rf-hint-text {
+    margin-left: 2rem;
+    margin-top: -0.75rem; }
+  .rf-checkbox-group .rf-error-text,
+  .rf-checkbox-group .rf-valid-text {
+    margin-top: -0.25rem; }
+  .rf-checkbox-group--sm input[type="checkbox"] + label::before {
+    width: 1rem;
+    height: 1rem; }
+  .rf-checkbox-group--sm input[type="checkbox"] + label::after {
+    left: 0; }
+  .rf-checkbox-group--sm .rf-hint-text {
+    margin-left: 1.5rem; }
+  .rf-checkbox-group--error input[type="checkbox"] + label {
+    color: var(--error); }
+  .rf-checkbox-group--error::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    top: 0.75rem;
+    height: 1.5rem;
+    left: -0.5rem;
+    background-color: var(--error); }
+  .rf-checkbox-group--valid input[type="checkbox"] + label {
+    color: var(--success); }
+  .rf-checkbox-group--valid::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    top: 0.75rem;
+    height: 1.5rem;
+    left: -0.5rem;
+    background-color: var(--success); }
 
 
 /*# sourceMappingURL=checkboxes.css.map*/

@@ -64,8 +64,8 @@ allPackageFileContent.dependencies = allPckDeps;
 
 // Create path and files for package all
 createDir(pathAll + '/src/scripts/');
-createFile(pathAll + '/src/scripts/' + 'dist.js', "import '@gouvfr/all/_dist.scss';\r\n" + allPckJs.map(item => item).join(";\r\n") + ";\r\n")
 createFile(pathAll + '/_dist.scss', allPckMains.map(item => item).join("';\r\n") + "';\r\n");
+createFile(pathAll + '/src/scripts/' + 'dist.js', "import '@gouvfr/all/_dist.scss';\r\n" + allPckJs.map(item => item).join(";\r\n") + ";\r\n")
 createFile(pathAll + '/package.json', JSON.stringify(allPackageFileContent));
 
 
@@ -83,7 +83,7 @@ packages.forEach(function (pck) {
 
   if (pck.id !== 'all') {
     pckDistDepsContent = Object.keys(pck.dependencies).map(function(value){
-      if (value.includes('forms') || value.includes('utilities')) {
+      if (value.includes('forms') || value.includes('radios') || value.includes('utilities')) {
         return "@import '~" + value + importsArr[1] + "';\r\n"
       } else {
         return "@import '~" + value + importsArr[0] + "';\r\n" + "@import '~" + value + importsArr[1] + "';\r\n"

@@ -1,0 +1,13 @@
+@import '~@gouvfr/schemes/src/styles/settings';
+@import '~@gouvfr/schemes/src/styles/tools';
+
+@import '~@gouvfr/core/src/styles/settings';
+@import '~@gouvfr/core/src/styles/tools';
+
+@import '~@gouvfr/forms/src/styles/tools';
+
+@import '~@gouvfr/radios/src/styles/tools';
+
+@import '../radios/src/styles/tools';
+@import 'src/styles/tools';
+@import 'src/styles/module';
