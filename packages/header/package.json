@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "license": "MIT",
   "description": "Header",
+  "level": "6",
   "publishConfig": {
     "access": "public"
   },
@@ -10,10 +11,10 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/core": "^0.3.1",
-    "@gouvfr/logo": "^0.3.1",
-    "@gouvfr/navigation": "^0.3.1",
     "@gouvfr/schemes": "^0.3.1",
-    "@gouvfr/search": "^0.3.1"
+    "@gouvfr/core": "^0.3.1",
+    "@gouvfr/links": "^0.3.1",
+    "@gouvfr/buttons": "^0.3.1",
+    "@gouvfr/logo": "^0.3.1"
   }
 }

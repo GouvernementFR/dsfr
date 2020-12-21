@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "license": "MIT",
   "description": "Menu latéral",
+  "level": "5",
   "publishConfig": {
     "access": "public"
   },

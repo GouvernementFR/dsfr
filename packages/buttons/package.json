@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "license": "MIT",
   "description": "Boutons",
+  "level": "4",
   "publishConfig": {
     "access": "public"
   },
@@ -13,8 +14,8 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
+    "@gouvfr/schemes": "^0.3.1",
     "@gouvfr/core": "^0.3.1",
-    "@gouvfr/links": "^0.3.1",
-    "@gouvfr/schemes": "^0.3.1"
+    "@gouvfr/links": "^0.3.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/design-system",
-  "version": "0.2.0",
+  "version": "0.3.1",
   "description": "Design System de l'Etat",
   "repository": "git@github.com:GouvernementFR/design-system.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
@@ -21,7 +21,7 @@
     "test:pa11y": "node ./scripts/pa11y",
     "test": "run-s build-test test:*",
     "build-test": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.test.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
+    "build": "node ./webpack/distGenerator.js && cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
