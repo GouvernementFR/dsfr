@@ -38,8 +38,8 @@
   line-height: line-height(normal);
   font-family: $font-family-sans;
   display: block;
-  margin-top: 0;
-  margin-bottom: 0;
+  @include margin-top(0);
+  @include margin-bottom(0);
 
   @include scheme-element-text-color(g600, true);
 }

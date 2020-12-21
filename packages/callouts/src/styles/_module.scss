@@ -5,7 +5,7 @@
 
 #{dse(callout)} {
   @extend %default-text-color;
-  position: relative;
+  @include relative();
   padding: space(3w);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
@@ -29,7 +29,7 @@
     @include padding(14v 12v 10v, md);
   }
 
-  &__title {
+  @include title() {
     font-size: font-size(22);
     line-height: line-height("snug");
     @include scheme-element-text-color(g800, true);

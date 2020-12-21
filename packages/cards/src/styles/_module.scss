@@ -6,7 +6,7 @@
 #{dse(card)} {
   @extend %default-text-color;
   @include display-flex(column);
-  position: relative;
+  @include relative();
   @include scheme-element-bg-color(beige, true, true);
 
   #{dse(grid-row)} & {
@@ -32,7 +32,7 @@
     }
   }
 
-  &__body {
+  @include body() {
     @include display-flex(column);
     flex: 1 1 auto;
     @include padding(6v);

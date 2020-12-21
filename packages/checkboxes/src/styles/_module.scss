@@ -5,16 +5,16 @@
 
 #{dse(checkbox-group)} {
   @extend %default-text-color;
-  position: relative;
+  @include relative;
 
   input[type="checkbox"] {
-    position: absolute;
+    @include absolute;
     opacity: 0;
 
     + label {
-      position: relative;
+      @include relative;
       cursor: pointer;
-      padding: space(1-5N) 0;
+      @include padding(3v 0);
       font-size: font-size(14);
       -webkit-tap-highlight-color: transparent;
       display: grid;
@@ -31,26 +31,24 @@
       direction: rtl;
 
       @include font-icon(check-line, md, before) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include display-flex(row, center, center);
         flex-shrink: 0;
         width: space(3N);
         height: space(3N);
         margin-right: space(1N);
         border-radius: space(0-5N);
         @include scheme-element-border-color(g800, true);
-        color: transparent;
-        transition: background-color 0.1s, color 0.1s;
+        @include scheme-element-text-color(t-plain);
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
         -ms-grid-column: 2;
         -ms-align-items: center;
+        transition: background-color 0.1s, color 0.1s;
       }
 
-      .rf-hint-text {
-        margin: 0;
+      #{dse(hint-text)} {
+        @include margin(0);
         grid-row: 2;
         grid-column: 1;
         -ms-grid-row: 2;
@@ -74,41 +72,40 @@
   }
 
   &:first-child {
-    margin-top: -(space(1-5N));
+    @include margin-top(-3v);
   }
 
   &:last-child {
-    margin-bottom: -(space(1-5N));
+    @include margin-bottom(-3v);
   }
 
   #{dse(hint-text)} {
-    margin-left: space(4N);
-    margin-top: -(space(1-5N));
+    @include margin-left(8v);
+    @include margin-top(-3v);
   }
 
   #{dse(error-text)},
   #{dse(valid-text)} {
     // si un élément suit, il va venir sur le texte d'erreur avec absolute
     //position: absolute;
-    margin-top: -(space(0-5N));
+    @include margin-top(-1v);
   }
 
   &--sm {
     input[type="checkbox"] {
       + label {
-        &::before {
-          width: space(2N);
-          height: space(2N);
+        @include before {
+          @include size(4v, 4v);
         }
 
-        &::after {
+        @include after {
           left: 0;
         }
       }
     }
 
     #{dse(hint-text)} {
-      margin-left: space(3N);
+      @include margin-left(6v);
     }
   }
 
@@ -117,13 +114,8 @@
       @include scheme-element-text-color(error);
     }
 
-    @include before() {
-      content: "";
-      position: absolute;
-      width: 2px;
-      top: space(1-5N);
-      height: space(3N);
-      left: -(space(1N));
+    @include before(null, '') {
+      @include absolute(3v, null, null, -2v, 2px, 6v);
       @include scheme-element-bg-color(error);
     }
   }
@@ -133,13 +125,8 @@
       @include scheme-element-text-color(success);
     }
 
-    @include before() {
-      content: "";
-      position: absolute;
-      width: 2px;
-      top: space(1-5N);
-      height: space(3N);
-      left: -(space(1N));
+    @include before(null, '') {
+      @include absolute(3v, null, null, -2v, 2px, 6v);
       @include scheme-element-bg-color(success);
     }
   }

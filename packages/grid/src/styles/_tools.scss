@@ -33,7 +33,7 @@
 ///   }
 @mixin grid-col-offset($size, $columns: $grid-columns) {
   $num: $size / $columns;
-  margin-left: if($num == 0, 0, percentage($num));
+  @include margin-left(if($num == 0, 0, percentage($num)));
 }
 
 /// Generate grid sized columns classes for specific media query

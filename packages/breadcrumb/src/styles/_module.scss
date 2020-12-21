@@ -32,7 +32,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include scheme-element-focus();
   }
 
-  &__list {
+  @include list() {
     @extend %list-reset;
     line-height: 1.5;
     display: block;
@@ -46,11 +46,13 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /**
   margin-bottom de 1N pour créer cet espace entre chaque ligne
    */
-  &__item {
+  @include group-item() {
     display: inline;
 
-    &:first-child::before {
-      content: none;
+    &:first-child {
+      @include before() {
+        content: none;
+      }
     }
 
     /**
@@ -65,48 +67,45 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
       &::before {
         @include scheme-element-text-color(g600, true);
-        margin-right: 0;
+        @include margin-right(0);
         //margin-top: 0.0625rem;
         //margin-bottom: 0.5625rem;
         vertical-align: middle;
       }
     }
-  }
 
-  &__item a {
-    @extend %a;
-    display: inline;
-    vertical-align: middle;
-  }
+    a {
+      @extend %a;
+      display: inline;
+      vertical-align: middle;
+    }
 
-  /**
-    on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
-   */
-  &__item:not(:last-child)::after {
-    margin-right: 0;
-    content: '';
-  }
+    /**
+      on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
+    */
+    &:not(:last-child) {
+      @include after() {
+        @include margin-right(0);
+        content: '';
+      }
 
-  &__item:not(:last-child) a {
-    @include scheme-element-text-color(g600, true);
-    // @include link-underline;
-  }
+      a {
+        @include scheme-element-text-color(g600, true);
+      }
+    }
 
-  /**
-    lien actuel non clickable, bold et sans underline
-     */
-  &__item--current {
-    pointer-events: none;
-  }
+    &--curent {
+      pointer-events: none;
 
-  &__item--current a {
-    @include scheme-element-text-color(g800, true);
+      a {
+        @include scheme-element-text-color(g800, true);
+      }
+    }
   }
 
   /**
   Mobile first, le label du "button" mobile est caché à partir du breakpoint md
    */
-
   @include respond-from(md) {
     @include margin-bottom(6v);
   }

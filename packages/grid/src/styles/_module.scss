@@ -4,11 +4,10 @@
 ////
 
 #{dse(grid-row)} {
-  display: flex;
-  flex-wrap: wrap;
+  @include display-flex(null, null, null, wrap);
   list-style: none;
-  margin: 0;
-  padding: 0;
+  @include margin(0);
+  @include padding(0);
 
   // Vertical alignment
   &--top {
@@ -38,26 +37,14 @@
 
   // Gutters
   &--gutters {
-    margin: 0 #{space(map-get($grid-gutter-width, xs)) * - 0.5};
-
-    @include respond-from(md) {
-      margin: 0 #{space(map-get($grid-gutter-width, md)) * - 0.5};
-    }
-
-    @include respond-from(lg) {
-      margin: 0 #{space(map-get($grid-gutter-width, lg)) * - 0.5};
-    }
+    @include margin(0 #{space(map-get($grid-gutter-width, xs)) * - 0.5});
+    @include margin(0 #{space(map-get($grid-gutter-width, md)) * - 0.5}, md);
+    @include margin(0 #{space(map-get($grid-gutter-width, lg)) * - 0.5}, lg);
 
     @include class-start-with(#{$prefix}-col, false) {
-      padding: #{space(map-get($grid-gutter-width, xs)) * 0.5};
-
-      @include respond-from(md) {
-        padding: #{space(map-get($grid-gutter-width, md)) * 0.5};
-      }
-
-      @include respond-from(lg) {
-        padding: #{space(map-get($grid-gutter-width, lg)) * 0.5};
-      }
+      @include margin(0 #{space(map-get($grid-gutter-width, xs)) * 0.5});
+      @include margin(0 #{space(map-get($grid-gutter-width, md)) * 0.5}, md);
+      @include margin(0 #{space(map-get($grid-gutter-width, lg)) * 0.5}, lg);
     }
   }
 }
