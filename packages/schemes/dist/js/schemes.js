@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 42);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -128,7 +128,7 @@ var Initializer = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 42:
+/***/ 41:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -136,9 +136,9 @@ var Initializer = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/schemes/_dist.scss
-var _dist = __webpack_require__(7);
+var _dist = __webpack_require__(9);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./packages/schemes/src/scripts/scheme/scheme.js
@@ -225,7 +225,7 @@ new Initializer["Initializer"](':root[' + Scheme.SCHEME_ATTRIBUTE + ']', [Scheme
 
 /***/ }),
 
-/***/ 7:
+/***/ 9:
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin

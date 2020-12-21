@@ -12,7 +12,6 @@
   "dependencies": {
     "@gouvfr/buttons": "^0.3.1",
     "@gouvfr/core": "^0.3.1",
-    "@gouvfr/schemes": "^0.3.1",
-    "@gouvfr/utilities": "^0.3.1"
+    "@gouvfr/schemes": "^0.3.1"
   }
 }

@@ -1,5 +1,5 @@
 import { Tab } from './tab';
-import { Disclosure, DisclosuresGroup, KeyListener } from '@gouvfr/utilities/src/scripts';
+import { Disclosure, DisclosuresGroup, KeyListener } from '@gouvfr/core/src/scripts';
 import { TAB_CLASSNAME, PANEL_SELECTOR, TABS_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
 
 /**

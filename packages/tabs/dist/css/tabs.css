@@ -59,7 +59,7 @@ a.rf-tabs__tab {
   /**
   * Tab Panel
   */ }
-  @media (max-width: 47.98em) {
+  @media (min-width: 36em) {
     .rf-tabs {
       margin-left: -1rem;
       margin-right: -1rem; }

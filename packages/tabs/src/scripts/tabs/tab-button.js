@@ -1,4 +1,4 @@
-import { DisclosureButton } from '@gouvfr/utilities/src/scripts';
+import { DisclosureButton } from '@gouvfr/core/src/scripts';
 
 /**
   * TabButton correspond au bouton cliquable qui change le panel

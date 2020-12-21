@@ -907,7 +907,8 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   [data-rf-reset] body {
     background-color: var(--w);
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    line-height: 1.5; }
     :root[data-rf-transition] [data-rf-reset] body {
       transition: background-color 0.3s; }
   [data-rf-reset] a[target="_blank"]::after {
@@ -1150,6 +1151,24 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
     padding-bottom: 75%; }
   .rf-responsive-vid--1x1::before {
     padding-bottom: 100%; }
+
+.rf-collapse {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
+  .rf-collapse::before {
+    display: block;
+    content: '';
+    margin-top: -100vh;
+    transition: margin-top 0.3s; }
+  .rf-collapse--expanded {
+    opacity: 1;
+    max-height: 99999px;
+    visibility: visible; }
+    .rf-collapse--expanded::before {
+      margin-top: 0; }
 
 /* ------------------------------------ *\
   UTILITIES
@@ -3070,24 +3089,6 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
   .rf-py-md-24v, .rf-py-md-12w {
     padding-bottom: 6rem !important; } }
 
-.rf-collapse {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
-  .rf-collapse::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-collapse--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-collapse--expanded::before {
-      margin-top: 0; }
-
 /* ------------------------------------ *\
   GRID
 \* ------------------------------------ */
@@ -4034,43 +4035,6 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
 \* ------------------------------------ */
 .rf-checkbox-group {
   position: relative; }
-  .rf-checkbox-group .rf-hint-text {
-    margin-left: 2rem;
-    margin-top: -0.75rem; }
-  .rf-checkbox-group .rf-error-text,
-  .rf-checkbox-group .rf-valid-text {
-    margin-top: -0.25rem; }
-  .rf-checkbox-group--sm input[type="checkbox"] + label::before {
-    width: 1rem;
-    height: 1rem; }
-  .rf-checkbox-group--sm input[type="checkbox"] + label::after {
-    left: 0; }
-  .rf-checkbox-group--sm .rf-hint-text {
-    margin-left: 1.5rem; }
-  .rf-checkbox-group--error input[type="checkbox"] + label {
-    color: var(--error); }
-  .rf-checkbox-group--error::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    top: 0.75rem;
-    height: 1.5rem;
-    left: -0.5rem;
-    background-color: var(--error); }
-  .rf-checkbox-group--valid input[type="checkbox"] + label {
-    color: var(--success); }
-  .rf-checkbox-group--valid::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    top: 0.75rem;
-    height: 1.5rem;
-    left: -0.5rem;
-    background-color: var(--success); }
-  .rf-checkbox-group:first-child {
-    margin-top: -0.75rem; }
-  .rf-checkbox-group:last-child {
-    margin-bottom: -0.75rem; }
   .rf-checkbox-group input[type="checkbox"] {
     position: absolute;
     opacity: 0; }
@@ -4128,6 +4092,43 @@ button.rf-link, button.rf-btn, .rf-accordion button.rf-accordion__btn, button.rf
       .rf-checkbox-group input[type="checkbox"][disabled] + label::before, .rf-checkbox-group input[type="checkbox"][disabled] + label::after, .rf-checkbox-group input[type="checkbox"]:disabled + label::before, .rf-checkbox-group input[type="checkbox"]:disabled + label::after {
         background-color: var(--g200);
         border: 1px solid var(--g400); }
+  .rf-checkbox-group:first-child {
+    margin-top: -0.75rem; }
+  .rf-checkbox-group:last-child {
+    margin-bottom: -0.75rem; }
+  .rf-checkbox-group .rf-hint-text {
+    margin-left: 2rem;
+    margin-top: -0.75rem; }
+  .rf-checkbox-group .rf-error-text,
+  .rf-checkbox-group .rf-valid-text {
+    margin-top: -0.25rem; }
+  .rf-checkbox-group--sm input[type="checkbox"] + label::before {
+    width: 1rem;
+    height: 1rem; }
+  .rf-checkbox-group--sm input[type="checkbox"] + label::after {
+    left: 0; }
+  .rf-checkbox-group--sm .rf-hint-text {
+    margin-left: 1.5rem; }
+  .rf-checkbox-group--error input[type="checkbox"] + label {
+    color: var(--error); }
+  .rf-checkbox-group--error::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    top: 0.75rem;
+    height: 1.5rem;
+    left: -0.5rem;
+    background-color: var(--error); }
+  .rf-checkbox-group--valid input[type="checkbox"] + label {
+    color: var(--success); }
+  .rf-checkbox-group--valid::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    top: 0.75rem;
+    height: 1.5rem;
+    left: -0.5rem;
+    background-color: var(--success); }
 
 .rf-radio-group {
   /**
@@ -5106,6 +5107,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       display: none; }
   .rf-toggle__label {
     display: inline-flex;
+    flex-basis: calc(100% - 2.5rem);
     min-height: 1.5rem;
     padding-left: 1rem;
     /*
@@ -5950,23 +5952,23 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-content-media__transcription .rf-link {
     max-width: none;
     max-height: none; }
-  .rf-content-media--sm .rf-content-media __img, .rf-content-media--sm .rf-responsive-vid,
-  .rf-content-media--sm .rf-content-media __caption, .rf-content-media--sm .rf-content-media __transcription {
+  .rf-content-media--sm .rf-content-media__img, .rf-content-media--sm .rf-responsive-vid,
+  .rf-content-media--sm .rf-content-media__caption, .rf-content-media--sm .rf-content-media__transcription {
     width: 83.33333%; }
     @media (min-width: 48em) {
-      .rf-content-media--sm .rf-content-media __img, .rf-content-media--sm .rf-responsive-vid,
-      .rf-content-media--sm .rf-content-media __caption, .rf-content-media--sm .rf-content-media __transcription {
+      .rf-content-media--sm .rf-content-media__img, .rf-content-media--sm .rf-responsive-vid,
+      .rf-content-media--sm .rf-content-media__caption, .rf-content-media--sm .rf-content-media__transcription {
         width: 75%; } }
-  .rf-content-media--lg .rf-content-media __img, .rf-content-media--lg .rf-responsive-vid,
-  .rf-content-media--lg .rf-content-media __caption, .rf-content-media--lg .rf-content-media __transcription {
+  .rf-content-media--lg .rf-content-media__img, .rf-content-media--lg .rf-responsive-vid,
+  .rf-content-media--lg .rf-content-media__caption, .rf-content-media--lg .rf-content-media__transcription {
     width: 116.66667%; }
     @media (min-width: 48em) {
-      .rf-content-media--lg .rf-content-media __img, .rf-content-media--lg .rf-responsive-vid,
-      .rf-content-media--lg .rf-content-media __caption, .rf-content-media--lg .rf-content-media __transcription {
+      .rf-content-media--lg .rf-content-media__img, .rf-content-media--lg .rf-responsive-vid,
+      .rf-content-media--lg .rf-content-media__caption, .rf-content-media--lg .rf-content-media__transcription {
         width: 125%; } }
-  .rf-content-media--lg .rf-content-media __img, .rf-content-media--lg .rf-responsive-vid {
+  .rf-content-media--lg .rf-content-media__img, .rf-content-media--lg .rf-responsive-vid {
     max-width: 100vw; }
-  .rf-content-media--lg .rf-content-media __caption, .rf-content-media--lg .rf-content-media __transcription {
+  .rf-content-media--lg .rf-content-media__caption, .rf-content-media--lg .rf-content-media__transcription {
     max-width: calc(100vw - 2rem); }
 
 /* ------------------------------------ *\
@@ -6900,7 +6902,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /**
   * Tab Panel
   */ }
-  @media (max-width: 47.98em) {
+  @media (min-width: 36em) {
     .rf-tabs {
       margin-left: -1rem;
       margin-right: -1rem; }

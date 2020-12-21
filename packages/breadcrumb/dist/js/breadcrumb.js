@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 39);
+/******/ 	return __webpack_require__(__webpack_require__.s = 38);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -135,7 +135,7 @@ var Initializer = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 39:
+/***/ 38:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -145,7 +145,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./packages/breadcrumb/_dist.scss
 var _dist = __webpack_require__(3);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./packages/breadcrumb/src/scripts/breadcrumb-button/breadcrumb-button.js

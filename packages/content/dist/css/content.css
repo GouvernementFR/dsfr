@@ -77,23 +77,23 @@
   .rf-content-media__transcription .rf-link {
     max-width: none;
     max-height: none; }
-  .rf-content-media--sm .rf-content-media __img, .rf-content-media--sm .rf-responsive-vid,
-  .rf-content-media--sm .rf-content-media __caption, .rf-content-media--sm .rf-content-media __transcription {
+  .rf-content-media--sm .rf-content-media__img, .rf-content-media--sm .rf-responsive-vid,
+  .rf-content-media--sm .rf-content-media__caption, .rf-content-media--sm .rf-content-media__transcription {
     width: 83.33333%; }
     @media (min-width: 48em) {
-      .rf-content-media--sm .rf-content-media __img, .rf-content-media--sm .rf-responsive-vid,
-      .rf-content-media--sm .rf-content-media __caption, .rf-content-media--sm .rf-content-media __transcription {
+      .rf-content-media--sm .rf-content-media__img, .rf-content-media--sm .rf-responsive-vid,
+      .rf-content-media--sm .rf-content-media__caption, .rf-content-media--sm .rf-content-media__transcription {
         width: 75%; } }
-  .rf-content-media--lg .rf-content-media __img, .rf-content-media--lg .rf-responsive-vid,
-  .rf-content-media--lg .rf-content-media __caption, .rf-content-media--lg .rf-content-media __transcription {
+  .rf-content-media--lg .rf-content-media__img, .rf-content-media--lg .rf-responsive-vid,
+  .rf-content-media--lg .rf-content-media__caption, .rf-content-media--lg .rf-content-media__transcription {
     width: 116.66667%; }
     @media (min-width: 48em) {
-      .rf-content-media--lg .rf-content-media __img, .rf-content-media--lg .rf-responsive-vid,
-      .rf-content-media--lg .rf-content-media __caption, .rf-content-media--lg .rf-content-media __transcription {
+      .rf-content-media--lg .rf-content-media__img, .rf-content-media--lg .rf-responsive-vid,
+      .rf-content-media--lg .rf-content-media__caption, .rf-content-media--lg .rf-content-media__transcription {
         width: 125%; } }
-  .rf-content-media--lg .rf-content-media __img, .rf-content-media--lg .rf-responsive-vid {
+  .rf-content-media--lg .rf-content-media__img, .rf-content-media--lg .rf-responsive-vid {
     max-width: 100vw; }
-  .rf-content-media--lg .rf-content-media __caption, .rf-content-media--lg .rf-content-media __transcription {
+  .rf-content-media--lg .rf-content-media__caption, .rf-content-media--lg .rf-content-media__transcription {
     max-width: calc(100vw - 2rem); }
 
 

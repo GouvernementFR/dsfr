@@ -19,6 +19,11 @@
       path:'medias',
       title:'Medias',
       wrapper: 'col-8'
+    },
+    {
+      path:'collapse',
+      title:'Collapse',
+      wrapper: 'col-8'
     }
   ];
 %>
@@ -28,7 +33,7 @@
     <% for (let i = 0; i < elements.length; i++) {
 
       let element = elements[i];
-      let id = 'collapsed-' + i;
+      let id = 'core-' + i;
 
       const button = {
         label:element.title,

@@ -1,6 +1,6 @@
 import { TabButton } from './tab-button';
 import { TRANSITION_TIME, TABS_SELECTOR } from './tabs-constants';
-import { Disclosure } from '@gouvfr/utilities/src/scripts';
+import { Disclosure } from '@gouvfr/core/src/scripts';
 const HIDDEN = 'hidden';
 
 /**

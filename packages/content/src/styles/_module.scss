@@ -38,6 +38,5 @@
 
   $medias: (#{&}__img, dse(responsive-vid));
   $captions: (#{&}__caption, #{&}__transcription);
-  @debug $medias;
   @include content-media-sizes($medias, $captions, 25%);
 }

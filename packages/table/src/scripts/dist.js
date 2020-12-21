@@ -2,7 +2,7 @@
 
 import '@gouvfr/table/_dist.scss';
 
-import { Initializer } from '@gouvfr/utilities/src/scripts/init/Initializer';
+import { Initializer } from '@gouvfr/core/src/scripts/';
 import { ShadowOnScroll } from './index';
 
 new Initializer('.${prefix}-table', [ShadowOnScroll]);

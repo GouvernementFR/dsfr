@@ -8,7 +8,7 @@
   @include padding-bottom(1px); // fix next element margin
 
   // retire le padding du container en mobile
-  @include respond-to(sm) {
+  @include respond-from(sm) {
     margin-left: -(space(4v));
     margin-right: -(space(4v));
     .#{$prefix}-tabs {

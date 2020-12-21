@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,14 +161,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 40:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -176,12 +169,12 @@ var removeClass = function removeClass(element, className) {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/header/_dist.scss
-var _dist = __webpack_require__(4);
+var _dist = __webpack_require__(6);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/manipulation/classes.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/manipulation/classes.js
 var classes = __webpack_require__(2);
 
 // CONCATENATED MODULE: ./packages/header/src/scripts/header/header.js
@@ -337,6 +330,13 @@ var header_HeaderPopin = /*#__PURE__*/function () {
 
 
 new Initializer["Initializer"]('.rf-header', [Header]);
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ })
 

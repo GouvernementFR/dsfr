@@ -1,5 +1,4 @@
-import { CollapseElement, CollapseGroup } from '@gouvfr/utilities/src/scripts/';
-import { addClass, removeClass } from '@gouvfr/utilities/src/scripts/manipulation/classes';
+import { CollapseElement, CollapseGroup, addClass, removeClass } from '@gouvfr/core/src/scripts/';
 
 const NAV_COLLAPSE = '.${prefix}-nav .${prefix}-menu, .${prefix}-nav .${prefix}-mega-menu';
 const NAV_LIST = '.${prefix}-nav > .${prefix}-nav__list';
