@@ -1,0 +1,53 @@
+////
+/// Core Module : Reset
+/// @group core
+////
+
+#{dse-attr(reset)} {
+  // font-size: 16px;
+  @include margin(0);
+  @include padding(0);
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    @extend %text-reset;
+    @extend %default-text-color;
+    @include scheme-body;
+    @include margin(0);
+    @include padding(0);
+    @include line-height(normal);
+  }
+
+  @import '../prose/module/headings';
+  @import '../prose/module/paragraph';
+  @import '../prose/module/link';
+}
+
+@include class-is-dse(false) {
+  box-sizing: border-box;
+
+  &::before,
+  &::after,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  @extend %text-reset;
+
+  a {
+    @extend %a;
+  }
+
+  * {
+    @include class-is-not-dse(false) {
+      box-sizing: inherit;
+    }
+  }
+}

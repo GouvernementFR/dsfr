@@ -24,4 +24,4 @@ yarn add install @gouvfr/content
 
 ## Documentation
 
-Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/153813475/M+dias+-+medias) sur les médias intégrés dans un contenu
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019554/M+dias+int+gr+s+au+contenu+-+Responsive+medias) sur les médias intégrés dans un contenu

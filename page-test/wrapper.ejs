@@ -1,0 +1,21 @@
+<%
+const path = '../packages/' + id + '/tests/index';
+
+if (locals.config === undefined || config.wrapper === undefined) {
+%>
+
+    <%- include(path); %>
+<% } else if (config.wrapper === 'col-8') {
+%>
+    <div class="<%= prefix %>-container">
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
+            <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
+                <%- include(path); %>
+            </div>
+        </div>
+    </div>
+<% } else if (config.wrapper === 'container') { %>
+    <div class="<%= prefix %>-container">
+        <%- include(path); %>
+    </div>
+<% } %>

@@ -1,23 +1,3 @@
-/**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
-
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
-
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
- */
 .rf-header .rf-shortcuts__item .rf-link::before, .rf-header__navbar .rf-btn::before {
   font-family: icons !important;
   font-style: normal;
@@ -25,6 +5,12 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1; }
+
+.rf-header__navbar .rf-service__title {
+  text-decoration: none; }
+
+.rf-header {
+  color: var(--g700); }
 
 .rf-header .rf-shortcuts__item .rf-link {
   font-size: 0.875rem;
@@ -60,7 +46,7 @@
 
 .rf-header {
   width: 100%;
-  box-shadow: "0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32)";
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
   background-color: var(--w-g750); }
   .rf-header__body {
     display: flex;
@@ -144,8 +130,12 @@
         line-height: 1.5;
         font-weight: bold;
         color: var(--g800);
-        margin: 0;
-        box-shadow: none; }
+        margin: 0; }
+        .rf-header__navbar a.rf-service__title {
+          box-shadow: none; }
+          .rf-header__navbar a.rf-service__title[target="_blank"]::after {
+            content: none;
+            margin-left: 0; }
         @media (min-width: 48em) {
           .rf-header__navbar .rf-service__title {
             font-size: 1.25rem;
@@ -176,22 +166,22 @@
       background-color: var(--t-plain);
       color: var(--bf500);
       flex: 0 0 auto; }
-      :root:not([data-theme="dark"]) .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-header__navbar .rf-btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-header__navbar .rf-btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-header__navbar .rf-btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-header__navbar .rf-btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-header__navbar .rf-btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-header__navbar .rf-btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-header__navbar .rf-btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root[data-theme="dark"] .rf-header__navbar .rf-btn {
+      :root[data-rf-theme="dark"] .rf-header__navbar .rf-btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
       .rf-header__navbar .rf-btn--menu, .rf-header__navbar .rf-btn.rf-fi-menu-fill {
@@ -252,16 +242,23 @@
       .rf-header .rf-shortcuts__item {
         padding: 0 0.75rem;
         margin: 0 0 0.5rem;
-        line-height: 1.5rem;
+        line-height: 1rem;
         box-shadow: none; }
         .rf-header .rf-shortcuts__item:not(:first-child) {
           border-left: 1px solid var(--g300); } }
     .rf-header .rf-shortcuts__item::before {
       content: none; }
     .rf-header .rf-shortcuts__item .rf-link {
-      line-height: 1.5rem;
-      width: 100%;
-      padding: 0.75rem 0.25rem; }
+      max-width: none;
+      max-height: none;
+      line-height: 1rem;
+      border-radius: 0;
+      min-width: 100%;
+      min-height: 3rem;
+      padding: 0.75rem 0;
+      max-height: none; }
+      .rf-header .rf-shortcuts__item .rf-link::before {
+        margin-left: 0.25rem; }
     @media (min-width: 48em) {
       .rf-header .rf-shortcuts__item .rf-link {
         font-size: 0.875rem;
@@ -296,26 +293,26 @@
       box-shadow: inset 0 1px 0 0 var(--g300); }
       .rf-header .rf-nav .rf-menu::after,
       .rf-header .rf-nav .rf-mega-menu {
-        box-shadow: "0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32)"; } }
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32); } }
   .rf-header .rf-btn.rf-fi-close-line {
     background-color: var(--t-plain);
     color: var(--bf500); }
-    :root:not([data-theme="dark"]) .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-header .rf-btn.rf-fi-close-line,
-    :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-header .rf-btn.rf-fi-close-line,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-header .rf-btn.rf-fi-close-line,
-    :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-header .rf-btn.rf-fi-close-line,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-header .rf-btn.rf-fi-close-line,
-    :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-header .rf-btn.rf-fi-close-line {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-header .rf-btn.rf-fi-close-line,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root[data-theme="dark"] .rf-header .rf-btn.rf-fi-close-line {
+    :root[data-rf-theme="dark"] .rf-header .rf-btn.rf-fi-close-line {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
 

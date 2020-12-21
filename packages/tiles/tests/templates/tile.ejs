@@ -5,6 +5,10 @@
 
 * horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
 
+* horizontalMd (boolean, optional) : si true, passe en mode horizontal en dessous du breakpoint xs
+
+* verticalMd (boolean, optional) : si true, passe en mode vertical en dessous du breakpoint xs
+
 * img (string, optionnal) : url de l'image
 
 * alt (string, optionnal) : texte alternatif de l'image
@@ -19,14 +23,22 @@
  classes.push(prefix + '-tile');
 
  if (locals.horizontal !== undefined) {
-   classes.push(prefix +'-tile--horizontal');
+    classes.push(prefix +'-tile--horizontal');
+ }
+
+ if (locals.horizontalMd !== undefined) {
+    classes.push(prefix +'-tile--horizontal-md');
+ }
+
+ if (locals.verticalMd !== undefined) {
+    classes.push(prefix +'-tile--vertical-md');
  }
 
  %>
 
 <div <%- includeClasses(classes)%>>
     <% if (locals.img !== undefined) { %>
-    <div class="<%= prefix %>-tile__img">
+    <div class="<%= prefix %>-tile__img-wrap">
         <img src="<%= img %>" titre="<%= alt %>" alt="<%= alt %>"/>
     </div>
     <% } %>

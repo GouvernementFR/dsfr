@@ -17,7 +17,3 @@ Via Yarn :
 ```
 yarn add install @gouvfr/schemes
 ```
-
-## Documentation
-
-Consulter [la documentation](#) sur les schemes

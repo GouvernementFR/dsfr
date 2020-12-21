@@ -3,9 +3,9 @@
 /// @group skiplinks
 ////
 
-.#{$prefix}-skiplinks {
+#{dse(skiplinks)} {
   position: absolute;
-  padding: space(1-5N) 0;
+  padding: space(2w) 0;
   @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
 
@@ -15,13 +15,14 @@
   }
 }
 
-.#{$prefix}-skiplinks__list {
+#{dse(skiplinks__list)} {
+  @extend %list-reset;
   display: flex;
   flex-direction: column;
-  margin: 0 (-(space(2N))) (-(space(2N)));
+  margin: 0 (-(space(2w))) (-(space(2w)));
 
   > li {
-    margin: 0 space(2N) space(0-5N);
+    margin: 0 space(2w) space(1v);
 
     &::before {
       content: none;
@@ -30,13 +31,18 @@
     @include nest-link(md, null, null, null, true);
 
     @include respond-from(sm) {
-      margin: 0 space(2N);
+      margin: 0 space(2w);
     }
   }
 
-  @include respond-from(sm) {
-    margin: 0 (-(space(2N)));
+  @include respond-from(md) {
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 (-(space(2w)));
+  }
+
+  &:focus-within {
+    position: relative;
+    transform: translateY(0);
   }
 }

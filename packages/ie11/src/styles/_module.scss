@@ -4,8 +4,11 @@
 ////
 
 @include ie-hack() {
+  /**
+  * fix Navigation
+  */
   //navigation fix alignement des menus sur la droite
-  .#{$prefix}-nav {
+  #{dse(nav)} {
     @include respond-from(md) {
       &--align-right {
         transform: translateX(-100%);
@@ -14,7 +17,7 @@
   }
 
   //sidenav fix
-  .#{$prefix}-sidenav {
+  #{dse(sidenav)} {
     height: auto;
   }
 
@@ -24,6 +27,19 @@
       transform: translateY(0);
     }
   }
+
+  /**
+  * fix radios
+  */
+  .#{$prefix}-fieldset--inline {
+    .#{$prefix}-radio-group {
+      &:last-child {
+        input[type="radio"] + label {
+          @include radio-rich() {
+            margin-bottom: space(2v)!important;
+          }
+        }
+      }
+    }
+  }
 }
-
-

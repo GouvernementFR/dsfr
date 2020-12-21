@@ -3,10 +3,32 @@
 /// @group core
 ////
 
-@function prefixed-class($name) {
-  @return '.#{$prefix}-#{$name}';
+/// Préfixage d'un élément css, généralement un nom de classe
+/// @access public
+/// @param {String} $name - nom de l'élément
+/// @param {String} $notation - notation du sélecteur, par défaut un point pour les classes
+@function dse($name, $notation: '.') {
+  $class-name: $notation + $prefix + '-' + $name;
+  @return $class-name;
 }
 
-@function prefixed-group-class($name) {
-  @return '#{prefixed-class($name)}-group';
+/// Préfixage d'une classe de groupe
+/// @access public
+/// @param {String} $name - nom de l'élément, à mettre au pluriel
+@function dse-group($name) {
+  @return dse($name + '-group');
+}
+
+/// Préfixage d'un attribut css
+/// @access public
+/// @param {String} $name - nom de l'attribut
+/// @param {String} $value - valeur de l'attribut
+@function dse-attr($name, $value: null) {
+  $attr: 'data-#{dse($name, "")}';
+  @if $value == null {
+    @return '[' + $attr + ']';
+  }
+  @else {
+    @return '[' + $attr + '="' + $value + '"]';
+  }
 }

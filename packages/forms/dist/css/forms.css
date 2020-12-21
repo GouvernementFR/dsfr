@@ -1,24 +1,4 @@
 @charset "UTF-8";
-/**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
-
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
-
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
- */
 .rf-fieldset[disabled] .rf-label, .rf-fieldset:disabled .rf-label {
   cursor: not-allowed; }
 
@@ -36,67 +16,94 @@
   text-transform: none;
   line-height: 1; }
 
-.rf-select-group:not(:last-child),
-.rf-input-group:not(:last-child) {
-  margin-bottom: 1.5rem; }
-
-.rf-select-group--valid .rf-label,
-.rf-input-group--valid .rf-label {
-  color: var(--success); }
-
-.rf-select-group--error .rf-label,
-.rf-input-group--error .rf-label {
-  color: var(--error); }
-
-.rf-select-group--disabled .rf-label,
-.rf-input-group--disabled .rf-label {
-  color: var(--g600-g400); }
+/**
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+ */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
+.rf-select-group, .rf-input-group {
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+   */
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+   */
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+   */ }
+  .rf-select-group:not(:last-child), .rf-input-group:not(:last-child) {
+    margin-bottom: 1.5rem; }
+  .rf-select-group .rf-label .rf-hint-text, .rf-input-group .rf-label .rf-hint-text {
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem; }
+  .rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
+    color: var(--success); }
+  .rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
+    color: var(--error); }
+  .rf-select-group--disabled .rf-label, .rf-input-group--disabled .rf-label {
+    color: var(--g600-g400); }
 
 .rf-label {
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;
   font-family: "Marianne", arial, sans-serif;
-  color: var(--g800); }
+  color: var(--g800);
+  /**
+   * Modificateur au niveau du label pour appliquer un état d'erreur au label
+   */ }
   .rf-label--error {
     color: var(--error); }
   .rf-label + .rf-input,
   .rf-label + .rf-select {
     margin-top: 0.5rem; }
 
+/**
+ * Style du texte d'aide
+ */
 .rf-hint-text {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
+  display: block;
   margin-top: 0;
-  margin-bottom: 0;
-  color: var(--g600); }
+  margin-bottom: 0; }
+  .rf-hint-text, p.rf-hint-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--g600); }
   .rf-hint-text + .rf-input,
   .rf-hint-text + .rf-input-wrap,
   .rf-hint-text + .rf-select {
     margin-top: 0.5rem; }
 
+/**
+ * Style du texte d'erreur
+ */
 .rf-error-text {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
-  margin-top: 0.5rem;
-  color: var(--error); }
+  margin-top: 0.5rem; }
+  .rf-error-text, p.rf-error-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--error); }
   .rf-error-text::before {
     font-size: 0.75rem;
     display: inline-block;
     margin-right: 0.25rem; }
 
+/**
+ * Style du texte de l'état validé
+ */
 .rf-valid-text {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
-  margin-top: 0.5rem;
-  color: var(--success); }
+  margin-top: 0.5rem; }
+  .rf-valid-text, p.rf-valid-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--success); }
   .rf-valid-text::before {
     font-size: 0.75rem;
     display: inline-block;
@@ -105,12 +112,27 @@
 .rf-form-group {
   margin-bottom: 2rem; }
 
+/**
+ * Style d'un ensemble de champs
+ */
 .rf-fieldset {
   position: relative;
   margin: 0;
   padding: 0;
   border: 0;
-  color: var(--g800); }
+  color: var(--g800);
+  /**
+   * Modificateur pour afficher les éléments en inline
+   */
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+  /**
+   * Mixin disabled pour gérer l'état disabled
+   */ }
   .rf-fieldset .rf-hint-text {
     margin-bottom: 1rem; }
   .rf-fieldset__legend {
@@ -122,18 +144,24 @@
     position: relative; }
     .rf-fieldset__content > .rf-input-group:first-child {
       margin-top: 1rem; }
-  .rf-fieldset--inline .rf-radio-group,
+  .rf-fieldset--inline .rf--fieldset__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start; }
   .rf-fieldset--inline .rf-checkbox-group {
     display: inline-flex;
     margin-bottom: 0; }
-    .rf-fieldset--inline .rf-radio-group:not(:last-child),
     .rf-fieldset--inline .rf-checkbox-group:not(:last-child) {
-      margin-right: 1.5rem; }
-    .rf-fieldset--inline .rf-radio-group:first-child,
-    .rf-fieldset--inline .rf-checkbox-group:first-child {
+      margin-right: 1.25rem; }
+  .rf-fieldset--inline .rf-radio-group {
+    display: inline-flex;
+    margin-bottom: 0; }
+    .rf-fieldset--inline .rf-radio-group:not(:last-child) input[type="radio"] + label {
+      margin-right: 1.75rem; }
+    .rf-fieldset--inline .rf-radio-group:first-child input[type="radio"] + label {
       margin-top: 0; }
-    .rf-fieldset--inline .rf-radio-group:last-child,
-    .rf-fieldset--inline .rf-checkbox-group:last-child {
+    .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label {
       margin-bottom: 0; }
   .rf-fieldset--inline .rf-hint-text {
     margin-top: 0.25rem;
@@ -146,20 +174,20 @@
   .rf-fieldset--error .rf-fieldset__content::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
     bottom: 0.75rem;
     left: -0.5rem;
+    width: 2px;
     background-color: var(--error); }
   .rf-fieldset--error .rf-label {
     color: var(--error); }
   .rf-fieldset--valid .rf-fieldset__content::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
     bottom: 0.75rem;
     left: -0.5rem;
+    width: 2px;
     background-color: var(--success); }
   .rf-fieldset--valid .rf-label {
     color: var(--success); }

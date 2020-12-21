@@ -18,7 +18,7 @@ Via Yarn :
 ```
 yarn add install @gouvfr/logo
 ```
-
 ## Documentation
 
-Consulter [la documentation](#) sur le logo
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header) sur l'en-tête.
+

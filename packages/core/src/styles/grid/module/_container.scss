@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-.#{$prefix}-container {
+#{dse(container)} {
   @include container();
 
   &-fluid {

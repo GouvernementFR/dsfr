@@ -63,7 +63,6 @@ packages.forEach(function (pck) {
 allPackageFileContent.dependencies = allPckDeps;
 
 // Create path and files for package all
-createDir(pathAll);
 createDir(pathAll + '/src/scripts/');
 createFile(pathAll + '/src/scripts/' + 'dist.js', "import '@gouvfr/all/_dist.scss';\r\n" + allPckJs.map(item => item).join(";\r\n") + ";\r\n")
 createFile(pathAll + '/_dist.scss', allPckMains.map(item => item).join("';\r\n") + "';\r\n");

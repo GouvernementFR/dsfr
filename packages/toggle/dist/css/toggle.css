@@ -1,0 +1,206 @@
+@charset "UTF-8";
+input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-toggle__input[disabled] + label, input.rf-toggle__input:disabled + label, input.rf-toggle__input[disabled] + label::before, input.rf-toggle__input:disabled + label::before, input.rf-toggle__input[disabled] + label::after, input.rf-toggle__input:disabled + label::after {
+  cursor: not-allowed; }
+
+.rf-toggle__label::after {
+  content: ""; }
+
+.rf-toggle__label::after {
+  font-family: icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1; }
+
+.rf-toggle-list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
+/**
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+ */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
+.rf-toggle .rf-hint-text {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-family: "Marianne", arial, sans-serif;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--g600); }
+
+/*
+ * Mixin pour gérer les styles quand le toggle est inactif
+ */
+.rf-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 1rem 0;
+  /*
+   * On utilise un input de type checkbox pour gérer le toggle
+   * On reset ses styles afin de ne garder que son fonctionnement et son espacement
+   * On l'utilisera égalemement pour afficher l'état du toggle (optionnel)
+   */
+  /*
+   * Import des modificateurs (séparateur et label à gauche)
+   */
+  /*
+ * Ajout d'un séparateur
+ */
+  /*
+ * Passage du label ferré à gauche, le toggle ferré à droite
+ */ }
+  .rf-toggle__input {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 1.5rem;
+    border: 0;
+    border-radius: 2.5rem;
+    margin: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: inset 0 0 0 1px var(--bf500);
+    /*
+     * On applique des styles aux pseudo-elements du label quand l'input est check.
+     * On change l'ordre du texte d'état du label dans le content pour afficher
+     * la valeur correspondant à l'état checked (optionnel).
+     */
+    /*
+     * Hack pour IE11
+     */ }
+    .rf-toggle__input:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+    input.rf-toggle__input[disabled], input.rf-toggle__input:disabled {
+      color: var(--g600-g400);
+      background-color: var(--g200);
+      box-shadow: inset 0 0 0 1px var(--g400); }
+    input.rf-toggle__input[disabled] + label, input.rf-toggle__input:disabled + label {
+      color: var(--g600-g400); }
+    input.rf-toggle__input[disabled] + label::before, input.rf-toggle__input:disabled + label::before {
+      color: var(--g600-g400); }
+      input.rf-toggle__input[disabled] + label::before::before, input.rf-toggle__input:disabled + label::before::before {
+        background-color: var(--g200); }
+    input.rf-toggle__input[disabled] + label::after, input.rf-toggle__input:disabled + label::after {
+      color: var(--g600-g400);
+      background-color: var(--g200);
+      border: 1px solid var(--g400); }
+    .rf-toggle__input:checked {
+      background-color: var(--bf500); }
+      .rf-toggle__input:checked ~ .rf-toggle__label[data-rf-unchecked-label]::before,
+      .rf-toggle__input:checked ~ .rf-toggle__label[data-rf-checked-label]::before {
+        content: attr(data-rf-checked-label) "\a" attr(data-rf-unchecked-label); }
+      .rf-toggle__input:checked ~ .rf-toggle__label::after {
+        transform: translateX(1rem);
+        text-indent: 0;
+        z-index: 2000; }
+    .rf-toggle__input::-ms-check {
+      display: none; }
+  .rf-toggle__label {
+    display: inline-flex;
+    min-height: 1.5rem;
+    padding-left: 1rem;
+    /*
+     * Si les data attributes sont présents, on assigne un content au pseudo element before,
+     * et on enlève le padding left du label.
+     */
+    /*
+     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
+     * On récupère le text via l'attribut [data-rf-unchecked-label]
+     */
+    /*
+     * On inclut l'icône check dans un pseudo-element after
+     * On la cache via un text-indent quand l'input n'est pas check
+     */ }
+    .rf-toggle__label[data-rf-unchecked-label], .rf-toggle__label[data-rf-checked-label] {
+      padding-left: 0; }
+      .rf-toggle__label[data-rf-unchecked-label]::before, .rf-toggle__label[data-rf-checked-label]::before {
+        content: attr(data-rf-unchecked-label) "\a" attr(data-rf-checked-label); }
+      .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text, .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
+        margin-top: 0.5rem; }
+    .rf-toggle__label::before {
+      flex-shrink: 0;
+      font-family: "Marianne", arial, sans-serif;
+      height: calc(0.75rem - 1px);
+      margin-top: calc(1.5rem + 0.25rem);
+      margin-left: -2.5rem;
+      margin-right: 1rem;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: var(--bf500);
+      white-space: pre-wrap;
+      overflow: hidden; }
+    .rf-toggle__label::after {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 1rem;
+      left: 0;
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-indent: -9999px;
+      color: var(--bf500);
+      border: 1px solid var(--bf500);
+      background-color: var(--w);
+      z-index: 1; }
+  .rf-toggle .rf-hint-text {
+    flex-basis: 100%;
+    margin-top: 1rem; }
+  .rf-toggle--border-bottom {
+    box-shadow: inset 0 -1px 0 0 var(--g300); }
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before,
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
+      margin-bottom: -0.5rem; }
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text,
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
+      margin-top: 1rem; }
+  .rf-toggle--label-left .rf-toggle__input {
+    order: 1;
+    margin: 0 0 0 auto; }
+  .rf-toggle--label-left .rf-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
+    padding-left: 0;
+    padding-right: 1rem; }
+  .rf-toggle--label-left .rf-toggle__label {
+    justify-content: space-between;
+    padding-left: 0;
+    width: calc(100% - 2.5rem); }
+    .rf-toggle--label-left .rf-toggle__label::before {
+      flex-shrink: 0;
+      order: 1;
+      margin-right: -2.5rem;
+      margin-left: 1rem;
+      text-align: right; }
+  .rf-toggle--label-left .rf-toggle__label::after {
+    left: auto;
+    right: 1rem; }
+  .rf-toggle--label-left .rf-hint-text {
+    order: 2; }
+
+/*
+ * Provisoire: à enlever quand rf-body sera en place
+ */
+/*
+ * On surcharge les styles de base (provisoire)
+ */
+.rf-toggle-list {
+  margin: 0; }
+  .rf-toggle-list > li {
+    margin-bottom: 0; }
+    .rf-toggle-list > li::before {
+      content: none; }
+
+
+/*# sourceMappingURL=toggle.css.map*/

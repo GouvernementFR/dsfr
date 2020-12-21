@@ -1,0 +1,14 @@
+////
+/// Core Module : Prose lists
+/// @group core
+////
+
+ul {
+  @extend %list-reset;
+  @extend %unordered-list;
+}
+
+ol {
+  @extend %list-reset;
+  @extend %ordered-list;
+}

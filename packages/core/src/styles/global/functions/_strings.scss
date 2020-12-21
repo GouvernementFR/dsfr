@@ -40,6 +40,10 @@
   @return unquote($is);
 }
 
+/// Découpage d'une chaine de caractères avec un séparateur particulier
+/// @access public
+/// @param {String} $string - chaine de caractère à découper
+/// @param {String} $separator - séparateur
 @function str-split($string, $separator:',') {
   $tmp: str-slice($string, 1);
   $list: ();

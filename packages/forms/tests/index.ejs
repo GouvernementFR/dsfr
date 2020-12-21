@@ -20,7 +20,7 @@ let samples = [
     let sample = samples[i];
     let path = '../../' + sample.pck + '/tests/samples/' + sample.pck;
   %>
-  <h4><%= sample.title %></h4>
+  <h4 class="<%= prefix %>-h4"><%= sample.title %></h4>
   <%- include(path, sample.data); %>
   <%- snippet(include(path, sample.data)); %>
   <% } %>

@@ -1,26 +1,40 @@
-/**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
+.rf-summary__list {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+  padding: 0; }
+  .rf-summary__list li {
+    margin-bottom: 0.5rem; }
+  .rf-summary__list ul,
+  .rf-summary__list ol {
+    margin: 0.5rem 0 1rem; }
 
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
+.rf-summary__list {
+  counter-reset: list-number; }
+  .rf-summary__list ol {
+    padding-left: 1.5rem; }
+    .rf-summary__list ol li::before {
+      font-size: 0.9em; }
+  .rf-summary__list li {
+    counter-increment: list-number; }
+    .rf-summary__list li::before {
+      content: counters(list-number, ".") ".";
+      font-weight: 700;
+      margin-right: 0.5rem; }
 
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
- */
+.rf-summary__list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
 .rf-summary {
-  padding: 1.5rem;
-  background-color: var(--beige); }
+  color: var(--g700); }
+
+.rf-summary {
+  background-color: var(--beige);
+  padding: 1.5rem; }
   @media (min-width: 48em) {
     .rf-summary {
       padding: 2rem 2.5rem 1.5rem; } }
@@ -55,22 +69,22 @@
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
       .rf-summary__list > li > a:not([disabled]):active, .rf-summary__list > li > a:not(:disabled):active {
         background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
-    :root:not([data-theme="dark"]) .rf-summary__list > li > a {
+    :root:not([data-rf-theme="dark"]) .rf-summary__list > li > a {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-summary__list > li > a,
-    :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-summary__list > li > a {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-summary__list > li > a,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-summary__list > li > a {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-summary__list > li > a,
-    :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-summary__list > li > a {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-summary__list > li > a,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-summary__list > li > a {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-summary__list > li > a,
-    :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-summary__list > li > a {
+    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-summary__list > li > a,
+    :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-summary__list > li > a {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
-    :root[data-theme="dark"] .rf-summary__list > li > a {
+    :root[data-rf-theme="dark"] .rf-summary__list > li > a {
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
     .rf-summary__list > li > a::before {

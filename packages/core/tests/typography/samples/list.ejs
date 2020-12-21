@@ -1,0 +1,22 @@
+<%
+ let tag = locals.ordered === true ? 'ol' : 'ul';
+ %>
+
+<<%= tag %> <%- includeClasses(locals.classes); %>>
+    <% for (let i = 0; i < lis.length; i++) {
+        let li = lis[i];
+    %>
+        <li>
+            <% if (li.text !== undefined) { %>
+                <%= li.text %>
+            <% }
+            else { %>
+                Item list
+            <% } %>
+
+            <% if (li.lis !== undefined) { %>
+                <%- include('./list', {lis : li.lis}); %>
+            <% } %>
+        </li>
+    <% } %>
+</<%= tag %>>

@@ -16,8 +16,7 @@
 }
 
 @mixin custom-icons($icon-size:md) {
-  &[class^="#{$prefix}-fi-"],
-  &[class*=" #{$prefix}-fi-"] {
+  @include has-icon {
     @include font-icon(null, $icon-size) {
       @content;
     }
@@ -36,7 +35,7 @@
 
 @mixin generate-icons-content($icons) {
   @each $icon, $code in $icons {
-    .#{$prefix}-fi-#{$icon} {
+    #{dse('fi-' + $icon)} {
       @include before {
         @extend %#{$icon};
       }
