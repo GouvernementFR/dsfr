@@ -4,25 +4,21 @@
 ////
 
 &__popin {
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  right: 0;
-  bottom: 100vh;
-  left: 0;
-  padding: 0 space(2N);
-  overflow: auto;
-  transition: bottom 0.3s, visibility 0.3s;
+  @include fixed(0,0,100vh,0);
+  @include size(100vw);
+  @include padding(0 4v);
   @include scheme-element-bg-color(w-g750, true);
   @include z-index(modal, true);
+  overflow: auto;
   visibility: hidden;
+  transition: bottom 0.3s, visibility 0.3s;
 
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: space(9N);
+  @include before(block, '') {
+    @include size(100%, 18v);
+  }
+
+  @include after(block, '') {
+    @include size(100%, 18v);
   }
 
   &--expanded {
@@ -31,10 +27,8 @@
   }
 
   #{dse(btn) + dse(fi-close-line)} {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: space(2N);
-    margin-right: 0;
+    @include absolute(0,0);
+    @include margin-top(4v);
+    @include margin-right(0);
   }
 }

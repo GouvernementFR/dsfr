@@ -4,43 +4,30 @@
 ////
 
 #{dse(shortcuts)} {
-  //display: none;
+  @include margin(0 -6v, md);
 
-  @include respond-from(md) {
-    margin: 0 (- space(3N));
-    //display: block;
-  }
-
-  &__list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+  @include list {
+    @include display-flex(column);
+    @include margin(0);
+    @include padding(0);
+    @include margin(0 0 -2v, md);
 
     @include respond-from(md) {
-      flex-direction: row;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      margin: 0 0 (- space(1N));
+      @include display-flex(row, null, flex-end, wrap);
     }
   }
 
   //TODO: icon dans le link, dépendance sur rf-links
 
-  &__item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    //font-size: font-size(14);
-    padding: 0;
-    margin: 0;
-    //@include scheme-element-text-color(bf500, true);
-    //@include custom-icons(md);
+  @include list-item {
+    @include display-flex(row,center);
+    @include padding(0);
+    @include margin(0);
     @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
 
     @include respond-from(md) {
-      padding: 0 space(1-5N);
-      margin: 0 0 space(1N);
+      @include padding(0 3v);
+      @include margin(0 0 2v);
       line-height: space(4v);
       box-shadow: none;
 
@@ -49,20 +36,18 @@
       }
     }
 
-    &::before {
-      content: none;
-    }
+    @include before(null, none);
 
     @include nest-link(sm, left) {
       line-height: space(4v);
       border-radius: 0;
       min-width: 100%;
       min-height: 3rem;
-      padding: space(3v) 0;
+      @include padding(3v 0);
       max-height: none;
 
       @include before() {
-        margin-left: space(1v);
+        @include margin-left(1v);
       }
     }
 

@@ -4,7 +4,7 @@
 ////
 
 &__top {
-  @include display-flex;
+  @include display-flex(null);
   @include scheme-element-bg-color(beige, true);
   @include margin(-10v 0 10v);
   @include padding(4v 0);

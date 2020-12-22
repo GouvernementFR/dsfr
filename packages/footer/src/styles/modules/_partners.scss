@@ -51,8 +51,7 @@
  * Container des logos partenaires (principaux et secondaires)
  */
 &__partners-logos {
-  @include display-flex;
-  flex-wrap: wrap;
+  @include display-flex(null, null, null, wrap);
 
   @include respond-from(md) {
     flex-wrap: nowrap;
