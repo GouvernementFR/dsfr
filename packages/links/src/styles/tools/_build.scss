@@ -86,7 +86,7 @@
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
-  margin: 0;
+  @include margin(0);
 
   @include _reset-links-tags($tags);
 

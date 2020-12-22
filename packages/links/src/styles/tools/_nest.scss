@@ -66,7 +66,7 @@
 @mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
   #{dse($module)} {
     @if $icon != null {
-      &::before {
+      @include before {
         @include font-icon-content($icon);
       }
     }
