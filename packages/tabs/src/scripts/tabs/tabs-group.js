@@ -1,27 +1,30 @@
 import { Tab } from './tab';
-import { Disclosure, DisclosuresGroup, KeyListener } from '@gouvfr/core/src/scripts';
-import { TAB_CLASSNAME, PANEL_SELECTOR, TABS_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
+import { addClass, DisclosuresGroup, KeyListener, removeClass } from '@gouvfr/core/src/scripts';
+import { PANEL_FOLLOWING, TAB_CLASSNAME, TABS_LIST_SELECTOR } from './tabs-constants';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
-* Correspond a un objet Tabs avec plusieurs tab-button & Tab (panel)
+* Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
 class TabsGroup extends DisclosuresGroup {
   constructor (wrapper) {
     super();
     this._index = -1;
     this.element = wrapper;
+    this.list = wrapper.querySelector(TABS_LIST_SELECTOR);
 
-    this.build(wrapper, TABS_SELECTOR, PANEL_SELECTOR, Disclosure.SELECT);
+    this.build(wrapper);
 
-    if (this.current === null) this.index = 0;
+    this.wrapper.addEventListener('transitionend', this.dispatchUpdate.bind(this));
+
+    if (this.index === -1) this.index = 0;
+
+    window.requestAnimationFrame(this.place.bind(this));
 
     this._attachEvents();
   }
 
-  disclosureFactory (element, type, selector) {
-    return new Tab(element, type, selector);
-  }
+  get DisclosureConstructor () { return Tab; }
 
   _attachEvents () {
     this.keyEvents = new KeyListener(this.element);
@@ -77,40 +80,43 @@ class TabsGroup extends DisclosuresGroup {
     }
   };
 
+  get current () { return super.current; }
+
+  set current (disclosure) {
+    this.index = this.disclosures.indexOf(disclosure);
+  }
+
   get index () { return this._index; }
 
   set index (value) {
     if (value < 0 || value >= this.disclosures.length || this._index === value) return;
+    const previous = this._index;
     this._index = value;
-    this.current = this.disclosures[value];
-    this.setPanelHeight();
+    super.current = this.disclosures[value];
+    this.place(previous);
   }
 
-  get current () { return super.current; }
-
-  set current (controller) {
-    super.current = controller;
-    this._index = this.disclosures.indexOf(controller);
-    this.setPanelHeight();
+  place (previous) {
+    for (let i = 0; i < this.disclosures.length; i++) {
+      const element = this.disclosures[i].element;
+      if (i <= this._index) removeClass(element, PANEL_FOLLOWING);
+      else addClass(element, PANEL_FOLLOWING);
+    }
   }
 
   /**
    * Adapte la hauteur du panel en ajoutant un margin-bottom sous la liste
    * Remonte sur le parent en cas de tabs dans tabs
    */
-  setPanelHeight () {
-    const offsetFocus = 4;
-    const panelHeight = this.current.element.offsetHeight - offsetFocus;
-    this.element.querySelector(TABS_LIST_SELECTOR).style.marginBottom = panelHeight + 'px';
+  update () {
+    if (this.current === null) return;
+    const panelHeight = this.current.element.offsetHeight;
+    const listHeight = this.list.offsetHeight;
+    this.wrapper.style.height = (panelHeight + listHeight) + 'px';
+  }
 
-    // const nestedParent = this.element.parentNode.closest(TABS_SELECTOR);
-    // if (nestedParent && nestedParent !== this.element) {
-    //   const currentParent = nestedParent.querySelector(PANEL_SELECTOR + '--' + Disclosure.SELECT);
-    //   const parentHeight = currentParent.offsetHeight;
-    //   console.log(parentHeight);
-    //   nestedParent.querySelector(TABS_LIST_SELECTOR).style.marginBottom = parentHeight + 'px';
-
-    // }
+  dispatchUpdate (e) {
+    this.wrapper.dispatchEvent(new Event('update', { bubbles: true }));
   }
 }
 

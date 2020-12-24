@@ -1152,6 +1152,24 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
   .rf-responsive-vid--1x1::before {
     padding-bottom: 100%; }
 
+.rf-collapse {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
+  .rf-collapse::before {
+    display: block;
+    content: '';
+    margin-top: -100vh;
+    transition: margin-top 0.3s; }
+  .rf-collapse--expanded {
+    opacity: 1;
+    max-height: 99999px;
+    visibility: visible; }
+    .rf-collapse--expanded::before {
+      margin-top: 0; }
+
 /* ------------------------------------ *\
   GRID
 \* ------------------------------------ */
@@ -3605,24 +3623,6 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
   .rf-pb-md-24v, .rf-pb-md-12w,
   .rf-py-md-24v, .rf-py-md-12w {
     padding-bottom: 6rem !important; } }
-
-.rf-collapse {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
-  .rf-collapse::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-collapse--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-collapse--expanded::before {
-      margin-top: 0; }
 
 /* ------------------------------------ *\
   FORMS
@@ -6685,7 +6685,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /**
   * Tab Panel
   */ }
-  @media (max-width: 47.98em) {
+  @media (min-width: 36em) {
     .rf-tabs {
       margin-left: -1rem;
       margin-right: -1rem; }

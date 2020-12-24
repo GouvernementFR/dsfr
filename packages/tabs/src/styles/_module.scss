@@ -5,16 +5,30 @@
 
 #{dse(tabs)} {
   position: relative;
-  @include padding-bottom(1px); // fix next element margin
+  overflow: hidden;
+  @include margin-top(-4px);
+  @include padding-top(4px);
+  @include display-flex(column);
+
+  /**
+    * Animation de la hauteur du panel
+    */
+  transition: height 0.1s; // Todo: change animation
 
   // retire le padding du container en mobile
-  @include respond-from(sm) {
-    margin-left: -(space(4v));
-    margin-right: -(space(4v));
-    .#{$prefix}-tabs {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  @include margin-x(calc(50% - 50vw));
+
+  #{dse(tabs)} {
+    @include margin-x(0);
+  }
+
+  @include respond-from(md) {
+    @include margin-x(0);
+  }
+
+  @include after(block, '') {
+    flex: 1;
+    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
   }
 
   /**
@@ -32,11 +46,6 @@
     */
     margin: -4px 0;
     padding: 4px 0.5rem;
-
-    /**
-    * Animation de la hauteur du panel
-    */
-    transition: margin-bottom 0.1s; // Todo: change animation
 
     @include after(block, '') {
       flex: 1 1 auto;
@@ -138,17 +147,18 @@
     left: 0;
     width: 100%;
     position: absolute;
-    visibility: visible;
+    visibility: hidden;
     padding: space(4v);
-    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
-    transition: opacity 0.1s, visibility 0.1s; // Todo: change animation
+    transform: translateX(-100%);
+    transition: visibility 0.1s, transform 0.1s; // Todo: change animation
 
     @include respond-from(md) {
       padding: space(8v);
     }
 
     &--selected {
-      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
       @include scheme-element-focus();
 
       &:focus {
@@ -159,10 +169,8 @@
       }
     }
 
-    &[hidden] {
-      opacity: 0;
-      pointer-events: none;
-      visibility: hidden;
+    &--following {
+      transform: translateX(100%);
     }
   }
 }

@@ -1,3 +1,4 @@
+/* eslint no-labels: ["error", { "allowLoop": true }] */
 import { Disclosure } from './disclosure';
 
 const groups = {};
@@ -15,23 +16,25 @@ class DisclosuresGroup {
     groups[id].add(disclosure);
   }
 
-  build (wrapper, wrapperSelector, selector, type) {
-    // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
+  build (wrapper) {
     this.wrapper = wrapper;
-    const elements = wrapper.querySelectorAll(selector);
+    const elements = Array.prototype.slice.call(wrapper.querySelectorAll(this.DisclosureConstructor.selector));
 
     let disclosure;
+    console.log('start', elements.length);
+
     for (let i = 0; i < elements.length; i++) {
-      // on l'ajoute qu'au wrapper le plus proche
-      if (elements[i].closest(wrapperSelector) === this.wrapper) {
-        disclosure = this.disclosureFactory(elements[i], type, selector);
-        this.add(disclosure);
-      }
+      if (elements.some((element) => elements[i] !== element && element.contains(elements[i]))) continue;
+
+      disclosure = this.disclosureFactory(elements[i]);
+      this.add(disclosure);
     }
   }
 
-  disclosureFactory (element, type, selector) {
-    return new Disclosure(element, type, selector);
+  get DisclosureConstructor () { return Disclosure; }
+
+  disclosureFactory (element) {
+    return new this.DisclosureConstructor(element);
   }
 
   add (disclosure) {
@@ -63,7 +66,10 @@ class DisclosuresGroup {
     if (this._current !== null && this._current !== disclosure) this._current.apply(false);
     this._current = disclosure;
     if (this._current !== null) this._current.apply(true);
+    this.update();
   }
+
+  update () {}
 
   conceal () {
     // close children

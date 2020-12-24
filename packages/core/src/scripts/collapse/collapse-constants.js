@@ -1,2 +1,3 @@
-export const COLLAPSE = '.${prefix}-collapse';
-export const MODIFIER = COLLAPSE + '--expanded';
+const COLLAPSE_SELECTOR = '.${prefix}-collapse';
+
+export { COLLAPSE_SELECTOR };

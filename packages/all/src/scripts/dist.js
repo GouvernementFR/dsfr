@@ -1,6 +1,6 @@
 import '@gouvfr/all/_dist.scss';
 import schemes from '../../../schemes/src/scripts/distGlobal';
-import utilities from '../../../utilities/src/scripts/distGlobal';
+import core from '../../../core/src/scripts/distGlobal';
 import accordions from '../../../accordions/src/scripts/distGlobal';
 import breadcrumb from '../../../breadcrumb/src/scripts/distGlobal';
 import table from '../../../table/src/scripts/distGlobal';

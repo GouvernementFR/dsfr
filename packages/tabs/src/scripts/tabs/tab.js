@@ -1,7 +1,6 @@
 import { TabButton } from './tab-button';
-import { TRANSITION_TIME, TABS_SELECTOR } from './tabs-constants';
+import { PANEL_SELECTOR } from './tabs-constants';
 import { Disclosure } from '@gouvfr/core/src/scripts';
-const HIDDEN = 'hidden';
 
 /**
   * Tab coorespond au panel d'un élement Tabs (tab panel)
@@ -9,6 +8,14 @@ const HIDDEN = 'hidden';
   * et ajoute/eleve l'attribut hidden, sur le panel
   */
 class Tab extends Disclosure {
+  constructor (element) {
+    super(element);
+    this.element.setAttribute('tabindex', '-1');
+  }
+
+  static get type () { return Disclosure.TYPES.select; }
+  static get selector () { return PANEL_SELECTOR; }
+
   buttonFactory (element) {
     return new TabButton(element, this);
   }
@@ -19,19 +26,8 @@ class Tab extends Disclosure {
   */
   apply (value) {
     super.apply(value);
-    if (value) {
-      this.element.removeAttribute(HIDDEN);
-      // resize all elements after animation finish
-      const tabs = document.querySelectorAll(TABS_SELECTOR);
-      for (let i = 0; i < tabs.length; i++) {
-        setTimeout(() => {
-          tabs[i].dispatchEvent(new Event('setHeight'));
-          console.log('resize');
-        }, TRANSITION_TIME * i);
-      }
-    } else {
-      this.element.setAttribute(HIDDEN, true);
-    }
+    console.log('apply', this.element);
+    this.element.setAttribute('tabindex', value ? '0' : '-1');
   }
 }
 

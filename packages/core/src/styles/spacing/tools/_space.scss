@@ -34,7 +34,7 @@
   @else if is-unit($value, n) {
     @return px-rem(map-get($space-scale, $value));
   }
-  @return $value;
+  @return unquote($value);
 }
 
 /// Set space property
