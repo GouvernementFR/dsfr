@@ -147,7 +147,6 @@
     left: 0;
     width: 100%;
     position: absolute;
-    visibility: hidden;
     padding: space(4v);
     transform: translateX(-100%);
     transition: visibility 0.1s, transform 0.1s; // Todo: change animation
@@ -156,8 +155,11 @@
       padding: space(8v);
     }
 
+    &--following {
+      transform: translateX(100%);
+    }
+
     &--selected {
-      visibility: visible;
       transform: translateX(0);
       @include scheme-element-focus();
 
@@ -169,8 +171,19 @@
       }
     }
 
-    &--following {
-      transform: translateX(100%);
+    /**
+    * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
+    * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
+    *
+    * tabs
+    * └─ panel selected
+    * └─ panel (visibility hidden, tabindex -1)
+    *    └─ tabs
+    *       └─ panel selected (visibility visible tabindex 0)
+    *          ce panel est accessible alors que caché par son panel parent
+    **/
+    @at-root #{&}:not(&--selected) {
+      visibility: hidden;
     }
   }
 }
