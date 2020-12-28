@@ -1,21 +1,18 @@
 import { Tab } from './tab';
 import { DisclosuresGroup, KeyListener, Renderer } from '@gouvfr/core/src/scripts';
-import { TAB_CLASSNAME, TABS_LIST_SELECTOR } from './tabs-constants';
+import { TAB_CLASSNAME, TABS_LIST_SELECTOR, TABS_SELECTOR } from './tabs-constants';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
 class TabsGroup extends DisclosuresGroup {
-  constructor (wrapper) {
-    super();
+  constructor (id, element) {
+    super(id, element);
     this._index = -1;
-    this.element = wrapper;
-    this.list = wrapper.querySelector(TABS_LIST_SELECTOR);
+    this.list = element.querySelector(`.${TABS_LIST_SELECTOR}`);
 
-    wrapper.addEventListener('transitionend', this._transitionend.bind(this));
-
-    this.build(wrapper);
+    element.addEventListener('transitionend', this._transitionend.bind(this));
 
     this._attachEvents();
     Renderer.add(this.render.bind(this));
@@ -23,8 +20,10 @@ class TabsGroup extends DisclosuresGroup {
 
   static get MemberConstructor () { return Tab; }
 
+  static get selector () { return TABS_SELECTOR; }
+
   _transitionend (e) {
-    this.wrapper.style.transition = 'none';
+    this.element.style.transition = 'none';
   }
 
   _attachEvents () {
@@ -95,14 +94,18 @@ class TabsGroup extends DisclosuresGroup {
     this.members[this._index].element.style.transform = '';
     for (let i = 0; i < this._index; i++) this.members[i].element.style.transform = 'translateX(-100%)';
     for (let i = this._index + 1; i < this.length; i++) this.members[i].element.style.transform = 'translateX(100%)';
-    this.wrapper.style.transition = '';
+    this.element.style.transition = '';
     super.current = this.members[value];
   }
 
   add (tab) {
     super.add(tab);
-    const index = this.members.indexOf(tab);
-    if (this._index > -1 && this._index !== index) tab.element.style.transform = `translateX(${index < this._index ? -100 : 100}%)`;
+    console.log('add', tab.disclosed, this.length);
+    if (this.length === 1 || tab.disclosed) this.current = tab;
+    else {
+      const index = this.members.indexOf(tab);
+      if (this._index > -1 && this._index !== index) tab.element.style.transform = `translateX(${index < this._index ? -100 : 100}%)`;
+    }
   }
 
   render () {
@@ -110,7 +113,7 @@ class TabsGroup extends DisclosuresGroup {
     const paneHeight = Math.round(this.current.element.offsetHeight);
     if (this.panelHeight === paneHeight) return;
     this.panelHeight = paneHeight;
-    this.wrapper.style.height = (this.panelHeight + this.list.offsetHeight) + 'px';
+    this.element.style.height = (this.panelHeight + this.list.offsetHeight) + 'px';
   }
 }
 

@@ -2,4 +2,3 @@
 
 import '../style.scss';
 import '../../../../page-test/script';
-

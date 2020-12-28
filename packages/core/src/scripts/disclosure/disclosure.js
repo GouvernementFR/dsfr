@@ -1,11 +1,12 @@
 import { DisclosuresGroup } from './disclosures-group';
 import { DisclosureButton } from './disclosure-button';
-import { addClass, removeClass } from '..';
+import { addClass, removeClass } from '../manipulation/classes';
+
+const disclosures = [];
 
 class Disclosure {
   constructor (element) {
     this.element = element;
-    console.log(element, this._type);
     this.id = element.id;
     this.buttons = [];
     this.disclosed = null;
@@ -14,15 +15,23 @@ class Disclosure {
     this.modifier = this._selector + '--' + this._type.id;
     this.attributeName = (this._type.aria ? 'aria-' : 'data-${prefix}-') + this._type.id;
 
-    if (this.element.hasAttribute('data-group')) DisclosuresGroup.group(this, this.GroupConstructor);
-
     const buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
     this.disclosed = this.disclosed === true;
-
     this.apply(this.disclosed);
+
+    console.log(this.GroupConstructor);
+
+    DisclosuresGroup.groupById(this, this.GroupConstructor);
+    DisclosuresGroup.groupByParent(this, this.GroupConstructor);
+  }
+
+  static build (from) {
+    const elements = [...from.querySelectorAll(`.${this.selector}`)];
+
+    for (const element of elements) disclosures.push(new this(element));
   }
 
   static get type () { return null; }
@@ -66,7 +75,10 @@ class Disclosure {
     if (value) addClass(this.element, this.modifier);
     else removeClass(this.element, this.modifier);
     for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
+    if (!value) for (const disclosure of disclosures) if (disclosure !== this && this.element.contains(disclosure.element)) disclosure.reset();
   }
+
+  reset () {}
 
   change (hasAttribute) {
     console.log('change', hasAttribute, this.type);

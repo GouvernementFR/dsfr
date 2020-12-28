@@ -1,10 +1,10 @@
-const TABS_SELECTOR = '.${prefix}-tabs';
+const TABS_SELECTOR = '${prefix}-tabs';
 
 const TAB_CLASSNAME = '${prefix}-tabs__tab';
 
-const PANEL_SELECTOR = '.${prefix}-tabs__panel';
+const PANEL_SELECTOR = '${prefix}-tabs__panel';
 
-const TABS_LIST_SELECTOR = '.${prefix}-tabs__list';
+const TABS_LIST_SELECTOR = '${prefix}-tabs__list';
 
 const TRANSITION_TIME = 100;
 

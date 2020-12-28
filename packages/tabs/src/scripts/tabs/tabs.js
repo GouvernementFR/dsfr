@@ -1,19 +1,15 @@
-import { TabsGroup } from './tabs-group';
-import { TABS_SELECTOR } from './tabs-constants';
+import { Tab } from './tab';
 
 /**
-* Classe principale des Tabs, initialise tout les éléments Tabs (TabsGroup) dans la page
+* Classe principale des Tabs, initialise tout les éléments Tab dans la page
 */
 class Tabs {
   constructor () {
-    this.groups = [];
     this.init();
   }
 
   init () {
-    const wrappers = [...document.querySelectorAll(TABS_SELECTOR)];
-
-    for (let i = 0; i < wrappers.length; i++) this.groups.push(new TabsGroup(wrappers[i]));
+    Tab.build(document);
   }
 }
 

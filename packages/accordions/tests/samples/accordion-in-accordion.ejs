@@ -1,0 +1,9 @@
+<%
+    const data = {
+        label: locals.label || 'Intitulé accordéon',
+        content: include('./accordion', {button: true}),
+        collapseId: 'accordion' + uniqueId()
+    }
+%>
+
+<%- include('../templates/accordion', data); %>

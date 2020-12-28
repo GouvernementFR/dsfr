@@ -42,7 +42,7 @@
     %>
         <%- include('../../../../buttons/tests/templates/button.ejs', button); %>
 
-        <ul class="<%= prefix %>-collapse" id="<%= id %>" data-group="group-id">
+        <ul class="<%= prefix %>-collapse" id="<%= id %>" data-<%= prefix %>-group="group-id">
 
             <% for (let j = 0; j < 2; j++) { %><li>list item</li><% } %>
             <li>

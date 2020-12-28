@@ -17,6 +17,10 @@ class Tab extends Disclosure {
   buttonFactory (element) {
     return new TabButton(element, this);
   }
+
+  reset () {
+    this.group.index = 0;
+  }
 }
 
 export { Tab };

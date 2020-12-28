@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 import '@gouvfr/accordions/_dist.scss';
 
-import { Initializer } from '@gouvfr/core/src/scripts/init/Initializer';
-import { Accordion } from './index';
+import { Initializer } from '@gouvfr/core/src/scripts';
+import { Accordions } from './index';
 
-new Initializer('.${prefix}-accordion', [Accordion]);
+new Initializer('.${prefix}-accordion', [Accordions]);

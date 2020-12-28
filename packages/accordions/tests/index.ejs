@@ -1,31 +1,17 @@
-<%- include('./templates/accordion.ejs', {collapseId: 'accordionDefault0', title: true, image: true, button: true}); %>
-<%- snippet(include('./templates/accordion.ejs', {short:true, collapseId: 'accordionDefault0', title: true, image: true, button: true})); %>
-
-
-<%- include('./samples/accordion-group.ejs', {groupCollapseId: prefix + '-accordion-group-0', button: true}); %>
-<%- snippet(include('./samples/accordion-group.ejs', {short:true, groupCollapseId: prefix + '-accordion-group-0', button: true})); %>
-
-
-<div class="<%= prefix %>-mt-9w" >
-    <h4 class="<%= prefix %>-h4">Accordéons simples multiples</h4>
-</div>
-
 <%
-  for (let i = 1; i < 6; i++) {
-%>
-    <div class="<%= prefix %>-mt-4w <%= prefix %>-mb-6w" >
-        <%- include('./templates/accordion.ejs', {collapseId: 'accordionDefault' + i, image: true}); %>
-    </div>
-<% } %>
 
-<div class="<%= prefix %>-mt-9w" >
-    <h4 class="<%= prefix %>-h4">Accordéons groupes multiples</h4>
-</div>
+let samples = [
+    { sample:'./samples/accordion', title:'Accordéon', data:{ title: true, image: true, button: true }},
+    { sample:'./samples/accordions-group',title:'Groupe d‘accordéons', data: { button: true }},
+    { sample:'./samples/accordion-in-accordion',title:'Accordéon dans un accordéon'},
+    { sample:'./samples/accordions-group-in-accordions-group',title:'Groupes d‘accordéons dans des groupes d‘accordéons'}
+]
 
-<%
-  for (let i = 1; i < 6; i++) {
 %>
-    <div class="<%= prefix %>-mt-9w" >
-        <%- include('./samples/accordion-group.ejs', {groupCollapseId: prefix + '-accordion-group-' + i, button: true}); %>
-    </div>
+
+<% for (let i = 0; i < samples.length; i++) { %>
+
+<h4 class="<%= prefix %>-h4"><%= samples[i].title %></h4>
+<%- include(samples[i].sample, samples[i].data) %>
+<%- snippet(include(samples[i].sample, samples[i].data)) %>
 <% } %>

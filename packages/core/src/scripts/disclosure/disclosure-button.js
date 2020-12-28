@@ -26,7 +26,7 @@ class DisclosureButton {
 
   mutate (mutations) {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === this.disclosure.attributeName) this.disclosure.change(this.disclosed); // TODO
+      if (mutation.type === 'attributes' && mutation.attributeName === this.disclosure.attributeName) this.disclosure.change(this.disclosed);
     });
   }
 

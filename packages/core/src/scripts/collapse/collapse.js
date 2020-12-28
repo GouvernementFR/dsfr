@@ -41,15 +41,10 @@ class Collapse extends Disclosure {
       this.element.style.setProperty('--collapse', -height + 'px');
       super.apply(false);
     }
-    // if (!value) this.element.style.maxHeight = '';
-    // super.apply(value);
   }
 
-  render () {
-    if (!this.disclosed) return;
-    const height = this.element.offsetHeight;
-    this.element.style.setProperty('--collapse', -height + 'px');
-    this.element.style.maxHeight = '';
+  reset () {
+    this.apply(false);
   }
 
   get hasFocus () {

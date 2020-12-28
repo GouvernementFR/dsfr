@@ -47,23 +47,18 @@
     @include padding(2v 0 6v);
     @include padding(2v 4v 8v, md);
   }
+}
 
-  $accordion: &;
+#{dse-group(accordions)} {
+  @extend %list-reset;
 
-  @include group {
-    @extend %list-reset;
+  #{dse(accordion)} {
+    border-bottom: 0;
+  }
 
-    #{$accordion} {
-      border-bottom: 0;
-    }
-
-    @include group-item {
-      &:last-child {
-        #{$accordion} {
-          @include scheme-element-border-color(g300, true, bottom);
-        }
-      }
-      @include before(null, none);
+  li:last-child {
+    #{dse(accordion)} {
+      @include scheme-element-border-color(g300, true, bottom);
     }
   }
 }

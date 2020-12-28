@@ -1,47 +1,58 @@
 /* eslint no-labels: ["error", { "allowLoop": true }] */
 import { Disclosure } from './disclosure';
 
-let count = 10e+12;
-const groups = {};
+const groups = [];
 
 class DisclosuresGroup {
-  constructor (id) {
+  constructor (id, element) {
+    this.id = id;
+    this.element = element;
     this.members = [];
     this._current = null;
-    groups[this.constructor.getGroupId(id)] = this;
+    groups.push(this);
   }
 
-  static getGroupId (id) {
-    console.log(constructor);
-    return `[${this.MemberConstructor.selector}]${id || (count++).toString(36)}`;
+  static getGroupById (id) {
+    for (const group of groups) if (group.constructor === this && group.id === id) return group;
+    return new this(id);
   }
 
-  static getGroup (id) {
-    return groups[this.getGroupId(id)] || new this(id);
+  static getGroupByElement (element) {
+    for (const group of groups) if (group.element === element) return group;
+    return new this(false, element);
   }
 
-  static group (member, groupConstructor) {
-    const id = member.element.getAttribute('data-group');
-    const group = groupConstructor.getGroup(id);
+  static groupById (member, groupConstructor) {
+    const id = member.element.getAttribute('data-${prefix}-group');
+    if (id === null) return;
+
+    const group = groupConstructor.getGroupById(id);
     group.add(member);
+  }
+
+  static groupByParent (member, GroupConstructor) {
+    if (GroupConstructor.selector === '') return;
+    let element = member.element.parentElement;
+
+    console.log('group by parent', member, element);
+
+    while (element) {
+      console.log(element);
+      if (element.classList.contains(GroupConstructor.MemberConstructor.selector)) return;
+
+      if (element.classList.contains(GroupConstructor.selector)) {
+        console.log('build group', element);
+        const group = GroupConstructor.getGroupByElement(element);
+        group.add(member);
+        return;
+      }
+      element = element.parentElement;
+    }
   }
 
   get length () { return this.members.length; }
 
-  build (wrapper) {
-    this.wrapper = wrapper;
-    console.log(this.constructor);
-    const elements = [...wrapper.querySelectorAll(this.constructor.MemberConstructor.selector)];
-
-    let member;
-
-    for (const element of elements) {
-      if (elements.some((other) => element !== other && other.contains(element))) continue;
-
-      member = new this.constructor.MemberConstructor(element);
-      this.add(member);
-    }
-  }
+  static get selector () { return ''; }
 
   static get MemberConstructor () { return Disclosure; }
 
@@ -51,18 +62,14 @@ class DisclosuresGroup {
     this.members.push(member);
     member.setGroup(this);
 
-    console.log('group add', this.current, member.disclosed, !member.disclosed);
-
     switch (true) {
       case this.current !== null:
       case !member.disclosed:
-        console.log('not current');
         member.apply(false);
         break;
 
       default:
         this.current = member;
-        console.log('current');
         member.apply(true);
     }
   }
@@ -73,10 +80,6 @@ class DisclosuresGroup {
     if (this._current !== null && this._current !== member) this._current.apply(false);
     this._current = member;
     if (this._current !== null) this._current.apply(true);
-  }
-
-  conceal () {
-    // close children
   }
 }
 
