@@ -13,7 +13,7 @@
   /**
     * Animation de la hauteur du panel
     */
-  transition: height 0.1s; // Todo: change animation
+  transition: height $tabs-transition-duration;
 
   // retire le padding du container en mobile
   @include margin-x(calc(50% - 50vw));
@@ -148,7 +148,7 @@
     width: 100%;
     position: absolute;
     padding: space(4v);
-    transition: visibility 0.1s, transform 0.1s; // Todo: change animation
+    transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
     @include respond-from(md) {
       padding: space(8v);

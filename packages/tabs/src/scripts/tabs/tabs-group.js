@@ -13,6 +13,8 @@ class TabsGroup extends DisclosuresGroup {
     this.element = wrapper;
     this.list = wrapper.querySelector(TABS_LIST_SELECTOR);
 
+    wrapper.addEventListener('transitionend', this._transitionend.bind(this));
+
     this.build(wrapper);
 
     this._attachEvents();
@@ -20,6 +22,10 @@ class TabsGroup extends DisclosuresGroup {
   }
 
   static get MemberConstructor () { return Tab; }
+
+  _transitionend (e) {
+    this.wrapper.style.transition = 'none';
+  }
 
   _attachEvents () {
     this.keyEvents = new KeyListener(this.element);
@@ -89,6 +95,7 @@ class TabsGroup extends DisclosuresGroup {
     this.members[this._index].element.style.transform = '';
     for (let i = 0; i < this._index; i++) this.members[i].element.style.transform = 'translateX(-100%)';
     for (let i = this._index + 1; i < this.length; i++) this.members[i].element.style.transform = 'translateX(100%)';
+    this.wrapper.style.transition = '';
     super.current = this.members[value];
   }
 
