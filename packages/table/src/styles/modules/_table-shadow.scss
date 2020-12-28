@@ -10,20 +10,16 @@ $shadow-wrapper: #{dse(table__wrapper)};
 */
 &--shadow {
   caption {
-    position: absolute;
+    @include absolute;
   }
 
   #{$shadow-wrapper} {
     overflow: visible;
-    position: relative;
+    @include relative;
 
     table {
       @include before(block, '') {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        @include absolute(0, 0, 0, 0);
         @include z-index(over);
         opacity: 1;
         pointer-events: none;
@@ -38,7 +34,7 @@ $shadow-wrapper: #{dse(table__wrapper)};
    **/
   &-left #{$shadow-wrapper} table {
     @include before(block, '') {
-      @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(4N) 0 space(2N) (-(space(3N))) $COLOR, inset 0 0 0 transparent));
+      @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(8v) 0 space(4v) (-(space(6v))) $COLOR, inset 0 0 0 transparent));
     }
   }
 
@@ -47,7 +43,7 @@ $shadow-wrapper: #{dse(table__wrapper)};
    **/
   &-right #{$shadow-wrapper} table {
     @include before(block, '') {
-      @include scheme-element-box-shadow-color(scroll-shadow, false, (inset 0 0 0 transparent, inset (-(space(4N))) 0 space(2N) (-(space(3N))) $COLOR));
+      @include scheme-element-box-shadow-color(scroll-shadow, false, (inset 0 0 0 transparent, inset (-(space(8v))) 0 space(4v) (-(space(6v))) $COLOR));
     }
   }
 
@@ -56,12 +52,12 @@ $shadow-wrapper: #{dse(table__wrapper)};
    **/
   &-left#{&}-right #{$shadow-wrapper} table {
     @include before(block, '') {
-      @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(4N) 0 space(2N) (-(space(3N))) $COLOR, inset (-(space(4N))) 0 space(2N) (-(space(3N))) $COLOR));
+      @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(8v) 0 space(4v) (-(space(6v))) $COLOR, inset (-(space(8v))) 0 space(4v) (-(space(6v))) $COLOR));
     }
   }
 
   table {
-    width: 100%;
+    @include size(100%);
     display: block;
     overflow-y: hidden;
     overflow-x: auto;

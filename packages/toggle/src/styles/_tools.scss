@@ -16,7 +16,7 @@
       @include disabled-colors(false, false);
     }
     @include disabled(true, false, false, '+ label::before') {
-      &::before {
+      @include before {
         @include disabled-colors(false, true);
       }
       @content;

@@ -5,7 +5,7 @@
 
 #{dse(sidemenu)} {
   @extend %default-text-color;
-  position: relative;
+  @include relative;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
 
@@ -13,9 +13,8 @@
    * Ajout de l'icône de menu en mode mobile (provisoire)
    */
   @include font-icon(menu-2-fill, md) {
-    position: absolute;
-    top: space(1-5N);
-    margin-left: space(1N);
+    @include absolute(3v);
+    @include margin-left(2v);
     transform: translateY(1px);
   }
 
@@ -24,7 +23,7 @@
    * On l'utilise pour l'ouverture/fermeture du sidemenu entier
    */
   &__wrapper {
-    margin: 0 space(2N);
+    @include margin(0 4v);
     @include collapse();
 
     &--expanded {
@@ -34,7 +33,7 @@
     @include respond-from(md) {
       overflow: initial;
       max-height: initial;
-      margin: 0;
+      @include margin(0);
       opacity: 1;
 
       &::before {
@@ -55,9 +54,9 @@
   /**
    * Titre facultatif
    */
-  &__title {
-    margin: 0;
-    padding: space(2N) 0;
+  @include title {
+    @include margin(0);
+    @include padding(4v 0);
     font-size: font-size(18);
     font-weight: font-weight(bold);
     line-height: line-height(normal);
@@ -66,35 +65,31 @@
     @include scheme-element-border-color(g300, true, bottom);
 
     @include respond-from(md) {
-      margin: 0 0 space(3N);
-      padding: 0;
+      @include margin(0 0 6v);
+      @include padding(0);
       font-size: font-size(20);
       border: 0;
     }
   }
 
-  &__list {
+  @include list {
     @extend %list-reset;
     font-weight: font-weight('bold');
 
     #{dse(sidemenu__list)} {
-      margin: 0 0 0 space(2N);
+      @include margin(0 0 0 4v);
       font-weight: font-weight();
     }
 
-    @include respond-from(md) {
-      margin: 0;
-    }
+    @include margin(0,md);
   }
 
-  &__item {
-    position: relative;
-    margin: space(0-5N);
+  @include list-item {
+    @include relative;
+    @include margin(1v);
     @include scheme-element-border-color(g300, true, bottom);
 
-    &::before {
-      content: none;
-    }
+    @include before(null, none);
 
     &:last-child {
       border: 0;
@@ -108,31 +103,27 @@
       & > #{dse(sidemenu__btn)} {
         @include scheme-element-text-color(bf500);
       }
+
       & > #{dse(sidemenu__link)} {
         @include scheme-element-text-color(bf500);
 
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -(space(1N));
-          bottom: 0;
-          width: 2px;
-          margin: space(1-5N) 0;
+        @include before(null, '') {
+          @include absolute(0, null, 0, -2v, 2px);
+          @include margin(3v 0);
           background-color: currentColor;
         }
       }
     }
 
     @include respond-from(md) {
-      margin: space(1N) 0;
+      @include margin(2v 0);
       border: 0;
     }
   }
 
   &__inner {
     @include respond-from(md) {
-      padding: 0 space(4N) 0 space(0-5N);
+      @include padding(0 8v 0 1v);
       @include scheme-element-border-color(g300, true, right);
     }
   }

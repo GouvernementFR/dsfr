@@ -6,7 +6,7 @@
 #{dse(callout)} {
   @extend %default-text-color;
   @include relative();
-  padding: space(3w);
+  @include padding(6v);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
   /**

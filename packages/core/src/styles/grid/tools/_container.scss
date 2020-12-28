@@ -4,20 +4,18 @@
 ////
 
 @mixin container() {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: #{space(map-get($grid-gutter-width, xs))};
-  padding-left: #{space(map-get($grid-gutter-width, xs))};
+  @include size(100%);
+  @include margin-left(auto);
+  @include margin-right(auto);
+  @include padding-right(#{space(map-get($grid-gutter-width, xs))});
+  @include padding-left(#{space(map-get($grid-gutter-width, xs))});
 
-  @include respond-from(sm) {
-    padding-right: #{space(map-get($grid-gutter-width, lg))};
-    padding-left: #{space(map-get($grid-gutter-width, lg))};
-  }
+  @include padding-right(#{space(map-get($grid-gutter-width, lg))}, sm);
+  @include padding-left(#{space(map-get($grid-gutter-width, lg))}, sm);
 
   @include respond-from(xl) {
     max-width: $container-max-width;
-    padding-right: 0;
-    padding-left: 0;
+    @include padding-right(0);
+    @include padding-left(0);
   }
 }

@@ -33,10 +33,9 @@
       @include font-icon(check-line, md, before) {
         @include display-flex(row, center, center);
         flex-shrink: 0;
-        width: space(3N);
-        height: space(3N);
-        margin-right: space(1N);
-        border-radius: space(0-5N);
+        @include size(6v, 6v);
+        @include margin-right(2v);
+        border-radius: space(1v);
         @include scheme-element-border-color(g800, true);
         @include scheme-element-text-color(t-plain);
         grid-row: 1;

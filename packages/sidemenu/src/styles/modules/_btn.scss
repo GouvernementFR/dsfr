@@ -8,14 +8,11 @@
  * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
  */
 #{dse(sidemenu__btn)} {
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  width: calc(100% - #{space(2N)});
-  height: 100%;
-  padding: space(1-5N) 0;
-  margin: 0 auto;
+  @include relative;
+  @include display-flex(row-reverse, center);
+  @include size(calc(100% - #{space(4v)}), 100%);
+  @include padding(3v 0);
+  @include margin(0 auto);
   text-align: left;
   font-weight: font-weight(bold);
   background: 0;
@@ -25,13 +22,10 @@
   // @include scheme-element-border-color(g300, true, bottom);
 
   @include font-icon(arrow-down-s-line, md) {
-    margin-left: auto;
-    margin-right: 0;
+    @include margin-left(auto);
+    @include margin-right(0);
+    @include margin-right(-6v, md);
     transition: transform 0.3s;
-
-    @include respond-from(md) {
-      margin-right: -(space(3N));
-    }
   }
 
   @include scheme-element-text-color(g700);
@@ -40,7 +34,7 @@
   &[aria-expanded="true"] {
     @include scheme-element-border-color(t-plain, true, bottom);
 
-    &::before {
+    @include before {
       transform: rotate(-180deg);
     }
   }
@@ -50,12 +44,10 @@
     * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
     */
   &--sidemenu-toggle {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
+    @include display-flex(row-reverse,center);
     text-align: left;
-    width: 100%;
-    padding: space(1-5N) 0 space(1-5N) space(4N);
+    @include size(100%);
+    @include padding(3v 0 3v 8v);
     border: 0;
     @include scheme-element-text-color(g700);
     @include scheme-element-bg-color(w-g750, true);
@@ -66,8 +58,8 @@
     }
 
     @include font-icon(arrow-down-s-line, md) {
-      margin-left: auto;
-      margin-right: space(2N);
+      @include margin-left(auto);
+      @include margin-right(4v);
       transition: transform 0.3s;
     }
 
@@ -79,8 +71,8 @@
   }
 
   @include respond-from(md) {
-    width: 100%;
-    padding: space(1N) space(4N) space(1N) space(1N);
+    @include size(100%);
+    @include padding(2v 8v 2v 2v);
     border: 0;
     @include scheme-element-bg-color(t-plain, true, after);
   }

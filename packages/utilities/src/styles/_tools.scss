@@ -98,10 +98,8 @@
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
 
-  &::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
+  @include before(block, '') {
+    @include margin-top(-100vh);
     transition: margin-top 0.3s;
   }
 
@@ -110,8 +108,8 @@
     max-height: 99999px;
     visibility: visible;
 
-    &::before {
-      margin-top: 0;
+    @include before {
+      @include margin-top(0);
     }
   }
 }

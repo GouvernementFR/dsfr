@@ -22,8 +22,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     font-family: inherit;
     font-size: font-size(12);
     line-height: 1.5;
-    margin: 0;
-    padding: 0;
+    @include margin(0);
+    @include padding(0);
     border: none;
     text-decoration: underline;
     cursor: pointer;
