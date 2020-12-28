@@ -11,20 +11,9 @@ class Tabs {
   }
 
   init () {
-    const wrappers = document.querySelectorAll(TABS_SELECTOR);
-    this.changing = this.change.bind(this);
+    const wrappers = [...document.querySelectorAll(TABS_SELECTOR)];
 
     for (let i = 0; i < wrappers.length; i++) this.groups.push(new TabsGroup(wrappers[i]));
-
-    window.addEventListener('resize', this.changing);
-    window.addEventListener('load', this.changing);
-    // this.change();
-  }
-
-  change () {
-    for (let i = 0; i < this.groups.length; i++) {
-      this.groups[i].update();
-    }
   }
 }
 

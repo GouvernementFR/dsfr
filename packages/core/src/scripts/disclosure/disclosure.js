@@ -5,6 +5,7 @@ import { addClass, removeClass } from '..';
 class Disclosure {
   constructor (element) {
     this.element = element;
+    console.log(element, this._type);
     this.id = element.id;
     this.buttons = [];
     this.disclosed = null;
@@ -13,7 +14,7 @@ class Disclosure {
     this.modifier = this._selector + '--' + this._type.id;
     this.attributeName = (this._type.aria ? 'aria-' : 'data-${prefix}-') + this._type.id;
 
-    if (this.element.hasAttribute('data-group')) DisclosuresGroup.group(this, this.groupFactory);
+    if (this.element.hasAttribute('data-group')) DisclosuresGroup.group(this, this.GroupConstructor);
 
     const buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
 
@@ -22,8 +23,6 @@ class Disclosure {
     this.disclosed = this.disclosed === true;
 
     this.apply(this.disclosed);
-
-    this.element.addEventListener('update', this.updating.bind(this));
   }
 
   static get type () { return null; }
@@ -40,9 +39,7 @@ class Disclosure {
     this.buttons.push(button);
   }
 
-  groupFactory () {
-    return new DisclosuresGroup();
-  }
+  get GroupConstructor () { return DisclosuresGroup; }
 
   buttonFactory (button) {
     return new DisclosureButton(button, this);
@@ -52,7 +49,7 @@ class Disclosure {
     console.log('disclose', this.disclosed);
     if (this.disclosed) return;
 
-    if (this.group !== null) this.group.current = this;
+    if (this.group !== undefined) this.group.current = this;
     this.apply(true);
   }
 
@@ -69,7 +66,6 @@ class Disclosure {
     if (value) addClass(this.element, this.modifier);
     else removeClass(this.element, this.modifier);
     for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
-    this.update();
   }
 
   change (hasAttribute) {
@@ -95,15 +91,6 @@ class Disclosure {
         this.disclose();
         break;
     }
-  }
-
-  updating (e) {
-    e.stopPropagation();
-    this.update();
-  }
-
-  update () {
-    if (this.group !== undefined) this.group.update();
   }
 
   setGroup (group) {

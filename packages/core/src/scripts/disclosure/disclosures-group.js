@@ -1,75 +1,79 @@
 /* eslint no-labels: ["error", { "allowLoop": true }] */
 import { Disclosure } from './disclosure';
 
+let count = 10e+12;
 const groups = {};
 
 class DisclosuresGroup {
-  constructor () {
-    this.disclosures = [];
+  constructor (id) {
+    this.members = [];
     this._current = null;
+    groups[this.constructor.getGroupId(id)] = this;
   }
 
-  static group (disclosure, factory) {
-    const id = disclosure.element.getAttribute('data-group');
-    if (factory === undefined) factory = () => new DisclosuresGroup();
-    if (groups[id] === undefined) groups[id] = factory();
-    groups[id].add(disclosure);
+  static getGroupId (id) {
+    console.log(constructor);
+    return `[${this.MemberConstructor.selector}]${id || (count++).toString(36)}`;
   }
+
+  static getGroup (id) {
+    return groups[this.getGroupId(id)] || new this(id);
+  }
+
+  static group (member, groupConstructor) {
+    const id = member.element.getAttribute('data-group');
+    const group = groupConstructor.getGroup(id);
+    group.add(member);
+  }
+
+  get length () { return this.members.length; }
 
   build (wrapper) {
     this.wrapper = wrapper;
-    const elements = Array.prototype.slice.call(wrapper.querySelectorAll(this.DisclosureConstructor.selector));
+    console.log(this.constructor);
+    const elements = [...wrapper.querySelectorAll(this.constructor.MemberConstructor.selector)];
 
-    let disclosure;
-    console.log('start', elements.length);
+    let member;
 
-    for (let i = 0; i < elements.length; i++) {
-      if (elements.some((element) => elements[i] !== element && element.contains(elements[i]))) continue;
+    for (const element of elements) {
+      if (elements.some((other) => element !== other && other.contains(element))) continue;
 
-      disclosure = this.disclosureFactory(elements[i]);
-      this.add(disclosure);
+      member = new this.constructor.MemberConstructor(element);
+      this.add(member);
     }
   }
 
-  get DisclosureConstructor () { return Disclosure; }
+  static get MemberConstructor () { return Disclosure; }
 
-  disclosureFactory (element) {
-    return new this.DisclosureConstructor(element);
-  }
+  get type () { return this.constructor.MemberConstructor.type; }
 
-  add (disclosure) {
-    this.disclosures.push(disclosure);
-    disclosure.setGroup(this);
+  add (member) {
+    this.members.push(member);
+    member.setGroup(this);
 
-    console.log('group add', this.current, disclosure.disclosed, !disclosure.disclosed);
-
-    if (this.type === undefined) this.type = disclosure.type;
-    else if (this.type !== disclosure.type) throw Error('A DisclosureGroup cannot contain 2 different Disclosure types');
+    console.log('group add', this.current, member.disclosed, !member.disclosed);
 
     switch (true) {
       case this.current !== null:
-      case !disclosure.disclosed:
+      case !member.disclosed:
         console.log('not current');
-        disclosure.apply(false);
+        member.apply(false);
         break;
 
       default:
-        this.current = disclosure;
+        this.current = member;
         console.log('current');
-        disclosure.apply(true);
+        member.apply(true);
     }
   }
 
   get current () { return this._current; }
 
-  set current (disclosure) {
-    if (this._current !== null && this._current !== disclosure) this._current.apply(false);
-    this._current = disclosure;
+  set current (member) {
+    if (this._current !== null && this._current !== member) this._current.apply(false);
+    this._current = member;
     if (this._current !== null) this._current.apply(true);
-    this.update();
   }
-
-  update () {}
 
   conceal () {
     // close children

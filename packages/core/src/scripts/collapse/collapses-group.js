@@ -7,9 +7,7 @@ class CollapsesGroup extends DisclosuresGroup {
     return this.current.hasFocus;
   }
 
-  disclosureFactory (element, type, selector) {
-    return new Collapse(element, type, selector);
-  }
+  static get MemberConstructor () { return Collapse; }
 }
 
 export { CollapsesGroup };

@@ -148,19 +148,13 @@
     width: 100%;
     position: absolute;
     padding: space(4v);
-    transform: translateX(-100%);
     transition: visibility 0.1s, transform 0.1s; // Todo: change animation
 
     @include respond-from(md) {
       padding: space(8v);
     }
 
-    &--following {
-      transform: translateX(100%);
-    }
-
     &--selected {
-      transform: translateX(0);
       @include scheme-element-focus();
 
       &:focus {
@@ -180,7 +174,8 @@
     * └─ panel (visibility hidden, tabindex -1)
     *    └─ tabs
     *       └─ panel selected (visibility visible tabindex 0)
-    *          ce panel est accessible alors que caché par son panel parent
+    *            ↑ ce panel est accessible alors que caché par son panel parent
+    * solution : visibility hidden seulement sur les éléments non sélectionnés
     **/
     @at-root #{&}:not(&--selected) {
       visibility: hidden;

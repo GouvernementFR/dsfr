@@ -9,7 +9,6 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const renderPage = require('./renderPage');
 const { sassVarsLoader, jsVarsLoader } = require('./varsLoaders');
 
-
 const p = path.resolve('.');
 const segments = p.split('/');
 const id = segments[segments.length - 1];

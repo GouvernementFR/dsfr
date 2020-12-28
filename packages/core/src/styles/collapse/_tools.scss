@@ -5,25 +5,25 @@
 
 @mixin collapse($className: collapse) {
   overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
+  transition: visibility 0.3s;
+
+  --collapse: -99999px;
+  --collapser: '';
 
   &::before {
     display: block;
     content: '';
-    margin-top: -100vh;
+    content: var(--collapser);
     transition: margin-top 0.3s;
+    margin-top: 0;
   }
 
-  &--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible;
+  #{&}:not(&--expanded) {
+    visibility: hidden;
 
-    &::before {
-      margin-top: 0;
+    @include before {
+      margin-top: -99999px;
+      margin-top: var(--collapse);
     }
   }
 }
