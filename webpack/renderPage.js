@@ -32,9 +32,9 @@ function getPackage (id) {
   }
 }
 
-function uniqueId () {
+function uniqueId (module) {
   count++;
-  return `•${count}`;
+  return `${module}•${count}`;
 }
 
 function snippet (html) {
@@ -45,11 +45,11 @@ function snippet (html) {
   html = html.replace(/</g, '&lt;');
   html = html.replace(/>/g, '&gt;');
 
-  const id = uniqueId();
+  const id = uniqueId('snippet');
 
   const prefix = global.prefix;
 
-  return `<div class="${prefix}-mt-3w ${prefix}-mb-9w ${prefix}-pb-6w" ><section class="${prefix}-accordion"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="snippet-${id}">Snippet de code</button></h3><div class="${prefix}-accordion__body" id="snippet-${id}"><div class="${prefix}-accordion__inner"><pre class=" language-html"><code>${html}</code></pre></div></div></section></div>`;
+  return `<div class="${prefix}-mt-3w ${prefix}-mb-9w ${prefix}-pb-6w" ><section class="${prefix}-accordion"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="${id}">Snippet de code</button></h3><div class="${prefix}-collapse" id="${id}"><pre class=" language-html"><code>${html}</code></pre></div></section></div>`;
 }
 
 function renderPage (id) {

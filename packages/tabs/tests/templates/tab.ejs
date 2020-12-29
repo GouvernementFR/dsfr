@@ -10,7 +10,7 @@
 
 %>
 <%
-let id = 'tabpanel' + uniqueId();
+let id = uniqueId('tabpanel');
 let btn = {
   attributes: {
     tabindex: locals.isActive ? '0' : '-1',

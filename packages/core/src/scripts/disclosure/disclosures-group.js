@@ -34,14 +34,10 @@ class DisclosuresGroup {
     if (GroupConstructor.selector === '') return;
     let element = member.element.parentElement;
 
-    console.log('group by parent', member, element);
-
     while (element) {
-      console.log(element);
       if (element.classList.contains(GroupConstructor.MemberConstructor.selector)) return;
 
       if (element.classList.contains(GroupConstructor.selector)) {
-        console.log('build group', element);
         const group = GroupConstructor.getGroupByElement(element);
         group.add(member);
         return;
@@ -59,6 +55,7 @@ class DisclosuresGroup {
   get type () { return this.constructor.MemberConstructor.type; }
 
   add (member) {
+    if (this.members.indexOf(member) !== -1) return;
     this.members.push(member);
     member.setGroup(this);
 

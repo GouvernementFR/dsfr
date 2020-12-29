@@ -1,16 +1,4 @@
 <%- include('./btn'); %>
-<div class="<%= prefix %>-sidemenu__content" id="<%= collapseId %>" >
-    <ul class="<%= prefix %>-sidemenu__list" >
-        <%
-        for (let i = 0; i < items.length; i++) {
-            let item = items[i];
-            let classes = [prefix + '-sidemenu__item'];
-
-            if (item.active) classes.push(prefix + '-sidemenu__item--active');
-        %>
-            <li <%- includeClasses(classes); %>>
-                <%- include('./' + item.type, item); %>
-            </li>
-        <% } %>
-    </ul>
+<div class="<%= prefix %>-collapse" id="<%= collapseId %>" >
+    <%- include('./list'); %>
 </div>

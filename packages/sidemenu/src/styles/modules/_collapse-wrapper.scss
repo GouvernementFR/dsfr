@@ -6,17 +6,17 @@
 /**
  * Wrapper des listes déployables niveau 1 et 2
  */
-#{dse(sidemenu__content)} {
-  @include collapse();
-  max-height: 100%;
+#{dse(collapse)} #{dse(collapse)} {
+  // @include collapse();
+  // max-height: 100%;
   padding: space(0-5N);
   margin: -(space(0-5N));
   transition: max-height 0.3s;
 
   &:not(&--expanded) {
     #{dse(sidemenu__item)} {
-      max-height: 0;
-      margin-bottom: 0;
+      // max-height: 0;
+      // margin-bottom: 0;
     }
   }
 

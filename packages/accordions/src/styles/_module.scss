@@ -37,15 +37,16 @@
     @include padding(3v 4v, md);
   }
 
-  @include body {
-    @include collapse();
+  #{dse(collapse)} {
     @include margin(0 -1v);
-    @include padding(0 1v);
-  }
+    @include padding-x(1v);
+    @include padding-x(5v, md);
 
-  &__inner {
-    @include padding(2v 0 6v);
-    @include padding(2v 4v 8v, md);
+    &--expanded {
+      @include padding-top(2v);
+      @include padding-bottom(6v);
+      @include padding-bottom(8v, md);
+    }
   }
 }
 

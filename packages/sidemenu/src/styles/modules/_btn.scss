@@ -49,32 +49,21 @@
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
     * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
     */
-  &--sidemenu-toggle {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    text-align: left;
+  @at-root #{dse(sidemenu__inner)} > #{&} {
     width: 100%;
-    padding: space(1-5N) 0 space(1-5N) space(4N);
-    border: 0;
-    @include scheme-element-text-color(g700);
+    font-weight: normal;
+    //padding: space(1-5N) 0 space(1-5N) space(4N);
     @include scheme-element-bg-color(w-g750, true);
-    @include scheme-element-focus();
-
-    &[hidden] {
-      display: none;
-    }
-
-    @include font-icon(arrow-down-s-line, md) {
-      margin-left: auto;
+    @include before {
       margin-right: space(2N);
-      transition: transform 0.3s;
     }
 
-    &[aria-expanded="true"] {
-      &::before {
-        transform: rotate(-180deg);
-      }
+    @include font-icon(menu-2-fill, md, after) {
+      @include margin-x(1v);
+    }
+
+    @include respond-from(md) {
+      display: none;
     }
   }
 

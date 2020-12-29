@@ -2,11 +2,9 @@
   <h3 class="<%= prefix %>-accordion__title">
     <button class="<%= prefix %>-accordion__btn" aria-expanded="false" aria-controls="<%= collapseId %>" ><%- label %></button>
   </h3>
-  <div class="<%= prefix %>-accordion__body" id="<%= collapseId %>">
-    <div class="<%= prefix %>-accordion__inner">
-      <% if (locals.content !== undefined) { %>
-        <%- content %>
-      <% } %>
-    </div>
+  <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
+    <% if (locals.content !== undefined) { %>
+      <%- content %>
+    <% } %>
   </div>
 </section>

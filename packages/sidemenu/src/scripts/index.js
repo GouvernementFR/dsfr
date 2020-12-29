@@ -1,3 +1,3 @@
-import { SideMenu } from './sidemenu/sidemenu';
+import { SidemenuGroup } from './sidemenu/sidemenu-group';
 
-export { SideMenu };
+export { SidemenuGroup };

@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
+import { CollapsePlugin } from '@gouvfr/core/src/scripts/';
+import { SIDEMENU_ASCENDANT } from './sidemenu/sidemenu-constants';
+import { SidemenuGroup } from './sidemenu/sidemenu-group';
 
-import { Initializer } from '@gouvfr/core/src/scripts';
-import { SideMenu } from './index';
-
-new Initializer('.${prefix}-sidemenu', [SideMenu]);
+CollapsePlugin.add(SIDEMENU_ASCENDANT, SidemenuGroup);

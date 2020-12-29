@@ -11,46 +11,14 @@
 
   /**
    * Ajout de l'icône de menu en mode mobile (provisoire)
-   */
+   *
   @include font-icon(menu-2-fill, md) {
     position: absolute;
     top: space(1-5N);
     margin-left: space(1N);
     transform: translateY(1px);
   }
-
-  /**
-   * Ce wrapper ne sert que pour la version mobile
-   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
    */
-  &__wrapper {
-    margin: 0 space(2N);
-    @include collapse();
-
-    &--expanded {
-      max-height: 100%;
-    }
-
-    @include respond-from(md) {
-      overflow: initial;
-      max-height: initial;
-      margin: 0;
-      opacity: 1;
-
-      &::before {
-        display: none;
-      }
-
-      &#{&}--expanded {
-        opacity: 1;
-      }
-
-      &:not(#{&}--expanded) {
-        max-height: initial;
-        visibility: visible;
-      }
-    }
-  }
 
   /**
    * Titre facultatif
@@ -135,14 +103,47 @@
       padding: 0 space(4N) 0 space(0-5N);
       @include scheme-element-border-color(g300, true, right);
     }
+
+    /**
+   * Ce wrapper ne sert que pour la version mobile
+   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+   */
+    > #{dse(collapse)} {
+      margin: 0 space(2N);
+      max-height: none !important;
+
+      @include respond-from(md) {
+        overflow: initial;
+        max-height: initial;
+        margin: 0;
+        // opacity: 1;
+
+        &::before {
+          display: none;
+        }
+
+        &#{&}--expanded {
+          // opacity: 1;
+        }
+
+        &:not(#{dse(collapse)}--expanded) {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  @at-root #{&} &__link {
+    box-shadow: none;
   }
 
   @include respond-from(md) {
     @include scheme-element-bg-color(t-plain, true);
   }
+
+  @import 'modules/collapse-wrapper';
+  @import 'modules/variants';
 }
 
-@import 'modules/collapse-wrapper';
-@import 'modules/variants';
 @import 'modules/btn';
 @import 'modules/link';

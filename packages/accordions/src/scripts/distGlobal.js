@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
+import { CollapsePlugin } from '@gouvfr/core/src/scripts/';
+import { ACCORDION_ASCENDANT } from './accordion/accordion-constants';
+import { AccordionsGroup } from './accordion/accordions-group';
 
-import { Initializer } from '@gouvfr/core/src/scripts/';
-import { Accordions } from './index';
-
-new Initializer('.${prefix}-accordion', [Accordions]);
+CollapsePlugin.add(ACCORDION_ASCENDANT, AccordionsGroup);

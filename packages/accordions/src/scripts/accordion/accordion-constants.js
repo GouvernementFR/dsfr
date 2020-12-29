@@ -1,4 +1,4 @@
 const ACCORDIONS_GROUP = '${prefix}-accordions-group';
-const ACCORDION_SELECTOR = '${prefix}-accordion__body';
+const ACCORDION_ASCENDANT = '${prefix}-accordion';
 
-export { ACCORDIONS_GROUP, ACCORDION_SELECTOR };
+export { ACCORDIONS_GROUP, ACCORDION_ASCENDANT };

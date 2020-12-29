@@ -1,0 +1,14 @@
+<ul class="<%= prefix %>-sidemenu__list" >
+    <%
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            let classes = [prefix + '-sidemenu__item'];
+
+            if (item.active) classes.push(prefix + '-sidemenu__item--active');
+    %>
+        <li <%- includeClasses(classes); %>>
+
+            <%- include('./' + item.type, item); %>
+        </li>
+    <% } %>
+</ul>
