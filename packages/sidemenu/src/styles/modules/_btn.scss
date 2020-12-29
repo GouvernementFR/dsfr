@@ -58,6 +58,9 @@
       margin-right: space(2N);
     }
 
+    /**
+    * Ajout de l'icône de menu en mode mobile (provisoire)
+    */
     @include font-icon(menu-2-fill, md, after) {
       @include margin-x(1v);
     }

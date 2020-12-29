@@ -10,17 +10,6 @@
   @include scheme-element-bg-color(w-g750, true);
 
   /**
-   * Ajout de l'icône de menu en mode mobile (provisoire)
-   *
-  @include font-icon(menu-2-fill, md) {
-    position: absolute;
-    top: space(1-5N);
-    margin-left: space(1N);
-    transform: translateY(1px);
-  }
-   */
-
-  /**
    * Titre facultatif
    */
   &__title {
