@@ -43,12 +43,12 @@ class Collapse extends Disclosure {
   static get selector () { return COLLAPSE_SELECTOR; }
 
   transitionend (e) {
-    if (!this.disclosed) this.element.style.maxHeight = '0';
+    if (!this.disclosed) this.element.style.display = 'none';
   }
 
   apply (value) {
     if (value) {
-      this.element.style.maxHeight = '';
+      this.element.style.display = '';
       this.element.style.setProperty('--collapser', 'none');
       const height = this.element.offsetHeight;
       this.element.style.setProperty('--collapse', -height + 'px');

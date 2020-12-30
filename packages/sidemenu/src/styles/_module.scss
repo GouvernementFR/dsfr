@@ -99,20 +99,14 @@
    */
     > #{dse(collapse)} {
       margin: 0 space(2N);
-      max-height: none !important;
 
       @include respond-from(md) {
         overflow: initial;
-        max-height: initial;
+        display: block !important;
         margin: 0;
-        // opacity: 1;
 
         &::before {
           display: none;
-        }
-
-        &#{&}--expanded {
-          // opacity: 1;
         }
 
         &:not(#{dse(collapse)}--expanded) {

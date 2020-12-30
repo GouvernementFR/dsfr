@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 
 import { Initializer } from '@gouvfr/core/src/scripts/';
-import { Navigation } from './index';
+import { _navigation } from './index';
 
-new Initializer('.${prefix}-nav', [Navigation]);
+new Initializer('.${prefix}-nav', [_navigation]);

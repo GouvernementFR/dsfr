@@ -48,8 +48,7 @@
       margin: 0 #{space(map-get($grid-gutter-width, lg)) * - 0.5};
     }
 
-    [class^="#{dse(col-, '')}"],
-    [class*=" #{dse(col-, '')}"],
+    #{class-start-with(dse(col-, ''))},
     #{dse(col)} {
       padding: #{space(map-get($grid-gutter-width, xs)) * 0.5};
 

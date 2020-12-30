@@ -7,7 +7,7 @@ const MEGA = '${prefix}-mega-menu';
 const EXPANDED = '--expanded';
 const RIGHT = '${prefix}-nav__item--align-right';
 
-class Navigation {
+class _navigation {
   constructor () {
     this.init();
   }
@@ -75,4 +75,4 @@ class NavMenu {
   }
 }
 
-export { Navigation };
+export { _navigation };
