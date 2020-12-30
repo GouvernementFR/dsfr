@@ -1,6 +1,4 @@
 /* eslint no-labels: ["error", { "allowLoop": true }] */
-import { Disclosure } from './disclosure';
-
 const groups = [];
 
 class DisclosuresGroup {
@@ -30,14 +28,15 @@ class DisclosuresGroup {
     group.add(member);
   }
 
-  static groupByParent (member, GroupConstructor) {
-    if (GroupConstructor.selector === '') return;
+  static groupByParent (member, GroupConstructor, groupSelector) {
+    if (groupSelector === undefined) groupSelector = GroupConstructor.selector;
+    if (groupSelector === '') return;
     let element = member.element.parentElement;
 
     while (element) {
-      if (element.classList.contains(GroupConstructor.MemberConstructor.selector)) return;
+      if (element.classList.contains(member.constructor.selector)) return;
 
-      if (element.classList.contains(GroupConstructor.selector)) {
+      if (element.classList.contains(groupSelector)) {
         const group = GroupConstructor.getGroupByElement(element);
         group.add(member);
         return;
@@ -49,10 +48,6 @@ class DisclosuresGroup {
   get length () { return this.members.length; }
 
   static get selector () { return ''; }
-
-  static get MemberConstructor () { return Disclosure; }
-
-  get type () { return this.constructor.MemberConstructor.type; }
 
   add (member) {
     if (this.members.indexOf(member) !== -1) return;

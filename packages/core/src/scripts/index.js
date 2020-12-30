@@ -9,11 +9,10 @@ import { Collapse } from './collapse/collapse';
 import { CollapseButton } from './collapse/collapse-button';
 import { CollapsesGroup } from './collapse/collapses-group';
 import { Collapses } from './collapse/collapses';
-import { CollapsePlugin } from './collapse/collapse-plugin';
 
 export { Initializer };
 export { addClass, removeClass };
 export { Renderer };
 export { KeyListener };
 export { Disclosure, DisclosureButton, DisclosuresGroup };
-export { Collapse, CollapseButton, Collapses, CollapsesGroup, CollapsePlugin };
+export { Collapse, CollapseButton, Collapses, CollapsesGroup };

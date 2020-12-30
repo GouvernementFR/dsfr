@@ -34,7 +34,7 @@ function getPackage (id) {
 
 function uniqueId (module) {
   count++;
-  return `${module}•${count}`;
+  return `${module}~${count}`;
 }
 
 function snippet (html) {

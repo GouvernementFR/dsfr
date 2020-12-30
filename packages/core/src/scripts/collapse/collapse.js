@@ -3,7 +3,6 @@ import { DisclosuresGroup } from '../disclosure/disclosures-group';
 import { CollapseButton } from './collapse-button';
 import { CollapsesGroup } from './collapses-group';
 import { COLLAPSE_SELECTOR } from './collapse-constants';
-import { CollapsePlugin } from './collapse-plugin';
 
 /**
  * Tab coorespond au panel d'un élement Tabs (tab panel)
@@ -14,18 +13,18 @@ class Collapse extends Disclosure {
   constructor (element) {
     super(element);
 
-    this.groupByPlugins();
+    this.groupByAscendant();
 
     element.addEventListener('transitionend', this.transitionend.bind(this));
   }
 
-  groupByPlugins () {
-    for (const plugin of CollapsePlugin.plugins) {
+  groupByAscendant () {
+    for (const ascendant in CollapsesGroup.ascendants) {
       let element = this.element.parentElement;
 
       while (element) {
-        if (element.classList.contains(plugin.ascendant)) {
-          DisclosuresGroup.groupByParent(this, plugin.GroupConstructor);
+        if (element.classList.contains(ascendant)) {
+          DisclosuresGroup.groupByParent(this, CollapsesGroup, CollapsesGroup.ascendants[ascendant]);
           break;
         }
 

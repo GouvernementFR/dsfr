@@ -1,4 +1,3 @@
-import { Tab } from './tab';
 import { DisclosuresGroup, KeyListener, Renderer } from '@gouvfr/core/src/scripts';
 import { TAB_CLASSNAME, TABS_LIST_SELECTOR, TABS_SELECTOR } from './tabs-constants';
 
@@ -17,8 +16,6 @@ class TabsGroup extends DisclosuresGroup {
     this._attachEvents();
     Renderer.add(this.render.bind(this));
   }
-
-  static get MemberConstructor () { return Tab; }
 
   static get selector () { return TABS_SELECTOR; }
 

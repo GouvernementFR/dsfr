@@ -1,5 +1,6 @@
-import { Collapse } from './collapse';
 import { DisclosuresGroup } from '../disclosure/disclosures-group';
+
+const ascendants = {};
 
 class CollapsesGroup extends DisclosuresGroup {
   get hasFocus () {
@@ -7,7 +8,11 @@ class CollapsesGroup extends DisclosuresGroup {
     return this.current.hasFocus;
   }
 
-  static get MemberConstructor () { return Collapse; }
+  static register (ascendant, groupSelector) {
+    ascendants[ascendant] = groupSelector;
+  }
+
+  static get ascendants () { return ascendants; };
 }
 
 export { CollapsesGroup };
