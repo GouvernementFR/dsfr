@@ -4,7 +4,7 @@
 ////
 
 #{dse(tabs)} {
-  position: relative;
+  @include relative;
   overflow: hidden;
   @include margin-top(-4px);
   @include padding-top(4px);
@@ -17,12 +17,9 @@
 
   // retire le padding du container en mobile
   @include margin-x(calc(50% - 50vw));
+  @include margin-x(0, md);
 
   #{dse(tabs)} {
-    @include margin-x(0);
-  }
-
-  @include respond-from(md) {
     @include margin-x(0);
   }
 
@@ -34,24 +31,22 @@
   /**
    * ul : element srollable des boutons
    */
-  &__list {
-    display: flex;
-    align-items: flex-end;
+  @include list {
+    @include display-flex(null, flex-end);
     overflow-x: auto;
     list-style: none;
-    width: 100%;
+    @include size(100%);
 
     /**
     * overflow vertical de 4px pour le focus
     */
-    margin: -4px 0;
-    padding: 4px 0.5rem;
+    @include margin(-4px 0);
+    @include padding(4px 2v);
 
     @include after(block, '') {
       flex: 1 1 auto;
       height: 1px;
-      margin-left: -(space(2v));
-      margin-right: -(space(2v));
+      @include margin-x(-2v);
       @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
     }
 
@@ -61,43 +56,36 @@
     li {
       display: block;
       flex: 0 0 auto;
-      margin: 0 0.5rem;
+      @include margin(0 2v);
       @include before(none, none);
 
       &:not(:first-child) {
-        margin-left: 0;
+        @include margin-left(0);
         @include before(block, '') {
-          position: sticky;
-          margin-left: -(space(2v));
-          width: space(2v);
-          top: 100%;
-          height: 1px;
+          @include sticky(100%, null, null, null, 2v, 1px);
+          @include margin-left(-2v);
           @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
         }
       }
 
       &:last-child {
-        padding-right: space(4v);
+        @include padding-right(4v);
 
         @include after(block, '') {
           min-width: 1rem;
-          margin-left: 100%;
+          @include margin-left(100%);
           flex: 1 1 auto;
-          width: auto;
-          top: 100%;
-          height: 1px;
-          margin-top: -1px;
+          @include sticky(100%, null, null, null, auto, 1px);
+          @include margin-top(-1px);
           @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
         }
       }
 
       &:first-child {
         @include before(block, '') {
+          @include sticky(100%, null, null, null, 100%, 1px);
           position: sticky;
-          margin-left: -100%;
-          width: 100%;
-          top: 100%;
-          height: 1px;
+          @include margin-left(-100%);
           @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
         }
       }
@@ -109,7 +97,7 @@
   */
   &__tab {
     @include build-tab();
-    position: relative;
+    @include relative;
     overflow: visible;
     font-weight: bold;
     @include z-index(over);
@@ -143,16 +131,10 @@
   */
   &__panel {
     display: block;
-    height: auto;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    padding: space(4v);
+    @include absolute(null, null, null, 0, 100%, auto);
+    @include padding(4v);
+    @include padding(8v, md);
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
-
-    @include respond-from(md) {
-      padding: space(8v);
-    }
 
     &--selected {
       @include scheme-element-focus();

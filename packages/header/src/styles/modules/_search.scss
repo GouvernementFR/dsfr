@@ -4,11 +4,11 @@
 ////
 
 #{dse(search-bar)} {
-  margin-top: space(2-5N);
+  @include margin-top(5v);
 
   @include respond-from(md) {
-    width: 23.667rem;
-    margin-top: 0;
+    @include size(23.667rem);
+    @include margin-top(0);
     box-shadow: none;
   }
 }

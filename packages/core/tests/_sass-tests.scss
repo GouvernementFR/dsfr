@@ -36,7 +36,7 @@ $true-terminal-output: false;
 
 @include describe('[function] space') {
   @include it('Should return a rem value passing a space scale number value') {
-    @include assert-equal(space(3N), 1.5rem);
+    @include assert-equal(space(6v), 1.5rem);
   }
 }
 

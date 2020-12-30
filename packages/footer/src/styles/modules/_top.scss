@@ -4,14 +4,14 @@
 ////
 
 &__top {
-  display: flex;
+  @include display-flex(null);
   @include scheme-element-bg-color(beige, true);
-  margin: -(space(5w)) 0 space(5w);
-  padding: space(2w) 0;
+  @include margin(-10v 0 10v);
+  @include padding(4v 0);
 }
 
 &__top-cat {
-  margin: 0 0 space(1w);
+  @include margin(0 0 2v);
   font-size: font-size(12);
   font-weight: font-weight(bold);
   text-align: center;
@@ -24,7 +24,7 @@
 &__top-list {
   @extend %list-reset;
   text-align: center;
-  margin: 0;
+  @include margin(0);
 
   @include respond-from(sm) {
     text-align: left;

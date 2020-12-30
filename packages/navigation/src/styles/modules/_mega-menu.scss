@@ -1,0 +1,186 @@
+////
+/// Navigation Module : Mega menu
+/// @group navigation
+////
+
+#{dse(mega-menu)} {
+
+  @include collapse();
+
+  @include z-index(menu, true);
+
+  @include scheme-element-bg-color(w-g750, true);
+
+  @include margin(0 -4v 1px);
+  @include padding(0 4v);
+
+  @include respond-from(md) {
+    @include absolute(100%, null, null, calc(50% - 50vw), 100vw);
+
+    @include margin(-2px 0 0);
+    @include padding(0);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include respond-from(md) {
+    @include after(null, '') {
+      @include absolute(0, null, null, 50%, calc(#{$container-max-width} + #{space(8v)}), 2px);
+      @include scheme-element-bg-color(bf200-bf300, true);
+      max-width: 100vw;
+      transform: translateX(-50%);
+    }
+  }
+
+  > #{dse(container)} {
+    @include padding(2v 4v 6v);
+    @include padding(#{calc(#{space(8v)} + 2px)} 8v 4v, md);
+    @include padding(#{calc(#{space(8v)} + 2px)} 0 4v, xl);
+
+    @include respond-from(md) {
+      @include relative;
+    }
+  }
+
+  #{dse(btn) + dse(fi-close-line)} {
+    display: none;
+    @include absolute(0, 8v);
+    @include margin-top(4v);
+    @include margin-right(-4v);
+    @include scheme-element-bg-color(t-plain);
+    @include scheme-element-text-color(bf500);
+
+    @include respond-from(md) {
+      display: inline-flex;
+    }
+
+    @include respond-from(xl) {
+      right: 0;
+    }
+  }
+
+  p {
+    @include class-not-start-with(dse(h, '')) {
+      display: none;
+
+      @include respond-from(md) {
+        display: block;
+      }
+    }
+  }
+
+  &__category {
+    @include relative;
+    @include margin(0 -4v);
+    @include margin(0,md);
+
+    @include respond-from(md) {
+
+      @include after(block, '') {
+        @include absolute(null, 0, 0, 0, null, 2px);
+        @include margin-left(2v);
+        @include scheme-element-bg-color(g300, true);
+      }
+    }
+
+    &,
+    & > #{dse(link)} {
+      @include padding(4v);
+      font-size: font-size(14);
+      line-height: space(4v);
+      font-weight: bold;
+      text-align: left;
+      box-shadow: none;
+      @include scheme-element-text-color(g800);
+      @include padding(3v 2v, md);
+    }
+
+    & > #{dse(link)} {
+      display: block;
+      box-shadow: none;
+      @include margin(-4v);
+      border-radius: 0;
+      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
+      @include scheme-element-focus();
+
+      @include respond-from(md) {
+        @include margin(-3v -2v);
+      }
+
+      @include before(null, none);
+    }
+
+    &--active {
+      &,
+      & > #{dse(link)} {
+        @include scheme-element-text-color(bf500);
+      }
+
+      @include before(null, '') {
+        @include absolute(0, null, 0, 0, 2px);
+        background-color: currentColor;
+        @include margin(3v 0);
+        @include margin(2v 0, md);
+      }
+    }
+  }
+
+  @include list {
+    @extend %list-reset;
+    @include margin(0 -4v);
+    @include margin(4v 0 0, md);
+  }
+
+  @include list-item {
+    @include relative;
+    @include margin(0);
+
+    @include respond-from(md) {
+      @include margin(0 0 2v 0);
+    }
+
+    @include before(null, none);
+
+    &,
+    & > #{dse(link)} {
+      @include padding(3v 4v);
+      font-size: font-size(14);
+      line-height: space(4v);
+      text-align: left;
+      box-shadow: none;
+      @include scheme-element-text-color(g800);
+
+      @include respond-from(md) {
+        @include padding(2v);
+      }
+
+      @include before(null, none);
+    }
+
+    & > #{dse(link)} {
+      @include margin(-3v -4v);
+      @include margin(-2v, md);
+      display: block;
+      border-radius: 0;
+
+      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
+      @include scheme-element-focus();
+    }
+
+    &--active {
+      &,
+      & > #{dse(link)} {
+        @include scheme-element-text-color(bf500);
+      }
+
+      @include before(null, '') {
+        @include absolute(0, null, 0, 0, 2px);
+        background-color: currentColor;
+        @include margin(3v 0);
+        @include margin(2v 0, md);
+      }
+    }
+  }
+}

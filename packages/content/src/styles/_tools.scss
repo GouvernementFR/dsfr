@@ -27,7 +27,7 @@
         }
 
         #{$captions} {
-          max-width: calc(100vw - #{space(4N)});
+          max-width: calc(100vw - #{space(8v)});
         }
       }
     }

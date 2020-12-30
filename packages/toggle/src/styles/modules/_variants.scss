@@ -11,12 +11,12 @@
 
   .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label],
   .#{$prefix}-toggle__label[data-#{$prefix}-checked-label] {
-    &::before {
-      margin-bottom: -(space(1w));
+    @include before {
+      @include margin-bottom(-2v);
     }
 
     + .#{$prefix}-hint-text {
-      margin-top: space(2w);
+      @include margin-top(4v);
     }
   }
 }
@@ -27,31 +27,31 @@
 &--label-left {
   .#{$prefix}-toggle__input {
     order: 1;
-    margin: 0 0 0 auto;
+    @include margin(0 0 0 auto);
   }
 
   .#{$prefix}-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
-    padding-left: 0;
-    padding-right: space(2w);
+    @include padding-left(0);
+    @include padding-right(4v);
   }
 
   .#{$prefix}-toggle__label {
     justify-content: space-between;
-    padding-left: 0;
-    width: calc(100% - #{space(5w)});
+    @include padding-left(0);
+    width: calc(100% - #{space(10v)});
 
-    &::before {
+    @include before {
       flex-shrink: 0;
       order: 1;
-      margin-right: -(space(5w));
-      margin-left: space(2w);
+      @include margin-right(-10v);
+      @include margin-left(4v);
       text-align: right;
     }
   }
 
   .#{$prefix}-toggle__label::after {
     left: auto;
-    right: space(2w);
+    right: space(4v);
   }
 
   .#{$prefix}-hint-text {

@@ -6,32 +6,27 @@
 #{dse(pagination)} {
   @extend %default-text-color;
 
-  &__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0 - (space(0-5N) * 0.5);
+  @include list {
+    @extend %list-reset;
+    @include display-flex(row, null, null, wrap);
+    @include padding(0);
+    @include margin(0 -2px);
   }
 
-  &__item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: space(2N);
-    min-width: space(4N);
-    height: space(4N);
-    padding: 0 space(1-5N);
-    margin: (space(0-5N) * 0.5) (space(0-5N) * 0.5) space(1N);
+  @include list-item {
+    @include display-flex(row, center, center);
+    @include padding(0 3v);
+    @include margin(2px 2px 2v);
     @include scheme-element-text-color(g800);
+    border-radius: space(4v);
+    min-width: space(8v);
+    height: space(8v);
 
     &:not(&--first):not(&--prev)::before,
     &:not(&--next):not(&--last)::after {
       content: none;
-      margin: 0;
       display: none;
+      @include margin(0);
     }
 
     &--from-md {
@@ -45,7 +40,7 @@
     &--active {
       @include scheme-element-bg-color(bf500, true, true);
       @include scheme-element-text-color(w-bf500);
-      border-radius: space(2N);
+      border-radius: space(4v);
       pointer-events: none;
     }
 
@@ -58,50 +53,46 @@
     &--prev + &,
     &--next,
     &:not(&--next) + &--last {
-      margin-left: space(1-5N);
+      @include margin-left(3v);
     }
 
     &--first,
     &--prev,
     &--next,
     &--last {
-      padding-left: space(0-5N);
-      padding-right: space(0-5N);
+      @include padding-left(1v);
+      @include padding-right(1v);
     }
 
     &--first {
       @include font-icon(arrow-left-s-first-line, lg) {
         display: block;
-        width: space(3N);
-        height: space(3N);
-        margin: 0;
+        @include size(6v,6v);
+        @include margin(0);
       }
     }
 
     &--prev {
       @include font-icon(arrow-left-s-line, lg) {
         display: block;
-        width: space(3N);
-        height: space(3N);
-        margin: 0;
+        @include size(6v,6v);
+        @include margin(0);
       }
     }
 
     &--next {
       @include font-icon(arrow-right-s-line, lg, after) {
         display: block;
-        width: space(3N);
-        height: space(3N);
-        margin: 0;
+        @include size(6v,6v);
+        @include margin(0);
       }
     }
 
     &--last {
       @include font-icon(arrow-right-s-last-line, lg, after) {
         display: block;
-        width: space(3N);
-        height: space(3N);
-        margin: 0;
+        @include size(6v,6v);
+        @include margin(0);
       }
     }
   }
@@ -118,12 +109,12 @@
 
   &__item--first &__label,
   &__item--prev &__label {
-    padding: 0 space(1N) 0 space(0-5N);
+    @include padding(0 2v 0 1v);
   }
 
   &__item--next &__label,
   &__item--last &__label {
-    padding: 0 space(0-5N) 0 space(1N);
+    @include padding(0 1v 0 2v);
     display: none;
 
     @include respond-from(md) {
@@ -133,18 +124,18 @@
 
   &__item--first &__link,
   &__item--prev &__link {
-    margin-left: - space(3-5N);
-    padding-left: space(3-5N);
-    margin-right: - space(0-5N);
-    padding-right: space(0-5N);
+    @include margin-left(7v);
+    @include padding-left(7v);
+    @include margin-right(-1v);
+    @include padding-right(1v);
   }
 
   &__item--next &__link,
   &__item--last &__link {
-    margin-right: - space(3-5N);
-    padding-right: space(3-5N);
-    margin-left: - space(0-5N);
-    padding-left: space(0-5N);
+    @include margin-right(-7v);
+    @include padding-right(7v);
+    @include margin-left(-1v);
+    @include padding-left(1v);
   }
 
   &__item--disabled &__link {
@@ -155,15 +146,15 @@
     @extend %a-reset;
     @include override-reset-link-style;
     @include display-flex(row, center, center);
-    padding: 0 space(1-5N);
-    margin: 0 (- space(1-5N));
-    min-width: space(4N);
-    height: space(4N);
+    @include padding(0 3v);
+    @include margin(0 -3v);
+    min-width: space(8v);
+    height: space(8v);
     box-shadow: none;
     @include scheme-element-bg-color(t-plain, true, true);
 
-    &::before {
-      border-radius: space(2N);
+    @include before {
+      border-radius: space(4v);
     }
 
     /**

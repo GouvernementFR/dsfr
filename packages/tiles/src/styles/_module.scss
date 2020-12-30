@@ -5,9 +5,8 @@
 
 #{dse(tile)} {
   @extend %default-text-color;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  @include relative;
+  @include display-flex(column);
   @include scheme-element-bg-color(beige, true, true);
   @include scheme-element-focus(true);
   @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
@@ -24,7 +23,7 @@
     @include override-reset-link-style;
     position: static;
     display: inline-flex;
-    width: 100%;
+    @include size(100%);
     box-shadow: none;
     text-decoration: none;
 
@@ -46,51 +45,42 @@
    * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
    */
   &__img-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display-flex(null, center, center);
     flex-shrink: 0;
-    width: space(10w);
-    height: space(10w);
-    margin: space(4w) auto 0;
+    @include size(20v, 20v);
+    @include margin(8v auto 0);
     overflow: hidden;
 
     /**
      * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
      */
     > svg {
-      width: 100%;
+      @include size(100%);
     }
   }
 
   /**
    * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
    */
-  &__body {
-    display: flex;
-    flex-direction: column;
+  @include body {
+    @include display-flex(column, center, center);
     flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-    padding: space(2w);
+    @include padding(4v);
+    @include padding(6v,md);
     text-align: center;
-
-    @include respond-from(md) {
-      padding: space(3w);
-    }
   }
 
   /**
    * Titre de la tuile
    */
-  &__title {
+  @include title {
     @include force-over-reset {
       @include text-styles(md, null, bold);
     }
-    margin: 0;
+    @include margin(0);
 
     + #{dse(tile__desc)} {
-      margin: space(1w) 0 0;
+      @include margin(2v 0 0);
       @include text-styles(sm);
     }
   }
@@ -99,7 +89,7 @@
    * Description de la tuile
    */
   &__desc {
-    margin: space(1w) 0 0;
+    @include margin(2v 0 0);
     @include text-styles(sm);
   }
 

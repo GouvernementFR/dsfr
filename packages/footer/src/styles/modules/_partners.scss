@@ -4,30 +4,23 @@
 ////
 
 &__partners {
-  margin-top: space(4w);
-  padding-top: space(2w);
+  @include margin-top(8v);
+  @include padding-top(4v);
   @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
 
   /**
    * Style des liens qui entourent les logos partenaires
    */
   a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
+    @include display-flex(null, center, center);
+    @include size(100%, auto);
     background: $white;
-    padding: space(2w);
+    @include padding(4v);
     box-shadow: none;
+    @include margin(0 0 0 4v, md);
 
     @include respond-from(sm) {
-      width: 160px;
-      height: 90px;
-    }
-
-    @include respond-from(md) {
-      margin: 0 0 0 space(2w);
+      @include size(160px, 90px);
     }
   }
 
@@ -35,10 +28,9 @@
    * On surcharge le style du logo de base
    */
   #{dse(footer__logo)} {
-    width: auto;
+    @include size(auto, auto);
     max-width: 100%;
-    height: auto;
-    max-height: calc(90px - #{space(2w)});
+    max-height: calc(90px - #{space(4v)});
   }
 }
 
@@ -47,7 +39,7 @@
     @include text-styles(sm, null, regular);
   }
   flex-basis: 100%;
-  margin: 0;
+  @include margin(0);
   text-align: center;
 
   @include respond-from(sm) {
@@ -59,12 +51,11 @@
  * Container des logos partenaires (principaux et secondaires)
  */
 &__partners-logos {
-  display: flex;
-  flex-wrap: wrap;
+  @include display-flex(null, null, null, wrap);
 
   @include respond-from(md) {
     flex-wrap: nowrap;
-    margin: 0 (-(space(2w))) (-(space(4w)));
+    @include margin(0 -4v 8v);
   }
 }
 
@@ -73,20 +64,20 @@
  */
 &__partners-main {
   flex-basis: 100%;
-  padding-top: space(1w);
+  @include padding-top(2v);
 
   + #{dse(footer__partners-sub)} {
 
     @include respond-from(md) {
       justify-content: flex-end;
-      padding-left: space(6w);
+      @include padding-left(12v);
     }
   }
 
   @include respond-from(sm) {
     flex-basis: auto;
-    padding-top: 0;
-    margin-top: space(1w);
+    @include padding-top(0);
+    @include margin-top(2v);
   }
 }
 
@@ -94,34 +85,20 @@
  * Container des logos partenaires secondaires
  */
 &__partners-sub {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  @include display-flex(null, center, null, wrap);
   flex-basis: 100%;
-  padding-top: space(4w);
+  @include padding-top(8v);
+  @include margin(4v -4v 0, sm);
+  @include margin(2v 0 0, md);
+  @include padding-top(0, md);
 
   /**
    * On surcharge le style du lien pour les logos secondaires
    */
   > a {
     box-shadow: none;
-    margin: 0 0 space(2w);
-
-    @include respond-from(sm) {
-      margin: 0 space(2w) space(4w);
-    }
-
-    @include respond-from(md) {
-      margin: 0 space(2w) space(3w);
-    }
-  }
-
-  @include respond-from(sm) {
-    margin: space(2w) (-(space(2w))) 0;
-  }
-
-  @include respond-from(md) {
-    margin: space(1w) 0 0;
-    padding-top: 0;
+    @include margin(0 0 4v);
+    @include margin(0 4v 8v, sm);
+    @include margin(0 4v 6v, md);
   }
 }

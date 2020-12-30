@@ -10,11 +10,10 @@
 #{dse(sidemenu__link)} {
   @extend %a-reset;
   @include override-reset-link-style;
-  display: flex;
-  flex-direction: row;
-  width: calc(100% - #{space(2N)});
-  margin: 0 space(1N);
-  padding: space(1-5N) 0;
+  @include display-flex(row);
+  @include size(calc(100% - #{space(4v)}));
+  @include margin(0 2v);
+  @include padding(3v 0);
   font-size: font-size();
   text-align: left;
   @include scheme-element-text-color(g800);
@@ -22,14 +21,12 @@
   @include scheme-element-focus();
   // @include scheme-element-border-color(g300, true, bottom);
 
-  &::before {
-    content: none;
-  }
+  @include before(null, none);
 
   @include respond-from(md) {
-    width: 100%;
-    padding: space(1N) space(4N) space(1-5N) space(1N);
-    margin: 0;
+    @include size(100%);
+    @include padding(2v 8v 3v 2v);
+    @include margin(0);
     // @include scheme-element-border-color(t-plain, true, bottom);
   }
 }

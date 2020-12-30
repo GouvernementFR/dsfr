@@ -24,15 +24,13 @@
   @extend %list-reset;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 0;
+  @include margin-bottom(0);
 
   > li {
     display: inline-flex;
-    margin-bottom: 0;
+    @include margin-bottom(0);
 
-    &::before {
-      content: none;
-    }
+    @include before(null, none);
   }
 
   #{dse(tag)} {

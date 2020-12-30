@@ -8,7 +8,7 @@
 
 #{dse(table)} {
   @extend %default-text-color;
-  position: relative;
+  @include relative;
   overflow: hidden;
   max-width: 100%;
 
@@ -28,7 +28,7 @@
     color: var(--g800);
     font-weight: bold;
     text-align: left;
-    padding: space(2N) 0;
+    @include padding(4v 0);
   }
 
   td,
@@ -37,12 +37,9 @@
     vertical-align: middle;
     display: table-cell;
     border: 0;
-    padding: space(1-5N);
+    @include padding(3v);
+    @include padding(4v, md);
     font-size: font-size(14);
-
-    @include respond-from(md) {
-      padding: space(2N);
-    }
   }
 
   th {
