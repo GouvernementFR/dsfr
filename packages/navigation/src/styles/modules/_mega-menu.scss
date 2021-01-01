@@ -4,13 +4,8 @@
 ////
 
 #{dse(mega-menu)} {
-
-  @include collapse();
-
   @include z-index(menu, true);
-
   @include scheme-element-bg-color(w-g750, true);
-
   @include margin(0 -4v 1px);
   @include padding(0 4v);
 

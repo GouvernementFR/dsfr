@@ -6,6 +6,7 @@ class DisclosuresGroup {
     this.id = id;
     this.element = element;
     this.members = [];
+    this._index = -1;
     this._current = null;
     groups.push(this);
   }
@@ -45,8 +46,6 @@ class DisclosuresGroup {
     }
   }
 
-  get length () { return this.members.length; }
-
   static get selector () { return ''; }
 
   add (member) {
@@ -66,13 +65,26 @@ class DisclosuresGroup {
     }
   }
 
+  get length () { return this.members.length; }
+
+  get index () { return this._index; }
+
+  set index (value) {
+    if (value < -1 || value >= this.length || this._index === value) return;
+    if (this.current !== null) this.current.apply(false);
+    this._index = value;
+    this._current = this._index > -1 ? this.members[this._index] : null;
+    if (this.current !== null) this.current.apply(true);
+    this.apply();
+  }
+
   get current () { return this._current; }
 
   set current (member) {
-    if (this._current !== null && this._current !== member) this._current.apply(false);
-    this._current = member;
-    if (this._current !== null) this._current.apply(true);
+    this.index = this.members.indexOf(member);
   }
+
+  apply () {}
 }
 
 export { DisclosuresGroup };

@@ -1,4 +1,4 @@
-import '@gouvfr/all/_dist.scss';
+// import '@gouvfr/all/_dist.scss';
 import schemes from '../../../schemes/src/scripts/distGlobal';
 import core from '../../../core/src/scripts/distGlobal';
 import accordions from '../../../accordions/src/scripts/distGlobal';

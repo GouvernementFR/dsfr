@@ -8,7 +8,6 @@ import { TAB_CLASSNAME, TABS_LIST_SELECTOR, TABS_SELECTOR } from './tabs-constan
 class TabsGroup extends DisclosuresGroup {
   constructor (id, element) {
     super(id, element);
-    this._index = -1;
     this.list = element.querySelector(`.${TABS_LIST_SELECTOR}`);
 
     element.addEventListener('transitionend', this._transitionend.bind(this));
@@ -77,27 +76,15 @@ class TabsGroup extends DisclosuresGroup {
     }
   };
 
-  get current () { return super.current; }
-
-  set current (tab) {
-    this.index = this.members.indexOf(tab);
-  }
-
-  get index () { return this._index; }
-
-  set index (value) {
-    if (value < 0 || value >= this.length || this._index === value) return;
-    this._index = value;
-    this.members[this._index].element.style.transform = '';
+  apply () {
     for (let i = 0; i < this._index; i++) this.members[i].element.style.transform = 'translateX(-100%)';
+    this.current.element.style.transform = '';
     for (let i = this._index + 1; i < this.length; i++) this.members[i].element.style.transform = 'translateX(100%)';
     this.element.style.transition = '';
-    super.current = this.members[value];
   }
 
   add (tab) {
     super.add(tab);
-    console.log('add', tab.disclosed, this.length);
     if (this.length === 1 || tab.disclosed) this.current = tab;
     else {
       const index = this.members.indexOf(tab);

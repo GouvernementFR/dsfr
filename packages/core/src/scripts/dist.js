@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import '@gouvfr/core/_dist.scss';
+// import '@gouvfr/core/_dist.scss';
 
 import { Initializer, Collapses } from './index';
 

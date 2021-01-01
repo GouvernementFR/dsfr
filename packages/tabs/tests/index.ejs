@@ -12,6 +12,6 @@ let samples = [
 
 <h4 class="<%= prefix %>-h4"><%= samples[i].title %></h4>
 <%- include(samples[i].sample, samples[i].data) %>
+<%- snippet(include(samples[i].sample, samples[i].data)); %>
 <% } %>
 
-<div class="<%= prefix %>-pb-24v <%= prefix %>-scheme-light-grey-100" ></div>

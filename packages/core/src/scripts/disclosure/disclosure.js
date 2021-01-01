@@ -55,7 +55,6 @@ class Disclosure {
   }
 
   disclose () {
-    console.log('disclose', this.disclosed);
     if (this.disclosed) return;
 
     if (this.group !== undefined) this.group.current = this;
@@ -63,7 +62,6 @@ class Disclosure {
   }
 
   conceal () {
-    console.log('conceal', this.disclosed);
     if (!this.disclosed) return;
 
     if (this.group !== undefined) this.group.current = null;

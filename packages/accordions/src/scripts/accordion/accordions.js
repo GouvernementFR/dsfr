@@ -1,4 +1,5 @@
 import { CollapsesGroup } from '@gouvfr/core/src/scripts';
-import { ACCORDION_ASCENDANT, ACCORDIONS_GROUP } from './accordion-constants';
+import { ACCORDION_ASCENDANT } from './accordion-constants';
+import { AccordionsGroup } from './accordions-group';
 
-CollapsesGroup.register(ACCORDION_ASCENDANT, ACCORDIONS_GROUP);
+CollapsesGroup.register(ACCORDION_ASCENDANT, AccordionsGroup);

@@ -16,6 +16,10 @@
 @mixin z-index($index-name, $focus: false) {
   z-index: z-index($index-name);
   @if $focus {
-    --focus-z-index: z-index(#{$index-name}-focus);
+    $focus-z-index: z-index($index-name + '-focus');
+
+    @if $focus-z-index != null {
+      --focus-z-index: #{$focus-z-index};
+    }
   }
 }

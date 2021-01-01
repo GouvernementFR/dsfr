@@ -4,9 +4,6 @@
 ////
 
 #{dse(menu)} {
-
-  @include collapse();
-
   @include z-index(menu, true);
   @include margin(0 -4v);
   @include padding(0 4v);

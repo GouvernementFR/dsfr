@@ -24,8 +24,12 @@ class Collapse extends Disclosure {
 
       while (element) {
         if (element.classList.contains(ascendant)) {
-          DisclosuresGroup.groupByParent(this, CollapsesGroup, CollapsesGroup.ascendants[ascendant]);
-          break;
+          if (typeof CollapsesGroup.ascendants[ascendant] === 'string') {
+            DisclosuresGroup.groupByParent(this, CollapsesGroup, CollapsesGroup.ascendants[ascendant]);
+          } else {
+            DisclosuresGroup.groupByParent(this, CollapsesGroup.ascendants[ascendant]);
+          }
+          return;
         }
 
         element = element.parentElement;
@@ -71,6 +75,16 @@ class Collapse extends Disclosure {
     if (this.element.querySelectorAll(':focus').length > 0) return true;
     if (this.buttons.some((button) => { return button.hasFocus; })) return true;
     return false;
+  }
+
+  focus () {
+    for (let i = 0; i < this.buttons.length; i++) {
+      const button = this.buttons[i];
+      if (button.hasAttribute) {
+        button.element.focus();
+        return;
+      }
+    }
   }
 }
 
