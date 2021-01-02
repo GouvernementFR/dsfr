@@ -18,7 +18,7 @@
 
   $end: quote($value);
 
-  @if $value < 0 {
+  @if type-of($value) == 'number' and $value < 0 {
     $end: 'n#{abs($value)}';
   }
 
@@ -32,6 +32,10 @@
 }
 
 @function _spacing-selectors($prop, $side, $value, $breakpoint) {
+  @if type-of($value) != 'number' {
+    @return '#{dse(_spacing-name($prop, $side, $value, null, $breakpoint))}';
+  }
+
   $w: null;
   @if (abs($value) % 2) == 0 and $value != 0 {
     $w: abs($value) / 2;
@@ -47,8 +51,11 @@
 }
 
 @mixin _spacing-property-variations($prop:margin, $value:1, $breakpoint: null) {
+  $v: $value;
 
-  $v: space('#{$value}v') !important;
+  @if type-of($value) == 'number' {
+    $v: space('#{$value}v') !important;
+  }
 
   #{_spacing-selectors($prop, null, $value, $breakpoint)} {
     #{$prop}: $v;
@@ -68,9 +75,14 @@
   @each $prop, $settings in $props {
     $from: map_get($settings, from);
     $through: map_get($settings, through);
+    $special: map_get($settings, special);
 
     @for $i from $from through $through {
       @include _spacing-property-variations($prop, $i, $breakpoint);
+    }
+
+    @if $special != null {
+      @include _spacing-property-variations($prop, $special, $breakpoint);
     }
   }
 }
