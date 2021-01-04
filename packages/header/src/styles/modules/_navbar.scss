@@ -4,22 +4,20 @@
 ////
 
 &__navbar {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin: space(2N) space(0-5N) 0;
-  width: 100%;
-  padding: space(1-5N) 0 0;
-  position: relative;
+  @include display-flex(row,flex-start);
+  @include margin(4v 1v 0);
+  @include size(100%);
+  @include padding(3v 0 0);
+  @include relative;
 
   @include respond-from(md) {
+    @include margin(0 1v);
     flex: 1 1 auto;
-    margin: 0 space(0-5N);
   }
 
   @include after(block, '') {
     @include absolute(0, 0, auto, 0, auto, 1px);
-    margin: 0 space(1N);
+    @include margin(0 2v);
 
     @include scheme-element-bg-color(g300, true);
 
@@ -29,23 +27,21 @@
     }
   }
 
-  .#{$prefix}-service {
-    margin: (- space(1-5N)) auto (- space(1-5N)) (- space(0-5N));
-    padding: space(1-5N);
-    position: relative;
+  #{dse(service)} {
+    @include margin(-3v auto -3v -1v);
+    @include margin(-3v, md);
+    @include padding(3v);
+    @include relative;
 
-    @include respond-from(md) {
-      margin: - space(1-5N);
-    }
-
-    &__title {
+    @include title {
+      @extend %a-reset;
+      @include override-reset-link-style;
       position: static;
       font-size: font-size(14);
       line-height: line-height(normal);
       font-weight: bold;
       @include scheme-element-text-color(g800, true);
-      margin: 0;
-      box-shadow: none;
+      @include margin(0);
 
       @include respond-from(md) {
         font-size: font-size(20);
@@ -65,11 +61,11 @@
     &__tagline {
       font-size: font-size(14);
       line-height: line-height(normal);
-      margin: 0;
+      @include margin(0);
     }
 
     &__title + &__tagline {
-      margin-top: space(0-5N);
+      @include margin-top(1v);
     }
   }
 
@@ -79,17 +75,12 @@
     flex: 0 0 auto;
 
     &--menu,
-    &.#{$prefix}-fi-menu-fill {
+    &#{dse(fi-menu-fill)} {
       @include scheme-element-text-color(g700);
-      //@include font-icon-content(menu-fill);
-    }
-
-    &--search {
-      //@include font-icon-content(search-fill);
     }
 
     &:first-child {
-      margin-left: auto;
+      @include margin-left(auto);
     }
 
     @include respond-from(md) {

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 39);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -161,7 +161,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 37:
+/***/ 39:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -169,12 +169,12 @@ var removeClass = function removeClass(element, className) {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/header/_dist.scss
-var _dist = __webpack_require__(4);
+var _dist = __webpack_require__(6);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/manipulation/classes.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/manipulation/classes.js
 var classes = __webpack_require__(2);
 
 // CONCATENATED MODULE: ./packages/header/src/scripts/header/header.js
@@ -214,7 +214,15 @@ var Header = /*#__PURE__*/function () {
         this.popins.push(new header_HeaderPopin('header-tools-popin' + append, 'search-line', 'Rechercher', this.tools, navbar));
       }
 
-      if (this.navItems.length > 0 || this.shortcuts != null) {
+      if (this.navItems.length > 0 || this.shortcuts !== null) {
+        // si on des raccourcis mais pas de nav, on la créé
+        if (!this.nav) {
+          this.nav = document.createElement('nav');
+          this.nav.setAttribute('role', 'navigation');
+          this.nav.setAttribute('aria-label', 'Menu principal');
+          this.header.appendChild(this.nav);
+        }
+
         this.popins.push(new header_HeaderPopin('header-nav-popin' + append, 'menu-fill', 'Ouvrir le menu', this.nav, navbar));
       }
 
@@ -325,7 +333,7 @@ new Initializer["Initializer"]('.rf-header', [Header]);
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin

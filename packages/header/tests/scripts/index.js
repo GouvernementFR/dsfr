@@ -1,10 +1,10 @@
 /* eslint-disable no-new */
 
 import '../style.scss';
-import '@gouvfr/schemes/src/scripts/dist';
+import '../../../../page-test/script';
 import '@gouvfr/header/src/scripts/dist';
 import '@gouvfr/navigation/src/scripts/dist';
-import { addClass } from '@gouvfr/utilities/src/scripts/';
+import { addClass } from '@gouvfr/core/src/scripts/';
 import { Header } from '../../src/scripts';
 
 addClass(document.body, '${prefix}-scheme-light-grey-100');

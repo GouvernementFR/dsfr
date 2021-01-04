@@ -7,40 +7,38 @@
  * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
  * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
  */
-.#{$prefix}-sidemenu__btn {
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  width: calc(100% - #{space(2N)});
-  height: 100%;
-  padding: space(1-5N) 0;
-  margin: 0 auto;
+#{dse(sidemenu__btn)} {
+  @include relative;
+  @include display-flex(row-reverse, center);
+  @include size(calc(100% - #{space(4v)}), 100%);
+  @include padding(3v 0);
+  @include margin(0 auto);
   text-align: left;
   font-weight: font-weight(bold);
   background: 0;
   line-height: line-height();
   border: 0;
   font-size: font-size(16);
+  cursor: pointer;
   // @include scheme-element-border-color(g300, true, bottom);
 
   @include font-icon(arrow-down-s-line, md) {
-    margin-left: auto;
-    margin-right: 0;
+    @include margin-left(auto);
+    @include margin-right(0);
     transition: transform 0.3s;
 
     @include respond-from(md) {
-      margin-right: -(space(3N));
+      @include margin-right(-6v, md);
     }
   }
 
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(g700);
   @include scheme-element-focus();
 
   &[aria-expanded="true"] {
     @include scheme-element-border-color(t-plain, true, bottom);
 
-    &::before {
+    @include before {
       transform: rotate(-180deg);
     }
   }
@@ -49,38 +47,29 @@
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
     * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
     */
-  &--sidemenu-toggle {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    text-align: left;
-    width: 100%;
-    padding: space(1-5N) 0 space(1-5N) space(4N);
-    border: 0;
-    @include scheme-element-text-color(g800);
+  @at-root #{dse(sidemenu__inner)} > #{&} {
+    @include size(100%);
+    font-weight: normal;
     @include scheme-element-bg-color(w-g750, true);
-    @include scheme-element-focus();
+    @include before {
+      @include margin-right(4v);
+    }
 
-    &[hidden] {
+    /**
+    * Ajout de l'icône de menu en mode mobile (provisoire)
+    */
+    @include font-icon(menu-2-fill, md, after) {
+      @include margin-x(1v);
+    }
+
+    @include respond-from(md) {
       display: none;
-    }
-
-    @include font-icon(arrow-down-s-line, md) {
-      margin-left: auto;
-      margin-right: space(2N);
-      transition: transform 0.3s;
-    }
-
-    &[aria-expanded="true"] {
-      &::before {
-        transform: rotate(-180deg);
-      }
     }
   }
 
   @include respond-from(md) {
-    width: 100%;
-    padding: space(1N) space(4N) space(1N) space(1N);
+    @include size(100%);
+    @include padding(2v 8v 2v 2v);
     border: 0;
     @include scheme-element-bg-color(t-plain, true, after);
   }

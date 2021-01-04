@@ -3,102 +3,100 @@
 /// @group tiles
 ////
 
-.#{$prefix}-tile {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  @include scheme-element-bg-color(beige, true);
+#{dse(tile)} {
+  @extend %default-text-color;
+  @include relative;
+  @include display-flex(column);
+  @include scheme-element-bg-color(beige, true, true);
+  @include scheme-element-focus(true);
+  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
 
-  .#{$prefix}-grid-row & {
+  /**
+   * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
+   */
+  #{dse(grid-row)} & {
     height: 100%;
   }
 
   &__link {
+    @extend %a-reset;
+    @include override-reset-link-style;
     position: static;
-    text-decoration: none;
     display: inline-flex;
+    @include size(100%);
     box-shadow: none;
-    width: 100%;
+    text-decoration: none;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
+    @include after(null, '') {
+      @include absolute(0, 0, 0, 0);
     }
 
-    &:focus {
-      outline-offset: 9999px;
+    @include force-over-reset {
+      &:focus {
+        outline-offset: 9999px;
+      }
     }
   }
 
-  &__img {
-    position: relative;
-    margin: space(6N) space(6N) 0;
-    flex: 0 0 auto;
+  /**
+   * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
+   * ne respectant pas cette taille :
+   * Si l'image est plus grande, elle sera croppée afin de ne jamais dépasser 80x80.
+   * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
+   */
+  &__img-wrap {
+    @include display-flex(null, center, center);
+    flex-shrink: 0;
+    @include size(20v, 20v);
+    @include margin(8v auto 0);
+    overflow: hidden;
 
-    @include aspect-ratio(1x1);
-
-    img {
-      @include absolute(0, 0, 0, 0, 100%, 100%);
-      @extend %fit-cover-center;
+    /**
+     * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
+     */
+    > svg {
+      @include size(100%);
     }
   }
 
-  &__body {
-    padding: space(2N);
+  /**
+   * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
+   */
+  @include body {
+    @include display-flex(column, center, center);
     flex-grow: 1;
+    @include padding(4v);
+    @include padding(6v,md);
+    text-align: center;
   }
 
-  &__img + &__body {
-    padding: space(3N) space(2N);
-  }
+  /**
+   * Titre de la tuile
+   */
+  @include title {
+    @include force-over-reset {
+      @include text-styles(md, null, bold);
+    }
+    @include margin(0);
 
-  &__title {
-    @include text-styles(md);
-    font-weight: font-weight(bold);
-    margin: 0;
-
-    + .#{$prefix}-tile__desc {
-      margin: space(1N) 0 0;
+    + #{dse(tile__desc)} {
+      @include margin(2v 0 0);
       @include text-styles(sm);
     }
   }
 
+  /**
+   * Description de la tuile
+   */
   &__desc {
-    margin: 0;
+    @include margin(2v 0 0);
+    @include text-styles(sm);
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: space(0-5N);
-    left: 0;
-    bottom: 0;
-    @include scheme-element-bg-color(bf500, true);
-  }
-
+  /**
+   * Mixin pour gérer le focus
+   **/
   @include scheme-element-focus(true);
 
-  @include respond-from(md) {
-    &--horizontal {
-      flex-direction: row;
-
-      .#{$prefix}-tile__img {
-        margin: space(4N) 0 space(4N) space(4N);
-        flex-grow: 1;
-        flex-basis: auto;
-        width: auto;
-      }
-
-      .#{$prefix}-tile__body {
-        padding: space(4N);
-        flex-basis: 70%;
-      }
-    }
-  }
+  @import 'modules/variants';
 }

@@ -1,0 +1,65 @@
+////
+/// Accordions Module
+/// @group accordions
+////
+
+#{dse(accordion)} {
+  position: relative;
+  @include scheme-element-border-color(g300, true, top);
+  @include scheme-element-border-color(g300, true, bottom);
+
+  // add heading style for accessibility concerns and reset margins
+  @include title {
+    @include margin(0);
+  }
+
+  @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
+    @include _reset-links-tags(button);
+    @include scheme-element-text-color(g700, true);
+    @include scheme-element-bg-color(t-plain, true, after);
+    @include size(100%);
+    text-align: left;
+
+    @include before {
+      @include margin-right(0);
+      @include margin-left(auto);
+    }
+
+    &[aria-expanded="true"] {
+      @include font-weight('bold');
+      border: 0;
+
+      @include before {
+        @include font-icon-content(subtract-line);
+      }
+    }
+
+    @include padding(3v 4v, md);
+  }
+
+  #{dse(collapse)} {
+    @include margin(0 -1v);
+    @include padding-x(1v);
+    @include padding-x(5v, md);
+
+    &--expanded {
+      @include padding-top(2v);
+      @include padding-bottom(6v);
+      @include padding-bottom(8v, md);
+    }
+  }
+}
+
+#{dse-group(accordions)} {
+  @extend %list-reset;
+
+  #{dse(accordion)} {
+    border-bottom: 0;
+  }
+
+  li:last-child {
+    #{dse(accordion)} {
+      @include scheme-element-border-color(g300, true, bottom);
+    }
+  }
+}

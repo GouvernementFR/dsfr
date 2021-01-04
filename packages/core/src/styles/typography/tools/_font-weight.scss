@@ -22,7 +22,7 @@
 
 @mixin font-weights() {
   @each $name, $weight in $font-weight-scale {
-    .#{$prefix}-text--#{$name} {
+    & #{dse('text--' + $name)} {
       font-weight: $weight;
     }
   }

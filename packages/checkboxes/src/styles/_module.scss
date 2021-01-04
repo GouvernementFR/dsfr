@@ -3,37 +3,108 @@
 /// @group checkboxes
 ////
 
-.#{$prefix}-checkbox-group {
-  position: relative;
+#{dse(checkbox-group)} {
+  @extend %default-text-color;
+  @include relative;
 
-  .#{$prefix}-hint-text {
-    margin-left: space(4N);
-    margin-top: -(space(1-5N));
+  input[type="checkbox"] {
+    @include absolute;
+    opacity: 0;
+
+    + label {
+      @include relative;
+      cursor: pointer;
+      @include padding(3v 0);
+      font-size: font-size(14);
+      -webkit-tap-highlight-color: transparent;
+      display: grid;
+      display: -ms-grid;
+      grid-row: 1;
+      -ms-grid-row: 2;
+      grid-column: 2;
+      -ms-grid-column: 2;
+      align-items: center;
+      -ms-align-items: center;
+      grid-template-columns: 1fr space(8v);
+      -ms-grid-columns: 1fr space(8v);
+      text-align: left;
+      direction: rtl;
+
+      @include font-icon(check-line, md, before) {
+        @include display-flex(row, center, center);
+        flex-shrink: 0;
+        @include size(6v, 6v);
+        @include margin-right(2v);
+        border-radius: space(1v);
+        @include scheme-element-border-color(g800, true);
+        @include scheme-element-text-color(t-plain);
+        grid-row: 1;
+        -ms-grid-row: 1;
+        grid-column: 2;
+        -ms-grid-column: 2;
+        -ms-align-items: center;
+        transition: background-color 0.1s, color 0.1s;
+      }
+
+      #{dse(hint-text)} {
+        @include margin(0);
+        grid-row: 2;
+        grid-column: 1;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+      }
+    }
+
+    &:checked,
+    &:active {
+      + label {
+        @include before() {
+          @include scheme-element-bg-color(bf500);
+          @include scheme-element-text-color(g100);
+        }
+      }
+    }
+
+    @include scheme-element-focus(false, '+ label::before');
+
+    @include disabled-form-choice();
   }
 
-  .#{$prefix}-error-text,
-  .#{$prefix}-valid-text {
+  &:first-child {
+    @include margin-top(-3v);
+  }
+
+  &:last-child {
+    @include margin-bottom(-3v);
+  }
+
+  #{dse(hint-text)} {
+    @include margin-left(8v);
+    @include margin-top(-3v);
+  }
+
+  #{dse(error-text)},
+  #{dse(valid-text)} {
     // si un élément suit, il va venir sur le texte d'erreur avec absolute
     //position: absolute;
-    margin-top: -(space(0-5N));
+    @include margin-top(-1v);
   }
 
   &--sm {
     input[type="checkbox"] {
       + label {
-        &::before {
-          width: space(2N);
-          height: space(2N);
+        @include before {
+          @include size(4v, 4v);
         }
 
-        &::after {
+        @include after {
           left: 0;
         }
       }
     }
 
-    .#{$prefix}-hint-text {
-      margin-left: space(3N);
+    #{dse(hint-text)} {
+      @include margin-left(6v);
     }
   }
 
@@ -42,13 +113,8 @@
       @include scheme-element-text-color(error);
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      top: space(1-5N);
-      height: space(3N);
-      left: -(space(1N));
+    @include before(null, '') {
+      @include absolute(3v, null, null, -2v, 2px, 6v);
       @include scheme-element-bg-color(error);
     }
   }
@@ -58,72 +124,9 @@
       @include scheme-element-text-color(success);
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 2px;
-      top: space(1-5N);
-      height: space(3N);
-      left: -(space(1N));
+    @include before(null, '') {
+      @include absolute(3v, null, null, -2v, 2px, 6v);
       @include scheme-element-bg-color(success);
     }
-  }
-
-  &:first-child {
-    margin-top: -(space(1-5N));
-  }
-
-  &:last-child {
-    margin-bottom: -(space(1-5N));
-  }
-
-  input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-
-    + label {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      cursor: pointer;
-      padding: space(1-5N) 0;
-      font-size: font-size(14);
-      -webkit-tap-highlight-color: transparent;
-
-      &::before {
-        content: '';
-        display: inline-block;
-        flex-shrink: 0;
-        width: space(3N);
-        height: space(3N);
-        margin-right: space(1N);
-        border-radius: space(0-5N);
-        @include scheme-element-border-color(g800, true);
-        transition: background-color 0.1s;
-      }
-
-      @include font-icon(check-line, md, after) {
-        @include scheme-element-text-color(g100);
-        position: absolute;
-        opacity: 0;
-        left: space(0-5N);
-        transition: opacity 0.1s;
-      }
-    }
-
-    &:checked,
-    &:active {
-      + label::before {
-        @include scheme-element-bg-color(bf500);
-      }
-
-      + label::after {
-        opacity: 1;
-      }
-    }
-
-    @include scheme-element-focus(false, '+ label::before');
-
-    @include disabled-form-choice();
   }
 }

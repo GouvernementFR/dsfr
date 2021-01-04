@@ -1,0 +1,21 @@
+////
+/// Utilities Settings : Spacing
+/// @group utilities
+////
+
+$spacing-settings: (
+  props: (
+    margin: (
+      from: -8,
+      through: 24,
+      special: auto
+    ),
+    padding: (
+      from: 0,
+      through: 24
+    )
+  ),
+  breakpoints: md
+);
+
+$spacing-sides: (top right bottom left);

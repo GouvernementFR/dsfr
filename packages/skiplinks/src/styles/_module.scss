@@ -3,40 +3,40 @@
 /// @group skiplinks
 ////
 
-.#{$prefix}-skiplinks {
-  position: absolute;
-  padding: space(1-5N) 0;
+#{dse(skiplinks)} {
+  @include absolute;
+  @include padding(4v 0);
   @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
 
   &:focus-within {
-    position: relative;
+    @include relative;
     transform: translateY(0);
   }
-}
 
-.#{$prefix}-skiplinks__list {
-  display: flex;
-  flex-direction: column;
-  margin: 0 (-(space(2N))) (-(space(2N)));
+  @include list {
+    @extend %list-reset;
+    @include display-flex(column);
+    @include margin(0 -4v -4v);
 
-  > li {
-    margin: 0 space(2N) space(0-5N);
+    > li {
+      @include margin(0 4v 1v);
+      @include margin(0 4v, sm);
 
-    &::before {
-      content: none;
+      @include before(null, none);
+
+      @include nest-link(md, null, null, null, true);
     }
 
-    @include nest-link(md, null, null, null, true);
-
-    @include respond-from(sm) {
-      margin: 0 space(2N);
+    @include respond-from(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      @include margin(0 -4v);
     }
-  }
 
-  @include respond-from(sm) {
-    margin: 0 (-(space(2N)));
-    flex-direction: row;
-    flex-wrap: wrap;
+    &:focus-within {
+      @include relative;
+      transform: translateY(0);
+    }
   }
 }

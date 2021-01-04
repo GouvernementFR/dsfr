@@ -1,0 +1,13 @@
+<%
+
+const accordions = [];
+
+for (let i = 0; i < 6; i++) accordions.push({ paragraphs: 1 + (i % 3)});
+
+const data = {
+  accordions: accordions,
+  accordion: '../samples/accordion'
+}
+%>
+
+<%- include('../templates/accordions-group', data); %>

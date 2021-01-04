@@ -26,4 +26,4 @@ Afin d'utilise le composant `sidemenu`, il est nécessaire d'importer le composa
 
 ## Documentation
 
-Consulter [la documentation](#) sur le sidemenu
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/258998801/Menu+lat+ral+-+Side+menu) sur le sidemenu

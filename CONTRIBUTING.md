@@ -143,9 +143,10 @@ git commit -m "build: add webpack" --no-verify
 
 ## Compilation
 La compilation des sources permet de créer un dossier `dist` à la racine du projet, comprenant les fichiers CSS et JS compilés, ainsi que l'ensemble des fonts utilisées au sein du Design System.
+Les fichiers `_dist.scss` sont créés automatiquement via Node. Ils sont générés à partir des dépendances présentes dans le `package.json` de chaque package. Il faut donc faire tout particulièrement attention à ces dépendances, car c'est elles qui permettront de compiler le css. Un autre point d'attention est la propriété "level" qui se trouve dans le `package.json`, qui donne au package un "niveau d’importance" afin de générer les imports dans le bon ordre. Par exemple `core` et `schemes` sont des packages de niveau 1, et `footer` et `header` des packages de niveau 6.
+Webpack utilise ensuite ces fichiers pour créer les répertoires `/dist` dans chaque package.
 
 La génération de ces fichiers se fait via la commande
-
 ```
 yarn build
 ```

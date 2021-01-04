@@ -6,9 +6,10 @@
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
-.#{$prefix}-breadcrumb {
-  margin: calc(#{space(2N)} - 0.5rem) (- 0.5rem) calc(#{space(3N)} - 0.5rem);
-  padding: 0.5rem;
+#{dse(breadcrumb)} {
+  @extend %default-text-color;
+  @include margin(2v -2v 4v);
+  @include padding(2v);
   overflow: hidden;
   font-size: font-size(12);
   line-height: 1;
@@ -21,8 +22,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     font-family: inherit;
     font-size: font-size(12);
     line-height: 1.5;
-    margin: 0;
-    padding: 0;
+    @include margin(0);
+    @include padding(0);
     border: none;
     text-decoration: underline;
     cursor: pointer;
@@ -31,12 +32,11 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include scheme-element-focus();
   }
 
-  &__list {
-    margin: 0;
-    padding: 0;
+  @include list() {
+    @extend %list-reset;
+    line-height: 1.5;
     display: block;
     font-size: font-size(12);
-    line-height: 1;
 
     &[hidden] {
       display: none;
@@ -46,67 +46,67 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /**
   margin-bottom de 1N pour créer cet espace entre chaque ligne
    */
-  &__item {
+  @include group-item() {
     display: inline;
-    margin-bottom: space(1N);
-    line-height: 1.125rem;
-    vertical-align: middle;
 
-    &:first-child::before {
-      content: none;
+    &:first-child {
+      @include before() {
+        content: none;
+      }
     }
 
     /**
     flèche séparatrice en svg avec un espace à la suite
      */
-    &:not(:first-child) {
+    @include margin-bottom(2v);
+    line-height: 1.125rem;
+    vertical-align: middle;
 
+    &:not(:first-child) {
       @include font-icon(arrow-right-s-line, md);
 
       &::before {
         @include scheme-element-text-color(g600, true);
-        margin-right: 0;
+        @include margin-right(0);
         //margin-top: 0.0625rem;
         //margin-bottom: 0.5625rem;
         vertical-align: middle;
       }
     }
-  }
 
-  &__item a {
-    display: inline;
-    vertical-align: middle;
-  }
+    a {
+      @extend %a;
+      display: inline;
+      vertical-align: middle;
+    }
 
-  /**
-    on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
-   */
-  &__item:not(:last-child)::after {
-    margin-right: 0;
-    content: '';
-  }
+    /**
+      on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
+    */
+    &:not(:last-child) {
+      @include after() {
+        @include margin-right(0);
+        content: '';
+      }
 
-  &__item:not(:last-child) a {
-    @include scheme-element-text-color(g600, true);
-  }
+      a {
+        @include scheme-element-text-color(g600, true);
+      }
+    }
 
-  /**
-    lien actuel non clickable, bold et sans underline
-     */
-  &__item--current {
-    pointer-events: none;
-  }
+    &--curent {
+      pointer-events: none;
 
-  &__item--current a {
-    @include scheme-element-text-color(g800, true);
-    text-decoration: none;
+      a {
+        @include scheme-element-text-color(g800, true);
+      }
+    }
   }
 
   /**
   Mobile first, le label du "button" mobile est caché à partir du breakpoint md
    */
-
   @include respond-from(md) {
-    margin-bottom: calc(#{space(4N)} - 0.5rem);
+    @include margin-bottom(6v);
   }
 }

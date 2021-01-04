@@ -3,14 +3,13 @@
 /// @group core
 ////
 
-.#{$prefix}-responsive-img {
-  width: 100%;
-  height: auto;
+#{dse(responsive-img)} {
+  @include size(100%, auto);
 }
 
-.#{$prefix}-responsive-vid {
-  position: relative;
-  width: 100%;
+#{dse(responsive-vid)} {
+  @include relative;
+  @include size(100%);
 
   @include aspect-ratio();
 

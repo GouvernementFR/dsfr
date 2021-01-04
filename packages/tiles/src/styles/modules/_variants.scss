@@ -1,0 +1,125 @@
+////
+/// Tiles module : Variants
+/// @group Tiles
+////
+
+/**
+ * Modificateur tuile horizontale
+ **/
+&--horizontal {
+  flex-direction: row;
+
+  #{dse(tile__img-wrap)} {
+    @include size(12v, 12v);
+    @include margin(auto 0 auto 6v);
+
+    + #{dse(tile__body)} {
+      min-height: space(12v);
+      text-align: left;
+
+      @include respond-from(md) {
+        min-height: space(20v);
+      }
+    }
+
+    @include respond-from(md) {
+      @include size(20v, 20v);
+      @include margin(auto 0 auto 8v);
+    }
+  }
+
+  #{dse(tile__body)} {
+    align-items: flex-start;
+    @include padding(0);
+    @include margin(6v);
+    @include margin(8v, md);
+  }
+}
+
+/**
+ * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
+ **/
+&--vertical-md {
+  flex-direction: row;
+
+  #{dse(tile__img-wrap)} {
+    @include size(12v, 12v);
+    @include margin(auto 0 auto 6v);
+
+    + #{dse(tile__body)} {
+      min-height: space(12v);
+
+      @include respond-from(md) {
+        min-height: initial;
+        text-align: center;
+      }
+    }
+
+    @include respond-from(md) {
+      @include size(20v, 20v);
+      @include margin(8v auto 0);
+    }
+  }
+
+  #{dse(tile__body)} {
+    align-items: flex-start;
+    @include padding(0);
+    @include margin(6v);
+    text-align: left;
+
+    @include respond-from(md) {
+      align-items: center;
+      @include padding(6v);
+      @include margin(0);
+      text-align: center;
+    }
+  }
+
+  @include respond-from(md) {
+    flex-direction: column;
+  }
+}
+
+/**
+ * Modificateur horizontal à partir du breakpoint md -> vertical en dessous du breakpoint md
+ **/
+&--horizontal-md {
+  flex-direction: column;
+
+  #{dse(tile__img-wrap)} {
+    @include size(20v, 20v);
+    @include margin(8v auto 0);
+
+    + #{dse(tile__body)} {
+      min-height: initial;
+
+      @include respond-from(md) {
+        @include padding(0);
+        @include margin(8v);
+        min-height: space(20v);
+      }
+    }
+
+    @include respond-from(md) {
+      @include margin(auto 0 auto 8v);
+    }
+  }
+
+  #{dse(tile__body)} {
+    align-items: center;
+    @include padding(4v);
+    @include margin(0);
+    text-align: center;
+
+    @include respond-from(md) {
+      align-items: flex-start;
+      @include padding(0);
+      @include margin(8v);
+      text-align: left;
+    }
+  }
+
+  @include respond-from(md) {
+    flex-direction: row;
+  }
+}

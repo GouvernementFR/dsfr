@@ -1,4 +1,4 @@
-import { addClass, removeClass } from '@gouvfr/utilities/src/scripts/manipulation/classes';
+import { addClass, removeClass } from '@gouvfr/core/src/scripts/manipulation/classes';
 
 let count = 0;
 
@@ -40,7 +40,14 @@ class Header {
       ));
     }
 
-    if (this.navItems.length > 0 || this.shortcuts != null) {
+    if (this.navItems.length > 0 || this.shortcuts !== null) {
+      // si on des raccourcis mais pas de nav, on la créé
+      if (!this.nav) {
+        this.nav = document.createElement('nav');
+        this.nav.setAttribute('role', 'navigation');
+        this.nav.setAttribute('aria-label', 'Menu principal');
+        this.header.appendChild(this.nav);
+      }
       this.popins.push(new HeaderPopin(
         'header-nav-popin' + append,
         'menu-fill',

@@ -1,0 +1,166 @@
+////
+/// Tabs Module
+/// @group tabs
+////
+
+#{dse(tabs)} {
+  @include relative;
+  overflow: hidden;
+  @include margin-top(-4px);
+  @include padding-top(4px);
+  @include display-flex(column);
+
+  /**
+    * Animation de la hauteur du panel
+    */
+  transition: height $tabs-transition-duration;
+
+  // retire le padding du container en mobile
+  @include margin-x(calc(50% - 50vw));
+  @include margin-x(0, md);
+
+  #{dse(tabs)} {
+    @include margin-x(0);
+  }
+
+  @include after(block, '') {
+    flex: 1;
+    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
+  }
+
+  /**
+   * ul : element srollable des boutons
+   */
+  @include list {
+    @include display-flex(null, flex-end);
+    overflow-x: auto;
+    list-style: none;
+    @include size(100%);
+
+    /**
+    * overflow vertical de 4px pour le focus
+    */
+    @include margin(-4px 0);
+    @include padding(4px 2v);
+
+    @include after(block, '') {
+      flex: 1 1 auto;
+      height: 1px;
+      @include margin-x(-2v);
+      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+    }
+
+    /**
+    * Reset du style par défaut du li
+    */
+    li {
+      display: block;
+      flex: 0 0 auto;
+      @include margin(0 2v);
+      @include before(none, none);
+
+      &:not(:first-child) {
+        @include margin-left(0);
+        @include before(block, '') {
+          @include sticky(100%, null, null, null, 2v, 1px);
+          @include margin-left(-2v);
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+
+      &:last-child {
+        @include padding-right(4v);
+
+        @include after(block, '') {
+          min-width: 1rem;
+          @include margin-left(100%);
+          flex: 1 1 auto;
+          @include sticky(100%, null, null, null, auto, 1px);
+          @include margin-top(-1px);
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+
+      &:first-child {
+        @include before(block, '') {
+          @include sticky(100%, null, null, null, 100%, 1px);
+          position: sticky;
+          @include margin-left(-100%);
+          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+        }
+      }
+    }
+  }
+
+  /**
+  * Tab button
+  */
+  &__tab {
+    @include build-tab();
+    @include relative;
+    overflow: visible;
+    font-weight: bold;
+    @include z-index(over);
+
+    &:not([aria-selected=true]) {
+      @include scheme-element-bg-color(bf100-g750, true, true);
+      @include scheme-element-text-color(g700);
+      @include disabled(g600, g300);
+      @include scheme-element-focus(t-plain);
+      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+    }
+
+    &[aria-selected=true] {
+      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0.125rem 0 0 $COLOR');
+      @include scheme-element-bg-color(t-plain, true, true);
+      @include scheme-element-text-color(bf500);
+      @include remove-hover();
+      cursor: default;
+
+      @include after(block, '') {
+        @include absolute(2px, 1px, 0, 1px, auto, calc(100% - 1px));
+        @include scheme-element-box-shadow-color(g300, true, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
+        // @include scheme-element-box-shadow-color(w, true, 'inset 0 -3px 0 0 $COLOR');
+        @include z-index(over);
+      }
+    }
+  }
+
+  /**
+  * Tab Panel
+  */
+  &__panel {
+    display: block;
+    @include absolute(null, null, null, 0, 100%, auto);
+    @include padding(4v);
+    @include padding(8v, md);
+    transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
+
+    &--selected {
+      @include scheme-element-focus();
+
+      &:focus {
+        outline-offset: calc(-1rem + 2px);
+        @include respond-from(md) {
+          outline-offset: calc(-2rem + 2px);
+        }
+      }
+    }
+
+    /**
+    * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
+    * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
+    *
+    * tabs
+    * └─ panel selected
+    * └─ panel (visibility hidden, tabindex -1)
+    *    └─ tabs
+    *       └─ panel selected (visibility visible tabindex 0)
+    *            ↑ ce panel est accessible alors que caché par son panel parent
+    * solution : visibility hidden seulement sur les éléments non sélectionnés
+    **/
+    @at-root #{&}:not(&--selected) {
+      visibility: hidden;
+    }
+  }
+}

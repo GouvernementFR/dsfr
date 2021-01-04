@@ -33,7 +33,7 @@
 ///   }
 @mixin grid-col-offset($size, $columns: $grid-columns) {
   $num: $size / $columns;
-  margin-left: if($num == 0, 0, percentage($num));
+  @include margin-left(if($num == 0, 0, percentage($num)));
 }
 
 /// Generate grid sized columns classes for specific media query
@@ -49,12 +49,12 @@
 @mixin grid-generator($size: null, $columns: $grid-columns) {
   @for $i from 1 through $grid-columns {
     @if $size == null {
-      .#{$prefix}-col-#{$i} {
+      #{dse('col-' + $i)} {
         @include grid-col($i);
       }
     }
     @else {
-      .#{$prefix}-col-#{$size}-#{$i} {
+      #{dse('col-' + $size + '-' + $i)} {
         @include grid-col($i);
       }
     }
@@ -74,12 +74,12 @@
 @mixin grid-offset-generator($size: null, $columns: $grid-columns) {
   @for $i from 1 through $grid-columns {
     @if $size == null {
-      .#{$prefix}-col-offset-#{$i} {
+      #{dse('col-offset-' + $i)} {
         @include grid-col-offset($i);
       }
     }
     @else {
-      .#{$prefix}-col-offset-#{$size}-#{$i} {
+      #{dse('col-offset-' + $size + '-' + $i)} {
         @include grid-col-offset($i);
       }
     }

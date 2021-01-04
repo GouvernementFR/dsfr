@@ -1,42 +1,44 @@
 <%
 
-let link = {
-  type: 'link',
-  label: 'Accès direct'
-}
+const models = [ 'MALMMLMMLM', 'LLMLLLL', 'LLLLLL' ];
 
-let sublink = {
+function link(level, active) {
+  return {
     type: 'link',
-    label: 'Accès direct niveau 2'
+    active: active === true,
+    label: 'Accès direct' + (level > 1 ? ' niveau ' + level: '')
+  }
 }
 
-let subsublink = { label: 'Accès direct niveau 3' };
+function items(level, active) {
+  const items = [];
+  const model = models[level];
 
-let subitems = [subsublink, subsublink, subsublink, subsublink, subsublink, subsublink];
+  for (let i = 0; i < model.length; i++) switch(model.charAt(i)) {
+    case 'L':
+      items.push(link(level + 1, active && i === 1));
+      break;
 
-let submenu = {
-    type: 'submenu',
-    label: 'Niveau 2',
-    subitems: subitems
+    case 'M':
+      items.push(menu(level + 1));
+      break;
+
+    case 'A':
+      items.push(menu(level + 1, true));
+      break;
+  }
+  return items;
 }
 
-let items = [sublink, sublink, submenu, sublink, sublink, sublink, sublink];
-
-let menu = {
+function menu(level, active) {
+  return {
     type: 'menu',
-    label: 'Niveau 1',
-    items: items
+    active: active === true,
+    label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
+    collapseId: uniqueId('sidemenu'),
+    items: items(level, active)
+  }
 }
-
-let itemsAct = items.slice();
-itemsAct[3] = { ...sublink, active: true }
-
-let active = {
-    ...menu,
-    active: true,
-    label: 'Entrée menu active',
-    items: itemsAct
-};
 
 let modifier;
 
@@ -53,9 +55,11 @@ if (locals.modifier === 'right') {
 }
 
 let data = {
-    items: [menu, active, link, menu, menu, link, menu, menu, link, menu],
-    modifier
+    items: items(0),
+    modifier,
+    collapseId: uniqueId('sidemenu')
 }
+
 %>
 
 <%- include('../templates/sidemenu', data); %>

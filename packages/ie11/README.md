@@ -18,6 +18,3 @@ Via Yarn :
 yarn add install @gouvfr/ie11
 ```
 
-## Documentation
-
-Consulter [la documentation](#) sur la compatibilité IE11

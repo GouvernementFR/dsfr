@@ -3,17 +3,18 @@
   "version": "0.3.1",
   "license": "MIT",
   "description": "Core",
+  "level": "1.2",
   "publishConfig": {
     "access": "public"
-  },
-  "config": {
-    "noBody": true
   },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
     "postinstall": "node ./post-install.js"
   },
   "dependencies": {
+    "@gouvfr/schemes": "^0.3.1"
+  },
+  "devDependencies": {
     "gently-copy": "^3.2.0",
     "prompt": "^1.0.0"
   }

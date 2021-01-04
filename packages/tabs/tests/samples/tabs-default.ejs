@@ -1,0 +1,20 @@
+<%
+
+let data = locals;
+
+if (!isNaN(data.tabs)) {
+  const length = data.tabs;
+  data.tabs = [];
+  for (let i = 0; i < length; i++) {
+    let lorem = '';
+    for (let j = 0; j < (i + 1 + (locals.repeat || 0)); j++) lorem += '<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore eligendi temporibus voluptatem numquam sint vero quod autem sunt illo, at sed explicabo nemo velit, est tenetur culpa nesciunt dignissimos quia?</p>'
+    data.tabs[i] = {
+      label: `Label Tab ${i + 1}`,
+      content: `<!-- données de test --><h4 class="${prefix}-h4" >Contenu panneau ${i + 1}</h4><a href="test" alt="">link test get focus on TAB</a> ${lorem}`
+    }
+  }
+}
+
+%>
+
+<%- include('../templates/tabs', data) %>

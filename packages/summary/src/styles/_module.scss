@@ -3,51 +3,48 @@
 /// @group summary
 ////
 
-.#{$prefix}-summary {
-  padding: space(3N);
+#{dse(summary)} {
+  @extend %default-text-color;
   @include scheme-element-bg-color(beige, true);
+  @include padding(6v);
+  @include padding(8v 10v 6v, md);
 
-  @include respond-from(md) {
-    padding: space(4N) space(5N) space(3N);
-  }
-}
-
-.#{$prefix}-summary__title {
-  margin: 0 0 space(2N);
-  @include text-styles(xs);
-  font-weight: font-weight(bold);
-  text-transform: uppercase;
-  @include scheme-element-text-color(g800, true);
-}
-
-.#{$prefix}-summary__list {
-  @extend %body-ordered-list;
-  @include text-styles(xs);
-
-  > li {
-    margin: 0;
-    @include line-height(snug);
-
-    &::before {
-      content: none;
-    }
-  }
-
-  > li > a {
-    display: inline-flex;
-    padding: space(1N);
-    margin: 0 (-(space(1N)));
-    box-shadow: none;
+  @include title {
+    @include margin(0 0 4v);
+    @include text-styles(xs);
+    font-weight: font-weight(bold);
+    text-transform: uppercase;
     @include scheme-element-text-color(g800, true);
-    @include scheme-element-bg-color(t-plain, true, after);
+  }
 
-    &::before {
-      margin-right: space(1N);
-      content: counters(list-number, ".") ".";
+  @include list {
+    @extend %list-reset;
+    @extend %ordered-list;
+    @include text-styles(xs);
+
+    > li {
+      @include margin(0);
+      @include line-height(snug);
+
+      @include before(null, none);
+    }
+
+    > li > a {
+      display: inline-flex;
+      @include padding(2v);
+      @include margin(0 -2v);
+      box-shadow: none;
+      @include scheme-element-text-color(g800, true);
+      @include scheme-element-bg-color(t-plain, true, after);
+
+      @include before {
+        @include margin-right(2v);
+        content: counters(list-number, ".") ".";
+      }
     }
   }
 }
 
-.#{$prefix}-summary__link {
+#{dse(summary__link)} {
   text-decoration: none;
 }

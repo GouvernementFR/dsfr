@@ -1,0 +1,17 @@
+<%
+
+let samples = [
+    { sample:'./samples/accordion', title:'Accordéon', data:{ title: true, image: true, button: true }},
+    { sample:'./samples/accordions-group',title:'Groupe d‘accordéons', data: { button: true }},
+    { sample:'./samples/accordion-in-accordion',title:'Accordéon dans un accordéon'},
+    { sample:'./samples/accordions-group-in-accordions-group',title:'Groupes d‘accordéons dans des groupes d‘accordéons'}
+]
+
+%>
+
+<% for (let i = 0; i < samples.length; i++) { %>
+
+<h4 class="<%= prefix %>-h4"><%= samples[i].title %></h4>
+<%- include(samples[i].sample, samples[i].data) %>
+<%- snippet(include(samples[i].sample, samples[i].data)) %>
+<% } %>

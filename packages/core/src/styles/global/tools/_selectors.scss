@@ -3,7 +3,25 @@
 /// @group core
 ////
 
-@mixin class-contains($patterns...) {
+@mixin _class-pattern($selector, $unify: true) {
+  @if & == null {
+    @at-root #{$selector} {
+      @content;
+    }
+  }
+  @else if $unify {
+    @at-root #{selector-unify(&, $selector)} {
+      @content;
+    }
+  }
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+@mixin class-contains($unify: true, $patterns...) {
 
   @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
     $patterns: nth($patterns, 1);
@@ -14,15 +32,13 @@
   @each $pattern in $patterns {
     $selectors: '#{$selectors}[class*="#{$pattern}"]';
   }
-  @if & != null {
-    $selectors:  #{selector-unify(&, $selectors)};
-  }
-  @at-root #{$selectors} {
+
+  @include _class-pattern($selectors, $unify) {
     @content;
   }
 }
 
-@mixin class-not-contains($patterns...) {
+@mixin class-not-contains($unify: true, $patterns...) {
 
   @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
     $patterns: nth($patterns, 1);
@@ -32,104 +48,82 @@
   @each $pattern in $patterns {
     $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
   }
-  @if & != null {
-    $selectors:  #{selector-unify(&, $selectors)};
-  }
-  @at-root #{$selectors} {
+
+  @include _class-pattern($selectors, $unify) {
     @content;
   }
 }
 
-@mixin class-start-with($start) {
-  $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+@mixin class-start-with($start, $unify: true) {
+  @include _class-pattern(class-start-with($start), $unify) {
     @content;
   }
 }
 
-@mixin class-not-start-with($start) {
-  $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+@mixin class-not-start-with($start, $unify: true) {
+  @include _class-pattern(class-not-start-with($start), $unify) {
     @content;
   }
 }
 
-@mixin class-end-with($end) {
-  $selector: '[class$="#{$end}"], [class*="#{$end} "]';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+@mixin class-end-with($end, $unify: true) {
+  @include _class-pattern(class-end-with($end), $unify) {
     @content;
   }
 }
 
-@mixin class-not-end-with($end) {
-  $selector: ':not([class$="#{$end}"]):not([class*="#{$end} "])';
-  @if & != null {
-    $selector:  #{selector-unify(&, $selector)};
-  }
-  @at-root #{$selector} {
+@mixin class-not-end-with($end, $unify: true) {
+  @include _class-pattern(class-not-end-with($end), $unify) {
     @content;
   }
 }
 
-@mixin dse-class() {
-  @include class-start-with('#{$prefix}-') {
+@mixin class-is-dse($unify: true) {
+  @include class-start-with(dse('', ''), $unify) {
     @content;
   }
 }
 
-@mixin not-dse-class() {
-  @include class-not-start-with('#{$prefix}-') {
+@mixin class-is-not-dse($unify: true) {
+  @include class-not-start-with(dse('', ''), $unify) {
     @content;
   }
 }
 
-@mixin selector-insert($selectors...) {
-  $selector: '&';
-  @for $i from 0 to length($selectors) {
-    $selector: '#{$selector}, #{nth($selectors, $i + 1)}';
-  }
-  @at-root {
-    #{&} {
-      #{$selector} {
-        @content;
-      }
-    }
+@mixin has-icon() {
+  @include class-start-with(dse(fi-, '')) {
+    @content;
   }
 }
 
 /// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
 /// @access public
-@mixin dse-all-selector() {
-  @include dse-class {
-    @include selector-insert('& *') {
-      @include selector-insert('&::before', '&::after') {
-        @content;
+@mixin all-dse-elements-selector() {
+  @include class-start-with(dse('', ''), false) {
+    @at-root {
+      &,
+      & * {
+        @at-root {
+          &,
+          &::before,
+          &::after {
+            @content;
+          }
+        }
       }
     }
   }
 }
 
-@mixin when-element-tag-name-is($tag-names...) {
-  $selectors:();
+@mixin specify($tags...) {
+  $selectors: (&);
 
-  $parts: selector_parse(&);
-
-  @debug nth($parts, length($parts));
-
-  @each $tag-name in $tag-names {
-    $selectors: append($selectors, #{$tag-name}#{&}, $separator: comma);
+  @each $tag in $tags {
+    $selectors: append($selectors, selector-unify(&, $tag));
   }
-
-  @at-root #{$selectors} {
-    @content;
+  @at-root {
+    #{$selectors} {
+      @content;
+    }
   }
 }

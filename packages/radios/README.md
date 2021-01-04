@@ -22,4 +22,4 @@ yarn add install @gouvfr/radios
 
 ## Documentation
 
-Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button) sur les boutons radio
+Consulter [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button) sur les boutons radio et [la documentation](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935129/Bouton+radio+riche+-+radio+button+extended) sur les boutons radio riches

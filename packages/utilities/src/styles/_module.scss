@@ -3,8 +3,4 @@
 /// @group utilities
 ////
 
-@include create-spacing-properties($spacing-settings);
-
-.#{$prefix}-collapse {
-  @include collapse();
-}
+@import 'spacing/module';

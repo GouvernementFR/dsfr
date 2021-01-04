@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-.#{$prefix}-sr-only {
+#{dse(sr-only)} {
   @include sr-only();
 }
 

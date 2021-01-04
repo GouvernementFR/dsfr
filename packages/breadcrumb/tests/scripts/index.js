@@ -1,5 +1,5 @@
 /* eslint-disable no-new, no-unused-vars */
 
 import '../style.scss';
-import '@gouvfr/schemes/src/scripts/dist';
+import '../../../../page-test/script';
 import '../../src/scripts/dist';

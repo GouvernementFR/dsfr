@@ -3,13 +3,12 @@
 /// @group logo
 ////
 
-.#{$prefix}-logo {
+#{dse(logo)} {
   display: inline-block;
   font-size: 1rem;
-  box-shadow: none;
-  padding: 1em;
+  @include padding(1em);
 
-  &__title {
+  @include title {
     font-size: 1.05em;
     font-weight: bold;
     line-height: #{(13 / 12.6)}em;
@@ -21,12 +20,9 @@
     @include scheme-element-text-color(g800);
   }
 
-  &::before {
-    display: block;
-    content: '';
-    width: 2.75em;
-    height: 1em;
-    margin-bottom: #{(1/3)}em;
+  @include before(block, '') {
+    @include size(2.75em, 1em);
+    @include margin-bottom(#{(1/3)}em);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50% 50%;
@@ -35,15 +31,14 @@
     background-image: url(_svg-encode($svg-marianne-colored));
   }
 
-  &::after {
+  @include specify-after-reset-link-style() {
     display: block;
     content: '';
-    width: 2.625em;
-    height: #{(11/6)}em;
+    @include size(2.625em, #{(11/6)}em);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50% 50%;
-    margin-top: #{(1/3)}em;
+    @include margin-top(#{(1/3)}em);
     @include scheme-element-data-uri-svg(g800, url(_svg-encode($svg-motto)));
   }
 
@@ -57,8 +52,8 @@
 }
 
 [data-mourning] {
-  .#{$prefix}-logo {
-    &::before {
+  #{dse(logo)} {
+    @include before {
       $svg-mariane: _color-marianne(black, black);
       background-image: url(_svg-encode($svg-mariane));
       @include scheme-element-box-shadow-color(t-w, true, 0 0 0 1px $COLOR);

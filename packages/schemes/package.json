@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "license": "MIT",
   "description": "Combinaison de couleur",
+  "level": "1.1",
   "publishConfig": {
     "access": "public"
   },
@@ -10,6 +11,5 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/core": "^0.3.1"
   }
 }

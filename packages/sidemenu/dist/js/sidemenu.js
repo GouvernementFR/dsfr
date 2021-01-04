@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 42);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -128,6 +128,13 @@ var Initializer = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ 2:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -161,7 +168,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 34:
+/***/ 36:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -180,10 +187,10 @@ __webpack_require__.d(__webpack_exports__, "KeyListener", function() { return /*
 __webpack_require__.d(__webpack_exports__, "addClass", function() { return /* reexport */ classes["addClass"]; });
 __webpack_require__.d(__webpack_exports__, "removeClass", function() { return /* reexport */ classes["removeClass"]; });
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/collapse/collapse.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapse.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -415,10 +422,10 @@ var CollapseGroup = /*#__PURE__*/function () {
 }();
 
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/manipulation/classes.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/manipulation/classes.js
 var classes = __webpack_require__(2);
 
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/disclosure/disclosures-group.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosures-group.js
 function disclosures_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function disclosures_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -438,15 +445,18 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 
   disclosures_group_createClass(DisclosuresGroup, [{
     key: "build",
-    value: function build(wrapper, selector, type) {
+    value: function build(wrapper, wrapperSelector, selector, type) {
+      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
       this.wrapper = wrapper;
       var elements = wrapper.querySelectorAll(selector);
       var disclosure;
 
       for (var i = 0; i < elements.length; i++) {
-        // vérifier qu'il n'y a pas 2 fois le selecteur entre le wrapper et l'élément.
-        disclosure = this.disclosureFactory(elements[i], type, selector);
-        this.add(disclosure);
+        // on l'ajoute qu'au wrapper le plus proche
+        if (elements[i].closest(wrapperSelector) === this.wrapper) {
+          disclosure = this.disclosureFactory(elements[i], type, selector);
+          this.add(disclosure);
+        }
       }
     }
   }, {
@@ -505,7 +515,7 @@ var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
 }();
 
 
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/disclosure/disclosure-button.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure-button.js
 function disclosure_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function disclosure_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -572,7 +582,7 @@ var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
 }();
 
 
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/disclosure/disclosure.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure.js
 function disclosure_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function disclosure_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -691,7 +701,7 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
 disclosure_Disclosure.EXPAND = 'expanded';
 disclosure_Disclosure.SELECT = 'selected';
 
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/key-listener/key-listener.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/key-listener/key-listener.js
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -850,7 +860,7 @@ KeyListener.UP = 38;
 KeyListener.RIGHT = 39;
 KeyListener.DOWN = 40;
 
-// CONCATENATED MODULE: ./packages/utilities/src/scripts/index.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/index.js
 
 
 
@@ -866,7 +876,7 @@ KeyListener.DOWN = 40;
 
 /***/ }),
 
-/***/ 40:
+/***/ 42:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -874,13 +884,13 @@ KeyListener.DOWN = 40;
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/sidemenu/_dist.scss
-var _dist = __webpack_require__(8);
+var _dist = __webpack_require__(10);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/init/Initializer.js
+// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
 var Initializer = __webpack_require__(1);
 
-// EXTERNAL MODULE: ./packages/utilities/src/scripts/index.js + 5 modules
-var scripts = __webpack_require__(34);
+// EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 5 modules
+var scripts = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./packages/sidemenu/src/scripts/sidemenu/sidemenu.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -967,13 +977,6 @@ var sidemenu_SideMenu = /*#__PURE__*/function () {
 
 
 new Initializer["Initializer"]('.rf-sidemenu', [sidemenu_SideMenu]);
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

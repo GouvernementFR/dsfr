@@ -1,24 +1,4 @@
 @charset "UTF-8";
-/**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
-
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
-
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
- */
 input.rf-input[disabled], input.rf-input:disabled {
   cursor: not-allowed; }
 
@@ -30,6 +10,12 @@ input.rf-input[disabled], input.rf-input:disabled {
   text-transform: none;
   line-height: 1; }
 
+/**
+ * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+ */
+/**
+ * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
+ */
 /* stylelint-disable */
 .rf-input {
   display: block;
@@ -65,8 +51,10 @@ input.rf-input[disabled], input.rf-input:disabled {
   input.rf-input[disabled], input.rf-input:disabled {
     color: var(--g600-g400);
     box-shadow: inset 0 -2px 0 0 var(--g400);
-    opacity: 1;
-    /* override de l'opacité chrome sur un élément disabled */ }
+    /**
+       * Override de l'opacité chrome sur un élément disabled
+       */
+    opacity: 1; }
   .rf-input:not(textarea) {
     max-height: 2.5rem; }
   .rf-input::-webkit-inner-spin-button, .rf-input::-webkit-calendar-picker-indicator {

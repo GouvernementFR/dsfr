@@ -3,20 +3,23 @@
 /// @group schemes
 ////
 
-/// Initialisation des blocs de couleurs
+/// Couleur de fond blanche par défaut sur le body
 /// @access public
-@mixin scheme-blocks {
-
+@mixin scheme-body {
   $sets: _get-scheme(light, white);
 
   // Par défault, on applique le scheme light white sur le body
-  @at-root body {
-    background-color: var(--#{nth($sets, 1)});
 
-    @include _theme-transition() {
-      transition: background-color $theme-transition-duration;
-    }
+  background-color: var(--#{nth($sets, 1)});
+
+  @include _theme-transition() {
+    transition: background-color $theme-transition-duration;
   }
+}
+
+/// Initialisation des blocs de couleurs
+/// @access public
+@mixin scheme-blocks {
 
   // On créé un nouveau bloc de couleur pour chaque type présent dans la configuration
   @each $type, $variation in $scheme-blocks {
@@ -26,7 +29,7 @@
       $set: map_get($scheme-sets, nth($sets, 1));
       $selector: #{$base}-#{$color};
 
-      @at-root #{$selector} {
+      @at-root :root #{$selector} {
         background-color: var(--#{nth($sets, 1)});
 
         --scheme-border: var(--#{nth($sets, 2)});
@@ -43,7 +46,7 @@
 
     // Ajout de border et de transition associés au type de la combinaison
     @at-root [class*="#{$base-scheme}-#{$type}"] {
-      @include _scheme-block-border(#{$base-scheme-selector}, space(0-5N));
+      @include _scheme-block-border(#{$base-scheme-selector}, space(1v));
 
       @include _theme-transition() {
         transition: background-color $theme-transition-duration, box-shadow $theme-transition-duration;

@@ -3,18 +3,18 @@
 /// @group search
 ////
 
-.#{$prefix}-search-bar {
-  display: flex;
-  flex-direction: row;
+#{dse(search-bar)} {
+  @extend %default-text-color;
+  @include display-flex(row);
 
-  .#{$prefix}-label {
+  #{dse(label)} {
     @include sr-only();
   }
 
-  .#{$prefix}-input {
+  #{dse(input)} {
     @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
-    margin-top: 0;
-    border-radius: space(0-5N) 0 0;
+    @include margin-top(0);
+    border-radius: space(1v) 0 0;
     max-height: none;
 
     &::placeholder {
@@ -24,7 +24,7 @@
 
   @include nest-btn(md, only, search-line) {
     flex: 1 0 auto;
-    border-radius: 0 space(0-5N) 0 0;
+    border-radius: 0 space(1v) 0 0;
   }
 
   &--lg {

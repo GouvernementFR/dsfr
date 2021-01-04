@@ -1,24 +1,4 @@
 @charset "UTF-8";
-/**
-  XS : 12px -> 16px
-  SM : 14px -> 20px
-  MD : 16px -> 24px
-  LG mob : 18px -> 28px
-  LG desk : 20px -> 32px
-  XL mob : 20px -> 32px
-  XL desk : 24px -> 36px => chapo
-
-  H1 48px 44px => 60px 56px
-  H2 32px => 40px
-  H3 24px => 32px
-  H4 22px => 32px
-
-  XL 88px => 104px
-  LG 80px => 96px
-  MD 72px => 88px
-  SM 64px => 80px
-  XS 56px => 72px
- */
 .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
   content: ""; }
 
@@ -33,9 +13,22 @@
   text-transform: none;
   line-height: 1; }
 
+.rf-sidemenu__link {
+  text-decoration: none; }
+
+.rf-sidemenu__list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
+.rf-sidemenu {
+  color: var(--g700); }
+
 .rf-sidemenu {
   position: relative;
-  box-shadow: "0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32)";
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
   background-color: var(--w-g750);
   /**
    * Ajout de l'icône de menu en mode mobile (provisoire)
@@ -57,20 +50,20 @@
     margin: 0 1rem;
     overflow: hidden;
     opacity: 0;
-    max-height: 99999px;
+    max-height: 0;
+    visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
     .rf-sidemenu__wrapper::before {
       display: block;
       content: '';
       margin-top: -100vh;
       transition: margin-top 0.3s; }
-    .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded {
-      opacity: 1; }
-      .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded::before {
+    .rf-sidemenu__wrapper--expanded {
+      opacity: 1;
+      max-height: 99999px;
+      visibility: visible; }
+      .rf-sidemenu__wrapper--expanded::before {
         margin-top: 0; }
-    .rf-sidemenu__wrapper:not(.rf-sidemenu__wrapper--expanded) {
-      visibility: hidden;
-      max-height: 0; }
     .rf-sidemenu__wrapper--expanded {
       max-height: 100%; }
     @media (min-width: 48em) {
@@ -110,6 +103,7 @@
       .rf-sidemenu__list {
         margin: 0; } }
   .rf-sidemenu__item {
+    position: relative;
     margin: 0.25rem;
     border-bottom: 1px solid var(--g300); }
     .rf-sidemenu__item::before {
@@ -149,7 +143,8 @@
 .rf-sidemenu__content {
   overflow: hidden;
   opacity: 0;
-  max-height: 99999px;
+  max-height: 0;
+  visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
   max-height: 100%;
   padding: 0.25rem;
@@ -163,13 +158,12 @@
     content: '';
     margin-top: -100vh;
     transition: margin-top 0.3s; }
-  .rf-sidemenu__content.rf-sidemenu__content--expanded {
-    opacity: 1; }
-    .rf-sidemenu__content.rf-sidemenu__content--expanded::before {
+  .rf-sidemenu__content--expanded {
+    opacity: 1;
+    max-height: 99999px;
+    visibility: visible; }
+    .rf-sidemenu__content--expanded::before {
       margin-top: 0; }
-  .rf-sidemenu__content:not(.rf-sidemenu__content--expanded) {
-    visibility: hidden;
-    max-height: 0; }
   .rf-sidemenu__content:not(.rf-sidemenu__content--expanded) .rf-sidemenu__item {
     max-height: 0;
     margin-bottom: 0; }
@@ -263,7 +257,7 @@
   line-height: 1.5;
   border: 0;
   font-size: 1rem;
-  color: var(--g800);
+  color: var(--g700);
   /**
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
     * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
@@ -292,7 +286,7 @@
     width: 100%;
     padding: 0.75rem 0 0.75rem 2rem;
     border: 0;
-    color: var(--g800);
+    color: var(--g700);
     background-color: var(--w-g750); }
     .rf-sidemenu__btn--sidemenu-toggle:focus {
       outline: 2px solid var(--focus);
@@ -319,22 +313,22 @@
     .rf-sidemenu__btn:not([disabled]):active, .rf-sidemenu__btn:not(:disabled):active {
       background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
   @media (min-width: 48em) {
-      :root:not([data-theme="dark"]) .rf-sidemenu__btn {
+      :root:not([data-rf-theme="dark"]) .rf-sidemenu__btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-sidemenu__btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-sidemenu__btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-sidemenu__btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-sidemenu__btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-sidemenu__btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-sidemenu__btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-sidemenu__btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-sidemenu__btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-sidemenu__btn,
-      :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-sidemenu__btn {
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-sidemenu__btn,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-sidemenu__btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); }
-      :root[data-theme="dark"] .rf-sidemenu__btn {
+      :root[data-rf-theme="dark"] .rf-sidemenu__btn {
         --color-hover: var(--block-color-hover);
         --color-active: var(--block-color-active); } }
 
@@ -349,30 +343,34 @@
   padding: 0.75rem 0;
   font-size: 1rem;
   text-align: left;
-  box-shadow: none;
   color: var(--g800);
   background-color: var(--t-plain); }
+  a.rf-sidemenu__link {
+    box-shadow: none; }
+    a.rf-sidemenu__link[target="_blank"]::after {
+      content: none;
+      margin-left: 0; }
   @media (hover: hover) and (pointer: fine) {
     .rf-sidemenu__link:not([disabled]):hover, .rf-sidemenu__link:not(:disabled):hover {
       background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
     .rf-sidemenu__link:not([disabled]):active, .rf-sidemenu__link:not(:disabled):active {
       background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
-  :root:not([data-theme="dark"]) .rf-sidemenu__link {
+  :root:not([data-rf-theme="dark"]) .rf-sidemenu__link {
     --color-hover: var(--block-color-hover);
     --color-active: var(--block-color-active); }
-  :root:not([data-theme="dark"]) [class*="rf-scheme-light"] .rf-sidemenu__link,
-  :root:not([data-theme="dark"]) [class*="--scheme-light-"] .rf-sidemenu__link {
+  :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-sidemenu__link,
+  :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-sidemenu__link {
     --color-hover: var(--block-color-hover);
     --color-active: var(--block-color-active); }
-  :root:not([data-theme="dark"]) [class*="rf-scheme-dark"] .rf-sidemenu__link,
-  :root:not([data-theme="dark"]) [class*="--scheme-dark-"] .rf-sidemenu__link {
+  :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-sidemenu__link,
+  :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-sidemenu__link {
     --color-hover: var(--block-color-hover);
     --color-active: var(--block-color-active); }
-  :root:not([data-theme="dark"]) [class*="rf-scheme-soft"] .rf-sidemenu__link,
-  :root:not([data-theme="dark"]) [class*="--scheme-soft-"] .rf-sidemenu__link {
+  :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-sidemenu__link,
+  :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-sidemenu__link {
     --color-hover: var(--block-color-hover);
     --color-active: var(--block-color-active); }
-  :root[data-theme="dark"] .rf-sidemenu__link {
+  :root[data-rf-theme="dark"] .rf-sidemenu__link {
     --color-hover: var(--block-color-hover);
     --color-active: var(--block-color-active); }
   .rf-sidemenu__link:focus {
