@@ -24,14 +24,17 @@
     @media (min-width: 62em) {
       .rf-grid-row--gutters {
         margin: 0 -1rem; } }
-    .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
-      padding: 0.5rem; }
+    .rf-grid-row--gutters [class^="rf-col-"], .rf-grid-row--gutters [class*=" rf-col-"],
+    .rf-grid-row--gutters .rf-col {
+      padding: 0 0.5rem; }
       @media (min-width: 48em) {
-        .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
-          padding: 0.75rem; } }
+        .rf-grid-row--gutters [class^="rf-col-"], .rf-grid-row--gutters [class*=" rf-col-"],
+        .rf-grid-row--gutters .rf-col {
+          padding: 0 0.75rem; } }
       @media (min-width: 62em) {
-        .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
-          padding: 1rem; } }
+        .rf-grid-row--gutters [class^="rf-col-"], .rf-grid-row--gutters [class*=" rf-col-"],
+        .rf-grid-row--gutters .rf-col {
+          padding: 0 1rem; } }
 
 .rf-col {
   flex: 1; }

@@ -1,11 +1,11 @@
 @charset "UTF-8";
-.rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+.rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before {
   content: ""; }
 
-.rf-sidemenu::before {
+.rf-sidemenu__inner > .rf-sidemenu__btn::after {
   content: ""; }
 
-.rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+.rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__inner > .rf-sidemenu__btn::after {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -31,54 +31,14 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
   background-color: var(--w-g750);
   /**
-   * Ajout de l'icône de menu en mode mobile (provisoire)
-   */
-  /**
-   * Ce wrapper ne sert que pour la version mobile
-   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
-   */
-  /**
    * Titre facultatif
-   */ }
-  .rf-sidemenu::before {
-    font-size: 1rem;
-    position: absolute;
-    top: 0.75rem;
-    margin-left: 0.5rem;
-    transform: translateY(1px); }
-  .rf-sidemenu__wrapper {
-    margin: 0 1rem;
-    overflow: hidden;
-    opacity: 0;
-    max-height: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
-    .rf-sidemenu__wrapper::before {
-      display: block;
-      content: '';
-      margin-top: -100vh;
-      transition: margin-top 0.3s; }
-    .rf-sidemenu__wrapper--expanded {
-      opacity: 1;
-      max-height: 99999px;
-      visibility: visible; }
-      .rf-sidemenu__wrapper--expanded::before {
-        margin-top: 0; }
-    .rf-sidemenu__wrapper--expanded {
-      max-height: 100%; }
-    @media (min-width: 48em) {
-      .rf-sidemenu__wrapper {
-        overflow: initial;
-        max-height: initial;
-        margin: 0;
-        opacity: 1; }
-        .rf-sidemenu__wrapper::before {
-          display: none; }
-        .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded {
-          opacity: 1; }
-        .rf-sidemenu__wrapper:not(.rf-sidemenu__wrapper--expanded) {
-          max-height: initial;
-          visibility: visible; } }
+   */
+  /**
+ * Wrapper des listes déployables niveau 1 et 2
+ */
+  /**
+ * Variantes du sidemenu proposées juste à partir du breakpoint md
+ */ }
   .rf-sidemenu__title {
     margin: 0;
     padding: 1rem 0;
@@ -117,11 +77,11 @@
     .rf-sidemenu__item--active > .rf-sidemenu__link {
       color: var(--bf500); }
       .rf-sidemenu__item--active > .rf-sidemenu__link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
-        left: -0.5rem;
         bottom: 0;
+        left: -0.5rem;
         width: 2px;
         margin: 0.75rem 0;
         background-color: currentColor; }
@@ -129,111 +89,99 @@
       .rf-sidemenu__item {
         margin: 0.5rem 0;
         border: 0; } }
-  @media (min-width: 48em) {
-    .rf-sidemenu__inner {
-      padding: 0 2rem 0 0.25rem;
-      border-right: 1px solid var(--g300); } }
+  .rf-sidemenu__inner {
+    /**
+   * Ce wrapper ne sert que pour la version mobile
+   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+   */ }
+    @media (min-width: 48em) {
+      .rf-sidemenu__inner {
+        padding: 0 2rem 0 0.25rem;
+        border-right: 1px solid var(--g300); } }
+    .rf-sidemenu__inner > .rf-collapse {
+      margin: 0 1rem; }
+      @media (min-width: 48em) {
+        .rf-sidemenu__inner > .rf-collapse {
+          margin: 0; } }
+      @media (min-width: 48em) {
+        .rf-sidemenu__inner > .rf-collapse {
+          overflow: initial;
+          display: block !important; }
+          .rf-sidemenu__inner > .rf-collapse::before {
+            display: none; }
+          .rf-sidemenu__inner > .rf-collapse:not(.rf-collapse--expanded) {
+            visibility: visible; } }
   @media (min-width: 48em) {
     .rf-sidemenu {
       background-color: var(--t-plain); } }
-
-/**
- * Wrapper des listes déployables niveau 1 et 2
- */
-.rf-sidemenu__content {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
-  max-height: 100%;
-  padding: 0.25rem;
-  margin: -0.25rem;
-  transition: max-height 0.3s;
-  /**
+  .rf-sidemenu .rf-sidemenu__content {
+    padding: 0.25rem;
+    margin: -0.25rem;
+    transition: max-height 0.3s;
+    /**
   * Styles spécifiques aux items de liste de niveaux 2 et 3
   */ }
-  .rf-sidemenu__content::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-sidemenu__content--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-sidemenu__content--expanded::before {
-      margin-top: 0; }
-  .rf-sidemenu__content:not(.rf-sidemenu__content--expanded) .rf-sidemenu__item {
-    max-height: 0;
-    margin-bottom: 0; }
-  .rf-sidemenu__content__list {
-    margin: 0 0 0 1rem; }
-  .rf-sidemenu__content__item {
-    margin: 0; }
-    .rf-sidemenu__content__item .rf-sidemenu__btn {
-      padding: 0.75rem 0; }
-      .rf-sidemenu__content__item .rf-sidemenu__btn::before {
-        font-size: 1rem;
-        margin-right: 0; }
-      @media (min-width: 48em) {
-        .rf-sidemenu__content__item .rf-sidemenu__btn {
-          padding: 0.75rem 1rem 0.75rem 0.75rem; } }
-    .rf-sidemenu__content__item .rf-sidemenu__link {
-      padding: 0.75rem 0;
-      font-weight: 400; }
-      @media (min-width: 48em) {
-        .rf-sidemenu__content__item .rf-sidemenu__link {
-          padding: 0.75rem; } }
-
-/**
- * Variantes du sidemenu proposées juste à partir du breakpoint md
- */
-@media (min-width: 48em) {
-  .rf-sidemenu {
-    padding-right: 2rem;
-    box-shadow: none;
-    /**
-     * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
-     * La bordure se met sur la gauche
-     */
-    /**
-     * Modificateur pour que le sidemenu soit sticky
-     */
-    /**
-     * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
-     */
-    /**
-     * Modificateur pour avoir une bordure tout autour du sidemenu
-     */ }
-    .rf-sidemenu::before {
-      content: none; }
-    .rf-sidemenu--right {
-      padding-left: 2rem;
-      padding-right: 0; }
-      .rf-sidemenu--right .rf-sidemenu__inner {
-        padding: 0 1rem 0 2rem;
-        border-right: 0;
-        border-left: 1px solid var(--g300); }
-    .rf-sidemenu--sticky {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%; }
-    .rf-sidemenu--sticky-full-height {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%; }
-      .rf-sidemenu--sticky-full-height .rf-sidemenu__inner {
-        overflow: auto;
-        height: 100vh; }
-    .rf-sidemenu--full-border .rf-sidemenu__title {
-      margin-top: 0.5rem; }
-    .rf-sidemenu--full-border .rf-sidemenu__inner {
-      border: 1px solid var(--g300); } }
+    .rf-sidemenu .rf-sidemenu__content__list {
+      margin: 0 0 0 1rem; }
+    .rf-sidemenu .rf-sidemenu__content__item {
+      margin: 0; }
+      .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn {
+        padding: 0.75rem 0; }
+        @media (min-width: 48em) {
+          .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn {
+            padding: 0.75rem 1rem 0.75rem 0.75rem; } }
+        .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn::before {
+          font-size: 1rem;
+          margin-right: 0; }
+      .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__link {
+        padding: 0.75rem 0;
+        font-weight: 400; }
+        @media (min-width: 48em) {
+          .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__link {
+            padding: 0.75rem; } }
+  @media (min-width: 48em) {
+    .rf-sidemenu {
+      padding-right: 2rem;
+      box-shadow: none;
+      /**
+   * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
+   * La bordure se met sur la gauche
+   */
+      /**
+   * Modificateur pour que le sidemenu soit sticky
+   */
+      /**
+   * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
+   */
+      /**
+   * Modificateur pour avoir une bordure tout autour du sidemenu
+   */ }
+      .rf-sidemenu::before {
+        content: none; }
+      .rf-sidemenu--right {
+        padding-left: 2rem;
+        padding-right: 0; }
+        .rf-sidemenu--right .rf-sidemenu__inner {
+          padding: 0 1rem 0 2rem;
+          border-right: 0;
+          border-left: 1px solid var(--g300); }
+      .rf-sidemenu--sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: auto; }
+      .rf-sidemenu--sticky-full-height {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: auto; }
+        .rf-sidemenu--sticky-full-height .rf-sidemenu__inner {
+          overflow: auto;
+          height: 100vh; }
+      .rf-sidemenu--full-border .rf-sidemenu__title {
+        margin-top: 0.5rem; }
+      .rf-sidemenu--full-border .rf-sidemenu__inner {
+        border: 1px solid var(--g300); } }
     @media (min-width: 48em) and (min-width: 48em) {
       .rf-sidemenu--full-border .rf-sidemenu__inner {
         padding: 0 0.25rem 0 0.25rem; } }
@@ -257,6 +205,7 @@
   line-height: 1.5;
   border: 0;
   font-size: 1rem;
+  cursor: pointer;
   color: var(--g700);
   /**
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
@@ -267,9 +216,9 @@
     margin-left: auto;
     margin-right: 0;
     transition: transform 0.3s; }
-    @media (min-width: 48em) {
-      .rf-sidemenu__btn::before {
-        margin-right: -1.5rem; } }
+  @media (min-width: 48em) and (min-width: 48em) {
+    .rf-sidemenu__btn::before {
+      margin-right: -1.5rem; } }
   .rf-sidemenu__btn:focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
@@ -278,29 +227,22 @@
     border-bottom: 1px solid var(--t-plain); }
     .rf-sidemenu__btn[aria-expanded="true"]::before {
       transform: rotate(-180deg); }
-  .rf-sidemenu__btn--sidemenu-toggle {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    text-align: left;
+  .rf-sidemenu__inner > .rf-sidemenu__btn {
     width: 100%;
-    padding: 0.75rem 0 0.75rem 2rem;
-    border: 0;
-    color: var(--g700);
-    background-color: var(--w-g750); }
-    .rf-sidemenu__btn--sidemenu-toggle:focus {
-      outline: 2px solid var(--focus);
-      outline-offset: 2px;
-      z-index: var(--focus-z-index); }
-    .rf-sidemenu__btn--sidemenu-toggle[hidden] {
-      display: none; }
-    .rf-sidemenu__btn--sidemenu-toggle::before {
+    font-weight: normal;
+    background-color: var(--w-g750);
+    /**
+    * Ajout de l'icône de menu en mode mobile (provisoire)
+    */ }
+    .rf-sidemenu__inner > .rf-sidemenu__btn::before {
+      margin-right: 1rem; }
+    .rf-sidemenu__inner > .rf-sidemenu__btn::after {
       font-size: 1rem;
-      margin-left: auto;
-      margin-right: 1rem;
-      transition: transform 0.3s; }
-    .rf-sidemenu__btn--sidemenu-toggle[aria-expanded="true"]::before {
-      transform: rotate(-180deg); }
+      margin-left: 0.25rem;
+      margin-right: 0.25rem; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__inner > .rf-sidemenu__btn {
+        display: none; } }
   @media (min-width: 48em) {
     .rf-sidemenu__btn {
       width: 100%;

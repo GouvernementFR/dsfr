@@ -63,13 +63,13 @@
     position: relative; }
     .rf-content-media__img::before {
       display: block;
-      content: '';
+      content: "";
       width: 100%;
       padding-bottom: 56.25%; }
   .rf-content-media__caption, .rf-content-media__transcription {
     width: 100%;
-    text-align: right;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    text-align: right; }
   .rf-content-media__caption {
     font-size: 0.75rem;
     line-height: 1.5;

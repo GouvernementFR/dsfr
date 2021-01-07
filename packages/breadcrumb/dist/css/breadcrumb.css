@@ -45,12 +45,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   margin-bottom de 1N pour créer cet espace entre chaque ligne
    */
   /**
-    on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
-   */
-  /**
-    lien actuel non clickable, bold et sans underline
-     */
-  /**
   Mobile first, le label du "button" mobile est caché à partir du breakpoint md
    */ }
   .rf-breadcrumb__button {
@@ -84,7 +78,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
      */
     margin-bottom: 0.5rem;
     line-height: 1.125rem;
-    vertical-align: middle; }
+    vertical-align: middle;
+    /**
+      on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
+    */ }
     .rf-breadcrumb__item:first-child::before {
       content: none; }
     .rf-breadcrumb__item:not(:first-child)::before {
@@ -93,18 +90,18 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       color: var(--g600);
       margin-right: 0;
       vertical-align: middle; }
-  .rf-breadcrumb__item a {
-    display: inline;
-    vertical-align: middle; }
-  .rf-breadcrumb__item:not(:last-child)::after {
-    margin-right: 0;
-    content: ''; }
-  .rf-breadcrumb__item:not(:last-child) a {
-    color: var(--g600); }
-  .rf-breadcrumb__item--current {
-    pointer-events: none; }
-  .rf-breadcrumb__item--current a {
-    color: var(--g800); }
+    .rf-breadcrumb__item a {
+      display: inline;
+      vertical-align: middle; }
+    .rf-breadcrumb__item:not(:last-child)::after {
+      margin-right: 0;
+      content: ''; }
+    .rf-breadcrumb__item:not(:last-child) a {
+      color: var(--g600); }
+    .rf-breadcrumb__item--curent {
+      pointer-events: none; }
+      .rf-breadcrumb__item--curent a {
+        color: var(--g800); }
   @media (min-width: 48em) {
     .rf-breadcrumb {
       margin-bottom: 1.5rem; } }

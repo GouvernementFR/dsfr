@@ -92,8 +92,8 @@
       outline-offset: 9999px; }
   .rf-tile__img-wrap {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     width: 5rem;
     height: 5rem;
@@ -107,9 +107,9 @@
   .rf-tile__body {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
     padding: 1rem;
     text-align: center; }
     @media (min-width: 48em) {
@@ -199,8 +199,8 @@
         @media (min-width: 48em) {
           .rf-tile--horizontal-md .rf-tile__img-wrap + .rf-tile__body {
             padding: 0;
-            min-height: 5rem;
-            margin: 2rem; } }
+            margin: 2rem;
+            min-height: 5rem; } }
       @media (min-width: 48em) {
         .rf-tile--horizontal-md .rf-tile__img-wrap {
           margin: auto 0 auto 2rem; } }

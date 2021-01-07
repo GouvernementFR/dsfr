@@ -48,6 +48,7 @@
       .rf-checkbox-group input[type="checkbox"] + label::before {
         font-size: 1rem;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
@@ -56,13 +57,13 @@
         margin-right: 0.5rem;
         border-radius: 0.25rem;
         border: 1px solid var(--g800);
-        color: transparent;
-        transition: background-color 0.1s, color 0.1s;
+        color: var(--t-plain);
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
         -ms-grid-column: 2;
-        -ms-align-items: center; }
+        -ms-align-items: center;
+        transition: background-color 0.1s, color 0.1s; }
       .rf-checkbox-group input[type="checkbox"] + label .rf-hint-text {
         margin: 0;
         grid-row: 2;
@@ -103,20 +104,20 @@
   .rf-checkbox-group--error::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
-    height: 1.5rem;
     left: -0.5rem;
+    width: 2px;
+    height: 1.5rem;
     background-color: var(--error); }
   .rf-checkbox-group--valid input[type="checkbox"] + label {
     color: var(--success); }
   .rf-checkbox-group--valid::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
-    height: 1.5rem;
     left: -0.5rem;
+    width: 2px;
+    height: 1.5rem;
     background-color: var(--success); }
 
 

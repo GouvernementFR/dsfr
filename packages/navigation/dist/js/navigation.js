@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -91,7 +91,72 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Initializer", function() { return Initializer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
+var modifiyClass = function modifiyClass(element, className, remove) {
+  if (className.charAt(0) === '.') className = className.substr(1);
+  var classNames = element.className.split(' ');
+  var index = classNames.indexOf(className);
+
+  if (remove === true) {
+    if (index > -1) classNames.splice(index, 1);
+  } else if (index === -1) classNames.push(className);
+
+  element.className = classNames.join(' ');
+};
+
+var addClass = function addClass(element, className) {
+  return modifiyClass(element, className);
+};
+
+
+
+var removeClass = function removeClass(element, className) {
+  return modifiyClass(element, className, true);
+};
+
+
+
+/***/ }),
+
+/***/ 12:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(48);
+module.exports = __webpack_require__(13);
+
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 45:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "Initializer", function() { return /* reexport */ Initializer; });
+__webpack_require__.d(__webpack_exports__, "addClass", function() { return /* reexport */ classes["addClass"]; });
+__webpack_require__.d(__webpack_exports__, "removeClass", function() { return /* reexport */ classes["removeClass"]; });
+__webpack_require__.d(__webpack_exports__, "Renderer", function() { return /* reexport */ Renderer; });
+__webpack_require__.d(__webpack_exports__, "KeyListener", function() { return /* reexport */ KeyListener; });
+__webpack_require__.d(__webpack_exports__, "Disclosure", function() { return /* reexport */ disclosure_Disclosure; });
+__webpack_require__.d(__webpack_exports__, "DisclosureButton", function() { return /* reexport */ disclosure_button_DisclosureButton; });
+__webpack_require__.d(__webpack_exports__, "DisclosuresGroup", function() { return /* reexport */ DisclosuresGroup; });
+__webpack_require__.d(__webpack_exports__, "Collapse", function() { return /* reexport */ collapse_Collapse; });
+__webpack_require__.d(__webpack_exports__, "CollapseButton", function() { return /* reexport */ CollapseButton; });
+__webpack_require__.d(__webpack_exports__, "Collapses", function() { return /* reexport */ collapses_Collapses; });
+__webpack_require__.d(__webpack_exports__, "CollapsesGroup", function() { return /* reexport */ CollapsesGroup; });
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/global/initializer.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -125,581 +190,75 @@ var Initializer = /*#__PURE__*/function () {
 }();
 
 
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
-var modifiyClass = function modifiyClass(element, className, remove) {
-  if (className.charAt(0) === '.') className = className.substr(1);
-  var classNames = element.className.split(' ');
-  var index = classNames.indexOf(className);
-
-  if (remove === true) {
-    if (index > -1) classNames.splice(index, 1);
-  } else if (index === -1) classNames.push(className);
-
-  element.className = classNames.join(' ');
-};
-
-var addClass = function addClass(element, className) {
-  return modifiyClass(element, className);
-};
-
-
-
-var removeClass = function removeClass(element, className) {
-  return modifiyClass(element, className, true);
-};
-
-
-
-/***/ }),
-
-/***/ 36:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "Initializer", function() { return /* reexport */ Initializer["Initializer"]; });
-__webpack_require__.d(__webpack_exports__, "Collapse", function() { return /* reexport */ Collapse; });
-__webpack_require__.d(__webpack_exports__, "CollapseGroup", function() { return /* reexport */ CollapseGroup; });
-__webpack_require__.d(__webpack_exports__, "CollapseElement", function() { return /* reexport */ collapse_CollapseElement; });
-__webpack_require__.d(__webpack_exports__, "Disclosure", function() { return /* reexport */ disclosure_Disclosure; });
-__webpack_require__.d(__webpack_exports__, "DisclosureButton", function() { return /* reexport */ disclosure_button_DisclosureButton; });
-__webpack_require__.d(__webpack_exports__, "DisclosuresGroup", function() { return /* reexport */ disclosures_group_DisclosuresGroup; });
-__webpack_require__.d(__webpack_exports__, "KeyListener", function() { return /* reexport */ KeyListener; });
-__webpack_require__.d(__webpack_exports__, "addClass", function() { return /* reexport */ classes["addClass"]; });
-__webpack_require__.d(__webpack_exports__, "removeClass", function() { return /* reexport */ classes["removeClass"]; });
-
-// EXTERNAL MODULE: ./packages/core/src/scripts/init/Initializer.js
-var Initializer = __webpack_require__(1);
-
-// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapse.js
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-var COLLAPSE = '.rf-collapse';
-var MODIFIER = COLLAPSE + '--expanded';
-var TOGGLE = 'toggle_event';
-var REDUCE = 'reduce_event';
-var EXPAND = 'expand_event';
-
-var Collapse = /*#__PURE__*/function () {
-  function Collapse() {
-    _classCallCheck(this, Collapse);
-
-    this.elements = [];
-    this.groups = {};
-    this.init();
-  }
-
-  _createClass(Collapse, [{
-    key: "init",
-    value: function init() {
-      var elements = document.querySelectorAll(COLLAPSE);
-      var collapse, groupId, group;
-
-      for (var i = 0; i < elements.length; i++) {
-        collapse = new collapse_CollapseElement(elements[i], MODIFIER);
-        this.elements.push(collapse);
-        groupId = collapse.element.getAttribute('data-group');
-
-        if (groupId !== null) {
-          group = this.groups[groupId];
-
-          if (group === undefined) {
-            group = new CollapseGroup();
-            this.groups[groupId] = group;
-          }
-
-          group.add(collapse);
-        }
-      }
-    }
-  }]);
-
-  return Collapse;
-}();
-
-var collapse_CollapseElement = /*#__PURE__*/function () {
-  function CollapseElement(element, modifier) {
-    _classCallCheck(this, CollapseElement);
-
-    this.element = element;
-    this.modifier = modifier;
-    this.id = element.id;
-    var buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
-
-    if (buttons.length > 0) {
-      this.buttons = [];
-
-      for (var i = 0; i < buttons.length; i++) {
-        this.buttons.push(new CollapseButton(buttons[i]));
-      }
-
-      this.init();
-    }
-  }
-
-  _createClass(CollapseElement, [{
-    key: "init",
-    value: function init() {
-      var _this = this;
-
-      // this.element.addEventListener('transitionend', this.transitionEnd.bind(this));
-      var toggles = this.buttons.filter(function (button) {
-        return button.type === TOGGLE;
-      });
-      if (toggles.length > 0) this.expanded = toggles[0].expanded;
-      this.buttons.forEach(function (button) {
-        button.element.addEventListener(TOGGLE, _this.toggle.bind(_this));
-        button.element.addEventListener(REDUCE, _this.reduce.bind(_this));
-      });
-    }
-  }, {
-    key: "toggle",
-    value: function toggle(e) {
-      this.expanded = !this.expanded;
-    }
-  }, {
-    key: "reduce",
-    value: function reduce(e) {
-      this.expanded = false;
-
-      for (var i = 0; i < this.buttons.length; i++) {
-        if (this.buttons[i].type === TOGGLE) {
-          this.buttons[i].focus();
-          break;
-        }
-      }
-    }
-  }, {
-    key: "transitionEnd",
-    value: function transitionEnd() {// if (!this._expanded) this.element.setAttribute('hidden', '');
-    }
-  }, {
-    key: "hasFocus",
-    get: function get() {
-      if (this.element === document.activeElement) return true;
-      if (this.element.querySelectorAll(':focus').length > 0) return true;
-      if (this.buttons.some(function (button) {
-        return button.hasFocus;
-      })) return true;
-      return false;
-    }
-  }, {
-    key: "expanded",
-    get: function get() {
-      return this._expanded === true;
-    },
-    set: function set(value) {
-      var _this2 = this;
-
-      var bool = value === true;
-      if (this._expanded === bool) return;
-      this._expanded = bool;
-      this.buttons.forEach(function (button) {
-        button.expanded = _this2._expanded;
-      });
-
-      if (this._expanded) {
-        // this.element.removeAttribute('hidden');
-        // requestAnimationFrame(() => addClass(this.element, EXPANDED));
-        Object(classes["addClass"])(this.element, this.modifier);
-        this.element.dispatchEvent(new Event(EXPAND));
-      } else {
-        Object(classes["removeClass"])(this.element, this.modifier);
-        this.element.dispatchEvent(new Event(REDUCE));
-      }
-    }
-  }]);
-
-  return CollapseElement;
-}();
-
-var CollapseButton = /*#__PURE__*/function () {
-  function CollapseButton(element) {
-    _classCallCheck(this, CollapseButton);
-
-    this.element = element;
-    this.type = element.hasAttribute('aria-expanded') ? TOGGLE : REDUCE;
-    this.element.addEventListener('click', this.click.bind(this));
-  }
-
-  _createClass(CollapseButton, [{
-    key: "click",
-    value: function click(e) {
-      this.element.dispatchEvent(new Event(this.type));
-    }
-  }, {
-    key: "focus",
-    value: function focus() {
-      this.element.focus();
-    }
-  }, {
-    key: "expanded",
-    set: function set(value) {
-      if (this.type === TOGGLE) this.element.setAttribute('aria-expanded', value);
-    },
-    get: function get() {
-      if (this.type === TOGGLE) return this.element.getAttribute('aria-expanded') === 'true';
-      return null;
-    }
-  }, {
-    key: "hasFocus",
-    get: function get() {
-      return this.element === document.activeElement;
-    }
-  }]);
-
-  return CollapseButton;
-}();
-
-var CollapseGroup = /*#__PURE__*/function () {
-  function CollapseGroup() {
-    _classCallCheck(this, CollapseGroup);
-
-    this.collapses = [];
-  }
-
-  _createClass(CollapseGroup, [{
-    key: "add",
-    value: function add(collapse) {
-      this.collapses.push(collapse);
-      collapse.element.addEventListener(EXPAND, this.onExpand.bind(this));
-      collapse.element.addEventListener(REDUCE, this.onReduce.bind(this));
-    }
-  }, {
-    key: "onExpand",
-    value: function onExpand(e) {
-      var _this3 = this;
-
-      this.collapses.forEach(function (collapse) {
-        if (collapse.element === e.target) _this3.current = collapse;else collapse.expanded = false;
-      });
-    }
-  }, {
-    key: "onReduce",
-    value: function onReduce(e) {
-      if (this.collapses.every(function (collapse) {
-        return !collapse.expanded;
-      })) this.current = undefined;
-    }
-  }, {
-    key: "reduce",
-    value: function reduce() {
-      if (this.current !== undefined) this.current.expanded = false;
-    }
-  }, {
-    key: "hasFocus",
-    get: function get() {
-      if (this.current === undefined) return null;
-      return this.current.hasFocus;
-    }
-  }]);
-
-  return CollapseGroup;
-}();
-
-
 // EXTERNAL MODULE: ./packages/core/src/scripts/manipulation/classes.js
-var classes = __webpack_require__(2);
+var classes = __webpack_require__(1);
 
-// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosures-group.js
-function disclosures_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function disclosures_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function disclosures_group_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosures_group_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosures_group_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-var groups = {};
-
-var disclosures_group_DisclosuresGroup = /*#__PURE__*/function () {
-  function DisclosuresGroup() {
-    disclosures_group_classCallCheck(this, DisclosuresGroup);
-
-    this.disclosures = [];
-    this._current = null;
-  }
-
-  disclosures_group_createClass(DisclosuresGroup, [{
-    key: "build",
-    value: function build(wrapper, wrapperSelector, selector, type) {
-      // const wrapperSelector = '.' + wrapper.classList[0]; // Pas terrible, on l'ajoute en params ?
-      this.wrapper = wrapper;
-      var elements = wrapper.querySelectorAll(selector);
-      var disclosure;
-
-      for (var i = 0; i < elements.length; i++) {
-        // on l'ajoute qu'au wrapper le plus proche
-        if (elements[i].closest(wrapperSelector) === this.wrapper) {
-          disclosure = this.disclosureFactory(elements[i], type, selector);
-          this.add(disclosure);
-        }
-      }
-    }
-  }, {
-    key: "disclosureFactory",
-    value: function disclosureFactory(element, type, selector) {
-      return new disclosure_Disclosure(element, type, selector);
-    }
-  }, {
-    key: "add",
-    value: function add(disclosure) {
-      this.disclosures.push(disclosure);
-      disclosure.setGroup(this);
-      console.log('group add', this.current, disclosure.disclosed, !disclosure.disclosed);
-      if (this.type === undefined) this.type = disclosure.type;else if (this.type !== disclosure.type) throw Error('A DisclosureGroup cannot contain 2 different Disclosure types');
-
-      switch (true) {
-        case this.current !== null:
-        case !disclosure.disclosed:
-          console.log('not current');
-          disclosure.apply(false);
-          break;
-
-        default:
-          this.current = disclosure;
-          console.log('current');
-          disclosure.apply(true);
-      }
-    }
-  }, {
-    key: "conceal",
-    value: function conceal() {// close children
-    }
-  }, {
-    key: "current",
-    get: function get() {
-      return this._current;
-    },
-    set: function set(disclosure) {
-      if (this._current !== null && this._current !== disclosure) this._current.apply(false);
-      this._current = disclosure;
-      if (this._current !== null) this._current.apply(true);
-    }
-  }], [{
-    key: "group",
-    value: function group(disclosure, factory) {
-      var id = disclosure.element.getAttribute('data-group');
-      if (factory === undefined) factory = function factory() {
-        return new DisclosuresGroup();
-      };
-      if (groups[id] === undefined) groups[id] = factory();
-      groups[id].add(disclosure);
-    }
-  }]);
-
-  return DisclosuresGroup;
-}();
-
-
-// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure-button.js
-function disclosure_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function disclosure_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function disclosure_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_button_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
-  function DisclosureButton(element, disclosure) {
-    disclosure_button_classCallCheck(this, DisclosureButton);
-
-    this.element = element;
-    this.disclosure = disclosure;
-    this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
-    this.element.addEventListener('click', this.click.bind(this));
-
-    switch (this.disclosure.type) {
-      case disclosure_Disclosure.EXPAND:
-        this.observer = new MutationObserver(this.mutate.bind(this));
-        this.observe();
-        break;
-    }
-  }
-
-  disclosure_button_createClass(DisclosureButton, [{
-    key: "observe",
-    value: function observe() {
-      this.observer.observe(this.element, {
-        attributes: true
-      });
-    }
-  }, {
-    key: "click",
-    value: function click(e) {
-      console.log('click');
-      this.disclosure.change(this.hasAttribute);
-    }
-  }, {
-    key: "mutate",
-    value: function mutate(mutations) {
-      var _this = this;
-
-      mutations.forEach(function (mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === _this.disclosure.attributeName) _this.disclosure.change(_this.disclosed); // TODO
-      });
-    }
-  }, {
-    key: "apply",
-    value: function apply(value) {
-      if (!this.hasAttribute) return;
-      if (this.observer) this.observer.disconnect();
-      this.element.setAttribute(this.disclosure.attributeName, value);
-      if (this.observer) this.observe();
-    }
-  }, {
-    key: "disclosed",
-    get: function get() {
-      return this.element.getAttribute(this.disclosure.attributeName) === 'true';
-    }
-  }]);
-
-  return DisclosureButton;
-}();
-
-
-// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure.js
-function disclosure_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function disclosure_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function disclosure_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-
-var disclosure_Disclosure = /*#__PURE__*/function () {
-  function Disclosure(element, type, selector) {
-    disclosure_classCallCheck(this, Disclosure);
-
-    this.element = element;
-    this.type = type;
-    this.modifier = selector + '--' + type;
-    this.id = element.id;
-    this.attributeName = 'aria-' + this.type;
-    this.buttons = [];
-    this.disclosed = null;
-    if (this.element.hasAttribute('data-group')) disclosures_group_DisclosuresGroup.group(this, this.groupFactory);
-    var buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
-
-    if (buttons.length > 0) {
-      var button;
-
-      for (var i = 0; i < buttons.length; i++) {
-        button = this.buttonFactory(buttons[i]);
-
-        if (button.hasAttribute) {
-          if (this.disclosed === null) {
-            this.disclosed = button.disclosed;
-            this.primary = button;
-          } else button.apply(this.disclosed);
-        }
-
-        this.buttons.push(button);
-      }
-    }
-
-    this.disclosed = this.disclosed === true;
-    this.apply(this.disclosed);
-  }
-
-  disclosure_createClass(Disclosure, [{
-    key: "groupFactory",
-    value: function groupFactory() {
-      return new disclosures_group_DisclosuresGroup();
-    }
-  }, {
-    key: "buttonFactory",
-    value: function buttonFactory(button) {
-      return disclosure_button_DisclosureButton(button, this);
-    }
-  }, {
-    key: "disclose",
-    value: function disclose() {
-      console.log('disclose', this.disclosed);
-      if (this.disclosed) return;
-      if (this.group !== null) this.group.current = this;
-      this.apply(true);
-    }
-  }, {
-    key: "conceal",
-    value: function conceal() {
-      console.log('conceal', this.disclosed);
-      if (!this.disclosed) return;
-      if (this.group != null) this.group.current = null;
-      this.apply(false);
-    }
-  }, {
-    key: "apply",
-    value: function apply(value) {
-      this.disclosed = value;
-      if (value) Object(classes["addClass"])(this.element, this.modifier);else Object(classes["removeClass"])(this.element, this.modifier);
-
-      for (var i = 0; i < this.buttons.length; i++) {
-        this.buttons[i].apply(value);
-      }
-    }
-  }, {
-    key: "change",
-    value: function change(hasAttribute) {
-      console.log('change', hasAttribute, this.type);
-
-      switch (this.type) {
-        case Disclosure.EXPAND:
-          switch (true) {
-            case !hasAttribute:
-            case this.disclosed:
-              this.conceal();
-              break;
-
-            default:
-              this.disclose();
-          }
-
-          break;
-
-        case Disclosure.SELECT:
-          this.disclose();
-          break;
-      }
-    }
-  }, {
-    key: "setGroup",
-    value: function setGroup(group) {
-      this.group = group;
-    }
-  }]);
-
-  return Disclosure;
-}();
-
-disclosure_Disclosure.EXPAND = 'expanded';
-disclosure_Disclosure.SELECT = 'selected';
-
-// CONCATENATED MODULE: ./packages/core/src/scripts/key-listener/key-listener.js
+// CONCATENATED MODULE: ./packages/core/src/scripts/global/renderer.js
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function renderer_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function renderer_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function renderer_createClass(Constructor, protoProps, staticProps) { if (protoProps) renderer_defineProperties(Constructor.prototype, protoProps); if (staticProps) renderer_defineProperties(Constructor, staticProps); return Constructor; }
+
+var Renderer = /*#__PURE__*/function () {
+  function Renderer() {
+    renderer_classCallCheck(this, Renderer);
+
+    this.closures = [];
+    this.rendering = this.render.bind(this);
+    this.render();
+  }
+
+  renderer_createClass(Renderer, [{
+    key: "render",
+    value: function render() {
+      window.requestAnimationFrame(this.rendering);
+
+      var _iterator = _createForOfIteratorHelper(this.closures),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var closure = _step.value;
+          closure.call();
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+  }], [{
+    key: "add",
+    value: function add(closure) {
+      Renderer.instance.closures.push(closure);
+
+      var remove = function remove() {
+        var index = Renderer.instance.closures.indexOf(closure);
+        if (index !== -1) Renderer.instance.closures.splice(index, 1);
+      };
+
+      return remove;
+    }
+  }]);
+
+  return Renderer;
+}();
+
+Renderer.instance = new Renderer();
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/key-listener/key-listener.js
+function key_listener_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = key_listener_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function key_listener_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return key_listener_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return key_listener_arrayLikeToArray(o, minLen); }
+
+function key_listener_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function key_listener_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -750,7 +309,7 @@ var KeyListener = /*#__PURE__*/function () {
   }, {
     key: "dispose",
     value: function dispose() {
-      var _iterator = _createForOfIteratorHelper(this.collections),
+      var _iterator = key_listener_createForOfIteratorHelper(this.collections),
           _step;
 
       try {
@@ -790,7 +349,7 @@ var KeyActionCollection = /*#__PURE__*/function () {
   }, {
     key: "handle",
     value: function handle(e) {
-      var _iterator2 = _createForOfIteratorHelper(this.actions),
+      var _iterator2 = key_listener_createForOfIteratorHelper(this.actions),
           _step2;
 
       try {
@@ -853,6 +412,717 @@ KeyListener.UP = 38;
 KeyListener.RIGHT = 39;
 KeyListener.DOWN = 40;
 
+// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosures-group.js
+function disclosures_group_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = disclosures_group_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function disclosures_group_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return disclosures_group_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return disclosures_group_arrayLikeToArray(o, minLen); }
+
+function disclosures_group_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function disclosures_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function disclosures_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function disclosures_group_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosures_group_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosures_group_defineProperties(Constructor, staticProps); return Constructor; }
+
+/* eslint no-labels: ["error", { "allowLoop": true }] */
+var groups = [];
+
+var DisclosuresGroup = /*#__PURE__*/function () {
+  function DisclosuresGroup(id, element) {
+    disclosures_group_classCallCheck(this, DisclosuresGroup);
+
+    this.id = id;
+    this.element = element;
+    this.members = [];
+    this._index = -1;
+    this._current = null;
+    groups.push(this);
+  }
+
+  disclosures_group_createClass(DisclosuresGroup, [{
+    key: "add",
+    value: function add(member) {
+      if (this.members.indexOf(member) !== -1) return;
+      this.members.push(member);
+      member.setGroup(this);
+
+      switch (true) {
+        case this.current !== null:
+        case !member.disclosed:
+          member.apply(false);
+          break;
+
+        default:
+          this.current = member;
+          member.apply(true);
+      }
+    }
+  }, {
+    key: "apply",
+    value: function apply() {}
+  }, {
+    key: "length",
+    get: function get() {
+      return this.members.length;
+    }
+  }, {
+    key: "index",
+    get: function get() {
+      return this._index;
+    },
+    set: function set(value) {
+      if (value < -1 || value >= this.length || this._index === value) return;
+      if (this.current !== null) this.current.apply(false);
+      this._index = value;
+      this._current = this._index > -1 ? this.members[this._index] : null;
+      if (this.current !== null) this.current.apply(true);
+      this.apply();
+    }
+  }, {
+    key: "current",
+    get: function get() {
+      return this._current;
+    },
+    set: function set(member) {
+      this.index = this.members.indexOf(member);
+    }
+  }], [{
+    key: "getGroupById",
+    value: function getGroupById(id) {
+      var _iterator = disclosures_group_createForOfIteratorHelper(groups),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var group = _step.value;
+          if (group.constructor === this && group.id === id) return group;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return new this(id);
+    }
+  }, {
+    key: "getGroupByElement",
+    value: function getGroupByElement(element) {
+      var _iterator2 = disclosures_group_createForOfIteratorHelper(groups),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var group = _step2.value;
+          if (group.element === element) return group;
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      return new this(false, element);
+    }
+  }, {
+    key: "groupById",
+    value: function groupById(member, groupConstructor) {
+      var id = member.element.getAttribute('data-rf-group');
+      if (id === null) return;
+      var group = groupConstructor.getGroupById(id);
+      group.add(member);
+    }
+  }, {
+    key: "groupByParent",
+    value: function groupByParent(member, GroupConstructor, groupSelector) {
+      if (groupSelector === undefined) groupSelector = GroupConstructor.selector;
+      if (groupSelector === '') return;
+      var element = member.element.parentElement;
+
+      while (element) {
+        if (element.classList.contains(member.constructor.selector)) return;
+
+        if (element.classList.contains(groupSelector)) {
+          var group = GroupConstructor.getGroupByElement(element);
+          group.add(member);
+          return;
+        }
+
+        element = element.parentElement;
+      }
+    }
+  }, {
+    key: "selector",
+    get: function get() {
+      return '';
+    }
+  }]);
+
+  return DisclosuresGroup;
+}();
+
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure-button.js
+function disclosure_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function disclosure_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function disclosure_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_button_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
+  function DisclosureButton(element, disclosure) {
+    disclosure_button_classCallCheck(this, DisclosureButton);
+
+    this.element = element;
+    this.disclosure = disclosure;
+    this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
+    this.element.addEventListener('click', this.click.bind(this));
+
+    switch (this.disclosure.type) {
+      case disclosure_Disclosure.EXPAND:
+        this.observer = new MutationObserver(this.mutate.bind(this));
+        this.observe();
+        break;
+    }
+  }
+
+  disclosure_button_createClass(DisclosureButton, [{
+    key: "observe",
+    value: function observe() {
+      this.observer.observe(this.element, {
+        attributes: true
+      });
+    }
+  }, {
+    key: "click",
+    value: function click(e) {
+      console.log('click');
+      this.disclosure.change(this.hasAttribute);
+    }
+  }, {
+    key: "mutate",
+    value: function mutate(mutations) {
+      var _this = this;
+
+      mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === _this.disclosure.attributeName) _this.disclosure.change(_this.disclosed);
+      });
+    }
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      if (!this.hasAttribute) return;
+      if (this.observer) this.observer.disconnect();
+      this.element.setAttribute(this.disclosure.attributeName, value);
+      if (this.observer) this.observe();
+    }
+  }, {
+    key: "disclosed",
+    get: function get() {
+      return this.element.getAttribute(this.disclosure.attributeName) === 'true';
+    }
+  }]);
+
+  return DisclosureButton;
+}();
+
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || disclosure_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return disclosure_arrayLikeToArray(arr); }
+
+function disclosure_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = disclosure_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function disclosure_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return disclosure_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return disclosure_arrayLikeToArray(o, minLen); }
+
+function disclosure_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function disclosure_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function disclosure_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function disclosure_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var disclosures = [];
+
+var disclosure_Disclosure = /*#__PURE__*/function () {
+  function Disclosure(element) {
+    disclosure_classCallCheck(this, Disclosure);
+
+    this.element = element;
+    this.id = element.id;
+    this.buttons = [];
+    this.disclosed = null;
+    this._type = this.constructor.type;
+    this._selector = this.constructor.selector;
+    this.modifier = this._selector + '--' + this._type.id;
+    this.attributeName = (this._type.aria ? 'aria-' : 'data-rf-') + this._type.id;
+    var buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
+    if (buttons.length > 0) for (var i = 0; i < buttons.length; i++) {
+      this.addButton(buttons[i]);
+    }
+    this.disclosed = this.disclosed === true;
+    this.apply(this.disclosed);
+    console.log(this.GroupConstructor);
+    DisclosuresGroup.groupById(this, this.GroupConstructor);
+    DisclosuresGroup.groupByParent(this, this.GroupConstructor);
+  }
+
+  disclosure_createClass(Disclosure, [{
+    key: "addButton",
+    value: function addButton(element) {
+      var button = this.buttonFactory(element);
+
+      if (button.hasAttribute) {
+        if (this.disclosed === null) {
+          this.disclosed = button.disclosed;
+        } else button.apply(this.disclosed);
+      }
+
+      this.buttons.push(button);
+    }
+  }, {
+    key: "buttonFactory",
+    value: function buttonFactory(button) {
+      return new disclosure_button_DisclosureButton(button, this);
+    }
+  }, {
+    key: "disclose",
+    value: function disclose() {
+      if (this.disclosed) return;
+      if (this.group !== undefined) this.group.current = this;
+      this.apply(true);
+    }
+  }, {
+    key: "conceal",
+    value: function conceal() {
+      if (!this.disclosed) return;
+      if (this.group !== undefined) this.group.current = null;
+      this.apply(false);
+    }
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      this.disclosed = value;
+      if (value) Object(classes["addClass"])(this.element, this.modifier);else Object(classes["removeClass"])(this.element, this.modifier);
+
+      for (var i = 0; i < this.buttons.length; i++) {
+        this.buttons[i].apply(value);
+      }
+
+      if (!value) {
+        var _iterator = disclosure_createForOfIteratorHelper(disclosures),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var disclosure = _step.value;
+            if (disclosure !== this && this.element.contains(disclosure.element)) disclosure.reset();
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+      }
+    }
+  }, {
+    key: "reset",
+    value: function reset() {}
+  }, {
+    key: "change",
+    value: function change(hasAttribute) {
+      console.log('change', hasAttribute, this.type);
+
+      switch (this.constructor.type) {
+        case Disclosure.TYPES.expand:
+          switch (true) {
+            case !hasAttribute:
+            case this.disclosed:
+              this.conceal();
+              break;
+
+            default:
+              this.disclose();
+          }
+
+          break;
+
+        case Disclosure.TYPES.select:
+          this.disclose();
+          break;
+
+        case Disclosure.TYPES.open:
+          this.disclose();
+          break;
+      }
+    }
+  }, {
+    key: "setGroup",
+    value: function setGroup(group) {
+      this.group = group;
+    }
+  }, {
+    key: "GroupConstructor",
+    get: function get() {
+      return DisclosuresGroup;
+    }
+  }], [{
+    key: "build",
+    value: function build(from) {
+      var elements = _toConsumableArray(from.querySelectorAll(".".concat(this.selector)));
+
+      var _iterator2 = disclosure_createForOfIteratorHelper(elements),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var element = _step2.value;
+          disclosures.push(new this(element));
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+    }
+  }, {
+    key: "type",
+    get: function get() {
+      return null;
+    }
+  }, {
+    key: "selector",
+    get: function get() {
+      return '';
+    }
+  }]);
+
+  return Disclosure;
+}();
+
+disclosure_Disclosure.TYPES = {
+  expand: {
+    id: 'expanded',
+    aria: true
+  },
+  select: {
+    id: 'selected',
+    aria: true
+  },
+  open: {
+    id: 'opened',
+    aria: false
+  }
+};
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapse-button.js
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function collapse_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function collapse_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function collapse_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) collapse_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) collapse_button_defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+/**
+ * CollapseButton correspond au bouton cliquable qui change le panel
+ * CollapseButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-expanded
+ */
+
+var CollapseButton = /*#__PURE__*/function (_DisclosureButton) {
+  _inherits(CollapseButton, _DisclosureButton);
+
+  var _super = _createSuper(CollapseButton);
+
+  function CollapseButton() {
+    collapse_button_classCallCheck(this, CollapseButton);
+
+    return _super.apply(this, arguments);
+  }
+
+  collapse_button_createClass(CollapseButton, [{
+    key: "hasFocus",
+    get: function get() {
+      return this.element === document.activeElement;
+    }
+  }]);
+
+  return CollapseButton;
+}(disclosure_button_DisclosureButton);
+
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapses-group.js
+function collapses_group_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { collapses_group_typeof = function _typeof(obj) { return typeof obj; }; } else { collapses_group_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return collapses_group_typeof(obj); }
+
+function collapses_group_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function collapses_group_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function collapses_group_createClass(Constructor, protoProps, staticProps) { if (protoProps) collapses_group_defineProperties(Constructor.prototype, protoProps); if (staticProps) collapses_group_defineProperties(Constructor, staticProps); return Constructor; }
+
+function collapses_group_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) collapses_group_setPrototypeOf(subClass, superClass); }
+
+function collapses_group_setPrototypeOf(o, p) { collapses_group_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return collapses_group_setPrototypeOf(o, p); }
+
+function collapses_group_createSuper(Derived) { var hasNativeReflectConstruct = collapses_group_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = collapses_group_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = collapses_group_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return collapses_group_possibleConstructorReturn(this, result); }; }
+
+function collapses_group_possibleConstructorReturn(self, call) { if (call && (collapses_group_typeof(call) === "object" || typeof call === "function")) { return call; } return collapses_group_assertThisInitialized(self); }
+
+function collapses_group_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function collapses_group_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function collapses_group_getPrototypeOf(o) { collapses_group_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return collapses_group_getPrototypeOf(o); }
+
+
+var ascendants = {};
+
+var CollapsesGroup = /*#__PURE__*/function (_DisclosuresGroup) {
+  collapses_group_inherits(CollapsesGroup, _DisclosuresGroup);
+
+  var _super = collapses_group_createSuper(CollapsesGroup);
+
+  function CollapsesGroup() {
+    collapses_group_classCallCheck(this, CollapsesGroup);
+
+    return _super.apply(this, arguments);
+  }
+
+  collapses_group_createClass(CollapsesGroup, [{
+    key: "hasFocus",
+    get: function get() {
+      if (this.current === undefined) return null;
+      return this.current.hasFocus;
+    }
+  }], [{
+    key: "register",
+    value: function register(ascendant, groupSelector) {
+      ascendants[ascendant] = groupSelector;
+    }
+  }, {
+    key: "ascendants",
+    get: function get() {
+      return ascendants;
+    }
+  }]);
+
+  return CollapsesGroup;
+}(DisclosuresGroup);
+
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapse-constants.js
+var COLLAPSE_SELECTOR = 'rf-collapse';
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapse.js
+function collapse_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { collapse_typeof = function _typeof(obj) { return typeof obj; }; } else { collapse_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return collapse_typeof(obj); }
+
+function collapse_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function collapse_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function collapse_createClass(Constructor, protoProps, staticProps) { if (protoProps) collapse_defineProperties(Constructor.prototype, protoProps); if (staticProps) collapse_defineProperties(Constructor, staticProps); return Constructor; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = collapse_getPrototypeOf(object); if (object === null) break; } return object; }
+
+function collapse_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) collapse_setPrototypeOf(subClass, superClass); }
+
+function collapse_setPrototypeOf(o, p) { collapse_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return collapse_setPrototypeOf(o, p); }
+
+function collapse_createSuper(Derived) { var hasNativeReflectConstruct = collapse_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = collapse_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = collapse_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return collapse_possibleConstructorReturn(this, result); }; }
+
+function collapse_possibleConstructorReturn(self, call) { if (call && (collapse_typeof(call) === "object" || typeof call === "function")) { return call; } return collapse_assertThisInitialized(self); }
+
+function collapse_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function collapse_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function collapse_getPrototypeOf(o) { collapse_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return collapse_getPrototypeOf(o); }
+
+
+
+
+
+
+/**
+ * Tab coorespond au panel d'un élement Tabs (tab panel)
+ * Tab étend disclosure qui ajoute/enleve le modifier --selected,
+ * et ajoute/eleve l'attribut hidden, sur le panel
+ */
+
+var collapse_Collapse = /*#__PURE__*/function (_Disclosure) {
+  collapse_inherits(Collapse, _Disclosure);
+
+  var _super = collapse_createSuper(Collapse);
+
+  function Collapse(element) {
+    var _this;
+
+    collapse_classCallCheck(this, Collapse);
+
+    _this = _super.call(this, element);
+
+    _this.groupByAscendant();
+
+    element.addEventListener('transitionend', _this.transitionend.bind(collapse_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  collapse_createClass(Collapse, [{
+    key: "groupByAscendant",
+    value: function groupByAscendant() {
+      for (var ascendant in CollapsesGroup.ascendants) {
+        var element = this.element.parentElement;
+
+        while (element) {
+          if (element.classList.contains(ascendant)) {
+            if (typeof CollapsesGroup.ascendants[ascendant] === 'string') {
+              DisclosuresGroup.groupByParent(this, CollapsesGroup, CollapsesGroup.ascendants[ascendant]);
+            } else {
+              DisclosuresGroup.groupByParent(this, CollapsesGroup.ascendants[ascendant]);
+            }
+
+            return;
+          }
+
+          element = element.parentElement;
+        }
+      }
+    }
+  }, {
+    key: "buttonFactory",
+    value: function buttonFactory(element) {
+      return new CollapseButton(element, this);
+    }
+  }, {
+    key: "transitionend",
+    value: function transitionend(e) {
+      if (!this.disclosed) this.element.style.display = 'none';
+    }
+  }, {
+    key: "apply",
+    value: function apply(value) {
+      var _this2 = this;
+
+      if (value) {
+        this.element.style.display = '';
+        this.element.style.setProperty('--collapser', 'none');
+        var height = this.element.offsetHeight;
+        this.element.style.setProperty('--collapse', -height + 'px');
+        this.element.style.setProperty('--collapser', '');
+        window.requestAnimationFrame(function () {
+          return _get(collapse_getPrototypeOf(Collapse.prototype), "apply", _this2).call(_this2, true);
+        });
+      } else {
+        var _height = this.element.offsetHeight;
+        this.element.style.setProperty('--collapse', -_height + 'px');
+
+        _get(collapse_getPrototypeOf(Collapse.prototype), "apply", this).call(this, false);
+      }
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      this.apply(false);
+    }
+  }, {
+    key: "focus",
+    value: function focus() {
+      for (var i = 0; i < this.buttons.length; i++) {
+        var button = this.buttons[i];
+
+        if (button.hasAttribute) {
+          button.element.focus();
+          return;
+        }
+      }
+    }
+  }, {
+    key: "GroupConstructor",
+    get: function get() {
+      return CollapsesGroup;
+    }
+  }, {
+    key: "hasFocus",
+    get: function get() {
+      if (this.element === document.activeElement) return true;
+      if (this.element.querySelectorAll(':focus').length > 0) return true;
+      if (this.buttons.some(function (button) {
+        return button.hasFocus;
+      })) return true;
+      return false;
+    }
+  }], [{
+    key: "type",
+    get: function get() {
+      return disclosure_Disclosure.TYPES.expand;
+    }
+  }, {
+    key: "selector",
+    get: function get() {
+      return COLLAPSE_SELECTOR;
+    }
+  }]);
+
+  return Collapse;
+}(disclosure_Disclosure);
+
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapses.js
+function collapses_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function collapses_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function collapses_createClass(Constructor, protoProps, staticProps) { if (protoProps) collapses_defineProperties(Constructor.prototype, protoProps); if (staticProps) collapses_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var collapses_Collapses = /*#__PURE__*/function () {
+  function Collapses() {
+    collapses_classCallCheck(this, Collapses);
+
+    this.init();
+  }
+
+  collapses_createClass(Collapses, [{
+    key: "init",
+    value: function init() {
+      collapse_Collapse.build(document);
+    }
+  }]);
+
+  return Collapses;
+}();
+
+
 // CONCATENATED MODULE: ./packages/core/src/scripts/index.js
 
 
@@ -867,137 +1137,214 @@ KeyListener.DOWN = 40;
 
 
 
+
+
+
+
+
 /***/ }),
 
-/***/ 40:
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./packages/navigation/_dist.scss
-var _dist = __webpack_require__(8);
+// EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 11 modules
+var scripts = __webpack_require__(45);
 
-// EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 5 modules
-var scripts = __webpack_require__(36);
+// CONCATENATED MODULE: ./packages/navigation/src/scripts/navigation/navigation-constants.js
+var NAVIGATION = 'rf-nav';
+var NAVIGATION_LIST = 'rf-nav__list';
+var NAVIGATION_MENU = 'rf-menu';
+var NAVIGATION_ITEM = 'rf-nav__item';
+var NAVIGATION_ITEM_RIGHT = NAVIGATION_ITEM + '--align-right';
 
 // CONCATENATED MODULE: ./packages/navigation/src/scripts/navigation/navigation.js
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function set(target, property, value, receiver) { if (typeof Reflect !== "undefined" && Reflect.set) { set = Reflect.set; } else { set = function set(target, property, value, receiver) { var base = _superPropBase(target, property); var desc; if (base) { desc = Object.getOwnPropertyDescriptor(base, property); if (desc.set) { desc.set.call(receiver, value); return true; } else if (!desc.writable) { return false; } } desc = Object.getOwnPropertyDescriptor(receiver, property); if (desc) { if (!desc.writable) { return false; } desc.value = value; Object.defineProperty(receiver, property, desc); } else { _defineProperty(receiver, property, value); } return true; }; } return set(target, property, value, receiver); }
 
-var NAV_COLLAPSE = '.rf-nav .rf-menu, .rf-nav .rf-mega-menu';
-var NAV_LIST = '.rf-nav > .rf-nav__list';
-var MENU = 'rf-menu';
-var MEGA = 'rf-mega-menu';
-var EXPANDED = '--expanded';
-var RIGHT = 'rf-nav__item--align-right';
+function _set(target, property, value, receiver, isStrict) { var s = set(target, property, value, receiver || target); if (!s && isStrict) { throw new Error('failed to set property'); } return value; }
 
-var navigation_Navigation = /*#__PURE__*/function () {
-  function Navigation() {
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var navigation_Navigation = /*#__PURE__*/function (_CollapsesGroup) {
+  _inherits(Navigation, _CollapsesGroup);
+
+  var _super = _createSuper(Navigation);
+
+  function Navigation(id, element) {
+    var _this;
+
     _classCallCheck(this, Navigation);
 
-    this.init();
+    _this = _super.call(this, id, element);
+    _this.menus = [];
+    _this.navList = element.querySelector(".".concat(NAVIGATION_LIST));
+    document.addEventListener('focusout', _this.focusOut.bind(_assertThisInitialized(_this)));
+    window.addEventListener('resize', _this.resize.bind(_assertThisInitialized(_this)));
+    window.addEventListener('orientationchange', _this.resize.bind(_assertThisInitialized(_this)));
+
+    _this.resize();
+
+    return _this;
   }
 
   _createClass(Navigation, [{
-    key: "init",
-    value: function init() {
-      this.group = new scripts["CollapseGroup"]();
-      this.menus = [];
-      this.navList = document.querySelector(NAV_LIST);
-      var elements = document.querySelectorAll(NAV_COLLAPSE);
-      var element, collapseElement;
+    key: "add",
+    value: function add(member) {
+      _get(_getPrototypeOf(Navigation.prototype), "add", this).call(this, member);
 
-      for (var i = 0; i < elements.length; i++) {
-        element = elements[i];
-
-        switch (true) {
-          case element.className.indexOf(MENU) > -1:
-            collapseElement = new scripts["CollapseElement"](element, MENU + EXPANDED);
-            this.menus.push(new navigation_NavMenu(collapseElement));
-            break;
-
-          case element.className.indexOf(MEGA) > -1:
-            collapseElement = new scripts["CollapseElement"](element, MEGA + EXPANDED);
-            break;
-
-          default:
-            continue;
-        }
-
-        this.group.add(collapseElement);
+      if (member.element.classList.contains(NAVIGATION_MENU)) {
+        this.menus.push(new navigation_NavigationMenu(member, this.navList.getBoundingClientRect().right));
       }
-
-      document.addEventListener('focusout', this.focusOut.bind(this));
-      window.addEventListener('resize', this.resize.bind(this));
-      window.addEventListener('orientationchange', this.resize.bind(this));
-      this.resize();
     }
   }, {
     key: "focusOut",
     value: function focusOut(e) {
-      var _this = this;
+      var _this2 = this;
 
       requestAnimationFrame(function () {
-        if (!_this.group.hasFocus) _this.group.reduce();
+        if (_this2.current !== null && !_this2.current.hasFocus) _this2.index = -1;
       });
     }
   }, {
     key: "resize",
     value: function resize() {
       var right = this.navList.getBoundingClientRect().right;
-      this.menus.forEach(function (menu) {
-        menu.place(right);
-      });
+
+      var _iterator = _createForOfIteratorHelper(this.menus),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var menu = _step.value;
+          menu.place(right);
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+  }, {
+    key: "index",
+    get: function get() {
+      return _get(_getPrototypeOf(Navigation.prototype), "index", this);
+    },
+    set: function set(value) {
+      if (value === -1 && this.current !== null && this.current.hasFocus) this.current.focus();
+
+      _set(_getPrototypeOf(Navigation.prototype), "index", value, this, true);
+    }
+  }], [{
+    key: "selector",
+    get: function get() {
+      return NAVIGATION;
     }
   }]);
 
   return Navigation;
-}();
+}(scripts["CollapsesGroup"]);
 
-var navigation_NavMenu = /*#__PURE__*/function () {
-  function NavMenu(collapseElement) {
-    _classCallCheck(this, NavMenu);
+var navigation_NavigationMenu = /*#__PURE__*/function () {
+  function NavigationMenu(collapse, right) {
+    _classCallCheck(this, NavigationMenu);
 
-    this.element = collapseElement.element;
-    this.btn = collapseElement.buttons[0].element;
+    this.initialize(collapse);
+    this.place(right);
   }
 
-  _createClass(NavMenu, [{
+  _createClass(NavigationMenu, [{
+    key: "initialize",
+    value: function initialize(collapse) {
+      this.element = collapse.element;
+
+      var _iterator2 = _createForOfIteratorHelper(collapse.buttons),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var button = _step2.value;
+          if (!button.hasAttribute) continue;
+          this.button = button.element;
+          break;
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      var item = this.element.parentElement;
+
+      while (item) {
+        if (item.classList.contains(NAVIGATION_ITEM)) {
+          this.item = item;
+          break;
+        }
+
+        item = item.parentElement;
+      }
+    }
+  }, {
     key: "place",
     value: function place(right) {
       var styles = getComputedStyle(this.element);
       var width = parseFloat(styles.width);
-      var left = this.btn.getBoundingClientRect().left;
-      if (left + width > right) Object(scripts["addClass"])(this.btn.parentElement, RIGHT);else Object(scripts["removeClass"])(this.btn.parentElement, RIGHT);
+      var left = this.button.getBoundingClientRect().left;
+      console.log(width, left, right);
+      if (left + width > right) Object(scripts["addClass"])(this.item, NAVIGATION_ITEM_RIGHT);else Object(scripts["removeClass"])(this.item, NAVIGATION_ITEM_RIGHT);
     }
   }]);
 
-  return NavMenu;
+  return NavigationMenu;
 }();
 
 
-// CONCATENATED MODULE: ./packages/navigation/src/scripts/index.js
+// CONCATENATED MODULE: ./packages/navigation/src/scripts/navigation/navigations.js
 
 
+
+scripts["CollapsesGroup"].register(NAVIGATION, navigation_Navigation);
 // CONCATENATED MODULE: ./packages/navigation/src/scripts/dist.js
 /* eslint-disable no-new */
 
-
-
-new scripts["Initializer"]('.rf-nav', [navigation_Navigation]);
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

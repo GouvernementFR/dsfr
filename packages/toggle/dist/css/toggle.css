@@ -13,7 +13,7 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
   text-transform: none;
   line-height: 1; }
 
-.rf-toggle-list {
+.rf-toggle__list {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -133,7 +133,7 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       flex-shrink: 0;
       font-family: "Marianne", arial, sans-serif;
       height: calc(0.75rem - 1px);
-      margin-top: calc(1.5rem + 0.25rem);
+      margin-top: 1.75rem;
       margin-left: -2.5rem;
       margin-right: 1rem;
       font-size: 0.75rem;
@@ -149,9 +149,9 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       position: absolute;
       top: 1rem;
       left: 0;
-      border-radius: 50%;
       width: 1.5rem;
       height: 1.5rem;
+      border-radius: 50%;
       text-indent: -9999px;
       color: var(--bf500);
       border: 1px solid var(--bf500);
@@ -162,8 +162,7 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
     margin-top: 1rem; }
   .rf-toggle--border-bottom {
     box-shadow: inset 0 -1px 0 0 var(--g300); }
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before,
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before, .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
       margin-bottom: -0.5rem; }
     .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text,
     .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
@@ -196,12 +195,10 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
 /*
  * On surcharge les styles de base (provisoire)
  */
-.rf-toggle-list {
+.rf-toggle__list {
   margin: 0; }
-  .rf-toggle-list > li {
+  .rf-toggle__list > li {
     margin-bottom: 0; }
-    .rf-toggle-list > li::before {
-      content: none; }
 
 
 /*# sourceMappingURL=toggle.css.map*/

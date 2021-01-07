@@ -318,37 +318,37 @@
 [class*="rf-scheme-light"] {
   /* on définit les modifiers pour chaque côté */ }
   [class*="rf-scheme-light"].rf-scheme-border {
-    box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+    box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--bottom {
-      box-shadow: inset 0 -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--right {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
   :root[data-rf-transition] [class*="rf-scheme-light"] {
     transition: background-color 0.3s, box-shadow 0.3s; }
 
@@ -364,37 +364,37 @@
 [class*="rf-scheme-dark"] {
   /* on définit les modifiers pour chaque côté */ }
   [class*="rf-scheme-dark"].rf-scheme-border {
-    box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+    box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--right {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
   :root[data-rf-transition] [class*="rf-scheme-dark"] {
     transition: background-color 0.3s, box-shadow 0.3s; }
 
@@ -545,37 +545,37 @@
 [class*="rf-scheme-soft"] {
   /* on définit les modifiers pour chaque côté */ }
   [class*="rf-scheme-soft"].rf-scheme-border {
-    box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+    box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--right {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
   :root[data-rf-transition] [class*="rf-scheme-soft"] {
     transition: background-color 0.3s, box-shadow 0.3s; }
 
@@ -615,7 +615,7 @@
 .rf-fi-arrow-down-line::before {
   content: ""; }
 
-.rf-fi-arrow-down-s-line::before, .rf-nav__item > .rf-btn::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before {
+.rf-fi-arrow-down-s-line::before, .rf-nav__item > .rf-btn::before, .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before {
   content: ""; }
 
 .rf-fi-arrow-left-line::before {
@@ -729,7 +729,7 @@
 .rf-fi-mail-line::before {
   content: ""; }
 
-.rf-fi-menu-2-fill::before, .rf-content-media__transcription .rf-link::before, .rf-sidemenu::before {
+.rf-fi-menu-2-fill::before, .rf-content-media__transcription .rf-link::before, .rf-sidemenu__inner > .rf-sidemenu__btn::after {
   content: ""; }
 
 .rf-fi-menu-fill::before {
@@ -804,7 +804,7 @@
 .rf-fi-volume-up-line::before {
   content: ""; }
 
-[data-rf-reset] a[target="_blank"]::after, [class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-prose a[target="_blank"]::after, .rf-error-text::before, .rf-valid-text::before, .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--icon-left[class^="rf-fi-"]::before, .rf-link--icon-left[class*=" rf-fi-"]::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right[class^="rf-fi-"]::before, .rf-link--icon-right[class*=" rf-fi-"]::before, .rf-content-media__transcription .rf-link::before, .rf-accordion .rf-accordion__btn::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, .rf-checkbox-group input[type="checkbox"] + label::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before, .rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--icon-right[class*=" rf-fi-"]::before, .rf-toggle__label::after, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-nav__item > .rf-btn::before, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu::before, .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__btn--sidemenu-toggle::before, .rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
+[data-rf-reset] a[target="_blank"]::after, [class^="rf-fi-"]::before, [class*=" rf-fi-"]::before, .rf-prose a[target="_blank"]::after, .rf-error-text::before, .rf-valid-text::before, .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--icon-left[class^="rf-fi-"]::before, .rf-link--icon-left[class*=" rf-fi-"]::before, .rf-header .rf-shortcuts__item .rf-link::before, .rf-link--icon-right[class^="rf-fi-"]::before, .rf-link--icon-right[class*=" rf-fi-"]::before, .rf-content-media__transcription .rf-link::before, .rf-accordion .rf-accordion__btn::before, .rf-breadcrumb__item:not(:first-child)::before, .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-search-bar .rf-btn::before, .rf-header__navbar .rf-btn::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, .rf-checkbox-group input[type="checkbox"] + label::before, .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before, .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before, .rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--icon-right[class*=" rf-fi-"]::before, .rf-toggle__label::after, .rf-callout[class^="rf-fi-"]::before, .rf-callout[class*=" rf-fi-"]::before, .rf-card:not(.rf-card--no-arrow) .rf-card__body::after, .rf-nav__item > .rf-btn::before, .rf-pagination__item--first::before, .rf-pagination__item--prev::before, .rf-pagination__item--next::after, .rf-pagination__item--last::after, .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn::before, .rf-sidemenu__btn::before, .rf-sidemenu__inner > .rf-sidemenu__btn::after, .rf-tabs__tab[class^="rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab[class*=" rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -871,7 +871,7 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
 [data-rf-reset] a, [class^="rf-"] a, [class*=" rf-"] a, .rf-prose a, .rf-breadcrumb__item a, a.rf-link, a.rf-btn, a.rf-tag, .rf-card__link, .rf-pagination__link, .rf-sidemenu__link, a.rf-tabs__tab, .rf-tile__link, .rf-footer__brand-link, .rf-footer__content-link, .rf-footer__top-link, .rf-footer__bottom-link, .rf-header__navbar .rf-service__title {
   text-decoration: none; }
 
-.rf-list, .rf-prose ul, .rf-prose ol, .rf-accordion-group, .rf-breadcrumb__list, .rf-skiplinks__list, .rf-tags-group, .rf-toggle-list, .rf-nav__list, .rf-menu__list, .rf-mega-menu__list, .rf-sidemenu__list, .rf-summary__list, .rf-footer__content-list, .rf-footer__top-list, .rf-footer__bottom-list {
+.rf-list, .rf-prose ul, .rf-prose ol, .rf-accordions-group, .rf-breadcrumb__list, .rf-skiplinks__list, .rf-tags-group, .rf-toggle__list, .rf-nav__list, .rf-menu__list, .rf-mega-menu__list, .rf-pagination__list, .rf-sidemenu__list, .rf-summary__list, .rf-footer__content-list, .rf-footer__top-list, .rf-footer__bottom-list {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -895,6 +895,9 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
   left: 0;
   width: 100%;
   height: 100%; }
+
+.test {
+  background: red; }
 
 [data-rf-reset] {
   margin: 0;
@@ -1125,7 +1128,9 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
   padding-left: 1rem; }
   @media (min-width: 36em) {
     .rf-container {
-      padding-right: 2rem;
+      padding-right: 2rem; } }
+  @media (min-width: 36em) {
+    .rf-container {
       padding-left: 2rem; } }
   @media (min-width: 75em) {
     .rf-container {
@@ -1144,31 +1149,34 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
   width: 100%; }
   .rf-responsive-vid::before {
     display: block;
-    content: '';
+    content: "";
     width: 100%;
     padding-bottom: 56.25%; }
   .rf-responsive-vid--4x3::before {
+    display: block;
+    content: "";
     padding-bottom: 75%; }
   .rf-responsive-vid--1x1::before {
+    display: block;
+    content: "";
     padding-bottom: 100%; }
 
 .rf-collapse {
   overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
+  transition: visibility 0.3s;
+  --collapse: -99999px;
+  --collapser: ''; }
   .rf-collapse::before {
     display: block;
     content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-collapse--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-collapse--expanded::before {
-      margin-top: 0; }
+    content: var(--collapser);
+    transition: margin-top 0.3s;
+    margin-top: 0; }
+  .rf-collapse:not(.rf-collapse--expanded) {
+    visibility: hidden; }
+    .rf-collapse:not(.rf-collapse--expanded)::before {
+      margin-top: -99999px;
+      margin-top: var(--collapse); }
 
 /* ------------------------------------ *\
   GRID
@@ -1199,14 +1207,17 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
     @media (min-width: 62em) {
       .rf-grid-row--gutters {
         margin: 0 -1rem; } }
-    .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
-      padding: 0.5rem; }
+    .rf-grid-row--gutters [class^="rf-col-"], .rf-grid-row--gutters [class*=" rf-col-"],
+    .rf-grid-row--gutters .rf-col {
+      padding: 0 0.5rem; }
       @media (min-width: 48em) {
-        .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
-          padding: 0.75rem; } }
+        .rf-grid-row--gutters [class^="rf-col-"], .rf-grid-row--gutters [class*=" rf-col-"],
+        .rf-grid-row--gutters .rf-col {
+          padding: 0 0.75rem; } }
       @media (min-width: 62em) {
-        .rf-grid-row--gutters [class^="rf-col"], .rf-grid-row--gutters [class*=" rf-col"] {
-          padding: 1rem; } }
+        .rf-grid-row--gutters [class^="rf-col-"], .rf-grid-row--gutters [class*=" rf-col-"],
+        .rf-grid-row--gutters .rf-col {
+          padding: 0 1rem; } }
 
 .rf-col {
   flex: 1; }
@@ -2335,6 +2346,25 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
 .rf-my-24v, .rf-my-12w {
   margin-bottom: 6rem !important; }
 
+.rf-m-auto {
+  margin: auto; }
+
+.rf-ml-auto,
+.rf-mx-auto {
+  margin-left: auto; }
+
+.rf-mr-auto,
+.rf-mx-auto {
+  margin-right: auto; }
+
+.rf-mt-auto,
+.rf-my-auto {
+  margin-top: auto; }
+
+.rf-mb-auto,
+.rf-my-auto {
+  margin-bottom: auto; }
+
 .rf-p-0 {
   padding: 0rem !important; }
 
@@ -3273,6 +3303,20 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
   .rf-mb-md-24v, .rf-mb-md-12w,
   .rf-my-md-24v, .rf-my-md-12w {
     margin-bottom: 6rem !important; }
+  .rf-m-md-auto {
+    margin: auto; }
+  .rf-ml-md-auto,
+  .rf-mx-md-auto {
+    margin-left: auto; }
+  .rf-mr-md-auto,
+  .rf-mx-md-auto {
+    margin-right: auto; }
+  .rf-mt-md-auto,
+  .rf-my-md-auto {
+    margin-top: auto; }
+  .rf-mb-md-auto,
+  .rf-my-md-auto {
+    margin-bottom: auto; }
   .rf-p-md-0 {
     padding: 0rem !important; }
   .rf-pl-md-0,
@@ -3766,9 +3810,9 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
       margin-top: 1rem; }
   .rf-fieldset--inline .rf--fieldset__content {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    flex-wrap: wrap; }
   .rf-fieldset--inline .rf-checkbox-group {
     display: inline-flex;
     margin-bottom: 0; }
@@ -4034,36 +4078,26 @@ button.rf-link, .rf-accordion button.rf-accordion__btn, button.rf-btn, button.rf
     @media (min-width: 48em) {
       .rf-accordion .rf-accordion__btn {
         padding: 0.75rem 1rem; } }
-  .rf-accordion__body {
-    overflow: hidden;
-    opacity: 0;
-    max-height: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
+  .rf-accordion .rf-collapse {
     margin: 0 -0.25rem;
-    padding: 0 0.25rem; }
-    .rf-accordion__body::before {
-      display: block;
-      content: '';
-      margin-top: -100vh;
-      transition: margin-top 0.3s; }
-    .rf-accordion__body--expanded {
-      opacity: 1;
-      max-height: 99999px;
-      visibility: visible; }
-      .rf-accordion__body--expanded::before {
-        margin-top: 0; }
-  .rf-accordion__inner {
-    padding: 0.5rem 0 1.5rem; }
+    padding-left: 0.25rem;
+    padding-right: 0.25rem; }
     @media (min-width: 48em) {
-      .rf-accordion__inner {
-        padding: 0.5rem 1rem 2rem; } }
-  .rf-accordion-group .rf-accordion {
-    border-bottom: 0; }
-  .rf-accordion-group__item:last-child .rf-accordion {
-    border-bottom: 1px solid var(--g300); }
-  .rf-accordion-group__item::before {
-    content: none; }
+      .rf-accordion .rf-collapse {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem; } }
+    .rf-accordion .rf-collapse--expanded {
+      padding-top: 0.5rem;
+      padding-bottom: 1.5rem; }
+      @media (min-width: 48em) {
+        .rf-accordion .rf-collapse--expanded {
+          padding-bottom: 2rem; } }
+
+.rf-accordions-group .rf-accordion {
+  border-bottom: 0; }
+
+.rf-accordions-group li:last-child .rf-accordion {
+  border-bottom: 1px solid var(--g300); }
 
 /* ------------------------------------ *\
   BREADCRUMB
@@ -4081,12 +4115,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /**
   margin-bottom de 1N pour créer cet espace entre chaque ligne
    */
-  /**
-    on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
-   */
-  /**
-    lien actuel non clickable, bold et sans underline
-     */
   /**
   Mobile first, le label du "button" mobile est caché à partir du breakpoint md
    */ }
@@ -4121,7 +4149,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
      */
     margin-bottom: 0.5rem;
     line-height: 1.125rem;
-    vertical-align: middle; }
+    vertical-align: middle;
+    /**
+      on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
+    */ }
     .rf-breadcrumb__item:first-child::before {
       content: none; }
     .rf-breadcrumb__item:not(:first-child)::before {
@@ -4130,18 +4161,18 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       color: var(--g600);
       margin-right: 0;
       vertical-align: middle; }
-  .rf-breadcrumb__item a {
-    display: inline;
-    vertical-align: middle; }
-  .rf-breadcrumb__item:not(:last-child)::after {
-    margin-right: 0;
-    content: ''; }
-  .rf-breadcrumb__item:not(:last-child) a {
-    color: var(--g600); }
-  .rf-breadcrumb__item--current {
-    pointer-events: none; }
-  .rf-breadcrumb__item--current a {
-    color: var(--g800); }
+    .rf-breadcrumb__item a {
+      display: inline;
+      vertical-align: middle; }
+    .rf-breadcrumb__item:not(:last-child)::after {
+      margin-right: 0;
+      content: ''; }
+    .rf-breadcrumb__item:not(:last-child) a {
+      color: var(--g600); }
+    .rf-breadcrumb__item--curent {
+      pointer-events: none; }
+      .rf-breadcrumb__item--curent a {
+        color: var(--g800); }
   @media (min-width: 48em) {
     .rf-breadcrumb {
       margin-bottom: 1.5rem; } }
@@ -4337,6 +4368,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       .rf-checkbox-group input[type="checkbox"] + label::before {
         font-size: 1rem;
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
@@ -4345,13 +4377,13 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         margin-right: 0.5rem;
         border-radius: 0.25rem;
         border: 1px solid var(--g800);
-        color: transparent;
-        transition: background-color 0.1s, color 0.1s;
+        color: var(--t-plain);
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
         -ms-grid-column: 2;
-        -ms-align-items: center; }
+        -ms-align-items: center;
+        transition: background-color 0.1s, color 0.1s; }
       .rf-checkbox-group input[type="checkbox"] + label .rf-hint-text {
         margin: 0;
         grid-row: 2;
@@ -4392,20 +4424,20 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-checkbox-group--error::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
-    height: 1.5rem;
     left: -0.5rem;
+    width: 2px;
+    height: 1.5rem;
     background-color: var(--error); }
   .rf-checkbox-group--valid input[type="checkbox"] + label {
     color: var(--success); }
   .rf-checkbox-group--valid::before {
     content: "";
     position: absolute;
-    width: 2px;
     top: 0.75rem;
-    height: 1.5rem;
     left: -0.5rem;
+    width: 2px;
+    height: 1.5rem;
     background-color: var(--success); }
 
 /* ------------------------------------ *\
@@ -4464,8 +4496,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before {
     font-size: 1rem;
     position: absolute;
-    right: 0.75rem;
     top: 0.75rem;
+    right: 0.75rem;
     bottom: 0.75rem;
     margin: auto; }
   .rf-input-wrap .rf-input {
@@ -4490,7 +4522,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     color: var(--g800); }
   .rf-logo::before {
     display: block;
-    content: '';
+    content: "";
     width: 2.75em;
     height: 1em;
     margin-bottom: 0.33333em;
@@ -4568,8 +4600,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       .rf-radio-group input[type="radio"] + label[style*='background-image:'], .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
         padding-left: 3.5rem;
         min-height: 5.5rem;
-        height: 1px;
         width: 100%;
+        height: 1px;
         box-shadow: inset 0 0 0 1px var(--g300);
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
@@ -4617,17 +4649,17 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
           position: absolute;
           left: 1.75rem; }
         .rf-radio-group input[type="radio"] + label[style*='background-image:']::after, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]::after, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]::after {
-          display: flex;
           content: "";
           position: absolute;
           right: 0;
           margin: 0.25rem;
           padding-left: 0.25rem;
-          vertical-align: middle;
-          justify-content: center;
+          display: flex;
           align-items: center;
-          height: 5rem;
+          justify-content: center;
           width: 5.25rem;
+          height: 5rem;
+          vertical-align: middle;
           border-left: 1px solid var(--g300);
           font-size: 5rem; }
       .rf-radio-group input[type="radio"] + label .rf-hint-text {
@@ -4637,23 +4669,23 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         -ms-grid-row: 2;
         -ms-grid-column: 1; }
       .rf-radio-group input[type="radio"] + label::before {
-        content: '';
         display: inline-block;
-        flex-shrink: 0;
+        content: "";
         width: 1.5rem;
         height: 1.5rem;
-        border: 1px solid;
         margin-right: 0.5rem;
-        border-radius: 50%;
         border: 1px solid var(--g800);
+        flex-shrink: 0;
+        border: 1px solid;
+        border-radius: 50%;
         transform-origin: center;
-        transition: transform 0.3s;
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
         -ms-grid-column: 2;
         align-items: center;
-        -ms-align-items: center; }
+        -ms-align-items: center;
+        transition: transform 0.3s; }
     .rf-radio-group input[type="radio"]:checked + label::before {
       box-shadow: inset 0 0 0 5px var(--w);
       background-color: var(--bf500); }
@@ -4768,29 +4800,28 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-skiplinks:focus-within {
     position: relative;
     transform: translateY(0); }
-
-.rf-skiplinks__list {
-  display: flex;
-  flex-direction: column;
-  margin: 0 -1rem -1rem; }
-  .rf-skiplinks__list > li {
-    margin: 0 1rem 0.25rem; }
-    .rf-skiplinks__list > li::before {
-      content: none; }
-    .rf-skiplinks__list > li .rf-link {
-      max-width: none;
-      max-height: none; }
-    @media (min-width: 36em) {
-      .rf-skiplinks__list > li {
-        margin: 0 1rem; } }
-  @media (min-width: 48em) {
-    .rf-skiplinks__list {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 0 -1rem; } }
-  .rf-skiplinks__list:focus-within {
-    position: relative;
-    transform: translateY(0); }
+  .rf-skiplinks__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -1rem -1rem; }
+    .rf-skiplinks__list > li {
+      margin: 0 1rem 0.25rem; }
+      @media (min-width: 36em) {
+        .rf-skiplinks__list > li {
+          margin: 0 1rem; } }
+      .rf-skiplinks__list > li::before {
+        content: none; }
+      .rf-skiplinks__list > li .rf-link {
+        max-width: none;
+        max-height: none; }
+    @media (min-width: 48em) {
+      .rf-skiplinks__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -1rem; } }
+    .rf-skiplinks__list:focus-within {
+      position: relative;
+      transform: translateY(0); }
 
 /* ------------------------------------ *\
   TABLE
@@ -4895,9 +4926,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         content: "";
         position: absolute;
         top: 0;
+        right: 0;
         bottom: 0;
         left: 0;
-        right: 0;
         z-index: 1;
         opacity: 1;
         pointer-events: none;
@@ -5132,7 +5163,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       flex-shrink: 0;
       font-family: "Marianne", arial, sans-serif;
       height: calc(0.75rem - 1px);
-      margin-top: calc(1.5rem + 0.25rem);
+      margin-top: 1.75rem;
       margin-left: -2.5rem;
       margin-right: 1rem;
       font-size: 0.75rem;
@@ -5148,9 +5179,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       position: absolute;
       top: 1rem;
       left: 0;
-      border-radius: 50%;
       width: 1.5rem;
       height: 1.5rem;
+      border-radius: 50%;
       text-indent: -9999px;
       color: var(--bf500);
       border: 1px solid var(--bf500);
@@ -5161,8 +5192,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     margin-top: 1rem; }
   .rf-toggle--border-bottom {
     box-shadow: inset 0 -1px 0 0 var(--g300); }
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before,
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
+    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before, .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
       margin-bottom: -0.5rem; }
     .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text,
     .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
@@ -5195,12 +5225,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 /*
  * On surcharge les styles de base (provisoire)
  */
-.rf-toggle-list {
+.rf-toggle__list {
   margin: 0; }
-  .rf-toggle-list > li {
+  .rf-toggle__list > li {
     margin-bottom: 0; }
-    .rf-toggle-list > li::before {
-      content: none; }
 
 /* ------------------------------------ *\
   CALLOUTS
@@ -5352,7 +5380,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     width: 100%; }
     .rf-card__img::before {
       display: block;
-      content: '';
+      content: "";
       width: 100%;
       padding-bottom: 56.25%; }
     .rf-card__img img {
@@ -5435,13 +5463,13 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     position: relative; }
     .rf-content-media__img::before {
       display: block;
-      content: '';
+      content: "";
       width: 100%;
       padding-bottom: 56.25%; }
   .rf-content-media__caption, .rf-content-media__transcription {
     width: 100%;
-    text-align: right;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    text-align: right; }
   .rf-content-media__caption {
     font-size: 0.75rem;
     line-height: 1.5;
@@ -5473,7 +5501,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 \* ------------------------------------ */
 .rf-highlight {
   padding-left: 1rem;
-  border-left: 0.25rem solid var(--bf500);
+  border-left: 0.5rem solid var(--bf500);
   font-size: 1rem;
   line-height: 1.5;
   /**
@@ -5513,10 +5541,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
 .rf-nav__item {
   margin: 0;
-  flex: 0 1 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex: 0 1 auto;
   box-shadow: inset 0 -1px 0 0 var(--g300); }
   @media (min-width: 48em) {
     .rf-nav__item {
@@ -5534,13 +5562,13 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-nav__item > .rf-btn {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 0;
+    min-height: 3rem;
     font-size: 0.875rem;
     line-height: 1rem;
     text-align: left;
-    min-height: 3rem;
-    padding: 0.75rem 0;
-    width: 100%;
-    justify-content: space-between;
     font-weight: bold;
     color: var(--g800); }
     .rf-nav__item > .rf-link:focus, .rf-nav__item > .rf-btn:focus {
@@ -5587,6 +5615,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       --color-hover: var(--block-color-hover);
       --color-active: var(--block-color-active); }
     .rf-nav__item > .rf-link::before {
+      display: nnull;
       content: none; }
   .rf-nav__item > .rf-btn {
     flex-direction: row-reverse;
@@ -5629,12 +5658,12 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     position: relative; }
     .rf-nav__item--active::before {
       display: block;
-      content: '';
+      content: "";
       position: absolute;
-      width: 2px;
-      height: 1.5rem;
       top: 0.75rem;
       left: -1rem;
+      width: 2px;
+      height: 1.5rem;
       background-color: var(--bf500); }
     @media (min-width: 48em) {
       .rf-nav__item--active::before {
@@ -5650,45 +5679,29 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       pointer-events: none; }
 
 .rf-menu {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
   z-index: 2500;
-  --focus-z-index: z-index(menu-focus);
+  --focus-z-index: 3000;
   margin: 0 -1rem;
   padding: 0 1rem;
-  box-sizing: content-box;
-  width: 100%; }
-  .rf-menu::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-menu--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-menu--expanded::before {
-      margin-top: 0; }
+  width: 100%;
+  box-sizing: content-box; }
   @media (min-width: 48em) {
     .rf-menu {
       position: absolute;
       top: 100%;
       width: 20rem;
-      margin: -4px -2rem -2rem;
-      padding: 4px 2rem 2rem;
+      margin: -0.25rem -2rem -2rem;
+      padding: 0.25rem 2rem 2rem;
       box-sizing: content-box; }
       .rf-menu::after {
-        content: '';
-        position: absolute;
         display: block;
+        content: "";
+        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        margin: 4px 2rem 2rem;
+        margin: 0.25rem 2rem 2rem;
         z-index: -1;
         background-color: var(--w-g750); } }
   .rf-menu__list {
@@ -5702,14 +5715,13 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     margin: 0; }
     .rf-menu__item,
     .rf-menu__item > .rf-link {
+      color: var(--g800);
       padding: 1rem;
       font-size: 0.875rem;
       line-height: 1rem;
       text-align: left;
-      box-shadow: none;
-      color: var(--g800); }
-      .rf-menu__item::before,
-      .rf-menu__item > .rf-link::before {
+      box-shadow: none; }
+      .rf-menu__item::before, .rf-menu__item > .rf-link::before {
         content: none; }
     .rf-menu__item > .rf-link {
       display: block;
@@ -5745,86 +5757,72 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         z-index: var(--focus-z-index); }
     @media (min-width: 48em) {
       .rf-menu__item:not(:last-child)::after {
-        content: '';
+        content: "";
         position: absolute;
-        left: 0;
         right: 0;
         bottom: 0;
-        margin: 0 1rem;
+        left: 0;
         height: 1px;
+        margin: 0 1rem;
         background-color: var(--g300); } }
     .rf-menu__item--active,
     .rf-menu__item--active > .rf-link {
       color: var(--bf500); }
     .rf-menu__item--active::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
-      left: 0;
       bottom: 0;
+      left: 0;
       width: 2px;
-      background-color: currentColor;
-      margin: 0.75rem 0; }
+      margin: 0.75rem 0;
+      background-color: currentColor; }
 
 .rf-mega-menu {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
   z-index: 2500;
-  --focus-z-index: z-index(menu-focus);
+  --focus-z-index: 3000;
   background-color: var(--w-g750);
   margin: 0 -1rem 1px;
   padding: 0 1rem; }
-  .rf-mega-menu::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-mega-menu--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-mega-menu--expanded::before {
-      margin-top: 0; }
   @media (min-width: 48em) {
     .rf-mega-menu {
       position: absolute;
-      width: 100vw;
-      left: calc(50% - 50vw);
       top: 100%;
-      margin: -0.125rem 0 0;
+      left: calc(50% - 50vw);
+      width: 100vw;
+      margin: -2px 0 0;
       padding: 0; } }
   .rf-mega-menu:focus {
     outline: none; }
   @media (min-width: 48em) {
     .rf-mega-menu::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 50%;
       width: calc(1136px + 2rem);
+      height: 2px;
+      background-color: var(--bf200-bf300);
       max-width: 100vw;
-      height: 0.125rem;
-      transform: translateX(-50%);
-      background-color: var(--bf200-bf300); } }
+      transform: translateX(-50%); } }
   .rf-mega-menu > .rf-container {
     padding: 0.5rem 1rem 1.5rem; }
     @media (min-width: 48em) {
       .rf-mega-menu > .rf-container {
-        position: relative;
-        padding: 2.125rem 2rem 1rem; } }
+        padding: calc(2rem + 2px) 2rem 1rem; } }
     @media (min-width: 75em) {
       .rf-mega-menu > .rf-container {
-        padding: 2.125rem 0 1rem; } }
+        padding: calc(2rem + 2px) 0 1rem; } }
+    @media (min-width: 48em) {
+      .rf-mega-menu > .rf-container {
+        position: relative; } }
   .rf-mega-menu .rf-btn.rf-fi-close-line {
     display: none;
     position: absolute;
-    margin-top: 1rem;
-    margin-right: -1rem;
     top: 0;
     right: 2rem;
+    margin-top: 1rem;
+    margin-right: -1rem;
     background-color: var(--t-plain);
     color: var(--bf500); }
     @media (min-width: 48em) {
@@ -5843,17 +5841,18 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     margin: 0 -1rem; }
     @media (min-width: 48em) {
       .rf-mega-menu__category {
-        margin: 0; }
-        .rf-mega-menu__category::after {
-          position: absolute;
-          display: block;
-          content: '';
-          left: 0;
-          right: 0;
-          bottom: 0;
-          height: 2px;
-          margin-left: 0.5rem;
-          background-color: var(--g300); } }
+        margin: 0; } }
+    @media (min-width: 48em) {
+      .rf-mega-menu__category::after {
+        display: block;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        margin-left: 0.5rem;
+        background-color: var(--g300); } }
     .rf-mega-menu__category,
     .rf-mega-menu__category > .rf-link {
       padding: 1rem;
@@ -5909,11 +5908,11 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-mega-menu__category--active > .rf-link {
       color: var(--bf500); }
     .rf-mega-menu__category--active::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
-      left: 0;
       bottom: 0;
+      left: 0;
       width: 2px;
       background-color: currentColor;
       margin: 0.75rem 0; }
@@ -5945,14 +5944,16 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         .rf-mega-menu__item,
         .rf-mega-menu__item > .rf-link {
           padding: 0.5rem; } }
-      .rf-mega-menu__item::before,
-      .rf-mega-menu__item > .rf-link::before {
+      .rf-mega-menu__item::before, .rf-mega-menu__item > .rf-link::before {
         content: none; }
     .rf-mega-menu__item > .rf-link {
-      display: block;
       margin: -0.75rem -1rem;
+      display: block;
       border-radius: 0;
       background-color: var(--t-plain); }
+      @media (min-width: 48em) {
+        .rf-mega-menu__item > .rf-link {
+          margin: -0.5rem; } }
       @media (hover: hover) and (pointer: fine) {
         .rf-mega-menu__item > .rf-link:not([disabled]):hover, .rf-mega-menu__item > .rf-link:not(:disabled):hover {
           background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
@@ -5980,18 +5981,15 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         outline: 2px solid var(--focus);
         outline-offset: 2px;
         z-index: var(--focus-z-index); }
-      @media (min-width: 48em) {
-        .rf-mega-menu__item > .rf-link {
-          margin: -0.5rem; } }
     .rf-mega-menu__item--active,
     .rf-mega-menu__item--active > .rf-link {
       color: var(--bf500); }
     .rf-mega-menu__item--active::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
-      left: 0;
       bottom: 0;
+      left: 0;
       width: 2px;
       background-color: currentColor;
       margin: 0.75rem 0; }
@@ -6006,25 +6004,24 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  list-style: none;
   padding: 0;
-  margin: -0.125rem; }
+  margin: 0 -2px; }
 
 .rf-pagination__item {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 0 0.75rem;
+  margin: 2px 2px 0.5rem;
+  color: var(--g800);
   border-radius: 1rem;
   min-width: 2rem;
-  height: 2rem;
-  padding: 0 0.75rem;
-  margin: 0.125rem 0.125rem 0.5rem;
-  color: var(--g800); }
+  height: 2rem; }
   .rf-pagination__item:not(.rf-pagination__item--first):not(.rf-pagination__item--prev)::before, .rf-pagination__item:not(.rf-pagination__item--next):not(.rf-pagination__item--last)::after {
     content: none;
-    margin: 0;
-    display: none; }
+    display: none;
+    margin: 0; }
   .rf-pagination__item--from-md {
     display: none; }
     @media (min-width: 48em) {
@@ -6120,7 +6117,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
 .rf-pagination__item--first .rf-pagination__link,
 .rf-pagination__item--prev .rf-pagination__link {
-  margin-left: -1.75rem;
+  margin-left: 1.75rem;
   padding-left: 1.75rem;
   margin-right: -0.25rem;
   padding-right: 0.25rem; }
@@ -6241,54 +6238,14 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
   background-color: var(--w-g750);
   /**
-   * Ajout de l'icône de menu en mode mobile (provisoire)
-   */
-  /**
-   * Ce wrapper ne sert que pour la version mobile
-   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
-   */
-  /**
    * Titre facultatif
-   */ }
-  .rf-sidemenu::before {
-    font-size: 1rem;
-    position: absolute;
-    top: 0.75rem;
-    margin-left: 0.5rem;
-    transform: translateY(1px); }
-  .rf-sidemenu__wrapper {
-    margin: 0 1rem;
-    overflow: hidden;
-    opacity: 0;
-    max-height: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
-    .rf-sidemenu__wrapper::before {
-      display: block;
-      content: '';
-      margin-top: -100vh;
-      transition: margin-top 0.3s; }
-    .rf-sidemenu__wrapper--expanded {
-      opacity: 1;
-      max-height: 99999px;
-      visibility: visible; }
-      .rf-sidemenu__wrapper--expanded::before {
-        margin-top: 0; }
-    .rf-sidemenu__wrapper--expanded {
-      max-height: 100%; }
-    @media (min-width: 48em) {
-      .rf-sidemenu__wrapper {
-        overflow: initial;
-        max-height: initial;
-        margin: 0;
-        opacity: 1; }
-        .rf-sidemenu__wrapper::before {
-          display: none; }
-        .rf-sidemenu__wrapper.rf-sidemenu__wrapper--expanded {
-          opacity: 1; }
-        .rf-sidemenu__wrapper:not(.rf-sidemenu__wrapper--expanded) {
-          max-height: initial;
-          visibility: visible; } }
+   */
+  /**
+ * Wrapper des listes déployables niveau 1 et 2
+ */
+  /**
+ * Variantes du sidemenu proposées juste à partir du breakpoint md
+ */ }
   .rf-sidemenu__title {
     margin: 0;
     padding: 1rem 0;
@@ -6327,11 +6284,11 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-sidemenu__item--active > .rf-sidemenu__link {
       color: var(--bf500); }
       .rf-sidemenu__item--active > .rf-sidemenu__link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
-        left: -0.5rem;
         bottom: 0;
+        left: -0.5rem;
         width: 2px;
         margin: 0.75rem 0;
         background-color: currentColor; }
@@ -6339,111 +6296,99 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       .rf-sidemenu__item {
         margin: 0.5rem 0;
         border: 0; } }
-  @media (min-width: 48em) {
-    .rf-sidemenu__inner {
-      padding: 0 2rem 0 0.25rem;
-      border-right: 1px solid var(--g300); } }
+  .rf-sidemenu__inner {
+    /**
+   * Ce wrapper ne sert que pour la version mobile
+   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+   */ }
+    @media (min-width: 48em) {
+      .rf-sidemenu__inner {
+        padding: 0 2rem 0 0.25rem;
+        border-right: 1px solid var(--g300); } }
+    .rf-sidemenu__inner > .rf-collapse {
+      margin: 0 1rem; }
+      @media (min-width: 48em) {
+        .rf-sidemenu__inner > .rf-collapse {
+          margin: 0; } }
+      @media (min-width: 48em) {
+        .rf-sidemenu__inner > .rf-collapse {
+          overflow: initial;
+          display: block !important; }
+          .rf-sidemenu__inner > .rf-collapse::before {
+            display: none; }
+          .rf-sidemenu__inner > .rf-collapse:not(.rf-collapse--expanded) {
+            visibility: visible; } }
   @media (min-width: 48em) {
     .rf-sidemenu {
       background-color: var(--t-plain); } }
-
-/**
- * Wrapper des listes déployables niveau 1 et 2
- */
-.rf-sidemenu__content {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
-  max-height: 100%;
-  padding: 0.25rem;
-  margin: -0.25rem;
-  transition: max-height 0.3s;
-  /**
+  .rf-sidemenu .rf-sidemenu__content {
+    padding: 0.25rem;
+    margin: -0.25rem;
+    transition: max-height 0.3s;
+    /**
   * Styles spécifiques aux items de liste de niveaux 2 et 3
   */ }
-  .rf-sidemenu__content::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-sidemenu__content--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-sidemenu__content--expanded::before {
-      margin-top: 0; }
-  .rf-sidemenu__content:not(.rf-sidemenu__content--expanded) .rf-sidemenu__item {
-    max-height: 0;
-    margin-bottom: 0; }
-  .rf-sidemenu__content__list {
-    margin: 0 0 0 1rem; }
-  .rf-sidemenu__content__item {
-    margin: 0; }
-    .rf-sidemenu__content__item .rf-sidemenu__btn {
-      padding: 0.75rem 0; }
-      .rf-sidemenu__content__item .rf-sidemenu__btn::before {
-        font-size: 1rem;
-        margin-right: 0; }
-      @media (min-width: 48em) {
-        .rf-sidemenu__content__item .rf-sidemenu__btn {
-          padding: 0.75rem 1rem 0.75rem 0.75rem; } }
-    .rf-sidemenu__content__item .rf-sidemenu__link {
-      padding: 0.75rem 0;
-      font-weight: 400; }
-      @media (min-width: 48em) {
-        .rf-sidemenu__content__item .rf-sidemenu__link {
-          padding: 0.75rem; } }
-
-/**
- * Variantes du sidemenu proposées juste à partir du breakpoint md
- */
-@media (min-width: 48em) {
-  .rf-sidemenu {
-    padding-right: 2rem;
-    box-shadow: none;
-    /**
-     * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
-     * La bordure se met sur la gauche
-     */
-    /**
-     * Modificateur pour que le sidemenu soit sticky
-     */
-    /**
-     * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
-     */
-    /**
-     * Modificateur pour avoir une bordure tout autour du sidemenu
-     */ }
-    .rf-sidemenu::before {
-      content: none; }
-    .rf-sidemenu--right {
-      padding-left: 2rem;
-      padding-right: 0; }
-      .rf-sidemenu--right .rf-sidemenu__inner {
-        padding: 0 1rem 0 2rem;
-        border-right: 0;
-        border-left: 1px solid var(--g300); }
-    .rf-sidemenu--sticky {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%; }
-    .rf-sidemenu--sticky-full-height {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%; }
-      .rf-sidemenu--sticky-full-height .rf-sidemenu__inner {
-        overflow: auto;
-        height: 100vh; }
-    .rf-sidemenu--full-border .rf-sidemenu__title {
-      margin-top: 0.5rem; }
-    .rf-sidemenu--full-border .rf-sidemenu__inner {
-      border: 1px solid var(--g300); } }
+    .rf-sidemenu .rf-sidemenu__content__list {
+      margin: 0 0 0 1rem; }
+    .rf-sidemenu .rf-sidemenu__content__item {
+      margin: 0; }
+      .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn {
+        padding: 0.75rem 0; }
+        @media (min-width: 48em) {
+          .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn {
+            padding: 0.75rem 1rem 0.75rem 0.75rem; } }
+        .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__btn::before {
+          font-size: 1rem;
+          margin-right: 0; }
+      .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__link {
+        padding: 0.75rem 0;
+        font-weight: 400; }
+        @media (min-width: 48em) {
+          .rf-sidemenu .rf-sidemenu__content__item .rf-sidemenu__link {
+            padding: 0.75rem; } }
+  @media (min-width: 48em) {
+    .rf-sidemenu {
+      padding-right: 2rem;
+      box-shadow: none;
+      /**
+   * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
+   * La bordure se met sur la gauche
+   */
+      /**
+   * Modificateur pour que le sidemenu soit sticky
+   */
+      /**
+   * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
+   */
+      /**
+   * Modificateur pour avoir une bordure tout autour du sidemenu
+   */ }
+      .rf-sidemenu::before {
+        content: none; }
+      .rf-sidemenu--right {
+        padding-left: 2rem;
+        padding-right: 0; }
+        .rf-sidemenu--right .rf-sidemenu__inner {
+          padding: 0 1rem 0 2rem;
+          border-right: 0;
+          border-left: 1px solid var(--g300); }
+      .rf-sidemenu--sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: auto; }
+      .rf-sidemenu--sticky-full-height {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: auto; }
+        .rf-sidemenu--sticky-full-height .rf-sidemenu__inner {
+          overflow: auto;
+          height: 100vh; }
+      .rf-sidemenu--full-border .rf-sidemenu__title {
+        margin-top: 0.5rem; }
+      .rf-sidemenu--full-border .rf-sidemenu__inner {
+        border: 1px solid var(--g300); } }
     @media (min-width: 48em) and (min-width: 48em) {
       .rf-sidemenu--full-border .rf-sidemenu__inner {
         padding: 0 0.25rem 0 0.25rem; } }
@@ -6467,6 +6412,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   line-height: 1.5;
   border: 0;
   font-size: 1rem;
+  cursor: pointer;
   color: var(--g700);
   /**
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
@@ -6477,9 +6423,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     margin-left: auto;
     margin-right: 0;
     transition: transform 0.3s; }
-    @media (min-width: 48em) {
-      .rf-sidemenu__btn::before {
-        margin-right: -1.5rem; } }
+  @media (min-width: 48em) and (min-width: 48em) {
+    .rf-sidemenu__btn::before {
+      margin-right: -1.5rem; } }
   .rf-sidemenu__btn:focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
@@ -6488,29 +6434,22 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     border-bottom: 1px solid var(--t-plain); }
     .rf-sidemenu__btn[aria-expanded="true"]::before {
       transform: rotate(-180deg); }
-  .rf-sidemenu__btn--sidemenu-toggle {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    text-align: left;
+  .rf-sidemenu__inner > .rf-sidemenu__btn {
     width: 100%;
-    padding: 0.75rem 0 0.75rem 2rem;
-    border: 0;
-    color: var(--g700);
-    background-color: var(--w-g750); }
-    .rf-sidemenu__btn--sidemenu-toggle:focus {
-      outline: 2px solid var(--focus);
-      outline-offset: 2px;
-      z-index: var(--focus-z-index); }
-    .rf-sidemenu__btn--sidemenu-toggle[hidden] {
-      display: none; }
-    .rf-sidemenu__btn--sidemenu-toggle::before {
+    font-weight: normal;
+    background-color: var(--w-g750);
+    /**
+    * Ajout de l'icône de menu en mode mobile (provisoire)
+    */ }
+    .rf-sidemenu__inner > .rf-sidemenu__btn::before {
+      margin-right: 1rem; }
+    .rf-sidemenu__inner > .rf-sidemenu__btn::after {
       font-size: 1rem;
-      margin-left: auto;
-      margin-right: 1rem;
-      transition: transform 0.3s; }
-    .rf-sidemenu__btn--sidemenu-toggle[aria-expanded="true"]::before {
-      transform: rotate(-180deg); }
+      margin-left: 0.25rem;
+      margin-right: 0.25rem; }
+    @media (min-width: 48em) {
+      .rf-sidemenu__inner > .rf-sidemenu__btn {
+        display: none; } }
   @media (min-width: 48em) {
     .rf-sidemenu__btn {
       width: 100%;
@@ -6604,58 +6543,56 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   @media (min-width: 48em) {
     .rf-summary {
       padding: 2rem 2.5rem 1.5rem; } }
-
-.rf-summary__title {
-  margin: 0 0 1rem;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--g600);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--g800); }
-
-.rf-summary__list {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--g600); }
-  .rf-summary__list > li {
-    margin: 0;
-    line-height: 1.375; }
-    .rf-summary__list > li::before {
-      content: none; }
-  .rf-summary__list > li > a {
-    display: inline-flex;
-    padding: 0.5rem;
-    margin: 0 -0.5rem;
-    box-shadow: none;
-    color: var(--g800);
-    background-color: var(--t-plain); }
-    @media (hover: hover) and (pointer: fine) {
-      .rf-summary__list > li > a:not([disabled]):hover, .rf-summary__list > li > a:not(:disabled):hover {
-        background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
-      .rf-summary__list > li > a:not([disabled]):active, .rf-summary__list > li > a:not(:disabled):active {
-        background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
-    :root:not([data-rf-theme="dark"]) .rf-summary__list > li > a {
-      --color-hover: var(--block-color-hover);
-      --color-active: var(--block-color-active); }
-    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-summary__list > li > a,
-    :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-summary__list > li > a {
-      --color-hover: var(--block-color-hover);
-      --color-active: var(--block-color-active); }
-    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-summary__list > li > a,
-    :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-summary__list > li > a {
-      --color-hover: var(--block-color-hover);
-      --color-active: var(--block-color-active); }
-    :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-summary__list > li > a,
-    :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-summary__list > li > a {
-      --color-hover: var(--block-color-hover);
-      --color-active: var(--block-color-active); }
-    :root[data-rf-theme="dark"] .rf-summary__list > li > a {
-      --color-hover: var(--block-color-hover);
-      --color-active: var(--block-color-active); }
-    .rf-summary__list > li > a::before {
-      margin-right: 0.5rem;
-      content: counters(list-number, ".") "."; }
+  .rf-summary__title {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--g600);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--g800); }
+  .rf-summary__list {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--g600); }
+    .rf-summary__list > li {
+      margin: 0;
+      line-height: 1.375; }
+      .rf-summary__list > li::before {
+        content: none; }
+    .rf-summary__list > li > a {
+      display: inline-flex;
+      padding: 0.5rem;
+      margin: 0 -0.5rem;
+      box-shadow: none;
+      color: var(--g800);
+      background-color: var(--t-plain); }
+      @media (hover: hover) and (pointer: fine) {
+        .rf-summary__list > li > a:not([disabled]):hover, .rf-summary__list > li > a:not(:disabled):hover {
+          background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
+        .rf-summary__list > li > a:not([disabled]):active, .rf-summary__list > li > a:not(:disabled):active {
+          background-image: linear-gradient(0deg, var(--color-active), var(--color-active)); } }
+      :root:not([data-rf-theme="dark"]) .rf-summary__list > li > a {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-light"] .rf-summary__list > li > a,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-light-"] .rf-summary__list > li > a {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"] .rf-summary__list > li > a,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] .rf-summary__list > li > a {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"] .rf-summary__list > li > a,
+      :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] .rf-summary__list > li > a {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      :root[data-rf-theme="dark"] .rf-summary__list > li > a {
+        --color-hover: var(--block-color-hover);
+        --color-active: var(--block-color-active); }
+      .rf-summary__list > li > a::before {
+        margin-right: 0.5rem;
+        content: counters(list-number, ".") "."; }
 
 .rf-summary__link {
   text-decoration: none; }
@@ -6666,6 +6603,17 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   min-height: 2.5rem;
   padding: 0.5rem 1rem; }
 
+.rf-tabs__tab:not([class*="tabs__tab--icon-"])[class^="rf-fi-"], .rf-tabs__tab:not([class*="tabs__tab--icon-"])[class*=" rf-fi-"] {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; }
+  .rf-tabs__tab[class^="rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab[class*=" rf-fi-"]:not([class*="tabs__tab--icon-"])::before {
+    font-size: 1rem; }
+  .rf-tabs__tab[class^="rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab[class*=" rf-fi-"]:not([class*="tabs__tab--icon-"])::before {
+    margin-left: 0;
+    margin-right: 0.75rem; }
+
 .rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
   font-size: 1rem; }
 
@@ -6675,7 +6623,17 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
 .rf-tabs {
   position: relative;
-  padding-bottom: 1px;
+  overflow: hidden;
+  margin-top: -4px;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  /**
+    * Animation de la hauteur du panel
+    */
+  transition: height 0.3s;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   /**
    * ul : element srollable des boutons
    */
@@ -6685,13 +6643,18 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   /**
   * Tab Panel
   */ }
-  @media (min-width: 36em) {
+  @media (min-width: 48em) {
     .rf-tabs {
-      margin-left: -1rem;
-      margin-right: -1rem; }
-      .rf-tabs .rf-tabs {
-        margin-left: 0;
-        margin-right: 0; } }
+      margin-left: 0;
+      margin-right: 0; } }
+  .rf-tabs .rf-tabs {
+    margin-left: 0;
+    margin-right: 0; }
+  .rf-tabs::after {
+    display: block;
+    content: "";
+    flex: 1;
+    box-shadow: inset 1px -1px 0 0 var(--g300), inset -1px 0 0 var(--g300); }
   .rf-tabs__list {
     display: flex;
     align-items: flex-end;
@@ -6703,10 +6666,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     */
     margin: -4px 0;
     padding: 4px 0.5rem;
-    /**
-    * Animation de la hauteur du panel
-    */
-    transition: margin-bottom 0.1s;
     /**
     * Reset du style par défaut du li
     */ }
@@ -6731,10 +6690,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
           display: block;
           content: "";
           position: sticky;
-          margin-left: -0.5rem;
-          width: 0.5rem;
           top: 100%;
+          width: 0.5rem;
           height: 1px;
+          margin-left: -0.5rem;
           box-shadow: 0 1px 0 0 var(--g300); }
       .rf-tabs__list li:last-child {
         padding-right: 1rem; }
@@ -6744,8 +6703,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
           min-width: 1rem;
           margin-left: 100%;
           flex: 1 1 auto;
-          width: auto;
+          position: sticky;
           top: 100%;
+          width: auto;
           height: 1px;
           margin-top: -1px;
           box-shadow: 0 1px 0 0 var(--g300); }
@@ -6753,10 +6713,11 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         display: block;
         content: "";
         position: sticky;
-        margin-left: -100%;
-        width: 100%;
         top: 100%;
+        width: 100%;
         height: 1px;
+        position: sticky;
+        margin-left: -100%;
         box-shadow: 0 1px 0 0 var(--g300); }
   .rf-tabs__tab {
     margin: 0;
@@ -6848,31 +6809,37 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         z-index: 1; }
   .rf-tabs__panel {
     display: block;
-    height: auto;
+    position: absolute;
     left: 0;
     width: 100%;
-    position: absolute;
-    visibility: visible;
+    height: auto;
     padding: 1rem;
-    box-shadow: inset 1px -1px 0 0 var(--g300), inset -1px 0 0 var(--g300);
-    transition: opacity 0.1s, visibility 0.1s; }
+    transition: visibility 0.3s, transform 0.3s;
+    /**
+    * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
+    * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
+    *
+    * tabs
+    * └─ panel selected
+    * └─ panel (visibility hidden, tabindex -1)
+    *    └─ tabs
+    *       └─ panel selected (visibility visible tabindex 0)
+    *            ↑ ce panel est accessible alors que caché par son panel parent
+    * solution : visibility hidden seulement sur les éléments non sélectionnés
+    **/ }
     @media (min-width: 48em) {
       .rf-tabs__panel {
         padding: 2rem; } }
-    .rf-tabs__panel--selected {
-      opacity: 1; }
-      .rf-tabs__panel--selected:focus {
-        outline: 2px solid var(--focus);
-        outline-offset: 2px;
-        z-index: var(--focus-z-index); }
-      .rf-tabs__panel--selected:focus {
-        outline-offset: calc(-1rem + 2px); }
-        @media (min-width: 48em) {
-          .rf-tabs__panel--selected:focus {
-            outline-offset: calc(-2rem + 2px); } }
-    .rf-tabs__panel[hidden] {
-      opacity: 0;
-      pointer-events: none;
+    .rf-tabs__panel--selected:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+    .rf-tabs__panel--selected:focus {
+      outline-offset: calc(-1rem + 2px); }
+      @media (min-width: 48em) {
+        .rf-tabs__panel--selected:focus {
+          outline-offset: calc(-2rem + 2px); } }
+    .rf-tabs__panel:not(.rf-tabs__panel--selected) {
       visibility: hidden; }
 
 /* ------------------------------------ *\
@@ -6965,8 +6932,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       outline-offset: 9999px; }
   .rf-tile__img-wrap {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     width: 5rem;
     height: 5rem;
@@ -6980,9 +6947,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-tile__body {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
     padding: 1rem;
     text-align: center; }
     @media (min-width: 48em) {
@@ -7072,8 +7039,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         @media (min-width: 48em) {
           .rf-tile--horizontal-md .rf-tile__img-wrap + .rf-tile__body {
             padding: 0;
-            min-height: 5rem;
-            margin: 2rem; } }
+            margin: 2rem;
+            min-height: 5rem; } }
       @media (min-width: 48em) {
         .rf-tile--horizontal-md .rf-tile__img-wrap {
           margin: auto 0 auto 2rem; } }
@@ -7102,8 +7069,52 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   padding-top: 2.5rem;
   line-height: 1.5;
   /**
+   * Conteneur du bloc marque, avec le logo principal et éventuellement
+   * un logo opérateur
+   */
+  /**
    * On fixe une largeur maximale pour le logo opérateur
    */
+  /**
+ * La partie "content" représente les informations sous forme de texte rajoutées dans le footer
+ * ainsi que les éventuels liens simples
+ */
+  /**
+ * Contenu texte simple
+ */
+  /**
+ * Liste des liens situés en dessous de la partie texte
+ */
+  /**
+ * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
+ * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
+ */
+  /**
+ * Catégorie (optionnel)
+ */
+  /**
+ * Style de la liste
+ */
+  /**
+ * Style du lien
+ */
+  /**
+ * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
+ * ainsi que du copyright (ferré à droite)
+ */
+  /**
+ * Liste de liens avec séparateur
+ */
+  /**
+ * Style du lien de la liste
+ */
+  /**
+ * Copyright
+ */
+  /**
+ * La partie "partners" du footer est constituée de logos organisés
+ * en partenaires principaux (ferré à gauche) et secondaires (ferrés à droite)
+ */
   /**
  * Container des logos partenaires (principaux et secondaires)
  */
@@ -7152,7 +7163,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         margin-left: 0; }
     .rf-footer__body--operator .rf-footer__brand {
       flex-basis: 100%; }
-      .rf-footer__body--operator .rf-footer__brand .rf-footer__link + .rf-rf .rf-footer__logo {
+      .rf-footer__body--operator .rf-footer__brand .rf-footer__brand-link + .rf-footer__brand-link .rf-footer__logo {
         width: auto;
         min-width: initial;
         max-height: 100px; }
@@ -7180,7 +7191,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
-    margin-top: 1.5rem; }
+    margin-top: 1.5rem;
+    /**
+   * Si un logo opérateur est présent, on passe le content à 50% de la largeur disponible
+   */ }
     @media (min-width: 48em) {
       .rf-footer__content {
         margin-top: 0;
@@ -7200,15 +7214,17 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     align-self: flex-end;
     margin-bottom: -1rem; }
     .rf-footer__content-list > li {
-      margin-right: 1.5rem;
       margin-top: 0.5rem; }
+      @media (min-width: 36em) {
+        .rf-footer__content-list > li {
+          margin-right: 1.5rem; } }
+      @media (min-width: 36em) {
+        .rf-footer__content-list > li {
+          margin-right: 3.5rem; } }
       .rf-footer__content-list > li::before {
         content: none; }
       .rf-footer__content-list > li:last-child {
         margin-right: 0; }
-      @media (min-width: 36em) {
-        .rf-footer__content-list > li {
-          margin-right: 3.5rem; } }
     @media (min-width: 36em) {
       .rf-footer__content-list {
         flex-direction: row;
@@ -7252,8 +7268,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       color: var(--g600); }
   .rf-footer__bottom {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 2.5rem;
     padding: 0 0 1rem;
     border-top: 1px solid var(--g400); }
@@ -7330,17 +7347,17 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       background: #fff;
       padding: 1rem;
       box-shadow: none; }
+      @media (min-width: 48em) {
+        .rf-footer__partners a {
+          margin: 0 0 0 1rem; } }
       @media (min-width: 36em) {
         .rf-footer__partners a {
           width: 160px;
           height: 90px; } }
-      @media (min-width: 48em) {
-        .rf-footer__partners a {
-          margin: 0 0 0 1rem; } }
     .rf-footer__partners .rf-footer__logo {
       width: auto;
-      max-width: 100%;
       height: auto;
+      max-width: 100%;
       max-height: calc(90px - 1rem); }
   .rf-footer__partners-title {
     flex-basis: 100%;
@@ -7359,7 +7376,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @media (min-width: 48em) {
       .rf-footer__partners-logos {
         flex-wrap: nowrap;
-        margin: 0 -1rem -2rem; } }
+        margin: 0 -1rem 2rem; } }
   .rf-footer__partners-main {
     flex-basis: 100%;
     padding-top: 0.5rem; }
@@ -7374,13 +7391,22 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         margin-top: 0.5rem; } }
   .rf-footer__partners-sub {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
     flex-basis: 100%;
     padding-top: 2rem;
     /**
    * On surcharge le style du lien pour les logos secondaires
    */ }
+    @media (min-width: 36em) {
+      .rf-footer__partners-sub {
+        margin: 1rem -1rem 0; } }
+    @media (min-width: 48em) {
+      .rf-footer__partners-sub {
+        margin: 0.5rem 0 0; } }
+    @media (min-width: 48em) {
+      .rf-footer__partners-sub {
+        padding-top: 0; } }
     .rf-footer__partners-sub > a {
       box-shadow: none;
       margin: 0 0 1rem; }
@@ -7390,13 +7416,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       @media (min-width: 48em) {
         .rf-footer__partners-sub > a {
           margin: 0 1rem 1.5rem; } }
-    @media (min-width: 36em) {
-      .rf-footer__partners-sub {
-        margin: 1rem -1rem 0; } }
-    @media (min-width: 48em) {
-      .rf-footer__partners-sub {
-        margin: 0.5rem 0 0;
-        padding-top: 0; } }
 
 /* ------------------------------------ *\
   HEADER
@@ -7408,33 +7427,42 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   .rf-header__body {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 0 -0.75rem;
     padding: 0.75rem 0; }
     @media (min-width: 48em) {
       .rf-header__body {
-        flex-wrap: nowrap;
-        margin: 0 -1.25rem;
+        margin: 0 -1.25rem; } }
+    @media (min-width: 48em) {
+      .rf-header__body {
         padding: 1.5rem 0; } }
+    @media (min-width: 48em) {
+      .rf-header__body {
+        flex-wrap: nowrap; } }
   .rf-header__popin {
     position: fixed;
-    width: 100vw;
     top: 0;
     right: 0;
     bottom: 100vh;
     left: 0;
+    width: 100vw;
     padding: 0 1rem;
-    overflow: auto;
-    transition: bottom 0.3s, visibility 0.3s;
     background-color: var(--w-g750);
-    z-index: 3500;
-    --focus-z-index: z-index(modal-focus);
-    visibility: hidden; }
-    .rf-header__popin::before, .rf-header__popin::after {
-      content: '';
+    z-index: 4500;
+    --focus-z-index: 5000 !important;
+    overflow: auto;
+    visibility: hidden;
+    transition: bottom 0.3s, visibility 0.3s; }
+    .rf-header__popin::before {
       display: block;
+      content: "";
+      width: 100%;
+      height: 4.5rem; }
+    .rf-header__popin::after {
+      display: block;
+      content: "";
       width: 100%;
       height: 4.5rem; }
     .rf-header__popin--expanded {
@@ -7456,8 +7484,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     position: relative; }
     @media (min-width: 48em) {
       .rf-header__navbar {
-        flex: 1 1 auto;
-        margin: 0 0.25rem; } }
+        margin: 0 0.25rem;
+        flex: 1 1 auto; } }
     .rf-header__navbar::after {
       display: block;
       content: "";
@@ -7578,16 +7606,19 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-header .rf-shortcuts {
       margin: 0 -1.5rem; } }
   .rf-header .rf-shortcuts__list {
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
     @media (min-width: 48em) {
       .rf-header .rf-shortcuts__list {
+        margin: 0 0 -0.5rem; } }
+    @media (min-width: 48em) {
+      .rf-header .rf-shortcuts__list {
+        display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        flex-wrap: wrap;
-        margin: 0 0 -0.5rem; } }
+        flex-wrap: wrap; } }
   .rf-header .rf-shortcuts__item {
     display: flex;
     flex-direction: row;
@@ -7646,7 +7677,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     .rf-header .rf-nav {
       margin: 0 calc(50% - 50vw);
       padding: 0 calc(50vw - 50%);
-      z-index: 1500;
+      z-index: 3500;
+      --focus-z-index: 4000;
       box-shadow: inset 0 1px 0 0 var(--g300); }
       .rf-header .rf-nav .rf-menu::after,
       .rf-header .rf-nav .rf-mega-menu {

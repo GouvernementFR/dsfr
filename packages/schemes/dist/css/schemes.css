@@ -315,37 +315,37 @@
 [class*="rf-scheme-light"] {
   /* on définit les modifiers pour chaque côté */ }
   [class*="rf-scheme-light"].rf-scheme-border {
-    box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+    box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--bottom {
-      box-shadow: inset 0 -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--right {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-light"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
   :root[data-rf-transition] [class*="rf-scheme-light"] {
     transition: background-color 0.3s, box-shadow 0.3s; }
 
@@ -361,37 +361,37 @@
 [class*="rf-scheme-dark"] {
   /* on définit les modifiers pour chaque côté */ }
   [class*="rf-scheme-dark"].rf-scheme-border {
-    box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+    box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--right {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-dark"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
   :root[data-rf-transition] [class*="rf-scheme-dark"] {
     transition: background-color 0.3s, box-shadow 0.3s; }
 
@@ -542,37 +542,37 @@
 [class*="rf-scheme-soft"] {
   /* on définit les modifiers pour chaque côté */ }
   [class*="rf-scheme-soft"].rf-scheme-border {
-    box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+    box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--right {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset 0 space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset 0 space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) 0 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) 0 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
     [class*="rf-scheme-soft"].rf-scheme-border.rf-scheme-border--left.rf-scheme-border--top.rf-scheme-border--right.rf-scheme-border--bottom {
-      box-shadow: inset space(-5N) space(-5N) 0 0 var(--scheme-border), inset -space(-5N) -space(-5N) 0 0 var(--scheme-border); }
+      box-shadow: inset space(1v) space(1v) 0 0 var(--scheme-border), inset -space(1v) -space(1v) 0 0 var(--scheme-border); }
   :root[data-rf-transition] [class*="rf-scheme-soft"] {
     transition: background-color 0.3s, box-shadow 0.3s; }
 

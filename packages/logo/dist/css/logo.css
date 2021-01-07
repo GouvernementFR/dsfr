@@ -14,7 +14,7 @@
     color: var(--g800); }
   .rf-logo::before {
     display: block;
-    content: '';
+    content: "";
     width: 2.75em;
     height: 1em;
     margin-bottom: 0.33333em;

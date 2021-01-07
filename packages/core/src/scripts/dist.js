@@ -1,6 +1,5 @@
 /* eslint-disable no-new */
-// import '@gouvfr/core/_dist.scss';
 
-import { Initializer, Collapses } from './index';
+import { Initializer, Collapse } from './index';
 
-new Initializer('.${prefix}-collapse', [Collapses]);
+new Initializer('.${prefix}-collapse', [Collapse]);

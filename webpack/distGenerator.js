@@ -25,6 +25,9 @@ const allPackageFileContent = {
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+  },
   "dependencies": {
   }
 }
@@ -56,7 +59,7 @@ packages.forEach(function (pck) {
   allPckDeps[pckDep.name] = pckDep.version;
 
   if (fs.existsSync('./packages/' + pck.id + '/src/scripts/dist.js') && pck.id !== 'all') {
-    allPckJs.push("import " + pck.id + " from '../../../" + pck.id + "/src/scripts/distGlobal'")
+    allPckJs.push("import '../../../" + pck.id + "/src/scripts/dist'")
   }
 });
 

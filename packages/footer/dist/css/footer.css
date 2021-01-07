@@ -19,8 +19,52 @@
   padding-top: 2.5rem;
   line-height: 1.5;
   /**
+   * Conteneur du bloc marque, avec le logo principal et éventuellement
+   * un logo opérateur
+   */
+  /**
    * On fixe une largeur maximale pour le logo opérateur
    */
+  /**
+ * La partie "content" représente les informations sous forme de texte rajoutées dans le footer
+ * ainsi que les éventuels liens simples
+ */
+  /**
+ * Contenu texte simple
+ */
+  /**
+ * Liste des liens situés en dessous de la partie texte
+ */
+  /**
+ * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
+ * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
+ */
+  /**
+ * Catégorie (optionnel)
+ */
+  /**
+ * Style de la liste
+ */
+  /**
+ * Style du lien
+ */
+  /**
+ * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
+ * ainsi que du copyright (ferré à droite)
+ */
+  /**
+ * Liste de liens avec séparateur
+ */
+  /**
+ * Style du lien de la liste
+ */
+  /**
+ * Copyright
+ */
+  /**
+ * La partie "partners" du footer est constituée de logos organisés
+ * en partenaires principaux (ferré à gauche) et secondaires (ferrés à droite)
+ */
   /**
  * Container des logos partenaires (principaux et secondaires)
  */
@@ -69,7 +113,7 @@
         margin-left: 0; }
     .rf-footer__body--operator .rf-footer__brand {
       flex-basis: 100%; }
-      .rf-footer__body--operator .rf-footer__brand .rf-footer__link + .rf-rf .rf-footer__logo {
+      .rf-footer__body--operator .rf-footer__brand .rf-footer__brand-link + .rf-footer__brand-link .rf-footer__logo {
         width: auto;
         min-width: initial;
         max-height: 100px; }
@@ -97,7 +141,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
-    margin-top: 1.5rem; }
+    margin-top: 1.5rem;
+    /**
+   * Si un logo opérateur est présent, on passe le content à 50% de la largeur disponible
+   */ }
     @media (min-width: 48em) {
       .rf-footer__content {
         margin-top: 0;
@@ -117,15 +164,17 @@
     align-self: flex-end;
     margin-bottom: -1rem; }
     .rf-footer__content-list > li {
-      margin-right: 1.5rem;
       margin-top: 0.5rem; }
+      @media (min-width: 36em) {
+        .rf-footer__content-list > li {
+          margin-right: 1.5rem; } }
+      @media (min-width: 36em) {
+        .rf-footer__content-list > li {
+          margin-right: 3.5rem; } }
       .rf-footer__content-list > li::before {
         content: none; }
       .rf-footer__content-list > li:last-child {
         margin-right: 0; }
-      @media (min-width: 36em) {
-        .rf-footer__content-list > li {
-          margin-right: 3.5rem; } }
     @media (min-width: 36em) {
       .rf-footer__content-list {
         flex-direction: row;
@@ -169,8 +218,9 @@
       color: var(--g600); }
   .rf-footer__bottom {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 2.5rem;
     padding: 0 0 1rem;
     border-top: 1px solid var(--g400); }
@@ -247,17 +297,17 @@
       background: #fff;
       padding: 1rem;
       box-shadow: none; }
+      @media (min-width: 48em) {
+        .rf-footer__partners a {
+          margin: 0 0 0 1rem; } }
       @media (min-width: 36em) {
         .rf-footer__partners a {
           width: 160px;
           height: 90px; } }
-      @media (min-width: 48em) {
-        .rf-footer__partners a {
-          margin: 0 0 0 1rem; } }
     .rf-footer__partners .rf-footer__logo {
       width: auto;
-      max-width: 100%;
       height: auto;
+      max-width: 100%;
       max-height: calc(90px - 1rem); }
   .rf-footer__partners-title {
     flex-basis: 100%;
@@ -276,7 +326,7 @@
     @media (min-width: 48em) {
       .rf-footer__partners-logos {
         flex-wrap: nowrap;
-        margin: 0 -1rem -2rem; } }
+        margin: 0 -1rem 2rem; } }
   .rf-footer__partners-main {
     flex-basis: 100%;
     padding-top: 0.5rem; }
@@ -291,13 +341,22 @@
         margin-top: 0.5rem; } }
   .rf-footer__partners-sub {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
     flex-basis: 100%;
     padding-top: 2rem;
     /**
    * On surcharge le style du lien pour les logos secondaires
    */ }
+    @media (min-width: 36em) {
+      .rf-footer__partners-sub {
+        margin: 1rem -1rem 0; } }
+    @media (min-width: 48em) {
+      .rf-footer__partners-sub {
+        margin: 0.5rem 0 0; } }
+    @media (min-width: 48em) {
+      .rf-footer__partners-sub {
+        padding-top: 0; } }
     .rf-footer__partners-sub > a {
       box-shadow: none;
       margin: 0 0 1rem; }
@@ -307,13 +366,6 @@
       @media (min-width: 48em) {
         .rf-footer__partners-sub > a {
           margin: 0 1rem 1.5rem; } }
-    @media (min-width: 36em) {
-      .rf-footer__partners-sub {
-        margin: 1rem -1rem 0; } }
-    @media (min-width: 48em) {
-      .rf-footer__partners-sub {
-        margin: 0.5rem 0 0;
-        padding-top: 0; } }
 
 
 /*# sourceMappingURL=footer.css.map*/

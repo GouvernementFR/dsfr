@@ -625,6 +625,25 @@
 .rf-my-24v, .rf-my-12w {
   margin-bottom: 6rem !important; }
 
+.rf-m-auto {
+  margin: auto; }
+
+.rf-ml-auto,
+.rf-mx-auto {
+  margin-left: auto; }
+
+.rf-mr-auto,
+.rf-mx-auto {
+  margin-right: auto; }
+
+.rf-mt-auto,
+.rf-my-auto {
+  margin-top: auto; }
+
+.rf-mb-auto,
+.rf-my-auto {
+  margin-bottom: auto; }
+
 .rf-p-0 {
   padding: 0rem !important; }
 
@@ -1563,6 +1582,20 @@
   .rf-mb-md-24v, .rf-mb-md-12w,
   .rf-my-md-24v, .rf-my-md-12w {
     margin-bottom: 6rem !important; }
+  .rf-m-md-auto {
+    margin: auto; }
+  .rf-ml-md-auto,
+  .rf-mx-md-auto {
+    margin-left: auto; }
+  .rf-mr-md-auto,
+  .rf-mx-md-auto {
+    margin-right: auto; }
+  .rf-mt-md-auto,
+  .rf-my-md-auto {
+    margin-top: auto; }
+  .rf-mb-md-auto,
+  .rf-my-md-auto {
+    margin-bottom: auto; }
   .rf-p-md-0 {
     padding: 0rem !important; }
   .rf-pl-md-0,

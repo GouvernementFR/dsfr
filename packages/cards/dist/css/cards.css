@@ -62,7 +62,7 @@
     width: 100%; }
     .rf-card__img::before {
       display: block;
-      content: '';
+      content: "";
       width: 100%;
       padding-bottom: 56.25%; }
     .rf-card__img img {

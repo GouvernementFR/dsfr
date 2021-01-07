@@ -47,8 +47,8 @@
       .rf-radio-group input[type="radio"] + label[style*='background-image:'], .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"], .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"] {
         padding-left: 3.5rem;
         min-height: 5.5rem;
-        height: 1px;
         width: 100%;
+        height: 1px;
         box-shadow: inset 0 0 0 1px var(--g300);
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
@@ -96,17 +96,17 @@
           position: absolute;
           left: 1.75rem; }
         .rf-radio-group input[type="radio"] + label[style*='background-image:']::after, .rf-radio-group input[type="radio"] + label[class^="rf-ifi-"]::after, .rf-radio-group input[type="radio"] + label[class*=" rf-ifi-"]::after {
-          display: flex;
           content: "";
           position: absolute;
           right: 0;
           margin: 0.25rem;
           padding-left: 0.25rem;
-          vertical-align: middle;
-          justify-content: center;
+          display: flex;
           align-items: center;
-          height: 5rem;
+          justify-content: center;
           width: 5.25rem;
+          height: 5rem;
+          vertical-align: middle;
           border-left: 1px solid var(--g300);
           font-size: 5rem; }
       .rf-radio-group input[type="radio"] + label .rf-hint-text {
@@ -116,23 +116,23 @@
         -ms-grid-row: 2;
         -ms-grid-column: 1; }
       .rf-radio-group input[type="radio"] + label::before {
-        content: '';
         display: inline-block;
-        flex-shrink: 0;
+        content: "";
         width: 1.5rem;
         height: 1.5rem;
-        border: 1px solid;
         margin-right: 0.5rem;
-        border-radius: 50%;
         border: 1px solid var(--g800);
+        flex-shrink: 0;
+        border: 1px solid;
+        border-radius: 50%;
         transform-origin: center;
-        transition: transform 0.3s;
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
         -ms-grid-column: 2;
         align-items: center;
-        -ms-align-items: center; }
+        -ms-align-items: center;
+        transition: transform 0.3s; }
     .rf-radio-group input[type="radio"]:checked + label::before {
       box-shadow: inset 0 0 0 5px var(--w);
       background-color: var(--bf500); }
