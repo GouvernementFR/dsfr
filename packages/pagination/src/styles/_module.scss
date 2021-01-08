@@ -124,7 +124,7 @@
 
   &__item--first &__link,
   &__item--prev &__link {
-    @include margin-left(7v);
+    @include margin-left(-7v);
     @include padding-left(7v);
     @include margin-right(-1v);
     @include padding-right(1v);
