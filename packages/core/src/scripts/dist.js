@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
 
-import { Initializer, Collapse } from './index';
+import { Initializer, Collapses } from './index';
 
-new Initializer('.${prefix}-collapse', [Collapse]);
+new Initializer('.${prefix}-collapse', [Collapses]);
