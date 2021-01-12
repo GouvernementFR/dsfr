@@ -5,6 +5,7 @@
 
 #{dse(nav)} {
   @extend %default-text-color;
+  @include z-index(nav, true);
 
   @include list {
     @extend %list-reset;

@@ -122,7 +122,7 @@ var removeClass = function removeClass(element, className) {
 /***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(53);
+__webpack_require__(52);
 module.exports = __webpack_require__(19);
 
 
@@ -135,7 +135,7 @@ module.exports = __webpack_require__(19);
 
 /***/ }),
 
-/***/ 45:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1144,7 +1144,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 53:
+/***/ 52:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1152,7 +1152,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 11 modules
-var scripts = __webpack_require__(45);
+var scripts = __webpack_require__(44);
 
 // CONCATENATED MODULE: ./packages/table/src/scripts/shadow-on-scroll/shadow-on-scroll.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }

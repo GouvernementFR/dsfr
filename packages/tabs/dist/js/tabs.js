@@ -122,7 +122,7 @@ var removeClass = function removeClass(element, className) {
 /***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
+__webpack_require__(45);
 module.exports = __webpack_require__(21);
 
 
@@ -135,7 +135,7 @@ module.exports = __webpack_require__(21);
 
 /***/ }),
 
-/***/ 45:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1144,7 +1144,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 46:
+/***/ 45:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1152,7 +1152,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 11 modules
-var scripts = __webpack_require__(45);
+var scripts = __webpack_require__(44);
 
 // CONCATENATED MODULE: ./packages/tabs/src/scripts/tabs/tab-button.js
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }

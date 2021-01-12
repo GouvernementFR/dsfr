@@ -122,20 +122,20 @@ var removeClass = function removeClass(element, className) {
 /***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(48);
+__webpack_require__(47);
 module.exports = __webpack_require__(13);
 
 
 /***/ }),
 
 /***/ 13:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined variable: \"$container-max-width\".\n        on line 25 of packages/navigation/src/styles/modules/_mega-menu.scss, in mixin `@content`\n        from line 33 of packages/core/src/styles/global/tools/_pseudo.scss, in mixin `@content`\n        from line 21 of packages/core/src/styles/global/tools/_pseudo.scss, in mixin `-pseudo`\n        from line 32 of packages/core/src/styles/global/tools/_pseudo.scss, in mixin `after`\n        from line 24 of packages/navigation/src/styles/modules/_mega-menu.scss, in mixin `@content`\n        from line 20 of packages/core/src/styles/global/misc/breakpoints/_tools.scss, in mixin `respond-from`\n        from line 23 of packages/navigation/src/styles/modules/_mega-menu.scss\n        from line 8 of packages/navigation/src/styles/_module.scss\n        from line 17 of /Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/packages/navigation/_dist.scss\n>> lc(#{$container-max-width} + #{space(8v)}), 2px);\n\n   ------------------------------------------^\n\n    at /Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.callback (/Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/sass-loader/dist/index.js:73:7)\n    at Object.done [as callback] (/Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/neo-async/async.js:8067:18)\n    at options.error (/Users/lab9/Free/La_Netscouade/Design_system/prod/Octobre/design-system-developpement/node_modules/node-sass/lib/index.js:294:32)");
 
 /***/ }),
 
-/***/ 45:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1144,7 +1144,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 48:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1152,7 +1152,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 11 modules
-var scripts = __webpack_require__(45);
+var scripts = __webpack_require__(44);
 
 // CONCATENATED MODULE: ./packages/navigation/src/scripts/navigation/navigation-constants.js
 var NAVIGATION = 'rf-nav';

@@ -13,7 +13,7 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
   text-transform: none;
   line-height: 1; }
 
-.rf-toggle__list {
+.rf-toggle-list {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -195,10 +195,6 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
 /*
  * On surcharge les styles de base (provisoire)
  */
-.rf-toggle__list {
-  margin: 0; }
-  .rf-toggle__list > li {
-    margin-bottom: 0; }
 
 
 /*# sourceMappingURL=toggle.css.map*/

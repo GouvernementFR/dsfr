@@ -14,7 +14,6 @@
   @include respond-from(md) {
     @include margin(0 calc(50% - 50vw));
     @include padding(0 calc(50vw - 50%));
-    @include z-index(nav, true);
 
     @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
 

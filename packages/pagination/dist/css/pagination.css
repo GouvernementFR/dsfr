@@ -149,7 +149,7 @@
 
 .rf-pagination__item--first .rf-pagination__link,
 .rf-pagination__item--prev .rf-pagination__link {
-  margin-left: 1.75rem;
+  margin-left: -1.75rem;
   padding-left: 1.75rem;
   margin-right: -0.25rem;
   padding-right: 0.25rem; }

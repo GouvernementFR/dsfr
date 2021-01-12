@@ -51,7 +51,7 @@
         }
 
         // Gutters
-        #{dse(row--gutters)} {
+        #{dse(grid-row--gutters)} {
           @if $gutter != null {
             @include margin((-$gutter) (-$gutter) ($gutter));
 

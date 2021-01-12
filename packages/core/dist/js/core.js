@@ -119,7 +119,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 45:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1142,10 +1142,10 @@ module.exports = __webpack_require__(7);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
 /* eslint-disable no-new */
 
-new _index__WEBPACK_IMPORTED_MODULE_0__["Initializer"]('.rf-collapse', [_index__WEBPACK_IMPORTED_MODULE_0__["Collapse"]]);
+new _index__WEBPACK_IMPORTED_MODULE_0__["Initializer"]('.rf-collapse', [_index__WEBPACK_IMPORTED_MODULE_0__["Collapses"]]);
 
 /***/ }),
 

@@ -119,7 +119,7 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 45:
+/***/ 44:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1128,7 +1128,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 50:
+/***/ 49:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1136,7 +1136,7 @@ var collapses_Collapses = /*#__PURE__*/function () {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 11 modules
-var scripts = __webpack_require__(45);
+var scripts = __webpack_require__(44);
 
 // EXTERNAL MODULE: ./packages/core/src/scripts/manipulation/classes.js
 var classes = __webpack_require__(1);
@@ -1299,7 +1299,7 @@ new scripts["Initializer"]('.rf-header', [Header]);
 /***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(50);
+__webpack_require__(49);
 module.exports = __webpack_require__(9);
 
 
