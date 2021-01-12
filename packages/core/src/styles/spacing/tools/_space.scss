@@ -76,13 +76,8 @@
 }
 
 @mixin _spacing-from($property: margin, $value: 0, $direction: null, $from: null) {
-  @if $from == null {
+  @include respond-from($from) {
     @include _spacing($property, $value, $direction);
-  }
-  @else {
-    @include respond-from($from) {
-      @include _spacing($property, $value, $direction);
-    }
   }
 }
 

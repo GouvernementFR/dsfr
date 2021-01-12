@@ -1,0 +1,84 @@
+////
+/// Core Tools : Grid
+/// @group core
+////
+
+/// Génère les classes de colonne pour la grille ainsi que les offsets (optionnel)
+///
+/// @param {Map} $columns [$grid-settings] - configuration de la grille
+/// @param {Bool} $with-container [true] - si true, définit les containers
+/// @param {Bool} $with-offsets [true] - si true, définit les offsets
+///
+/// @require {variable} $grid-columns
+///
+/// @example scss - Génère les colonnes
+///   @include grid-generator();
+@mixin grid($settings: $grid-settings, $with-container: true, $with-offsets: true) {
+  $columns: map-get($settings, columns);
+  $breakpoints-settings: map-get($grid-settings, breakpoints);
+  $last-gutter: 0;
+
+  @each $breakpoint, $limits in $breakpoints {
+    $mod: '-#{$breakpoint}';
+
+    @if $breakpoint == xs {
+      $breakpoint: first;
+      $mod: '';
+    }
+
+    @include respond-from($breakpoint) {
+      $breakpoint-settings: map-get($breakpoints-settings, $breakpoint);
+
+      @if $breakpoint-settings != null {
+        $gutter: map-get($breakpoint-settings, gutter);
+        $max-width: map-get($breakpoint-settings, max-width);
+
+        @if $gutter != null {
+          $last-gutter: $gutter;
+        }
+
+        @if $with-container {
+          // Container
+          #{dse(container)} {
+            @if $gutter != null {
+              @include padding-x($gutter * 2);
+            }
+
+            @if $max-width != null {
+              max-width: space($max-width + $last-gutter * 2);
+            }
+          }
+        }
+
+        // Gutters
+        #{dse(row--gutters)} {
+          @if $gutter != null {
+            @include margin((-$gutter) (-$gutter) ($gutter));
+
+            > #{class-start-with(dse(col-, ''))},
+            > #{dse(col)} {
+              @include padding($gutter);
+            }
+          }
+        }
+      }
+
+      #{dse('col' + $mod)} {
+        flex: 1;
+      }
+
+      @for $i from 1 through $columns {
+        $append: '#{$mod}-#{$i}';
+        #{dse('col' + $append)} {
+          @include grid-col($i, $columns);
+        }
+
+        @if $with-offsets {
+          #{dse('col-offset' + $append)} {
+            @include grid-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}

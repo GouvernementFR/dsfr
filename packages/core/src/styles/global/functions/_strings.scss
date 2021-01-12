@@ -7,7 +7,7 @@
 /// @access public
 /// @param {String} $value - le nombre en chaîne de caractères
 /// @param {Number} $max - maximum d'itération de la boucle à partir de laquelle l'action est abandandonnée
-@function str-to-num($value, $max:100) {
+@function str-to-num($value, $max:1000) {
   @for $i from 0 to $max {
     @if $value == quote($i) {
       @return $i;

@@ -4,9 +4,6 @@
 ////
 
 #{dse(container)} {
-  @include container();
-
-  &-fluid {
-    width: 100%;
-  }
+  @include size(100%);
+  @include margin-x(auto);
 }
