@@ -7,13 +7,6 @@
  * On surcharge les styles de base (provisoire)
  */
 
-#{dse(toggle)} {
-  @include list {
-    @include margin(0);
-    @extend %list-reset;
-
-    > li {
-      @include margin-bottom(0);
-    }
-  }
+#{dse(toggle)}-list {
+  @extend %list-reset;
 }
