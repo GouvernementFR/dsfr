@@ -1,5 +1,5 @@
 <%
- samples = [
+ let samples = [/*
      {title:'Header avec Navigation complète', sample:'./samples/header.ejs', data:{ service:true, shortcuts:true, search: true, navigation: true }, snippet: false},
      {title:'Header minimal', sample:'./samples/header.ejs', data:{ navigation: 'min' }},
      {title:'Header sans navigation', sample:'./samples/header.ejs', data:{service: true }},
@@ -8,7 +8,7 @@
      {title:'Header avec opérateur vertical, nom de service, recherche', sample:'./samples/header.ejs', data:{ operator:{img: '/img/logo-operator-v.png', style:'width:3.5rem; height:auto;'}, service: true, search: true, navigation: 'min' }},
      {title:'Header avec opérateur horizontal, nom de service, lien d’accès, recherche', sample:'./samples/header.ejs', data:{ operator:{img: '/img/logo-operator-h.png', style:'width:9.0625rem; height:auto;'}, service: true, shortcuts:true, search: true, navigation: 'min' }},
      {title:'Header avec logo du service, lien d’accès, recherche', sample:'./samples/header.ejs', data:{ service: {img: '/img/logo-service.svg', style:'width:8rem; height:auto;'}, shortcuts:true, search: true, navigation: 'min' }},
-
+*/
 
  ]
  %>
@@ -28,3 +28,28 @@ for (let i = 0; i < samples.length; i++) {
     <% } %>
 </div>
 <% } %>
+
+                                                                                                                                                         <%
+                                                                                                                                                     samples = [
+                                                                                                                                                       { title:'Media image edito, grande taille', sample:'../../content/tests/samples/media-img', data: {size:'lg'}},
+
+                                                                                                                                                     ]
+                                                                                                                                                     %>
+
+                                                                                                                                                         <%
+                                                                                                                                                         for (let i = 0; i < 5; i++) {
+                                                                                                                                                           let sample = samples[0];
+                                                                                                                                                         %>
+<div class="<%= prefix %>-container">
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
+<div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
+
+<h4 class="<%= prefix %>-h4">Test</h4>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                                                                                                                                                            <%- include(sample.sample, sample.data); %>
+</div>
+</div>
+</div>
+<% } %>
+
+<%- include('../../footer/tests/samples/footer-partners.ejs'); %>

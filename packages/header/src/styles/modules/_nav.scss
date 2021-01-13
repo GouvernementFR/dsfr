@@ -22,4 +22,15 @@
       @include shadow(md);
     }
   }
+
+  @include before(block, '') {
+    margin-top: 0;
+    transition: margin-top 0.3s;
+  }
+}
+
+&--sticky #{dse(nav)} {
+  @include before {
+    margin-top: -72px;
+  }
 }

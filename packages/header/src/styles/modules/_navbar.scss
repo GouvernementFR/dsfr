@@ -62,6 +62,11 @@
       font-size: font-size(14);
       line-height: line-height(normal);
       @include margin(0);
+      overflow: hidden;
+      @include before(block, '') {
+        transition: margin-top 0.3s;
+        margin-top: 0;
+      }
     }
 
     &__title + &__tagline {
@@ -86,5 +91,11 @@
     @include respond-from(md) {
       display: none;
     }
+  }
+}
+
+&--sticky #{dse(service__tagline)} {
+  @include before {
+    margin-top: -40px;
   }
 }

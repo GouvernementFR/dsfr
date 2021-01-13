@@ -1,0 +1,14 @@
+<%
+ samples = [
+     {title:'Header avec Navigation complète', sample:'./samples/header.ejs', data:{ service:true, shortcuts:true, search: true, navigation: true }, snippet: false}
+ ]
+ %>
+
+<%
+for (let i = 0; i < samples.length; i++) {
+    let sample = samples[i];
+%>
+
+  <%- include(sample.sample, sample.data); %>
+
+<% } %>

@@ -1,4 +1,5 @@
 import { addClass, removeClass } from '@gouvfr/core/src/scripts/manipulation/classes';
+import { Renderer } from '@gouvfr/core/src/scripts';
 
 let count = 0;
 
@@ -62,6 +63,8 @@ class Header {
     window.addEventListener('resize', this.changing);
     window.addEventListener('orientationchange', this.changing);
     this.change();
+
+    Renderer.add(this.render.bind(this));
   }
 
   change () {
@@ -77,6 +80,12 @@ class Header {
         this.nav.insertBefore(this.shortcuts, this.navList);
       }
     }
+  }
+
+  render () {
+    // console.log(document.documentElement.scrollTop);
+    if (document.documentElement.scrollTop === 0) removeClass(this.header, 'rf-header--sticky');
+    else addClass(this.header, 'rf-header--sticky');
   }
 }
 

@@ -7,7 +7,7 @@
   @include margin-top(5v);
 
   @include respond-from(md) {
-    @include size(23.667rem);
+    @include size(282px);
     @include margin-top(0);
     box-shadow: none;
   }

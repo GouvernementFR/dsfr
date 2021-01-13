@@ -4,6 +4,9 @@
   "license": "MIT",
   "description": "Header",
   "level": "6",
+  "config": {
+    "prepend": true
+  },
   "publishConfig": {
     "access": "public"
   },
