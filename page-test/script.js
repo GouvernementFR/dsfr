@@ -5,6 +5,7 @@ import '@gouvfr/accordions/src/scripts/dist';
 
 const schemeAttr = 'data-${prefix}-theme';
 const resetAttr = 'data-${prefix}-reset';
+const navAttr = 'data-${prefix}-nav';
 
 class DemoCheckbox {
   constructor (id) {
@@ -78,3 +79,4 @@ class AttributeDemoCheckbox extends DemoCheckbox {
 
 new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'dark', 'light');
 new AttributeDemoCheckbox('reset-checkbox', resetAttr, true, null);
+new AttributeDemoCheckbox('nav-checkbox', navAttr, true, null);

@@ -29,7 +29,7 @@
   }
 }
 
-&--sticky #{dse(nav)} {
+@at-root :root:not([data-rf-nav]) &--sticky #{dse(nav)} {
   @include before {
     margin-top: -72px;
   }
