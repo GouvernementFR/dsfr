@@ -38,29 +38,23 @@
   @media (min-width: 48em) {
     .rf-summary {
       padding: 2rem 2.5rem 1.5rem; } }
-
-.rf-summary__title {
-  margin: 0 0 1rem;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--g600);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--g800); }
-
-.rf-summary__list {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--g600); }
+  .rf-summary__title {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--g800); }
   .rf-summary__list > li {
-    margin: 0;
-    line-height: 1.375; }
+    margin: 0; }
     .rf-summary__list > li::before {
       content: none; }
   .rf-summary__list > li > a {
     display: inline-flex;
     padding: 0.5rem;
     margin: 0 -0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     box-shadow: none;
     color: var(--g800);
     background-color: var(--t-plain); }

@@ -4,8 +4,10 @@
 ////
 
 @mixin _build-link-size($size-settings, $border-radius: false) {
-  @include font-size(map_get($size-settings, font-size));
-  $line-height: space(map_get($size-settings, line-height));
+  $font-size: map_get($size-settings, font-size);
+  $style: get-text-style($font-size);
+  $line-height: space(map_get($style, line-height));
+  font-size: px-rem($font-size);
   line-height: $line-height;
 
   $min-height: space(map_get($size-settings, min-height));

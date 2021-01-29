@@ -1,0 +1,17 @@
+<%
+
+const accordions = [];
+
+for (let i = 0; i < 6; i++) accordions.push({
+    label: 'Intitulé accordéon',
+    content: include('./accordions-group', {button:true}),
+    collapseId: uniqueId('accordion')
+});
+
+const data = {
+  accordions: accordions
+}
+
+%>
+
+<%- include('../templates/accordions-group', data); %>

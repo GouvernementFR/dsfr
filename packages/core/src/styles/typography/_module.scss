@@ -9,11 +9,7 @@
 :root {
   @include font-weights();
 
-  @include text-selectors($headings-settings, null, false, true);
-
-  @include text-selectors($displays-settings, display, false);
-
-  @include text-selectors($texts-settings, text, true, true);
+  @include build-typography();
 
   #{dse(text--alt)} {
     font-family: $font-family-serif;

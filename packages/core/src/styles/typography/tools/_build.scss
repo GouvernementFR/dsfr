@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@mixin text($font-size, $line-height: null, $color-set: null, $font-weight: null) {
+@mixin _text($font-size, $line-height: null, $color-set: null, $font-weight: null) {
   font-size: font-size($font-size);
 
   @if $line-height != null {
@@ -28,7 +28,7 @@
   @if $font-weight == null {
     $font-weight: map_get($variation, font-weight);
   }
-  @include text($font-size, $line-height, $color-set, $font-weight);
+  @include _text($font-size, $line-height, $color-set, $font-weight);
 }
 
 @mixin _iterate-variations($settings, $color-set: null, $font-weight: null) {
@@ -90,5 +90,67 @@
 }
 
 @mixin text-styles($size: md, $color-set: null, $font-weight: null) {
+  @debug 'La  mixin text-styles est dépréciée';
   @include _iterate-variations(map-get($texts-settings, $size), $color-set, $font-weight);
+}
+
+// nouvelle version
+
+@mixin _build-style-placeholders() {
+  @each $name, $variation in $title-settings {
+    %title-#{$name} {
+      @include title-style($name, true);
+    }
+  }
+
+  @each $name, $variation in $text-settings {
+    %text-#{$name} {
+      @include text-style($name, true);
+    }
+  }
+}
+
+@include _build-style-placeholders();
+
+@function typography-selector($type, $name, $is-modifier: false, $alt: null) {
+  $base: '';
+  $separator: '-';
+
+  @if $is-modifier {
+    @if $name == md {
+      @return dse($type);
+    }
+    $separator: '--';
+  }
+
+  @if $type != heading {
+    $base: '#{$type + $separator}';
+  }
+
+  $selectors: (dse('#{$base + $name}'));
+
+  @if $alt != null {
+    $selectors: append($selectors, dse('#{$base + $alt}'), 'comma');
+  }
+
+  @return $selectors;
+}
+
+@mixin build-typography() {
+  @each $name, $variation in $title-settings {
+    $type: display;
+    @if str-index(quote($name), 'h') == 1 {
+      $type: heading;
+    }
+
+    #{typography-selector($type, $name, false, map-get($variation, alt))} {
+      @extend %title-#{$name};
+    }
+  }
+
+  @each $name, $variation in $text-settings {
+    #{typography-selector(text, $name, true, map-get($variation, alt))} {
+      @extend %text-#{$name};
+    }
+  }
 }

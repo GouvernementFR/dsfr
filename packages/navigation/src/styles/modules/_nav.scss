@@ -1,0 +1,138 @@
+////
+/// Navigation Module : Nav
+/// @group navigation
+////
+
+#{dse(nav)} {
+  @extend %default-text-color;
+  @include z-index(nav, true);
+
+  @include list {
+    @extend %list-reset;
+    @include display-flex(column);
+    @include margin(0);
+    @include padding(0);
+    @include relative;
+
+    @include respond-from(md) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      @include margin(0 -4v);
+    }
+  }
+
+  @include list-item {
+    @include margin(0);
+    @include display-flex(column, flex-start);
+    flex: 0 1 auto;
+
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+
+    @include respond-from(md) {
+      box-shadow: none;
+
+      &--align-right {
+        align-items: flex-end;
+      }
+    }
+
+    @include before(null, none);
+
+    @include respond-from(md) {
+      &:first-child:nth-last-child(2) ~ &,
+      &:first-child:nth-last-child(3) ~ &,
+      &:first-child:nth-last-child(4) ~ & {
+        @include margin-left(5v);
+      }
+    }
+
+    & > #{dse(link)},
+    & > #{dse(btn)} {
+      @include display-flex(null, center, space-between);
+      @include size(100%);
+      @include padding(3v 0);
+      @include text-style(md);
+      text-align: left;
+      font-weight: bold;
+
+      @include scheme-element-text-color(g800);
+      @include scheme-element-focus();
+
+      @include before() {
+        @include margin-right(0);
+      }
+
+      @include respond-from(md) {
+        @include padding(4v);
+        @include margin(0);
+        @include size(auto, 100%);
+        justify-content: flex-start;
+        font-weight: normal;
+        min-height: space(14v);
+        @include text-style(sm);
+      }
+    }
+
+    & > #{dse(link)} {
+      flex-direction: row;
+      box-shadow: none;
+      border-radius: 0;
+
+      @include scheme-element-bg-color(t-plain, false, true); //TODO: override ?
+
+      @include before(null, none);
+    }
+
+    & > #{dse(btn)} {
+      flex-direction: row-reverse;
+
+      @include scheme-element-bg-color(t-plain, false, override);
+      @include padding(4v 3v 4v 4v, md);
+
+      @include font-icon(arrow-down-s-line, sm) {
+        @include margin-left(2v);
+        @include margin-right(0);
+        transition: transform 0.3s;
+      }
+
+      &[aria-expanded="true"] {
+        @include before {
+          transform: rotate(-180deg);
+        }
+
+        @include after(null, none);
+
+        @include respond-from(md) {
+          @include scheme-element-text-color(bf500-plain);
+          @include scheme-element-bg-color(bf200-bf300);
+        }
+      }
+    }
+
+    &--active {
+      @include relative;
+
+      @include before(block, '') {
+        @include absolute(3v, null, null, -4v, 2px, 6v);
+        @include scheme-element-bg-color(bf500);
+      }
+
+      @include respond-from(md) {
+        @include before(null, none);
+      }
+
+      & > #{dse(link)},
+      & > #{dse(btn)} {
+        @include scheme-element-text-color(bf500);
+
+        @include respond-from(md) {
+          @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR); //TODO: transition
+        }
+      }
+
+      & > #{dse(link)} {
+        pointer-events: none;
+      }
+    }
+  }
+}

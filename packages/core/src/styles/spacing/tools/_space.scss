@@ -31,10 +31,7 @@
   @else if is-unit($value, w) {
     @return $q * 0.5rem;
   }
-  @else if is-unit($value, n) {
-    @return px-rem(map-get($space-scale, $value));
-  }
-  @return $value;
+  @return unquote($value);
 }
 
 /// Set space property
@@ -76,13 +73,8 @@
 }
 
 @mixin _spacing-from($property: margin, $value: 0, $direction: null, $from: null) {
-  @if $from == null {
+  @include respond-from($from) {
     @include _spacing($property, $value, $direction);
-  }
-  @else {
-    @include respond-from($from) {
-      @include _spacing($property, $value, $direction);
-    }
   }
 }
 

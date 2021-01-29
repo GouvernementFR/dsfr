@@ -5,8 +5,8 @@
 
 #{dse-group(radio)} {
   #{dse(hint-text)} {
-    margin-left: space(8v);
-    margin-top: -(space(3v));
+    @include margin-left(8v);
+    @include margin-top(-3v);
   }
 
   // &:not(:last-child) {
@@ -16,32 +16,32 @@
   // }
 
   &:first-child {
-    margin-top: -(space(3v));
+    @include margin-top(-3v);
 
     input[type="radio"] + label {
-      margin-top: 0;
+      @include margin-top(0);
     }
   }
 
   &:last-child {
-    margin-bottom: -(space(3v));
+    @include margin-bottom(-3v);
 
     input[type="radio"] + label {
       @include radio-rich() {
-        margin-bottom: space(6v);
+        @include margin-bottom(6v);
       }
     }
   }
 
   input[type="radio"] {
-    position: absolute;
+    @include absolute;
     opacity: 0;
 
     + label {
-      position: relative;
+      @include relative;
       cursor: pointer;
-      padding: space(3v) 0;
-      font-size: font-size(14);
+      @include padding(3v 0);
+      @include text-style(md);
       -webkit-tap-highlight-color: transparent;
       display: grid;
       display: -ms-grid;
@@ -57,22 +57,18 @@
       direction: rtl;
 
       @include radio-rich() {
-        padding-left: space(14v);
+        @include padding-left(14v);
         min-height: space(22v);
-        height: 1px; // fix IE vertical center
-        width: 100%;
+        @include size(100%, 1px); // height 1px, fix IE vertical center
         @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
-        padding-top: space(2v);
-        padding-bottom: space(2v);
-        padding-right: space(26v);
+        @include padding-top(2v);
+        @include padding-bottom(2v);
+        @include padding-right(26v);
         background-position: calc(100% - #{space(1v)}) center;
         background-size: space(20v) space(20v);
         background-repeat: no-repeat;
         @include scheme-element-bg-color(w, true, true);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
+        @include display-flex(column, flex-end, center);
 
         // TODO: refactor hover avec background-color au lieu de backgrounnd-image
         // &:hover,
@@ -82,22 +78,17 @@
 
         // sm
         @include before() {
-          width: space(4v);
-          height: space(4v);
-          position: absolute;
-          left: space(7v);
+          @include size(4v, 4v);
+          @include absolute(null, null, null, 7v);
         }
 
-        @include after(flex, '') {
-          position: absolute;
-          right: 0;
-          margin: space(1v);
-          padding-left: space(1v);
+        @include after(null, '') {
+          @include absolute(null, 0);
+          @include margin(1v);
+          @include padding-left(1v);
+          @include display-flex(null, center, center);
+          @include size(21v, 20v);
           vertical-align: middle;
-          justify-content: center;
-          align-items: center;
-          height: space(20v);
-          width: space(21v);
           @include scheme-element-border-color(g300, true, left);
           // TODO: insérer la font icon ilustrative ifi
           font-size: space(20v); // ?
@@ -105,34 +96,28 @@
       }
 
       .rf-hint-text {
-        margin: 0;
-        // flex: 0 0 auto;
+        @include margin(0);
         grid-row: 2;
         grid-column: 1;
         -ms-grid-row: 2;
         -ms-grid-column: 1;
       }
 
-      @include before() {
-        content: '';
-        display: inline-block;
-        // position: absolute;
-        // left: 0;
-        flex-shrink: 0;
-        width: space(6v);
-        height: space(6v);
-        border: 1px solid;
-        margin-right: space(1N);
-        border-radius: 50%;
+      @include before(inline-block, '') {
+        @include size(6v, 6v);
+        @include margin-right(2v);
         @include scheme-element-border-color(g800, true);
+        flex-shrink: 0;
+        border: 1px solid;
+        border-radius: 50%;
         transform-origin: center;
-        transition: transform 0.3s;
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
         -ms-grid-column: 2;
         align-items: center;
         -ms-align-items: center;
+        transition: transform 0.3s;
       }
     }
 
@@ -141,10 +126,11 @@
         @include before() {
           @include scheme-element-box-shadow-color(w, true, 'inset 0 0 0 5px $COLOR');
           @include scheme-element-bg-color(bf500, true);
+          @include scheme-element-border-color(bf500, true);
         }
 
         @include radio-rich() {
-          width: 100%;
+          @include size(100%);
           @include scheme-element-bg-color(bf500);
           @include scheme-element-text-color(w-bf500, true);
           @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
@@ -162,29 +148,7 @@
       }
     }
 
-    // &:checked,
-    // &:active {
-    //   + label::after {
-    //     @include scheme-element-bg-color(bf500);
-    //   }
-    // }
-
     @include scheme-element-focus(false, '+ label::before');
-
-    // &:active {
-    //   + label {
-    //     &::before {
-    //       @include scheme-element-bg-color(active-radio, false);
-    //       @include scheme-element-border-color(transparent);
-    //       transform: scale(1.2);
-    //     }
-
-    //     &::after {
-    //       @include scheme-element-bg-color(bf500);
-    //       transform: scale(1.3);
-    //     }
-    //   }
-    // }
 
     @include disabled-form-choice();
   }
@@ -196,8 +160,7 @@
     input[type="radio"] {
       & + label {
         @include before() {
-          width: space(4v);
-          height: space(4v);
+          @include size(4v, 4v);
         }
       }
 
@@ -215,15 +178,36 @@
     &:first-child {
       input[type="radio"] + label {
         @include radio-rich() {
-          margin-top: space(2v);
+          @include margin-top(3v);
         }
       }
     }
 
     input[type="radio"] + label {
       @include radio-rich() {
-        margin-top: space(2v);
-        margin-bottom: space(4v);
+        @include margin-top(2v);
+        @include margin-bottom(4v);
+      }
+    }
+
+    &:last-child {
+      input[type="radio"] + label {
+        @include radio-rich() {
+          @include margin-bottom(7v);
+        }
+      }
+    }
+  }
+
+  // écart entre le hint text et les radios riches
+  #{dse(hint-text)} + .#{$prefix}-fieldset__content {
+    .#{$prefix}-radio-group {
+      &:first-child {
+        input[type="radio"] + label {
+          @include radio-rich() {
+            @include margin-top(7v);
+          }
+        }
       }
     }
   }
@@ -233,16 +217,18 @@
       &:not(:last-child) {
         input[type="radio"] + label {
           @include radio-rich() {
-            margin-right: space(3v);
-            margin-bottom: space(2v);
+            @include margin-right(3v);
+            @include margin-bottom(2v);
           }
         }
       }
 
       &:last-child {
+        margin-bottom: 0;
+
         input[type="radio"] + label {
           @include radio-rich() {
-            margin-bottom: space(5v);
+            @include margin-bottom(3v);
           }
         }
       }
@@ -250,7 +236,20 @@
       &:first-child {
         input[type="radio"] + label {
           @include radio-rich() {
-            margin-top: space(5v);
+            @include margin-top(6v);
+          }
+        }
+      }
+    }
+
+    // écart entre le hint text et les radios riches
+    #{dse(hint-text)} + .#{$prefix}-fieldset__content {
+      .#{$prefix}-radio-group {
+        &:first-child {
+          input[type="radio"] + label {
+            @include radio-rich() {
+              @include margin-top(6v);
+            }
           }
         }
       }

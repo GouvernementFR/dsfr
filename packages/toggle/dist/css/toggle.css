@@ -20,24 +20,14 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
   padding-inline-start: 0;
   padding-inline-end: 0; }
 
-/**
- * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
- */
-/**
- * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
- */
 .rf-toggle .rf-hint-text {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
   display: block;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
   color: var(--g600); }
 
-/*
- * Mixin pour gérer les styles quand le toggle est inactif
- */
 .rf-toggle {
   display: flex;
   flex-wrap: wrap;
@@ -111,6 +101,8 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
     flex-basis: calc(100% - 2.5rem);
     min-height: 1.5rem;
     padding-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     /*
      * Si les data attributes sont présents, on assigne un content au pseudo element before,
      * et on enlève le padding left du label.
@@ -131,13 +123,12 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
         margin-top: 0.5rem; }
     .rf-toggle__label::before {
       flex-shrink: 0;
-      font-family: "Marianne", arial, sans-serif;
-      height: calc(0.75rem - 1px);
-      margin-top: calc(1.5rem + 0.25rem);
+      height: calc(1.25rem - 1px);
+      margin-top: 1.5rem;
       margin-left: -2.5rem;
       margin-right: 1rem;
       font-size: 0.75rem;
-      line-height: 1;
+      line-height: 1.25rem;
       color: var(--bf500);
       white-space: pre-wrap;
       overflow: hidden; }
@@ -149,9 +140,9 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
       position: absolute;
       top: 1rem;
       left: 0;
-      border-radius: 50%;
       width: 1.5rem;
       height: 1.5rem;
+      border-radius: 50%;
       text-indent: -9999px;
       color: var(--bf500);
       border: 1px solid var(--bf500);
@@ -162,12 +153,6 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
     margin-top: 1rem; }
   .rf-toggle--border-bottom {
     box-shadow: inset 0 -1px 0 0 var(--g300); }
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label]::before,
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label]::before {
-      margin-bottom: -0.5rem; }
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-unchecked-label] + .rf-hint-text,
-    .rf-toggle--border-bottom .rf-toggle__label[data-rf-checked-label] + .rf-hint-text {
-      margin-top: 1rem; }
   .rf-toggle--label-left .rf-toggle__input {
     order: 1;
     margin: 0 0 0 auto; }
@@ -196,12 +181,6 @@ input.rf-toggle__input[disabled], input.rf-toggle__input:disabled, input.rf-togg
 /*
  * On surcharge les styles de base (provisoire)
  */
-.rf-toggle-list {
-  margin: 0; }
-  .rf-toggle-list > li {
-    margin-bottom: 0; }
-    .rf-toggle-list > li::before {
-      content: none; }
 
 
 /*# sourceMappingURL=toggle.css.map*/

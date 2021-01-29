@@ -22,6 +22,13 @@
 .rf-pagination__link {
   text-decoration: none; }
 
+.rf-pagination__list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
 .rf-pagination {
   color: var(--g700); }
 
@@ -29,25 +36,24 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  list-style: none;
   padding: 0;
-  margin: -0.125rem; }
+  margin: 0 -2px; }
 
 .rf-pagination__item {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding: 0 0.75rem;
+  margin: 2px 2px 0.5rem;
+  color: var(--g800);
   border-radius: 1rem;
   min-width: 2rem;
-  height: 2rem;
-  padding: 0 0.75rem;
-  margin: 0.125rem 0.125rem 0.5rem;
-  color: var(--g800); }
+  height: 2rem; }
   .rf-pagination__item:not(.rf-pagination__item--first):not(.rf-pagination__item--prev)::before, .rf-pagination__item:not(.rf-pagination__item--next):not(.rf-pagination__item--last)::after {
     content: none;
-    margin: 0;
-    display: none; }
+    display: none;
+    margin: 0; }
   .rf-pagination__item--from-md {
     display: none; }
     @media (min-width: 48em) {

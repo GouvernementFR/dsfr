@@ -1,0 +1,33 @@
+////
+/// Sidemenu Module : inner
+/// @group sidemenu
+////
+
+&__inner {
+  @include respond-from(md) {
+    @include padding(0 8v 0 1v);
+    @include scheme-element-border-color(g300, true, right);
+  }
+
+  /**
+  * Ce wrapper ne sert que pour la version mobile
+  * On l'utilise pour l'ouverture/fermeture du sidemenu entier
+  */
+  > #{dse(collapse)} {
+    @include margin(0 4v);
+    @include margin(0, md);
+
+    @include respond-from(md) {
+      overflow: initial;
+      max-height: none;
+
+      @include before {
+        display: none;
+      }
+
+      &:not(#{dse(collapse)}--expanded) {
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -2,14 +2,15 @@ $tabs-settings:(
   sizes: (
     md: (
       font-size: 16,
-      line-height: 6v,
       min-height: 10v,
       padding-x: 4v,
       padding-y: 2v,
-      icon: md,
+      icon: sm,
       icon-margin-x: 2v,
-      icon-only: md
+      icon-only: sm
     )
   ),
-  places: left
+  places: only left
 );
+
+$tabs-transition-duration: $global-transition-duration;

@@ -1,22 +1,9 @@
 <nav class="<%= prefix %>-sidemenu<% if(modifier){%> <%= prefix %>-sidemenu<%- modifier %><%}%>" role="navigation" aria-label="Menu latéral">
 	<div class="<%= prefix %>-sidemenu__inner">
-		<button class="<%= prefix %>-sidemenu__btn--sidemenu-toggle" hidden aria-controls="sidemenuWrapper<%- modifier %>" aria-expanded="false">Dans cette rubrique</button>
-		<div class="<%= prefix %>-sidemenu__wrapper" id="sidemenuWrapper<%- modifier %>">
+		<button class="<%= prefix %>-sidemenu__btn" aria-controls="<%= collapseId %>" aria-expanded="false">Dans cette rubrique</button>
+		<div class="<%= prefix %>-collapse" id="<%- collapseId %>">
 			<div class="<%= prefix %>-sidemenu__title">Titre de rubrique</div>
-			<ul class="<%= prefix %>-sidemenu__list">
-				<%
-					for (let i = 0; i < items.length; i++) {
-					let item = items[i];
-					item.collapseId = prefix + '-sidemenu-item' + modifier + '-' + i;
-
-					let classes = [prefix + '-sidemenu__item'];
-					if (item.active === true) classes.push(prefix + '-sidemenu__item--active');
-				%>
-				<li <%- includeClasses(classes); %>>
-					<%- include('./' + item.type, item); %>
-				</li>
-				<% } %>
-			</ul>
+			<%- include('./list'); %>
 		</div>
 	</div>
 </nav>

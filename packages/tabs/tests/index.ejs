@@ -1,48 +1,18 @@
-
 <%
-let sizes = {
-    small : {size:'sm', label: 'Label bouton SM'}
-};
-let data = {
-    tabs: 4,
-    starterId: 1,
-    icon: 'checkbox-line',
-    iconPlace: 'left',
-    sizes: sizes
-};
-
-let data2 = {
-    tabs: 2,
-    starterId: 5
-};
-
-let data3 = {
-    tabs: 2,
-    starterId: 7
-};
 
 let samples = [
-    { title:'tabs 4 col', data:data},
-    { title:'tabs 2 col', data:data2},
-    { title:'tabs dans tabs', data:data3}
+    { sample:'./samples/tabs-default', title:'tabs 4 col', data:{ tabs: 2, icon: 'checkbox-line' }},
+    { sample:'./samples/tabs-default',title:'tabs 2 col', data: { tabs: 2 }},
+    { sample:'./samples/tabs-in-tabs',title:'tabs dans tabs'},
+    { sample:'./samples/tabs-accordions',title:'accordéon dans tabs',data: { tabs: 2 }}
 ]
 
 %>
 
-<% sample = samples[0] %>
-<h4><%= sample.title %></h4>
-<%- include('./samples/tabs-default', sample.data) %>
+<% for (let i = 0; i < samples.length; i++) { %>
 
-<br><br>
-
-<% sample = samples[1] %>
-<h4><%= sample.title %></h4>
-<%- include('./samples/tabs-default', sample.data) %>
-<%- snippet(include('./samples/tabs-default', sample.data)); %>
-
-<% sample = samples[2] %>
-<h4><%= sample.title %></h4>
-<%- include('./samples/tabs-in-tabs', sample.data) %>
-<%- snippet(include('./samples/tabs-in-tabs', sample.data)); %>
-
+<h4 class="<%= prefix %>-h4"><%= samples[i].title %></h4>
+<%- include(samples[i].sample, samples[i].data) %>
+<%- snippet(include(samples[i].sample, samples[i].data)); %>
+<% } %>
 

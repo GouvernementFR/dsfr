@@ -7,14 +7,12 @@
 /// @param {String} $ratio - key du ratio attendu selon la map $ratio-scale
 /// @param {Size | Bool} $block - détermine si le block est créé et sa taille correspondante
 @mixin aspect-ratio($ratio: 16x9, $block: 100%) {
-  &::before {
+  @include before(block, '') {
     @if $block != false {
       @if $block == true {
         $block: 100%;
       }
-      display: block;
-      content: '';
-      width: $block;
+      @include size($block);
     }
     padding-bottom: map_get($ratio-scale, $ratio);
   }

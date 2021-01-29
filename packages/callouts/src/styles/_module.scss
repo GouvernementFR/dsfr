@@ -5,14 +5,14 @@
 
 #{dse(callout)} {
   @extend %default-text-color;
-  position: relative;
-  padding: space(3w);
+  @include relative();
+  @include padding(6v);
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
   /**
    * Inclusion de l'icône (optionnel)
    */
-  @include custom-icons(lg) {
+  @include custom-icons(md) {
     display: block;
     @include margin(-2v 0 2v);
 
@@ -29,23 +29,19 @@
     @include padding(14v 12v 10v, md);
   }
 
-  &__title {
-    font-size: font-size(22);
-    line-height: line-height("snug");
-    @include scheme-element-text-color(g800, true);
-    @include margin(0 0 2v);
+  @include title() {
+    @include force-over-reset() {
+      @include title-style(h4);
+      @include scheme-element-text-color(g800, true);
+      @include margin(0 0 2v);
+    }
   }
 
   &__text {
-    @include text-styles(md);
-    @include margin(0);
-  }
-
-  /**
-   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
-   */
-  &__text--lg {
-    @include text-styles(lg);
+    @include force-over-reset() {
+      @include text-style(lg);
+      @include margin(0);
+    }
   }
 
   @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));

@@ -4,45 +4,39 @@
 ////
 
 #{dse(skiplinks)} {
-  position: absolute;
-  padding: space(2w) 0;
+  @include absolute;
+  @include padding(4v 0);
   @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
 
   &:focus-within {
-    position: relative;
+    @include relative;
     transform: translateY(0);
   }
-}
 
-#{dse(skiplinks__list)} {
-  @extend %list-reset;
-  display: flex;
-  flex-direction: column;
-  margin: 0 (-(space(2w))) (-(space(2w)));
+  @include list {
+    @extend %list-reset;
+    @include display-flex(column);
+    @include margin(0 -4v -6v);
 
-  > li {
-    margin: 0 space(2w) space(1v);
+    > li {
+      @include margin(0 4v 6v);
+      @include margin(0 4v, sm);
 
-    &::before {
-      content: none;
+      @include before(null, none);
+
+      @include nest-link(md, null, null, null, true);
     }
 
-    @include nest-link(md, null, null, null, true);
-
-    @include respond-from(sm) {
-      margin: 0 space(2w);
+    @include respond-from(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      @include margin(0 -4v);
     }
-  }
 
-  @include respond-from(md) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 (-(space(2w)));
-  }
-
-  &:focus-within {
-    position: relative;
-    transform: translateY(0);
+    &:focus-within {
+      @include relative;
+      transform: translateY(0);
+    }
   }
 }

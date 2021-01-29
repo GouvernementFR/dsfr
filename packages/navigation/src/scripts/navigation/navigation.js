@@ -1,46 +1,19 @@
-import { CollapseElement, CollapseGroup } from '@gouvfr/utilities/src/scripts/';
-import { addClass, removeClass } from '@gouvfr/utilities/src/scripts/manipulation/classes';
+import { addClass, removeClass, CollapsesGroup } from '@gouvfr/core/src/scripts';
+import {
+  NAVIGATION,
+  NAVIGATION_ITEM,
+  NAVIGATION_LIST,
+  NAVIGATION_MENU,
+  NAVIGATION_ITEM_RIGHT
+} from './navigation-constants';
 
-const NAV_COLLAPSE = '.${prefix}-nav .${prefix}-menu, .${prefix}-nav .${prefix}-mega-menu';
-const NAV_LIST = '.${prefix}-nav > .${prefix}-nav__list';
-const MENU = '${prefix}-menu';
-const MEGA = '${prefix}-mega-menu';
-const EXPANDED = '--expanded';
-const RIGHT = '${prefix}-nav__item--align-right';
+class Navigation extends CollapsesGroup {
+  constructor (id, element) {
+    super(id, element);
 
-class Navigation {
-  constructor () {
-    this.init();
-  }
-
-  init () {
-    this.group = new CollapseGroup();
     this.menus = [];
 
-    this.navList = document.querySelector(NAV_LIST);
-
-    const elements = document.querySelectorAll(NAV_COLLAPSE);
-    let element, collapseElement;
-
-    for (let i = 0; i < elements.length; i++) {
-      element = elements[i];
-
-      switch (true) {
-        case element.className.indexOf(MENU) > -1 :
-          collapseElement = new CollapseElement(element, MENU + EXPANDED);
-          this.menus.push(new NavMenu(collapseElement));
-          break;
-
-        case element.className.indexOf(MEGA) > -1 :
-          collapseElement = new CollapseElement(element, MEGA + EXPANDED);
-          break;
-
-        default:
-          continue;
-      }
-
-      this.group.add(collapseElement);
-    }
+    this.navList = element.querySelector(`.${NAVIGATION_LIST}`);
 
     document.addEventListener('focusout', this.focusOut.bind(this));
     window.addEventListener('resize', this.resize.bind(this));
@@ -48,31 +21,68 @@ class Navigation {
     this.resize();
   }
 
+  static get selector () { return NAVIGATION; }
+
+  add (member) {
+    super.add(member);
+
+    if (member.element.classList.contains(NAVIGATION_MENU)) {
+      this.menus.push(new NavigationMenu(member, this.navList.getBoundingClientRect().right));
+    }
+  }
+
   focusOut (e) {
     requestAnimationFrame(() => {
-      if (!this.group.hasFocus) this.group.reduce();
+      if (this.current !== null && !this.current.hasFocus) this.index = -1;
     });
+  }
+
+  get index () { return super.index; }
+
+  set index (value) {
+    if (value === -1 && this.current !== null && this.current.hasFocus) this.current.focus();
+    super.index = value;
   }
 
   resize () {
     const right = this.navList.getBoundingClientRect().right;
-    this.menus.forEach((menu) => { menu.place(right); });
+
+    for (const menu of this.menus) menu.place(right);
   }
 }
 
-class NavMenu {
-  constructor (collapseElement) {
-    this.element = collapseElement.element;
-    this.btn = collapseElement.buttons[0].element;
+class NavigationMenu {
+  constructor (collapse, right) {
+    this.initialize(collapse);
+    this.place(right);
+  }
+
+  initialize (collapse) {
+    this.element = collapse.element;
+
+    for (const button of collapse.buttons) {
+      if (!button.hasAttribute) continue;
+      this.button = button.element;
+      break;
+    }
+
+    let item = this.element.parentElement;
+    while (item) {
+      if (item.classList.contains(NAVIGATION_ITEM)) {
+        this.item = item;
+        break;
+      }
+      item = item.parentElement;
+    }
   }
 
   place (right) {
     const styles = getComputedStyle(this.element);
     const width = parseFloat(styles.width);
-    const left = this.btn.getBoundingClientRect().left;
+    const left = this.button.getBoundingClientRect().left;
 
-    if (left + width > right) addClass(this.btn.parentElement, RIGHT);
-    else removeClass(this.btn.parentElement, RIGHT);
+    if (left + width > right) addClass(this.item, NAVIGATION_ITEM_RIGHT);
+    else removeClass(this.item, NAVIGATION_ITEM_RIGHT);
   }
 }
 

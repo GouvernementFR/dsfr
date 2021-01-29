@@ -32,6 +32,11 @@ function getPackage (id) {
   }
 }
 
+function uniqueId (module) {
+  count++;
+  return `${module}~${count}`;
+}
+
 function snippet (html) {
   html = beautify(html, beautyOpts);
 
@@ -40,12 +45,11 @@ function snippet (html) {
   html = html.replace(/</g, '&lt;');
   html = html.replace(/>/g, '&gt;');
 
-  count++;
+  const id = uniqueId('snippet');
 
   const prefix = global.prefix;
 
-  return `<div class="${prefix}-mt-3w ${prefix}-mb-9w ${prefix}-pb-6w" ><section class="${prefix}-accordion"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="snippet-${count}">Snippet de code</button></h3><div class="${prefix}-accordion__body" id="snippet-${count}"><div class="${prefix}-accordion__inner"><pre class=" language-html"><code>${html}</code></pre></div></div></section></div>`;
-  // return '<div class="rf-my-2v"><button class="rf-link" aria-expanded="false" aria-controls="snippet-' + count + '">Snippet de code</button><div class="rf-collapse" id="snippet-' + count + '"><pre class=" language-html"><code>' + html + '</code></pre></div></div>';
+  return `<div class="${prefix}-mt-3w ${prefix}-mb-9w ${prefix}-pb-6w" ><section class="${prefix}-accordion"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="${id}">Snippet de code</button></h3><div class="${prefix}-collapse" id="${id}"><pre class=" language-html"><code>${html}</code></pre></div></section></div>`;
 }
 
 function renderPage (id) {
@@ -63,6 +67,7 @@ function renderPage (id) {
   options.root = __dirname + '/../';
   options.includeAttrs = includeAttrs;
   options.includeClasses = includeClasses;
+  options.uniqueId = uniqueId;
   options.snippet = snippet;
 
   const html = ejs.render(page, options);

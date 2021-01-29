@@ -10,7 +10,9 @@
 
   // add heading style for accessibility concerns and reset margins
   @include title {
-    @include margin(0);
+    @at-root :root #{&} {
+      @include margin(0);
+    }
   }
 
   @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
@@ -33,37 +35,33 @@
         @include font-icon-content(subtract-line);
       }
     }
-
+    @include padding(3v 0);
     @include padding(3v 4v, md);
   }
 
-  @include body {
-    @include collapse();
-    @include margin(0 -1v);
-    @include padding(0 1v);
-  }
+  #{dse(collapse)} {
+    @include margin(0 -1v, md);
+    @include padding-x(4v, md);
 
-  &__inner {
-    @include padding(2v 0 6v);
-    @include padding(2v 4v 8v, md);
-  }
+    transition: visibility 0.3s, padding 0.3s;
 
-  $accordion: &;
-
-  @include group {
-    @extend %list-reset;
-
-    #{$accordion} {
-      border-bottom: 0;
+    &--expanded {
+      @include padding-top(4v);
+      @include padding-bottom(6v);
     }
+  }
+}
 
-    @include group-item {
-      &:last-child {
-        #{$accordion} {
-          @include scheme-element-border-color(g300, true, bottom);
-        }
-      }
-      @include before(null, none);
+#{dse-group(accordions)} {
+  @extend %list-reset;
+
+  #{dse(accordion)} {
+    border-bottom: 0;
+  }
+
+  li:last-child {
+    #{dse(accordion)} {
+      @include scheme-element-border-color(g300, true, bottom);
     }
   }
 }

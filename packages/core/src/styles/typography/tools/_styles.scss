@@ -1,0 +1,75 @@
+////
+/// Core Tools : Typography build
+/// @group core
+////
+
+@function get-text-style($font-size) {
+  @return map-get($text-styles, $font-size);
+}
+
+@function get-title-style($font-size) {
+  @return map-get($title-styles, $font-size);
+}
+
+@mixin _stylize($font-size, $styles) {
+  $style: map-get($styles, $font-size);
+
+  font-size: #{px-rem($font-size)};
+
+  @if map-has-key($style, line-height) {
+    line-height: space(map-get($style, line-height));
+  }
+}
+
+@mixin _responsive-styles($settings, $styles, $is-responsive) {
+  $breakpoints: map-get($settings, breakpoints);
+
+  @if $is-responsive {
+    @each $breakpoint, $size in $breakpoints {
+      @if $breakpoint == first {
+        @include _stylize($size, $styles);
+      }
+      @else {
+        @include respond-from($breakpoint) {
+          @include _stylize($size, $styles);
+        }
+      }
+    }
+  }
+  @else {
+    @if map-has-key($breakpoints, md) {
+      @include _stylize(map-get($breakpoints, md), $styles);
+    }
+    @else {
+      @include _stylize(map-get($breakpoints, first), $styles);
+    }
+  }
+}
+
+@mixin _space-text($settings) {
+  @include margin(map-get($settings, margin));
+}
+
+@mixin _space-title($settings) {
+  @include margin(map-get($settings, margin));
+}
+
+@mixin text-style($name, $with-spacing: false, $is-responsive: true) {
+  $settings: map-get($text-settings, $name);
+
+  @include _responsive-styles($settings, $text-styles, $is-responsive);
+
+  @if $with-spacing {
+    @include _space-text($settings);
+  }
+}
+
+@mixin title-style($name, $with-spacing: false, $is-responsive: true) {
+  $settings: map-get($title-settings, $name);
+
+  @include _responsive-styles($settings, $title-styles, $is-responsive);
+
+  @if $with-spacing {
+    @include _space-title($settings);
+  }
+}

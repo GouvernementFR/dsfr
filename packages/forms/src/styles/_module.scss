@@ -11,7 +11,7 @@
   #{dse(label)} {
     #{dse(hint-text)} {
       @include margin-top(1v);
-      @include margin-bottom(3v);
+      @include margin-bottom(2v);
     }
   }
 
@@ -45,9 +45,7 @@
 
 #{dse(label)} {
   display: block;
-  font-size: font-size(14);
-  line-height: line-height(normal);
-  font-family: $font-family-sans;
+  @include text-style(md);
   @include scheme-element-text-color(g800, true);
 
   /**
@@ -69,7 +67,8 @@
 #{dse(hint-text)} {
   display: block;
   @include specify(p) {
-    @include text-styles(xs, g600);
+    @include scheme-element-text-color(g600);
+    @include text-style(xs);
   }
 
   @include margin-y(0);
@@ -87,10 +86,11 @@
 #{dse(error-text)} {
   @include display-flex(row, center);
   @include specify(p) {
-    @include text-styles(xs, error);
+    @include scheme-element-text-color(error);
+    @include text-style(xs);
+    @include margin-top(4v);
+    @include margin-bottom(0);
   }
-
-  @include margin-top(2v);
 
   @include font-icon(alert-line, sm) {
     display: inline-block;
@@ -104,12 +104,13 @@
 #{dse(valid-text)} {
   @include display-flex(row, center);
   @include specify(p) {
-    @include text-styles(xs, success);
+    @include scheme-element-text-color(success);
+    @include text-style(xs);
+    @include margin-top(4v);
+    @include margin-bottom(0);
   }
 
-  @include margin-top(2v);
-
-  @include font-icon(check-line, sm) {
+  @include font-icon(checkbox-line, sm) {
     display: inline-block;
     @include margin-right(1v);
   }
@@ -123,7 +124,7 @@
  * Style d'un ensemble de champs
  */
 #{dse(fieldset)} {
-  position: relative;
+  @include relative;
   @include margin(0);
   @include padding(0);
   border: 0;
@@ -135,6 +136,7 @@
 
   &__legend {
     @include margin-bottom(4v);
+    @include text-style(md);
     @include font-weight(bold);
 
     + #{dse(hint-text)} {
@@ -143,26 +145,16 @@
   }
 
   &__content {
-    position: relative;
-
-    // + #{dse(error-text)} {
-    //   margin-top: space(2N);
-    // }
-
-    > #{dse-group(input)}:first-child {
-      @include margin-top(4v);
-    }
+    @include relative;
   }
 
   /**
    * Modificateur pour afficher les éléments en inline
    */
   &--inline {
-    .#{$prefix}--fieldset__content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-      justify-content: flex-start;
+    .#{$prefix}-fieldset__content {
+      @include display-flex(null, flex-end, flex-start, wrap);
+      @include margin(-3v 0);
     }
 
     #{dse-group(checkbox)} {
@@ -170,13 +162,17 @@
       @include margin-bottom(0);
 
       &:not(:last-child) {
-        margin-right: space(5v);
+        @include margin-right(5v);
+      }
+
+      &:last-child {
+        @include margin-bottom(0);
       }
     }
 
     #{dse-group(radio)} {
       display: inline-flex;
-      margin-bottom: 0;
+      @include margin-bottom(0);
 
       &:not(:last-child) {
         input[type="radio"] + label {
@@ -195,19 +191,6 @@
           @include margin-bottom(0);
         }
       }
-    }
-
-    #{dse(hint-text)} {
-      @include margin-y(1v);
-    }
-
-    #{dse(fieldset__legend)} {
-      @include margin-bottom(1v);
-    }
-
-    #{dse(error-text)},
-    #{dse(valid-text)} {
-      @include margin-top(-1v);
     }
   }
 

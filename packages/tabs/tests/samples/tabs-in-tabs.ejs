@@ -1,83 +1,23 @@
 <%
 
-let dataTabsInside = [{
-  tabs: 2,
-  starterId: 100
-},
-{
-  tabs: 2,
-  starterId: 103
-},
-{
-  tabs: 2,
-  starterId: 113
-},
-{
-  tabs: 2,
-  starterId: 123
-}];
+const data = { tabs: [] }
+
+for (let i = 0; i < 2; i++) {
+    const subdata = { tabs: [] };
+
+    for (let j = 0; j < 3 - i; j++) {
+      subdata.tabs[j] = {
+        content: include('./tabs-default', { tabs:2 + j, repeat: (Math.random() * 3) | 0}),
+        label: `Nested Tab s${j}`
+        }
+    }
+
+    data.tabs[i] = {
+      content: include('./tabs-default', subdata),
+      label: `Main Tab ${i}`
+    }
+}
 
 %>
 
-
-
-<%#
-# paramètres Tabs
-
-* tabs (integer, required)
-
-* icon (string, optionnal) : nom de l'icone dans le bouton
-
-%>
-
-<%
-let tabsClasses = locals.classes || [];
-let tabsAttrs = locals.attributes || {};
-let activeClass = '';
-tabsClasses.push(prefix + '-tabs');
-
-if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
-
-%>
-
-
-<div <%- includeClasses(tabsClasses) %> <%- includeAttrs(tabsAttrs); %>>
-    <ul class="<%= prefix + '-tabs__list' %>" role="tablist">
-        <% for (let i = 0; i < locals.tabs; i++) { %>
-        <% let activeClass = i === 0 %>
-        <li>
-            <button class="<%= prefix + '-tabs__tab' %>" aria-selected="<%= activeClass %>"
-                tabindex="<%= activeClass ? '0' : '-1' %>" aria-controls="tabpanel-<%= (i + locals.starterId) %>"
-                role="tab">intitulé de l'onglet</button>
-            <div id="tabpanel-<%= (i + locals.starterId) %>" class="<%= prefix + '-tabs__panel' %>" role="tabpanel"
-                tabindex="0">
-                <!-- données de test -->
-                <div>
-
-                    <div <%- includeClasses(tabsClasses) %> <%- includeAttrs(tabsAttrs); %>>
-                        <ul class="<%= prefix + '-tabs__list' %>" role="tablist">
-                            <% for (let i = 0; i < locals.tabs; i++) { %>
-                            <% let activeClass = i === 0 %>
-                            <li>
-                                <button class="<%= prefix + '-tabs__tab' %>" aria-selected="<%= activeClass %>"
-                                    tabindex="<%= activeClass ? '0' : '-1' %>"
-                                    aria-controls="tabpanel-<%= (i + locals.starterId) %>" role="tab">intitulé de
-                                    l'onglet</button>
-                                <div id="tabpanel-<%= (i + locals.starterId) %>" class="<%= prefix + '-tabs__panel' %>"
-                                    role="tabpanel" tabindex="0">
-                                    <!-- données de test -->
-                                    <div>
-                                        <%- include('./tabs-default', dataTabsInside[i]) %>
-                                    </div>
-                                </div>
-                            </li>
-                            <% } %>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </li>
-        <% } %>
-    </ul>
-</div>
+<%- include('./tabs-default', data); %>

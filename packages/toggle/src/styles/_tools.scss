@@ -3,9 +3,15 @@
 /// @group toggle
 ////
 
-/*
- * Mixin pour gérer les styles quand le toggle est inactif
- */
+/// Mixin pour gérer les styles quand le toggle est inactif, au niveau de l'input, du label
+/// et de ses pseudos elements before et after
+///
+/// @access public
+///
+/// @example scss - On ajoute un style disabled sur l’input, le label et ses pseudo-elements
+///   .foo {
+///     @include disabled-toggle-choice();
+///   }
 @mixin disabled-toggle-choice() {
   @at-root #{selector_unify(&, input)} {
     @include disabled(true, false, false) {
@@ -16,7 +22,7 @@
       @include disabled-colors(false, false);
     }
     @include disabled(true, false, false, '+ label::before') {
-      &::before {
+      @include before {
         @include disabled-colors(false, true);
       }
       @content;

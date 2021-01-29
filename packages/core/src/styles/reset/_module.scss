@@ -21,7 +21,7 @@
     @include scheme-body;
     @include margin(0);
     @include padding(0);
-    @include line-height(normal);
+    @include text-style(md);
   }
 
   @import '../prose/module/headings';

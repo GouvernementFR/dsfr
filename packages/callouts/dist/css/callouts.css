@@ -19,9 +19,6 @@
   /**
    * Si une icône est présente, on rajoute du padding à partir du breakpoint md
    */
-  /**
-   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
-   */
   box-shadow: inset 0.25rem 0 0 0 var(--scheme-border);
   /**
    * Ajout de marge quand on inclut un bouton (optionnel)
@@ -43,21 +40,23 @@
   @media (min-width: 48em) {
     .rf-callout[class^="rf-fi-"], .rf-callout[class*=" rf-fi-"] {
       padding: 3.5rem 3rem 2.5rem; } }
-  .rf-callout__title {
+  :root .rf-callout__title {
     font-size: 1.375rem;
-    line-height: 1.375;
+    line-height: 1.75rem;
     color: var(--g800);
     margin: 0 0 0.5rem; }
-  .rf-callout__text {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0; }
-  .rf-callout__text--lg {
-    font-size: 1.125rem;
-    line-height: 1.5; }
     @media (min-width: 48em) {
-      .rf-callout__text--lg {
-        font-size: 1.25rem; } }
+      :root .rf-callout__title {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
+  :root .rf-callout__text {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin: 0; }
+    @media (min-width: 48em) {
+      :root .rf-callout__text {
+        font-size: 1.25rem;
+        line-height: 2rem; } }
   .rf-callout--scheme-soft-brown {
     background-color: var(--b300);
     --scheme-border: var(--b500); }

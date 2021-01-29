@@ -1,26 +1,25 @@
-import { Tab } from './tab';
-import { Disclosure, DisclosuresGroup, KeyListener } from '@gouvfr/utilities/src/scripts';
-import { TAB_CLASSNAME, PANEL_SELECTOR, TABS_SELECTOR, TABS_LIST_SELECTOR } from './tabs-constants';
+import { DisclosuresGroup, KeyListener, Renderer } from '@gouvfr/core/src/scripts';
+import { TAB_CLASSNAME, TABS_LIST_SELECTOR, TABS_SELECTOR } from './tabs-constants';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
-* Correspond a un objet Tabs avec plusieurs tab-button & Tab (panel)
+* Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
 class TabsGroup extends DisclosuresGroup {
-  constructor (wrapper) {
-    super();
-    this._index = -1;
-    this.element = wrapper;
+  constructor (id, element) {
+    super(id, element);
+    this.list = element.querySelector(`.${TABS_LIST_SELECTOR}`);
 
-    this.build(wrapper, TABS_SELECTOR, PANEL_SELECTOR, Disclosure.SELECT);
-
-    if (this.current === null) this.index = 0;
+    element.addEventListener('transitionend', this._transitionend.bind(this));
 
     this._attachEvents();
+    Renderer.add(this.render.bind(this));
   }
 
-  disclosureFactory (element, type, selector) {
-    return new Tab(element, type, selector);
+  static get selector () { return TABS_SELECTOR; }
+
+  _transitionend (e) {
+    this.element.style.transition = 'none';
   }
 
   _attachEvents () {
@@ -37,11 +36,13 @@ class TabsGroup extends DisclosuresGroup {
    */
   arrowRightPress () {
     if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
-      if (this.index < this.disclosures.length - 1) {
+      if (this.index < this.length - 1) {
         this.index++;
       } else {
         this.index = 0;
       }
+
+      this.focus();
     }
   };
 
@@ -54,8 +55,10 @@ class TabsGroup extends DisclosuresGroup {
       if (this.index > 0) {
         this.index--;
       } else {
-        this.index = this.disclosures.length - 1;
+        this.index = this.length - 1;
       }
+
+      this.focus();
     }
   };
 
@@ -65,6 +68,7 @@ class TabsGroup extends DisclosuresGroup {
   homePress () {
     if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
       this.index = 0;
+      this.focus();
     }
   };
 
@@ -73,44 +77,37 @@ class TabsGroup extends DisclosuresGroup {
    */
   endPress () {
     if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
-      this.index = this.disclosures.length - 1;
+      this.index = this.length - 1;
+      this.focus();
     }
   };
 
-  get index () { return this._index; }
-
-  set index (value) {
-    if (value < 0 || value >= this.disclosures.length || this._index === value) return;
-    this._index = value;
-    this.current = this.disclosures[value];
-    this.setPanelHeight();
+  focus () {
+    if (this.current) this.current.focus();
   }
 
-  get current () { return super.current; }
-
-  set current (controller) {
-    super.current = controller;
-    this._index = this.disclosures.indexOf(controller);
-    this.setPanelHeight();
+  apply () {
+    for (let i = 0; i < this._index; i++) this.members[i].element.style.transform = 'translateX(-100%)';
+    this.current.element.style.transform = '';
+    for (let i = this._index + 1; i < this.length; i++) this.members[i].element.style.transform = 'translateX(100%)';
+    this.element.style.transition = '';
   }
 
-  /**
-   * Adapte la hauteur du panel en ajoutant un margin-bottom sous la liste
-   * Remonte sur le parent en cas de tabs dans tabs
-   */
-  setPanelHeight () {
-    const offsetFocus = 4;
-    const panelHeight = this.current.element.offsetHeight - offsetFocus;
-    this.element.querySelector(TABS_LIST_SELECTOR).style.marginBottom = panelHeight + 'px';
+  add (tab) {
+    super.add(tab);
+    if (this.length === 1 || tab.disclosed) this.current = tab;
+    else {
+      const index = this.members.indexOf(tab);
+      if (this._index > -1 && this._index !== index) tab.element.style.transform = `translateX(${index < this._index ? -100 : 100}%)`;
+    }
+  }
 
-    // const nestedParent = this.element.parentNode.closest(TABS_SELECTOR);
-    // if (nestedParent && nestedParent !== this.element) {
-    //   const currentParent = nestedParent.querySelector(PANEL_SELECTOR + '--' + Disclosure.SELECT);
-    //   const parentHeight = currentParent.offsetHeight;
-    //   console.log(parentHeight);
-    //   nestedParent.querySelector(TABS_LIST_SELECTOR).style.marginBottom = parentHeight + 'px';
-
-    // }
+  render () {
+    if (this.current === null) return;
+    const paneHeight = Math.round(this.current.element.offsetHeight);
+    if (this.panelHeight === paneHeight) return;
+    this.panelHeight = paneHeight;
+    this.element.style.height = (this.panelHeight + this.list.offsetHeight) + 'px';
   }
 }
 

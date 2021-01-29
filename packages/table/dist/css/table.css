@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
   max-width: 100%;
+  margin-bottom: 2.5rem;
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
   /*
   * Cache la caption
@@ -28,11 +29,15 @@
     border-spacing: 0; }
   .rf-table caption {
     font-size: 1.375rem;
-    line-height: 1.375;
+    line-height: 1.75rem;
+    margin: 0 0 1rem;
     color: var(--g800);
     font-weight: bold;
-    text-align: left;
-    padding: 1rem 0; }
+    text-align: left; }
+    @media (min-width: 48em) {
+      .rf-table caption {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
   .rf-table td,
   .rf-table th {
     text-align: left;
@@ -40,7 +45,8 @@
     display: table-cell;
     border: 0;
     padding: 0.75rem;
-    font-size: 0.875rem; }
+    font-size: 0.875rem;
+    line-height: 1.5rem; }
     @media (min-width: 48em) {
       .rf-table td,
       .rf-table th {
@@ -75,6 +81,8 @@
     /* added line */
     border: 0; }
   .rf-table--caption-bottom caption {
+    margin-bottom: 0;
+    margin-top: 1rem;
     caption-side: bottom; }
   .rf-table--no-scroll {
     min-width: auto; }
@@ -102,9 +110,9 @@
         content: "";
         position: absolute;
         top: 0;
+        right: 0;
         bottom: 0;
         left: 0;
-        right: 0;
         z-index: 1;
         opacity: 1;
         pointer-events: none;

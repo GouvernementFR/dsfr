@@ -12,6 +12,7 @@
 ///     font-size: font-size(24);
 ///   }
 @function font-size($size: 16) {
+  @debug 'la fonction font-size est dépréciée.';
   @return px-rem(map-get($type-scale, $size));
 }
 
@@ -26,6 +27,7 @@
 ///     @include font-size(24);
 ///   }
 @mixin font-size($size) {
+  @debug 'la mixin font-size est dépréciée.';
   font-size: font-size($size);
 }
 
@@ -39,6 +41,7 @@
 ///   }
 
 @function line-height($scale: normal) {
+  @debug 'la fonction line-height est dépréciée.';
   @return map-get($line-height-scale, $scale);
 }
 
@@ -52,5 +55,6 @@
 ///   }
 
 @mixin line-height($value: normal) {
+  @debug 'la mixin line-height est dépréciée.';
   line-height: line-height($value);
 }

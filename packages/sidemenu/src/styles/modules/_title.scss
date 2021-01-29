@@ -1,0 +1,23 @@
+////
+/// Sidemenu Module : title
+/// @group sidemenu
+////
+
+/**
+* Titre facultatif
+ */
+@include title {
+  @include margin(0);
+  @include padding(4v 0);
+  @include text-style(lg);
+  font-weight: font-weight(bold);
+  @include scheme-element-text-color(g800);
+  @include scheme-element-bg-color(t-plain, true);
+  @include scheme-element-border-color(g300, true, bottom);
+
+  @include respond-from(md) {
+    @include margin(0 0 6v);
+    @include padding(0);
+    border: 0;
+  }
+}

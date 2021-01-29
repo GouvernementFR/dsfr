@@ -3,59 +3,71 @@
 /// @group Footer
 ////
 
+/**
+ * La partie "content" représente les informations sous forme de texte rajoutées dans le footer
+ * ainsi que les éventuels liens simples
+ */
+
 &__content {
-  display: flex;
-  flex-wrap: wrap;
+  @include display-flex(null, null, null, wrap);
   flex-basis: 100%;
-  margin-top: space(3w);
+  @include margin-top(6v);
 
   @include respond-from(md) {
-    margin-top: 0;
+    @include margin-top(0);
     flex-basis: calc(100% - (100% / 3));
   }
 
+  @include respond-from(lg) {
+    flex-basis: calc(100% - (100% / 2));
+  }
+
+  /**
+   * Si un logo opérateur est présent, on passe le content à 50% de la largeur disponible
+   */
   #{dse(footer__body--operator)} & {
-    margin-top: space(3w);
+    @include margin-top(6v);
 
     @include respond-from(lg) {
-      margin-top: 0;
+      @include margin-top(0);
       flex-basis: 50%;
     }
   }
 }
 
+/**
+ * Contenu texte simple
+ */
 &__content-desc {
-  margin: 0 0 space(2w);
-  line-height: line-height(normal);
+  @include specify(p) {
+    @include margin(0 0 2v);
+    @include size(100%);
+    @include text-style(sm);
+  }
 }
 
+/**
+ * Liste des liens situés en dessous de la partie texte
+ */
 &__content-list {
   @extend %list-reset;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  margin-bottom: -(space(2w));
+  @include display-flex(row);
+  align-self: center;
+  // @include margin-bottom(-4v);
+  // @include margin-bottom(4v, md);
+  flex-wrap: wrap;
 
   > li {
-    margin-right: space(3w);
-    margin-top: space(1w);
+    @include margin-right(4v);
+    @include margin-right(6v, sm);
+    @include margin-top(2v);
+    @include margin-bottom(2v);
 
-    &::before {
-      content: none;
-    }
+    @include before(null, none);
 
     &:last-child {
-      margin-right: 0;
+      @include margin-right(0);
     }
-
-    @include respond-from(sm) {
-      margin-right: space(7w);
-    }
-  }
-
-  @include respond-from(sm) {
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 
@@ -64,6 +76,6 @@
   @include override-reset-link-style;
   @include scheme-element-text-color(g800);
   display: inline-flex;
-  font-weight: font-weight(bold);
-  //box-shadow: none;
+  font-weight: bold;
+  @include text-style(sm);
 }

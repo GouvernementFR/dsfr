@@ -5,16 +5,25 @@
 
 #{dse(footer)} {
   @extend %default-text-color;
-  width: 100%;
+  @include size(100%);
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
   @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
   @include padding-top(10v);
-  line-height: line-height();
 
-  &__body {
-    @include display-flex(row, null, null, wrap);
+  @include body {
+    @include display-flex(row, center, null, wrap);
+    @include margin-bottom(4v);
+    @include margin-bottom(6v, md);
+
+    & + #{dse(footer__bottom)} {
+      @include margin-top(4v);
+    }
   }
 
+  /**
+   * Conteneur du bloc marque, avec le logo principal et éventuellement
+   * un logo opérateur
+   */
   &__brand {
     @include display-flex(row, center);
     flex-basis: 100%;
@@ -44,12 +53,11 @@
      * Styles quand un logo opérateur est présent
      */
     #{dse(footer__body--operator)} & {
-      flex-basis: 100%;
+      // flex-basis: 100%;
 
-      #{dse(footer__link)} + #{dse($prefix)} {
-
+      #{dse(footer__brand-link)} + #{dse(footer__brand-link)} {
         #{dse(footer__logo)} {
-          width: auto;
+          @include size(auto);
           min-width: initial;
           max-height: 100px;
         }
@@ -68,15 +76,15 @@
           max-width: 100%;
         }
       }
-
-      @include respond-from(lg) {
-        flex-basis: 50%;
-      }
     }
 
     @include respond-from(md) {
       flex-basis: calc(100% / 3);
-      padding-right: space(2w);
+      @include padding-right(4v);
+    }
+
+    @include respond-from(lg) {
+      flex-basis: 50%;
     }
   }
 
@@ -84,8 +92,7 @@
    * On fixe une largeur maximale pour le logo opérateur
    */
   &__logo {
-    width: 200px;
-    height: auto;
+    @include size(200px, auto);
   }
 
   @import 'modules/content';

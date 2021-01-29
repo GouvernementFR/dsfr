@@ -28,9 +28,9 @@
 
 .rf-content-media__transcription .rf-link {
   font-size: 0.875rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
   min-height: 2rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 1rem; }
 
 .rf-content-media__transcription .rf-link {
@@ -63,17 +63,16 @@
     position: relative; }
     .rf-content-media__img::before {
       display: block;
-      content: '';
+      content: "";
       width: 100%;
       padding-bottom: 56.25%; }
   .rf-content-media__caption, .rf-content-media__transcription {
     width: 100%;
-    text-align: right;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    text-align: right; }
   .rf-content-media__caption {
     font-size: 0.75rem;
-    line-height: 1.5;
-    color: var(--g600); }
+    line-height: 1.25rem; }
   .rf-content-media__transcription .rf-link {
     max-width: none;
     max-height: none; }

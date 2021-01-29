@@ -10,34 +10,29 @@
   flex-direction: row;
 
   #{dse(tile__img-wrap)} {
-    width: space(6w);
-    height: space(6w);
-    margin: auto 0 auto space(3w);
+    @include size(12v, 12v);
+    @include margin(auto 0 auto 6v);
 
     + #{dse(tile__body)} {
-      min-height: space(6w);
+      min-height: space(12v);
       text-align: left;
 
       @include respond-from(md) {
-        min-height: space(10w);
+        min-height: space(20v);
       }
     }
 
     @include respond-from(md) {
-      width: space(10w);
-      height: space(10w);
-      margin: auto 0 auto space(4w);
+      @include size(20v, 20v);
+      @include margin(auto 0 auto 8v);
     }
   }
 
   #{dse(tile__body)} {
     align-items: flex-start;
-    padding: 0;
-    margin: space(3w);
-
-    @include respond-from(md) {
-      margin: space(4w);
-    }
+    @include padding(0);
+    @include margin(6v);
+    @include margin(8v, md);
   }
 }
 
@@ -48,12 +43,11 @@
   flex-direction: row;
 
   #{dse(tile__img-wrap)} {
-    width: space(6w);
-    height: space(6w);
-    margin: auto 0 auto space(3w);
+    @include size(12v, 12v);
+    @include margin(auto 0 auto 6v);
 
     + #{dse(tile__body)} {
-      min-height: space(6w);
+      min-height: space(12v);
 
       @include respond-from(md) {
         min-height: initial;
@@ -62,22 +56,21 @@
     }
 
     @include respond-from(md) {
-      width: space(10w);
-      height: space(10w);
-      margin: space(4w) auto 0;
+      @include size(20v, 20v);
+      @include margin(8v auto 0);
     }
   }
 
   #{dse(tile__body)} {
     align-items: flex-start;
-    padding: 0;
-    margin: space(3w);
+    @include padding(0);
+    @include margin(6v);
     text-align: left;
 
     @include respond-from(md) {
       align-items: center;
-      padding: space(3w);
-      margin: 0;
+      @include padding(6v);
+      @include margin(0);
       text-align: center;
     }
   }
@@ -94,35 +87,34 @@
   flex-direction: column;
 
   #{dse(tile__img-wrap)} {
-    width: space(10w);
-    height: space(10w);
-    margin: space(4w) auto 0;
+    @include size(20v, 20v);
+    @include margin(8v auto 0);
 
     + #{dse(tile__body)} {
       min-height: initial;
 
       @include respond-from(md) {
-        padding: 0;
-        min-height: space(10w);
-        margin: space(4w);
+        @include padding(0);
+        @include margin(8v);
+        min-height: space(20v);
       }
     }
 
     @include respond-from(md) {
-      margin: auto 0 auto space(4w);
+      @include margin(auto 0 auto 8v);
     }
   }
 
   #{dse(tile__body)} {
     align-items: center;
-    padding: space(2w);
-    margin: 0;
+    @include padding(4v);
+    @include margin(0);
     text-align: center;
 
     @include respond-from(md) {
       align-items: flex-start;
-      padding: 0;
-      margin: space(4w);
+      @include padding(0);
+      @include margin(8v);
       text-align: left;
     }
   }

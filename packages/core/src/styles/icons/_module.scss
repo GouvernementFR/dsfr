@@ -21,7 +21,7 @@
     @if $size != md {
       &--#{$size} {
         @include before {
-          font-size: icon-size($size);
+          font-size: #{icon-size($size)};
         }
       }
     }

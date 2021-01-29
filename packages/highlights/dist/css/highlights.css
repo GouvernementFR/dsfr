@@ -5,12 +5,12 @@
   padding-left: 1rem;
   border-left: 0.25rem solid var(--bf500);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
   /**
-   * Modificateur pour la taille du texte (lg: 18px/1.25rem)
+   * Modificateur pour la taille du texte lg
    */
   /**
-   * Modificateur pour la taille du texte (sm: 14px/0.875rem)
+   * Modificateur pour la taille du texte sm
    */ }
   @media (min-width: 48em) {
     .rf-highlight {
@@ -18,13 +18,14 @@
       margin-left: 2rem; } }
   .rf-highlight--lg {
     font-size: 1.125rem;
-    line-height: 1.5; }
+    line-height: 1.75rem; }
     @media (min-width: 48em) {
       .rf-highlight--lg {
-        font-size: 1.25rem; } }
+        font-size: 1.25rem;
+        line-height: 2rem; } }
   .rf-highlight--sm {
     font-size: 0.875rem;
-    line-height: 1.5; }
+    line-height: 1.5rem; }
 
 
 /*# sourceMappingURL=highlights.css.map*/

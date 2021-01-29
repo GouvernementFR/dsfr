@@ -1,0 +1,123 @@
+////
+/// Core Settings : Typography title
+/// @group core
+////
+
+$title-styles: (
+  18: (
+    line-height: 6v
+  ),
+  20: (
+    line-height: 7v
+  ),
+  22: (
+    line-height: 7v
+  ),
+  24: (
+    line-height: 8v
+  ),
+  28: (
+    line-height: 9v
+  ),
+  32: (
+    line-height: 10v
+  ),
+  40: (
+    line-height: 12v
+  ),
+  48: (
+    line-height: 14v
+  ),
+  56: (
+    line-height: 16v
+  ),
+  64: (
+    line-height: 18v
+  ),
+  72: (
+    line-height: 20v
+  ),
+  80: (
+    line-height: 22v
+  )
+);
+
+$title-settings: (
+  h6: (
+    breakpoints: (
+      first: 18,
+      md: 20
+    ),
+    margin: 0 0 4v
+  ),
+  h5: (
+    breakpoints: (
+      first: 20,
+      md: 22
+    ),
+    margin: 0 0 4v
+  ),
+  h4: (
+    breakpoints: (
+      first: 22,
+      md: 24
+    ),
+    margin: 0 0 4v
+  ),
+  h3: (
+    breakpoints: (
+      first: 24,
+      md: 28
+    ),
+    margin: 0 0 4v
+  ),
+  h2: (
+    breakpoints: (
+      first: 28,
+      md: 32
+    ),
+    margin: 0 0 4v
+  ),
+  h1: (
+    breakpoints: (
+      first: 32,
+      md: 40
+    ),
+    margin: 0 0 4v
+  ),
+  xs: (
+    breakpoints: (
+      first: 40,
+      md: 48
+    ),
+    margin: 0 0 8v
+  ),
+  sm: (
+    breakpoints: (
+      first: 48,
+      md: 56
+    ),
+    margin: 0 0 8v
+  ),
+  md: (
+    breakpoints: (
+      first: 56,
+      md: 64
+    ),
+    margin: 0 0 8v
+  ),
+  lg: (
+    breakpoints: (
+      first: 64,
+      md: 72
+    ),
+    margin: 0 0 8v
+  ),
+  xl: (
+    breakpoints: (
+      first: 72,
+      md: 80
+    ),
+    margin: 0 0 8v
+  )
+);

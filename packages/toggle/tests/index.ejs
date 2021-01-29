@@ -53,10 +53,10 @@ for (let i = 0; i < samples.length; i++) {
   let sample = samples[i];
 %>
   <h4 class="<%= prefix %>-mt-8w"><%= sample.title %></h4>
-  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-6 <%= prefix %>-col-md-4 <%= prefix %>-col-lg-3">
+  <div class="<%= prefix %>-col-12 <%= prefix %>-col-sm-6 <%= prefix %>-col-md-4 <%= prefix %>-col-lg-3">
     <%- include(sample.sample, {toggleId : sample.toggleId + i, state: sample.state, border: sample.border, groupToggleId : sample.groupToggleId, left: sample.left, disabled: sample.disabled, hint: sample.hint}); %>
   </div>
-  <div class="<%= prefix %>-col-xs-12 <%= prefix %>-col-sm-9 <%= prefix %>-mt-3w">
+  <div class="<%= prefix %>-col-12 <%= prefix %>-col-sm-9 <%= prefix %>-mt-3w">
     <%- snippet(include(sample.sample, {toggleId : sample.toggleId + i, state: sample.state, border: sample.border, groupToggleId : sample.groupToggleId, left: sample.left, disabled: sample.disabled, hint: sample.hint})); %>
   </div>
 <% } %>

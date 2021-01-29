@@ -81,20 +81,33 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 45:
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(53);
+module.exports = __webpack_require__(11);
+
+
+/***/ }),
+
+/***/ 11:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 53:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./packages/ie11/_dist.scss
-var _dist = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./packages/ie11/src/scripts/object-fit-polyfill/object-fit-polyfill.js
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -122,7 +135,6 @@ var ObjectFitPolyfill = function ObjectFitPolyfill($selectors) {
 // CONCATENATED MODULE: ./packages/ie11/src/scripts/dist.js
 /* eslint-disable no-new */
 
-
 var count;
 
 function loaded() {
@@ -145,13 +157,6 @@ if (window.MSInputMethodContext && document.documentMode) {
     document.head.appendChild(script);
   }
 }
-
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ })
 

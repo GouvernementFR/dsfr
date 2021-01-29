@@ -8,9 +8,10 @@
 
 #{dse(table)} {
   @extend %default-text-color;
-  position: relative;
+  @include relative;
   overflow: hidden;
   max-width: 100%;
+  @include margin-bottom(10v);
 
   &:not(#{dse(table--no-scroll)}) {
     table {
@@ -23,12 +24,10 @@
   }
 
   caption {
-    font-size: 1.375rem;
-    line-height: 1.375;
-    color: var(--g800);
+    @include title-style(h4, true);
+    @include scheme-element-text-color(g800, true);
     font-weight: bold;
     text-align: left;
-    padding: space(2N) 0;
   }
 
   td,
@@ -37,12 +36,9 @@
     vertical-align: middle;
     display: table-cell;
     border: 0;
-    padding: space(1-5N);
-    font-size: font-size(14);
-
-    @include respond-from(md) {
-      padding: space(2N);
-    }
+    @include padding(3v);
+    @include padding(4v, md);
+    @include text-style(sm);
   }
 
   th {
@@ -99,6 +95,8 @@
   */
   &--caption-bottom {
     caption {
+      @include margin-bottom(0);
+      @include margin-top(4v);
       caption-side: bottom;
     }
   }

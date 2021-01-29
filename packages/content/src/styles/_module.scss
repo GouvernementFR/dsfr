@@ -5,31 +5,31 @@
 
 #{dse(content-media)} {
   @extend %default-text-color;
-  width: 100%;
-  margin: space(5N) 0;
+  @include size(100%);
+  @include margin(10v 0);
   @include display-flex(column, center);
 
   &__img {
-    width: 100%;
-    position: relative;
+    @include size(100%);
+    @include relative;
 
     //le padding permettant de définir le ratio d'aspect est appliqué sur un pseudo-élément before qui hérite de la modification de taille --lg et --sm de l'élément img ou vid
     @include aspect-ratio();
-  }
 
-  &__img img {
-    @extend %media-overlay-cover;
+    img {
+      @extend %media-overlay-cover;
+    }
   }
 
   &__caption,
   &__transcription {
-    width: 100%;
+    @include size(100%);
+    @include margin-top(2v);
     text-align: right;
-    margin-top: space(1N);
   }
 
   &__caption {
-    @include text-styles(xs);
+    @include text-style(xs);
   }
 
   &__transcription {

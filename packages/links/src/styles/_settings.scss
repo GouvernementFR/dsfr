@@ -7,30 +7,27 @@ $links-settings:(
   sizes: (
     sm: (
       font-size: 14,
-      line-height: 4v,
       min-height: 8v,
       padding-x: 3v,
-      icon: md,
+      icon: sm,
       icon-margin-x: 2v,
-      icon-only: md,
+      icon-only: sm,
     ),
     md: (
       font-size: 16,
-      line-height: 5v,
       min-height: 8v,
       padding-x: 3v,
-      icon: md,
+      icon: sm,
       icon-margin-x: 2v,
-      icon-only: lg,
+      icon-only: md,
     ),
     lg: (
       font-size: 20,
-      line-height: 6v,
       min-height: 12v,
       padding-x: 4v,
-      icon: lg,
+      icon: md,
       icon-margin-x: 2v,
-      icon-only: xl,
+      icon-only: lg,
     )
   ),
   places: only left right

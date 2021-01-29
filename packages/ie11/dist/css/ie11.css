@@ -1,10 +1,3 @@
-@charset "UTF-8";
-/**
- * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
- */
-/**
- * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
- */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /**
   * fix Navigation

@@ -1,0 +1,19 @@
+////
+/// Core Module : Grid col
+/// @group core
+////
+
+#{dse(col)} {
+  // alignment
+  &--top {
+    align-self: flex-start;
+  }
+
+  &--bottom {
+    align-self: flex-end;
+  }
+
+  &--center {
+    align-self: center;
+  }
+}

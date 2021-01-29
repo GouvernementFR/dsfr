@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 import '@gouvfr/schemes/src/scripts/dist';
-import '@gouvfr/utilities/src/scripts/dist';
+import '@gouvfr/core/src/scripts/dist';
 import '@gouvfr/accordions/src/scripts/dist';
 
 const schemeAttr = 'data-${prefix}-theme';

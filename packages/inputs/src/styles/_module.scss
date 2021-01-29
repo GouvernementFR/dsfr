@@ -5,13 +5,11 @@
 
 #{dse(input)} {
   display: block;
-  width: 100%;
+  @include size(100%);
   border: 0;
-  border-radius: space(0-5N) space(0-5N) 0 0;
-  font-size: font-size(14);
-  line-height: 1.5rem;
-  font-family: $font-family-sans;
-  padding: space(1N) space(2N);
+  border-radius: space(1v) space(1v) 0 0;
+  @include text-style(md);
+  @include padding(2v 4v);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -23,12 +21,19 @@
 
   @include placeholder {
     @include scheme-element-text-color(g600-g400, true);
+    opacity: 1;
   }
 
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
   &--valid {
     @include scheme-element-box-shadow-color(success, false, inset 0 -2px 0 0 $COLOR);
   }
 
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
   &--error,
   &:invalid {
     @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
@@ -36,10 +41,16 @@
 
   @include disabled-form-field(input);
 
+  /**
+   * Hauteur max quand l'input n'est pas un textarea
+   */
   &:not(textarea) {
     max-height: 2.5rem;
   }
 
+  /**
+   * Override pour les inputs de type date et number
+   */
   &::-webkit-inner-spin-button,
   &::-webkit-calendar-picker-indicator {
     display: none;
@@ -54,18 +65,15 @@
 }
 
 #{dse(input-wrap)} {
-  position: relative;
+  @include relative;
   display: block;
 
-  @include custom-icons() {
-    position: absolute;
-    right: space(1-5N);
-    top: space(1-5N);
-    bottom: space(1-5N);
-    margin: auto;
+  @include custom-icons(sm) {
+    @include absolute(3v, 3v, 3v);
+    @include margin(auto);
   }
 
   #{dse(input)} {
-    padding-right: space(5N);
+    @include padding-right(10v);
   }
 }

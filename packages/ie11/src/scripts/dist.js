@@ -1,7 +1,5 @@
 /* eslint-disable no-new */
 
-import '@gouvfr/ie11/_dist.scss';
-
 import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill';
 
 let count;

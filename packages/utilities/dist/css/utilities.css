@@ -625,6 +625,25 @@
 .rf-my-24v, .rf-my-12w {
   margin-bottom: 6rem !important; }
 
+.rf-m-auto {
+  margin: auto; }
+
+.rf-ml-auto,
+.rf-mx-auto {
+  margin-left: auto; }
+
+.rf-mr-auto,
+.rf-mx-auto {
+  margin-right: auto; }
+
+.rf-mt-auto,
+.rf-my-auto {
+  margin-top: auto; }
+
+.rf-mb-auto,
+.rf-my-auto {
+  margin-bottom: auto; }
+
 .rf-p-0 {
   padding: 0rem !important; }
 
@@ -1563,6 +1582,20 @@
   .rf-mb-md-24v, .rf-mb-md-12w,
   .rf-my-md-24v, .rf-my-md-12w {
     margin-bottom: 6rem !important; }
+  .rf-m-md-auto {
+    margin: auto; }
+  .rf-ml-md-auto,
+  .rf-mx-md-auto {
+    margin-left: auto; }
+  .rf-mr-md-auto,
+  .rf-mx-md-auto {
+    margin-right: auto; }
+  .rf-mt-md-auto,
+  .rf-my-md-auto {
+    margin-top: auto; }
+  .rf-mb-md-auto,
+  .rf-my-md-auto {
+    margin-bottom: auto; }
   .rf-p-md-0 {
     padding: 0rem !important; }
   .rf-pl-md-0,
@@ -1913,24 +1946,6 @@
   .rf-pb-md-24v, .rf-pb-md-12w,
   .rf-py-md-24v, .rf-py-md-12w {
     padding-bottom: 6rem !important; } }
-
-.rf-collapse {
-  overflow: hidden;
-  opacity: 0;
-  max-height: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, max-height 0.3s; }
-  .rf-collapse::before {
-    display: block;
-    content: '';
-    margin-top: -100vh;
-    transition: margin-top 0.3s; }
-  .rf-collapse--expanded {
-    opacity: 1;
-    max-height: 99999px;
-    visibility: visible; }
-    .rf-collapse--expanded::before {
-      margin-top: 0; }
 
 
 /*# sourceMappingURL=utilities.css.map*/

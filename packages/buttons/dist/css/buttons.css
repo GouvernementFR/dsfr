@@ -35,19 +35,19 @@ a.rf-btn {
 
 .rf-btn {
   font-size: 1rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   min-height: 2.5rem;
   padding: 0.5rem 1.5rem; }
 
 .rf-btn--sm {
   font-size: 0.875rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
   min-height: 2rem;
-  padding: 0.5rem 1rem; }
+  padding: 0.25rem 1rem; }
 
 .rf-btn--lg {
   font-size: 1.25rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   min-height: 3.5rem;
   padding: 0.75rem 2rem; }
 
@@ -91,17 +91,17 @@ a.rf-btn {
   margin-left: -0.25rem;
   margin-right: 0.5rem; }
 
-.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]::before {
   font-size: 1rem; }
 
-.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]::before {
   margin-left: -0.25rem;
   margin-right: 0.5rem; }
 
-.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]::before {
   font-size: 1.5rem; }
 
-.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]::before {
   margin-left: -0.375rem;
   margin-right: 0.5rem; }
 
@@ -113,17 +113,17 @@ a.rf-btn {
     margin-right: -0.25rem;
     margin-left: 0.5rem; }
 
-.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]::before {
   font-size: 1rem; }
 
-.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]::before {
   margin-right: -0.25rem;
   margin-left: 0.5rem; }
 
-.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]::before {
   font-size: 1.5rem; }
 
-.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]::before {
   margin-right: -0.375rem;
   margin-left: 0.5rem; }
 

@@ -10,40 +10,49 @@ input.rf-input[disabled], input.rf-input:disabled {
   text-transform: none;
   line-height: 1; }
 
-/**
- * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
- */
-/**
- * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
- */
 /* stylelint-disable */
 .rf-input {
   display: block;
   width: 100%;
   border: 0;
   border-radius: 0.25rem 0.25rem 0 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  font-family: "Marianne", arial, sans-serif;
   padding: 0.5rem 1rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   color: var(--g800);
   background-color: var(--g200);
-  box-shadow: inset 0 -2px 0 0 var(--g800); }
+  box-shadow: inset 0 -2px 0 0 var(--g800);
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+  /**
+   * Hauteur max quand l'input n'est pas un textarea
+   */
+  /**
+   * Override pour les inputs de type date et number
+   */ }
   .rf-input:focus {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
   .rf-input::-webkit-input-placeholder {
-    color: var(--g600-g400); }
+    color: var(--g600-g400);
+    opacity: 1; }
   .rf-input:-moz-placeholder {
-    color: var(--g600-g400); }
+    color: var(--g600-g400);
+    opacity: 1; }
   .rf-input::-moz-placeholder {
-    color: var(--g600-g400); }
+    color: var(--g600-g400);
+    opacity: 1; }
   .rf-input:-ms-input-placeholder {
-    color: var(--g600-g400); }
+    color: var(--g600-g400);
+    opacity: 1; }
   .rf-input--valid {
     box-shadow: inset 0 -2px 0 0 var(--success); }
   .rf-input--error, .rf-input:invalid {
@@ -69,8 +78,8 @@ input.rf-input[disabled], input.rf-input:disabled {
   .rf-input-wrap[class^="rf-fi-"]::before, .rf-input-wrap[class*=" rf-fi-"]::before {
     font-size: 1rem;
     position: absolute;
-    right: 0.75rem;
     top: 0.75rem;
+    right: 0.75rem;
     bottom: 0.75rem;
     margin: auto; }
   .rf-input-wrap .rf-input {

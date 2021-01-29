@@ -6,7 +6,7 @@
   content: ""; }
 
 .rf-valid-text::before {
-  content: ""; }
+  content: ""; }
 
 .rf-error-text::before, .rf-valid-text::before {
   font-family: icons !important;
@@ -16,12 +16,6 @@
   text-transform: none;
   line-height: 1; }
 
-/**
- * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
- */
-/**
- * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
- */
 .rf-select-group, .rf-input-group {
   /**
    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
@@ -36,7 +30,7 @@
     margin-bottom: 1.5rem; }
   .rf-select-group .rf-label .rf-hint-text, .rf-input-group .rf-label .rf-hint-text {
     margin-top: 0.25rem;
-    margin-bottom: 0.75rem; }
+    margin-bottom: 0.5rem; }
   .rf-select-group--valid .rf-label, .rf-input-group--valid .rf-label {
     color: var(--success); }
   .rf-select-group--error .rf-label, .rf-input-group--error .rf-label {
@@ -46,9 +40,8 @@
 
 .rf-label {
   display: block;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  font-family: "Marianne", arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
   color: var(--g800);
   /**
    * Modificateur au niveau du label pour appliquer un état d'erreur au label
@@ -67,9 +60,9 @@
   margin-top: 0;
   margin-bottom: 0; }
   .rf-hint-text, p.rf-hint-text {
+    color: var(--g600);
     font-size: 0.75rem;
-    line-height: 1.5;
-    color: var(--g600); }
+    line-height: 1.25rem; }
   .rf-hint-text + .rf-input,
   .rf-hint-text + .rf-input-wrap,
   .rf-hint-text + .rf-select {
@@ -81,14 +74,15 @@
 .rf-error-text {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-top: 0.5rem; }
+  align-items: center; }
   .rf-error-text, p.rf-error-text {
+    color: var(--error);
     font-size: 0.75rem;
-    line-height: 1.5;
-    color: var(--error); }
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0; }
   .rf-error-text::before {
-    font-size: 0.75rem;
+    font-size: 1rem;
     display: inline-block;
     margin-right: 0.25rem; }
 
@@ -98,14 +92,15 @@
 .rf-valid-text {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  margin-top: 0.5rem; }
+  align-items: center; }
   .rf-valid-text, p.rf-valid-text {
+    color: var(--success);
     font-size: 0.75rem;
-    line-height: 1.5;
-    color: var(--success); }
+    line-height: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0; }
   .rf-valid-text::before {
-    font-size: 0.75rem;
+    font-size: 1rem;
     display: inline-block;
     margin-right: 0.25rem; }
 
@@ -137,23 +132,26 @@
     margin-bottom: 1rem; }
   .rf-fieldset__legend {
     margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 700; }
     .rf-fieldset__legend + .rf-hint-text {
       margin-top: -0.5rem; }
   .rf-fieldset__content {
     position: relative; }
-    .rf-fieldset__content > .rf-input-group:first-child {
-      margin-top: 1rem; }
-  .rf-fieldset--inline .rf--fieldset__content {
+  .rf-fieldset--inline .rf-fieldset__content {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: flex-start; }
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: -0.75rem 0; }
   .rf-fieldset--inline .rf-checkbox-group {
     display: inline-flex;
     margin-bottom: 0; }
     .rf-fieldset--inline .rf-checkbox-group:not(:last-child) {
       margin-right: 1.25rem; }
+    .rf-fieldset--inline .rf-checkbox-group:last-child {
+      margin-bottom: 0; }
   .rf-fieldset--inline .rf-radio-group {
     display: inline-flex;
     margin-bottom: 0; }
@@ -163,14 +161,6 @@
       margin-top: 0; }
     .rf-fieldset--inline .rf-radio-group:last-child input[type="radio"] + label {
       margin-bottom: 0; }
-  .rf-fieldset--inline .rf-hint-text {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem; }
-  .rf-fieldset--inline .rf-fieldset__legend {
-    margin-bottom: 0.25rem; }
-  .rf-fieldset--inline .rf-error-text,
-  .rf-fieldset--inline .rf-valid-text {
-    margin-top: -0.25rem; }
   .rf-fieldset--error .rf-fieldset__content::before {
     content: "";
     position: absolute;

@@ -3,7 +3,6 @@ $icon-font-path: '/icons/font';
 
 @import '~@gouvfr/schemes/main';
 @import '~@gouvfr/core/main';
-@import '~@gouvfr/grid/main';
 @import '~@gouvfr/utilities/main';
 @import '~@gouvfr/forms/main';
 @import '~@gouvfr/checkboxes/main';
@@ -22,11 +21,11 @@ pre[class*="language-"] {
   left: 0;
   width: 100%;
   box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, 0.1), 0 -8px 16px -16px rgba(0, 0, 0, 0.32);
-  padding: 0.25rem 2rem;
+  @include padding(1v 8v);
 
   @include scheme-element-bg-color(w-g750);
 
   .#{$prefix}-form-group {
-    margin-bottom: 0;
+    @include margin-bottom(0);
   }
 }

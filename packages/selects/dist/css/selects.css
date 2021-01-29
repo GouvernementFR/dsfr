@@ -2,12 +2,6 @@
 select.rf-select[disabled], select.rf-select:disabled {
   cursor: not-allowed; }
 
-/**
- * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
- */
-/**
- * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
- */
 .rf-select {
   display: block;
   appearance: none;
@@ -16,10 +10,9 @@ select.rf-select[disabled], select.rf-select:disabled {
   width: 100%;
   border: 0;
   border-radius: 0.25rem 0.25rem 0 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5rem;
-  font-family: "Marianne", arial, sans-serif;
-  padding: 0.5rem 2rem 0.5rem 1rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
   background-repeat: no-repeat;
   background-position: calc(100% - 0.5rem) 50%;
   background-size: 1.5rem 1.5rem;
@@ -28,7 +21,16 @@ select.rf-select[disabled], select.rf-select:disabled {
   background-color: var(--g200);
   box-shadow: inset 0 -2px 0 0 var(--g800);
   --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%231e1e1e' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
-  background-image: var(--data-uri-svg); }
+  background-image: var(--data-uri-svg);
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+  /**
+   * Mixin pour gérer l'état disabled
+   */ }
   :root[data-rf-theme="dark"] .rf-select {
     --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%23fff' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>"); }
   [class*="rf-scheme-light"] .rf-select :root:not([data-rf-theme="dark"]) {
@@ -39,10 +41,10 @@ select.rf-select[disabled], select.rf-select:disabled {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
-  .rf-select--valid {
-    box-shadow: inset 0 -2px 0 0 var(--success); }
   .rf-select--error {
     box-shadow: inset 0 -2px 0 0 var(--error); }
+  .rf-select--valid {
+    box-shadow: inset 0 -2px 0 0 var(--success); }
   select.rf-select[disabled], select.rf-select:disabled {
     color: var(--g600-g400);
     box-shadow: inset 0 -2px 0 0 var(--g400);

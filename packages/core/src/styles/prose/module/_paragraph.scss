@@ -2,3 +2,7 @@
 /// Core Module : Prose paragraph
 /// @group core
 ////
+
+p {
+  @extend %text-md;
+}

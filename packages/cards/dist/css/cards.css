@@ -62,7 +62,7 @@
     width: 100%; }
     .rf-card__img::before {
       display: block;
-      content: '';
+      content: "";
       width: 100%;
       padding-bottom: 56.25%; }
     .rf-card__img img {
@@ -81,8 +81,8 @@
   .rf-card__detail {
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     color: var(--g600); }
   .rf-card__title {
     color: var(--g800);
@@ -90,16 +90,17 @@
     margin-top: 0;
     margin-bottom: 0.5rem; }
     :root .rf-card__title {
-      font-size: 1.25rem;
-      line-height: 1.375; }
+      font-size: 1.125rem;
+      line-height: 1.5rem; }
       @media (min-width: 48em) {
         :root .rf-card__title {
-          font-size: 1.5rem; } }
+          font-size: 1.25rem;
+          line-height: 1.75rem; } }
   .rf-card__desc {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 0.875rem;
-    line-height: 1.5; }
+    line-height: 1.5rem; }
   .rf-card__link {
     display: inline-flex;
     width: 100%;

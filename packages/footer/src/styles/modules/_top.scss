@@ -3,38 +3,46 @@
 /// @group Footer
 ////
 
+/**
+ * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
+ * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
+ */
+
 &__top {
-  display: flex;
+  @include display-flex(null);
   @include scheme-element-bg-color(beige, true);
-  margin: -(space(5w)) 0 space(5w);
-  padding: space(2w) 0;
+  @include margin(-10v 0 4v);
+  @include margin(-10v 0 10v, md);
+  @include padding(8v 0 4v);
 }
 
+/**
+ * Catégorie (optionnel)
+ */
 &__top-cat {
-  margin: 0 0 space(1w);
-  font-size: font-size(12);
+  @include margin(0 0 3v);
+  @include text-style(xs);
   font-weight: font-weight(bold);
-  text-align: center;
-
-  @include respond-from(sm) {
-    text-align: left;
-  }
+  text-align: left;
 }
 
+/**
+ * Style de la liste
+ */
 &__top-list {
   @extend %list-reset;
-  text-align: center;
-  margin: 0;
-
-  @include respond-from(sm) {
-    text-align: left;
-  }
+  @include margin(0);
 }
 
+/**
+ * Style du lien
+ */
 &__top-link {
+  display: block;
   @extend %a-reset;
   @include override-reset-link-style;
-  font-size: font-size(12);
+  @include text-style(xs);
+  @include margin-bottom(3v);
   @include force-over-reset {
     @include scheme-element-text-color(g600, true);
   }

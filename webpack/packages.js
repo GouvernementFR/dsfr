@@ -15,7 +15,8 @@ folders.forEach((folder) => {
         id: folder,
         name: pck.description,
         config: pck.config,
-        dependencies: pck.dependencies
+        dependencies: pck.dependencies,
+        level: pck.level
       });
     }
   } catch (err) {

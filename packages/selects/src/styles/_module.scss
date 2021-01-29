@@ -10,16 +10,14 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  width: 100%;
+  @include size(100%);
   border: 0;
-  border-radius: space(0-5N) space(0-5N) 0 0;
-  font-size: font-size(14);
-  line-height: 1.5rem;
-  font-family: $font-family-sans;
-  padding: space(1N) space(4N) space(1N) space(2N);
+  border-radius: space(1v) space(1v) 0 0;
+  @include text-style(md);
+  @include padding(2v 10v 2v 4v);
   background-repeat: no-repeat;
-  background-position: calc(100% - #{space(1N)}) 50%;
-  background-size: space(3N) space(3N);
+  background-position: calc(100% - #{space(2v)}) 50%;
+  background-size: space(6v) space(6v);
   cursor: pointer;
 
   @include scheme-element-text-color(g800, true);
@@ -28,14 +26,23 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
   @include scheme-element-data-uri-svg(g800, $svg, background-image);
   @include scheme-element-focus();
 
-  &--valid {
-    @include scheme-element-box-shadow-color(success,false,inset 0 -2px 0 0 $COLOR);
-  }
-
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
   &--error {
     @include scheme-element-box-shadow-color(error,false,inset 0 -2px 0 0 $COLOR);
   }
 
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+  &--valid {
+    @include scheme-element-box-shadow-color(success,false,inset 0 -2px 0 0 $COLOR);
+  }
+
+  /**
+   * Mixin pour gérer l'état disabled
+   */
   @include disabled-form-field(select) {
     @include scheme-element-data-uri-svg(get-disabled-color(border), $svg, background-image);
   }

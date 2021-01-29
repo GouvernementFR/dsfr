@@ -3,8 +3,10 @@
 /// @group core
 ////
 
-@each $heading, $variation in ($headings-settings) {
-  #{$heading} {
-    @extend %#{$heading};
+@each $title, $variation in ($title-settings) {
+  @if str-index(quote($title), 'h') == 1 {
+    #{$title} {
+      @extend %title-#{$title};
+    }
   }
 }

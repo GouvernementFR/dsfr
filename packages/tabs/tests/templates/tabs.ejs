@@ -11,34 +11,14 @@
 let tabsClasses = locals.classes || [];
 let tabsAttrs = locals.attributes || {};
 let activeClass = '';
-let btnClasses = [];
-let btnAttr = [];
 tabsClasses.push(prefix + '-tabs');
-btnClasses.push(prefix + '-tabs__tab');
 
 
 %>
 <div <%- includeClasses(tabsClasses) %> <%- includeAttrs(tabsAttrs); %> >
     <ul class="<%= prefix + '-tabs__list' %>" role="tablist">
-        <% for (let i = 0; i < locals.tabs; i++) { %>
-            <% let activeClass = i === 0 %>
-            <li>
-                <% btnAttr['aria-selected'] =  activeClass; %>
-                <% btnAttr['tabindex'] = activeClass ? '0' : '-1'; %>
-                <% btnAttr['aria-controls'] = 'tabpanel-' + (i + locals.starterId); %>
-                <% btnAttr['role'] = 'tab'; %>
-                <%- include('../../../buttons/tests/samples/button-default', {attributes: btnAttr, classes: btnClasses, icon: locals.icon, iconPlace:'left', sizes: locals.sizes}) %>
-                <div id="tabpanel-<%= (i + locals.starterId) %>" class="<%= prefix + '-tabs__panel' %>" role="tabpanel" tabindex="0" >
-                    <!-- données de test -->
-                    <div>
-                        <% for (let j = 0; j < (i+1); j++) { %>
-                            <a href="test" alt="">link test get focus on TAB</a>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore eligendi temporibus voluptatem
-                            numquam sint vero quod autem sunt illo, at sed explicabo nemo velit, est tenetur culpa nesciunt dignissimos quia?</p>
-                        <% } %>
-                    </div>
-                </div>
-            </li>
+        <% for (let i = 0; i < locals.tabs.length; i++) { %>
+            <%- include('./tab', {...tabs[i], isActive: i === 0}); %>
         <% } %>
     </ul>
 </div>

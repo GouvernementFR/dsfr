@@ -1,0 +1,81 @@
+////
+/// Navigation Module : Menu
+/// @group navigation
+////
+
+#{dse(menu)} {
+  @include z-index(menu, true);
+  @include margin(0 -4v);
+  @include padding(0 4v);
+  @include size(100%);
+  box-sizing: content-box;
+
+  @include respond-from(md) {
+    @include absolute(100%);
+    @include size(20rem);
+    @include margin(-1v -8v -8v);
+    @include padding(1v 8v 8v);
+    box-sizing: content-box;
+
+    @include after(block, '') {
+      @include absolute(0,0,0,0);
+      @include margin(1v 8v 8v);
+      @include z-index(under);
+      @include scheme-element-bg-color(w-g750, true);
+    }
+  }
+
+  @include list {
+    @extend %list-reset;
+    @include margin(0);
+    @include padding(2v 0 6v);
+    @include padding(0, md);
+  }
+
+  @include list-item {
+    @include relative;
+    @include margin(0);
+
+    &,
+    & > #{dse(link)} {
+      @include scheme-element-text-color(g800, true);
+      @include text-style(sm);
+      @include padding(3v 4v);
+      text-align: left;
+      box-shadow: none;
+
+      @include before(null,none);
+    }
+
+    & > #{dse(link)} {
+      display: block;
+      @include margin(-3v -4v);
+      border-radius: 0;
+      @include scheme-element-bg-color(t-plain, true, true); // override ?
+      @include scheme-element-focus();
+    }
+
+    @include respond-from(md) {
+      &:not(:last-child) {
+        @include after(null, '') {
+          @include absolute(null,0,0,0,null,1px);
+          @include margin(0 4v);
+          @include scheme-element-bg-color(g300, true);
+        }
+      }
+    }
+
+    &--active {
+      &,
+      & > #{dse(link)} {
+        @include scheme-element-text-color(bf500);
+      }
+
+      @include before(null, '') {
+        @include absolute(0,null,0,0,2px);
+        @include margin(4v 0);
+        background-color: currentColor;
+      }
+    }
+  }
+}

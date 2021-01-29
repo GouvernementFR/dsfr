@@ -26,7 +26,7 @@
   border: none;
   cursor: pointer; }
 
-.rf-accordion-group {
+.rf-accordions-group {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -59,7 +59,7 @@
   position: relative;
   border-top: 1px solid var(--g300);
   border-bottom: 1px solid var(--g300); }
-  .rf-accordion__title {
+  :root .rf-accordion__title {
     margin: 0; }
   .rf-accordion .rf-accordion__btn {
     max-width: none;
@@ -67,7 +67,8 @@
     color: var(--g700);
     background-color: var(--t-plain);
     width: 100%;
-    text-align: left; }
+    text-align: left;
+    padding: 0.75rem 0; }
     .rf-accordion a.rf-accordion__btn {
       box-shadow: none; }
       .rf-accordion a.rf-accordion__btn[target="_blank"]::after {
@@ -105,36 +106,24 @@
     @media (min-width: 48em) {
       .rf-accordion .rf-accordion__btn {
         padding: 0.75rem 1rem; } }
-  .rf-accordion__body {
-    overflow: hidden;
-    opacity: 0;
-    max-height: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, max-height 0.3s;
-    margin: 0 -0.25rem;
-    padding: 0 0.25rem; }
-    .rf-accordion__body::before {
-      display: block;
-      content: '';
-      margin-top: -100vh;
-      transition: margin-top 0.3s; }
-    .rf-accordion__body--expanded {
-      opacity: 1;
-      max-height: 99999px;
-      visibility: visible; }
-      .rf-accordion__body--expanded::before {
-        margin-top: 0; }
-  .rf-accordion__inner {
-    padding: 0.5rem 0 1.5rem; }
+  .rf-accordion .rf-collapse {
+    transition: visibility 0.3s, padding 0.3s; }
     @media (min-width: 48em) {
-      .rf-accordion__inner {
-        padding: 0.5rem 1rem 2rem; } }
-  .rf-accordion-group .rf-accordion {
-    border-bottom: 0; }
-  .rf-accordion-group__item:last-child .rf-accordion {
-    border-bottom: 1px solid var(--g300); }
-  .rf-accordion-group__item::before {
-    content: none; }
+      .rf-accordion .rf-collapse {
+        margin: 0 -0.25rem; } }
+    @media (min-width: 48em) {
+      .rf-accordion .rf-collapse {
+        padding-left: 1rem;
+        padding-right: 1rem; } }
+    .rf-accordion .rf-collapse--expanded {
+      padding-top: 1rem;
+      padding-bottom: 1.5rem; }
+
+.rf-accordions-group .rf-accordion {
+  border-bottom: 0; }
+
+.rf-accordions-group li:last-child .rf-accordion {
+  border-bottom: 1px solid var(--g300); }
 
 
 /*# sourceMappingURL=accordions.css.map*/

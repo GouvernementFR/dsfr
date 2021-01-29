@@ -17,29 +17,28 @@
   .rf-skiplinks:focus-within {
     position: relative;
     transform: translateY(0); }
-
-.rf-skiplinks__list {
-  display: flex;
-  flex-direction: column;
-  margin: 0 -1rem -1rem; }
-  .rf-skiplinks__list > li {
-    margin: 0 1rem 0.25rem; }
-    .rf-skiplinks__list > li::before {
-      content: none; }
-    .rf-skiplinks__list > li .rf-link {
-      max-width: none;
-      max-height: none; }
-    @media (min-width: 36em) {
-      .rf-skiplinks__list > li {
-        margin: 0 1rem; } }
-  @media (min-width: 48em) {
-    .rf-skiplinks__list {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 0 -1rem; } }
-  .rf-skiplinks__list:focus-within {
-    position: relative;
-    transform: translateY(0); }
+  .rf-skiplinks__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -1rem -1.5rem; }
+    .rf-skiplinks__list > li {
+      margin: 0 1rem 1.5rem; }
+      @media (min-width: 36em) {
+        .rf-skiplinks__list > li {
+          margin: 0 1rem; } }
+      .rf-skiplinks__list > li::before {
+        content: none; }
+      .rf-skiplinks__list > li .rf-link {
+        max-width: none;
+        max-height: none; }
+    @media (min-width: 48em) {
+      .rf-skiplinks__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 -1rem; } }
+    .rf-skiplinks__list:focus-within {
+      position: relative;
+      transform: translateY(0); }
 
 
 /*# sourceMappingURL=skiplinks.css.map*/

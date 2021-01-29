@@ -3,9 +3,16 @@
 /// @group forms
 ////
 
-/**
- * Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
- */
+/// Mixin pour gérer l'état disabled avec sur un champ input avec un box-shadow
+///
+/// @access public
+///
+/// @param {String} $element [input]
+///
+/// @example scss - On ajoute un style disabled sur un élément de type input
+///   .foo {
+///     @include disabled-form-field(input);
+///   }
 @mixin disabled-form-field($element:input) {
   @at-root #{selector_unify(&, $element)} {
     @include disabled(true, false, inset 0 -2px 0 0 $COLOR) {
@@ -18,9 +25,14 @@
   }
 }
 
-/**
- * Mixin pour gérer l'état disabled sur un label et un pseudo-element before, l'input étant masqué
- */
+/// Mixin pour gérer l'état disabled sur un label et les pseudo-elements before et after, l'input étant masqué
+///
+/// @access public
+///
+/// @example scss - On ajoute un style disabled sur le label et ses pseudo-elements
+///   .foo {
+///     @include disabled-form-choice();
+///   }
 @mixin disabled-form-choice() {
   @at-root #{selector_unify(&, input)} {
     @include disabled(true, false, false, '+ label') {
@@ -33,13 +45,11 @@
   }
 }
 
+/// Placeholder pour les textes d'aide
 %hint-text {
-  font-size: font-size(12);
-  line-height: line-height(normal);
-  font-family: $font-family-sans;
   display: block;
-  margin-top: 0;
-  margin-bottom: 0;
-
+  @include margin-top(0);
+  @include margin-bottom(0);
+  @include text-style(xs);
   @include scheme-element-text-color(g600, true);
 }

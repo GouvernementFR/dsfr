@@ -47,3 +47,50 @@ $texts-settings: (
     )
   ),
 );
+
+$content: (
+  12: (
+    line-height: 5v,
+    margin-bottom: 10v
+  ),
+  14: (
+    line-height: 6v,
+    margin-bottom: 10v
+  ),
+  16: (
+    line-height: 6v,
+    margin-bottom: 10v
+  ),
+  18: (
+    line-height: 7v,
+    margin-bottom: 10v
+  ),
+  20: (
+    line-height: 8v,
+    margin-bottom: 10v
+  ),
+  22: (
+    line-height: 9v,
+    margin-bottom: 12v
+  ),
+);
+
+$content-settings: (
+  xs: (
+    default: 12
+  ),
+  sm: (
+    default: 14
+  ),
+  md: (
+    default: 16
+  ),
+  lg: (
+    default: 18,
+    md: 20
+  ),
+  xl: (
+    default: 20,
+    md: 22
+  )
+);

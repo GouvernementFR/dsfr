@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center; }
 
-.rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
+.rf-tabs__tab[class^="rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab[class*=" rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -26,6 +26,13 @@ button.rf-tabs__tab {
 a.rf-tabs__tab {
   text-decoration: none; }
 
+.rf-tabs__list {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
 .rf-tabs__tab {
   overflow: hidden;
   z-index: 1; }
@@ -40,6 +47,17 @@ a.rf-tabs__tab {
   min-height: 2.5rem;
   padding: 0.5rem 1rem; }
 
+.rf-tabs__tab:not([class*="tabs__tab--icon-"])[class^="rf-fi-"], .rf-tabs__tab:not([class*="tabs__tab--icon-"])[class*=" rf-fi-"] {
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; }
+  .rf-tabs__tab[class^="rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab[class*=" rf-fi-"]:not([class*="tabs__tab--icon-"])::before {
+    font-size: 1rem; }
+  .rf-tabs__tab[class^="rf-fi-"]:not([class*="tabs__tab--icon-"])::before, .rf-tabs__tab[class*=" rf-fi-"]:not([class*="tabs__tab--icon-"])::before {
+    margin-left: 0;
+    margin-right: 0.75rem; }
+
 .rf-tabs__tab--icon-left[class^="rf-fi-"]::before, .rf-tabs__tab--icon-left[class*=" rf-fi-"]::before {
   font-size: 1rem; }
 
@@ -49,7 +67,17 @@ a.rf-tabs__tab {
 
 .rf-tabs {
   position: relative;
-  padding-bottom: 1px;
+  overflow: hidden;
+  margin-top: -4px;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  /**
+    * Animation de la hauteur du panel
+    */
+  transition: height 0.3s;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   /**
    * ul : element srollable des boutons
    */
@@ -59,28 +87,28 @@ a.rf-tabs__tab {
   /**
   * Tab Panel
   */ }
-  @media (max-width: 47.98em) {
+  @media (min-width: 48em) {
     .rf-tabs {
-      margin-left: -1rem;
-      margin-right: -1rem; }
-      .rf-tabs .rf-tabs {
-        margin-left: 0;
-        margin-right: 0; } }
+      margin-left: 0;
+      margin-right: 0; } }
+  .rf-tabs .rf-tabs {
+    margin-left: 0;
+    margin-right: 0; }
+  .rf-tabs::after {
+    display: block;
+    content: "";
+    flex: 1;
+    box-shadow: inset 1px -1px 0 0 var(--g300), inset -1px 0 0 var(--g300); }
   .rf-tabs__list {
     display: flex;
     align-items: flex-end;
     overflow-x: auto;
-    list-style: none;
     width: 100%;
     /**
     * overflow vertical de 4px pour le focus
     */
     margin: -4px 0;
     padding: 4px 0.5rem;
-    /**
-    * Animation de la hauteur du panel
-    */
-    transition: margin-bottom 0.1s;
     /**
     * Reset du style par défaut du li
     */ }
@@ -92,45 +120,47 @@ a.rf-tabs__tab {
       margin-left: -0.5rem;
       margin-right: -0.5rem;
       box-shadow: 0 1px 0 0 var(--g300); }
-    .rf-tabs__list li {
+    .rf-tabs__list > li {
       display: block;
       flex: 0 0 auto;
       margin: 0 0.5rem; }
-      .rf-tabs__list li::before {
+      .rf-tabs__list > li::before {
         display: none;
         content: none; }
-      .rf-tabs__list li:not(:first-child) {
+      .rf-tabs__list > li:not(:first-child) {
         margin-left: 0; }
-        .rf-tabs__list li:not(:first-child)::before {
+        .rf-tabs__list > li:not(:first-child)::before {
           display: block;
           content: "";
           position: sticky;
-          margin-left: -0.5rem;
-          width: 0.5rem;
           top: 100%;
+          width: 0.5rem;
           height: 1px;
+          margin-left: -0.5rem;
           box-shadow: 0 1px 0 0 var(--g300); }
-      .rf-tabs__list li:last-child {
+      .rf-tabs__list > li:last-child {
         padding-right: 1rem; }
-        .rf-tabs__list li:last-child::after {
+        .rf-tabs__list > li:last-child::after {
           display: block;
           content: "";
           min-width: 1rem;
           margin-left: 100%;
           flex: 1 1 auto;
-          width: auto;
+          position: sticky;
           top: 100%;
+          width: auto;
           height: 1px;
           margin-top: -1px;
           box-shadow: 0 1px 0 0 var(--g300); }
-      .rf-tabs__list li:first-child::before {
+      .rf-tabs__list > li:first-child::before {
         display: block;
         content: "";
         position: sticky;
-        margin-left: -100%;
-        width: 100%;
         top: 100%;
+        width: 100%;
         height: 1px;
+        position: sticky;
+        margin-left: -100%;
         box-shadow: 0 1px 0 0 var(--g300); }
   .rf-tabs__tab {
     margin: 0;
@@ -222,31 +252,37 @@ a.rf-tabs__tab {
         z-index: 1; }
   .rf-tabs__panel {
     display: block;
-    height: auto;
+    position: absolute;
     left: 0;
     width: 100%;
-    position: absolute;
-    visibility: visible;
+    height: auto;
     padding: 1rem;
-    box-shadow: inset 1px -1px 0 0 var(--g300), inset -1px 0 0 var(--g300);
-    transition: opacity 0.1s, visibility 0.1s; }
+    transition: visibility 0.3s, transform 0.3s;
+    /**
+    * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
+    * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
+    *
+    * tabs
+    * └─ panel selected
+    * └─ panel (visibility hidden, tabindex -1)
+    *    └─ tabs
+    *       └─ panel selected (visibility visible tabindex 0)
+    *            ↑ ce panel est accessible alors que caché par son panel parent
+    * solution : visibility hidden seulement sur les éléments non sélectionnés
+    **/ }
     @media (min-width: 48em) {
       .rf-tabs__panel {
         padding: 2rem; } }
-    .rf-tabs__panel--selected {
-      opacity: 1; }
-      .rf-tabs__panel--selected:focus {
-        outline: 2px solid var(--focus);
-        outline-offset: 2px;
-        z-index: var(--focus-z-index); }
-      .rf-tabs__panel--selected:focus {
-        outline-offset: calc(-1rem + 2px); }
-        @media (min-width: 48em) {
-          .rf-tabs__panel--selected:focus {
-            outline-offset: calc(-2rem + 2px); } }
-    .rf-tabs__panel[hidden] {
-      opacity: 0;
-      pointer-events: none;
+    .rf-tabs__panel--selected:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+      z-index: var(--focus-z-index); }
+    .rf-tabs__panel--selected:focus {
+      outline-offset: calc(-1rem + 2px); }
+      @media (min-width: 48em) {
+        .rf-tabs__panel--selected:focus {
+          outline-offset: calc(-2rem + 2px); } }
+    .rf-tabs__panel:not(.rf-tabs__panel--selected) {
       visibility: hidden; }
 
 

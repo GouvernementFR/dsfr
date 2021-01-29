@@ -55,30 +55,25 @@
 }
 
 @mixin class-start-with($start, $unify: true) {
-  $selector: '[class^="#{$start}"], [class*=" #{$start}"]';
-
-  @include _class-pattern($selector, $unify) {
+  @include _class-pattern(class-start-with($start), $unify) {
     @content;
   }
 }
 
 @mixin class-not-start-with($start, $unify: true) {
-  $selector: ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
-  @include _class-pattern($selector, $unify) {
+  @include _class-pattern(class-not-start-with($start), $unify) {
     @content;
   }
 }
 
 @mixin class-end-with($end, $unify: true) {
-  $selector: '[class$="#{$end}"], [class*="#{$end} "]';
-  @include _class-pattern($selector, $unify) {
+  @include _class-pattern(class-end-with($end), $unify) {
     @content;
   }
 }
 
 @mixin class-not-end-with($end, $unify: true) {
-  $selector: ':not([class$="#{$end}"]):not([class*="#{$end} "])';
-  @include _class-pattern($selector, $unify) {
+  @include _class-pattern(class-not-end-with($end), $unify) {
     @content;
   }
 }

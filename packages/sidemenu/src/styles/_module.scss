@@ -5,144 +5,27 @@
 
 #{dse(sidemenu)} {
   @extend %default-text-color;
-  position: relative;
+  @include relative;
   @include shadow(md);
   @include scheme-element-bg-color(w-g750, true);
 
-  /**
-   * Ajout de l'icône de menu en mode mobile (provisoire)
-   */
-  @include font-icon(menu-2-fill, md) {
-    position: absolute;
-    top: space(1-5N);
-    margin-left: space(1N);
-    transform: translateY(1px);
-  }
-
-  /**
-   * Ce wrapper ne sert que pour la version mobile
-   * On l'utilise pour l'ouverture/fermeture du sidemenu entier
-   */
-  &__wrapper {
-    margin: 0 space(2N);
-    @include collapse();
-
-    &--expanded {
-      max-height: 100%;
-    }
-
-    @include respond-from(md) {
-      overflow: initial;
-      max-height: initial;
-      margin: 0;
-      opacity: 1;
-
-      &::before {
-        display: none;
-      }
-
-      &#{&}--expanded {
-        opacity: 1;
-      }
-
-      &:not(#{&}--expanded) {
-        max-height: initial;
-        visibility: visible;
-      }
-    }
-  }
-
-  /**
-   * Titre facultatif
-   */
-  &__title {
-    margin: 0;
-    padding: space(2N) 0;
-    font-size: font-size(18);
-    font-weight: font-weight(bold);
-    line-height: line-height(normal);
-    @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(t-plain, true);
-    @include scheme-element-border-color(g300, true, bottom);
-
-    @include respond-from(md) {
-      margin: 0 0 space(3N);
-      padding: 0;
-      font-size: font-size(20);
-      border: 0;
-    }
-  }
-
-  &__list {
-    @extend %list-reset;
-    font-weight: font-weight('bold');
-
-    #{dse(sidemenu__list)} {
-      margin: 0 0 0 space(2N);
-      font-weight: font-weight();
-    }
-
-    @include respond-from(md) {
-      margin: 0;
-    }
-  }
-
-  &__item {
-    position: relative;
-    margin: space(0-5N);
-    @include scheme-element-border-color(g300, true, bottom);
-
-    &::before {
-      content: none;
-    }
-
-    &:last-child {
-      border: 0;
-
-      #{dse(sidemenu__btn)} {
-        @include scheme-element-border-color(t-plain, true, bottom);
-      }
-    }
-
-    &--active {
-      & > #{dse(sidemenu__btn)} {
-        @include scheme-element-text-color(bf500);
-      }
-      & > #{dse(sidemenu__link)} {
-        @include scheme-element-text-color(bf500);
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -(space(1N));
-          bottom: 0;
-          width: 2px;
-          margin: space(1-5N) 0;
-          background-color: currentColor;
-        }
-      }
-    }
-
-    @include respond-from(md) {
-      margin: space(1N) 0;
-      border: 0;
-    }
-  }
-
-  &__inner {
-    @include respond-from(md) {
-      padding: 0 space(4N) 0 space(0-5N);
-      @include scheme-element-border-color(g300, true, right);
-    }
-  }
-
   @include respond-from(md) {
     @include scheme-element-bg-color(t-plain, true);
+    @include padding-right(8v);
+    box-shadow: none;
+    @include before(null, none);
+
+    #{dse(collapse)} {
+      @include margin-x(-4px);
+      @include padding-x(4px);
+    }
   }
+
+  @import 'modules/title';
+  @import 'modules/list';
+  @import 'modules/inner';
+  @import 'modules/variants';
 }
 
-@import 'modules/collapse-wrapper';
-@import 'modules/variants';
 @import 'modules/btn';
 @import 'modules/link';

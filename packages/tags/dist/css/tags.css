@@ -42,16 +42,16 @@ a.rf-tag {
 
 .rf-tag {
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   min-height: 2rem;
-  padding: 0.375rem 1rem;
+  padding: 0.25rem 1rem;
   border-radius: 1rem; }
 
 .rf-tag--sm {
   font-size: 0.75rem;
-  line-height: 1rem;
+  line-height: 1.25rem;
   min-height: 1.5rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.125rem 0.5rem;
   border-radius: 0.75rem; }
 
 .rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--icon-left[class*=" rf-fi-"]::before {
@@ -61,10 +61,10 @@ a.rf-tag {
   margin-left: -0.25rem;
   margin-right: 0.25rem; }
 
-.rf-tag--sm.rf-tag--icon-left[class^="rf-fi-"]:not([class*="tag--icon-"])::before, .rf-tag--sm.rf-tag--icon-left[class*=" rf-fi-"]:not([class*="tag--icon-"])::before {
+.rf-tag--sm.rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--sm.rf-tag--icon-left[class*=" rf-fi-"]::before {
   font-size: 1rem; }
 
-.rf-tag--sm.rf-tag--icon-left[class^="rf-fi-"]:not([class*="tag--icon-"])::before, .rf-tag--sm.rf-tag--icon-left[class*=" rf-fi-"]:not([class*="tag--icon-"])::before {
+.rf-tag--sm.rf-tag--icon-left[class^="rf-fi-"]::before, .rf-tag--sm.rf-tag--icon-left[class*=" rf-fi-"]::before {
   margin-left: -0.25rem;
   margin-right: 0.25rem; }
 
@@ -76,10 +76,10 @@ a.rf-tag {
     margin-right: -0.25rem;
     margin-left: 0.25rem; }
 
-.rf-tag--sm.rf-tag--icon-right[class^="rf-fi-"]:not([class*="tag--icon-"])::before, .rf-tag--sm.rf-tag--icon-right[class*=" rf-fi-"]:not([class*="tag--icon-"])::before {
+.rf-tag--sm.rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--sm.rf-tag--icon-right[class*=" rf-fi-"]::before {
   font-size: 1rem; }
 
-.rf-tag--sm.rf-tag--icon-right[class^="rf-fi-"]:not([class*="tag--icon-"])::before, .rf-tag--sm.rf-tag--icon-right[class*=" rf-fi-"]:not([class*="tag--icon-"])::before {
+.rf-tag--sm.rf-tag--icon-right[class^="rf-fi-"]::before, .rf-tag--sm.rf-tag--icon-right[class*=" rf-fi-"]::before {
   margin-right: -0.25rem;
   margin-left: 0.25rem; }
 

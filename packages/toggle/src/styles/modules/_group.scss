@@ -7,15 +7,6 @@
  * On surcharge les styles de base (provisoire)
  */
 
-.#{$prefix}-toggle-list {
-  margin: 0;
+#{dse(toggle)}-list {
   @extend %list-reset;
-
-  > li {
-    margin-bottom: 0;
-
-    &::before {
-      content: none;
-    }
-  }
 }

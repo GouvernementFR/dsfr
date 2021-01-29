@@ -1,0 +1,66 @@
+////
+/// Sidemenu Module : list
+/// @group sidemenu
+////
+
+@include list {
+  @extend %list-reset;
+  font-weight: font-weight('bold');
+
+  #{dse(sidemenu__list)} {
+    @include margin(0 4v);
+    font-weight: font-weight();
+    #{dse(sidemenu__link)},
+    #{dse(sidemenu__btn)} {
+      @include text-style(sm);
+      font-weight: font-weight();
+    }
+
+    #{dse(sidemenu__list)} {
+      #{dse(sidemenu__link)},
+      #{dse(sidemenu__btn)} {
+        @include text-style(xs);
+        @include padding(#{calc(#{space(2v)} + 2px)} 2v, md);
+      }
+    }
+  }
+
+  @include margin(0,md);
+}
+
+@include list-item {
+  @include relative;
+  @include margin(1v);
+  @include scheme-element-border-color(g300, true, bottom);
+
+  @include before(null, none);
+
+  &:last-child {
+    border: 0;
+
+    #{dse(sidemenu__btn)} {
+      @include scheme-element-border-color(t-plain, true, bottom);
+    }
+  }
+
+  &--active {
+    & > #{dse(sidemenu__btn)} {
+      @include scheme-element-text-color(bf500);
+    }
+
+    & > #{dse(sidemenu__link)} {
+      @include scheme-element-text-color(bf500);
+
+      @include before(null, '') {
+        @include absolute(0, null, 0, -2v, 2px);
+        @include margin(3v 0);
+        background-color: currentColor;
+      }
+    }
+  }
+
+  @include respond-from(md) {
+    @include margin(2v 0);
+    border: 0;
+  }
+}

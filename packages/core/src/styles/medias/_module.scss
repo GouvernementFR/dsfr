@@ -4,13 +4,12 @@
 ////
 
 #{dse(responsive-img)} {
-  width: 100%;
-  height: auto;
+  @include size(100%, auto);
 }
 
 #{dse(responsive-vid)} {
-  position: relative;
-  width: 100%;
+  @include relative;
+  @include size(100%);
 
   @include aspect-ratio();
 

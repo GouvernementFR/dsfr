@@ -5,15 +5,22 @@ let samples = [
   {title:'Ensemble de cases à cocher', pck:'checkboxes', data:{ id:'checkbox'}},
   {title:'Ensemble de boutons radio, en ligne', pck:'radios', data:{ id:'radio-inline', inline:true}},
   {title:'Ensemble de cases à cocher, en ligne', pck:'checkboxes', data:{ id:'checkbox-inline', inline:true}},
-  {title:'Ensemble de boutons radio avec erreur', pck:'radios', data:{ id:'radio-error', error:true}},
-  {title:'Ensemble de cases à cocher, avec erreur', pck:'checkboxes', data:{ id:'checkbox-error', error:true}},
-  {title:'Ensemble de champs de saisie désactivés', pck:'inputs', data:{ id:'text-disabled', disabled:true}},
-  {title:'Ensemble de boutons radio désactivés', pck:'radios', data:{ id:'radio-disabled', disabled:true}},
-  {title:'Ensemble de cases à cocher désactivés', pck:'checkboxes', data:{ id:'checkbox-disabled', disabled:true}},
+  {title:'Ensemble de boutons radio avec erreur', pck:'radios', data:{ id:'radio-error', error:true, hint:true}},
+  {title:'Ensemble de cases à cocher, avec erreur', pck:'checkboxes', data:{ id:'checkbox-error', error:true, hint:true}},
+  {title:'Ensemble de champs de saisie désactivés', pck:'inputs', data:{ id:'text-disabled', disabled:true, hint:true}},
+  {title:'Ensemble de boutons radio désactivés', pck:'radios', data:{ id:'radio-disabled', disabled:true, hint:true}},
+  {title:'Ensemble de cases à cocher désactivés', pck:'checkboxes', data:{ id:'checkbox-disabled', disabled:true, hint:true}},
 ]
 %>
 
-<form action="#" method="post">
+<script>
+function preventSubmit(e) {
+  e.preventDefault();
+  return false;
+}
+</script>
+
+<form onsubmit="return preventSubmit(event)">
 
   <%
   for (let i = 0; i < samples.length; i++) {

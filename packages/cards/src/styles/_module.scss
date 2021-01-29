@@ -6,7 +6,7 @@
 #{dse(card)} {
   @extend %default-text-color;
   @include display-flex(column);
-  position: relative;
+  @include relative();
   @include scheme-element-bg-color(beige, true, true);
 
   #{dse(grid-row)} & {
@@ -14,7 +14,7 @@
   }
 
   &:not(&--no-arrow) &__body {
-    @include font-icon(arrow-right-line, lg, after) {
+    @include font-icon(arrow-right-line, md, after) {
       @include size(6v, 6v);
       @include margin-top(auto);
       @include margin-left(auto);
@@ -32,7 +32,7 @@
     }
   }
 
-  &__body {
+  @include body() {
     @include display-flex(column);
     flex: 1 1 auto;
     @include padding(6v);
@@ -41,13 +41,13 @@
   &__detail {
     @include margin-top(0);
     @include margin-bottom(4v);
-    @include text-styles(sm);
+    @include text-style(xs);
     @include scheme-element-text-color(g600, true);
   }
 
   &__title {
     @include force-over-reset {
-      @include text-styles(xl);
+      @include title-style(h6);
     }
     @include scheme-element-text-color(g800);
     @include font-weight(bold);
@@ -59,7 +59,7 @@
   &__desc {
     @include margin-top(0);
     @include margin-bottom(4v);
-    @include text-styles(sm);
+    @include text-style(sm);
   }
 
   &__link {

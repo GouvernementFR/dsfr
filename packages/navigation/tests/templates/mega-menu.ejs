@@ -1,16 +1,16 @@
 <%- include('./btn'); %>
-<div class="<%= prefix %>-mega-menu" id="<%= collapseId %>" tabindex="-1" >
+<div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= collapseId %>" tabindex="-1" >
     <div class="<%= prefix %>-container" >
         <%- include('../../../buttons/tests/templates/button', {label: 'Fermer', size:'sm', icon:'close-line', iconPlace: 'right', attributes: { 'aria-controls': collapseId, title: close }} )%>
         <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters" >
             <%
                 if (locals.leader !== undefined) {
             %>
-            <div class="<%= prefix %>-col-12" >
+            <div class="<%= prefix %>-col-12 rf-mb-4v" >
                 <%
                     if (leader.title !== undefined) {
                 %>
-                <p class="<%= prefix %>-h4"><%= leader.title %></p>
+                <h4 class="<%= prefix %>-h4 rf-mb-2v"><%= leader.title %></h4>
                 <% } %>
 
                 <%

@@ -3,42 +3,52 @@
 /// @group Footer
 ////
 
+/**
+ * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
+ * ainsi que du copyright (ferré à droite)
+ */
+
 &__bottom {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: space(5N);
-  padding: 0 0 space(2N);
+  @include display-flex(row, center, null, wrap);
+  @include margin-top(10v);
+  @include padding(0 0 4v);
   @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
 
   @include respond-from(sm) {
     flex-wrap: nowrap;
-    padding: 0;
+    @include padding(0);
   }
 }
 
+/**
+ * Liste de liens avec séparateur
+ */
 &__bottom-list {
   @extend %list-reset;
   flex-wrap: wrap;
   align-items: center;
   @include padding(2v 0);
-  @include padding(4v 0, md);
+  @include padding(4v 0, sm);
   @include size(100%);
   @include margin(0);
 }
 
 &__bottom-item {
-  position: relative;
-  @include margin(2v 0 0 2v);
-  @include margin(2v 0 0 1v, sm);
+  @include relative;
+  @include margin(2v 0 0 1v);
+  @include margin(2v 0 0 3v, md);
   display: inline;
 
   @include before(inline-block, '') {
     vertical-align: middle;
-    position: relative;
+    @include relative;
     @include size(1px, 4v);
-    @include margin-right(2v);
-    @include margin-right(1v, sm);
+    @include margin-right(1v);
+    @include margin-right(3v, md);
+    @include margin-bottom(2v);
+    @include margin-bottom(1v, md);
+    @include margin-top(2v);
+    @include margin-top(1v, md);
     @include scheme-element-bg-color(g400, true);
   }
 
@@ -48,23 +58,29 @@
   }
 }
 
+/**
+ * Style du lien de la liste
+ */
 &__bottom-link {
   @extend %a-reset;
   @include override-reset-link-style;
   @include force-over-reset {
     @include scheme-element-text-color(g600, true);
   }
-  font-size: font-size(12);
+  @include text-style(xs);
 }
 
+/**
+ * Copyright
+ */
 &__bottom-copy {
   flex-shrink: 0;
-  font-size: font-size(12);
+  @include text-style(xs);
   @include scheme-element-text-color(g600, true);
-  margin-top: space(2w);
+  @include margin-top(4v);
 
   @include respond-from(sm) {
-    margin-top: 0;
-    margin-left: space(4w);
+    @include margin-top(0);
+    @include margin-left(8v);
   }
 }

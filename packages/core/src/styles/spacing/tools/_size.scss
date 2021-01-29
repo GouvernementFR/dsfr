@@ -1,8 +1,31 @@
+////
+/// Core Tools : Global size
+/// @group core
+////
+
 @mixin size($width:null, $height:null) {
   @if $width != null {
     width: #{space($width)};
   }
   @if $height != null {
     height: #{space($height)};
+  }
+}
+
+@mixin min-size($min-width:null, $min-height:null) {
+  @if $min-width != null {
+    min-width: #{space($min-width)};
+  }
+  @if $min-height != null {
+    min-height: #{space($min-height)};
+  }
+}
+
+@mixin max-size($max-width:null, $max-height:null) {
+  @if $max-width != null {
+    max-width: #{space($max-width)};
+  }
+  @if $max-height != null {
+    max-height: #{space($max-height)};
   }
 }

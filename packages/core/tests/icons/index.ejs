@@ -55,7 +55,7 @@
 
 <h4 class="<%= prefix %>-h4">Test de tailles (Icon font / SVG symbols)</h4>
 <%
-    let sizes = ['xl', 'lg', undefined, 'sm'];
+    let sizes = ['lg', undefined, 'sm'];
     for (let i = 0; i < sizes.length; i++) { %>
     <%- include('./templates/icon.ejs', {icon:'alert-fill', size:sizes[i]}); %>
     <%- snippet(include('./templates/icon.ejs', {icon:'alert-fill', size:sizes[i]})); %>

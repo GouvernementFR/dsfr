@@ -6,72 +6,54 @@
 /**
  * Variantes du sidemenu proposées juste à partir du breakpoint md
  */
-#{dse(sidemenu)} {
-  @include respond-from(md) {
-    padding-right: space(4N);
-    box-shadow: none;
+@include respond-from(md) {
+  /**
+   * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
+   * La bordure se met sur la gauche
+   */
+  &--right {
+    @include padding-left(8v);
+    @include padding-right(0);
 
-    &::before {
-      content: none;
+    #{dse(sidemenu__inner)} {
+      @include padding(0 4v 0 8v);
+      border-right: 0;
+      @include scheme-element-border-color(g300, true, left);
     }
+  }
 
-    /**
-     * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
-     * La bordure se met sur la gauche
-     */
-    &--right {
-      padding-left: space(4N);
-      padding-right: 0;
+  /**
+   * Modificateur pour que le sidemenu soit sticky
+   */
+  &--sticky {
+    @include sticky(0, null, null, null, null, 100vh);
+    overflow: auto;
+  }
 
-      #{dse(sidemenu__inner)} {
-        padding: 0 space(2N) 0 space(4N);
-        border-right: 0;
-        @include scheme-element-border-color(g300, true, left);
-      }
-    }
+  /**
+   * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
+   */
+  &--sticky-full-height {
+    @include sticky(0, null, null, null, null, 100vh);
+    overflow: auto;
 
-    /**
-     * Modificateur pour que le sidemenu soit sticky
-     */
-    &--sticky {
-      position: sticky;
-      top: 0;
+    #{dse(sidemenu__inner)} {
       overflow: auto;
-      height: 100vh;
-      max-height: 100%;
+      @include size(null, 100vh);
     }
+  }
 
-    /**
-     * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
-     */
-    &--sticky-full-height {
-      position: sticky;
-      top: 0;
-      overflow: auto;
-      height: 100vh;
-      max-height: 100%;
+  /**
+   * Modificateur pour avoir une bordure tout autour du sidemenu
+   */
+  &--full-border {
 
-      #{dse(sidemenu__inner)} {
-        overflow: auto;
-        height: 100vh;
-      }
+    #{dse(sidemenu__title)} {
+      @include margin-top(2v);
     }
-
-    /**
-     * Modificateur pour avoir une bordure tout autour du sidemenu
-     */
-    &--full-border {
-
-      #{dse(sidemenu__title)} {
-        margin-top: space(1N);
-      }
-      #{dse(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true);
-
-        @include respond-from(md) {
-          padding: 0 space(0-5N) 0 space(0-5N);
-        }
-      }
+    #{dse(sidemenu__inner)} {
+      @include scheme-element-border-color(g300, true);
+      @include padding(0 1v 0 1v, md);
     }
   }
 }
