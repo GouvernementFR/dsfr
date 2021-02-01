@@ -2,10 +2,10 @@ import { CollapsesGroup, KeyListener } from '@gouvfr/core/src/scripts';
 import { ACCORDIONS_GROUP } from './accordion-constants';
 
 class AccordionsGroup extends CollapsesGroup {
-  constructor (id, element) {
-    super(id, element);
-    this._attachEvents();
-  }
+  // constructor (id, element) {
+  //   super(id, element);
+  //   // this._attachEvents();
+  // }
 
   _attachEvents () {
     this.keyEvents = new KeyListener(this.element);

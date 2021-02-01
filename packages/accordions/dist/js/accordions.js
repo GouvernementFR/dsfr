@@ -1189,20 +1189,18 @@ var accordions_group_AccordionsGroup = /*#__PURE__*/function (_CollapsesGroup) {
 
   var _super = _createSuper(AccordionsGroup);
 
-  function AccordionsGroup(id, element) {
-    var _this;
-
+  function AccordionsGroup() {
     _classCallCheck(this, AccordionsGroup);
 
-    _this = _super.call(this, id, element);
-
-    _this._attachEvents();
-
-    return _this;
+    return _super.apply(this, arguments);
   }
 
   _createClass(AccordionsGroup, [{
     key: "_attachEvents",
+    // constructor (id, element) {
+    //   super(id, element);
+    //   // this._attachEvents();
+    // }
     value: function _attachEvents() {
       this.keyEvents = new scripts["KeyListener"](this.element);
       this.keyEvents.down(scripts["KeyListener"].DOWN, this.arrowDownPress.bind(this), true, true);
