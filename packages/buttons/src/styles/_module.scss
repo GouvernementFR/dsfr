@@ -4,18 +4,25 @@
 ////
 
 #{dse(btn)} {
-
   @include build-btn();
-
-  $button:&;
+  @include scheme-element-bg-color(bf500, true, true);
 
   @include specify(a) {
     @include scheme-element-text-color(w-bf500, true);
   }
-  @include scheme-element-bg-color(bf500, true, true);
 
   @include disabled-link(true, true);
 
+  &--icon-left,
+  &[class*="#{$prefix}-fi-"] {
+    text-align: left;
+  }
+
+  &--icon-right {
+    text-align: right;
+  }
+
+  $button:&;
   // Outline variant
   &--secondary {
     @include scheme-element-bg-color(t-plain, false, override);
@@ -29,3 +36,5 @@
     }
   }
 }
+
+@import './modules/buttons-group.scss';

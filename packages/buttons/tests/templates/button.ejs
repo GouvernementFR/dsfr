@@ -24,24 +24,76 @@
   * left : icone à gauche du label
   * right : icone à droite du label
 
+# paramètres groupe de boutons
+
+* group (boolean, optional) : si valeur true, créé un groupe d'au moins 2 boutons
+
+* groupCount (Integer, optional) : définie le nombre de bouton ajoutés dans le groupe
+
+* inline (string, optional) : aligne les boutons horizontalement (dans la mesure du possible)
+  valeurs :
+  * true : toujours en ligne
+  * sm : en ligne a partir du breakpoint SM
+  * md : en ligne a partir du breakpoint MD
+  * lg : en ligne a partir du breakpoint LG
+
+* align (string, optional) : définie l'alignement horizontal des boutons dans le groupe
+  * right : align les boutons sur la droite
+  * left : align les boutons sur la gauche
+  * center : align les boutons au centre
+
+* equisized (boolean, optional) : si valeur true, fixe la largeur des boutons a celle du plus grand
 %>
 
 <%
  let btnClasses = locals.classes || [];
  let btnAttrs = locals.attributes || {};
+ let groupClasses = locals.classes || [];
+ let hierarchical = locals.hierarchical || false;
 
  const tag = locals.tag || 'button';
 
  btnClasses.push(prefix + '-btn');
+ groupClasses.push(prefix + '-btns-group');
+
+ if (locals.align) groupClasses.push(prefix + '-btns-group--'+locals.align);
+ if (locals.equisized) groupClasses.push(prefix + '-btns-group--equisized');
+ if (locals.reverse) groupClasses.push(prefix + '-btns-group--inline-reverse');
+
+
+ switch(locals.inline) {
+     case true:
+        groupClasses.push(prefix + '-btns-group--inline');
+        break;
+     case 'sm':
+        groupClasses.push(prefix + '-btns-group--inline-sm');
+        break;
+
+     case 'md':
+        groupClasses.push(prefix + '-btns-group--inline-md');
+        break;
+
+     case 'lg':
+        groupClasses.push(prefix + '-btns-group--inline-lg');
+        break;
+ }
 
  switch(locals.size) {
      case 'sm':
-         btnClasses.push(prefix + '-btn--sm');
-         break;
+        if (locals.group) {
+            groupClasses.push(prefix + '-btns-group--sm');
+        } else {
+            btnClasses.push(prefix + '-btn--sm');
+        }
+        break;
 
      case 'lg':
-         btnClasses.push(prefix + '-btn--lg');
-         break;
+        if (locals.group) {
+            btnClasses.push(prefix + '-btn--lg');
+        } else {
+            groupClasses.push(prefix + '-btns-group--lg');
+        }
+        break;
  }
 
  if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
@@ -63,8 +115,26 @@
  if (locals.disabled === true) btnAttrs['disabled'] = '';
 
  if (locals.type !== undefined) btnAttrs['type'] = type;
+
+ let btnClassesHierarchical = [...btnClasses];
  %>
 
-<<%= tag %> <%- includeClasses(btnClasses) %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
-    <%= label %>
-</<%= tag %>>
+<% if (locals.group) { %>
+    <ul <%- includeClasses(groupClasses) %>>
+    <% for (let i = 0; i < (locals.groupCount !== undefined ? locals.groupCount : '2'); i++) { %>
+        <li>
+            <% // groupe + primaire = hiérarchisé, groupe + secondaire = non hiérarchisé %>
+            <% if (locals.secondary === undefined && i>0) {
+                btnClassesHierarchical.push(prefix +'-btn--secondary');
+            } %>
+            <<%= tag %> <%- includeClasses(btnClassesHierarchical); %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
+                <%= locals.equisized ? "lorem ipsum ".repeat(i+1) : label %>
+            </<%= tag %>>
+        </li>
+    <% } %>
+    </ul>
+<% } else { %>
+    <<%= tag %> <%- includeClasses(btnClasses) %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
+        <%= label %>
+    </<%= tag %>>
+<% } %>

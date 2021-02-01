@@ -11,8 +11,10 @@
   }
 
   @if $place != only {
-    max-width: none;
-    max-height: none;
+    &:not([class*='#{$prefix}-fi-']) {
+      max-width: none;
+      max-height: none;
+    }
   }
 
   @if $place != null {
@@ -44,8 +46,10 @@
     @include _build-link-size($size-settings, $border-radius);
 
     @if $place != only {
-      max-width: none;
-      max-height: none;
+      &:not([class*='#{$prefix}-fi-']) {
+        max-width: none;
+        max-height: none;
+      }
     }
 
     @if $place == null {

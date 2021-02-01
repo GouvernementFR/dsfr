@@ -1,5 +1,6 @@
 import { Initializer } from './global/initializer';
 import { addClass, removeClass } from './manipulation/classes';
+import { Equisized } from './manipulation/size';
 import { Renderer } from './global/renderer';
 import { KeyListener } from './key-listener/key-listener';
 import { Disclosure } from './disclosure/disclosure';
@@ -12,6 +13,7 @@ import { Collapses } from './collapse/collapses';
 
 export { Initializer };
 export { addClass, removeClass };
+export { Equisized };
 export { Renderer };
 export { KeyListener };
 export { Disclosure, DisclosureButton, DisclosuresGroup };

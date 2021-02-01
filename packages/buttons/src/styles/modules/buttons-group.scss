@@ -1,0 +1,250 @@
+////
+/// Buttons-group Module
+/// @group buttons
+////
+
+@mixin _make-horizontal() {
+  width: calc(100% + #{space(4v)});
+
+  .#{$prefix}-btn {
+    width: auto;
+    @include margin-right(4v);
+    max-width: 100%;
+  }
+
+  > li {
+    display: inline-flex;
+    max-width: 100%;
+    width: auto;
+
+    @include before(null, none);
+  }
+}
+
+@mixin _make-vertical() {
+  @include margin-right(0);
+  @include margin-left(0);
+
+  > li {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .#{$prefix}-btn {
+    width: 100%;
+    justify-content: center;
+    @include margin-right(0);
+    @include margin-left(0);
+  }
+}
+
+:root #{dse-group(btns)} {
+  @include display-flex(null,stretch,null,wrap);
+  @extend %list-reset;
+  @include _make-vertical;
+
+  @include nest-btn(md);
+  #{dse(btn)} {
+    @include margin-bottom(4v);
+  }
+
+  /**
+  * rf-btns-group--inline : aligne les boutons horizontalement dans tout les cas
+  * rf-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
+  */
+  &--inline {
+    @include _make-horizontal;
+
+    &#{dse-group(btns)}--right {
+      @include margin-left(-4v);
+      .#{$prefix}-btn {
+        @include margin-right(0);
+        @include margin-left(4v);
+      }
+
+      &#{dse-group(btns)}--inline-reverse {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+      }
+    }
+
+    &#{dse-group(btns)}--center,
+    &#{dse-group(btns)}--left {
+      @include margin-right(-4v);
+      .#{$prefix}-btn {
+        @include margin-right(4v);
+        @include margin-left(0);
+      }
+    }
+
+    &-sm {
+      @include respond-from(sm) {
+        @include _make-horizontal;
+
+        &#{dse-group(btns)}--right {
+          @include margin-left(-4v);
+          .#{$prefix}-btn {
+            @include margin-right(0);
+            @include margin-left(4v);
+          }
+
+          &#{dse-group(btns)}--inline-reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+          }
+        }
+
+        &#{dse-group(btns)}--center,
+        &#{dse-group(btns)}--left {
+          @include margin-right(-4v);
+          .#{$prefix}-btn {
+            @include margin-right(4v);
+            @include margin-left(0);
+          }
+        }
+      }
+    }
+
+    &-md {
+      @include respond-from(md) {
+        @include _make-horizontal;
+
+        &#{dse-group(btns)}--right {
+          @include margin-left(-4v);
+          .#{$prefix}-btn {
+            @include margin-right(0);
+            @include margin-left(4v);
+          }
+
+          &#{dse-group(btns)}--inline-reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+          }
+        }
+
+        &#{dse-group(btns)}--center,
+        &#{dse-group(btns)}--left {
+          @include margin-right(-4v);
+          .#{$prefix}-btn {
+            @include margin-right(4v);
+            @include margin-left(0);
+          }
+        }
+      }
+    }
+
+    &-lg {
+      @include respond-from(lg) {
+        @include _make-horizontal;
+
+        &#{dse-group(btns)}--right {
+          @include margin-left(-4v);
+          .#{$prefix}-btn {
+            @include margin-right(0);
+            @include margin-left(4v);
+          }
+
+          &#{dse-group(btns)}--inline-reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+          }
+        }
+
+        &#{dse-group(btns)}--center,
+        &#{dse-group(btns)}--left {
+          @include margin-right(-4v);
+          .#{$prefix}-btn {
+            @include margin-right(4v);
+            @include margin-left(0);
+          }
+        }
+      }
+    }
+  }
+
+  /**
+  * rf-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
+  */
+  &--left {
+    &,
+    li {
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+
+  /**
+  * rf-btns-group--right : aligne les boutons sur la droite
+  */
+  &--right {
+    &,
+    li {
+      justify-content: flex-end;
+      text-align: right;
+    }
+  }
+
+  /**
+  * rf-btns-group--center : aligne les boutons au centre du conteneur
+  */
+  &--center {
+    &,
+    li {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  /**
+  * rf-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
+  */
+  &--equisized {
+    .#{$prefix}-btn {
+      justify-content: center;
+    }
+  }
+
+  /**
+  * rf-btns-group--sm : Fixe les boutons à la taille SM
+  */
+  &--sm {
+    @include nest-btn(sm);
+
+    #{dse(btn)} {
+      &[class*='#{$prefix}-fi-'] {
+        &:not([class*='#{$prefix}-btn--icon-']) {
+          @include size(8v,8v);
+        }
+      }
+    }
+  }
+
+  /**
+  * rf-btns-group--md : (défaut) Fixe les boutons à la taille MD
+  */
+  &--md {
+    @include nest-btn(md);
+
+    #{dse(btn)} {
+      &[class*='#{$prefix}-fi-'] {
+        &:not([class*='#{$prefix}-btn--icon-']) {
+          @include size(10v,10v);
+        }
+      }
+    }
+  }
+
+  /**
+  * rf-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
+  */
+  &--lg {
+    @include nest-btn(lg);
+    #{dse(btn)} {
+      &[class*='#{$prefix}-fi-'] {
+        &:not([class*='#{$prefix}-btn--icon-']) {
+          @include size(14v,14v);
+        }
+      }
+    }
+  }
+}
