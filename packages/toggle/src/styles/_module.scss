@@ -24,6 +24,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    cursor: pointer;
 
     @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
     @include scheme-element-focus();
@@ -62,6 +63,7 @@
     flex-basis: calc(100% - #{space(10v)});
     min-height: space(6v);
     @include padding-left(4v);
+    cursor: pointer;
     @include text-style(md);
 
     /*
@@ -87,7 +89,8 @@
      */
     @include before {
       flex-shrink: 0;
-      height: calc(#{space(5v)} - 1px);
+      min-width: space(10v);
+      height: calc(#{space(5v)} + 1px);
       @include margin-top(6v);
       @include margin-left(-10v);
       @include margin-right(4v);

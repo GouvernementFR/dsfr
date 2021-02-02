@@ -3,18 +3,23 @@
 /// @group radios
 ////
 
+/**
+ * L'input de type radio avec son label est contenu dans un groupe
+ * Ce groupe contient également le texte d'aide (optionnels)
+ */
 #{dse-group(radio)} {
+
+  /**
+   * Style du texte d'aide
+   */
   #{dse(hint-text)} {
     @include margin-left(8v);
     @include margin-top(-3v);
   }
 
-  // &:not(:last-child) {
-  //   input[type="radio"] + label {
-  //     margin-right: space(3N);
-  //   }
-  // }
-
+  /**
+   * Dans le cas d'un groupe de radios, on supprime l'espacement du premier groupe
+   */
   &:first-child {
     @include margin-top(-3v);
 
@@ -23,6 +28,9 @@
     }
   }
 
+  /**
+   * Dans le cas d'un groupe de radios, on supprime l'espacement du dernier groupe
+   */
   &:last-child {
     @include margin-bottom(-3v);
 
@@ -33,10 +41,16 @@
     }
   }
 
+  /**
+   * On cache l'input de type radio pour le styler via le label
+   */
   input[type="radio"] {
     @include absolute;
     opacity: 0;
 
+    /**
+     * On applique un display grid sur le label afin de gérer le positionnement des élements
+     */
     + label {
       @include relative;
       cursor: pointer;
@@ -56,6 +70,10 @@
       text-align: left;
       direction: rtl;
 
+      /**
+       * On appelle le mixin radio-rich() pour gérer les radios riches (voir dans _tools.scss)
+       * Les radios riches permettent d'associer une image à un radio dans le conteneur du radio
+       */
       @include radio-rich() {
         @include padding-left(14v);
         min-height: space(22v);
@@ -76,12 +94,17 @@
         // @include scheme-element-bg-color(block-color-hover, true);
         // }
 
-        // sm
+        /**
+         * On applique la taille sm pour le bouton radio riche
+         */
         @include before() {
           @include size(4v, 4v);
           @include absolute(null, null, null, 7v);
         }
 
+        /**
+         * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
+         */
         @include after(null, '') {
           @include absolute(null, 0);
           @include margin(1v);
@@ -95,6 +118,9 @@
         }
       }
 
+      /**
+       * Style du texte d'aide dans le label
+       */
       .rf-hint-text {
         @include margin(0);
         grid-row: 2;
@@ -103,6 +129,9 @@
         -ms-grid-column: 1;
       }
 
+      /**
+       * On utilise un pseudo element before pour customiser l'aspect du bouton radio
+       */
       @include before(inline-block, '') {
         @include size(6v, 6v);
         @include margin-right(2v);
@@ -121,6 +150,10 @@
       }
     }
 
+    /**
+     * On applique les styles au pseudo élément before du label quand l'input présente
+     * un état check
+     */
     &:checked {
       + label {
         @include before() {
@@ -129,6 +162,9 @@
           @include scheme-element-border-color(bf500, true);
         }
 
+        /**
+         * Cas du radio riche
+         */
         @include radio-rich() {
           @include size(100%);
           @include scheme-element-bg-color(bf500);
@@ -141,21 +177,23 @@
             @include scheme-element-bg-color(w-bf500, true);
           }
 
-          .#{$prefix}-hint-text {
+          #{dse(hint-text)} {
             @include scheme-element-text-color(g200);
           }
         }
       }
     }
 
+    /**
+     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
+     */
     @include scheme-element-focus(false, '+ label::before');
-
     @include disabled-form-choice();
   }
 
   /**
-  * Taille SM et taille radio riche
-  */
+   * Modificateur pour la taille sm
+   */
   &--sm {
     input[type="radio"] {
       & + label {
@@ -173,6 +211,9 @@
   }
 }
 
+/**
+ * Style spécifique des radios intégrés dans un fiedset
+ */
 .#{$prefix}-fieldset {
   .#{$prefix}-radio-group {
     &:first-child {
@@ -199,7 +240,9 @@
     }
   }
 
-  // écart entre le hint text et les radios riches
+  /**
+   * Écart entre le text d'aide et les radios riches
+   */
   #{dse(hint-text)} + .#{$prefix}-fieldset__content {
     .#{$prefix}-radio-group {
       &:first-child {
@@ -212,6 +255,9 @@
     }
   }
 
+  /**
+   * Modificateur pour afficher les radios en ligne
+   */
   &--inline {
     .#{$prefix}-radio-group {
       &:not(:last-child) {
@@ -242,7 +288,9 @@
       }
     }
 
-    // écart entre le hint text et les radios riches
+    /**
+     * Écart entre le text d'aide et les radios riches dans le cas des radios inline
+     */
     #{dse(hint-text)} + .#{$prefix}-fieldset__content {
       .#{$prefix}-radio-group {
         &:first-child {

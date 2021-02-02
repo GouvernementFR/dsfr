@@ -19,43 +19,53 @@
   @include scheme-element-box-shadow-color(g800, true, inset 0 -2px 0 0 $COLOR);
   @include scheme-element-focus();
 
+  /**
+   * Style du placeholder
+   */
   @include placeholder {
     @include scheme-element-text-color(g600-g400, true);
     opacity: 1;
   }
 
   /**
-   * Modificateur pour gérer l'état de validation
+   * Modificateur pour les champs validés
    */
   &--valid {
     @include scheme-element-box-shadow-color(success, false, inset 0 -2px 0 0 $COLOR);
   }
 
   /**
-   * Modificateur pour gérer l'état d'erreur
+   * Modificateur pour les champs non valides ou présentant des erreurs
    */
   &--error,
   &:invalid {
     @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
   }
 
+  /**
+   * Style pour l'input désactivé
+   */
   @include disabled-form-field(input);
 
   /**
-   * Hauteur max quand l'input n'est pas un textarea
+   * On applique une hauteur maximale si l'élément n'est pas un textarea
    */
   &:not(textarea) {
     max-height: 2.5rem;
   }
 
   /**
-   * Override pour les inputs de type date et number
+   * Pour les type number et date, on n'affiche pas les icônes pour les navigateurs webkit
    */
   &::-webkit-inner-spin-button,
   &::-webkit-calendar-picker-indicator {
     display: none;
   }
 
+  /**
+   * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
+   * sur les navigateurs webkit.
+   */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
@@ -64,6 +74,9 @@
   }
 }
 
+/**
+ * Ajout d'un wrapper quand on a besoin de mettre une icône
+ */
 #{dse(input-wrap)} {
   @include relative;
   display: block;
