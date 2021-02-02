@@ -68,7 +68,7 @@
     @each $size, $size-settings in $sizes {
       @at-root {
         %#{$module}--icon-#{$place}--#{$size} {
-          @include _build-link-icon($size-settings, $place, $size, $size == md, $size == md and $place == right);
+          @include _build-link-icon($size-settings, $place, $size, $size == md, $place == right);
         }
 
         %#{$align}--#{$place}--#{$size} {

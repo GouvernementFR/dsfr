@@ -23,6 +23,9 @@
   @if $reverse {
     flex-direction: row-reverse;
   }
+  @else {
+    flex-direction: row;
+  }
 
   $icon-margin: _link-icon-margin(map_get($size-settings, icon));
   $icon-margin-x: space(map_get($size-settings, icon-margin-x));

@@ -11,10 +11,8 @@
   }
 
   @if $place != only {
-    &:not([class*='#{$prefix}-fi-']) {
       max-width: none;
       max-height: none;
-    }
   }
 
   @if $place != null {

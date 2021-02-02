@@ -13,15 +13,6 @@
 
   @include disabled-link(true, true);
 
-  &--icon-left,
-  &[class*="#{$prefix}-fi-"] {
-    text-align: left;
-  }
-
-  &--icon-right {
-    text-align: right;
-  }
-
   $button:&;
   // Outline variant
   &--secondary {
