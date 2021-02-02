@@ -1,0 +1,136 @@
+$modal: "#{$prefix}-modal";
+
+#{dse(modal)} {
+  // reset dialog
+  background: transparent;
+  border: none;
+  color: inherit;
+  visibility: hidden;
+  opacity: 0;
+  @include padding(0);
+  @include margin(0);
+  @include display-flex(null, flex-end, center);
+  @include fixed(0, 0, 0, 0, 100%, 100%);
+  @include scheme-element-bg-color(overlay);
+  pointer-events: all;
+  z-index: z-index(modal);
+  // transition in/out
+  transition: opacity 0.3s, visibility 0.3s;
+
+  @include respond-from(md) {
+    align-items: center;
+  }
+
+  &--opened {
+    // transition in/out
+    visibility: inherit;
+    opacity: 1;
+    @include size(100%, 100%);
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  #{dse(container)},
+  #{dse(container--fluid)} {
+    @include relative;
+    @include size(100%, auto);
+    pointer-events: none;
+    @include padding-top(8v);
+    @include padding(10vh 0,md);
+    max-height: 100%;
+
+    #{dse(grid-row)} {
+      @include margin(0 -4v);
+      @include margin(0,md);
+    }
+  }
+
+  @include body {
+    @include scheme-element-bg-color(w);
+    overflow-y: auto;
+    flex: 1 1 auto;
+    @include padding(0 8v);
+    pointer-events: all;
+    max-height: calc(100vh - 2rem);
+    @include shadow(md);
+
+    @include respond-from(md) {
+      max-height: 80vh;
+    }
+
+    #{dse(modal)}__header {
+      @include padding-left(0);
+      @include padding-right(0);
+      @include margin-right(-4v, md);
+    }
+
+    &.#{$prefix}-scroll-shadow {
+      #{dse(modal)}__footer {
+        box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, 0.1), 0 -8px 16px -16px rgba(0, 0, 0, 0.32);
+        @include scheme-element-bg-color(w-g750);
+      }
+    }
+  }
+
+  &__header {
+    flex: auto 0 0;
+    @include display-flex(null, center, flex-end);
+    @include padding(4v 4v 2v 4v);
+    @include padding(4v 8v 2v 8v, md);
+  }
+
+  &__content {
+    @include margin-bottom(14v);
+    @include margin-bottom(16v, md);
+  }
+
+  &__footer {
+    @include scheme-element-bg-color(w);
+    flex: auto 0 0;
+    @include display-flex(null);
+    @include padding(4v);
+    @include padding(8v, md);
+    @include margin(-10v -4v 0);
+    @include margin(-12v -8v 0, md);
+    @include sticky(null,null,0);
+    transition: box-shadow 0.3s, background-color 0.2s;
+
+    #{dse-group(btns)} {
+      margin-bottom: -1rem;
+      width: calc(100% + #{space(4v)});
+    }
+  }
+
+  &__title {
+    @include force-over-reset() {
+      @include title-style('h4');
+      @include font-weight('bold');
+    }
+
+    @include font-icon(arrow-right-line, lg) {
+      @include margin-right(2v);
+    }
+
+    @include margin-top(0);
+    @include margin-bottom(2v);
+    @include margin-bottom(4v, md);
+  }
+
+  /**
+  * Modifier pour fixer la modale en haut en mobile (par defaut en bas)
+  */
+  &--top {
+    align-items: flex-start;
+  }
+}
+
+/**
+* Fixe le scroll en arrière plan
+*/
+:root.#{$prefix}-no-scroll body {
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}

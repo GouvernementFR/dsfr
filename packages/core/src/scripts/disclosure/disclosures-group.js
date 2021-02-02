@@ -56,12 +56,13 @@ class DisclosuresGroup {
     switch (true) {
       case this.current !== null:
       case !member.disclosed:
-        member.apply(false);
+        member.apply(false, true);
         break;
 
       default:
-        this.current = member;
-        member.apply(true);
+        this._current = member;
+        this._index = this.members.indexOf(member);
+        member.apply(true, true);
     }
   }
 

@@ -1,0 +1,73 @@
+<%#
+# paramètres de la modole
+
+* id (string, required) : id de la modale
+
+* title (string, required) : titre de la modale
+
+* body (string, required) : contenu de la modale
+
+* footer (string, optionnal) : contenu du footer de la modale, généralement des boutons
+
+* size (string, optionnal) : modificateur de taille
+  valeurs :
+  * sm : modale étroite
+  * lg : modale large
+
+%>
+
+<%
+ let modalClasses = locals.classes || [];
+ let modalAttrs = locals.attributes || {};
+ let gridCol = 6;
+
+ modalClasses.push(prefix + '-modal');
+
+ switch(locals.size) {
+    case 'sm':
+        gridCol = 4;
+        break;
+
+    case 'lg':
+        gridCol = 8;
+        break;
+ }
+
+ const closeAttrs = {
+   title: 'Fermer'
+ }
+
+ closeAttrs['data-' + prefix + '-controls'] = id;
+
+ const closeData = {
+    label: 'Fermer',
+    tag: 'button',
+    classes: ['rf-link--close'],
+    attributes: closeAttrs,
+    size: 'md'
+ }
+
+ %>
+
+<dialog aria-labelledby="rf-modal-title-<%= id %>" role="dialog" id="<%= id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %> >
+    <div class="rf-container--fluid rf-container-md">
+        <div class="rf-grid-row rf-grid-row--center">
+            <div class="rf-col-12 rf-col-md-<%= gridCol %>">
+                <div class="rf-modal__body">
+                    <div class="rf-modal__header">
+                        <%- include('../../../links/tests/templates/link', closeData )%>
+                    </div>
+                    <div class="rf-modal__content">
+                        <h1 id="rf-modal-title-<%= id %>" class="rf-modal__title"><%= locals.title %></h1>
+                        <%- include(body) -%>
+                    </div>
+                    <% if(locals.footer !== undefined) { %>
+                        <div class="rf-modal__footer">
+                            <%- include('../../../buttons/tests/samples/button-default', locals.footer )%>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>

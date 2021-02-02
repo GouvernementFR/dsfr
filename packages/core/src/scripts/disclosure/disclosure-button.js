@@ -1,18 +1,11 @@
-import { Disclosure } from './disclosure';
-
 class DisclosureButton {
   constructor (element, disclosure) {
     this.element = element;
     this.disclosure = disclosure;
     this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
     this.element.addEventListener('click', this.click.bind(this));
-
-    switch (this.disclosure.type) {
-      case Disclosure.EXPAND:
-        this.observer = new MutationObserver(this.mutate.bind(this));
-        this.observe();
-        break;
-    }
+    this.observer = new MutationObserver(this.mutate.bind(this));
+    this.observe();
   }
 
   observe () {

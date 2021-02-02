@@ -1,0 +1,47 @@
+<%
+let sample;
+let event;
+
+let dataText = {
+    title: 'Titre de la modale',
+    body: '../samples/body/text',
+}
+
+let dataForm = {
+    title: 'Titre de la modale',
+    body: '../samples/body/form',
+}
+
+let dataFooterButtons = {
+    title: 'Titre de la modale',
+    body: '../samples/body/text',
+    footer: { sizes:{md : {size:'md'}}, iconPlace:'left', align:'right', inline:'lg', icon :'checkbox-line', group: true, groupCount: 2}
+}
+
+let samples = [
+    { title: 'Modal defaut', sample: './samples/modal-default', data: {...dataText, id:  uniqueId('modal')} },
+    { title: 'Modal sm', sample: './samples/modal-sm', data: {...dataText, id:  uniqueId('modal')} },
+    { title: 'Modal lg', sample: './samples/modal-lg', data: {...dataText, id:  uniqueId('modal')} },
+    { title: 'Modal formulaire', sample: './samples/modal-default', data: {...dataForm, id:  uniqueId('modal')} },
+    { title: 'Modal avec zone d\'action', sample: './samples/modal-default', data:{...dataFooterButtons, id:  uniqueId('modal')} }
+];
+%>
+
+<% for (let i = 0; i < samples.length; i++) { %>
+
+    <%
+    sample = samples[i];
+    %>
+    <h4><%= sample.title %></h4>
+
+    <!-- Bouton -->
+    <%- include('./templates/btn', {label: sample.title, id: sample.data.id}); %>
+    <!-- Modale -->
+    <%- include(sample.sample, sample.data); %>
+
+     <!-- Snippet Bouton -->
+     <%- snippet(include('./templates/btn', {label: sample.title, id: sample.data.id})); %>
+     <!-- Snippet Modale -->
+     <%- snippet(include(sample.sample, sample.data)); %>
+
+<% } %>

@@ -10,24 +10,24 @@ class TabsGroup extends DisclosuresGroup {
     super(id, element);
     this.list = element.querySelector(`.${TABS_LIST_SELECTOR}`);
 
-    element.addEventListener('transitionend', this._transitionend.bind(this));
+    element.addEventListener('transitionend', this.transitionend.bind(this));
 
-    this._attachEvents();
+    this.listen();
     Renderer.add(this.render.bind(this));
   }
 
   static get selector () { return TABS_SELECTOR; }
 
-  _transitionend (e) {
+  transitionend (e) {
     this.element.style.transition = 'none';
   }
 
-  _attachEvents () {
-    this.keyEvents = new KeyListener(this.element);
-    this.keyEvents.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
-    this.keyEvents.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
-    this.keyEvents.down(KeyListener.HOME, this.homePress.bind(this), true, true);
-    this.keyEvents.down(KeyListener.END, this.endPress.bind(this), true, true);
+  listen () {
+    this.keyListener = new KeyListener(this.element);
+    this.keyListener.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
+    this.keyListener.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
+    this.keyListener.down(KeyListener.HOME, this.homePress.bind(this), true, true);
+    this.keyListener.down(KeyListener.END, this.endPress.bind(this), true, true);
   }
 
   /**
@@ -86,10 +86,10 @@ class TabsGroup extends DisclosuresGroup {
     if (this.current) this.current.focus();
   }
 
-  apply () {
-    for (let i = 0; i < this._index; i++) this.members[i].element.style.transform = 'translateX(-100%)';
+  apply (value, initial) {
+    for (let i = 0; i < this._index; i++) this.members[i].translate(-1, initial);
     this.current.element.style.transform = '';
-    for (let i = this._index + 1; i < this.length; i++) this.members[i].element.style.transform = 'translateX(100%)';
+    for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(1, initial);
     this.element.style.transition = '';
   }
 

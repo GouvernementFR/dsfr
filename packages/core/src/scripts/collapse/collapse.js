@@ -13,12 +13,10 @@ class Collapse extends Disclosure {
   constructor (element) {
     super(element);
 
-    this.groupByAscendant();
-
     element.addEventListener('transitionend', this.transitionend.bind(this));
   }
 
-  groupByAscendant () {
+  group () {
     for (const ascendant in CollapsesGroup.ascendants) {
       let element = this.element.parentElement;
 
@@ -35,6 +33,8 @@ class Collapse extends Disclosure {
         element = element.parentElement;
       }
     }
+
+    super.group();
   }
 
   get GroupConstructor () { return CollapsesGroup; }
@@ -50,14 +50,14 @@ class Collapse extends Disclosure {
     if (!this.disclosed) this.element.style.maxHeight = '';
   }
 
-  apply (value) {
+  apply (value, initial) {
     if (value) this.element.style.maxHeight = 'none';
     this.element.style.setProperty('--collapser', 'none');
     const height = this.element.offsetHeight;
     this.element.style.setProperty('--collapse', -height + 'px');
     this.element.style.setProperty('--collapser', '');
 
-    window.requestAnimationFrame(() => super.apply(value));
+    window.requestAnimationFrame(() => super.apply(value, initial));
   }
 
   reset () {

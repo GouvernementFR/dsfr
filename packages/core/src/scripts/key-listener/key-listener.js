@@ -27,10 +27,6 @@ class KeyListener {
     this._add('up', new KeyAction(key, closure, preventDefault, stopPropagation));
   }
 
-  press (key, closure, preventDefault, stopPropagation) {
-    this._add('press', new KeyAction(key, closure, preventDefault, stopPropagation));
-  }
-
   dispose () {
     for (const collection of this.collections) collection.dispose();
     this.types = null;
@@ -70,7 +66,7 @@ class KeyAction {
 
   handle (e) {
     if (e.keyCode === this.key) {
-      this.closure();
+      this.closure(e);
       if (this.preventDefault) {
         e.preventDefault();
       }
@@ -81,6 +77,7 @@ class KeyAction {
   }
 }
 
+KeyListener.TAB = 9;
 KeyListener.ESCAPE = 27;
 KeyListener.END = 35;
 KeyListener.HOME = 36;

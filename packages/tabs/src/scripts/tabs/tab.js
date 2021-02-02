@@ -18,6 +18,12 @@ class Tab extends Disclosure {
     return new TabButton(element, this);
   }
 
+  translate (direction, initial) {
+    if (initial) this.element.style.transition = 'none';
+    this.element.style.transform = `translate(${direction * 100}%)`;
+    if (initial) this.element.style.transition = '';
+  }
+
   reset () {
     this.group.index = 0;
   }

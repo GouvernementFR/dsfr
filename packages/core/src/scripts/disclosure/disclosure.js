@@ -10,18 +10,21 @@ class Disclosure {
     this.id = element.id;
     this.buttons = [];
     this.disclosed = null;
-    this._type = this.constructor.type;
     this._selector = this.constructor.selector;
-    this.modifier = this._selector + '--' + this._type.id;
-    this.attributeName = (this._type.aria ? 'aria-' : 'data-${prefix}-') + this._type.id;
+    this.modifier = this._selector + '--' + this.type.id;
+    this.attributeName = (this.type.aria ? 'aria-' : 'data-${prefix}-') + this.type.id;
 
-    const buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
+    const buttons = document.querySelectorAll('[' + (this.type.aria ? 'aria-' : 'data-${prefix}-') + 'controls="' + this.id + '"]');
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
     this.disclosed = this.disclosed === true;
-    this.apply(this.disclosed);
+    this.apply(this.disclosed, true);
 
+    this.group();
+  }
+
+  group () {
     DisclosuresGroup.groupById(this, this.GroupConstructor);
     DisclosuresGroup.groupByParent(this, this.GroupConstructor);
   }
@@ -31,6 +34,8 @@ class Disclosure {
 
     for (const element of elements) disclosures.push(new this(element));
   }
+
+  get type () { return this.constructor.type; }
 
   static get type () { return null; }
 
@@ -66,7 +71,7 @@ class Disclosure {
     this.apply(false);
   }
 
-  apply (value) {
+  apply (value, initial) {
     this.disclosed = value;
     if (value) addClass(this.element, this.modifier);
     else removeClass(this.element, this.modifier);
@@ -77,26 +82,17 @@ class Disclosure {
   reset () {}
 
   change (hasAttribute) {
-    switch (this.constructor.type) {
-      case Disclosure.TYPES.expand:
-        switch (true) {
-          case !hasAttribute:
-          case this.disclosed:
-            this.conceal();
-            break;
+    if (!this.constructor.type.canConceal) this.disclose();
+    else {
+      switch (true) {
+        case !hasAttribute:
+        case this.disclosed:
+          this.conceal();
+          break;
 
-          default:
-            this.disclose();
-        }
-        break;
-
-      case Disclosure.TYPES.select:
-        this.disclose();
-        break;
-
-      case Disclosure.TYPES.open:
-        this.disclose();
-        break;
+        default:
+          this.disclose();
+      }
     }
   }
 
@@ -104,11 +100,18 @@ class Disclosure {
     this.group = group;
   }
 
+  get hasFocus () {
+    if (this.element === document.activeElement) return true;
+    if (this.element.querySelectorAll(':focus').length > 0) return true;
+    if (this.buttons.some((button) => { return button.hasFocus; })) return true;
+    return false;
+  }
+
   focus () {
     for (let i = 0; i < this.buttons.length; i++) {
       const button = this.buttons[i];
       if (button.hasAttribute) {
-        button.element.focus({ preventScroll: false });
+        button.element.focus();
         return;
       }
     }
@@ -118,15 +121,18 @@ class Disclosure {
 Disclosure.TYPES = {
   expand: {
     id: 'expanded',
-    aria: true
+    aria: true,
+    canConceal: true
   },
   select: {
     id: 'selected',
-    aria: true
+    aria: true,
+    canConceal: false
   },
   open: {
     id: 'opened',
-    aria: false
+    aria: false,
+    canConceal: true
   }
 };
 

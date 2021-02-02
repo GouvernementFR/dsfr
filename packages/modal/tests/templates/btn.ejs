@@ -1,0 +1,8 @@
+<%
+const attributes = {};
+attributes['data-' + prefix + '-opened'] = locals.opened === true;
+attributes['data-' + prefix + '-controls'] = locals.id;
+
+%>
+
+<%- include("../../../buttons/tests/templates/button", {label: label, attributes: attributes}) %>
