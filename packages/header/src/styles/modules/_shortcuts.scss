@@ -37,12 +37,13 @@
 
     @include before(null, none);
 
-    @include nest-link(sm, left) {
+    @include nest-link(sm, left, null, true) {
       border-radius: 0;
       min-width: 100%;
       min-height: 3rem;
       @include padding(3v 0);
       max-height: none;
+      max-width: none;
 
       @include before() {
         @include margin-left(1v);
