@@ -10,9 +10,9 @@
   border-radius: space(1v) space(1v) 0 0;
   @include text-style(md);
   @include padding(2v 4v);
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
 
   @include scheme-element-text-color(g800, true);
   @include scheme-element-bg-color(g200, true);
@@ -25,6 +25,7 @@
   @include placeholder {
     @include scheme-element-text-color(g600-g400, true);
     opacity: 1;
+    font-style: italic;
   }
 
   /**
@@ -35,10 +36,9 @@
   }
 
   /**
-   * Modificateur pour les champs non valides ou présentant des erreurs
+   * Modificateur pour les champs présentant des erreurs
    */
-  &--error,
-  &:invalid {
+  &--error {
     @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
   }
 
@@ -52,14 +52,6 @@
    */
   &:not(textarea) {
     max-height: 2.5rem;
-  }
-
-  /**
-   * Pour les type number et date, on n'affiche pas les icônes pour les navigateurs webkit
-   */
-  &::-webkit-inner-spin-button,
-  &::-webkit-calendar-picker-indicator {
-    display: none;
   }
 
   /**

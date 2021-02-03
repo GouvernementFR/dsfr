@@ -12,14 +12,14 @@
     font-weight: font-weight();
     #{dse(sidemenu__link)},
     #{dse(sidemenu__btn)} {
-      @include text-style(sm);
+      @include text-style(md);
       font-weight: font-weight();
     }
 
     #{dse(sidemenu__list)} {
       #{dse(sidemenu__link)},
       #{dse(sidemenu__btn)} {
-        @include text-style(xs);
+        @include text-style(sm);
         @include padding(#{calc(#{space(2v)} + 2px)} 2v, md);
       }
     }

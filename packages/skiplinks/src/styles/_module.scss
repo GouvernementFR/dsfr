@@ -21,7 +21,7 @@
 
     > li {
       @include margin(0 4v 6v);
-      @include margin(0 4v, sm);
+      @include margin(0 4v, md);
 
       @include before(null, none);
 

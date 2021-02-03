@@ -153,7 +153,7 @@
    */
   &--inline {
     .#{$prefix}-fieldset__content {
-      @include display-flex(null, flex-end, flex-start, wrap);
+      @include display-flex(null, baseline, flex-start, wrap);
       @include margin(-3v 0);
     }
 

@@ -106,7 +106,7 @@ $modal: "#{$prefix}-modal";
       @include font-weight('bold');
     }
 
-    @include font-icon(arrow-right-line, lg) {
+    [class*="#{$prefix}-fi-"] {
       @include margin-right(2v);
     }
 
