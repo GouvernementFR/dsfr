@@ -1,3 +1,10 @@
+@charset "UTF-8";
+/**
+ * Mixin pour gérer l'affichage des boutons radios riches
+ */
+/**
+ * Mixin pour gérer l'affichage des boutons radios riches
+ */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /**
   * fix Navigation

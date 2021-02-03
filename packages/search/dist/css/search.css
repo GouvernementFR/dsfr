@@ -14,15 +14,18 @@
   color: var(--g700); }
 
 .rf-search-bar .rf-btn {
+  flex-direction: row;
   max-width: 2.5rem;
   max-height: 2.5rem;
   padding-left: 0.5rem;
-  padding-right: 0.5rem; }
+  padding-right: 0.5rem;
+  font-size: 0;
+  line-height: 0; }
   .rf-search-bar .rf-btn::before {
     font-size: 1.5rem; }
   .rf-search-bar .rf-btn::before {
-    margin-left: 0;
-    margin-right: 0.5rem; }
+    margin-right: 0;
+    margin-left: 0; }
 
 .rf-search-bar {
   display: flex;
@@ -54,8 +57,10 @@
       line-height: 2rem;
       min-height: 3.5rem;
       padding: 0.75rem 2rem;
-      max-width: none;
-      max-height: none; }
+      flex-direction: row; }
+      .rf-search-bar--lg .rf-btn:not([class*='rf-fi-']) {
+        max-width: none;
+        max-height: none; }
       .rf-search-bar--lg .rf-btn::before {
         font-size: 1.5rem; }
       .rf-search-bar--lg .rf-btn::before {

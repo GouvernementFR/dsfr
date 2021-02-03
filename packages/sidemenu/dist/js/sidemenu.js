@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -119,23 +119,23 @@ var removeClass = function removeClass(element, className) {
 
 /***/ }),
 
-/***/ 16:
+/***/ 20:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(51);
-module.exports = __webpack_require__(17);
+__webpack_require__(56);
+module.exports = __webpack_require__(21);
 
 
 /***/ }),
 
-/***/ 17:
+/***/ 21:
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
 
-/***/ 44:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -146,10 +146,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, "Initializer", function() { return /* reexport */ Initializer; });
 __webpack_require__.d(__webpack_exports__, "addClass", function() { return /* reexport */ classes["addClass"]; });
 __webpack_require__.d(__webpack_exports__, "removeClass", function() { return /* reexport */ classes["removeClass"]; });
+__webpack_require__.d(__webpack_exports__, "Equisized", function() { return /* reexport */ Equisized; });
 __webpack_require__.d(__webpack_exports__, "Renderer", function() { return /* reexport */ Renderer; });
 __webpack_require__.d(__webpack_exports__, "KeyListener", function() { return /* reexport */ KeyListener; });
+__webpack_require__.d(__webpack_exports__, "FocusTrap", function() { return /* reexport */ focus_trap_FocusTrap; });
 __webpack_require__.d(__webpack_exports__, "Disclosure", function() { return /* reexport */ disclosure_Disclosure; });
-__webpack_require__.d(__webpack_exports__, "DisclosureButton", function() { return /* reexport */ disclosure_button_DisclosureButton; });
+__webpack_require__.d(__webpack_exports__, "DisclosureButton", function() { return /* reexport */ DisclosureButton; });
 __webpack_require__.d(__webpack_exports__, "DisclosuresGroup", function() { return /* reexport */ DisclosuresGroup; });
 __webpack_require__.d(__webpack_exports__, "Collapse", function() { return /* reexport */ collapse_Collapse; });
 __webpack_require__.d(__webpack_exports__, "CollapseButton", function() { return /* reexport */ CollapseButton; });
@@ -193,6 +195,100 @@ var Initializer = /*#__PURE__*/function () {
 // EXTERNAL MODULE: ./packages/core/src/scripts/manipulation/classes.js
 var classes = __webpack_require__(1);
 
+// CONCATENATED MODULE: ./packages/core/src/scripts/manipulation/size.js
+function size_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function size_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function size_createClass(Constructor, protoProps, staticProps) { if (protoProps) size_defineProperties(Constructor.prototype, protoProps); if (staticProps) size_defineProperties(Constructor, staticProps); return Constructor; }
+
+var EquisizedGroup = /*#__PURE__*/function () {
+  function EquisizedGroup(selector, groups) {
+    size_classCallCheck(this, EquisizedGroup);
+
+    this.selector = selector;
+    this.groups = typeof groups === 'string' ? document.querySelectorAll(groups) : groups;
+
+    for (var i = 0; i < this.groups.length; i++) {
+      this.equisizedGroups.push(new Equisized(this.selector, this.groups[i]));
+    }
+
+    this.changing = this.change.bind(this);
+    window.addEventListener('resize', this.changing);
+    this.change();
+  }
+
+  size_createClass(EquisizedGroup, [{
+    key: "change",
+    value: function change() {
+      for (var i = 0; i < this.equisizedGroups.length; i++) {
+        this.equisizedGroups[i].change();
+      }
+    }
+  }]);
+
+  return EquisizedGroup;
+}();
+
+var Equisized = /*#__PURE__*/function () {
+  function Equisized(selector, group) {
+    size_classCallCheck(this, Equisized);
+
+    this.selector = selector;
+    this.group = group;
+    this.elements = this.group.querySelectorAll(this.selector);
+    this.maxWidth = 0;
+    this.changing = this.change.bind(this);
+    window.addEventListener('resize', this.changing);
+    window.addEventListener('load', this.changing); // fix change before css load
+    // this.change();
+  }
+
+  size_createClass(Equisized, [{
+    key: "change",
+    value: function change() {
+      this.reset();
+
+      for (var i = 0; i < this.elements.length; i++) {
+        var tmpWWidth = this._getWidth(this.elements[i]);
+
+        if (tmpWWidth > this.maxWidth) {
+          this.maxWidth = tmpWWidth;
+        }
+      }
+
+      this.apply();
+    }
+  }, {
+    key: "apply",
+    value: function apply() {
+      for (var i = 0; i < this.elements.length; i++) {
+        this.elements[i].style.width = this.maxWidth + 1 + 'px';
+      }
+    }
+  }, {
+    key: "reset",
+    value: function reset() {
+      for (var i = 0; i < this.elements.length; i++) {
+        this.elements[i].style.width = 'auto';
+      }
+
+      this.maxWidth = 0;
+    }
+  }, {
+    key: "_getWidth",
+    value: function _getWidth(el) {
+      var width = el.offsetWidth;
+      var style = getComputedStyle(el);
+      width += parseInt(style.marginLeft) + parseInt(style.marginRight);
+      return width;
+    }
+  }]);
+
+  return Equisized;
+}();
+
+
 // CONCATENATED MODULE: ./packages/core/src/scripts/global/renderer.js
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
@@ -211,6 +307,7 @@ var Renderer = /*#__PURE__*/function () {
     renderer_classCallCheck(this, Renderer);
 
     this.closures = [];
+    this.nexts = [];
     this.rendering = this.render.bind(this);
     this.render();
   }
@@ -233,6 +330,24 @@ var Renderer = /*#__PURE__*/function () {
       } finally {
         _iterator.f();
       }
+
+      var nexts = this.nexts.slice();
+      this.nexts.length = 0;
+
+      var _iterator2 = _createForOfIteratorHelper(nexts),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var _closure = _step2.value;
+
+          _closure.call();
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
     }
   }], [{
     key: "add",
@@ -245,6 +360,11 @@ var Renderer = /*#__PURE__*/function () {
       };
 
       return remove;
+    }
+  }, {
+    key: "next",
+    value: function next(closure) {
+      Renderer.instance.nexts.push(closure);
     }
   }]);
 
@@ -300,11 +420,6 @@ var KeyListener = /*#__PURE__*/function () {
     key: "up",
     value: function up(key, closure, preventDefault, stopPropagation) {
       this._add('up', new KeyAction(key, closure, preventDefault, stopPropagation));
-    }
-  }, {
-    key: "press",
-    value: function press(key, closure, preventDefault, stopPropagation) {
-      this._add('press', new KeyAction(key, closure, preventDefault, stopPropagation));
     }
   }, {
     key: "dispose",
@@ -388,7 +503,7 @@ var KeyAction = /*#__PURE__*/function () {
     key: "handle",
     value: function handle(e) {
       if (e.keyCode === this.key) {
-        this.closure();
+        this.closure(e);
 
         if (this.preventDefault) {
           e.preventDefault();
@@ -404,6 +519,7 @@ var KeyAction = /*#__PURE__*/function () {
   return KeyAction;
 }();
 
+KeyListener.TAB = 9;
 KeyListener.ESCAPE = 27;
 KeyListener.END = 35;
 KeyListener.HOME = 36;
@@ -411,6 +527,215 @@ KeyListener.LEFT = 37;
 KeyListener.UP = 38;
 KeyListener.RIGHT = 39;
 KeyListener.DOWN = 40;
+
+// CONCATENATED MODULE: ./packages/core/src/scripts/focus-trap/focus-trap.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || focus_trap_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return focus_trap_arrayLikeToArray(arr); }
+
+function focus_trap_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = focus_trap_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function focus_trap_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return focus_trap_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return focus_trap_arrayLikeToArray(o, minLen); }
+
+function focus_trap_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function focus_trap_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function focus_trap_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function focus_trap_createClass(Constructor, protoProps, staticProps) { if (protoProps) focus_trap_defineProperties(Constructor.prototype, protoProps); if (staticProps) focus_trap_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+var unordereds = ['[tabindex="0"]', 'a[href]', 'button:not([disabled])', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'audio[controls]', 'video[controls]', '[contenteditable]:not([contenteditable="false"])', 'details>summary:first-of-type', 'details'];
+var UNORDEREDS = unordereds.join();
+var ordereds = ['[tabindex]:not([tabindex="-1"]):not([tabindex="0"])'];
+var ORDEREDS = ordereds.join();
+
+var isFocusable = function isFocusable(element, container) {
+  if (window.getComputedStyle(element).visibility === 'hidden') return false;
+  if (container === undefined) container = element;
+
+  while (container.contains(element)) {
+    if (window.getComputedStyle(element).display === 'none') return false;
+    element = element.parentElement;
+  }
+
+  return true;
+};
+
+var focus_trap_FocusTrap = /*#__PURE__*/function () {
+  function FocusTrap(onTrap, onUntrap) {
+    focus_trap_classCallCheck(this, FocusTrap);
+
+    this.element = null;
+    this.activeElement = null;
+    this.onTrap = onTrap;
+    this.onUntrap = onUntrap;
+    this.waiting = this.wait.bind(this);
+    this.handling = this.handle.bind(this);
+    this.current = null;
+  }
+
+  focus_trap_createClass(FocusTrap, [{
+    key: "trap",
+    value: function trap(element) {
+      if (this.trapped) this.untrap();
+      this.element = element;
+      this.wait();
+      if (this.onTrap) this.onTrap();
+    }
+  }, {
+    key: "wait",
+    value: function wait() {
+      if (!isFocusable(this.element)) {
+        Renderer.next(this.waiting);
+        return;
+      }
+
+      this.trapping();
+    }
+  }, {
+    key: "trapping",
+    value: function trapping() {
+      var focusables = this.focusables;
+      if (focusables.length) focusables[0].focus();
+      this.element.addEventListener('keydown', this.handling);
+      this.stunneds = [];
+      this.stun(document.body);
+    }
+  }, {
+    key: "stun",
+    value: function stun(node) {
+      var _iterator = focus_trap_createForOfIteratorHelper(node.children),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var child = _step.value;
+          if (child === this.element) continue;
+
+          if (child.contains(this.element)) {
+            this.stun(child);
+            continue;
+          }
+
+          this.stunneds.push(new Stunned(child));
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+    }
+  }, {
+    key: "handle",
+    value: function handle(e) {
+      if (e.keyCode !== 9) return;
+      var focusables = this.focusables;
+      if (focusables.length === 0) return;
+      var first = focusables[0];
+      var last = focusables[focusables.length - 1];
+      var index = focusables.indexOf(document.activeElement);
+
+      if (e.shiftKey) {
+        if (!this.element.contains(document.activeElement) || index < 1) {
+          e.preventDefault();
+          last.focus();
+        } else if (document.activeElement.tabIndex > 0 || focusables[index - 1].tabIndex > 0) {
+          e.preventDefault();
+          focusables[index - 1].focus();
+        }
+      } else {
+        if (!this.element.contains(document.activeElement) || index === focusables.length - 1 || index === -1) {
+          e.preventDefault();
+          first.focus();
+        } else if (document.activeElement.tabIndex > 0) {
+          e.preventDefault();
+          focusables[index + 1].focus();
+        }
+      }
+    }
+  }, {
+    key: "untrap",
+    value: function untrap() {
+      if (!this.trapped) return;
+      this.element.removeEventListener('keydown', this.handling);
+      this.element = null;
+
+      var _iterator2 = focus_trap_createForOfIteratorHelper(this.stunneds),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var stunned = _step2.value;
+          stunned.unstun();
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      this.stunneds = [];
+      if (this.onUntrap) this.onUntrap();
+    }
+  }, {
+    key: "trapped",
+    get: function get() {
+      return this.element !== null;
+    }
+  }, {
+    key: "focusables",
+    get: function get() {
+      var _this = this;
+
+      var unordereds = _toConsumableArray(this.element.querySelectorAll(UNORDEREDS));
+
+      var ordereds = _toConsumableArray(this.element.querySelectorAll(ORDEREDS));
+
+      ordereds.sort(function (a, b) {
+        return a.tabIndex - b.tabIndex;
+      });
+      var noDuplicates = unordereds.filter(function (element) {
+        return ordereds.indexOf(element) === -1;
+      });
+      var concateneds = ordereds.concat(noDuplicates);
+      var filtereds = concateneds.filter(function (element) {
+        return element.tabIndex !== '-1' && isFocusable(element, _this.element);
+      });
+      return filtereds;
+    }
+  }]);
+
+  return FocusTrap;
+}();
+
+var Stunned = /*#__PURE__*/function () {
+  function Stunned(element) {
+    focus_trap_classCallCheck(this, Stunned);
+
+    this.element = element;
+    this.hidden = element.getAttribute('aria-hidden');
+    this.inert = element.getAttribute('inert');
+    this.element.setAttribute('aria-hidden', true);
+    this.element.setAttribute('inert', '');
+  }
+
+  focus_trap_createClass(Stunned, [{
+    key: "unstun",
+    value: function unstun() {
+      if (this.hidden === null) this.element.removeAttribute('aria-hidden');else this.element.setAttribute('aria-hidden', this.hidden);
+      if (this.inert === null) this.element.removeAttribute('inert');else this.element.setAttribute('inert', this.inert);
+    }
+  }]);
+
+  return Stunned;
+}();
+
 
 // CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosures-group.js
 function disclosures_group_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = disclosures_group_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
@@ -450,12 +775,13 @@ var DisclosuresGroup = /*#__PURE__*/function () {
       switch (true) {
         case this.current !== null:
         case !member.disclosed:
-          member.apply(false);
+          member.apply(false, true);
           break;
 
         default:
-          this.current = member;
-          member.apply(true);
+          this._current = member;
+          this._index = this.members.indexOf(member);
+          member.apply(true, true);
       }
     }
   }, {
@@ -570,9 +896,7 @@ function disclosure_button_defineProperties(target, props) { for (var i = 0; i <
 
 function disclosure_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) disclosure_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) disclosure_button_defineProperties(Constructor, staticProps); return Constructor; }
 
-
-
-var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
+var DisclosureButton = /*#__PURE__*/function () {
   function DisclosureButton(element, disclosure) {
     disclosure_button_classCallCheck(this, DisclosureButton);
 
@@ -580,13 +904,8 @@ var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
     this.disclosure = disclosure;
     this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
     this.element.addEventListener('click', this.click.bind(this));
-
-    switch (this.disclosure.type) {
-      case disclosure_Disclosure.EXPAND:
-        this.observer = new MutationObserver(this.mutate.bind(this));
-        this.observe();
-        break;
-    }
+    this.observer = new MutationObserver(this.mutate.bind(this));
+    this.observe();
   }
 
   disclosure_button_createClass(DisclosureButton, [{
@@ -630,13 +949,13 @@ var disclosure_button_DisclosureButton = /*#__PURE__*/function () {
 
 
 // CONCATENATED MODULE: ./packages/core/src/scripts/disclosure/disclosure.js
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || disclosure_unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function disclosure_toConsumableArray(arr) { return disclosure_arrayWithoutHoles(arr) || disclosure_iterableToArray(arr) || disclosure_unsupportedIterableToArray(arr) || disclosure_nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function disclosure_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+function disclosure_iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return disclosure_arrayLikeToArray(arr); }
+function disclosure_arrayWithoutHoles(arr) { if (Array.isArray(arr)) return disclosure_arrayLikeToArray(arr); }
 
 function disclosure_createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = disclosure_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
@@ -663,21 +982,25 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
     this.id = element.id;
     this.buttons = [];
     this.disclosed = null;
-    this._type = this.constructor.type;
     this._selector = this.constructor.selector;
-    this.modifier = this._selector + '--' + this._type.id;
-    this.attributeName = (this._type.aria ? 'aria-' : 'data-rf-') + this._type.id;
-    var buttons = document.querySelectorAll('[aria-controls="' + this.id + '"]');
+    this.modifier = this._selector + '--' + this.type.id;
+    this.attributeName = (this.type.aria ? 'aria-' : 'data-rf-') + this.type.id;
+    var buttons = document.querySelectorAll('[' + (this.type.aria ? 'aria-' : 'data-rf-') + 'controls="' + this.id + '"]');
     if (buttons.length > 0) for (var i = 0; i < buttons.length; i++) {
       this.addButton(buttons[i]);
     }
     this.disclosed = this.disclosed === true;
-    this.apply(this.disclosed);
-    DisclosuresGroup.groupById(this, this.GroupConstructor);
-    DisclosuresGroup.groupByParent(this, this.GroupConstructor);
+    this.apply(this.disclosed, true);
+    this.group();
   }
 
   disclosure_createClass(Disclosure, [{
+    key: "group",
+    value: function group() {
+      DisclosuresGroup.groupById(this, this.GroupConstructor);
+      DisclosuresGroup.groupByParent(this, this.GroupConstructor);
+    }
+  }, {
     key: "addButton",
     value: function addButton(element) {
       var button = this.buttonFactory(element);
@@ -693,7 +1016,7 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
   }, {
     key: "buttonFactory",
     value: function buttonFactory(button) {
-      return new disclosure_button_DisclosureButton(button, this);
+      return new DisclosureButton(button, this);
     }
   }, {
     key: "disclose",
@@ -711,7 +1034,7 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
     }
   }, {
     key: "apply",
-    value: function apply(value) {
+    value: function apply(value, initial) {
       this.disclosed = value;
       if (value) Object(classes["addClass"])(this.element, this.modifier);else Object(classes["removeClass"])(this.element, this.modifier);
 
@@ -741,27 +1064,16 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
   }, {
     key: "change",
     value: function change(hasAttribute) {
-      switch (this.constructor.type) {
-        case Disclosure.TYPES.expand:
-          switch (true) {
-            case !hasAttribute:
-            case this.disclosed:
-              this.conceal();
-              break;
+      if (!this.constructor.type.canConceal) this.disclose();else {
+        switch (true) {
+          case !hasAttribute:
+          case this.disclosed:
+            this.conceal();
+            break;
 
-            default:
-              this.disclose();
-          }
-
-          break;
-
-        case Disclosure.TYPES.select:
-          this.disclose();
-          break;
-
-        case Disclosure.TYPES.open:
-          this.disclose();
-          break;
+          default:
+            this.disclose();
+        }
       }
     }
   }, {
@@ -776,22 +1088,35 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
         var button = this.buttons[i];
 
         if (button.hasAttribute) {
-          button.element.focus({
-            preventScroll: false
-          });
+          button.element.focus();
           return;
         }
       }
+    }
+  }, {
+    key: "type",
+    get: function get() {
+      return this.constructor.type;
     }
   }, {
     key: "GroupConstructor",
     get: function get() {
       return DisclosuresGroup;
     }
+  }, {
+    key: "hasFocus",
+    get: function get() {
+      if (this.element === document.activeElement) return true;
+      if (this.element.querySelectorAll(':focus').length > 0) return true;
+      if (this.buttons.some(function (button) {
+        return button.hasFocus;
+      })) return true;
+      return false;
+    }
   }], [{
     key: "build",
     value: function build(from) {
-      var elements = _toConsumableArray(from.querySelectorAll(".".concat(this.selector)));
+      var elements = disclosure_toConsumableArray(from.querySelectorAll(".".concat(this.selector)));
 
       var _iterator2 = disclosure_createForOfIteratorHelper(elements),
           _step2;
@@ -825,15 +1150,18 @@ var disclosure_Disclosure = /*#__PURE__*/function () {
 disclosure_Disclosure.TYPES = {
   expand: {
     id: 'expanded',
-    aria: true
+    aria: true,
+    canConceal: true
   },
   select: {
     id: 'selected',
-    aria: true
+    aria: true,
+    canConceal: false
   },
   open: {
     id: 'opened',
-    aria: false
+    aria: false,
+    canConceal: true
   }
 };
 
@@ -885,7 +1213,7 @@ var CollapseButton = /*#__PURE__*/function (_DisclosureButton) {
   }]);
 
   return CollapseButton;
-}(disclosure_button_DisclosureButton);
+}(DisclosureButton);
 
 
 // CONCATENATED MODULE: ./packages/core/src/scripts/collapse/collapses-group.js
@@ -999,16 +1327,13 @@ var collapse_Collapse = /*#__PURE__*/function (_Disclosure) {
     collapse_classCallCheck(this, Collapse);
 
     _this = _super.call(this, element);
-
-    _this.groupByAscendant();
-
     element.addEventListener('transitionend', _this.transitionend.bind(collapse_assertThisInitialized(_this)));
     return _this;
   }
 
   collapse_createClass(Collapse, [{
-    key: "groupByAscendant",
-    value: function groupByAscendant() {
+    key: "group",
+    value: function group() {
       for (var ascendant in CollapsesGroup.ascendants) {
         var element = this.element.parentElement;
 
@@ -1026,6 +1351,8 @@ var collapse_Collapse = /*#__PURE__*/function (_Disclosure) {
           element = element.parentElement;
         }
       }
+
+      _get(collapse_getPrototypeOf(Collapse.prototype), "group", this).call(this);
     }
   }, {
     key: "buttonFactory",
@@ -1039,7 +1366,7 @@ var collapse_Collapse = /*#__PURE__*/function (_Disclosure) {
     }
   }, {
     key: "apply",
-    value: function apply(value) {
+    value: function apply(value, initial) {
       var _this2 = this;
 
       if (value) this.element.style.maxHeight = 'none';
@@ -1048,7 +1375,7 @@ var collapse_Collapse = /*#__PURE__*/function (_Disclosure) {
       this.element.style.setProperty('--collapse', -height + 'px');
       this.element.style.setProperty('--collapser', '');
       window.requestAnimationFrame(function () {
-        return _get(collapse_getPrototypeOf(Collapse.prototype), "apply", _this2).call(_this2, value);
+        return _get(collapse_getPrototypeOf(Collapse.prototype), "apply", _this2).call(_this2, value, initial);
       });
     }
   }, {
@@ -1138,17 +1465,21 @@ var collapses_Collapses = /*#__PURE__*/function () {
 
 
 
+
+
+
+
 /***/ }),
 
-/***/ 51:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 11 modules
-var scripts = __webpack_require__(44);
+// EXTERNAL MODULE: ./packages/core/src/scripts/index.js + 13 modules
+var scripts = __webpack_require__(47);
 
 // CONCATENATED MODULE: ./packages/sidemenu/src/scripts/sidemenu/sidemenu-constants.js
 var SIDEMENU_GROUP = 'rf-sidemenu__list';

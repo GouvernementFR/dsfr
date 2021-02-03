@@ -72,7 +72,8 @@
   --yd500: #fef3cf;
   --ym300: #383838;
   --ym500: #fff9bf;
-  --scroll-shadow: #1e1e1e; }
+  --scroll-shadow: #1e1e1e;
+  --overlay: rgba(206, 206, 206, 0.08); }
 
 /* valeur des couleurs par défaut */
 :root {
@@ -137,7 +138,8 @@
   --yd500: #fdcf41;
   --ym300: #fff9bf;
   --ym500: #ffe800;
-  --scroll-shadow: rgba(30, 30, 30, 0.16); }
+  --scroll-shadow: rgba(30, 30, 30, 0.16);
+  --overlay: rgba(156, 156, 156, 0.32); }
 
 /* valeur des couleurs dans des blocs de combinaison */
 :root:not([data-rf-theme="dark"]) {
@@ -207,7 +209,8 @@
     --yd500: #fdcf41;
     --ym300: #fff9bf;
     --ym500: #ffe800;
-    --scroll-shadow: rgba(30, 30, 30, 0.16); }
+    --scroll-shadow: rgba(30, 30, 30, 0.16);
+    --overlay: rgba(156, 156, 156, 0.32); }
   :root:not([data-rf-theme="dark"]) [class*="rf-scheme-dark"],
   :root:not([data-rf-theme="dark"]) [class*="--scheme-dark-"] {
     --bf500: #bfbfe3;
@@ -267,7 +270,8 @@
     --yd500: #fef3cf;
     --ym300: #383838;
     --ym500: #fff9bf;
-    --scroll-shadow: #1e1e1e; }
+    --scroll-shadow: #1e1e1e;
+    --overlay: rgba(206, 206, 206, 0.08); }
   :root:not([data-rf-theme="dark"]) [class*="rf-scheme-soft"],
   :root:not([data-rf-theme="dark"]) [class*="--scheme-soft-"] {
     --bf500: #383838;

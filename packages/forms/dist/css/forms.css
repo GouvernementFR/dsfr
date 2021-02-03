@@ -141,7 +141,7 @@
     position: relative; }
   .rf-fieldset--inline .rf-fieldset__content {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: -0.75rem 0; }

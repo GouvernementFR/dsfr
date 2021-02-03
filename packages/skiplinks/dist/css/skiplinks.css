@@ -23,7 +23,7 @@
     margin: 0 -1rem -1.5rem; }
     .rf-skiplinks__list > li {
       margin: 0 1rem 1.5rem; }
-      @media (min-width: 36em) {
+      @media (min-width: 48em) {
         .rf-skiplinks__list > li {
           margin: 0 1rem; } }
       .rf-skiplinks__list > li::before {

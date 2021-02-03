@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/tabs",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "MIT",
   "description": "Onglets",
   "level": "5",
@@ -14,8 +14,8 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.3.1",
-    "@gouvfr/core": "^0.3.1",
-    "@gouvfr/links": "^0.3.1"
+    "@gouvfr/schemes": "^0.4.0",
+    "@gouvfr/core": "^0.4.0",
+    "@gouvfr/links": "^0.4.0"
   }
 }

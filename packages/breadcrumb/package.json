@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/breadcrumb",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "MIT",
   "description": "Fil d'Ariane",
   "level": "4",
@@ -14,7 +14,7 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.3.1",
-    "@gouvfr/core": "^0.3.1"
+    "@gouvfr/schemes": "^0.4.0",
+    "@gouvfr/core": "^0.4.0"
   }
 }

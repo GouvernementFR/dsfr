@@ -19,23 +19,27 @@ input.rf-input[disabled], input.rf-input:disabled {
   font-size: 1rem;
   line-height: 1.5rem;
   padding: 0.5rem 1rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   color: var(--g800);
   background-color: var(--g200);
   box-shadow: inset 0 -2px 0 0 var(--g800);
   /**
-   * Modificateur pour gérer l'état de validation
+   * Style du placeholder
    */
   /**
-   * Modificateur pour gérer l'état d'erreur
+   * Modificateur pour les champs validés
    */
   /**
-   * Hauteur max quand l'input n'est pas un textarea
+   * Modificateur pour les champs présentant des erreurs
    */
   /**
-   * Override pour les inputs de type date et number
+   * Style pour l'input désactivé
+   */
+  /**
+   * On applique une hauteur maximale si l'élément n'est pas un textarea
+   */
+  /**
+   * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
+   * sur les navigateurs webkit.
    */ }
   .rf-input:focus {
     outline: 2px solid var(--focus);
@@ -43,19 +47,23 @@ input.rf-input[disabled], input.rf-input:disabled {
     z-index: var(--focus-z-index); }
   .rf-input::-webkit-input-placeholder {
     color: var(--g600-g400);
-    opacity: 1; }
+    opacity: 1;
+    font-style: italic; }
   .rf-input:-moz-placeholder {
     color: var(--g600-g400);
-    opacity: 1; }
+    opacity: 1;
+    font-style: italic; }
   .rf-input::-moz-placeholder {
     color: var(--g600-g400);
-    opacity: 1; }
+    opacity: 1;
+    font-style: italic; }
   .rf-input:-ms-input-placeholder {
     color: var(--g600-g400);
-    opacity: 1; }
+    opacity: 1;
+    font-style: italic; }
   .rf-input--valid {
     box-shadow: inset 0 -2px 0 0 var(--success); }
-  .rf-input--error, .rf-input:invalid {
+  .rf-input--error {
     box-shadow: inset 0 -2px 0 0 var(--error); }
   input.rf-input[disabled], input.rf-input:disabled {
     color: var(--g600-g400);
@@ -66,12 +74,13 @@ input.rf-input[disabled], input.rf-input:disabled {
     opacity: 1; }
   .rf-input:not(textarea) {
     max-height: 2.5rem; }
-  .rf-input::-webkit-inner-spin-button, .rf-input::-webkit-calendar-picker-indicator {
-    display: none; }
   .rf-input:-webkit-autofill, .rf-input:-webkit-autofill:hover, .rf-input:-webkit-autofill:focus {
     box-shadow: inset 0 0 0 100px var(--g200);
     -webkit-text-fill-color: var(--g800); }
 
+/**
+ * Ajout d'un wrapper quand on a besoin de mettre une icône
+ */
 .rf-input-wrap {
   position: relative;
   display: block; }

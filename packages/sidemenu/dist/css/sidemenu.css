@@ -73,13 +73,13 @@
       font-weight: 400; }
       .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__link,
       .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__btn {
-        font-size: 0.875rem;
+        font-size: 1rem;
         line-height: 1.5rem;
         font-weight: 400; }
       .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__link,
       .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__btn {
-        font-size: 0.75rem;
-        line-height: 1.25rem; }
+        font-size: 0.875rem;
+        line-height: 1.5rem; }
         @media (min-width: 48em) {
           .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__link,
           .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__list .rf-sidemenu__btn {

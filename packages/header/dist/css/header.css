@@ -1,4 +1,4 @@
-.rf-header .rf-shortcuts__item .rf-link::before, .rf-header__navbar .rf-btn::before {
+.rf-header__navbar .rf-btn::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -12,37 +12,19 @@
 .rf-header {
   color: var(--g700); }
 
-.rf-header .rf-shortcuts__item .rf-link {
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  min-height: 2rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem; }
-
-.rf-header .rf-shortcuts__item .rf-link::before {
-  font-size: 1rem; }
-
-.rf-header .rf-shortcuts__item .rf-link::before {
-  margin-left: -0.25rem;
-  margin-right: 0.5rem; }
-
-.rf-header .rf-shortcuts__item .rf-link::before {
-  font-size: 1rem; }
-
-.rf-header .rf-shortcuts__item .rf-link::before {
-  margin-left: -0.25rem;
-  margin-right: 0.5rem; }
-
 .rf-header__navbar .rf-btn {
+  flex-direction: row;
   max-width: 2.5rem;
   max-height: 2.5rem;
   padding-left: 0.5rem;
-  padding-right: 0.5rem; }
+  padding-right: 0.5rem;
+  font-size: 0;
+  line-height: 0; }
   .rf-header__navbar .rf-btn::before {
     font-size: 1.5rem; }
   .rf-header__navbar .rf-btn::before {
-    margin-left: 0;
-    margin-right: 0.5rem; }
+    margin-right: 0;
+    margin-left: 0; }
 
 .rf-header {
   width: 100%;
@@ -260,13 +242,26 @@
     .rf-header .rf-shortcuts__item::before {
       content: none; }
     .rf-header .rf-shortcuts__item .rf-link {
-      max-width: none;
-      max-height: none;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+      min-height: 2rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      flex-direction: row;
       border-radius: 0;
       min-width: 100%;
       min-height: 3rem;
       padding: 0.75rem 0;
-      max-height: none; }
+      max-height: none;
+      max-width: none; }
+      .rf-header .rf-shortcuts__item .rf-link:not([class*='rf-fi-']) {
+        max-width: none;
+        max-height: none; }
+      .rf-header .rf-shortcuts__item .rf-link::before {
+        font-size: 1rem; }
+      .rf-header .rf-shortcuts__item .rf-link::before {
+        margin-left: -0.25rem;
+        margin-right: 0.5rem; }
       .rf-header .rf-shortcuts__item .rf-link::before {
         margin-left: 0.25rem; }
     @media (min-width: 48em) {
@@ -276,8 +271,10 @@
         min-height: 2rem;
         padding: 0.25rem 0.75rem;
         border-radius: 1rem;
-        max-width: none;
-        max-height: none; }
+        flex-direction: row; }
+        .rf-header .rf-shortcuts__item .rf-link:not([class*='rf-fi-']) {
+          max-width: none;
+          max-height: none; }
         .rf-header .rf-shortcuts__item .rf-link::before {
           font-size: 1rem; }
         .rf-header .rf-shortcuts__item .rf-link::before {

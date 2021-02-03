@@ -41,12 +41,13 @@
     margin-right: -0.25rem;
     margin-left: 0.5rem; }
 
-.rf-content-media__transcription .rf-link::before {
-  font-size: 1rem; }
-
-.rf-content-media__transcription .rf-link::before {
-  margin-right: -0.25rem;
-  margin-left: 0.5rem; }
+.rf-content-media__transcription .rf-link {
+  flex-direction: row-reverse; }
+  .rf-content-media__transcription .rf-link::before {
+    font-size: 1rem; }
+  .rf-content-media__transcription .rf-link::before {
+    margin-right: -0.25rem;
+    margin-left: 0.5rem; }
 
 .rf-content-media__transcription .rf-link {
   margin-left: -0.75rem;

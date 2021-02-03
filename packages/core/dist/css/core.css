@@ -414,7 +414,8 @@ ol.rf-list, .rf-prose ol {
   font-family: "Marianne", arial, sans-serif;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; }
 
 [data-rf-reset] body, [class^="rf-fi-"], [class*=" rf-fi-"], .rf-list, .rf-prose {
   color: var(--g700); }

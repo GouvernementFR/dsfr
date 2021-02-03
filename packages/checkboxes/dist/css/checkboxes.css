@@ -16,11 +16,49 @@
 .rf-checkbox-group {
   color: var(--g700); }
 
+/**
+ * L'input de type checkbox avec son label est contenu dans un groupe
+ * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
+ */
 .rf-checkbox-group {
-  position: relative; }
+  position: relative;
+  /**
+   * On cache l'input de type checkbox pour le styler via le label
+   */
+  /**
+   * Dans le cas d'un fieldset, on supprime l'espacement du premier groupe
+   */
+  /**
+   * Dans le cas d'un fieldset, on supprime l'espacement du dernier groupe
+   */
+  /**
+   * Texte d'aide
+   */
+  /**
+   * Texte de validation et d'erreur
+   */
+  /**
+   * Modificateur de taille sm
+   */
+  /**
+   * Modificateur pour gérer l'état erreur
+   */
+  /**
+   * Modificateur pour gérer l'état validé
+   */ }
   .rf-checkbox-group input[type="checkbox"] {
     position: absolute;
-    opacity: 0; }
+    opacity: 0;
+    /**
+     * On applique un display grid sur le label afin de gérer le positionnement des élements
+     */
+    /**
+     * On applique les styles au pseudo élément before du label quand l'input présente
+     * un état check ou active
+     */
+    /**
+     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
+     */ }
     .rf-checkbox-group input[type="checkbox"] + label {
       position: relative;
       cursor: pointer;
@@ -37,7 +75,13 @@
       grid-template-columns: 1fr 2rem;
       -ms-grid-columns: 1fr 2rem;
       text-align: left;
-      direction: rtl; }
+      direction: rtl;
+      /**
+       * On ajoute l'icône check-line en taille sm via un pseudo element before
+       */
+      /**
+       * Positionnement du texte d'aide
+       */ }
       .rf-checkbox-group input[type="checkbox"] + label::before {
         font-size: 1rem;
         display: flex;

@@ -1,12 +1,13 @@
+@charset "UTF-8";
 button.rf-btn[disabled], button.rf-btn:disabled, button.rf-btn--secondary[disabled], button.rf-btn--secondary:disabled {
   cursor: not-allowed; }
 
-.rf-btn {
+.rf-btn, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg) .rf-btn:not([class*="rf-fi-"]), :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
   display: inline-flex;
   flex-direction: row;
   align-items: center; }
 
-.rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before {
+.rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
   font-family: icons !important;
   font-style: normal;
   font-weight: normal !important;
@@ -25,107 +26,128 @@ button.rf-btn {
 a.rf-btn {
   text-decoration: none; }
 
-.rf-btn {
+:root .rf-btns-group {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0; }
+
+.rf-btn, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg) .rf-btn:not([class*="rf-fi-"]), :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
   overflow: hidden;
   z-index: 1; }
-  .rf-btn:focus {
+  .rf-btn:focus, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg) .rf-btn:focus:not([class*="rf-fi-"]), :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn:focus[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn:focus[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn:focus[class*="rf-fi-"] {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
     z-index: var(--focus-z-index); }
 
-.rf-btn {
+.rf-btn, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg) .rf-btn:not([class*="rf-fi-"]), :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
   font-size: 1rem;
   line-height: 1.5rem;
   min-height: 2.5rem;
   padding: 0.5rem 1.5rem; }
 
-.rf-btn--sm {
+.rf-btn--sm, :root .rf-btns-group--sm .rf-btn:not([class*="rf-fi-"]), :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
   font-size: 0.875rem;
   line-height: 1.5rem;
   min-height: 2rem;
   padding: 0.25rem 1rem; }
 
-.rf-btn--lg {
+.rf-btn--lg, :root .rf-btns-group--lg .rf-btn:not([class*="rf-fi-"]), :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
   font-size: 1.25rem;
   line-height: 2rem;
   min-height: 3.5rem;
   padding: 0.75rem 2rem; }
 
-.rf-btn:not([class*="btn--icon-"])[class^="rf-fi-"], .rf-btn:not([class*="btn--icon-"])[class*=" rf-fi-"] {
+.rf-btn:not([class*="btn--icon-"])[class^="rf-fi-"], .rf-btn:not([class*="btn--icon-"])[class*=" rf-fi-"], :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"], :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"] {
+  flex-direction: row;
   max-width: 2.5rem;
   max-height: 2.5rem;
   padding-left: 0.5rem;
-  padding-right: 0.5rem; }
-  .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+  padding-right: 0.5rem;
+  font-size: 0;
+  line-height: 0; }
+  .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before {
     font-size: 1.5rem; }
-  .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
-    margin-left: 0;
-    margin-right: 0.5rem; }
+  .rf-btn[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before {
+    margin-right: 0;
+    margin-left: 0; }
 
-.rf-btn--sm:not([class*="btn--icon-"])[class^="rf-fi-"], .rf-btn--sm:not([class*="btn--icon-"])[class*=" rf-fi-"] {
+.rf-btn--sm:not([class*="btn--icon-"])[class^="rf-fi-"], .rf-btn--sm:not([class*="btn--icon-"])[class*=" rf-fi-"], :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"] {
+  flex-direction: row;
   max-width: 2rem;
   max-height: 2rem;
   padding-left: 0.5rem;
-  padding-right: 0.5rem; }
-  .rf-btn--sm[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+  padding-right: 0.5rem;
+  font-size: 0;
+  line-height: 0; }
+  .rf-btn--sm[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before {
     font-size: 1rem; }
-  .rf-btn--sm[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
-    margin-left: 0;
-    margin-right: 0.5rem; }
+  .rf-btn--sm[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--sm[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before {
+    margin-right: 0;
+    margin-left: 0; }
 
-.rf-btn--lg:not([class*="btn--icon-"])[class^="rf-fi-"], .rf-btn--lg:not([class*="btn--icon-"])[class*=" rf-fi-"] {
+.rf-btn--lg:not([class*="btn--icon-"])[class^="rf-fi-"], .rf-btn--lg:not([class*="btn--icon-"])[class*=" rf-fi-"], :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"] {
+  flex-direction: row;
   max-width: 3.5rem;
   max-height: 3.5rem;
   padding-left: 0.75rem;
-  padding-right: 0.75rem; }
-  .rf-btn--lg[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
+  padding-right: 0.75rem;
+  font-size: 0;
+  line-height: 0; }
+  .rf-btn--lg[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before {
     font-size: 2rem; }
-  .rf-btn--lg[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg[class*=" rf-fi-"]:not([class*="btn--icon-"])::before {
-    margin-left: 0;
-    margin-right: 0.75rem; }
+  .rf-btn--lg[class^="rf-fi-"]:not([class*="btn--icon-"])::before, .rf-btn--lg[class*=" rf-fi-"]:not([class*="btn--icon-"])::before, :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"]::before {
+    margin-right: 0;
+    margin-left: 0; }
 
-.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before {
-  font-size: 1rem; }
-
-.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before {
-  margin-left: -0.25rem;
-  margin-right: 0.5rem; }
-
-.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]::before {
-  font-size: 1rem; }
-
-.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]::before {
-  margin-left: -0.25rem;
-  margin-right: 0.5rem; }
-
-.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]::before {
-  font-size: 1.5rem; }
-
-.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]::before {
-  margin-left: -0.375rem;
-  margin-right: 0.5rem; }
-
-.rf-btn--icon-right[class^="rf-fi-"], .rf-btn--icon-right[class*=" rf-fi-"] {
-  flex-direction: row-reverse; }
-  .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before {
+.rf-btn--icon-left[class^="rf-fi-"], .rf-btn--icon-left[class*=" rf-fi-"], :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"], :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"] {
+  flex-direction: row; }
+  .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before {
     font-size: 1rem; }
-  .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before {
+  .rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before {
+    margin-left: -0.25rem;
+    margin-right: 0.5rem; }
+
+.rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"], .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"], :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"] {
+  flex-direction: row; }
+  .rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before {
+    font-size: 1rem; }
+  .rf-btn--sm.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before {
+    margin-left: -0.25rem;
+    margin-right: 0.5rem; }
+
+.rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"], .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"], :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"] {
+  flex-direction: row; }
+  .rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before {
+    font-size: 1.5rem; }
+  .rf-btn--lg.rf-btn--icon-left[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-left[class*=" rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"]::before {
+    margin-left: -0.375rem;
+    margin-right: 0.5rem; }
+
+.rf-btn--icon-right[class^="rf-fi-"], .rf-btn--icon-right[class*=" rf-fi-"], :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"], :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"], :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
+  flex-direction: row-reverse; }
+  .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
+    font-size: 1rem; }
+  .rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
     margin-right: -0.25rem;
     margin-left: 0.5rem; }
 
-.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]::before {
-  font-size: 1rem; }
+.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"], .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"], :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
+  flex-direction: row-reverse; }
+  .rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
+    font-size: 1rem; }
+  .rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
+    margin-right: -0.25rem;
+    margin-left: 0.5rem; }
 
-.rf-btn--sm.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--sm.rf-btn--icon-right[class*=" rf-fi-"]::before {
-  margin-right: -0.25rem;
-  margin-left: 0.5rem; }
-
-.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]::before {
-  font-size: 1.5rem; }
-
-.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]::before {
-  margin-right: -0.375rem;
-  margin-left: 0.5rem; }
+.rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"], .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"], :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
+  flex-direction: row-reverse; }
+  .rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
+    font-size: 1.5rem; }
+  .rf-btn--lg.rf-btn--icon-right[class^="rf-fi-"]::before, .rf-btn--lg.rf-btn--icon-right[class*=" rf-fi-"]::before, :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"]::before {
+    margin-right: -0.375rem;
+    margin-left: 0.5rem; }
 
 .rf-btn {
   margin: 0;
@@ -136,8 +158,6 @@ a.rf-btn {
     a.rf-btn[target="_blank"]::after {
       content: none;
       margin-left: 0; }
-  .rf-btn, a.rf-btn {
-    color: var(--w-bf500); }
   @media (hover: hover) and (pointer: fine) {
     .rf-btn:not([disabled]):hover, .rf-btn:not(:disabled):hover {
       background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover)); }
@@ -161,6 +181,8 @@ a.rf-btn {
   :root[data-rf-theme="dark"] .rf-btn {
     --color-hover: rgba(138, 138, 204, 0.5);
     --color-active: rgba(84, 84, 180, 0.5); }
+  .rf-btn, a.rf-btn {
+    color: var(--w-bf500); }
   button.rf-btn[disabled], button.rf-btn:disabled {
     color: var(--g600-g400);
     background-color: var(--g200); }
@@ -191,6 +213,198 @@ a.rf-btn {
       color: var(--g600-g400);
       box-shadow: inset 0 0 0 1px var(--g400);
       background-color: var(--t-plain); }
+
+:root .rf-btns-group {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+  /**
+  * rf-btns-group--inline : aligne les boutons horizontalement dans tout les cas
+  * rf-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
+  */
+  /**
+  * rf-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
+  */
+  /**
+  * rf-btns-group--right : aligne les boutons sur la droite
+  */
+  /**
+  * rf-btns-group--center : aligne les boutons au centre du conteneur
+  */
+  /**
+  * rf-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
+  */
+  /**
+  * rf-btns-group--sm : Fixe les boutons à la taille SM
+  */
+  /**
+  * rf-btns-group--md : (défaut) Fixe les boutons à la taille MD
+  */
+  /**
+  * rf-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
+  */ }
+  :root .rf-btns-group > li {
+    width: 100%;
+    max-width: 100%; }
+  :root .rf-btns-group .rf-btn {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0; }
+  :root .rf-btns-group .rf-btn {
+    margin-bottom: 1rem;
+    justify-content: center; }
+  :root .rf-btns-group--inline {
+    width: calc(100% + 1rem); }
+    :root .rf-btns-group--inline .rf-btn {
+      width: auto;
+      margin-right: 1rem;
+      max-width: 100%; }
+    :root .rf-btns-group--inline > li {
+      display: inline-flex;
+      max-width: 100%;
+      width: auto; }
+      :root .rf-btns-group--inline > li::before {
+        content: none; }
+    :root .rf-btns-group--inline.rf-btns-group--right {
+      margin-left: -1rem; }
+      :root .rf-btns-group--inline.rf-btns-group--right .rf-btn {
+        margin-right: 0;
+        margin-left: 1rem; }
+      :root .rf-btns-group--inline.rf-btns-group--right.rf-btns-group--inline-reverse {
+        flex-direction: row-reverse;
+        justify-content: flex-start; }
+    :root .rf-btns-group--inline.rf-btns-group--center, :root .rf-btns-group--inline.rf-btns-group--left {
+      margin-right: -1rem; }
+      :root .rf-btns-group--inline.rf-btns-group--center .rf-btn, :root .rf-btns-group--inline.rf-btns-group--left .rf-btn {
+        margin-right: 1rem;
+        margin-left: 0; }
+    @media (min-width: 36em) {
+      :root .rf-btns-group--inline-sm {
+        width: calc(100% + 1rem); }
+        :root .rf-btns-group--inline-sm .rf-btn {
+          width: auto;
+          margin-right: 1rem;
+          max-width: 100%; }
+        :root .rf-btns-group--inline-sm > li {
+          display: inline-flex;
+          max-width: 100%;
+          width: auto; }
+          :root .rf-btns-group--inline-sm > li::before {
+            content: none; }
+        :root .rf-btns-group--inline-sm.rf-btns-group--right {
+          margin-left: -1rem; }
+          :root .rf-btns-group--inline-sm.rf-btns-group--right .rf-btn {
+            margin-right: 0;
+            margin-left: 1rem; }
+          :root .rf-btns-group--inline-sm.rf-btns-group--right.rf-btns-group--inline-reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-start; }
+        :root .rf-btns-group--inline-sm.rf-btns-group--center, :root .rf-btns-group--inline-sm.rf-btns-group--left {
+          margin-right: -1rem; }
+          :root .rf-btns-group--inline-sm.rf-btns-group--center .rf-btn, :root .rf-btns-group--inline-sm.rf-btns-group--left .rf-btn {
+            margin-right: 1rem;
+            margin-left: 0; } }
+    @media (min-width: 48em) {
+      :root .rf-btns-group--inline-md {
+        width: calc(100% + 1rem); }
+        :root .rf-btns-group--inline-md .rf-btn {
+          width: auto;
+          margin-right: 1rem;
+          max-width: 100%; }
+        :root .rf-btns-group--inline-md > li {
+          display: inline-flex;
+          max-width: 100%;
+          width: auto; }
+          :root .rf-btns-group--inline-md > li::before {
+            content: none; }
+        :root .rf-btns-group--inline-md.rf-btns-group--right {
+          margin-left: -1rem; }
+          :root .rf-btns-group--inline-md.rf-btns-group--right .rf-btn {
+            margin-right: 0;
+            margin-left: 1rem; }
+          :root .rf-btns-group--inline-md.rf-btns-group--right.rf-btns-group--inline-reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-start; }
+        :root .rf-btns-group--inline-md.rf-btns-group--center, :root .rf-btns-group--inline-md.rf-btns-group--left {
+          margin-right: -1rem; }
+          :root .rf-btns-group--inline-md.rf-btns-group--center .rf-btn, :root .rf-btns-group--inline-md.rf-btns-group--left .rf-btn {
+            margin-right: 1rem;
+            margin-left: 0; } }
+    @media (min-width: 62em) {
+      :root .rf-btns-group--inline-lg {
+        width: calc(100% + 1rem); }
+        :root .rf-btns-group--inline-lg .rf-btn {
+          width: auto;
+          margin-right: 1rem;
+          max-width: 100%; }
+        :root .rf-btns-group--inline-lg > li {
+          display: inline-flex;
+          max-width: 100%;
+          width: auto; }
+          :root .rf-btns-group--inline-lg > li::before {
+            content: none; }
+        :root .rf-btns-group--inline-lg.rf-btns-group--right {
+          margin-left: -1rem; }
+          :root .rf-btns-group--inline-lg.rf-btns-group--right .rf-btn {
+            margin-right: 0;
+            margin-left: 1rem; }
+          :root .rf-btns-group--inline-lg.rf-btns-group--right.rf-btns-group--inline-reverse {
+            flex-direction: row-reverse;
+            justify-content: flex-start; }
+        :root .rf-btns-group--inline-lg.rf-btns-group--center, :root .rf-btns-group--inline-lg.rf-btns-group--left {
+          margin-right: -1rem; }
+          :root .rf-btns-group--inline-lg.rf-btns-group--center .rf-btn, :root .rf-btns-group--inline-lg.rf-btns-group--left .rf-btn {
+            margin-right: 1rem;
+            margin-left: 0; } }
+  :root .rf-btns-group--left,
+  :root .rf-btns-group--left li {
+    justify-content: flex-start;
+    text-align: left; }
+  :root .rf-btns-group--right,
+  :root .rf-btns-group--right li {
+    justify-content: flex-end;
+    text-align: right; }
+  :root .rf-btns-group--center,
+  :root .rf-btns-group--center li {
+    justify-content: center;
+    text-align: center; }
+  :root .rf-btns-group--equisized .rf-btn {
+    justify-content: center; }
+  :root .rf-btns-group--sm .rf-btn:not([class*="rf-fi-"]) {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group--sm:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"] {
+    justify-content: flex-start; }
+  :root .rf-btns-group--sm.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"] {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group--sm.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg) .rf-btn:not([class*="rf-fi-"]) {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg):not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"] {
+    justify-content: flex-start; }
+  :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-left .rf-btn[class*="rf-fi-"] {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group:not(.rf-btns-group--sm):not(.rf-btns-group--lg).rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group--lg .rf-btn:not([class*="rf-fi-"]) {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group--lg:not([class*="rf-btns-group--icon-"]) .rf-btn[class*="rf-fi-"] {
+    justify-content: flex-start; }
+  :root .rf-btns-group--lg.rf-btns-group--icon-left .rf-btn[class*="rf-fi-"] {
+    max-width: none;
+    max-height: none; }
+  :root .rf-btns-group--lg.rf-btns-group--icon-right .rf-btn[class*="rf-fi-"] {
+    max-width: none;
+    max-height: none; }
 
 
 /*# sourceMappingURL=buttons.css.map*/
