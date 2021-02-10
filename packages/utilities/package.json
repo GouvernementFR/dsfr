@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/utilities",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "license": "MIT",
   "description": "Outils",
   "level": "2",
@@ -14,7 +14,7 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.5.1",
-    "@gouvfr/core": "^0.5.1"
+    "@gouvfr/schemes": "^0.5.3",
+    "@gouvfr/core": "^0.5.3"
   }
 }

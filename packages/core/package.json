@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/core",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "license": "MIT",
   "description": "Core",
   "level": "1.2",
@@ -8,11 +8,10 @@
     "access": "public"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
-    "postinstall": "node ./post-install.js"
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.5.1"
+    "@gouvfr/schemes": "^0.5.3"
   },
   "devDependencies": {
     "gently-copy": "^3.2.0",
