@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/footer",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "license": "MIT",
   "description": "Footer",
   "level": "6",
@@ -11,9 +11,9 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.4.0",
-    "@gouvfr/core": "^0.4.0",
-    "@gouvfr/links": "^0.4.0",
-    "@gouvfr/logo": "^0.4.0"
+    "@gouvfr/core": "^0.5.0",
+    "@gouvfr/links": "^0.5.0",
+    "@gouvfr/logo": "^0.5.0",
+    "@gouvfr/schemes": "^0.5.0"
   }
 }
