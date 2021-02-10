@@ -7,6 +7,7 @@ import {
   BODY_SELECTOR
 } from './modal-constants';
 import { ModalsGroup } from './modals-group';
+import { ModalButton } from './modal-button';
 
 const group = new ModalsGroup();
 
@@ -43,10 +44,8 @@ class Modal extends Disclosure {
   apply (value, initial) {
     this.handleScroll(!value);
     if (!value) {
-      // this.element.setAttribute('aria-hidden', true);
       if (!initial) this.focus();
     } else {
-      // this.element.setAttribute('aria-hidden', false);
       if (!initial) this.resize(true);
     }
     super.apply(value, initial);
@@ -94,8 +93,12 @@ class Modal extends Disclosure {
     }
   }
 
-  static get type () { return Disclosure.TYPES.open; }
+  static get type () { return Disclosure.TYPES.expand; }
   static get selector () { return MODAL_SELECTOR; }
+
+  buttonFactory (element) {
+    return new ModalButton(element, this);
+  }
 
   get GroupConstructor () { return ModalsGroup; }
 }

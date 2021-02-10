@@ -31,11 +31,7 @@ if (locals.layout) classes.push(prefix + '-table--layout-fixed');
         <thead>
             <tr>
                 <% for(var j = 0; j < locals.col; j++) { %>
-                    <% if(j == 0) { %>
-                        <td scope="row">td</th>
-                    <% } else { %>
-                        <th scope="col"> th<%= j %> </th>
-                    <% } %>
+                    <th scope="col"> th<%= j %> </th>
                 <% } %>
             </tr>
         </thead>

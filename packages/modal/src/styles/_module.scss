@@ -21,7 +21,7 @@ $modal: "#{$prefix}-modal";
     align-items: center;
   }
 
-  &--opened {
+  &--expanded {
     // transition in/out
     visibility: inherit;
     opacity: 1;

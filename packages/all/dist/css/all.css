@@ -8127,7 +8127,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   @media (min-width: 48em) {
     .rf-modal {
       align-items: center; } }
-  .rf-modal--opened {
+  .rf-modal--expanded {
     visibility: inherit;
     opacity: 1;
     width: 100%;

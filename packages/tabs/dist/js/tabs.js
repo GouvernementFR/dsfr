@@ -585,6 +585,7 @@ var focus_trap_FocusTrap = /*#__PURE__*/function () {
     value: function trap(element) {
       if (this.trapped) this.untrap();
       this.element = element;
+      this.isTrapping = true;
       this.wait();
       if (this.onTrap) this.onTrap();
     }
@@ -601,8 +602,11 @@ var focus_trap_FocusTrap = /*#__PURE__*/function () {
   }, {
     key: "trapping",
     value: function trapping() {
+      if (!this.isTrapping) return;
+      this.isTrapping = false;
       var focusables = this.focusables;
       if (focusables.length) focusables[0].focus();
+      this.element.setAttribute('aria-modal', true);
       this.element.addEventListener('keydown', this.handling);
       this.stunneds = [];
       this.stun(document.body);
@@ -663,6 +667,8 @@ var focus_trap_FocusTrap = /*#__PURE__*/function () {
     key: "untrap",
     value: function untrap() {
       if (!this.trapped) return;
+      this.isTrapping = false;
+      this.element.removeAttribute('aria-modal');
       this.element.removeEventListener('keydown', this.handling);
       this.element = null;
 

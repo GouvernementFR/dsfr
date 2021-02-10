@@ -549,6 +549,7 @@ var focus_trap_FocusTrap = /*#__PURE__*/function () {
     value: function trap(element) {
       if (this.trapped) this.untrap();
       this.element = element;
+      this.isTrapping = true;
       this.wait();
       if (this.onTrap) this.onTrap();
     }
@@ -565,8 +566,11 @@ var focus_trap_FocusTrap = /*#__PURE__*/function () {
   }, {
     key: "trapping",
     value: function trapping() {
+      if (!this.isTrapping) return;
+      this.isTrapping = false;
       var focusables = this.focusables;
       if (focusables.length) focusables[0].focus();
+      this.element.setAttribute('aria-modal', true);
       this.element.addEventListener('keydown', this.handling);
       this.stunneds = [];
       this.stun(document.body);
@@ -627,6 +631,8 @@ var focus_trap_FocusTrap = /*#__PURE__*/function () {
     key: "untrap",
     value: function untrap() {
       if (!this.trapped) return;
+      this.isTrapping = false;
+      this.element.removeAttribute('aria-modal');
       this.element.removeEventListener('keydown', this.handling);
       this.element = null;
 
@@ -2803,6 +2809,63 @@ var modals_group_ModalsGroup = /*#__PURE__*/function (_DisclosuresGroup) {
 }(DisclosuresGroup);
 
 
+// CONCATENATED MODULE: ./packages/modal/src/scripts/modal/modal-button.js
+function modal_button_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { modal_button_typeof = function _typeof(obj) { return typeof obj; }; } else { modal_button_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return modal_button_typeof(obj); }
+
+function modal_button_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function modal_button_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function modal_button_createClass(Constructor, protoProps, staticProps) { if (protoProps) modal_button_defineProperties(Constructor.prototype, protoProps); if (staticProps) modal_button_defineProperties(Constructor, staticProps); return Constructor; }
+
+function modal_button_get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { modal_button_get = Reflect.get; } else { modal_button_get = function _get(target, property, receiver) { var base = modal_button_superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return modal_button_get(target, property, receiver || target); }
+
+function modal_button_superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = modal_button_getPrototypeOf(object); if (object === null) break; } return object; }
+
+function modal_button_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) modal_button_setPrototypeOf(subClass, superClass); }
+
+function modal_button_setPrototypeOf(o, p) { modal_button_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return modal_button_setPrototypeOf(o, p); }
+
+function modal_button_createSuper(Derived) { var hasNativeReflectConstruct = modal_button_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = modal_button_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = modal_button_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return modal_button_possibleConstructorReturn(this, result); }; }
+
+function modal_button_possibleConstructorReturn(self, call) { if (call && (modal_button_typeof(call) === "object" || typeof call === "function")) { return call; } return modal_button_assertThisInitialized(self); }
+
+function modal_button_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function modal_button_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function modal_button_getPrototypeOf(o) { modal_button_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return modal_button_getPrototypeOf(o); }
+
+
+
+var ModalButton = /*#__PURE__*/function (_DisclosureButton) {
+  modal_button_inherits(ModalButton, _DisclosureButton);
+
+  var _super = modal_button_createSuper(ModalButton);
+
+  function ModalButton() {
+    modal_button_classCallCheck(this, ModalButton);
+
+    return _super.apply(this, arguments);
+  }
+
+  modal_button_createClass(ModalButton, [{
+    key: "apply",
+
+    /**
+     * https://a11ysupport.io/tech/aria/aria-haspopup_attribute
+     */
+    value: function apply(value) {
+      modal_button_get(modal_button_getPrototypeOf(ModalButton.prototype), "apply", this).call(this, value); // if (!this.hasAttribute) return;
+      // this.element.setAttribute(this.disclosure.attributeName, value);
+
+    }
+  }]);
+
+  return ModalButton;
+}(DisclosureButton);
+
+
 // CONCATENATED MODULE: ./packages/modal/src/scripts/modal/modal.js
 function modal_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { modal_typeof = function _typeof(obj) { return typeof obj; }; } else { modal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return modal_typeof(obj); }
 
@@ -2829,6 +2892,7 @@ function modal_assertThisInitialized(self) { if (self === void 0) { throw new Re
 function modal_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function modal_getPrototypeOf(o) { modal_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return modal_getPrototypeOf(o); }
+
 
 
 
@@ -2885,10 +2949,8 @@ var modal_Modal = /*#__PURE__*/function (_Disclosure) {
       this.handleScroll(!value);
 
       if (!value) {
-        // this.element.setAttribute('aria-hidden', true);
         if (!initial) this.focus();
       } else {
-        // this.element.setAttribute('aria-hidden', false);
         if (!initial) this.resize(true);
       }
 
@@ -2943,6 +3005,11 @@ var modal_Modal = /*#__PURE__*/function (_Disclosure) {
       }
     }
   }, {
+    key: "buttonFactory",
+    value: function buttonFactory(element) {
+      return new ModalButton(element, this);
+    }
+  }, {
     key: "GroupConstructor",
     get: function get() {
       return modals_group_ModalsGroup;
@@ -2950,7 +3017,7 @@ var modal_Modal = /*#__PURE__*/function (_Disclosure) {
   }], [{
     key: "type",
     get: function get() {
-      return disclosure_Disclosure.TYPES.open;
+      return disclosure_Disclosure.TYPES.expand;
     }
   }, {
     key: "selector",
