@@ -63,42 +63,36 @@ a.rf-link {
   max-width: 2rem;
   max-height: 2rem;
   padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  font-size: 0;
-  line-height: 0; }
+  padding-right: 0.25rem; }
   .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before {
     font-size: 1.5rem; }
   .rf-link[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link[class*=" rf-fi-"]:not([class*="link--icon-"])::before {
-    margin-right: 0;
-    margin-left: 0; }
+    margin-left: 0;
+    margin-right: 0.25rem; }
 
 .rf-link--sm:not([class*="link--icon-"])[class^="rf-fi-"], .rf-link--sm:not([class*="link--icon-"])[class*=" rf-fi-"] {
   flex-direction: row;
   max-width: 2rem;
   max-height: 2rem;
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-size: 0;
-  line-height: 0; }
+  padding-right: 0.5rem; }
   .rf-link--sm[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--sm[class*=" rf-fi-"]:not([class*="link--icon-"])::before {
     font-size: 1rem; }
   .rf-link--sm[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--sm[class*=" rf-fi-"]:not([class*="link--icon-"])::before {
-    margin-right: 0;
-    margin-left: 0; }
+    margin-left: 0;
+    margin-right: 0.5rem; }
 
 .rf-link--lg:not([class*="link--icon-"])[class^="rf-fi-"], .rf-link--lg:not([class*="link--icon-"])[class*=" rf-fi-"] {
   flex-direction: row;
   max-width: 3rem;
   max-height: 3rem;
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  font-size: 0;
-  line-height: 0; }
+  padding-right: 0.5rem; }
   .rf-link--lg[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--lg[class*=" rf-fi-"]:not([class*="link--icon-"])::before {
     font-size: 2rem; }
   .rf-link--lg[class^="rf-fi-"]:not([class*="link--icon-"])::before, .rf-link--lg[class*=" rf-fi-"]:not([class*="link--icon-"])::before {
-    margin-right: 0;
-    margin-left: 0; }
+    margin-left: 0;
+    margin-right: 0.5rem; }
 
 .rf-link--icon-left[class^="rf-fi-"], .rf-link--icon-left[class*=" rf-fi-"] {
   flex-direction: row; }

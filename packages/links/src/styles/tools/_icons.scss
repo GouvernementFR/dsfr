@@ -51,12 +51,10 @@
     max-height: $min-height;
     padding-left: $padding-x;
     padding-right: $padding-x;
-    font-size: 0;
-    line-height: 0;
 
     @include before {
-      @include margin-right(0);
-      @include margin-left(0);
+      margin-left: 0;
+      margin-right: $padding-x;
     }
   }
 }
