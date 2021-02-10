@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/core",
-  "version": "0.4.0",
+  "version": "0.5.1",
   "license": "MIT",
   "description": "Core",
   "level": "1.2",
@@ -12,7 +12,7 @@
     "postinstall": "node ./post-install.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.4.0"
+    "@gouvfr/schemes": "^0.5.1"
   },
   "devDependencies": {
     "gently-copy": "^3.2.0",

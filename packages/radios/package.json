@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/radios",
-  "version": "0.4.0",
+  "version": "0.5.1",
   "license": "MIT",
   "description": "Boutons radio",
   "level": "4",
@@ -14,8 +14,8 @@
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.4.0",
-    "@gouvfr/core": "^0.4.0",
-    "@gouvfr/forms": "^0.4.0"
+    "@gouvfr/schemes": "^0.5.1",
+    "@gouvfr/core": "^0.5.1",
+    "@gouvfr/forms": "^0.5.1"
   }
 }
