@@ -35,7 +35,7 @@
 
 @mixin generate-icons-content($icons) {
   @each $icon, $code in $icons {
-    #{dse('fi-' + $icon)} {
+    #{ns('fi-' + $icon)} {
       @include before {
         @extend %#{$icon};
       }

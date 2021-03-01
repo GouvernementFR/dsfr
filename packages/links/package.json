@@ -1,20 +1,18 @@
 {
   "name": "@gouvfr/links",
-  "version": "0.5.3",
+  "version": "0.4.0",
   "license": "MIT",
-  "description": "Liens",
   "level": "3",
   "publishConfig": {
     "access": "public"
   },
-  "config": {
-    "wrapper": "col-8"
-  },
   "scripts": {
-    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
+    "build:styles":"../core/tools.js build -t styles -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build:scripts": "../core/tools.js build -t scripts -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build": "run-s build:*"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.5.3",
-    "@gouvfr/core": "^0.5.3"
+    "@gouvfr/core": "^0.4.0"
   }
 }

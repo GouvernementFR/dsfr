@@ -7,7 +7,7 @@
 /// @access public
 /// @param {String} $name - nom de l'élément
 /// @param {String} $notation - notation du sélecteur, par défaut un point pour les classes
-@function dse($name, $notation: '.') {
+@function ns($name, $notation: '.') {
   $class-name: $notation + $prefix + '-' + $name;
   @return $class-name;
 }
@@ -15,16 +15,16 @@
 /// Préfixage d'une classe de groupe
 /// @access public
 /// @param {String} $name - nom de l'élément, à mettre au pluriel
-@function dse-group($name) {
-  @return dse($name + '-group');
+@function ns-group($name) {
+  @return ns($name + '-group');
 }
 
 /// Préfixage d'un attribut css
 /// @access public
 /// @param {String} $name - nom de l'attribut
 /// @param {String} $value - valeur de l'attribut
-@function dse-attr($name, $value: null) {
-  $attr: 'data-#{dse($name, "")}';
+@function ns-attr($name, $value: null) {
+  $attr: 'data-#{ns($name, "")}';
   @if $value == null {
     @return '[' + $attr + ']';
   }

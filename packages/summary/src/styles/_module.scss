@@ -3,9 +3,8 @@
 /// @group summary
 ////
 
-#{dse(summary)} {
+#{ns(summary)} {
   @extend %default-text-color;
-  @include scheme-element-bg-color(beige, true);
   @include padding(6v);
   @include padding(8v 10v 6v, md);
 
@@ -14,26 +13,23 @@
     @include text-style(xs);
     font-weight: font-weight(bold);
     text-transform: uppercase;
-    @include scheme-element-text-color(g800, true);
   }
 
   @include list {
     @extend %list-reset;
     @extend %ordered-list;
 
-    > li {
+    > li { // TODO: BEM
       @include margin(0);
       @include before(null, none);
     }
 
-    > li > a {
+    > li > a { // TODO: BEM
       display: inline-flex;
       @include padding(2v);
       @include margin(0 -2v);
       @include text-style(xs);
       box-shadow: none;
-      @include scheme-element-text-color(g800, true);
-      @include scheme-element-bg-color(t-plain, true, after);
 
       @include before {
         @include margin-right(2v);
@@ -43,6 +39,6 @@
   }
 }
 
-#{dse(summary__link)} {
+#{ns(summary__link)} {
   text-decoration: none;
 }

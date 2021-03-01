@@ -1,0 +1,10 @@
+<%
+const items = [
+  { label: 'Contenu', href:'#content' },
+  { label: 'Menu', href:'#header-navigation' },
+  { label: 'Recherche', href:'#header-search' },
+  { label: 'Pied de page', href:'#footer' }
+];
+%>
+
+<%- include('../../src/templates/ejs/skiplinks', { items: items }); %>

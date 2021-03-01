@@ -1,8 +1,0 @@
-<%
-const attributes = {};
-attributes['aria-expanded'] = locals.opened === true;
-attributes['aria-controls'] = locals.id;
-
-%>
-
-<%- include("../../../buttons/tests/templates/button", {label: label, attributes: attributes}) %>

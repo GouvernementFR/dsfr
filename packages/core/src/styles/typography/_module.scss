@@ -11,12 +11,12 @@
 
   @include build-typography();
 
-  #{dse(text--alt)} {
+  #{ns(text--alt)} {
     font-family: $font-family-serif;
   }
 }
 
-#{dse(list)} {
+#{ns(list)} {
   @extend %default-text-color;
   @extend %list-reset;
 

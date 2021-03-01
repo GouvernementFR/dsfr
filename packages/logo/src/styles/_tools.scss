@@ -4,7 +4,7 @@
 ////
 
 @mixin logo($size: md, $size-md: none) {
-  #{dse(logo)} {
+  #{ns(logo)} {
     font-size: map_get($logo-sizes, $size);
 
     @if $size-md != none {

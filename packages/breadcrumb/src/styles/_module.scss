@@ -6,8 +6,7 @@
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
-#{dse(breadcrumb)} {
-  @extend %default-text-color;
+#{ns(breadcrumb)} {
   @include margin(2v -2v 6v);
   @include padding(2v);
   @include margin-bottom(8v, md);
@@ -20,16 +19,20 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     -moz-appearance: none;
     appearance: none;
     font-family: inherit;
-    font-size: font-size(12);
-    line-height: 1.5;
+    @include text-style(xs);
     @include margin(0);
     @include padding(0);
     border: none;
     text-decoration: underline;
     cursor: pointer;
-    @include scheme-element-text-color(g600, true);
-    @include scheme-element-bg-color(t-plain);
-    @include scheme-element-focus();
+
+    &[aria-expanded="true"] {
+      display: none;
+    }
+
+    @include respond-from(md) {
+      display: none;
+    }
   }
 
   @include list() {
@@ -37,8 +40,13 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include text-style(xs);
     display: block;
 
-    &[hidden] {
-      display: none;
+    @include respond-from(md) {
+      &:not(#{ns(collapse--expanded)}) {
+        visibility: visible;
+        overflow: visible;
+        max-height: initial;
+        display: inline-block;
+      }
     }
   }
 
@@ -64,7 +72,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       @include font-icon(arrow-right-s-line, sm);
 
       @include before {
-        @include scheme-element-text-color(g600, true);
         @include margin-right(0);
         //margin-top: 0.0625rem;
         //margin-bottom: 0.5625rem;
@@ -73,7 +80,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     }
 
     a {
-      @extend %a;
       display: inline;
       vertical-align: middle;
     }
@@ -85,18 +91,12 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       @include after(null, '') {
         @include margin-right(0);
       }
-
-      a {
-        @include scheme-element-text-color(g600, true);
-      }
     }
 
     &--curent {
       pointer-events: none;
-
-      a {
-        @include scheme-element-text-color(g800, true);
-      }
     }
   }
 }
+
+@import 'schemes';

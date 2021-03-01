@@ -19,15 +19,13 @@
     @include absolute(0, 0, auto, 0, auto, 1px);
     @include margin(0 2v);
 
-    @include scheme-element-bg-color(g300, true);
-
     @include respond-from(md) {
       content: none;
       display: none;
     }
   }
 
-  #{dse(service)} {
+  #{ns(service)} {
     @include margin(-3v auto -3v -1v);
     @include margin(-3v, md);
     @include padding(3v);
@@ -39,7 +37,6 @@
       position: static;
       @include title-style(h6);
       font-weight: bold;
-      @include scheme-element-text-color(g800, true);
       @include margin(0);
 
       &:focus {
@@ -48,7 +45,6 @@
 
       @include before(block, '') {
         @include absolute(0, 0, 0, 0, 100%, 100%);
-        @include scheme-element-focus();
       }
     }
 
@@ -63,13 +59,18 @@
   }
 
   @include nest-btn(md, only) {
-    @include scheme-element-bg-color(t-plain, false, override);
-    @include scheme-element-text-color(bf500);
     flex: 0 0 auto;
 
-    &--menu,
-    &#{dse(fi-menu-fill)} {
-      @include scheme-element-text-color(g700);
+    &--menu {
+      @include before {
+        @include font-icon-content(menu-fill);
+      }
+    }
+
+    &--search {
+      @include before {
+        @include font-icon-content(search-line);
+      }
     }
 
     &:first-child {

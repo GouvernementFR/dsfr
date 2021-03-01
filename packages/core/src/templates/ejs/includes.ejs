@@ -1,0 +1,12 @@
+(function (locals) {
+  locals.includeAttrs = function (attrs) {
+    let html = '';
+    for (const prop in attrs) html += prop + '="' + attrs[prop] + '"';
+    return html;
+  };
+
+  locals.includeClasses = function (classes) {
+    if (classes !== undefined && classes.length > 0) return 'class="' + classes.join(' ') + '"';
+    return '';
+  };
+}(locals));

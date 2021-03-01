@@ -1,0 +1,19 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+.example-controls {
+  z-index: 100000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, 0.1), 0 -8px 16px -16px rgba(0, 0, 0, 0.32);
+  padding: 4px 32px;
+  background-color: var(--w-g750);
+}
+
+.example-controls [class*="-form-group"] {
+  margin-bottom: 0;
+}

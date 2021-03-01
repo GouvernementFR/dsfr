@@ -1,0 +1,22 @@
+////
+/// Accordions Schemes
+/// @group accordions
+////
+
+#{ns(accordion)} {
+  @include scheme-element-border-color(g300, true, top);
+  @include scheme-element-border-color(g300, true, bottom);
+
+  #{ns(accordion)}__btn {
+    @include scheme-element-text-color(g700, true);
+    @include scheme-element-bg-color(t-plain, true, after);
+  }
+}
+
+#{ns-group(accordions)} {
+  li:last-child {
+    #{ns(accordion)} {
+      @include scheme-element-border-color(g300, true, bottom);
+    }
+  }
+}

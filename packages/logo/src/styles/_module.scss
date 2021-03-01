@@ -3,7 +3,9 @@
 /// @group logo
 ////
 
-#{dse(logo)} {
+#{ns(logo)} {
+  @include override-reset-link-style;
+
   display: inline-block;
   @include text-style(md);
   @include padding(1em);
@@ -52,7 +54,7 @@
 }
 
 [data-mourning] {
-  #{dse(logo)} {
+  #{ns(logo)} {
     @include before {
       $svg-mariane: _color-marianne(black, black);
       background-image: url(_svg-encode($svg-mariane));

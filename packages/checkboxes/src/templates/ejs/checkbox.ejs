@@ -1,0 +1,13 @@
+<%#
+# paramètres checkbox
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<%
+ let checkboxAttrs = locals.checkboxAttrs || [];
+ %>
+<input <%- includeAttrs(checkboxAttrs); %> type="checkbox" id="<%= id %>" name="<%= id %>">
+<%- include('../../../../forms/src/templates/ejs/label'); %>
+<%- include('../../../../forms/src/templates/ejs/message'); %>

@@ -1,0 +1,42 @@
+////
+/// Toggles Module : Variants
+/// @group toggles
+////
+
+/*
+ * Passage du label ferré à gauche, le toggle ferré à droite
+ */
+&--label-left {
+  .#{$prefix}-toggle__input {
+    order: 1;
+    @include margin(0 0 0 auto);
+  }
+
+  .#{$prefix}-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
+    @include padding-left(0);
+    @include padding-right(4v);
+  }
+
+  .#{$prefix}-toggle__label {
+    justify-content: space-between;
+    @include padding-left(0);
+    width: calc(100% - #{space(10v)});
+
+    @include before {
+      flex-shrink: 0;
+      order: 1;
+      @include margin-right(-10v);
+      @include margin-left(4v);
+      text-align: right;
+    }
+  }
+
+  .#{$prefix}-toggle__label::after {
+    left: auto;
+    right: space(4v);
+  }
+
+  .#{$prefix}-hint-text {
+    order: 2;
+  }
+}

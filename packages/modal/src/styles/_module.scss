@@ -1,8 +1,10 @@
-$modal: "#{$prefix}-modal";
+////
+/// Modal Module
+/// @group modal
+////
 
-#{dse(modal)} {
+#{ns(modal)} {
   // reset dialog
-  background: transparent;
   border: none;
   color: inherit;
   visibility: hidden;
@@ -11,11 +13,14 @@ $modal: "#{$prefix}-modal";
   @include margin(0);
   @include display-flex(null, flex-end, center);
   @include fixed(0, 0, 0, 0, 100%, 100%);
-  @include scheme-element-bg-color(overlay);
   pointer-events: all;
   z-index: z-index(modal);
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
+
+  &:focus {
+    outline: none;
+  }
 
   @include respond-from(md) {
     align-items: center;
@@ -29,8 +34,8 @@ $modal: "#{$prefix}-modal";
     transition: opacity 0.3s, visibility 0.3s;
   }
 
-  #{dse(container)},
-  #{dse(container--fluid)} {
+  #{ns(container)},
+  #{ns(container--fluid)} {
     @include relative;
     @include size(100%, auto);
     pointer-events: none;
@@ -38,14 +43,13 @@ $modal: "#{$prefix}-modal";
     @include padding(10vh 0,md);
     max-height: 100%;
 
-    #{dse(grid-row)} {
+    #{ns(grid-row)} {
       @include margin(0 -4v);
       @include margin(0,md);
     }
   }
 
   @include body {
-    @include scheme-element-bg-color(w);
     overflow-y: auto;
     flex: 1 1 auto;
     @include padding(0 8v);
@@ -57,17 +61,10 @@ $modal: "#{$prefix}-modal";
       max-height: 80vh;
     }
 
-    #{dse(modal)}__header {
+    #{ns(modal)}__header {
       @include padding-left(0);
       @include padding-right(0);
       @include margin-right(-4v, md);
-    }
-
-    &.#{$prefix}-scroll-shadow {
-      #{dse(modal)}__footer {
-        box-shadow: 0 -8px 16px 0 rgba(0, 0, 0, 0.1), 0 -8px 16px -16px rgba(0, 0, 0, 0.32);
-        @include scheme-element-bg-color(w-g750);
-      }
     }
   }
 
@@ -84,7 +81,6 @@ $modal: "#{$prefix}-modal";
   }
 
   &__footer {
-    @include scheme-element-bg-color(w);
     flex: auto 0 0;
     @include display-flex(null);
     @include padding(4v);
@@ -94,7 +90,7 @@ $modal: "#{$prefix}-modal";
     @include sticky(null,null,0);
     transition: box-shadow 0.3s, background-color 0.2s;
 
-    #{dse-group(btns)} {
+    #{ns-group(btns)} {
       margin-bottom: -1rem;
       width: calc(100% + #{space(4v)});
     }
@@ -121,16 +117,4 @@ $modal: "#{$prefix}-modal";
   &--top {
     align-items: flex-start;
   }
-}
-
-/**
-* Fixe le scroll en arrière plan
-*/
-:root.#{$prefix}-no-scroll body {
-  overflow: hidden;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
 }

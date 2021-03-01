@@ -7,7 +7,7 @@
  * L'input de type checkbox avec son label est contenu dans un groupe
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
-#{dse(checkbox-group)} {
+#{ns(checkbox-group)} {
   @extend %default-text-color;
   @include relative;
 
@@ -48,8 +48,6 @@
         @include size(6v, 6v);
         @include margin-right(2v);
         border-radius: space(1v);
-        @include scheme-element-border-color(g800, true);
-        @include scheme-element-text-color(t-plain);
         grid-row: 1;
         -ms-grid-row: 1;
         grid-column: 2;
@@ -61,7 +59,7 @@
       /**
        * Positionnement du texte d'aide
        */
-      #{dse(hint-text)} {
+      #{ns(hint-text)} {
         @include margin(0);
         grid-row: 2;
         grid-column: 1;
@@ -69,26 +67,6 @@
         -ms-grid-column: 1;
       }
     }
-
-    /**
-     * On applique les styles au pseudo élément before du label quand l'input présente
-     * un état check ou active
-     */
-    &:checked,
-    &:active {
-      + label {
-        @include before() {
-          @include scheme-element-bg-color(bf500);
-          @include scheme-element-text-color(g100);
-        }
-      }
-    }
-
-    /**
-     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
-     */
-    @include scheme-element-focus(false, '+ label::before');
-    @include disabled-form-choice();
   }
 
   /**
@@ -108,7 +86,7 @@
   /**
    * Texte d'aide
    */
-  #{dse(hint-text)} {
+  #{ns(hint-text)} {
     @include margin-left(8v);
     @include margin-top(-3v);
   }
@@ -116,8 +94,8 @@
   /**
    * Texte de validation et d'erreur
    */
-  #{dse(error-text)},
-  #{dse(valid-text)} {
+  #{ns(error-text)},
+  #{ns(valid-text)} {
     @include margin-top(1v);
   }
 
@@ -137,7 +115,7 @@
       }
     }
 
-    #{dse(hint-text)} {
+    #{ns(hint-text)} {
       @include margin-left(6v);
     }
   }

@@ -1,0 +1,34 @@
+////
+/// Legacy Tools
+/// @group legacy
+////
+
+/// Styles spécifiques pour les plateformes antérieures
+///
+/// @example scss -
+///   .foo {
+///     @include ie-hack() {
+///     }
+///   }
+@mixin legacy($target) {
+  @if $target == ie10 or $target == ie11 {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @content;
+    }
+  }
+}
+
+/// Styles spécifiques pour les plateformes modernes, excluant les plateformes antérieures
+///
+/// @example scss -
+///   .foo {
+///     @include ie-hack() {
+///     }
+///   }
+@mixin not-legacy($target) {
+  @if $target == ie10 or $target == ie11 {
+    @supports not (-ms-high-contrast: none) {
+      @content;
+    }
+  }
+}

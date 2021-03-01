@@ -3,10 +3,8 @@
 /// @group Highlights
 ////
 
-#{dse(highlight)} {
-  @extend %default-text-color;
+#{ns(highlight)} {
   @include padding-left(4v);
-  @include scheme-element-border-color(bf500, true, left, space(1v) solid $COLOR);
   @include text-style(md);
 
   @include respond-from(md) {

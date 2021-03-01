@@ -3,16 +3,14 @@
 /// @group search
 ////
 
-#{dse(search-bar)} {
-  @extend %default-text-color;
+#{ns(search-bar)} {
   @include display-flex(row);
 
-  #{dse(label)} {
+  #{ns(label)} {
     @include sr-only();
   }
 
-  #{dse(input)} {
-    @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
+  #{ns(input)} {
     @include margin-top(0);
     border-radius: space(1v) 0 0;
     max-height: none;

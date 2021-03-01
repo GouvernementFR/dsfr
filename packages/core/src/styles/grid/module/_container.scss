@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-#{dse(container)} {
+#{ns(container)} {
   @include size(100%);
   @include margin-x(auto);
 }

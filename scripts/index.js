@@ -1,1 +1,1 @@
-import '../page-test/styles.scss';
+import '../examples/styles.scss';

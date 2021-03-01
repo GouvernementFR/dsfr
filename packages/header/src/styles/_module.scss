@@ -3,11 +3,9 @@
 /// @group header
 ////
 
-#{dse(header)} {
-  @extend %default-text-color;
+#{ns(header)} {
   @include size(100%);
   @include shadow(md);
-  @include scheme-element-bg-color(w-g750, true);
 
   @include body {
     @include display-flex(row, center, flex-start, wrap);
@@ -21,8 +19,7 @@
     }
   }
 
-  @import 'modules/popin';
-
+  @import 'modules/modal';
   @import 'modules/navbar';
 
   &__brand {
@@ -43,7 +40,7 @@
       @include margin(0 0 0 auto);
       text-align: right;
 
-      #{dse(shortcuts)} + #{dse(search-bar)} {
+      #{ns(shortcuts)} + #{ns(search-bar)} {
         @include margin-top(4v);
       }
     }
@@ -66,20 +63,7 @@
     }
   }
 
-  &__tools:not(&__popin) {
-    display: none;
-    @include respond-from(md) {
-      @include display-flex(null);
-    }
-  }
-
   @import 'modules/shortcuts';
   @import 'modules/search';
   @import 'modules/nav';
-
-  //TODO: rf-link
-  #{dse(btn) + dse(fi-close-line)} {
-    @include scheme-element-bg-color(t-plain, false, override);
-    @include scheme-element-text-color(bf500, false);
-  }
 }

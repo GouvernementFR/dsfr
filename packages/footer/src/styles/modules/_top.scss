@@ -10,7 +10,6 @@
 
 &__top {
   @include display-flex(null);
-  @include scheme-element-bg-color(beige, true);
   @include margin(-10v 0 4v);
   @include margin(-10v 0 10v, md);
   @include padding(8v 0 4v);
@@ -43,7 +42,4 @@
   @include override-reset-link-style;
   @include text-style(xs);
   @include margin-bottom(3v);
-  @include force-over-reset {
-    @include scheme-element-text-color(g600, true);
-  }
 }

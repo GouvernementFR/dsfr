@@ -1,10 +1,9 @@
-import { DisclosureButton } from '@gouvfr/core/src/scripts';
+import api from '../../../api.js';
 
-class ModalButton extends DisclosureButton {
+class ModalButton extends api.DisclosureButton {
   /**
-   * https://a11ysupport.io/tech/aria/aria-haspopup_attribute
+   * TODO: https://a11ysupport.io/tech/aria/aria-haspopup_attribute
    */
-
   apply (value) {
     super.apply(value);
     // if (!this.hasAttribute) return;

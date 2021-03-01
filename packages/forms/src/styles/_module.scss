@@ -3,60 +3,25 @@
 /// @group forms
 ////
 
-#{dse-group(select), dse-group(input)} {
+#{ns-group(select), ns-group(input)} {
   &:not(:last-child) {
     @include margin-bottom(6v);
   }
 
-  #{dse(label)} {
-    #{dse(hint-text)} {
+  #{ns(label)} {
+    #{ns(hint-text)} {
       @include margin-top(1v);
       @include margin-bottom(2v);
     }
   }
-
-  /**
-   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
-   */
-  &--valid {
-    #{dse(label)} {
-      @include scheme-element-text-color(success);
-    }
-  }
-
-  /**
-   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
-   */
-  &--error {
-    #{dse(label)} {
-      @include scheme-element-text-color(error);
-    }
-  }
-
-  /**
-   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
-   */
-  &--disabled {
-    #{dse(label)} {
-      @include disabled-colors(true);
-    }
-  }
 }
 
-#{dse(label)} {
+#{ns(label)} {
   display: block;
   @include text-style(md);
-  @include scheme-element-text-color(g800, true);
 
-  /**
-   * Modificateur au niveau du label pour appliquer un état d'erreur au label
-   */
-  &--error {
-    @include scheme-element-text-color(error);
-  }
-
-  & + #{dse(input)},
-  & + #{dse(select)} {
+  & + #{ns(input)},
+  & + #{ns(select)} {
     @include margin-top(2v);
   }
 }
@@ -64,18 +29,17 @@
 /**
  * Style du texte d'aide
  */
-#{dse(hint-text)} {
+#{ns(hint-text)} {
   display: block;
   @include specify(p) {
-    @include scheme-element-text-color(g600);
     @include text-style(xs);
   }
 
   @include margin-y(0);
 
-  & + #{dse(input)},
-  & + #{dse(input-wrap)},
-  & + #{dse(select)} {
+  & + #{ns(input)},
+  & + #{ns(input-wrap)},
+  & + #{ns(select)} {
     @include margin-top(2v);
   }
 }
@@ -83,10 +47,9 @@
 /**
  * Style du texte d'erreur
  */
-#{dse(error-text)} {
+#{ns(error-text)} {
   @include display-flex(row, center);
   @include specify(p) {
-    @include scheme-element-text-color(error);
     @include text-style(xs);
     @include margin-top(4v);
     @include margin-bottom(0);
@@ -101,10 +64,9 @@
 /**
  * Style du texte de l'état validé
  */
-#{dse(valid-text)} {
+#{ns(valid-text)} {
   @include display-flex(row, center);
   @include specify(p) {
-    @include scheme-element-text-color(success);
     @include text-style(xs);
     @include margin-top(4v);
     @include margin-bottom(0);
@@ -116,21 +78,20 @@
   }
 }
 
-#{dse-group(form)} {
+#{ns-group(form)} {
   @include margin-bottom(8v);
 }
 
 /**
  * Style d'un ensemble de champs
  */
-#{dse(fieldset)} {
+#{ns(fieldset)} {
   @include relative;
   @include margin(0);
   @include padding(0);
   border: 0;
-  @include scheme-element-text-color(g800, true);
 
-  #{dse(hint-text)} {
+  #{ns(hint-text)} {
     @include margin-bottom(4v);
   }
 
@@ -139,7 +100,7 @@
     @include text-style(md);
     @include font-weight(bold);
 
-    + #{dse(hint-text)} {
+    + #{ns(hint-text)} {
       @include margin-top(-2v);
     }
   }
@@ -157,7 +118,7 @@
       @include margin(-3v 0);
     }
 
-    #{dse-group(checkbox)} {
+    #{ns-group(checkbox)} {
       display: inline-flex;
       @include margin-bottom(0);
 
@@ -170,7 +131,7 @@
       }
     }
 
-    #{dse-group(radio)} {
+    #{ns-group(radio)} {
       display: inline-flex;
       @include margin-bottom(0);
 
@@ -198,15 +159,10 @@
    * Modificateur pour gérer l'état d'erreur
    */
   &--error {
-    #{dse(fieldset__content)} {
+    #{ns(fieldset__content)} {
       @include before(null, '') {
         @include absolute(3v, null, 3v, -2v, 2px);
-        @include scheme-element-bg-color(error, true);
       }
-    }
-
-    #{dse(label)} {
-      @include scheme-element-text-color(error);
     }
   }
 
@@ -214,20 +170,15 @@
    * Modificateur pour gérer l'état de validation
    */
   &--valid {
-    #{dse(fieldset__content)} {
+    #{ns(fieldset__content)} {
       @include before(null, '') {
         @include absolute(3v, null, 3v, -2v, 2px);
-        @include scheme-element-bg-color(success);
       }
-    }
-
-    #{dse(label)} {
-      @include scheme-element-text-color(success);
     }
   }
 
   /**
    * Mixin disabled pour gérer l'état disabled
    */
-  @include disabled(true, false, false, #{dse(label)});
+  @include disabled(true, false, false, #{ns(label)});
 }

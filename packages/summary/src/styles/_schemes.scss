@@ -1,0 +1,20 @@
+////
+/// Summary Module
+/// @group summary
+////
+
+#{ns(summary)} {
+  @extend %default-text-color;
+  @include scheme-element-bg-color(beige, true);
+
+  @include title {
+    @include scheme-element-text-color(g800, true);
+  }
+
+  @include list {
+    > li > a { // TODO: BEM
+      @include scheme-element-text-color(g800, true);
+      @include scheme-element-bg-color(t-plain, true, after);
+    }
+  }
+}

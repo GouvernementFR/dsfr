@@ -3,19 +3,16 @@
 /// @group sidemenu
 ////
 
-#{dse(sidemenu)} {
-  @extend %default-text-color;
+#{ns(sidemenu)} {
   @include relative;
   @include shadow(md);
-  @include scheme-element-bg-color(w-g750, true);
 
   @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true);
     @include padding-right(8v);
     box-shadow: none;
     @include before(null, none);
 
-    #{dse(collapse)} {
+    #{ns(collapse)} {
       @include margin-x(-4px);
       @include padding-x(4px);
     }

@@ -1,0 +1,16 @@
+////
+/// Tiles Module
+/// @group tiles
+////
+
+#{ns(tile)} {
+  @extend %default-text-color;
+  @include scheme-element-bg-color(beige, true, true);
+  @include scheme-element-focus(true);
+  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
+
+  /**
+   * Mixin pour gérer le focus
+   **/
+  @include scheme-element-focus(true);
+}

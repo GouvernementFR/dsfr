@@ -49,7 +49,7 @@
       // Container
       @if $with-container {
 
-        $container: dse('container' + $mod);
+        $container: ns('container' + $mod);
 
         @if length($containers) > 0 {
           #{$containers} {
@@ -75,7 +75,7 @@
           }
         }
 
-        #{dse('container' + $mod + '--fluid')} {
+        #{ns('container' + $mod + '--fluid')} {
           @include padding-x(0);
           @include max-size(none);
         }
@@ -83,28 +83,28 @@
 
       // Gutters
       @if $gutter != null {
-        #{dse(grid-row--gutters)} {
+        #{ns(grid-row--gutters)} {
           @include margin((-$gutter) (-$gutter) ($gutter));
 
-          > #{class-start-with(dse(col-, ''))},
-          > #{dse(col)} {
+          > #{class-start-with(ns(col-, ''))},
+          > #{ns(col)} {
             @include padding($gutter);
           }
         }
       }
 
-      #{dse('col' + $mod)} {
+      #{ns('col' + $mod)} {
         flex: 1;
       }
 
       @for $i from 1 through $columns {
         $append: '#{$mod}-#{$i}';
-        #{dse('col' + $append)} {
+        #{ns('col' + $append)} {
           @include grid-col($i, $columns);
         }
 
         @if $with-offsets {
-          #{dse('col-offset' + $append)} {
+          #{ns('col-offset' + $append)} {
             @include grid-col-offset($i, $columns);
           }
         }

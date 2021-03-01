@@ -1,7 +1,7 @@
-#{dse(no-before)} {
+#{ns(no-before)} {
   @include before(none);
 }
 
-#{dse(no-after)} {
+#{ns(no-after)} {
   @include after(none);
 }

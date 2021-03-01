@@ -1,0 +1,27 @@
+<%
+ let ul = {
+   lis:[{
+       lis:[{}, {}, {}]
+     }, {text:lorem()}, {}
+   ]}
+ %>
+<%
+let ol = {
+  lis:[{
+      lis:[{
+        lis:[{}, {}, {}]
+      }, {text:lorem()}, {}]
+    }, {}, {}
+  ]}
+%>
+
+<% const sample = getSample(include); %>
+
+
+<%- sample('Test de titre de paragraphe :', './samples/headings', {}, true); %>
+<%- sample('Test de paragraphe et de lien interne :', './samples/paragraph', { insert: '<a title="titre lien interne" href="#" target="_self">lien interne</a>' }, true); %>
+<%- sample('Test de paragraphe et de lien externe :', './samples/paragraph', { insert: '<a title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>' }, true); %>
+<%- sample('Test de liste non-ordonnée:', '../typography/samples/ul', ul, true); %>
+<%- sample('Test de liste ordonnée :', '../typography/samples/ol', ol, true); %>
+
+

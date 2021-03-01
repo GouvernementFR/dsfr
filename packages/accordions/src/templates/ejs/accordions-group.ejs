@@ -1,0 +1,16 @@
+<%#
+# paramètres accordions-group
+
+// TODO: documentation
+
+%>
+
+<ul class="<%= prefix %>-accordions-group" >
+<%
+  for (let i = 0; i < locals.accordions.length; i++) {
+%>
+  <li>
+    <%- include(locals.accordion || './accordion', accordions[i]); %>
+  </li>
+<% } %>
+</ul>

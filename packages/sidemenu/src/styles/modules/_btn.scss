@@ -7,7 +7,7 @@
  * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
  * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
  */
-#{dse(sidemenu__btn)} {
+#{ns(sidemenu__btn)} {
   @include relative;
   @include display-flex(row-reverse, center);
   @include size(calc(100% - #{space(4v)}), 100%);
@@ -19,7 +19,6 @@
   background: 0;
   border: 0;
   cursor: pointer;
-  // @include scheme-element-border-color(g300, true, bottom);
 
   @include font-icon(arrow-down-s-line, sm) {
     @include margin-left(auto);
@@ -31,12 +30,7 @@
     }
   }
 
-  @include scheme-element-text-color(g700);
-  @include scheme-element-focus();
-
   &[aria-expanded="true"] {
-    @include scheme-element-border-color(t-plain, true, bottom);
-
     @include before {
       transform: rotate(-180deg);
     }
@@ -46,10 +40,9 @@
     * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
     * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
     */
-  @at-root #{dse(sidemenu__inner)} > #{&} {
+  @at-root #{ns(sidemenu__inner)} > #{&} {
     @include size(100%);
     font-weight: normal;
-    @include scheme-element-bg-color(w-g750, true);
     @include before {
       @include margin-right(4v);
     }
@@ -70,6 +63,5 @@
     @include size(100%);
     @include padding(2v 8v 2v 2v);
     border: 0;
-    @include scheme-element-bg-color(t-plain, true, after);
   }
 }

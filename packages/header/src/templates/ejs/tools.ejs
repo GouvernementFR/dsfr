@@ -1,0 +1,35 @@
+<%
+const toolsAttrs = {};
+const toolsClasses = [ prefix + '-header__tools' ];
+
+if (locals.search !== undefined) {
+    toolsAttrs.id = locals.id;
+    toolsAttrs.tabindex = '-1';
+    toolsClasses.push(prefix + '-modal');
+}
+%>
+
+<div <%- includeClasses(toolsClasses); %> <%- includeAttrs(toolsAttrs); %>>
+    <% if (locals.search !== undefined) { %>
+        <%- include('../../../../links/src/templates/ejs/link-close', { closeId: locals.id }); %>
+    <% } %>
+
+    <% if (locals.shortcuts !== undefined) { %>
+    <div class="<%= prefix %>-shortcuts">
+        <ul class="<%= prefix %>-shortcuts__list">
+            <%
+                let item;
+                for (let i = 0; i < shortcuts.items.length; i++) {
+                  item = shortcuts.items[i];
+            %>
+            <li class="<%= prefix %>-shortcuts__item" >
+                <%- include('../../../../links/src/templates/ejs/link', { ... item, left: true }); %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <% }%>
+    <% if (locals.search !== undefined) { %>
+    <%- include( search.sample !== undefined ? search.sample : '../../../../search/src/templates/ejs/search', { ...search, id: search.id || undefined }); %>
+    <% } %>
+</div>

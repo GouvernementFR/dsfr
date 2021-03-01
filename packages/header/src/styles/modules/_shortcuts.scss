@@ -3,14 +3,14 @@
 /// @group header
 ////
 
-#{dse(shortcuts)} {
-  @include margin(0 -6v, md);
+#{ns(shortcuts)} {
+  overflow: hidden;
 
   @include list {
     @include display-flex(column);
     @include margin(0);
     @include padding(0);
-    @include margin(0 0 -2v, md);
+    @include margin(0 -6v -2v 0, md);
 
     @include respond-from(md) {
       @include display-flex(row, null, flex-end, wrap);

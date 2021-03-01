@@ -1,0 +1,27 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Header avec Navigation complète', './samples/header.ejs', { service:true, shortcuts:true, search: true, navigation: true }, true, './layout');  %>
+
+
+<%- sample('Header minimal', './samples/header.ejs', { navigation: 'min' }, true, './layout');  %>
+
+
+<%- sample('Header sans navigation', './samples/header.ejs', {service: true }, true, './layout');  %>
+
+
+<%- sample('Header sans navigation avec racourcis', './samples/header.ejs', { shortcuts:true, service: true, menu: false }, true, './layout');  %>
+
+
+<%- sample('Header avec nom de service, lien d’accès', './samples/header.ejs', { logo:'diplomacy', service: true, shortcuts: true, navigation: 'min' }, true, './layout');  %>
+
+
+<%- sample('Header avec opérateur vertical, nom de service, recherche', './samples/header.ejs', { operator:{ img: '../img/logo-operator-v.png', style:'width:3.5rem; height:auto;' }, service: true, search: true, navigation: 'min' }, true, './layout');  %>
+
+
+<%- sample('Header avec opérateur horizontal, nom de service, lien d’accès, recherche', './samples/header.ejs', { operator: { img: '../img/logo-operator-h.png', style:'width:9.0625rem; height:auto;' }, service: true, shortcuts:true, search: true, navigation: 'min' }, true, './layout');  %>
+
+
+<%- sample('Header avec logo du service, lien d’accès, recherche', './samples/header.ejs', { service: {img: '../img/logo-service.svg', style:'width:8rem; height:auto;'}, shortcuts:true, search: true, navigation: 'min' }, true, './layout');  %>
+
+
+

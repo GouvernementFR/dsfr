@@ -1,0 +1,25 @@
+{
+  "name": "@gouvfr/legacy",
+  "version": "0.4.0",
+  "license": "MIT",
+  "title": "Systèmes antérieurs (IE11)",
+  "description": "Ce package est utilisé de manière globale pour la compatibilité Internet Explorer 11 du Design System de l'Etat.",
+  "level": "7",
+  "publishConfig": {
+    "access": "public"
+  },
+  "config": {
+    "wrapper": "col-8"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
+    "build:styles":"../core/tools.js build -t styles -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build:scripts": "../core/tools.js build -t scripts -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build": "run-s build:*"
+  },
+  "dependencies": {
+    "@gouvfr/core": "^0.4.0",
+    "@gouvfr/forms": "^0.4.0",
+    "@gouvfr/radios": "^0.4.0"
+  }
+}

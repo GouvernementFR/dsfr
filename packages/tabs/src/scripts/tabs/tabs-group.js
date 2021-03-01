@@ -1,33 +1,33 @@
-import { DisclosuresGroup, KeyListener, Renderer } from '@gouvfr/core/src/scripts';
-import { TAB_CLASSNAME, TABS_LIST_SELECTOR, TABS_SELECTOR } from './tabs-constants';
+import api from '../../../api.js';
+import { LIST_CLASS, TAB_CLASS, TABS_CLASS } from './constants';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
-class TabsGroup extends DisclosuresGroup {
+class TabsGroup extends api.DisclosuresGroup {
   constructor (id, element) {
     super(id, element);
-    this.list = element.querySelector(`.${TABS_LIST_SELECTOR}`);
+    this.list = element.querySelector(`.${LIST_CLASS}`);
 
     element.addEventListener('transitionend', this.transitionend.bind(this));
 
     this.listen();
-    Renderer.add(this.render.bind(this));
+    api.engine.renderer.add(this.render.bind(this));
   }
 
-  static get selector () { return TABS_SELECTOR; }
+  static get selector () { return TABS_CLASS; }
 
   transitionend (e) {
     this.element.style.transition = 'none';
   }
 
   listen () {
-    this.keyListener = new KeyListener(this.element);
-    this.keyListener.down(KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
-    this.keyListener.down(KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
-    this.keyListener.down(KeyListener.HOME, this.homePress.bind(this), true, true);
-    this.keyListener.down(KeyListener.END, this.endPress.bind(this), true, true);
+    this.keyListener = new api.KeyListener(this.element);
+    this.keyListener.down(api.KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
+    this.keyListener.down(api.KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
+    this.keyListener.down(api.KeyListener.HOME, this.homePress.bind(this), true, true);
+    this.keyListener.down(api.KeyListener.END, this.endPress.bind(this), true, true);
   }
 
   /**
@@ -35,7 +35,7 @@ class TabsGroup extends DisclosuresGroup {
    * Si on est à la fin on retourne au début
    */
   arrowRightPress () {
-    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+    if (document.activeElement.classList.contains(TAB_CLASS)) {
       if (this.index < this.length - 1) {
         this.index++;
       } else {
@@ -51,7 +51,7 @@ class TabsGroup extends DisclosuresGroup {
    * Si on est au debut retourne a la fin
    */
   arrowLeftPress () {
-    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+    if (document.activeElement.classList.contains(TAB_CLASS)) {
       if (this.index > 0) {
         this.index--;
       } else {
@@ -66,7 +66,7 @@ class TabsGroup extends DisclosuresGroup {
    * Selectionne le permier element de la liste si on est sur un bouton
    */
   homePress () {
-    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+    if (document.activeElement.classList.contains(TAB_CLASS)) {
       this.index = 0;
       this.focus();
     }
@@ -76,7 +76,7 @@ class TabsGroup extends DisclosuresGroup {
    * Selectionne le dernier element de la liste si on est sur un bouton
    */
   endPress () {
-    if (document.activeElement.classList.contains(TAB_CLASSNAME)) {
+    if (document.activeElement.classList.contains(TAB_CLASS)) {
       this.index = this.length - 1;
       this.focus();
     }

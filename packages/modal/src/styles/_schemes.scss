@@ -1,0 +1,23 @@
+////
+/// Modal Schemes
+/// @group modal
+////
+
+#{ns(modal)} {
+  @include scheme-element-bg-color(overlay);
+
+  @include body {
+    @include scheme-element-bg-color(w);
+
+    &#{ns(scroll-shadow)} {
+      #{ns(modal)}__footer {
+        @include shadow(up);
+        @include scheme-element-bg-color(w-g750);
+      }
+    }
+  }
+
+  &__footer {
+    @include scheme-element-bg-color(w);
+  }
+}

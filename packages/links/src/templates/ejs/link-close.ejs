@@ -1,0 +1,9 @@
+<%- include('./link', {
+    tag: 'button',
+    classes: [prefix + '-link--close'],
+    label: locals.label || 'Fermer',
+    title: locals.title || locals.label || 'Fermer',
+    attributes: {
+        'aria-controls': closeId,
+    }
+});%>

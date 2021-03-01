@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-#{dse-attr(reset)} {
+#{ns-attr(reset)} {
   // font-size: 16px;
   @include margin(0);
   @include padding(0);
@@ -29,7 +29,7 @@
   @import '../prose/module/link';
 }
 
-@include class-is-dse(false) {
+@include class-is-ns(false) {
   box-sizing: border-box;
 
   &::before,
@@ -46,7 +46,7 @@
   }
 
   * {
-    @include class-is-not-dse(false) {
+    @include class-is-not-ns(false) {
       box-sizing: inherit;
     }
   }

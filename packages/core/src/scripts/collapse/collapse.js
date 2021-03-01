@@ -1,8 +1,9 @@
-import { Disclosure } from '../disclosure/disclosure';
-import { DisclosuresGroup } from '../disclosure/disclosures-group';
-import { CollapseButton } from './collapse-button';
-import { CollapsesGroup } from './collapses-group';
-import { COLLAPSE_SELECTOR } from './collapse-constants';
+import { Disclosure } from '../disclosure/disclosure.js';
+import { DisclosuresGroup } from '../disclosure/disclosures-group.js';
+import { CollapseButton } from './collapse-button.js';
+import { CollapsesGroup } from './collapses-group.js';
+import { COLLAPSE_CLASS } from './constants.js';
+import { DISCLOSURE_TYPES } from '../disclosure/disclosure-types.js';
 
 /**
  * Tab coorespond au panel d'un élement Tabs (tab panel)
@@ -43,8 +44,8 @@ class Collapse extends Disclosure {
     return new CollapseButton(element, this);
   }
 
-  static get type () { return Disclosure.TYPES.expand; }
-  static get selector () { return COLLAPSE_SELECTOR; }
+  static get type () { return DISCLOSURE_TYPES.expand; }
+  static get selector () { return COLLAPSE_CLASS; }
 
   transitionend (e) {
     if (!this.disclosed) this.element.style.maxHeight = '';

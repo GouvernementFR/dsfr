@@ -7,18 +7,18 @@
   @extend %list-reset;
   font-weight: font-weight('bold');
 
-  #{dse(sidemenu__list)} {
+  #{ns(sidemenu__list)} {
     @include margin(0 4v);
     font-weight: font-weight();
-    #{dse(sidemenu__link)},
-    #{dse(sidemenu__btn)} {
+    #{ns(sidemenu__link)},
+    #{ns(sidemenu__btn)} {
       @include text-style(md);
       font-weight: font-weight();
     }
 
-    #{dse(sidemenu__list)} {
-      #{dse(sidemenu__link)},
-      #{dse(sidemenu__btn)} {
+    #{ns(sidemenu__list)} {
+      #{ns(sidemenu__link)},
+      #{ns(sidemenu__btn)} {
         @include text-style(sm);
         @include padding(#{calc(#{space(2v)} + 2px)} 2v, md);
       }
@@ -31,30 +31,19 @@
 @include list-item {
   @include relative;
   @include margin(1v);
-  @include scheme-element-border-color(g300, true, bottom);
 
   @include before(null, none);
 
   &:last-child {
     border: 0;
-
-    #{dse(sidemenu__btn)} {
-      @include scheme-element-border-color(t-plain, true, bottom);
-    }
   }
 
   &--active {
-    & > #{dse(sidemenu__btn)} {
-      @include scheme-element-text-color(bf500);
-    }
 
-    & > #{dse(sidemenu__link)} {
-      @include scheme-element-text-color(bf500);
-
+    & > #{ns(sidemenu__link)} {
       @include before(null, '') {
         @include absolute(0, null, 0, -2v, 2px);
         @include margin(3v 0);
-        background-color: currentColor;
       }
     }
   }

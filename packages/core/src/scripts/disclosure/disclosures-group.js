@@ -1,4 +1,5 @@
-/* eslint no-labels: ["error", { "allowLoop": true }] */
+import { GROUP_ATTR } from './constants.js';
+
 const groups = [];
 
 class DisclosuresGroup {
@@ -22,7 +23,7 @@ class DisclosuresGroup {
   }
 
   static groupById (member, groupConstructor) {
-    const id = member.element.getAttribute('data-${prefix}-group');
+    const id = member.element.getAttribute(GROUP_ATTR);
     if (id === null) return;
 
     const group = groupConstructor.getGroupById(id);

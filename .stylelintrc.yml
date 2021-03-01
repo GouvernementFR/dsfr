@@ -1,6 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "./packages/icons/generated/_icons.scss",
+  // "ignoreFiles": "./packages/icons/generated/_icons.scss",
   "plugins": [
     "stylelint-scss"
   ],

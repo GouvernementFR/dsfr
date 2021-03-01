@@ -9,11 +9,11 @@
 &--horizontal {
   flex-direction: row;
 
-  #{dse(tile__img-wrap)} {
+  #{ns(tile__img-wrap)} {
     @include size(12v, 12v);
     @include margin(auto 0 auto 6v);
 
-    + #{dse(tile__body)} {
+    + #{ns(tile__body)} {
       min-height: space(12v);
       text-align: left;
 
@@ -28,7 +28,7 @@
     }
   }
 
-  #{dse(tile__body)} {
+  #{ns(tile__body)} {
     align-items: flex-start;
     @include padding(0);
     @include margin(6v);
@@ -42,11 +42,11 @@
 &--vertical-md {
   flex-direction: row;
 
-  #{dse(tile__img-wrap)} {
+  #{ns(tile__img-wrap)} {
     @include size(12v, 12v);
     @include margin(auto 0 auto 6v);
 
-    + #{dse(tile__body)} {
+    + #{ns(tile__body)} {
       min-height: space(12v);
 
       @include respond-from(md) {
@@ -61,7 +61,7 @@
     }
   }
 
-  #{dse(tile__body)} {
+  #{ns(tile__body)} {
     align-items: flex-start;
     @include padding(0);
     @include margin(6v);
@@ -86,11 +86,11 @@
 &--horizontal-md {
   flex-direction: column;
 
-  #{dse(tile__img-wrap)} {
+  #{ns(tile__img-wrap)} {
     @include size(20v, 20v);
     @include margin(8v auto 0);
 
-    + #{dse(tile__body)} {
+    + #{ns(tile__body)} {
       min-height: initial;
 
       @include respond-from(md) {
@@ -105,7 +105,7 @@
     }
   }
 
-  #{dse(tile__body)} {
+  #{ns(tile__body)} {
     align-items: center;
     @include padding(4v);
     @include margin(0);

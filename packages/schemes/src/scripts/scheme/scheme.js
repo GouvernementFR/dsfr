@@ -1,3 +1,5 @@
+import { SCHEME_ATTR, TRANSITION_ATTR } from './constants';
+
 class Scheme {
   constructor () {
     this.init();
@@ -18,17 +20,17 @@ class Scheme {
     this.root = document.documentElement;
 
     if (this.scheme === 'dark') {
-      if (!this.root.hasAttribute(Scheme.TRANSITION_ATTRIBUTE)) {
-        this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
+      if (!this.root.hasAttribute(TRANSITION_ATTR)) {
+        this.root.setAttribute(SCHEME_ATTR, 'dark');
       } else {
-        this.root.removeAttribute(Scheme.TRANSITION_ATTRIBUTE);
-        this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'dark');
+        this.root.removeAttribute(TRANSITION_ATTR);
+        this.root.setAttribute(SCHEME_ATTR, 'dark');
 
         setTimeout(() => {
-          this.root.setAttribute(Scheme.TRANSITION_ATTRIBUTE, '');
+          this.root.setAttribute(TRANSITION_ATTR, '');
         }, 300);
       }
-    } else this.root.setAttribute(Scheme.SCHEME_ATTRIBUTE, 'light');
+    } else this.root.setAttribute(SCHEME_ATTR, 'light');
 
     this.observer = new MutationObserver(this.mutate.bind(this));
     this.observer.observe(this.root, { attributes: true });
@@ -36,8 +38,8 @@ class Scheme {
 
   mutate (mutations) {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === Scheme.SCHEME_ATTRIBUTE) {
-        const scheme = this.root.getAttribute(Scheme.SCHEME_ATTRIBUTE);
+      if (mutation.type === 'attributes' && mutation.attributeName === SCHEME_ATTR) {
+        const scheme = this.root.getAttribute(SCHEME_ATTR);
         if (scheme === 'dark') {
           localStorage.setItem('scheme', 'dark');
         } else if (scheme === 'light') {
@@ -47,8 +49,5 @@ class Scheme {
     });
   }
 }
-
-Scheme.SCHEME_ATTRIBUTE = 'data-${prefix}-theme';
-Scheme.TRANSITION_ATTRIBUTE = 'data-${prefix}-transition';
 
 export { Scheme };

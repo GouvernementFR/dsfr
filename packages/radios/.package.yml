@@ -1,0 +1,12 @@
+id: radios
+title: Boutons radio
+description: Les boutons radios permettent à l’utilisateur de sélectionner une seule option dans une liste.
+doc:
+  - url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
+    title: Bouton radio
+  - url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935129/Bouton+radio+riche+-+radio+button+extended
+    title: Bouton radio riche
+wrapper: col-8
+styles:
+  - core
+  - forms

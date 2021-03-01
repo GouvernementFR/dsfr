@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr" data-<%= prefix %>-reset >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'utilities'] }); %>
+  <title>Design System Développement</title>
+</head>
+
+<body class="<%= prefix %>-prose <%= prefix %>-mb-8w">
+  <div class="<%= prefix %>-container">
+      <div class="<%= prefix %>-grid-row">
+        <h1>Design System Développement</h1>
+        <ul class="<%= prefix %>-col-12">
+          <% for (const pck of packages) { %>
+          <li class="<%= prefix %>-mb-1w">
+            <a href='./<%= pck.id %>'><%= pck.title %></a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+  </div>
+  <%- include(root + 'examples/scripts', { required: ['core', 'schemes', 'accordions']}) %>
+</body>
+</html>

@@ -1,21 +1,18 @@
 {
   "name": "@gouvfr/modal",
-  "version": "0.5.4",
+  "version": "0.4.0",
   "license": "MIT",
-  "description": "Modale",
+  "level": "4",
   "publishConfig": {
     "access": "public"
-  },
-  "config": {
-    "wrapper": "col-8"
   },
   "scripts": {
     "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.5.3",
-    "@gouvfr/core": "^0.5.3",
-    "@gouvfr/links": "^0.5.3",
-    "@gouvfr/buttons": "^0.5.3"
+    "@gouvfr/schemes": "^0.4.0",
+    "@gouvfr/core": "^0.4.0",
+    "@gouvfr/links": "^0.4.0",
+    "@gouvfr/buttons": "^0.4.0"
   }
 }

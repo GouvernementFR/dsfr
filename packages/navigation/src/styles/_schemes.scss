@@ -1,0 +1,168 @@
+////
+/// Navigation Schemes
+/// @group navigation
+////
+
+/**
+* nav
+**/
+#{ns(nav)} {
+  @extend %default-text-color;
+
+  @include list-item {
+
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+
+    & > #{ns(link)},
+    & > #{ns(btn)} {
+      @include scheme-element-text-color(g800);
+      @include scheme-element-focus();
+    }
+
+    & > #{ns(link)} {
+      @include scheme-element-bg-color(t-plain, false, true); //TODO: override ?
+    }
+
+    & > #{ns(btn)} {
+      @include scheme-element-bg-color(t-plain, false, override);
+
+      &[aria-expanded="true"] {
+        @include respond-from(md) {
+          @include scheme-element-text-color(bf500-plain);
+          @include scheme-element-bg-color(bf200-bf300);
+        }
+      }
+    }
+
+    &--active {
+      @include before {
+        @include scheme-element-bg-color(bf500);
+      }
+
+      & > #{ns(link)},
+      & > #{ns(btn)} {
+        @include scheme-element-text-color(bf500);
+
+        @include respond-from(md) {
+          @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR); //TODO: transition
+        }
+      }
+    }
+  }
+}
+
+/**
+* menu
+**/
+#{ns(menu)} {
+  @include respond-from(md) {
+    @include after {
+      @include scheme-element-bg-color(w-g750, true);
+    }
+  }
+
+  @include list-item {
+
+    &,
+    & > #{ns(link)} {
+      @include scheme-element-text-color(g800, true);
+    }
+
+    & > #{ns(link)} {
+      @include scheme-element-bg-color(t-plain, true, true); // override ?
+      @include scheme-element-focus();
+    }
+
+    @include respond-from(md) {
+      &:not(:last-child) {
+        @include after {
+          @include scheme-element-bg-color(g300, true);
+        }
+      }
+    }
+
+    &--active {
+      &,
+      & > #{ns(link)} {
+        @include scheme-element-text-color(bf500);
+      }
+
+      @include before {
+        background-color: currentColor;
+      }
+    }
+  }
+}
+
+/**
+* mega-menu
+**/
+#{ns(mega-menu)} {
+  @include scheme-element-bg-color(w-g750, true);
+
+  > #{ns(container)} {
+    @include respond-from(md) {
+      @include before {
+        @include scheme-element-bg-color(bf200-bf300, true);
+      }
+    }
+  }
+
+  // TODO: changer en rf-link--close
+  #{ns(btn) + ns(fi-close-line)} {
+    @include scheme-element-bg-color(t-plain);
+    @include scheme-element-text-color(bf500);
+  }
+
+  &__category {
+    @include respond-from(md) {
+      @include after {
+        @include scheme-element-bg-color(g300, true);
+      }
+    }
+
+    &,
+    & > #{ns(link)} {
+      @include scheme-element-text-color(g800);
+    }
+
+    & > #{ns(link)} {
+      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
+      @include scheme-element-focus();
+    }
+
+    &--active {
+      &,
+      & > #{ns(link)} {
+        @include scheme-element-text-color(bf500);
+      }
+
+      @include before(null, '') {
+        background-color: currentColor;
+      }
+    }
+  }
+
+  @include list-item {
+    &,
+    & > #{ns(link)} {
+      @include scheme-element-text-color(g800);
+    }
+
+    & > #{ns(link)} {
+      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
+      @include scheme-element-focus();
+    }
+
+    &--active {
+      &,
+      & > #{ns(link)} {
+        @include scheme-element-text-color(bf500);
+      }
+
+      @include before(null, '') {
+        background-color: currentColor;
+      }
+    }
+  }
+}

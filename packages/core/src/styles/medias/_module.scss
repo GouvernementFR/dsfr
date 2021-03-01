@@ -3,11 +3,11 @@
 /// @group core
 ////
 
-#{dse(responsive-img)} {
+#{ns(responsive-img)} {
   @include size(100%, auto);
 }
 
-#{dse(responsive-vid)} {
+#{ns(responsive-vid)} {
   @include relative;
   @include size(100%);
 

@@ -3,11 +3,9 @@
 /// @group callouts
 ////
 
-#{dse(callout)} {
-  @extend %default-text-color;
+#{ns(callout)} {
   @include relative();
   @include padding(6v);
-  @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
   /**
    * Inclusion de l'icône (optionnel)
@@ -32,7 +30,6 @@
   @include title() {
     @include force-over-reset() {
       @include title-style(h4);
-      @include scheme-element-text-color(g800, true);
       @include margin(0 0 2v);
     }
   }
@@ -44,12 +41,10 @@
     }
   }
 
-  @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
-
   /**
    * Ajout de marge quand on inclut un bouton (optionnel)
    */
-  #{dse(btn)} {
+  #{ns(btn)} {
     @include margin-top(4v);
   }
 

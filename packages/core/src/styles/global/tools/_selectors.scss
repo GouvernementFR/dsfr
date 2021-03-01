@@ -78,28 +78,28 @@
   }
 }
 
-@mixin class-is-dse($unify: true) {
-  @include class-start-with(dse('', ''), $unify) {
+@mixin class-is-ns($unify: true) {
+  @include class-start-with(ns('', ''), $unify) {
     @content;
   }
 }
 
-@mixin class-is-not-dse($unify: true) {
-  @include class-not-start-with(dse('', ''), $unify) {
+@mixin class-is-not-ns($unify: true) {
+  @include class-not-start-with(ns('', ''), $unify) {
     @content;
   }
 }
 
 @mixin has-icon() {
-  @include class-start-with(dse(fi-, '')) {
+  @include class-start-with(ns(fi-, '')) {
     @content;
   }
 }
 
 /// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
 /// @access public
-@mixin all-dse-elements-selector() {
-  @include class-start-with(dse('', ''), false) {
+@mixin all-ns-elements-selector() {
+  @include class-start-with(ns('', ''), false) {
     @at-root {
       &,
       & * {

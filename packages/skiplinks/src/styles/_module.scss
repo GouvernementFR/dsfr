@@ -3,10 +3,9 @@
 /// @group skiplinks
 ////
 
-#{dse(skiplinks)} {
+#{ns(skiplinks)} {
   @include absolute;
   @include padding(4v 0);
-  @include scheme-element-bg-color(g200, true);
   transform: translateY(-100%);
 
   &:focus-within {

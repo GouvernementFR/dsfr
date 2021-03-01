@@ -1,3 +1,8 @@
+////
+/// Tabs Tools
+/// @group tabs
+////
+
 @include _build-link-placeholders($tabs-settings, tabs__tab);
 @mixin build-tab() {
   @include _build-link($tabs-settings, tabs__tab);

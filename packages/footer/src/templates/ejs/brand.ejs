@@ -1,0 +1,9 @@
+<div class="<%= prefix %>-footer__brand" >
+	<%- include( '../../../../logo/src/templates/ejs/logo', locals.brand.logo); %>
+	<% if (locals.logo !== undefined) { %>
+		<a class="<%= prefix %>-footer__brand-link" href="#">
+			<img class="<%= prefix %>-footer__logo" src="<%= logo.src %>" alt="<%= logo.alt %>">
+		</a>
+	<% } %>
+</div>
+

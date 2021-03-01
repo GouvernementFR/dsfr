@@ -37,12 +37,12 @@
   }
 }
 
-:root #{dse-group(btns)} {
+:root #{ns-group(btns)} {
   @include display-flex(null,stretch,null,wrap);
   @extend %list-reset;
   @include _make-vertical;
 
-  #{dse(btn)} {
+  #{ns(btn)} {
     @include margin-bottom(4v);
     justify-content: center;
   }
@@ -54,21 +54,21 @@
   &--inline {
     @include _make-horizontal;
 
-    &#{dse-group(btns)}--right {
+    &#{ns-group(btns)}--right {
       @include margin-left(-4v);
       .#{$prefix}-btn {
         @include margin-right(0);
         @include margin-left(4v);
       }
 
-      &#{dse-group(btns)}--inline-reverse {
+      &#{ns-group(btns)}--inline-reverse {
         flex-direction: row-reverse;
         justify-content: flex-start;
       }
     }
 
-    &#{dse-group(btns)}--center,
-    &#{dse-group(btns)}--left {
+    &#{ns-group(btns)}--center,
+    &#{ns-group(btns)}--left {
       @include margin-right(-4v);
       .#{$prefix}-btn {
         @include margin-right(4v);
@@ -80,21 +80,21 @@
       @include respond-from(sm) {
         @include _make-horizontal;
 
-        &#{dse-group(btns)}--right {
+        &#{ns-group(btns)}--right {
           @include margin-left(-4v);
           .#{$prefix}-btn {
             @include margin-right(0);
             @include margin-left(4v);
           }
 
-          &#{dse-group(btns)}--inline-reverse {
+          &#{ns-group(btns)}--inline-reverse {
             flex-direction: row-reverse;
             justify-content: flex-start;
           }
         }
 
-        &#{dse-group(btns)}--center,
-        &#{dse-group(btns)}--left {
+        &#{ns-group(btns)}--center,
+        &#{ns-group(btns)}--left {
           @include margin-right(-4v);
           .#{$prefix}-btn {
             @include margin-right(4v);
@@ -108,21 +108,21 @@
       @include respond-from(md) {
         @include _make-horizontal;
 
-        &#{dse-group(btns)}--right {
+        &#{ns-group(btns)}--right {
           @include margin-left(-4v);
           .#{$prefix}-btn {
             @include margin-right(0);
             @include margin-left(4v);
           }
 
-          &#{dse-group(btns)}--inline-reverse {
+          &#{ns-group(btns)}--inline-reverse {
             flex-direction: row-reverse;
             justify-content: flex-start;
           }
         }
 
-        &#{dse-group(btns)}--center,
-        &#{dse-group(btns)}--left {
+        &#{ns-group(btns)}--center,
+        &#{ns-group(btns)}--left {
           @include margin-right(-4v);
           .#{$prefix}-btn {
             @include margin-right(4v);
@@ -136,21 +136,21 @@
       @include respond-from(lg) {
         @include _make-horizontal;
 
-        &#{dse-group(btns)}--right {
+        &#{ns-group(btns)}--right {
           @include margin-left(-4v);
           .#{$prefix}-btn {
             @include margin-right(0);
             @include margin-left(4v);
           }
 
-          &#{dse-group(btns)}--inline-reverse {
+          &#{ns-group(btns)}--inline-reverse {
             flex-direction: row-reverse;
             justify-content: flex-start;
           }
         }
 
-        &#{dse-group(btns)}--center,
-        &#{dse-group(btns)}--left {
+        &#{ns-group(btns)}--center,
+        &#{ns-group(btns)}--left {
           @include margin-right(-4v);
           .#{$prefix}-btn {
             @include margin-right(4v);
@@ -207,14 +207,14 @@
   * rf-btns-group--sm : Fixe les boutons à la taille SM
   */
   &--sm {
-    #{dse(btn)} {
+    #{ns(btn)} {
       &:not([class*="#{$prefix}-fi-"]) {
         @include _extend-link(sm, null, btn, false, false);
       }
     }
 
     &:not([class*="#{$prefix}-btns-group--icon-"]) {
-      #{dse(btn)} {
+      #{ns(btn)} {
         &[class*="#{$prefix}-fi-"] {
           @include _extend-link(sm, only, btn, false, false);
           justify-content: flex-start;
@@ -222,14 +222,14 @@
       }
     }
 
-    &#{dse-group(btns)}--icon-left {
-      #{dse(btn)}[class*="#{$prefix}-fi-"] {
+    &#{ns-group(btns)}--icon-left {
+      #{ns(btn)}[class*="#{$prefix}-fi-"] {
         @include _extend-link(sm, left, btn, false, false);
       }
     }
 
-    &#{dse-group(btns)}--icon-right {
-      #{dse(btn)}[class*="#{$prefix}-fi-"] {
+    &#{ns-group(btns)}--icon-right {
+      #{ns(btn)}[class*="#{$prefix}-fi-"] {
         @include _extend-link(sm, right, btn, false, false);
       }
     }
@@ -238,15 +238,15 @@
   /**
   * rf-btns-group--md : (défaut) Fixe les boutons à la taille MD
   */
-  &:not(#{dse-group(btns) + '--sm'}):not(#{dse-group(btns) + '--lg'}) {
-    #{dse(btn)} {
+  &:not(#{ns-group(btns) + '--sm'}):not(#{ns-group(btns) + '--lg'}) {
+    #{ns(btn)} {
       &:not([class*="#{$prefix}-fi-"]) {
         @include _extend-link(md, null, btn, false, true);
       }
     }
 
     &:not([class*="#{$prefix}-btns-group--icon-"]) {
-      #{dse(btn)} {
+      #{ns(btn)} {
         &[class*="#{$prefix}-fi-"] {
           @include _extend-link(md, only, btn, false, true);
           justify-content: flex-start;
@@ -254,14 +254,14 @@
       }
     }
 
-    &#{dse-group(btns)}--icon-left {
-      #{dse(btn)}[class*="#{$prefix}-fi-"] {
+    &#{ns-group(btns)}--icon-left {
+      #{ns(btn)}[class*="#{$prefix}-fi-"] {
         @include _extend-link(md, left, btn, false, true);
       }
     }
 
-    &#{dse-group(btns)}--icon-right {
-      #{dse(btn)}[class*="#{$prefix}-fi-"] {
+    &#{ns-group(btns)}--icon-right {
+      #{ns(btn)}[class*="#{$prefix}-fi-"] {
         @include _extend-link(md, right, btn, false, true);
       }
     }
@@ -271,14 +271,14 @@
   * rf-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
   */
   &--lg {
-    #{dse(btn)} {
+    #{ns(btn)} {
       &:not([class*="#{$prefix}-fi-"]) {
         @include _extend-link(lg, null, btn, false, false);
       }
     }
 
     &:not([class*="#{$prefix}-btns-group--icon-"]) {
-      #{dse(btn)} {
+      #{ns(btn)} {
         &[class*="#{$prefix}-fi-"] {
           @include _extend-link(lg, only, btn, false, false);
           justify-content: flex-start;
@@ -286,14 +286,14 @@
       }
     }
 
-    &#{dse-group(btns)}--icon-left {
-      #{dse(btn)}[class*="#{$prefix}-fi-"] {
+    &#{ns-group(btns)}--icon-left {
+      #{ns(btn)}[class*="#{$prefix}-fi-"] {
         @include _extend-link(lg, left, btn, false, false);
       }
     }
 
-    &#{dse-group(btns)}--icon-right {
-      #{dse(btn)}[class*="#{$prefix}-fi-"] {
+    &#{ns-group(btns)}--icon-right {
+      #{ns(btn)}[class*="#{$prefix}-fi-"] {
         @include _extend-link(lg, right, btn, false, false);
       }
     }

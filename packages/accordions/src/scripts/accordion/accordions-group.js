@@ -1,18 +1,18 @@
-import { CollapsesGroup, KeyListener } from '@gouvfr/core/src/scripts';
-import { ACCORDIONS_GROUP } from './accordion-constants';
+import api from '../../../api.js';
+import { ACCORDIONS_GROUP } from './constants.js';
 
-class AccordionsGroup extends CollapsesGroup {
+class AccordionsGroup extends api.CollapsesGroup {
   // constructor (id, element) {
   //   super(id, element);
   //   // this._attachEvents();
   // }
 
   _attachEvents () {
-    this.keyEvents = new KeyListener(this.element);
-    this.keyEvents.down(KeyListener.DOWN, this.arrowDownPress.bind(this), true, true);
-    this.keyEvents.down(KeyListener.UP, this.arrowUpPress.bind(this), true, true);
-    this.keyEvents.down(KeyListener.HOME, this.homePress.bind(this), true, true);
-    this.keyEvents.down(KeyListener.END, this.endPress.bind(this), true, true);
+    this.keyEvents = new api.KeyListener(this.element);
+    this.keyEvents.down(api.KeyListener.DOWN, this.arrowDownPress.bind(this), true, true);
+    this.keyEvents.down(api.KeyListener.UP, this.arrowUpPress.bind(this), true, true);
+    this.keyEvents.down(api.KeyListener.HOME, this.homePress.bind(this), true, true);
+    this.keyEvents.down(api.KeyListener.END, this.endPress.bind(this), true, true);
   }
 
   get focusIndex () {

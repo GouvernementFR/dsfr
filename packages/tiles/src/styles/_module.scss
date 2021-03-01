@@ -3,18 +3,14 @@
 /// @group tiles
 ////
 
-#{dse(tile)} {
-  @extend %default-text-color;
+#{ns(tile)} {
   @include relative;
   @include display-flex(column);
-  @include scheme-element-bg-color(beige, true, true);
-  @include scheme-element-focus(true);
-  @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
 
   /**
    * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
    */
-  #{dse(grid-row)} & {
+  #{ns(grid-row)} & {
     height: 100%;
   }
 
@@ -80,7 +76,7 @@
     }
     @include margin(0);
 
-    + #{dse(tile__desc)} {
+    + #{ns(tile__desc)} {
       @include text-style(md);
     }
   }
@@ -92,11 +88,6 @@
     @include margin(2v 0 0);
     @include text-style(md);
   }
-
-  /**
-   * Mixin pour gérer le focus
-   **/
-  @include scheme-element-focus(true);
 
   @import 'modules/variants';
 }

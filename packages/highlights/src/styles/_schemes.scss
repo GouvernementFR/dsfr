@@ -1,0 +1,9 @@
+////
+/// Highlights Schemes
+/// @group Highlights
+////
+
+#{ns(highlight)} {
+  @extend %default-text-color;
+  @include scheme-element-border-color(bf500, true, left, space(1v) solid $COLOR);
+}

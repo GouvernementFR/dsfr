@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-#{dse(grid-row)} {
+#{ns(grid-row)} {
   @include display-flex(null, null, null, wrap);
   @include margin(0);
   @include padding(0);

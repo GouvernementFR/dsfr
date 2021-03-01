@@ -3,13 +3,11 @@
 /// @group cards
 ////
 
-#{dse(card)} {
-  @extend %default-text-color;
+#{ns(card)} {
   @include display-flex(column);
   @include relative();
-  @include scheme-element-bg-color(beige, true, true);
 
-  #{dse(grid-row)} & {
+  #{ns(grid-row)} & {
     @include size(null, 100%);
   }
 
@@ -18,7 +16,6 @@
       @include size(6v, 6v);
       @include margin-top(auto);
       @include margin-left(auto);
-      @include scheme-element-text-color(bf500, true);
     }
   }
 
@@ -42,14 +39,12 @@
     @include margin-top(0);
     @include margin-bottom(4v);
     @include text-style(xs);
-    @include scheme-element-text-color(g600, true);
   }
 
   &__title {
     @include force-over-reset {
       @include title-style(h6);
     }
-    @include scheme-element-text-color(g800);
     @include font-weight(bold);
 
     @include margin-top(0);
@@ -76,7 +71,6 @@
 
     @include before(block, '') {
       @include absolute(0, 0, 0, 0, 100%, 100%);
-      @include scheme-element-focus();
     }
   }
 
@@ -87,6 +81,7 @@
 
     &--horizontal &__img {
       @include size(40.78%);
+      flex: 1 0 auto;
     }
   }
 }

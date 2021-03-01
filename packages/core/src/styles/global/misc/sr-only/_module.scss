@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-#{dse(sr-only)} {
+#{ns(sr-only)} {
   @include sr-only();
 }
 

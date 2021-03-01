@@ -3,17 +3,13 @@
 /// @group Table
 ////
 
-/// Selecteur de tableaux
-/// @type String
-
-#{dse(table)} {
-  @extend %default-text-color;
+#{ns(table)} {
   @include relative;
   overflow: hidden;
   max-width: 100%;
   @include margin-bottom(10v);
 
-  &:not(#{dse(table--no-scroll)}) {
+  &:not(#{ns(table--no-scroll)}) {
     table {
       width: 100%;
     }
@@ -25,7 +21,6 @@
 
   caption {
     @include title-style(h4, true);
-    @include scheme-element-text-color(g800, true);
     font-weight: bold;
     text-align: left;
   }
@@ -49,18 +44,7 @@
     td,
     th {
       font-weight: font-weight('bold');
-      @include scheme-element-border-color(g600, true, bottom, 0.125rem solid $COLOR);
-      @include scheme-element-bg-color(beige);
-      @include scheme-element-text-color(g700);
     }
-  }
-
-  tbody tr:nth-child(even) {
-    @include scheme-element-bg-color(beige);
-  }
-
-  tbody tr:nth-child(odd) {
-    @include scheme-element-bg-color(white);
   }
 
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
@@ -69,14 +53,6 @@
       td,
       th {
         border: 0;
-        @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
-      }
-
-      tr {
-        &:nth-child(odd),
-        &:nth-child(even) {
-          @include scheme-element-bg-color(t-plain);
-        }
       }
     }
   }

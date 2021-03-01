@@ -1,0 +1,29 @@
+<%#
+# paramètres header
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<header role="banner" class="<%= prefix %>-header">
+    <div class="<%= prefix %>-container%>" >
+
+        <div class="<%= prefix %>-header__body">
+
+            <%- include('./brand', locals.brand); %>
+
+            <% if (locals.operator !== undefined) { %><%- include('./operator', operator); %><% } %>
+
+            <%- include('./navbar', {...navbar}); %>
+
+            <% if (locals.tools !== undefined) { %>
+            <%- include('./tools', tools); %>
+            <% } %>
+        </div>
+
+        <% if (locals.navigation) { %>
+        <%- include( (locals.navigation !== undefined && navigation.sample !== undefined) ? navigation.sample : '../../../../navigation/src/templates/ejs/navigation', navigation); %>
+        <% } %>
+    </div>
+</header>

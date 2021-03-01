@@ -3,24 +3,11 @@
 /// @group tags
 ////
 
-#{dse(tag)} {
+#{ns(tag)} {
   @include build-tag();
-
-  @include scheme-element-text-color(g-800, true);
-  @include scheme-element-bg-color(g200, true);
-
-  @at-root {
-    #{selector-unify(&, a)},
-    #{selector-unify(&, button)} {
-      @include scheme-element-text-color(bf500-plain, true);
-      @include scheme-element-bg-color(bf200-bf300, true, true);
-    }
-  }
-
-  @include disabled-link(true, true);
 }
 
-#{dse-group(tags)} {
+#{ns-group(tags)} {
   @extend %list-reset;
   display: flex;
   flex-wrap: wrap;
@@ -33,13 +20,13 @@
     @include before(null, none);
   }
 
-  #{dse(tag)} {
+  #{ns(tag)} {
     @include margin-right(2v);
     @include margin-bottom(2v);
   }
 
-  a#{dse(tag)},
-  button#{dse(tag)} {
+  a#{ns(tag)},
+  button#{ns(tag)} {
     @include margin-right(3v);
     @include margin-bottom(3v);
 

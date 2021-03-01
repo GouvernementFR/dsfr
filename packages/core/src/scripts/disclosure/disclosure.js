@@ -1,6 +1,7 @@
-import { DisclosuresGroup } from './disclosures-group';
-import { DisclosureButton } from './disclosure-button';
-import { addClass, removeClass } from '../manipulation/classes';
+import { DisclosuresGroup } from './disclosures-group.js';
+import { DisclosureButton } from './disclosure-button.js';
+import { addClass, removeClass } from '../manipulation/classes.js';
+import { ns } from '../global/namespace.js';
 
 const disclosures = [];
 
@@ -12,9 +13,9 @@ class Disclosure {
     this.disclosed = null;
     this._selector = this.constructor.selector;
     this.modifier = this._selector + '--' + this.type.id;
-    this.attributeName = (this.type.aria ? 'aria-' : 'data-${prefix}-') + this.type.id;
+    this.attributeName = this.type.aria ? 'aria-' + this.type.id : ns.attr(this.type.id);
 
-    const buttons = document.querySelectorAll('[' + (this.type.aria ? 'aria-' : 'data-${prefix}-') + 'controls="' + this.id + '"]');
+    const buttons = document.querySelectorAll(this.type.aria ? `[aria-controls="${this.id}"]` : ns.attr.selector('controls', this.id));
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
@@ -30,7 +31,7 @@ class Disclosure {
   }
 
   static build (from) {
-    const elements = [...from.querySelectorAll(`.${this.selector}`)];
+    const elements = Array.prototype.slice.call(from.querySelectorAll(`.${this.selector}`));
 
     for (const element of elements) disclosures.push(new this(element));
   }
@@ -117,23 +118,5 @@ class Disclosure {
     }
   }
 }
-
-Disclosure.TYPES = {
-  expand: {
-    id: 'expanded',
-    aria: true,
-    canConceal: true
-  },
-  select: {
-    id: 'selected',
-    aria: true,
-    canConceal: false
-  },
-  open: {
-    id: 'opened',
-    aria: false,
-    canConceal: true
-  }
-};
 
 export { Disclosure };

@@ -15,10 +15,9 @@
     @include padding-left(8v);
     @include padding-right(0);
 
-    #{dse(sidemenu__inner)} {
+    #{ns(sidemenu__inner)} {
       @include padding(0 4v 0 8v);
       border-right: 0;
-      @include scheme-element-border-color(g300, true, left);
     }
   }
 
@@ -37,7 +36,7 @@
     @include sticky(0, null, null, null, null, 100vh);
     overflow: auto;
 
-    #{dse(sidemenu__inner)} {
+    #{ns(sidemenu__inner)} {
       overflow: auto;
       @include size(null, 100vh);
     }
@@ -48,11 +47,10 @@
    */
   &--full-border {
 
-    #{dse(sidemenu__title)} {
+    #{ns(sidemenu__title)} {
       @include margin-top(2v);
     }
-    #{dse(sidemenu__inner)} {
-      @include scheme-element-border-color(g300, true);
+    #{ns(sidemenu__inner)} {
       @include padding(0 1v 0 1v, md);
     }
   }

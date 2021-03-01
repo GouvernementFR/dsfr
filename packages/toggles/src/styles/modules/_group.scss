@@ -1,0 +1,12 @@
+////
+/// Toggles Module : Group
+/// @group toggles
+////
+
+/*
+ * On surcharge les styles de base (provisoire)
+ */
+
+#{ns(toggle)}-list {
+  @extend %list-reset;
+}

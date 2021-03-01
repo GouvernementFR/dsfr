@@ -1,6 +1,7 @@
-import { DisclosuresGroup, FocusTrap } from '@gouvfr/core/src/scripts';
+import api from '../../../api.js';
+import { FocusTrap } from './focus-trap.js';
 
-class ModalsGroup extends DisclosuresGroup {
+class ModalsGroup extends api.DisclosuresGroup {
   constructor () {
     super();
     this.trap = new FocusTrap();

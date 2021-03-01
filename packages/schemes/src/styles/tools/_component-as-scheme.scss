@@ -11,6 +11,7 @@
 @mixin _stylize-component($type:light, $color:grey-100, $width: none) {
   $sets: _get-scheme($type, $color);
   background-color: var(--#{nth($sets, 1)});
+
   --scheme-border: var(--#{nth($sets, 2)});
 
   @if $width != none {

@@ -1,8 +1,7 @@
 {
   "name": "@gouvfr/skiplinks",
-  "version": "0.5.3",
+  "version": "0.4.0",
   "license": "MIT",
-  "description": "Liens d'évitement",
   "level": "4",
   "publishConfig": {
     "access": "public"
@@ -11,12 +10,14 @@
     "prepend": true
   },
   "scripts": {
-    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
+    "build:styles":"../core/tools.js build -t styles -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build:scripts": "../core/tools.js build -t scripts -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build": "run-s build:*"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.5.3",
-    "@gouvfr/core": "^0.5.3",
-    "@gouvfr/links": "^0.5.3",
-    "@gouvfr/buttons": "^0.5.3"
+    "@gouvfr/core": "^0.4.0",
+    "@gouvfr/links": "^0.4.0",
+    "@gouvfr/buttons": "^0.4.0"
   }
 }

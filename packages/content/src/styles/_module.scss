@@ -3,8 +3,7 @@
 /// @group content
 ////
 
-#{dse(content-media)} {
-  @extend %default-text-color;
+#{ns(content-media)} {
   @include size(100%);
   @include margin(10v 0);
   @include display-flex(column, center);
@@ -36,7 +35,7 @@
     @include nest-link(sm, right, menu-2-fill, null, true);
   }
 
-  $medias: (#{&}__img, dse(responsive-vid));
+  $medias: (#{&}__img, ns(responsive-vid));
   $captions: (#{&}__caption, #{&}__transcription);
   @include content-media-sizes($medias, $captions, 25%);
 }

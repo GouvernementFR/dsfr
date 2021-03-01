@@ -1,0 +1,14 @@
+<% let data = {
+    hashtag:false,
+    segments: [
+        { segment: '', label: 'Accueil' },
+        { segment: 'composants', label: 'Composants' },
+        { segment: 'interface', label: 'Éléments d’interface' },
+        { segment: 'general', label: 'Général' },
+        { segment: 'sub', label: 'Sous partie' },
+        { segment: 'les-aides-financieres-au-college', label: 'Les aides financières au collège' }
+    ]
+}
+%>
+
+<%- include('../../src/templates/ejs/breadcrumb.ejs', data); %>

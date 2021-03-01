@@ -3,7 +3,7 @@
 /// @group pagination
 ////
 
-#{dse(pagination)} {
+#{ns(pagination)} {
   @extend %default-text-color;
 
   @include list {
@@ -17,8 +17,6 @@
     @include display-flex(row, center, center);
     @include padding(0 3v);
     @include margin(2px 2px 2v);
-    @include scheme-element-text-color(g800);
-    border-radius: space(4v);
     min-width: space(8v);
     height: space(8v);
 
@@ -38,15 +36,12 @@
     }
 
     &--active {
-      @include scheme-element-bg-color(bf500, true, true);
-      @include scheme-element-text-color(w-bf500);
       border-radius: space(4v);
       pointer-events: none;
     }
 
     &--disabled {
       cursor: not-allowed;
-      @include scheme-element-text-color(g600-g500);
     }
 
     &--first + &:not(&--prev),
@@ -69,6 +64,8 @@
         display: block;
         @include size(6v,6v);
         @include margin(0);
+        @include z-index(over);
+        pointer-events: none;
       }
     }
 
@@ -77,6 +74,8 @@
         display: block;
         @include size(6v,6v);
         @include margin(0);
+        @include z-index(over);
+        pointer-events: none;
       }
     }
 
@@ -85,6 +84,7 @@
         display: block;
         @include size(6v,6v);
         @include margin(0);
+        pointer-events: none;
       }
     }
 
@@ -93,6 +93,7 @@
         display: block;
         @include size(6v,6v);
         @include margin(0);
+        pointer-events: none;
       }
     }
   }
@@ -151,11 +152,7 @@
     min-width: space(8v);
     height: space(8v);
     box-shadow: none;
-    @include scheme-element-bg-color(t-plain, true, true);
-
-    @include before {
-      border-radius: space(4v);
-    }
+    border-radius: space(4v);
 
     /**
     &:focus {

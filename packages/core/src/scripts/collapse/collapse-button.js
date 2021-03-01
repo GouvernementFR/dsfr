@@ -1,4 +1,4 @@
-import { DisclosureButton } from '../disclosure/disclosure-button';
+import { DisclosureButton } from '../disclosure/disclosure-button.js';
 
 /**
  * CollapseButton correspond au bouton cliquable qui change le panel

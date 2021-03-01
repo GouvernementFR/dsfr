@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-#{dse(prose)} {
+#{ns(prose)} {
   @extend %default-text-color;
   @import 'module/headings';
   @import 'module/paragraph';

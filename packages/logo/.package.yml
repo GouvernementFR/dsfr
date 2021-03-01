@@ -1,0 +1,7 @@
+id: logo
+title: Logo
+description: Logo.
+doc:
+wrapper: col-8
+styles:
+  - core

@@ -1,0 +1,74 @@
+<%- include('./btn'); %>
+<div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= collapseId %>" tabindex="-1" >
+    <div class="<%= prefix %>-container" >
+        <%- include('../../../../links/src/templates/ejs/link-close', { closeId: collapseId, label: "Fermer" }); %>
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters" >
+            <%
+                if (locals.leader !== undefined) {
+            %>
+            <div class="<%= prefix %>-col-12 rf-mb-4v" >
+                <%
+                    if (leader.title !== undefined) {
+                %>
+                <h4 class="<%= prefix %>-h4 rf-mb-2v"><%= leader.title %></h4>
+                <% } %>
+
+                <%
+                    switch(true) {
+                        case leader.pTpl !== undefined:
+                            %><%- include('../../../' + leader.pTpl, leader.p); %><%
+                            break;
+                        case leader.p !== undefined:
+                            %><p><%- leader.p %></p><%
+                            break;
+                    }
+                %>
+
+                <%
+                    if (leader.link !== undefined) {
+                %>
+                    <%- include('../../../../links/example/samples/link-default', leader.link); %>
+                <% } %>
+
+
+            </div>
+            <% } %>
+
+            <%
+                let category;
+                for (let j = 0; j < categories.length; j++) {
+                  category = categories[j];
+            %>
+
+            <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-3">
+                <%
+                    let classes = [prefix + '-mega-menu__category'];
+                    if (category.active) classes.push(prefix + '-mega-menu__category--active');
+                %>
+                <div <%- includeClasses(classes); %>>
+                    <% if (!category.active && category.href) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                        <%- category.name %>
+                    <% if (!category.active && category.href) { %></a><% } %>
+
+                </div>
+                <ul class="<%= prefix %>-mega-menu__list" >
+                    <%
+                    for (let i = 0; i < category.items.length; i++) {
+                        let item = category.items[i];
+                        let classes = [prefix + '-mega-menu__item'];
+
+                        if (item.active) classes.push(prefix + '-mega-menu__item--active');
+                    %>
+                    <li <%- includeClasses(classes); %>>
+                        <% if (!item.active) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                            <%- item.label %>
+                        <% if (!item.active) { %></a><% } %>
+                    </li>
+                    <% } %>
+                </ul>
+
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>

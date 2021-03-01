@@ -1,16 +1,16 @@
-import { TabButton } from './tab-button';
-import { PANEL_SELECTOR } from './tabs-constants';
-import { TabsGroup } from './tabs-group';
-import { Disclosure } from '@gouvfr/core/src/scripts';
+import api from '../../../api.js';
+import { TabButton } from './tab-button.js';
+import { PANEL_CLASS } from './constants.js';
+import { TabsGroup } from './tabs-group.js';
 
 /**
   * Tab coorespond au panel d'un élement Tabs (tab panel)
   * Tab étend disclosure qui ajoute/enleve le modifier --selected,
   * et ajoute/eleve l'attribut hidden, sur le panel
   */
-class Tab extends Disclosure {
-  static get type () { return Disclosure.TYPES.select; }
-  static get selector () { return PANEL_SELECTOR; }
+class Tab extends api.Disclosure {
+  static get type () { return api.DISCLOSURE_TYPES.select; }
+  static get selector () { return PANEL_CLASS; }
 
   get GroupConstructor () { return TabsGroup; }
 

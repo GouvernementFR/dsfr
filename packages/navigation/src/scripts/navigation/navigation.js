@@ -1,19 +1,19 @@
-import { addClass, removeClass, CollapsesGroup } from '@gouvfr/core/src/scripts';
+import api from '../../../api.js';
 import {
-  NAVIGATION,
-  NAVIGATION_ITEM,
-  NAVIGATION_LIST,
-  NAVIGATION_MENU,
-  NAVIGATION_ITEM_RIGHT
-} from './navigation-constants';
+  NAVIGATION_CLASS,
+  NAVIGATION_ITEM_CLASS,
+  NAVIGATION_LIST_CLASS,
+  NAVIGATION_MENU_CLASS,
+  NAVIGATION_ITEM_RIGHT_CLASS
+} from './constants';
 
-class Navigation extends CollapsesGroup {
+class Navigation extends api.CollapsesGroup {
   constructor (id, element) {
     super(id, element);
 
     this.menus = [];
 
-    this.navList = element.querySelector(`.${NAVIGATION_LIST}`);
+    this.navList = element.querySelector(`.${NAVIGATION_LIST_CLASS}`);
 
     document.addEventListener('focusout', this.focusOut.bind(this));
     window.addEventListener('resize', this.resize.bind(this));
@@ -21,12 +21,12 @@ class Navigation extends CollapsesGroup {
     this.resize();
   }
 
-  static get selector () { return NAVIGATION; }
+  static get selector () { return NAVIGATION_CLASS; }
 
   add (member) {
     super.add(member);
 
-    if (member.element.classList.contains(NAVIGATION_MENU)) {
+    if (member.element.classList.contains(NAVIGATION_MENU_CLASS)) {
       this.menus.push(new NavigationMenu(member, this.navList.getBoundingClientRect().right));
     }
   }
@@ -68,7 +68,7 @@ class NavigationMenu {
 
     let item = this.element.parentElement;
     while (item) {
-      if (item.classList.contains(NAVIGATION_ITEM)) {
+      if (item.classList.contains(NAVIGATION_ITEM_CLASS)) {
         this.item = item;
         break;
       }
@@ -81,8 +81,8 @@ class NavigationMenu {
     const width = parseFloat(styles.width);
     const left = this.button.getBoundingClientRect().left;
 
-    if (left + width > right) addClass(this.item, NAVIGATION_ITEM_RIGHT);
-    else removeClass(this.item, NAVIGATION_ITEM_RIGHT);
+    if (left + width > right) api.addClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
+    else api.removeClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
   }
 }
 

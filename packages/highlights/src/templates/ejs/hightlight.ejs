@@ -1,0 +1,26 @@
+<%#
+# paramètres highlight
+
+* text (string, required) : contenu texte
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+ let classes = locals.classes || [];
+
+ classes.push(prefix + '-highlight');
+
+ switch(locals.size) {
+     case 'sm':
+       classes.push(prefix + '-highlight--sm');
+       break;
+
+     case 'lg':
+         classes.push(prefix + '-highlight--lg');
+         break;
+ }
+
+ %>
+
+<div <%- includeClasses(classes)%>><%- text %></div>

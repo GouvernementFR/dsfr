@@ -1,0 +1,9 @@
+<% if (locals.title !== undefined) { %>
+<h4 class="<%= prefix %>-h4"><%= title %></h4>
+<% } %>
+  <% if (locals.snippet !== undefined) { %>
+<div class="<%= prefix %>-mb-12v" >
+      <%- snippet %>
+</div>
+<% } %>
+

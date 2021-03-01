@@ -12,7 +12,6 @@
   @include display-flex(row, center, null, wrap);
   @include margin-top(10v);
   @include padding(0 0 4v);
-  @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
 
   @include respond-from(sm) {
     flex-wrap: nowrap;
@@ -49,7 +48,6 @@
     @include margin-bottom(1v, md);
     @include margin-top(2v);
     @include margin-top(1v, md);
-    @include scheme-element-bg-color(g400, true);
   }
 
   &:first-child {
@@ -64,9 +62,6 @@
 &__bottom-link {
   @extend %a-reset;
   @include override-reset-link-style;
-  @include force-over-reset {
-    @include scheme-element-text-color(g600, true);
-  }
   @include text-style(xs);
 }
 
@@ -76,7 +71,6 @@
 &__bottom-copy {
   flex-shrink: 0;
   @include text-style(xs);
-  @include scheme-element-text-color(g600, true);
   @include margin-top(4v);
 
   @include respond-from(sm) {

@@ -42,7 +42,7 @@
     $selector: #{selector-unify(&, a)};
   }
 
-  @at-root #{$selector} {
+  @at-root :root #{$selector} {
     box-shadow: none;
 
     @if $remove-blank {

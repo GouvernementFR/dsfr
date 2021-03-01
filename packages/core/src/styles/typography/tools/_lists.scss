@@ -4,8 +4,9 @@
 ////
 
 %base-list {
-  font-size: font-size();
-  line-height: line-height();
+  @include text-style(md);
+  // font-size: font-size();
+  // line-height: line-height();
   @include margin(0 0 2v);
   @include padding(0);
 

@@ -1,0 +1,13 @@
+<%
+    const dependencies = scripts.filter((p) => {
+      if (required.indexOf(p) > -1) return true;
+      if (locals.id && usage.scripts[id] && usage.scripts[id].indexOf(p) > -1) return true;
+      if (locals.example && locals.example.scripts) {
+        if (example.scripts.some((d) => { return usage.scripts[d].indexOf(p) > -1; } )) return true;
+      }
+      return false;
+    });
+    for (let dependency of dependencies) { %>
+<script type="module" src="../../dist/js/<%= dependency %>/<%= dependency %>.module.js" ></script>
+<script type="text/javascript" nomodule src="../../dist/js/<%= dependency %>/<%= dependency %>.nomodule.js" ></script>
+<% } %>

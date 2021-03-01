@@ -3,7 +3,7 @@
 /// @group footer
 ////
 
-#{dse(footer)} {
+#{ns(footer)} {
   @extend %default-text-color;
   @include size(100%);
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
@@ -15,7 +15,7 @@
     @include margin-bottom(4v);
     @include margin-bottom(6v, md);
 
-    & + #{dse(footer__bottom)} {
+    & + #{ns(footer__bottom)} {
       @include margin-top(4v);
     }
   }
@@ -52,18 +52,18 @@
     /**
      * Styles quand un logo opérateur est présent
      */
-    #{dse(footer__body--operator)} & {
+    #{ns(footer__body--operator)} & {
       // flex-basis: 100%;
 
-      #{dse(footer__brand-link)} + #{dse(footer__brand-link)} {
-        #{dse(footer__logo)} {
+      #{ns(footer__brand-link)} + #{ns(footer__brand-link)} {
+        #{ns(footer__logo)} {
           @include size(auto);
           min-width: initial;
           max-height: 100px;
         }
       }
 
-      #{dse(footer__logo)} {
+      #{ns(footer__logo)} {
         min-width: initial;
         max-width: 100%;
 

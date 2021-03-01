@@ -1,0 +1,8 @@
+id: selects
+title: Liste déroulante
+description: La liste déroulante permet à un utilisateur de choisir un élément dans une liste donnée.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019306/Liste+d+roulante+-+Select
+wrapper: col-8
+styles:
+  - core
+  - forms

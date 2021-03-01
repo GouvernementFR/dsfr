@@ -1,0 +1,16 @@
+<%#
+# paramètres
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+    const attributes = {};
+    attributes['aria-expanded'] = locals.opened === true;
+    attributes['aria-controls'] = locals.id;
+
+%>
+
+<%- include("../../../../buttons/src/templates/ejs/button", {label: label, attributes: attributes}) %>

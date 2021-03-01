@@ -3,7 +3,7 @@
 /// @group navigation
 ////
 
-#{dse(nav)} {
+#{ns(nav)} {
   @extend %default-text-color;
   @include z-index(nav, true);
 
@@ -26,8 +26,6 @@
     @include display-flex(column, flex-start);
     flex: 0 1 auto;
 
-    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
-
     @include respond-from(md) {
       box-shadow: none;
 
@@ -46,17 +44,14 @@
       }
     }
 
-    & > #{dse(link)},
-    & > #{dse(btn)} {
+    & > #{ns(link)},
+    & > #{ns(btn)} {
       @include display-flex(null, center, space-between);
       @include size(100%);
       @include padding(3v 0);
       @include text-style(md);
       text-align: left;
       font-weight: bold;
-
-      @include scheme-element-text-color(g800);
-      @include scheme-element-focus();
 
       @include before() {
         @include margin-right(0);
@@ -73,17 +68,15 @@
       }
     }
 
-    & > #{dse(link)} {
+    & > #{ns(link)} {
       flex-direction: row;
       box-shadow: none;
       border-radius: 0;
 
-      @include scheme-element-bg-color(t-plain, false, true); //TODO: override ?
-
       @include before(null, none);
     }
 
-    & > #{dse(btn)} {
+    & > #{ns(btn)} {
       flex-direction: row-reverse;
 
       @include scheme-element-bg-color(t-plain, false, override);
@@ -101,11 +94,6 @@
         }
 
         @include after(null, none);
-
-        @include respond-from(md) {
-          @include scheme-element-text-color(bf500-plain);
-          @include scheme-element-bg-color(bf200-bf300);
-        }
       }
     }
 
@@ -114,23 +102,13 @@
 
       @include before(block, '') {
         @include absolute(3v, null, null, -4v, 2px, 6v);
-        @include scheme-element-bg-color(bf500);
       }
 
       @include respond-from(md) {
         @include before(null, none);
       }
 
-      & > #{dse(link)},
-      & > #{dse(btn)} {
-        @include scheme-element-text-color(bf500);
-
-        @include respond-from(md) {
-          @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR); //TODO: transition
-        }
-      }
-
-      & > #{dse(link)} {
+      & > #{ns(link)} {
         pointer-events: none;
       }
     }

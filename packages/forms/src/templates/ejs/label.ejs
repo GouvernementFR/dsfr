@@ -1,0 +1,28 @@
+<%#
+# paramètres fieldset
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+ let labelClasses = locals.labelClasses || [];
+ labelClasses.push(prefix + '-label');
+ let labelAttrs = locals.labelAttributes || {};
+ let describedby = [];
+
+ if (locals.error != undefined && locals.group !== true) labelClasses.push(prefix + '-label--error');
+ if (locals.valid != undefined && locals.group !== true) labelClasses.push(prefix + '-label--valid');
+
+ // if (locals.hint != undefined) describedby.push(id + '-desc-hint');
+ if (locals.error != undefined) describedby.push(id + '-desc-error');
+ if (locals.valid != undefined) describedby.push(id + '-desc-valid');
+
+ if (describedby.length > 0) labelAttrs['aria-describedby'] = describedby.join(' ');
+ %>
+
+<label <%- includeClasses(labelClasses); %> for="<%= id %>" <%- includeAttrs(labelAttrs); %>><%= label %>
+  <% if (locals.hint != undefined) { %><%- include('./hint', {id: id + '-desc-hint'});%><% } %>
+</label>
+

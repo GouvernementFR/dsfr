@@ -33,7 +33,7 @@
 
 @function _spacing-selectors($prop, $side, $value, $breakpoint) {
   @if type-of($value) != 'number' {
-    @return '#{dse(_spacing-name($prop, $side, $value, null, $breakpoint))}';
+    @return '#{ns(_spacing-name($prop, $side, $value, null, $breakpoint))}';
   }
 
   $w: null;
@@ -41,10 +41,10 @@
     $w: abs($value) / 2;
   }
 
-  $selectors:'#{dse(_spacing-name($prop, $side, $value, v, $breakpoint))}';
+  $selectors:'#{ns(_spacing-name($prop, $side, $value, v, $breakpoint))}';
 
   @if $w != null {
-    $selectors: '#{$selectors},#{dse(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
+    $selectors: '#{$selectors},#{ns(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
   }
 
   @return $selectors;

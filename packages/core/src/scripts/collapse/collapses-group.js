@@ -1,4 +1,4 @@
-import { DisclosuresGroup } from '../disclosure/disclosures-group';
+import { DisclosuresGroup } from '../disclosure/disclosures-group.js';
 
 const ascendants = {};
 

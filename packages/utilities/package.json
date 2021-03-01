@@ -1,8 +1,9 @@
 {
   "name": "@gouvfr/utilities",
-  "version": "0.5.3",
+  "version": "0.4.0",
   "license": "MIT",
-  "description": "Outils",
+  "title": "Outils",
+  "description": "Ce package regroupe des classes utilitaires CSS et classes javascript utilisées par les autres packages du Design System de L'Etat.",
   "level": "2",
   "publishConfig": {
     "access": "public"
@@ -11,10 +12,12 @@
     "wrapper": "col-8"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js"
+    "start": "webpack-dev-server --config ../../webpack/webpack.config.dev.js",
+    "build:styles":"../core/tools.js build -t styles -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build:scripts": "../core/tools.js build -t scripts -p $npm_package_name -d ./dist -f $npm_package_name",
+    "build": "run-s build:*"
   },
   "dependencies": {
-    "@gouvfr/schemes": "^0.5.3",
-    "@gouvfr/core": "^0.5.3"
+    "@gouvfr/core": "^0.4.0"
   }
 }

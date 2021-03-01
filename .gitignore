@@ -1,7 +1,6 @@
 node_modules/
 .DS_Store
 lerna-debug.log
-test/
 /.idea/.gitignore
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/design-system-developpement.iml
@@ -13,3 +12,4 @@ test/
 /.idea/vcs.xml
 /.idea/watcherTasks.xml
 /.idea/
+public/

@@ -1,20 +1,20 @@
-import { Disclosure, KeyListener, addClass, removeClass } from '@gouvfr/core/src/scripts';
+import api from '../../../api.js';
 import {
   OFFSET_MOBILE,
-  NO_SCROLL_SELECTOR,
-  MODAL_SELECTOR,
-  SCROLL_SHADOW_SELECTOR,
-  BODY_SELECTOR
-} from './modal-constants';
+  NO_SCROLL_CLASS,
+  MODAL_CLASS,
+  SCROLL_SHADOW_CLASS,
+  MODAL_BODY_SELECTOR
+} from './constants';
 import { ModalsGroup } from './modals-group';
 import { ModalButton } from './modal-button';
 
 const group = new ModalsGroup();
 
-class Modal extends Disclosure {
+class Modal extends api.Disclosure {
   constructor (element) {
     super(element);
-    this.body = this.element.querySelector(BODY_SELECTOR);
+    this.body = this.element.querySelector(MODAL_BODY_SELECTOR);
     this.scrollDistance = 0;
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
@@ -25,16 +25,18 @@ class Modal extends Disclosure {
   listen () {
     this.element.addEventListener('click', this.click.bind(this));
 
-    this.keyListener = new KeyListener(this.element);
-    this.keyListener.down(KeyListener.ESCAPE, this.conceal.bind(this), true, true);
+    this.keyListener = new api.KeyListener(this.element);
+    this.keyListener.down(api.KeyListener.ESCAPE, this.conceal.bind(this), true, true);
 
-    this.body.addEventListener('scroll', this.scrolling);
-    window.addEventListener('resize', this.resizing);
-    window.addEventListener('orientationchange', this.resizing);
+    if (this.body) {
+      this.body.addEventListener('scroll', this.scrolling);
+      window.addEventListener('resize', this.resizing);
+      window.addEventListener('orientationchange', this.resizing);
+    }
   }
 
   click (e) {
-    if (this.element === e.target) this.conceal();
+    if (this.body && this.element === e.target) this.conceal();
   }
 
   group () {
@@ -54,17 +56,18 @@ class Modal extends Disclosure {
   /**
    * Fixe l'arrière plan quand la modal est ouverte
    */
+  // TODO: créer une fonction de fix de scroll dans core (api.noScroll = true)
   handleScroll (isScrollable) {
     if (isScrollable) {
-      removeClass(document.documentElement, NO_SCROLL_SELECTOR);
+      api.removeClass(document.documentElement, NO_SCROLL_CLASS);
       document.body.style.top = '';
       window.scroll(0, this.scrollDistance);
     } else {
-      if (!document.documentElement.classList.contains(NO_SCROLL_SELECTOR)) {
+      if (!document.documentElement.classList.contains(NO_SCROLL_CLASS)) {
         this.scrollDistance = window.scrollY;
       }
       document.body.style.top = this.scrollDistance * -1 + 'px';
-      addClass(document.documentElement, NO_SCROLL_SELECTOR);
+      api.addClass(document.documentElement, NO_SCROLL_CLASS);
     }
   }
 
@@ -73,28 +76,30 @@ class Modal extends Disclosure {
    * corrige le 100vh, en mobile notamment, lorsque la barre navigateur est présente par exemple.
    */
   resize (isResizing, e) {
+    if (!this.body) return;
     if (this.body.scrollHeight > this.body.clientHeight) {
       if (this.body.offsetHeight + this.body.scrollTop >= this.body.scrollHeight) {
-        removeClass(this.body, SCROLL_SHADOW_SELECTOR);
+        api.removeClass(this.body, SCROLL_SHADOW_CLASS);
       } else {
-        addClass(this.body, SCROLL_SHADOW_SELECTOR);
+        api.addClass(this.body, SCROLL_SHADOW_CLASS);
       }
     } else {
-      removeClass(this.body, SCROLL_SHADOW_SELECTOR);
+      api.removeClass(this.body, SCROLL_SHADOW_CLASS);
     }
 
     if (isResizing) {
       this.body.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
 
       // Une deuxième fois après positionnement des barres du navigateur (ios)
-      setTimeout(() => {
+      // TODO: à tester si fonctionnel sans setTimeout
+      requestAnimationFrame(() => {
         this.body.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
-      }, 400);
+      });
     }
   }
 
-  static get type () { return Disclosure.TYPES.expand; }
-  static get selector () { return MODAL_SELECTOR; }
+  static get type () { return api.DISCLOSURE_TYPES.expand; }
+  static get selector () { return MODAL_CLASS; }
 
   buttonFactory (element) {
     return new ModalButton(element, this);

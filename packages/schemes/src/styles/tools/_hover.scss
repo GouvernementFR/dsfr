@@ -44,7 +44,8 @@
 }
 
 @mixin remove-hover() {
-  &:hover, &:active {
+  &:hover,
+  &:active {
     &:not([disabled]),
     &:not(:disabled) {
       background-image: none;

@@ -76,10 +76,10 @@
       }
     }
 
-    $selector: dse($main);
+    $selector: ns($main);
 
     @if $alt != null {
-      $selector: '#{$selector}, #{dse($alt)}';
+      $selector: '#{$selector}, #{ns($alt)}';
     }
 
     @include text-selector('%#{$main}', $variation);
@@ -118,7 +118,7 @@
 
   @if $is-modifier {
     @if $name == md {
-      @return dse($type);
+      @return ns($type);
     }
     $separator: '--';
   }
@@ -127,10 +127,10 @@
     $base: '#{$type + $separator}';
   }
 
-  $selectors: (dse('#{$base + $name}'));
+  $selectors: (ns('#{$base + $name}'));
 
   @if $alt != null {
-    $selectors: append($selectors, dse('#{$base + $alt}'), 'comma');
+    $selectors: append($selectors, ns('#{$base + $alt}'), 'comma');
   }
 
   @return $selectors;

@@ -1,0 +1,25 @@
+////
+/// Pagination Schemes
+/// @group pagination
+////
+
+#{ns(pagination)} {
+  @extend %default-text-color;
+
+  @include list-item {
+    @include scheme-element-text-color(g800);
+
+    &--active {
+      @include scheme-element-bg-color(bf500, true, true);
+      @include scheme-element-text-color(w-bf500);
+    }
+
+    &--disabled {
+      @include scheme-element-text-color(g600-g500);
+    }
+  }
+
+  &__link {
+    @include scheme-element-bg-color(t-plain, true, true);
+  }
+}
