@@ -46,6 +46,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
         overflow: visible;
         max-height: initial;
         display: inline-block;
+        @include before(none);
       }
     }
   }
