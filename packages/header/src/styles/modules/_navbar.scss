@@ -60,6 +60,7 @@
 
   @include nest-btn(md, only) {
     flex: 0 0 auto;
+    white-space: nowrap;
 
     &--menu {
       @include before {
