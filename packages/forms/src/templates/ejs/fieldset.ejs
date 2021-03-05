@@ -9,7 +9,6 @@
 <%
 let fieldsetClasses = [prefix + '-fieldset'];
 let fieldsetAttrs = locals.attributes || {};
-let legendAttrs = {};
 let describedby = [];
 
 if (locals.inline === true) fieldsetClasses.push(prefix + '-fieldset--inline');
@@ -22,13 +21,14 @@ if (locals.hint != undefined) describedby.push(id + '-desc-hint');
 if (locals.error != undefined) describedby.push(id + '-desc-error');
 if (locals.valid != undefined) describedby.push(id + '-desc-valid');
 
-if (describedby.length > 0) legendAttrs['aria-describedby'] = describedby.join(' ');
 %>
 
 <div class="<%= prefix %>-form-group">
     <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
-        <legend class="<%= prefix %>-fieldset__legend" <%- includeAttrs(legendAttrs); %>><%= legend %></legend>
-        <% if (locals.hint != undefined) { %><%- include('./hint', {id: id + '-desc-hint'});%><% } %>
+        <legend class="<%= prefix %>-fieldset__legend">
+            <%= legend %>
+            <% if (locals.hint != undefined) { %><%- include('./hint', {id: id + '-desc-hint'});%><% } %>
+        </legend>
         <div class="<%= prefix %>-fieldset__content">
             <%
                 let path;

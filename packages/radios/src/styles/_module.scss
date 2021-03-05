@@ -9,14 +9,6 @@
  */
 #{ns-group(radio)} {
   /**
-   * Style du texte d'aide
-   */
-  #{ns(hint-text)} {
-    @include margin-left(8v);
-    @include margin-top(-3v);
-  }
-
-  /**
    * Dans le cas d'un groupe de radios, on supprime l'espacement du premier groupe
    */
   &:first-child {
@@ -199,21 +191,6 @@
   }
 
   /**
-   * Écart entre le text d'aide et les radios riches
-   */
-  #{ns(hint-text)} + .#{$prefix}-fieldset__content {
-    .#{$prefix}-radio-group {
-      &:first-child {
-        input[type="radio"] + label {
-          @include radio-rich() {
-            @include margin-top(7v);
-          }
-        }
-      }
-    }
-  }
-
-  /**
    * Modificateur pour afficher les radios en ligne
    */
   &--inline {
@@ -241,21 +218,6 @@
         input[type="radio"] + label {
           @include radio-rich() {
             @include margin-top(6v);
-          }
-        }
-      }
-    }
-
-    /**
-     * Écart entre le text d'aide et les radios riches dans le cas des radios inline
-     */
-    #{ns(hint-text)} + .#{$prefix}-fieldset__content {
-      .#{$prefix}-radio-group {
-        &:first-child {
-          input[type="radio"] + label {
-            @include radio-rich() {
-              @include margin-top(6v);
-            }
           }
         }
       }

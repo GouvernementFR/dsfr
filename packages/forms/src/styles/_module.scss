@@ -100,8 +100,10 @@
     @include text-style(md);
     @include font-weight(bold);
 
-    + #{ns(hint-text)} {
-      @include margin-top(-2v);
+    #{ns(hint-text)} {
+      @include margin-top(2v);
+      @include margin-bottom(0);
+      @include font-weight(regular);
     }
   }
 
