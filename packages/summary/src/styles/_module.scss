@@ -3,8 +3,10 @@
 /// @group summary
 ////
 
+//TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
+
 #{ns(summary)} {
-  @extend %default-text-color;
+  @include disable-link-style;
   @include padding(6v);
   @include padding(8v 10v 6v, md);
 
@@ -16,9 +18,6 @@
   }
 
   @include list {
-    @extend %list-reset;
-    @extend %ordered-list;
-
     > li { // TODO: BEM
       @include margin(0);
       @include before(null, none);
@@ -29,7 +28,6 @@
       @include padding(2v);
       @include margin(0 -2v);
       @include text-style(xs);
-      box-shadow: none;
 
       @include before {
         @include margin-right(2v);
@@ -37,8 +35,4 @@
       }
     }
   }
-}
-
-#{ns(summary__link)} {
-  text-decoration: none;
 }

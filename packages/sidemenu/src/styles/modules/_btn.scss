@@ -18,7 +18,6 @@
   font-weight: font-weight(bold);
   background: 0;
   border: 0;
-  cursor: pointer;
 
   @include font-icon(arrow-down-s-line, sm) {
     @include margin-left(auto);
@@ -30,7 +29,7 @@
     }
   }
 
-  &[aria-expanded="true"] {
+  &[aria-expanded="true" i] {
     @include before {
       transform: rotate(-180deg);
     }

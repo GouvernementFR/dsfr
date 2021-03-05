@@ -39,18 +39,16 @@
  * Contenu texte simple
  */
 &__content-desc {
-  @include specify(p) {
-    @include margin(0 0 2v);
-    @include size(100%);
-    @include text-style(sm);
-  }
+  @include enable-link-style;
+  @include margin(0 0 2v);
+  @include size(100%);
+  @include text-style(sm);
 }
 
 /**
  * Liste des liens situés en dessous de la partie texte
  */
 &__content-list {
-  @extend %list-reset;
   @include display-flex(row);
   align-self: center;
   // @include margin-bottom(-4v);
@@ -72,8 +70,6 @@
 }
 
 &__content-link {
-  @extend %a-reset;
-  @include override-reset-link-style;
   display: inline-flex;
   font-weight: bold;
   @include text-style(sm);

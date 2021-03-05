@@ -47,27 +47,21 @@
  * Style du texte d'aide
  */
 #{ns(hint-text)} {
-  @include specify(p) {
-    @include scheme-element-text-color(g600);
-  }
+  @include scheme-element-text-color(g600);
 }
 
 /**
  * Style du texte d'erreur
  */
 #{ns(error-text)} {
-  @include specify(p) {
-    @include scheme-element-text-color(error);
-  }
+  @include scheme-element-text-color(error);
 }
 
 /**
  * Style du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include specify(p) {
-    @include scheme-element-text-color(success);
-  }
+  @include scheme-element-text-color(success);
 }
 
 /**

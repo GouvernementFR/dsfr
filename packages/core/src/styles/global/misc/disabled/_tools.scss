@@ -3,10 +3,6 @@
 /// @group core
 ////
 
-%disabled {
-  cursor: not-allowed;
-}
-
 @function get-disabled-color($type) {
   @return map_get($disabled-color-sets, $type);
 }
@@ -36,13 +32,11 @@
   &:disabled {
     @if $descendant != null {
       #{$descendant} {
-        @extend %disabled;
         @include disabled-colors($text, $background, $box-shadow-border);
         @content;
       }
     }
     @else {
-      @extend %disabled;
       @include disabled-colors($text, $background, $box-shadow-border);
       @content;
     }

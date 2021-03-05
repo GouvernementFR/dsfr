@@ -8,5 +8,5 @@
  */
 
 #{ns(toggle)}-list {
-  @extend %list-reset;
+  @include disable-list-style;
 }

@@ -85,7 +85,6 @@
 
     & > #{ns(link)} {
       display: block;
-      box-shadow: none;
       @include margin(-3v -4v);
       border-radius: 0;
 
@@ -106,7 +105,6 @@
   }
 
   @include list {
-    @extend %list-reset;
     @include margin(0 -4v 2v);
     @include margin(3v 0 0, md);
   }

@@ -4,13 +4,10 @@
 ////
 
 #{ns(callout)} {
-  @extend %default-text-color;
   @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
 
   @include title() {
-    @include force-over-reset() {
-      @include scheme-element-text-color(g800, true);
-    }
+    @include scheme-element-text-color(g800, true);
   }
 
   @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));

@@ -8,13 +8,10 @@
 
   // add heading style for accessibility concerns and reset margins
   @include title {
-    @at-root :root #{&} {
-      @include margin(0);
-    }
+    @include margin(0);
   }
 
   @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
-    @include _reset-links-tags(button);
     @include size(100%);
     text-align: left;
 
@@ -23,7 +20,7 @@
       @include margin-left(auto);
     }
 
-    &[aria-expanded="true"] {
+    &[aria-expanded="true" i] {
       @include font-weight('bold');
       border: 0;
 
@@ -36,6 +33,7 @@
   }
 
   #{ns(collapse)} {
+    @include enable-list-style;
     @include margin(0 -1v, md);
     @include padding-x(4v, md);
 
@@ -49,7 +47,7 @@
 }
 
 #{ns-group(accordions)} {
-  @extend %list-reset;
+  @include disable-list-style;
 
   & > * > #{ns(accordion)},
   & > #{ns(accordion)} {

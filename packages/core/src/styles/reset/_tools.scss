@@ -3,83 +3,8 @@
 /// @group core
 ////
 
-%btn-reset {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-family: inherit;
-  border: none;
-  cursor: pointer;
-}
-
-%a-reset {
-  text-decoration: none;
-}
-
-%list-reset {
-  list-style-type: none;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-}
-
-%text-reset {
-  font-family: $font-family-sans;
-  text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-%default-text-color {
-  @include scheme-element-text-color(g700, true);
-}
-
-@mixin override-reset-link-style($remove-blank: true, $unify: true) {
-  $selector: &;
-  @if $unify {
-    $selector: #{selector-unify(&, a)};
-  }
-
-  @at-root :root #{$selector} {
-    box-shadow: none;
-
-    @if $remove-blank {
-      &[target="_blank"] {
-        @include after(null, none) {
-          @include margin-left(0);
-        }
-      }
-    }
-  }
-}
-
-@mixin specify-after-reset-link-style($remove-underline: true) {
-  $link: &;
-
-  @at-root #{selector-unify(&, a)} {
-    @if $remove-underline {
-      box-shadow: none;
-    }
-
-    &[target="_blank"] {
-      @at-root {
-        &,
-        #{$link} {
-          @include after {
-            @include margin-left(0);
-            font-size: inherit;
-            @content;
-          }
-        }
-      }
-    }
-  }
-}
-
-@mixin force-over-reset() {
-  @at-root :root & {
-    @content;
-  }
-}
+@import 'tools/font-face';
+@import 'tools/button';
+@import 'tools/link';
+@import 'tools/lists';
+@import 'tools/focus';

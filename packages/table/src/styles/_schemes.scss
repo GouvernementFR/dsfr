@@ -4,8 +4,6 @@
 ////
 
 #{ns(table)} {
-  @extend %default-text-color;
-
   caption {
     @include scheme-element-text-color(g800, true);
   }

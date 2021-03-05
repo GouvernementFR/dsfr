@@ -8,16 +8,13 @@
 }
 
 #{ns-group(tags)} {
-  @extend %list-reset;
+  @include disable-list-style;
   display: flex;
   flex-wrap: wrap;
   @include margin-bottom(0);
 
   > li {
     display: inline-flex;
-    @include margin-bottom(0);
-
-    @include before(null, none);
   }
 
   #{ns(tag)} {

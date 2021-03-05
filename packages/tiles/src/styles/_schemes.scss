@@ -3,14 +3,8 @@
 /// @group tiles
 ////
 
+// TODO: remettre le hover sur le lien et son before pour limiter au cas où le lien est bien présent.
 #{ns(tile)} {
-  @extend %default-text-color;
-  @include scheme-element-bg-color(beige, true, true);
-  @include scheme-element-focus(true);
+  @include scheme-element-bg-color(beige, true, false);
   @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
-
-  /**
-   * Mixin pour gérer le focus
-   **/
-  @include scheme-element-focus(true);
 }

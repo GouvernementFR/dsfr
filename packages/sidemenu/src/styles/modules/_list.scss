@@ -4,7 +4,6 @@
 ////
 
 @include list {
-  @extend %list-reset;
   font-weight: font-weight('bold');
 
   #{ns(sidemenu__list)} {

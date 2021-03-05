@@ -4,7 +4,6 @@
 ////
 
 #{ns(footer)} {
-  @extend %default-text-color;
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
   @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
 
@@ -17,9 +16,7 @@
   }
 
   &__top-link {
-    @include force-over-reset {
-      @include scheme-element-text-color(g600, true);
-    }
+    @include scheme-element-text-color(g600, true);
   }
 
   &__bottom {
@@ -33,9 +30,7 @@
   }
 
   &__bottom-link {
-    @include force-over-reset {
-      @include scheme-element-text-color(g600, true);
-    }
+    @include scheme-element-text-color(g600, true);
   }
 
   &__bottom-copy {

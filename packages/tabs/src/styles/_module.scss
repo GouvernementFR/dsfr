@@ -4,6 +4,8 @@
 ////
 
 #{ns(tabs)} {
+  @include disable-list-style;
+  @include disable-link-style;
   @include relative;
   overflow: hidden;
   @include margin-top(-4px);
@@ -33,7 +35,6 @@
   @include list {
     @include display-flex(null, flex-end);
     overflow-x: auto;
-    @extend %list-reset;
     @include size(100%);
 
     /**
@@ -48,6 +49,7 @@
       @include margin-x(-2v);
     }
 
+    // TODO: BEM, pour éviter de tuer les li du content
     /**
     * Reset du style par défaut du li
     */
@@ -55,7 +57,6 @@
       display: block;
       flex: 0 0 auto;
       @include margin(0 2v);
-      @include before(none, none);
 
       &:not(:first-child) {
         @include margin-left(0);
@@ -111,20 +112,19 @@
   * Tab Panel
   */
   &__panel {
+    @include enable-link-style;
+    @include enable-list-style;
     display: block;
     @include absolute(null, null, null, 0, 100%, auto);
     @include padding(4v);
     @include padding(8v, md);
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
-    &--selected {
-      @include scheme-element-focus();
-
-      &:focus {
-        outline-offset: calc(-1rem + 2px);
-        @include respond-from(md) {
-          outline-offset: calc(-2rem + 2px);
-        }
+    &:focus,
+    &:focus-visible {
+      outline-offset: calc(-1rem + 2px);
+      @include respond-from(md) {
+        outline-offset: calc(-2rem + 2px);
       }
     }
 

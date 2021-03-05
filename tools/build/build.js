@@ -26,11 +26,11 @@ const build = async (clean, minify, release) => {
 
   for (const pck of packages) {
     if (release) await lintStyles(pck);
-    copyStyles(pck);
+    copyStyles(pck, true);
 
     if (release) lintScripts(pck);
-    copyScripts(pck);
-    copyTemplates(pck);
+    copyScripts(pck, true);
+    copyTemplates(pck, true);
   }
 
   /*
@@ -58,13 +58,13 @@ const build = async (clean, minify, release) => {
     }
 
     try {
-      await buildStyles([pck], 'public/packages', `public/dist/css/${pck}`, pck, minify, release);
+      await buildStyles([pck], 'public/packages', 'public/dist/css/', pck, minify, release);
     } catch (e) {
       console.log(e);
     }
 
     try {
-      await buildScripts([pck], 'public/packages', `public/dist/js/${pck}`, pck, minify, true, release);
+      await buildScripts([pck], 'public/packages', 'public/dist/js/', pck, minify, true, release);
     } catch (e) {
       console.log(e);
     }

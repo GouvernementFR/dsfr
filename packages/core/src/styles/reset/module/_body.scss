@@ -1,0 +1,18 @@
+////
+/// Core Module : Reset body
+/// @group core
+////
+
+@if (map-get($reset-settings, body)) {
+  body {
+    @include font-family;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    @include scheme-body;
+    @include margin(0);
+    @include padding(0);
+    @include text-style(md);
+  }
+}

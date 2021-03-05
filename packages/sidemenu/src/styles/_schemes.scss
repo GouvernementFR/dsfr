@@ -4,7 +4,6 @@
 ////
 
 #{ns(sidemenu)} {
-  @extend %default-text-color;
   @include scheme-element-bg-color(w-g750, true);
 
   @include respond-from(md) {
@@ -64,9 +63,8 @@
 
 #{ns(sidemenu__btn)} {
   @include scheme-element-text-color(g700);
-  @include scheme-element-focus();
 
-  &[aria-expanded="true"] {
+  &[aria-expanded="true" i] {
     @include scheme-element-border-color(t-plain, true, bottom);
   }
 
@@ -82,5 +80,4 @@
 #{ns(sidemenu__link)} {
   @include scheme-element-text-color(g800);
   @include scheme-element-bg-color(t-plain, true, after);
-  @include scheme-element-focus();
 }

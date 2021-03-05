@@ -22,7 +22,7 @@
   &:first-child {
     @include margin-top(-3v);
 
-    input[type="radio"] + label {
+    input[type="radio" i] + label {
       @include margin-top(0);
     }
   }
@@ -33,7 +33,7 @@
   &:last-child {
     @include margin-bottom(-3v);
 
-    input[type="radio"] + label {
+    input[type="radio" i] + label {
       @include radio-rich() {
         @include margin-bottom(6v);
       }
@@ -43,7 +43,7 @@
   /**
    * On cache l'input de type radio pour le styler via le label
    */
-  input[type="radio"] {
+  input[type="radio" i] {
     @include absolute;
     opacity: 0;
 
@@ -159,7 +159,7 @@
    * Modificateur pour la taille sm
    */
   &--sm {
-    input[type="radio"] {
+    input[type="radio" i] {
       & + label {
         @include before() {
           @include size(4v, 4v);
@@ -175,14 +175,14 @@
 .#{$prefix}-fieldset {
   .#{$prefix}-radio-group {
     &:first-child {
-      input[type="radio"] + label {
+      input[type="radio" i] + label {
         @include radio-rich() {
           @include margin-top(3v);
         }
       }
     }
 
-    input[type="radio"] + label {
+    input[type="radio" i] + label {
       @include radio-rich() {
         @include margin-top(2v);
         @include margin-bottom(4v);
@@ -190,7 +190,7 @@
     }
 
     &:last-child {
-      input[type="radio"] + label {
+      input[type="radio" i] + label {
         @include radio-rich() {
           @include margin-bottom(7v);
         }
@@ -204,7 +204,7 @@
   #{ns(hint-text)} + .#{$prefix}-fieldset__content {
     .#{$prefix}-radio-group {
       &:first-child {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include radio-rich() {
             @include margin-top(7v);
           }
@@ -219,7 +219,7 @@
   &--inline {
     .#{$prefix}-radio-group {
       &:not(:last-child) {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include radio-rich() {
             @include margin-right(3v);
             @include margin-bottom(2v);
@@ -230,7 +230,7 @@
       &:last-child {
         margin-bottom: 0;
 
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include radio-rich() {
             @include margin-bottom(3v);
           }
@@ -238,7 +238,7 @@
       }
 
       &:first-child {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include radio-rich() {
             @include margin-top(6v);
           }
@@ -252,7 +252,7 @@
     #{ns(hint-text)} + .#{$prefix}-fieldset__content {
       .#{$prefix}-radio-group {
         &:first-child {
-          input[type="radio"] + label {
+          input[type="radio" i] + label {
             @include radio-rich() {
               @include margin-top(6v);
             }

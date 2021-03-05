@@ -4,6 +4,8 @@
 ////
 
 #{ns(header)} {
+  @include disable-link-style;
+  @include disable-list-style;
   @include size(100%);
   @include shadow(md);
 

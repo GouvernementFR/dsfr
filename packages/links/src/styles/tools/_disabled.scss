@@ -3,9 +3,11 @@
 /// @group links
 ////
 
-@mixin disabled-link($text:true, $background:false, $box-shadow-border: false, $descendant: null) {
-  @at-root #{selector_unify(&, button)} {
-    @include disabled($text, $background, $box-shadow-border, $descendant) {
+@mixin disabled-link($text:true, $background:false, $box-shadow-border: false) {
+  @at-root {
+    #{selector_unify(&, button)}[disabled],
+    #{selector-unify(&, a)}:not([href]) {
+      @include disabled-colors($text, $background, $box-shadow-border);
       @content;
     }
   }

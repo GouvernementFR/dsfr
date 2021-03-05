@@ -4,11 +4,11 @@
 ////
 
 #{ns(nav)} {
-  @extend %default-text-color;
+  @include disable-link-style;
+  @include disable-list-style;
   @include z-index(nav, true);
 
   @include list {
-    @extend %list-reset;
     @include display-flex(column);
     @include margin(0);
     @include padding(0);
@@ -88,7 +88,7 @@
         transition: transform 0.3s;
       }
 
-      &[aria-expanded="true"] {
+      &[aria-expanded="true" i] {
         @include before {
           transform: rotate(-180deg);
         }

@@ -28,17 +28,13 @@
   }
 
   @include title() {
-    @include force-over-reset() {
-      @include title-style(h4);
-      @include margin(0 0 2v);
-    }
+    @include title-style(h4);
+    @include margin(0 0 2v);
   }
 
   &__text {
-    @include force-over-reset() {
-      @include text-style(lg);
-      @include margin(0);
-    }
+    @include text-style(lg);
+    @include margin(0);
   }
 
   /**

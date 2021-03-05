@@ -10,7 +10,6 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
   @include scheme-element-bg-color(g200, true);
   @include scheme-element-box-shadow-color(g800,true,inset 0 -2px 0 0 $COLOR);
   @include scheme-element-data-uri-svg(g800, $svg, background-image);
-  @include scheme-element-focus();
 
   /**
    * Modificateur pour gérer l'état d'erreur
