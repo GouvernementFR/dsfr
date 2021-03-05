@@ -10,7 +10,7 @@ if (!isNaN(data.tabs)) {
     for (let j = 0; j < (i + 1 + (locals.repeat || 0)); j++) content += '<p>' + lorem() + '</p>';
     data.tabs[i] = {
       label: `Label Tab ${i + 1}`,
-      content: `<!-- données de test --><div class="rf-prose"><h4 class="${prefix}-h4" >Contenu panneau ${i + 1}</h4><a href="test" alt="">link test get focus on TAB</a> ${lorem}<ul><li>list item<ul><li>list item niveau 2</li></ul></li><li>list item</li></ul></div>`
+      content: `<!-- données de test --><div class="rf-prose"><h4 class="${prefix}-h4" >Contenu panneau ${i + 1}</h4><a href="test">lien d'exemple</a> ${lorem}<ul><li>list item<ul><li>list item niveau 2</li></ul></li><li>list item</li></ul></div>`
     }
   }
 }
