@@ -1,4 +1,10 @@
 <%
+
+let checkboxAttrs = locals.checkboxAttrs || [];
+let describedby = [];
+if (locals.error !== undefined) describedby.push('checkboxes-error-desc-error');
+if (locals.valid !== undefined) describedby.push('checkboxes-valid-desc-valid');
+if (describedby.length > 0) checkboxAttrs['aria-describedby'] = describedby.join(' ');
 let element = {
   path: '../checkboxes/example/samples/checkbox',
     data:locals.element || {}
@@ -6,9 +12,9 @@ let element = {
 
 let fields = {
     elements: [
-        { ...element, data: { ...element.data, id: id + '-1' } },
-        { ...element, data: { ...element.data, id: id + '-2' } },
-        { ...element, data: { ...element.data, id: id + '-3' } },
+        { ...element, checkboxAttrs: checkboxAttrs, data: { ...element.data, checkboxAttrs: checkboxAttrs, id: id + '-1' } },
+        { ...element, data: { ...element.data, checkboxAttrs: checkboxAttrs, id: id + '-2' } },
+        { ...element, data: { ...element.data, checkboxAttrs: checkboxAttrs, id: id + '-3' } },
     ]
 }
 %>

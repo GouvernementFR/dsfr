@@ -27,16 +27,27 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let inputClasses = [prefix + '-input'];
- let inputAttrs = locals.attributes || {};
+let inputClasses = [prefix + '-input'];
+let inputAttrs = locals.attributes || {};
 
- if (locals.valid !== undefined) inputClasses.push(prefix + '-input--valid');
- if (locals.error !== undefined) inputClasses.push(prefix + '-input--error');
+let describedby = [];
 
- if (locals.required === true) inputAttrs['required'] = '';
- if (locals.disabled === true) inputAttrs['disabled'] = '';
- if (locals.placeholder != undefined) inputAttrs['placeholder'] = placeholder;
- %>
+if (locals.valid !== undefined) {
+  inputClasses.push(prefix + '-input--valid');
+  describedby.push(id + '-desc-valid');
+}
+
+if (locals.error !== undefined) {
+  inputClasses.push(prefix + '-input--error');
+  describedby.push(id + '-desc-error');
+}
+
+if (describedby.length > 0) inputAttrs['aria-describedby'] = describedby.join(' ');
+
+if (locals.required === true) inputAttrs['required'] = '';
+if (locals.disabled === true) inputAttrs['disabled'] = '';
+if (locals.placeholder != undefined) inputAttrs['placeholder'] = placeholder;
+%>
 
 <%- include('../../../../forms/src/templates/ejs/label'); %>
 

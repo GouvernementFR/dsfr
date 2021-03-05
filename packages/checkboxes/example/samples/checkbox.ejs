@@ -2,6 +2,7 @@
 let data = JSON.parse(include('../../../forms/example/samples/data'));
 
 data.label = 'Label checkbox';
+if (locals.checkboxAttrs !== undefined) data = {...data, checkboxAttrs: locals.checkboxAttrs}
 
 %>
 <% if (/*locals.group === */true) { %>

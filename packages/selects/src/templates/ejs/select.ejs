@@ -29,9 +29,19 @@
 <%
  let selectClasses = [prefix + '-select'];
  let selectAttrs = locals.attributes || {};
+ let describedby = [];
 
- if (locals.valid !== undefined) selectClasses.push(prefix + '-select--valid');
- if (locals.error !== undefined) selectClasses.push(prefix + '-select--error');
+ if (locals.valid !== undefined) {
+   selectClasses.push(prefix + '-select--valid');
+   describedby.push(id + '-desc-valid');
+ }
+
+ if (locals.error !== undefined) {
+   selectClasses.push(prefix + '-select--error');
+   describedby.push(id + '-desc-error');
+ }
+
+ if (describedby.length > 0) selectAttrs['aria-describedby'] = describedby.join(' ');
 
  if (locals.required === true) selectAttrs['required'] = '';
  if (locals.disabled === true) selectAttrs['disabled'] = '';
