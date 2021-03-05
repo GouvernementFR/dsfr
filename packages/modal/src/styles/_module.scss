@@ -88,7 +88,8 @@
     @include margin(-10v -4v 0);
     @include margin(-12v -8v 0, md);
     @include sticky(null,null,0);
-    transition: box-shadow 0.3s, background-color 0.2s;
+    transition: box-shadow 0.3s;
+    z-index: z-index(modal-footer-focus);
 
     #{ns-group(btns)} {
       margin-bottom: -1rem;

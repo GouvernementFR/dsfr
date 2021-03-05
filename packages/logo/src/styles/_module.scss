@@ -30,7 +30,7 @@
     background-position: 50% 50%;
     backface-visibility: hidden; // semble réduire le bug de l'overlay blanc autour du logo au zoom
     $svg-marianne-colored: _color-marianne($blue-france-500, $red-marianne-500);
-    background-image: url(_svg-encode($svg-marianne-colored));
+    background-image: url(svg-encode($svg-marianne-colored));
   }
 
   @include specify-after-reset-link-style() {
@@ -41,7 +41,7 @@
     background-size: contain;
     background-position: 50% 50%;
     @include margin-top(#{(1/3)}em);
-    @include scheme-element-data-uri-svg(g800, url(_svg-encode($svg-motto)));
+    @include scheme-element-data-uri-svg(g800, url(svg-encode($svg-motto)));
   }
 
   &--sm {
@@ -57,7 +57,7 @@
   #{ns(logo)} {
     @include before {
       $svg-mariane: _color-marianne(black, black);
-      background-image: url(_svg-encode($svg-mariane));
+      background-image: url(svg-encode($svg-mariane));
       @include scheme-element-box-shadow-color(t-w, true, 0 0 0 1px $COLOR);
     }
   }

@@ -8,27 +8,6 @@
    * On cache l'input de type radio pour le styler via le label
    */
   input[type="radio"] {
-    + label {
-      @include radio-rich() {
-        @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
-        @include scheme-element-bg-color(w, true, true);
-
-        // TODO: add hover
-        // &:hover,
-        // &:active {
-        // @include scheme-element-bg-color(block-color-hover, true);
-        // }
-
-        @include after {
-          @include scheme-element-border-color(g300, true, left);
-        }
-      }
-
-      @include before {
-        @include scheme-element-border-color(g800, true);
-      }
-    }
-
     /**
      * On applique les styles au pseudo élément before du label quand l'input présente
      * un état check
@@ -40,25 +19,6 @@
           @include scheme-element-bg-color(bf500, true);
           @include scheme-element-border-color(bf500, true);
         }
-
-        /**
-         * Cas du radio riche
-         */
-        @include radio-rich() {
-          @include scheme-element-bg-color(bf500);
-          @include scheme-element-text-color(w-bf500, true);
-          @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
-
-          @include before() {
-            @include scheme-element-border-color(w-bf500, true);
-            @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 3px $COLOR');
-            @include scheme-element-bg-color(w-bf500, true);
-          }
-
-          #{ns(hint-text)} {
-            @include scheme-element-text-color(g200);
-          }
-        }
       }
     }
 
@@ -66,7 +26,11 @@
      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
      */
     @include scheme-element-focus(false, '+ label::before');
-    @include disabled-form-choice();
+    @include disabled-form-choice() {
+      img {
+        filter: grayscale(1);
+      }
+    }
   }
 
   /**
@@ -79,6 +43,29 @@
           box-shadow: inset 0 0 0 3px var(--w);
         }
       }
+    }
+  }
+}
+
+#{ns(radio-rich)} {
+
+  input[type="radio"] + #{ns(label)} {
+    @include after() {
+      @include scheme-element-border-color(g300, true, left);
+    }
+  }
+
+  input[type="radio"]:not(:checked) + label {
+    @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
+    @include scheme-element-bg-color(w, true, true);
+  }
+
+  input[type="radio"]:checked + label {
+    @include scheme-element-bg-color(w, false, false);
+    @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
+
+    @include before() {
+      box-shadow: inset 0 0 0 3px var(--w);
     }
   }
 }
