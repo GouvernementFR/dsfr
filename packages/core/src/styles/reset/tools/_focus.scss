@@ -86,33 +86,12 @@
 }
 
 @mixin enlarge-link {
+  outline-width: 0 !important;
   @include before(block, '') {
     @include absolute(0, 0, 0, 0, 100%, 100%);
     outline-offset: 2px;
-  }
-
-  @at-root #{selector-unify(&, a)} {
-    &:focus,
-    &:focus-visible {
-      outline: none;
-      @include before {
-        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-      }
-    }
-
-    &:focus:not(:focus-visible) {
-      @include before {
-        outline: none;
-      }
-    }
-
-    &:not([href]) {
-      &:focus,
-      &:focus-visible {
-        @include before {
-          outline: none;
-        }
-      }
-    }
+    outline-style: inherit;
+    outline-color: inherit;
+    outline-width: 2px;
   }
 }
