@@ -46,9 +46,9 @@
                     if (category.active) classes.push(prefix + '-mega-menu__category--active');
                 %>
                 <div <%- includeClasses(classes); %>>
-                    <% if (!category.active && category.href) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                    <a class="<%= prefix%>-link" <%= category.active ? 'aria-current="true"' : 'href="#" target="_self"' %>>
                         <%- category.name %>
-                    <% if (!category.active && category.href) { %></a><% } %>
+                    </a>
 
                 </div>
                 <ul class="<%= prefix %>-mega-menu__list" >
@@ -60,9 +60,9 @@
                         if (item.active) classes.push(prefix + '-mega-menu__item--active');
                     %>
                     <li <%- includeClasses(classes); %>>
-                        <% if (!item.active) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                        <a class="<%= prefix%>-link" <%= item.active ? 'aria-current="page"' : 'href="#" target="_self"' %>>
                             <%- item.label %>
-                        <% if (!item.active) { %></a><% } %>
+                        </a>
                     </li>
                     <% } %>
                 </ul>

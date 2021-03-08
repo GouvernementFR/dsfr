@@ -9,9 +9,9 @@
             if (item.active) classes.push(prefix + '-menu__item--active');
         %>
         <li <%- includeClasses(classes); %>>
-            <% if (!item.active) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+            <a class="<%= prefix%>-link" <%= item.active ? 'aria-current="page"' : 'href="#" target="_self"' %>>
                 <%- item.label %>
-            <% if (!item.active) { %></a><% } %>
+            </a>
         </li>
         <% } %>
     </ul>

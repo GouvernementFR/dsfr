@@ -1,1 +1,1 @@
-<button class="<%= prefix %>-btn" aria-expanded="false" aria-controls="<%= collapseId %>" ><%- label %></button>
+<button class="<%= prefix %>-btn" aria-expanded="false" aria-controls="<%= collapseId %>" <% if(locals.active) { %> aria-current="true" <% } %>><%- label %></button>

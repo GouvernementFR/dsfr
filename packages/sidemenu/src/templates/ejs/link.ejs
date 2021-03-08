@@ -1,1 +1,1 @@
-<a class="<%= prefix %>-sidemenu__link" href="#" target="_self" ><%- label %></a>
+<a class="<%= prefix %>-sidemenu__link" <%= locals.active ? 'aria-current="page"' : 'href="#" target="_self"' %>><%- label %></a>
