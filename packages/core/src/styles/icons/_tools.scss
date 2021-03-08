@@ -77,7 +77,6 @@ $has-font-icon: false !global;
   }
 }
 
-
 @mixin font-icon($icon:null, $icon-size:md, $pseudo:before, $prepend: '') {
   @include font-icon-placeholder();
   @include _pseudo($pseudo) {

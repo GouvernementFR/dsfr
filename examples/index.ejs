@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'utilities'] }); %>
+  <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'utilities'], isList: true }); %>
   <title>Design System Développement</title>
 </head>
 
@@ -20,6 +20,6 @@
         </ul>
       </div>
   </div>
-  <%- include(root + 'examples/scripts', { required: ['core', 'schemes', 'accordions']}) %>
+  <%- include(root + 'examples/scripts', { required: ['core', 'schemes', 'accordions'], isList: true }) %>
 </body>
 </html>
