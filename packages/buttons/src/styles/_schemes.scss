@@ -16,7 +16,6 @@
     @include scheme-element-text-color(bf500);
     @include scheme-element-box-shadow-color(bf500, $button);
 
-
     @include disabled-link(true, false, true) {
       @include scheme-element-bg-color(t-plain, false);
     }

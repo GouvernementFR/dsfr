@@ -31,7 +31,7 @@
   @else {
     $i: '';
     @if $case-insensitive {
-      $i: ' i'
+      $i: ' i';
     }
     @return '[' + $attr + '="' + $value + '"' + $i + ']';
   }

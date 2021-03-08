@@ -63,7 +63,7 @@
  if (locals.secondary === true) btnClasses.push(prefix +'-btn--secondary');
 
  if (locals.disabled === true) {
-   if (tag === 'button') linkAttrs['disabled'] = '';
+   if (tag === 'button') btnAttrs['disabled'] = '';
  } else if (tag === 'a') {
    btnAttrs.href = locals.href || '[url - à modifier]';
   switch (true) {
