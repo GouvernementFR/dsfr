@@ -12,17 +12,7 @@
     @include margin-left(8v);
   }
 
-  /**
-   * Modificateur pour la taille du texte lg
-   */
-  &--lg {
-    @include text-style(lg);
-  }
-
-  /**
-   * Modificateur pour la taille du texte sm
-   */
-  &--sm {
-    @include text-style(sm);
+  p {
+    @include margin-bottom(0);
   }
 }
