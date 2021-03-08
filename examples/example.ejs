@@ -1,6 +1,6 @@
 <% eval(include(root + '/packages/core/index.ejs')); %>
 <!doctype html>
-<html lang="fr" data-<%= prefix %>-theme>
+<html lang="fr" data-<%= prefix %>-theme data-<%= prefix %>-logo="Logo défini sur le root" >
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,10 @@
                     <div class="rf-checkbox-group">
                         <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
                         <label class="rf-label" for="theme-checkbox">Thème clair / sombre</label>
+                    </div>
+                    <div class="rf-checkbox-group">
+                        <input type="checkbox" id="mourning-checkbox" name="checkboxes-inline-2">
+                        <label class="rf-label" for="mourning-checkbox">En deuil</label>
                     </div>
                 </div>
             </fieldset>

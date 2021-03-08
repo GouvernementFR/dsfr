@@ -43,8 +43,8 @@ const copyFonts = (removeOrphans) => {
 };
 
 const copyAssets = (removeOrphans) => {
-  const src = root('assets/');
-  const dest = root('public/example/');
+  const src = root('examples/img');
+  const dest = root('public/example/img');
 
   copyDir(src, dest, ['jpg', 'png', 'svg'], removeOrphans);
 };

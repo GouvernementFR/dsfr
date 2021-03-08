@@ -1,4 +1,5 @@
 const schemeAttr = 'data-<%= prefix %>-theme';
+const mourningAttr = 'data-<%= prefix %>-mourning';
 
 class DemoCheckbox {
   constructor (id) {
@@ -71,3 +72,4 @@ class AttributeDemoCheckbox extends DemoCheckbox {
 }
 
 new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'dark', 'light');
+new AttributeDemoCheckbox('mourning-checkbox', mourningAttr, true, null);
