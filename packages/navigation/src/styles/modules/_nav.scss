@@ -110,6 +110,7 @@
 
       & > #{ns(link)} {
         pointer-events: none;
+        cursor: default;
       }
     }
   }

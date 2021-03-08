@@ -84,8 +84,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       }
     }
 
-    &--curent {
-      pointer-events: none;
+    &:last-child a {
+      cursor: default;
     }
   }
 }

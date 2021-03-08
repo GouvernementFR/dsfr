@@ -49,11 +49,10 @@
       @include margin-x(-2v);
     }
 
-    // TODO: BEM, pour éviter de tuer les li du content
-
     /**
     * Reset du style par défaut du li
     */
+    // TODO: BEM, pour éviter de styliser les li du content
     > li {
       display: block;
       flex: 0 0 auto;

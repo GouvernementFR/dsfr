@@ -9,5 +9,5 @@
     });
     for (let dependency of dependencies) {
     %>
-<link href="../../dist/css/<%= dependency %>.css" rel="stylesheet" >
+<link href="<%= locals.isList ? '..' : '../..'%>/dist/css/<%= dependency %>.css" rel="stylesheet" >
 <% } %>
