@@ -5,28 +5,9 @@
 
 %base-link {
   @extend %inline-flex-center;
-  @include scheme-element-focus();
 
   overflow: hidden;
   @include z-index(over);
-}
-
-@mixin _reset-links-tags($tags) {
-  @include override-reset-link-style;
-
-  @at-root {
-    @if index($tags, a) != null {
-      #{selector_unify(&, a)} {
-        @extend %a-reset;
-      }
-    }
-
-    @if index($tags, button) != null {
-      #{selector_unify(&, button)} {
-        @extend %btn-reset;
-      }
-    }
-  }
 }
 
 @function _sort-sizes($sizes) {
@@ -81,18 +62,13 @@
 
 @include _build-link-placeholders($links-settings, link, true);
 
-@mixin _build-link($settings, $module, $border-radius:false, $cursor: pointer, $tags:a button) {
+@mixin _build-link($settings, $module, $border-radius:false, $tags:button) {
   $align: #{$module}-align-on-content;
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
 
+  @include disable-link-style;
   @include margin(0);
-
-  @include _reset-links-tags($tags);
-
-  @if $cursor != null {
-    cursor: #{$cursor};
-  }
 
   @each $size, $size-settings in $sizes {
     $placeholder: #{$module}--#{$size};

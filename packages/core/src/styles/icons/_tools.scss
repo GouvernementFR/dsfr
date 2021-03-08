@@ -23,17 +23,24 @@
   }
 }
 
+$icons-placeholders-generated: false !global;
+
 @mixin generate-icons-placeholder($icons) {
-  @each $icon, $code in $icons {
-    %#{$icon} {
-      content: '#{$code}';
+  @if $icons-placeholders-generated != true {
+    @at-root {
+      @each $icon, $code in $icons {
+        %#{$icon} {
+          content: "#{$code}";
+        }
+      }
     }
+
+    $icons-placeholders-generated: true !global;
   }
 }
 
-@include generate-icons-placeholder($icons-settings);
-
 @mixin generate-icons-content($icons) {
+  @include generate-icons-placeholder($icons-settings);
   @each $icon, $code in $icons {
     #{ns('fi-' + $icon)} {
       @include before {
@@ -43,27 +50,43 @@
   }
 }
 
-@mixin font-icon-content($icon) {
-  @extend %#{$icon};
+@mixin font-icon-content($icon, $prepend: '') {
+  @include generate-icons-placeholder($icons-settings);
+  @if $prepend {
+    content: #{$prepend} "#{map-get($icons-settings, $icon)}";
+  }
+  @else {
+    @extend %#{$icon};
+  }
 }
 
-%font-icon {
-  font-family: icons !important;
-  font-style: normal;
-  font-weight: normal !important;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+$has-font-icon: false !global;
+@mixin font-icon-placeholder() {
+  @if $has-font-icon != true {
+    @at-root {
+      %font-icon {
+        font-family: icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+      }
+      $has-font-icon: true !global;
+    }
+  }
 }
 
-@mixin font-icon($icon:null, $icon-size:md, $pseudo:before) {
+
+@mixin font-icon($icon:null, $icon-size:md, $pseudo:before, $prepend: '') {
+  @include font-icon-placeholder();
   @include _pseudo($pseudo) {
     @extend %font-icon;
 
-    font-size: icon-size($icon-size);
+    font-size: #{$prepend} icon-size($icon-size);
 
     @if $icon != null {
-      @include font-icon-content($icon);
+      @include font-icon-content($icon, $prepend);
     }
 
     @content;

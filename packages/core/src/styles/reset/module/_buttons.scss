@@ -1,0 +1,10 @@
+////
+/// Core Module : Reset buttons
+/// @group core
+////
+
+@if (map-get($reset-settings, button)) {
+  button {
+    @extend %btn-reset;
+  }
+}

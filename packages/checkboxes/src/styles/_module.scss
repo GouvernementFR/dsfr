@@ -8,13 +8,12 @@
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
 #{ns(checkbox-group)} {
-  @extend %default-text-color;
   @include relative;
 
   /**
    * On cache l'input de type checkbox pour le styler via le label
    */
-  input[type="checkbox"] {
+  input[type="checkbox" i] {
     @include absolute;
     opacity: 0;
 
@@ -95,7 +94,7 @@
    * Modificateur de taille sm
    */
   &--sm {
-    input[type="checkbox"] {
+    input[type="checkbox" i] {
       + label {
         @include before {
           @include size(4v, 4v);
@@ -112,7 +111,7 @@
    * Modificateur pour gérer l'état erreur
    */
   &--error {
-    input[type="checkbox"] + label {
+    input[type="checkbox" i] + label {
       @include scheme-element-text-color(error);
     }
 
@@ -126,7 +125,7 @@
    * Modificateur pour gérer l'état validé
    */
   &--valid {
-    input[type="checkbox"] + label {
+    input[type="checkbox" i] + label {
       @include scheme-element-text-color(success);
     }
 

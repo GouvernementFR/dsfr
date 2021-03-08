@@ -4,8 +4,6 @@
 ////
 
 #{ns(pagination)} {
-  @extend %default-text-color;
-
   @include list-item {
     @include scheme-element-text-color(g800);
 

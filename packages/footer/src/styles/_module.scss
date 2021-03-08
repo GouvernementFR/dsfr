@@ -4,7 +4,8 @@
 ////
 
 #{ns(footer)} {
-  @extend %default-text-color;
+  @include disable-link-style;
+  @include disable-list-style;
   @include size(100%);
   @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
   @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
@@ -42,11 +43,6 @@
     > a + svg {
       @include margin-left(6v);
       @include margin-left(12v, md);
-    }
-
-    &-link {
-      @extend %a-reset;
-      @include override-reset-link-style;
     }
 
     /**

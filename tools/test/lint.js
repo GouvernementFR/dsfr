@@ -3,7 +3,7 @@ const { ESLint } = require('eslint');
 const root = require('../utilities/root');
 
 const lintStyles = async (pck) => {
-  const result = await stylelint.lint({ files: root(`packages/${pck}/**/*.scss`), formatter: 'string' });
+  const result = await stylelint.lint({ files: root(`packages/${pck}/**/*.scss`), formatter: 'unix' });
 
   if (result.errored) {
     console.log('\n\r', result.output);

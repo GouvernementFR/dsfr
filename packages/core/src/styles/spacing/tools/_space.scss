@@ -16,6 +16,14 @@
     @return $value;
   }
 
+  @if length($value) > 1 {
+    $result: ();
+    @each $v in $value {
+      $result: append($result, space($v));
+    }
+    @return $result;
+  }
+
   $v: quote($value);
 
   @if is-basic-unit($value) {

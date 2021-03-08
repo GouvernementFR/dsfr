@@ -15,23 +15,10 @@
   }
 
   &__link {
-    @extend %a-reset;
-    @include override-reset-link-style;
-    position: static;
     display: inline-flex;
+    @include disable-link-style;
     @include size(100%);
-    box-shadow: none;
-    text-decoration: none;
-
-    @include after(null, '') {
-      @include absolute(0, 0, 0, 0);
-    }
-
-    @include force-over-reset {
-      &:focus {
-        outline-offset: 9999px;
-      }
-    }
+    @include enlarge-link;
   }
 
   /**
@@ -70,10 +57,8 @@
    * Titre de la tuile
    */
   @include title {
-    @include force-over-reset {
-      @include text-style(md);
-      @include font-weight(bold);
-    }
+    @include text-style(md);
+    @include font-weight(bold);
     @include margin(0);
 
     + #{ns(tile__desc)} {

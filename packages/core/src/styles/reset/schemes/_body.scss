@@ -1,0 +1,11 @@
+////
+/// Core Schemes : Reset body
+/// @group core
+////
+
+@if (map-get($reset-settings, body)) {
+  body {
+    @include scheme-body;
+    @include scheme-element-text-color(g700);
+  }
+}

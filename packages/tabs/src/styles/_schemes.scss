@@ -49,7 +49,6 @@
       @include scheme-element-bg-color(bf100-g750, true, true);
       @include scheme-element-text-color(g700);
       @include disabled(g600, g300);
-      @include scheme-element-focus(t-plain);
       @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
     }
 

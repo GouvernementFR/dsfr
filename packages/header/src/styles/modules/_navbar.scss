@@ -32,8 +32,6 @@
     @include relative;
 
     @include title {
-      @extend %a-reset;
-      @include override-reset-link-style;
       position: static;
       @include title-style(h6);
       font-weight: bold;

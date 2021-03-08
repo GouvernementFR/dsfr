@@ -4,8 +4,6 @@
 ////
 
 #{ns(search-bar)} {
-  @extend %default-text-color;
-
   #{ns(input)} {
     @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
   }

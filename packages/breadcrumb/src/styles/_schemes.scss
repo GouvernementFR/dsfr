@@ -4,12 +4,9 @@
 ////
 
 #{ns(breadcrumb)} {
-  @extend %default-text-color;
-
   &__button {
     @include scheme-element-text-color(g600, true);
     @include scheme-element-bg-color(t-plain);
-    @include scheme-element-focus();
   }
 
   /**

@@ -4,6 +4,7 @@
 ////
 
 #{ns(skiplinks)} {
+  @include disable-list-style;
   @include absolute;
   @include padding(4v 0);
   transform: translateY(-100%);
@@ -14,7 +15,6 @@
   }
 
   @include list {
-    @extend %list-reset;
     @include display-flex(column);
     @include margin(0 -4v -6v);
 

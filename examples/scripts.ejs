@@ -8,6 +8,6 @@
       return false;
     });
     for (let dependency of dependencies) { %>
-<script type="module" src="../../dist/js/<%= dependency %>/<%= dependency %>.module.js" ></script>
-<script type="text/javascript" nomodule src="../../dist/js/<%= dependency %>/<%= dependency %>.nomodule.js" ></script>
+<script type="module" src="../../dist/js/<%= dependency %>.module.js" ></script>
+<script type="text/javascript" nomodule src="../../dist/js/<%= dependency %>.nomodule.js" ></script>
 <% } %>

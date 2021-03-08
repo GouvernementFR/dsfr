@@ -79,11 +79,11 @@ yargs
           ''
         );
     }, (argv) => {
-      const pck = 'skiplinks';
-      //copyScripts(pck);
-      //copyStyles(pck);
-      //buildScripts([pck], 'public/packages', `public/dist/js/${pck}`, pck, true, true);
-      //buildStyles([pck], 'public/packages', `public/dist/css/${pck}`, pck, true, true);
+      const pck = 'core';
+      copyScripts(pck, true);
+      copyStyles(pck, true);
+      buildScripts([pck], 'public/packages', `public/dist/js/`, pck, false, true);
+      buildStyles([pck], 'public/packages', `public/dist/css/`, pck, true, true);
       //buildMap('public/example');
       //generatePackage();
       //generateMarkdown(pck);

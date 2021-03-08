@@ -15,18 +15,12 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   position: relative;
 
   &__button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-family: inherit;
+    @include link-underline;
     @include text-style(xs);
     @include margin(0);
     @include padding(0);
-    border: none;
-    text-decoration: underline;
-    cursor: pointer;
 
-    &[aria-expanded="true"] {
+    &[aria-expanded="true" i] {
       display: none;
     }
 
@@ -36,7 +30,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   }
 
   @include list() {
-    @extend %list-reset;
+    @include disable-list-style;
     @include text-style(xs);
     display: block;
 
@@ -58,9 +52,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     display: inline;
 
     &:first-child {
-      @include before() {
-        content: none;
-      }
+      @include before(null, none);
     }
 
     /**
@@ -74,8 +66,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
       @include before {
         @include margin-right(0);
-        //margin-top: 0.0625rem;
-        //margin-bottom: 0.5625rem;
         vertical-align: middle;
       }
     }

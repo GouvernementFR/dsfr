@@ -7,16 +7,12 @@
  * Style du lien d'accès direct du sidemnu
  */
 #{ns(sidemenu__link)} {
-  @extend %a-reset;
-  @include override-reset-link-style;
   @include display-flex(row);
   @include size(calc(100% - #{space(4v)}));
   @include margin(0 2v);
   @include padding(3v 0);
   @include text-style(md);
   text-align: left;
-
-  @include before(null, none);
 
   @include respond-from(md) {
     @include size(100%);

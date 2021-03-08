@@ -1,0 +1,13 @@
+////
+/// Core Module : Reset focus
+/// @group core
+////
+
+@if (map-get($reset-settings, focus)) {
+  *:focus,
+  *:focus-visible {
+    z-index: z-index(focus);
+  }
+
+  @include build-focus;
+}

@@ -31,10 +31,7 @@
  */
 #{ns(hint-text)} {
   display: block;
-  @include specify(p) {
-    @include text-style(xs);
-  }
-
+  @include text-style(xs);
   @include margin-y(0);
 
   & + #{ns(input)},
@@ -49,11 +46,9 @@
  */
 #{ns(error-text)} {
   @include display-flex(row, center);
-  @include specify(p) {
-    @include text-style(xs);
-    @include margin-top(4v);
-    @include margin-bottom(0);
-  }
+  @include text-style(xs);
+  @include margin-top(4v);
+  @include margin-bottom(0);
 
   @include font-icon(alert-line, sm) {
     display: inline-block;
@@ -66,11 +61,9 @@
  */
 #{ns(valid-text)} {
   @include display-flex(row, center);
-  @include specify(p) {
-    @include text-style(xs);
-    @include margin-top(4v);
-    @include margin-bottom(0);
-  }
+  @include text-style(xs);
+  @include margin-top(4v);
+  @include margin-bottom(0);
 
   @include font-icon(checkbox-line, sm) {
     display: inline-block;
@@ -138,19 +131,19 @@
       @include margin-bottom(0);
 
       &:not(:last-child) {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-right(7v);
         }
       }
 
       &:first-child {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-top(0);
         }
       }
 
       &:last-child {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-bottom(0);
         }
       }

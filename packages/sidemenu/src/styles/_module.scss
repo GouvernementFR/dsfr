@@ -4,6 +4,8 @@
 ////
 
 #{ns(sidemenu)} {
+  @include disable-list-style;
+  @include disable-link-style;
   @include relative;
   @include shadow(md);
 

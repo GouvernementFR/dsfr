@@ -19,7 +19,10 @@
     $focus-z-index: z-index($index-name + '-focus');
 
     @if $focus-z-index != null {
-      --focus-z-index: #{$focus-z-index};
+      *:focus,
+      *:focus-visible {
+        z-index: #{$focus-z-index};
+      }
     }
   }
 }

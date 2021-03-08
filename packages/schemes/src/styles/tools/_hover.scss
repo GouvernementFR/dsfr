@@ -30,8 +30,9 @@
 /// @access private
 @mixin _scheme-element-hover() {
   @media (hover: hover) and (pointer: fine) {
-    &:not([disabled]),
-    &:not(:disabled) {
+    #{selector-unify(&, a)}[href],
+    &:not(a):not([disabled]),
+    &:not(a):not(:disabled) {
       &:hover {
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
       }

@@ -15,9 +15,6 @@
     "namespace": "dsfr",
     "organisation": "@gouvfr"
   },
-  "bin": {
-    "tools": "./tools/tools.js"
-  },
   "engines": {
     "node": ">=12.13.0"
   },
@@ -29,11 +26,10 @@
     "test:pa11y": "node ./scripts/pa11y",
     "test": "run-s build-test test:*",
     "stylint": "npx stylelint \"./packages/**/*.scss\"",
-    "tmp": "tools tmp",
-    "build": "tools build",
-    "release": "tools release",
-    "deploy": "tools deploy",
-    "postinstall": "yarn link"
+    "tmp": "node ./tools/tools.js tmp",
+    "build": "node ./tools/tools.js build",
+    "release": "node ./tools/tools.js release",
+    "deploy": "node ./tools/tools.js deploy"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

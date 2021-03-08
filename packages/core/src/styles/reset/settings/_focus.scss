@@ -1,0 +1,85 @@
+////
+/// Core Settings : Reset focus
+/// @group core
+////
+
+$focus-settings: (
+  a: (
+    selector: 'a',
+    cursor: pointer,
+    disabled: (
+      selector: '&:not([href])',
+      cursor: not-allowed
+    )
+  ),
+  button: (
+    selector: 'button',
+    cursor: pointer,
+    disabled: (
+      selector: '&[disabled]',
+      cursor: not-allowed
+    )
+  ),
+  input: (
+    selector: 'input',
+    disabled: (
+      selector: '&[disabled]',
+      cursor: not-allowed
+    )
+  ),
+  choices: (
+    selector: 'input[type="checkbox" i], input[type="radio" i]',
+    focus: '& + label::before',
+    hover: '&, & + label',
+    cursor: pointer,
+    disabled: (
+      selector: '&[disabled]',
+      cursor: not-allowed
+    )
+  ),
+  input-buttons: (
+    selector: 'input[type="button" i], input[type="color" i], input[type="date" i], input[type="datetime-local" i], input[type="file" i], input[type="image" i], input[type="month" i], input[type="range" i], input[type="reset" i], input[type="submit" i], input[type="time" i], input[type="week" i]',
+    cursor: pointer,
+    disabled: (
+      selector: '&[disabled]',
+      cursor: not-allowed
+    )
+  ),
+  select: (
+    selector: 'select',
+    cursor: pointer,
+    disabled: (
+      selector: '&[disabled]',
+      cursor: not-allowed
+    )
+  ),
+  textarea: (
+    selector: 'textarea',
+    disabled: (
+      selector: '&[disabled]',
+      cursor: not-allowed
+    )
+  ),
+  tabindex: (
+    selector: '[tabindex]',
+    disabled: (
+      selector: '&[tabindex="-1"]'
+    )
+  ),
+  medias: (
+    selector: 'video, audio',
+    focus: '&[controls]',
+    cursor: pointer,
+    disabled: (
+      selector: '&:not([href])',
+      cursor: not-allowed
+    )
+  ),
+  contenteditable: (
+    selector: '[contenteditable]:not([contenteditable="false" i])',
+  ),
+  details: (
+    selector: 'details, details > summary:first-of-type',
+    cursor: pointer,
+  )
+);
