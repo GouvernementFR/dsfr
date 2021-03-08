@@ -12,7 +12,7 @@
     @extend %a-reset;
 
     &[href] {
-      @include link-underline(var(--is-link));
+      border-bottom: var(--is-link) solid 1px currentColor;
 
       &[target="_blank" i] {
         @include font-icon(external-link-line, sm, after, var(--is-link)) {
