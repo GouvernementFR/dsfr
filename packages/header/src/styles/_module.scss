@@ -10,61 +10,23 @@
   @include shadow(md);
 
   @include body {
+    @include relative;
     @include display-flex(row, center, flex-start, wrap);
+    // @include margin(0 -3v);
+    // @include padding(3v 0);
     @include margin(0 -3v);
-    @include padding(3v 0);
-    @include margin(0 -5v, md);
-    @include padding(6v 0, md);
+    @include margin(0 -4v, lg);
+    @include padding(6v 0, lg);
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       flex-wrap: nowrap;
     }
   }
 
+  @import 'modules/brand';
   @import 'modules/modal';
   @import 'modules/navbar';
-
-  &__brand {
-    @include padding(0 3v);
-    @include logo(sm, none) {
-      @include margin(-1em);
-    }
-  }
-
-  &__operator {
-    @include padding(0 3v);
-  }
-
-  &__tools {
-    @include respond-from(md) {
-      flex-direction: column;
-      align-items: flex-end;
-      @include margin(0 0 0 auto);
-      text-align: right;
-
-      #{ns(shortcuts)} + #{ns(search-bar)} {
-        @include margin-top(4v);
-      }
-    }
-  }
-
-  &__brand,
-  &__operator,
-  &__navbar,
-  &__tools {
-    @include respond-from(md) {
-      @include padding(0 5v);
-    }
-  }
-
-  &__brand,
-  &__operator,
-  &__tools {
-    @include respond-from(md) {
-      flex: 1 0 auto;
-    }
-  }
-
+  @import 'modules/tools';
   @import 'modules/shortcuts';
   @import 'modules/search';
   @import 'modules/nav';

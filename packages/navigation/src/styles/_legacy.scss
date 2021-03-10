@@ -11,7 +11,7 @@
   * Correctif de l'alignement des menus sur la droite
   */
   #{ns(nav)} {
-    @include respond-from(md) {
+    @include respond-from(lg) {
       &--align-right {
         transform: translateX(-100%);
       }

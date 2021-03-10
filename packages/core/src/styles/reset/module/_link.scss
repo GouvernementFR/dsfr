@@ -22,4 +22,12 @@
       }
     }
   }
+
+  #{ns(enlarge-link)} {
+    position: relative;
+
+    a {
+      @include enlarge-link;
+    }
+  }
 }

@@ -79,7 +79,7 @@ yargs
           ''
         );
     }, (argv) => {
-      const pck = 'logo';
+      const pck = 'header';
       copyScripts(pck, true);
       copyStyles(pck, true);
       buildScripts([pck], 'public/packages', `public/dist/js/`, pck, false, true);

@@ -5,61 +5,36 @@
 
 #{ns(logo)} {
   @include disable-link-style;
-
   display: inline-block;
-  @include text-style(md);
   @include padding(1em);
-
-  @include title {
-    font-size: 1.05em;
-    font-weight: bold;
-    line-height: #{(13 / 12.6)}em;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    vertical-align: middle;
-    transform: translateX(-0.1em);
-    display: inline-block;
-    @include scheme-element-text-color(g800);
-  }
+  @include font-weight(bold);
+  line-height: #{(13 / 12.6)}em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-indent: -0.1em;
+  @include scheme-element-text-color(g800);
+  @include logo-size(md);
+  @include margin-bottom(0);
 
   @include before(block, '') {
-    @include size(2.75em, 1em);
-    @include margin-bottom(#{(1/3)}em);
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: 2.75em 1.125em, 2.75em 1em, 0;
-    background-position: 0 -0.0625em, 0 0, 0 0;
     background-image: url(_svg-encode($svg-marianne)), linear-gradient(90deg, $blue-france-500 0%, $blue-france-500 50%, $red-marianne-500 50%, $red-marianne-500 100%), linear-gradient(90deg, black 0%, black 100%);
+    @at-root :root#{ns-attr(mourning)} #{&} {
+      box-shadow: 0 0 0 1px var(--t-w);
+    }
   }
 
   @include after(block, '') {
-    min-width: 2.625em;
     background-repeat: no-repeat;
-    background-size: 5.25em 3.75em;
-    background-position: 0 calc(100% + 1.875em);
     background-image: url(_svg-encode($svg-motto));
-    padding-top: #{(1em/3) + 1.875em };
   }
 
   &--sm {
-    @include text-style(xs);
+    @include logo-size(sm);
   }
 
   &--lg {
-    @include text-style(xl);
-  }
-
-  @at-root {
-    :root#{ns-attr(theme, 'dark')} #{&} {
-      @include after {
-        background-position: -2.625em 100%;
-      }
-    }
-
-    :root#{ns-attr(mourning)} #{&} {
-      @include before {
-        background-size: 2.75em 1.125em, 0, 2.75em 1em;
-        box-shadow: 0 0 0 1px var(--t-w);
-      }
-    }
+    @include logo-size(lg);
   }
 }
