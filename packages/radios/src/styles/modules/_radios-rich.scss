@@ -25,7 +25,7 @@
       * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
       */
     @include after(null, '') {
-      @include absolute(null, 0);
+      @include absolute(0, 0);
       @include margin(1v);
       @include padding-left(1v);
       @include display-flex(null, center, center);
