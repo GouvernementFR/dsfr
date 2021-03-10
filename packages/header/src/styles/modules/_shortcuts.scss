@@ -7,8 +7,6 @@
 
   @include list {
     @include display-flex(column);
-    @include margin(0);
-    @include padding(0);
     @include margin(0 -6v -2v 0, md);
 
     @include respond-from(md) {
@@ -20,8 +18,6 @@
 
   @include list-item {
     @include display-flex(row,center);
-    @include padding(0);
-    @include margin(0);
     @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
 
     @include respond-from(md) {
@@ -34,8 +30,6 @@
       }
     }
 
-    @include before(null, none);
-
     @include nest-link(sm, left, null, true) {
       border-radius: 0;
       min-width: 100%;
@@ -44,7 +38,7 @@
       max-height: none;
       max-width: none;
 
-      @include before() {
+      @include before {
         @include margin-left(1v);
       }
     }

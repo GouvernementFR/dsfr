@@ -4,7 +4,7 @@
 ////
 
 #{ns(logo)} {
-  @include override-reset-link-style;
+  @include disable-link-style;
 
   display: inline-block;
   @include text-style(md);
@@ -33,9 +33,7 @@
     background-image: url(svg-encode($svg-marianne-colored));
   }
 
-  @include specify-after-reset-link-style() {
-    display: block;
-    content: '';
+  @include after(block, '') {
     @include size(2.625em, #{(11/6)}em);
     background-repeat: no-repeat;
     background-size: contain;

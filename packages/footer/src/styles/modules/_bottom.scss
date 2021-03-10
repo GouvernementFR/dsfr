@@ -23,7 +23,6 @@
  * Liste de liens avec séparateur
  */
 &__bottom-list {
-  @extend %list-reset;
   flex-wrap: wrap;
   align-items: center;
   @include padding(2v 0);
@@ -60,8 +59,6 @@
  * Style du lien de la liste
  */
 &__bottom-link {
-  @extend %a-reset;
-  @include override-reset-link-style;
   @include text-style(xs);
 }
 

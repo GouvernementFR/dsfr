@@ -1,0 +1,25 @@
+////
+/// Core Module : Reset link
+/// @group core
+////
+
+@if (map-get($reset-settings, link)) {
+  :root {
+    @include enable-link-style;
+  }
+
+  a {
+    @extend %a-reset;
+
+    &[href] {
+      border-bottom: var(--is-link) solid 1px currentColor;
+
+      &[target="_blank" i] {
+        @include font-icon(external-link-line, sm, after, var(--is-link)) {
+          @include margin-left(var(--is-link) 1v);
+          vertical-align: var(--is-link) baseline;
+        }
+      }
+    }
+  }
+}

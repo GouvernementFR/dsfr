@@ -24,7 +24,7 @@
 ///   .foo {
 ///     font-size: px-rem(12px);
 ///   }
-@function px-rem($px, $root-font-size: $base-font-size-px) {
+@function px-rem($px, $root-font-size: 16px) {
   @return clean-unit($px / $root-font-size) * 1rem;
 }
 

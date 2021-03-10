@@ -7,8 +7,6 @@
 * nav
 **/
 #{ns(nav)} {
-  @extend %default-text-color;
-
   @include list-item {
 
     @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
@@ -16,7 +14,6 @@
     & > #{ns(link)},
     & > #{ns(btn)} {
       @include scheme-element-text-color(g800);
-      @include scheme-element-focus();
     }
 
     & > #{ns(link)} {
@@ -26,7 +23,7 @@
     & > #{ns(btn)} {
       @include scheme-element-bg-color(t-plain, false, override);
 
-      &[aria-expanded="true"] {
+      &[aria-expanded="true" i] {
         @include respond-from(md) {
           @include scheme-element-text-color(bf500-plain);
           @include scheme-element-bg-color(bf200-bf300);
@@ -70,7 +67,6 @@
 
     & > #{ns(link)} {
       @include scheme-element-bg-color(t-plain, true, true); // override ?
-      @include scheme-element-focus();
     }
 
     @include respond-from(md) {
@@ -128,7 +124,6 @@
 
     & > #{ns(link)} {
       @include scheme-element-bg-color(t-plain, true, true); // TODO: override
-      @include scheme-element-focus();
     }
 
     &--active {
@@ -151,7 +146,6 @@
 
     & > #{ns(link)} {
       @include scheme-element-bg-color(t-plain, true, true); // TODO: override
-      @include scheme-element-focus();
     }
 
     &--active {

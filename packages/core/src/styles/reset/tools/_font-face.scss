@@ -1,0 +1,42 @@
+////
+/// Core Tools : Typography font-face
+/// @group core
+////
+
+@mixin font-face($name, $filename, $font-weight: 400, $font-style: normal) {
+  $path: map-get(map-get($reset-settings, font-face), path);
+  @font-face {
+    font-family: #{$name};
+    src:
+      url('#{$path}/#{$filename}.woff2') format('woff2'),
+      url('#{$path}/#{$filename}.woff') format('woff');
+    font-weight: #{$font-weight};
+    font-style: #{$font-style};
+  }
+}
+
+@mixin build-font-faces($settings: $font-settings) {
+  @each $type, $type-settings in $settings {
+    $name: map-get($type-settings, name);
+    @include font-face-styles($name, map-get($type-settings, styles));
+  }
+}
+
+@mixin font-face-styles($name, $settings) {
+  @each $style, $variation in $settings {
+    $font-weight: map_get($variation, font-weight);
+    $font-style: map_get($variation, font-style);
+    $filename: map_get($variation, file);
+
+    @if $font-style == null {
+      $font-style: normal;
+    }
+    @include font-face ($name, $filename, $font-weight, $font-style);
+  }
+}
+
+@mixin font-family($type: primary, $settings: $font-settings) {
+  $type-settings: map-get($settings, $type);
+  $families: join(map-get($type-settings, name), map-get($type-settings, fallback), 'comma');
+  font-family: $families;
+}

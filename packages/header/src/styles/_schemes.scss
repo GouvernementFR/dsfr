@@ -4,7 +4,6 @@
 ////
 
 #{ns(header)} {
-  @extend %default-text-color;
   @include scheme-element-bg-color(w-g750, true);
 
   //TODO: ADD popin schemes after header modal refacto
@@ -29,10 +28,6 @@
     #{ns(service)} {
       @include title {
         @include scheme-element-text-color(g800, true);
-
-        @include before {
-          @include scheme-element-focus();
-        }
       }
     }
 

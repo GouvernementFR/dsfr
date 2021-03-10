@@ -41,7 +41,19 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
     options.omitSourceMapUrl = true;
   }
 
-  const result = sass.renderSync(options);
+  let result;
+
+  try {
+    result = sass.renderSync(options);
+  } catch (e) {
+    const reformat = e.formatted.replace(/on line .*\.scss/, `${e.file.replace('public/', '')}:${e.line}:${e.column}`);
+    console.log('\x1b[31m', reformat, '\x1b[0m');
+    try {
+      process.kill(0);
+    } catch (e) {
+      return;
+    }
+  }
 
   options = { from: undefined, to: destDir + filename + '.css' };
 
@@ -49,13 +61,13 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
     options.map = { prev: result.map.toString() };
   }
 
-  await process(result.css.toString(), [mqpacker(), perfectionist()], options);
+  await process(result.css.toString(), [mqpacker({ sort: true }), perfectionist()], options);
 
   if (!minify) return;
 
   options = { ...options, to: destDir + filename + '.min.css' };
 
-  await process(result.css.toString(), [mqpacker(), cssnano()], options);
+  await process(result.css.toString(), [mqpacker({ sort: true }), cssnano()], options);
 };
 
 module.exports = buildStyles;

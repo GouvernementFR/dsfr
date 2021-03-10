@@ -37,10 +37,8 @@
 }
 
 &__partners-title {
-  @include force-over-reset {
-    @include text-style(sm);
-    @include margin(0);
-  }
+  @include text-style(sm);
+  @include margin(0);
   flex-basis: 100%;
   text-align: center;
 

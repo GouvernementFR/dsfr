@@ -1,0 +1,21 @@
+////
+/// Core Tools : Reset
+/// @group core
+////
+
+%a-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin link-underline($prepend: '') {
+  box-shadow: #{$prepend} 0 1px 0 0 currentColor;
+}
+
+@mixin enable-link-style() {
+  --is-link: ;
+}
+
+@mixin disable-link-style() {
+  --is-link: false;
+}

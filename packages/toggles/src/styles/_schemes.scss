@@ -6,7 +6,6 @@
 #{ns(toggle)} {
   &__input {
     @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-    @include scheme-element-focus();
     @include disabled-toggle-choice();
   }
 

@@ -1,0 +1,48 @@
+////
+/// Core Tools : Reset list
+/// @group core
+////
+
+%list-reset {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+@mixin enable-list-style() {
+  --is-list: ;
+}
+
+@mixin disable-list-style() {
+  --is-list: false;
+}
+
+@mixin remove-list-style($nested: false) {
+  @include padding-bottom(0);
+
+  & > li {
+    @include padding-bottom(0);
+    @include before(none, none) {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    @if $nested {
+      & > ol,
+      & > ul {
+        @include padding-top(0);
+        @include padding-left(0);
+
+        & > li {
+          @include text-style(md);
+          @include before {
+            @include padding-right(0);
+            font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+}

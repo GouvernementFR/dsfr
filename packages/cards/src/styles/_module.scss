@@ -42,9 +42,7 @@
   }
 
   &__title {
-    @include force-over-reset {
-      @include title-style(h6);
-    }
+    @include title-style(h6);
     @include font-weight(bold);
 
     @include margin-top(0);
@@ -58,20 +56,11 @@
   }
 
   &__link {
-    @extend %a-reset;
-    @include override-reset-link-style;
-    @include force-over-reset {
-      &:focus {
-        outline-offset: 9999px;
-      }
-    }
+    @include disable-link-style;
     display: inline-flex;
     @include size(100%);
     @include margin-top(auto);
-
-    @include before(block, '') {
-      @include absolute(0, 0, 0, 0, 100%, 100%);
-    }
+    @include enlarge-link;
   }
 
   @include respond-from(md) {

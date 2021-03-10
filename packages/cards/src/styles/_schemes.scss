@@ -4,7 +4,6 @@
 ////
 
 #{ns(card)} {
-  @extend %default-text-color;
   @include scheme-element-bg-color(beige, true, true);
 
   &:not(&--no-arrow) &__body {
@@ -19,11 +18,5 @@
 
   &__title {
     @include scheme-element-text-color(g800);
-  }
-
-  &__link {
-    @include before {
-      @include scheme-element-focus();
-    }
   }
 }

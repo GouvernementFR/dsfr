@@ -1,0 +1,65 @@
+////
+/// Core Module : Reset lists
+/// @group core
+////
+
+@if (map-get($reset-settings, list)) {
+  :root {
+    @include enable-list-style;
+  }
+
+  ol,
+  ul {
+    @extend %list-reset;
+    @include padding-bottom(var(--is-list) 2v);
+
+    & > li {
+      @include padding-bottom(var(--is-list) 2v);
+
+      @include before {
+        @include padding-right(var(--is-list) 2v);
+      }
+
+      & > ol,
+      & > ul {
+        @include padding-top(var(--is-list) 2v);
+        @include padding-left(var(--is-list) 4v);
+
+        & > li {
+          @include text-style(sm, false, true, var(--is-list));
+          @include before {
+            @include padding-right(var(--is-list) 1v);
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    & > li {
+      @include before {
+        display: var(--is-list) inline-block;
+        content: var(--is-list) '●';
+        font-size: var(--is-list) 0.75rem;
+      }
+
+      & > ul > li {
+        @include before {
+          font-size: var(--is-list) 0.5rem;
+        }
+      }
+    }
+  }
+
+  ol {
+    counter-reset: list-number;
+
+    & > li {
+      counter-increment: list-number;
+      @include before {
+        content: var(--is-list) counters(list-number, ".") ".";
+        font-weight: var(--is-list) 700;
+      }
+    }
+  }
+}

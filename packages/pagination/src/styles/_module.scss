@@ -4,10 +4,9 @@
 ////
 
 #{ns(pagination)} {
-  @extend %default-text-color;
-
+  @include disable-list-style;
+  @include disable-link-style;
   @include list {
-    @extend %list-reset;
     @include display-flex(row, null, null, wrap);
     @include padding(0);
     @include margin(0 -2px);
@@ -38,10 +37,6 @@
     &--active {
       border-radius: space(4v);
       pointer-events: none;
-    }
-
-    &--disabled {
-      cursor: not-allowed;
     }
 
     &--first + &:not(&--prev),
@@ -144,8 +139,6 @@
   }
 
   &__link {
-    @extend %a-reset;
-    @include override-reset-link-style;
     @include display-flex(row, center, center);
     @include padding(0 3v);
     @include margin(0 -3v);

@@ -1,0 +1,16 @@
+////
+/// Core Module : Reset box-sizing
+/// @group core
+////
+
+@if (map-get($reset-settings, box-sizing)) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  :root {
+    box-sizing: border-box;
+  }
+}

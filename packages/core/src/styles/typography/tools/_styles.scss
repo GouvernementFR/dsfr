@@ -11,27 +11,31 @@
   @return map-get($title-styles, $font-size);
 }
 
-@mixin _stylize($font-size, $styles) {
+@mixin _stylize($font-size, $styles, $prepend) {
   $style: map-get($styles, $font-size);
 
-  font-size: #{px-rem($font-size)};
+  @if $prepend == null {
+    $prepend: '';
+  }
+
+  font-size: #{$prepend} #{px-rem($font-size)};
 
   @if map-has-key($style, line-height) {
-    line-height: space(map-get($style, line-height));
+    line-height: #{$prepend} space(map-get($style, line-height));
   }
 }
 
-@mixin _responsive-styles($settings, $styles, $is-responsive) {
+@mixin _responsive-styles($settings, $styles, $is-responsive, $prepend) {
   $breakpoints: map-get($settings, breakpoints);
 
   @if $is-responsive {
     @each $breakpoint, $size in $breakpoints {
       @if $breakpoint == first {
-        @include _stylize($size, $styles);
+        @include _stylize($size, $styles, $prepend);
       }
       @else {
         @include respond-from($breakpoint) {
-          @include _stylize($size, $styles);
+          @include _stylize($size, $styles, $prepend);
         }
       }
     }
@@ -54,20 +58,20 @@
   @include margin(map-get($settings, margin));
 }
 
-@mixin text-style($name, $with-spacing: false, $is-responsive: true) {
+@mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null) {
   $settings: map-get($text-settings, $name);
 
-  @include _responsive-styles($settings, $text-styles, $is-responsive);
+  @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend);
 
   @if $with-spacing {
     @include _space-text($settings);
   }
 }
 
-@mixin title-style($name, $with-spacing: false, $is-responsive: true) {
+@mixin title-style($name, $with-spacing: false, $is-responsive: true, $prepend: null) {
   $settings: map-get($title-settings, $name);
 
-  @include _responsive-styles($settings, $title-styles, $is-responsive);
+  @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend);
 
   @if $with-spacing {
     @include _space-title($settings);

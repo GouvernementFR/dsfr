@@ -1,0 +1,22 @@
+////
+/// Core Settings : Reset
+/// @group core
+////
+
+@import 'settings/font-face';
+@import 'settings/focus';
+
+$reset-settings: (
+  body: true,
+  box-sizing: true,
+  font-face: (
+    path:'../fonts'
+  ),
+  focus: true,
+  heading: true,
+  link: true,
+  list: true,
+  text: true,
+  button: true,
+  input: true
+) !default;

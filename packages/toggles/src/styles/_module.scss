@@ -24,7 +24,6 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    cursor: pointer;
 
     /*
      * On applique des styles aux pseudo-elements du label quand l'input est check.
@@ -91,6 +90,7 @@
       @include text-style(xs);
       white-space: pre-wrap;
       overflow: hidden;
+      outline: none !important;
     }
 
     /*

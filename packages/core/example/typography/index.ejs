@@ -23,23 +23,3 @@
 <%- sample('Font Spectral, graisse regular', './samples/p', { weight: 'regular', alt:true }, true); %>
 
 <%- sample('Font Spectral, graisse extra-bold', './samples/p', { weight: 'xx-bold', alt:true }, true); %>
-
-<%
-let ol = {
-  classes: [prefix + '-list'],
-  lis:[{
-      lis:[{
-        lis:[{}, {}, {}]
-      }, {}, {}]
-    }, {}, {}
-  ]}
-  let ul = {
-    classes: [prefix + '-list'],
-    lis:[{
-      lis:[{}, {}, {}]
-      }, {}, {}
-  ]}
-%>
-<%- sample('Test de liste non-ordonnée:', './samples/ul', ul, true); %>
-
-<%- sample('Test de liste ordonnée :', './samples/ol', ol, true); %>

@@ -29,7 +29,6 @@
  * Style de la liste
  */
 &__top-list {
-  @extend %list-reset;
   @include margin(0);
 }
 
@@ -38,8 +37,6 @@
  */
 &__top-link {
   display: block;
-  @extend %a-reset;
-  @include override-reset-link-style;
   @include text-style(xs);
   @include margin-bottom(3v);
 }

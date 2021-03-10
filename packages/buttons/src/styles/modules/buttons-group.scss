@@ -37,9 +37,9 @@
   }
 }
 
-:root #{ns-group(btns)} {
+#{ns-group(btns)} {
+  @include disable-list-style;
   @include display-flex(null,stretch,null,wrap);
-  @extend %list-reset;
   @include _make-vertical;
 
   #{ns(btn)} {

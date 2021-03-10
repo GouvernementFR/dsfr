@@ -17,6 +17,7 @@
         {
           "ignoreFontFamilies": ["icons"]
         }
-    ]
+    ],
+    "declaration-block-semicolon-space-before": null
   }
 }

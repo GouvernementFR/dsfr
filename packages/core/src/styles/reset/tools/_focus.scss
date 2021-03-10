@@ -1,0 +1,97 @@
+////
+/// Core Tools : Reset focus
+/// @group core
+////
+
+@mixin _build-focusable($settings) {
+  $focus: '&';
+  $hover: '&';
+
+  @if map-has-key($settings, focus) {
+    $focus: map-get($settings, focus);
+  }
+
+  @if map-has-key($settings, hover) {
+    $hover: map-get($settings, hover);
+  }
+
+  @at-root #{map-get($settings, selector)} {
+    &:focus,
+    &:focus-visible {
+      #{$focus} {
+        outline-offset: 2px;
+      }
+    }
+
+    &:focus:not(:focus-visible) {
+      #{$focus} {
+        outline: none;
+      }
+    }
+
+    @if map-has-key($settings, cursor) {
+      #{$hover} {
+        cursor: #{map-get($settings, cursor)};
+      }
+    }
+
+    @if map-has-key($settings, disabled) {
+      $disabled: map-get($settings, disabled);
+
+      #{map-get($disabled, selector)} {
+        &:focus,
+        &:focus-visible {
+          #{$focus} {
+            outline: none;
+          }
+        }
+
+        @if map-has-key($disabled, cursor) {
+          #{$hover} {
+            cursor: #{map-get($disabled, cursor)};
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin _build-focusable-schemes($settings) {
+  $focus: '&';
+
+  @if map-has-key($settings, focus) {
+    $focus: map-get($settings, focus);
+  }
+
+  @at-root #{map-get($settings, selector)} {
+    &:focus,
+    &:focus-visible {
+      #{$focus} {
+        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
+      }
+    }
+  }
+}
+
+@mixin build-focus($settings: $focus-settings) {
+  @each $focusable, $focusable-settings in $settings {
+    @include _build-focusable($focusable-settings);
+  }
+}
+
+@mixin build-focus-schemes($settings: $focus-settings) {
+  @each $focusable, $focusable-settings in $settings {
+    @include _build-focusable-schemes($focusable-settings);
+  }
+}
+
+@mixin enlarge-link {
+  outline-width: 0 !important;
+  @include before(block, '') {
+    @include absolute(0, 0, 0, 0, 100%, 100%);
+    outline-offset: 2px;
+    outline-style: inherit;
+    outline-color: inherit;
+    outline-width: 2px;
+  }
+}

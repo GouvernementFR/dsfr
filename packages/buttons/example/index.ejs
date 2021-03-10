@@ -14,7 +14,7 @@
 
 <%- sample('Bouton icon seule', './samples/button-default', {icon :'checkbox-line', iconPlace:'only'}, true); %>
 
-<%- sample('Bouton tag a href', './samples/button-default', {tag:'a'}, true); %>
+<%- sample('Bouton tag a href', './samples/button-default', {tag:'a', attributes: {href:'#'}}, true); %>
 
 <%- sample('Bouton tag div', './samples/button-default', {tag:'div'}, true); %>
 
@@ -27,6 +27,8 @@
 <%- sample('Bouton secondaire icon à droite', './samples/button-default', {secondary:true, icon :'checkbox-line', iconPlace:'right'}, true); %>
 
 <%- sample('Bouton secondaire icon seule', './samples/button-default', {secondary:true, icon :'checkbox-line', iconPlace:'only'}, true); %>
+
+<%- sample('Bouton secondaire tag a href', './samples/button-default', {secondary:true, tag :'a', attributes: {href:'#'}}, true); %>
 
 <%- sample('Groupe de bouton', './samples/buttons-group', {label: 'Label bouton', groupCount: 3}, true); %>
 
