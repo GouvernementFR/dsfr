@@ -7,7 +7,7 @@
  * Modificateur tuile horizontale
  **/
 &--horizontal {
-  flex-direction: row;
+  flex-direction: row-reverse;
 
   #{ns(tile__img-wrap)} {
     @include size(12v, 12v);
@@ -40,7 +40,7 @@
  * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
  **/
 &--vertical-md {
-  flex-direction: row;
+  flex-direction: row-reverse;
 
   #{ns(tile__img-wrap)} {
     @include size(12v, 12v);
@@ -76,7 +76,7 @@
   }
 
   @include respond-from(md) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 
@@ -84,7 +84,7 @@
  * Modificateur horizontal à partir du breakpoint md -> vertical en dessous du breakpoint md
  **/
 &--horizontal-md {
-  flex-direction: column;
+  flex-direction: column-reverse;
 
   #{ns(tile__img-wrap)} {
     @include size(20v, 20v);
@@ -120,6 +120,6 @@
   }
 
   @include respond-from(md) {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 }

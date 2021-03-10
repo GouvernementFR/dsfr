@@ -61,7 +61,17 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
     options.map = { prev: result.map.toString() };
   }
 
-  await process(result.css.toString(), [mqpacker({ sort: true }), perfectionist()], options);
+  await process(result.css.toString(),
+    [
+      mqpacker({
+        sort: true
+      }),
+      perfectionist({
+        cascade: false,
+        indentSize: 2,
+        trimLeadingZero: false
+      })
+    ], options);
 
   if (!minify) return;
 

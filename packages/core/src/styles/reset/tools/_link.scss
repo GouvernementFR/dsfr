@@ -19,3 +19,14 @@
 @mixin disable-link-style() {
   --is-link: false;
 }
+
+@mixin enlarge-link {
+  outline-width: 0 !important;
+  @include before(block, '') {
+    @include absolute(0, 0, 0, 0, 100%, 100%);
+    outline-offset: 2px;
+    outline-style: inherit;
+    outline-color: inherit;
+    outline-width: 2px;
+  }
+}
