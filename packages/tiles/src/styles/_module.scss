@@ -5,7 +5,7 @@
 
 #{ns(tile)} {
   @include relative;
-  @include display-flex(column);
+  @include display-flex(column-reverse);
 
   /**
    * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
@@ -18,7 +18,6 @@
     display: inline-flex;
     @include disable-link-style;
     @include size(100%);
-    @include enlarge-link;
   }
 
   /**
