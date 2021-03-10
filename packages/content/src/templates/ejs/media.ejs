@@ -8,6 +8,7 @@
 
 <%
 let classes = locals.classes || [];
+let attributes = locals.attributes || [];
 classes.push(prefix + '-content-media');
 
 switch (locals.size) {
@@ -27,6 +28,8 @@ let tag;
 switch (type) {
     case 'img':
         tag = 'figure';
+        attributes["role"] = "group";
+        if (locals.caption != undefined) attributes["aria-label"] = locals.caption;
         break;
 
     case 'vid':
@@ -35,7 +38,7 @@ switch (type) {
 }
 %>
 
-<<%= tag %> <%- includeClasses(classes); %>>
+<<%= tag %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
 <%
 switch(type) {
     case 'img':
