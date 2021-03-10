@@ -66,12 +66,15 @@
  * Copyright
  */
 &__bottom-copy {
-  flex-shrink: 0;
-  @include text-style(xs);
-  @include margin-top(4v);
+  > * {
+    flex-shrink: 0;
+    @include margin(0);
+    @include text-style(xs);
+    @include margin-top(4v);
 
-  @include respond-from(sm) {
-    @include margin-top(0);
-    @include margin-left(8v);
+    @include respond-from(sm) {
+      @include margin-top(0);
+      @include margin-left(8v);
+    }
   }
 }
