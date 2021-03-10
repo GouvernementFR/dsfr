@@ -7,7 +7,6 @@ import {
   MODAL_BODY_SELECTOR
 } from './constants';
 import { ModalsGroup } from './modals-group';
-import { ModalButton } from './modal-button';
 
 const group = new ModalsGroup();
 
@@ -98,12 +97,8 @@ class Modal extends api.Disclosure {
     }
   }
 
-  static get type () { return api.DISCLOSURE_TYPES.expand; }
+  static get type () { return api.DISCLOSURE_TYPES.opened; }
   static get selector () { return MODAL_CLASS; }
-
-  buttonFactory (element) {
-    return new ModalButton(element, this);
-  }
 
   get GroupConstructor () { return ModalsGroup; }
 }

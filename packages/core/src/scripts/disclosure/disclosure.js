@@ -13,9 +13,9 @@ class Disclosure {
     this.disclosed = null;
     this._selector = this.constructor.selector;
     this.modifier = this._selector + '--' + this.type.id;
-    this.attributeName = this.type.aria ? 'aria-' + this.type.id : ns.attr(this.type.id);
+    this.attributeName = this.type.ariaState ? 'aria-' + this.type.id : ns.attr(this.type.id);
 
-    const buttons = document.querySelectorAll(this.type.aria ? `[aria-controls="${this.id}"]` : ns.attr.selector('controls', this.id));
+    const buttons = document.querySelectorAll(this.type.ariaControls ? `[aria-controls="${this.id}"]` : ns.attr.selector('controls', this.id));
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
