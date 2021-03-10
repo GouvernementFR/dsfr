@@ -30,7 +30,7 @@
 
  switch(locals.size) {
     case 'sm':
-        gridCol = 4;
+        gridCol = '6 ' + prefix + '-col-lg-4';
         break;
 
     case 'lg':
@@ -55,13 +55,16 @@
                     </div>
                     <div class="<%= prefix %>-modal__content">
                         <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
-                          <span class="<%= prefix %>-fi-arrow-right-line <%= prefix %>-fi--lg"></span><%= locals.title %>
+                            <% if (locals.titleIcon !== undefined) { %>
+                                <span class="<%= prefix %>-fi-<%= locals.titleIcon %> <%= prefix %>-fi--lg"></span>
+                            <% } %>
+                            <%= locals.title %>
                         </h1>
                         <%- include(body) -%>
                     </div>
                     <% if(locals.footer !== undefined) { %>
                         <div class="<%= prefix %>-modal__footer">
-                            <%- include('../../../../buttons/example/samples/button-default', locals.footer )%>
+                            <%- include(locals.footer )%>
                         </div>
                     <% } %>
                 </div>

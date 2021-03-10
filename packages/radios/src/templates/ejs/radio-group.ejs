@@ -7,6 +7,7 @@
 <% eval(include('../../../../core/index.ejs')); %>
 <%
 let groupClasses = [prefix + '-radio-group'];
+if(locals.rich) groupClasses.push(prefix + '-radio-rich');
 switch(locals.size) {
     case 'sm' :
         groupClasses.push(prefix + '-radio-group--sm');
@@ -16,5 +17,5 @@ switch(locals.size) {
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./radio'); %>
+    <%- include('./radio', {rich : locals.rich ? locals.rich : false}); %>
 </div>

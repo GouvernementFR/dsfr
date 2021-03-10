@@ -37,28 +37,33 @@ switch (typeof locals.service) {
         break;
 }
 
-if (locals.shortcuts || locals.search) {
+if (locals.shortcuts !== undefined || locals.search) {
     data.tools = {};
 
-    if (locals.shortcuts) data.tools.shortcuts = {
-        items: [
-            {
-                icon: 'add-circle-line',
-                href: '#',
-                label: 'Créer un espace'
-            },
-            {
-                icon: 'lock-line',
-                href: '#',
-                label: 'Se connecter'
-            },
-            {
-                icon: 'account-line',
-                href: '#',
-                label: 'S’enregistrer'
-            }
-        ]
-    };
+    if (locals.shortcuts === true) {
+        data.tools.shortcuts = {
+            items: [
+                {
+                    icon: 'add-circle-line',
+                    href: '#',
+                    label: 'Créer un espace'
+                },
+                {
+                    icon: 'lock-line',
+                    href: '#',
+                    label: 'Se connecter'
+                },
+                {
+                    icon: 'account-line',
+                    href: '#',
+                    label: 'S’enregistrer'
+                }
+            ]
+        };
+    }
+    else if (locals.shortcuts !== undefined) {
+        data.tools.shortcuts = locals.shortcuts;
+    }
 
     if (locals.search) {
         data.tools.search = locals.search === true ?

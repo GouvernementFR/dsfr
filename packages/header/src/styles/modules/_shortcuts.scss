@@ -4,7 +4,6 @@
 ////
 
 #{ns(shortcuts)} {
-  overflow: hidden;
 
   @include list {
     @include display-flex(column);

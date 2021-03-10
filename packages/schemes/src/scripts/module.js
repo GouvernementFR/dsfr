@@ -1,6 +1,9 @@
 /* eslint-disable no-new */
 import api from '../../api.js';
 import { SCHEME_ATTR } from './scheme/constants';
-import build from './scheme/build';
+import { SWITCH_THEME_ID } from './switch-theme/constants';
+import buildScheme from './scheme/build';
+import buildSwitch from './switch-theme/build';
 
-new api.Initializer(`:root[${SCHEME_ATTR}]`, [build]);
+new api.Initializer(`:root[${SCHEME_ATTR}]`, [buildScheme]);
+new api.Initializer(`${SWITCH_THEME_ID}`, [buildSwitch]);
