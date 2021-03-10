@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= title %> - Design System</title>
 
+    <%- include(root + 'packages/core/src/templates/ejs/favicons/favicons.ejs', {path: '../../dist/favicons/'}); %>
+
     <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'links', 'accordions', 'forms', 'checkboxes', 'utilities'] }); %>
 
     <style>

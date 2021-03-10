@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%- include(root + 'packages/core/src/templates/ejs/favicons/favicons.ejs', {path: '../dist/favicons/'}); %>
   <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'utilities'], isList: true }); %>
   <title>Design System Développement</title>
 </head>
