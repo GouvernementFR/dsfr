@@ -38,7 +38,7 @@ class Modal extends api.Disclosure {
     if (this.body && this.element === e.target) this.conceal();
   }
 
-  group () {
+  gather () {
     group.add(this);
   }
 

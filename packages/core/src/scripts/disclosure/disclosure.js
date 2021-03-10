@@ -22,10 +22,12 @@ class Disclosure {
     this.disclosed = this.disclosed === true;
     this.apply(this.disclosed, true);
 
-    this.group();
+    this.gather();
   }
 
-  group () {
+  gather () {
+    if (this.group) return;
+
     DisclosuresGroup.groupById(this, this.GroupConstructor);
     DisclosuresGroup.groupByParent(this, this.GroupConstructor);
   }
@@ -101,14 +103,19 @@ class Disclosure {
     this.group = group;
   }
 
-  get hasFocus () {
-    if (this.element === document.activeElement) return true;
-    if (this.element.querySelectorAll(':focus').length > 0) return true;
+  get buttonHasFocus () {
     if (this.buttons.some((button) => { return button.hasFocus; })) return true;
     return false;
   }
 
+  get hasFocus () {
+    if (this.element === document.activeElement) return true;
+    if (this.element.querySelectorAll(':focus').length > 0) return true;
+    return this.buttonHasFocus;
+  }
+
   focus () {
+    console.log(this.buttons);
     for (let i = 0; i < this.buttons.length; i++) {
       const button = this.buttons[i];
       if (button.hasAttribute) {
