@@ -45,12 +45,12 @@
                     let classes = [prefix + '-mega-menu__category'];
                     if (category.active) classes.push(prefix + '-mega-menu__category--active');
                 %>
-                <div <%- includeClasses(classes); %>>
+                <h5 <%- includeClasses(classes); %>>
                     <a class="<%= prefix%>-link" <%= category.active ? 'aria-current="true"' : 'href="#" target="_self"' %>>
                         <%- category.name %>
                     </a>
+                </h5>
 
-                </div>
                 <ul class="<%= prefix %>-mega-menu__list" >
                     <%
                     for (let i = 0; i < category.items.length; i++) {
