@@ -23,6 +23,8 @@
 
  classes.push(prefix + '-tile');
 
+ if (locals.enlarge) classes.push(prefix + '-enlarge-link');
+
  if (locals.horizontal !== undefined) {
     classes.push(prefix +'-tile--horizontal');
  }
@@ -38,15 +40,15 @@
  %>
 
 <div <%- includeClasses(classes)%>>
-    <% if (locals.img !== undefined) { %>
-    <div class="<%= prefix %>-tile__img-wrap">
-        <img src="<%= img %>" titre="<%= alt %>" alt="<%= alt %>"/>
-    </div>
-    <% } %>
     <div class="<%= prefix %>-tile__body">
         <h4 class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- title %></a></h4>
         <% if(locals.description !== undefined) { %>
         <p class="<%= prefix %>-tile__desc"><%= description %></p>
         <% } %>
     </div>
+    <% if (locals.img !== undefined) { %>
+        <div class="<%= prefix %>-tile__img-wrap">
+            <img src="<%= img %>" alt="<%= alt %>"/>
+        </div>
+    <% } %>
 </div>

@@ -39,12 +39,12 @@ class Header {
   }
 
   change () {
-    this.isMedium = window.matchMedia('(min-width: 48em)').matches;
+    this.isLarge = window.matchMedia('(min-width: 62em)').matches;
 
-    for (let i = 0; i < this.popins.length; i++) this.popins[i].change(this.isMedium);
+    for (let i = 0; i < this.popins.length; i++) this.popins[i].change(this.isLarge);
 
     if (this.shortcuts !== null) {
-      if (this.isMedium) {
+      if (this.isLarge) {
         if (this.searchBar !== null) this.tools.insertBefore(this.shortcuts, this.searchBar);
         else this.tools.appendChild(this.shortcuts);
       } else {

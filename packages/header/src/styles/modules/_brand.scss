@@ -1,0 +1,68 @@
+////
+/// Header Module : brand
+/// @group header
+////
+
+&__brand {
+  @include display-flex(row, center, flex-start, wrap);
+  @include margin-y(-4v, lg);
+
+  @include respond-from(lg) {
+    flex-wrap: nowrap;
+  }
+
+  @include after(block, '') {
+    order: 3;
+    @include size(100%);
+
+    @include respond-from(lg) {
+      content: none;
+    }
+  }
+}
+
+&__logo,
+&__operator,
+&__service {
+  @include padding(4v, lg);
+
+  &:not(:last-child) {
+    @include margin-right(2v, lg);
+  }
+}
+
+&__logo {
+  order: 1;
+  @include padding(3v);
+  @include logo(sm, null) {
+    @include margin(-1em);
+  }
+}
+
+&__operator {
+  @include padding(3v);
+  order: 2;
+
+  img {
+    display: block;
+  }
+}
+
+&__service {
+  @include padding-y(3v);
+  @include margin-x(3v);
+  @include margin-x(0, lg);
+  order: 4;
+  @include size(100%);
+  @include scheme-element-border-color(g300, true, top);
+
+  @include respond-from(lg) {
+    border-top: none;
+    width: auto;
+  }
+
+  &-title,
+  &-tagline {
+    @include margin-bottom(0);
+  }
+}

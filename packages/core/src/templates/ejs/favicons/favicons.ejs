@@ -1,0 +1,12 @@
+<% const path = locals.path || '' %>
+
+<link rel="icon" href="<%= path %>favicon.svg" type="image/svg+xml">
+
+<link rel="apple-touch-icon" href="<%= path %>apple-touch-icon.png"><!-- 180×180 -->
+
+<!-- si favicon.ico peut etre placé à la racine du serveur, retirer la ligne ci-dessous -->
+<link rel="icon" href="<%= path %>favicon.ico"><!-- 32×32 -->
+
+<link rel="manifest" href="<%= path %>manifest.webmanifest">
+<!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+<!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->

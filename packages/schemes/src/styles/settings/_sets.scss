@@ -86,5 +86,5 @@ $scheme-sets: (
   // Ombre du scroll des tableaux. basé sur la couleur $grey-800 pour
   scroll-shadow: rgba(red($grey-800), green($grey-800), blue($grey-800), 0.16) rgba(red($grey-800), green($grey-800), blue($grey-800), 1),
   /// couleur de l'overlay. basé sur le set couleur g-500 (grey-500 grey-400) et gère les opacité
-  overlay: rgba(red($grey-500), green($grey-500), blue($grey-500), 0.32) rgba(red($grey-400), green($grey-400), blue($grey-400), 0.08),
+  overlay: rgba(red($grey-500), green($grey-500), blue($grey-500), 0.32) rgba(red($grey-400), green($grey-400), blue($grey-400), 0.32),
 ) !global;

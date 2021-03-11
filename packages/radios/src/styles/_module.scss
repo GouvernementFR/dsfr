@@ -52,7 +52,6 @@
      */
     + label {
       @include relative;
-      cursor: pointer;
       @include padding(3v 0);
       @include text-style(md);
       -webkit-tap-highlight-color: transparent;
@@ -68,6 +67,11 @@
       -ms-grid-columns: 1fr space(8v);
       text-align: left;
       direction: rtl;
+
+      &,
+      & > * {
+        unicode-bidi: plaintext;
+      }
 
       /**
        * Style du texte d'aide dans le label

@@ -25,10 +25,10 @@
     /**
      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
      */
-    @include scheme-element-focus(false, '+ label::before');
     @include disabled-form-choice() {
-      img {
-        filter: grayscale(1);
+      filter: grayscale(1);
+      @include after {
+        background-color: transparent;
       }
     }
   }

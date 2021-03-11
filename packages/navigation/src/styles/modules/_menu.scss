@@ -10,7 +10,7 @@
   @include size(auto);
   box-sizing: content-box;
 
-  @include respond-from(md) {
+  @include respond-from(lg) {
     @include absolute(100%);
     @include margin-top(-1v);
     @include padding-top(1v);
@@ -26,7 +26,7 @@
   @include list {
     @include margin(0);
     @include padding(2v 0 6v);
-    @include padding(0 0 8v, md);
+    @include padding(0 0 8v, lg);
     @include size(20rem);
   }
 
@@ -50,7 +50,7 @@
       border-radius: 0;
     }
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       &:not(:last-child) {
         @include after(null, '') {
           @include absolute(null,0,0,0,null,1px);

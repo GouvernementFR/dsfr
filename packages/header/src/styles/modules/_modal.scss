@@ -1,3 +1,8 @@
+////
+/// Header Module : modal
+/// @group header
+////
+
 #{ns(modal)} {
   pointer-events: initial;
   display: block;
@@ -7,7 +12,7 @@
 
   &:not(#{dse(modal)}--expanded) {
     display: flex;
-    @include respond-from(md) {
+    @include respond-from(lg) {
       display: block;
     }
   }
@@ -15,22 +20,21 @@
   #{ns(container)} {
     pointer-events: initial;
     @include padding(4v 4v 0);
-    @include padding(0 8v 4v, md);
+    @include padding(0 8v 4v, lg);
 
     #{ns(grid-row)} {
       @include margin(0 -2v);
-      @include margin(0 -4v, md);
+      @include margin(0 -4v, lg);
     }
   }
 
-  @include respond-from(md) {
+  @include respond-from(lg) {
+    @include padding-top(0);
+    @include margin(0);
+    @include size(auto, auto);
     visibility: visible;
     opacity: 1;
-    @include padding-top(0);
-    margin: 0;
     position: initial;
-    width: auto;
-    height: auto;
     background-color: transparent;
     transition: none;
     overflow: inherit;
@@ -38,7 +42,7 @@
 
   > #{ns(link)}--close {
     @include absolute(4v,4v);
-    @include respond-from(md) {
+    @include respond-from(lg) {
       display: none;
     }
   }

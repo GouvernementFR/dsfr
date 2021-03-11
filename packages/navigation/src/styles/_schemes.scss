@@ -24,7 +24,7 @@
       @include scheme-element-bg-color(t-plain, false, override);
 
       &[aria-expanded="true" i] {
-        @include respond-from(md) {
+        @include respond-from(lg) {
           @include scheme-element-text-color(bf500-plain);
           @include scheme-element-bg-color(bf200-bf300);
         }
@@ -40,7 +40,7 @@
       & > #{ns(btn)} {
         @include scheme-element-text-color(bf500);
 
-        @include respond-from(md) {
+        @include respond-from(lg) {
           @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR); //TODO: transition
         }
       }
@@ -52,7 +52,7 @@
 * menu
 **/
 #{ns(menu)} {
-  @include respond-from(md) {
+  @include respond-from(lg) {
     @include after {
       @include scheme-element-bg-color(w-g750, true);
     }
@@ -69,7 +69,7 @@
       @include scheme-element-bg-color(t-plain, true, true); // override ?
     }
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       &:not(:last-child) {
         @include after {
           @include scheme-element-bg-color(g300, true);
@@ -97,7 +97,7 @@
   @include scheme-element-bg-color(w-g750, true);
 
   > #{ns(container)} {
-    @include respond-from(md) {
+    @include respond-from(lg) {
       @include before {
         @include scheme-element-bg-color(bf200-bf300, true);
       }
@@ -111,7 +111,7 @@
   }
 
   &__category {
-    @include respond-from(md) {
+    @include respond-from(lg) {
       @include after {
         @include scheme-element-bg-color(g300, true);
       }

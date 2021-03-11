@@ -17,5 +17,5 @@ switch(locals.size) {
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./radio', {rich : locals.rich ? locals.rich : false}); %>
+    <%- include('./radio', {rich : locals.rich ? locals.rich : false, disabled: locals.disabled ? locals.disabled : false}); %>
 </div>

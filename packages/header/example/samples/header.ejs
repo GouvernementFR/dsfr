@@ -17,8 +17,8 @@ switch (typeof locals.logo) {
 }
 
 if (locals.operator !== undefined) {
-  data.operator = locals.operator;
-  data.operator.alt = 'Texte alternatif logo opérateur'
+  data.brand.operator = locals.operator;
+  data.brand.operator.alt = 'Texte alternatif logo opérateur'
 }
 
 let service = {
@@ -29,11 +29,11 @@ let service = {
 
 switch (typeof locals.service) {
     case 'boolean':
-        data.navbar.service = service;
+        data.brand.service = service;
         break;
 
     case 'object':
-        data.navbar.service = { ... locals.service, ... service, alt: 'Texte alternatif logo service'};
+        data.brand.service = { ... locals.service, ... service, alt: 'Texte alternatif logo service'};
         break;
 }
 
