@@ -9,10 +9,10 @@ const buildRedirect = require('./build/redirect');
  */
 const buildBuilder = (yargs) => {
   return yargs
-    .usage('Usage: $0 -p core accordions -t scripts styles -min -sm -leg -md -m -li -l -co -c')
+    .usage('Usage: $0 -p core accordions')
     .example(
-      '$0 -p core accordions -t scripts styles',
-      'compile les fichiers scripts et styles du package core et accordions'
+      '$0 -p core accordions -jcm',
+      'compile les fichiers scripts et styles du package core et accordions en les minifiant'
     )
     .option('packages', {
       alias: 'p',
