@@ -65,8 +65,19 @@ let mega2 = {
 }
 
 let data = {
-    id: locals.id || 'navigation',
-    items: locals.min === true ? [link, link, link, link] : [menu, mega, link, active, mega, link, mega2, menu]
+    id: locals.id || uniqueId('navigation'),
+    items: locals.min === true ?
+            [link, link, link, link] :
+            [
+                {...menu, collapseId: uniqueId('menu')},
+                {...mega, collapseId: uniqueId('mega-menu')},
+                link,
+                {...active, collapseId: uniqueId('menu') },
+                {...mega, collapseId: uniqueId('mega-menu')},
+                link,
+                {...mega2, collapseId: uniqueId('mega-menu')},
+                {...menu, collapseId: uniqueId('menu')}
+            ]
 }
 %>
 

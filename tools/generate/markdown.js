@@ -3,6 +3,7 @@ const Readme = require('./readme');
 const root = require('../utilities/root');
 const { getPackageYML, getPublicPackage } = require('../utilities/config');
 const getPackages = require('../utilities/packages');
+const log = require('../utilities/log');
 
 const generateMarkdown = (id) => {
   const data = getPackageYML(id);
@@ -46,7 +47,7 @@ const generateMarkdown = (id) => {
   const p = `public/packages/${id}/README.md`;
   const filePath = root(p);
 
-  console.log('\x1b[38m', `generate ${p}`, '\x1b[0m');
+  log(38, p);
 
   createFile(filePath, readme.publish());
 };

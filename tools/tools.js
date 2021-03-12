@@ -1,76 +1,181 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs');
-const generateMarkdown = require('./generate/markdown');
 const build = require('./build/build');
-const { buildExample, buildMap } = require('./build/example');
-const root = require('./utilities/root');
-const buildStyles = require('./build/styles');
-const { copyStyles } = require('./build/copy');
-const { copyScripts } = require('./build/copy');
-const buildScripts = require('./build/scripts');
 const buildRedirect = require('./build/redirect');
-const generatePackage = require('./generate/package');
+
+/**
+ * Build
+ */
+const buildBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0 -p core accordions -t scripts styles -min -sm -leg -md -m -li -l -co -c')
+    .example(
+      '$0 -p core accordions -t scripts styles',
+      'compile les fichiers scripts et styles du package core et accordions'
+    )
+    .option('packages', {
+      alias: 'p',
+      describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
+      type: 'array'
+    })
+    .option('scripts', {
+      alias: '-j',
+      describe: 'Filtre de compilation, inclue les scripts',
+      type: 'boolean'
+    })
+    .option('styles', {
+      alias: '-c',
+      describe: 'Filtre de compilation, inclue les styles',
+      type: 'boolean'
+    })
+    .option('examples', {
+      alias: '-h',
+      describe: 'Filtre de compilation, inclue les examples',
+      type: 'boolean'
+    })
+    .option('minify', {
+      alias: '-m',
+      describe: 'Minifie les styles et les scripts',
+      type: 'boolean'
+    })
+    .option('legacy', {
+      alias: '-l',
+      describe: 'Compilation des scripts supportant les systèmes antérieurs',
+      type: 'boolean'
+    })
+    .option('sourcemap', {
+      alias: '-s',
+      describe: 'Compilation des scripts et styles avec sourcemaps',
+      type: 'boolean'
+    })
+    .option('clean', {
+      describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
+      type: 'boolean'
+    })
+    .option('core', {
+      describe: 'Génère les fichiers avec les variables de base dans core',
+      type: 'boolean'
+    })
+    .option('lint', {
+      describe: 'vérifie le respect de la nomenclature dans les fichiers scripts et styles',
+      type: 'boolean'
+    })
+    .option('main', {
+      describe: 'Compilation consolidée de tous les packages en un seul fichiers',
+      type: 'boolean'
+    })
+    .option('markdowns', {
+      describe: 'Génère les fichiers readme',
+      type: 'boolean'
+    })
+    .option('list', {
+      describe: 'Compile la liste des examples',
+      type: 'boolean'
+    });
+};
+
+const buildHandler = (argv) => {
+  const all = argv.scripts === undefined && argv.styles === undefined && argv.examples === undefined;
+
+  const settings = {
+    styles: argv.styles || all,
+    scripts: argv.scripts || all,
+    examples: argv.examples || all,
+    packages: argv.packages,
+    minify: argv.minify,
+    legacy: argv.legacy,
+    sourcemap: argv.sourcemap,
+    clean: argv.clean,
+    core: argv.core,
+    lint: argv.lint,
+    markdowns: argv.markdowns,
+    main: argv.main,
+    list: argv.list
+  };
+
+  build(settings);
+};
+
+/**
+ * Release
+ */
+
+const releaseBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0')
+    .example(
+      '$0',
+      ''
+    );
+};
+
+const releaseHandler = (argv) => {
+  build({
+    styles: true,
+    scripts: true,
+    examples: true,
+    clean: true,
+    core: true,
+    lint: true,
+    minify: true,
+    legacy: true,
+    sourcemap: true,
+    markdowns: true,
+    main: true,
+    list: true
+  });
+};
+
+/**
+ * Deploy
+ */
+const deployBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0')
+    .example(
+      '$0',
+      ''
+    );
+};
+
+const deployHandler = (argv) => {
+  build({
+    styles: true,
+    scripts: true,
+    examples: true,
+    clean: true,
+    core: true,
+    legacy: true,
+    main: true,
+    list: true
+  });
+  buildRedirect();
+};
 
 yargs
   .scriptName('tools')
   .command(
     'build',
     'compilation de package',
-    (yargs) => {
-      return yargs
-        .usage('Usage: $0 -p core -d ./ -t scripts -f core')
-        .example(
-          '$0 -p core -d . -t scripts -f core',
-          'compile les fichiers scripts du package core à l’emplacement de l’appel'
-        )
-        .option('package', {
-          alias: 'p',
-          describe: 'liste des id des packages à inclure dans la compilation',
-          type: 'array'
-        })
-        .option('target', {
-          alias: 't',
-          describe: 'limite la compilation aux styles ou aux scripts le cas échéant. [styles, scripts]',
-          type: 'string',
-          nargs: 1
-        });
-    }, (argv) => {
-      console.log('build');
-      build(false, false, false);
-    })
+    buildBuilder,
+    buildHandler
+  )
   .command(
-    'generate',
-    'génération de fichier',
-    (yargs) => {
-      return yargs
-        .usage('Usage: $0 -p core -t md')
-        .example(
-          '$0 -p core -t md',
-          'génère le readme du package core'
-        )
-        .option('package', {
-          alias: 'p',
-          describe: 'le package pour lequel les fichiers seront générés',
-          type: 'string'
-        })
-        .option('target', {
-          alias: 't',
-          describe: 'limite la compilation aux styles ou aux scripts le cas échéant. [md]',
-          type: 'string',
-          nargs: 1
-        });
-    }, (argv) => {
-      console.log('command generate');
-      if (argv.target === 'md') generateMarkdown(argv.package);
-    })
+    'release',
+    'compilation la plus complète pour livraison',
+    releaseBuilder,
+    releaseHandler
+  )
   .command(
-    'example',
-
+    'deploy',
+    'compilation pour déploiement sur netlify',
+    deployBuilder,
+    deployHandler
   )
   .command(
     'tmp',
-    '',
+    'test',
     (yargs) => {
       return yargs
         .usage('Usage: $0')
@@ -79,42 +184,6 @@ yargs
           ''
         );
     }, (argv) => {
-      const pck = 'header';
-      copyScripts(pck, true);
-      copyStyles(pck, true);
-      buildScripts([pck], 'public/packages', `public/dist/js/`, pck, false, true);
-      buildStyles([pck], 'public/packages', `public/dist/css/`, pck, true, true);
-      //buildMap('public/example');
-      //generatePackage();
-      //generateMarkdown(pck);
-      buildExample([pck], 'public/example');
-    })
-  .command(
-    'release',
-    '',
-    (yargs) => {
-      return yargs
-        .usage('Usage: $0')
-        .example(
-          '$0',
-          ''
-        );
-    }, (argv) => {
-      build(true, true, true);
-    })
-  .command(
-    'deploy',
-    '',
-    (yargs) => {
-      return yargs
-        .usage('Usage: $0')
-        .example(
-          '$0',
-          ''
-        );
-    }, (argv) => {
-      build(true, false, false);
-      buildRedirect();
     })
   .help()
   .argv;
