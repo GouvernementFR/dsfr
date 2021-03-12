@@ -120,7 +120,24 @@ class FocusTrap {
   }
 
   get focusables () {
-    const unordereds = [...this.element.querySelectorAll(UNORDEREDS)];
+    let unordereds = [...this.element.querySelectorAll(UNORDEREDS)];
+
+    /**
+     *  filtrage des radiobutttons dans des fieldset (la navigations d'un groupe de radio se fait à la flèche et non pas au tab
+     **/
+    const fieldsets = [...this.element.querySelectorAll('fieldset')];
+    const radios = [];
+
+    for (const fieldset of fieldsets) {
+      // eslint-disable-next-line no-useless-call
+      if ([...fieldset.querySelectorAll('input[type="radio"]:focus')].length) radios.push.apply(radios, [...fieldset.querySelectorAll('input[type="radio"]:not(:focus)')]);
+      else if ([...fieldset.querySelectorAll('input[type="radio"]:checked')].length) radios.push.apply(radios, [...fieldset.querySelectorAll('input[type="radio"]:not(:checked)')]);
+      else radios.push.apply(radios, [...fieldset.querySelectorAll('input[type="radio"]')].splice(0, 1));
+    }
+    unordereds = unordereds.filter((unordered) => {
+      return radios.indexOf(unordered) === -1;
+    });
+
     const ordereds = [...this.element.querySelectorAll(ORDEREDS)];
 
     ordereds.sort((a, b) => a.tabIndex - b.tabIndex);
