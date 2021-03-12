@@ -44,11 +44,6 @@
   }
 }
 
-@function _svg-encode($svg) {
-  $svg: str-replace($svg, '#', '%23');
-  @return 'data:image/svg+xml;utf8,' + $svg;
-}
-
 @function _color-marianne($blue, $red) {
   $tmp: str-replace($svg-marianne, '$BLUE', $blue);
   @return str-replace($tmp, '$RED', $red);

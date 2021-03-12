@@ -1,15 +1,9 @@
-
-$encoding-reference: (
-  ('<','%3C'),
-  ('>','%3E'),
-  ('"','\''),
-  ('#','%23'),
-  ('&','%26')
-);
+////
+/// Core Tools : Global encoding
+/// @group core
+////
 
 @function svg-encode($svg) {
-  @each $char, $encoded in $encoding-reference {
-    $svg: str-replace($svg, $char, $encoded);
-  }
-  @return 'data:image/svg+xml,' + $svg;
+  $svg: str-replace($svg, '#', '%23');
+  @return 'data:image/svg+xml;utf-8,' + $svg;
 }
