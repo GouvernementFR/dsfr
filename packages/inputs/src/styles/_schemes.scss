@@ -6,7 +6,7 @@
 #{ns(input)} {
   @include scheme-element-text-color(g800, true);
   @include scheme-element-bg-color(g200, true);
-  @include scheme-element-box-shadow-color(g800, true, inset 0 -2px 0 0 $COLOR);
+  @include scheme-element-box-shadow-color(g600, true, inset 0 -2px 0 0 $COLOR);
 
   /**
    * Style du placeholder
