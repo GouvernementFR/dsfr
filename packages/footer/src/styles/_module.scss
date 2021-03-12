@@ -38,9 +38,7 @@
      * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
      * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
      */
-    > a + a,
-    > a + img,
-    > a + svg {
+    #{ns(logo)} + #{ns(footer__brand-link)} {
       @include margin-left(6v);
       @include margin-left(12v, md);
     }
@@ -75,12 +73,8 @@
     }
 
     @include respond-from(md) {
-      flex-basis: calc(100% / 3);
+      flex-basis: auto;
       @include padding-right(4v);
-    }
-
-    @include respond-from(lg) {
-      flex-basis: 50%;
     }
   }
 

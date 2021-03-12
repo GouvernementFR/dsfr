@@ -14,11 +14,11 @@
   @include margin-top(6v);
 
   @include respond-from(md) {
-    @include margin-top(0);
-    flex-basis: calc(100% - (100% / 3));
+    @include margin-left(auto);
   }
 
   @include respond-from(lg) {
+    @include margin-top(0);
     flex-basis: calc(100% - (100% / 2));
   }
 
