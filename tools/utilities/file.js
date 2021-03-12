@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const del = require('del');
+const log = require('./log');
 
 // Create Directories
 const createDir = (dirPath) => {
@@ -23,12 +24,12 @@ const createFile = (filePath, fileContent) => {
 };
 
 const deleteDir = (dirPath, msg) => {
-  console.log('\x1b[31m', msg || 'delete dir', dirPath, '\x1b[0m');
+  log(31, `${msg || 'delete dir'} ${dirPath}`);
   del.sync(dirPath);
 };
 
 const deleteFile = (filePath, msg) => {
-  console.log('\x1b[31m', msg || 'delete file', filePath, '\x1b[0m');
+  log(31, `${msg || 'delete file'} ${filePath}`);
   del.sync(filePath);
 };
 
@@ -43,7 +44,7 @@ const copyFile = (srcFile, destFile, force, removeOrphans) => {
     const lsd = fs.lstatSync(destFile);
     if (lss.size === lsd.size && lss.mtimeMs <= lsd.mtimeMs && lss.ctimeMs <= lsd.ctimeMs) return;
   }
-  console.log('\x1b[90m', 'copy', srcFile, '\x1b[0m');
+  log(90, `copy ${srcFile}`);
   fs.copyFileSync(srcFile, destFile);
 };
 

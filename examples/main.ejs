@@ -1,0 +1,56 @@
+<% eval(include(root + '/packages/core/index.ejs')); %>
+<!doctype html>
+<html lang="fr" data-<%= prefix %>-theme data-<%= prefix %>-logo="Logo défini sur le root" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Design System</title>
+
+    <%- include(root + 'packages/core/src/templates/ejs/favicons/favicons.ejs', {path: '../../dist/favicons/'}); %>
+
+    <link href="../../dist/css/<%= namespace %>.css" rel="stylesheet" >
+
+    <style>
+        <%- include(root + 'examples/styles.css'); %>
+    </style>
+</head>
+<body class="<%= prefix %>-mb-12w" style="margin:0; padding:0;">
+
+<div class="example-controls" >
+    <div class="rf-form-group">
+        <fieldset class="rf-fieldset rf-fieldset--inline">
+            <div class="rf-fieldset__content">
+                <div class="rf-checkbox-group">
+                    <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
+                    <label class="rf-label" for="theme-checkbox">Thème clair / sombre</label>
+                </div>
+                <div class="rf-checkbox-group">
+                    <input type="checkbox" id="mourning-checkbox" name="checkboxes-inline-2">
+                    <label class="rf-label" for="mourning-checkbox">En deuil</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+<div class="<%= prefix %>-container <%= prefix %>-mt-2v">
+    <a class="<%= prefix %>-link <%= prefix %>-fi-arrow-left-line <%= prefix %>-link--icon-left" href="../">Retour</a>
+    <h1 class="<%= prefix %>-h1" ><%= namespace %> - Design System</h1>
+</div>
+
+<% for (const pck of packages) { %>
+    <div class="<%= prefix %>-mb-12w">
+        <%- include(root + 'examples/wrapper', pck); %>
+    </div>
+<% } %>
+
+
+
+<script type="module" src="../../dist/js/<%= namespace %>.module.js" ></script>
+<script type="text/javascript" nomodule src="../../dist/js/<%= namespace %>.nomodule.js" ></script>
+<script>
+    <%- include(root + 'examples/script.js'); %>
+</script>
+
+</body>
+</html>

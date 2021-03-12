@@ -17,23 +17,7 @@ let count = 0;
 
 function uniqueId (module) {
   count++;
-  return `${module}-${count}-dep`;
-}
-
-function snippet (html) {
-  console.log('snippet est déprécié, lui préférer la méthode sample (accordions pour référence)');
-  html = beautify(html, beautyOpts);
-
-  html = html.replace(/(class=".*)\s(")/gm, '$1$2');
-  html = html.replace(/&/g, '&amp;');
-  html = html.replace(/</g, '&lt;');
-  html = html.replace(/>/g, '&gt;');
-
-  const id = uniqueId('snippet');
-
-  const prefix = global.prefix;
-
-  return `<div class="${prefix}-mt-3w ${prefix}-pb-6w" ><section class="${prefix}-accordion"><h3 class="${prefix}-accordion__title"><button class="${prefix}-accordion__btn" aria-expanded="false" aria-controls="${id}">Snippet de code</button></h3><div class="${prefix}-collapse" id="${id}"><pre class=" language-html"><code>${html}</code></pre></div></section></div>`;
+  return `${module}-${count}`;
 }
 
 const buildExample = (id, dest) => {
@@ -51,7 +35,7 @@ const buildExample = (id, dest) => {
     ...config,
     root: root.toString(),
     beautify: (html) => { return beautify(html, beautyOpts); },
-    snippet: snippet
+    uniqueId: uniqueId
   };
 
   const html = ejs.render(page, options);
@@ -61,7 +45,7 @@ const buildExample = (id, dest) => {
   console.log('\x1b[38m', `${id}/index.html`, '\x1b[0m');
 };
 
-const buildMap = (dest) => {
+const buildList = (dest) => {
   const indexPath = root('examples/index.ejs');
   const index = fs.readFileSync(indexPath, {
     encoding: 'utf8',
@@ -77,6 +61,7 @@ const buildMap = (dest) => {
     ...config,
     root: root.toString(),
     beautify: (html) => { return beautify(html, beautyOpts); },
+    uniqueId: uniqueId
   };
 
   const html = ejs.render(index, options);
@@ -86,4 +71,32 @@ const buildMap = (dest) => {
   console.log('\x1b[38m', 'index.html', '\x1b[0m');
 };
 
-module.exports = { buildExample, buildMap };
+const buildMain = (dest) => {
+  const indexPath = root('examples/main.ejs');
+  const index = fs.readFileSync(indexPath, {
+    encoding: 'utf8',
+    flag: 'r'
+  });
+
+  const config = getPublicPackage().config;
+  config.packages = [];
+  const packages = getPackages();
+  packages.forEach((p) => { config.packages.push(getPackageYML(p)); });
+
+  const options = {
+    ...config,
+    root: root.toString(),
+    beautify: (html) => { return beautify(html, beautyOpts); },
+    noSnippet: true,
+    noHeading: true,
+    uniqueId: uniqueId
+  };
+
+  const html = ejs.render(index, options);
+  const beautified = beautify(html, beautyOpts);
+
+  createFile(`${dest}/${config.namespace}/index.html`, beautified);
+  console.log('\x1b[38m', 'index.html', '\x1b[0m');
+};
+
+module.exports = { buildExample, buildList, buildMain };
