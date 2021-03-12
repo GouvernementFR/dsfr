@@ -6,10 +6,9 @@
 #{ns(search-bar)} {
   @include margin-top(5v);
 
-  @include respond-from(md) {
-    @include size(23.667rem);
+  @include respond-from(lg) {
+    @include max-size(23.667rem);
     @include margin-top(0);
-    margin-left: auto;
-    box-shadow: none;
+    @include margin-left(auto);
   }
 }

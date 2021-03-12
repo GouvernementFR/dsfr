@@ -1,0 +1,9 @@
+////
+/// Core Tools : Global encoding
+/// @group core
+////
+
+@function svg-encode($svg) {
+  $svg: str-replace($svg, '#', '%23');
+  @return 'data:image/svg+xml;utf-8,' + $svg;
+}

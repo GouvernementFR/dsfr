@@ -4,13 +4,12 @@
 ////
 
 #{ns(shortcuts)} {
-  overflow: hidden;
 
   @include list {
     @include display-flex(column);
-    @include margin(0 -6v -2v 0, md);
+    @include margin(0 -6v -2v 0, lg);
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       @include display-flex(row, null, flex-end, wrap);
     }
   }
@@ -21,7 +20,7 @@
     @include display-flex(row,center);
     @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       @include padding(0 3v);
       @include margin(0 0 2v);
       box-shadow: none;
@@ -44,6 +43,6 @@
       }
     }
 
-    @include nest-link(sm, left, null, md);
+    @include nest-link(sm, left, null, lg);
   }
 }

@@ -44,7 +44,6 @@
      */
     + label {
       @include relative;
-      cursor: pointer;
       @include padding(3v 0);
       @include text-style(md);
       -webkit-tap-highlight-color: transparent;
@@ -61,43 +60,9 @@
       text-align: left;
       direction: rtl;
 
-      /**
-       * On appelle le mixin radio-rich() pour gérer les radios riches (voir dans _tools.scss)
-       * Les radios riches permettent d'associer une image à un radio dans le conteneur du radio
-       */
-      @include radio-rich() {
-        @include padding-left(14v);
-        min-height: space(22v);
-        @include size(100%, 1px); // height 1px, fix IE vertical center
-        @include padding-top(2v);
-        @include padding-bottom(2v);
-        @include padding-right(26v);
-        background-position: calc(100% - #{space(1v)}) center;
-        background-size: space(20v) space(20v);
-        background-repeat: no-repeat;
-        @include display-flex(column, flex-end, center);
-
-        /**
-         * On applique la taille sm pour le bouton radio riche
-         */
-        @include before() {
-          @include size(4v, 4v);
-          @include absolute(null, null, null, 7v);
-        }
-
-        /**
-         * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
-         */
-        @include after(null, '') {
-          @include absolute(null, 0);
-          @include margin(1v);
-          @include padding-left(1v);
-          @include display-flex(null, center, center);
-          @include size(21v, 20v);
-          vertical-align: middle;
-          // TODO: insérer la font icon ilustrative ifi
-          font-size: space(20v); // ?
-        }
+      &,
+      & > * {
+        unicode-bidi: plaintext;
       }
 
       /**
@@ -161,66 +126,4 @@
   }
 }
 
-/**
- * Style spécifique des radios intégrés dans un fiedset
- */
-.#{$prefix}-fieldset {
-  .#{$prefix}-radio-group {
-    &:first-child {
-      input[type="radio" i] + label {
-        @include radio-rich() {
-          @include margin-top(3v);
-        }
-      }
-    }
-
-    input[type="radio" i] + label {
-      @include radio-rich() {
-        @include margin-top(2v);
-        @include margin-bottom(4v);
-      }
-    }
-
-    &:last-child {
-      input[type="radio" i] + label {
-        @include radio-rich() {
-          @include margin-bottom(7v);
-        }
-      }
-    }
-  }
-
-  /**
-   * Modificateur pour afficher les radios en ligne
-   */
-  &--inline {
-    .#{$prefix}-radio-group {
-      &:not(:last-child) {
-        input[type="radio" i] + label {
-          @include radio-rich() {
-            @include margin-right(3v);
-            @include margin-bottom(2v);
-          }
-        }
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-
-        input[type="radio" i] + label {
-          @include radio-rich() {
-            @include margin-bottom(3v);
-          }
-        }
-      }
-
-      &:first-child {
-        input[type="radio" i] + label {
-          @include radio-rich() {
-            @include margin-top(6v);
-          }
-        }
-      }
-    }
-  }
-}
+@import 'modules/radios-rich';

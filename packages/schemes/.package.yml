@@ -7,4 +7,10 @@ scripts:
   - core
 example:
   styles:
-    - buttons
+    - header
+    - footer
+    - forms
+    - radios
+  scripts:
+    - modal
+    - header

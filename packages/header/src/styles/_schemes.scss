@@ -12,7 +12,7 @@
     @include list-item {
       @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
 
-      @include respond-from(md) {
+      @include respond-from(lg) {
         &:not(:first-child) {
           @include scheme-element-border-color(g300, true, left);
         }

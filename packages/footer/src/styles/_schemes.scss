@@ -31,6 +31,7 @@
 
   &__bottom-link {
     @include scheme-element-text-color(g600, true);
+    @include scheme-element-bg-color(t-plain);
   }
 
   &__bottom-copy {

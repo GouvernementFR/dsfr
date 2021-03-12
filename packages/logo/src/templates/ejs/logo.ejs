@@ -26,6 +26,7 @@
 
 
  %>
-<a <%- includeClasses(classes); %> href="<%- href %>" title="<%- title.replace('<br>', ' ') %>" >
-    <span class="<%= prefix %>-logo__title"><%- title %></span>
-</a>
+
+<p <%- includeClasses(classes); %> href="<%- href %>" title="<%- title.replace('<br>', ' ') %>" >
+    <%- title %>
+</p>

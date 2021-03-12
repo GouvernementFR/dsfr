@@ -1,0 +1,122 @@
+#{ns(radio-rich)} {
+
+  input[type="radio"] + #{ns(label)} {
+
+    @include padding-left(14v);
+    min-height: space(22v);
+    @include size(100%, 1px); // height 1px, fix IE vertical center
+    @include padding-top(2v);
+    @include padding-bottom(2v);
+    @include padding-right(26v);
+    background-position: calc(100% - #{space(1v)}) center;
+    background-size: space(20v) space(20v);
+    background-repeat: no-repeat;
+    @include display-flex(column, flex-end, center);
+
+    /**
+      * On applique la taille sm pour le bouton radio riche
+      */
+    @include before() {
+      @include size(4v, 4v);
+      @include absolute(null, null, null, 7v);
+    }
+
+    /**
+      * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
+      */
+    @include after(null, '') {
+      @include absolute(0, 0);
+      @include margin(1v);
+      @include padding-left(1v);
+      @include display-flex(null, center, center);
+      @include size(21v, 20v);
+      vertical-align: middle;
+      // TODO: insérer la font icon ilustrative ifi
+    }
+  }
+
+  &__icon {
+    @include size(20v, 20v);
+    @include absolute(null, 1v);
+    object-fit: cover;
+    @include scheme-element-border-color(g300, true, left);
+  }
+}
+
+/**
+ * Style spécifique des radios intégrés dans un fiedset
+ */
+.#{$prefix}-fieldset {
+  .#{$prefix}-radio-rich {
+    &:first-child {
+      input[type="radio"] + label {
+        @include margin-top(3v);
+      }
+    }
+
+    input[type="radio"] + label {
+      @include margin-top(2v);
+      @include margin-bottom(4v);
+    }
+
+    &:last-child {
+      input[type="radio"] + label {
+        @include margin-bottom(7v);
+      }
+    }
+  }
+
+  /**
+   * Écart entre le text d'aide et les radios riches
+   */
+  #{ns(hint-text)} + .#{$prefix}-fieldset__content {
+    .#{$prefix}-radio-rich {
+      &:first-child {
+        input[type="radio"] + label {
+          @include margin-top(7v);
+        }
+      }
+    }
+  }
+
+  /**
+   * Modificateur pour afficher les radios en ligne
+   */
+  &--inline {
+    .#{$prefix}-radio-rich {
+      &:not(:last-child) {
+        input[type="radio"] + label {
+          @include margin-right(3v);
+          @include margin-bottom(2v);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        input[type="radio"] + label {
+          @include margin-bottom(3v);
+        }
+      }
+
+      &:first-child {
+        input[type="radio"] + label {
+          @include margin-top(6v);
+        }
+      }
+    }
+
+    /**
+     * Écart entre le text d'aide et les radios riches dans le cas des radios inline
+     */
+    #{ns(hint-text)} + .#{$prefix}-fieldset__content {
+      .#{$prefix}-radio-rich {
+        &:first-child {
+          input[type="radio"] + label {
+            @include margin-top(6v);
+          }
+        }
+      }
+    }
+  }
+}

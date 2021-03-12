@@ -17,8 +17,8 @@ switch (typeof locals.logo) {
 }
 
 if (locals.operator !== undefined) {
-  data.operator = locals.operator;
-  data.operator.alt = 'Texte alternatif logo opérateur'
+  data.brand.operator = locals.operator;
+  data.brand.operator.alt = 'Texte alternatif logo opérateur'
 }
 
 let service = {
@@ -29,36 +29,41 @@ let service = {
 
 switch (typeof locals.service) {
     case 'boolean':
-        data.navbar.service = service;
+        data.brand.service = service;
         break;
 
     case 'object':
-        data.navbar.service = { ... locals.service, ... service, alt: 'Texte alternatif logo service'};
+        data.brand.service = { ... locals.service, ... service, alt: 'Texte alternatif logo service'};
         break;
 }
 
-if (locals.shortcuts || locals.search) {
+if (locals.shortcuts !== undefined || locals.search) {
     data.tools = {};
 
-    if (locals.shortcuts) data.tools.shortcuts = {
-        items: [
-            {
-                icon: 'add-circle-line',
-                href: '#',
-                label: 'Créer un espace'
-            },
-            {
-                icon: 'lock-line',
-                href: '#',
-                label: 'Se connecter'
-            },
-            {
-                icon: 'account-line',
-                href: '#',
-                label: 'S’enregistrer'
-            }
-        ]
-    };
+    if (locals.shortcuts === true) {
+        data.tools.shortcuts = {
+            items: [
+                {
+                    icon: 'add-circle-line',
+                    href: '#',
+                    label: 'Créer un espace'
+                },
+                {
+                    icon: 'lock-line',
+                    href: '#',
+                    label: 'Se connecter'
+                },
+                {
+                    icon: 'account-line',
+                    href: '#',
+                    label: 'S’enregistrer'
+                }
+            ]
+        };
+    }
+    else if (locals.shortcuts !== undefined) {
+        data.tools.shortcuts = locals.shortcuts;
+    }
 
     if (locals.search) {
         data.tools.search = locals.search === true ?

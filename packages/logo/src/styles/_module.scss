@@ -5,58 +5,36 @@
 
 #{ns(logo)} {
   @include disable-link-style;
-
   display: inline-block;
-  @include text-style(md);
   @include padding(1em);
-
-  @include title {
-    font-size: 1.05em;
-    font-weight: bold;
-    line-height: #{(13 / 12.6)}em;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    vertical-align: middle;
-    transform: translateX(-0.1em);
-    display: inline-block;
-    @include scheme-element-text-color(g800);
-  }
+  @include font-weight(bold);
+  line-height: #{(13 / 12.6)}em;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-indent: -0.1em;
+  @include scheme-element-text-color(g800);
+  @include logo-size(md);
+  @include margin-bottom(0);
 
   @include before(block, '') {
-    @include size(2.75em, 1em);
-    @include margin-bottom(#{(1/3)}em);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 50%;
-    backface-visibility: hidden; // semble réduire le bug de l'overlay blanc autour du logo au zoom
-    $svg-marianne-colored: _color-marianne($blue-france-500, $red-marianne-500);
-    background-image: url(_svg-encode($svg-marianne-colored));
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-image: url(svg-encode($svg-marianne)), linear-gradient(90deg, $blue-france-500 0%, $blue-france-500 50%, $red-marianne-500 50%, $red-marianne-500 100%), linear-gradient(90deg, black 0%, black 100%);
+    @at-root :root#{ns-attr(mourning)} #{&} {
+      box-shadow: 0 0 0 1px var(--t-w);
+    }
   }
 
   @include after(block, '') {
-    @include size(2.625em, #{(11/6)}em);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 50%;
-    @include margin-top(#{(1/3)}em);
-    @include scheme-element-data-uri-svg(g800, url(_svg-encode($svg-motto)));
+    background-image: url(svg-encode($svg-motto));
   }
 
   &--sm {
-    @include text-style(xs);
+    @include logo-size(sm);
   }
 
   &--lg {
-    @include text-style(xl);
-  }
-}
-
-[data-mourning] {
-  #{ns(logo)} {
-    @include before {
-      $svg-mariane: _color-marianne(black, black);
-      background-image: url(_svg-encode($svg-mariane));
-      @include scheme-element-box-shadow-color(t-w, true, 0 0 0 1px $COLOR);
-    }
+    @include logo-size(lg);
   }
 }

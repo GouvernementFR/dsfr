@@ -1,0 +1,23 @@
+////
+/// Header Module : tools
+/// @group header
+////
+
+&__tools {
+  @include respond-from(lg) {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    @include padding-x(4v);
+    @include margin-left(auto);
+    flex: 1 0 auto;
+
+    #{ns(shortcuts)} + #{ns(search-bar)} {
+      @include margin-top(4v);
+    }
+  }
+
+  &#{ns(modal)} {
+    @include margin-left(auto, lg);
+  }
+}

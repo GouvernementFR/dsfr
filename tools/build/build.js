@@ -5,7 +5,7 @@ const buildStyles = require('./styles');
 const buildScripts = require('./scripts');
 const { buildExample, buildMap } = require('./example');
 const generatePackage = require('../generate/package');
-const { copyScripts, copyStyles, copyTemplates, copyFonts, copyAssets } = require('./copy');
+const { copyScripts, copyStyles, copyTemplates, copyImages, copyAssets } = require('./copy');
 const root = require('../utilities/root');
 const { lintStyles, lintScripts } = require('../test/lint');
 const { getPublicPackage } = require('../utilities/config');
@@ -16,7 +16,7 @@ const build = async (clean, minify, release) => {
     deleteDir('public');
     generateCore();
     generatePackage();
-    copyFonts();
+    copyImages();
     copyAssets();
   };
 

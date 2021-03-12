@@ -4,7 +4,7 @@
 ////
 
 #{ns(card)} {
-  @include display-flex(column);
+  @include display-flex(column-reverse);
   @include relative();
 
   #{ns(grid-row)} & {
@@ -60,12 +60,11 @@
     display: inline-flex;
     @include size(100%);
     @include margin-top(auto);
-    @include enlarge-link;
   }
 
   @include respond-from(md) {
     &--horizontal {
-      flex-direction: row;
+      flex-direction: row-reverse;
     }
 
     &--horizontal &__img {

@@ -35,18 +35,18 @@ const copyTemplates = (pck, removeOrphans) => {
   copyFiles(src, dest, ['index.ejs'], false, removeOrphans);
 };
 
-const copyFonts = (removeOrphans) => {
-  const src = root('fonts/');
-  const dest = root('public/dist/fonts/');
-
-  copyDir(src, dest, ['woff', 'woff2'], removeOrphans);
-};
-
-const copyAssets = (removeOrphans) => {
-  const src = root('assets/');
-  const dest = root('public/example/');
+const copyImages = (removeOrphans) => {
+  const src = root('examples/img');
+  const dest = root('public/example/img');
 
   copyDir(src, dest, ['jpg', 'png', 'svg'], removeOrphans);
 };
 
-module.exports = { copyStyles, copyScripts, copyTemplates, copyFonts, copyAssets };
+const copyAssets = (removeOrphans) => {
+  const src = root('assets/');
+  const dest = root('public/dist/');
+
+  copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
+};
+
+module.exports = { copyStyles, copyScripts, copyTemplates, copyImages, copyAssets };

@@ -14,7 +14,7 @@
     @include padding(0);
     @include relative;
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       flex-direction: row;
       flex-wrap: nowrap;
       @include margin(0 -4v);
@@ -26,7 +26,7 @@
     @include display-flex(column, flex-start);
     flex: 0 1 auto;
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       box-shadow: none;
 
       &--align-right {
@@ -36,7 +36,7 @@
 
     @include before(null, none);
 
-    @include respond-from(md) {
+    @include respond-from(lg) {
       &:first-child:nth-last-child(2) ~ &,
       &:first-child:nth-last-child(3) ~ &,
       &:first-child:nth-last-child(4) ~ & {
@@ -57,7 +57,7 @@
         @include margin-right(0);
       }
 
-      @include respond-from(md) {
+      @include respond-from(lg) {
         @include padding(4v);
         @include margin(0);
         @include size(auto, 100%);
@@ -80,7 +80,7 @@
       flex-direction: row-reverse;
 
       @include scheme-element-bg-color(t-plain, false, override);
-      @include padding(4v 3v 4v 4v, md);
+      @include padding(4v 3v 4v 4v, lg);
 
       @include font-icon(arrow-down-s-line, sm) {
         @include margin-left(2v);
@@ -104,7 +104,7 @@
         @include absolute(3v, null, null, -4v, 2px, 6v);
       }
 
-      @include respond-from(md) {
+      @include respond-from(lg) {
         @include before(null, none);
       }
 
