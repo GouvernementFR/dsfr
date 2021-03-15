@@ -7,7 +7,7 @@ const FS = require('fs');
 
 const displayResults = (results, darkmode) => {
   console.log(`${darkmode ? '[DARKMODE] ' : ''}Pa11y automated tests for : ${results.documentTitle} : `);
-  if(results.issues.length) {
+  if (results.issues.length) {
     console.log(`Found ${results.issues.length} error(s)\n`);
 
     results.issues.map(issue => {
@@ -15,14 +15,14 @@ const displayResults = (results, darkmode) => {
       console.log(`${issue.context}\n ${issue.message}`);
     });
 
-    process.exit(1);
-  }else {
+    // process.exit(1);
+  } else {
     console.log('No errors');
   }
 };
 
 // Run pa11y tests on each package
-const runPa11yTests = async(urls) => {
+const runPa11yTests = async (urls) => {
   const browser = await Puppeteer.launch();
 
   const tests = urls.map(async (url) => {
@@ -47,8 +47,8 @@ const runPa11yTests = async(urls) => {
       hideElements: '.is-pa11y-hidden, .code-toolbar',
       ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
       actions: [
-        'check field #rf-dark-mode-toggle-switch'
-      ],
+        'check field #theme-checkbox'
+      ]
     }).then(results => {
       displayResults(results, true);
     });
@@ -62,18 +62,18 @@ const runPa11yTests = async(urls) => {
 };
 
 // Start a local server to run tests
-(async() => {
+(async () => {
   // Start server
   const app = Express();
-  const server = app.listen('8080');
+  const server = app.listen('8081');
   app.use(Express.static('./public/'));
 
   // Get all packages
   const urls = [];
-  const packages = FS.readdirSync('./packages', {withFileTypes: true}).filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
+  const packages = FS.readdirSync('./packages', { withFileTypes: true }).filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
   packages.map(pkg => {
-    if(FS.existsSync(`./public/example/${pkg}/index.html`)) {
-      urls.push(`http://localhost:8080/example/${pkg}/`);
+    if (FS.existsSync(`./public/example/${pkg}/index.html`)) {
+      urls.push(`http://localhost:8081/example/${pkg}/`);
     }
   });
 

@@ -47,9 +47,8 @@ const generateMarkdown = (id) => {
   const p = `public/packages/${id}/README.md`;
   const filePath = root(p);
 
-  log(38, p);
-
   createFile(filePath, readme.publish());
+  log(38, p);
 };
 
 module.exports = generateMarkdown;
