@@ -66,7 +66,7 @@ const randomContent = (id) => {
   if (sampling) return content;
   content += `<div><h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
   if (Math.random() < .4) content += imgContent();
-  for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" alt="" target="_blank">link test</a>')}</p>`;
+  for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
   content += '<ul>';
   for (let i = Math.random() * 2 + 1; i > 0; i--) {
     content += '<li>list item';
