@@ -9,6 +9,10 @@
   @include relative;
   @include shadow(md);
 
+  a:not([href]) {
+    cursor: default;
+  }
+
   @include respond-from(md) {
     @include padding-right(8v);
     box-shadow: none;

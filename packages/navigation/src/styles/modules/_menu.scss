@@ -35,7 +35,7 @@
     @include margin(0);
 
     &,
-    & > #{ns(link)} {
+    & > #{ns(menu__link)} {
       @include text-style(sm);
       @include padding(3v 4v);
       text-align: left;
@@ -44,7 +44,7 @@
       @include before(null,none);
     }
 
-    & > #{ns(link)} {
+    & > #{ns(menu__link)} {
       display: block;
       @include margin(-3v -4v);
       border-radius: 0;

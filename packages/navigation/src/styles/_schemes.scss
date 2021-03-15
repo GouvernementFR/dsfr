@@ -11,17 +11,18 @@
 
     @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
 
-    & > #{ns(link)},
-    & > #{ns(btn)} {
+    & > #{ns(nav__link)},
+    & > #{ns(nav__btn)} {
       @include scheme-element-text-color(g800);
+      @include scheme-element-bg-color(t-plain, true, true);
     }
 
-    & > #{ns(link)} {
-      @include scheme-element-bg-color(t-plain, false, true); //TODO: override ?
-    }
+    // & > #{ns(nav__link)} {
+    //   @include scheme-element-bg-color(t-plain, true, after); //TODO: override ?
+    // }
 
-    & > #{ns(btn)} {
-      @include scheme-element-bg-color(t-plain, false, override);
+    & > #{ns(nav__btn)} {
+      // @include scheme-element-bg-color(t-plain, true, after);
 
       &[aria-expanded="true" i] {
         @include respond-from(lg) {
@@ -36,8 +37,8 @@
         @include scheme-element-bg-color(bf500);
       }
 
-      & > #{ns(link)},
-      & > #{ns(btn)} {
+      & > #{ns(nav__link)},
+      & > #{ns(nav__btn)} {
         @include scheme-element-text-color(bf500);
 
         @include respond-from(lg) {
@@ -61,11 +62,11 @@
   @include list-item {
 
     &,
-    & > #{ns(link)} {
+    & > #{ns(menu__link)} {
       @include scheme-element-text-color(g800, true);
     }
 
-    & > #{ns(link)} {
+    & > #{ns(menu__link)}[href] {
       @include scheme-element-bg-color(t-plain, true, true); // override ?
     }
 
@@ -79,7 +80,7 @@
 
     &--active {
       &,
-      & > #{ns(link)} {
+      & > #{ns(menu__link)} {
         @include scheme-element-text-color(bf500);
       }
 
@@ -104,11 +105,11 @@
     }
   }
 
-  // TODO: changer en rf-link--close
-  #{ns(btn) + ns(fi-close-line)} {
-    @include scheme-element-bg-color(t-plain);
-    @include scheme-element-text-color(bf500);
-  }
+  // // TODO: changer en rf-link--close
+  // #{ns(mega-menu__btn) + ns(fi-close-line)} {
+  //   @include scheme-element-bg-color(t-plain);
+  //   @include scheme-element-text-color(bf500);
+  // }
 
   &__category {
     @include respond-from(lg) {
@@ -118,17 +119,17 @@
     }
 
     &,
-    & > #{ns(link)} {
+    & > #{ns(mega-menu__link)} {
       @include scheme-element-text-color(g800);
     }
 
-    & > #{ns(link)} {
+    & > #{ns(mega-menu__link)}[href] {
       @include scheme-element-bg-color(t-plain, true, true); // TODO: override
     }
 
     &--active {
       &,
-      & > #{ns(link)} {
+      & > #{ns(mega-menu__link)} {
         @include scheme-element-text-color(bf500);
       }
 
@@ -140,17 +141,17 @@
 
   @include list-item {
     &,
-    & > #{ns(link)} {
+    & > #{ns(menu__link)} {
       @include scheme-element-text-color(g800);
     }
 
-    & > #{ns(link)} {
+    & > #{ns(menu__link)}[href] {
       @include scheme-element-bg-color(t-plain, true, true); // TODO: override
     }
 
     &--active {
       &,
-      & > #{ns(link)} {
+      & > #{ns(menu__link)} {
         @include scheme-element-text-color(bf500);
       }
 
