@@ -16,16 +16,26 @@
   }
 
   @at-root #{map-get($settings, selector)} {
-    &:focus,
-    &:focus-visible {
+    #{$focus} {
+      outline-offset: 2px;
+      outline-width: 2px;
+    }
+
+    &:focus {
       #{$focus} {
-        outline-offset: 2px;
+        outline-style: solid;
       }
     }
 
     &:focus:not(:focus-visible) {
       #{$focus} {
-        outline: none;
+        outline-style: none;
+      }
+    }
+
+    &:focus-visible {
+      #{$focus} {
+        outline-style: solid;
       }
     }
 
@@ -39,11 +49,8 @@
       $disabled: map-get($settings, disabled);
 
       #{map-get($disabled, selector)} {
-        &:focus,
-        &:focus-visible {
-          #{$focus} {
-            outline: none;
-          }
+        #{$focus} {
+          outline-style: none;
         }
 
         @if map-has-key($disabled, cursor) {
@@ -64,11 +71,8 @@
   }
 
   @at-root #{map-get($settings, selector)} {
-    &:focus,
-    &:focus-visible {
-      #{$focus} {
-        @include scheme-element-outline-color(focus, false, 2px solid $COLOR);
-      }
+    #{$focus} {
+      @include _scheme-element(focus, outline-color, true, false);
     }
   }
 }

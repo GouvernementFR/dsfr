@@ -9,24 +9,26 @@ function getSample (include) {
     sampling = false;
     let component = include(path, data);
 
+    if (locals.noSnippet) snippet = undefined;
+
     if (snippet === true) {
-      sampling = true;
-      let html =  include(path, { ...data });
-      sampling = false;
-      html = beautify(html);
+        sampling = true;
+        let html =  include(path, { ...data });
+        sampling = false;
+        html = beautify(html);
 
-      html = html.replace(/(class=".*)\s(")/gm, '$1$2');
-      html = html.replace(/&/g, '&amp;');
-      html = html.replace(/</g, '&lt;');
-      html = html.replace(/>/g, '&gt;');
+        html = html.replace(/(class=".*)\s(")/gm, '$1$2');
+        html = html.replace(/&/g, '&amp;');
+        html = html.replace(/</g, '&lt;');
+        html = html.replace(/>/g, '&gt;');
 
-      const accordion = {
-        label: 'Extrait de code',
-        collapseId: uniqueId('snippet'),
-        content: '<pre class=" language-html"><code>' + html + '</code></pre>'
-    };
+        const accordion = {
+            label: 'Extrait de code',
+            collapseId: uniqueId('snippet'),
+            content: '<pre class=" language-html"><code>' + html + '</code></pre>'
+        };
 
-    snippet = include(root + 'packages/accordions/src/templates/ejs/accordion', accordion);
+        snippet = include(root + 'packages/accordions/src/templates/ejs/accordion', accordion);
     }
 
     if (layout === undefined) layout = root + 'examples/layout';
@@ -38,15 +40,6 @@ function getSample (include) {
 }
 
 locals.getSample = getSample;
-
-let count = 0;
-
-function uniqueId (module) {
-  count++;
-  return `${module}-${count}`;
-}
-
-locals.uniqueId = uniqueId;
 
 const lorem = (insert, length) => {
   let content = 'Lorem ';
@@ -97,29 +90,33 @@ if (locals.prepend === true) { %>
 <%- include(root + '/packages/' + id + '/example/prepend') %>
 <% } %>
 
+<% if (!locals.noHeading) { %>
 <div class="<%= prefix %>-container <%= prefix %>-mt-2v">
     <a class="<%= prefix %>-link <%= prefix %>-fi-arrow-left-line <%= prefix %>-link--icon-left" href="../">Retour</a>
     <h1 class="<%= prefix %>-h1" ><%= title %> - Design System</h1>
     <p><%- description.replace(/(?:\r\n|\r|\n)/g, '<br/>') %></p>
 </div>
+<% } %>
 
 <%
 const path = dir + 'index';
 
+const data = {id:undefined};
+
 if (locals.wrapper === undefined) {
 %>
-    <%- include(path); %>
+    <%- include(path, data); %>
 <% } else if (wrapper === 'col-8') {
 %>
     <div class="<%= prefix %>-container">
         <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
             <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
-                <%- include(path); %>
+                <%- include(path, data); %>
             </div>
         </div>
     </div>
 <% } else if (wrapper === 'container') { %>
     <div class="<%= prefix %>-container">
-        <%- include(path); %>
+        <%- include(path, data); %>
     </div>
 <% } %>

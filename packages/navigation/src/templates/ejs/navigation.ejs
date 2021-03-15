@@ -32,7 +32,6 @@ attributes['aria-label'] = 'Menu principal'
         <%
             for (let i = 0; i < items.length; i++) {
                 let item = items[i];
-                item.collapseId = prefix + '-nav-item-' + i;
 
                 let classes = [prefix + '-nav__item'];
                 if (item.active === true) classes.push(prefix + '-nav__item--active');

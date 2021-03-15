@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-<%= prefix %>-reset >
+<html lang="fr" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,11 @@
   <div class="<%= prefix %>-container">
       <div class="<%= prefix %>-grid-row">
         <h1>Design System Développement</h1>
+        <ul class="<%= prefix %>-col-12">
+          <li class="<%= prefix %>-mb-1w">
+            <a href='./<%= namespace %>'><%= namespace %></a>
+          </li>
+        </ul>
         <ul class="<%= prefix %>-col-12">
           <% for (const pck of packages) { %>
           <li class="<%= prefix %>-mb-1w">
