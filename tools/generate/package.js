@@ -4,6 +4,7 @@ const { createFile } = require('../utilities/file');
 const getPackages = require('../utilities/packages');
 const { getPackageYML } = require('../utilities/config');
 const fs = require('fs');
+const log = require('../utilities/log');
 
 const EXTENSIONS = {
   styles: 'scss',
