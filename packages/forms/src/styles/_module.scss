@@ -91,7 +91,6 @@
   &__legend {
     @include margin-bottom(4v);
     @include text-style(md);
-    @include font-weight(bold);
 
     + #{ns(hint-text)} {
       @include margin-top(-2v);
