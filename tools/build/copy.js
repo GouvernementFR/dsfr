@@ -1,5 +1,6 @@
 const { copyDir, copyFile } = require('../utilities/file');
 const root = require('../utilities/root');
+const getPackages = require('../utilities/packages');
 
 const copyDirs = (src, dest, dirs, ext, removeOrphans) => {
   for (const dir of dirs) copyDir(`${src}${dir}`, `${dest}${dir}`, ext, removeOrphans);
@@ -49,4 +50,14 @@ const copyAssets = (removeOrphans) => {
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
 
-module.exports = { copyStyles, copyScripts, copyTemplates, copyImages, copyAssets };
+const copyPackages = (removeOrphans) => {
+  const packages = getPackages();
+
+  for (const pck of packages) {
+    copyStyles(pck, removeOrphans);
+    copyScripts(pck, removeOrphans);
+    copyTemplates(pck, removeOrphans);
+  }
+};
+
+module.exports = { copyStyles, copyScripts, copyTemplates, copyImages, copyAssets, copyPackages };

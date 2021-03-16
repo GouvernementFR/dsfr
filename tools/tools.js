@@ -4,6 +4,7 @@ const yargs = require('yargs');
 const build = require('./build/build');
 const buildRedirect = require('./build/redirect');
 
+
 /**
  * Build
  */
@@ -49,16 +50,17 @@ const buildBuilder = (yargs) => {
       describe: 'Compilation des scripts et styles avec sourcemaps',
       type: 'boolean'
     })
+    .option('test', {
+      alias: '-t',
+      describe: 'Applique les tests de styles et d‘accessibilité',
+      type: 'boolean'
+    })
     .option('clean', {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
     })
     .option('core', {
       describe: 'Génère les fichiers avec les variables de base dans core',
-      type: 'boolean'
-    })
-    .option('lint', {
-      describe: 'vérifie le respect de la nomenclature dans les fichiers scripts et styles',
       type: 'boolean'
     })
     .option('main', {
@@ -88,7 +90,7 @@ const buildHandler = (argv) => {
     sourcemap: argv.sourcemap,
     clean: argv.clean,
     core: argv.core,
-    lint: argv.lint,
+    test: argv.test,
     markdowns: argv.markdowns,
     main: argv.main,
     list: argv.list
@@ -117,7 +119,7 @@ const releaseHandler = (argv) => {
     examples: true,
     clean: true,
     core: true,
-    lint: true,
+    test: true,
     minify: true,
     legacy: true,
     sourcemap: true,
@@ -175,7 +177,7 @@ yargs
   )
   .command(
     'tmp',
-    'test',
+    '',
     (yargs) => {
       return yargs
         .usage('Usage: $0')

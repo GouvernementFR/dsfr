@@ -1,7 +1,6 @@
 const fs = require('fs');
 const root = require('./root');
 const path = require('path');
-const { getPackageYML } = require('../utilities/config');
 
 const getPackages = () => {
   const dir = root('packages');
