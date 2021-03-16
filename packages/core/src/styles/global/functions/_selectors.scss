@@ -57,20 +57,22 @@
 }
 
 @function selector-associate($selector, $element) {
-  $s: quote($selector);
-  @if list-separator($selector) == 'space' {
-    $selector: ($selector);
-  }
-
+  $segments: str-split(quote($selector), ',');
   $result: ();
-  @each $path in $selector {
-    $t: ();
-    $length: length($path);
-    @for $i from 1 to ($length - 1) {
-      $t: append($t, nth($path, $i));
+  @each $segment in $segments {
+    $elements: str-split($segment, ' ');
+    $r: ();
+    $length: length($elements);
+    @if $length > 1 {
+      @for $i from 1 to $length {
+        $r: append($r, unquote(nth($elements, $i)), 'space');
+      }
     }
-    $t: append($t, selector-unify(nth($path, $length), $element));
-    $result: append($result, $t, 'comma');
+    $u: selector-unify(nth($elements, -1), $element);
+    @if $u != null {
+      $r: append($r, $u, 'space');
+      $result: append($result, $r, 'comma');
+    }
   }
   @return $result;
 }

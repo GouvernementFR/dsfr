@@ -53,7 +53,7 @@
     $list: ($string);
   }
   @else {
-    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1)));
+    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1), $separator));
   }
   @return $list;
 }
