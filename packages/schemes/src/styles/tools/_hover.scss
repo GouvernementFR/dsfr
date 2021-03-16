@@ -30,10 +30,10 @@
 /// @access private
 @mixin _scheme-element-hover() {
   @media (hover: hover) and (pointer: fine) {
-    $selectors: ('&:not(a):not([disabled])', '&:not(a):not(:disabled)');
+    $selectors: ('&:not(a):not(:disabled)');
     $a: selector-associate(&, 'a[href]');
     @if length($a) {
-      $selectors: append($selectors, $a);
+      $selectors: append($selectors, $a, 'comma');
     }
     @at-root #{$selectors} {
       &:hover {
