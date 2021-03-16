@@ -55,3 +55,22 @@
 @function class-not-end-with($end) {
   @return unquote(':not([class$="#{$end}"]):not([class*="#{$end} "])');
 }
+
+@function selector-associate($selector, $element) {
+  $s: quote($selector);
+  @if list-separator($selector) == 'space' {
+    $selector: ($selector);
+  }
+
+  $result: ();
+  @each $path in $selector {
+    $t: ();
+    $length: length($path);
+    @for $i from 1 to ($length - 1) {
+      $t: append($t, nth($path, $i));
+    }
+    $t: append($t, selector-unify(nth($path, $length), $element));
+    $result: append($result, $t, 'comma');
+  }
+  @return $result;
+}

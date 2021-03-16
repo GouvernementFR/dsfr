@@ -30,7 +30,7 @@
 /// @access private
 @mixin _scheme-element-hover() {
   @media (hover: hover) and (pointer: fine) {
-    @at-root #{selector-unify(&, a)}[href],
+    @at-root #{selector-associate(&, 'a[href]')},
     &:not(a):not([disabled]),
     &:not(a):not(:disabled) {
       &:hover {
