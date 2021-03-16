@@ -66,7 +66,7 @@
       @include scheme-element-text-color(g800, true);
     }
 
-    & > #{ns(menu__link)}[href] {
+    & > #{ns(menu__link)} {
       @include scheme-element-bg-color(t-plain, true, true); // override ?
     }
 
@@ -123,7 +123,7 @@
       @include scheme-element-text-color(g800);
     }
 
-    & > #{ns(mega-menu__link)}[href] {
+    & > #{ns(mega-menu__link)} {
       @include scheme-element-bg-color(t-plain, true, true); // TODO: override
     }
 
@@ -145,7 +145,7 @@
       @include scheme-element-text-color(g800);
     }
 
-    & > #{ns(menu__link)}[href] {
+    & > #{ns(menu__link)} {
       @include scheme-element-bg-color(t-plain, true, true); // TODO: override
     }
 

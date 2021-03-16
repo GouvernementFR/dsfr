@@ -35,7 +35,7 @@
     @if length($a) {
       $selectors: append($selectors, $a);
     }
-    #{$selectors} {
+    @at-root #{$selectors} {
       &:hover {
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
       }
