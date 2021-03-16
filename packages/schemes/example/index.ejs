@@ -3,7 +3,7 @@ const sample = getSample(include);
 
 const attrModal = [];
 attrModal['aria-controls'] = prefix + '-theme-modal';
-attrModal['aria-expanded'] = false; // TODO: change aria-expanded en data-rf-openned (refacto Accessibilité)
+attrModal[`data-${prefix}-opened`] = false;
 
 const shortcut = {
   items: [
