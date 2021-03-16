@@ -15,15 +15,17 @@ $focus-settings: (
   button: (
     selector: 'button',
     cursor: pointer,
+    enabled: true,
     disabled: (
-      selector: '&[disabled]',
+      selector: '&:disabled',
       cursor: not-allowed
     )
   ),
   input: (
     selector: 'input',
+    enabled: true,
     disabled: (
-      selector: '&[disabled]',
+      selector: '&:disabled',
       cursor: not-allowed
     )
   ),
@@ -31,32 +33,29 @@ $focus-settings: (
     selector: 'input[type="checkbox" i], input[type="radio" i]',
     focus: '& + label::before',
     hover: '&, & + label',
-    cursor: pointer,
-    disabled: (
-      selector: '&[disabled]',
-      cursor: not-allowed
-    )
+    enabled: true,
+    cursor: pointer
   ),
   input-buttons: (
     selector: 'input[type="button" i], input[type="color" i], input[type="date" i], input[type="datetime-local" i], input[type="file" i], input[type="image" i], input[type="month" i], input[type="range" i], input[type="reset" i], input[type="submit" i], input[type="time" i], input[type="week" i]',
+    enabled: true,
     cursor: pointer,
-    disabled: (
-      selector: '&[disabled]',
-      cursor: not-allowed
-    )
+    no-focus: true
   ),
   select: (
     selector: 'select',
     cursor: pointer,
+    enabled: true,
     disabled: (
-      selector: '&[disabled]',
+      selector: '&:disabled',
       cursor: not-allowed
     )
   ),
   textarea: (
     selector: 'textarea',
+    enabled: true,
     disabled: (
-      selector: '&[disabled]',
+      selector: '&:disabled',
       cursor: not-allowed
     )
   ),

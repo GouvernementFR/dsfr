@@ -3,9 +3,21 @@
 /// @group core
 ////
 
+@mixin _enabled ($is-enabled) {
+  @if $is-enabled {
+    &:enabled {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
 @mixin _build-focusable($settings) {
   $focus: '&';
   $hover: '&';
+  $no-focus: map-get($settings, no-focus);
 
   @if map-has-key($settings, focus) {
     $focus: map-get($settings, focus);
@@ -16,32 +28,36 @@
   }
 
   @at-root #{map-get($settings, selector)} {
-    #{$focus} {
-      outline-offset: 2px;
-      outline-width: 2px;
-    }
-
-    &:focus {
+    @if $no-focus != true {
       #{$focus} {
-        outline-style: solid;
+        outline-offset: 2px;
+        outline-width: 2px;
       }
-    }
 
-    &:focus:not(:focus-visible) {
-      #{$focus} {
-        outline-style: none;
+      &:focus {
+        #{$focus} {
+          outline-style: solid;
+        }
       }
-    }
 
-    &:focus-visible {
-      #{$focus} {
-        outline-style: solid;
+      &:focus:not(:focus-visible) {
+        #{$focus} {
+          outline-style: none;
+        }
+      }
+
+      &:focus-visible {
+        #{$focus} {
+          outline-style: solid;
+        }
       }
     }
 
     @if map-has-key($settings, cursor) {
       #{$hover} {
-        cursor: #{map-get($settings, cursor)};
+        @include _enabled(map-get($settings, enabled)) {
+          cursor: #{map-get($settings, cursor)};
+        }
       }
     }
 
@@ -49,8 +65,10 @@
       $disabled: map-get($settings, disabled);
 
       #{map-get($disabled, selector)} {
-        #{$focus} {
-          outline-style: none;
+        @if $no-focus != true {
+          #{$focus} {
+            outline-style: none;
+          }
         }
 
         @if map-has-key($disabled, cursor) {
@@ -65,14 +83,17 @@
 
 @mixin _build-focusable-schemes($settings) {
   $focus: '&';
+  $no-focus: map-get($settings, no-focus);
 
   @if map-has-key($settings, focus) {
     $focus: map-get($settings, focus);
   }
 
   @at-root #{map-get($settings, selector)} {
-    #{$focus} {
-      @include _scheme-element(focus, outline-color, true, false);
+    @if $no-focus != true {
+      #{$focus} {
+        @include _scheme-element(focus, outline-color, true, false);
+      }
     }
   }
 }
