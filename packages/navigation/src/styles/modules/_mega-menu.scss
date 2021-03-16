@@ -73,7 +73,7 @@
     }
 
     &,
-    & > #{ns(mega-menu__link)} {
+    & > #{ns(nav__link)} {
       @include padding(3v 4v, 0);
       @include text-style(sm);
       font-weight: bold;
@@ -82,7 +82,7 @@
       @include padding(3v 2v, lg);
     }
 
-    & > #{ns(mega-menu__link)} {
+    & > #{ns(nav__link)} {
       display: block;
       @include margin(-3v -4v);
       border-radius: 0;
@@ -119,7 +119,7 @@
     @include before(null, none);
 
     &,
-    & > #{ns(mega-menu__link)} {
+    & > #{ns(nav__link)} {
       @include padding(3v 4v);
       @include padding(1v 2v, lg);
       @include text-style(sm);
@@ -129,7 +129,7 @@
       @include before(null, none);
     }
 
-    & > #{ns(mega-menu__link)} {
+    & > #{ns(nav__link)} {
       @include margin(-3v -4v);
       @include margin(-1v -2v, lg);
       display: block;
