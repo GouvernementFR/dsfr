@@ -123,20 +123,25 @@ class FocusTrap {
     let unordereds = [...this.element.querySelectorAll(UNORDEREDS)];
 
     /**
-     *  filtrage des radiobutttons dans des fieldset (la navigations d'un groupe de radio se fait à la flèche et non pas au tab
+     *  filtrage des radiobutttons de même name (la navigations d'un groupe de radio se fait à la flèche et non pas au tab
      **/
-    const fieldsets = [...this.element.querySelectorAll('fieldset')];
-    let radios = [];
+    const radios = [...document.documentElement.querySelectorAll('input[type="radio"]')];
 
-    for (const fieldset of fieldsets) {
-      // eslint-disable-next-line no-useless-call
-      if ([...fieldset.querySelectorAll('input[type="radio"]:focus')].length) radios = radios.concat([...fieldset.querySelectorAll('input[type="radio"]:not(:focus)')]);
-      else if ([...fieldset.querySelectorAll('input[type="radio"]:checked')].length) radios = radios.concat([...fieldset.querySelectorAll('input[type="radio"]:not(:checked)')]);
-      else radios = radios.concat([...fieldset.querySelectorAll('input[type="radio"]')].splice(0, 1));
+    if (radios.length) {
+      const groups = {};
+
+      for (const radio of radios) {
+        const name = radio.getAttribute('name');
+        if (groups[name] === undefined) groups[name] = new RadioButtonGroup(name);
+        groups[name].push(radio);
+      }
+
+      unordereds = unordereds.filter((unordered) => {
+        if (unordered.tagName.toLowerCase() !== 'input' || unordered.getAttribute('type').toLowerCase() !== 'radio') return true;
+        const name = unordered.getAttribute('name');
+        return groups[name].keep(unordered);
+      });
     }
-    unordereds = unordereds.filter((unordered) => {
-      return radios.indexOf(unordered) === -1;
-    });
 
     const ordereds = [...this.element.querySelectorAll(ORDEREDS)];
 
@@ -144,9 +149,7 @@ class FocusTrap {
 
     const noDuplicates = unordereds.filter((element) => ordereds.indexOf(element) === -1);
     const concateneds = ordereds.concat(noDuplicates);
-    const filtereds = concateneds.filter((element) => element.tabIndex !== '-1' && isFocusable(element, this.element));
-
-    return filtereds;
+    return concateneds.filter((element) => element.tabIndex !== '-1' && isFocusable(element, this.element));
   }
 
   untrap () {
@@ -180,6 +183,22 @@ class Stunned {
 
     if (this.inert === null) this.element.removeAttribute('inert');
     else this.element.setAttribute('inert', this.inert);
+  }
+}
+
+class RadioButtonGroup {
+  constructor (name) {
+    this.name = name;
+    this.buttons = [];
+  }
+
+  push (button) {
+    this.buttons.push(button);
+    if (button === document.activeElement || button.checked || this.selected === undefined) this.selected = button;
+  }
+
+  keep (button) {
+    return this.selected === button;
   }
 }
 
