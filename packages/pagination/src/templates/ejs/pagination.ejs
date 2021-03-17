@@ -15,8 +15,8 @@
         <%
             let disabled = pages[0].active === true;
         %>
-        <% if (locals.first !== undefined) { %><%- include('./nav', {...first, type:'first', disabled: disabled}); %><% } %>
-        <% if (locals.prev !== undefined) { %><%- include('./nav', {...prev, type:'prev', disabled: disabled}); %><% } %>
+        <% if (locals.first !== undefined) { %><%- include('./item', {...first, type:'first', disabled: disabled}); %><% } %>
+        <% if (locals.prev !== undefined) { %><%- include('./item', {...prev, type:'prev', disabled: disabled}); %><% } %>
 
         <%
             let page;
@@ -29,7 +29,7 @@
         <%
             disabled = pages[pages.length - 1].active === true;
         %>
-        <% if (locals.next !== undefined) { %><%- include('./nav', {...next, type:'next', disabled: disabled}); %><% } %>
-        <% if (locals.last !== undefined) { %><%- include('./nav', {...last, type:'last', disabled: disabled}); %><% } %>
+        <% if (locals.next !== undefined) { %><%- include('./item', {...next, type:'next', disabled: disabled}); %><% } %>
+        <% if (locals.last !== undefined) { %><%- include('./item', {...last, type:'last', disabled: disabled}); %><% } %>
     </ul>
 </nav>

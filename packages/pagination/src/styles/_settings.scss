@@ -1,0 +1,24 @@
+////
+/// Buttons Settings
+/// @group buttons
+////
+
+$pagination-sizes: (
+  md: (
+    font-size: 16,
+    min-height: 8v,
+    padding-x: 3v,
+    icon: md,
+    icon-margin-x: 2v,
+    icon-only: md,
+  )
+);
+
+$pagination-placeholder-settings:(
+  sizes: $pagination-sizes,
+  places: only left right
+);
+
+$pagination-build-settings:(
+  sizes: $pagination-sizes
+);

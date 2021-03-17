@@ -3,20 +3,72 @@
 /// @group core
 ////
 
+@function _pow10($exponent) {
+  @if $exponent == 0 {
+    @return 1;
+  }
+  $result: 1;
+  @for $i from 1 through $exponent {
+    $result: $result * 10;
+  }
+  @return $result;
+}
+
 /// Fonction de transformation d'une string en nombre intégral
 /// @access public
 /// @param {String} $value - le nombre en chaîne de caractères
-/// @param {Number} $max - maximum d'itération de la boucle à partir de laquelle l'action est abandandonnée
-@function str-to-num($value, $max:1000) {
-  @for $i from 0 to $max {
-    @if $value == quote($i) {
-      @return $i;
+@function str-to-num($value) {
+  $length: str-length($value);
+  $int: ();
+  $float: ();
+  $floating: false;
+  $neg: false;
+
+  @for $i from 1 through $length {
+    $n: str-slice($value, $i, $i);
+
+    @if $n == '.' {
+      $floating: true;
     }
-    @else if $value == quote(-$i) {
-      @return -$i;
+    @else if $n == '-' {
+      $neg: true;
+    }
+    @else {
+      @for $d from 0 through 9 {
+        @if quote($d) == $n {
+          @if $floating {
+            $float: append($float, $d);
+          }
+          @else {
+            $int: append($int, $d);
+          }
+        }
+      }
     }
   }
-  @return null;
+
+  $result: 0;
+
+  $length: length($int);
+  @if $length > 0 {
+    @for $i from 1 through $length {
+      $result: $result + (nth($int, $i) * _pow10($length - $i));
+    }
+  }
+
+  $length: length($float);
+  @if $length > 0 {
+    @for $i from 1 through $length {
+      $result: $result + (nth($float, $i) / _pow10($i));
+    }
+  }
+
+  @if $neg {
+    @return -$result;
+  }
+  @else {
+    @return $result;
+  }
 }
 
 /// Remplacement dans une chaine de caractères
@@ -53,7 +105,7 @@
     $list: ($string);
   }
   @else {
-    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1)));
+    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1), $separator));
   }
   @return $list;
 }

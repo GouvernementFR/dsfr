@@ -1,0 +1,14 @@
+////
+/// Buttons Tools
+/// @group buttons
+////
+
+@include _build-link-placeholders($pagination-placeholder-settings, pagination__link, true);
+
+@mixin build-pagination() {
+  @include _build-link($pagination-build-settings, pagination__link, true);
+}
+
+@mixin icon-pagination($place, $icon) {
+  @include icon-link(md, $place, $icon, pagination__link);
+}

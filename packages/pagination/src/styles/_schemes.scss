@@ -4,12 +4,26 @@
 ////
 
 #{ns(pagination)} {
+  @include scheme-element-text-color(g800);
+
+  &__link {
+    @include scheme-element-bg-color(t-plain, true, true);
+
+    &[aria-current] {
+      @include scheme-element-bg-color(bf500, true, true);
+      @include scheme-element-text-color(w-bf500);
+    }
+
+    &:not([aria-current]) {
+      @include disabled-link(true);
+    }
+  }
+  /*
   @include list-item {
     @include scheme-element-text-color(g800);
 
     &--active {
-      @include scheme-element-bg-color(bf500, true, true);
-      @include scheme-element-text-color(w-bf500);
+
     }
 
     &--disabled {
@@ -18,6 +32,7 @@
   }
 
   &__link {
-    @include scheme-element-bg-color(t-plain, true, true);
+
   }
+   */
 }

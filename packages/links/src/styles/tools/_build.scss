@@ -85,40 +85,42 @@
 
   $not-sided: ':not([class*="#{$module}--icon-"])';
 
-  @each $place in $places {
+  @if $places != null {
+    @each $place in $places {
 
-    @each $size, $size-settings in $sizes {
-      $placeholder: '#{$module}--icon-#{$place}--#{$size}';
+      @each $size, $size-settings in $sizes {
+        $placeholder: '#{$module}--icon-#{$place}--#{$size}';
 
-      @at-root #{&} {
-        @if $place == only {
-          @if $size == md {
-            &#{$not-sided} {
-              @include has-icon {
-                @extend %#{$placeholder};
+        @at-root #{&} {
+          @if $place == only {
+            @if $size == md {
+              &#{$not-sided} {
+                @include has-icon {
+                  @extend %#{$placeholder};
+                }
+              }
+            }
+            @else {
+              &--#{$size + $not-sided} {
+                @include has-icon {
+                  @extend %#{$placeholder};
+                }
               }
             }
           }
           @else {
-            &--#{$size + $not-sided} {
-              @include has-icon {
-                @extend %#{$placeholder};
+            @if $size == md {
+              &--icon-#{$place} {
+                @include has-icon {
+                  @extend %#{$placeholder};
+                }
               }
             }
-          }
-        }
-        @else {
-          @if $size == md {
-            &--icon-#{$place} {
-              @include has-icon {
-                @extend %#{$placeholder};
-              }
-            }
-          }
-          @else {
-            &--#{$size}#{&}--icon-#{$place} {
-              @include has-icon {
-                @extend %#{$placeholder};
+            @else {
+              &--#{$size}#{&}--icon-#{$place} {
+                @include has-icon {
+                  @extend %#{$placeholder};
+                }
               }
             }
           }
