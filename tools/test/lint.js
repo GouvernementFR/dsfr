@@ -1,5 +1,6 @@
 const stylelint = require('stylelint');
 const { ESLint } = require('eslint');
+const getPackages = require('../utilities/packages');
 const root = require('../utilities/root');
 
 const lintStyles = async (pck) => {
@@ -30,4 +31,13 @@ const lintScripts = async (pck) => {
   }
 };
 
-module.exports = { lintStyles, lintScripts };
+const lint = async (packages) => {
+  if (!packages) packages = getPackages();
+
+  for (const pck of packages) {
+    await lintStyles(pck);
+    await lintScripts(pck);
+  }
+};
+
+module.exports = { lintStyles, lintScripts, lint };

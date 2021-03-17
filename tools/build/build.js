@@ -1,17 +1,17 @@
-const getPackages = require('../utilities/packages');
+const root = require('../utilities/root');
 const generateMarkdown = require('../generate/markdown');
 const generateCore = require('../generate/core');
 const buildStyles = require('./styles');
 const buildScripts = require('./scripts');
 const { buildExample, buildList, buildMain } = require('./example');
 const generatePackage = require('../generate/package');
-const { copyScripts, copyStyles, copyTemplates, copyImages, copyAssets } = require('./copy');
-const root = require('../utilities/root');
-const { lintStyles, lintScripts } = require('../test/lint');
+const { copyImages, copyAssets, copyPackages } = require('./copy');
 const { getPublicPackage } = require('../utilities/config');
 const { deleteDir } = require('../utilities/file');
 const global = require('../../package.json');
 const log = require('../utilities/log');
+const testPa11y = require('../test/pa11y');
+const { lint } = require('../test/lint');
 
 const logPackage = (pck) => {
   log(36, pck.toLowerCase());
@@ -34,6 +34,10 @@ const build = async (settings) => {
     copyAssets();
   }
 
+  copyPackages();
+
+  if (settings.test) await lint(settings.packages);
+
   const config = getPublicPackage().config;
 
   let packages = config.styles;
@@ -43,15 +47,6 @@ const build = async (settings) => {
     const p = packages.indexOf(script);
     if (p === -1) packages = packages.splice(position, 0, script);
     else position = p + 1;
-  }
-
-  for (const pck of packages) {
-    if (settings.lint) await lintStyles(pck);
-    copyStyles(pck, true);
-
-    if (settings.lint) lintScripts(pck);
-    copyScripts(pck, true);
-    copyTemplates(pck, true);
   }
 
   let styles = config.styles;
@@ -121,7 +116,7 @@ const build = async (settings) => {
       }
     }
 
-    if (settings.main) {
+    if (settings.main || settings.clean) {
       try {
         await buildMain(root('public/example'));
       } catch (e) {
@@ -129,7 +124,7 @@ const build = async (settings) => {
       }
     }
 
-    if (settings.list) {
+    if (settings.list || settings.clean) {
       try {
         await buildList(root('public/example'));
       } catch (e) {
@@ -148,6 +143,8 @@ const build = async (settings) => {
       }
     }
   }
+
+  if (settings.test) await testPa11y(settings.packages);
 };
 
 module.exports = build;

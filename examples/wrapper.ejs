@@ -91,11 +91,7 @@ if (locals.prepend === true) { %>
 <% } %>
 
 <% if (!locals.noHeading) { %>
-<div class="<%= prefix %>-container <%= prefix %>-mt-2v">
-    <a class="<%= prefix %>-link <%= prefix %>-fi-arrow-left-line <%= prefix %>-link--icon-left" href="../">Retour</a>
-    <h1 class="<%= prefix %>-h1" ><%= title %> - Design System</h1>
-    <p><%- description.replace(/(?:\r\n|\r|\n)/g, '<br/>') %></p>
-</div>
+<%- include('heading'); %>
 <% } %>
 
 <%

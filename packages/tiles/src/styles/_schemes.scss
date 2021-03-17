@@ -5,6 +5,6 @@
 
 // TODO: remettre le hover sur le lien et son before pour limiter au cas où le lien est bien présent.
 #{ns(tile)} {
-  @include scheme-element-bg-color(beige, true, false);
+  @include scheme-element-bg-color(beige, true, true);
   @include scheme-element-box-shadow-color(bf500, true, inset 0 -(#{space(1v)}) 0 0 $COLOR);
 }

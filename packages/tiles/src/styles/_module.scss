@@ -26,7 +26,7 @@
    * Si l'image est plus grande, elle sera croppée afin de ne jamais dépasser 80x80.
    * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
    */
-  &__img-wrap {
+  &__img {
     @include display-flex(null, center, center);
     flex-shrink: 0;
     @include size(20v, 20v);

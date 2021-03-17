@@ -4,6 +4,7 @@ const { createFile } = require('../utilities/file');
 const getPackages = require('../utilities/packages');
 const { getPackageYML } = require('../utilities/config');
 const fs = require('fs');
+const log = require('../utilities/log');
 
 const EXTENSIONS = {
   styles: 'scss',
@@ -112,6 +113,7 @@ const generatePackage = () => {
   };
 
   createFile(root('public/package.json'), JSON.stringify(content, null, 4));
+  log(38, 'package.json');
 };
 
 module.exports = generatePackage;

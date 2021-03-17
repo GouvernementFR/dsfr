@@ -5,6 +5,7 @@ const { createFile } = require('../utilities/file');
 const { getPackageYML, getPublicPackage } = require('../utilities/config');
 const beautify = require('js-beautify').html;
 const getPackages = require('../utilities/packages');
+const log = require('../utilities/log');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -42,7 +43,7 @@ const buildExample = (id, dest) => {
   const beautified = beautify(html, beautyOpts);
 
   createFile(`${dest}/${id}/index.html`, beautified);
-  console.log('\x1b[38m', `${id}/index.html`, '\x1b[0m');
+  log(38, `${id}/index.html`);
 };
 
 const buildList = (dest) => {
@@ -68,7 +69,7 @@ const buildList = (dest) => {
   const beautified = beautify(html, beautyOpts);
 
   createFile(`${dest}/index.html`, beautified);
-  console.log('\x1b[38m', 'index.html', '\x1b[0m');
+  log(38, 'index.html');
 };
 
 const buildMain = (dest) => {
@@ -96,7 +97,7 @@ const buildMain = (dest) => {
   const beautified = beautify(html, beautyOpts);
 
   createFile(`${dest}/${config.namespace}/index.html`, beautified);
-  console.log('\x1b[38m', 'index.html', '\x1b[0m');
+  log(38, `${config.namespace}/index.html`);
 };
 
 module.exports = { buildExample, buildList, buildMain };
