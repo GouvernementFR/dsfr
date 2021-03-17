@@ -11,8 +11,18 @@ if (locals.type) classes.push(prefix + '-pagination__link--' + type);
 
 if (locals.href !== undefined && !locals.disabled && tag === 'a' && !locals.active) attrs.href = href;
 if (locals.title) attrs.title = title;
-if (locals.labelFromLg) classes.push(prefix + '-pagination__link--lg-label');
-if (locals.fromMd === true) classes.push(prefix + '-pagination__link--from-md');
+
+switch(true) {
+    case locals.hasLgLabel:
+        classes.push(prefix + '-pagination__link--lg-label');
+      break;
+
+    case locals.hasLabel:
+        classes.push(prefix + '-pagination__link--label');
+        break;
+}
+
+if (locals.displayedLg === true) classes.push(prefix + '-displayed-lg');
 if (locals.disabled) {
   switch(tag) {
       case 'input':

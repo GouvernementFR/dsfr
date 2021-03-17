@@ -18,21 +18,4 @@
       @include disabled-link(true);
     }
   }
-  /*
-  @include list-item {
-    @include scheme-element-text-color(g800);
-
-    &--active {
-
-    }
-
-    &--disabled {
-      @include scheme-element-text-color(g600-g500);
-    }
-  }
-
-  &__link {
-
-  }
-   */
 }
