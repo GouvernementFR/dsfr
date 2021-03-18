@@ -33,7 +33,7 @@
     &:checked {
       ~ .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
       ~ .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
-        content: attr(data-rf-checked-label) '\A' attr(data-rf-unchecked-label);
+        content: attr(data-#{$prefix}-checked-label) '\A' attr(data-#{$prefix}-unchecked-label);
       }
 
       ~ .#{$prefix}-toggle__label::after {
@@ -68,7 +68,7 @@
       @include padding-left(0);
 
       @include before {
-        content: attr(data-rf-unchecked-label) '\A' attr(data-rf-checked-label);
+        content: attr(data-#{$prefix}-unchecked-label) '\A' attr(data-#{$prefix}-checked-label);
       }
 
       + .#{$prefix}-hint-text {

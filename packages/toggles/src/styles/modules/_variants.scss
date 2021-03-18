@@ -12,7 +12,7 @@
     @include margin(0 0 0 auto);
   }
 
-  .#{$prefix}-toggle__input[data-rf-checked-label] ~ .rf-toggle__label {
+  .#{$prefix}-toggle__input[data-#{$prefix}-checked-label] ~ .#{$prefix}-toggle__label {
     @include padding-left(0);
     @include padding-right(4v);
   }
