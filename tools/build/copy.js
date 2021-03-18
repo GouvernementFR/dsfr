@@ -48,6 +48,8 @@ const copyAssets = (removeOrphans) => {
   const dest = root('public/dist/');
 
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
+
+  copyDir(root('assets/favicons'), root('public/'), ['ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
 
 const copyPackages = (removeOrphans) => {
