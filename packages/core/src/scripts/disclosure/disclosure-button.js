@@ -32,6 +32,10 @@ class DisclosureButton {
   get disclosed () {
     return this.element.getAttribute(this.disclosure.attributeName) === 'true';
   }
+
+  get hasFocus () {
+    return this.element === document.activeElement;
+  }
 }
 
 export { DisclosureButton };

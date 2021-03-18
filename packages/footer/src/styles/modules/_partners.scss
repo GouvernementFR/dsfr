@@ -20,7 +20,7 @@
     @include size(160px, 90px);
     // @include padding(2v);
     box-shadow: none;
-    @include margin(0 0 0 4v, md);
+    // @include margin(0 0 0 4v, md);
   }
 
   /**
@@ -67,12 +67,26 @@
   @include padding-top(2v);
   @include display-flex(row,null,center);
 
+  a {
+    @include margin(0 0 0 4v, md);
+  }
+
   + #{ns(footer__partners-sub)} {
     @include padding-top(4v);
 
     @include respond-from(md) {
-      justify-content: flex-end;
-      @include padding-left(12v);
+      & > ul {
+        justify-content: flex-end;
+
+        & > li {
+          @include margin(0 4v 0 0);
+
+          a {
+            @include margin-left(0);
+          }
+        }
+      }
+      @include padding-left(8v);
       @include padding-top(0);
     }
   }
@@ -88,22 +102,25 @@
  * Container des logos partenaires secondaires
  */
 &__partners-sub {
-  @include display-flex(column, center, null, wrap);
-  flex-basis: 100%;
   @include margin(4v -4v 0, sm);
-  @include margin(2v 0 0, md);
+  @include margin(2v 0 0 0, md);
 
-  @include respond-from(sm) {
-    flex-direction: row;
+  &,
+  & > ul {
+    flex-basis: 100%;
+    @include display-flex(column, center, null, wrap);
+    @include respond-from(sm) {
+      flex-direction: row;
+    }
   }
 
   /**
    * On surcharge le style du lien pour les logos secondaires
    */
-  > a {
+  #{ns(footer)}__partners-link {
     box-shadow: none;
     @include margin(0);
     @include margin-bottom(2v);
-    @include margin(0 4v 2v, sm);
+    @include margin(0 0 2v 4v, sm);
   }
 }

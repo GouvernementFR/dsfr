@@ -8,6 +8,9 @@
 
 <%
   let classes = locals.classes || [];
+  let inputAttr = locals.inputAttr || [];
+
+  if (locals.hint) inputAttr["aria-describedby"] = toggleId + "-hint-text";
 
   classes.push(prefix + '-toggle');
 
@@ -20,7 +23,7 @@
 %>
 
 <div <%- includeClasses(classes)%>>
-  <input type="checkbox" class="<%= prefix %>-toggle__input" id="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>"<% if(locals.disabled){ %>disabled="disabled"<%}%>>
+  <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%> id="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>"<% if(locals.disabled){ %>disabled="disabled"<%}%>>
   <label class="<%= prefix %>-toggle__label" for="<% if(locals.groupToggleId){ %><%= groupToggleId %><%= toggleId %><% } else {%><%= toggleId %><% } %>" <% if(locals.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- label %></label>
-  <% if(locals.hint){ %><p class="<%= prefix %>-hint-text">Texte d’aide pour clarifier l’action</p><% } %>
+  <% if(locals.hint){ %><p class="<%= prefix %>-hint-text" id="<%= toggleId %>-hint-text">Texte d’aide pour clarifier l’action</p><% } %>
 </div>

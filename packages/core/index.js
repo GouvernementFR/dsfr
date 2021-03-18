@@ -9,8 +9,6 @@ import { DisclosureButton } from './src/scripts/disclosure/disclosure-button.js'
 import { DisclosuresGroup } from './src/scripts/disclosure/disclosures-group.js';
 import { DISCLOSURE_TYPES } from './src/scripts/disclosure/disclosure-types.js';
 import { Collapse } from './src/scripts/collapse/collapse.js';
-import { CollapseButton } from './src/scripts/collapse/collapse-button.js';
-import { CollapsesGroup } from './src/scripts/collapse/collapses-group.js';
 import { Equisized } from './src/scripts/manipulation/size.js';
 
 api.ns = ns;
@@ -24,6 +22,4 @@ api.DisclosureButton = DisclosureButton;
 api.DisclosuresGroup = DisclosuresGroup;
 api.DISCLOSURE_TYPES = DISCLOSURE_TYPES;
 api.Collapse = Collapse;
-api.CollapseButton = CollapseButton;
-api.CollapsesGroup = CollapsesGroup;
 api.Equisized = Equisized;

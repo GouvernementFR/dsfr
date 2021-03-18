@@ -1,9 +1,10 @@
 import { Disclosure } from '../disclosure/disclosure.js';
 import { DisclosuresGroup } from '../disclosure/disclosures-group.js';
-import { CollapseButton } from './collapse-button.js';
-import { CollapsesGroup } from './collapses-group.js';
 import { COLLAPSE_CLASS } from './constants.js';
 import { DISCLOSURE_TYPES } from '../disclosure/disclosure-types.js';
+
+const collapses = [];
+const ascendants = {};
 
 /**
  * Tab coorespond au panel d'un élement Tabs (tab panel)
@@ -13,20 +14,23 @@ import { DISCLOSURE_TYPES } from '../disclosure/disclosure-types.js';
 class Collapse extends Disclosure {
   constructor (element) {
     super(element);
+    collapses.push(this);
 
     element.addEventListener('transitionend', this.transitionend.bind(this));
   }
 
-  group () {
-    for (const ascendant in CollapsesGroup.ascendants) {
+  gatherByAscendants () {
+    if (this.group) return;
+
+    for (const ascendant in ascendants) {
       let element = this.element.parentElement;
 
       while (element) {
         if (element.classList.contains(ascendant)) {
-          if (typeof CollapsesGroup.ascendants[ascendant] === 'string') {
-            DisclosuresGroup.groupByParent(this, CollapsesGroup, CollapsesGroup.ascendants[ascendant]);
+          if (typeof ascendants[ascendant] === 'string') {
+            DisclosuresGroup.groupByParent(this, DisclosuresGroup, ascendants[ascendant]);
           } else {
-            DisclosuresGroup.groupByParent(this, CollapsesGroup.ascendants[ascendant]);
+            DisclosuresGroup.groupByParent(this, ascendants[ascendant]);
           }
           return;
         }
@@ -34,18 +38,20 @@ class Collapse extends Disclosure {
         element = element.parentElement;
       }
     }
-
-    super.group();
   }
 
-  get GroupConstructor () { return CollapsesGroup; }
-
-  buttonFactory (element) {
-    return new CollapseButton(element, this);
+  gather () {
+    this.gatherByAscendants();
+    super.gather();
   }
 
   static get type () { return DISCLOSURE_TYPES.expand; }
   static get selector () { return COLLAPSE_CLASS; }
+
+  static register (ascendant, groupSelector) {
+    ascendants[ascendant] = groupSelector;
+    for (const collapse of collapses) collapse.gatherByAscendants();
+  }
 
   transitionend (e) {
     if (!this.disclosed) this.element.style.maxHeight = '';
@@ -58,22 +64,13 @@ class Collapse extends Disclosure {
     this.element.style.setProperty('--collapse', -height + 'px');
     this.element.style.setProperty('--collapser', '');
 
+    if (!value && !initial) this.focus();
+
     window.requestAnimationFrame(() => super.apply(value, initial));
   }
 
   reset () {
-    this.apply(false);
-  }
-
-  get buttonHasFocus () {
-    if (this.buttons.some((button) => { return button.hasFocus; })) return true;
-    return false;
-  }
-
-  get hasFocus () {
-    if (this.element === document.activeElement) return true;
-    if (this.element.querySelectorAll(':focus').length > 0) return true;
-    return this.buttonHasFocus;
+    this.apply(false, true);
   }
 }
 

@@ -1,11 +1,16 @@
 <div class="<%= prefix %>-header__navbar">
-    <% if (locals.tools && locals.tools.id) { %>
+    <%
+        const attrs = {};
+        attrs[`data-${prefix}-opened`] = false;
+
+        if (locals.tools && locals.tools.id) {
+    %>
     <%- include('../../../../buttons/src/templates/ejs/button', {
         classes: [prefix + '-btn--search'],
         title: 'Rechercher',
         attributes: {
+            ...attrs,
             'aria-controls': tools.id,
-            'aria-expanded': 'false'
         },
         label: 'Rechercher'
     }); %>
@@ -16,8 +21,8 @@
         classes: [prefix + '-btn--menu'],
         title: 'Ouvrir le menu',
         attributes: {
+            ...attrs,
             'aria-controls': navigation.id,
-            'aria-expanded': 'false',
             'aria-haspopup': 'menu'
         },
         label: 'Ouvrir le menu'

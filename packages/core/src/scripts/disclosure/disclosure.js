@@ -13,19 +13,21 @@ class Disclosure {
     this.disclosed = null;
     this._selector = this.constructor.selector;
     this.modifier = this._selector + '--' + this.type.id;
-    this.attributeName = this.type.aria ? 'aria-' + this.type.id : ns.attr(this.type.id);
+    this.attributeName = this.type.ariaState ? 'aria-' + this.type.id : ns.attr(this.type.id);
 
-    const buttons = document.querySelectorAll(this.type.aria ? `[aria-controls="${this.id}"]` : ns.attr.selector('controls', this.id));
+    const buttons = document.querySelectorAll(this.type.ariaControls ? `[aria-controls="${this.id}"]` : ns.attr.selector('controls', this.id));
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
     this.disclosed = this.disclosed === true;
     this.apply(this.disclosed, true);
 
-    this.group();
+    this.gather();
   }
 
-  group () {
+  gather () {
+    if (this.group) return;
+
     DisclosuresGroup.groupById(this, this.GroupConstructor);
     DisclosuresGroup.groupByParent(this, this.GroupConstructor);
   }
@@ -101,14 +103,19 @@ class Disclosure {
     this.group = group;
   }
 
-  get hasFocus () {
-    if (this.element === document.activeElement) return true;
-    if (this.element.querySelectorAll(':focus').length > 0) return true;
+  get buttonHasFocus () {
     if (this.buttons.some((button) => { return button.hasFocus; })) return true;
     return false;
   }
 
+  get hasFocus () {
+    if (this.element === document.activeElement) return true;
+    if (this.element.querySelectorAll(':focus').length > 0) return true;
+    return this.buttonHasFocus;
+  }
+
   focus () {
+    console.log(this.buttons);
     for (let i = 0; i < this.buttons.length; i++) {
       const button = this.buttons[i];
       if (button.hasAttribute) {

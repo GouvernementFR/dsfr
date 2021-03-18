@@ -62,7 +62,20 @@
 
  if (locals.secondary === true) btnClasses.push(prefix +'-btn--secondary');
 
- if (locals.disabled === true) btnAttrs['disabled'] = '';
+ if (locals.disabled === true) {
+   if (tag === 'button') btnAttrs['disabled'] = '';
+ } else if (tag === 'a') {
+   btnAttrs.href = locals.href || '[url - à modifier]';
+  switch (true) {
+   case locals.blank:
+   btnAttrs.target = '_blank';
+   break;
+
+   case locals.self:
+   btnAttrs.target = '_self';
+   break;
+  }
+ }
 
  if (locals.type !== undefined) btnAttrs['type'] = type;
 

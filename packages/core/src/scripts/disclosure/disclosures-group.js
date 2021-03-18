@@ -73,7 +73,7 @@ class DisclosuresGroup {
 
   set index (value) {
     if (value < -1 || value >= this.length || this._index === value) return;
-    if (this.current !== null) this.current.apply(false);
+    if (this.current !== null) this.current.apply(false, true);
     this._index = value;
     this._current = this._index > -1 ? this.members[this._index] : null;
     if (this.current !== null) this.current.apply(true);
@@ -84,6 +84,11 @@ class DisclosuresGroup {
 
   set current (member) {
     this.index = this.members.indexOf(member);
+  }
+
+  get hasFocus () {
+    if (this.current === undefined) return null;
+    return this.current.hasFocus;
   }
 
   apply () {}

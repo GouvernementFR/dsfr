@@ -9,19 +9,27 @@
 <% eval(include('../../../../core/index.ejs')); %>
 <%
 let groupClasses = [prefix + '-checkbox-group'];
+let describedby = [];
+let checkboxAttrs = [];
 
-if (locals.error !== undefined) groupClasses.push(prefix + '-checkbox-group--error');
-if (locals.valid !== undefined) groupClasses.push(prefix + '-checkbox-group--valid');
-//if (locals.disabled !== undefined) groupClasses.push(prefix + '-checkbox-group--disabled');
+if (locals.error !== undefined) {
+    groupClasses.push(prefix + '-checkbox-group--error');
+    describedby.push('checkboxes-error-desc-error');
+}
+
+if (locals.valid !== undefined) {
+    groupClasses.push(prefix + '-checkbox-group--valid');
+    describedby.push('checkboxes-valid-desc-valid');
+}
+if (describedby.length > 0) checkboxAttrs['aria-describedby'] = describedby.join(' ');
 
 switch(locals.size) {
     case 'sm' :
         groupClasses.push(prefix + '-checkbox-group--sm');
         break;
-
 }
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./checkbox'); %>
+    <%- include('./checkbox', {checkboxAttrs: checkboxAttrs}); %>
 </div>

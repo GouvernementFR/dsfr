@@ -7,37 +7,31 @@
 * nav
 **/
 #{ns(nav)} {
-  @include list-item {
+  &__link,
+  &__btn {
+    @include scheme-element-text-color(g800);
+    @include scheme-element-bg-color(t-plain, true, true);
+  }
 
-    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
-
-    & > #{ns(link)},
-    & > #{ns(btn)} {
-      @include scheme-element-text-color(g800);
-    }
-
-    & > #{ns(link)} {
-      @include scheme-element-bg-color(t-plain, false, true); //TODO: override ?
-    }
-
-    & > #{ns(btn)} {
-      @include scheme-element-bg-color(t-plain, false, override);
-
-      &[aria-expanded="true" i] {
-        @include respond-from(lg) {
-          @include scheme-element-text-color(bf500-plain);
-          @include scheme-element-bg-color(bf200-bf300);
-        }
+  &__btn {
+    &[aria-expanded="true" i] {
+      @include respond-from(lg) {
+        @include scheme-element-text-color(bf500-plain);
+        @include scheme-element-bg-color(bf200-bf300);
       }
     }
+  }
+
+  @include list-item {
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
 
     &--active {
       @include before {
         @include scheme-element-bg-color(bf500);
       }
 
-      & > #{ns(link)},
-      & > #{ns(btn)} {
+      & > #{ns(nav__link)},
+      & > #{ns(nav__btn)} {
         @include scheme-element-text-color(bf500);
 
         @include respond-from(lg) {
@@ -59,16 +53,6 @@
   }
 
   @include list-item {
-
-    &,
-    & > #{ns(link)} {
-      @include scheme-element-text-color(g800, true);
-    }
-
-    & > #{ns(link)} {
-      @include scheme-element-bg-color(t-plain, true, true); // override ?
-    }
-
     @include respond-from(lg) {
       &:not(:last-child) {
         @include after {
@@ -78,11 +62,6 @@
     }
 
     &--active {
-      &,
-      & > #{ns(link)} {
-        @include scheme-element-text-color(bf500);
-      }
-
       @include before {
         background-color: currentColor;
       }
@@ -104,11 +83,11 @@
     }
   }
 
-  // TODO: changer en rf-link--close
-  #{ns(btn) + ns(fi-close-line)} {
-    @include scheme-element-bg-color(t-plain);
-    @include scheme-element-text-color(bf500);
-  }
+  // // TODO: changer en rf-link--close
+  // #{ns(mega-menu__btn) + ns(fi-close-line)} {
+  //   @include scheme-element-bg-color(t-plain);
+  //   @include scheme-element-text-color(bf500);
+  // }
 
   &__category {
     @include respond-from(lg) {
@@ -117,18 +96,9 @@
       }
     }
 
-    &,
-    & > #{ns(link)} {
-      @include scheme-element-text-color(g800);
-    }
-
-    & > #{ns(link)} {
-      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
-    }
-
     &--active {
       &,
-      & > #{ns(link)} {
+      & > #{ns(nav__link)} {
         @include scheme-element-text-color(bf500);
       }
 
@@ -139,18 +109,9 @@
   }
 
   @include list-item {
-    &,
-    & > #{ns(link)} {
-      @include scheme-element-text-color(g800);
-    }
-
-    & > #{ns(link)} {
-      @include scheme-element-bg-color(t-plain, true, true); // TODO: override
-    }
-
     &--active {
       &,
-      & > #{ns(link)} {
+      & > #{ns(nav__link)} {
         @include scheme-element-text-color(bf500);
       }
 

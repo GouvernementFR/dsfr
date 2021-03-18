@@ -6,11 +6,11 @@
             <%
                 if (locals.leader !== undefined) {
             %>
-            <div class="<%= prefix %>-col-12 rf-mb-4v" >
+            <div class="<%= prefix %>-col-12 <%= prefix %>-mb-4v" >
                 <%
                     if (leader.title !== undefined) {
                 %>
-                <h4 class="<%= prefix %>-h4 rf-mb-2v"><%= leader.title %></h4>
+                <h4 class="<%= prefix %>-h4 <%= prefix %>-mb-2v"><%= leader.title %></h4>
                 <% } %>
 
                 <%
@@ -45,12 +45,12 @@
                     let classes = [prefix + '-mega-menu__category'];
                     if (category.active) classes.push(prefix + '-mega-menu__category--active');
                 %>
-                <div <%- includeClasses(classes); %>>
-                    <% if (!category.active && category.href) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                <h5 <%- includeClasses(classes); %>>
+                    <a class="<%= prefix%>-nav__link" <%- category.active ? 'aria-current="true"' : 'href="#" target="_self"' %>>
                         <%- category.name %>
-                    <% if (!category.active && category.href) { %></a><% } %>
+                    </a>
+                </h5>
 
-                </div>
                 <ul class="<%= prefix %>-mega-menu__list" >
                     <%
                     for (let i = 0; i < category.items.length; i++) {
@@ -60,9 +60,9 @@
                         if (item.active) classes.push(prefix + '-mega-menu__item--active');
                     %>
                     <li <%- includeClasses(classes); %>>
-                        <% if (!item.active) { %><a class="<%= prefix%>-link" href="#" target="_self" ><% } %>
+                        <a class="<%= prefix%>-nav__link" <%- item.active ? 'aria-current="page"' : 'href="#" target="_self"' %>>
                             <%- item.label %>
-                        <% if (!item.active) { %></a><% } %>
+                        </a>
                     </li>
                     <% } %>
                 </ul>

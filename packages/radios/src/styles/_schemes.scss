@@ -57,11 +57,11 @@
 
   input[type="radio"]:not(:checked) + label {
     @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
-    @include scheme-element-bg-color(w, true, true);
+    @include scheme-element-bg-color(w, true);
   }
 
   input[type="radio"]:checked + label {
-    @include scheme-element-bg-color(w, false, false);
+    @include scheme-element-bg-color(w, false);
     @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
 
     @include before() {

@@ -23,5 +23,6 @@
 
   &__player {
     @extend %media-overlay-cover;
+    border: 0;
   }
 }

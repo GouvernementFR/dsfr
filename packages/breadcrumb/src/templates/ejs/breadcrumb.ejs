@@ -15,7 +15,7 @@
 const breadcrumbId = uniqueId('breadcrumb');
 %>
 
-<nav class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
+<nav role="navigation" class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
     <button class="<%= prefix %>-breadcrumb__button" aria-expanded="false" aria-controls="<%= breadcrumbId %>"  >Voir le fil d’Ariane</button>
     <ol class="<%= prefix %>-collapse <%= prefix %>-breadcrumb__list" id="<%= breadcrumbId %>">
         <%

@@ -9,14 +9,6 @@
  */
 #{ns-group(radio)} {
   /**
-   * Style du texte d'aide
-   */
-  #{ns(hint-text)} {
-    @include margin-left(8v);
-    @include margin-top(-3v);
-  }
-
-  /**
    * Dans le cas d'un groupe de radios, on supprime l'espacement du premier groupe
    */
   &:first-child {

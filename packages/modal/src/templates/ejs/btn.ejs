@@ -8,7 +8,7 @@
 
 <%
     const attributes = {};
-    attributes['aria-expanded'] = locals.opened === true;
+    attributes[`data-${prefix}-opened`] = locals.opened === true;
     attributes['aria-controls'] = locals.id;
 
 %>

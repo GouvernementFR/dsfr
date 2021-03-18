@@ -1,12 +1,20 @@
 export const DISCLOSURE_TYPES = {
   expand: {
     id: 'expanded',
-    aria: true,
+    ariaState: true,
+    ariaControls: true,
     canConceal: true
   },
   select: {
     id: 'selected',
-    aria: true,
+    ariaState: true,
+    ariaControls: true,
     canConceal: false
+  },
+  opened: {
+    id: 'opened',
+    ariaState: false,
+    ariaControls: true,
+    canConceal: true
   }
 };

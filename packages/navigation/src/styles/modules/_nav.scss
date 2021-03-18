@@ -8,6 +8,14 @@
   @include disable-list-style;
   @include z-index(nav, true);
 
+  a:not([href]) {
+    cursor: default;
+  }
+
+  > #{ns(link)}--close {
+    display: none;
+  }
+
   @include list {
     @include display-flex(column);
     @include margin(0);
@@ -44,8 +52,8 @@
       }
     }
 
-    & > #{ns(link)},
-    & > #{ns(btn)} {
+    & > #{ns(nav__link)},
+    & > #{ns(nav__btn)} {
       @include display-flex(null, center, space-between);
       @include size(100%);
       @include padding(3v 0);
@@ -68,7 +76,7 @@
       }
     }
 
-    & > #{ns(link)} {
+    & > #{ns(nav__link)} {
       flex-direction: row;
       box-shadow: none;
       border-radius: 0;
@@ -76,10 +84,8 @@
       @include before(null, none);
     }
 
-    & > #{ns(btn)} {
+    & > #{ns(nav__btn)} {
       flex-direction: row-reverse;
-
-      @include scheme-element-bg-color(t-plain, false, override);
       @include padding(4v 3v 4v 4v, lg);
 
       @include font-icon(arrow-down-s-line, sm) {
@@ -108,7 +114,7 @@
         @include before(null, none);
       }
 
-      & > #{ns(link)} {
+      & > #{ns(nav__link)} {
         pointer-events: none;
         cursor: default;
       }

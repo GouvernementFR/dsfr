@@ -7,7 +7,7 @@ import {
   NAVIGATION_ITEM_RIGHT_CLASS
 } from './constants';
 
-class Navigation extends api.CollapsesGroup {
+class Navigation extends api.DisclosuresGroup {
   constructor (id, element) {
     super(id, element);
 

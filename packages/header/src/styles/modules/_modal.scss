@@ -10,7 +10,7 @@
   @include scheme-element-bg-color(w-g750);
   overflow: auto;
 
-  &:not(#{dse(modal)}--expanded) {
+  &:not(#{dse(modal)}--opened) {
     display: flex;
     @include respond-from(lg) {
       display: block;
@@ -42,6 +42,7 @@
 
   > #{ns(link)}--close {
     @include absolute(4v,4v);
+    display: flex;
     @include respond-from(lg) {
       display: none;
     }

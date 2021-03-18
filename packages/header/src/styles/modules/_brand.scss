@@ -6,6 +6,7 @@
 &__brand {
   @include display-flex(row, center, flex-start, wrap);
   @include margin-y(-4v, lg);
+  @include size(100%);
 
   @include respond-from(lg) {
     flex-wrap: nowrap;

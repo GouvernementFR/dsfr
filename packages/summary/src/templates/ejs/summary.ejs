@@ -13,8 +13,9 @@ let link = {
 }
 %>
 
-<nav class="<%= prefix %>-summary" role="navigation" aria-label="Sommaire">
-  <div class="<%= prefix %>-summary__title">Sommaire</div>
+<nav class="<%= prefix %>-summary" role="navigation" aria-labelledby="<%= prefix %>-summary-title">
+  <div class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title">Sommaire</div>
+
   <ol class="<%= prefix %>-summary__list">
     <%
       for (let i = 1; i < 9; i++) {

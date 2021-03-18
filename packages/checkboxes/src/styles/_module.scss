@@ -83,14 +83,6 @@
   }
 
   /**
-   * Texte d'aide
-   */
-  #{ns(hint-text)} {
-    @include margin-left(8v);
-    @include margin-top(-3v);
-  }
-
-  /**
    * Texte de validation et d'erreur
    */
   #{ns(error-text)},
@@ -112,10 +104,6 @@
           left: 0;
         }
       }
-    }
-
-    #{ns(hint-text)} {
-      @include margin-left(6v);
     }
   }
 

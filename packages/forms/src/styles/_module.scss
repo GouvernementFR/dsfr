@@ -92,8 +92,10 @@
     @include margin-bottom(4v);
     @include text-style(md);
 
-    + #{ns(hint-text)} {
-      @include margin-top(-2v);
+    #{ns(hint-text)} {
+      @include margin-top(2v);
+      @include margin-bottom(0);
+      @include font-weight(regular);
     }
   }
 

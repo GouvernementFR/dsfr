@@ -2,7 +2,7 @@
 
 const yargs = require('yargs');
 const build = require('./build/build');
-const buildRedirect = require('./build/redirect');
+const buildRouting = require('./generate/routing');
 
 
 /**
@@ -77,7 +77,7 @@ const buildBuilder = (yargs) => {
     });
 };
 
-const buildHandler = (argv) => {
+const buildHandler = async (argv) => {
   const all = argv.scripts === undefined && argv.styles === undefined && argv.examples === undefined;
 
   const settings = {
@@ -96,7 +96,7 @@ const buildHandler = (argv) => {
     list: argv.list
   };
 
-  build(settings);
+  await build(settings);
 };
 
 /**
@@ -112,8 +112,8 @@ const releaseBuilder = (yargs) => {
     );
 };
 
-const releaseHandler = (argv) => {
-  build({
+const releaseHandler = async (argv) => {
+  await build({
     styles: true,
     scripts: true,
     examples: true,
@@ -141,8 +141,8 @@ const deployBuilder = (yargs) => {
     );
 };
 
-const deployHandler = (argv) => {
-  build({
+const deployHandler = async (argv) => {
+  await build({
     styles: true,
     scripts: true,
     examples: true,
@@ -152,7 +152,7 @@ const deployHandler = (argv) => {
     main: true,
     list: true
   });
-  buildRedirect();
+  await buildRouting();
 };
 
 yargs

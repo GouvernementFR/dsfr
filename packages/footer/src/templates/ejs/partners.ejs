@@ -6,12 +6,16 @@
       </a>
   </div>
   <div class="<%= prefix %>-footer__partners-sub">
+    <ul>
       <%
       for (let i = 0; i < subPartners.length; i++) {
-    %>
-      <a class="footer__partners-link" href="#">
-        <img class="<%= prefix %>-footer__logo" src="<%= subPartners[i].src %>" alt="<%= subPartners[i].alt %>">
-      </a>
+      %>
+      <li>
+        <a class="<%= prefix %>-footer__partners-link" href="#">
+          <img class="<%= prefix %>-footer__logo" src="<%= subPartners[i].src %>" alt="<%= subPartners[i].alt %>">
+        </a>
+      </li>
     <% } %>
+    </ul>
   </div>
 </div>

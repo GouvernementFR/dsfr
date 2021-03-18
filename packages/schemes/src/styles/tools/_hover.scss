@@ -30,9 +30,12 @@
 /// @access private
 @mixin _scheme-element-hover() {
   @media (hover: hover) and (pointer: fine) {
-    @at-root #{selector-unify(&, a)}[href],
-    &:not(a):not([disabled]),
-    &:not(a):not(:disabled) {
+    $selectors: ('&:not(a):not(:disabled)');
+    $a: selector-associate(&, 'a[href]');
+    @if length($a) {
+      $selectors: append($selectors, $a, 'comma');
+    }
+    @at-root #{$selectors} {
       &:hover {
         background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
       }
