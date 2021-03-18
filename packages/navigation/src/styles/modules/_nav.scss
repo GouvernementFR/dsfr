@@ -12,6 +12,10 @@
     cursor: default;
   }
 
+  > #{ns(link)}--close {
+    display: none;
+  }
+
   @include list {
     @include display-flex(column);
     @include margin(0);
