@@ -84,7 +84,7 @@
       // Gutters
       @if $gutter != null {
         #{ns(grid-row--gutters)} {
-          @include margin((-$gutter) (-$gutter) ($gutter));
+          @include margin(-$gutter);
 
           > #{class-start-with(ns(col-, ''))},
           > #{ns(col)} {

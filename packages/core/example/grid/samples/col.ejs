@@ -1,0 +1,48 @@
+<%
+    const classes = locals.classes || [];
+
+    switch(typeof locals.col) {
+        case 'object':
+          for (let bp in col) classes.push(`${prefix}-col-${bp !== 'first' ? bp + '-': ''}${col[bp]}`)
+          break;
+
+        case 'string':
+        case 'number':
+            classes.push(`${prefix}-col-${col}`)
+          break;
+
+        default:
+            classes.push(`${prefix}-col`);
+    }
+
+    if (locals.offset) classes.push(`${prefix}-col-offset-${offset}`);
+%>
+<div <%- includeClasses(classes); %>>
+    <% if (locals.content === true) { %>
+        <div class="col-demo"><%- lorem() %></div>
+    <% } else if (locals.content !== undefined) { %>
+        <% if (content.indexOf('<') === -1) { %>
+            <div class="col-demo"><%- locals.content %></div>
+        <% } else { %>
+            <%- locals.content %>
+        <% } %>
+    <% } else if (locals.col) {
+        let content = '';
+        switch(typeof col) {
+            case 'object':
+                let s = '';
+                for (let bp in col) {
+                  content += s + (bp !== 'first' ? `${bp}-` : '' ) + `${col[bp]}`;
+                  s = ' / ';
+                }
+                break;
+
+            case 'string':
+            case 'number':
+              content = `${col}/12`;
+              break;
+        }
+    %>
+        <div class="col-demo"><%= content %></div>
+    <% } %>
+</div>

@@ -1,0 +1,7 @@
+<%
+ const containerClasses = [`${prefix}-container${locals.fluid ? '--fluid' : '' }`];
+ %>
+
+<div <%- includeClasses(containerClasses); %>>
+    <%- include('./grid'); %>
+</div>

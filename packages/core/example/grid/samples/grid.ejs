@@ -1,0 +1,14 @@
+<%
+ const classes = locals.classes || [];
+ classes.push(`${prefix}-grid-row`);
+ if (locals.gutters) classes.push(`${prefix}-grid-row--gutters`);
+ %>
+
+<div <%- includeClasses(classes); %>>
+    <% for (let col of locals.cols) {
+        if (isNaN(col.length)) col.length = 1;
+        locals.classes = undefined;
+    %>
+        <%- include('./cols', col); %>
+    <% } %>
+</div>
