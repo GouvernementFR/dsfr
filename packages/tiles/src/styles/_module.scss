@@ -11,7 +11,7 @@
    * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
    */
   #{ns(grid-row)} & {
-    height: 100%;
+    @include size(null, 100%);
   }
 
   &__link {

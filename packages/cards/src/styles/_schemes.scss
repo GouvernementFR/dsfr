@@ -4,7 +4,11 @@
 ////
 
 #{ns(card)} {
-  @include scheme-element-bg-color(beige, true, true);
+  @include scheme-element-bg-color(beige, true, false);
+
+  &#{ns(enlarge-link)} {
+    @include scheme-element-bg-color(beige, true, true);
+  }
 
   &:not(&--no-arrow) &__body {
     @include after {

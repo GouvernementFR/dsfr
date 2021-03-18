@@ -8,23 +8,15 @@
  **/
 &--horizontal {
   flex-direction: row-reverse;
+  align-items: center;
 
-  #{ns(tile__img-wrap)} {
+  #{ns(tile__img)} {
     @include size(12v, 12v);
-    @include margin(auto 0 auto 6v);
-
-    + #{ns(tile__body)} {
-      min-height: space(12v);
-      text-align: left;
-
-      @include respond-from(md) {
-        min-height: space(20v);
-      }
-    }
+    @include margin(6v 0 6v 6v);
 
     @include respond-from(md) {
       @include size(20v, 20v);
-      @include margin(auto 0 auto 8v);
+      @include margin(8v 0 8v 8v);
     }
   }
 
@@ -33,6 +25,7 @@
     @include padding(0);
     @include margin(6v);
     @include margin(8v, md);
+    text-align: left;
   }
 }
 
@@ -41,19 +34,11 @@
  **/
 &--vertical-md {
   flex-direction: row-reverse;
+  align-items: center;
 
-  #{ns(tile__img-wrap)} {
+  #{ns(tile__img)} {
     @include size(12v, 12v);
-    @include margin(auto 0 auto 6v);
-
-    + #{ns(tile__body)} {
-      min-height: space(12v);
-
-      @include respond-from(md) {
-        min-height: initial;
-        text-align: center;
-      }
-    }
+    @include margin(6v 0 6v 6v);
 
     @include respond-from(md) {
       @include size(20v, 20v);
@@ -77,6 +62,7 @@
 
   @include respond-from(md) {
     flex-direction: column-reverse;
+    align-items: initial;
   }
 }
 
@@ -86,7 +72,7 @@
 &--horizontal-md {
   flex-direction: column-reverse;
 
-  #{ns(tile__img-wrap)} {
+  #{ns(tile__img)} {
     @include size(20v, 20v);
     @include margin(8v auto 0);
 
@@ -101,7 +87,7 @@
     }
 
     @include respond-from(md) {
-      @include margin(auto 0 auto 8v);
+      @include margin(8v 0 8v 8v);
     }
   }
 
@@ -121,5 +107,6 @@
 
   @include respond-from(md) {
     flex-direction: row-reverse;
+    align-items: center;
   }
 }
