@@ -1,0 +1,7 @@
+
+<% let classes = [prefix + '-tabs__panel']
+if(locals.isActive) classes.push(prefix + '-tabs__panel--selected');
+%>
+<div id="<%= id %>-panel" <%- includeClasses(classes) %> role="tabpanel" aria-labelledby="<%= id %>" tabindex="0" >
+  <%- content %>
+</div>

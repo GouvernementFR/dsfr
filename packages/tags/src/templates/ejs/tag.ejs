@@ -69,7 +69,7 @@ if (locals.disabled === true) {
             <% if(locals.clickable) { %>
                 <a <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></a>
             <% } else { %>
-                <span <%- includeClasses(tagClasses)%>><%- label %></span>
+                <p <%- includeClasses(tagClasses)%>><%- label %></p>
             <% } %>
         </li>
     <% } %>
@@ -80,6 +80,6 @@ if (locals.disabled === true) {
     <% } else if (locals.button) { %>
         <button <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></button>
     <% } else { %>
-        <span <%- includeClasses(tagClasses)%>><%- label %></span>
+        <p <%- includeClasses(tagClasses)%>><%- label %></p>
     <% } %>
 <% } %>

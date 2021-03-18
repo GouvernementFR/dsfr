@@ -12,13 +12,13 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let id = uniqueId('tabpanel');
+
 let btn = {
   attributes: {
     tabindex: locals.isActive ? '0' : '-1',
     role: 'tab',
     'aria-selected': locals.isActive === true,
-    'aria-controls': id
+    'aria-controls': id + "-panel"
   },
   classes: [prefix + '-tabs__tab']
 }
@@ -29,9 +29,6 @@ if (locals.icon !== undefined) {
 }
 %>
 
-<li>
-    <button <%- includeClasses(btn.classes) %> <%- includeAttrs(btn.attributes); %>><%= label %></button>
-    <div id="<%= id %>" class="<%= prefix + '-tabs__panel' %>" role="tabpanel" tabindex="0" >
-        <%- content %>
-    </div>
+<li role="presentation">
+    <button id="<%= id %>" <%- includeClasses(btn.classes) %> <%- includeAttrs(btn.attributes); %>><%= label %></button>
 </li>
