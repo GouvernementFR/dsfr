@@ -15,8 +15,9 @@ class Collapse extends Disclosure {
   constructor (element) {
     super(element);
     collapses.push(this);
-
+    this.requesting = this.request.bind(this);
     element.addEventListener('transitionend', this.transitionend.bind(this));
+    if (this.disclosed) this.unbound();
   }
 
   gatherByAscendants () {
@@ -57,20 +58,39 @@ class Collapse extends Disclosure {
     if (!this.disclosed) this.element.style.maxHeight = '';
   }
 
-  apply (value, initial) {
-    if (value) this.element.style.maxHeight = 'none';
+  unbound () {
+    this.element.style.maxHeight = 'none';
+  }
+
+  disclose (withhold) {
+    if (this.disclosed) return;
+    this.unbound();
+    this.adjust();
+    this.requested = () => { super.disclose(withhold); };
+    window.requestAnimationFrame(this.requesting);
+  }
+
+  conceal (withhold, preventFocus) {
+    if (!this.disclosed) return;
+    this.adjust();
+    this.requested = () => { super.conceal(withhold, preventFocus); };
+    window.requestAnimationFrame(this.requesting);
+  }
+
+  request () {
+    if (this.requested) this.requested();
+    this.requested = null;
+  }
+
+  adjust () {
     this.element.style.setProperty('--collapser', 'none');
     const height = this.element.offsetHeight;
     this.element.style.setProperty('--collapse', -height + 'px');
     this.element.style.setProperty('--collapser', '');
-
-    if (!value && !initial) this.focus();
-
-    window.requestAnimationFrame(() => super.apply(value, initial));
   }
 
   reset () {
-    this.apply(false, true);
+    if (!this.pristine) this.disclosed = false;
   }
 }
 

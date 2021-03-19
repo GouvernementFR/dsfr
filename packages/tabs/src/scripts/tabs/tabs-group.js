@@ -5,15 +5,15 @@ import { LIST_CLASS, TAB_CLASS, TABS_CLASS } from './constants';
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
-class TabsGroup extends api.DisclosuresGroup {
+class TabsGroup extends api.core.DisclosuresGroup {
   constructor (id, element) {
     super(id, element);
     this.list = element.querySelector(`.${LIST_CLASS}`);
 
     element.addEventListener('transitionend', this.transitionend.bind(this));
 
-    this.listen();
-    api.engine.renderer.add(this.render.bind(this));
+    this.init();
+    api.core.engine.renderer.add(this.render.bind(this));
   }
 
   static get selector () { return TABS_CLASS; }
@@ -22,7 +22,7 @@ class TabsGroup extends api.DisclosuresGroup {
     this.element.style.transition = 'none';
   }
 
-  listen () {
+  init () {
     this.keyListener = new api.KeyListener(this.element);
     this.keyListener.down(api.KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
     this.keyListener.down(api.KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
@@ -86,10 +86,10 @@ class TabsGroup extends api.DisclosuresGroup {
     if (this.current) this.current.focus();
   }
 
-  apply (value, initial) {
-    for (let i = 0; i < this._index; i++) this.members[i].translate(-1, initial);
+  apply () {
+    for (let i = 0; i < this._index; i++) this.members[i].translate(-1);
     this.current.element.style.transform = '';
-    for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(1, initial);
+    for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(1);
     this.element.style.transition = '';
   }
 
@@ -98,7 +98,7 @@ class TabsGroup extends api.DisclosuresGroup {
     if (this.length === 1 || tab.disclosed) this.current = tab;
     else {
       const index = this.members.indexOf(tab);
-      if (this._index > -1 && this._index !== index) tab.element.style.transform = `translateX(${index < this._index ? -100 : 100}%)`;
+      if (this._index > -1 && this._index !== index) tab.translate(index < this._index ? -1 : 1, true);
     }
   }
 

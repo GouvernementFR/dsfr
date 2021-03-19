@@ -1,11 +1,9 @@
 import api from '../../../api.js';
 
-const TABS_SELECTOR = api.ns.selector('tabs');
-const TABS_CLASS = api.ns('tabs');
-const TAB_CLASS = api.ns('tabs__tab');
-const PANEL_CLASS = api.ns('tabs__panel');
-const LIST_CLASS = api.ns('tabs__list');
+export const TABS_SELECTOR = api.core.ns.selector('tabs');
+export const TABS_CLASS = api.core.ns('tabs');
+export const TAB_CLASS = api.core.ns('tabs__tab');
+export const PANEL_CLASS = api.core.ns('tabs__panel');
+export const LIST_CLASS = api.core.ns('tabs__list');
 
-const TRANSITION_TIME = 100;
-
-export { TABS_SELECTOR, TABS_CLASS, TAB_CLASS, PANEL_CLASS, LIST_CLASS, TRANSITION_TIME };
+export const TRANSITION_TIME = 100;

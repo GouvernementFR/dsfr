@@ -2,25 +2,25 @@ import { DisclosuresGroup } from './disclosures-group.js';
 import { DisclosureButton } from './disclosure-button.js';
 import { addClass, removeClass } from '../manipulation/classes.js';
 import { ns } from '../global/namespace.js';
+import { Instance } from '../engine/instantiate/instance';
+import { CONCEAL_EVENT, DISCLOSE_EVENT } from './events';
 
 const disclosures = [];
 
-class Disclosure {
+class Disclosure extends Instance {
   constructor (element) {
-    this.element = element;
-    this.id = element.id;
+    super(element);
     this.buttons = [];
-    this.disclosed = null;
     this._selector = this.constructor.selector;
     this.modifier = this._selector + '--' + this.type.id;
     this.attributeName = this.type.ariaState ? 'aria-' + this.type.id : ns.attr(this.type.id);
+    this.pristine = true;
 
     const buttons = document.querySelectorAll(this.type.ariaControls ? `[aria-controls="${this.id}"]` : ns.attr.selector('controls', this.id));
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
-    this.disclosed = this.disclosed === true;
-    this.apply(this.disclosed, true);
+    this.disclosed = this.primal === true;
 
     this.gather();
   }
@@ -47,9 +47,9 @@ class Disclosure {
   addButton (element) {
     const button = this.buttonFactory(element);
     if (button.hasAttribute) {
-      if (this.disclosed === null) {
-        this.disclosed = button.disclosed;
-      } else button.apply(this.disclosed);
+      if (this.primal === undefined) {
+        this.primal = button.disclosed;
+      } else button.apply(this.primal);
     }
     this.buttons.push(button);
   }
@@ -60,26 +60,35 @@ class Disclosure {
     return new DisclosureButton(button, this);
   }
 
-  disclose () {
-    if (this.disclosed) return;
-
-    if (this.group !== undefined) this.group.current = this;
-    this.apply(true);
+  disclose (withhold) {
+    if (this.disclosed) return false;
+    this.pristine = false;
+    this.disclosed = true;
+    if (!withhold && this.group !== undefined) this.group.current = this;
+    return true;
   }
 
-  conceal () {
-    if (!this.disclosed) return;
-
-    if (this.group !== undefined) this.group.current = null;
-    this.apply(false);
+  conceal (withhold, preventFocus) {
+    if (!this.disclosed) return false;
+    this.pristine = false;
+    this.disclosed = false;
+    if (!preventFocus) this.focus();
+    if (!withhold && this.group !== undefined) this.group.current = null;
+    for (const disclosure of disclosures) if (disclosure !== this && this.element.contains(disclosure.element)) disclosure.reset();
+    return true;
   }
 
-  apply (value, initial) {
-    this.disclosed = value;
+  get disclosed () {
+    return this._disclosed;
+  }
+
+  set disclosed (value) {
+    if (this._disclosed === value) return;
+    this.dispatch(value ? DISCLOSE_EVENT : CONCEAL_EVENT, this.type);
+    this._disclosed = value;
     if (value) addClass(this.element, this.modifier);
     else removeClass(this.element, this.modifier);
     for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
-    if (!value) for (const disclosure of disclosures) if (disclosure !== this && this.element.contains(disclosure.element)) disclosure.reset();
   }
 
   reset () {}
@@ -115,7 +124,6 @@ class Disclosure {
   }
 
   focus () {
-    console.log(this.buttons);
     for (let i = 0; i < this.buttons.length; i++) {
       const button = this.buttons[i];
       if (button.hasAttribute) {
@@ -125,5 +133,8 @@ class Disclosure {
     }
   }
 }
+
+Disclosure.DISCLOSE_EVENT = DISCLOSE_EVENT;
+Disclosure.CONCEAL_EVENT = CONCEAL_EVENT;
 
 export { Disclosure };

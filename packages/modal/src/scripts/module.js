@@ -3,4 +3,4 @@ import api from '../../api.js';
 import { build } from './modal/build.js';
 import { MODAL_SELECTOR } from './modal/constants.js';
 
-new api.Initializer(MODAL_SELECTOR, [build]);
+new api.core.Initializer(MODAL_SELECTOR, [build]);

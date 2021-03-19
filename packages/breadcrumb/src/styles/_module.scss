@@ -10,7 +10,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   @include margin(2v -2v 6v);
   @include padding(2v);
   @include margin-bottom(8v, md);
-  overflow: hidden;
   @include text-style(xs);
   position: relative;
 
@@ -33,6 +32,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include disable-list-style;
     @include text-style(xs);
     display: block;
+    @include margin(-4px);
+    @include padding(4px);
 
     @include respond-from(md) {
       &:not(#{ns(collapse--expanded)}) {

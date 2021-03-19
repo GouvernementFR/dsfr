@@ -8,8 +8,8 @@ import { TabsGroup } from './tabs-group.js';
   * Tab étend disclosure qui ajoute/enleve le modifier --selected,
   * et ajoute/eleve l'attribut hidden, sur le panel
   */
-class Tab extends api.Disclosure {
-  static get type () { return api.DISCLOSURE_TYPES.select; }
+class Tab extends api.core.Disclosure {
+  static get type () { return api.core.DISCLOSURE_TYPES.select; }
   static get selector () { return PANEL_CLASS; }
 
   get GroupConstructor () { return TabsGroup; }

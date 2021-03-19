@@ -1,3 +1,4 @@
+import api from '../../../api.js';
 import {
   HEADER_NAV_LIST_SELECTOR,
   HEADER_NAV_SELECTOR,
@@ -19,13 +20,19 @@ class Header {
   }
 
   init () {
-    this.popins = [];
+    this.modals = [];
 
     this.tools = this.header.querySelector(HEADER_TOOLS_SELECTOR);
+
+
+    const toolsModals = api.core.Instance.getInstances(this.tools, api.Modal);
+    if (toolsModals) this.modals.push(toolsModals[0]);
 
     this.searchBar = this.header.querySelector(HEADER_SEARCH_BAR_SELECTOR);
 
     this.nav = this.header.querySelector(HEADER_NAV_SELECTOR);
+    const navModals = api.core.Instance.getInstances(this.nav, api.Modal);
+    if (navModals) this.modals.push(navModals[0]);
 
     this.shortcuts = this.header.querySelector(HEADER_SHORTCUTS_SELECTOR);
 
@@ -41,7 +48,7 @@ class Header {
   change () {
     this.isLarge = window.matchMedia('(min-width: 62em)').matches;
 
-    for (let i = 0; i < this.popins.length; i++) this.popins[i].change(this.isLarge);
+    if (this.isLarge) for (let i = 0; i < this.modals.length; i++) this.modals[i].conceal();
 
     if (this.shortcuts !== null) {
       if (this.isLarge) {

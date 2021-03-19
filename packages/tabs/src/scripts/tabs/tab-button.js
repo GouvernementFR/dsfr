@@ -5,7 +5,7 @@ import api from '../../../api';
   * TabButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-selected,
   * Et change l'attributte tabindex a 0 si le boutton est actif (value=true), -1 s'il n'est pas actif (value=false)
  */
-class TabButton extends api.DisclosureButton {
+class TabButton extends api.core.DisclosureButton {
   apply (value) {
     super.apply(value);
     if (this.hasAttribute) {

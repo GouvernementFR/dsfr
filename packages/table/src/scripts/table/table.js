@@ -42,9 +42,9 @@ class Table {
   }
 
   delete () {
-    api.removeClass(this.table, SHADOW_RIGHT_CLASS);
-    api.removeClass(this.table, SHADOW_LEFT_CLASS);
-    api.removeClass(this.table, SHADOW_CLASS);
+    api.core.removeClass(this.table, SHADOW_RIGHT_CLASS);
+    api.core.removeClass(this.table, SHADOW_LEFT_CLASS);
+    api.core.removeClass(this.table, SHADOW_CLASS);
     if (this.caption) {
       this.tableElem.style.marginTop = '';
       this.caption.style.top = '';
@@ -54,7 +54,7 @@ class Table {
   }
 
   scroll () {
-    api.addClass(this.table, SHADOW_CLASS);
+    api.core.addClass(this.table, SHADOW_CLASS);
     this.setShadowPosition();
   }
 
@@ -120,11 +120,11 @@ class Table {
   setShadowVisibility (side, scrollPosition) {
     // si on a pas scroll, ou qu'on scroll jusqu'au bout
     if (scrollPosition <= SCROLL_OFFSET) {
-      if (side === LEFT) api.removeClass(this.table, SHADOW_LEFT_CLASS);
-      else if (side === RIGHT) api.removeClass(this.table, SHADOW_RIGHT_CLASS);
+      if (side === LEFT) api.core.removeClass(this.table, SHADOW_LEFT_CLASS);
+      else if (side === RIGHT) api.core.removeClass(this.table, SHADOW_RIGHT_CLASS);
     } else {
-      if (side === LEFT) api.addClass(this.table, SHADOW_LEFT_CLASS);
-      else if (side === RIGHT) api.addClass(this.table, SHADOW_RIGHT_CLASS);
+      if (side === LEFT) api.core.addClass(this.table, SHADOW_LEFT_CLASS);
+      else if (side === RIGHT) api.core.addClass(this.table, SHADOW_RIGHT_CLASS);
     }
   }
 }

@@ -3,4 +3,4 @@ import api from '../../api.js';
 import { build } from './table/build.js';
 import { TABLE_SELECTOR } from './table/constants';
 
-new api.Initializer(TABLE_SELECTOR, [build]);
+new api.core.Initializer(TABLE_SELECTOR, [build]);

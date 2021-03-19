@@ -22,7 +22,6 @@
      */
     + label {
       @include relative;
-      cursor: pointer;
       @include padding(3v 0);
       -webkit-tap-highlight-color: transparent;
       display: grid;

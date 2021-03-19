@@ -3,4 +3,4 @@ import api from '../../api.js';
 import { HEADER_SELECTOR } from './header/constants.js';
 import { build } from './header/build.js';
 
-new api.Initializer(HEADER_SELECTOR, [build]);
+new api.core.Initializer(HEADER_SELECTOR, [build]);

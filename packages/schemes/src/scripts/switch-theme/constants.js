@@ -1,7 +1,5 @@
 import api from '../../../api.js';
 
-const RADIOS_THEME_NAME = `input[name="${api.ns.selector('radios-theme', '')}"]`;
-const SWITCH_THEME_ID = api.ns.selector('switch-theme', '#');
-const THEME_ATTR = api.ns.attr('theme');
-
-export { RADIOS_THEME_NAME, SWITCH_THEME_ID, THEME_ATTR };
+export const RADIOS_THEME_NAME = `input[name="${api.core.ns.selector('radios-theme', '')}"]`;
+export const SWITCH_THEME_ID = api.core.ns.selector('switch-theme', '#');
+export const THEME_ATTR = api.core.ns.attr('theme');

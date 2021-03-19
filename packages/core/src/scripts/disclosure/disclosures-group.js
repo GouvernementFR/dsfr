@@ -56,14 +56,14 @@ class DisclosuresGroup {
 
     switch (true) {
       case this.current !== null:
-      case !member.disclosed:
-        member.apply(false, true);
+      case !member.disclosed && !member.primal:
+        member.disclosed = false;
         break;
 
       default:
         this._current = member;
         this._index = this.members.indexOf(member);
-        member.apply(true, true);
+        member.disclosed = true;
     }
   }
 
@@ -73,10 +73,10 @@ class DisclosuresGroup {
 
   set index (value) {
     if (value < -1 || value >= this.length || this._index === value) return;
-    if (this.current !== null) this.current.apply(false, true);
+    if (this.current !== null) this.current.conceal(true, true);
     this._index = value;
     this._current = this._index > -1 ? this.members[this._index] : null;
-    if (this.current !== null) this.current.apply(true);
+    if (this.current !== null) this.current.disclose(true);
     this.apply();
   }
 

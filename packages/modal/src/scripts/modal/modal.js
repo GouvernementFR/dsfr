@@ -10,18 +10,18 @@ import { ModalsGroup } from './modals-group';
 
 const group = new ModalsGroup();
 
-class Modal extends api.Disclosure {
+class Modal extends api.core.Disclosure {
   constructor (element) {
     super(element);
     this.body = this.element.querySelector(MODAL_BODY_SELECTOR);
     this.scrollDistance = 0;
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
-    this.listen();
+    this.init();
     this.resize(true);
   }
 
-  listen () {
+  init () {
     this.element.addEventListener('click', this.click.bind(this));
 
     this.keyListener = new api.KeyListener(this.element);
@@ -42,14 +42,17 @@ class Modal extends api.Disclosure {
     group.add(this);
   }
 
-  apply (value, initial) {
-    this.handleScroll(!value);
-    if (!value) {
-      if (!initial) this.focus();
-    } else {
-      if (!initial) this.resize(true);
-    }
-    super.apply(value, initial);
+  disclose (withhold) {
+    if (!super.disclose(withhold)) return false;
+    this.resize(true);
+    this.handleScroll(false);
+    return true;
+  }
+
+  conceal (withhold, preventFocus) {
+    if (!super.conceal(withhold, preventFocus)) return false;
+    this.handleScroll(true);
+    return true;
   }
 
   /**
@@ -58,7 +61,7 @@ class Modal extends api.Disclosure {
   // TODO: créer une fonction de fix de scroll dans core (api.noScroll = true)
   handleScroll (isScrollable) {
     if (isScrollable) {
-      api.removeClass(document.documentElement, NO_SCROLL_CLASS);
+      api.core.removeClass(document.documentElement, NO_SCROLL_CLASS);
       document.body.style.top = '';
       window.scroll(0, this.scrollDistance);
     } else {
@@ -66,7 +69,7 @@ class Modal extends api.Disclosure {
         this.scrollDistance = window.scrollY;
       }
       document.body.style.top = this.scrollDistance * -1 + 'px';
-      api.addClass(document.documentElement, NO_SCROLL_CLASS);
+      api.core.addClass(document.documentElement, NO_SCROLL_CLASS);
     }
   }
 
@@ -78,12 +81,12 @@ class Modal extends api.Disclosure {
     if (!this.body) return;
     if (this.body.scrollHeight > this.body.clientHeight) {
       if (this.body.offsetHeight + this.body.scrollTop >= this.body.scrollHeight) {
-        api.removeClass(this.body, SCROLL_SHADOW_CLASS);
+        api.core.removeClass(this.body, SCROLL_SHADOW_CLASS);
       } else {
-        api.addClass(this.body, SCROLL_SHADOW_CLASS);
+        api.core.addClass(this.body, SCROLL_SHADOW_CLASS);
       }
     } else {
-      api.removeClass(this.body, SCROLL_SHADOW_CLASS);
+      api.core.removeClass(this.body, SCROLL_SHADOW_CLASS);
     }
 
     if (isResizing) {
@@ -97,7 +100,7 @@ class Modal extends api.Disclosure {
     }
   }
 
-  static get type () { return api.DISCLOSURE_TYPES.opened; }
+  static get type () { return api.core.DISCLOSURE_TYPES.opened; }
   static get selector () { return MODAL_CLASS; }
 
   get GroupConstructor () { return ModalsGroup; }

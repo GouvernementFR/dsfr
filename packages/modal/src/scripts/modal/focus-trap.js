@@ -59,7 +59,7 @@ class FocusTrap {
 
   wait () {
     if (!isFocusable(this.element)) {
-      api.engine.renderer.next(this.waiting);
+      api.core.engine.renderer.next(this.waiting);
       return;
     }
 

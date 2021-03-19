@@ -7,7 +7,7 @@ import {
   NAVIGATION_ITEM_RIGHT_CLASS
 } from './constants';
 
-class Navigation extends api.DisclosuresGroup {
+class Navigation extends api.core.DisclosuresGroup {
   constructor (id, element) {
     super(id, element);
 
@@ -81,8 +81,8 @@ class NavigationMenu {
     const width = parseFloat(styles.width);
     const left = this.button.getBoundingClientRect().left;
 
-    if (left + width > right) api.addClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
-    else api.removeClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
+    if (left + width > right) api.core.addClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
+    else api.core.removeClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
   }
 }
 
