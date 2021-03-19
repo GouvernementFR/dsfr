@@ -4,163 +4,81 @@
 ////
 
 #{ns(pagination)} {
-  @include disable-list-style;
   @include disable-link-style;
+  @include disable-list-style;
+
   @include list {
-    @include display-flex(row, null, null, wrap);
-    @include padding(0);
-    @include margin(0 -2px);
-  }
+    @include display-flex(row, center, flex-start, wrap);
 
-  @include list-item {
-    @include display-flex(row, center, center);
-    @include padding(0 3v);
-    @include margin(2px 2px 2v);
-    min-width: space(8v);
-    height: space(8v);
+    & > *:first-child {
+      @include margin-left(0);
 
-    &:not(&--first):not(&--prev)::before,
-    &:not(&--next):not(&--last)::after {
-      content: none;
-      display: none;
-      @include margin(0);
-    }
-
-    &--from-md {
-      display: none;
-
-      @include respond-from(md) {
-        display: flex;
+      & * {
+        @include margin-left(0);
       }
     }
 
-    &--active {
-      border-radius: space(4v);
-      pointer-events: none;
-    }
+    & > *:last-child {
+      @include margin-right(0);
 
-    &--first + &:not(&--prev),
-    &--prev + &,
-    &--next,
-    &:not(&--next) + &--last {
-      @include margin-left(3v);
-    }
-
-    &--first,
-    &--prev,
-    &--next,
-    &--last {
-      @include padding-left(1v);
-      @include padding-right(1v);
-    }
-
-    &--first {
-      @include font-icon(arrow-left-s-first-line, md) {
-        display: block;
-        @include size(6v,6v);
-        @include margin(0);
-        @include z-index(over);
-        pointer-events: none;
+      & * {
+        @include margin-right(0);
       }
     }
-
-    &--prev {
-      @include font-icon(arrow-left-s-line, md) {
-        display: block;
-        @include size(6v,6v);
-        @include margin(0);
-        @include z-index(over);
-        pointer-events: none;
-      }
-    }
-
-    &--next {
-      @include font-icon(arrow-right-s-line, md, after) {
-        display: block;
-        @include size(6v,6v);
-        @include margin(0);
-        pointer-events: none;
-      }
-    }
-
-    &--last {
-      @include font-icon(arrow-right-s-last-line, md, after) {
-        display: block;
-        @include size(6v,6v);
-        @include margin(0);
-        pointer-events: none;
-      }
-    }
-  }
-
-  &__item--first &__label,
-  &__item--prev &__label,
-  &__item--next &__label,
-  &__item--last &__label {
-    display: none;
-    @include respond-from(md) {
-      display: inline;
-    }
-  }
-
-  &__item--first &__label,
-  &__item--prev &__label {
-    @include padding(0 2v 0 1v);
-  }
-
-  &__item--next &__label,
-  &__item--last &__label {
-    @include padding(0 1v 0 2v);
-    display: none;
-
-    @include respond-from(md) {
-      display: inline;
-    }
-  }
-
-  &__item--first &__link,
-  &__item--prev &__link {
-    @include margin-left(-7v);
-    @include padding-left(7v);
-    @include margin-right(-1v);
-    @include padding-right(1v);
-  }
-
-  &__item--next &__link,
-  &__item--last &__link {
-    @include margin-right(-7v);
-    @include padding-right(7v);
-    @include margin-left(-1v);
-    @include padding-left(1v);
-  }
-
-  &__item--disabled &__link {
-    pointer-events: none;
   }
 
   &__link {
-    @include display-flex(row, center, center);
-    @include padding(0 3v);
-    @include margin(0 -3v);
-    min-width: space(8v);
-    height: space(8v);
-    box-shadow: none;
-    border-radius: space(4v);
+    @include build-pagination();
+    @include min-size(8v);
+    @include margin-x(0.5v);
+    @include margin-bottom(4v);
 
-    /**
-    &:focus {
-      outline: none !important;
-      &::after {
-        content:'';
-        position: absolute;
-        top: -4px;
-        right: -4px;
-        bottom: -4px;
-        left: -4px;
-        border-radius: calc(2rem + 8px);
-        @include scheme-element-border-color(focus, true, null, $COLOR solid 2px);
+    &[aria-current] {
+      cursor: default !important;
+    }
+
+    &--first {
+      @include icon-pagination(only, arrow-left-s-first-line);
+    }
+
+    &--prev {
+      @include icon-pagination(only, arrow-left-s-line);
+    }
+
+    &--next {
+      @include icon-pagination(only, arrow-right-s-line);
+    }
+
+    &--last {
+      @include icon-pagination(only, arrow-right-s-last-line);
+    }
+
+    &--first,
+    &--prev {
+      @include margin-right(3.5v);
+      @include margin-left(-2.5v);
+
+      &#{ns(pagination__link--label)} {
+        @include extend-pagination(left);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include extend-pagination(left, lg);
       }
     }
-     */
+
+    &--next,
+    &--last {
+      @include margin-right(-2.5v);
+      @include margin-left(3.5v);
+
+      &#{ns(pagination__link--label)} {
+        @include extend-pagination(right);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include extend-pagination(right, lg);
+      }
+    }
   }
 }

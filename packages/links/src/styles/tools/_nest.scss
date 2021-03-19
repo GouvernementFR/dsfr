@@ -90,3 +90,10 @@
     @content;
   }
 }
+
+@mixin icon-link($size: md, $place: null, $icon: null, $module: null, $align-on-content: false) {
+  @include _extend-link($size, $place, $module, $align-on-content, true);
+  @include before {
+    @include font-icon-content($icon);
+  }
+}

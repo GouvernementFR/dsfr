@@ -1,0 +1,11 @@
+<% const sample = getSample(include); %>
+
+<%- sample('sr-only', './samples/sr-only', {}, true); %>
+
+<%- sample('sr-only à partir du breakpoint LG', './samples/sr-only', { breakpoint: 'lg'}, true); %>
+
+<%- sample('hidden (visible dans l‘inspecteur)', './samples/hidden', {}, true); %>
+
+<%- sample('hidden à partir du breakpoint LG', './samples/hidden', { breakpoint: 'lg'}, true); %>
+
+<%- sample('displayed à partir du breakpoint LG', './samples/displayed', { breakpoint: 'lg'}, true); %>

@@ -1,0 +1,23 @@
+////
+/// Buttons Tools
+/// @group buttons
+////
+
+@include _build-link-placeholders($pagination-placeholder-settings, pagination__link, true);
+
+@mixin build-pagination() {
+  @include _build-link($pagination-build-settings, pagination__link, true);
+}
+
+@mixin icon-pagination($place, $icon) {
+  @include icon-link(md, $place, $icon, pagination__link);
+}
+
+@mixin extend-pagination($place, $from: null) {
+  @if $from == null {
+    @include _extend-link(md, $place, pagination__link, false, false);
+  }
+  @else {
+    @include _extend-responsive-link($from, md, $place, $pagination-placeholder-settings, true, false);
+  }
+}

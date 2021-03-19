@@ -5,8 +5,8 @@
 
 @mixin disabled-link($text:true, $background:false, $box-shadow-border: false) {
   @at-root {
-    #{selector_unify(&, button)}[disabled],
-    #{selector-unify(&, a)}:not([href]) {
+    #{selector-associate(&, 'button[disabled]')},
+    #{selector-associate(&, 'a:not([href])')} {
       @include disabled-colors($text, $background, $box-shadow-border);
       @content;
     }

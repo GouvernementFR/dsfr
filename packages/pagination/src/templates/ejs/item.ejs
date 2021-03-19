@@ -1,23 +1,40 @@
 <%
-let classes = locals.classes || [];
-let attrs = locals.attrs || {};
+const classes = locals.classes || [];
+const attrs = locals.attrs || {};
+const tag = locals.tag || 'a';
 
-classes.push(prefix + '-pagination__item');
-let active = locals.active === true;
-let hasLink = (!active) && (locals.href !== undefined) && (locals.disabled !== true);
-if (active) {
-  classes.push(prefix + '-pagination__item--active');
-  attrs['aria-current'] = 'page';
+classes.push(prefix + '-pagination__link');
+
+if (locals.active) attrs['aria-current'] = 'page';
+
+if (locals.type) classes.push(prefix + '-pagination__link--' + type);
+
+if (locals.href !== undefined && !locals.disabled && tag === 'a' && !locals.active) attrs.href = href;
+if (locals.title) attrs.title = title;
+
+switch(true) {
+    case locals.hasLgLabel:
+        classes.push(prefix + '-pagination__link--lg-label');
+      break;
+
+    case locals.hasLabel:
+        classes.push(prefix + '-pagination__link--label');
+        break;
 }
-if (locals.disabled === true) classes.push(prefix + '-pagination__item--disabled');
-if (locals.fromMd === true) classes.push(prefix + '-pagination__item--from-md');
 
-let linkClasses = locals.linkClasses || [];
-linkClasses.push(prefix + '-pagination__link')
+if (locals.displayedLg === true) classes.push(prefix + '-displayed-lg');
+if (locals.disabled) {
+  switch(tag) {
+      case 'input':
+      case 'button':
+        attrs[disabled] = '';
+          break;
+    }
+}
 %>
 
-<li <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
-    <% if (hasLink) { %><a class="<%= prefix %>-pagination__link" href="<%- href %>" title="<%= title %>"><% } %>
-    <% if (locals.text !== undefined ) { %><%- text %><% } %>
-    <% if (hasLink) { %></a><% } %>
+<li>
+    <<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
+        <% if (locals.label !== undefined ) { %><%- label %><% } %>
+    </<%= tag %>>
 </li>
