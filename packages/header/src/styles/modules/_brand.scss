@@ -62,6 +62,10 @@
     width: auto;
   }
 
+  &-title {
+    @extend %title-h6;
+  }
+
   &-title,
   &-tagline {
     @include margin-bottom(0);

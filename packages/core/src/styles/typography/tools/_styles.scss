@@ -28,6 +28,10 @@
 @mixin _responsive-styles($settings, $styles, $is-responsive, $prepend) {
   $breakpoints: map-get($settings, breakpoints);
 
+  @if map-has-key($settings, weight) {
+    font-weight: map-get($font-weight-scale, map-get($settings, weight));
+  }
+
   @if $is-responsive {
     @each $breakpoint, $size in $breakpoints {
       @if $breakpoint == first {

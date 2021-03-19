@@ -44,6 +44,7 @@ $title-styles: (
 
 $title-settings: (
   h6: (
+    weight: bold,
     breakpoints: (
       first: 18,
       md: 20
@@ -51,6 +52,7 @@ $title-settings: (
     margin: 0 0 4v
   ),
   h5: (
+    weight: bold,
     breakpoints: (
       first: 20,
       md: 22
@@ -58,6 +60,7 @@ $title-settings: (
     margin: 0 0 4v
   ),
   h4: (
+    weight: bold,
     breakpoints: (
       first: 22,
       md: 24
@@ -65,6 +68,7 @@ $title-settings: (
     margin: 0 0 4v
   ),
   h3: (
+    weight: bold,
     breakpoints: (
       first: 24,
       md: 28
@@ -72,6 +76,7 @@ $title-settings: (
     margin: 0 0 4v
   ),
   h2: (
+    weight: bold,
     breakpoints: (
       first: 28,
       md: 32
@@ -79,6 +84,7 @@ $title-settings: (
     margin: 0 0 4v
   ),
   h1: (
+    weight: bold,
     breakpoints: (
       first: 32,
       md: 40
@@ -86,6 +92,7 @@ $title-settings: (
     margin: 0 0 4v
   ),
   xs: (
+    weight: bold,
     breakpoints: (
       first: 40,
       md: 48
@@ -93,6 +100,7 @@ $title-settings: (
     margin: 0 0 8v
   ),
   sm: (
+    weight: bold,
     breakpoints: (
       first: 48,
       md: 56
@@ -100,6 +108,7 @@ $title-settings: (
     margin: 0 0 8v
   ),
   md: (
+    weight: bold,
     breakpoints: (
       first: 56,
       md: 64
@@ -107,6 +116,7 @@ $title-settings: (
     margin: 0 0 8v
   ),
   lg: (
+    weight: bold,
     breakpoints: (
       first: 64,
       md: 72
@@ -114,6 +124,7 @@ $title-settings: (
     margin: 0 0 8v
   ),
   xl: (
+    weight: bold,
     breakpoints: (
       first: 72,
       md: 80
