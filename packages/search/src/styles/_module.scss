@@ -11,7 +11,7 @@
   }
 
   #{ns(input)} {
-    @include margin-top(0);
+    @include margin(0);
     border-radius: space(1v) 0 0;
     max-height: none;
 
