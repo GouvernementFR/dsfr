@@ -29,6 +29,8 @@
 
 <%- sample('Ensemble de cases à cocher désactivés', '../../checkboxes/example/samples/checkboxes', { id:'checkbox-disabled', disabled:true, hint:true}, true);  %>
 
-<%- include('../../buttons/example/samples/button-default', { type:'submit'}); %>
+<%- sample('Bouton type submit', '../../buttons/example/samples/button-default', { type:'submit', label: 'Envoyer', btnTitle: 'Envoyer le formulaire'}, true);  %>
+
+<%- sample('Input type submit', '../../buttons/example/samples/button-default', { tag: 'input', label: ' ', btnTitle: 'Envoyer le formulaire', type:'submit', attributes: { ['value']:'Envoyer', ['title']: 'Envoyer le formulaire'} }, true);  %>
 
 </form>

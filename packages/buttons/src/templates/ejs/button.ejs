@@ -31,6 +31,7 @@
 <%
  let btnClasses = locals.classes || [];
  let btnAttrs = locals.attributes || {};
+ let btnTitle = locals.btnTitle || locals.label ;
 
  const tag = locals.tag || 'button';
 
@@ -77,11 +78,11 @@
   }
  }
 
+ if (btnTitle) btnAttrs['title'] = btnTitle;
  if (locals.type !== undefined) btnAttrs['type'] = type;
-
  %>
 
-<<%= tag %> <%- includeClasses(btnClasses) %> title="<%= label %>" <%- includeAttrs(btnAttrs); %> >
+<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
     <%= label %>
 </<%= tag %>>
 

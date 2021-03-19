@@ -5,6 +5,10 @@
 
 #{ns(link)} {
   @include build-link();
+
+  &[type=submit] {
+    @extend %btn-reset;
+  }
 }
 
 @import 'modules/close';
