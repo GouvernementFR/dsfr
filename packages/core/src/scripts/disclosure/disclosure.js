@@ -115,7 +115,6 @@ class Disclosure {
   }
 
   focus () {
-    console.log(this.buttons);
     for (let i = 0; i < this.buttons.length; i++) {
       const button = this.buttons[i];
       if (button.hasAttribute) {
