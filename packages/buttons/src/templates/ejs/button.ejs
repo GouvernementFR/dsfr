@@ -31,7 +31,7 @@
 <%
  let btnClasses = locals.classes || [];
  let btnAttrs = locals.attributes || {};
- let btnTitle = locals.btnTitle || locals.label ;
+ let btnTitle = locals.btnTitle !== undefined ? locals.btnTitle : locals.label ;
 
  const tag = locals.tag || 'button';
 
