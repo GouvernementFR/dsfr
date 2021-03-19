@@ -10,12 +10,16 @@ class Breadcrumb extends api.core.Instance {
       // TODO: refactor avec instance
       this.resizing = this.resize.bind(this);
       window.addEventListener('resize', this.resizing);
-      window.addEventListener('orientationchange', this.resizing);
     }
   }
 
   focus () {
-    api.core.engine.renderer.next(() => { this.links[0].focus(); });
+    this.links[0].focus();
+    api.core.engine.renderer.next(() => { this.verify(); });
+  }
+
+  verify () {
+    if (document.activeElement !== this.links[0]) this.focus();
   }
 
   resize () {
