@@ -13,7 +13,7 @@
   @include margin(0);
   @include display-flex(null, flex-end, center);
   @include fixed(0, 0, 0, 0, 100%, 100%);
-  pointer-events: all;
+  pointer-events: initial;
   z-index: z-index(modal);
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;

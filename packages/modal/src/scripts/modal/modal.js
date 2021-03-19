@@ -30,7 +30,7 @@ class Modal extends api.core.Disclosure {
     if (this.body) {
       this.body.addEventListener('scroll', this.scrolling);
       window.addEventListener('resize', this.resizing);
-      window.addEventListener('orientationchange', this.resizing);
+      // window.addEventListener('orientationchange', this.resizing);
     }
   }
 
@@ -94,7 +94,7 @@ class Modal extends api.core.Disclosure {
 
       // Une deuxième fois après positionnement des barres du navigateur (ios)
       // TODO: à tester si fonctionnel sans setTimeout
-      requestAnimationFrame(() => {
+      api.core.engine.renderer.next(() => {
         this.body.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
       });
     }

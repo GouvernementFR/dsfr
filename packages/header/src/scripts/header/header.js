@@ -24,7 +24,6 @@ class Header {
 
     this.tools = this.header.querySelector(HEADER_TOOLS_SELECTOR);
 
-
     const toolsModals = api.core.Instance.getInstances(this.tools, api.Modal);
     if (toolsModals) this.modals.push(toolsModals[0]);
 
@@ -41,14 +40,23 @@ class Header {
     this.changing = this.change.bind(this);
 
     window.addEventListener('resize', this.changing);
-    window.addEventListener('orientationchange', this.changing);
+    // window.addEventListener('orientationchange', this.changing);
     this.change();
   }
 
   change () {
     this.isLarge = window.matchMedia('(min-width: 62em)').matches;
 
-    if (this.isLarge) for (let i = 0; i < this.modals.length; i++) this.modals[i].conceal();
+    if (this.isLarge) {
+      for (let i = 0; i < this.modals.length; i++) {
+        this.modals[i].conceal();
+        this.modals[i].element.style.transition = 'none';
+      }
+    } else {
+      for (let i = 0; i < this.modals.length; i++) {
+        this.modals[i].element.style.transition = '';
+      }
+    }
 
     if (this.shortcuts !== null) {
       if (this.isLarge) {

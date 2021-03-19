@@ -15,16 +15,19 @@ class Renderer {
     return remove;
   }
 
-  next (closure) {
-    this.nexts.push(closure);
+  next (closure, frame) {
+    frame = frame === undefined ? 0 : frame - 1;
+    if (this.nexts[frame] === undefined) this.nexts[frame] = [];
+    this.nexts[frame].push(closure);
   }
 
   render () {
     window.requestAnimationFrame(this.rendering);
     for (const closure of this.closures) closure.call();
-    const nexts = this.nexts.slice();
-    this.nexts.length = 0;
-    for (const closure of nexts) closure.call();
+    const nexts = this.nexts.shift();
+    if (nexts) {
+      for (const closure of nexts) closure.call();
+    }
   }
 }
 

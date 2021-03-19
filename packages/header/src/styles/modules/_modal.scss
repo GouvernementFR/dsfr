@@ -10,8 +10,9 @@
   @include scheme-element-bg-color(w-g750);
   overflow: auto;
 
-  &:not(#{dse(modal)}--opened) {
+  &:not(#{ns(modal)}--opened) {
     display: flex;
+
     @include respond-from(lg) {
       display: block;
     }
@@ -36,7 +37,6 @@
     opacity: 1;
     position: initial;
     background-color: transparent;
-    transition: none;
     overflow: inherit;
   }
 
