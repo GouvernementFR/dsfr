@@ -5,6 +5,7 @@ class Breadcrumb extends api.core.Instance {
     super(element);
     this.collapse = api.core.Instance.getInstances(element, api.Collapse)[0];
     this.links = [...this.element.querySelectorAll('a[href]')];
+    this.count = 0;
     if (this.links.length) {
       this.listen(api.core.Disclosure.DISCLOSE_EVENT, this.focus.bind(this));
       // TODO: refactor avec instance
@@ -19,6 +20,8 @@ class Breadcrumb extends api.core.Instance {
   }
 
   verify () {
+    this.count++;
+    if (this.count > 100) return;
     if (document.activeElement !== this.links[0]) this.focus();
   }
 
