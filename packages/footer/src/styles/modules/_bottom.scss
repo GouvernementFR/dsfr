@@ -14,7 +14,6 @@
   @include padding(0 0 4v);
 
   @include respond-from(sm) {
-    flex-wrap: nowrap;
     @include padding(0);
   }
 }
@@ -25,8 +24,8 @@
 &__bottom-list {
   flex-wrap: wrap;
   align-items: center;
-  @include padding(2v 0);
-  @include padding(4v 0, sm);
+  @include size(100%);
+  @include padding(2v 0 4v);
   @include size(100%);
   @include margin(0);
 }
@@ -66,15 +65,14 @@
  * Copyright
  */
 &__bottom-copy {
-  > * {
-    flex-shrink: 0;
-    @include margin(0);
+  * {
+    @include enable-link-style;
     @include text-style(xs);
-    @include margin-top(4v);
+    @include margin-bottom(4v);
+    @include margin-top(2v);
 
     @include respond-from(sm) {
       @include margin-top(0);
-      @include margin-left(8v);
     }
   }
 }
