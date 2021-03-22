@@ -24,7 +24,7 @@
    * Si une icône est présente, on rajoute du padding à partir du breakpoint md
    */
   @include has-icon {
-    @include padding(14v 12v 10v, md);
+    @include padding(14v 12v 8v, md);
   }
 
   @include title() {
