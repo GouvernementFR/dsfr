@@ -54,8 +54,8 @@
     }
 
     @if map-has-key($settings, cursor) {
-      #{$hover} {
-        @include _enabled(map-get($settings, enabled)) {
+      @include _enabled(map-get($settings, enabled)) {
+        #{$hover} {
           cursor: #{map-get($settings, cursor)};
         }
       }
