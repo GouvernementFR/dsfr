@@ -1,7 +1,24 @@
-<div class="<%= prefix %>-container <%= prefix %>-mt-2v">
+<div class="<%= prefix %>-container <%= prefix %>-mt-2v <%= prefix %>-mb-8w">
     <a class="<%= prefix %>-link <%= prefix %>-fi-arrow-left-line <%= prefix %>-link--icon-left" href="../">Retour</a>
-    <h1><%= title %> - Design System</h1>
+    <h1><%= title %> <%= locals.id ? `(${id})` : '' %></h1>
     <% if (locals.description) { %>
         <p><%- description.replace(/(?:\r\n|\r|\n)/g, '<br/>') %></p>
+    <% } %>
+    <% if (locals.doc) {
+        switch(true) {
+            case Array.isArray(doc):
+              %><h5>Documentation</h5><ul><%
+              for (const d of doc) {
+        %><li><a href="<%= d.href %>" target="_blank" ><%= d.title %></a></li><%
+              }
+        %></ul><%
+              break;
+
+            case typeof doc === 'string':
+              %><a href="<%= doc %>" target="_blank" >Documentation</a><%
+              break;
+        }
+    %>
+
     <% } %>
 </div>

@@ -11,16 +11,23 @@
 <body class="<%= prefix %>-prose <%= prefix %>-mb-8w">
   <div class="<%= prefix %>-container">
       <div class="<%= prefix %>-grid-row">
-        <h1>Design System Développement</h1>
+        <h1>Design System de l‘État</h1>
         <ul class="<%= prefix %>-col-12">
           <li class="<%= prefix %>-mb-1w">
             <a href='./<%= namespace %>'><%= namespace %></a>
           </li>
         </ul>
         <ul class="<%= prefix %>-col-12">
-          <% for (const pck of packages) { %>
+          <%
+            packages.sort((a, b) => {
+              if(a.title < b.title) { return -1; }
+              if(a.title > b.title) { return 1; }
+              return 0;
+            });
+          for (const pck of packages) {
+          %>
           <li class="<%= prefix %>-mb-1w">
-            <a href='./<%= pck.id %>'><%= pck.title %></a>
+            <a href='./<%= pck.id %>'><%= pck.title %> (<%= pck.id %>)</a>
           </li>
           <% } %>
         </ul>

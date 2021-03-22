@@ -1,5 +1,5 @@
 id: forms
-title: Formulaire
+title: Formulaires
 description: Ce package permet de mettre en forme les différents champs d'un formulaire, notamment en ce qui concerne les espacements et texte d'aide et d'erreur.
 doc:
 wrapper: col-8

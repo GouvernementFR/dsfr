@@ -1,5 +1,5 @@
 id: legacy
-title: Systèmes antérieurs (IE11)
+title: Systèmes antérieurs
 description: Ce package est utilisé de manière globale pour la compatibilité Internet Explorer 11 du Design System de l'Etat.
 styles:
   - core
