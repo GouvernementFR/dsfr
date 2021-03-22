@@ -9,11 +9,15 @@
   // add heading style for accessibility concerns and reset margins
   @include title {
     @include margin(0);
+    display: block;
+    font-size: unset;
+    line-height: unset;
   }
 
   @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
     @include size(100%);
     text-align: left;
+    @include margin(0);
 
     @include before {
       @include margin-right(0);
@@ -22,7 +26,6 @@
 
     &[aria-expanded="true" i] {
       @include font-weight('bold');
-      border: 0;
 
       @include before {
         @include font-icon-content(subtract-line);
@@ -51,6 +54,6 @@
 
   & > * > #{ns(accordion)},
   & > #{ns(accordion)} {
-    border-bottom: 0;
+    @include margin-top(1px);
   }
 }
