@@ -28,6 +28,13 @@
   &:not(textarea) {
     max-height: 2.5rem;
   }
+
+  &[type=date] {
+    min-height: 2.5rem;
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
 }
 
 /**
@@ -40,6 +47,17 @@
   @include custom-icons(sm) {
     @include absolute(3v, 3v, 3v);
     @include margin(auto);
+  }
+
+  &#{ns(fi-calendar-line)} {
+    > #{ns(input)}[type=date] {
+      &::-webkit-calendar-picker-indicator {
+        display: block;
+        @include margin-right(-8v);
+        z-index: z-index(over);
+        opacity: 0;
+      }
+    }
   }
 
   #{ns(input)} {

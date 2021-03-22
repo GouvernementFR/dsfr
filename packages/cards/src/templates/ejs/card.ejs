@@ -35,7 +35,7 @@ if (locals.arrow === false) classes.push(prefix + '-card--no-arrow');
     </div>
     <% if (locals.img !== undefined) { %>
         <div class="<%= prefix %>-card__img">
-            <img src="<%= img %>" alt="<%= alt %>">
+            <%- imgContent(img, alt) %>
         </div>
     <% } %>
 </div>

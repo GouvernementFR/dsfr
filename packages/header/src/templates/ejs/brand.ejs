@@ -35,7 +35,7 @@
     <% if (locals.operator !== undefined) { %>
         <div class="<%= prefix %>-header__operator">
             <% if (position === 'operator') { %><%- link %><% } %>
-                <img src="<%- operator.img %>" alt="<%= operator.alt %>" style="<%- operator.style %>">
+                <%- imgContent(operator.img, operator.alt, [], operator.style) %>
             <% if (position === 'operator') { %><%- '</a>' %><% } %>
         </div>
     <% } %>

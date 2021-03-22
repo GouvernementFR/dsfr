@@ -8,4 +8,5 @@
 %>
 <% eval(include('../../../../index.ejs')); %>
 
-<img src="<%= img %>" class="<%= prefix %>-responsive-img" alt="<%= alt %>">
+<%- imgContent(img, alt, [prefix + '-responsive-img']) %>
+
