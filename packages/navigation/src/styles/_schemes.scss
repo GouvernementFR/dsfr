@@ -62,6 +62,10 @@
     }
 
     &--active {
+      @include scheme-element-text-color(bf500);
+      #{ns(nav__link)} {
+        color: currentColor;
+      }
       @include before {
         background-color: currentColor;
       }
