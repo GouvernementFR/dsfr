@@ -44,7 +44,6 @@
      */
     + label {
       @include relative;
-      cursor: pointer;
       @include padding(3v 0);
       @include text-style(md);
       -webkit-tap-highlight-color: transparent;
