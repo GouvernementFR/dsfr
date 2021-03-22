@@ -6,6 +6,7 @@
 #{ns(callout)} {
   @include relative();
   @include padding(6v);
+  @include padding(8v 12v, md);
 
   /**
    * Inclusion de l'icône (optionnel)
@@ -15,16 +16,8 @@
     @include margin(-2v 0 2v);
 
     @include respond-from(md) {
-      @include absolute(4v, null, null, 4v);
-      @include margin(0);
+      @include margin(-4v 0 4v -8v);
     }
-  }
-
-  /**
-   * Si une icône est présente, on rajoute du padding à partir du breakpoint md
-   */
-  @include has-icon {
-    @include padding(14v 12v 8v, md);
   }
 
   @include title() {
@@ -43,6 +36,4 @@
   #{ns(btn)} {
     @include margin-top(4v);
   }
-
-  @include padding(8v 12v, md);
 }
