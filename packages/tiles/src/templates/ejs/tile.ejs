@@ -48,7 +48,7 @@
     </div>
     <% if (locals.img !== undefined) { %>
         <div class="<%= prefix %>-tile__img">
-            <img src="<%= img %>" alt="<%= alt %>"/>
+            <%- imgContent(img, alt) %>
         </div>
     <% } %>
 </div>

@@ -7,6 +7,10 @@
   &__input {
     @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
     @include disabled-toggle-choice();
+
+    &:checked {
+      @include scheme-element-bg-color(bf500);
+    }
   }
 
   &__label {

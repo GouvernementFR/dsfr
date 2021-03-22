@@ -14,11 +14,11 @@ let describedby = [];
 if (locals.inline === true) fieldsetClasses.push(prefix + '-fieldset--inline');
 if (locals.error !== undefined) {
     fieldsetClasses.push(prefix + '-fieldset--error');
-    fieldsetAttrs['aria-describedby'] = id + '-legend ' + id + '-desc-error';
+    fieldsetAttrs['aria-labelledby'] = id + '-legend ' + id + '-desc-error';
 }
 if (locals.valid !== undefined) {
     fieldsetClasses.push(prefix + '-fieldset--valid');
-    fieldsetAttrs['aria-describedby'] = id + '-legend ' + id + '-desc-valid';
+    fieldsetAttrs['aria-labelledby'] = id + '-legend ' + id + '-desc-valid';
 }
 
 if (locals.disabled === true) fieldsetAttrs['disabled'] = 'disabled';

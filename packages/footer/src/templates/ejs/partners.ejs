@@ -1,9 +1,9 @@
 <h4 class="<%= prefix %>-footer__partners-title"><%- title %></h4>
 <div class="<%= prefix %>-footer__partners-logos">
   <div class="<%= prefix %>-footer__partners-main">
-      <a class="footer__partners-link" href="#">
-          <img class="<%= prefix %>-footer__logo" src="<%= mainPartner.src %>" alt="<%= mainPartner.alt %>">
-      </a>
+    <a class="footer__partners-link" href="#">
+      <%- imgContent(mainPartner.src, mainPartner.alt, [prefix + '-footer__logo']) %>
+    </a>
   </div>
   <div class="<%= prefix %>-footer__partners-sub">
     <ul>
@@ -12,7 +12,7 @@
       %>
       <li>
         <a class="<%= prefix %>-footer__partners-link" href="#">
-          <img class="<%= prefix %>-footer__logo" src="<%= subPartners[i].src %>" alt="<%= subPartners[i].alt %>">
+          <%- imgContent(subPartners[i].src, subPartners[i].alt, [prefix + '-footer__logo']) %>
         </a>
       </li>
     <% } %>
