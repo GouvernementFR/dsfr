@@ -15,23 +15,26 @@ class Header {
     this.header = header || document.querySelector(HEADER_SELECTOR);
     this.numId = count;
     count++;
+    this.modals = [];
 
     this.init();
   }
 
+  getModal (element) {
+    if (!element) return;
+    const modals =  api.core.Instance.getInstances(element, api.Modal);
+    if (!modals || !modals.length) return;
+    this.modals.push(modals[0]);
+  }
+
   init () {
-    this.modals = [];
-
     this.tools = this.header.querySelector(HEADER_TOOLS_SELECTOR);
-
-    const toolsModals = api.core.Instance.getInstances(this.tools, api.Modal);
-    if (toolsModals) this.modals.push(toolsModals[0]);
+    this.getModal(this.tools);
 
     this.searchBar = this.header.querySelector(HEADER_SEARCH_BAR_SELECTOR);
 
     this.nav = this.header.querySelector(HEADER_NAV_SELECTOR);
-    const navModals = api.core.Instance.getInstances(this.nav, api.Modal);
-    if (navModals) this.modals.push(navModals[0]);
+    this.getModal(this.nav);
 
     this.shortcuts = this.header.querySelector(HEADER_SHORTCUTS_SELECTOR);
 
@@ -40,7 +43,6 @@ class Header {
     this.changing = this.change.bind(this);
 
     window.addEventListener('resize', this.changing);
-    // window.addEventListener('orientationchange', this.changing);
     this.change();
   }
 
