@@ -4,31 +4,13 @@
 ////
 
 #{ns(breadcrumb)} {
+  @include scheme-element-text-color(g600, true);
+
   &__button {
-    @include scheme-element-text-color(g600, true);
     @include scheme-element-bg-color(t-plain);
   }
 
-  /**
-  margin-bottom de 1N pour créer cet espace entre chaque ligne
-   */
-  @include group-item() {
-    &:not(:first-child) {
-      @include before {
-        @include scheme-element-text-color(g600, true);
-      }
-    }
-
-    &:not(:last-child) {
-      a {
-        @include scheme-element-text-color(g600, true);
-      }
-    }
-
-    &--curent {
-      a {
-        @include scheme-element-text-color(g800, true);
-      }
-    }
+  &__link[aria-current] {
+    @include scheme-element-text-color(g800);
   }
 }

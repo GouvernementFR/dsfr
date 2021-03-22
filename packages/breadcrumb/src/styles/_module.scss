@@ -7,9 +7,8 @@
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
 #{ns(breadcrumb)} {
-  @include margin(2v -2v 6v);
-  @include padding(2v);
-  @include margin-bottom(8v, md);
+  @include margin(4v 0 8v);
+  @include margin-bottom(10v, md);
   @include text-style(xs);
   position: relative;
 
@@ -18,6 +17,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include text-style(xs);
     @include margin(0);
     @include padding(0);
+    color: inherit;
 
     &[aria-expanded="true" i] {
       display: none;
@@ -28,64 +28,56 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     }
   }
 
-  @include list() {
-    @include disable-list-style;
-    @include text-style(xs);
-    display: block;
-    @include margin(-4px);
-    @include padding(4px);
+  #{ns(collapse)} {
+    @include margin-x(-4px);
+    @include padding-x(4px);
+    transform: translateY(-4px);
 
     @include respond-from(md) {
-      &:not(#{ns(collapse--expanded)}) {
-        visibility: visible;
-        overflow: visible;
-        max-height: initial;
-        display: inline-block;
-        @include before(none);
-      }
+      @include margin-x(0);
+      @include padding-x(0);
+      transform: none;
+      visibility: visible;
+      overflow: visible;
+      max-height: initial;
+      @include before(none);
+    }
+  }
+
+  @include list() {
+    @include disable-list-style;
+    @include display-flex(row, null, null, wrap, true);
+    transform: translateY(4px);
+
+    @include respond-from(md) {
+      transform: none;
     }
   }
 
   /**
-  margin-bottom de 1N pour créer cet espace entre chaque ligne
+   * margin-bottom de 2v pour créer cet espace entre chaque ligne
    */
-  @include group-item() {
-    display: inline;
-
-    &:first-child {
-      @include before(null, none);
-    }
-
-    /**
-    flèche séparatrice en svg avec un espace à la suite
-     */
+  &__link {
+    position: relative;
+    display: inline-flex;
+    @include text-style(xs);
     @include margin-bottom(2v);
-    vertical-align: middle;
-
-    &:not(:first-child) {
-      @include font-icon(arrow-right-s-line, sm);
-
-      @include before {
-        @include margin-right(0);
-        vertical-align: middle;
-      }
-    }
-
-    a {
-      display: inline;
-      vertical-align: middle;
-    }
 
     /**
-      on place un espace après l'élément de manière à ce qu'il ne soit pas présent devant la flèche au retour à la ligne
-    */
-    &:not(:last-child) {
-      @include after(null, '') {
-        @include margin-right(0);
+     * flèche séparatrice en font-icon
+     */
+    &:not([aria-current]) {
+      @include margin-right(6v);
+      @include font-icon(arrow-right-s-line, sm, after);
+      @include after {
+        @include absolute(0.5v, -5v);
+        pointer-events: none;
       }
     }
 
-    &:last-child a {
+    &[aria-current] {
+      @include disable-link-style;
+      pointer-events: none;
       cursor: default;
     }
   }

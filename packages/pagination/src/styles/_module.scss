@@ -11,16 +11,14 @@
     @include display-flex(row, center, flex-start, wrap);
 
     & > *:first-child {
-      @include margin-left(0);
-
+      &,
       & * {
         @include margin-left(0);
       }
     }
 
     & > *:last-child {
-      @include margin-right(0);
-
+      &,
       & * {
         @include margin-right(0);
       }
