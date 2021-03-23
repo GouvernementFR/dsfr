@@ -51,10 +51,17 @@
     }
 
     @include respond-from(lg) {
-      &:not(:last-child) {
-        @include after(null, '') {
-          @include absolute(null,0,0,0,null,1px);
+      &:not(:first-child) {
+        @include after(block, '') {
+          @include absolute(0,0,null,0,null,1px);
           @include margin(0 4v);
+        }
+      }
+
+      &:not(&--active):hover,
+      &:not(&--active):hover + & {
+        @include after {
+          display: none;
         }
       }
     }
