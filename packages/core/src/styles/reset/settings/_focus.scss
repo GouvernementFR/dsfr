@@ -34,7 +34,11 @@ $focus-settings: (
     focus: '& + label::before',
     hover: '&, & + label',
     enabled: true,
-    cursor: pointer
+    cursor: pointer,
+    disabled: (
+      selector: '&:disabled',
+      cursor: not-allowed
+    )
   ),
   input-buttons: (
     selector: 'input[type="button" i], input[type="color" i], input[type="date" i], input[type="datetime-local" i], input[type="file" i], input[type="image" i], input[type="month" i], input[type="range" i], input[type="reset" i], input[type="submit" i], input[type="time" i], input[type="week" i]',
