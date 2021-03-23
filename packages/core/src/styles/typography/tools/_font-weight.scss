@@ -23,7 +23,7 @@
 @mixin font-weights() {
   @each $name, $weight in $font-weight-scale {
     & #{ns('text--' + $name)} {
-      font-weight: #{$weight};
+      font-weight: #{$weight} !important;
     }
   }
 }

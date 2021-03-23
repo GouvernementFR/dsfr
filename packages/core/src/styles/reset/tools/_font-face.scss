@@ -35,8 +35,13 @@
   }
 }
 
-@mixin font-family($type: primary, $settings: $font-settings) {
+@mixin font-family($type: primary, $important: false, $settings: $font-settings) {
   $type-settings: map-get($settings, $type);
   $families: join(map-get($type-settings, name), map-get($type-settings, fallback), 'comma');
-  font-family: $families;
+  @if $important {
+    font-family: $families !important;
+  }
+  @else {
+    font-family: $families;
+  }
 }

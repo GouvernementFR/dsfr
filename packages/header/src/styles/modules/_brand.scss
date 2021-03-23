@@ -63,7 +63,7 @@
   }
 
   &-title {
-    @extend %title-h6;
+    @include title-style(h6, false);
   }
 
   &-title,

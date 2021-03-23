@@ -8,5 +8,5 @@
 @include build-typography();
 
 #{ns(text--alt)} {
-  @include font-family(alt);
+  @include font-family(alt, true);
 }

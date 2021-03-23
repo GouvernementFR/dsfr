@@ -5,6 +5,6 @@
 
 @if (map-get($reset-settings, text)) {
   p {
-    @extend %text-md;
+    @include text-style(md, true);
   }
 }

@@ -27,11 +27,14 @@ if (locals.hint != undefined) describedby.push(id + '-desc-hint');
 if (locals.error != undefined) describedby.push(id + '-desc-error');
 if (locals.valid != undefined) describedby.push(id + '-desc-valid');
 
+const legendClasses = [`${prefix}-fieldset__legend`];
+if (locals.choice) legendClasses.push(`${prefix}-text--regular`);
+
 %>
 
 <div class="<%= prefix %>-form-group">
     <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %> role="group">
-        <legend class="<%= prefix %>-fieldset__legend" id='<%= id %>-legend'>
+        <legend <%- includeClasses(legendClasses); %> id='<%= id %>-legend'>
             <%= legend %>
             <% if (locals.hint != undefined) { %><%- include('./hint', {id: id + '-desc-hint'});%><% } %>
         </legend>

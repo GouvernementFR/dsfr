@@ -3,22 +3,6 @@
 /// @group core
 ////
 
-@mixin _build-style-placeholders() {
-  @each $name, $variation in $title-settings {
-    %title-#{$name} {
-      @include title-style($name, true);
-    }
-  }
-
-  @each $name, $variation in $text-settings {
-    %text-#{$name} {
-      @include text-style($name, true);
-    }
-  }
-}
-
-@include _build-style-placeholders();
-
 @function typography-selector($type, $name, $is-modifier: false, $alt: null) {
   $base: '';
   $separator: '-';
@@ -51,13 +35,13 @@
     }
 
     #{typography-selector($type, $name, false, map-get($variation, alt))} {
-      @extend %title-#{$name};
+      @include title-style($name, true, true, null, true);
     }
   }
 
   @each $name, $variation in $text-settings {
     #{typography-selector(text, $name, true, map-get($variation, alt))} {
-      @extend %text-#{$name};
+      @include text-style($name, true, true, null, true);
     }
   }
 }

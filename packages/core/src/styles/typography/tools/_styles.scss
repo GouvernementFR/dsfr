@@ -11,35 +11,39 @@
   @return map-get($title-styles, $font-size);
 }
 
-@mixin _stylize($font-size, $styles, $prepend) {
+@mixin _stylize($font-size, $styles, $prepend, $append) {
   $style: map-get($styles, $font-size);
 
   @if $prepend == null {
     $prepend: '';
   }
 
-  font-size: #{$prepend} #{px-rem($font-size)};
+  @if $append == null {
+    $append: '';
+  }
+
+  font-size: #{$prepend} #{px-rem($font-size)} #{$append};
 
   @if map-has-key($style, line-height) {
-    line-height: #{$prepend} space(map-get($style, line-height));
+    line-height: #{$prepend} space(map-get($style, line-height)) #{$append};
   }
 }
 
-@mixin _responsive-styles($settings, $styles, $is-responsive, $prepend) {
+@mixin _responsive-styles($settings, $styles, $is-responsive, $prepend, $append) {
   $breakpoints: map-get($settings, breakpoints);
 
   @if map-has-key($settings, weight) {
-    font-weight: map-get($font-weight-scale, map-get($settings, weight));
+    font-weight: #{$prepend} map-get($font-weight-scale, map-get($settings, weight)) #{$append};
   }
 
   @if $is-responsive {
     @each $breakpoint, $size in $breakpoints {
       @if $breakpoint == first {
-        @include _stylize($size, $styles, $prepend);
+        @include _stylize($size, $styles, $prepend, $append);
       }
       @else {
         @include respond-from($breakpoint) {
-          @include _stylize($size, $styles, $prepend);
+          @include _stylize($size, $styles, $prepend, $append);
         }
       }
     }
@@ -62,20 +66,28 @@
   @include margin(map-get($settings, margin));
 }
 
-@mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null) {
+@mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
   $settings: map-get($text-settings, $name);
+  $append: '';
+  @if $important {
+    $append: ' !important';
+  }
 
-  @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend);
+  @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend, $append);
 
   @if $with-spacing {
     @include _space-text($settings);
   }
 }
 
-@mixin title-style($name, $with-spacing: false, $is-responsive: true, $prepend: null) {
+@mixin title-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
   $settings: map-get($title-settings, $name);
+  $append: '';
+  @if $important {
+    $append: ' !important';
+  }
 
-  @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend);
+  @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend, $append);
 
   @if $with-spacing {
     @include _space-title($settings);
