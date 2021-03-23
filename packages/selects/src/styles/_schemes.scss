@@ -29,7 +29,7 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
    * Mixin pour gérer l'état disabled
    */
   @include disabled-form-field(select) {
-    @include scheme-element-data-uri-svg(get-disabled-color(border), $svg, background-image);
+    @include scheme-element-data-uri-svg(get-disabled-color(text), $svg, background-image);
   }
 
   &:-webkit-autofill,
