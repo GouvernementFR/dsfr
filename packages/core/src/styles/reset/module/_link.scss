@@ -32,4 +32,14 @@
       @include enlarge-link;
     }
   }
+
+  #{ns(raw-link)} {
+    @include disable-link-style;
+  }
+
+  #{ns(reset-link)} {
+    @include disable-link-style;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 }

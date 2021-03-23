@@ -22,7 +22,7 @@ class Header {
 
   getModal (element) {
     if (!element) return;
-    const modals =  api.core.Instance.getInstances(element, api.Modal);
+    const modals = api.core.Instance.getInstances(element, api.Modal);
     if (!modals || !modals.length) return;
     this.modals.push(modals[0]);
   }
