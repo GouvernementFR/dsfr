@@ -35,7 +35,7 @@
     @include nest-btn(lg, left, null, md);
 
     #{ns(input)} {
-      @include padding-y(4v);
+      @include padding-y(4v, md);
     }
   }
 }
