@@ -9,7 +9,7 @@
             case Array.isArray(doc):
               %><h5>Documentation</h5><ul><%
               for (const d of doc) {
-        %><li><a href="<%= d.href %>" target="_blank" ><%= d.title %></a></li><%
+        %><li><a href="<%= d.url %>" target="_blank" ><%= d.title %></a></li><%
               }
         %></ul><%
               break;
