@@ -1,4 +1,4 @@
-<% eval(include(root + '/packages/core/index.ejs')); %>
+<% eval(include(root + '/src/core/index.ejs')); %>
 <!doctype html>
 <html lang="fr" data-<%= prefix %>-theme >
 <head>
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Design System</title>
 
-    <%- include(root + 'packages/core/src/templates/ejs/favicons/favicons.ejs', {path: '../../dist/favicons/'}); %>
+    <%- include(root + 'src/core/templates/ejs/favicons/favicons.ejs', {path: '../../dist/favicons/'}); %>
 
     <link href="../../dist/css/<%= namespace %>.css" rel="stylesheet" >
 

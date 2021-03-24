@@ -1,0 +1,11 @@
+<%#
+# paramètres checkbox
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../index.ejs')); %>
+<span class="<%= prefix %>-fi-<%= icon %> <% switch(locals.size) {
+  case 'sm': %><%= prefix %>-fi--sm<% break;
+  case 'lg': %><%= prefix %>-fi--lg<% break;
+} %>" aria-hidden="true"></span>

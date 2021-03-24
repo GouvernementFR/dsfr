@@ -1,0 +1,85 @@
+<%#
+# paramètres tag
+
+* label (string, required) : contenu texte
+
+* href (string, required) : adresse url du lien
+
+* blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
+
+* icon (string, optional) : icon du lien
+
+* iconPlace (string, optionnal) : emplacement de l'icone
+  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
+  valeurs :
+  * left : icone à gauche du label
+  * right : icone à droite du label
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let tagClasses = locals.classes || [];
+ let tagAttrs = locals.attributes || {};
+
+ tagClasses.push(prefix + '-tag');
+
+
+ switch(locals.size) {
+     case 'sm':
+         tagClasses.push(prefix + '-tag--sm');
+       break;
+ }
+
+ if (locals.icon !== undefined) tagClasses.push(prefix + '-fi-' + locals.icon);
+
+ if (locals.iconPlace !== undefined) switch(locals.iconPlace)
+ {
+
+     case 'left':
+         tagClasses.push(prefix + '-tag--icon-left');
+         break;
+
+     case 'right':
+         tagClasses.push(prefix + '-tag--icon-right');
+         break;
+
+ }
+
+if (locals.disabled === true) {
+  if (locals.button) tagAttrs['disabled'] = '';
+} else if (locals.clickable) {
+    tagAttrs.href = locals.href || '[url - à modifier]';
+  switch (true) {
+    case locals.blank:
+    tagAttrs.target = '_blank';
+    break;
+    case locals.self:
+    tagAttrs.target = '_self';
+    break;
+  }
+}
+
+ %>
+
+<% if(locals.group) { %>
+    <ul class="<%= prefix %>-tags-group">
+    <% for (let i = 0; i < 9; i++) { %>
+        <li>
+            <% if(locals.clickable) { %>
+                <a <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></a>
+            <% } else { %>
+                <p <%- includeClasses(tagClasses)%>><%- label %></p>
+            <% } %>
+        </li>
+    <% } %>
+    </ul>
+<% } else { %>
+    <% if(locals.clickable) { %>
+        <a <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></a>
+    <% } else if (locals.button) { %>
+        <button <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- label %></button>
+    <% } else { %>
+        <p <%- includeClasses(tagClasses)%>><%- label %></p>
+    <% } %>
+<% } %>

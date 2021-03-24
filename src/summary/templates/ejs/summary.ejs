@@ -1,0 +1,28 @@
+<%#
+# paramètres
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let link = {
+  anchor: 'titre-ancre',
+  label: 'Titre de l’ancre'
+}
+%>
+
+<nav class="<%= prefix %>-summary" role="navigation" aria-labelledby="<%= prefix %>-summary-title">
+  <div class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title">Sommaire</div>
+
+  <ol class="<%= prefix %>-summary__list">
+    <%
+      for (let i = 1; i < 9; i++) {
+    %>
+    <li >
+      <a class="<%= prefix %>-summary__link" href="#<%- link.anchor %>-<%- i %>"><%- link.label %></a>
+    </li>
+    <% } %>
+  </ol>
+</nav>

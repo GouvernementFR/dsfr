@@ -1,0 +1,88 @@
+<%#
+# paramètres button
+
+* label (string, required) : label du bouton
+
+* tag (string) : si non défini, button
+
+* secondary (boolean, optionnal) : si valeur true, bouton secondaire
+
+* type (string, optionnal) type du bouton
+
+* disabled (boolean, optionnal) : si valeur true, bouton désactivé
+
+* size (string, optionnal) : modificateur de taille
+  valeurs :
+  * sm : bouton petit
+  * lg : bouton large
+
+* icon (string, optionnal) : nom de l'icone dans le bouton
+
+* iconPlace (string, optionnal) : emplacement de l'icone
+  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
+  valeurs :
+  * left : icone à gauche du label
+  * right : icone à droite du label
+
+%>
+
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let btnClasses = locals.classes || [];
+ let btnAttrs = locals.attributes || {};
+ let btnTitle = locals.btnTitle !== undefined ? locals.btnTitle : locals.label ;
+
+ const tag = locals.tag || 'button';
+
+ btnClasses.push(prefix + '-btn');
+
+ switch(locals.size) {
+     case 'sm':
+        btnClasses.push(prefix + '-btn--sm');
+        break;
+
+     case 'lg':
+        btnClasses.push(prefix + '-btn--lg');
+        break;
+ }
+
+ if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
+
+ if (locals.iconPlace !== undefined) switch(locals.iconPlace)
+ {
+
+     case 'left':
+        btnClasses.push(prefix + '-btn--icon-left');
+        break;
+
+     case 'right':
+        btnClasses.push(prefix + '-btn--icon-right');
+        break;
+ }
+
+ if (locals.secondary === true) btnClasses.push(prefix +'-btn--secondary');
+
+ if (locals.disabled === true) {
+   if (tag === 'button') btnAttrs['disabled'] = '';
+ } else if (tag === 'a') {
+   btnAttrs.href = locals.href || '[url - à modifier]';
+  switch (true) {
+   case locals.blank:
+   btnAttrs.target = '_blank';
+   break;
+
+   case locals.self:
+   btnAttrs.target = '_self';
+   break;
+  }
+ }
+
+ if (btnTitle) btnAttrs['title'] = btnTitle;
+ if (locals.type !== undefined) btnAttrs['type'] = type;
+ %>
+
+<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
+    <%= label %>
+</<%= tag %>>
+

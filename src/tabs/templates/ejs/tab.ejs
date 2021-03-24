@@ -1,0 +1,34 @@
+<%#
+# paramètres Tab
+
+* isActive (bool, required)
+
+* content (string, required) : contenu du pannel
+
+* icon (string, optionnal) : nom de l'icone dans le bouton
+
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+
+let btn = {
+  attributes: {
+    tabindex: locals.isActive ? '0' : '-1',
+    role: 'tab',
+    'aria-selected': locals.isActive === true,
+    'aria-controls': id + "-panel"
+  },
+  classes: [prefix + '-tabs__tab']
+}
+
+if (locals.icon !== undefined) {
+  btn.classes.push(prefix + '-fi-' + locals.icon);
+  btn.classes.push(prefix + '-tabs__tab--icon-left');
+}
+%>
+
+<li role="presentation">
+    <button id="<%= id %>" <%- includeClasses(btn.classes) %> <%- includeAttrs(btn.attributes); %>><%= label %></button>
+</li>

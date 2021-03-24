@@ -1,0 +1,14 @@
+<%#
+# paramètres media-img
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-content-media__img" >
+    <%- imgContent(img, alt) %>
+</div>
+<% if (locals.caption != undefined) { %>
+    <figcaption class="<%= prefix %>-content-media__caption" ><%= caption %></figcaption>
+<% } %>

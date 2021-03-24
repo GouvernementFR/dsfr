@@ -1,0 +1,23 @@
+<%#
+# paramètres input group
+
+* valid (string, optionnal) : message de validation
+
+* error (string, optionnal) : message d'erreur
+
+* disabled (boolean, optionnal)
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let groupClasses = [prefix + '-input-group'];
+
+ if (locals.error !== undefined) groupClasses.push(prefix + '-input-group--error');
+ if (locals.disabled !== undefined) groupClasses.push(prefix + '-input-group--disabled');
+ if (locals.valid !== undefined) groupClasses.push(prefix + '-input-group--valid');
+ %>
+
+<div <%- includeClasses(groupClasses); %>>
+    <%- include('./input'); %>
+</div>

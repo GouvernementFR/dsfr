@@ -1,0 +1,54 @@
+<%#
+# paramètres tile
+
+* title (string, required) : titre
+
+* horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
+
+* horizontalMd (boolean, optional) : si true, passe en mode horizontal en dessous du breakpoint xs
+
+* verticalMd (boolean, optional) : si true, passe en mode vertical en dessous du breakpoint xs
+
+* img (string, optionnal) : url de l'image
+
+* alt (string, optionnal) : texte alternatif de l'image
+
+* description (string, optionnal) : tuile description
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let classes = locals.classes || [];
+
+ classes.push(prefix + '-tile');
+
+ if (locals.enlarge) classes.push(prefix + '-enlarge-link');
+
+ if (locals.horizontal !== undefined) {
+    classes.push(prefix +'-tile--horizontal');
+ }
+
+ if (locals.horizontalMd !== undefined) {
+    classes.push(prefix +'-tile--horizontal-md');
+ }
+
+ if (locals.verticalMd !== undefined) {
+    classes.push(prefix +'-tile--vertical-md');
+ }
+
+ %>
+
+<div <%- includeClasses(classes)%>>
+    <div class="<%= prefix %>-tile__body">
+        <h4 class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- title %></a></h4>
+        <% if(locals.description !== undefined) { %>
+        <p class="<%= prefix %>-tile__desc"><%= description %></p>
+        <% } %>
+    </div>
+    <% if (locals.img !== undefined) { %>
+        <div class="<%= prefix %>-tile__img">
+            <%- imgContent(img, alt) %>
+        </div>
+    <% } %>
+</div>

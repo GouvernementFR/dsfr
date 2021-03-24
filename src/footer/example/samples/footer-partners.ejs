@@ -1,0 +1,39 @@
+<%
+let data = {
+    brand: {
+      logo: {
+          title: 'république<br>française',
+      },
+    },
+    content: {
+      desc: lorem(),
+      links: [
+        {label: 'legifrance.gouv.fr'},
+        {label: 'gouvernement.fr'},
+        {label: 'service-public.fr'},
+        {label: 'data.gouv.fr'}
+      ]
+    },
+    partners: {
+      title: 'Nos partenaires',
+      mainPartner: {src: '../img/logo-partner-1.png', alt: true},
+      subPartners: [
+        {src: '../img/logo-partner-2.png', alt: true},
+        {src: '../img/logo-partner-3.png', alt: true},
+        {src: '../img/logo-partner-4.png', alt: true}
+      ]
+    },
+    bottom: {
+      links: [
+        {label: 'Plan du site'},
+        {label: 'Accessibilité : non/partiellement/totalement conforme'},
+        {label: 'Mentions légales'},
+        {label: 'Données personnelles'},
+        {label: 'Gestion des cookies'}
+      ],
+      copyright: 'Sauf mention contraire, tous les textes de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>'
+    }
+}
+%>
+
+<%- include('../../templates/ejs/footer', data); %>

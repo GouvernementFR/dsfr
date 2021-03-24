@@ -1,0 +1,23 @@
+<%#
+# paramètres media vid
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%- include(locals.vidTpl !== undefined ? locals.vidTpl  : '../../../core/templates/ejs/medias/responsive-vid') %>
+<% if (locals.caption != undefined) { %>
+<div class="<%= prefix %>-content-media__caption" ><%= caption %></div>
+<% } %>
+<%
+if (locals.transcription != undefined) {
+let data = {
+    label: transcription,
+    size:'md'
+}
+%>
+    <div class="<%= prefix %>-content-media__transcription" >
+        <%- include('../../../links/templates/ejs/link', data); %>
+    </div>
+<% } %>

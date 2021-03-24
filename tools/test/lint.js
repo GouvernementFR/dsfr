@@ -4,7 +4,7 @@ const getPackages = require('../utilities/packages');
 const root = require('../utilities/root');
 
 const lintStyles = async (pck) => {
-  const result = await stylelint.lint({ files: root(`packages/${pck}/**/*.scss`), formatter: 'unix' });
+  const result = await stylelint.lint({ files: root(`src/${pck}/**/*.scss`), formatter: 'unix' });
 
   if (result.errored) {
     console.log('\n\r', result.output);
@@ -16,7 +16,7 @@ const lintScripts = async (pck) => {
   const eslint = new ESLint();
   let results;
   try {
-    results = await eslint.lintFiles([root(`packages/${pck}/**/*.js`)]);
+    results = await eslint.lintFiles([root(`src/${pck}/**/*.js`)]);
   } catch (e) {
     // console.log(e);
     return;

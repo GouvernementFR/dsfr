@@ -1,0 +1,69 @@
+<%#
+# paramètres input
+
+* id (string, required) : id du label et de l'input, sert également à construire les ids des messages valid, error et hint
+
+* label (string, required) : label
+
+* type (string, required) : type de l'input. si textarea, l'input est remplacé par un textarea
+
+* placeholder (string, optionnal) : text du placeholder de l'input
+
+* icon (string, optionnal) : nom de l'icone qui sera placée sur la partie droite de l'input
+
+* valid (string, optionnal) : message de validation
+
+* error (string, optionnal) : message d'erreur
+
+* hint (string, optionnal) : message d'aide
+
+* required (boolean, optionnal)
+
+* disabled (boolena, optionnal)
+
+* attributes (object, optionnal) : attributs spécifiques à rajouter sur l'input
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let inputClasses = [prefix + '-input'];
+let inputAttrs = locals.attributes || {};
+
+let describedby = [];
+
+if (locals.valid !== undefined) {
+  inputClasses.push(prefix + '-input--valid');
+  describedby.push(id + '-desc-valid');
+}
+
+if (locals.error !== undefined) {
+  inputClasses.push(prefix + '-input--error');
+  describedby.push(id + '-desc-error');
+}
+
+if (describedby.length > 0) inputAttrs['aria-describedby'] = describedby.join(' ');
+
+if (locals.required === true) inputAttrs['required'] = '';
+if (locals.disabled === true) inputAttrs['disabled'] = '';
+if (locals.placeholder != undefined) inputAttrs['placeholder'] = placeholder;
+%>
+
+<%- include('../../../forms/templates/ejs/label'); %>
+
+<% if (locals.icon != undefined) { %>
+ <div class="<%= prefix %>-input-wrap <%- prefix %>-fi-<%= icon %>" >
+<% } %>
+
+<% if (locals.type === 'textarea') { %>
+<textarea <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %>  id="<%= id %>" name="<%= id %>"></textarea>
+<% }
+else {%>
+<input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= type %>" id="<%= id %>" name="<%= id %>">
+<% } %>
+
+<% if (locals.icon != undefined) { %>
+</div>
+<% } %>
+
+<%- include('../../../forms/templates/ejs/message'); %>

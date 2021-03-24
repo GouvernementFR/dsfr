@@ -1,0 +1,38 @@
+<%#
+# paramètres paragraph
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../index.ejs')); %>
+
+<%
+ let classes = locals.classes || [];
+
+ switch(locals.size) {
+    case 'xs' :
+    case 'sm' :
+    case 'lg' :
+    case 'lead' :
+        classes.push(`${prefix}-text--${size}`);
+        break;
+
+    case 'md':
+        classes.push(`${prefix}-text`);
+        break;
+ }
+
+ switch(locals.weight) {
+    case 'light' :
+    case 'regular' :
+    case 'bold' :
+    case 'xx-bold' :
+         classes.push(`${prefix}-text--${weight}`);
+         break;
+ }
+
+ if (locals.alt === true) classes.push(`${prefix}-text--alt`);
+
+ %>
+
+<p <%- includeClasses(classes); %>><%- locals.content || '' %></p>

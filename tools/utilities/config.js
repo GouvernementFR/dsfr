@@ -4,7 +4,7 @@ const root = require('../utilities/root');
 
 const getPackageYML = (id) => {
   try {
-    const file = root(`packages/${id}/.package.yml`);
+    const file = root(`src/${id}/.package.yml`);
     const fileContents = fs.readFileSync(file, 'utf8');
     const data = yaml.load(fileContents);
     return data;

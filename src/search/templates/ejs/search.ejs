@@ -1,0 +1,38 @@
+<%#
+# paramètres search-bar
+
+* id (string, required) : id de la barre de recherche
+
+* placeholder (string, required) : text du placeholder de l'input
+
+* size (string, optionnal) : modificateur de taille.
+  valeurs:
+  * lg : barre de recherche large
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let searchClasses = [prefix + '-search-bar'];
+
+ let attributes = locals.attributes || {};
+
+ attributes.id = locals.id;
+
+ attributes.role = "search"
+
+ let button = locals.button || {};
+ button.size = undefined;
+
+ button.span = true;
+
+ switch(locals.size) {
+     case 'lg':
+         searchClasses.push(prefix + '-search-bar--lg');
+         break;
+ }
+ %>
+<div <%- includeClasses(searchClasses); %> <%- includeAttrs(attributes) %>>
+    <%- include('../../../inputs/templates/ejs/input.ejs', {type: 'search', id: locals.id + '-input' }); %>
+    <%- include('../../../buttons/templates/ejs/button.ejs', button); %>
+</div>

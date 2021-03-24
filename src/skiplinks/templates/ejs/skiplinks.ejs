@@ -1,0 +1,15 @@
+<% eval(include('../../../core/index.ejs')); %>
+
+<div class="<%= prefix %>-skiplinks">
+  <nav role="navigation" aria-label="Accès rapide" class="<%= prefix %>-container">
+    <ul class="<%= prefix %>-skiplinks__list">
+      <%
+        for (const item of locals.items) {
+      %>
+      <li>
+        <a class="<%= prefix%>-link" href="<%= item.href %>" ><%= item.label %></a>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+</div>

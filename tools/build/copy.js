@@ -13,26 +13,26 @@ const copyFiles = (src, dest, files, ext, force, removeOrphans) => {
 };
 
 const copyStyles = (pck, removeOrphans) => {
-  const src = root(`packages/${pck}/`);
-  const dest = root(`public/packages/${pck}/`);
+  const src = root(`src/${pck}/`);
+  const dest = root(`public/src/${pck}/`);
 
-  copyDirs(src, dest, ['src/styles', 'generated/styles'], ['scss'], removeOrphans);
+  copyDirs(src, dest, ['styles', 'generated/styles'], ['scss'], removeOrphans);
   copyFiles(src, dest, ['index.scss', 'main.scss'], false, removeOrphans);
 };
 
 const copyScripts = (pck, removeOrphans) => {
-  const src = root(`packages/${pck}/`);
-  const dest = root(`public/packages/${pck}/`);
+  const src = root(`src/${pck}/`);
+  const dest = root(`public/src/${pck}/`);
 
-  copyDirs(src, dest, ['src/scripts', 'generated/scripts'], ['js'], removeOrphans);
+  copyDirs(src, dest, ['scripts', 'generated/scripts'], ['js'], removeOrphans);
   copyFiles(src, dest, ['index.js', 'main.js', 'api.js'], false, removeOrphans);
 };
 
 const copyTemplates = (pck, removeOrphans) => {
-  const src = root(`packages/${pck}/`);
-  const dest = root(`public/packages/${pck}/`);
+  const src = root(`src/${pck}/`);
+  const dest = root(`public/src/${pck}/`);
 
-  copyDirs(src, dest, ['src/templates', 'generated/templates'], ['ejs', 'js'], removeOrphans);
+  copyDirs(src, dest, ['templates', 'generated/templates'], ['ejs', 'js'], removeOrphans);
   copyFiles(src, dest, ['index.ejs'], false, removeOrphans);
 };
 

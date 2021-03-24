@@ -1,0 +1,35 @@
+<%#
+# Paramètres pagination
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<!--
+-> A div can be used with role navigation
+<div class="<%= prefix%>-pagination" role="navigation" aria-label="Pagination">
+-->
+<nav role="navigation" class="<%= prefix %>-pagination" aria-label="Pagination">
+    <ul class="<%= prefix %>-pagination__list">
+        <%
+            let disabled = locals.pages && pages[0].active === true;
+        %>
+        <% if (locals.first !== undefined) { %><%- include('./item', {...first, type:'first', disabled: disabled}); %><% } %>
+        <% if (locals.prev !== undefined) { %><%- include('./item', {...prev, type:'prev', disabled: disabled}); %><% } %>
+
+        <%
+            let page;
+            if (locals.pages) for (let i = 0; i < pages.length; i++) {
+              page = pages[i];
+        %>
+            <%- include('./item', page); %>
+        <% }%>
+
+        <%
+            disabled = locals.pages && pages[pages.length - 1].active === true;
+        %>
+        <% if (locals.next !== undefined) { %><%- include('./item', {...next, type:'next', disabled: disabled}); %><% } %>
+        <% if (locals.last !== undefined) { %><%- include('./item', {...last, type:'last', disabled: disabled}); %><% } %>
+    </ul>
+</nav>

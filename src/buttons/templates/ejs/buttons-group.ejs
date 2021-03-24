@@ -1,0 +1,81 @@
+<%#
+# paramètres groupe de boutons
+
+* buttons (array, required): paramètres spécifique de chaque bouton du groupe
+
+* inline (string, optional) : aligne les boutons horizontalement (dans la mesure du possible)
+valeurs :
+  * true : toujours en ligne
+  * sm : en ligne a partir du breakpoint SM
+  * md : en ligne a partir du breakpoint MD
+  * lg : en ligne a partir du breakpoint LG
+
+* align (string, optional) : définie l'alignement horizontal des boutons dans le groupe
+  * right : align les boutons sur la droite
+  * left : align les boutons sur la gauche
+  * center : align les boutons au centre
+
+* equisized (boolean, optional) : si valeur true, fixe la largeur des boutons a celle du plus grand
+
+#%>
+
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let groupClasses = locals.classes || [];
+ let hierarchical = locals.hierarchical || false;
+
+ groupClasses.push(prefix + '-btns-group');
+
+ if (locals.align) groupClasses.push(prefix + '-btns-group--'+locals.align);
+ if (locals.equisized) groupClasses.push(prefix + '-btns-group--equisized');
+ if (locals.reverse) groupClasses.push(prefix + '-btns-group--inline-reverse');
+
+
+ switch(locals.inline) {
+     case true:
+        groupClasses.push(prefix + '-btns-group--inline');
+        break;
+     case 'sm':
+        groupClasses.push(prefix + '-btns-group--inline-sm');
+        break;
+
+     case 'md':
+        groupClasses.push(prefix + '-btns-group--inline-md');
+        break;
+
+     case 'lg':
+        groupClasses.push(prefix + '-btns-group--inline-lg');
+        break;
+ }
+
+ switch(locals.size) {
+     case 'sm':
+        groupClasses.push(prefix + '-btns-group--sm');
+        break;
+
+     case 'lg':
+        groupClasses.push(prefix + '-btns-group--lg');
+        break;
+ }
+
+ if (locals.iconPlace !== undefined) switch(locals.iconPlace)
+ {
+
+     case 'left':
+        groupClasses.push(prefix + '-btns-group--icon-left');
+        break;
+
+     case 'right':
+        groupClasses.push(prefix + '-btns-group--icon-right');
+        break;
+ }
+ %>
+
+<ul <%- includeClasses(groupClasses) %>>
+<% for (let i = 0; i < buttons.length; i++) { %>
+<li>
+    <%- include('./button.ejs', {...buttons[i], size:undefined, iconPlace: undefined}); %>
+</li>
+  <% } %>
+</ul>

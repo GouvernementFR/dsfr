@@ -1,0 +1,41 @@
+<%#
+# paramètres card
+
+* title (string, required) : Titre
+
+* horizontal (boolean, optional) : si true, passe la card en mode horizontal
+
+* img (string, optionnal) : url de l'image
+
+* alt (string, optionnal) : texte alternatif de l'image
+
+* detail (string, optional) : Détail
+
+* description (string, optional) : Description
+
+* arrow (boolean, optionnal) : détermine la présence de l'icon arrow
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let classes = locals.classes || [];
+
+classes.push(prefix + '-card');
+
+if (locals.horizontal !== undefined) classes.push(prefix + '-card--horizontal');
+if (locals.enlarge) classes.push(prefix + '-enlarge-link');
+if (locals.arrow === false) classes.push(prefix + '-card--no-arrow');
+%>
+<div <%- includeClasses(classes) %>>
+    <div class="<%= prefix %>-card__body">
+        <% if (locals.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- detail %></p><% } %>
+        <h4 class="<%= prefix %>-card__title"><a href="#" class="<%= prefix %>-card__link"><%- title %></a></h4>
+        <% if (locals.description !== undefined) { %><p class="<%= prefix %>-card__desc"><%- description %></p><% } %>
+    </div>
+    <% if (locals.img !== undefined) { %>
+        <div class="<%= prefix %>-card__img">
+            <%- imgContent(img, alt) %>
+        </div>
+    <% } %>
+</div>

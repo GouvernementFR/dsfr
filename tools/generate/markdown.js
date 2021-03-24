@@ -44,7 +44,7 @@ const generateMarkdown = (id) => {
       break;
   };
 
-  const p = `public/packages/${id}/README.md`;
+  const p = `public/src/${id}/README.md`;
   const filePath = root(p);
 
   createFile(filePath, readme.publish());

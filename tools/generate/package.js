@@ -33,7 +33,7 @@ const getSortedList = (type) => {
   const list = [];
   const ext = EXTENSIONS[type];
   for (const pck of packages) {
-    if (fs.existsSync(root(`packages/${pck}/main.${ext}`))) list.push(pck);
+    if (fs.existsSync(root(`src/${pck}/main.${ext}`))) list.push(pck);
     levels[pck] = -1;
   }
 

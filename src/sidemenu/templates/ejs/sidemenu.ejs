@@ -1,0 +1,17 @@
+<%#
+# paramètres checkbox
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<nav class="<%= prefix %>-sidemenu<% if(modifier){%> <%= prefix %>-sidemenu<%- modifier %><%}%>" role="navigation" aria-label="Menu latéral">
+	<div class="<%= prefix %>-sidemenu__inner">
+		<button class="<%= prefix %>-sidemenu__btn" aria-controls="<%= collapseId %>" aria-expanded="false">Dans cette rubrique</button>
+		<div class="<%= prefix %>-collapse" id="<%- collapseId %>">
+			<div class="<%= prefix %>-sidemenu__title">Titre de rubrique</div>
+			<%- include('./list'); %>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,56 @@
+<%#
+# paramètres media
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let classes = locals.classes || [];
+let attributes = locals.attributes || [];
+classes.push(prefix + '-content-media');
+
+switch (locals.size) {
+    case 'sm':
+        classes.push(prefix + '-content-media--sm');
+        break;
+
+    case 'lg':
+        classes.push(prefix + '-content-media--lg');
+        break;
+}
+
+let type = locals.img !== undefined ? 'img' : 'vid';
+
+let tag;
+
+switch (type) {
+    case 'img':
+        tag = 'figure';
+        attributes["role"] = "group";
+        if (locals.caption != undefined) attributes["aria-label"] = locals.caption;
+        break;
+
+    case 'vid':
+        tag = 'div';
+        break;
+}
+%>
+
+<<%= tag %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+<%
+switch(type) {
+    case 'img':
+%>
+        <%- include('./media-img'); %>
+<%      break;
+
+    case 'vid':
+%>
+        <%- include('./media-vid'); %>
+<%      break;
+}
+%>
+
+</<%= tag %>>

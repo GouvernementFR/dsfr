@@ -1,0 +1,12 @@
+<%#
+# paramètres medias image
+
+* img : url de l'image
+
+* alt : texte alternatif de l'image
+
+%>
+<% eval(include('../../../index.ejs')); %>
+
+<%- imgContent(img, alt, [prefix + '-responsive-img']) %>
+

@@ -60,12 +60,14 @@ const build = async (settings) => {
 
   if (settings.styles) {
     logPart('styles');
+    
+    console.log(styles);
 
     for (const pck of styles) {
       logPackage(pck);
 
       try {
-        await buildStyles([pck], 'public/packages', 'public/dist/css/', pck, settings.minify, settings.sourcemap);
+        await buildStyles([pck], 'public/src', 'public/dist/css/', pck, settings.minify, settings.sourcemap);
       } catch (e) {
         console.log(e);
       }
@@ -75,7 +77,7 @@ const build = async (settings) => {
       logPackage(config.namespace);
 
       try {
-        await buildStyles(config.styles, 'public/packages', 'public/dist/css/', config.namespace, settings.minify, settings.sourcemap);
+        await buildStyles(config.styles, 'public/src', 'public/dist/css/', config.namespace, settings.minify, settings.sourcemap);
       } catch (e) {
         console.log(e);
       }
@@ -89,7 +91,7 @@ const build = async (settings) => {
       logPackage(pck);
 
       try {
-        await buildScripts([pck], 'public/packages', 'public/dist/js/', pck, settings.minify, settings.legacy, settings.sourcemap);
+        await buildScripts([pck], 'public/src', 'public/dist/js/', pck, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
         console.log(e);
       }
@@ -98,7 +100,7 @@ const build = async (settings) => {
     if (settings.main) {
       logPackage(config.namespace);
       try {
-        await buildScripts(config.scripts, 'public/packages', 'public/dist/js/', config.namespace, settings.minify, settings.legacy, settings.sourcemap);
+        await buildScripts(config.scripts, 'public/src', 'public/dist/js/', config.namespace, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
         console.log(e);
       }

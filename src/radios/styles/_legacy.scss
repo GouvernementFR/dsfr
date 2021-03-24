@@ -1,0 +1,24 @@
+////
+/// Radios Module
+/// @group radios
+////
+@import '../../core/index';
+@import '../../legacy/index';
+@import '../index';
+
+@include legacy(ie11) {
+  /**
+  * Correctif radio
+  */
+  #{ns(fieldset--inline)} {
+    #{ns(radio-group)} {
+      &:last-child {
+        input[type="radio" i] + label {
+          @include radio-rich() {
+            margin-bottom: space(2v) !important;
+          }
+        }
+      }
+    }
+  }
+}

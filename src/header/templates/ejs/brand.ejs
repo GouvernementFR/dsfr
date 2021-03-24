@@ -1,0 +1,56 @@
+<div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
+    <%
+        const link = '<a href="/" title="Retour à l’accueil" >';
+
+        let position = 'logo';
+
+        switch(true) {
+            case locals.service !== undefined:
+              position = 'service';
+              break;
+
+            case locals.operator !== undefined:
+              position = 'operator';
+              break;
+        }
+    %>
+
+    <div class="<%= prefix %>-header__logo" >
+        <% if (position === 'logo') { %><%- link %><% } %>
+            <%
+                switch(typeof locals.logo) {
+                    case 'string': %>
+                        <%- include(locals.logo); %>
+                    <% break;
+
+                    case 'object': %>
+                        <%- include('../../../logo/templates/ejs/logo', locals.logo); %>
+                        <% break;
+                }
+            %>
+        <% if (position === 'logo') { %><%- '</a>' %><% } %>
+    </div>
+
+
+    <% if (locals.operator !== undefined) { %>
+        <div class="<%= prefix %>-header__operator">
+            <% if (position === 'operator') { %><%- link %><% } %>
+                <%- imgContent(operator.img, operator.alt, [], operator.style) %>
+            <% if (position === 'operator') { %><%- '</a>' %><% } %>
+        </div>
+    <% } %>
+
+
+    <% if (locals.service !== undefined) { %>
+        <div class="<%= prefix %>-header__service" >
+            <% if (position === 'service') { %><%- link %><% } %>
+                <% if (service.title !== undefined) { %>
+                    <p class="<%= prefix %>-header__service-title"><%- service.title %></p>
+                <% } %>
+            <% if (position === 'service') { %><%- '</a>' %><% } %>
+            <% if (service.tagline !== undefined) { %>
+                <p class="<%= prefix %>-header__service-tagline"><%- service.tagline %></p>
+            <% } %>
+        </div>
+    <% } %>
+</div>

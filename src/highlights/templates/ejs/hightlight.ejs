@@ -1,0 +1,18 @@
+<%#
+# paramètres highlight
+
+* text (string, required) : contenu texte
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let classes = locals.classes || [];
+
+ classes.push(prefix + '-highlight');
+
+ %>
+
+<div <%- includeClasses(classes)%>>
+  <%- include('../../../core/templates/ejs/typography/paragraph', {content: text, size: locals.size}) %>
+</div>

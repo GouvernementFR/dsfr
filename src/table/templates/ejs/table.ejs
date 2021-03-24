@@ -1,0 +1,51 @@
+<%#
+# paramètres Table
+
+* caption (string, optional) : Titre
+
+* responsive (boolean, optional) : {default: true} rend le tableau scrollable si le contenu dépasse et ajoute une ombre
+
+* bordered (boolean, optional) : si true, ajoute des séparateurs entre chaque ligne et enleve l'effet even/odd
+
+* col (integer, optional) : nombre de colones
+
+* row (integer, optional) : nombre de lignes
+
+// TODO: templatisation des colonnes avec des objets de config
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let classes = locals.classes || [];
+classes.push(prefix + '-table');
+if (locals.bordered) classes.push(prefix + '-table--bordered');
+if (locals.noscroll) classes.push(prefix + '-table--no-scroll');
+if (locals.nocaption) classes.push(prefix + '-table--no-caption');
+if (locals.captionBottom) classes.push(prefix + '-table--caption-bottom');
+if (locals.layout) classes.push(prefix + '-table--layout-fixed');
+%>
+
+<div <%- includeClasses(classes) %>>
+    <table>
+        <% if (locals.caption !== undefined) { %>
+            <caption><%= caption %></caption>
+        <% } %>
+        <thead>
+            <tr>
+                <% for(var j = 0; j < locals.col; j++) { %>
+                    <th scope="col"> th<%= j %> </th>
+                <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i = 0; i < locals.row; i++) { %>
+            <tr>
+                <% for(var j = 0; j < locals.col; j++) { %>
+                    <td><%- lorem().slice(0,Math.floor(Math.random() * 50)) %></td>
+                <% } %>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>

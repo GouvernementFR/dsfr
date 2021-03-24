@@ -1,6 +1,6 @@
 <%
 
-const dir = root + 'packages/' + id + '/example/';
+const dir = root + 'src/' + id + '/example/';
 
 let sampling = false;
 
@@ -30,7 +30,7 @@ function getSample (include) {
             content: '<pre class=" language-html"><code>' + html + '</code></pre>'
         };
 
-        snippet = include(root + 'packages/accordions/src/templates/ejs/accordion', accordion);
+        snippet = include(root + 'src/accordions/templates/ejs/accordion', accordion);
     }
 
     if (layout === undefined) layout = root + 'examples/layout';
@@ -91,7 +91,7 @@ locals.randomContent = randomContent;
 
 
 if (locals.prepend === true) { %>
-<%- include(root + '/packages/' + id + '/example/prepend') %>
+<%- include(root + '/src/' + id + '/example/prepend') %>
 <% } %>
 
 <% if (!locals.noHeading) { %>

@@ -1,0 +1,65 @@
+<%#
+# paramètres select
+
+* id (string, required) : id du label et du select, sert également à construire les ids des messages valid, error et hint
+
+* label (string, required) : label
+
+* options (array, required) : options du select, un array d'objets avec :
+  * value : attribut value de l'option
+  * label : label de l'option
+
+* placeholder (string, optionnal) : text du placeholder du select
+
+* valid (string, optionnal) : message de validation
+
+* error (string, optionnal) : message d'erreur
+
+* hint (string, optionnal) : message d'aide
+
+* required (boolean, optionnal)
+
+* disabled (boolena, optionnal)
+
+* attributes (object, optionnal) : attributs spécifiques à rajouter sur le select
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let selectClasses = [prefix + '-select'];
+ let selectAttrs = locals.attributes || {};
+ let describedby = [];
+
+ if (locals.valid !== undefined) {
+   selectClasses.push(prefix + '-select--valid');
+   describedby.push(id + '-desc-valid');
+ }
+
+ if (locals.error !== undefined) {
+   selectClasses.push(prefix + '-select--error');
+   describedby.push(id + '-desc-error');
+ }
+
+ if (describedby.length > 0) selectAttrs['aria-describedby'] = describedby.join(' ');
+
+ if (locals.required === true) selectAttrs['required'] = '';
+ if (locals.disabled === true) selectAttrs['disabled'] = '';
+ %>
+
+<%- include('../../../forms/templates/ejs/label'); %>
+
+<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= id %>" name="<%= id %>">
+ <% if (locals.placeholder != undefined) { %>
+ <option value="" selected disabled hidden><%= placeholder %></option>
+ <% } %>
+
+ <%
+  for (let i = 0; i < options.length; i++) {
+   let option = options[i];
+ %>
+ <option value="<%= option.value %>"><%= option.label %></option>
+ <% } %>
+</select>
+
+<%- include('../../../forms/templates/ejs/message'); %>
