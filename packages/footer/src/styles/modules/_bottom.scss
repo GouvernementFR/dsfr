@@ -11,11 +11,6 @@
 &__bottom {
   @include display-flex(row, center, null, wrap);
   @include margin-top(10v);
-  @include padding(0 0 4v);
-
-  @include respond-from(sm) {
-    @include padding(0);
-  }
 }
 
 /**
@@ -70,9 +65,5 @@
     @include text-style(xs);
     @include margin-bottom(4v);
     @include margin-top(2v);
-
-    @include respond-from(sm) {
-      @include margin-top(0);
-    }
   }
 }
