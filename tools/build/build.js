@@ -60,8 +60,6 @@ const build = async (settings) => {
 
   if (settings.styles) {
     logPart('styles');
-    
-    console.log(styles);
 
     for (const pck of styles) {
       logPackage(pck);

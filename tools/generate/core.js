@@ -5,7 +5,7 @@ const fs = require('fs');
 const log = require('../utilities/log');
 
 const generateCore = () => {
-  const dir = root('packages/core/generated/');
+  const dir = root('src/core/generated/');
 
   let scss = '';
   let js = '';
