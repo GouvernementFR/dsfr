@@ -7,11 +7,12 @@
 
 #{ns(summary)} {
   @include disable-link-style;
+  @include disable-list-style;
   @include padding(6v);
   @include padding(8v 10v 6v, md);
 
   @include title {
-    @include margin(0 0 4v);
+    @include margin(0 0 2v);
     @include text-style(xs);
     font-weight: font-weight(bold);
     text-transform: uppercase;
