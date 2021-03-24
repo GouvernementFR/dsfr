@@ -48,8 +48,6 @@ const copyAssets = (removeOrphans) => {
   const dest = root('public/dist/');
 
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
-
-  copyDir(root('assets/favicons'), root('public/'), ['ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
 
 const copyPackages = (removeOrphans) => {
@@ -62,4 +60,11 @@ const copyPackages = (removeOrphans) => {
   }
 };
 
-module.exports = { copyStyles, copyScripts, copyTemplates, copyImages, copyAssets, copyPackages };
+const deployFavicons = () => {
+  const src = root('assets/favicons');
+  const dest = root('public/');
+
+  copyDir(src, dest, ['ico', 'jpg', 'png', 'svg', 'webmanifest']);
+};
+
+module.exports = { copyStyles, copyScripts, copyTemplates, copyImages, copyAssets, copyPackages, deployFavicons };
