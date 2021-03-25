@@ -58,7 +58,9 @@ const lorem = (insert, length) => {
 locals.lorem = lorem;
 
 const imgContent = (src, alt, classes=[], style) => {
-  return `<img src="${src || '../img/image.jpg'}" ${classes.length > 0 ? 'class="'+classes.join(' ')+'"' : ''} alt="${(alt!==false) ? '[A MODIFIER | texte alternatif de l’image]' : '' }" ${style ? 'style="' + style + '"' : ''}>
+  const resp = `${prefix}-responsive-img`;
+  if (classes.indexOf(resp) === -1) classes.push(resp);
+  return `<img src="${src || '../img/image.jpg'}" ${classes.length > 0 ? 'class="'+classes.join(' ') +'"' : ''} alt="${(alt!==false) ? '[A MODIFIER | texte alternatif de l’image]' : '' }" ${style ? 'style="' + style + '"' : ''}>
   ${(alt===false || alt==='') ? '<!-- L\'alternative de l\'image (attribut alt) doit rester vide car l\'image est illustrative et ne doit pas être restituée aux technologies d’assistance -->' : ' <!-- L\'alternative de l\'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->'}
   `;
 }
