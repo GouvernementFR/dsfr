@@ -56,7 +56,6 @@
     flex-basis: calc(100% - #{space(10v)});
     min-height: space(6v);
     @include padding-left(8v);
-    cursor: pointer;
     @include text-style(md);
 
     /*
