@@ -111,6 +111,7 @@
       }
 
       @include respond-from(lg) {
+        position: initial;
         @include before(null, none);
       }
 
