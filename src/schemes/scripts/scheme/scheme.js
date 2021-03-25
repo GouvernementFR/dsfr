@@ -13,6 +13,8 @@ class Scheme {
   }
 
   init () {
+    this.root = document.documentElement;
+
     this.scheme = localStorage.getItem('scheme')
       ? localStorage.getItem('scheme')
       : null;
@@ -26,8 +28,6 @@ class Scheme {
         localStorage.setItem('scheme', 'dark');
       } else this.scheme = 'light';
     }
-
-    this.root = document.documentElement;
 
     if (this.scheme === 'dark') {
       if (!this.root.hasAttribute(TRANSITION_ATTR)) {
