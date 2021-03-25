@@ -115,6 +115,11 @@
         @include before(null, none);
       }
 
+      & > #{ns(nav__link)},
+      & > #{ns(nav__btn)} {
+        @include z-index(nav);
+      }
+
       & > #{ns(nav__link)} {
         pointer-events: none;
         cursor: default;
