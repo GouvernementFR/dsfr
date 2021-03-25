@@ -67,7 +67,7 @@
     $c: darken($color, (12% * $factor ) * (100% / $brightness));
   }
   @else {
-    $c: lighten($color, (16% * $factor ) * (100% / (100% - $brightness)));
+    $c: lighten($color, (12% * $factor ) * (100% / (100% - $brightness)));
   }
 
   @return adjust_color($c, $alpha: -0.5);

@@ -12,6 +12,15 @@
 
   background-color: var(--#{nth($sets, 1)});
 
+  $set: map_get($scheme-sets, nth($sets, 1));
+
+  @include _get-hover-vars(_scheme-set-color($set, light), true);
+
+  // Les variables de couleur hover en version dark-mode
+  #{$dark-theme-selector} & {
+    @include _get-hover-vars(_scheme-set-color($set, dark), true);
+  }
+
   @include _theme-transition() {
     transition: background-color $theme-transition-duration;
   }
