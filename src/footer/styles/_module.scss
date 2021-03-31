@@ -83,6 +83,7 @@
    */
   &__logo {
     @include size(200px, auto);
+    max-height: 100%;
   }
 
   @import 'modules/content';
