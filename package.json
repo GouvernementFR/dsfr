@@ -11,7 +11,7 @@
     "public"
   ],
   "config": {
-    "prefix": "rf",
+    "prefix": "fr",
     "namespace": "dsfr",
     "organisation": "@gouvfr"
   },
