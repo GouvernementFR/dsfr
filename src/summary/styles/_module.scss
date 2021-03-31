@@ -9,7 +9,7 @@
   @include disable-link-style;
   @include disable-list-style;
   @include padding(6v);
-  @include padding(8v 10v 6v, md);
+  @include padding(8v, md);
 
   @include title {
     @include margin(0 0 2v);
