@@ -48,8 +48,8 @@
   }
 
   /**
-  * rf-btns-group--inline : aligne les boutons horizontalement dans tout les cas
-  * rf-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
+  * fr-btns-group--inline : aligne les boutons horizontalement dans tout les cas
+  * fr-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
   */
   &--inline {
     @include _make-horizontal;
@@ -162,7 +162,7 @@
   }
 
   /**
-  * rf-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
+  * fr-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
   */
   &--left {
     &,
@@ -173,7 +173,7 @@
   }
 
   /**
-  * rf-btns-group--right : aligne les boutons sur la droite
+  * fr-btns-group--right : aligne les boutons sur la droite
   */
   &--right {
     &,
@@ -184,7 +184,7 @@
   }
 
   /**
-  * rf-btns-group--center : aligne les boutons au centre du conteneur
+  * fr-btns-group--center : aligne les boutons au centre du conteneur
   */
   &--center {
     &,
@@ -195,7 +195,7 @@
   }
 
   /**
-  * rf-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
+  * fr-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
   */
   &--equisized {
     .#{$prefix}-btn {
@@ -204,7 +204,7 @@
   }
 
   /**
-  * rf-btns-group--sm : Fixe les boutons à la taille SM
+  * fr-btns-group--sm : Fixe les boutons à la taille SM
   */
   &--sm {
     #{ns(btn)} {
@@ -236,7 +236,7 @@
   }
 
   /**
-  * rf-btns-group--md : (défaut) Fixe les boutons à la taille MD
+  * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
   */
   &:not(#{ns-group(btns) + '--sm'}):not(#{ns-group(btns) + '--lg'}) {
     #{ns(btn)} {
@@ -268,7 +268,7 @@
   }
 
   /**
-  * rf-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
+  * fr-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
   */
   &--lg {
     #{ns(btn)} {

@@ -115,7 +115,7 @@ class Table {
     }
   }
 
-  /* ajoute la classe rf-table--shadow-right ou rf-table--shadow-right sur rf-table
+  /* ajoute la classe fr-table--shadow-right ou fr-table--shadow-right sur fr-table
    en fonction d'une valeur de scroll et du sens (right, left) */
   setShadowVisibility (side, scrollPosition) {
     // si on a pas scroll, ou qu'on scroll jusqu'au bout

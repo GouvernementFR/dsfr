@@ -46,7 +46,7 @@
     @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
   }
 
-  //TODO: changer en rf-link--close
+  //TODO: changer en fr-link--close
   #{ns(btn) + ns(fi-close-line)} {
     @include scheme-element-bg-color(t-plain, false, override);
     @include scheme-element-text-color(bf500, false);

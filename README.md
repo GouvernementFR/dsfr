@@ -69,7 +69,7 @@ Le point de départ de l’utilisation du DS est la création de fichiers HTML
       <title>Design System de l'Etat</title>
    </head>
    <body>
-      <div class="rf-container"></div>
+      <div class="fr-container"></div>
       <script src="js/dsfr.min.js"></script>
    </body>
 </html>
@@ -108,7 +108,7 @@ Le Design System de l'Etat utilise une webfont d'icônes, directement chargées 
 
 
 ```html
-<span class="rf-fi-alert-fill"></span>
+<span class="fr-fi-alert-fill"></span>
 ```
 ## Utilisation
 

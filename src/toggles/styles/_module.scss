@@ -77,7 +77,7 @@
 
     /*
      * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
-     * On récupère le text via l'attribut [data-rf-unchecked-label]
+     * On récupère le text via l'attribut [data-fr-unchecked-label]
      */
     @include before {
       flex-shrink: 0;
@@ -118,6 +118,6 @@
 }
 
 /*
- * Provisoire: à enlever quand rf-body sera en place
+ * Provisoire: à enlever quand fr-body sera en place
  */
 @import 'modules/group';
