@@ -26,14 +26,11 @@
     }
 
     &--active {
-      & > #{ns(sidemenu__btn)} {
-        @include scheme-element-text-color(bf500);
-      }
-
+      & > #{ns(sidemenu__btn)},
       & > #{ns(sidemenu__link)} {
         @include scheme-element-text-color(bf500);
 
-        @include before {
+        @include after {
           background-color: currentColor;
         }
       }
@@ -62,10 +59,10 @@
 }
 
 #{ns(sidemenu__btn)} {
-  @include scheme-element-text-color(g700);
+  @include scheme-element-text-color(g800);
 
   &[aria-expanded="true" i] {
-    @include scheme-element-border-color(t-plain, true, bottom);
+    @include scheme-element-border-color(t-plain, true, bottom, 0px solid $COLOR);
   }
 
   @at-root #{ns(sidemenu__inner)} > #{&} {

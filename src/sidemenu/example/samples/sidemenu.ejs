@@ -1,6 +1,7 @@
 <%
 
-const models = [ 'MALMMLMMLM', 'LLMLLLL', 'LLLLLL' ];
+const models = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
+const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 
 function link(level, active) {
   return {
@@ -12,7 +13,8 @@ function link(level, active) {
 
 function items(level, active) {
   const items = [];
-  const model = models[level];
+  let model = models[level];
+  (active===true) ? model = models2[level] : models[level];
 
   for (let i = 0; i < model.length; i++) switch(model.charAt(i)) {
     case 'L':
