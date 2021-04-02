@@ -1,0 +1,33 @@
+////
+/// Navigation Schemes : Nav
+/// @group navigation
+////
+
+#{ns(nav)} {
+  &__link,
+  &__btn {
+    @include scheme-element-text-color(g800);
+    @include scheme-element-bg-color(t-plain, true, true);
+
+    &[aria-current] {
+      @include scheme-element-text-color(bf500);
+
+      @include before {
+        @include scheme-element-bg-color(bf500);
+      }
+    }
+  }
+
+  &__btn {
+    &[aria-expanded="true" i] {
+      @include respond-from(lg) {
+        @include scheme-element-text-color(bf500-plain);
+        @include scheme-element-bg-color(bf200-bf300);
+      }
+    }
+  }
+
+  @include list-item {
+    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+  }
+}

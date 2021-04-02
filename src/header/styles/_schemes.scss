@@ -6,25 +6,25 @@
 #{ns(header)} {
   @include scheme-element-bg-color(w-g750, true);
 
-  //TODO: ADD popin schemes after header modal refacto
+  &__service {
+    @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
+  }
 
-  #{ns(shortcuts)} {
-    @include list-item {
+  &__menu-links {
+    #{ns(link)} {
       @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+    }
+  }
 
-      @include respond-from(lg) {
-        &:not(:first-child) {
-          @include scheme-element-border-color(g300, true, left);
-        }
+  &__tools-links {
+    #{ns(link)} {
+      @include after {
+        @include scheme-element-bg-color(g400);
       }
     }
   }
 
   &__navbar {
-    @include after {
-      @include scheme-element-bg-color(g300, true);
-    }
-
     #{ns(service)} {
       @include title {
         @include scheme-element-text-color(g800, true);
@@ -35,20 +35,19 @@
       @include scheme-element-bg-color(t-plain, false, override);
       @include scheme-element-text-color(bf500);
 
-      &--menu,
-      &#{ns(fi-menu-fill)} {
+      &--menu {
         @include scheme-element-text-color(g700);
       }
     }
   }
 
-  #{ns(nav)} {
-    @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
+  #{ns(header__menu)} {
+    @include respond-from(lg) {
+      @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
+    }
   }
 
-  //TODO: changer en fr-link--close
-  #{ns(btn) + ns(fi-close-line)} {
-    @include scheme-element-bg-color(t-plain, false, override);
-    @include scheme-element-text-color(bf500, false);
+  #{ns(modal)} {
+    @include scheme-element-bg-color(w-g750);
   }
 }

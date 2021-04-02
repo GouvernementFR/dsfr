@@ -12,12 +12,15 @@
     @include margin-left(auto);
     flex: 1 0 auto;
 
-    #{ns(shortcuts)} + #{ns(search-bar)} {
+    &-links + #{ns(header__search)} {
       @include margin-top(4v);
     }
   }
 
-  &#{ns(modal)} {
-    @include margin-left(auto, lg);
+  #{ns(header__search)} {
+    @include respond-from(lg) {
+      @include max-size(100v);
+      @include margin-left(auto);
+    }
   }
 }

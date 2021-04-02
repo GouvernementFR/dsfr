@@ -13,20 +13,16 @@
 let classes = locals.classes || [];
 
 classes.push(`${prefix}-nav`);
-classes.push(`${prefix}-modal`);
 
 let attributes = locals.attributes || {};
 
-attributes.id = locals.id;
-// attributes.tabindex = -1;
+attributes.id = locals.navigationId || locals.id;
 attributes.role = 'navigation';
 attributes['aria-label'] = 'Menu principal'
 
 %>
 
 <nav <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
-    <%- include('../../../links/templates/ejs/link-close', { closeId: id }); %>
-
     <% if(locals.items) { %>
     <ul class="<%= prefix %>-nav__list">
         <%
@@ -34,7 +30,6 @@ attributes['aria-label'] = 'Menu principal'
                 let item = items[i];
 
                 let classes = [prefix + '-nav__item'];
-                if (item.active === true) classes.push(prefix + '-nav__item--active');
                 if (item.align === 'right') classes.push(prefix + '-nav__item--align-right');
         %>
         <li <%- includeClasses(classes); %>>

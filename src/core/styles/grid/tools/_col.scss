@@ -40,5 +40,12 @@
   @if $size == 0 {
     $calc: '0';
   }
-  @include margin-left($calc);
+
+  &:not(&--right) {
+    @include margin-left($calc);
+  }
+
+  &--right {
+    @include margin-right($calc);
+  }
 }

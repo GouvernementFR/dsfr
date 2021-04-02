@@ -35,7 +35,7 @@ class Modal extends api.core.Disclosure {
   }
 
   click (e) {
-    if (this.body && this.element === e.target) this.conceal();
+    if (this.body && this.body !== e.target && !this.body.contains(e.target)) this.conceal();
   }
 
   gather () {

@@ -1,8 +1,8 @@
 import api from '../../api.js';
 
 export const HEADER_SELECTOR = api.core.ns.selector('header');
-export const HEADER_TOOLS_SELECTOR = api.core.ns.selector('header__tools');
-export const HEADER_SEARCH_BAR_SELECTOR = `${HEADER_TOOLS_SELECTOR} ${api.core.ns.selector('search-bar')}`;
-export const HEADER_SHORTCUTS_SELECTOR = `${HEADER_TOOLS_SELECTOR} ${api.core.ns.selector('shortcuts')}`;
-export const HEADER_NAV_SELECTOR = api.core.ns.selector('nav');
-export const HEADER_NAV_LIST_SELECTOR = `${HEADER_NAV_SELECTOR} ${api.core.ns.selector('nav__list')}`;
+export const HEADER_SEARCH_SELECTOR = api.core.ns.selector('header__search');
+export const HEADER_MENU_SELECTOR = api.core.ns.selector('header__menu');
+export const HEADER_TOOLS_LINKS_SELECTOR = api.core.ns.selector('header__tools-links');
+export const HEADER_MENU_LINKS_SELECTOR = api.core.ns.selector('header__menu-links');
+export const HEADER_LINKS_GROUP_SELECTOR = `${HEADER_TOOLS_LINKS_SELECTOR} ${api.core.ns.selector('links-group')}`;

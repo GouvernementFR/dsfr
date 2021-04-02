@@ -1,44 +1,72 @@
 <div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
     <%
-        const link = '<a href="/" title="Retour à l’accueil" >';
 
-        let position = 'logo';
+
+        let position;
+        let title = 'Accueil - ';
+
+        const logoPlaceholder = 'nom de l’entité (ministère , secrétariat d‘état, gouvernement)';
 
         switch(true) {
             case locals.service !== undefined:
-              position = 'service';
-              break;
+                position = 'service';
+                title += contentPlaceholder(service.title);
+                if (logo) title += ' - ' + contentPlaceholder(logoPlaceholder);
+                break;
 
             case locals.operator !== undefined:
-              position = 'operator';
-              break;
+                position = 'operator';
+                title += contentPlaceholder(imgAltText);
+                break;
+
+            default:
+                position = 'logo';
+                title += contentPlaceholder(logoPlaceholder);
         }
+
+        const link = `<a href="/" title="${title}" >`;
     %>
 
-    <div class="<%= prefix %>-header__logo" >
-        <% if (position === 'logo') { %><%- link %><% } %>
+    <div class="<%= prefix %>-header__brand-top" >
+        <div class="<%= prefix %>-header__logo" >
+            <% if (position === 'logo') { %><%- link %><% } %>
             <%
+                let path, data;
                 switch(typeof locals.logo) {
-                    case 'string': %>
-                        <%- include(locals.logo); %>
-                    <% break;
+                    case 'string':
+                        path = locals.logo;
+                        break;
 
-                    case 'object': %>
-                        <%- include('../../../logo/templates/ejs/logo', locals.logo); %>
-                        <% break;
+                    case 'object':
+                        path = '../../../logo/templates/ejs/logo';
+                        data = locals.logo;
+                        break;
+
+                    default:
+                        path = '../../../logo/templates/ejs/logo';
+                        data = { title: 'République<br>Française' };
                 }
             %>
-        <% if (position === 'logo') { %><%- '</a>' %><% } %>
+                <%- include(path, data); %>
+            <% if (position === 'logo') { %><%- '</a>' %><% } %>
+        </div>
+
+
+        <% if (locals.operator !== undefined) { %>
+            <div class="<%= prefix %>-header__operator">
+                <% if (position === 'operator') { %><%- link %><% } %>
+                <%- imgContent(operator.img, operator.alt, [], operator.style) %>
+                <% if (position === 'operator') { %><%- '</a>' %><% } %>
+            </div>
+        <% } %>
+
+        <% if (locals.navbar) { %>
+            <%-
+            include('./navbar', navbar); %>
+        <% } %>
     </div>
 
 
-    <% if (locals.operator !== undefined) { %>
-        <div class="<%= prefix %>-header__operator">
-            <% if (position === 'operator') { %><%- link %><% } %>
-                <%- imgContent(operator.img, operator.alt, [], operator.style) %>
-            <% if (position === 'operator') { %><%- '</a>' %><% } %>
-        </div>
-    <% } %>
 
 
     <% if (locals.service !== undefined) { %>

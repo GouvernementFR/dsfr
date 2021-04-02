@@ -19,6 +19,8 @@
   * left : icone à gauche du label
   * right : icone à droite du label
 
+* alignOnContent (boolean, optionnal) : ajoute des marges négatives pour être aligné sur le contenu
+
 %>
 <% eval(include('../../../core/index.ejs')); %>
 
@@ -69,6 +71,8 @@ if (locals.disabled === true) {
   break;
   }
 }
+
+if (locals.alignOnContent) linkClasses.push(`${prefix}-link--align-on-content`)
 %>
 
 <<%= tag %> <%- includeClasses(linkClasses)%> <%- includeAttrs(linkAttrs); %>><%- label %></<%= tag %>>

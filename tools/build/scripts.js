@@ -7,6 +7,7 @@ const virtual = require('@rollup/plugin-virtual');
 const banner2 = require('rollup-plugin-banner2');
 // const prettier = require('rollup-plugin-prettier');
 const fs = require('fs');
+const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
 const process = async (data, dir, filename, minify, legacy, map) => {
@@ -59,12 +60,12 @@ const process = async (data, dir, filename, minify, legacy, map) => {
     await bundle.write(output);
     await bundle.close();
   } catch (e) {
-    console.log(e);
+    log.error(e);
   }
 
   const size = fs.statSync(dir + entryFilename).size;
 
-  console.log('\x1b[38m', entryFilename, '\x1b[33m', `${size} bytes`, '\x1b[0m');
+  log.file(entryFilename, `${size} bytes`);
 };
 
 const buildScripts = async (packages, src, dest, filename, minify, legacy, map) => {
@@ -80,7 +81,7 @@ const buildScripts = async (packages, src, dest, filename, minify, legacy, map) 
     else noScripts.push(pck);
   }
 
-  if (noScripts.length > 0) console.log('\x1b[36m', `no scripts in ${noScripts.join(', ')}`, '\x1b[0m');
+  if (noScripts.length > 0) log.info(`no scripts in ${noScripts.join(', ')}`);
 
   if (data === '') return;
 

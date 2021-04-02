@@ -6,7 +6,7 @@ const log = require('./log');
 // Create Directories
 const createDir = (dirPath) => {
   fs.mkdirSync(dirPath, { recursive: true }, (error) => {
-    if (error) console.error(error);
+    if (error) log.error(error);
   });
 };
 

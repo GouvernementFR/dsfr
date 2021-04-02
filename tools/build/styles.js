@@ -7,6 +7,7 @@ const cssnano = require('cssnano');
 const mqpacker = require('mqpacker');
 const postcssBanner = require('postcss-banner');
 const root = require('../utilities/root');
+const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
 const process = async (css, plugins, options) => {
@@ -17,7 +18,7 @@ const process = async (css, plugins, options) => {
   const size = createFile(result.opts.to, result.css);
   const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
 
-  console.log('\x1b[38m', filename, '\x1b[33m', `${size} bytes`, '\x1b[0m');
+  log.file(filename, `${size} bytes`);
   if (result.map) createFile(result.opts.to + '.map', result.map.toString());
 };
 
@@ -47,7 +48,7 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
     result = sass.renderSync(options);
   } catch (e) {
     const reformat = e.formatted.replace(/on line .*\.scss/, `${e.file.replace('public/', '')}:${e.line}:${e.column}`);
-    console.log('\x1b[31m', reformat, '\x1b[0m');
+    log.error(reformat);
     try {
       process.kill(0);
     } catch (e) {

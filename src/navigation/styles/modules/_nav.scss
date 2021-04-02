@@ -8,121 +8,111 @@
   @include disable-list-style;
   @include z-index(nav, true);
 
-  a:not([href]) {
-    cursor: default;
-  }
-
-  > #{ns(link)}--close {
-    display: none;
-  }
-
   @include list {
     @include display-flex(column);
     @include margin(0);
     @include padding(0);
-    @include relative;
 
     @include respond-from(lg) {
       flex-direction: row;
       flex-wrap: nowrap;
       @include margin(0 -4v);
+
+      & > *:first-child:nth-last-child(2) ~ *,
+      & > *:first-child:nth-last-child(3) ~ *,
+      & > *:first-child:nth-last-child(4) ~ * {
+        @include margin-left(5v);
+      }
+    }
+
+    &,
+    & > * {
+      & > #{ns(nav__link)},
+      & > #{ns(nav__btn)} {
+        font-weight: bold;
+
+        @include respond-from(lg) {
+          @include padding(4v);
+          @include margin(0);
+          @include size(auto, 100%);
+          min-height: space(14v);
+          font-weight: normal;
+
+          &[aria-current] {
+            @include before {
+              @include absolute(auto, null, 0, 0, 100%, 2px);
+              @include margin-top(0);
+            }
+
+            /**
+             * Pour conserver le souligné de selection  par dessus la barre de mega-menu
+             */
+            &:not([aria-expanded="true"]) {
+              @include z-index(nav);
+            }
+          }
+        }
+      }
     }
   }
 
   @include list-item {
-    @include margin(0);
-    @include display-flex(column, flex-start);
+    // TODO: supprimer la stylisation de la liste item, trouver une solution différente pour l'affichage du menu à droite et la barre d'espacement grise en mobile
+    @include display-flex(column, stretch);
     flex: 0 1 auto;
 
     @include respond-from(lg) {
       box-shadow: none;
+      align-items: flex-start;
 
       &--align-right {
         align-items: flex-end;
       }
     }
+  }
 
-    @include before(null, none);
+  &__link,
+  &__btn {
+    @include size(100%);
+    @include padding(3v 0);
+    @include text-style(md);
+    text-align: left;
 
     @include respond-from(lg) {
-      &:first-child:nth-last-child(2) ~ &,
-      &:first-child:nth-last-child(3) ~ &,
-      &:first-child:nth-last-child(4) ~ & {
-        @include margin-left(5v);
-      }
+      @include text-style(sm);
     }
 
-    & > #{ns(nav__link)},
-    & > #{ns(nav__btn)} {
-      @include display-flex(null, center, space-between);
-      @include size(100%);
-      @include padding(3v 0);
-      @include text-style(md);
-      text-align: left;
-      font-weight: bold;
-
-      @include before() {
-        @include margin-right(0);
-      }
-
-      @include respond-from(lg) {
-        @include padding(4v);
-        @include margin(0);
-        @include size(auto, 100%);
-        justify-content: flex-start;
-        font-weight: normal;
-        min-height: space(14v);
-        @include text-style(sm);
-      }
-    }
-
-    & > #{ns(nav__link)} {
-      flex-direction: row;
-      box-shadow: none;
-      border-radius: 0;
-
-      @include before(null, none);
-    }
-
-    & > #{ns(nav__btn)} {
-      flex-direction: row-reverse;
-      @include padding(4v 3v 4v 4v, lg);
-
-      @include font-icon(arrow-down-s-line, sm) {
-        @include margin-left(2v);
-        @include margin-right(0);
-        transition: transform 0.3s;
-      }
-
-      &[aria-expanded="true" i] {
-        @include before {
-          transform: rotate(-180deg);
-        }
-
-        @include after(null, none);
-      }
-    }
-
-    &--active {
-      @include relative;
-
+    &[aria-current] {
+      position: relative;
       @include before(block, '') {
-        @include absolute(3v, null, null, -4v, 2px, 6v);
+        @include absolute(50%, null, null, -4v, 2px, 6v);
+        @include margin-top(-3v);
       }
+    }
+  }
 
-      @include respond-from(lg) {
-        position: initial;
-        @include before(null, none);
-      }
+  &__link {
+    display: block;
+  }
 
-      & > #{ns(nav__link)},
-      & > #{ns(nav__btn)} {
-        @include z-index(nav);
-      }
+  &__btn {
+    @include display-flex(null, center, space-between);
+    flex-direction: row;
+    @include padding(4v 3v 4v 4v, lg);
 
-      & > #{ns(nav__link)} {
-        pointer-events: none;
-        cursor: default;
+    @include font-icon(arrow-down-s-line, sm, after) {
+      @include margin-left(2v);
+      @include margin-right(0);
+      transition: transform 0.3s;
+    }
+
+    @include respond-from(lg) {
+      justify-content: flex-start;
+    }
+
+    &[aria-expanded="true" i] {
+      @include before {
+        transform: rotate(-180deg);
       }
     }
   }

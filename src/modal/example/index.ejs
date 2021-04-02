@@ -21,12 +21,14 @@ let dataFooterButtons = {
 }
 %>
 
-<%- sample('Modal simple', './samples/modal-default', { ...dataText, label: 'Modal simple'}, true ); %>
+<%- sample('Modale simple', './samples/modal-default', { ...dataText, label: 'Modal simple'}, true ); %>
 
-<%- sample('Modal SM', './samples/modal-default', { ...dataText, size: 'sm', label: 'Modal SM'}, true ); %>
+<%- sample('Modale SM', './samples/modal-default', { ...dataText, size: 'sm', label: 'Modal SM'}, true ); %>
 
-<%- sample('Modal LG', './samples/modal-default', { ...dataText, size: 'lg', label: 'Modal LG'}, true ); %>
+<%- sample('Modale LG', './samples/modal-default', { ...dataText, size: 'lg', label: 'Modal LG'}, true ); %>
 
-<%- sample('Modal formulaire', './samples/modal-default', { ...dataForm, label: 'Modal formulaire'}, true ); %>
+<%- sample('Modale formulaire', './samples/modal-default', { ...dataForm, label: 'Modal formulaire'}, true ); %>
 
-<%- sample('Modal avec zone d\'action', './samples/modal-default', { ...dataFooterButtons, label: 'Modal avec zone d\'action'}, true ); %>
+<%- sample('Modal avec zone d\'action', './samples/modal-default', { ...dataFooterButtons, label: 'Modale avec zone d\'action'}, true ); %>
+
+<%- sample('Modal avec zone d\'action ancré en haut', './samples/modal-default', { ...dataFooterButtons, label: 'Modale ancrée en haut', top: true}, true ); %>

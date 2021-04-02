@@ -1,3 +1,5 @@
 #{ns(link--close)} {
   @include icon-link(sm, right, close-line, link, true);
+  display: flex;
+  @include margin-left(auto);
 }

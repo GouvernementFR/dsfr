@@ -10,15 +10,13 @@
 
   @include respond-from(lg) {
     flex-wrap: nowrap;
+    @include size(auto);
   }
 
-  @include after(block, '') {
-    order: 3;
+  &-top {
+    @include display-flex(row, center, flex-start);
     @include size(100%);
-
-    @include respond-from(lg) {
-      content: none;
-    }
+    @include size(auto, null, lg);
   }
 }
 
@@ -34,6 +32,7 @@
 
 &__logo {
   order: 1;
+  flex: 0 0 auto;
   @include padding(3v);
   @include logo(sm, null) {
     @include margin(-1em);
@@ -43,6 +42,7 @@
 &__operator {
   @include padding(3v);
   order: 2;
+  flex: 0 1 auto;
 
   img {
     display: block;
@@ -53,12 +53,10 @@
   @include padding-y(3v);
   @include margin-x(3v);
   @include margin-x(0, lg);
-  order: 4;
   @include size(100%);
-  @include scheme-element-border-color(g300, true, top);
 
   @include respond-from(lg) {
-    border-top: none;
+    box-shadow: none;
     width: auto;
   }
 

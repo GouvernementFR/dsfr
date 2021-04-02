@@ -55,7 +55,7 @@
 
     // Ajout de border et de transition associés au type de la combinaison
     @at-root [class*="#{$base-scheme}-#{$type}"] {
-      @include _scheme-block-border(#{$base-scheme-selector}, space(1v));
+      // @include _scheme-block-border(#{$base-scheme-selector}, space(1v));
 
       @include _theme-transition() {
         transition: background-color $theme-transition-duration, box-shadow $theme-transition-duration;

@@ -8,18 +8,13 @@
   @include disable-list-style;
   @include size(100%);
   @include shadow(md);
+  @include relative;
 
   @include body {
-    @include relative;
-    @include display-flex(row, center, flex-start, wrap);
-    // @include margin(0 -3v);
-    // @include padding(3v 0);
-    @include margin(0 -3v);
-    @include margin(0 -4v, lg);
-    @include padding(6v 0, lg);
-
-    @include respond-from(lg) {
-      flex-wrap: nowrap;
+    &-row {
+      @include display-flex(row, center, flex-start);
+      @include margin(0 -4v);
+      @include padding(6v 0, lg);
     }
   }
 
@@ -27,7 +22,6 @@
   @import 'modules/modal';
   @import 'modules/navbar';
   @import 'modules/tools';
-  @import 'modules/shortcuts';
-  @import 'modules/search';
+  @import 'modules/links';
   @import 'modules/nav';
 }

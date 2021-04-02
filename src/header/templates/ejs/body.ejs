@@ -1,0 +1,11 @@
+<div class="<%= prefix %>-header__body">
+    <div class="<%= prefix %>-container" >
+        <div class="<%= prefix %>-header__body-row">
+            <%- include('./brand', locals.brand); %>
+
+            <% if (locals.tools) { %>
+                <%- include('./tools'); %>
+            <% } %>
+        </div>
+    </div>
+</div>

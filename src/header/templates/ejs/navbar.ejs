@@ -3,29 +3,36 @@
         const attrs = {};
         attrs[`data-${prefix}-opened`] = false;
 
-        if (locals.tools && locals.tools.id) {
+        if (locals.search) {
+          const label = search.label || 'Rechercher';
     %>
     <%- include('../../../buttons/templates/ejs/button', {
         classes: [prefix + '-btn--search'],
-        title: 'Rechercher',
+        title: label,
         attributes: {
             ...attrs,
-            'aria-controls': tools.id,
+            'aria-controls': search.modalId,
         },
-        label: 'Rechercher'
+        label: label,
+        id: search.id
     }); %>
     <% } %>
 
-    <% if (locals.navigation) { %>
+    <%
+        if (locals.menu) {
+            const label = menu.label || 'Menu';
+
+    %>
     <%- include('../../../buttons/templates/ejs/button', {
         classes: [prefix + '-btn--menu'],
-        title: 'Ouvrir le menu',
+        title: label,
         attributes: {
             ...attrs,
-            'aria-controls': navigation.id,
+            'aria-controls': menu.modalId,
             'aria-haspopup': 'menu'
         },
-        label: 'Ouvrir le menu'
+        label: label,
+        id: menu.id
     }); %>
     <% } %>
 </div>

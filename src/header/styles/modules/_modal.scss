@@ -4,45 +4,32 @@
 ////
 
 #{ns(modal)} {
-  pointer-events: initial;
-  display: block;
-  @include padding(18v 4v 0);
-  @include scheme-element-bg-color(w-g750);
   overflow: auto;
+  justify-content: initial;
 
-  &:not(#{ns(modal)}--opened) {
-    display: flex;
-
-    @include respond-from(lg) {
-      display: block;
-    }
+  &:not([role="dialog"]) {
+    transition: none;
   }
 
-  #{ns(container)} {
-    pointer-events: initial;
-    @include padding(4v 4v 0);
-    @include padding(0 8v 4v, lg);
+  @include padding-top(4v);
+  @include padding-bottom(18v);
 
-    #{ns(grid-row)} {
-      @include margin(0 -2v);
-      @include margin(0 -4v, lg);
-    }
-  }
+  @include before(none, none);
+  @include after(none, none);
 
   @include respond-from(lg) {
-    @include padding-top(0);
+    @include padding(0);
     @include margin(0);
     @include size(auto, auto);
     visibility: visible;
     opacity: 1;
     position: initial;
     background-color: transparent;
-    overflow: inherit;
+    overflow: initial;
   }
 
-  > #{ns(link)}--close {
-    @include absolute(4v,4v);
-    display: flex;
+  & > * > #{ns(link--close)} {
+    @include margin-bottom(6v);
     @include respond-from(lg) {
       display: none;
     }

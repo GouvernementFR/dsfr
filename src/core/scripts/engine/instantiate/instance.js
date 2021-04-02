@@ -1,12 +1,28 @@
 const instances = { };
+const elements = { };
+let count = 0;
+
+const getElementId = (element) => {
+  for (const id in elements) if (elements[id] === element) return id;
+  count++;
+  const id = count;
+  elements[id] = element;
+  return id;
+};
 
 class Instance {
-  constructor (element, resizing) {
-    if (!instances[element]) instances[element] = [];
-    instances[element].push(this);
+  constructor (element, isResizing, isRendering) {
+    const id = getElementId(element);
+    if (!instances[id]) instances[id] = [];
+    instances[id].push(this);
     this.element = element;
     this.id = element.id;
+    this._isRendering = false;
+    this._isResizing = false;
     this.listeners = {};
+
+    this.isResizing = isResizing;
+    this.isRendering = isRendering;
   }
 
   dispatch (type, data) {
@@ -36,14 +52,33 @@ class Instance {
     }
   }
 
+  get isRendering () { return this._isRendering; }
+
+  set isRendering (value) {
+    if (this._isRendering === value) return;
+    this._isRendering = value;
+    // TODO add & remove rendering
+  }
+
+  render () {}
+
+  get isResizing () { return this._isResizing; }
+
+  set isResizing (value) {
+    if (this._isResizing === value) return;
+    this._isResizing = value;
+    // TODO add & remove resizing
+  }
+
   resize () {}
 
   destroy () {}
 
   static getInstances (element, instanceClass) {
-    if (!instances[element]) return null;
-    else if (!instanceClass) return instances[element];
-    else return instances[element].filter((instance) => instance instanceof instanceClass);
+    const id = getElementId(element);
+    if (!instances[id]) return null;
+    else if (!instanceClass) return instances[id];
+    else return instances[id].filter((instance) => instance instanceof instanceClass);
   }
 }
 

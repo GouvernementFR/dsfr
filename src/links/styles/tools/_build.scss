@@ -62,7 +62,25 @@
 
 @include _build-link-placeholders($links-settings, link, true);
 
-@mixin _build-link($settings, $module, $border-radius:false, $tags:button) {
+@mixin _build-link-with-icon-selectors($module, $place, $size, $selector, $align-on-content) {
+  $placeholder: '#{$module}--icon-#{$place}--#{$size}';
+
+  @at-root #{$selector} {
+    @include has-icon {
+      @extend %#{$placeholder};
+    }
+  }
+
+  @if $align-on-content {
+    @at-root &--align-on-content#{$selector} {
+      @include has-icon {
+        @extend %#{$module}-align-on-content--#{$place}--#{$size};
+      }
+    }
+  }
+}
+
+@mixin _build-link($settings, $module, $border-radius:false, $align-on-content: false, $tags:button) {
   $align: #{$module}-align-on-content;
   $sizes: map_get($settings, sizes);
   $places: map_get($settings, places);
@@ -89,40 +107,20 @@
     @each $place in $places {
 
       @each $size, $size-settings in $sizes {
-        $placeholder: '#{$module}--icon-#{$place}--#{$size}';
-
-        @at-root #{&} {
-          @if $place == only {
-            @if $size == md {
-              &#{$not-sided} {
-                @include has-icon {
-                  @extend %#{$placeholder};
-                }
-              }
-            }
-            @else {
-              &--#{$size + $not-sided} {
-                @include has-icon {
-                  @extend %#{$placeholder};
-                }
-              }
-            }
+        @if $place == only {
+          @if $size == md {
+            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}#{$not-sided}', $align-on-content);
           }
           @else {
-            @if $size == md {
-              &--icon-#{$place} {
-                @include has-icon {
-                  @extend %#{$placeholder};
-                }
-              }
-            }
-            @else {
-              &--#{$size}#{&}--icon-#{$place} {
-                @include has-icon {
-                  @extend %#{$placeholder};
-                }
-              }
-            }
+            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}--#{$size}#{$not-sided}', $align-on-content);
+          }
+        }
+        @else {
+          @if $size == md {
+            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}--icon-#{$place}', $align-on-content);
+          }
+          @else {
+            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}--#{$size}#{&}--icon-#{$place}', $align-on-content);
           }
         }
       }
@@ -131,5 +129,5 @@
 }
 
 @mixin build-link() {
-  @include _build-link($links-settings, link, true);
+  @include _build-link($links-settings, link, true, true);
 }

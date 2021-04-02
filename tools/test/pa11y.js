@@ -5,20 +5,20 @@ const Puppeteer = require('puppeteer');
 const Express = require('express');
 const FS = require('fs');
 const getPackages = require('../utilities/packages');
+const log = require('../utilities/log');
 
 const displayResults = (results, darkmode) => {
-  console.log(`${darkmode ? '[DARKMODE] ' : ''}Pa11y automated tests for : ${results.documentTitle} : `);
+  log.info(`${darkmode ? '[DARKMODE] ' : ''}Pa11y automated tests for : ${results.documentTitle} : `);
   if (results.issues.length) {
-    console.log(`Found ${results.issues.length} error(s)\n`);
+    log.error(`Found ${results.issues.length} error(s)\n`);
 
     results.issues.map(issue => {
-      console.log(`Error found at ${issue.selector}`);
-      console.log(`${issue.context}\n ${issue.message}`);
+      log.error(`Error found at ${issue.selector}\n${issue.context}\n ${issue.message}`);
     });
 
     process.exit(1);
   } else {
-    console.log('No errors');
+    log(38, 'No errors');
   }
 };
 

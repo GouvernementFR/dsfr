@@ -1,26 +1,23 @@
 import api from '../../api.js';
 import {
-  HEADER_NAV_LIST_SELECTOR,
-  HEADER_NAV_SELECTOR,
-  HEADER_SEARCH_BAR_SELECTOR,
+  HEADER_MENU_SELECTOR,
+  HEADER_SEARCH_SELECTOR,
   HEADER_SELECTOR,
-  HEADER_SHORTCUTS_SELECTOR,
-  HEADER_TOOLS_SELECTOR
+  HEADER_LINKS_GROUP_SELECTOR,
+  HEADER_TOOLS_LINKS_SELECTOR,
+  HEADER_MENU_LINKS_SELECTOR
 } from './constants';
-
-let count = 0;
 
 class Header {
   constructor (header) {
     this.header = header || document.querySelector(HEADER_SELECTOR);
-    this.numId = count;
-    count++;
     this.modals = [];
 
     this.init();
   }
 
-  getModal (element) {
+  getModal (selector) {
+    const element = this.header.querySelector(selector);
     if (!element) return;
     const modals = api.core.Instance.getInstances(element, api.Modal);
     if (!modals || !modals.length) return;
@@ -28,17 +25,13 @@ class Header {
   }
 
   init () {
-    this.tools = this.header.querySelector(HEADER_TOOLS_SELECTOR);
-    this.getModal(this.tools);
+    this.getModal(HEADER_SEARCH_SELECTOR);
+    this.getModal(HEADER_MENU_SELECTOR);
 
-    this.searchBar = this.header.querySelector(HEADER_SEARCH_BAR_SELECTOR);
+    this.linksGroup = this.header.querySelector(HEADER_LINKS_GROUP_SELECTOR);
 
-    this.nav = this.header.querySelector(HEADER_NAV_SELECTOR);
-    this.getModal(this.nav);
-
-    this.shortcuts = this.header.querySelector(HEADER_SHORTCUTS_SELECTOR);
-
-    this.navList = this.header.querySelector(HEADER_NAV_LIST_SELECTOR);
+    this.toolsLinks = this.header.querySelector(HEADER_TOOLS_LINKS_SELECTOR);
+    this.menuLinks = this.header.querySelector(HEADER_MENU_LINKS_SELECTOR);
 
     this.changing = this.change.bind(this);
 
@@ -52,21 +45,17 @@ class Header {
     if (this.isLarge) {
       for (let i = 0; i < this.modals.length; i++) {
         this.modals[i].conceal();
-        this.modals[i].element.style.transition = 'none';
+        this.modals[i].element.removeAttribute('role');
       }
     } else {
       for (let i = 0; i < this.modals.length; i++) {
-        this.modals[i].element.style.transition = '';
+        this.modals[i].element.setAttribute('role', 'dialog');
       }
     }
 
-    if (this.shortcuts !== null) {
-      if (this.isLarge) {
-        if (this.searchBar !== null) this.tools.insertBefore(this.shortcuts, this.searchBar);
-        else this.tools.appendChild(this.shortcuts);
-      } else {
-        this.nav.insertBefore(this.shortcuts, this.navList);
-      }
+    if (this.linksGroup !== null) {
+      if (this.isLarge) this.toolsLinks.appendChild(this.linksGroup);
+      else this.menuLinks.appendChild(this.linksGroup);
     }
   }
 }

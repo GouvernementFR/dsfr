@@ -5,8 +5,12 @@
 
 &__navbar {
   @include display-flex(row,flex-end);
-  @include absolute(0, 0);
   @include padding(1v);
+  @include margin-left(auto);
+  order: 3;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  @include z-index(menu);
 
   @include respond-from(lg) {
     display: none;
@@ -17,15 +21,11 @@
     white-space: nowrap;
 
     &--menu {
-      @include before {
-        @include font-icon-content(menu-fill);
-      }
+      @include font-icon(menu-fill, null);
     }
 
     &--search {
-      @include before {
-        @include font-icon-content(search-line);
-      }
+      @include font-icon(search-line, null);
     }
   }
 }

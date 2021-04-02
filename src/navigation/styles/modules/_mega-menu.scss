@@ -9,9 +9,9 @@
   @include padding(0 4v);
 
   @include respond-from(lg) {
-    @include absolute(100%, null, null, calc(50% - 50vw), 100vw);
+    @include absolute(100%, 0, null, 0);
     @include margin(-2px 0 0);
-    @include padding(0);
+    @include padding(0 0 9v);
   }
 
   &:focus {
@@ -19,129 +19,48 @@
   }
 
   > #{ns(container)} {
-    @include padding(4v 4v 0);
-    @include padding(0 8v 4v, lg);
-    @include padding(0 0 4v, xl);
-
-    @include before(block, '') {
-      @include margin-bottom(2v);
-      @include margin-x(-4v, lg);
-      @include margin-bottom(4v, lg);
-    }
-
     @include respond-from(lg) {
-      @include relative;
-
-      @include before {
+      @include before(block, '') {
         @include size(null, 2px);
+        @include margin-x(-4v);
+        @include margin-bottom(4v);
       }
     }
   }
 
   #{ns(link--close)} {
     display: none;
-
-    @include margin-left(auto);
-    @include margin-right(-4v);
-
     @include respond-from(lg) {
       display: flex;
     }
   }
 
-  p {
-    @include class-not-start-with(ns(h, '')) {
-      display: none;
-
-      @include respond-from(lg) {
-        display: block;
+  #{ns(nav__link)} {
+    @include padding-x(4v);
+    @include before {
+      left: 0;
+    }
+    @include respond-from(lg) {
+      @include padding(3v 4v);
+      @include before {
+        left: 0;
       }
     }
+  }
+
+  &__leader {
+    @include padding-x(4v);
+    @include padding-x(0, lg);
   }
 
   &__category {
-    @include relative;
-    @include margin(0 -4v);
-    @include margin(0, lg);
-
-    @include respond-from(lg) {
-      @include after(block, '') {
-        @include absolute(null, 0, 0, 0, null, 1px);
-        @include margin-left(2v);
-        @include margin-right(2v);
-      }
-    }
-
-    &,
-    & > #{ns(nav__link)} {
-      @include padding(3v 4v, 0);
-      @include text-style(sm);
-      font-weight: bold;
-      text-align: left;
-      box-shadow: none;
-      @include padding(3v 2v, lg);
-    }
-
-    & > #{ns(nav__link)} {
-      display: block;
-      @include margin(-3v -4v);
-      border-radius: 0;
-
-      @include respond-from(lg) {
-        @include margin(-3v -2v);
-      }
-
-      @include before(null, none);
-    }
-
-    &--active {
-      @include before(null, '') {
-        @include absolute(0, null, 0, 0, 2px);
-        @include margin(3v 0);
-        @include margin(2v 0, lg);
-      }
-    }
+    @include margin-bottom(0);
   }
 
-  @include list {
-    @include margin(0 -4v 2v);
-    @include margin(3v 0 0, lg);
-  }
-
-  @include list-item {
-    @include relative;
-    @include margin(0);
-
+  &__list {
+    @include padding-bottom(3v);
     @include respond-from(lg) {
-      @include margin(0 0 2v 0);
-    }
-
-    @include before(null, none);
-
-    &,
-    & > #{ns(nav__link)} {
-      @include padding(3v 4v);
-      @include padding(1v 2v, lg);
-      @include text-style(sm);
-      text-align: left;
       box-shadow: none;
-
-      @include before(null, none);
-    }
-
-    & > #{ns(nav__link)} {
-      @include margin(-3v -4v);
-      @include margin(-1v -2v, lg);
-      display: block;
-      border-radius: 0;
-    }
-
-    &--active {
-      @include before(null, '') {
-        @include absolute(0, null, 0, 0, 2px);
-        @include margin(3v 0);
-        @include margin(2v 0, lg);
-      }
     }
   }
 }

@@ -75,7 +75,7 @@ class FocusTrap {
     this.element.addEventListener('keydown', this.handling);
 
     this.stunneds = [];
-    this.stun(document.body);
+    // this.stun(document.body);
   }
 
   stun (node) {
@@ -160,8 +160,8 @@ class FocusTrap {
     this.element.removeEventListener('keydown', this.handling);
     this.element = null;
 
-    for (const stunned of this.stunneds) stunned.unstun();
-    this.stunneds = [];
+    // for (const stunned of this.stunneds) stunned.unstun();
+    // this.stunneds = [];
 
     if (this.onUntrap) this.onUntrap();
   }

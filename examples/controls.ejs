@@ -1,17 +1,23 @@
 <div class="example-controls" >
-    <div class="<%= prefix %>-form-group">
-        <fieldset class="<%= prefix %>-fieldset <%= prefix %>-fieldset--inline">
-            <legend class="<%= prefix %>-sr-only">Interface de contrôle des tests</legend>
-            <div class="<%= prefix %>-fieldset__content">
-                <div class="<%= prefix %>-checkbox-group">
-                    <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
-                    <label class="<%= prefix %>-label" for="theme-checkbox">Thème clair / sombre</label>
-                </div>
-                <div class="<%= prefix %>-checkbox-group">
-                    <input type="checkbox" id="mourning-checkbox" name="checkboxes-inline-2">
-                    <label class="<%= prefix %>-label" for="mourning-checkbox">En deuil</label>
-                </div>
+    <div class="<%= prefix %>-collapse" id="controls">
+        <div class="example-controls__content" >
+            <div class="<%= prefix %>-form-group">
+                <fieldset class="<%= prefix %>-fieldset">
+                    <legend class="<%= prefix %>-sr-only">Interface de contrôle des tests</legend>
+                    <div class="<%= prefix %>-fieldset__content">
+                        <div class="<%= prefix %>-checkbox-group">
+                            <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
+                            <label class="<%= prefix %>-label" for="theme-checkbox">Thème clair / sombre</label>
+                        </div>
+                        <div class="<%= prefix %>-checkbox-group">
+                            <input type="checkbox" id="mourning-checkbox" name="checkboxes-inline-2">
+                            <label class="<%= prefix %>-label" for="mourning-checkbox">En deuil</label>
+                        </div>
+                    </div>
+                </fieldset>
             </div>
-        </fieldset>
+        </div>
     </div>
+    <button class="<%= prefix %>-btn <%= prefix %>-btn--sm <%= prefix %>-fi-add-line" aria-expanded="false" aria-controls="controls" >Interface de contrôle</button>
+    <button class="<%= prefix %>-btn <%= prefix %>-btn--sm <%= prefix %>-fi-subtract-line" aria-controls="controls" >Fermer</button>
 </div>

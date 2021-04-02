@@ -1,7 +1,7 @@
 (function (locals) {
   locals.includeAttrs = function (attrs) {
     let html = '';
-    for (const prop in attrs) html += prop + '="' + attrs[prop] + '"';
+    for (const prop in attrs) html += prop + '="' + attrs[prop] + '" ';
     return html;
   };
 

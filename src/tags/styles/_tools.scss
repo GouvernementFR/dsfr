@@ -6,7 +6,7 @@
 @include _build-link-placeholders($tags-settings, tag, true);
 
 @mixin build-tag() {
-  @include _build-link($tags-settings, tag, false);
+  @include _build-link($tags-settings, tag, true);
 }
 
 @mixin nest-tag($size:md, $place: null, $icon:null, $from: null, $align-on-content: false) {

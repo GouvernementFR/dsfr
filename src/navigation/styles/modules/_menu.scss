@@ -8,13 +8,11 @@
   @include margin(0 -4v);
   @include padding(0 4v);
   @include size(auto);
-  box-sizing: content-box;
 
   @include respond-from(lg) {
     @include absolute(100%);
     @include margin-top(-1v);
     @include padding-top(1v);
-    box-sizing: content-box;
 
     @include after(block, '') {
       @include absolute(0,0,0,0);
@@ -27,49 +25,27 @@
     @include margin(0);
     @include padding(2v 0 6v);
     @include padding(0 0 8v, lg);
-    @include size(20rem);
+    @include size(80v, null, lg);
+
+    & > *:first-child,
+    & > *:hover,
+    & > *:hover + * {
+      &,
+      & > #{ns(nav__link)} {
+        box-shadow: none;
+      }
+    }
   }
 
-  @include list-item {
-    @include relative;
-    @include margin(0);
-
-    &,
-    & > #{ns(nav__link)} {
-      @include text-style(sm);
-      @include padding(3v 4v);
-      text-align: left;
-      box-shadow: none;
-
-      @include before(null,none);
+  #{ns(nav__link)} {
+    @include padding-x(4v);
+    @include before {
+      left: 0;
     }
-
-    & > #{ns(nav__link)} {
-      display: block;
-      @include margin(-3v -4v);
-      border-radius: 0;
-    }
-
     @include respond-from(lg) {
-      &:not(:first-child) {
-        @include after(block, '') {
-          @include absolute(0,0,null,0,null,1px);
-          @include margin(0 4v);
-        }
-      }
-
-      &:not(&--active):hover,
-      &:not(&--active):hover + & {
-        @include after {
-          display: none;
-        }
-      }
-    }
-
-    &--active {
-      @include before(null, '') {
-        @include absolute(0,null,0,0,2px);
-        @include margin(4v 0);
+      @include padding(3v 4v);
+      @include before {
+        left: 0;
       }
     }
   }

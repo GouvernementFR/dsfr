@@ -1,0 +1,17 @@
+<div class="<%= prefix %>-col-12 <%= prefix %>-col-lg-8 <%= prefix %>-col-offset-lg-4--right <%= prefix %>-mb-4v" >
+    <div class="<%= prefix %>-mega-menu__leader" >
+        <%
+        if (leader.title !== undefined) {
+        %>
+            <h4 class="<%= prefix %>-h4 <%= prefix %>-mb-2v"><%= leader.title %></h4>
+        <% } %>
+
+        <p class="<%= prefix %>-hidden <%= prefix %>-displayed-lg"><%- leader.text %></p>
+
+        <%
+        if (leader.link !== undefined) {
+        %>
+            <%- include('../../../links/example/samples/link-default', { ...leader.link, alignOnContent: true}); %>
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<%
+    if (!locals.navbar || !navbar.menu || !navbar.menu.id || !navbar.menu.modalId) throw new Error('navbar.menu is not correctely defined in header. id & modalId required');
+%>
+<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= navbar.menu.modalId %>" aria-labelledby="<%= navbar.menu.id %>">
+    <div class="<%= prefix %>-container%>" >
+        <%- include('../../../links/templates/ejs/link-close', { closeId: navbar.menu.modalId }); %>
+        <% if (locals.tools && locals.tools.links) { %>
+          <div class="<%= prefix %>-header__menu-links"></div>
+        <% } %>
+
+        <% if (locals.navigation) { %>
+            <%- include( (locals.navigation !== undefined && navigation.sample !== undefined) ? navigation.sample : '../../../navigation/templates/ejs/navigation', navigation ); %>
+        <% } %>
+    </div>
+</div>

@@ -82,7 +82,9 @@ $has-font-icon: false !global;
   @include _pseudo($pseudo) {
     @extend %font-icon;
 
-    font-size: #{$prepend} icon-size($icon-size);
+    @if $icon-size != null {
+      font-size: #{$prepend} icon-size($icon-size);
+    }
 
     @if $icon != null {
       @include font-icon-content($icon, $prepend);

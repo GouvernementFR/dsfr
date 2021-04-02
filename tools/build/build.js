@@ -13,14 +13,6 @@ const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
 const { lint } = require('../test/lint');
 
-const logPackage = (pck) => {
-  log(36, pck.toLowerCase());
-};
-
-const logPart = (part) => {
-  log(34, `# ${part.toUpperCase()} #`, true);
-};
-
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
 
@@ -36,7 +28,10 @@ const build = async (settings) => {
 
   copyPackages();
 
-  if (settings.test) await lint(settings.packages);
+  if (settings.test) {
+    log.section('lint');
+    await lint(settings.packages);
+  }
 
   const config = getPublicPackage().config;
 
@@ -59,60 +54,60 @@ const build = async (settings) => {
   }
 
   if (settings.styles) {
-    logPart('styles');
+    log.section('styles', true);
 
     for (const pck of styles) {
-      logPackage(pck);
+      log.info(pck.toLowerCase());
 
       try {
         await buildStyles([pck], 'public/src', 'public/dist/css/', pck, settings.minify, settings.sourcemap);
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
 
     if (settings.main) {
-      logPackage(config.namespace);
+      log.info(config.namespace.toLowerCase());
 
       try {
         await buildStyles(config.styles, 'public/src', 'public/dist/css/', config.namespace, settings.minify, settings.sourcemap);
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
   }
 
   if (settings.scripts) {
-    logPart('scripts');
+    log.section('scripts', true);
 
     for (const pck of scripts) {
-      logPackage(pck);
+      log.info(pck.toLowerCase());
 
       try {
         await buildScripts([pck], 'public/src', 'public/dist/js/', pck, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
 
     if (settings.main) {
-      logPackage(config.namespace);
+      log.info(config.namespace.toLowerCase());
       try {
         await buildScripts(config.scripts, 'public/src', 'public/dist/js/', config.namespace, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
   }
 
   if (settings.examples) {
-    logPart('examples');
+    log.section('examples', true);
 
     for (const pck of packages) {
       try {
         await buildExample(pck, root('public/example'));
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
 
@@ -120,7 +115,7 @@ const build = async (settings) => {
       try {
         await buildMain(root('public/example'));
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
 
@@ -128,23 +123,26 @@ const build = async (settings) => {
       try {
         await buildList(root('public/example'));
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
   }
 
   if (settings.markdowns) {
-    logPart('markdowns');
+    log.section('markdowns', true);
     for (const pck of packages) {
       try {
         generateMarkdown(pck);
       } catch (e) {
-        console.log(e);
+        log.error(e);
       }
     }
   }
 
-  if (settings.test) await testPa11y(settings.packages);
+  if (settings.test) {
+    log.section('pa11y');
+    await testPa11y(settings.packages);
+  }
 };
 
 module.exports = build;

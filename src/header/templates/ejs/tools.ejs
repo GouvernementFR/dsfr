@@ -1,35 +1,29 @@
-<%
-const toolsAttrs = {};
-const toolsClasses = [ prefix + '-header__tools' ];
-
-if (locals.search !== undefined) {
-    toolsAttrs.id = locals.id;
-    // toolsAttrs.tabindex = '-1';
-    toolsClasses.push(prefix + '-modal');
-}
-%>
-
-<div <%- includeClasses(toolsClasses); %> <%- includeAttrs(toolsAttrs); %>>
-    <% if (locals.search !== undefined) { %>
-        <%- include('../../../links/templates/ejs/link-close', { closeId: locals.id }); %>
-    <% } %>
-
-    <% if (locals.shortcuts !== undefined) { %>
-    <div class="<%= prefix %>-shortcuts">
-        <ul class="<%= prefix %>-shortcuts__list">
+<div class="<%= prefix %>-header__tools">
+    <%
+        if (locals.tools.links) { %>
+    <div class="<%= prefix %>-header__tools-links">
+        <ul class="<%= prefix %>-links-group">
             <%
                 let item;
-                for (let i = 0; i < shortcuts.items.length; i++) {
-                  item = shortcuts.items[i];
+                for (let i = 0; i < tools.links.items.length; i++) {
+                  item = tools.links.items[i];
             %>
-            <li class="<%= prefix %>-shortcuts__item" >
+            <li>
                 <%- include('../../../links/templates/ejs/link', { ... item, left: true }); %>
             </li>
             <% } %>
         </ul>
     </div>
     <% }%>
-    <% if (locals.search !== undefined) { %>
-    <%- include( search.sample !== undefined ? search.sample : '../../../search/templates/ejs/search', { ...search, id: search.id || undefined }); %>
+    <% if (locals.tools.search !== undefined) {
+            if (!locals.navbar || !navbar.search || !navbar.search.id || !navbar.search.modalId) throw new Error('navbar.search is not defined in header. id & modalId required');
+    %>
+        <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= navbar.search.modalId %>">
+            <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
+                <%- include('../../../links/templates/ejs/link-close', { closeId: navbar.search.modalId }); %>
+                <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../search/templates/ejs/search', { ...tools.search }); %>
+            </div>
+        </div>
+
     <% } %>
 </div>

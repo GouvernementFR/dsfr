@@ -5,19 +5,10 @@
 
 @mixin _build-link-icon($size-settings, $place, $size:md, $font-icon: false, $reverse: false) {
 
-  $icon-size: map_get($size-settings, icon);
+  $icon-size: icon-size(map_get($size-settings, icon));
 
   @if $place == only {
-    $icon-size: map_get($size-settings, icon-only);
-  }
-
-  @if $font-icon {
-    @include font-icon(null, $icon-size, before);
-  }
-  @else {
-    @include before {
-      font-size: icon-size($icon-size);
-    }
+    $icon-size: icon-size(map_get($size-settings, icon-only));
   }
 
   @if $reverse {
@@ -34,16 +25,17 @@
     @include before {
       margin-left: -($icon-margin);
       margin-right: $icon-margin-x;
+      font-size: $icon-size;
     }
   }
   @else if $place == right {
     @include before {
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
+      font-size: $icon-size;
     }
   }
   @else if $place == only {
-    $icon-size: icon-size(map_get($size-settings, icon-only));
     $min-height: space(map_get($size-settings, min-height));
     $padding-x: ($min-height - $icon-size) / 2;
 
@@ -55,6 +47,7 @@
     @include before {
       margin-left: 0;
       margin-right: $padding-x;
+      font-size: $icon-size;
     }
   }
 }

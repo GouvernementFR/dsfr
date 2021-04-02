@@ -19,6 +19,7 @@
   $last-gutter: 0;
   $last-max-width: null;
   $containers: ();
+  $row-gutters: ();
 
   @each $breakpoint, $limits in $breakpoints {
     $mod: '-#{$breakpoint}';
@@ -82,17 +83,50 @@
       }
 
       // Gutters
-      @if $gutter != null {
-        #{ns(grid-row--gutters)} {
-          @include margin(-$gutter);
+      $row-gutter: ns(grid-row#{$mod}--gutters);
+      $g: $last-gutter;
 
-          > #{class-start-with(ns(col-, ''))},
-          > #{ns(col)} {
-            @include padding($gutter);
+      @if $gutter != null {
+        $g: $gutter;
+        @if length($row-gutters) > 0 {
+          #{$row-gutters} {
+            @include margin(-$g);
+
+            > {
+              #{class-start-with(ns(col-, ''))},
+              #{ns(col)} {
+                @include padding($g);
+              }
+            }
           }
         }
       }
 
+      #{$row-gutter} {
+        @include margin(-$g);
+
+        > {
+          #{class-start-with(ns(col-, ''))},
+          #{ns(col)} {
+            @include padding($g);
+          }
+        }
+      }
+
+      $row-gutters: append($row-gutters, $row-gutter, 'comma');
+
+      #{ns(grid-row + $mod + --no-gutters)} {
+        @include margin(0);
+
+        > {
+          #{class-start-with(ns(col-, ''))},
+          #{ns(col)} {
+            @include padding(0);
+          }
+        }
+      }
+
+      // Cols
       #{ns('col' + $mod)} {
         flex: 1;
       }

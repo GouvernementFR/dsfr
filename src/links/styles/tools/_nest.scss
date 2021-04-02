@@ -68,9 +68,7 @@
 @mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
   #{ns($module)} {
     @if $icon != null {
-      @include before {
-        @include font-icon-content($icon);
-      }
+      @include font-icon($icon, null);
     }
 
     @if $from == null {
@@ -93,7 +91,5 @@
 
 @mixin icon-link($size: md, $place: null, $icon: null, $module: null, $align-on-content: false) {
   @include _extend-link($size, $place, $module, $align-on-content, true);
-  @include before {
-    @include font-icon-content($icon);
-  }
+  @include font-icon($icon, null);
 }

@@ -5,8 +5,6 @@
 
 #{ns(nav)} {
   @include respond-from(lg) {
-    @include margin(0 calc(50% - 50vw));
-    @include padding(0 calc(50vw - 50%));
     justify-content: flex-start;
 
     &__list {

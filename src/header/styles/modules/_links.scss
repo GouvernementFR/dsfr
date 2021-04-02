@@ -1,0 +1,45 @@
+////
+/// Header Module : shortcuts
+/// @group header
+////
+
+#{ns(links-group)} {
+  @include nest-link(sm, left);
+}
+
+&__tools-links {
+  display: none;
+
+  @include respond-from(lg) {
+    display: initial;
+  }
+
+  #{ns(links-group)} {
+    @include display-flex(row, center, flex-end, wrap);
+    @include margin-x(-4v);
+
+    & > *:not(:last-child) > #{ns(link)},
+    & > #{ns(link)}:not(last-child) {
+      @include after(block, '') {
+        @include relative(null, -4v, null, null, 1px, 4v);
+      }
+    }
+  }
+
+  #{ns(link)} {
+    overflow: initial;
+    @include margin-x(1v);
+  }
+}
+
+& &__menu-links {
+  #{ns(links-group)} {
+    @include display-flex(column);
+
+    #{ns(link)} {
+      border-radius: 0;
+      @include size(100%);
+      @include min-size(null, 12v);
+    }
+  }
+}
