@@ -3,78 +3,108 @@
 ### Installation locale
 Le Design System de l'Etat est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
 
-Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il est de ce fait indispensable de par exemple lier son compte Github à son numéro de téléphone.
+Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il peut être nécessaire de lier son compte Github à son numéro de téléphone.
 
-Afin d'utiliser la 2FA en ligne de commande, il est possible d'avoir un générer un token. Sur github, il est possible d'en générer un de cette façon :
+Afin d'utiliser la 2FA en ligne de commande, il est nécessaire d'avoir généré un token. Sur github, il est possible d'en générer un de cette façon :
 
 - Aller dans Settings > Developer settings > Personal access tokens > Generate new token
 - Ajouter un nom et cocher l’accès au repo.
 - Enregistrer et copier coller le token à la place du mot de passe lors de l’authentification dans la console.
 
-Une fois le repository cloné en local, bien penser à basculer sur la branche `dev`, à partir de laquelle il est nécessaire de créer de nouvelles branches de travail pour l'ajout et la modification de packages. (Voir la section Utilisation > Git, pour le fontionnement détaillé).
+Une fois le repository cloné en local, bien penser à basculer sur la branche `dev`, à partir de laquelle on créer de nouvelles branches de travail pour l'ajout et la modification de packages. (Voir la section Utilisation > Git, pour le fontionnement détaillé).
+
+Afin de télécharger les dépendances, compiler les css/js et générer le dossier public contenant toutes les pages d'examples, utilisez respectivement :
+- `yarn` ou `npm i`
+- `yarn release`
 
 ### Packages
 
-Le Design System est un monorepo proposant différents composants, listés dans le dossier `packages`. Certains de ces packages sont dépendants les uns des autres. Chacun de ces packages possède donc son propre fichier `package.json`, listant l'ensemble de ses dépendances à d'autres composants du Design System.
-
-Pour faire cohabiter l'ensemble des packages, nous utilisons l'outil [Lerna](https://github.com/lerna/lerna), permettant d'organiser notre monorepo sous forme de plusieurs packages interdépendants.
-
-Afin d'ajouter une dépendance à un package, il est nécessaire d'utiliser la commande `lerna add`. Ainsi, pour ajouter par exemple le package `core` en tant que dépendance du package `buttons`, il faut utiliser la commande suivante :
-
-```
-lerna add @gouvfr/core --scope=@gouvfr/buttons
-```
+Le Design System est un monorepo proposant différents composants, listés dans le dossier `src`.
 
 Un composant doit avoir une arborescence de type :
 ```
 /
-└── src
-    ├── scripts
-    ├── styles
-└── tests
-    ├── samples
-    ├── scripts
-    ├── templates
-└── _main.scss
+└── example/
+└── styles/
+└── templates/
+    ├── ejs/
+└── index.scss
+└── main.scss
 └── package.json
-└── README.md
+└── .package.yml
 ```
 
-Le dossier **src** comprend les fichiers de style .scss, ainsi que des fichiers .js au besoin.
-Le dossier **tests** comprend les fichiers .ejs permettant la génération des pages de test au format HTML.
+Le dossier **example** comprend les fichiers de templating ejs permettant de générer les examples html dans /public
+Le dossier **styles** contient les fichiers .scss permettant la génération du css du composant.
+Le dossier **templates** contient les templates des composants
 
+
+Certains de ces packages sont dépendants les uns des autres. Chacun de ces packages possède donc son propre fichier `package.json`, listant l'ensemble de ses dépendances à d'autres composants du Design System.
+
+Afin d'ajouter une dépendance à un package, il est nécessaire de l'insérer aussi dans le fichier `.package.yml`.Celui-ci gère les imports et le wrapper des examples html générés ainsi que l'implémentation des readme.md. Il est stucturé de cette façon :
+```
+id: buttons (nom du package)
+title: Boutons (nom du composant, en français)
+description: description insérée dans le readme
+doc: lien vers la documentation
+wrapper: col-8 (le conteneur dans lequel on insert l'example)
+styles: (liste des packages dont le css dépend)
+  - core
+scripts: (liste des packages dont le js dépend)
+  - core
+follow:   (pas de dépendance à link mais doit etre placé après link)
+  styles:
+    - links
+example: (dépendances sur la page d'exemple uniquement)
+  styles:
+    - header
+```
 ## Utilisation
 
-Après avoir cloné le repository, Il faut ensuite installer les dépendances NPM avec la commande `yarn`. Pour lancer le serveur local et travailler sur le Design System, il est ensuite nécessaire de sélectionner le package sur lequel travailler, et lancer la commande `yarn start` :
+Après avoir cloné le repository, Il faut ensuite installer les dépendances NPM avec la commande `yarn` ou `npm i`.
+Il est nécessaire de lancer un serveur local pour visualiser les examples html.
 
+Il existe pour cela de nombreux outils comme browser-sync :
 ```
-cd packages/buttons
-yarn start
+npm i -g browser-sync
+cd public/
+browser-sync start --server --port 8080 --startPath example/
 ```
 
-Un serveur local sera alors lancé sur l'adresse `localhost:8080`, afin de voir en live reload les modifications apportées au package.
+ou simplement en php
+```
+cd public/
+php -S localhost:8080/example
+```
+
+Un serveur local sera alors lancé sur l'adresse `localhost:8080`, accèder à `http://localhost:8080/example/` pour voir la liste des exemples.
 
 ### Sass
-Le Design System utilise Sass pour la génération automatique des styles liés à chaque composant. Chacun d'entre eux possède une structure identique à ce niveau, par exemple le composant `core` :
+Le Design System utilise Sass pour la génération automatique des styles liés à chaque composant. Chacun d'entre eux possède une structure identique à ce niveau, par exemple le composant `buttons` :
 
 ```
-/packages/core
-└── src
-    ├── styles
-    │   ├── _generic.scss
-    │   ├── _module.scss
-    │   ├── _settings.scss
-    │   ├── _tools.scss
-└── _main.scss
+/src/buttons
+└── styles
+    ├── _module.scss
+    ├── _schemes.scss
+    ├── _tools.scss
+    ├── _settings.scss
+    └── modules/
+        └── _buttons-group.scss
+└── index.scss
+└── main.scss
 ```
 
-Il peut donc y avoir plusieurs fichier .scss, mais seuls _main.scss à la racine du composant, et _module.scss sont obligatoires, et chacun à son propre rôle :
+Il peut donc y avoir plusieurs fichier .scss, mais seuls main.scss à la racine du composant, et _module.scss sont obligatoires, et chacun à son propre rôle :
 
- - _main.scss : Fichier principal du composant servant d'entrée, et composé uniquement d'`@import` des autres fichiers .scss du composant *(obligatoire)*
- - _generic.scss : Contient un reset des principales balise, ce fichier n'est présent que pour le composant `core`. (optionnel)
+ - main.scss : Fichier principal du composant servant d'entrée, et composé uniquement d'`@import`. Il importe le fichier index ainsi que des fichiers modules du composant *(obligatoire)*
+ - index.scss : Fichier secondaire du composant, aussi composé d'`@imports`, importe uniquement les fichiers de settings et tools du composant ainsi que l'index.scss des composants dépendants. *(obligatoire)*
  - _module.scss : Comprend l'ensemble des styles du module *(obligatoire)*
- - _settings.scss : Contient les variables sass utilisées par le composant, par exemple l'ensemble des tailles de polices pour le composant `core` *(optionnel)*
- - _tools.scss : Contient les `functions` et `mixins` pouvant être utilisés par le composant, par exemple la gestion des espacements *(optionnel)*
+ - _schemes.scss : doit contenir tous les styles liés aux couleurs, afin de gérer la thématisation. *(optionnel)*
+ - _settings.scss : Contient les variables sass utilisées par le composant *(optionnel)*
+ - _tools.scss : Contient les `functions` et `mixins` pouvant être utilisés par le composant, par exemple la gestion des token d'espacements *(optionnel)*
+ - modules/_buttons-group.scss : Example de sous-composant permettant d'alléger _module.scss, qui importe ce fichier
+
 
 ### Javascript
 Certains packages font utilisation de javascript, afin d'apporter une couche interactive à ceux-ci. C'est le cas par exemple du package nav, où le javascript est utilisé pour déplier les sous-menus.
@@ -82,20 +112,24 @@ Certains packages font utilisation de javascript, afin d'apporter une couche int
 **A compléter par @Bertrand**
 
 ### EJS
-Nous utilisons au sein du Design System, le langage de template EJS, permettant la génération des pages de tests au format HTML, ainsi que les snippets de code de manière automatisée.
+Nous utilisons au sein du Design System, le langage de template EJS, permettant la génération des pages d'exemples au format HTML, ainsi que les snippets de code de manière automatisée.
 
+Afin de générer les fichiers HTML
 **A compléter par @Bertrand**
+
 
 ### Git
 
 #### Branches
 Afin de travailler sur un nouveau package, ou un correctif d'un package existant, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`, sous la forme `feature/mon-nouveau-package`, ou `fix/correction-package` par exemple.
 
-La branche nouvelle créée peut ensuite être mergée sur la branche `test`, afin d'être validée par l'équipe sur l'url de test Netlify. Les retours s'effectueront directement sur la nouvelle branche, puis rebasculée sur `test` autant de fois que nécessaire.
-
 Une fois validée, il faut faire un rebase de la branche `dev` :
 ```
 git rebase dev
+```
+ou avec un merge si le rebase implique trop de conflits
+```
+git merge dev
 ```
 
 Puis merger la nouvelle branche dans la branche dev avec un message de commit détaillé :
@@ -142,16 +176,35 @@ git commit -m "build: add webpack" --no-verify
 ```
 
 ## Compilation
-La compilation des sources permet de créer un dossier `dist` à la racine du projet, comprenant les fichiers CSS et JS compilés, ainsi que l'ensemble des fonts utilisées au sein du Design System.
-Les fichiers `_dist.scss` sont créés automatiquement via Node. Ils sont générés à partir des dépendances présentes dans le `package.json` de chaque package. Il faut donc faire tout particulièrement attention à ces dépendances, car c'est elles qui permettront de compiler le css. Un autre point d'attention est la propriété "level" qui se trouve dans le `package.json`, qui donne au package un "niveau d’importance" afin de générer les imports dans le bon ordre. Par exemple `core` et `schemes` sont des packages de niveau 1, et `footer` et `header` des packages de niveau 6.
-Webpack utilise ensuite ces fichiers pour créer les répertoires `/dist` dans chaque package.
+La compilation des sources permet de créer un dossier `public` à la racine du projet, contenant les dossiers `dist`, `src`, et `example`.
+Le dossier `dist` contient les fichiers CSS et JS compilés, ainsi que les favicons et l'ensemble des fonts utilisées au sein du Design System.
+Le dossier `src` est une quasi copie du src à la racine, si ce n'est qu'il contient les fichiers readme généré à la place du package.json et .package.yml
+Le dossier `example` contient les examples html gérénéré depuis les samples ejs. L'ordre des imports css et js est défini par l'ordre des dépendances dans le `package.yml`
 
-La génération de ces fichiers se fait via la commande
+La commande générale qui lance la création du dossier `public`, la génération des fichiers dist, les tests, et les examples se fait via la commande :
+```
+yarn release
+```
+
+
+En mode développement, il est possible d'utiliser la commande :
 ```
 yarn build
 ```
+Cette commande permet de générer uniquement les fichiers css/js/html. Cette commande est plus rapide puisqu'elle n'éxécute pas les test, et ne compile pas les fichier .map, .md, .min.css, .nomodule.js...
+De plus, grâce au paramètre `-p` il est possible de spécifier uniquement les packages que l'on souhaite recompiler.
+
+Pour voir les différents paramètres disponibles : `yarn build --help`
 
 ## Autres commandes
+
+### Icônes
+La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS. Celle-ci est générée automatiquement à partir de fichiers `.svg` se trouvant dans le dossier `/icons/svg/` à la racine du Design System. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en lançant la commande suivante :
+
+```
+yarn run icon-font
+```
+
 ### Sassdoc
 Des commentaires spéciaux sont utilisés sur l'ensemble des fichier `scss`, afin de permettre la génération d'une [Sassdoc](http://sassdoc.com/) automatiquement, documentant l'ensemble des `mixins` et `functions` utilisés sur le Design System :
 
@@ -163,30 +216,33 @@ Cette commande permet la génération de la doc dans le dossier `sassdoc`, à la
 ### Tests
 Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du Design System reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM.
 
-#### Sass
+Ces tests sont éxecutés lors de la commande : `yarn release`
+Ou plus spécifiquement avec :
+
+```
+yarn build --test
+```
+Qui peut être combiner avec `-p nomPackage` pour spécifier un ou des package(s).
+
+Pour voir les différents paramètres disponibles : `yarn build --help`
+#### tests Sass
 Afin de tester les différentes `functions` et `mixins`, nous utilisons jest et sass-true, afin d'effectuer une batterie de tests, présents dans un fichier `tests/_sass-tests.scss` au sein de certains packages.
 
-Ces tests permettent de vérifier que le code renvoyé par ces derniers est bien conforme. (Par exemple, vérifier que le mixin de line-height renvoie bien la bonne valeur
-
-Pour vérifier l'ensemble de ces tests, il faut utiliser la commande suivante :
-
-```
-yarn run test:sass
-```
-
-#### Accessibilité
-Pour tester de manière automatisée l'accessibilité des composants du Design System, nous utilisons [Pa11y](https://pa11y.org/) sur les pages de tests des différents packages :
+Ces tests permettent de vérifier que le code renvoyé par ces derniers est bien conforme. (Par exemple, vérifier que le mixin de line-height renvoie bien la bonne valeur).
+Ces tests sont effectués lors du yarn release, ou plus spécifiquement avec :
 
 ```
-yarn run test:pa11y
+yarn build --test
+```
+
+#### tests Accessibilité
+Pour tester de manière automatisée l'accessibilité des composants du Design System, nous utilisons [Pa11y](https://pa11y.org/) sur les pages de tests des différents packages.
+Ces tests sont effectués lors du yarn release, ou plus spécifiquement avec :
+
+```
+yarn build --test
 ```
 
 Afin d'exclure un élément à tester au niveau des pages de test, il est possible de lui attribuer une class spécifique `.is-pa11y-hidden`
 Les tests se jouent automatiquement sur chaque page de test de package, en mode normal puis en Darkmode
 
-### Icônes
-La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS. Celle-ci est générée automatiquement à partir de fichiers `.svg` se trouvant dans le dossier `/icons` à la racine du Design System. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en lançant la commande suivante :
-
-```
-yarn run icon-font
-```
