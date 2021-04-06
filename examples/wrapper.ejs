@@ -67,7 +67,7 @@ const imgContent = (src, alt, classes=[], style) => {
   const resp = `${prefix}-responsive-img`;
   if (classes.indexOf(resp) === -1) classes.push(resp);
   let img = '<img ';
-  img += `src="${src || '../img/image.jpg'}" `;
+  img += `src="${src || '../img/placeholder.16x9.png'}" `;
   if (classes.length > 0) img += `class="${classes.join(' ')}" `;
   if (style) img += `style="${style}" `;
 
