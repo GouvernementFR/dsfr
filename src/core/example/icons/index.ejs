@@ -10,7 +10,7 @@
     ];
     navigationCollections = [
         ['menu-fill', 'menu-2-fill'],
-        ['arrow-up-line', 'arrow-right-line', 'arrow-down-line', 'arrow-left-line', 'arrow-right-up-line', 'arrow-up-s-line', 'arrow-right-s-line', 'arrow-down-s-line', 'arrow-left-s-line', 'arrow-left-s-first-line', 'arrow-right-s-last-line', 'arrow-right-s-line-double', 'arrow-left-s-line-double'],
+        ['arrow-up-line', 'arrow-right-line', 'arrow-down-line', 'arrow-left-line', 'arrow-up-s-line', 'arrow-right-s-line', 'arrow-down-s-line', 'arrow-left-s-line'],
         ['user-fill', 'user-line', 'account-fill', 'account-line', 'lock-fill', 'lock-line']
     ];
     actionCollections = [
@@ -18,24 +18,25 @@
         ['eye-line', 'eye-off-line'],
         ['printer-fill', 'printer-line', 'file-download-fill', 'file-download-line', 'download-line', 'external-link-line', 'edit-fill', 'edit-line'],
         ['delete-line', 'delete-fill'],
-        ['refresh-line', 'refresh-fill'],
         ['save-fill', 'save-line'],
         ['calendar-fill', 'calendar-line'],
         ['file-fill', 'file-line'],
-        ['mail-fill', 'mail-line'],
-        ['subtract-line', 'add-line', 'add-circle-line'],
-        ['theme-fill']
+        ['mail-fill', 'mail-line']
     ];
     contentMediaCollections = [
         ['play-fill', 'play-line', 'volume-up-fill', 'volume-up-line', 'volume-mute-fill', 'volume-mute-line', 'volume-down-fill', 'volume-down-line', 'pause-circle-fill', 'pause-circle-line'],
         ['file-pdf-fill', 'file-pdf-line']
+    ];
+    socialsCollections = [
+        ['instagram-fill', 'facebook-circle-fill', 'linkedin-box-fill', 'twitter-fill', 'youtube-fill']
     ];
 
     const families = [
         { title : 'Statuts (Icon font / SVG symbols)', collections: statusCollections},
         { title : 'Navigation (Icon font / SVG symbols)', collections: navigationCollections},
         { title : 'Actions (Icon font / SVG symbols)', collections: actionCollections},
-        { title : 'Contenus et médias (Icon font / SVG symbols)', collections: contentMediaCollections}
+        { title : 'Contenus et médias (Icon font / SVG symbols)', collections: contentMediaCollections},
+        { title : 'Réseaux Sociaux (Icon font / SVG symbols)', collections: socialsCollections}
     ];
 
     const sample = getSample(include);
@@ -56,6 +57,6 @@
 
 <% } %>
 
-<%- sample('Icone LG', '../../templates/ejs/icons/icon', {icon:'alert-fill', size:'lg'}, true); %>
-<%- sample('Icone MD (par défault)', '../../templates/ejs/icons/icon', {icon:'alert-fill'}, true); %>
-<%- sample('Icone SM', '../../templates/ejs/icons/icon', {icon:'alert-fill', size:'sm'}, true); %>
+<%- sample('Icone LG', '../../src/templates/ejs/icons/icon', {icon:'alert-fill', size:'lg'}, true); %>
+<%- sample('Icone MD (par défault)', '../../src/templates/ejs/icons/icon', {icon:'alert-fill'}, true); %>
+<%- sample('Icone SM', '../../src/templates/ejs/icons/icon', {icon:'alert-fill', size:'sm'}, true); %>
