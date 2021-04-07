@@ -1,8 +1,8 @@
 {
   "name": "@gouvfr/dsfr-dev",
-  "version": "1.0.0",
-  "description": "Design System de l'Etat",
-  "repository": "git@github.com:GouvernementFR/design-system.git",
+  "version": "1.0.0-rc0",
+  "description": "Système de Design de l'Etat - DSFR",
+  "repository": "git@github.com:GouvernementFR/dsfr-dev.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
   "license": "MIT",
   "private": true,
