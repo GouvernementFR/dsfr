@@ -5,7 +5,7 @@ const attrModal = [];
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
-const shortcut = {
+const links = {
   items: [
     {
       icon: 'theme-fill',
@@ -25,11 +25,11 @@ let dataModal = {
 }
 %>
 
-<%- include('../../header/example/samples/header.ejs', { shortcuts: shortcut, navigation: true, navigationId:'header-navigation' }); %>
+<%- include('../../header/example/samples/header.ejs', { links: links, navigation: true, navigationId:'header-navigation' }); %>
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Schemes - gestion du dark mode</h1>
-  <%- sample('bouton ouverture thèmes', '../../links/example/samples/link-default', shortcut.items[0], true) %>
+  <%- sample('bouton ouverture thèmes', '../../links/example/samples/link-default', links.items[0], true) %>
 
   <%- sample('snippet modal de paramètres d\'affichage', '../../modal/templates/ejs/modal.ejs', dataModal, true); %>
 
