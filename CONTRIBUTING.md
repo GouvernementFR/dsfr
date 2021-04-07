@@ -107,16 +107,58 @@ Il peut donc y avoir plusieurs fichier .scss, mais seuls main.scss à la racine 
 
 
 ### Javascript
-Certains packages font utilisation de javascript, afin d'apporter une couche interactive à ceux-ci. C'est le cas par exemple du package nav, où le javascript est utilisé pour déplier les sous-menus.
+Certains packages font utilisation de javascript, afin d'apporter une couche interactive à ceux-ci. C'est le cas par exemple du package navigation, où le javascript est utilisé pour déplier les sous-menus.
+La couche javascript est structurée comme ceci, par exemple pour le composant `navigation` :
 
-**A compléter par @Bertrand**
+```
+/src/navigation
+└── scripts
+    ├── module.js
+    └── navigation/
+        ├── constants.js
+        └── navigation.js
+└── api.js
+└── index.js
+└── main.js
+```
+
+`api.js` : importe les outils et variables globales du core. (Fichier identique dans chaque package avec du js)
+`index.js` : Ajoute la classe js du composant dans la variable utilitaire `api`
+`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js)
+Un Dossier `scripts` qui contient :
+- `module.js` : initialise les classes js (ici navigation)
+- Un dossier par fonctionalité js, ici `navigation` contient :
+  - `constants.js` pour stocker les variables globales
+  - `navigation.js` (ou nom-classe.js) contient le code de la fonctionalité js, structuré en classes instantiables (es6).
+
+Lors du `yarn release`, le javascript est compilé en version "module" (es6) et "nomodule" (es5), ainsi qu'en version .min et .map
+En mode développement, `yarn build` permet de regénérer uniquement la version .module.js (es6 non minifié)
 
 ### EJS
 Nous utilisons au sein du Design System, le langage de template EJS, permettant la génération des pages d'exemples au format HTML, ainsi que les snippets de code de manière automatisée.
 
-Afin de générer les fichiers HTML
-**A compléter par @Bertrand**
+Les fichiers ejs sont séparés dans 2 dossiers, par exemple pour le package `callouts` :
+```
+/src/callouts
+└── example
+    ├── index.ejs
+    └── samples/
+        └── callout-default.ejs
+└── templates
+    └── ejs
+        └── callout.ejs
+```
 
+Dans le dossier `example`,
+`ìndex.ejs` est la page d'exemple publiée, elle affiche les différents exemples grâce à la fonction `sample()` (qui inclut l'exemple et le snippet de code)
+Le dossier `samples` contient les différents examples (inclusion des templates avec des données d'exemples)
+
+Dans le dossier `templates`, on insère ici les templates dans un sous-dossier nommé en fonction du système de templating utilisé (`ejs` pour l'instant). Ces templates sont paramétrisables pour y injecter des données
+
+Pour accèder aux fonctions du core (comme `includeClasses()` et `includeAttr()`), inclure l'`index.ejs` de core au début du fichier : ```<% eval(include('../../../core/index.ejs')); %>```
+
+Afin de générer tous les exemples HTML utilisez `yarn release`.
+Ou, plus spécifiquement avec `yarn build`, le paramètre `-h` de yarn build permet de reconstruire uniquement l'html : `yarn build -h [-p nomPackage]`, avec `-p` pour préciser le(s) package(s).
 
 ### Git
 
