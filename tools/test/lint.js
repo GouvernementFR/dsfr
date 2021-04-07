@@ -1,6 +1,6 @@
 const stylelint = require('stylelint');
 const { ESLint } = require('eslint');
-const getPackages = require('../utilities/packages');
+const { getPackages } = require('../utilities/config');
 const root = require('../utilities/root');
 
 const lintStyles = async (pck) => {

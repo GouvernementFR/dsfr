@@ -1,8 +1,7 @@
 const global = require('../../package.json');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
-const getPackages = require('../utilities/packages');
-const { getPackageYML } = require('../utilities/config');
+const { getPackages, getPackageYML } = require('../utilities/config');
 const fs = require('fs');
 const log = require('../utilities/log');
 

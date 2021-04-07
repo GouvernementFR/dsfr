@@ -1,9 +1,9 @@
 const { createFile } = require('../utilities/file');
 const Readme = require('./readme');
 const root = require('../utilities/root');
-const { getPackageYML, getPublicPackage } = require('../utilities/config');
-const getPackages = require('../utilities/packages');
+const { getPackages, getPackageYML, getPublicPackage, getAllPackagesYML } = require('../utilities/config');
 const log = require('../utilities/log');
+const fs = require('fs');
 
 const generateMarkdown = (id) => {
   const data = getPackageYML(id);
@@ -51,4 +51,32 @@ const generateMarkdown = (id) => {
   log(38, p);
 };
 
-module.exports = generateMarkdown;
+const completeGlobalMarkdown = () => {
+  const file = root('README.md');
+  let fileContents = fs.readFileSync(file, 'utf8');
+
+  const packages = getAllPackagesYML();
+
+  for (const pck of packages) {
+    fileContents += `\n##### ${pck.title}\n`;
+    fileContents += `- [README](src/${pck.id}/README.md)\n`;
+
+    switch (true) {
+      case Array.isArray(pck.doc):
+        for (const d of pck.doc) fileContents += `- [Documentation ${d.title}](${d.url})\n`;
+        break;
+
+      case typeof pck.doc === 'string':
+        fileContents += `- [Documentation](${pck.doc})\n`;
+        break;
+    }
+  }
+
+  const p = 'public/README.md';
+  const filePath = root(p);
+
+  createFile(filePath, fileContents);
+  log(38, p);
+};
+
+module.exports = { generateMarkdown, completeGlobalMarkdown };

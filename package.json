@@ -19,7 +19,7 @@
     "node": ">=12.13.0"
   },
   "scripts": {
-    "styleguide": "./node_modules/.bin/sassdoc src/**/src/styles/**/*.scss",
+    "styleguide": "./node_modules/.bin/sassdoc src/core/styles/**/*.scss",
     "icon-font": "svgo -f icons/svg/ --config icons/config/.svgo.yml && icon-font-generator icons/svg/*.svg -o icons/font --csstp icons/config/template.hbs --html false --types woff -j false --csspath src/core/generated/styles/_icons.scss --cssfontsurl '#{$icon-font-path}'  --height 1200 --descent 240 --normalize true && b64-cli encode icons/font/icons.woff && replace-in-file --configFile=icons/config/replaceFont.js",
     "publish-npm": "npm run test && npx lerna publish",
     "tmp": "node ./tools/tools.js tmp",

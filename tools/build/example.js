@@ -2,9 +2,8 @@ const root = require('../utilities/root');
 const ejs = require('ejs');
 const fs = require('fs');
 const { createFile } = require('../utilities/file');
-const { getPackageYML, getPublicPackage } = require('../utilities/config');
+const { getPackages, getPackageYML, getPublicPackage, getAllPackagesYML } = require('../utilities/config');
 const beautify = require('js-beautify').html;
-const getPackages = require('../utilities/packages');
 const log = require('../utilities/log');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
@@ -54,9 +53,7 @@ const buildList = (dest) => {
   });
 
   const config = getPublicPackage().config;
-  config.packages = [];
-  const packages = getPackages();
-  packages.forEach((p) => { config.packages.push(getPackageYML(p)); });
+  config.packages = getAllPackagesYML();
 
   const options = {
     ...config,
@@ -80,9 +77,7 @@ const buildMain = (dest) => {
   });
 
   const config = getPublicPackage().config;
-  config.packages = [];
-  const packages = getPackages();
-  packages.forEach((p) => { config.packages.push(getPackageYML(p)); });
+  config.packages = getAllPackagesYML();
 
   const options = {
     ...config,

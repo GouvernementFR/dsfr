@@ -4,7 +4,7 @@ const Pa11y = require('pa11y');
 const Puppeteer = require('puppeteer');
 const Express = require('express');
 const FS = require('fs');
-const getPackages = require('../utilities/packages');
+const { getPackages } = require('../utilities/config');
 const log = require('../utilities/log');
 
 const displayResults = (results, darkmode) => {
