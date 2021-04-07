@@ -122,9 +122,9 @@ La couche javascript est structurée comme ceci, par exemple pour le composant `
 └── main.js
 ```
 
-`api.js` : importe les outils et variables globales du core. (Fichier identique dans chaque package avec du js)
-`index.js` : Ajoute la classe js du composant dans la variable utilitaire `api`
-`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js)
+`api.js` : importe depuis core l'objet global qui contient les classes, variables et instances du DSFR (Fichier identique dans chaque package avec du js)
+`index.js` : Ajoute à l'objet global `api` des définitions de classes et variables spécifiques au composant
+`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js). Permet l'initialisation du composant. 
 Un Dossier `scripts` qui contient :
 - `module.js` : initialise les classes js (ici navigation)
 - Un dossier par fonctionalité js, ici `navigation` contient :
@@ -153,9 +153,9 @@ Dans le dossier `example`,
 `ìndex.ejs` est la page d'exemple publiée, elle affiche les différents exemples grâce à la fonction `sample()` (qui inclut l'exemple et le snippet de code)
 Le dossier `samples` contient les différents examples (inclusion des templates avec des données d'exemples)
 
-Dans le dossier `templates`, on insère ici les templates dans un sous-dossier nommé en fonction du système de templating utilisé (`ejs` pour l'instant). Ces templates sont paramétrisables pour y injecter des données
+Dans le dossier `templates`, on insère ici les templates dans un sous-dossier nommé en fonction du système de templating utilisé (`ejs` pour l'instant). Ces templates sont paramétrables pour y injecter des données. Chaque fichier possède une documentation sommaire détaillant ces paramètres.
 
-Pour accèder aux fonctions du core (comme `includeClasses()` et `includeAttr()`), inclure l'`index.ejs` de core au début du fichier : ```<% eval(include('../../../core/index.ejs')); %>```
+Pour accèder aux fonctions du core (comme `includeClasses()` et `includeAttr()`), chaque template inclut l'`index.ejs` de core au début du fichier : ```<% eval(include('../../../core/index.ejs')); %>```
 
 Afin de générer tous les exemples HTML utilisez `yarn release`.
 Ou, plus spécifiquement avec `yarn build`, le paramètre `-h` de yarn build permet de reconstruire uniquement l'html : `yarn build -h [-p nomPackage]`, avec `-p` pour préciser le(s) package(s).
@@ -267,6 +267,7 @@ yarn build --test
 Qui peut être combiner avec `-p nomPackage` pour spécifier un ou des package(s).
 
 Pour voir les différents paramètres disponibles : `yarn build --help`
+
 #### tests Sass
 Afin de tester les différentes `functions` et `mixins`, nous utilisons jest et sass-true, afin d'effectuer une batterie de tests, présents dans un fichier `tests/_sass-tests.scss` au sein de certains packages.
 
