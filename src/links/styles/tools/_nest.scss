@@ -44,10 +44,8 @@
     @include _build-link-size($size-settings, $border-radius);
 
     @if $place != only {
-      &:not([class*='#{$prefix}-fi-']) {
-        max-width: none;
-        max-height: none;
-      }
+      max-width: none;
+      max-height: none;
     }
 
     @if $place == null {
@@ -65,13 +63,18 @@
   }
 }
 
-@mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false) {
+@mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false, $extend-base-link: false) {
   #{ns($module)} {
     @if $icon != null {
       @include font-icon($icon, null);
     }
 
-    @if $from == null {
+    // TODO: quickfix accordions, à revoir
+    @if $extend-base-link {
+      @extend %base-link;
+    }
+
+    @if $from == prevent-extension { // TODO: quickfix, à revoir en éliminant les extends qui perturbent l'ordre des packages
       @include _extend-link($size, $place, $module, $align-on-content, $force-md);
       @content;
     }

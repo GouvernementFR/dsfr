@@ -14,7 +14,7 @@
     line-height: unset;
   }
 
-  @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true) {
+  @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true, true) {
     @include size(100%);
     text-align: left;
     @include margin(0);
