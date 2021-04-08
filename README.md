@@ -39,11 +39,11 @@ Lors de la création de votre projet, il est préférable d’adopter l’arbore
 ### Template HTML de base
 Le point de départ de l’utilisation du DS est la création de fichiers HTML, afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. L’exemple ci dessous est le code minimal afin de pouvoir utiliser le design System.
 
-L’ajout de l’attribut data-rf-theme sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont vide,  light ou dark.
+L’ajout de l’attribut data-fr-theme sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont vide,  light ou dark.
 
 ```html
 <!doctype html>
-<html lang="fr" data-rf-theme>
+<html lang="fr" data-fr-theme>
   <head>
     <title>Titre de la page - Nom du site</title>
     <meta charset="utf-8">
