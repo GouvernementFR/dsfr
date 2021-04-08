@@ -10,17 +10,17 @@ const { deleteDir } = require('../utilities/file');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
+const { generateIcons } = require('../generate/icons');
 const { generateMarkdown, completeGlobalMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
 
-  if (settings.clean) deleteDir('public');
-
-  if (settings.core) generateCore();
-
   if (settings.clean) {
+    deleteDir('public');
+    generateCore();
+    await generateIcons();
     generatePackage();
     copyImages();
     copyAssets();

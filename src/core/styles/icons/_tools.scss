@@ -28,9 +28,15 @@ $icons-placeholders-generated: false !global;
 @mixin generate-icons-placeholder($icons) {
   @if $icons-placeholders-generated != true {
     @at-root {
-      @each $icon, $code in $icons {
+      @each $icon, $settings in $icons {
         %#{$icon} {
-          content: "#{$code}";
+          content: "#{unquote(map-get($settings, codepoint))}";
+        }
+
+        @if map-has-key($settings, ligature) {
+          %#{$icon}-ligature {
+            content: "#{unquote(map-get($settings, ligature))}";
+          }
         }
       }
     }
@@ -53,7 +59,7 @@ $icons-placeholders-generated: false !global;
 @mixin font-icon-content($icon, $prepend: '') {
   @include generate-icons-placeholder($icons-settings);
   @if $prepend {
-    content: #{$prepend} "#{map-get($icons-settings, $icon)}";
+    content: #{$prepend} "#{map-get(map-get($icons-settings, $icon), codepoint)}";
   }
   @else {
     @extend %#{$icon};
@@ -65,7 +71,7 @@ $has-font-icon: false !global;
   @if $has-font-icon != true {
     @at-root {
       %font-icon {
-        font-family: icons !important;
+        font-family: #{$namespace}-icons !important;
         font-style: normal;
         font-weight: normal !important;
         font-variant: normal;
