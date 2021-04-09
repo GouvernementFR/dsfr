@@ -1,0 +1,12 @@
+////
+/// Consent Schemes
+/// @group consent
+////
+
+#{ns(consent-placeholder)} {
+  @include scheme-element-bg-color(g200, true, false);
+}
+
+#{ns(consent-banner)} {
+  @include scheme-element-bg-color(g400, true, false);
+}

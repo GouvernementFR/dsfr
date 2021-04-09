@@ -1,0 +1,27 @@
+<%#
+# paramètres de la banière de consentement
+
+* title (string, recommended) : Titre du bloc
+
+* body (string, optionnal) : Texte explicatif, contenu textuel ou html
+
+* buttons (array, required): paramètres spécifique de chaque bouton du groupe
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let classes = [prefix + '-consent-banner'];
+ let attributes = locals.attributes || {};
+ let buttons = locals.buttons || [
+    { label: 'Accepter tout' },
+    { label: 'Refuser tout' },
+    { label: 'Personnaliser', secondary: true }
+ ];
+ %>
+
+<div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
+    <% if (locals.title) { %><div class="<%= prefix %>-consent-banner__title"><%= title %></div> <% } %>
+    <% if (locals.body) { %><div class="<%= prefix %>-consent-banner__content"><%- body %></div><% } %>
+    <%- include('../../../buttons/templates/ejs/buttons-group.ejs', {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}); %>
+</div>

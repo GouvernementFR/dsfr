@@ -6,7 +6,11 @@
 %>
 <% eval(include('../../../core/index.ejs')); %>
 
-<%- include(locals.vidTpl !== undefined ? locals.vidTpl  : '../../../core/templates/ejs/medias/responsive-vid') %>
+<% if (locals.consent === false) { %>
+    <%- include('../../../cookies/templates/ejs/placeholder') %>
+<% } else { %>
+    <%- include(locals.vidTpl !== undefined ? locals.vidTpl  : '../../../core/templates/ejs/medias/responsive-vid') %>
+<% } %>
 <% if (locals.caption != undefined) { %>
 <div class="<%= prefix %>-content-media__caption" ><%= caption %></div>
 <% } %>

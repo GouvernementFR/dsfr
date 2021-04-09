@@ -1,0 +1,25 @@
+<%#
+# paramètres placeholder de consentement
+
+* title (string, recommended) : Titre du placeholder
+
+* body (string, optionnal) : Texte explicatif, contenu textuel ou html
+
+* button (string, optionnal) : Pour modifier le bouton (par exemple le texte dans le bouton : button.label)
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let classes = [prefix + '-consent-placeholder'];
+ let attributes = locals.attributes || {};
+ let button = locals.button || {};
+ button.classes = [prefix + '-fi-arrow-right-line', prefix + '-link--icon-right'];
+ button.tag = 'button';
+ %>
+
+<div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
+    <% if (locals.title) { %><div class="<%= prefix %>-consent-placeholder__title"><%= title %></div> <% } %>
+    <% if (locals.body) { %><div class="<%= prefix %>-consent-placeholder__content"><%- body %></div><% } %>
+    <%- include('../../../links/templates/ejs/link.ejs', button); %>
+</div>

@@ -1,0 +1,7 @@
+<%
+let button = locals.button || {};
+button.label = 'Activer les cookies';
+let service = locals.service || '**Nom du service**';
+let data = {title: service + ' est désactivé', body: lorem(null, 120), button: button};
+%>
+<%- include('../../templates/ejs/placeholder.ejs', data); %>

@@ -1,0 +1,36 @@
+////
+/// Placeholder Module
+/// @group consent
+////
+
+#{ns(consent-banner)} {
+  @include fixed(null, null, 0, 0);
+  width: 100%;
+  max-height: 66%;
+  @include padding(6v 4v 4v);
+  z-index: z-index(consent);
+  overflow: auto;
+
+  @include respond-from(md) {
+    @include padding(8v);
+    bottom: space(10v);
+    left: space(10v);
+    max-width: space(147v);
+  }
+
+  &__content {
+    p{
+      @include margin-bottom(4v);
+    }
+  }
+
+  &__title {
+    @include title-style(h4);
+    @include margin-bottom(4v);
+  }
+
+  &__buttons {
+    @include margin-top(8v);
+    @include margin-bottom(-4v);
+  }
+}
