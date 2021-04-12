@@ -88,6 +88,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   apply () {
     for (let i = 0; i < this._index; i++) this.members[i].translate(-1);
+    this.current.element.style.transition = '';
     this.current.element.style.transform = '';
     for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(1);
     this.element.style.transition = '';
