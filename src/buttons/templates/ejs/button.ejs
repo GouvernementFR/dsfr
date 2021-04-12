@@ -5,6 +5,8 @@
 
 * tag (string) : si non défini, button
 
+* id (string) : id du bouton
+
 * secondary (boolean, optionnal) : si valeur true, bouton secondaire
 
 * type (string, optionnal) type du bouton
@@ -32,6 +34,8 @@
  let btnClasses = locals.classes || [];
  let btnAttrs = locals.attributes || {};
  let btnTitle = locals.btnTitle !== undefined ? locals.btnTitle : locals.label ;
+
+ if (locals.id) btnAttrs.id = id;
 
  const tag = locals.tag || 'button';
 
