@@ -14,12 +14,12 @@
  let classes = [prefix + '-consent-placeholder'];
  let attributes = locals.attributes || {};
  let button = locals.button || {};
- button.classes = [prefix + '-fi-arrow-right-line', prefix + '-link--icon-right'];
+ if (!button.label) button.label = "Autoriser";
  button.tag = 'button';
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
     <% if (locals.title) { %><div class="<%= prefix %>-consent-placeholder__title"><%= title %></div> <% } %>
     <% if (locals.body) { %><div class="<%= prefix %>-consent-placeholder__content"><%- body %></div><% } %>
-    <%- include('../../../links/templates/ejs/link.ejs', button); %>
+    <%- include('../../../buttons/templates/ejs/button.ejs', button); %>
 </div>

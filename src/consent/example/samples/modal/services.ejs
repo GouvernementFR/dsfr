@@ -1,0 +1,73 @@
+
+<%
+let id = prefix + '-consent-services';
+
+let elementAccept = { label : 'Accepter'};
+let elementRefuse = { label : 'Refuser'};
+
+let header = {
+  elements: [
+    {name : id, element: {label: 'Tout accepter'},  id: id + '-accept'},
+    { name : id, element: {label: 'Tout refuser'}, id: id + '-refuse' }
+  ]
+}
+
+let purposes = [
+  {
+    elements: [
+      { name : id + '-mandatory', element: {...elementAccept},  id: id + '-mandatory-accept'},
+      { disabled: true, name : id + '-mandatory', element: {...elementRefuse}, id: id + '-mandatory-refuse' }
+    ]
+  },
+  {
+    elements: [
+      { name : id + '-api', element: {...elementAccept},  id: id + '-api-accept'},
+      { name : id + '-api', element: {...elementRefuse}, id: id + '-api-refuse' }
+    ],
+    services: [
+      {
+        elements: [
+          { name : id + '-api', element: {...elementAccept},  id: id + '-api-accept'},
+          { name : id + '-api', element: {...elementRefuse}, id: id + '-api-refuse' }
+        ]
+      }
+    ]
+  },
+]
+%>
+
+
+<div class="<%= prefix %>-consent-services">
+  <div class="<%= prefix %>-consent-services__header">
+    <p>Préférences pour tous les services. <a href="">Données personnelles et cookies</a></p>
+    <div class="<%= prefix %>-consent-services__radios">
+      <%- include('../../../../radios/templates/ejs/radio-group', {...header.elements[0]} ) %>
+      <%- include('../../../../radios/templates/ejs/radio-group', {...header.elements[1]} ) %>
+    </div>
+  </div>
+
+  <div class="<%= prefix %>-consent-services__purposes">
+    <div class="<%= prefix %>-consent-services__purpose">
+      <h6 class="<%= prefix %>-consent-services__purpose-title">Cookies obligatoires</h6>
+      <div class="<%= prefix %>-consent-services__purpose-radios">
+        <%- include('../../../../radios/templates/ejs/radio-group', {...purposes[0].elements[0]} ) %>
+        <%- include('../../../../radios/templates/ejs/radio-group', {...purposes[0].elements[1]} ) %>
+      </div>
+      <p class="<%= prefix %>-consent-services__purpose-desc">Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés.</p>
+    </div>
+
+    <div class="<%= prefix %>-consent-services__purpose">
+      <h6 class="<%= prefix %>-consent-services__purpose-title">Nom de la finalité</h6>
+      <div class="<%= prefix %>-consent-services__purpose-radios">
+        <%- include('../../../../radios/templates/ejs/radio-group', {...purposes[1].elements[0]} ) %>
+        <%- include('../../../../radios/templates/ejs/radio-group', {...purposes[1].elements[1]} ) %>
+      </div>
+      <p class="<%= prefix %>-consent-services__purpose-desc">Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.</p>
+    </div>
+
+  </div>
+
+  <div class="<%= prefix %>-consent-services__footer">
+    <%- include('../../../../buttons/templates/ejs/buttons-group.ejs', {size:'md', inline: 'sm', align:'right', reverse: true, buttons: [{label: 'Confirmer mes choix'}] }); %>
+  </div>
+</div>

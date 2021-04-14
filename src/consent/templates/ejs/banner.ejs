@@ -13,10 +13,13 @@
 <%
  let classes = [prefix + '-consent-banner'];
  let attributes = locals.attributes || {};
+ btnModalAttr = [];
+ btnModalAttr['data-' + prefix + '-opened'] = false;
+ btnModalAttr['aria-controls'] = prefix + '-consent-modal';
  let buttons = locals.buttons || [
     { label: 'Accepter tout' },
     { label: 'Refuser tout' },
-    { label: 'Personnaliser', secondary: true }
+    { label: 'Personnaliser', secondary: true, attributes: btnModalAttr }
  ];
  %>
 

@@ -19,13 +19,13 @@
   }
 
   &__content {
-    p{
+    p {
       @include margin-bottom(4v);
     }
   }
 
   &__title {
-    @include title-style(h4);
+    @include title-style(h6);
     @include margin-bottom(4v);
   }
 

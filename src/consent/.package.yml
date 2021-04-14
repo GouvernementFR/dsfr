@@ -6,9 +6,12 @@ wrapper: col-8
 styles:
   - core
   - modal
-  - inputs
   - radios
   - buttons
   - links
-script:
-  - modal
+example:
+  styles:
+    - modal
+    - content
+  scripts:
+    - modal

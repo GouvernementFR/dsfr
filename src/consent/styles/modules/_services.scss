@@ -1,0 +1,20 @@
+////
+/// services Module
+/// @group consent
+////
+
+#{ns(consent-services)} {
+
+  &__header{
+    @include padding-bottom(8v);
+  }
+
+  &__purpose {
+    @include padding(8v 0);
+  }
+
+  &__footer {
+    @include margin-top(8v);
+    @include margin-bottom(-4v);
+  }
+}

@@ -9,11 +9,11 @@
   text-align: center;
 
   &__content {
-    @include margin-bottom(4v);
+    @include margin-bottom(6v);
   }
 
   &__title {
-    @include title-style(h4);
-    @include margin-bottom(4v);
+    font-weight: bold;
+    @include margin-bottom(2v);
   }
 }

@@ -25,12 +25,7 @@
     /**
      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
      */
-    @include disabled-form-choice() {
-      filter: grayscale(1);
-      @include after {
-        background-color: transparent;
-      }
-    }
+     @include disabled-form-choice();
   }
 
   /**
@@ -66,6 +61,15 @@
 
     @include before() {
       box-shadow: inset 0 0 0 3px var(--w);
+    }
+  }
+
+  input[type="radio"] {
+    @include disabled-form-choice() {
+      filter: grayscale(1);
+      @include after {
+        background-color: transparent;
+      }
     }
   }
 }

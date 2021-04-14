@@ -1,7 +1,5 @@
 <%
-let body = `<p>Nos site et <a href>nos partenaires</a> utilisons des cookies déposés sur votre terminal avec votre consentement que vous pouvez retirer à tout moment.</p>
-<p class="fr-text--xs">Certains cookies sont dits fonctionnels et sont strictement necessaires à la bonne fourniture du service. Ils peuvent comprendrent des traceurs de mesure d’audience motorant le bon fonctionnement technique du site.
-Des cookies dits ‘non fonctionnels’ peuvent être déposés, permettant de personnaliser des contenus selon votre navigation, d’afficher de la publicité personnalisée ou non, géolocalisée ou non en se basant sur votre profil et/ou historique de navigation. </p>`;
-let data = {title: lorem(null, 26), body: body};
+let body = `<p class="fr-text--sm">Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page <a href="">Données personnelles et cookies</a>. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.</p>`;
+let data = {title: 'À propos des cookies sur nomdusite.fr', body: body};
 %>
 <%- include('../../templates/ejs/banner.ejs', data); %>

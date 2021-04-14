@@ -8,5 +8,15 @@
 }
 
 #{ns(consent-banner)} {
-  @include scheme-element-bg-color(g400, true, false);
+  @include scheme-element-bg-color(g200, true, false);
+  @include scheme-element-box-shadow-color(g400, true, inset 0 0 0 1px $COLOR);
+}
+
+
+#{ns(consent-services)} {
+  &__purpose,
+  &__header {
+    @include scheme-element-box-shadow-color(g400, true, inset 0 -1px 0 0 $COLOR);
+
+  }
 }
