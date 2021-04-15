@@ -1,0 +1,20 @@
+////
+/// Manager Module
+/// @group consent
+////
+
+#{ns(consent-manager)} {
+  & &__header {
+    @include padding-top(0);
+    #{ns(consent-service)}__desc {
+      @include text-style(md);
+      @include margin-bottom(3v);
+      @include margin-bottom(0,md);
+    }
+  }
+
+  &__footer {
+    @include margin-top(8v);
+    @include margin-bottom(-4v);
+  }
+}

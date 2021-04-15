@@ -3,18 +3,93 @@
 /// @group consent
 ////
 
+#{ns(consent-service)} {
+  @include padding(8v 0);
+
+  &__container {
+    @include respond-from(md) {
+      display: grid;
+      align-items: center;
+      column-gap: space(8v);
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__title {
+    @include title-style(h6);
+    @include margin-bottom(3v);
+
+    @include respond-from(md) {
+      @include margin-bottom(0);
+      grid-column: 1;
+    }
+  }
+
+  &__desc {
+    @include text-style(sm);
+    @include margin-bottom(0);
+    grid-column: 1;
+  }
+
+  &__collapse {
+    @include margin-top(2v);
+    @include _nest-link(consent-service__collapse-btn, sm, right, arrow-down-s-line, null, false, $collapse-btn-settings, false, true, true) {
+      background: transparent;
+      @include padding(0);
+
+      &[aria-expanded="true" i] {
+        @include before {
+          @include font-icon-content(arrow-up-s-line);
+        }
+      }
+    }
+  }
+
+  &__radios {
+    @include margin-bottom(3v);
+    grid-column: 2;
+
+    @include respond-from(md) {
+      @include margin-bottom(0);
+      justify-self: flex-end;
+      grid-column: 2;
+    }
+  }
+
+  #{ns-group(radio)} {
+    position: relative;
+
+    &:not(:last-child) input[type="radio" i] + label {
+      @include margin-right(11v);
+    }
+
+    + #{ns-group(radio)} {
+      @include before(block,'') {
+        @include size(1px, 6v);
+        position: absolute;
+        left: calc(#{space(-6v)} - 1px);
+        top: space(3v);
+      }
+    }
+  }
+}
+
 #{ns(consent-services)} {
+  @include margin-top(8v);
+  @include margin-bottom(-8v);
+  @include margin-top(5v, md);
+  @include margin-bottom(-5v, md);
+  #{ns(consent-service)} {
+    box-shadow: none;
+    padding: 0;
 
-  &__header{
-    @include padding-bottom(8v);
-  }
+    &__desc {
+      @include margin-bottom(6v);
+      @include margin-bottom(0,md);
+    }
 
-  &__purpose {
-    @include padding(8v 0);
-  }
-
-  &__footer {
-    @include margin-top(8v);
-    @include margin-bottom(-4v);
+    &:last-child {
+      @include margin-bottom(5v);
+    }
   }
 }

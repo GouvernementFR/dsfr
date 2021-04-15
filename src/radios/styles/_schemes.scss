@@ -25,7 +25,7 @@
     /**
      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
      */
-     @include disabled-form-choice();
+    @include disabled-form-choice();
   }
 
   /**
