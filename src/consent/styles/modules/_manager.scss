@@ -10,6 +10,10 @@
       @include text-style(md);
       @include margin-bottom(3v);
       @include margin-bottom(0,md);
+      @include respond-from(md) {
+        -ms-grid-row: 1;
+        grid-row: 1;
+      }
     }
   }
 

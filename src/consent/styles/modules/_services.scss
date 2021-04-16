@@ -5,12 +5,14 @@
 
 #{ns(consent-service)} {
   @include padding(8v 0);
+  @include padding(4v 0 8v, md);
 
   &__container {
     @include respond-from(md) {
+      display: -ms-grid;
       display: grid;
       align-items: center;
-      column-gap: space(8v);
+      -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
     }
   }
@@ -20,15 +22,24 @@
     @include margin-bottom(3v);
 
     @include respond-from(md) {
-      @include margin-bottom(0);
+      @include margin-bottom(4v);
+      @include margin-top(4v);
+      -ms-grid-column: 1;
+      -ms-grid-row: 1;
       grid-column: 1;
+      grid-row: 1;
+      @include margin-right(6v, md);
     }
   }
 
   &__desc {
     @include text-style(sm);
     @include margin-bottom(0);
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
     grid-column: 1;
+    grid-row: 2;
+    @include margin-right(6v,md);
   }
 
   &__collapse {
@@ -47,12 +58,15 @@
 
   &__radios {
     @include margin-bottom(3v);
-    grid-column: 2;
 
     @include respond-from(md) {
+      overflow: hidden;
       @include margin-bottom(0);
       justify-self: flex-end;
+      -ms-grid-column: 1;
       grid-column: 2;
+      -ms-grid-row: 1;
+      grid-row: 1;
     }
   }
 
@@ -83,9 +97,13 @@
     box-shadow: none;
     padding: 0;
 
+    & + #{ns(consent-service)} {
+      @include margin-top(-2v, md);
+    }
+
     &__desc {
       @include margin-bottom(6v);
-      @include margin-bottom(0,md);
+      @include margin-bottom(2v,md);
     }
 
     &:last-child {
