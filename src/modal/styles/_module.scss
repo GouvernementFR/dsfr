@@ -21,12 +21,12 @@
     outline: none;
   }
 
-  @include before(block, '') {
+  @include before('', block) {
     @include size(0, 8v);
     flex: 1 0 space(8v);
   }
 
-  @include after(block) {
+  @include after('', block) {
     @include size(0, 8v);
     flex: 1 0 space(8v);
   }
@@ -53,7 +53,7 @@
       flex: 1 0 10vh;
     }
 
-    @include after(null, '') {
+    @include after('') {
       @include size(0, 10vh);
       flex: 1 0 10vh;
     }
@@ -112,7 +112,7 @@
     @include title-style('h4');
     @include font-weight('bold');
 
-    [class*="#{$prefix}-fi-"] {
+    @include has-icon {
       @include margin-right(2v);
     }
 

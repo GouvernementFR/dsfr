@@ -30,15 +30,16 @@
      * la valeur correspondant à l'état checked (optionnel).
      */
     &:checked {
-      ~ .#{$prefix}-toggle__label[data-#{$prefix}-unchecked-label]::before,
-      ~ .#{$prefix}-toggle__label[data-#{$prefix}-checked-label]::before {
-        content: attr(data-#{$prefix}-checked-label) '\A' attr(data-#{$prefix}-unchecked-label);
-      }
+      ~ #{ns(toggle__label)} {
+        &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
+          @include before(attr(#{ns-attr(checked-label, null, false, true)}) '\A' attr(#{ns-attr(unchecked-label, null, false, true)}));
+        }
 
-      ~ .#{$prefix}-toggle__label::after {
-        transform: translateX(space(4v));
-        text-indent: 0;
-        @include z-index(focus);
+        @include after {
+          transform: translateX(space(4v));
+          text-indent: 0;
+          @include z-index(focus);
+        }
       }
     }
 
@@ -61,15 +62,12 @@
      * Si les data attributes sont présents, on assigne un content au pseudo element before,
      * et on enlève le padding left du label.
      */
-    &[data-#{$prefix}-unchecked-label],
-    &[data-#{$prefix}-checked-label] {
+    &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
       @include padding-left(0);
 
-      @include before {
-        content: attr(data-#{$prefix}-unchecked-label) '\A' attr(data-#{$prefix}-checked-label);
-      }
+      @include before(attr(#{ns-attr(unchecked-label, null, false, true)}) '\A' attr(#{ns-attr(checked-label, null, false, true)}));
 
-      + .#{$prefix}-hint-text {
+      + #{ns(hint-text)} {
         @include margin-top(2v);
       }
     }
@@ -95,7 +93,7 @@
      * On inclut l'icône check dans un pseudo-element after
      * On la cache via un text-indent quand l'input n'est pas check
      */
-    @include font-icon(check-line, sm, after) {
+    @include icon(check-line, sm, after) {
       @include display-flex(null,center,center);
       @include absolute(4v, null, null, 0, 6v, 6v);
       border-radius: 50%;
@@ -105,9 +103,11 @@
   }
 
   #{ns(hint-text)} {
-    @extend %hint-text;
-    flex-basis: 100%;
+    display: block;
     @include margin-top(4v);
+    @include margin-bottom(0);
+    @include text-style(xs);
+    flex-basis: 100%;
   }
 
   /*

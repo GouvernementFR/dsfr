@@ -79,7 +79,7 @@
       /**
        * On utilise un pseudo element before pour customiser l'aspect du bouton radio
        */
-      @include before(inline-block, '') {
+      @include before('', inline-block) {
         @include size(6v, 6v);
         @include margin-right(2v);
         flex-shrink: 0;
@@ -118,7 +118,7 @@
   &--sm {
     input[type="radio" i] {
       & + label {
-        @include before() {
+        @include before {
           @include size(4v, 4v);
         }
       }

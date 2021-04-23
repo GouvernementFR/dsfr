@@ -19,7 +19,7 @@
   background: 0;
   border: 0;
 
-  @include font-icon(arrow-down-s-line, sm) {
+  @include icon(arrow-down-s-line, sm) {
     @include margin-left(auto);
     @include margin-right(0);
     transition: transform 0.3s;
@@ -50,7 +50,7 @@
     /**
     * Ajout de l'icône de menu en mode mobile (provisoire)
     */
-    @include font-icon(menu-2-fill, sm, after) {
+    @include icon(menu-2-fill, sm, after) {
       @include margin-x(2v);
     }
 

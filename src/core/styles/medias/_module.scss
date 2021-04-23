@@ -22,7 +22,7 @@
   }
 
   &__player {
-    @extend %media-overlay-cover;
+    @include media-overlay-cover;
     border: 0;
   }
 }

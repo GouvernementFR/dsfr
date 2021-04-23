@@ -11,7 +11,7 @@
   /**
    * Inclusion de l'icône (optionnel)
    */
-  @include custom-icons(md) {
+  @include with-icon {
     display: block;
     @include margin(-2v 0 2v);
 

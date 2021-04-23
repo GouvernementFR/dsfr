@@ -50,7 +50,7 @@
   @include margin-top(4v);
   @include margin-bottom(0);
 
-  @include font-icon(alert-line, sm) {
+  @include icon(alert-line, sm) {
     display: inline-block;
     @include margin-right(1v);
   }
@@ -65,7 +65,7 @@
   @include margin-top(4v);
   @include margin-bottom(0);
 
-  @include font-icon(checkbox-line, sm) {
+  @include icon(checkbox-line, sm) {
     display: inline-block;
     @include margin-right(1v);
   }
@@ -108,7 +108,7 @@
    * Modificateur pour afficher les éléments en inline
    */
   &--inline {
-    .#{$prefix}-fieldset__content {
+    #{ns(fieldset__content)} {
       @include display-flex(null, baseline, flex-start, wrap);
       @include margin(-3v 0);
     }
@@ -162,7 +162,7 @@
    */
   &--error {
     #{ns(fieldset__content)} {
-      @include before(null, '') {
+      @include before('') {
         @include absolute(3v, null, 3v, -2v, 2px);
       }
     }
@@ -173,7 +173,7 @@
    */
   &--valid {
     #{ns(fieldset__content)} {
-      @include before(null, '') {
+      @include before('') {
         @include absolute(3v, null, 3v, -2v, 2px);
       }
     }

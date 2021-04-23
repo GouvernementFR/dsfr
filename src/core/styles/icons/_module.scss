@@ -8,12 +8,9 @@
   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
 }
 
-@include font-icon-placeholder();
-
 @include has-icon {
   @include before {
-    @extend %font-icon;
-    font-size: icon-size(md);
+    @include font-icon;
   }
 }
 
@@ -21,7 +18,7 @@
   @each $size, $value in $icon-size-map {
     @if $size != md {
       &--#{$size} {
-        @include before {
+        @include _pseudo(before after) {
           font-size: #{icon-size($size)};
         }
       }
@@ -33,4 +30,4 @@
  * Définitions des symboles des icones
  **/
 // $icons-settings est générée dans generated/_icons.scss
-@include generate-icons-content($icons-settings);
+@include generate-icons(fi);

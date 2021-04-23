@@ -3,6 +3,8 @@
 /// @group pagination
 ////
 
+@include build-pagination();
+
 #{ns(pagination)} {
   @include disable-link-style;
   @include disable-list-style;
@@ -26,7 +28,6 @@
   }
 
   &__link {
-    @include build-pagination();
     @include min-size(8v);
     @include margin-x(0.5v);
     @include margin-bottom(4v);
@@ -36,19 +37,19 @@
     }
 
     &--first {
-      @include icon-pagination(only, arrow-left-s-first-line);
+      @include nest-pagination(only, arrow-left-s-first-line);
     }
 
     &--prev {
-      @include icon-pagination(only, arrow-left-s-line);
+      @include nest-pagination(only, arrow-left-s-line);
     }
 
     &--next {
-      @include icon-pagination(only, arrow-right-s-line);
+      @include nest-pagination(only, arrow-right-s-line);
     }
 
     &--last {
-      @include icon-pagination(only, arrow-right-s-last-line);
+      @include nest-pagination(only, arrow-right-s-last-line);
     }
 
     &--first,
@@ -57,11 +58,11 @@
       @include margin-left(-2.5v);
 
       &#{ns(pagination__link--label)} {
-        @include extend-pagination(left);
+        @include nest-pagination(left);
       }
 
       &#{ns(pagination__link--lg-label)} {
-        @include extend-pagination(left, lg);
+        @include nest-pagination(left, null, lg);
       }
     }
 
@@ -71,11 +72,11 @@
       @include margin-left(3.5v);
 
       &#{ns(pagination__link--label)} {
-        @include extend-pagination(right);
+        @include nest-pagination(right);
       }
 
       &#{ns(pagination__link--lg-label)} {
-        @include extend-pagination(right, lg);
+        @include nest-pagination(right, null, lg);
       }
     }
   }

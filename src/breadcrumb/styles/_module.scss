@@ -68,7 +68,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
      */
     &:not([aria-current]) {
       @include margin-right(6v);
-      @include font-icon(arrow-right-s-line, sm, after);
+      @include icon(arrow-right-s-line, sm, after);
       @include after {
         @include absolute(0.5v, -5v);
         pointer-events: none;

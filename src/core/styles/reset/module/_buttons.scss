@@ -4,7 +4,9 @@
 ////
 
 @if (map-get($reset-settings, button)) {
-  button {
-    @extend %btn-reset;
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    @include btn-reset;
   }
 }

@@ -7,33 +7,28 @@
 
 #{ns(summary)} {
   @include disable-link-style;
-  @include disable-list-style;
   @include padding(6v);
   @include padding(8v, md);
+  @include text-style(xs);
 
   @include title {
     @include margin(0 0 2v);
-    @include text-style(xs);
     font-weight: font-weight(bold);
     text-transform: uppercase;
   }
 
-  @include list {
-    > li { // TODO: BEM
-      @include margin(0);
-      @include before(null, none);
-    }
+  li {
+    position: relative;
+    @include padding(0);
+    @include before(none);
+  }
 
-    > li > a { // TODO: BEM
-      display: inline-flex;
-      @include padding(2v);
-      @include margin(0 -2v);
-      @include text-style(xs);
-
-      @include before {
-        @include margin-right(2v);
-        content: counters(list-number, ".") ".";
-      }
+  &__link {
+    @include before(var(--li-content)) {
+      @include padding-right(1v);
     }
+    display: inline-block;
+    @include padding(2v);
+    @include margin-x(-2v);
   }
 }

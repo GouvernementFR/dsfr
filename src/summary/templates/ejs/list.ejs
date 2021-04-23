@@ -1,0 +1,9 @@
+<ol>
+    <% for (let i = 0; i < list.length; i++) {
+        const item = list[i];
+        if (!item.list) item.list = undefined;
+    %>
+
+        <%- include('./item', item); %>
+    <% } %>
+</ol>

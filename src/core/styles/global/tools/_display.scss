@@ -28,7 +28,3 @@
     flex-wrap: #{$flex-wrap};
   }
 }
-
-%inline-flex-center {
-  @include display-flex(row, center, null, null, true);
-}

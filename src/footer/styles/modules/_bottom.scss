@@ -31,7 +31,7 @@
   @include margin(2v 0 0 3v, md);
   display: inline;
 
-  @include before(inline-block, '') {
+  @include before('', inline-block) {
     vertical-align: middle;
     @include relative;
     @include size(1px, 4v);
@@ -45,7 +45,7 @@
 
   &:first-child {
     @include margin(2v 0 0);
-    @include before(null, none);
+    @include before(none);
   }
 }
 

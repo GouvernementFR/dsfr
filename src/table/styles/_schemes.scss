@@ -61,7 +61,7 @@
     * Modifier ombre à gauche
     **/
     &-left #{$shadow-wrapper} table {
-      @include before(block, '') {
+      @include before('', block) {
         @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(8v) 0 space(4v) (-(space(6v))) $COLOR, inset 0 0 0 transparent));
       }
     }
@@ -70,7 +70,7 @@
     * Modifier ombre à droite
     **/
     &-right #{$shadow-wrapper} table {
-      @include before(block, '') {
+      @include before('', block) {
         @include scheme-element-box-shadow-color(scroll-shadow, false, (inset 0 0 0 transparent, inset (-(space(8v))) 0 space(4v) (-(space(6v))) $COLOR));
       }
     }
@@ -79,7 +79,7 @@
     * Modifier combinaison ombre à gauche et ombre à droite
     **/
     &-left#{&}-right #{$shadow-wrapper} table {
-      @include before(block, '') {
+      @include before('', block) {
         @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(8v) 0 space(4v) (-(space(6v))) $COLOR, inset (-(space(8v))) 0 space(4v) (-(space(6v))) $COLOR));
       }
     }

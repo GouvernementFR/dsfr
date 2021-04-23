@@ -45,7 +45,7 @@
   @include relative;
   display: block;
 
-  @include custom-icons(sm) {
+  @include with-icon(sm) {
     @include absolute(3v, 3v, 3v);
     @include margin(auto);
   }

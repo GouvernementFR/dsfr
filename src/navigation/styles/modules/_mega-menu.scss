@@ -20,7 +20,7 @@
 
   > #{ns(container)} {
     @include respond-from(lg) {
-      @include before(block, '') {
+      @include before('', block) {
         @include size(null, 2px);
         @include margin-x(-4v);
         @include margin-bottom(4v);

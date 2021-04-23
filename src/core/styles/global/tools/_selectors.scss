@@ -96,6 +96,12 @@
   }
 }
 
+@mixin has-not-icon() {
+  @include class-not-start-with(ns(fi-, '')) {
+    @content;
+  }
+}
+
 /// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
 /// @access public
 @mixin all-ns-elements-selector() {
@@ -125,5 +131,16 @@
     #{$selectors} {
       @content;
     }
+  }
+}
+
+@mixin nest($selector: null) {
+  @if $selector {
+    #{$selector} {
+      @content;
+    }
+  }
+  @else {
+    @content;
   }
 }

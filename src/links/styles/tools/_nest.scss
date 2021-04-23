@@ -3,96 +3,42 @@
 /// @group links
 ////
 
-@mixin _extend-link($size, $place, $module, $align-on-content, $force-md) {
-  $align: #{$module}-align-on-content;
-
-  @if $size != md or $force-md {
-    @extend %#{$module}--#{$size};
-  }
-
-  @if $place != only {
-    max-width: none;
-    max-height: none;
-  }
-
-  @if $place != null {
-    $placeholder: #{$module}--icon-#{$place};
-
-    @extend %#{$placeholder}--md;
-
-    @if $size != md {
-      @extend %#{$placeholder}--#{$size};
-    }
-  }
-
-  @if $align-on-content {
-
-    @if $place == null {
-      @extend %#{$align}--#{$size};
-    }
-    @else {
-      @extend %#{$align}--#{$place}--#{$size};
-    }
-  }
-}
-
-@mixin _extend-responsive-link($from, $size, $place, $settings, $border-radius, $align-on-content) {
+@mixin _nest-link($settings: $links-settings, $size: md, $place: null, $icon: null, $from: null, $insert: true, $align-on-content: false) {
+  $selector: null;
   $sizes: map_get($settings, sizes);
   $size-settings: map_get($sizes, $size);
-  @include respond-from($from) {
+  $border-radius: map-get($settings, border-radius);
 
-    @include _build-link-size($size-settings, $border-radius);
-
-    @if $place != only {
-      max-width: none;
-      max-height: none;
-    }
-
-    @if $place == null {
-      @include before(null, none);
-    }
-    @else {
-      @include _build-link-icon($size-settings, $place, $size, false, $place == right);
-    }
-
-    @if $align-on-content {
-      @include _link-align-on-content($size, $place, $size-settings);
-    }
-
-    @content;
+  @if $insert {
+    $selector: ns(map-get($settings, selector));
   }
-}
 
-@mixin _nest-link($module, $size, $place: null, $icon: null, $from: null, $align-on-content: false, $settings: $links-settings, $border-radius: true, $force-md: false, $extend-base-link: false) {
-  #{ns($module)} {
-    @if $icon != null {
-      @include font-icon($icon, null);
-    }
+  @include nest($selector) {
+    @include respond-from($from) {
+      @if $icon != null {
+        @include icon($icon);
+      }
 
-    // TODO: quickfix accordions, à revoir
-    @if $extend-base-link {
-      @extend %base-link;
-    }
+      @include _build-link-size($size-settings, $border-radius);
 
-    @if $from == prevent-extension { // TODO: quickfix, à revoir en éliminant les extends qui perturbent l'ordre des packages
-      @include _extend-link($size, $place, $module, $align-on-content, $force-md);
+      @if $place == null {
+        @include before(none);
+      }
+      @else {
+        @include _build-link-icon($size-settings, $place, $size, false, $place == right);
+      }
+
+      @if map-get($settings, align-on-content) and $align-on-content {
+        @include _link-align-on-content($size, $place, $size-settings);
+      }
+
       @content;
     }
-    @else {
-      @include _extend-responsive-link($from, $size, $place, $settings, $border-radius, $align-on-content) {
-        @content;
-      }
-    }
   }
 }
 
-@mixin nest-link($size:md, $place: null, $icon:null, $from: null,  $align-on-content: false) {
-  @include _nest-link(link, $size, $place, $icon, $from, $align-on-content) {
+@mixin nest-link($size:md, $place: null, $icon:null, $from: null, $insert: true, $align-on-content: false) {
+  @include _nest-link($links-settings, $size, $place, $icon, $from, $insert, $align-on-content) {
     @content;
   }
-}
-
-@mixin icon-link($size: md, $place: null, $icon: null, $module: null, $align-on-content: false) {
-  @include _extend-link($size, $place, $module, $align-on-content, true);
-  @include font-icon($icon, null);
 }

@@ -8,20 +8,20 @@
     <% for (let i = 0; i < lis.length; i++) {
         let li = lis[i];
     %>
-        <li>
-            <% if (li.text === true) { %>
-                <%= lorem() %>
-            <% }
-            else if (li.text !== undefined) { %>
-                <%= li.text %>
-            <% }
-            else { %>
-                Item list
-            <% } %>
+        <li><%
+            if (li.text === true) {
+                %><%= lorem() %><%
+            }
+            else if (li.text !== undefined) {
+                %><%= li.text %><%
+            }
+            else {
+                %>Item list<%
+            }
 
-            <% if (li.lis !== undefined) { %>
-                <%- include('./list', {lis : li.lis}); %>
-            <% } %>
-        </li>
+            if (li.lis !== undefined) {
+                %><%- include('./list', {lis : li.lis}); %><%
+            }
+        %></li>
     <% } %>
 </<%= tag %>>

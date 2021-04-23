@@ -3,46 +3,59 @@
 /// @group core
 ////
 
-%list-reset {
+@mixin list-reset() {
   list-style-type: none;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin enable-list-style() {
-  --is-list: ;
+  $selector: null;
+
+  @if & == null {
+    $selector: ':root';
+  }
+
+  @include nest($selector) {
+    --li-pb: #{space(2v)};
+    --li-pt: 0;
+    --li-pl: 0;
+    --li-indent: 0.9em;
+    --ul-content: "●○■□◆◇";
+    --ul-max-width: 0.75em;
+    --ul-letter-spacing: 0.4em;
+    --ul-overflow: hidden;
+    --ul-display: inline-block;
+    --ul-vertical-align: top;
+    --ol-content: counters(li-counter, ".") ".";
+    --ol-font-weight: 700;
+    --ol-increment: li-counter;
+    counter-set: none;
+  }
+
+  li {
+    --li-pl: #{space(4v)};
+    --li-pt: #{space(2v)};
+  }
 }
 
 @mixin disable-list-style() {
-  --is-list: false;
-}
+  --li-pb: 0;
+  --li-pt: 0;
+  --li-pl: 0;
+  --li-indent: initial;
+  --ul-content: none;
+  --ul-max-width: none;
+  --ul-letter-spacing: 0;
+  --ul-overflow: inherit;
+  --ul-display: inline-block;
+  --ul-vertical-align: top;
+  --ol-content: none;
+  --ol-font-weight: inherit;
+  --ol-increment: none;
 
-@mixin remove-list-style($nested: false) {
-  @include padding-bottom(0);
-
-  & > li {
-    @include padding-bottom(0);
-    @include before(none, none) {
-      font-size: inherit;
-      font-weight: inherit;
-    }
-
-    @if $nested {
-      & > ol,
-      & > ul {
-        @include padding-top(0);
-        @include padding-left(0);
-
-        & > li {
-          @include text-style(md);
-          @include before {
-            @include padding-right(0);
-            font-size: inherit;
-          }
-        }
-      }
-    }
+  li {
+    --li-pt: 0;
+    --li-pl: 0;
   }
 }

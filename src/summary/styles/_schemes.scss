@@ -10,10 +10,8 @@
     @include scheme-element-text-color(g800, true);
   }
 
-  @include list {
-    > li > a { // TODO: BEM
-      @include scheme-element-text-color(g800, true);
-      @include scheme-element-bg-color(t-plain, true, after);
-    }
+  li > a {
+    @include scheme-element-text-color(g800, true);
+    @include scheme-element-bg-color(t-plain, true, after);
   }
 }

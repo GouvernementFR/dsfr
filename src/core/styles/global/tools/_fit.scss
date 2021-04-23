@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-%fit-cover-center {
+@mixin fit-cover-center {
   object-fit: cover;
   object-position: 50% 50%;
 }

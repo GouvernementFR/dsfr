@@ -15,85 +15,57 @@
   @return px-rem(map-get($icon-size-map, $size));
 }
 
-@mixin custom-icons($icon-size:md) {
+@mixin icon-size($size:md) {
+  font-size: #{icon-size($size)};
+}
+
+@mixin with-icon($size:md) {
   @include has-icon {
-    @include font-icon(null, $icon-size) {
+    @include before {
+      @if $size != md {
+        @include icon-size($size);
+      }
       @content;
     }
   }
 }
 
-$icons-placeholders-generated: false !global;
-
-@mixin generate-icons-placeholder($icons) {
-  @if $icons-placeholders-generated != true {
-    @at-root {
-      @each $icon, $settings in $icons {
-        %#{$icon} {
-          content: "#{unquote(map-get($settings, codepoint))}";
-        }
-
-        @if map-has-key($settings, ligature) {
-          %#{$icon}-ligature {
-            content: "#{unquote(map-get($settings, ligature))}";
-          }
-        }
-      }
-    }
-
-    $icons-placeholders-generated: true !global;
-  }
-}
-
-@mixin generate-icons-content($icons) {
-  @include generate-icons-placeholder($icons-settings);
-  @each $icon, $code in $icons {
-    #{ns('fi-' + $icon)} {
-      @include before {
-        @extend %#{$icon};
-      }
+@mixin generate-icons($base) {
+  @each $icon, $settings in $icons-settings {
+    #{ns($base + '-' + $icon)} {
+      @include before(icon-glyph($icon));
     }
   }
 }
 
-@mixin font-icon-content($icon, $prepend: '') {
-  @include generate-icons-placeholder($icons-settings);
-  @if $prepend {
-    content: #{$prepend} "#{map-get(map-get($icons-settings, $icon), codepoint)}";
+@function icon-glyph($icon, $is-ligature: false) {
+  $icon-settings: map-get($icons-settings, $icon);
+  @if $is-ligature {
+    @return "#{map-get($icon-settings, ligature)}";
   }
   @else {
-    @extend %#{$icon};
+    @return "#{map-get($icon-settings, codepoint)}";
   }
 }
 
-$has-font-icon: false !global;
-@mixin font-icon-placeholder() {
-  @if $has-font-icon != true {
-    @at-root {
-      %font-icon {
-        font-family: #{$namespace}-icons !important;
-        font-style: normal;
-        font-weight: normal !important;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-      }
-      $has-font-icon: true !global;
-    }
-  }
+@mixin icon-content($icon) {
+  content: icon-glyph($icon);
 }
 
-@mixin font-icon($icon:null, $icon-size:md, $pseudo:before, $prepend: '') {
-  @include font-icon-placeholder();
+@function font-icon($size: md) {
+  @return normal normal normal #{icon-size($size)}/1 #{$namespace}-icons;
+}
+
+@mixin font-icon($size: md) {
+  font: font-icon($size);
+}
+
+@mixin icon($icon:null, $size:md, $pseudo:before) {
   @include _pseudo($pseudo) {
-    @extend %font-icon;
-
-    @if $icon-size != null {
-      font-size: #{$prepend} icon-size($icon-size);
-    }
+    @include font-icon($size);
 
     @if $icon != null {
-      @include font-icon-content($icon, $prepend);
+      @include icon-content($icon);
     }
 
     @content;

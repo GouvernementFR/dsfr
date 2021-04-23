@@ -3,12 +3,6 @@
 /// @group buttons
 ////
 
-#{ns(btn)} {
-  @include build-btn();
-
-  &[type=submit] {
-    @extend %btn-reset;
-  }
-}
+@include build-btn();
 
 @import 'modules/buttons-group.scss';

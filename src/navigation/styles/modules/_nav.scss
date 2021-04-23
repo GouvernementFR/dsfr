@@ -84,7 +84,7 @@
 
     &[aria-current] {
       position: relative;
-      @include before(block, '') {
+      @include before('', block) {
         @include absolute(50%, null, null, -4v, 2px, 6v);
         @include margin-top(-3v);
       }
@@ -100,7 +100,7 @@
     flex-direction: row;
     @include padding(4v 3v 4v 4v, lg);
 
-    @include font-icon(arrow-down-s-line, sm, after) {
+    @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(2v);
       @include margin-right(0);
       transition: transform 0.3s;

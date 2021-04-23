@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-%btn-reset {
+@mixin btn-reset {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

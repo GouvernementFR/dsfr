@@ -22,7 +22,7 @@
       @include margin(0 4v 6v);
       @include margin(0 4v, md);
 
-      @include before(null, none);
+      @include before(none);
 
       @include nest-link(md, null, null, null, true);
     }
