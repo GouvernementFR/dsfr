@@ -47,7 +47,7 @@ const generateMarkdown = (id) => {
   const p = `public/src/${id}/README.md`;
   const filePath = root(p);
 
-  createFile(filePath, readme.publish());
+  createFile(filePath, readme.publish(), true);
   log(38, p);
 };
 
@@ -75,7 +75,7 @@ const completeGlobalMarkdown = () => {
   const p = 'public/README.md';
   const filePath = root(p);
 
-  createFile(filePath, fileContents);
+  createFile(filePath, fileContents, true);
   log(38, p);
 };
 

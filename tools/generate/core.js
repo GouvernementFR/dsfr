@@ -17,11 +17,9 @@ const generateCore = () => {
 
   const stylePath = dir + 'config.scss';
   createFile(stylePath, scss);
-  log(38, stylePath);
 
   const scriptPath = dir + 'config.js';
   createFile(scriptPath, js);
-  log(38, scriptPath);
 };
 
 module.exports = generateCore;

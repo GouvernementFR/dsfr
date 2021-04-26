@@ -28,3 +28,5 @@ api.core.DISCLOSURE_TYPES = DISCLOSURE_TYPES;
 api.KeyListener = KeyListener;
 api.Collapse = Collapse;
 api.Equisized = Equisized;
+
+export default api;

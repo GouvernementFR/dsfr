@@ -41,7 +41,7 @@ const buildExample = (id, dest) => {
   const html = ejs.render(page, options);
   const beautified = beautify(html, beautyOpts);
 
-  createFile(`${dest}/${id}/index.html`, beautified);
+  createFile(`${dest}/${id}/index.html`, beautified, true);
   log(38, `${id}/index.html`);
 };
 
@@ -65,7 +65,7 @@ const buildList = (dest) => {
   const html = ejs.render(index, options);
   const beautified = beautify(html, beautyOpts);
 
-  createFile(`${dest}/index.html`, beautified);
+  createFile(`${dest}/index.html`, beautified, true);
   log(38, 'index.html');
 };
 
@@ -91,7 +91,7 @@ const buildMain = (dest) => {
   const html = ejs.render(index, options);
   const beautified = beautify(html, beautyOpts);
 
-  createFile(`${dest}/${config.namespace}/index.html`, beautified);
+  createFile(`${dest}/${config.namespace}/index.html`, beautified, true);
   log(38, `${config.namespace}/index.html`);
 };
 

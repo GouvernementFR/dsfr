@@ -7,3 +7,5 @@ import { FocusTrap } from './scripts/modal/focus-trap';
 api.Modal = Modal;
 api.ModalsGroup = ModalsGroup;
 api.FocusTrap = FocusTrap;
+
+export default api;

@@ -75,10 +75,18 @@ const buildScripts = async (packages, src, dest, filename, minify, legacy, map) 
   let data = '';
   const noScripts = [];
 
-  for (const pck of packages) {
-    const file = `${srcDir}${pck}/main.js`;
-    if (fs.existsSync(file)) data += `import '${file}';`;
-    else noScripts.push(pck);
+  switch (true) {
+    case Array.isArray(packages):
+      for (const pck of packages) {
+        const file = `${srcDir}${pck}/main.js`;
+        if (fs.existsSync(file)) data += `import '${file}';`;
+        else noScripts.push(pck);
+      }
+      break;
+
+    case packages === 'main':
+      data = `import '${srcDir}main.js'\n`;
+      break;
   }
 
   if (noScripts.length > 0) log.info(`no scripts in ${noScripts.join(', ')}`);

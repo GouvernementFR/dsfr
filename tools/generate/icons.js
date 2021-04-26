@@ -124,7 +124,6 @@ const generateIcons = async (dest) => {
 
   const iconPath = root('public/src/core/icons.scss');
   createFile(iconPath, sass);
-  log(38, iconPath);
 
   builder.pathsReset();
 };

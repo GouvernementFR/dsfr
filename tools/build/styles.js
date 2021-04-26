@@ -15,11 +15,11 @@ const process = async (css, plugins, options) => {
   const result = await postcss(plugins)
     .process(css, options);
 
-  const size = createFile(result.opts.to, result.css);
+  const size = createFile(result.opts.to, result.css, true);
   const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
 
   log.file(filename, `${size} bytes`);
-  if (result.map) createFile(result.opts.to + '.map', result.map.toString());
+  if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
 };
 
 const buildStyles = async (packages, src, dest, filename, minify, map) => {
@@ -27,7 +27,18 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
   const destDir = root(dest + '/');
 
   let data = '';
-  for (const pck of packages) data += `@import "${srcDir}${pck}/main";\r\n`;
+
+  switch (true) {
+    case Array.isArray(packages):
+      for (const pck of packages) {
+        data += `@import "${srcDir}${pck}/main";\r\n`;
+      }
+      break;
+
+    case packages === 'main':
+      data = `@import "${srcDir}main";\r\n`;
+      break;
+  }
 
   let options = {
     data: data,

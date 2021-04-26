@@ -17,9 +17,12 @@ const createFileParent = (filePath) => {
 };
 
 // Create Files
-const createFile = (filePath, fileContent) => {
+const createFile = (filePath, fileContent, muted) => {
   createFileParent(filePath);
   fs.writeFileSync(filePath, fileContent);
+  if (!muted) {
+    log(38, `create ${filePath}`);
+  }
   return fs.statSync(filePath).size;
 };
 
