@@ -19,5 +19,3 @@ $pagination-build-settings:(
 );
 
 $pagination-nest-settings: map-merge($pagination-build-settings, (places: only left right));
-
-

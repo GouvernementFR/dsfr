@@ -54,10 +54,6 @@
       letter-spacing: var(--li-letter-spacing);
     }
     @include padding-bottom(var(--li-pb));
-
-    ul {
-
-    }
   }
 
   #{ns(raw-list)} {
