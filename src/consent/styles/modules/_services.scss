@@ -53,16 +53,18 @@
 
   &__collapse {
     @include margin-top(2v);
-    @include _nest-link(consent-service__collapse-btn, sm, right, arrow-down-s-line, null, false, $collapse-btn-settings, false, true, true) {
+    @include _nest-link($collapse-btn-settings, sm, right, arrow-down-s-line) {
       background: transparent;
       @include padding(0);
       color: inherit;
 
       &[aria-expanded="true" i] {
-        @include before {
-          @include font-icon-content(arrow-up-s-line);
-        }
+        @include icon(arrow-up-s-line, sm);
       }
+    }
+
+    &-btn {
+      @include _build-link-base;
     }
   }
 
@@ -105,7 +107,8 @@
   @include margin-bottom(-5v, md);
 
   #{ns(consent-service)} {
-    &, &:last-child {
+    &,
+    &:last-child {
       box-shadow: none;
       padding: 0;
     }
