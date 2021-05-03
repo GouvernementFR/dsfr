@@ -3,7 +3,8 @@
 /// @group accordions
 ////
 
-$ac-btn-settings:(
+$accordions-settings:(
+  selector: accordion__btn,
   sizes: (
     md: (
       font-size: 16,

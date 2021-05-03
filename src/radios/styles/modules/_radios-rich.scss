@@ -16,7 +16,7 @@
     /**
       * On applique la taille sm pour le bouton radio riche
       */
-    @include before() {
+    @include before {
       @include size(4v, 4v);
       @include absolute(null, null, null, 7v);
     }
@@ -24,7 +24,7 @@
     /**
       * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
       */
-    @include after(null, '') {
+    @include after('') {
       @include absolute(0, 0);
       @include margin(1v);
       @include padding-left(1v);
@@ -46,8 +46,8 @@
 /**
  * Style spécifique des radios intégrés dans un fiedset
  */
-.#{$prefix}-fieldset {
-  .#{$prefix}-radio-rich {
+#{ns(fieldset)} {
+  #{ns(radio-rich)} {
     &:first-child {
       input[type="radio"] + label {
         @include margin-top(3v);
@@ -70,7 +70,7 @@
    * Modificateur pour afficher les radios en ligne
    */
   &--inline {
-    .#{$prefix}-radio-rich {
+    #{ns(radio-rich)} {
       &:not(:last-child) {
         input[type="radio"] + label {
           @include margin-right(3v);
@@ -90,8 +90,8 @@
     /**
      * Écart entre le text d'aide et les radios riches dans le cas des radios inline
      */
-    #{ns(hint-text)} + .#{$prefix}-fieldset__content {
-      .#{$prefix}-radio-rich {
+    #{ns(hint-text)} + #{ns(fieldset__content)} {
+      #{ns(radio-rich)} {
         &:first-child {
           input[type="radio"] + label {
             @include margin-top(6v);

@@ -30,7 +30,7 @@
 
 @include list-item {
   @include relative;
-  @include before(null, none);
+  @include before(none);
 
   &:last-child {
     border: 0;
@@ -40,7 +40,7 @@
 
     & > #{ns(sidemenu__link)},
     & > #{ns(sidemenu__btn)} {
-      @include after(null, '') {
+      @include after('') {
         @include absolute(3v, null, 3v, 0, 2px);
       }
     }

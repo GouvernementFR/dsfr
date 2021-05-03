@@ -14,7 +14,7 @@
     @include margin-top(-1v);
     @include padding-top(1v);
 
-    @include after(block, '') {
+    @include after('', block) {
       @include absolute(0,0,0,0);
       @include margin(1v 4v 8v);
       @include z-index(under);

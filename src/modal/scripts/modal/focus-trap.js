@@ -72,7 +72,7 @@ class FocusTrap {
     const focusables = this.focusables;
     if (focusables.length) focusables[0].focus();
     this.element.setAttribute('aria-modal', true);
-    this.element.addEventListener('keydown', this.handling);
+    window.addEventListener('keydown', this.handling);
 
     this.stunneds = [];
     // this.stun(document.body);
@@ -157,7 +157,7 @@ class FocusTrap {
     this.isTrapping = false;
 
     this.element.removeAttribute('aria-modal');
-    this.element.removeEventListener('keydown', this.handling);
+    window.removeEventListener('keydown', this.handling);
     this.element = null;
 
     // for (const stunned of this.stunneds) stunned.unstun();

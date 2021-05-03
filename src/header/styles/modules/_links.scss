@@ -20,7 +20,7 @@
 
     & > *:not(:last-child) > #{ns(link)},
     & > #{ns(link)}:not(last-child) {
-      @include after(block, '') {
+      @include after('', block) {
         @include relative(null, -4v, null, null, 1px, 4v);
       }
     }

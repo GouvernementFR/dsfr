@@ -61,7 +61,7 @@
     @include margin-top(2v);
     @include margin-bottom(2v);
 
-    @include before(null, none);
+    @include before(none);
 
     &:last-child {
       @include margin-right(0);

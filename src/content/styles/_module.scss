@@ -16,7 +16,7 @@
     @include aspect-ratio();
 
     img {
-      @extend %media-overlay-cover;
+      @include media-overlay-cover;
     }
   }
 

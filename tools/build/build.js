@@ -4,24 +4,27 @@ const buildStyles = require('./styles');
 const buildScripts = require('./scripts');
 const { buildExample, buildList, buildMain } = require('./example');
 const generatePackage = require('../generate/package');
+const { generateMainScript, generateMainStyle } = require('../generate/main');
 const { copyImages, copyAssets, copyPackages } = require('./copy');
 const { getPublicPackage } = require('../utilities/config');
 const { deleteDir } = require('../utilities/file');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
+const { generateIcons } = require('../generate/icons');
 const { generateMarkdown, completeGlobalMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
 
-  if (settings.clean) deleteDir('public');
-
-  if (settings.core) generateCore();
-
   if (settings.clean) {
+    deleteDir(root('public'));
+    generateCore();
+    await generateIcons();
     generatePackage();
+    generateMainStyle();
+    generateMainScript();
     copyImages();
     copyAssets();
   }
@@ -70,7 +73,7 @@ const build = async (settings) => {
       log.info(config.namespace.toLowerCase());
 
       try {
-        await buildStyles(config.styles, 'public/src', 'public/dist/css/', config.namespace, settings.minify, settings.sourcemap);
+        await buildStyles('main', 'public/src', 'public/dist/css/', config.namespace, settings.minify, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }
@@ -93,7 +96,7 @@ const build = async (settings) => {
     if (settings.main) {
       log.info(config.namespace.toLowerCase());
       try {
-        await buildScripts(config.scripts, 'public/src', 'public/dist/js/', config.namespace, settings.minify, settings.legacy, settings.sourcemap);
+        await buildScripts('main', 'public/src', 'public/dist/js/', config.namespace, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }

@@ -56,7 +56,7 @@ class DisclosuresGroup {
 
     switch (true) {
       case this.current !== null:
-      case !member.disclosed && !member.primal:
+      case !member.disclosed && !(member.primary && member.primary.disclosed):
         member.disclosed = false;
         break;
 

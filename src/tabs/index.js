@@ -6,3 +6,5 @@ import { TabsGroup } from './scripts/tabs/tabs-group';
 api.Tab = Tab;
 api.TabButton = TabButton;
 api.TabsGroup = TabsGroup;
+
+export default api;

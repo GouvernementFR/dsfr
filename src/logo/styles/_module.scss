@@ -17,7 +17,7 @@
   @include logo-size(md);
   @include margin-bottom(0);
 
-  @include before(block, '') {
+  @include before('', block) {
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-image: url(svg-encode($svg-marianne)), linear-gradient(90deg, $blue-france-500 0%, $blue-france-500 50%, $red-marianne-500 50%, $red-marianne-500 100%), linear-gradient(90deg, black 0%, black 100%);
     @at-root :root#{ns-attr(mourning)} #{&} {
@@ -25,7 +25,7 @@
     }
   }
 
-  @include after(block, '') {
+  @include after('', block) {
     background-repeat: no-repeat;
     background-image: url(svg-encode($svg-motto));
   }

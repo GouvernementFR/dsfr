@@ -18,7 +18,7 @@ $shadow-wrapper: #{ns(table__wrapper)};
     @include relative;
 
     table {
-      @include before(block, '') {
+      @include before('', block) {
         @include absolute(0, 0, 0, 0);
         @include z-index(over);
         opacity: 1;

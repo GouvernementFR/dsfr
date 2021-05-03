@@ -21,11 +21,11 @@
     white-space: nowrap;
 
     &--menu {
-      @include font-icon(menu-fill, null);
+      @include icon(menu-fill);
     }
 
     &--search {
-      @include font-icon(search-line, null);
+      @include icon(search-line);
     }
   }
 }

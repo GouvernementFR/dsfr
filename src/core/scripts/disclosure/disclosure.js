@@ -20,7 +20,7 @@ class Disclosure extends Instance {
 
     if (buttons.length > 0) for (let i = 0; i < buttons.length; i++) this.addButton(buttons[i]);
 
-    this.disclosed = this.primal === true;
+    this.disclosed = this.primary && this.primary.disclosed;
 
     this.gather();
   }
@@ -47,9 +47,9 @@ class Disclosure extends Instance {
   addButton (element) {
     const button = this.buttonFactory(element);
     if (button.hasAttribute) {
-      if (this.primal === undefined) {
-        this.primal = button.disclosed;
-      } else button.apply(this.primal);
+      if (this.primary === undefined) {
+        this.primary = button;
+      } else button.apply(this.primary.disclosed);
     }
     this.buttons.push(button);
   }

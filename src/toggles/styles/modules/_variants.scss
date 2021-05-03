@@ -7,17 +7,17 @@
  * Passage du label ferré à gauche, le toggle ferré à droite
  */
 &--label-left {
-  .#{$prefix}-toggle__input {
+  #{ns(toggle__input)} {
     order: 1;
     @include margin(0 0 0 auto);
+
+    &#{ns-attr(checked-label)} ~ #{ns(toggle__label)} {
+      @include padding-left(0);
+      @include padding-right(4v);
+    }
   }
 
-  .#{$prefix}-toggle__input[data-#{$prefix}-checked-label] ~ .#{$prefix}-toggle__label {
-    @include padding-left(0);
-    @include padding-right(4v);
-  }
-
-  .#{$prefix}-toggle__label {
+  #{ns(toggle__label)} {
     justify-content: space-between;
     @include padding-left(0);
     width: calc(100% - #{space(10v)});
@@ -29,14 +29,14 @@
       @include margin-left(4v);
       text-align: right;
     }
+
+    @include after {
+      left: auto;
+      right: space(4v);
+    }
   }
 
-  .#{$prefix}-toggle__label::after {
-    left: auto;
-    right: space(4v);
-  }
-
-  .#{$prefix}-hint-text {
+  #{ns(hint-text)} {
     order: 2;
   }
 }

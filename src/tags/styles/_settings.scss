@@ -4,6 +4,7 @@
 ////
 
 $tags-settings:(
+  selector: tag,
   sizes: (
     sm: (
       font-size: 12,
@@ -20,5 +21,6 @@ $tags-settings:(
       icon-margin-x: 1v
     )
   ),
-  places: left right
+  places: left right,
+  border-radius: true
 );

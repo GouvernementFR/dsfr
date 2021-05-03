@@ -1,4 +1,4 @@
-import { prefix, namespace } from '../../generated/scripts/config.js';
+import { prefix, namespace } from '../../config.js';
 
 export const ns = (name) => `${prefix}-${name}`;
 

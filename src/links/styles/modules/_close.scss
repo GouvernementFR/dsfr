@@ -1,5 +1,5 @@
 #{ns(link--close)} {
-  @include icon-link(sm, right, close-line, link, true);
+  @include nest-link(sm, right, close-line, null, false, true);
   display: flex;
   @include margin-left(auto);
 }

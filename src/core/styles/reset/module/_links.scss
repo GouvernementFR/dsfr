@@ -9,20 +9,15 @@
   }
 
   a {
-    @extend %a-reset;
+    @include a-reset;
+  }
 
-    box-shadow: var(--is-link) 0 1px 0 0 currentColor;
+  [href] {
+    @include link-underline;
+  }
 
-    &[target="_blank" i] {
-      @include font-icon(external-link-line, sm, after, var(--is-link)) {
-        @include margin-left(var(--is-link) 1v);
-        vertical-align: var(--is-link) baseline;
-      }
-    }
-
-    &:not([href]) {
-      box-shadow: var(--is-link) none;
-    }
+  [target="_blank" i] {
+    @include link-blank;
   }
 
   #{ns(enlarge-link)} {

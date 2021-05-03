@@ -21,7 +21,7 @@ class Header {
     if (!element) return;
     const modals = api.core.Instance.getInstances(element, api.Modal);
     if (!modals || !modals.length) return;
-    this.modals.push(modals[0]);
+    this.modals.push(new HeaderModal(modals[0]));
   }
 
   init () {
@@ -42,21 +42,30 @@ class Header {
   change () {
     this.isLarge = window.matchMedia('(min-width: 62em)').matches;
 
-    if (this.isLarge) {
-      for (let i = 0; i < this.modals.length; i++) {
-        this.modals[i].conceal();
-        this.modals[i].element.removeAttribute('role');
-      }
-    } else {
-      for (let i = 0; i < this.modals.length; i++) {
-        this.modals[i].element.setAttribute('role', 'dialog');
-      }
-    }
+    if (this.isLarge) this.modals.forEach((modal) => modal.disable());
+    else this.modals.forEach((modal) => modal.enable());
 
     if (this.linksGroup !== null) {
       if (this.isLarge) this.toolsLinks.appendChild(this.linksGroup);
       else this.menuLinks.appendChild(this.linksGroup);
     }
+  }
+}
+
+class HeaderModal {
+  constructor (modal) {
+    this.modal = modal;
+  }
+
+  enable () {
+    this.modal.element.setAttribute('role', 'dialog');
+    this.modal.element.setAttribute('aria-labelledby', this.modal.primary.element.id);
+  }
+
+  disable () {
+    this.modal.conceal();
+    this.modal.element.removeAttribute('role');
+    this.modal.element.removeAttribute('aria-labelledby');
   }
 }
 

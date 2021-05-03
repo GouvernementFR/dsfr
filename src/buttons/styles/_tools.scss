@@ -3,14 +3,12 @@
 /// @group buttons
 ////
 
-@include _build-link-placeholders($btns-settings, btn);
-
 @mixin build-btn() {
-  @include _build-link($btns-settings, btn);
+  @include _build-link($btns-settings);
 }
 
-@mixin nest-btn($size:md, $place: null, $icon:null, $from: null, $align-on-content: false) {
-  @include _nest-link(btn, $size, $place, $icon, $from, $align-on-content, $btns-settings, false) {
+@mixin nest-btn($size: md, $place: null, $icon:null, $from: null, $insert: true) {
+  @include _nest-link($btns-settings, $size, $place, $icon, $from, $insert) {
     @content;
   }
 }

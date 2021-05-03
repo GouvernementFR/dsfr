@@ -3,4 +3,8 @@
 /// @group accordions
 ////
 
-@include _build-link-placeholders($ac-btn-settings, accordion__btn, false);
+@mixin nest-accordion-button($icon:null) {
+  @include _nest-link($accordions-settings, md, right, $icon, null, false) {
+    @content;
+  }
+}

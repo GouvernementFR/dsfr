@@ -7,7 +7,7 @@
 /// @param {String} $ratio - key du ratio attendu selon la map $ratio-scale
 /// @param {Size | Bool} $block - détermine si le block est créé et sa taille correspondante
 @mixin aspect-ratio($ratio: 16x9, $block: 100%) {
-  @include before(block, '') {
+  @include before('', block) {
     @if $block != false {
       @if $block == true {
         $block: 100%;
@@ -18,7 +18,7 @@
   }
 }
 
-%media-overlay-cover {
-  @extend %fit-cover-center;
+@mixin media-overlay-cover {
+  @include fit-cover-center;
   @include absolute(0, 0, 0, 0, 100%, 100%);
 }

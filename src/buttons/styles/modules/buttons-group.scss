@@ -6,7 +6,7 @@
 @mixin _make-horizontal() {
   width: calc(100% + #{space(4v)});
 
-  .#{$prefix}-btn {
+  #{ns(btn)} {
     width: auto;
     @include margin-right(4v);
     max-width: 100%;
@@ -17,7 +17,7 @@
     max-width: 100%;
     width: auto;
 
-    @include before(null, none);
+    @include before(none);
   }
 }
 
@@ -30,7 +30,7 @@
     max-width: 100%;
   }
 
-  .#{$prefix}-btn {
+  #{ns(btn)} {
     width: 100%;
     @include margin-right(0);
     @include margin-left(0);
@@ -56,7 +56,7 @@
 
     &#{ns-group(btns)}--right {
       @include margin-left(-4v);
-      .#{$prefix}-btn {
+      #{ns(btn)} {
         @include margin-right(0);
         @include margin-left(4v);
       }
@@ -70,7 +70,7 @@
     &#{ns-group(btns)}--center,
     &#{ns-group(btns)}--left {
       @include margin-right(-4v);
-      .#{$prefix}-btn {
+      #{ns(btn)} {
         @include margin-right(4v);
         @include margin-left(0);
       }
@@ -82,7 +82,7 @@
 
         &#{ns-group(btns)}--right {
           @include margin-left(-4v);
-          .#{$prefix}-btn {
+          #{ns(btn)} {
             @include margin-right(0);
             @include margin-left(4v);
           }
@@ -96,7 +96,7 @@
         &#{ns-group(btns)}--center,
         &#{ns-group(btns)}--left {
           @include margin-right(-4v);
-          .#{$prefix}-btn {
+          #{ns(btn)} {
             @include margin-right(4v);
             @include margin-left(0);
           }
@@ -110,7 +110,7 @@
 
         &#{ns-group(btns)}--right {
           @include margin-left(-4v);
-          .#{$prefix}-btn {
+          #{ns(btn)} {
             @include margin-right(0);
             @include margin-left(4v);
           }
@@ -124,7 +124,7 @@
         &#{ns-group(btns)}--center,
         &#{ns-group(btns)}--left {
           @include margin-right(-4v);
-          .#{$prefix}-btn {
+          #{ns(btn)} {
             @include margin-right(4v);
             @include margin-left(0);
           }
@@ -138,7 +138,7 @@
 
         &#{ns-group(btns)}--right {
           @include margin-left(-4v);
-          .#{$prefix}-btn {
+          #{ns(btn)} {
             @include margin-right(0);
             @include margin-left(4v);
           }
@@ -152,7 +152,7 @@
         &#{ns-group(btns)}--center,
         &#{ns-group(btns)}--left {
           @include margin-right(-4v);
-          .#{$prefix}-btn {
+          #{ns(btn)} {
             @include margin-right(4v);
             @include margin-left(0);
           }
@@ -198,7 +198,7 @@
   * fr-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
   */
   &--equisized {
-    .#{$prefix}-btn {
+    #{ns(btn)} {
       justify-content: center;
     }
   }
@@ -208,29 +208,33 @@
   */
   &--sm {
     #{ns(btn)} {
-      &:not([class*="#{$prefix}-fi-"]) {
-        @include _extend-link(sm, null, btn, false, false);
+      @include has-not-icon {
+        @include nest-btn(sm, null, null, null, false);
       }
     }
 
-    &:not([class*="#{$prefix}-btns-group--icon-"]) {
+    @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
       #{ns(btn)} {
-        &[class*="#{$prefix}-fi-"] {
-          @include _extend-link(sm, only, btn, false, false);
+        @include has-icon {
+          @include nest-btn(sm, only, null, null, false);
           justify-content: flex-start;
         }
       }
     }
 
     &#{ns-group(btns)}--icon-left {
-      #{ns(btn)}[class*="#{$prefix}-fi-"] {
-        @include _extend-link(sm, left, btn, false, false);
+      #{ns(btn)} {
+        @include has-icon {
+          @include nest-btn(sm, left, null, null, false);
+        }
       }
     }
 
     &#{ns-group(btns)}--icon-right {
-      #{ns(btn)}[class*="#{$prefix}-fi-"] {
-        @include _extend-link(sm, right, btn, false, false);
+      #{ns(btn)} {
+        @include has-icon {
+          @include nest-btn(sm, right, null, null, false);
+        }
       }
     }
   }
@@ -238,31 +242,35 @@
   /**
   * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
   */
-  &:not(#{ns-group(btns) + '--sm'}):not(#{ns-group(btns) + '--lg'}) {
+  &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
     #{ns(btn)} {
-      &:not([class*="#{$prefix}-fi-"]) {
-        @include _extend-link(md, null, btn, false, true);
+      @include has-not-icon {
+        @include nest-btn(md, null, null, null, false);
       }
     }
 
-    &:not([class*="#{$prefix}-btns-group--icon-"]) {
+    @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
       #{ns(btn)} {
-        &[class*="#{$prefix}-fi-"] {
-          @include _extend-link(md, only, btn, false, true);
+        @include has-icon {
+          @include nest-btn(md, only, null, null, false);
           justify-content: flex-start;
         }
       }
     }
 
     &#{ns-group(btns)}--icon-left {
-      #{ns(btn)}[class*="#{$prefix}-fi-"] {
-        @include _extend-link(md, left, btn, false, true);
+      #{ns(btn)} {
+        @include has-icon {
+          @include nest-btn(md, left, null, null, false);
+        }
       }
     }
 
     &#{ns-group(btns)}--icon-right {
-      #{ns(btn)}[class*="#{$prefix}-fi-"] {
-        @include _extend-link(md, right, btn, false, true);
+      #{ns(btn)} {
+        @include has-icon {
+          @include nest-btn(md, right, null, null, false);
+        }
       }
     }
   }
@@ -272,29 +280,33 @@
   */
   &--lg {
     #{ns(btn)} {
-      &:not([class*="#{$prefix}-fi-"]) {
-        @include _extend-link(lg, null, btn, false, false);
+      @include has-not-icon {
+        @include nest-btn(lg, null, null, null, false);
       }
     }
 
-    &:not([class*="#{$prefix}-btns-group--icon-"]) {
+    @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
       #{ns(btn)} {
-        &[class*="#{$prefix}-fi-"] {
-          @include _extend-link(lg, only, btn, false, false);
+        @include has-icon {
+          @include nest-btn(lg, only, null, null, false);
           justify-content: flex-start;
         }
       }
     }
 
     &#{ns-group(btns)}--icon-left {
-      #{ns(btn)}[class*="#{$prefix}-fi-"] {
-        @include _extend-link(lg, left, btn, false, false);
+      #{ns(btn)} {
+        @include has-icon {
+          @include nest-btn(lg, left, null, null, false);
+        }
       }
     }
 
     &#{ns-group(btns)}--icon-right {
-      #{ns(btn)}[class*="#{$prefix}-fi-"] {
-        @include _extend-link(lg, right, btn, false, false);
+      #{ns(btn)} {
+        @include has-icon {
+          @include nest-btn(lg, right, null, null, false);
+        }
       }
     }
   }

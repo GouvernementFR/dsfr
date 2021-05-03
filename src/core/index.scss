@@ -3,11 +3,12 @@
 /// @group core
 ////
 
-@import 'generated/styles/config';
-@import 'generated/styles/icons';
+@import 'config';
+@import 'icons';
 
 @import 'styles/settings';
 @import 'styles/tools';
 
 // TODO: à enlever quand la base de schemes sera dans le core
-@import '../schemes/index';
+@import '../schemes/styles/settings';
+@import '../schemes/styles/tools';

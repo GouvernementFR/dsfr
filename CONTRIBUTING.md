@@ -1,7 +1,7 @@
 # Contributing
 ## Installation
 ### Installation locale
-Le Design System de l'Etat est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
+Le Système de Design de l’État (ci-après, le **DSFR**) est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
 
 Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il peut être nécessaire de lier son compte Github à son numéro de téléphone.
 
@@ -19,7 +19,7 @@ Afin de télécharger les dépendances, compiler les css/js et générer le doss
 
 ### Packages
 
-Le Design System est un monorepo proposant différents composants, listés dans le dossier `src`.
+Le DSFR est un monorepo proposant différents composants, listés dans le dossier `src`.
 
 Un composant doit avoir une arborescence de type :
 ```
@@ -39,7 +39,7 @@ Le dossier **styles** contient les fichiers .scss permettant la génération du 
 Le dossier **templates** contient les templates des composants
 
 
-Certains de ces packages sont dépendants les uns des autres. Chacun de ces packages possède donc son propre fichier `package.json`, listant l'ensemble de ses dépendances à d'autres composants du Design System.
+Certains de ces packages sont dépendants les uns des autres. Chacun de ces packages possède donc son propre fichier `package.json`, listant l'ensemble de ses dépendances à d'autres composants du DSFR.
 
 Afin d'ajouter une dépendance à un package, il est nécessaire de l'insérer aussi dans le fichier `.package.yml`.Celui-ci gère les imports et le wrapper des examples html générés ainsi que l'implémentation des readme.md. Il est stucturé de cette façon :
 ```
@@ -80,7 +80,7 @@ php -S localhost:8080/example
 Un serveur local sera alors lancé sur l'adresse `localhost:8080`, accèder à `http://localhost:8080/example/` pour voir la liste des exemples.
 
 ### Sass
-Le Design System utilise Sass pour la génération automatique des styles liés à chaque composant. Chacun d'entre eux possède une structure identique à ce niveau, par exemple le composant `buttons` :
+Le DSFR utilise Sass pour la génération automatique des styles liés à chaque composant. Chacun d'entre eux possède une structure identique à ce niveau, par exemple le composant `buttons` :
 
 ```
 /src/buttons
@@ -124,7 +124,7 @@ La couche javascript est structurée comme ceci, par exemple pour le composant `
 
 `api.js` : importe depuis core l'objet global qui contient les classes, variables et instances du DSFR (Fichier identique dans chaque package avec du js)
 `index.js` : Ajoute à l'objet global `api` des définitions de classes et variables spécifiques au composant
-`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js). Permet l'initialisation du composant. 
+`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js). Permet l'initialisation du composant.
 Un Dossier `scripts` qui contient :
 - `module.js` : initialise les classes js (ici navigation)
 - Un dossier par fonctionalité js, ici `navigation` contient :
@@ -135,7 +135,7 @@ Lors du `yarn release`, le javascript est compilé en version "module" (es6) et 
 En mode développement, `yarn build` permet de regénérer uniquement la version .module.js (es6 non minifié)
 
 ### EJS
-Nous utilisons au sein du Design System, le langage de template EJS, permettant la génération des pages d'exemples au format HTML, ainsi que les snippets de code de manière automatisée.
+Nous utilisons au sein du DSFR, le langage de template EJS, permettant la génération des pages d'exemples au format HTML, ainsi que les snippets de code de manière automatisée.
 
 Les fichiers ejs sont séparés dans 2 dossiers, par exemple pour le package `callouts` :
 ```
@@ -219,7 +219,7 @@ git commit -m "build: add webpack" --no-verify
 
 ## Compilation
 La compilation des sources permet de créer un dossier `public` à la racine du projet, contenant les dossiers `dist`, `src`, et `example`.
-Le dossier `dist` contient les fichiers CSS et JS compilés, ainsi que les favicons et l'ensemble des fonts utilisées au sein du Design System.
+Le dossier `dist` contient les fichiers CSS et JS compilés, ainsi que les favicons et l'ensemble des fonts utilisées au sein du DSFR.
 Le dossier `src` est une quasi copie du src à la racine, si ce n'est qu'il contient les fichiers readme généré à la place du package.json et .package.yml
 Le dossier `example` contient les examples html gérénéré depuis les samples ejs. L'ordre des imports css et js est défini par l'ordre des dépendances dans le `package.yml`
 
@@ -241,14 +241,14 @@ Pour voir les différents paramètres disponibles : `yarn build --help`
 ## Autres commandes
 
 ### Icônes
-La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS. Celle-ci est générée automatiquement à partir de fichiers `.svg` se trouvant dans le dossier `/icons/svg/` à la racine du Design System. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en lançant la commande suivante :
+La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS. Celle-ci est générée automatiquement à partir de fichiers `.svg` se trouvant dans le dossier `/icons/svg/` à la racine du DSFR. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en lançant la commande suivante :
 
 ```
 yarn run icon-font
 ```
 
 ### Sassdoc
-Des commentaires spéciaux sont utilisés sur l'ensemble des fichier `scss`, afin de permettre la génération d'une [Sassdoc](http://sassdoc.com/) automatiquement, documentant l'ensemble des `mixins` et `functions` utilisés sur le Design System :
+Des commentaires spéciaux sont utilisés sur l'ensemble des fichier `scss`, afin de permettre la génération d'une [Sassdoc](http://sassdoc.com/) automatiquement, documentant l'ensemble des `mixins` et `functions` utilisés sur le DSFR :
 
 ```
 yarn run styleguide
@@ -256,7 +256,7 @@ yarn run styleguide
 Cette commande permet la génération de la doc dans le dossier `sassdoc`, à la racine du projet.
 
 ### Tests
-Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du Design System reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM.
+Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du DSFR reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM.
 
 Ces tests sont éxecutés lors de la commande : `yarn release`
 Ou plus spécifiquement avec :
@@ -279,7 +279,7 @@ yarn build --test
 ```
 
 #### tests Accessibilité
-Pour tester de manière automatisée l'accessibilité des composants du Design System, nous utilisons [Pa11y](https://pa11y.org/) sur les pages de tests des différents packages.
+Pour tester de manière automatisée l'accessibilité des composants du DSFR, nous utilisons [Pa11y](https://pa11y.org/) sur les pages de tests des différents packages.
 Ces tests sont effectués lors du yarn release, ou plus spécifiquement avec :
 
 ```

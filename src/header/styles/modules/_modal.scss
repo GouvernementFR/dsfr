@@ -14,8 +14,8 @@
   @include padding-top(4v);
   @include padding-bottom(18v);
 
-  @include before(none, none);
-  @include after(none, none);
+  @include before(none);
+  @include after(none);
 
   @include respond-from(lg) {
     @include padding(0);

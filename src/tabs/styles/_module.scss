@@ -3,6 +3,8 @@
 /// @group tabs
 ////
 
+@include build-tab();
+
 #{ns(tabs)} {
   @include disable-list-style;
   @include disable-link-style;
@@ -25,7 +27,7 @@
     @include margin-x(0);
   }
 
-  @include after(block, '') {
+  @include after('', block) {
     @include absolute(11v, 0, 0, 0);
     pointer-events: none;
   }
@@ -45,7 +47,7 @@
     @include margin(-4px 0);
     @include padding(4px 2v);
 
-    @include after(block, '') {
+    @include after('', block) {
       flex: 1 1 auto;
       height: 1px;
       @include margin-x(-2v);
@@ -62,7 +64,7 @@
 
       &:not(:first-child) {
         @include margin-left(0);
-        @include before(block, '') {
+        @include before('', block) {
           @include sticky(100%, null, null, null, 2v, 1px);
           @include margin-left(-2v);
         }
@@ -71,7 +73,7 @@
       &:last-child {
         @include padding-right(4v);
 
-        @include after(block, '') {
+        @include after('', block) {
           min-width: 1rem;
           @include margin-left(100%);
           flex: 1 1 auto;
@@ -81,7 +83,7 @@
       }
 
       &:first-child {
-        @include before(block, '') {
+        @include before('', block) {
           @include sticky(100%, null, null, null, 100%, 1px);
           position: sticky;
           @include margin-left(-100%);
@@ -94,7 +96,6 @@
   * Tab button
   */
   &__tab {
-    @include build-tab();
     @include relative;
     overflow: visible;
     font-weight: bold;
@@ -104,7 +105,7 @@
       cursor: default;
       background: transparent;
 
-      @include after(block, '') {
+      @include after('', block) {
         @include absolute(2px, 1px, 0, 1px, auto, calc(100% - 1px));
         @include z-index(over);
       }

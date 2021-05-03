@@ -12,7 +12,7 @@
   }
 
   &:not(&--no-arrow) &__body {
-    @include font-icon(arrow-right-line, md, after) {
+    @include icon(arrow-right-line, md, after) {
       @include size(6v, 6v);
       @include margin-top(auto);
       @include margin-left(auto);
@@ -25,7 +25,7 @@
 
     img {
       @include absolute(0, 0, 0, 0, 100%, 100%);
-      @extend %fit-cover-center;
+      @include fit-cover-center;
     }
   }
 

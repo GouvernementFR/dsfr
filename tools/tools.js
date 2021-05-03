@@ -59,10 +59,6 @@ const buildBuilder = (yargs) => {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
     })
-    .option('core', {
-      describe: 'Génère les fichiers avec les variables de base dans core',
-      type: 'boolean'
-    })
     .option('main', {
       describe: 'Compilation consolidée de tous les packages en un seul fichiers',
       type: 'boolean'
@@ -89,7 +85,6 @@ const buildHandler = async (argv) => {
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
     clean: argv.clean,
-    core: argv.core,
     test: argv.test,
     markdowns: argv.markdowns,
     main: argv.main,
@@ -118,7 +113,6 @@ const releaseHandler = async (argv) => {
     scripts: true,
     examples: true,
     clean: true,
-    core: true,
     test: true,
     minify: true,
     legacy: true,
@@ -147,7 +141,6 @@ const deployHandler = async (argv) => {
     scripts: true,
     examples: true,
     clean: true,
-    core: true,
     legacy: true,
     main: true,
     list: true

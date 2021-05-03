@@ -3,13 +3,6 @@
 /// @group links
 ////
 
-%base-link {
-  @extend %inline-flex-center;
-
-  overflow: hidden;
-  @include z-index(over);
-}
-
 @function _sort-sizes($sizes) {
   $sorted-map: (
     md: map_get($sizes, md)
@@ -24,103 +17,81 @@
   @return $sorted-map;
 }
 
-@mixin _build-link-placeholders($settings, $module, $border-radius:false) {
-  $align: #{$module}-align-on-content;
-  $sizes: _sort-sizes(map_get($settings, sizes));
-  $places: map_get($settings, places);
+@mixin _link-class($base, $size: md, $place: null, $align-on-content: false) {
+  $selector: '';
 
-  %#{$module}--md {
-    @extend %base-link;
-  }
-
-  @each $size, $size-settings in $sizes {
-    @at-root {
-      %#{$module}--#{$size} {
-        @include _build-link-size($size-settings, $border-radius);
-      }
-
-      %#{$align}--#{$size} {
-        @include _link-align-on-content($size, null, $size-settings);
-      }
-    }
-  }
-
-  @each $place in $places {
-    @each $size, $size-settings in $sizes {
-      @at-root {
-        %#{$module}--icon-#{$place}--#{$size} {
-          @include _build-link-icon($size-settings, $place, $size, $size == md, $place == right);
-        }
-
-        %#{$align}--#{$place}--#{$size} {
-          @include _link-align-on-content($size, $place, $size-settings);
-        }
-      }
-    }
-  }
-}
-
-@include _build-link-placeholders($links-settings, link, true);
-
-@mixin _build-link-with-icon-selectors($module, $place, $size, $selector, $align-on-content) {
-  $placeholder: '#{$module}--icon-#{$place}--#{$size}';
-
-  @at-root #{$selector} {
-    @include has-icon {
-      @extend %#{$placeholder};
-    }
+  @if $size != md {
+    $selector: '#{$base}--#{$size}';
   }
 
   @if $align-on-content {
-    @at-root &--align-on-content#{$selector} {
+    $selector: '#{$selector}#{$base}--align-on-content';
+  }
+
+  @if $place == only {
+    @if $selector == '' {
+      $selector: '#{$base}';
+    }
+    $selector: '#{$selector}:not([class*="#{str-slice(quote($base), 2)}--icon-"])';
+  }
+  @else if $place == left or $place == right {
+    $selector: '#{$selector}#{$base}--icon-#{$place}';
+  }
+
+  @if $selector == '' {
+    $selector: $base;
+  }
+
+  #{$selector} {
+    @if $place != null {
       @include has-icon {
-        @extend %#{$module}-align-on-content--#{$place}--#{$size};
+        @content;
       }
+    }
+    @else {
+      @content;
     }
   }
 }
 
-@mixin _build-link($settings, $module, $border-radius:false, $align-on-content: false, $tags:button) {
-  $align: #{$module}-align-on-content;
-  $sizes: map_get($settings, sizes);
-  $places: map_get($settings, places);
-
+@mixin _build-link-base {
   @include disable-link-style;
   @include margin(0);
+  @include display-flex(row, center, null, null, true);
+  @include z-index(over);
+}
 
-  @each $size, $size-settings in $sizes {
-    $placeholder: #{$module}--#{$size};
+@mixin _build-link($settings) {
+  $places: map_get($settings, places);
+  $sizes: _sort-sizes(map_get($settings, sizes));
+  $border-radius: map-get($settings, border-radius);
+  $align-on-content: map-get($settings, align-on-content);
+  $base: ns(map-get($settings, selector));
 
-    @if $size == md {
-      @extend %#{$placeholder};
-    }
-    @else {
-      &--#{$size} {
-        @extend %#{$placeholder};
-      }
-    }
+  #{$base} {
+    @include _build-link-base;
   }
 
-  $not-sided: ':not([class*="#{$module}--icon-"])';
+  @each $size, $size-settings in $sizes {
+    @include _link-class($base, $size) {
+      @include _build-link-size($size-settings, $border-radius);
+    }
 
-  @if $places != null {
-    @each $place in $places {
+    @if $align-on-content {
+      @include _link-class($base, $size, null, true) {
+        @include _link-align-on-content($size, null, $size-settings);
+      }
+    }
 
-      @each $size, $size-settings in $sizes {
-        @if $place == only {
-          @if $size == md {
-            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}#{$not-sided}', $align-on-content);
-          }
-          @else {
-            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}--#{$size}#{$not-sided}', $align-on-content);
-          }
+    @if $places != null {
+      @each $place in $places {
+        @include _link-class($base, $size, $place) {
+          @include _build-link-icon($size-settings, $place, $size, $size == md, $place == right);
         }
-        @else {
-          @if $size == md {
-            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}--icon-#{$place}', $align-on-content);
-          }
-          @else {
-            @include _build-link-with-icon-selectors($module, $place, $size, '#{&}--#{$size}#{&}--icon-#{$place}', $align-on-content);
+
+        @if $align-on-content {
+          @include _link-class($base, $size, $place, true) {
+            @include _link-align-on-content($size, $place, $size-settings);
           }
         }
       }
@@ -129,5 +100,5 @@
 }
 
 @mixin build-link() {
-  @include _build-link($links-settings, link, true, true);
+  @include _build-link($links-settings);
 }

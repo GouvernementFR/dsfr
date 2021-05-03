@@ -1,0 +1,43 @@
+////
+/// Core Tools : Reset
+/// @group core
+////
+
+@mixin a-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin enable-link-style() {
+  --link-underline: 0 1px 0 0 currentColor;
+  --link-blank-font: #{font-icon(sm)};
+  --link-blank-content: "\00a0#{icon-glyph(external-link-line)}";
+}
+
+@mixin disable-link-style() {
+  --link-underline: none;
+  --link-blank-font: none;
+  --link-blank-content: none;
+}
+
+@mixin link-underline() {
+  box-shadow: var(--link-underline);
+}
+
+@mixin link-blank() {
+  @include after(var(--link-blank-content)) {
+    font: var(--link-blank-font);
+  }
+}
+
+@mixin enlarge-link {
+  outline-width: 0 !important;
+  @include before('', block) {
+    @include absolute(0, 0, 0, 0, 100%, 100%);
+    outline-offset: 2px;
+    outline-style: inherit;
+    outline-color: inherit;
+    outline-width: 2px;
+    @include z-index(over);
+  }
+}

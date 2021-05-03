@@ -5,28 +5,21 @@ const fs = require('fs');
 const log = require('../utilities/log');
 
 const generateCore = () => {
-  const dir = root('src/core/generated/');
+  const dir = root('public/src/core/');
 
   let scss = '';
   let js = '';
-  let ejs = '(function (locals) {\r\n';
 
   for (const prop in global.config) {
     scss += `$${prop}: '${global.config[prop]}';\r\n`;
     js += `export const ${prop} = '${global.config[prop]}';\r\n`;
-    ejs += `  locals.${prop} = '${global.config[prop]}';\r\n`;
   }
 
-  ejs += '}(locals));\r\n';
+  const stylePath = dir + 'config.scss';
+  createFile(stylePath, scss);
 
-  createFile(dir + 'styles/_config.scss', scss);
-  log(38, dir + 'styles/_config.scss');
-
-  createFile(dir + 'scripts/config.js', js);
-  log(38, dir + 'scripts/config.js');
-
-  createFile(dir + 'templates/ejs/config.ejs', ejs);
-  log(38, dir + 'templates/ejs/config.ejs');
+  const scriptPath = dir + 'config.js';
+  createFile(scriptPath, js);
 };
 
 module.exports = generateCore;

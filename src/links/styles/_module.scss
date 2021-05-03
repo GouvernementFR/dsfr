@@ -3,12 +3,6 @@
 /// @group links
 ////
 
-#{ns(link)} {
-  @include build-link();
-
-  &[type=submit] {
-    @extend %btn-reset;
-  }
-}
+@include build-link();
 
 @import 'modules/close';

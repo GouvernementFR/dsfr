@@ -19,9 +19,8 @@ class Tab extends api.core.Disclosure {
   }
 
   translate (direction, initial) {
-    if (initial) this.element.style.transition = 'none';
+    this.element.style.transition = initial ? 'none' : '';
     this.element.style.transform = `translate(${direction * 100}%)`;
-    if (initial) this.element.style.transition = '';
   }
 
   reset () {

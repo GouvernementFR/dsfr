@@ -1,0 +1,6 @@
+<li>
+    <a class="<%= prefix %>-summary__link" href="<%- href %>"><%- label %></a>
+    <% if (locals.list) { %>
+        <%- include('./list', list); %>
+    <% } %>
+</li>

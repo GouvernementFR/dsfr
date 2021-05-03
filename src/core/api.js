@@ -1,4 +1,4 @@
-import { namespace } from './generated/scripts/config.js';
+import { namespace } from './config.js';
 
 const api = window[namespace] || { core: {} };
 window[namespace] = api;

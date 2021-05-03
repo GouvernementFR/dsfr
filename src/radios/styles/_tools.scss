@@ -7,8 +7,8 @@
 @mixin radio-rich() {
   @at-root {
     &[style*='background-image:'],
-    &[class^="#{$prefix}-ifi-"],
-    &[class*=" #{$prefix}-ifi-"] {
+    &[class^="#{ns(ifi-, '')}"],
+    &[class*=" #{ns(ifi-, '')}"] {
       @content;
     }
   }

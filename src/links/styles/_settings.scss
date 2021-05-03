@@ -4,6 +4,7 @@
 ////
 
 $links-settings:(
+  selector: link,
   sizes: (
     sm: (
       font-size: 14,
@@ -30,5 +31,7 @@ $links-settings:(
       icon-only: lg,
     )
   ),
-  places: only left right
+  places: only left right,
+  border-radius: true,
+  align-on-content: true
 );

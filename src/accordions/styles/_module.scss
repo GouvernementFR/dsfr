@@ -14,7 +14,9 @@
     line-height: unset;
   }
 
-  @include _nest-link(accordion__btn, md, right, add-line, null, false, $ac-btn-settings, false, true, true) {
+  &__btn {
+    @include _build-link-base;
+    @include nest-accordion-button(add-line);
     @include size(100%);
     text-align: left;
     @include margin(0);
@@ -28,7 +30,7 @@
       @include font-weight('bold');
 
       @include before {
-        @include font-icon-content(subtract-line);
+        @include icon-content(subtract-line);
       }
     }
     @include padding(3v 0);

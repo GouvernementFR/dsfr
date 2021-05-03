@@ -3,9 +3,7 @@
 /// @group tags
 ////
 
-#{ns(tag)} {
-  @include build-tag();
-}
+@include build-tag();
 
 #{ns-group(tags)} {
   @include disable-list-style;

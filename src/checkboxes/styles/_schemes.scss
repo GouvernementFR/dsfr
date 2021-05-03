@@ -26,7 +26,7 @@
     &:checked,
     &:active {
       + label {
-        @include before() {
+        @include before {
           @include scheme-element-bg-color(bf500);
           @include scheme-element-text-color(g100);
         }

@@ -14,7 +14,7 @@
      */
     &:checked {
       + label {
-        @include before() {
+        @include before {
           @include scheme-element-box-shadow-color(w, true, 'inset 0 0 0 5px $COLOR');
           @include scheme-element-bg-color(bf500, true);
           @include scheme-element-border-color(bf500, true);
@@ -34,7 +34,7 @@
   &--sm {
     input[type="radio" i] {
       &:checked + label {
-        @include before() {
+        @include before {
           box-shadow: inset 0 0 0 3px var(--w);
         }
       }
@@ -45,7 +45,7 @@
 #{ns(radio-rich)} {
 
   input[type="radio"] + #{ns(label)} {
-    @include after() {
+    @include after {
       @include scheme-element-border-color(g300, true, left);
     }
   }
@@ -59,7 +59,7 @@
     @include scheme-element-bg-color(w, false);
     @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
 
-    @include before() {
+    @include before {
       box-shadow: inset 0 0 0 3px var(--w);
     }
   }
