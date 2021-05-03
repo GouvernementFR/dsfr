@@ -89,14 +89,18 @@ class Modal extends api.core.Disclosure {
       api.core.removeClass(this.body, SCROLL_SHADOW_CLASS);
     }
 
-    if (isResizing) {
-      this.body.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
+    this.isMedium = window.matchMedia('(min-width: 48em)').matches;
 
-      // Une deuxième fois après positionnement des barres du navigateur (ios)
-      // TODO: à tester si fonctionnel sans setTimeout
-      api.core.engine.renderer.next(() => {
+    if (isResizing) {
+      if (this.isMedium) {
+        this.body.style.removeProperty('max-height');
+      } else {
         this.body.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
-      });
+        // Une deuxième fois après positionnement des barres du navigateur (ios)
+        api.core.engine.renderer.next(() => {
+          this.body.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
+        });
+      }
     }
   }
 

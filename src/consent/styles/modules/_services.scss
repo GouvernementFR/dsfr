@@ -5,7 +5,16 @@
 
 #{ns(consent-service)} {
   @include padding(8v 0);
-  @include padding(4v 0 8v, md);
+  @include padding(5v 0 8v, md);
+
+  &:last-child {
+    @include padding(8v 0 4v);
+    @include padding(5v 0 4v, md);
+
+    #{ns(consent-service)}:last-child {
+      @include margin-bottom(0);
+    }
+  }
 
   &__container {
     @include respond-from(md) {
@@ -22,8 +31,8 @@
     @include margin-bottom(3v);
 
     @include respond-from(md) {
-      @include margin-bottom(4v);
-      @include margin-top(4v);
+      @include margin-bottom(3v);
+      @include margin-top(3v);
       -ms-grid-column: 1;
       -ms-grid-row: 1;
       grid-column: 1;
@@ -47,6 +56,7 @@
     @include _nest-link(consent-service__collapse-btn, sm, right, arrow-down-s-line, null, false, $collapse-btn-settings, false, true, true) {
       background: transparent;
       @include padding(0);
+      color: inherit;
 
       &[aria-expanded="true" i] {
         @include before {
@@ -93,12 +103,15 @@
   @include margin-bottom(-8v);
   @include margin-top(5v, md);
   @include margin-bottom(-5v, md);
+
   #{ns(consent-service)} {
-    box-shadow: none;
-    padding: 0;
+    &, &:last-child {
+      box-shadow: none;
+      padding: 0;
+    }
 
     & + #{ns(consent-service)} {
-      @include margin-top(-2v, md);
+      @include margin-top(-1v, md);
     }
 
     &__desc {

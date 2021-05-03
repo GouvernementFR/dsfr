@@ -15,6 +15,7 @@
 #{ns(consent-manager__header)},
 #{ns(consent-service)} {
   @include scheme-element-box-shadow-color(g400, true, inset 0 -1px 0 0 $COLOR);
+  @include scheme-element-text-color(g700);
 
   #{ns-group(radio)} {
     + #{ns-group(radio)} {
@@ -23,4 +24,8 @@
       }
     }
   }
+}
+
+#{ns(consent-service)}:last-child {
+  box-shadow: none;
 }

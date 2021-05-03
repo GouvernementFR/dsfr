@@ -6,8 +6,8 @@
 #{ns(consent-banner)} {
   @include fixed(null, null, 0, 0);
   width: 100%;
-  max-height: 66%;
-  @include padding(6v 4v 4v);
+  max-height: calc(100% - #{space(38v)});
+  @include padding(4v);
   z-index: z-index(consent);
   overflow: auto;
 
@@ -30,7 +30,8 @@
   }
 
   &__buttons {
-    @include margin-top(8v);
+    @include margin-top(6v);
+    @include margin-top(8v, md);
     @include margin-bottom(-4v);
   }
 }
