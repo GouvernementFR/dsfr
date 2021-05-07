@@ -1,0 +1,173 @@
+////
+/// Search Module
+/// @group search
+////
+
+#{ns(follow)} {
+  #{ns(container)} {
+    position: relative;
+  }
+
+  &__title {
+    @include title-style(h5);
+    + #{ns(follow__desc)} {
+      @include margin-top(-2v);
+    }
+  }
+
+  &__desc {
+    @include margin-bottom(4v);
+  }
+
+  &__newsletter {
+    // code newsletter en mode col-8
+    @include padding(4v 0);
+    @include padding(5v 0, md);
+
+    @include respond-from(md) {
+      @include display-flex(column,flex-start,center);
+      @include margin-right(12.5%);
+      height: 100%;
+    }
+
+    #{ns(input-wrap)} {
+      display: flex;
+      flex-direction: column;
+      max-width: space(147v);
+
+      #{ns(label)} {
+        @include sr-only();
+      }
+
+      #{ns(input)} {
+        @include margin-bottom(4v);
+        @include margin-top(0);
+      }
+
+      #{ns(btn)} {
+        justify-content: center;
+      }
+
+      + #{ns(hint-text)} {
+        @include margin-top(6v);
+        @include margin-bottom(0);
+      }
+
+      @include respond-from(sm) {
+        flex-direction: row;
+
+        #{ns(input)} {
+          @include margin-bottom(0);
+        }
+
+        + #{ns(hint-text)} {
+          @include margin-top(2v);
+        }
+      }
+    }
+  }
+
+  &__social {
+    // code social en mode col-4
+    @include nest-link(md, only, null, null, true, true);
+    @include padding(4v 0);
+    @include padding(5v 0, md);
+
+    @include respond-from(md) {
+      @include display-flex(column,flex-start,center);
+      @include margin-left(25%);
+      height: 100%;
+    }
+
+    #{ns(follow)}__title {
+      @include margin-bottom(3v);
+    }
+
+    #{ns(links-group)} {
+      @include disable-list-style;
+
+      &--lg {
+        @include nest-link(lg, only);
+      }
+
+      > li {
+        @include margin-right(4v);
+        display: inline-flex;
+
+        &:last-child {
+          @include margin-right(0);
+        }
+      }
+    }
+  }
+
+  #{ns(grid-row)} {
+    > *:first-child:last-child {
+      > #{ns(follow)}__newsletter {
+        // code spécifique à newsletter seul
+        @include respond-from(md) {
+          @include display-flex(row,center,space-between);
+          @include margin-right(0);
+
+          #{ns(follow)}__desc {
+            @include margin-bottom(0);
+          }
+        }
+
+        > :first-child {
+          @include respond-from(md) {
+            max-width: 50%;
+          }
+        }
+      }
+
+      > #{ns(follow)}__social {
+        // code spécifique à social seul
+        @include respond-from(md) {
+          @include margin-left(0);
+          @include display-flex(row,center,space-between);
+          #{ns(follow)}__title {
+            @include margin-bottom(0);
+          }
+        }
+      }
+    }
+
+    > *:not(:first-child) {
+      // code du séparateur en before ou box-shadow
+      @include before('', 'block') {
+        @include absolute;
+        @include size(calc(100% - #{space(8v)}), 1px);
+        @include margin-top(-2v);
+      }
+
+      @include respond-from(md) {
+        @include before('', 'inline-flex') {
+          @include absolute(0);
+          @include size(1px, calc(100% - #{space(16v)}));
+          @include margin-y(8v);
+        }
+      }
+    }
+  }
+
+  #{ns(link--facebook)} {
+    @include nest-link(md, only, facebook-circle-fill, null, false);
+  }
+
+  #{ns(link--twitter)} {
+    @include nest-link(md, only, twitter-fill, null, false);
+  }
+
+  #{ns(link--instagram)} {
+    @include nest-link(md, only, instagram-fill, null, false);
+  }
+
+  #{ns(link--linkedin)} {
+    @include nest-link(md, only, linkedin-box-fill, null, false);
+  }
+
+  #{ns(link--youtube)} {
+    @include nest-link(md, only, youtube-fill, null, false);
+  }
+}

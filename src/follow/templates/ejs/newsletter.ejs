@@ -1,0 +1,47 @@
+<%#
+# paramètres newsletter
+
+* title (string, required) : titre du bloc réseaux newsletter
+
+* type (string, optional) : type de bloc newsletter (avec bouton ou avec input-button [button, form])
+
+* form (object, optional) : paramètres du formulaire champ/boutton (si type form)
+** input (object, required) : paramètres du champ mail
+** button (object, optional) : paramètres du boutton
+
+* button (object, optional) : paramètres du boutton (si type button)
+
+* networks (array, required) : Tableau de réseaux sociaux (title, url, icon)
+
+%>
+<% eval(include('../../../core/index.ejs'));
+
+let socialsClasses = [prefix + '-follow__newsletter'];
+
+%>
+
+<div <%- includeClasses(socialsClasses); %> >
+  <div>
+    <h5 class="<%= prefix %>-follow__title"><%- locals.title %></h5>
+    <% if (locals.desc) { %>
+    <p class="<%= prefix %>-follow__desc"><%- locals.desc %></p>
+    <% } %>
+  </div>
+  <div>
+    <% if (locals.type === 'form') { %>
+      <% if (locals.form && locals.form.input && locals.form.button) { %>
+        <form action="">
+        <div class="<%= prefix %>-input-wrap">
+          <%- include('../../../inputs/templates/ejs/input.ejs', locals.form.input); %>
+          <%- include('../../../buttons/templates/ejs/button.ejs', locals.form.button); %>
+        </div>
+        <% if (locals.form.legal) { %>
+          <p class="<%= prefix %>-hint-text">En renseignant votre adresse email, vous acceptez de recevoir nos actualités par courrier électronique. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.</p>
+        </form>
+        <% } %>
+      <% } %>
+    <% } else if (locals.type === 'button') { %>
+      <%- include('../../../buttons/templates/ejs/button.ejs', locals.button); %>
+    <% } %>
+  </div>
+</div>

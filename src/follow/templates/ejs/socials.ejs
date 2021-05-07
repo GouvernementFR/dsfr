@@ -1,0 +1,24 @@
+<%#
+# paramètres socials
+
+* title (string, required) : titre du bloc réseaux sociaux
+
+* networks (array, required) : Tableau de réseaux sociaux (title, url, icon)
+
+%>
+<% eval(include('../../../core/index.ejs'));
+
+let socialsClasses = [prefix + '-follow__social'];
+
+%>
+
+<div <%- includeClasses(socialsClasses); %> >
+  <h5 class="<%= prefix %>-follow__title"><%- locals.title %></h5>
+  <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
+    <% for (let i=0; i < networks.length; i++) { %>
+      <li>
+        <%- include('../../../links/templates/ejs/link', { place: "only", href: networks[i].url, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
+      </li>
+    <% } %>
+  </ul>
+</div>

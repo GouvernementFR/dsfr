@@ -1,0 +1,49 @@
+<%#
+# paramètres search-bar
+
+* id (string, required) : id de la barre de recherche
+
+* placeholder (string, required) : text du placeholder de l'input
+
+* size (string, optionnal) : modificateur de taille.
+  valeurs:
+  * lg : barre de recherche large
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let followClasses = [prefix + '-follow'];
+
+ let attributes = locals.attributes || {};
+ let socials = locals.socials || undefined;
+ let newsletter = locals.newsletter || undefined;
+ let newsletterType = newsletter ? newsletter.type : 'form' || 'form';
+
+ %>
+<div <%- includeClasses(followClasses); %> <%- includeAttrs(attributes) %>>
+  <div class="<%= prefix %>-container">
+    <% if (socials && newsletter) { %>
+      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+        <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-8">
+          <%- include('newsletter.ejs', newsletter); %>
+        </div>
+        <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-4">
+          <%- include('socials.ejs', socials); %>
+        </div>
+      </div>
+    <% } else if (!socials && newsletter) { %>
+      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+        <div class="<%= prefix %>-col-12 ">
+          <%- include('newsletter.ejs', newsletter); %>
+        </div>
+      </div>
+    <% } else if (socials && !newsletter) { %>
+      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+        <div class="<%= prefix %>-col-12">
+          <%- include('socials.ejs', socials); %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>

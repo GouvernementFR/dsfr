@@ -1,0 +1,8 @@
+id: follow
+title: Nous suivre
+description: Le bloc "Nous suivre" est composé d'un bloc newsletter et/ou d'un bloc réseaux sociaux.
+doc:
+styles:
+  - core
+  - inputs
+  - buttons

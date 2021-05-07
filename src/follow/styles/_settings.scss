@@ -1,0 +1,19 @@
+////
+/// Buttons Settings
+/// @group buttons
+////
+
+$socials-settings:(
+  selector: link--facebook,
+  sizes: (
+    lg: (
+      font-size: 20,
+      min-height: 14v,
+      padding-x: 8v,
+      icon: md,
+      icon-margin-x: 2v,
+      icon-only: lg,
+    )
+  ),
+  places: only
+);

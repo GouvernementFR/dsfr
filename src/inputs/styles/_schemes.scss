@@ -50,3 +50,11 @@ textarea#{ns(input)} {
     @include _scheme-element(g800, -webkit-text-fill-color, true);
   }
 }
+
+#{ns(input-wrap)} {
+  > *:not(:last-child) {
+    &#{ns(input)} {
+      @include scheme-element-box-shadow-color(bf500, true, inset 0 -2px 0 0 $COLOR);
+    }
+  }
+}

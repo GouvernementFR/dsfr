@@ -1,0 +1,25 @@
+////
+/// Search Schemes
+/// @group search
+////
+
+#{ns(follow)} {
+  @include scheme-element-bg-color(bf100-g750, true, false);
+
+  #{ns(input)} {
+    @include scheme-element-bg-color(w, true, false);
+  }
+
+  &__newsletter {
+    &-legal {
+      @include scheme-element-text-color(g600);
+    }
+  }
+
+  #{ns(grid-row)} > *:not(:first-child) {
+    // code du séparateur en before ou box-shadow
+    @include before {
+      @include scheme-element-bg-color(bf300-plain, true, false);
+    }
+  }
+}

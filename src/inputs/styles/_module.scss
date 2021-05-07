@@ -64,4 +64,24 @@
   #{ns(input)} {
     @include padding-right(10v);
   }
+
+  > *:not(:last-child) {
+    &#{ns(input)} {
+      @include padding-right(4v);
+    }
+
+    @include respond-from(md) {
+      border-radius: space(1v) 0 0 0;
+    }
+  }
+
+  > *:last-child:not(:first-child) {
+    @include respond-from(md) {
+      border-radius: 0 space(1v) 0 0;
+    }
+  }
+
+  + #{ns(hint-text)} {
+    @include margin-top(2v);
+  }
 }
