@@ -37,6 +37,11 @@
       text-align: left;
       direction: rtl;
 
+      &,
+      & > * {
+        unicode-bidi: plaintext;
+      }
+
       /**
        * On ajoute l'icône check-line en taille sm via un pseudo element before
        */
