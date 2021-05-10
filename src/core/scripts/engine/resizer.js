@@ -1,11 +1,5 @@
-/* eslint no-unused-vars: "off" */
-class Instantiater {
+class Resizer {
   constructor () {
-    this.instances = [];
-    this.resizes = [];
-  }
-
-  add (selector, factory, isResizing) {
 
   }
 
@@ -14,3 +8,5 @@ class Instantiater {
 
   }
 }
+
+export { Resizer };

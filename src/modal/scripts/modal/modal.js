@@ -58,7 +58,7 @@ class Modal extends api.core.Disclosure {
   /**
    * Fixe l'arrière plan quand la modal est ouverte
    */
-  // TODO: créer une fonction de fix de scroll dans core (api.noScroll = true)
+  // TODO: implémenter preventScroll
   handleScroll (isScrollable) {
     if (isScrollable) {
       api.core.removeClass(document.documentElement, NO_SCROLL_CLASS);

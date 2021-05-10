@@ -3,7 +3,6 @@ class Renderer {
     this.closures = [];
     this.nexts = [];
     this.rendering = this.render.bind(this);
-    this.render();
   }
 
   add (closure) {
@@ -21,7 +20,18 @@ class Renderer {
     this.nexts[frame].push(closure);
   }
 
+  get isRendering () {
+    return this._isRendering;
+  }
+
+  set isRendering (value) {
+    if (this._isRendering === value) return;
+    this._isRendering = value;
+    if (this._isRendering) this.render();
+  }
+
   render () {
+    if (!this.isRendering) return;
     window.requestAnimationFrame(this.rendering);
     for (const closure of this.closures) closure.call();
     const nexts = this.nexts.shift();

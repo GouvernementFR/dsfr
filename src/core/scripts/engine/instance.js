@@ -1,3 +1,6 @@
+import body from './body.js';
+import { ns } from '../global/namespace';
+
 const instances = { };
 const elements = { };
 let count = 0;
@@ -11,7 +14,7 @@ const getElementId = (element) => {
 };
 
 class Instance {
-  constructor (element, isResizing, isRendering) {
+  constructor (element) {
     const id = getElementId(element);
     if (!instances[id]) instances[id] = [];
     instances[id].push(this);
@@ -20,13 +23,10 @@ class Instance {
     this._isRendering = false;
     this._isResizing = false;
     this.listeners = {};
-
-    this.isResizing = isResizing;
-    this.isRendering = isRendering;
   }
 
   dispatch (type, data) {
-    const event = new CustomEvent(type, data);
+    const event = new CustomEvent(ns.event(type), data);
     this.element.dispatchEvent(event);
   }
 
@@ -72,7 +72,22 @@ class Instance {
 
   resize () {}
 
-  destroy () {}
+  get scrolling () {
+    return body.scrolling;
+  }
+
+  set scrolling (value) {
+    if (value) body.releaseScrolling(this);
+    else body.preventScrolling(this);
+  }
+
+  _disposal () {
+    this.unlisten();
+    this.scrolling = true;
+    this.dispose();
+  }
+
+  dispose () {}
 
   static getInstances (element, instanceClass) {
     const id = getElementId(element);
