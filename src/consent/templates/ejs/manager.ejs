@@ -16,6 +16,7 @@
 %>
 
 <% let finalities = locals.finalities || {}; %>
+<% let buttons = locals.buttons || [{label: 'Confirmer mes choix'}]; %>
 
 <div class="<%= prefix %>-consent-manager">
 
@@ -36,10 +37,10 @@
 
     <% if (finalities[finality].services) { %>
       <div class="<%= prefix %>-consent-service__collapse">
-        <button class="<%= prefix %>-consent-service__collapse-btn" aria-expanded="false" aria-controls="<%= finalities[finality].id  %> + '-collapse'"> Voir plus de détails</button>
+        <button class="<%= prefix %>-consent-service__collapse-btn" aria-expanded="false" aria-controls="<%= finalities[finality].id  %>-collapse"> Voir plus de détails</button>
       </div>
 
-      <div class="<%= prefix %>-consent-services <%= prefix %>-collapse" id="<%= finalities[finality].id  %> + '-collapse'">
+      <div class="<%= prefix %>-consent-services <%= prefix %>-collapse" id="<%= finalities[finality].id  %>-collapse">
         <!-- sous finalités -->
         <% for (service = 0; service < finalities[finality].services.length; service++) { %>
         <div class="<%= prefix %>-consent-service">
@@ -62,4 +63,7 @@
     <% } %>
   </div>
   <% } %>
+
+  <%- include('../../../buttons/templates/ejs/buttons-group.ejs', {classes: [prefix + '-consent-manager__buttons'], size: 'md', inline: 'sm', align:'right', buttons: buttons}); %>
+
 </div>

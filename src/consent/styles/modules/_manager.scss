@@ -17,8 +17,7 @@
     }
   }
 
-  &__footer {
-    @include margin-top(8v);
-    @include margin-bottom(-4v);
+  &__buttons {
+    @include margin-bottom(-12v);
   }
 }

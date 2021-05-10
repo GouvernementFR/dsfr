@@ -64,7 +64,13 @@
     }
 
     &-btn {
-      @include _build-link-base;
+      @include display-flex(row, center, null, null, true);
+      position: relative;
+
+      @include after('','block') {
+        @include absolute(0,0,0,0,calc(100% - #{space(4v)}),100%);
+        @include link-underline;
+      }
     }
   }
 

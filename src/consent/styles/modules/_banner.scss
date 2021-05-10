@@ -6,7 +6,7 @@
 #{ns(consent-banner)} {
   @include fixed(null, null, 0, 0);
   width: 100%;
-  max-height: calc(100% - #{space(38v)});
+  max-height: calc(100% - #{space(32v)});
   @include padding(4v);
   z-index: z-index(consent);
   overflow: auto;
@@ -15,7 +15,8 @@
     @include padding(8v);
     bottom: space(10v);
     left: space(10v);
-    max-width: space(147v);
+    max-width: space(160v);
+    max-height: calc(100% - #{space(20v)});
   }
 
   &__content {
