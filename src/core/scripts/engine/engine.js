@@ -1,23 +1,48 @@
-import { Renderer } from './render/renderer';
+import { Renderer } from './renderer';
+import { Initializer } from './initializer';
 
-// TODO: initializer et renderer en 1, avec muttation observer pour ajouter et retirer les instances des objets attendus en fonctions de selecteurs spécifiques
+
+
 class Engine {
   constructor () {
-    this.renderer = new Renderer();
-    // this.instantier = new Instancier();
+    this._isActive = false;
+    this._initializer = new Initializer();
+    this._renderer = new Renderer();
+
   }
 
   register (selector, factory) {
+    if (factories[selector]) return;
+    factories[selector] = factory;
 
+    // apply to existent
+  }
+
+  get isActive () {
+    return this._isActive;
+  }
+
+  set isActive (value) {
+    if (this._isActive === value) return;
+    this._isActive = value;
+    this.renderer.isRendering = value;
+    if (value) {
+      console.log('observe');
+      this.observer.observe(document.body, { childList: true, subtree: true });
+    } else {
+      this.observer.disconnect();
+    }
   }
 
   start () {
-    // this.renderer.start();
+    this.isActive = true;
   }
 
   stop () {
-    // this.renderer.stop();
+    this.isActive = false;
   }
+
+
 }
 
 const engine = new Engine();

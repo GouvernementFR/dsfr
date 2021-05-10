@@ -2,7 +2,7 @@ import { DisclosuresGroup } from './disclosures-group.js';
 import { DisclosureButton } from './disclosure-button.js';
 import { addClass, removeClass } from '../manipulation/classes.js';
 import { ns } from '../global/namespace.js';
-import { Instance } from '../engine/instantiate/instance';
+import { Instance } from '../engine/instance';
 import { CONCEAL_EVENT, DISCLOSE_EVENT } from './events';
 
 const disclosures = [];
@@ -31,12 +31,14 @@ class Disclosure extends Instance {
     DisclosuresGroup.groupById(this, this.GroupConstructor);
     DisclosuresGroup.groupByParent(this, this.GroupConstructor);
   }
-
+/*
   static build (from) {
     const elements = Array.prototype.slice.call(from.querySelectorAll(`.${this.selector}`));
 
     for (const element of elements) disclosures.push(new this(element));
   }
+
+ */
 
   get type () { return this.constructor.type; }
 
