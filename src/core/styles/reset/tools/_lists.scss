@@ -20,13 +20,7 @@
     --li-pb: #{space(2v)};
     --li-pt: 0;
     --li-pl: 0;
-    --li-indent: 0.9em;
-    --ul-content: "●○■□◆◇";
-    --ul-max-width: 0.75em;
-    --ul-letter-spacing: 0.4em;
-    --ul-overflow: hidden;
-    --ul-display: inline-block;
-    --ul-vertical-align: top;
+    --ul-content: "●";
     --ol-content: counters(li-counter, ".") ".";
     --ol-font-weight: 700;
     --ol-increment: li-counter;
@@ -36,6 +30,7 @@
   li {
     --li-pl: #{space(4v)};
     --li-pt: #{space(2v)};
+    --ul-content: "•";
   }
 }
 
@@ -43,13 +38,7 @@
   --li-pb: 0;
   --li-pt: 0;
   --li-pl: 0;
-  --li-indent: initial;
   --ul-content: none;
-  --ul-max-width: none;
-  --ul-letter-spacing: 0;
-  --ul-overflow: inherit;
-  --ul-display: inline-block;
-  --ul-vertical-align: top;
   --ol-content: none;
   --ol-font-weight: inherit;
   --ol-increment: none;
@@ -57,5 +46,6 @@
   li {
     --li-pt: 0;
     --li-pl: 0;
+    --ul-content: none;
   }
 }

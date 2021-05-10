@@ -13,14 +13,8 @@
   }
 
   ul {
-    --li-indent-base: calc(var(--li-indent) - 1em);
     --li-content: var(--ul-content);
     --li-font-weight: inherit;
-    --li-max-width: var(--ul-max-width);
-    --li-overflow: var(--ul-overflow);
-    --li-display: var(--ul-display);
-    --li-vertical-align: var(--ul-vertical-align);
-    --li-letter-spacing: var(--ul-letter-spacing);
     --li-increment: none;
   }
 
@@ -29,29 +23,15 @@
 
     --li-content: var(--ol-content);
     --li-font-weight: var(--ol-font-weight);
-    --li-max-width: none;
-    --li-indent-base: 0;
-    --li-overflow: initial;
-    --li-display: initial;
-    --li-vertical-align: initial;
-    --li-letter-spacing: 0;
     --li-increment: var(--ol-increment);
   }
 
   li {
     counter-increment: var(--li-increment);
 
-    --li-indent: var(--li-indent-base);
-
     @include before(var(--li-content)) {
       @include margin-right(1v);
       font-weight: var(--li-font-weight);
-      overflow: var(--li-overflow);
-      max-width: var(--li-max-width);
-      text-indent: #{'max(var(--li-indent), -5.1em)'};
-      display: var(--li-display);
-      vertical-align: var(--li-vertical-align);
-      letter-spacing: var(--li-letter-spacing);
     }
     @include padding-bottom(var(--li-pb));
   }
