@@ -15,40 +15,39 @@ const getElementId = (element) => {
 
 class Instance {
   constructor (element) {
-    const id = getElementId(element);
-    if (!instances[id]) instances[id] = [];
-    instances[id].push(this);
     this.element = element;
     this.id = element.id;
     this._isRendering = false;
     this._isResizing = false;
-    this.listeners = {};
+    this._listeners = {};
+    this._ascents = {};
+    this._descents = {};
   }
 
   dispatch (type, data) {
     const event = new CustomEvent(ns.event(type), data);
-    this.element.dispatchEvent(event);
+    this.element.node.dispatchEvent(event);
   }
 
   listen (type, closure) {
-    if (!this.listeners[type]) this.listeners[type] = [];
-    if (this.listeners[type].indexOf(closure) > -1) return;
-    this.listeners[type].push(closure);
-    this.element.addEventListener(type, closure);
+    if (!this._listeners[type]) this._listeners[type] = [];
+    if (this._listeners[type].indexOf(closure) > -1) return;
+    this._listeners[type].push(closure);
+    this.element.node.addEventListener(type, closure);
   }
 
   unlisten (type, closure) {
     if (!type) {
-      for (const type in this.listeners) this.unlisten(type);
+      for (const type in this._listeners) this.unlisten(type);
     } else if (!closure) {
-      if (!this.listeners[type]) return;
-      for (const closure of this.listeners[type]) this.element.removeEventListener(closure);
-      this.listeners[type].length = 0;
+      if (!this._listeners[type]) return;
+      for (const closure of this._listeners[type]) this.element.node.removeEventListener(closure);
+      this._listeners[type].length = 0;
     } else {
-      if (!this.listeners[type]) return;
-      const index = this.listeners[type].indexOf(closure);
-      if (index > -1) this.listeners[type].splice(index, 1);
-      this.element.removeEventListener(closure);
+      if (!this._listeners[type]) return;
+      const index = this._listeners[type].indexOf(closure);
+      if (index > -1) this._listeners[type].splice(index, 1);
+      this.element.node.removeEventListener(closure);
     }
   }
 
@@ -88,6 +87,38 @@ class Instance {
   }
 
   dispose () {}
+
+  ascend (type, data) {
+
+  }
+
+  addAscent (type, closure) {
+    if (!this._descents)
+  }
+
+  removeAscent (type, closure) {
+
+  }
+
+  _ascent (type, data) {
+    if (this.ascents[type])
+  }
+
+  descend (type, data) {
+
+  }
+
+  addDescent (type, closure) {
+
+  }
+
+  removeDescent (type, closure) {
+
+  }
+
+  _descent (type, data) {
+
+  }
 
   static getInstances (element, instanceClass) {
     const id = getElementId(element);

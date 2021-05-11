@@ -1,21 +1,12 @@
 import { Renderer } from './renderer';
 import { Initializer } from './initializer';
 
-
-
 class Engine {
   constructor () {
     this._isActive = false;
     this._initializer = new Initializer();
+    this.register = this._initializer.register;
     this._renderer = new Renderer();
-
-  }
-
-  register (selector, factory) {
-    if (factories[selector]) return;
-    factories[selector] = factory;
-
-    // apply to existent
   }
 
   get isActive () {
@@ -25,13 +16,8 @@ class Engine {
   set isActive (value) {
     if (this._isActive === value) return;
     this._isActive = value;
-    this.renderer.isRendering = value;
-    if (value) {
-      console.log('observe');
-      this.observer.observe(document.body, { childList: true, subtree: true });
-    } else {
-      this.observer.disconnect();
-    }
+    this._renderer.isRendering = value;
+    this._initializer.isActive = value;
   }
 
   start () {
@@ -41,8 +27,6 @@ class Engine {
   stop () {
     this.isActive = false;
   }
-
-
 }
 
 const engine = new Engine();
