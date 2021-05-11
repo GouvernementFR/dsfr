@@ -11,6 +11,28 @@ class Initializer {
     this.resizes = [];
   }
 
+  register (selector, factory) {
+    if (factories[selector]) return;
+    factories[selector] = factory;
+
+    // apply to existent
+  }
+
+  get isActive () {
+    return this._isActive;
+  }
+
+  set isActive (value) {
+    if (this._isActive === value) return;
+    this._isActive = value;
+    if (value) {
+      console.log('observe');
+      this.observer.observe(document.body, { childList: true, subtree: true });
+    } else {
+      this.observer.disconnect();
+    }
+  }
+
   mutate (mutations) {
     console.log('mutate');
     mutations.forEach((mutation) => {
