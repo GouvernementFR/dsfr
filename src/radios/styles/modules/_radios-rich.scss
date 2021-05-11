@@ -1,6 +1,6 @@
 #{ns(radio-rich)} {
 
-  input[type="radio"] + #{ns(label)} {
+  input[type="radio" i] + #{ns(label)} {
 
     @include padding-left(14v);
     min-height: space(22v);
@@ -11,7 +11,7 @@
     background-position: calc(100% - #{space(1v)}) center;
     background-size: space(20v) space(20v);
     background-repeat: no-repeat;
-    @include display-flex(column, flex-end, center);
+    @include display-flex(column, flex-start, center);
 
     /**
       * On applique la taille sm pour le bouton radio riche
@@ -33,6 +33,10 @@
       vertical-align: middle;
       // TODO: insérer la font icon ilustrative ifi
     }
+
+    #{ns(hint-text)} {
+      @include margin-left(0);
+    }
   }
 
   &__icon {
@@ -49,18 +53,18 @@
 #{ns(fieldset)} {
   #{ns(radio-rich)} {
     &:first-child {
-      input[type="radio"] + label {
+      input[type="radio" i] + label {
         @include margin-top(3v);
       }
     }
 
-    input[type="radio"] + label {
+    input[type="radio" i] + label {
       @include margin-top(2v);
       @include margin-bottom(4v);
     }
 
     &:last-child {
-      input[type="radio"] + label {
+      input[type="radio" i] + label {
         @include margin-bottom(7v);
       }
     }
@@ -72,7 +76,7 @@
   &--inline {
     #{ns(radio-rich)} {
       &:not(:last-child) {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-right(3v);
           @include margin-bottom(2v);
         }
@@ -81,7 +85,7 @@
       &:last-child {
         margin-bottom: 0;
 
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-bottom(3v);
         }
       }
@@ -93,7 +97,7 @@
     #{ns(hint-text)} + #{ns(fieldset__content)} {
       #{ns(radio-rich)} {
         &:first-child {
-          input[type="radio"] + label {
+          input[type="radio" i] + label {
             @include margin-top(6v);
           }
         }
