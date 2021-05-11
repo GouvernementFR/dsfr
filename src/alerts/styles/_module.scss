@@ -1,0 +1,52 @@
+////
+/// Alerts Module
+/// @group alerts
+////
+
+#{ns(alert)} {
+  @include relative();
+  @include padding(4v 9v 4v 14v);
+
+  @include before {
+    @include absolute(0, null, null, 0, null, 100%);
+    @include padding(4v 2v);
+  }
+
+  @include title() {
+    @include title-style(h5);
+    @include margin(0);
+
+    + #{ns(alert)}__text {
+      @include margin-top(1v);
+    }
+  }
+
+  &__text {
+    @include text-style(md);
+    @include margin(0);
+  }
+
+  #{ns(link)} {
+    @include absolute(1v,1v);
+  }
+
+  + #{ns(alert)} {
+    @include margin-top(4v);
+  }
+
+  &--info {
+    @include icon(information-fill, md);
+  }
+
+  &--success {
+    @include icon(checkbox-circle-line, md);
+  }
+
+  &--error {
+    @include icon(alert-fill, md);
+  }
+
+  &--warning {
+    @include icon(error-warning-fill,md);
+  }
+}

@@ -1,0 +1,10 @@
+<%
+ let data = {
+   id: uniqueId('alert'),
+   title: 'Titre',
+   text: 'Description',
+   type: locals.type || 'info'
+   };
+ %>
+
+<%- include('../../templates/ejs/alert.ejs', data); %>

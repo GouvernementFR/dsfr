@@ -1,0 +1,38 @@
+<%#
+# paramètres alerts
+
+* id (String, required): id
+
+* title (String, optional): Titre de l'alerte
+
+* text (string, optional) : Texte de decription de l'alerte
+
+* type (String, required): type d'alerte [info/success/error/warning]
+
+%>
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let id = locals.id;
+ let title = locals.title || false;
+ let text = locals.text || false;
+ let type = locals.type || 'info';
+ let classes = locals.classes || [];
+ classes.push(prefix + '-alert');
+ classes.push(prefix + '-alert--' + locals.type);
+
+ %>
+
+
+<div role="alert" <%- includeClasses(classes); %> id="<%= id %>">
+
+  <% if(locals.title !== undefined) { %>
+    <h5 class="<%= prefix %>-alert__title"><%= title %></h5>
+  <% } %>
+
+  <%- include('../../../core/templates/ejs/typography/paragraph', {content: text, classes: [`${prefix}-alert__text`]}) %>
+
+  <%- include('../../../links/templates/ejs/link', {label: 'fermer', size: 'sm', tag: 'button', attributes: {'aria-controls': id}, classes: [`${prefix}-fi-close-line`]}) %>
+</div>
