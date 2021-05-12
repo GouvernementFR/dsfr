@@ -18,21 +18,38 @@
  let id = locals.id;
  let title = locals.title || false;
  let text = locals.text || false;
- let type = locals.type || 'info';
+ let type = locals.type || false;
+ let size = locals.size || "md";
+ let expanded = locals.expanded || true;
+ let buttonClose = locals.buttonClose || false;
  let classes = locals.classes || [];
  classes.push(prefix + '-alert');
- classes.push(prefix + '-alert--' + locals.type);
+ if (type) classes.push(prefix + '-alert--' + type);
+ if (size !== "md") classes.push(prefix + '-alert--' + size);
 
  %>
 
+<% if(locals.collapse) { %>
+<div class="<%= prefix %>-collapse" id="<%= id %>">
+<% }%>
+  <div role="alert" <%- includeClasses(classes); %>>
 
-<div role="alert" <%- includeClasses(classes); %> id="<%= id %>">
+    <% if(locals.title) { %>
+      <% if(locals.text) { %>
+      <h5 class="<%= prefix %>-h5 <%= prefix %>-mb-1v"><%= title %></h5>
+      <% } else { %>
+      <h5 class="<%= prefix %>-h5 <%= prefix %>-mb-0"><%= title %></h5>
+      <% } %>
+    <% } %>
 
-  <% if(locals.title !== undefined) { %>
-    <h5 class="<%= prefix %>-alert__title"><%= title %></h5>
-  <% } %>
+    <% if(locals.text) { %>
+      <%- include('../../../core/templates/ejs/typography/paragraph', {content: text, size: 'md', classes: [`${prefix}-mb-0`]}) %>
+    <% } %>
 
-  <%- include('../../../core/templates/ejs/typography/paragraph', {content: text, classes: [`${prefix}-alert__text`]}) %>
-
-  <%- include('../../../links/templates/ejs/link', {label: 'fermer', size: 'sm', tag: 'button', attributes: {'aria-controls': id}, classes: [`${prefix}-fi-close-line`]}) %>
+    <% if(locals.collapse || locals.buttonClose) { %>
+      <%- include('../../../links/templates/ejs/link', {label: 'Masquer le message', size: 'md', tag: 'button', attributes: {title: 'Masquer le message','aria-expanded': expanded , 'aria-controls': id}, classes: [`${prefix}-link--close`]}) %>
+    <% } %>
+  </div>
+<% if(locals.collapse) { %>
 </div>
+<% } %>

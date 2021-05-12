@@ -6,28 +6,30 @@
 #{ns(alert)} {
   @include relative();
   @include padding(4v 9v 4v 14v);
+  @include icon(null, md);
 
   @include before {
     @include absolute(0, null, null, 0, null, 100%);
     @include padding(4v 2v);
   }
 
-  @include title() {
-    @include title-style(h5);
-    @include margin(0);
+  // @include title() {
+  //   @include title-style(h5);
+  //   @include margin(0);
 
-    + #{ns(alert)}__text {
-      @include margin-top(1v);
-    }
-  }
+  //   + #{ns(alert)}__text {
+  //     @include margin-top(1v);
+  //   }
+  // }
 
   &__text {
     @include text-style(md);
     @include margin(0);
   }
 
-  #{ns(link)} {
-    @include absolute(1v,1v);
+  #{ns(link--close)} {
+    @include absolute(1v,3v);
+    @include nest-link(sm, only, null, null, false, false);
   }
 
   + #{ns(alert)} {
@@ -35,18 +37,26 @@
   }
 
   &--info {
-    @include icon(information-fill, md);
+    @include icon(information-fill);
   }
 
   &--success {
-    @include icon(checkbox-circle-line, md);
+    @include icon(checkbox-circle-fill);
   }
 
   &--error {
-    @include icon(alert-fill, md);
+    @include icon(alert-fill);
   }
 
   &--warning {
-    @include icon(error-warning-fill,md);
+    @include icon(error-warning-fill);
+  }
+
+  &--sm {
+    @include padding(2v 9v 2v 12v);
+
+    @include before {
+      @include padding(2v 2v);
+    }
   }
 }

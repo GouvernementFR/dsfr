@@ -2,11 +2,26 @@
 const sample = getSample(include);
 %>
 
-<%- sample('Alerte info seule', './samples/alert-default', {}, true); %>
+<%- sample('Alerte par défaut', './samples/alert-default', {}, true); %>
 
-<%- sample('Alerte succès seule', './samples/alert-default', {type: "success"}, true); %>
+<%- sample('Alerte info', './samples/alert-default', {type: "info"}, true); %>
 
-<%- sample('Alerte erreur seule', './samples/alert-default', {type: "error"}, true); %>
+<%- sample('Alerte succès', './samples/alert-default', {type: "success"}, true); %>
 
-<%- sample('Alerte attention seule', './samples/alert-default', {type: "warning"}, true); %>
+<%- sample('Alerte erreur', './samples/alert-default', {type: "error"}, true); %>
+
+<!-- <%- sample('Alerte attention', './samples/alert-default', {type: "warning"}, true); %> -->
+
+<%- sample('Alerte avec bouton fermer', './samples/alert-default', {type: "info", buttonClose: true}, true); %>
+
+<%- sample('Alerte refermable (dans un collapse)', './samples/alert-collapsible', {type: "info"}, true); %>
+
+<%- sample('Alerte taille SM', './samples/alert-default', {title:false, size: "sm", type: "info"}, true); %>
+
+<%- sample('Alerte taille SM refermable', './samples/alert-collapsible', {title:false, size: "sm", type: "info"}, true); %>
+
+<%- sample('Alerte icône personnalisée', './samples/alert-default', {classes: ['fr-fi-lock-fill']}, true); %>
+
+<%- sample('Alerte icône personnalisée', './samples/alert-default', {type: "info", classes: ['fr-fi-no-icon']}, true); %>
+
 

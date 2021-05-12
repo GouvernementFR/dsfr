@@ -1,0 +1,9 @@
+<%
+ let data = {
+   id: uniqueId('alert'),
+   text: 'Cliquer sur la croix pour fermer l\'alerte',
+   collapse: true
+  };
+ %>
+
+<%- include('alert-default.ejs', data); %>
