@@ -24,7 +24,7 @@
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (locals.title) { %><div class="<%= prefix %>-consent-banner__title"><%= title %></div><% } %>
+    <% if (locals.title) { %><div class="<%= prefix %>-h6 <%= prefix %>-mb-3v"><%= title %></div><% } %>
     <% if (locals.body) { %><div class="<%= prefix %>-consent-banner__content"><%- body %></div><% } %>
     <%- include('../../../buttons/templates/ejs/buttons-group.ejs', {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}); %>
 </div>
