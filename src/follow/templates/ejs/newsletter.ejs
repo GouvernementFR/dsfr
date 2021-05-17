@@ -35,10 +35,16 @@ let socialsClasses = [prefix + '-follow__newsletter'];
           <%- include('../../../inputs/templates/ejs/input.ejs', locals.form.input); %>
           <%- include('../../../buttons/templates/ejs/button.ejs', locals.form.button); %>
         </div>
-        <% if (locals.form.legal) { %>
-          <p class="<%= prefix %>-hint-text">En renseignant votre adresse email, vous acceptez de recevoir nos actualités par courrier électronique. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.</p>
-        </form>
+        <% if (locals.form.error) { %>
+          <p id="<%= prefix %>-newsletter-error-text" class="<%= prefix %>-error-text"><%- locals.form.error %></p>
         <% } %>
+        <% if (locals.form.valid) { %>
+          <p id="<%= prefix %>-newsletter-valid-text" class="<%= prefix %>-valid-text"><%- locals.form.valid %></p>
+        <% } %>
+        <% if (locals.form.hint) { %>
+          <p id="<%= prefix %>-newsletter-hint-text" class="<%= prefix %>-hint-text"><%- locals.form.hint %></p>
+        <% } %>
+        </form>
       <% } %>
     <% } else if (locals.type === 'button') { %>
       <%- include('../../../buttons/templates/ejs/button.ejs', locals.button); %>

@@ -27,10 +27,11 @@
 <% eval(include('../../../core/index.ejs')); %>
 
 <%
-let inputClasses = [prefix + '-input'];
+let inputClasses = locals.inputClasses || [];
 let inputAttrs = locals.attributes || {};
-
 let describedby = [];
+
+inputClasses.push(prefix + '-input');
 
 if (locals.valid !== undefined) {
   inputClasses.push(prefix + '-input--valid');

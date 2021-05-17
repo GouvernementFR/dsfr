@@ -27,26 +27,43 @@ data.socials = {
   ]
 };
 
-let inputAttributes = {};
+let inputAttributes = [];
+let inputClasses = [];
 inputAttributes.pattern = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$';
+inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
+
+if (locals.error) {
+  inputAttributes['aria-describedby'] = prefix + '-newsletter-error-text ' + prefix + '-newsletter-hint-text';
+  inputClasses.push(prefix + '-input--error');
+}
+if (locals.valid) {
+  inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
+  inputClasses.push(prefix + '-input--valid');
+}
 
 data.newsletter = {
   title: "Abonnez-vous à notre lettre d’information",
   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
   type: "form",
   form: {
+    valid: locals.valid || null,
+    error: locals.error || null,
+    hint: "En renseignant votre adresse email, vous acceptez de recevoir nos actualités par courrier électronique. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
     input: {
       id: "newsletter-mail",
       placeholder: "Votre adresse mail",
       name: "newsletter-mail",
       label: "Votre adresse mail",
       type: "mail",
+      valid: undefined,
+      error: undefined,
+      inputClasses: inputClasses,
       attributes: inputAttributes
     },
     button: {
       label: "S'abonner",
+      btnTitle: "S‘abonner à notre lettre d’information"
     },
-    legal: "En renseignant votre adresse email, vous acceptez de recevoir nos actualités par courrier électronique. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant."
   }
 };
 %>

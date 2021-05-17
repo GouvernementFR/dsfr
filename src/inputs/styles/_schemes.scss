@@ -53,7 +53,7 @@ textarea#{ns(input)} {
 
 #{ns(input-wrap)} {
   > *:not(:last-child) {
-    &#{ns(input)} {
+    &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
       @include scheme-element-box-shadow-color(bf500, true, inset 0 -2px 0 0 $COLOR);
     }
   }
