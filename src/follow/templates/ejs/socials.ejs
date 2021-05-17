@@ -17,7 +17,7 @@ let socialsClasses = [prefix + '-follow__social'];
   <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
     <% for (let i=0; i < networks.length; i++) { %>
       <li>
-        <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: "xxxxxxxx - ouvre une nouvelle fenêtre"}, href: networks[i].url, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
+        <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: "xxxxxxxx - ouvre une nouvelle fenêtre"}, href: networks[i].url, blank: true, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
       </li>
     <% } %>
   </ul>
