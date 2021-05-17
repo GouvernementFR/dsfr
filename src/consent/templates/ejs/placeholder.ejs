@@ -19,7 +19,7 @@
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (locals.title) { %><div class="<%= prefix %>-consent-placeholder__title"><%= title %></div> <% } %>
-    <% if (locals.body) { %><div class="<%= prefix %>-consent-placeholder__content"><%- body %></div><% } %>
+    <% if (locals.title) { %><p class="<%= prefix %>-h6 <%= prefix %>-mb-2v"><%= title %></p> <% } %>
+    <% if (locals.body) { %><p class="<%= prefix %>-mb-6v"><%- body %></p><% } %>
     <%- include('../../../buttons/templates/ejs/button.ejs', button); %>
 </div>

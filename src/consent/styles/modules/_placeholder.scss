@@ -7,13 +7,4 @@
   @include display-flex(column,center,center);
   @include padding(20v 8v);
   text-align: center;
-
-  &__content {
-    @include margin-bottom(6v);
-  }
-
-  &__title {
-    font-weight: bold;
-    @include margin-bottom(2v);
-  }
 }
