@@ -13,11 +13,11 @@ let socialsClasses = [prefix + '-follow__social'];
 %>
 
 <div <%- includeClasses(socialsClasses); %> >
-  <h5 class="<%= prefix %>-h5 <%= prefix %>-follow__title"><%- locals.title %></h5>
+  <p class="<%= prefix %>-h5 <%= prefix %>-mb-3v <%= prefix %>-mb-3v"><%- locals.title %></p>
   <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
     <% for (let i=0; i < networks.length; i++) { %>
       <li>
-        <%- include('../../../links/templates/ejs/link', { place: "only", href: networks[i].url, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
+        <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: "xxxxxxxx - ouvre une nouvelle fenêtre"}, href: networks[i].url, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
       </li>
     <% } %>
   </ul>
