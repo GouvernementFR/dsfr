@@ -22,9 +22,9 @@ let socialsClasses = [prefix + '-follow__newsletter'];
 
 <div <%- includeClasses(socialsClasses); %> >
   <div>
-    <h5 class="<%= prefix %>-follow__title"><%- locals.title %></h5>
+    <h5 class="<%= prefix %>-h5 <%= prefix %>-follow__title"><%- locals.title %></h5>
     <% if (locals.desc) { %>
-    <p class="<%= prefix %>-follow__desc"><%- locals.desc %></p>
+    <p class="<%= prefix %>-text--sm <%= prefix %>-follow__desc"><%- locals.desc %></p>
     <% } %>
   </div>
   <div>

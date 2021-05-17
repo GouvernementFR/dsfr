@@ -13,7 +13,7 @@ let socialsClasses = [prefix + '-follow__social'];
 %>
 
 <div <%- includeClasses(socialsClasses); %> >
-  <h5 class="<%= prefix %>-follow__title"><%- locals.title %></h5>
+  <h5 class="<%= prefix %>-h5 <%= prefix %>-follow__title"><%- locals.title %></h5>
   <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
     <% for (let i=0; i < networks.length; i++) { %>
       <li>
