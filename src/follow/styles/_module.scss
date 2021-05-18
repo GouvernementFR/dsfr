@@ -48,21 +48,37 @@
         justify-content: center;
       }
 
-      + #{ns(hint-text)} {
-        @include margin-top(6v);
-        @include margin-bottom(0);
-      }
-
       @include respond-from(sm) {
         flex-direction: row;
 
         #{ns(input)} {
           @include margin-bottom(0);
         }
+      }
+    }
 
-        + #{ns(hint-text)} {
-          @include margin-top(2v);
-        }
+    #{ns(hint-text)} {
+      @include margin-top(6v);
+      @include margin-bottom(0);
+    }
+
+    #{ns(valid-text)},
+    #{ns(error-text)} {
+      @include margin-top(4v);
+      + #{ns(hint-text)} {
+        @include margin-top(4v);
+        @include margin-top(2v, md);
+      }
+    }
+
+    @include respond-from(sm) {
+      #{ns(hint-text)} {
+        @include margin-top(2v);
+      }
+
+      #{ns(valid-text)},
+      #{ns(error-text)} {
+        @include margin-top(4v);
       }
     }
   }

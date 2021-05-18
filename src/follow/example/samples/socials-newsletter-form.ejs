@@ -29,7 +29,6 @@ data.socials = {
 
 let inputAttributes = [];
 let inputClasses = [];
-inputAttributes.pattern = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$';
 inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
 
 if (locals.error) {
@@ -50,11 +49,11 @@ data.newsletter = {
     error: locals.error || null,
     hint: "En renseignant votre adresse email, vous acceptez de recevoir nos actualités par courrier électronique. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
     input: {
-      id: "newsletter-mail",
-      placeholder: "Votre adresse mail",
-      name: "newsletter-mail",
-      label: "Votre adresse mail",
-      type: "mail",
+      id: "newsletter-email",
+      placeholder: "Votre adresse email",
+      name: "newsletter-email",
+      label: "Votre adresse email",
+      type: "email",
       valid: undefined,
       error: undefined,
       inputClasses: inputClasses,
@@ -62,6 +61,7 @@ data.newsletter = {
     },
     button: {
       label: "S'abonner",
+      type: "submit",
       btnTitle: "S‘abonner à notre lettre d’information"
     },
   }
