@@ -99,7 +99,6 @@
       flex: 0 0 50%;
       @include margin-bottom(0);
     }
-
   }
 
   /**
@@ -129,8 +128,6 @@
 #{ns(consent-services)} {
   @include margin-top(2v);
   @include margin-bottom(-2v);
-  // @include margin-top(5v, md);
-  // @include margin-bottom(-5v, md);
 
   #{ns(consent-service)} {
     &,
