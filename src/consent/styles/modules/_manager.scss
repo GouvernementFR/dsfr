@@ -6,18 +6,45 @@
 #{ns(consent-manager)} {
   & &__header {
     @include padding-top(0);
-    #{ns(consent-service)}__desc {
+    // @include padding-bottom(3v);
+    // @include padding-bottom(8v,lg);
+    @include margin-top(-3v,lg);
+
+    #{ns(consent-service)}__title {
+      flex: 0 0 100%;
       @include text-style(md);
+      @include margin-top(2v);
+      @include margin-top(0,md);
+      @include margin-top(3v,lg);
       @include margin-bottom(3v);
-      @include margin-bottom(0,md);
-      @include respond-from(md) {
-        -ms-grid-row: 1;
-        grid-row: 1;
+      @include margin-bottom(3v,md);
+      @include margin-bottom(4v,lg);
+      @include font-weight(regular);
+
+      @include respond-from(lg) {
+        flex: 0 0 44%;
+      }
+      @include respond-from(xl) {
+        flex: 0 0 50%;
+      }
+    }
+
+    #{ns(consent-service)}__radios {
+      flex: 0 0 100%;
+      justify-content: flex-start;
+
+      @include respond-from(lg) {
+        flex: 0 0 56%;
+        justify-content: flex-end;
+      }
+      @include respond-from(xl) {
+        flex: 0 0 50%;
       }
     }
   }
 
   &__buttons {
     @include margin-bottom(-12v);
+    @include margin-top(4v);
   }
 }

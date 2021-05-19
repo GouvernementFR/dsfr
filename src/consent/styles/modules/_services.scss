@@ -3,9 +3,22 @@
 /// @group consent
 ////
 
+/**
+* Consent service correspond à un bloc de finalité (titre, radios, description)
+**/
 #{ns(consent-service)} {
-  @include padding(8v 0);
-  @include padding(5v 0 8v, md);
+  @include padding(5v 0 5v);
+  @include padding(5v 0 5v, md);
+  @include display-flex(column);
+  @include size(100%);
+
+  @include respond-from(md) {
+    @include display-flex(row,null,null,wrap);
+
+    & > * {
+      @include size(100%);
+    }
+  }
 
   &:last-child {
     @include padding(8v 0 4v);
@@ -16,43 +29,40 @@
     }
   }
 
-  &__container {
-    @include respond-from(md) {
-      display: -ms-grid;
-      display: grid;
-      align-items: center;
-      -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-    }
-  }
-
+  /**
+  * Nom du service
+  **/
   &__title {
     @include title-style(h6);
     @include margin-bottom(3v);
+    @include padding(0);
+    @include margin-top(3v);
+    float: left;
 
     @include respond-from(md) {
-      @include margin-bottom(3v);
-      @include margin-top(3v);
-      -ms-grid-column: 1;
-      -ms-grid-row: 1;
-      grid-column: 1;
-      grid-row: 1;
-      @include margin-right(6v, md);
+      // @include margin-bottom(4v);
+      flex: 0 0 50%;
     }
   }
 
+  /**
+  * Description du service
+  **/
   &__desc {
     @include text-style(sm);
-    @include margin-bottom(0);
-    -ms-grid-column: 1;
-    -ms-grid-row: 2;
-    grid-column: 1;
-    grid-row: 2;
+    @include margin-bottom(3v);
+    @include margin-top(3v);
+    @include margin-top(1v,md);
+    flex: 0 0 50%;
     @include margin-right(6v,md);
   }
 
+  /**
+  * Bloc dépliable, contient des sous services
+  **/
   &__collapse {
-    @include margin-top(2v);
+    @include margin-top(-1v);
+    @include margin-bottom(4v);
     @include _nest-link($collapse-btn-settings, sm, right, arrow-down-s-line) {
       background: transparent;
       @include padding(0);
@@ -63,40 +73,47 @@
       }
     }
 
+    /**
+    * Bouton d'ouverture/fermeture du collapse
+    **/
     &-btn {
       @include display-flex(row, center, null, null, true);
       position: relative;
 
       @include after('','block') {
-        @include absolute(0,0,0,0,calc(100% - #{space(4v)}),100%);
+        @include absolute(0,0,0,0,calc(100% - #{space(4v)}),calc(100% - #{space(1v)}));
         @include link-underline;
       }
     }
   }
 
+  /**
+  * Conteneur des radio-group
+  **/
   &__radios {
-    @include margin-bottom(3v);
+    // @include margin-bottom(3v);
+    @include display-flex(row, null, null, wrap);
 
     @include respond-from(md) {
-      overflow: hidden;
+      @include display-flex(row,center,flex-end);
+      flex: 0 0 50%;
       @include margin-bottom(0);
-      justify-self: flex-end;
-      -ms-grid-column: 1;
-      grid-column: 2;
-      -ms-grid-row: 1;
-      grid-row: 1;
     }
+
   }
 
+  /**
+  * Groupe de radios avec séparateur
+  **/
   #{ns-group(radio)} {
     position: relative;
 
     &:not(:last-child) input[type="radio" i] + label {
-      @include margin-right(11v);
+      @include margin-right(12v);
     }
 
-    + #{ns-group(radio)} {
-      @include before(block,'') {
+    &:not(:first-child) {
+      @include before('','block') {
         @include size(1px, 6v);
         position: absolute;
         left: calc(#{space(-6v)} - 1px);
@@ -106,26 +123,33 @@
   }
 }
 
+/**
+* fr-consent-services contient les sous services
+**/
 #{ns(consent-services)} {
-  @include margin-top(8v);
-  @include margin-bottom(-8v);
-  @include margin-top(5v, md);
-  @include margin-bottom(-5v, md);
+  @include margin-top(2v);
+  @include margin-bottom(-2v);
+  // @include margin-top(5v, md);
+  // @include margin-bottom(-5v, md);
 
   #{ns(consent-service)} {
     &,
     &:last-child {
       box-shadow: none;
-      padding: 0;
+      @include padding(0);
     }
 
     & + #{ns(consent-service)} {
       @include margin-top(-1v, md);
     }
 
+    &__title {
+      @include margin-bottom(3v);
+    }
+
     &__desc {
-      @include margin-bottom(6v);
-      @include margin-bottom(2v,md);
+      @include margin-bottom(3v);
+      @include margin-top(1v);
     }
 
     &:last-child {
