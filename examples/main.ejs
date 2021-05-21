@@ -11,7 +11,7 @@
     <link href="../../dist/css/<%= namespace %>.css" rel="stylesheet" >
 
     <style>
-        <%- include(root + 'examples/styles.css'); %>
+        <%- include(root + 'examples/styles.css.ejs'); %>
     </style>
 </head>
 <body class="<%= prefix %>-mb-12w" style="margin:0; padding:0;">
@@ -29,7 +29,7 @@
     <script type="module" src="../../dist/js/<%= namespace %>.module.js" ></script>
     <script type="text/javascript" nomodule src="../../dist/js/<%= namespace %>.nomodule.js" ></script>
     <script>
-        <%- include(root + 'examples/script.js'); %>
+        <%- include(root + 'examples/script.js.ejs'); %>
     </script>
 
 </body>

@@ -15,6 +15,8 @@ const generateCore = () => {
     js += `export const ${prop} = '${global.config[prop]}';\r\n`;
   }
 
+  js += `export const version = '${global.version}';\r\n`;
+
   const stylePath = dir + 'config.scss';
   createFile(stylePath, scss);
 

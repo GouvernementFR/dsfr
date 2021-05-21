@@ -1,8 +1,11 @@
+import state from '../../state.js';
+
 class Renderer {
   constructor () {
     this.closures = [];
     this.nexts = [];
     this.rendering = this.render.bind(this);
+    state.activations.add(this.render.bind(this));
   }
 
   add (closure) {
@@ -20,19 +23,10 @@ class Renderer {
     this.nexts[frame].push(closure);
   }
 
-  get isRendering () {
-    return this._isRendering;
-  }
-
-  set isRendering (value) {
-    if (this._isRendering === value) return;
-    this._isRendering = value;
-    if (this._isRendering) this.render();
-  }
-
   render () {
-    if (!this.isRendering) return;
+    if (!state.isActive) return;
     window.requestAnimationFrame(this.rendering);
+    for (const instance of state.renderables.collection) instance.render();
     for (const closure of this.closures) closure.call();
     const nexts = this.nexts.shift();
     if (nexts) {

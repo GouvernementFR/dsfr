@@ -18,5 +18,3 @@ class Initializer {
     }
   }
 }
-
-export { Initializer };

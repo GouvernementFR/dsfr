@@ -1,9 +1,16 @@
-class DisclosureButton {
-  constructor (element, disclosure) {
-    this.element = element;
-    this.disclosure = disclosure;
-    this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
-    this.element.addEventListener('click', this.click.bind(this));
+import { Instance } from '../engine/element/instance';
+import { ns } from '../global/namespace';
+
+class DisclosureButton extends Instance {
+  constructor (type) {
+    super();
+    this.type = type;
+    this.attributeName = this.type.ariaState ? 'aria-' + this.type.id : ns.attr(this.type.id);
+    this.hasAttribute = this.element.node.hasAttribute(this.attributeName);
+  }
+
+  init () {
+    this.listen('click', this.click.bind(this));
     this.observer = new MutationObserver(this.mutate.bind(this));
     this.observe();
   }
@@ -13,11 +20,13 @@ class DisclosureButton {
   }
 
   click (e) {
+    // TODO
     this.disclosure.change(this.hasAttribute);
   }
 
   mutate (mutations) {
     mutations.forEach((mutation) => {
+      // TODO
       if (mutation.type === 'attributes' && mutation.attributeName === this.disclosure.attributeName) this.disclosure.change(this.disclosed);
     });
   }
@@ -25,16 +34,16 @@ class DisclosureButton {
   apply (value) {
     if (!this.hasAttribute) return;
     if (this.observer) this.observer.disconnect();
-    this.element.setAttribute(this.disclosure.attributeName, value);
+    this.element.setAttribute(this.attributeName, value);
     if (this.observer) this.observe();
   }
 
   get disclosed () {
-    return this.element.getAttribute(this.disclosure.attributeName) === 'true';
+    return this.element.node.getAttribute(this.attributeName) === 'true';
   }
 
   get hasFocus () {
-    return this.element === document.activeElement;
+    return this.element.node === document.activeElement;
   }
 }
 
