@@ -1,6 +1,6 @@
 <%
   const elements = [
-    {
+    /*{
       path:'reset',
       title:'Reset',
       wrapper: 'col-8'
@@ -28,17 +28,17 @@
     {
       path:'grid',
       title:'Grid'
-    },
+    },*/
     {
       path:'collapse',
       title:'Collapse',
       wrapper: 'col-8'
-    },
+    },/*
     {
       path:'utilities',
       title:'Utilitaires',
       wrapper: 'col-8'
-    }
+    }*/
   ];
 
   const accordions = [];
@@ -55,6 +55,7 @@
     accordions.push({
         label: element.title,
         collapseId: uniqueId('core'),
+        isExpanded: true,
         content: prepend + include(element.path + '/index') + append
     })
   }

@@ -2,4 +2,4 @@
 
 import './_index.scss';
 
-import '../../../examples/script';
+import '../../../examples/script.js.ejs';

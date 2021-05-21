@@ -30,19 +30,41 @@
  if (closeButton.size === undefined) closeButton.size = undefined;
  if (closeButton.label === undefined) closeButton.label = undefined;
 
- const gridClasses = [`${prefix}-col-12`];
+ const gridClasses = [];
+
+ const SIZES = {
+    sm: {
+     first: 12,
+     md: 6,
+     lg: 4
+    },
+    md: {
+     first: 12,
+     md: 8,
+     lg: 6
+    },
+    lg: {
+     first: 12,
+     md: 10,
+     lg: 8
+    },
+ }
+
+ const getGridClasses = (size) => {
+   const classes = [];
+   const settings = SIZES[size];
+    for (let bp in SIZES[size]) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp }-${settings[bp]}` );
+    return classes;
+ }
 
  switch(locals.size) {
     case 'sm':
-        gridClasses.push(`${prefix}-col-md-6`, `${prefix}-col-lg-4`);
-        break;
-
-    case 'lg':
-        gridClasses.push(`${prefix}-col-md-8`);
+     case 'lg':
+      gridClasses.push.apply(gridClasses, getGridClasses(locals.size));
         break;
 
     default:
-        gridClasses.push(`${prefix}-col-md-6`);
+        gridClasses.push.apply(gridClasses, getGridClasses('md'));
  }
 
  const titleId = id + '-title';

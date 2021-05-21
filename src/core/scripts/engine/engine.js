@@ -1,30 +1,38 @@
-import { Renderer } from './renderer';
-import { Initializer } from './initializer';
+import { Observer } from './element/observer.js';
+import { Renderer } from './modules/render/renderer.js';
+import { Resizer } from './modules/resize/resizer.js';
+import { ScrollLocker } from './modules/scroll/scroll-locker.js';
+import { Starter } from './modules/starter.js';
+import { version } from '../../config.js';
+import inspector from '../inspect/inspector';
+import state from './state';
 
 class Engine {
   constructor () {
-    this._isActive = false;
-    this._initializer = new Initializer();
-    this.register = this._initializer.register;
+    inspector.info(`version ${version}`);
+    this._observer = new Observer();
     this._renderer = new Renderer();
+    this._resizer = new Resizer();
+    this._locker = new ScrollLocker();
+
+    this._starter = new Starter(this.start.bind(this));
   }
 
   get isActive () {
-    return this._isActive;
+    return state.isActive;
   }
 
   set isActive (value) {
-    if (this._isActive === value) return;
-    this._isActive = value;
-    this._renderer.isRendering = value;
-    this._initializer.isActive = value;
+    state.isActive = value;
   }
 
   start () {
+    inspector.debug('START');
     this.isActive = true;
   }
 
   stop () {
+    inspector.debug('STOP');
     this.isActive = false;
   }
 }

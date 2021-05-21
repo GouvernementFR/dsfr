@@ -1,8 +1,7 @@
 import api from './api.js';
 import { ns } from './scripts/global/namespace.js';
 import { addClass, removeClass } from './scripts/manipulation/classes.js';
-import engine from './scripts/engine/engine.js';
-import { Instance } from './scripts/engine/instance.js';
+import { Instance } from './scripts/engine/element/instance.js';
 
 import { Disclosure } from './scripts/disclosure/disclosure.js';
 import { DisclosureButton } from './scripts/disclosure/disclosure-button.js';
@@ -16,7 +15,6 @@ import { Equisized } from './scripts/manipulation/size.js';
 api.ns = ns;
 api.addClass = addClass;
 api.removeClass = removeClass;
-api.engine = engine;
 
 api.core = {
   Instance: Instance,

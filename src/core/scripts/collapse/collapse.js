@@ -12,12 +12,16 @@ const ascendants = {};
  * et ajoute/eleve l'attribut hidden, sur le panel
  */
 class Collapse extends Disclosure {
-  constructor (element) {
-    super(element);
+  constructor () {
+    super();
     collapses.push(this);
     this.requesting = this.request.bind(this);
-    element.addEventListener('transitionend', this.transitionend.bind(this));
-    if (this.disclosed) this.unbound();
+    // if (this.disclosed) this.unbound();
+  }
+
+  init () {
+    super.init();
+    this.listen('transitionend', this.transitionend.bind(this));
   }
 
   gatherByAscendants () {
