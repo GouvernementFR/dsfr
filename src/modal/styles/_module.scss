@@ -117,7 +117,6 @@
     }
 
     @include margin-top(0);
-    @include margin-bottom(2v);
-    @include margin-bottom(4v, md);
+    @include margin-bottom(4v);
   }
 }

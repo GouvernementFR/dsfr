@@ -7,25 +7,28 @@
 * Consent service correspond à un bloc de finalité (titre, radios, description)
 **/
 #{ns(consent-service)} {
-  @include padding(5v 0 5v);
-  @include padding(5v 0 5v, md);
-  @include display-flex(column);
-  @include size(100%);
+  @include relative;
 
-  @include respond-from(md) {
-    @include display-flex(row,null,null,wrap);
+  > #{ns(fieldset)} {
+    @include padding(0 0 5v);
+    @include padding(0 0 5v, md);
+    @include display-flex(column);
+    @include size(100%);
+    position: initial;
 
-    & > * {
-      @include size(100%);
+    @include respond-from(md) {
+      @include display-flex(row,null,null,wrap);
     }
   }
 
   &:last-child {
-    @include padding(8v 0 4v);
-    @include padding(5v 0 4v, md);
+    > #{ns(fieldset)} {
+      @include padding(8v 0 4v);
+      @include padding(5v 0 4v, md);
 
-    #{ns(consent-service)}:last-child {
-      @include margin-bottom(0);
+      #{ns(consent-service)} > #{ns(fieldset)}:last-child {
+        @include margin-bottom(0);
+      }
     }
   }
 
@@ -34,14 +37,14 @@
   **/
   &__title {
     @include title-style(h6);
-    @include margin-bottom(3v);
-    @include padding(0);
-    @include margin-top(3v);
+    // @include margin-bottom(3v);
+    @include padding(8v 0 3v);
+    @include margin(0);
+    // @include margin-top(3v);
     float: left;
 
     @include respond-from(md) {
-      // @include margin-bottom(4v);
-      flex: 0 0 50%;
+      @include size(50%);
     }
   }
 
@@ -53,8 +56,10 @@
     @include margin-bottom(3v);
     @include margin-top(3v);
     @include margin-top(1v,md);
-    flex: 0 0 50%;
     @include margin-right(6v,md);
+    @include respond-from(md) {
+      @include size(60%);
+    }
   }
 
   /**
@@ -62,7 +67,9 @@
   **/
   &__collapse {
     @include margin-top(-1v);
-    @include margin-bottom(4v);
+    @include margin-bottom(3v);
+    @include size(100%);
+
     @include _nest-link($collapse-btn-settings, sm, right, arrow-down-s-line) {
       background: transparent;
       @include padding(0);
@@ -96,8 +103,9 @@
 
     @include respond-from(md) {
       @include display-flex(row,center,flex-end);
-      flex: 0 0 50%;
       @include margin-bottom(0);
+      @include absolute(5v, 0);
+      @include size(50%);
     }
   }
 
@@ -114,7 +122,7 @@
     &:not(:first-child) {
       @include before('','block') {
         @include size(1px, 6v);
-        position: absolute;
+        @include absolute;
         left: calc(#{space(-6v)} - 1px);
         top: space(3v);
       }
@@ -128,12 +136,21 @@
 #{ns(consent-services)} {
   @include margin-top(2v);
   @include margin-bottom(-2v);
+  @include size(100%);
 
   #{ns(consent-service)} {
     &,
     &:last-child {
       box-shadow: none;
-      @include padding(0);
+      > #{ns(fieldset)} {
+        @include padding(0);
+      }
+    }
+
+    &:last-child {
+      > #{ns(fieldset)} {
+        @include margin-bottom(5v);
+      }
     }
 
     & + #{ns(consent-service)} {
@@ -141,16 +158,17 @@
     }
 
     &__title {
-      @include margin-bottom(3v);
+      @include padding-top(3v);
+    }
+
+    &__radios {
+      top: 0;
     }
 
     &__desc {
       @include margin-bottom(3v);
+      @include margin-bottom(1v,md);
       @include margin-top(1v);
-    }
-
-    &:last-child {
-      @include margin-bottom(5v);
     }
   }
 }
