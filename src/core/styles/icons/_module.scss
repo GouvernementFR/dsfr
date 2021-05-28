@@ -16,11 +16,9 @@
 
 #{ns(fi)} {
   @each $size, $value in $icon-size-map {
-    @if $size != md {
-      &--#{$size} {
-        @include _pseudo(before after) {
-          font-size: #{icon-size($size)};
-        }
+    &--#{$size} {
+      @include _pseudo(before after) {
+        font-size: #{icon-size($size)} !important;
       }
     }
   }

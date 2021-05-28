@@ -16,7 +16,7 @@
 }
 
 @mixin icon-size($size:md) {
-  font-size: #{icon-size($size)};
+  font-size: #{icon-size($size)} !important;
 }
 
 @mixin with-icon($size:md) {
