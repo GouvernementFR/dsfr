@@ -47,12 +47,12 @@ data.newsletter = {
   form: {
     valid: locals.valid || null,
     error: locals.error || null,
-    hint: "En renseignant votre adresse email, vous acceptez de recevoir nos actualités par courrier électronique. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
+    hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel.",
     input: {
       id: "newsletter-email",
-      placeholder: "Votre adresse email",
+      placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
       name: "newsletter-email",
-      label: "Votre adresse email",
+      label: "Votre adresse électronique (ex. : nom@domaine.fr)",
       type: "email",
       valid: undefined,
       error: undefined,
@@ -60,7 +60,7 @@ data.newsletter = {
       attributes: inputAttributes
     },
     button: {
-      label: "S'abonner",
+      label: "S\'abonner",
       type: "submit",
       btnTitle: "S‘abonner à notre lettre d’information"
     },
