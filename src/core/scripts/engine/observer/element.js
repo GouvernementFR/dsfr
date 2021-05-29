@@ -13,7 +13,7 @@ class Element {
     this.instances = [];
     this._children = [];
     this._parent = null;
-    state.elements.add(this);
+    this._registrations = [];
   }
 
   get html () {
@@ -23,13 +23,12 @@ class Element {
 
   create (registration) {
     if (this.hasInstance(registration.InstanceClass)) {
-      inspector.warn(`instance of ${registration.InstanceClass.constructor.name} already exists on element [${this.id}]`);
+      inspector.debug(`instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
       return;
     }
-    const instance = new registration.InstanceClass();
+    const instance = registration.create(this);
     this.instances.push(instance);
     instance._config(this, registration);
-    return instance;
   }
 
   get parent () {
@@ -55,13 +54,22 @@ class Element {
     this._children.splice(index, 1);
   }
 
+  emit (type, data) {
+    const elements = state.getModule('observe').collection;
+    for (const element of elements) element._emit(type, data);
+  }
+
+  _emit (type, data) {
+    for (const instance of this.instances) instance._emitter.emit(type, data);
+  }
+
   ascend (type, data) {
     if (this._parent) this._parent._ascend(type, data);
   }
 
   _ascend (type, data) {
     for (const instance of this.instances) instance._ascent.emit(type, data);
-    if (this._parent) this._parent._ascend(data);
+    if (this._parent) this._parent._ascend(type, data);
   }
 
   descend (type, data) {
@@ -71,17 +79,6 @@ class Element {
   _descend (type, data) {
     for (const instance of this.instances) instance._descent.emit(type, data);
     for (const child of this._children) child._descend(type, data);
-  }
-
-  getDescendantInstances (InstanceClass, stopAtInstanceClass) {
-    const instances = [];
-    for (const child of this._children) {
-      if (stopAtInstanceClass && child.hasInstance(stopAtInstanceClass)) continue;
-      const instance = child.getInstance(InstanceClass);
-      if (instance) instances.push(instance);
-      instances.push.apply(instances, child.getDescendantInstances(InstanceClass, stopAtInstanceClass));
-    }
-    return instances;
   }
 
   getInstance (InstanceClass) {
@@ -94,11 +91,23 @@ class Element {
     return false;
   }
 
-  getAscendantInstance (InstanceClass) {
-    if (!this._parent) return null;
+  getDescendantInstances (InstanceClass, stopAtInstanceClass) {
+    if (!InstanceClass) return [];
+    const instances = [];
+    for (const child of this._children) {
+      const instance = child.getInstance(InstanceClass);
+      if (instance) instances.push(instance);
+      if (!stopAtInstanceClass || !child.hasInstance(stopAtInstanceClass)) instances.push.apply(instances, child.getDescendantInstances(InstanceClass, stopAtInstanceClass));
+    }
+    return instances;
+  }
+
+  getAscendantInstance (InstanceClass, stopAtInstanceClass) {
+    if (!InstanceClass || !this._parent) return null;
     const instance = this._parent.getInstance(InstanceClass);
     if (instance) return instance;
-    return this._parent.getAscendantInstance(InstanceClass);
+    if (stopAtInstanceClass && this._parent.hasInstance(stopAtInstanceClass)) return null;
+    return this._parent.getAscendantInstance(InstanceClass, stopAtInstanceClass);
   }
 
   remove (instance) {
@@ -109,7 +118,7 @@ class Element {
   dispose () {
     for (const instance of this.instances) instance._dispose();
     this.instances.length = 0;
-    state.elements.remove(this);
+    state.remove('observe', this);
     this.parent.removeChild(this);
     this._children.length = 0;
     inspector.debug(`remove element [${this.id}] ${this.html}`);
@@ -120,42 +129,4 @@ class Element {
   }
 }
 
-const root = new Element(document.documentElement, 'root');
-
-inspector.setRoot(root);
-
-const put = (element, branch) => {
-  let index = 0;
-  for (let i = branch.children.length - 1; i > -1; i--) {
-    const child = branch.children[i];
-    const position = element.node.compareDocumentPosition(child.node);
-    if (position & Node.DOCUMENT_POSITION_CONTAINS) {
-      put(element, child);
-      return;
-    } else if (position & Node.DOCUMENT_POSITION_CONTAINED_BY) {
-      branch.removeChild(child);
-      element.addChild(child);
-    } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
-      index = i + 1;
-      break;
-    }
-  }
-
-  branch.addChild(element, index);
-};
-
-const hasElement = (node) => {
-  for (const element of state.elements.collection) if (element.node === node) return true;
-  return false;
-};
-
-const getElement = (node) => {
-  for (const element of state.elements.collection) if (element.node === node) return element;
-  const element = new Element(node);
-  state.elements.add(element);
-  put(element, root);
-  inspector.debug(`add element [${element.id}] ${element.html}`);
-  return element;
-};
-
-export { hasElement, getElement, root };
+export { Element };

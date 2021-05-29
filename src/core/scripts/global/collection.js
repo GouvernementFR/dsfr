@@ -1,7 +1,8 @@
 class Collection {
   constructor () {
     this._collection = [];
-    this.forEach = this._collection.forEach;
+    this.forEach = this._collection.forEach.bind(this._collection);
+    this.map = this._collection.map.bind(this._collection);
   }
 
   add (collectable) {

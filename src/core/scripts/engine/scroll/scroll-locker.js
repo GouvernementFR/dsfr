@@ -1,12 +1,13 @@
-import { ns } from '../../../global/namespace.js';
-import state from '../../state';
+import { ns } from '../../global/namespace.js';
+import { Module } from '../module';
 
-class ScrollLocker {
+class ScrollLocker extends Module {
   constructor () {
+    super('lock');
     this._isLocked = false;
     this._scrollY = 0;
-    state.onPopulate = this.lock.bind(this);
-    state.onEmpty = this.unlock.bind(this);
+    this.collection.onPopulate = this.lock.bind(this);
+    this.collection.onEmpty = this.unlock.bind(this);
   }
 
   get isLocked () {
