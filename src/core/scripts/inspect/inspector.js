@@ -1,4 +1,5 @@
 import { namespace } from '../../config.js';
+import state from '../engine/state.js';
 
 class LogLevel {
   constructor (level, light, dark, logger) {
@@ -88,14 +89,17 @@ class Inspector {
     }
   }
 
-  setRoot (root) {
-    this.root = root;
+  state () {
+    const message = new Message(true);
+    message.add(state);
+    this.trace.print(message);
   }
 
   tree () {
-    if (!this.root) return;
+    const observer = state.getModule('observe');
+    if (!observer) return;
     const message = new Message(true);
-    this._branch(this.root, 0, message);
+    this._branch(observer.root, 0, message);
     this.trace.print(message);
   }
 

@@ -1,16 +1,12 @@
-import { GROUP_ATTR } from './constants.js';
+import { Instance } from '../engine/register/instance';
 
-const groups = [];
-
-class DisclosuresGroup {
-  constructor (id, element) {
-    this.id = id;
-    this.element = element;
-    this.members = [];
-    this._index = -1;
-    this._current = null;
-    groups.push(this);
+class DisclosuresGroup extends Instance {
+  constructor (DisclosureInstanceClass) {
+    super();
+    this.DisclosureInstanceClass = DisclosureInstanceClass;
   }
+
+  /*
 
   static getGroupById (id) {
     for (const group of groups) if (group.constructor === this && group.id === id) return group;
@@ -47,7 +43,13 @@ class DisclosuresGroup {
     }
   }
 
-  static get selector () { return ''; }
+   */
+
+  // static get selector () { return ''; }
+
+  get members () {
+    return this.element.getDescendantInstances(this.DisclosureInstanceClass, this.constructor.type);
+  }
 
   add (member) {
     if (this.members.indexOf(member) !== -1) return;
@@ -69,26 +71,45 @@ class DisclosuresGroup {
 
   get length () { return this.members.length; }
 
-  get index () { return this._index; }
+  get index () {
+    const members = this.members;
+    for (let i = 0; i < members.length; i++) {
+      if (members[i].disclosed) return i;
+    }
+    return -1;
+  }
 
   set index (value) {
-    if (value < -1 || value >= this.length || this._index === value) return;
-    if (this.current !== null) this.current.conceal(true, true);
-    this._index = value;
-    this._current = this._index > -1 ? this.members[this._index] : null;
-    if (this.current !== null) this.current.disclose(true);
+    const members = this.members;
+    if (value < -1 || value >= members.length) return;
+    for (let i = 0; i < members.length; i++) {
+      if (members[i].disclosed && value !== i) members[i].conceal(true, true);
+      if (!members[i].disclosed && value === i) members[i].disclose(true);
+    }
     this.apply();
   }
 
-  get current () { return this._current; }
+  get current () {
+    const members = this.members;
+    for (let i = 0; i < members.length; i++) {
+      if (members[i].disclosed) return members[i];
+    }
+    return null;
+  }
 
   set current (member) {
-    this.index = this.members.indexOf(member);
+    const members = this.members;
+    for (let i = 0; i < members.length; i++) {
+      if (members[i].disclosed && member !== members[i]) members[i].conceal(true, true);
+      if (!members[i].disclosed && member === members[i]) members[i].disclose(true);
+    }
+    this.apply();
   }
 
   get hasFocus () {
-    if (this.current === undefined) return null;
-    return this.current.hasFocus;
+    const current = this.current;
+    if (current === undefined) return false;
+    return current.hasFocus;
   }
 
   apply () {}

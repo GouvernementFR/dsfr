@@ -1,8 +1,7 @@
 import { ns } from '../../global/namespace.js';
 import { Emitter } from '../../global/emitter.js';
 import state from '../state.js';
-import BREAKPOINTS from '../modules/resize/breakpoints';
-import { register } from './registration';
+import BREAKPOINTS from '../resize/breakpoints';
 
 class Instance {
   constructor () {
@@ -10,6 +9,7 @@ class Instance {
     this._isResizing = false;
     this._isScrollLocked = false;
     this._listeners = {};
+    this._emitter = new Emitter();
     this._ascent = new Emitter();
     this._descent = new Emitter();
     this._registrations = [];
@@ -17,7 +17,7 @@ class Instance {
 
   _config (element, registration) {
     this.element = element;
-    this._registration = registration;
+    this.registration = registration;
     this.node = element.node;
     this.id = element.id;
     this.init();
@@ -26,8 +26,13 @@ class Instance {
   init () {}
 
   register (selector, InstanceClass) {
-    const registration = register(selector, InstanceClass);
+    const registration = state.getModule('register').register(selector, InstanceClass, this);
     this._registrations.push(registration);
+  }
+
+  getRegisteredInstances (InstanceClass) {
+    for (const registration of this._registrations) if (registration.InstanceClass === InstanceClass) return registration.instances.collection;
+    return [];
   }
 
   dispatch (type, data) {
@@ -61,8 +66,8 @@ class Instance {
 
   set isRendering (value) {
     if (this._isRendering === value) return;
-    if (value) state.renderables.add(this);
-    else state.renderables.remove(this);
+    if (value) state.add('render', this);
+    else state.remove('render', this);
     this._isRendering = value;
   }
 
@@ -72,8 +77,8 @@ class Instance {
 
   set isResizing (value) {
     if (this._isResizing === value) return;
-    if (value) state.resizables.add(this);
-    else state.resizables.remove(this);
+    if (value) state.add('resize', this);
+    else state.remove('resize', this);
     this._isResizing = value;
   }
 
@@ -89,13 +94,13 @@ class Instance {
 
   set isScrollLocked (value) {
     if (this._isScrollLocked === value) return;
-    if (value) state.scrollLockers.add(this);
-    else state.scrollLockers.remove(this);
+    if (value) state.add('lock', this);
+    else state.remove('lock', this);
     this._isScrollLocked = value;
   }
 
   examine () {
-    if (!this.element.node.matches(this._registration.selector)) this._dispose();
+    if (!this.element.node.matches(this.registration.selector)) this._dispose();
   }
 
   _dispose () {
@@ -104,18 +109,32 @@ class Instance {
     this.isRendering = false;
     this.isResizing = false;
     this.isScrollLocked = false;
+    this._emitter.dispose();
+    this._emitter = null;
     this._ascent.dispose();
     this._ascent = null;
     this._descent.dispose();
     this._descent = null;
-    this._registration.remove(this);
+    this.registration.remove(this);
     this.element.remove(this);
-    for (const registration of this._registrations) registration.dispose();
+    for (const registration of this._registrations) state.remove('register', registration);
     this._registrations = null;
     this.dispose();
   }
 
   dispose () {}
+
+  emit (type, data) {
+    this.element.emit(type, data);
+  }
+
+  addEmission (type, closure) {
+    this._emitter.add(type, closure);
+  }
+
+  removeEmission (type, closure) {
+    this._emitter.remove(type, closure);
+  }
 
   ascend (type, data) {
     this.element.ascend(type, data);

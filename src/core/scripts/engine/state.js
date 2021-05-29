@@ -1,14 +1,23 @@
-import { Collection } from '../global/collection';
-
 class State {
   constructor () {
-    this.elements = new Collection();
-    this.registrations = new Collection();
-    this.resizables = new Collection();
-    this.renderables = new Collection();
-    this.scrollLockers = new Collection();
-    this.activations = new Collection();
-    this.deactivations = new Collection();
+    this.modules = {};
+  }
+
+  create (ModuleClass) {
+    const module = new ModuleClass();
+    this.modules[module.type] = module;
+  }
+
+  getModule (type) {
+    return this.modules[type];
+  }
+
+  add (type, item) {
+    this.modules[type].add(item);
+  }
+
+  remove (type, item) {
+    this.modules[type].remove(item);
   }
 
   get isActive () {
@@ -19,8 +28,14 @@ class State {
     if (value === this._isActive) return;
     this._isActive = value;
     if (value) {
-      this.activations.execute();
-    } else this.deactivations.execute();
+      for (const module of Object.values(this.modules)) {
+        module.activate();
+      }
+    } else {
+      for (const module of Object.values(this.modules)) {
+        module.deactivate();
+      }
+    }
   }
 }
 
