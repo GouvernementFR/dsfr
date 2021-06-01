@@ -2,13 +2,16 @@
   .sample-box span {
     background-color: var(--bf500);
     color: var(--w);
-    opacity: 0.8;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 40px;
     min-height: 40px;
     position: relative;
+  }
+
+  .sample-box > span {
+    opacity: 0.8;
   }
 
   .sample-box > span:not(:first-child),
