@@ -1,7 +1,7 @@
 # Contributing
 ## Installation
 ### Installation locale
-Le Système de Design de l’État (ci-après, le **DSFR**) est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
+Le Système de Design de l’État (ci-après, le **DSFR**) est basé sur une architecture NodeJS, et utilise principalement Yarn. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
 
 Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il peut être nécessaire de lier son compte Github à son numéro de téléphone.
 
@@ -124,7 +124,7 @@ La couche javascript est structurée comme ceci, par exemple pour le composant `
 
 `api.js` : importe depuis core l'objet global qui contient les classes, variables et instances du DSFR (Fichier identique dans chaque package avec du js)
 `index.js` : Ajoute à l'objet global `api` des définitions de classes et variables spécifiques au composant
-`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js). Permet l'initialisation du composant. 
+`main.js`: importe l'index et le module à la racine (Fichier identique dans chaque package avec du js). Permet l'initialisation du composant.
 Un Dossier `scripts` qui contient :
 - `module.js` : initialise les classes js (ici navigation)
 - Un dossier par fonctionalité js, ici `navigation` contient :
