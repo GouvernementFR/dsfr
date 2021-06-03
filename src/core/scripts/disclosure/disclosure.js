@@ -3,12 +3,12 @@ import { Instance } from '../engine/register/instance.js';
 import { CONCEAL_EVENT, DISCLOSE_EVENT } from './events';
 
 class Disclosure extends Instance {
-  constructor (type, selector, DisclosureButtonInstanceClass, DisclosuresGroupInstanceClass) {
+  constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {
     super();
     this.type = type;
     this._selector = selector;
     this.DisclosureButtonInstanceClass = DisclosureButtonInstanceClass;
-    this.DisclosuresGroupInstanceClass = DisclosuresGroupInstanceClass;
+    this.disclosuresGroupInstanceClassName = disclosuresGroupInstanceClassName;
     this.modifier = this._selector + '--' + this.type.id;
     this.pristine = true;
   }
@@ -20,12 +20,12 @@ class Disclosure extends Instance {
   }
 
   get buttons () {
-    return this.getRegisteredInstances(this.DisclosureButtonInstanceClass);
+    return this.getRegisteredInstances(this.DisclosureButtonInstanceClass.name);
   }
 
   get group () {
-    if (!this.DisclosuresGroupInstanceClass) return null;
-    return this.element.getAscendantInstance(this.DisclosuresGroupInstanceClass, this.constructor);
+    if (!this.disclosuresGroupInstanceClassName) return null;
+    return this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.name);
   }
 
   disclose (withhold) {

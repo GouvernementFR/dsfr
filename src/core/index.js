@@ -1,6 +1,9 @@
 import api from './api.js';
 import { ns } from './scripts/global/namespace.js';
 import { addClass, removeClass } from './scripts/manipulation/classes.js';
+
+import engine from './scripts/engine/engine.js';
+import inspector from './scripts/inspect/inspector';
 import { Instance } from './scripts/engine/register/instance.js';
 
 import { Disclosure } from './scripts/disclosure/disclosure.js';
@@ -17,6 +20,12 @@ import { Equisized } from './scripts/manipulation/size.js';
 api.ns = ns;
 api.addClass = addClass;
 api.removeClass = removeClass;
+
+api.inspector = inspector;
+api.engine = engine;
+api.start = engine.start;
+api.stop = engine.stop;
+api.register = engine.register;
 
 api.core = {
   Instance: Instance,

@@ -1,72 +1,23 @@
 import { Instance } from '../engine/register/instance';
 
 class DisclosuresGroup extends Instance {
-  constructor (DisclosureInstanceClass) {
+  constructor (disclosureInstanceClassName) {
     super();
-    this.DisclosureInstanceClass = DisclosureInstanceClass;
+    this.disclosureInstanceClassName = disclosureInstanceClassName;
   }
 
-  /*
+  init () {
+    const members = this.members;
+    let current = null;
 
-  static getGroupById (id) {
-    for (const group of groups) if (group.constructor === this && group.id === id) return group;
-    return new this(id);
-  }
-
-  static getGroupByElement (element) {
-    for (const group of groups) if (group.element === element) return group;
-    return new this(false, element);
-  }
-
-  static groupById (member, groupConstructor) {
-    const id = member.element.getAttribute(GROUP_ATTR);
-    if (id === null) return;
-
-    const group = groupConstructor.getGroupById(id);
-    group.add(member);
-  }
-
-  static groupByParent (member, GroupConstructor, groupSelector) {
-    if (groupSelector === undefined) groupSelector = GroupConstructor.selector;
-    if (groupSelector === '') return;
-    let element = member.element.parentElement;
-
-    while (element) {
-      if (element.classList.contains(member.constructor.selector)) return;
-
-      if (element.classList.contains(groupSelector)) {
-        const group = GroupConstructor.getGroupByElement(element);
-        group.add(member);
-        return;
-      }
-      element = element.parentElement;
+    for (let i = 0; i < members.length; i++) {
+      if (current) members[i].conceal(true, true);
+      else if (members[i].disclosed) current = members[i];
     }
   }
-
-   */
-
-  // static get selector () { return ''; }
 
   get members () {
-    return this.element.getDescendantInstances(this.DisclosureInstanceClass, this.constructor.type);
-  }
-
-  add (member) {
-    if (this.members.indexOf(member) !== -1) return;
-    this.members.push(member);
-    member.setGroup(this);
-
-    switch (true) {
-      case this.current !== null:
-      case !member.disclosed && !(member.primary && member.primary.disclosed):
-        member.disclosed = false;
-        break;
-
-      default:
-        this._current = member;
-        this._index = this.members.indexOf(member);
-        member.disclosed = true;
-    }
+    return this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
   }
 
   get length () { return this.members.length; }

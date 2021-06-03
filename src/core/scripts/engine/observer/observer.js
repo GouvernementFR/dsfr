@@ -42,7 +42,7 @@ class Observer extends Module {
         return;
       } else if (position & Node.DOCUMENT_POSITION_CONTAINED_BY) {
         branch.removeChild(child);
-        element.addChild(child);
+        element.addChild(child, 0);
       } else if (position & Node.DOCUMENT_POSITION_PRECEDING) {
         index = i + 1;
         break;

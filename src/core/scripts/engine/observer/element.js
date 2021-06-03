@@ -13,7 +13,6 @@ class Element {
     this.instances = [];
     this._children = [];
     this._parent = null;
-    this._registrations = [];
   }
 
   get html () {
@@ -22,7 +21,7 @@ class Element {
   }
 
   create (registration) {
-    if (this.hasInstance(registration.InstanceClass)) {
+    if (this.hasInstance(registration.InstanceClass.name)) {
       inspector.debug(`instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
       return;
     }
@@ -81,33 +80,36 @@ class Element {
     for (const child of this._children) child._descend(type, data);
   }
 
-  getInstance (InstanceClass) {
-    for (const instance of this.instances) if (instance instanceof InstanceClass) return instance;
+  getInstance (instanceClassName) {
+    for (const instance of this.instances) if (instance.constructor.name === instanceClassName) return instance;
     return null;
   }
 
-  hasInstance (InstanceClass) {
-    for (const instance of this.instances) if (instance instanceof InstanceClass) return true;
+  hasInstance (instanceClassName) {
+    for (const instance of this.instances) if (instance.constructor.name === instanceClassName) return true;
     return false;
   }
 
-  getDescendantInstances (InstanceClass, stopAtInstanceClass) {
-    if (!InstanceClass) return [];
+  getDescendantInstances (instanceClassName, stopAtInstanceClassName, stopAtFirstInstance) {
+    if (!instanceClassName) return [];
     const instances = [];
     for (const child of this._children) {
-      const instance = child.getInstance(InstanceClass);
-      if (instance) instances.push(instance);
-      if (!stopAtInstanceClass || !child.hasInstance(stopAtInstanceClass)) instances.push.apply(instances, child.getDescendantInstances(InstanceClass, stopAtInstanceClass));
+      const instance = child.getInstance(instanceClassName);
+      if (instance) {
+        instances.push(instance);
+        if (stopAtFirstInstance) continue;
+      }
+      if ((!stopAtInstanceClassName || !child.hasInstance(stopAtInstanceClassName)) && child.children.length) instances.push.apply(instances, child.getDescendantInstances(instanceClassName, stopAtInstanceClassName, stopAtFirstInstance));
     }
     return instances;
   }
 
-  getAscendantInstance (InstanceClass, stopAtInstanceClass) {
-    if (!InstanceClass || !this._parent) return null;
-    const instance = this._parent.getInstance(InstanceClass);
+  getAscendantInstance (instanceClassName, stopAtInstanceClassName) {
+    if (!instanceClassName || !this._parent) return null;
+    const instance = this._parent.getInstance(instanceClassName);
     if (instance) return instance;
-    if (stopAtInstanceClass && this._parent.hasInstance(stopAtInstanceClass)) return null;
-    return this._parent.getAscendantInstance(InstanceClass, stopAtInstanceClass);
+    if (stopAtInstanceClassName && this._parent.hasInstance(stopAtInstanceClassName)) return null;
+    return this._parent.getAscendantInstance(instanceClassName, stopAtInstanceClassName);
   }
 
   remove (instance) {
