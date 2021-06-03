@@ -30,8 +30,8 @@ class Instance {
     this._registrations.push(registration);
   }
 
-  getRegisteredInstances (InstanceClass) {
-    for (const registration of this._registrations) if (registration.InstanceClass === InstanceClass) return registration.instances.collection;
+  getRegisteredInstances (instanceClassName) {
+    for (const registration of this._registrations) if (registration.InstanceClass.name === instanceClassName) return registration.instances.collection;
     return [];
   }
 

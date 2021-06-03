@@ -19,7 +19,7 @@ class Engine {
 
     const registerModule = state.getModule('register');
     this.register = registerModule.register.bind(registerModule);
-    this._starter = new Starter(this.start.bind(this));
+    this.starter = new Starter(this.start.bind(this));
   }
 
   get isActive () {
@@ -37,4 +37,5 @@ class Engine {
   }
 }
 
-export { Engine };
+const engine = new Engine();
+export default engine;
