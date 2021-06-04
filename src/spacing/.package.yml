@@ -1,0 +1,24 @@
+id: spacing
+title: Page de test - espacements
+description: package de test
+styles:
+  - core
+  - links
+example:
+  styles:
+    - header
+    - footer
+    - breadcrumb
+    - cards
+    - callouts
+    - highlights
+    - pagination
+    - sidemenu
+    - search
+  scripts:
+    - navigation
+    - header
+    - modal
+    - breadcrumb
+    - sidemenu
+

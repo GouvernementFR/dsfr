@@ -1,0 +1,103 @@
+////
+/// Utilities Module : Spacing
+/// @group tools
+////
+
+@function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
+  $start: str_slice($prop, 1, 1);
+
+  @if $side != null {
+    $start: '#{str_slice($prop, 1, 1)}#{str_slice($side, 1, 1)}';
+  }
+
+  $middle: '';
+
+  @if $breakpoint != null {
+    $middle: '#{$breakpoint}-';
+  }
+
+  $end: quote($value);
+
+  @if type-of($value) == 'number' and $value < 0 {
+    $end: 'n#{abs($value)}';
+  }
+
+  @if $value != 0 and $unit != null {
+    $end: '#{$end}#{$unit}';
+  }
+
+  $selector: '#{$start}-#{$middle}#{$end}';
+
+  @return $selector;
+}
+
+@function _spacing-selectors($prop, $side, $value, $breakpoint) {
+  @if type-of($value) != 'number' {
+    @return '#{ns(_spacing-name($prop, $side, $value, null, $breakpoint))}';
+  }
+
+  $w: null;
+  @if (abs($value) % 2) == 0 and $value != 0 {
+    $w: abs($value) / 2;
+  }
+
+  $selectors:'#{ns(_spacing-name($prop, $side, $value, v, $breakpoint))}';
+
+  @if $w != null {
+    $selectors: '#{$selectors},#{ns(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
+  }
+
+  @return $selectors;
+}
+
+@mixin _spacing-property-variations($prop:margin, $value:1, $breakpoint: null) {
+  $v: $value;
+
+  @if type-of($value) == 'number' {
+    $v: space('#{$value}v') !important;
+  }
+
+  #{_spacing-selectors($prop, null, $value, $breakpoint)} {
+    #{$prop}: $v;
+  }
+
+  @each $dir, $sides in (x:left right, y: top bottom) {
+    @each $side in $sides {
+      #{_spacing-selectors($prop, $side, $value, $breakpoint)},
+      #{_spacing-selectors($prop, $dir, $value, $breakpoint)} {
+        #{$prop}-#{$side}: $v;
+      }
+    }
+  }
+}
+
+@mixin _spacing-properties($props, $breakpoint:null) {
+  @each $prop, $settings in $props {
+    $from: map_get($settings, from);
+    $through: map_get($settings, through);
+    $special: map_get($settings, special);
+
+    @for $i from $from through $through {
+      @include _spacing-property-variations($prop, $i, $breakpoint);
+    }
+
+    @if $special != null {
+      @include _spacing-property-variations($prop, $special, $breakpoint);
+    }
+  }
+}
+
+@mixin create-spacing-properties($settings) {
+
+  $props: map_get($settings, props);
+
+  @include _spacing-properties($props);
+
+  @if map_has_key($settings, breakpoints) {
+    @each $breakpoint in map_get($settings, breakpoints) {
+      @include respond-from($breakpoint) {
+        @include _spacing-properties($props, $breakpoint);
+      }
+    }
+  }
+}
