@@ -82,6 +82,7 @@
     flex: auto 0 0;
     @include display-flex(null, center);
     @include padding(4v 4v 2v);
+    @include padding(4v, md);
   }
 
   &__content {
@@ -111,13 +112,13 @@
   &__title {
     @include title-style('h4');
     @include font-weight('bold');
+    @include scheme-element-text-color(g800);
 
     @include has-icon {
       @include margin-right(2v);
     }
 
     @include margin-top(0);
-    @include margin-bottom(2v);
-    @include margin-bottom(4v, md);
+    @include margin-bottom(4v);
   }
 }
