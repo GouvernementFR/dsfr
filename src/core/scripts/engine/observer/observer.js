@@ -27,6 +27,12 @@ class Observer extends Module {
     return element;
   }
 
+  getProxy (node) {
+    if (!this.hasElement(node)) return null;
+    const element = this.getElement(node);
+    return element.proxy;
+  }
+
   add (element) {
     super.add(element);
     this.put(element, this.root);
@@ -53,7 +59,6 @@ class Observer extends Module {
   }
 
   activate () {
-    for (const registration of state.getModule('register').collection) if (!registration.isMounted) this.parse(document.documentElement, registration);
     this.observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true });
   }
 
@@ -82,7 +87,6 @@ class Observer extends Module {
 
   modify () {
     for (const node of this.modifications) {
-      inspector.debug('modify', node);
       if (this.hasElement(node)) this.getElement(node).examine();
       this.parse(node, null, true);
     }

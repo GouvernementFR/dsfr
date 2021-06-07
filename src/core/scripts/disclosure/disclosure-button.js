@@ -16,6 +16,14 @@ class DisclosureButton extends Instance {
     this.observe();
   }
 
+  get proxy () {
+    const scope = this;
+    return {
+      ...super.proxy,
+      focus: scope.focus.bind(scope)
+    };
+  }
+
   observe () {
     this.observer.observe(this.element.node, { attributes: true, attributeFilter: [this.attributeName] });
   }

@@ -15,19 +15,39 @@ class Element {
     this._parent = null;
   }
 
+  get proxy () {
+    const scope = this;
+    if (!this._proxy) {
+      this._proxy = {
+        id: this.id,
+        get parent () {
+          return scope.parent ? scope.parent.proxy : null;
+        },
+        get children () {
+          return scope.children.map((child) => child.proxy);
+        }
+      };
+
+      for (const instance of this.instances) this._proxy[instance.registration.property] = instance.proxy;
+    }
+    return this._proxy;
+  }
+
   get html () {
     const end = this.node.outerHTML.indexOf('>');
     return this.node.outerHTML.substring(0, end + 1);
   }
 
   create (registration) {
+    inspector.debug(`create instance of ${registration.InstanceClass.name} on element [${this.id}]`);
     if (this.hasInstance(registration.InstanceClass.name)) {
-      inspector.debug(`instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
+      inspector.debug(`failed creation, instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
       return;
     }
     const instance = registration.create(this);
     this.instances.push(instance);
     instance._config(this, registration);
+    if (this._proxy) this._proxy[registration.property] = instance.proxy;
   }
 
   get parent () {
@@ -115,6 +135,7 @@ class Element {
   remove (instance) {
     const index = this.instances.indexOf(instance);
     if (index > -1) this.instances.splice(index, 1);
+    if (this._proxy) delete this._proxy[instance.registration.property];
   }
 
   dispose () {

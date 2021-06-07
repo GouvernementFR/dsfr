@@ -19,6 +19,19 @@ class Disclosure extends Instance {
     this.register(`[aria-controls="${this.id}"`, this.DisclosureButtonInstanceClass);
   }
 
+  get proxy () {
+    const scope = this;
+    return {
+      ...super.proxy,
+      disclose: scope.disclose.bind(scope),
+      conceal: scope.conceal.bind(scope),
+      focus: scope.focus.bind(scope),
+      get buttons () {
+        return scope.buttons.map((button) => button.proxy);
+      }
+    };
+  }
+
   get buttons () {
     return this.getRegisteredInstances(this.DisclosureButtonInstanceClass.name);
   }

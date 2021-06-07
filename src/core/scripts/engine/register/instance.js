@@ -2,6 +2,7 @@ import { ns } from '../../global/namespace.js';
 import { Emitter } from '../../global/emitter.js';
 import state from '../state.js';
 import BREAKPOINTS from '../resize/breakpoints';
+import inspector from '../../inspect/inspector';
 
 class Instance {
   constructor () {
@@ -24,6 +25,23 @@ class Instance {
   }
 
   init () {}
+
+  get proxy () {
+    // const scope = this;
+    return {
+      /*
+      get isRendering () {
+        return scope.isRendering;
+      },
+      get isResizing () {
+        return scope.isResizing;
+      },
+      get isScrollLocked () {
+        return scope.isScrollLocked;
+      }
+       */
+    };
+  }
 
   register (selector, InstanceClass) {
     const registration = state.getModule('register').register(selector, InstanceClass, this);
@@ -104,6 +122,7 @@ class Instance {
   }
 
   _dispose () {
+    inspector.debug(`dispose instance of ${this.registration.InstanceClass.name} on element [${this.element.id}]`);
     this.unlisten();
     this.scrolling = true;
     this.isRendering = false;
