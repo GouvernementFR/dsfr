@@ -22,6 +22,11 @@ class Engine {
     this.starter = new Starter(this.start.bind(this));
   }
 
+  configure (configuration) {
+    if (configuration.verbose === true) inspector.level = 0;
+    this.starter.setMode(configuration.startMode || 'auto');
+  }
+
   get isActive () {
     return state.isActive;
   }

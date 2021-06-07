@@ -16,6 +16,32 @@ class DisclosuresGroup extends Instance {
     }
   }
 
+  get proxy () {
+    const scope = this;
+    return {
+      ...super.proxy,
+      set index (value) {
+        scope.index = value;
+      },
+      get index () {
+        return scope.index;
+      },
+      get length () {
+        return scope.length;
+      },
+      get current () {
+        const current = scope.current;
+        return current ? current.proxy : null;
+      },
+      get members () {
+        return scope.members.map((member) => member.proxy);
+      },
+      get hasFocus () {
+        return scope.hasFocus;
+      }
+    };
+  }
+
   get members () {
     return this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
   }
@@ -59,8 +85,8 @@ class DisclosuresGroup extends Instance {
 
   get hasFocus () {
     const current = this.current;
-    if (current === undefined) return false;
-    return current.hasFocus;
+    if (current) return current.hasFocus;
+    return false;
   }
 
   apply () {}

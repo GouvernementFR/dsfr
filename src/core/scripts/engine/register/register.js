@@ -10,8 +10,12 @@ class Register extends Module {
   register (selector, InstanceClass, creator) {
     const registration = new Registration(selector, InstanceClass, creator);
     this.add(registration);
-    if (state.isActive) state.getModule('observe').parse(document.documentElement, registration);
+    if (state.isActive) registration.introduce();
     return registration;
+  }
+
+  activate () {
+    for (const registration of this.collection) registration.introduce();
   }
 
   remove (registration) {
