@@ -5,7 +5,7 @@
 
 #{ns(alert)} {
   @include relative();
-  @include padding(4v 9v 4v 14v);
+  @include padding(4v 9v 3v 14v);
   @include icon(null, md);
 
   @include before {
@@ -13,18 +13,8 @@
     @include padding(4v 2v);
   }
 
-  // @include title() {
-  //   @include title-style(h5);
-  //   @include margin(0);
-
-  //   + #{ns(alert)}__text {
-  //     @include margin-top(1v);
-  //   }
-  // }
-
-  &__text {
-    @include text-style(md);
-    @include margin(0);
+  & > * {
+    @include margin-bottom(1v);
   }
 
   #{ns(link--close)} {
@@ -53,7 +43,7 @@
   }
 
   &--sm {
-    @include padding(2v 9v 2v 12v);
+    @include padding(2v 9v 1v 12v);
 
     @include before {
       @include padding(2v 2v);

@@ -1,6 +1,6 @@
 <%
  let data = {
-   title: (locals.title === false) ? false : 'Titre',
+   title: (locals.title === false) ? false : locals.title ? locals.title : 'Titre',
    text: locals.text || 'Description',
   };
  %>

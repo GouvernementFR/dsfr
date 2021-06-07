@@ -1,7 +1,7 @@
 <%
  let data = {
    id: uniqueId('alert'),
-   text: 'Cliquer sur la croix pour fermer l\'alerte',
+   text: locals.text || 'Cliquer sur la croix pour fermer l\'alerte',
    collapse: true
   };
  %>

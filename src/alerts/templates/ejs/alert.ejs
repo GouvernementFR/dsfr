@@ -36,15 +36,11 @@
   <div role="alert" <%- includeClasses(classes); %>>
 
     <% if(locals.title) { %>
-      <% if(locals.text) { %>
-      <h5 class="<%= prefix %>-h5 <%= prefix %>-mb-1v"><%= title %></h5>
-      <% } else { %>
-      <h5 class="<%= prefix %>-h5 <%= prefix %>-mb-0"><%= title %></h5>
-      <% } %>
+      <p class="<%= prefix %>-h5"><%= title %></p>
     <% } %>
 
-    <% if(locals.text) { %>
-      <%- include('../../../core/templates/ejs/typography/paragraph', {content: text, size: 'md', classes: [`${prefix}-mb-0`]}) %>
+    <% if(text) { %>
+      <p><%= text %></p>
     <% } %>
 
     <% if(locals.collapse || buttonClose) { %>
