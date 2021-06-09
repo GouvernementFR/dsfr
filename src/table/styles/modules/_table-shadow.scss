@@ -27,11 +27,4 @@ $shadow-wrapper: #{ns(table__wrapper)};
       }
     }
   }
-
-  table {
-    @include size(100%);
-    display: block;
-    overflow-y: hidden;
-    overflow-x: auto;
-  }
 }

@@ -27,25 +27,27 @@ if (locals.layout) classes.push(prefix + '-table--layout-fixed');
 %>
 
 <div <%- includeClasses(classes) %>>
-    <table>
-        <% if (locals.caption !== undefined) { %>
-            <caption><%= caption %></caption>
-        <% } %>
-        <thead>
-            <tr>
-                <% for(var j = 0; j < locals.col; j++) { %>
-                    <th scope="col"> th<%= j %> </th>
-                <% } %>
-            </tr>
-        </thead>
-        <tbody>
-            <% for(var i = 0; i < locals.row; i++) { %>
-            <tr>
-                <% for(var j = 0; j < locals.col; j++) { %>
-                    <td><%- lorem().slice(0,Math.floor(Math.random() * 50)) %></td>
-                <% } %>
-            </tr>
+    <div class="<%= prefix %>-table__wrapper">
+        <table>
+            <% if (locals.caption !== undefined) { %>
+                <caption><%= caption %></caption>
             <% } %>
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <% for(var j = 0; j < locals.col; j++) { %>
+                        <th scope="col"> th<%= j %> </th>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < locals.row; i++) { %>
+                <tr>
+                    <% for(var j = 0; j < locals.col; j++) { %>
+                        <td><%- lorem().slice(0,Math.floor(Math.random() * 50)) %></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
 </div>

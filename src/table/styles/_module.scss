@@ -2,7 +2,6 @@
 /// Table Module
 /// @group Table
 ////
-
 #{ns(table)} {
   @include relative;
   overflow: hidden;
@@ -15,8 +14,18 @@
     }
   }
 
+  &[data-fr-js="true"] {
+    table {
+      overflow-x: auto;
+    }
+  }
+
   table {
+    @include size(100%);
     border-spacing: 0;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
 
   caption {

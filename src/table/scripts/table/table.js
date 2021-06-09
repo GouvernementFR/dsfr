@@ -3,7 +3,7 @@ import {
   SHADOW_CLASS,
   SHADOW_LEFT_CLASS,
   SHADOW_RIGHT_CLASS,
-  WRAPPER_CLASS,
+  // WRAPPER_CLASS,
   LEFT,
   RIGHT,
   CAPTION_BOTTOM_CLASS, SCROLL_OFFSET
@@ -22,7 +22,7 @@ class Table {
     this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
     this.caption = this.tableElem.querySelector('caption');
     this.captionHeight = 0;
-    this.wrap();
+    // this.wrap();
 
     const scrolling = this.change.bind(this);
     this.tableElem.addEventListener('scroll', scrolling);
@@ -60,13 +60,13 @@ class Table {
   }
 
   /* ajoute un wrapper autour du tableau */
-  wrap () {
+  /* wrap () {
     const wrapperHtml = document.createElement('div');
     wrapperHtml.className = WRAPPER_CLASS;
     this.table.insertBefore(wrapperHtml, this.tableElem);
     wrapperHtml.appendChild(this.tableElem);
     this.tableInnerWrapper = wrapperHtml;
-  }
+  } */
 
   /* affiche les blocs shadow en fonction de la position du scroll, en ajoutant la classe visible */
   setShadowPosition () {
