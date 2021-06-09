@@ -6,13 +6,57 @@
 @if (map-get($reset-settings, list)) {
   @include enable-list-style;
 
+  ul,
+  ol {
+    @include margin(0);
+    @include padding(0);
+    padding-inline-start: var(--xl-start);
+    margin-block-start: var(--xl-block);
+    margin-block-end: var(--xl-block);
+
+    --xl-size: var(--xl-base);
+  }
+
+  ul {
+    list-style-type: var(--ul-type);
+
+    > li {
+      @include marker {
+        font-size: calc(var(--xl-size) * 0.9);
+      }
+    }
+  }
+
+  ol {
+    list-style-type: var(--ol-type);
+    counter-reset: li-counter;
+
+    > li {
+      counter-increment: li-counter;
+      @include marker {
+        font-size: var(--xl-size);
+        font-weight: bold;
+        content: counters(li-counter, ".") ". ";
+      }
+    }
+  }
+
+  li {
+    --xl-base: calc(var(--xl-size) * 0.9);
+    @include padding-bottom(var(--li-bottom));
+  }
+
+  /*
   ol,
   ul {
-    @include list-reset;
+
+    @include margin(0);
     @include padding(var(--li-pt) 0 var(--li-pb) var(--li-pl));
   }
 
   ul {
+    list-style-type: var(--li-content);
+
     --li-content: var(--ul-content);
     --li-font-weight: inherit;
     --li-increment: none;
@@ -20,6 +64,7 @@
 
   ol {
     counter-reset: var(--ol-increment);
+    list-style-type: li-counter;
 
     --li-content: var(--ol-content);
     --li-font-weight: var(--ol-font-weight);
@@ -29,12 +74,14 @@
   li {
     counter-increment: var(--li-increment);
 
-    @include before(var(--li-content)) {
+    @include marker() {
       @include margin-right(1v);
       font-weight: var(--li-font-weight);
     }
+
     @include padding-bottom(var(--li-pb));
   }
+  */
 
   #{ns(raw-list)} {
     @include disable-list-style;
