@@ -1,15 +1,16 @@
 import state from '../state.js';
 import { Element } from './element';
 import { Module } from '../module.js';
+import { Root } from './root';
 import inspector from '../../inspect/inspector';
 
-class Observer extends Module {
+class Stage extends Module {
   constructor () {
-    super('observe');
+    super('stage');
     this.modifications = [];
     this.requireModification = false;
     this.modifying = this.modify.bind(this);
-    this.root = new Element(document.documentElement, 'root');
+    this.root = new Root();
     super.add(this.root);
     this.observer = new MutationObserver(this.mutate.bind(this));
   }
@@ -134,4 +135,4 @@ class Creation {
   }
 }
 
-export { Observer };
+export { Stage };

@@ -1,8 +1,8 @@
 import state from './engine/state';
 
 const api = (node) => {
-  const observer = state.getModule('observe');
-  return observer.getProxy(node);
+  const stage = state.getModule('stage');
+  return stage.getProxy(node);
 };
 
 export default api;

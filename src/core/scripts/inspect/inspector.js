@@ -96,10 +96,10 @@ class Inspector {
   }
 
   tree () {
-    const observer = state.getModule('observe');
-    if (!observer) return;
+    const stage = state.getModule('observe');
+    if (!stage) return;
     const message = new Message(true);
-    this._branch(observer.root, 0, message);
+    this._branch(stage.root, 0, message);
     this.trace.print(message);
   }
 
