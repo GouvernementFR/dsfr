@@ -11,9 +11,10 @@
   }
 
   @include nest($selector) {
-    --ul-type: "● ";
+    --ul-type: "●\00a0\00a0";
     --ol-type: decimal;
-    --xl-start: #{space(6v)};
+    --ul-start: #{space(4v)};
+    --ol-start: #{space(6v)};
     --xl-block: #{space(2v)};
     --li-bottom: #{space(1v)};
     --xl-base: 1em;
@@ -23,7 +24,8 @@
 @mixin disable-list-style() {
   --ul-type: none;
   --ol-type: none;
-  --xl-start: 0;
+  --ul-start: 0;
+  --ol-start: 0;
   --xl-block: 0;
   --li-bottom: 0;
 }
