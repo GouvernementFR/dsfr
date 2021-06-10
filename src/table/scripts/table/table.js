@@ -15,7 +15,7 @@ class Table {
 
   init (table) {
     this.table = table;
-    this.table.setAttribute(api.core.ns.attr('js'), 'true'); // TODO: code provisoire en attendant la refact du JS dynamique
+    // this.table.setAttribute(api.core.ns.attr('js-table'), 'true'); // TODO: code provisoire en attendant la refact du JS dynamique
     this.tableElem = this.table.querySelector('table');
     this.tableContent = this.tableElem.querySelector('tbody');
     this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;

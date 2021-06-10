@@ -2,21 +2,16 @@
 /// Table Module
 /// @group Table
 ////
+
 #{ns(table)} {
   @include relative;
-  overflow: hidden;
+  overflow: visible;
   max-width: 100%;
   @include margin-bottom(10v);
 
   &:not(#{ns(table--no-scroll)}) {
     table {
       width: 100%;
-    }
-  }
-
-  &[data-fr-js="true"] {
-    table {
-      overflow-x: auto;
     }
   }
 

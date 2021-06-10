@@ -3,8 +3,6 @@
 /// @group Table
 ////
 
-$shadow-wrapper: #{ns(table__wrapper)};
-
 /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */
@@ -13,18 +11,12 @@ $shadow-wrapper: #{ns(table__wrapper)};
     @include absolute;
   }
 
-  #{$shadow-wrapper} {
-    overflow: visible;
-    @include relative;
-
-    table {
-      @include before('', block) {
-        @include absolute(0, 0, 0, 0);
-        @include z-index(over);
-        opacity: 1;
-        pointer-events: none;
-        transition: box-shadow ease-out 0.2s;
-      }
+  table {
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0);
+      @include z-index(over);
+      opacity: 1;
+      pointer-events: none;
     }
   }
 }
