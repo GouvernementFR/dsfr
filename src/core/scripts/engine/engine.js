@@ -1,5 +1,5 @@
 import { Register } from './register/register.js';
-import { Observer } from './observer/observer.js';
+import { Stage } from './stage/stage.js';
 import { Renderer } from './render/renderer.js';
 import { Resizer } from './resize/resizer.js';
 import { ScrollLocker } from './scroll/scroll-locker.js';
@@ -12,7 +12,7 @@ class Engine {
   constructor () {
     inspector.info(`version ${version}`);
     state.create(Register);
-    state.create(Observer);
+    state.create(Stage);
     state.create(Renderer);
     state.create(Resizer);
     state.create(ScrollLocker);

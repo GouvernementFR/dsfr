@@ -1,5 +1,6 @@
 import { Collection } from '../../global/collection';
 import state from '../state';
+import { ns } from '../../global/namespace';
 
 class Registration {
   constructor (selector, InstanceClass, creator) {
@@ -10,12 +11,20 @@ class Registration {
     this.isIntroduced = false;
     const name = this.InstanceClass.name;
     this._property = name.substring(0, 1).toLowerCase() + name.substring(1);
+    const dashed = name
+      .replace(/[^a-zA-Z0-9]+/g, '-')
+      .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+      .replace(/([a-z])([A-Z])/g, '$1-$2')
+      .replace(/([0-9])([^0-9])/g, '$1-$2')
+      .replace(/([^0-9])([0-9])/g, '$1-$2')
+      .toLowerCase();
+    this._attribute = ns.attr(`js-${dashed}`);
   }
 
   introduce () {
     if (this.isIntroduced) return;
     this.isIntroduced = true;
-    state.getModule('observe').parse(document.documentElement, this);
+    state.getModule('stage').parse(document.documentElement, this);
   }
 
   parse (node, nonRecursive) {
@@ -46,6 +55,10 @@ class Registration {
 
   get property () {
     return this._property;
+  }
+
+  get attribute () {
+    return this._attribute;
   }
 }
 

@@ -47,7 +47,15 @@ class Element {
     const instance = registration.create(this);
     this.instances.push(instance);
     instance._config(this, registration);
+    this.node.setAttribute(registration.attribute, true);
     if (this._proxy) this._proxy[registration.property] = instance.proxy;
+  }
+
+  remove (instance) {
+    const index = this.instances.indexOf(instance);
+    if (index > -1) this.instances.splice(index, 1);
+    this.node.removeAttribute(instance.registration.attribute);
+    if (this._proxy) delete this._proxy[instance.registration.property];
   }
 
   get parent () {
@@ -74,7 +82,7 @@ class Element {
   }
 
   emit (type, data) {
-    const elements = state.getModule('observe').collection;
+    const elements = state.getModule('stage').collection;
     for (const element of elements) element._emit(type, data);
   }
 
@@ -132,16 +140,10 @@ class Element {
     return this._parent.getAscendantInstance(instanceClassName, stopAtInstanceClassName);
   }
 
-  remove (instance) {
-    const index = this.instances.indexOf(instance);
-    if (index > -1) this.instances.splice(index, 1);
-    if (this._proxy) delete this._proxy[instance.registration.property];
-  }
-
   dispose () {
     for (const instance of this.instances) instance._dispose();
     this.instances.length = 0;
-    state.remove('observe', this);
+    state.remove('stage', this);
     this.parent.removeChild(this);
     this._children.length = 0;
     inspector.debug(`remove element [${this.id}] ${this.html}`);
