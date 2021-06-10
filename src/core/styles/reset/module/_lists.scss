@@ -48,43 +48,6 @@
     @include padding-bottom(var(--li-bottom));
   }
 
-  /*
-  ol,
-  ul {
-
-    @include margin(0);
-    @include padding(var(--li-pt) 0 var(--li-pb) var(--li-pl));
-  }
-
-  ul {
-    list-style-type: var(--li-content);
-
-    --li-content: var(--ul-content);
-    --li-font-weight: inherit;
-    --li-increment: none;
-  }
-
-  ol {
-    counter-reset: var(--ol-increment);
-    list-style-type: li-counter;
-
-    --li-content: var(--ol-content);
-    --li-font-weight: var(--ol-font-weight);
-    --li-increment: var(--ol-increment);
-  }
-
-  li {
-    counter-increment: var(--li-increment);
-
-    @include marker() {
-      @include margin-right(1v);
-      font-weight: var(--li-font-weight);
-    }
-
-    @include padding-bottom(var(--li-pb));
-  }
-  */
-
   #{ns(raw-list)} {
     @include disable-list-style;
   }
