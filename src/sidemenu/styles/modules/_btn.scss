@@ -29,7 +29,7 @@
     }
   }
 
-  &[aria-expanded="true" i] {
+  &[aria-expanded="true"] {
     border: 0;
     @include before {
       transform: rotate(-180deg);

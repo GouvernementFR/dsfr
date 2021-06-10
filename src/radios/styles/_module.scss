@@ -14,7 +14,7 @@
   &:first-child {
     @include margin-top(-3v);
 
-    input[type="radio" i] + label {
+    input[type="radio"] + label {
       @include margin-top(0);
     }
   }
@@ -25,7 +25,7 @@
   &:last-child {
     @include margin-bottom(-3v);
 
-    input[type="radio" i] + label {
+    input[type="radio"] + label {
       @include radio-rich() {
         @include margin-bottom(6v);
       }
@@ -35,7 +35,7 @@
   /**
    * On cache l'input de type radio pour le styler via le label
    */
-  input[type="radio" i] {
+  input[type="radio"] {
     @include absolute;
     opacity: 0;
 
@@ -91,7 +91,7 @@
    * Modificateur pour la taille sm
    */
   &--sm {
-    input[type="radio" i] {
+    input[type="radio"] {
       & + label {
         @include before {
           @include size(4v, 4v);

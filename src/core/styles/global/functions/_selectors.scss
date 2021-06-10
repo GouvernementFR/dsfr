@@ -23,7 +23,7 @@
 /// @access public
 /// @param {String} $name - nom de l'attribut
 /// @param {String} $value - valeur de l'attribut
-@function ns-attr($name, $value: null, $case-insensitive: true, $no-brackets:false) {
+@function ns-attr($name, $value: null, $no-brackets:false) {
   $attr: 'data-#{ns($name, "")}';
   @if $no-brackets {
     @return $attr;
@@ -32,11 +32,7 @@
     @return '[' + $attr + ']';
   }
   @else {
-    $i: '';
-    @if $case-insensitive {
-      $i: ' i';
-    }
-    @return '[' + $attr + '="' + $value + '"' + $i + ']';
+    @return '[' + $attr + '="' + $value + '"]';
   }
 }
 

@@ -16,7 +16,7 @@
     @include link-underline;
   }
 
-  [target="_blank" i] {
+  [target="_blank"] {
     @include link-blank;
   }
 

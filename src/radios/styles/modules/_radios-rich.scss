@@ -1,6 +1,6 @@
 #{ns(radio-rich)} {
 
-  input[type="radio" i] + #{ns(label)} {
+  input[type="radio"] + #{ns(label)} {
 
     @include padding-left(14v);
     min-height: space(22v);
@@ -53,18 +53,18 @@
 #{ns(fieldset)} {
   #{ns(radio-rich)} {
     &:first-child {
-      input[type="radio" i] + label {
+      input[type="radio"] + label {
         @include margin-top(3v);
       }
     }
 
-    input[type="radio" i] + label {
+    input[type="radio"] + label {
       @include margin-top(2v);
       @include margin-bottom(4v);
     }
 
     &:last-child {
-      input[type="radio" i] + label {
+      input[type="radio"] + label {
         @include margin-bottom(7v);
       }
     }
@@ -76,7 +76,7 @@
   &--inline {
     #{ns(radio-rich)} {
       &:not(:last-child) {
-        input[type="radio" i] + label {
+        input[type="radio"] + label {
           @include margin-right(3v);
           @include margin-bottom(2v);
         }
@@ -85,7 +85,7 @@
       &:last-child {
         margin-bottom: 0;
 
-        input[type="radio" i] + label {
+        input[type="radio"] + label {
           @include margin-bottom(3v);
         }
       }
@@ -97,7 +97,7 @@
     #{ns(hint-text)} + #{ns(fieldset__content)} {
       #{ns(radio-rich)} {
         &:first-child {
-          input[type="radio" i] + label {
+          input[type="radio"] + label {
             @include margin-top(6v);
           }
         }
