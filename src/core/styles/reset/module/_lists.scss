@@ -6,34 +6,46 @@
 @if (map-get($reset-settings, list)) {
   @include enable-list-style;
 
-  ol,
-  ul {
-    @include list-reset;
-    @include padding(var(--li-pt) 0 var(--li-pb) var(--li-pl));
+  ul,
+  ol {
+    @include margin(0);
+    @include padding(0);
+
+    margin-block-start: var(--xl-block);
+    margin-block-end: var(--xl-block);
+
+    --xl-size: var(--xl-base);
   }
 
   ul {
-    --li-content: var(--ul-content);
-    --li-font-weight: inherit;
-    --li-increment: none;
+    list-style-type: var(--ul-type);
+    padding-inline-start: var(--ul-start);
+
+    > li {
+      @include marker {
+        font-size: calc(var(--xl-size) * 0.9);
+      }
+    }
   }
 
   ol {
-    counter-reset: var(--ol-increment);
+    list-style-type: var(--ol-type);
+    padding-inline-start: var(--ol-start);
+    counter-reset: li-counter;
 
-    --li-content: var(--ol-content);
-    --li-font-weight: var(--ol-font-weight);
-    --li-increment: var(--ol-increment);
+    > li {
+      counter-increment: li-counter;
+      @include marker {
+        font-size: var(--xl-size);
+        font-weight: bold;
+        content: counters(li-counter, ".") ".\00a0\00a0";
+      }
+    }
   }
 
   li {
-    counter-increment: var(--li-increment);
-
-    @include before(var(--li-content)) {
-      @include margin-right(1v);
-      font-weight: var(--li-font-weight);
-    }
-    @include padding-bottom(var(--li-pb));
+    --xl-base: calc(var(--xl-size) * 0.9);
+    @include padding-bottom(var(--li-bottom));
   }
 
   #{ns(raw-list)} {
