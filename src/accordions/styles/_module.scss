@@ -26,7 +26,7 @@
       @include margin-left(auto);
     }
 
-    &[aria-expanded="true" i] {
+    &[aria-expanded="true"] {
       @include font-weight('bold');
 
       @include before {
