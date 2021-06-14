@@ -41,8 +41,13 @@ class DisclosuresGroup extends Instance {
     };
   }
 
+  validate (member) {
+    return true;
+  }
+
   getMembers () {
-    this._members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
+    const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
+    this._members = members.filter(this.validate.bind(this));
   }
 
   update () {

@@ -112,13 +112,12 @@ class Element {
   }
 
   getInstance (instanceClassName) {
-    for (const instance of this.instances) if (instance.constructor.name === instanceClassName) return instance;
+    for (const instance of this.instances) if (instance.registration.names.indexOf(instanceClassName) > -1) return instance;
     return null;
   }
 
   hasInstance (instanceClassName) {
-    for (const instance of this.instances) if (instance.constructor.name === instanceClassName) return true;
-    return false;
+    return this.getInstance(instanceClassName) !== null;
   }
 
   getDescendantInstances (instanceClassName, stopAtInstanceClassName, stopAtFirstInstance) {

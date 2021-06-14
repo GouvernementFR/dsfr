@@ -10,6 +10,7 @@ class Registration {
     this.instances = new Collection();
     this.isIntroduced = false;
     const name = this.InstanceClass.name;
+    this.names = this.getPrototypeName(this.InstanceClass);
     this._property = name.substring(0, 1).toLowerCase() + name.substring(1);
     const dashed = name
       .replace(/[^a-zA-Z0-9]+/g, '-')
@@ -19,6 +20,12 @@ class Registration {
       .replace(/([^0-9])([0-9])/g, '$1-$2')
       .toLowerCase();
     this._attribute = ns.attr(`js-${dashed}`);
+  }
+
+  getPrototypeName (InstanceClass) {
+    const prototype = Object.getPrototypeOf(InstanceClass);
+    if (!prototype || prototype.name === 'Instance') return [InstanceClass.name];
+    return [...this.getPrototypeName(prototype), InstanceClass.name];
   }
 
   introduce () {
@@ -47,7 +54,6 @@ class Registration {
   }
 
   dispose () {
-    console.log('dispose registration', this.selector, this.instances);
     const instances = this.instances.collection;
     for (let i = instances.length - 1; i > -1; i--) instances[i]._dispose();
     this.creator = null;
