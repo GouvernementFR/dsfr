@@ -11,10 +11,16 @@
   @include padding(8v, md);
   @include text-style(xs);
 
-  --summary-offset: 0.535;
+  /**
+   * la base de l'espace occupé par le marker est calculé sur 2 nbsp (270 em-square)
+   */
+  --summary-offset: 0.54;
 
+  /**
+   * on ajoute l'écart des éléments ajoutés à chaque sous niveau : un chiffre (600 em-square) et un point (270 em-square)
+   */
   ol {
-    --summary-base: calc(var(--summary-offset) + 0.875);
+    --summary-base: calc(var(--summary-offset) + 0.87);
   }
 
   li {
