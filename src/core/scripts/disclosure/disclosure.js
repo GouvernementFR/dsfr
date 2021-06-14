@@ -50,8 +50,18 @@ class Disclosure extends Instance {
   }
 
   getGroup () {
-    if (!this.disclosuresGroupInstanceClassName) this._group = null;
-    else this._group = this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.name);
+    if (!this.disclosuresGroupInstanceClassName) {
+      this._group = null;
+      return;
+    }
+
+    const group = this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.name);
+    if (!group || !group.validate(this)) {
+      this._group = null;
+      return;
+    }
+
+    this._group = group;
   }
 
   get group () {
