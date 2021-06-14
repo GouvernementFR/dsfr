@@ -1,19 +1,18 @@
 import { Instance } from '../engine/register/instance';
+import { DisclosureEmissions } from './disclosure-emissions';
 
 class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName) {
     super();
     this.disclosureInstanceClassName = disclosureInstanceClassName;
+    this._index = -1;
   }
 
   init () {
-    const members = this.members;
-    let current = null;
-
-    for (let i = 0; i < members.length; i++) {
-      if (current) members[i].conceal(true, true);
-      else if (members[i].disclosed) current = members[i];
-    }
+    this.addAscent(DisclosureEmissions.ADDED, this.update.bind(this));
+    this.addAscent(DisclosureEmissions.REMOVED, this.update.bind(this));
+    this.descend(DisclosureEmissions.GROUP);
+    this.update();
   }
 
   get proxy () {
@@ -42,45 +41,51 @@ class DisclosuresGroup extends Instance {
     };
   }
 
+  getMembers () {
+    this._members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
+  }
+
+  update () {
+    this.getMembers();
+    this.getIndex();
+  }
+
   get members () {
-    return this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
+    return this._members;
   }
 
   get length () { return this.members.length; }
 
-  get index () {
-    const members = this.members;
-    for (let i = 0; i < members.length; i++) {
-      if (members[i].disclosed) return i;
+  getIndex () {
+    this._index = -1;
+    for (let i = 0; i < this.length; i++) {
+      if (this.index > -1) this.members[i].conceal(true, true);
+      else if (this.members[i].disclosed) {
+        this.index = i;
+      }
     }
-    return -1;
+  }
+
+  get index () {
+    return this._index;
   }
 
   set index (value) {
-    const members = this.members;
-    if (value < -1 || value >= members.length) return;
-    for (let i = 0; i < members.length; i++) {
-      if (members[i].disclosed && value !== i) members[i].conceal(true, true);
-      if (!members[i].disclosed && value === i) members[i].disclose(true);
+    if (value < -1 || value >= this.length || value === this._index) return;
+    this._index = value;
+    for (let i = 0; i < this.length; i++) {
+      if (value === i) this.members[i].disclose(true);
+      else this.members[i].conceal(true, true);
     }
     this.apply();
   }
 
   get current () {
-    const members = this.members;
-    for (let i = 0; i < members.length; i++) {
-      if (members[i].disclosed) return members[i];
-    }
-    return null;
+    return this._index === -1 ? null : this.members[this._index];
   }
 
   set current (member) {
-    const members = this.members;
-    for (let i = 0; i < members.length; i++) {
-      if (members[i].disclosed && member !== members[i]) members[i].conceal(true, true);
-      if (!members[i].disclosed && member === members[i]) members[i].disclose(true);
-    }
-    this.apply();
+    this.index = this.members.indexOf(member);
   }
 
   get hasFocus () {
@@ -90,6 +95,12 @@ class DisclosuresGroup extends Instance {
   }
 
   apply () {}
+
+  dispose () {
+    super.dispose();
+    this.descend(DisclosureEmissions.UNGROUP);
+    this._members = null;
+  }
 }
 
 export { DisclosuresGroup };

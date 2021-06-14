@@ -54,6 +54,7 @@ class Element {
   remove (instance) {
     const index = this.instances.indexOf(instance);
     if (index > -1) this.instances.splice(index, 1);
+    instance.registration.remove(instance);
     this.node.removeAttribute(instance.registration.attribute);
     if (this._proxy) delete this._proxy[instance.registration.property];
   }
@@ -65,6 +66,8 @@ class Element {
   get children () {
     return this._children;
   }
+
+  // TODO : emit ascendant et descendant de changement
 
   addChild (child, index) {
     if (this._children.indexOf(child) > -1) return null;

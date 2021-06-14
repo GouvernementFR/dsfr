@@ -1,6 +1,6 @@
 import { Disclosure } from '../disclosure/disclosure.js';
 import { COLLAPSE_CLASS } from './constants.js';
-import { DISCLOSURE_TYPES } from '../disclosure/disclosure-types.js';
+import { DisclosureTypes } from '../disclosure/disclosure-types.js';
 import { CollapseButton } from './collapse-button';
 
 /**
@@ -10,9 +10,7 @@ import { CollapseButton } from './collapse-button';
  */
 class Collapse extends Disclosure {
   constructor () {
-    super(DISCLOSURE_TYPES.expand, COLLAPSE_CLASS, CollapseButton, 'CollapsesGroup');
-    this.requesting = this.request.bind(this);
-    // if (this.disclosed) this.unbound();
+    super(DisclosureTypes.EXPAND, COLLAPSE_CLASS, CollapseButton, 'CollapsesGroup');
   }
 
   init () {
@@ -33,17 +31,17 @@ class Collapse extends Disclosure {
     this.unbound();
     this.adjust();
     this.requested = () => { super.disclose(withhold); };
-    window.requestAnimationFrame(this.requesting);
+    this.requestNext();
   }
 
   conceal (withhold, preventFocus) {
     if (!this.disclosed) return;
     this.adjust();
     this.requested = () => { super.conceal(withhold, preventFocus); };
-    window.requestAnimationFrame(this.requesting);
+    this.requestNext();
   }
 
-  request () {
+  next () {
     if (this.requested) this.requested();
     this.requested = null;
   }

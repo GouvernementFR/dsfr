@@ -1,17 +1,17 @@
-export const DISCLOSURE_TYPES = {
-  expand: {
+export const DisclosureTypes = {
+  EXPAND: {
     id: 'expanded',
     ariaState: true,
     ariaControls: true,
     canConceal: true
   },
-  select: {
+  SELECT: {
     id: 'selected',
     ariaState: true,
     ariaControls: true,
     canConceal: false
   },
-  opened: {
+  OPENED: {
     id: 'opened',
     ariaState: false,
     ariaControls: true,

@@ -1,4 +1,3 @@
-import { ns } from '../../global/namespace.js';
 import { Emitter } from '../../global/emitter.js';
 import state from '../state.js';
 import BREAKPOINTS from '../resize/breakpoints';
@@ -27,19 +26,10 @@ class Instance {
   init () {}
 
   get proxy () {
-    // const scope = this;
+    const scope = this;
     return {
-      /*
-      get isRendering () {
-        return scope.isRendering;
-      },
-      get isResizing () {
-        return scope.isResizing;
-      },
-      get isScrollLocked () {
-        return scope.isScrollLocked;
-      }
-       */
+      render: () => scope.render(),
+      resize: () => scope.resize()
     };
   }
 
@@ -53,8 +43,8 @@ class Instance {
     return [];
   }
 
-  dispatch (type, data) {
-    const event = new CustomEvent(ns.event(type), data);
+  dispatch (type, detail, bubbles, cancelable) {
+    const event = new CustomEvent(type, { detail: detail, bubble: bubbles === true, cancelable: cancelable === true });
     this.element.node.dispatchEvent(event);
   }
 
@@ -100,6 +90,10 @@ class Instance {
     this._isResizing = value;
   }
 
+  requestNext () {
+    state.getModule('render').nexts.add(this);
+  }
+
   resize () {}
 
   isBreakpoint (id) {
@@ -127,6 +121,7 @@ class Instance {
     this.scrolling = true;
     this.isRendering = false;
     this.isResizing = false;
+    state.getModule('render').nexts.remove(this);
     this.isScrollLocked = false;
     this._emitter.dispose();
     this._emitter = null;
@@ -134,7 +129,6 @@ class Instance {
     this._ascent = null;
     this._descent.dispose();
     this._descent = null;
-    this.registration.remove(this);
     this.element.remove(this);
     for (const registration of this._registrations) state.remove('register', registration);
     this._registrations = null;
