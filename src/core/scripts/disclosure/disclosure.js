@@ -1,6 +1,7 @@
 import { addClass, removeClass } from '../manipulation/classes.js';
 import { Instance } from '../engine/register/instance.js';
-import { CONCEAL_EVENT, DISCLOSE_EVENT } from './events';
+import { DisclosureEvents } from './disclosure-events.js';
+import { DisclosureEmissions } from './disclosure-emissions.js';
 
 class Disclosure extends Instance {
   constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {
@@ -15,8 +16,12 @@ class Disclosure extends Instance {
 
   init () {
     this.id = this.element.node.id;
-    this.addDescent('disclosure_reset', this.reset.bind(this));
+    this.addDescent(DisclosureEmissions.RESET, this.reset.bind(this));
+    this.addDescent(DisclosureEmissions.GROUP, this.update.bind(this));
+    this.addDescent(DisclosureEmissions.UNGROUP, this.update.bind(this));
     this.register(`[aria-controls="${this.id}"`, this.DisclosureButtonInstanceClass);
+    this.ascend(DisclosureEmissions.ADDED);
+    this.update();
   }
 
   get proxy () {
@@ -28,6 +33,10 @@ class Disclosure extends Instance {
       focus: scope.focus.bind(scope),
       get buttons () {
         return scope.buttons.map((button) => button.proxy);
+      },
+      get group () {
+        const group = scope.group;
+        return group ? group.proxy : null;
       }
     };
   }
@@ -36,9 +45,17 @@ class Disclosure extends Instance {
     return this.getRegisteredInstances(this.DisclosureButtonInstanceClass.name);
   }
 
+  update () {
+    this.getGroup();
+  }
+
+  getGroup () {
+    if (!this.disclosuresGroupInstanceClassName) this._group = null;
+    else this._group = this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.name);
+  }
+
   get group () {
-    if (!this.disclosuresGroupInstanceClassName) return null;
-    return this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.name);
+    return this._group;
   }
 
   disclose (withhold) {
@@ -57,7 +74,7 @@ class Disclosure extends Instance {
     if (!preventFocus) this.focus();
     const group = this.group;
     if (!withhold && group) group.current = null;
-    this.descend('disclosure_reset');
+    this.descend(DisclosureEmissions.RESET);
     return true;
   }
 
@@ -67,7 +84,7 @@ class Disclosure extends Instance {
 
   set disclosed (value) {
     if (this._disclosed === value) return;
-    this.dispatch(value ? DISCLOSE_EVENT : CONCEAL_EVENT, this.type);
+    this.dispatch(value ? DisclosureEvents.DISCLOSE : DisclosureEvents.CONCEAL, this.type);
     this._disclosed = value;
     if (value) addClass(this.element.node, this.modifier);
     else removeClass(this.element.node, this.modifier);
@@ -111,9 +128,12 @@ class Disclosure extends Instance {
       }
     }
   }
-}
 
-Disclosure.DISCLOSE_EVENT = DISCLOSE_EVENT;
-Disclosure.CONCEAL_EVENT = CONCEAL_EVENT;
+  dispose () {
+    this._group = null;
+    super.dispose();
+    this.ascend(DisclosureEmissions.REMOVED);
+  }
+}
 
 export { Disclosure };
