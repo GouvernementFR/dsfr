@@ -4,7 +4,7 @@ class Breakpoint {
   }
 
   test () {
-    return window.matchMedia((`min-width: ${this.minWidth}em`)).matches;
+    return window.matchMedia(`(min-width: ${this.minWidth}em)`).matches;
   }
 }
 

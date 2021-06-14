@@ -1,6 +1,9 @@
 import api from './api.js';
-import { Navigation } from './scripts/navigation/navigation';
+import { NavigationItem } from './scripts/navigation/navigation-item';
+// import { Navigation } from './scripts/navigation/navigation';
 
-api.Navigation = Navigation;
+api.navigation = {
+  NavigationItem: NavigationItem
+};
 
 export default api;
