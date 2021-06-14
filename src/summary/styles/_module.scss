@@ -11,24 +11,25 @@
   @include padding(8v, md);
   @include text-style(xs);
 
+  --summary-offset: 0.535;
+
+  ol {
+    --summary-base: calc(var(--summary-offset) + 0.875);
+  }
+
+  li {
+    --summary-offset: var(--summary-base);
+  }
+
   @include title {
     @include margin(0 0 2v);
     font-weight: font-weight(bold);
     text-transform: uppercase;
   }
 
-  li {
-    position: relative;
-    @include padding(0);
-    @include before(none);
-  }
-
   &__link {
-    @include before(var(--li-content)) {
-      @include padding-right(1v);
-    }
     display: inline-block;
-    @include padding(2v);
-    @include margin-x(-2v);
+    @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + #{space(2v)}));
+    @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - #{space(2v)}));
   }
 }
