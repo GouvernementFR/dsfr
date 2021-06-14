@@ -17,6 +17,10 @@
     @include margin-bottom(1v);
   }
 
+  &__title {
+    @include title-style(h6);
+  }
+
   #{ns(link--close)} {
     @include absolute(1v,3v);
     @include nest-link(sm, only, null, null, false, false);
