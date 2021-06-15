@@ -39,6 +39,7 @@
     @include margin-top(0);
     @include margin-bottom(4v);
     @include text-style(xs);
+    order: -1;
   }
 
   &__title {
