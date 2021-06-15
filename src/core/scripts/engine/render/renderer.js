@@ -17,7 +17,10 @@ class Renderer extends Module {
     if (!state.isActive) return;
     window.requestAnimationFrame(this.rendering);
     this.forEach((instance) => instance.render());
-    this.nexts.forEach((instance) => instance.next());
+    if (!this.nexts.length) return;
+    const nexts = this.nexts.clone();
+    this.nexts.clear();
+    nexts.forEach((instance) => instance.next());
   }
 }
 

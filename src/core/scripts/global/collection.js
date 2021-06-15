@@ -1,8 +1,18 @@
 class Collection {
   constructor () {
     this._collection = [];
-    this.forEach = this._collection.forEach.bind(this._collection);
-    this.map = this._collection.map.bind(this._collection);
+  }
+
+  forEach (callback) {
+    this._collection.forEach(callback);
+  }
+
+  map (callback) {
+    return this._collection.map(callback);
+  }
+
+  get length () {
+    return this._collection.length;
   }
 
   add (collectable) {
@@ -23,6 +33,16 @@ class Collection {
 
   execute (...args) {
     for (const collectable of this._collection) if (collectable) collectable.apply(null, args);
+  }
+
+  clear () {
+    this._collection.length = 0;
+  }
+
+  clone () {
+    const clone = new Collection();
+    clone._collection = this._collection.slice();
+    return clone;
   }
 
   get collection () {

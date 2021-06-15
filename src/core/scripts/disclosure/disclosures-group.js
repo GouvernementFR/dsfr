@@ -79,8 +79,12 @@ class DisclosuresGroup extends Instance {
     if (value < -1 || value >= this.length || value === this._index) return;
     this._index = value;
     for (let i = 0; i < this.length; i++) {
-      if (value === i) this.members[i].disclose(true);
-      else this.members[i].conceal(true, true);
+      const member = this.members[i];
+      if (value === i) {
+        member.disclose(true);
+      } else {
+        member.conceal(true, true);
+      }
     }
     this.apply();
   }

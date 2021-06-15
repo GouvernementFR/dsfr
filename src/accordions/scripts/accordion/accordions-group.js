@@ -1,11 +1,10 @@
 import api from '../../api.js';
-import { ACCORDION_COLLAPSE_SELECTOR } from './constants';
+import { AccordionSelectors } from './accordion-selectors';
 
 class AccordionsGroup extends api.core.CollapsesGroup {
   validate (member) {
-    return member.element.node.matches(ACCORDION_COLLAPSE_SELECTOR);
+    return member.element.node.matches(AccordionSelectors.COLLAPSE);
   }
 }
 
 export { AccordionsGroup };
-
