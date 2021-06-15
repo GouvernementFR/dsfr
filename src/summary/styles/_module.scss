@@ -21,10 +21,16 @@
    */
   ol {
     --summary-base: calc(var(--summary-offset) + 0.87);
+    list-style-type: none;
   }
 
   li {
     --summary-offset: var(--summary-base);
+    @include marker(none);
+
+    &:nth-of-type(1n + 10) {
+      --summary-offset: calc(var(--summary-base) + 0.4);
+    }
   }
 
   @include title {
@@ -35,6 +41,12 @@
 
   &__link {
     display: inline-block;
+    position: relative;
+    @include before(var(--ol-content)) {
+      @include absolute(null, null, null, 2v);
+      font-size: var(--xl-size);
+      font-weight: bold;
+    }
     @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + #{space(2v)}));
     @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - #{space(2v)}));
   }
