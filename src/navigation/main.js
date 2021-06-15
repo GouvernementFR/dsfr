@@ -1,6 +1,6 @@
 import api from './index';
-import { NAVIGATION_ITEM_SELECTOR } from './scripts/navigation/constants';
 
-api.register(NAVIGATION_ITEM_SELECTOR, api.navigation.NavigationItem);
+api.register(api.navigation.NavigationSelectors.NAVIGATION, api.navigation.Navigation);
+api.register(api.navigation.NavigationSelectors.ITEM, api.navigation.NavigationItem);
 
 export default api;

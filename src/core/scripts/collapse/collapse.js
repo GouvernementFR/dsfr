@@ -1,5 +1,5 @@
 import { Disclosure } from '../disclosure/disclosure.js';
-import { COLLAPSE_CLASS } from './constants.js';
+import { CollapseSelectors } from './collapse-selectors.js';
 import { DisclosureTypes } from '../disclosure/disclosure-types.js';
 import { CollapseButton } from './collapse-button';
 
@@ -10,7 +10,7 @@ import { CollapseButton } from './collapse-button';
  */
 class Collapse extends Disclosure {
   constructor () {
-    super(DisclosureTypes.EXPAND, COLLAPSE_CLASS, CollapseButton, 'CollapsesGroup');
+    super(DisclosureTypes.EXPAND, CollapseSelectors.COLLAPSE, CollapseButton, 'CollapsesGroup');
   }
 
   init () {

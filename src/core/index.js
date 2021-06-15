@@ -13,10 +13,11 @@ import { DisclosuresGroup } from './scripts/disclosure/disclosures-group.js';
 import { DisclosureTypes } from './scripts/disclosure/disclosure-types.js';
 import { DisclosureEvents } from './scripts/disclosure/disclosure-events.js';
 import { DisclosureEmissions } from './scripts/disclosure/disclosure-emissions.js';
-import { KeyListener } from './scripts/key-listener/key-listener.js';
 import { CollapseButton } from './scripts/collapse/collapse-button.js';
 import { Collapse } from './scripts/collapse/collapse.js';
 import { CollapsesGroup } from './scripts/collapse/collapses-group.js';
+import { CollapseSelectors } from './scripts/collapse/collapse-selectors';
+import { KeyListener } from './scripts/key-listener/key-listener.js';
 import { Equisized } from './scripts/manipulation/size.js';
 
 
@@ -44,6 +45,7 @@ api.core = {
   Collapse: Collapse,
   CollapseButton: CollapseButton,
   CollapsesGroup: CollapsesGroup,
+  CollapseSelectors: CollapseSelectors,
   KeyListener: KeyListener,
   Equisized: Equisized
 };
