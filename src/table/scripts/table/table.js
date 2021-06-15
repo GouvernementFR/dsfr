@@ -5,7 +5,7 @@ import {
   SHADOW_RIGHT_CLASS,
   LEFT,
   RIGHT,
-  CAPTION_BOTTOM_CLASS, SCROLL_OFFSET
+  SCROLL_OFFSET
 } from './constants.js';
 
 class Table {
@@ -17,14 +17,14 @@ class Table {
     this.table = table;
     // this.table.setAttribute(api.core.ns.attr('js-table'), 'true'); // TODO: code provisoire en attendant la refact du JS dynamique
     this.tableElem = this.table.querySelector('table');
+    this.table.style.setProperty('--table-offset', this.tableElem.querySelector('caption').offsetHeight + 'px');
     this.tableContent = this.tableElem.querySelector('tbody');
     this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
     this.caption = this.tableElem.querySelector('caption');
     this.captionHeight = 0;
-
     const scrolling = this.change.bind(this);
     this.tableElem.addEventListener('scroll', scrolling);
-    this.change();
+    this.change()
   }
 
   change () {
@@ -32,7 +32,7 @@ class Table {
     let firstTimeScrollable = this.tableElem.offsetWidth > this.table.offsetWidth;
     if (newScroll || firstTimeScrollable) {
       this.scroll();
-      this.handleCaption();
+      // this.handleCaption();
     } else {
       if (newScroll !== this.isScrollable) this.delete();
     }
@@ -89,21 +89,15 @@ class Table {
     }
   }
 
-  /* positionne la caption en top négatif et ajoute un margin-top au wrapper */
-  handleCaption () {
+  /* positionne la caption en top négatif et ajoute un margin-top au table */
+  /* handleCaption () {
     if (this.caption) {
-      const style = getComputedStyle(this.caption);
-      const newHeight = this.caption.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
-      this.captionHeight = newHeight;
-      if (this.table.classList.contains(CAPTION_BOTTOM_CLASS)) {
-        this.tableElem.style.marginBottom = this.captionHeight + 'px';
-        this.caption.style.bottom = -this.captionHeight + 'px';
-      } else {
-        this.tableElem.style.marginTop = this.captionHeight + 'px';
-        this.caption.style.top = -this.captionHeight + 'px';
-      }
+      const table = this.table.querySelectorAll('table');
+      this.captionHeight = this.caption.offsetHeight;
+      console.log('this.captionHeight ===>', this.captionHeight);
+      this.table.style.setProperty('--caption-height', this.captionHeight);
     }
-  }
+  } */
 
   /* ajoute la classe fr-table--shadow-right ou fr-table--shadow-right sur fr-table
    en fonction d'une valeur de scroll et du sens (right, left) */

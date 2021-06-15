@@ -17,6 +17,7 @@
 
   table {
     @include size(100%);
+    @include margin-top(calc(var(--table-offset) + 16px));
     border-spacing: 0;
     display: block;
     overflow-y: hidden;
@@ -24,7 +25,9 @@
   }
 
   caption {
+    @include absolute(calc((var(--table-offset) + 16px) * -1), 0, 0, 0);
     @include title-style(h4, true);
+    height: var(--table-offset);
     font-weight: bold;
     text-align: left;
   }
@@ -65,6 +68,8 @@
   * Cache la caption
   */
   &--no-caption {
+    @include margin-top(0);
+
     caption {
       @include sr-only();
     }
@@ -74,9 +79,15 @@
   * Fixe le caption en bas du tableau
   */
   &--caption-bottom {
+    @include margin-bottom(15v);
+
+    table {
+      @include margin-top(0);
+      @include margin-bottom(calc(var(--table-offset) + 32px));
+    }
+
     caption {
-      @include margin-bottom(0);
-      @include margin-top(4v);
+      @include absolute(calc(100% + 16px), 0, 0, 0);
       caption-side: bottom;
     }
   }
@@ -90,6 +101,10 @@
     caption {
       max-width: calc(100vw - 2rem); // eol in mobile even if table overflow
     }
+
+    table {
+      overflow-x: hidden;
+    }
   }
 
   /*
@@ -97,6 +112,7 @@
   */
   &--layout-fixed {
     table {
+      display: table;
       table-layout: fixed;
     }
   }
