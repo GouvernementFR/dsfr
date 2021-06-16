@@ -29,21 +29,19 @@ let socialsClasses = [prefix + '-follow__newsletter'];
   </div>
   <div>
     <% if (locals.type === 'form') { %>
-      <% if (locals.form && locals.form.input && locals.form.button) { %>
+      <% if (locals.form && locals.form.input) { %>
         <form action="">
-        <div class="<%= prefix %>-input-wrap">
-          <%- include('../../../inputs/templates/ejs/input.ejs', locals.form.input); %>
-          <%- include('../../../buttons/templates/ejs/button.ejs', locals.form.button); %>
-        </div>
-        <% if (locals.form.error) { %>
-          <p id="<%= prefix %>-newsletter-error-text" class="<%= prefix %>-error-text"><%- locals.form.error %></p>
-        <% } %>
-        <% if (locals.form.valid) { %>
-          <p id="<%= prefix %>-newsletter-valid-text" class="<%= prefix %>-valid-text"><%- locals.form.valid %></p>
-        <% } %>
-        <% if (locals.form.hint) { %>
-          <p id="<%= prefix %>-newsletter-hint-text" class="<%= prefix %>-hint-text"><%- locals.form.hint %></p>
-        <% } %>
+          <%- include('../../../inputs/templates/ejs/input.ejs', {addon: true, ...locals.form.input}); %>
+          <% console.log({addon: true, ...locals.form.input});
+          if (locals.form.error) { %>
+            <p id="<%= prefix %>-newsletter-error-text" class="<%= prefix %>-error-text"><%- locals.form.error %></p>
+          <% } %>
+          <% if (locals.form.valid) { %>
+            <p id="<%= prefix %>-newsletter-valid-text" class="<%= prefix %>-valid-text"><%- locals.form.valid %></p>
+          <% } %>
+          <% if (locals.form.hint) { %>
+            <p id="<%= prefix %>-newsletter-hint-text" class="<%= prefix %>-hint-text"><%- locals.form.hint %></p>
+          <% } %>
         </form>
       <% } %>
     <% } else if (locals.type === 'button') { %>

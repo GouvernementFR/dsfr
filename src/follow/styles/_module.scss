@@ -30,14 +30,15 @@
       height: 100%;
     }
 
+    #{ns(label)} {
+      @include sr-only();
+    }
+
     #{ns(input-wrap)} {
       display: flex;
       flex-direction: column;
       max-width: space(147v);
-
-      #{ns(label)} {
-        @include sr-only();
-      }
+      @include margin-top(0);
 
       #{ns(input)} {
         @include margin-bottom(4v);

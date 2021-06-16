@@ -50,6 +50,11 @@
     @include margin(auto);
   }
 
+  &--addon {
+    @include display-flex;
+    @include size(100%);
+  }
+
   &#{ns(fi-calendar-line)} {
     > #{ns(input)}[type=date] {
       &::-webkit-calendar-picker-indicator {

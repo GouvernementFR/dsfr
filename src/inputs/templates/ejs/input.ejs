@@ -56,11 +56,20 @@ if (locals.placeholder != undefined) inputAttrs['placeholder'] = placeholder;
  <div class="<%= prefix %>-input-wrap <%- prefix %>-fi-<%= icon %>" >
 <% } %>
 
+<% if (locals.addon && locals.button != undefined) { %>
+  <div class="<%= prefix %>-input-wrap <%- prefix %>-input-wrap--addon" >
+<% } %>
+
 <% if (locals.type === 'textarea') { %>
 <textarea <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %>  id="<%= id %>" name="<%= id %>"></textarea>
 <% }
 else {%>
 <input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= type %>" id="<%= id %>" name="<%= id %>">
+<% } %>
+
+<% if (locals.addon && locals.button != undefined) { %>
+  <%- include('../../../buttons/templates/ejs/button', locals.button); %>
+  </div>
 <% } %>
 
 <% if (locals.icon != undefined) { %>

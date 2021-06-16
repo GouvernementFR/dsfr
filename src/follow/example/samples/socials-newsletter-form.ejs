@@ -39,7 +39,6 @@ if (locals.valid) {
   inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
   inputClasses.push(prefix + '-input--valid');
 }
-
 data.newsletter = {
   title: "Abonnez-vous à notre lettre d’information",
   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
@@ -57,13 +56,17 @@ data.newsletter = {
       valid: undefined,
       error: undefined,
       inputClasses: inputClasses,
-      attributes: inputAttributes
+      attributes: inputAttributes,
+      button: {
+        id: "newsletter-button",
+        label: "S\'abonner",
+        placeholder: undefined,
+        type: "submit",
+        btnTitle: "S‘abonner à notre lettre d’information",
+        attributes: []
+      },
     },
-    button: {
-      label: "S\'abonner",
-      type: "submit",
-      btnTitle: "S‘abonner à notre lettre d’information"
-    },
+
   }
 };
 %>

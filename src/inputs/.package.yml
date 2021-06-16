@@ -6,3 +6,4 @@ wrapper: col-8
 styles:
   - core
   - forms
+  - buttons
