@@ -8,6 +8,12 @@
   overflow: visible;
   max-width: 100%;
   @include margin-bottom(10v);
+  @include padding-top(calc(var(--table-offset) + #{space(4v)}));
+
+  @include before('', block) {
+    width: 100%;
+    height: 0;
+  }
 
   &:not(#{ns(table--no-scroll)}) {
     table {
@@ -17,7 +23,6 @@
 
   table {
     @include size(100%);
-    @include margin-top(calc(var(--table-offset) + 16px));
     border-spacing: 0;
     display: block;
     overflow-y: hidden;
@@ -25,7 +30,7 @@
   }
 
   caption {
-    @include absolute(calc((var(--table-offset) + 16px) * -1), 0, 0, 0);
+    @include absolute(0);
     @include title-style(h4, true);
     height: var(--table-offset);
     font-weight: bold;
@@ -68,10 +73,15 @@
   * Cache la caption
   */
   &--no-caption {
-    @include margin-top(0);
+    @include padding-top(0);
+    @include before('', block) {
+      top: 0 !important;
+      bottom: calc(var(--table-offset) + #{space(4v)});
+    }
 
     caption {
       @include sr-only();
+      height: 0;
     }
   }
 
@@ -79,15 +89,19 @@
   * Fixe le caption en bas du tableau
   */
   &--caption-bottom {
-    @include margin-bottom(15v);
+    @include padding-top(0);
 
     table {
-      @include margin-top(0);
-      @include margin-bottom(calc(var(--table-offset) + 32px));
+      @include margin-bottom(#{space(14v)});
+
+      &:before {
+        @include margin-bottom(#{space(4v)});
+      }
     }
 
     caption {
-      @include absolute(calc(100% + 16px), 0, 0, 0);
+      @include absolute(100%, 0, 0, 0);
+      height: var(--table-offset);
       caption-side: bottom;
     }
   }

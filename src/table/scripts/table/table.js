@@ -5,8 +5,8 @@ import {
   SHADOW_RIGHT_CLASS,
   LEFT,
   RIGHT,
-  SCROLL_OFFSET
-} from './constants.js';
+  SCROLL_OFFSET, TABLE_SELECTOR
+} from './constants.js'
 
 class Table {
   constructor (table) {
@@ -17,13 +17,13 @@ class Table {
     this.table = table;
     // this.table.setAttribute(api.core.ns.attr('js-table'), 'true'); // TODO: code provisoire en attendant la refact du JS dynamique
     this.tableElem = this.table.querySelector('table');
-    this.table.style.setProperty('--table-offset', this.tableElem.querySelector('caption').offsetHeight + 'px');
     this.tableContent = this.tableElem.querySelector('tbody');
     this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
     this.caption = this.tableElem.querySelector('caption');
     this.captionHeight = 0;
     const scrolling = this.change.bind(this);
     this.tableElem.addEventListener('scroll', scrolling);
+    this.table.style.setProperty('--table-offset', this.tableElem.querySelector('caption').offsetHeight + 'px');
     this.change()
   }
 
@@ -32,12 +32,12 @@ class Table {
     let firstTimeScrollable = this.tableElem.offsetWidth > this.table.offsetWidth;
     if (newScroll || firstTimeScrollable) {
       this.scroll();
-      // this.handleCaption();
     } else {
       if (newScroll !== this.isScrollable) this.delete();
     }
     this.isScrollable = newScroll;
     firstTimeScrollable = false;
+    this.onResize ();
   }
 
   delete () {
@@ -88,16 +88,6 @@ class Table {
         return false;
     }
   }
-
-  /* positionne la caption en top négatif et ajoute un margin-top au table */
-  /* handleCaption () {
-    if (this.caption) {
-      const table = this.table.querySelectorAll('table');
-      this.captionHeight = this.caption.offsetHeight;
-      console.log('this.captionHeight ===>', this.captionHeight);
-      this.table.style.setProperty('--caption-height', this.captionHeight);
-    }
-  } */
 
   /* ajoute la classe fr-table--shadow-right ou fr-table--shadow-right sur fr-table
    en fonction d'une valeur de scroll et du sens (right, left) */
