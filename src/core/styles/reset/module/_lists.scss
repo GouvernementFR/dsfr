@@ -35,10 +35,9 @@
 
     > li {
       counter-increment: li-counter;
-      @include marker {
+      @include marker(var(--ol-content)) {
         font-size: var(--xl-size);
         font-weight: bold;
-        content: counters(li-counter, ".") ".\00a0\00a0";
       }
     }
   }

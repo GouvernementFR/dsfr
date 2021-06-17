@@ -18,6 +18,7 @@
     --xl-block: #{space(2v)};
     --li-bottom: #{space(1v)};
     --xl-base: 1em;
+    --ol-content: counters(li-counter, ".") ".\00a0\00a0";
   }
 }
 
@@ -28,4 +29,5 @@
   --ol-start: 0;
   --xl-block: 0;
   --li-bottom: 0;
+  --ol-content: none;
 }
