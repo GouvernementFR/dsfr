@@ -1,0 +1,14 @@
+$collapse-btn-settings:(
+  selector: 'consent-service__collapse-btn',
+  sizes: (
+    sm: (
+      font-size: 14,
+      min-height: 0,
+      padding-x: 0,
+      padding-y: 0,
+      icon: sm,
+      icon-margin-x: 1v
+    )
+  ),
+  places: right
+);

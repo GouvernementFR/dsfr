@@ -1,0 +1,25 @@
+<%#
+# paramètres placeholder de consentement
+
+* title (string, recommended) : Titre du placeholder
+
+* body (string, optionnal) : Texte explicatif, contenu textuel ou html
+
+* button (string, optionnal) : Pour modifier le bouton (par exemple le texte dans le bouton : button.label)
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let classes = [prefix + '-consent-placeholder'];
+ let attributes = locals.attributes || {};
+ let button = locals.button || {};
+ if (!button.label) button.label = "Autoriser";
+ button.tag = 'button';
+ %>
+
+<div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
+    <% if (locals.title) { %><p class="<%= prefix %>-h6 <%= prefix %>-mb-2v"><%= title %></p> <% } %>
+    <% if (locals.body) { %><p class="<%= prefix %>-mb-6v"><%- body %></p><% } %>
+    <%- include('../../../buttons/templates/ejs/button.ejs', button); %>
+</div>

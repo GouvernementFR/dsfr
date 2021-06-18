@@ -1,0 +1,37 @@
+////
+/// Placeholder Module
+/// @group consent
+////
+
+#{ns(consent-banner)} {
+  @include fixed(null, null, 0, 0, 100%);
+  max-height: calc(100% - #{space(32v)});
+  @include padding(4v);
+  @include z-index(consent);
+  overflow: auto;
+
+  @include respond-from(md) {
+    @include padding(8v);
+    bottom: space(10v);
+    left: space(10v);
+    max-width: space(160v);
+    max-height: calc(100% - #{space(20v)});
+  }
+
+  &__content {
+    p {
+      @include margin-bottom(4v);
+    }
+  }
+
+  &__title {
+    @include title-style(h6);
+    @include margin-bottom(4v);
+  }
+
+  &__buttons {
+    @include margin-top(6v);
+    @include margin-top(8v, md);
+    @include margin-bottom(-4v);
+  }
+}

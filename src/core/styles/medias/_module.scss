@@ -21,7 +21,7 @@
     @include aspect-ratio(1x1, false);
   }
 
-  &__player {
+  &__player, & > #{ns(consent-placeholder)} {
     @include media-overlay-cover;
     border: 0;
   }

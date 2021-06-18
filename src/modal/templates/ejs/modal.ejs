@@ -20,30 +20,49 @@
 <% eval(include('../../../core/index.ejs')); %>
 
 <%
- let modalClasses = locals.classes || [];
- modalClasses.push(`${prefix}-modal`);
+let modalClasses = locals.classes || [];
+modalClasses.push(`${prefix}-modal`);
 
- let modalAttrs = locals.attributes || {};
+let modalAttrs = locals.attributes || {};
 
- const closeButton = locals.closeButton || {};
- closeButton.closeId = id;
- if (closeButton.size === undefined) closeButton.size = undefined;
- if (closeButton.label === undefined) closeButton.label = undefined;
+const closeButton = locals.closeButton || {};
+closeButton.closeId = id;
+if (closeButton.size === undefined) closeButton.size = undefined;
+if (closeButton.label === undefined) closeButton.label = undefined;
 
- const gridClasses = [`${prefix}-col-12`];
+const gridClasses = [];
+const SIZES = {
+    sm: {
+        first: 12,
+        md: 6,
+        lg: 4
+    },
+    md: {
+        first: 12,
+        md: 8,
+        lg: 6
+    },
+    lg: {
+        first: 12,
+        md: 10,
+        lg: 8
+    },
+}
+const getGridClasses = (size) => {
+  const classes = [];
+  const settings = SIZES[size];
+   for (let bp in settings) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp }-${settings[bp]}` );
+   return classes;
+}
 
- switch(locals.size) {
+switch(locals.size) {
     case 'sm':
-        gridClasses.push(`${prefix}-col-md-6`, `${prefix}-col-lg-4`);
+        case 'lg':
+        gridClasses.push.apply(gridClasses, getGridClasses(locals.size));
         break;
-
-    case 'lg':
-        gridClasses.push(`${prefix}-col-md-8`);
-        break;
-
     default:
-        gridClasses.push(`${prefix}-col-md-6`);
- }
+        gridClasses.push.apply(gridClasses, getGridClasses('md'));
+}
 
  const titleId = id + '-title';
 
@@ -69,11 +88,11 @@
                             <% } %>
                             <%= locals.title %>
                         </h1>
-                        <%- include(body) -%>
+                        <%- include(body) %>
                     </div>
                     <% if(locals.footer !== undefined) { %>
                         <div class="<%= prefix %>-modal__footer">
-                            <%- include(locals.footer )%>
+                            <%- include(locals.footer) %>
                         </div>
                     <% } %>
                 </div>
