@@ -89,17 +89,14 @@
   */
   &--caption-bottom {
     @include padding-top(0);
+    @include margin-bottom(0);
 
     table {
-      @include margin-bottom(#{space(18v)});
-
-      @include before {
-        @include margin-bottom(#{space(4v)});
-      }
+      @include margin-bottom(calc(var(--table-offset) + #{space(15v)}));
     }
 
     caption {
-      @include absolute(0, 0, calc(var(--table-offset) * -1), 0);
+      @include absolute(100%, 0, 0, 0);
       caption-side: bottom;
     }
   }

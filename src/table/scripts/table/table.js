@@ -3,6 +3,7 @@ import {
   SHADOW_CLASS,
   SHADOW_LEFT_CLASS,
   SHADOW_RIGHT_CLASS,
+  CAPTION_BOTTOM_CLASS,
   LEFT,
   RIGHT,
   SCROLL_OFFSET
@@ -25,6 +26,24 @@ class Table {
     // this.change();
   }
 
+  /*
+  handleCaption () {
+    if (this.caption) {
+      const style = getComputedStyle(this.caption);
+      const newHeight = this.caption.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
+      this.captionHeight = newHeight;
+      if (this.table.classList.contains(CAPTION_BOTTOM_CLASS)) {
+        this.tableElem.style.marginBottom = this.captionHeight + 'px';
+        this.caption.style.bottom = -this.captionHeight + 'px';
+      } else {
+        this.tableElem.style.marginTop = this.captionHeight + 'px';
+        this.caption.style.top = -this.captionHeight + 'px';
+      }
+    }
+  }
+  */
+
+
   change () {
     const newScroll = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
     let firstTimeScrollable = this.tableElem.offsetWidth > this.table.offsetWidth;
@@ -37,7 +56,7 @@ class Table {
     firstTimeScrollable = false;
 
     const style = getComputedStyle(this.caption);
-    this.table.style.setProperty('--table-offset', style.getPropertyValue("height"));
+    this.table.style.setProperty('--table-offset', style.getPropertyValue('height'));
   }
 
   delete () {
