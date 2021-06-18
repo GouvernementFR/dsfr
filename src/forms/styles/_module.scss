@@ -65,7 +65,7 @@
   @include margin-top(4v);
   @include margin-bottom(0);
 
-  @include icon(checkbox-line, sm) {
+  @include icon(checkbox-circle-line, sm) {
     display: inline-block;
     @include margin-right(1v);
   }

@@ -1,0 +1,56 @@
+<%#
+# paramètres alerts
+
+* id (String, required): id
+
+* title (String, optional): Titre de l'alerte
+
+* text (string, optional) : Texte de decription de l'alerte
+
+* type (String, required): type d'alerte [info/success/error/warning]
+
+%>
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let id = locals.id;
+ let title = locals.title || false;
+ let text = locals.text || false;
+ let type = locals.type || false;
+ let size = locals.size || "md";
+ let expanded = locals.expanded || true;
+ let buttonClose = locals.buttonClose || false;
+ let attrButton = {title: 'Masquer le message'};
+ let classes = locals.classes || [];
+ classes.push(prefix + '-alert');
+ if (type) classes.push(prefix + '-alert--' + type);
+ if (size !== "md") classes.push(prefix + '-alert--' + size);
+
+ %>
+
+<% if(locals.collapse) { %>
+<div class="<%= prefix %>-collapse" id="<%= id %>">
+<% }%>
+  <div role="alert" <%- includeClasses(classes); %>>
+
+    <% if(locals.title) { %>
+      <p class="<%= prefix %>-alert__title"><%= title %></p>
+    <% } %>
+
+    <% if(text) { %>
+      <p><%= text %></p>
+    <% } %>
+
+    <% if(locals.collapse || buttonClose) { %>
+      <% if(!buttonClose) {
+        attrButton = {title: 'Masquer le message','aria-expanded': expanded , 'aria-controls': id};
+      }
+      %>
+      <%- include('../../../links/templates/ejs/link', {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}) %>
+    <% } %>
+  </div>
+<% if(locals.collapse) { %>
+</div>
+<% } %>

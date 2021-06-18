@@ -1,0 +1,28 @@
+////
+/// alerts Schemes
+/// @group alerts
+////
+
+#{ns(alert)} {
+  @include scheme-element-box-shadow-color(g500,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+
+  @include before {
+    @include scheme-element-text-color(w);
+  }
+
+  &--info {
+    @include scheme-element-box-shadow-color(info,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+  }
+
+  &--error {
+    @include scheme-element-box-shadow-color(error,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+  }
+
+  &--success {
+    @include scheme-element-box-shadow-color(success,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+  }
+
+  &--warning {
+    @include scheme-element-box-shadow-color(warning,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+  }
+}
