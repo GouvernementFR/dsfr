@@ -3,12 +3,6 @@
 /// @group core
 ////
 
-@mixin list-reset() {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 @mixin enable-list-style() {
   $selector: null;
 
@@ -17,35 +11,23 @@
   }
 
   @include nest($selector) {
-    --li-pb: #{space(2v)};
-    --li-pt: 0;
-    --li-pl: 0;
-    --ul-content: "●";
-    --ol-content: counters(li-counter, ".") ".";
-    --ol-font-weight: 700;
-    --ol-increment: li-counter;
-    counter-set: none;
-  }
-
-  li {
-    --li-pl: #{space(4v)};
-    --li-pt: #{space(2v)};
-    --ul-content: "•";
+    --ul-type: "●\00a0\00a0";
+    --ol-type: decimal;
+    --ul-start: #{space(4v)};
+    --ol-start: #{space(6v)};
+    --xl-block: #{space(2v)};
+    --li-bottom: #{space(1v)};
+    --xl-base: 1em;
+    --ol-content: counters(li-counter, ".") ".\00a0\00a0";
   }
 }
 
 @mixin disable-list-style() {
-  --li-pb: 0;
-  --li-pt: 0;
-  --li-pl: 0;
-  --ul-content: none;
+  --ul-type: none;
+  --ol-type: none;
+  --ul-start: 0;
+  --ol-start: 0;
+  --xl-block: 0;
+  --li-bottom: 0;
   --ol-content: none;
-  --ol-font-weight: inherit;
-  --ol-increment: none;
-
-  li {
-    --li-pt: 0;
-    --li-pl: 0;
-    --ul-content: none;
-  }
 }

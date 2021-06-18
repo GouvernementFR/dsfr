@@ -19,7 +19,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include padding(0);
     color: inherit;
 
-    &[aria-expanded="true" i] {
+    &[aria-expanded="true"] {
       display: none;
     }
 

@@ -19,7 +19,7 @@
   }
 
   &__btn {
-    &[aria-expanded="true" i] {
+    &[aria-expanded="true"] {
       @include respond-from(lg) {
         @include scheme-element-text-color(bf500-plain);
         @include scheme-element-bg-color(bf200-bf300);

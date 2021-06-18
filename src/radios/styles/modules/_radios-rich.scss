@@ -11,7 +11,7 @@
     background-position: calc(100% - #{space(1v)}) center;
     background-size: space(20v) space(20v);
     background-repeat: no-repeat;
-    @include display-flex(column, flex-end, center);
+    @include display-flex(column, flex-start, center);
 
     /**
       * On applique la taille sm pour le bouton radio riche
@@ -32,6 +32,10 @@
       @include size(21v, 20v);
       vertical-align: middle;
       // TODO: insérer la font icon ilustrative ifi
+    }
+
+    #{ns(hint-text)} {
+      @include margin-left(0);
     }
   }
 

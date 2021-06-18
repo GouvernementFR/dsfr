@@ -29,9 +29,9 @@ if (locals.arrow === false) classes.push(prefix + '-card--no-arrow');
 %>
 <div <%- includeClasses(classes) %>>
     <div class="<%= prefix %>-card__body">
-        <% if (locals.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- detail %></p><% } %>
         <h4 class="<%= prefix %>-card__title"><a href="#" class="<%= prefix %>-card__link"><%- title %></a></h4>
         <% if (locals.description !== undefined) { %><p class="<%= prefix %>-card__desc"><%- description %></p><% } %>
+        <% if (locals.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- detail %></p><% } %>
     </div>
     <% if (locals.img !== undefined) { %>
         <div class="<%= prefix %>-card__img">

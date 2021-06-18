@@ -47,7 +47,7 @@
             /**
              * Pour conserver le souligné de selection  par dessus la barre de mega-menu
              */
-            &:not([aria-expanded="true" i]) {
+            &:not([aria-expanded="true"]) {
               @include z-index(nav);
             }
           }
@@ -110,7 +110,7 @@
       justify-content: flex-start;
     }
 
-    &[aria-expanded="true" i] {
+    &[aria-expanded="true"] {
       @include after {
         transform: rotate(-180deg);
       }
