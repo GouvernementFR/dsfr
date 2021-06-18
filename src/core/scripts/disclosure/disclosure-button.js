@@ -29,12 +29,12 @@ class DisclosureButton extends Instance {
   }
 
   click (e) {
-    this.registration.creator.change(this.hasAttribute);
+    if (this.registration.creator) this.registration.creator.change(this.hasAttribute);
   }
 
   mutate (mutations) {
     mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === this.attributeName) this.registration.creator.change(this.disclosed);
+      if (mutation.type === 'attributes' && mutation.attributeName === this.attributeName && this.registration.creator) this.registration.creator.change(this.disclosed);
     });
   }
 
