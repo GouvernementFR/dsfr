@@ -90,6 +90,10 @@
   */
   &--caption-bottom {
     @include padding-top(0);
+    @include after('', block) {
+      width: 100%;
+      height: 0;
+    }
 
     table {
       @include margin-bottom(#{space(14v)});
@@ -101,7 +105,6 @@
 
     caption {
       @include absolute(100%, 0, 0, 0);
-      height: var(--table-offset);
       caption-side: bottom;
     }
   }
