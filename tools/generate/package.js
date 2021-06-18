@@ -64,11 +64,11 @@ const getSortedList = (type) => {
   return list;
 };
 
-const getUsage = (list, type) => {
-  const dependencies = getDependencies(list, type, false);
+const getUsage = (packages, list, type) => {
+  const dependencies = getDependencies(packages, type, false);
   const usage = {};
 
-  for (const pck of list) {
+  for (const pck of packages) {
     const dps = dependencies[pck];
     const flatten = [...dps];
     for (const p of dps) flatten.push(...dependencies[p]);
@@ -80,12 +80,13 @@ const getUsage = (list, type) => {
 };
 
 const generatePackage = () => {
+  const packages = getPackages();
   const styles = getSortedList('styles');
   const scripts = getSortedList('scripts');
 
   const usage = {
-    styles: getUsage(styles, 'styles'),
-    scripts: getUsage(scripts, 'scripts')
+    styles: getUsage(packages, styles, 'styles'),
+    scripts: getUsage(packages, scripts, 'scripts')
   };
 
   const content = {
