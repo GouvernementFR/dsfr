@@ -13,7 +13,13 @@
     @include padding(4v 2v);
   }
 
-  & > * {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @include margin-bottom(1v);
   }
 
