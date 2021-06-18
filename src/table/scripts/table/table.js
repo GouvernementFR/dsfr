@@ -5,8 +5,8 @@ import {
   SHADOW_RIGHT_CLASS,
   LEFT,
   RIGHT,
-  SCROLL_OFFSET, TABLE_SELECTOR
-} from './constants.js'
+  SCROLL_OFFSET
+} from './constants.js';
 
 class Table {
   constructor (table) {
@@ -22,7 +22,7 @@ class Table {
     this.captionHeight = 0;
     const scrolling = this.change.bind(this);
     this.tableElem.addEventListener('scroll', scrolling);
-    this.change()
+    // this.change();
   }
 
   change () {
@@ -37,7 +37,7 @@ class Table {
     firstTimeScrollable = false;
 
     const style = getComputedStyle(this.caption);
-    this.table.style.setProperty('--table-offset', style.height + 'px');
+    this.table.style.setProperty('--table-offset', style.height);
     console.log('style.height =>', style.height);
   }
 
