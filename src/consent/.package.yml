@@ -10,9 +10,9 @@ styles:
   - forms
   - buttons
   - links
+scripts:
+  - core
+  - modal
 example:
   styles:
-    - modal
     - content
-  scripts:
-    - modal
