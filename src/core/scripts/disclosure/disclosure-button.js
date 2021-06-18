@@ -56,6 +56,11 @@ class DisclosureButton extends Instance {
   get hasFocus () {
     return this.element.node === document.activeElement;
   }
+
+  dispose () {
+    super.dispose();
+    if (this.observer) this.observer.disconnect();
+  }
 }
 
 export { DisclosureButton };
