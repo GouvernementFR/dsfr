@@ -5,3 +5,6 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223051980/Pagination+-+Pa
 wrapper: container
 styles:
   - core
+follow:
+  styles:
+    - links

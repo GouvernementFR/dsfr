@@ -1,7 +1,7 @@
 # Contributing
 ## Installation
 ### Installation locale
-Le Système de Design de l’État (ci-après, le **DSFR**) est basé sur une architecture NodeJS, et utilise principalement Yarn et Webpack. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
+Le Système de Design de l’État (ci-après, le **DSFR**) est basé sur une architecture NodeJS, et utilise principalement Yarn. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
 
 Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il peut être nécessaire de lier son compte Github à son numéro de téléphone.
 

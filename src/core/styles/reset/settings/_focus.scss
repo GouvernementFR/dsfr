@@ -30,7 +30,7 @@ $focus-settings: (
     )
   ),
   choices: (
-    selector: 'input[type="checkbox" i], input[type="radio" i]',
+    selector: 'input[type="checkbox"], input[type="radio"]',
     focus: '& + label::before',
     hover: '&, & + label',
     enabled: true,
@@ -41,7 +41,7 @@ $focus-settings: (
     )
   ),
   input-buttons: (
-    selector: 'input[type="button" i], input[type="color" i], input[type="date" i], input[type="datetime-local" i], input[type="file" i], input[type="image" i], input[type="month" i], input[type="range" i], input[type="reset" i], input[type="submit" i], input[type="time" i], input[type="week" i]',
+    selector: 'input[type="button"], input[type="color"], input[type="date"], input[type="datetime-local"], input[type="file"], input[type="image"], input[type="month"], input[type="range"], input[type="reset"], input[type="submit"], input[type="time"], input[type="week"]',
     enabled: true,
     cursor: pointer,
     no-focus: true
@@ -79,7 +79,7 @@ $focus-settings: (
     )
   ),
   contenteditable: (
-    selector: '[contenteditable]:not([contenteditable="false" i])',
+    selector: '[contenteditable]:not([contenteditable="false"])',
   ),
   details: (
     selector: 'details, details > summary:first-of-type',

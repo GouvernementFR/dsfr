@@ -14,7 +14,7 @@
   &:first-child {
     @include margin-top(-3v);
 
-    input[type="radio" i] + label {
+    input[type="radio"] + label {
       @include margin-top(0);
     }
   }
@@ -25,7 +25,7 @@
   &:last-child {
     @include margin-bottom(-3v);
 
-    input[type="radio" i] + label {
+    input[type="radio"] + label {
       @include radio-rich() {
         @include margin-bottom(6v);
       }
@@ -35,7 +35,7 @@
   /**
    * On cache l'input de type radio pour le styler via le label
    */
-  input[type="radio" i] {
+  input[type="radio"] {
     @include absolute;
     opacity: 0;
 
@@ -47,33 +47,15 @@
       @include padding(3v 0);
       @include text-style(md);
       -webkit-tap-highlight-color: transparent;
-      display: grid;
-      display: -ms-grid;
-      grid-row: 1;
-      -ms-grid-row: 2;
-      grid-column: 2;
-      -ms-grid-column: 2;
-      align-items: center;
-      -ms-align-items: center;
-      grid-template-columns: 1fr space(8v);
-      -ms-grid-columns: 1fr space(8v);
-      text-align: left;
-      direction: rtl;
-
-      &,
-      & > * {
-        unicode-bidi: plaintext;
-      }
+      @include display-flex(row, center, flex-start, wrap);
 
       /**
        * Style du texte d'aide dans le label
        */
       #{ns(hint-text)} {
         @include margin(0);
-        grid-row: 2;
-        grid-column: 1;
-        -ms-grid-row: 2;
-        -ms-grid-column: 1;
+        @include size(100%);
+        @include margin-left(8v);
       }
 
       /**
@@ -86,13 +68,6 @@
         border: 1px solid;
         border-radius: 50%;
         transform-origin: center;
-        grid-row: 1;
-        -ms-grid-row: 1;
-        grid-column: 2;
-        -ms-grid-column: 2;
-        align-items: center;
-        -ms-align-items: center;
-        transition: transform 0.3s;
       }
     }
 
@@ -116,10 +91,14 @@
    * Modificateur pour la taille sm
    */
   &--sm {
-    input[type="radio" i] {
+    input[type="radio"] {
       & + label {
         @include before {
           @include size(4v, 4v);
+        }
+
+        #{ns(hint-text)} {
+          @include margin-left(6v);
         }
       }
     }

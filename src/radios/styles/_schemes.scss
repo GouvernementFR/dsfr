@@ -32,7 +32,7 @@
    * Modificateur pour la taille sm
    */
   &--sm {
-    input[type="radio" i] {
+    input[type="radio"] {
       &:checked + label {
         @include before {
           box-shadow: inset 0 0 0 3px var(--w);
