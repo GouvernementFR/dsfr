@@ -4,11 +4,10 @@
 ////
 
 #{ns(consent-banner)} {
-  @include fixed(null, null, 0, 0);
-  width: 100%;
+  @include fixed(null, null, 0, 0, 100%);
   max-height: calc(100% - #{space(32v)});
   @include padding(4v);
-  z-index: z-index(consent);
+  @include z-index(consent);
   overflow: auto;
 
   @include respond-from(md) {

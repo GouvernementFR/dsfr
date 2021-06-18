@@ -5,14 +5,15 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/609189956/
 wrapper: col-8
 styles:
   - core
-  - modal
-  - radios
-  - forms
-  - buttons
   - links
+  - buttons
+  - forms
+  - radios
 scripts:
   - core
-  - modal
 example:
   styles:
     - content
+    - modal
+  scripts:
+    - modal

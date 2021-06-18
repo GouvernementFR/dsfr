@@ -37,11 +37,8 @@
   **/
   &__title {
     @include title-style(h6);
-    // @include margin-bottom(3v);
     @include padding(8v 0 3v);
     @include margin(0);
-    // @include margin-top(3v);
-    float: left;
 
     @include respond-from(md) {
       @include size(50%);
@@ -75,7 +72,7 @@
       @include padding(0);
       color: inherit;
 
-      &[aria-expanded="true" i] {
+      &[aria-expanded="true"] {
         @include icon(arrow-up-s-line, sm);
       }
     }
@@ -115,7 +112,7 @@
   #{ns-group(radio)} {
     position: relative;
 
-    &:not(:last-child) input[type="radio" i] + label {
+    &:not(:last-child) input[type="radio"] + label {
       @include margin-right(12v);
     }
 

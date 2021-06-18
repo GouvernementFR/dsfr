@@ -4,7 +4,7 @@
 ////
 
 #{ns(consent-manager)} {
-  & &__header {
+  &__header {
     @include padding-top(0);
 
     #{ns(consent-service)}__title {
@@ -43,5 +43,9 @@
   &__buttons {
     @include margin-bottom(-12v);
     @include margin-top(4v);
+  }
+
+  #{ns(consent-service)}:last-of-type {
+    box-shadow: none;
   }
 }
