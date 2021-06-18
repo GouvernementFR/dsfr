@@ -32,7 +32,7 @@
   caption {
     @include absolute(0);
     @include title-style(h4, true);
-    height: var(--table-offset);
+    //height: var(--table-offset);
     font-weight: bold;
     text-align: left;
   }
@@ -90,21 +90,18 @@
   */
   &--caption-bottom {
     @include padding-top(0);
-    @include after('', block) {
-      width: 100%;
-      height: 0;
-    }
 
     table {
-      @include margin-bottom(#{space(14v)});
+      @include margin-bottom(#{space(18v)});
 
-      &:before {
-        @include margin-bottom(#{space(4v)});
+      @include after('', block) {
+        width: 100%;
+        height: 0;
       }
     }
 
     caption {
-      @include absolute(100%, 0, 0, 0);
+      @include absolute(0, 0, calc(var(--table-offset) * -1), 0);
       caption-side: bottom;
     }
   }
@@ -115,12 +112,12 @@
   &--no-scroll {
     min-width: auto;
 
-    caption {
-      max-width: calc(100vw - 2rem); // eol in mobile even if table overflow
-    }
-
     table {
       overflow-x: hidden;
+    }
+
+    caption {
+      max-width: calc(100vw - 2rem); // eol in mobile even if table overflow
     }
   }
 

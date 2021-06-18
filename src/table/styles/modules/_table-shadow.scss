@@ -34,7 +34,7 @@
 &--caption-bottom {
   table {
     @include before('', block) {
-      @include absolute(calc(var(--table-offset) * -1), 0, 0, 0);
+      @include absolute(0, 0, 0, 0);
     }
   }
 }
