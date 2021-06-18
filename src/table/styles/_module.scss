@@ -32,7 +32,6 @@
   caption {
     @include absolute(0);
     @include title-style(h4, true);
-    //height: var(--table-offset);
     font-weight: bold;
     text-align: left;
   }
@@ -94,9 +93,8 @@
     table {
       @include margin-bottom(#{space(18v)});
 
-      @include after('', block) {
-        width: 100%;
-        height: 0;
+      @include before {
+        @include margin-bottom(#{space(4v)});
       }
     }
 
