@@ -112,7 +112,6 @@
   &__title {
     @include title-style('h4');
     @include font-weight('bold');
-    @include scheme-element-text-color(g800);
 
     @include has-icon {
       @include margin-right(2v);
