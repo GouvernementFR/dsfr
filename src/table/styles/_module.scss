@@ -90,6 +90,7 @@
   &--caption-bottom {
     @include padding-top(0);
     @include margin-bottom(0);
+    @include margin-top(4v);
 
     table {
       @include margin-bottom(calc(var(--table-offset) + #{space(15v)}));
@@ -97,6 +98,8 @@
 
     caption {
       @include absolute(100%, 0, 0, 0);
+      @include margin-top(4v);
+      height: min-content;
       caption-side: bottom;
     }
   }
