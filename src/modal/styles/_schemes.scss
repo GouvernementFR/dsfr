@@ -17,6 +17,10 @@
     }
   }
 
+  &__title {
+    @include scheme-element-text-color(g800);
+  }
+
   &__footer {
     @include scheme-element-bg-color(w);
   }
