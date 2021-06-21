@@ -16,6 +16,7 @@ class Table {
 
   init (table) {
     this.table = table;
+    this.table.setAttribute(api.core.ns.attr('js-table'), 'true'); // TODO: code provisoire en attendant la refacto du JS dynamique
     this.tableElem = this.table.querySelector('table');
     this.tableContent = this.tableElem.querySelector('tbody');
     this.isScrollable = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
@@ -23,20 +24,18 @@ class Table {
     this.captionHeight = 0;
     const scrolling = this.change.bind(this);
     this.tableElem.addEventListener('scroll', scrolling);
-    this.table.getAttribute('data-table-js') === true
   }
 
   change () {
     const newScroll = this.tableContent.offsetWidth > this.tableElem.offsetWidth;
     let firstTimeScrollable = this.tableElem.offsetWidth > this.table.offsetWidth;
     if (newScroll || firstTimeScrollable) {
-      if (this.table.classList.contains(TABLE_NOSCROLL_SELECTOR)) this.scroll();
+      if (!this.table.classList.contains(TABLE_NOSCROLL_SELECTOR)) this.scroll();
     } else {
       if (newScroll !== this.isScrollable) this.delete();
     }
     this.isScrollable = newScroll;
     firstTimeScrollable = false;
-
     const style = getComputedStyle(this.caption);
     this.table.style.setProperty('--table-offset', style.getPropertyValue('height'));
   }

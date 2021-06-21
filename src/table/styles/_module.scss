@@ -29,8 +29,14 @@
     overflow-x: scroll;
   }
 
+  &[data-fr-js-table='true'] {
+    caption {
+      @include absolute(0);
+    }
+  }
+
   caption {
-    @include absolute(0);
+    position: initial;
     @include title-style(h4, true);
     font-weight: bold;
     text-align: left;
