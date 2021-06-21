@@ -2,8 +2,8 @@
 const sample = getSample(include);
 %>
 
-<p>Préciser le type d'alerte (Information/Succès/Erreur/Attention) dans le titre ou, à défaut, dans le contenu de l'alerte<br>
-Le titre est défini par le style fr-h5, la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte</p>
+<p>Préciser le type d'alerte (Information/Succès/Erreur) dans le titre ou, à défaut, dans le contenu de l'alerte<br>
+Le style du titre est défini par la classe "fr-alert__title" et sa balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte</p>
 
 <%- sample('Alerte par défaut', './samples/alert-default', {}, true); %>
 
