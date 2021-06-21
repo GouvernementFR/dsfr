@@ -5,9 +5,15 @@
 
 #{ns(table)} {
   @include relative;
-  overflow: hidden;
+  overflow: visible;
   max-width: 100%;
   @include margin-bottom(10v);
+  @include padding-top(calc(var(--table-offset) + #{space(4v)}));
+
+  @include before('', block) {
+    width: 100%;
+    height: 0;
+  }
 
   &:not(#{ns(table--no-scroll)}) {
     table {
@@ -16,10 +22,15 @@
   }
 
   table {
+    @include size(100%);
     border-spacing: 0;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
 
   caption {
+    @include absolute(0);
     @include title-style(h4, true);
     font-weight: bold;
     text-align: left;
@@ -61,8 +72,15 @@
   * Cache la caption
   */
   &--no-caption {
+    @include padding-top(0);
+    @include before('', block) {
+      top: 0 !important;
+      bottom: calc(var(--table-offset) + #{space(4v)});
+    }
+
     caption {
       @include sr-only();
+      height: 0;
     }
   }
 
@@ -70,9 +88,18 @@
   * Fixe le caption en bas du tableau
   */
   &--caption-bottom {
+    @include padding-top(0);
+    @include margin-bottom(0);
+    @include margin-top(4v);
+
+    table {
+      @include margin-bottom(calc(var(--table-offset) + #{space(15v)}));
+    }
+
     caption {
-      @include margin-bottom(0);
+      @include absolute(100%, 0, 0, 0);
       @include margin-top(4v);
+      height: min-content;
       caption-side: bottom;
     }
   }
@@ -82,6 +109,10 @@
   */
   &--no-scroll {
     min-width: auto;
+
+    table {
+      overflow-x: hidden;
+    }
 
     caption {
       max-width: calc(100vw - 2rem); // eol in mobile even if table overflow
@@ -93,6 +124,7 @@
   */
   &--layout-fixed {
     table {
+      display: table;
       table-layout: fixed;
     }
   }
