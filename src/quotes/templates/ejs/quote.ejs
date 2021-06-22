@@ -1,0 +1,42 @@
+<%#
+# paramètres alerts
+
+* id (String, required): id
+
+* title (String, optional): Titre de l'alerte
+
+* text (string, optional) : Texte de decription de l'alerte
+
+* type (String, required): type d'alerte [info/success/error/warning]
+
+%>
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ let id = locals.id;
+ let title = locals.title || false;
+ let text = locals.text || '';
+ let image = locals.image || undefined;
+ let author = locals.author || false;
+ let href = locals.href || false;
+ let details = locals.details || [];
+ let quoteClasses = [prefix + '-quote'];
+ %>
+
+<figure <%- includeClasses(quoteClasses) %>>
+  <blockquote <%= href ? 'cite="' + href + '"' : ''%>>
+
+    <p>« <%= text %> »</p>
+  </blockquote>
+  <figcaption>
+    <% if (author) { %>
+      <p class="<%= prefix %>-quote__author"><%= author %></p>
+    <% } %>
+
+    <% for (detail in details) { %>
+      <span class="<%= prefix %>-quote__detail"><%- details[detail] %></span>
+    <% } %>
+  </figcaption>
+</figure>

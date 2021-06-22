@@ -1,0 +1,10 @@
+<%
+ let data = {
+   title: (locals.title === false) ? false : locals.title ? locals.title : 'Titre',
+   text: locals.text || lorem(),
+   author: locals.author || 'Auteur',
+   details: locals.details || ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', '<a href="">Détail 4</a>'],
+  };
+ %>
+
+<%- include('../../templates/ejs/quote.ejs', data); %>

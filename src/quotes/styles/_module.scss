@@ -1,0 +1,45 @@
+////
+/// Quotes Module
+/// @group quotes
+////
+
+#{ns(quote)} {
+  @include margin(0);
+
+  blockquote {
+    @include margin(0 0 4v);
+
+    p{
+      @include margin-bottom(0);
+    }
+  }
+
+  p {
+    margin-bottom: 0
+  }
+
+  &__author {
+    @include font-weight(bold);
+    @include text-style(sm);
+    @include margin-bottom(1v);
+  }
+
+
+  cite {
+    @include text-style(xs);
+    font-style: italic;
+  }
+
+  figcaption {
+    span {
+      @include text-style(xs);
+
+      &:not(:first-child) {
+        @include before('', 'inline-block') {
+          content : '·';
+          @include padding-x(1v);
+        }
+      }
+    }
+  }
+}
