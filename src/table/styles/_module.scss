@@ -5,14 +5,11 @@
 
 #{ns(table)} {
   @include relative;
-  overflow: visible;
-  max-width: 100%;
   @include margin-bottom(10v);
   @include padding-top(calc(var(--table-offset) + #{space(4v)}));
 
   @include before('', block) {
-    width: 100%;
-    height: 0;
+    @include size(100%, 0);
   }
 
   &:not(#{ns(table--no-scroll)}) {
@@ -23,10 +20,9 @@
 
   table {
     @include size(100%);
-    border-spacing: 0;
     display: block;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow: auto;
+    border-spacing: 0;
   }
 
   &[data-fr-js-table='true'] {
@@ -79,10 +75,6 @@
   */
   &--no-caption {
     @include padding-top(0);
-    @include before('', block) {
-      top: 0 !important;
-      bottom: calc(var(--table-offset) + #{space(4v)});
-    }
 
     caption {
       @include sr-only();
@@ -110,7 +102,6 @@
     }
 
     caption {
-      position: initial;
       @include margin-top(4v);
       height: min-content;
       caption-side: bottom;
@@ -137,7 +128,6 @@
   */
   &--layout-fixed {
     table {
-      display: table;
       table-layout: fixed;
     }
   }
