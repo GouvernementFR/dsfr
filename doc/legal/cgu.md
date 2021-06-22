@@ -139,9 +139,9 @@ Pour les modifications structurantes et le développement de nouveaux Composants
 
 ### ARTICLE 4 – GARANTIES 
 
-4.1 L’État est, sauf mention contraire, titulaire des droits d’exploitation de tous les droits de propriété intellectuelle portant tant sur la structure de la Plateforme, que sur tout son contenu, et notamment sur les Ressources, textes, les Éléments d’Identité, les Éléments d’interface, les illustrations, les marques, les logos et les documents. 
+**4.1** L’État est, sauf mention contraire, titulaire des droits d’exploitation de tous les droits de propriété intellectuelle portant tant sur la structure de la Plateforme, que sur tout son contenu, et notamment sur les Ressources, textes, les Éléments d’Identité, les Éléments d’interface, les illustrations, les marques, les logos et les documents. 
 
-4.2 Le SIG fera ses meilleurs efforts pour garantir un accès à la Plateforme 7j/7 et 24h/24 étant précisé que le SIG pourra toutefois en interrompre l’accès, à des fins de maintenance corrective ou évolutive, d’amélioration de l’infrastructure, ou pour en garantir la sécurité et en aucun cas la responsabilité du SIG ne pourra être recherchée du fait d’une telle indisponibilité. 
+**4.2** Le SIG fera ses meilleurs efforts pour garantir un accès à la Plateforme 7j/7 et 24h/24 étant précisé que le SIG pourra toutefois en interrompre l’accès, à des fins de maintenance corrective ou évolutive, d’amélioration de l’infrastructure, ou pour en garantir la sécurité et en aucun cas la responsabilité du SIG ne pourra être recherchée du fait d’une telle indisponibilité. 
 
 La Plateforme répond aux exigences des référentiels RGAA dans sa version 4, niveau AA, RGS et RGI.
 
