@@ -36,8 +36,8 @@ class Table {
     }
     this.isScrollable = newScroll;
     firstTimeScrollable = false;
-    const style = getComputedStyle(this.caption);
-    this.table.style.setProperty('--table-offset', style.getPropertyValue('height'));
+    const captionSize = this.caption.getBoundingClientRect();
+    this.table.style.setProperty('--table-offset', captionSize.height + 'px');
   }
 
   delete () {

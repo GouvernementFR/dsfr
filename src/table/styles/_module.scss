@@ -25,7 +25,7 @@
     border-spacing: 0;
   }
 
-  &[data-fr-js-table='true'] {
+  &#{ns-attr(js-table, true)} {
     caption {
       @include absolute(0);
     }
@@ -34,7 +34,7 @@
   caption {
     position: initial;
     @include title-style(h4, true);
-    font-weight: bold;
+    @include font-weight(bold);
     text-align: left;
   }
 
@@ -78,7 +78,7 @@
 
     caption {
       @include sr-only();
-      height: 0;
+      @include height(0);
     }
   }
 
@@ -94,7 +94,7 @@
       @include margin-bottom(calc(var(--table-offset) + #{space(15v)}));
     }
 
-    &[data-fr-js-table='true'] {
+    &#{ns-attr(js-table, true)} {
       caption {
         @include absolute(100%, 0, 0, 0);
         @include margin-top(4v);
@@ -103,7 +103,7 @@
 
     caption {
       @include margin-top(4v);
-      height: min-content;
+      @include height(min-content);
       caption-side: bottom;
     }
   }
@@ -112,14 +112,14 @@
   * pas de scroll ni de shadow
   */
   &--no-scroll {
-    min-width: auto;
+    @include min-width(auto);
 
     table {
       overflow-x: hidden;
     }
 
     caption {
-      max-width: calc(100vw - 2rem); // eol in mobile even if table overflow
+      @include max-width(calc(100vw - #{space(8v)})); // eol in mobile even if table overflow
     }
   }
 
