@@ -4,7 +4,7 @@
 ////
 
 @mixin _pseudo($type:before, $content:null, $display:null) {
-  @if $type != after and $type != before and $type != marker and $type != (before after) {
+  @if $type != after and $type != before and $type != (before after) {
     @error '$type must be before or after element';
   }
 
@@ -36,12 +36,6 @@
 
 @mixin after($content: null, $display: null) {
   @include _pseudo(after, $content, $display) {
-    @content;
-  }
-}
-
-@mixin marker($content: null, $display: null) {
-  @include _pseudo(marker, $content, $display) {
     @content;
   }
 }

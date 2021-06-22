@@ -13,7 +13,7 @@
   /**
    * On cache l'input de type checkbox pour le styler via le label
    */
-  input[type="checkbox"] {
+  input[type="checkbox" i] {
     @include absolute;
     opacity: 0;
 
@@ -24,15 +24,22 @@
       @include relative;
       @include padding(3v 0);
       -webkit-tap-highlight-color: transparent;
-      @include display-flex(row, center, flex-start, wrap);
+      display: grid;
+      display: -ms-grid;
+      grid-row: 1;
+      -ms-grid-row: 2;
+      grid-column: 2;
+      -ms-grid-column: 2;
+      align-items: center;
+      -ms-align-items: center;
+      grid-template-columns: 1fr space(8v);
+      -ms-grid-columns: 1fr space(8v);
+      text-align: left;
+      direction: rtl;
 
-      /**
-       * Style du texte d'aide dans le label
-       */
-      #{ns(hint-text)} {
-        @include margin(0);
-        @include size(100%);
-        @include margin-left(8v);
+      &,
+      & > * {
+        unicode-bidi: plaintext;
       }
 
       /**
@@ -44,7 +51,23 @@
         @include size(6v, 6v);
         @include margin-right(2v);
         border-radius: space(1v);
+        grid-row: 1;
+        -ms-grid-row: 1;
+        grid-column: 2;
+        -ms-grid-column: 2;
+        -ms-align-items: center;
         transition: background-color 0.1s, color 0.1s;
+      }
+
+      /**
+       * Positionnement du texte d'aide
+       */
+      #{ns(hint-text)} {
+        @include margin(0);
+        grid-row: 2;
+        grid-column: 1;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
       }
     }
   }
@@ -75,7 +98,7 @@
    * Modificateur de taille sm
    */
   &--sm {
-    input[type="checkbox"] {
+    input[type="checkbox" i] {
       + label {
         @include before {
           @include size(4v, 4v);
@@ -83,10 +106,6 @@
 
         @include after {
           left: 0;
-        }
-
-        #{ns(hint-text)} {
-          @include margin-left(6v);
         }
       }
     }
@@ -96,7 +115,7 @@
    * Modificateur pour gérer l'état erreur
    */
   &--error {
-    input[type="checkbox"] + label {
+    input[type="checkbox" i] + label {
       @include scheme-element-text-color(error);
     }
 
@@ -110,7 +129,7 @@
    * Modificateur pour gérer l'état validé
    */
   &--valid {
-    input[type="checkbox"] + label {
+    input[type="checkbox" i] + label {
       @include scheme-element-text-color(success);
     }
 

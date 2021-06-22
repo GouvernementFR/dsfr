@@ -134,7 +134,7 @@
       display: inline-flex;
 
       &:not(:last-child) {
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-right(7v);
         }
       }
@@ -142,7 +142,7 @@
       &:first-child {
         @include margin-top(0);
 
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-top(0);
         }
       }
@@ -150,7 +150,7 @@
       &:last-child {
         @include margin-bottom(0);
 
-        input[type="radio"] + label {
+        input[type="radio" i] + label {
           @include margin-bottom(0);
         }
       }

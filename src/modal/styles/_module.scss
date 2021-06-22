@@ -26,7 +26,7 @@
     flex: 1 0 space(8v);
   }
 
-  @include after(none, block) {
+  @include after('', block) {
     @include size(0, 8v);
     flex: 1 0 space(8v);
   }

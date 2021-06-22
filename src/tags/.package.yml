@@ -5,6 +5,4 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/310706305/Tag
 wrapper: col-8
 styles:
   - core
-follow:
-  styles:
-    - links
+  - links

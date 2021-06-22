@@ -7,6 +7,3 @@ styles:
   - core
 scripts:
   - core
-follow:
-  styles:
-    - links

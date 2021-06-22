@@ -4,8 +4,3 @@ description: Ce package regroupe des classes utilitaires CSS et classes javascri
 wrapper: col-8
 styles:
   - core
-example:
-  styles:
-    - table
-  scripts:
-    - table
