@@ -1,4 +1,6 @@
 node_modules/
+*/sassdoc/
+
 .DS_Store
 lerna-debug.log
 /.idea/.gitignore
