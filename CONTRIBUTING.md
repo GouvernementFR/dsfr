@@ -1,21 +1,26 @@
-# Contributing
+# Contribuer au Système de Design de l'État
+
+Avant de commencer à utiliser le Système de Design de l'État (ci-après, **DSFR**) , veillez à prendre connaissance 
+des [conditions générales d'utilisations](doc/legal/cgu.md).
+Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des documents relatifs à la [cession des droits d'auteur](doc/legal/cession.md) et du [certificat garantissant l'originalité](doc/legal/cgod.md) de votre contribution.
+
 ## Installation
 ### Installation locale
-Le Système de Design de l’État (ci-après, le **DSFR**) est basé sur une architecture NodeJS, et utilise principalement Yarn. Afin de l'installer de manière locale, il suffit dans un premier temps de cloner ce repository.
+Le DSFR est basé sur une architecture NodeJS, et utilise principalement Yarn. 
 
-Le clonage du repository nécessite une authentification à 2 facteurs (2FA). Il peut être nécessaire de lier son compte Github à son numéro de téléphone.
+Afin de pouvoir commencer à développer et contribuer au DSFR, assurez-vous tout d'abord de faire un fork du projet depuis votre compte github (https://help.github.com/articles/fork-a-repo/)
+ 
+Il suffit ensuite de cloner votre fork, en téléchargeant les sources depuis le bouton “clone” de github, ou via un terminal avec commande :
+`git clone https://github.com/VOTRE_NOM_UTILISATEUR_GITHUB/dsfr-dev`
 
-Afin d'utiliser la 2FA en ligne de commande, il est nécessaire d'avoir généré un token. Sur github, il est possible d'en générer un de cette façon :
 
-- Aller dans Settings > Developer settings > Personal access tokens > Generate new token
-- Ajouter un nom et cocher l’accès au repo.
-- Enregistrer et copier coller le token à la place du mot de passe lors de l’authentification dans la console.
-
-Une fois le repository cloné en local, bien penser à basculer sur la branche `dev`, à partir de laquelle on créer de nouvelles branches de travail pour l'ajout et la modification de packages. (Voir la section Utilisation > Git, pour le fontionnement détaillé).
+La branche `**dev**` est la principale branche de travail - la branche main correspondant aux versions de productions livrées aux utilisateurs. 
+Il est donc necessaire de créer de nouvelles branches de travail pour l'ajout et la modification de packages depuis la branche **dev**. (Voir la section Utilisation > Git, pour le fontionnement détaillé).
 
 Afin de télécharger les dépendances, compiler les css/js et générer le dossier public contenant toutes les pages d'examples, utilisez respectivement :
-- `yarn` ou `npm i`
-- `yarn release`
+- `yarn` ou `npm i` 
+- `yarn release` 
+
 
 ### Packages
 
@@ -163,23 +168,14 @@ Ou, plus spécifiquement avec `yarn build`, le paramètre `-h` de yarn build per
 ### Git
 
 #### Branches
-Afin de travailler sur un nouveau package, ou un correctif d'un package existant, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`, sous la forme `feature/mon-nouveau-package`, ou `fix/correction-package` par exemple.
+Afin de travailler sur un nouveau package, ou un correctif d'un package existant, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`. 
+git checkout -b prefixe/ma-branche dev
 
-Une fois validée, il faut faire un rebase de la branche `dev` :
-```
-git rebase dev
-```
-ou avec un merge si le rebase implique trop de conflits
-```
-git merge dev
-```
+##### Nommage des branches
+Afin d'organiser et d'identifier rapidement la nature du contenu des branches, il est nécessaire de prefixer les branches : 
+feature/nom-de-la-branche pour les nouvelles fonctionnalités ou nouveaux composants.
+fix/nom-de-la-branche pour les correctifs apportés sur des fonctionnalités ou composants existants. 
 
-Puis merger la nouvelle branche dans la branche dev avec un message de commit détaillé :
-
-```
-git checkout dev
-git merge --squash featurebranch > mettre un message de commit final
-```
 
 #### Commits
 Nous utilisons des [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) qui doivent donc s'écrire sous la forme suivante :
@@ -192,30 +188,51 @@ Nous utilisons des [conventional commits](https://www.conventionalcommits.org/en
 [optional footer(s)]
 ```
 
-La Changelog de chaque package sera donc mis à jour automatiquement en fonction du `type` de commit :
+Les valeurs possibles pour le `type` de commit sont :
 * **fix**: Un commit de type `fix` permet de patcher un bug ([\[PATCH\]](https://semver.org/#summary))
 * **feat**: Un commit de type `feat` permet d'introduire une nouvelle fonctionnalité ([\[MINOR\]](https://semver.org/#summary))
-* **BREAKING CHANGE**: Un commit avec un footer `BREAKING CHANGE:` introduit un changement important dans le code ([\[MAJOR\]](https://semver.org/#summary))
 * D'autres types que `feat` et `fix` peuvent être utilisés, nous utilisons [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional), qui recommande l'utilisation des principaux types suivants : `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, `test`
+
+* **BREAKING CHANGE**: Un commit avec un footer `BREAKING CHANGE:` introduit un changement important dans le code ([\[MAJOR\]](https://semver.org/#summary))
+
+Les messages de commits sont écrits en français (exeption faite des mots réservés par conventional commit, ainsi que les termes techniques).
 
 Exemple de commit simple :
 
 ```
-docs: add sassdoc info
+feat: ajout du composant Alerte 
 ```
 
-Exemple de commit avec `scope`, description et `BREAKING CHANGE` footer
+Exemple de commit avec `scope`  le nom du composant ou de la f, description et `BREAKING CHANGE` footer
 ```
-fix(core): change mixin name my-mixin to my-new-mixin
+fix(core): maj mixin: ancien-nom devient nouveau-nom
 
-BREAKING CHANGE: new name for the mixin my-mixin
+BREAKING CHANGE: nouveau nom pour la mixin ....
 ```
 
-***Note*** : Un hook de pre-commit est utilisé pour vérifier la validité du conventional commit. Afin d'éviter cette validation,  il est possible de passer un paramètre --no-verify lors du commit
+***Note*** : Un hook de pre-commit est utilisé pour vérifier la validité du conventional commit. 
+Afin d'éviter cette validation, il est possible de passer un paramètre --no-verify lors du commit
 
 ```
 git commit -m "build: add webpack" --no-verify
 ```
+
+#### Signature des commits
+
+Afin de garantir l'originalité des contributions, nous demandons aux contributeurs de signer leurs commits et/ou de nous faire parvenir le [certificat de garantie de l'origine du développeur](doc/legal/cgod.md). 
+
+Pour signer un commit : 
+
+```
+git commit --signoff (ou git commit -s)
+```
+
+
+#### Proposer une pull request
+
+Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR). 
+Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github  (https://github.com/GouvernementFR/dsfr-dev/pulls) ou github cli (gh).
+La pull-request suit les même règles de nommage décrites précédemment (branches, commits) 
 
 ## Compilation
 La compilation des sources permet de créer un dossier `public` à la racine du projet, contenant les dossiers `dist`, `src`, et `example`.

@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/dsfr-dev",
-  "version": "1.0.0-rc1.0",
+  "version": "1.0.0",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr-dev.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
@@ -18,7 +18,7 @@
     "node": ">=12.13.0"
   },
   "scripts": {
-    "styleguide": "./node_modules/.bin/sassdoc src/*/styles/**",
+    "styleguide": "./node_modules/.bin/sassdoc src/*/styles/** -d ./doc/sassdoc",
     "tmp": "node ./tools/tools.js tmp",
     "build": "node ./tools/tools.js build",
     "release": "node ./tools/tools.js release",

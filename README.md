@@ -106,7 +106,7 @@ Le **DSFR** est constitué de différents composants, que vous pouvez utiliser i
 Une documentation spécifique est prévue pour chaque composant, précisant ses principes d’utilisation, ainsi que les snippets de code HTML à utiliser pour votre projet.
 
 ## Contribution
-La contribution n'est pas encore possible en dehors de la core team, mais nous allons très prochainement ouvrir le repository git !
+Le processus de contribution est détaillé sur la [page CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Documentation
 
