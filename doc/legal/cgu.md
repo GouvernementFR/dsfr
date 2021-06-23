@@ -1,14 +1,13 @@
 ## CONDITIONS GÉNÉRALES D’UTILISATION DU SYSTÈME DE DESIGN DE L’ÉTAT
 
-Le Service d’Information du Gouvernement (« SIG ») vous remercie de bien vouloir lire attentivement l’intégralité des présentes Conditions Générales d’Utilisation (« CGU ») avant d’utiliser la plateforme du Système de Design de l'État (« Plateforme »). Tout accès, toute utilisation et/ou toute Contribution à la Plateforme est subordonné au respect des présentes CGU. Tout Utilisateur de la Plateforme reconnaît souscrire sans réserve aux présentes CGU et s’engage à les respecter. 
+Le Service d’Information du Gouvernement (« SIG ») vous remercie de bien vouloir lire attentivement l’intégralité des présentes Conditions Générales d’Utilisation (« CGU ») avant d’utiliser la plateforme du Système de Design de l'État (« Plateforme »). Tout accès, toute utilisation et/ou toute Contribution à la Plateforme est subordonné au respect des présentes CGU. Tout Utilisateur de la Plateforme reconnaît souscrire sans réserve aux présentes CGU et s’engage à les respecter.  
 
 
 
 ### PRÉAMBULE 
 
-Le SIG est le pilote de la transformation numérique de la communication de l’État (Circulaire n°6120/SG du 14 octobre 2019 relative à l’organisation et la coordination de la communication gouvernementale).
-À ce titre, le SIG a pour mission de placer toutes les actions du Gouvernement sous la marque de l’État afin de garantir l’homogénéité et la reconnaissance de l’ensemble des initiatives ministérielles ou interministérielles. 
-Dans ce cadre, le SIG a mis en place la nouvelle stratégie de la marque de l’État pour rendre l’action de l’État plus concrète, lisible et visible grâce à un signe commun pour les citoyens (Circulaire n°6144/SG du 17 février 2020 relative à la nouvelle stratégie de marque de l’État.)
+Le SIG est le pilote de la transformation numérique de la communication de l’État . À ce titre, le SIG a pour mission de placer toutes les actions du Gouvernement sous la marque de l’État afin de garantir l’homogénéité et la reconnaissance de l’ensemble des initiatives ministérielles ou interministérielles. 
+Dans ce cadre, le SIG a mis en place la nouvelle stratégie de la marque de l’État pour rendre l’action de l’État plus concrète, lisible et visible grâce à un signe commun pour les citoyens .
 
 Dans la continuité de la mise en œuvre de la marque de l’État, le SIG a structuré dans le cadre d’une plateforme, le Système de Design de l'État visant à mettre à disposition des librairies de Ressources permettant notamment de standardiser et d’harmoniser l’expérience numérique de l’État et des citoyens grâce à une interface commune des sites Internet et applications de l’État. Le Système de Design de l’État permet ainsi de générer des économies, en rationalisant les développements numériques, de garantir la qualité et l’efficacité de l’expérience utilisateur, la cohérence et une meilleure reconnaissance des services de l’État.
 
@@ -18,41 +17,43 @@ Les présentes Conditions Générales définissent les conditions selon lesquell
  
 ### ARTICLE 1 - DÉFINITIONS
 
-Les termes débutant avec une majuscule dans les présentes CGU, qu’ils soient utilisés au singulier ou au pluriel auront la signification qui leur est attribuée ci-après : 
+Les termes débutant avec une majuscule dans les présentes CGU, qu’ils soient utilisés au singulier ou au pluriel auront la signification qui leur est attribuée ci-après :  
 
 * **Communauté** : désigne la communauté en ligne des Utilisateurs et des membres de l’équipe du Système de Design de l'État. 
 
-* **Composants** : désigne les librairies d’éléments destinés aux designers et aux développeurs intégrant des Éléments Graphiques (Fondamentaux Techniques et les Éléments d’Identité), des Éléments d’Interface, des Paquets de codes sources. 
+* **Composants** : désigne les librairies d’éléments destinés aux designers et aux développeurs intégrant des Éléments Graphiques (Fondamentaux Techniques et les Éléments d’Identité), des Éléments d’Interface, des Paquets de codes sources.  
 
-* **Contribution** : désigne tout élément fourni par l’Utilisateur dans le cadre de l’utilisation de la Plateforme, qu’il s’agisse de la modification d’un Composant ou du développement d’un nouveau Composant.
+* **Contribution** : désigne tout élément fourni par l’Utilisateur dans le cadre de l’utilisation de la Plateforme, qu’il s’agisse de la modification d’un Composant ou du développement d’un nouveau Composant. 
 
 * **Système de Design de l'État (DSFR)** : désigne l’ensemble de Composants réutilisables, guidé par des standards et une gouvernance, devant être assemblés pour construire les sites internet et applications mobiles des Entités Autorisées et objet des présentes Conditions Générales.
 
 * **Documentation** : désigne les principes d’utilisation des Composants auxquels les Utilisateurs doivent se conformer.
 
-* **Eléments Graphiques** : désigne les Fondamentaux Techniques et les Éléments d’Identité 
+* **Eléments Graphiques** : désigne les Fondamentaux Techniques et les Éléments d’Identité. 
 
 * **Eléments d’Interface** : désigne les éléments des Composants liés à l’interface (boutons, liens, champs de saisie, case à cocher, cards, …).
 
 * **Entités Autorisées** : désigne les services de l’État devant utiliser le DSFR, à savoir les administrations centrales, leurs directions, les délégations interministérielles, les préfectures, les ambassades, l’ensemble des services déconcentrés ainsi que les Opérateurs de l’État. 
 
 * **Eléments d’Identité** : désigne les éléments des Composants qui identifient les Entités Autorisées (dénomination, logos, autres Éléments graphiques comme les couleurs, typographies, iconographies, etc.) définis dans la « Marque État ».
-Fondamentaux Techniques : désigne les éléments basiques pour construire une page, un site Internet ou une application mobile (grille, espacement, points de rupture, etc).
+
+* **Fondamentaux Techniques** : désigne les éléments basiques pour construire une page, un site Internet ou une application mobile (grille, espacement, points de rupture, etc).
 
 * **Marque de l’Etat** : telle que définie par la circulaire du Premier Ministre en date du 17 février 2020, laquelle précise la stratégie de marque de l’Etat.
 
 * **Opérateurs de l’État** : désigne les entités définies chaque année dans l’annexe « Opérateurs de l'État » du projet de loi de finances de l’année en cours.
-**Paquets de codes sources** : désigne les fichiers de codes sources accessibles sur la plateforme de Git (Github).
+
+* **Paquets de codes sources** : désigne les fichiers de codes sources accessibles sur la plateforme de Git (Github).
 
 * **Plateforme** : désigne le site Internet du Système de Design de l'État, permettant aux Utilisateurs de naviguer, utiliser et contribuer au Système de Design de l'État.
 
 * **Ressources** : désigne les Composants, la Documentation, le support et les outils mis à disposition de l’Utilisateur sur ou au travers de la Plateforme.
 
-* **Services** : désigne les services fournis par le SIG via la Plateforme. 
+* **Services** : désigne les services fournis par le SIG via la Plateforme.  
 
-* **Autre Utilisateur** : désigne toute personne autre qu’un Utilisateur de l’État. 
+* **Autre Utilisateur** : désigne toute personne autre qu’un Utilisateur de l’État.  
 
-* **Utilisateur de l’État** : désigne toute personne travaillant chez ou pour une Entité Autorisée. Les agences de communication ou autre prestataire technique travaillant pour le compte d’une Entité Autorisée ont les mêmes droits et obligations relatifs aux Ressources que les Entités Autorisées elles-mêmes. En revanche, dès lors qu’ils ne travaillent plus pour les Entités Autorisées, ces prestataires externes n’ont sur les Ressources que les seuls droits dévolus aux Autres Utilisateurs. 
+* **Utilisateur de l’État** : désigne toute personne travaillant chez ou pour une Entité Autorisée. Les agences de communication ou autre prestataire technique travaillant pour le compte d’une Entité Autorisée ont les mêmes droits et obligations relatifs aux Ressources que les Entités Autorisées elles-mêmes. En revanche, dès lors qu’ils ne travaillent plus pour les Entités Autorisées, ces prestataires externes n’ont sur les Ressources que les seuls droits dévolus aux Autres Utilisateurs.  
 
 * **Utilisateur** : désigne ensemble les Utilisateurs de l’État et les Autres Utilisateurs.
 
@@ -84,7 +85,7 @@ Le SIG confirmera la prise en compte de la demande par email dans les meilleurs 
 
 Toutes les Ressources sont la propriété de l’État. 
 
-Toutes les Ressources sont mises à disposition des Utilisateurs dans les conditions suivantes étant précisé que la Documentation est accessible aux Utilisateurs mais ses modifications sont strictement réservées à l’équipe du DSFR : 
+Toutes les Ressources sont mises à disposition des Utilisateurs dans les conditions suivantes étant précisé que la Documentation est accessible aux Utilisateurs mais ses modifications sont strictement réservées à l’équipe du DSFR :  
 
 ##### I° Conditions d’utilisation des Ressources par les seuls Utilisateurs de l’État
 Pendant toute la durée pendant laquelle les Ressources sont accessibles sur le DSFR, les Utilisateurs de l’État doivent les utiliser exclusivement aux seules fins de concevoir et développer les sites Internet et applications mobiles des Entités autorisées. 
@@ -103,8 +104,7 @@ Tous les Autres Utilisateurs sont autorisés à consulter le code source et cont
 Ces Autres Utilisateurs ne sont pas autorisés à utiliser et reproduire les Éléments d’Identité, les Fondamentaux Techniques, et les Éléments d’Interface à d’autres fins qu’au développement des sites internet et des applications mobiles des Entités Autorisées et ce pour éviter toute confusion concernant ces types de Composants qui sont propres à l’État. Les Autres Utilisateurs ne sont donc pas autorisés à en faire un usage commercial. 
 
 Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
- 
- 
+
 
 ### ARTICLE 3 - CONDITIONS SPÉCIFIQUES AUX CONTRIBUTIONS 
 
@@ -128,11 +128,9 @@ Pour les Contributions relatives aux Codes Sources, le fichier contributing.md s
 
 Il est précisé que la validation de la Contribution relative au Code Source s’effectue comme suit : 
 
-Le Code Source développé ou modifié est soumis à l’équipe de développement du DSFR pour analyse. 
-
-Pour les modifications structurantes et le développement de nouveaux Composants, le processus de création devra suivre le fonctionnement de l’équipe du Système de Design de l’État :
+Le Code Source développé ou modifié est soumis à l’équipe de développement du DSFR pour analyse. Pour les modifications structurantes et le développement de nouveaux Composants, le processus de création devra suivre le fonctionnement de l’équipe du Système de Design de l’État :
 * Une phase de découverte UX qui a pour objectifs de cadrer le périmètre de développement
-* Une phase de design UI (échanges et partages possibles avec l’équipe DSFR dès cette phase
+* Une phase de design UI (échanges et partages possibles avec l’équipe DSFR dès cette phase)
 * Une phase de développement
  
  
@@ -144,7 +142,6 @@ Pour les modifications structurantes et le développement de nouveaux Composants
 **4.2** Le SIG fera ses meilleurs efforts pour garantir un accès à la Plateforme 7j/7 et 24h/24 étant précisé que le SIG pourra toutefois en interrompre l’accès, à des fins de maintenance corrective ou évolutive, d’amélioration de l’infrastructure, ou pour en garantir la sécurité et en aucun cas la responsabilité du SIG ne pourra être recherchée du fait d’une telle indisponibilité. 
 
 La Plateforme répond aux exigences des référentiels RGAA dans sa version 4, niveau AA, RGS et RGI.
-
 Cette Plateforme est en constante évolution et enrichissement et le SIG ne saurait dès lors garantir la pérennité de certains des Composants dès lors qu’ils ne sont plus validés par le SIG. 
 
 
@@ -170,12 +167,12 @@ Il est rappelé que tous les sites et applications mobiles développés par ou p
 Les données personnelles collectées par le SIG au travers de la Plateforme sont exploitées conformément aux dispositions de la Politique Données Personnelles présente sur le Plateforme. 
  
  
- 
 ### ARTICLE 7 – DISPOSITIONS DIVERSES
 
 #### 7.1. Modifications des CGU
 
 Les présentes CGU sont opposables pendant toute la durée d'utilisation de la Plateforme et jusqu'à ce que de nouvelles conditions générales d'utilisation remplacent les présentes.
+
 Il est donc conseillé à l'Utilisateur de se référer régulièrement à la dernière version des conditions générales d'utilisation disponible en permanence sur la Plateforme. Tout usage de la Plateforme par l'Utilisateur après les modifications des conditions générales d'utilisation vaut acceptation par ce dernier des nouvelles conditions générales d'utilisation.
 
 #### 7.2. Non renonciation
