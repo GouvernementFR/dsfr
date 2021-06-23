@@ -1,6 +1,6 @@
 id: alerts
 title: Alertes
-description: Les alertes permettent d’attirer l’attention de l’utilisateur sur une information sans interrompre la tâche de l'utilisateur.
+description: Les alertes permettent d’attirer l’attention de l’utilisateur sur une information sans interrompre sa tâche.
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/736362500
 wrapper: col-8
 styles:
