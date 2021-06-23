@@ -1,4 +1,5 @@
 const { createFile } = require('../utilities/file');
+const { copyFiles } = require('../build/copy');
 const Readme = require('./readme');
 const root = require('../utilities/root');
 const { getPackages, getPackageYML, getPublicPackage, getAllPackagesYML } = require('../utilities/config');
@@ -59,7 +60,7 @@ const completeGlobalMarkdown = () => {
 
   for (const pck of packages) {
     fileContents += `\n##### ${pck.title}\n`;
-    fileContents += `- [README](src/${pck.id}/README.md)\n`;
+    //fileContents += `- [README](src/${pck.id}/README.md)\n`; @jch: wrong README Path. Waiting for next folders' update.
 
     switch (true) {
       case Array.isArray(pck.doc):
@@ -77,6 +78,11 @@ const completeGlobalMarkdown = () => {
 
   createFile(filePath, fileContents, true);
   log(38, p);
-};
+
+  const mkfiles = ['LICENCE.md','SECURITY.md'];
+  copyFiles(root(''), root('public/'), mkfiles, false, false);
+  log(38, 'public/LICENCE.md');
+  log(38, 'public/SECURITY.md');
+  }
 
 module.exports = { generateMarkdown, completeGlobalMarkdown };
