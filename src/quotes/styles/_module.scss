@@ -4,18 +4,66 @@
 ////
 
 #{ns(quote)} {
+  @include relative;
   @include margin(0);
+  @include padding(0 0 8v 0);
+  @include padding(0 0 0 8v, md);
 
-  blockquote {
-    @include margin(0 0 4v);
+  @include icon(chat-quote-line,lg,before) {
+    display: block;
+    @include padding-bottom(2v);
+  }
 
-    p{
-      @include margin-bottom(0);
+  @include after('', 'block') {
+    @include absolute(0,null, null, 0, 32v, 100%);
+    pointer-events: none;
+  }
+
+  &--image {
+    @include display-flex(column, flex-start, center);
+    @include margin-left(52v, md);
+
+    // todo: utiliser mixin min-height
+    @include respond-from(md) {
+      min-height: space(52v);
+    }
+
+    #{ns(quote__author)} {
+      @include margin-left(21v);
+      @include margin-left(0, md);
+    }
+
+    #{ns(quote__source)} {
+      @include margin-left(21v);
+      @include margin-left(0, md);
+    }
+
+    figcaption {
+      // todo: utiliser mixin min-height
+      min-height: space(17v);
+      @include display-flex(column, flex-start, center);
+
+      @include respond-from(md) {
+        min-height: none;
+      }
     }
   }
 
-  p {
-    margin-bottom: 0
+  blockquote {
+    @include margin(0);
+
+    p {
+      @include margin-bottom(4v);
+      @include text-style(xl);
+      @include font-weight(bold);
+
+      // Pour ajouter les guillets en css
+      // @include before('«\0000A0', 'inline-block');
+
+      // &:last-of-type() {
+      //   @include after('\0000A0»', 'inline-block');
+      // }
+    }
   }
 
   &__author {
@@ -24,6 +72,23 @@
     @include margin-bottom(1v);
   }
 
+  &__image {
+    @include size(17v);
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    @include absolute;
+    @include display-flex;
+
+    img{
+      @include size(100%, 100%);
+    }
+
+    @include respond-from(md) {
+      @include absolute(50%,null,null,-52v,46v,46v);
+      @include margin-top(-23v);
+    }
+  }
 
   cite {
     @include text-style(xs);
@@ -31,13 +96,22 @@
   }
 
   figcaption {
-    span {
-      @include text-style(xs);
+    @include disable-list-style;
 
-      &:not(:first-child) {
-        @include before('', 'inline-block') {
-          content : '·';
-          @include padding-x(1v);
+    li {
+      @include text-style(xs);
+    }
+
+    #{ns(quote)}__source {
+      @include display-flex(row,null,flex-start,wrap);
+
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          @include after('·', 'inline-block') {
+            @include padding-x(1v);
+          }
         }
       }
     }

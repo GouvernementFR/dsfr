@@ -2,4 +2,8 @@
 const sample = getSample(include);
 %>
 
-<%- sample('Citation par défaut', './samples/quote-default', {}, true); %>
+<%- sample('Citation par défaut (texte taille xl)', './samples/quote-default', {}, true); %>
+
+<%- sample('Citation taille lg', './samples/quote-default', {size:'lg'}, true); %>
+
+<%- sample('Citation avec image', './samples/quote-with-image', {}, true); %>
