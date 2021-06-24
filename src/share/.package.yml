@@ -1,0 +1,10 @@
+id: share
+title: Boutons de partage
+description: Les boutons de partage permettent aux utilisateurs de partager facilement un contenu, via les réseaux sociaux, par envoi de mail ou en copiant l’URL du contenu dans le presse-papier.
+doc:
+wrapper: col-8
+styles:
+  - core
+follow:
+  styles:
+    - links

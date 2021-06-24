@@ -1,0 +1,36 @@
+<%
+
+let data = {
+  text: 'Partager la page',
+  links: {
+    facebook: {
+      title: 'Partager sur Facebook',
+      href: '#',
+      icon: ''
+    },
+    twitter: {
+      title: 'Partager sur Twitter',
+      href: '#',
+      icon: ''
+    },
+    linkedin: {
+      title: 'Partager sur LinkedIn',
+      href: '#',
+      icon: ''
+    },
+    mail: {
+      title: 'Partager par mail',
+      href: '#',
+      icon: ''
+    },
+    copy: {
+      title: 'Copier le lien',
+      href: '#',
+      icon: ''
+    }
+  }
+}
+
+%>
+
+<%- include('../../templates/ejs/share', data); %>

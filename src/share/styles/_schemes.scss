@@ -1,0 +1,11 @@
+////
+/// Share Schemes
+/// @group share
+////
+
+#{ns(share)} {
+  @include scheme-element-text-color(g-800, true);
+  @include scheme-element-bg-color(g200, true);
+
+  @include disabled-link(true, true);
+}
