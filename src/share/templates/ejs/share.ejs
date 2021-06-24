@@ -14,11 +14,11 @@ let shareClasses = [prefix + '-share'];
 %>
 
 <div <%- includeClasses(shareClasses); %> >
-    <p class="<%= prefix %>-mb-3v <%= prefix %>-mb-3v"><%- share.title %></p>
+    <p class="<%= prefix %>-mb-2v"><%- share.title %></p>
     <ul class="<%= prefix %>-links-group">
         <% for (let i=0; i < share.links.length; i++) { %>
             <li>
-                <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: share.links[i].title}, href: share.links[i].url, blank: true, label: share.links[i].label, classes: [prefix + '-share--' + share.links[i].label] }); %>
+                <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: share.links[i].title}, href: share.links[i].url, blank: true, label: share.links[i].label, classes: [prefix + '-link--' + share.links[i].label], icon: share.links[i].icon}); %>
             </li>
         <% } %>
     </ul>

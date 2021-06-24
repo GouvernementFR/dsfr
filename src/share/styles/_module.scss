@@ -6,23 +6,21 @@
 @include build-share();
 
 #{ns(share)} {
-  @include disable-list-style;
-  display: flex;
-  flex-wrap: wrap;
-  @include margin-bottom(0);
-
-  > li {
-    display: inline-flex;
-  }
-
-  #{ns(share-btn)} {
-    @include margin-right(2v);
+  &__title {
     @include margin-bottom(2v);
   }
 
-  a#{ns(share-btn)},
-  button#{ns(share-btn)} {
-    @include margin-right(3v);
-    @include margin-bottom(3v);
+  .fr-links-group {
+    @include disable-list-style;
+    display: flex;
+    flex-wrap: wrap;
+    @include margin-bottom(0);
+
+    > li {
+      display: inline-flex;
+      @include margin(2v);
+      @include size(#{space(12v)});
+      background: red;
+    }
   }
 }
