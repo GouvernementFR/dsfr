@@ -1,95 +1,25 @@
 <%#
-# paramètres tag
+# paramètres share
 
-* label (string, required) : contenu texte
+* title (string, required) : titre du bloc de partage
 
-* href (string, required) : adresse url du lien
-
-* blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
-
-* icon (string, optional) : icon du lien
-
-* iconPlace (string, optionnal) : emplacement de l'icone
-  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
-  valeurs :
-  * left : icone à gauche du label
-  * right : icone à droite du label
+* links (array, required) : Tableau de liens de partage (title, url, icon)
 
 %>
-<% eval(include('../../../core/index.ejs')); %>
+<% eval(include('../../../core/index.ejs'));
 
-<%
- let shareClasses = locals.classes || [];
- let shareAttrs = locals.attributes || {};
-
- shareClasses.push(prefix + '-share');
-
- /*
- switch(locals.size) {
-     case 'sm':
-         tagClasses.push(prefix + '-tag--sm');
-       break;
- }
-*/
-
- if (locals.icon !== undefined) shareClasses.push(prefix + '-fi-' + locals.icon);
-
- /*
- if (locals.iconPlace !== undefined) switch(locals.iconPlace)
- {
-
-     case 'left':
-         tagClasses.push(prefix + '-tag--icon-left');
-         break;
-
-     case 'right':
-         tagClasses.push(prefix + '-tag--icon-right');
-         break;
-
- }
-*/
-
-if (locals.disabled === true) {
-  if (locals.button) shareAttrs['disabled'] = '';
-} else if (locals.clickable) {
-    shareAttrs.href = locals.href || '[url - à modifier]';
-  switch (true) {
-    case locals.blank:
-    shareAttrs.target = '_blank';
-    break;
-    case locals.self:
-    shareAttrs.target = '_self';
-    break;
-  }
-}
+let classes = locals.classes || [];
+let shareClasses = [prefix + '-share'];
 
 %>
 
-
-<div class="<%= prefix %>-share">
-<% if(locals.text) { %>
-    <p><%- text %></p>
-<% } %>
-
-<% if(locals.group) { %>
-    <ul class="<%= prefix %>-share-btn-group">
-    <% for (let i = 0; links.length ; i++) { %>
-        <li>
-            <% if(locals.clickable) { %>
-                <a <%- includeClasses(shareClasses)%> <%- includeAttrs(shareAttrs); %>><%- links[i].title %></a>
-            <% } else { %>
-                <p <%- includeClasses(shareClasses)%>><%- links[i].title %></p>
-            <% } %>
-        </li>
-    <% } %>
+<div <%- includeClasses(shareClasses); %> >
+    <p class="<%= prefix %>-mb-3v <%= prefix %>-mb-3v"><%- share.title %></p>
+    <ul class="<%= prefix %>-links-group">
+        <% for (let i=0; i < share.links.length; i++) { %>
+            <li>
+                <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: share.links[i].title}, href: share.links[i].url, blank: true, label: share.links[i].label, classes: [prefix + '-share--' + share.links[i].label] }); %>
+            </li>
+        <% } %>
     </ul>
-<% } else { %>
-    <% if(locals.clickable) { %>
-        <a <%- includeClasses(shareClasses)%> <%- includeAttrs(shareAttrs); %>></a>
-    <% } else if (locals.button) { %>
-        <button <%- includeClasses(shareClasses)%> <%- includeAttrs(shareAttrs); %>></button>
-    <% } else { %>
-        <p <%- includeClasses(shareClasses)%>></p>
-    <% } %>
-<% } %>
 </div>

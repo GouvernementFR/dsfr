@@ -1,36 +1,35 @@
+
 <%
-
-let data = {
-  text: 'Partager la page',
-  links: {
-    facebook: {
+let data = {};
+data.share = {
+  title: 'Partager la page',
+  links: [
+    {
+      label: 'facebook',
       title: 'Partager sur Facebook',
-      href: '#',
-      icon: ''
+      url: 'Sharer URL'
     },
-    twitter: {
-      title: 'Partager sur Twitter',
-      href: '#',
-      icon: ''
-    },
-    linkedin: {
+    {
+      label: 'LinkedIn',
       title: 'Partager sur LinkedIn',
-      href: '#',
-      icon: ''
+      url: 'Sharer URL'
     },
-    mail: {
-      title: 'Partager par mail',
-      href: '#',
-      icon: ''
+    {
+      label: 'twitter',
+      title: 'Partager sur Twitter',
+      url: 'Sharer URL'
     },
-    copy: {
-      title: 'Copier le lien',
-      href: '#',
-      icon: ''
+    {
+      label: 'email',
+      title: 'Partager sur email',
+      url: 'Sharer URL'
+    },
+    {
+      label: 'copy',
+      title: 'Copier dans le presse-papier',
+      url: 'Sharer URL'
     }
-  }
-}
-
-%>
+  ]
+} %>
 
 <%- include('../../templates/ejs/share', data); %>
