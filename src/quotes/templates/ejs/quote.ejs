@@ -23,20 +23,16 @@
  let href = locals.href || false;
  let sources = locals.sources || [];
  let quoteClasses = [prefix + '-quote'];
- if (image) quoteClasses.push(prefix + '-quote--image');
+ let citeAttr = [];
+ if (image) quoteClasses.push(prefix + '-quote--column');
+ if (href) citeAttr.cite = href;
  %>
 
 <figure <%- includeClasses(quoteClasses) %>>
-  <blockquote <%= href ? 'cite="' + href + '"' : ''%>>
+  <blockquote <%- href ? includeAttrs(citeAttr) : ''%>>
     <p <%- (size !== undefined) ? includeClasses([prefix+'-text--'+size]) : '' %>>« <%= text %> »</p>
   </blockquote>
   <figcaption>
-    <% if (image && image.img) { %>
-      <div class="<%= prefix %>-quote__image">
-        <%- imgContent(image.img, image.alt) %>
-      </div>
-    <% } %>
-
     <% if (author) { %>
       <p class="<%= prefix %>-quote__author"><%= author %></p>
     <% } %>
@@ -47,6 +43,12 @@
         <li><%- sources[source] %></li>
       <% } %>
       </ul>
+    <% } %>
+
+    <% if (image && image.img) { %>
+      <div class="<%= prefix %>-quote__image">
+        <%- imgContent(image.img, image.alt) %>
+      </div>
     <% } %>
   </figcaption>
 </figure>

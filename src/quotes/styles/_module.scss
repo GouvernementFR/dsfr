@@ -6,7 +6,7 @@
 #{ns(quote)} {
   @include relative;
   @include margin(0);
-  @include padding(0 0 8v 0);
+  @include padding(0 2v 8v 2v);
   @include padding(0 0 0 8v, md);
 
   @include icon(chat-quote-line,lg,before) {
@@ -15,11 +15,14 @@
   }
 
   @include after('', 'block') {
-    @include absolute(0,null, null, 0, 32v, 100%);
+    @include absolute(0,null, null, 2v, calc(50% - #{space(4v)}), 100%);
     pointer-events: none;
+    @include respond-from(md) {
+      left: 0;
+    }
   }
 
-  &--image {
+  &--column {
     @include display-flex(column, flex-start, center);
     @include margin-left(52v, md);
 
