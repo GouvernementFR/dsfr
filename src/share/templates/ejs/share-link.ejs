@@ -1,0 +1,47 @@
+<%#
+# paramètres link
+
+* label (string, required) : contenu texte
+
+* tag (string) : si non défini, a
+
+* href (string, required) : adresse url du lien
+
+* blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
+
+* disabled (boolean, optionnal) : si valeur true, link désactivé
+
+* icon (string, optional) : icon du lien
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let shareLinkClasses = locals.classes || [];
+let shareLinkAttrs = locals.attributes || {};
+
+const tag = locals.tag || 'a';
+
+shareLinkClasses.push(prefix + '-share__link');
+
+if (locals.disabled === true) shareLinkAttrs['disabled'] = '';
+
+if (locals.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + locals.icon);
+
+if (locals.disabled === true) {
+    if (tag === 'button') shareLinkAttrs['disabled'] = '';
+} else if (tag === 'a') {
+    shareLinkAttrs.href = locals.href || '[url - à modifier]';
+    switch (true) {
+        case locals.blank:
+            shareLinkAttrs.target = '_blank';
+            break;
+
+        case locals.self:
+            shareLinkAttrs.target = '_self';
+            break;
+    }
+}
+%>
+
+<<%= tag %> <%- includeClasses(shareLinkClasses)%> <%- includeAttrs(shareLinkAttrs); %>><%- label %></<%= tag %>>

@@ -1,0 +1,38 @@
+<%
+const items = [
+    {
+      property: 'og:title',
+      content:'Système de Design de l'État'
+    },
+    {
+      property: 'og:description',
+      content:'Développer vos sites et applications en utilisant des composants prêts à l\'emploi, accessibles et ergonomiques'
+    },
+    {
+      property: 'og:image',
+      content:'https://systeme-de-design.gouv.fr/src/img/systeme-de-design.gouv.fr.jpg'
+    },
+    {
+        property: 'og:url',
+        content:'https://systeme-de-design.gouv.fr/'
+    },
+    {
+        property: 'twitter:card',
+        content:'summary_large_image'
+    },
+    {
+        property: 'og:site_name',
+        content:'Système de Design de l\'État'
+    },
+    {
+        property: 'og:image:alt',
+        content:'République Française - Système de Design de l\'État'
+    },
+    {
+        property: 'twitter:image:alt',
+        content:'République Française - Système de Design de l\'État'
+    }
+];
+%>
+
+<%- include('../../templates/ejs/share-meta', { items: items }); %>

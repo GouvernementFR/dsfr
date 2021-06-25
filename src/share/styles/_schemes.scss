@@ -4,8 +4,10 @@
 ////
 
 #{ns(share)} {
-  @include scheme-element-text-color(g-800, true);
-  @include scheme-element-bg-color(g200, true);
-
-  @include disabled-link(true, true);
+  &__link {
+    @include scheme-element-text-color(bf500, true);
+    @include scheme-element-bg-color(t-plain, true, true);
+    @include scheme-element-box-shadow-color(g600, true);
+    @include disabled-link(true, false, true);
+  }
 }

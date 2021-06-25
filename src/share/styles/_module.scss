@@ -10,17 +10,38 @@
     @include margin-bottom(2v);
   }
 
-  .fr-links-group {
+  &__group {
     @include disable-list-style;
     display: flex;
     flex-wrap: wrap;
     @include margin-bottom(0);
+    @include margin(0, calc(#{space(2v)} * -1));
 
     > li {
       display: inline-flex;
       @include margin(2v);
-      @include size(#{space(12v)});
-      background: red;
+    }
+  }
+
+  &__link {
+    &--facebook {
+      @include nest-share(md, only, facebook-circle-line, null, false);
+    }
+
+    &--twitter {
+      @include nest-share(md, only, twitter-line, null, false);
+    }
+
+    &--linkedin {
+      @include nest-share(md, only, linkedin-box-line, null, false);
+    }
+
+    &--mail {
+      @include nest-share(md, only, mail-line, null, false);
+    }
+
+    &--copy {
+      @include nest-share(md, only, links-fill, null, false);
     }
   }
 }

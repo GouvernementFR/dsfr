@@ -4,14 +4,15 @@
 ////
 
 $share-settings:(
-  selector: share,
+  selector: share__link,
   sizes: (
     md: (
-      font-size: 14px,
-      min-height: 8v,
+      font-size: 14,
+      min-height: 12v,
       padding-x: 4v,
       icon: sm,
-      icon-margin-x: 1v
+      icon-margin-x: 2v,
+      icon-only: md
     )
   ),
   places: only,

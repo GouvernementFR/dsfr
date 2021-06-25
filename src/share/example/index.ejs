@@ -1,4 +1,6 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Boutons de partage', './samples/share-default', {clickable: true, group: true}, true); %>
+<%- sample('Balises méta partage RS', './prepend', {clickable: false }, true); %>
+<%- sample('Boutons de partage RS', './samples/share-default', {clickable: true, group: true}, true); %>
+<%- sample('Boutons de partage RS inactif', './samples/share-default', {clickable: false, group: true}, true); %>
 

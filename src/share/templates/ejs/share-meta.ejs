@@ -1,0 +1,5 @@
+<% eval(include('../../../core/index.ejs')); %>
+
+<% for (const item of locals.items) { %>
+    <meta property="<%= item.property %>" content="<%= item.content %>">
+<% } %>
