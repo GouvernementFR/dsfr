@@ -1,28 +1,29 @@
 
 <%
 let data = {};
+let url = 'https://www.systeme-de-design.gouv.fr/';
 data.share = {
   title: 'Partager la page',
   links: [
     {
       label: 'facebook',
       title: 'Partager sur Facebook',
-      url: 'Sharer URL'
+      url: 'https://www.facebook.com/sharer.php?u='+url
     },
     {
       label: 'twitter',
       title: 'Partager sur Twitter',
-      url: 'Sharer URL'
+      url: 'https://twitter.com/share?url='+url+'&text=[post-title]&via=[via]&hashtags=[hashtags]'
     },
     {
       label: 'linkedin',
       title: 'Partager sur LinkedIn',
-      url: 'Sharer URL'
+      url: 'https://www.linkedin.com/shareArticle?url='+url+'&title=[post-title]'
     },
     {
       label: 'mail',
       title: 'Partager par email',
-      url: 'mailto:?subject="****"'
+      url: url
     },
     {
       label: 'copy',

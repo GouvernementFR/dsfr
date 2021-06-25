@@ -15,7 +15,8 @@
     display: flex;
     flex-wrap: wrap;
     @include margin-bottom(0);
-    @include margin(0, calc(#{space(2v)} * -1));
+    @include margin-left(calc(#{space(2v)} * -1));
+    @include margin-right(calc(#{space(2v)} * -1));
 
     > li {
       display: inline-flex;

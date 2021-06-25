@@ -7,7 +7,7 @@
   &__link {
     @include scheme-element-text-color(bf500, true);
     @include scheme-element-bg-color(t-plain, true, true);
-    @include scheme-element-box-shadow-color(g600, true);
+    @include scheme-element-box-shadow-color(g300, true);
     @include disabled-link(true, false, true);
   }
 }
