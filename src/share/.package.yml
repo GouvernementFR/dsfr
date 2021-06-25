@@ -8,4 +8,3 @@ styles:
 follow:
   styles:
     - links
-prepend: true
