@@ -14,9 +14,8 @@
     @include disable-list-style;
     display: flex;
     flex-wrap: wrap;
+    @include margin-x(-2v);
     @include margin-bottom(0);
-    @include margin-left(calc(#{space(2v)} * -1));
-    @include margin-right(calc(#{space(2v)} * -1));
 
     > li {
       display: inline-flex;
