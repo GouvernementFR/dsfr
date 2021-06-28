@@ -1,4 +1,4 @@
-import { TABLE_SCROLLING_SELECTOR } from './constants';
+import { TABLE_SELECTOR } from './constants';
 import { Table } from './table';
 
 const tables = [];
@@ -8,7 +8,7 @@ const change = () => {
 };
 
 const build = () => {
-  const tableNodes = document.querySelectorAll(TABLE_SCROLLING_SELECTOR);
+  const tableNodes = document.querySelectorAll(TABLE_SELECTOR);
   for (let i = 0; i < tableNodes.length; i++) tables.push(new Table(tableNodes[i]));
 
   window.addEventListener('resize', change);
