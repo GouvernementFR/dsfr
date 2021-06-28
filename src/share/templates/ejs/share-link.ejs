@@ -26,8 +26,6 @@ shareLinkClasses.push(prefix + '-share__link');
 
 if (locals.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + locals.icon);
 
-if (tag === 'button' && shareLinkAttrs[disabled]) shareLinkAttrs['disabled xxx'] = '';
-
 if (locals.disabled === true) {
     if (tag === 'button') shareLinkAttrs['disabled'] = '';
     if (tag === 'button' && shareLinkClasses.includes(prefix+'-share__link--copy') ||
