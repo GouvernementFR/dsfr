@@ -10,6 +10,11 @@
     @include margin-bottom(2v);
   }
 
+  &__text {
+    @include text-style(xs);
+    @include max-size(#{space(72v)}, null, md)
+  }
+
   &__group {
     @include disable-list-style;
     display: flex;

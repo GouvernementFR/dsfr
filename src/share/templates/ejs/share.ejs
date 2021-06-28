@@ -6,11 +6,10 @@
 * links (array, required) : Tableau de liens de partage (title, url, icon)
 
 %>
-<% eval(include('../../../core/index.ejs'));
-
+<%
+eval(include('../../../core/index.ejs'));
 let classes = locals.classes || [];
 let shareClasses = [prefix + '-share'];
-
 %>
 
 <div <%- includeClasses(shareClasses); %> >
@@ -22,4 +21,7 @@ let shareClasses = [prefix + '-share'];
             </li>
         <% } %>
     </ul>
+    <% if (locals.inactive) { %>
+        <p class="<%= prefix %>-share__text"><%- share.text %></p>
+    <% } %>
 </div>

@@ -4,31 +4,37 @@ let data = {};
 let url = 'https://www.systeme-de-design.gouv.fr/';
 data.share = {
   title: 'Partager la page',
+  text: 'Veuillez <a href=' + contentPlaceholder('url page autorisation cookies') + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
   links: [
     {
       label: 'facebook',
       title: 'Partager sur Facebook',
-      url: 'https://www.facebook.com/sharer.php?u='+url
+      url: 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url du site'),
+      disabled: locals.disabled === true
     },
     {
       label: 'twitter',
       title: 'Partager sur Twitter',
-      url: 'https://twitter.com/share?url='+url+'&text=[post-title]&via=[via]&hashtags=[hashtags]'
+      url: 'https://twitter.com/share?url='+contentPlaceholder('url du site')+'&text='+contentPlaceholder('titre du site')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'),
+      disabled: locals.disabled === true
     },
     {
       label: 'linkedin',
       title: 'Partager sur LinkedIn',
-      url: 'https://www.linkedin.com/shareArticle?url='+url+'&title=[post-title]'
+      url: 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url du site')+'&title='+contentPlaceholder('titre du site'),
+      disabled: locals.disabled === true
     },
     {
       label: 'mail',
       title: 'Partager par email',
-      url: url
+      url: 'mailto:?subject='+contentPlaceholder('sujet')+'&body='+contentPlaceholder('titre')+' '+contentPlaceholder('url du site'),
+      disabled: false
     },
     {
       label: 'copy',
       title: 'Copier dans le presse-papier',
-      url: 'Sharer URL'
+      url: 'Copy to clipboard',
+      disabled: false
     }
   ]
 } %>

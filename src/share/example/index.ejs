@@ -1,6 +1,8 @@
 <% const sample = getSample(include); %>
 
 <%- sample('Méta données', './samples/meta-share', {}, true); %>
+
 <%- sample('Boutons de partage par défaut', './samples/share-default', {}, true); %>
-<%- sample('Boutons de partage version inactive', './samples/share-default', {clickable: false, group: true}, true); %>
+
+<%- sample('Boutons de partage version inactive', './samples/share-default', {tag: 'button', disabled: true, inactive:true}, true); %>
 

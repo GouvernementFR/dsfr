@@ -24,12 +24,14 @@ const tag = locals.tag || 'a';
 
 shareLinkClasses.push(prefix + '-share__link');
 
-if (locals.disabled === true) shareLinkAttrs['disabled'] = '';
-
 if (locals.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + locals.icon);
+
+if (tag === 'button' && shareLinkAttrs[disabled]) shareLinkAttrs['disabled xxx'] = '';
 
 if (locals.disabled === true) {
     if (tag === 'button') shareLinkAttrs['disabled'] = '';
+    if (tag === 'button' && shareLinkClasses.includes(prefix+'-share__link--copy') ||
+        tag === 'button' && shareLinkClasses.includes(prefix+'-share__link--mail')) delete shareLinkAttrs.disabled;
 } else if (tag === 'a') {
     shareLinkAttrs.href = locals.href || '[url - à modifier]';
     switch (true) {
