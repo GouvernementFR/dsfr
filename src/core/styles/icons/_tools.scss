@@ -62,7 +62,9 @@
 
 @mixin icon($icon:null, $size:md, $pseudo:before) {
   @include _pseudo($pseudo) {
-    @include font-icon($size);
+    @if $size != null {
+      @include font-icon($size);
+    }
 
     @if $icon != null {
       @include icon-content($icon);

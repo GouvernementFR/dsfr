@@ -18,6 +18,9 @@
       @if $icon != null {
         @include icon($icon);
       }
+      @else if $size != null {
+        @include icon(null, $size);
+      }
 
       @include _build-link-size($size-settings, $border-radius);
 
