@@ -35,9 +35,8 @@
     }
 
     #{ns(input-wrap)} {
-      display: flex;
-      flex-direction: column;
-      max-width: space(147v);
+      @include display-flex(column);
+      max-width: space(150v);
       @include margin-top(0);
 
       #{ns(input)} {
@@ -86,7 +85,7 @@
 
   &__social {
     // code social en mode col-4
-    @include nest-link(md, only, null, null, true, true);
+    @include nest-link(md, only, refresh-line, null, true, true);
     @include padding(4v 0);
     @include padding(5v 0, md);
 
@@ -169,22 +168,37 @@
   }
 
   #{ns(link--facebook)} {
-    @include nest-link(md, only, facebook-circle-fill, null, false);
+    // @include nest-link(md, only, facebook-circle-fill, null, false);
+    @include before {
+      @include icon-content(facebook-circle-fill);
+    }
   }
 
   #{ns(link--twitter)} {
-    @include nest-link(md, only, twitter-fill, null, false);
+    // @include nest-link(md, only, twitter-fill, null, false);
+    @include before {
+      @include icon-content(twitter-fill);
+    }
   }
 
   #{ns(link--instagram)} {
-    @include nest-link(md, only, instagram-fill, null, false);
+    // @include nest-link(md, only, instagram-fill, null, false);
+    @include before {
+      @include icon-content(instagram-fill);
+    }
   }
 
   #{ns(link--linkedin)} {
-    @include nest-link(md, only, linkedin-box-fill, null, false);
+    // @include nest-link(md, only, linkedin-box-fill, null, false);
+    @include before {
+      @include icon-content(linkedin-box-fill);
+    }
   }
 
   #{ns(link--youtube)} {
-    @include nest-link(md, only, youtube-fill, null, false);
+    // @include nest-link(md, only, youtube-fill, null, false);
+    @include before {
+      @include icon-content(youtube-fill);
+    }
   }
 }

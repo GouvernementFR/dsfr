@@ -1,13 +1,9 @@
 
 <%
 let data = {};
-data.newsletter = {
-  title: "Abonnez-vous à notre lettre d’information",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
-  type: "button",
-  button: {
-    label: "S'abonner",
-    btnTitle: "S‘abonner à notre lettre d’information"
-  }
-}  %>
+data = JSON.parse(include('./data.ejs'));
+data.socials = undefined;
+
+%>
+
 <%- include('../../templates/ejs/follow.ejs', data); %>

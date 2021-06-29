@@ -32,7 +32,7 @@ let socialsClasses = [prefix + '-follow__newsletter'];
       <% if (locals.form && locals.form.input) { %>
         <form action="">
           <%- include('../../../inputs/templates/ejs/input.ejs', {addon: true, ...locals.form.input}); %>
-          <% console.log({addon: true, ...locals.form.input});
+          <%
           if (locals.form.error) { %>
             <p id="<%= prefix %>-newsletter-error-text" class="<%= prefix %>-error-text"><%- locals.form.error %></p>
           <% } %>

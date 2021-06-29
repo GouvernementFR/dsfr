@@ -1,7 +1,7 @@
 id: follow
 title: Nous suivre
-description: Le bloc "Nous suivre" est composé d'un bloc newsletter et/ou d'un bloc réseaux sociaux.
-doc:
+description: Le bloc "Nous suivre" est composé d'un bloc permettant à l’utilisateur de s’inscrire à la newsletter de l’organisation et/ou d'un bloc de liens permettant d’accéder aux réseaux sociaux de l’organisation depuis le pied de page.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331413/Pied+de+page+-+Footer
 styles:
   - core
   - inputs

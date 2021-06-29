@@ -3,7 +3,9 @@
 
 * title (string, required) : titre du bloc réseaux sociaux
 
-* networks (array, required) : Tableau de réseaux sociaux (title, url, icon)
+* networks (array, required) : Tableau de réseaux sociaux
+** label (string, required) : nom du réseau social
+** url (string, required) : adresse url du réseau social
 
 %>
 <% eval(include('../../../core/index.ejs'));
@@ -17,7 +19,7 @@ let socialsClasses = [prefix + '-follow__social'];
   <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
     <% for (let i=0; i < networks.length; i++) { %>
       <li>
-        <%- include('../../../links/templates/ejs/link', { place: "only", attributes: {title: "xxxxxxxx - ouvre une nouvelle fenêtre"}, href: networks[i].url, blank: true, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
+        <%- include('../../../links/templates/ejs/link', { attributes: {title: "xxxxxxxx - ouvre une nouvelle fenêtre"}, href: networks[i].url, blank: true, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
       </li>
     <% } %>
   </ul>

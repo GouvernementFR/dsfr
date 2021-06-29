@@ -70,7 +70,7 @@
     @include padding-right(10v);
   }
 
-  > *:not(:last-child) {
+  > *:first-child:not(:last-child) {
     &#{ns(input)} {
       @include padding-right(4v);
     }

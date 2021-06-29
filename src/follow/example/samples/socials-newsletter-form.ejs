@@ -1,31 +1,7 @@
 
 <%
 let data = {};
-data.socials = {
-  title: "Suivez-nous<br> sur nos réseaux sociaux",
-  networks: [
-    {
-      label: "facebook",
-      url: "https://www.facebook.com/gouvernement.fr",
-    },
-    {
-      label: "twitter",
-      url: "https://twitter.com/gouvernementfr",
-    },
-    {
-      label: "instagram",
-      url: "https://www.instagram.com/gouvernementfr/",
-    },
-    {
-      label: "linkedin",
-      url: "https://www.linkedin.com/company/gouvernementfr",
-    },
-    {
-      label: "youtube",
-      url: "https://www.youtube.com/gouvernementfr",
-    }
-  ]
-};
+data = JSON.parse(include('./data.ejs'));
 
 let inputAttributes = [];
 let inputClasses = [];
@@ -39,34 +15,30 @@ if (locals.valid) {
   inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
   inputClasses.push(prefix + '-input--valid');
 }
-data.newsletter = {
-  title: "Abonnez-vous à notre lettre d’information",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
-  type: "form",
-  form: {
-    valid: locals.valid || null,
-    error: locals.error || null,
-    hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
-    input: {
-      id: "newsletter-email",
-      placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
-      name: "newsletter-email",
-      label: "Votre adresse électronique (ex. : nom@domaine.fr)",
-      type: "email",
-      valid: undefined,
-      error: undefined,
-      inputClasses: inputClasses,
-      attributes: inputAttributes,
-      button: {
-        id: "newsletter-button",
-        label: "S\'abonner",
-        placeholder: undefined,
-        type: "submit",
-        btnTitle: "S‘abonner à notre lettre d’information",
-        attributes: []
-      },
-    },
 
+data.newsletter.type = 'form';
+data.newsletter.form = {
+  valid: locals.valid || null,
+  error: locals.error || null,
+  hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
+  input: {
+    id: "newsletter-email",
+    placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
+    name: "newsletter-email",
+    label: "Votre adresse électronique (ex. : nom@domaine.fr)",
+    type: "email",
+    valid: undefined,
+    error: undefined,
+    inputClasses: inputClasses,
+    attributes: inputAttributes,
+    button: {
+      id: "newsletter-button",
+      label: "S\'abonner",
+      placeholder: undefined,
+      type: "submit",
+      btnTitle: "S‘abonner à notre lettre d’information",
+      attributes: []
+    }
   }
 };
 %>

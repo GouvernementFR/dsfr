@@ -1,0 +1,38 @@
+<% let data = {};
+data.socials = {
+  title: "Suivez-nous<br> sur nos réseaux sociaux",
+  networks: [
+    {
+      label: "facebook",
+      url: contentPlaceholder("https://www.facebook.com/gouvernement.fr"),
+    },
+    {
+      label: "twitter",
+      url: contentPlaceholder("https://twitter.com/gouvernementfr"),
+    },
+    {
+      label: "instagram",
+      url: contentPlaceholder("https://www.instagram.com/gouvernementfr/"),
+    },
+    {
+      label: "linkedin",
+      url: contentPlaceholder("https://www.linkedin.com/company/gouvernementfr"),
+    },
+    {
+      label: "youtube",
+      url: contentPlaceholder("https://www.youtube.com/gouvernementfr"),
+    }
+  ]
+};
+
+data.newsletter = {
+  title: "Abonnez-vous à notre lettre d’information",
+  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
+  type: "button",
+  button: {
+    label: "S'abonner",
+    btnTitle: "S‘abonner à notre lettre d’information"
+  }
+}
+%>
+<%- JSON.stringify(data); %>
