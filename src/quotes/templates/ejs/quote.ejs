@@ -3,11 +3,17 @@
 
 * id (String, required): id
 
-* title (String, optional): Titre de l'alerte
+* size (String, optional): Taille du texte de citation
 
-* text (string, optional) : Texte de decription de l'alerte
+* text (string, optional) : Texte de la citation
 
-* type (String, required): type d'alerte [info/success/error/warning]
+* image (object, optional) : {img, alt} de l'image
+
+* href (String, optional): url du texte original cité
+
+* Author (String, optional): Nom de l'auteur
+
+* souces (Array, optional): Tableau de textes de détail
 
 %>
 
@@ -15,7 +21,6 @@
 <% eval(include('../../../core/index.ejs')); %>
 
 <%
- let id = locals.id;
  let size = locals.size || undefined;
  let text = locals.text || '';
  let image = locals.image || undefined;
@@ -25,11 +30,14 @@
  let quoteClasses = [prefix + '-quote'];
  let citeAttr = [];
  if (image) quoteClasses.push(prefix + '-quote--column');
- if (href) citeAttr.cite = href;
  %>
 
 <figure <%- includeClasses(quoteClasses) %>>
-  <blockquote <%- href ? includeAttrs(citeAttr) : ''%>>
+  <% if (href) { %>
+    <blockquote cite="<%= locals.contentPlaceholder(href)%>">
+  <% } else { %>
+    <blockquote>
+  <% } %>
     <p <%- (size !== undefined) ? includeClasses([prefix+'-text--'+size]) : '' %>>« <%= text %> »</p>
   </blockquote>
   <figcaption>
