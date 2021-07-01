@@ -3,12 +3,14 @@
 /// @group core
 ////
 
-@import 'global/functions';
-@import 'global/tools';
+@import 'functions';
 @import 'spacing/tools';
+@import 'selectors/tools';
 @import 'typography/tools';
 @import 'reset/tools';
 @import 'grid/tools';
 @import 'collapse/tools';
 @import 'icons/tools';
 @import 'medias/tools';
+@import 'colors/tools';
+@import 'display/tools';

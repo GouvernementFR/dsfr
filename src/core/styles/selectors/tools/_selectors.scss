@@ -1,0 +1,172 @@
+////
+/// Core Tools : Selectors
+/// @group core
+////
+
+@mixin _class-pattern($selector, $unify: true) {
+  @if & == null {
+    @at-root #{$selector} {
+      @content;
+    }
+  }
+  @else if $unify {
+    @at-root #{selector-unify(&, $selector)} {
+      @content;
+    }
+  }
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+@mixin class-contains($unify: true, $patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}[class*="#{$pattern}"]';
+  }
+
+  @include _class-pattern($selectors, $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-contains($unify: true, $patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
+  }
+
+  @include _class-pattern($selectors, $unify) {
+    @content;
+  }
+}
+
+@mixin class-start-with($start, $unify: true) {
+  @include _class-pattern(class-start-with($start), $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-start-with($start, $unify: true) {
+  @include _class-pattern(class-not-start-with($start), $unify) {
+    @content;
+  }
+}
+
+@mixin class-end-with($end, $unify: true) {
+  @include _class-pattern(class-end-with($end), $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-end-with($end, $unify: true) {
+  @include _class-pattern(class-not-end-with($end), $unify) {
+    @content;
+  }
+}
+
+@mixin class-is-ns($unify: true) {
+  @include class-start-with(ns('', ''), $unify) {
+    @content;
+  }
+}
+
+@mixin class-is-not-ns($unify: true) {
+  @include class-not-start-with(ns('', ''), $unify) {
+    @content;
+  }
+}
+
+@mixin has-icon() {
+  @include class-start-with(ns(fi-, '')) {
+    @content;
+  }
+}
+
+@mixin has-not-icon() {
+  @include class-not-start-with(ns(fi-, '')) {
+    @content;
+  }
+}
+
+/// Sélecteur de toutes les éléments avec une classe du design system ainsi que leur noeuds enfants
+/// @access public
+@mixin all-ns-elements-selector() {
+  @include class-start-with(ns('', ''), false) {
+    @at-root {
+      &,
+      & * {
+        @at-root {
+          &,
+          &::before,
+          &::after {
+            @content;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin specify($tags...) {
+  $selectors: (&);
+
+  @each $tag in $tags {
+    $selectors: append($selectors, selector-unify(&, $tag));
+  }
+  @at-root {
+    #{$selectors} {
+      @content;
+    }
+  }
+}
+
+@mixin nest($selector: null) {
+  @if $selector {
+    #{$selector} {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+
+@function typography-selector($type, $name, $is-modifier: false, $alt: null) {
+  $base: '';
+  $separator: '-';
+
+  @if $is-modifier {
+    @if $name == md {
+      @return ns($type);
+    }
+    $separator: '--';
+  }
+
+  @if $type != heading {
+    $base: '#{$type + $separator}';
+  }
+
+  $selectors: (ns('#{$base + $name}'));
+
+  @if $alt != null {
+    $selectors: append($selectors, ns('#{$base + $alt}'), 'comma');
+  }
+
+  @return $selectors;
+}
+

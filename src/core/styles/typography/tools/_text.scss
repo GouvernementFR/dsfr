@@ -1,0 +1,17 @@
+////
+/// Core Tools : Typography build
+/// @group core
+////
+
+@mixin build-title-style() {
+  @each $name, $variation in $title-settings {
+    $type: display;
+    @if str-index(quote($name), 'h') == 1 {
+      $type: heading;
+    }
+
+    #{typography-selector($type, $name, false, map-get($variation, alt))} {
+      @include title-style($name, true, true, null, true);
+    }
+  }
+}

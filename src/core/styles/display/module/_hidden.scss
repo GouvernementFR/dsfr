@@ -1,0 +1,10 @@
+////
+/// Core Module : Hidden (sr-only)
+/// @group core
+////
+
+#{ns(hidden)} {
+  display: none !important;
+}
+
+@include hidden();

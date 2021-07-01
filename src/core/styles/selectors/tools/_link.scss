@@ -1,0 +1,10 @@
+////
+/// Core Tools : Link
+/// @group core
+////
+
+@mixin link() {
+  &__link {
+    @content;
+  }
+}

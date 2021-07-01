@@ -1,0 +1,12 @@
+////
+/// Core Tools : Typography build
+/// @group core
+////
+
+@mixin build-text-style() {
+  @each $name, $variation in $text-settings {
+    #{typography-selector(text, $name, true, map-get($variation, alt))} {
+      @include text-style($name, true, true, null, true);
+    }
+  }
+}

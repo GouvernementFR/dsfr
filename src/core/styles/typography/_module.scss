@@ -5,7 +5,9 @@
 
 @include font-weights();
 
-@include build-typography();
+@include build-text-style();
+
+@include build-title-style();
 
 #{ns(text--alt)} {
   @include font-family(alt, true);
