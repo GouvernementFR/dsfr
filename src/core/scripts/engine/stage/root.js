@@ -8,4 +8,8 @@ class Root extends Element {
   }
 }
 
-export { Root };
+const RootSelector = {
+  ROOT: ':root'
+};
+
+export { Root, RootSelector };

@@ -3,26 +3,26 @@ import { Module } from '../module';
 class Resizer extends Module {
   constructor () {
     super('resize');
-    this.requireResize = true;
+    this.requireResize = false;
     this.resizing = this.resize.bind(this);
-    const _resizing = this._resize.bind(this);
-    window.addEventListener('resize', _resizing);
-    window.addEventListener('orientationchange', _resizing);
+    const requesting = this.request.bind(this);
+    window.addEventListener('resize', requesting);
+    window.addEventListener('orientationchange', requesting);
   }
 
   activate () {
-    this._resize();
+    this.request();
   }
 
-  _resize () {
-    if (!this.requireResize) window.requestAnimationFrame(this.resizing);
+  request () {
+    if (this.requireResize) return;
     this.requireResize = true;
+    window.requestAnimationFrame(this.resizing);
   }
 
   resize () {
     if (!this.requireResize) return;
     this.forEach((item) => item.resize());
-    this.resizables.execute();
     this.requireResize = false;
   }
 }

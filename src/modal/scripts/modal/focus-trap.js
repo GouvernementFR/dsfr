@@ -59,7 +59,7 @@ class FocusTrap {
 
   wait () {
     if (!isFocusable(this.element)) {
-      api.core.engine.renderer.next(this.waiting);
+      window.requestAnimationFrame(this.waiting);
       return;
     }
 
@@ -164,6 +164,10 @@ class FocusTrap {
     // this.stunneds = [];
 
     if (this.onUntrap) this.onUntrap();
+  }
+
+  dispose () {
+    this.untrap();
   }
 }
 

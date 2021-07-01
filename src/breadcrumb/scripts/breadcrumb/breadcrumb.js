@@ -12,6 +12,15 @@ class Breadcrumb extends api.core.Instance {
     this.isResizing = true;
   }
 
+  get proxy () {
+    const scope = this;
+    return {
+      ...super.proxy,
+      focus: scope.focus.bind(scope),
+      disclose: scope.collapse.disclose.bind(scope.collapse)
+    };
+  }
+
   getCollapse () {
     const collapse = this.collapse;
     if (collapse) {
@@ -34,7 +43,7 @@ class Breadcrumb extends api.core.Instance {
   }
 
   get links () {
-    return [...this.element.node.querySelectorAll('a[href]')];
+    return [...this.querySelectorAll('a[href]')];
   }
 
   get collapse () {

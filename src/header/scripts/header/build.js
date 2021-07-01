@@ -1,5 +1,5 @@
 import { Header } from './header.js';
-import { HEADER_SELECTOR } from './constants';
+import { HEADER_SELECTOR } from './header-selectors';
 
 const build = () => {
   const elements = Array.prototype.slice.call(document.querySelectorAll(HEADER_SELECTOR));

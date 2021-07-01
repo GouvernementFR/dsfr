@@ -19,11 +19,11 @@ class Collapse extends Disclosure {
   }
 
   transitionend (e) {
-    if (!this.disclosed) this.element.node.style.maxHeight = '';
+    if (!this.disclosed) this.style.maxHeight = '';
   }
 
   unbound () {
-    this.element.node.style.maxHeight = 'none';
+    this.style.maxHeight = 'none';
   }
 
   disclose (withhold) {
@@ -47,10 +47,10 @@ class Collapse extends Disclosure {
   }
 
   adjust () {
-    this.element.node.style.setProperty('--collapser', 'none');
-    const height = this.element.node.offsetHeight;
-    this.element.node.style.setProperty('--collapse', -height + 'px');
-    this.element.node.style.setProperty('--collapser', '');
+    this.setProperty('--collapser', 'none');
+    const height = this.node.offsetHeight;
+    this.setProperty('--collapse', -height + 'px');
+    this.setProperty('--collapser', '');
   }
 
   reset () {

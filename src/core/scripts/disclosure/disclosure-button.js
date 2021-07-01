@@ -8,12 +8,11 @@ class DisclosureButton extends Instance {
   }
 
   init () {
-    this.id = this.element.node.getAttribute('aria-controls');
-    this.hasAttribute = this.element.node.hasAttribute(this.attributeName);
-    if (this.hasAttribute && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
+    this.controlsId = this.getAttribute('aria-controls');
+    this.isPrimary = this.hasAttribute(this.attributeName);
+    if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
     this.listen('click', this.click.bind(this));
-    this.observer = new MutationObserver(this.mutate.bind(this));
-    this.observe();
+    if (this.isPrimary) this.observe({ attributes: true, attributeFilter: [this.attributeName] });
   }
 
   get proxy () {
@@ -24,12 +23,8 @@ class DisclosureButton extends Instance {
     };
   }
 
-  observe () {
-    this.observer.observe(this.element.node, { attributes: true, attributeFilter: [this.attributeName] });
-  }
-
   click (e) {
-    if (this.registration.creator) this.registration.creator.change(this.hasAttribute);
+    if (this.registration.creator) this.registration.creator.change(this.isPrimary);
   }
 
   mutate (mutations) {
@@ -39,27 +34,14 @@ class DisclosureButton extends Instance {
   }
 
   apply (value) {
-    if (!this.hasAttribute) return;
-    if (this.observer) this.observer.disconnect();
-    this.element.node.setAttribute(this.attributeName, value);
-    if (this.observer) this.observe();
+    if (!this.isPrimary) return;
+    this.unobserve();
+    this.setAttribute(this.attributeName, value);
+    this.observe();
   }
 
   get disclosed () {
-    return this.element.node.getAttribute(this.attributeName) === 'true';
-  }
-
-  focus () {
-    this.element.node.focus();
-  }
-
-  get hasFocus () {
-    return this.element.node === document.activeElement;
-  }
-
-  dispose () {
-    super.dispose();
-    if (this.observer) this.observer.disconnect();
+    return this.getAttribute(this.attributeName) === 'true';
   }
 }
 

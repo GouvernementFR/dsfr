@@ -3,7 +3,7 @@ import { AccordionSelectors } from './accordion-selectors';
 
 class AccordionsGroup extends api.core.CollapsesGroup {
   validate (member) {
-    return member.element.node.matches(AccordionSelectors.COLLAPSE);
+    return member.node.matches(AccordionSelectors.COLLAPSE);
   }
 }
 
