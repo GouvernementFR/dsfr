@@ -1,4 +1,3 @@
-import { addClass, removeClass } from '../manipulation/classes.js';
 import { Instance } from '../engine/register/instance.js';
 import { DisclosureEvents } from './disclosure-events.js';
 import { DisclosureEmissions } from './disclosure-emissions.js';
@@ -15,11 +14,10 @@ class Disclosure extends Instance {
   }
 
   init () {
-    this.id = this.element.node.id;
     this.addDescent(DisclosureEmissions.RESET, this.reset.bind(this));
     this.addDescent(DisclosureEmissions.GROUP, this.update.bind(this));
     this.addDescent(DisclosureEmissions.UNGROUP, this.update.bind(this));
-    this.register(`[aria-controls="${this.id}"`, this.DisclosureButtonInstanceClass);
+    this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
     this.ascend(DisclosureEmissions.ADDED);
     this.update();
   }
@@ -95,18 +93,18 @@ class Disclosure extends Instance {
     if (this._disclosed === value) return;
     this.dispatch(value ? DisclosureEvents.DISCLOSE : DisclosureEvents.CONCEAL, this.type);
     this._disclosed = value;
-    if (value) addClass(this.element.node, this.modifier);
-    else removeClass(this.element.node, this.modifier);
+    if (value) this.addClass(this.modifier);
+    else this.removeClass(this.modifier);
     for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
   }
 
   reset () {}
 
-  change (hasAttribute) {
+  change (isPrimary) {
     if (!this.type.canConceal) this.disclose();
     else {
       switch (true) {
-        case !hasAttribute:
+        case !isPrimary:
         case this.disclosed:
           this.conceal();
           break;
@@ -123,15 +121,15 @@ class Disclosure extends Instance {
   }
 
   get hasFocus () {
-    if (this.element.node === document.activeElement) return true;
-    if (this.element.node.querySelectorAll(':focus').length > 0) return true;
-    return this.buttonHasFocus;
+    if (super.hasFocus) return true;
+    if (this.buttonHasFocus) return true;
+    return this.querySelectorAll(':focus').length > 0;
   }
 
   focus () {
     for (let i = 0; i < this.buttons.length; i++) {
       const button = this.buttons[i];
-      if (button.hasAttribute) {
+      if (button.isPrimary) {
         button.focus();
         return;
       }

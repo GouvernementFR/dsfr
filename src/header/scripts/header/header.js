@@ -1,27 +1,11 @@
 import api from '../../api.js';
-import {
-  HEADER_MENU_SELECTOR,
-  HEADER_SEARCH_SELECTOR,
-  HEADER_SELECTOR,
-  HEADER_LINKS_GROUP_SELECTOR,
-  HEADER_TOOLS_LINKS_SELECTOR,
-  HEADER_MENU_LINKS_SELECTOR
-} from './constants';
+import { HeaderSelectors } from './header-selectors';
 
-class Header {
-  constructor (header) {
-    this.header = header || document.querySelector(HEADER_SELECTOR);
-    this.modals = [];
-
-    this.init();
-  }
-
-  getModal (selector) {
-    const element = this.header.querySelector(selector);
-    if (!element) return;
-    const modals = api.core.Instance.getInstances(element, api.Modal);
-    if (!modals || !modals.length) return;
-    this.modals.push(new HeaderModal(modals[0]));
+class Header extends api.core.Instance {
+  constructor () {
+    super()
+    //this.header = header || document.querySelector(HEADER_SELECTOR);
+    //this.modals = [];
   }
 
   init () {

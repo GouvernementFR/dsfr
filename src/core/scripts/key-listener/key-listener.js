@@ -3,8 +3,8 @@
  * Utiliser KeyListener.add() pour ajouter un event listener
  */
 class KeyListener {
-  constructor (element) {
-    this.element = element;
+  constructor (instance) {
+    this.element = instance;
     this.collections = {};
   }
 
@@ -39,7 +39,7 @@ class KeyActionCollection {
     this.element = element;
     this.actions = [];
     this.binding = this.handle.bind(this);
-    this.element.addEventListener('key' + type, this.binding);
+    this.element.listen('key' + type, this.binding);
   }
 
   add (action) {

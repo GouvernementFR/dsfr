@@ -6,8 +6,8 @@ class ScrollLocker extends Module {
     super('lock');
     this._isLocked = false;
     this._scrollY = 0;
-    this.collection.onPopulate = this.lock.bind(this);
-    this.collection.onEmpty = this.unlock.bind(this);
+    this.onPopulate = this.lock.bind(this);
+    this.onEmpty = this.unlock.bind(this);
   }
 
   get isLocked () {
@@ -15,6 +15,7 @@ class ScrollLocker extends Module {
   }
 
   lock () {
+    console.log('lock');
     if (!this._isLocked) {
       this._isLocked = true;
       this._scrollY = window.scrollY;
