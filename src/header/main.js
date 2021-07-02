@@ -1,4 +1,6 @@
 import api from './index';
-import './scripts/module';
+
+api.register(api.header.HeaderSelectors.HEADER, api.header.Header);
+api.register(api.header.HeaderSelectors.MODALS, api.header.HeaderModal);
 
 export default api;

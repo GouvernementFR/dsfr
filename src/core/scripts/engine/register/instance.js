@@ -265,6 +265,10 @@ class Instance {
     if (this._observer) this._observer.disconnect();
   }
 
+  querySelector (selectors) {
+    return this.node.querySelector(selectors);
+  }
+
   querySelectorAll (selectors) {
     return this.node.querySelectorAll(selectors);
   }

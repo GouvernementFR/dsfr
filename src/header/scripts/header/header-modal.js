@@ -1,31 +1,34 @@
+import api from '../../api.js';
+
 class HeaderModal extends api.core.Instance {
-  constructor () {
-    super();
+  init () {
     this.isResizing = true;
   }
 
   resize () {
+    if (this.isBreakpoint('lg')) this.unqualify();
+    else this.qualify();
+  }
+
+  qualify () {
+    this.setAttribute('role', 'dialog');
     const modal = this.element.getInstance('Modal');
-
-    if (this.isBreakpoint('lg')) {
-
-    } else {
-      this.element.node.setAttribute('role', 'dialog');
-      this.element.node.setAttribute('aria-labelledby', this.modal.primary.element.id);
+    if (!modal) return;
+    const buttons = modal.buttons;
+    let id = '';
+    for (const button of buttons) {
+      id = button.id || id;
+      if (button.isPrimary && id) break;
     }
+    this.setAttribute('aria-labelledby', id);
+  }
 
-    modal.conceal();
-
-    enable () {
-      this.modal.element.
-      this.modal.element.setAttribute('aria-labelledby', this.modal.primary.element.id);
-    }
-
-    disable () {
-      this.modal.conceal();
-      this.modal.element.removeAttribute('role');
-      this.modal.element.removeAttribute('aria-labelledby');
-    }
-
+  unqualify () {
+    const modal = this.element.getInstance('Modal');
+    if (modal) modal.conceal();
+    this.removeAttribute('role');
+    this.removeAttribute('aria-labelledby');
   }
 }
+
+export { HeaderModal };
