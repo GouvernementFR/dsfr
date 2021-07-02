@@ -6,7 +6,7 @@ class HeaderModal extends api.core.Instance {
   }
 
   resize () {
-    if (this.isBreakpoint('lg')) this.unqualify();
+    if (this.isBreakpoint(api.core.Breakpoints.LG)) this.unqualify();
     else this.qualify();
   }
 

@@ -30,20 +30,13 @@ class Collapse extends Disclosure {
     if (this.disclosed) return;
     this.unbound();
     this.adjust();
-    this.requested = () => { super.disclose(withhold); };
-    this.requestNext();
+    this.requestNext(() => { super.disclose(withhold); });
   }
 
   conceal (withhold, preventFocus) {
     if (!this.disclosed) return;
     this.adjust();
-    this.requested = () => { super.conceal(withhold, preventFocus); };
-    this.requestNext();
-  }
-
-  next () {
-    if (this.requested) this.requested();
-    this.requested = null;
+    this.requestNext(() => { super.conceal(withhold, preventFocus); });
   }
 
   adjust () {

@@ -20,7 +20,7 @@ class NavigationItem extends api.core.Instance {
 
   calculate () {
     const collapse = this.element.getDescendantInstances(api.core.Collapse.name, null, true)[0];
-    if (collapse && this.isBreakpoint('lg') && collapse.element.node.matches(NavigationSelectors.MENU)) {
+    if (collapse && this.isBreakpoint(api.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelectors.MENU)) {
       const right = this.element.node.parentElement.getBoundingClientRect().right;
       const width = collapse.element.node.getBoundingClientRect().width;
       const left = this.element.node.getBoundingClientRect().left;

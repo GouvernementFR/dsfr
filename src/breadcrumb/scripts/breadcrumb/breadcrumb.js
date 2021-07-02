@@ -35,7 +35,7 @@ class Breadcrumb extends api.core.Instance {
     const links = this.links;
     if (!collapse || !links.length) return;
 
-    if (this.isBreakpoint('md')) {
+    if (this.isBreakpoint(api.core.Breakpoints.MD)) {
       if (collapse.buttonHasFocus) links[0].focus();
     } else {
       if (links.indexOf(document.activeElement) > -1) collapse.focus();
@@ -59,10 +59,10 @@ class Breadcrumb extends api.core.Instance {
     const link = this.links[0];
     if (!link) return;
     link.focus();
-    this.requestNext();
+    this.requestNext(this.verify.bind(this));
   }
 
-  next () {
+  verify () {
     this.count++;
     if (this.count > 100) return;
     const link = this.links[0];

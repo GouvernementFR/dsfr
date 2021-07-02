@@ -104,11 +104,9 @@ class Instance {
 
   render () {}
 
-  requestNext () {
-    state.getModule('render').nexts.add(this);
+  requestNext (closure) {
+    state.getModule('render').request(closure);
   }
-
-  next () {}
 
   get isResizing () { return this._isResizing; }
 
