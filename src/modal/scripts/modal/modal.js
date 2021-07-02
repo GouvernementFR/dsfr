@@ -1,6 +1,7 @@
 import api from '../../api.js';
 import { ModalSelectors } from './modal-selectors';
 import { ModalButton } from './modal-button';
+import { ModalEmissions } from './modal-emissions';
 
 class Modal extends api.core.Disclosure {
   constructor () {
@@ -22,7 +23,7 @@ class Modal extends api.core.Disclosure {
 
   disclose (withhold) {
     if (!super.disclose(withhold)) return false;
-    // this.resize(true);
+    this.descend(ModalEmissions.ACTIVATE);
     this.isScrollLocked = true;
     return true;
   }
@@ -30,29 +31,9 @@ class Modal extends api.core.Disclosure {
   conceal (withhold, preventFocus) {
     if (!super.conceal(withhold, preventFocus)) return false;
     this.isScrollLocked = false;
+    this.descend(ModalEmissions.DEACTIVATE);
     return true;
   }
-
-  /**
-   * Fixe l'arrière plan quand la modal est ouverte
-   */
-  // TODO: implémenter preventScroll
-  /*
-  handleScroll (isScrollable) {
-    if (isScrollable) {
-      api.core.removeClass(document.documentElement, NO_SCROLL_CLASS);
-      document.body.style.top = '';
-      window.scroll(0, this.scrollDistance);
-    } else {
-      if (!document.documentElement.classList.contains(NO_SCROLL_CLASS)) {
-        this.scrollDistance = window.scrollY;
-      }
-      document.body.style.top = this.scrollDistance * -1 + 'px';
-      api.core.addClass(document.documentElement, NO_SCROLL_CLASS);
-    }
-  }
-
-   */
 }
 
 export { Modal };

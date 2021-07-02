@@ -1,13 +1,24 @@
 import api from '../../api.js';
 import { ModalSelectors } from './modal-selectors';
+import { ModalEmissions } from './modal-emissions';
 
-const OFFSET_MOBILE = 32; // 32px => 8v => 2rem
+const OFFSET = 32; // 32px => 8v => 2rem
 
 class ModalBody extends api.core.Instance {
   init () {
     this.listen('click', this.click.bind(this));
     this.listen('scroll', this.shade.bind(this));
+    this.addDescent(ModalEmissions.ACTIVATE, this.activate.bind(this));
+    this.addDescent(ModalEmissions.DEACTIVATE, this.deactivate.bind(this));
+  }
+
+  activate () {
     this.isResizing = true;
+    this.resize();
+  }
+
+  deactivate () {
+    this.isResizing = false;
   }
 
   click (e) {
@@ -28,14 +39,14 @@ class ModalBody extends api.core.Instance {
   }
 
   resize () {
-    console.log('resize');
-    this.shade();
     this.next();
     this.requestNext();
   }
 
   next () {
-    this.style.maxHeight = (window.innerHeight - OFFSET_MOBILE) + 'px';
+    const offset = OFFSET * (this.isBreakpoint(api.core.Breakpoints.MD) ? 2 : 1);
+    this.style.maxHeight = `${window.innerHeight - offset}px`;
+    this.shade();
   }
 }
 
