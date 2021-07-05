@@ -1,0 +1,15 @@
+<%
+  const type = locals.type || undefined;
+  const append = locals.breakpoint ? `-${breakpoint}` : '';
+  let sampleBoxContent = '1';
+  let sampleBoxContent2 = '2';
+
+  if (type) {
+    if (type == 'flex') {
+      sampleBoxContent = `<span>flex auto</span><span>flex auto</span>`;
+      sampleBoxContent2 = `<span class="${prefix}-flex-1">flex-1</span><span>flex auto</span>`;
+    }
+ %>
+  <span class="sample-box <%= prefix %>-display-<%= type %><%= append %> "><%- sampleBoxContent %></span>
+  <span class="sample-box <%= prefix %>-display-<%= type %><%= append %>"><%- sampleBoxContent2 %></span>
+<% } %>

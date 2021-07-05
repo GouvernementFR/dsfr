@@ -1,0 +1,13 @@
+////
+/// Core Settings : Typography text-align
+/// @group core
+////
+
+$text-align-settings : (
+  places: (
+    left,
+    center,
+    right
+  ),
+  breakpoints: true
+);

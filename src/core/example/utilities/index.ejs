@@ -1,13 +1,64 @@
 <% const sample = getSample(include); %>
+<style>
+  .sample-box {
+    background-color: var(--bf500);
+    color: var(--w);
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px; */
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    position: relative;
+    opacity: 0.8;
+  }
 
-<p>Regarder avec l'inspecteur les block de textes cachés grâce à ces utilitaires</p>
+  .sample-box span {
+    background-color: var(--rm500);
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+  }
 
-<%- sample('sr-only', './samples/sr-only', {}, true); %>
+  .sample-container {
+    background:rgba(0,0,91,0.1);
+    padding: 1rem;
+  }
+</style>
 
-<%- sample('sr-only à partir du breakpoint LG', './samples/sr-only', { breakpoint: 'lg'}, true); %>
+<p><span class="<%= prefix %>-fi-information-line"> Astuce : </span> Utiliser l'inspecteur du navigateur (clic droit + inspecter) sur les éléments cachés par les utilitaires</p>
 
-<%- sample('hidden', './samples/hidden', {}, true); %>
+<h4>Afficher/cacher un élement</h4>
 
-<%- sample('hidden à partir du breakpoint LG', './samples/hidden', { breakpoint: 'lg'}, true); %>
+<%- sample('sr-only', './samples/sr-only', {}, true, './layout'); %>
 
-<%- sample('displayed à partir du breakpoint LG', './samples/displayed', { breakpoint: 'lg'}, true); %>
+<%- sample('hidden', './samples/hidden', {}, true, './layout'); %>
+
+<%- sample('displayed', './samples/displayed', {}, true, './layout'); %>
+
+<h4 class="<%=prefix %>-mt-6w">Autres dispositions (display)</h4>
+
+<%- sample('display block', './samples/display', {type: 'block'}, true, './layout'); %>
+
+<%- sample('display inline-block', './samples/display', {type: 'inline-block'}, true, './layout'); %>
+
+<%- sample('display inline', './samples/display', {type: 'inline'}, true, './layout'); %>
+
+<%- sample('display flex', './samples/display', {type: 'flex'}, true, './layout'); %>
+
+<%- sample('display inline-flex', './samples/display', {type: 'inline-flex'}, true, './layout'); %>
+
+<%- sample('display none', './samples/display', {type: 'none'}, true, './layout'); %>
+
+<h4 class="<%=prefix %>-mt-6w">Appliquer un utilitaire à partir d'un breakpoint</h4>
+<p>Pour appliquer une classe utilitaire à partir d'un breakpoint, il suffit d'ajouter -[breakpoint] à la fin de la classe (ex : -md)</p>
+
+<%- sample('sr-only à partir du breakpoint LG', './samples/sr-only', { breakpoint: 'lg'}, true, './layout'); %>
+
+<%- sample('hidden à partir du breakpoint LG', './samples/hidden', { breakpoint: 'lg'}, true, './layout'); %>
+
+<%- sample('displayed à partir du breakpoint LG', './samples/displayed', { breakpoint: 'lg'}, true, './layout'); %>
+
+<%- sample('display flex à partir du breakpoint md', './samples/display', {type: 'flex', breakpoint: 'md'}, true, './layout'); %>
+
+<%- sample('display none à partir du breakpoint lg', './samples/display', {type: 'none', breakpoint: 'lg'}, true, './layout'); %>

@@ -12,3 +12,5 @@
 #{ns(text--alt)} {
   @include font-family(alt, true);
 }
+
+@include build-text-align();

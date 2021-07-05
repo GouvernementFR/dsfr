@@ -28,3 +28,23 @@
     flex-wrap: #{$flex-wrap};
   }
 }
+
+@mixin build-display() {
+  @each $type in $displayType {
+    #{ns('display-') + $type} {
+      display: $type !important;
+    }
+  }
+}
+
+@mixin build-display-from() {
+  @each $bp, $limits in $breakpoints {
+    @each $type in $displayType {
+      #{ns('display-') + $type + '-' + $bp} {
+        @include respond-from($bp) {
+          display: $type !important;
+        }
+      }
+    }
+  }
+}

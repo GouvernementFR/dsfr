@@ -1,0 +1,10 @@
+<% const alignItems = locals.align || undefined;
+
+if (align.length > 0) {
+  for (align in alignItems) {
+  %>
+  <%- include('../../../templates/ejs/typography/paragraph', { classes: [prefix + '-text-align-' + alignItems[align]], content: lorem(locals.insert) }); %>
+  <%
+  }
+}
+%>

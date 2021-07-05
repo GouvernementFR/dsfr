@@ -145,7 +145,6 @@
   }
 }
 
-
 @function typography-selector($type, $name, $is-modifier: false, $alt: null) {
   $base: '';
   $separator: '-';
@@ -169,4 +168,3 @@
 
   @return $selectors;
 }
-

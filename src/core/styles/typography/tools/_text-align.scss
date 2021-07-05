@@ -1,0 +1,25 @@
+////
+/// Core Tools : Typography build text align
+/// @group core
+////
+
+@mixin build-text-align() {
+  $places: map-get($text-align-settings, 'places');
+  $buildBreakpoints: map-get($text-align-settings, 'breakpoints');
+
+  @each $place in $places {
+    #{ns(text-align)}-#{$place} {
+      text-align: $place !important;
+    }
+  }
+
+  @if $buildBreakpoints {
+    @each $place in $places {
+      @each $bp, $limits in $breakpoints {
+        #{ns(text-align)}-#{$place}-#{$bp} {
+          text-align: $place !important;
+        }
+      }
+    }
+  }
+}
