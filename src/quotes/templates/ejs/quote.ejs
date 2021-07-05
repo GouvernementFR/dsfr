@@ -1,7 +1,5 @@
 <%#
-# paramètres alerts
-
-* id (String, required): id
+# paramètres Quotes
 
 * size (String, optional): Taille du texte de citation
 
@@ -13,7 +11,7 @@
 
 * Author (String, optional): Nom de l'auteur
 
-* souces (Array, optional): Tableau de textes de détail
+* sources (Array, optional): Tableau de textes de détail
 
 %>
 
@@ -25,20 +23,19 @@
  let text = locals.text || '';
  let image = locals.image || undefined;
  let author = locals.author || false;
- let href = locals.href || false;
+ let href = locals.href || undefined;
  let sources = locals.sources || [];
  let quoteClasses = [prefix + '-quote'];
  let citeAttr = [];
+ let sizeClasses = [];
+ const blockAttrs = {cite: href};
  if (image) quoteClasses.push(prefix + '-quote--column');
+ if (size) sizeClasses = [prefix+'-text--'+size];
  %>
 
 <figure <%- includeClasses(quoteClasses) %>>
-  <% if (href) { %>
-    <blockquote cite="<%= locals.contentPlaceholder(href)%>">
-  <% } else { %>
-    <blockquote>
-  <% } %>
-    <p <%- (size !== undefined) ? includeClasses([prefix+'-text--'+size]) : '' %>>« <%= text %> »</p>
+  <blockquote <%- includeAttrs(blockAttrs) %>>
+    <p <%- includeClasses(sizeClasses) %>>« <%= text %> »</p>
   </blockquote>
   <figcaption>
     <% if (author) { %>

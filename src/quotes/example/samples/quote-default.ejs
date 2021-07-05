@@ -3,8 +3,8 @@
    text: locals.text || lorem(),
    size: locals.size || undefined,
    author: locals.author || 'Auteur',
-   href: locals.href || 'https://lien-vers-la-source.fr',
-   sources: locals.sources || ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', '<a href="">Détail 4</a>'],
+   href: locals.href || contentPlaceholder('https://lien-vers-la-source.fr'),
+   sources: locals.sources || ['<cite>Ouvrage</cite>', 'Détail 1', 'Détail 2', 'Détail 3', '<a target="_blank" href="' + contentPlaceholder('Lien vers la sources ou des infos complémentaires') + '">Détail 4</a>'],
   };
  %>
 

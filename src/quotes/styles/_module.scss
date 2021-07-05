@@ -9,7 +9,7 @@
   @include padding(0 2v 8v 2v);
   @include padding(0 0 0 8v, md);
 
-  @include icon(chat-quote-line,lg,before) {
+  @include icon(chat-quote-line,lg) {
     display: block;
     @include padding-bottom(2v);
   }
@@ -83,7 +83,7 @@
     @include absolute;
     @include display-flex;
 
-    img{
+    img {
       @include size(100%, 100%);
     }
 

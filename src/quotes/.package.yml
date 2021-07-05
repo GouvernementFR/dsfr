@@ -1,6 +1,6 @@
 id: quotes
 title: Citations
-description:
+description: La citation permet de citer un texte dans une page éditoriale. La citation peut provenir d'un extrait d’un discours oral formulé par une tierce personne ou d’un texte écrit.
 doc:
 wrapper: col-8
 styles:
