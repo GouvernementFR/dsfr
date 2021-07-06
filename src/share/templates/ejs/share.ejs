@@ -1,15 +1,17 @@
 <%#
 # paramètres share
 
-* title (string, required) : titre du bloc de partage
+* share.title (string, required) : titre du bloc de partage
 
-* links (array, required) : Tableau de liens de partage (title, url, icon)
+* share.links (array, required) : Tableau de liens de partage (title, url, icon)
 
+* share.classes (array, optional) : Classes sur le bloc share
 %>
 <%
 eval(include('../../../core/index.ejs'));
-let classes = locals.classes || [];
-let shareClasses = [prefix + '-share'];
+let shareClasses = share.classes || [];
+shareClasses = [prefix + '-share'];
+let dataLink = {};
 %>
 
 <div <%- includeClasses(shareClasses); %> >
@@ -17,7 +19,20 @@ let shareClasses = [prefix + '-share'];
     <ul class="<%= prefix %>-share__group">
         <% for (let i=0; i < share.links.length; i++) { %>
             <li>
-                <%- include('./share-link', { attributes: {title: share.links[i].title}, href: share.links[i].url, blank: true, label: share.links[i].label, classes: [prefix + '-share__link--' + share.links[i].label]}); %>
+                <%
+                dataLink= {}
+                dataLink.attributes = {};
+                if (share.links[i].title) {
+                    dataLink.attributes.title = share.links[i].title;
+                    dataLink.label = share.links[i].title;
+                }
+                if (share.links[i].blank) dataLink.blank = share.links[i].blank;
+                if (share.links[i].url) dataLink.href = share.links[i].url;
+                if (share.links[i].tag) dataLink.tag = share.links[i].tag;
+                if (share.links[i].onclick) dataLink.attributes.onclick = share.links[i].onclick;
+                dataLink.classes = [prefix + '-share__link--' + share.links[i].label];
+                %>
+                <%- include('./share-link', dataLink); %>
             </li>
         <% } %>
     </ul>

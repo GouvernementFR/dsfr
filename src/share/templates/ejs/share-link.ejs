@@ -35,6 +35,7 @@ if (locals.disabled === true) {
     switch (true) {
         case locals.blank:
             shareLinkAttrs.target = '_blank';
+            shareLinkAttrs.rel = 'noopener';
             break;
 
         case locals.self:

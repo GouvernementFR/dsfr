@@ -10,31 +10,39 @@ data.share = {
       label: 'facebook',
       title: 'Partager sur Facebook',
       url: 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url du site'),
-      disabled: locals.disabled === true
+      disabled: locals.disabled === true,
+      onclick: `window.open(this.href,'share_window','toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=300'); event.preventDefault();`,
+      blank: true,
     },
     {
       label: 'twitter',
       title: 'Partager sur Twitter',
       url: 'https://twitter.com/share?url='+contentPlaceholder('url du site')+'&text='+contentPlaceholder('titre du site')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'),
-      disabled: locals.disabled === true
+      disabled: locals.disabled === true,
+      onclick: `window.open(this.href,'share_window','toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=254'); event.preventDefault();`,
+      blank: true,
     },
     {
       label: 'linkedin',
       title: 'Partager sur LinkedIn',
       url: 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url du site')+'&title='+contentPlaceholder('titre du site'),
-      disabled: locals.disabled === true
+      disabled: locals.disabled === true,
+      onclick: `window.open(this.href,'share_window','toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=473'); event.preventDefault();`,
+      blank: true,
     },
     {
       label: 'mail',
       title: 'Partager par email',
       url: 'mailto:?subject='+contentPlaceholder('sujet')+'&body='+contentPlaceholder('titre')+' '+contentPlaceholder('url du site'),
-      disabled: false
+      disabled: false,
+      blank: true,
     },
     {
+      tag: 'button',
       label: 'copy',
       title: 'Copier dans le presse-papier',
-      url: 'Copy to clipboard',
-      disabled: false
+      disabled: false,
+      onclick: `navigator.clipboard.writeText(window.location);alert('Adresse copiée dans le presse papier.');`
     }
   ]
 } %>

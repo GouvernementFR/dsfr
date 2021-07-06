@@ -12,7 +12,7 @@
 
   &__text {
     @include text-style(xs);
-    @include max-size(#{space(72v)}, null, md)
+    @include max-size(#{space(72v)}, null, md);
   }
 
   &__group {
