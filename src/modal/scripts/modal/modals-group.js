@@ -12,11 +12,6 @@ class ModalsGroup extends api.core.DisclosuresGroup {
     if (this.current === null) this.trap.untrap();
     else this.trap.trap(this.current.element);
   }
-
-  dispose () {
-    this.trap.dispose();
-    super.dispose();
-  }
 }
 
 export { ModalsGroup };

@@ -3,7 +3,6 @@ import { Stage } from './stage/stage.js';
 import { Renderer } from './render/renderer.js';
 import { Resizer } from './resize/resizer.js';
 import { ScrollLocker } from './scroll/scroll-locker.js';
-import { Starter } from './starter.js';
 import { version } from '../../config.js';
 import inspector from '../inspect/inspector';
 import state from './state';
@@ -19,12 +18,6 @@ class Engine {
 
     const registerModule = state.getModule('register');
     this.register = registerModule.register.bind(registerModule);
-    this.starter = new Starter(this.start.bind(this));
-  }
-
-  configure (configuration) {
-    if (configuration.verbose === true) inspector.level = 0;
-    this.starter.setMode(configuration.startMode || 'auto');
   }
 
   get isActive () {

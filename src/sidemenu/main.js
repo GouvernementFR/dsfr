@@ -1,4 +1,5 @@
 import api from './index';
-import './scripts/module';
+
+api.register(api.sidemenu.SidemenuSelectors.LIST, api.sidemenu.SidemenuList);
 
 export default api;
