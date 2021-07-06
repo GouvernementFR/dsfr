@@ -14,14 +14,32 @@
 
 <%- sample('Style XS', './samples/paragraph', { size: 'xs' }, true); %>
 
+<%- sample('Style italic', './samples/paragraph', { style: 'italic' }, true); %>
+
+<%- sample('Style normal forcé', './samples/paragraph', { style: 'normal' }, true); %>
+
 <%- sample('Graisse light', './samples/paragraph', { weight: 'light' }, true); %>
 
 <%- sample('Graisse regular', './samples/paragraph', { weight: 'regular' }, true); %>
 
 <%- sample('Graisse bold', './samples/paragraph', { weight: 'bold' }, true); %>
 
+<%- sample('Style italic et graisse bold', './samples/paragraph', { weight: 'bold', style: 'italic' }, true); %>
+
 <%- sample('Font Spectral, graisse regular', './samples/paragraph', { weight: 'regular', alt:true }, true); %>
 
 <%- sample('Font Spectral, graisse extra-bold', './samples/paragraph', { weight: 'xx-bold', alt:true }, true); %>
 
-<%- sample('Alignement du text (text-align)', './samples/text-align', { align: ['right', 'center', 'left'] }, true); %>
+<%- sample('Alignement du text à droite (text-align right)', './samples/text-align', { align: 'right' }, true); %>
+
+<%- sample('Alignement du text au centre (text-align center)', './samples/text-align', { align: 'center' }, true); %>
+
+<%- sample('Alignement du text à gauche (text-align left)', './samples/text-align', { align: 'left' }, true); %>
+
+<%- sample('Alignement vertical du text en haut (vertical-align top)', './samples/text-align', { vertical: true, align: 'top' }, true); %>
+
+<%- sample('Alignement vertical du text en bas (vertical-align bottom)', './samples/text-align', { vertical: true, align: 'bottom' }, true); %>
+
+<%- sample('Alignement vertical du text au milieu (vertical-align middle)', './samples/text-align', { vertical: true, align: 'middle' }, true); %>
+
+<%- sample('Alignement vertical du text en baseline (vertical-align top)', './samples/text-align', { vertical: true, align: 'baseline' }, true); %>

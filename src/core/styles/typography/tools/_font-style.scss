@@ -1,0 +1,29 @@
+////
+/// Core Tools : Typography font-style
+/// @group core
+////
+
+/// Return font-style value from font-style map.
+///
+/// @param {String} $style ["normal"] - Type style value from `$style-type` (Default to "normal")
+///
+/// @example scss - Set font-style to italic
+///   .foo {
+///     font-style: font-style("italic");
+///   }
+
+@function font-style($type: normal) {
+  @return map-get($font-style-type, $type);
+}
+
+@mixin font-style($type) {
+  font-style: font-style($type);
+}
+
+@mixin font-styles() {
+  @each $name, $style in $font-style-type {
+    & #{ns('text--' + $name)} {
+      font-style: #{$style} !important;
+    }
+  }
+}

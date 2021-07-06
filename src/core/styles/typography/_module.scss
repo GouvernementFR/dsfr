@@ -5,6 +5,8 @@
 
 @include font-weights();
 
+@include font-styles();
+
 @include build-text-style();
 
 @include build-title-style();
@@ -14,3 +16,5 @@
 }
 
 @include build-text-align();
+
+@include build-vertical-align();

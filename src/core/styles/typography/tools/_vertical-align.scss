@@ -3,13 +3,13 @@
 /// @group core
 ////
 
-@mixin build-text-align() {
-  $places: map-get($text-align-settings, 'places');
-  $buildBreakpoints: map-get($text-align-settings, 'breakpoints');
+@mixin build-vertical-align() {
+  $places: map-get($vertical-align-settings, 'places');
+  $buildBreakpoints: map-get($vertical-align-settings, 'breakpoints');
 
   @each $place in $places {
     #{ns(text-align)}--#{$place} {
-      text-align: $place !important;
+      vertical-align: $place !important;
     }
   }
 

@@ -9,6 +9,13 @@
 <%
  let classes = locals.classes || [];
 
+ switch(locals.style) {
+    case 'normal' :
+    case 'italic' :
+        classes.push(`${prefix}-text--${style}`);
+        break;
+ }
+
  switch(locals.size) {
     case 'xs' :
     case 'sm' :

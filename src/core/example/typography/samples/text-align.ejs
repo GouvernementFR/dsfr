@@ -1,10 +1,5 @@
-<% const alignItems = locals.align || undefined;
-
-if (align.length > 0) {
-  for (align in alignItems) {
-  %>
-  <%- include('../../../templates/ejs/typography/paragraph', { classes: [prefix + '-text-align-' + alignItems[align]], content: lorem(locals.insert) }); %>
-  <%
-  }
-}
-%>
+<% if(locals.vertical) { %>
+<%- include('../../../templates/ejs/typography/paragraph', { content: lorem(locals.insert, 16) + ' <span class="' + prefix + '-h5 ' + prefix + '-text-align--' + locals.align + '">' + lorem(locals.insert, 20) + '</span>.' }); %>
+<% } else { %>
+<%- include('../../../templates/ejs/typography/paragraph', { classes: [prefix + '-text-align--' + align], content: lorem(locals.insert) }); %>
+<% } %>

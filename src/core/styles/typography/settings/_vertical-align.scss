@@ -1,0 +1,14 @@
+////
+/// Core Settings : Typography vertical-align
+/// @group core
+////
+
+$vertical-align-settings : (
+  places: (
+    top,
+    bottom,
+    middle,
+    baseline
+  ),
+  breakpoints: true
+);
