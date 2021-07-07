@@ -4,7 +4,7 @@ import { Renderer } from './render/renderer.js';
 import { Resizer } from './resize/resizer.js';
 import { ScrollLocker } from './scroll/scroll-locker.js';
 import { version } from '../../config.js';
-import inspector from '../inspect/inspector';
+import inspector from './inspect/inspector';
 import state from './state';
 
 class Engine {

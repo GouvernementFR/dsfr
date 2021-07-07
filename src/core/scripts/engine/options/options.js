@@ -1,4 +1,4 @@
-import inspector from '../../inspect/inspector.js';
+import inspector from '../inspect/inspector.js';
 import engine from '../engine';
 import { startAtDomContentLoaded, startAuto } from './starters';
 

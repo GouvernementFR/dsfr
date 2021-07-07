@@ -2,7 +2,7 @@ import state from '../state.js';
 import { Element } from './element';
 import { Module } from '../module.js';
 import { Root } from './root';
-import inspector from '../../inspect/inspector';
+import inspector from '../inspect/inspector';
 
 class Stage extends Module {
   constructor () {

@@ -1,5 +1,5 @@
-import { namespace } from '../../config.js';
-import state from '../engine/state.js';
+import { namespace } from '../../../config.js';
+import state from '../state.js';
 
 class LogLevel {
   constructor (level, light, dark, logger) {
@@ -96,7 +96,7 @@ class Inspector {
   }
 
   tree () {
-    const stage = state.getModule('observe');
+    const stage = state.getModule('stage');
     if (!stage) return;
     const message = new Message(true);
     this._branch(stage.root, 0, message);

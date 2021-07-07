@@ -1,8 +1,8 @@
 import { Emitter } from '../../global/emitter.js';
 import state from '../state.js';
-import inspector from '../../inspect/inspector';
+import inspector from '../inspect/inspector';
 import { Breakpoints } from './breakpoints';
-import { addClass, removeClass, hasClass } from '../../manipulation/classes';
+import { addClass, removeClass, hasClass } from '../../global/classes';
 
 class Instance {
   constructor () {
@@ -17,6 +17,7 @@ class Instance {
     this._ascent = new Emitter();
     this._descent = new Emitter();
     this._registrations = [];
+    this._nexts = [];
   }
 
   _config (element, registration) {
@@ -104,8 +105,14 @@ class Instance {
 
   render () {}
 
-  requestNext (closure) {
-    state.getModule('render').request(closure);
+  request (closure) {
+    this._nexts.push(closure);
+    state.getModule('render').request(this);
+  }
+
+  next () {
+    for (const closure of this._nexts) if (closure) closure();
+    this._nexts.length = 0;
   }
 
   get isResizing () { return this._isResizing; }
@@ -150,6 +157,7 @@ class Instance {
     this._keys = null;
     this.isRendering = false;
     this.isResizing = false;
+    this._nexts = null;
     state.getModule('render').nexts.remove(this);
     this.isScrollLocked = false;
     this._emitter.dispose();

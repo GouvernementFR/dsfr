@@ -18,13 +18,13 @@ class Navigation extends api.core.CollapsesGroup {
   down (e) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1) return;
     this.position = this.current.element.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
-    this.requestNext(this.getPosition.bind(this));
+    this.request(this.getPosition.bind(this));
   }
 
   focusOut (e) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
     this.out = true;
-    this.requestNext(this.getPosition.bind(this));
+    this.request(this.getPosition.bind(this));
   }
 
   getPosition () {

@@ -1,5 +1,5 @@
 import state from '../state';
-import inspector from '../../inspect/inspector.js';
+import inspector from '../inspect/inspector.js';
 
 let count = 0;
 

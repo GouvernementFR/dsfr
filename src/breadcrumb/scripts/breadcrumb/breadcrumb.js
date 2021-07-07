@@ -59,7 +59,7 @@ class Breadcrumb extends api.core.Instance {
     const link = this.links[0];
     if (!link) return;
     link.focus();
-    this.requestNext(this.verify.bind(this));
+    this.request(this.verify.bind(this));
   }
 
   verify () {

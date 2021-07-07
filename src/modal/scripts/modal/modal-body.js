@@ -40,7 +40,7 @@ class ModalBody extends api.core.Instance {
 
   resize () {
     this.adjust();
-    this.requestNext(this.adjust.bind(this));
+    this.request(this.adjust.bind(this));
   }
 
   adjust () {
