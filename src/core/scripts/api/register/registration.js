@@ -1,6 +1,6 @@
-import { Collection } from '../../global/collection';
+import { Collection } from '../utilities/collection';
 import state from '../state';
-import { ns } from '../../global/namespace';
+import ns from '../utilities/namespace';
 
 class Registration {
   constructor (selector, InstanceClass, creator) {

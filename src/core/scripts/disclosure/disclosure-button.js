@@ -1,5 +1,5 @@
-import { Instance } from '../engine/register/instance';
-import { ns } from '../global/namespace';
+import { Instance } from '../api/register/instance';
+import ns from '../api/utilities/namespace';
 
 class DisclosureButton extends Instance {
   constructor (type) {

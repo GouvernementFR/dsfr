@@ -1,5 +1,4 @@
 import inspector from '../inspect/inspector.js';
-import engine from '../engine';
 import { startAtDomContentLoaded, startAuto } from './starters';
 
 export const Modes = {
@@ -18,6 +17,13 @@ class Options {
     this.isStarted = false;
     this.starting = this.start.bind(this);
     this.preventManipulation = false;
+  }
+
+  configure (config, start) {
+    this.startCallback = start;
+    const settings = window[config.namespace] || {};
+    if (settings.verbose === true) inspector.level = 0;
+    this.mode = settings.mode || Modes.AUTO;
   }
 
   set mode (value) {
@@ -66,13 +72,8 @@ class Options {
     return this._mode;
   }
 
-  configure (configuration) {
-    if (configuration.verbose === true) inspector.level = 0;
-    this.mode = configuration.mode || Modes.AUTO;
-  }
-
   start () {
-    engine.start();
+    this.startCallback();
   }
 }
 

@@ -1,17 +1,17 @@
-import state from './engine/state.js';
-import options, { Modes } from './engine/options/options.js';
-import engine from './engine/engine';
-import inspector from './engine/inspect/inspector';
-import { namespace } from '../config.js';
-import { ns } from './global/namespace';
-import { addClass, hasClass, removeClass } from './global/classes';
+import state from './state.js';
+import options, { Modes } from './options/options.js';
+import config from '../../config.js';
+import engine from './engine.js';
+import inspector from './inspect/inspector.js';
+import ns from './utilities/namespace.js';
+import { addClass, hasClass, removeClass } from './utilities/classes.js';
+
+inspector.info(`version ${config.version}`);
 
 const api = (node) => {
   const stage = state.getModule('stage');
   return stage.getProxy(node);
 };
-
-options.configure(window[namespace]);
 
 api.Modes = Modes;
 
@@ -35,4 +35,7 @@ api.register = engine.register;
 
 api.inspector = inspector;
 
-window[namespace] = api;
+options.configure(config, api.start);
+
+window[config.namespace] = api;
+export default api;

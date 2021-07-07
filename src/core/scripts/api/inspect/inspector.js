@@ -1,5 +1,5 @@
-import { namespace } from '../../../config.js';
 import state from '../state.js';
+import config from '../../../config';
 
 class LogLevel {
   constructor (level, light, dark, logger) {
@@ -22,7 +22,7 @@ class LogLevel {
   }
 
   log (...values) {
-    const message = new Message();
+    const message = new Message(config.namespace);
     for (const value of values) message.add(value);
     this.print(message);
   }
@@ -38,12 +38,12 @@ class LogLevel {
 }
 
 class Message {
-  constructor (empty) {
+  constructor (domain) {
     this.inputs = ['%c'];
     this.styles = ['font-family:Marianne', 'line-height: 1.5'];
     this.objects = [];
 
-    if (!empty) this.add(`${namespace} :`);
+    if (domain) this.add(`${domain} :`);
   }
 
   add (value) {
@@ -90,7 +90,7 @@ class Inspector {
   }
 
   state () {
-    const message = new Message(true);
+    const message = new Message();
     message.add(state);
     this.trace.print(message);
   }
@@ -98,7 +98,7 @@ class Inspector {
   tree () {
     const stage = state.getModule('stage');
     if (!stage) return;
-    const message = new Message(true);
+    const message = new Message();
     this._branch(stage.root, 0, message);
     this.trace.print(message);
   }

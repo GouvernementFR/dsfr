@@ -1,4 +1,4 @@
-import { namespace } from './config.js';
+import config from './config.js';
 
-const api = window[namespace];
+const api = window[config.namespace];
 export default api;

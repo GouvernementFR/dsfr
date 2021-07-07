@@ -1,9 +1,8 @@
-import './scripts/api.js';
-import api from './api.js';
+import api from './scripts/api/api';
 
-import { Instance } from './scripts/engine/register/instance.js';
-import { KeyCodes } from './scripts/engine/register/key-codes.js';
-import { Breakpoints } from './scripts/engine/register/breakpoints';
+import { Instance } from './scripts/api/register/instance.js';
+import { KeyCodes } from './scripts/api/register/key-codes.js';
+import { Breakpoints } from './scripts/api/register/breakpoints';
 import { Disclosure } from './scripts/disclosure/disclosure.js';
 import { DisclosureButton } from './scripts/disclosure/disclosure-button.js';
 import { DisclosuresGroup } from './scripts/disclosure/disclosures-group.js';
@@ -15,7 +14,7 @@ import { Collapse } from './scripts/collapse/collapse.js';
 import { CollapsesGroup } from './scripts/collapse/collapses-group.js';
 import { CollapseSelectors } from './scripts/collapse/collapse-selectors';
 import { Equisized } from './scripts/manipulation/size.js';
-import { RootSelector } from './scripts/engine/stage/root';
+import { RootSelector } from './scripts/api/stage/root';
 
 api.core = {
   Instance: Instance,

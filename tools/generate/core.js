@@ -1,25 +1,20 @@
 const global = require('../../package.json');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
-const fs = require('fs');
-const log = require('../utilities/log');
 
 const generateCore = () => {
   const dir = root('public/src/core/');
 
-  let scss = '';
-  let js = '';
+  const keys = Object.keys(global.config);
 
-  for (const prop in global.config) {
-    scss += `$${prop}: '${global.config[prop]}';\r\n`;
-    js += `export const ${prop} = '${global.config[prop]}';\r\n`;
-  }
-
-  js += `export const version = '${global.version}';\r\n`;
-
+  const scss = keys.map(key => `$${key}: '${global.config[key]}';\r\n`).join('');
   const stylePath = dir + 'config.scss';
   createFile(stylePath, scss);
 
+  const lines = keys.map(key => `  ${key}: '${global.config[key]}'`);
+  lines.push(`  version: '${global.version}'`);
+
+  const js = `const config = {\r\n${lines.join(',\r\n')}\r\n};\r\n\r\nexport default config\r\n`;
   const scriptPath = dir + 'config.js';
   createFile(scriptPath, js);
 };

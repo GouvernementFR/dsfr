@@ -1,4 +1,4 @@
-import { Instance } from '../engine/register/instance.js';
+import { Instance } from '../api/register/instance.js';
 import { DisclosureEvents } from './disclosure-events.js';
 import { DisclosureEmissions } from './disclosure-emissions.js';
 

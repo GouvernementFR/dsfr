@@ -1,8 +1,8 @@
-import { Emitter } from '../../global/emitter.js';
+import { Emitter } from '../utilities/emitter.js';
 import state from '../state.js';
 import inspector from '../inspect/inspector';
 import { Breakpoints } from './breakpoints';
-import { addClass, removeClass, hasClass } from '../../global/classes';
+import { addClass, removeClass, hasClass } from '../utilities/classes';
 
 class Instance {
   constructor () {

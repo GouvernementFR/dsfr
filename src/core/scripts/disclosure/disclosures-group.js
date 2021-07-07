@@ -1,4 +1,4 @@
-import { Instance } from '../engine/register/instance';
+import { Instance } from '../api/register/instance';
 import { DisclosureEmissions } from './disclosure-emissions';
 
 class DisclosuresGroup extends Instance {

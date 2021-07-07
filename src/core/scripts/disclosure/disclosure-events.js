@@ -1,4 +1,4 @@
-import { ns } from '../global/namespace.js';
+import ns from '../api/utilities/namespace.js';
 
 const DisclosureEvents = {
   DISCLOSE: ns.event('DISCLOSE'),

@@ -1,4 +1,4 @@
-import { Collection } from '../global/collection.js';
+import { Collection } from './utilities/collection.js';
 
 class Module extends Collection {
   constructor (type) {

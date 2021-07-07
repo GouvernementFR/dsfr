@@ -1,6 +1,6 @@
 import state from '../state.js';
 import { Module } from '../module';
-import { Collection } from '../../global/collection';
+import { Collection } from '../utilities/collection';
 
 class Renderer extends Module {
   constructor () {
