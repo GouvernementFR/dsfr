@@ -149,6 +149,7 @@
     **/
     @at-root #{&}:not(&--selected) {
       visibility: hidden;
+      display: none;
     }
   }
 }
