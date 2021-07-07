@@ -3,6 +3,7 @@ import state from '../state.js';
 import inspector from '../inspect/inspector';
 import { Breakpoints } from './breakpoints';
 import { addClass, removeClass, hasClass } from '../utilities/classes';
+import { queryParentSelector, querySelectorAllArray } from '../utilities/query-selector';
 
 class Instance {
   constructor () {
@@ -276,7 +277,11 @@ class Instance {
   }
 
   querySelectorAll (selectors) {
-    return this.node.querySelectorAll(selectors);
+    return querySelectorAllArray(this.node, selectors);
+  }
+
+  queryParentSelector (selectors) {
+    return queryParentSelector(this.node, selectors);
   }
 }
 

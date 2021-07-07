@@ -5,7 +5,11 @@
     <div class="<%= prefix %>-container%>" >
         <%- include('../../../links/templates/ejs/link-close', { closeId: navbar.menu.modalId }); %>
         <% if (locals.tools && locals.tools.links) { %>
-          <div class="<%= prefix %>-header__menu-links"></div>
+          <div class="<%= prefix %>-header__menu-links">
+              <% if (locals.duplicateLinks) { %>
+              <%- include('./links', tools.links); %>
+              <% } %>
+          </div>
         <% } %>
 
         <% if (locals.navigation) { %>

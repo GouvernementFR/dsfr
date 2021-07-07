@@ -2,17 +2,7 @@
     <%
         if (locals.tools.links) { %>
     <div class="<%= prefix %>-header__tools-links">
-        <ul class="<%= prefix %>-links-group">
-            <%
-                let item;
-                for (let i = 0; i < tools.links.items.length; i++) {
-                  item = tools.links.items[i];
-            %>
-            <li>
-                <%- include('../../../links/templates/ejs/link', { ... item, left: true }); %>
-            </li>
-            <% } %>
-        </ul>
+        <%- include('./links', tools.links); %>
     </div>
     <% }%>
     <% if (locals.tools.search !== undefined) {
