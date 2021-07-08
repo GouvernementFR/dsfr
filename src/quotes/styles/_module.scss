@@ -26,9 +26,8 @@
     @include display-flex(column, flex-start, center);
     @include margin-left(52v, md);
 
-    // todo: utiliser mixin min-height
     @include respond-from(md) {
-      min-height: space(52v);
+      @include min-height(52v);
     }
 
     #{ns(quote__author)} {
@@ -42,12 +41,11 @@
     }
 
     figcaption {
-      // todo: utiliser mixin min-height
-      min-height: space(17v);
+      @include min-height(17v);
       @include display-flex(column, flex-start, center);
 
       @include respond-from(md) {
-        min-height: none;
+        @include min-height(none);
       }
     }
   }
