@@ -112,8 +112,9 @@ class Instance {
   }
 
   next () {
-    for (const closure of this._nexts) if (closure) closure();
+    const nexts = this._nexts.slice();
     this._nexts.length = 0;
+    for (const closure of nexts) if (closure) closure();
   }
 
   get isResizing () { return this._isResizing; }
@@ -148,9 +149,16 @@ class Instance {
     this._isScrollLocked = value;
   }
 
-  examine () {
-    if (!this.node.matches(this.registration.selector)) this._dispose();
+  examine (attributeNames) {
+    if (!this.node.matches(this.registration.selector)) {
+      this._dispose();
+      return;
+    }
+
+    this.mutate(attributeNames);
   }
+
+  mutate (attributeNames) {}
 
   _dispose () {
     inspector.debug(`dispose instance of ${this.registration.InstanceClass.name} on element [${this.element.id}]`);
@@ -177,7 +185,7 @@ class Instance {
   dispose () {}
 
   emit (type, data) {
-    this.element.emit(type, data);
+    return this.element.emit(type, data);
   }
 
   addEmission (type, closure) {
@@ -189,7 +197,7 @@ class Instance {
   }
 
   ascend (type, data) {
-    this.element.ascend(type, data);
+    return this.element.ascend(type, data);
   }
 
   addAscent (type, closure) {
@@ -201,7 +209,7 @@ class Instance {
   }
 
   descend (type, data) {
-    this.element.descend(type, data);
+    return this.element.descend(type, data);
   }
 
   addDescent (type, closure) {
@@ -259,7 +267,7 @@ class Instance {
   get hasFocus () {
     return this.node === document.activeElement;
   }
-
+/*
   observe (options) {
     if (!this._observer) this._observer = new MutationObserver(this.mutate.bind(this));
     this._observerOptions = options || this._observerOptions;
@@ -270,6 +278,10 @@ class Instance {
 
   unobserve () {
     if (this._observer) this._observer.disconnect();
+  }
+*/
+  matches (selectors) {
+    return this.node.matches(selectors);
   }
 
   querySelector (selectors) {

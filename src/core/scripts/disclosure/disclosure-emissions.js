@@ -1,11 +1,11 @@
 import ns from '../api/utilities/namespace.js';
 
 const DisclosureEmissions = {
-  RESET: ns.event('DISCLOSURE_RESET_EMISSION'),
-  ADDED: ns.event('DISCLOSURE_ADDED_EMISSION'),
-  REMOVED: ns.event('DISCLOSURE_REMOVED_EMISSION'),
-  GROUP: ns.event('DISCLOSURE_GROUP_EMISSION'),
-  UNGROUP: ns.event('DISCLOSURE_UNGROUP_EMISSION')
+  RESET: ns.emission('disclosure', 'reset'),
+  ADDED: ns.emission('disclosure', 'added'),
+  REMOVED: ns.emission('disclosure', 'removed'),
+  GROUP: ns.emission('disclosure', 'group'),
+  UNGROUP: ns.emission('disclosure', 'ungroup')
 };
 
 export { DisclosureEmissions };

@@ -4,6 +4,7 @@ import ns from '../api/utilities/namespace';
 class DisclosureButton extends Instance {
   constructor (type) {
     super();
+    this.type = type;
     this.attributeName = type.ariaState ? 'aria-' + type.id : ns.attr(type.id);
   }
 
@@ -12,7 +13,6 @@ class DisclosureButton extends Instance {
     this.isPrimary = this.hasAttribute(this.attributeName);
     if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
     this.listen('click', this.click.bind(this));
-    if (this.isPrimary) this.observe({ attributes: true, attributeFilter: [this.attributeName] });
   }
 
   get proxy () {
@@ -24,20 +24,19 @@ class DisclosureButton extends Instance {
   }
 
   click (e) {
-    if (this.registration.creator) this.registration.creator.change(this.isPrimary);
+    if (this.registration.creator) this.registration.creator.toggle(this.isPrimary);
   }
 
-  mutate (mutations) {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === this.attributeName && this.registration.creator) this.registration.creator.change(this.disclosed);
-    });
+  mutate (attributeNames) {
+    if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
+      if (this.disclosed) this.registration.creator.disclose();
+      else if (this.type.canConceal) this.registration.creator.conceal();
+    }
   }
 
   apply (value) {
     if (!this.isPrimary) return;
-    this.unobserve();
     this.setAttribute(this.attributeName, value);
-    this.observe();
   }
 
   get disclosed () {

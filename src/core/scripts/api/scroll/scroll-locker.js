@@ -15,7 +15,6 @@ class ScrollLocker extends Module {
   }
 
   lock () {
-    console.log('lock');
     if (!this._isLocked) {
       this._isLocked = true;
       this._scrollY = window.scrollY;

@@ -42,46 +42,42 @@
     }
   }
 
+  $empty: inset 0 0 0 0 $COLOR;
+  $left: inset space(8v) 0 space(4v) (space(-8v)) $COLOR;
+  $right: inset space(-8v) 0 space(4v) (space(-8v)) $COLOR;
+
   /*
   * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
   */
-  &--shadow {
-    table {
-      @include before {
-        @include scheme-element-box-shadow-color(scroll-shadow, true, 'inset 0 0 0 transparent, inset 0 0 0 transparent');
-      }
+  &__shadow {
+    @include before {
+      @include scheme-element-box-shadow-color(scroll-shadow, true, ($empty, $empty));
     }
 
     /**
     * Modifier ombre à gauche
     **/
-    &-left {
-      table {
-        @include before('', block) {
-          @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(8v) 0 space(4v) (-(space(6v))) $COLOR, inset 0 0 0 transparent));
-        }
+    &--left {
+      @include before {
+        @include scheme-element-box-shadow-color(scroll-shadow, false, ($left, $empty));
       }
     }
 
     /**
     * Modifier ombre à droite
     **/
-    &-right {
-      table {
-        @include before('', block) {
-          @include scheme-element-box-shadow-color(scroll-shadow, false, (inset 0 0 0 transparent, inset (-(space(8v))) 0 space(4v) (-(space(8v))) $COLOR));
-        }
+    &--right {
+      @include before {
+        @include scheme-element-box-shadow-color(scroll-shadow, false, ($empty, $right));
       }
     }
 
     /**
     * Modifier combinaison ombre à gauche et ombre à droite
     **/
-    &-left#{&}-right {
-      table {
-        @include before('', block) {
-          @include scheme-element-box-shadow-color(scroll-shadow, false, (inset space(8v) 0 space(4v) (-(space(6v))) $COLOR, inset (-(space(8v))) 0 space(4v) (-(space(6v))) $COLOR));
-        }
+    &--left#{&}--right {
+      @include before('', block) {
+        @include scheme-element-box-shadow-color(scroll-shadow, false, ($left, $right));
       }
     }
   }

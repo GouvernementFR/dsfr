@@ -7,12 +7,12 @@ import inspector from '../inspect/inspector';
 class Stage extends Module {
   constructor () {
     super('stage');
-    this.modifications = [];
-    this.requireModification = false;
-    this.modifying = this.modify.bind(this);
     this.root = new Root();
     super.add(this.root);
     this.observer = new MutationObserver(this.mutate.bind(this));
+    this.modifications = [];
+    this.willModify = false;
+    this.modifying = this.modify.bind(this);
   }
 
   hasElement (node) {
@@ -68,6 +68,7 @@ class Stage extends Module {
   }
 
   mutate (mutations) {
+    const elements = [];
     mutations.forEach((mutation) => {
       switch (mutation.type) {
         case 'childList':
@@ -76,23 +77,28 @@ class Stage extends Module {
           break;
 
         case 'attributes':
-          if (this.modifications.indexOf(mutation.target) === -1) this.modifications.push(mutation.target);
-          if (!this.requireModification) {
-            this.requireModification = true;
-            window.requestAnimationFrame(this.modifying);
+          if (this.hasElement(mutation.target)) {
+            const element = this.getElement(mutation.target);
+            element.prepare(mutation.attributeName);
+            if (elements.indexOf(element) === -1) elements.push(element);
           }
+          if (this.modifications.indexOf(mutation.target) === -1) this.modifications.push(mutation.target);
           break;
       }
     });
+
+    elements.forEach(element => element.examine());
+    if (this.modifications.length && !this.isModifying) {
+      this.willModify = true;
+      window.requestAnimationFrame(this.modifying);
+    }
   }
 
   modify () {
-    for (const node of this.modifications) {
-      if (this.hasElement(node)) this.getElement(node).examine();
-      this.parse(node, null, true);
-    }
-    this.requireModification = false;
+    this.willModify = false;
+    const targets = this.modifications.slice();
     this.modifications.length = 0;
+    for (const target of targets) this.parse(target, null, true);
   }
 
   dispose (node) {

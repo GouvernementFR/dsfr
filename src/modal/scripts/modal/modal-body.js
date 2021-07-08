@@ -26,7 +26,6 @@ class ModalBody extends api.core.Instance {
   }
 
   shade () {
-    console.log('shade');
     if (this.node.scrollHeight > this.node.clientHeight) {
       if (this.node.offsetHeight + this.node.scrollTop >= this.node.scrollHeight) {
         this.removeClass(ModalSelectors.SCROLL_SHADOW);

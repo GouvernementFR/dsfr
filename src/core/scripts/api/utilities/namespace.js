@@ -17,4 +17,6 @@ ns.attr.selector = (name, value) => {
 
 ns.event = (type) => `${config.namespace}.${type}`;
 
+ns.emission = (domain, type) => `emission:${domain}.${type}`;
+
 export default ns;

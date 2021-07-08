@@ -10,6 +10,7 @@ class Element {
       this.id = count;
     } else this.id = id;
     this.node = node;
+    this.attributeNames = [];
     this.instances = [];
     this._children = [];
     this._parent = null;
@@ -86,29 +87,40 @@ class Element {
 
   emit (type, data) {
     const elements = state.getModule('stage').collection;
-    for (const element of elements) element._emit(type, data);
+    const response = [];
+    for (const element of elements) response.push(...element._emit(type, data));
+    return response;
   }
 
   _emit (type, data) {
-    for (const instance of this.instances) instance._emitter.emit(type, data);
+    const response = [];
+    for (const instance of this.instances) response.push(...instance._emitter.emit(type, data));
+    return response;
   }
 
   ascend (type, data) {
-    if (this._parent) this._parent._ascend(type, data);
+    if (this._parent) return this._parent._ascend(type, data);
+    return [];
   }
 
   _ascend (type, data) {
-    for (const instance of this.instances) instance._ascent.emit(type, data);
-    if (this._parent) this._parent._ascend(type, data);
+    const response = [];
+    for (const instance of this.instances) response.push(...instance._ascent.emit(type, data));
+    if (this._parent) response.push(...this._parent._ascend(type, data));
+    return response;
   }
 
   descend (type, data) {
-    for (const child of this._children) child._descend(type, data);
+    const response = [];
+    for (const child of this._children) response.push(...child._descend(type, data));
+    return response;
   }
 
   _descend (type, data) {
-    for (const instance of this.instances) instance._descent.emit(type, data);
-    for (const child of this._children) child._descend(type, data);
+    const response = [];
+    for (const instance of this.instances) response.push(...instance._descent.emit(type, data));
+    for (const child of this._children) response.push(...child._descend(type, data));
+    return response;
   }
 
   getInstance (instanceClassName) {
@@ -151,8 +163,14 @@ class Element {
     inspector.debug(`remove element [${this.id}] ${this.html}`);
   }
 
+  prepare (attributeName) {
+    if (this.attributeNames.indexOf(attributeName) === -1) this.attributeNames.push(attributeName);
+  }
+
   examine () {
-    for (let i = this.instances.length - 1; i > -1; i--) this.instances[i].examine();
+    const attributeNames = this.attributeNames.slice();
+    this.attributeNames.length = 0;
+    for (let i = this.instances.length - 1; i > -1; i--) this.instances[i].examine(attributeNames);
   }
 }
 

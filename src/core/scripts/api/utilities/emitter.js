@@ -19,8 +19,10 @@ class Emitter {
   }
 
   emit (type, data) {
-    if (!this.emissions[type]) return;
-    for (const closure of this.emissions[type]) if (closure) closure(data);
+    if (!this.emissions[type]) return [];
+    const response = [];
+    for (const closure of this.emissions[type]) if (closure) response.push(closure(data));
+    return response;
   }
 
   dispose () {

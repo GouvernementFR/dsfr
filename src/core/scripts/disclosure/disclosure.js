@@ -70,8 +70,7 @@ class Disclosure extends Instance {
     if (this.disclosed) return false;
     this.pristine = false;
     this.disclosed = true;
-    const group = this.group;
-    if (!withhold && group) group.current = this;
+    if (!withhold && this.group) this.group.current = this;
     return true;
   }
 
@@ -100,7 +99,7 @@ class Disclosure extends Instance {
 
   reset () {}
 
-  change (isPrimary) {
+  toggle (isPrimary) {
     if (!this.type.canConceal) this.disclose();
     else {
       switch (true) {
