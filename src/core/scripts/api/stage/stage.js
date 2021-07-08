@@ -68,7 +68,7 @@ class Stage extends Module {
   }
 
   mutate (mutations) {
-    const elements = [];
+    const examinations = [];
     mutations.forEach((mutation) => {
       switch (mutation.type) {
         case 'childList':
@@ -80,14 +80,15 @@ class Stage extends Module {
           if (this.hasElement(mutation.target)) {
             const element = this.getElement(mutation.target);
             element.prepare(mutation.attributeName);
-            if (elements.indexOf(element) === -1) elements.push(element);
+            if (examinations.indexOf(element) === -1) examinations.push(element);
+            for (const descendant of element.descendants) if (examinations.indexOf(descendant) === -1) examinations.push(descendant);
           }
           if (this.modifications.indexOf(mutation.target) === -1) this.modifications.push(mutation.target);
           break;
       }
     });
 
-    elements.forEach(element => element.examine());
+    examinations.forEach(element => element.examine());
     if (this.modifications.length && !this.isModifying) {
       this.willModify = true;
       window.requestAnimationFrame(this.modifying);
@@ -98,7 +99,7 @@ class Stage extends Module {
     this.willModify = false;
     const targets = this.modifications.slice();
     this.modifications.length = 0;
-    for (const target of targets) this.parse(target, null, true);
+    for (const target of targets) this.parse(target);
   }
 
   dispose (node) {

@@ -121,8 +121,10 @@ class Instance {
 
   set isResizing (value) {
     if (this._isResizing === value) return;
-    if (value) state.add('resize', this);
-    else state.remove('resize', this);
+    if (value) {
+      state.add('resize', this);
+      this.resize();
+    } else state.remove('resize', this);
     this._isResizing = value;
   }
 
@@ -178,7 +180,6 @@ class Instance {
     this.element.remove(this);
     for (const registration of this._registrations) state.remove('register', registration);
     this._registrations = null;
-    this.unobserve();
     this.dispose();
   }
 
@@ -267,19 +268,7 @@ class Instance {
   get hasFocus () {
     return this.node === document.activeElement;
   }
-/*
-  observe (options) {
-    if (!this._observer) this._observer = new MutationObserver(this.mutate.bind(this));
-    this._observerOptions = options || this._observerOptions;
-    this._observer.observe(this.node, this._observerOptions);
-  }
 
-  mutate (mutations) {}
-
-  unobserve () {
-    if (this._observer) this._observer.disconnect();
-  }
-*/
   matches (selectors) {
     return this.node.matches(selectors);
   }

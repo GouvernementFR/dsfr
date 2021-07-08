@@ -64,11 +64,21 @@ class Element {
     return this._parent;
   }
 
+  get ascendants () {
+    return [this.parent, ...this.parent.ascendants];
+  }
+
   get children () {
     return this._children;
   }
 
-  // TODO : emit ascendant et descendant de changement
+  get descendants () {
+    const descendants = [...this._children];
+    this._children.forEach(child => descendants.push(...child.descendants));
+    return descendants;
+  }
+
+  // TODO : emit ascendant et descendant de changement ?
 
   addChild (child, index) {
     if (this._children.indexOf(child) > -1) return null;

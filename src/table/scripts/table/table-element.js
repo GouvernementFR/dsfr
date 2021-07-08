@@ -1,6 +1,5 @@
 import api from '../../api.js';
 import { TableSelectors } from './table-selectors';
-import { TableEmissions } from './table-emissions';
 
 const SCROLL_OFFSET = 8; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
@@ -8,7 +7,6 @@ class TableElement extends api.core.Instance {
   init () {
     this.listen('scroll', this.scroll.bind(this));
     this.content = this.querySelector('tbody');
-
     this.isResizing = true;
   }
 
@@ -18,8 +16,6 @@ class TableElement extends api.core.Instance {
 
   set isScrolling (value) {
     if (this._isScrolling === value) return;
-    const isScrollable = this.ascend(TableEmissions.SCROLLABLE);
-    if (isScrollable.indexOf(false) > -1) return;
     this._isScrolling = value;
 
     if (value) {
@@ -37,8 +33,6 @@ class TableElement extends api.core.Instance {
     const isMin = this.node.scrollLeft <= SCROLL_OFFSET;
     const max = this.content.offsetWidth - this.node.offsetWidth - SCROLL_OFFSET;
     const isMax = Math.abs(this.node.scrollLeft) >= max;
-
-    console.log(isMin, isMax, this.node.scrollLeft, max, SCROLL_OFFSET);
     const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
     const minSelector = isRtl ? TableSelectors.SHADOW_RIGHT : TableSelectors.SHADOW_LEFT;
     const maxSelector = isRtl ? TableSelectors.SHADOW_LEFT : TableSelectors.SHADOW_RIGHT;
@@ -58,6 +52,10 @@ class TableElement extends api.core.Instance {
 
   resize () {
     this.isScrolling = this.content.offsetWidth > this.node.offsetWidth;
+  }
+
+  dispose () {
+    this.isScrolling = false;
   }
 }
 
