@@ -9,6 +9,15 @@
 <%
  let classes = locals.classes || [];
 
+ switch(locals.transform) {
+    case 'uppercase' :
+    case 'lowercase' :
+    case 'capitalize' :
+    case 'none' :
+        classes.push(`${prefix}-text-transform--${transform}`);
+        break;
+ }
+
  switch(locals.style) {
     case 'normal' :
     case 'italic' :

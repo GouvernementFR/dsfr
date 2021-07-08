@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, list)) {
+@if (map-get($reset-vars, list)) {
   @include enable-list-style;
 
   ul,

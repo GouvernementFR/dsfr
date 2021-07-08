@@ -5,19 +5,23 @@
 
 @mixin build-text-align() {
   $places: map-get($text-align-settings, 'places');
-  $buildBreakpoints: map-get($text-align-settings, 'breakpoints');
+  $text-align-vars: map-get($typography-vars, text-align);
+  $buildBreakpoints: map-get($text-align-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
 
-  @each $place in $places {
-    #{ns(text-align)}--#{$place} {
-      text-align: $place !important;
-    }
-  }
-
-  @if $buildBreakpoints {
+  @if ($text-align-vars == true or map-get($text-align-vars, active)) {
     @each $place in $places {
-      @each $bp, $limits in $breakpoints {
-        #{ns(text-align)}--#{$place}-#{$bp} {
-          text-align: $place !important;
+      #{ns(text-align)}--#{$place} {
+        text-align: $place !important;
+      }
+    }
+
+    @each $bp, $limit in $breakpointsList {
+      @each $place in $places {
+        @include respond-from($bp) {
+          #{ns(text-align)}--#{$place}-#{$bp} {
+            text-align: $place !important;
+          }
         }
       }
     }

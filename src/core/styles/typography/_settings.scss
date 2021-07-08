@@ -3,9 +3,12 @@
 /// @group core
 ////
 
+$typography-vars: map-get($variables, typography);
+
 @import "settings/font-weight";
 @import "settings/font-style";
 @import "settings/text-align";
+@import "settings/text-transform";
 @import "settings/vertical-align";
 @import "settings/text";
 @import "settings/title";

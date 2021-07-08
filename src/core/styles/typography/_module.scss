@@ -3,18 +3,25 @@
 /// @group core
 ////
 
-@include font-weights();
+@if (map-get($typography-vars, text)) {
+  @include build-text-style();
 
-@include font-styles();
-
-@include build-text-style();
-
-@include build-title-style();
-
-#{ns(text--alt)} {
-  @include font-family(alt, true);
+  #{ns(text--alt)} {
+    @include font-family(alt, true);
+  }
 }
+
+@if (map-get($typography-vars, title)) {
+  @include build-title-style();
+}
+
+@include build-font-weight();
+
+@include build-font-style();
 
 @include build-text-align();
 
+@include build-text-transform();
+
 @include build-vertical-align();
+

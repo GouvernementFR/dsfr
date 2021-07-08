@@ -4,20 +4,24 @@
 ////
 
 @mixin build-vertical-align() {
-  $places: map-get($vertical-align-settings, 'places');
-  $buildBreakpoints: map-get($vertical-align-settings, 'breakpoints');
+  $places: map-get($vertical-align-settings, places);
+  $vertical-align-vars: map-get($typography-vars, vertical-align);
+  $buildBreakpoints: map-get($vertical-align-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
 
-  @each $place in $places {
-    #{ns(text-align)}--#{$place} {
-      vertical-align: $place !important;
-    }
-  }
-
-  @if $buildBreakpoints {
+  @if ($vertical-align-vars == true or map-get($vertical-align-vars, active)) {
     @each $place in $places {
-      @each $bp, $limits in $breakpoints {
-        #{ns(text-align)}--#{$place}-#{$bp} {
-          text-align: $place !important;
+      #{ns(text-align)}--#{$place} {
+        vertical-align: $place !important;
+      }
+    }
+
+    @each $bp, $limits in $breakpointsList {
+      @each $place in $places {
+        @include respond-from($bp) {
+          #{ns(text-align)}--#{$place}-#{$bp} {
+            vertical-align: $place !important;
+          }
         }
       }
     }

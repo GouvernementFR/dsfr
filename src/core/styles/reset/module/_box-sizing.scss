@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, box-sizing)) {
+@if (map-get($reset-vars, box-sizing)) {
   *,
   *::before,
   *::after {

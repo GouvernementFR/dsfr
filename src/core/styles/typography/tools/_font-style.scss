@@ -20,10 +20,26 @@
   font-style: font-style($type);
 }
 
-@mixin font-styles() {
-  @each $name, $style in $font-style-type {
-    & #{ns('text--' + $name)} {
-      font-style: #{$style} !important;
+@mixin build-font-style() {
+  $font-style-vars: map-get($typography-vars, font-style);
+  $buildBreakpoints: map-get($font-style-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($font-style-vars == true or map-get($font-style-vars, active)) {
+    @each $name, $style in $font-style-type {
+      #{ns('text--' + $name)} {
+        font-style: #{$style} !important;
+      }
+    }
+
+    @each $bp, $limit in $breakpointsList {
+      @each $name, $style in $font-style-type {
+        @include respond-from($bp) {
+          #{ns('text--' + $name + '-' + $bp)} {
+            font-style: #{$style} !important;
+          }
+        }
+      }
     }
   }
 }

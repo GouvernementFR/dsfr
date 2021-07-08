@@ -30,11 +30,11 @@
 
 <h4>Afficher/cacher un élement</h4>
 
-<%- sample('sr-only', './samples/sr-only', {}, true, './layout'); %>
-
 <%- sample('hidden', './samples/hidden', {}, true, './layout'); %>
 
-<%- sample('displayed', './samples/displayed', {}, true, './layout'); %>
+<%- sample('unhidden', './samples/unhidden', {}, true, './layout'); %>
+
+<%- sample('sr-only', './samples/sr-only', {}, true, './layout'); %>
 
 <h4 class="<%=prefix %>-mt-6w">Autres dispositions (display)</h4>
 
@@ -57,8 +57,12 @@
 
 <%- sample('hidden à partir du breakpoint LG', './samples/hidden', { breakpoint: 'lg'}, true, './layout'); %>
 
-<%- sample('displayed à partir du breakpoint LG', './samples/displayed', { breakpoint: 'lg'}, true, './layout'); %>
+<%- sample('unhidden à partir du breakpoint LG', './samples/unhidden', { breakpoint: 'lg'}, true, './layout'); %>
 
 <%- sample('display flex à partir du breakpoint md', './samples/display', {type: 'flex', breakpoint: 'md'}, true, './layout'); %>
 
 <%- sample('display none à partir du breakpoint lg', './samples/display', {type: 'none', breakpoint: 'lg'}, true, './layout'); %>
+
+<%- sample('invisible (visibility hidden)', './samples/visibility', {visibility: 'hidden'}, true, './layout'); %>
+
+<%- sample('toujours visible (visibility visible)', './samples/visibility', {visibility: 'visible'}, true, './layout'); %>

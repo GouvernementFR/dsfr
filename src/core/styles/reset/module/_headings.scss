@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, heading)) {
+@if (map-get($reset-vars, heading)) {
   @each $title, $variation in ($title-settings) {
     @if str-index(quote($title), 'h') == 1 {
       #{$title} {

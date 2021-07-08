@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, input)) {
+@if (map-get($reset-vars, input)) {
   input,
   select,
   textarea {

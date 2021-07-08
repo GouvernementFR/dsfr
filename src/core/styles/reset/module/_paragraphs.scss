@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, text)) {
+@if (map-get($reset-vars, text)) {
   p {
     @include text-style(md, true);
   }

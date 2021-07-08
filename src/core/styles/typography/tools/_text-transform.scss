@@ -1,0 +1,29 @@
+////
+/// Core Tools : Typography build text transform
+/// @group core
+////
+
+@mixin build-text-transform() {
+  $types: map-get($text-transform-settings, 'types');
+  $text-transform-vars: map-get($typography-vars, text-transform);
+  $buildBreakpoints: map-get($text-transform-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($text-transform-vars == true or map-get($text-transform-vars, active)) {
+    @each $type in $types {
+      #{ns(text-transform)}--#{$type} {
+        text-transform: $type !important;
+      }
+    }
+
+    @each $bp, $limit in $breakpointsList {
+      @each $type in $types {
+        @include respond-from($bp) {
+          #{ns(text-transform)}--#{$type}-#{$bp} {
+            text-transform: $type !important;
+          }
+        }
+      }
+    }
+  }
+}

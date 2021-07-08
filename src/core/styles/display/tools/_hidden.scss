@@ -11,7 +11,7 @@
       }
     }
 
-    #{ns('displayed-' + $bp)} {
+    #{ns('unhidden-' + $bp)} {
       display: none !important;
       @include respond-from($bp) {
         display: inherit !important;

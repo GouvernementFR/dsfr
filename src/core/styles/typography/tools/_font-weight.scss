@@ -20,10 +20,24 @@
   font-weight: font-weight($scale);
 }
 
-@mixin font-weights() {
+@mixin build-font-weight() {
+  $font-weight-vars: map-get($typography-vars, font-style);
+  $buildBreakpoints: map-get($font-weight-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
   @each $name, $weight in $font-weight-scale {
-    & #{ns('text--' + $name)} {
+    #{ns('text--' + $name)} {
       font-weight: #{$weight} !important;
+    }
+  }
+
+  @each $bp, $limit in $breakpointsList {
+    @each $name, $weight in $font-weight-scale {
+      @include respond-from($bp) {
+        #{ns('text--' + $name) + '-' + $bp} {
+          font-weight: #{$weight} !important;
+        }
+      }
     }
   }
 }

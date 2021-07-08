@@ -1,0 +1,13 @@
+////
+/// Core Settings : Typography text-transform
+/// @group core
+////
+
+$text-transform-settings : (
+  types: (
+    uppercase,
+    lowercase,
+    capitalize,
+    none
+  ),
+)!default;

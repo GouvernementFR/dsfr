@@ -1,0 +1,39 @@
+////
+/// Core Settings : flex properties
+/// @group core
+////
+
+$flexProperties : (
+  flex-wrap: (
+    wrap,
+    nowrap,
+    wrap-reverse
+  ),
+  align-items: (
+    start,
+    end,
+    center,
+    baseline,
+    stretch
+  ),
+  justify-content: (
+    start,
+    end,
+    center,
+    around,
+    between,
+    evenly
+  ),
+  flex: (
+    auto,
+    1,
+    initial,
+    none
+  ),
+  flex-direction: (
+    row,
+    row-reverse,
+    col,
+    col-reverse
+  ),
+)!default;

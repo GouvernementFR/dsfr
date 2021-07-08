@@ -1,0 +1,35 @@
+////
+/// Core Tools : Global visibility
+/// @group core
+////
+
+@mixin visibility($visibility: visible, $breakpoint: null) {
+  @if $breakpoint {
+    @include respond-from($breakpoint) {
+      visibility: $visibility;
+    }
+  }
+  @else {
+    visibility: $visibility;
+  }
+}
+
+@mixin build-visibility() {
+  @each $type in $visibilityTypes {
+    #{ns('visibility--') + $type} {
+      visibility: $type !important;
+    }
+  }
+}
+
+@mixin build-visibility-from() {
+  @each $bp, $limits in $breakpoints {
+    @each $type in $visibilityTypes {
+      #{ns('visibility--') + $type + '-' + $bp} {
+        @include respond-from($bp) {
+          visibility: $type !important;
+        }
+      }
+    }
+  }
+}

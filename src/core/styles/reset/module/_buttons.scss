@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, button)) {
+@if (map-get($reset-vars, button)) {
   button,
   input[type="button"],
   input[type="submit"] {

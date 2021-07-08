@@ -1,0 +1,49 @@
+////
+/// Core Variables
+/// Les utilitaires des cores sont paramètrables ici, ces variables reprennent celles des settings de chaque utilitaire sans le '!default' à la fin.
+/// De cette façon les utilitaires générés peuvent être modifiés ici au besoin (en reprennant la même structure de données) ou retirés en les passant à 'false'
+/// Tips: `yarn build --styles -p core` pour tester la compilation du core
+/// @group core
+////
+
+
+$variables: (
+  reset: (
+    body: true,
+    box-sizing: true,
+    font-face: (
+      path:'../fonts'
+    ),
+    focus: true,
+    heading: true,
+    link: true,
+    list: true,
+    text: true,
+    button: true,
+    input: true
+  ),
+  typography: (
+    text: true,
+    title: true,
+    font-weight: (
+      active: true,
+      breakpoints: false,
+    ),
+    font-style: (
+      active: true,
+      breakpoints: false,
+    ),
+    text-align: (
+      active: true,
+      breakpoints: sm md lg,
+    ),
+    text-transform: (
+      active: true,
+      breakpoints: sm md lg,
+    ),
+    vertical-align: (
+      active: true,
+      breakpoints: sm md lg,
+    ),
+  )
+)!default;

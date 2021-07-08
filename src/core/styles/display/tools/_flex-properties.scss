@@ -1,0 +1,22 @@
+////
+/// Core Tools : Global flex-properties
+/// @group core
+////
+
+@mixin build-flex-properties() {
+  @each $prop, $val in $flexProperties {
+    #{ns($prop) + '--' + $val} {
+      $prop: $val !important;
+    }
+  }
+}
+
+@mixin build-flex-properties-from() {
+  @each $bp, $limits in $breakpoints {
+    @each $prop, $val in $flexProperties {
+      #{ns($prop) + '--' + $val + $bp} {
+        $prop: $val !important;
+      }
+    }
+  }
+}

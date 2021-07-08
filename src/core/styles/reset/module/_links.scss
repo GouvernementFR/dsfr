@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, link)) {
+@if (map-get($reset-vars, link)) {
   :root {
     @include enable-link-style;
   }

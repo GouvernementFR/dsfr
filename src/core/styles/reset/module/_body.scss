@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, body)) {
+@if (map-get($reset-vars, body)) {
   body {
     @include font-family;
     text-rendering: optimizeSpeed;

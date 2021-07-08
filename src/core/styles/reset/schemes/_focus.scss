@@ -3,6 +3,6 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, focus)) {
+@if (map-get($reset-vars, focus)) {
   @include build-focus-schemes;
 }

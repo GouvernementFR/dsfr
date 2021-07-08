@@ -4,7 +4,7 @@
 ////
 
 @mixin font-face($name, $filename, $font-weight: 400, $font-style: normal) {
-  $path: map-get(map-get($reset-settings, font-face), path);
+  $path: map-get(map-get($reset-vars, font-face), path);
   @font-face {
     font-family: #{$name};
     src:

@@ -6,6 +6,6 @@
 /**
  * Déclaration des fontes
  */
-@if (map-get($reset-settings, font-face)) {
+@if (map-get($reset-vars, font-face)) {
   @include build-font-faces;
 }

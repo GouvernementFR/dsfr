@@ -1,0 +1,7 @@
+<%
+ const append = locals.breakpoint ? `-${breakpoint}` :'';
+ const visibility = locals.visibility || 'visible';
+ %>
+<div class="<%= prefix %>-visibility--<%= visibility %><%= append %>" >
+    <p><%= lorem(); %></p>
+</div>
