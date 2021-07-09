@@ -6,7 +6,8 @@ import { addClass, removeClass, hasClass } from '../utilities/classes';
 import { queryParentSelector, querySelectorAllArray } from '../utilities/query-selector';
 
 class Instance {
-  constructor () {
+  constructor (jsAttribute = true) {
+    this.jsAttribute = jsAttribute;
     this._isRendering = false;
     this._isResizing = false;
     this._isScrollLocked = false;
@@ -26,6 +27,7 @@ class Instance {
     this.registration = registration;
     this.node = element.node;
     this.id = element.node.id;
+    if (this.jsAttribute) this.setAttribute(registration.attribute, true);
     this.init();
   }
 
@@ -164,6 +166,7 @@ class Instance {
 
   _dispose () {
     inspector.debug(`dispose instance of ${this.registration.InstanceClass.name} on element [${this.element.id}]`);
+    this.removeAttribute(this.registration.attribute);
     this.unlisten();
     this._keys = null;
     this.isRendering = false;
@@ -180,6 +183,7 @@ class Instance {
     this.element.remove(this);
     for (const registration of this._registrations) state.remove('register', registration);
     this._registrations = null;
+    this.registration.remove(this);
     this.dispose();
   }
 

@@ -3,7 +3,7 @@ import { FocusTrap } from './focus-trap.js';
 
 class ModalsGroup extends api.core.DisclosuresGroup {
   constructor () {
-    super();
+    super('Modal', false);
     this.trap = new FocusTrap();
   }
 

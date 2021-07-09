@@ -2,8 +2,8 @@ import { Instance } from '../api/register/instance';
 import { DisclosureEmissions } from './disclosure-emissions';
 
 class DisclosuresGroup extends Instance {
-  constructor (disclosureInstanceClassName) {
-    super();
+  constructor (disclosureInstanceClassName, jsAttribute) {
+    super(jsAttribute);
     this.disclosureInstanceClassName = disclosureInstanceClassName;
     this._index = -1;
   }

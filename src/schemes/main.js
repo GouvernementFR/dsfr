@@ -1,4 +1,5 @@
 import api from './index.js';
-import './scripts/module';
+
+api.register(api.schemes.SchemesSelectors.SCHEME, api.schemes.Scheme);
 
 export default api;

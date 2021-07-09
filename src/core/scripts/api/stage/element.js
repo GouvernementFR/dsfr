@@ -48,15 +48,12 @@ class Element {
     const instance = registration.create(this);
     this.instances.push(instance);
     instance._config(this, registration);
-    this.node.setAttribute(registration.attribute, true);
     if (this._proxy) this._proxy[registration.property] = instance.proxy;
   }
 
   remove (instance) {
     const index = this.instances.indexOf(instance);
     if (index > -1) this.instances.splice(index, 1);
-    instance.registration.remove(instance);
-    this.node.removeAttribute(instance.registration.attribute);
     if (this._proxy) delete this._proxy[instance.registration.property];
   }
 
