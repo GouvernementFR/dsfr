@@ -6,7 +6,6 @@ const OFFSET = 32; // 32px => 8v => 2rem
 
 class ModalBody extends api.core.Instance {
   init () {
-    this.listen('click', this.click.bind(this));
     this.listen('scroll', this.shade.bind(this));
     this.addDescent(ModalEmissions.ACTIVATE, this.activate.bind(this));
     this.addDescent(ModalEmissions.DEACTIVATE, this.deactivate.bind(this));
@@ -19,10 +18,6 @@ class ModalBody extends api.core.Instance {
 
   deactivate () {
     this.isResizing = false;
-  }
-
-  click (e) {
-    e.stopPropagation();
   }
 
   shade () {

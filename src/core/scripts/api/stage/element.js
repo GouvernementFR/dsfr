@@ -40,11 +40,11 @@ class Element {
   }
 
   create (registration) {
-    inspector.debug(`create instance of ${registration.InstanceClass.name} on element [${this.id}]`);
     if (this.hasInstance(registration.InstanceClass.name)) {
-      inspector.debug(`failed creation, instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
+      // inspector.debug(`failed creation, instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
       return;
     }
+    inspector.debug(`create instance of ${registration.InstanceClass.name} on element [${this.id}]`);
     const instance = registration.create(this);
     this.instances.push(instance);
     instance._config(this, registration);

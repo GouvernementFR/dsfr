@@ -18,7 +18,7 @@ class Modal extends api.core.Disclosure {
   }
 
   click (e) {
-    this.conceal();
+    if (e.target === this.node) this.conceal();
   }
 
   disclose (withhold) {

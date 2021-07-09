@@ -54,11 +54,11 @@ class Instance {
     this.node.dispatchEvent(event);
   }
 
-  listen (type, closure) {
+  listen (type, closure, options) {
     if (!this._listeners[type]) this._listeners[type] = [];
     if (this._listeners[type].indexOf(closure) > -1) return;
     this._listeners[type].push(closure);
-    this.node.addEventListener(type, closure);
+    this.node.addEventListener(type, closure, options);
   }
 
   unlisten (type, closure) {

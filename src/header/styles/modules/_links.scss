@@ -42,4 +42,8 @@
       @include min-size(null, 12v);
     }
   }
+
+  @include respond-from(lg) {
+    display: none;
+  }
 }
