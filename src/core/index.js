@@ -13,7 +13,9 @@ import { CollapseButton } from './scripts/collapse/collapse-button.js';
 import { Collapse } from './scripts/collapse/collapse.js';
 import { CollapsesGroup } from './scripts/collapse/collapses-group.js';
 import { CollapseSelectors } from './scripts/collapse/collapse-selectors';
-import { Equisized } from './scripts/manipulation/size.js';
+import { Equisized } from './scripts/equisized/equisized.js';
+import { EquisizedsGroup } from './scripts/equisized/equisizeds-group.js';
+import { EquisizedEmissions } from './scripts/equisized/equisized-emissions.js';
 import { RootSelector } from './scripts/api/stage/root';
 
 api.core = {
@@ -31,7 +33,8 @@ api.core = {
   CollapsesGroup: CollapsesGroup,
   CollapseSelectors: CollapseSelectors,
   RootSelector: RootSelector,
-  Equisized: Equisized
+  Equisized: Equisized,
+  EquisizedsGroup: EquisizedsGroup
 };
 
 export default api;

@@ -22,7 +22,7 @@ class Resizer extends Module {
 
   resize () {
     if (!this.requireResize) return;
-    this.forEach((item) => item.resize());
+    this.forEach((instance) => instance.resize());
     this.requireResize = false;
   }
 }

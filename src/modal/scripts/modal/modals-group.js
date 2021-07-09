@@ -10,7 +10,7 @@ class ModalsGroup extends api.core.DisclosuresGroup {
   apply (value, initial) {
     super.apply(value, initial);
     if (this.current === null) this.trap.untrap();
-    else this.trap.trap(this.current.element);
+    else this.trap.trap(this.current.node);
   }
 }
 

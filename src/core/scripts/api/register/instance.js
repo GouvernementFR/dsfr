@@ -11,6 +11,7 @@ class Instance {
     this._isRendering = false;
     this._isResizing = false;
     this._isScrollLocked = false;
+    this._isLoading = false;
     this._listeners = {};
     this._keyListenerTypes = [];
     this._keys = [];
@@ -153,6 +154,19 @@ class Instance {
     this._isScrollLocked = value;
   }
 
+  get isLoading () {
+    return this._isLoading;
+  }
+
+  set isLoading (value) {
+    if (this._isLoading === value) return;
+    if (value) state.add('load', this);
+    else state.remove('load', this);
+    this._isLoading = value;
+  }
+
+  load () {}
+
   examine (attributeNames) {
     if (!this.node.matches(this.registration.selector)) {
       this._dispose();
@@ -174,6 +188,7 @@ class Instance {
     this._nexts = null;
     state.getModule('render').nexts.remove(this);
     this.isScrollLocked = false;
+    this.isLoading = false;
     this._emitter.dispose();
     this._emitter = null;
     this._ascent.dispose();
@@ -287,6 +302,10 @@ class Instance {
 
   queryParentSelector (selectors) {
     return queryParentSelector(this.node, selectors);
+  }
+
+  getRect () {
+    return this.node.getBoundingClientRect();
   }
 }
 

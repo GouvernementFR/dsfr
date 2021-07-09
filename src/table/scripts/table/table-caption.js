@@ -8,7 +8,7 @@ class TableCaption extends api.core.Instance {
   }
 
   resize () {
-    const height = this.node.getBoundingClientRect().height;
+    const height = this.getRect().height;
     if (this.height === height) return;
     this.height = height;
     this.ascend(TableEmissions.CAPTION_HEIGHT, height);
