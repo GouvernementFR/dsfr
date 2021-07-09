@@ -50,12 +50,14 @@ class Scheme extends api.core.Instance {
     const scope = this;
     return {
       ...super.proxy,
+      /*
       get theme () {
         return scope.theme;
       },
       set theme (value) {
         scope.theme = value;
       },
+       */
       get scheme () {
         return scope.scheme;
       },
@@ -117,8 +119,7 @@ class Scheme extends api.core.Instance {
     switch (value) {
       case SchemeThemes.LIGHT:
       case SchemeThemes.DARK:
-        console.log(this._scheme, value);
-        if (this._scheme !== Schemes.SYSTEM && this._scheme !== value) return;
+        // if (this._scheme !== Schemes.SYSTEM && this._scheme !== value) return;
         this._theme = value;
         this.setAttribute(SchemeAttributes.THEME, value);
         this.descend(SchemeEmissions.THEME, value);
