@@ -45,7 +45,7 @@
       @include display-flex(column, flex-start, center);
 
       @include respond-from(md) {
-        @include min-height(none);
+        @include min-height(auto);
       }
     }
   }
