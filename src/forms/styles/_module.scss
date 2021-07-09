@@ -21,6 +21,7 @@
   @include text-style(md);
 
   & + #{ns(input)},
+  & + #{ns(input-wrap)},
   & + #{ns(select)} {
     @include margin-top(2v);
   }

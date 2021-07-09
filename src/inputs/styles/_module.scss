@@ -50,6 +50,11 @@
     @include margin(auto);
   }
 
+  &--addon {
+    @include display-flex;
+    @include size(100%);
+  }
+
   &#{ns(fi-calendar-line)} {
     > #{ns(input)}[type=date] {
       &::-webkit-calendar-picker-indicator {
@@ -63,5 +68,25 @@
 
   #{ns(input)} {
     @include padding-right(10v);
+  }
+
+  > *:first-child:not(:last-child) {
+    &#{ns(input)} {
+      @include padding-right(4v);
+    }
+
+    @include respond-from(md) {
+      border-radius: space(1v) 0 0 0;
+    }
+  }
+
+  > *:last-child:not(:first-child) {
+    @include respond-from(md) {
+      border-radius: 0 space(1v) 0 0;
+    }
+  }
+
+  + #{ns(hint-text)} {
+    @include margin-top(2v);
   }
 }

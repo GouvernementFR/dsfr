@@ -19,7 +19,7 @@
 
 * required (boolean, optionnal)
 
-* disabled (boolena, optionnal)
+* disabled (boolean, optionnal)
 
 * attributes (object, optionnal) : attributs spécifiques à rajouter sur l'input
 
@@ -27,10 +27,11 @@
 <% eval(include('../../../core/index.ejs')); %>
 
 <%
-let inputClasses = [prefix + '-input'];
+let inputClasses = locals.inputClasses || [];
 let inputAttrs = locals.attributes || {};
-
 let describedby = [];
+
+inputClasses.push(prefix + '-input');
 
 if (locals.valid !== undefined) {
   inputClasses.push(prefix + '-input--valid');
@@ -55,11 +56,20 @@ if (locals.placeholder != undefined) inputAttrs['placeholder'] = placeholder;
  <div class="<%= prefix %>-input-wrap <%- prefix %>-fi-<%= icon %>" >
 <% } %>
 
+<% if (locals.addon && locals.button != undefined) { %>
+  <div class="<%= prefix %>-input-wrap <%- prefix %>-input-wrap--addon" >
+<% } %>
+
 <% if (locals.type === 'textarea') { %>
 <textarea <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %>  id="<%= id %>" name="<%= id %>"></textarea>
 <% }
 else {%>
 <input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= type %>" id="<%= id %>" name="<%= id %>">
+<% } %>
+
+<% if (locals.addon && locals.button != undefined) { %>
+  <%- include('../../../buttons/templates/ejs/button', locals.button); %>
+  </div>
 <% } %>
 
 <% if (locals.icon != undefined) { %>
