@@ -2,6 +2,7 @@ import api from '../../api.js';
 import { Schemes } from './schemes';
 import { SchemeAttributes } from './scheme-attributes';
 import { SchemeThemes } from './scheme-themes';
+import { SchemeEmissions } from './scheme-emissions';
 
 class Scheme extends api.core.Instance {
   constructor () {
@@ -40,10 +41,21 @@ class Scheme extends api.core.Instance {
             this.scheme = Schemes.SYSTEM;
         }
     }
+
+    this.addAscent(SchemeEmissions.ASK, this.ask.bind(this));
+    this.addAscent(SchemeEmissions.SCHEME, this.apply.bind(this));
   }
 
   restoreTransition () {
     this.setAttribute(SchemeAttributes.TRANSITION, '');
+  }
+
+  ask () {
+    this.descend(SchemeEmissions.SCHEME, this.scheme);
+  }
+
+  apply (value) {
+    this.scheme = value;
   }
 
   get scheme () {
@@ -68,24 +80,31 @@ class Scheme extends api.core.Instance {
         break;
 
       default:
-        return;
+        this.scheme = Schemes.SYSTEM;
     }
 
     this._scheme = value;
     this.setAttribute(SchemeAttributes.SCHEME, value);
     localStorage.setItem('scheme', value);
+    this.descend(SchemeEmissions.SCHEME, value);
   }
 
   get theme () {
-    return this.getAttribute(SchemeAttributes.THEME);
+    return this._theme;
   }
 
   set theme (value) {
+    if (this._theme === value) return;
     switch (value) {
       case SchemeThemes.LIGHT:
       case SchemeThemes.DARK:
+        this._theme = value;
         this.setAttribute(SchemeAttributes.THEME, value);
+        this.descend(SchemeEmissions.THEME, value);
         break;
+
+      default:
+        this.theme = SchemeThemes.LIGHT;
     }
   }
 
@@ -109,8 +128,12 @@ class Scheme extends api.core.Instance {
   }
 
   mutate (attributeNames) {
-    if (attributeNames.indexOf(SchemeAttributes.SCHEME) === -1) return;
-    this.scheme = this.getAttribute(SchemeAttributes.SCHEME);
+    if (attributeNames.indexOf(SchemeAttributes.SCHEME) > -1) this.scheme = this.getAttribute(SchemeAttributes.SCHEME);
+    if (attributeNames.indexOf(SchemeAttributes.THEME) > -1) this.theme = this.getAttribute(SchemeAttributes.THEME);
+  }
+
+  dispose () {
+    this.unlistenPreferences();
   }
 }
 
