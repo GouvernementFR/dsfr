@@ -46,6 +46,25 @@ class Scheme extends api.core.Instance {
     this.addAscent(SchemeEmissions.SCHEME, this.apply.bind(this));
   }
 
+  get proxy () {
+    const scope = this;
+    return {
+      ...super.proxy,
+      get theme () {
+        return scope.theme;
+      },
+      set theme (value) {
+        scope.theme = value;
+      },
+      get scheme () {
+        return scope.scheme;
+      },
+      set scheme (value) {
+        scope.scheme = value;
+      }
+    };
+  }
+
   restoreTransition () {
     this.setAttribute(SchemeAttributes.TRANSITION, '');
   }
@@ -64,6 +83,7 @@ class Scheme extends api.core.Instance {
 
   set scheme (value) {
     if (this._scheme === value) return;
+    this._scheme = value;
     switch (value) {
       case Schemes.SYSTEM:
         this.listenPreferences();
@@ -83,10 +103,9 @@ class Scheme extends api.core.Instance {
         this.scheme = Schemes.SYSTEM;
     }
 
-    this._scheme = value;
-    this.setAttribute(SchemeAttributes.SCHEME, value);
-    localStorage.setItem('scheme', value);
     this.descend(SchemeEmissions.SCHEME, value);
+    localStorage.setItem('scheme', value);
+    this.setAttribute(SchemeAttributes.SCHEME, value);
   }
 
   get theme () {
@@ -98,13 +117,12 @@ class Scheme extends api.core.Instance {
     switch (value) {
       case SchemeThemes.LIGHT:
       case SchemeThemes.DARK:
+        console.log(this._scheme, value);
+        if (this._scheme !== Schemes.SYSTEM && this._scheme !== value) return;
         this._theme = value;
         this.setAttribute(SchemeAttributes.THEME, value);
         this.descend(SchemeEmissions.THEME, value);
         break;
-
-      default:
-        this.theme = SchemeThemes.LIGHT;
     }
   }
 
