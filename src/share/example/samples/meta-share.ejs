@@ -1,24 +1,24 @@
 <%
 const items = [
     {
-        property: 'twitter:card',
+        name: 'twitter:card',
         content: 'summary_large_image' // ou 'summary' si non défini
     },
     {
-        property: 'twitter:site',
-        content: '@gouvermentFr'
+        name: 'twitter:site',
+        content: contentPlaceholder('@usernameTwitter')
     },
     {
         property: 'og:title',
-        content: 'Système de Design de l\'État'
+        content: contentPlaceholder('Système de Design de l\'État')
     },
     {
         property: 'og:description',
-        content: 'Développer vos sites et applications en utilisant des composants prêts à l\'emploi, accessibles et ergonomiques'
+        content: contentPlaceholder('Développer vos sites et applications en utilisant des composants prêts à l\'emploi, accessibles et ergonomiques')
     },
     {
         property: 'og:image',
-        content: 'https://systeme-de-design.gouv.fr/src/img/systeme-de-design.gouv.fr.jpg'
+        content: contentPlaceholder('https://systeme-de-design.gouv.fr/src/img/systeme-de-design.gouv.fr.jpg')
     },
     {
         property: 'og:type',
@@ -26,19 +26,19 @@ const items = [
     },
     {
         property: 'og:url',
-        content: 'https://systeme-de-design.gouv.fr/'
+        content: contentPlaceholder('https://systeme-de-design.gouv.fr/')
     },
     {
         property: 'og:site_name',
-        content: 'Site officiel du Système de Design de l\'État'
+        content: contentPlaceholder('Site officiel du Système de Design de l\'État')
     },
     {
         property: 'og:image:alt',
-        content: 'République Française - Système de Design de l\'État'
+        content: contentPlaceholder('République Française - Système de Design de l\'État')
     },
     {
-        property: 'twitter:image:alt',
-        content: 'République Française - Système de Design de l\'État'
+        name: 'twitter:image:alt',
+        content: contentPlaceholder('République Française - Système de Design de l\'État')
     }
 
 ];
