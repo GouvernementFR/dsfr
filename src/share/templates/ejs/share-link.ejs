@@ -1,0 +1,31 @@
+<%#
+# paramètres link
+
+* classes (array, optional): classes du lien
+
+* attributes (object, required): attributs du lien (href, title, onclick event)
+
+* label (string, required) : contenu texte
+
+* tag (string) : La balise utilisée pour le lien (default: a), si pas de href utiliser 'button'
+
+* disabled (boolean, optionnal) : si valeur true, link désactivé
+
+* icon (string, optional) : icon du lien
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+let shareLinkClasses = locals.classes || [];
+let shareLinkAttrs = locals.attributes || {};
+
+const tag = locals.tag || 'a';
+
+shareLinkClasses.push(prefix + '-share__link');
+
+if (locals.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + locals.icon);
+
+%>
+
+<<%= tag %> <%- includeClasses(shareLinkClasses)%> <%- includeAttrs(shareLinkAttrs); %>><%- label %></<%= tag %>>

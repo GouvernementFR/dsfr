@@ -1,0 +1,36 @@
+////
+/// Share Module
+/// @group share
+////
+
+@include build-share();
+
+#{ns(share)} {
+  &__title {
+    @include margin-bottom(2v);
+  }
+
+  &__text {
+    @include text-style(xs);
+    @include max-width(72v, md);
+  }
+
+  &__group {
+    @include disable-list-style;
+    display: flex;
+    flex-wrap: wrap;
+    @include margin-x(-2v);
+    @include margin-bottom(0);
+
+    > li {
+      display: inline-flex;
+      @include margin(2v);
+    }
+  }
+}
+
+@include build-social-share-link(facebook, facebook-circle-line);
+@include build-social-share-link(twitter, twitter-line);
+@include build-social-share-link(linkedin, linkedin-box-line);
+@include build-social-share-link(mail, mail-line);
+@include build-social-share-link(copy, links-fill);
