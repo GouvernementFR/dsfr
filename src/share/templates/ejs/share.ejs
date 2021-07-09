@@ -3,9 +3,10 @@
 
 * share.title (string, required) : titre du bloc de partage
 
-* share.links (array, required) : Tableau de liens de partage (title, url, icon)
+* share.links (array, required) : Tableau de liens de partage (name, label, attributes, icon)
 
 * share.classes (array, optional) : Classes sur le bloc share
+
 %>
 <%
 eval(include('../../../core/index.ejs'));
@@ -20,17 +21,9 @@ let dataLink = {};
         <% for (let i=0; i < share.links.length; i++) { %>
             <li>
                 <%
-                dataLink= {}
-                dataLink.attributes = {};
-                if (share.links[i].title) {
-                    dataLink.attributes.title = share.links[i].title;
-                    dataLink.label = share.links[i].title;
-                }
-                if (share.links[i].blank) dataLink.blank = share.links[i].blank;
-                if (share.links[i].url) dataLink.href = share.links[i].url;
-                if (share.links[i].tag) dataLink.tag = share.links[i].tag;
-                if (share.links[i].onclick) dataLink.attributes.onclick = share.links[i].onclick;
-                dataLink.classes = [prefix + '-share__link--' + share.links[i].label];
+                dataLink = {...share.links[i] };
+                dataLink.classes = [prefix + '-share__link--' + share.links[i].name];
+                if(dataLink.disabled === true) dataLink.attributes.disabled = ''
                 %>
                 <%- include('./share-link', dataLink); %>
             </li>
