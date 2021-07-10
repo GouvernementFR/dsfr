@@ -89,7 +89,7 @@ class Stage extends Module {
     });
 
     examinations.forEach(element => element.examine());
-    if (this.modifications.length && !this.isModifying) {
+    if (this.modifications.length && !this.willModify) {
       this.willModify = true;
       window.requestAnimationFrame(this.modifying);
     }
@@ -123,22 +123,12 @@ class Stage extends Module {
 
       for (const n of nodes) {
         const element = this.getElement(n);
-        creations.push(new Creation(element, registration));
+        element.project(registration);
+        if (creations.indexOf(element) === -1) creations.push(element);
       }
     }
 
-    for (const creation of creations) creation.create();
-  }
-}
-
-class Creation {
-  constructor (element, registration) {
-    this.element = element;
-    this.registration = registration;
-  }
-
-  create () {
-    this.element.create(this.registration);
+    for (const element of creations) element.populate();
   }
 }
 

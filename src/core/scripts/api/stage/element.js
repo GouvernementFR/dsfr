@@ -14,6 +14,7 @@ class Element {
     this.instances = [];
     this._children = [];
     this._parent = null;
+    this._projects = [];
   }
 
   get proxy () {
@@ -37,6 +38,16 @@ class Element {
   get html () {
     const end = this.node.outerHTML.indexOf('>');
     return this.node.outerHTML.substring(0, end + 1);
+  }
+
+  project (registration) {
+    if (this._projects.indexOf(registration) === -1) this._projects.push(registration);
+  }
+
+  populate () {
+    const projects = this._projects.slice();
+    this._projects.length = 0;
+    for (const registration of projects) this.create(registration);
   }
 
   create (registration) {
