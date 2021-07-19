@@ -2,7 +2,7 @@
 <%
 let data = {};
 data = JSON.parse(include('./data.ejs'));
-
+data.socials = undefined;
 let inputAttributes = [];
 let inputClasses = [];
 inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
