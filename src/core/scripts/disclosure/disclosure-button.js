@@ -17,10 +17,9 @@ class DisclosureButton extends Instance {
 
   get proxy () {
     const scope = this;
-    return {
-      ...super.proxy,
+    return Object.assign(super.proxy, {
       focus: scope.focus.bind(scope)
-    };
+    });
   }
 
   click (e) {

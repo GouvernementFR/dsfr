@@ -91,7 +91,9 @@ class Instance {
   unlistenKey (code, closure) {
     this._keys = this._keys.filter((key) => key.code !== code || key.closure !== closure);
 
-    for (const type of this._keyListenerTypes) if (!this._keys.some((key) => key.type === type)) this.unlisten(`key${type}`, this.handlingKey);
+    this._keyListenerTypes.forEach(type => {
+      if (!this._keys.some(key => key.type === type)) this.unlisten(`key${type}`, this.handlingKey);
+    });
   }
 
   handleKey (e) {

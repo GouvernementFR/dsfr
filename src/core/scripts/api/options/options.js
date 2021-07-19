@@ -73,7 +73,7 @@ class Options {
   }
 
   start () {
-    inspector.info(`start`);
+    inspector.info('start');
     this.startCallback();
   }
 }

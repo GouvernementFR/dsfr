@@ -24,8 +24,7 @@ class Disclosure extends Instance {
 
   get proxy () {
     const scope = this;
-    return {
-      ...super.proxy,
+    return Object.assign(super.proxy, {
       disclose: scope.disclose.bind(scope),
       conceal: scope.conceal.bind(scope),
       focus: scope.focus.bind(scope),
@@ -36,7 +35,7 @@ class Disclosure extends Instance {
         const group = scope.group;
         return group ? group.proxy : null;
       }
-    };
+    });
   }
 
   get buttons () {

@@ -48,8 +48,7 @@ class Scheme extends api.core.Instance {
 
   get proxy () {
     const scope = this;
-    return {
-      ...super.proxy,
+    return Object.assign(super.proxy, {
       /*
       get theme () {
         return scope.theme;
@@ -64,7 +63,7 @@ class Scheme extends api.core.Instance {
       set scheme (value) {
         scope.scheme = value;
       }
-    };
+    });
   }
 
   restoreTransition () {

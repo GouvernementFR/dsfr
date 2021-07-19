@@ -34,6 +34,7 @@ api.core = {
   CollapseSelectors: CollapseSelectors,
   RootSelector: RootSelector,
   Equisized: Equisized,
+  EquisizedEmissions: EquisizedEmissions,
   EquisizedsGroup: EquisizedsGroup
 };
 

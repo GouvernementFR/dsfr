@@ -17,8 +17,7 @@ class DisclosuresGroup extends Instance {
 
   get proxy () {
     const scope = this;
-    return {
-      ...super.proxy,
+    return Object.assign(super.proxy, {
       set index (value) {
         scope.index = value;
       },
@@ -38,7 +37,7 @@ class DisclosuresGroup extends Instance {
       get hasFocus () {
         return scope.hasFocus;
       }
-    };
+    });
   }
 
   validate (member) {

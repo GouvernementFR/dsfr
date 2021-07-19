@@ -8,4 +8,3 @@ export const KeyCodes = {
   RIGHT: 39,
   DOWN: 40
 };
-

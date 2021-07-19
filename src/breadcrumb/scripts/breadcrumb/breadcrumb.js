@@ -14,11 +14,10 @@ class Breadcrumb extends api.core.Instance {
 
   get proxy () {
     const scope = this;
-    return {
-      ...super.proxy,
+    return Object.assign(super.proxy, {
       focus: scope.focus.bind(scope),
       disclose: scope.collapse.disclose.bind(scope.collapse)
-    };
+    });
   }
 
   getCollapse () {
