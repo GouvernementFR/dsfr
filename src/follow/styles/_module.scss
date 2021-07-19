@@ -119,11 +119,28 @@
 
   #{ns(grid-row)} {
     > *:first-child:last-child {
+      // code spécifique à newsletter seul
       > #{ns(follow)}__newsletter {
-        // code spécifique à newsletter seul
+
         @include respond-from(md) {
           @include display-flex(row,center,space-between);
           @include margin-right(0);
+
+          & > * {
+            flex: 1;
+            @include padding-right(3v);
+            @include padding-left(3v);
+          }
+
+          & > :first-child {
+            @include padding-right(3v);
+            @include padding-left(0);
+          }
+
+          & > :last-child {
+            @include padding-right(0);
+            @include padding-left(3v);
+          }
 
           #{ns(follow)}__desc {
             @include margin-bottom(0);
