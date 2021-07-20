@@ -53,12 +53,12 @@
         flex-direction: row;
 
         #{ns(btn)} {
-          border-radius: 0 #{space(2v)} 0 0;
+          border-radius: 0 #{space(1v)} 0 0;
         }
 
         #{ns(input)} {
           @include margin-bottom(0);
-          border-radius: #{space(2v)} 0 0 0;
+          border-radius: #{space(1v)} 0 0 0;
         }
       }
     }
