@@ -7,10 +7,6 @@
   @include padding(6v 0);
   @include padding(8v 0, md);
 
-  #{ns(container)} {
-    position: relative;
-  }
-
   &__title {
     @include title-style(h5);
     + #{ns(follow__desc)} {
@@ -23,12 +19,7 @@
   }
 
   &__newsletter {
-    // code newsletter en mode col-8
-    @include respond-from(md) {
-      @include display-flex(column,flex-start,center);
-      @include margin-right(12.5%);
-      @include height(100%);
-    }
+    // bloc newsletter
 
     #{ns(label)} {
       @include sr-only();
@@ -89,14 +80,8 @@
   }
 
   &__social {
-    // code social en mode col-4
+    // bloc social
     @include nest-link(md, only, null, null, true, true);
-
-    @include respond-from(md) {
-      @include display-flex(column,flex-start,center);
-      @include padding-left(25%);
-      @include height(100%);
-    }
 
     #{ns(follow)}__title {
       @include margin-bottom(3v);
@@ -121,14 +106,37 @@
   }
 
   #{ns(grid-row)} {
+    > * > div {
+      @include respond-from(md) {
+        @include display-flex(column,flex-start,center);
+        @include height(100%);
+      }
+    }
+
+    > *:not(:first-child) {
+      // Séparateur en box-shadow dans schemes
+      @include padding-left(calc(100% / 12), md);
+      @include margin-top(6v);
+      @include padding-top(6v);
+      @include padding-top(0,md);
+      @include margin-top(0, md);
+    }
+
+    > *:not(:last-child) {
+      @include padding-right(calc(100% / 12), md);
+    }
+
     > *:first-child:last-child {
       // code spécifique à newsletter seul
-      > #{ns(follow)}__newsletter {
-
+      > div {
         @include respond-from(md) {
           @include display-flex(row,center,space-between);
-          @include margin-right(0);
+        }
+      }
 
+      > #{ns(follow)}__newsletter {
+        // code spécifique à newwsletter seul
+        @include respond-from(md) {
           & > * {
             @include max-width(50%);
             @include padding-right(3v);
@@ -149,35 +157,15 @@
             @include margin-bottom(0);
           }
         }
-
-        > :first-child {
-          @include respond-from(md) {
-            @include max-width(50%);
-          }
-        }
       }
 
       > #{ns(follow)}__social {
         // code spécifique à social seul
-        @include respond-from(md) {
-          @include padding-left(0);
-          @include height(100%);
-          @include display-flex(row,center,space-between);
-          #{ns(follow)}__title {
-            @include margin-bottom(0);
-          }
+        #{ns(follow)}__title {
+          @include margin-bottom(0,md);
         }
       }
     }
-
-    > *:not(:first-child) {
-      // code du séparateur en before ou box-shadow
-      @include margin-top(6v);
-      @include padding-top(6v);
-      @include padding-top(0,md);
-      @include margin-top(0, md);
-    }
-
   }
 
   @include social-icon(facebook, facebook-circle-fill);
