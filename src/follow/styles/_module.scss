@@ -21,13 +21,14 @@
 
   &__newsletter {
     // code newsletter en mode col-8
-    @include padding(4v 0);
-    @include padding(5v 0, md);
+    @include margin(6v 0);
+    @include margin(8v 0, md);
 
     @include respond-from(md) {
       @include display-flex(column,flex-start,center);
       @include margin-right(12.5%);
-      @include height(100%);
+      @include height(calc(100% - #{space(16v)}));
+
     }
 
     #{ns(label)} {
@@ -51,8 +52,13 @@
       @include respond-from(sm) {
         flex-direction: row;
 
+        #{ns(btn)} {
+          border-radius: 0 #{space(2v)} 0 0;
+        }
+
         #{ns(input)} {
           @include margin-bottom(0);
+          border-radius: #{space(2v)} 0 0 0;
         }
       }
     }
@@ -86,13 +92,11 @@
   &__social {
     // code social en mode col-4
     @include nest-link(md, only, null, null, true, true);
-    @include padding(4v 0);
-    @include padding(5v 0, md);
 
     @include respond-from(md) {
       @include display-flex(column,flex-start,center);
-      @include margin-left(25%);
-      @include height(100%);
+      @include padding-left(25%);
+      @include height(calc(100% - #{space(16v)}));
     }
 
     #{ns(follow)}__title {
@@ -127,7 +131,7 @@
           @include margin-right(0);
 
           & > * {
-            flex: 1;
+            @include max-width(50%);
             @include padding-right(3v);
             @include padding-left(3v);
           }
@@ -156,8 +160,11 @@
 
       > #{ns(follow)}__social {
         // code spécifique à social seul
+        @include margin(6v 0);
         @include respond-from(md) {
-          @include margin-left(0);
+          @include margin(8v 0);
+          @include padding-left(0);
+          @include height(calc(100% - #{space(16v)}));
           @include display-flex(row,center,space-between);
           #{ns(follow)}__title {
             @include margin-bottom(0);
@@ -166,21 +173,12 @@
       }
     }
 
-    > *:not(:first-child) {
+    > *:not(:first-child) > div {
       // code du séparateur en before ou box-shadow
-      @include before('', 'block') {
-        @include absolute;
-        @include size(calc(100% - #{space(8v)}), 1px);
-        @include margin-top(-2v);
-      }
-
-      @include respond-from(md) {
-        @include before('', 'inline-flex') {
-          @include absolute(0);
-          @include size(1px, calc(100% - #{space(16v)}));
-          @include margin-y(8v);
-        }
-      }
+      @include margin(0 0 6v 0);
+      @include padding-top(6v);
+      @include padding-top(0,md);
+      @include margin(8v 0, md);
     }
   }
 
