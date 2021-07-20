@@ -1,5 +1,5 @@
 id: share
-title: Boutons de partage
+title: Partage
 description: Les boutons de partage permettent aux utilisateurs de partager facilement un contenu, via les réseaux sociaux, par envoi de mail ou en copiant l’URL du contenu dans le presse-papier.
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/771555355/
 wrapper: col-8

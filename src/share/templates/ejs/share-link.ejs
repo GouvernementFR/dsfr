@@ -1,31 +1,44 @@
 <%#
 # paramètres link
 
-* classes (array, optional): classes du lien
+* shareLink (object, required): contient tous les paramètres
 
-* attributes (object, required): attributs du lien (href, title, onclick event)
+** classes (array, optional): classes du lien
 
-* label (string, required) : contenu texte
+** attributes (object, required): attributs du lien (href, title, onclick event)
 
-* tag (string) : La balise utilisée pour le lien (default: a), si pas de href utiliser 'button'
+** label (string, required) : contenu texte
 
-* disabled (boolean, optionnal) : si valeur true, link désactivé
+** tag (string) : La balise utilisée pour le lien (default: a), si pas de href utiliser 'button'
 
-* icon (string, optional) : icon du lien
+** disabled (boolean, optionnal) : si valeur true, link désactivé
+
+** icon (string, optional) : icon du lien
 
 %>
 <% eval(include('../../../core/index.ejs')); %>
 
 <%
-let shareLinkClasses = locals.classes || [];
-let shareLinkAttrs = locals.attributes || {};
-
-const tag = locals.tag || 'a';
+const shareLink = locals.shareLink || {};
+let shareLinkClasses = shareLink.classes || [];
+let shareLinkAttrs = shareLink.attributes || {};
+const tag = shareLink.tag || 'a';
 
 shareLinkClasses.push(prefix + '-share__link');
+shareLinkClasses.push(prefix + '-share__link--' + shareLink.name);
+if (shareLink.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + shareLink.icon);
 
-if (locals.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + locals.icon);
-
+if (shareLink.disabled === true) {
+  delete shareLinkAttrs.onclick;
+  delete shareLinkAttrs.rel;
+  delete shareLinkAttrs.href;
+  delete shareLinkAttrs.target;
+  if (tag === 'button') {
+    shareLinkAttrs.disabled = '';
+  }
+}
 %>
 
-<<%= tag %> <%- includeClasses(shareLinkClasses)%> <%- includeAttrs(shareLinkAttrs); %>><%- label %></<%= tag %>>
+<% if (!shareLink.disabled && shareLink.comments) { %> <!-- <%= shareLink.comments %> --> <% } %>
+
+<<%= tag %> <%- includeClasses(shareLinkClasses)%> <%- includeAttrs(shareLinkAttrs); %>><%- shareLink.label %></<%= tag %>>

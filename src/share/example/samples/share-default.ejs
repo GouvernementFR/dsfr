@@ -5,10 +5,11 @@ let data = {};
 /**
  * Fonction pour générer un objet shareLink
  **/
-function buildShareLink(name, label, href, width, height) {
+function buildShareLink(name, label, href, width, height, comments) {
   return {
     name: name,
     label: label,
+    comments: comments,
     attributes: {
       title: label,
       href: href,
@@ -28,7 +29,7 @@ data.share = {
       disabled: locals.disabled === true,
     },
     {
-      ...buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/share?url='+contentPlaceholder('url du site')+'&text='+contentPlaceholder('titre du site')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 254),
+      ...buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/intent/tweet?url='+contentPlaceholder('url du site')+'&text='+contentPlaceholder('titre du site')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 254, 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)'),
       disabled: locals.disabled === true,
     },
     {

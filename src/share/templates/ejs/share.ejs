@@ -20,12 +20,7 @@ let dataLink = {};
     <ul class="<%= prefix %>-share__group">
         <% for (let i=0; i < share.links.length; i++) { %>
             <li>
-                <%
-                dataLink = {...share.links[i] };
-                dataLink.classes = [prefix + '-share__link--' + share.links[i].name];
-                if(dataLink.disabled === true) dataLink.attributes.disabled = ''
-                %>
-                <%- include('./share-link', dataLink); %>
+                <%- include('./share-link', {shareLink: share.links[i]}); %>
             </li>
         <% } %>
     </ul>
