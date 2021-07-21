@@ -3,8 +3,9 @@
   input[type="radio"] + #{ns(label)} {
 
     @include padding-left(14v);
+    @include margin-left(0);
     min-height: space(22v);
-    @include size(100%, 1px); // height 1px, fix IE vertical center
+    @include size(100%);
     @include padding-top(2v);
     @include padding-bottom(2v);
     @include padding-right(26v);
@@ -18,15 +19,18 @@
       */
     @include before {
       @include size(4v, 4v);
-      @include absolute(null, null, null, 7v);
+      @include absolute(50%, null, null, 7v);
+      @include margin-top(-2v);
     }
 
     /**
       * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
       */
     @include after('') {
-      @include absolute(0, 0);
+      @include absolute(50%, 0);
       @include margin(1v);
+      @include margin-top(-10v);
+
       @include padding-left(1v);
       @include display-flex(null, center, center);
       @include size(21v, 20v);
