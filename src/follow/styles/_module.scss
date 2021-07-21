@@ -108,7 +108,7 @@
   #{ns(grid-row)} {
     > * > div {
       @include respond-from(md) {
-        @include display-flex(column,flex-start,center);
+        @include display-flex(column, flex-start, center);
         @include height(100%);
       }
     }
@@ -118,7 +118,7 @@
       @include padding-left(calc(100% / 12), md);
       @include margin-top(6v);
       @include padding-top(6v);
-      @include padding-top(0,md);
+      @include padding-top(0, md);
       @include margin-top(0, md);
     }
 
@@ -127,15 +127,14 @@
     }
 
     > *:first-child:last-child {
-      // code spécifique à newsletter seul
       > div {
         @include respond-from(md) {
-          @include display-flex(row,center,space-between);
+          @include display-flex(row, center, space-between);
         }
       }
 
       > #{ns(follow)}__newsletter {
-        // code spécifique à newwsletter seul
+        // code spécifique à newsletter seul
         @include respond-from(md) {
           & > * {
             @include max-width(50%);
@@ -162,7 +161,7 @@
       > #{ns(follow)}__social {
         // code spécifique à social seul
         #{ns(follow)}__title {
-          @include margin-bottom(0,md);
+          @include margin-bottom(0, md);
         }
       }
     }
