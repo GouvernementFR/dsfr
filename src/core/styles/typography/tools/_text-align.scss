@@ -3,6 +3,14 @@
 /// @group core
 ////
 
+@function text-align($place) {
+  @return map-get($text-align-settings, $place);
+}
+
+@mixin text-align($place) {
+  text-align: text-align($place);
+}
+
 @mixin build-text-align() {
   $places: map-get($text-align-settings, 'places');
   $text-align-vars: map-get($typography-vars, text-align);

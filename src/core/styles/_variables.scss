@@ -6,7 +6,6 @@
 /// @group core
 ////
 
-
 $variables: (
   reset: (
     body: true,
@@ -46,4 +45,4 @@ $variables: (
       breakpoints: sm md lg,
     ),
   )
-)!default;
+) !default;

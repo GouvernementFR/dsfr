@@ -3,6 +3,14 @@
 /// @group core
 ////
 
+@function text-transform($type) {
+  @return map-get($text-transform-settings, $type);
+}
+
+@mixin text-transform($type) {
+  text-transform: text-transform($type);
+}
+
 @mixin build-text-transform() {
   $types: map-get($text-transform-settings, 'types');
   $text-transform-vars: map-get($typography-vars, text-transform);

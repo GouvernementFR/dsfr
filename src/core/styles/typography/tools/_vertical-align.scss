@@ -3,6 +3,14 @@
 /// @group core
 ////
 
+@function vertical-align($place) {
+  @return map-get($vertical-align-settings, $place);
+}
+
+@mixin vertical-align($place) {
+  vertical-align: vertical-align($place);
+}
+
 @mixin build-vertical-align() {
   $places: map-get($vertical-align-settings, places);
   $vertical-align-vars: map-get($typography-vars, vertical-align);
