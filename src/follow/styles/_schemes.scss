@@ -17,9 +17,10 @@
   }
 
   #{ns(grid-row)} > *:not(:first-child) {
-    // code du séparateur en before ou box-shadow
-    @include before {
-      @include scheme-element-bg-color(bf300-plain, true, false);
+    // Séparateur en box-shadow
+    @include scheme-element-box-shadow-color(bf300-plain, true, 0 -1px 0 0 $COLOR);
+    @include respond-from(md) {
+      @include scheme-element-box-shadow-color(bf300-plain, true, -1px 0 0 0 $COLOR);
     }
   }
 }
