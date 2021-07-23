@@ -25,22 +25,22 @@ data.share = {
   text: 'Veuillez <a href=' + contentPlaceholder("url page autorisation cookies") + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
   links: [
     {
-      ...buildShareLink('facebook', 'Partager sur Facebook', 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url du site'), 600, 450),
+      ...buildShareLink('facebook', 'Partager sur Facebook', 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url de la page'), 600, 450),
       disabled: locals.disabled === true,
     },
     {
-      ...buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/intent/tweet?url='+contentPlaceholder('url du site')+'&text='+contentPlaceholder('titre du site')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 420, 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)'),
+      ...buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/intent/tweet?url='+contentPlaceholder('url de la page')+'&text='+contentPlaceholder('titre ou texte descriptif de la page')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 420, 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)'),
       disabled: locals.disabled === true,
     },
     {
-      ...buildShareLink('linkedin', 'Partager sur LinkedIn', 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url du site')+'&title='+contentPlaceholder('titre du site'), 550, 550),
+      ...buildShareLink('linkedin', 'Partager sur LinkedIn', 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url de la page')+'&title='+contentPlaceholder('titre ou texte descriptif de la page'), 550, 550),
       disabled: locals.disabled === true,
     },
     {
       name: 'mail',
       label: 'Partager par email',
       attributes: {
-        href: 'mailto:?subject='+contentPlaceholder('sujet')+'&body='+contentPlaceholder('titre')+' '+contentPlaceholder('url du site'),
+        href: 'mailto:?subject='+contentPlaceholder('objet du mail')+'&body='+contentPlaceholder('titre ou texte descriptif de la page')+' '+contentPlaceholder('url de la page'),
         title: 'Partager par email',
         target: '_blank',
       }
