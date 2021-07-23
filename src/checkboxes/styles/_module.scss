@@ -40,9 +40,8 @@
        */
       @include icon(check-line, sm, before) {
         @include display-flex(row, center, center);
-        @include absolute(0);
+        @include absolute(0, null, null, -8v);
         @include margin-top(3v);
-        left: #{space(-8v)};
         @include size(6v, 6v);
         @include margin-right(2v);
         border-radius: space(1v);

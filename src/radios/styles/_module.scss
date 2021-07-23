@@ -62,11 +62,10 @@
        * On utilise un pseudo element before pour customiser l'aspect du bouton radio
        */
       @include before('', inline-block) {
-        @include absolute(0);
+        @include absolute(0, null, null, -8v);
         @include size(6v, 6v);
         @include margin-top(3v);
         @include margin-right(2v);
-        left: #{space(-8v)};
         border: 1px solid;
         border-radius: 50%;
         transform-origin: center;
