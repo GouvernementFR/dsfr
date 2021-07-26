@@ -48,6 +48,7 @@
       @include text-style(md);
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
+      @include margin-left(8v);
 
       /**
        * Style du texte d'aide dans le label
@@ -55,16 +56,16 @@
       #{ns(hint-text)} {
         @include margin(0);
         @include size(100%);
-        @include margin-left(8v);
       }
 
       /**
        * On utilise un pseudo element before pour customiser l'aspect du bouton radio
        */
       @include before('', inline-block) {
+        @include absolute(0, null, null, -8v);
         @include size(6v, 6v);
+        @include margin-top(3v);
         @include margin-right(2v);
-        flex-shrink: 0;
         border: 1px solid;
         border-radius: 50%;
         transform-origin: center;
@@ -95,10 +96,7 @@
       & + label {
         @include before {
           @include size(4v, 4v);
-        }
-
-        #{ns(hint-text)} {
-          @include margin-left(6v);
+          @include margin-top(4v);
         }
       }
     }

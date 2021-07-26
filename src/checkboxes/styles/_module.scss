@@ -25,6 +25,7 @@
       @include padding(3v 0);
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
+      @include margin-left(8v);
 
       /**
        * Style du texte d'aide dans le label
@@ -32,7 +33,6 @@
       #{ns(hint-text)} {
         @include margin(0);
         @include size(100%);
-        @include margin-left(8v);
       }
 
       /**
@@ -40,7 +40,8 @@
        */
       @include icon(check-line, sm, before) {
         @include display-flex(row, center, center);
-        flex-shrink: 0;
+        @include absolute(0, null, null, -8v);
+        @include margin-top(3v);
         @include size(6v, 6v);
         @include margin-right(2v);
         border-radius: space(1v);
@@ -79,14 +80,8 @@
       + label {
         @include before {
           @include size(4v, 4v);
-        }
-
-        @include after {
-          left: 0;
-        }
-
-        #{ns(hint-text)} {
-          @include margin-left(6v);
+          @include margin-top(4v);
+          left: #{space(-7v)};
         }
       }
     }
