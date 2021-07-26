@@ -219,7 +219,7 @@ git commit -m "build: add webpack" --no-verify
 
 #### Signature des commits
 
-Afin de garantir l'originalité des contributions, nous demandons aux contributeurs de signer leurs commits et/ou de nous faire parvenir le [certificat de garantie de l'origine du développeur](doc/legal/cgod.md). 
+Afin de garantir l'originalité des contributions, nous demandons aux contributeurs de signer leurs commits et/ou de nous faire parvenir le [certificat de garantie de l'origine du développeur](doc/legal/cgod.md) signé.
 
 Pour signer un commit : 
 
@@ -229,6 +229,18 @@ git commit --signoff (ou git commit -s)
 
 
 #### Proposer une pull request
+
+
+Important
+
+Avant de proposer une pull request , assurez vous que vous respectez la garantie d’origine de vos développements, et pour les personnes n'étant pas des agents de l’État, que vous avez pris connaissance des documents relatifs à la [cession des droits d’auteur](doc/legal/cession.md), document à nous transmettre signé.
+
+Toute ‘pull request’ ne respectant pas ces pré-requis sera systématiquement rejetée.
+
+Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR).
+Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github (https://github.com/GouvernementFR/dsfr-dev/pulls ) ou github cli (gh).
+La pull-request suit les même règles de nommage décrites précédemment (branches, commits), à savoir le conventional commits.
+Une description détaillant le problème à résoudre, la façon dont la contribution résout le problème et toute autre information utile à la revue de code est fortement conseillée!
 
 Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR). 
 Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github  (https://github.com/GouvernementFR/dsfr-dev/pulls) ou github cli (gh).
