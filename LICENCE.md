@@ -1,4 +1,5 @@
-Le contenu de ce dépôt est placé sous licence MIT License, à l'exception de la fonte Marianne.
+Le contenu de ce dépôt est placé sous licence MIT License, à l'exception de la fonte Marianne. 
+Voir les [conditions générales d'utilisation](doc/legal/cgu.md)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
