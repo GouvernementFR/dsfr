@@ -6,6 +6,9 @@ class Resizer extends Module {
     this.requireResize = false;
     this.resizing = this.resize.bind(this);
     const requesting = this.request.bind(this);
+    if (document.fonts) {
+      document.fonts.ready.then(requesting);
+    }
     window.addEventListener('resize', requesting);
     window.addEventListener('orientationchange', requesting);
   }
