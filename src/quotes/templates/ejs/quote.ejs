@@ -52,7 +52,7 @@
 
     <% if (image && image.img) { %>
       <div class="<%= prefix %>-quote__image">
-        <%- imgContent(image.img, false) %>
+        <%- imgContent(image.img, image.alt) %>
       </div>
     <% } %>
   </figcaption>
