@@ -8,6 +8,6 @@
   select,
   textarea {
     @include font-family;
-    text-rendering: optimizeSpeed;
+    text-rendering: optimizeLegibility;
   }
 }
