@@ -21,7 +21,7 @@
     @include padding(0);
     @include margin(0);
     @include size(auto, auto);
-    visibility: visible;
+    visibility: inherit;
     opacity: 1;
     position: initial;
     background-color: transparent;
