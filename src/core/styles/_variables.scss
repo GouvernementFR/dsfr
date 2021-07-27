@@ -21,6 +21,38 @@ $variables: (
     button: true,
     input: true
   ),
+  display: (
+    display: (
+      active: true,
+      breakpoints: sm md lg,
+    ),
+    position: (
+      active: true,
+      breakpoints: sm md lg,
+    ),
+    // TODO: Déplacer les position-values (right,left,top,bottom) dans spacing
+    position-values: (
+      active: false, // TODO: activer après refacto mixin sapcing
+      from: -8,
+      through: 32,
+      special: 50% 100% auto,
+      breakpoints: sm md lg,
+    ),
+    flex-properties: (
+      active: true,
+      breakpoints: sm md lg,
+    ),
+    visibility: (
+      active: true,
+      breakpoints: sm md lg
+    ),
+  ),
+  colors: (
+    shadow: (
+      active: true,
+      breakpoints: sm md lg
+    ),
+  ),
   typography: (
     text: true,
     title: true,
@@ -44,5 +76,50 @@ $variables: (
       active: true,
       breakpoints: sm md lg,
     ),
+  ),
+  spacing: (
+    margin: (
+      active: true,
+      from: -8,
+      through: 32,
+      special: auto,
+      breakpoints: md,
+    ),
+    padding: (
+      active: true,
+      from: 0,
+      through: 32,
+      breakpoints: md,
+    )
+    /* width: (
+      from: 0,
+      through: 32,
+      special: auto 100% 50%
+    ),
+    max-width: (
+      from: 0,
+      through: 32,
+      special: auto 100% 50%
+    ),
+    min-width: (
+      from: 0,
+      through: 32,
+      special: auto 100% 50%
+    ),
+    height: (
+      from: 0,
+      through: 32,
+      special: auto 100%
+    ),
+    max-height: (
+      from: 0,
+      through: 32,
+      special: auto 100%
+    ),
+    min-height: (
+      from: 0,
+      through: 32,
+      special: auto 100%
+    ) */
   )
 ) !default;

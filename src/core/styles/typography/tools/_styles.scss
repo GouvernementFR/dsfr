@@ -3,14 +3,6 @@
 /// @group core
 ////
 
-@function get-text-style($font-size) {
-  @return map-get($text-styles, $font-size);
-}
-
-@function get-title-style($font-size) {
-  @return map-get($title-styles, $font-size);
-}
-
 @mixin _stylize($font-size, $styles, $prepend, $append) {
   $style: map-get($styles, $font-size);
 
@@ -55,41 +47,5 @@
     @else {
       @include _stylize(map-get($breakpoints, first), $styles);
     }
-  }
-}
-
-@mixin _space-text($settings) {
-  @include margin(map-get($settings, margin));
-}
-
-@mixin _space-title($settings) {
-  @include margin(map-get($settings, margin));
-}
-
-@mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
-  $settings: map-get($text-settings, $name);
-  $append: '';
-  @if $important {
-    $append: ' !important';
-  }
-
-  @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend, $append);
-
-  @if $with-spacing {
-    @include _space-text($settings);
-  }
-}
-
-@mixin title-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
-  $settings: map-get($title-settings, $name);
-  $append: '';
-  @if $important {
-    $append: ' !important';
-  }
-
-  @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend, $append);
-
-  @if $with-spacing {
-    @include _space-title($settings);
   }
 }

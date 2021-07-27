@@ -7,8 +7,10 @@
   @return map-get($text-align-settings, $place);
 }
 
-@mixin text-align($place) {
-  text-align: text-align($place);
+@mixin text-align($value: start, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    text-align: $value;
+  }
 }
 
 @mixin build-text-align() {

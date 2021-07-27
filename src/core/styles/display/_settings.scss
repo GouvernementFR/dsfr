@@ -3,5 +3,10 @@
 /// @group core
 ////
 
+$display-vars: map-get($variables, display);
+
 @import 'settings/display';
+@import 'settings/flex-properties';
+@import 'settings/position';
 @import 'settings/visibility';
+@import 'settings/z-index';

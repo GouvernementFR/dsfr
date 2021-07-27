@@ -3,19 +3,62 @@
 /// @group core
 ////
 
-@mixin build-flex-properties() {
-  @each $prop, $val in $flexProperties {
-    #{ns($prop) + '--' + $val} {
-      $prop: $val !important;
-    }
+@mixin justify-content($value: start, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    justify-content: $value;
   }
 }
 
-@mixin build-flex-properties-from() {
-  @each $bp, $limits in $breakpoints {
-    @each $prop, $val in $flexProperties {
-      #{ns($prop) + '--' + $val + $bp} {
-        $prop: $val !important;
+@mixin align-items($value: start, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    align-items: $value;
+  }
+}
+
+@mixin flex-wrap($value: nowrap, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    flex-wrap: $value;
+  }
+}
+
+@mixin flex-direction($value: row, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    flex-direction: $value;
+  }
+}
+
+@mixin flex($value: 0 1 auto, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    flex: $value;
+  }
+}
+
+@mixin build-flex-properties() {
+  $places: map-get($flexProperties, 'places');
+  $flex-properties-vars: map-get($display-vars, flex-properties);
+  $buildBreakpoints: map-get($flex-properties-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($flex-properties-vars != false and map-get($flex-properties-vars, active) != false) {
+    @each $prop, $values in $flexProperties {
+      @each $val in $values {
+        #{ns($prop)}--#{$val} {
+          #{$prop}: #{$val} !important;
+        }
+      }
+    }
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @each $prop, $values in $flexProperties {
+          @each $val in $values {
+            @include respond-from($bp) {
+              #{ns($prop)}--#{$val}-#{$bp} {
+                #{$prop}: #{$val} !important;
+              }
+            }
+          }
+        }
       }
     }
   }

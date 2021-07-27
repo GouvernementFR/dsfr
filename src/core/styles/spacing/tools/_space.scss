@@ -141,3 +141,111 @@
 @mixin margin-left($value: 0, $from: null) {
   @include _spacing-from(margin, $value, 'left', $from);
 }
+
+////
+/// Utilities Module : Spacing
+/// @group tools
+////
+
+@function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
+  $start: str_slice($prop, 1, 1);
+
+  @if $side != null {
+    $start: '#{str_slice($prop, 1, 1)}#{str_slice($side, 1, 1)}';
+  }
+
+  $middle: '';
+
+  @if $breakpoint != null {
+    $middle: '#{$breakpoint}-';
+  }
+
+  $end: quote($value);
+
+  @if type-of($value) == 'number' and $value < 0 {
+    $end: 'n#{abs($value)}';
+  }
+
+  @if $value != 0 and $unit != null {
+    $end: '#{$end}#{$unit}';
+  }
+
+  $selector: '#{$start}-#{$middle}#{$end}';
+
+  @return $selector;
+}
+
+@function _spacing-selectors($prop, $side, $value, $breakpoint) {
+  @if type-of($value) != 'number' {
+    @return '#{ns(_spacing-name($prop, $side, $value, null, $breakpoint))}';
+  }
+
+  $w: null;
+  @if (abs($value) % 2) == 0 and $value != 0 {
+    $w: abs($value) / 2;
+  }
+
+  $selectors:'#{ns(_spacing-name($prop, $side, $value, v, $breakpoint))}';
+
+  @if $w != null {
+    $selectors: '#{$selectors},#{ns(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
+  }
+
+  @return $selectors;
+}
+
+@mixin _spacing-property-variations($prop:margin, $value:1, $breakpoint: null) {
+  $v: $value;
+
+  @if type-of($value) == 'number' {
+    $v: space('#{$value}v');
+  }
+
+  #{_spacing-selectors($prop, null, $value, $breakpoint)} {
+    #{$prop}: $v !important;
+  }
+
+  @each $dir, $sides in $spacing-sides {
+    @each $side in $sides {
+      #{_spacing-selectors($prop, $side, $value, $breakpoint)},
+      #{_spacing-selectors($prop, $dir, $value, $breakpoint)} {
+        #{$prop}-#{$side}: $v !important;
+      }
+    }
+  }
+}
+
+@mixin _spacing-properties($props, $breakpoint:null) {
+  @each $prop, $settings in $props {
+    $active: map_get($settings, active);
+    $from: map_get($settings, from);
+    $through: map_get($settings, through);
+    $special: map_get($settings, special);
+    $buildBreakpoints: map_get($settings, breakpoints);
+    $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+    @if $active != false {
+      @for $i from $from through $through {
+        @include _spacing-property-variations($prop, $i);
+      }
+      @if $special != null {
+        @include _spacing-property-variations($prop, $special);
+      }
+
+      @if $breakpointsList != false {
+        @each $bp, $limit in $breakpointsList {
+          @for $i from $from through $through {
+            @include _spacing-property-variations($prop, $i, $bp);
+          }
+          @if $special != null {
+            @include _spacing-property-variations($prop, $special, $bp);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin create-spacing-properties() {
+  @include _spacing-properties($spacing-vars);
+}

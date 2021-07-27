@@ -3,5 +3,7 @@
 /// @group core
 ////
 
+$colors-vars: map-get($variables, colors);
+
 @import 'settings/disabled';
 @import 'settings/shadow';

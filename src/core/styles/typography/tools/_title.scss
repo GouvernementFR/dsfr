@@ -3,6 +3,28 @@
 /// @group core
 ////
 
+@function get-title-style($font-size) {
+  @return map-get($title-styles, $font-size);
+}
+
+@mixin _space-title($settings) {
+  @include margin(map-get($settings, margin));
+}
+
+@mixin title-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
+  $settings: map-get($title-settings, $name);
+  $append: '';
+  @if $important {
+    $append: ' !important';
+  }
+
+  @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend, $append);
+
+  @if $with-spacing {
+    @include _space-title($settings);
+  }
+}
+
 @mixin build-title-style() {
   @each $name, $variation in $title-settings {
     $type: display;

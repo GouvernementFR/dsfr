@@ -4,30 +4,31 @@
 ////
 
 @mixin visibility($visibility: visible, $breakpoint: null) {
-  @if $breakpoint {
-    @include respond-from($breakpoint) {
-      visibility: $visibility;
-    }
-  }
-  @else {
+  @include respond-from($breakpoint) {
     visibility: $visibility;
   }
 }
 
 @mixin build-visibility() {
-  @each $type in $visibilityTypes {
-    #{ns('visibility--') + $type} {
-      visibility: $type !important;
-    }
-  }
-}
+  $visibility-vars: map-get($display-vars, visibility);
+  $buildBreakpoints: map-get($visibility-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
 
-@mixin build-visibility-from() {
-  @each $bp, $limits in $breakpoints {
+  @if ($visibility-vars != true and map-get($visibility-vars, active) != false) {
     @each $type in $visibilityTypes {
-      #{ns('visibility--') + $type + '-' + $bp} {
-        @include respond-from($bp) {
-          visibility: $type !important;
+      #{ns(visibility)}--#{$type} {
+        visibility: $type !important;
+      }
+    }
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @each $type in $visibilityTypes {
+          @include respond-from($bp) {
+            #{ns(visibility)}--#{$type}-#{$bp} {
+              visibility: $type !important;
+            }
+          }
         }
       }
     }

@@ -1,0 +1,69 @@
+<% const sample = getSample(include); %>
+
+<%
+const flexClasses = {
+  'flex-wrap': [
+    'wrap',
+    'nowrap',
+    'wrap-reverse'
+  ],
+  'align-items': [
+    'start',
+    'end',
+    'center',
+    'baseline',
+    'stretch'
+  ],
+  'justify-content': [
+    'start',
+    'end',
+    'center',
+    'around',
+    'between',
+    'evenly'
+  ],
+  'flex': [
+    'auto',
+    '1',
+    'initial',
+    'none'
+  ],
+  'flex-direction': [
+    'row',
+    'row-reverse',
+    'col',
+    'col-reverse'
+  ],
+};
+%>
+<div class="<%=prefix%>-table">
+  <table>
+    <caption>Classes d'alignements flex :</caption>
+    <thead>
+        <tr>
+          <th>Classe</th>
+          <th>Correspondance CSS</th>
+          <th>Exemple</th>
+          <th>Valeurs disponibles</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% for( let flexClass in flexClasses) { %>
+      <tr>
+        <td>fr-<%= flexClass %>--</td>
+        <td><%= flexClass %></td>
+        <td>
+          <%= prefix %>-<%= flexClass %>--<%= flexClasses[flexClass][0] %>
+        </td>
+        <td>
+          <% let flexValues = flexClasses[flexClass] %>
+          <% for( let flexValue in flexValues) { %>
+            <%= flexClasses[flexClass][flexValue] %>
+            <% if(flexValue < flexValues.length - 1) { %> | <% } %>
+          <% } %>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>

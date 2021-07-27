@@ -16,8 +16,10 @@
   @return map-get($font-weight-scale, $scale);
 }
 
-@mixin font-weight($scale) {
-  font-weight: font-weight($scale);
+@mixin font-weight($scale: 400, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    font-weight: font-weight($scale);
+  }
 }
 
 @mixin build-font-weight() {

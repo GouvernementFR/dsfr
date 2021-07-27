@@ -3,6 +3,34 @@
 /// @group core
 ////
 
-@mixin shadow($type) {
-  box-shadow: map_get($shadows-settings, $type);
+@mixin shadow($type, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    box-shadow: map_get($shadows-settings, $type);
+  }
+}
+
+@mixin build-shadow() {
+  $shadow-vars: map-get($colors-vars, shadow);
+  $buildBreakpoints: map-get($shadow-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($shadow-vars != false and map-get($shadow-vars, active) != false) {
+    @each $type, $val in $shadows-settings {
+      #{ns(shadow)}--#{$type} {
+        box-shadow: $val !important;
+      }
+    }
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @each $type, $val in $shadows-settings {
+          @include respond-from($bp) {
+            #{ns(shadow)}--#{$type}-#{$bp} {
+              box-shadow: $val !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,19 @@
+////
+/// Core Settings : Typography text-align
+/// @group core
+////
+
+$position-settings : (
+  types: (
+    relative,
+    absolute,
+    fixed,
+    sticky
+  ),
+  sides: (
+    top,
+    right,
+    bottom,
+    left
+  )
+) !default;

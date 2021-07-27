@@ -1,5 +1,10 @@
 <style>
-  .sample-box span {
+  .spacing-sample table td div {
+    display: flex;
+    align-items: center;
+  }
+
+  .spacing-sample .sample-box span {
     background-color: var(--bf500);
     color: var(--w);
     display: flex;
@@ -10,18 +15,13 @@
     position: relative;
   }
 
-  .sample-box > span {
+  .spacing-sample .sample-box > span {
     opacity: 0.8;
   }
 
-  .sample-box > span:not(:first-child),
-  .sample-box > span > span {
+  .spacing-sample .sample-box > span:not(:first-child),
+  .spacing-sample .sample-box > span > span {
     background-color: var(--rm500);
-  }
-
-  table td div {
-    display: flex;
-    align-items: center;
   }
 </style>
 
@@ -66,7 +66,7 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
   - le token d'espacement (nb: le signe '-' des nombres négatifs est remplacé par la lettre 'n', et 0 n'a pas d'unité 'v')</p>
 </p>
 
-<div class="<%=prefix%>-table">
+<div class="<%=prefix%>-table spacing-sample">
   <table>
       <caption>Classes d'espacements :</caption>
       <thead>
@@ -106,14 +106,14 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
 <p>Pour adapter les espacements à la taille de l'écran, on peut ainsi combiner les classes en partant du mobile puis en surchargeant en md </p>
 
 
-<%- sample('exemple avec un bouton plus large en md', '../../../buttons/templates/ejs/button', {
+<%- sample('exemple avec un bouton plus large en md', '../../../../buttons/templates/ejs/button', {
   classes: [prefix + '-px-4v', prefix + '-px-md-16v'],
   label: '4v en mobile / 16v en md',
   btnTitle: false
 }, true); %>
 
 
-<div class="<%=prefix%>-table">
+<div class="<%=prefix%>-table spacing-sample">
     <table>
         <caption>Valeurs des tokens d'espacements :</caption>
         <thead>

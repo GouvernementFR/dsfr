@@ -1,0 +1,159 @@
+////
+/// Core Tools : Global position
+/// @group core
+////
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  position: #{$position};
+  @if $top != null {
+    top: #{space($top)};
+  }
+  @if $right != null {
+    right: #{space($right)};
+  }
+  @if $bottom != null {
+    bottom: #{space($bottom)};
+  }
+  @if $left != null {
+    left: #{space($left)};
+  }
+
+  @include size($width, $height);
+
+  @content;
+}
+
+@mixin relative($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(relative, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(absolute, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin fixed($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(fixed, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin sticky($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(sticky, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin build-positions() {
+  $types: map-get($position-settings, types);
+  $position-vars: map-get($display-vars, position);
+  $buildBreakpoints: map-get($position-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($position-vars != true and map-get($position-vars, active) != false) {
+    @each $type in $types {
+      #{ns(position)}--#{$type} {
+        position: $type !important;
+      }
+    }
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @each $type in $types {
+          @include respond-from($bp) {
+            #{ns(position)}--#{$type}-#{$bp} {
+              position: $type !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@function _position-side-name($prop, $value:1, $unit: null, $breakpoint: null) {
+  $formatedValue: quote($value);
+  $end: '';
+
+  @if type-of($value) == 'number' and $value < 0 {
+    $formatedValue: 'n#{abs($value)}';
+  }
+
+  @if $value != 0 and $unit != null {
+    $formatedValue: '#{$formatedValue}#{$unit}';
+  }
+
+  @if $breakpoint != null {
+    $end: '-#{$breakpoint}';
+  }
+
+  $selector: '#{$prop}-#{$formatedValue}#{$end}';
+
+  @return $selector;
+}
+
+@function _position-side-selectors($prop, $value, $breakpoint) {
+  @if type-of($value) != 'number' {
+    @return '#{ns(_position-side-name($prop, $value, null, $breakpoint))}';
+  }
+
+  $w: null;
+  @if (abs($value) % 2) == 0 and $value != 0 {
+    $w: abs($value) / 2;
+  }
+
+  $selectors:'#{ns(_position-side-name($prop, $value, v, $breakpoint))}';
+
+  @if $w != null {
+    $selectors: '#{$selectors},#{ns(_position-side-name($prop, $value / 2, w, $breakpoint))}';
+  }
+
+  @return $selectors;
+}
+
+@mixin _position-side-variations($sides:(top, right, bottom, left), $value:1, $breakpoint: null) {
+  $v: $value;
+
+  @if type-of($value) == 'number' {
+    $v: space('#{$value}v');
+  }
+
+  @each $prop in $sides {
+    #{_position-side-selectors($prop, $value, $breakpoint)} {
+      #{$prop}: $v !important;
+    }
+  }
+}
+
+@mixin _position-side-properties($props, $breakpoint:null) {
+  $from: map_get($props, from);
+  $through: map_get($props, through);
+  $special: map_get($props, special);
+  $sides: map-get($position-settings, sides);
+
+  @for $i from $from through $through {
+    @include _position-side-variations($sides, $i, $breakpoint);
+  }
+
+  @if $special != null {
+    @each $specialVal in $special {
+      @include _position-side-variations($sides, $specialVal, $breakpoint);
+    }
+  }
+}
+
+@mixin build-position-sides() {
+  $sides: map-get($position-settings, sides);
+  $position-vars: map-get($display-vars, position);
+  $position-values-vars: map-get($display-vars, 'position-values');
+  $buildBreakpoints: map-get($position-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($position-values-vars != false and map-get($position-values-vars, active) != false) {
+
+    @include _position-side-properties($position-values-vars);
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @include respond-from($bp) {
+          @include _position-side-properties($position-values-vars, $bp);
+        }
+      }
+    }
+  }
+}

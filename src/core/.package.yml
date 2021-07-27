@@ -38,6 +38,8 @@ example:
     - core
     - buttons
     - accordions
+    - table
   scripts:
     - core
     - accordions
+    - table

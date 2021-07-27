@@ -3,13 +3,19 @@
 /// @group core
 ////
 
+@mixin display($value: inline, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    display: $value;
+  }
+}
+
 @mixin display-flex($flex-direction: row, $align-items: null, $justify-content: null, $flex-wrap: null, $inline: false) {
 
   @if $inline == true {
-    display: inline-flex;
+    @include display(inline-flex);
   }
   @else {
-    display: flex;
+    @include display(flex);
   }
 
   @if $flex-direction != null {
@@ -30,19 +36,25 @@
 }
 
 @mixin build-display() {
-  @each $type in $displayTypes {
-    #{ns('display--') + $type} {
-      display: $type !important;
-    }
-  }
-}
+  $display-display-vars: map-get($display-vars, display);
+  $buildBreakpoints: map-get($display-display-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
 
-@mixin build-display-from() {
-  @each $bp, $limits in $breakpoints {
+  @if ($display-display-vars != false and map-get($display-display-vars, active) != false) {
     @each $type in $displayTypes {
-      #{ns('display--') + $type + '-' + $bp} {
-        @include respond-from($bp) {
-          display: $type !important;
+      #{ns(display)}--#{$type} {
+        display: $type !important;
+      }
+    }
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @each $type in $displayTypes {
+          @include respond-from($bp) {
+            #{ns(display)}--#{$type}-#{$bp} {
+              display: $type !important;
+            }
+          }
         }
       }
     }

@@ -7,8 +7,10 @@
   @return map-get($text-transform-settings, $type);
 }
 
-@mixin text-transform($type) {
-  text-transform: text-transform($type);
+@mixin text-transform($value: none, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    text-transform: text-transform($value);
+  }
 }
 
 @mixin build-text-transform() {

@@ -1,20 +1,15 @@
 <% const sample = getSample(include); %>
 <style>
-  .sample-box {
+  .sample-display .sample-box {
     background-color: var(--bf500);
     color: var(--w);
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 40px;
-    min-height: 40px; */
     padding: 0.5rem 1rem;
     margin: 0.25rem;
     position: relative;
     opacity: 0.8;
   }
 
-  .sample-box span {
+  .sample-display .sample-box span {
     background-color: var(--rm500);
     padding: 0.5rem 1rem;
     margin: 0.25rem;
@@ -26,6 +21,7 @@
   }
 </style>
 
+<div class="sample-display">
 <p><span class="<%= prefix %>-fi-information-line"> Astuce : </span> Utiliser l'inspecteur du navigateur (clic droit + inspecter) sur les éléments cachés par les utilitaires</p>
 
 <h4>Afficher/cacher un élement</h4>
@@ -37,6 +33,7 @@
 <%- sample('sr-only', './samples/sr-only', {}, true, './layout'); %>
 
 <h4 class="<%=prefix %>-mt-6w">Autres dispositions (display)</h4>
+
 
 <%- sample('display block', './samples/display', {type: 'block'}, true, './layout'); %>
 
@@ -66,3 +63,11 @@
 <%- sample('invisible (visibility hidden)', './samples/visibility', {visibility: 'hidden'}, true, './layout'); %>
 
 <%- sample('toujours visible (visibility visible)', './samples/visibility', {visibility: 'visible'}, true, './layout'); %>
+
+
+<h4 class="<%=prefix %>-mt-6w">Propriétés flex</h4>
+<p>Lorsque l'on utilise le display flex, des utilitaires liés aux propriétés des flexbox permettent de gérer les alignements.</p>
+
+<%- sample('Propriétés disponibles', './samples/flex-properties', {}, true); %>
+
+</div>

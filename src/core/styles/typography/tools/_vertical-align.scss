@@ -7,8 +7,10 @@
   @return map-get($vertical-align-settings, $place);
 }
 
-@mixin vertical-align($place) {
-  vertical-align: vertical-align($place);
+@mixin vertical-align($place: baseline, $breakpoint: null) {
+  @include respond-from($breakpoint) {
+    vertical-align: vertical-align($place);
+  }
 }
 
 @mixin build-vertical-align() {

@@ -3,6 +3,28 @@
 /// @group core
 ////
 
+@function get-text-style($font-size) {
+  @return map-get($text-styles, $font-size);
+}
+
+@mixin _space-text($settings) {
+  @include margin(map-get($settings, margin));
+}
+
+@mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
+  $settings: map-get($text-settings, $name);
+  $append: '';
+  @if $important {
+    $append: ' !important';
+  }
+
+  @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend, $append);
+
+  @if $with-spacing {
+    @include _space-text($settings);
+  }
+}
+
 @mixin build-text-style() {
   @each $name, $variation in $text-settings {
     #{typography-selector(text, $name, true, map-get($variation, alt))} {

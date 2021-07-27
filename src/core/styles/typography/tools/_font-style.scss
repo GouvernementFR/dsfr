@@ -16,8 +16,10 @@
   @return map-get($font-style-type, $type);
 }
 
-@mixin font-style($type) {
-  font-style: font-style($type);
+@mixin font-style($type: normal, $bp: null) {
+  @include respond-from() {
+    font-style: font-style($type);
+  }
 }
 
 @mixin build-font-style() {

@@ -3,4 +3,6 @@
 /// @group core
 ////
 
-@import 'settings/z-index';
+$spacing-vars: map-get($variables, spacing);
+
+@import 'settings/space';
