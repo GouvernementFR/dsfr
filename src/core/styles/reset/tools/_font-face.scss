@@ -20,7 +20,7 @@
   @each $type, $type-settings in $settings {
     $name: map-get($type-settings, name);
     $display: map-get($type-settings, display);
-    @include font-face-styles($name, $display,map-get($type-settings, styles));
+    @include font-face-styles($name, $display, map-get($type-settings, styles));
   }
 }
 
