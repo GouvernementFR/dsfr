@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-
+/*
 import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill.js';
 
 let count;
@@ -26,3 +26,4 @@ if (window.MSInputMethodContext && document.documentMode) {
     document.head.appendChild(script);
   }
 }
+ */
