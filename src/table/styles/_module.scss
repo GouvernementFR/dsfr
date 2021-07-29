@@ -4,9 +4,11 @@
 ////
 
 #{ns(table)} {
+  --table-offset: #{space(4v)};
+
   @include relative;
   @include margin-bottom(10v);
-  @include padding-top(calc(var(--table-offset) + #{space(4v)}));
+  @include padding-top(var(--table-offset));
 
   @include before('', block) {
     @include size(100%, 0);
@@ -91,7 +93,7 @@
     @include margin-top(4v);
 
     table {
-      @include margin-bottom(calc(var(--table-offset) + #{space(15v)}));
+      @include margin-bottom(calc(var(--table-offset) + #{space(11v)}));
     }
 
     &#{ns-attr(js-table, true)} {
@@ -133,5 +135,5 @@
     }
   }
 
-  @import 'modules/table-shadow';
+  @import 'modules/shadow';
 }

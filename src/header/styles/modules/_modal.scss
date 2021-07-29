@@ -11,14 +11,10 @@
     transition: none;
   }
 
-  @include padding-top(4v);
-  @include padding-bottom(18v);
-
   @include before(none);
   @include after(none);
 
   @include respond-from(lg) {
-    @include padding(0);
     @include margin(0);
     @include size(auto, auto);
     visibility: inherit;
@@ -32,6 +28,17 @@
     @include margin-bottom(6v);
     @include respond-from(lg) {
       display: none;
+    }
+  }
+
+  & > #{ns(container)} {
+    @include padding-top(4v);
+    @include padding-bottom(18v);
+    @include height(100%);
+
+    @include respond-from(lg) {
+      @include padding-y(0);
+      @include height(auto);
     }
   }
 }

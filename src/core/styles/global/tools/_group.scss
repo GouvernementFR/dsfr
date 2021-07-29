@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+// TODO: à checker, certainement à enlever
+
 @mixin group() {
   &-group {
     @content;

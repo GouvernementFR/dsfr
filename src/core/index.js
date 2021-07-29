@@ -1,32 +1,41 @@
-import api from './api.js';
-import { ns } from './scripts/global/namespace.js';
-import { addClass, removeClass } from './scripts/manipulation/classes.js';
-import engine from './scripts/engine/engine.js';
-import { Initializer } from './scripts/global/initializer.js';
-import { Instance } from './scripts/engine/instantiate/instance.js';
+import api from './scripts/api/api';
 
+import { Instance } from './scripts/api/register/instance.js';
+import { KeyCodes } from './scripts/api/register/key-codes.js';
+import { Breakpoints } from './scripts/api/register/breakpoints';
 import { Disclosure } from './scripts/disclosure/disclosure.js';
 import { DisclosureButton } from './scripts/disclosure/disclosure-button.js';
 import { DisclosuresGroup } from './scripts/disclosure/disclosures-group.js';
-import { DISCLOSURE_TYPES } from './scripts/disclosure/disclosure-types.js';
-
-import { KeyListener } from './scripts/key-listener/key-listener.js';
+import { DisclosureTypes } from './scripts/disclosure/disclosure-types.js';
+import { DisclosureEvents } from './scripts/disclosure/disclosure-events.js';
+import { DisclosureEmissions } from './scripts/disclosure/disclosure-emissions.js';
+import { CollapseButton } from './scripts/collapse/collapse-button.js';
 import { Collapse } from './scripts/collapse/collapse.js';
-import { Equisized } from './scripts/manipulation/size.js';
+import { CollapsesGroup } from './scripts/collapse/collapses-group.js';
+import { CollapseSelectors } from './scripts/collapse/collapse-selectors.js';
+import { Equisized } from './scripts/equisized/equisized.js';
+import { EquisizedsGroup } from './scripts/equisized/equisizeds-group.js';
+import { EquisizedEmissions } from './scripts/equisized/equisized-emissions.js';
+import { RootSelector } from './scripts/api/stage/root.js';
 
-api.core.ns = ns;
-api.core.addClass = addClass;
-api.core.removeClass = removeClass;
-api.core.engine = engine;
-api.core.Instance = Instance;
-api.core.Initializer = Initializer;
-api.core.Disclosure = Disclosure;
-api.core.DisclosureButton = DisclosureButton;
-api.core.DisclosuresGroup = DisclosuresGroup;
-api.core.DISCLOSURE_TYPES = DISCLOSURE_TYPES;
-
-api.KeyListener = KeyListener;
-api.Collapse = Collapse;
-api.Equisized = Equisized;
+api.core = {
+  Instance: Instance,
+  Breakpoints: Breakpoints,
+  KeyCodes: KeyCodes,
+  Disclosure: Disclosure,
+  DisclosureButton: DisclosureButton,
+  DisclosuresGroup: DisclosuresGroup,
+  DisclosureTypes: DisclosureTypes,
+  DisclosureEvents: DisclosureEvents,
+  DisclosureEmissions: DisclosureEmissions,
+  Collapse: Collapse,
+  CollapseButton: CollapseButton,
+  CollapsesGroup: CollapsesGroup,
+  CollapseSelectors: CollapseSelectors,
+  RootSelector: RootSelector,
+  Equisized: Equisized,
+  EquisizedEmissions: EquisizedEmissions,
+  EquisizedsGroup: EquisizedsGroup
+};
 
 export default api;

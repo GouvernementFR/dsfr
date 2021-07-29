@@ -23,6 +23,7 @@ const ordereds = [
 const ORDEREDS = ordereds.join();
 
 const isFocusable = (element, container) => {
+  if (!(element instanceof Element)) return false;
   if (window.getComputedStyle(element).visibility === 'hidden') return false;
   if (container === undefined) container = element;
 
@@ -59,7 +60,7 @@ class FocusTrap {
 
   wait () {
     if (!isFocusable(this.element)) {
-      api.core.engine.renderer.next(this.waiting);
+      window.requestAnimationFrame(this.waiting);
       return;
     }
 
@@ -120,12 +121,12 @@ class FocusTrap {
   }
 
   get focusables () {
-    let unordereds = [...this.element.querySelectorAll(UNORDEREDS)];
+    let unordereds = api.querySelectorAllArray(this.element, UNORDEREDS);
 
     /**
      *  filtrage des radiobutttons de même name (la navigations d'un groupe de radio se fait à la flèche et non pas au tab
      **/
-    const radios = [...document.documentElement.querySelectorAll('input[type="radio"]')];
+    const radios = api.querySelectorAllArray(document.documentElement, 'input[type="radio"]');
 
     if (radios.length) {
       const groups = {};
@@ -143,7 +144,7 @@ class FocusTrap {
       });
     }
 
-    const ordereds = [...this.element.querySelectorAll(ORDEREDS)];
+    const ordereds = api.querySelectorAllArray(this.element, ORDEREDS);
 
     ordereds.sort((a, b) => a.tabIndex - b.tabIndex);
 
@@ -164,6 +165,10 @@ class FocusTrap {
     // this.stunneds = [];
 
     if (this.onUntrap) this.onUntrap();
+  }
+
+  dispose () {
+    this.untrap();
   }
 }
 

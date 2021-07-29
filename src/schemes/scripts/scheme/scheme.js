@@ -1,62 +1,157 @@
-import { SCHEME_ATTR, TRANSITION_ATTR } from './constants';
+import api from '../../api.js';
+import { Schemes } from './schemes.js';
+import { SchemeAttributes } from './scheme-attributes.js';
+import { SchemeThemes } from './scheme-themes.js';
+import { SchemeEmissions } from './scheme-emissions.js';
 
-/**
- * TODO: implémenter la valeur system
- * window.matchMedia("(prefers-color-scheme: dark)").addListener(
- e => e.matches && activateDarkMode()) // listener
- );
- */
-
-class Scheme {
+class Scheme extends api.core.Instance {
   constructor () {
-    this.init();
+    super(false);
   }
 
   init () {
-    this.root = document.documentElement;
+    this.changing = this.change.bind(this);
 
-    this.scheme = localStorage.getItem('scheme')
-      ? localStorage.getItem('scheme')
-      : null;
-
-    if (this.scheme === null) {
-      const scheme = this.root.getAttribute(SCHEME_ATTR);
-      if (scheme === 'dark' || scheme === 'light') {
-        this.scheme = scheme;
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        this.scheme = 'dark';
-        localStorage.setItem('scheme', 'dark');
-      } else this.scheme = 'light';
+    if (this.hasAttribute(SchemeAttributes.TRANSITION)) {
+      this.removeAttribute(SchemeAttributes.TRANSITION);
+      this.request(this.restoreTransition.bind(this));
     }
 
-    if (this.scheme === 'dark') {
-      if (!this.root.hasAttribute(TRANSITION_ATTR)) {
-        this.root.setAttribute(SCHEME_ATTR, 'dark');
-      } else {
-        this.root.removeAttribute(TRANSITION_ATTR);
-        this.root.setAttribute(SCHEME_ATTR, 'dark');
+    const scheme = localStorage.getItem('scheme');
+    const schemeAttr = this.getAttribute(SchemeAttributes.SCHEME);
 
-        setTimeout(() => {
-          this.root.setAttribute(TRANSITION_ATTR, '');
-        }, 300);
-      }
-    } else this.root.setAttribute(SCHEME_ATTR, 'light');
+    switch (scheme) {
+      case Schemes.DARK:
+      case Schemes.LIGHT:
+      case Schemes.SYSTEM:
+        this.scheme = scheme;
+        break;
 
-    this.observer = new MutationObserver(this.mutate.bind(this));
-    this.observer.observe(this.root, { attributes: true });
+      default:
+        switch (schemeAttr) {
+          case Schemes.DARK:
+            this.scheme = Schemes.DARK;
+            break;
+
+          case Schemes.LIGHT:
+            this.scheme = Schemes.LIGHT;
+            break;
+
+          default:
+            this.scheme = Schemes.SYSTEM;
+        }
+    }
+
+    this.addAscent(SchemeEmissions.ASK, this.ask.bind(this));
+    this.addAscent(SchemeEmissions.SCHEME, this.apply.bind(this));
   }
 
-  mutate (mutations) {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === SCHEME_ATTR) {
-        const scheme = this.root.getAttribute(SCHEME_ATTR);
-        if (scheme === 'dark') {
-          localStorage.setItem('scheme', 'dark');
-        } else if (scheme === 'light') {
-          localStorage.setItem('scheme', 'light');
-        }
+  get proxy () {
+    const scope = this;
+    return Object.assign(super.proxy, {
+      /*
+      get theme () {
+        return scope.theme;
+      },
+      set theme (value) {
+        scope.theme = value;
+      },
+       */
+      get scheme () {
+        return scope.scheme;
+      },
+      set scheme (value) {
+        scope.scheme = value;
       }
     });
+  }
+
+  restoreTransition () {
+    this.setAttribute(SchemeAttributes.TRANSITION, '');
+  }
+
+  ask () {
+    this.descend(SchemeEmissions.SCHEME, this.scheme);
+  }
+
+  apply (value) {
+    this.scheme = value;
+  }
+
+  get scheme () {
+    return this._scheme;
+  }
+
+  set scheme (value) {
+    if (this._scheme === value) return;
+    this._scheme = value;
+    switch (value) {
+      case Schemes.SYSTEM:
+        this.listenPreferences();
+        break;
+
+      case Schemes.DARK:
+        this.unlistenPreferences();
+        this.theme = SchemeThemes.DARK;
+        break;
+
+      case Schemes.LIGHT:
+        this.unlistenPreferences();
+        this.theme = SchemeThemes.LIGHT;
+        break;
+
+      default:
+        this.scheme = Schemes.SYSTEM;
+    }
+
+    this.descend(SchemeEmissions.SCHEME, value);
+    localStorage.setItem('scheme', value);
+    this.setAttribute(SchemeAttributes.SCHEME, value);
+  }
+
+  get theme () {
+    return this._theme;
+  }
+
+  set theme (value) {
+    if (this._theme === value) return;
+    switch (value) {
+      case SchemeThemes.LIGHT:
+      case SchemeThemes.DARK:
+        // if (this._scheme !== Schemes.SYSTEM && this._scheme !== value) return;
+        this._theme = value;
+        this.setAttribute(SchemeAttributes.THEME, value);
+        this.descend(SchemeEmissions.THEME, value);
+        break;
+    }
+  }
+
+  listenPreferences () {
+    if (this.isListening) return;
+    this.isListening = true;
+    this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    this.mediaQuery.addEventListener('change', this.changing);
+    this.change();
+  }
+
+  unlistenPreferences () {
+    if (!this.isListening) return;
+    this.isListening = false;
+    this.mediaQuery.removeEventListener('change', this.changing);
+    this.mediaQuery = null;
+  }
+
+  change () {
+    this.theme = this.mediaQuery.matches ? SchemeThemes.DARK : SchemeThemes.LIGHT;
+  }
+
+  mutate (attributeNames) {
+    if (attributeNames.indexOf(SchemeAttributes.SCHEME) > -1) this.scheme = this.getAttribute(SchemeAttributes.SCHEME);
+    if (attributeNames.indexOf(SchemeAttributes.THEME) > -1) this.theme = this.getAttribute(SchemeAttributes.THEME);
+  }
+
+  dispose () {
+    this.unlistenPreferences();
   }
 }
 

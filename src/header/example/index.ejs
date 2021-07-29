@@ -9,7 +9,7 @@
 <%- sample('Header sans navigation', './samples/header.ejs', {service: true }, true, './layout');  %>
 
 
-<%- sample('Header sans navigation avec racourcis', './samples/header.ejs', { links:true, service: true, menu: false }, true, './layout');  %>
+<%- sample('Header sans navigation avec raccourcis', './samples/header.ejs', { links:true, service: true, menu: false }, true, './layout');  %>
 
 
 <%- sample('Header avec nom de service, lien d’accès', './samples/header.ejs', { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }, true, './layout');  %>
@@ -21,3 +21,5 @@
 
 
 <%- sample('Header avec opérateur horizontal, nom de service, lien d’accès, recherche', './samples/header.ejs', { operator: { img: '../img/placeholder.16x9.png', style:'max-width:9.0625rem;' }, service: true, links:true, search: true, navigation: 'min' }, true, './layout');  %>
+
+<%- sample('Header avec raccourcis dupliqués, pour Angular, React et Vue', './samples/header.ejs', { links:true, menu: false, duplicateLinks: true }, true, './layout');  %>

@@ -1,5 +1,4 @@
-import { namespace } from './config.js';
+import config from './config.js';
 
-const api = window[namespace] || { core: {} };
-window[namespace] = api;
+const api = window[config.namespace];
 export default api;

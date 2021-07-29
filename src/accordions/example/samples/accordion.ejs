@@ -1,12 +1,4 @@
 <%
-  const paragraph = '<p>Qui elit in aliqua exercitation. Sint exercitation incididunt duis eu mollit sunt id dolor ullamco excepteur adipisicing deserunt. Dolore mollit ullamco laboris nulla qui ad officia. Ad deserunt ex magna esse culpa ea occaecat sit tempor.</p>';
-  let content = '';
-
-  if (locals.title) content += '<h4>Titre niveau 4</h4>';
-
-  const length = locals.paragraphs || 1;
-  for (let i = 0; i < length; i++) content += paragraph;
-
   const data = {
     label: locals.label || 'Intitulé accordéon',
     content: randomContent(),

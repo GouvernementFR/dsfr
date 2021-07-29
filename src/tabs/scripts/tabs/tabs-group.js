@@ -1,41 +1,41 @@
 import api from '../../api.js';
-import { LIST_CLASS, TAB_CLASS, TABS_CLASS } from './constants';
+import { TabSelectors } from './tab-selectors.js';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
 class TabsGroup extends api.core.DisclosuresGroup {
-  constructor (id, element) {
-    super(id, element);
-    this.list = element.querySelector(`.${LIST_CLASS}`);
-
-    element.addEventListener('transitionend', this.transitionend.bind(this));
-
-    this.init();
-    api.core.engine.renderer.add(this.render.bind(this));
-  }
-
-  static get selector () { return TABS_CLASS; }
-
-  transitionend (e) {
-    this.element.style.transition = 'none';
+  constructor () {
+    super('TabPanel');
   }
 
   init () {
-    this.keyListener = new api.KeyListener(this.element);
-    this.keyListener.down(api.KeyListener.RIGHT, this.arrowRightPress.bind(this), true, true);
-    this.keyListener.down(api.KeyListener.LEFT, this.arrowLeftPress.bind(this), true, true);
-    this.keyListener.down(api.KeyListener.HOME, this.homePress.bind(this), true, true);
-    this.keyListener.down(api.KeyListener.END, this.endPress.bind(this), true, true);
+    super.init();
+    this.list = this.querySelector(TabSelectors.LIST);
+    this.listen('transitionend', this.transitionend.bind(this));
+    this.listenKey(api.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
+    this.listenKey(api.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
+    this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
+    this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
+
+    this.isRendering = true;
+  }
+
+  transitionend (e) {
+    this.style.transition = 'none';
+  }
+
+  get buttonHasFocus () {
+    return this.members.some(member => member.buttonHasFocus);
   }
 
   /**
    * Selectionne l'element suivant de la liste si on est sur un bouton
    * Si on est à la fin on retourne au début
    */
-  arrowRightPress () {
-    if (document.activeElement.classList.contains(TAB_CLASS)) {
+  pressRight () {
+    if (this.buttonHasFocus) {
       if (this.index < this.length - 1) {
         this.index++;
       } else {
@@ -50,8 +50,8 @@ class TabsGroup extends api.core.DisclosuresGroup {
    * Selectionne l'element précédent de la liste si on est sur un bouton
    * Si on est au debut retourne a la fin
    */
-  arrowLeftPress () {
-    if (document.activeElement.classList.contains(TAB_CLASS)) {
+  pressLeft () {
+    if (this.buttonHasFocus) {
       if (this.index > 0) {
         this.index--;
       } else {
@@ -65,8 +65,8 @@ class TabsGroup extends api.core.DisclosuresGroup {
   /**
    * Selectionne le permier element de la liste si on est sur un bouton
    */
-  homePress () {
-    if (document.activeElement.classList.contains(TAB_CLASS)) {
+  pressHome () {
+    if (this.buttonHasFocus) {
       this.index = 0;
       this.focus();
     }
@@ -75,8 +75,8 @@ class TabsGroup extends api.core.DisclosuresGroup {
   /**
    * Selectionne le dernier element de la liste si on est sur un bouton
    */
-  endPress () {
-    if (document.activeElement.classList.contains(TAB_CLASS)) {
+  pressEnd () {
+    if (this.buttonHasFocus) {
       this.index = this.length - 1;
       this.focus();
     }
@@ -88,27 +88,18 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   apply () {
     for (let i = 0; i < this._index; i++) this.members[i].translate(-1);
-    this.current.element.style.transition = '';
-    this.current.element.style.transform = '';
+    this.current.style.transition = '';
+    this.current.style.transform = '';
     for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(1);
-    this.element.style.transition = '';
-  }
-
-  add (tab) {
-    super.add(tab);
-    if (this.length === 1 || tab.disclosed) this.current = tab;
-    else {
-      const index = this.members.indexOf(tab);
-      if (this._index > -1 && this._index !== index) tab.translate(index < this._index ? -1 : 1, true);
-    }
+    this.style.transition = '';
   }
 
   render () {
     if (this.current === null) return;
-    const paneHeight = Math.round(this.current.element.offsetHeight);
+    const paneHeight = Math.round(this.current.node.offsetHeight);
     if (this.panelHeight === paneHeight) return;
     this.panelHeight = paneHeight;
-    this.element.style.height = (this.panelHeight + this.list.offsetHeight) + 'px';
+    this.style.height = (this.panelHeight + this.list.offsetHeight) + 'px';
   }
 }
 

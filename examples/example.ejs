@@ -11,8 +11,15 @@
     <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'links', 'accordions', 'forms', 'checkboxes', 'utilities', 'buttons', 'legacy'] }); %>
 
     <style>
-     <%- include(root + 'examples/styles.css'); %>
+     <%- include(root + 'examples/styles.css.ejs'); %>
     </style>
+
+    <script>
+      window['<%= namespace %>'] = {
+        verbose: true,
+        //mode: 'manual'
+      }
+    </script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
@@ -25,7 +32,7 @@
 
     <%- include(root + 'examples/scripts', { required: ['core', 'schemes', 'accordions']}) %>
     <script>
-        <%- include(root + 'examples/script.js'); %>
+        <%- include(root + 'examples/script.js.ejs'); %>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -1,97 +1,114 @@
-import { GROUP_ATTR } from './constants.js';
+import { Instance } from '../api/register/instance.js';
+import { DisclosureEmissions } from './disclosure-emissions.js';
 
-const groups = [];
-
-class DisclosuresGroup {
-  constructor (id, element) {
-    this.id = id;
-    this.element = element;
-    this.members = [];
+class DisclosuresGroup extends Instance {
+  constructor (disclosureInstanceClassName, jsAttribute) {
+    super(jsAttribute);
+    this.disclosureInstanceClassName = disclosureInstanceClassName;
     this._index = -1;
-    this._current = null;
-    groups.push(this);
   }
 
-  static getGroupById (id) {
-    for (const group of groups) if (group.constructor === this && group.id === id) return group;
-    return new this(id);
+  init () {
+    this.addAscent(DisclosureEmissions.ADDED, this.update.bind(this));
+    this.addAscent(DisclosureEmissions.REMOVED, this.update.bind(this));
+    this.descend(DisclosureEmissions.GROUP);
+    this.update();
   }
 
-  static getGroupByElement (element) {
-    for (const group of groups) if (group.element === element) return group;
-    return new this(false, element);
-  }
-
-  static groupById (member, groupConstructor) {
-    const id = member.element.getAttribute(GROUP_ATTR);
-    if (id === null) return;
-
-    const group = groupConstructor.getGroupById(id);
-    group.add(member);
-  }
-
-  static groupByParent (member, GroupConstructor, groupSelector) {
-    if (groupSelector === undefined) groupSelector = GroupConstructor.selector;
-    if (groupSelector === '') return;
-    let element = member.element.parentElement;
-
-    while (element) {
-      if (element.classList.contains(member.constructor.selector)) return;
-
-      if (element.classList.contains(groupSelector)) {
-        const group = GroupConstructor.getGroupByElement(element);
-        group.add(member);
-        return;
+  get proxy () {
+    const scope = this;
+    return Object.assign(super.proxy, {
+      set index (value) {
+        scope.index = value;
+      },
+      get index () {
+        return scope.index;
+      },
+      get length () {
+        return scope.length;
+      },
+      get current () {
+        const current = scope.current;
+        return current ? current.proxy : null;
+      },
+      get members () {
+        return scope.members.map((member) => member.proxy);
+      },
+      get hasFocus () {
+        return scope.hasFocus;
       }
-      element = element.parentElement;
-    }
+    });
   }
 
-  static get selector () { return ''; }
+  validate (member) {
+    return true;
+  }
 
-  add (member) {
-    if (this.members.indexOf(member) !== -1) return;
-    this.members.push(member);
-    member.setGroup(this);
+  getMembers () {
+    const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
+    this._members = members.filter(this.validate.bind(this));
+  }
 
-    switch (true) {
-      case this.current !== null:
-      case !member.disclosed && !(member.primary && member.primary.disclosed):
-        member.disclosed = false;
-        break;
+  update () {
+    this.getMembers();
+    this.getIndex();
+  }
 
-      default:
-        this._current = member;
-        this._index = this.members.indexOf(member);
-        member.disclosed = true;
-    }
+  get members () {
+    return this._members;
   }
 
   get length () { return this.members.length; }
 
-  get index () { return this._index; }
+  getIndex () {
+    this._index = -1;
+    for (let i = 0; i < this.length; i++) {
+      if (this.index > -1) this.members[i].conceal(true, true);
+      else if (this.members[i].disclosed) {
+        this.index = i;
+      }
+    }
+  }
+
+  get index () {
+    return this._index;
+  }
 
   set index (value) {
-    if (value < -1 || value >= this.length || this._index === value) return;
-    if (this.current !== null) this.current.conceal(true, true);
+    if (value < -1 || value >= this.length || value === this._index) return;
     this._index = value;
-    this._current = this._index > -1 ? this.members[this._index] : null;
-    if (this.current !== null) this.current.disclose(true);
+    for (let i = 0; i < this.length; i++) {
+      const member = this.members[i];
+      if (value === i) {
+        member.disclose(true);
+      } else {
+        member.conceal(true, true);
+      }
+    }
     this.apply();
   }
 
-  get current () { return this._current; }
+  get current () {
+    return this._index === -1 ? null : this.members[this._index];
+  }
 
   set current (member) {
     this.index = this.members.indexOf(member);
   }
 
   get hasFocus () {
-    if (this.current === undefined) return null;
-    return this.current.hasFocus;
+    const current = this.current;
+    if (current) return current.hasFocus;
+    return false;
   }
 
   apply () {}
+
+  dispose () {
+    super.dispose();
+    this.descend(DisclosureEmissions.UNGROUP);
+    this._members = null;
+  }
 }
 
 export { DisclosuresGroup };

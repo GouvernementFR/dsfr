@@ -1,36 +1,72 @@
 import api from '../../api.js';
 
 class Breadcrumb extends api.core.Instance {
-  constructor (element) {
-    super(element);
-    this.collapse = api.core.Instance.getInstances(element, api.Collapse)[0];
-    this.links = [...this.element.querySelectorAll('a[href]')];
+  constructor () {
+    super();
     this.count = 0;
-    if (this.links.length) {
-      this.listen(api.core.Disclosure.DISCLOSE_EVENT, this.focus.bind(this));
-      // TODO: refactor avec instance
-      this.resizing = this.resize.bind(this);
-      window.addEventListener('resize', this.resizing);
+    this.focusing = this.focus.bind(this);
+  }
+
+  init () {
+    this.getCollapse();
+    this.isResizing = true;
+  }
+
+  get proxy () {
+    const scope = this;
+    return Object.assign(super.proxy, {
+      focus: scope.focus.bind(scope),
+      disclose: scope.collapse.disclose.bind(scope.collapse)
+    });
+  }
+
+  getCollapse () {
+    const collapse = this.collapse;
+    if (collapse) {
+      collapse.listen(api.core.DisclosureEvents.DISCLOSE, this.focusing);
+    } else {
+      this.addAscent(api.core.DisclosureEmissions.ADDED, this.getCollapse.bind(this));
     }
   }
 
+  resize () {
+    const collapse = this.collapse;
+    const links = this.links;
+    if (!collapse || !links.length) return;
+
+    if (this.isBreakpoint(api.core.Breakpoints.MD)) {
+      if (collapse.buttonHasFocus) links[0].focus();
+    } else {
+      if (links.indexOf(document.activeElement) > -1) collapse.focus();
+    }
+  }
+
+  get links () {
+    return [...this.querySelectorAll('a[href]')];
+  }
+
+  get collapse () {
+    return this.element.getDescendantInstances(api.core.Collapse.name, null, true)[0];
+  }
+
   focus () {
-    this.links[0].focus();
-    api.core.engine.renderer.next(() => { this.verify(); });
+    this.count = 0;
+    this._focus();
+  }
+
+  _focus () {
+    const link = this.links[0];
+    if (!link) return;
+    link.focus();
+    this.request(this.verify.bind(this));
   }
 
   verify () {
     this.count++;
     if (this.count > 100) return;
-    if (document.activeElement !== this.links[0]) this.focus();
-  }
-
-  resize () {
-    if (window.matchMedia('(min-width: 48em)').matches) {
-      if (this.collapse.buttons[0] === document.activeElement) this.links.focus();
-    } else {
-      if (this.links.indexOf(document.activeElement) > -1) this.collapse.focus();
-    }
+    const link = this.links[0];
+    if (!link) return;
+    if (document.activeElement !== link) this._focus();
   }
 }
 

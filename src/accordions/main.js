@@ -1,4 +1,5 @@
 import api from './index.js';
-import './scripts/module.js';
+
+api.register(api.accordions.AccordionSelectors.GROUP, api.accordions.AccordionsGroup);
 
 export default api;

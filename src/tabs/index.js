@@ -1,10 +1,14 @@
 import api from './api.js';
-import { Tab } from './scripts/tabs/tab.js';
+import { TabPanel } from './scripts/tabs/tab-panel.js';
 import { TabButton } from './scripts/tabs/tab-button.js';
-import { TabsGroup } from './scripts/tabs/tabs-group';
+import { TabsGroup } from './scripts/tabs/tabs-group.js';
+import { TabSelectors } from './scripts/tabs/tab-selectors.js';
 
-api.Tab = Tab;
-api.TabButton = TabButton;
-api.TabsGroup = TabsGroup;
+api.tabs = {
+  TabPanel: TabPanel,
+  TabButton: TabButton,
+  TabsGroup: TabsGroup,
+  TabSelectors: TabSelectors
+};
 
 export default api;

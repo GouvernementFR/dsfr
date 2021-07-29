@@ -1,4 +1,5 @@
 import api from './index.js';
-import './scripts/module.js';
+
+api.register(api.breadcrumb.BreadcrumbSelectors.BREADCRUMB, api.breadcrumb.Breadcrumb);
 
 export default api;

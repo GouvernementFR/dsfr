@@ -1,40 +1,49 @@
 import api from '../../api.js';
-import {
-  NAVIGATION_CLASS,
-  NAVIGATION_ITEM_CLASS,
-  NAVIGATION_LIST_CLASS,
-  NAVIGATION_MENU_CLASS,
-  NAVIGATION_ITEM_RIGHT_CLASS
-} from './constants';
+import { NavigationSelectors } from './navigation-selectors.js';
+import { NavigationMousePosition } from './navigation-mouse-position.js';
 
-class Navigation extends api.core.DisclosuresGroup {
-  constructor (id, element) {
-    super(id, element);
-
-    this.menus = [];
-
-    this.navList = element.querySelector(`.${NAVIGATION_LIST_CLASS}`);
-
-    document.addEventListener('focusout', this.focusOut.bind(this));
-    window.addEventListener('resize', this.resize.bind(this));
-    window.addEventListener('orientationchange', this.resize.bind(this));
-    this.resize();
+class Navigation extends api.core.CollapsesGroup {
+  init () {
+    super.init();
+    this.clicked = false;
+    this.out = false;
+    this.listen('focusout', this.focusOut.bind(this));
+    this.listen('mousedown', this.down.bind(this));
   }
 
-  static get selector () { return NAVIGATION_CLASS; }
+  validate (member) {
+    return member.element.node.matches(NavigationSelectors.COLLAPSE);
+  }
 
-  add (member) {
-    super.add(member);
-
-    if (member.element.classList.contains(NAVIGATION_MENU_CLASS)) {
-      this.menus.push(new NavigationMenu(member, this.navList.getBoundingClientRect().right));
-    }
+  down (e) {
+    if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1) return;
+    this.position = this.current.element.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
+    this.request(this.getPosition.bind(this));
   }
 
   focusOut (e) {
-    requestAnimationFrame(() => {
-      if (this.current !== null && !this.current.hasFocus) this.index = -1;
-    });
+    if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
+    this.out = true;
+    this.request(this.getPosition.bind(this));
+  }
+
+  getPosition () {
+    if (this.out) {
+      switch (this.position) {
+        case NavigationMousePosition.OUTSIDE:
+          this.index = -1;
+          break;
+
+        case NavigationMousePosition.INSIDE:
+          if (this.current) this.current.focus();
+          break;
+
+        default:
+          if (this.index > -1 && !this.current.hasFocus) this.index = -1;
+      }
+    }
+    this.position = NavigationMousePosition.NONE;
+    this.out = false;
   }
 
   get index () { return super.index; }
@@ -42,47 +51,6 @@ class Navigation extends api.core.DisclosuresGroup {
   set index (value) {
     if (value === -1 && this.current !== null && this.current.hasFocus) this.current.focus();
     super.index = value;
-  }
-
-  resize () {
-    const right = this.navList.getBoundingClientRect().right;
-
-    for (const menu of this.menus) menu.place(right);
-  }
-}
-
-class NavigationMenu {
-  constructor (collapse, right) {
-    this.initialize(collapse);
-    this.place(right);
-  }
-
-  initialize (collapse) {
-    this.element = collapse.element;
-
-    for (const button of collapse.buttons) {
-      if (!button.hasAttribute) continue;
-      this.button = button.element;
-      break;
-    }
-
-    let item = this.element.parentElement;
-    while (item) {
-      if (item.classList.contains(NAVIGATION_ITEM_CLASS)) {
-        this.item = item;
-        break;
-      }
-      item = item.parentElement;
-    }
-  }
-
-  place (right) {
-    const styles = getComputedStyle(this.element);
-    const width = parseFloat(styles.width);
-    const left = this.button.getBoundingClientRect().left;
-
-    if (left + width > right) api.core.addClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
-    else api.core.removeClass(this.item, NAVIGATION_ITEM_RIGHT_CLASS);
   }
 }
 

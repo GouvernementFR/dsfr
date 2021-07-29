@@ -55,6 +55,7 @@
     accordions.push({
         label: element.title,
         collapseId: uniqueId('core'),
+        isExpanded: false,
         content: prepend + include(element.path + '/index') + append
     })
   }

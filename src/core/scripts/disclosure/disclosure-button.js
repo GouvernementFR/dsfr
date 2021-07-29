@@ -1,40 +1,45 @@
-class DisclosureButton {
-  constructor (element, disclosure) {
-    this.element = element;
-    this.disclosure = disclosure;
-    this.hasAttribute = this.element.hasAttribute(this.disclosure.attributeName);
-    this.element.addEventListener('click', this.click.bind(this));
-    this.observer = new MutationObserver(this.mutate.bind(this));
-    this.observe();
+import { Instance } from '../api/register/instance';
+import ns from '../api/utilities/namespace.js';
+
+class DisclosureButton extends Instance {
+  constructor (type) {
+    super();
+    this.type = type;
+    this.attributeName = type.ariaState ? 'aria-' + type.id : ns.attr(type.id);
   }
 
-  observe () {
-    this.observer.observe(this.element, { attributes: true });
+  init () {
+    this.controlsId = this.getAttribute('aria-controls');
+    this.isPrimary = this.hasAttribute(this.attributeName);
+    if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
+    this.listen('click', this.click.bind(this));
   }
 
-  click (e) {
-    this.disclosure.change(this.hasAttribute);
-  }
-
-  mutate (mutations) {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === this.disclosure.attributeName) this.disclosure.change(this.disclosed);
+  get proxy () {
+    const scope = this;
+    return Object.assign(super.proxy, {
+      focus: scope.focus.bind(scope)
     });
   }
 
+  click (e) {
+    if (this.registration.creator) this.registration.creator.toggle(this.isPrimary);
+  }
+
+  mutate (attributeNames) {
+    if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
+      if (this.disclosed) this.registration.creator.disclose();
+      else if (this.type.canConceal) this.registration.creator.conceal();
+    }
+  }
+
   apply (value) {
-    if (!this.hasAttribute) return;
-    if (this.observer) this.observer.disconnect();
-    this.element.setAttribute(this.disclosure.attributeName, value);
-    if (this.observer) this.observe();
+    if (!this.isPrimary) return;
+    this.setAttribute(this.attributeName, value);
   }
 
   get disclosed () {
-    return this.element.getAttribute(this.disclosure.attributeName) === 'true';
-  }
-
-  get hasFocus () {
-    return this.element === document.activeElement;
+    return this.getAttribute(this.attributeName) === 'true';
   }
 }
 

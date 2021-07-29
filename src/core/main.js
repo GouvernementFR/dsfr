@@ -1,4 +1,5 @@
 import api from './index.js';
-import './scripts/module.js';
+
+api.register(api.core.CollapseSelectors.COLLAPSE, api.core.Collapse);
 
 export default api;
