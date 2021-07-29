@@ -20,11 +20,11 @@
   @each $type, $type-settings in $settings {
     $name: map-get($type-settings, name);
     $display: map-get($type-settings, display);
-    @include font-face-styles($name, map-get($type-settings, styles), $display);
+    @include font-face-styles($name, $display,map-get($type-settings, styles));
   }
 }
 
-@mixin font-face-styles($name, $settings, $display) {
+@mixin font-face-styles($name, $display, $settings) {
   @each $style, $variation in $settings {
     $font-weight: map_get($variation, font-weight);
     $font-style: map_get($variation, font-style);
@@ -54,4 +54,11 @@
   @else {
     font-family: $families;
   }
+}
+
+@mixin text-adjustments {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }

@@ -6,10 +6,7 @@
 @if (map-get($reset-settings, body)) {
   body {
     @include font-family;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+    @include text-adjustments;
     @include scheme-body;
     @include margin(0);
     @include padding(0);

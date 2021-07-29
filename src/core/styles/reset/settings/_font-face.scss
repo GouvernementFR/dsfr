@@ -7,6 +7,7 @@ $font-settings: (
   primary: (
     name: 'Marianne',
     fallback: arial sans-serif,
+    display: swap,
     styles: (
       light: (
         font-weight: 300,
@@ -40,6 +41,7 @@ $font-settings: (
   alt: (
     name: 'Spectral',
     fallback: georgia serif,
+    display: swap,
     styles: (
       regular: (
         font-weight: 400,
@@ -50,6 +52,5 @@ $font-settings: (
         file: 'Spectral-ExtraBold'
       )
     ),
-    // display: fallback, // [defaut: swap]
   )
 );
