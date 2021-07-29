@@ -1,7 +1,7 @@
 import api from '../../api.js';
-import { ModalSelectors } from './modal-selectors';
-import { ModalButton } from './modal-button';
-import { ModalEmissions } from './modal-emissions';
+import { ModalSelectors } from './modal-selectors.js';
+import { ModalButton } from './modal-button.js';
+import { ModalEmissions } from './modal-emissions.js';
 
 class Modal extends api.core.Disclosure {
   constructor () {

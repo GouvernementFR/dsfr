@@ -1,5 +1,5 @@
-import { Instance } from '../api/register/instance';
-import { EquisizedEmissions } from './equisized-emissions';
+import { Instance } from '../api/register/instance.js';
+import { EquisizedEmissions } from './equisized-emissions.js';
 
 class EquisizedsGroup extends Instance {
   init () {

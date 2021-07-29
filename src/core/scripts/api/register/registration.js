@@ -1,6 +1,6 @@
-import { Collection } from '../utilities/collection';
-import state from '../state';
-import ns from '../utilities/namespace';
+import { Collection } from '../utilities/collection.js';
+import state from '../state.js';
+import ns from '../utilities/namespace.js';
 
 class Registration {
   constructor (selector, InstanceClass, creator) {

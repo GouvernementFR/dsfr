@@ -1,4 +1,4 @@
-import { Element } from './element';
+import { Element } from './element.js';
 import ns from '../utilities/namespace.js';
 
 class Root extends Element {

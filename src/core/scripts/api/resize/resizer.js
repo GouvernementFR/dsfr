@@ -1,4 +1,4 @@
-import { Module } from '../module';
+import { Module } from '../module.js';
 
 class Resizer extends Module {
   constructor () {

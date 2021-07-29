@@ -1,5 +1,5 @@
-import { Instance } from '../api/register/instance';
-import { DisclosureEmissions } from './disclosure-emissions';
+import { Instance } from '../api/register/instance.js';
+import { DisclosureEmissions } from './disclosure-emissions.js';
 
 class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {

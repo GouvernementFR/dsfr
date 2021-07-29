@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { NavigationSelectors } from './navigation-selectors';
+import { NavigationSelectors } from './navigation-selectors.js';
 
 class NavigationItem extends api.core.Instance {
   constructor () {

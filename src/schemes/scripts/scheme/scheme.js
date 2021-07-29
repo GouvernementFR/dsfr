@@ -1,8 +1,8 @@
 import api from '../../api.js';
-import { Schemes } from './schemes';
-import { SchemeAttributes } from './scheme-attributes';
-import { SchemeThemes } from './scheme-themes';
-import { SchemeEmissions } from './scheme-emissions';
+import { Schemes } from './schemes.js';
+import { SchemeAttributes } from './scheme-attributes.js';
+import { SchemeThemes } from './scheme-themes.js';
+import { SchemeEmissions } from './scheme-emissions.js';
 
 class Scheme extends api.core.Instance {
   constructor () {

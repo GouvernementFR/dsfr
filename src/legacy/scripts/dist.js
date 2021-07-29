@@ -1,7 +1,6 @@
 /* eslint-disable no-new */
 
-import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill';
-import { dse } from '@gouvfr/core';
+import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill.js';
 
 let count;
 

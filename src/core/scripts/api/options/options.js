@@ -1,5 +1,5 @@
 import inspector from '../inspect/inspector.js';
-import { startAtDomContentLoaded, startAuto } from './starters';
+import { startAtDomContentLoaded, startAuto } from './starters.js';
 
 export const Modes = {
   AUTO: 'auto',

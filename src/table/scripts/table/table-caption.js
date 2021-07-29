@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TableEmissions } from './table-emissions';
+import { TableEmissions } from './table-emissions.js';
 
 class TableCaption extends api.core.Instance {
   init () {

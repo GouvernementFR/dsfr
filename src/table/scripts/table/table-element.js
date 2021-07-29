@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TableSelectors } from './table-selectors';
+import { TableSelectors } from './table-selectors.js';
 
 const SCROLL_OFFSET = 8; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 

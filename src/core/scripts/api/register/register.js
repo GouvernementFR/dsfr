@@ -1,5 +1,5 @@
 import { Module } from '../module.js';
-import { Registration } from './registration';
+import { Registration } from './registration.js';
 import state from '../state.js';
 
 class Register extends Module {

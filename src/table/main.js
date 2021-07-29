@@ -1,4 +1,4 @@
-import api from './index';
+import api from './index.js';
 
 api.register(api.table.TableSelectors.TABLE, api.table.Table);
 api.register(api.table.TableSelectors.ELEMENT, api.table.TableElement);

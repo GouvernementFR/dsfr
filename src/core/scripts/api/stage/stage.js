@@ -1,8 +1,8 @@
 import state from '../state.js';
-import { Element } from './element';
+import { Element } from './element.js';
 import { Module } from '../module.js';
-import { Root } from './root';
-import inspector from '../inspect/inspector';
+import { Root } from './root.js';
+import inspector from '../inspect/inspector.js';
 
 class Stage extends Module {
   constructor () {

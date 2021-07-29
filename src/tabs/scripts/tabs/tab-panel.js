@@ -1,6 +1,6 @@
 import api from '../../api.js';
 import { TabButton } from './tab-button.js';
-import { TabSelectors } from './tab-selectors';
+import { TabSelectors } from './tab-selectors.js';
 
 /**
   * Tab coorespond au panel d'un élement Tabs (tab panel)

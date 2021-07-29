@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { HeaderSelectors } from './header-selectors';
+import { HeaderSelectors } from './header-selectors.js';
 
 class HeaderLinks extends api.core.Instance {
   init () {

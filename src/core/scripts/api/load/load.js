@@ -1,4 +1,4 @@
-import { Module } from '../module';
+import { Module } from '../module.js';
 
 class Load extends Module {
   constructor () {

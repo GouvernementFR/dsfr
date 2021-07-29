@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { AccordionSelectors } from './accordion-selectors';
+import { AccordionSelectors } from './accordion-selectors.js';
 
 class AccordionsGroup extends api.core.CollapsesGroup {
   validate (member) {

@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TabSelectors } from './tab-selectors';
+import { TabSelectors } from './tab-selectors.js';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup

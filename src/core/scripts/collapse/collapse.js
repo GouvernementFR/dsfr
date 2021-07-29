@@ -1,7 +1,7 @@
 import { Disclosure } from '../disclosure/disclosure.js';
 import { CollapseSelectors } from './collapse-selectors.js';
 import { DisclosureTypes } from '../disclosure/disclosure-types.js';
-import { CollapseButton } from './collapse-button';
+import { CollapseButton } from './collapse-button.js';
 
 /**
  * Tab coorespond au panel d'un élement Tabs (tab panel)

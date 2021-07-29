@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TableEmissions } from './table-emissions';
+import { TableEmissions } from './table-emissions.js';
 
 const PADDING = '1rem'; // padding de 4v sur le caption
 

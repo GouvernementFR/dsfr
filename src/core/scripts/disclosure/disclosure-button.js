@@ -1,5 +1,5 @@
 import { Instance } from '../api/register/instance';
-import ns from '../api/utilities/namespace';
+import ns from '../api/utilities/namespace.js';
 
 class DisclosureButton extends Instance {
   constructor (type) {

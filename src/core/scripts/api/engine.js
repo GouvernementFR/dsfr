@@ -3,9 +3,9 @@ import { Stage } from './stage/stage.js';
 import { Renderer } from './render/renderer.js';
 import { Resizer } from './resize/resizer.js';
 import { ScrollLocker } from './scroll/scroll-locker.js';
-import { Load } from './load/load';
-import inspector from './inspect/inspector';
-import state from './state';
+import { Load } from './load/load.js';
+import inspector from './inspect/inspector.js';
+import state from './state.js';
 
 class Engine {
   constructor () {

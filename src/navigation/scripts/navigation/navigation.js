@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { NavigationSelectors } from './navigation-selectors';
+import { NavigationSelectors } from './navigation-selectors.js';
 import { NavigationMousePosition } from './navigation-mouse-position.js';
 
 class Navigation extends api.core.CollapsesGroup {

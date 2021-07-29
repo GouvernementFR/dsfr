@@ -12,11 +12,11 @@ import { DisclosureEmissions } from './scripts/disclosure/disclosure-emissions.j
 import { CollapseButton } from './scripts/collapse/collapse-button.js';
 import { Collapse } from './scripts/collapse/collapse.js';
 import { CollapsesGroup } from './scripts/collapse/collapses-group.js';
-import { CollapseSelectors } from './scripts/collapse/collapse-selectors';
+import { CollapseSelectors } from './scripts/collapse/collapse-selectors.js';
 import { Equisized } from './scripts/equisized/equisized.js';
 import { EquisizedsGroup } from './scripts/equisized/equisizeds-group.js';
 import { EquisizedEmissions } from './scripts/equisized/equisized-emissions.js';
-import { RootSelector } from './scripts/api/stage/root';
+import { RootSelector } from './scripts/api/stage/root.js';
 
 api.core = {
   Instance: Instance,

@@ -1,6 +1,6 @@
 import api from '../../api.js';
-import { ModalSelectors } from './modal-selectors';
-import { ModalEmissions } from './modal-emissions';
+import { ModalSelectors } from './modal-selectors.js';
+import { ModalEmissions } from './modal-emissions.js';
 
 const OFFSET = 32; // 32px => 8v => 2rem
 

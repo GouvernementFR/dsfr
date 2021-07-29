@@ -1,9 +1,9 @@
 import { Emitter } from '../utilities/emitter.js';
 import state from '../state.js';
-import inspector from '../inspect/inspector';
-import { Breakpoints } from './breakpoints';
-import { addClass, removeClass, hasClass } from '../utilities/classes';
-import { queryParentSelector, querySelectorAllArray } from '../utilities/query-selector';
+import inspector from '../inspect/inspector.js';
+import { Breakpoints } from './breakpoints.js';
+import { addClass, removeClass, hasClass } from '../utilities/classes.js';
+import { queryParentSelector, querySelectorAllArray } from '../utilities/query-selector.js';
 
 class Instance {
   constructor (jsAttribute = true) {

@@ -5,7 +5,7 @@ import engine from './engine.js';
 import inspector from './inspect/inspector.js';
 import ns from './utilities/namespace.js';
 import { addClass, hasClass, removeClass } from './utilities/classes.js';
-import { queryParentSelector, querySelectorAllArray } from './utilities/query-selector';
+import { queryParentSelector, querySelectorAllArray } from './utilities/query-selector.js';
 
 inspector.info(`version ${config.version}`);
 
