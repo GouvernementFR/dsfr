@@ -8,6 +8,10 @@ class DisclosureButton extends Instance {
     this.attributeName = type.ariaState ? 'aria-' + type.id : ns.attr(type.id);
   }
 
+  static get instanceClassName () {
+    return 'DisclosureButton';
+  }
+
   init () {
     this.controlsId = this.getAttribute('aria-controls');
     this.isPrimary = this.hasAttribute(this.attributeName);

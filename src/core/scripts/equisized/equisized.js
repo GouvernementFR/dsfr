@@ -2,6 +2,10 @@ import { Instance } from '../api/register/instance.js';
 import { EquisizedEmissions } from './equisized-emissions.js';
 
 class Equisized extends Instance {
+  static get instanceClassName () {
+    return 'Equisized';
+  }
+
   init () {
     this.ascend(EquisizedEmissions.CHANGE);
   }

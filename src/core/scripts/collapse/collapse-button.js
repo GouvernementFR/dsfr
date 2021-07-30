@@ -5,6 +5,10 @@ class CollapseButton extends DisclosureButton {
   constructor () {
     super(DisclosureTypes.EXPAND);
   }
+
+  static get instanceClassName () {
+    return 'CollapseButton';
+  }
 }
 
 export { CollapseButton };

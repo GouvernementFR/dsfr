@@ -5,6 +5,10 @@ import { ModalEmissions } from './modal-emissions.js';
 const OFFSET = 32; // 32px => 8v => 2rem
 
 class ModalBody extends api.core.Instance {
+  static get instanceClassName () {
+    return 'ModalBody';
+  }
+
   init () {
     this.listen('scroll', this.shade.bind(this));
     this.addDescent(ModalEmissions.ACTIVATE, this.activate.bind(this));

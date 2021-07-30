@@ -4,6 +4,10 @@ import { SchemeSelectors } from './scheme-selectors.js';
 import { Schemes } from './schemes.js';
 
 class SwitchTheme extends api.core.Instance {
+  static get instanceClassName () {
+    return 'SwitchTheme';
+  }
+
   init () {
     this.addDescent(SchemeEmissions.SCHEME, this.apply.bind(this));
     this.radios = this.querySelectorAll(SchemeSelectors.RADIO_BUTTONS);

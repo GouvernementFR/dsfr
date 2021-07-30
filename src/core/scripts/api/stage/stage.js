@@ -99,7 +99,7 @@ class Stage extends Module {
     this.willModify = false;
     const targets = this.modifications.slice();
     this.modifications.length = 0;
-    for (const target of targets) this.parse(target);
+    for (const target of targets) if (document.documentElement.contains(target)) this.parse(target);
   }
 
   dispose (node) {

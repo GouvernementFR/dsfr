@@ -7,6 +7,10 @@ class ModalsGroup extends api.core.DisclosuresGroup {
     this.trap = new FocusTrap();
   }
 
+  static get instanceClassName () {
+    return 'ModalsGroup';
+  }
+
   apply (value, initial) {
     super.apply(value, initial);
     if (this.current === null) this.trap.untrap();

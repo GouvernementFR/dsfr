@@ -11,6 +11,10 @@ class Modal extends api.core.Disclosure {
     this.resizing = this.resize.bind(this, true);
   }
 
+  static get instanceClassName () {
+    return 'Modal';
+  }
+
   init () {
     super.init();
     this.listen('click', this.click.bind(this));

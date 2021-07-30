@@ -12,6 +12,10 @@ class TabPanel extends api.core.Disclosure {
     super(api.core.DisclosureTypes.SELECT, TabSelectors.PANEL, TabButton, 'TabsGroup');
   }
 
+  static get instanceClassName () {
+    return 'TabPanel';
+  }
+
   translate (direction, initial) {
     this.style.transition = initial ? 'none' : '';
     this.style.transform = `translate(${direction * 100}%)`;
