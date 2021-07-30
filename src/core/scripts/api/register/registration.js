@@ -11,8 +11,8 @@ class Registration {
     this.isIntroduced = false;
     this._instanceClassName = this.InstanceClass.instanceClassName;
     this._instanceClassNames = this.getInstanceClassNames(this.InstanceClass);
-    this._property = this.instanceClassName.substring(0, 1).toLowerCase() + this.instanceClassName.substring(1);
-    const dashed = this.instanceClassName
+    this._property = this._instanceClassName.substring(0, 1).toLowerCase() + this._instanceClassName.substring(1);
+    const dashed = this._instanceClassName
       .replace(/[^a-zA-Z0-9]+/g, '-')
       .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
       .replace(/([a-z])([A-Z])/g, '$1-$2')
