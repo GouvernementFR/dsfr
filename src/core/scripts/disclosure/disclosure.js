@@ -13,6 +13,10 @@ class Disclosure extends Instance {
     this.pristine = true;
   }
 
+  static get instanceClassName () {
+    return 'Disclosure';
+  }
+
   init () {
     this.addDescent(DisclosureEmissions.RESET, this.reset.bind(this));
     this.addDescent(DisclosureEmissions.GROUP, this.update.bind(this));
@@ -39,7 +43,7 @@ class Disclosure extends Instance {
   }
 
   get buttons () {
-    return this.getRegisteredInstances(this.DisclosureButtonInstanceClass.name);
+    return this.getRegisteredInstances(this.DisclosureButtonInstanceClass.instanceClassName);
   }
 
   update () {
@@ -52,7 +56,7 @@ class Disclosure extends Instance {
       return;
     }
 
-    const group = this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.name);
+    const group = this.element.getAscendantInstance(this.disclosuresGroupInstanceClassName, this.constructor.instanceClassName);
     if (!group || !group.validate(this)) {
       this._group = null;
       return;

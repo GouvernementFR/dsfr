@@ -9,6 +9,10 @@ class Scheme extends api.core.Instance {
     super(false);
   }
 
+  static get instanceClassName () {
+    return 'Scheme';
+  }
+
   init () {
     this.changing = this.change.bind(this);
 

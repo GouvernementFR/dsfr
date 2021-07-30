@@ -23,6 +23,10 @@ class Instance {
     this._nexts = [];
   }
 
+  static get instanceClassName () {
+    return 'Instance';
+  }
+
   _config (element, registration) {
     this.element = element;
     this.registration = registration;
@@ -48,7 +52,7 @@ class Instance {
   }
 
   getRegisteredInstances (instanceClassName) {
-    for (const registration of this._registrations) if (registration.InstanceClass.name === instanceClassName) return registration.instances.collection;
+    for (const registration of this._registrations) if (registration.hasInstanceClassName(instanceClassName)) return registration.instances.collection;
     return [];
   }
 
@@ -181,7 +185,7 @@ class Instance {
   mutate (attributeNames) {}
 
   _dispose () {
-    inspector.debug(`dispose instance of ${this.registration.InstanceClass.name} on element [${this.element.id}]`);
+    inspector.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
     this.unlisten();
     this._keys = null;

@@ -2,6 +2,10 @@ import api from '../../api.js';
 import { HeaderSelectors } from './header-selectors.js';
 
 class HeaderLinks extends api.core.Instance {
+  static get instanceClassName () {
+    return 'HeaderLinks';
+  }
+
   init () {
     const header = this.queryParentSelector(HeaderSelectors.HEADER);
     this.toolsLinks = header.querySelector(HeaderSelectors.TOOLS_LINKS);

@@ -8,6 +8,10 @@ class DisclosuresGroup extends Instance {
     this._index = -1;
   }
 
+  static get instanceClassName () {
+    return 'DisclosuresGroup';
+  }
+
   init () {
     this.addAscent(DisclosureEmissions.ADDED, this.update.bind(this));
     this.addAscent(DisclosureEmissions.REMOVED, this.update.bind(this));
@@ -45,7 +49,7 @@ class DisclosuresGroup extends Instance {
   }
 
   getMembers () {
-    const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.name, true);
+    const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.instanceClassName, true);
     this._members = members.filter(this.validate.bind(this));
   }
 

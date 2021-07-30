@@ -3,6 +3,10 @@ import { NavigationSelectors } from './navigation-selectors.js';
 import { NavigationMousePosition } from './navigation-mouse-position.js';
 
 class Navigation extends api.core.CollapsesGroup {
+  static get instanceClassName () {
+    return 'Navigation';
+  }
+
   init () {
     super.init();
     this.clicked = false;

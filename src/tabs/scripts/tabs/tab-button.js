@@ -10,6 +10,10 @@ class TabButton extends api.core.DisclosureButton {
     super(api.core.DisclosureTypes.SELECT);
   }
 
+  static get instanceClassName () {
+    return 'TabButton';
+  }
+
   apply (value) {
     super.apply(value);
     if (this.isPrimary) {

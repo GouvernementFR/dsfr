@@ -1,6 +1,10 @@
 import api from '../../api.js';
 
 class HeaderModal extends api.core.Instance {
+  static get instanceClassName () {
+    return 'HeaderModal';
+  }
+
   init () {
     this.isResizing = true;
   }

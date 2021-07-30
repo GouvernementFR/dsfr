@@ -24,11 +24,13 @@ const ORDEREDS = ordereds.join();
 
 const isFocusable = (element, container) => {
   if (!(element instanceof Element)) return false;
-  if (window.getComputedStyle(element).visibility === 'hidden') return false;
+  const style = window.getComputedStyle(element);
+  if (!style) return false;
+  if (style.visibility === 'hidden') return false;
   if (container === undefined) container = element;
 
   while (container.contains(element)) {
-    if (window.getComputedStyle(element).display === 'none') return false;
+    if (style.display === 'none') return false;
     element = element.parentElement;
   }
 

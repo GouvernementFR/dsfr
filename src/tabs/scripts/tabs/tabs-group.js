@@ -10,6 +10,10 @@ class TabsGroup extends api.core.DisclosuresGroup {
     super('TabPanel');
   }
 
+  static get instanceClassName () {
+    return 'TabsGroup';
+  }
+
   init () {
     super.init();
     this.list = this.querySelector(TabSelectors.LIST);

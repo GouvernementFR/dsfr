@@ -7,6 +7,10 @@ class Breadcrumb extends api.core.Instance {
     this.focusing = this.focus.bind(this);
   }
 
+  static get instanceClassName () {
+    return 'Breadcrumb';
+  }
+
   init () {
     this.getCollapse();
     this.isResizing = true;
@@ -46,7 +50,7 @@ class Breadcrumb extends api.core.Instance {
   }
 
   get collapse () {
-    return this.element.getDescendantInstances(api.core.Collapse.name, null, true)[0];
+    return this.element.getDescendantInstances(api.core.Collapse.instanceClassName, null, true)[0];
   }
 
   focus () {

@@ -51,11 +51,11 @@ class Element {
   }
 
   create (registration) {
-    if (this.hasInstance(registration.InstanceClass.name)) {
-      // inspector.debug(`failed creation, instance of ${registration.InstanceClass.name} already exists on element [${this.id}]`);
+    if (this.hasInstance(registration.instanceClassName)) {
+      // inspector.debug(`failed creation, instance of ${registration.instanceClassName} already exists on element [${this.id}]`);
       return;
     }
-    inspector.debug(`create instance of ${registration.InstanceClass.name} on element [${this.id}]`);
+    inspector.debug(`create instance of ${registration.instanceClassName} on element [${this.id}]`);
     const instance = registration.create(this);
     this.instances.push(instance);
     instance._config(this, registration);
@@ -142,7 +142,7 @@ class Element {
   }
 
   getInstance (instanceClassName) {
-    for (const instance of this.instances) if (instance.registration.names.indexOf(instanceClassName) > -1) return instance;
+    for (const instance of this.instances) if (instance.registration.hasInstanceClassName(instanceClassName)) return instance;
     return null;
   }
 

@@ -2,6 +2,10 @@ import api from '../../api.js';
 import { TableEmissions } from './table-emissions.js';
 
 class TableCaption extends api.core.Instance {
+  static get instanceClassName () {
+    return 'TableCaption';
+  }
+
   init () {
     this.height = 0;
     this.isResizing = true;

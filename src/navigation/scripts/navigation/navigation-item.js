@@ -7,6 +7,10 @@ class NavigationItem extends api.core.Instance {
     this._isRightAligned = false;
   }
 
+  static get instanceClassName () {
+    return 'NavigationItem';
+  }
+
   init () {
     this.addAscent(api.core.DisclosureEmissions.ADDED, this.calculate.bind(this));
     this.addAscent(api.core.DisclosureEmissions.REMOVED, this.calculate.bind(this));
@@ -19,7 +23,7 @@ class NavigationItem extends api.core.Instance {
   }
 
   calculate () {
-    const collapse = this.element.getDescendantInstances(api.core.Collapse.name, null, true)[0];
+    const collapse = this.element.getDescendantInstances(api.core.Collapse.instanceClassName, null, true)[0];
     if (collapse && this.isBreakpoint(api.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelectors.MENU)) {
       const right = this.element.node.parentElement.getBoundingClientRect().right;
       const width = collapse.element.node.getBoundingClientRect().width;

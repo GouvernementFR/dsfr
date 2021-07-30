@@ -13,6 +13,10 @@ class Collapse extends Disclosure {
     super(DisclosureTypes.EXPAND, CollapseSelectors.COLLAPSE, CollapseButton, 'CollapsesGroup');
   }
 
+  static get instanceClassName () {
+    return 'Collapse';
+  }
+
   init () {
     super.init();
     this.listen('transitionend', this.transitionend.bind(this));

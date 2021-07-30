@@ -2,6 +2,10 @@ import { Instance } from '../api/register/instance.js';
 import { EquisizedEmissions } from './equisized-emissions.js';
 
 class EquisizedsGroup extends Instance {
+  static get instanceClassName () {
+    return 'EquisizedsGroup';
+  }
+
   init () {
     this.isResizing = true;
     this.isLoading = true;

@@ -9,10 +9,10 @@ class Registration {
     this.creator = creator;
     this.instances = new Collection();
     this.isIntroduced = false;
-    const name = this.InstanceClass.name;
-    this.names = this.getPrototypeName(this.InstanceClass);
-    this._property = name.substring(0, 1).toLowerCase() + name.substring(1);
-    const dashed = name
+    this._instanceClassName = this.InstanceClass.instanceClassName;
+    this._instanceClassNames = this.getInstanceClassNames(this.InstanceClass);
+    this._property = this._instanceClassName.substring(0, 1).toLowerCase() + this._instanceClassName.substring(1);
+    const dashed = this._instanceClassName
       .replace(/[^a-zA-Z0-9]+/g, '-')
       .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
       .replace(/([a-z])([A-Z])/g, '$1-$2')
@@ -22,10 +22,14 @@ class Registration {
     this._attribute = ns.attr(`js-${dashed}`);
   }
 
-  getPrototypeName (InstanceClass) {
+  getInstanceClassNames (InstanceClass) {
     const prototype = Object.getPrototypeOf(InstanceClass);
-    if (!prototype || prototype.name === 'Instance') return [InstanceClass.name];
-    return [...this.getPrototypeName(prototype), InstanceClass.name];
+    if (!prototype || prototype.instanceClassName === 'Instance') return [InstanceClass.instanceClassName];
+    return [...this.getInstanceClassNames(prototype), InstanceClass.instanceClassName];
+  }
+
+  hasInstanceClassName (instanceClassName) {
+    return this._instanceClassNames.indexOf(instanceClassName) > -1;
   }
 
   introduce () {
@@ -57,6 +61,14 @@ class Registration {
     const instances = this.instances.collection;
     for (let i = instances.length - 1; i > -1; i--) instances[i]._dispose();
     this.creator = null;
+  }
+
+  get instanceClassName () {
+    return this._instanceClassName;
+  }
+
+  get instanceClassNames () {
+    return this._instanceClassNames;
   }
 
   get property () {

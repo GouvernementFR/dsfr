@@ -4,6 +4,10 @@ import { TableSelectors } from './table-selectors.js';
 const SCROLL_OFFSET = 8; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
 class TableElement extends api.core.Instance {
+  static get instanceClassName () {
+    return 'TableElement';
+  }
+
   init () {
     this.listen('scroll', this.scroll.bind(this));
     this.content = this.querySelector('tbody');
