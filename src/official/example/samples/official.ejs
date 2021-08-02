@@ -1,0 +1,27 @@
+<%
+let data = {
+   official: {
+    id: 'official-banner',
+    title: 'Vous êtes sur un site de l’État',
+    content: {
+      intro: {
+        title: 'Le site exemple.gouv.fr est un site de confiance appartenant au gouvernement français.',
+      },
+      cols: {
+        col1: {
+          icon: 'shield-check-line',
+          title: 'gouv.fr est une extension de domaine officielle',
+          desc: 'L’extension <span class="'+ prefix +'-text--bold">gouv.fr</span> dans votre barre de navigation indique un nom de domaine protégé.'
+        },
+        col2: {
+          icon: 'lock-line',
+          title: 'Ce site utilise le protocole sécurisé https',
+          desc: 'Le certificat <span class="'+ prefix +'-text--bold">https</span> vous assure que les informations que vous fournissez sont chiffrées.'
+        },
+      }
+    }
+  }
+};
+ %>
+
+<%- include('../../templates/ejs/official.ejs', data); %>

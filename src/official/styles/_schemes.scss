@@ -1,0 +1,23 @@
+////
+/// Official Schemes
+/// @group official
+////
+
+#{ns(official)} {
+  @include scheme-element-bg-color(beige);
+
+  &__title {
+    @include scheme-element-bg-color(beige, true, true);
+
+  }
+  &__button {
+    @include scheme-element-text-color(bf500);
+    @include scheme-element-bg-color(transparent);
+  }
+
+  #{ns(official__col)} {
+    @include before {
+      @include scheme-element-bg-color(g200);
+    }
+  }
+}

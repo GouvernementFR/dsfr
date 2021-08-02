@@ -1,0 +1,76 @@
+<%#
+# paramètres Official
+
+* official (Oject, required): objet principal contennant les paramètres
+
+* id (string, required) : ID pour le collapse
+
+* title (string, required) : Texte du bouton d'ouverture
+
+* content (Object, optional): contenu des colones (title, desc, icon)
+
+%>
+
+<% eval(include('../../../core/index.ejs')); %>
+
+<%
+ const official = locals.official || {};
+ let title = official.title || '';
+ let id = official.id || '';
+ let content = official.content || {};
+ let officialClasses = [prefix + '-official'];
+
+ %>
+
+<div <%- includeClasses(officialClasses) %>>
+  <div class="<%= prefix %>-official__title">
+    <div class="<%= prefix %>-container">
+      <button class="<%= prefix %>-official__button" aria-expanded="false" aria-controls="<%= id  %>-collapse"><%= title %></span>
+    </div>
+  </div>
+
+  <div class="<%= prefix %>-official__content <%= prefix %>-collapse" id="<%= id  %>-collapse">
+    <div class="<%= prefix %>-container">
+      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--middle <%= prefix %>-grid-row--gutters">
+        <%
+        let colClasses = [prefix + '-col-12'];
+        let introClasses;
+        %>
+
+        <%
+        if (content.intro) {
+          introClasses = [...colClasses, prefix + '-col-md-2'];
+        %>
+          <div <%- includeClasses(introClasses) %>>
+            <div class="<%= prefix %>-official__col">
+              <p><%- content.intro.title %></p>
+            </div>
+          </div>
+
+        <% } %>
+
+        <% let cols = content.cols;
+          let iconClasse = '';
+          colClasses.push(prefix + '-col-md-3');
+          colClasses.push(prefix + '-col-offset-md-1');
+        %>
+        <% for (let col in cols) {
+          if (cols[col].icon) iconClasse = prefix + '-fi-' + cols[col].icon;
+        %>
+          <div <%- includeClasses(colClasses) %>>
+            <div class="<%= prefix %>-official__col <%= iconClasse %>">
+              <% if (cols[col].title) {
+                let colTitleClasses = [];
+                if (cols[col].desc) colTitleClasses.push(prefix + '-text--bold') %>
+                <p <%- includeClasses(colTitleClasses) %>><%- cols[col].title %></p>
+              <% } %>
+              <% if (cols[col].desc) { %>
+                <p class="<%= prefix %>-text--sm"><%- cols[col].desc %></p>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
+
+    </div>
+  </div>
+</div>
