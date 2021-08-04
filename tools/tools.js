@@ -4,6 +4,9 @@ const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
 const { deployFavicons } = require('./build/copy');
+const generateCore = require('./generate/core');
+const { generateIcons } = require('./generate/icons');
+const generateConfig = require('./build/config');
 
 /**
  * Build
@@ -172,14 +175,6 @@ yargs
   .command(
     'tmp',
     '',
-    (yargs) => {
-      return yargs
-        .usage('Usage: $0')
-        .example(
-          '$0',
-          ''
-        );
-    }, (argv) => {
-    })
+    generateConfig())
   .help()
   .argv;

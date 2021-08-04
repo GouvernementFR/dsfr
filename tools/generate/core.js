@@ -3,7 +3,7 @@ const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
 
 const generateCore = () => {
-  const dir = root('public/src/core/');
+  const dir = root('.config/');
 
   const keys = Object.keys(global.config);
 
@@ -14,7 +14,7 @@ const generateCore = () => {
   const lines = keys.map(key => `  ${key}: '${global.config[key]}'`);
   lines.push(`  version: '${global.version}'`);
 
-  const js = `const config = {\r\n${lines.join(',\r\n')}\r\n};\r\n\r\nexport default config\r\n`;
+  const js = `const config = {\r\n${lines.join(',\r\n')}\r\n};\r\n\r\nexport default config;\r\n`;
   const scriptPath = dir + 'config.js';
   createFile(scriptPath, js);
 };

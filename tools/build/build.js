@@ -1,9 +1,7 @@
 const root = require('../utilities/root');
-const generateCore = require('../generate/core');
 const buildStyles = require('./styles');
 const buildScripts = require('./scripts');
 const { buildExample, buildList, buildMain } = require('./example');
-const generatePackage = require('../generate/package');
 const { generateMainScript, generateMainStyle } = require('../generate/main');
 const { copyImages, copyAssets, copyPackages } = require('./copy');
 const { getPublicPackage } = require('../utilities/config');
@@ -14,29 +12,23 @@ const testPa11y = require('../test/pa11y');
 const { generateIcons } = require('../generate/icons');
 const { generateMarkdown, completeGlobalMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
+const generateConfig = require('./config');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
 
-  if (settings.clean) {
-    deleteDir(root('public'));
-    generateCore();
-    await generateIcons();
-    generatePackage();
-    generateMainStyle();
-    generateMainScript();
-    copyImages();
-    copyAssets();
-  }
-
-  copyPackages();
+  deleteDir(root('dist'));
+  deleteDir(root('example'));
+  await generateConfig();
+  copyImages();
+  copyAssets();
 
   if (settings.test) {
     log.section('lint');
     await lint(settings.packages);
   }
 
-  const config = getPublicPackage().config;
+  const config = getPublicPackage();
 
   let packages = config.styles;
 
@@ -60,10 +52,10 @@ const build = async (settings) => {
     log.section('styles', true);
 
     for (const pck of styles) {
-      log.info(pck.toLowerCase());
+      log.info(pck.id);
 
       try {
-        await buildStyles([pck], 'public/src', 'public/dist/css/', pck, settings.minify, settings.sourcemap);
+        await buildStyles([pck], 'src', 'dist', pck.id, settings.minify, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }
@@ -73,7 +65,7 @@ const build = async (settings) => {
       log.info(config.namespace.toLowerCase());
 
       try {
-        await buildStyles('main', 'public/src', 'public/dist/css/', config.namespace, settings.minify, settings.sourcemap);
+        await buildStyles('main', 'src', 'dist', global.config.namespace, settings.minify, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }
@@ -87,7 +79,7 @@ const build = async (settings) => {
       log.info(pck.toLowerCase());
 
       try {
-        await buildScripts([pck], 'public/src', 'public/dist/js/', pck, settings.minify, settings.legacy, settings.sourcemap);
+        await buildScripts([pck], 'src', 'dist', pck, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }
@@ -96,7 +88,7 @@ const build = async (settings) => {
     if (settings.main) {
       log.info(config.namespace.toLowerCase());
       try {
-        await buildScripts('main', 'public/src', 'public/dist/js/', config.namespace, settings.minify, settings.legacy, settings.sourcemap);
+        await buildScripts('main', 'src', 'dist', global.config.namespace, settings.minify, settings.legacy, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }
@@ -108,7 +100,7 @@ const build = async (settings) => {
 
     for (const pck of packages) {
       try {
-        await buildExample(pck, root('public/example'));
+        await buildExample(pck, root('example'));
       } catch (e) {
         log.error(e);
       }
@@ -116,7 +108,7 @@ const build = async (settings) => {
 
     if (settings.main || settings.clean) {
       try {
-        await buildMain(root('public/example'));
+        await buildMain(root('example'));
       } catch (e) {
         log.error(e);
       }
@@ -124,7 +116,7 @@ const build = async (settings) => {
 
     if (settings.list || settings.clean) {
       try {
-        await buildList(root('public/example'));
+        await buildList(root('example'));
       } catch (e) {
         log.error(e);
       }

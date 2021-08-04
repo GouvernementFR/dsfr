@@ -49,11 +49,11 @@ const svgoConfig = {
 const generateIcons = async (dest) => {
   const icons = [];
 
-  const ymlPath = root('icons/icons.yml');
+  const ymlPath = root('src/core/icons/icons.yml');
   const fileContents = fs.readFileSync(ymlPath, 'utf8');
   const yml = yaml.load(fileContents);
 
-  const dir = root('icons/svg');
+  const dir = root('src/core/icons/svg');
   fs.readdirSync(dir).forEach((file) => {
     const ls = fs.lstatSync(path.join(dir, file));
     if (ls.isFile() && path.extname(file) === '.svg') {
@@ -67,7 +67,7 @@ const generateIcons = async (dest) => {
   });
 
   const config = {
-    sources: [root('icons/svg/[icon].svg')],
+    sources: [root('src/core/icons/svg/[icon].svg')],
     icons: icons,
     output: {
       codepoints: true,
@@ -85,7 +85,7 @@ const generateIcons = async (dest) => {
   builder.pathsInit();
 
   for (const icon of icons) {
-    const filepath = root(`icons/svg/${icon.icon}.svg`);
+    const filepath = root(`src/core/icons/svg/${icon.icon}.svg`);
     const data = fs.readFileSync(filepath, 'utf8');
     const result = await optimize(data, svgoConfig);
     fs.writeFileSync(builder.getIconPath(icon.icon), result.data);
@@ -122,7 +122,7 @@ const generateIcons = async (dest) => {
   }
   sass += ');\n';
 
-  const iconPath = root('public/src/core/icons.scss');
+  const iconPath = root('.config/icons.scss');
   createFile(iconPath, sass);
 
   builder.pathsReset();

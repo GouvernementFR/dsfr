@@ -1,0 +1,50 @@
+
+$svg-lightmode-light: "<svg width='80' height='80' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><path id='a' d='M0 0h80v80H0z'/></defs><g fill='none' fill-rule='evenodd'><mask id='b' fill='#fff'><use xlink:href='#a'/></mask><circle stroke='#{$blue-france-500}' stroke-width='2' mask='url(#b)' cx='40' cy='40' r='16'/><path d='M40 29a1 1 0 010 2 9 9 0 00-9 9 1 1 0 01-2 0c0-6.075 4.925-11 11-11z' fill='#E1000F' fill-rule='nonzero' mask='url(#b)'/><path d='M39.912 64a1 1 0 011 1v6a1 1 0 11-2 0v-6a1 1 0 011-1zm18.947-7.262l4.243 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 111.414-1.414zm-35.48 0a1 1 0 010 1.414l-4.243 4.242a1 1 0 01-1.414-1.414l4.242-4.242a1 1 0 011.415 0zM71 38.912a1 1 0 010 2h-6a1 1 0 110-2h6zm-56 0a1 1 0 010 2H9a1 1 0 110-2h6zm4.26-21.772l4.244 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 011.414-1.414zm43.717 0a1 1 0 010 1.414l-4.243 4.242a1 1 0 01-1.414-1.414l4.242-4.242a1 1 0 011.415 0zM39.912 8a1 1 0 011 1v6a1 1 0 11-2 0V9a1 1 0 011-1z' fill='#{$blue-france-500}' mask='url(#b)'/></g></svg>";
+$svg-lightmode-dark: "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='80' height='80'><defs><path id='a' d='M0 0h80v80H0z'/></defs><g fill='none' fill-rule='evenodd'><mask id='b' fill='#fff'><use xlink:href='#a'/></mask><circle cx='40' cy='40' r='16' stroke='#{$blue-france-300}' stroke-width='2' mask='url(#b)'/><path fill='#F7BFC3' fill-rule='nonzero' d='M40 29a1 1 0 010 2 9 9 0 00-9 9 1 1 0 01-2 0c0-6.075 4.925-11 11-11z' mask='url(#b)'/><path fill='#{$blue-france-300}' d='M39.912 64a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zm18.947-7.262l4.243 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 011.414-1.414zm-35.48 0a1 1 0 010 1.414l-4.243 4.242a.999.999 0 11-1.414-1.414l4.242-4.242a1.002 1.002 0 011.415 0zM71 38.912a1 1 0 110 2h-6a1 1 0 010-2h6zm-56 0a1 1 0 110 2H9a1 1 0 010-2h6zm4.26-21.772l4.244 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 011.414-1.414zm43.717 0a1 1 0 010 1.414l-4.243 4.242a.999.999 0 11-1.414-1.414l4.242-4.242a1.002 1.002 0 011.415 0zM39.912 8a1 1 0 011 1v6a1 1 0 01-2 0V9a1 1 0 011-1z' mask='url(#b)'/></g></svg>";
+
+$svg-darkmode-light: "<svg width='80' height='80' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><path d='M0 0h80v80H0z'/><path d='M38 26c0 11.046 8.954 20 20 20 2.23 0 4.376-.365 6.38-1.039C62.174 53.607 54.333 60 45 60c-11.046 0-20-8.954-20-20 0-8.815 5.703-16.298 13.62-18.961A20.024 20.024 0 0038 26z' stroke='#{$blue-france-500}' stroke-width='2' stroke-linejoin='round'/><path fill='#E1000F' d='M14.647 20.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152zM57.647 31.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152zM18.647 60.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152z'/></g></svg>";
+$svg-darkmode-dark: "<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><g fill='none' fill-rule='evenodd'><path d='M0 0h80v80H0z'/><path stroke='#{$blue-france-300}' stroke-linejoin='round' stroke-width='2' d='M38 26c0 11.046 8.954 20 20 20 2.23 0 4.376-.365 6.38-1.039C62.174 53.607 54.333 60 45 60c-11.046 0-20-8.954-20-20 0-8.815 5.703-16.298 13.62-18.961A20.039 20.039 0 0038 26z'/><path fill='#F7BFC3' d='M14.647 20.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15zM57.647 31.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15zM18.647 60.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15z'/></g></svg>";
+
+:root #{ns(switch-theme)} {
+  #{ns(fieldset)} {
+    #{ns(radio-group)} {
+      &:last-child {
+        input[type=radio] + label {
+          margin-bottom: 0;
+        }
+      }
+
+      &:nth-child(1) {
+        input[type=radio] + label {
+          background-image: url(svg-encode($svg-lightmode-light));
+        }
+      }
+
+      &:nth-child(2) {
+        input[type=radio] + label {
+          background-image: url(svg-encode($svg-darkmode-light));
+        }
+      }
+    }
+  }
+}
+
+#{$dark-theme-selector} {
+  #{ns(switch-theme)} {
+    #{ns(fieldset)} {
+      #{ns(radio-group)} {
+        &:nth-child(1) {
+          input[type=radio] + label {
+            background-image: url(svg-encode($svg-lightmode-dark));
+          }
+        }
+
+        &:nth-child(2) {
+          input[type=radio] + label {
+            background-image: url(svg-encode($svg-darkmode-dark));
+          }
+        }
+      }
+    }
+  }
+}

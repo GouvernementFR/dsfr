@@ -31,7 +31,7 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
   switch (true) {
     case Array.isArray(packages):
       for (const pck of packages) {
-        data += `@import "${srcDir}${pck}/main";\r\n`;
+        data += `@import "${srcDir}${pck.path}/main";\r\n`;
       }
       break;
 
@@ -43,7 +43,7 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
   let options = {
     data: data,
     importer: importer(),
-    outFile: destDir + filename + '.css',
+    outFile: destDir + filename + '/' + filename + '.css',
     outputStyle: 'expanded'
   };
 
@@ -58,8 +58,8 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
   try {
     result = sass.renderSync(options);
   } catch (e) {
-    const reformat = e.formatted.replace(/on line .*\.scss/, `${e.file.replace('public/', '')}:${e.line}:${e.column}`);
-    log.error(reformat);
+    // const reformat = e.formatted.replace(/on line .*\.scss/, `${e.file.replace('public/', '')}:${e.line}:${e.column}`);
+    log.error(e.formatted);
     try {
       process.kill(0);
     } catch (e) {

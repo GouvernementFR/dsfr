@@ -1,0 +1,18 @@
+id: display
+title: Paramètre d'affichage
+description: Le pattern paramètre d'affichage permet de définir ses préférences de thème
+styles:
+  - core
+  - schemes
+scripts:
+  - core
+  - schemes
+example:
+  styles:
+    - header
+    - footer
+    - forms
+    - radios
+  scripts:
+    - modal
+    - header

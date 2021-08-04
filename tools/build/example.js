@@ -21,7 +21,7 @@ function uniqueId (module) {
 }
 
 const buildExample = (id, dest) => {
-  const pagePath = root('examples/example.ejs');
+  const pagePath = root('tools/examples/example.ejs');
   const page = fs.readFileSync(pagePath, {
     encoding: 'utf8',
     flag: 'r'
@@ -46,7 +46,7 @@ const buildExample = (id, dest) => {
 };
 
 const buildList = (dest) => {
-  const indexPath = root('examples/index.ejs');
+  const indexPath = root('tools/examples/index.ejs');
   const index = fs.readFileSync(indexPath, {
     encoding: 'utf8',
     flag: 'r'
@@ -70,7 +70,7 @@ const buildList = (dest) => {
 };
 
 const buildMain = (dest) => {
-  const indexPath = root('examples/main.ejs');
+  const indexPath = root('tools/examples/main.ejs');
   const index = fs.readFileSync(indexPath, {
     encoding: 'utf8',
     flag: 'r'

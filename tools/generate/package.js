@@ -4,6 +4,7 @@ const { createFile } = require('../utilities/file');
 const { getPackages, getPackageYML } = require('../utilities/config');
 const fs = require('fs');
 const log = require('../utilities/log');
+const { pack } = require('mqpacker');
 
 const EXTENSIONS = {
   styles: 'scss',
@@ -12,15 +13,18 @@ const EXTENSIONS = {
 
 const getDependencies = (list, type, follow) => {
   const dependencies = {};
+  // const listId = [];
+  // list.forEach(element => {
+  //   listId.push(element.id);
+  // });
   for (const pck of list) {
     const yml = getPackageYML(pck);
     const d = yml[type];
     const f = follow && yml.follow && yml.follow[type] ? yml.follow[type] : [];
     const dps = Array.isArray(d) ? d : typeof d === 'string' ? [d] : [];
     dps.push.apply(dps, Array.isArray(f) ? f : typeof f === 'string' ? [f] : []);
-
-    dps.forEach((p) => { if (list.indexOf(p) === -1) throw new Error(`Error in ${type} dependencies of package ${pck}: ${p} doesn't exist`); });
-    dependencies[pck] = dps;
+    dps.forEach((id) => { if (!list.some(p => p.id === id)) throw new Error(`Error in ${type} dependencies of package ${pck.id}: ${id} doesn't exist`); });
+    dependencies[pck.id] = dps;
   }
   return dependencies;
 };
@@ -32,8 +36,8 @@ const getSortedList = (type) => {
   const list = [];
   const ext = EXTENSIONS[type];
   for (const pck of packages) {
-    if (fs.existsSync(root(`src/${pck}/main.${ext}`))) list.push(pck);
-    levels[pck] = -1;
+    if (fs.existsSync(root(`src/${pck.path}/main.${ext}`))) list.push(pck);
+    levels[pck.id] = -1;
   }
 
   const dependencies = getDependencies(list, type, true);
@@ -44,18 +48,18 @@ const getSortedList = (type) => {
     complete = true;
 
     for (const pck of list) {
-      if (levels[pck] > -1) continue;
-      if (dependencies[pck].length === 0) {
-        levels[pck] = 0;
+      if (levels[pck.id] > -1) continue;
+      if (dependencies[pck.id].length === 0) {
+        levels[pck.id] = 0;
         continue;
       }
-      const lvls = dependencies[pck].map((d) => { return levels[d]; });
+      const lvls = dependencies[pck.id].map((d) => { return levels[d]; });
       if (lvls.some((lvl) => { return lvl === -1; })) {
         complete = false;
         continue;
       }
       const level = Math.max(...lvls) + 1;
-      levels[pck] = level;
+      levels[pck.id] = level;
     }
   }
 
@@ -69,17 +73,17 @@ const getUsage = (packages, list, type) => {
   const usage = {};
 
   for (const pck of packages) {
-    const dps = dependencies[pck];
+    const dps = dependencies[pck.id];
     const flatten = [...dps];
     for (const p of dps) flatten.push(...dependencies[p]);
-    flatten.push(pck);
-    usage[pck] = list.filter((p) => { return flatten.indexOf(p) > -1; });
+    flatten.push(pck.id);
+    usage[pck.id] = list.filter((p) => { return flatten.indexOf(p.id) > -1; });
   }
 
   return usage;
 };
 
-const generatePackage = () => {
+const generateJSONConfig = () => {
   const packages = getPackages();
   const styles = getSortedList('styles');
   const scripts = getSortedList('scripts');
@@ -89,31 +93,14 @@ const generatePackage = () => {
     scripts: getUsage(packages, scripts, 'scripts')
   };
 
-  const content = {
-    name: `${global.config.organisation}/${global.config.namespace}`,
-    version: global.version,
-    description: global.description,
-    repository: global.repository,
-    author: global.author,
-    license: global.license,
-    engines: global.engines,
-    directories: {
-      lib: 'dist',
-      example: 'example'
-    },
-    config: {
-      ...global.config,
-      styles: styles,
-      scripts: scripts,
-      usage: usage
-    },
-    publishConfig: {
-      access: 'public'
-    }
+  const config = {
+    styles: styles,
+    scripts: scripts,
+    usage: usage
   };
 
-  const path = root('public/package.json');
-  createFile(path, JSON.stringify(content, null, 4));
+  const path = root('.config/config.json');
+  createFile(path, JSON.stringify(config, null, 4));
 };
 
-module.exports = generatePackage;
+module.exports = generateJSONConfig;
