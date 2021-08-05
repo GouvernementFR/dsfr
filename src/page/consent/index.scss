@@ -1,14 +1,8 @@
 ////
-/// Search
-/// @group search
+/// Consent
+/// @group consent
 ////
 
 @import '../../core/index';
-@import '../modal/index';
-@import '../links/index';
-@import '../buttons/index';
-@import '../content/index';
-@import '../inputs/index';
-@import '../radios/index';
-
-@import './styles/settings';
+@import 'styles/settings';
+@import '../../component/links/index';

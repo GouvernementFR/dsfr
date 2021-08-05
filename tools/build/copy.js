@@ -38,14 +38,14 @@ const copyFiles = (src, dest, files, ext, force, removeOrphans) => {
 
 const copyImages = (removeOrphans) => {
   const src = root('tools/examples/img');
-  const dest = root('example/img');
+  const dest = root('.example/img');
 
   copyDir(src, dest, ['jpg', 'png', 'svg'], removeOrphans);
 };
 
 const copyAssets = (removeOrphans) => {
   const src = root('src/core/assets/');
-  const dest = root('dist/');
+  const dest = root('.dist/');
 
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };

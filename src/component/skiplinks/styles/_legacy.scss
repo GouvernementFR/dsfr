@@ -1,10 +1,7 @@
 ////
-/// Skiplinks Module
+/// Skiplinks Legacy
 /// @group skiplinks
 ////
-
-@import '../../core/index';
-@import '../../legacy/index';
 
 @include legacy(ie11) {
   /**

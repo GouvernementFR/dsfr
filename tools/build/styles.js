@@ -11,7 +11,7 @@ const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
 const process = async (css, plugins, options) => {
-  plugins.push(postcssBanner({ banner: getBanner() }));
+  plugins.push(postcssBanner({ banner: getBanner(), important: true }));
   const result = await postcss(plugins)
     .process(css, options);
 
@@ -22,28 +22,36 @@ const process = async (css, plugins, options) => {
   if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
 };
 
-const buildStyles = async (packages, src, dest, filename, minify, map) => {
-  const srcDir = root(src + '/');
-  const destDir = root(dest + '/');
+const input = (path, filename) => {
+  const filePath = root(`src/${path}/${filename}`);
+  return `@import '${filePath}';\r\n`
+};
 
+const output = (id, path, filename) => {
+  const append = filename ? `.${filename}` : '';
+  const filePath = root(`.dist/${path}/${id}${append}`);
+  return filePath;
+};
+
+const buildStyles = async (id, path, options, minify, map) => {
   let data = '';
-
-  switch (true) {
-    case Array.isArray(packages):
-      for (const pck of packages) {
-        data += `@import "${srcDir}${pck.path}/main";\r\n`;
-      }
-      break;
-
-    case packages === 'main':
-      data = `@import "${srcDir}main";\r\n`;
-      break;
+  if (options && options.length) {
+    options = ['main', ...options];
+    for (const option of options) {
+      await buildStyle(input(path, option), output(id, path, option), minify, map);
+      data += input(path, option);
+    }
+  } else {
+    data += input(path, 'main');
   }
+  await buildStyle(data, output(id, path), minify, map);
+};
 
+const buildStyle = async (data, dest, minify, map) => {
   let options = {
     data: data,
     importer: importer(),
-    outFile: destDir + filename + '/' + filename + '.css',
+    outFile: `${dest}.css`,
     outputStyle: 'expanded'
   };
 
@@ -58,7 +66,6 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
   try {
     result = sass.renderSync(options);
   } catch (e) {
-    // const reformat = e.formatted.replace(/on line .*\.scss/, `${e.file.replace('public/', '')}:${e.line}:${e.column}`);
     log.error(e.formatted);
     try {
       process.kill(0);
@@ -67,7 +74,7 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
     }
   }
 
-  options = { from: undefined, to: destDir + filename + '.css' };
+  options = { from: undefined, to: `${dest}.css` };
 
   if (map) {
     options.map = { prev: result.map.toString() };
@@ -87,7 +94,7 @@ const buildStyles = async (packages, src, dest, filename, minify, map) => {
 
   if (!minify) return;
 
-  options = { ...options, to: destDir + filename + '.min.css' };
+  options = { ...options, to: `${dest}.min.css` };
 
   await process(result.css.toString(), [mqpacker({ sort: true }), cssnano()], options);
 };

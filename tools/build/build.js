@@ -2,24 +2,25 @@ const root = require('../utilities/root');
 const buildStyles = require('./styles');
 const buildScripts = require('./scripts');
 const { buildExample, buildList, buildMain } = require('./example');
-const { generateMainScript, generateMainStyle } = require('../generate/main');
-const { copyImages, copyAssets, copyPackages } = require('./copy');
-const { getPublicPackage } = require('../utilities/config');
-const { deleteDir } = require('../utilities/file');
+const { concatenate } = require('../generate/concatenate');
+const { copyImages, copyAssets } = require('./copy');
+const { getPublicPackage,
+  getConfigJSON
+} = require('../utilities/config');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
-const { generateIcons } = require('../generate/icons');
 const { generateMarkdown, completeGlobalMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
-const generateConfig = require('./config');
+const generateConfig = require('../generate/config');
+const clean = require('../utilities/clean');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
 
-  deleteDir(root('dist'));
-  deleteDir(root('example'));
+  clean();
   await generateConfig();
+  concatenate();
   copyImages();
   copyAssets();
 
@@ -28,8 +29,8 @@ const build = async (settings) => {
     await lint(settings.packages);
   }
 
-  const config = getPublicPackage();
-
+  const config = getConfigJSON();
+  /*
   let packages = config.styles;
 
   let position = 0;
@@ -38,28 +39,29 @@ const build = async (settings) => {
     if (p === -1) packages = packages.splice(position, 0, script);
     else position = p + 1;
   }
+   */
 
   let styles = config.styles;
   let scripts = config.scripts;
 
   if (settings.packages) {
-    packages = settings.packages;
-    styles = styles.filter((style) => { return settings.packages.indexOf(style) > -1; });
-    scripts = scripts.filter((script) => { return settings.packages.indexOf(script) > -1; });
+    // packages = settings.packages;
+    styles = styles.filter((style) => { return settings.packages.indexOf(style.id) > -1; });
+    scripts = scripts.filter((script) => { return settings.packages.indexOf(script.id) > -1; });
   }
 
   if (settings.styles) {
     log.section('styles', true);
 
     for (const pck of styles) {
-      log.info(pck.id);
-
       try {
-        await buildStyles([pck], 'src', 'dist', pck.id, settings.minify, settings.sourcemap);
+        await buildStyles(pck.id, pck.path, pck.options, settings.minify, settings.sourcemap);
       } catch (e) {
         log.error(e);
       }
     }
+
+    return;
 
     if (settings.main) {
       log.info(config.namespace.toLowerCase());
@@ -71,6 +73,8 @@ const build = async (settings) => {
       }
     }
   }
+
+  return;
 
   if (settings.scripts) {
     log.section('scripts', true);

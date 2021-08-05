@@ -1,10 +1,7 @@
 ////
-/// Sidemenu Module
+/// Sidemenu Legacy
 /// @group sidemenu
 ////
-
-@import '../../core/index';
-@import '../../legacy/index';
 
 @include legacy(ie11) {
   /**

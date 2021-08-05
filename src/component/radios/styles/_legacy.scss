@@ -1,10 +1,7 @@
 ////
-/// Radios Module
+/// Radios Legacy
 /// @group radios
 ////
-@import '../../core/index';
-@import '../../legacy/index';
-@import '../index';
 
 @include legacy(ie11) {
   /**

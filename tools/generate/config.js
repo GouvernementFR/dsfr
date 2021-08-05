@@ -1,11 +1,10 @@
-const generateCore = require('../generate/core');
-const { generateMainStyles, generateMainScripts } = require('../generate/main');
-const { generateIcons } = require('../generate/icons');
-const { copyImages, copyAssets } = require('./copy');
+const generateCore = require('./core');
+const { generateIcons } = require('./icons');
 const root = require('../utilities/root');
-const { createFile, deleteDir } = require('../utilities/file');
+const { createFile } = require('../utilities/file');
 const { getPackages, getPackageYML } = require('../utilities/config');
 const fs = require('fs');
+const TYPES = require('../utilities/types');
 
 const EXTENSIONS = {
   styles: 'scss',
@@ -26,13 +25,22 @@ const getDependencies = (list, type, follow) => {
   return dependencies;
 };
 
-const getSortedList = (type) => {
+const getSortedList = (type, options) => {
   const packages = getPackages();
   const levels = {};
 
   const list = [];
   const ext = EXTENSIONS[type];
   for (const pck of packages) {
+    const type = pck.path.split('/')[0];
+    if (TYPES.LIST.every(t => t.id !== type)) continue;
+    pck.type = type;
+    for (const option of options) {
+      if (fs.existsSync(root(`src/${pck.path}/${option}.${ext}`))) {
+        if (!pck.options) pck.options = [];
+        pck.options.push(option);
+      }
+    }
     if (fs.existsSync(root(`src/${pck.path}/main.${ext}`))) list.push(pck);
     levels[pck.id] = -1;
   }
@@ -60,7 +68,7 @@ const getSortedList = (type) => {
     }
   }
 
-  list.sort((a, b) => { return levels[a] - levels[b]; });
+  list.sort((a, b) => { return levels[a.id] - levels[b.id]; });
 
   return list;
 };
@@ -82,8 +90,8 @@ const getUsage = (packages, list, type) => {
 
 const generateJSON = () => {
   const packages = getPackages();
-  const styles = getSortedList('styles');
-  const scripts = getSortedList('scripts');
+  const styles = getSortedList('styles', ['scheme', 'legacy']);
+  const scripts = getSortedList('scripts', ['legacy']);
 
   const usage = {
     styles: getUsage(packages, styles, 'styles'),
@@ -101,12 +109,9 @@ const generateJSON = () => {
 };
 
 const generateConfig = async () => {
-  deleteDir(root('.config'));
   generateCore();
   await generateIcons();
   generateJSON();
-  generateMainStyles();
-  generateMainScripts();
 };
 
 module.exports = generateConfig;

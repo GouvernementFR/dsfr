@@ -4,32 +4,28 @@ const root = require('../utilities/root');
 const log = require('./log');
 const path = require('path');
 const dir = root('src');
+const TYPES = require('../utilities/types');
 
 const getIdPathObject = (id, type) => {
-  return { id: id, path: type ? `${type}/${id}` : id };
+  return { id: id, path: type.isFolder ? `${type.id}/${id}` : id };
 };
 
 const getPathsFromType = (type) => {
-  const ids = fs.readdirSync(`${dir}/${type}`).filter((folder) => {
-    const ls = fs.lstatSync(path.join(`${dir}/${type}`, folder));
-    return ls.isDirectory();
-  });
+  let ids;
+  if (type.isFolder) {
+    const p = `${dir}/${type.id}`;
+    ids = fs.readdirSync(p).filter((pck) => {
+      const ls = fs.lstatSync(path.join(p, pck));
+      return ls.isDirectory();
+    });
+  } else ids = [type.id];
   return ids.map(id => getIdPathObject(id, type));
 };
 
 const getPackages = () => {
-  const folders = [];
-  folders.push(getIdPathObject('core'));
-  folders.push(getIdPathObject('schemes'));
-  folders.push(getIdPathObject('utilities'));
-
-  folders.push(...getPathsFromType('component'));
-  folders.push(...getPathsFromType('pattern'));
-  folders.push(...getPathsFromType('page'));
-
-  folders.push(getIdPathObject('legacy'));
-
-  return folders;
+  const list = [];
+  for (const type of TYPES.LIST) list.push(...getPathsFromType(type));
+  return list;
 };
 
 const getPackageYML = (id) => {
@@ -43,7 +39,7 @@ const getPackageYML = (id) => {
   }
 };
 
-const getPublicPackage = () => {
+const getConfigJSON = () => {
   try {
     const file = root('.config/config.json');
     const fileContents = fs.readFileSync(file, 'utf8');
@@ -64,4 +60,4 @@ const getAllPackagesYML = () => {
   return packages;
 };
 
-module.exports = { getPackages, getPackageYML, getPublicPackage, getAllPackagesYML };
+module.exports = { getPackages, getPackageYML, getConfigJSON, getAllPackagesYML };
