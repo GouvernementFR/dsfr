@@ -1,21 +1,21 @@
 ////
-/// Official Schemes
-/// @group official
+/// Cockade Schemes
+/// @group cockade
 ////
 
-#{ns(official)} {
+#{ns(cockade)} {
   @include scheme-element-bg-color(beige);
 
   &__title {
     @include scheme-element-bg-color(beige, true, true);
-
   }
+
   &__button {
     @include scheme-element-text-color(bf500);
-    @include scheme-element-bg-color(transparent);
+    @include scheme-element-bg-color(t-plain);
   }
 
-  #{ns(official__col)} {
+  #{ns(cockade__col)} {
     @include before {
       @include scheme-element-bg-color(g200);
     }

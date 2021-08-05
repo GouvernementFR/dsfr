@@ -1,7 +1,7 @@
 <%#
-# paramètres Official
+# paramètres Cockade
 
-* official (Oject, required): objet principal contennant les paramètres
+* cockade (Oject, required): objet principal contennant les paramètres
 
 * id (string, required) : ID pour le collapse
 
@@ -14,24 +14,24 @@
 <% eval(include('../../../core/index.ejs')); %>
 
 <%
- const official = locals.official || {};
- let title = official.title || '';
- let id = official.id || '';
- let content = official.content || {};
- let officialClasses = [prefix + '-official'];
+ const cockade = locals.cockade || {};
+ let title = cockade.title || '';
+ let id = cockade.id || '';
+ let content = cockade.content || {};
+ let cockadeClasses = [prefix + '-cockade'];
 
  %>
 
-<div <%- includeClasses(officialClasses) %>>
-  <div class="<%= prefix %>-official__title">
+<div <%- includeClasses(cockadeClasses) %>>
+  <div class="<%= prefix %>-cockade__title">
     <div class="<%= prefix %>-container">
-      <button class="<%= prefix %>-official__button" aria-expanded="false" aria-controls="<%= id  %>-collapse"><%= title %></span>
+      <button class="<%= prefix %>-cockade__button" aria-expanded="false" aria-controls="<%= id  %>-collapse"><%= title %></button>
     </div>
   </div>
 
-  <div class="<%= prefix %>-official__content <%= prefix %>-collapse" id="<%= id  %>-collapse">
+  <div class="<%= prefix %>-cockade__content <%= prefix %>-collapse" id="<%= id  %>-collapse">
     <div class="<%= prefix %>-container">
-      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--middle <%= prefix %>-grid-row--gutters">
+      <div class="<%= prefix %>-grid-row">
         <%
         let colClasses = [prefix + '-col-12'];
         let introClasses;
@@ -42,7 +42,7 @@
           introClasses = [...colClasses, prefix + '-col-md-2'];
         %>
           <div <%- includeClasses(introClasses) %>>
-            <div class="<%= prefix %>-official__col">
+            <div class="<%= prefix %>-cockade__col">
               <p><%- content.intro.title %></p>
             </div>
           </div>
@@ -58,7 +58,7 @@
           if (cols[col].icon) iconClasse = prefix + '-fi-' + cols[col].icon;
         %>
           <div <%- includeClasses(colClasses) %>>
-            <div class="<%= prefix %>-official__col <%= iconClasse %>">
+            <div class="<%= prefix %>-cockade__col <%= iconClasse %>">
               <% if (cols[col].title) {
                 let colTitleClasses = [];
                 if (cols[col].desc) colTitleClasses.push(prefix + '-text--bold') %>

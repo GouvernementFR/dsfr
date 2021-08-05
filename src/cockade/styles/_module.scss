@@ -1,25 +1,27 @@
 ////
-/// Official Module
-/// @group official
+/// Cockade Module
+/// @group cockade
 ////
 
-#{ns(official)} {
-
+#{ns(cockade)} {
   &__title {
-    @include padding(calc(#{space(3v)} / 2) 0);
+    @include padding(1.5v 0);
+    @include padding(1v 0, md);
     @include relative;
   }
 
   &__button {
     @include padding(0);
-    @include text-style(md);
+    @include text-style(xs);
+    font-weight: font-weight(bold);
+    @include display-flex(row, center);
 
-    @include before('', 'block'){
+    @include before('', 'block') {
       @include absolute(0,0,0,0);
     }
 
     @include icon(arrow-down-s-line, sm, after) {
-      display: inline-block;
+      display: block;
       @include margin-left(1v);
       transition: transform 0.3s;
     }
@@ -35,28 +37,31 @@
     #{ns(container)} {
       @include padding-top(4v);
       @include padding-top(6v, md);
-      @include padding-bottom(4v);
+      @include padding-bottom(0);
       @include padding-bottom(2v, md);
     }
 
-    #{ns(grid-row)} > *:first-child > #{ns(official__col)} {
+    #{ns(cockade__col)} {
       @include padding-left(0);
-    }
+      @include display-flex(column, flex-start, center);
+      @include size(100%, 100%);
 
-    #{ns(official__col)} {
-      @include padding-left(16v);
+      @include has-icon {
+        justify-content: flex-start;
+        @include padding-left(16v);
+      }
       @include relative;
       @include before {
         @include display-flex(row, center, center);
         @include absolute(0,null,null,0,12v,12v);
-        border-radius: 100%;
+        border-radius: 50%;
       }
 
       p {
         @include margin-bottom(2v);
 
         &:last-child {
-          @include margin-bottom(6v,md);
+          @include margin-bottom(6v);
         }
       }
     }
