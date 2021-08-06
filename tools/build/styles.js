@@ -2,6 +2,10 @@ const { createFile } = require('../utilities/file');
 const sass = require('node-sass');
 const importer = require('node-sass-magic-importer');
 const perfectionist = require('perfectionist');
+const prettify = require('postcss-prettify');
+const stylelint = require('stylelint');
+const discardDuplicates = require('postcss-discard-duplicates');
+const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
 const postcss = require('postcss');
 const cssnano = require('cssnano');
 const mqpacker = require('mqpacker');
@@ -82,21 +86,22 @@ const buildStyle = async (data, dest, minify, map) => {
 
   await process(result.css.toString(),
     [
-      mqpacker({
-        sort: true
-      }),
-      perfectionist({
-        cascade: false,
-        indentSize: 2,
-        trimLeadingZero: false
-      })
+      mqpacker({ sort: true }),
+      combineDuplicatedSelectors,
+      discardDuplicates,
+      stylelint({ fix: true })
     ], options);
 
   if (!minify) return;
 
   options = { ...options, to: `${dest}.min.css` };
 
-  await process(result.css.toString(), [mqpacker({ sort: true }), cssnano()], options);
+  await process(result.css.toString(), [
+    mqpacker({ sort: true }),
+    combineDuplicatedSelectors,
+    discardDuplicates,
+    cssnano()
+  ], options);
 };
 
 module.exports = buildStyles;

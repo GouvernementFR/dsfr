@@ -41,7 +41,6 @@ const getPaths = (packages) => {
       }
     }
   }
-
   return paths;
 };
 
@@ -53,32 +52,21 @@ const generateFiles = (id, paths, dest, ext, filetype) => {
   }
 };
 
-const iterateTypes = (list, ext, filetype) => {
+const iterateTypes = (concats, list, ext, filetype) => {
   const global = { main: [] };
-  let packages, paths, options, exists;
-  for (const type of TYPES.LIST) {
-    exists = false;
-    packages = list.filter(p => p.type === type.id);
-    if (type.isFolder) {
+  let packages, paths;
+  for (const concat of concats) {
+    packages = list.filter(p => p.type === concat.id);
+    if (concat.isFolder) {
       paths = getPaths(packages);
-      exists = Object.entries(paths).some(([key, value]) => value.length > 0);
-      if (exists) {
-        generateFiles(type.id, paths, `src/${type.id}`, ext, filetype);
-        options = Object.keys(paths);
-      }
-    } else {
-      const pck = packages[0];
-      if (pck) {
-        exists = true;
-        options = ['main'];
-        if (pck.options) options.push(...pck.options);
-      }
+      generateFiles(concat.id, paths, `src/${concat.path}`, ext, filetype);
     }
 
-    if (exists) {
-      for (const option of options) {
+    global.main.push(concat.path);
+    if (concat.options) {
+      for (const option of concat.options) {
         if (!global[option]) global[option] = [];
-        global[option].push(type.id);
+        global[option].push(concat.path);
       }
     }
   }
@@ -88,8 +76,8 @@ const iterateTypes = (list, ext, filetype) => {
 const concatenate = () => {
   const config = getConfigJSON();
 
-  iterateTypes(config.styles, 'scss', 'style');
-  iterateTypes(config.scripts, 'js', 'script');
+  iterateTypes(config.concat.styles, config.styles, 'scss', 'style');
+  iterateTypes(config.concat.scripts, config.scripts, 'js', 'script');
 };
 
 module.exports = { concatenate };

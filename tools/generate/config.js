@@ -88,10 +88,44 @@ const getUsage = (packages, list, type) => {
   return usage;
 };
 
+const getConcatList = (list) => {
+  let packages, options;
+  const result = [];
+  for (const type of TYPES.LIST) {
+    packages = list.filter(p => p.type === type.id);
+    if (packages.length === 0) continue;
+    const config = {
+      id: type.id,
+      path: type.id
+    };
+    options = [];
+    if (type.isFolder) {
+      config.isFolder = true;
+      for (const pck of packages) {
+        if (pck.options) {
+          options.push(...pck.options.filter(option => options.indexOf(option) === -1));
+        }
+      }
+    } else {
+      const pck = packages[0];
+      if (pck.options) options = [...pck.options];
+    }
+
+    if (options.length) config.options = [...options];
+    result.push(config);
+  }
+  return result;
+};
+
 const generateJSON = () => {
   const packages = getPackages();
   const styles = getSortedList('styles', ['scheme', 'legacy']);
   const scripts = getSortedList('scripts', ['legacy']);
+
+  const concat = {
+    styles: getConcatList(styles),
+    scripts: getConcatList(scripts)
+  };
 
   const usage = {
     styles: getUsage(packages, styles, 'styles'),
@@ -101,6 +135,7 @@ const generateJSON = () => {
   const config = {
     styles: styles,
     scripts: scripts,
+    concat: concat,
     usage: usage
   };
 

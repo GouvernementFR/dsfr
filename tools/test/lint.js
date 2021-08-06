@@ -10,8 +10,11 @@ const lintStyles = async (pck) => {
   if (result.errored) {
     log.error(`${pck.id} style ✖`);
     console.log('\n\r', result.output);
-    process.kill(0);
-  } else log.info(`${pck.id} style ✓`);
+    return false;
+  }
+
+  log.info(`${pck.id} style ✓`);
+  return true;
 };
 
 const lintScripts = async (pck) => {
@@ -30,17 +33,27 @@ const lintScripts = async (pck) => {
   if (resultText) {
     log.error(`${pck.id} style ✖`);
     console.log(resultText);
-    process.kill(0);
-  } else log.info(`${pck.id} script ✓`);
+    return false;
+  }
+
+  log.info(`${pck.id} script ✓`);
+  return true;
 };
 
 const lint = async (packages) => {
   if (!packages) packages = getPackages();
 
+  let success = true;
+  let result;
+
   for (const pck of packages) {
-    await lintStyles(pck);
+    result = await lintStyles(pck);
+    success = success && result;
     await lintScripts(pck);
+    success = success && result;
   }
+
+  if (!success) process.kill(0);
 };
 
 module.exports = { lintStyles, lintScripts, lint };

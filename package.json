@@ -29,6 +29,7 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-virtual": "^2.0.3",
+    "@ronilaukkarinen/stylefmt": "^6.2.1",
     "browser-sync": "^2.26.7",
     "browserslist": "^4.16.1",
     "cross-env": "^7.0.2",
@@ -60,6 +61,8 @@
     "perfectionist": "^2.4.0",
     "postcss": "^8.2.4",
     "postcss-banner": "^4.0.0",
+    "postcss-discard-duplicates": "^5.0.1",
+    "postcss-prettify": "^0.3.4",
     "prettier": "^2.0.5",
     "replace-in-file": "^6.1.0",
     "rollup": "^2.37.1",
@@ -83,5 +86,7 @@
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "postcss-combine-duplicated-selectors": "^10.0.3"
+  }
 }
