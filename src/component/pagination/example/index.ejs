@@ -1,0 +1,16 @@
+<% const sample = getSample(include); %>
+
+<%- sample('élément de navigation icône seule (par défaut)', './samples/modifiers', {}, true); %>
+
+<%- sample('élément de navigation avec label', './samples/modifiers', { hasLabel: true }, true); %>
+
+<%- sample('élément de navigation avec label à partir du breakpoint LG', './samples/modifiers', { hasLgLabel: true }, true); %>
+
+<%- sample('pagination première page', './samples/pagination', {index:0}, true); %>
+
+<%- sample('pagination deuxième page', './samples/pagination', {index:1}, true); %>
+
+<%- sample('pagination dernière page', './samples/pagination', {index:6}, true); %>
+
+
+

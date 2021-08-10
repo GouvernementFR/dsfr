@@ -1,0 +1,85 @@
+<%
+let link = {
+    type: 'link',
+    label: 'accès direct',
+    href:'#'
+}
+
+let sublink = { label: 'Lien de navigation', href:'#' };
+
+let items = [sublink, sublink, sublink, sublink, sublink, sublink];
+
+let menu = {
+    type: 'menu',
+    label: 'Entrée menu',
+    items: items,
+}
+
+
+
+let itemsAct = items.slice();
+itemsAct[3] = { ...sublink, active: true }
+
+let active = {
+    ...menu,
+    active: true,
+    label: 'Entrée menu active',
+    items: itemsAct
+};
+
+let category = {
+    label: 'Nom de catégorie',
+    href: '#',
+    items: items
+}
+
+let mega = {
+    type: 'mega-menu',
+    label: 'Entrée mega menu',
+    close: 'Fermer le menu',
+    leader: {
+        title: 'Titre éditorialisé',
+        text: lorem(),
+        link: {
+            label: 'Voir toute la rubrique',
+            iconPlace:'right',
+            icon: 'arrow-right-line'
+        }
+    },
+    categories: [
+        category,
+        category,
+        { ...category, items: itemsAct },
+        category
+    ]
+}
+
+let mega2 = {
+    ...mega,
+    leader: undefined,
+    categories: [
+        { ...category },
+        { ...category },
+        { ...category, active: true, items: itemsAct },
+        { ...category },
+    ]
+}
+
+let data = {
+    id: locals.id || uniqueId('navigation'),
+    items: locals.min === true ?
+            [link, link, link, link] :
+            [
+                {...menu, collapseId: uniqueId('menu')},
+                {...mega, collapseId: uniqueId('mega-menu')},
+                link,
+                {...active, collapseId: uniqueId('menu') },
+                {...mega, collapseId: uniqueId('mega-menu')},
+                link,
+                {...mega2, collapseId: uniqueId('mega-menu')},
+                {...menu, collapseId: uniqueId('menu')}
+            ]
+}
+%>
+
+<%- include('../../templates/ejs/navigation.ejs', data); %>

@@ -10,7 +10,9 @@ $svg-lightmode-dark: "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http:
 $svg-darkmode-light: "<svg width='80' height='80' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><path d='M0 0h80v80H0z'/><path d='M38 26c0 11.046 8.954 20 20 20 2.23 0 4.376-.365 6.38-1.039C62.174 53.607 54.333 60 45 60c-11.046 0-20-8.954-20-20 0-8.815 5.703-16.298 13.62-18.961A20.024 20.024 0 0038 26z' stroke='#{$blue-france-500}' stroke-width='2' stroke-linejoin='round'/><path fill='#E1000F' d='M14.647 20.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152zM57.647 31.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152zM18.647 60.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152z'/></g></svg>";
 $svg-darkmode-dark: "<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><g fill='none' fill-rule='evenodd'><path d='M0 0h80v80H0z'/><path stroke='#{$blue-france-300}' stroke-linejoin='round' stroke-width='2' d='M38 26c0 11.046 8.954 20 20 20 2.23 0 4.376-.365 6.38-1.039C62.174 53.607 54.333 60 45 60c-11.046 0-20-8.954-20-20 0-8.815 5.703-16.298 13.62-18.961A20.039 20.039 0 0038 26z'/><path fill='#F7BFC3' d='M14.647 20.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15zM57.647 31.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15zM18.647 60.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15z'/></g></svg>";
 */
-:root #{ns(switch-theme)} {
+
+//TODO: renommer en display
+:root #{ns(display)} {
   #{ns(fieldset)} {
     #{ns(radio-group)} {
       &:last-child {

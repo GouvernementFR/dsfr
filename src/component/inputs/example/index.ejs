@@ -1,0 +1,46 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Default input type text', './samples/input-text.ejs', { id:'text-input-text'}, true); %>
+
+<%- sample('Default input type number', './samples/input-number.ejs', { id:'text-input-number'}, true); %>
+
+<%- sample('Default input type search', './samples/input-search.ejs', { id:'text-input-search'}, true); %>
+
+<%- sample('Default input type tel - required field', './samples/input-tel.ejs', { id:'text-input-tel', required:true, error:true}, true); %>
+
+<%- sample('Default input type mail - required field', './samples/input-mail.ejs', { id:'text-input-mail', required:true, error:true }, true); %>
+
+<%- sample('Default input type date - required field', './samples/input-date.ejs', { id:'text-input-date', required:true, error:true }, true); %>
+
+<%- sample('Default input type date - avec icone calendrier', './samples/input-date.ejs', { id:'text-input-calendar', icon: 'calendar-line' }, true); %>
+
+<%- sample('Default input type textarea', './samples/textarea.ejs', { id:'textarea', group:true }, true); %>
+
+<%- sample('Type password', './samples/input-password.ejs', { id:'text-input-password', group: true }, true); %>
+
+<%- sample('Combo Input + bouton', './samples/input-button.ejs', { id:'text-input-button', group: true }, true); %>
+
+<%- sample('Default input with placeholder', './samples/input-text.ejs', { id:'text-input-placeholder', placeholder:'placeholder'}, true); %>
+
+<%- sample('Default input with value', './samples/input-text.ejs', { id:'text-input-value', attributes: {value:'value'}}, true); %>
+
+<%- sample('Default input disabled', './samples/input-text.ejs', { id:'text-input-disabled', disabled:true}, true); %>
+
+<%- sample('With hint', './samples/input-text.ejs', { id:'text-input-hint', hint: true, group:true}, true); %>
+
+<%- sample('With icon', './samples/input-text.ejs', { id:'text-input-icon', hint: true, group:true, icon:'alert-line'}, true); %>
+
+<%- sample('Valid with text', './samples/input-text.ejs', { id:'text-input-valid', valid: true, group:true}, true); %>
+
+<%- sample('Error with text', './samples/input-text.ejs', { id:'text-input-error', error: true, group:true}, true); %>
+
+
+<%- sample('Multiple input group', './samples/input-text.ejs', { id:'text-input-groups1', hint: true, group:true}, true); %>
+
+<%- sample('', './samples/input-text.ejs', { id:'text-input-groups2', error: true, group:true}, true); %>
+
+<%- sample('', './samples/input-text.ejs', { id:'text-input-groups3', valid: true, group:true}, true); %>
+
+<%- sample('', './samples/input-text.ejs', { id:'text-input-groups4', hint: true, error:true, group:true}, true); %>
+
+<%- sample('', './samples/input-text.ejs', { id:'text-input-groups5', hint:true, valid: true, group:true}, true); %>

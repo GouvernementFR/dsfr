@@ -29,8 +29,8 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
         <legend <%= finalities[finality].desc ? `aria-describedby="${finalities[finality].id}-desc"` : '' %> class="<%= prefix %>-consent-service__title"><%- finalities[finality].title %></legend>
       <% } %>
       <div class="<%= prefix %>-consent-service__radios">
-        <%- include('../../../radios/templates/ejs/radio-group', {...finalities[finality].radios[0]} ) %>
-        <%- include('../../../radios/templates/ejs/radio-group', {...finalities[finality].radios[1]} ) %>
+        <%- include('../../../../component/radios/templates/ejs/radio-group', {...finalities[finality].radios[0]} ) %>
+        <%- include('../../../../component/radios/templates/ejs/radio-group', {...finalities[finality].radios[1]} ) %>
       </div>
       <% if (finalities[finality].desc) { %>
         <p id="<%= finalities[finality].id %>-desc" class="<%= prefix %>-consent-service__desc"><%- finalities[finality].desc %></p>
@@ -50,8 +50,8 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
                 <legend class="<%= prefix %>-consent-service__title" <%= (finalities[finality].services[service].desc) ? `aria-decribedby="${finalities[finality].services[service].id}-desc"`: '' %>><%- finalities[finality].services[service].title %></legend>
               <% } %>
               <div class="<%= prefix %>-consent-service__radios <%= prefix %>-fieldset--inline">
-                <%- include('../../../radios/templates/ejs/radio-group', {...finalities[finality].services[service].radios[0]} ) %>
-                <%- include('../../../radios/templates/ejs/radio-group', {...finalities[finality].services[service].radios[1]} ) %>
+                <%- include('../../../../component/radios/templates/ejs/radio-group', {...finalities[finality].services[service].radios[0]} ) %>
+                <%- include('../../../../component/radios/templates/ejs/radio-group', {...finalities[finality].services[service].radios[1]} ) %>
               </div>
               <% if (finalities[finality].services[service].desc) { %>
                 <p id="<%= finalities[finality].services[service].id %>-desc" class="<%= prefix %>-consent-service__desc"><%- finalities[finality].services[service].desc %></p>
@@ -67,6 +67,6 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
   <% } %>
 
   <!-- Bouton de confirmation/fermeture -->
-  <%- include('../../../buttons/templates/ejs/buttons-group.ejs', {classes: [prefix + '-consent-manager__buttons'], size: 'md', inline: 'sm', align:'right', buttons: buttons}); %>
+  <%- include('../../../../component/buttons/templates/ejs/buttons-group.ejs', {classes: [prefix + '-consent-manager__buttons'], size: 'md', inline: 'sm', align:'right', buttons: buttons}); %>
 
 </div>

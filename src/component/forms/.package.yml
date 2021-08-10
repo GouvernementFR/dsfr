@@ -3,10 +3,11 @@ title: Formulaires
 description: Ce package permet de mettre en forme les différents champs d'un formulaire, notamment en ce qui concerne les espacements et texte d'aide et d'erreur.
 doc:
 wrapper: col-8
-styles:
+style:
   - core
+  - scheme
 example:
-  styles:
+  style:
     - checkboxes
     - inputs
     - radios

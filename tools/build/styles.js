@@ -26,29 +26,30 @@ const process = async (css, plugins, options) => {
   if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
 };
 
-const input = (path, filename) => {
-  const filePath = root(`src/${path}/${filename}`);
-  return `@import '${filePath}';\r\n`
+const input = (path, file) => {
+  const filePath = root(`${path}/${file}`);
+  return `@import '${filePath}';\r\n`;
 };
 
-const output = (id, path, filename) => {
-  const append = filename ? `.${filename}` : '';
-  const filePath = root(`.dist/${path}/${id}${append}`);
+const output = (pck, file) => {
+  const append = file ? `.${file}` : '';
+  const filePath = root(`${pck.dist}/${pck.id}${append}`);
   return filePath;
 };
 
-const buildStyles = async (id, path, options, minify, map) => {
+const buildStyles = async (pck, minify, map) => {
   let data = '';
-  if (options && options.length) {
-    options = ['main', ...options];
-    for (const option of options) {
-      await buildStyle(input(path, option), output(id, path, option), minify, map);
-      data += input(path, option);
+  if (pck.style.files.length > 1) {
+    for (const file of pck.style.files) {
+      const src = input(pck.path, file);
+      await buildStyle(src, output(pck, file), minify, map);
+      data += src;
     }
   } else {
-    data += input(path, 'main');
+    data = input(pck.path, 'main');
   }
-  await buildStyle(data, output(id, path), minify, map);
+
+  await buildStyle(data, output(pck), minify, map);
 };
 
 const buildStyle = async (data, dest, minify, map) => {

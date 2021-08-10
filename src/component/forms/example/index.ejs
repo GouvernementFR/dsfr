@@ -1,0 +1,36 @@
+<script>
+  function preventSubmit(e) {
+    e.preventDefault();
+    return false;
+  }
+</script>
+
+<form onsubmit="return preventSubmit(event)">
+
+<% const sample = getSample(include); %>
+
+<%- sample('Ensemble de champs de saisie', '../../inputs/example/samples/inputs', {id:'text'}, true);  %>
+
+<%- sample('Ensemble de boutons radio', '../../radios/example/samples/radios', { id:'radio'}, true);  %>
+
+<%- sample('Ensemble de cases à cocher', '../../checkboxes/example/samples/checkboxes', { id:'checkbox'}, true);  %>
+
+<%- sample('Ensemble de boutons radio, en ligne', '../../radios/example/samples/radios', { id:'radio-inline', inline:true}, true);  %>
+
+<%- sample('Ensemble de cases à cocher, en ligne', '../../checkboxes/example/samples/checkboxes', { id:'checkbox-inline', inline:true}, true);  %>
+
+<%- sample('Ensemble de boutons radio avec erreur', '../../radios/example/samples/radios', { id:'radio-error', error:true, hint:true}, true);  %>
+
+<%- sample('Ensemble de cases à cocher, avec erreur', '../../checkboxes/example/samples/checkboxes', { id:'checkbox-error', error:true, hint:true}, true);  %>
+
+<%- sample('Ensemble de champs de saisie désactivés', '../../inputs/example/samples/inputs', { id:'text-disabled', disabled:true, hint:true}, true);  %>
+
+<%- sample('Ensemble de boutons radio désactivés', '../../radios/example/samples/radios', { id:'radio-disabled', disabled:true, hint:true}, true);  %>
+
+<%- sample('Ensemble de cases à cocher désactivés', '../../checkboxes/example/samples/checkboxes', { id:'checkbox-disabled', disabled:true, hint:true}, true);  %>
+
+<%- sample('Bouton type submit', '../../buttons/example/samples/button-default', { type:'submit', label: 'Envoyer', btnTitle: 'Envoyer le formulaire'}, true);  %>
+
+<%- sample('Input type submit', '../../buttons/example/samples/button-default', { tag: 'input', label: ' ', btnTitle: 'Envoyer le formulaire', type:'submit', attributes: { ['value']:'Envoyer', ['title']: 'Envoyer le formulaire'} }, true);  %>
+
+</form>

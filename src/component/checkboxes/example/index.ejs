@@ -1,0 +1,33 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Case à cocher seule', './samples/checkbox.ejs', {id:'checkbox'}, true); %>
+
+<%- sample('Case à cocher avec texte d‘aide', './samples/checkbox.ejs', {id:'checkbox-hint', hint:true}, true); %>
+
+<%- sample('Case à cocher seule, validée', './samples/checkbox.ejs', {id:'checkbox-valid', valid:true}, true); %>
+
+<%- sample('Case à cocher seule avec erreur', './samples/checkbox.ejs', {id:'checkbox-error', error:true}, true); %>
+
+<%- sample('Ensemble de cases à cocher', './samples/checkboxes.ejs', {id:'checkboxes'}, true); %>
+
+<%- sample('Ensemble de cases à cocher, petite taille', './samples/checkboxes.ejs', {id:'checkboxes-small', size:'sm'}, true); %>
+
+<%- sample('Ensemble de cases à cocher désactivées', './samples/checkboxes.ejs', {id:'checkboxes-disabled', disabled:true}, true); %>
+
+<%- sample('Ensemble de cases à cocher en ligne', './samples/checkboxes.ejs', {id:'checkboxes-inline', inline: true}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec texte d‘aide', './samples/checkboxes.ejs', {id:'checkboxes-hint', hint: true}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec erreur', './samples/checkboxes.ejs', {id:'checkboxes-error', error: true}, true); %>
+
+<%- sample('Ensemble de cases à cocher validées', './samples/checkboxes.ejs', {id:'checkboxes-valid', valid: true,}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec erreur, en ligne', './samples/checkboxes.ejs', {id:'checkboxes-error-inline', error: true, inline:true}, true); %>
+
+<%- sample('Ensemble de cases à cocher validées, en ligne', './samples/checkboxes.ejs', {id:'checkboxes-valid-inline', valid: true, inline:true}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique', './samples/checkboxes.ejs', {id:'checkboxes-hint-element', element: { hint:'Texte de description additionnel' }}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique,  petite taille', './samples/checkboxes.ejs', {id:'checkboxes-hint-el-sm', size: 'sm', element: { hint:'Texte de description additionnel' }}, true); %>
+
+

@@ -1,0 +1,23 @@
+<%
+
+const data = { tabs: [] }
+
+for (let i = 0; i < 2; i++) {
+    const subdata = { tabs: [] };
+
+    for (let j = 0; j < 3 - i; j++) {
+      subdata.tabs[j] = {
+        content: include('./tabs-default', { tabs:2 + j, repeat: (Math.random() * 3) | 0}),
+        label: `Nested Tab s${j}`
+        }
+    }
+
+    data.tabs[i] = {
+      content: include('./tabs-default', subdata),
+      label: `Main Tab ${i}`
+    }
+}
+
+%>
+
+<%- include('./tabs-default', data); %>

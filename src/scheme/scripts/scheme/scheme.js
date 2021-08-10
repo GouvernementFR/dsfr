@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { Schemes } from './schemes.js';
+import { SchemeValues } from './scheme-values.js';
 import { SchemeAttributes } from './scheme-attributes.js';
 import { SchemeThemes } from './scheme-themes.js';
 import { SchemeEmissions } from './scheme-emissions.js';
@@ -25,24 +25,24 @@ class Scheme extends api.core.Instance {
     const schemeAttr = this.getAttribute(SchemeAttributes.SCHEME);
 
     switch (scheme) {
-      case Schemes.DARK:
-      case Schemes.LIGHT:
-      case Schemes.SYSTEM:
+      case SchemeValues.DARK:
+      case SchemeValues.LIGHT:
+      case SchemeValues.SYSTEM:
         this.scheme = scheme;
         break;
 
       default:
         switch (schemeAttr) {
-          case Schemes.DARK:
-            this.scheme = Schemes.DARK;
+          case SchemeValues.DARK:
+            this.scheme = SchemeValues.DARK;
             break;
 
-          case Schemes.LIGHT:
-            this.scheme = Schemes.LIGHT;
+          case SchemeValues.LIGHT:
+            this.scheme = SchemeValues.LIGHT;
             break;
 
           default:
-            this.scheme = Schemes.SYSTEM;
+            this.scheme = SchemeValues.SYSTEM;
         }
     }
 
@@ -90,22 +90,22 @@ class Scheme extends api.core.Instance {
     if (this._scheme === value) return;
     this._scheme = value;
     switch (value) {
-      case Schemes.SYSTEM:
+      case SchemeValues.SYSTEM:
         this.listenPreferences();
         break;
 
-      case Schemes.DARK:
+      case SchemeValues.DARK:
         this.unlistenPreferences();
         this.theme = SchemeThemes.DARK;
         break;
 
-      case Schemes.LIGHT:
+      case SchemeValues.LIGHT:
         this.unlistenPreferences();
         this.theme = SchemeThemes.LIGHT;
         break;
 
       default:
-        this.scheme = Schemes.SYSTEM;
+        this.scheme = SchemeValues.SYSTEM;
     }
 
     this.descend(SchemeEmissions.SCHEME, value);

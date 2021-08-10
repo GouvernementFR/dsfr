@@ -1,7 +1,7 @@
 import api from '../../api.js';
 import { SchemeEmissions } from './scheme-emissions.js';
 import { SchemeSelectors } from './scheme-selectors.js';
-import { Schemes } from './schemes.js';
+import { Schemes } from './scheme-values.js';
 
 class SwitchTheme extends api.core.Instance {
   static get instanceClassName () {

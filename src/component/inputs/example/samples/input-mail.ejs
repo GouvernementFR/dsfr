@@ -1,0 +1,12 @@
+<%
+    let attributes = locals.attributes || {};
+    attributes.pattern = '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$';
+    attributes['aria-label'] = 'pattern: xxx';
+
+let data = {
+    type:'mail',
+    attributes: attributes
+}
+%>
+
+<%- include('./input-text', data); %><!-- aria-label mandatory to explain patter -->

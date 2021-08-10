@@ -1,6 +1,5 @@
 import api from './index.js';
 
-api.register(api.schemes.SchemesSelectors.SCHEME, api.schemes.Scheme);
-api.register(api.schemes.SchemesSelectors.SWITCH_THEME, api.schemes.SwitchTheme);
+api.register(api.scheme.SchemeSelectors.SCHEME, api.scheme.Scheme);
 
 export default api;

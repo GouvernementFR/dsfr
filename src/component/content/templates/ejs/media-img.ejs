@@ -7,7 +7,7 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <div class="<%= prefix %>-content-media__img" >
-    <%- imgContent(img, alt) %>
+    <%- include('../../../../core/templates/ejs/medias/responsive-img.ejs', locals.img); %>
 </div>
 <% if (locals.caption != undefined) { %>
     <figcaption class="<%= prefix %>-content-media__caption" ><%= caption %></figcaption>

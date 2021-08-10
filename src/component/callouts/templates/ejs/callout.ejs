@@ -26,7 +26,7 @@
     <h4 class="<%= prefix%>-callout__title"><%= title %></h4>
   <% } %>
 
-  <%- include('../../../core/templates/ejs/typography/paragraph', {content: text, classes: [`${prefix}-callout__text`]}) %>
+  <%- include('../../../../core/templates/ejs/typography/paragraph', {content: text, classes: [`${prefix}-callout__text`]}) %>
 
   <% if(locals.button !== undefined) {
         if (button.icon === undefined) button.icon = undefined;

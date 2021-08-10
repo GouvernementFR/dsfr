@@ -7,6 +7,8 @@ doc:
   - url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935129/Bouton+radio+riche+-+radio+button+extended
     title: Bouton radio riche
 wrapper: col-8
-styles:
+style:
   - core
+  - legacy
+  - scheme
   - forms

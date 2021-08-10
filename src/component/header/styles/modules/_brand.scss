@@ -56,7 +56,6 @@
   @include size(100%);
 
   @include respond-from(lg) {
-    box-shadow: none;
     width: auto;
   }
 

@@ -48,7 +48,7 @@
     </div>
     <% if (locals.img !== undefined) { %>
         <div class="<%= prefix %>-tile__img">
-            <%- imgContent(img, alt) %>
+            <%- include('../../../../core/templates/ejs/medias/responsive-img.ejs', locals.img); %>
         </div>
     <% } %>
 </div>

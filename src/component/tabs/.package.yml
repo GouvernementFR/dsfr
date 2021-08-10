@@ -3,10 +3,11 @@ title: Onglets
 description: Le composant onglet permet aux utilisateurs de naviguer dans différentes sections de contenu au sein d’une même page.
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/367985267/Onglets+-+Tabs
 wrapper: col-8
-styles:
+style:
   - core
-scripts:
+  - scheme
+script:
   - core
 follow:
-  styles:
+  style:
     - links

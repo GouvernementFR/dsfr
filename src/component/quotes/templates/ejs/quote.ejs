@@ -50,9 +50,9 @@
       </ul>
     <% } %>
 
-    <% if (image && image.img) { %>
+    <% if (image) { %>
       <div class="<%= prefix %>-quote__image">
-        <%- imgContent(image.img, image.alt) %>
+          <%- include('../../../../core/templates/ejs/medias/responsive-img.ejs', image); %>
       </div>
     <% } %>
   </figcaption>

@@ -2,31 +2,6 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const root = require('../utilities/root');
 const log = require('./log');
-const path = require('path');
-const dir = root('src');
-const TYPES = require('../utilities/types');
-
-const getIdPathObject = (id, type) => {
-  return { id: id, path: type.isFolder ? `${type.id}/${id}` : id };
-};
-
-const getPathsFromType = (type) => {
-  let ids;
-  if (type.isFolder) {
-    const p = `${dir}/${type.id}`;
-    ids = fs.readdirSync(p).filter((pck) => {
-      const ls = fs.lstatSync(path.join(p, pck));
-      return ls.isDirectory();
-    });
-  } else ids = [type.id];
-  return ids.map(id => getIdPathObject(id, type));
-};
-
-const getPackages = () => {
-  const list = [];
-  for (const type of TYPES.LIST) list.push(...getPathsFromType(type));
-  return list;
-};
 
 const getPackageYML = (id) => {
   try {
@@ -49,15 +24,17 @@ const getConfigJSON = () => {
   }
 };
 
-const getAllPackagesYML = () => {
-  const packages = getPackages().map((id) => getPackageYML(id));
-  packages.sort((a, b) => {
-    if (a.title < b.title) { return -1; }
-    if (a.title > b.title) { return 1; }
-    return 0;
-  });
-
-  return packages;
+const flatten = (element) => {
+  const flat = [element];
+  if (!element.children) return flat;
+  for (const child of element.children) flat.push(...flatten(child));
+  return flat;
 };
 
-module.exports = { getPackages, getPackageYML, getConfigJSON, getAllPackagesYML };
+const getPackages = () => {
+  const json = getConfigJSON();
+  const flat = flatten(json);
+  return flat;
+};
+
+module.exports = { flatten, getPackageYML, getConfigJSON, getPackages };

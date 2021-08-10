@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= title %> - Design System</title>
 
-    <%- include(root + 'src/core/templates/ejs/favicons/favicons.ejs', {path: '../../dist/favicons/'}); %>
+    <%- include(root + 'src/core/templates/ejs/favicons/favicons.ejs', {path: `${'../'.repeat(path.split('/').length)}.dist/favicons/`}); %>
 
-    <%- include(root + '/examples/styles', { required: ['core', 'schemes', 'links', 'accordions', 'forms', 'checkboxes', 'utilities', 'buttons', 'legacy'] }); %>
+    <%- include(root + 'tools/examples/style'); %>
 
     <style>
-     <%- include(root + 'examples/styles.css.ejs'); %>
+     <%- include(root + 'tools/examples/style.css.ejs'); %>
     </style>
 
     <script>
@@ -26,13 +26,13 @@
 </head>
 <body class="<%= prefix %>-mb-12w" style="margin:0; padding:0;">
 
-    <%- include(root + 'examples/controls'); %>
+    <%- include(root + 'tools/examples/controls'); %>
 
-    <%- include(root + 'examples/wrapper'); %>
+    <%- include(root + 'tools/examples/wrapper'); %>
 
-    <%- include(root + 'examples/scripts', { required: ['core', 'schemes', 'accordions']}) %>
+    <%- include(root + 'tools/examples/script') %>
     <script>
-        <%- include(root + 'examples/script.js.ejs'); %>
+        <%- include(root + 'tools/examples/script.js.ejs'); %>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>

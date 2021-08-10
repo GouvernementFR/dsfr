@@ -1,0 +1,18 @@
+<div class="<%= prefix %>-container" >
+    <ul class="<%= prefix %>-col-12">
+        <%
+        for (const pck of children) {
+        %>
+        <li class="<%= prefix %>-mb-1w">
+            <a href='./<%= pck.id %>'><%= pck.title %> (<%= pck.id %>)</a>
+        </li>
+        <% } %>
+    </ul>
+</div>
+
+<%
+for (const pck of children) {
+%>
+<%- //include('element', pck); %>
+<% } %>
+

@@ -2,10 +2,10 @@ id: utilities
 title: Outils
 description: Ce package regroupe des classes utilitaires CSS et classes javascript utilisées par les autres packages du Design System de l'Etat.
 wrapper: col-8
-styles:
+style:
   - core
 example:
-  styles:
+  style:
     - table
-  scripts:
+  script:
     - table

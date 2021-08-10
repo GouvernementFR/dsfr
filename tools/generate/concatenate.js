@@ -1,83 +1,58 @@
 const root = require('../utilities/root');
 const { getConfigJSON } = require('../utilities/config');
 const { createFile } = require('../utilities/file');
-const TYPES = require('../utilities/types');
 
-const generateStyle = (paths, dest, type, filename = '') => {
-  const name = `${type.toUpperCase()} ${filename.toUpperCase()}`;
-  let content = `/* ------------------------------------ *\\
-  ${name}
-\\* ------------------------------------ */
+const generateStyle = (pck, file) => {
+  const name = `${pck.id.toUpperCase()} ${file.toUpperCase()}`;
+  let content = `/* ${name} */
 
 `;
 
-  for (const path of paths) {
-    content += `@import '${path}/${filename}';\n`;
+  const children = pck.children.filter(child => child.style && child.style.files.indexOf(file) > -1);
+
+  children.sort((a, b) => a.style.level - b.style.level);
+
+  const ascendance = `${pck.path}/`;
+
+  for (const child of children) {
+    content += `@import '${child.path.replace(ascendance, '')}/${file}';\n`;
   }
 
-  createFile(dest, content);
+  createFile(root(`${pck.path}/${file}.scss`), content);
 };
 
-const generateScript = (paths, dest, type, filename = '') => {
+const generateScript = (pck, file) => {
+  let content;
 
-  let content = 'import api from \'./api.js\';\n';
-  for (const path of paths) {
-    content += `import './${path}/${filename}.js';\n`;
+
+  const children = pck.children.filter(child => child.script && child.script.files.indexOf(file) > -1);
+
+  children.sort((a, b) => a.script.level - b.script.level);
+
+  if (file === 'main' && children.some(pck => pck.id === 'core')) {
+    const core = children.filter(pck => pck.id === 'core')[0];
+    children.splice(children.indexOf(core), 1);
+    content = `import api from './${core.path.replace(pck.path + '/', '')}/main.js';\n`;
+  } else content = 'import api from \'./api.js\';\n';
+
+  for (const child of children) {
+    if (child.script && child.script.files.indexOf(file) > -1) content += `import './${child.path.replace(pck.path + '/', '')}/${file}.js';\n`;
   }
 
   content += 'export default api;\n';
-  createFile(dest, content);
+  createFile(root(`${pck.path}/${file}.js`), content);
 };
 
-const getPaths = (packages) => {
-  const paths = { main: [] };
-  for (const pck of packages) {
-    const path = pck.id;
-    paths.main.push(path);
-    if (pck.options) {
-      for (const option of pck.options) {
-        if (!paths[option]) paths[option] = [];
-        paths[option].push(path);
-      }
-    }
-  }
-  return paths;
-};
-
-const generateFiles = (id, paths, dest, ext, filetype) => {
-  const generate = filetype === 'style' ? generateStyle : generateScript;
-
-  for (const kind in paths) {
-    generate(paths[kind], root(`${dest}/${kind}.${ext}`), id, kind);
-  }
-};
-
-const iterateTypes = (concats, list, ext, filetype) => {
-  const global = { main: [] };
-  let packages, paths;
-  for (const concat of concats) {
-    packages = list.filter(p => p.type === concat.id);
-    if (concat.isFolder) {
-      paths = getPaths(packages);
-      generateFiles(concat.id, paths, `src/${concat.path}`, ext, filetype);
-    }
-
-    global.main.push(concat.path);
-    if (concat.options) {
-      for (const option of concat.options) {
-        if (!global[option]) global[option] = [];
-        global[option].push(concat.path);
-      }
-    }
-  }
-  generateFiles('dsfr', global, 'src', ext, filetype);
+const crawl = (pck) => {
+  if (pck.type !== 'folder') return;
+  pck.children.forEach(child => crawl(child));
+  if (pck.style) pck.style.files.forEach(file => generateStyle(pck, file));
+  if (pck.script) pck.script.files.forEach(file => generateScript(pck, file));
 };
 
 const concatenate = () => {
   const config = getConfigJSON();
-
-  iterateTypes(config.concat.styles, config.styles, 'scss', 'style');
-  iterateTypes(config.concat.scripts, config.scripts, 'js', 'script');
+  crawl(config);
 };
 
 module.exports = { concatenate };

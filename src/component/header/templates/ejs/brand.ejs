@@ -53,7 +53,7 @@
         <% if (locals.operator !== undefined) { %>
             <div class="<%= prefix %>-header__operator">
                 <% if (position === 'operator') { %><%- link %><% } %>
-                <%- imgContent(operator.img, operator.alt, [], operator.style) %>
+                <%- include('../../../../core/templates/ejs/medias/responsive-img.ejs', locals.operator); %>
                 <% if (position === 'operator') { %><%- '</a>' %><% } %>
             </div>
         <% } %>

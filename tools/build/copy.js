@@ -1,6 +1,6 @@
 const { copyDir, copyFile } = require('../utilities/file');
 const root = require('../utilities/root');
-const { getPackages } = require('../utilities/config');
+// const { getPackages } = require('../utilities/config');
 
 // const copyDirs = (src, dest, dirs, ext, removeOrphans) => {
 //   for (const dir of dirs) copyDir(`${src}${dir}`, `${dest}${dir}`, ext, removeOrphans);

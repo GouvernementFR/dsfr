@@ -1,0 +1,19 @@
+<% if (locals.title !== undefined && locals.title.length) { %>
+    <div class="<%= prefix %>-container" >
+        <h4 class="<%= prefix %>-h4"><%= title %></h4>
+    </div>
+<% } %>
+<div class="<%= prefix %>-mb-6v" >
+    <div style="position:relative" >
+        <div class="<%= prefix %>-container" >
+            <%- component %>
+        </div>
+    </div>
+</div>
+<% if (locals.snippet !== undefined) { %>
+    <div class="<%= prefix %>-mb-12v" >
+        <div class="<%= prefix %>-container" >
+            <%- snippet %>
+        </div>
+    </div>
+<% } %>

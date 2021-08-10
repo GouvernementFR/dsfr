@@ -1,10 +1,11 @@
 const root = require('../utilities/root');
 const ejs = require('ejs');
 const fs = require('fs');
+const global = require('../../package.json');
 const { createFile } = require('../utilities/file');
-const { getPackages, getPackageYML, getPublicPackage, getAllPackagesYML } = require('../utilities/config');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
+const { getPackages } = require('../utilities/config');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -20,19 +21,75 @@ function uniqueId (module) {
   return `${module}-${count}`;
 }
 
-const buildExample = (id, dest) => {
+const buildExample = (pck) => {
   const pagePath = root('tools/examples/example.ejs');
   const page = fs.readFileSync(pagePath, {
     encoding: 'utf8',
     flag: 'r'
   });
 
-  const config = getPublicPackage().config;
-  const yml = getPackageYML(id);
+  const packages = getPackages();
+
+  const files = {
+    style: {
+      main: [],
+      scheme: [],
+      legacy: []
+    },
+    script: {
+      module: [],
+      nomodule: []
+    }
+  };
+
+  const up = pck.path.split('/').map(s => '../').join('');
+
+  const requiredStyle = ['core', 'scheme', 'links', 'accordions', 'forms', 'checkboxes', 'utilities', 'buttons', 'legacy'];
+  const exampleStyle = pck.example.style.map(id => packages.filter(i => i.id === id)[0].usage.style).flat();
+  const neededStyle = [...pck.usage.style, ...requiredStyle, ...exampleStyle].filter((id, index, array) => array.indexOf(id) === index);
+
+  const replaceStyle = neededStyle.map(id => packages.filter(p => p.id === id)[0].replace.style).flat();
+  const style = neededStyle.filter((id, index, array) => replaceStyle.indexOf(id) === -1);
+
+  style.sort((a, b) => {
+    const pa = packages.filter(p => p.id === a)[0];
+    const pb = packages.filter(p => p.id === b)[0];
+    return pa.style.level - pb.style.level;
+  });
+
+  style.forEach(id => {
+    const p = packages.filter(i => i.id === id)[0];
+    const path = up + p.dist;
+    if (p.style.files.length > 1) {
+      p.style.files.forEach(f => files.style[f].push(`${path}/${p.id}.${f}.css`));
+    } else {
+      files.style.main.push(`${path}/${p.id}.css`);
+    }
+  });
+
+  const requiredScript = ['core', 'scheme', 'accordions'];
+  const exampleScript = pck.example.script.map(id => packages.filter(i => i.id === id)[0].usage.script).flat();
+  const neededScript = [...pck.usage.script, ...requiredScript, ...exampleScript].filter((id, index, array) => array.indexOf(id) === index);
+  const replaceScript = neededScript.map(id => packages.filter(p => p.id === id)[0].replace.script).flat();
+  const script = neededScript.filter((id, index, array) => replaceScript.indexOf(id) === -1);
+  script.sort((a, b) => {
+    const pa = packages.filter(p => p.id === a)[0];
+    const pb = packages.filter(p => p.id === b)[0];
+    return pa.script.level - pb.script.level;
+  });
+
+  script.forEach(id => {
+    const p = packages.filter(i => i.id === id)[0];
+    const path = up + p.dist;
+    files.script.module.push(`${path}/${p.id}.module.js`);
+    files.script.nomodule.push(`${path}/${p.id}.nomodule.js`);
+  });
 
   const options = {
-    ...yml,
-    ...config,
+    ...global.config,
+    ...pck,
+    files: files,
+    depth: pck.path.split('/').length - 1,
     root: root.toString(),
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId
@@ -41,58 +98,9 @@ const buildExample = (id, dest) => {
   const html = ejs.render(page, options);
   const beautified = beautify(html, beautyOpts);
 
-  createFile(`${dest}/${id}/index.html`, beautified, true);
-  log(38, `${id}/index.html`);
+  createFile(pck.example.file, beautified, true);
+  log(38, pck.example.file);
 };
 
-const buildList = (dest) => {
-  const indexPath = root('tools/examples/index.ejs');
-  const index = fs.readFileSync(indexPath, {
-    encoding: 'utf8',
-    flag: 'r'
-  });
 
-  const config = getPublicPackage().config;
-  config.packages = getAllPackagesYML();
-
-  const options = {
-    ...config,
-    root: root.toString(),
-    beautify: (html) => { return beautify(html, beautyOpts); },
-    uniqueId: uniqueId
-  };
-
-  const html = ejs.render(index, options);
-  const beautified = beautify(html, beautyOpts);
-
-  createFile(`${dest}/index.html`, beautified, true);
-  log(38, 'index.html');
-};
-
-const buildMain = (dest) => {
-  const indexPath = root('tools/examples/main.ejs');
-  const index = fs.readFileSync(indexPath, {
-    encoding: 'utf8',
-    flag: 'r'
-  });
-
-  const config = getPublicPackage().config;
-  config.packages = getAllPackagesYML();
-
-  const options = {
-    ...config,
-    root: root.toString(),
-    beautify: (html) => { return beautify(html, beautyOpts); },
-    noSnippet: true,
-    noHeading: true,
-    uniqueId: uniqueId
-  };
-
-  const html = ejs.render(index, options);
-  const beautified = beautify(html, beautyOpts);
-
-  createFile(`${dest}/${config.namespace}/index.html`, beautified, true);
-  log(38, `${config.namespace}/index.html`);
-};
-
-module.exports = { buildExample, buildList, buildMain };
+module.exports = { buildExample };

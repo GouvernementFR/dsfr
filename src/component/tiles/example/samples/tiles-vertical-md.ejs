@@ -1,0 +1,9 @@
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+  <%
+  for (let j = 0; j < 4; j++) {
+  %>
+    <div class="<%= prefix %>-col-12 %> <%= prefix %>-col-md-4 <%= prefix %>-col-lg-3">
+      <%- include('./tile-vertical-md'); %>
+    </div>
+  <% } %>
+</div>

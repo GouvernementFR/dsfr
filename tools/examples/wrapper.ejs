@@ -1,7 +1,4 @@
 <%
-
-const dir = root + 'src/' + id + '/example/';
-
 let sampling = false;
 
 function getSample (include) {
@@ -30,10 +27,10 @@ function getSample (include) {
             content: '<pre class=" language-html"><code>' + html + '</code></pre>'
         };
 
-        snippet = include(root + 'src/accordions/templates/ejs/accordion', accordion);
+        snippet = include(root + 'src/component/accordions/templates/ejs/accordion', accordion);
     }
 
-    if (layout === undefined) layout = root + 'examples/layout';
+    if (layout === undefined) layout = root + 'tools/examples/layout';
     if (layoutData === undefined) layoutData = {};
 
 
@@ -57,41 +54,28 @@ const lorem = (insert, length) => {
 
 locals.lorem = lorem;
 
-locals.imgAltText = 'texte alternatif de l’image';
-
 locals.contentPlaceholder = (text) => {
+  if (text === 'alt') text = 'texte alternatif de l’image';
   return `[À MODIFIER - ${text}]`;
 };
 
-const imgContent = (src, alt, classes=[], style) => {
-  const resp = `${prefix}-responsive-img`;
-  if (classes.indexOf(resp) === -1) classes.push(resp);
-  let img = '<img ';
-  img += `src="${src || '../img/placeholder.16x9.png'}" `;
-  if (classes.length > 0) img += `class="${classes.join(' ')}" `;
-  if (style) img += `style="${style}" `;
+locals.imgAltText = 'texte alternatif de l’image';
 
-  let comment;
-  if (alt) {
-    img += `alt="${locals.contentPlaceholder(locals.imgAltText)}" `;
-    comment = '<!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->';
-  } else {
-    img += 'alt="" ';
-    comment = '<!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->';
-  }
-
-  img += '/>\n' + comment;
-
-  return img;
+const imgData = (src, alt, style) => {
+  return {
+      src: '../'.repeat(locals.depth || 0) + (src ? src : 'img/placeholder.16x9.png'),
+      alt: alt ? locals.contentPlaceholder(locals.imgAltText) : null,
+      style: style
+  };
 }
 
-locals.imgContent = imgContent;
+locals.imgData = imgData;
 
 const randomContent = (id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;
   content += `<div><h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
-  if (Math.random() < .4) content += imgContent();
+  if (Math.random() < .4) content += include(root + 'src/core/templates/ejs/medias/responsive-img.ejs', imgData());
   for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
   content += '<ul>';
   for (let i = Math.random() * 2 + 1; i > 0; i--) {
@@ -110,35 +94,13 @@ const randomContent = (id) => {
 
 locals.randomContent = randomContent;
 
-
-
 if (locals.prepend === true) { %>
-<%- include(root + '/src/' + id + '/example/prepend') %>
+<%- include(`${root}/${path}/example/prepend.ejs`) %>
 <% } %>
 
 <% if (!locals.noHeading) { %>
 <%- include('heading'); %>
 <% } %>
 
-<%
-const path = dir + 'index';
+<%- include(`${root}/tools/examples/element.ejs`) %>
 
-const data = {id:undefined};
-
-if (locals.wrapper === undefined) {
-%>
-    <%- include(path, data); %>
-<% } else if (wrapper === 'col-8') {
-%>
-    <div class="<%= prefix %>-container">
-        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
-            <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
-                <%- include(path, data); %>
-            </div>
-        </div>
-    </div>
-<% } else if (wrapper === 'container') { %>
-    <div class="<%= prefix %>-container">
-        <%- include(path, data); %>
-    </div>
-<% } %>

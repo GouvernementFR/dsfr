@@ -1,0 +1,14 @@
+<%
+const sample = getSample(include);
+let title = 'Titre mise en avant';
+let buttonTpl = '../../../buttons/example/samples/button-default';
+let icon = 'information-line';
+%>
+
+<%- sample('Mise en avant avec texte seul', './samples/callout-default', {}, true); %>
+
+<%- sample('Mise en avant avec titre et texte', './samples/callout-default', {title:title}, true); %>
+
+<%- sample('Mise en avant avec titre, bouton et texte', './samples/callout-default', {title:title, buttonTpl:buttonTpl}, true); %>
+
+<%- sample('Mise en avant avec titre, bouton, icône et texte', './samples/callout-default', {title:title, buttonTpl:buttonTpl, icon: icon}, true); %>

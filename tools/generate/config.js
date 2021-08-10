@@ -2,142 +2,179 @@ const generateCore = require('./core');
 const { generateIcons } = require('./icons');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
-const { getPackages, getPackageYML } = require('../utilities/config');
 const fs = require('fs');
-const TYPES = require('../utilities/types');
+const yaml = require('js-yaml');
+const { flatten } = require('../utilities/config');
 
-const EXTENSIONS = {
-  styles: 'scss',
-  scripts: 'js'
-};
+const analyse = (id, path, ascendants = []) => {
+  const absolute = root(path);
+  const config = {
+    path: path,
+    ascendants: ascendants
+  };
 
-const getDependencies = (list, type, follow) => {
-  const dependencies = {};
-  for (const pck of list) {
-    const yml = getPackageYML(pck);
-    const d = yml[type];
-    const f = follow && yml.follow && yml.follow[type] ? yml.follow[type] : [];
-    const dps = Array.isArray(d) ? d : typeof d === 'string' ? [d] : [];
-    dps.push.apply(dps, Array.isArray(f) ? f : typeof f === 'string' ? [f] : []);
-    dps.forEach((id) => { if (!list.some(p => p.id === id)) throw new Error(`Error in ${type} dependencies of package ${pck.id}: ${id} doesn't exist`); });
-    dependencies[pck.id] = dps;
-  }
-  return dependencies;
-};
+  const replace = {
+    style: [],
+    script: []
+  };
 
-const getSortedList = (type, options) => {
-  const packages = getPackages();
-  const levels = {};
+  let files, type, children;
 
-  const list = [];
-  const ext = EXTENSIONS[type];
-  for (const pck of packages) {
-    const type = pck.path.split('/')[0];
-    if (TYPES.LIST.every(t => t.id !== type)) continue;
-    pck.type = type;
-    for (const option of options) {
-      if (fs.existsSync(root(`src/${pck.path}/${option}.${ext}`))) {
-        if (!pck.options) pck.options = [];
-        pck.options.push(option);
-      }
+  if (fs.existsSync(`${absolute}/.package.yml`)) {
+    type = 'package';
+
+    if (fs.existsSync(`${absolute}/main.scss`)) {
+      files = ['main'];
+      files.push(...['scheme', 'legacy'].filter(file => fs.existsSync(`${absolute}/${file}.scss`)));
+      config.style = { level: -1, files: files };
     }
-    if (fs.existsSync(root(`src/${pck.path}/main.${ext}`))) list.push(pck);
-    levels[pck.id] = -1;
+
+    if (fs.existsSync(`${absolute}/main.js`)) {
+      files = ['main'];
+      files.push(...['legacy'].filter(file => fs.existsSync(`${absolute}/${file}.js`)));
+      config.script = { level: -1, files: files };
+    }
+  } else if (fs.existsSync(`${absolute}/.folder.yml`)) {
+    type = 'folder';
+    children = parse(path, [...ascendants, id]);
+
+    if (children.some(child => child.style)) {
+      files = ['main'];
+      files.push(...['scheme', 'legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
+      config.style = { level: -1, files: files };
+      replace.style = [...children.map(child => child.replace.style).flat(), ...children.filter(child => child.style).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
+    }
+
+    if (children.some(child => child.script)) {
+      files = ['main'];
+      files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
+      config.script = { level: -1, files: files };
+      replace.script = [...children.map(child => child.replace.script).flat(), ...children.filter(child => child.script).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
+    }
+  } else return null;
+
+  config.type = type;
+  const fileContents = fs.readFileSync(`${absolute}/.${type}.yml`, 'utf8');
+  const data = yaml.load(fileContents);
+  config.id = data.id;
+  config.title = data.title || '';
+  if (data.order) config.order = data.order;
+  config.description = data.description || '';
+  config.doc = data.doc;
+  if (data.wrapper) config.wrapper = data.wrapper;
+  const example = data.example || {};
+  if (!example.style) example.style = [];
+  if (!example.script) example.script = [];
+  config.example = example;
+  const dependencies = {
+    style: [],
+    script: []
+  };
+
+  if (data.style) dependencies.style.push(...data.style);
+  if (data.follow && data.follow.style) dependencies.style.push(...data.follow.style);
+  if (children) dependencies.style.push(...children.map(child => child.dependencies.style).flat().filter((id, index, array) => array.indexOf(id) === index && replace.style.indexOf(id) === -1));
+  if (data.script) dependencies.script.push(...data.script);
+  if (data.follow && data.follow.script) dependencies.script.push(...data.follow.script);
+  if (children) dependencies.script.push(...children.map(child => child.dependencies.script).flat().filter((id, index, array) => array.indexOf(id) === index && replace.script.indexOf(id) === -1));
+
+  config.dependencies = dependencies;
+  config.replace = replace;
+  config.dist = data.dist ? data.dist : config.path.replace('src', '.dist');
+  config.example.file = `${config.path.replace('src', '.example')}/index.html`;
+
+  if (children) config.children = children;
+
+  return config;
+};
+
+const parse = (path = '', ascendants = []) => {
+  const absolute = root(path);
+  const ids = fs.readdirSync(absolute).filter((fd) => fs.lstatSync(`${absolute}/${fd}`).isDirectory());
+  const packages = ids.map(id => analyse(id, `${path}/${id}`, ascendants)).filter(pck => pck);
+  return packages;
+};
+
+const getDeepDependencies = (id, packages, type) => {
+  const pck = packages.filter(p => p.id === id)[0];
+  const dps = pck.dependencies ? pck.dependencies[type] || [] : [];
+  const deeps = dps.map(d => getDeepDependencies(d, packages, type)).flat();
+  if (pck[type]) deeps.push(id);
+  return deeps;
+};
+
+const use = (packages, type) => {
+  for (const pck of packages) {
+    if (!pck.usage) pck.usage = {};
+    const dps = getDeepDependencies(pck.id, packages, type).filter((id, index, array) => array.indexOf(id) === index);
+    dps.sort((a, b) => {
+      const pa = packages.filter(p => p.id === a)[0];
+      const pb = packages.filter(p => p.id === b)[0];
+      return pa[type].level - pb[type].level;
+    });
+    pck.usage[type] = dps;
   }
+};
 
-  const dependencies = getDependencies(list, type, true);
+const combine = (packages) => {
+  for (const pck of packages) {
+    const combination = [...pck.dependencies.style, ...pck.dependencies.script].filter((id, index, array) => array.indexOf(id) === index);
+    combination.sort((a, b) => {
+      const pa = packages.filter(p => p.id === a)[0];
+      const pb = packages.filter(p => p.id === b)[0];
+      const la = (pa.style ? pa.style.level : 0) + (pa.script ? pa.script.level : 0);
+      const lb = (pb.style ? pb.style.level : 0) + (pb.script ? pb.script.level : 0);
+      return la - lb;
+    });
+    pck.combination = combination;
+  }
+};
 
-  let complete = false;
+const sort = (elements) => {
+  if (!elements) return;
+  elements.sort((a, b) => a.title.localeCompare(b.title) - a.type.localeCompare(b.type) * 2 + ((a.order || 9999) - (b.order || 9999)) * 4);
+  elements.forEach(child => sort(child.children));
+};
 
-  while (!complete) {
-    complete = true;
-
-    for (const pck of list) {
-      if (levels[pck.id] > -1) continue;
-      if (dependencies[pck.id].length === 0) {
-        levels[pck.id] = 0;
+const evaluate = (packages, type) => {
+  while (packages.some(pck => (pck[type] && pck[type].level === -1))) {
+    for (const pck of packages) {
+      if (!pck[type]) continue;
+      if (pck[type].level > -1) {
         continue;
       }
-      const lvls = dependencies[pck.id].map((d) => { return levels[d]; });
-      if (lvls.some((lvl) => { return lvl === -1; })) {
-        complete = false;
+      if (pck.type === 'folder') {
+        const levels = pck.children.map(child => child[type] ? child[type].level : -2);
+        if (levels.indexOf(-1) > -1) continue;
+        pck[type].level = Math.max(...levels) + 1;
+        // console.log(pck.id, pck[type].level);
         continue;
       }
-      const level = Math.max(...lvls) + 1;
-      levels[pck.id] = level;
-    }
-  }
-
-  list.sort((a, b) => { return levels[a.id] - levels[b.id]; });
-
-  return list;
-};
-
-const getUsage = (packages, list, type) => {
-  const dependencies = getDependencies(packages, type, false);
-  const usage = {};
-
-  for (const pck of packages) {
-    const dps = dependencies[pck.id];
-    const flatten = [...dps];
-    for (const p of dps) flatten.push(...dependencies[p]);
-    flatten.push(pck.id);
-    usage[pck.id] = list.filter((p) => { return flatten.indexOf(p.id) > -1; });
-  }
-
-  return usage;
-};
-
-const getConcatList = (list) => {
-  let packages, options;
-  const result = [];
-  for (const type of TYPES.LIST) {
-    packages = list.filter(p => p.type === type.id);
-    if (packages.length === 0) continue;
-    const config = {
-      id: type.id,
-      path: type.id
-    };
-    options = [];
-    if (type.isFolder) {
-      config.isFolder = true;
-      for (const pck of packages) {
-        if (pck.options) {
-          options.push(...pck.options.filter(option => options.indexOf(option) === -1));
-        }
+      if (pck.dependencies[type].length === 0) {
+        pck[type].level = 0;
+        // console.log(pck.id, 0);
+        continue;
       }
-    } else {
-      const pck = packages[0];
-      if (pck.options) options = [...pck.options];
+      const dps = pck.dependencies[type].map(id => packages.filter(pck => pck.id === id)[0]);
+      const levels = dps.map(p => p[type].level);
+      const ascendants = dps.map(p => p.ascendants).flat().filter((id, index, array) => array.indexOf(id) === index).filter(id => pck.ascendants.indexOf(id) === -1);
+      levels.push(...ascendants.map(id => packages.filter(pck => pck.id === id)[0][type].level));
+      if (levels.indexOf(-1) > -1) continue;
+      pck[type].level = Math.max(...levels) + 1;
+      // console.log(pck.id, pck[type].level);
     }
-
-    if (options.length) config.options = [...options];
-    result.push(config);
   }
-  return result;
 };
 
 const generateJSON = () => {
-  const packages = getPackages();
-  const styles = getSortedList('styles', ['scheme', 'legacy']);
-  const scripts = getSortedList('scripts', ['legacy']);
-
-  const concat = {
-    styles: getConcatList(styles),
-    scripts: getConcatList(scripts)
-  };
-
-  const usage = {
-    styles: getUsage(packages, styles, 'styles'),
-    scripts: getUsage(packages, scripts, 'scripts')
-  };
-
-  const config = {
-    styles: styles,
-    scripts: scripts,
-    concat: concat,
-    usage: usage
-  };
+  const config = analyse('dsfr', 'src');
+  const packages = flatten(config);
+  evaluate(packages, 'style');
+  evaluate(packages, 'script');
+  sort(packages);
+  use(packages, 'style');
+  use(packages, 'script');
+  combine(packages);
 
   const path = root('.config/config.json');
   createFile(path, JSON.stringify(config, null, 4));

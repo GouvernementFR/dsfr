@@ -3,16 +3,17 @@ title: Gestionnaire de consentement
 description: Le gestionnaire de consentement permet à l'utilisateur de définir ses préférences sur l'utilisation de ses données personnelles.
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/609189956/
 wrapper: col-8
-styles:
+style:
   - core
+  - scheme
   - links
   - buttons
   - forms
   - radios
   - modal
-scripts:
+script:
   - core
   - modal
 example:
-  styles:
+  style:
     - content
