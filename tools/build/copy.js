@@ -67,4 +67,9 @@ const deployFavicons = () => {
   copyDir(src, dest, ['ico', 'jpg', 'png', 'svg', 'webmanifest']);
 };
 
-module.exports = { copyFiles, copyImages, copyAssets, deployFavicons };
+const deployFiles = () => {
+  copyDir(root('.dist'), root('public/.dist'));
+  copyDir(root('.example'), root('public/example'));
+};
+
+module.exports = { copyFiles, copyImages, copyAssets, deployFavicons, deployFiles };

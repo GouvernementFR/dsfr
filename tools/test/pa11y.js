@@ -69,7 +69,6 @@ const testPa11y = async (packages) => {
   // Get all packages
   const urls = packages.map(pck => `http://localhost:8081/${pck.example.file}`);
 
-  console.log(urls);
   // Run tests
   await runPa11yTests(urls);
 

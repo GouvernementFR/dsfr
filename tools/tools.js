@@ -3,7 +3,7 @@
 const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
-const { deployFavicons } = require('./build/copy');
+const { deployFavicons, deployFiles } = require('./build/copy');
 
 /**
  * Build
@@ -139,6 +139,7 @@ const deployHandler = async (argv) => {
   });
   await buildRouting();
   deployFavicons();
+  deployFiles();
 };
 
 yargs
