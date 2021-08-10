@@ -4,8 +4,8 @@ const { deleteDir } = require('../utilities/file');
 const clean = () => {
   deleteDir(root('public'));
   deleteDir(root('.config'));
-  deleteDir(root('~dist'));
-  deleteDir(root('~example'));
+  deleteDir(root('_dist'));
+  deleteDir(root('_example'));
 };
 
 module.exports = clean;
