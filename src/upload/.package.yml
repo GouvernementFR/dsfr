@@ -1,0 +1,9 @@
+id: upload
+title: Upload de fichier
+description: Le bouton upload permet d'insérer un ou plusieurs fichier dans un formulaire.
+doc:
+wrapper: col-8
+styles:
+  - core
+  - inputs
+  - forms

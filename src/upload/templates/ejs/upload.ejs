@@ -1,0 +1,22 @@
+<%#
+# paramètres
+
+// TODO: documentation
+
+%>
+<% eval(include('../../../core/index.ejs')); %>
+<%
+ let uploadClasses = [prefix + '-upload'];
+ let uploadAttrs = locals.uploadAttrs || [];
+ let labelAttr = {};
+ let labelClass = locals.labelClasses || [];
+ const element = locals.element || {};
+ if (locals.disabled) uploadAttrs['disabled'] = '';
+ if (locals.multiple) uploadAttrs['multiple'] = '';
+ %>
+
+<div <%- includeClasses(uploadClasses); %>>
+  <%- include('../../../forms/templates/ejs/label', {...element, labelClasses: labelClass, labelAttributes: labelAttr}); %>
+  <input <%- includeAttrs(uploadAttrs); %> type="file" id="<%= id %>" name="<%= name %>">
+  <%- include('../../../forms/templates/ejs/message'); %>
+</div>

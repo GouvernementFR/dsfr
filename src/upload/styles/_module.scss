@@ -1,0 +1,18 @@
+////
+/// Upload Module
+/// @group upload
+////
+
+#{ns(upload)} {
+
+  #{ns(label)} {
+    #{ns(hint-text)} {
+      @include margin-top(3v);
+    }
+  }
+
+  input[type=file] {
+    @include text-style(sm);
+    @include margin-top(4v);
+  }
+}
