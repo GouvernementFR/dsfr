@@ -80,8 +80,8 @@ const analyse = (id, path, ascendants = []) => {
 
   config.dependencies = dependencies;
   config.replace = replace;
-  config.dist = data.dist ? data.dist : config.path.replace('src', '.dist');
-  config.example.file = `${config.path.replace('src', '.example')}/index.html`;
+  config.dist = data.dist ? data.dist : config.path.replace('src', '~dist');
+  config.example.file = `${config.path.replace('src', '~example')}/index.html`;
 
   if (children) config.children = children;
 
