@@ -5,8 +5,17 @@
 
 * alt : texte alternatif de l'image
 
+* classes : classes à appliquer sur l'image
+
 %>
 <% eval(include('../../../index.ejs')); %>
 
-<%- imgContent(img, alt, [prefix + '-responsive-img']) %>
+<%
+ const classes = locals.classes || [];
+ classes.push(`${prefix}-responsive-img`);
+ const attrs = {};
+ if (locals.style) attrs.style = style;
+ %>
+
+<img <%- includeClasses(classes) %> <%- includeAttrs(attrs) %> src="<%= locals.src %>" alt="<%= locals.alt || '' %>"  /><% if (locals.alt) { %><!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image --><% } else { %><!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --><% } %>
 

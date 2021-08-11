@@ -1,0 +1,12 @@
+<%
+let data = { img: true };
+%>
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+   <%
+    for (let i = 0; i < 4; i++) {
+   %>
+    <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-3">
+        <%- include('./card-default', data); %>
+    </div>
+    <% } %>
+</div>

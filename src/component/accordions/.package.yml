@@ -1,0 +1,19 @@
+id: accordions
+title: Accordéons
+description: Les accordéons permettent aux utilisateurs d'afficher et de masquer des sections de contenu présentés dans une page.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509/Accord+on+-+Accordion
+wrapper: col-8
+style:
+  - core
+script:
+  - core
+follow:
+  style:
+    - links
+example:
+  style:
+    - tabs
+    - buttons
+  script:
+    - tabs
+

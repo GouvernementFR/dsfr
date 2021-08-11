@@ -1,22 +1,27 @@
 const stylelint = require('stylelint');
 const { ESLint } = require('eslint');
-const { getPackages } = require('../utilities/config');
+// const { getPackages } = require('../utilities/config');
 const root = require('../utilities/root');
+const log = require('../utilities/log');
 
 const lintStyles = async (pck) => {
-  const result = await stylelint.lint({ files: root(`src/${pck}/**/*.scss`), formatter: 'unix' });
+  const result = await stylelint.lint({ files: root(`${pck.path}/**/*.scss`), formatter: 'unix' });
 
   if (result.errored) {
+    log.error(`${pck.id} style ✖`);
     console.log('\n\r', result.output);
-    process.kill(0);
+    return false;
   }
+
+  log.info(`${pck.id} style ✓`);
+  return true;
 };
 
 const lintScripts = async (pck) => {
   const eslint = new ESLint();
   let results;
   try {
-    results = await eslint.lintFiles([root(`src/${pck}/**/*.js`)]);
+    results = await eslint.lintFiles([root(`${pck.path}/**/*.js`)]);
   } catch (e) {
     // console.log(e);
     return;
@@ -26,18 +31,28 @@ const lintScripts = async (pck) => {
   const resultText = formatter.format(results);
 
   if (resultText) {
+    log.error(`${pck.id} style ✖`);
     console.log(resultText);
-    process.kill(0);
+    return false;
   }
+
+  log.info(`${pck.id} script ✓`);
+  return true;
 };
 
 const lint = async (packages) => {
-  if (!packages) packages = getPackages();
+  let success = true;
+  let result;
 
   for (const pck of packages) {
-    await lintStyles(pck);
+    if (pck.type === 'folder') continue;
+    result = await lintStyles(pck);
+    success = success && result;
     await lintScripts(pck);
+    success = success && result;
   }
+
+  if (!success) process.kill(0);
 };
 
 module.exports = { lintStyles, lintScripts, lint };

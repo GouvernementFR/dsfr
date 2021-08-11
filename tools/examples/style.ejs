@@ -1,0 +1,9 @@
+<%
+    for (const file of Object.keys(files.style)) {
+
+        const dependencies = files.style[file];
+        for (const dependency of dependencies) {
+        %>
+<link href="<%= dependency %>" rel="stylesheet" file="<%= file %>">
+<% }
+ } %>

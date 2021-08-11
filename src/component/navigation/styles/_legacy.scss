@@ -1,0 +1,17 @@
+////
+/// Navigation Legacy
+/// @group navigation
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de l'alignement des menus sur la droite
+  */
+  #{ns(nav)} {
+    @include respond-from(lg) {
+      &--align-right {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

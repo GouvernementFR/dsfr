@@ -1,0 +1,13 @@
+////
+/// Sidemenu Legacy
+/// @group sidemenu
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de la hauteur de la navigation latérale
+  */
+  #{ns(sidenav)} {
+    height: auto;
+  }
+}

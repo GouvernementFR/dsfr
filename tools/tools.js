@@ -3,7 +3,7 @@
 const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
-const { deployFavicons } = require('./build/copy');
+const { deployFavicons, deployFiles } = require('./build/copy');
 
 /**
  * Build
@@ -59,18 +59,10 @@ const buildBuilder = (yargs) => {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
     })
-    .option('main', {
-      describe: 'Compilation consolidée de tous les packages en un seul fichiers',
-      type: 'boolean'
-    })
     .option('markdowns', {
       describe: 'Génère les fichiers readme',
       type: 'boolean'
     })
-    .option('list', {
-      describe: 'Compile la liste des examples',
-      type: 'boolean'
-    });
 };
 
 const buildHandler = async (argv) => {
@@ -80,7 +72,7 @@ const buildHandler = async (argv) => {
     styles: argv.styles || all,
     scripts: argv.scripts || all,
     examples: argv.examples || all,
-    packages: argv.packages,
+    packages: argv.packages || [],
     minify: argv.minify,
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
@@ -147,6 +139,7 @@ const deployHandler = async (argv) => {
   });
   await buildRouting();
   deployFavicons();
+  deployFiles();
 };
 
 yargs
@@ -169,17 +162,5 @@ yargs
     deployBuilder,
     deployHandler
   )
-  .command(
-    'tmp',
-    '',
-    (yargs) => {
-      return yargs
-        .usage('Usage: $0')
-        .example(
-          '$0',
-          ''
-        );
-    }, (argv) => {
-    })
   .help()
   .argv;

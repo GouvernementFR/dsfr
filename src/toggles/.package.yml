@@ -1,8 +1,0 @@
-id: toggles
-title: Interrupteur
-description: Le composant “Interrupteur” permet à l’utilisateur de faire un choix entre deux états opposés (activé / désactivé).
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935138/Interrupteur+-+Toggle+switch
-wrapper: container
-styles:
-  - core
-  - forms

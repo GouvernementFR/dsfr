@@ -15,5 +15,10 @@ lerna-debug.log
 /.idea/watcherTasks.xml
 /.idea/
 public/
+
+.config/
+_dist/
+_example/
+
 yarn.lock
 package-lock.json

@@ -1,0 +1,13 @@
+<%
+    for (const module of files.script.module) {
+      %>
+<script type="module" src="<%= module %>" ></script>
+    <%
+    }
+
+    for (const nomodule of files.script.nomodule) {
+      %>
+<script type="text/javascript" nomodule src="<%= nomodule %>" ></script>
+    <%
+    }
+%>

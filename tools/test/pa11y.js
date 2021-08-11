@@ -3,8 +3,6 @@
 const Pa11y = require('pa11y');
 const Puppeteer = require('puppeteer');
 const Express = require('express');
-const FS = require('fs');
-const { getPackages } = require('../utilities/config');
 const log = require('../utilities/log');
 
 const displayResults = (results, darkmode) => {
@@ -63,19 +61,13 @@ const runPa11yTests = async (urls) => {
 };
 
 const testPa11y = async (packages) => {
-  if (!packages) packages = getPackages();
   // Start a local server to run tests
   const app = Express();
   const server = app.listen('8081');
-  app.use(Express.static('./public/'));
+  app.use(Express.static('./'));
 
   // Get all packages
-  const urls = [];
-  packages.map(pkg => {
-    if (FS.existsSync(`./public/example/${pkg}/index.html`)) {
-      urls.push(`http://localhost:8081/example/${pkg}/`);
-    }
-  });
+  const urls = packages.map(pck => `http://localhost:8081/${pck.example.file}`);
 
   // Run tests
   await runPa11yTests(urls);

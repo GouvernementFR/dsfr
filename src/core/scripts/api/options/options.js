@@ -19,9 +19,8 @@ class Options {
     this.preventManipulation = false;
   }
 
-  configure (config, start) {
+  configure (settings, start) {
     this.startCallback = start;
-    const settings = window[config.namespace] || {};
     if (settings.verbose === true) inspector.level = 0;
     this.mode = settings.mode || Modes.AUTO;
   }

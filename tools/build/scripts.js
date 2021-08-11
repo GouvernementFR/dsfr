@@ -68,44 +68,26 @@ const process = async (data, dir, filename, minify, legacy, map) => {
   log.file(entryFilename, `${size} bytes`);
 };
 
-const buildScripts = async (packages, src, dest, filename, minify, legacy, map) => {
-  const srcDir = root(src + '/');
-  const destDir = root(dest + '/');
+const buildScript = async (pck, minify, legacy, map) => {
+  const src = root(pck.path);
+  const dir = root(`${pck.dist}/`);
+  let data = `import '${src}/main.js'\n`;
 
-  let data = '';
-  const noScripts = [];
-
-  switch (true) {
-    case Array.isArray(packages):
-      for (const pck of packages) {
-        const file = `${srcDir}${pck}/main.js`;
-        if (fs.existsSync(file)) data += `import '${file}';`;
-        else noScripts.push(pck);
-      }
-      break;
-
-    case packages === 'main':
-      data = `import '${srcDir}main.js'\n`;
-      break;
-  }
-
-  if (noScripts.length > 0) log.info(`no scripts in ${noScripts.join(', ')}`);
-
-  if (data === '') return;
-
-  await process(data, destDir, filename, false, false, map);
+  await process(data, dir, pck.id, false, false, map);
 
   if (minify) {
-    await process(data, destDir, filename, true, false, map);
+    await process(data, dir, pck.id, true, false, map);
   }
 
   if (legacy) {
-    await process(data, destDir, filename, false, true, map);
+    if (pck.script.files.indexOf('legacy') > -1) data += `import '${src}/legacy.js'\n`;
+
+    await process(data, dir, pck.id, false, true, map);
 
     if (minify) {
-      await process(data, destDir, filename, true, true, map);
+      await process(data, dir, pck.id, true, true, map);
     }
   }
 };
 
-module.exports = buildScripts;
+module.exports = buildScript;

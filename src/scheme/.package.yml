@@ -1,0 +1,17 @@
+id: scheme
+title: Combinaison de couleur
+order: 2
+description: Les color schemes permettent la définition de couleurs principales et du darkmode pour le Design System de l'Etat.
+style:
+  - core
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+    - forms
+    - radios
+  script:
+    - modal
+    - header
