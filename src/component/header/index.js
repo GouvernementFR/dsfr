@@ -1,7 +1,7 @@
 import api from './api.js';
-import { HeaderLinks } from './scripts/header/header-links.js';
-import { HeaderModal } from './scripts/header/header-modal.js';
-import { HeaderSelectors } from './scripts/header/header-selectors.js';
+import { HeaderLinks } from './script/header/header-links.js';
+import { HeaderModal } from './script/header/header-modal.js';
+import { HeaderSelectors } from './script/header/header-selectors.js';
 
 api.header = {
   HeaderLinks: HeaderLinks,

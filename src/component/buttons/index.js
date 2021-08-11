@@ -1,5 +1,5 @@
 import api from './api.js';
-import { ButtonsSelectors } from './scripts/buttons/buttons-selectors';
+import { ButtonsSelectors } from './script/buttons/buttons-selectors';
 
 api.buttons = {
   ButtonsSelectors: ButtonsSelectors

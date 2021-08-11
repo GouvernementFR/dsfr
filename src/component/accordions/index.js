@@ -1,6 +1,6 @@
 import api from './api.js';
-import { AccordionsGroup } from './scripts/accordion/accordions-group.js';
-import { AccordionSelectors } from './scripts/accordion/accordion-selectors.js';
+import { AccordionsGroup } from './script/accordion/accordions-group.js';
+import { AccordionSelectors } from './script/accordion/accordion-selectors.js';
 
 api.accordions = {
   AccordionSelectors: AccordionSelectors,

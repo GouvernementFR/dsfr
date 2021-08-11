@@ -1,6 +1,6 @@
 import api from './api.js';
-import { Display } from './scripts/display/display.js';
-import { DisplaySelectors } from './scripts/display/display-selectors.js';
+import { Display } from './script/display/display.js';
+import { DisplaySelectors } from './script/display/display-selectors.js';
 
 api.display = {
   Display: Display,

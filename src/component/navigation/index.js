@@ -1,8 +1,8 @@
 import api from './api.js';
-import { NavigationItem } from './scripts/navigation/navigation-item.js';
-import { Navigation } from './scripts/navigation/navigation.js';
-import { NavigationSelectors } from './scripts/navigation/navigation-selectors.js';
-import { NavigationMousePosition } from './scripts/navigation/navigation-mouse-position.js';
+import { NavigationItem } from './script/navigation/navigation-item.js';
+import { Navigation } from './script/navigation/navigation.js';
+import { NavigationSelectors } from './script/navigation/navigation-selectors.js';
+import { NavigationMousePosition } from './script/navigation/navigation-mouse-position.js';
 
 api.navigation = {
   Navigation: Navigation,

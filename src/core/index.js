@@ -1,22 +1,22 @@
-import api from './scripts/api/api';
+import api from './script/api/api';
 
-import { Instance } from './scripts/api/register/instance.js';
-import { KeyCodes } from './scripts/api/register/key-codes.js';
-import { Breakpoints } from './scripts/api/register/breakpoints';
-import { Disclosure } from './scripts/disclosure/disclosure.js';
-import { DisclosureButton } from './scripts/disclosure/disclosure-button.js';
-import { DisclosuresGroup } from './scripts/disclosure/disclosures-group.js';
-import { DisclosureTypes } from './scripts/disclosure/disclosure-types.js';
-import { DisclosureEvents } from './scripts/disclosure/disclosure-events.js';
-import { DisclosureEmissions } from './scripts/disclosure/disclosure-emissions.js';
-import { CollapseButton } from './scripts/collapse/collapse-button.js';
-import { Collapse } from './scripts/collapse/collapse.js';
-import { CollapsesGroup } from './scripts/collapse/collapses-group.js';
-import { CollapseSelectors } from './scripts/collapse/collapse-selectors.js';
-import { Equisized } from './scripts/equisized/equisized.js';
-import { EquisizedsGroup } from './scripts/equisized/equisizeds-group.js';
-import { EquisizedEmissions } from './scripts/equisized/equisized-emissions.js';
-import { RootSelector } from './scripts/api/stage/root.js';
+import { Instance } from './script/api/register/instance.js';
+import { KeyCodes } from './script/api/register/key-codes.js';
+import { Breakpoints } from './script/api/register/breakpoints';
+import { Disclosure } from './script/disclosure/disclosure.js';
+import { DisclosureButton } from './script/disclosure/disclosure-button.js';
+import { DisclosuresGroup } from './script/disclosure/disclosures-group.js';
+import { DisclosureTypes } from './script/disclosure/disclosure-types.js';
+import { DisclosureEvents } from './script/disclosure/disclosure-events.js';
+import { DisclosureEmissions } from './script/disclosure/disclosure-emissions.js';
+import { CollapseButton } from './script/collapse/collapse-button.js';
+import { Collapse } from './script/collapse/collapse.js';
+import { CollapsesGroup } from './script/collapse/collapses-group.js';
+import { CollapseSelectors } from './script/collapse/collapse-selectors.js';
+import { Equisized } from './script/equisized/equisized.js';
+import { EquisizedsGroup } from './script/equisized/equisizeds-group.js';
+import { EquisizedEmissions } from './script/equisized/equisized-emissions.js';
+import { RootSelector } from './script/api/stage/root.js';
 
 api.core = {
   Instance: Instance,
