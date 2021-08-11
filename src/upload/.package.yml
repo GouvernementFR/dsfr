@@ -5,5 +5,4 @@ doc:
 wrapper: col-8
 styles:
   - core
-  - inputs
   - forms
