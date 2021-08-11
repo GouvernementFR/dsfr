@@ -4,7 +4,7 @@
 ////
 
 @font-face {
-  font-family: '#{$namespace}-icons';
+  font-family: '#{$namespace}-icon';
   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
 }
 

@@ -1,0 +1,13 @@
+<%
+
+const accordions = [];
+
+for (let i = 0; i < 6; i++) accordions.push({});
+
+const data = {
+  accordions: accordions,
+  accordion: '../../example/sample/accordion'
+}
+%>
+
+<%- include('../../template/ejs/accordions-group', data); %>

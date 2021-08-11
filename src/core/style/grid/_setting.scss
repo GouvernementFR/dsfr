@@ -1,0 +1,19 @@
+////
+/// Core Setting : Grid
+/// @group core
+////
+
+$grid-settings: (
+  columns: 12,
+  breakpoints: (
+    first: (
+      gutter: 2v
+    ),
+    lg: (
+      gutter: 3v
+    ),
+    xl: (
+      max-width: 300v
+    )
+  )
+);

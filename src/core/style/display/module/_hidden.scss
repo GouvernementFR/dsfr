@@ -1,0 +1,10 @@
+////
+/// Core Module : Display hidden
+/// @group core
+////
+
+#{ns(hidden)} {
+  display: none !important;
+}
+
+@include hidden();

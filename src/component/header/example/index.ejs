@@ -1,25 +1,25 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Header avec Navigation complète', './samples/header.ejs', { service:true, links:true, search: true, navigation: true }, true, './layout');  %>
+<%- sample('Header avec Navigation complète', './sample/header.ejs', { service:true, links:true, search: true, navigation: true }, true, './layout');  %>
 
 
-<%- sample('Header minimal', './samples/header.ejs', { navigation: 'min' }, true, './layout');  %>
+<%- sample('Header minimal', './sample/header.ejs', { navigation: 'min' }, true, './layout');  %>
 
 
-<%- sample('Header sans navigation', './samples/header.ejs', {service: true }, true, './layout');  %>
+<%- sample('Header sans navigation', './sample/header.ejs', {service: true }, true, './layout');  %>
 
 
-<%- sample('Header sans navigation avec raccourcis', './samples/header.ejs', { links:true, service: true, menu: false }, true, './layout');  %>
+<%- sample('Header sans navigation avec raccourcis', './sample/header.ejs', { links:true, service: true, menu: false }, true, './layout');  %>
 
 
-<%- sample('Header avec nom de service, lien d’accès', './samples/header.ejs', { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }, true, './layout');  %>
+<%- sample('Header avec nom de service, lien d’accès', './sample/header.ejs', { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }, true, './layout');  %>
 
-<%- sample('Header avec nom de service, recherche', './samples/header.ejs', { service: 'title', links: true, navigation: 'min' }, true, './layout');  %>
-
-
-<%- sample('Header avec opérateur vertical, recherche', './samples/header.ejs', { operator:{ img: 'img/placeholder.9x16.png', style:'width:3.5rem;' }, search: true, navigation: 'min' }, true, './layout');  %>
+<%- sample('Header avec nom de service, recherche', './sample/header.ejs', { service: 'title', links: true, navigation: 'min' }, true, './layout');  %>
 
 
-<%- sample('Header avec opérateur horizontal, nom de service, lien d’accès, recherche', './samples/header.ejs', { operator: { img: 'img/placeholder.16x9.png', style:'max-width:9.0625rem;' }, service: true, links:true, search: true, navigation: 'min' }, true, './layout');  %>
+<%- sample('Header avec opérateur vertical, recherche', './sample/header.ejs', { operator:{ img: 'img/placeholder.9x16.png', style:'width:3.5rem;' }, search: true, navigation: 'min' }, true, './layout');  %>
 
-<%- sample('Header avec raccourcis dupliqués, pour Angular, React et Vue', './samples/header.ejs', { links:true, menu: false, duplicateLinks: true }, true, './layout');  %>
+
+<%- sample('Header avec opérateur horizontal, nom de service, lien d’accès, recherche', './sample/header.ejs', { operator: { img: 'img/placeholder.16x9.png', style:'max-width:9.0625rem;' }, service: true, links:true, search: true, navigation: 'min' }, true, './layout');  %>
+
+<%- sample('Header avec raccourcis dupliqués, pour Angular, React et Vue', './sample/header.ejs', { links:true, menu: false, duplicateLinks: true }, true, './layout');  %>

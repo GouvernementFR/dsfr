@@ -1,0 +1,75 @@
+////
+/// Core Tool : Icon
+/// @group core
+////
+
+/// Return icon size from map
+/// @param {String} $size ["md"] - Icon size from `$icon-size-map` (Default to "md" = 16px)
+///
+/// @example scss - Set icon size to `SM` (12px)
+///   .foo {
+///     width: icon-size(sm);
+///     height: icon-size(sm);
+///   }
+@function icon-size($size: md) {
+  @return px-rem(map-get($icon-size-map, $size));
+}
+
+@mixin icon-size($size:md) {
+  font-size: #{icon-size($size)} !important;
+}
+
+@mixin with-icon($size:md) {
+  @include has-icon {
+    @include before {
+      @if $size != md {
+        @include icon-size($size);
+      }
+      @content;
+    }
+  }
+}
+
+@mixin generate-icons($base) {
+  @each $icon, $settings in $icons-settings {
+    #{ns($base + '-' + $icon)} {
+      @include before(icon-glyph($icon));
+    }
+  }
+}
+
+@function icon-glyph($icon, $is-ligature: false) {
+  $icon-settings: map-get($icons-settings, $icon);
+  @if $is-ligature {
+    @return "#{map-get($icon-settings, ligature)}";
+  }
+  @else {
+    @return "#{map-get($icon-settings, codepoint)}";
+  }
+}
+
+@mixin icon-content($icon) {
+  content: icon-glyph($icon);
+}
+
+@function font-icon($size: md) {
+  @return normal normal normal #{icon-size($size)}/1 #{$namespace}-icon;
+}
+
+@mixin font-icon($size: md) {
+  font: font-icon($size);
+}
+
+@mixin icon($icon:null, $size:md, $pseudo:before) {
+  @include _pseudo($pseudo) {
+    @if $size != null {
+      @include font-icon($size);
+    }
+
+    @if $icon != null {
+      @include icon-content($icon);
+    }
+
+    @content;
+  }
+}

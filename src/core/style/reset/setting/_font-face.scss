@@ -1,0 +1,56 @@
+////
+/// Core Setting : Typography font-face
+/// @group core
+////
+
+$font-settings: (
+  primary: (
+    name: 'Marianne',
+    fallback: arial sans-serif,
+    display: swap,
+    styles: (
+      light: (
+        font-weight: 300,
+        file:'Marianne-Light'
+      ),
+      light-italic: (
+        font-weight: 300,
+        font-style: italic,
+        file: 'Marianne-Light_Italic'
+      ),
+      regular: (
+        font-weight: 400,
+        file: 'Marianne-Regular'
+      ),
+      regular-italic: (
+        font-weight: 400,
+        font-style: italic,
+        file: 'Marianne-Regular_Italic'
+      ),
+      bold: (
+        font-weight: 700,
+        file: 'Marianne-Bold'
+      ),
+      bold-italic: (
+        font-weight: 700,
+        font-style: italic,
+        file: 'Marianne-Bold_Italic'
+      )
+    )
+  ),
+  alt: (
+    name: 'Spectral',
+    fallback: georgia serif,
+    display: swap,
+    styles: (
+      regular: (
+        font-weight: 400,
+        file: 'Spectral-Regular'
+      ),
+      extra-bold: (
+        font-weight: 900,
+        file: 'Spectral-ExtraBold'
+      )
+    ),
+  )
+);

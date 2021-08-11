@@ -1,0 +1,47 @@
+////
+/// Core Tool : Selector pseudo
+/// @group core
+////
+
+@mixin _pseudo($type:before, $content:null, $display:null) {
+  @if $type != after and $type != before and $type != marker and $type != (before after) {
+    @error '$type must be before or after element';
+  }
+
+  $selector: ();
+
+  @each $pseudo in $type {
+    $selector: append($selector, '&::#{$pseudo}', 'comma');
+  }
+
+  #{$selector} {
+
+    @if $content != null {
+      content: $content;
+    }
+
+    @if $display != null {
+      display: #{$display};
+    }
+
+    @content;
+  }
+}
+
+@mixin before($content: null, $display: null) {
+  @include _pseudo(before, $content, $display) {
+    @content;
+  }
+}
+
+@mixin after($content: null, $display: null) {
+  @include _pseudo(after, $content, $display) {
+    @content;
+  }
+}
+
+@mixin marker($content: null, $display: null) {
+  @include _pseudo(marker, $content, $display) {
+    @content;
+  }
+}

@@ -1,0 +1,11 @@
+////
+/// Core Module : Display sr-only
+/// @group core
+////
+
+#{ns(sr-only)} {
+  @include sr-only();
+}
+
+@include sr-only-from();
+// @include sr-only-to();

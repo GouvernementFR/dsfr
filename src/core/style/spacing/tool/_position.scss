@@ -1,0 +1,40 @@
+////
+/// Core Tool : Spacing position
+/// @group core
+////
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  position: #{$position};
+  @if $top != null {
+    top: #{space($top)};
+  }
+  @if $right != null {
+    right: #{space($right)};
+  }
+  @if $bottom != null {
+    bottom: #{space($bottom)};
+  }
+  @if $left != null {
+    left: #{space($left)};
+  }
+
+  @include size($width, $height);
+
+  @content;
+}
+
+@mixin relative($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(relative, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(absolute, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin fixed($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(fixed, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin sticky($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(sticky, $top, $right, $bottom, $left, $width, $height);
+}

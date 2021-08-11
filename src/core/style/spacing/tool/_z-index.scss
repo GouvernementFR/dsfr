@@ -1,0 +1,28 @@
+////
+/// Core Tool : Spacing z-index
+/// @group core
+////
+
+/// Fonction de gestion des z-index
+/// @access public
+/// @param {String} $index-name - nom du calque de z-index
+@function z-index($index-name) {
+  @return map-get($z-indexes, $index-name);
+}
+
+/// Mixin de gestion des z-index
+/// @access public
+/// @param {String} $index-name - nom du calque de z-index
+@mixin z-index($index-name, $focus: false) {
+  z-index: z-index($index-name);
+  @if $focus {
+    $focus-z-index: z-index($index-name + '-focus');
+
+    @if $focus-z-index != null {
+      *:focus,
+      *:focus-visible {
+        z-index: #{$focus-z-index};
+      }
+    }
+  }
+}

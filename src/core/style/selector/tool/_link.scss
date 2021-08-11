@@ -1,0 +1,10 @@
+////
+/// Core Tool : Selector link
+/// @group core
+////
+
+@mixin link() {
+  &__link {
+    @content;
+  }
+}

@@ -1,8 +1,10 @@
 ////
-/// Core Tools : Spacing
+/// Core Tool : Spacing
 /// @group core
 ////
 
-@import 'tools/size';
-@import 'tools/space';
-@import 'tools/position';
+@import 'tool/size';
+@import 'tool/space';
+@import 'tool/margin';
+@import 'tool/position';
+@import 'tool/z-index';

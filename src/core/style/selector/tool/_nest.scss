@@ -1,0 +1,15 @@
+////
+/// Core Tool : Selector nest
+/// @group core
+////
+
+@mixin nest($selector: null) {
+  @if $selector {
+    #{$selector} {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}

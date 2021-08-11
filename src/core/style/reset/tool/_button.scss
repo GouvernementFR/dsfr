@@ -1,0 +1,12 @@
+////
+/// Core Tool : Reset btn
+/// @group core
+////
+
+@mixin btn-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  border: none;
+}

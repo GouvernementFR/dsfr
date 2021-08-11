@@ -4,8 +4,9 @@
 ////
 
 @import 'config';
-@import 'style/settings';
-@import 'style/tools';
+@import 'style/function';
+@import 'style/setting';
+@import 'style/tool';
 
 // TODO: à enlever quand la base de schemes sera dans le core
 @import '../scheme/style/setting';

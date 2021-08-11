@@ -1,0 +1,33 @@
+////
+/// Core Tool : Reset list
+/// @group core
+////
+
+@mixin enable-list-style() {
+  $selector: null;
+
+  @if & == null {
+    $selector: ':root';
+  }
+
+  @include nest($selector) {
+    --ul-type: "●\00a0\00a0";
+    --ol-type: decimal;
+    --ul-start: #{space(4v)};
+    --ol-start: #{space(6v)};
+    --xl-block: #{space(2v)};
+    --li-bottom: #{space(1v)};
+    --xl-base: 1em;
+    --ol-content: counters(li-counter, ".") ".\00a0\00a0";
+  }
+}
+
+@mixin disable-list-style() {
+  --ul-type: none;
+  --ol-type: none;
+  --ul-start: 0;
+  --ol-start: 0;
+  --xl-block: 0;
+  --li-bottom: 0;
+  --ol-content: none;
+}

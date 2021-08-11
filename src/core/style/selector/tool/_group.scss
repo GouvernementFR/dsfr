@@ -1,0 +1,18 @@
+////
+/// Core Tool : Selector group
+/// @group core
+////
+
+// TODO: à checker, certainement à enlever
+
+@mixin group() {
+  &-group {
+    @content;
+  }
+}
+
+@mixin group-item() {
+  &__item {
+    @content;
+  }
+}
