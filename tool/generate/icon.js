@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const IconFontBuildr = require('icon-font-buildr');
 const root = require('../utilities/root');
-const log = require('../utilities/log');
 const { createFile } = require('../utilities/file');
 const { optimize } = require('svgo');
 const yaml = require('js-yaml');
@@ -72,8 +71,8 @@ const generateIcon = async (dest) => {
     output: {
       codepoints: true,
       ligatures: true,
-      fontName: 'dsfr-icons',
-      fonts: 'icons',
+      fontName: 'dsfr-icon',
+      fonts: '.config',
       formats: [
         'woff'
       ]

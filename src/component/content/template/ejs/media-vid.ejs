@@ -11,7 +11,7 @@
     <%- include('../../../../pattern/consent/template/ejs/placeholder') %>
     </div>
 <% } else { %>
-    <%- include(locals.vidTpl !== undefined ? locals.vidTpl  : '../../../../core/template/ejs/medias/responsive-vid') %>
+    <%- include(locals.vidTpl !== undefined ? locals.vidTpl  : '../../../../core/template/ejs/media/responsive-vid') %>
 <% } %>
 <% if (locals.caption != undefined) { %>
     <div class="<%= prefix %>-content-media__caption" ><%= caption %></div>

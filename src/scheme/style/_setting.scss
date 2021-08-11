@@ -30,6 +30,6 @@ $theme-allow-transition: false;
 // Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
 $COLOR:unquote('$COLOR') !global;
 
-@import 'settings/colors';
-@import 'settings/sets';
-@import 'settings/blocks';
+@import 'setting/colors';
+@import 'setting/sets';
+@import 'setting/blocks';

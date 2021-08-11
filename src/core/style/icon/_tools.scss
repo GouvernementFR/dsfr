@@ -53,7 +53,7 @@
 }
 
 @function font-icon($size: md) {
-  @return normal normal normal #{icon-size($size)}/1 #{$namespace}-icons;
+  @return normal normal normal #{icon-size($size)}/1 #{$namespace}-icon;
 }
 
 @mixin font-icon($size: md) {
