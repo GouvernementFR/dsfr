@@ -1,5 +1,5 @@
 import { Instance } from '../api/register/instance.js';
-import { EquisizedEmissions } from './equisized-emissions.js';
+import { EquisizedEmission } from './equisized-emission.js';
 
 class Equisized extends Instance {
   static get instanceClassName () {
@@ -7,7 +7,7 @@ class Equisized extends Instance {
   }
 
   init () {
-    this.ascend(EquisizedEmissions.CHANGE);
+    this.ascend(EquisizedEmission.CHANGE);
   }
 
   measure () {
@@ -20,7 +20,7 @@ class Equisized extends Instance {
   }
 
   dispose () {
-    this.ascend(EquisizedEmissions.CHANGE);
+    this.ascend(EquisizedEmission.CHANGE);
   }
 }
 

@@ -1,5 +1,5 @@
 import { Instance } from '../api/register/instance.js';
-import { DisclosureEmissions } from './disclosure-emissions.js';
+import { DisclosureEmission } from './disclosure-emission.js';
 
 class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
@@ -13,9 +13,9 @@ class DisclosuresGroup extends Instance {
   }
 
   init () {
-    this.addAscent(DisclosureEmissions.ADDED, this.update.bind(this));
-    this.addAscent(DisclosureEmissions.REMOVED, this.update.bind(this));
-    this.descend(DisclosureEmissions.GROUP);
+    this.addAscent(DisclosureEmission.ADDED, this.update.bind(this));
+    this.addAscent(DisclosureEmission.REMOVED, this.update.bind(this));
+    this.descend(DisclosureEmission.GROUP);
     this.update();
   }
 
@@ -110,7 +110,7 @@ class DisclosuresGroup extends Instance {
 
   dispose () {
     super.dispose();
-    this.descend(DisclosureEmissions.UNGROUP);
+    this.descend(DisclosureEmission.UNGROUP);
     this._members = null;
   }
 }

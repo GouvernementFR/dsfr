@@ -6,10 +6,10 @@ wrapper: col-8
 style:
   - core
   - scheme
-  - links
+  - link
   - button
-  - forms
-  - radios
+  - form
+  - radio
   - modal
 script:
   - core

@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { NavigationSelectors } from './navigation-selectors.js';
+import { NavigationSelector } from './navigation-selector.js';
 import { NavigationMousePosition } from './navigation-mouse-position.js';
 
 class Navigation extends api.core.CollapsesGroup {
@@ -16,7 +16,7 @@ class Navigation extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return member.element.node.matches(NavigationSelectors.COLLAPSE);
+    return member.element.node.matches(NavigationSelector.COLLAPSE);
   }
 
   down (e) {

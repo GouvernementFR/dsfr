@@ -9,11 +9,11 @@ script:
   - core
 follow:
   style:
-    - links
+    - link
 example:
   style:
-    - tabs
+    - tab
     - button
   script:
-    - tabs
+    - tab
 

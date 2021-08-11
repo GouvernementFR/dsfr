@@ -1,11 +1,11 @@
 import api from '../../api.js';
-import { ModalSelectors } from './modal-selectors.js';
+import { ModalSelector } from './modal-selector.js';
 import { ModalButton } from './modal-button.js';
-import { ModalEmissions } from './modal-emissions.js';
+import { ModalEmission } from './modal-emission.js';
 
 class Modal extends api.core.Disclosure {
   constructor () {
-    super(api.core.DisclosureTypes.OPENED, ModalSelectors.MODAL, ModalButton, 'ModalsGroup');
+    super(api.core.DisclosureType.OPENED, ModalSelector.MODAL, ModalButton, 'ModalsGroup');
     this.scrollDistance = 0;
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
@@ -27,7 +27,7 @@ class Modal extends api.core.Disclosure {
 
   disclose (withhold) {
     if (!super.disclose(withhold)) return false;
-    this.descend(ModalEmissions.ACTIVATE);
+    this.descend(ModalEmission.ACTIVATE);
     this.isScrollLocked = true;
     return true;
   }
@@ -35,7 +35,7 @@ class Modal extends api.core.Disclosure {
   conceal (withhold, preventFocus) {
     if (!super.conceal(withhold, preventFocus)) return false;
     this.isScrollLocked = false;
-    this.descend(ModalEmissions.DEACTIVATE);
+    this.descend(ModalEmission.DEACTIVATE);
     return true;
   }
 }

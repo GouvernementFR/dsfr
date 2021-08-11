@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { NavigationSelectors } from './navigation-selectors.js';
+import { NavigationSelector } from './navigation-selector.js';
 
 class NavigationItem extends api.core.Instance {
   constructor () {
@@ -12,8 +12,8 @@ class NavigationItem extends api.core.Instance {
   }
 
   init () {
-    this.addAscent(api.core.DisclosureEmissions.ADDED, this.calculate.bind(this));
-    this.addAscent(api.core.DisclosureEmissions.REMOVED, this.calculate.bind(this));
+    this.addAscent(api.core.DisclosureEmission.ADDED, this.calculate.bind(this));
+    this.addAscent(api.core.DisclosureEmission.REMOVED, this.calculate.bind(this));
     this.isResizing = true;
     this.calculate();
   }
@@ -24,7 +24,7 @@ class NavigationItem extends api.core.Instance {
 
   calculate () {
     const collapse = this.element.getDescendantInstances(api.core.Collapse.instanceClassName, null, true)[0];
-    if (collapse && this.isBreakpoint(api.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelectors.MENU)) {
+    if (collapse && this.isBreakpoint(api.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelector.MENU)) {
       const right = this.element.node.parentElement.getBoundingClientRect().right;
       const width = collapse.element.node.getBoundingClientRect().width;
       const left = this.element.node.getBoundingClientRect().left;
@@ -39,8 +39,8 @@ class NavigationItem extends api.core.Instance {
   set isRightAligned (value) {
     if (this._isRightAligned === value) return;
     this._isRightAligned = value;
-    if (value) api.addClass(this.element.node, NavigationSelectors.ITEM_RIGHT);
-    else api.removeClass(this.element.node, NavigationSelectors.ITEM_RIGHT);
+    if (value) api.addClass(this.element.node, NavigationSelector.ITEM_RIGHT);
+    else api.removeClass(this.element.node, NavigationSelector.ITEM_RIGHT);
   }
 }
 

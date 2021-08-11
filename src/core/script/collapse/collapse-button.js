@@ -1,9 +1,9 @@
-import { DisclosureTypes } from '../disclosure/disclosure-types.js';
+import { DisclosureType } from '../disclosure/disclosure-type.js';
 import { DisclosureButton } from '../disclosure/disclosure-button.js';
 
 class CollapseButton extends DisclosureButton {
   constructor () {
-    super(DisclosureTypes.EXPAND);
+    super(DisclosureType.EXPAND);
   }
 
   static get instanceClassName () {

@@ -6,7 +6,7 @@ style:
   - core
   - legacy
   - scheme
-  - links
+  - link
   - button
 script:
   - core

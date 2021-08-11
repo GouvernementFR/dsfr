@@ -1,10 +1,10 @@
 import api from './api.js';
 import { SidemenuList } from './script/sidemenu/sidemenu-list.js';
-import { SidemenuSelectors } from './script/sidemenu/sidemenu-selectors.js';
+import { SidemenuSelector } from './script/sidemenu/sidemenu-selector.js';
 
 api.sidemenu = {
   SidemenuList: SidemenuList,
-  SidemenuSelectors: SidemenuSelectors
+  SidemenuSelector: SidemenuSelector
 };
 
 export default api;

@@ -1,6 +1,6 @@
 import { Instance } from '../api/register/instance.js';
-import { DisclosureEvents } from './disclosure-events.js';
-import { DisclosureEmissions } from './disclosure-emissions.js';
+import { DisclosureEvent } from './disclosure-event.js';
+import { DisclosureEmission } from './disclosure-emission.js';
 
 class Disclosure extends Instance {
   constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {
@@ -18,11 +18,11 @@ class Disclosure extends Instance {
   }
 
   init () {
-    this.addDescent(DisclosureEmissions.RESET, this.reset.bind(this));
-    this.addDescent(DisclosureEmissions.GROUP, this.update.bind(this));
-    this.addDescent(DisclosureEmissions.UNGROUP, this.update.bind(this));
+    this.addDescent(DisclosureEmission.RESET, this.reset.bind(this));
+    this.addDescent(DisclosureEmission.GROUP, this.update.bind(this));
+    this.addDescent(DisclosureEmission.UNGROUP, this.update.bind(this));
     this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
-    this.ascend(DisclosureEmissions.ADDED);
+    this.ascend(DisclosureEmission.ADDED);
     this.update();
   }
 
@@ -83,7 +83,7 @@ class Disclosure extends Instance {
     this.disclosed = false;
     if (!preventFocus) this.focus();
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
-    this.descend(DisclosureEmissions.RESET);
+    this.descend(DisclosureEmission.RESET);
     return true;
   }
 
@@ -93,7 +93,7 @@ class Disclosure extends Instance {
 
   set disclosed (value) {
     if (this._disclosed === value) return;
-    this.dispatch(value ? DisclosureEvents.DISCLOSE : DisclosureEvents.CONCEAL, this.type);
+    this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this.type);
     this._disclosed = value;
     if (value) this.addClass(this.modifier);
     else this.removeClass(this.modifier);
@@ -141,7 +141,7 @@ class Disclosure extends Instance {
   dispose () {
     this._group = null;
     super.dispose();
-    this.ascend(DisclosureEmissions.REMOVED);
+    this.ascend(DisclosureEmission.REMOVED);
   }
 }
 

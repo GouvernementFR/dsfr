@@ -32,6 +32,7 @@
   }
 
   & > #{ns(container)} {
+    pointer-events: all;
     @include padding-top(4v);
     @include padding-bottom(18v);
     @include height(100%);

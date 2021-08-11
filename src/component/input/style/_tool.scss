@@ -1,0 +1,22 @@
+////
+/// Input Tool
+/// @group input
+////
+
+/* stylelint-disable */
+/// Mixin pour ajouter les préfixes vendor du placeholder
+///
+/// @access public
+///
+/// @example scss
+///   .foo {
+///     @include placeholder {
+///       @content;
+///     }
+///   }
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content;}
+  &:-moz-placeholder           {@content;}
+  &::-moz-placeholder          {@content;}
+  &:-ms-input-placeholder      {@content;}
+}

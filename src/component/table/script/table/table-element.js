@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TableSelectors } from './table-selectors.js';
+import { TableSelector } from './table-selector.js';
 
 const SCROLL_OFFSET = 8; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
@@ -23,12 +23,12 @@ class TableElement extends api.core.Instance {
     this._isScrolling = value;
 
     if (value) {
-      this.addClass(TableSelectors.SHADOW);
+      this.addClass(TableSelector.SHADOW);
       this.scroll();
     } else {
-      this.removeClass(TableSelectors.SHADOW);
-      this.removeClass(TableSelectors.SHADOW_LEFT);
-      this.removeClass(TableSelectors.SHADOW_RIGHT);
+      this.removeClass(TableSelector.SHADOW);
+      this.removeClass(TableSelector.SHADOW_LEFT);
+      this.removeClass(TableSelector.SHADOW_RIGHT);
     }
   }
 
@@ -38,8 +38,8 @@ class TableElement extends api.core.Instance {
     const max = this.content.offsetWidth - this.node.offsetWidth - SCROLL_OFFSET;
     const isMax = Math.abs(this.node.scrollLeft) >= max;
     const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    const minSelector = isRtl ? TableSelectors.SHADOW_RIGHT : TableSelectors.SHADOW_LEFT;
-    const maxSelector = isRtl ? TableSelectors.SHADOW_LEFT : TableSelectors.SHADOW_RIGHT;
+    const minSelector = isRtl ? TableSelector.SHADOW_RIGHT : TableSelector.SHADOW_LEFT;
+    const maxSelector = isRtl ? TableSelector.SHADOW_LEFT : TableSelector.SHADOW_RIGHT;
 
     if (isMin) {
       this.removeClass(minSelector);

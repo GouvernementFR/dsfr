@@ -10,7 +10,7 @@
     %>
         <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= navbar.search.modalId %>">
             <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
-                <%- include('../../../links/template/ejs/link-close', { closeId: navbar.search.modalId }); %>
+                <%- include('../../../link/template/ejs/link-close', { closeId: navbar.search.modalId }); %>
                 <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../search/template/ejs/search', { ...tools.search }); %>
             </div>
         </div>

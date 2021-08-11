@@ -1,9 +1,9 @@
 import api from './api.js';
 import { Breadcrumb } from './script/breadcrumb/breadcrumb.js';
-import { BreadcrumbSelectors } from './script/breadcrumb/breadcrumb-selectors.js';
+import { BreadcrumbSelector } from './script/breadcrumb/breadcrumb-selector.js';
 
 api.breadcrumb = {
-  BreadcrumbSelectors: BreadcrumbSelectors,
+  BreadcrumbSelector: BreadcrumbSelector,
   Breadcrumb: Breadcrumb
 };
 

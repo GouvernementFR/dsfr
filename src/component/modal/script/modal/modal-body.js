@@ -1,6 +1,6 @@
 import api from '../../api.js';
-import { ModalSelectors } from './modal-selectors.js';
-import { ModalEmissions } from './modal-emissions.js';
+import { ModalSelector } from './modal-selector.js';
+import { ModalEmission } from './modal-emission.js';
 
 const OFFSET = 32; // 32px => 8v => 2rem
 
@@ -11,8 +11,8 @@ class ModalBody extends api.core.Instance {
 
   init () {
     this.listen('scroll', this.shade.bind(this));
-    this.addDescent(ModalEmissions.ACTIVATE, this.activate.bind(this));
-    this.addDescent(ModalEmissions.DEACTIVATE, this.deactivate.bind(this));
+    this.addDescent(ModalEmission.ACTIVATE, this.activate.bind(this));
+    this.addDescent(ModalEmission.DEACTIVATE, this.deactivate.bind(this));
   }
 
   activate () {
@@ -27,12 +27,12 @@ class ModalBody extends api.core.Instance {
   shade () {
     if (this.node.scrollHeight > this.node.clientHeight) {
       if (this.node.offsetHeight + this.node.scrollTop >= this.node.scrollHeight) {
-        this.removeClass(ModalSelectors.SCROLL_SHADOW);
+        this.removeClass(ModalSelector.SCROLL_SHADOW);
       } else {
-        this.addClass(ModalSelectors.SCROLL_SHADOW);
+        this.addClass(ModalSelector.SCROLL_SHADOW);
       }
     } else {
-      this.removeClass(ModalSelectors.SCROLL_SHADOW);
+      this.removeClass(ModalSelector.SCROLL_SHADOW);
     }
   }
 

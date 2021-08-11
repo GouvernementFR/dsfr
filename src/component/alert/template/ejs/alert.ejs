@@ -48,7 +48,7 @@
         attrButton = {title: 'Masquer le message','aria-expanded': expanded , 'aria-controls': id};
       }
       %>
-      <%- include('../../../links/template/ejs/link', {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}) %>
+      <%- include('../../../link/template/ejs/link', {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}) %>
     <% } %>
   </div>
 <% if(locals.collapse) { %>

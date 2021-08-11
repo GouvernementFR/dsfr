@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { AccordionSelectors } from './accordion-selectors.js';
+import { AccordionSelector } from './accordion-selector.js';
 
 class AccordionsGroup extends api.core.CollapsesGroup {
   static get instanceClassName () {
@@ -7,7 +7,7 @@ class AccordionsGroup extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return member.node.matches(AccordionSelectors.COLLAPSE);
+    return member.node.matches(AccordionSelector.COLLAPSE);
   }
 }
 

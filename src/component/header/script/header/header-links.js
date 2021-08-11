@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { HeaderSelectors } from './header-selectors.js';
+import { HeaderSelector } from './header-selector.js';
 
 class HeaderLinks extends api.core.Instance {
   static get instanceClassName () {
@@ -7,9 +7,9 @@ class HeaderLinks extends api.core.Instance {
   }
 
   init () {
-    const header = this.queryParentSelector(HeaderSelectors.HEADER);
-    this.toolsLinks = header.querySelector(HeaderSelectors.TOOLS_LINKS);
-    this.menuLinks = header.querySelector(HeaderSelectors.MENU_LINKS);
+    const header = this.queryParentSelector(HeaderSelector.HEADER);
+    this.toolsLinks = header.querySelector(HeaderSelector.TOOLS_LINKS);
+    this.menuLinks = header.querySelector(HeaderSelector.MENU_LINKS);
 
     const toolsHtml = this.toolsLinks.innerHTML.replace(/  +/g, ' ');
     const menuHtml = this.menuLinks.innerHTML.replace(/  +/g, ' ');

@@ -1,5 +1,5 @@
 import { Instance } from '../api/register/instance.js';
-import { EquisizedEmissions } from './equisized-emissions.js';
+import { EquisizedEmission } from './equisized-emission.js';
 
 class EquisizedsGroup extends Instance {
   static get instanceClassName () {
@@ -9,7 +9,7 @@ class EquisizedsGroup extends Instance {
   init () {
     this.isResizing = true;
     this.isLoading = true;
-    this.addAscent(EquisizedEmissions.CHANGE, this.resize.bind(this));
+    this.addAscent(EquisizedEmission.CHANGE, this.resize.bind(this));
   }
 
   load () {

@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { SidemenuSelectors } from './sidemenu-selectors.js';
+import { SidemenuSelector } from './sidemenu-selector.js';
 
 class SidemenuList extends api.core.CollapsesGroup {
   static get instanceClassName () {
@@ -7,7 +7,7 @@ class SidemenuList extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return member.node.matches(SidemenuSelectors.COLLAPSE);
+    return member.node.matches(SidemenuSelector.COLLAPSE);
   }
 }
 

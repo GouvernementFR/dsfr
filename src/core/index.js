@@ -6,16 +6,16 @@ import { Breakpoints } from './script/api/register/breakpoints';
 import { Disclosure } from './script/disclosure/disclosure.js';
 import { DisclosureButton } from './script/disclosure/disclosure-button.js';
 import { DisclosuresGroup } from './script/disclosure/disclosures-group.js';
-import { DisclosureTypes } from './script/disclosure/disclosure-types.js';
-import { DisclosureEvents } from './script/disclosure/disclosure-events.js';
-import { DisclosureEmissions } from './script/disclosure/disclosure-emissions.js';
+import { DisclosureType } from './script/disclosure/disclosure-type.js';
+import { DisclosureEvent } from './script/disclosure/disclosure-event.js';
+import { DisclosureEmission } from './script/disclosure/disclosure-emission.js';
 import { CollapseButton } from './script/collapse/collapse-button.js';
 import { Collapse } from './script/collapse/collapse.js';
 import { CollapsesGroup } from './script/collapse/collapses-group.js';
-import { CollapseSelectors } from './script/collapse/collapse-selectors.js';
+import { CollapseSelector } from './script/collapse/collapse-selector.js';
 import { Equisized } from './script/equisized/equisized.js';
 import { EquisizedsGroup } from './script/equisized/equisizeds-group.js';
-import { EquisizedEmissions } from './script/equisized/equisized-emissions.js';
+import { EquisizedEmission } from './script/equisized/equisized-emission.js';
 import { RootSelector } from './script/api/stage/root.js';
 
 api.core = {
@@ -25,16 +25,16 @@ api.core = {
   Disclosure: Disclosure,
   DisclosureButton: DisclosureButton,
   DisclosuresGroup: DisclosuresGroup,
-  DisclosureTypes: DisclosureTypes,
-  DisclosureEvents: DisclosureEvents,
-  DisclosureEmissions: DisclosureEmissions,
+  DisclosureType: DisclosureType,
+  DisclosureEvent: DisclosureEvent,
+  DisclosureEmission: DisclosureEmission,
   Collapse: Collapse,
   CollapseButton: CollapseButton,
   CollapsesGroup: CollapsesGroup,
-  CollapseSelectors: CollapseSelectors,
+  CollapseSelector: CollapseSelector,
   RootSelector: RootSelector,
   Equisized: Equisized,
-  EquisizedEmissions: EquisizedEmissions,
+  EquisizedEmission: EquisizedEmission,
   EquisizedsGroup: EquisizedsGroup
 };
 

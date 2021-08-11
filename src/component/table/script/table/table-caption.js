@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TableEmissions } from './table-emissions.js';
+import { TableEmission } from './table-emission.js';
 
 class TableCaption extends api.core.Instance {
   static get instanceClassName () {
@@ -15,7 +15,7 @@ class TableCaption extends api.core.Instance {
     const height = this.getRect().height;
     if (this.height === height) return;
     this.height = height;
-    this.ascend(TableEmissions.CAPTION_HEIGHT, height);
+    this.ascend(TableEmission.CAPTION_HEIGHT, height);
   }
 }
 

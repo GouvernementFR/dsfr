@@ -2,7 +2,7 @@ import api from '../../api.js';
 
 class ModalButton extends api.core.DisclosureButton {
   constructor () {
-    super(api.core.DisclosureTypes.OPENED);
+    super(api.core.DisclosureType.OPENED);
   }
 
   static get instanceClassName () {

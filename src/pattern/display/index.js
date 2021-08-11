@@ -1,10 +1,10 @@
 import api from './api.js';
 import { Display } from './script/display/display.js';
-import { DisplaySelectors } from './script/display/display-selectors.js';
+import { DisplaySelector } from './script/display/display-selector.js';
 
 api.display = {
   Display: Display,
-  DisplaySelectors: DisplaySelectors
+  DisplaySelector: DisplaySelector
 };
 
 export default api;

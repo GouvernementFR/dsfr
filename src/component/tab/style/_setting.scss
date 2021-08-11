@@ -1,0 +1,22 @@
+////
+/// Tab Setting
+/// @group tab
+////
+
+$tabs-settings:(
+  selector: tabs__tab,
+  sizes: (
+    md: (
+      font-size: 16,
+      min-height: 10v,
+      padding-x: 4v,
+      padding-y: 2v,
+      icon: sm,
+      icon-margin-x: 2v,
+      icon-only: sm
+    )
+  ),
+  places: only left
+);
+
+$tabs-transition-duration: $global-transition-duration;

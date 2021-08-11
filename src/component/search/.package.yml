@@ -6,5 +6,5 @@ wrapper: col-8
 style:
   - core
   - scheme
-  - inputs
+  - input
   - button

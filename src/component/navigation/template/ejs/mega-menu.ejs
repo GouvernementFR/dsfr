@@ -1,7 +1,7 @@
 <%- include('./btn'); %>
 <div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= collapseId %>" >
     <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-lg" >
-        <%- include('../../../links/template/ejs/link-close', { closeId: collapseId, label: "Fermer" }); %>
+        <%- include('../../../link/template/ejs/link-close', { closeId: collapseId, label: "Fermer" }); %>
         <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
             <%
                 if (locals.leader !== undefined) {

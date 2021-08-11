@@ -1,6 +1,6 @@
 import { Disclosure } from '../disclosure/disclosure.js';
-import { CollapseSelectors } from './collapse-selectors.js';
-import { DisclosureTypes } from '../disclosure/disclosure-types.js';
+import { CollapseSelector } from './collapse-selector.js';
+import { DisclosureType } from '../disclosure/disclosure-type.js';
 import { CollapseButton } from './collapse-button.js';
 
 /**
@@ -10,7 +10,7 @@ import { CollapseButton } from './collapse-button.js';
  */
 class Collapse extends Disclosure {
   constructor () {
-    super(DisclosureTypes.EXPAND, CollapseSelectors.COLLAPSE, CollapseButton, 'CollapsesGroup');
+    super(DisclosureType.EXPAND, CollapseSelector.COLLAPSE, CollapseButton, 'CollapsesGroup');
   }
 
   static get instanceClassName () {

@@ -1,16 +1,16 @@
 import api from './api.js';
 import { Scheme } from './script/scheme/scheme.js';
-import { SchemeValues } from './script/scheme/scheme-values.js';
-import { SchemeSelectors } from './script/scheme/scheme-selectors.js';
-import { SchemeEmissions } from './script/scheme/scheme-emissions.js';
-import { SchemeThemes } from './script/scheme/scheme-themes.js';
+import { SchemeValue } from './script/scheme/scheme-value.js';
+import { SchemeSelector } from './script/scheme/scheme-selector.js';
+import { SchemeEmission } from './script/scheme/scheme-emission.js';
+import { SchemeTheme } from './script/scheme/scheme-theme.js';
 
 api.scheme = {
   Scheme: Scheme,
-  SchemeValues: SchemeValues,
-  SchemeSelectors: SchemeSelectors,
-  SchemeEmissions: SchemeEmissions,
-  SchemeThemes: SchemeThemes
+  SchemeValue: SchemeValue,
+  SchemeSelector: SchemeSelector,
+  SchemeEmission: SchemeEmission,
+  SchemeTheme: SchemeTheme
 };
 
 export default api;

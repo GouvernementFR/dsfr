@@ -156,7 +156,6 @@ const evaluate = (packages, type) => {
         // console.log(pck.id, 0);
         continue;
       }
-      console.log(pck.id);
       const dps = pck.dependencies[type].map(id => packages.filter(pck => pck.id === id)[0]);
       const levels = dps.map(p => p[type].level);
       const ascendants = dps.map(p => p.ascendants).flat().filter((id, index, array) => array.indexOf(id) === index).filter(id => pck.ascendants.indexOf(id) === -1);

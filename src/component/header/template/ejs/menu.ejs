@@ -3,7 +3,7 @@
 %>
 <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= navbar.menu.modalId %>" aria-labelledby="<%= navbar.menu.id %>">
     <div class="<%= prefix %>-container%>" >
-        <%- include('../../../links/template/ejs/link-close', { closeId: navbar.menu.modalId }); %>
+        <%- include('../../../link/template/ejs/link-close', { closeId: navbar.menu.modalId }); %>
         <% if (locals.tools && locals.tools.links) { %>
           <div class="<%= prefix %>-header__menu-links">
               <% if (locals.duplicateLinks) { %>

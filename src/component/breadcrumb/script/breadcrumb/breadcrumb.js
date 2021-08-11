@@ -27,9 +27,9 @@ class Breadcrumb extends api.core.Instance {
   getCollapse () {
     const collapse = this.collapse;
     if (collapse) {
-      collapse.listen(api.core.DisclosureEvents.DISCLOSE, this.focusing);
+      collapse.listen(api.core.DisclosureEvent.DISCLOSE, this.focusing);
     } else {
-      this.addAscent(api.core.DisclosureEmissions.ADDED, this.getCollapse.bind(this));
+      this.addAscent(api.core.DisclosureEmission.ADDED, this.getCollapse.bind(this));
     }
   }
 

@@ -1,0 +1,60 @@
+////
+/// Link Tool : icons
+/// @group link
+////
+
+@mixin _build-link-icon($size-settings, $place, $size:md, $font-icon: false, $reverse: false) {
+
+  $icon-size: icon-size(map_get($size-settings, icon));
+
+  @if $place == only {
+    $icon-size: icon-size(map_get($size-settings, icon-only));
+  }
+
+  @if $reverse {
+    flex-direction: row-reverse;
+  }
+  @else {
+    flex-direction: row;
+  }
+
+  $icon-margin: _link-icon-margin(map_get($size-settings, icon));
+  $icon-margin-x: space(map_get($size-settings, icon-margin-x));
+
+  @if $place == left {
+    overflow: initial;
+    max-width: none;
+    max-height: none;
+    @include before {
+      margin-left: -($icon-margin);
+      margin-right: $icon-margin-x;
+      font-size: $icon-size;
+    }
+  }
+  @else if $place == right {
+    overflow: initial;
+    max-width: none;
+    max-height: none;
+    @include before {
+      margin-right: -($icon-margin);
+      margin-left: $icon-margin-x;
+      font-size: $icon-size;
+    }
+  }
+  @else if $place == only {
+    $min-height: space(map_get($size-settings, min-height));
+    $padding-x: ($min-height - $icon-size) / 2;
+
+    overflow: hidden;
+    max-width: $min-height;
+    max-height: $min-height;
+    padding-left: $padding-x;
+    padding-right: $padding-x;
+
+    @include before {
+      margin-left: 0;
+      margin-right: $padding-x;
+      font-size: $icon-size;
+    }
+  }
+}

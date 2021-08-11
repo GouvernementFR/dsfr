@@ -17,6 +17,10 @@
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
 
+  & > #{ns(container)} {
+    pointer-events: none;
+  }
+
   &:focus {
     outline: none;
   }
@@ -68,6 +72,7 @@
   }
 
   @include body {
+    pointer-events: all;
     overflow-y: auto;
     flex: 1 1 auto;
     max-height: calc(100vh - 2rem);

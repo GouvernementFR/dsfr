@@ -9,7 +9,7 @@ style:
 example:
   style:
     - checkbox
-    - inputs
-    - radios
-    - selects
+    - input
+    - radio
+    - select
     - button

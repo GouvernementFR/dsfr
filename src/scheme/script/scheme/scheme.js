@@ -1,8 +1,8 @@
 import api from '../../api.js';
-import { SchemeValues } from './scheme-values.js';
-import { SchemeAttributes } from './scheme-attributes.js';
-import { SchemeThemes } from './scheme-themes.js';
-import { SchemeEmissions } from './scheme-emissions.js';
+import { SchemeValue } from './scheme-value.js';
+import { SchemeAttribute } from './scheme-attribute.js';
+import { SchemeTheme } from './scheme-theme.js';
+import { SchemeEmission } from './scheme-emission.js';
 
 class Scheme extends api.core.Instance {
   constructor () {
@@ -16,38 +16,38 @@ class Scheme extends api.core.Instance {
   init () {
     this.changing = this.change.bind(this);
 
-    if (this.hasAttribute(SchemeAttributes.TRANSITION)) {
-      this.removeAttribute(SchemeAttributes.TRANSITION);
+    if (this.hasAttribute(SchemeAttribute.TRANSITION)) {
+      this.removeAttribute(SchemeAttribute.TRANSITION);
       this.request(this.restoreTransition.bind(this));
     }
 
     const scheme = localStorage.getItem('scheme');
-    const schemeAttr = this.getAttribute(SchemeAttributes.SCHEME);
+    const schemeAttr = this.getAttribute(SchemeAttribute.SCHEME);
 
     switch (scheme) {
-      case SchemeValues.DARK:
-      case SchemeValues.LIGHT:
-      case SchemeValues.SYSTEM:
+      case SchemeValue.DARK:
+      case SchemeValue.LIGHT:
+      case SchemeValue.SYSTEM:
         this.scheme = scheme;
         break;
 
       default:
         switch (schemeAttr) {
-          case SchemeValues.DARK:
-            this.scheme = SchemeValues.DARK;
+          case SchemeValue.DARK:
+            this.scheme = SchemeValue.DARK;
             break;
 
-          case SchemeValues.LIGHT:
-            this.scheme = SchemeValues.LIGHT;
+          case SchemeValue.LIGHT:
+            this.scheme = SchemeValue.LIGHT;
             break;
 
           default:
-            this.scheme = SchemeValues.SYSTEM;
+            this.scheme = SchemeValue.SYSTEM;
         }
     }
 
-    this.addAscent(SchemeEmissions.ASK, this.ask.bind(this));
-    this.addAscent(SchemeEmissions.SCHEME, this.apply.bind(this));
+    this.addAscent(SchemeEmission.ASK, this.ask.bind(this));
+    this.addAscent(SchemeEmission.SCHEME, this.apply.bind(this));
   }
 
   get proxy () {
@@ -71,11 +71,11 @@ class Scheme extends api.core.Instance {
   }
 
   restoreTransition () {
-    this.setAttribute(SchemeAttributes.TRANSITION, '');
+    this.setAttribute(SchemeAttribute.TRANSITION, '');
   }
 
   ask () {
-    this.descend(SchemeEmissions.SCHEME, this.scheme);
+    this.descend(SchemeEmission.SCHEME, this.scheme);
   }
 
   apply (value) {
@@ -90,27 +90,27 @@ class Scheme extends api.core.Instance {
     if (this._scheme === value) return;
     this._scheme = value;
     switch (value) {
-      case SchemeValues.SYSTEM:
+      case SchemeValue.SYSTEM:
         this.listenPreferences();
         break;
 
-      case SchemeValues.DARK:
+      case SchemeValue.DARK:
         this.unlistenPreferences();
-        this.theme = SchemeThemes.DARK;
+        this.theme = SchemeTheme.DARK;
         break;
 
-      case SchemeValues.LIGHT:
+      case SchemeValue.LIGHT:
         this.unlistenPreferences();
-        this.theme = SchemeThemes.LIGHT;
+        this.theme = SchemeTheme.LIGHT;
         break;
 
       default:
-        this.scheme = SchemeValues.SYSTEM;
+        this.scheme = SchemeValue.SYSTEM;
     }
 
-    this.descend(SchemeEmissions.SCHEME, value);
+    this.descend(SchemeEmission.SCHEME, value);
     localStorage.setItem('scheme', value);
-    this.setAttribute(SchemeAttributes.SCHEME, value);
+    this.setAttribute(SchemeAttribute.SCHEME, value);
   }
 
   get theme () {
@@ -120,12 +120,12 @@ class Scheme extends api.core.Instance {
   set theme (value) {
     if (this._theme === value) return;
     switch (value) {
-      case SchemeThemes.LIGHT:
-      case SchemeThemes.DARK:
+      case SchemeTheme.LIGHT:
+      case SchemeTheme.DARK:
         // if (this._scheme !== Schemes.SYSTEM && this._scheme !== value) return;
         this._theme = value;
-        this.setAttribute(SchemeAttributes.THEME, value);
-        this.descend(SchemeEmissions.THEME, value);
+        this.setAttribute(SchemeAttribute.THEME, value);
+        this.descend(SchemeEmission.THEME, value);
         break;
     }
   }
@@ -146,12 +146,12 @@ class Scheme extends api.core.Instance {
   }
 
   change () {
-    this.theme = this.mediaQuery.matches ? SchemeThemes.DARK : SchemeThemes.LIGHT;
+    this.theme = this.mediaQuery.matches ? SchemeTheme.DARK : SchemeTheme.LIGHT;
   }
 
   mutate (attributeNames) {
-    if (attributeNames.indexOf(SchemeAttributes.SCHEME) > -1) this.scheme = this.getAttribute(SchemeAttributes.SCHEME);
-    if (attributeNames.indexOf(SchemeAttributes.THEME) > -1) this.theme = this.getAttribute(SchemeAttributes.THEME);
+    if (attributeNames.indexOf(SchemeAttribute.SCHEME) > -1) this.scheme = this.getAttribute(SchemeAttribute.SCHEME);
+    if (attributeNames.indexOf(SchemeAttribute.THEME) > -1) this.theme = this.getAttribute(SchemeAttribute.THEME);
   }
 
   dispose () {
