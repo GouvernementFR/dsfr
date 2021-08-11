@@ -38,7 +38,7 @@ example:
   style:
     - core
     - buttons
-    - accordions
+    - accordion
   script:
     - core
-    - accordions
+    - accordion

@@ -10,10 +10,10 @@ const { deployFavicons, deployFiles } = require('./build/copy');
  */
 const buildBuilder = (yargs) => {
   return yargs
-    .usage('Usage: $0 -p core accordions')
+    .usage('Usage: $0 -p core accordion')
     .example(
-      '$0 -p core accordions -jcm',
-      'compile les fichiers scripts et styles du package core et accordions en les minifiant'
+      '$0 -p core accordion -jcm',
+      'compile les fichiers scripts et styles du package core et accordion en les minifiant'
     )
     .option('packages', {
       alias: 'p',

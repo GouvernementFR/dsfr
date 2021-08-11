@@ -1,5 +1,5 @@
 import api from './api.js';
-import './accordions/main.js';
+import './accordion/main.js';
 import './buttons/main.js';
 import './breadcrumb/main.js';
 import './sidemenu/main.js';
