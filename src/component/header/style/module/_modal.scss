@@ -1,0 +1,45 @@
+////
+/// Header Module : modal
+/// @group header
+////
+
+#{ns(modal)} {
+  overflow: auto;
+  justify-content: initial;
+
+  &:not([role="dialog"]) {
+    transition: none;
+  }
+
+  @include before(none);
+  @include after(none);
+
+  @include respond-from(lg) {
+    @include margin(0);
+    @include size(auto, auto);
+    visibility: inherit;
+    opacity: 1;
+    position: initial;
+    background-color: transparent;
+    overflow: initial;
+  }
+
+  & > * > #{ns(link--close)} {
+    @include margin-bottom(6v);
+    @include respond-from(lg) {
+      display: none;
+    }
+  }
+
+  & > #{ns(container)} {
+    pointer-events: all;
+    @include padding-top(4v);
+    @include padding-bottom(18v);
+    @include height(100%);
+
+    @include respond-from(lg) {
+      @include padding-y(0);
+      @include height(auto);
+    }
+  }
+}

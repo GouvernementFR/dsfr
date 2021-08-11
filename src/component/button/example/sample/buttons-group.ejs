@@ -1,0 +1,17 @@
+<%
+const buttons = [];
+
+let lbl = locals.label;
+
+for (let i = 0; i < locals.groupCount; i++) {
+  buttons.push({
+    label: lbl,
+    secondary: i > 0 || !locals.hierarchy
+  });
+
+  if (locals.vary) lbl += i % 2 === 0 ? ' plus' : ' long'
+}
+
+%>
+
+<%- include('../../template/ejs/buttons-group.ejs', {buttons: buttons}) %>

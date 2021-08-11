@@ -1,0 +1,13 @@
+////
+/// Follow Tool
+/// @group follow
+////
+
+/**
+* Mixin d'ajout des icones des réseaux sociaux
+**/
+@mixin social-icon ($modifier, $icon) {
+  #{ns('link--' + $modifier)} {
+    @include icon($icon, null);
+  }
+}

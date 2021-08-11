@@ -1,0 +1,20 @@
+////
+/// Share Tool
+/// @group share
+////
+
+@mixin build-share() {
+  @include _build-link($share-settings);
+}
+
+@mixin nest-share($size:md, $place: null, $icon:null, $from: null, $insert: true) {
+  @include _nest-link($share-settings, $size, $place, $icon, $from, $insert) {
+    @content;
+  }
+}
+
+@mixin build-social-share-link($name, $icon) {
+  #{ns(share__link)}--#{$name} {
+    @include nest-share(md, only, $icon, null, false);
+  }
+}

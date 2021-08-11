@@ -1,0 +1,30 @@
+////
+/// Core Tool : Collapse
+/// @group core
+////
+
+@mixin collapse($className: collapse) {
+  overflow: hidden;
+  transition: visibility 0.3s;
+  max-height: 0;
+
+  --collapse: -99999px;
+  --collapser: '';
+
+  &::before {
+    display: block;
+    content: '';
+    content: var(--collapser);
+    transition: margin-top 0.3s;
+    margin-top: 0;
+  }
+
+  #{&}:not(&--expanded) {
+    visibility: hidden;
+
+    @include before {
+      margin-top: -99999px;
+      margin-top: var(--collapse);
+    }
+  }
+}

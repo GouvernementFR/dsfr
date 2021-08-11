@@ -1,0 +1,20 @@
+////
+/// Share Setting
+/// @group share
+////
+
+$share-settings:(
+  selector: share__link,
+  sizes: (
+    md: (
+      font-size: 14,
+      min-height: 12v,
+      padding-x: 4v,
+      icon: sm,
+      icon-margin-x: 2v,
+      icon-only: md
+    )
+  ),
+  places: only,
+  border-radius: true
+);

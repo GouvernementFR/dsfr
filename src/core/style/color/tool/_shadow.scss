@@ -1,0 +1,8 @@
+////
+/// Core Tool : Color shadow
+/// @group core
+////
+
+@mixin shadow($type) {
+  box-shadow: map_get($shadows-settings, $type);
+}

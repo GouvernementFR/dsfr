@@ -5,5 +5,5 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/779747332
 style:
   - core
   - scheme
-  - inputs
-  - buttons
+  - input
+  - button

@@ -20,18 +20,18 @@ const links = {
 let dataModal = {
   id: prefix + "-theme-modal",
   title: 'Paramètres d’affichage',
-  body: '../../../../pattern/display/example/samples/body',
+  body: '../../../../pattern/display/example/sample/body',
   size: "sm"
 }
 %>
 
-<%- include('../../../component/header/example/samples/header.ejs', { links: links, navigation: true, navigationId:'header-navigation' }); %>
+<%- include('../../../component/header/example/sample/header.ejs', { links: links, navigation: true, navigationId:'header-navigation' }); %>
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
-  <h1>Schemes - gestion du dark mode</h1>
-  <%- sample('bouton ouverture thèmes', '../../../component/links/example/samples/link-default', links.items[0], true) %>
+  <h1>Scheme - gestion du dark mode</h1>
+  <%- sample('bouton ouverture thèmes', '../../../component/link/example/sample/link-default', links.items[0], true) %>
 
-  <%- sample('snippet modal de paramètres d\'affichage', '../../../component/modal/templates/ejs/modal.ejs', dataModal, true); %>
+  <%- sample('snippet modal de paramètres d\'affichage', '../../../component/modal/template/ejs/modal.ejs', dataModal, true); %>
 
 </div>
 

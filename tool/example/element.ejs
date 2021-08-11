@@ -1,0 +1,15 @@
+<%
+    switch(type) {
+        case 'package':
+%>
+<%- include(root + 'tool/example/package', {type:undefined}); %>
+<%
+        break;
+
+        case 'folder':
+%>
+<%- include(root + 'tool/example/folder', {type:undefined}); %>
+<%
+        break;
+}
+%>

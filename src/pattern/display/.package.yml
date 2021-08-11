@@ -4,8 +4,8 @@ description: Le pattern paramètre d'affichage permet de définir ses préféren
 style:
   - core
   - scheme
-  - forms
-  - radios
+  - form
+  - radio
   - modal
 script:
   - core

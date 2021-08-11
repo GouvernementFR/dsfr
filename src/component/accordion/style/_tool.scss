@@ -1,0 +1,10 @@
+////
+/// Accordion Tool
+/// @group accordion
+////
+
+@mixin nest-accordion-button($icon:null) {
+  @include _nest-link($accordions-settings, md, right, $icon, null, false) {
+    @content;
+  }
+}

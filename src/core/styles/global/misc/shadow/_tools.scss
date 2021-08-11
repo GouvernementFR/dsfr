@@ -1,8 +1,0 @@
-////
-/// Core Tools : Global shadow
-/// @group core
-////
-
-@mixin shadow($type) {
-  box-shadow: map_get($shadows-settings, $type);
-}

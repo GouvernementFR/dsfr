@@ -19,10 +19,10 @@
   },
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc src/*/styles/** -d ./doc/sassdoc",
-    "tmp": "node ./tools/tools.js tmp",
-    "build": "node ./tools/tools.js build",
-    "release": "node ./tools/tools.js release",
-    "deploy": "node ./tools/tools.js deploy"
+    "tmp": "node tool/tool.js tmp",
+    "build": "node tool/tool.js build",
+    "release": "node tool/tool.js release",
+    "deploy": "node tool/tool.js deploy"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

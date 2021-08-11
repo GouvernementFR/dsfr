@@ -1,0 +1,47 @@
+////
+/// Link Tool : link
+/// @group link
+////
+
+@mixin _nest-link($settings: $links-settings, $size: md, $place: null, $icon: null, $from: null, $insert: true, $align-on-content: false) {
+  $selector: null;
+  $sizes: map_get($settings, sizes);
+  $size-settings: map_get($sizes, $size);
+  $border-radius: map-get($settings, border-radius);
+
+  @if $insert {
+    $selector: ns(map-get($settings, selector));
+  }
+
+  @include nest($selector) {
+    @include respond-from($from) {
+      @if $icon != null {
+        @include icon($icon);
+      }
+      @else if $size != null {
+        @include icon(null, $size);
+      }
+
+      @include _build-link-size($size-settings, $border-radius);
+
+      @if $place == null {
+        @include before(none);
+      }
+      @else {
+        @include _build-link-icon($size-settings, $place, $size, false, $place == right);
+      }
+
+      @if map-get($settings, align-on-content) and $align-on-content {
+        @include _link-align-on-content($size, $place, $size-settings);
+      }
+
+      @content;
+    }
+  }
+}
+
+@mixin nest-link($size:md, $place: null, $icon:null, $from: null, $insert: true, $align-on-content: false) {
+  @include _nest-link($links-settings, $size, $place, $icon, $from, $insert, $align-on-content) {
+    @content;
+  }
+}

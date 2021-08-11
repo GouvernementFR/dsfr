@@ -1,0 +1,18 @@
+////
+/// Highlight Module
+/// @group Highlight
+////
+
+#{ns(highlight)} {
+  @include padding-left(4v);
+  @include text-style(md);
+
+  @include respond-from(md) {
+    @include padding-left(8v);
+    @include margin-left(8v);
+  }
+
+  p {
+    @include margin-bottom(0);
+  }
+}

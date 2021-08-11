@@ -1,0 +1,8 @@
+////
+/// Tab Tool
+/// @group tab
+////
+
+@mixin build-tab() {
+  @include _build-link($tabs-settings);
+}

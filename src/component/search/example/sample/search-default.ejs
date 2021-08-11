@@ -1,0 +1,6 @@
+<%
+let button = locals.button || {};
+button.label = 'Rechercher';
+let btnTitle = locals.btnTitle !== undefined ? locals.btnTitle : 'Rechercher';
+let data = {label:'Recherche', placeholder:locals.placeholder !== undefined ? placeholder : 'Rechercher', button: button, id: locals.id || uniqueId('search')} %>
+<%- include('../../template/ejs/search.ejs', data); %>

@@ -1,0 +1,33 @@
+////
+/// Tag Module
+/// @group tag
+////
+
+@include build-tag();
+
+#{ns-group(tags)} {
+  @include disable-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  @include margin-bottom(0);
+
+  > li {
+    display: inline-flex;
+  }
+
+  #{ns(tag)} {
+    @include margin-right(2v);
+    @include margin-bottom(2v);
+  }
+
+  a#{ns(tag)},
+  button#{ns(tag)} {
+    @include margin-right(3v);
+    @include margin-bottom(3v);
+
+    &--sm {
+      @include margin-right(6v);
+      @include margin-bottom(6v);
+    }
+  }
+}

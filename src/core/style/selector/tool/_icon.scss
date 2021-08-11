@@ -1,0 +1,16 @@
+////
+/// Core Tool : Selector icon
+/// @group core
+////
+
+@mixin has-icon() {
+  @include class-start-with(ns(fi-, '')) {
+    @content;
+  }
+}
+
+@mixin has-not-icon() {
+  @include class-not-start-with(ns(fi-, '')) {
+    @content;
+  }
+}

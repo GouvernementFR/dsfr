@@ -1,0 +1,9 @@
+////
+/// Core Tool : Display fit
+/// @group core
+////
+
+@mixin fit-cover-center {
+  object-fit: cover;
+  object-position: 50% 50%;
+}

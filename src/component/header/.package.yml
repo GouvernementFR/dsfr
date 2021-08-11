@@ -5,8 +5,8 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Heade
 style:
   - core
   - scheme
-  - links
-  - buttons
+  - link
+  - button
   - logo
   - navigation
   - modal

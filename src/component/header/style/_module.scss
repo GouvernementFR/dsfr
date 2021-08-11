@@ -1,0 +1,27 @@
+////
+/// Header Module
+/// @group header
+////
+
+#{ns(header)} {
+  @include disable-link-style;
+  @include disable-list-style;
+  @include size(100%);
+  @include shadow(md);
+  @include relative;
+
+  @include body {
+    &-row {
+      @include display-flex(row, center, flex-start);
+      @include margin(0 -4v);
+      @include padding(6v 0, lg);
+    }
+  }
+
+  @import 'module/brand';
+  @import 'module/modal';
+  @import 'module/navbar';
+  @import 'module/tools';
+  @import 'module/links';
+  @import 'module/nav';
+}

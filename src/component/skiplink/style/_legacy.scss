@@ -1,0 +1,16 @@
+////
+/// Skiplink Legacy
+/// @group skiplink
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif
+  */
+  #{ns(skiplinks)} {
+    &.focus-within {
+      position: relative;
+      transform: translateY(0);
+    }
+  }
+}

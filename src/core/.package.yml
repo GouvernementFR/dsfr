@@ -8,7 +8,7 @@ description: |
 
   Les typographies Marianne® et Spectral sont les typographies officielles de la charte de l'État. Leur usage crée une cohérence entre les interfaces et offre une expérience positive à l’utilisateur. Leur respect renforce également la reconnaissance de la parole de l’État.
 
-  ### Icons
+  ### Icônes
 
   Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilisateur dans ses actions et qui aident à sa compréhension de l’interface.
 
@@ -37,8 +37,8 @@ doc:
 example:
   style:
     - core
-    - buttons
-    - accordions
+    - button
+    - accordion
   script:
     - core
-    - accordions
+    - accordion

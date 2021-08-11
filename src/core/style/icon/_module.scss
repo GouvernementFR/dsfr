@@ -1,0 +1,31 @@
+////
+/// Core Module : Icons
+/// @group core
+////
+
+@font-face {
+  font-family: '#{$namespace}-icon';
+  src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
+}
+
+@include has-icon {
+  @include before {
+    @include font-icon;
+  }
+}
+
+#{ns(fi)} {
+  @each $size, $value in $icon-size-map {
+    &--#{$size} {
+      @include _pseudo(before after) {
+        font-size: #{icon-size($size)} !important;
+      }
+    }
+  }
+}
+
+/**
+ * Définitions des symboles des icones
+ **/
+// $icons-settings est générée dans generated/_icons.scss
+@include generate-icons(fi);

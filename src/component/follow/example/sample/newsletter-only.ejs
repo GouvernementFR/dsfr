@@ -1,0 +1,9 @@
+
+<%
+let data = {};
+data = JSON.parse(include('./data.ejs'));
+data.socials = undefined;
+
+%>
+
+<%- include('../../template/ejs/follow.ejs', data); %>

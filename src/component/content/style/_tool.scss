@@ -1,0 +1,35 @@
+////
+/// Content Tool
+/// @group content
+////
+
+@mixin content-media-sizes($medias, $captions, $gap) {
+  @each $size in $content-sizes {
+    $g: $gap;
+
+    @if $size == sm {
+      $g: -$gap;
+    }
+
+    &--#{$size} {
+      #{$medias},
+      #{$captions} {
+        width: #{100% + ($g / 1.5)};
+
+        @include respond-from(md) {
+          width: #{100% + $g};
+        }
+      }
+
+      @if $size == lg {
+        #{$medias} {
+          max-width: 100vw;
+        }
+
+        #{$captions} {
+          max-width: calc(100vw - #{space(8v)});
+        }
+      }
+    }
+  }
+}

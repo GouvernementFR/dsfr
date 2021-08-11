@@ -1,0 +1,9 @@
+<%
+    locals.title = undefined;
+
+    let data = {
+        prev: { label: 'Page précédente', href:'#', haslabel: locals.hasLabel, hasLgLabel: locals.hasLgLabel }
+    }
+%>
+
+<%- include('../../template/ejs/pagination', data); %>

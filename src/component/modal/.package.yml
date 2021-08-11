@@ -6,11 +6,11 @@ wrapper: col-8
 style:
   - core
   - scheme
-  - links
-  - buttons
+  - link
+  - button
 script:
   - core
 example:
   style:
-    - forms
-    - inputs
+    - form
+    - input

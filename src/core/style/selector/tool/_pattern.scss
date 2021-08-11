@@ -1,0 +1,91 @@
+////
+/// Core Tool : Selector pattern
+/// @group core
+////
+
+@mixin _class-pattern($selector, $unify: true) {
+  @if & == null {
+    @at-root #{$selector} {
+      @content;
+    }
+  }
+  @else if $unify {
+    @at-root #{selector-unify(&, $selector)} {
+      @content;
+    }
+  }
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+@mixin class-contains($unify: true, $patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}[class*="#{$pattern}"]';
+  }
+
+  @include _class-pattern($selectors, $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-contains($unify: true, $patterns...) {
+
+  @if length($patterns) == 1 and length(nth($patterns, 1)) > 1 {
+    $patterns: nth($patterns, 1);
+  }
+
+  $selectors: '';
+  @each $pattern in $patterns {
+    $selectors: '#{$selectors}:not([class*="#{$pattern}"])';
+  }
+
+  @include _class-pattern($selectors, $unify) {
+    @content;
+  }
+}
+
+@mixin class-start-with($start, $unify: true) {
+  @include _class-pattern(class-start-with($start), $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-start-with($start, $unify: true) {
+  @include _class-pattern(class-not-start-with($start), $unify) {
+    @content;
+  }
+}
+
+@mixin class-end-with($end, $unify: true) {
+  @include _class-pattern(class-end-with($end), $unify) {
+    @content;
+  }
+}
+
+@mixin class-not-end-with($end, $unify: true) {
+  @include _class-pattern(class-not-end-with($end), $unify) {
+    @content;
+  }
+}
+
+@mixin class-is-ns($unify: true) {
+  @include class-start-with(ns('', ''), $unify) {
+    @content;
+  }
+}
+
+@mixin class-is-not-ns($unify: true) {
+  @include class-not-start-with(ns('', ''), $unify) {
+    @content;
+  }
+}

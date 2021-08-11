@@ -1,8 +1,0 @@
-////
-/// Core Schemes : Reset focus
-/// @group core
-////
-
-@if (map-get($reset-settings, focus)) {
-  @include build-focus-schemes;
-}

@@ -1,0 +1,25 @@
+////
+/// Core Function : Selector associate
+/// @group core
+////
+
+@function selector-associate($selector, $element) {
+  $segments: str-split(quote($selector), ',');
+  $result: ();
+  @each $segment in $segments {
+    $elements: str-split($segment, ' ');
+    $r: ();
+    $length: length($elements);
+    @if $length > 1 {
+      @for $i from 1 to $length {
+        $r: append($r, unquote(nth($elements, $i)), 'space');
+      }
+    }
+    $u: selector-unify(nth($elements, -1), $element);
+    @if $u != null {
+      $r: append($r, $u, 'space');
+      $result: append($result, $r, 'comma');
+    }
+  }
+  @return $result;
+}

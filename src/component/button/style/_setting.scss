@@ -1,0 +1,35 @@
+////
+/// Button Setting
+/// @group button
+////
+
+$btns-settings:(
+  selector: btn,
+  sizes: (
+    sm: (
+      font-size: 14,
+      min-height: 8v,
+      padding-x: 4v,
+      icon: sm,
+      icon-margin-x: 2v,
+      icon-only: sm,
+    ),
+    md: (
+      font-size: 16,
+      min-height: 10v,
+      padding-x: 6v,
+      icon: sm,
+      icon-margin-x: 2v,
+      icon-only: md,
+    ),
+    lg: (
+      font-size: 20,
+      min-height: 14v,
+      padding-x: 8v,
+      icon: md,
+      icon-margin-x: 2v,
+      icon-only: lg,
+    )
+  ),
+  places: only left right
+);

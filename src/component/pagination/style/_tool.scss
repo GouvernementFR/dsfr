@@ -1,0 +1,14 @@
+////
+/// Button Tool
+/// @group button
+////
+
+@mixin build-pagination() {
+  @include _build-link($pagination-build-settings);
+}
+
+@mixin nest-pagination($place: null, $icon:null, $from: null) {
+  @include _nest-link($pagination-nest-settings, md, $place, $icon, $from, false) {
+    @content;
+  }
+}

@@ -1,0 +1,17 @@
+////
+/// Core Module : Display no-scroll
+/// @group core
+////
+
+/**
+* Fixe le scroll en arrière plan
+*/
+// TODO: transformer en attribut ?
+:root#{ns-attr(scrolling)} body {
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}

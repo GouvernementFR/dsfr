@@ -10,8 +10,8 @@ example:
   style:
     - header
     - footer
-    - forms
-    - radios
+    - form
+    - radio
   script:
     - modal
     - header

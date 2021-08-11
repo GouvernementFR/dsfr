@@ -1,0 +1,13 @@
+////
+/// Core Module : Reset input & form field
+/// @group core
+////
+
+@if (map-get($reset-settings, input)) {
+  input,
+  select,
+  textarea {
+    @include font-family;
+    @include text-adjustments;
+  }
+}

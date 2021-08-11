@@ -1,0 +1,8 @@
+<%
+let button = locals.button || {};
+button.label = 'Autoriser';
+button.btnTitle = 'Autorisez le dépôt de cookies pour accéder au service **Nom du service**';
+let service = locals.service || '**Nom du service**';
+let data = {title: service + ' est désactivé', body: 'Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.', button: button};
+%>
+<%- include('../../template/ejs/placeholder.ejs', data); %>

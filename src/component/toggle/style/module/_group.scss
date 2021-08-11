@@ -1,0 +1,12 @@
+////
+/// Toggle Module : Group
+/// @group toggle
+////
+
+/*
+ * On surcharge les styles de base (provisoire)
+ */
+
+#{ns(toggle)}__list {
+  @include disable-list-style;
+}

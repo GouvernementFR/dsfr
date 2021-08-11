@@ -1,0 +1,16 @@
+////
+/// Breadcrumb Scheme
+/// @group breadcrumb
+////
+
+#{ns(breadcrumb)} {
+  @include scheme-element-text-color(g600, true);
+
+  &__button {
+    @include scheme-element-bg-color(t-plain);
+  }
+
+  &__link[aria-current] {
+    @include scheme-element-text-color(g800);
+  }
+}

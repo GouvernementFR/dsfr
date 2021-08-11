@@ -1,12 +1,12 @@
 import api from './api.js';
-import { HeaderLinks } from './scripts/header/header-links.js';
-import { HeaderModal } from './scripts/header/header-modal.js';
-import { HeaderSelectors } from './scripts/header/header-selectors.js';
+import { HeaderLinks } from './script/header/header-links.js';
+import { HeaderModal } from './script/header/header-modal.js';
+import { HeaderSelector } from './script/header/header-selector.js';
 
 api.header = {
   HeaderLinks: HeaderLinks,
   HeaderModal: HeaderModal,
-  HeaderSelectors: HeaderSelectors,
+  HeaderSelector: HeaderSelector,
   doc: 'https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header'
 };
 
