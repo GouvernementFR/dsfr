@@ -62,6 +62,7 @@ const analyse = (id, path, ascendants = []) => {
   config.description = data.description || '';
   config.doc = data.doc;
   if (data.wrapper) config.wrapper = data.wrapper;
+  config.prepend = data.prepend === true;
   const example = data.example || {};
   if (!example.style) example.style = [];
   if (!example.script) example.script = [];
