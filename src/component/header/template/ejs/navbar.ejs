@@ -6,7 +6,7 @@
         if (locals.search) {
           const label = search.label || 'Rechercher';
     %>
-    <%- include('../../../buttons/template/ejs/button', {
+    <%- include('../../../button/template/ejs/button', {
         classes: [prefix + '-btn--search'],
         title: label,
         attributes: {
@@ -23,7 +23,7 @@
             const label = menu.label || 'Menu';
 
     %>
-    <%- include('../../../buttons/template/ejs/button', {
+    <%- include('../../../button/template/ejs/button', {
         classes: [prefix + '-btn--menu'],
         title: label,
         attributes: {

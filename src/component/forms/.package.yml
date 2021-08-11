@@ -12,4 +12,4 @@ example:
     - inputs
     - radios
     - selects
-    - buttons
+    - button

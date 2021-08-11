@@ -6,7 +6,7 @@ style:
   - core
   - scheme
   - links
-  - buttons
+  - button
   - logo
   - navigation
   - modal

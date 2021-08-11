@@ -7,7 +7,7 @@ style:
   - core
   - scheme
   - links
-  - buttons
+  - button
   - forms
   - radios
   - modal

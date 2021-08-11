@@ -1,6 +1,6 @@
 import api from './api.js';
 import './accordion/main.js';
-import './buttons/main.js';
+import './button/main.js';
 import './breadcrumb/main.js';
 import './sidemenu/main.js';
 import './modal/main.js';

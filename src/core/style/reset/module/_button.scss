@@ -1,0 +1,12 @@
+////
+/// Core Module : Reset button
+/// @group core
+////
+
+@if (map-get($reset-settings, button)) {
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    @include btn-reset;
+  }
+}
