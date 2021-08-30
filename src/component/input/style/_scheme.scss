@@ -4,7 +4,6 @@
 ////
 
 textarea#{ns(input)} {
-  @include scheme-element-box-shadow-color(g600, true, 0 2px 0 0 $COLOR);
   min-height: space(15v);
 }
 
