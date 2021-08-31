@@ -1,0 +1,11 @@
+id: label
+title: Label
+description:
+doc:
+wrapper: col-8
+style:
+  - core
+  - scheme
+follow:
+  style:
+    - link

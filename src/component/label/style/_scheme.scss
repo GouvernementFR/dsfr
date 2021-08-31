@@ -1,0 +1,19 @@
+////
+/// Label Module
+/// @group label
+////
+
+#{ns(label)} {
+  @include scheme-element-text-color(bf500-plain, true);
+  @include scheme-element-bg-color(bf200-bf300, true);
+
+  @at-root {
+    #{selector-unify(&, a)},
+    #{selector-unify(&, button)} {
+      @include scheme-element-text-color(bf500-plain, true);
+      @include scheme-element-bg-color(bf200-bf300, true, true);
+    }
+  }
+
+  @include disabled-link(true, true);
+}

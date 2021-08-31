@@ -1,0 +1,14 @@
+////
+/// Label Tool
+/// @group label
+////
+
+@mixin build-label() {
+  @include _build-link($label-settings);
+}
+
+@mixin nest-label($size:md, $place: null, $icon:null, $from: null, $insert: true) {
+  @include _nest-link($label-settings, $size, $place, $icon, $from, $insert) {
+    @content;
+  }
+}

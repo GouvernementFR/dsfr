@@ -1,0 +1,19 @@
+<% const sample = getSample(include); %>
+
+<%- sample('label seul non cliquable', './sample/label-default', {}, true); %>
+<%- sample('label seul cliquable', './sample/label-default', {clickable: true}, true); %>
+<%- sample('label seul icône à gauche', './sample/label-default', {clickable: true, iconPlace: 'left', icon: 'information-fill'}, true); %>
+<%- sample('label seul icône à droite', './sample/label-default', {clickable: true, iconPlace: 'right', icon: 'information-fill'}, true); %>
+<%- sample('label seul désactivé', './sample/label-default', {button:true, disabled:true}, true); %>
+
+<%- sample('label seul non cliquable SM', './sample/label-sm', {}, true); %>
+<%- sample('label seul icône à gauche SM', './sample/label-sm', {iconPlace: 'left', icon: 'information-fill'}, true); %>
+<%- sample('label seul icône à droite SM', './sample/label-sm', {iconPlace: 'right', icon: 'information-fill'}, true); %>
+<%- sample('label seul cliquable SM', './sample/label-sm', {clickable: true}, true); %>
+<%- sample('label seul désactivé SM', './sample/label-sm', {button:true, disabled:true}, true); %>
+
+<%- sample('Groupe de labels cliquables', './sample/label-default', {clickable: true, group: true}, true); %>
+<%- sample('Groupe de labels cliquables SM', './sample/label-sm', {clickable: true, group: true}, true); %>
+<%- sample('Groupe de labels non cliquables', './sample/label-default', {group: true}, true); %>
+<%- sample('Groupe de labels non cliquables SM', './sample/label-sm', {group: true}, true); %>
+
