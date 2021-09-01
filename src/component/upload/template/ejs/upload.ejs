@@ -1,0 +1,39 @@
+<%#
+# paramètres upload
+
+* id (string, required) : id de l'upload
+
+* name (string, required) : nom de l'input
+
+* label (string, required) : texte du label
+
+* hint (string, optional) : texte de description sous le label
+
+* labelAttrs (object, optional) : Pour passer des attributs au label
+
+* uploadAttrs (object, optional) : Pour passer des attributs au input
+
+* error (string, optional) : ajoute un texte d'erreur
+
+* success (string, optional) : ajoute un texte de succès
+
+* multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
+
+* disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<%
+ let uploadClasses = [prefix + '-upload'];
+ let uploadAttrs = locals.uploadAttrs || [];
+ let labelAttrs = locals.labelAttrs || {};
+ let labelClass = locals.labelClasses || [];
+ if (locals.disabled) uploadAttrs['disabled'] = '';
+ if (locals.multiple) uploadAttrs['multiple'] = '';
+ %>
+
+<div <%- includeClasses(uploadClasses); %>>
+  <%- include('../../../form/template/ejs/label', labelAttrs); %>
+  <input <%- includeAttrs(uploadAttrs); %> type="file" id="<%= id %>" name="<%= name %>">
+  <%- include('../../../form/template/ejs/message'); %>
+</div>

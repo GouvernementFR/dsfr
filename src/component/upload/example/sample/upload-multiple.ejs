@@ -1,12 +1,12 @@
 <%
-let data = JSON.parse(include('../../../forms/example/samples/data'));
+let data = {};
 data.name = id;
 
 data.label = 'Ajouter des fichiers';
 data.hint = 'Taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.';
-data.multiple = true
-if(locals.error) data.error = 'Format de fichier non supporté'
+data.multiple = true;
+if(locals.error) data.error = 'Format de fichier non supporté';
 %>
 
-<%- include('../../templates/ejs/upload', data); %>
+<%- include('../../template/ejs/upload', data); %>
 
