@@ -6,6 +6,11 @@
 @include build-share();
 
 #{ns(share)} {
+  &__link {
+    @include margin-x(1v);
+    @include margin-bottom(2v);
+  }
+
   &__title {
     @include margin-bottom(4v);
   }
@@ -19,14 +24,8 @@
     @include disable-list-style;
     @include display-flex;
     flex-wrap: wrap;
-    @include margin-x(-2v);
+    @include margin-x(-1v);
     @include margin-bottom(2v);
-
-    > li {
-      display: inline-flex;
-      @include margin-left(2v);
-      @include margin-bottom(2v);
-    }
   }
 }
 
