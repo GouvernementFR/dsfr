@@ -7,7 +7,7 @@
 
 #{ns(share)} {
   &__title {
-    @include margin-bottom(2v);
+    @include margin-bottom(4v);
   }
 
   &__text {
@@ -17,14 +17,15 @@
 
   &__group {
     @include disable-list-style;
-    display: flex;
+    @include display-flex;
     flex-wrap: wrap;
     @include margin-x(-2v);
-    @include margin-bottom(0);
+    @include margin-bottom(2v);
 
     > li {
       display: inline-flex;
-      @include margin(2v);
+      @include margin-left(2v);
+      @include margin-bottom(2v);
     }
   }
 }
