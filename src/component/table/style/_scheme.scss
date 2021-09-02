@@ -22,7 +22,7 @@
   }
 
   tbody tr:nth-child(odd) {
-    @include scheme-element-bg-color(white);
+    @include scheme-element-bg-color(w);
   }
 
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
