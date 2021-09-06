@@ -2,7 +2,7 @@
 const sample = getSample(include);
 %>
 
-<p>Préciser le type d'alerte (Information/Succès/Erreur) dans le titre ou, à défaut, dans le contenu de l'alerte<br>
+<p>Préciser le type d'alerte (Information/Succès/Erreur/Attention) dans le titre ou, à défaut, dans le contenu de l'alerte<br>
 Le titre est défini par la classe "fr-alert__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte</p>
 
 <%- sample('Alerte par défaut', './sample/alert-default', {}, true); %>
@@ -13,7 +13,7 @@ Le titre est défini par la classe "fr-alert__title", la balise &#60;p&#62; peut
 
 <%- sample('Alerte erreur', './sample/alert-default', {type: "error", title: "Erreur détectée dans le formulaire"}, true); %>
 
-<!-- <%- sample('Alerte attention', './sample/alert-default', {type: "warning", title: "Attention"}, true); %> -->
+<%- sample('Alerte attention', './sample/alert-default', {type: "warning", title: "Attention"}, true); %>
 
 <%- sample('Alerte avec bouton fermer', './sample/alert-default', {type: "info", title: "Information Covid", buttonClose: true}, true); %>
 
