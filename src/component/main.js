@@ -8,4 +8,5 @@ import './navigation/main.js';
 import './tab/main.js';
 import './table/main.js';
 import './header/main.js';
+import './display/main.js';
 export default api;

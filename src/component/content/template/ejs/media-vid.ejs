@@ -8,7 +8,7 @@
 
 <% if (locals.consent === false) { %>
     <div class="<%= prefix %>-responsive-vid">
-    <%- include('../../../../pattern/consent/template/ejs/placeholder') %>
+    <%- include('../../../consent/template/ejs/placeholder') %>
     </div>
 <% } else { %>
     <%- include(locals.vidTpl !== undefined ? locals.vidTpl  : '../../../../core/template/ejs/media/responsive-vid') %>
