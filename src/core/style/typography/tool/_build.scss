@@ -45,3 +45,11 @@
     }
   }
 }
+
+@mixin generate-margin-vars() {
+  :root {
+    @each $name, $margin in $text-margin {
+      --#{$name}-mb: #{space($margin)};
+    }
+  }
+}

@@ -49,7 +49,7 @@ $title-settings: (
       first: 18,
       md: 20
     ),
-    margin: 0 0 4v
+    margin: title
   ),
   h5: (
     weight: bold,
@@ -57,7 +57,7 @@ $title-settings: (
       first: 20,
       md: 22
     ),
-    margin: 0 0 4v
+    margin: title
   ),
   h4: (
     weight: bold,
@@ -65,7 +65,7 @@ $title-settings: (
       first: 22,
       md: 24
     ),
-    margin: 0 0 4v
+    margin: title
   ),
   h3: (
     weight: bold,
@@ -73,7 +73,7 @@ $title-settings: (
       first: 24,
       md: 28
     ),
-    margin: 0 0 4v
+    margin: title
   ),
   h2: (
     weight: bold,
@@ -81,7 +81,7 @@ $title-settings: (
       first: 28,
       md: 32
     ),
-    margin: 0 0 4v
+    margin: title
   ),
   h1: (
     weight: bold,
@@ -89,7 +89,7 @@ $title-settings: (
       first: 32,
       md: 40
     ),
-    margin: 0 0 4v
+    margin: title
   ),
   xs: (
     weight: bold,
@@ -97,7 +97,7 @@ $title-settings: (
       first: 40,
       md: 48
     ),
-    margin: 0 0 8v
+    margin: display
   ),
   sm: (
     weight: bold,
@@ -105,7 +105,7 @@ $title-settings: (
       first: 48,
       md: 56
     ),
-    margin: 0 0 8v
+    margin: display
   ),
   md: (
     weight: bold,
@@ -113,7 +113,7 @@ $title-settings: (
       first: 56,
       md: 64
     ),
-    margin: 0 0 8v
+    margin: display
   ),
   lg: (
     weight: bold,
@@ -121,7 +121,7 @@ $title-settings: (
       first: 64,
       md: 72
     ),
-    margin: 0 0 8v
+    margin: display
   ),
   xl: (
     weight: bold,
@@ -129,6 +129,6 @@ $title-settings: (
       first: 72,
       md: 80
     ),
-    margin: 0 0 8v
+    margin: display
   )
 );

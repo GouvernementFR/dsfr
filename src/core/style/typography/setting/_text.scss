@@ -2,6 +2,11 @@
 /// Core Setting : Typography content
 /// @group core
 ////
+$text-margin: (
+  text: 0 0 6v,
+  title: 0 0 6v,
+  display: 0 0 8v
+);
 
 $text-styles: (
   12: (
@@ -29,26 +34,26 @@ $text-settings: (
     breakpoints: (
       first: 12,
     ),
-    margin: 0 0 10v
+    margin: text
   ),
   sm: (
     breakpoints: (
       first: 14,
     ),
-    margin: 0 0 10v
+    margin: text
   ),
   md: (
     breakpoints: (
       first: 16,
     ),
-    margin: 0 0 10v
+    margin: text
   ),
   lg: (
     breakpoints: (
       first: 18,
       md: 20,
     ),
-    margin: 0 0 10v
+    margin: text
   ),
   xl: (
     alt: lead,
@@ -56,6 +61,6 @@ $text-settings: (
       first: 20,
       md: 22,
     ),
-    margin: 0 0 12v
+    margin: text
   )
 );
