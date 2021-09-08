@@ -42,15 +42,15 @@
     }
 
     #{ns(cockade__col)} {
+      @include relative;
       @include padding-left(0);
-      @include display-flex(column, flex-start, center);
+      @include display-flex(column, flex-start, flex-start);
       @include size(100%, 100%);
 
       @include has-icon {
-        justify-content: flex-start;
         @include padding-left(16v);
       }
-      @include relative;
+
       @include before {
         @include display-flex(row, center, center);
         @include absolute(0,null,null,0,12v,12v);
