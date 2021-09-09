@@ -1,0 +1,9 @@
+////
+/// Label Module
+/// @group label
+////
+
+#{ns(badge)} {
+  @include scheme-element-text-color(bf500-plain, true);
+  @include scheme-element-bg-color(bf200-bf300, true);
+}

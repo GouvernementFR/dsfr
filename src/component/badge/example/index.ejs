@@ -1,0 +1,11 @@
+<% const sample = getSample(include); %>
+
+<%- sample('badge seul', './sample/badge-default', {}, true); %>
+<%- sample('badge seul avec icône', './sample/badge-default', {badge: {icon: 'information-fill'}}, true); %>
+
+<%- sample('badge seul SM', './sample/badge-sm', {}, true); %>
+<%- sample('badge seul SM avec icône', './sample/badge-sm', {badge: {icon: 'information-fill'}}, true); %>
+
+<%- sample('Groupe de badges', './sample/badge-default', {badge: {group: true}}, true); %>
+<%- sample('Groupe de badges SM', './sample/badge-sm', {badge: {group: true}}, true); %>
+

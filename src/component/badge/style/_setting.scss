@@ -1,15 +1,15 @@
 ////
-/// Label Setting
-/// @group label
+/// Badge Setting
+/// @group badge
 ////
 
-$label-settings:(
-  selector: label,
+$badge-settings:(
+  selector: badge,
   sizes: (
     sm: (
       font-size: 12,
       min-height: 4.5v,
-      padding-x: 1v,
+      padding-x: 2v,
       icon: xs,
       icon-margin-x: 1v
     ),
@@ -21,5 +21,5 @@ $label-settings:(
       icon-margin-x: 1v
     )
   ),
-  places: right left,
+  places: left,
 );

@@ -1,0 +1,43 @@
+<%#
+# paramètres badge
+
+* badge (object, required) : Objet contenant les paramètres
+
+** label (string, required) : classes supplémentaires sur l'element
+
+** classes (array, optional) : classes supplémentaires sur l'element
+
+** attrs (object, optional) : Attributs supplémentaires sur l'element
+
+** icon (string, optional) : nom de l'icône du badge
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+ let badge = locals.badge || {};
+ if(!badge.classes) badge.classes = [];
+ if(!badge.attrs) badge.attrs = {};
+
+ badge.classes.push(prefix + '-badge');
+
+ switch(badge.size) {
+     case 'sm':
+        badge.classes.push(prefix + '-badge--sm');
+       break;
+ }
+
+ if (badge.icon !== undefined) badge.classes.push(prefix + '-fi-' + badge.icon);
+ %>
+
+<% if(badge.group) { %>
+    <ul class="<%= prefix %>-badge-group">
+    <% for (let i = 0; i < 9; i++) { %>
+        <li>
+            <span <%- includeClasses(badge.classes)%>><%- badge.label %></span>
+        </li>
+    <% } %>
+    </ul>
+<% } else { %>
+    <span <%- includeClasses(badge.classes)%>><%- badge.label %></span>
+<% } %>

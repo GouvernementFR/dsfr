@@ -22,9 +22,9 @@
   $icon-margin-x: space(map_get($size-settings, icon-margin-x));
 
   @if $place == left {
-    overflow: initial;
-    max-width: none;
-    max-height: none;
+    // overflow: initial;
+    // max-width: none;
+    // max-height: none;
     @include before {
       margin-left: -($icon-margin);
       margin-right: $icon-margin-x;
@@ -32,9 +32,9 @@
     }
   }
   @else if $place == right {
-    overflow: initial;
-    max-width: none;
-    max-height: none;
+    // overflow: initial;
+    // max-width: none;
+    // max-height: none;
     @include before {
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;

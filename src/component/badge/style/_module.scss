@@ -1,0 +1,44 @@
+////
+/// badge Module
+/// @group badge
+////
+
+@include build-badge();
+
+#{ns(badge)} {
+  @include font-weight('bold');
+  text-transform: uppercase;
+  border-radius: space(1v);
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+
+  @include has-icon {
+    @include nest-badge(md, left, null, null, false);
+  }
+
+  &--sm {
+    @include has-icon {
+      @include nest-badge(sm, left, null, null, false);
+    }
+  }
+}
+
+#{ns-group(badge)} {
+  @include disable-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  @include margin-bottom(0);
+
+  > li {
+    display: inline-flex;
+    max-width: 100%;
+  }
+
+  #{ns(badge)} {
+    @include margin-right(2v);
+    @include margin-bottom(2v);
+  }
+}
