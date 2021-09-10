@@ -23,7 +23,7 @@
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
-    "serve": "browser-sync start --server --port 8080 --startPath _example/"
+    "serve": "browser-sync start --server --port 8080 --startPath example/"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

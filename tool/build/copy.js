@@ -38,14 +38,14 @@ const copyFiles = (src, dest, files, ext, force, removeOrphans) => {
 
 const copyImages = (removeOrphans) => {
   const src = root('tool/example/img');
-  const dest = root('_example/img');
+  const dest = root('example/img');
 
   copyDir(src, dest, ['jpg', 'png', 'svg'], removeOrphans);
 };
 
 const copyAssets = (removeOrphans) => {
   const src = root('src/core/asset/');
-  const dest = root('_dist/');
+  const dest = root('dist/');
 
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
@@ -68,8 +68,8 @@ const deployFavicons = () => {
 };
 
 const deployFiles = () => {
-  copyDir(root('_dist'), root('public/_dist'));
-  copyDir(root('_example'), root('public/example'));
+  copyDir(root('dist'), root('public/dist'));
+  copyDir(root('example'), root('public/example'));
 };
 
 module.exports = { copyFiles, copyImages, copyAssets, deployFavicons, deployFiles };

@@ -17,8 +17,8 @@ lerna-debug.log
 public/
 
 .config/
-_dist/
-_example/
+dist/
+example/
 
 yarn.lock
 package-lock.json

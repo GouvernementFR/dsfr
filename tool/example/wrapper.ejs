@@ -63,7 +63,7 @@ locals.imgAltText = 'texte alternatif de l’image';
 
 const imgData = (src, alt, style) => {
   const data = {
-      src: `${relativeRoot}_example/${src ? src : 'img/placeholder.16x9.png'}`,
+      src: `${relativeRoot}example/${src ? src : 'img/placeholder.16x9.png'}`,
       alt: alt ? locals.contentPlaceholder(locals.imgAltText) : null,
       style: style
   };
