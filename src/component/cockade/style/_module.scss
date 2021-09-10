@@ -57,6 +57,10 @@
         border-radius: 50%;
       }
 
+      &:first-child {
+        word-break: break-word;
+      }
+
       p {
         @include margin-bottom(2v);
 
