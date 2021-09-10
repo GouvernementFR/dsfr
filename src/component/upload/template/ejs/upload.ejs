@@ -25,15 +25,17 @@
 <% eval(include('../../../../core/index.ejs')); %>
 <%
  let uploadClasses = [prefix + '-upload'];
+ let groupClasses = [prefix + '-upload-group'];
  let uploadAttrs = locals.uploadAttrs || [];
  let labelAttrs = locals.labelAttrs || {};
  let labelClass = locals.labelClasses || [];
+ if (locals.error) groupClasses.push(prefix + '-input-group--error');
  if (locals.disabled) uploadAttrs['disabled'] = '';
  if (locals.multiple) uploadAttrs['multiple'] = '';
  %>
 
-<div <%- includeClasses(uploadClasses); %>>
+<div <%- includeClasses(groupClasses); %>>
   <%- include('../../../form/template/ejs/label', labelAttrs); %>
-  <input <%- includeAttrs(uploadAttrs); %> type="file" id="<%= id %>" name="<%= name %>">
+  <input <%- includeClasses(uploadClasses); %> <%- includeAttrs(uploadAttrs); %> type="file" id="<%= id %>" name="<%= name %>">
   <%- include('../../../form/template/ejs/message'); %>
 </div>

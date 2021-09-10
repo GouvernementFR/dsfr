@@ -3,16 +3,20 @@
 /// @group upload
 ////
 
-#{ns(upload)} {
+#{ns-group(upload)} {
 
   #{ns(label)} {
     #{ns(hint-text)} {
       @include margin-top(3v);
     }
-  }
 
-  input[type=file] {
-    @include text-style(sm);
-    @include margin-top(4v);
+    + #{ns(upload)} {
+      @include margin-top(4v);
+    }
   }
+}
+
+#{ns(upload)} {
+  @include text-style(sm);
+  @include width(100%);
 }
