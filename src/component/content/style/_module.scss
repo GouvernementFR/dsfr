@@ -15,7 +15,7 @@
     //le padding permettant de définir le ratio d'aspect est appliqué sur un pseudo-élément before qui hérite de la modification de taille --lg et --sm de l'élément img ou vid
     @include aspect-ratio();
 
-    img {
+    > * {
       @include media-overlay-cover;
     }
   }
