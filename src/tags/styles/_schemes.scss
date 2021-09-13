@@ -4,7 +4,7 @@
 ////
 
 #{ns(tag)} {
-  @include scheme-element-text-color(g-800, true);
+  @include scheme-element-text-color(g800, true);
   @include scheme-element-bg-color(g200, true);
 
   @at-root {
