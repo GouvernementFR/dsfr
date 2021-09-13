@@ -1,8 +1,8 @@
 const { createFile } = require('../utilities/file');
 const sass = require('node-sass');
 const importer = require('node-sass-magic-importer');
-const perfectionist = require('perfectionist');
-const prettify = require('postcss-prettify');
+// const perfectionist = require('perfectionist');
+// const prettify = require('postcss-prettify');
 const stylelint = require('stylelint');
 const discardDuplicates = require('postcss-discard-duplicates');
 const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
