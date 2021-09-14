@@ -15,6 +15,20 @@
     border-radius: space(1v) 0 0;
     max-height: none;
 
+    /**
+    * Modificateur pour le champ validés
+    */
+    &--valid {
+      @include scheme-element-box-shadow-color(success, false, inset 0 -2px 0 0 $COLOR);
+    }
+
+    /**
+    * Modificateur pour le champ présentant des erreurs
+    */
+    &--error {
+      @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
+    }
+
     /* TODO: intégrer la croix en background pour effacer la search bar
     &::-webkit-search-cancel-button {
       -webkit-appearance: none;
