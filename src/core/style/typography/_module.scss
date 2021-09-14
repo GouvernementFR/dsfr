@@ -5,6 +5,8 @@
 
 @include font-weights();
 
+@include generate-margin-vars();
+
 @include build-typography();
 
 #{ns(text--alt)} {
