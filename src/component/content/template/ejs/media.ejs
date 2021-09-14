@@ -21,7 +21,7 @@ switch (locals.size) {
         break;
 }
 
-let type = locals.img !== undefined ? 'img' : 'vid';
+let type = (locals.img !== undefined || locals.svg !== undefined) ? 'img' : 'vid';
 
 let tag;
 
