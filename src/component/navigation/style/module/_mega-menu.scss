@@ -55,6 +55,7 @@
 
   &__category {
     @include margin-bottom(0);
+    @include font-weight(bold);
   }
 
   &__list {
