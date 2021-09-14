@@ -7,7 +7,11 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <div class="<%= prefix %>-content-media__img" >
-    <%- include('../../../../core/template/ejs/media/responsive-img.ejs', locals.img); %>
+    <% if (locals.img != undefined) { %>
+        <%- include('../../../../core/template/ejs/media/responsive-img.ejs', locals.img); %>
+    <% } else if (locals.svg != undefined) { %>
+        <%- locals.svg %>
+    <% } %>
 </div>
 <% if (locals.caption != undefined) { %>
     <figcaption class="<%= prefix %>-content-media__caption" ><%= caption %></figcaption>
