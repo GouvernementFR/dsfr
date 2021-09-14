@@ -1,0 +1,10 @@
+////
+/// Core Scheme : Reset hr
+/// @group core
+////
+
+@if (map-get($reset-settings, hr)) {
+  hr {
+    @include scheme-element-box-shadow-color(g300); // todo: border color
+  }
+}
