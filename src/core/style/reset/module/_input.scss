@@ -9,5 +9,7 @@
   textarea {
     @include font-family;
     @include text-adjustments;
+    border-radius: 0;
+    border: 0;
   }
 }
