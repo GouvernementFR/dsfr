@@ -8,9 +8,6 @@
   $separator: '-';
 
   @if $is-modifier {
-    @if $name == md {
-      @return ns($type);
-    }
     $separator: '--';
   }
 
