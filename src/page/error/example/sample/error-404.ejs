@@ -1,0 +1,26 @@
+<%
+const searchId = locals.searchId || '';
+const searchAttr = {
+    href: `#${searchId}-input`,
+    title: contentPlaceholder('Moteur de recherche lien interne'),
+    target: '_self',
+};
+const searchLink = `<a ${includeAttrs(searchAttr)}>moteur de recherche</a>`;
+const searchText = locals.search ? `, ou effectuer une recherche avec notre ${searchLink} en haut de page` : '';
+
+const text = `
+    Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle soit correcte.<br/>
+    Si vous l’avez collée, vérifiez que vous avez copié l'adresse entière.<br/>
+    La page a sinon peut-être été supprimée, a changé de nom ou n'est pas disponible. Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil${searchText}.<br/>
+    Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information.
+`;
+
+const data = {
+    title: 'Page non trouvée',
+    subtitle: 'Erreur 404',
+    description: 'La page que vous cherchez est introuvable. Nous nous excusons pour la gêne occasionnée.',
+    text: text
+};
+%>
+
+<%- include('./error-default.ejs', data); %>

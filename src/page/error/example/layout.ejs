@@ -1,0 +1,19 @@
+<%
+const search = locals.search || false;
+const searchId = locals.searchId || false;
+%>
+
+<% if (locals.title !== undefined && locals.title.length) { %>
+    <h4><%= title %></h4>
+<% } %>
+<div class="<%= prefix %>-mb-6v" >
+    <%- include('../../../component/header/example/sample/header.ejs', { service:true, links:true, search: search, searchId: searchId, navigation: true }, true); %>
+    <%- component %>
+    <%- include('../../../component/footer/example/sample/footer-minimal.ejs'); %>
+</div>
+<% if (locals.snippet !== undefined) { %>
+    <div class="<%= prefix %>-mb-12v" >
+        <%- snippet %>
+    </div>
+<% } %>
+

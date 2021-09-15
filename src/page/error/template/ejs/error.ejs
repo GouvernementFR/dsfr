@@ -1,0 +1,74 @@
+<%#
+# paramètres error
+
+* title (String, optional): Titre de l'erreur
+
+* subtitle (String, optional) : Sous-titre de l'erreur
+
+* description (String, optional) : Description de l'erreur
+
+* text (String, optional) : Texte de l'erreur
+
+* type (String, required): Type d'erreur [404/500/503]
+
+* search (Boolean, optional): Bouton de recherche
+
+* contact (Boolean, optional): Bouton de contact
+
+%>
+
+<%
+    const title = locals.title || false;
+    const subtitle = locals.subtitle || false;
+    const description = locals.description || false;
+    const text = locals.text || false;
+    const type = locals.type || false;
+    const search = locals.search || false;
+    const contact = locals.contact || false;
+    const contactLink = {
+        href: 'mailto:?subject='+contentPlaceholder('objet du mail')+'&body='+contentPlaceholder('titre ou texte descriptif de la page')+' '+contentPlaceholder('url de la page'),
+        title: 'Contactez-nous',
+        target: '_blank',
+    }
+%>
+
+<div class="<%= prefix %>-container" >
+    <div class="<%= prefix %>-mt-8w <%= prefix %>-mb-8w" >
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle">
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-6">
+                <% if(locals.title) { %>
+                    <h1><%= title %></h1>
+                <% } %>
+
+                <% if(locals.subtitle) { %>
+                    <p class="<%= prefix %>-text--sm <%= prefix %>-mb-3w" ><%= subtitle %></p>
+                <% } %>
+
+                <% if(locals.description) { %>
+                    <p class="<%= prefix %>-text--lg <%= prefix %>-mb-2w" ><%= description %></p>
+                <% } %>
+
+                <% if(locals.text) { %>
+                    <p class="<%= prefix %>-mb-3w" >
+                        <%- text %>
+                    </p>
+                <% } %>
+
+                <div>
+                    <a class="<%= prefix %>-btn" href="/" title="Page d'accueil">
+                        Page d'accueil
+                    </a>
+
+                    <% if(locals.contact) { %>
+                        <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary <%= prefix %>-ml-2w" <%- includeAttrs(contactLink); %>>
+                            Contactez-nous
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-6">
+                <div class="<%= prefix %>-error-bg"></div>
+            </div>
+        </div>
+    </div>
+</div>

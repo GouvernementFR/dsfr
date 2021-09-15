@@ -1,0 +1,13 @@
+id: error
+title: Error page
+description:
+doc:
+style:
+  - core
+  - button
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header
