@@ -6,5 +6,19 @@
 #{ns(search-bar)} {
   #{ns(input)} {
     @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
+
+    /**
+    * Modificateur pour le champ validés
+    */
+    &--valid {
+      @include scheme-element-box-shadow-color(success, false, inset 0 -2px 0 0 $COLOR);
+    }
+
+    /**
+    * Modificateur pour le champ présentant des erreurs
+    */
+    &--error {
+      @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
+    }
   }
 }
