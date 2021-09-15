@@ -7,13 +7,9 @@
 
 #{ns(badge)} {
   @include font-weight('bold');
+  @include max-width(100%);
   text-transform: uppercase;
   border-radius: space(1v);
-  max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: inline-block;
 
   @include has-icon {
     @include nest-badge(md, left, null, null, false);

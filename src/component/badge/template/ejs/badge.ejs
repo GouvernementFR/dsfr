@@ -11,6 +11,8 @@
 
 ** icon (string, optional) : nom de l'icône du badge
 
+** group (boolean, optional) [default: false] : Si true, créé un groupe de badge
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
@@ -34,10 +36,10 @@
     <ul class="<%= prefix %>-badge-group">
     <% for (let i = 0; i < 9; i++) { %>
         <li>
-            <span <%- includeClasses(badge.classes)%>><%- badge.label %></span>
+            <div <%- includeClasses(badge.classes)%>><span class="<%= prefix %>-ellipsis"><%- badge.label %></span></div>
         </li>
     <% } %>
     </ul>
 <% } else { %>
-    <span <%- includeClasses(badge.classes)%>><%- badge.label %></span>
+    <div <%- includeClasses(badge.classes)%>><span class="<%= prefix %>-ellipsis"><%- badge.label %></span></div>
 <% } %>
