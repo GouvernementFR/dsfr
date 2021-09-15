@@ -6,7 +6,6 @@
 @if (map-get($reset-settings, hr)) {
   hr {
     @include margin(var(--text-mb));
-    @include height(1px);
     border: 0;
   }
 }
