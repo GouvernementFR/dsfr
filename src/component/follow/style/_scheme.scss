@@ -4,23 +4,27 @@
 ////
 
 #{ns(follow)} {
-  @include scheme-element-bg-color(bf100-g750, true, false);
+  @include scheme-element-bg-color(alt primary);
 
   #{ns(input)} {
-    @include scheme-element-bg-color(w, true, false);
+    @include scheme-element-bg-color(default neutral);
+  }
+
+  &__title {
+    @include scheme-element-text-color(title neutral);
   }
 
   &__newsletter {
     &-legal {
-      @include scheme-element-text-color(g600);
+      @include scheme-element-text-color(mention neutral);
     }
   }
 
   #{ns(grid-row)} > *:not(:first-child) {
     // Séparateur en box-shadow
-    @include scheme-element-box-shadow-color(bf300-plain, true, 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default primary, 0 -1px 0 0 $COLOR);
     @include respond-from(md) {
-      @include scheme-element-box-shadow-color(bf300-plain, true, -1px 0 0 0 $COLOR);
+      @include scheme-element-box-shadow-color(default primary, -1px 0 0 0 $COLOR);
     }
   }
 }

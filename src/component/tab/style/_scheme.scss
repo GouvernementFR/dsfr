@@ -5,7 +5,7 @@
 
 #{ns(tabs)} {
   @include after {
-    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default neutral, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
   }
 
   /**
@@ -14,7 +14,7 @@
   @include list {
 
     @include after {
-      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+      @include scheme-element-box-shadow-color(default neutral, '0 1px 0 0 $COLOR');
     }
 
     /**
@@ -23,19 +23,19 @@
     > li {
       &:not(:first-child) {
         @include before {
-          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+          @include scheme-element-box-shadow-color(default neutral, '0 1px 0 0 $COLOR');
         }
       }
 
       &:last-child {
         @include after {
-          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+          @include scheme-element-box-shadow-color(default neutral, '0 1px 0 0 $COLOR');
         }
       }
 
       &:first-child {
         @include before {
-          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+          @include scheme-element-box-shadow-color(default neutral, '0 1px 0 0 $COLOR');
         }
       }
     }
@@ -46,20 +46,21 @@
   */
   &__tab {
     &:not([aria-selected=true]) {
-      @include scheme-element-bg-color(bf100-g750, true, true);
-      @include scheme-element-text-color(g700);
-      @include disabled(g600, g300);
-      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+      // @include scheme-element-bg-color(bf100-g750, true, true);
+      @include scheme-element-bg-color(alt primary, true);
+      @include scheme-element-text-color(default neutral);
+      // @include disabled(g600, g300); // @TODO: disabled
+      @include scheme-element-box-shadow-color(default neutral, '0 1px 0 0 $COLOR');
     }
 
     @at-root &[aria-selected=true] {
-      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0.125rem 0 0 $COLOR');
-      @include scheme-element-bg-color(t-plain, true, false);
-      @include scheme-element-text-color(bf500);
-      @include remove-hover();
+      @include scheme-element-box-shadow-color(high primary, 'inset 0 #{space(0.5v)} 0 0 $COLOR');
+      @include scheme-element-text-color(title primary);
+      @include scheme-element-bg-color(default neutral);
+      // @include remove-hover();
 
       @include after {
-        @include scheme-element-box-shadow-color(g300, true, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
+        @include scheme-element-box-shadow-color(default neutral, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
       }
     }
   }

@@ -33,7 +33,8 @@
   @include before(none);
 
   &:last-child {
-    border: 0;
+    // border: 0;
+    box-shadow: none;
   }
 
   &--active {
@@ -47,10 +48,12 @@
   }
 
   @include respond-from(md) {
-    border: 0;
+    // border: 0;
+    box-shadow: none;
   }
 
   #{ns(sidemenu__item)} #{ns(sidemenu__item)} {
-    border: 0;
+    // border: 0;
+    box-shadow: none;
   }
 }

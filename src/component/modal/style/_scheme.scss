@@ -4,24 +4,26 @@
 ////
 
 #{ns(modal)} {
-  @include scheme-element-bg-color(overlay);
+  // @include scheme-element-bg-color(overlay); // @TODO: scheme overlay
 
   @include body {
-    @include scheme-element-bg-color(w);
+    @include scheme-element-bg-color(default neutral);
 
     &#{ns(scroll-shadow)} {
       #{ns(modal)}__footer {
         @include shadow(up);
-        @include scheme-element-bg-color(w-g750);
+        // @include scheme-element-bg-color(w-g750); // @TODO: color white - g750
+        @include scheme-element-bg-color(default neutral);
+
       }
     }
   }
 
   &__title {
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(title neutral);
   }
 
   &__footer {
-    @include scheme-element-bg-color(w);
+    @include scheme-element-bg-color(default neutral);
   }
 }

@@ -4,10 +4,12 @@
 ////
 
 #{ns(accordion)} {
-  @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR, 0 -1px 0 0 $COLOR');
+  @include scheme-element-box-shadow-color(default neutral, '0 1px 0 0 $COLOR, 0 -1px 0 0 $COLOR');
 
   #{ns(accordion)}__btn {
-    @include scheme-element-text-color(g700, true);
-    @include scheme-element-bg-color(t-plain, true, after);
+    @include scheme-element-text-color(title neutral);
+    @include scheme-element-bg-transparent(true);
+    // add transparent background
+    // @include scheme-element-bg-color(t-plain, true, after);
   }
 }

@@ -4,16 +4,17 @@
 ////
 
 #{ns(tag)} {
-  @include scheme-element-text-color(g-800, true);
-  @include scheme-element-bg-color(g200, true);
+  @include scheme-element-text-color(title neutral);
+  @include scheme-element-bg-color(contrast neutral);
 
   @at-root {
     #{selector-unify(&, a)},
     #{selector-unify(&, button)} {
-      @include scheme-element-text-color(bf500-plain, true);
-      @include scheme-element-bg-color(bf200-bf300, true, true);
+      // @include scheme-element-text-color(bf500-plain, true); // plain ?
+      @include scheme-element-text-color(title primary);
+      @include scheme-element-bg-color(open primary, true);
     }
   }
 
-  @include disabled-link(true, true);
+  // @include disabled-link(true, true); //@TODO: disabsled
 }

@@ -3,5 +3,9 @@
 /// @group core
 ////
 
+@import 'setting/options';
+@import 'setting/sets';
+@import 'setting/decisions';
+@import 'setting/static';
 @import 'setting/disabled';
 @import 'setting/shadow';

@@ -28,22 +28,23 @@
       @include margin-left(8v);
 
       /**
-       * Style du texte d'aide dans le label
-       */
+      * Style du texte d'aide dans le label
+      */
       #{ns(hint-text)} {
         @include margin(0);
         @include size(100%);
       }
 
       /**
-       * On ajoute l'icône check-line en taille sm via un pseudo element before
-       */
+      * On ajoute l'icône check-line en taille sm via un pseudo element before
+      */
       @include icon(check-line, sm, before) {
         @include display-flex(row, center, center);
         @include absolute(0, null, null, -8v);
         @include margin-top(3v);
         @include size(6v, 6v);
         @include margin-right(2v);
+        color: transparent;
         border-radius: space(1v);
         transition: background-color 0.1s, color 0.1s;
       }
@@ -91,13 +92,8 @@
    * Modificateur pour gérer l'état erreur
    */
   &--error {
-    input[type="checkbox"] + label {
-      @include scheme-element-text-color(error);
-    }
-
     @include before('') {
       @include absolute(3v, null, null, -2v, 2px, 6v);
-      @include scheme-element-bg-color(error);
     }
   }
 
@@ -105,13 +101,8 @@
    * Modificateur pour gérer l'état validé
    */
   &--valid {
-    input[type="checkbox"] + label {
-      @include scheme-element-text-color(success);
-    }
-
     @include before('') {
       @include absolute(3v, null, null, -2v, 2px, 6v);
-      @include scheme-element-bg-color(success);
     }
   }
 }

@@ -14,8 +14,8 @@
   input[type="checkbox"] {
     + label {
       @include before {
-        @include scheme-element-border-color(g800, true);
-        @include scheme-element-text-color(t-plain);
+        @include scheme-element-border-color(thick neutral); // @tTODO:
+        // @include scheme-element-text-color(t-plain); // color:transparent dans module
       }
     }
 
@@ -27,8 +27,8 @@
     &:active {
       + label {
         @include before {
-          @include scheme-element-bg-color(bf500);
-          @include scheme-element-text-color(g100);
+          @include scheme-element-bg-color(high primary);
+          @include scheme-element-text-color(inverted primary);
         }
       }
     }
@@ -36,7 +36,7 @@
     /**
     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
     */
-    @include disabled-form-choice();
+    // @include disabled-form-choice(); //@TODO disable
   }
 
   /**
@@ -44,11 +44,11 @@
    */
   &--error {
     input[type="checkbox"] + label {
-      @include scheme-element-text-color(error);
+      @include scheme-element-text-color(default status error);
     }
 
     @include before {
-      @include scheme-element-bg-color(error);
+      @include scheme-element-box-shadow-color(default status error, 'inset 2px 0 0 0 $COLOR');
     }
   }
 
@@ -57,11 +57,11 @@
    */
   &--valid {
     input[type="checkbox"] + label {
-      @include scheme-element-text-color(success);
+      @include scheme-element-text-color(default status success);
     }
 
     @include before {
-      @include scheme-element-bg-color(success);
+      @include scheme-element-box-shadow-color(default status success, 'inset 2px 0 0 0 $COLOR');
     }
   }
 }

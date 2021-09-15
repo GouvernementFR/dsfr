@@ -15,6 +15,7 @@
   @include respond-from(md) {
     @include margin(0 0 6v);
     @include padding(0);
-    border: 0;
+    // border: 0;
+    box-shadow: none;
   }
 }

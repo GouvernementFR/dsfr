@@ -1,0 +1,45 @@
+////
+/// Core Color Tools : Hover
+/// @group core
+////
+
+@mixin _hover-selector() {
+  @media (hover: hover) and (pointer: fine) {
+    $selectors: ('&:not(a):not(:disabled)');
+    $a: selector-associate(&, 'a[href]');
+    @if length($a) {
+      $selectors: append($selectors, $a, 'comma');
+    }
+    @at-root #{$selectors} {
+      @content;
+    }
+  }
+}
+
+@mixin _scheme-hover($prop, $set, $value, $shade, $tint) {
+  @include _hover-selector {
+    &:hover {
+      @include _include-prop($prop, $set, $value, $shade, $tint, hover);
+    }
+
+    &:active {
+      @include _include-prop($prop, $set, $value, $shade, $tint, active);
+    }
+  }
+}
+
+@mixin _scheme-hover-transparent() {
+  @include _hover-selector {
+    &:hover {
+      background-color: rgba(22, 22, 22, 0.05);
+    }
+
+    &:active {
+      background-color: rgba(22, 22, 22, 0.1);
+    }
+  }
+}
+
+@mixin _scheme-hover-properties($shade, $tint) {
+  // surchargée dans schemes
+}

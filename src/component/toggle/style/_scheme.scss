@@ -5,34 +5,34 @@
 
 #{ns(toggle)} {
   &__input {
-    @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-    @include disabled-toggle-choice();
+    @include scheme-element-box-shadow-color(high primary, inset 0 0 0 1px $COLOR);
+    // @include disabled-toggle-choice(); // disabled
 
     &:checked {
-      @include scheme-element-bg-color(bf500);
+      @include scheme-element-bg-color(high primary);
     }
   }
 
   &__label {
     @include before {
-      @include scheme-element-text-color(bf500);
+      @include scheme-element-text-color(title primary);
     }
 
     @include after {
-      @include scheme-element-text-color(bf500);
-      @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-      @include scheme-element-bg-color(w);
+      @include scheme-element-text-color(title primary);
+      @include scheme-element-box-shadow-color(high primary, inset 0 0 0 1px $COLOR);
+      @include scheme-element-bg-color(default neutral);
     }
   }
 
   #{ns(hint-text)} {
-    @include scheme-element-text-color(g600, true);
+    @include scheme-element-text-color(mention neutral);
   }
 
   /*
   * Ajout d'un séparateur
   */
   &--border-bottom {
-    @include scheme-element-box-shadow-color(g300, false, inset 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
   }
 }

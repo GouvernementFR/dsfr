@@ -30,7 +30,7 @@
   &__navbar {
     #{ns(service)} {
       @include title {
-        @include scheme-element-text-color(g800, true);
+        @include scheme-element-text-color(title neutral);
       }
     }
 

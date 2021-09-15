@@ -32,6 +32,7 @@
       #{$focus} {
         outline-offset: 2px;
         outline-width: 2px;
+        outline-color: $focus-color;
       }
 
       &:focus {
@@ -81,31 +82,8 @@
   }
 }
 
-@mixin _build-focusable-schemes($settings) {
-  $focus: '&';
-  $no-focus: map-get($settings, no-focus);
-
-  @if map-has-key($settings, focus) {
-    $focus: map-get($settings, focus);
-  }
-
-  @at-root #{map-get($settings, selector)} {
-    @if $no-focus != true {
-      #{$focus} {
-        @include _scheme-element(focus, outline-color, true, false);
-      }
-    }
-  }
-}
-
 @mixin build-focus($settings: $focus-settings) {
   @each $focusable, $focusable-settings in $settings {
     @include _build-focusable($focusable-settings);
-  }
-}
-
-@mixin build-focus-schemes($settings: $focus-settings) {
-  @each $focusable, $focusable-settings in $settings {
-    @include _build-focusable-schemes($focusable-settings);
   }
 }

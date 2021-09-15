@@ -183,5 +183,5 @@
   /**
    * Mixin disabled pour gérer l'état disabled
    */
-  @include disabled(true, false, false, #{ns(label)});
+  // @include disabled(true, false, false, #{ns(label)}); // @TODO: disaled scheme
 }

@@ -4,18 +4,18 @@
 ////
 
 #{ns(pagination)} {
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(title neutral);
 
   &__link {
-    @include scheme-element-bg-color(t-plain, true, true);
+    @include scheme-element-bg-transparent(true);
 
     &[aria-current] {
-      @include scheme-element-bg-color(bf500, true, true);
-      @include scheme-element-text-color(w-bf500);
+      @include scheme-element-bg-color(high primary, true);
+      @include scheme-element-text-color(inverted neutral); // @TODO: white-bf500
     }
 
     &:not([aria-current]) {
-      @include disabled-link(true);
+      // @include disabled-link(true); // @TODO: disabled
     }
   }
 }

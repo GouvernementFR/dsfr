@@ -5,7 +5,7 @@
 
 #{ns(search-bar)} {
   #{ns(input)} {
-    @include scheme-element-box-shadow-color(bf500, false, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(high primary, inset 0 -2px 0 0 $COLOR);
 
     /**
     * Modificateur pour le champ validés

@@ -1,0 +1,108 @@
+////
+/// Core Color Tools : Element
+/// @group core
+////
+
+// Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
+$COLOR: unquote('$COLOR');
+
+$ACCENT: none;
+
+@mixin _scheme-element($prop, $part, $id, $hover: false, $value: $COLOR) {
+  $token: nth($id, 1);
+  $family: nth($id, 2);
+  $tint: '';
+
+  @if $family == accent and $ACCENT != none {
+    $tint: $ACCENT;
+  }
+  @else if length($id) > 2 {
+    $tint: nth($id, 3);
+  }
+  @else {
+    $tint: _get-tint($family);
+  }
+
+  $shade: _get-scheme-shade($part, $token, $family);
+  $set: _get-scheme-set($shade, $family, $tint);
+
+  @include _include-prop($prop, $set, $value, $shade, $tint, base);
+
+  @if $hover == true {
+    @include _scheme-hover($prop, $set, $value, $shade, $tint);
+  }
+
+  @if $part == background {
+    @include _scheme-hover-properties($shade, $tint);
+  }
+}
+
+/// Ajout d'une couleur de background sur un élément
+/// @access public
+/// @param {String} $token - token de décision
+/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {Bool | String} $hover - si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
+@mixin scheme-element-bg-color($id, $hover: false) {
+  @include _scheme-element(background-color, background, $id, $hover);
+}
+
+@mixin scheme-element-bg-transparent($hover: false) {
+  background-color: transparent;
+  @if $hover {
+    @include _scheme-hover-transparent;
+  }
+}
+
+/// Ajout d'une couleur de texte sur un élément
+/// @access public
+/// @param {String} $token - token de décision
+/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+@mixin scheme-element-text-color($id) {
+  @include _scheme-element(color, text, $id);
+}
+
+/// Ajout d'une couleur de fill sur un élément
+/// @access public
+/// @param {String} $token - token de décision
+/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+@mixin scheme-element-fill-color($id) {
+  @include _scheme-element(fill, background, $id);
+}
+
+/// Ajout d'une couleur de border sur un élément
+/// @access public
+/// @param {String} $token - token de décision
+/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {List} $value - définition des propriétés de border
+/// @param {String} $side - le côté affecté. valeurs: top, right, bottom, left
+@mixin scheme-element-border-color($id, $value:1px solid $COLOR, $side:null) {
+  $prop:border;
+  @if $side != null {
+    $prop:border-#{$side};
+  }
+  @include _scheme-element($prop, border, $id, false, $value);
+}
+
+/// Ajout d'une couleur d'outline sur un élément
+/// @access public
+/// @param {String} $token - token de décision
+/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {List} $value - définition des propriétés d'outline
+@mixin scheme-element-outline-color($id, $value:1px solid $COLOR) {
+  @include _scheme-element(outline, border, $id, false, $value);
+}
+
+/// Ajout d'une couleur de box-shadow sur un élément
+/// @access public
+/// @param {String} $token - token de décision
+/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {List} $value - définition des propriétés de box-shadow
+@mixin scheme-element-box-shadow-color($id, $value:inset 0 0 0 1px $COLOR) {
+  @include _scheme-element(box-shadow, border, $id, false, $value);
+}

@@ -4,23 +4,23 @@
 ////
 
 #{ns(consent-placeholder)} {
-  @include scheme-element-bg-color(g200, true, false);
+  @include scheme-element-bg-color(contrast neutral);
 }
 
 #{ns(consent-banner)} {
-  @include scheme-element-bg-color(g200, true, false);
-  @include scheme-element-box-shadow-color(g400, true, inset 0 0 0 1px $COLOR);
+  @include scheme-element-bg-color(contrast neutral);
+  @include scheme-element-box-shadow-color(default neutral, inset 0 0 0 1px $COLOR);
 }
 
 #{ns(consent-manager__header)},
 #{ns(consent-service)} {
-  @include scheme-element-box-shadow-color(g400, true, inset 0 -1px 0 0 $COLOR);
-  @include scheme-element-text-color(g700);
+  @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
+  @include scheme-element-text-color(default neutral);
 
   #{ns-group(radio)} {
     + #{ns-group(radio)} {
       @include before {
-        @include scheme-element-bg-color(g300, true, false);
+        @include scheme-element-box-shadow-color(default neutral);
       }
     }
   }

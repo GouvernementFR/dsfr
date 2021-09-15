@@ -4,25 +4,25 @@
 ////
 
 #{ns(alert)} {
-  @include scheme-element-box-shadow-color(g500,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+  @include scheme-element-box-shadow-color(default neutral, 'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
 
   @include before {
-    @include scheme-element-text-color(w);
+    @include scheme-element-text-color(inverted neutral);
   }
 
   &--info {
-    @include scheme-element-box-shadow-color(info,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default status info,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 
   &--error {
-    @include scheme-element-box-shadow-color(error,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default status error,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 
   &--success {
-    @include scheme-element-box-shadow-color(success,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default status success,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 
   &--warning {
-    @include scheme-element-box-shadow-color(warning,true,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default status warning,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 }

@@ -1,0 +1,83 @@
+////
+/// Core Colors Settings : Decisions
+/// @group core
+////
+
+$scheme-decisions: (
+  background: (
+    default: (
+      neutral: white
+    ),
+    alt: (
+      neutral: lightest,
+      primary: lightest,
+      accent: lightest
+    ),
+    contrast: (
+      neutral: lighter,
+      status: strong,
+    ),
+    high: (
+      primary: strong,
+      accent: strong,
+    ),
+    low: (
+      neutral: light,
+      primary: light,
+      accent: light,
+    ),
+    open: (
+      primary: light,
+      accent: light,
+    ),
+    disabled: (
+      neutral: light
+    )
+  ),
+  text: (
+    default: (
+      neutral: strongest,
+      status: strong
+    ),
+    title: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    mention: (
+      neutral: strong
+    ),
+    inverted: (
+      neutral: white,
+      primary: lightest,
+      accent: lightest
+    ),
+  ),
+  border: (
+    default: (
+      neutral: light,
+      status: strong,
+      primary: divider,
+      accent: divider
+    ),
+    high: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    low: (
+      primary: softest,
+      accent: softest
+    ),
+    open: (
+      primary: light
+    ),
+    thick: (
+      neutral: strongest,
+      primary: strong
+    ),
+    disabled: (
+      neutral: light
+    )
+  ),
+);

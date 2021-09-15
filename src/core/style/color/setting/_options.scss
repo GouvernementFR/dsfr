@@ -1,0 +1,444 @@
+////
+/// Core Colors Settings : Options
+/// @group core
+////
+
+// Chaque couleur est définie avec ses déclinaisons d'état suivant ce modèle :
+// $[color-name]-[grade]: [color] [lighter-hover-color] [lighter-active-color] [darker-hover-color] [darker-active-color];
+
+// grey
+$grey-50: #161616 #1e1e1e #272727;
+$grey-75: #1e1e1e #272727 #313131;
+$grey-100: #242424 #2e2e2e #383838;
+$grey-125: #2a2a2a #212121 #181818 #343434 #404040;
+$grey-200: #3a3a3a #2f2f2f #252525 #464646 #525252;
+$grey-425: #666 #595959 #4d4d4d #737373 #818181;
+$grey-625: #929292 #858585 #777 #9f9f9f #acacac;
+$grey-850: #cecece #c3c3c3 #b7b7b7 #d8d8d8 #e1e1e1;
+$grey-925: #e5e5e5 #dcdcdc #d3d3d3 #ededed #f3f3f3;
+$grey-950: #eee #e7e7e7 #dedede #f4f4f4 #f9f9f9;
+$grey-975: #f6f6f6 #f0f0f0 #eaeaea #fafafa #fdfdfd;
+
+// white
+$white-1000: #fff #fefefe #fcfcfc;
+
+// blue-france
+$blue-france-75: #1b1b35 #242443 #2d2d53;
+$blue-france-100: #21213f #2a2a4e #34345f;
+$blue-france-125: #272748 #1e1e39 #16162d #313158 #3b3b69;
+$blue-france-200: #313178 #272764 #1f1f51 #3b3b8e #4747a0;
+$blue-france-325: #2d2deb #1d1dd9 #1717b6 #4040ef #5151f2;
+$blue-france-400: #5757ad #4949a2 #3d3d92 #6565b7 #7373bf;
+$blue-france-425: #4d4df1 #3b3bef #2727ec #5e5ef4 #6e6ef6;
+$blue-france-625: #8585f7 #7575f7 #6666f5 #9494f9 #a2a2fa;
+$blue-france-650: #8c8cf8 #7d7df8 #6d6df7 #9b9bfa #a9a9fb;
+$blue-france-725: #a2a2f9 #9494f9 #8585f8 #b0b0fb #bdbdfc;
+$blue-france-850: #c9c9fc #bdbdfc #b0b0fc #d4d4fe #dedefe;
+$blue-france-925: #e3e3fe #dadaff #cfcffe #ebebff #f2f2ff;
+$blue-france-950: #ececff #e4e4ff #dbdbff #f3f3ff #f8f8ff;
+$blue-france-975: #f5f5ff #efefff #e7e7ff #fafaff #fdfdff;
+$blue-france-main-113: #000091 #0000b7 #0000e1;
+
+// red-marianne
+$red-marianne-75: #2b1919 #372121 #442a2a;
+$red-marianne-100: #331f1f #402828 #4e3131;
+$red-marianne-125: #3b2424 #2f1c1c #241414 #492d2d #573737;
+$red-marianne-200: #5e2a2b #4e2222 #3f1a1a #6f3334 #823d3e;
+$red-marianne-325: #a51217 #8d0e12 #760a0d #be161c #d71b21;
+$red-marianne-400: #98494a #853f40 #723536 #ac5354 #bf5e5f;
+$red-marianne-425: #c9191e #b01419 #981014 #e31e23 #f9292e;
+$red-marianne-625: #fa5b5d #fb393d #ee1c22 #fb7475 #fc898a;
+$red-marianne-650: #fa6769 #fb4a4d #fa1e26 #fb7e7f #fc9293;
+$red-marianne-725: #fb8a8b #fc7475 #fb5a5c #fc9d9e #fdaeaf;
+$red-marianne-850: #fdbebf #feaeaf #fd9c9e #fecccc #ffd8d9;
+$red-marianne-925: #fedede #ffd2d2 #fec5c5 #ffe8e8 #fff0f0;
+$red-marianne-950: #ffe9e9 #ffdfdf #ffd3d3 #fff1f1 #fff7f7;
+$red-marianne-975: #fff4f4 #ffecec #ffe3e3 #fff9f9 #fffdfd;
+$red-marianne-main-472: #e1000f #c6000c #ac0009 #fc0012 #ff3f43;
+
+// info
+$info-75: #171e2e #1f273b #273148;
+$info-100: #1d2437 #252e45 #2f3953;
+$info-125: #222a3f #1a2132 #131826 #2b344d #34405d;
+$info-200: #273961 #1f2e50 #182441 #304573 #395186;
+$info-325: #0050a6 #00448e #003878 #005dbf #006ad9;
+$info-400: #445f9d #3a5289 #314676 #4e6cb2 #5879c6;
+$info-425: #0063cb #0056b2 #004999 #0071e5 #007eff;
+$info-625: #508fff #2183ff #0075ec #6c9cff #83a8ff;
+$info-650: #5e95ff #3a88ff #007bf8 #77a2ff #8daeff;
+$info-725: #84a9ff #6c9dff #4f90ff #98b5ff #aac1ff;
+$info-850: #bccdff #acc2ff #9ab7ff #cad7ff #d6e0ff;
+$info-925: #dde5ff #d1dcff #c4d3ff #e7ecff #eff3ff;
+$info-950: #e8edff #dee6ff #d3ddff #f0f3ff #f6f8ff;
+$info-975: #f3f6ff #ebf0ff #e2eaff #f8faff #fcfdff;
+
+// success
+$success-75: #142117 #1b2b1f #233627;
+$success-100: #19281d #213325 #293e2f;
+$success-125: #1e2e22 #17241a #101b13 #26392b #2f4535;
+$success-200: #204129 #193521 #132a19 #274e32 #2f5b3b;
+$success-325: #125f2f #0e5127 #0a4320 #166e37 #1b7d40;
+$success-400: #3a6b48 #325d3e #294f34 #437a52 #4b885d;
+$success-425: #18753c #146633 #0f572b #1c8445 #21944d;
+$success-625: #27a658 #22964f #1e8746 #2bb561 #30c469;
+$success-650: #29ad5b #249d52 #208e4a #2dbc64 #32cb6c;
+$success-725: #2fc368 #2bb45f #26a457 #33d270 #37e078;
+$success-850: #3bea7e #37dd76 #33cf6f #3ff685 #60fe95;
+$success-925: #82fea7 #30ff85 #2df37f #a8ffbf #c5ffd4;
+$success-950: #b5ffc7 #8bffac #4dff8c #cdffd9 #e1ffe8;
+$success-975: #dbffe3 #c1ffd0 #a1ffba #e9ffee #f5fff7;
+
+// warning
+$warning-75: #2e1814 #3b201b #482923;
+$warning-100: #361e19 #432721 #523029;
+$warning-125: #3e231e #311b17 #261310 #4c2c26 #5b362f;
+$warning-200: #5c2c20 #4c2319 #3d1b13 #6d3527 #7f3f2f;
+$warning-325: #923200 #7d2a00 #6a2200 #a83b00 #be4300;
+$warning-400: #964b3a #834132 #71372a #a95643 #bd604b;
+$warning-425: #b34000 #9d3700 #882f00 #c94900 #e05200;
+$warning-625: #fc5d00 #e65400 #cf4b00 #ff7348 #ff896d;
+$warning-650: #ff662a #ef5800 #d94f00 #ff7d5a #ff9179;
+$warning-725: #ff896d #ff7346 #fb5e00 #ff9c87 #ffad9e;
+$warning-850: #ffbeb3 #ffae9f #ff9d88 #ffccc3 #ffd8d2;
+$warning-925: #ffded9 #ffd2cb #ffc5bb #ffe8e4 #fff0ed;
+$warning-950: #ffe9e5 #ffdfd9 #ffd4cb #fff1ee #fff7f5;
+$warning-975: #fff3f2 #ffebe9 #ffe2df #fff8f8 #fffcfc;
+
+// error
+$error-75: #301717 #3d1f1f #4b2727;
+$error-100: #391c1c #472424 #562d2d;
+$error-125: #412121 #341919 #281212 #502a2a #5f3333;
+$error-200: #642626 #531e1e #431717 #762e2e #8a3737;
+$error-325: #a90300 #900200 #780100 #c30400 #dd0500;
+$error-400: #a14242 #8d3939 #793030 #b64b4b #cb5555;
+$error-425: #ce0500 #b40400 #9a0300 #e90700 #ff1b16;
+$error-625: #ff5554 #ff2f2d #f20700 #ff6f6e #ff8685;
+$error-650: #ff6262 #ff4242 #f00 #ff7a7a #ff8f8f;
+$error-725: #ff8786 #ff706e #ff5553 #ff9a9a #ffacac;
+$error-850: #ffbdbd #ffadad #ff9b9b #ffcbcb #ffd7d7;
+$error-925: #fdd #ffd1d1 #ffc3c3 #ffe7e7 #ffefef;
+$error-950: #ffe8e8 #ffdede #ffd2d2 #fff0f0 #fff6f6;
+$error-975: #fff3f3 #ffebeb #ffe2e2 #fff8f8 #fffcfc;
+
+// green-tilleul-verveine
+$green-tilleul-verveine-75: #201e14 #2a271b #343123;
+$green-tilleul-verveine-100: #272419 #312e21 #3d3829;
+$green-tilleul-verveine-125: #2d2a1d #232116 #1a180f #383425 #44402e;
+$green-tilleul-verveine-200: #3f3a20 #332f19 #292513 #4b4627 #58522f;
+$green-tilleul-verveine-325: #5b531e #4e4718 #413b13 #696024 #776d2a;
+$green-tilleul-verveine-400: #696139 #5b5431 #4e4829 #776e41 #857b4a;
+$green-tilleul-verveine-425: #716728 #635a22 #554d1c #7f742e #8e8234;
+$green-tilleul-verveine-625: #a0933c #928636 #837830 #aea042 #bcad48;
+$green-tilleul-verveine-650: #a7983e #998b38 #8a7d32 #b5a544 #c3b24a;
+$green-tilleul-verveine-725: #bcac47 #ae9f41 #a0923b #c9b84d #d6c452;
+$green-tilleul-verveine-850: #e2cf58 #d6c453 #c9b84d #edd95d #f7e261;
+$green-tilleul-verveine-925: #fce762 #f3df54 #e9d550 #feee9d #fef4c4;
+$green-tilleul-verveine-950: #fdefa7 #fde85f #f5e052 #fff5c7 #fff9e0;
+$green-tilleul-verveine-975: #fef7d5 #fef2af #feec78 #fffbe6 #fffef4;
+$green-tilleul-verveine-sun-418: #66673d #595a35 #4c4d2c #737446 #81824e;
+$green-tilleul-verveine-moon-817: #d8c634 #cbba30 #beae2c #e4d137 #efdb3b;
+$green-tilleul-verveine-main-707: #b7a73f #a99a39 #9a8d34 #c5b444 #d2c049;
+
+// green-bourgeon
+$green-bourgeon-75: #182014 #202a1b #293423;
+$green-bourgeon-100: #1e2719 #273121 #303d29;
+$green-bourgeon-125: #232d1d #1b2316 #131a0f #2c3825 #36442e;
+$green-bourgeon-200: #2a401a #223414 #1a290e #334d20 #3d5a27;
+$green-bourgeon-325: #395b1e #304e18 #274113 #426924 #4c782a;
+$green-bourgeon-400: #486a30 #3e5c29 #344f22 #527837 #5d873f;
+$green-bourgeon-425: #487127 #3e6321 #35551b #52802d #5c8e33;
+$green-bourgeon-625: #68a03b #5e9135 #54822f #72af41 #7cbd47;
+$green-bourgeon-650: #6da73e #639838 #598a32 #77b544 #80c34a;
+$green-bourgeon-725: #7bbc47 #71ae41 #679f3b #84ca4d #8dd752;
+$green-bourgeon-850: #95e257 #8dd652 #84c84c #9ded5c #a4f860;
+$green-bourgeon-925: #a7fc62 #9ef354 #96e850 #c0fe99 #d5febf;
+$green-bourgeon-950: #c7fda7 #abfd6a #9ef651 #d9fec5 #e8ffdd;
+$green-bourgeon-975: #e3fed5 #cffeb4 #b8fe88 #eeffe6 #f7fff3;
+$green-bourgeon-sun-425: #447049 #3b623f #325436 #4d7f53 #578d5d;
+$green-bourgeon-moon-759: #99c221 #8eb41e #83a61b #a3cf24 #addb27;
+$green-bourgeon-main-640: #68a532 #5e962d #548727 #72b437 #7bc23c;
+
+// green-emeraude
+$green-emeraude-75: #142118 #1b2b20 #233629;
+$green-emeraude-100: #19271e #213127 #293d30;
+$green-emeraude-125: #1e2e23 #17241b #101b13 #26392c #2f4536;
+$green-emeraude-200: #21402c #1a3423 #13291b #294d35 #315a3f;
+$green-emeraude-325: #295c3d #224e33 #1b412a #306a47 #387951;
+$green-emeraude-400: #3a6b4c #325d41 #2a4f37 #437a57 #4b8862;
+$green-emeraude-425: #34724c #2c6442 #255638 #3c8156 #439061;
+$green-emeraude-625: #4da26e #459363 #3d8459 #55b178 #5cbf83;
+$green-emeraude-650: #50a973 #489a68 #418b5e #58b87d #5fc687;
+$green-emeraude-725: #5bbe82 #54b078 #4ca16d #62cc8c #69d995;
+$green-emeraude-850: #6fe49d #68d794 #61ca8b #75f0a5 #84f8b1;
+$green-emeraude-925: #9bf9bd #74f6a8 #6eeba0 #b8fbcf #d0fddf;
+$green-emeraude-950: #c1fbd4 #a0fbc0 #74f9a9 #d5fde2 #e6feed;
+$green-emeraude-975: #e0fde9 #cafdda #affcc9 #ecfff2 #f6fff9;
+$green-emeraude-sun-425: #297255 #23634a #1d553f #2f8161 #36906c;
+$green-emeraude-moon-753: #34cb6a #2fbc62 #2bad59 #38d972 #3ce779;
+$green-emeraude-main-632: #00a95f #009956 #00894c #00b968 #00c871;
+
+// green-menthe
+$green-menthe-75: #15201e #1c2a27 #243431;
+$green-menthe-100: #1a2724 #22312e #2a3d39;
+$green-menthe-125: #1f2d2a #172321 #111a18 #273834 #304440;
+$green-menthe-200: #223f3a #1b332f #142925 #2a4c46 #325952;
+$green-menthe-325: #2a5a53 #234d46 #1c403b #326860 #39766d;
+$green-menthe-400: #3c6961 #335b54 #2b4e48 #45776e #4e867c;
+$green-menthe-425: #367067 #2e625a #27544d #3e7f75 #468d82;
+$green-menthe-625: #509f92 #489084 #408277 #58ae9f #60bcad;
+$green-menthe-650: #53a598 #4b968a #43887d #5bb3a5 #62c1b2;
+$green-menthe-725: #5ebaac #56ac9f #4e9d91 #65c8b9 #6cd5c5;
+$green-menthe-850: #73e0cf #6cd4c3 #65c6b7 #79ecda #7ff6e3;
+$green-menthe-925: #86f9e7 #75f1de #6fe6d4 #abfbed #c8fdf3;
+$green-menthe-950: #b6fbef #8dfae9 #74f4e2 #cefdf4 #e2fef9;
+$green-menthe-975: #dbfdf7 #c1fdf3 #a1fcee #e9fffb #f5fffd;
+$green-menthe-sun-373: #37635f #2f5552 #274845 #40716d #487f7a;
+$green-menthe-moon-652: #21ab8e #1d9c81 #198c74 #25ba9b #28c9a7;
+$green-menthe-main-548: #009081 #008173 #007165 #009f8f #00af9d;
+
+// green-archipel
+$green-archipel-75: #152021 #1c2a2b #243436;
+$green-archipel-100: #1a2628 #223033 #2a3b3e;
+$green-archipel-125: #1f2c2e #172224 #11191b #273739 #304245;
+$green-archipel-200: #233e41 #1c3235 #15282a #2b4a4e #33575b;
+$green-archipel-325: #225a5f #1c4d51 #164044 #28686e #2f767d;
+$green-archipel-400: #3d686c #345a5e #2c4d50 #46767b #4f8489;
+$green-archipel-425: #2c6f75 #256166 #1f5358 #337e84 #3a8c94;
+$green-archipel-625: #419ea7 #3a8f97 #338188 #48adb6 #4ebbc5;
+$green-archipel-650: #44a5ae #3d969f #36888f #4bb3bd #51c1cc;
+$green-archipel-725: #4eb9c3 #47abb4 #419ca5 #54c7d2 #5ad4df;
+$green-archipel-850: #5fdfeb #59d2de #53c5d0 #64ebf7 #8cf0fb;
+$green-archipel-925: #a3f3fb #76f0fb #5ee8f3 #bef7fd #d4fafe;
+$green-archipel-950: #c5f7fd #a6f5fd #7ff1fc #d8faff #e8fcff;
+$green-archipel-975: #e2fbfe #cdf9fe #b4f7fe #eefdff #f7ffff;
+$green-archipel-sun-391: #006a6f #005c60 #004e52 #00797f #00888e;
+$green-archipel-moon-716: #34bab5 #2faba7 #2a9c98 #39c8c3 #3dd6d0;
+$green-archipel-main-557: #009099 #008189 #007279 #009fa9 #00aeb9;
+
+// blue-ecume
+$blue-ecume-75: #171d2f #1f263c #27304a;
+$blue-ecume-100: #1d2438 #252e46 #2f3855;
+$blue-ecume-125: #222940 #1a2033 #131727 #2b334f #353e5e;
+$blue-ecume-200: #273962 #1f2e51 #182441 #304574 #395187;
+$blue-ecume-325: #1a4fa3 #15438c #103776 #1f5cbb #2569d4;
+$blue-ecume-400: #445f9f #3a528b #314677 #4e6cb4 #5879c9;
+$blue-ecume-425: #2262c7 #1c55ae #174997 #286fe0 #357df5;
+$blue-ecume-625: #5f8ef7 #4181f7 #2774ea #769bf9 #8ba8fa;
+$blue-ecume-650: #6a94f8 #4f87f8 #297af7 #80a1fa #93aefb;
+$blue-ecume-725: #8ba8f9 #769bf9 #5e8ef8 #9db4fb #aec0fc;
+$blue-ecume-850: #bfccfc #b0c1fc #9fb5fc #ccd6fe #d8e0fe;
+$blue-ecume-925: #dee5fe #d2dcff #c5d3fe #e7edff #eff3ff;
+$blue-ecume-950: #e9edff #dfe5ff #d4ddff #f0f3ff #f7f8ff;
+$blue-ecume-975: #f4f6ff #edf0ff #e4e9ff #f9faff #fdfdff;
+$blue-ecume-sun-247: #2f4077 #263564 #1e2b52 #384c8b #4258a0;
+$blue-ecume-moon-675: #869ece #7491c8 #6884b8 #96abd5 #a6b7db;
+$blue-ecume-main-400: #465f9d #3c5289 #334676 #506cb2 #5a79c6;
+
+// blue-cumulus
+$blue-cumulus-75: #171e2b #1f2737 #273144;
+$blue-cumulus-100: #1c2533 #242f40 #2d3a4e;
+$blue-cumulus-125: #212a3a #19212e #121823 #2a3447 #334056;
+$blue-cumulus-200: #263b58 #1e3049 #17263a #2e4769 #37537a;
+$blue-cumulus-325: #18548e #13477a #0e3b66 #1d61a3 #226fb9;
+$blue-cumulus-400: #426290 #39557e #30486c #4c6fa3 #557db6;
+$blue-cumulus-425: #1f68ae #1a5a98 #154d84 #2476c4 #2a84db;
+$blue-cumulus-625: #3194f5 #2c86df #2678c8 #58a0f8 #75abf9;
+$blue-cumulus-650: #439af8 #2a8deb #257fd4 #65a6fa #80b1fb;
+$blue-cumulus-725: #76adf9 #57a2f9 #2f96f6 #8db8fb #a2c3fc;
+$blue-cumulus-850: #b6cffc #a4c5fc #8fbafc #c5d9fe #d3e1fe;
+$blue-cumulus-925: #dae6fe #cddeff #bed5fe #e4edff #edf3ff;
+$blue-cumulus-950: #e6eeff #dbe7ff #cedfff #eef4ff #f5f9ff;
+$blue-cumulus-975: #f2f6ff #eaf1ff #e0eaff #f8faff #fcfdff;
+$blue-cumulus-sun-368: #3558a2 #2d4b8c #254078 #3d65b8 #4672cf;
+$blue-cumulus-moon-732: #7ab1e8 #61a6e3 #5898d1 #90bcec #a4c7ef;
+$blue-cumulus-main-526: #417dc4 #396faf #31629b #498bd9 #5698ea;
+
+// purple-glycine
+$purple-glycine-75: #251b24 #30232e #3b2d3a;
+$purple-glycine-100: #2d212c #382a37 #453444;
+$purple-glycine-125: #332632 #281d27 #1e151e #3f303e #4c3a4b;
+$purple-glycine-200: #502e4d #42253f #351d33 #5f385c #6f426b;
+$purple-glycine-325: #90188a #7b1376 #670e63 #a61d9f #bc23b4;
+$purple-glycine-400: #834f7f #72446f #623a5f #945a90 #a565a0;
+$purple-glycine-425: #b120aa #9b1b95 #861680 #c825c0 #de2bd6;
+$purple-glycine-625: #f735ee #e32adb #cc24c5 #f95af1 #fa76f2;
+$purple-glycine-650: #f84bef #f02be7 #d926d1 #fa69f2 #fb83f3;
+$purple-glycine-725: #f97af1 #f95ef0 #f83aee #fb90f4 #fca4f5;
+$purple-glycine-850: #fcb7f7 #fca5f6 #fc91f5 #fec6f9 #fed4fb;
+$purple-glycine-925: #fedbfb #ffcefb #febff9 #ffe5fd #ffeefe;
+$purple-glycine-950: #ffe7fd #ffdcfd #ffcffc #ffefff #fff6ff;
+$purple-glycine-975: #fff2fe #ffe9fe #ffdffe #fff8ff #fffcff;
+$purple-glycine-sun-319: #6e445a #5e3a4d #4f3040 #7f4f68 #905a76;
+$purple-glycine-moon-630: #ce70cc #bd64bc #ab5aa9 #d583d3 #db95d9;
+$purple-glycine-main-494: #a558a0 #934e8e #81437d #b762b2 #ca6dc4;
+
+// pink-macaron
+$pink-macaron-75: #271b19 #322421 #3e2d2a;
+$pink-macaron-100: #2e211f #3a2a28 #473431;
+$pink-macaron-125: #352724 #2a1e1c #201614 #41312d #4f3b37;
+$pink-macaron-200: #52312a #442822 #361f1a #613b33 #72463d;
+$pink-macaron-325: #8c3812 #782f0e #65260a #a14116 #b64b1b;
+$pink-macaron-400: #865448 #75493e #653e35 #976052 #a96b5c;
+$pink-macaron-425: #ab4718 #963d14 #823410 #c0511c #d65b21;
+$pink-macaron-625: #f16727 #dc5d23 #c6531e #fb784a #fb8d6e;
+$pink-macaron-650: #fa6b29 #e56122 #d0571e #fb815a #fc947a;
+$pink-macaron-725: #fb8c6d #fc7746 #f26622 #fc9e88 #fdaf9e;
+$pink-macaron-850: #fdbfb3 #feaf9f #fd9e88 #feccc3 #ffd9d2;
+$pink-macaron-925: #feded9 #ffd2cb #fec5bb #ffe7e4 #fff0ed;
+$pink-macaron-950: #ffe9e6 #ffdfda #ffd4cd #fff1ef #fff7f6;
+$pink-macaron-975: #fff4f2 #ffede9 #ffe4de #fff9f8 #fffdfc;
+$pink-macaron-sun-406: #8d533e #7b4835 #6a3d2d #9f5e47 #b16a50;
+$pink-macaron-moon-833: #ffb7ae #ffa69a #ff9483 #ffc5be #ffd3cd;
+$pink-macaron-main-689: #e18b76 #db7a5e #c96f55 #e59c8c #e8aca0;
+
+// pink-tuile
+$pink-tuile-75: #281b19 #332321 #402d2a;
+$pink-tuile-100: #30211f #3c2a28 #493431;
+$pink-tuile-125: #372624 #2b1d1c #211514 #44302d #513a37;
+$pink-tuile-200: #55302a #462722 #381e1a #653a33 #76443c;
+$pink-tuile-325: #923212 #7d2a0e #6a220a #a73b16 #bd431b;
+$pink-tuile-400: #8b5148 #79463e #683c35 #9d5c52 #af685c;
+$pink-tuile-425: #b33f18 #9d3614 #882e10 #c9481c #e05121;
+$pink-tuile-625: #fa5e2c #e65320 #d04a1b #fb7659 #fc8b77;
+$pink-tuile-650: #fa6a46 #f15722 #da4e1e #fb8068 #fc9483;
+$pink-tuile-725: #fb8b78 #fc7559 #fb5d2a #fc9d8f #fdafa4;
+$pink-tuile-850: #fdbfb7 #feafa4 #fd9e8f #feccc6 #ffd9d4;
+$pink-tuile-925: #fededb #ffd2ce #fec5bf #ffe8e5 #fff0ee;
+$pink-tuile-950: #ffe9e7 #ffdfdc #ffd4cf #fff1ef #fff7f6;
+$pink-tuile-975: #fff4f2 #ffede9 #ffe4de #fff9f8 #fffdfc;
+$pink-tuile-sun-425: #a94645 #953d3c #813333 #be504e #d35958;
+$pink-tuile-moon-750: #ff9575 #ff814f #fe6b00 #ffa78f #ffb7a5;
+$pink-tuile-main-556: #ce614a #ba5742 #a54c3a #e26b52 #e77f6c;
+
+// yellow-tournesol
+$yellow-tournesol-75: #221e11 #2c2717 #37311f;
+$yellow-tournesol-100: #292416 #342e1d #3f3825;
+$yellow-tournesol-125: #2f2a1a #252113 #1c180d #3a3421 #463f29;
+$yellow-tournesol-200: #43391a #372e14 #2c250e #504420 #5e5027;
+$yellow-tournesol-325: #615111 #53450d #463909 #705e15 #7f6a19;
+$yellow-tournesol-400: #6f6030 #615329 #534722 #7e6d37 #8d7a3f;
+$yellow-tournesol-425: #786418 #695714 #5b4b10 #87711c #977e21;
+$yellow-tournesol-625: #aa9026 #9b8322 #8b761d #b99d2a #c8a92e;
+$yellow-tournesol-650: #b19528 #a28824 #927b1f #c0a22c #ceae30;
+$yellow-tournesol-725: #c7a82e #b89b2a #a98e26 #d5b432 #e3c036;
+$yellow-tournesol-850: #efcb3a #e2c036 #d5b533 #fbd53d #fede7b;
+$yellow-tournesol-925: #fee399 #ffda57 #f7d02c #ffebb9 #fff2d3;
+$yellow-tournesol-950: #ffecbf #ffe498 #ffdb5d #fff3d5 #fff8e7;
+$yellow-tournesol-975: #fff5df #ffefc6 #ffe7a6 #fffaec #fffdf6;
+$yellow-tournesol-sun-407: #716043 #63533a #554731 #806d4c #8f7a56;
+$yellow-tournesol-moon-922: #ffe552 #f8dd00 #eed300 #ffec95 #fff3be;
+$yellow-tournesol-main-731: #c8aa39 #b99d34 #aa912f #d6b63e #e3c142;
+
+// yellow-moutarde
+$yellow-moutarde-75: #231d14 #2d261b #383023;
+$yellow-moutarde-100: #2a2319 #352d21 #413729;
+$yellow-moutarde-125: #30291d #262016 #1c180f #3b3325 #483e2e;
+$yellow-moutarde-200: #453820 #392d19 #2d2413 #524327 #604f2f;
+$yellow-moutarde-325: #664f12 #57430e #49380a #755b16 #85681b;
+$yellow-moutarde-400: #725e39 #635231 #554629 #816b41 #90784a;
+$yellow-moutarde-425: #7e6218 #6e5614 #5f4910 #8e6f1c #9e7c21;
+$yellow-moutarde-625: #b38c26 #a37f22 #93721d #c3992a #d2a52e;
+$yellow-moutarde-650: #ba9228 #aa8524 #9a781f #ca9e2c #d9ab30;
+$yellow-moutarde-725: #d1a42f #c2982b #b28b26 #e0b033 #eebb37;
+$yellow-moutarde-850: #fcc63a #efbc36 #e1b033 #fdd27c #fedca4;
+$yellow-moutarde-925: #fee2b3 #ffd88d #fecd55 #ffeaca #fff2dd;
+$yellow-moutarde-950: #ffebce #ffe2b3 #ffd891 #fff2df #fff8ec;
+$yellow-moutarde-975: #fff5e6 #ffeed2 #ffe7bb #fffaf0 #fffdf9;
+$yellow-moutarde-sun-348: #695240 #5a4636 #4c3b2d #785e4a #886b54;
+$yellow-moutarde-moon-860: #ffca00 #f2c000 #e4b500 #ffd573 #ffdfa0;
+$yellow-moutarde-main-679: #c3992a #b38c26 #a38021 #d2a52e #e1b132;
+
+// orange-terre-battue
+$orange-terre-battue-75: #291b17 #34231f #412d27;
+$orange-terre-battue-100: #31211c #3d2a24 #4b342d;
+$orange-terre-battue-125: #382621 #2c1d19 #221512 #45302a #533a33;
+$orange-terre-battue-200: #543125 #45281d #381f16 #643b2d #744636;
+$orange-terre-battue-325: #863d12 #73330e #612a0a #9a4716 #ae511b;
+$orange-terre-battue-400: #895341 #784838 #673d2f #9b5e4a #ad6a54;
+$orange-terre-battue-425: #a54c18 #914214 #7e3810 #b9561c #ce6121;
+$orange-terre-battue-625: #e86e27 #d46423 #bf591e #fb7931 #fb8d62;
+$orange-terre-battue-650: #f17329 #dd6925 #c85e20 #fb834b #fb9671;
+$orange-terre-battue-725: #fb8d61 #fc782a #e86d22 #fc9f80 #fdb099;
+$orange-terre-battue-850: #fdc0af #feb099 #fda07f #fecdc0 #ffd9d0;
+$orange-terre-battue-925: #fedfd7 #ffd3c8 #fec7b7 #ffe8e3 #fff0ed;
+$orange-terre-battue-950: #ffe9e4 #ffdfd7 #ffd4c9 #fff1ed #fff7f5;
+$orange-terre-battue-975: #fff4f1 #ffede7 #ffe4dc #fff9f7 #fffdfc;
+$orange-terre-battue-sun-370: #755348 #65473e #563c34 #855f53 #966b5d;
+$orange-terre-battue-moon-672: #ff732c #f06500 #db5b00 #ff885e #ff9b7e;
+$orange-terre-battue-main-645: #e4794a #d16e43 #bd633c #ef885f #f19a7e;
+
+// brown-cafe-creme
+$brown-cafe-creme-75: #211d17 #2b261f #363027;
+$brown-cafe-creme-100: #28241c #332e24 #3e382d;
+$brown-cafe-creme-125: #2e2a21 #242119 #1b1812 #39342a #453f33;
+$brown-cafe-creme-200: #423925 #362e1d #2b2516 #4f442d #5c5036;
+$brown-cafe-creme-325: #5d5136 #4f452d #433a25 #6b5e3f #7a6a48;
+$brown-cafe-creme-400: #6e5f41 #605238 #52462f #7d6c4a #8b7954;
+$brown-cafe-creme-425: #736444 #65573b #574b32 #82714d #917e57;
+$brown-cafe-creme-625: #a48f63 #95825a #867550 #b39c6c #c1a875;
+$brown-cafe-creme-650: #ab9568 #9c885f #8d7b55 #b9a271 #c7ae7a;
+$brown-cafe-creme-725: #c0a875 #b29b6c #a38f63 #ceb47e #dbc086;
+$brown-cafe-creme-850: #e7ca8e #dbbf86 #ceb47e #efd4a0 #f2deba;
+$brown-cafe-creme-925: #f4e4c6 #f1dbad #edd090 #f8ecd7 #faf3e5;
+$brown-cafe-creme-950: #f8ecda #f6e4c7 #f3dab1 #fbf3e6 #fdf8f1;
+$brown-cafe-creme-975: #fbf5ec #f9efde #f7e7ce #fdfaf4 #fffdfa;
+$brown-cafe-creme-sun-383: #685c48 #5a503e #4d4434 #766952 #85765d;
+$brown-cafe-creme-moon-885: #ecd7a2 #e1cd9a #d6c292 #f0e0bb #f4e9d0;
+$brown-cafe-creme-main-782: #d1b781 #c4ab78 #b59f6f #dec289 #eacd91;
+
+// brown-caramel
+$brown-caramel-75: #251c17 #30251f #3b2e27;
+$brown-caramel-100: #2c221c #372b24 #44362d;
+$brown-caramel-125: #332821 #281f19 #1e1712 #3f322a #4c3d33;
+$brown-caramel-200: #4b3525 #3e2b1d #312216 #59402d #684b36;
+$brown-caramel-325: #694c36 #5a412d #4c3625 #79583f #896448;
+$brown-caramel-400: #7c5a41 #6c4e38 #5d432f #8c664a #9d7354;
+$brown-caramel-425: #825e45 #72523c #624633 #926a4e #a37758;
+$brown-caramel-625: #b88764 #a87b5b #976e51 #c8936d #d89f76;
+$brown-caramel-650: #bf8d68 #af815f #9e7455 #cf9971 #dea57a;
+$brown-caramel-725: #d79f75 #c7936c #b78763 #e4ab82 #e7ba9c;
+$brown-caramel-850: #ebc7b1 #e8ba9b #e5ab81 #efd3c2 #f3ddd1;
+$brown-caramel-925: #f4e2d8 #f1d8c9 #eecdb8 #f8eae3 #faf2ed;
+$brown-caramel-950: #f8ebe5 #f6e2d9 #f3d8cb #fbf2ee #fdf8f5;
+$brown-caramel-975: #fbf5f2 #f9efe9 #f6e7df #fdfaf8 #fffdfc;
+$brown-caramel-sun-425: #855d48 #75513e #654635 #966952 #a6755c;
+$brown-caramel-moon-901: #fbd8ab #fbcc88 #fac055 #fde2c2 #feebd5;
+$brown-caramel-main-648: #c08c65 #b0805c #9f7353 #d0986e #e0a477;
+
+// brown-opera
+$brown-opera-75: #241c17 #2e251f #3a2e27;
+$brown-opera-100: #2b231c #362d24 #42372d;
+$brown-opera-125: #322821 #271f19 #1e1712 #3e322a #4b3d33;
+$brown-opera-200: #493625 #3c2c1d #302216 #57412d #664c36;
+$brown-opera-325: #674d36 #58412d #4a3725 #76593f #866548;
+$brown-opera-400: #795b41 #6a4f38 #5b432f #89674a #997454;
+$brown-opera-425: #7f6044 #6f543b #604832 #8f6c4d #9f7957;
+$brown-opera-625: #b48964 #a47c5b #947051 #c4956d #d3a176;
+$brown-opera-650: #bb8f68 #ab835f #9b7655 #cb9b71 #daa77a;
+$brown-opera-725: #d2a175 #c3956c #b38963 #e1ad7e #e7ba94;
+$brown-opera-850: #ebc7ac #e8ba94 #e2ac7c #efd3be #f3ddcf;
+$brown-opera-925: #f4e2d6 #f1d8c6 #eecdb4 #f8eae2 #faf2ec;
+$brown-opera-950: #f8ece4 #f6e4d7 #f3dac8 #fbf3ed #fdf8f5;
+$brown-opera-975: #fbf5f1 #f9efe7 #f6e7dc #fdfaf7 #fffdfc;
+$brown-opera-sun-395: #745b47 #654f3d #574334 #836751 #93745b;
+$brown-opera-moon-820: #e6be92 #dbb283 #cda77a #eacaaa #eed6be;
+$brown-opera-main-680: #bd987a #ae8c70 #9e7f65 #cca484 #dab08d;
+
+// brown-galet
+$brown-galet-75: #211d19 #2b2621 #36302a;
+$brown-galet-100: #28241f #332e28 #3e3831;
+$brown-galet-125: #2e2924 #24201c #1b1814 #39332d #453e37;
+$brown-galet-200: #43382a #372d22 #2c241a #504333 #5e4f3c;
+$brown-galet-325: #5c5042 #4f4438 #42392e #6a5c4d #786957;
+$brown-galet-400: #6f5e48 #61523e #534635 #7e6b52 #8d785c;
+$brown-galet-425: #726453 #645748 #564b3e #81715e #8f7e69;
+$brown-galet-625: #a28f77 #93826c #857561 #b09c82 #bea88c;
+$brown-galet-650: #a9947c #9a8771 #8c7a66 #b7a187 #c5ad91;
+$brown-galet-725: #bea78c #b09b81 #a28e76 #ccb396 #d8bea0;
+$brown-galet-850: #e1cab0 #d9be9e #cdb395 #e7d5c2 #ecdfd1;
+$brown-galet-925: #efe4d8 #eadbc9 #e5d0b8 #f4ece3 #f8f3ed;
+$brown-galet-950: #f4ede5 #f0e5d9 #ebdcca #f8f3ee #fbf8f5;
+$brown-galet-975: #f9f6f2 #f6f0e9 #f1e9de #fcfaf8 #fefdfc;
+$brown-galet-sun-407: #6a6156 #5c544b #4f4840 #786e62 #867b6d;
+$brown-galet-moon-821: #d0c3b7 #c5b7ab #b8aba0 #d8cec5 #e0d9d2;
+$brown-galet-main-702: #aea397 #a0968b #93897f #bbafa3 #c8bbae;

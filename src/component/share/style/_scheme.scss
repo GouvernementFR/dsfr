@@ -5,9 +5,9 @@
 
 #{ns(share)} {
   &__link {
-    @include scheme-element-text-color(bf500, true);
-    @include scheme-element-bg-color(t-plain, true, true);
-    @include scheme-element-box-shadow-color(g300, true);
-    @include disabled-link(true, false, true);
+    @include scheme-element-text-color(title primary);
+    @include scheme-element-bg-transparent(true);
+    @include scheme-element-box-shadow-color(default neutral);
+    // @include disabled-link(true, false, true); @TODO : disabled
   }
 }

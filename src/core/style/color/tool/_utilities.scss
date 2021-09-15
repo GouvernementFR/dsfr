@@ -1,0 +1,8 @@
+////
+/// Core Color Tools : Utilities
+/// @group core
+////
+
+@mixin _include-prop($prop, $set, $value, $shade, $tint, $variation) {
+  #{$prop}: _replace_color($value, _get-value($set, $shade, $tint, $variation), false);
+}

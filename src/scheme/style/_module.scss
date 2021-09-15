@@ -1,23 +1,17 @@
 ////
-/// Scheme Module
+/// Schemes Module
 /// @group schemes
 ////
 
 /**
- * Définition de la valeur des custom properties d'hover par défaut au niveau du :root
- */
-:root {
-  @include _get-hover-vars($white, true);
-}
-
-/**
  * Définition des customs properties de combinaisons de couleur
  */
-@include define-vars();
+#{ns-attr(theme)} {
+  @include build-properties();
+}
 
-/**
- * Déclaration des blocks de combinaison de couleur
- */
-@include scheme-blocks();
+#{ns-attr(theme, 'dark')} {
+  @include build-properties(dark);
+}
 
-@import 'module/switch-theme';
+// @import 'modules/switch-theme';

@@ -4,31 +4,37 @@
 ////
 
 #{ns(sidemenu)} {
-  @include scheme-element-bg-color(w-g750, true);
+  @include scheme-element-bg-color(default neutral);
 
   @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true);
+    @include scheme-element-bg-transparent(false);
   }
 
   @include title {
-    @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(t-plain, true);
-    @include scheme-element-border-color(g300, true, bottom);
+    @include scheme-element-text-color(title neutral);
+    @include scheme-element-bg-transparent(false);
+    // @include scheme-element-border-color(g300, true, bottom);
+    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
+
   }
 
   @include list-item {
-    @include scheme-element-border-color(g300, true, bottom);
+    // @include scheme-element-border-color(g300, true, bottom);
+    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
+
 
     &:last-child {
       #{ns(sidemenu__btn)} {
-        @include scheme-element-border-color(t-plain, true, bottom);
+        // @include scheme-element-border-color(t-plain, true, bottom);
+        @include scheme-element-box-shadow-color(default neutral, inset 0 0 0 0 $COLOR);
+
       }
     }
 
     &--active {
       & > #{ns(sidemenu__btn)},
       & > #{ns(sidemenu__link)} {
-        @include scheme-element-text-color(bf500);
+        @include scheme-element-text-color(title primary);
 
         @include after {
           background-color: currentColor;
@@ -39,38 +45,47 @@
 
   &__inner {
     @include respond-from(md) {
-      @include scheme-element-border-color(g300, true, right);
+      // @include scheme-element-border-color(g300, true, right);
+      @include scheme-element-box-shadow-color(default neutral, inset -1px 0 0 0 $COLOR);
+
     }
   }
 
   @include respond-from(md) {
     &--right {
       #{ns(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true, left);
+        @include scheme-element-box-shadow-color(default neutral, inset 1px 0 0 0 $COLOR);
       }
     }
 
     &--full-border {
       #{ns(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true);
+        // @include scheme-element-border-color(g300, true);
+        @include scheme-element-box-shadow-color(default neutral);
       }
     }
   }
 }
 
 #{ns(sidemenu__btn)} {
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(title neutral);
 
   @at-root #{ns(sidemenu__inner)} > #{&} {
-    @include scheme-element-bg-color(w-g750, true);
+    @include scheme-element-bg-color(default neutral);
   }
 
   @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true, after);
+    // @include scheme-element-bg-color(t-plain, true, after);
+    @include after {
+      @include scheme-element-bg-transparent()
+    }
   }
 }
 
 #{ns(sidemenu__link)} {
-  @include scheme-element-text-color(g800);
-  @include scheme-element-bg-color(t-plain, true, after);
+  @include scheme-element-text-color(title neutral);
+  // @include scheme-element-bg-color(t-plain, true, after);
+  @include after {
+    @include scheme-element-bg-transparent()
+  }
 }

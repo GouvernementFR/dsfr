@@ -1,0 +1,35 @@
+////
+/// Schemes Tools : Properties
+/// @group schemes
+////
+
+@function _decision-exist($family, $shade) {
+  @each $part, $tokens in $scheme-decisions {
+    @each $token, $families in $tokens {
+      @if map-get($families, $family) == $shade {
+        @if $part == background {
+          @return background;
+        }
+        @return true;
+      }
+    }
+  }
+  @return false;
+}
+
+@mixin build-properties($theme: light) {
+  @each $family, $tints  in $scheme-sets {
+    @each $tint, $shades in $tints {
+      @each $shade, $set in $shades {
+        $has: _decision-exist($family, $shade);
+        @if $has != false and $shade != divider {
+          #{_property-name($shade, $tint, base)}: #{_get-color($set, $theme, base)};
+          @if $has == background {
+            #{_property-name($shade, $tint, hover)}: #{_get-color($set, $theme, hover)};
+            #{_property-name($shade, $tint, active)}: #{_get-color($set, $theme, active)};
+          }
+        }
+      }
+    }
+  }
+}

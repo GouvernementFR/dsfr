@@ -17,7 +17,8 @@
   text-align: left;
   font-weight: font-weight(bold);
   background: 0;
-  border: 0;
+  // border: 0;
+  box-shadow: none;
 
   @include icon(arrow-down-s-line, sm) {
     @include margin-left(auto);
@@ -30,7 +31,8 @@
   }
 
   &[aria-expanded="true"] {
-    border: 0;
+    // border: 0;
+    box-shadow: none;
     @include before {
       transform: rotate(-180deg);
     }
@@ -62,6 +64,7 @@
   @include respond-from(md) {
     @include size(100%);
     @include padding(3v 8v 3v 2v);
-    border: 0;
+    // border: 0;
+    box-shadow: none;
   }
 }

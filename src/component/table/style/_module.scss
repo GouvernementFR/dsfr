@@ -59,6 +59,8 @@
     td,
     th {
       font-weight: font-weight('bold');
+      @include padding-bottom(3.5v); // 0.5v for the box shadox
+      @include padding-bottom(4.5v, md);
     }
   }
 

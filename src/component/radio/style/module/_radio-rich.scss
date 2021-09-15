@@ -47,7 +47,7 @@
     @include size(20v, 20v);
     @include absolute(null, 1v);
     object-fit: cover;
-    @include scheme-element-border-color(g300, true, left);
+    // @include scheme-element-border-color(g300, true, left);
   }
 }
 

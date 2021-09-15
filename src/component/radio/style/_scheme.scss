@@ -15,9 +15,10 @@
     &:checked {
       + label {
         @include before {
-          @include scheme-element-box-shadow-color(w, true, 'inset 0 0 0 5px $COLOR');
-          @include scheme-element-bg-color(bf500, true);
-          @include scheme-element-border-color(bf500, true);
+          // @TODO : box shadow white
+          @include scheme-element-box-shadow-color(default neutral, 'inset 0 0 0 5px $COLOR');
+          @include scheme-element-bg-color(high primary);
+          @include scheme-element-border-color(high neutral);
         }
       }
     }
@@ -25,7 +26,7 @@
     /**
      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
      */
-    @include disabled-form-choice();
+    // @include disabled-form-choice(); // @TODO; disabled
   }
 
   /**
@@ -35,7 +36,8 @@
     input[type="radio"] {
       &:checked + label {
         @include before {
-          box-shadow: inset 0 0 0 3px var(--w);
+          // @TODO : box shadow white
+          @include scheme-element-box-shadow-color(default neutral, 'inset 0 0 0 3px $COLOR');
         }
       }
     }
@@ -46,30 +48,37 @@
 
   input[type="radio"] + #{ns(label)} {
     @include after {
-      @include scheme-element-border-color(g300, true, left);
+      @include scheme-element-box-shadow-color(default neutral, 'inset 1px 0 0 0 $COLOR');
     }
   }
 
   input[type="radio"]:not(:checked) + label {
-    @include scheme-element-box-shadow-color(g300, true, 'inset 0 0 0 1px $COLOR');
-    @include scheme-element-bg-color(w, true);
+    @include scheme-element-box-shadow-color(default neutral, 'inset 0 0 0 1px $COLOR');
+    @include scheme-element-bg-color(default neutral);
   }
 
   input[type="radio"]:checked + label {
-    @include scheme-element-bg-color(w, false);
-    @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0 0 1px $COLOR');
+    @include scheme-element-bg-color(default neutral);
+    @include scheme-element-box-shadow-color(high primary, 'inset 0 0 0 1px $COLOR');
 
     @include before {
-      box-shadow: inset 0 0 0 3px var(--w);
+      // @TODO : box shadow white
+      @include scheme-element-box-shadow-color(default neutral, 'inset 0 0 0 3px $COLOR');
     }
   }
 
+  &__icon {
+    @include scheme-element-box-shadow-color(default primary, 'inset 1px 0 0 0 $COLOR');
+  }
+
   input[type="radio"] {
-    @include disabled-form-choice() {
-      filter: grayscale(1);
-      @include after {
-        background-color: transparent;
-      }
-    }
+    // @todo : disabled
+
+    // @include disabled-form-choice() {
+    //   filter: grayscale(1);
+    //   @include after {
+    //     background-color: transparent;
+    //   }
+    // }
   }
 }

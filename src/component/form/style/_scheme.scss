@@ -9,7 +9,7 @@
    */
   &--valid {
     #{ns(label)} {
-      @include scheme-element-text-color(success);
+      @include scheme-element-text-color(default status success);
     }
   }
 
@@ -18,7 +18,7 @@
    */
   &--error {
     #{ns(label)} {
-      @include scheme-element-text-color(error);
+      @include scheme-element-text-color(default status error);
     }
   }
 
@@ -27,19 +27,26 @@
    */
   &--disabled {
     #{ns(label)} {
-      @include disabled-colors(true);
+      // @include disabled-colors(true); // @todo disable
     }
   }
 }
 
 #{ns(label)} {
-  @include scheme-element-text-color(g800, true);
+  @include scheme-element-text-color(title neutral);
 
   /**
    * Modificateur au niveau du label pour appliquer un état d'erreur au label
    */
   &--error {
-    @include scheme-element-text-color(error);
+    @include scheme-element-text-color(default status error);
+  }
+
+  /**
+   * Modificateur au niveau du label pour appliquer un état de succès au label
+   */
+   &--success {
+    @include scheme-element-text-color(default status success);
   }
 }
 
@@ -47,28 +54,28 @@
  * Style du texte d'aide
  */
 #{ns(hint-text)} {
-  @include scheme-element-text-color(g600);
+  @include scheme-element-text-color(mention neutral);
 }
 
 /**
  * Style du texte d'erreur
  */
 #{ns(error-text)} {
-  @include scheme-element-text-color(error);
+  @include scheme-element-text-color(default status error);
 }
 
 /**
  * Style du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include scheme-element-text-color(success);
+  @include scheme-element-text-color(default status success);
 }
 
 /**
  * Style d'un ensemble de champs
  */
 #{ns(fieldset)} {
-  @include scheme-element-text-color(g800, true);
+  @include scheme-element-text-color(title neutral); // @TODO vérifier l'utilité
 
   /**
    * Modificateur pour gérer l'état d'erreur
@@ -76,12 +83,12 @@
   &--error {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-bg-color(error, true);
+        @include scheme-element-box-shadow-color(default status error, 'inset 2px 0 0 0 $COLOR');
       }
     }
 
     #{ns(label)} {
-      @include scheme-element-text-color(error);
+      @include scheme-element-text-color(default status error);
     }
   }
 
@@ -91,12 +98,12 @@
   &--valid {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-bg-color(success);
+        @include scheme-element-box-shadow-color(default status success, 'inset 2px 0 0 0 $COLOR');
       }
     }
 
     #{ns(label)} {
-      @include scheme-element-text-color(success);
+      @include scheme-element-text-color(default status success);
     }
   }
 }

@@ -1,58 +1,26 @@
 ////
-/// Scheme Module : Hover
+/// Schemes Tools : Properties
 /// @group schemes
 ////
 
-/// Définit les couleurs d'hover
-/// @access private
-/// @param {Color} $color - couleur de l'élément
-/// @param {Bool} $is-block - est-ce que cette définition se fait au niveau d'un block de combinaison ?
-@mixin _get-hover-vars($color, $is-block: false) {
+@mixin _scheme-hover-properties($shade, $tint) {
+  --block-hover: var(#{_property-name($shade, $tint, hover)});
+  --block-active: var(#{_property-name($shade, $tint, active)});
 
-  @if opacity($color) != 0 {
-
-    $prop: color;
-
-    @if $is-block {
-      $prop: block-color;
-    }
-
-    --#{$prop}-hover: #{ _overlay-color($color, 1) };
-    --#{$prop}-active: #{ _overlay-color($color, 2) };
-  }
-  @else {
-    --color-hover: var(--block-color-hover);
-    --color-active: var(--block-color-active);
+  & > * {
+    --hover: var(--block-hover);
+    --active: var(--block-active);
   }
 }
 
-/// Applique le hover sur un élément
-/// @access private
-@mixin _scheme-element-hover() {
-  @media (hover: hover) and (pointer: fine) {
-    $selectors: ('&:not(a):not(:disabled)');
-    $a: selector-associate(&, 'a[href]');
-    @if length($a) {
-      $selectors: append($selectors, $a, 'comma');
+@mixin _scheme-hover-transparent() {
+  @include _hover-selector {
+    &:hover {
+      background-color: var(--hover);
     }
-    @at-root #{$selectors} {
-      &:hover {
-        background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
-      }
 
-      &:active {
-        background-image: linear-gradient(0deg, var(--color-active), var(--color-active));
-      }
-    }
-  }
-}
-
-@mixin remove-hover() {
-  &:hover,
-  &:active {
-    &:not([disabled]),
-    &:not(:disabled) {
-      background-image: none;
+    &:active {
+      background-color: var(--active);
     }
   }
 }

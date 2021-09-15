@@ -5,12 +5,11 @@
 
 #{ns(highlight)} {
   @include padding-left(4v);
+  @include margin-left(1v);
   @include text-style(md);
 
-  @include respond-from(md) {
-    @include padding-left(8v);
-    @include margin-left(8v);
-  }
+  @include padding-left(8v, md);
+  @include margin-left(9v, md);
 
   p {
     @include margin-bottom(0);

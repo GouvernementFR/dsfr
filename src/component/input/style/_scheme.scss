@@ -4,38 +4,39 @@
 ////
 
 textarea#{ns(input)} {
+  @include scheme-element-box-shadow-color(thick neutral, 0 2px 0 0 $COLOR);
   min-height: space(15v);
 }
 
 #{ns(input)} {
-  @include scheme-element-text-color(g800, true);
-  @include scheme-element-bg-color(g200, true);
-  @include scheme-element-box-shadow-color(g600, true, inset 0 -2px 0 0 $COLOR);
+  @include scheme-element-text-color(title neutral);
+  @include scheme-element-bg-color(contrast neutral);
+  @include scheme-element-box-shadow-color(thick neutral, inset 0 -2px 0 0 $COLOR);
 
   /**
    * Style du placeholder
    */
   @include placeholder {
-    @include scheme-element-text-color(g600-g400, true);
+    @include scheme-element-text-color(mention neutral);
   }
 
   /**
    * Style pour l'input désactivé
    */
-  @include disabled-form-field(input);
+  // @include disabled-form-field(input); // @TODO: disabled
 
   /**
    * Modificateur pour les champs validés
    */
   &--valid {
-    @include scheme-element-box-shadow-color(success, false, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default status success, inset 0 -2px 0 0 $COLOR);
   }
 
   /**
    * Modificateur pour les champs présentant des erreurs
    */
   &--error {
-    @include scheme-element-box-shadow-color(error, false, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default status error, inset 0 -2px 0 0 $COLOR);
   }
 
   /**
@@ -45,15 +46,16 @@ textarea#{ns(input)} {
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    @include scheme-element-box-shadow-color(g200, true, inset 0 0 0 100px $COLOR);
-    @include _scheme-element(g800, -webkit-text-fill-color, true);
+    // @TODO: autofill
+    // @include scheme-element-box-shadow-color(g200, true, inset 0 0 0 100px $COLOR);
+    // @include _scheme-element(g800, -webkit-text-fill-color, true);
   }
 }
 
 #{ns(input-wrap)} {
   > *:not(:last-child) {
     &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
-      @include scheme-element-box-shadow-color(bf500, true, inset 0 -2px 0 0 $COLOR);
+      @include scheme-element-box-shadow-color(high primary, inset 0 -2px 0 0 $COLOR);
     }
   }
 }
