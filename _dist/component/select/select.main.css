@@ -1,0 +1,97 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ------------------------------------ *\
+  SELECT
+\* ------------------------------------ */
+.fr-select {
+  display: block;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.5rem) 50%;
+  background-size: 1.5rem 1.5rem;
+  color: var(--g800);
+  background-color: var(--g200);
+  box-shadow: inset 0 -2px 0 0 var(--g600);
+
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%231e1e1e' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+  background-image: var(--data-uri-svg);
+
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+
+  /**
+   * Mixin pour gérer l'état disabled
+   */
+}
+
+:root[data-fr-theme="dark"] .fr-select {
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%23fff' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+}
+
+[class*="fr-scheme-light"] .fr-select :root:not([data-fr-theme="dark"]) {
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%231e1e1e' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+}
+
+[class*="fr-scheme-dark"] .fr-select :root:not([data-fr-theme="dark"]) {
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%231e1e1e' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+}
+
+.fr-select--error {
+  box-shadow: inset 0 -2px 0 0 var(--error);
+}
+
+.fr-select--valid {
+  box-shadow: inset 0 -2px 0 0 var(--success);
+}
+
+select.fr-select[disabled],
+select.fr-select:disabled {
+  color: var(--g600-g400);
+  box-shadow: inset 0 -2px 0 0 var(--g400);
+
+  /**
+       * Override de l'opacité chrome sur un élément disabled
+       */
+  opacity: 1;
+
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%236a6a6a' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+  background-image: var(--data-uri-svg);
+}
+
+:root[data-fr-theme="dark"] select.fr-select[disabled],
+:root[data-fr-theme="dark"] select.fr-select:disabled {
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%23cecece' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+}
+
+[class*="fr-scheme-light"] select.fr-select[disabled] :root:not([data-fr-theme="dark"]),
+[class*="fr-scheme-light"] select.fr-select:disabled :root:not([data-fr-theme="dark"]) {
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%236a6a6a' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+}
+
+[class*="fr-scheme-dark"] select.fr-select[disabled] :root:not([data-fr-theme="dark"]),
+[class*="fr-scheme-dark"] select.fr-select:disabled :root:not([data-fr-theme="dark"]) {
+  --data-uri-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 24 24' ><path fill='%236a6a6a' d='M12,13.1l5-4.9l1.4,1.4L12,15.9L5.6,9.5l1.4-1.4L12,13.1z'/></svg>");
+}
+
+.fr-select:-webkit-autofill,
+.fr-select:-webkit-autofill:hover,
+.fr-select:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 100px var(--g200);
+  -webkit-text-fill-color: var(--g800);
+}

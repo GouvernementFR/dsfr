@@ -1,0 +1,62 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+body {
+  background-color: var(--w);
+
+  --block-color-hover: rgba(224, 224, 224, 0.5);
+  --block-color-active: rgba(194, 194, 194, 0.5);
+  color: var(--g700);
+}
+
+:root[data-fr-theme="dark"] body {
+  --block-color-hover: rgba(65, 65, 65, 0.5);
+  --block-color-active: rgba(99, 99, 99, 0.5);
+}
+
+:root[data-fr-transition] body {
+  transition: background-color 0.3s;
+}
+
+a {
+  outline-color: var(--focus);
+}
+
+button {
+  outline-color: var(--focus);
+}
+
+input {
+  outline-color: var(--focus);
+}
+
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+  outline-color: var(--focus);
+}
+
+select {
+  outline-color: var(--focus);
+}
+
+textarea {
+  outline-color: var(--focus);
+}
+
+[tabindex] {
+  outline-color: var(--focus);
+}
+
+video[controls],
+audio[controls] {
+  outline-color: var(--focus);
+}
+
+[contenteditable]:not([contenteditable="false"]) {
+  outline-color: var(--focus);
+}
+
+details,
+details > summary:first-of-type {
+  outline-color: var(--focus);
+}

@@ -1,0 +1,65 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+.fr-toggle {
+  /*
+  * Ajout d'un séparateur
+  */
+}
+
+.fr-toggle__input {
+  box-shadow: inset 0 0 0 1px var(--bf500);
+}
+
+input.fr-toggle__input[disabled],
+input.fr-toggle__input:disabled {
+  color: var(--g600-g400);
+  background-color: var(--g200);
+  box-shadow: inset 0 0 0 1px var(--g400);
+}
+
+input.fr-toggle__input[disabled] + label,
+input.fr-toggle__input:disabled + label {
+  color: var(--g600-g400);
+}
+
+input.fr-toggle__input[disabled] + label::before,
+input.fr-toggle__input:disabled + label::before {
+  color: var(--g600-g400);
+}
+
+input.fr-toggle__input[disabled] + label::before::before,
+input.fr-toggle__input:disabled + label::before::before {
+  background-color: var(--g200);
+}
+
+input.fr-toggle__input[disabled] + label::after,
+input.fr-toggle__input:disabled + label::after {
+  color: var(--g600-g400);
+  background-color: var(--g200);
+  border: 1px solid var(--g400);
+}
+
+.fr-toggle__input:checked {
+  background-color: var(--bf500);
+}
+
+.fr-toggle__label::before {
+  color: var(--bf500);
+}
+
+.fr-toggle__label::after {
+  color: var(--bf500);
+  box-shadow: inset 0 0 0 1px var(--bf500);
+  background-color: var(--w);
+}
+
+.fr-toggle .fr-hint-text {
+  color: var(--g600);
+}
+
+.fr-toggle--border-bottom {
+  box-shadow: inset 0 -1px 0 0 var(--g300);
+}

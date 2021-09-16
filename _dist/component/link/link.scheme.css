@@ -1,0 +1,46 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+.fr-link {
+  color: var(--bf500);
+  background-color: var(--t-plain);
+}
+
+:root:not([data-fr-theme="dark"]) .fr-link {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-light"] .fr-link,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-light-"] .fr-link {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-dark"] .fr-link,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-dark-"] .fr-link {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+:root[data-fr-theme="dark"] .fr-link {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+button.fr-link[disabled],
+a.fr-link:not([href]) {
+  color: var(--g600-g400);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fr-link:not(a):not(:disabled):hover,
+  a.fr-link[href]:hover {
+    background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
+  }
+
+  .fr-link:not(a):not(:disabled):active,
+  a.fr-link[href]:active {
+    background-image: linear-gradient(0deg, var(--color-active), var(--color-active));
+  }
+}

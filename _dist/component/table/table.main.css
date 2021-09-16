@@ -1,0 +1,260 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ------------------------------------ *\
+  TABLE
+\* ------------------------------------ */
+.fr-table {
+  --table-offset: 1rem;
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-top: var(--table-offset);
+
+  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
+
+  /*
+  * Cache la caption
+  */
+
+  /*
+  * Fixe le caption en bas du tableau
+  */
+
+  /*
+  * pas de scroll ni de shadow
+  */
+
+  /*
+  * Fixe la taille des colonnes du tableau
+  */
+
+  /*
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
+*/
+
+  /*
+* Positionnement ombres sur le tableau sans caption
+*/
+
+  /*
+* Positionnement ombres sur le tableau avec caption en bas
+*/
+  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
+
+  /*
+  * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
+  */
+}
+
+.fr-table::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
+.fr-table:not(.fr-table--no-scroll) table {
+  width: 100%;
+}
+
+.fr-table table {
+  width: 100%;
+  display: block;
+  overflow: auto;
+  border-spacing: 0;
+}
+
+.fr-table[data-fr-js-table="true"] caption {
+  position: absolute;
+  top: 0;
+}
+
+.fr-table caption {
+  position: initial;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--g800);
+}
+
+.fr-table td,
+.fr-table th {
+  text-align: left;
+  vertical-align: middle;
+  display: table-cell;
+  border: 0;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.fr-table th {
+  font-weight: 700;
+}
+
+.fr-table thead td,
+.fr-table thead th {
+  font-weight: 700;
+  border-bottom: 0.125rem solid var(--g600);
+  background-color: var(--beige);
+  color: var(--g700);
+}
+
+.fr-table--bordered tbody td,
+.fr-table--bordered tbody th {
+  border: 0;
+  border-bottom: 1px solid var(--g400);
+}
+
+.fr-table--no-caption {
+  padding-top: 0;
+}
+
+.fr-table--no-caption caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+
+  /* added line */
+  border: 0;
+  height: 0;
+}
+
+.fr-table--caption-bottom {
+  padding-top: 0;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.fr-table--caption-bottom table {
+  margin-bottom: calc(var(--table-offset) + 2.75rem);
+}
+
+.fr-table--caption-bottom[data-fr-js-table="true"] caption {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 1rem;
+}
+
+.fr-table--caption-bottom caption {
+  margin-top: 1rem;
+  height: min-content;
+  caption-side: bottom;
+}
+
+.fr-table--no-scroll {
+  min-width: auto;
+}
+
+.fr-table--no-scroll table {
+  overflow-x: hidden;
+}
+
+.fr-table--no-scroll caption {
+  max-width: calc(100vw - 2rem);
+}
+
+.fr-table--layout-fixed table {
+  display: table;
+  table-layout: fixed;
+}
+
+.fr-table__shadow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: var(--table-offset);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 1;
+  pointer-events: none;
+  transition: box-shadow 0.3s;
+  box-shadow: inset 0 0 0 0 var(--scroll-shadow), inset 0 0 0 0 var(--scroll-shadow);
+}
+
+.fr-table--no-caption .fr-table__shadow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fr-table--caption-bottom .fr-table__shadow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.fr-table tbody tr:nth-child(even) {
+  background-color: var(--beige);
+}
+
+.fr-table tbody tr:nth-child(odd) {
+  background-color: var(--w);
+}
+
+.fr-table--bordered tbody tr:nth-child(odd),
+.fr-table--bordered tbody tr:nth-child(even) {
+  background-color: var(--t-plain);
+}
+
+.fr-table__shadow {
+  /**
+    * Modifier ombre à gauche
+    **/
+
+  /**
+    * Modifier ombre à droite
+    **/
+
+  /**
+    * Modifier combinaison ombre à gauche et ombre à droite
+    **/
+}
+
+.fr-table__shadow--left::before {
+  box-shadow: inset 2rem 0 1rem -2rem var(--scroll-shadow), inset 0 0 0 0 var(--scroll-shadow);
+}
+
+.fr-table__shadow--right::before {
+  box-shadow: inset 0 0 0 0 var(--scroll-shadow), inset -2rem 0 1rem -2rem var(--scroll-shadow);
+}
+
+.fr-table__shadow--left.fr-table__shadow--right::before {
+  content: "";
+  display: block;
+  box-shadow: inset 2rem 0 1rem -2rem var(--scroll-shadow), inset -2rem 0 1rem -2rem var(--scroll-shadow);
+}
+
+@media (min-width: 48em) {
+  .fr-table caption {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .fr-table td,
+  .fr-table th {
+    padding: 1rem;
+  }
+}

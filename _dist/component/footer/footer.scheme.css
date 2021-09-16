@@ -1,0 +1,46 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+.fr-footer {
+  border-top: 2px solid var(--bf500);
+  border-bottom: 1px solid var(--g400);
+}
+
+.fr-footer__content-link {
+  color: var(--g800);
+}
+
+.fr-footer__top {
+  background-color: var(--beige);
+}
+
+.fr-footer__top-link {
+  color: var(--g600);
+}
+
+.fr-footer__bottom {
+  border-top: 1px solid var(--g400);
+}
+
+.fr-footer__bottom-item::before {
+  background-color: var(--g400);
+}
+
+.fr-footer__bottom-link {
+  color: var(--g600);
+  background-color: var(--t-plain);
+}
+
+.fr-footer__bottom-copy {
+  color: var(--g600);
+}
+
+.fr-footer__partners {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--g400);
+}
+
+.fr-footer__partners a {
+  background: #fff;
+}

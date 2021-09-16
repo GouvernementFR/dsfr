@@ -1,0 +1,45 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+.fr-tile {
+  box-shadow: inset 0 -0.25rem 0 0 var(--bf500);
+  background-color: var(--beige);
+}
+
+.fr-tile.fr-enlarge-link {
+  background-color: var(--beige);
+}
+
+:root:not([data-fr-theme="dark"]) .fr-tile.fr-enlarge-link {
+  --color-hover: rgba(224, 219, 208, 0.5);
+  --color-active: rgba(199, 189, 170, 0.5);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-light"] .fr-tile.fr-enlarge-link,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-light-"] .fr-tile.fr-enlarge-link {
+  --color-hover: rgba(224, 219, 208, 0.5);
+  --color-active: rgba(199, 189, 170, 0.5);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-dark"] .fr-tile.fr-enlarge-link,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-dark-"] .fr-tile.fr-enlarge-link {
+  --color-hover: rgba(79, 79, 79, 0.5);
+  --color-active: rgba(115, 115, 115, 0.5);
+}
+
+:root[data-fr-theme="dark"] .fr-tile.fr-enlarge-link {
+  --color-hover: rgba(79, 79, 79, 0.5);
+  --color-active: rgba(115, 115, 115, 0.5);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fr-tile.fr-enlarge-link:not(a):not(:disabled):hover,
+  a.fr-tile.fr-enlarge-link[href]:hover {
+    background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
+  }
+
+  .fr-tile.fr-enlarge-link:not(a):not(:disabled):active,
+  a.fr-tile.fr-enlarge-link[href]:active {
+    background-image: linear-gradient(0deg, var(--color-active), var(--color-active));
+  }
+}

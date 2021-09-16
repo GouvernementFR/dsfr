@@ -4,10 +4,18 @@ const error404CompleteSearchId = uniqueId('error404-complete');
 const error404WithoutContactSearchId = uniqueId('error404-without-contact');
 %>
 
-<%- sample('Page d’erreur 404 complète (recherche + contact)', './sample/error-404.ejs', { search: true, contact: true, searchId: error404CompleteSearchId }, true, './layout', { search: true, searchId: error404CompleteSearchId }); %>
+<%- sample('Page d’erreur 404 complète (recherche + contact)', './sample/error-404.ejs', { home: true, search: true, contact: true, searchId: error404CompleteSearchId }, true, './layout', { search: true, searchId: error404CompleteSearchId }); %>
 
-<%- sample('Page d’erreur 404 sans recherche', './sample/error-404.ejs', { contact: true }, true, './layout'); %>
+<%- sample('Page d’erreur 404 sans recherche', './sample/error-404.ejs', { home: true, contact: true }, true, './layout'); %>
 
-<%- sample('Page d’erreur 404 sans contact', './sample/error-404.ejs', { search: true, searchId: error404WithoutContactSearchId }, true, './layout', { search: true, searchId: error404WithoutContactSearchId }); %>
+<%- sample('Page d’erreur 404 sans contact', './sample/error-404.ejs', { home: true, search: true, searchId: error404WithoutContactSearchId }, true, './layout', { search: true, searchId: error404WithoutContactSearchId }); %>
 
-<%- sample('Page d’erreur 404 simple', './sample/error-404.ejs', {}, true, './layout'); %>
+<%- sample('Page d’erreur 404 simple', './sample/error-404.ejs', { home: true }, true, './layout'); %>
+
+<%- sample('Page d’erreur 500 complète', './sample/error-500.ejs', { contact: true }, true, './layout'); %>
+
+<%- sample('Page d’erreur 500 sans contact', './sample/error-500.ejs', {}, true, './layout'); %>
+
+<%- sample('Page d’erreur 503 complète', './sample/error-503.ejs', { contact: true }, true, './layout'); %>
+
+<%- sample('Page d’erreur 503 sans contact', './sample/error-503.ejs', {}, true, './layout'); %>

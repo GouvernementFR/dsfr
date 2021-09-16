@@ -1,0 +1,10 @@
+<%
+const data = {
+    title: 'Erreur inattendue',
+    subtitle: 'Erreur 500',
+    description: 'Désolé, le service rencontre des problèmes, nous travaillons à le résoudre le plus rapidement possible.',
+    text: 'Essayez de rafraichir la page, sinon merci de réessayer plus tard.<br/>Si vous avez besoin d’une aide immédiate, merci de nous contacter.'
+};
+%>
+
+<%- include('./error-default.ejs', data); %>

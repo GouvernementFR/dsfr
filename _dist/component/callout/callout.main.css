@@ -1,0 +1,69 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ------------------------------------ *\
+  CALLOUT
+\* ------------------------------------ */
+.fr-callout {
+  position: relative;
+  padding: 1.5rem;
+
+  /**
+   * Inclusion de l'icône (optionnel)
+   */
+
+  /**
+   * Ajout de marge quand on inclut un bouton (optionnel)
+   */
+  background-color: var(--g200);
+
+  --scheme-border: var(--bf500);
+  box-shadow: inset 0.25rem 0 0 0 var(--scheme-border);
+}
+
+.fr-callout[class^="fr-fi-"]::before,
+.fr-callout[class*=" fr-fi-"]::before {
+  display: block;
+  margin: -0.5rem 0 0.5rem;
+}
+
+.fr-callout__title {
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  margin: 0 0 0.5rem;
+  color: var(--g800);
+}
+
+.fr-callout__text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin: 0;
+}
+
+.fr-callout .fr-btn {
+  margin-top: 1rem;
+}
+
+@media (min-width: 48em) {
+  .fr-callout {
+    padding: 2rem 3rem;
+  }
+
+  .fr-callout[class^="fr-fi-"]::before,
+  .fr-callout[class*=" fr-fi-"]::before {
+    margin: -1rem 0 1rem -2rem;
+  }
+
+  .fr-callout__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .fr-callout__text {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}

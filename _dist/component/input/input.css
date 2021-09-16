@@ -1,0 +1,162 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+/* ------------------------------------ *\
+  INPUT
+\* ------------------------------------ */
+/* stylelint-disable */
+.fr-input {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
+  font-size:  1rem ;
+  line-height:  1.5rem ;
+  padding: 0.5rem 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /**
+   * Style du placeholder
+   */
+  /**
+   * On applique une hauteur maximale si l'élément n'est pas un textarea
+   */
+  color: var(--g800);
+  background-color: var(--g200);
+  box-shadow: inset 0 -2px 0 0 var(--g600);
+  /**
+   * Style du placeholder
+   */
+  /**
+   * Style pour l'input désactivé
+   */
+  /**
+   * Modificateur pour les champs validés
+   */
+  /**
+   * Modificateur pour les champs présentant des erreurs
+   */
+  /**
+   * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
+   * sur les navigateurs webkit.
+   */
+}
+
+.fr-input::-webkit-input-placeholder {
+  opacity: 1;
+  font-style: italic;
+  color: var(--g600-g400);
+}
+
+.fr-input:-moz-placeholder {
+  opacity: 1;
+  font-style: italic;
+  color: var(--g600-g400);
+}
+
+.fr-input::-moz-placeholder {
+  opacity: 1;
+  font-style: italic;
+  color: var(--g600-g400);
+}
+
+.fr-input:-ms-input-placeholder {
+  opacity: 1;
+  font-style: italic;
+  color: var(--g600-g400);
+}
+
+.fr-input:not(textarea) {
+  max-height: 2.5rem;
+}
+
+.fr-input[type=date] {
+  min-height: 2.5rem;
+}
+
+.fr-input[type=date]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/**
+ * Ajout d'un wrapper quand on a besoin de mettre une icône
+ */
+.fr-input-wrap {
+  position: relative;
+  display: block;
+}
+
+.fr-input-wrap[class^="fr-fi-"]::before, .fr-input-wrap[class*=" fr-fi-"]::before {
+  font-size: 1rem !important;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  margin: auto;
+}
+
+.fr-input-wrap--addon {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.fr-input-wrap.fr-fi-calendar-line > .fr-input[type=date]::-webkit-calendar-picker-indicator {
+  display: block;
+  margin-right: -2rem;
+  z-index: 1;
+  opacity: 0;
+}
+
+.fr-input-wrap .fr-input {
+  padding-right: 2.5rem;
+}
+
+.fr-input-wrap > *:first-child:not(:last-child).fr-input {
+  padding-right: 1rem;
+}
+
+.fr-input-wrap + .fr-hint-text {
+  margin-top: 0.5rem;
+}
+
+textarea.fr-input {
+  min-height: 3.75rem;
+}
+
+input.fr-input[disabled], input.fr-input:disabled {
+  color: var(--g600-g400);
+  box-shadow: inset 0 -2px 0 0 var(--g400);
+  /**
+       * Override de l'opacité chrome sur un élément disabled
+       */
+  opacity: 1;
+}
+
+.fr-input--valid {
+  box-shadow: inset 0 -2px 0 0 var(--success);
+}
+
+.fr-input--error {
+  box-shadow: inset 0 -2px 0 0 var(--error);
+}
+
+.fr-input:-webkit-autofill, .fr-input:-webkit-autofill:hover, .fr-input:-webkit-autofill:focus {
+  box-shadow: inset 0 0 0 100px var(--g200);
+  -webkit-text-fill-color: var(--g800);
+}
+
+.fr-input-wrap > *:not(:last-child).fr-input:not(.fr-input--valid):not(.fr-input--error) {
+  box-shadow: inset 0 -2px 0 0 var(--bf500);
+}
+
+@media (min-width: 48em) {
+  .fr-input-wrap > *:first-child:not(:last-child) {
+    border-radius: 0.25rem 0 0 0;
+  }
+  .fr-input-wrap > *:last-child:not(:first-child) {
+    border-radius: 0 0.25rem 0 0;
+  }
+}

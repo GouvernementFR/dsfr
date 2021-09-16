@@ -1,0 +1,81 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+.fr-radio-group {
+  /**
+   * On cache l'input de type radio pour le styler via le label
+   */
+
+  /**
+   * Modificateur pour la taille sm
+   */
+}
+
+.fr-radio-group input[type="radio"] {
+  /**
+     * On applique les styles au pseudo élément before du label quand l'input présente
+     * un état check
+     */
+
+  /**
+     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
+     */
+}
+
+.fr-radio-group input[type="radio"]:checked + label::before {
+  box-shadow: inset 0 0 0 5px var(--w);
+  background-color: var(--bf500);
+  border: 1px solid var(--bf500);
+}
+
+.fr-radio-group input[type="radio"][disabled] + label,
+.fr-radio-group input[type="radio"]:disabled + label {
+  color: var(--g600-g400);
+}
+
+.fr-radio-group input[type="radio"][disabled] + label::before,
+.fr-radio-group input[type="radio"]:disabled + label::before {
+  background-color: var(--g200);
+  border: 1px solid var(--g400);
+}
+
+.fr-radio-group--sm input[type="radio"]:checked + label::before {
+  box-shadow: inset 0 0 0 3px var(--w);
+}
+
+.fr-radio-rich input[type="radio"] + .fr-label::after {
+  border-left: 1px solid var(--g300);
+}
+
+.fr-radio-rich input[type="radio"]:not(:checked) + label {
+  box-shadow: inset 0 0 0 1px var(--g300);
+  background-color: var(--w);
+}
+
+.fr-radio-rich input[type="radio"]:checked + label {
+  background-color: var(--w);
+  box-shadow: inset 0 0 0 1px var(--bf500);
+}
+
+.fr-radio-rich input[type="radio"]:checked + label::before {
+  box-shadow: inset 0 0 0 3px var(--w);
+}
+
+.fr-radio-rich input[type="radio"][disabled] + label,
+.fr-radio-rich input[type="radio"]:disabled + label {
+  color: var(--g600-g400);
+  filter: grayscale(1);
+}
+
+.fr-radio-rich input[type="radio"][disabled] + label::before,
+.fr-radio-rich input[type="radio"]:disabled + label::before {
+  background-color: var(--g200);
+  border: 1px solid var(--g400);
+}
+
+.fr-radio-rich input[type="radio"][disabled] + label::after,
+.fr-radio-rich input[type="radio"]:disabled + label::after {
+  background-color: transparent;
+}

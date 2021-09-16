@@ -1,0 +1,29 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/**
+* Mixin d'ajout des icones des réseaux sociaux
+**/
+.fr-follow {
+  background-color: var(--bf100-g750);
+}
+
+.fr-follow .fr-input {
+  background-color: var(--w);
+}
+
+.fr-follow__newsletter-legal {
+  color: var(--g600);
+}
+
+.fr-follow .fr-grid-row > *:not(:first-child) {
+  box-shadow: 0 -1px 0 0 var(--bf300-plain);
+}
+
+@media (min-width: 48em) {
+  .fr-follow .fr-grid-row > *:not(:first-child) {
+    box-shadow: -1px 0 0 0 var(--bf300-plain);
+  }
+}

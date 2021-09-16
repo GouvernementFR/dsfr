@@ -1,0 +1,179 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+/* ------------------------------------ *\
+  TAG
+\* ------------------------------------ */
+.fr-tag {
+  --link-underline: none;
+  --link-blank-font: none;
+  --link-blank-content: none;
+  margin: 0;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  min-height: 2rem;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  color: var(--g-800);
+  background-color: var(--g200);
+}
+
+.fr-tag--icon-left[class^="fr-fi-"],
+.fr-tag--icon-left[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: initial;
+  max-width: none;
+  max-height: none;
+}
+
+.fr-tag--icon-left[class^="fr-fi-"]::before,
+.fr-tag--icon-left[class*=" fr-fi-"]::before {
+  margin-left: -0.25rem;
+  margin-right: 0.25rem;
+  font-size: 1rem;
+}
+
+.fr-tag--icon-right[class^="fr-fi-"],
+.fr-tag--icon-right[class*=" fr-fi-"] {
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: none;
+  max-height: none;
+}
+
+.fr-tag--icon-right[class^="fr-fi-"]::before,
+.fr-tag--icon-right[class*=" fr-fi-"]::before {
+  margin-right: -0.25rem;
+  margin-left: 0.25rem;
+  font-size: 1rem;
+}
+
+.fr-tag--sm {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  min-height: 1.5rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.fr-tag--sm.fr-tag--icon-left[class^="fr-fi-"],
+.fr-tag--sm.fr-tag--icon-left[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: initial;
+  max-width: none;
+  max-height: none;
+}
+
+.fr-tag--sm.fr-tag--icon-left[class^="fr-fi-"]::before,
+.fr-tag--sm.fr-tag--icon-left[class*=" fr-fi-"]::before {
+  margin-left: -0.25rem;
+  margin-right: 0.25rem;
+  font-size: 1rem;
+}
+
+.fr-tag--sm.fr-tag--icon-right[class^="fr-fi-"],
+.fr-tag--sm.fr-tag--icon-right[class*=" fr-fi-"] {
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: none;
+  max-height: none;
+}
+
+.fr-tag--sm.fr-tag--icon-right[class^="fr-fi-"]::before,
+.fr-tag--sm.fr-tag--icon-right[class*=" fr-fi-"]::before {
+  margin-right: -0.25rem;
+  margin-left: 0.25rem;
+  font-size: 1rem;
+}
+
+.fr-tags-group {
+  --ul-type: none;
+  --ol-type: none;
+  --ul-start: 0;
+  --ol-start: 0;
+  --xl-block: 0;
+  --li-bottom: 0;
+  --ol-content: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.fr-tags-group > li {
+  display: inline-flex;
+}
+
+.fr-tags-group .fr-tag {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.fr-tags-group a.fr-tag,
+.fr-tags-group button.fr-tag {
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.fr-tags-group a.fr-tag--sm,
+.fr-tags-group button.fr-tag--sm {
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+a.fr-tag,
+button.fr-tag {
+  color: var(--bf500-plain);
+  background-color: var(--bf200-bf300);
+}
+
+:root:not([data-fr-theme="dark"]) a.fr-tag,
+:root:not([data-fr-theme="dark"]) button.fr-tag {
+  --color-hover: rgba(172, 172, 255, 0.5);
+  --color-active: rgba(107, 107, 255, 0.5);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-light"] a.fr-tag,
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-light"] button.fr-tag,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-light-"] a.fr-tag,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-light-"] button.fr-tag {
+  --color-hover: rgba(172, 172, 255, 0.5);
+  --color-active: rgba(107, 107, 255, 0.5);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-dark"] a.fr-tag,
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-dark"] button.fr-tag,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-dark-"] a.fr-tag,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-dark-"] button.fr-tag {
+  --color-hover: rgba(71, 71, 255, 0.5);
+  --color-active: rgba(0, 0, 243, 0.5);
+}
+
+:root[data-fr-theme="dark"] a.fr-tag,
+button.fr-tag {
+  --color-hover: rgba(71, 71, 255, 0.5);
+  --color-active: rgba(0, 0, 243, 0.5);
+}
+
+button.fr-tag[disabled],
+a.fr-tag:not([href]) {
+  color: var(--g600-g400);
+  background-color: var(--g200);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.fr-tag:not(a):not(:disabled):hover,
+  a.fr-tag[href]:hover,
+  button.fr-tag:not(a):not(:disabled):hover {
+    background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
+  }
+
+  a.fr-tag:not(a):not(:disabled):active,
+  a.fr-tag[href]:active,
+  button.fr-tag:not(a):not(:disabled):active {
+    background-image: linear-gradient(0deg, var(--color-active), var(--color-active));
+  }
+}

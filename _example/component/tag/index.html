@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="fr" data-fr-theme>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Tag - Design System</title>
+        <link rel="apple-touch-icon" href="../../../_dist/favicon/apple-touch-icon.png"><!-- 180×180 -->
+        <link rel="icon" href="../../../_dist/favicon/favicon.svg" type="image/svg+xml">
+        <!-- si favicon.ico peut etre placé à la racine du serveur, retirer la ligne ci-dessous -->
+        <link rel="shortcut icon" href="../../../_dist/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+        <link rel="manifest" href="../../../_dist/favicon/manifest.webmanifest" crossorigin="use-credentials">
+        <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+        <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+        <link href="../../../_dist/core/core.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/scheme/scheme.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/link/link.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/form/form.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/legacy/legacy.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/tag/tag.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/accordion/accordion.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/checkbox/checkbox.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/button/button.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/core/core.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/link/link.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/form/form.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/tag/tag.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/accordion/accordion.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/checkbox/checkbox.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/button/button.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/core/core.legacy.css" rel="stylesheet" file="legacy">
+        <style>
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre-wrap;
+            }
+
+            .example-controls {
+                z-index: 100000;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
+            }
+
+            .example-controls>button {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .example-controls__content {
+
+                padding: 16px;
+                background-color: var(--w-g750);
+            }
+
+            .example-controls .fr-collapse--expanded~[aria-expanded] {
+                display: none;
+            }
+
+            .example-controls .fr-collapse:not(.fr-collapse--expanded)~button:not([aria-expanded]) {
+                display: none;
+            }
+
+            .example-controls [class*="-form-group"] {
+                margin-bottom: 0;
+            }
+
+        </style>
+        <script>
+            window['dsfr'] = {
+                verbose: true,
+                //mode: 'manual'
+            }
+
+        </script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+    </head>
+
+    <body class="fr-mb-12w" style="margin:0; padding:0;">
+        <div class="example-controls">
+            <div class="fr-collapse" id="controls">
+                <div class="example-controls__content">
+                    <div class="fr-form-group">
+                        <fieldset class="fr-fieldset">
+                            <legend class="fr-sr-only">Interface de contrôle des tests</legend>
+                            <div class="fr-fieldset__content">
+                                <div class="fr-checkbox-group">
+                                    <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
+                                    <label class="fr-label" for="theme-checkbox">Thème clair / sombre</label>
+                                </div>
+                                <div class="fr-checkbox-group">
+                                    <input type="checkbox" id="mourning-checkbox" name="checkboxes-inline-2">
+                                    <label class="fr-label" for="mourning-checkbox">En deuil</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <button class="fr-btn fr-btn--sm fr-fi-add-line" aria-expanded="false" aria-controls="controls">Interface de contrôle</button>
+            <button class="fr-btn fr-btn--sm fr-fi-subtract-line" aria-controls="controls">Fermer</button>
+        </div>
+        <div class="fr-container fr-mt-2v fr-mb-8w">
+            <a class="fr-link fr-fi-arrow-left-line fr-link--icon-left" href="../">Retour</a>
+            <h1>Tag (tag)</h1>
+            <p>Le tag catégorise/classe/organise les contenus à l'aide de mots-clés. Il aide les utilisateurs à rechercher et à trouver facilement une information.</p>
+            <a href="https://gouvfr.atlassian.net/wiki/spaces/DB/pages/310706305/Tag" target="_blank">Documentation</a>
+        </div>
+        <div class="fr-mb-12w">
+            <div class="fr-container">
+                <div class="fr-grid-row fr-grid-row--center">
+                    <div class="fr-col-md-8 fr-col-12">
+                        <h4>Tag seul sans icône</h4>
+                        <div class="fr-mb-6v">
+                            <a class="fr-tag" href="#">Label tag</a>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-870">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-870">
+                                    <pre class=" language-html"><code>&lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul icône à gauche</h4>
+                        <div class="fr-mb-6v">
+                            <a class="fr-tag fr-fi-arrow-left-line fr-tag--icon-left" href="#">Label tag</a>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-871">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-871">
+                                    <pre class=" language-html"><code>&lt;a class="fr-tag fr-fi-arrow-left-line fr-tag--icon-left" href="#"&gt;Label tag&lt;/a&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul icône à droite</h4>
+                        <div class="fr-mb-6v">
+                            <a class="fr-tag fr-fi-arrow-right-line fr-tag--icon-right" href="#">Label tag</a>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-872">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-872">
+                                    <pre class=" language-html"><code>&lt;a class="fr-tag fr-fi-arrow-right-line fr-tag--icon-right" href="#"&gt;Label tag&lt;/a&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul cliquable</h4>
+                        <div class="fr-mb-6v">
+                            <a class="fr-tag" href="#">Label tag</a>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-873">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-873">
+                                    <pre class=" language-html"><code>&lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul cliquable SM</h4>
+                        <div class="fr-mb-6v">
+                            <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-874">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-874">
+                                    <pre class=" language-html"><code>&lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul non cliquable</h4>
+                        <div class="fr-mb-6v">
+                            <p class="fr-tag">Label tag</p>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-875">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-875">
+                                    <pre class=" language-html"><code>&lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul non cliquable SM</h4>
+                        <div class="fr-mb-6v">
+                            <p class="fr-tag fr-tag--sm">Label tag</p>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-876">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-876">
+                                    <pre class=" language-html"><code>&lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul désactivé</h4>
+                        <div class="fr-mb-6v">
+                            <button class="fr-tag" disabled="">Label tag</button>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-877">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-877">
+                                    <pre class=" language-html"><code>&lt;button class="fr-tag" disabled=""&gt;Label tag&lt;/button&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Tag seul désactivé SM</h4>
+                        <div class="fr-mb-6v">
+                            <button class="fr-tag fr-tag--sm" disabled="">Label tag</button>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-878">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-878">
+                                    <pre class=" language-html"><code>&lt;button class="fr-tag fr-tag--sm" disabled=""&gt;Label tag&lt;/button&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Groupe de tags cliquables</h4>
+                        <div class="fr-mb-6v">
+                            <ul class="fr-tags-group">
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag" href="#">Label tag</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-879">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-879">
+                                    <pre class=" language-html"><code>&lt;ul class="fr-tags-group"&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Groupe de tags cliquables SM</h4>
+                        <div class="fr-mb-6v">
+                            <ul class="fr-tags-group">
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                                <li>
+                                    <a class="fr-tag fr-tag--sm" href="#">Label tag</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-880">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-880">
+                                    <pre class=" language-html"><code>&lt;ul class="fr-tags-group"&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a class="fr-tag fr-tag--sm" href="#"&gt;Label tag&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Groupe de tags non cliquables</h4>
+                        <div class="fr-mb-6v">
+                            <ul class="fr-tags-group">
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag">Label tag</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-881">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-881">
+                                    <pre class=" language-html"><code>&lt;ul class="fr-tags-group"&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Groupe de tags non cliquables SM</h4>
+                        <div class="fr-mb-6v">
+                            <ul class="fr-tags-group">
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                                <li>
+                                    <p class="fr-tag fr-tag--sm">Label tag</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-882">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-882">
+                                    <pre class=" language-html"><code>&lt;ul class="fr-tags-group"&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p class="fr-tag fr-tag--sm"&gt;Label tag&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="../../../_dist/core/core.module.js"></script>
+        <script type="module" src="../../../_dist/scheme/scheme.module.js"></script>
+        <script type="module" src="../../../_dist/component/accordion/accordion.module.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/core/core.nomodule.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/scheme/scheme.nomodule.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/component/accordion/accordion.nomodule.js"></script>
+        <script>
+            const schemeAttr = 'data-fr-theme';
+            const mourningAttr = 'data-fr-mourning';
+
+            class DemoCheckbox {
+                constructor(id) {
+                    this.checkbox = document.getElementById(id);
+                    this.init();
+                    this.checkbox.addEventListener('change', this.change.bind(this));
+                    window.requestAnimationFrame(this.change.bind(this));
+                }
+
+                init() {}
+
+                change() {}
+            }
+
+            class AttributeDemoCheckbox extends DemoCheckbox {
+                constructor(id, attributeName, checkedValue, uncheckedValue) {
+                    super(id);
+                    this.attributeName = attributeName;
+                    this.checkedValue = checkedValue;
+                    this.uncheckedValue = uncheckedValue;
+                }
+
+                init() {
+                    this.observer = new MutationObserver(this.mutate.bind(this));
+                    this.observer.observe(document.documentElement, {
+                        attributes: true
+                    });
+                }
+
+                get state() {
+                    const value = document.documentElement.getAttribute(this.attributeName);
+                    const has = document.documentElement.hasAttribute(this.attributeName);
+
+                    switch (true) {
+                        case this.checkedValue === value:
+                            return true;
+
+                        case this.uncheckedValue === value:
+                            return false;
+
+                        case this.checkedValue === true && has:
+                            return true;
+
+                        case this.uncheckedValue === true && has:
+                            return true;
+                    }
+                    return false;
+                }
+
+                mutate(mutations) {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'attributes' && mutation.attributeName === this.attributeName) this.checkbox.checked = this.state;
+                    });
+                }
+
+                change() {
+                    const value = this.checkbox.checked ? this.checkedValue : this.uncheckedValue;
+
+                    switch (value) {
+                        case null:
+                            document.documentElement.removeAttribute(this.attributeName);
+                            break;
+
+                        case true:
+                            document.documentElement.setAttribute(this.attributeName, '');
+                            break;
+
+                        default:
+                            document.documentElement.setAttribute(this.attributeName, value);
+                    }
+                }
+            }
+
+            new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'dark', 'light');
+            new AttributeDemoCheckbox('mourning-checkbox', mourningAttr, true, null);
+
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    </body>
+
+</html>

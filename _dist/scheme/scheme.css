@@ -1,0 +1,257 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ------------------------------------ *\
+  SCHEME
+\* ------------------------------------ */
+
+/**
+ * Définition de la valeur des custom properties d'hover par défaut au niveau du :root
+ */
+:root {
+  --block-color-hover: rgba(224, 224, 224, 0.5);
+  --block-color-active: rgba(194, 194, 194, 0.5);
+  --bf500: #000091;
+  --bf500-plain: #000091;
+  --w-bf500: #fff;
+  --bf300-plain: #9a9aff;
+  --bf200-bf300: #ececff;
+  --bf100-g750: #f5f5ff;
+  --t-plain: transparent;
+  --t-w: transparent;
+  --g800: #1e1e1e;
+  --g700: #383838;
+  --g600: #6a6a6a;
+  --g500: #9c9c9c;
+  --g400: #cecece;
+  --g300: #e7e7e7;
+  --g200: #f0f0f0;
+  --g100: #f8f8f8;
+  --w: #fff;
+  --beige: #f9f8f6;
+  --g800-plain: #1e1e1e;
+  --g600-g400: #6a6a6a;
+  --g400-t: #cecece;
+  --g100-g800: #f8f8f8;
+  --w-g750: #fff;
+  --focus: #2a7ffe;
+  --info: #0762c8;
+  --success: #008941;
+  --error: #e10600;
+  --rm300: #f7bfc3;
+  --rm500: #e1000f;
+  --scroll-shadow: rgba(30, 30, 30, 0.16);
+  --overlay: rgba(156, 156, 156, 0.32);
+}
+
+/**
+ * Définition des customs properties de combinaisons de couleur
+ */
+
+/* valeurs des couleurs en dark mode */
+:root[data-fr-theme="dark"] {
+  --bf500: #9a9aff;
+  --bf500-plain: #000091;
+  --w-bf500: #000091;
+  --bf300-plain: #9a9aff;
+  --bf200-bf300: #9a9aff;
+  --bf100-g750: #2a2a2a;
+  --t-plain: transparent;
+  --t-w: #fff;
+  --g800: #fff;
+  --g700: #f0f0f0;
+  --g600: #e7e7e7;
+  --g500: #cecece;
+  --g400: #9c9c9c;
+  --g300: #6a6a6a;
+  --g200: #383838;
+  --g100: #2a2a2a;
+  --w: #1e1e1e;
+  --beige: #2a2a2a;
+  --g800-plain: #1e1e1e;
+  --g600-g400: #cecece;
+  --g400-t: transparent;
+  --g100-g800: #1e1e1e;
+  --w-g750: #2a2a2a;
+  --focus: #5398ff;
+  --info: #2b8bf7;
+  --success: #00eb5e;
+  --error: #f33;
+  --rm300: #383838;
+  --rm500: #f7bfc3;
+  --scroll-shadow: #1e1e1e;
+  --overlay: rgba(206, 206, 206, 0.32);
+}
+
+/* valeur des couleurs par défaut */
+
+/* valeur des couleurs dans des blocs de combinaison */
+:root:not([data-fr-theme="dark"]) {
+  /* le sélecteur est un bloc de combinaison de couleur du type défini */
+
+  /* le sélecteur est un bloc de combinaison de couleur du type défini */
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-light"],
+:root:not([data-fr-theme="dark"]) [class*="--scheme-light-"] {
+  --bf500: #000091;
+  --bf500-plain: #000091;
+  --w-bf500: #fff;
+  --bf300-plain: #9a9aff;
+  --bf200-bf300: #ececff;
+  --bf100-g750: #f5f5ff;
+  --t-plain: transparent;
+  --t-w: transparent;
+  --g800: #1e1e1e;
+  --g700: #383838;
+  --g600: #6a6a6a;
+  --g500: #9c9c9c;
+  --g400: #cecece;
+  --g300: #e7e7e7;
+  --g200: #f0f0f0;
+  --g100: #f8f8f8;
+  --w: #fff;
+  --beige: #f9f8f6;
+  --g800-plain: #1e1e1e;
+  --g600-g400: #6a6a6a;
+  --g400-t: #cecece;
+  --g100-g800: #f8f8f8;
+  --w-g750: #fff;
+  --focus: #2a7ffe;
+  --info: #0762c8;
+  --success: #008941;
+  --error: #e10600;
+  --rm300: #f7bfc3;
+  --rm500: #e1000f;
+  --scroll-shadow: rgba(30, 30, 30, 0.16);
+  --overlay: rgba(156, 156, 156, 0.32);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-dark"],
+:root:not([data-fr-theme="dark"]) [class*="--scheme-dark-"] {
+  --bf500: #9a9aff;
+  --w-bf500: #000091;
+  --bf200-bf300: #9a9aff;
+  --bf100-g750: #2a2a2a;
+  --t-w: #fff;
+  --g800: #fff;
+  --g700: #f0f0f0;
+  --g600: #e7e7e7;
+  --g500: #cecece;
+  --g400: #9c9c9c;
+  --g300: #6a6a6a;
+  --g200: #383838;
+  --g100: #2a2a2a;
+  --w: #1e1e1e;
+  --beige: #2a2a2a;
+  --g600-g400: #cecece;
+  --g400-t: transparent;
+  --g100-g800: #1e1e1e;
+  --w-g750: #2a2a2a;
+  --focus: #5398ff;
+  --info: #2b8bf7;
+  --success: #00eb5e;
+  --error: #f33;
+  --rm300: #383838;
+  --rm500: #f7bfc3;
+  --scroll-shadow: #1e1e1e;
+  --overlay: rgba(206, 206, 206, 0.32);
+}
+
+/**
+ * Déclaration des blocks de combinaison de couleur
+ */
+:root .fr-scheme-light-white {
+  background-color: var(--w);
+
+  --scheme-border: var(--bf500);
+  --block-color-hover: rgba(224, 224, 224, 0.5);
+  --block-color-active: rgba(194, 194, 194, 0.5);
+}
+
+:root[data-fr-theme="dark"] :root .fr-scheme-light-white {
+  --block-color-hover: rgba(65, 65, 65, 0.5);
+  --block-color-active: rgba(99, 99, 99, 0.5);
+}
+
+:root .fr-scheme-light-grey-100 {
+  background-color: var(--g100-g800);
+
+  --scheme-border: var(--bf500);
+  --block-color-hover: rgba(217, 217, 217, 0.5);
+  --block-color-active: rgba(185, 185, 185, 0.5);
+}
+
+:root[data-fr-theme="dark"] :root .fr-scheme-light-grey-100 {
+  --block-color-hover: rgba(65, 65, 65, 0.5);
+  --block-color-active: rgba(99, 99, 99, 0.5);
+}
+
+:root .fr-scheme-light-grey-200 {
+  background-color: var(--g200);
+
+  --scheme-border: var(--bf500);
+  --block-color-hover: rgba(207, 207, 207, 0.5);
+  --block-color-active: rgba(175, 175, 175, 0.5);
+}
+
+:root[data-fr-theme="dark"] :root .fr-scheme-light-grey-200 {
+  --block-color-hover: rgba(95, 95, 95, 0.5);
+  --block-color-active: rgba(134, 134, 134, 0.5);
+}
+
+:root .fr-scheme-light-beige {
+  background-color: var(--beige);
+
+  --scheme-border: var(--bf500);
+  --block-color-hover: rgba(224, 219, 208, 0.5);
+  --block-color-active: rgba(199, 189, 170, 0.5);
+}
+
+:root[data-fr-theme="dark"] :root .fr-scheme-light-beige {
+  --block-color-hover: rgba(79, 79, 79, 0.5);
+  --block-color-active: rgba(115, 115, 115, 0.5);
+}
+
+:root[data-fr-transition] [class*="fr-scheme-light"] {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+:root .fr-scheme-dark-grey-800 {
+  background-color: var(--g800-plain);
+
+  --scheme-border: var(--bf300-plain);
+  --block-color-hover: rgba(65, 65, 65, 0.5);
+  --block-color-active: rgba(99, 99, 99, 0.5);
+}
+
+:root[data-fr-theme="dark"] :root .fr-scheme-dark-grey-800 {
+  --block-color-hover: rgba(65, 65, 65, 0.5);
+  --block-color-active: rgba(99, 99, 99, 0.5);
+}
+
+:root[data-fr-transition] [class*="fr-scheme-dark"] {
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+:root .fr-switch-theme .fr-fieldset .fr-radio-group:last-child input[type=radio] + label {
+  margin-bottom: 0;
+}
+
+:root .fr-switch-theme .fr-fieldset .fr-radio-group:nth-child(1) input[type=radio] + label {
+  background-image: url("data:image/svg+xml;utf-8,<svg width='80' height='80' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><defs><path id='a' d='M0 0h80v80H0z'/></defs><g fill='none' fill-rule='evenodd'><mask id='b' fill='%23fff'><use xlink:href='%23a'/></mask><circle stroke='%23000091' stroke-width='2' mask='url(%23b)' cx='40' cy='40' r='16'/><path d='M40 29a1 1 0 010 2 9 9 0 00-9 9 1 1 0 01-2 0c0-6.075 4.925-11 11-11z' fill='%23E1000F' fill-rule='nonzero' mask='url(%23b)'/><path d='M39.912 64a1 1 0 011 1v6a1 1 0 11-2 0v-6a1 1 0 011-1zm18.947-7.262l4.243 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 111.414-1.414zm-35.48 0a1 1 0 010 1.414l-4.243 4.242a1 1 0 01-1.414-1.414l4.242-4.242a1 1 0 011.415 0zM71 38.912a1 1 0 010 2h-6a1 1 0 110-2h6zm-56 0a1 1 0 010 2H9a1 1 0 110-2h6zm4.26-21.772l4.244 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 011.414-1.414zm43.717 0a1 1 0 010 1.414l-4.243 4.242a1 1 0 01-1.414-1.414l4.242-4.242a1 1 0 011.415 0zM39.912 8a1 1 0 011 1v6a1 1 0 11-2 0V9a1 1 0 011-1z' fill='%23000091' mask='url(%23b)'/></g></svg>");
+}
+
+:root .fr-switch-theme .fr-fieldset .fr-radio-group:nth-child(2) input[type=radio] + label {
+  background-image: url("data:image/svg+xml;utf-8,<svg width='80' height='80' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><path d='M0 0h80v80H0z'/><path d='M38 26c0 11.046 8.954 20 20 20 2.23 0 4.376-.365 6.38-1.039C62.174 53.607 54.333 60 45 60c-11.046 0-20-8.954-20-20 0-8.815 5.703-16.298 13.62-18.961A20.024 20.024 0 0038 26z' stroke='%23000091' stroke-width='2' stroke-linejoin='round'/><path fill='%23E1000F' d='M14.647 20.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152zM57.647 31.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152zM18.647 60.822l-4.151-.848 4.151-.849.849-4.151.848 4.151 4.152.849-4.152.848-.848 4.152z'/></g></svg>");
+}
+
+:root[data-fr-theme="dark"] .fr-switch-theme .fr-fieldset .fr-radio-group:nth-child(1) input[type=radio] + label {
+  background-image: url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='80' height='80'><defs><path id='a' d='M0 0h80v80H0z'/></defs><g fill='none' fill-rule='evenodd'><mask id='b' fill='%23fff'><use xlink:href='%23a'/></mask><circle cx='40' cy='40' r='16' stroke='%239a9aff' stroke-width='2' mask='url(%23b)'/><path fill='%23F7BFC3' fill-rule='nonzero' d='M40 29a1 1 0 010 2 9 9 0 00-9 9 1 1 0 01-2 0c0-6.075 4.925-11 11-11z' mask='url(%23b)'/><path fill='%239a9aff' d='M39.912 64a1 1 0 011 1v6a1 1 0 01-2 0v-6a1 1 0 011-1zm18.947-7.262l4.243 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 011.414-1.414zm-35.48 0a1 1 0 010 1.414l-4.243 4.242a.999.999 0 11-1.414-1.414l4.242-4.242a1.002 1.002 0 011.415 0zM71 38.912a1 1 0 110 2h-6a1 1 0 010-2h6zm-56 0a1 1 0 110 2H9a1 1 0 010-2h6zm4.26-21.772l4.244 4.242a1 1 0 01-1.415 1.414l-4.242-4.242a1 1 0 011.414-1.414zm43.717 0a1 1 0 010 1.414l-4.243 4.242a.999.999 0 11-1.414-1.414l4.242-4.242a1.002 1.002 0 011.415 0zM39.912 8a1 1 0 011 1v6a1 1 0 01-2 0V9a1 1 0 011-1z' mask='url(%23b)'/></g></svg>");
+}
+
+:root[data-fr-theme="dark"] .fr-switch-theme .fr-fieldset .fr-radio-group:nth-child(2) input[type=radio] + label {
+  background-image: url("data:image/svg+xml;utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><g fill='none' fill-rule='evenodd'><path d='M0 0h80v80H0z'/><path stroke='%239a9aff' stroke-linejoin='round' stroke-width='2' d='M38 26c0 11.046 8.954 20 20 20 2.23 0 4.376-.365 6.38-1.039C62.174 53.607 54.333 60 45 60c-11.046 0-20-8.954-20-20 0-8.815 5.703-16.298 13.62-18.961A20.039 20.039 0 0038 26z'/><path fill='%23F7BFC3' d='M14.647 20.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15zM57.647 31.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15zM18.647 60.823l-4.151-.85 4.151-.848.849-4.152.849 4.152 4.151.848-4.151.85-.849 4.15z'/></g></svg>");
+}

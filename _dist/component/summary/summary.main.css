@@ -1,0 +1,110 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ------------------------------------ *\
+  SUMMARY
+\* ------------------------------------ */
+.fr-summary {
+  --link-underline: none;
+  --link-blank-font: none;
+  --link-blank-content: none;
+  padding: 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+
+  /**
+   * la base de l'espace occupé par le marker est calculé sur 2 nbsp (270 em-square)
+   */
+  --summary-offset: 0.54;
+
+  /**
+   * on ajoute l'écart des éléments ajoutés à chaque sous niveau : un chiffre (600 em-square) et un point (270 em-square)
+   */
+  background-color: var(--beige);
+}
+
+.fr-summary ol {
+  --summary-base: calc(var(--summary-offset) + 0.87);
+  list-style-type: none;
+}
+
+.fr-summary li {
+  --summary-offset: var(--summary-base);
+}
+
+.fr-summary li::marker {
+  content: none;
+}
+
+.fr-summary li:nth-of-type(1n + 10) {
+  --summary-offset: calc(var(--summary-base) + 0.4);
+}
+
+.fr-summary__title {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--g800);
+}
+
+.fr-summary__link {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem calc(var(--summary-offset) * var(--xl-size) + 0.5rem);
+  margin: 0 -0.5rem -0.25rem calc(var(--summary-offset) * var(--xl-size) * -1 - 0.5rem);
+}
+
+.fr-summary__link::before {
+  content: var(--ol-content);
+  position: absolute;
+  left: 0.5rem;
+  font-size: var(--xl-size);
+  font-weight: bold;
+}
+
+.fr-summary li > a {
+  color: var(--g800);
+  background-color: var(--t-plain);
+}
+
+:root:not([data-fr-theme="dark"]) .fr-summary li > a {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-light"] .fr-summary li > a,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-light-"] .fr-summary li > a {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+:root:not([data-fr-theme="dark"]) [class*="fr-scheme-dark"] .fr-summary li > a,
+:root:not([data-fr-theme="dark"]) [class*="--scheme-dark-"] .fr-summary li > a {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+:root[data-fr-theme="dark"] .fr-summary li > a {
+  --color-hover: var(--block-color-hover);
+  --color-active: var(--block-color-active);
+}
+
+@media (min-width: 48em) {
+  .fr-summary {
+    padding: 2rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .fr-summary li > a:not(a):not(:disabled):hover,
+  .fr-summary li > a[href]:hover {
+    background-image: linear-gradient(0deg, var(--color-hover), var(--color-hover));
+  }
+
+  .fr-summary li > a:not(a):not(:disabled):active,
+  .fr-summary li > a[href]:active {
+    background-image: linear-gradient(0deg, var(--color-active), var(--color-active));
+  }
+}

@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="fr" data-fr-theme>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Gestionnaire de consentement - Design System</title>
+        <link rel="apple-touch-icon" href="../../../_dist/favicon/apple-touch-icon.png"><!-- 180×180 -->
+        <link rel="icon" href="../../../_dist/favicon/favicon.svg" type="image/svg+xml">
+        <!-- si favicon.ico peut etre placé à la racine du serveur, retirer la ligne ci-dessous -->
+        <link rel="shortcut icon" href="../../../_dist/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+        <link rel="manifest" href="../../../_dist/favicon/manifest.webmanifest" crossorigin="use-credentials">
+        <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+        <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+        <link href="../../../_dist/core/core.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/scheme/scheme.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/link/link.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/form/form.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/legacy/legacy.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/button/button.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/radio/radio.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/accordion/accordion.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/checkbox/checkbox.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/content/content.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/component/modal/modal.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/pattern/consent/consent.main.css" rel="stylesheet" file="main">
+        <link href="../../../_dist/core/core.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/link/link.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/form/form.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/button/button.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/radio/radio.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/accordion/accordion.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/checkbox/checkbox.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/component/modal/modal.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/pattern/consent/consent.scheme.css" rel="stylesheet" file="scheme">
+        <link href="../../../_dist/core/core.legacy.css" rel="stylesheet" file="legacy">
+        <link href="../../../_dist/component/radio/radio.legacy.css" rel="stylesheet" file="legacy">
+        <style>
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre-wrap;
+            }
+
+            .example-controls {
+                z-index: 100000;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
+            }
+
+            .example-controls>button {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .example-controls__content {
+
+                padding: 16px;
+                background-color: var(--w-g750);
+            }
+
+            .example-controls .fr-collapse--expanded~[aria-expanded] {
+                display: none;
+            }
+
+            .example-controls .fr-collapse:not(.fr-collapse--expanded)~button:not([aria-expanded]) {
+                display: none;
+            }
+
+            .example-controls [class*="-form-group"] {
+                margin-bottom: 0;
+            }
+
+        </style>
+        <script>
+            window['dsfr'] = {
+                verbose: true,
+                //mode: 'manual'
+            }
+
+        </script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+    </head>
+
+    <body class="fr-mb-12w" style="margin:0; padding:0;">
+        <div class="example-controls">
+            <div class="fr-collapse" id="controls">
+                <div class="example-controls__content">
+                    <div class="fr-form-group">
+                        <fieldset class="fr-fieldset">
+                            <legend class="fr-sr-only">Interface de contrôle des tests</legend>
+                            <div class="fr-fieldset__content">
+                                <div class="fr-checkbox-group">
+                                    <input type="checkbox" id="theme-checkbox" name="checkboxes-inline-1">
+                                    <label class="fr-label" for="theme-checkbox">Thème clair / sombre</label>
+                                </div>
+                                <div class="fr-checkbox-group">
+                                    <input type="checkbox" id="mourning-checkbox" name="checkboxes-inline-2">
+                                    <label class="fr-label" for="mourning-checkbox">En deuil</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <button class="fr-btn fr-btn--sm fr-fi-add-line" aria-expanded="false" aria-controls="controls">Interface de contrôle</button>
+            <button class="fr-btn fr-btn--sm fr-fi-subtract-line" aria-controls="controls">Fermer</button>
+        </div>
+        <div class="fr-container fr-mt-2v fr-mb-8w">
+            <a class="fr-link fr-fi-arrow-left-line fr-link--icon-left" href="../">Retour</a>
+            <h1>Gestionnaire de consentement (consent)</h1>
+            <p>Le gestionnaire de consentement permet à l'utilisateur de définir ses préférences sur l'utilisation de ses données personnelles.</p>
+            <a href="https://gouvfr.atlassian.net/wiki/spaces/DB/pages/609189956/" target="_blank">Documentation</a>
+        </div>
+        <div class="fr-mb-12w">
+            <div class="fr-container">
+                <div class="fr-grid-row fr-grid-row--center">
+                    <div class="fr-col-md-8 fr-col-12">
+                        <h4>Gestionnaire de consentement</h4>
+                        <div class="fr-mb-6v">
+                            <div class="fr-consent-banner">
+                                <p class="fr-h6 fr-mb-3v">À propos des cookies sur nomdusite.fr</p>
+                                <div class="fr-consent-banner__content">
+                                    <p class="fr-text--sm">Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page <a href="">Données personnelles et cookies</a>. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.</p>
+                                </div>
+                                <ul class="fr-consent-banner__buttons fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-sm">
+                                    <li>
+                                        <button class="fr-btn">
+                                            Tout accepter
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fr-btn fr-btn">
+                                            Tout refuser
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fr-btn fr-btn fr-btn fr-btn--secondary" data-fr-opened="false" aria-controls="fr-consent-modal">
+                                            Personnaliser
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-899">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-899">
+                                    <pre class=" language-html"><code>&lt;div class="fr-consent-banner"&gt;
+    &lt;p class="fr-h6 fr-mb-3v"&gt;À propos des cookies sur nomdusite.fr&lt;/p&gt;
+    &lt;div class="fr-consent-banner__content"&gt;
+        &lt;p class="fr-text--sm"&gt;Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page &lt;a href=""&gt;Données personnelles et cookies&lt;/a&gt;. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;ul class="fr-consent-banner__buttons fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-sm"&gt;
+        &lt;li&gt;
+            &lt;button class="fr-btn"&gt;
+                Tout accepter
+            &lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;button class="fr-btn fr-btn"&gt;
+                Tout refuser
+            &lt;/button&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;button class="fr-btn fr-btn fr-btn fr-btn--secondary" data-fr-opened="false" aria-controls="fr-consent-modal"&gt;
+                Personnaliser
+            &lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Panneau de gestion des cookies</h4>
+                        <div class="fr-mb-6v">
+                            <dialog id="fr-consent-modal" class="fr-modal" role="dialog" aria-labelledby="fr-consent-modal-title">
+                                <div class="fr-container fr-container--fluid fr-container-md">
+                                    <div class="fr-grid-row fr-grid-row--center">
+                                        <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
+                                            <div class="fr-modal__body">
+                                                <div class="fr-modal__header">
+                                                    <button class="fr-link--close fr-link" aria-controls="fr-consent-modal">Fermer</button>
+                                                </div>
+                                                <div class="fr-modal__content">
+                                                    <h1 id="fr-consent-modal-title" class="fr-modal__title">
+                                                        Panneau de gestion des cookies
+                                                    </h1>
+                                                    <div class="fr-consent-manager">
+                                                        <!-- Finalités -->
+                                                        <div class="fr-consent-service fr-consent-manager__header">
+                                                            <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                <legend class="fr-consent-service__title">Préférences pour tous les services. <a href="">Données personnelles et cookies</a>
+                                                                </legend>
+                                                                <div class="fr-consent-service__radios">
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-all-accept" name="consent-all">
+                                                                        <label class="fr-label" for="consent-all-accept">Tout accepter
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-all-refuse" name="consent-all">
+                                                                        <label class="fr-label" for="consent-all-refuse">Tout refuser
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="fr-consent-service ">
+                                                            <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                <legend aria-describedby=&#34;finality-0-desc&#34; class="fr-consent-service__title">Cookies obligatoires</legend>
+                                                                <div class="fr-consent-service__radios">
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-finality-0-accept" name="consent-finality-0">
+                                                                        <label class="fr-label" for="consent-finality-0-accept">Accepter
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="fr-radio-group">
+                                                                        <input disabled="" type="radio" id="consent-finality-0-refuse" name="consent-finality-0">
+                                                                        <label class="fr-label" for="consent-finality-0-refuse">Refuser
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <p id="finality-0-desc" class="fr-consent-service__desc">Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés.</p>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="fr-consent-service ">
+                                                            <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                <legend aria-describedby=&#34;finality-1-desc&#34; class="fr-consent-service__title">Nom de la finalité</legend>
+                                                                <div class="fr-consent-service__radios">
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-finality-1-accept" name="consent-finality-1-">
+                                                                        <label class="fr-label" for="consent-finality-1-accept">Accepter
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-finality-1-refuse" name="consent-finality-1-">
+                                                                        <label class="fr-label" for="consent-finality-1-refuse">Refuser
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <p id="finality-1-desc" class="fr-consent-service__desc">Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.</p>
+                                                                <div class="fr-consent-service__collapse">
+                                                                    <button class="fr-consent-service__collapse-btn" aria-expanded="false" aria-controls="finality-1-collapse"> Voir plus de détails</button>
+                                                                </div>
+                                                                <div class="fr-consent-services fr-collapse" id="finality-1-collapse">
+                                                                    <!-- Sous finalités -->
+                                                                    <div class="fr-consent-service">
+                                                                        <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                            <legend class="fr-consent-service__title">Sous finalité 1</legend>
+                                                                            <div class="fr-consent-service__radios fr-fieldset--inline">
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-1-service-1-accept" name="consent-finality-1-service-1">
+                                                                                    <label class="fr-label" for="consent-finality-1-service-1-accept">Accepter
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-1-service-1-refuse" name="consent-finality-1-service-1">
+                                                                                    <label class="fr-label" for="consent-finality-1-service-1-refuse">Refuser
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                    <div class="fr-consent-service">
+                                                                        <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                            <legend class="fr-consent-service__title">Sous finalité 2</legend>
+                                                                            <div class="fr-consent-service__radios fr-fieldset--inline">
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-1-service-2-accept" name="consent-finality-1-service-2">
+                                                                                    <label class="fr-label" for="consent-finality-1-service-2-accept">Accepter
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-1-service-2-refuse" name="consent-finality-1-service-2">
+                                                                                    <label class="fr-label" for="consent-finality-1-service-2-refuse">Refuser
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                    <div class="fr-consent-service">
+                                                                        <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                            <legend class="fr-consent-service__title">Sous finalité 3</legend>
+                                                                            <div class="fr-consent-service__radios fr-fieldset--inline">
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-1-service-3-accept" name="consent-finality-1-service-3">
+                                                                                    <label class="fr-label" for="consent-finality-1-service-3-accept">Accepter
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-1-service-3-refuse" name="consent-finality-1-service-3">
+                                                                                    <label class="fr-label" for="consent-finality-1-service-3-refuse">Refuser
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="fr-consent-service ">
+                                                            <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                <legend aria-describedby=&#34;finality-2-desc&#34; class="fr-consent-service__title">Nom de la finalité</legend>
+                                                                <div class="fr-consent-service__radios">
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-finality-2-accept" name="consent-finality-2-">
+                                                                        <label class="fr-label" for="consent-finality-2-accept">Accepter
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="fr-radio-group">
+                                                                        <input type="radio" id="consent-finality-2-refuse" name="consent-finality-2-">
+                                                                        <label class="fr-label" for="consent-finality-2-refuse">Refuser
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <p id="finality-2-desc" class="fr-consent-service__desc">Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.</p>
+                                                                <div class="fr-consent-service__collapse">
+                                                                    <button class="fr-consent-service__collapse-btn" aria-expanded="false" aria-controls="finality-2-collapse"> Voir plus de détails</button>
+                                                                </div>
+                                                                <div class="fr-consent-services fr-collapse" id="finality-2-collapse">
+                                                                    <!-- Sous finalités -->
+                                                                    <div class="fr-consent-service">
+                                                                        <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                            <legend class="fr-consent-service__title">Sous finalité 1</legend>
+                                                                            <div class="fr-consent-service__radios fr-fieldset--inline">
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-2-service-1-accept" name="consent-finality-2-service-1">
+                                                                                    <label class="fr-label" for="consent-finality-2-service-1-accept">Accepter
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-2-service-1-refuse" name="consent-finality-2-service-1">
+                                                                                    <label class="fr-label" for="consent-finality-2-service-1-refuse">Refuser
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                    <div class="fr-consent-service">
+                                                                        <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                            <legend class="fr-consent-service__title" aria-decribedby=&#34;undefined-desc&#34;>Sous finalité 2</legend>
+                                                                            <div class="fr-consent-service__radios fr-fieldset--inline">
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-2-service-2-accept" name="consent-finality-2-service-2">
+                                                                                    <label class="fr-label" for="consent-finality-2-service-2-accept">Accepter
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-2-service-2-refuse" name="consent-finality-2-service-2">
+                                                                                    <label class="fr-label" for="consent-finality-2-service-2-refuse">Refuser
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p id="-desc" class="fr-consent-service__desc">Ce service utilise 3 cookies.</p>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                    <div class="fr-consent-service">
+                                                                        <fieldset class="fr-fieldset fr-fieldset--inline">
+                                                                            <legend class="fr-consent-service__title">Sous finalité 3</legend>
+                                                                            <div class="fr-consent-service__radios fr-fieldset--inline">
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-2-service-3-accept" name="consent-finality-2-service-3">
+                                                                                    <label class="fr-label" for="consent-finality-2-service-3-accept">Accepter
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="fr-radio-group">
+                                                                                    <input type="radio" id="consent-finality-2-service-3-refuse" name="consent-finality-2-service-3">
+                                                                                    <label class="fr-label" for="consent-finality-2-service-3-refuse">Refuser
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <!-- Bouton de confirmation/fermeture -->
+                                                        <ul class="fr-consent-manager__buttons fr-btns-group fr-btns-group--right fr-btns-group--inline-sm">
+                                                            <li>
+                                                                <button class="fr-btn" id="fr-consent-modal" title="Confirmer mes choix">
+                                                                    Confirmer mes choix
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-900">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-900">
+                                    <pre class=" language-html"><code>&lt;dialog id="fr-consent-modal" class="fr-modal" role="dialog" aria-labelledby="fr-consent-modal-title"&gt;
+    &lt;div class="fr-container fr-container--fluid fr-container-md"&gt;
+        &lt;div class="fr-grid-row fr-grid-row--center"&gt;
+            &lt;div class="fr-col-12 fr-col-md-10 fr-col-lg-8"&gt;
+                &lt;div class="fr-modal__body"&gt;
+                    &lt;div class="fr-modal__header"&gt;
+                        &lt;button class="fr-link--close fr-link" aria-controls="fr-consent-modal"&gt;Fermer&lt;/button&gt;
+                    &lt;/div&gt;
+                    &lt;div class="fr-modal__content"&gt;
+                        &lt;h1 id="fr-consent-modal-title" class="fr-modal__title"&gt;
+                            Panneau de gestion des cookies
+                        &lt;/h1&gt;
+                        &lt;div class="fr-consent-manager"&gt;
+                            &lt;!-- Finalités --&gt;
+                            &lt;div class="fr-consent-service fr-consent-manager__header"&gt;
+                                &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                    &lt;legend class="fr-consent-service__title"&gt;Préférences pour tous les services. &lt;a href=""&gt;Données personnelles et cookies&lt;/a&gt;
+                                    &lt;/legend&gt;
+                                    &lt;div class="fr-consent-service__radios"&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-all-accept" name="consent-all"&gt;
+                                            &lt;label class="fr-label" for="consent-all-accept"&gt;Tout accepter
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-all-refuse" name="consent-all"&gt;
+                                            &lt;label class="fr-label" for="consent-all-refuse"&gt;Tout refuser
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/fieldset&gt;
+                            &lt;/div&gt;
+                            &lt;div class="fr-consent-service"&gt;
+                                &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                    &lt;legend aria-describedby=&amp;#34;finality-0-desc&amp;#34; class="fr-consent-service__title"&gt;Cookies obligatoires&lt;/legend&gt;
+                                    &lt;div class="fr-consent-service__radios"&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-finality-0-accept" name="consent-finality-0"&gt;
+                                            &lt;label class="fr-label" for="consent-finality-0-accept"&gt;Accepter
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input disabled="" type="radio" id="consent-finality-0-refuse" name="consent-finality-0"&gt;
+                                            &lt;label class="fr-label" for="consent-finality-0-refuse"&gt;Refuser
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;p id="finality-0-desc" class="fr-consent-service__desc"&gt;Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés.&lt;/p&gt;
+                                &lt;/fieldset&gt;
+                            &lt;/div&gt;
+                            &lt;div class="fr-consent-service"&gt;
+                                &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                    &lt;legend aria-describedby=&amp;#34;finality-1-desc&amp;#34; class="fr-consent-service__title"&gt;Nom de la finalité&lt;/legend&gt;
+                                    &lt;div class="fr-consent-service__radios"&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-finality-1-accept" name="consent-finality-1-"&gt;
+                                            &lt;label class="fr-label" for="consent-finality-1-accept"&gt;Accepter
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-finality-1-refuse" name="consent-finality-1-"&gt;
+                                            &lt;label class="fr-label" for="consent-finality-1-refuse"&gt;Refuser
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;p id="finality-1-desc" class="fr-consent-service__desc"&gt;Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.&lt;/p&gt;
+                                    &lt;div class="fr-consent-service__collapse"&gt;
+                                        &lt;button class="fr-consent-service__collapse-btn" aria-expanded="false" aria-controls="finality-1-collapse"&gt; Voir plus de détails&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="fr-consent-services fr-collapse" id="finality-1-collapse"&gt;
+                                        &lt;!-- Sous finalités --&gt;
+                                        &lt;div class="fr-consent-service"&gt;
+                                            &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                                &lt;legend class="fr-consent-service__title"&gt;Sous finalité 1&lt;/legend&gt;
+                                                &lt;div class="fr-consent-service__radios fr-fieldset--inline"&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-1-service-1-accept" name="consent-finality-1-service-1"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-1-service-1-accept"&gt;Accepter
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-1-service-1-refuse" name="consent-finality-1-service-1"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-1-service-1-refuse"&gt;Refuser
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-consent-service"&gt;
+                                            &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                                &lt;legend class="fr-consent-service__title"&gt;Sous finalité 2&lt;/legend&gt;
+                                                &lt;div class="fr-consent-service__radios fr-fieldset--inline"&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-1-service-2-accept" name="consent-finality-1-service-2"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-1-service-2-accept"&gt;Accepter
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-1-service-2-refuse" name="consent-finality-1-service-2"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-1-service-2-refuse"&gt;Refuser
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-consent-service"&gt;
+                                            &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                                &lt;legend class="fr-consent-service__title"&gt;Sous finalité 3&lt;/legend&gt;
+                                                &lt;div class="fr-consent-service__radios fr-fieldset--inline"&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-1-service-3-accept" name="consent-finality-1-service-3"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-1-service-3-accept"&gt;Accepter
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-1-service-3-refuse" name="consent-finality-1-service-3"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-1-service-3-refuse"&gt;Refuser
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/fieldset&gt;
+                            &lt;/div&gt;
+                            &lt;div class="fr-consent-service"&gt;
+                                &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                    &lt;legend aria-describedby=&amp;#34;finality-2-desc&amp;#34; class="fr-consent-service__title"&gt;Nom de la finalité&lt;/legend&gt;
+                                    &lt;div class="fr-consent-service__radios"&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-finality-2-accept" name="consent-finality-2-"&gt;
+                                            &lt;label class="fr-label" for="consent-finality-2-accept"&gt;Accepter
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-radio-group"&gt;
+                                            &lt;input type="radio" id="consent-finality-2-refuse" name="consent-finality-2-"&gt;
+                                            &lt;label class="fr-label" for="consent-finality-2-refuse"&gt;Refuser
+                                            &lt;/label&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;p id="finality-2-desc" class="fr-consent-service__desc"&gt;Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.&lt;/p&gt;
+                                    &lt;div class="fr-consent-service__collapse"&gt;
+                                        &lt;button class="fr-consent-service__collapse-btn" aria-expanded="false" aria-controls="finality-2-collapse"&gt; Voir plus de détails&lt;/button&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class="fr-consent-services fr-collapse" id="finality-2-collapse"&gt;
+                                        &lt;!-- Sous finalités --&gt;
+                                        &lt;div class="fr-consent-service"&gt;
+                                            &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                                &lt;legend class="fr-consent-service__title"&gt;Sous finalité 1&lt;/legend&gt;
+                                                &lt;div class="fr-consent-service__radios fr-fieldset--inline"&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-2-service-1-accept" name="consent-finality-2-service-1"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-2-service-1-accept"&gt;Accepter
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-2-service-1-refuse" name="consent-finality-2-service-1"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-2-service-1-refuse"&gt;Refuser
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-consent-service"&gt;
+                                            &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                                &lt;legend class="fr-consent-service__title" aria-decribedby=&amp;#34;undefined-desc&amp;#34;&gt;Sous finalité 2&lt;/legend&gt;
+                                                &lt;div class="fr-consent-service__radios fr-fieldset--inline"&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-2-service-2-accept" name="consent-finality-2-service-2"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-2-service-2-accept"&gt;Accepter
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-2-service-2-refuse" name="consent-finality-2-service-2"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-2-service-2-refuse"&gt;Refuser
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                                &lt;p id="-desc" class="fr-consent-service__desc"&gt;Ce service utilise 3 cookies.&lt;/p&gt;
+                                            &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                        &lt;div class="fr-consent-service"&gt;
+                                            &lt;fieldset class="fr-fieldset fr-fieldset--inline"&gt;
+                                                &lt;legend class="fr-consent-service__title"&gt;Sous finalité 3&lt;/legend&gt;
+                                                &lt;div class="fr-consent-service__radios fr-fieldset--inline"&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-2-service-3-accept" name="consent-finality-2-service-3"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-2-service-3-accept"&gt;Accepter
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                    &lt;div class="fr-radio-group"&gt;
+                                                        &lt;input type="radio" id="consent-finality-2-service-3-refuse" name="consent-finality-2-service-3"&gt;
+                                                        &lt;label class="fr-label" for="consent-finality-2-service-3-refuse"&gt;Refuser
+                                                        &lt;/label&gt;
+                                                    &lt;/div&gt;
+                                                &lt;/div&gt;
+                                            &lt;/fieldset&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/fieldset&gt;
+                            &lt;/div&gt;
+                            &lt;!-- Bouton de confirmation/fermeture --&gt;
+                            &lt;ul class="fr-consent-manager__buttons fr-btns-group fr-btns-group--right fr-btns-group--inline-sm"&gt;
+                                &lt;li&gt;
+                                    &lt;button class="fr-btn" id="fr-consent-modal" title="Confirmer mes choix"&gt;
+                                        Confirmer mes choix
+                                    &lt;/button&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/dialog&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Placeholder cookies désactivés standard</h4>
+                        <div class="fr-mb-6v">
+                            <div class="fr-consent-placeholder">
+                                <p class="fr-h6 fr-mb-2v">**Nom du service** est désactivé</p>
+                                <p class="fr-mb-6v">Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.</p>
+                                <button class="fr-btn" title="Autorisez le dépôt de cookies pour accéder au service **Nom du service**">
+                                    Autoriser
+                                </button>
+                            </div>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-901">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-901">
+                                    <pre class=" language-html"><code>&lt;div class="fr-consent-placeholder"&gt;
+    &lt;p class="fr-h6 fr-mb-2v"&gt;**Nom du service** est désactivé&lt;/p&gt;
+    &lt;p class="fr-mb-6v"&gt;Autorisez le dépôt de cookies pour accéder à cette fonctionnalité.&lt;/p&gt;
+    &lt;button class="fr-btn" title="Autorisez le dépôt de cookies pour accéder au service **Nom du service**"&gt;
+        Autoriser
+    &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                        <h4>Placeholder dans un bloc vidéo responsive grande taille</h4>
+                        <div class="fr-mb-6v">
+                            <div class="fr-content-media fr-content-media--lg">
+                                <div class="fr-responsive-vid">
+                                    <div class="fr-consent-placeholder">
+                                        <p class="fr-h6 fr-mb-2v">**Nom du service** est désactivé</p>
+                                        <p class="fr-mb-6v">Autorisez le dépôt de cookies pour accèder à cette fonctionnalité.</p>
+                                        <button class="fr-btn" title="Autoriser">
+                                            Autoriser
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="fr-content-media__caption">© Légende de la vidéo</div>
+                                <div class="fr-content-media__transcription">
+                                    <a class="fr-link" href="[url - à modifier]">Label du bouton de la transcription</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fr-mb-12v">
+                            <section class="fr-accordion">
+                                <h3 class="fr-accordion__title">
+                                    <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-902">Extrait de code</button>
+                                </h3>
+                                <div class="fr-collapse" id="snippet-902">
+                                    <pre class=" language-html"><code>&lt;div class="fr-content-media fr-content-media--lg"&gt;
+    &lt;div class="fr-responsive-vid"&gt;
+        &lt;div class="fr-consent-placeholder"&gt;
+            &lt;p class="fr-h6 fr-mb-2v"&gt;**Nom du service** est désactivé&lt;/p&gt;
+            &lt;p class="fr-mb-6v"&gt;Autorisez le dépôt de cookies pour accèder à cette fonctionnalité.&lt;/p&gt;
+            &lt;button class="fr-btn" title="Autoriser"&gt;
+                Autoriser
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="fr-content-media__caption"&gt;© Légende de la vidéo&lt;/div&gt;
+    &lt;div class="fr-content-media__transcription"&gt;
+        &lt;a class="fr-link" href="[url - à modifier]"&gt;Label du bouton de la transcription&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="../../../_dist/core/core.module.js"></script>
+        <script type="module" src="../../../_dist/component/modal/modal.module.js"></script>
+        <script type="module" src="../../../_dist/scheme/scheme.module.js"></script>
+        <script type="module" src="../../../_dist/component/accordion/accordion.module.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/core/core.nomodule.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/component/modal/modal.nomodule.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/scheme/scheme.nomodule.js"></script>
+        <script type="text/javascript" nomodule src="../../../_dist/component/accordion/accordion.nomodule.js"></script>
+        <script>
+            const schemeAttr = 'data-fr-theme';
+            const mourningAttr = 'data-fr-mourning';
+
+            class DemoCheckbox {
+                constructor(id) {
+                    this.checkbox = document.getElementById(id);
+                    this.init();
+                    this.checkbox.addEventListener('change', this.change.bind(this));
+                    window.requestAnimationFrame(this.change.bind(this));
+                }
+
+                init() {}
+
+                change() {}
+            }
+
+            class AttributeDemoCheckbox extends DemoCheckbox {
+                constructor(id, attributeName, checkedValue, uncheckedValue) {
+                    super(id);
+                    this.attributeName = attributeName;
+                    this.checkedValue = checkedValue;
+                    this.uncheckedValue = uncheckedValue;
+                }
+
+                init() {
+                    this.observer = new MutationObserver(this.mutate.bind(this));
+                    this.observer.observe(document.documentElement, {
+                        attributes: true
+                    });
+                }
+
+                get state() {
+                    const value = document.documentElement.getAttribute(this.attributeName);
+                    const has = document.documentElement.hasAttribute(this.attributeName);
+
+                    switch (true) {
+                        case this.checkedValue === value:
+                            return true;
+
+                        case this.uncheckedValue === value:
+                            return false;
+
+                        case this.checkedValue === true && has:
+                            return true;
+
+                        case this.uncheckedValue === true && has:
+                            return true;
+                    }
+                    return false;
+                }
+
+                mutate(mutations) {
+                    mutations.forEach((mutation) => {
+                        if (mutation.type === 'attributes' && mutation.attributeName === this.attributeName) this.checkbox.checked = this.state;
+                    });
+                }
+
+                change() {
+                    const value = this.checkbox.checked ? this.checkedValue : this.uncheckedValue;
+
+                    switch (value) {
+                        case null:
+                            document.documentElement.removeAttribute(this.attributeName);
+                            break;
+
+                        case true:
+                            document.documentElement.setAttribute(this.attributeName, '');
+                            break;
+
+                        default:
+                            document.documentElement.setAttribute(this.attributeName, value);
+                    }
+                }
+            }
+
+            new AttributeDemoCheckbox('theme-checkbox', schemeAttr, 'dark', 'light');
+            new AttributeDemoCheckbox('mourning-checkbox', mourningAttr, true, null);
+
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    </body>
+
+</html>

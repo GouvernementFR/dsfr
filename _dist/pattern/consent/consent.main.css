@@ -1,0 +1,344 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ------------------------------------ *\
+  CONSENT MAIN
+\* ------------------------------------ */
+.fr-consent-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: var(--g200);
+}
+
+.fr-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: calc(100% - 8rem);
+  padding: 1rem;
+  z-index: 4500;
+  overflow: auto;
+  background-color: var(--g200);
+  box-shadow: inset 0 0 0 1px var(--g400);
+}
+
+.fr-consent-banner__content p {
+  margin-bottom: 1rem;
+}
+
+.fr-consent-banner__title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.fr-consent-banner__buttons {
+  margin-top: 1.5rem;
+  margin-bottom: -1rem;
+}
+
+/**
+* Consent service correspond à un bloc de finalité (titre, radios, description)
+**/
+.fr-consent-service {
+  position: relative;
+
+  /**
+  * Nom du service
+  **/
+
+  /**
+  * Description du service
+  **/
+
+  /**
+  * Bloc dépliable, contient des sous services
+  **/
+
+  /**
+  * Conteneur des radio-group
+  **/
+
+  /**
+  * Groupe de radios avec séparateur
+  **/
+}
+
+.fr-consent-service > .fr-fieldset {
+  padding: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: initial;
+}
+
+.fr-consent-service:last-child > .fr-fieldset {
+  padding: 2rem 0 1rem;
+}
+
+.fr-consent-service:last-child > .fr-fieldset .fr-consent-service > .fr-fieldset:last-child {
+  margin-bottom: 0;
+}
+
+.fr-consent-service__title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  padding: 2rem 0 0.75rem;
+  margin: 0;
+}
+
+.fr-consent-service__desc {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.fr-consent-service__collapse {
+  margin-top: -0.25rem;
+  margin-bottom: 0.75rem;
+  width: 100%;
+
+  /**
+    * Bouton d'ouverture/fermeture du collapse
+    **/
+}
+
+.fr-consent-service__collapse .fr-consent-service__collapse-btn {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  min-height: 0;
+  padding: -0.75rem 0;
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: none;
+  max-height: none;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.fr-consent-service__collapse .fr-consent-service__collapse-btn::before {
+  font: normal normal normal 1.5rem/1 dsfr-icon;
+  content: "";
+  margin-right: -0.25rem;
+  margin-left: 0.25rem;
+  font-size: 1rem;
+}
+
+.fr-consent-service__collapse .fr-consent-service__collapse-btn[aria-expanded="true"]::before {
+  font: normal normal normal 1rem/1 dsfr-icon;
+  content: "";
+}
+
+.fr-consent-service__collapse-btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.fr-consent-service__collapse-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 1rem);
+  height: calc(100% - 0.25rem);
+  box-shadow: var(--link-underline);
+}
+
+.fr-consent-service__radios {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.fr-consent-service .fr-radio-group {
+  position: relative;
+}
+
+.fr-consent-service .fr-radio-group:not(:last-child) input[type="radio"] + label {
+  margin-right: 3rem;
+}
+
+.fr-consent-service .fr-radio-group:not(:first-child)::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 1.5rem;
+  position: absolute;
+  left: calc(-1.5rem - 1px);
+  top: 0.75rem;
+}
+
+/**
+* fr-consent-services contient les sous services
+**/
+.fr-consent-services {
+  margin-top: 0.5rem;
+  margin-bottom: -0.5rem;
+  width: 100%;
+}
+
+.fr-consent-services .fr-consent-service,
+.fr-consent-services .fr-consent-service:last-child {
+  box-shadow: none;
+}
+
+.fr-consent-services .fr-consent-service > .fr-fieldset,
+.fr-consent-services .fr-consent-service:last-child > .fr-fieldset {
+  padding: 0;
+}
+
+.fr-consent-services .fr-consent-service:last-child > .fr-fieldset {
+  margin-bottom: 1.25rem;
+}
+
+.fr-consent-services .fr-consent-service__title {
+  padding-top: 0.75rem;
+}
+
+.fr-consent-services .fr-consent-service__radios {
+  top: 0;
+}
+
+.fr-consent-services .fr-consent-service__desc {
+  margin-bottom: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.fr-consent-manager__header {
+  padding-top: 0;
+}
+
+.fr-consent-manager__header .fr-consent-service__title {
+  width: 100%;
+  padding: 0 0 0.75rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.fr-consent-manager__header .fr-consent-service__radios {
+  width: 100%;
+  justify-content: flex-start;
+  top: 0;
+  position: initial;
+}
+
+.fr-consent-manager__buttons {
+  margin-bottom: -3rem;
+  margin-top: 1rem;
+}
+
+.fr-consent-manager .fr-consent-service:last-of-type {
+  box-shadow: none;
+}
+
+.fr-consent-manager__header,
+.fr-consent-service {
+  box-shadow: inset 0 -1px 0 0 var(--g400);
+  color: var(--g700);
+}
+
+.fr-consent-manager__header .fr-radio-group + .fr-radio-group::before,
+.fr-consent-service .fr-radio-group + .fr-radio-group::before {
+  background-color: var(--g300);
+}
+
+@media (min-width: 48em) {
+  .fr-consent-banner {
+    padding: 2rem;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    max-width: 40rem;
+    max-height: calc(100% - 5rem);
+  }
+
+  .fr-consent-banner__title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .fr-consent-banner__buttons {
+    margin-top: 2rem;
+  }
+
+  .fr-consent-service > .fr-fieldset {
+    padding: 0 0 1.25rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .fr-consent-service:last-child > .fr-fieldset {
+    padding: 1.25rem 0 1rem;
+  }
+
+  .fr-consent-service__title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    width: 50%;
+  }
+
+  .fr-consent-service__desc {
+    margin-top: 0.25rem;
+    margin-right: 1.5rem;
+    width: 60%;
+  }
+
+  .fr-consent-service__radios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    position: absolute;
+    top: 1.25rem;
+    right: 0;
+    width: 50%;
+  }
+
+  .fr-consent-services .fr-consent-service + .fr-consent-service {
+    margin-top: -0.25rem;
+  }
+
+  .fr-consent-services .fr-consent-service__desc {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .fr-consent-manager__header .fr-consent-service__title {
+    width: 44%;
+  }
+
+  .fr-consent-manager__header .fr-consent-service__radios {
+    width: 56%;
+    position: absolute;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 78em) {
+  .fr-consent-manager__header .fr-consent-service__title {
+    width: 50%;
+  }
+
+  .fr-consent-manager__header .fr-consent-service__radios {
+    width: 50%;
+  }
+}

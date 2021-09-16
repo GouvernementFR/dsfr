@@ -1,0 +1,98 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+.fr-select-group,
+.fr-input-group {
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+   */
+
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+   */
+
+  /**
+   * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+   */
+}
+
+.fr-select-group--valid .fr-label,
+.fr-input-group--valid .fr-label {
+  color: var(--success);
+}
+
+.fr-select-group--error .fr-label,
+.fr-input-group--error .fr-label {
+  color: var(--error);
+}
+
+.fr-select-group--disabled .fr-label,
+.fr-input-group--disabled .fr-label {
+  color: var(--g600-g400);
+}
+
+.fr-label {
+  color: var(--g800);
+
+  /**
+   * Modificateur au niveau du label pour appliquer un état d'erreur au label
+   */
+}
+
+.fr-label--error {
+  color: var(--error);
+}
+
+/**
+ * Style du texte d'aide
+ */
+.fr-hint-text {
+  color: var(--g600);
+}
+
+/**
+ * Style du texte d'erreur
+ */
+.fr-error-text {
+  color: var(--error);
+}
+
+/**
+ * Style du texte de l'état validé
+ */
+.fr-valid-text {
+  color: var(--success);
+}
+
+/**
+ * Style d'un ensemble de champs
+ */
+.fr-fieldset {
+  color: var(--g800);
+
+  /**
+   * Modificateur pour gérer l'état d'erreur
+   */
+
+  /**
+   * Modificateur pour gérer l'état de validation
+   */
+}
+
+.fr-fieldset--error .fr-fieldset__content::before {
+  background-color: var(--error);
+}
+
+.fr-fieldset--error .fr-label {
+  color: var(--error);
+}
+
+.fr-fieldset--valid .fr-fieldset__content::before {
+  background-color: var(--success);
+}
+
+.fr-fieldset--valid .fr-label {
+  color: var(--success);
+}

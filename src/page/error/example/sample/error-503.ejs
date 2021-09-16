@@ -1,0 +1,10 @@
+<%
+const data = {
+    title: 'Service indisponible',
+    subtitle: 'Erreur 503',
+    description: 'Désolé, le service ne peut afficher la page demandée, le service est temporairement inaccessible.',
+    text: 'Merci de réessayer plus tard, vous serez en mesure de réutiliser le service très rapidement. Si vous avez besoin d’une aide immédiate, merci de nous contacter.'
+};
+%>
+
+<%- include('./error-default.ejs', data); %>

@@ -1,0 +1,23 @@
+/*!
+ * DSFR v1.1.0 | SPDX-License-Identifier: MIT | License-Filename: LICENCE.md | restricted use (see terms and conditions)
+ */
+/* ------------------------------------ *\
+  HIGHLIGHT
+\* ------------------------------------ */
+.fr-highlight {
+  padding-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-left: 0.25rem solid var(--bf500);
+}
+
+.fr-highlight p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 48em) {
+  .fr-highlight {
+    padding-left: 2rem;
+    margin-left: 2rem;
+  }
+}
