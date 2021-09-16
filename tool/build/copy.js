@@ -74,8 +74,7 @@ const deployFiles = () => {
 };
 
 const deployRobots = () => {
-  const content = `User-agent: *
-  Disallow: /`;
+  const content = 'User-agent: \n Disallow: /';
   createFile(root('public/robots.txt'), content);
 };
 
