@@ -6,43 +6,50 @@ class InjectSvg extends Instance {
   }
 
   init () {
-    this.isLoading = true;
-    this.svg = this.node;
+    if (this.node) {
+      this.img = this.node.querySelector('img');
+    }
+
+    this.fetch();
   }
 
-  load () {
-    this.injectSvg();
-  }
+  fetch () {
+    if (this.img) {
+      this.imgID = this.img.getAttribute('id');
+      this.imgClass = this.img.getAttribute('class');
+      this.imgURL = this.img.getAttribute('src');
 
-  injectSvg () {
-    const node = this.node;
-
-    if (node) {
-      const imgID = node.getAttribute('id');
-      const imgClass = node.getAttribute('class');
-      const imgURL = node.getAttribute('src');
-
-      fetch(imgURL)
+      fetch(this.imgURL)
         .then(data => data.text())
         .then(response => {
           const parser = new DOMParser();
           const xmlDoc = parser.parseFromString(response, 'text/html');
-          const svg = xmlDoc.querySelector('svg');
+          this.svg = xmlDoc.querySelector('svg');
 
-          if (typeof imgID !== 'undefined') {
-            svg.setAttribute('id', imgID);
-          }
-
-          if (typeof imgClass !== 'undefined') {
-            svg.setAttribute('class', imgClass + ' fr-replaced-svg');
-          }
-
-          svg.removeAttribute('xmlns:a');
-
-          if (node.parentNode) {
-            node.parentNode.replaceChild(svg, node);
-          }
+          this.replace();
         });
+    }
+  }
+
+  replace () {
+    if (typeof this.imgID !== 'undefined') {
+      this.svg.setAttribute('id', this.imgID);
+    }
+
+    if (typeof this.imgClass !== 'undefined') {
+      this.svg.setAttribute('class', this.imgClass + ' fr-replaced-svg');
+    }
+
+    if (this.svg.hasAttribute('xmlns:a')) {
+      this.svg.removeAttribute('xmlns:a');
+    }
+
+    this.node.replaceChild(this.svg, this.img);
+  }
+
+  restore () {
+    if (this.img && this.svg) {
+      this.node.replaceChild(this.img, this.svg);
     }
   }
 }

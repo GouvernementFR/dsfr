@@ -36,7 +36,7 @@
 
 <div class="<%= prefix %>-container" >
     <div class="<%= prefix %>-mt-8w <%= prefix %>-mb-8w" >
-        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle">
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle <%= prefix %>-grid-row--center">
             <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-6">
                 <% if(locals.title) { %>
                     <h1><%= title %></h1>
@@ -73,8 +73,8 @@
                     <% } %>
                 </ul>
             </div>
-            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-6 <%= prefix %>-error-img-container">
-                <img class="<%= prefix %>-error-img" <%= prefix %>-inject-svg src="<%= relativeRoot %>example/img/error-bg.svg">
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-5 <%= prefix %>-col-offset-md-1" <%= prefix %>-inject-svg>
+                <img class="<%= prefix %>-responsive-img" src="<%= relativeRoot %>example/img/error-bg.svg">
             </div>
         </div>
     </div>
