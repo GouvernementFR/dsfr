@@ -13,6 +13,14 @@ class InjectSvg extends Instance {
     this.fetch();
   }
 
+  get proxy () {
+    const scope = this;
+    return Object.assign(super.proxy, {
+      replace: scope.replace.bind(scope),
+      restore: scope.restore.bind(scope)
+    });
+  }
+
   fetch () {
     if (this.img) {
       this.imgID = this.img.getAttribute('id');
