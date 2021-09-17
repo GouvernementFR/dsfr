@@ -24,7 +24,7 @@
 
   $space-y: max($line-height, $max-icon-height);
   $padding-x: space(map_get($size-settings, padding-x));
-  $padding-y: if($min-height - $space-y > 0, ($min-height - $space-y) / 2, 0);
+  $padding-y: max(($min-height - $space-y) / 2, 0);
 
   padding: #{$padding-y} #{$padding-x};
 
