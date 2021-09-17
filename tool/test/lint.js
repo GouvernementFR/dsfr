@@ -46,10 +46,14 @@ const lint = async (packages) => {
 
   for (const pck of packages) {
     if (pck.type === 'folder') continue;
-    result = await lintStyles(pck);
-    success = success && result;
-    await lintScripts(pck);
-    success = success && result;
+    if (pck.style) {
+      result = await lintStyles(pck);
+      success = success && result;
+    };
+    if (pck.script) {
+      result = await lintScripts(pck);
+      success = success && result;
+    }
   }
 
   if (!success) process.kill(0);
