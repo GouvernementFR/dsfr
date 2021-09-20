@@ -19,4 +19,6 @@
 #{ns(upload)} {
   @include text-style(sm);
   @include width(100%);
+  display: inline-flex;
+  @include margin(0);
 }
