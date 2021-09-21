@@ -34,48 +34,50 @@
     }
 %>
 
-<div class="<%= prefix %>-container" >
-    <div class="<%= prefix %>-mt-8w <%= prefix %>-mb-8w" >
-        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle <%= prefix %>-grid-row--center">
-            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-6">
-                <% if(locals.title) { %>
-                    <h1><%= title %></h1>
-                <% } %>
-
-                <% if(locals.subtitle) { %>
-                    <p class="<%= prefix %>-text--sm <%= prefix %>-mb-3w" ><%= subtitle %></p>
-                <% } %>
-
-                <% if(locals.description) { %>
-                    <p class="<%= prefix %>-text--lg <%= prefix %>-mb-2w" ><%= description %></p>
-                <% } %>
-
-                <% if(locals.text) { %>
-                    <p class="<%= prefix %>-mb-3w" >
-                        <%- text %>
-                    </p>
-                <% } %>
-
-                <ul class="fr-btns-group fr-btns-group--inline-md">
-                    <% if(locals.home) { %>
-                        <li>
-                            <a class="<%= prefix %>-btn" href="/" title="Page d'accueil">
-                                Page d'accueil
-                            </a>
-                        </li>
+<main role=”main” id=”content”>
+    <div class="<%= prefix %>-container" >
+        <div class="<%= prefix %>-mt-8w <%= prefix %>-mb-8w" >
+            <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle <%= prefix %>-grid-row--center">
+                <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-6">
+                    <% if(locals.title) { %>
+                        <h1><%= title %></h1>
                     <% } %>
-                    <% if(locals.contact) { %>
-                        <li>
-                            <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary" <%- includeAttrs(contactLink); %>>
-                                Contactez-nous
-                            </a>
-                        </li>
+
+                    <% if(locals.subtitle) { %>
+                        <p class="<%= prefix %>-text--sm <%= prefix %>-mb-3w" ><%= subtitle %></p>
                     <% } %>
-                </ul>
-            </div>
-            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-5 <%= prefix %>-col-offset-md-1" <%= prefix %>-inject-svg>
-                <img class="<%= prefix %>-responsive-img" src="<%= relativeRoot %>example/img/error-bg.svg">
+
+                    <% if(locals.description) { %>
+                        <p class="<%= prefix %>-text--lg <%= prefix %>-mb-2w" ><%= description %></p>
+                    <% } %>
+
+                    <% if(locals.text) { %>
+                        <p class="<%= prefix %>-mb-3w" >
+                            <%- text %>
+                        </p>
+                    <% } %>
+
+                    <ul class="fr-btns-group fr-btns-group--inline-md">
+                        <% if(locals.home) { %>
+                            <li>
+                                <a class="<%= prefix %>-btn" href="/" title="Page d'accueil">
+                                    Page d'accueil
+                                </a>
+                            </li>
+                        <% } %>
+                        <% if(locals.contact) { %>
+                            <li>
+                                <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary" <%- includeAttrs(contactLink); %>>
+                                    Contactez-nous
+                                </a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-5 <%= prefix %>-col-offset-md-1" <%= prefix %>-inject-svg>
+                    <img class="<%= prefix %>-responsive-img" src="<%= relativeRoot %>example/img/error-bg.svg">
+                </div>
             </div>
         </div>
     </div>
-</div>
+</main>
