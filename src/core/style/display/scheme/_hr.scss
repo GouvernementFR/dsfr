@@ -1,0 +1,10 @@
+////
+/// Core scheme : Display hr
+/// @group core
+////
+
+#{ns(hr)} {
+  @include before {
+    @include scheme-element-border-color(g400, true, bottom);
+  }
+}

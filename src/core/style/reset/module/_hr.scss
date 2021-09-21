@@ -5,7 +5,10 @@
 
 @if (map-get($reset-settings, hr)) {
   hr {
-    @include margin(var(--text-mb));
+    @include padding(var(--text-spacing));
+    @include margin(0);
+    @include relative;
     border: 0;
+    @include before('', 'block');
   }
 }

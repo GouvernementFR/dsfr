@@ -1,0 +1,18 @@
+////
+/// Core Module : Display hr
+/// @group core
+////
+
+#{ns(hr)} {
+  @include padding(var(--text-spacing));
+  @include margin(0);
+  @include relative;
+  border: 0;
+  display: block;
+  @include before('', 'block');
+
+  &--sm {
+    @include width(40v);
+    @include margin-x(auto);
+  }
+}

@@ -5,6 +5,8 @@
 
 @if (map-get($reset-settings, hr)) {
   hr {
-    @include scheme-element-border-color(g300, true, bottom);
+    @include before {
+      @include scheme-element-border-color(g400, true, bottom);
+    }
   }
 }
