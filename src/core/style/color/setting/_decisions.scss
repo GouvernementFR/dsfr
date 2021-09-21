@@ -15,16 +15,20 @@ $scheme-decisions: (
     ),
     contrast: (
       neutral: lighter,
-      status: strong,
+      system: strong,
     ),
-    high: (
+    action-high: (
       primary: strong,
       accent: strong,
     ),
-    low: (
+    action-low: (
       neutral: light,
       primary: light,
       accent: light,
+    ),
+    active: (
+      primary: strong,
+      accent: strong,
     ),
     open: (
       primary: light,
@@ -37,9 +41,24 @@ $scheme-decisions: (
   text: (
     default: (
       neutral: strongest,
-      status: strong
+      system: strong
+    ),
+    action: (
+      neutral: black,
+      primary: strong,
+      accent: strong
     ),
     title: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    label: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    active: (
       neutral: black,
       primary: strong,
       accent: strong
@@ -56,16 +75,20 @@ $scheme-decisions: (
   border: (
     default: (
       neutral: light,
-      status: strong,
+      system: strong,
       primary: divider,
       accent: divider
     ),
-    high: (
+    active: (
+      primary: strong,
+      accent: strong,
+    ),
+    action-high: (
       neutral: black,
       primary: strong,
       accent: strong
     ),
-    low: (
+    action-low: (
       primary: softest,
       accent: softest
     ),

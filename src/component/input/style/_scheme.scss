@@ -29,14 +29,14 @@ textarea#{ns(input)} {
    * Modificateur pour les champs validés
    */
   &--valid {
-    @include scheme-element-box-shadow-color(default status success, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default system success, inset 0 -2px 0 0 $COLOR);
   }
 
   /**
    * Modificateur pour les champs présentant des erreurs
    */
   &--error {
-    @include scheme-element-box-shadow-color(default status error, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default system error, inset 0 -2px 0 0 $COLOR);
   }
 
   /**

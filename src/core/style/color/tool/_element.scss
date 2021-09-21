@@ -40,7 +40,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de background sur un élément
 /// @access public
 /// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {Bool | String} $hover - si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
 @mixin scheme-element-bg-color($id, $hover: false) {
@@ -57,7 +57,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de texte sur un élément
 /// @access public
 /// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 @mixin scheme-element-text-color($id) {
   @include _scheme-element(color, text, $id);
@@ -66,7 +66,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de fill sur un élément
 /// @access public
 /// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 @mixin scheme-element-fill-color($id) {
   @include _scheme-element(fill, background, $id);
@@ -75,7 +75,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de border sur un élément
 /// @access public
 /// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés de border
 /// @param {String} $side - le côté affecté. valeurs: top, right, bottom, left
@@ -90,7 +90,7 @@ $ACCENT: none;
 /// Ajout d'une couleur d'outline sur un élément
 /// @access public
 /// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés d'outline
 @mixin scheme-element-outline-color($id, $value:1px solid $COLOR) {
@@ -100,7 +100,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de box-shadow sur un élément
 /// @access public
 /// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés de box-shadow
 @mixin scheme-element-box-shadow-color($id, $value:inset 0 0 0 1px $COLOR) {

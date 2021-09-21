@@ -21,7 +21,7 @@
 /// @access private
 /// @param {String} $part - la partie sur laquelle cette couleur sera utilisée (background, text, border)
 /// @param {String} $token - identifiant tokenisé (voir settings/decisions)
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @return {String} Retourne la combinaison de couleur correspondante
 @function _get-scheme-shade($part, $token, $family) {
   @if not map-has-key($scheme-decisions, $part) {
@@ -42,7 +42,7 @@
 
 /// Obtenir le nom de la teinte si non définie
 /// @access private
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @return {String} Retourne le nom de la teinte
 @function _get-tint($family, $tint: null) {
@@ -63,7 +63,7 @@
 /// Obtenir une combinaison de couleur
 /// @access private
 /// @param {String} $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white)
-/// @param {String} $family - famille de couleur (neutral, primary, status, accent)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @return {String} Retourne la combinaison de couleur correspondante
 @function _get-scheme-set($shade, $family, $tint: null) {

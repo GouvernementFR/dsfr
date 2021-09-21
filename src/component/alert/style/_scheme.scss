@@ -11,18 +11,18 @@
   }
 
   &--info {
-    @include scheme-element-box-shadow-color(default status info,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default system info,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 
   &--error {
-    @include scheme-element-box-shadow-color(default status error,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default system error,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 
   &--success {
-    @include scheme-element-box-shadow-color(default status success,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default system success,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 
   &--warning {
-    @include scheme-element-box-shadow-color(default status warning,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default system warning,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
   }
 }

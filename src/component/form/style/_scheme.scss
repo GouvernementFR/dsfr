@@ -9,7 +9,7 @@
    */
   &--valid {
     #{ns(label)} {
-      @include scheme-element-text-color(default status success);
+      @include scheme-element-text-color(default system success);
     }
   }
 
@@ -18,7 +18,7 @@
    */
   &--error {
     #{ns(label)} {
-      @include scheme-element-text-color(default status error);
+      @include scheme-element-text-color(default system error);
     }
   }
 
@@ -39,14 +39,14 @@
    * Modificateur au niveau du label pour appliquer un état d'erreur au label
    */
   &--error {
-    @include scheme-element-text-color(default status error);
+    @include scheme-element-text-color(default system error);
   }
 
   /**
    * Modificateur au niveau du label pour appliquer un état de succès au label
    */
    &--success {
-    @include scheme-element-text-color(default status success);
+    @include scheme-element-text-color(default system success);
   }
 }
 
@@ -61,14 +61,14 @@
  * Style du texte d'erreur
  */
 #{ns(error-text)} {
-  @include scheme-element-text-color(default status error);
+  @include scheme-element-text-color(default system error);
 }
 
 /**
  * Style du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include scheme-element-text-color(default status success);
+  @include scheme-element-text-color(default system success);
 }
 
 /**
@@ -83,12 +83,12 @@
   &--error {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-box-shadow-color(default status error, 'inset 2px 0 0 0 $COLOR');
+        @include scheme-element-box-shadow-color(default system error, 'inset 2px 0 0 0 $COLOR');
       }
     }
 
     #{ns(label)} {
-      @include scheme-element-text-color(default status error);
+      @include scheme-element-text-color(default system error);
     }
   }
 
@@ -98,12 +98,12 @@
   &--valid {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-box-shadow-color(default status success, 'inset 2px 0 0 0 $COLOR');
+        @include scheme-element-box-shadow-color(default system success, 'inset 2px 0 0 0 $COLOR');
       }
     }
 
     #{ns(label)} {
-      @include scheme-element-text-color(default status success);
+      @include scheme-element-text-color(default system success);
     }
   }
 }

@@ -15,14 +15,14 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
    * Modificateur pour gérer l'état d'erreur
    */
   &--error {
-    @include scheme-element-box-shadow-color(default status error, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default system error, inset 0 -2px 0 0 $COLOR);
   }
 
   /**
    * Modificateur pour gérer l'état de validation
    */
   &--valid {
-    @include scheme-element-box-shadow-color(default status success, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default system success, inset 0 -2px 0 0 $COLOR);
   }
 
   /**
