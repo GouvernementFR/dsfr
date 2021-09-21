@@ -4,10 +4,17 @@
 ////
 
 #{ns(nav)} {
+
+
   &__link,
   &__btn {
+    @at-root {
+      #{selector-unify(&, a)},
+      #{selector-unify(&, button)} {
+        @include scheme-element-bg-color(t-plain, true, true);
+      }
+    }
     @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(t-plain, true, true);
 
     &[aria-current] {
       @include scheme-element-text-color(bf500);

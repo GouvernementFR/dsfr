@@ -50,6 +50,8 @@
 
   &__leader {
     @include padding-x(4v);
+    @include padding-top(4v);
+    @include padding-top(0, lg);
     @include padding-x(0, lg);
   }
 

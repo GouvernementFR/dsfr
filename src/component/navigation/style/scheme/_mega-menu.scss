@@ -14,9 +14,9 @@
     }
   }
 
-  &__list {
-    @include scheme-element-box-shadow-color(g300, true, 0 1px 0 0 $COLOR);
-  }
+  // &__list {
+  //   @include scheme-element-box-shadow-color(g300, true, 0 1px 0 0 $COLOR);
+  // }
 
   &__category {
     @include respond-from(lg) {
