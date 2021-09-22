@@ -21,4 +21,11 @@
   @include width(100%);
   display: inline-flex;
   @include margin(0);
+
+  &::-webkit-file-upload-button{
+    -webkit-appearance: button;
+    font: inherit;
+    cursor: pointer;
+    @include margin-right(2v);
+  }
 }
