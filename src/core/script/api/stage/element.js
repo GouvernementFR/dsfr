@@ -36,8 +36,10 @@ class Element {
   }
 
   get html () {
-    const end = this.node.outerHTML.indexOf('>');
-    return this.node.outerHTML.substring(0, end + 1);
+    if (this.node.outerHTML) {
+      const end = this.node.outerHTML.indexOf('>');
+      return this.node.outerHTML.substring(0, end + 1);
+    }
   }
 
   project (registration) {
