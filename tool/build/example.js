@@ -81,8 +81,8 @@ const buildExample = (pck) => {
   script.forEach(id => {
     const p = packages.filter(i => i.id === id)[0];
     const path = up + p.dist;
-    files.script.module.push(`${path}/${p.id}.module.js`);
-    files.script.nomodule.push(`${path}/${p.id}.nomodule.js`);
+    if (p.module) files.script.module.push(`${path}/${p.id}.module.js`);
+    if (p.nomodule) files.script.nomodule.push(`${path}/${p.id}.nomodule.js`);
   });
 
   const options = {
