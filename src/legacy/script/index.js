@@ -1,6 +1,11 @@
 /* eslint-disable no-new */
-import './polyfill-io/polyfill-io.min';
-// import './polyfill-io-full/polyfill-io-full.min';
+
+import './polyfill-io/custom-event-polyfill.min';
+import './polyfill-io/add-event-listener-polyfill.min';
+import './polyfill-io/foreach-polyfill.min';
+import './polyfill-io/contains-polyfill.min';
+import './polyfill-io/matches-polyfill.min';
+
 import './css-vars-ponyfill/css-vars-ponyfill.min';
 // import './custom-event-polyfill/custom-event-polyfill';
 // import './contains-polyfill/contains-polyfill.min';
