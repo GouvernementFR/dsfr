@@ -12,13 +12,10 @@
  switch(locals.size) {
     case 'xs' :
     case 'sm' :
+    case 'md' :
     case 'lg' :
     case 'lead' :
         classes.push(`${prefix}-text--${size}`);
-        break;
-
-    case 'md':
-        classes.push(`${prefix}-text`);
         break;
  }
 
