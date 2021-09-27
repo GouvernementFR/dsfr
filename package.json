@@ -30,8 +30,9 @@
     "/src",
     "/example",
     "/doc",
+    "/.config",
     "SECURITY.md",
-    "yarn.lock"
+    "CONTRIBUTING.md"
   ],
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
