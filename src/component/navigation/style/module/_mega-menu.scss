@@ -37,14 +37,9 @@
 
   #{ns(nav__link)} {
     @include padding-x(4v);
+    @include padding(3v 4v, lg);
     @include before {
       left: 0;
-    }
-    @include respond-from(lg) {
-      @include padding(3v 4v);
-      @include before {
-        left: 0;
-      }
     }
   }
 

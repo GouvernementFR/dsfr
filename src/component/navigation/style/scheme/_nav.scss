@@ -4,16 +4,9 @@
 ////
 
 #{ns(nav)} {
-
-
   &__link,
   &__btn {
-    @at-root {
-      #{selector-unify(&, a)},
-      #{selector-unify(&, button)} {
-        @include scheme-element-bg-color(t-plain, true, true);
-      }
-    }
+    @include scheme-element-bg-color(t-plain, true, true);
     @include scheme-element-text-color(g800);
 
     &[aria-current] {
@@ -32,9 +25,5 @@
         @include scheme-element-bg-color(bf200-bf300);
       }
     }
-  }
-
-  @include list-item {
-    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
   }
 }

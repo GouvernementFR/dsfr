@@ -6,6 +6,8 @@
 #{ns(nav)} {
   @include disable-link-style;
   @include disable-list-style;
+  --text-mb: 0;
+  --title-mb: 0;
   @include z-index(nav, true);
 
   @include list {
