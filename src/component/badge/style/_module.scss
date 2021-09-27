@@ -6,7 +6,7 @@
 @include build-badge();
 
 #{ns(badge)} {
-  @include font-weight('bold');
+  @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
   border-radius: space(1v);
