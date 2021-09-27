@@ -1,5 +1,6 @@
 import { Instance } from '../api/register/instance.js';
 import { DisclosureEmission } from './disclosure-emission.js';
+import { completeAssign } from '../api/utilities/propertie.js';
 
 class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
@@ -21,7 +22,8 @@ class DisclosuresGroup extends Instance {
 
   get proxy () {
     const scope = this;
-    return Object.assign(super.proxy, {
+
+    const proxyAccessors = {
       set index (value) {
         scope.index = value;
       },
@@ -41,7 +43,9 @@ class DisclosuresGroup extends Instance {
       get hasFocus () {
         return scope.hasFocus;
       }
-    });
+    };
+
+    return completeAssign(super.proxy, proxyAccessors);
   }
 
   validate (member) {
