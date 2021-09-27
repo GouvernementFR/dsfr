@@ -25,6 +25,15 @@
     "deploy": "node tool/tool.js deploy",
     "serve": "browser-sync start --server --port 8080 --startPath example/"
   },
+  "files": [
+    "/dist",
+    "/src",
+    "/example",
+    "/doc",
+    "/.config",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
