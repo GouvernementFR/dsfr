@@ -1,7 +1,9 @@
 /**
  * Copy properties from multiple sources including accessors.
+ * source : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#copier_des_accesseurs
  *
- * @param {...objects} Multiple objects
+ * @param {object} [target] - Target object to copy into
+ * @param {...objects} [sources] - Multiple objects
  * @return {object} A new object
  *
  * @example
@@ -12,23 +14,29 @@
  *     const obj2 = {
  *        get function01 () {
  *          return a-value;
- *        } 
+ *        }
  *        set function01 () {
  *          return a-value;
  *        }
  *     };
- *     mixProperties(obj1, obj2)
+ *     completeAssign(obj1, obj2)
  */
-const mixProperties = (...sources) => {
-  const result = {};
-  for (const source of sources) {
-    const props = Object.keys(source);
-    for (const prop of props) {
-      const descriptor = Object.getOwnPropertyDescriptor(source, prop);
-      Object.defineProperty(result, prop, descriptor);
-    }
-  }
-  return result;
+const completeAssign = (target, ...sources) => {
+  sources.forEach(source => {
+    const descriptors = Object.keys(source).reduce((descriptors, key) => {
+      descriptors[key] = Object.getOwnPropertyDescriptor(source, key);
+      return descriptors;
+    }, {});
+
+    Object.getOwnPropertySymbols(source).forEach(sym => {
+      const descriptor = Object.getOwnPropertyDescriptor(source, sym);
+      if (descriptor.enumerable) {
+        descriptors[sym] = descriptor;
+      }
+    });
+    Object.defineProperties(target, descriptors);
+  });
+  return target;
 };
 
-export { mixProperties };
+export { completeAssign };

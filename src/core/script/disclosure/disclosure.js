@@ -1,7 +1,7 @@
 import { Instance } from '../api/register/instance.js';
 import { DisclosureEvent } from './disclosure-event.js';
 import { DisclosureEmission } from './disclosure-emission.js';
-import { mixProperties } from '../api/utilities/propertie.js';
+import { completeAssign } from '../api/utilities/propertie.js';
 
 class Disclosure extends Instance {
   constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {
@@ -35,7 +35,7 @@ class Disclosure extends Instance {
       focus: scope.focus.bind(scope)
     });
 
-    const proxyGetters = {
+    const proxyAccessors = {
       get buttons () {
         return scope.buttons.map((button) => button.proxy);
       },
@@ -45,7 +45,7 @@ class Disclosure extends Instance {
       }
     };
 
-    return mixProperties(proxy, proxyGetters);
+    return completeAssign(proxy, proxyAccessors);
   }
 
   get buttons () {
