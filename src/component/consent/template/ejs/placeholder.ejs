@@ -19,7 +19,7 @@
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (locals.title) { %><p class="<%= prefix %>-h6 <%= prefix %>-mb-2v"><%= title %></p> <% } %>
-    <% if (locals.body) { %><p class="<%= prefix %>-mb-6v"><%- body %></p><% } %>
+    <% if (locals.title) { %><p class="<%= prefix %>-h6"><%= title %></p> <% } %>
+    <% if (locals.body) { %><p><%- body %></p><% } %>
     <%- include('../../../button/template/ejs/button.ejs', button); %>
 </div>

@@ -7,7 +7,6 @@
 * Titre facultatif
  */
 @include title {
-  @include margin(0);
   @include padding(4v 0);
   @include text-style(lg);
   font-weight: font-weight(bold);

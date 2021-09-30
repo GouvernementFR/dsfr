@@ -7,6 +7,10 @@
 
 * share.classes (array, optional) : Classes sur le bloc share
 
+* share.text (string, optional) : Texte supplémentaire si désactivé
+
+* disabled (boolean, optional) : désactive les éléments désactivable
+
 %>
 <%
 eval(include('../../../../core/index.ejs'));
@@ -24,7 +28,7 @@ let dataLink = {};
             </li>
         <% } %>
     </ul>
-    <% if (locals.inactive) { %>
+    <% if (share.disabled) { %>
         <p class="<%= prefix %>-share__text"><%- share.text %></p>
     <% } %>
 </div>

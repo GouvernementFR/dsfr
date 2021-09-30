@@ -11,12 +11,13 @@
 <% eval(include('../../../../core/index.ejs'));
 
 let socialsClasses = [prefix + '-follow__social'];
-
+let groupClasses = [prefix + '-links-group'];
+if (locals.alone === true) groupClasses.push(prefix + '-links-group--lg');
 %>
 
 <div <%- includeClasses(socialsClasses); %> >
-  <p class="<%= prefix %>-h5 <%= prefix %>-mb-3v <%= prefix %>-mb-3v"><%- locals.title %></p>
-  <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
+  <p class="<%= prefix %>-h5"><%- locals.title %></p>
+  <ul <%- includeClasses(groupClasses); %>>
     <% for (let i=0; i < networks.length; i++) { %>
       <li>
         <%- include('../../../link/template/ejs/link', { attributes: {title: contentPlaceholder("XXXXXXX") + " - ouvre une nouvelle fenêtre"}, href: networks[i].url, blank: true, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>

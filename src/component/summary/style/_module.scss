@@ -42,6 +42,7 @@
   &__link {
     display: inline-block;
     position: relative;
+    @include text-style(xs);
     @include before(var(--ol-content)) {
       @include absolute(null, null, null, 2v);
       font-size: var(--xl-size);

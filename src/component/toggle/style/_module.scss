@@ -8,6 +8,8 @@
   flex-wrap: wrap;
   @include relative;
   @include padding(4v 0);
+  @include set-text-margin(0);
+  @include set-title-margin(0);
 
   /*
    * On utilise un input de type checkbox pour gérer le toggle
@@ -105,7 +107,6 @@
   #{ns(hint-text)} {
     display: block;
     @include margin-top(4v);
-    @include margin-bottom(0);
     @include text-style(xs);
     flex-basis: 100%;
   }

@@ -14,6 +14,9 @@
     @include scheme-element-text-color(g800);
     @include scheme-element-bg-color(t-plain, true);
     @include scheme-element-border-color(g300, true, bottom);
+    @include respond-from(md) {
+      border: 0; // fichier séparé > média query
+    }
   }
 
   @include list-item {

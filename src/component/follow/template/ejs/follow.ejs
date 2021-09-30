@@ -34,7 +34,9 @@
         </div>
       <% }
       if (socials) {
-        if (newsletter) gclasses = [prefix+'-col-12', prefix+'-col-md-4'] %>
+        if (newsletter) gclasses = [prefix+'-col-12', prefix+'-col-md-4'];
+        else socials.alone = true;
+         %>
         <div <%- includeClasses(gclasses) %>>
           <%- include('socials.ejs', socials); %>
         </div>

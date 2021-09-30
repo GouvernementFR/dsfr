@@ -5,6 +5,8 @@
 
 #{ns(table)} {
   --table-offset: #{space(4v)};
+  @include set-text-margin(0);
+  @include set-title-margin(0);
 
   @include relative;
   @include margin-bottom(10v);

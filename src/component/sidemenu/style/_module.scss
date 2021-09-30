@@ -6,6 +6,8 @@
 #{ns(sidemenu)} {
   @include disable-list-style;
   @include disable-link-style;
+  @include set-text-margin(0);
+  @include set-title-margin(0);
   @include relative;
   @include shadow(md);
   @include margin-x(-4v);

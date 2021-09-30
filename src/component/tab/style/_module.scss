@@ -71,8 +71,6 @@
       }
 
       &:last-child {
-        @include padding-right(4v);
-
         @include after('', block) {
           min-width: 1rem;
           @include margin-left(100%);
@@ -85,7 +83,6 @@
       &:first-child {
         @include before('', block) {
           @include sticky(100%, null, null, null, 100%, 1px);
-          position: sticky;
           @include margin-left(-100%);
         }
       }
@@ -98,7 +95,7 @@
   &__tab {
     @include relative;
     overflow: visible;
-    font-weight: bold;
+    font-weight: font-weight(bold);
     @include z-index(over);
 
     &[aria-selected=true] {

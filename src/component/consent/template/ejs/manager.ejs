@@ -26,7 +26,7 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
   <div class="<%= prefix %>-consent-service <%- (finality === 0) ? prefix + '-consent-manager__header' : ''; %>">
     <fieldset class="<%= prefix %>-fieldset <%= prefix %>-fieldset--inline">
       <% if (finalities[finality].title) { %>
-        <legend <%= finalities[finality].desc ? `aria-describedby="${finalities[finality].id}-desc"` : '' %> class="<%= prefix %>-consent-service__title"><%- finalities[finality].title %></legend>
+        <legend <%- finalities[finality].desc ? includeAttrs({'aria-describedby' : finalities[finality].id + '-desc'}) : '' %> class="<%= prefix %>-consent-service__title"><%- finalities[finality].title %></legend>
       <% } %>
       <div class="<%= prefix %>-consent-service__radios">
         <%- include('../../../radio/template/ejs/radio-group', {...finalities[finality].radios[0]} ) %>
@@ -47,7 +47,7 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
             <div class="<%= prefix %>-consent-service">
               <fieldset class="<%= prefix %>-fieldset <%= prefix %>-fieldset--inline">
               <% if (finalities[finality].services[service].title) { %>
-                <legend class="<%= prefix %>-consent-service__title" <%= (finalities[finality].services[service].desc) ? `aria-decribedby="${finalities[finality].services[service].id}-desc"`: '' %>><%- finalities[finality].services[service].title %></legend>
+                <legend class="<%= prefix %>-consent-service__title" <%- (finalities[finality].services[service].desc) ? includeAttrs({'aria-describedby' : finalities[finality].services[service].id + '-desc'}) : '' %>><%- finalities[finality].services[service].title %></legend>
               <% } %>
               <div class="<%= prefix %>-consent-service__radios <%= prefix %>-fieldset--inline">
                 <%- include('../../../radio/template/ejs/radio-group', {...finalities[finality].services[service].radios[0]} ) %>

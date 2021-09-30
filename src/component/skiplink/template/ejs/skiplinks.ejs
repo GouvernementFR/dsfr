@@ -1,3 +1,13 @@
+<%#
+# paramètres skiplink
+
+* items (array, required) : Tableau de liens (href, label)
+
+** items.href (string, required) : url ou ancre du lien
+
+** items.label (string, required) : label du lien
+
+%>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <div class="<%= prefix %>-skiplinks">
