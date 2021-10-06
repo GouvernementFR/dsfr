@@ -3,6 +3,7 @@ import { SchemeValue } from './scheme-value.js';
 import { SchemeAttribute } from './scheme-attribute.js';
 import { SchemeTheme } from './scheme-theme.js';
 import { SchemeEmission } from './scheme-emission.js';
+import { completeAssign } from '../../../core/script/api/utilities/propertie';
 
 class Scheme extends api.core.Instance {
   constructor () {
@@ -52,22 +53,17 @@ class Scheme extends api.core.Instance {
 
   get proxy () {
     const scope = this;
-    return Object.assign(super.proxy, {
-      /*
-      get theme () {
-        return scope.theme;
-      },
-      set theme (value) {
-        scope.theme = value;
-      },
-       */
+
+    const proxyAccessors = {
       get scheme () {
         return scope.scheme;
       },
       set scheme (value) {
         scope.scheme = value;
       }
-    });
+    };
+
+    return completeAssign(super.proxy, proxyAccessors);
   }
 
   restoreTransition () {
