@@ -83,7 +83,6 @@ const buildExample = (pck) => {
     const path = up + p.dist;
     if (p.module) files.script.module.push(`${path}/${p.id}.module.js`);
     if (p.nomodule) files.script.nomodule.push(`${path}/${p.id}.nomodule.js`);
-    // if (p.legacy) files.script.nomodule.push(`${path}/${p.id}.legacy.js`);
   });
 
   const options = {
