@@ -85,10 +85,9 @@ valeurs :
  %>
 
 <ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
-   <%console.log(buttons.length)%>
 <% for (let i = 0; i < buttons.length; i++) { %>
-<li>
-    <%- include('./button.ejs', {button:{...buttons[i]}}); %>
-</li>
-  <% } %>
+   <li>
+      <%- include('./button.ejs', {button:{...buttons[i]}}); %>
+   </li>
+<% } %>
 </ul>

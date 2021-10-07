@@ -4,7 +4,6 @@
     data = {...data, ...input};
     data.type = input.type || 'text';
     data.label = 'Label champs de saisie';
-    console.log(data)
 %>
 <% if (input.group === true) { %>
 <%- include('../../template/ejs/input-group', {input:data}); %>

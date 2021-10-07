@@ -4,7 +4,7 @@ let data = {};
 data = JSON.parse(include('./data.ejs'));
 data.socials = undefined;
 
-let follow = locals.follow || {};
+let follow = locals.follow || {newsletter: {}, socials: {}};
 let inputAttributes = [];
 let inputClasses = [];
 inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
@@ -23,25 +23,21 @@ if (follow.newsletter !== undefined) {
 
 data.newsletter.type = 'form';
 data.newsletter.form = {
-  valid: locals.valid || null,
-  error: locals.error || null,
+  valid: follow.newsletter.valid,
+  error: follow.newsletter.error,
   hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
   input: {
     id: "newsletter-email",
     placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
     label: "Votre adresse électronique (ex. : nom@domaine.fr)",
     type: "email",
-    valid: undefined,
-    error: undefined,
     inputClasses: inputClasses,
     attributes: inputAttributes,
     button: {
       id: "newsletter-button",
       label: "S\'abonner",
-      placeholder: undefined,
       type: "submit",
       btnTitle: "S‘abonner à notre lettre d’information",
-      attributes: []
     }
   }
 };
