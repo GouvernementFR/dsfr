@@ -2,25 +2,26 @@
 <%
 let data = {};
 data = JSON.parse(include('./data.ejs'));
+let follow = locals.follow || {};
 
 let inputAttributes = [];
 let inputClasses = [];
 inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
 inputAttributes['title'] = 'Votre adresse électronique (ex. : nom@domaine.fr)';
 
-if (locals.error) {
+if (follow.newsletter.error) {
   inputAttributes['aria-describedby'] = prefix + '-newsletter-error-text ' + prefix + '-newsletter-hint-text';
   inputClasses.push(prefix + '-input--error');
 }
-if (locals.valid) {
+if (follow.newsletter.valid) {
   inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
   inputClasses.push(prefix + '-input--valid');
 }
 
 data.newsletter.type = 'form';
 data.newsletter.form = {
-  valid: locals.valid || null,
-  error: locals.error || null,
+  valid: follow.newsletter.valid || null,
+  error: follow.newsletter.error || null,
   hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
   input: {
     id: "newsletter-email",
@@ -42,5 +43,5 @@ data.newsletter.form = {
   }
 };
 %>
-<%- include('../../template/ejs/follow.ejs', data); %>
+<%- include('../../template/ejs/follow.ejs', {follow: data}); %>
 
