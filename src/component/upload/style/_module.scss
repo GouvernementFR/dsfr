@@ -23,13 +23,13 @@
   @include margin(0);
 
   &:disabled {
-    &::-webkit-file-upload-button{
+    &::-webkit-file-upload-button {
       outline-style: none;
       cursor: not-allowed;
     }
   }
 
-  &::-webkit-file-upload-button{
+  &::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit;
     cursor: pointer;
