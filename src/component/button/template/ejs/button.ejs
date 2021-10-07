@@ -1,47 +1,52 @@
 <%#
 # paramètres button
 
-* label (string, required) : label du bouton
+* button.label (string, required) : label du bouton
 
-* tag (string) : si non défini, button
+* button.tag (string) : si non défini, button
 
-* id (string) : id du bouton
+* button.id (string) : id du bouton
 
-* secondary (boolean, optionnal) : si valeur true, bouton secondaire
+* button.secondary (boolean, optionnal) : si valeur true, bouton secondaire
 
-* type (string, optionnal) type du bouton
+* button.type (string, optionnal) type du bouton
 
-* disabled (boolean, optionnal) : si valeur true, bouton désactivé
+* button.disabled (boolean, optionnal) : si valeur true, bouton désactivé
 
-* size (string, optionnal) : modificateur de taille
-  valeurs :
-  * sm : bouton petit
-  * lg : bouton large
+* button.size (string, optionnal) : modificateur de taille
+valeurs :
+* sm : bouton petit
+* lg : bouton large
 
-* icon (string, optionnal) : nom de l'icone dans le bouton
+* button.icon (string, optionnal) : nom de l'icone dans le bouton
 
-* iconPlace (string, optionnal) : emplacement de l'icone
-  si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
-  valeurs :
-  * left : icone à gauche du label
-  * right : icone à droite du label
+* button.iconPlace (string, optionnal) : emplacement de l'icone
+si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
+valeurs :
+* left : icone à gauche du label
+* right : icone à droite du label
+
+* button.classes (array, optionnal) : Classes suplémentaires sur le bouton
+
+* button.attributes (object, optionnal) : Attributs suplémentaires sur le bouton
 
 %>
 
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let btnClasses = locals.classes || [];
- let btnAttrs = locals.attributes || {};
- let btnTitle = locals.btnTitle !== undefined ? locals.btnTitle : locals.label ;
+ const button = locals.button || {};
+ let btnClasses = button.classes || [];
+ let btnAttrs = button.attributes || {};
+ let btnTitle = button.title !== undefined ? button.title : button.label ;
 
- if (locals.id) btnAttrs.id = id;
+ if (button.id) btnAttrs.id = button.id;
 
- const tag = locals.tag || 'button';
+ const tag = button.tag || 'button';
 
  btnClasses.push(prefix + '-btn');
 
- switch(locals.size) {
+ switch(button.size) {
      case 'sm':
         btnClasses.push(prefix + '-btn--sm');
         break;
@@ -51,11 +56,10 @@
         break;
  }
 
- if (locals.icon !== undefined) btnClasses.push(prefix + '-fi-' + locals.icon);
+ if (button.icon !== undefined) btnClasses.push(prefix + '-fi-' + button.icon);
 
- if (locals.iconPlace !== undefined) switch(locals.iconPlace)
+ if (button.iconPlace !== undefined) switch(button.iconPlace)
  {
-
      case 'left':
         btnClasses.push(prefix + '-btn--icon-left');
         break;
@@ -65,28 +69,28 @@
         break;
  }
 
- if (locals.secondary === true) btnClasses.push(prefix +'-btn--secondary');
+ if (button.secondary === true) btnClasses.push(prefix +'-btn--secondary');
 
- if (locals.disabled === true) {
+ if (button.disabled === true) {
    if (tag === 'button') btnAttrs['disabled'] = '';
  } else if (tag === 'a') {
-   btnAttrs.href = locals.href || '[url - à modifier]';
+   btnAttrs.href = button.href || '[url - à modifier]';
   switch (true) {
-   case locals.blank:
+   case button.blank:
    btnAttrs.target = '_blank';
    break;
 
-   case locals.self:
+   case button.self:
    btnAttrs.target = '_self';
    break;
   }
  }
 
  if (btnTitle) btnAttrs['title'] = btnTitle;
- if (locals.type !== undefined) btnAttrs['type'] = type;
+ if (button.type !== undefined) btnAttrs['type'] = button.type;
  %>
 
 <<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
-    <%= label %>
+    <%= button.label %>
 </<%= tag %>>
 

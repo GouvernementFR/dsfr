@@ -10,16 +10,17 @@
 %>
 <% eval(include('../../../../core/index.ejs'));
 
+let follow = locals.follow || {socials: {networks: []}};
 let socialsClasses = [prefix + '-follow__social'];
 
 %>
 
 <div <%- includeClasses(socialsClasses); %> >
-  <p class="<%= prefix %>-h5 <%= prefix %>-mb-3v <%= prefix %>-mb-3v"><%- locals.title %></p>
+  <p class="<%= prefix %>-h5 <%= prefix %>-mb-3v <%= prefix %>-mb-3v"><%- follow.socials.title %></p>
   <ul class="<%= prefix %>-links-group <%= prefix %>-links-group--lg">
-    <% for (let i=0; i < networks.length; i++) { %>
+    <% for (let i=0; i < follow.socials.networks.length; i++) { %>
       <li>
-        <%- include('../../../link/template/ejs/link', { attributes: {title: contentPlaceholder("XXXXXXX") + " - ouvre une nouvelle fenêtre"}, href: networks[i].url, blank: true, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }); %>
+        <%- include('../../../link/template/ejs/link', { link: {attributes: {title: contentPlaceholder("XXXXXXX") + " - ouvre une nouvelle fenêtre"}, href: follow.socials.networks[i].url, blank: true, label: networks[i].label, classes: [prefix + '-link--' + networks[i].label] }}); %>
       </li>
     <% } %>
   </ul>

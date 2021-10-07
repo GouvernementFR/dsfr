@@ -1,60 +1,62 @@
 <%#
 # paramètres fieldset
 
-// TODO: documentation
+* fieldset.id (string, required) id du fieldset
 
+* fieldset.choice (boolean, optional) si true, la graisse du label devient normal
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let fieldsetClasses = [prefix + '-fieldset'];
-let fieldsetAttrs = locals.attributes || {};
+let fieldset = locals.fieldset || {};
+let fieldsetClasses = [...fieldset.classes || [], prefix + '-fieldset'];
+let fieldsetAttrs = fieldset.attributes || {};
 let describedby = [];
 
-if (locals.inline === true) fieldsetClasses.push(prefix + '-fieldset--inline');
-if (locals.error !== undefined) {
+if (fieldset.inline === true) fieldsetClasses.push(prefix + '-fieldset--inline');
+if (fieldset.error !== undefined) {
     fieldsetClasses.push(prefix + '-fieldset--error');
-    fieldsetAttrs['aria-labelledby'] = id + '-legend ' + id + '-desc-error';
+    fieldsetAttrs['aria-labelledby'] = fieldset.id + '-legend ' + fieldset.id + '-desc-error';
     fieldsetAttrs['role'] = 'group';
 }
-if (locals.valid !== undefined) {
+if (fieldset.valid !== undefined) {
     fieldsetClasses.push(prefix + '-fieldset--valid');
-    fieldsetAttrs['aria-labelledby'] = id + '-legend ' + id + '-desc-valid';
+    fieldsetAttrs['aria-labelledby'] = fieldset.id + '-legend ' + fieldset.id + '-desc-valid';
     fieldsetAttrs['role'] = 'group';
 }
 
-if (locals.disabled === true) fieldsetAttrs['disabled'] = 'disabled';
+if (fieldset.disabled === true) fieldsetAttrs['disabled'] = 'disabled';
 
-if (locals.hint != undefined) describedby.push(id + '-desc-hint');
-if (locals.error != undefined) describedby.push(id + '-desc-error');
-if (locals.valid != undefined) describedby.push(id + '-desc-valid');
+if (fieldset.hint != undefined) describedby.push(fieldset.id + '-desc-hint');
+if (fieldset.error != undefined) describedby.push(fieldset.id + '-desc-error');
+if (fieldset.valid != undefined) describedby.push(fieldset.id + '-desc-valid');
 
 const legendClasses = [`${prefix}-fieldset__legend`];
-if (locals.choice) legendClasses.push(`${prefix}-text--regular`);
+if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
 
 %>
 
 <div class="<%= prefix %>-form-group">
     <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
-        <legend <%- includeClasses(legendClasses); %> id='<%= id %>-legend'>
-            <%= legend %>
-            <% if (locals.hint != undefined) { %><%- include('./hint', {id: id + '-desc-hint'});%><% } %>
+        <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
+            <%= fieldset.legend %>
+            <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
         </legend>
         <div class="<%= prefix %>-fieldset__content">
             <%
                 let path;
                 for (let i = 0; i < elements.length; i++) {
                     let element = elements[i];
-                    element.data.error = undefined;
-                    element.data.valid = undefined;
-                    element.data.hint = undefined;
-                    if (element.data.disabled === undefined) element.data.disabled = undefined;
+                    // element.data.error = undefined;
+                    // element.data.valid = undefined;
+                    // element.data.hint = undefined;
+                    // if (element.data.disabled === undefined) element.data.disabled = undefined;
                     element.data.group = true;
             %>
                 <%- include('../../../' + element.path, element.data); %>
 
             <% } %>
         </div>
-        <%- include('./message'); %>
+        <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
     </fieldset>
 </div>

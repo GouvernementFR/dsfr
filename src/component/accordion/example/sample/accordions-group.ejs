@@ -2,12 +2,15 @@
 
 const accordions = [];
 
-for (let i = 0; i < 6; i++) accordions.push({});
+for (let i = 0; i < 6; i++) accordions.push({
+    label: 'Intitulé accordéon',
+    content: randomContent(),
+    id: uniqueId('accordion'),
+  });
 
 const data = {
   accordions: accordions,
-  accordion: '../../example/sample/accordion'
 }
 %>
 
-<%- include('../../template/ejs/accordions-group', data); %>
+<%- include('../../template/ejs/accordions-group', {accordionGroup: data}); %>

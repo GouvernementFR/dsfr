@@ -25,16 +25,17 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let linkClasses = locals.classes || [];
-let linkAttrs = locals.attributes || {};
+const link = locals.link || {};
+let linkClasses = link.classes || [];
+let linkAttrs = link.attributes || {};
 
-const tag = locals.tag || 'a';
+const tag = link.tag || 'a';
 
 linkClasses.push(prefix + '-link');
 
-if (locals.disabled === true) linkAttrs['disabled'] = '';
+if (link.disabled === true) linkAttrs['disabled'] = '';
 
-switch(locals.size) {
+switch(link.size) {
   case 'sm':
     linkClasses.push(prefix + '-link--sm');
   break;
@@ -44,9 +45,9 @@ switch(locals.size) {
   break;
 }
 
-if (locals.icon !== undefined) linkClasses.push(prefix + '-fi-' + locals.icon);
+if (link.icon !== undefined) linkClasses.push(prefix + '-fi-' + link.icon);
 
-if (locals.iconPlace !== undefined) switch(locals.iconPlace)
+if (link.iconPlace !== undefined) switch(link.iconPlace)
 {
   case 'left':
     linkClasses.push(prefix + '-link--icon-left');
@@ -57,22 +58,22 @@ if (locals.iconPlace !== undefined) switch(locals.iconPlace)
   break;
 }
 
-if (locals.disabled === true) {
+if (link.disabled === true) {
   if (tag === 'button') linkAttrs['disabled'] = '';
 } else if (tag === 'a') {
-  linkAttrs.href = locals.href || '[url - à modifier]';
+  linkAttrs.href = link.href || '[url - à modifier]';
   switch (true) {
-  case locals.blank:
+  case link.blank:
     linkAttrs.target = '_blank';
   break;
 
-  case locals.self:
+  case link.self:
     linkAttrs.target = '_self';
   break;
   }
 }
 
-if (locals.alignOnContent) linkClasses.push(`${prefix}-link--align-on-content`)
+if (link.alignOnContent) linkClasses.push(`${prefix}-link--align-on-content`)
 %>
 
-<<%= tag %> <%- includeClasses(linkClasses)%> <%- includeAttrs(linkAttrs); %>><%- label %></<%= tag %>>
+<<%= tag %> <%- includeClasses(linkClasses)%> <%- includeAttrs(linkAttrs); %>><%- link.label %></<%= tag %>>

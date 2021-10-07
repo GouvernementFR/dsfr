@@ -13,30 +13,31 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let followClasses = locals.classes || [];
+ let follow = locals.follow || {};
+ let followClasses = follow.classes || [];
  followClasses.push(prefix + '-follow');
 
- let attributes = locals.attributes || {};
- let socials = locals.socials || undefined;
- let newsletter = locals.newsletter || undefined;
-
+ let followAttributes = follow.attributes || {};
+ let socials = follow.socials || undefined;
+ let newsletter = follow.newsletter || undefined;
  %>
-<div <%- includeClasses(followClasses); %> <%- includeAttrs(attributes) %>>
+
+<div <%- includeClasses(followClasses); %> <%- includeAttrs(followAttributes) %>>
   <div class="<%= prefix %>-container">
     <div class="<%= prefix %>-grid-row">
 
       <%
       let gclasses = [prefix+'-col-12'];
-      if (newsletter) {
+      if (follow.newsletter) {
         if (socials) gclasses = [prefix+'-col-12', prefix+'-col-md-8'] %>
         <div <%- includeClasses(gclasses) %> >
-          <%- include('newsletter.ejs', newsletter); %>
+          <%- include('newsletter.ejs', {newsletter: follow.newsletter}); %>
         </div>
       <% }
-      if (socials) {
-        if (newsletter) gclasses = [prefix+'-col-12', prefix+'-col-md-4'] %>
+      if (follow.socials) {
+        if (follow.newsletter) gclasses = [prefix+'-col-12', prefix+'-col-md-4'] %>
         <div <%- includeClasses(gclasses) %>>
-          <%- include('socials.ejs', socials); %>
+          <%- include('socials.ejs', {socials: follow.socials}); %>
         </div>
       <% } %>
     </div>

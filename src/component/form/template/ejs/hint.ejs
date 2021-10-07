@@ -5,5 +5,7 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-
-<span class="<%= prefix%>-hint-text"><%= hint %></span>
+<%
+let form = locals.form || {hint:'texte additionel'};
+%>
+<span class="<%= prefix%>-hint-text"><%= form.hint %></span>

@@ -4,8 +4,8 @@ const accordions = [];
 
 for (let i = 0; i < 6; i++) accordions.push({
     label: 'Intitulé accordéon',
-    content: include('./accordions-group', {button:true}),
-    collapseId: uniqueId('accordion')
+    content: include('./accordions-group', {}),
+    id: uniqueId('accordion')
 });
 
 const data = {
@@ -14,4 +14,4 @@ const data = {
 
 %>
 
-<%- include('../../template/ejs/accordions-group', data); %>
+<%- include('../../template/ejs/accordions-group', {accordionGroup: data}); %>

@@ -1,16 +1,20 @@
 <%#
-# paramètres accordions-group
+# paramètres accordionGroup
 
-// TODO: documentation
+* accordionGroup.accordions (array, required) : tableau d'accordion
+
+* accordionGroup.accordion (array, required) : tableau d'accordion
 
 %>
+<% eval(include('../../../../core/index.ejs')); %>
 
+<% let accordionGroup = locals.accordionGroup || {accordions: []} %>
 <ul class="<%= prefix %>-accordions-group" >
 <%
-  for (let i = 0; i < locals.accordions.length; i++) {
+  for (let i = 0; i < accordionGroup.accordions.length; i++) {
 %>
   <li>
-    <%- include(locals.accordion || './accordion', accordions[i]); %>
+    <%- include('./accordion', {accordion: accordionGroup.accordions[i]}); %>
   </li>
 <% } %>
 </ul>

@@ -1,3 +1,15 @@
+<%#
+# paramètres
+
+* list (array, required) : Tableau de liens (href, label)
+
+** list.href (string, required) : url ou ancre du lien
+
+** list.label (string, required) : label du lien
+
+** list.list (array, required) : Tableau de liens enfants (href, label)
+
+%>
 <ol>
     <% for (let i = 0; i < list.length; i++) {
         const item = list[i];

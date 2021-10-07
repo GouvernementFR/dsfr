@@ -3,18 +3,22 @@
 let data = {};
 data = JSON.parse(include('./data.ejs'));
 data.socials = undefined;
+
+let follow = locals.follow || {};
 let inputAttributes = [];
 let inputClasses = [];
 inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
 inputAttributes['title'] = 'Votre adresse électronique (ex. : nom@domaine.fr)';
 
-if (locals.error) {
-  inputAttributes['aria-describedby'] = prefix + '-newsletter-error-text ' + prefix + '-newsletter-hint-text';
-  inputClasses.push(prefix + '-input--error');
-}
-if (locals.valid) {
-  inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
-  inputClasses.push(prefix + '-input--valid');
+if (follow.newsletter !== undefined) {
+  if (follow.newsletter.error) {
+    inputAttributes['aria-describedby'] = prefix + '-newsletter-error-text ' + prefix + '-newsletter-hint-text';
+    inputClasses.push(prefix + '-input--error');
+  }
+  if (follow.newsletter.valid) {
+    inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
+    inputClasses.push(prefix + '-input--valid');
+  }
 }
 
 data.newsletter.type = 'form';

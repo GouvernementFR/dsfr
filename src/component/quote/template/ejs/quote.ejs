@@ -19,12 +19,13 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let size = locals.size || undefined;
- let text = locals.text || '';
- let image = locals.image || undefined;
- let author = locals.author || false;
- let href = locals.href || undefined;
- let sources = locals.sources || [];
+ let quote = locals.quote || {};
+ let size = quote.size || undefined;
+ let text = quote.text || '';
+ let image = quote.image || undefined;
+ let author = quote.author || false;
+ let href = quote.href || undefined;
+ let sources = quote.sources || [];
  let quoteClasses = [prefix + '-quote'];
  let citeAttr = [];
  let sizeClasses = [];

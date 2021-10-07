@@ -5,15 +5,17 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-
-<% if(locals.error != undefined) { %>
-    <p id="<%= id %>-desc-error" class="<%= prefix %>-error-text" >
-        <%= error %>
+<%
+let message = locals.message || {}
+%>
+<% if(message.error != undefined) { %>
+    <p id="<%= message.id %>-desc-error" class="<%= prefix %>-error-text" >
+        <%= message.error %>
     </p>
 <% } %>
 
-<% if(locals.valid != undefined) { %>
-    <p id="<%= id %>-desc-valid" class="<%= prefix %>-valid-text" >
-        <%= valid %>
+<% if(message.valid != undefined) { %>
+    <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
+        <%= message.valid %>
     </p>
 <% } %>

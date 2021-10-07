@@ -1,3 +1,13 @@
+<%#
+# paramètres
+
+** href (string, required) : url ou ancre du lien
+
+** label (string, required) : label du lien
+
+* list (array, optional) : Tableau de liens enfants (href, label)
+
+%>
 <li>
     <a class="<%= prefix %>-summary__link" href="<%- href %>"><%- label %></a>
     <% if (locals.list) { %>
