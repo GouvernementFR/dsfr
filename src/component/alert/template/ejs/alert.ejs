@@ -9,33 +9,43 @@
 
 * alert.type (String, required): type d'alerte [info/success/error/warning]
 
+* alert.size (String, optional): taille de l'alerte [sm/md/lg]
+
+* alert.classes (array, optional): Classes supplémentaires sur l'alerte
+
+* alert.collapse (boolean, optional): englobe l'alert d'un collapse refermable
+
+* alert.buttonClose (boolean, optional): Ajoute un bouton de fermeture
+
+
 %>
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let id = locals.id;
- let title = locals.title || false;
- let text = locals.text || false;
- let type = locals.type || false;
- let size = locals.size || "md";
- let expanded = locals.expanded || true;
- let buttonClose = locals.buttonClose || false;
+ let alert = locals.alert || {};
+ let id = alert.id || uniqueId('alert');
+ let title = alert.title || false;
+ let text = alert.text || false;
+ let type = alert.type || false;
+ let size = alert.size || "md";
+ let expanded = alert.expanded || true;
+ let buttonClose = alert.buttonClose || false;
  let attrButton = {title: 'Masquer le message'};
- let classes = locals.classes || [];
+ let classes = alert.classes || [];
  classes.push(prefix + '-alert');
  if (type) classes.push(prefix + '-alert--' + type);
  if (size !== "md") classes.push(prefix + '-alert--' + size);
 
  %>
 
-<% if(locals.collapse) { %>
+<% if(alert.id && alert.collapse) { %>
 <div class="<%= prefix %>-collapse" id="<%= id %>">
 <% }%>
   <div role="alert" <%- includeClasses(classes); %>>
 
-    <% if(locals.title) { %>
+    <% if(title) { %>
       <p class="<%= prefix %>-alert__title"><%= title %></p>
     <% } %>
 
@@ -43,14 +53,14 @@
       <p><%= text %></p>
     <% } %>
 
-    <% if(locals.collapse || buttonClose) { %>
+    <% if(alert.collapse || buttonClose) { %>
       <% if(!buttonClose) {
         attrButton = {title: 'Masquer le message','aria-expanded': expanded , 'aria-controls': id};
       }
       %>
-      <%- include('../../../link/template/ejs/link', {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}) %>
+      <%- include('../../../link/template/ejs/link', {link: {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}}) %>
     <% } %>
   </div>
-<% if(locals.collapse) { %>
+<% if(alert.collapse) { %>
 </div>
 <% } %>
