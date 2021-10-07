@@ -9,7 +9,7 @@ const unordereds = [
   'textarea:not([disabled])',
   'audio[controls]',
   'video[controls]',
-  '[contenteditable]:not([contenteditable="false" i])',
+  '[contenteditable]:not([contenteditable="false"])',
   'details>summary:first-of-type',
   'details'
 ];

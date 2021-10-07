@@ -35,3 +35,10 @@ pre[class*="language-"] {
 .example-controls [class*="-form-group"] {
   margin-bottom: 0;
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+  /* IE10+ specific styles go here */
+  .example-controls {
+    display: none;
+  }
+}
