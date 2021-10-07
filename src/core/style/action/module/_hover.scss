@@ -1,0 +1,22 @@
+////
+/// Core Module : Action hover
+/// @group core
+////
+
+:root {
+  --hover-alpha: 0;
+}
+
+@include hover-media-query {
+  @include hover-type-selector($action-elements, blend) {
+    background-image: hover-linear-gradient(var(--hover-red), var(--hover-green), var(--hover-blue), var(--hover-alpha));
+
+    &:hover {
+      --hover-alpha: #{$hover-alpha};
+    }
+
+    &:active {
+      --hover-alpha: #{$active-alpha};
+    }
+  }
+}

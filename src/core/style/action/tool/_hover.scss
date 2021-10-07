@@ -1,0 +1,40 @@
+////
+/// Core Tool : Action Hover
+/// @group core
+////
+
+@mixin hover-media-query () {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin hover-type-selector($elements, $type) {
+  $selectors: ();
+
+  @each $element, $setting in $elements {
+    $hover: map-get($setting, hover);
+    $selector: map-get($setting, selector);
+    @if $hover {
+      @if $type == map-get($hover, type) {
+        $selectors: append($selectors, nest($selector, map-get($hover, selector)), 'comma');
+      }
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin hover-blend-background-image-legacy ($hover-lightness, $hover-alpha, $active-alpha) {
+  background-image: hover-linear-gradient(0deg, 0%, $hover-lightness, 0);
+
+  &:hover {
+    background-image: hover-linear-gradient(0deg, 0%, $hover-lightness, $hover-alpha);
+  }
+
+  &:active {
+    background-image: hover-linear-gradient(0deg, 0%, $hover-lightness, $active-alpha);
+  }
+}

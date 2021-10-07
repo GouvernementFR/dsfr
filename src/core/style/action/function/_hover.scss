@@ -1,0 +1,9 @@
+////
+/// Core Function : Action Hover
+/// @group core
+////
+
+@function hover-linear-gradient ($hue, $saturation, $lightness, $alpha) {
+  $hsla: 'hsl(#{$hue}, #{$saturation}, #{$lightness}, #{$alpha})';
+  @return linear-gradient(90deg, unquote($hsla), unquote($hsla));
+}

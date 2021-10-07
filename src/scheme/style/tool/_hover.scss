@@ -3,24 +3,10 @@
 /// @group schemes
 ////
 
-@mixin _scheme-hover-properties($shade, $tint) {
-  --block-hover: var(#{_property-name($shade, $tint, hover)});
-  --block-active: var(#{_property-name($shade, $tint, active)});
-
-  & > * {
-    --hover: var(--block-hover);
-    --active: var(--block-active);
-  }
-}
-
-@mixin _scheme-hover-transparent() {
-  @include _hover-selector {
-    &:hover {
-      background-color: var(--hover);
-    }
-
-    &:active {
-      background-color: var(--active);
-    }
+@mixin define-hover-props () {
+  @include theme-selector(dark) {
+    --hover-red: #{$hover-white-level};
+    --hover-green: #{$hover-white-level};
+    --hover-blue: #{$hover-white-level};
   }
 }

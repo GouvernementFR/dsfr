@@ -1,17 +1,11 @@
 ////
-/// Schemes Module
-/// @group schemes
+/// Scheme Module
+/// @group scheme
 ////
 
 /**
  * Définition des customs properties de combinaisons de couleur
  */
-#{ns-attr(theme)} {
-  @include build-properties();
-}
-
-#{ns-attr(theme, 'dark')} {
-  @include build-properties(dark);
-}
+@include build-properties();
 
 // @import 'modules/switch-theme';

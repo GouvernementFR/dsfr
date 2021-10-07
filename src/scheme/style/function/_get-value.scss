@@ -1,0 +1,15 @@
+////
+/// Scheme Function : get value
+/// @group scheme
+////
+
+/// Surcharge de la function définie dans core
+/// @access private
+/// @param {String} $set - combinaison de couleur obtenue par la fonction get-scheme-set
+/// @param {String} $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String} $variation - couleur de base, hover ou active
+/// @return {String} Retourne la custom property correspondante
+@function _get-value($set, $shade, $tint, $variation: base) {
+  @return unquote('var(#{_property-name($shade, $tint, $variation)})');
+}

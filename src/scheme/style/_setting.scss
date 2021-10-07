@@ -1,9 +1,6 @@
 ////
-/// Schemes Settings
-/// @group schemes
+/// Scheme Setting
+/// @group scheme
 ////
-
-// Attribut utilisé pour le dark mode
-$dark-theme: '#{ns-attr(theme, "dark")}';
 
 @import 'setting/properties';

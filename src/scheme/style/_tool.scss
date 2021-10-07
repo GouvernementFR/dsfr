@@ -3,13 +3,6 @@
 /// @group schemes
 ////
 
-/// transition de thème.
-@mixin _theme-transition() {
-  @at-root #{$theme-transition-selector} & {
-    @content;
-  }
-}
-
-@import 'tool/functions';
+@import 'tool/theme';
 @import 'tool/properties';
 @import 'tool/hover';

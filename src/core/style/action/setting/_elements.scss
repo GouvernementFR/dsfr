@@ -1,0 +1,150 @@
+////
+/// Core Setting : Action element
+/// @group core
+////
+
+$action-elements: (
+  a: (
+    selector: 'a',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:not([href])'
+      )
+    ),
+    hover: (
+      type: blend
+    ),
+    disabled: (
+      selector: '&:not([href])'
+    )
+  ),
+  button: (
+    selector: 'button',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    hover: (
+      type: blend
+    ),
+    disabled: (
+      selector: '&:disabled'
+    )
+  ),
+  input: (
+    selector: 'input',
+    focus: (),
+    cursor: (
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled'
+    )
+  ),
+  choices: (
+    selector: 'input[type="checkbox"], input[type="radio"]',
+    focus: (
+      selector: ' + label::before'
+    ),
+    cursor: (
+      pointer: (
+        selector: '&, & + label'
+      ),
+      not-allowed: (
+        selector: '&:disabled, &:disabled + label'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled, &:disabled + label',
+    )
+  ),
+  input-upload: (
+    selector: 'input[type="file"]',
+    hover: (
+      type: blend
+    )
+  ),
+  input-range: (
+    selector: 'input[type="range"]',
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    )
+  ),
+  input-buttons: (
+    selector: 'input[type="button"], input[type="image"], input[type="reset"], input[type="submit"]',
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    hover: (
+      type: blend
+    )
+  ),
+  select: (
+    selector: 'select',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    )
+  ),
+  textarea: (
+    selector: 'textarea',
+    focus: (),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&:disabled'
+      )
+    ),
+    disabled: (
+      selector: '&:disabled'
+    )
+  ),
+  tabindex: (
+    selector: '[tabindex]',
+    focus: ()
+  ),
+  medias: (
+    selector: 'video, audio',
+    focus: (
+      selector: '&[controls]'
+    ),
+    cursor: (
+      pointer: (
+        selector: '&[controls]'
+      ),
+      not-allowed: (
+        selector: '&:not([href])[controls]'
+      )
+    ),
+    disabled: (
+      selector: '&:not([href])',
+    )
+  ),
+  contenteditable: (
+    selector: '[contenteditable]:not([contenteditable="false"])',
+    focus: (),
+  ),
+  details: (
+    selector: 'details, details > summary:first-of-type',
+    focus: (),
+    cursor: (
+      pointer: ()
+    ),
+  )
+);

@@ -1,0 +1,21 @@
+////
+/// Scheme Function : property name
+/// @group scheme
+////
+
+/// Nom de la custom property
+/// @access private
+/// @param {String} $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String} $variation - couleur de base, hover ou active
+/// @return {String} Retourne le nom de la custom property
+@function _property-name($shade, $tint, $variation: base) {
+  $v: '';
+  @if $variation == hover {
+    $v: '-hover';
+  }
+  @else if $variation == active {
+    $v: '-active';
+  }
+  @return unquote('--#{$tint}-#{$shade}#{$v}');
+}

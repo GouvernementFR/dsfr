@@ -8,7 +8,7 @@ $COLOR: unquote('$COLOR');
 
 $ACCENT: none;
 
-@mixin _scheme-element($prop, $part, $id, $hover: false, $value: $COLOR) {
+@mixin _scheme-element($prop, $part, $id, $value: $COLOR) {
   $token: nth($id, 1);
   $family: nth($id, 2);
   $tint: '';
@@ -28,10 +28,6 @@ $ACCENT: none;
 
   @include _include-prop($prop, $set, $value, $shade, $tint, base);
 
-  @if $hover == true {
-    @include _scheme-hover($prop, $set, $value, $shade, $tint);
-  }
-
   @if $part == background {
     @include _scheme-hover-properties($shade, $tint);
   }
@@ -43,8 +39,8 @@ $ACCENT: none;
 /// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {Bool | String} $hover - si true, un effet de hover est appliqué sur l'élément en correspondance avec la couleur. la valeur override permet de simplement changer la couleur de hover (si un hover a déja été appliqué sur l'élément)
-@mixin scheme-element-bg-color($id, $hover: false) {
-  @include _scheme-element(background-color, background, $id, $hover);
+@mixin scheme-element-bg-color($id) {
+  @include _scheme-element(background-color, background, $id);
 }
 
 @mixin scheme-element-bg-transparent($hover: false) {
@@ -84,7 +80,7 @@ $ACCENT: none;
   @if $side != null {
     $prop:border-#{$side};
   }
-  @include _scheme-element($prop, border, $id, false, $value);
+  @include _scheme-element($prop, border, $id, $value);
 }
 
 /// Ajout d'une couleur d'outline sur un élément
@@ -94,7 +90,7 @@ $ACCENT: none;
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés d'outline
 @mixin scheme-element-outline-color($id, $value:1px solid $COLOR) {
-  @include _scheme-element(outline, border, $id, false, $value);
+  @include _scheme-element(outline, border, $id, $value);
 }
 
 /// Ajout d'une couleur de box-shadow sur un élément
@@ -104,5 +100,5 @@ $ACCENT: none;
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés de box-shadow
 @mixin scheme-element-box-shadow-color($id, $value:inset 0 0 0 1px $COLOR) {
-  @include _scheme-element(box-shadow, border, $id, false, $value);
+  @include _scheme-element(box-shadow, border, $id, $value);
 }

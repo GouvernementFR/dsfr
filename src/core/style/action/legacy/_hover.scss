@@ -1,0 +1,10 @@
+////
+/// Core Legacy : Action hover
+/// @group core
+////
+
+@include legacy(ie11) {
+  @include hover-type-selector($action-elements, blend) {
+    @include hover-blend-background-image-legacy(54.5%, $hover-alpha, $active-alpha);
+  }
+}

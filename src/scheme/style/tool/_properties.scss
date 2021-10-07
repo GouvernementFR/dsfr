@@ -3,33 +3,90 @@
 /// @group schemes
 ////
 
-@function _decision-exist($family, $shade) {
-  @each $part, $tokens in $scheme-decisions {
-    @each $token, $families in $tokens {
-      @if map-get($families, $family) == $shade {
-        @if $part == background {
-          @return background;
-        }
-        @return true;
+@mixin build-options($options) {
+  :root {
+    @each $tint, $colors in $scheme-options {
+      @if map-has-key($options, $tint) {
+        --#{$tint}: #{nth($colors, 1)};
       }
     }
   }
-  @return false;
 }
 
-@mixin build-properties($theme: light) {
-  @each $family, $tints  in $scheme-sets {
-    @each $tint, $shades in $tints {
-      @each $shade, $set in $shades {
-        $has: _decision-exist($family, $shade);
-        @if $has != false and $shade != divider {
-          #{_property-name($shade, $tint, base)}: #{_get-color($set, $theme, base)};
-          @if $has == background {
-            #{_property-name($shade, $tint, hover)}: #{_get-color($set, $theme, hover)};
-            #{_property-name($shade, $tint, active)}: #{_get-color($set, $theme, active)};
+@mixin build-decisions($decisions, $theme: null) {
+  $index: 1;
+  $scheme: light;
+  @if $theme == 'dark' {
+    $index: 2;
+    $scheme: dark;
+  }
+  @include theme-selector($theme) {
+    @each $decision, $options in $decisions {
+      $option: nth($options, $index);
+
+      --#{$decision}: var(--#{$option});
+
+      @if index($options, background) {
+        --#{$decision}-hover: var(--#{$option}-hover-#{$scheme});
+        --#{$decision}-active: var(--#{$option}-active-#{$scheme});
+      }
+    }
+  }
+}
+
+@mixin build-properties() {
+  $options: ();
+  $decisions: ();
+  @each $part, $tokens in $scheme-decisions {
+    @each $token, $families in $tokens {
+      @each $family, $shade in $families {
+        @each $tint, $shades in map-get($scheme-sets, $family) {
+          @if map-has-key($shades, $shade) {
+            $colors: map-get($shades, $shade);
+
+            $light: nth($colors, 1);
+            $light-option: [];
+            @if map-has-key($options, $light) {
+              $light-option: map-get($options, $light);
+            }
+
+            $dark: nth($colors, 2);
+            $dark-option: [];
+            @if map-has-key($options, $dark) {
+              $dark-option: map-get($options, $dark);
+            }
+
+            $decision: [$light $dark];
+
+            @if $part == background {
+              $decision: append($decision, background);
+
+              @if $light == $dark {
+                $light-option: [light dark];
+                $dark-option: [light dark];
+              }
+              @else {
+                @if index($light-option, light) == null {
+                  $light-option: append($light-option, light);
+                }
+                @if index($dark-option, dark) == null {
+                  $dark-option: append($dark-option, dark);
+                }
+              }
+            }
+            $option: (#{$light}: $light-option, #{$dark}: $dark-option);
+            $options: map-merge($options, $option);
+
+            $name: unquote('#{$part}-#{$token}-#{$tint}');
+            $decisions: map-merge($decisions, (#{$name}: $decision));
           }
         }
       }
     }
   }
+
+  @include build-options($options);
+
+  @include build-decisions($decisions);
+  @include build-decisions($decisions, 'dark');
 }

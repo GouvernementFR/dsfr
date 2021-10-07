@@ -1,0 +1,11 @@
+////
+/// Core Module : Action focus
+/// @group core
+////
+
+*:focus,
+*:focus-visible {
+  z-index: z-index(focus);
+}
+
+@include _build-focus($action-elements);
