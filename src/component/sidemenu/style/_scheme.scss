@@ -14,10 +14,18 @@
     @include scheme-element-text-color(g800);
     @include scheme-element-bg-color(t-plain, true);
     @include scheme-element-border-color(g300, true, bottom);
+
+    @include respond-from(md) {
+      @include scheme-element-border-color(t-plain, true, bottom);
+    }
   }
 
   @include list-item {
     @include scheme-element-border-color(g300, true, bottom);
+
+    @include respond-from(md) {
+      @include scheme-element-border-color(t-plain, true, bottom);
+    }
 
     &:last-child {
       #{ns(sidemenu__btn)} {
