@@ -1,21 +1,26 @@
 <%#
 # paramètres média image
 
-* img : url de l'image
+* media.src (string, required): url de l'image
 
-* alt : texte alternatif de l'image
+* media.alt (string, optional): texte alternatif de l'image (peut être vide si l'image est illlustrative)
 
-* classes : classes à appliquer sur l'image
+* media.classes (array, optional) : classes supplémentaires sur l'image
+
+* media.attributes (object, optional) : Attributs supplémentaires sur l'image
+
+* media.style (object, optional) : raccourci vers l'attribut style
 
 %>
 <% eval(include('../../../index.ejs')); %>
 
 <%
- const classes = locals.classes || [];
- classes.push(`${prefix}-responsive-img`);
- const attrs = {};
- if (locals.style) attrs.style = style;
+ let media = locals.media || {};
+ const mediaClasses = media.classes || [];
+ const mediaAttributes = media.attributes || {};
+ mediaClasses.push(`${prefix}-responsive-img`);
+ if (media.style) mediaAttributes.style = style;
  %>
 
-<img <%- includeClasses(classes) %> <%- includeAttrs(attrs) %> src="<%= locals.src %>" alt="<%= locals.alt || '' %>"  /><% if (locals.alt) { %><!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image --><% } else { %><!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --><% } %>
+<img <%- includeClasses(mediaClasses) %> <%- includeAttrs(mediaAttributes) %> src="<%= media.img %>" alt="<%= media.alt || '' %>"  /><% if (media.alt) { %><!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image --><% } else { %><!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --><% } %>
 

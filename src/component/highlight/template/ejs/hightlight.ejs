@@ -14,5 +14,5 @@
  %>
 
 <div <%- includeClasses(classes)%>>
-  <%- include('../../../../core/template/ejs/typography/paragraph', {content: text, size: locals.size}) %>
+  <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: text, size: locals.size}}) %>
 </div>

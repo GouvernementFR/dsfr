@@ -1,38 +1,50 @@
 <%#
-# paramètres callout
+# paramètres callout (mise en avant)
 
-// TODO: documentation
+* callout.title (string, optional): Titre de la mise en avant
+
+* callout.text (string, optional): texte de la mise en avant
+
+* callout.classes (array, optional): Classes suplémentaires sur la mise en avant
+
+* callout.size (string, optional) [default: 'lg']: Taille de la mise en avant
+
+* callout.button (string, optional): label du bouton dans la mise en avant
+
+* callout.buttonTpl (string, optional): Chemin vers le sample de bouton a utiliser
+
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let classes = locals.classes || [];
+ let callout = locals.callout || {};
+ let classes = callout.classes || [];
  classes.push(prefix + '-callout');
 
- if (locals.icon !== undefined) classes.push(prefix + '-fi-' + icon);
- if (locals.color !== undefined) classes.push(prefix + '-callout--' + color);
+ if (callout.icon !== undefined) classes.push(prefix + '-fi-' + callout.icon);
+ if (callout.color !== undefined) classes.push(prefix + '-callout--' + callout.color);
 
  let pClasses = [];
 
- if (locals.size === 'md') pClasses.push(prefix + '-callout__text--md');
+ if (callout.size === 'md') pClasses.push(prefix + '-callout__text--md');
 
  %>
 
 
 <div <%- includeClasses(classes); %>>
 
-  <% if(locals.title !== undefined) { %>
-    <h4 class="<%= prefix%>-callout__title"><%= title %></h4>
+  <% if(callout.title !== undefined) { %>
+    <h4 class="<%= prefix%>-callout__title"><%= callout.title %></h4>
   <% } %>
 
-  <%- include('../../../../core/template/ejs/typography/paragraph', {content: text, classes: [`${prefix}-callout__text`]}) %>
+  <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: callout.text, classes: [`${prefix}-callout__text`]}}) %>
 
-  <% if(locals.button !== undefined) {
-        if (button.icon === undefined) button.icon = undefined;
+  <% if(callout.button !== undefined) {
+        if (callout.icon === undefined) callout.button.icon = undefined;
   %>
-    <%- include('../../../button/template/ejs/button.ejs', button); %>
-  <% } else if (locals.buttonTpl !== undefined) { %>
-    <%- include(buttonTpl, {icon:undefined}); %>
+    <%- include('../../../button/template/ejs/button.ejs', {button: callout.button}); %>
+  <% } else if (callout.buttonTpl !== undefined) { %>
+    <%- include(callout.buttonTpl, {button: {icon:undefined}}); %>
   <% } %>
 </div>
