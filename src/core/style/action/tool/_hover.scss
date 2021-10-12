@@ -26,15 +26,3 @@
     @content;
   }
 }
-
-@mixin hover-blend-background-image-legacy ($hover-lightness, $hover-alpha, $active-alpha) {
-  background-image: hover-linear-gradient(0deg, 0%, $hover-lightness, 0);
-
-  &:hover {
-    background-image: hover-linear-gradient(0deg, 0%, $hover-lightness, $hover-alpha);
-  }
-
-  &:active {
-    background-image: hover-linear-gradient(0deg, 0%, $hover-lightness, $active-alpha);
-  }
-}

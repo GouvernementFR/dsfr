@@ -3,6 +3,67 @@
 /// @group core
 ////
 
+@mixin focusable-selector($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      $selectors: append($selectors, nest($selector, map-get($focus, selector)), 'comma');
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable-selector-focus($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable-selector-focus-not-visible($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      $selectors: append($selectors, nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
+@mixin focusable-selector-focus-visible($elements: $action-elements) {
+  $selectors: ();
+
+  @each $element, $setting in $elements {
+    $focus: map-get($setting, focus);
+    $selector: map-get($setting, selector);
+    @if $focus {
+      $selectors: append($selectors, nest($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
+
 @mixin _build-focus($elements) {
   $selectors: ();
   $fallbacks: ();
@@ -20,21 +81,5 @@
     }
   }
 
-  #{$selectors} {
-    outline-offset: 2px;
-    outline-width: 2px;
-    outline-color: $focus-color;
-  }
 
-  #{$fallbacks} {
-    outline-style: solid;
-  }
-
-  #{$removes} {
-    outline-style: none;
-  }
-
-  #{$visibles} {
-    outline-style: solid;
-  }
 }

@@ -3,20 +3,25 @@
 /// @group core
 ////
 
-:root {
-  --hover-alpha: 0;
-}
-
 @include hover-media-query {
   @include hover-type-selector($action-elements, blend) {
-    background-image: hover-linear-gradient(var(--hover-red), var(--hover-green), var(--hover-blue), var(--hover-alpha));
+    background-size: 2048px 2048px;
+    background-position: 50% 50%;
+
+    --ah-l: calc(var(--ah-lb) + var(--ah-lm));
+    --hover-hsla: #{css-hsla(var(--ah-h), var(--ah-s), var(--ah-l), var(--ah-a))};
+
+    &:hover,
+    &:active {
+      background-image: radial-gradient(circle at center, var(--hover-hsla), var(--hover-hsla) 10%);
+    }
 
     &:hover {
-      --hover-alpha: #{$hover-alpha};
+      --ah-a: 0.3;
     }
 
     &:active {
-      --hover-alpha: #{$active-alpha};
+      --ah-a: 0.5;
     }
   }
 }

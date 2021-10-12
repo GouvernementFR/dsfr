@@ -4,9 +4,13 @@
 ////
 
 @mixin define-hover-props () {
+  $default: map-get($action-hover, light);
+  $lightness: map-get($default, lightness);
+
   :root {
-    --hover-red: #{$hover-black-level};
-    --hover-green: #{$hover-black-level};
-    --hover-blue: #{$hover-black-level};
+    --ah-h: #{map-get($default, hue)};
+    --ah-s: #{map-get($default, saturation)};
+    --ah-lb: #{map-get($lightness, base)};
+    --ah-lm: #{map-get($lightness, modifier)};
   }
 }

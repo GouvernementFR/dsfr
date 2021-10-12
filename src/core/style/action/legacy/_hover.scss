@@ -3,8 +3,18 @@
 /// @group core
 ////
 
+$default: map-get($action-hover, light);
+
 @include legacy(ie11) {
   @include hover-type-selector($action-elements, blend) {
-    @include hover-blend-background-image-legacy(54.5%, $hover-alpha, $active-alpha);
+    &:hover {
+      $hsla: #{hover-hsla-legacy($default, $hover-alpha)};
+      background-image: radial-gradient(circle at center, #{$hsla}, #{$hsla} 10%);
+    }
+
+    &:active {
+      $hsla: #{hover-hsla-legacy($default, $active-alpha)};
+      background-image: radial-gradient(circle at center, #{$hsla}, #{$hsla} 10%);
+    }
   }
 }
