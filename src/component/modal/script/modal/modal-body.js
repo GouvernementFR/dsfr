@@ -2,8 +2,6 @@ import api from '../../api.js';
 import { ModalSelector } from './modal-selector.js';
 import { ModalEmission } from './modal-emission.js';
 
-const OFFSET = 32; // 32px => 8v => 2rem
-
 class ModalBody extends api.core.Instance {
   static get instanceClassName () {
     return 'ModalBody';
@@ -42,8 +40,6 @@ class ModalBody extends api.core.Instance {
   }
 
   adjust () {
-    const offset = OFFSET * (this.isBreakpoint(api.core.Breakpoints.MD) ? 2 : 1);
-    this.style.maxHeight = `${window.innerHeight - offset}px`;
     this.shade();
   }
 }
