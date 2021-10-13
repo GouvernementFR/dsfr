@@ -7,10 +7,11 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
+    let modal = locals.modal || {};
     const attributes = {};
-    attributes[`data-${prefix}-opened`] = locals.opened === true;
-    attributes['aria-controls'] = locals.id;
+    attributes[`data-${prefix}-opened`] = modal.opened === true;
+    attributes['aria-controls'] = modal.id;
 
 %>
 
-<%- include("../../../button/template/ejs/button", {label: label, attributes: attributes}) %>
+<%- include("../../../button/template/ejs/button", {button: {label: modal.label, attributes: attributes}}) %>

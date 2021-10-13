@@ -1,3 +1,14 @@
+<%#
+# paramètres link-close
+
+* link.label (string, required) : contenu texte
+
+* link.closeId (string, required): id de l'élément à fermer
+
+* link.title (string, optional) : titre du lien
+
+%>
+
 <%
 let link = locals.link || {};
 %>
@@ -8,7 +19,7 @@ let link = locals.link || {};
         label: link.label || 'Fermer',
         title: link.title || link.label || 'Fermer',
         attributes: {
-            'aria-controls': closeId,
+            'aria-controls': link.closeId,
         }
     }
 });%>

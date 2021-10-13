@@ -1,13 +1,9 @@
 <%
-let data = JSON.parse(include('../../../form/example/sample/data'));
+let checkbox = locals.checkbox || {};
+let data = JSON.parse(include('../../../form/example/sample/data', {form: checkbox}));
 
 data.label = 'Label checkbox';
-if (locals.checkboxAttrs !== undefined) data = {...data, checkboxAttrs: locals.checkboxAttrs}
-
+data = {...checkbox, ...data}
 %>
-<% if (/*locals.group === */true) { %>
-    <%- include('../../template/ejs/checkbox-group', data); %>
-<% }
-else { %>
-    <%- include('../../template/ejs/checkbox', data); %>
-<% } %>
+
+<%- include('../../template/ejs/checkbox-group', {checkbox: data}); %>

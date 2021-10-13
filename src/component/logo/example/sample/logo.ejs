@@ -1,7 +1,7 @@
 <%
- let data = locals.data || {}
- if (locals.title === undefined) data.title = 'République<br>française';
- if (locals.href === undefined) data.href = '#';
+ let logo = locals.logo || {};
+ if (logo.title === undefined) logo.title = 'République<br>française';
+ if (logo.href === undefined) logo.href = '#';
  %>
 
-<%- include('../../template/ejs/logo', data);%>
+<%- include('../../template/ejs/logo', {logo: locals.logo});%>

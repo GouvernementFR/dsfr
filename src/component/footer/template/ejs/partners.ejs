@@ -1,18 +1,33 @@
-<h4 class="<%= prefix %>-footer__partners-title"><%- title %></h4>
+<%#
+# paramètres footer partners
+
+* footer.partners.title (object, required) : Titre du bloc partenaire
+* footer.partners.mainPartner (object, required) : Paramètres du partenaire principal
+** footer.partners.mainPartner.src (object, required) : Paramètres du partenaire principal
+** footer.partners.mainPartner.alt (object, recommanded) : Paramètres du partenaire principal
+* footer.partners.subPartners (array, required) : Tableau de sous partenaire
+** footer.partners.subPartners.src (object, required) : Paramètres du partenaire principal
+** footer.partners.subPartners.alt (object, recommanded) : Paramètres du partenaire principal
+
+%>
+<% let footer = locals.footer || {} %>
+<% let partners = footer.partners || {} %>
+
+<h4 class="<%= prefix %>-footer__partners-title"><%- partners.title %></h4>
 <div class="<%= prefix %>-footer__partners-logos">
   <div class="<%= prefix %>-footer__partners-main">
     <a class="footer__partners-link" href="#">
-      <%- include('../../../../core/template/ejs/media/responsive-img.ejs', locals.mainPartner); %>
+      <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: partners.mainPartner}); %>
     </a>
   </div>
   <div class="<%= prefix %>-footer__partners-sub">
     <ul>
       <%
-      for (let i = 0; i < subPartners.length; i++) {
+      for (let i = 0; i < partners.subPartners.length; i++) {
       %>
       <li>
         <a class="<%= prefix %>-footer__partners-link" href="#">
-          <%- include('../../../../core/template/ejs/media/responsive-img.ejs', subPartners[i]); %>
+          <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: partners.subPartners[i]}); %>
         </a>
       </li>
     <% } %>

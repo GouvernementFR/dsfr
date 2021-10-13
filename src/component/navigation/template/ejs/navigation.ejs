@@ -9,31 +9,30 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
+let navigation = locals.navigation || {};
 
-let classes = locals.classes || [];
-
+let classes = navigation.classes || [];
 classes.push(`${prefix}-nav`);
 
-let attributes = locals.attributes || {};
-
-attributes.id = locals.navigationId || locals.id;
+let attributes = navigation.attributes || {};
+attributes.id = navigation.navigationId || navigation.id;
 attributes.role = 'navigation';
 attributes['aria-label'] = 'Menu principal'
 
 %>
 
 <nav <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
-    <% if(locals.items) { %>
+    <% if(navigation.items) { %>
     <ul class="<%= prefix %>-nav__list">
         <%
-            for (let i = 0; i < items.length; i++) {
-                let item = items[i];
+            for (let i = 0; i < navigation.items.length; i++) {
+                let item = navigation.items[i];
 
                 let classes = [prefix + '-nav__item'];
                 if (item.align === 'right') classes.push(prefix + '-nav__item--align-right');
         %>
         <li <%- includeClasses(classes); %>>
-            <%- include('./' + item.type, item); %>
+            <%- include('./' + item.type, {menu: item}); %>
         </li>
         <% } %>
     </ul>

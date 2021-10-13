@@ -53,7 +53,7 @@ if (input.disabled === true) inputAttrs['disabled'] = '';
 if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholder;
 %>
 
-<%- include('../../../form/template/ejs/label', {form:input}); %>
+<%- include('../../../form/template/ejs/label', {label:input}); %>
 
 <% if (input.icon != undefined) { %>
  <div class="<%= prefix %>-input-wrap <%- prefix %>-fi-<%= input.icon %>" >
@@ -79,4 +79,4 @@ else {%>
 </div>
 <% } %>
 
-<%- include('../../../form/template/ejs/message', {form:input}); %>
+<%- include('../../../form/template/ejs/message', {message:input}); %>

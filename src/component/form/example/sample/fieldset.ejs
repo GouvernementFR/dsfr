@@ -4,4 +4,4 @@
     if (data.legend === undefined) data.legend = 'Légende pour l’ensemble de champs';
  %>
 
-<%- include('../../template/ejs/fieldset', {fieldset: {...fieldset, data}}); %>
+<%- include('../../template/ejs/fieldset', {fieldset: {...fieldset, ...data}}); %>

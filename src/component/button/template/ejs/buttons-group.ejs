@@ -38,12 +38,12 @@ valeurs :
  let buttons = buttonGroup.buttons || [];
  groupClasses.push(prefix + '-btns-group');
 
- if (buttonGroup.align) groupClasses.push(prefix + '-btns-group--'+groupClasses.align);
+ if (buttonGroup.align) groupClasses.push(prefix + '-btns-group--'+buttonGroup.align);
  if (buttonGroup.equisized) groupClasses.push(prefix + '-btns-group--equisized');
  if (buttonGroup.reverse) groupClasses.push(prefix + '-btns-group--inline-reverse');
 
 
- switch(groupClasses.inline) {
+ switch(buttonGroup.inline) {
      case true:
         groupClasses.push(prefix + '-btns-group--inline');
         break;
@@ -60,7 +60,7 @@ valeurs :
         break;
  }
 
- switch(groupClasses.size) {
+ switch(buttonGroup.size) {
      case 'sm':
         groupClasses.push(prefix + '-btns-group--sm');
         break;
@@ -70,7 +70,7 @@ valeurs :
         break;
  }
 
- if (groupClasses.iconPlace !== undefined) switch(groupClasses.iconPlace)
+ if (buttonGroup.iconPlace !== undefined) switch(buttonGroup.iconPlace)
  {
 
      case 'left':

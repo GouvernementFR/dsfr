@@ -1,14 +1,15 @@
-<%- include('./btn'); %>
-<div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= collapseId %>" >
+<% let menu = locals.menu || {}; %>
+<%- include('./btn', {menu:menu}); %>
+<div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= menu.collapseId %>" >
     <ul class="<%= prefix %>-menu__list" >
         <%
-            locals.active = false;
-            for (let i = 0; i < items.length; i++) {
-                const item = items[i];
+            // locals.active = false;
+            for (let i = 0; i < menu.items.length; i++) {
+                const item = menu.items[i];
                 item.isPage = true;
         %>
         <li>
-            <%- include('./link', item); %>
+            <%- include('./link', {menu: item}); %>
         </li>
         <% } %>
     </ul>

@@ -1,3 +1,14 @@
+<%#
+# paramètres footer bottom
+
+* footer.bottom.copyright (string, required) : texte de copyright
+* footer.bottom.links (array, optional) : tableau de liens
+** footer.bottom.links.label (string, required) : label du lien
+
+%>
+<% let footer = locals.footer || {} %>
+<% let bottom = footer.bottom || {} %>
+<% let links = bottom.links || [] %>
 <ul class="<%= prefix %>-footer__bottom-list">
   <%
     for (let i = 0; i < links.length; i++) {
@@ -8,5 +19,5 @@
   <% } %>
 </ul>
 <div class="<%= prefix %>-footer__bottom-copy">
-    <p><%- copyright %></p>
+    <p><%- bottom.copyright %></p>
 </div>

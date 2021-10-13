@@ -7,14 +7,14 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let form = locals.form || {label: 'label'};
- let labelClasses = form.label.classes || [];
+ let label = locals.label || { label: 'label'};
+ let labelClasses = label.classes || [];
  labelClasses.push(prefix + '-label');
- let labelAttrs = form.label.attributes || {};
- let id = form.label.id || form.id || '';
+ let labelAttrs = label.attributes || {};
+ let id = label.id || '';
  %>
 
-<label <%- includeClasses(labelClasses); %> for="<%= form.id %>" <%- includeAttrs(labelAttrs); %>><%= form.label %>
-  <% if (form.hint != undefined) { %><%- include('./hint');%><% } %>
+<label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>><%= label.label %>
+  <% if (label.hint != undefined) { %><%- include('./hint', {form: label});%><% } %>
 </label>
 

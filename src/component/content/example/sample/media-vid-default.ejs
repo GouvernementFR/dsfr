@@ -1,9 +1,10 @@
 <%
 let data = {
+    ...locals.content || {},
     vidTpl: '../../../../core/example/media/sample/vid',
     caption: '© Légende de la vidéo',
     transcription: 'Label du bouton de la transcription',
 };
 %>
 
-<%- include('../../template/ejs/media', data); %>
+<%- include('../../template/ejs/media', {content:data}); %>

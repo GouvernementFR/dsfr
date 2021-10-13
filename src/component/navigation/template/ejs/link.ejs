@@ -1,10 +1,11 @@
 <%
+let menu = locals.menu || {};
 const attrs = {
-    href: locals.href,
-    target: locals.target || '_self'
+    href: menu.href,
+    target: menu.target || '_self'
 }
 
-if (locals.active) attrs['aria-current'] = locals.isPage ? 'page' : 'true';
+if (menu.active) attrs['aria-current'] = menu.isPage ? 'page' : 'true';
 
  %>
-<a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> ><%- label%></a>
+<a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> ><%- menu.label %></a>

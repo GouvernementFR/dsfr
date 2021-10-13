@@ -5,13 +5,14 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
+<% let content = locals.content || {} %>
 
 <%
-let classes = locals.classes || [];
-let attributes = locals.attributes || [];
+let classes = content.classes || [];
+let attributes = content.attributes || [];
 classes.push(prefix + '-content-media');
 
-switch (locals.size) {
+switch (content.size) {
     case 'sm':
         classes.push(prefix + '-content-media--sm');
         break;
@@ -21,7 +22,7 @@ switch (locals.size) {
         break;
 }
 
-let type = (locals.img !== undefined || locals.svg !== undefined) ? 'img' : 'vid';
+let type = (content.img !== undefined || content.svg !== undefined) ? 'img' : 'vid';
 
 let tag;
 
@@ -29,7 +30,7 @@ switch (type) {
     case 'img':
         tag = 'figure';
         attributes["role"] = "group";
-        if (locals.caption != undefined) attributes["aria-label"] = locals.caption;
+        if (content.caption != undefined) attributes["aria-label"] = content.caption;
         break;
 
     case 'vid':
@@ -43,12 +44,12 @@ switch (type) {
 switch(type) {
     case 'img':
 %>
-        <%- include('./media-img'); %>
+        <%- include('./media-img', {content: content}); %>
 <%      break;
 
     case 'vid':
 %>
-        <%- include('./media-vid'); %>
+        <%- include('./media-vid', {content: content}); %>
 <%      break;
 }
 %>

@@ -1,14 +1,25 @@
+<%#
+# paramètres footer top
+
+* footer.top.categories (object, required) : Paramètre de catégories
+** footer.top.categories.label (string, required) : Label des catégories du menu
+** footer.top.categories.label (string, required) : Label des liens du menu
+
+%>
+<% let footer = locals.footer || {} %>
+<% let top = footer.top || {} %>
+
 <%
   for (let i = 0; i < 6; i++) {
 %>
 <div class="<%= prefix%>-col-12 <%= prefix%>-col-sm-3 <%= prefix%>-col-md-2">
-  <h3 class="<%= prefix %>-footer__top-cat"><%- categories.label %></h3>
+  <h3 class="<%= prefix %>-footer__top-cat"><%- top.categories.label %></h3>
   <ul class="<%= prefix %>-footer__top-list">
   <%
     for (let i = 0; i < 6; i++) {
   %>
     <li>
-      <a class="<%= prefix %>-footer__top-link" href="#"><%- categories.link %></a>
+      <a class="<%= prefix %>-footer__top-link" href="#"><%- top.categories.link %></a>
     </li>
   <% } %>
   </ul>

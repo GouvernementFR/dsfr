@@ -1,25 +1,26 @@
-<%- include('./btn'); %>
-<div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= collapseId %>" >
+<% let menu = locals.menu || {}; %>
+<%- include('./btn', {menu:menu}); %>
+<div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= menu.collapseId %>" >
     <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-lg" >
-        <%- include('../../../link/template/ejs/link-close', { closeId: collapseId, label: "Fermer" }); %>
+        <%- include('../../../link/template/ejs/link-close', {link: { closeId: menu.collapseId, label: "Fermer" }}); %>
         <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
             <%
-                if (locals.leader !== undefined) {
+                if (menu.leader !== undefined) {
             %>
-                <%- include('./leader', leader); %>
+                <%- include('./leader', {menu: menu}); %>
 
             <% } %>
 
             <%
-                locals.active = false;
+                // menu.active = false;
                 let category;
-                for (let j = 0; j < categories.length; j++) {
-                  category = categories[j];
+                for (let j = 0; j < menu.categories.length; j++) {
+                  category = menu.categories[j];
             %>
 
             <div class="<%= prefix%>-col-12 <%= prefix%>-col-lg-3">
                 <h5 class="<%= prefix %>-mega-menu__category">
-                    <%- include('./link', category); %>
+                    <%- include('./link', {menu: category}); %>
                 </h5>
 
                 <ul class="<%= prefix %>-mega-menu__list" >
@@ -29,7 +30,7 @@
                         item.isPage = true;
                     %>
                     <li>
-                        <%- include('./link', item); %>
+                        <%- include('./link', {menu: item}); %>
                     </li>
                     <% } %>
                 </ul>

@@ -1,25 +1,25 @@
 <%#
 # paramètres link
 
-* label (string, required) : contenu texte
+* link.label (string, required) : contenu texte
 
-* tag (string) : si non défini, a
+* link.tag (string, optional) : si non défini, a
 
-* href (string, required) : adresse url du lien
+* link.href (string, required) : adresse url du lien
 
-* blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
+* link.blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
 
-* disabled (boolean, optionnal) : si valeur true, link désactivé
+* link.disabled (boolean, optionnal) : si valeur true, link désactivé
 
-* icon (string, optional) : icon du lien
+* link.icon (string, optional) : icon du lien
 
-* iconPlace (string, optionnal) : emplacement de l'icone
+* link.iconPlace (string, optionnal) : emplacement de l'icone
   si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
   valeurs :
   * left : icone à gauche du label
   * right : icone à droite du label
 
-* alignOnContent (boolean, optionnal) : ajoute des marges négatives pour être aligné sur le contenu
+* link.alignOnContent (boolean, optionnal) : ajoute des marges négatives pour être aligné sur le contenu
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>

@@ -1,15 +1,14 @@
 <%
-let data = {
-}
-
+let data = {};
+let header = locals.header || {};
 const navbar = {};
 let hasNavbar = false;
 let hasMenu = false;
 
-data.brand = { logo: locals.logo };
+data.brand = { logo: header.logo };
 
-if (locals.operator !== undefined) {
-  data.brand.operator = imgData(locals.operator.img, true, locals.operator.style)
+if (header.operator !== undefined) {
+  data.brand.operator = imgData(header.operator.src, true, header.operator.style)
 }
 
 let servicePlaceholder = {
@@ -17,13 +16,13 @@ let servicePlaceholder = {
     tagline: 'baseline - précisions sur l‘organisation'
 };
 
-switch (typeof locals.service) {
+switch (typeof header.service) {
     case 'boolean':
         data.brand.service = servicePlaceholder;
         break;
 
     case 'string':
-        switch(locals.service) {
+        switch(header.service) {
             case 'title':
                 data.brand.service = { title: servicePlaceholder.title };
               break
@@ -31,11 +30,11 @@ switch (typeof locals.service) {
         break;
 }
 
-if (locals.links !== undefined || locals.search) {
+if (header.links !== undefined || header.search) {
     hasNavbar = true;
     data.tools = {};
 
-    if (locals.links === true) {
+    if (header.links === true) {
         hasMenu = true;
         data.tools.links = {
             items: [
@@ -57,17 +56,17 @@ if (locals.links !== undefined || locals.search) {
             ]
         };
     }
-    else if (locals.links !== undefined) {
+    else if (header.links !== undefined) {
         hasMenu = true;
-        data.tools.links = locals.links;
+        data.tools.links = header.links;
     }
 
-    if (locals.search) {
-        data.tools.search = locals.search === true ?
+    if (header.search) {
+        data.tools.search = header.search === true ?
         {
             sample: '../../../search/example/sample/search-default'
         }
-        : locals.search;
+        : header.search;
         data.tools.search.id = locals.searchId || uniqueId('search');
 
         navbar.search = {
@@ -80,25 +79,25 @@ if (locals.links !== undefined || locals.search) {
 }
 
 switch (true) {
-    case locals.navigation === 'min':
+    case header.navigation === 'min':
         data.navigation = {
             sample: '../../../navigation/example/sample/navigation-min'
         };
         break;
 
-    case locals.navigation === true:
+    case header.navigation === true:
         data.navigation = {
             sample: '../../../navigation/example/sample/navigation'
         };
         break;
 
-    case typeof locals.navigation === 'object':
-        data.navigation = navigation;
+    case typeof header.navigation === 'object':
+        data.navigation = header.navigation;
         break;
 }
 
 if (data.navigation) {
-    data.navigation.id = locals.navigationId || uniqueId('navigation');
+    data.navigation.id = header.navigationId || uniqueId('navigation');
     hasMenu = true;
 }
 
@@ -114,4 +113,4 @@ if (hasNavbar) data.navbar = navbar;
 
 %>
 
-<%- include('../../template/ejs/header', data); %>
+<%- include('../../template/ejs/header', {header: data}); %>

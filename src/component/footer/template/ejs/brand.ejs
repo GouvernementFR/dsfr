@@ -1,13 +1,25 @@
+<%#
+# paramètres footer brand
+
+* footer.brand.logo.title (string, required) : titre du logo bloc marque
+* footer.operator (object, optional) : Paramètres du logo operator
+** footer.operator.src (string, required) : lien du logo operator
+** footer.operator.alt (string, recommanded) : texte alternatif du logo operator
+
+%>
+<% let footer = locals.footer || {} %>
+<% let brand = footer.brand || {} %>
+
 <div class="<%= prefix %>-footer__brand <%= prefix %>-enlarge-link" >
-	<% if (!locals.operator) { %>
+	<% if (!footer.operator) { %>
 		<a href="/" title="Retour à l’accueil">
 	<% } %>
-			<%- include( '../../../logo/template/ejs/logo', locals.brand.logo); %>
-	<% if (!locals.operator) { %>
+			<%- include( '../../../logo/template/ejs/logo', {logo: brand.logo}); %>
+	<% if (!footer.operator) { %>
 		</a>
 	<% } else { %>
 		<a class="<%= prefix %>-footer__brand-link" href="/" title="Retour à l’accueil">
-			<%- include('../../../../core/template/ejs/media/responsive-img.ejs', { ...locals.operator, classes: [prefix + '-footer__logo']}); %>
+			<%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: { ...footer.operator, classes: [prefix + '-footer__logo']}}); %>
 		</a>
 	<% } %>
 </div>

@@ -33,7 +33,6 @@ if (fieldset.valid != undefined) describedby.push(fieldset.id + '-desc-valid');
 
 const legendClasses = [`${prefix}-fieldset__legend`];
 if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
-
 %>
 
 <div class="<%= prefix %>-form-group">
@@ -45,8 +44,8 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
         <div class="<%= prefix %>-fieldset__content">
             <%
                 let path;
-                for (let i = 0; i < elements.length; i++) {
-                    let element = elements[i];
+                for (let i = 0; i < fieldset.elements.length; i++) {
+                    let element = fieldset.elements[i];
                     // element.data.error = undefined;
                     // element.data.valid = undefined;
                     // element.data.hint = undefined;

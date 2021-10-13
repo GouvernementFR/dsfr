@@ -1,5 +1,17 @@
+<%#
+# paramètres footer content
+
+* footer.content.desc (string, required) : Contenu text/html du bloc de contenu
+* footer.content.links (array, required) : Tableau de liens
+** footer.content.links.label (string, required) : label du lien
+
+%>
+<% let footer = locals.footer || {} %>
+<% let content = footer.content || {} %>
+<% let links = content.links || [] %>
+
 <div class="<%= prefix %>-footer__content" >
-	<p class="<%= prefix %>-footer__content-desc"><%- desc %></p>
+	<p class="<%= prefix %>-footer__content-desc"><%- content.desc %></p>
 	<ul class="<%= prefix %>-footer__content-list">
 		<%
 			for (let i = 0; i < links.length; i++) {

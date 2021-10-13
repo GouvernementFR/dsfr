@@ -1,3 +1,6 @@
-<% let id = uniqueId('modal'); %>
-<%- include('../../template/ejs/btn.ejs', { id: id, size: undefined }) %>
-<%- include('../../template/ejs/modal.ejs', { id: id, closeButton: {label:undefined, size:undefined} }) %>
+<%
+  let modal = locals.modal || {};
+  let id = uniqueId('modal');
+%>
+<%- include('../../template/ejs/btn.ejs', {modal: { ...modal, id: id }}) %>
+<%- include('../../template/ejs/modal.ejs', {modal: { ...modal, id: id }}) %>
