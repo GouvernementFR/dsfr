@@ -1,25 +1,25 @@
 # Contribuer au Système de Design de l'État
 
-Avant de commencer à utiliser le Système de Design de l'État (ci-après, **DSFR**) , veillez à prendre connaissance 
+Avant de commencer à utiliser le Système de Design de l'État (ci-après, **DSFR**) , veillez à prendre connaissance
 des [conditions générales d'utilisations](doc/legal/cgu.md).
 Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des documents relatifs à la [cession des droits d'auteur](doc/legal/cession.md) et du [certificat garantissant l'originalité](doc/legal/cgod.md) de votre contribution.
 
 ## Installation
 ### Installation locale
-Le DSFR est basé sur une architecture NodeJS, et utilise principalement Yarn. 
+Le DSFR est basé sur une architecture NodeJS, et utilise principalement Yarn.
 
 Afin de pouvoir commencer à développer et contribuer au DSFR, assurez-vous tout d'abord de faire un fork du projet depuis votre compte github (https://help.github.com/articles/fork-a-repo/)
- 
+
 Il suffit ensuite de cloner votre fork, en téléchargeant les sources depuis le bouton “clone” de github, ou via un terminal avec commande :
-`git clone https://github.com/VOTRE_NOM_UTILISATEUR_GITHUB/dsfr-dev`
+`git clone https://github.com/VOTRE_NOM_UTILISATEUR_GITHUB/dsfr`
 
 
-La branche `**dev**` est la principale branche de travail - la branche main correspondant aux versions de productions livrées aux utilisateurs. 
+La branche `**dev**` est la principale branche de travail - la branche main correspondant aux versions de productions livrées aux utilisateurs.
 Il est donc necessaire de créer de nouvelles branches de travail pour l'ajout et la modification de packages depuis la branche **dev**. (Voir la section Utilisation > Git, pour le fontionnement détaillé).
 
 Afin de télécharger les dépendances, compiler les css/js et générer le dossier public contenant toutes les pages d'examples, utilisez respectivement :
-- `yarn` ou `npm i` 
-- `yarn release` 
+- `yarn` ou `npm i`
+- `yarn release`
 
 
 ### Packages
@@ -168,13 +168,13 @@ Ou, plus spécifiquement avec `yarn build`, le paramètre `-h` de yarn build per
 ### Git
 
 #### Branches
-Afin de travailler sur un nouveau package, ou un correctif d'un package existant, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`. 
+Afin de travailler sur un nouveau package, ou un correctif d'un package existant, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`.
 git checkout -b prefixe/ma-branche dev
 
 ##### Nommage des branches
-Afin d'organiser et d'identifier rapidement la nature du contenu des branches, il est nécessaire de prefixer les branches : 
+Afin d'organiser et d'identifier rapidement la nature du contenu des branches, il est nécessaire de prefixer les branches :
 feature/nom-de-la-branche pour les nouvelles fonctionnalités ou nouveaux composants.
-fix/nom-de-la-branche pour les correctifs apportés sur des fonctionnalités ou composants existants. 
+fix/nom-de-la-branche pour les correctifs apportés sur des fonctionnalités ou composants existants.
 
 
 #### Commits
@@ -200,7 +200,7 @@ Les messages de commits sont écrits en français (exeption faite des mots rése
 Exemple de commit simple :
 
 ```
-feat: ajout du composant Alerte 
+feat: ajout du composant Alerte
 ```
 
 Exemple de commit avec `scope`  le nom du composant ou de la f, description et `BREAKING CHANGE` footer
@@ -210,7 +210,7 @@ fix(core): maj mixin: ancien-nom devient nouveau-nom
 BREAKING CHANGE: nouveau nom pour la mixin ....
 ```
 
-***Note*** : Un hook de pre-commit est utilisé pour vérifier la validité du conventional commit. 
+***Note*** : Un hook de pre-commit est utilisé pour vérifier la validité du conventional commit.
 Afin d'éviter cette validation, il est possible de passer un paramètre --no-verify lors du commit
 
 ```
@@ -221,7 +221,7 @@ git commit -m "build: add webpack" --no-verify
 
 Afin de garantir l'originalité des contributions, nous demandons aux contributeurs de signer leurs commits et/ou de nous faire parvenir le [certificat de garantie de l'origine du développeur](doc/legal/cgod.md) signé.
 
-Pour signer un commit : 
+Pour signer un commit :
 
 ```
 git commit --signoff (ou git commit -s)
@@ -238,13 +238,13 @@ Avant de proposer une pull request , assurez vous que vous respectez la garantie
 Toute ‘pull request’ ne respectant pas ces pré-requis sera systématiquement rejetée.
 
 Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR).
-Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github (https://github.com/GouvernementFR/dsfr-dev/pulls ) ou github cli (gh).
+Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github (https://github.com/GouvernementFR/dsfr/pulls ) ou github cli (gh).
 La pull-request suit les même règles de nommage décrites précédemment (branches, commits), à savoir le conventional commits.
 Une description détaillant le problème à résoudre, la façon dont la contribution résout le problème et toute autre information utile à la revue de code est fortement conseillée!
 
-Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR). 
-Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github  (https://github.com/GouvernementFR/dsfr-dev/pulls) ou github cli (gh).
-La pull-request suit les même règles de nommage décrites précédemment (branches, commits) 
+Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR).
+Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github  (https://github.com/GouvernementFR/dsfr/pulls) ou github cli (gh).
+La pull-request suit les même règles de nommage décrites précédemment (branches, commits)
 
 ## Compilation
 La compilation des sources permet de créer un dossier `public` à la racine du projet, contenant les dossiers `dist`, `src`, et `example`.

@@ -1,4 +1,5 @@
 const { copyDir, copyFile } = require('../utilities/file');
+const { createFile } = require('../utilities/file');
 const root = require('../utilities/root');
 // const { getPackages } = require('../utilities/config');
 
@@ -72,4 +73,9 @@ const deployFiles = () => {
   copyDir(root('example'), root('public/example'));
 };
 
-module.exports = { copyFiles, copyImages, copyAssets, deployFavicons, deployFiles };
+const deployRobots = () => {
+  const content = 'User-agent: \nDisallow: /';
+  createFile(root('public/robots.txt'), content);
+};
+
+module.exports = { copyFiles, copyImages, copyAssets, deployFavicons, deployFiles, deployRobots };

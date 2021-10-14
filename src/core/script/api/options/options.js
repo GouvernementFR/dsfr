@@ -19,7 +19,7 @@ class Options {
     this.preventManipulation = false;
   }
 
-  configure (settings, start) {
+  configure (settings = {}, start) {
     this.startCallback = start;
     if (settings.verbose === true) inspector.level = 0;
     this.mode = settings.mode || Modes.AUTO;

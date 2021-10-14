@@ -1,14 +1,9 @@
 {
-  "name": "@gouvfr/dsfr-dev",
+  "name": "@gouvfr/dsfr",
   "version": "1.1.0",
   "description": "Système de Design de l'Etat - DSFR",
-  "repository": "git@github.com:GouvernementFR/dsfr-dev.git",
+  "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
-  "private": true,
-  "workspaces": [
-    "packages/*",
-    "public"
-  ],
   "config": {
     "prefix": "fr",
     "namespace": "dsfr",
@@ -25,6 +20,15 @@
     "deploy": "node tool/tool.js deploy",
     "serve": "browser-sync start --server --port 8080 --startPath example/"
   },
+  "files": [
+    "/dist",
+    "/src",
+    "/example",
+    "/doc",
+    "/.config",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -59,11 +63,10 @@
     "onchange": "^7.0.2",
     "pa11y": "^5.3.0",
     "path": "^0.12.7",
-    "perfectionist": "^2.4.0",
     "postcss": "^8.2.4",
     "postcss-banner": "^4.0.0",
     "postcss-discard-duplicates": "^5.0.1",
-    "postcss-prettify": "^0.3.4",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
     "prettier": "^2.0.5",
     "replace-in-file": "^6.1.0",
     "rollup": "^2.37.1",
@@ -86,8 +89,5 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "dependencies": {
-    "postcss-combine-duplicated-selectors": "^10.0.3"
   }
 }

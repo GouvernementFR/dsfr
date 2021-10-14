@@ -1,6 +1,7 @@
 import { Collection } from '../utilities/collection.js';
 import state from '../state.js';
 import ns from '../utilities/namespace.js';
+import { querySelectorAllArray } from '../utilities/query-selector';
 
 class Registration {
   constructor (selector, InstanceClass, creator) {
@@ -42,7 +43,7 @@ class Registration {
     const nodes = [];
     if (node.matches && node.matches(this.selector)) nodes.push(node);
     // eslint-disable-next-line no-useless-call
-    if (!nonRecursive && node.querySelectorAll && node.querySelector(this.selector)) nodes.push.apply(nodes, [...node.querySelectorAll(this.selector)]);
+    if (!nonRecursive && node.querySelectorAll && node.querySelector(this.selector)) nodes.push.apply(nodes, querySelectorAllArray(node, this.selector));
     return nodes;
   }
 

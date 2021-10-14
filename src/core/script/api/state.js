@@ -27,12 +27,15 @@ class State {
   set isActive (value) {
     if (value === this._isActive) return;
     this._isActive = value;
+    const values = Object.keys(this.modules).map((e) => {
+      return this.modules[e];
+    });
     if (value) {
-      for (const module of Object.values(this.modules)) {
+      for (const module of values) {
         module.activate();
       }
     } else {
-      for (const module of Object.values(this.modules)) {
+      for (const module of values) {
         module.deactivate();
       }
     }
