@@ -1,17 +1,17 @@
 <%#
 # paramètres Quote
 
-* size (String, optional): Taille du texte de citation
+* quote.size (string, optional): Taille du texte de citation
 
-* text (string, optional) : Texte de la citation
+* quote.text (string, optional) : Texte de la citation
 
-* image (object, optional) : {img, alt} de l'image
+* quote.image (object, optional) : {img, alt} de l'image
 
-* href (String, optional): url du texte original cité
+* quote.href (string, optional): url du texte original cité
 
-* Author (String, optional): Nom de l'auteur
+* quote.author (string, optional): Nom de l'auteur
 
-* sources (Array, optional): Tableau de textes de détail
+* quote.sources (array, optional): Tableau de textes de détail
 
 %>
 
@@ -53,7 +53,7 @@
 
     <% if (image) { %>
       <div class="<%= prefix %>-quote__image">
-          <%- include('../../../../core/template/ejs/media/responsive-img.ejs', image); %>
+          <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: image}); %>
       </div>
     <% } %>
   </figcaption>

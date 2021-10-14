@@ -1,14 +1,15 @@
 <%
+    let input = locals.input || {}
     let data = JSON.parse(include('../../../form/example/sample/data'));
-
-    data.type = locals.type || 'text';
-    data.label = locals.label || 'Label champs de saisie';
+    data = {...input, ...data};
+    data.type = input.type || 'text';
+    data.label = input.label || 'Label champs de saisie';
     data.addon = true;
-    data.button = locals.button || {label:'Envoyer', type: 'submit'};
+    data.button = input.button || {label:'Envoyer', type: 'submit'};
 %>
-<% if (locals.group === true) { %>
-<%- include('../../template/ejs/input-group', data); %>
+<% if (input.group === true) { %>
+<%- include('../../template/ejs/input-group', {input:data}); %>
 <% }
 else { %>
-<%- include('../../template/ejs/input', data); %>
+<%- include('../../template/ejs/input', {input:data}); %>
 <% } %>

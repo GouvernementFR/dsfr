@@ -58,7 +58,6 @@ let brand = header.brand || {};
             <div class="<%= prefix %>-header__operator">
                 <% if (position === 'operator') { %><%- link %><% } %>
                 <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: brand.operator}); %>
-                <% console.log(brand.operator) %>
                 <% if (position === 'operator') { %><%- '</a>' %><% } %>
             </div>
         <% } %>

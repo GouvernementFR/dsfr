@@ -1,1 +1,1 @@
-<%- include('./input-text', { type : 'textarea'}); %>
+<%- include('./input-text', {input: { ...locals.input || {}, type : 'textarea'}}); %>

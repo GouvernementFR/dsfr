@@ -1,65 +1,71 @@
 <%#
 # paramètres select
 
-* id (string, required) : id du label et du select, sert également à construire les ids des messages valid, error et hint
+* select.id (string, required) : id du label et du select, sert également à construire les ids des messages valid, error et hint
 
-* label (string, required) : label
+* select.label (string, required) : label
 
-* options (array, required) : options du select, un array d'objets avec :
+* select.options (array, required) : options du select, un array d'objets avec :
   * value : attribut value de l'option
   * label : label de l'option
 
-* placeholder (string, optionnal) : text du placeholder du select
+* select.placeholder (string, optionnal) : text du placeholder du select
 
-* valid (string, optionnal) : message de validation
+* select.valid (string, optionnal) : message de validation
 
-* error (string, optionnal) : message d'erreur
+* select.error (string, optionnal) : message d'erreur
 
-* hint (string, optionnal) : message d'aide
+* select.hint (string, optionnal) : message d'aide
 
-* required (boolean, optionnal)
+* select.required (boolean, optionnal)
 
-* disabled (boolena, optionnal)
+* select.disabled (boolena, optionnal)
 
-* attributes (object, optionnal) : attributs spécifiques à rajouter sur le select
+* select.attributes (object, optionnal) : attributs spécifiques à rajouter sur le select
+
+* select.attributes (object, optionnal) : classes spécifiques à rajouter sur le select
+
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let selectClasses = [prefix + '-select'];
- let selectAttrs = locals.attributes || {};
- let describedby = [];
+ let select = locals.select || {};
 
- if (locals.valid !== undefined) {
+ let selectClasses = select.classes || [];
+ let selectAttrs = select.attributes || {};
+ let describedby = [];
+ selectClasses.push(prefix + '-select');
+
+ if (select.valid !== undefined) {
    selectClasses.push(prefix + '-select--valid');
-   describedby.push(id + '-desc-valid');
+   describedby.push(select.id + '-desc-valid');
  }
 
- if (locals.error !== undefined) {
+ if (select.error !== undefined) {
    selectClasses.push(prefix + '-select--error');
-   describedby.push(id + '-desc-error');
+   describedby.push(select.id + '-desc-error');
  }
 
  if (describedby.length > 0) selectAttrs['aria-describedby'] = describedby.join(' ');
 
- if (locals.required === true) selectAttrs['required'] = '';
- if (locals.disabled === true) selectAttrs['disabled'] = '';
+ if (select.required === true) selectAttrs['required'] = '';
+ if (select.disabled === true) selectAttrs['disabled'] = '';
  %>
 
-<%- include('../../../form/template/ejs/label'); %>
+<%- include('../../../form/template/ejs/label', {label:select}); %>
 
-<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= id %>" name="<%= id %>">
- <% if (locals.placeholder != undefined) { %>
- <option value="" selected disabled hidden><%= placeholder %></option>
+<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.id %>">
+ <% if (select.placeholder != undefined) { %>
+ <option value="" selected disabled hidden><%= select.placeholder %></option>
  <% } %>
 
  <%
-  for (let i = 0; i < options.length; i++) {
-   let option = options[i];
+  for (let i = 0; i < select.options.length; i++) {
+   let option = select.options[i];
  %>
  <option value="<%= option.value %>"><%= option.label %></option>
  <% } %>
 </select>
 
-<%- include('../../../form/template/ejs/message'); %>
+<%- include('../../../form/template/ejs/message', {message:select}); %>
