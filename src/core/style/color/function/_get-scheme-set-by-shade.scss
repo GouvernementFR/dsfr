@@ -1,0 +1,17 @@
+////
+/// Core Function : Color get scheme set by shade
+/// @group core
+////
+
+/// Obtenir une combinaison de couleur
+/// @access private
+/// @param {String} $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white)
+/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @return {String} Retourne la combinaison de couleur correspondante
+@function _get-scheme-set-by-shade($shade, $family, $tint) {
+  $families: map-get($scheme-sets, $family);
+  $shades: map-get($families, $tint);
+  $set-names: map-get($shades, $shade);
+  @return (map-get($scheme-options, nth($set-names, 1)) map-get($scheme-options, nth($set-names, 2)));
+}

@@ -3,9 +3,5 @@
 /// @group scheme
 ////
 
-/**
- * Définition des customs properties de combinaisons de couleur
- */
-@include build-properties();
-
-// @import 'modules/switch-theme';
+@import 'module/sets';
+@import 'module/decisions';

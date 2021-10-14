@@ -4,8 +4,8 @@
 ////
 
 #{ns(btn)} {
-  @include scheme-element-bg-color(high primary, true);
-  @include scheme-element-text-color(inverted neutral);
+  @include scheme-element-bg-color(action-high, blue-france);
+  @include scheme-element-text-color(inverted, white);
 
   // @include disabled-link(true, true);
 
@@ -13,8 +13,8 @@
   // Outline variant
   &--secondary {
     @include scheme-element-bg-transparent(true);
-    @include scheme-element-text-color(title primary);
-    @include scheme-element-box-shadow-color(high primary);
+    @include scheme-element-text-color(action, blue-france);
+    @include scheme-element-box-shadow-color(action-high, blue-france);
 
     /*
     @include disabled-link(true, false, true) {

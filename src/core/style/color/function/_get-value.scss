@@ -5,11 +5,12 @@
 
 /// Obtenir la valeur de la couleur (surchargée dans schemes)
 /// @access private
-/// @param {String} $set - combinaison de couleur obtenue par la fonction get-scheme-set
-/// @param {String} $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white)
+/// @param {String} $part - typologie de l'élément recevant la couleur (background / text / border)
+/// @param {String} $token - token de décision
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
-/// @param {String} $variation - couleur de base, hover ou active
+/// @param {String}  $space - espace de la couleur (hex, hue, saturation, lightness)
 /// @return {String} Retourne la couleur correspondante
-@function _get-value($set, $shade, $tint, $variation: base) {
-  @return _get-color($set, light, $variation);
+@function _get-value($part, $token, $tint) {
+  $set: _get-scheme-set($part, $token, $tint);
+  @return _get-color($set, light, hex);
 }

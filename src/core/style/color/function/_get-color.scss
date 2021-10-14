@@ -7,19 +7,23 @@
 /// @access private
 /// @param {String} $set - combinaison de couleur obtenue par la fonction get-scheme-set
 /// @param {String} $theme - theme de la couleur (light, dark)
-/// @param {String} $variation - couleur de base, hover ou active
+/// @param {String} $space - espace de la couleur (hex, hue, saturation, lightness)
 /// @return {String} Retourne la couleur correspondante
-@function _get-color($set, $theme: light, $variation: base) {
-  $t: 1;
+@function _get-color($set, $theme: light, $space: hex) {
+  $color: nth($set, 1);
   @if $theme == dark {
-    $t: -1;
+    $color: nth($set, 2);
   }
-  $variations: nth($set, $t);
-
-  $v: index((base, hover, active), $variation);
-  @if $variation != base and $theme == dark and length($variations) > 3 {
-    $v: $v + 2;
+  @if $space == hex {
+    @return nth($color, 1);
   }
-
-  @return nth($variations, $v);
+  @else if $space == hue {
+    @return nth($color, 2);
+  }
+  @else if $space == saturation {
+    @return nth($color, 3);
+  }
+  @else if $space == lightness {
+    @return nth($color, 4);
+  }
 }

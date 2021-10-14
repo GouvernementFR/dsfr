@@ -1,0 +1,14 @@
+////
+/// Scheme Function : get decision prop
+/// @group scheme
+////
+
+/// Nom de la custom property
+/// @access private
+/// @param {String} $part - typologie de l'élément recevant la couleur (background / text / border)
+/// @param {String} $token - token de décision
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @return {String} Retourne le nom de la custom property
+@function _get-decision-prop($part, $token, $tint) {
+  @return --#{$part}-#{$token}-#{$tint};
+}

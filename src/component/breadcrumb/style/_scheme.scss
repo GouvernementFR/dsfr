@@ -4,13 +4,13 @@
 ////
 
 #{ns(breadcrumb)} {
-  @include scheme-element-text-color(mention neutral);
+  @include scheme-element-text-color(mention,neutral);
 
   &__button {
     @include scheme-element-bg-transparent(false);
   }
 
   &__link[aria-current] {
-    @include scheme-element-text-color(default neutral);
+    @include scheme-element-text-color(default, neutral);
   }
 }

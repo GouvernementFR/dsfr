@@ -3,6 +3,57 @@
 /// @group core
 ////
 
-@mixin _include-prop($prop, $set, $value, $shade, $tint, $variation) {
-  #{$prop}: _replace_color($value, _get-value($set, $shade, $tint, $variation), false);
+@mixin _include-prop($prop, $part, $token, $tint, $value) {
+  #{$prop}: _replace_color($value, _get-value($part, $token, $tint), false);
+
+  @if $part == background {
+    @include _include-hover-prop($token, $tint);
+  }
+}
+
+@mixin _include-hover-prop-by-theme($set, $theme: light) {
+  $hue: _get-color($set, $theme, hue);
+  $saturation: _get-color($set, $theme, saturation);
+  $lightness: _get-color($set, $theme, lightness);
+
+  --ah-h: #{$hue};
+  --ah-s: #{$saturation};
+  --ah-lb: #{$lightness};
+
+  @if $theme == light {
+    @if $lightness > 35% {
+      --ah-lm: -25%;
+    }
+    @else {
+      --ah-lm: 25%;
+    }
+  }
+  @else {
+    @if $lightness < 70% {
+      --ah-lm: 25%;
+    }
+    @else {
+      --ah-lm: -25%;
+    }
+  }
+}
+
+@mixin _include-hover-prop($token, $tint) {
+  $set: _get-scheme-set(background, $token, $tint);
+  @include _include-hover-prop-scheme($set);
+}
+
+@mixin _include-hover-prop-scheme($set) {
+  @include _include-hover-prop-by-theme($set);
+}
+
+@mixin _include-transparent-hover-prop-inherit() {
+  --ah-h: inherit;
+  --ah-s: inherit;
+  --ah-lb: inherit;
+  --ah-lm: inherit;
+}
+
+@mixin _include-transparent-hover-prop() {
+  @include _include-transparent-hover-prop-inherit();
 }

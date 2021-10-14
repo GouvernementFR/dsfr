@@ -5,7 +5,9 @@
 
 @import 'function/replace-color';
 @import 'function/get-scheme-shade';
-@import 'function/get-tint';
+@import 'function/get-neutral-tint';
+@import 'function/get-family';
+@import 'function/get-scheme-set-by-shade';
 @import 'function/get-scheme-set';
 @import 'function/get-color';
 @import 'function/get-value';

@@ -1,0 +1,8 @@
+////
+/// Core Scheme : Typography
+/// @group core
+////
+
+@include title-selector {
+  @include scheme-element-text-color(title, neutral);
+}
