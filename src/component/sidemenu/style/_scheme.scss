@@ -16,7 +16,7 @@
     @include scheme-element-border-color(g300, true, bottom);
 
     @include respond-from(md) {
-      @include scheme-element-border-color(t-plain, true, bottom);
+      border: 0;
     }
   }
 
@@ -24,13 +24,11 @@
     @include scheme-element-border-color(g300, true, bottom);
 
     @include respond-from(md) {
-      @include scheme-element-border-color(t-plain, true, bottom);
+      border: 0;
     }
 
     &:last-child {
-      #{ns(sidemenu__btn)} {
-        @include scheme-element-border-color(t-plain, true, bottom);
-      }
+      border: 0;
     }
 
     &--active {
@@ -42,6 +40,10 @@
           background-color: currentColor;
         }
       }
+    }
+
+    #{ns(sidemenu__item)} #{ns(sidemenu__item)} {
+      border: 0;
     }
   }
 
