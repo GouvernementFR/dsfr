@@ -1,0 +1,25 @@
+////
+/// Core Color Scheme : Decisions
+/// @group core
+////
+
+@each $part, $tokens in $scheme-decisions {
+  @each $token, $families in $tokens {
+    @each $family, $shade in $families {
+      @each $tint, $shades in map-get($scheme-sets, $family) {
+        @if map-has-key($shades, $shade) {
+          $selector: '#{$part}-#{$token}--#{$tint}';
+          #{ns($selector)} {
+            @if $part == background {
+              @include scheme-element-bg-color($token, $tint, true);
+            }
+            @else if $part == text {
+              @include scheme-element-text-color($token, $tint, true);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

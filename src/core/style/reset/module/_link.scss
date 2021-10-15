@@ -22,14 +22,6 @@
     @include link-blank;
   }
 
-  #{ns(enlarge-link)} {
-    position: relative;
-
-    a {
-      @include enlarge-link;
-    }
-  }
-
   #{ns(raw-link)} {
     @include disable-link-style;
   }

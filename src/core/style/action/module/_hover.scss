@@ -8,8 +8,7 @@
     // background-size: 2048px 2048px;
     // background-position: 50% 50%;
 
-    --ah-l: calc(var(--ah-lb) + var(--ah-lm));
-    --hover-hsla: #{css-hsla(var(--ah-h), var(--ah-s), var(--ah-l), var(--ah-a))};
+    --hover-hsla: #{css-hsl-alpha(var(--hsl), var(--ah-a))};
 
     &:hover,
     &:active {

@@ -8,20 +8,20 @@ $COLOR: unquote('$COLOR');
 
 $ACCENT: none;
 
-@mixin _scheme-element($prop, $part, $token, $tint, $value: $COLOR) {
+@mixin _scheme-element($prop, $part, $token, $tint, $value: $COLOR, $important: false) {
   @if $tint == neutral {
     $tint: _get-neutral-tint($part, $token);
   }
 
-  @include _include-prop($prop, $part, $token, $tint, $value);
+  @include _include-prop($prop, $part, $token, $tint, $value, $important);
 }
 
 /// Ajout d'une couleur de background sur un élément
 /// @access public
 /// @param {String} $token - token de décision
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
-@mixin scheme-element-bg-color($token, $tint) {
-  @include _scheme-element(background-color, background, $token, $tint);
+@mixin scheme-element-bg-color($token, $tint, $important: false) {
+  @include _scheme-element(background-color, background, $token, $tint, $COLOR, $important);
 }
 
 @mixin scheme-element-bg-transparent($hover: false) {
@@ -35,16 +35,16 @@ $ACCENT: none;
 /// @access public
 /// @param {String} $token - token de décision
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
-@mixin scheme-element-text-color($token, $tint) {
-  @include _scheme-element(color, text, $token, $tint);
+@mixin scheme-element-text-color($token, $tint, $important: false) {
+  @include _scheme-element(color, text, $token, $tint, $COLOR, $important);
 }
 
 /// Ajout d'une couleur de fill sur un élément
 /// @access public
 /// @param {String} $token - token de décision
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
-@mixin scheme-element-fill-color($token, $tint) {
-  @include _scheme-element(fill, background, $token, $tint);
+@mixin scheme-element-fill-color($token, $tint, $important: false) {
+  @include _scheme-element(fill, background, $token, $tint, $COLOR, $important);
 }
 
 /// Ajout d'une couleur de border sur un élément
@@ -54,12 +54,12 @@ $ACCENT: none;
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés de border
 /// @param {String} $side - le côté affecté. valeurs: top, right, bottom, left
-@mixin scheme-element-border-color($token, $tint, $value:1px solid $COLOR, $side:null) {
+@mixin scheme-element-border-color($token, $tint, $value:1px solid $COLOR, $side:null, $important: false) {
   $prop:border;
   @if $side != null {
     $prop:border-#{$side};
   }
-  @include _scheme-element($prop, border, $token, $tint, $value);
+  @include _scheme-element($prop, border, $token, $tint, $value, $important);
 }
 
 /// Ajout d'une couleur d'outline sur un élément
@@ -68,8 +68,8 @@ $ACCENT: none;
 /// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés d'outline
-@mixin scheme-element-outline-color($token, $tint, $value:1px solid $COLOR) {
-  @include _scheme-element(outline, border, $token, $tint, $value);
+@mixin scheme-element-outline-color($token, $tint, $value:1px solid $COLOR, $important: false) {
+  @include _scheme-element(outline, border, $token, $tint, $value, $important);
 }
 
 /// Ajout d'une couleur de box-shadow sur un élément
@@ -78,6 +78,6 @@ $ACCENT: none;
 /// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @param {List} $value - définition des propriétés de box-shadow
-@mixin scheme-element-box-shadow-color($token, $tint, $value:inset 0 0 0 1px $COLOR) {
-  @include _scheme-element(box-shadow, border, $token, $tint, $value);
+@mixin scheme-element-box-shadow-color($token, $tint, $value:inset 0 0 0 1px $COLOR, $important: false) {
+  @include _scheme-element(box-shadow, border, $token, $tint, $value, $important);
 }

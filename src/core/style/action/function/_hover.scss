@@ -12,6 +12,10 @@
   @return unquote('hsla(#{$hue}, #{$saturation}, #{$lightness}, #{$alpha})');
 }
 
+@function css-hsl-alpha($hsl, $alpha) {
+  @return unquote('hsla(#{$hsl}, #{$alpha})');
+}
+
 @function hover-hsla-legacy ($setting, $alpha) {
   $hue: map-get($setting, hue);
   $saturation: map-get($setting, saturation);

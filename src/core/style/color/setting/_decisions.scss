@@ -1,5 +1,5 @@
 ////
-/// Core Colors Settings : Decisions
+/// Core Setting : Color decisions
 /// @group core
 ////
 
@@ -18,6 +18,8 @@ $scheme-decisions: (
     ),
     contrast: (
       neutral: lighter,
+      primary: lighter,
+      accent: lighter,
       system: strong,
     ),
     action-high: (

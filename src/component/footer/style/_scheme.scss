@@ -8,50 +8,48 @@
   // @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
 
   // @wip test en box shadow
-  @include scheme-element-box-shadow-color(default primary, 0 -2px 0 0 $COLOR);
-  @include scheme-element-border-color(thick neutral, 0 1px 0 0 $COLOR);
+  @include scheme-element-box-shadow-color(default, blue-france, 0 -2px 0 0 $COLOR);
+  @include scheme-element-border-color(thick, neutral, 0 1px 0 0 $COLOR);
 
   &__content-link {
-    @include scheme-element-text-color(title neutral);
+    @include scheme-element-text-color(title, neutral);
   }
 
   &__top {
-    @include scheme-element-bg-color(accent galet);
+    @include scheme-element-bg-color(accent, brown-galet);
   }
 
   &__top-link {
-    @include scheme-element-text-color(mention neutral);
+    @include scheme-element-text-color(mention, neutral);
   }
 
   &__bottom {
     // @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
-    @include scheme-element-box-shadow-color(default neutral, 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default, neutral, 0 -1px 0 0 $COLOR);
   }
 
   &__bottom-item {
     @include before {
-      @include scheme-element-box-shadow-color(default neutral); // g400
+      @include scheme-element-box-shadow-color(default, neutral); // g400
     }
   }
 
   &__bottom-link {
-    @include scheme-element-text-color(mention neutral);
-    @include scheme-element-bg-color-transparent(false);
+    @include scheme-element-text-color(mention, neutral);
+    // @include scheme-element-bg-color-transparent(false);
   }
 
   &__bottom-copy {
-    @include scheme-element-text-color(mention neutral);
+    @include scheme-element-text-color(mention, neutral);
   }
 
   &__partners {
-    @include margin-top(4v);
-    @include padding-top(4v);
     // @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
-    @include scheme-element-box-shadow-color(default neutral, 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default, neutral, 0 -1px 0 0 $COLOR);
 
 
     a {
-      background: $white; // @TODO
+      background: white; // @TODO
     }
   }
 }

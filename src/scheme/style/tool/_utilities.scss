@@ -3,12 +3,12 @@
 /// @group core
 ////
 
-@mixin _include-hover-prop-scheme($set) {
+@mixin _include-hover-prop-scheme($set, $important) {
   $selector: &;
   @at-root {
     @include theme-selector(dark) {
       #{$selector} {
-        @include _include-hover-prop-by-theme($set, dark);
+        @include _include-hover-prop-by-theme($set, $important, dark);
       }
     }
   }

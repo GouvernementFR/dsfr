@@ -8,9 +8,6 @@
   $lightness: map-get($default, lightness);
 
   :root {
-    --ah-h: #{map-get($default, hue)};
-    --ah-s: #{map-get($default, saturation)};
-    --ah-lb: #{map-get($lightness, base)};
-    --ah-lm: #{map-get($lightness, modifier)};
+    --hsl: #{map-get($default, hue)}, #{map-get($default, saturation)}, #{map-get($lightness, base) + map-get($lightness, modifier)};
   }
 }

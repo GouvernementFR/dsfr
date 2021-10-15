@@ -3,26 +3,28 @@
 /// @group alert
 ////
 
+$value: 'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR';
+
 #{ns(alert)} {
-  @include scheme-element-box-shadow-color(default, neutral, 'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+  @include scheme-element-box-shadow-color(default, neutral, $value);
 
   @include before {
     @include scheme-element-text-color(inverted, neutral);
   }
 
   &--info {
-    @include scheme-element-box-shadow-color(default, info,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default, info, $value);
   }
 
   &--error {
-    @include scheme-element-box-shadow-color(default, error,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default, error, $value);
   }
 
   &--success {
-    @include scheme-element-box-shadow-color(default, success,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default, success, $value);
   }
 
   &--warning {
-    @include scheme-element-box-shadow-color(default, warning,'inset 0 0 0 1px $COLOR, inset #{space(10v)} 0 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default, warning, $value);
   }
 }
