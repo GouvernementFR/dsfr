@@ -1,11 +1,11 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Navigation latérale de base', './sample/sidemenu', {modifier:''}, true, './layout'); %>
+<%- sample('Navigation latérale de base', './sample/sidemenu', {sidemenu: {modifier:''}}, true, './layout'); %>
 
-<%- sample('Navigation latérale sticky', './sample/sidemenu', {modifier:'sticky'}, true, './layout'); %>
+<%- sample('Navigation latérale sticky', './sample/sidemenu', {sidemenu: {modifier:'sticky'}}, true, './layout'); %>
 
-<%- sample('Navigation latérale sticky et sur toute la hauteur', './sample/sidemenu', {modifier:'full-height'}, true, './layout'); %>
+<%- sample('Navigation latérale sticky et sur toute la hauteur', './sample/sidemenu', {sidemenu: {modifier:'full-height'}}, true, './layout'); %>
 
-<%- sample('Navigation latérale bordure complète', './sample/sidemenu', {modifier:'full-border'}, true, './layout'); %>
+<%- sample('Navigation latérale bordure complète', './sample/sidemenu', {sidemenu: {modifier:'full-border'}}, true, './layout'); %>
 
-<%- sample('Navigation latérale à droite', './sample/sidemenu', {modifier:'right'}, true, './layout', {right:true}); %>
+<%- sample('Navigation latérale à droite', './sample/sidemenu', {sidemenu: {modifier:'right'}}, true, './layout', {right:true}); %>

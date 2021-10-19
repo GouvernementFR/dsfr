@@ -1,14 +1,24 @@
+<%#
+
+Paramètres de sidemenu btn
+
+* sidemenuItems (array, required) : tableau d'items de sidemenu
+
+%>
+
+<% let sidemenuItems = locals.sidemenuItems || []; %>
+
 <ul class="<%= prefix %>-sidemenu__list" >
     <%
-        for (let i = 0; i < items.length; i++) {
-            let item = items[i];
+        for (let i = 0; i < sidemenuItems.length; i++) {
+            let item = sidemenuItems[i];
             let classes = [prefix + '-sidemenu__item'];
 
             if (item.active) classes.push(prefix + '-sidemenu__item--active');
     %>
         <li <%- includeClasses(classes); %>>
 
-            <%- include('./' + item.type, item); %>
+            <%- include('./' + item.type, {sidemenuItem : item}); %>
         </li>
     <% } %>
 </ul>

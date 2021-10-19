@@ -1,16 +1,17 @@
 <%#
-# paramètres
+# paramètres summary item
 
-** href (string, required) : url ou ancre du lien
+** summaryItem.href (string, required) : url ou ancre du lien
 
-** label (string, required) : label du lien
+** summaryItem.label (string, required) : label du lien
 
-* list (array, optional) : Tableau de liens enfants (href, label)
+* summaryItem.list (array, optional) : Tableau de liens enfants (href, label)
 
 %>
+<% let summaryItem = locals.summaryItem || {}; %>
 <li>
-    <a class="<%= prefix %>-summary__link" href="<%- href %>"><%- label %></a>
-    <% if (locals.list) { %>
-        <%- include('./list', list); %>
+    <a class="<%= prefix %>-summary__link" href="<%- summaryItem.href %>"><%- summaryItem.label %></a>
+    <% if (summaryItem.list) { %>
+        <%- include('./list', {summaryList: summaryItem.list}); %>
     <% } %>
 </li>

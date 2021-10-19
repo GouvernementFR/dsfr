@@ -1,3 +1,14 @@
+<%#
+# paramètres navigation menu leader
+
+* menu.leader.title (string, required) : texte du texte leader
+
+* menu.leader.title (string, optional) : titre du texte leader
+
+* menu.leader.link (object, optional) : paramètres du lien du texte leader (voir composant link)
+
+%>
+
 <% let menu = locals.menu || {}; %>
 <% let leader = menu.leader || {}; %>
 

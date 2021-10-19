@@ -1,9 +1,17 @@
+<%#
+# paramètres navigation menu
+
+* menu.collapseId (string, required) : id du collapse
+
+* menu.items (array, required) : tableau d'éléments de navigation (voir : menu, mega-menu, link, btn)
+
+%>
+
 <% let menu = locals.menu || {}; %>
 <%- include('./btn', {menu:menu}); %>
 <div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= menu.collapseId %>" >
     <ul class="<%= prefix %>-menu__list" >
         <%
-            // locals.active = false;
             for (let i = 0; i < menu.items.length; i++) {
                 const item = menu.items[i];
                 item.isPage = true;

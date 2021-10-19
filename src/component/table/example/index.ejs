@@ -10,21 +10,21 @@ let dataCaptionBottom = { caption: 'Caption en bas', captionBottom: true, col: 6
 
 <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
     <div class="<%= prefix %>-col-12">
-        <%- sample('Tableau par défaut', './sample/table-default', data, true) %>
+        <%- sample('Tableau par défaut', './sample/table-default', {table:data}, true) %>
     </div>
     <div class="<%= prefix %>-col-12">
-        <%- sample('Tableau avec bordure', './sample/table-default', dataBordered, true) %>
+        <%- sample('Tableau avec bordure', './sample/table-default', {table:dataBordered}, true) %>
     </div>
     <div class="<%= prefix %>-col-12">
-        <%- sample('Tableau non scrollable', './sample/table-default', dataNoScroll, true) %>
+        <%- sample('Tableau non scrollable', './sample/table-default', {table:dataNoScroll}, true) %>
     </div>
     <div class="<%= prefix %>-col-12">
-        <%- sample('Tableau colonnes fixées (layout-fixed)', './sample/table-default', dataLayoutFixed, true) %>
+        <%- sample('Tableau colonnes fixées (layout-fixed)', './sample/table-default', {table:dataLayoutFixed}, true) %>
     </div>
     <div class="<%= prefix %>-col-12">
-        <%- sample('Tableau caption invisible', './sample/table-default', dataNoCaption, true) %>
+        <%- sample('Tableau caption invisible', './sample/table-default', {table:dataNoCaption}, true) %>
     </div>
     <div class="<%= prefix %>-col-12">
-        <%- sample('Tableau caption Bottom', './sample/table-default', dataCaptionBottom, true) %>
+        <%- sample('Tableau caption Bottom', './sample/table-default', {table:dataCaptionBottom}, true) %>
     </div>
 </div>

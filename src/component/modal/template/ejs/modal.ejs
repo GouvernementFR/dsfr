@@ -1,18 +1,22 @@
 <%#
-# paramètres de la modole
+# paramètres de la modale
 
-* id (string, required) : id de la modale
+* modal.id (string, required) : id de la modale
 
-* title (string, required) : titre de la modale
+* modal.title (string, required) : titre de la modale
 
-* body (string, required) : contenu de la modale
+* modal.body (string, required) : contenu de la modale
 
-* footer (string, optionnal) : contenu du footer de la modale, généralement des boutons
+* modal.footer (string, optional) : contenu du footer de la modale, généralement des boutons
 
-* size (string, optionnal) : modificateur de taille
+* modal.size (string, optional) : modificateur de taille
   valeurs :
   * sm : modale étroite
   * lg : modale large
+
+* modal.classes (array, optional) : classes supplémentaires sur la modale
+
+* modal.attributes (object, optional) : attributs supplémentaires sur la modale
 
   // TODO: revoir le template pour remettre les éléments de sample dans sample (footer en array d'objet de config de button par exemple)
 

@@ -1,3 +1,14 @@
+<%#
+# paramètres navigation mega-menu
+
+* menu.collapseId (string, required) : id du collapse
+
+* menu.leader (object: optional) : Paramètres du leader du mega-menu (voir leader)
+
+* menu.items (array, required) : tableau d'éléments de navigation
+
+%>
+
 <% let menu = locals.menu || {}; %>
 <%- include('./btn', {menu:menu}); %>
 <div class="<%= prefix %>-collapse <%= prefix %>-mega-menu" id="<%= menu.collapseId %>" >
@@ -12,7 +23,6 @@
             <% } %>
 
             <%
-                // menu.active = false;
                 let category;
                 for (let j = 0; j < menu.categories.length; j++) {
                   category = menu.categories[j];

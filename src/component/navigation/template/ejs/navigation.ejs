@@ -1,9 +1,13 @@
 <%#
 # paramètres navigation
 
-* id (string, required)
+* navigation.id (string, required) : id de la barre de navigation
 
-* items
+* navigation.items (array, required) : tableau d'éléments de navigation (voir : menu, mega-menu, link, btn)
+
+* navigation.classes (array, optional) : classes supplémentaires sur la navigation
+
+* navigation.attributes (object, optional) : attributs supplémentaires sur la navigation
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>

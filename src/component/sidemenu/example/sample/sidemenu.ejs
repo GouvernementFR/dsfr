@@ -1,5 +1,5 @@
 <%
-
+let sidemenu = locals.sidemenu || {};
 const models = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
 const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 
@@ -44,13 +44,13 @@ function menu(level, active) {
 
 let modifier;
 
-if (locals.modifier === 'right') {
+if (sidemenu.modifier === 'right') {
     modifier = '--right'
-} else if (locals.modifier === 'sticky') {
+} else if (sidemenu.modifier === 'sticky') {
     modifier = '--sticky'
-} else if (locals.modifier === 'full-height') {
+} else if (sidemenu.modifier === 'full-height') {
     modifier = '--sticky-full-height'
-} else if (locals.modifier === 'full-border') {
+} else if (sidemenu.modifier === 'full-border') {
     modifier = '--full-border'
 } else {
     modifier = ''
@@ -58,10 +58,10 @@ if (locals.modifier === 'right') {
 
 let data = {
     items: items(0),
-    modifier,
+    modifier: modifier,
     collapseId: uniqueId('sidemenu')
 }
 
 %>
 
-<%- include('../../template/ejs/sidemenu', data); %>
+<%- include('../../template/ejs/sidemenu', {sidemenu: data}); %>
