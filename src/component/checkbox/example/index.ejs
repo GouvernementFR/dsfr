@@ -2,6 +2,10 @@
 
 <%- sample('Case à cocher seule', './sample/checkbox.ejs', {id:'checkbox'}, true); %>
 
+<%- sample('Case à cocher seule, libellé en indice', './sample/checkbox.ejs', {id:'checkbox-sub', element: { label:'Label checkbox <sub>sub</sub>' }}, true); %>
+
+<%- sample('Case à cocher seule, libellé en exposant', './sample/checkbox.ejs', {id:'checkbox-sup', element: { label:'Label checkbox <sup>sup</sup>' }}, true); %>
+
 <%- sample('Case à cocher avec texte d‘aide', './sample/checkbox.ejs', {id:'checkbox-hint', hint:true}, true); %>
 
 <%- sample('Case à cocher seule, validée', './sample/checkbox.ejs', {id:'checkbox-valid', valid:true}, true); %>
@@ -29,5 +33,4 @@
 <%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique', './sample/checkboxes.ejs', {id:'checkboxes-hint-element', element: { hint:'Texte de description additionnel' }}, true); %>
 
 <%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique,  petite taille', './sample/checkboxes.ejs', {id:'checkboxes-hint-el-sm', size: 'sm', element: { hint:'Texte de description additionnel' }}, true); %>
-
 

@@ -12,7 +12,7 @@
  let labelAttrs = locals.labelAttributes || {};
  %>
 
-<label <%- includeClasses(labelClasses); %> for="<%= id %>" <%- includeAttrs(labelAttrs); %>><%= label %>
+<label <%- includeClasses(labelClasses); %> for="<%= id %>" <%- includeAttrs(labelAttrs); %>><%- label %>
   <% if (locals.hint != undefined) { %><%- include('./hint', {id: id + '-desc-hint'});%><% } %>
 </label>
 

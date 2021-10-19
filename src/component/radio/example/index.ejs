@@ -2,6 +2,10 @@
 
 <%- sample('Ensemble de boutons radio', './sample/radios.ejs', { id:'radio'}, true); %>
 
+<%- sample('Ensemble de boutons radio, libellé en indice', './sample/radios.ejs', { id:'radio-sub', element: { label:'Label checkbox <sub>sub</sub>' }}, true); %>
+
+<%- sample('Ensemble de boutons radio, libellé en exposant', './sample/radios.ejs', { id:'radio-sup', element: { label:'Label checkbox <sup>sup</sup>' }}, true); %>
+
 <%- sample('Ensemble de boutons radio, petite taille', './sample/radios.ejs', { id:'radio-small', size:'sm'}, true); %>
 
 <%- sample('Ensemble de boutons radio désactivées', './sample/radios.ejs', { id:'radio-disabled', disabled:true}, true); %>
