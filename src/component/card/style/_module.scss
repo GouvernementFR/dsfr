@@ -69,7 +69,7 @@
     }
 
     &--horizontal &__img {
-      @include size(40.78%);
+      @include max-width(41.666%);
       flex: 1 0 auto;
     }
   }
