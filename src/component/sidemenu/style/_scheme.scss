@@ -24,6 +24,10 @@
       box-shadow: none;
     }
 
+    @include respond-from(md) {
+      border: 0;
+    }
+
     &:last-child {
       #{ns(sidemenu__btn)} {
         @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
