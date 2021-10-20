@@ -3,12 +3,10 @@
 /// @group tile
 ////
 
-// TODO: remettre le hover sur le lien et son before pour limiter au cas où le lien est bien présent. faisabilité discutable
 #{ns(tile)} {
-  @include scheme-element-box-shadow-color(high primary, inset 0 -(#{space(1v)}) 0 0 $COLOR);
+  @include scheme-element-box-shadow-color(default neutral thick blue-france, false,  all-1-in bottom-1v-in);
 
   @include scheme-element-bg-color(default neutral);
-  @include scheme-element-box-shadow-color(default neutral); // @TODO: box shadow a double couleur
 
   &#{ns(enlarge-link)} {
     @include scheme-element-bg-color(default neutral, true);

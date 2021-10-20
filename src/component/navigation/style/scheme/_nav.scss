@@ -7,12 +7,12 @@
   &__link,
   &__btn {
     @include scheme-element-text-color(title neutral);
-    @include scheme-element-bg-transparent(true);
+    // @include scheme-element-bg-transparent(true);
 
     &[aria-current] {
-      @include scheme-element-text-color(title primary);
+      @include scheme-element-text-color(title blue-france);
       @include before {
-        @include scheme-element-bg-color(high primary);
+        @include scheme-element-bg-color(action-high blue-france);
       }
     }
   }
@@ -21,14 +21,17 @@
     &[aria-expanded="true"] {
       @include respond-from(lg) {
         // @include scheme-element-text-color(bf500-plain);
-        @include scheme-element-text-color(title primary);
+        @include scheme-element-text-color(title blue-france);
         // @include scheme-element-bg-color(bf200-bf300);
-        @include scheme-element-bg-color(alt primary);
+        @include scheme-element-bg-color(alt blue-france);
       }
     }
   }
 
   @include list-item {
-    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+    @include respond-from(lg) {
+      box-shadow: none;
+    }
   }
 }

@@ -3,25 +3,55 @@
 /// @group core
 ////
 
-// Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
-$COLOR: unquote('$COLOR');
-
 $ACCENT: none;
 
-@mixin _scheme-element($prop, $part, $token, $tint, $value: $COLOR, $important: false) {
-  @if $tint == neutral {
-    $tint: _get-neutral-tint($part, $token);
+@mixin _scheme-element($prop, $part, $decisions, $important: false, $value: $COLOR) {
+  $result: str-replace($value, '$COLOR', '$color#1');
+  $length: length($decisions) / 2;
+  @for $i from 1 through $length {
+    $token: nth($decisions, $i * 2 - 1);
+    $tint: nth($decisions, $i * 2);
+    $needle: '$color#1';
+    @if length($decisions) > 2 {
+      $needle: '$color##{$i}';
+    }
+    $p: $part;
+    @if str-index($token, background) == 1 {
+      $p: background;
+      $token: str-slice($token, 12, str-length($token));
+    }
+    @if str-index($token, text) == 1 {
+      $p: text;
+      $token: str-slice($token, 6, str-length($token));
+    }
+    @if str-index($token, border) == 1 {
+      $p: border;
+      $token: str-slice($token, 8, str-length($token));
+    }
+    @if $tint == neutral {
+      $tint: _get-neutral-tint($p, $token);
+    }
+    $color: _get-value($p, $token, $tint);
+    $result: _replace_color($result, $color, $needle);
+
+    @if $part == background {
+      @include _include-hover-prop($token, $tint, $important);
+    }
   }
 
-  @include _include-prop($prop, $part, $token, $tint, $value, $important);
+  @if $important {
+    $result: #{$result} !important;
+  }
+
+  #{$prop}: #{$result};
 }
 
 /// Ajout d'une couleur de background sur un élément
 /// @access public
-/// @param {String} $token - token de décision
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
-@mixin scheme-element-bg-color($token, $tint, $important: false) {
-  @include _scheme-element(background-color, background, $token, $tint, $COLOR, $important);
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
+@mixin scheme-element-bg-color($decisions, $important: false) {
+  @include _scheme-element(background-color, background, $decisions, $important);
 }
 
 @mixin scheme-element-bg-transparent($hover: false) {
@@ -33,51 +63,66 @@ $ACCENT: none;
 
 /// Ajout d'une couleur de texte sur un élément
 /// @access public
-/// @param {String} $token - token de décision
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
-@mixin scheme-element-text-color($token, $tint, $important: false) {
-  @include _scheme-element(color, text, $token, $tint, $COLOR, $important);
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
+@mixin scheme-element-text-color($decisions, $important: false) {
+  @include _scheme-element(color, text, $decisions, $important);
 }
 
 /// Ajout d'une couleur de fill sur un élément
 /// @access public
-/// @param {String} $token - token de décision
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
-@mixin scheme-element-fill-color($token, $tint, $important: false) {
-  @include _scheme-element(fill, background, $token, $tint, $COLOR, $important);
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
+@mixin scheme-element-fill-color($decisions, $important: false) {
+  @include _scheme-element(fill, background , $decisions, $important);
 }
 
 /// Ajout d'une couleur de border sur un élément
 /// @access public
-/// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés de border
 /// @param {String} $side - le côté affecté. valeurs: top, right, bottom, left
-@mixin scheme-element-border-color($token, $tint, $value:1px solid $COLOR, $side:null, $important: false) {
+@mixin scheme-element-border-color($decisions, $important: false, $value:1px solid $COLOR, $side:null) {
   $prop:border;
   @if $side != null {
     $prop:border-#{$side};
   }
-  @include _scheme-element($prop, border, $token, $tint, $value, $important);
+  @include _scheme-element($prop, border, $decisions, $important, $value);
 }
 
 /// Ajout d'une couleur d'outline sur un élément
 /// @access public
-/// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés d'outline
-@mixin scheme-element-outline-color($token, $tint, $value:1px solid $COLOR, $important: false) {
-  @include _scheme-element(outline, border, $token, $tint, $value, $important);
+@mixin scheme-element-outline-color($decisions, $important: false, $value:1px solid $COLOR) {
+  @include _scheme-element(outline, border, $decisions, $important, $value);
 }
 
 /// Ajout d'une couleur de box-shadow sur un élément
 /// @access public
-/// @param {String} $token - token de décision
-/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés de box-shadow
-@mixin scheme-element-box-shadow-color($token, $tint, $value:inset 0 0 0 1px $COLOR, $important: false) {
-  @include _scheme-element(box-shadow, border, $token, $tint, $value, $important);
+@mixin scheme-element-box-shadow-color($decisions, $important: false, $value: all-1-in) {
+  $has-keys: true;
+  $transformed: ();
+  $d: length($decisions) / 2;
+  $i: 1;
+  @each $v in $value {
+    @if map-has-key($box-shadows, $v) {
+      $transformed: append($transformed, _get-box-shadow($v, $i), comma);
+      @if $i < $d {
+        $i: $i + 1;
+      }
+    }
+    @else {
+      $has-keys: false;
+    }
+  }
+  @if $has-keys {
+    $value: $transformed;
+  }
+  @include _scheme-element(box-shadow, border, $decisions, $important, space($value));
 }

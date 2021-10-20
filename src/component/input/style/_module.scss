@@ -76,17 +76,21 @@
     }
 
     @include respond-from(md) {
-      border-radius: space(1v) 0 0 0;
+      border-radius: space(1v 0 0 0);
     }
   }
 
   > *:last-child:not(:first-child) {
     @include respond-from(md) {
-      border-radius: 0 space(1v) 0 0;
+      border-radius: space(0 1v 0 0);
     }
   }
 
   + #{ns(hint-text)} {
     @include margin-top(2v);
   }
+}
+
+textarea#{ns(input)} {
+  min-height: space(15v);
 }

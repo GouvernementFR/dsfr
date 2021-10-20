@@ -8,8 +8,8 @@
    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
    */
   &--valid {
-    #{ns(label)} {
-      @include scheme-element-text-color(default, success);
+    label {
+      @include scheme-element-text-color(default success);
     }
   }
 
@@ -17,8 +17,8 @@
    * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
    */
   &--error {
-    #{ns(label)} {
-      @include scheme-element-text-color(default, error);
+    label {
+      @include scheme-element-text-color(default error);
     }
   }
 
@@ -26,27 +26,27 @@
    * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
    */
   &--disabled {
-    #{ns(label)} {
-      // @include disabled-colors(true); // @todo disable
+    label {
+      @include disabled-colors(true);
     }
   }
 }
 
 #{ns(label)} {
-  @include scheme-element-text-color(label, neutral);
+  @include scheme-element-text-color(label neutral);
 
   /**
    * Modificateur au niveau du label pour appliquer un état d'erreur au label
    */
   &--error {
-    @include scheme-element-text-color(default, error);
+    @include scheme-element-text-color(default error);
   }
 
   /**
    * Modificateur au niveau du label pour appliquer un état de succès au label
    */
-   &--success {
-    @include scheme-element-text-color(default, success);
+  &--success {
+    @include scheme-element-text-color(default success);
   }
 }
 
@@ -54,21 +54,21 @@
  * Style du texte d'aide
  */
 #{ns(hint-text)} {
-  @include scheme-element-text-color(mention, neutral);
+  @include scheme-element-text-color(mention neutral);
 }
 
 /**
  * Style du texte d'erreur
  */
 #{ns(error-text)} {
-  @include scheme-element-text-color(default, error);
+  @include scheme-element-text-color(default error);
 }
 
 /**
  * Style du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include scheme-element-text-color(default, success);
+  @include scheme-element-text-color(default success);
 }
 
 /**
@@ -76,7 +76,7 @@
  */
 #{ns(fieldset)} {
   &__legend {
-    @include scheme-element-text-color(title, neutral);
+    @include scheme-element-text-color(title neutral);
   }
 
   /**
@@ -85,12 +85,12 @@
   &--error {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-box-shadow-color(default, error, 'inset 2px 0 0 0 $COLOR');
+        @include scheme-element-box-shadow-color(default error, false, left-2-in);
       }
     }
 
-    #{ns(label)} {
-      @include scheme-element-text-color(default, error);
+    label {
+      @include scheme-element-text-color(default error);
     }
   }
 
@@ -100,12 +100,12 @@
   &--valid {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-box-shadow-color(default, success, 'inset 2px 0 0 0 $COLOR');
+        @include scheme-element-box-shadow-color(default success, false, left-2-in);
       }
     }
 
-    #{ns(label)} {
-      @include scheme-element-text-color(default, success);
+    label {
+      @include scheme-element-text-color(default success);
     }
   }
 }

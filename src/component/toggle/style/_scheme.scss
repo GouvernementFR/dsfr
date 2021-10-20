@@ -4,24 +4,40 @@
 ////
 
 #{ns(toggle)} {
-  &__input {
-    @include scheme-element-box-shadow-color(high primary, inset 0 0 0 1px $COLOR);
-    // @include disabled-toggle-choice(); // disabled
-
-    &:checked {
-      @include scheme-element-bg-color(high primary);
-    }
-  }
-
-  &__label {
+  label {
     @include before {
-      @include scheme-element-text-color(title primary);
+      @include scheme-element-text-color(title blue-france);
     }
 
     @include after {
-      @include scheme-element-text-color(title primary);
-      @include scheme-element-box-shadow-color(high primary, inset 0 0 0 1px $COLOR);
+      @include scheme-element-text-color(title blue-france);
+      @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
       @include scheme-element-bg-color(default neutral);
+    }
+  }
+
+  input[type="checkbox"] {
+    @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
+    // @include disabled-toggle-choice(); // disabled
+
+    &:checked {
+      @include scheme-element-bg-color(action-high blue-france);
+    }
+
+    @include disabled(false, false, true) {
+      &:checked {
+        @include disabled-colors(false, true);
+      }
+
+      + label {
+        @include before {
+          @include disabled-colors(true);
+        }
+
+        @include after {
+          @include disabled-colors(true, false, true);
+        }
+      }
     }
   }
 
@@ -33,6 +49,6 @@
   * Ajout d'un séparateur
   */
   &--border-bottom {
-    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
   }
 }

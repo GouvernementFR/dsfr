@@ -10,7 +10,7 @@
     }
 
     #{ns(nav__link)} {
-      @include scheme-element-box-shadow-color(default neutral, 0 calc(#{space(-4v)} - 1px) 0 #{space(-4v)} $COLOR);
+      @include scheme-element-box-shadow-color(default neutral, false, 0 calc(-4v - 1px) 0 -4v $COLOR);
     }
   }
 }

@@ -1,5 +1,5 @@
 ////
-/// Core Function : Color get color
+/// Core Function : Color get color from set
 /// @group core
 ////
 
@@ -9,7 +9,7 @@
 /// @param {String} $theme - theme de la couleur (light, dark)
 /// @param {String} $space - espace de la couleur (hex, hue, saturation, lightness)
 /// @return {String} Retourne la couleur correspondante
-@function _get-color($set, $theme: light, $space: hex) {
+@function _get-color-from-set($set, $theme: light, $space: hex) {
   $color: nth($set, 1);
   @if $theme == dark {
     $color: nth($set, 2);

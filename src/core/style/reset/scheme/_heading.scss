@@ -11,6 +11,6 @@
     }
   }
   #{$titles} {
-    @include scheme-element-text-color(title, neutral);
+    @include scheme-element-text-color(title neutral);
   }
 }

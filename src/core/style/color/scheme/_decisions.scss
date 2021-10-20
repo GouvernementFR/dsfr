@@ -11,10 +11,10 @@
           $selector: '#{$part}-#{$token}--#{$tint}';
           #{ns($selector)} {
             @if $part == background {
-              @include scheme-element-bg-color($token, $tint, true);
+              @include scheme-element-bg-color($token $tint, true);
             }
             @else if $part == text {
-              @include scheme-element-text-color($token, $tint, true);
+              @include scheme-element-text-color($token $tint, true);
             }
           }
         }

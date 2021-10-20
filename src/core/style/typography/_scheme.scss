@@ -4,5 +4,5 @@
 ////
 
 @include title-selector {
-  @include scheme-element-text-color(title, neutral);
+  @include scheme-element-text-color(title neutral);
 }

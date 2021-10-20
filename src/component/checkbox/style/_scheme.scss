@@ -14,8 +14,7 @@
   input[type="checkbox"] {
     + label {
       @include before {
-        @include scheme-element-border-color(action-high, neutral); // @tTODO:
-        // @include scheme-element-text-color(t-plain); // color:transparent dans module
+        @include scheme-element-box-shadow-color(action-high neutral);
       }
     }
 
@@ -24,11 +23,11 @@
      * un état check ou active
      */
     &:checked,
-    &:active {
+    &:active:not(:disabled) {
       + label {
         @include before {
-          @include scheme-element-bg-color(action-high, blue-france);
-          @include scheme-element-text-color(inverted, neutral);
+          @include scheme-element-bg-color(action-high blue-france);
+          @include scheme-element-text-color(inverted neutral);
         }
       }
     }
@@ -36,7 +35,21 @@
     /**
     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
     */
-    // @include disabled-form-choice(); //@TODO disable
+    @include disabled {
+      & + label {
+        @include before {
+          @include disabled-colors(false, true, true);
+        }
+      }
+
+      &:checked {
+        & + label {
+          @include before {
+            @include disabled-colors(true);
+          }
+        }
+      }
+    }
   }
 
   /**
@@ -44,11 +57,11 @@
    */
   &--error {
     input[type="checkbox"] + label {
-      @include scheme-element-text-color(default, error);
+      @include scheme-element-text-color(default error);
     }
 
     @include before {
-      @include scheme-element-box-shadow-color(default, error, 'inset 2px 0 0 0 $COLOR');
+      @include scheme-element-box-shadow-color(default error, false, left-2-in);
     }
   }
 
@@ -57,11 +70,11 @@
    */
   &--valid {
     input[type="checkbox"] + label {
-      @include scheme-element-text-color(default, success);
+      @include scheme-element-text-color(default success);
     }
 
     @include before {
-      @include scheme-element-box-shadow-color(default, success, 'inset 2px 0 0 0 $COLOR');
+      @include scheme-element-box-shadow-color(default success, false, left-2-in);
     }
   }
 }

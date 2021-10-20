@@ -48,7 +48,7 @@ $scheme-decisions: (
       neutral: strongest,
       system: strong
     ),
-    action: (
+    action-high: (
       neutral: black,
       primary: strong,
       accent: strong
@@ -76,6 +76,9 @@ $scheme-decisions: (
       primary: lightest,
       accent: lightest
     ),
+    disabled: (
+      neutral: soft
+    )
   ),
   border: (
     default: (
@@ -105,7 +108,7 @@ $scheme-decisions: (
       primary: strong
     ),
     disabled: (
-      neutral: light
+      neutral: light // softest
     )
   ),
 );

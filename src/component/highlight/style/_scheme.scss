@@ -4,5 +4,5 @@
 ////
 
 #{ns(highlight)} {
-  @include scheme-element-box-shadow-color(high primary, -#{space(1v)} 0 0 0 $COLOR);
+  @include scheme-element-box-shadow-color(thick blue-france, false, left-1v-in);
 }

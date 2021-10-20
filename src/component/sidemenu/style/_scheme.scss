@@ -7,35 +7,36 @@
   @include scheme-element-bg-color(default neutral);
 
   @include respond-from(md) {
-    @include scheme-element-bg-transparent(false);
+    @include scheme-element-bg-transparent(true);
   }
 
   @include title {
     @include scheme-element-text-color(title neutral);
-    @include scheme-element-bg-transparent(false);
-    // @include scheme-element-border-color(g300, true, bottom);
-    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
-
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+    @include respond-from(md) {
+      box-shadow: none;
+    }
   }
 
   @include list-item {
-    // @include scheme-element-border-color(g300, true, bottom);
-    @include scheme-element-box-shadow-color(default neutral, inset 0 -1px 0 0 $COLOR);
-
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+    @include respond-from(md) {
+      box-shadow: none;
+    }
 
     &:last-child {
       #{ns(sidemenu__btn)} {
-        // @include scheme-element-border-color(t-plain, true, bottom);
-        @include scheme-element-box-shadow-color(default neutral, inset 0 0 0 0 $COLOR);
-
+        @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+        @include respond-from(md) {
+          box-shadow: none;
+        }
       }
     }
 
     &--active {
       & > #{ns(sidemenu__btn)},
       & > #{ns(sidemenu__link)} {
-        @include scheme-element-text-color(title primary);
-
+        @include scheme-element-text-color(title blue-france);
         @include after {
           background-color: currentColor;
         }
@@ -45,16 +46,14 @@
 
   &__inner {
     @include respond-from(md) {
-      // @include scheme-element-border-color(g300, true, right);
-      @include scheme-element-box-shadow-color(default neutral, inset -1px 0 0 0 $COLOR);
-
+      @include scheme-element-box-shadow-color(default neutral, false, right-1-in);
     }
   }
 
   @include respond-from(md) {
     &--right {
       #{ns(sidemenu__inner)} {
-        @include scheme-element-box-shadow-color(default neutral, inset 1px 0 0 0 $COLOR);
+        @include scheme-element-box-shadow-color(default neutral, false, left-1-in);
       }
     }
 
@@ -75,17 +74,15 @@
   }
 
   @include respond-from(md) {
-    // @include scheme-element-bg-color(t-plain, true, after);
     @include after {
-      @include scheme-element-bg-transparent()
+      @include scheme-element-bg-transparent(true);
     }
   }
 }
 
 #{ns(sidemenu__link)} {
   @include scheme-element-text-color(title neutral);
-  // @include scheme-element-bg-color(t-plain, true, after);
   @include after {
-    @include scheme-element-bg-transparent()
+    @include scheme-element-bg-transparent(true);
   }
 }

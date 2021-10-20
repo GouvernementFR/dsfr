@@ -63,23 +63,3 @@
     @content;
   }
 }
-
-@mixin _build-focus($elements) {
-  $selectors: ();
-  $fallbacks: ();
-  $removes: ();
-  $visibles: ();
-
-  @each $element, $setting in $elements {
-    $focus: map-get($setting, focus);
-    $selector: map-get($setting, selector);
-    @if $focus {
-      $selectors: append($selectors, nest($selector, map-get($focus, selector)), 'comma');
-      $fallbacks: append($fallbacks, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
-      $removes: append($removes, nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
-      $visibles: append($visibles, nest($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
-    }
-  }
-
-
-}

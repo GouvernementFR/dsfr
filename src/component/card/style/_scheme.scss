@@ -4,24 +4,20 @@
 ////
 
 #{ns(card)} {
-  @include scheme-element-bg-color(default, neutral);
-  @include scheme-element-box-shadow-color(default, neutral);
-
-  &#{ns(enlarge-link)} {
-    // @include scheme-element-bg-color(default neutral, true);
-  }
+  @include scheme-element-bg-color(default neutral);
+  @include scheme-element-box-shadow-color(default neutral);
 
   &:not(&--no-arrow) &__body {
     @include after {
-      @include scheme-element-text-color(title, blue-france);
+      @include scheme-element-text-color(title blue-france);
     }
   }
 
   &__detail {
-    @include scheme-element-text-color(mention, neutral);
+    @include scheme-element-text-color(mention neutral);
   }
 
   &__title {
-    @include scheme-element-text-color(title, neutral);
+    @include scheme-element-text-color(title neutral);
   }
 }

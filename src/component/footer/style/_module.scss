@@ -7,8 +7,6 @@
   @include disable-link-style;
   @include disable-list-style;
   @include size(100%);
-  @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
-  @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
   @include padding-top(10v);
 
   @include body {

@@ -47,7 +47,7 @@
       font-size: var(--xl-size);
       font-weight: bold;
     }
-    @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + #{space(2v)}));
-    @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - #{space(2v)}));
+    @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + 2v));
+    @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - 2v));
   }
 }

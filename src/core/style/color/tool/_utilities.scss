@@ -3,23 +3,10 @@
 /// @group core
 ////
 
-@mixin _include-prop($prop, $part, $token, $tint, $value, $important) {
-  $result: _get-value($part, $token, $tint);
-  @if $important {
-    $result: #{$result} !important;
-  }
-
-  #{$prop}: _replace_color($value, $result, false);
-
-  @if $part == background {
-    @include _include-hover-prop($token, $tint, $important);
-  }
-}
-
 @mixin _include-hover-prop-by-theme($set, $important, $theme: light) {
-  $hue: _get-color($set, $theme, hue);
-  $saturation: _get-color($set, $theme, saturation);
-  $base: _get-color($set, $theme, lightness);
+  $hue: _get-color-from-set($set, $theme, hue);
+  $saturation: _get-color-from-set($set, $theme, saturation);
+  $base: _get-color-from-set($set, $theme, lightness);
 
   $lightness: $base;
 

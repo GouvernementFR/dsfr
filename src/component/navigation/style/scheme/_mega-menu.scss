@@ -9,18 +9,21 @@
   > #{ns(container)} {
     @include respond-from(lg) {
       @include before {
-        @include scheme-element-bg-color(alt primary);
+        @include scheme-element-bg-color(alt blue-france);
       }
     }
   }
 
   &__list {
-    @include scheme-element-box-shadow-color(default neutral, 0 1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+    @include respond-from(lg) {
+      box-shadow: none;
+    }
   }
 
   &__category {
     @include respond-from(lg) {
-      @include scheme-element-box-shadow-color(default neutral, 0 calc(#{space(4v)} + 1px) 0 #{space(-4v)} $COLOR);
+      @include scheme-element-box-shadow-color(default neutral, false, 0 calc(4v + 1px) 0 -4v $COLOR);
     }
   }
 }

@@ -12,5 +12,5 @@
 /// @return {String} Retourne la couleur correspondante
 @function _get-value($part, $token, $tint) {
   $set: _get-scheme-set($part, $token, $tint);
-  @return _get-color($set, light, hex);
+  @return _get-color-from-set($set, light, hex);
 }

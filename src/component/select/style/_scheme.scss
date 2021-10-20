@@ -8,34 +8,39 @@ $svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' x='0p
 #{ns(select)} {
   @include scheme-element-text-color(title neutral);
   @include scheme-element-bg-color(contrast neutral);
-  @include scheme-element-box-shadow-color(thick neutral, inset 0 -2px 0 0 $COLOR);
+  @include scheme-element-box-shadow-color(thick neutral, false, bottom-2-in);
   // @include scheme-element-data-uri-svg(g800, $svg, background-image); // @TODO
 
   /**
    * Modificateur pour gérer l'état d'erreur
    */
   &--error {
-    @include scheme-element-box-shadow-color(default system error, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default error, false, bottom-2-in);
   }
 
   /**
    * Modificateur pour gérer l'état de validation
    */
   &--valid {
-    @include scheme-element-box-shadow-color(default system success, inset 0 -2px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default success, false, bottom-2-in);
   }
 
   /**
    * Mixin pour gérer l'état disabled
    */
+  @include disabled-form-field;
   // @include disabled-form-field(select) {
   //   @include scheme-element-data-uri-svg(get-disabled-color(text), $svg, background-image); //@TODOO disabled
   // }
 
+  /**
+   * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
+   * sur les navigateurs webkit.
+   */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    // @include scheme-element-box-shadow-color(g200,true,inset 0 0 0 100px $COLOR); @TODO: g200 en border
-    // @include _scheme-element(g800, -webkit-text-fill-color, true); @TODO
+    @include scheme-element-box-shadow-color(thick neutral background-contrast blue-france, false, bottom-2-in all-in);
+    @include _scheme-element(-webkit-text-fill-color, text, label neutral);
   }
 }

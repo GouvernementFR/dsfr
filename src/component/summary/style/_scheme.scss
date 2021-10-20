@@ -14,7 +14,7 @@
   li > a {
     @include scheme-element-text-color(title neutral);
     @include after {
-      @include scheme-element-bg-transparent(true);
+      // @include scheme-element-bg-transparent(true);
     }
   }
 }

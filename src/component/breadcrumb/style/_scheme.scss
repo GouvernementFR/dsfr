@@ -4,9 +4,9 @@
 ////
 
 #{ns(breadcrumb)} {
-  @include scheme-element-text-color(mention, neutral);
+  @include scheme-element-text-color(mention neutral);
 
   &__link[aria-current] {
-    @include scheme-element-text-color(default, neutral);
+    @include scheme-element-text-color(default neutral);
   }
 }

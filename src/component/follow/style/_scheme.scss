@@ -4,27 +4,27 @@
 ////
 
 #{ns(follow)} {
-  @include scheme-element-bg-color(alt, blue-france);
+  @include scheme-element-bg-color(alt blue-france);
 
   #{ns(input)} {
-    @include scheme-element-bg-color(default, neutral);
+    @include scheme-element-bg-color(default neutral);
   }
 
   &__title {
-    @include scheme-element-text-color(title, neutral);
+    @include scheme-element-text-color(title neutral);
   }
 
   &__newsletter {
     &-legal {
-      @include scheme-element-text-color(mention, neutral);
+      @include scheme-element-text-color(mention neutral);
     }
   }
 
   #{ns(grid-row)} > *:not(:first-child) {
     // Séparateur en box-shadow
-    @include scheme-element-box-shadow-color(default, blue-france, 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default blue-france, false, top-1-out);
     @include respond-from(md) {
-      @include scheme-element-box-shadow-color(default, blue-france, -1px 0 0 0 $COLOR);
+      @include scheme-element-box-shadow-color(default blue-france, false, left-1-out);
     }
   }
 }

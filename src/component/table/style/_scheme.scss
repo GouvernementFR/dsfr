@@ -11,18 +11,19 @@
   thead {
     td,
     th {
-      @include scheme-element-box-shadow-color(thick neutral, inset 0 -#{space(0.5v)} 0 0 $COLOR);
-      @include scheme-element-bg-color(alt accent galet);
+      @include scheme-element-box-shadow-color(default purple-glycine, false, inset 0 -#{space(0.5v)} 0 0 $COLOR);
+      @include scheme-element-bg-color(contrast purple-glycine);
       @include scheme-element-text-color(default neutral);
     }
   }
 
   tbody tr:nth-child(even) {
-    @include scheme-element-bg-color(alt accent galet);
+    @include scheme-element-bg-color(contrast purple-glycine);
   }
 
   tbody tr:nth-child(odd) {
-    @include scheme-element-bg-color(default neutral);
+    @include scheme-element-bg-color(alt purple-glycine);
+    // @include scheme-element-bg-color(default neutral);
   }
 
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
@@ -30,13 +31,13 @@
     tbody {
       td,
       th {
-        @include scheme-element-box-shadow-color(default neutral, inset 0 1px 0 0 $COLOR);
+        @include scheme-element-box-shadow-color(default neutral, false, inset 0 1px 0 0 $COLOR);
       }
 
       tr {
         &:nth-child(odd),
         &:nth-child(even) {
-          @include scheme-element-bg-transparent(false);
+          // @include scheme-element-bg-transparent(false);
         }
       }
     }
@@ -51,7 +52,7 @@
   */
   &__shadow {
     @include before {
-      @include scheme-element-box-shadow-color(default neutral, ($empty, $empty)); // @TODO: shadow color
+      @include scheme-element-box-shadow-color(default neutral, false, ($empty, $empty)); // @TODO: shadow color
     }
 
     /**
@@ -59,7 +60,7 @@
     **/
     &--left {
       @include before {
-        @include scheme-element-box-shadow-color(default neutral, ($left, $empty)); // @TODO: shadow color
+        @include scheme-element-box-shadow-color(default neutral, false, ($left, $empty)); // @TODO: shadow color
       }
     }
 
@@ -68,7 +69,7 @@
     **/
     &--right {
       @include before {
-        @include scheme-element-box-shadow-color(default neutral, ($empty, $right)); // @TODO: shadow color
+        @include scheme-element-box-shadow-color(default neutral, false, ($empty, $right)); // @TODO: shadow color
       }
     }
 
@@ -77,7 +78,7 @@
     **/
     &--left#{&}--right {
       @include before('', block) {
-        @include scheme-element-box-shadow-color(default neutral, ($left, $right)); // @TODO: shadow color
+        @include scheme-element-box-shadow-color(default neutral, false, ($left, $right)); // @TODO: shadow color
       }
     }
   }

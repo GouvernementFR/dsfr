@@ -4,7 +4,5 @@
 ////
 
 #{ns(link)} {
-  @include scheme-element-text-color(title, blue-france);
-  // @include scheme-element-bg-transparent(false);
-  // @include disabled-link(true, false, false); // @TODO: disabled
+  @include scheme-element-text-color(title blue-france);
 }
