@@ -38,13 +38,15 @@
   @include list {
     @include display-flex(null, flex-end);
     overflow-x: auto;
-    @include size(100%, 12v);
+    @include width(100%);
+    @include min-height(12v);
     @include absolute;
+    z-index: z-index(over);
 
     /**
     * overflow vertical de 4px pour le focus
     */
-    @include margin(-4px 0);
+    @include margin(-6px 0);
     @include padding(4px 2v);
 
     @include after('', block) {
@@ -71,8 +73,6 @@
       }
 
       &:last-child {
-        @include padding-right(4v);
-
         @include after('', block) {
           min-width: 1rem;
           @include margin-left(100%);
@@ -124,6 +124,7 @@
     @include padding(8v, md);
     @include margin-top(10v);
     @include margin-right(-100%);
+    z-index: z-index(base);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
