@@ -3,6 +3,8 @@
 
 * modal.id (string, required) : id de la modale
 
+* modal.label (string, required) : label du bouton de la modale
+
 * modal.title (string, required) : titre de la modale
 
 * modal.body (string, required) : contenu de la modale
@@ -93,7 +95,7 @@ switch(modal.size) {
                         </h1>
                         <%- include(modal.body) %>
                     </div>
-                    <% if(locals.footer !== undefined) { %>
+                    <% if(modal.footer !== undefined) { %>
                         <div class="<%= prefix %>-modal__footer">
                             <%- include(modal.footer) %>
                         </div>

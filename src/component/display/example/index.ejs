@@ -25,13 +25,13 @@ let dataModal = {
 }
 %>
 
-<%- include('../../header/example/sample/header.ejs', { links: links, navigation: true, navigationId:'header-navigation' }); %>
+<%- include('../../header/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Scheme - gestion du dark mode</h1>
-  <%- sample('bouton ouverture thèmes', '../../link/example/sample/link-default', links.items[0], true) %>
+  <%- sample('bouton ouverture thèmes', '../../link/example/sample/link-default', {link:links.items[0]}, true) %>
 
-  <%- sample('snippet modal de paramètres d\'affichage', '../../modal/template/ejs/modal.ejs', dataModal, true); %>
+  <%- sample('snippet modal de paramètres d\'affichage', '../../modal/template/ejs/modal.ejs', {modal:dataModal}, true); %>
 
 </div>
 

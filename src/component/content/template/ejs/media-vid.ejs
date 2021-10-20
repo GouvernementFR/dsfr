@@ -1,7 +1,16 @@
 <%#
-# paramètres media vid
+# paramètres media-vid
 
-// TODO: documentation
+* content.consent (object, optional): paramètres de consentenement
+    ** title (string, recommended) : titre du placeholder
+    ** body (string, optional) : texte explicatif
+    ** button (object, optional) : paramètre du bouton
+
+* content.vidTpl (string, optional): template de video
+
+* content.transcription (string, optional): texte de transcription
+
+* content.caption (string, optional): paramètres de l'image
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
