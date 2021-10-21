@@ -5,7 +5,7 @@
 
 #{ns(tabs)} {
   @include after {
-    @include scheme-element-box-shadow-color(default neutral, false, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default neutral, false, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR'right-1-in bottom-left-1-in);
   }
 
   /**
@@ -45,8 +45,7 @@
   */
   &__tab {
     &:not([aria-selected=true]) {
-      // @include scheme-element-bg-color(bf100-g750, true, true);
-      @include scheme-element-bg-color(alt blue-france, true);
+      @include scheme-element-bg-color(alt blue-france);
       @include scheme-element-text-color(default neutral);
       // @include disabled(g600, g300); // @TODO: disabled
       @include scheme-element-box-shadow-color(default neutral, false, '0 1px 0 0 $COLOR');
