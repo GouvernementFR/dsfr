@@ -10,6 +10,4 @@
   @include title() {
     @include scheme-element-text-color(title neutral);
   }
-
-  // @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
 }
