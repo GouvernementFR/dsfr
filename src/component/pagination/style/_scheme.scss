@@ -7,8 +7,6 @@
   @include scheme-element-text-color(title neutral);
 
   &__link {
-    // @include scheme-element-bg-transparent(true);
-
     &[aria-current] {
       @include scheme-element-bg-color(action-high blue-france);
       @include scheme-element-text-color(inverted neutral); // @TODO: white-bf500
