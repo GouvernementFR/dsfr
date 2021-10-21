@@ -4,13 +4,10 @@
 ////
 
 #{ns(callout)} {
-  // @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
   @include scheme-element-bg-color(contrast neutral);
   @include scheme-element-box-shadow-color(thick blue-france, false, left-1v-in);
 
   @include title() {
     @include scheme-element-text-color(title neutral);
   }
-
-  // @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
 }
