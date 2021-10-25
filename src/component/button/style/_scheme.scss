@@ -5,7 +5,7 @@
 
 #{ns(btn)} {
   @include scheme-element-bg-color(action-high blue-france);
-  @include scheme-element-text-color(inverted white);
+  @include scheme-element-text-color(inverted blue-france);
 
   @include disabled(true, true, false, true);
 

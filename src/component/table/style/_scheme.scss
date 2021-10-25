@@ -52,7 +52,7 @@
   */
   &__shadow {
     @include before {
-      @include scheme-element-box-shadow-color(default neutral, false, ($empty, $empty)); // @TODO: shadow color
+      @include scheme-element-box-shadow-color(text-title neutral, false, ($empty, $empty)); // @TODO: shadow color
     }
 
     /**
@@ -60,7 +60,7 @@
     **/
     &--left {
       @include before {
-        @include scheme-element-box-shadow-color(default neutral, false, ($left, $empty)); // @TODO: shadow color
+        @include scheme-element-box-shadow-color(text-title neutral, false, ($left, $empty)); // @TODO: shadow color
       }
     }
 
@@ -69,7 +69,7 @@
     **/
     &--right {
       @include before {
-        @include scheme-element-box-shadow-color(default neutral, false, ($empty, $right)); // @TODO: shadow color
+        @include scheme-element-box-shadow-color(text-title neutral, false, ($empty, $right)); // @TODO: shadow color
       }
     }
 
@@ -78,7 +78,7 @@
     **/
     &--left#{&}--right {
       @include before('', block) {
-        @include scheme-element-box-shadow-color(default neutral, false, ($left, $right)); // @TODO: shadow color
+        @include scheme-element-box-shadow-color(text-title neutral, false, ($left, $right)); // @TODO: shadow color
       }
     }
   }

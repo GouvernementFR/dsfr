@@ -24,6 +24,7 @@ $scheme-decisions: (
     ),
     action-high: (
       primary: strong,
+      system: strong,
       accent: strong,
     ),
     action-low: (
@@ -72,9 +73,10 @@ $scheme-decisions: (
       neutral: strong
     ),
     inverted: (
-      neutral: white,
-      primary: lightest,
-      accent: lightest
+      neutral: light,
+      primary: inverted,
+      system: light,
+      accent: light
     ),
     disabled: (
       neutral: soft
@@ -83,9 +85,9 @@ $scheme-decisions: (
   border: (
     default: (
       neutral: light,
-      system: strong,
-      primary: divider,
-      accent: divider
+      system: main,
+      primary: main,
+      accent: main
     ),
     active: (
       primary: strong,
@@ -105,6 +107,7 @@ $scheme-decisions: (
     ),
     thick: (
       neutral: strongest,
+      system: strong,
       primary: strong
     ),
     disabled: (

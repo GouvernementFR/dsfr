@@ -5,7 +5,7 @@
 
 /// Obtenir le nom de la teinte si non définie
 /// @access private
-/// @param {String} $shade - $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white, elevated, inverted, divider)
+/// @param {String} $shade - $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white, elevated, inverted, main)
 /// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @param {String} $tint - nom de la teinte (voir settings/sets)
 /// @return {String} Retourne le nom de la teinte

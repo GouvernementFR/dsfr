@@ -4,25 +4,37 @@
 ////
 
 #{ns(alert)} {
-  @include scheme-element-box-shadow-color(default neutral, false, all-1-in left-10v-in);
+  @include scheme-element-box-shadow-color(thick neutral, false, all-1-in left-10v-in);
 
   @include before {
     @include scheme-element-text-color(inverted neutral);
   }
 
   &--info {
-    @include scheme-element-box-shadow-color(default info, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(thick info, false, all-1-in left-10v-in);
+    @include before {
+      @include scheme-element-text-color(inverted info);
+    }
   }
 
   &--error {
-    @include scheme-element-box-shadow-color(default error, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(thick error, false, all-1-in left-10v-in);
+    @include before {
+      @include scheme-element-text-color(inverted error);
+    }
   }
 
   &--success {
-    @include scheme-element-box-shadow-color(default success, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(thick success, false, all-1-in left-10v-in);
+    @include before {
+      @include scheme-element-text-color(inverted success);
+    }
   }
 
   &--warning {
-    @include scheme-element-box-shadow-color(default warning, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(thick warning, false, all-1-in left-10v-in);
+    @include before {
+      @include scheme-element-text-color(inverted warning);
+    }
   }
 }

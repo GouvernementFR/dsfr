@@ -26,4 +26,12 @@
   @else if $space == lightness {
     @return nth($color, 4);
   }
+  @else if $space == modifier {
+    @if $theme == dark and length($color) >= 6 {
+      @return nth($color, 6);
+    }
+    @else {
+      @return nth($color, 5);
+    }
+  }
 }

@@ -8,7 +8,7 @@
     // background-size: 2048px 2048px;
     // background-position: 50% 50%;
 
-    --hover-hsla: #{css-hsl-alpha(var(--hsl), var(--ah-a))};
+    --hover-hsla: #{css-hsl-alpha(var(--hsl), var(--a))};
 
     &:hover,
     &:active {
@@ -16,11 +16,11 @@
     }
 
     &:hover {
-      --ah-a: 0.3;
+      --a: #{$hover-alpha};
     }
 
     &:active {
-      --ah-a: 0.5;
+      --a: #{$active-alpha};
     }
   }
 }
