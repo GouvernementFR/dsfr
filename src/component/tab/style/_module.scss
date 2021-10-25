@@ -103,12 +103,6 @@
 
     &[aria-selected=true] {
       cursor: default;
-      background: transparent;
-
-      @include after('', block) {
-        @include absolute(2px, 1px, 0, 1px, auto, calc(100% - 1px));
-        @include z-index(over);
-      }
     }
   }
 

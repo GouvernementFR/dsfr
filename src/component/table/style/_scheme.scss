@@ -11,18 +11,18 @@
   thead {
     td,
     th {
-      @include scheme-element-box-shadow-color(default green-tilleul-verveine, false, inset 0 -#{space(0.5v)} 0 0 $COLOR);
+      @include scheme-element-box-shadow-color(default neutral, false, inset 0 -#{space(0.5v)} 0 0 $COLOR);
       @include scheme-element-bg-color(contrast green-tilleul-verveine);
       @include scheme-element-text-color(default neutral);
     }
   }
 
   tbody tr:nth-child(even) {
-    @include scheme-element-bg-color(contrast green-tilleul-verveine);
+    @include scheme-element-bg-color(contrast neutral);
   }
 
   tbody tr:nth-child(odd) {
-    @include scheme-element-bg-color(alt green-tilleul-verveine);
+    @include scheme-element-bg-color(alt neutral);
     // @include scheme-element-bg-color(default neutral);
   }
 
