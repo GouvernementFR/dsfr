@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@mixin build-hr(){
+@mixin build-hr() {
   @include padding(var(--text-spacing));
   @include margin(0);
   border: 0;
