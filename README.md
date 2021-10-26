@@ -61,12 +61,12 @@ Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spe
 ### Le HTML
 Le point de départ de l’utilisation du DSFR  est la création de fichiers HTML, afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. L’exemple ci dessous est le code minimal afin de pouvoir utiliser le DSFR.
 
-L’ajout de l’attribut **data-fr-theme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont default, light, dark.
+L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont system, light, dark.La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
 Consulter la [documentation des paramètres d’affichage](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/579928166) afin d’en savoir plus.
 
 ```html
 <!doctype html>
-<html lang="fr" data-fr-theme="default">
+<html lang="fr" data-fr-scheme="system">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

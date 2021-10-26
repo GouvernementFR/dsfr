@@ -86,7 +86,6 @@ Un composant doit avoir une arborescence de type :
     ├── ejs/
 └── index.scss
 └── main.scss
-└── scheme.scss
 └── legacy.scss
 └── .package.yml
 ```
@@ -132,7 +131,6 @@ Le DSFR utilise Sass pour la génération automatique des styles liés à chaque
         └── _buttons-group.scss
 └── index.scss
 └── main.scss
-└── scheme.scss
 └── legacy.scss
 ```
 
@@ -141,7 +139,6 @@ Il peut donc y avoir plusieurs fichier .scss, mais seuls main.scss à la racine 
  - main.scss : Fichier principal du composant servant d'entrée, et composé uniquement d'`@import`. Il importe le fichier index ainsi que des fichiers modules du composant *(obligatoire)*
  - index.scss : Fichier secondaire du composant, aussi composé d'`@imports`, importe uniquement les fichiers de settings et tools du composant ainsi que l'index.scss des composants dépendants. *(obligatoire)*
  - _module.scss : Comprend l'ensemble des styles du module *(obligatoire)*
-- scheme.scss : Permet de générer un fichier séparé pour les schemes (facultatif)
 
 - _scheme.scss : doit contenir tous les styles liés aux couleurs, afin de gérer la thématisation. (optionnel)
 
