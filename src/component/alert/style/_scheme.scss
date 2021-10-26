@@ -4,37 +4,37 @@
 ////
 
 #{ns(alert)} {
-  @include scheme-element-box-shadow-color(thick neutral, false, all-1-in left-10v-in);
+  @include scheme-element-box-shadow-color(thick neutral background-flat neutral, false, all-1-in left-10v-in);
 
   @include before {
     @include scheme-element-text-color(inverted neutral);
   }
 
   &--info {
-    @include scheme-element-box-shadow-color(thick info, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(default info background-flat info, false, all-1-in left-10v-in);
     @include before {
-      @include scheme-element-text-color(inverted info);
+      // @include scheme-element-text-color(inverted info);
     }
   }
 
   &--error {
-    @include scheme-element-box-shadow-color(thick error, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(default error background-flat error, false, all-1-in left-10v-in);
     @include before {
-      @include scheme-element-text-color(inverted error);
+      // @include scheme-element-text-color(inverted error);
     }
   }
 
   &--success {
-    @include scheme-element-box-shadow-color(thick success, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(default success background-flat success, false, all-1-in left-10v-in);
     @include before {
-      @include scheme-element-text-color(inverted success);
+      // @include scheme-element-text-color(inverted success);
     }
   }
 
   &--warning {
-    @include scheme-element-box-shadow-color(thick warning, false, all-1-in left-10v-in);
+    @include scheme-element-box-shadow-color(default warning background-flat warning, false, all-1-in left-10v-in);
     @include before {
-      @include scheme-element-text-color(inverted warning);
+      // @include scheme-element-text-color(inverted warning);
     }
   }
 }
