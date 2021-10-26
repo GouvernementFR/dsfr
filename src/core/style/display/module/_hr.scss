@@ -4,12 +4,7 @@
 ////
 
 #{ns(hr)} {
-  @include padding(var(--text-spacing));
-  @include margin(0);
-  @include relative;
-  border: 0;
-  display: block;
-  @include before('', 'block');
+  @include build-hr();
 
   &--sm {
     @include width(40v);
