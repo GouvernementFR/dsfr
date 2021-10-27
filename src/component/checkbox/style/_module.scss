@@ -50,19 +50,6 @@
 				border-radius: space(1v);
 				transition: background-color 0.1s, color 0.1s;
 			}
-
-			sup,
-			sub {
-				@include margin-left(1v);
-			}
-
-			sup {
-				@include margin-top(-2v);
-			}
-
-			sub {
-				@include margin-bottom(-2v);
-			}
 		}
 	}
 

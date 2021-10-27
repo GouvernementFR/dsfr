@@ -75,19 +75,6 @@
 				border-radius: 50%;
 				transform-origin: center;
 			}
-
-			sup,
-			sub {
-				@include margin-left(1v);
-			}
-
-			sup {
-				@include margin-top(-2v);
-			}
-
-			sub {
-				@include margin-bottom(-2v);
-			}
 		}
 
 		/**
