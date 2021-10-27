@@ -26,7 +26,7 @@
     &:active:not(:disabled) {
       + label {
         @include before {
-          @include scheme-element-bg-color(action-high blue-france);
+          @include scheme-element-bg-color(active blue-france);
           @include scheme-element-text-color(inverted neutral);
         }
       }
@@ -61,7 +61,7 @@
     }
 
     @include before {
-      @include scheme-element-box-shadow-color(default error, false, left-2-in);
+      @include scheme-element-box-shadow-color(plain error, false, left-2-in);
     }
   }
 
@@ -74,7 +74,7 @@
     }
 
     @include before {
-      @include scheme-element-box-shadow-color(default success, false, left-2-in);
+      @include scheme-element-box-shadow-color(plain success, false, left-2-in);
     }
   }
 }

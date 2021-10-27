@@ -6,7 +6,7 @@
 #{ns(input)} {
   @include scheme-element-text-color(label neutral);
   @include scheme-element-bg-color(contrast neutral);
-  @include scheme-element-box-shadow-color(thick neutral, false, bottom-2-in);
+  @include scheme-element-box-shadow-color(plain neutral, false, bottom-2-in);
 
   /**
    * Style du placeholder
@@ -24,14 +24,14 @@
    * Modificateur pour les champs validés
    */
   &--valid {
-    @include scheme-element-box-shadow-color(default success, false, bottom-2-in);
+    @include scheme-element-box-shadow-color(plain success, false, bottom-2-in);
   }
 
   /**
    * Modificateur pour les champs présentant des erreurs
    */
   &--error {
-    @include scheme-element-box-shadow-color(default error, false, bottom-2-in);
+    @include scheme-element-box-shadow-color(plain error, false, bottom-2-in);
   }
 
   /**
@@ -41,7 +41,7 @@
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus {
-    @include scheme-element-box-shadow-color(thick neutral background-contrast blue-france , false, bottom-2-in all-in);
+    @include scheme-element-box-shadow-color(plain neutral background-contrast info , false, bottom-2-in all-in);
     @include _scheme-element(-webkit-text-fill-color, text, label neutral);
   }
 }

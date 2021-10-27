@@ -5,7 +5,7 @@
 
 #{ns(tabs)} {
   @include after {
-    @include scheme-element-box-shadow-color(default neutral, false, right-1-in bottom-left-1-in );
+    @include scheme-element-box-shadow-color(default neutral, false, all-1-in);
   }
 
   /**
@@ -13,7 +13,7 @@
    */
   @include list {
     @include after {
-      @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+      // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
     }
 
     /**
@@ -22,19 +22,19 @@
     > li {
       &:not(:first-child) {
         @include before {
-          @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
         }
       }
 
       &:last-child {
         @include after {
-          @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
         }
       }
 
       &:first-child {
         @include before {
-          @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
         }
       }
     }
@@ -45,15 +45,15 @@
   */
   &__tab {
     &:not([aria-selected=true]) {
-      @include scheme-element-bg-color(alt blue-france);
-      @include scheme-element-text-color(default neutral);
+      @include scheme-element-bg-color(action-low blue-france);
+      @include scheme-element-text-color(action-high neutral);
       // @include disabled(g600, g300); // @TODO: disabled
       @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
     }
 
     @at-root &[aria-selected=true] {
-      @include scheme-element-box-shadow-color(action-high blue-france default neutral, false, top-2-in left-1-in right-1-in);
-      @include scheme-element-text-color(title blue-france);
+      @include scheme-element-box-shadow-color(active blue-france default neutral, false, top-2-in left-1-in right-1-in);
+      @include scheme-element-text-color(active blue-france);
       @include scheme-element-bg-color(default neutral);
       // @include remove-hover();
     }

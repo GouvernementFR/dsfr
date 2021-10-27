@@ -23,5 +23,5 @@
   @if not map-has-key($families, $family) {
     @error ('no $family ' + $family + ' in $scheme-decisions ' + $part + ' ' + $token);
   }
-  @return map-get($families, $family);
+  @return nth(map-get($families, $family), 1);
 }

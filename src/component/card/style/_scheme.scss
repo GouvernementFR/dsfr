@@ -9,7 +9,7 @@
 
   &:not(&--no-arrow) &__body {
     @include after {
-      @include scheme-element-text-color(title blue-france);
+      @include scheme-element-text-color(art blue-france);
     }
   }
 

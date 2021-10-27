@@ -5,9 +5,13 @@
 
 #{ns(callout)} {
   @include scheme-element-bg-color(contrast neutral);
-  @include scheme-element-box-shadow-color(thick blue-france, false, left-1v-in);
+  @include scheme-element-box-shadow-color(plain blue-france, false, left-1v-in);
 
-  @include title() {
+  @include before {
+    @include scheme-element-text-color(title neutral);
+  }
+
+  @include title {
     @include scheme-element-text-color(title neutral);
   }
 }

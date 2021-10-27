@@ -4,7 +4,7 @@
 ////
 
 #{ns(tag)} {
-  @include scheme-element-text-color(title neutral);
+  @include scheme-element-text-color(label neutral);
   @include scheme-element-bg-color(contrast neutral);
 }
 

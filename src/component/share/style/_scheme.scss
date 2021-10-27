@@ -5,7 +5,7 @@
 
 #{ns(share)} {
   &__link {
-    @include scheme-element-text-color(title blue-france);
+    @include scheme-element-text-color(action-high blue-france);
     @include scheme-element-bg-transparent(true);
     @include scheme-element-box-shadow-color(default neutral);
     @include disabled(true, false, true, true);

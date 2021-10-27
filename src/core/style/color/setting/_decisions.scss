@@ -20,6 +20,7 @@ $scheme-decisions: (
       neutral: lighter,
       primary: lighter,
       accent: lighter,
+      system: lighter
     ),
     flat: (
       neutral: strongest,
@@ -33,17 +34,14 @@ $scheme-decisions: (
       system: strong,
     ),
     action-low: (
-      neutral: light,
       primary: light,
       accent: light,
     ),
     active: (
       primary: strong,
-      accent: strong,
     ),
     open: (
       primary: light,
-      accent: light,
     ),
     disabled: (
       neutral: light
@@ -54,6 +52,10 @@ $scheme-decisions: (
       neutral: strongest,
       system: strong
     ),
+    art: (
+      primary: main,
+      accent: main,
+    ),
     action-high: (
       neutral: black,
       primary: strong,
@@ -61,8 +63,7 @@ $scheme-decisions: (
     ),
     title: (
       neutral: black,
-      primary: strong,
-      accent: strong
+      primary: strong
     ),
     label: (
       neutral: black,
@@ -71,8 +72,7 @@ $scheme-decisions: (
     ),
     active: (
       neutral: black,
-      primary: strong,
-      accent: strong
+      primary: strong
     ),
     mention: (
       neutral: strong
@@ -80,8 +80,8 @@ $scheme-decisions: (
     inverted: (
       neutral: white,
       primary: inverted,
-      system: light,
-      accent: light
+      system: lightest,
+      accent: lightest
     ),
     disabled: (
       neutral: soft
@@ -90,18 +90,16 @@ $scheme-decisions: (
   border: (
     default: (
       neutral: light,
-      system: strong,
       primary: main,
       accent: main
     ),
     active: (
-      primary: strong,
-      accent: strong,
+      primary: strong
     ),
     action-high: (
       neutral: black,
       primary: strong,
-      accent: strong
+      system: strong
     ),
     action-low: (
       primary: softest,
@@ -110,9 +108,11 @@ $scheme-decisions: (
     open: (
       primary: light
     ),
-    thick: (
+    plain: (
       neutral: strongest,
-      primary: strong
+      primary: strong,
+      system: strong,
+      accent: strong,
     ),
     disabled: (
       neutral: light

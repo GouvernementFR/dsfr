@@ -5,7 +5,7 @@
 
 #{ns(quote)} {
   @include before {
-    @include scheme-element-text-color(title blue-france);
+    @include scheme-element-text-color(art blue-france);
   }
 
   @include scheme-element-box-shadow-color(default neutral, false, calc(-25vw + 0.5rem) calc(25vw - 0.5rem + 1px) 0 calc(-25vw + 0.5rem) $COLOR);

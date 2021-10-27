@@ -4,11 +4,13 @@
 ////
 
 #{ns(sidemenu)} {
+  /*
   @include scheme-element-bg-color(default neutral);
 
   @include respond-from(md) {
     @include scheme-element-bg-transparent(true);
   }
+  */
 
   @include title {
     @include scheme-element-text-color(title neutral);
@@ -40,9 +42,9 @@
     &--active {
       & > #{ns(sidemenu__btn)},
       & > #{ns(sidemenu__link)} {
-        @include scheme-element-text-color(title blue-france);
+        @include scheme-element-text-color(active blue-france);
         @include after {
-          background-color: currentColor;
+          @include scheme-element-bg-color(border-active blue-france);
         }
       }
     }
@@ -63,7 +65,6 @@
 
     &--full-border {
       #{ns(sidemenu__inner)} {
-        // @include scheme-element-border-color(g300, true);
         @include scheme-element-box-shadow-color(default neutral);
       }
     }
@@ -71,7 +72,7 @@
 }
 
 #{ns(sidemenu__btn)} {
-  @include scheme-element-text-color(title neutral);
+  @include scheme-element-text-color(action-high neutral);
 
   @at-root #{ns(sidemenu__inner)} > #{&} {
     @include scheme-element-bg-color(default neutral);
@@ -85,7 +86,7 @@
 }
 
 #{ns(sidemenu__link)} {
-  @include scheme-element-text-color(title neutral);
+  @include scheme-element-text-color(action-high neutral);
   @include after {
     @include scheme-element-bg-transparent(true);
   }

@@ -7,6 +7,6 @@
   @include scheme-element-box-shadow-color(default neutral, false, top-1-in bottom-1-out);
 
   &__btn {
-    @include scheme-element-text-color(title neutral);
+    @include scheme-element-text-color(action-high neutral);
   }
 }

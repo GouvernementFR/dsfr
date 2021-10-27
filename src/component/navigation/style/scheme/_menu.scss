@@ -6,7 +6,7 @@
 #{ns(menu)} {
   @include respond-from(lg) {
     @include after {
-      @include scheme-element-bg-color(default neutral);
+      @include scheme-element-bg-color(elevated neutral);
     }
 
     #{ns(nav__link)} {

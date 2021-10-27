@@ -85,7 +85,7 @@
   &--error {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-box-shadow-color(default error, false, left-2-in);
+        @include scheme-element-box-shadow-color(plain error, false, left-2-in);
       }
     }
 
@@ -100,7 +100,7 @@
   &--valid {
     #{ns(fieldset__content)} {
       @include before {
-        @include scheme-element-box-shadow-color(default success, false, left-2-in);
+        @include scheme-element-box-shadow-color(plain success, false, left-2-in);
       }
     }
 

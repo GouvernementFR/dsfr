@@ -4,12 +4,12 @@
 ////
 
 #{ns(mega-menu)} {
-  @include scheme-element-bg-color(default neutral);
+  @include scheme-element-bg-color(elevated neutral);
 
   > #{ns(container)} {
     @include respond-from(lg) {
       @include before {
-        @include scheme-element-bg-color(alt blue-france);
+        @include scheme-element-bg-color(open blue-france);
       }
     }
   }

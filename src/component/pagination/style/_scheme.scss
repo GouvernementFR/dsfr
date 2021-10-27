@@ -4,12 +4,12 @@
 ////
 
 #{ns(pagination)} {
-  @include scheme-element-text-color(title neutral);
+  @include scheme-element-text-color(action-high neutral);
 
   &__link {
     &[aria-current] {
-      @include scheme-element-bg-color(action-high blue-france);
-      @include scheme-element-text-color(inverted neutral); // @TODO: white-bf500
+      @include scheme-element-bg-color(active blue-france);
+      @include scheme-element-text-color(inverted blue-france);
     }
 
     &:not([aria-current]) {

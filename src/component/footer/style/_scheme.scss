@@ -4,7 +4,7 @@
 ////
 
 #{ns(footer)} {
-  @include scheme-element-box-shadow-color(thick blue-france default neutral, false, top-2-out bottom-1-in);
+  @include scheme-element-box-shadow-color(plain blue-france default neutral, false, top-2-out bottom-1-in);
 
   &__content-link {
     @include scheme-element-text-color(title neutral);
@@ -19,19 +19,17 @@
   }
 
   &__bottom {
-    // @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
     @include scheme-element-box-shadow-color(default neutral, false, top-1-in);
   }
 
   &__bottom-item {
     @include before {
-      @include scheme-element-box-shadow-color(default neutral); // g400
+      @include scheme-element-box-shadow-color(default neutral);
     }
   }
 
   &__bottom-link {
     @include scheme-element-text-color(mention neutral);
-    // @include scheme-element-bg-color-transparent(false);
   }
 
   &__bottom-copy {
@@ -39,7 +37,6 @@
   }
 
   &__partners {
-    // @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
     @include scheme-element-box-shadow-color(default neutral, false, top-1-in);
 
     a {

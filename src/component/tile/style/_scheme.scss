@@ -4,7 +4,7 @@
 ////
 
 #{ns(tile)} {
-  @include scheme-element-box-shadow-color(default neutral thick blue-france, false,  all-1-in bottom-1v-in);
+  @include scheme-element-box-shadow-color(default neutral plain blue-france, false,  all-1-in bottom-1v-in);
 
   @include scheme-element-bg-color(default neutral);
 

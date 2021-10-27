@@ -11,14 +11,14 @@
     * Modificateur pour le champ validés
     */
     &--valid {
-      @include scheme-element-box-shadow-color(default success, false, bottom-2-in);
+      @include scheme-element-box-shadow-color(plain success, false, bottom-2-in);
     }
 
     /**
     * Modificateur pour le champ présentant des erreurs
     */
     &--error {
-      @include scheme-element-box-shadow-color(default error, false, bottom-2-in);
+      @include scheme-element-box-shadow-color(plain error, false, bottom-2-in);
     }
   }
 }

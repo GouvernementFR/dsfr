@@ -6,11 +6,11 @@
 #{ns(toggle)} {
   label {
     @include before {
-      @include scheme-element-text-color(title blue-france);
+      @include scheme-element-text-color(active blue-france);
     }
 
     @include after {
-      @include scheme-element-text-color(title blue-france);
+      @include scheme-element-text-color(active blue-france);
       @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
       @include scheme-element-bg-color(default neutral);
     }
@@ -21,7 +21,7 @@
     // @include disabled-toggle-choice(); // disabled
 
     &:checked {
-      @include scheme-element-bg-color(action-high blue-france);
+      @include scheme-element-bg-color(active blue-france);
     }
 
     @include disabled(false, false, true) {

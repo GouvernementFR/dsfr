@@ -6,12 +6,12 @@
 #{ns(nav)} {
   &__link,
   &__btn {
-    @include scheme-element-text-color(title neutral);
+    @include scheme-element-text-color(action-high neutral);
 
     &[aria-current] {
-      @include scheme-element-text-color(title blue-france);
+      @include scheme-element-text-color(active blue-france);
       @include before {
-        @include scheme-element-bg-color(action-high blue-france);
+        @include scheme-element-bg-color(active blue-france);
       }
     }
   }
@@ -19,8 +19,8 @@
   &__btn {
     &[aria-expanded="true"] {
       @include respond-from(lg) {
-        @include scheme-element-text-color(title blue-france);
-        @include scheme-element-bg-color(alt blue-france);
+        @include scheme-element-text-color(active blue-france);
+        @include scheme-element-bg-color(open blue-france);
       }
     }
   }
