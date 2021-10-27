@@ -38,12 +38,6 @@
         &:nth-child(even) {
           @include scheme-element-bg-transparent(false);
         }
-
-        &:first-child {
-          td {
-            box-shadow: 0;
-          }
-        }
       }
     }
   }
