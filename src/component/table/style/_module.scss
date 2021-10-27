@@ -64,16 +64,6 @@
     }
   }
 
-  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
-  &--bordered {
-    tbody {
-      td,
-      th {
-        border: 0;
-      }
-    }
-  }
-
   /*
   * Cache la caption
   */
