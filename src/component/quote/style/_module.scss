@@ -9,6 +9,15 @@
   @include padding(0 2v 8v 2v);
   @include padding(0 0 0 8v, md);
 
+  background-size: 50% 1px;
+  background-repeat: no-repeat;
+  background-position: space(2v 100%);
+
+  @include respond-from(md) {
+    background-size: 1px 100%;
+    background-position: 0 0;
+  }
+
   @include icon(chat-quote-line,lg) {
     display: block;
     @include padding-bottom(2v);
