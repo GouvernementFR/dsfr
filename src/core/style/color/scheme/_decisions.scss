@@ -2,9 +2,18 @@
 /// Core Color Scheme : Decisions
 /// @group core
 ////
+$decisions: map-get(map-get($color-variable, utilities), decisions);
 
-@each $part, $tokens in $scheme-decisions {
-  @each $token, $families in $tokens {
+@each $part, $list in $decisions {
+  $tokens: map-get($scheme-decisions, $part);
+  @if $tokens == null {
+    @error 'part #{$part} doesn\'t exist in $scheme-decisions';
+  }
+  @each $token in $list {
+    $families: map-get($tokens, $token);
+    @if $families == null {
+      @error 'token #{$token} doesn\'t exist in $scheme-decisions';
+    }
     @each $family, $shade in $families {
       @each $tint, $shades in map-get($scheme-sets, $family) {
         @if map-has-key($shades, $shade) {
