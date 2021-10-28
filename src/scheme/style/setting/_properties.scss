@@ -1,0 +1,56 @@
+////
+/// Schemes Settings : Properties
+/// @group schemes
+////
+
+$tint-properties: (
+  neutral: (
+    grey: g,
+  ),
+  primary: (
+    blue-france: bf,
+    red-marianne: rm,
+  ),
+  system: (
+    info: in,
+    success: su,
+    warning: wa,
+    error: er,
+  ),
+  accent: (
+    tilleul-verveine: tv,
+    bourgeon: bo,
+    emeraude: em,
+    menthe: me,
+    archipel: ar,
+    ecume: ec,
+    cumulus: cu,
+    glycine: gl,
+    macaron: ma,
+    tuile: tu,
+    tournesol: to,
+    moutarde: mo,
+    terre-battue: tb,
+    cafe-creme: cc,
+    caramel: ca,
+    opera: op,
+    galet: ga,
+  ),
+);
+
+$shade-properties: (
+  black: 'A',
+  darkest: 'B',
+  darker: 'C',
+  dark: 'D',
+  strongest: 'E',
+  stronger: 'F',
+  strong: 'G',
+  soft: 'H',
+  softer: 'I',
+  softest: 'J',
+  light: 'K',
+  lighter: 'L',
+  lightest: 'M',
+  white: 'N'
+);

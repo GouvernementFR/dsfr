@@ -4,20 +4,19 @@
 ////
 
 #{ns(btn)} {
-  @include scheme-element-bg-color(bf500, true, true);
-  @include scheme-element-text-color(w-bf500, true);
+  @include scheme-element-bg-color(action-high blue-france);
+  @include scheme-element-text-color(inverted blue-france);
 
-  @include disabled-link(true, true);
+  @include disabled(true, true, false, true);
 
-  $button:&;
   // Outline variant
   &--secondary {
-    @include scheme-element-bg-color(t-plain, false, override);
-    @include scheme-element-text-color(bf500);
-    @include scheme-element-box-shadow-color(bf500, $button);
+    @include scheme-element-bg-transparent(true);
+    @include scheme-element-text-color(action-high blue-france);
+    @include scheme-element-box-shadow-color(action-high blue-france);
 
-    @include disabled-link(true, false, true) {
-      @include scheme-element-bg-color(t-plain, false);
+    @include disabled(true, false, true, true) {
+      @include scheme-element-bg-transparent(true);
     }
   }
 }

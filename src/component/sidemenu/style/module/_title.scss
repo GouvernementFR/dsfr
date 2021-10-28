@@ -12,9 +12,6 @@
   @include text-style(lg);
   font-weight: font-weight(bold);
 
-  @include respond-from(md) {
-    @include margin(0 0 6v);
-    @include padding(0);
-    border: 0;
-  }
+  @include margin(0 0 6v, md);
+  @include padding(0, md);
 }

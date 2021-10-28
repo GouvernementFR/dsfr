@@ -4,23 +4,24 @@
 ////
 
 #{ns(mega-menu)} {
-  @include scheme-element-bg-color(w-g750, true);
+  @include scheme-element-bg-color(elevated neutral);
 
   > #{ns(container)} {
     @include respond-from(lg) {
       @include before {
-        @include scheme-element-bg-color(bf200-bf300, true);
+        @include scheme-element-bg-color(open blue-france);
       }
     }
   }
 
   &__list {
-    @include scheme-element-box-shadow-color(g300, true, 0 1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+    @include scheme-element-no-box-shadow(lg);
   }
 
   &__category {
     @include respond-from(lg) {
-      @include scheme-element-box-shadow-color(g300, true, 0 calc(#{space(4v)} + 1px) 0 #{space(-4v)} $COLOR);
+      @include scheme-element-box-shadow-color(default neutral, false, 0 calc(4v + 1px) 0 -4v $COLOR);
     }
   }
 }

@@ -4,35 +4,51 @@
 ////
 
 #{ns(toggle)} {
-  &__input {
-    @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-    @include disabled-toggle-choice();
-
-    &:checked {
-      @include scheme-element-bg-color(bf500);
-    }
-  }
-
-  &__label {
+  label {
     @include before {
-      @include scheme-element-text-color(bf500);
+      @include scheme-element-text-color(active blue-france);
     }
 
     @include after {
-      @include scheme-element-text-color(bf500);
-      @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-      @include scheme-element-bg-color(w);
+      @include scheme-element-text-color(active blue-france);
+      @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
+      @include scheme-element-bg-color(default neutral);
+    }
+  }
+
+  input[type="checkbox"] {
+    @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
+    // @include disabled-toggle-choice(); // disabled
+
+    &:checked {
+      @include scheme-element-bg-color(active blue-france);
+    }
+
+    @include disabled(false, false, true) {
+      &:checked {
+        @include disabled-colors(false, true);
+      }
+
+      + label {
+        @include before {
+          @include disabled-colors(true);
+        }
+
+        @include after {
+          @include disabled-colors(true, false, true);
+        }
+      }
     }
   }
 
   #{ns(hint-text)} {
-    @include scheme-element-text-color(g600, true);
+    @include scheme-element-text-color(mention neutral);
   }
 
   /*
   * Ajout d'un séparateur
   */
   &--border-bottom {
-    @include scheme-element-box-shadow-color(g300, false, inset 0 -1px 0 0 $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
   }
 }

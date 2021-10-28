@@ -1,0 +1,27 @@
+////
+/// Core Module : Action focus
+/// @group core
+////
+
+*:focus,
+*:focus-visible {
+  z-index: z-index(focus);
+}
+
+@include focusable-selector {
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-color: $focus-color;
+}
+
+@include focusable-selector-focus {
+  outline-style: solid;
+}
+
+@include focusable-selector-focus-not-visible {
+  outline-style: none;
+}
+
+@include focusable-selector-focus-visible {
+  outline-style: solid;
+}

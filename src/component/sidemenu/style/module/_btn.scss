@@ -16,21 +16,19 @@
   @include text-style(md);
   text-align: left;
   font-weight: font-weight(bold);
-  background: 0;
-  border: 0;
+  background: none;
+  @include scheme-element-no-box-shadow;
 
   @include icon(arrow-down-s-line, sm) {
     @include margin-left(auto);
     @include margin-right(0);
     transition: transform 0.3s;
 
-    @include respond-from(md) {
-      @include margin-right(-6v, md);
-    }
+    @include margin-right(-6v, md);
   }
 
   &[aria-expanded="true"] {
-    border: 0;
+    @include scheme-element-no-box-shadow;
     @include before {
       transform: rotate(-180deg);
     }
@@ -54,14 +52,10 @@
       @include margin-x(2v);
     }
 
-    @include respond-from(md) {
-      display: none;
-    }
+    @include scheme-element-no-box-shadow(md);
   }
 
-  @include respond-from(md) {
-    @include size(100%);
-    @include padding(3v 8v 3v 2v);
-    border: 0;
-  }
+  @include scheme-element-no-box-shadow(md);
+  @include padding(3v 8v 3v 2v, md);
+  @include size(100%, null, md);
 }

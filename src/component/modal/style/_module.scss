@@ -125,4 +125,10 @@
     @include margin-top(0);
     @include margin-bottom(4v);
   }
+
+  &#{ns(scroll-shadow)} {
+    #{ns(modal)}__footer {
+      @include shadow(up);
+    }
+  }
 }
