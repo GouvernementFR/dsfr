@@ -9,8 +9,4 @@
   }
 
   @include scheme-element-bg-image-color(border-default neutral);
-
-  @include respond-from(md) {
-    @include scheme-element-box-shadow-color(default neutral, false, left-1-in);
-  }
 }
