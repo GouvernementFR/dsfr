@@ -51,15 +51,13 @@
     &:not([aria-selected=true]) {
       @include scheme-element-bg-color(action-low blue-france);
       @include scheme-element-text-color(action-high neutral);
-      // @include disabled(g600, g300); // @TODO: disabled
-      // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
     }
 
-    @at-root &[aria-selected=true] {
-      // @include scheme-element-box-shadow-color(active blue-france default neutral, false, top-2-in left-1-in right-1-in);
+    &[aria-selected=true] {
       @include scheme-element-text-color(active blue-france);
       @include scheme-element-bg-color(default neutral);
-      // @include remove-hover();
     }
+
+    @include disabled(true, true);
   }
 }
