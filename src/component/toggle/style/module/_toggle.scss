@@ -17,7 +17,6 @@
   input[type="checkbox"] {
     flex-shrink: 0;
     @include size(10v, 6v);
-    border: 0;
     border-radius: space(3v);
     @include margin(0);
     -webkit-appearance: none;

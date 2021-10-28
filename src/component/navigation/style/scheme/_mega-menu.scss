@@ -16,9 +16,7 @@
 
   &__list {
     @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
-    @include respond-from(lg) {
-      box-shadow: none;
-    }
+    @include scheme-element-no-box-shadow(lg);
   }
 
   &__category {

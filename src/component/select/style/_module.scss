@@ -9,7 +9,6 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   @include size(100%);
-  border: 0;
   border-radius: space(1v 1v 0 0);
   @include text-style(md);
   @include padding(2v 10v 2v 4v);

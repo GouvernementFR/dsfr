@@ -8,9 +8,7 @@
 
   &__service {
     @include scheme-element-box-shadow-color(default neutral, false, top-1-in);
-    @include respond-from(lg) {
-      box-shadow: none;
-    }
+    @include scheme-element-no-box-shadow(lg);
   }
 
   &__menu-links {

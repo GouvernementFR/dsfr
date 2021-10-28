@@ -19,7 +19,7 @@
     @include display-flex(null, center, center);
     @include size(160px, 90px);
     // @include padding(2v);
-    box-shadow: none;
+    @include scheme-element-no-box-shadow;
     // @include margin(0 0 0 4v, md);
   }
 
@@ -118,7 +118,7 @@
    * On surcharge le style du lien pour les logos secondaires
    */
   #{ns(footer)}__partners-link {
-    box-shadow: none;
+    @include scheme-element-no-box-shadow;
     @include margin(0);
     @include margin-bottom(2v);
     @include margin(0 0 2v 4v, sm);

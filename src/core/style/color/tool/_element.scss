@@ -108,6 +108,12 @@ $ACCENT: none;
   @include _scheme-element($prop, border, $decisions, $important, $value);
 }
 
+@mixin scheme-element-no-border($breakpoint: null) {
+  @include respond-from($breakpoint) {
+    border: 0;
+  }
+}
+
 /// Ajout d'une couleur d'outline sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
@@ -142,4 +148,10 @@ $ACCENT: none;
     $value: $transformed;
   }
   @include _scheme-element(box-shadow, border, $decisions, $important, space($value));
+}
+
+@mixin scheme-element-no-box-shadow($breakpoint: null) {
+  @include respond-from($breakpoint) {
+    box-shadow: none;
+  }
 }

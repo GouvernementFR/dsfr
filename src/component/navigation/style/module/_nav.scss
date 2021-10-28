@@ -61,8 +61,9 @@
     @include display-flex(column, stretch);
     flex: 0 1 auto;
 
+    @include scheme-element-no-box-shadow(lg);
+
     @include respond-from(lg) {
-      box-shadow: none;
       align-items: flex-start;
 
       &--align-right {
