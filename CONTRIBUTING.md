@@ -307,10 +307,10 @@ Pour voir les différents paramètres disponibles : `yarn build --help`
 ## Autres commandes
 
 ### Icônes
-La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS en base64. Celle-ci est générée automatiquement à partir des fichiers `.svg` se trouvant dans le dossier `src/core/icon/svg/`. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en relançant le build du core :
+La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS en base64. Celle-ci est générée automatiquement à partir des fichiers `.svg` se trouvant dans le dossier `src/core/icon/svg/`. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en relançant le build :
 
 ```
-yarn build -p core
+yarn build --clean
 ```
 
 ### Sassdoc
