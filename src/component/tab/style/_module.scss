@@ -57,6 +57,7 @@
     font-weight: bold;
     @include z-index(over);
     @include margin(0 1v);
+    white-space: nowrap;
     // transition: background-color 0.3s;
 
     &[aria-selected=true] {
@@ -66,9 +67,9 @@
     @include after('', block) {
       @include size();
       @include absolute(0, 0, -2px, 0, 100%);
-      background-size: 100% 2px, 1px calc(100% - 2px), 1px calc(100% - 2px), 100% 3px;
+      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 100% 3px;
       background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-      background-position: 0 0, 0 calc(100% - 2px), 100% calc(100% - 2px), 100% 100%;
+      background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
       // transition: background-size 0.3s;
     }
 

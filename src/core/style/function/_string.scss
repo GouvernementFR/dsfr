@@ -87,6 +87,7 @@
   }
 
   $range: str_slice($is, $start, str_length($is));
+  @debug $in $is $range;
 
   $i: str-index($range, $in);
 
@@ -99,7 +100,7 @@
 
   $modified: str_slice($is, 1, $fi - 2) + $ic + str_slice($is, $end, str_length($is));
 
-  @return str-replace($modified, $needle, $content, $end);
+  @return str-replace($modified, $needle, $content, $fi + str-length($ic) - 2);
 }
 
 /// Découpage d'une chaine de caractères avec un séparateur particulier
