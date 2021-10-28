@@ -5,7 +5,7 @@
 
 $ACCENT: none;
 
-@mixin _scheme-element($prop, $part, $decisions, $important: false, $value: $COLOR) {
+@mixin _scheme-element($prop, $part, $decisions, $important: false, $value: $COLOR, $hover: false) {
   $result: str-replace($value, '$COLOR', '$color#1');
   $length: length($decisions) / 2;
   @for $i from 1 through $length {
@@ -34,7 +34,7 @@ $ACCENT: none;
     $color: _get-value($p, $token, $tint);
     $result: _replace_color($result, $color, $needle);
 
-    @if $part == background {
+    @if $hover and $p == background {
       @include _include-hover-prop($token, $tint, $important);
     }
   }
@@ -51,7 +51,7 @@ $ACCENT: none;
 /// @param {String} $decisions - token de décision
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 @mixin scheme-element-bg-color($decisions, $important: false) {
-  @include _scheme-element(background-color, background, $decisions, $important);
+  @include _scheme-element(background-color, background, $decisions, $important, $COLOR, true);
 }
 
 @mixin scheme-element-bg-transparent($hover: false) {
@@ -59,6 +59,23 @@ $ACCENT: none;
   @if $hover {
     @include _include-transparent-hover-prop;
   }
+}
+
+/// Ajout d'une couleur de background sur un élément
+/// @access public
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $important - Si true, applique !important à la règle css
+@mixin scheme-element-bg-image-color($decisions, $important: false, $value: linear-gradient(0deg, $COLOR, $COLOR)) {
+  $d: length($decisions) / 2;
+  @if $d > 1 and $value == linear-gradient(0deg, $COLOR, $COLOR) {
+    $transformed: ();
+    @for $i from 1 through $d {
+      $c: unquote('$color##{$i}');
+      $transformed: append($transformed, linear-gradient(0deg, $c, $c), comma);
+    }
+    $value: $transformed;
+  }
+  @include _scheme-element(background-image, background, $decisions, $important, $value);
 }
 
 /// Ajout d'une couleur de texte sur un élément
