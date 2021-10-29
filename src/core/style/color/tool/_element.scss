@@ -15,26 +15,17 @@ $ACCENT: none;
     @if length($decisions) > 2 {
       $needle: '$color##{$i}';
     }
-    $p: $part;
-    @if str-index($token, background) == 1 {
-      $p: background;
-      $token: str-slice($token, 12, str-length($token));
-    }
-    @if str-index($token, text) == 1 {
-      $p: text;
-      $token: str-slice($token, 6, str-length($token));
-    }
-    @if str-index($token, border) == 1 {
-      $p: border;
-      $token: str-slice($token, 8, str-length($token));
-    }
+    $part-token: _get-part-token($part, $token);
+    $p: map-get($part-token, part);
+    $token: map-get($part-token, token);
+
     @if $tint == neutral {
       $tint: _get-neutral-tint($p, $token);
     }
     $color: _get-value($p, $token, $tint);
     $result: _replace_color($result, $color, $needle);
 
-    @if $hover and $p == background {
+    @if $hover and $part == background and $p == background {
       @include _include-hover-prop($token, $tint, $important);
     }
   }
