@@ -52,10 +52,6 @@ $scheme-decisions: (
       neutral: strongest,
       system: strong
     ),
-    art: (
-      primary: main,
-      accent: main,
-    ),
     action-high: (
       neutral: black,
       primary: strong,
@@ -116,6 +112,18 @@ $scheme-decisions: (
     ),
     disabled: (
       neutral: light
+    )
+  ),
+  artwork: (
+    major: (
+      primary: strong,
+    ),
+    minor: (
+      primary: main,
+      accent: main
+    ),
+    decorative: (
+      primary: lighter
     )
   )
 );

@@ -5,7 +5,7 @@
 
 #{ns(quote)} {
   @include before {
-    @include scheme-element-text-color(art blue-france);
+    @include scheme-element-text-color(artwork-minor blue-france);
   }
 
   @include scheme-element-bg-image-color(border-default neutral);
