@@ -8,6 +8,8 @@
 
 <%- sample('Case à cocher seule avec erreur', './sample/checkbox.ejs', {checkbox: {id:'checkbox-error', error:true}}, true); %>
 
+<%- sample('Case à cocher seule cochée et desactivée', './sample/checkbox.ejs', {checkbox: {id:'checkbox-disabled-checked', attributes: {checked:true, disabled:true}}}, true); %>
+
 <%- sample('Ensemble de cases à cocher', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes'}}, true); %>
 
 <%- sample('Ensemble de cases à cocher, petite taille', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-small', size:'sm'}}, true); %>

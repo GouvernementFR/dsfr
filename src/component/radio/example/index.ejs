@@ -6,6 +6,8 @@
 
 <%- sample('Ensemble de boutons radio désactivées', './sample/radios.ejs', {radio: { id:'radio-disabled', disabled:true}}, true); %>
 
+<%- sample('Bouton radio désactivé et pré-coché', './sample/radio.ejs', {radio: { id:'radio-disabled-checked', attributes: {disabled:true, checked:true}}}, true); %>
+
 <%- sample('Ensemble de boutons radio en ligne', './sample/radios.ejs', {radio: { id:'radio-inline', inline: true}}, true); %>
 
 <%- sample('Ensemble de boutons radio avec texte d‘aide', './sample/radios.ejs', {radio: { id:'radio-hint', hint: true}}, true); %>
