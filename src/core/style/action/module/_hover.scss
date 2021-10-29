@@ -12,7 +12,7 @@
 
     &:hover,
     &:active {
-      background-image: radial-gradient(circle at center, var(--hover-hsla), transparent 3%);
+      background-image: radial-gradient(circle at center, var(--hover-hsla), var(--hover-hsla) 3%);
     }
 
     &:hover {
