@@ -1,9 +1,24 @@
 <%#
 # paramètres fieldset
 
-* fieldset.id (string, required) id du fieldset
+* fieldset.id (string, required) : id du fieldset
 
-* fieldset.choice (boolean, optional) si true, la graisse du label devient normal
+* fieldset.choice (boolean, optional) : si true, la graisse du label devient normal
+
+* fieldset.elements (array, optional) : tableau d'éléments
+
+* fieldset.inline (boolean, optional): determine l'orientation des éléments dans le fieldset, horizontal si true
+
+* fieldset.hint (string, optional) : message de description additionel
+
+* fieldset.error (string, optional) : message d'erreur
+
+* fieldset.valid (string, optional) : message de succès
+
+* fieldset.attributes (object, optionnal) : attributs spécifiques à rajouter sur le fieldset
+
+* fieldset.classes (array, optionnal) : classes spécifiques à rajouter sur le fieldset
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
@@ -46,10 +61,6 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
                 let path;
                 for (let i = 0; i < fieldset.elements.length; i++) {
                     let element = fieldset.elements[i];
-                    // element.data.error = undefined;
-                    // element.data.valid = undefined;
-                    // element.data.hint = undefined;
-                    // if (element.data.disabled === undefined) element.data.disabled = undefined;
                     element.data.group = true;
             %>
                 <%- include('../../../' + element.path, element.data); %>
