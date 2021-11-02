@@ -1,6 +1,6 @@
 <%
 let radio = locals.radio || {}
-let data = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
+let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
 data = {...radio, ...data};
 let element = {
   path: 'radio/example/sample/radio-rich',
