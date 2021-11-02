@@ -1,7 +1,7 @@
 <%
 let radio = locals.radio || {}
 let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
-data = {...radio, ...data};
+let data = {...radio, ...jsonData};
 
 data.label = 'Label radio';
 data.customIcon = `background-image: url(${imgData('img/placeholder.1x1.png').src})`;
