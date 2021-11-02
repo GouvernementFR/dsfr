@@ -67,10 +67,20 @@ const testPa11y = async (packages) => {
   app.use(Express.static('./'));
 
   // Get all packages
-  const urls = packages.map(pck => `http://localhost:8081/${pck.example.file}`);
+  // const packageUrls = packages.map(pck => {
+  //   return `http://localhost:8081/${pck.example.file}`;
+  // });
 
-  // Run tests
-  await runPa11yTests(urls);
+  // Get all Components packages
+  const componentPackages = packages.filter(pck => {
+    return pck.dist.includes('component');
+  });
+  const componentUrls = componentPackages.map(pck => {
+    return `http://localhost:8081/${pck.example.file}`;
+  });
+
+  // Run tests on components
+  await runPa11yTests(componentUrls);
 
   // Close server
   server.close();

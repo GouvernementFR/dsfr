@@ -4,44 +4,40 @@
 ////
 
 #{ns(footer)} {
-  @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
-  @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
+  @include scheme-element-box-shadow-color(plain blue-france default neutral, false, top-2-out bottom-1-in);
 
   &__content-link {
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(title neutral);
   }
 
   &__top {
-    @include scheme-element-bg-color(beige, true);
+    @include scheme-element-bg-color(alt neutral);
   }
 
   &__top-link {
-    @include scheme-element-text-color(g600, true);
+    @include scheme-element-text-color(mention neutral);
   }
 
   &__bottom {
-    @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, top-1-in);
   }
 
   &__bottom-item {
     @include before {
-      @include scheme-element-bg-color(g400, true);
+      @include scheme-element-box-shadow-color(default neutral);
     }
   }
 
   &__bottom-link {
-    @include scheme-element-text-color(g600, true);
-    @include scheme-element-bg-color(t-plain);
+    @include scheme-element-text-color(mention neutral);
   }
 
   &__bottom-copy {
-    @include scheme-element-text-color(g600, true);
+    @include scheme-element-text-color(mention neutral);
   }
 
   &__partners {
-    @include margin-top(4v);
-    @include padding-top(4v);
-    @include scheme-element-border-color(g400, true, top, 1px solid $COLOR);
+    @include scheme-element-box-shadow-color(default neutral, false, top-1-in);
 
     a {
       background: $white;

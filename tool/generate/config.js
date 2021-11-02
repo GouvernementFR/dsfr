@@ -60,9 +60,12 @@ const analyse = (id, path, ascendants = []) => {
   config.title = data.title || '';
   if (data.order) config.order = data.order;
   config.description = data.description || '';
+  config.draft = data.draft === true;
   config.doc = data.doc;
   if (data.wrapper) config.wrapper = data.wrapper;
   config.prepend = data.prepend === true;
+  config.module = data.module !== false;
+  config.nomodule = data.nomodule !== false;
   const example = data.example || {};
   if (!example.style) example.style = [];
   if (!example.script) example.script = [];

@@ -64,6 +64,7 @@ const build = async (settings) => {
     log.section('examples', true);
 
     for (const pck of packages) {
+      if (pck.draft) continue;
       try {
         await buildExample(pck);
       } catch (e) {
@@ -76,7 +77,7 @@ const build = async (settings) => {
     log.section('markdowns', true);
     for (const pck of packages) {
       try {
-        generateMarkdown(pck);
+        generateMarkdown(pck, packages);
       } catch (e) {
         log.error(e);
       }

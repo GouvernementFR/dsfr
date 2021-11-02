@@ -59,16 +59,8 @@
     td,
     th {
       font-weight: font-weight('bold');
-    }
-  }
-
-  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
-  &--bordered {
-    tbody {
-      td,
-      th {
-        border: 0;
-      }
+      @include padding-bottom(3.5v); // 0.5v for the box shadox
+      @include padding-bottom(4.5v, md);
     }
   }
 

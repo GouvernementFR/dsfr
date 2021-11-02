@@ -7,9 +7,13 @@
   input,
   select,
   textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     @include font-family;
     @include text-adjustments;
     border-radius: 0;
     border: 0;
+    background-color: transparent;
   }
 }

@@ -1,0 +1,54 @@
+////
+/// Core Color Tools : Utilities
+/// @group core
+////
+
+@mixin _include-hover-prop-by-theme($set, $important, $theme: light) {
+  $hue: _get-color-from-set($set, $theme, hue);
+  $saturation: _get-color-from-set($set, $theme, saturation);
+  $base: _get-color-from-set($set, $theme, lightness);
+
+  $lightness: $base;
+
+  @if $theme == light {
+    @if $lightness > 35% {
+      $lightness: $base - 25%;
+    }
+    @else {
+      $lightness: $base + 25%;
+    }
+  }
+  @else {
+    @if $lightness < 70% {
+      $lightness: $base + 25%;
+    }
+    @else {
+      $lightness: $base - 25%;
+    }
+  }
+
+  $hsl: #{$hue}, #{$saturation}, #{$lightness};
+
+  @if $important {
+    $hsl: #{$hsl} !important;
+  }
+
+  --hsl: #{$hsl};
+}
+
+@mixin _include-hover-prop($token, $tint, $important) {
+  $set: _get-scheme-set(background, $token, $tint);
+  @include _include-hover-prop-scheme($set, $important);
+}
+
+@mixin _include-hover-prop-scheme($set, $important) {
+  @include _include-hover-prop-by-theme($set, $important);
+}
+
+@mixin _include-transparent-hover-prop-inherit() {
+  --hsl: inherit;
+}
+
+@mixin _include-transparent-hover-prop() {
+  @include _include-transparent-hover-prop-inherit();
+}

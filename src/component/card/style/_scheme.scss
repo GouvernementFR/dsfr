@@ -4,23 +4,20 @@
 ////
 
 #{ns(card)} {
-  @include scheme-element-bg-color(beige, true, false);
-
-  &#{ns(enlarge-link)} {
-    @include scheme-element-bg-color(beige, true, true);
-  }
+  @include scheme-element-bg-color(default neutral);
+  @include scheme-element-box-shadow-color(default neutral);
 
   &:not(&--no-arrow) &__body {
     @include after {
-      @include scheme-element-text-color(bf500, true);
+      @include scheme-element-text-color(artwork-minor blue-france);
     }
   }
 
   &__detail {
-    @include scheme-element-text-color(g600, true);
+    @include scheme-element-text-color(mention neutral);
   }
 
   &__title {
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(title neutral);
   }
 }

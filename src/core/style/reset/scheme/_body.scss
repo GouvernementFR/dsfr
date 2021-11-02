@@ -5,7 +5,7 @@
 
 @if (map-get($reset-settings, body)) {
   body {
-    @include scheme-body;
-    @include scheme-element-text-color(g700);
+    @include scheme-element-bg-color(default neutral);
+    @include scheme-element-text-color(default neutral);
   }
 }

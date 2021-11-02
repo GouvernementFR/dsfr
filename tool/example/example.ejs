@@ -16,7 +16,7 @@
 
     <script>
       window['<%= namespace %>'] = {
-        verbose: true,
+        verbose: false,
         //mode: 'manual'
       }
     </script>
@@ -31,7 +31,7 @@
     <%- include(root + 'tool/example/wrapper'); %>
 
     <%- include(root + 'tool/example/script') %>
-    <script>
+    <script type="module">
         <%- include(root + 'tool/example/script.js.ejs'); %>
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>

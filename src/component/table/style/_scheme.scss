@@ -5,24 +5,24 @@
 
 #{ns(table)} {
   caption {
-    @include scheme-element-text-color(g800, true);
+    @include scheme-element-text-color(title neutral);
   }
 
   thead {
     td,
     th {
-      @include scheme-element-border-color(g600, true, bottom, 0.125rem solid $COLOR);
-      @include scheme-element-bg-color(beige);
-      @include scheme-element-text-color(g700);
+      @include scheme-element-box-shadow-color(default neutral, false, bottom-2-in);
+      @include scheme-element-bg-color(contrast neutral);
+      @include scheme-element-text-color(default neutral);
     }
   }
 
   tbody tr:nth-child(even) {
-    @include scheme-element-bg-color(beige);
+    @include scheme-element-bg-color(contrast neutral);
   }
 
   tbody tr:nth-child(odd) {
-    @include scheme-element-bg-color(w);
+    @include scheme-element-bg-color(alt neutral);
   }
 
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
@@ -30,54 +30,14 @@
     tbody {
       td,
       th {
-        @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
+        @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
       }
 
       tr {
         &:nth-child(odd),
         &:nth-child(even) {
-          @include scheme-element-bg-color(t-plain);
+          @include scheme-element-bg-transparent(false);
         }
-      }
-    }
-  }
-
-  $empty: inset 0 0 0 0 $COLOR;
-  $left: inset space(8v) 0 space(4v) (space(-8v)) $COLOR;
-  $right: inset space(-8v) 0 space(4v) (space(-8v)) $COLOR;
-
-  /*
-  * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
-  */
-  &__shadow {
-    @include before {
-      @include scheme-element-box-shadow-color(scroll-shadow, true, ($empty, $empty));
-    }
-
-    /**
-    * Modifier ombre à gauche
-    **/
-    &--left {
-      @include before {
-        @include scheme-element-box-shadow-color(scroll-shadow, false, ($left, $empty));
-      }
-    }
-
-    /**
-    * Modifier ombre à droite
-    **/
-    &--right {
-      @include before {
-        @include scheme-element-box-shadow-color(scroll-shadow, false, ($empty, $right));
-      }
-    }
-
-    /**
-    * Modifier combinaison ombre à gauche et ombre à droite
-    **/
-    &--left#{&}--right {
-      @include before('', block) {
-        @include scheme-element-box-shadow-color(scroll-shadow, false, ($left, $right));
       }
     }
   }

@@ -3,6 +3,10 @@
 /// @group Table
 ////
 
+$empty: inset 0 0 0 0 $COLOR;
+$left: inset space(8v) 0 space(4v) (space(-8v)) $COLOR;
+$right: inset space(-8v) 0 space(4v) (space(-8v)) $COLOR;
+
 /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */
@@ -10,9 +14,37 @@
   @include before('', block) {
     @include absolute(var(--table-offset), 0, 0, 0);
     @include z-index(over);
+    @include scheme-element-box-shadow-color(text-title neutral, false, ($empty, $empty)); // @TODO: à implementer dans la mixin shadow
     opacity: 1;
     pointer-events: none;
     transition: box-shadow 0.3s;
+  }
+
+  /**
+  * Modifier ombre à gauche
+  **/
+  &--left {
+    @include before {
+      @include scheme-element-box-shadow-color(text-title neutral, false, ($left, $empty)); // @TODO: à implementer dans la mixin shadow
+    }
+  }
+
+  /**
+  * Modifier ombre à droite
+  **/
+  &--right {
+    @include before {
+      @include scheme-element-box-shadow-color(text-title neutral, false, ($empty, $right)); // @TODO: à implementer dans la mixin shadow
+    }
+  }
+
+  /**
+  * Modifier combinaison ombre à gauche et ombre à droite
+  **/
+  &--left#{&}--right {
+    @include before('', block) {
+      @include scheme-element-box-shadow-color(text-title neutral, false, ($left, $right)); // @TODO: à implementer dans la mixin shadow
+    }
   }
 }
 

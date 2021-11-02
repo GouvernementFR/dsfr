@@ -32,7 +32,7 @@
     & > *:hover + * {
       &,
       & > #{ns(nav__link)} {
-        box-shadow: none;
+        @include scheme-element-no-box-shadow;
       }
     }
   }

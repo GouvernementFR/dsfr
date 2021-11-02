@@ -183,5 +183,9 @@
   /**
    * Mixin disabled pour gérer l'état disabled
    */
-  @include disabled(true, false, false, #{ns(label)});
+  @include disabled {
+    label {
+      @include disabled-colors(true);
+    }
+  }
 }

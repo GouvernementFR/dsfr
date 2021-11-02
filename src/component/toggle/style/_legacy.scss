@@ -1,0 +1,12 @@
+////
+/// Toggle Legacy
+/// @group toggle
+////
+
+#{ns(toggle)} {
+  input[type="checkbox"] {
+    &::-ms-check {
+      display: none;
+    }
+  }
+}

@@ -6,11 +6,10 @@
 #{ns(input)} {
   display: block;
   @include size(100%);
-  border: 0;
   border-radius: space(1v) space(1v) 0 0;
   @include text-style(md);
   @include padding(2v 4v);
-  -webkit-appearance: none;
+  -webkit-appearance: none; // @TODO: vérifier si le reset ne s'en charge pas déjà
   -moz-appearance: none;
   appearance: none;
 
@@ -76,17 +75,21 @@
     }
 
     @include respond-from(md) {
-      border-radius: space(1v) 0 0 0;
+      border-radius: space(1v 0 0 0);
     }
   }
 
   > *:last-child:not(:first-child) {
     @include respond-from(md) {
-      border-radius: 0 space(1v) 0 0;
+      border-radius: space(0 1v 0 0);
     }
   }
 
   + #{ns(hint-text)} {
     @include margin-top(2v);
   }
+}
+
+textarea#{ns(input)} {
+  min-height: space(15v);
 }
