@@ -10,7 +10,7 @@
         {value:'3', label:'Option 3'},
         {value:'4', label:'Option 4'}
     ];
-    data = {...select, ...data};
+    data = {...select, ...jsonData};
 %>
 <% if (select.group === true) { %>
 <%- include('../../template/ejs/select-group', {select: data}); %>
