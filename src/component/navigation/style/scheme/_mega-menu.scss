@@ -14,15 +14,8 @@
     }
   }
 
-  #{ns(nav)} {
-    &__link,
-    &__btn {
-      @at-root {
-        #{selector-unify(&, ':not(a):not(button)')} {
-          @include remove-hover();
-        }
-      }
-    }
+  &__list {
+    @include scheme-element-box-shadow-color(g300, true, 0 1px 0 0 $COLOR);
   }
 
   &__category {
