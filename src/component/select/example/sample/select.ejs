@@ -1,7 +1,7 @@
 <%
     let select = locals.select || {};
     let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:select}));
-    data.placeholder = 'Selectionnez une option';
+    let data.placeholder = 'Selectionnez une option';
     data.label = 'Label pour liste déroulante'
 
     data.options = [
