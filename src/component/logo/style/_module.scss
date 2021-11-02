@@ -18,10 +18,7 @@
 
   @include before('', block) {
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-image: url(svg-encode($svg-marianne)), linear-gradient(90deg, $blue-france 0%, $blue-france 50%, $red-marianne 50%, $red-marianne 100%), linear-gradient(90deg, black 0%, black 100%);
-    @at-root :root#{ns-attr(mourning)} #{&} {
-      box-shadow: 0 0 0 1px var(--t-w);
-    }
+    background-image: url(svg-encode($svg-marianne)), linear-gradient(90deg, $blue-france 0%, $blue-france 50%, $red-marianne 50%, $red-marianne 100%), linear-gradient(90deg, $black 0%, $black 100%);
   }
 
   @include after('', block) {
@@ -35,5 +32,11 @@
 
   &--lg {
     @include logo-size(lg);
+  }
+}
+
+:root#{ns-attr(mourning)} #{ns(logo)} {
+  @include before {
+    box-shadow: 0 0 0 1px $white;
   }
 }
