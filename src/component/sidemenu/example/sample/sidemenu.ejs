@@ -44,15 +44,24 @@ function menu(level, active) {
 
 let modifier;
 
-if (sidemenu.modifier === 'right') {
-    modifier = '--right'
-} else if (sidemenu.modifier === 'sticky') {
-    modifier = '--sticky'
-} else if (sidemenu.modifier === 'full-height') {
-    modifier = '--sticky-full-height'
-} else if (sidemenu.modifier === 'full-border') {
-    modifier = '--full-border'
-} else {
+switch (sidemenu.modifier) {
+  case 'right':
+    modifier = '--right';
+  break;
+  
+  case 'sticky':
+    modifier = '--sticky';
+  break;
+  
+  case 'full-height':
+    modifier = '--sticky-full-height';
+  break;
+  
+  case 'full-border':
+    modifier = '--full-border';
+  break;
+  
+  default: 
     modifier = ''
 }
 
