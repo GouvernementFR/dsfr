@@ -11,12 +11,11 @@
   thead {
     @include scheme-element-box-shadow-color(plain neutral, false, bottom-2-in);
     @include scheme-element-bg-color(contrast neutral);
-    @include scheme-element-text-color(default neutral);
+    @include scheme-element-text-color(title neutral);
   }
 
   tbody {
     @include scheme-element-bg-color(alt neutral);
-    @include scheme-element-text-color(default neutral);
 
     tr:nth-child(even) {
       @include scheme-element-bg-color(contrast neutral);
