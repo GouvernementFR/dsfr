@@ -1,0 +1,12 @@
+////
+/// Core Scheme : Reset hr
+/// @group core
+////
+
+@if (map-get($reset-settings, hr)) {
+  hr {
+    @include before {
+      @include scheme-element-border-color(g400, true, bottom);
+    }
+  }
+}
