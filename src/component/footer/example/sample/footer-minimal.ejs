@@ -1,6 +1,7 @@
 <%
+let footer = locals.footer || {};
 let data = {
-    id: locals.id || uniqueId('footer'),
+    id: footer.id || uniqueId('footer'),
     brand: {
       logo: {
           title: 'république<br>française',
@@ -28,4 +29,4 @@ let data = {
 }
 %>
 
-<%- include('../../template/ejs/footer', data); %>
+<%- include('../../template/ejs/footer', {footer: data}); %>

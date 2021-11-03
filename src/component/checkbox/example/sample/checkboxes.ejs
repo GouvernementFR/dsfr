@@ -1,23 +1,28 @@
 <%
-
-let checkboxAttrs = locals.checkboxAttrs || [];
+let checkbox = locals.checkbox || {}
+let checkboxAttrs = checkbox.attributes || {};
 let describedby = [];
-if (locals.error !== undefined) describedby.push('checkboxes-error-desc-error');
-if (locals.valid !== undefined) describedby.push('checkboxes-valid-desc-valid');
+if (checkbox.error !== undefined) describedby.push('checkboxes-error-desc-error');
+if (checkbox.valid !== undefined) describedby.push('checkboxes-valid-desc-valid');
 if (describedby.length > 0) checkboxAttrs['aria-describedby'] = describedby.join(' ');
 let element = {
   path: 'checkbox/example/sample/checkbox',
-    data:locals.element || {}
+    data: {...checkbox, ...checkbox.element} || {}
 }
+let data = JSON.parse(include('../../../form/example/sample/data', {form: checkbox}));
+
 
 let fields = {
     choice: true,
     elements: [
-        { ...element, checkboxAttrs: checkboxAttrs, data: { ...element.data, checkboxAttrs: checkboxAttrs, id: id + '-1' } },
-        { ...element, data: { ...element.data, checkboxAttrs: checkboxAttrs, id: id + '-2' } },
-        { ...element, data: { ...element.data, checkboxAttrs: checkboxAttrs, id: id + '-3' } },
-    ]
+        { ...element, data: {checkbox: { attributes: checkboxAttrs, id: checkbox.id + '-1' } } },
+        { ...element, data: {checkbox: { attributes: checkboxAttrs, id: checkbox.id + '-2' } } },
+        { ...element, data: {checkbox: { attributes: checkboxAttrs, id: checkbox.id + '-3' } } },
+    ],
+    ...checkbox,
+    ...data,
+
 }
 %>
 
-<%- include('../../../form/example/sample/fieldset', fields) %>
+<%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>

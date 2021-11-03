@@ -1,0 +1,101 @@
+////
+/// Core Function : Spacing space
+/// @group core
+////
+
+/// Return space value from type map and convert to rem.
+///
+/// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
+///
+/// @example scss - Set margin-bottom to 24px
+///   .foo {
+///     margin-bottom: space(6v);
+///   }
+@function space($value) {
+  @if type-of($value) == list {
+    $list: ();
+    $separator: list-separator($value);
+    @each $v in $value {
+      $list: append($list, space($v), $separator);
+    }
+    @return $list;
+  }
+  @if type-of($value) == string {
+    $c: str-index($value, '(');
+    @if $c {
+      $b: null;
+      $n: 0;
+      $i: $c + 1;
+      $l: str-length($value);
+      @while $b == null and $i <= $l {
+        $char: str-slice($value, $i, $i);
+        @if $char == '(' {
+          $n: $n + 1;
+        }
+        @else if $char == ')' {
+          @if $n > 0 {
+            $n: $n - 1;
+          }
+          @else {
+            $b: $i;
+          }
+        }
+        $i: $i + 1;
+      }
+
+      $start: unquote('');
+      $middle: space(str-slice($value, $c + 1, $b - 1));
+      $end: unquote('');
+
+      @if $c > 1 {
+        $start: space(str-slice($value, 1, $c - 1));
+      }
+
+      $l: str-length($value);
+      @if $b < $l {
+        $end: space(str-slice($value, $b + 1, $l));
+      }
+
+      @return unquote('#{$start}(#{$middle})#{$end}');
+    }
+
+    @if str-index($value, ',') {
+      @return space(str-split($value, ','));
+    }
+
+    @if str-index($value, ' ') {
+      @return space(str-split($value, ' '));
+    }
+
+    $value: unquote($value);
+  }
+
+  @if $value == 0 {
+    @return $value;
+  }
+
+  @if length($value) > 1 {
+    $result: ();
+    @each $v in $value {
+      $result: append($result, space($v));
+    }
+    @return $result;
+  }
+
+  @if is-basic-unit($value) {
+    @return $value;
+  }
+
+  $v: quote($value);
+
+  $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
+  $unit: str_slice($v, str-length($v), str_length($v));
+
+  @if is-unit($value, v) {
+    @return $q * 0.25rem;
+  }
+  @else if is-unit($value, w) {
+    @return $q * 0.5rem;
+  }
+  @return $value;
+}

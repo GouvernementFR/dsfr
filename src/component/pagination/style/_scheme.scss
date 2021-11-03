@@ -4,18 +4,16 @@
 ////
 
 #{ns(pagination)} {
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(action-high neutral);
 
   &__link {
-    @include scheme-element-bg-color(t-plain, true, true);
-
     &[aria-current] {
-      @include scheme-element-bg-color(bf500, true, true);
-      @include scheme-element-text-color(w-bf500);
+      @include scheme-element-bg-color(active blue-france);
+      @include scheme-element-text-color(inverted blue-france);
     }
 
     &:not([aria-current]) {
-      @include disabled-link(true);
+      @include disabled(true, false, false, true);
     }
   }
 }

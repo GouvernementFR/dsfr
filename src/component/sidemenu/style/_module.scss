@@ -14,16 +14,13 @@
     cursor: default;
   }
 
-  @include respond-from(md) {
-    @include margin-x(0);
-    @include padding-right(8v);
-    box-shadow: none;
-    @include before(none);
+  @include scheme-element-no-box-shadow(md);
+  @include margin-x(0, md);
+  @include padding-right(8v, md);
 
-    #{ns(collapse)} {
-      @include margin-x(-4px);
-      @include padding-x(4px);
-    }
+  #{ns(collapse)} {
+    @include margin-x(-4px, md);
+    @include padding-x(4px, md);
   }
 
   @import 'module/title';

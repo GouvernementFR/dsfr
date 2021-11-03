@@ -4,83 +4,80 @@
 ////
 
 #{ns(sidemenu)} {
-  @include scheme-element-bg-color(w-g750, true);
+  /*
+  @include scheme-element-bg-color(default neutral);
 
   @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true);
+    @include scheme-element-bg-transparent(true);
   }
+  */
 
   @include title {
-    @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(t-plain, true);
-    @include scheme-element-border-color(g300, true, bottom);
-
-    @include respond-from(md) {
-      border: 0;
-    }
+    @include scheme-element-text-color(title neutral);
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+    @include scheme-element-no-box-shadow(md);
   }
 
   @include list-item {
-    @include scheme-element-border-color(g300, true, bottom);
-
-    @include respond-from(md) {
-      border: 0;
-    }
+    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+    @include scheme-element-no-box-shadow(md);
 
     &:last-child {
-      border: 0;
+      #{ns(sidemenu__btn)} {
+        @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+        @include scheme-element-no-box-shadow(md);
+      }
     }
 
     &--active {
       & > #{ns(sidemenu__btn)},
       & > #{ns(sidemenu__link)} {
-        @include scheme-element-text-color(bf500);
-
+        @include scheme-element-text-color(active blue-france);
         @include after {
-          background-color: currentColor;
+          @include scheme-element-bg-color(border-active blue-france);
         }
       }
-    }
-
-    #{ns(sidemenu__item)} #{ns(sidemenu__item)} {
-      border: 0;
     }
   }
 
   &__inner {
     @include respond-from(md) {
-      @include scheme-element-border-color(g300, true, right);
+      @include scheme-element-box-shadow-color(default neutral, false, right-1-in);
     }
   }
 
   @include respond-from(md) {
     &--right {
       #{ns(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true, left);
+        @include scheme-element-box-shadow-color(default neutral, false, left-1-in);
       }
     }
 
     &--full-border {
       #{ns(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true);
+        @include scheme-element-box-shadow-color(default neutral);
       }
     }
   }
 }
 
 #{ns(sidemenu__btn)} {
-  @include scheme-element-text-color(g800);
+  @include scheme-element-text-color(action-high neutral);
 
   @at-root #{ns(sidemenu__inner)} > #{&} {
-    @include scheme-element-bg-color(w-g750, true);
+    @include scheme-element-bg-color(default neutral);
   }
 
   @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true, after);
+    @include after {
+      @include scheme-element-bg-transparent(true);
+    }
   }
 }
 
 #{ns(sidemenu__link)} {
-  @include scheme-element-text-color(g800);
-  @include scheme-element-bg-color(t-plain, true, after);
+  @include scheme-element-text-color(action-high neutral);
+  @include after {
+    @include scheme-element-bg-transparent(true);
+  }
 }

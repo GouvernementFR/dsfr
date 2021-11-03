@@ -1,0 +1,8 @@
+////
+/// Core Function : get box-shadow
+/// @group core
+////
+
+@function _get-box-shadow($id, $needle-index: 1) {
+  @return str-replace(space(map-get($box-shadows, $id)), '$COLOR', '$color##{$needle-index}');
+}

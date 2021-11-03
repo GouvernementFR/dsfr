@@ -1,17 +1,37 @@
 <%#
-# paramètres checkbox
+# paramètres toggle
 
-// TODO: templatisation et documentation
+* toggle.id (string, required): id de l'input
+
+* toggle.groupId (string, required): id du groupe
+
+* toggle.label (string, required): label du toggle
+
+* toggle.hint (string, optional): texte additionel
+
+* toggle.border (boolean, optional): ajoute une bordure sous le toggle
+
+* toggle.left (boolean, optional): place le label sur la gauche
+
+* toggle.state (boolean, optional): ajoute les labels "activé"/"désactivé" sous le champ
+
+* toggle.disabled (boolean, optional): désactive le toggle
+
+* toggle.inputAttr (object, optional): attributs supplémentaires sur l'input du toggle
+
+* toggle.classes (array, optional): classes supplémentaires sur le toggle
+
+// TODO: templatisation
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
+<% let toggle = locals.toggle || {}; %>
 <ul class="<%= prefix %>-toggle__list">
   <%
     for (let i = 0; i < 5; i++) {
-      let groupToggleId = 'group-' + i
   %>
     <li>
-        <%- include('./toggle', {toggleId: locals.hint ? 'toggle-hint-' + i : 'toggle-' + i} ); %>
+        <%- include('./toggle', {toggle: {...toggle, id: toggle.hint ? 'toggle-hint-' + i : 'toggle-' + i}} ); %>
     </li>
   <% } %>
 </ul>

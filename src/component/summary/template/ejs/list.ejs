@@ -1,9 +1,22 @@
+<%#
+# paramètres summary list
+
+* summaryList (array, required) : Tableau de liens (href, label)
+
+	** summaryList.href (string, required) : url ou ancre du lien
+
+	** summaryList.label (string, required) : label du lien
+
+	** summaryList.list (array, required) : Tableau de liens enfants (href, label)
+
+%>
+<% let summaryList = locals.summaryList || []; %>
 <ol>
-    <% for (let i = 0; i < list.length; i++) {
-        const item = list[i];
+    <% for (let i = 0; i < summaryList.length; i++) {
+        const item = summaryList[i];
         if (!item.list) item.list = undefined;
     %>
 
-        <%- include('./item', item); %>
+        <%- include('./item', {summaryItem: item}); %>
     <% } %>
 </ol>

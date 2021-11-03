@@ -1,5 +1,5 @@
 <%
-
+let sidemenu = locals.sidemenu || {};
 const models = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
 const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 
@@ -42,26 +42,13 @@ function menu(level, active) {
   }
 }
 
-let modifier;
-
-if (locals.modifier === 'right') {
-    modifier = '--right'
-} else if (locals.modifier === 'sticky') {
-    modifier = '--sticky'
-} else if (locals.modifier === 'full-height') {
-    modifier = '--sticky-full-height'
-} else if (locals.modifier === 'full-border') {
-    modifier = '--full-border'
-} else {
-    modifier = ''
-}
 
 let data = {
     items: items(0),
-    modifier,
+    modifier: sidemenu.modifier,
     collapseId: uniqueId('sidemenu')
 }
 
 %>
 
-<%- include('../../template/ejs/sidemenu', data); %>
+<%- include('../../template/ejs/sidemenu', {sidemenu: data}); %>

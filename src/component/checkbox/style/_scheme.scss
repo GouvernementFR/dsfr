@@ -14,8 +14,7 @@
   input[type="checkbox"] {
     + label {
       @include before {
-        @include scheme-element-border-color(g800, true);
-        @include scheme-element-text-color(t-plain);
+        @include scheme-element-box-shadow-color(action-high neutral);
       }
     }
 
@@ -24,11 +23,11 @@
      * un état check ou active
      */
     &:checked,
-    &:active {
+    &:active:not(:disabled) {
       + label {
         @include before {
-          @include scheme-element-bg-color(bf500);
-          @include scheme-element-text-color(g100);
+          @include scheme-element-bg-color(active blue-france);
+          @include scheme-element-text-color(inverted neutral);
         }
       }
     }
@@ -36,7 +35,21 @@
     /**
     * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
     */
-    @include disabled-form-choice();
+    @include disabled {
+      & + label {
+        @include before {
+          @include disabled-colors(false, true, true);
+        }
+      }
+
+      &:checked {
+        & + label {
+          @include before {
+            @include disabled-colors(true);
+          }
+        }
+      }
+    }
   }
 
   /**
@@ -44,11 +57,11 @@
    */
   &--error {
     input[type="checkbox"] + label {
-      @include scheme-element-text-color(error);
+      @include scheme-element-text-color(default error);
     }
 
     @include before {
-      @include scheme-element-bg-color(error);
+      @include scheme-element-box-shadow-color(plain error, false, left-2-in);
     }
   }
 
@@ -57,11 +70,11 @@
    */
   &--valid {
     input[type="checkbox"] + label {
-      @include scheme-element-text-color(success);
+      @include scheme-element-text-color(default success);
     }
 
     @include before {
-      @include scheme-element-bg-color(success);
+      @include scheme-element-box-shadow-color(plain success, false, left-2-in);
     }
   }
 }
