@@ -8,5 +8,7 @@
   @include margin(0);
   border: 0;
   display: block;
-  @include before('', 'block');
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }

@@ -4,7 +4,5 @@
 ////
 
 #{ns(hr)} {
-  @include before {
-    @include scheme-element-border-color(g400, true, bottom);
-  }
+  @include scheme-element-bg-image-color(border-default neutral);
 }
