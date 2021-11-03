@@ -99,7 +99,7 @@ Certains de ces packages sont dépendants les uns des autres. Chacun de ces pack
 Celui-ci gère les imports et le wrapper des examples html générés ainsi que l'implémentation des readme.md. Il est structuré de cette façon :
 
 ```
-id: id du package, doit être unique et au singulier, en anglais (ex: button)
+id: id du package, en anglais, unique, au singulier et composé d'un seul mot (ex: button)
 title: nom du composant, en français (ex: Bouton)
 description: description insérée dans le readme
 doc: lien vers la documentation
