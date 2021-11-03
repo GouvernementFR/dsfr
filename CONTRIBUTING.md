@@ -91,28 +91,28 @@ Un composant doit avoir une arborescence de type :
 ```
 
 Le dossier **example** comprend les fichiers ejs d’exemple (ils utilisent les templates du composant en passant des valeurs d’exemple en paramètre).
-Le dossier **styles** contient les fichiers .scss permettant la génération du css du composant.
-Le dossier **templates** contient les templates des composants (la mise en forme html).
+Le dossier **style** contient les fichiers .scss permettant la génération du css du composant.
+Le dossier **template** contient les templates des composants (la mise en forme html).
 
 Certains de ces packages sont dépendants les uns des autres. Chacun de ces packages possède donc un fichier **package.yml**, listant l'ensemble de ses dépendances à d'autres composants du DSFR.
 
 Celui-ci gère les imports et le wrapper des examples html générés ainsi que l'implémentation des readme.md. Il est structuré de cette façon :
 
 ```
-id: buttons (nom du package)
-title: Boutons (nom du composant, en français)
+id: id du package, doit être unique et au singulier, en anglais (ex: button)
+title: nom du composant, en français (ex: Bouton)
 description: description insérée dans le readme
 doc: lien vers la documentation
-wrapper: col-8 (le conteneur dans lequel on insert l'example)
-styles: (liste des packages dont le css dépend)
+wrapper: conteneur dans lequel on insert l'example. valeurs possibles : [container, col-8]
+style: liste des id des packages dont dépend le css
   - core
-scripts: (liste des packages dont le js dépend)
+script: liste des id des packages dont le js dépend
   - core
-follow:   (pas de dépendance à link mais doit etre placé après link)
-  styles:
+follow: liste des id des packages devant être initialisé avant le composant, mais sans dépendance directe. les sous objets style et script permettent de définir si c'est au niveau du css ou du javascript.
+  style:
     - links
-example: (dépendances sur la page d'exemple uniquement)
-  styles:
+example: liste des id des packages nécessaire à la page d'exemple. les sous objets style et script permettent de définir si c'est au niveau du css ou du javascript.
+  style:
     - header
 ```
 ## Utilisation
@@ -121,33 +121,36 @@ Le DSFR utilise Sass pour la génération automatique des styles liés à chaque
 
 ```
 /src/component/button
-└── styles
+└── style
+    ├── _legacy.scss
     ├── _module.scss
     ├── _scheme.scss
-    ├── _legacy.scss
-    ├── _tool.scss
     ├── _setting.scss
+    ├── _tool.scss
     └── module/
         └── _buttons-group.scss
 └── index.scss
-└── main.scss
 └── legacy.scss
+└── main.scss
+└── scheme.scss
 ```
 
-Il peut donc y avoir plusieurs fichier .scss, mais seuls main.scss à la racine du composant, et `_module.scss` sont obligatoires, et chacun à son propre rôle :
+Les fichiers à la racine du composant importent les éléments nécessaires depuis le dossier style. Ceux-ci étant des points d'entrée principaux, ils n'ont pas d'underscore et ne contiennent que des `@import`, pas de déclaration.
 
- - main.scss : Fichier principal du composant servant d'entrée, et composé uniquement d'`@import`. Il importe le fichier index ainsi que des fichiers modules du composant *(obligatoire)*
- - index.scss : Fichier secondaire du composant, aussi composé d'`@imports`, importe uniquement les fichiers de settings et tools du composant ainsi que l'index.scss des composants dépendants. *(obligatoire)*
- - _module.scss : Comprend l'ensemble des styles du module *(obligatoire)*
+ - index.scss : Fichier permettant de donner accès aux mixins, fonctions et settings du composant. Les fichiers importés ne continnent pas de déclaration directe et par conséquent il ne produit pas de code. Il importe également les index des dépendances.
+ - main.scss : Fichier principal du composant servant d'entrée, il produit l'essentiel du code du composant. Il importe le fichier index ainsi que des fichiers modules du composant
+ - scheme.scss : Fichier secondaire du composant, il permet la gestion des couleurs du composant. 
+ - legacy.scss : Permet de générer un fichier séparé pour le support navigateur
 
-- _scheme.scss : doit contenir tous les styles liés aux couleurs, afin de gérer la thématisation. (optionnel)
+Dans le dossier style, on retrouve les fichiers suivants lorsqu'ils s'avèrent pertinents :
+ - _module.scss : Comprend l'ensemble des styles du module
+ - _scheme.scss : doit contenir tous les styles liés aux couleurs, afin de gérer la thématisation.
+ - _legacy.scss : Contient tous les styles uniquement lié au support des anciens navigateurs
+ - _setting.scss : Contient les variables sass utilisées par le composant
+ - _function.scss : Contient les `functions` pouvant être utilisés par le composant
+ - _tool.scss : Contient les `mixins` pouvant être utilisées par le composant
 
-- legacy.scss : Permet de générer un fichier séparé pour le support navigateur (facultatif)
-
-- _legacy.scss : Contient tous les styles uniquement lié au support des anciens navigateurs (facultatif)
- - _setting.scss : Contient les variables sass utilisées par le composant *(optionnel)*
- - _tools.scss : Contient les `functions` et `mixins` pouvant être utilisés par le composant, par exemple la gestion des token d'espacements *(optionnel)*
- - modules/_buttons-group.scss : Example de sous-composant permettant d'alléger _module.scss, qui importe ce fichier
+Afin de limiter la longeur des fichiers de code (maximum une centaine de ligne), ces fichiers peuvent être redécomposer en sous fichiers qui prendront place dans des sous-dossier du même nom.
 
 
 ### Javascript
@@ -166,13 +169,13 @@ Certains packages font utilisation de javascript, afin d'apporter une couche int
 ```
 
 
-`api.js` : importe depuis core l'objet global qui contient les classes, variables et instances du DSFR (Fichier identique dans chaque package avec du js).
+`api.js` : importe depuis core l'objet global qui contient les classes, variables et instances du DSFR (Fichier identique dans chaque package avec du js). C'est l'objet qui sera accessible à l'execution dans `window.dsfr`
 
 `index.js` : Ajoute à l'objet global `api` des définitions de classes et variables spécifiques au composant.
 
 `main.js` : importe l'index et permet l'initialisation du composant.
 
-Un Dossier `script` qui contient un dossier par fonctionalité js, ici `navigation` puis :
+Un dossier `script` qui contient un dossier par fonctionalité js, ici `navigation` puis :
 
 `navigation.js` (ou nom-classe.js) contient le code de la fonctionnalité js, structurée en classes instanciables (es6) .
 
@@ -196,14 +199,14 @@ Les fichiers ejs sont séparés dans 2 dossiers, par exemple pour le package `ca
 
 Dans le dossier `example`,
 `ìndex.ejs` est la page d'exemple publiée, elle affiche les différents exemples grâce à la fonction `sample()` (qui inclut l'exemple et le snippet de code)
-Le dossier `samples` contient les différents examples (inclusion des templates avec des données d'exemples)
+Le dossier `samples` contient les différents types d'examples (inclusion des templates avec des données d'exemples)
 
 Dans le dossier `templates`, on insère ici les templates dans un sous-dossier nommé en fonction du système de templating utilisé (`ejs` pour l'instant). Ces templates sont paramétrables pour y injecter des données. Chaque fichier possède une documentation sommaire détaillant ces paramètres.
 
 Pour accèder aux fonctions du core (comme `includeClasses()` et `includeAttr()`), chaque template inclut l'`index.ejs` de core au début du fichier : ```<% eval(include('../../../core/index.ejs')); %>```
 
-Afin de générer tous les exemples HTML utilisez `yarn release`.
-Ou, plus spécifiquement avec `yarn build`, le paramètre `-h` de yarn build permet de reconstruire uniquement l'html : `yarn build -h [-p nomPackage]`, avec `-p` pour préciser le(s) package(s).
+La commande `yarn release` permet de générer toutes les page d'exemple.
+Plus spécifiquement avec la commande `yarn build`, le paramètre `-h` permet de reconstruire uniquement l'html : `yarn build -h [-p idPackage]`, avec `-p` pour préciser le(s) package(s).
 
 ### Git
 
