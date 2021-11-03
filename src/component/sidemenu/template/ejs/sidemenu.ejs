@@ -3,7 +3,7 @@
 
 * sidemenu.items (array, required) : tableau d'elements
 
-* sidemenu.modifier (string, optional) : modifier de style de sidemenu ('--full-border', '--sticky-full-height', '--sticky', '--right')
+* sidemenu.modifier (string, optional) : modifier de style de sidemenu ('full-border', 'sticky-full-height', 'sticky', 'right')
 
 * sidemenu.collapseId : id du collapse (mobile)
 
@@ -11,7 +11,7 @@
 <% let sidemenu = locals.sidemenu || {}; %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<nav class="<%= prefix %>-sidemenu<% if(sidemenu.modifier){%> <%= prefix %>-sidemenu<%- sidemenu.modifier %><%}%>" role="navigation" aria-label="Menu latéral">
+<nav class="<%= prefix %>-sidemenu<% if(sidemenu.modifier){%> <%= prefix %>-sidemenu--<%- sidemenu.modifier %><%}%>" role="navigation" aria-label="Menu latéral">
 	<div class="<%= prefix %>-sidemenu__inner">
 		<button class="<%= prefix %>-sidemenu__btn" aria-controls="<%= sidemenu.collapseId %>" aria-expanded="false">Dans cette rubrique</button>
 		<div class="<%= prefix %>-collapse" id="<%- sidemenu.collapseId %>">

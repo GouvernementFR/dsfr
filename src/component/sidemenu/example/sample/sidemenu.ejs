@@ -42,32 +42,10 @@ function menu(level, active) {
   }
 }
 
-let modifier;
-
-switch (sidemenu.modifier) {
-  case 'right':
-    modifier = '--right';
-  break;
-  
-  case 'sticky':
-    modifier = '--sticky';
-  break;
-  
-  case 'full-height':
-    modifier = '--sticky-full-height';
-  break;
-  
-  case 'full-border':
-    modifier = '--full-border';
-  break;
-  
-  default: 
-    modifier = ''
-}
 
 let data = {
     items: items(0),
-    modifier: modifier,
+    modifier: sidemenu.modifier,
     collapseId: uniqueId('sidemenu')
 }
 
