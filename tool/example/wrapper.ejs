@@ -23,11 +23,11 @@ function getSample (include) {
 
         const accordion = {
             label: 'Extrait de code',
-            collapseId: uniqueId('snippet'),
+            id: uniqueId('snippet'),
             content: '<pre class=" language-html"><code>' + html + '</code></pre>'
         };
 
-        snippet = include(root + 'src/component/accordion/template/ejs/accordion', accordion);
+        snippet = include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion});
     }
 
     if (layout === undefined) layout = root + 'tool/example/layout';

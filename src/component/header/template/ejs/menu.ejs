@@ -1,19 +1,22 @@
 <%
-    if (!locals.navbar || !navbar.menu || !navbar.menu.id || !navbar.menu.modalId) throw new Error('navbar.menu is not correctely defined in header. id & modalId required');
+ let header = locals.header || {};
+ let navbar = header.navbar || {};
+ if (!header.navbar || !navbar.menu || !navbar.menu.id || !navbar.menu.modalId) throw new Error('navbar.menu is not correctely defined in header. id & modalId required');
 %>
+
 <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= navbar.menu.modalId %>" aria-labelledby="<%= navbar.menu.id %>">
     <div class="<%= prefix %>-container%>" >
-        <%- include('../../../link/template/ejs/link-close', { closeId: navbar.menu.modalId }); %>
-        <% if (locals.tools && locals.tools.links) { %>
+        <%- include('../../../link/template/ejs/link-close', {link: { closeId: navbar.menu.modalId }}); %>
+        <% if (header.tools && header.tools.links) { %>
           <div class="<%= prefix %>-header__menu-links">
-              <% if (locals.duplicateLinks) { %>
-              <%- include('./links', tools.links); %>
+              <% if (header.duplicateLinks) { %>
+              <%- include('./links', {header: header}); %>
               <% } %>
           </div>
         <% } %>
 
-        <% if (locals.navigation) { %>
-            <%- include( (locals.navigation !== undefined && navigation.sample !== undefined) ? navigation.sample : '../../../navigation/template/ejs/navigation', navigation ); %>
+        <% if (header.navigation) { %>
+            <%- include( (header.navigation !== undefined && header.navigation.sample !== undefined) ? header.navigation.sample : '../../../navigation/template/ejs/navigation', {navigation: header.navigation} ); %>
         <% } %>
     </div>
 </div>

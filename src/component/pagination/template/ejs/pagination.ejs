@@ -1,31 +1,41 @@
 <%#
 # Paramètres pagination
 
-// TODO: documentation
+* pagination.first (object, optional): item first
+
+* pagination.prev (object, optional): item précédent
+
+* pagination.pages (array, optional): Paramètres des items de pagination par numéro de pages
+
+* pagination.next (object, optional): item suivant
+
+* pagination.last (object, optional): item last
+
 
 %>
+<% let pagination = locals.pagination || {}; %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <nav role="navigation" class="<%= prefix %>-pagination" aria-label="Pagination">
     <ul class="<%= prefix %>-pagination__list">
         <%
-            let disabled = locals.pages && pages[0].active === true;
+            let disabled = pagination.pages && pagination.pages[0].active === true;
         %>
-        <% if (locals.first !== undefined) { %><%- include('./item', {...first, type:'first', disabled: disabled}); %><% } %>
-        <% if (locals.prev !== undefined) { %><%- include('./item', {...prev, type:'prev', disabled: disabled}); %><% } %>
+        <% if (pagination.first !== undefined) { %><%- include('./item', {paginationItem: {...pagination.first, type:'first', disabled: disabled}}); %><% } %>
+        <% if (pagination.prev !== undefined) { %><%- include('./item', {paginationItem: {...pagination.prev, type:'prev', disabled: disabled}}); %><% } %>
 
         <%
             let page;
-            if (locals.pages) for (let i = 0; i < pages.length; i++) {
-              page = pages[i];
+            if (pagination.pages) for (let i = 0; i < pagination.pages.length; i++) {
+              page = pagination.pages[i];
         %>
-            <%- include('./item', page); %>
+            <%- include('./item', {paginationItem: page}); %>
         <% }%>
 
         <%
-            disabled = locals.pages && pages[pages.length - 1].active === true;
+            disabled = pagination.pages && pagination.pages[pagination.pages.length - 1].active === true;
         %>
-        <% if (locals.next !== undefined) { %><%- include('./item', {...next, type:'next', disabled: disabled}); %><% } %>
-        <% if (locals.last !== undefined) { %><%- include('./item', {...last, type:'last', disabled: disabled}); %><% } %>
+        <% if (pagination.next !== undefined) { %><%- include('./item', {paginationItem: {...pagination.next, type:'next', disabled: disabled}}); %><% } %>
+        <% if (pagination.last !== undefined) { %><%- include('./item', {paginationItem: {...pagination.last, type:'last', disabled: disabled}}); %><% } %>
     </ul>
 </nav>

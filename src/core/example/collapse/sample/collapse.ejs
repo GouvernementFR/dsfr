@@ -41,19 +41,19 @@
 
     %>
         <div>
-            <%- include('../../../../component/button/template/ejs/button.ejs', button); %>
+            <%- include('../../../../component/button/template/ejs/button.ejs', {button: button}); %>
 
             <ul class="<%= prefix %>-collapse" id="<%= id %>" data-<%= prefix %>-group="group-id">
 
                 <% for (let j = 0; j < 2; j++) { %><li>list item</li><% } %>
                 <li>
-                    <%- include('../../../../component/button/template/ejs/button.ejs', nested); %>
+                    <%- include('../../../../component/button/template/ejs/button.ejs', {button: nested}); %>
                     <ul class="<%= prefix %>-collapse" id="<%= id %>-nested" >
                         <% for (let k = 0; k < 3; k++) { %><li>list nested item</li><% } %>
                     </ul>
                 </li>
                 <li>
-                    <%- include('../../../../component/button/template/ejs/button.ejs', close); %>
+                    <%- include('../../../../component/button/template/ejs/button.ejs', {button: close}); %>
                 </li>
 
             </ul>

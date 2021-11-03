@@ -1,9 +1,10 @@
 <%
  let data = {};
+ let form = locals.form || {};
 
- if (locals.error === true) data.error = 'Texte d’erreur obligatoire';
- if (locals.valid === true) data.valid = 'Texte de validation';
- if (locals.hint === true) data.hint = 'Texte de description additionnel';
+ if (form.error === true) data.error = 'Texte d’erreur obligatoire';
+ if (form.valid === true) data.valid = 'Texte de validation';
+ if (form.hint === true) data.hint = 'Texte de description additionnel';
  %>
 
 <%- JSON.stringify(data); %>

@@ -1,37 +1,37 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Ensemble de boutons radio', './sample/radios.ejs', { id:'radio'}, true); %>
+<%- sample('Ensemble de boutons radio', './sample/radios.ejs', {radio: { id:'radio'}}, true); %>
 
-<%- sample('Ensemble de boutons radio, petite taille', './sample/radios.ejs', { id:'radio-small', size:'sm'}, true); %>
+<%- sample('Ensemble de boutons radio, petite taille', './sample/radios.ejs', {radio: { id:'radio-small', size:'sm'}}, true); %>
 
-<%- sample('Ensemble de boutons radio désactivées', './sample/radios.ejs', { id:'radio-disabled', disabled:true}, true); %>
+<%- sample('Ensemble de boutons radio désactivées', './sample/radios.ejs', {radio: { id:'radio-disabled', disabled:true}}, true); %>
 
-<%- sample('Ensemble de boutons radio en ligne', './sample/radios.ejs', { id:'radio-inline', inline: true}, true); %>
+<%- sample('Ensemble de boutons radio en ligne', './sample/radios.ejs', {radio: { id:'radio-inline', inline: true}}, true); %>
 
-<%- sample('Ensemble de boutons radio avec texte d‘aide', './sample/radios.ejs', { id:'radio-hint', hint: true}, true); %>
+<%- sample('Ensemble de boutons radio avec texte d‘aide', './sample/radios.ejs', {radio: { id:'radio-hint', hint: true}}, true); %>
 
-<%- sample('Ensemble de boutons radio avec erreur', './sample/radios.ejs', { id:'radio-error', error: true}, true); %>
+<%- sample('Ensemble de boutons radio avec erreur', './sample/radios.ejs', {radio: { id:'radio-error', error: true}}, true); %>
 
-<%- sample('Ensemble de boutons radio avec erreur, en ligne', './sample/radios.ejs', { id:'radio-error-inline', error: true, inline:true}, true); %>
+<%- sample('Ensemble de boutons radio avec erreur, en ligne', './sample/radios.ejs', {radio: { id:'radio-error-inline', error: true, inline:true}}, true); %>
 
-<%- sample('Ensemble de boutons radio validés', './sample/radios.ejs', { id:'radio-valid', valid: true}, true); %>
+<%- sample('Ensemble de boutons radio validés', './sample/radios.ejs', {radio: { id:'radio-valid', valid: true}}, true); %>
 
-<%- sample('Ensemble de boutons radio validés, en ligne', './sample/radios.ejs', { id:'radio-valid-inline', valid: true, inline:true}, true); %>
+<%- sample('Ensemble de boutons radio validés, en ligne', './sample/radios.ejs', {radio: { id:'radio-valid-inline', valid: true, inline:true}}, true); %>
 
-<%- sample('Ensemble de boutons radio avec texte d‘aide spécifique', './sample/radios.ejs', { id:'radio-hint-element', element: { hint: 'Texte de description additionnel' }}, true); %>
+<%- sample('Ensemble de boutons radio avec texte d‘aide spécifique', './sample/radios.ejs', {radio: { id:'radio-hint-element', element: { hint: 'Texte de description additionnel' }}}, true); %>
 
-<%- sample('Ensemble de boutons radio avec texte d‘aide spécifique, petite taille', './sample/radios.ejs', { id:'radio-hint-el-sm', size: 'sm', element: { hint: 'Texte de description additionnel' }}, true); %>
+<%- sample('Ensemble de boutons radio avec texte d‘aide spécifique, petite taille', './sample/radios.ejs', {radio: { id:'radio-hint-el-sm', size: 'sm', element: { hint: 'Texte de description additionnel' }}}, true); %>
 
-<%- sample('Ensemble de boutons radio riches, simple', './sample/radios-rich.ejs', { id:'radio-rich' }, true); %>
+<%- sample('Ensemble de boutons radio riches, simple', './sample/radios-rich.ejs', {radio: { id:'radio-rich' }}, true); %>
 
-<%- sample('Ensemble de boutons radio riches, en ligne, simple', './sample/radios-rich.ejs', { id:'radio-rich-inline', inline:true}, true); %>
+<%- sample('Ensemble de boutons radio riches, en ligne, simple', './sample/radios-rich.ejs', {radio: { id:'radio-rich-inline', inline:true}}, true); %>
 
-<%- sample('Ensemble de boutons radio riches avec textes d\'aide', './sample/radios-rich.ejs', { id:'radio-rich-hint', hint: true, element: { hint: 'Texte de description additionnel' }}, true); %>
+<%- sample('Ensemble de boutons radio riches avec textes d\'aide', './sample/radios-rich.ejs', {radio: { id:'radio-rich-hint', hint: true, element: { hint: 'Texte de description additionnel' }}}, true); %>
 
-<%- sample('Ensemble de boutons radio riches avec textes d\'aide, en ligne', './sample/radios-rich.ejs', { id:'radio-rich-hint-inline', hint: true, element: { hint: 'Texte de description additionnel' }, inline:true}, true); %>
+<%- sample('Ensemble de boutons radio riches avec textes d\'aide, en ligne', './sample/radios-rich.ejs', {radio: { id:'radio-rich-hint-inline', hint: true, element: { hint: 'Texte de description additionnel' }, inline:true}}, true); %>
 
-<%- sample('Ensemble de boutons radio riches avec erreur et textes d\'aide', './sample/radios-rich.ejs', { id:'radio-rich-error', hint: true, element: { hint: 'Texte de description additionnel' }, error: true}, true); %>
+<%- sample('Ensemble de boutons radio riches avec erreur et textes d\'aide', './sample/radios-rich.ejs', {radio: { id:'radio-rich-error', hint: true, element: { hint: 'Texte de description additionnel' }, error: true}}, true); %>
 
-<%- sample('Ensemble de boutons radio riches avec erreur et textes d\'aide, en ligne', './sample/radios-rich.ejs', { id:'radio-rich-error-inline', hint: true, element: { hint: 'Texte de description additionnel' }, error: true, inline:true}, true); %>
+<%- sample('Ensemble de boutons radio riches avec erreur et textes d\'aide, en ligne', './sample/radios-rich.ejs', {radio: { id:'radio-rich-error-inline', hint: true, element: { hint: 'Texte de description additionnel' }, error: true, inline:true}}, true); %>
 
-<%- sample('Ensemble de boutons radio riches désactivés', './sample/radios-rich.ejs', { id:'radio-rich-disabled', element: { hint: 'Texte de description additionnel', disabled: true }}, true); %>
+<%- sample('Ensemble de boutons radio riches désactivés', './sample/radios-rich.ejs', {radio: { id:'radio-rich-disabled', element: { hint: 'Texte de description additionnel', disabled: true }}}, true); %>

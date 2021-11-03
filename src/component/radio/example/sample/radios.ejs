@@ -1,19 +1,23 @@
 <%
+let radio = locals.radio || {}
+let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
+let data = {...radio, ...jsonData};
 let element = {
   path: 'radio/example/sample/radio',
-    data:locals.element || {}
+    data: {...radio, ...radio.element} || {}
 }
 
-element.data.name = id;
+element.data.name = radio.id;
 
 let fields = {
     choice:true,
     elements: [
-        { ...element, data: { ...element.data, id: id + '-1' } },
-        { ...element, data: { ...element.data, id: id + '-2' } },
-        { ...element, data: { ...element.data, id: id + '-3' } },
-    ]
+        { ...element, data: { radio: {...element.data, id: radio.id + '-1' } } },
+        { ...element, data: { radio: {...element.data, id: radio.id + '-2' } } },
+        { ...element, data: { radio: {...element.data, id: radio.id + '-3' } } },
+    ],
+    ...data
 }
 %>
 
-<%- include('../../../form/example/sample/fieldset', fields) %>
+<%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>

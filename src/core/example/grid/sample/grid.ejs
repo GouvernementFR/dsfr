@@ -1,14 +1,15 @@
 <%
- const classes = locals.classes || [];
+ let grid = locals.grid || {cols: []};
+ const classes = grid.classes || [];
  classes.push(`${prefix}-grid-row`);
- if (locals.gutters) classes.push(`${prefix}-grid-row--gutters`);
+ if (grid.gutters) classes.push(`${prefix}-grid-row--gutters`);
  %>
 
 <div <%- includeClasses(classes); %>>
-    <% for (let col of locals.cols) {
+    <% for (let col of grid.cols) {
         if (isNaN(col.length)) col.length = 1;
-        locals.classes = undefined;
+        grid.classes = undefined;
     %>
-        <%- include('./cols', col); %>
+        <%- include('./cols', {col: col}); %>
     <% } %>
 </div>

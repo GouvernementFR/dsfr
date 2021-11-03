@@ -1,5 +1,6 @@
-<% const path = locals.path || '' %>
-
+<%
+let favicon = locals.favicon || {};
+const path = favicon.path || '' %>
 
 <link rel="apple-touch-icon" href="<%= path %>apple-touch-icon.png"><!-- 180×180 -->
 
