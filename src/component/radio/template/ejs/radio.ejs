@@ -1,21 +1,36 @@
 <%#
 # paramètres
 
-// TODO: documentation
+* radio.classes (array, optional) : Classes supplémentaires sur l'element
+
+* radio.attributes (object, optional) : Attributs supplémentaires sur l'element
+
+* radio.element (object, optional) : paramètre de chacun des radios d'un group
+
+* radio.icon (string, optional) : nom de l'icone illustrative
+
+* radio.disabled (boolean, optional) : si true, désactive le radio
+
+* radio.error (string, optional) : Message d'erreur
+
+* radio.valid (string, optional) : Message de succès
+
+* radio.customIcon (string, optional) : style du label (ex: "background-image: url(...)")
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
- let radioAttrs = locals.radioAttrs || [];
+ let radio = locals.radio || {};
+ let radioAttrs = radio.attributes || {};
  let labelAttr = {};
- let labelClass = locals.labelClasses || [];
+ let labelClass = radio.classes || [];
  let element = {};
- if(locals.element) element = locals.element;
- locals.customIcon ? labelAttr['style'] = locals.customIcon : labelAttr = {};
- if (locals.icon) labelClass.push(prefix + '-ifi-' + locals.icon);
- if (locals.disabled) radioAttrs['disabled'] = '';
+ if(radio.element) element = radio.element;
+ radio.customIcon ? labelAttr['style'] = radio.customIcon : labelAttr = {};
+ if (radio.icon) labelClass.push(prefix + '-ifi-' + radio.icon);
+ if (radio.disabled) radioAttrs['disabled'] = '';
  %>
 
-<input <%- includeAttrs(radioAttrs); %> type="radio" id="<%= id %>" name="<%= name %>">
-<%- include('../../../form/template/ejs/label', {...element, labelClasses: labelClass, labelAttributes: labelAttr}); %>
-<%- include('../../../form/template/ejs/message'); %>
+<input <%- includeAttrs(radioAttrs); %> type="radio" id="<%= radio.id %>" name="<%= radio.name %>">
+<%- include('../../../form/template/ejs/label', {label: {...radio, ...element, classes: labelClass, attributes: labelAttr}}); %>
+<%- include('../../../form/template/ejs/message', {message: {hint: radio.hint} }); %>

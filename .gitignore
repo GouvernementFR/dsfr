@@ -1,9 +1,6 @@
 node_modules/
 */sassdoc/
-
-lerna-debug.log
 public/
-
 .config/
 /dist/
 /example/

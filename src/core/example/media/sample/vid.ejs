@@ -1,11 +1,11 @@
 <%
  let data = {
-     title:'titre de l’iframe',
-     vid:'https://www.youtube.com/embed/HyirpmPL43I',
-     iframeAttrs: {
+     title: 'titre de l’iframe',
+     src: 'https://www.youtube.com/embed/HyirpmPL43I',
+     attributes: {
          allow:'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
          allowfullscreen:''
      }
  }
  %>
-<%- include('../../../template/ejs/media/responsive-vid', data); %>
+<%- include('../../../template/ejs/media/responsive-vid', {media:data}); %>

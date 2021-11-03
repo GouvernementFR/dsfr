@@ -1,9 +1,25 @@
+<%#
+# paramètres link-close
+
+* link.label (string, required) : contenu texte
+
+* link.closeId (string, required): id de l'élément à fermer
+
+* link.title (string, optional) : titre du lien
+
+%>
+
+<%
+let link = locals.link || {};
+%>
 <%- include('./link', {
-    tag: 'button',
-    classes: [prefix + '-link--close'],
-    label: locals.label || 'Fermer',
-    title: locals.title || locals.label || 'Fermer',
-    attributes: {
-        'aria-controls': closeId,
+    link: {
+        tag: 'button',
+        classes: [prefix + '-link--close'],
+        label: link.label || 'Fermer',
+        title: link.title || link.label || 'Fermer',
+        attributes: {
+            'aria-controls': link.closeId,
+        }
     }
 });%>

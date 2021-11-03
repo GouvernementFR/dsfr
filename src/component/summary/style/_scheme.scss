@@ -4,14 +4,14 @@
 ////
 
 #{ns(summary)} {
-  @include scheme-element-bg-color(beige, true);
+  @include scheme-element-bg-color(alt neutral);
+  // @include scheme-element-box-shadow-color(default neutral);
 
   @include title {
-    @include scheme-element-text-color(g800, true);
+    @include scheme-element-text-color(title neutral);
   }
 
   li > a {
-    @include scheme-element-text-color(g800, true);
-    @include scheme-element-bg-color(t-plain, true, after);
+    @include scheme-element-text-color(action-high neutral);
   }
 }

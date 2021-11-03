@@ -1,0 +1,19 @@
+////
+/// Core Function : Color replace color
+/// @group core
+////
+
+/// Remplacement de la variable $COLOR par la couleur attendu
+/// @access private
+/// @param {String} $value - chaine de caractère dans laquelle remplacer la variable
+/// @param {Color} $hex - couleur de remplacement
+/// @param {String} $hex - couleur de remplacement
+/// @param {Boolean} $url-encode - si true, la couleur est url-encodé
+/// @return {String} retourne la variable avec la couleur intégrée
+@function _replace_color($haystack, $hex, $needle: $COLOR, $url-encode:false) {
+  @if $url-encode == true {
+    $hex:unquote('%23' + str_slice(inspect($hex), 2));
+  }
+
+  @return str-replace($haystack, $needle, $hex);
+}

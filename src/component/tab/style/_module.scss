@@ -45,51 +45,7 @@
     * overflow vertical de 4px pour le focus
     */
     @include margin(-4px 0);
-    @include padding(4px 2v);
-
-    @include after('', block) {
-      flex: 1 1 auto;
-      height: 1px;
-      @include margin-x(-2v);
-    }
-
-    /**
-    * Reset du style par défaut du li
-    */
-    // TODO: BEM, pour éviter de styliser les li du content
-    > li {
-      display: block;
-      flex: 0 0 auto;
-      @include margin(0 2v);
-
-      &:not(:first-child) {
-        @include margin-left(0);
-        @include before('', block) {
-          @include sticky(100%, null, null, null, 2v, 1px);
-          @include margin-left(-2v);
-        }
-      }
-
-      &:last-child {
-        @include padding-right(4v);
-
-        @include after('', block) {
-          min-width: 1rem;
-          @include margin-left(100%);
-          flex: 1 1 auto;
-          @include sticky(100%, null, null, null, auto, 1px);
-          @include margin-top(-1px);
-        }
-      }
-
-      &:first-child {
-        @include before('', block) {
-          @include sticky(100%, null, null, null, 100%, 1px);
-          position: sticky;
-          @include margin-left(-100%);
-        }
-      }
-    }
+    @include padding(4px 3v);
   }
 
   /**
@@ -100,14 +56,26 @@
     overflow: visible;
     font-weight: bold;
     @include z-index(over);
+    @include margin(0 1v);
+    white-space: nowrap;
+    // transition: background-color 0.3s;
 
     &[aria-selected=true] {
-      cursor: default;
-      background: transparent;
+      pointer-events: none;
+    }
 
-      @include after('', block) {
-        @include absolute(2px, 1px, 0, 1px, auto, calc(100% - 1px));
-        @include z-index(over);
+    @include after('', block) {
+      @include size();
+      @include absolute(0, 0, -2px, 0, 100%);
+      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 100% 3px;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
+      // transition: background-size 0.3s;
+    }
+
+    &:not([aria-selected=true]) {
+      @include after {
+        background-size: 0 2px, 1px 0, 1px 0, 0 3px;
       }
     }
   }

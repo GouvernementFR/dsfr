@@ -1,17 +1,32 @@
+<%#
+# exemple groupe de boutons
+
+* buttonGroup.buttons (array, optional): permet de définir les boutons individuellement
+
+* buttonGroup.groupCount (integer, optional): Si buttons n'est pas définie, groupCount permet de générer ce nombre de boutons dans le groupe
+
+* buttonGroup.label (string, optional): Si buttons n'est pas définie, label est définie pour tout les boutons
+
+* buttonGroup.vary (boolean, optional): Si buttons n'est pas définie, génère des labels plus ou moins long
+
+#%>
 <%
-const buttons = [];
+const buttonGroup = locals.buttonGroup || {}
+const buttons = buttonGroup.buttons || [];
 
-let lbl = locals.label;
+if (!buttons.length && buttonGroup.groupCount !== undefined) {
 
-for (let i = 0; i < locals.groupCount; i++) {
-  buttons.push({
-    label: lbl,
-    secondary: i > 0 || !locals.hierarchy
-  });
+  let lbl = buttonGroup.label;
+  for (let i = 0; i < buttonGroup.groupCount; i++) {
+    buttons.push({
+      label: lbl,
+      secondary: i > 0 || !buttonGroup.hierarchy
+    });
 
-  if (locals.vary) lbl += i % 2 === 0 ? ' plus' : ' long'
+    if (buttonGroup.vary) lbl += i % 2 === 0 ? ' plus' : ' long'
+  }
+  buttonGroup.buttons = buttons;
 }
-
 %>
 
-<%- include('../../template/ejs/buttons-group.ejs', {buttons: buttons}) %>
+<%- include('../../template/ejs/buttons-group.ejs', {buttonGroup: buttonGroup}) %>

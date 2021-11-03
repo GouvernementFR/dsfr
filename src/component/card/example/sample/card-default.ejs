@@ -1,15 +1,14 @@
 <%
-
+let card = locals.card || {};
 let data = {
-  detail: locals.detail !== false ? 'Détail' : undefined,
+  ...card,
+  detail: card.detail !== false ? 'Détail' : undefined,
   title: 'Qu’est-ce que le Pass Culture et comment l’obtenir ?',
-  description: locals.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
-  arrow:locals.arrow !== false,
-  enlarge: locals.enlarge !== false
+  description: card.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
+  arrow: card.arrow !== false,
+  enlarge: card.enlarge !== false,
+  img: card.img ? imgData('img/placeholder.16x9.png', true) : undefined
 }
-
-data.img = locals.img ? imgData('img/placeholder.16x9.png', true) : undefined;
-
 %>
 
-<%- include('../../template/ejs/card', data); %>
+<%- include('../../template/ejs/card', {card: data}); %>

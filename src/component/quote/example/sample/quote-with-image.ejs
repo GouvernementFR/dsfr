@@ -1,5 +1,7 @@
 <%
+ let quote = locals.quote || {}
  let data = {
+   ...locals.quote,
    text: locals.text || lorem(),
    size: locals.size || undefined,
    author: locals.author || 'Auteur',
@@ -9,4 +11,4 @@
   };
  %>
 
-<%- include('../../template/ejs/quote.ejs', data); %>
+<%- include('../../template/ejs/quote.ejs', {quote:data}); %>

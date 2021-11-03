@@ -11,10 +11,11 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let classes = locals.classes || [];
+ let logo = locals.logo || {};
+ let classes = logo.classes || [];
  classes.push(prefix + '-logo');
 
- switch(locals.size) {
+ switch(logo.size) {
      case 'sm':
          classes.push(prefix + '-logo--sm');
          break;
@@ -28,5 +29,5 @@
  %>
 
 <p <%- includeClasses(classes); %>>
-    <%- title %>
+    <%- logo.title %>
 </p>

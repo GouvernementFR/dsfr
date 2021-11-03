@@ -1,0 +1,15 @@
+////
+/// Core Function : Color get scheme set
+/// @group core
+////
+
+/// Obtenir une combinaison de couleur
+/// @access private
+/// @param {String} $part - typologie de l'élément recevant la couleur (background / text / border)
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @return {String} Retourne la combinaison de couleur correspondante
+@function _get-scheme-set($part, $token, $tint) {
+  $family: _get-family($tint);
+  $shade: _get-scheme-shade($part, $token, $family);
+  @return _get-scheme-set-by-shade($shade, $family, $tint);
+}

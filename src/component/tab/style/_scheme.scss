@@ -5,16 +5,15 @@
 
 #{ns(tabs)} {
   @include after {
-    @include scheme-element-box-shadow-color(g300, true, 'inset 1px -1px 0 0 $COLOR, inset -1px 0 0 $COLOR');
+    @include scheme-element-box-shadow-color(default neutral, false, all-1-in);
   }
 
   /**
    * ul : element srollable des boutons
    */
   @include list {
-
     @include after {
-      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+      // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
     }
 
     /**
@@ -23,19 +22,19 @@
     > li {
       &:not(:first-child) {
         @include before {
-          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
         }
       }
 
       &:last-child {
         @include after {
-          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
         }
       }
 
       &:first-child {
         @include before {
-          @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
         }
       }
     }
@@ -45,22 +44,20 @@
   * Tab button
   */
   &__tab {
+    @include after {
+      @include scheme-element-bg-image-color(border-active blue-france border-default neutral border-default neutral background-default neutral);
+    }
+
     &:not([aria-selected=true]) {
-      @include scheme-element-bg-color(bf100-g750, true, true);
-      @include scheme-element-text-color(g700);
-      @include disabled(g600, g300);
-      @include scheme-element-box-shadow-color(g300, true, '0 1px 0 0 $COLOR');
+      @include scheme-element-bg-color(action-low blue-france);
+      @include scheme-element-text-color(action-high neutral);
     }
 
-    @at-root &[aria-selected=true] {
-      @include scheme-element-box-shadow-color(bf500, true, 'inset 0 0.125rem 0 0 $COLOR');
-      @include scheme-element-bg-color(t-plain, true, false);
-      @include scheme-element-text-color(bf500);
-      @include remove-hover();
-
-      @include after {
-        @include scheme-element-box-shadow-color(g300, true, '-1px 0 0 0 $COLOR, 1px 0 0 0 $COLOR');
-      }
+    &[aria-selected=true] {
+      @include scheme-element-text-color(active blue-france);
+      @include scheme-element-bg-color(default neutral);
     }
+
+    @include disabled(true, true);
   }
 }

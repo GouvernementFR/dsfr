@@ -43,6 +43,21 @@
   }
 }
 
+@mixin title-selector() {
+  $titles: ();
+  @each $name, $variation in $title-settings {
+    $type: display;
+    @if str-index(quote($name), 'h') == 1 {
+      $type: heading;
+    }
+
+    $titles: append($titles, typography-selector($type, $name, false, map-get($variation, alt)), comma);
+  }
+  #{$titles} {
+    @content;
+  }
+}
+
 @mixin generate-margin-vars() {
   :root {
     @each $name, $margin in $text-margin {

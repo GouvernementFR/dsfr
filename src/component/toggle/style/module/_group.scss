@@ -4,9 +4,8 @@
 ////
 
 /*
- * On surcharge les styles de base (provisoire)
+ * On surcharge les styles de base
  */
-
 #{ns(toggle)}__list {
   @include disable-list-style;
 }

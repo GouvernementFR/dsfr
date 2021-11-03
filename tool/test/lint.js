@@ -5,7 +5,12 @@ const root = require('../utilities/root');
 const log = require('../utilities/log');
 
 const lintStyles = async (pck) => {
-  const result = await stylelint.lint({ files: root(`${pck.path}/**/*.scss`), formatter: 'unix' });
+  let result;
+  try {
+    result = await stylelint.lint({ files: root(`${pck.path}/**/*.scss`), formatter: 'unix' });
+  } catch (e) {
+    return true;
+  }
 
   if (result.errored) {
     log.error(`${pck.id} style ✖`);
@@ -24,7 +29,7 @@ const lintScripts = async (pck) => {
     results = await eslint.lintFiles([root(`${pck.path}/**/*.js`)]);
   } catch (e) {
     // console.log(e);
-    return;
+    return true;
   }
 
   const formatter = await eslint.loadFormatter('stylish');

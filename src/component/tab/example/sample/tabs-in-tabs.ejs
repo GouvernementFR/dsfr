@@ -1,23 +1,23 @@
 <%
-
-const data = { tabs: [] }
+let tabsGroup = locals.tabs || {tabs: []};
+let tabs = tabsGroup.tabs || [];
+let data = {tabs: []};
 
 for (let i = 0; i < 2; i++) {
-    const subdata = { tabs: [] };
+    const subdata = { tabs: [], tabsCount: 2 };
 
     for (let j = 0; j < 3 - i; j++) {
       subdata.tabs[j] = {
-        content: include('./tabs-default', { tabs:2 + j, repeat: (Math.random() * 3) | 0}),
+        content: include('./tabs-default', { tabs: {tabsCount:(2 + j) } }),
         label: `Nested Tab s${j}`
         }
     }
 
     data.tabs[i] = {
-      content: include('./tabs-default', subdata),
+      content: include('./tabs-default', {tabs: subdata}),
       label: `Main Tab ${i}`
     }
 }
-
 %>
 
-<%- include('./tabs-default', data); %>
+<%- include('../../template/ejs/tabs', {tabs: data}) %>

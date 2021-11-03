@@ -1,13 +1,18 @@
 <%#
 # paramètres newsletter
 
-* title (string, required) : titre du bloc réseaux newsletter
+* newsletter.title (string, required) : titre du bloc newsletter
 
-* type (string, optional) : type de bloc newsletter (avec bouton ou avec input-button [button, form])
+* newsletter.desc (string, optional) : description du bloc newsletter
 
-* form (object, optional) : paramètres du formulaire champ/boutton (si type form)
-** input (object, required) : paramètres du champ mail
-** button (object, optional) : paramètres du boutton
+* newsletter.type (string, optional) [button|form]: type de bloc newsletter (avec bouton ou avec formulaire)
+
+* newsletter.form (object, optional) : paramètres du formulaire champ/boutton (si type form)
+  ** newsletter.form.input (object, required) : paramètres du champ mail
+  ** newsletter.form.button (object, optional) : paramètres du boutton
+  ** newsletter.form.error (string, optional) : texte d'erreur
+  ** newsletter.form.valid (string, optional) : texte valide
+  ** newsletter.form.hint (string, optional) : texte additionel
 
 * button (object, optional) : paramètres du boutton (si type button)
 
@@ -16,36 +21,37 @@
 %>
 <% eval(include('../../../../core/index.ejs'));
 
-let socialsClasses = [prefix + '-follow__newsletter'];
+let newsletter = locals.newsletter || {};
+let newsletterClasses = [prefix + '-follow__newsletter'];
 
 %>
 
-<div <%- includeClasses(socialsClasses); %> >
+<div <%- includeClasses(newsletterClasses); %> >
   <div>
-    <h5 class="<%= prefix %>-h5 <%= prefix %>-follow__title"><%- locals.title %></h5>
-    <% if (locals.desc) { %>
-    <p class="<%= prefix %>-text--sm <%= prefix %>-follow__desc"><%- locals.desc %></p>
+    <h5 class="<%= prefix %>-h5 <%= prefix %>-follow__title"><%- newsletter.title %></h5>
+    <% if (newsletter.desc) { %>
+    <p class="<%= prefix %>-text--sm <%= prefix %>-follow__desc"><%- newsletter.desc %></p>
     <% } %>
   </div>
   <div>
-    <% if (locals.type === 'form') { %>
-      <% if (locals.form && locals.form.input) { %>
+    <% if (newsletter.type === 'form') { %>
+      <% if (newsletter.form && newsletter.form.input) { %>
         <form action="">
-          <%- include('../../../input/template/ejs/input.ejs', {addon: true, ...locals.form.input}); %>
+          <%- include('../../../input/template/ejs/input.ejs', {input: {addon: true, ...newsletter.form.input}}); %>
           <%
-          if (locals.form.error) { %>
-            <p id="<%= prefix %>-newsletter-error-text" class="<%= prefix %>-error-text"><%- locals.form.error %></p>
+          if (newsletter.form.error) { %>
+            <p id="<%= prefix %>-newsletter-error-text" class="<%= prefix %>-error-text"><%- newsletter.form.error %></p>
           <% } %>
-          <% if (locals.form.valid) { %>
-            <p id="<%= prefix %>-newsletter-valid-text" class="<%= prefix %>-valid-text"><%- locals.form.valid %></p>
+          <% if (newsletter.form.valid) { %>
+            <p id="<%= prefix %>-newsletter-valid-text" class="<%= prefix %>-valid-text"><%- newsletter.form.valid %></p>
           <% } %>
-          <% if (locals.form.hint) { %>
-            <p id="<%= prefix %>-newsletter-hint-text" class="<%= prefix %>-hint-text"><%- locals.form.hint %></p>
+          <% if (newsletter.form.hint) { %>
+            <p id="<%= prefix %>-newsletter-hint-text" class="<%= prefix %>-hint-text"><%- newsletter.form.hint %></p>
           <% } %>
         </form>
       <% } %>
-    <% } else if (locals.type === 'button') { %>
-      <%- include('../../../button/template/ejs/button.ejs', locals.button); %>
+    <% } else if (newsletter.type === 'button') { %>
+      <%- include('../../../button/template/ejs/button.ejs', {button: newsletter.button}); %>
     <% } %>
   </div>
 </div>

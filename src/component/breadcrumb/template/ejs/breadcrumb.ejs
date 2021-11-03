@@ -1,35 +1,36 @@
 <%#
 # paramètres breadcrumb
 
-* id (required):
+* breadcrumb.id (required):
 
-* path (required) : array contenant les données de chaque segment du fil d'Ariane
+* breadcrumb.segments (array, required) : Tableau de données de chaque segment du fil d'Ariane
   {
     path: partie de l'url
     label : le label du segment
   }
 
-* button: label du bouton du Fil d'Ariane
+* breadcrumb.button: label du bouton du Fil d'Ariane en mobile
 
 %>
 
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-if (locals.button === undefined) locals.button = 'Voir le fil d’Ariane';
+let breadcrumb = locals.breadcrumb || {segments : []};
+if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane';
 %>
 
 <nav role="navigation" class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
-    <button class="<%= prefix %>-breadcrumb__button" aria-expanded="false" aria-controls="<%= id %>"  ><%= button %></button>
-    <div class="<%= prefix %>-collapse" id="<%= id %>">
+    <button class="<%= prefix %>-breadcrumb__button" aria-expanded="false" aria-controls="<%= breadcrumb.id %>"  ><%= breadcrumb.button %></button>
+    <div class="<%= prefix %>-collapse" id="<%= breadcrumb.id %>">
         <ol class="<%= prefix %>-breadcrumb__list">
             <%
             let href = '';
-            for (let i = 0; i < segments.length; i++) {
-                const segment = segments[i];
+            for (let i = 0; i < breadcrumb.segments.length; i++) {
+                const segment = breadcrumb.segments[i];
                 href += segment.path + '/';
                 const attrs = {};
-                if (i === segments.length - 1) attrs['aria-current'] = 'page';
+                if (i === breadcrumb.segments.length - 1) attrs['aria-current'] = 'page';
                 else attrs['href'] = href;
             %>
             <li>

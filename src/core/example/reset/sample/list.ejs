@@ -1,12 +1,13 @@
 <%
- let tag = locals.ordered === true ? 'ol' : 'ul';
+ let list = locals.list || {lis:[]};
+ let tag = list.ordered === true ? 'ol' : 'ul';
  %>
 
 
 
-<<%= tag %> <%- includeClasses(locals.classes); %>>
-    <% for (let i = 0; i < lis.length; i++) {
-        let li = lis[i];
+<<%= tag %> <%- includeClasses(list.classes); %>>
+    <% for (let i = 0; i < list.lis.length; i++) {
+        let li = list.lis[i];
     %>
         <li><%
             if (li.text === true) {
@@ -20,7 +21,7 @@
             }
 
             if (li.lis !== undefined) {
-                %><%- include('./list', {lis : li.lis}); %><%
+                %><%- include('./list', {list: {...list, lis: li.lis}}); %><%
             }
         %></li>
     <% } %>

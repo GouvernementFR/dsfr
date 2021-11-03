@@ -1,9 +1,11 @@
 <%
+ let alert = locals.alert || {};
  let data = {
+   ...alert,
    id: uniqueId('alert'),
-   text: locals.text || 'Cliquer sur la croix pour fermer l\'alerte',
+   text: alert.text || 'Cliquer sur la croix pour fermer l\'alerte',
    collapse: true
   };
  %>
 
-<%- include('alert-default.ejs', data); %>
+<%- include('alert-default.ejs', {alert:data}); %>

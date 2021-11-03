@@ -1,0 +1,19 @@
+////
+/// Core Tool : Action disabled
+/// @group core
+////
+
+@mixin disabled-selector($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $disabled: map-get($setting, disabled);
+    $selector: map-get($setting, selector);
+    @if $disabled {
+      $selectors: append($selectors, nest($selector, map-get($disabled, selector)), 'comma');
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}
