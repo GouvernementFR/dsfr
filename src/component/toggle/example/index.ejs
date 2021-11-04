@@ -16,6 +16,8 @@
 
 <%- sample('Toggle simple disabled avec bouton + label à droite + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', disabled: true}}, true, './layout'); %>
 
+<%- sample('Toggle simple disabled et pré-coché avec bouton + label à droite + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', disabled: true, checked:true}}, true, './layout'); %>
+
 <%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-1-'}}, true, './layout'); %>
 
 <%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-1-', hint: true}}, true, './layout'); %>

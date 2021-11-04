@@ -15,9 +15,9 @@ let data = JSON.parse(include('../../../form/example/sample/data', {form: checkb
 let fields = {
     choice: true,
     elements: [
-        { ...element, data: {checkbox: { attributes: checkboxAttrs, id: checkbox.id + '-1' } } },
-        { ...element, data: {checkbox: { attributes: checkboxAttrs, id: checkbox.id + '-2' } } },
-        { ...element, data: {checkbox: { attributes: checkboxAttrs, id: checkbox.id + '-3' } } },
+        { ...element, data: {checkbox: { attributes: {...checkboxAttrs}, id: checkbox.id + '-1' } } },
+        { ...element, data: {checkbox: { attributes: {...checkboxAttrs}, id: checkbox.id + '-2', checked: true } } },
+        { ...element, data: {checkbox: { attributes: {...checkboxAttrs}, id: checkbox.id + '-3' } } },
     ],
     ...checkbox,
     ...data,

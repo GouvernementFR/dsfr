@@ -11,6 +11,8 @@
 
 * radio.disabled (boolean, optional) : si true, désactive le radio
 
+* radio.checked (boolean, optional) : si true, le radio est coché
+
 * radio.error (string, optional) : Message d'erreur
 
 * radio.valid (string, optional) : Message de succès
@@ -26,9 +28,10 @@
  let labelClass = radio.classes || [];
  let element = {};
  if(radio.element) element = radio.element;
- radio.customIcon ? labelAttr['style'] = radio.customIcon : labelAttr = {};
+ radio.customIcon ? labelAttr.style = radio.customIcon : labelAttr = {};
  if (radio.icon) labelClass.push(prefix + '-ifi-' + radio.icon);
- if (radio.disabled) radioAttrs['disabled'] = '';
+ if (radio.disabled) radioAttrs.disabled = '';
+ if (radio.checked) radioAttrs.checked = '';
  %>
 
 <input <%- includeAttrs(radioAttrs); %> type="radio" id="<%= radio.id %>" name="<%= radio.name %>">
