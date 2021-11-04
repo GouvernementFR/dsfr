@@ -1,27 +1,30 @@
 <%#
 # paramètres accordion
 
-* label (string, required) : label du bouton
+* accordion.id (string, required) : Identifiant de l'accordeon (lie le bouton au collapse).
 
-* isExpanded (boolean) : l'accordéon est-il ouvert au départ.
+* accordion.label (string, required) : label du bouton
 
-// TODO: documentation
+* accordion.content (String, optional) : contenu du collapse
+
+* accordion.isExpanded (boolean, optional) [default: false] : l'accordéon est-il ouvert au départ.
 
 %>
 
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- const isExpanded = locals.isExpanded === true;
+  let accordion = locals.accordion || {}
+ const isExpanded = accordion.isExpanded === true;
  %>
 
 <section class="<%= prefix %>-accordion">
   <h3 class="<%= prefix %>-accordion__title">
-    <button class="<%= prefix %>-accordion__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>" ><%- label %></button>
+    <button class="<%= prefix %>-accordion__btn" aria-expanded="<%= accordion.isExpanded %>" aria-controls="<%= accordion.id %>" ><%- accordion.label %></button>
   </h3>
-  <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
-    <% if (locals.content !== undefined) { %>
-      <%- content %>
+  <div class="<%= prefix %>-collapse" id="<%= accordion.id %>">
+    <% if (accordion.content !== undefined) { %>
+      <%- accordion.content %>
     <% } %>
   </div>
 </section>

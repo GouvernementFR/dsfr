@@ -61,8 +61,5 @@
 
   &__list {
     @include padding-bottom(3v);
-    @include respond-from(lg) {
-      box-shadow: none;
-    }
   }
 }

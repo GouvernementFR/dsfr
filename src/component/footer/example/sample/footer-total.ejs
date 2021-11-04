@@ -25,9 +25,9 @@ let data = {
         {label: 'Données personnelles'},
         {label: 'Gestion des cookies'}
       ],
-      copyright: 'Sauf mention contraire, tous les textes de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>'
+      copyright: 'Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>'
     }
 }
 %>
 
-<%- include('../../template/ejs/footer', data); %>
+<%- include('../../template/ejs/footer', {footer: data}); %>

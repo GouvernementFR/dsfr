@@ -1,0 +1,18 @@
+////
+/// Core Tool : Action clickable
+/// @group core
+////
+
+@mixin clickable-selector($elements: $action-elements) {
+  $selectors: ();
+  @each $element, $setting in $elements {
+    $selector: map-get($setting, selector);
+    @if map-get($setting, clickable) {
+      $selectors: append($selectors, $selector, 'comma');
+    }
+  }
+
+  #{$selectors} {
+    @content;
+  }
+}

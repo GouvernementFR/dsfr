@@ -1,7 +1,7 @@
 <%#
 # paramètres du gestionnaire de consentement
 
-* finalities (array, required) : Tableau de finalités
+* consent.finalities (array, required) : Tableau de finalités
 * |- title (string, recommanded): titre de la finalité
 * |- desc (string, optionnal): texte de description additionnel
 * |- radios (array, optionnal): paramètres de boutons radios (par défaut 2 éléments accepter/refuser)
@@ -9,15 +9,20 @@
 *   |- title (string, recommanded): titre de la finalité
 *   |- desc (string, optionnal): texte de description additionnel
 
-* body (string, optionnal) : Texte explicatif, contenu textuel ou html
+* consent.body (string, optionnal) : Texte explicatif, contenu textuel ou html
 
-* buttons (array, required): paramètres spécifique de chaque bouton du groupe
+* consent.buttons (array, required): paramètres spécifique de chaque bouton du groupe
+
+* consent.classes (array, optional) : Classes supplémentaires sur l'element
+
+* consent.attributes (object, optional) : Attributs supplémentaires sur l'element
 
 %>
 
 <%
-let finalities = locals.finalities || {};
-let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
+let consent = locals.consent || {};
+let finalities = consent.finalities || [];
+let buttons = consent.buttons || [{label: 'Confirmer mes choix'}];
 %>
 
 <div class="<%= prefix %>-consent-manager">
@@ -29,8 +34,8 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
         <legend <%- finalities[finality].desc ? includeAttrs({'aria-describedby' : finalities[finality].id + '-desc'}) : '' %> class="<%= prefix %>-consent-service__title"><%- finalities[finality].title %></legend>
       <% } %>
       <div class="<%= prefix %>-consent-service__radios">
-        <%- include('../../../radio/template/ejs/radio-group', {...finalities[finality].radios[0]} ) %>
-        <%- include('../../../radio/template/ejs/radio-group', {...finalities[finality].radios[1]} ) %>
+        <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].radios[0]}} ) %>
+        <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].radios[1]}} ) %>
       </div>
       <% if (finalities[finality].desc) { %>
         <p id="<%= finalities[finality].id %>-desc" class="<%= prefix %>-consent-service__desc"><%- finalities[finality].desc %></p>
@@ -50,8 +55,8 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
                 <legend class="<%= prefix %>-consent-service__title" <%- (finalities[finality].services[service].desc) ? includeAttrs({'aria-describedby' : finalities[finality].services[service].id + '-desc'}) : '' %>><%- finalities[finality].services[service].title %></legend>
               <% } %>
               <div class="<%= prefix %>-consent-service__radios <%= prefix %>-fieldset--inline">
-                <%- include('../../../radio/template/ejs/radio-group', {...finalities[finality].services[service].radios[0]} ) %>
-                <%- include('../../../radio/template/ejs/radio-group', {...finalities[finality].services[service].radios[1]} ) %>
+                <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].services[service].radios[0]}} ) %>
+                <%- include('../../../radio/template/ejs/radio-group', {radio: {...finalities[finality].services[service].radios[1]}} ) %>
               </div>
               <% if (finalities[finality].services[service].desc) { %>
                 <p id="<%= finalities[finality].services[service].id %>-desc" class="<%= prefix %>-consent-service__desc"><%- finalities[finality].services[service].desc %></p>
@@ -67,6 +72,6 @@ let buttons = locals.buttons || [{label: 'Confirmer mes choix'}];
   <% } %>
 
   <!-- Bouton de confirmation/fermeture -->
-  <%- include('../../../button/template/ejs/buttons-group.ejs', {classes: [prefix + '-consent-manager__buttons'], size: 'md', inline: 'sm', align:'right', buttons: buttons}); %>
+  <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonGroup: {classes: [prefix + '-consent-manager__buttons'], size: 'md', inline: 'sm', align:'right', buttons: buttons}}); %>
 
 </div>

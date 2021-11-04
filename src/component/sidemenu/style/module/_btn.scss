@@ -16,52 +16,49 @@
   @include text-style(md);
   text-align: left;
   font-weight: font-weight(bold);
-  background: 0;
-  border: 0;
+  background: none;
+  @include scheme-element-no-box-shadow;
 
   @include icon(arrow-down-s-line, sm) {
     @include margin-left(auto);
     @include margin-right(0);
     transition: transform 0.3s;
 
-    @include respond-from(md) {
-      @include margin-right(-6v, md);
-    }
+    @include margin-right(-6v, md);
   }
 
   &[aria-expanded="true"] {
-    border: 0;
+    @include scheme-element-no-box-shadow;
     @include before {
       transform: rotate(-180deg);
     }
   }
 
+  @include scheme-element-no-box-shadow(md);
+  @include padding(3v 8v 3v 2v, md);
+  @include size(100%, null, md);
+}
+
+/**
+ * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
+ * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
+ */
+// @TODO transformer en modifier
+#{ns(sidemenu__inner)} > #{ns(sidemenu__btn)} {
+  @include size(100%);
+  font-weight: normal;
+  @include before {
+    @include margin-right(4v);
+  }
+
   /**
-    * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
-    * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
-    */
-  @at-root #{ns(sidemenu__inner)} > #{&} {
-    @include size(100%);
-    font-weight: normal;
-    @include before {
-      @include margin-right(4v);
-    }
-
-    /**
-    * Ajout de l'icône de menu en mode mobile (provisoire)
-    */
-    @include icon(menu-2-fill, sm, after) {
-      @include margin-x(2v);
-    }
-
-    @include respond-from(md) {
-      display: none;
-    }
+  * Ajout de l'icône de menu en mode mobile (provisoire)
+  */
+  @include icon(menu-2-fill, sm, after) {
+    @include margin-x(2v);
   }
 
   @include respond-from(md) {
-    @include size(100%);
-    @include padding(3v 8v 3v 2v);
-    border: 0;
+    display: none;
   }
 }

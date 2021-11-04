@@ -9,9 +9,10 @@ const unordereds = [
   'textarea:not([disabled])',
   'audio[controls]',
   'video[controls]',
-  '[contenteditable]:not([contenteditable="false" i])',
+  '[contenteditable]:not([contenteditable="false"])',
   'details>summary:first-of-type',
-  'details'
+  'details',
+  'iframe'
 ];
 
 const UNORDEREDS = unordereds.join();
@@ -45,6 +46,7 @@ class FocusTrap {
     this.onUntrap = onUntrap;
     this.waiting = this.wait.bind(this);
     this.handling = this.handle.bind(this);
+    this.focusing = this.maintainFocus.bind(this);
     this.current = null;
   }
 
@@ -76,6 +78,7 @@ class FocusTrap {
     if (focusables.length) focusables[0].focus();
     this.element.setAttribute('aria-modal', true);
     window.addEventListener('keydown', this.handling);
+    document.body.addEventListener('focus', this.focusing, true);
 
     this.stunneds = [];
     // this.stun(document.body);
@@ -89,6 +92,16 @@ class FocusTrap {
         continue;
       }
       this.stunneds.push(new Stunned(child));
+    }
+  }
+
+  maintainFocus (event) {
+    if (!this.element.contains(event.target)) {
+      const focusables = this.focusables;
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      event.preventDefault();
+      first.focus();
     }
   }
 
@@ -161,6 +174,8 @@ class FocusTrap {
 
     this.element.removeAttribute('aria-modal');
     window.removeEventListener('keydown', this.handling);
+    document.body.removeEventListener('focus', this.focusing, true);
+
     this.element = null;
 
     // for (const stunned of this.stunneds) stunned.unstun();

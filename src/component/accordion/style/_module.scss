@@ -53,9 +53,4 @@
 
 #{ns-group(accordions)} {
   @include disable-list-style;
-
-  & > * > #{ns(accordion)},
-  & > #{ns(accordion)} {
-    @include margin-top(1px);
-  }
 }

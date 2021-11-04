@@ -2,15 +2,15 @@
 
 <%- sample('élément de navigation icône seule (par défaut)', './sample/modifiers', {}, true); %>
 
-<%- sample('élément de navigation avec label', './sample/modifiers', { hasLabel: true }, true); %>
+<%- sample('élément de navigation avec label', './sample/modifiers', {pagination: { hasLabel: true }}, true); %>
 
-<%- sample('élément de navigation avec label à partir du breakpoint LG', './sample/modifiers', { hasLgLabel: true }, true); %>
+<%- sample('élément de navigation avec label à partir du breakpoint LG', './sample/modifiers', {pagination: { hasLgLabel: true }}, true); %>
 
-<%- sample('pagination première page', './sample/pagination', {index:0}, true); %>
+<%- sample('pagination première page', './sample/pagination', {pagination: {index:0}}, true); %>
 
-<%- sample('pagination deuxième page', './sample/pagination', {index:1}, true); %>
+<%- sample('pagination deuxième page', './sample/pagination', {pagination: {index:1}}, true); %>
 
-<%- sample('pagination dernière page', './sample/pagination', {index:6}, true); %>
+<%- sample('pagination dernière page', './sample/pagination', {pagination: {index:6}}, true); %>
 
 
 

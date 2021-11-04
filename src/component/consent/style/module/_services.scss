@@ -138,7 +138,7 @@
   #{ns(consent-service)} {
     &,
     &:last-child {
-      box-shadow: none;
+      @include scheme-element-no-box-shadow;
       > #{ns(fieldset)} {
         @include padding(0);
       }

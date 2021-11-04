@@ -3,7 +3,7 @@ const Readme = require('./readme');
 const root = require('../utilities/root');
 const log = require('../utilities/log');
 
-const generateMarkdown = (pck) => {
+const generateMarkdown = (pck, packages) => {
   const readme = new Readme(pck.id);
 
   if (pck.description) readme.describe(pck.description);
@@ -11,7 +11,7 @@ const generateMarkdown = (pck) => {
   for (const dependency of pck.combination) readme.depends(dependency);
 
   for (const p of pck.usage.style) readme.useStyle(p);
-  for (const p of pck.usage.script) readme.useScript(p);
+  for (const p of pck.usage.script) readme.useScript(p, packages);
 
   switch (true) {
     case Array.isArray(pck.doc):

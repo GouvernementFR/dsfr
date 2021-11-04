@@ -1,0 +1,13 @@
+////
+/// Core Color Tools : Hover
+/// @group core
+////
+
+@mixin define-hover-props () {
+  $default: map-get($action-hover, light);
+  $lightness: map-get($default, lightness);
+
+  :root {
+    --hsl: #{map-get($default, hue)}, #{map-get($default, saturation)}, #{map-get($lightness, base) + map-get($lightness, modifier)};
+  }
+}

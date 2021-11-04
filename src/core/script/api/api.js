@@ -38,7 +38,7 @@ api.register = engine.register;
 
 api.inspector = inspector;
 
-options.configure(config, api.start);
+options.configure(window[config.namespace], api.start);
 
 window[config.namespace] = api;
 export default api;

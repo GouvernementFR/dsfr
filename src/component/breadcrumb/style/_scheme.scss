@@ -4,13 +4,9 @@
 ////
 
 #{ns(breadcrumb)} {
-  @include scheme-element-text-color(g600, true);
-
-  &__button {
-    @include scheme-element-bg-color(t-plain);
-  }
+  @include scheme-element-text-color(mention neutral);
 
   &__link[aria-current] {
-    @include scheme-element-text-color(g800);
+    @include scheme-element-text-color(active neutral);
   }
 }

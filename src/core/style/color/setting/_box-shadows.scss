@@ -1,0 +1,28 @@
+////
+/// Core Setting : Color border
+/// @group core
+////
+
+$box-shadows: (
+  all-1-in: inset 0 0 0 1px $COLOR,
+  top-1-in: inset 0 1px 0 0 $COLOR,
+  top-1-out: 0 -1px 0 0 $COLOR,
+  right-1-in: inset -1px 0 0 0 $COLOR,
+  bottom-1-in: inset 0 -1px 0 0 $COLOR,
+  bottom-1-out: 0 1px 0 0 $COLOR,
+  left-1-in: inset 1px 0 0 0 $COLOR,
+  left-1-out: -1px 0 0 0 $COLOR,
+  bottom-left-1-in: inset 1px -1px 0 0 $COLOR,
+  top-2-in: inset 0 2px 0 0 $COLOR,
+  top-2-out: 0 -2px 0 0 $COLOR,
+  bottom-2-in: inset 0 -2px 0 0 $COLOR,
+  left-2-in: inset 2px 0 0 0 $COLOR,
+  all-4-in: inset 0 0 0 4px $COLOR,
+  all-6-in: inset 0 0 0 6px $COLOR,
+  all-8-in: inset 0 0 0 8px $COLOR,
+  all-12-in: inset 0 0 0 12px $COLOR,
+  left-1v-in: inset 1v 0 0 0 $COLOR,
+  bottom-1v-in: inset 0 -1v 0 0 $COLOR,
+  left-10v-in: inset 10v 0 0 0 $COLOR,
+  all-in: inset 0 0 0 1000px $COLOR,
+);

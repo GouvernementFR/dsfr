@@ -1,0 +1,8 @@
+////
+/// Core scheme : Display hr
+/// @group core
+////
+
+#{ns(hr)} {
+  @include build-hr-scheme();
+}

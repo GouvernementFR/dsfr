@@ -34,11 +34,15 @@ doc:
     url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019554/M+dias+int+gr+s+au+contenu+-+Responsive+medias
   - title: Grille
     url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331372/Grille+et+points+de+rupture+-+Grid+and+breakpoints
+script:
+  - legacy
 example:
   style:
     - core
     - button
+    - table
     - accordion
   script:
     - core
     - accordion
+    - table

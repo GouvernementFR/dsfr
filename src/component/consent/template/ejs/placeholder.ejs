@@ -1,25 +1,30 @@
 <%#
 # paramètres placeholder de consentement
 
-* title (string, recommended) : Titre du placeholder
+* consent.title (string, recommended) : Titre du placeholder
 
-* body (string, optionnal) : Texte explicatif, contenu textuel ou html
+* consent.body (string, optionnal) : Texte explicatif, contenu textuel ou html
 
-* button (string, optionnal) : Pour modifier le bouton (par exemple le texte dans le bouton : button.label)
+* consent.button (object, optionnal) : Pour modifier le bouton (par exemple le texte dans le bouton : button.label)
+
+* consent.classes (array, optional) : Classes supplémentaires sur l'element
+
+* consent.attributes (object, optional) : Attributs supplémentaires sur l'element
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let classes = [prefix + '-consent-placeholder'];
- let attributes = locals.attributes || {};
- let button = locals.button || {};
+ let consent = locals.consent || {};
+ let classes = [...consent.classes || [], prefix + '-consent-placeholder'];
+ let attributes = consent.attributes || {};
+ let button = consent.button || {};
  if (!button.label) button.label = "Autoriser";
  button.tag = 'button';
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (locals.title) { %><p class="<%= prefix %>-h6"><%= title %></p> <% } %>
-    <% if (locals.body) { %><p><%- body %></p><% } %>
-    <%- include('../../../button/template/ejs/button.ejs', button); %>
+    <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p> <% } %>
+    <% if (consent.body) { %><p><%- consent.body %></p><% } %>
+    <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
 </div>

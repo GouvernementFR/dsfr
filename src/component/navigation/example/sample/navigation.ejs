@@ -1,4 +1,6 @@
 <%
+let navigation = locals.navigation || {};
+
 let link = {
     type: 'link',
     label: 'accès direct',
@@ -14,7 +16,6 @@ let menu = {
     label: 'Entrée menu',
     items: items,
 }
-
 
 
 let itemsAct = items.slice();
@@ -66,8 +67,8 @@ let mega2 = {
 }
 
 let data = {
-    id: locals.id || uniqueId('navigation'),
-    items: locals.min === true ?
+    id: navigation.id || uniqueId('navigation'),
+    items: navigation.min === true ?
             [link, link, link, link] :
             [
                 {...menu, collapseId: uniqueId('menu')},
@@ -82,4 +83,4 @@ let data = {
 }
 %>
 
-<%- include('../../template/ejs/navigation.ejs', data); %>
+<%- include('../../template/ejs/navigation.ejs', {navigation:data}); %>

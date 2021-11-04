@@ -20,7 +20,7 @@ class Navigation extends api.core.CollapsesGroup {
   }
 
   down (e) {
-    if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1) return;
+    if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
     this.position = this.current.element.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
     this.request(this.getPosition.bind(this));
   }

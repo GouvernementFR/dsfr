@@ -1,38 +1,43 @@
+<%
+let header = locals.header || {};
+let navbar = header.navbar || {};
+let label;
+%>
 <div class="<%= prefix %>-header__navbar">
     <%
         const attrs = {};
         attrs[`data-${prefix}-opened`] = false;
 
-        if (locals.search) {
-          const label = search.label || 'Rechercher';
+        if (navbar.search) {
+            label = navbar.search.label || 'Rechercher';
     %>
-    <%- include('../../../button/template/ejs/button', {
+    <%- include('../../../button/template/ejs/button', {button: {
         classes: [prefix + '-btn--search'],
         title: label,
         attributes: {
             ...attrs,
-            'aria-controls': search.modalId,
+            'aria-controls': navbar.search.modalId,
         },
         label: label,
-        id: search.id
-    }); %>
+        id: navbar.search.id
+    }}); %>
     <% } %>
 
     <%
-        if (locals.menu) {
-            const label = menu.label || 'Menu';
+        if (navbar.menu) {
+            label = navbar.menu.label || 'Menu';
 
     %>
-    <%- include('../../../button/template/ejs/button', {
+    <%- include('../../../button/template/ejs/button', {button: {
         classes: [prefix + '-btn--menu'],
         title: label,
         attributes: {
             ...attrs,
-            'aria-controls': menu.modalId,
+            'aria-controls': navbar.menu.modalId,
             'aria-haspopup': 'menu'
         },
         label: label,
-        id: menu.id
-    }); %>
+        id: navbar.menu.id
+    }}); %>
     <% } %>
 </div>

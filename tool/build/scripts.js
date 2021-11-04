@@ -73,13 +73,15 @@ const buildScript = async (pck, minify, legacy, map) => {
   const dir = root(`${pck.dist}/`);
   let data = `import '${src}/main.js'\n`;
 
-  await process(data, dir, pck.id, false, false, map);
+  if (pck.module) {
+    await process(data, dir, pck.id, false, false, map);
 
-  if (minify) {
-    await process(data, dir, pck.id, true, false, map);
+    if (minify) {
+      await process(data, dir, pck.id, true, false, map);
+    }
   }
 
-  if (legacy) {
+  if (legacy && pck.nomodule) {
     if (pck.script.files.indexOf('legacy') > -1) data += `import '${src}/legacy.js'\n`;
 
     await process(data, dir, pck.id, false, true, map);

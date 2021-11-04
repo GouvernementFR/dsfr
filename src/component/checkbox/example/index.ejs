@@ -1,33 +1,33 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Case à cocher seule', './sample/checkbox.ejs', {id:'checkbox'}, true); %>
+<%- sample('Case à cocher seule', './sample/checkbox.ejs', {checkbox: {id:'checkbox'}}, true); %>
 
-<%- sample('Case à cocher avec texte d‘aide', './sample/checkbox.ejs', {id:'checkbox-hint', hint:true}, true); %>
+<%- sample('Case à cocher avec texte d‘aide', './sample/checkbox.ejs', {checkbox: {id:'checkbox-hint', hint:true}}, true); %>
 
-<%- sample('Case à cocher seule, validée', './sample/checkbox.ejs', {id:'checkbox-valid', valid:true}, true); %>
+<%- sample('Case à cocher seule, validée', './sample/checkbox.ejs', {checkbox: {id:'checkbox-valid', valid:true}}, true); %>
 
-<%- sample('Case à cocher seule avec erreur', './sample/checkbox.ejs', {id:'checkbox-error', error:true}, true); %>
+<%- sample('Case à cocher seule avec erreur', './sample/checkbox.ejs', {checkbox: {id:'checkbox-error', error:true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher', './sample/checkboxes.ejs', {id:'checkboxes'}, true); %>
+<%- sample('Ensemble de cases à cocher', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes'}}, true); %>
 
-<%- sample('Ensemble de cases à cocher, petite taille', './sample/checkboxes.ejs', {id:'checkboxes-small', size:'sm'}, true); %>
+<%- sample('Ensemble de cases à cocher, petite taille', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-small', size:'sm'}}, true); %>
 
-<%- sample('Ensemble de cases à cocher désactivées', './sample/checkboxes.ejs', {id:'checkboxes-disabled', disabled:true}, true); %>
+<%- sample('Ensemble de cases à cocher désactivées', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-disabled', disabled:true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher en ligne', './sample/checkboxes.ejs', {id:'checkboxes-inline', inline: true}, true); %>
+<%- sample('Ensemble de cases à cocher en ligne', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-inline', inline: true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher avec texte d‘aide', './sample/checkboxes.ejs', {id:'checkboxes-hint', hint: true}, true); %>
+<%- sample('Ensemble de cases à cocher avec texte d‘aide', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-hint', hint: true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher avec erreur', './sample/checkboxes.ejs', {id:'checkboxes-error', error: true}, true); %>
+<%- sample('Ensemble de cases à cocher avec erreur', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-error', error: true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher validées', './sample/checkboxes.ejs', {id:'checkboxes-valid', valid: true,}, true); %>
+<%- sample('Ensemble de cases à cocher validées', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-valid', valid: true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher avec erreur, en ligne', './sample/checkboxes.ejs', {id:'checkboxes-error-inline', error: true, inline:true}, true); %>
+<%- sample('Ensemble de cases à cocher avec erreur, en ligne', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-error-inline', error: true, inline:true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher validées, en ligne', './sample/checkboxes.ejs', {id:'checkboxes-valid-inline', valid: true, inline:true}, true); %>
+<%- sample('Ensemble de cases à cocher validées, en ligne', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-valid-inline', valid: true, inline:true}}, true); %>
 
-<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique', './sample/checkboxes.ejs', {id:'checkboxes-hint-element', element: { hint:'Texte de description additionnel' }}, true); %>
+<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-hint-element', element: { hint:'Texte de description additionnel' }}}, true); %>
 
-<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique,  petite taille', './sample/checkboxes.ejs', {id:'checkboxes-hint-el-sm', size: 'sm', element: { hint:'Texte de description additionnel' }}, true); %>
+<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique,  petite taille', './sample/checkboxes.ejs', {checkbox: {id:'checkboxes-hint-el-sm', size: 'sm', element: { hint:'Texte de description additionnel' }}}, true); %>
 
 

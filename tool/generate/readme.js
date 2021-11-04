@@ -29,10 +29,11 @@ class Readme {
     this.styles += `    <link href="css/${id}/${id}.min.css" rel="stylesheet">\n`;
   }
 
-  useScript (id) {
+  useScript (id, packages) {
     if (this.usage === undefined) this._initUse();
-    this.scripts += `    <script type="module" href="js/${id}/${id}.module.min.js" ></script>\n`;
-    this.scripts += `    <script type="text/javascript" nomodule href="js/${id}/${id}.nomodule.min.js" ></script>\n`;
+    const p = packages.filter(i => i.id === id)[0];
+    if (p.module) this.scripts += `    <script type="module" href="js/${id}/${id}.module.min.js" ></script>\n`;
+    if (p.nomodule) this.scripts += `    <script type="text/javascript" nomodule href="js/${id}/${id}.nomodule.min.js" ></script>\n`;
   }
 
   document (title, url) {

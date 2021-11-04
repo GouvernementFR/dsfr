@@ -6,6 +6,11 @@
       wrapper: 'col-8'
     },
     {
+      path:'display',
+      title:'Affichage',
+      wrapper: 'col-8'
+    },
+    {
       path:'typography',
       title:'Typographie',
       wrapper: 'col-8'
@@ -59,8 +64,7 @@
 
     accordions.push({
         label: element.title,
-        collapseId: uniqueId('core'),
-        isExpanded: false,
+        id: uniqueId('core'),
         content: prepend + include(element.path + '/index') + append
     })
   }
@@ -70,4 +74,4 @@
   }
 %>
 
-<%- include('../../component/accordion/template/ejs/accordions-group', data); %>
+<%- include('../../component/accordion/template/ejs/accordions-group', {accordionsGroup: data}); %>
