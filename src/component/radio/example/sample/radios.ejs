@@ -13,7 +13,7 @@ let fields = {
     choice:true,
     elements: [
         { ...element, data: { radio: {...element.data, id: radio.id + '-1' } } },
-        { ...element, data: { radio: {...element.data, id: radio.id + '-2' } } },
+        { ...element, data: { radio: {...element.data, id: radio.id + '-2', checked: true } } },
         { ...element, data: { radio: {...element.data, id: radio.id + '-3' } } },
     ],
     ...data
