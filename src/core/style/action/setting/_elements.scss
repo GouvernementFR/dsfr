@@ -72,7 +72,14 @@ $action-elements: (
   input-upload: (
     selector: 'input[type="file"]',
     hover: (
+      selector: '&:not([disabled]):not(:disabled)',
       type: blend
+    ),
+    cursor: (
+      pointer: (),
+      not-allowed: (
+        selector: '&[disabled], &:disabled'
+      )
     )
   ),
   input-range: (
