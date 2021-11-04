@@ -59,7 +59,7 @@
 }
 
 @mixin _space-text($settings) {
-  @include margin( var(#{'--' + map-get($settings, 'margin') + '-mb'}) );
+  @include margin( var(#{'--' + map-get($settings, 'margin') + '-spacing'}) );
 }
 
 @mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {

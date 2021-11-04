@@ -40,7 +40,9 @@ example:
   style:
     - core
     - button
+    - table
     - accordion
   script:
     - core
     - accordion
+    - table
