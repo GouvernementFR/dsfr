@@ -9,35 +9,28 @@
   }
 
   thead {
-    td,
-    th {
-      @include scheme-element-box-shadow-color(default neutral, false, bottom-2-in);
-      @include scheme-element-bg-color(contrast neutral);
-      @include scheme-element-text-color(default neutral);
-    }
-  }
-
-  tbody tr:nth-child(even) {
+    @include scheme-element-box-shadow-color(plain neutral, false, bottom-2-in);
     @include scheme-element-bg-color(contrast neutral);
+    @include scheme-element-text-color(title neutral);
   }
 
-  tbody tr:nth-child(odd) {
+  tbody {
     @include scheme-element-bg-color(alt neutral);
+
+    tr:nth-child(even) {
+      @include scheme-element-bg-color(contrast neutral);
+    }
   }
 
   /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
   &--bordered {
     tbody {
-      td,
-      th {
+      tr {
         @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
       }
 
-      tr {
-        &:nth-child(odd),
-        &:nth-child(even) {
-          @include scheme-element-bg-transparent(false);
-        }
+      tr:nth-child(even) {
+        @include scheme-element-bg-transparent(false);
       }
     }
   }

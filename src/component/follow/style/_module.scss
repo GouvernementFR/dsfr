@@ -6,17 +6,8 @@
 #{ns(follow)} {
   @include padding(6v 0);
   @include padding(8v 0, md);
-
-  &__title {
-    @include title-style(h5);
-    + #{ns(follow__desc)} {
-      @include margin-top(-2v);
-    }
-  }
-
-  &__desc {
-    @include margin-bottom(4v);
-  }
+  @include set-title-margin(0 0 2v);
+  @include set-text-margin(0 0 4v);
 
   &__newsletter {
     // bloc newsletter
@@ -81,17 +72,20 @@
 
   &__social {
     // bloc social
+    @include set-text-margin(0 0 3v);
+    @include set-title-margin(0 0 3v);
     @include nest-link(md, only, null, null, true, true);
-
-    #{ns(follow)}__title {
-      @include margin-bottom(3v);
-    }
 
     #{ns(links-group)} {
       @include disable-list-style;
 
       &--lg {
         @include nest-link(lg, only);
+
+        > li {
+          @include margin-right(2v);
+          @include margin-right(4v, md);
+        }
       }
 
       > li {
@@ -135,6 +129,7 @@
 
       > #{ns(follow)}__newsletter {
         // code spécifique à newsletter seul
+        @include set-text-margin(0,md);
         @include respond-from(md) {
           & > * {
             @include max-width(50%);
@@ -151,18 +146,12 @@
             @include padding-right(0);
             @include padding-left(3v);
           }
-
-          #{ns(follow)}__desc {
-            @include margin-bottom(0);
-          }
         }
       }
 
       > #{ns(follow)}__social {
         // code spécifique à social seul
-        #{ns(follow)}__title {
-          @include margin-bottom(0, md);
-        }
+        @include set-title-margin(0, md);
       }
     }
   }

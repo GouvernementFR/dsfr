@@ -1,23 +1,24 @@
 <%#
 # paramètres select group
 
-* valid (string, optionnal) : message de validation
+* select.valid (string, optionnal) : message de validation
 
-* error (string, optionnal) : message d'erreur
+* select.error (string, optionnal) : message d'erreur
 
-* disabled (boolena, optionnal)
+* select.disabled (boolean, optionnal) : si true, désactive le select
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
+ let select = locals.select || {};
  let groupClasses = [prefix + '-select-group'];
 
- if (locals.error !== undefined) groupClasses.push(prefix + '-select-group--error');
- if (locals.disabled !== undefined) groupClasses.push(prefix + '-select-group--disabled');
- if (locals.valid !== undefined) groupClasses.push(prefix + '-select-group--valid');
+ if (select.error !== undefined) groupClasses.push(prefix + '-select-group--error');
+ if (select.disabled !== undefined) groupClasses.push(prefix + '-select-group--disabled');
+ if (select.valid !== undefined) groupClasses.push(prefix + '-select-group--valid');
  %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./select'); %>
+    <%- include('./select', {select:select}); %>
 </div>

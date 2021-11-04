@@ -1,0 +1,7 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Bouton upload 1 seul fichier', './sample/upload.ejs', { upload: {id:'file-upload'}}, true); %>
+
+<%- sample('Bouton upload avec erreur', './sample/upload.ejs', { upload: {id:'file-upload-with-error', error: true }}, true); %>
+
+<%- sample('Bouton upload fichiers multiples', './sample/upload-multiple.ejs', { upload: {id:'file-upload-multiple' }}, true); %>

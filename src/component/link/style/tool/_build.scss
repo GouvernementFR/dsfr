@@ -56,7 +56,8 @@
 
 @mixin _build-link-base {
   @include disable-link-style;
-  @include margin(0);
+  @include set-text-margin(0);
+  @include set-title-margin(0);
   @include display-flex(row, center, null, null, true);
   @include z-index(over);
 }

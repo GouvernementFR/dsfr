@@ -79,7 +79,7 @@
     @include shadow(md);
 
     @include respond-from(md) {
-      max-height: 80vh;
+      max-height: 80vh !important;
     }
   }
 

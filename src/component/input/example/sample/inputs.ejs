@@ -1,16 +1,18 @@
 <%
+let input = locals.input || {};
 let element = {
   path: 'input/example/sample/input-text',
-    data:locals.element || {}
+    data: {...input, ...input.element} || {}
 }
 
 let fields = {
     elements: [
-        { ...element, data: { ...element.data, id: id + '-1' } },
-        { ...element, data: { ...element.data, id: id + '-2' } },
-        { ...element, data: { ...element.data, id: id + '-3' } },
-    ]
+        { ...element, data: { input: {...element.data, group: true, id: input.id + '-1' } } },
+        { ...element, data: { input: {...element.data, group: true, id: input.id + '-2' } } },
+        { ...element, data: { input: {...element.data, group: true, id: input.id + '-3' } } },
+    ],
+    ...input,
 }
 %>
 
-<%- include('../../../form/example/sample/fieldset', fields) %>
+<%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>

@@ -5,6 +5,8 @@
 
 #{ns(table)} {
   --table-offset: #{space(4v)};
+  @include set-text-margin(0);
+  @include set-title-margin(0);
 
   @include relative;
   @include margin-bottom(10v);
@@ -52,13 +54,13 @@
   }
 
   th {
-    font-weight: font-weight('bold');
+    font-weight: font-weight(bold);
   }
 
   thead {
     td,
     th {
-      font-weight: font-weight('bold');
+      font-weight: font-weight(bold);
       @include padding-bottom(3.5v); // 0.5v for the box shadox
       @include padding-bottom(4.5v, md);
     }
@@ -85,7 +87,7 @@
     @include margin-top(4v);
 
     table {
-      @include margin-bottom(calc(var(--table-offset) + #{space(11v)}));
+      @include margin-bottom(calc(var(--table-offset) + 11v));
     }
 
     &#{ns-attr(js-table, true)} {
@@ -113,7 +115,7 @@
     }
 
     caption {
-      @include max-width(calc(100vw - #{space(8v)})); // eol in mobile even if table overflow
+      @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
     }
   }
 

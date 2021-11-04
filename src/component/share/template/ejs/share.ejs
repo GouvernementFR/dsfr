@@ -7,9 +7,15 @@
 
 * share.classes (array, optional) : Classes sur le bloc share
 
+* share.text (string, optional) : Texte supplémentaire si désactivé
+
+* share.disabled (boolean, optional) : Désactive les liens de partage
+
+
 %>
 <%
 eval(include('../../../../core/index.ejs'));
+let share = locals.share || {};
 let shareClasses = share.classes || [];
 shareClasses = [prefix + '-share'];
 let dataLink = {};
@@ -20,11 +26,11 @@ let dataLink = {};
     <ul class="<%= prefix %>-share__group">
         <% for (let i=0; i < share.links.length; i++) { %>
             <li>
-                <%- include('./share-link', {shareLink: share.links[i]}); %>
+                <%- include('./share-link', {shareLink: {...share.links[i]}, disabled: share.disabled }); %>
             </li>
         <% } %>
     </ul>
-    <% if (locals.inactive) { %>
+    <% if (share.disabled) { %>
         <p class="<%= prefix %>-share__text"><%- share.text %></p>
     <% } %>
 </div>

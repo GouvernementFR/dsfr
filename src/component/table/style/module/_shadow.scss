@@ -4,8 +4,8 @@
 ////
 
 $empty: inset 0 0 0 0 $COLOR;
-$left: inset space(8v) 0 space(4v) (space(-8v)) $COLOR;
-$right: inset space(-8v) 0 space(4v) (space(-8v)) $COLOR;
+$left: space(inset 8v 0 4v -8v $COLOR);
+$right: space(inset 8v 0 4v -8v $COLOR);
 
 /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur

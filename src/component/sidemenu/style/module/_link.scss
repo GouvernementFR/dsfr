@@ -8,13 +8,9 @@
  */
 #{ns(sidemenu__link)} {
   @include display-flex(row);
-  @include size(calc(100% - #{space(4v)}));
-  @include margin(0 2v);
-  @include padding(3v 0);
+  @include size(100%);
+  @include padding(3v 8v 3v 2v);
+  @include margin(0, md);
   @include text-style(md);
   text-align: left;
-
-  @include size(100%, null, md);
-  @include padding(3v 8v 3v 2v, md);
-  @include margin(0, md);
 }

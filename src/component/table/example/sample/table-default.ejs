@@ -1,15 +1,16 @@
 <%
-
+let table = locals.table || {};
 let data = {
-  caption: locals.caption || undefined,
-  bordered: locals.bordered || false,
-  noscroll: locals.noscroll || false,
-  nocaption: locals.nocaption || false,
-  captionBottom: locals.captionBottom || false,
-  col: locals.col || 2,
-  row: locals.row || 2,
+  caption: table.caption || undefined,
+  bordered: table.bordered || false,
+  noScroll: table.noScroll || false,
+  noCaption: table.noCaption || false,
+  captionBottom: table.captionBottom || false,
+  layout: table.layout,
+  col: table.col || 2,
+  row: table.row || 2,
 }
 
 %>
 
-<%- include('../../template/ejs/table', data); %>
+<%- include('../../template/ejs/table', {table: data}); %>

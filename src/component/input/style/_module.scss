@@ -9,9 +9,6 @@
   border-radius: space(1v) space(1v) 0 0;
   @include text-style(md);
   @include padding(2v 4v);
-  -webkit-appearance: none; // @TODO: vérifier si le reset ne s'en charge pas déjà
-  -moz-appearance: none;
-  appearance: none;
 
   /**
    * Style du placeholder

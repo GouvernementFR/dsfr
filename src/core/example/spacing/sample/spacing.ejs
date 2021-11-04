@@ -65,6 +65,7 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
   - un séparateur : '-', <br>
   - le token d'espacement (nb: le signe '-' des nombres négatifs est remplacé par la lettre 'n', et 0 n'a pas d'unité 'v')</p>
 </p>
+<hr>
 
 <div class="<%=prefix%>-table">
   <table>
@@ -107,9 +108,11 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
 
 
 <%- sample('exemple avec un bouton plus large en md', '../../../../component/button/template/ejs/button', {
-  classes: [prefix + '-px-4v', prefix + '-px-md-16v'],
-  label: '4v en mobile / 16v en md',
-  btnTitle: false
+  button:{
+    classes: [prefix + '-px-4v', prefix + '-px-md-16v'],
+    label: '4v en mobile / 16v en md',
+    title: false
+  }
 }, true); %>
 
 

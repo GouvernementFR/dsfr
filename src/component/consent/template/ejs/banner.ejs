@@ -1,30 +1,35 @@
 <%#
 # paramètres de la banière de consentement
 
-* title (string, recommended) : Titre du bloc
+* consent.title (string, recommended) : Titre du bloc
 
-* body (string, optionnal) : Texte explicatif, contenu textuel ou html
+* consent.body (string, optionnal) : Texte explicatif, contenu textuel ou html
 
-* buttons (array, required): paramètres spécifique de chaque bouton du groupe
+* consent.buttons (array, optionnal): paramètres spécifique de chaque bouton du groupe
+
+* consent.classes (array, optional) : Classes supplémentaires sur l'element
+
+* consent.attributes (object, optional) : Attributs supplémentaires sur l'element
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let classes = [prefix + '-consent-banner'];
- let attributes = locals.attributes || {};
+let consent = locals.consent || {};
+ let classes = [...consent.classes || [], prefix + '-consent-banner'];
+ let attributes = consent.attributes || {};
  btnModalAttr = [];
  btnModalAttr['data-' + prefix + '-opened'] = false;
  btnModalAttr['aria-controls'] = prefix + '-consent-modal';
- let buttons = locals.buttons || [
-    { label: 'Tout accepter', btnTitle: null },
-    { label: 'Tout refuser',  btnTitle: null },
-    { label: 'Personnaliser', secondary: true, attributes: btnModalAttr, btnTitle: null }
+ let buttons = consent.buttons || [
+    { label: 'Tout accepter', title: null },
+    { label: 'Tout refuser',  title: null },
+    { label: 'Personnaliser', secondary: true, attributes: btnModalAttr, title: null }
  ];
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (locals.title) { %><p class="<%= prefix %>-h6 <%= prefix %>-mb-3v"><%= title %></p><% } %>
-    <% if (locals.body) { %><div class="<%= prefix %>-consent-banner__content"><%- body %></div><% } %>
-    <%- include('../../../button/template/ejs/buttons-group.ejs', {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}); %>
+    <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p><% } %>
+    <% if (consent.body) { %><div class="<%= prefix %>-consent-banner__content"><%- consent.body %></div><% } %>
+    <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonGroup: {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}}); %>
 </div>
