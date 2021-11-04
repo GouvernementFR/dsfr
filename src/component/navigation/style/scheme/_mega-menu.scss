@@ -14,11 +14,6 @@
     }
   }
 
-  &__list {
-    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
-    @include scheme-element-no-box-shadow(lg);
-  }
-
   &__category {
     @include respond-from(lg) {
       @include scheme-element-box-shadow-color(default neutral, false, 0 calc(4v + 1px) 0 -4v $COLOR);
