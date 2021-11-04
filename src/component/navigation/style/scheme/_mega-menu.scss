@@ -13,7 +13,7 @@
       }
     }
   }
-  
+
   &__list {
     @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
     @include scheme-element-no-box-shadow(lg);
