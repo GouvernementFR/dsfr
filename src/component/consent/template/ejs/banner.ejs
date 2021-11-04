@@ -29,7 +29,7 @@ let consent = locals.consent || {};
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (consent.title) { %><p class="<%= prefix %>-h6 <%= prefix %>-mb-3v"><%= consent.title %></p><% } %>
+    <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p><% } %>
     <% if (consent.body) { %><div class="<%= prefix %>-consent-banner__content"><%- consent.body %></div><% } %>
     <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonGroup: {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}}); %>
 </div>

@@ -9,6 +9,8 @@
   @include padding(4v);
   @include z-index(consent);
   overflow: auto;
+  @include set-text-margin(0 0 4v);
+  @include set-title-margin(0 0 4v);
 
   @include respond-from(md) {
     @include padding(8v);
@@ -16,12 +18,6 @@
     left: space(10v);
     max-width: space(160v);
     max-height: calc(100% - #{space(20v)});
-  }
-
-  &__content {
-    p {
-      @include margin-bottom(4v);
-    }
   }
 
   &__title {

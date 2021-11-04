@@ -51,10 +51,11 @@
   &__leader {
     @include padding-x(4v);
     @include padding-x(0, lg);
+    @include set-text-margin(0 0 2v);
+    @include set-title-margin(0 0 2v);
   }
 
   &__category {
-    @include margin-bottom(0);
     @include font-weight(bold);
   }
 

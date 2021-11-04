@@ -7,9 +7,10 @@
 
 * share.classes (array, optional) : Classes sur le bloc share
 
-* share.inactive (boolean, optional) : Ajoute le texte des cookies
+* share.text (string, optional) : Texte supplémentaire si désactivé
 
 * share.disabled (boolean, optional) : Désactive les liens de partage
+
 
 %>
 <%
@@ -29,7 +30,7 @@ let dataLink = {};
             </li>
         <% } %>
     </ul>
-    <% if (share.inactive) { %>
+    <% if (share.disabled) { %>
         <p class="<%= prefix %>-share__text"><%- share.text %></p>
     <% } %>
 </div>

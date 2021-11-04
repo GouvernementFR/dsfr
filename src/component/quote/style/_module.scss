@@ -53,9 +53,9 @@
 
   blockquote {
     @include margin(0);
+    @include set-text-margin(0 0 4v);
 
     p {
-      @include margin-bottom(4v);
       @include text-style(xl);
       @include font-weight(bold);
 

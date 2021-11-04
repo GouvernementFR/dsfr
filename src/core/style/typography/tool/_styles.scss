@@ -89,3 +89,26 @@
     @include _space-text($settings);
   }
 }
+
+@mixin _set-typography-var($name, $value, $bp: null) {
+  @if $bp != null {
+    @include respond-from(#{$bp}) {
+      --#{$name}-mb: #{space($value)};
+    }
+  }
+  @else {
+    --#{$name}-mb: #{space($value)};
+  }
+}
+
+@mixin set-title-margin($margin, $bp:null) {
+  @include _set-typography-var(title, $margin, $bp);
+}
+
+@mixin set-text-margin($margin, $bp:null) {
+  @include _set-typography-var(text, $margin, $bp);
+}
+
+@mixin set-display-margin($margin, $bp:null) {
+  @include _set-typography-var(display, $margin, $bp);
+}
