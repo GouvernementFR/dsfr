@@ -12,3 +12,7 @@
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
+@mixin build-hr-scheme() {
+  @include scheme-element-bg-image-color(border-default neutral);
+}

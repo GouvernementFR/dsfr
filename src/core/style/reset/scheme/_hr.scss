@@ -5,6 +5,6 @@
 
 @if (map-get($reset-settings, hr)) {
   hr {
-    @include scheme-element-bg-image-color(border-plain neutral);
+    @include build-hr-scheme();
   }
 }
