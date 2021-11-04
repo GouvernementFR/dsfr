@@ -1,100 +1,72 @@
 
 <%
 let id = 'consent';
-
 let elementAccept = { label : 'Accepter'};
 let elementRefuse = { label : 'Refuser'};
+let finalities = [];
 
-let finalities = [
-  {
-    id: 'finality',
-    title: 'Préférences pour tous les services. <a href="">Données personnelles et cookies</a>',
-    radios: [
-      { name : id + '-all', element: {label: 'Tout accepter'},  id: id + '-all-accept'},
-      { name : id + '-all', element: {label: 'Tout refuser'}, id: id + '-all-refuse' }
+function getFinality(id, title, desc, radios, services) {
+  let finality = {};
+  finality.id = id;
+  finality.title = title || undefined;
+  finality.desc = desc || undefined;
+  finality.radios = radios;
+  finality.services = services;
+
+  return finality;
+}
+
+function getRadio (id, name, element, alt, disabled) {
+  return {
+    name: id + '-' + name,
+    element: element,
+    id: id + '-' + name + '-' + alt,
+    disabled: disabled
+  }
+}
+
+finalities.push(
+  getFinality(
+    'finality',
+    'Préférences pour tous les services. <a href="">Données personnelles et cookies</a>',
+    null,
+    [
+      getRadio(id, 'all', {label: 'Tout accepter'}, 'accept'),
+      getRadio(id, 'all', {label: 'Tout accepter'}, 'refuse'),
     ]
-  },
-  {
-    id: 'finality-0',
-    title: 'Cookies obligatoires',
-    desc: 'Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés.',
-    radios: [
-      { name : id + '-finality-0', element: {...elementAccept},  id: id + '-finality-0-accept'},
-      { disabled: true, name : id + '-finality-0', element: {...elementRefuse}, id: id + '-finality-0-refuse' }
+  )
+);
+finalities.push(
+  getFinality(
+    'finality-0',
+    'Cookies obligatoires',
+    'Ce site utilise des cookies nécessaires à son bon fonctionnement qui ne peuvent pas être désactivés.',
+    [
+      getRadio(id, 'finality-0', elementAccept, 'accept'),
+      getRadio(id, 'finality-0', elementRefuse, 'refuse', true),
     ]
-  },
-  {
-    id: 'finality-1',
-    title: 'Nom de la finalité',
-    desc: 'Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.',
-    radios: [
-      { name : id + '-finality-1-', element: {...elementAccept},  id: id + '-finality-1-accept'},
-      { name : id + '-finality-1-', element: {...elementRefuse}, id: id + '-finality-1-refuse' }
-    ],
-    services: [
-      {
-        id: id + '-finality-1-service-1',
-        title: "Sous finalité 1",
-        radios: [
-          { name : id + '-finality-1-service-1', element: {...elementAccept},  id: id + '-finality-1-service-1-accept'},
-          { name : id + '-finality-1-service-1', element: {...elementRefuse}, id: id + '-finality-1-service-1-refuse' }
-        ]
-      },
-      {
-        id: id + '-finality-1-service-2',
-        title: "Sous finalité 2",
-        radios: [
-          { name : id + '-finality-1-service-2', element: {...elementAccept},  id: id + '-finality-1-service-2-accept'},
-          { name : id + '-finality-1-service-2', element: {...elementRefuse}, id: id + '-finality-1-service-2-refuse' }
-        ]
-      },
-      {
-        id: id + '-finality-1-service-3',
-        title: "Sous finalité 3",
-        radios: [
-          { name : id + '-finality-1-service-3', element: {...elementAccept},  id: id + '-finality-1-service-3-accept'},
-          { name : id + '-finality-1-service-3', element: {...elementRefuse}, id: id + '-finality-1-service-3-refuse' }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'finality-2',
-    title: 'Nom de la finalité',
-    desc: 'Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.',
-    radios: [
-      { name : id + '-finality-2-', element: {...elementAccept},  id: id + '-finality-2-accept'},
-      { name : id + '-finality-2-', element: {...elementRefuse}, id: id + '-finality-2-refuse' }
-    ],
-    services: [
-      {
-        id: id + '-finality-2-service-1',
-        title: "Sous finalité 1",
-        radios: [
-          { name : id + '-finality-2-service-1', element: {...elementAccept},  id: id + '-finality-2-service-1-accept'},
-          { name : id + '-finality-2-service-1', element: {...elementRefuse}, id: id + '-finality-2-service-1-refuse' }
-        ]
-      },
-      {
-        id: id + '-finality-2-service-2',
-        title: "Sous finalité 2",
-        desc: "Ce service utilise 3 cookies.",
-        radios: [
-          { name : id + '-finality-2-service-2', element: {...elementAccept},  id: id + '-finality-2-service-2-accept'},
-          { name : id + '-finality-2-service-2', element: {...elementRefuse}, id: id + '-finality-2-service-2-refuse' }
-        ]
-      },
-      {
-        id: id + '-finality-2-service-3',
-        title: "Sous finalité 3",
-        radios: [
-          { name : id + '-finality-2-service-3', element: {...elementAccept},  id: id + '-finality-2-service-3-accept'},
-          { name : id + '-finality-2-service-3', element: {...elementRefuse}, id: id + '-finality-2-service-3-refuse' }
-        ]
-      }
-    ]
-  },
-]
+  )
+);
+
+for (let i = 1; i<= 2; i++) {
+  finalities.push(
+    getFinality(
+      'finality-' + i,
+      'Nom de la finalité',
+      'Description optionnelle de la finalité, lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in suscipit nulla, et pulvinar velit.',
+      [
+        getRadio(id, 'finality-'+i, elementAccept, 'accept'),
+        getRadio(id, 'finality-'+i, elementRefuse, 'refuse'),
+      ],
+      [
+        getFinality('finality-'+i+'-service-1', 'Sous finalité 1', null, [getRadio(id, 'finality-'+i+'-service-1', elementAccept, 'accept'), getRadio(id, 'finality-'+i+'-service-1', elementRefuse, 'refuse')]),
+        getFinality('finality-'+i+'-service-2', 'Sous finalité 2', 'Ce service utilise 3 cookies.', [getRadio(id, 'finality-'+i+'-service-2', elementAccept, 'accept'), getRadio(id, 'finality-'+i+'-service-2', elementRefuse, 'refuse')]),
+        getFinality('finality-'+i+'-service-3', 'Sous finalité 3', null, [getRadio(id, 'finality-'+i+'-service-3', elementAccept, 'accept'), getRadio(id, 'finality-'+i+'-service-3', elementRefuse, 'refuse')]),
+      ]
+    )
+  );
+}
+
 %>
 
 <%- include('../../../template/ejs/manager', {consent: {finalities: finalities}}); %>
