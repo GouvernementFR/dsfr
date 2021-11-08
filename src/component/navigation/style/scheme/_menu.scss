@@ -3,7 +3,7 @@
 /// @group navigation
 ////
 
-@mixin _navigation-scheme($legacy: false) {
+@mixin _navigation-scheme-menu($legacy: false) {
   #{ns(menu)} {
     @include respond-from(lg) {
       @include after {

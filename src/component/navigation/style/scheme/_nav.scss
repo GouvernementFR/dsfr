@@ -3,7 +3,7 @@
 /// @group navigation
 ////
 
-@mixin _navigation-scheme($legacy: false) {
+@mixin _navigation-scheme-nav($legacy: false) {
   #{ns(nav)} {
     &__link,
     &__btn {
