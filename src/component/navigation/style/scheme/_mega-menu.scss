@@ -3,25 +3,27 @@
 /// @group navigation
 ////
 
-#{ns(mega-menu)} {
-  @include scheme-element-bg-color(elevated neutral);
+@mixin _navigation-scheme($legacy: false) {
+  #{ns(mega-menu)} {
+    @include scheme-element-bg-color(elevated neutral, $legacy);
 
-  > #{ns(container)} {
-    @include respond-from(lg) {
-      @include before {
-        @include scheme-element-bg-color(open blue-france);
+    > #{ns(container)} {
+      @include respond-from(lg) {
+        @include before {
+          @include scheme-element-bg-color(open blue-france, $legacy);
+        }
       }
     }
-  }
 
-  &__list {
-    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
-    @include scheme-element-no-box-shadow(lg);
-  }
+    &__list {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-out);
+      @include scheme-element-no-box-shadow(lg);
+    }
 
-  &__category {
-    @include respond-from(lg) {
-      @include scheme-element-box-shadow-color(default neutral, false, 0 calc(4v + 1px) 0 -4v $COLOR);
+    &__category {
+      @include respond-from(lg) {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, 0 calc(4v + 1px) 0 -4v $COLOR);
+      }
     }
   }
 }
