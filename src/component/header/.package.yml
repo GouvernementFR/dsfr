@@ -4,7 +4,6 @@ description: L’en-tête permet aux utilisateurs d’identifier sur quel site i
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header
 style:
   - core
-  - scheme
   - link
   - button
   - logo

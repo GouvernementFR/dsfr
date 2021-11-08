@@ -118,7 +118,7 @@ class Scheme extends api.core.Instance {
     switch (value) {
       case SchemeTheme.LIGHT:
       case SchemeTheme.DARK:
-        // if (this._scheme !== Schemes.SYSTEM && this._scheme !== value) return;
+        // if (this._scheme !== Scheme.SYSTEM && this._scheme !== value) return;
         this._theme = value;
         this.setAttribute(SchemeAttribute.THEME, value);
         this.descend(SchemeEmission.THEME, value);

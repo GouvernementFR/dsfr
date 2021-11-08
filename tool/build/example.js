@@ -44,7 +44,7 @@ const buildExample = (pck) => {
 
   const up = pck.path.split('/').map(s => '../').join('');
 
-  const requiredStyle = ['core', 'scheme', 'link', 'accordion', 'form', 'checkbox', 'button', 'legacy'];
+  const requiredStyle = ['core', 'scheme', 'link', 'accordion', 'form', 'checkbox', 'button'];
   const exampleStyle = pck.example.style.map(id => packages.filter(i => i.id === id)[0].usage.style).flat();
   const neededStyle = [...pck.usage.style, ...requiredStyle, ...exampleStyle].filter((id, index, array) => array.indexOf(id) === index);
 

@@ -3,24 +3,26 @@
 /// @group consent
 ////
 
-#{ns(consent-placeholder)} {
-  @include scheme-element-bg-color(contrast neutral);
-}
+@mixin _consent-scheme($legacy: false) {
+  #{ns(consent-placeholder)} {
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+  }
 
-#{ns(consent-banner)} {
-  @include scheme-element-bg-color(contrast neutral);
-  @include scheme-element-box-shadow-color(default neutral);
-}
+  #{ns(consent-banner)} {
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+    @include scheme-element-box-shadow-color(default neutral, $legacy);
+  }
 
-#{ns(consent-manager__header)},
-#{ns(consent-service)} {
-  @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
-  @include scheme-element-text-color(default neutral);
+  #{ns(consent-manager__header)},
+  #{ns(consent-service)} {
+    @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+    @include scheme-element-text-color(default neutral, $legacy);
 
-  #{ns-group(radio)} {
-    + #{ns-group(radio)} {
-      @include before {
-        @include scheme-element-box-shadow-color(default neutral);
+    #{ns-group(radio)} {
+      + #{ns-group(radio)} {
+        @include before {
+          @include scheme-element-box-shadow-color(default neutral, $legacy);
+        }
       }
     }
   }

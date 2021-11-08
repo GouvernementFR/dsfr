@@ -3,8 +3,10 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, hr)) {
-  hr {
-    @include build-hr-scheme();
+@mixin _core-reset-hr-scheme($legacy: false) {
+  @if (map-get($reset-settings, hr)) {
+    hr {
+      @include build-hr-scheme($legacy);
+    }
   }
 }

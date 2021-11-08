@@ -3,17 +3,19 @@
 /// @group pagination
 ////
 
-#{ns(pagination)} {
-  @include scheme-element-text-color(action-high neutral);
+@mixin _pagination-scheme($legacy: false) {
+  #{ns(pagination)} {
+    @include scheme-element-text-color(action-high neutral, $legacy);
 
-  &__link {
-    &[aria-current] {
-      @include scheme-element-bg-color(active blue-france);
-      @include scheme-element-text-color(inverted blue-france);
-    }
+    &__link {
+      &[aria-current] {
+        @include scheme-element-bg-color(active blue-france, $legacy);
+        @include scheme-element-text-color(inverted blue-france, $legacy);
+      }
 
-    &:not([aria-current]) {
-      @include disabled(true, false, false, true);
+      &:not([aria-current]) {
+        @include disabled($legacy, true, false, false, true);
+      }
     }
   }
 }

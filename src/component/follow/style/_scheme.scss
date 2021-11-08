@@ -3,28 +3,30 @@
 /// @group follow
 ////
 
-#{ns(follow)} {
-  @include scheme-element-bg-color(alt blue-france);
+@mixin _follow-scheme($legacy: false) {
+  #{ns(follow)} {
+    @include scheme-element-bg-color(alt blue-france, $legacy);
 
-  #{ns(input)} {
-    @include scheme-element-bg-color(default neutral);
-  }
-
-  &__title {
-    @include scheme-element-text-color(title neutral);
-  }
-
-  &__newsletter {
-    &-legal {
-      @include scheme-element-text-color(mention neutral);
+    #{ns(input)} {
+      @include scheme-element-bg-color(default neutral, $legacy);
     }
-  }
 
-  #{ns(grid-row)} > *:not(:first-child) {
-    // Séparateur en box-shadow
-    @include scheme-element-box-shadow-color(default blue-france, false, top-1-out);
-    @include respond-from(md) {
-      @include scheme-element-box-shadow-color(default blue-france, false, left-1-out);
+    &__title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
+
+    &__newsletter {
+      &-legal {
+        @include scheme-element-text-color(mention neutral, $legacy);
+      }
+    }
+
+    #{ns(grid-row)} > *:not(:first-child) {
+      // Séparateur en box-shadow
+      @include scheme-element-box-shadow-color(default blue-france, $legacy, false, top-1-out);
+      @include respond-from(md) {
+        @include scheme-element-box-shadow-color(default blue-france, $legacy, false, left-1-out);
+      }
     }
   }
 }

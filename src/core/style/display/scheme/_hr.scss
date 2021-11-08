@@ -3,6 +3,8 @@
 /// @group core
 ////
 
-#{ns(hr)} {
-  @include build-hr-scheme();
+@mixin _core-display-hr-scheme($legacy: false) {
+  #{ns(hr)} {
+    @include build-hr-scheme($legacy);
+  }
 }

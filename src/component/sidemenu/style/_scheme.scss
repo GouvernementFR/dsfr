@@ -3,81 +3,83 @@
 /// @group sidemenu
 ////
 
-#{ns(sidemenu)} {
-  /*
-  @include scheme-element-bg-color(default neutral);
+@mixin _sidemenu-scheme($legacy: false) {
+  #{ns(sidemenu)} {
+    /*
+    @include scheme-element-bg-color(default neutral);
 
-  @include respond-from(md) {
-    @include scheme-element-bg-transparent(true);
-  }
-  */
+    @include respond-from(md) {
+      @include scheme-element-bg-transparent(true);
+    }
+    */
 
-  @include title {
-    @include scheme-element-text-color(title neutral);
-    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
-    @include scheme-element-no-box-shadow(md);
-  }
+    @include title {
+      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-no-box-shadow(md);
+    }
 
-  @include list-item {
-    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
-    @include scheme-element-no-box-shadow(md);
+    @include list-item {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-no-box-shadow(md);
 
-    &:last-child {
-      #{ns(sidemenu__btn)} {
-        @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
-        @include scheme-element-no-box-shadow(md);
+      &:last-child {
+        #{ns(sidemenu__btn)} {
+          @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+          @include scheme-element-no-box-shadow(md);
+        }
+      }
+
+      &--active {
+        & > #{ns(sidemenu__btn)},
+        & > #{ns(sidemenu__link)} {
+          @include scheme-element-text-color(active blue-france, $legacy);
+          @include after {
+            @include scheme-element-bg-color(border-active blue-france, $legacy);
+          }
+        }
       }
     }
 
-    &--active {
-      & > #{ns(sidemenu__btn)},
-      & > #{ns(sidemenu__link)} {
-        @include scheme-element-text-color(active blue-france);
-        @include after {
-          @include scheme-element-bg-color(border-active blue-france);
+    &__inner {
+      @include respond-from(md) {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, right-1-in);
+      }
+    }
+
+    @include respond-from(md) {
+      &--right {
+        #{ns(sidemenu__inner)} {
+          @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
+        }
+      }
+
+      &--full-border {
+        #{ns(sidemenu__inner)} {
+          @include scheme-element-box-shadow-color(default neutral, $legacy);
         }
       }
     }
   }
 
-  &__inner {
+  #{ns(sidemenu__btn)} {
+    @include scheme-element-text-color(action-high neutral, $legacy);
+
+    @at-root #{ns(sidemenu__inner)} > #{&} {
+      @include scheme-element-bg-color(default neutral, $legacy);
+    }
+
     @include respond-from(md) {
-      @include scheme-element-box-shadow-color(default neutral, false, right-1-in);
-    }
-  }
-
-  @include respond-from(md) {
-    &--right {
-      #{ns(sidemenu__inner)} {
-        @include scheme-element-box-shadow-color(default neutral, false, left-1-in);
-      }
-    }
-
-    &--full-border {
-      #{ns(sidemenu__inner)} {
-        @include scheme-element-box-shadow-color(default neutral);
+      @include after {
+        @include scheme-element-bg-transparent(true);
       }
     }
   }
-}
 
-#{ns(sidemenu__btn)} {
-  @include scheme-element-text-color(action-high neutral);
-
-  @at-root #{ns(sidemenu__inner)} > #{&} {
-    @include scheme-element-bg-color(default neutral);
-  }
-
-  @include respond-from(md) {
+  #{ns(sidemenu__link)} {
+    @include scheme-element-text-color(action-high neutral, $legacy);
     @include after {
       @include scheme-element-bg-transparent(true);
     }
-  }
-}
-
-#{ns(sidemenu__link)} {
-  @include scheme-element-text-color(action-high neutral);
-  @include after {
-    @include scheme-element-bg-transparent(true);
   }
 }

@@ -3,31 +3,31 @@
 /// @group core
 ////
 
-@mixin disabled-colors($text:true, $background:false, $box-shadow-border: false) {
+@mixin disabled-colors($legacy:false, $text:true, $background:false, $box-shadow-border: false) {
   @if $text {
-    @include scheme-element-text-color(disabled neutral);
+    @include scheme-element-text-color(disabled neutral, $legacy);
   }
 
   @if $background {
-    @include scheme-element-bg-color(disabled neutral);
+    @include scheme-element-bg-color(disabled neutral, $legacy);
   }
 
   @if $box-shadow-border == true {
-    @include scheme-element-box-shadow-color(disabled neutral);
+    @include scheme-element-box-shadow-color(disabled neutral, $legacy);
   }
   @else if $box-shadow-border != false {
-    @include scheme-element-box-shadow-color(disabled neutral, false, $box-shadow-border);
+    @include scheme-element-box-shadow-color(disabled neutral, $legacy, false, $box-shadow-border);
   }
 }
 
-@mixin disabled($text:false, $background:false, $box-shadow-border: false, $can-be-link: false) {
+@mixin disabled($legacy:false, $text:false, $background:false, $box-shadow-border: false, $can-be-link: false) {
   $selectors: '&:disabled, &[disabled]';
   @if $can-be-link {
     $selectors: append($selectors, selector-associate(&, 'a:not([href])'), comma);
   }
 
   @at-root #{$selectors} {
-    @include disabled-colors($text, $background, $box-shadow-border);
+    @include disabled-colors($legacy, $text, $background, $box-shadow-border);
     @content;
   }
 }

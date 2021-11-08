@@ -3,6 +3,8 @@
 /// @group link
 ////
 
-#{ns(link)} {
-  @include scheme-element-text-color(action-high blue-france);
+@mixin _link-scheme($legacy: false) {
+  #{ns(link)} {
+    @include scheme-element-text-color(action-high blue-france, $legacy);
+  }
 }

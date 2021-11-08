@@ -5,7 +5,6 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/476610770/Modale+-+Modal
 wrapper: col-8
 style:
   - core
-  - scheme
   - link
   - button
 script:

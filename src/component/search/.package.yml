@@ -5,6 +5,5 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186376/Barre+de+recher
 wrapper: col-8
 style:
   - core
-  - scheme
   - input
   - button
