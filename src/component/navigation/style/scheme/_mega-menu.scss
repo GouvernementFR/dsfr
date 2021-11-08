@@ -3,7 +3,7 @@
 /// @group navigation
 ////
 
-@mixin _navigation-scheme($legacy: false) {
+@mixin _navigation-scheme-mega-menu($legacy: false) {
   #{ns(mega-menu)} {
     @include scheme-element-bg-color(elevated neutral, $legacy);
 
