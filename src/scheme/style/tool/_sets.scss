@@ -8,9 +8,9 @@
     @each $family, $tints in $scheme-sets {
       @each $tint, $shades in $tints {
         @each $shade, $set in $shades {
-          $set: _get-scheme-set-by-shade($shade, $family, $tint);
+          $colors: _get-scheme-set-by-shade($shade, $family, $tint);
 
-          --#{_get-set-prop($set)}: #{_get-color-from-set($set, $theme, hex)};
+          --#{_get-set-prop($set)}: #{_get-color-from-set($colors, $theme, hex)};
         }
       }
     }
