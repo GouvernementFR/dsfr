@@ -3,7 +3,7 @@
 /// @group alert
 ////
 
-@mixin alert-scheme($legacy: false) {
+@mixin _alert-scheme($legacy: false) {
   #{ns(alert)} {
     @include scheme-element-box-shadow-color(plain neutral background-flat neutral, $legacy, false, all-1-in left-10v-in);
 

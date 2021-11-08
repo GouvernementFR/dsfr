@@ -3,7 +3,7 @@
 /// @group accordion
 ////
 
-@mixin accordion-scheme($legacy: false) {
+@mixin _accordion-scheme($legacy: false) {
   #{ns(accordion)} {
     @include scheme-element-box-shadow-color(default neutral, $legacy, false, top-1-in bottom-1-out);
 

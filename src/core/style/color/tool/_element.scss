@@ -25,13 +25,18 @@ $ACCENT: none;
     $color: _get-value($p, $token, $tint, $legacy);
     $result: _replace_color($result, $color, $needle);
 
-    @if $hover and $part == background and $p == background {
-      @include _include-hover-prop($token, $tint, $important);
+    @if $important {
+      $result: #{$result} !important;
     }
-  }
 
-  @if $important {
-    $result: #{$result} !important;
+    @if $hover and $part == background and $p == background and $legacy == false {
+      $blend: var(#{_get-decision-prop($part, $token, $tint)}-blend);
+      @if $important {
+        $blend: #{$blend} !important;
+      }
+
+      --blend: #{$blend};
+    }
   }
 
   @if $legacy {
@@ -55,7 +60,7 @@ $ACCENT: none;
 @mixin scheme-element-bg-transparent($hover: false) {
   background-color: transparent;
   @if $hover {
-    @include _include-transparent-hover-prop;
+    --blend: inherit;
   }
 }
 
