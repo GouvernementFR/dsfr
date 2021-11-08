@@ -3,12 +3,14 @@
 /// @group tile
 ////
 
-#{ns(tile)} {
-  @include scheme-element-box-shadow-color(default neutral plain blue-france, false,  all-1-in bottom-1v-in);
+@mixin _tile-scheme($legacy: false) {
+  #{ns(tile)} {
+    @include scheme-element-box-shadow-color(default neutral plain blue-france, $legacy, false,  all-1-in bottom-1v-in);
 
-  @include scheme-element-bg-color(default neutral);
+    @include scheme-element-bg-color(default neutral, $legacy);
 
-  &#{ns(enlarge-link)} {
-    @include scheme-element-bg-color(default neutral, true);
+    &#{ns(enlarge-link)} {
+      @include scheme-element-bg-color(default neutral, $legacy);
+    }
   }
 }

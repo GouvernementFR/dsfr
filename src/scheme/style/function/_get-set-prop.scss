@@ -8,7 +8,6 @@
 /// @param {String} $set - combinaison de couleur obtenue par la fonction get-scheme-set
 /// @return {String} Retourne le nom de la custom property correspondante
 @function _get-set-prop($set) {
-  @debug $set;
   $light: str-split(nth($set, 1), '-');
   $ll: length($light);
   $dark: str-split(nth($set, 2), '-');

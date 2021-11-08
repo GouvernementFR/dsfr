@@ -4,5 +4,7 @@
 ////
 
 @import 'index';
-@import '../../legacy/index';
+@import 'style/scheme';
 @import 'style/legacy';
+
+@include _toggle-scheme(true);

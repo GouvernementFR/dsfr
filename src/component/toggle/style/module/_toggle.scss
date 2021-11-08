@@ -43,13 +43,6 @@
         }
       }
     }
-
-    /*
-     * Hack pour IE11
-     */
-    &::-ms-check {
-      display: none;
-    }
   }
 
   label {
