@@ -1,0 +1,9 @@
+////
+/// Quote Legacy
+/// @group quote
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _quote-scheme(true);

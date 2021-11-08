@@ -3,44 +3,46 @@
 /// @group radio
 ////
 
-#{ns(radio-rich)} {
-  input[type="radio"] {
-    + label {
-      @include scheme-element-box-shadow-color(default neutral, false, all-1-in);
-      @include scheme-element-bg-color(default neutral);
-
-      @include before {
-        @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, false, radio-box-shadow(false, sm));
-      }
-
-      @include after {
-        @include scheme-element-box-shadow-color(default neutral, false, left-1-in);
-      }
-    }
-
-    @include disabled {
+@mixin _radio-scheme-rich($legacy: false) {
+  #{ns(radio-rich)} {
+    input[type="radio"] {
       + label {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, all-1-in);
+        @include scheme-element-bg-color(default neutral, $legacy);
+
         @include before {
-          @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, false, radio-box-shadow(false, sm));
+          @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(false, sm));
         }
-      }
-    }
 
-    &:checked {
-      + label {
-        @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
-
-        @include before {
-          @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, false, radio-box-shadow(true, sm));
+        @include after {
+          @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
         }
       }
 
-      &[disabled],
-      &:disabled {
+      @include disabled {
         + label {
-          @include scheme-element-box-shadow-color(text-disabled neutral, false, all-1-in);
           @include before {
-            @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, false, radio-box-shadow(true, sm));
+            @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false, sm));
+          }
+        }
+      }
+
+      &:checked {
+        + label {
+          @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
+
+          @include before {
+            @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(true, sm));
+          }
+        }
+
+        &[disabled],
+        &:disabled {
+          + label {
+            @include scheme-element-box-shadow-color(text-disabled neutral, $legacy, false, all-1-in);
+            @include before {
+              @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true, sm));
+            }
           }
         }
       }
