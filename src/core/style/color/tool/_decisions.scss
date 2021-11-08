@@ -18,6 +18,16 @@
             }
 
             #{_get-decision-prop($part, $token, $tint)}: $value;
+
+            @if $part == background {
+              $option: nth($set, 1);
+              $blend: _get-blend-hsl-color($option, light);
+              @if $with-theme {
+                $blend: var(--#{_get-set-prop(map-get($shades, $shade))}-blend);
+              }
+
+              #{_get-decision-prop($part, $token, $tint)}-blend: $blend;
+            }
           }
         }
       }
