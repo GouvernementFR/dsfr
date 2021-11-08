@@ -3,61 +3,31 @@
 /// @group tab
 ////
 
-#{ns(tabs)} {
-  @include after {
-    @include scheme-element-box-shadow-color(default neutral, false, all-1-in);
-  }
-
-  /**
-   * ul : element srollable des boutons
-   */
-  @include list {
+@mixin _tab-scheme($legacy: false) {
+  #{ns(tabs)} {
     @include after {
-      // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, all-1-in);
     }
 
     /**
-    * Reset du style par défaut du li
+    * Tab button
     */
-    > li {
-      &:not(:first-child) {
-        @include before {
-          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
-        }
+    &__tab {
+      @include after {
+        @include scheme-element-bg-image-color(border-active blue-france border-default neutral border-default neutral background-default neutral, $legacy);
       }
 
-      &:last-child {
-        @include after {
-          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
-        }
+      &:not([aria-selected=true]) {
+        @include scheme-element-bg-color(action-low blue-france, $legacy);
+        @include scheme-element-text-color(action-high neutral, $legacy);
       }
 
-      &:first-child {
-        @include before {
-          // @include scheme-element-box-shadow-color(default neutral, false, bottom-1-out);
-        }
+      &[aria-selected=true] {
+        @include scheme-element-text-color(active blue-france, $legacy);
+        @include scheme-element-bg-color(default neutral, $legacy);
       }
-    }
-  }
 
-  /**
-  * Tab button
-  */
-  &__tab {
-    @include after {
-      @include scheme-element-bg-image-color(border-active blue-france border-default neutral border-default neutral background-default neutral);
+      @include disabled($legacy, true, true);
     }
-
-    &:not([aria-selected=true]) {
-      @include scheme-element-bg-color(action-low blue-france);
-      @include scheme-element-text-color(action-high neutral);
-    }
-
-    &[aria-selected=true] {
-      @include scheme-element-text-color(active blue-france);
-      @include scheme-element-bg-color(default neutral);
-    }
-
-    @include disabled(true, true);
   }
 }

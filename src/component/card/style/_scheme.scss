@@ -3,21 +3,23 @@
 /// @group card
 ////
 
-#{ns(card)} {
-  @include scheme-element-bg-color(default neutral);
-  @include scheme-element-box-shadow-color(default neutral);
+@mixin _card-scheme($legacy: false) {
+  #{ns(card)} {
+    @include scheme-element-bg-color(default neutral, $legacy);
+    @include scheme-element-box-shadow-color(default neutral, $legacy);
 
-  &:not(&--no-arrow) &__body {
-    @include after {
-      @include scheme-element-text-color(artwork-minor blue-france);
+    &:not(&--no-arrow) &__body {
+      @include after {
+        @include scheme-element-text-color(artwork-minor blue-france, $legacy);
+      }
     }
-  }
 
-  &__detail {
-    @include scheme-element-text-color(mention neutral);
-  }
+    &__detail {
+      @include scheme-element-text-color(mention neutral, $legacy);
+    }
 
-  &__title {
-    @include scheme-element-text-color(title neutral);
+    &__title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
   }
 }

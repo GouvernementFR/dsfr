@@ -3,6 +3,8 @@
 /// @group Highlight
 ////
 
-#{ns(highlight)} {
-  @include scheme-element-box-shadow-color(plain blue-france, false, left-1v-in);
+@mixin _highlight-scheme($legacy: false) {
+  #{ns(highlight)} {
+    @include scheme-element-box-shadow-color(plain blue-france, $legacy, false, left-1v-in);
+  }
 }

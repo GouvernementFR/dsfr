@@ -3,52 +3,54 @@
 /// @group toggle
 ////
 
-#{ns(toggle)} {
-  label {
-    @include before {
-      @include scheme-element-text-color(active blue-france);
+@mixin _toggle-scheme($legacy: false) {
+  #{ns(toggle)} {
+    label {
+      @include before {
+        @include scheme-element-text-color(active blue-france, $legacy);
+      }
+
+      @include after {
+        @include scheme-element-text-color(active blue-france, $legacy);
+        @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
+        @include scheme-element-bg-color(default neutral, $legacy);
+      }
     }
 
-    @include after {
-      @include scheme-element-text-color(active blue-france);
-      @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
-      @include scheme-element-bg-color(default neutral);
-    }
-  }
+    input[type="checkbox"] {
+      @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
+      // @include disabled-toggle-choice(); // disabled
 
-  input[type="checkbox"] {
-    @include scheme-element-box-shadow-color(action-high blue-france, false, all-1-in);
-    // @include disabled-toggle-choice(); // disabled
-
-    &:checked {
-      @include scheme-element-bg-color(active blue-france);
-    }
-
-    @include disabled(false, false, true) {
       &:checked {
-        @include disabled-colors(false, true);
+        @include scheme-element-bg-color(active blue-france, $legacy);
       }
 
-      + label {
-        @include before {
-          @include disabled-colors(true);
+      @include disabled($legacy, false, false, true) {
+        &:checked {
+          @include disabled-colors($legacy, false, true);
         }
 
-        @include after {
-          @include disabled-colors(true, false, true);
+        + label {
+          @include before {
+            @include disabled-colors($legacy, true);
+          }
+
+          @include after {
+            @include disabled-colors($legacy, true, false, true);
+          }
         }
       }
     }
-  }
 
-  #{ns(hint-text)} {
-    @include scheme-element-text-color(mention neutral);
-  }
+    #{ns(hint-text)} {
+      @include scheme-element-text-color(mention neutral, $legacy);
+    }
 
-  /*
-  * Ajout d'un séparateur
-  */
-  &--border-bottom {
-    @include scheme-element-box-shadow-color(default neutral, false, bottom-1-in);
+    /*
+    * Ajout d'un séparateur
+    */
+    &--border-bottom {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+    }
   }
 }

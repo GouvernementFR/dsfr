@@ -7,74 +7,76 @@
  * L'input de type checkbox avec son label est contenu dans un groupe
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
-#{ns(checkbox-group)} {
-  /**
-   * On cache l'input de type checkbox pour le styler via le label
-   */
-  input[type="checkbox"] {
-    + label {
-      @include before {
-        @include scheme-element-box-shadow-color(action-high neutral);
-      }
-    }
-
+ @mixin _checkbox-scheme($legacy: false) {
+  #{ns(checkbox-group)} {
     /**
-     * On applique les styles au pseudo élément before du label quand l'input présente
-     * un état check ou active
-     */
-    &:checked,
-    &:active:not(:disabled) {
+    * On cache l'input de type checkbox pour le styler via le label
+    */
+    input[type="checkbox"] {
       + label {
         @include before {
-          @include scheme-element-bg-color(active blue-france);
-          @include scheme-element-text-color(inverted neutral);
-        }
-      }
-    }
-
-    /**
-    * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
-    */
-    @include disabled {
-      & + label {
-        @include before {
-          @include disabled-colors(false, true, true);
+          @include scheme-element-box-shadow-color(action-high neutral, $legacy);
         }
       }
 
-      &:checked {
+      /**
+      * On applique les styles au pseudo élément before du label quand l'input présente
+      * un état check ou active
+      */
+      &:checked,
+      &:active:not(:disabled) {
+        + label {
+          @include before {
+            @include scheme-element-bg-color(active blue-france, $legacy);
+            @include scheme-element-text-color(inverted neutral, $legacy);
+          }
+        }
+      }
+
+      /**
+      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
+      */
+      @include disabled {
         & + label {
           @include before {
-            @include disabled-colors(true);
+            @include disabled-colors($legacy, false, true, true);
+          }
+        }
+
+        &:checked {
+          & + label {
+            @include before {
+              @include disabled-colors($legacy, true);
+            }
           }
         }
       }
     }
-  }
 
-  /**
-   * Modificateur pour gérer l'état erreur
-   */
-  &--error {
-    input[type="checkbox"] + label {
-      @include scheme-element-text-color(default error);
+    /**
+    * Modificateur pour gérer l'état erreur
+    */
+    &--error {
+      input[type="checkbox"] + label {
+        @include scheme-element-text-color(default error, $legacy);
+      }
+
+      @include before {
+        @include scheme-element-box-shadow-color(plain error, $legacy, false, left-2-in);
+      }
     }
 
-    @include before {
-      @include scheme-element-box-shadow-color(plain error, false, left-2-in);
-    }
-  }
+    /**
+    * Modificateur pour gérer l'état validé
+    */
+    &--valid {
+      input[type="checkbox"] + label {
+        @include scheme-element-text-color(default success, $legacy);
+      }
 
-  /**
-   * Modificateur pour gérer l'état validé
-   */
-  &--valid {
-    input[type="checkbox"] + label {
-      @include scheme-element-text-color(default success);
-    }
-
-    @include before {
-      @include scheme-element-box-shadow-color(plain success, false, left-2-in);
+      @include before {
+        @include scheme-element-box-shadow-color(plain success, $legacy, false, left-2-in);
+      }
     }
   }
 }

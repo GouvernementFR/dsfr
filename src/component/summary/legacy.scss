@@ -1,0 +1,9 @@
+////
+/// Summary Legacy
+/// @group summary
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _summary-scheme(true);
