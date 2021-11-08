@@ -1,8 +1,9 @@
 ////
-/// Search Scheme
+/// Search Legacy
 /// @group search
 ////
 
 @import 'index';
-@import '../../scheme/index';
 @import 'style/scheme';
+
+@include _search-scheme(true);
