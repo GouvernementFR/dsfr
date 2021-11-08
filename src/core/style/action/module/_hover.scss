@@ -8,11 +8,11 @@
     // background-size: 2048px 2048px;
     // background-position: 50% 50%;
 
-    --hover-hsla: #{css-hsl-alpha(var(--hsl), var(--a))};
+    --hsla: #{css-hsl-alpha(var(--blend), var(--a))};
 
     &:hover,
     &:active {
-      background-image: radial-gradient(circle at center, var(--hover-hsla), var(--hover-hsla) 3%);
+      background-image: radial-gradient(circle at center, var(--hsla), var(--hsla) 3%);
     }
 
     &:hover {

@@ -93,11 +93,11 @@
 @mixin _set-typography-var($name, $value, $bp: null) {
   @if $bp != null {
     @include respond-from(#{$bp}) {
-      --#{$name}-mb: #{space($value)};
+      --#{$name}-spacing: #{space($value)};
     }
   }
   @else {
-    --#{$name}-mb: #{space($value)};
+    --#{$name}-spacing: #{space($value)};
   }
 }
 

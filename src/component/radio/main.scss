@@ -11,6 +11,4 @@
 @import 'style/module';
 @import 'style/scheme';
 
-@include _radio-scheme-rich;
-@include _radio-scheme-sm;
-@include _radio-scheme-md;
+@include _radio-scheme;

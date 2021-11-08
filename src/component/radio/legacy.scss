@@ -7,6 +7,4 @@
 @import 'style/legacy';
 @import 'style/scheme';
 
-@include _radio-scheme-rich(true);
-@include _radio-scheme-sm(true);
-@include _radio-scheme-md(true);
+@include _radio-scheme(true);
