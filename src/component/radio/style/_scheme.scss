@@ -6,3 +6,9 @@
 @import 'scheme/md';
 @import 'scheme/sm';
 @import 'scheme/rich';
+
+@mixin _radio-scheme($legacy: false) {
+  @include _radio-scheme-rich($legacy);
+  @include _radio-scheme-sm($legacy);
+  @include _radio-scheme-md($legacy);
+}
