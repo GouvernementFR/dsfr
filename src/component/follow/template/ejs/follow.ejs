@@ -29,14 +29,14 @@
       <%
       let gClasses = [prefix+'-col-12'];
       if (follow.newsletter) {
-        if (socials) gClasses = [prefix+'-col-12', prefix+'-col-md-8'] %>
+        if (follow.socials) gClasses = [prefix+'-col-12', prefix+'-col-md-8'] %>
         <div <%- includeClasses(gClasses) %> >
           <%- include('newsletter.ejs', {newsletter: follow.newsletter}); %>
         </div>
       <% }
       if (follow.socials) {
-        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4'] %>
-        else follow.socials.alone = true;
+        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4']
+        else follow.socials.alone = true; %>
         <div <%- includeClasses(gClasses) %>>
           <%- include('socials.ejs', {socials: follow.socials}); %>
         </div>
