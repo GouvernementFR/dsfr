@@ -5,7 +5,6 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/609189956/
 wrapper: col-8
 style:
   - core
-  - scheme
   - link
   - button
   - form

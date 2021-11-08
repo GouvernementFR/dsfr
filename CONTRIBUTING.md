@@ -132,14 +132,12 @@ Le DSFR utilise Sass pour la génération automatique des styles liés à chaque
 └── index.scss
 └── legacy.scss
 └── main.scss
-└── scheme.scss
 ```
 
 Les fichiers à la racine du composant importent les éléments nécessaires depuis le dossier style. Ceux-ci étant des points d'entrée principaux, ils n'ont pas d'underscore et ne contiennent que des `@import`, pas de déclaration.
 
  - index.scss : Fichier permettant de donner accès aux mixins, fonctions et settings du composant. Les fichiers importés ne continnent pas de déclaration directe et par conséquent il ne produit pas de code. Il importe également les index des dépendances.
  - main.scss : Fichier principal du composant servant d'entrée, il produit l'essentiel du code du composant. Il importe le fichier index ainsi que des fichiers modules du composant
- - scheme.scss : Fichier secondaire du composant, il permet la gestion des couleurs du composant. 
  - legacy.scss : Permet de générer un fichier séparé pour le support navigateur
 
 Dans le dossier style, on retrouve les fichiers suivants lorsqu'ils s'avèrent pertinents :

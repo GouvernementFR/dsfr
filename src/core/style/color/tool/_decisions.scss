@@ -1,0 +1,26 @@
+////
+/// Schemes Tools : Properties
+/// @group schemes
+////
+
+@mixin build-decisions($with-theme: false) {
+  $options: ();
+  $decisions: ();
+  @each $part, $tokens in $scheme-decisions {
+    @each $token, $families in $tokens {
+      @each $family, $shade in $families {
+        @each $tint, $shades in map-get($scheme-sets, $family) {
+          @if map-has-key($shades, $shade) {
+            $set: _get-scheme-set-by-shade($shade, $family, $tint);
+            $value: _get-color-from-set($set, light, hex);
+            @if $with-theme {
+              $value: var(--#{_get-set-prop(map-get($shades, $shade))});
+            }
+
+            #{_get-decision-prop($part, $token, $tint)}: $value;
+          }
+        }
+      }
+    }
+  }
+}

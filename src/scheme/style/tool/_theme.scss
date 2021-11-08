@@ -7,7 +7,7 @@
   @if $theme != 'dark' {
     $theme: null;
   }
-  #{ns-attr(theme, $theme)} {
+  :root#{ns-attr(theme, $theme)} {
     @content;
   }
 }

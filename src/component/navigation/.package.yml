@@ -4,8 +4,6 @@ description: La navigation principale est l'élément central de la navigation a
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789853/Navigation+principale+-+Main+navigation
 style:
   - core
-  - legacy
-  - scheme
   - link
   - button
 script:
