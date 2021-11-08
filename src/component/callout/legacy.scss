@@ -1,0 +1,9 @@
+////
+/// Callout Legacy
+/// @group core
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _callout-scheme(true);
