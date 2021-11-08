@@ -3,20 +3,22 @@
 /// @group button
 ////
 
-#{ns(btn)} {
-  @include scheme-element-bg-color(action-high blue-france);
-  @include scheme-element-text-color(inverted blue-france);
+@mixin _button-scheme($legacy: false) {
+  #{ns(btn)} {
+    @include scheme-element-bg-color(action-high blue-france, $legacy);
+    @include scheme-element-text-color(inverted blue-france, $legacy);
 
-  @include disabled(true, true, false, true);
+    @include disabled(true, true, false, true);
 
-  // Outline variant
-  &--secondary {
-    @include scheme-element-bg-transparent(true);
-    @include scheme-element-text-color(action-high blue-france);
-    @include scheme-element-box-shadow-color(action-high blue-france);
-
-    @include disabled(true, false, true, true) {
+    // Outline variant
+    &--secondary {
       @include scheme-element-bg-transparent(true);
+      @include scheme-element-text-color(action-high blue-france, $legacy);
+      @include scheme-element-box-shadow-color(action-high blue-france, $legacy);
+
+      @include disabled(true, false, true, true) {
+        @include scheme-element-bg-transparent(true);
+      }
     }
   }
 }

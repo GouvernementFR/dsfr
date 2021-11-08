@@ -3,10 +3,12 @@
 /// @group breadcrumb
 ////
 
-#{ns(breadcrumb)} {
-  @include scheme-element-text-color(mention neutral);
+@mixin _breadcrumb-scheme($legacy: false) {
+  #{ns(breadcrumb)} {
+    @include scheme-element-text-color(mention neutral, $legacy);
 
-  &__link[aria-current] {
-    @include scheme-element-text-color(active neutral);
+    &__link[aria-current] {
+      @include scheme-element-text-color(active neutral, $legacy);
+    }
   }
 }
