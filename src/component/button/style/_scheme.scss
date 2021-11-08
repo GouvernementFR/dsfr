@@ -8,7 +8,7 @@
     @include scheme-element-bg-color(action-high blue-france, $legacy);
     @include scheme-element-text-color(inverted blue-france, $legacy);
 
-    @include disabled(true, true, false, true);
+    @include disabled($legacy, true, true, false, true);
 
     // Outline variant
     &--secondary {
@@ -16,7 +16,7 @@
       @include scheme-element-text-color(action-high blue-france, $legacy);
       @include scheme-element-box-shadow-color(action-high blue-france, $legacy);
 
-      @include disabled(true, false, true, true) {
+      @include disabled($legacy, true, false, true, true) {
         @include scheme-element-bg-transparent(true);
       }
     }
