@@ -27,6 +27,9 @@
               @else if $part == text {
                 @include scheme-element-text-color($token $tint, $legacy, true);
               }
+              @else if $part == artwork {
+                @include scheme-element-fill-color('artwork-#{$token}' $tint, $legacy, true);
+              }
             }
           }
         }
