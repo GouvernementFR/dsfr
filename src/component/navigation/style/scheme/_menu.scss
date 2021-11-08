@@ -3,14 +3,16 @@
 /// @group navigation
 ////
 
-#{ns(menu)} {
-  @include respond-from(lg) {
-    @include after {
-      @include scheme-element-bg-color(elevated neutral);
-    }
+@mixin _navigation-scheme($legacy: false) {
+  #{ns(menu)} {
+    @include respond-from(lg) {
+      @include after {
+        @include scheme-element-bg-color(elevated neutral, $legacy);
+      }
 
-    #{ns(nav__link)} {
-      @include scheme-element-box-shadow-color(default neutral, false, 0 calc(-4v - 1px) 0 -4v $COLOR);
+      #{ns(nav__link)} {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, 0 calc(-4v - 1px) 0 -4v $COLOR);
+      }
     }
   }
 }
