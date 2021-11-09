@@ -4,11 +4,10 @@
 ////
 
 $focus-color: #0a76f6;
-$black: nth(map-get($scheme-options, black-50), 1);
-$white: nth(map-get($scheme-options, white-1000), 1);
-$blue-france: nth(map-get($scheme-options, blue-france-sun-113), 1);
-$red-marianne: nth(map-get($scheme-options, red-marianne-main-472), 1);
+$black: _get-color(black-50);
+$white: _get-color(white-1000);
+$blue-france: _get-color(blue-france-sun-113);
+$red-marianne: _get-color(red-marianne-main-472);
 
 // Variable de couleur utilisée dans les mixin d'éléments de combinaison de couleur
 $COLOR: unquote('$COLOR');
-// $overlay 25-425 opacity .32

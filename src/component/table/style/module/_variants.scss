@@ -1,8 +1,12 @@
+////
+/// Table module : Variants
+/// @group Table
+////
 
 /*
 * Cache la caption
 */
-&--no-caption {
+#{ns(table--no-caption)} {
   @include padding-top(0);
 
   caption {
@@ -14,7 +18,7 @@
 /*
 * Fixe le caption en bas du tableau
 */
-&--caption-bottom {
+#{ns(table--caption-bottom)} {
   @include padding-top(0);
   @include margin-bottom(0);
   @include margin-top(4v);
@@ -40,7 +44,7 @@
 /*
 * pas de scroll ni de shadow
 */
-&--no-scroll {
+#{ns(table--no-scroll)} {
   @include min-width(auto);
 
   table {
@@ -55,7 +59,7 @@
 /*
 * Fixe la taille des colonnes du tableau
 */
-&--layout-fixed {
+#{ns(table--layout-fixed)} {
   table {
     display: table;
     table-layout: fixed;
@@ -63,7 +67,7 @@
 }
 
 /* Style bordered, enleve le style even/odd  */
-&--bordered {
+#{ns(table--bordered)} {
   tbody {
     tr:nth-child(even) {
       @include scheme-element-bg-transparent(false);

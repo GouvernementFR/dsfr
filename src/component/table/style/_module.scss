@@ -3,6 +3,8 @@
 /// @group Table
 ////
 
+// @TODO: remettre le code de table dans un sous-fichier pour préparation à @use
+
 #{ns(table)} {
   --table-offset: #{space(4v)};
   @include set-text-margin(0);
@@ -65,7 +67,7 @@
       @include padding-bottom(4.5v, md);
     }
   }
-
-  @import 'module/variants';
-  @import 'module/shadow';
 }
+
+@import 'module/variants';
+@import 'module/shadow';

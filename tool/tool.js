@@ -4,6 +4,7 @@ const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
+const { test } = require('./test/test');
 
 /**
  * Build
@@ -62,7 +63,7 @@ const buildBuilder = (yargs) => {
     .option('markdowns', {
       describe: 'Génère les fichiers readme',
       type: 'boolean'
-    })
+    });
 };
 
 const buildHandler = async (argv) => {
@@ -143,6 +144,31 @@ const deployHandler = async (argv) => {
   deployRobots();
 };
 
+/**
+ * Test
+ */
+const testBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0 -p core accordion')
+    .example(
+      '$0 -p core accordion -jcm',
+      'compile les fichiers scripts et styles du package core et accordion en les minifiant'
+    )
+    .option('packages', {
+      alias: 'p',
+      describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
+      type: 'array'
+    });
+};
+
+const testHandler = async (argv) => {
+  const settings = {
+    packages: argv.packages || []
+  };
+
+  await test(settings);
+};
+
 yargs
   .scriptName('tool')
   .command(
@@ -162,6 +188,12 @@ yargs
     'compilation pour déploiement sur netlify',
     deployBuilder,
     deployHandler
+  )
+  .command(
+    'test',
+    'lint et test pa11y',
+    testBuilder,
+    testHandler
   )
   .help()
   .argv;
