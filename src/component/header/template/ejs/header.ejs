@@ -43,7 +43,8 @@ header = {
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% let header = locals.header || {}; %>
+<% let header = locals.header || {};
+%>
 
 <header role="banner" class="<%= prefix %>-header">
 
