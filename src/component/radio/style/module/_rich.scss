@@ -60,6 +60,7 @@
   #{ns(radio)}__img {
     @include size(20v, 20v);
     @include absolute(1v, 1v);
+    pointer-events: none;
 
     img {
       max-width: 100%;
