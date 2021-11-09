@@ -4,6 +4,8 @@
 ////
 
 #{ns(radio-rich)} {
+  position: relative;
+
   input[type="radio"] {
     + label {
       @include padding-left(14v);
@@ -55,9 +57,9 @@
     }
   }
 
-  &__icon {
+  #{ns(radio)}__img {
     @include size(20v, 20v);
-    @include absolute(null, 1v);
+    @include absolute(1v, 1v);
     object-fit: cover;
   }
 }
@@ -95,6 +97,10 @@
           @include margin-right(3v);
           @include margin-bottom(2v);
         }
+
+        #{ns(radio)}__img {
+          right: space(4v);
+        }
       }
 
       &:last-child {
@@ -103,6 +109,16 @@
         input[type="radio"] + label {
           @include margin-bottom(3v);
         }
+      }
+
+      &:first-child {
+        #{ns(radio)}__img {
+          top: space(4v);
+        }
+      }
+
+      #{ns(radio)}__img {
+        top: space(3v);
       }
     }
 
