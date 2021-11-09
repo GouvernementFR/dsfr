@@ -4,7 +4,7 @@
 ////
 
 #{ns(radio-rich)} {
-  position: relative;
+  @include relative;
 
   input[type="radio"] {
     + label {
