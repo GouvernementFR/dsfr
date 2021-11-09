@@ -17,6 +17,8 @@ import { Equisized } from './script/equisized/equisized.js';
 import { EquisizedsGroup } from './script/equisized/equisizeds-group.js';
 import { EquisizedEmission } from './script/equisized/equisized-emission.js';
 import { RootSelector } from './script/api/stage/root.js';
+import { InjectSvg } from './script/inject/inject-svg';
+import { InjectSvgSelector } from './script/inject/inject-svg-selector';
 
 api.core = {
   Instance: Instance,
@@ -35,7 +37,9 @@ api.core = {
   RootSelector: RootSelector,
   Equisized: Equisized,
   EquisizedEmission: EquisizedEmission,
-  EquisizedsGroup: EquisizedsGroup
+  EquisizedsGroup: EquisizedsGroup,
+  InjectSvg: InjectSvg,
+  InjectSvgSelector: InjectSvgSelector
 };
 
 export default api;
