@@ -60,7 +60,11 @@
   #{ns(radio)}__img {
     @include size(20v, 20v);
     @include absolute(1v, 1v);
-    object-fit: cover;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
   }
 }
 
