@@ -31,7 +31,7 @@
   let classes = toggle.classes || [];
   let inputAttr = toggle.inputAttr || {};
 
-  if (toggle.hint) inputAttr["aria-describedby"] = toggle.groupId + toggle.id + "-hint-text";
+  if (toggle.hint) inputAttr["aria-describedby"] = toggle.groupId ? toggle.groupId + toggle.id + "-hint-text" : toggle.id + "-hint-text";
 
   classes.push(prefix + '-toggle');
 
