@@ -5,9 +5,4 @@
     data.type = input.type || 'text';
     data.label = 'Label champs de saisie';
 %>
-<% if (input.group === true) { %>
 <%- include('../../template/ejs/input-group', {input:data}); %>
-<% }
-else { %>
-<%- include('../../template/ejs/input', {input:data}); %>
-<% } %>
