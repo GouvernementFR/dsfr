@@ -21,18 +21,6 @@
     @include margin-top(0);
     flex-basis: calc(100% - (100% / 2));
   }
-
-  /**
-   * Si un logo opérateur est présent, on passe le content à 50% de la largeur disponible
-   */
-  #{ns(footer__body--operator)} & {
-    @include margin-top(6v);
-
-    @include respond-from(lg) {
-      @include margin-top(0);
-      flex-basis: 50%;
-    }
-  }
 }
 
 /**
