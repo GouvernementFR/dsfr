@@ -39,9 +39,7 @@
     * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
     * sur les navigateurs webkit.
     */
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
+    @include autofill {
       @include scheme-element-box-shadow-color(plain neutral background-contrast info, $legacy, false, bottom-2-in all-in);
       @include _scheme-element(-webkit-text-fill-color, text, label neutral, $legacy);
     }
