@@ -19,10 +19,10 @@
         }
       }
 
-      @include disabled {
+      @include disabled($legacy) {
         + label {
           @include before {
-            @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false, sm));
+            @include scheme-element-box-shadow-color(disabled neutral background-default neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false, sm));
           }
         }
       }
@@ -41,7 +41,7 @@
           + label {
             @include scheme-element-box-shadow-color(text-disabled neutral, $legacy, false, all-1-in);
             @include before {
-              @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true, sm));
+              @include scheme-element-box-shadow-color(disabled neutral background-default neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true, sm));
             }
           }
         }

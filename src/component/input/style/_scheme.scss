@@ -19,7 +19,7 @@
     /**
     * Style pour l'état désactivé
     */
-    @include disabled-form-field;
+    @include disabled-form-field($legacy);
 
     /**
     * Modificateur pour les champs validés

@@ -36,17 +36,17 @@
       /**
       * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
       */
-      @include disabled {
+      @include disabled($legacy) {
         & + label {
           @include before {
-            @include disabled-colors($legacy, false, true, true);
+            @include disabled-colors($legacy, false, false, true);
           }
         }
 
         &:checked {
           & + label {
             @include before {
-              @include disabled-colors($legacy, true);
+              @include disabled-colors($legacy, true, true);
             }
           }
         }

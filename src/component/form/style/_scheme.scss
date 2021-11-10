@@ -79,7 +79,7 @@
     /**
     * Mixin disabled pour gérer l'état disabled
     */
-    @include disabled {
+    @include disabled($legacy) {
       label {
         @include disabled-colors($legacy, true);
       }
