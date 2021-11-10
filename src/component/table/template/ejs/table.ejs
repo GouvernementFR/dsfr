@@ -15,6 +15,8 @@
 
 * table.row (integer, optional) : nombre de lignes
 
+* table.accent (string, optional): Couleur d'accenturation du composant
+
 // TODO: templatisation du contenu des cellules avec des objets de config
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -23,6 +25,7 @@
 let table = locals.table || {};
 let classes = table.classes || [];
 classes.push(prefix + '-table');
+if (table.accent !== undefined) classes.push(prefix + '-table--' + table.accent);
 if (table.bordered) classes.push(prefix + '-table--bordered');
 if (table.noScroll) classes.push(prefix + '-table--no-scroll');
 if (table.noCaption) classes.push(prefix + '-table--no-caption');

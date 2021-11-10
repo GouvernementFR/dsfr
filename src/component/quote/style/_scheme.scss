@@ -9,6 +9,12 @@
       @include scheme-element-text-color(artwork-minor blue-france, $legacy);
     }
 
+    @include accent-modifiers {
+      @include before {
+        @include scheme-element-text-color(artwork-minor accent, $legacy);
+      }
+    }
+
     @include scheme-element-bg-image-color(border-default neutral, $legacy);
   }
 }

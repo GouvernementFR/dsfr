@@ -31,5 +31,29 @@
         }
       }
     }
+
+    @include accent-modifiers {
+      thead {
+        @include scheme-element-box-shadow-color(plain accent, $legacy, false, bottom-2-in);
+        @include scheme-element-bg-color(contrast accent, $legacy);
+      }
+
+      tbody {
+        @include scheme-element-bg-color(alt accent, $legacy);
+
+        tr:nth-child(even) {
+          @include scheme-element-bg-color(contrast accent, $legacy);
+        }
+      }
+
+      /* Style bordered, ajoute des bordures entre chaque ligne */
+      &#{ns(table--bordered)} {
+        tbody {
+          tr {
+            @include scheme-element-box-shadow-color(default accent, $legacy, false, bottom-1-in);
+          }
+        }
+      }
+    }
   }
 }
