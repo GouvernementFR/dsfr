@@ -17,7 +17,7 @@
     }
 
     @include accent-modifiers {
-      @include scheme-element-box-shadow-color(default $ACCENT, $legacy, false, left-1v-in);
+      @include scheme-element-box-shadow-color(default accent, $legacy, false, left-1v-in);
     }
   }
 }

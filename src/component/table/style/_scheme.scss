@@ -34,15 +34,15 @@
 
     @include accent-modifiers {
       thead {
-        @include scheme-element-box-shadow-color(plain $ACCENT, $legacy, false, bottom-2-in);
-        @include scheme-element-bg-color(contrast $ACCENT, $legacy);
+        @include scheme-element-box-shadow-color(plain accent, $legacy, false, bottom-2-in);
+        @include scheme-element-bg-color(contrast accent, $legacy);
       }
 
       tbody {
-        @include scheme-element-bg-color(alt $ACCENT, $legacy);
+        @include scheme-element-bg-color(alt accent, $legacy);
 
         tr:nth-child(even) {
-          @include scheme-element-bg-color(contrast $ACCENT, $legacy);
+          @include scheme-element-bg-color(contrast accent, $legacy);
         }
       }
 
@@ -50,7 +50,7 @@
       &#{ns(table--bordered)} {
         tbody {
           tr {
-            @include scheme-element-box-shadow-color(default $ACCENT, $legacy, false, bottom-1-in);
+            @include scheme-element-box-shadow-color(default accent, $legacy, false, bottom-1-in);
           }
         }
       }

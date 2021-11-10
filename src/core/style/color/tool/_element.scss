@@ -11,6 +11,9 @@ $ACCENT: none;
   @for $i from 1 through $length {
     $token: nth($decisions, $i * 2 - 1);
     $tint: nth($decisions, $i * 2);
+    @if $tint == accent {
+      $tint: $ACCENT;
+    }
     $needle: '$color#1';
     @if length($decisions) > 2 {
       $needle: '$color##{$i}';

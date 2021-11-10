@@ -11,7 +11,7 @@
 
     @include accent-modifiers {
       @include before {
-        @include scheme-element-text-color(artwork-minor $ACCENT, $legacy);
+        @include scheme-element-text-color(artwork-minor accent, $legacy);
       }
     }
 
