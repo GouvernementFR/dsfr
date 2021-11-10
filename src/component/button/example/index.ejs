@@ -12,7 +12,7 @@
 
 <%- sample('Bouton icon à droite', './sample/button-default', {button: {icon :'checkbox-circle-line', iconPlace:'right'}}, true); %>
 
-<%- sample('Bouton icon seule', './sample/button-default', {button: {icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+<%- sample('Bouton icon seule', './sample/button-default', {button: {icon :'checkbox-circle-line', iconPlace:'only', title:'Label bouton'}}, true); %>
 
 <%- sample('Bouton tag a href', './sample/button-default', {button: {tag:'a', attributes: {href:'#'}}}, true); %>
 
@@ -26,7 +26,7 @@
 
 <%- sample('Bouton secondaire icon à droite', './sample/button-default', {button: {secondary:true, icon :'checkbox-circle-line', iconPlace:'right'}}, true); %>
 
-<%- sample('Bouton secondaire icon seule', './sample/button-default', {button: {secondary:true, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+<%- sample('Bouton secondaire icon seule', './sample/button-default', {button: {secondary:true, icon :'checkbox-circle-line', iconPlace:'only', title:'Label bouton'}}, true); %>
 
 <%- sample('Bouton secondaire tag a href', './sample/button-default', {button: {secondary:true, tag :'a', attributes: {href:'#'}}}, true); %>
 
@@ -62,6 +62,6 @@
 
 <%- sample('Groupe de boutons verticaux alignés au centre (equisized)', './sample/buttons-group', {buttonGroup: {label: 'Label bouton', groupCount: 3, hierarchy:true, equisized:true, vary: true, align:'center'}}, true); %>
 
-<%- sample('Groupe de boutons d\'icones', './sample/buttons-group', {buttonGroup: {label: 'Label bouton', groupCount: 3, hierarchy:true, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+<%- sample('Groupe de boutons d\'icones', './sample/buttons-group', {buttonGroup: {label: 'Label bouton', title:'Label bouton', groupCount: 3, hierarchy:true, icon:'checkbox-circle-line', iconPlace:'only'}}, true); %>
 
-<%- sample('Groupe de boutons d\'icones inline', './sample/buttons-group', {buttonGroup: {inline: true, label: 'Label bouton', groupCount: 3, hierarchy:true, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+<%- sample('Groupe de boutons d\'icones inline', './sample/buttons-group', {buttonGroup: {inline: true, label: 'Label bouton', title:'Label bouton', groupCount: 3, hierarchy:true, icon:'checkbox-circle-line', iconPlace:'only'}}, true); %>

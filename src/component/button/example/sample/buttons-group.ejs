@@ -20,6 +20,12 @@ if (!buttons.length && buttonGroup.groupCount !== undefined) {
   for (let i = 0; i < buttonGroup.groupCount; i++) {
     buttons.push({
       label: lbl,
+      icon: buttonGroup.icon,
+      iconPlace: buttonGroup.iconPlace,
+      title: buttonGroup.title,
+      type: buttonGroup.type,
+      disabled: buttonGroup.disabled,
+      tag: buttonGroup.tag,
       secondary: i > 0 || !buttonGroup.hierarchy
     });
 

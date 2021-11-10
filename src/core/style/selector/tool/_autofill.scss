@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@include autofill () {
+@mixin autofill () {
   &:autofill,
   &:autofill:hover,
   &:autofill:focus,

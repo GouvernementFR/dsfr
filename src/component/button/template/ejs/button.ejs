@@ -38,8 +38,6 @@ valeurs :
  const button = locals.button || {};
  let btnClasses = button.classes || [];
  let btnAttrs = button.attributes || {};
- let btnTitle = button.title !== undefined ? button.title : button.label ;
-
  if (button.id) btnAttrs.id = button.id;
 
  const tag = button.tag || 'button';
@@ -86,7 +84,7 @@ valeurs :
   }
  }
 
- if (btnTitle) btnAttrs['title'] = btnTitle;
+ if (button.title) btnAttrs['title'] = button.title;
  if (button.type !== undefined) btnAttrs['type'] = button.type;
  %>
 
