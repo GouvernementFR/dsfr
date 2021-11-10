@@ -46,6 +46,11 @@ if (input.error !== undefined) {
   describedby.push(input.id + '-desc-error');
 }
 
+if (input.hint === true) {
+  describedby.push(input.id + '-hint-text');
+  input.hint = undefined;
+}
+
 if (describedby.length > 0) inputAttrs['aria-describedby'] = describedby.join(' ');
 
 if (input.required === true) inputAttrs['required'] = '';

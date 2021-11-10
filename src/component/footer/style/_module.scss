@@ -41,35 +41,6 @@
       @include margin-left(12v, md);
     }
 
-    /**
-     * Styles quand un logo opérateur est présent
-     */
-    #{ns(footer__body--operator)} & {
-      // flex-basis: 100%;
-
-      #{ns(footer__brand-link)} + #{ns(footer__brand-link)} {
-        #{ns(footer__logo)} {
-          @include size(auto);
-          min-width: initial;
-          max-height: 100px;
-        }
-      }
-
-      #{ns(footer__logo)} {
-        min-width: initial;
-        max-width: 100%;
-
-        @include respond-from(sm) {
-          max-width: 200px;
-        }
-
-        @include respond-from(lg) {
-          min-width: 200px;
-          max-width: 100%;
-        }
-      }
-    }
-
     @include respond-from(md) {
       flex-basis: auto;
       @include padding-right(4v);
