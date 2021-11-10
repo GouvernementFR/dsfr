@@ -17,7 +17,7 @@
 let checkbox = locals.checkbox || {};
 let groupClasses = [prefix + '-checkbox-group'];
 let describedby = [];
-let checkboxAttrs = [];
+let checkboxAttrs = checkbox.attributes || {};
 
 if (checkbox.error !== undefined) {
     groupClasses.push(prefix + '-checkbox-group--error');
@@ -38,5 +38,5 @@ switch(checkbox.size) {
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./checkbox', {checkbox: checkbox}); %>
+    <%- include('./checkbox', {checkbox: {...checkbox, attributes: checkboxAttrs}}); %>
 </div>
