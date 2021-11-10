@@ -28,6 +28,7 @@
 
  tagClasses.push(prefix + '-tag');
 
+ if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
 
  switch(tag.size) {
      case 'sm':

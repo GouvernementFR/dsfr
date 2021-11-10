@@ -15,6 +15,11 @@
       @include scheme-element-bg-color(action-low blue-france, $legacy);
 
       @include disabled($legacy, true, true);
+
+      @include accent-modifiers {
+        @include scheme-element-text-color(action-high $ACCENT, $legacy);
+        @include scheme-element-bg-color(action-low $ACCENT, $legacy);
+      }
     }
   }
 }

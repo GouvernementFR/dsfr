@@ -13,6 +13,7 @@
 
 * callout.buttonTpl (string, optional): Chemin vers le sample de bouton a utiliser
 
+* callout.accent (string, optional): Couleur d'accenturation du composant
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -23,14 +24,11 @@
  classes.push(prefix + '-callout');
 
  if (callout.icon !== undefined) classes.push(prefix + '-fi-' + callout.icon);
- if (callout.color !== undefined) classes.push(prefix + '-callout--' + callout.color);
+ if (callout.accent !== undefined) classes.push(prefix + '-callout--' + callout.accent);
 
  let pClasses = [];
 
- if (callout.size === 'md') pClasses.push(prefix + '-callout__text--md');
-
  %>
-
 
 <div <%- includeClasses(classes); %>>
 

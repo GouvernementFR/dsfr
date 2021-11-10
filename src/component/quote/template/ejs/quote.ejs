@@ -30,6 +30,8 @@
  let citeAttr = [];
  let sizeClasses = [];
  const blockAttrs = {cite: href};
+
+ if (quote.accent !== undefined) quoteClasses.push(prefix + '-quote--' + quote.accent);
  if (image) quoteClasses.push(prefix + '-quote--column');
  if (size) sizeClasses = [prefix+'-text--'+size];
  %>
