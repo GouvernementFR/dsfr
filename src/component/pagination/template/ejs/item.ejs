@@ -35,7 +35,7 @@ if (paginationItem.active) attrs['aria-current'] = 'page';
 if (paginationItem.type) classes.push(prefix + '-pagination__link--' + paginationItem.type);
 
 if (paginationItem.href !== undefined && !paginationItem.disabled && tag === 'a' && !paginationItem.active) attrs.href = paginationItem.href;
-if (paginationItem.title) attrs.title = title;
+if (paginationItem.title) attrs.title = paginationItem.title;
 
 switch(true) {
   case paginationItem.hasLgLabel:
