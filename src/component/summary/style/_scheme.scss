@@ -5,7 +5,7 @@
 
 @mixin _summary-scheme($legacy: false) {
   #{ns(summary)} {
-    @include scheme-element-bg-color(alt neutral, $legacy);
+    @include scheme-element-bg-color(alt contrast, $legacy);
     // @include scheme-element-box-shadow-color(default neutral, $legacy);
 
     @include title {
