@@ -15,5 +15,6 @@
     border-radius: 0;
     border: 0;
     background-color: transparent;
+    margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
   }
 }
