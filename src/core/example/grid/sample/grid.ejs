@@ -6,10 +6,9 @@
  %>
 
 <div <%- includeClasses(classes); %>>
-    <% for (let col of grid.cols) {
-        if (isNaN(col.length)) col.length = 1;
-        grid.classes = undefined;
+    <% for (let cols of grid.cols) {
+        if (isNaN(cols.length)) cols.length = 1;
     %>
-        <%- include('./cols', {col: col}); %>
+        <%- include('./cols', {cols: cols}); %>
     <% } %>
 </div>

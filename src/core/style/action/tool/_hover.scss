@@ -26,3 +26,25 @@
     @content;
   }
 }
+
+@mixin hover-blend($background-images: (), $background-sizes: (), $background-positions: ()) {
+  --hsla: #{css-hsl-alpha(var(--blend), var(--a))};
+  --blend-size: 100% 100%; // 2048px 2048px;
+  --blend-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: append($background-sizes, var(--blend-size));
+  background-position: append($background-positions, var(--blend-position));
+
+  &:hover,
+  &:active {
+    background-image: append($background-images, radial-gradient(circle at center, var(--hsla), var(--hsla) 3%));
+  }
+
+  &:hover {
+    --a: #{$hover-alpha};
+  }
+
+  &:active {
+    --a: #{$active-alpha};
+  }
+}

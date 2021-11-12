@@ -1,13 +1,13 @@
 <style>
   .col-demo {
-    box-shadow: inset 0 0 0 1px var(--bf500);
+    box-shadow: inset 0 0 0 1px var(--artwork-major-blue-france);
     text-align: center;
-    background-color: var(--beige);
+    background-color: var(--background-alt-blue-france);
     padding: 16px 0;
   }
 
   .<%= prefix %>%>-grid-row > * > .<%= prefix %>%>-grid-row > * > .col-demo {
-    background-color: var(--error);
+    background-color: var(--artwork-minor-red-marianne);
   }
 </style>
 
@@ -29,9 +29,70 @@
 
 <%- sample('Grille avec gouttières avec taille de colonnes', './sample/container', { grid: {gutters: true, cols: [{ col: 3 }, { col: 3 }, { col: 2 }, { col: 4 }, { col: 5 }, { col: 7 }, { col: 9 }, { col: 3 }, { col: 5 }, { col: 5 }, { col: 2 }, { col: 12 } ]}}, true); %>
 
-<%- sample('Grille sans gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', { grid: {cols: [{ col: 8, content: include('./sample/grid', { gutters: true, cols:[{col:6, length: 2}]}) }, { col: 4 }, { col: 3 }, { col: 3 }, { col: 6, content: include('./sample/grid', {cols:[{col:4, length: 3}]}) } ]}}, true); %>
+<%- sample('Grille sans gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', {
+  grid: {
+    cols: [
+      {
+        col: 8,
+        content: include('./sample/grid', {
+          grid: {
+            gutters: true,
+            cols:[
+              { col:6, length: 2 }
+            ]
+          }
+        })
+      },
+      { col: 4 },
+      { col: 3 },
+      { col: 3 },
+      {
+        col: 6,
+        content: include('./sample/grid', {
+          grid: {
+            cols:[
+              { col:4, length: 3}
+            ]
+          }
+        })
+      }]
+    }
+  }, true); %>
 
-<%- sample('Grille avec gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', { grid: {gutters: true, cols: [{ col: 8, content: include('./sample/grid', { gutters: true, cols:[{col:6, length: 2}] }) }, { col: 4 }, { col: 3 }, { col: 3 }, { col: 6, content: include('./sample/grid', {cols:[{ col:4, length: 3 }]}) } ]}}, true); %>
+<%- sample('Grille avec gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', {
+    grid:
+      {
+        gutters: true,
+        cols:
+          [
+            {
+              col: 8,
+              content: include('./sample/grid', {
+                  grid: {
+                    gutters: true,
+                    cols: [
+                        { col:6, length: 2 }
+                      ]
+                  }
+                })
+            },
+            { col: 4 },
+            { col: 3 },
+            { col: 3 },
+            {
+              col: 6,
+              content: include('./sample/grid',
+                {
+                  grid: {
+                    cols:[
+                      { col:4, length: 3 }
+                    ]
+                  }
+                })
+            }
+          ]
+      }
+  }, true); %>
 
 <%- sample('Grille avec gouttières alignement haut', './sample/container', { grid: {classes: [ `${prefix}-grid-row--top` ], gutters: true, cols: [{ content: 'align top', col: 3 }, { content: true, col: 3 }, { content: 'align top', col: 3, length: 2 }]}}, true); %>
 

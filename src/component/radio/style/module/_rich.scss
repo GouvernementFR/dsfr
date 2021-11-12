@@ -15,9 +15,6 @@
       @include padding-top(2v);
       @include padding-bottom(2v);
       @include padding-right(26v);
-      background-position: space(calc(100% - 1v)) center;
-      background-size: space(20v 20v);
-      background-repeat: no-repeat;
       @include display-flex(column, flex-start, center);
 
       /**
@@ -53,6 +50,12 @@
     &[disabled] {
       + label {
         filter: grayscale(1);
+      }
+    }
+
+    @include hover-media-query {
+      &:not(:disabled) + label {
+        @include hover-blend;
       }
     }
   }

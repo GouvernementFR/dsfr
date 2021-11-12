@@ -10,7 +10,7 @@
 
     &:not(&--no-arrow) &__body {
       @include after {
-        @include scheme-element-text-color(artwork-minor blue-france, $legacy);
+        @include scheme-element-text-color(action-high blue-france, $legacy);
       }
     }
 

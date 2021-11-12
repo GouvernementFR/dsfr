@@ -5,22 +5,6 @@
 
 @include hover-media-query {
   @include hover-type-selector($action-elements, blend) {
-    // background-size: 2048px 2048px;
-    // background-position: 50% 50%;
-
-    --hsla: #{css-hsl-alpha(var(--blend), var(--a))};
-
-    &:hover,
-    &:active {
-      background-image: radial-gradient(circle at center, var(--hsla), var(--hsla) 3%);
-    }
-
-    &:hover {
-      --a: #{$hover-alpha};
-    }
-
-    &:active {
-      --a: #{$active-alpha};
-    }
+    @include hover-blend();
   }
 }
