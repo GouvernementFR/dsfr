@@ -13,8 +13,8 @@
 ///   .foo {
 ///     @include disabled-form-field(input);
 ///   }
-@mixin disabled-form-field() {
-  @include disabled(true, false, bottom-2-in) {
+@mixin disabled-form-field($legacy) {
+  @include disabled($legacy, true, false, bottom-2-in) {
     @content;
   }
 }

@@ -4,7 +4,7 @@
 ////
 
 #{ns(modal)} {
-  // reset dialog
+  // reset dialog @TODO à déplacer dans reset ?
   border: none;
   color: inherit;
   visibility: hidden;
@@ -126,7 +126,7 @@
     @include margin-bottom(4v);
   }
 
-  &#{ns(scroll-shadow)} {
+  &__body#{ns(scroll-shadow)} {
     #{ns(modal)}__footer {
       @include shadow(up);
     }

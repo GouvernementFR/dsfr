@@ -59,6 +59,22 @@ locals.contentPlaceholder = (text) => {
   return `[À MODIFIER - ${text}]`;
 };
 
+locals.lengthen = (length, label) => {
+    switch (length) {
+        case 1:
+            return label + ' long';
+
+        case 2:
+            return label + ' plus long';
+
+        case 3:
+            return label + ' beaucoup plus long';
+
+        default:
+            return label;
+    }
+}
+
 locals.imgAltText = 'texte alternatif de l’image';
 
 const imgData = (src, alt, style) => {
@@ -76,7 +92,7 @@ const randomContent = (id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;
   content += `<div><h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
-  if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', imgData());
+  if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
   for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
   content += '<ul>';
   for (let i = Math.random() * 2 + 1; i > 0; i--) {

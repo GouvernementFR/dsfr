@@ -76,6 +76,15 @@
   * Style d'un ensemble de champs
   */
   #{ns(fieldset)} {
+    /**
+    * Mixin disabled pour gérer l'état disabled
+    */
+    @include disabled($legacy) {
+      label {
+        @include disabled-colors($legacy, true);
+      }
+    }
+
     &__legend {
       @include scheme-element-text-color(title neutral, $legacy);
     }

@@ -15,7 +15,7 @@
         }
       }
 
-      @include disabled {
+      @include disabled($legacy) {
         + label {
           @include before {
             @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false, sm));
@@ -30,7 +30,7 @@
           }
         }
 
-        @include disabled {
+        @include disabled($legacy) {
           + label {
             @include before {
               @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true, sm));

@@ -14,7 +14,7 @@
 <% let summary = locals.summary || {}; %>
 
 <nav class="<%= prefix %>-summary" role="navigation" aria-labelledby="<%= prefix %>-summary-title">
-  <div class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title">Sommaire</div>
+  <p class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title">Sommaire</p>
 
   <%- include('./list', {summaryList: summary.list}); %>
 

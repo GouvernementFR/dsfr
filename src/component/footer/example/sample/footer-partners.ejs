@@ -1,5 +1,7 @@
 <%
+let footer = locals.footer || {};
 let data = {
+    id: footer.id || uniqueId('footer'),
     brand: {
       logo: {
           title: 'république<br>française',
