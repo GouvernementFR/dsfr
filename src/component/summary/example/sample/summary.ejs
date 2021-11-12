@@ -6,7 +6,9 @@ const getItem = (id) => {
     }
 };
 
-const links = [12, 0, 2, 2,0,0,0,0,0,0,0,0,12];
+const summary = locals.summary;
+const links = summary.links || [0];
+
 let data = {list:[]};
 
 for (let i = 0; i < links.length; i++) {

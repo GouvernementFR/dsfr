@@ -26,6 +26,6 @@ for (let i = 0; i < links.length; i++) {
 
 %>
 
-<%- sample('Sommaire', './sample/summary', {}, true); %>
+<%- sample('Sommaire', './sample/summary', {summary: {links: links}}, true); %>
 
 <%- content; %>
