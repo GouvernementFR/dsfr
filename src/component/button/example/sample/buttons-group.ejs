@@ -14,22 +14,22 @@
 const buttonGroup = locals.buttonGroup || {}
 const buttons = buttonGroup.buttons || [];
 
+const label = 'Label bouton';
+
 if (!buttons.length && buttonGroup.groupCount !== undefined) {
 
-  let lbl = buttonGroup.label;
   for (let i = 0; i < buttonGroup.groupCount; i++) {
+    const lbl = locals.lengthen(buttonGroup.vary ? i : 0, label);
     buttons.push({
-      label: lbl,
+      label: buttonGroup.label || lbl,
       icon: buttonGroup.icon,
       iconPlace: buttonGroup.iconPlace,
-      title: buttonGroup.title,
+      title: buttonGroup.iconPlace === 'only' ? locals.contentPlaceholder(lbl) : undefined,
       type: buttonGroup.type,
       disabled: buttonGroup.disabled,
       tag: buttonGroup.tag,
       secondary: i > 0 || !buttonGroup.hierarchy
     });
-
-    if (buttonGroup.vary) lbl += i % 2 === 0 ? ' plus' : ' long'
   }
   buttonGroup.buttons = buttons;
 }

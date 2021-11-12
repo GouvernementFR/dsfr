@@ -59,6 +59,22 @@ locals.contentPlaceholder = (text) => {
   return `[À MODIFIER - ${text}]`;
 };
 
+locals.lengthen = (length, label) => {
+    switch (length) {
+        case 1:
+            return label + ' long';
+
+        case 2:
+            return label + ' plus long';
+
+        case 3:
+            return label + ' beaucoup plus long';
+
+        default:
+            return label;
+    }
+}
+
 locals.imgAltText = 'texte alternatif de l’image';
 
 const imgData = (src, alt, style) => {
