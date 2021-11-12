@@ -102,6 +102,7 @@ class Scheme extends api.core.Instance {
 
       default:
         this.scheme = SchemeValue.SYSTEM;
+        return;
     }
 
     this.descend(SchemeEmission.SCHEME, value);
@@ -118,7 +119,6 @@ class Scheme extends api.core.Instance {
     switch (value) {
       case SchemeTheme.LIGHT:
       case SchemeTheme.DARK:
-        // if (this._scheme !== Scheme.SYSTEM && this._scheme !== value) return;
         this._theme = value;
         this.setAttribute(SchemeAttribute.THEME, value);
         this.descend(SchemeEmission.THEME, value);
@@ -142,6 +142,7 @@ class Scheme extends api.core.Instance {
   }
 
   change () {
+    if (!this.isListening) return;
     this.theme = this.mediaQuery.matches ? SchemeTheme.DARK : SchemeTheme.LIGHT;
   }
 
