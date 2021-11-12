@@ -1,0 +1,32 @@
+<%
+
+const attrModal = [];
+attrModal['aria-controls'] = prefix + '-theme-modal';
+attrModal[`data-${prefix}-opened`] = false;
+
+const links = {
+  items: [
+    {
+      classes: [prefix + "-display-button"],
+      icon: 'theme-fill',
+      iconPlace: 'standalone',
+      label: 'Paramètres d\'affichage',
+      attributes: {...attrModal},
+      tag: 'button'
+    }
+  ]
+};
+
+let dataModal = {
+  id: prefix + "-theme-modal",
+  title: 'Paramètres d’affichage',
+  body: '../../../display/example/sample/body',
+  size: "sm"
+}
+
+%>
+
+
+<%- include('../../src/component/link/example/sample/link-default', {link:links.items[0]}, true) %>
+
+<%- include('../../src/component/modal/template/ejs/modal.ejs', {modal:dataModal}, true); %>
