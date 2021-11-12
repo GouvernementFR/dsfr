@@ -9,14 +9,14 @@
 /// @param {String} $space - espace de la couleur (hex, hsl)
 /// @param {Number} $space - espace de la couleur (hex, hsl)
 /// @return {String} Retourne la couleur correspondante
-@function _get-color($name, $alpha: 1) {
+@function get-color($name, $alpha: 1) {
   $option: _get-color-option($name);
 
   @if $alpha == 1 {
     @return _get-color-from-option($option, hex);
   }
 
-  $hsla: 'hlsa(#{_get-color-from-option($option, hue)}, #{_get-color-from-option($option, saturation)}, #{_get-color-from-option($option, lightness)}, #{$alpha})';
+  $hsla: 'hsla(#{_get-color-from-option($option, hue)}, #{_get-color-from-option($option, saturation)}, #{_get-color-from-option($option, lightness)}, #{$alpha})';
 
   @return unquote($hsla);
 }

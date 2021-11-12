@@ -5,7 +5,7 @@
 
 @mixin _modal-scheme($legacy: false) {
   #{ns(modal)} {
-    // @include scheme-element-bg-color(overlay); // @TODO: scheme overlay
+    @include modal-overlay($legacy);
 
     @include body {
       @include scheme-element-bg-color(default neutral, $legacy);
