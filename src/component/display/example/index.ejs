@@ -61,7 +61,6 @@ let dataFooter = {
     }
 }
 %>
-%>
 
 <%- include('../../header/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
 
@@ -74,7 +73,3 @@ let dataFooter = {
 </div>
 
 <%- include('../../footer/template/ejs/footer.ejs', {footer: dataFooter }); %>
-
-<script>
-  document.documentElement.setAttribute(`data-<%= prefix %>-transition`, '');
-</script>
