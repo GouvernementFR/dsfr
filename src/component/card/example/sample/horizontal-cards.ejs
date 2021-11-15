@@ -1,5 +1,10 @@
 <%
-let data = { img: true, horizontal: true };
+let card = locals.card || {};
+let data = {
+    ...card,
+    img: true,
+    horizontal: true 
+};
 %>
 <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
    <%
