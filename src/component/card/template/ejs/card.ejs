@@ -15,6 +15,8 @@
 
 * card.arrow (boolean, optionnal) : détermine la présence de l'icon arrow
 
+* card.accent (string, optional): Couleur d'accenturation du composant
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
@@ -27,6 +29,7 @@ classes.push(prefix + '-card');
 if (card.horizontal !== undefined) classes.push(prefix + '-card--horizontal');
 if (card.enlarge) classes.push(prefix + '-enlarge-link');
 if (card.arrow === false) classes.push(prefix + '-card--no-arrow');
+if (card.accent !== undefined) classes.push(prefix + '-card--' + card.accent);
 %>
 <div <%- includeClasses(classes) %>>
     <div class="<%= prefix %>-card__body">
