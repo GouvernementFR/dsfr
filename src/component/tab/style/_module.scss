@@ -54,7 +54,7 @@
   &__tab {
     @include relative;
     overflow: visible;
-    font-weight: bold;
+    font-weight: font-weight(bold);
     @include z-index(over);
     @include margin(0 1v);
     white-space: nowrap;

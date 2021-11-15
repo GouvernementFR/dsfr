@@ -4,7 +4,5 @@ description: Le menu latéral permet aux utilisateurs de naviguer entre les diff
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/258998801/Menu+lat+ral+-+Side+menu
 style:
   - core
-  - scheme
-  - legacy
 script:
   - core

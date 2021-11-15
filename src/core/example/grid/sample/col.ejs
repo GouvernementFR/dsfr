@@ -1,45 +1,46 @@
 <%
-    const classes = locals.classes || [];
+    const col = locals.col || {};
+    const classes = col.classes || [];
 
-    switch(typeof locals.col) {
+    switch(typeof col.col) {
         case 'object':
-          for (let bp in col) classes.push(`${prefix}-col-${bp !== 'first' ? bp + '-': ''}${col[bp]}`)
+          for (let bp in col.col) classes.push(`${prefix}-col-${bp !== 'first' ? bp + '-': ''}${col.col[bp]}`)
           break;
 
         case 'string':
         case 'number':
-            classes.push(`${prefix}-col-${col}`)
+            classes.push(`${prefix}-col-${col.col}`)
           break;
 
         default:
             classes.push(`${prefix}-col`);
     }
 
-    if (locals.offset) classes.push(`${prefix}-col-offset-${offset}`);
+    if (col.offset) classes.push(`${prefix}-col-offset-${col.offset}`);
 %>
 <div <%- includeClasses(classes); %>>
-    <% if (locals.content === true) { %>
+    <% if (col.content === true) { %>
         <div class="col-demo"><%- lorem() %></div>
-    <% } else if (locals.content !== undefined) { %>
-        <% if (content.indexOf('<') === -1) { %>
-            <div class="col-demo"><%- locals.content %></div>
+    <% } else if (col.content !== undefined) { %>
+        <% if (col.content.indexOf('<') === -1) { %>
+            <div class="col-demo"><%- col.content %></div>
         <% } else { %>
-            <%- locals.content %>
+            <%- col.content %>
         <% } %>
-    <% } else if (locals.col) {
+    <% } else if (col.col) {
         let content = '';
-        switch(typeof col) {
+        switch(typeof col.col) {
             case 'object':
                 let s = '';
-                for (let bp in col) {
-                  content += s + (bp !== 'first' ? `${bp}-` : '' ) + `${col[bp]}`;
+                for (let bp in col.col) {
+                  content += s + (bp !== 'first' ? `${bp}-` : '' ) + `${col.col[bp]}`;
                   s = ' / ';
                 }
                 break;
 
             case 'string':
             case 'number':
-              content = `${col}/12`;
+              content = `${col.col}/12`;
               break;
         }
     %>

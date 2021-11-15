@@ -46,6 +46,11 @@ if (input.error !== undefined) {
   describedby.push(input.id + '-desc-error');
 }
 
+if (input.hint === true) {
+  describedby.push(input.id + '-hint-text');
+  input.hint = undefined;
+}
+
 if (describedby.length > 0) inputAttrs['aria-describedby'] = describedby.join(' ');
 
 if (input.required === true) inputAttrs['required'] = '';
@@ -53,7 +58,7 @@ if (input.disabled === true) inputAttrs['disabled'] = '';
 if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholder;
 %>
 
-<%- include('../../../form/template/ejs/label', {label:input}); %>
+<%- include('../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint}}); %>
 
 <% if (input.icon != undefined) { %>
  <div class="<%= prefix %>-input-wrap <%- prefix %>-fi-<%= input.icon %>" >

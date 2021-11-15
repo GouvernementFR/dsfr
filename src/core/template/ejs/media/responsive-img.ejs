@@ -1,5 +1,5 @@
 <%#
-# paramètres média image
+# paramètres média responsive image
 
 * media.src (string, required): url de l'image
 
@@ -17,10 +17,8 @@
 <%
  let media = locals.media || {};
  const mediaClasses = media.classes || [];
- const mediaAttributes = media.attributes || {};
  mediaClasses.push(`${prefix}-responsive-img`);
- if (media.style) mediaAttributes.style = media.style;
  %>
 
-<img <%- includeClasses(mediaClasses) %> <%- includeAttrs(mediaAttributes) %> src="<%= media.src %>" alt="<%= media.alt || '' %>"  /><% if (media.alt) { %><!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image --><% } else { %><!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --><% } %>
+<%- include('img.ejs', {media: {...media, classes: mediaClasses}}); %>
 

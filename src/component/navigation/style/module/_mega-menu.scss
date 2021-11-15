@@ -37,28 +37,26 @@
 
   #{ns(nav__link)} {
     @include padding-x(4v);
+    @include padding(3v 4v, lg);
     @include before {
       left: 0;
-    }
-    @include respond-from(lg) {
-      @include padding(3v 4v);
-      @include before {
-        left: 0;
-      }
     }
   }
 
   &__leader {
     @include padding-x(4v);
+    @include padding-top(4v);
+    @include padding-top(0, lg);
     @include padding-x(0, lg);
+    @include set-text-margin(0 0 2v);
+    @include set-title-margin(0 0 2v);
   }
 
   &__category {
-    @include margin-bottom(0);
     @include font-weight(bold);
   }
 
   &__list {
-    @include padding-bottom(3v);
+    @include padding-bottom(6v);
   }
 }

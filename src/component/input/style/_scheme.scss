@@ -3,53 +3,53 @@
 /// @group input
 ////
 
-#{ns(input)} {
-  @include scheme-element-text-color(label neutral);
-  @include scheme-element-bg-color(contrast neutral);
-  @include scheme-element-box-shadow-color(plain neutral, false, bottom-2-in);
+@mixin _input-scheme($legacy: false) {
+  #{ns(input)} {
+    @include scheme-element-text-color(label neutral, $legacy);
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+    @include scheme-element-box-shadow-color(plain neutral, $legacy, false, bottom-2-in);
 
-  /**
-   * Style du placeholder
-   */
-  @include placeholder {
-    @include scheme-element-text-color(mention neutral);
+    /**
+    * Style du placeholder
+    */
+    @include placeholder {
+      @include scheme-element-text-color(mention neutral, $legacy);
+    }
+
+    /**
+    * Style pour l'état désactivé
+    */
+    @include disabled-form-field($legacy);
+
+    /**
+    * Modificateur pour les champs validés
+    */
+    &--valid {
+      @include scheme-element-box-shadow-color(plain success, $legacy, false, bottom-2-in);
+    }
+
+    /**
+    * Modificateur pour les champs présentant des erreurs
+    */
+    &--error {
+      @include scheme-element-box-shadow-color(plain error, $legacy, false, bottom-2-in);
+    }
+
+    /**
+    * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
+    * sur les navigateurs webkit.
+    */
+    @include autofill {
+      @include scheme-element-box-shadow-color(plain neutral background-contrast info, $legacy, false, bottom-2-in all-in);
+      @include _scheme-element(-webkit-text-fill-color, text, label neutral, $legacy);
+    }
   }
 
-  /**
-   * Style pour l'état désactivé
-   */
-  @include disabled-form-field;
-
-  /**
-   * Modificateur pour les champs validés
-   */
-  &--valid {
-    @include scheme-element-box-shadow-color(plain success, false, bottom-2-in);
-  }
-
-  /**
-   * Modificateur pour les champs présentant des erreurs
-   */
-  &--error {
-    @include scheme-element-box-shadow-color(plain error, false, bottom-2-in);
-  }
-
-  /**
-   * On applique un style lorsque la valeur est automatiquement remplie par le navigateur
-   * sur les navigateurs webkit.
-   */
-  &:-webkit-autofill,
-  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
-    @include scheme-element-box-shadow-color(plain neutral background-contrast info , false, bottom-2-in all-in);
-    @include _scheme-element(-webkit-text-fill-color, text, label neutral);
-  }
-}
-
-#{ns(input-wrap)} {
-  > *:not(:last-child) {
-    &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
-      @include scheme-element-box-shadow-color(action-high blue-france, false, bottom-2-in);
+  #{ns(input-wrap)} {
+    > *:not(:last-child) {
+      &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
+        @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, bottom-2-in);
+      }
     }
   }
 }

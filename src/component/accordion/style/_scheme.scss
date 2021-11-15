@@ -3,10 +3,12 @@
 /// @group accordion
 ////
 
-#{ns(accordion)} {
-  @include scheme-element-box-shadow-color(default neutral, false, top-1-in bottom-1-out);
+@mixin _accordion-scheme($legacy: false) {
+  #{ns(accordion)} {
+    @include scheme-element-box-shadow-color(default neutral, $legacy, false, top-1-in bottom-1-out);
 
-  &__btn {
-    @include scheme-element-text-color(action-high neutral);
+    &__btn {
+      @include scheme-element-text-color(action-high neutral, $legacy);
+    }
   }
 }

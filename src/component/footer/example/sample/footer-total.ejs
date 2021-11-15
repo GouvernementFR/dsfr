@@ -1,5 +1,7 @@
 <%
+let footer = locals.footer || {};
 let data = {
+    id: footer.id || uniqueId('footer'),
     top: {
       categories: { label: 'Nom de la catégorie', link: 'Lien de navigation'}
     },

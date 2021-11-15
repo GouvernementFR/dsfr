@@ -10,6 +10,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   @include margin(4v 0 8v);
   @include margin-bottom(10v, md);
   @include text-style(xs);
+  @include set-text-margin(0 0 2v);
   position: relative;
 
   &__button {

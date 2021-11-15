@@ -35,6 +35,7 @@
 
   @include title {
     @include margin(0 0 2v);
+    @include text-style(xs);
     font-weight: font-weight(bold);
     text-transform: uppercase;
   }
@@ -42,6 +43,7 @@
   &__link {
     display: inline-block;
     position: relative;
+    @include text-style(xs);
     @include before(var(--ol-content)) {
       @include absolute(null, null, null, 2v);
       font-size: var(--xl-size);

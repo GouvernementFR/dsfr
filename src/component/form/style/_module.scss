@@ -179,13 +179,4 @@
       }
     }
   }
-
-  /**
-   * Mixin disabled pour gérer l'état disabled
-   */
-  @include disabled {
-    label {
-      @include disabled-colors(true);
-    }
-  }
 }

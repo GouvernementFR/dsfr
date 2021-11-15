@@ -15,7 +15,7 @@
   },
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc src/*/styles/** -d ./doc/sassdoc",
-    "tmp": "node tool/tool.js tmp",
+    "test": "node tool/tool.js test",
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
@@ -66,8 +66,8 @@
     "path": "^0.12.7",
     "postcss": "^8.2.4",
     "postcss-banner": "^4.0.0",
-    "postcss-discard-duplicates": "^5.0.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-discard-duplicates": "^5.0.1",
     "prettier": "^2.0.5",
     "replace-in-file": "^6.1.0",
     "rollup": "^2.37.1",
@@ -90,5 +90,6 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "dependencies": {}
 }

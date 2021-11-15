@@ -5,6 +5,5 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019278/Fil+d+Ariane+-+
 wrapper: col-8
 style:
   - core
-  - scheme
 script:
   - core

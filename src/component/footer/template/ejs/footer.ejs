@@ -16,17 +16,17 @@
 
   <% if (footer.top !== undefined) { %>
     <div class="<%= prefix %>-footer__top">
-      <div class="<%= prefix %>-container%>" >
-        <div class="<%= prefix %>-grid-row%> <%= prefix %>-grid-row--start%> <%= prefix %>-grid-row--gutters%>" >
+      <div class="<%= prefix %>-container" >
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--start <%= prefix %>-grid-row--gutters" >
           <%- include('./top', {footer: {top: footer.top}}); %>
         </div>
       </div>
     </div>
   <% } %>
 
-  <div class="<%= prefix %>-container%>" >
+  <div class="<%= prefix %>-container" >
 
-    <div class="<%= prefix %>-footer__body <% if (footer.brand.logo !== undefined) { %><%= prefix %>-footer__body--operator<% } %>">
+    <div class="<%= prefix %>-footer__body">
       <%- include('./brand', {footer: {brand: footer.brand, operator: footer.operator}}); %>
       <%- include('./content', {footer: {content: footer.content}}); %>
     </div>

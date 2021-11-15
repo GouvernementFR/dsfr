@@ -24,7 +24,7 @@
  %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (consent.title) { %><p class="<%= prefix %>-h6 <%= prefix %>-mb-2v"><%= consent.title %></p> <% } %>
-    <% if (consent.body) { %><p class="<%= prefix %>-mb-6v"><%- consent.body %></p><% } %>
+    <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p> <% } %>
+    <% if (consent.body) { %><p><%- consent.body %></p><% } %>
     <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
 </div>

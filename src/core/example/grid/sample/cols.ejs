@@ -1,6 +1,7 @@
 
 <%
 let cols = locals.cols || [];
-for (let i = 0; i < cols.length; i++) { %>
-<%- include('./col', {col: cols[i].col}); %>
+for (let i = 0; i < cols.length; i++) {
+%>
+<%- include('./col', {col: cols}); %>
 <% } %>

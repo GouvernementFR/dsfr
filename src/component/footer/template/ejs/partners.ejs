@@ -19,7 +19,7 @@
 <div class="<%= prefix %>-footer__partners-logos">
   <div class="<%= prefix %>-footer__partners-main">
     <a class="footer__partners-link" href="#">
-      <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: partners.mainPartner}); %>
+      <%- include('../../../../core/template/ejs/media/img.ejs',  {media: {...partners.mainPartner, classes: [prefix + '-footer__logo']}}); %>
     </a>
   </div>
   <div class="<%= prefix %>-footer__partners-sub">
@@ -29,7 +29,7 @@
       %>
       <li>
         <a class="<%= prefix %>-footer__partners-link" href="#">
-          <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: partners.subPartners[i]}); %>
+          <%- include('../../../../core/template/ejs/media/img.ejs', {media: {...partners.subPartners[i], classes: [prefix + '-footer__logo']}}); %>
         </a>
       </li>
     <% } %>

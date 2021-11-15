@@ -3,14 +3,16 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, heading)) {
-  $titles: ();
-  @each $title, $variation in ($title-settings) {
-    @if str-index(quote($title), 'h') == 1 {
-      $titles: append($titles, $title, comma);
+@mixin _core-reset-heading-scheme($legacy: false) {
+  @if (map-get($reset-settings, heading)) {
+    $titles: ();
+    @each $title, $variation in ($title-settings) {
+      @if str-index(quote($title), 'h') == 1 {
+        $titles: append($titles, $title, comma);
+      }
     }
-  }
-  #{$titles} {
-    @include scheme-element-text-color(title neutral);
+    #{$titles} {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
   }
 }

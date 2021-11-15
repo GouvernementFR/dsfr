@@ -3,6 +3,8 @@
 /// @group core
 ////
 
-@include title-selector {
-  @include scheme-element-text-color(title neutral);
+@mixin _core-typography-scheme($legacy: false) {
+  @include title-selector {
+    @include scheme-element-text-color(title neutral, $legacy);
+  }
 }

@@ -3,24 +3,26 @@
 /// @group modal
 ////
 
-#{ns(modal)} {
-  // @include scheme-element-bg-color(overlay); // @TODO: scheme overlay
+@mixin _modal-scheme($legacy: false) {
+  #{ns(modal)} {
+    @include modal-overlay($legacy);
 
-  @include body {
-    @include scheme-element-bg-color(default neutral);
+    @include body {
+      @include scheme-element-bg-color(default neutral, $legacy);
 
-    &#{ns(scroll-shadow)} {
-      #{ns(modal)}__footer {
-        @include scheme-element-bg-color(elevated neutral);
+      &#{ns(scroll-shadow)} {
+        #{ns(modal)}__footer {
+          @include scheme-element-bg-color(elevated neutral, $legacy);
+        }
       }
     }
-  }
 
-  &__title {
-    @include scheme-element-text-color(title neutral);
-  }
+    &__title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
 
-  &__footer {
-    @include scheme-element-bg-color(default neutral);
+    &__footer {
+      @include scheme-element-bg-color(default neutral, $legacy);
+    }
   }
 }

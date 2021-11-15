@@ -3,16 +3,23 @@
 /// @group tag
 ////
 
-#{ns(tag)} {
-  @include scheme-element-text-color(label neutral);
-  @include scheme-element-bg-color(contrast neutral);
-}
+@mixin _tag-scheme($legacy: false) {
+  #{ns(tag)} {
+    @include scheme-element-text-color(label neutral, $legacy);
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+  }
 
-@include clickable-selector {
-  &#{ns(tag)} {
-    @include scheme-element-text-color(action-high blue-france);
-    @include scheme-element-bg-color(action-low blue-france);
+  @include clickable-selector {
+    &#{ns(tag)} {
+      @include scheme-element-text-color(action-high blue-france, $legacy);
+      @include scheme-element-bg-color(action-low blue-france, $legacy);
 
-    @include disabled(true, true);
+      @include disabled($legacy, true, true);
+
+      @include accent-modifiers {
+        @include scheme-element-text-color(action-high accent, $legacy);
+        @include scheme-element-bg-color(action-low accent, $legacy);
+      }
+    }
   }
 }

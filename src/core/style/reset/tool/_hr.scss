@@ -13,6 +13,6 @@
   background-position: 0 0;
 }
 
-@mixin build-hr-scheme() {
-  @include scheme-element-bg-image-color(border-default neutral);
+@mixin build-hr-scheme($legacy) {
+  @include scheme-element-bg-image-color(border-default neutral, $legacy);
 }

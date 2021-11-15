@@ -3,15 +3,21 @@
 /// @group callout
 ////
 
-#{ns(callout)} {
-  @include scheme-element-bg-color(contrast neutral);
-  @include scheme-element-box-shadow-color(plain blue-france, false, left-1v-in);
+@mixin _callout-scheme($legacy: false) {
+  #{ns(callout)} {
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+    @include scheme-element-box-shadow-color(default blue-france, $legacy, false, left-1v-in);
 
-  @include before {
-    @include scheme-element-text-color(title neutral);
-  }
+    @include before {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
 
-  @include title {
-    @include scheme-element-text-color(title neutral);
+    @include title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
+
+    @include accent-modifiers {
+      @include scheme-element-box-shadow-color(default accent, $legacy, false, left-1v-in);
+    }
   }
 }
