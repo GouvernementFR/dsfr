@@ -7,9 +7,4 @@
     data.addon = true;
     data.button = input.button || {label:'Envoyer', type: 'submit'};
 %>
-<% if (input.group === true) { %>
 <%- include('../../template/ejs/input-group', {input:data}); %>
-<% }
-else { %>
-<%- include('../../template/ejs/input', {input:data}); %>
-<% } %>

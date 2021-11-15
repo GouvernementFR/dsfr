@@ -40,7 +40,7 @@ if (fieldset.valid !== undefined) {
     fieldsetAttrs['role'] = 'group';
 }
 
-if (fieldset.disabled === true) fieldsetAttrs['disabled'] = 'disabled';
+if (fieldset.disabled === true) fieldsetAttrs['disabled'] = '';
 
 if (fieldset.hint != undefined) describedby.push(fieldset.id + '-desc-hint');
 if (fieldset.error != undefined) describedby.push(fieldset.id + '-desc-error');

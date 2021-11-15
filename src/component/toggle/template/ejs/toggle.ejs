@@ -41,10 +41,12 @@
   if (toggle.left !== undefined) {
     classes.push(prefix +'-toggle--label-left');
   }
+  if (toggle.disabled) inputAttr['disabled'] = '';
+  if (toggle.checked) inputAttr['checked'] = '';
 %>
 
 <div <%- includeClasses(classes)%>>
-  <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%> id="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>"<% if(toggle.disabled){ %>disabled="disabled"<%}%><% if(toggle.checked){ %>checked="true"<%}%>>
+  <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%> id="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>">
   <label class="<%= prefix %>-toggle__label" for="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>" <% if(toggle.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- toggle.label %></label>
   <% if(toggle.hint){ %><p class="<%= prefix %>-hint-text" id="<%= toggle.groupId %><%= toggle.id %>-hint-text">Texte d’aide pour clarifier l’action</p><% } %>
 </div>
