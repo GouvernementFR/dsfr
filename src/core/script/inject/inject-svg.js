@@ -1,4 +1,5 @@
 import { Instance } from '../api/register/instance.js';
+import { setAttributes } from '../api/utilities/attribute';
 
 class InjectSvg extends Instance {
   static get instanceClassName () {
@@ -55,6 +56,11 @@ class InjectSvg extends Instance {
     }
 
     this.node.setAttribute('data-fr-inject-svg', true);
+    const svgAttributes = {
+      'aria-hidden': true,
+      focusable: false
+    };
+    setAttributes(this.svg, svgAttributes);
     this.node.replaceChild(this.svg, this.img);
   }
 
