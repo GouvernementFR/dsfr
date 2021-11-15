@@ -10,4 +10,5 @@
   background-color: transparent;
   font-family: inherit;
   border: none;
+  margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
 }
