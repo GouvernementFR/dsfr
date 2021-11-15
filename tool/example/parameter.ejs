@@ -4,17 +4,13 @@ const attrModal = [];
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
-const links = {
-  items: [
-    {
-      classes: [prefix + "-display-button"],
-      icon: 'theme-fill',
-      iconPlace: 'standalone',
-      label: 'Paramètres d\'affichage',
-      attributes: {...attrModal},
-      tag: 'button'
-    }
-  ]
+const button = {
+    classes: [prefix + "-display-button"],
+    icon: 'theme-fill',
+    attributes: {...attrModal},
+    tag: 'button',
+    secondary: true,
+    size: 'lg'
 };
 
 let dataModal = {
@@ -27,6 +23,6 @@ let dataModal = {
 %>
 
 
-<%- include('../../src/component/link/example/sample/link-default', {link:links.items[0]}, true) %>
+<%- include('../../src/component/button/example/sample/button-default', {button: button}, true) %>
 
 <%- include('../../src/component/modal/template/ejs/modal.ejs', {modal:dataModal}, true); %>
