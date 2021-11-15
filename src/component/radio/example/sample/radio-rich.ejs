@@ -6,11 +6,6 @@ let data = {...radio, ...jsonData};
 data.label = radio.label || 'Label radio';
 data.image = radio.image || imgData('img/placeholder.1x1.png');
 data.rich = true;
-
 %>
-<% if (/*locals.group === */true) { %>
-    <%- include('../../template/ejs/radio-group', {radio: data}); %>
-<% }
-else { %>
-    <%- include('../../template/ejs/radio', {radio: data}); %>
-<% } %>
+
+<%- include('../../template/ejs/radio-group', {radio: data}); %>
