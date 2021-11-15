@@ -15,6 +15,8 @@
 
 * upload.error (string, optional) : ajoute un texte d'erreur
 
+* upload.valid (string, optional) : ajoute un texte de succès
+
 * upload.success (string, optional) : ajoute un texte de succès
 
 * upload.multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
@@ -31,6 +33,7 @@
  let labelAttrs = upload.labelAttrs || {};
  let labelClass = upload.labelClasses || [];
  if (upload.error) groupClasses.push(prefix + '-input-group--error');
+ if (upload.valid) groupClasses.push(prefix + '-input-group--valid');
  if (upload.disabled) uploadAttrs['disabled'] = '';
  if (upload.multiple) uploadAttrs['multiple'] = '';
  %>
@@ -38,5 +41,5 @@
 <div <%- includeClasses(groupClasses); %>>
   <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
   <input <%- includeClasses(uploadClasses); %> <%- includeAttrs(uploadAttrs); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
-  <%- include('../../../form/template/ejs/message', upload); %>
+  <%- include('../../../form/template/ejs/message', {message: upload}); %>
 </div>

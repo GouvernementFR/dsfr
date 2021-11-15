@@ -12,7 +12,7 @@
     ];
     let data = {...select, ...jsonData};
 %>
-<% if (select.group === true) { %>
+<% if (/*select.group === */true) { %>
 <%- include('../../template/ejs/select-group', {select: data}); %>
 <% }
 else { %>
