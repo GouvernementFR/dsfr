@@ -5,6 +5,11 @@
 
 @mixin _radio-scheme-rich($legacy: false) {
   #{ns(radio-rich)} {
+
+    &__img {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
+    }
+
     input[type="radio"] {
       + label {
         @include scheme-element-box-shadow-color(default neutral, $legacy, false, all-1-in);
@@ -12,10 +17,6 @@
 
         @include before {
           @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(false, sm));
-        }
-
-        @include after {
-          @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
         }
       }
 

@@ -36,7 +36,7 @@
 <%- include('../../../form/template/ejs/label', {label: {...radio, ...element, classes: labelClass, attributes: labelAttr}}); %>
 <%- include('../../../form/template/ejs/message', {message: {hint: radio.hint} }); %>
 <% if (radio.image !== undefined) { %>
-  <div class="<%= prefix %>-radio__img" <%- includeAttrs(imageAttrs) %>>
+  <div class="<%= prefix %>-radio-rich__img" <%- includeAttrs(imageAttrs) %>>
       <%- include('../../../../core/template/ejs/media/img.ejs', {media: radio.image}); %>
   </div>
 <% } %>

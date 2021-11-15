@@ -26,21 +26,6 @@
         @include margin-top(-2v);
       }
 
-      /**
-        * On délimite l'espace pour l'image de droite et une icône illustrative par défaut
-        */
-      @include after('') {
-        @include absolute(50%, 0);
-        @include margin(1v);
-        @include margin-top(-10v);
-
-        @include padding-left(1v);
-        @include display-flex(null, center, center);
-        @include size(21v, 20v);
-        vertical-align: middle;
-        // TODO: insérer la font icon ilustrative ifi
-      }
-
       #{ns(hint-text)} {
         @include margin-left(0);
       }
@@ -60,12 +45,14 @@
     }
   }
 
-  #{ns(radio)}__img {
+  &__img {
+    @include padding-left(1v);
     @include size(20v, 20v);
     @include absolute(1v, 1v);
+    @include display-flex;
     pointer-events: none;
 
-    img {
+    img, svg {
       max-width: 100%;
       object-fit: cover;
     }
@@ -106,7 +93,7 @@
           @include margin-bottom(2v);
         }
 
-        #{ns(radio)}__img {
+        #{ns(radio-rich)}__img {
           right: space(4v);
         }
       }
@@ -120,12 +107,12 @@
       }
 
       &:first-child {
-        #{ns(radio)}__img {
+        #{ns(radio-rich)}__img {
           top: space(4v);
         }
       }
 
-      #{ns(radio)}__img {
+      &__img {
         top: space(3v);
       }
     }
