@@ -313,6 +313,10 @@ class Instance {
   getRect () {
     return this.node.getBoundingClientRect();
   }
+
+  get isLegacy () {
+    return state.isLegacy;
+  }
 }
 
 class KeyAction {

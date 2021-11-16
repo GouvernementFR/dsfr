@@ -12,12 +12,12 @@
 
     // Outline variant
     &--secondary {
-      @include scheme-element-bg-transparent(true);
+      @include scheme-element-bg-transparent($legacy, true);
       @include scheme-element-text-color(action-high blue-france, $legacy);
       @include scheme-element-box-shadow-color(action-high blue-france, $legacy);
 
       @include disabled($legacy, true, false, true, true) {
-        @include scheme-element-bg-transparent(true);
+        @include scheme-element-bg-transparent($legacy, true);
       }
     }
   }

@@ -65,12 +65,3 @@
     table-layout: fixed;
   }
 }
-
-/* Style bordered, enleve le style even/odd  */
-#{ns(table--bordered)} {
-  tbody {
-    tr:nth-child(even) {
-      @include scheme-element-bg-transparent(false);
-    }
-  }
-}

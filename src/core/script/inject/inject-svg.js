@@ -11,7 +11,9 @@ class InjectSvg extends Instance {
       this.img = this.node.querySelector('img');
     }
 
-    this.fetch();
+    if (!this.isLegacy) {
+      this.replace();
+    }
   }
 
   get proxy () {
@@ -43,6 +45,11 @@ class InjectSvg extends Instance {
   }
 
   replace () {
+    if (!this.svg) {
+      this.fetch();
+      return;
+    }
+
     if (this.imgID && typeof this.imgID !== 'undefined') {
       this.svg.setAttribute('id', this.imgID);
     }

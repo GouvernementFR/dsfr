@@ -51,6 +51,11 @@
         tbody {
           tr {
             @include scheme-element-box-shadow-color(default accent, $legacy, false, bottom-1-in);
+            
+            /* Style bordered, enleve le style even/odd  */
+            &:nth-child(even) {
+              @include scheme-element-bg-transparent($legacy, true);
+            }
           }
         }
       }
