@@ -7,7 +7,8 @@
   #{ns(footer)} {
     @include scheme-element-box-shadow-color(plain blue-france default neutral, $legacy, false, top-2-out bottom-1-in);
 
-    &__content-link {
+    &__content-link,
+    &__top-cat {
       @include scheme-element-text-color(title neutral, $legacy);
     }
 
