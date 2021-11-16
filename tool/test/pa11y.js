@@ -23,7 +23,7 @@ const displayResults = (results, darkmode) => {
 // Run pa11y tests on each package
 const runPa11yTests = async (urls) => {
   const browser = await Puppeteer.launch();
-  const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label';
+  const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label, [class*="--disabled"] > label';
 
   const tests = urls.map(async (url) => {
     const page = await browser.newPage();
@@ -47,7 +47,7 @@ const runPa11yTests = async (urls) => {
       hideElements: hideElements,
       ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
       actions: [
-        'check field #theme-checkbox'
+        'check field #fr-radios-theme-dark'
       ]
     }).then(results => {
       displayResults(results, true);
