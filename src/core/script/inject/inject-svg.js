@@ -45,29 +45,30 @@ class InjectSvg extends Instance {
   }
 
   replace () {
-    if (this.svg) {
-      if (this.imgID && typeof this.imgID !== 'undefined') {
-        this.svg.setAttribute('id', this.imgID);
-      }
-
-      if (this.imgClass && typeof this.imgClass !== 'undefined') {
-        this.svg.setAttribute('class', this.imgClass);
-      }
-
-      if (this.svg.hasAttribute('xmlns:a')) {
-        this.svg.removeAttribute('xmlns:a');
-      }
-
-      this.node.setAttribute('data-fr-inject-svg', true);
-      const svgAttributes = {
-        'aria-hidden': true,
-        focusable: false
-      };
-      setAttributes(this.svg, svgAttributes);
-      this.node.replaceChild(this.svg, this.img);
-    } else {
+    if (!this.svg) {
       this.fetch();
+      return;
     }
+
+    if (this.imgID && typeof this.imgID !== 'undefined') {
+      this.svg.setAttribute('id', this.imgID);
+    }
+
+    if (this.imgClass && typeof this.imgClass !== 'undefined') {
+      this.svg.setAttribute('class', this.imgClass);
+    }
+
+    if (this.svg.hasAttribute('xmlns:a')) {
+      this.svg.removeAttribute('xmlns:a');
+    }
+
+    this.node.setAttribute('data-fr-inject-svg', true);
+    const svgAttributes = {
+      'aria-hidden': true,
+      focusable: false
+    };
+    setAttributes(this.svg, svgAttributes);
+    this.node.replaceChild(this.svg, this.img);
   }
 
   restore () {

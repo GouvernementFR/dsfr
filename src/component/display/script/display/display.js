@@ -7,11 +7,16 @@ class Display extends api.core.Instance {
   }
 
   init () {
-    this.addDescent(api.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
     this.radios = this.querySelectorAll(DisplaySelector.RADIO_BUTTONS);
-    this.changing = this.change.bind(this);
-    for (const radio of this.radios) radio.addEventListener('change', this.changing);
-    this.ascend(api.scheme.SchemeEmission.ASK);
+
+    if (api.scheme) {
+      this.changing = this.change.bind(this);
+      for (const radio of this.radios) radio.addEventListener('change', this.changing);
+      this.addDescent(api.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
+      this.ascend(api.scheme.SchemeEmission.ASK);
+    } else {
+      this.querySelector(DisplaySelector.FIELDSET).setAttribute('disabled', '');
+    }
   }
 
   get scheme () {
@@ -19,7 +24,7 @@ class Display extends api.core.Instance {
   }
 
   set scheme (value) {
-    if (this._scheme === value) return;
+    if (this._scheme === value || !api.scheme) return;
     switch (value) {
       case api.scheme.SchemeValue.SYSTEM:
       case api.scheme.SchemeValue.LIGHT:

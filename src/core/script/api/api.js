@@ -25,10 +25,13 @@ Object.defineProperty(api, 'preventManipulation', {
   get: () => options.preventManipulation
 });
 
-Object.defineProperty(api, 'setLegacy', {
-  set: (value) => { state.isLegacy = value; },
+Object.defineProperty(api, 'isLegacy', {
   get: () => state.isLegacy
 });
+
+api.setLegacy = () => {
+  state.isLegacy = true;
+};
 
 api.ns = ns;
 api.addClass = addClass;

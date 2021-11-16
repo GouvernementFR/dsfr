@@ -1,6 +1,6 @@
 import api from './index.js';
 
 /* legacy code here */
-api.setLegacy = true;
+api.setLegacy();
 
 export default api;
