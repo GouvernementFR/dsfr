@@ -8,7 +8,7 @@
     &__link {
       @include scheme-element-text-color(action-high blue-france, $legacy);
       @include scheme-element-box-shadow-color(default neutral, $legacy);
-      @include scheme-element-bg-transparent($legacy, true);
+      // @include scheme-element-bg-transparent($legacy, true);
       @include disabled($legacy, true, false, true, true);
     }
   }
