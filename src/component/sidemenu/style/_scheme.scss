@@ -69,17 +69,9 @@
       @include scheme-element-bg-color(default neutral, $legacy);
     }
 
-    @include respond-from(md) {
-      @include after {
-        @include scheme-element-bg-transparent($legacy, true);
-      }
-    }
   }
 
   #{ns(sidemenu__link)} {
     @include scheme-element-text-color(action-high neutral, $legacy);
-    @include after {
-      @include scheme-element-bg-transparent($legacy, true);
-    }
   }
 }
