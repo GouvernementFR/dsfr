@@ -60,6 +60,11 @@
   @include set-title-margin(0);
   @include display-flex(row, center, null, null, true);
   @include z-index(over);
+  @include hover-media-query {
+    @include hover-type-selector($action-elements, underline) {
+      @include enable-blend;
+    }
+  }
 }
 
 @mixin _build-link($settings) {

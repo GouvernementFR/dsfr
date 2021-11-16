@@ -10,7 +10,9 @@
     background-image: none !important;
     outline-width: 0 !important;
     @include before('', block) {
-      background-image: radial-gradient(circle at center, var(--hover-hsla), var(--hover-hsla) 10%);
+      @include hover-media-query {
+        @include hover-blend-background;
+      }
       @include absolute(0, 0, 0, 0, 100%, 100%);
       outline-offset: 2px;
       outline-style: inherit;
