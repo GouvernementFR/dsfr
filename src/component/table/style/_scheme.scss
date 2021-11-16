@@ -54,7 +54,7 @@
             
             /* Style bordered, enleve le style even/odd  */
             &:nth-child(even) {
-              @include scheme-element-bg-transparent($legacy, false);
+              @include scheme-element-bg-transparent($legacy, true);
             }
           }
         }
