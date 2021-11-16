@@ -15,5 +15,9 @@
     li > a {
       @include scheme-element-text-color(action-high neutral, $legacy);
     }
+
+    @include accent-modifiers {
+      @include scheme-element-bg-color(contrast accent, $legacy);
+    }
   }
 }
