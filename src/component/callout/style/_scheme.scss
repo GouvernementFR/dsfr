@@ -18,6 +18,7 @@
 
     @include accent-modifiers {
       @include scheme-element-box-shadow-color(default accent, $legacy, false, left-1v-in);
+      @include scheme-element-bg-color(contrast accent, $legacy);
     }
   }
 }
