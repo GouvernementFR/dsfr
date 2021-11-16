@@ -10,7 +10,6 @@
   @include set-title-margin(0 0 4v);
 
   &__link {
-    @include scheme-element-bg-transparent(true);
     @include margin-x(1v);
     @include margin-bottom(2v);
   }

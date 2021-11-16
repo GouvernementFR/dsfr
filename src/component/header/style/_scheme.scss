@@ -34,7 +34,7 @@
       }
 
       #{ns(btn)} {
-        @include scheme-element-bg-transparent(true);
+        @include scheme-element-bg-transparent($legacy, true);
         @include scheme-element-text-color(action-high blue-france, $legacy);
 
         &--menu {

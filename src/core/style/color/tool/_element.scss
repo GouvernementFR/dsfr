@@ -60,10 +60,17 @@ $ACCENT: none;
   @include _scheme-element(background-color, background, $decisions, $legacy, $important, $COLOR, true);
 }
 
-@mixin scheme-element-bg-transparent($hover: false) {
-  background-color: transparent;
-  @if $hover {
-    --blend: inherit;
+@mixin scheme-element-bg-transparent($legacy: false, $hover: false) {
+  @if $legacy {
+    @include legacy(ie11) {
+      background-color: transparent;
+    }
+  }
+  @else {
+    background-color: transparent;
+    @if $hover {
+      --blend: inherit;
+    }
   }
 }
 
