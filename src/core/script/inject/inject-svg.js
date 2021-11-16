@@ -11,7 +11,9 @@ class InjectSvg extends Instance {
       this.img = this.node.querySelector('img');
     }
 
-    this.fetch();
+    if (!this.isLegacy) {
+      this.replace();
+    }
   }
 
   get proxy () {
@@ -43,25 +45,29 @@ class InjectSvg extends Instance {
   }
 
   replace () {
-    if (this.imgID && typeof this.imgID !== 'undefined') {
-      this.svg.setAttribute('id', this.imgID);
-    }
+    if (this.svg) {
+      if (this.imgID && typeof this.imgID !== 'undefined') {
+        this.svg.setAttribute('id', this.imgID);
+      }
 
-    if (this.imgClass && typeof this.imgClass !== 'undefined') {
-      this.svg.setAttribute('class', this.imgClass);
-    }
+      if (this.imgClass && typeof this.imgClass !== 'undefined') {
+        this.svg.setAttribute('class', this.imgClass);
+      }
 
-    if (this.svg.hasAttribute('xmlns:a')) {
-      this.svg.removeAttribute('xmlns:a');
-    }
+      if (this.svg.hasAttribute('xmlns:a')) {
+        this.svg.removeAttribute('xmlns:a');
+      }
 
-    this.node.setAttribute('data-fr-inject-svg', true);
-    const svgAttributes = {
-      'aria-hidden': true,
-      focusable: false
-    };
-    setAttributes(this.svg, svgAttributes);
-    this.node.replaceChild(this.svg, this.img);
+      this.node.setAttribute('data-fr-inject-svg', true);
+      const svgAttributes = {
+        'aria-hidden': true,
+        focusable: false
+      };
+      setAttributes(this.svg, svgAttributes);
+      this.node.replaceChild(this.svg, this.img);
+    } else {
+      this.fetch();
+    }
   }
 
   restore () {
