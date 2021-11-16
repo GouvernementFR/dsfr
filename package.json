@@ -80,7 +80,7 @@
     "sass-true": "^5.0.0",
     "sassdoc": "^2.7.2",
     "standard": "^14.3.4",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.18.0",
     "svgo": "^2.3.0",
