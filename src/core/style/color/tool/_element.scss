@@ -5,41 +5,21 @@
 
 $ACCENT: none;
 
-@mixin _scheme-element($prop, $part, $decisions, $legacy: false, $important: false, $value: $COLOR, $hover: false) {
-  $result: str-replace($value, '$COLOR', '$color#1');
-  $length: length($decisions) / 2;
-  @for $i from 1 through $length {
-    $token: nth($decisions, $i * 2 - 1);
-    $tint: nth($decisions, $i * 2);
-    @if $tint == accent {
-      $tint: $ACCENT;
-    }
-    $needle: '$color#1';
-    @if length($decisions) > 2 {
-      $needle: '$color##{$i}';
-    }
-    $part-token: _get-part-token($part, $token);
-    $p: map-get($part-token, part);
-    $token: map-get($part-token, token);
+@mixin _scheme-element($prop, $context, $decisions, $legacy: false, $important: false, $value: $COLOR, $hover: false) {
+  $tokens: _get-tokens($context, $decisions);
+  $result: _get-result($tokens, $legacy, $value);
 
-    @if $tint == neutral {
-      $tint: _get-neutral-tint($p, $token);
-    }
-    $color: _get-value($p, $token, $tint, $legacy);
-    $result: _replace_color($result, $color, $needle);
+  @if $important {
+    $result: #{$result} !important;
+  }
 
+  @if $hover and $context == background and $legacy == false and length($tokens) == 1 {
+    $blend: var(#{_get-decision-prop(nth($tokens, 1))}-blend);
     @if $important {
-      $result: #{$result} !important;
+      $blend: #{$blend} !important;
     }
 
-    @if $hover and $part == background and $p == background and $legacy == false {
-      $blend: var(#{_get-decision-prop($part, $token, $tint)}-blend);
-      @if $important {
-        $blend: #{$blend} !important;
-      }
-
-      --blend: #{$blend};
-    }
+    --blend: #{$blend};
   }
 
   @if $legacy {
@@ -55,6 +35,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de background sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 @mixin scheme-element-bg-color($decisions, $legacy: false, $important: false) {
   @include _scheme-element(background-color, background, $decisions, $legacy, $important, $COLOR, true);
@@ -77,6 +58,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de background sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 @mixin scheme-element-bg-image-color($decisions, $legacy: false, $important: false, $value: linear-gradient(0deg, $COLOR, $COLOR)) {
   $d: length($decisions) / 2;
@@ -94,6 +76,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de texte sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 @mixin scheme-element-text-color($decisions, $legacy: false, $important: false) {
   @include _scheme-element(color, text, $decisions, $legacy, $important);
@@ -102,6 +85,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de fill sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 @mixin scheme-element-fill-color($decisions, $legacy: false, $important: false) {
   @include _scheme-element(fill, background , $decisions, $legacy, $important);
@@ -110,6 +94,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de border sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés de border
 /// @param {String} $side - le côté affecté. valeurs: top, right, bottom, left
@@ -130,6 +115,7 @@ $ACCENT: none;
 /// Ajout d'une couleur d'outline sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés d'outline
 @mixin scheme-element-outline-color($decisions, $legacy: false, $important: false, $value:1px solid $COLOR) {
@@ -139,6 +125,7 @@ $ACCENT: none;
 /// Ajout d'une couleur de box-shadow sur un élément
 /// @access public
 /// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés de box-shadow
 @mixin scheme-element-box-shadow-color($decisions, $legacy: false, $important: false, $value: all-1-in) {

@@ -6,8 +6,8 @@
 @mixin build-decisions($with-theme: false) {
   $options: ();
   $decisions: ();
-  @each $part, $tokens in $scheme-decisions {
-    @each $token, $families in $tokens {
+  @each $context, $uses in $scheme-decisions {
+    @each $use, $families in $uses {
       @each $family, $shade in $families {
         @each $tint, $shades in map-get($scheme-sets, $family) {
           @if map-has-key($shades, $shade) {
@@ -17,16 +17,18 @@
               $value: var(--#{_get-set-prop(map-get($shades, $shade))});
             }
 
-            #{_get-decision-prop($part, $token, $tint)}: $value;
+            $token: (context: $context, use: $use, tint: $tint);
 
-            @if $part == background {
+            #{_get-decision-prop($token)}: $value;
+
+            @if $context == background {
               $option: nth($set, 1);
               $blend: _get-blend-hsl-color($option, light);
               @if $with-theme {
                 $blend: var(--#{_get-set-prop(map-get($shades, $shade))}-blend);
               }
 
-              #{_get-decision-prop($part, $token, $tint)}-blend: $blend;
+              #{_get-decision-prop($token)}-blend: $blend;
             }
           }
         }

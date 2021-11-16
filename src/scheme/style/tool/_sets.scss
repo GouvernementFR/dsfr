@@ -15,7 +15,7 @@
     system: (),
     accent: (),
   );
-  @each $token, $families in $background {
+  @each $use, $families in $background {
     @each $family, $shade in $families {
       $list: map-get($lookup, $family);
       @if index($list, $shade) == null {

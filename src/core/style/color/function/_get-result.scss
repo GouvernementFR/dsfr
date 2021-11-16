@@ -1,0 +1,27 @@
+////
+/// Core Function : Color get result
+/// @group core
+////
+
+/// Obtenir le résultat de la valeur traité grâce au token de décision.
+/// @access private
+/// @param {String} $part - contexte dans lequel est appliqué la couleur
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
+/// @param {Boolean} $important - Si true, applique !important à la règle css
+/// @param {} $value - définition de la valeur à traiter
+/// @return {String} Retourne une map contenant $part $token
+@function _get-result($tokens, $legacy: false, $value: $COLOR) {
+  $length: length($tokens);
+  $result: str-replace($value, '$COLOR', '$color#1');
+  @for $i from 1 through $length {
+    $token: nth($tokens, $i);
+    $needle: '$color#1';
+    @if $length > 1 {
+      $needle: '$color##{$i}';
+    }
+    $color: _get-value($token, $legacy);
+    $result: _replace_color($result, $color, $needle);
+  }
+  @return $result;
+}

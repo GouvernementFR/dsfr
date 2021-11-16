@@ -5,23 +5,23 @@
 
 /// Retourne la nuance correspondante
 /// @access private
-/// @param {String} $part - la partie sur laquelle cette couleur sera utilisée (background, text, border)
-/// @param {String} $token - identifiant tokenisé (voir settings/decisions)
+/// @param {String} $context - contexte de l'élément recevant la couleur (background / text / border / artwork)
+/// @param {String} $use - usage de la couleur
 /// @param {String} $family - famille de couleur (neutral, primary, system, accent)
 /// @return {String} Retourne la combinaison de couleur correspondante
-@function _get-scheme-shade($part, $token, $family) {
-  @if not map-has-key($scheme-decisions, $part) {
-    @error ('no $part ' + $part + ' in $scheme-decisions');
+@function _get-scheme-shade($context, $use, $family) {
+  @if not map-has-key($scheme-decisions, $context) {
+    @error ('no $context ' + $context + ' in $scheme-decisions');
   }
-  $tokens: map-get($scheme-decisions, $part);
+  $uses: map-get($scheme-decisions, $context);
 
-  @if not map-has-key($tokens, $token) {
-    @error ('no $token ' + $token + ' in $scheme-decisions ' + $part);
+  @if not map-has-key($uses, $use) {
+    @error ('no $use ' + $use + ' in $scheme-decisions ' + $context);
   }
-  $families: map-get($tokens, $token);
+  $families: map-get($uses, $use);
 
   @if not map-has-key($families, $family) {
-    @error ('no $family ' + $family + ' in $scheme-decisions ' + $part + ' ' + $token);
+    @error ('no $family ' + $family + ' in $scheme-decisions ' + $context + ' ' + $use);
   }
   @return nth(map-get($families, $family), 1);
 }

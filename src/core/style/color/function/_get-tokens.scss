@@ -1,0 +1,40 @@
+////
+/// Core Function : Color get part token
+/// @group core
+////
+
+/// Assainissement des tokens de décisions .
+/// @access private
+/// @param {String} $context - contexte dans lequel est appliqué la couleur
+/// @param {String} $decisions - token de décision
+/// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
+/// @param {Boolean} $important - Si true, applique !important à la règle css
+/// @param {} $value - définition de la valeur à traiter
+/// @return {String} Retourne une map contenant les tokens de décisions assainis.
+@function _get-tokens($context, $decisions) {
+  $length: length($decisions) / 2;
+  $tokens: ();
+  @for $i from 1 through $length {
+    $use: nth($decisions, $i * 2 - 1);
+    $tint: nth($decisions, $i * 2);
+    @if $tint == accent {
+      $tint: $ACCENT;
+    }
+    $part: $context;
+    $found: false;
+    @each $p, $tokens in $scheme-decisions {
+      @if str-index($use, $p) == 1 and not $found {
+        $use: str-slice($use, str-length($p) + 2, str-length($use));
+        $part: $p;
+        $found: true;
+      }
+    }
+
+    @if $tint == neutral {
+      $tint: _get-neutral-tint($part, $use);
+    }
+
+    $tokens: append($tokens, (context: $part, use: $use, tint: $tint));
+  }
+  @return $tokens;
+}

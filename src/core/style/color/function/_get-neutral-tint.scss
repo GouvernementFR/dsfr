@@ -5,12 +5,11 @@
 
 /// Obtenir le nom de la teinte si non définie
 /// @access private
-/// @param {String} $shade - $shade - nuance de couleur (black, darkest, darker, dark, strongest, stronger, strong, soft, softer, softest, light, lighter, lightest, white, elevated, inverted, main)
-/// @param {String} $family - famille de couleur (neutral, primary, system, accent)
-/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String} $context - contexte de l'élément recevant la couleur (background / text / border / artwork)
+/// @param {String} $use - usage de la couleur
 /// @return {String} Retourne le nom de la teinte
-@function _get-neutral-tint($part, $token) {
-  $shade: _get-scheme-shade($part, $token, neutral);
+@function _get-neutral-tint($context, $use) {
+  $shade: _get-scheme-shade($context, $use, neutral);
   $neutral: map-get($scheme-sets, neutral);
   @each $tint, $shades in $neutral {
     @if map-has-key($shades, $shade) {
