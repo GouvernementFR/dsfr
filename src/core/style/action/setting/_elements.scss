@@ -15,7 +15,7 @@ $action-elements: (
     ),
     hover: (
       selector: '&[href]',
-      type: blend
+      type: underline
     ),
     disabled: (
       selector: '&:not([href])'

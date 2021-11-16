@@ -4,7 +4,15 @@
 ////
 
 @include hover-media-query {
-  @include hover-type-selector($action-elements, blend) {
+  :root {
+    @include enable-blend;
+  }
+
+  @include hover-type-selector($action-elements, all) {
     @include hover-blend();
+  }
+
+  @include hover-type-selector($action-elements, underline) {
+    @include disable-blend;
   }
 }
