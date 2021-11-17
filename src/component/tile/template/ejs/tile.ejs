@@ -23,24 +23,22 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let tile = locals.tile || {};
+ let tile = locals.tile || {};
  let classes = tile.classes || [];
- classes.push(prefix + '-tile');
+ classes.push(`${prefix}-tile`);
 
- if (tile.enlarge) classes.push(prefix + '-enlarge-link');
-
+ if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
  if (tile.horizontal !== undefined) {
-    classes.push(prefix +'-tile--horizontal');
+    classes.push(`${prefix}-tile--horizontal`);
  }
-
  if (tile.horizontalMd !== undefined) {
-    classes.push(prefix +'-tile--horizontal-md');
+    classes.push(`${prefix}-tile--horizontal-md`);
  }
-
  if (tile.verticalMd !== undefined) {
-    classes.push(prefix +'-tile--vertical-md');
+    classes.push(`${prefix}-tile--vertical-md`);
  }
 
+ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
  %>
 
 <div <%- includeClasses(classes)%>>
