@@ -52,7 +52,8 @@
     @include display-flex;
     pointer-events: none;
 
-    img, svg {
+    img,
+    svg {
       max-width: 100%;
       object-fit: cover;
     }

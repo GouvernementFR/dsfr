@@ -68,7 +68,6 @@
     @at-root #{ns(sidemenu__inner)} > #{&} {
       @include scheme-element-bg-color(default neutral, $legacy);
     }
-
   }
 
   #{ns(sidemenu__link)} {
