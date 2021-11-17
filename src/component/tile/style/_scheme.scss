@@ -5,12 +5,11 @@
 
 @mixin _tile-scheme($legacy: false) {
   #{ns(tile)} {
+    @include scheme-element-bg-color(default neutral, $legacy);
     @include scheme-element-box-shadow-color(default neutral plain blue-france, $legacy, false,  all-1-in bottom-1v-in);
 
-    @include scheme-element-bg-color(default neutral, $legacy);
-
-    &#{ns(enlarge-link)} {
-      @include scheme-element-bg-color(default neutral, $legacy);
+    &--neutral {
+      @include scheme-element-bg-color(contrast neutral, $legacy);
     }
   }
 }

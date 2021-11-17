@@ -1,7 +1,9 @@
 <%#
 # paramètres card
 
-* card.title (string, required) : Titre de la card
+* card.title (string, required) : Titre de la carte
+
+* card.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la carte
 
 * card.horizontal (boolean, optional) : si true, passe la card en mode horizontal
 
@@ -23,13 +25,12 @@
 <%
 let card = locals.card || {};
 let classes = card.classes || [];
+classes.push(`${prefix}-card`);
 
-classes.push(prefix + '-card');
-
-if (card.horizontal !== undefined) classes.push(prefix + '-card--horizontal');
-if (card.enlarge) classes.push(prefix + '-enlarge-link');
-if (card.arrow === false) classes.push(prefix + '-card--no-arrow');
-if (card.accent !== undefined) classes.push(prefix + '-card--' + card.accent);
+if (card.enlarge) classes.push(`${prefix}-enlarge-link`);
+if (card.horizontal !== undefined) classes.push(`${prefix}-card--horizontal`);
+if (card.arrow === false) classes.push(`${prefix}-card--no-arrow`);
+if (card.accent !== undefined) classes.push(`${prefix}-card--${card.accent}`);
 %>
 <div <%- includeClasses(classes) %>>
     <div class="<%= prefix %>-card__body">
