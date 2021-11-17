@@ -1,0 +1,48 @@
+////
+/// Core Function : Color tokenize
+/// @group core
+////
+
+/// Mise en forme des tokens de décisions .
+/// @access private
+/// @param {String} $context - contexte dans lequel est appliqué la couleur
+/// @param {String} $decisions - token de décision
+/// @return {String} Retourne une map contenant les tokens de décisions assainis.
+@function _tokenize($context, $decisions) {
+  $length: length($decisions) / 2;
+  $tokens: ();
+  @for $i from 1 through $length {
+    $use: nth($decisions, $i * 2 - 1);
+    $tint: nth($decisions, $i * 2);
+    @if $tint == accent {
+      $tint: $ACCENT;
+    }
+    $ctx: $context;
+    $found: false;
+    @each $c, $tokens in $scheme-decisions {
+      @if str-index($use, $c) == 1 and not $found {
+        $use: str-slice($use, str-length($c) + 2, str-length($use));
+        $part: $c;
+        $found: true;
+      }
+    }
+
+    @if $tint == neutral {
+      $shade: _get-scheme-shade($ctx, $use, neutral);
+      $neutral: map-get($scheme-sets, neutral);
+      $found: false;
+      @each $t, $shades in $neutral {
+        @if map-has-key($shades, $shade) and not $found {
+          $found: true;
+          $tint: $t;
+        }
+      }
+      @if not $found {
+        @error '$shade #{$shade} doesn\'t exist';
+      }
+    }
+
+    $tokens: append($tokens, (context: $ctx, use: $use, tint: $tint));
+  }
+  @return $tokens;
+}

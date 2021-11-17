@@ -6,7 +6,7 @@
 $ACCENT: none;
 
 @mixin _scheme-element($prop, $context, $decisions, $legacy: false, $important: false, $value: $COLOR, $hover: false) {
-  $tokens: _get-tokens($context, $decisions);
+  $tokens: _tokenize($context, $decisions);
   $result: _get-result($tokens, $legacy, $value);
 
   @if $important {

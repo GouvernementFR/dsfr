@@ -18,8 +18,9 @@
             }
 
             $token: (context: $context, use: $use, tint: $tint);
+            $decision-prop: _get-decision-prop($token);
 
-            #{_get-decision-prop($token)}: $value;
+            #{$decision-prop}: $value;
 
             @if $context == background {
               $option: nth($set, 1);
@@ -28,7 +29,7 @@
                 $blend: var(--#{_get-set-prop(map-get($shades, $shade))}-blend);
               }
 
-              #{_get-decision-prop($token)}-blend: $blend;
+              #{$decision-prop}-blend: $blend;
             }
           }
         }

@@ -11,7 +11,7 @@
 /// @param {String} $prop - propriété sur laquelle est assignée le svg
 /// @example @include scheme-element-data-uri-svg(text-title neutral, false, url("data:image/svg+xml;utf8,<svg><path fill="$COLOR" /></svg>"));
 @mixin scheme-element-data-uri-svg($decisions, $legacy: false, $value, $prop:background-image) {
-  $tokens: _get-tokens(artwork, $decisions);
+  $tokens: _tokenize(artwork, $decisions);
   $result: _get-result($tokens, $legacy, $value);
 
 
