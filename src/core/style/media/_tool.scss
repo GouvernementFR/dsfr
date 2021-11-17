@@ -19,6 +19,6 @@
 }
 
 @mixin media-overlay-cover {
-  @include fit-cover-center;
+  // @include fit-cover-center; // bug IOS
   @include absolute(0, 0, 0, 0, 100%, 100%);
 }
