@@ -46,6 +46,7 @@
     $padding-x: ($min-height - $icon-size) / 2;
 
     overflow: hidden;
+    white-space: nowrap;
     max-width: $min-height;
     max-height: $min-height;
     padding-left: $padding-x;
