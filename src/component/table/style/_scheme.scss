@@ -23,15 +23,6 @@
       }
     }
 
-    /* Style bordered, ajoute des bordures entre chaque ligne */
-    &--bordered {
-      tbody {
-        tr {
-          @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
-        }
-      }
-    }
-
     @include accent-modifiers {
       thead {
         @include scheme-element-box-shadow-color(plain accent, $legacy, false, bottom-2-in);
@@ -51,11 +42,20 @@
         tbody {
           tr {
             @include scheme-element-box-shadow-color(default accent, $legacy, false, bottom-1-in);
+          }
+        }
+      }
+    }
 
-            /* Style bordered, enleve le style even/odd  */
-            &:nth-child(even) {
-              @include scheme-element-bg-transparent($legacy, true);
-            }
+    /* Style bordered, ajoute des bordures entre chaque ligne */
+    &--bordered {
+      tbody {
+        tr {
+          @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+
+          /* Style bordered, enleve le style even/odd  */
+          &:nth-child(even) {
+            @include scheme-element-bg-transparent($legacy, true);
           }
         }
       }
