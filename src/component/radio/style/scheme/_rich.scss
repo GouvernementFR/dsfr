@@ -5,7 +5,6 @@
 
 @mixin _radio-scheme-rich($legacy: false) {
   #{ns(radio-rich)} {
-
     &__img {
       @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
     }
