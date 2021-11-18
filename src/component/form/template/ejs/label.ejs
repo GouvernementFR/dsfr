@@ -22,6 +22,7 @@
  let id = label.id || '';
  %>
 
-<label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>><%= label.label %>
+<label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>>
+  <%- label.label %>
   <% if (label.hint != undefined) { %><%- include('./hint', {form: label});%><% } %>
 </label>

@@ -8,27 +8,27 @@
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
 #{ns(checkbox-group)} {
-	@include relative;
+  @include relative;
 
-	/**
+  /**
    * On cache l'input de type checkbox pour le styler via le label
    */
-	input[type="checkbox"] {
-		@include absolute;
+  input[type="checkbox"] {
+    @include absolute;
     @include margin(0);
-		opacity: 0;
+    opacity: 0;
     top: 50%;
-		transform: translateY(-50%);
+    transform: translateY(-50%);
 
-		/**
+    /**
      * On applique un display grid sur le label afin de gérer le positionnement des élements
      */
-		+ label {
-			@include relative;
-			@include padding(3v 0);
-			-webkit-tap-highlight-color: transparent;
-			@include display-flex(row, center, flex-start, wrap);
-			@include margin-left(8v);
+    + label {
+      @include relative;
+      @include padding(3v 0);
+      -webkit-tap-highlight-color: transparent;
+      @include display-flex(row, center, flex-start, wrap);
+      @include margin-left(8v);
 
       /**
       * Style du texte d'aide dans le label
@@ -54,44 +54,44 @@
     }
   }
 
-	/**
+  /**
    * Dans le cas d'un fieldset, on supprime l'espacement du premier groupe
    */
-	&:first-child {
-		@include margin-top(-3v);
-	}
+  &:first-child {
+    @include margin-top(-3v);
+  }
 
-	/**
+  /**
    * Dans le cas d'un fieldset, on supprime l'espacement du dernier groupe
    */
-	&:last-child {
-		@include margin-bottom(-3v);
-	}
+  &:last-child {
+    @include margin-bottom(-3v);
+  }
 
-	/**
+  /**
    * Texte de validation et d'erreur
    */
-	#{ns(error-text)},
-	#{ns(valid-text)} {
-		@include margin-top(1v);
-	}
+  #{ns(error-text)},
+  #{ns(valid-text)} {
+    @include margin-top(1v);
+  }
 
-	/**
+  /**
    * Modificateur de taille sm
    */
-	&--sm {
-		input[type="checkbox"] {
-			+ label {
-				@include before {
-					@include size(4v, 4v);
-					@include margin-top(4v);
-					left: #{space(-7v)};
-				}
-			}
-		}
-	}
+  &--sm {
+    input[type="checkbox"] {
+      + label {
+        @include before {
+          @include size(4v, 4v);
+          @include margin-top(4v);
+          left: #{space(-7v)};
+        }
+      }
+    }
+  }
 
-	/**
+  /**
    * Modificateur pour gérer l'état erreur
    */
   &--error {
@@ -100,7 +100,7 @@
     }
   }
 
-	/**
+  /**
    * Modificateur pour gérer l'état validé
    */
   &--valid {
