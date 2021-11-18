@@ -3,10 +3,12 @@
 /// @group core
 ////
 
-@function svg-encode($svg) {
+@function svg-encode($svg, $legacy) {
   $svg: str-replace($svg, '#', '%23');
-  $svg: str-replace($svg, '<', '%3C');
-  $svg: str-replace($svg, '>', '%3E');
-  $svg: str-replace($svg, '"', "'");
+  @if ($legacy) {
+    $svg: str-replace($svg, '<', '%3C');
+    $svg: str-replace($svg, '>', '%3E');
+    $svg: str-replace($svg, '"', "'");
+  }
   @return 'data:image/svg+xml;charset=utf8,' + $svg;
 }
