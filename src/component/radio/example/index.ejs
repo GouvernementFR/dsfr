@@ -2,10 +2,6 @@
 
 <%- sample('Ensemble de boutons radio', './sample/radios.ejs', {radio: { id:'radio'}}, true); %>
 
-<%- sample('Ensemble de boutons radio, libellé en indice', './sample/radios.ejs', {radio: { id:'radio-sub', element: { label:'<span>Label checkbox <sub>sub</sub></span>' }}}, true); %>
-
-<%- sample('Ensemble de boutons radio, libellé en exposant', './sample/radios.ejs', {radio: { id:'radio-sup', element: { label:'<span>Label checkbox <sup>sup</sup></span>' }}}, true); %>
-
 <%- sample('Ensemble de boutons radio, petite taille', './sample/radios.ejs', {radio: { id:'radio-small', size:'sm'}}, true); %>
 
 <%- sample('Ensemble de boutons radio désactivées', './sample/radios.ejs', {radio: { id:'radio-disabled', disabled:true}}, true); %>
@@ -25,6 +21,10 @@
 <%- sample('Ensemble de boutons radio avec texte d‘aide spécifique', './sample/radios.ejs', {radio: { id:'radio-hint-element', element: { hint: 'Texte de description additionnel' }}}, true); %>
 
 <%- sample('Ensemble de boutons radio avec texte d‘aide spécifique, petite taille', './sample/radios.ejs', {radio: { id:'radio-hint-el-sm', size: 'sm', element: { hint: 'Texte de description additionnel' }}}, true); %>
+
+<%- sample('Ensemble de boutons radio, libellé en indice', './sample/radios.ejs', {radio: { id:'radio-sub', element: { label:'<span>Label checkbox <sub>sub</sub></span>' }}}, true); %>
+
+<%- sample('Ensemble de boutons radio, libellé en exposant', './sample/radios.ejs', {radio: { id:'radio-sup', element: { label:'<span>Label checkbox <sup>sup</sup></span>' }}}, true); %>
 
 <%- sample('Ensemble de boutons radio riches, simple', './sample/radios-rich.ejs', {radio: { id:'radio-rich' }}, true); %>
 
