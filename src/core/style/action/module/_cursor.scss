@@ -1,0 +1,12 @@
+////
+/// Core Module : Action cursor
+/// @group core
+////
+
+@include cursor-selector(pointer) {
+  cursor: pointer;
+}
+
+@include cursor-selector(not-allowed) {
+  cursor: not-allowed;
+}

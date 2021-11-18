@@ -1,8 +1,9 @@
 <%
 let data = {
-    img: imgData('img/placeholder.16x9.png', true),
+    ...locals.content || {},
+    img: imgData('img/placeholder.16x9.png'),
     caption: '© Légende de l‘image'
 };
 %>
 
-<%- include('../../template/ejs/media', data); %>
+<%- include('../../template/ejs/media', {content:data}); %>

@@ -7,20 +7,20 @@ Le titre est défini par la classe "fr-alert__title", la balise &#60;p&#62; peut
 
 <%- sample('Alerte par défaut', './sample/alert-default', {}, true); %>
 
-<%- sample('Alerte info', './sample/alert-default', {type: "info", title: "Information Covid"}, true); %>
+<%- sample('Alerte info', './sample/alert-default', {alert: {type: "info", title: "Information Covid"}}, true); %>
 
-<%- sample('Alerte succès', './sample/alert-default', {type: "success", title: "Succès de l'envoi"}, true); %>
+<%- sample('Alerte succès', './sample/alert-default', {alert: {type: "success", title: "Succès de l'envoi"}}, true); %>
 
-<%- sample('Alerte erreur', './sample/alert-default', {type: "error", title: "Erreur détectée dans le formulaire"}, true); %>
+<%- sample('Alerte erreur', './sample/alert-default', {alert: {type: "error", title: "Erreur détectée dans le formulaire"}}, true); %>
 
-<!-- <%- sample('Alerte attention', './sample/alert-default', {type: "warning", title: "Attention"}, true); %> -->
+<%- sample('Alerte attention', './sample/alert-default', {alert: {type: "warning", title: "Attention"}}, true); %>
 
-<%- sample('Alerte avec bouton fermer', './sample/alert-default', {type: "info", title: "Information Covid", buttonClose: true}, true); %>
+<%- sample('Alerte avec bouton fermer', './sample/alert-default', {alert: {type: "info", title: "Information Covid", buttonClose: true}}, true); %>
 
-<%- sample('Alerte refermable (dans un collapse)', './sample/alert-collapsible', {type: "info", title: "Information Covid"}, true); %>
+<%- sample('Alerte refermable (dans un collapse)', './sample/alert-collapsible', {alert: {type: "info", title: "Information Covid"}}, true); %>
 
-<%- sample('Alerte taille SM', './sample/alert-default', {title:false, size: "sm", type: "info", text: "Information : titre de l'information"}, true); %>
+<%- sample('Alerte taille SM', './sample/alert-default', {alert: {title:false, size: "sm", type: "info", text: "Information : titre de l'information"}}, true); %>
 
-<%- sample('Alerte taille SM refermable', './sample/alert-collapsible', {title:false, size: "sm", type: "info", text: "Information : cliquer sur la croix pour fermer l'alerte"}, true); %>
+<%- sample('Alerte taille SM refermable', './sample/alert-collapsible', {alert: {title:false, size: "sm", type: "info", text: "Information : cliquer sur la croix pour fermer l'alerte"}}, true); %>
 
-<%- sample('Alerte icône personnalisée', './sample/alert-default', {classes: ['fr-fi-lock-fill']}, true); %>
+<%- sample('Alerte icône personnalisée', './sample/alert-default', {alert: {classes: ['fr-fi-lock-fill']}}, true); %>

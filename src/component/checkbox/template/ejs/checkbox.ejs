@@ -1,15 +1,24 @@
 <%#
 # paramètres checkbox
 
-// TODO: documentation
+* checkbox.id (string, required): id du checkbox
+
+* checkbox.attributes (object, optional): attributs sur l'input
+
+* checkbox.label (string, optional): label du checkbox
+
+* checkbox.disabled (boolean, optional) : si true, désactive la checkbox
+
+* checkbox.checked (boolean, optional) : si true, la checkbox est cochée
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
- let checkboxAttrs = locals.checkboxAttrs || [];
- let element = {};
- if(locals.element) element = locals.element;
+ let checkbox = locals.checkbox || {};
+ let checkboxAttrs = checkbox.attributes || {};
+ if (checkbox.checked === true) checkboxAttrs.checked = "";
+ if (checkbox.disabled === true) checkboxAttrs.disabled = "";
  %>
-<input <%- includeAttrs(checkboxAttrs); %> type="checkbox" id="<%= id %>" name="<%= id %>">
-<%- include('../../../form/template/ejs/label', element ); %>
-<%- include('../../../form/template/ejs/message'); %>
+<input <%- includeAttrs(checkboxAttrs); %> type="checkbox" id="<%= checkbox.id %>" name="<%= checkbox.id %>">
+<%- include('../../../form/template/ejs/label', {label: {label:checkbox.label, hint: checkbox.hint, id: checkbox.id}} ); %>
+<%- include('../../../form/template/ejs/message', {message: checkbox}); %>

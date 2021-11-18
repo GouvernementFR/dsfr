@@ -1,13 +1,8 @@
 <%
-    let data = JSON.parse(include('../../../form/example/sample/data'));
-
-    data.type = locals.type || 'text';
+    let input = locals.input || {}
+    let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:input}));
+    let data = {...input, ...jsonData};
+    data.type = input.type || 'text';
     data.label = 'Label champs de saisie';
-
 %>
-<% if (locals.group === true) { %>
-<%- include('../../template/ejs/input-group', data); %>
-<% }
-else { %>
-<%- include('../../template/ejs/input', data); %>
-<% } %>
+<%- include('../../template/ejs/input-group', {input:data}); %>

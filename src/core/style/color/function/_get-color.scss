@@ -1,0 +1,22 @@
+////
+/// Core Function : Color get color
+/// @group core
+////
+
+/// Obtenir une couleur depuis une combinaison
+/// @access private
+/// @param {String} $name - nom de l'option de couleur (voir setting/options)
+/// @param {String} $space - espace de la couleur (hex, hsl)
+/// @param {Number} $space - espace de la couleur (hex, hsl)
+/// @return {String} Retourne la couleur correspondante
+@function get-color($name, $alpha: 1) {
+  $option: _get-color-option($name);
+
+  @if $alpha == 1 {
+    @return _get-color-from-option($option, hex);
+  }
+
+  $hsla: 'hsla(#{_get-color-from-option($option, hue)}, #{_get-color-from-option($option, saturation)}, #{_get-color-from-option($option, lightness)}, #{$alpha})';
+
+  @return unquote($hsla);
+}

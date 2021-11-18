@@ -25,7 +25,7 @@ const analyse = (id, path, ascendants = []) => {
 
     if (fs.existsSync(`${absolute}/main.scss`)) {
       files = ['main'];
-      files.push(...['scheme', 'legacy'].filter(file => fs.existsSync(`${absolute}/${file}.scss`)));
+      files.push(...['legacy'].filter(file => fs.existsSync(`${absolute}/${file}.scss`)));
       config.style = { level: -1, files: files };
     }
 
@@ -160,7 +160,9 @@ const evaluate = (packages, type) => {
         continue;
       }
       const dps = pck.dependencies[type].map(id => packages.filter(pck => pck.id === id)[0]);
-      const levels = dps.map(p => p[type].level);
+      const levels = dps.map(p => {
+        return p[type].level;
+      });
       const ascendants = dps.map(p => p.ascendants).flat().filter((id, index, array) => array.indexOf(id) === index).filter(id => pck.ascendants.indexOf(id) === -1);
       levels.push(...ascendants.map(id => packages.filter(pck => pck.id === id)[0][type].level));
       if (levels.indexOf(-1) > -1) continue;

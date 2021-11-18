@@ -1,0 +1,129 @@
+////
+/// Core Setting : Color decisions
+/// @group core
+////
+
+$scheme-decisions: (
+  background: (
+    default: (
+      neutral: white
+    ),
+    elevated: (
+      neutral: elevated
+    ),
+    alt: (
+      neutral: lightest,
+      primary: lightest,
+      accent: lightest
+    ),
+    contrast: (
+      neutral: lighter,
+      primary: lighter,
+      accent: lighter,
+      system: lighter
+    ),
+    flat: (
+      neutral: strongest,
+      /* primary: strong,
+      accent: strong,*/
+      system: strong,
+    ),
+    action-high: (
+      primary: strong,
+      accent: strong,
+      system: strong,
+    ),
+    action-low: (
+      primary: light,
+      accent: light,
+    ),
+    active: (
+      primary: strong,
+    ),
+    open: (
+      primary: light,
+    ),
+    disabled: (
+      neutral: light
+    )
+  ),
+  text: (
+    default: (
+      neutral: strongest,
+      system: strong
+    ),
+    action-high: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    title: (
+      neutral: black,
+      primary: strong
+    ),
+    label: (
+      neutral: black,
+      primary: strong,
+      accent: strong
+    ),
+    active: (
+      neutral: black,
+      primary: strong
+    ),
+    mention: (
+      neutral: strong
+    ),
+    inverted: (
+      neutral: white,
+      primary: inverted,
+      system: lightest,
+      accent: lightest
+    ),
+    disabled: (
+      neutral: soft
+    )
+  ),
+  border: (
+    default: (
+      neutral: light,
+      primary: main,
+      accent: main
+    ),
+    active: (
+      primary: strong
+    ),
+    action-high: (
+      neutral: black,
+      primary: strong,
+      system: strong
+    ),
+    action-low: (
+      primary: softest,
+      accent: softest
+    ),
+    open: (
+      primary: light
+    ),
+    plain: (
+      neutral: strongest,
+      primary: strong,
+      system: strong,
+      accent: strong,
+    ),
+    disabled: (
+      neutral: light
+    )
+  ),
+  artwork: (
+    major: (
+      primary: strong,
+    ),
+    minor: (
+      primary: main,
+      accent: main
+    ),
+    decorative: (
+      primary: lighter
+    )
+  )
+);

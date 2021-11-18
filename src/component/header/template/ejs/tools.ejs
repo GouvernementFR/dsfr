@@ -1,19 +1,22 @@
-<div class="<%= prefix %>-header__tools">
-    <%
-        if (locals.tools.links) { %>
-    <div class="<%= prefix %>-header__tools-links">
-        <%- include('./links', tools.links); %>
-    </div>
-    <% }%>
-    <% if (locals.tools.search !== undefined) {
-            if (!locals.navbar || !navbar.search || !navbar.search.id || !navbar.search.modalId) throw new Error('navbar.search is not defined in header. id & modalId required');
-    %>
-        <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= navbar.search.modalId %>">
-            <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
-                <%- include('../../../link/template/ejs/link-close', { closeId: navbar.search.modalId }); %>
-                <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../search/template/ejs/search', { ...tools.search }); %>
-            </div>
-        </div>
+<% let header = locals.header || {}; %>
 
+<div class="<%= prefix %>-header__tools">
+    <% if (header.tools !== undefined) { %>
+        <% if (header.tools.links !== undefined) { %>
+            <div class="<%= prefix %>-header__tools-links">
+                <%- include('./links', {header: header}); %>
+            </div>
+        <% } %>
+        <% if (header.tools.search !== undefined) {
+                if (!header.navbar || !header.tools.search || !header.tools.search.id || !header.navbar.search.modalId) throw new Error('navbar.search is not defined in header. id & modalId required');
+        %>
+            <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= header.navbar.search.modalId %>">
+                <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
+                    <%- include('../../../link/template/ejs/link-close', {link: { closeId: header.navbar.search.modalId }}); %>
+                    <%- include( header.tools.search.sample !== undefined ? header.tools.search.sample : '../../../search/template/ejs/search', {search: { ...header.tools.search }}); %>
+                </div>
+            </div>
+
+        <% } %>
     <% } %>
 </div>

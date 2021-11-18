@@ -3,12 +3,22 @@
 /// @group callout
 ////
 
-#{ns(callout)} {
-  @include component-as-scheme(light, grey-200, false, 0 0 0 space(1v));
+@mixin _callout-scheme($legacy: false) {
+  #{ns(callout)} {
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+    @include scheme-element-box-shadow-color(default blue-france, $legacy, false, left-1v-in);
 
-  @include title() {
-    @include scheme-element-text-color(g800, true);
+    @include before {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
+
+    @include title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
+
+    @include accent-modifiers {
+      @include scheme-element-box-shadow-color(default accent, $legacy, false, left-1v-in);
+      @include scheme-element-bg-color(contrast accent, $legacy);
+    }
   }
-
-  // @include component-as-scheme-modifiers(soft, 0 0 0 space(1v));
 }

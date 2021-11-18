@@ -1,0 +1,9 @@
+////
+/// Form Legacy
+/// @group core
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _form-scheme(true);

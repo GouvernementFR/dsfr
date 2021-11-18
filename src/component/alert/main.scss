@@ -7,6 +7,8 @@
   ALERT
 \* ------------------------------------ */
 
-@import './index';
+@import 'index';
 @import 'style/module';
 @import 'style/scheme';
+
+@include _alert-scheme;

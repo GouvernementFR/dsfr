@@ -1,0 +1,45 @@
+<%#
+# paramètres upload
+
+* upload.id (string, required) : id de l'upload
+
+* upload.name (string, required) : nom de l'input
+
+* upload.label (string, required) : texte du label
+
+* upload.hint (string, optional) : texte de description sous le label
+
+* upload.labelAttrs (object, optional) : Pour passer des attributs au label
+
+* upload.uploadAttrs (object, optional) : Pour passer des attributs au input
+
+* upload.error (string, optional) : ajoute un texte d'erreur
+
+* upload.valid (string, optional) : ajoute un texte de succès
+
+* upload.success (string, optional) : ajoute un texte de succès
+
+* upload.multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
+
+* upload.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<%
+ let upload = locals.upload || {};
+ let uploadClasses = [prefix + '-upload'];
+ let groupClasses = [prefix + '-upload-group'];
+ let uploadAttrs = upload.uploadAttrs || [];
+ let labelAttrs = upload.labelAttrs || {};
+ let labelClass = upload.labelClasses || [];
+ if (upload.error) groupClasses.push(prefix + '-input-group--error');
+ if (upload.valid) groupClasses.push(prefix + '-input-group--valid');
+ if (upload.disabled) uploadAttrs['disabled'] = '';
+ if (upload.multiple) uploadAttrs['multiple'] = '';
+ %>
+
+<div <%- includeClasses(groupClasses); %>>
+  <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
+  <input <%- includeClasses(uploadClasses); %> <%- includeAttrs(uploadAttrs); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
+  <%- include('../../../form/template/ejs/message', {message: upload}); %>
+</div>

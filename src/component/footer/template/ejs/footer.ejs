@@ -1,41 +1,44 @@
 <%#
 # paramètres footer
 
-// TODO: documentation
-
-*
+* footer.id (string, optional): id du footer
+* footer.top : Paramètres du bloc top (menu)
+* footer.brand : Paramètres du bloc marque
+* footer.content : Paramètres du bloc de contenu (texte + lien)
+* footer.partners : Paramètres du bloc partenaire (logos)
+* footer.bottom : Paramètres du bloc bottom (liens et copyright)
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
+<% let footer = locals.footer || {brand: {}} %>
 
+<footer class="<%= prefix %>-footer" role="contentinfo" <% if (footer.id !== undefined) { %>id="<%- footer.id %>"<% } %>>
 
-<footer class="<%= prefix %>-footer" role="contentinfo" id="<% if (locals.id !== undefined) { %><%- locals.id %><% } %>">
-
-  <% if (locals.top !== undefined) { %>
+  <% if (footer.top !== undefined) { %>
     <div class="<%= prefix %>-footer__top">
-      <div class="<%= prefix %>-container%>" >
-        <div class="<%= prefix %>-grid-row%> <%= prefix %>-grid-row--start%> <%= prefix %>-grid-row--gutters%>" >
-          <%- include('./top', locals.top); %>
+      <div class="<%= prefix %>-container" >
+        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--start <%= prefix %>-grid-row--gutters" >
+          <%- include('./top', {footer: {top: footer.top}}); %>
         </div>
       </div>
     </div>
   <% } %>
 
-  <div class="<%= prefix %>-container%>" >
+  <div class="<%= prefix %>-container" >
 
-    <div class="<%= prefix %>-footer__body <% if (locals.logo !== undefined) { %><%= prefix %>-footer__body--operator<% } %>">
-      <%- include('./brand', locals); %>
-      <%- include('./content', locals.content); %>
+    <div class="<%= prefix %>-footer__body">
+      <%- include('./brand', {footer: {brand: footer.brand, operator: footer.operator}}); %>
+      <%- include('./content', {footer: {content: footer.content}}); %>
     </div>
 
-    <% if (locals.partners !== undefined) { %>
+    <% if (footer.partners !== undefined) { %>
       <div class="<%= prefix %>-footer__partners">
-          <%- include('./partners', locals.partners); %>
+          <%- include('./partners', {footer: {partners: footer.partners}}); %>
       </div>
     <% } %>
 
     <div class="<%= prefix %>-footer__bottom">
-      <%- include('./bottom', locals.bottom); %>
+      <%- include('./bottom', {footer: {bottom: footer.bottom}}); %>
     </div>
 
   </div>

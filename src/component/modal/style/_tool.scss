@@ -1,0 +1,15 @@
+////
+/// Modal Tool
+/// @group modal
+////
+
+@mixin modal-overlay($legacy: false) {
+  @if $legacy {
+    @include legacy(ie11) {
+      background-color: #{nth($background-overlay-set, 1)};
+    }
+  }
+  @else {
+    background-color: var(--background-overlay);
+  }
+}

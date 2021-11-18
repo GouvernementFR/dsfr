@@ -1,0 +1,21 @@
+////
+/// Core Setting : Color hover
+/// @group core
+////
+
+$action-hover: (
+  light: (
+    hue: 0,
+    saturation: 0%,
+    lightness: (
+      base: 100%,
+      modifier: -25%
+    )
+  ),
+  dark: (
+    lightness: (
+      base: 8.6%,
+      modifier: 25%
+    )
+  )
+);

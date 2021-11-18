@@ -35,6 +35,7 @@
 
   @include title {
     @include margin(0 0 2v);
+    @include text-style(xs);
     font-weight: font-weight(bold);
     text-transform: uppercase;
   }
@@ -42,12 +43,13 @@
   &__link {
     display: inline-block;
     position: relative;
+    @include text-style(xs);
     @include before(var(--ol-content)) {
       @include absolute(null, null, null, 2v);
       font-size: var(--xl-size);
       font-weight: bold;
     }
-    @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + #{space(2v)}));
-    @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - #{space(2v)}));
+    @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + 2v));
+    @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - 2v));
   }
 }

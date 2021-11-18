@@ -1,11 +1,13 @@
 /* COMPONENT MAIN */
 
+@import 'upload/main';
 @import 'logo/main';
 @import 'card/main';
 @import 'quote/main';
 @import 'breadcrumb/main';
 @import 'form/main';
 @import 'link/main';
+@import 'sidemenu/main';
 @import 'highlight/main';
 @import 'summary/main';
 @import 'table/main';
@@ -19,7 +21,6 @@
 @import 'toggle/main';
 @import 'skiplink/main';
 @import 'select/main';
-@import 'sidemenu/main';
 @import 'tab/main';
 @import 'pagination/main';
 @import 'share/main';
@@ -32,5 +33,4 @@
 @import 'search/main';
 @import 'consent/main';
 @import 'follow/main';
-@import 'display/main';
 @import 'header/main';

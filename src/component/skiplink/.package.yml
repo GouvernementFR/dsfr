@@ -5,8 +5,6 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/260014417/Liens+d+vitemen
 prepend: true
 style:
   - core
-  - scheme
-  - legacy
   - link
 example:
   style:

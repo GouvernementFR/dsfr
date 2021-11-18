@@ -1,54 +1,115 @@
 <style>
   .col-demo {
-    box-shadow: inset 0 0 0 1px var(--bf500);
+    box-shadow: inset 0 0 0 1px var(--artwork-major-blue-france);
     text-align: center;
-    background-color: var(--beige);
+    background-color: var(--background-alt-blue-france);
     padding: 16px 0;
   }
 
   .<%= prefix %>%>-grid-row > * > .<%= prefix %>%>-grid-row > * > .col-demo {
-    background-color: var(--error);
+    background-color: var(--artwork-minor-red-marianne);
   }
 </style>
 
 <% const sample = getSample(include); %>
 
-<%- sample('Grille sans gouttières', './sample/container', { cols: [{ length: 1, content: true, col: 12 }, { length: 2, content: 'col' }]}, true); %>
+<%- sample('Grille sans gouttières', './sample/container', { grid: {cols: [{ length: 1, content: true, col: 12 }, { length: 2, content: 'col' }]}}, true); %>
 
-<%- sample('Grille sans gouttières 4 col', './sample/container', { cols: [{ length: 4, content: '1/4' }]}, true); %>
+<%- sample('Grille sans gouttières 4 col', './sample/container', { grid: {cols: [{ length: 4, content: '1/4' }]}}, true); %>
 
-<%- sample('Grille sans gouttières 6 col', './sample/container', { cols: [{ length: 6, content: '1/6' }]}, true); %>
+<%- sample('Grille sans gouttières 6 col', './sample/container', { grid: {cols: [{ length: 6, content: '1/6' }]}}, true); %>
 
-<%- sample('Grille avec gouttières', './sample/container', { gutters: true, cols: [{ content: true, col: 12 }, { length: 2, content: 'col' }]}, true); %>
+<%- sample('Grille avec gouttières', './sample/container', { grid: {gutters: true, cols: [{ content: true, col: 12 }, { length: 2, content: 'col' }]}}, true); %>
 
-<%- sample('Grille avec gouttières 4 col', './sample/container', { gutters: true, cols: [{ length: 4, content: '1/4' }]}, true); %>
+<%- sample('Grille avec gouttières 4 col', './sample/container', { grid: {gutters: true, cols: [{ length: 4, content: '1/4' }]}}, true); %>
 
-<%- sample('Grille avec gouttières 6 col', './sample/container', { gutters: true, cols: [{ length: 6, content: '1/6' }]}, true); %>
+<%- sample('Grille avec gouttières 6 col', './sample/container', { grid: {gutters: true, cols: [{ length: 6, content: '1/6' }]}}, true); %>
 
-<%- sample('Grille sans gouttières avec taille de colonnes', './sample/container', { cols: [{ col: 3 }, { col: 3 }, { col: 2 }, { col: 4 }, { col: 5 }, { col: 7 }, { col: 9 }, { col: 3 }, { col: 5 }, { col: 5 }, { col: 2 }, { col: 12 } ]}, true); %>
+<%- sample('Grille sans gouttières avec taille de colonnes', './sample/container', { grid: {cols: [{ col: 3 }, { col: 3 }, { col: 2 }, { col: 4 }, { col: 5 }, { col: 7 }, { col: 9 }, { col: 3 }, { col: 5 }, { col: 5 }, { col: 2 }, { col: 12 } ]}}, true); %>
 
-<%- sample('Grille avec gouttières avec taille de colonnes', './sample/container', { gutters: true, cols: [{ col: 3 }, { col: 3 }, { col: 2 }, { col: 4 }, { col: 5 }, { col: 7 }, { col: 9 }, { col: 3 }, { col: 5 }, { col: 5 }, { col: 2 }, { col: 12 } ]}, true); %>
+<%- sample('Grille avec gouttières avec taille de colonnes', './sample/container', { grid: {gutters: true, cols: [{ col: 3 }, { col: 3 }, { col: 2 }, { col: 4 }, { col: 5 }, { col: 7 }, { col: 9 }, { col: 3 }, { col: 5 }, { col: 5 }, { col: 2 }, { col: 12 } ]}}, true); %>
 
-<%- sample('Grille sans gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', { cols: [{ col: 8, content: include('./sample/grid', { gutters: true, cols:[{col:6, length: 2}]}) }, { col: 4 }, { col: 3 }, { col: 3 }, { col: 6, content: include('./sample/grid', {cols:[{col:4, length: 3}]}) } ]}, true); %>
+<%- sample('Grille sans gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', {
+  grid: {
+    cols: [
+      {
+        col: 8,
+        content: include('./sample/grid', {
+          grid: {
+            gutters: true,
+            cols:[
+              { col:6, length: 2 }
+            ]
+          }
+        })
+      },
+      { col: 4 },
+      { col: 3 },
+      { col: 3 },
+      {
+        col: 6,
+        content: include('./sample/grid', {
+          grid: {
+            cols:[
+              { col:4, length: 3}
+            ]
+          }
+        })
+      }]
+    }
+  }, true); %>
 
-<%- sample('Grille avec gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', { gutters: true, cols: [{ col: 8, content: include('./sample/grid', { gutters: true, cols:[{col:6, length: 2}] }) }, { col: 4 }, { col: 3 }, { col: 3 }, { col: 6, content: include('./sample/grid', {cols:[{ col:4, length: 3 }]}) } ]}, true); %>
+<%- sample('Grille avec gouttières imbrication (1ère imbriquée avec gouttière, 2nde sans gouttières)', './sample/container', {
+    grid:
+      {
+        gutters: true,
+        cols:
+          [
+            {
+              col: 8,
+              content: include('./sample/grid', {
+                  grid: {
+                    gutters: true,
+                    cols: [
+                        { col:6, length: 2 }
+                      ]
+                  }
+                })
+            },
+            { col: 4 },
+            { col: 3 },
+            { col: 3 },
+            {
+              col: 6,
+              content: include('./sample/grid',
+                {
+                  grid: {
+                    cols:[
+                      { col:4, length: 3 }
+                    ]
+                  }
+                })
+            }
+          ]
+      }
+  }, true); %>
 
-<%- sample('Grille avec gouttières alignement haut', './sample/container', { classes: [ `${prefix}-grid-row--top` ], gutters: true, cols: [{ content: 'align top', col: 3 }, { content: true, col: 3 }, { content: 'align top', col: 3, length: 2 }]}, true); %>
+<%- sample('Grille avec gouttières alignement haut', './sample/container', { grid: {classes: [ `${prefix}-grid-row--top` ], gutters: true, cols: [{ content: 'align top', col: 3 }, { content: true, col: 3 }, { content: 'align top', col: 3, length: 2 }]}}, true); %>
 
-<%- sample('Grille avec gouttières alignement bas', './sample/container', { classes: [ `${prefix}-grid-row--bottom` ], gutters: true, cols: [{ content: 'align bottom', col: 3 }, { content: true, col: 3 }, { content: 'align bottom', col: 3, length: 2 }]}, true); %>
+<%- sample('Grille avec gouttières alignement bas', './sample/container', { grid: {classes: [ `${prefix}-grid-row--bottom` ], gutters: true, cols: [{ content: 'align bottom', col: 3 }, { content: true, col: 3 }, { content: 'align bottom', col: 3, length: 2 }]}}, true); %>
 
-<%- sample('Grille avec gouttières alignement milieu', './sample/container', { classes: [ `${prefix}-grid-row--middle` ], gutters: true, cols: [{ content: 'align middle', col: 3 }, { content: true, col: 3 }, { content: 'align middle', col: 3, length: 2 }]}, true); %>
+<%- sample('Grille avec gouttières alignement milieu', './sample/container', { grid: {classes: [ `${prefix}-grid-row--middle` ], gutters: true, cols: [{ content: 'align middle', col: 3 }, { content: true, col: 3 }, { content: 'align middle', col: 3, length: 2 }]}}, true); %>
 
-<%- sample('Grille avec gouttières alignement mélangés', './sample/container', { gutters: true, cols: [ { content: true, col: 3 }, { content: 'align top', col: 3, classes: [ `${prefix}-col--top` ] }, { content: 'align middle', col: 3, classes: [ `${prefix}-col--middle` ] }, { content: 'align bottom', col: 3, classes: [ `${prefix}-col--bottom` ] }]}, true); %>
+<%- sample('Grille avec gouttières alignement mélangés', './sample/container', { grid: {gutters: true, cols: [ { content: true, col: 3 }, { content: 'align top', col: 3, classes: [ `${prefix}-col--top` ] }, { content: 'align middle', col: 3, classes: [ `${prefix}-col--middle` ] }, { content: 'align bottom', col: 3, classes: [ `${prefix}-col--bottom` ] }]}}, true); %>
 
-<%- sample('Grille avec gouttières alignement gauche', './sample/container', { classes: [ `${prefix}-grid-row--left` ], gutters: true, cols: [{ content: 'align left', col: 3, length: 2 }]}, true); %>
+<%- sample('Grille avec gouttières alignement gauche', './sample/container', { grid: {classes: [ `${prefix}-grid-row--left` ], gutters: true, cols: [{ content: 'align left', col: 3, length: 2 }]}}, true); %>
 
-<%- sample('Grille avec gouttières alignement droite', './sample/container', { classes: [ `${prefix}-grid-row--right` ], gutters: true, cols: [{ content: 'align left', col: 3, length: 2 }]}, true); %>
+<%- sample('Grille avec gouttières alignement droite', './sample/container', { grid: {classes: [ `${prefix}-grid-row--right` ], gutters: true, cols: [{ content: 'align left', col: 3, length: 2 }]}}, true); %>
 
-<%- sample('Grille avec gouttières alignement centré', './sample/container', { classes: [ `${prefix}-grid-row--center` ], gutters: true, cols: [{ content: 'align center', col: 3, length: 2 }]}, true); %>
+<%- sample('Grille avec gouttières alignement centré', './sample/container', { grid: {classes: [ `${prefix}-grid-row--center` ], gutters: true, cols: [{ content: 'align center', col: 3, length: 2 }]}}, true); %>
 
-<%- sample('Grille avec écart', './sample/container', { gutters: true, cols: [{ col: 3 }, { col: 3, offset: 3 }, { col: 3 }]}, true); %>
+<%- sample('Grille avec écart', './sample/container', { grid: {gutters: true, cols: [{ col: 3 }, { col: 3, offset: 3 }, { col: 3 }]}}, true); %>
 
-<%- sample('Grille avec colonne à taille variable suivant les points de ruptures', './sample/container', { gutters: true, cols: [{ col: { first: 12, sm: 10, md: 8, lg: 6, xl: 4 } }]}, true); %>
+<%- sample('Grille avec colonne à taille variable suivant les points de ruptures', './sample/container', { grid: {gutters: true, cols: [{ col: { first: 12, sm: 10, md: 8, lg: 6, xl: 4 } }]}}, true); %>
 
-<%- sample('Grille avec conteneur fluide', './sample/container', { fluid: true, cols: [{ length: 12, col: 1 }]}, true); %>
+<%- sample('Grille avec conteneur fluide', './sample/container', { grid: {fluid: true, cols: [{ length: 12, col: 1 }]}}, true); %>

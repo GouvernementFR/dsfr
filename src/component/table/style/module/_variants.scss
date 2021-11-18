@@ -1,0 +1,67 @@
+////
+/// Table module : Variants
+/// @group Table
+////
+
+/*
+* Cache la caption
+*/
+#{ns(table--no-caption)} {
+  @include padding-top(0);
+
+  caption {
+    @include sr-only();
+    @include height(0);
+  }
+}
+
+/*
+* Fixe le caption en bas du tableau
+*/
+#{ns(table--caption-bottom)} {
+  @include padding-top(0);
+  @include margin-bottom(0);
+  @include margin-top(4v);
+
+  table {
+    @include margin-bottom(calc(var(--table-offset) + 11v));
+  }
+
+  &#{ns-attr(js-table, true)} {
+    caption {
+      @include absolute(100%, 0, 0, 0);
+      @include margin-top(4v);
+    }
+  }
+
+  caption {
+    @include margin-top(4v);
+    @include height(min-content);
+    caption-side: bottom;
+  }
+}
+
+/*
+* pas de scroll ni de shadow
+*/
+#{ns(table--no-scroll)} {
+  @include min-width(auto);
+
+  table {
+    overflow-x: hidden;
+  }
+
+  caption {
+    @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
+  }
+}
+
+/*
+* Fixe la taille des colonnes du tableau
+*/
+#{ns(table--layout-fixed)} {
+  table {
+    display: table;
+    table-layout: fixed;
+  }
+}

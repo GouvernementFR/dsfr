@@ -1,9 +1,10 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
+  "license": "SEE LICENSE IN LICENSE.md",
   "config": {
     "prefix": "fr",
     "namespace": "dsfr",
@@ -14,7 +15,7 @@
   },
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc src/*/styles/** -d ./doc/sassdoc",
-    "tmp": "node tool/tool.js tmp",
+    "test": "node tool/tool.js test",
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
@@ -65,8 +66,8 @@
     "path": "^0.12.7",
     "postcss": "^8.2.4",
     "postcss-banner": "^4.0.0",
-    "postcss-discard-duplicates": "^5.0.1",
     "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-discard-duplicates": "^5.0.1",
     "prettier": "^2.0.5",
     "replace-in-file": "^6.1.0",
     "rollup": "^2.37.1",
@@ -79,7 +80,7 @@
     "sass-true": "^5.0.0",
     "sassdoc": "^2.7.2",
     "standard": "^14.3.4",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.18.0",
     "svgo": "^2.3.0",
@@ -89,5 +90,6 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,18 @@
+////
+/// Core Function : Color get color from set
+/// @group core
+////
+
+/// Obtenir une couleur depuis une combinaison
+/// @access private
+/// @param {String} $set - combinaison de couleur obtenue par la fonction get-scheme-set
+/// @param {String} $theme - theme de la couleur (light, dark)
+/// @param {String} $space - espace de la couleur (hex, hue, saturation, lightness)
+/// @return {String} Retourne la couleur correspondante
+@function _get-color-from-set($set, $theme: light, $space: hex) {
+  $option: nth($set, 1);
+  @if $theme == dark {
+    $option: nth($set, 2);
+  }
+  @return _get-color-from-option($option, $space);
+}

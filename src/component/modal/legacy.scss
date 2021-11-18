@@ -1,0 +1,9 @@
+////
+/// Modal Legacy
+/// @group core
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _modal-scheme(true);

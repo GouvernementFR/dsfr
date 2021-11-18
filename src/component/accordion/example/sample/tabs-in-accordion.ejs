@@ -1,13 +1,12 @@
 <%
 
-let data = locals;
-
-const dataAccordion = {
-    label: locals.label || 'Intitulé accordéon',
-    content: include('../../../tab/example/sample/tabs-default', data),
-    collapseId: uniqueId('tab')
+const tabs = locals.tabs || {tabsCount:2};
+const data = {
+    id: uniqueId('accordion'),
+    label: 'Intitulé accordéon',
+    content: include('../../../tab/example/sample/tabs-default', {tabs: tabs}),
 }
 
 %>
 
-<%- include('../../template/ejs/accordion', dataAccordion); %>
+<%- include('../../template/ejs/accordion', {accordion: data}); %>

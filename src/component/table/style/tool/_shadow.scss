@@ -1,0 +1,21 @@
+////
+/// Table Tool : shadow
+/// @group Table
+////
+
+@function _get-table-shadow($side, $active: true, $theme: light) {
+  @if $active == false {
+    @return inset 0 0 0 0 $black;
+  }
+
+  $x: 8v;
+  @if $side == right {
+    $x: -8v;
+  }
+
+  @return space(inset #{$x} 0 4v -8v $black);
+}
+
+@mixin _table-scroll-shadow($left: false, $right: false) {
+  box-shadow: _get-table-shadow(left, $left), _get-table-shadow(right, $right);
+}

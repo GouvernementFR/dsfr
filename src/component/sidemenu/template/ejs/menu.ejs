@@ -1,4 +1,22 @@
-<%- include('./btn'); %>
-<div class="<%= prefix %>-collapse" id="<%= collapseId %>" >
-    <%- include('./list'); %>
+<%#
+
+Paramètres de sidemenu item
+
+* sidemenuItem.type (string, required) : type d'élément ('menu' ou 'link')
+
+* sidemenuItem.label (string, required) : label de l'entrée
+
+* sidemenuItem.active (booolean, optional) : si true, l'élement est actif
+
+* sidemenuItem.collapseId (string, required) : id du collapse
+
+* sidemenuItem.items (array, optional) : tableau de sous éléments
+
+%>
+
+<% let sidemenuItem = locals.sidemenuItem || {}; %>
+
+<%- include('./btn', {sidemenuBtn: sidemenuItem}); %>
+<div class="<%= prefix %>-collapse" id="<%= sidemenuItem.collapseId %>" >
+    <%- include('./list', {sidemenuItems: sidemenuItem.items}); %>
 </div>

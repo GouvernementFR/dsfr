@@ -1,0 +1,8 @@
+////
+/// Core Module : overlay
+/// @group core
+////
+
+:root {
+  --background-overlay: #{nth($background-overlay-set, 1)};
+}

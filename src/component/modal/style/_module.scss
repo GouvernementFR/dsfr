@@ -4,7 +4,7 @@
 ////
 
 #{ns(modal)} {
-  // reset dialog
+  // reset dialog @TODO à déplacer dans reset ?
   border: none;
   color: inherit;
   visibility: hidden;
@@ -79,7 +79,7 @@
     @include shadow(md);
 
     @include respond-from(md) {
-      max-height: 80vh;
+      max-height: 80vh !important;
     }
   }
 
@@ -124,5 +124,11 @@
 
     @include margin-top(0);
     @include margin-bottom(4v);
+  }
+
+  &__body#{ns(scroll-shadow)} {
+    #{ns(modal)}__footer {
+      @include shadow(up);
+    }
   }
 }

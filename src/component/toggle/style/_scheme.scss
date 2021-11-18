@@ -3,36 +3,54 @@
 /// @group toggle
 ////
 
-#{ns(toggle)} {
-  &__input {
-    @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-    @include disabled-toggle-choice();
+@mixin _toggle-scheme($legacy: false) {
+  #{ns(toggle)} {
+    label {
+      @include before {
+        @include scheme-element-text-color(active blue-france, $legacy);
+      }
 
-    &:checked {
-      @include scheme-element-bg-color(bf500);
+      @include after {
+        @include scheme-element-text-color(active blue-france, $legacy);
+        @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
+        @include scheme-element-bg-color(default neutral, $legacy);
+      }
     }
-  }
 
-  &__label {
-    @include before {
-      @include scheme-element-text-color(bf500);
+    input[type="checkbox"] {
+      @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
+      // @include disabled-toggle-choice(); // disabled
+
+      &:checked {
+        @include scheme-element-bg-color(active blue-france, $legacy);
+      }
+
+      @include disabled($legacy, false, false, true) {
+        &:checked {
+          @include disabled-colors($legacy, false, true);
+        }
+
+        + label {
+          @include before {
+            @include disabled-colors($legacy, true);
+          }
+
+          @include after {
+            @include disabled-colors($legacy, true, false, true);
+          }
+        }
+      }
     }
 
-    @include after {
-      @include scheme-element-text-color(bf500);
-      @include scheme-element-box-shadow-color(bf500, false, inset 0 0 0 1px $COLOR);
-      @include scheme-element-bg-color(w);
+    #{ns(hint-text)} {
+      @include scheme-element-text-color(mention neutral, $legacy);
     }
-  }
 
-  #{ns(hint-text)} {
-    @include scheme-element-text-color(g600, true);
-  }
-
-  /*
-  * Ajout d'un séparateur
-  */
-  &--border-bottom {
-    @include scheme-element-box-shadow-color(g300, false, inset 0 -1px 0 0 $COLOR);
+    /*
+    * Ajout d'un séparateur
+    */
+    &--border-bottom {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+    }
   }
 }

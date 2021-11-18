@@ -6,7 +6,7 @@
 /*
  * Passage du label ferré à gauche, le toggle ferré à droite
  */
-&--label-left {
+#{ns(toggle--label-left)} {
   #{ns(toggle__input)} {
     order: 1;
     @include margin(0 0 0 auto);

@@ -13,33 +13,8 @@
 ///   .foo {
 ///     @include disabled-form-field(input);
 ///   }
-@mixin disabled-form-field($element:input) {
-  @at-root #{selector_unify(&, $element)} {
-    @include disabled(true, false, inset 0 -2px 0 0 $COLOR) {
-      /**
-       * Override de l'opacité chrome sur un élément disabled
-       */
-      opacity: 1;
-      @content;
-    }
-  }
-}
-
-/// Mixin pour gérer l'état disabled sur un label et les pseudo-elements before et after, l'input étant masqué
-///
-/// @access public
-///
-/// @example scss - On ajoute un style disabled sur le label et ses pseudo-elements
-///   .foo {
-///     @include disabled-form-choice();
-///   }
-@mixin disabled-form-choice() {
-  @at-root #{selector_unify(&, input)} {
-    @include disabled(true, false, false, '+ label') {
-      &::before {
-        @include disabled-colors(false, true, border);
-      }
-      @content;
-    }
+@mixin disabled-form-field($legacy) {
+  @include disabled($legacy, true, false, bottom-2-in) {
+    @content;
   }
 }

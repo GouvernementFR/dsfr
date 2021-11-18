@@ -1,0 +1,21 @@
+////
+/// Core Function : Color get value
+/// @group core
+////
+
+/// Obtenir la valeur de la couleur (surchargée dans schemes)
+/// @access private
+/// @param {String} $part - typologie de l'élément recevant la couleur (background / text / border)
+/// @param {String} $token - token de décision
+/// @param {String} $tint - nom de la teinte (voir settings/sets)
+/// @param {String}  $space - espace de la couleur (hex, hue, saturation, lightness)
+/// @return {String} Retourne la couleur correspondante
+@function _get-value($part, $token, $tint, $legacy) {
+  @if $legacy {
+    $set: _get-scheme-set($part, $token, $tint);
+    @return _get-color-from-set($set, light, hex);
+  }
+  @else {
+    @return var(#{_get-decision-prop($part, $token, $tint)});
+  }
+}

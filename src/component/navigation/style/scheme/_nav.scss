@@ -3,31 +3,32 @@
 /// @group navigation
 ////
 
-#{ns(nav)} {
-  &__link,
-  &__btn {
-    @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(t-plain, true, true);
+@mixin _navigation-scheme-nav($legacy: false) {
+  #{ns(nav)} {
+    &__link,
+    &__btn {
+      @include scheme-element-text-color(action-high neutral, $legacy);
 
-    &[aria-current] {
-      @include scheme-element-text-color(bf500);
-
-      @include before {
-        @include scheme-element-bg-color(bf500);
+      &[aria-current] {
+        @include scheme-element-text-color(active blue-france, $legacy);
+        @include before {
+          @include scheme-element-bg-color(active blue-france, $legacy);
+        }
       }
     }
-  }
 
-  &__btn {
-    &[aria-expanded="true"] {
-      @include respond-from(lg) {
-        @include scheme-element-text-color(bf500-plain);
-        @include scheme-element-bg-color(bf200-bf300);
+    &__btn {
+      &[aria-expanded="true"] {
+        @include respond-from(lg) {
+          @include scheme-element-text-color(active blue-france, $legacy);
+          @include scheme-element-bg-color(open blue-france, $legacy);
+        }
       }
     }
-  }
 
-  @include list-item {
-    @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
+    @include list-item {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-no-box-shadow(lg);
+    }
   }
 }

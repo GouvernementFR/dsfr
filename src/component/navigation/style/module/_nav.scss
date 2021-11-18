@@ -6,6 +6,8 @@
 #{ns(nav)} {
   @include disable-link-style;
   @include disable-list-style;
+  @include set-text-margin(0);
+  @include set-title-margin(0);
   @include z-index(nav, true);
 
   @include list {
@@ -61,8 +63,9 @@
     @include display-flex(column, stretch);
     flex: 0 1 auto;
 
+    @include scheme-element-no-box-shadow(lg);
+
     @include respond-from(lg) {
-      box-shadow: none;
       align-items: flex-start;
 
       &--align-right {

@@ -1,10 +1,11 @@
 <%
-
+let link = locals.link || {};
 let data = {
-  label: locals.label || 'Label lien',
-  href: locals.href || '#'
+  ...link,
+  label: link.label || 'Label lien',
+  href: link.href || '#'
 }
 
 %>
 
-<%- include('../../template/ejs/link', data); %>
+<%- include('../../template/ejs/link', {link: data}); %>

@@ -6,6 +6,8 @@
 #{ns(card)} {
   @include display-flex(column-reverse);
   @include relative();
+  @include set-text-margin(0 0 4v);
+  @include set-title-margin(0 0 2v);
 
   #{ns(grid-row)} & {
     @include size(null, 100%);
@@ -36,8 +38,6 @@
   }
 
   &__detail {
-    @include margin-top(0);
-    @include margin-bottom(4v);
     @include text-style(xs);
     order: -1;
   }
@@ -45,14 +45,9 @@
   &__title {
     @include title-style(h6);
     @include font-weight(bold);
-
-    @include margin-top(0);
-    @include margin-bottom(2v);
   }
 
   &__desc {
-    @include margin-top(0);
-    @include margin-bottom(4v);
     @include text-style(sm);
   }
 
@@ -69,7 +64,7 @@
     }
 
     &--horizontal &__img {
-      @include size(40.78%);
+      @include max-width(41.666%);
       flex: 1 0 auto;
     }
   }

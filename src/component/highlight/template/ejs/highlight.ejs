@@ -1,0 +1,26 @@
+<%#
+# paramètres highlight
+
+* highlight.text (string, required) : contenu texte
+
+* highlight.size (string, optional) : Taille du texte
+
+* highlight.classes (array, optional) : Classes supplémentaires sur le highlight
+
+* highlight.accent (string, optional): Couleur d'accenturation du composant
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+ let highlight = locals.highlight || {};
+ let classes = highlight.classes || [];
+
+ if (highlight.accent !== undefined) classes.push(prefix + '-highlight--' + highlight.accent);
+
+ classes.push(prefix + '-highlight');
+ %>
+
+<div <%- includeClasses(classes)%>>
+  <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: highlight.text, size: highlight.size}}) %>
+</div>

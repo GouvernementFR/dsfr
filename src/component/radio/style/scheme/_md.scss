@@ -1,0 +1,47 @@
+////
+/// Radio Scheme : radio md
+/// @group radio
+////
+
+@mixin _radio-scheme-md($legacy: false) {
+  #{ns-group(radio)} {
+    /**
+    * On cache l'input de type radio pour le styler via le label
+    */
+    input[type="radio"] {
+      & + label {
+        @include before {
+          @include scheme-element-box-shadow-color(action-high neutral background-default neutral  background-action-high blue-france, $legacy, false, radio-box-shadow(false));
+        }
+      }
+
+      @include disabled($legacy) {
+        + label {
+          @include before {
+            @include scheme-element-box-shadow-color(disabled neutral background-default neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false));
+          }
+        }
+      }
+
+      /**
+      * On applique les styles au pseudo élément before du label quand l'input présente
+      * un état check
+      */
+      &:checked {
+        + label {
+          @include before {
+            @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(true));
+          }
+        }
+
+        @include disabled($legacy) {
+          + label {
+            @include before {
+              @include scheme-element-box-shadow-color(disabled neutral background-default neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true));
+            }
+          }
+        }
+      }
+    }
+  }
+}

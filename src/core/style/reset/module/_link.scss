@@ -12,20 +12,14 @@
     @include a-reset;
   }
 
+  // TODO: à checker avec <area href="" >
   [href] {
     @include link-underline;
   }
 
+  // TODO: à checker avec <form target="_blank" >
   [target="_blank"] {
     @include link-blank;
-  }
-
-  #{ns(enlarge-link)} {
-    position: relative;
-
-    a {
-      @include enlarge-link;
-    }
   }
 
   #{ns(raw-link)} {

@@ -3,74 +3,74 @@
 /// @group sidemenu
 ////
 
-#{ns(sidemenu)} {
-  @include scheme-element-bg-color(w-g750, true);
+@mixin _sidemenu-scheme($legacy: false) {
+  #{ns(sidemenu)} {
+    /*
+    @include scheme-element-bg-color(default neutral);
 
-  @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true);
-  }
+    @include respond-from(md) {
+      @include scheme-element-bg-transparent($legacy, true);
+    }
+    */
 
-  @include title {
-    @include scheme-element-text-color(g800);
-    @include scheme-element-bg-color(t-plain, true);
-    @include scheme-element-border-color(g300, true, bottom);
-  }
+    @include title {
+      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-no-box-shadow(md);
+    }
 
-  @include list-item {
-    @include scheme-element-border-color(g300, true, bottom);
+    @include list-item {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-no-box-shadow(md);
 
-    &:last-child {
-      #{ns(sidemenu__btn)} {
-        @include scheme-element-border-color(t-plain, true, bottom);
+      &:last-child {
+        #{ns(sidemenu__btn)} {
+          @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+          @include scheme-element-no-box-shadow(md);
+        }
+      }
+
+      &--active {
+        & > #{ns(sidemenu__btn)},
+        & > #{ns(sidemenu__link)} {
+          @include scheme-element-text-color(active blue-france, $legacy);
+          @include after {
+            @include scheme-element-bg-color(border-active blue-france, $legacy);
+          }
+        }
       }
     }
 
-    &--active {
-      & > #{ns(sidemenu__btn)},
-      & > #{ns(sidemenu__link)} {
-        @include scheme-element-text-color(bf500);
+    &__inner {
+      @include respond-from(md) {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, right-1-in);
+      }
+    }
 
-        @include after {
-          background-color: currentColor;
+    @include respond-from(md) {
+      &--right {
+        #{ns(sidemenu__inner)} {
+          @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
+        }
+      }
+
+      &--full-border {
+        #{ns(sidemenu__inner)} {
+          @include scheme-element-box-shadow-color(default neutral, $legacy);
         }
       }
     }
   }
 
-  &__inner {
-    @include respond-from(md) {
-      @include scheme-element-border-color(g300, true, right);
+  #{ns(sidemenu__btn)} {
+    @include scheme-element-text-color(action-high neutral, $legacy);
+
+    @at-root #{ns(sidemenu__inner)} > #{&} {
+      @include scheme-element-bg-color(default neutral, $legacy);
     }
   }
 
-  @include respond-from(md) {
-    &--right {
-      #{ns(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true, left);
-      }
-    }
-
-    &--full-border {
-      #{ns(sidemenu__inner)} {
-        @include scheme-element-border-color(g300, true);
-      }
-    }
+  #{ns(sidemenu__link)} {
+    @include scheme-element-text-color(action-high neutral, $legacy);
   }
-}
-
-#{ns(sidemenu__btn)} {
-  @include scheme-element-text-color(g800);
-
-  @at-root #{ns(sidemenu__inner)} > #{&} {
-    @include scheme-element-bg-color(w-g750, true);
-  }
-
-  @include respond-from(md) {
-    @include scheme-element-bg-color(t-plain, true, after);
-  }
-}
-
-#{ns(sidemenu__link)} {
-  @include scheme-element-text-color(g800);
-  @include scheme-element-bg-color(t-plain, true, after);
 }

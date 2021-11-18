@@ -1,50 +1,52 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Toggle simple avec bouton + label à droite', './sample/toggle-default.ejs', {state: false, toggleId: 'toggle-'}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à droite', './sample/toggle-default.ejs', {toggle: {state: false, id: 'toggle-'}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à droite + texte d’aide', './sample/toggle-default.ejs', {state: false, toggleId: 'toggle-', hint: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à droite + texte d’aide', './sample/toggle-default.ejs', {toggle: {state: false, id: 'toggle-', hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à droite + état', './sample/toggle-default.ejs', {state: true, toggleId: 'toggle-'}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à droite + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-'}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à droite + état + texte d’aide', './sample/toggle-default.ejs', {state: true, toggleId: 'toggle-', hint: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à droite + état + texte d’aide', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à droite + état + séparateur', './sample/toggle-default.ejs', {state: true, border: true, toggleId: 'toggle-'}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à droite + état + séparateur', './sample/toggle-default.ejs', {toggle: {state: true, border: true, id: 'toggle-'}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à droite + état + séparateur + texte d’aide', './sample/toggle-default.ejs', {state: true, border: true, toggleId: 'toggle-', hint: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à droite + état + séparateur + texte d’aide', './sample/toggle-default.ejs', {toggle: {state: true, border: true, id: 'toggle-', hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple disabled avec bouton + label à droite', './sample/toggle-default.ejs', {state: false, toggleId: 'toggle-', disabled: true}, true, './layout'); %>
+<%- sample('Toggle simple disabled avec bouton + label à droite', './sample/toggle-default.ejs', {toggle: {state: false, id: 'toggle-', disabled: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple disabled avec bouton + label à droite + état', './sample/toggle-default.ejs', {state: true, toggleId: 'toggle-', disabled: true}, true, './layout'); %>
+<%- sample('Toggle simple disabled avec bouton + label à droite + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', disabled: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur', './sample/toggle-group.ejs', {border:true, groupToggleId: 'group-1-'}, true, './layout'); %>
+<%- sample('Toggle simple disabled et pré-coché avec bouton + label à droite + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', disabled: true, checked:true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur + texte d’aide', './sample/toggle-group.ejs', {border:true, groupToggleId: 'group-1-', hint: true}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-1-'}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur', './sample/toggle-group.ejs', {border: true, state: true, groupToggleId: 'group-2-'}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-1-', hint: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {border: true, state: true, groupToggleId: 'group-2-', hint: true}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-2-'}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à gauche', './sample/toggle-default.ejs', {state: false, toggleId: 'toggle-', left: true}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-2-', hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à gauche + texte d’aide', './sample/toggle-default.ejs', {state: false, toggleId: 'toggle-', left: true, hint: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à gauche', './sample/toggle-default.ejs', {toggle: {state: false, id: 'toggle-', left: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à gauche + état', './sample/toggle-default.ejs', {state: true, toggleId: 'toggle-', left: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à gauche + texte d’aide', './sample/toggle-default.ejs', {toggle: {state: false, id: 'toggle-', left: true, hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à gauche + état + texte d’aide', './sample/toggle-default.ejs', {state: true, toggleId: 'toggle-', left: true, hint: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à gauche + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', left: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à gauche + état + séparateur', './sample/toggle-default.ejs', {state: true, border: true, toggleId: 'toggle-', left: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à gauche + état + texte d’aide', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', left: true, hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple avec bouton + label à gauche + état + séparateur + texte d’aide', './sample/toggle-default.ejs', {state: true, border: true, toggleId: 'toggle-', left: true, hint: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à gauche + état + séparateur', './sample/toggle-default.ejs', {toggle: {state: true, border: true, id: 'toggle-', left: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple disabled avec bouton + label à gauche', './sample/toggle-default.ejs', {state: false, toggleId: 'toggle-', left: true, disabled: true}, true, './layout'); %>
+<%- sample('Toggle simple avec bouton + label à gauche + état + séparateur + texte d’aide', './sample/toggle-default.ejs', {toggle: {state: true, border: true, id: 'toggle-', left: true, hint: true}}, true, './layout'); %>
 
-<%- sample('Toggle simple disabled avec bouton + label à gauche + état', './sample/toggle-default.ejs', {state: true, toggleId: 'toggle-', left: true, disabled: true}, true, './layout'); %>
+<%- sample('Toggle simple disabled avec bouton + label à gauche', './sample/toggle-default.ejs', {toggle: {state: false, id: 'toggle-', left: true, disabled: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur', './sample/toggle-group.ejs', {border:true, groupToggleId: 'group-3-', left: true}, true, './layout'); %>
+<%- sample('Toggle simple disabled avec bouton + label à gauche + état', './sample/toggle-default.ejs', {toggle: {state: true, id: 'toggle-', left: true, disabled: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur + texte d’aide', './sample/toggle-group.ejs', {border:true, groupToggleId: 'group-3-', left: true, hint: true}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-3-', left: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur', './sample/toggle-group.ejs', {border: true, state: true, groupToggleId: 'group-4-', left: true}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-3-', left: true, hint: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {border: true, state: true, groupToggleId: 'group-4-', left: true, hint: true}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-4-', left: true}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-4-', left: true, hint: true}}, true, './layout'); %>
 

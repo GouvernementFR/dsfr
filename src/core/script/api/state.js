@@ -40,6 +40,15 @@ class State {
       }
     }
   }
+
+  get isLegacy () {
+    return this._isLegacy;
+  }
+
+  set isLegacy (value) {
+    if (value === this._isLegacy) return;
+    this._isLegacy = value;
+  }
 }
 
 const state = new State();

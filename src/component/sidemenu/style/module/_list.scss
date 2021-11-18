@@ -32,10 +32,6 @@
   @include relative;
   @include before(none);
 
-  &:last-child {
-    border: 0;
-  }
-
   &--active {
 
     & > #{ns(sidemenu__link)},
@@ -44,13 +40,5 @@
         @include absolute(3v, null, 3v, 0, 2px);
       }
     }
-  }
-
-  @include respond-from(md) {
-    border: 0;
-  }
-
-  #{ns(sidemenu__item)} #{ns(sidemenu__item)} {
-    border: 0;
   }
 }

@@ -3,24 +3,27 @@
 /// @group card
 ////
 
-#{ns(card)} {
-  @include scheme-element-bg-color(beige, true, false);
+@mixin _card-scheme($legacy: false) {
+  #{ns(card)} {
+    @include scheme-element-bg-color(default neutral, $legacy);
+    @include scheme-element-box-shadow-color(default neutral, $legacy);
 
-  &#{ns(enlarge-link)} {
-    @include scheme-element-bg-color(beige, true, true);
-  }
-
-  &:not(&--no-arrow) &__body {
-    @include after {
-      @include scheme-element-text-color(bf500, true);
+    &--neutral {
+      @include scheme-element-bg-color(contrast neutral, $legacy);
     }
-  }
 
-  &__detail {
-    @include scheme-element-text-color(g600, true);
-  }
+    &:not(&--no-arrow) &__body {
+      @include after {
+        @include scheme-element-text-color(action-high blue-france, $legacy);
+      }
+    }
 
-  &__title {
-    @include scheme-element-text-color(g800);
+    &__detail {
+      @include scheme-element-text-color(mention neutral, $legacy);
+    }
+
+    &__title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
   }
 }

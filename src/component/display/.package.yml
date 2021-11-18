@@ -3,7 +3,6 @@ title: Paramètre d'affichage
 description: Le pattern paramètre d'affichage permet de définir ses préférences de thème
 style:
   - core
-  - scheme
   - form
   - radio
   - modal
