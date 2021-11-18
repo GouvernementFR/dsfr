@@ -14,7 +14,7 @@
     */
     &__tab {
       @include after {
-        @include scheme-element-bg-image-color(border-active blue-france border-default grey border-default grey background-default grey, $legacy);
+        @include scheme-element-bg-image-color((border active blue-france) (border default grey) (border default grey) (background default grey), $legacy);
       }
 
       &:not([aria-selected=true]) {

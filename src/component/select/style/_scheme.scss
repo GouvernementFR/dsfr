@@ -40,7 +40,7 @@
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
-      @include scheme-element-box-shadow-color(plain neutral background-contrast blue-france, $legacy, false, bottom-2-in all-in);
+      @include scheme-element-box-shadow-color((plain neutral) (background contrast blue-france), $legacy, false, bottom-2-in all-in);
       @include _scheme-element(-webkit-text-fill-color, text, label neutral, $legacy);
     }
   }

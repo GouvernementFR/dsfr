@@ -58,7 +58,7 @@
       &[aria-current] {
         @include scheme-element-text-color(active blue-france, $legacy);
         @include after {
-          @include scheme-element-bg-color(border-active blue-france, $legacy);
+          @include scheme-element-bg-color(border active blue-france, $legacy);
         }
       }
     }

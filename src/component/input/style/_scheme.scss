@@ -40,7 +40,7 @@
     * sur les navigateurs webkit.
     */
     @include autofill {
-      @include scheme-element-box-shadow-color(plain neutral background-contrast info, $legacy, false, bottom-2-in all-in);
+      @include scheme-element-box-shadow-color((plain neutral) (background contrast info), $legacy, false, bottom-2-in all-in);
       @include _scheme-element(-webkit-text-fill-color, text, label neutral, $legacy);
     }
   }
