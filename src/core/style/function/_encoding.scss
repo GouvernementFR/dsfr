@@ -5,5 +5,9 @@
 
 @function svg-encode($svg) {
   $svg: str-replace($svg, '#', '%23');
-  @return 'data:image/svg+xml;utf-8,' + $svg;
+  $svg: str-replace($svg, '<', '%3C');
+  $svg: str-replace($svg, '>', '%3E');
+  $svg: str-replace($svg, '"', '%22');
+  $svg: str-replace($svg, '/', '\/');
+  @return 'data:image/svg+xml;charset=utf8,' + $svg;
 }
