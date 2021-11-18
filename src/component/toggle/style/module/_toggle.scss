@@ -1,0 +1,105 @@
+////
+/// Toggle Module : toggle
+/// @group toggle
+////
+
+#{ns(toggle)} {
+  display: flex;
+  flex-wrap: wrap;
+  @include relative;
+  @include padding(4v 0);
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+
+  /*
+   * On utilise un input de type checkbox pour gérer le toggle
+   * On reset ses styles afin de ne garder que son fonctionnement et son espacement
+   * On l'utilisera égalemement pour afficher l'état du toggle (optionnel)
+   */
+  input[type="checkbox"] {
+    flex-shrink: 0;
+    @include size(10v, 6v);
+    border-radius: space(3v);
+    @include margin(0);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /*
+     * On applique des styles aux pseudo-elements du label quand l'input est check.
+     * On change l'ordre du texte d'état du label dans le content pour afficher
+     * la valeur correspondant à l'état checked (optionnel).
+     */
+    &:checked {
+      ~ #{ns(toggle__label)} {
+        &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
+          @include before(attr(#{ns-attr(checked-label, null, true)}) '\A' attr(#{ns-attr(unchecked-label, null, true)}));
+        }
+
+        @include after {
+          transform: translateX(space(4v));
+          text-indent: 0;
+          @include z-index(focus);
+        }
+      }
+    }
+  }
+
+  label {
+    display: inline-flex;
+    flex-basis: space(calc(100% - 10v));
+    min-height: space(6v);
+    @include padding-left(8v);
+    @include text-style(md);
+
+    /*
+     * Si les data attributes sont présents, on assigne un content au pseudo element before,
+     * et on enlève le padding left du label.
+     */
+    &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
+      @include padding-left(0);
+
+      @include before(attr(#{ns-attr(unchecked-label, null, true)}) '\A' attr(#{ns-attr(checked-label, null, true)}));
+
+      + #{ns(hint-text)} {
+        @include margin-top(2v);
+      }
+    }
+
+    /*
+     * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
+     * On récupère le text via l'attribut [data-fr-unchecked-label]
+     */
+    @include before {
+      flex-shrink: 0;
+      min-width: space(10v);
+      height: space(calc(5v + 1px));
+      @include margin-top(6v);
+      @include margin-left(-10v);
+      @include margin-right(4v);
+      @include text-style(xs);
+      white-space: pre-wrap;
+      overflow: hidden;
+      outline: none !important;
+    }
+
+    /*
+     * On inclut l'icône check dans un pseudo-element after
+     * On la cache via un text-indent quand l'input n'est pas check
+     */
+    @include icon(check-line, sm, after) {
+      @include display-flex(null,center,center);
+      @include absolute(4v, null, null, 0, 6v, 6v);
+      border-radius: 50%;
+      text-indent: -9999px;
+      @include z-index(over);
+    }
+  }
+
+  #{ns(hint-text)} {
+    display: block;
+    @include margin-top(4v);
+    @include text-style(xs);
+    flex-basis: 100%;
+  }
+}

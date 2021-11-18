@@ -1,5 +1,6 @@
 
 <%
+let share = locals.share || {};
 let data = {};
 
 /**
@@ -25,10 +26,11 @@ function buildShareLink(name, label, href, width, height, disabled, comments) {
 data.share = {
   title: 'Partager la page',
   text: 'Veuillez <a href=' + contentPlaceholder("url page autorisation cookies") + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
+  disabled: share.disabled === true,
   links: [
-    buildShareLink('facebook', 'Partager sur Facebook', 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url de la page'), 600, 450, locals.disabled === true),
-    buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/intent/tweet?url='+contentPlaceholder('url de la page')+'&text='+contentPlaceholder('titre ou texte descriptif de la page')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 420, locals.disabled === true, locals.disabled !== true ? 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)' : null),
-    buildShareLink('linkedin', 'Partager sur LinkedIn', 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url de la page')+'&title='+contentPlaceholder('titre ou texte descriptif de la page'), 550, 550, locals.disabled === true),
+    buildShareLink('facebook', 'Partager sur Facebook', 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url de la page'), 600, 450, share.disabled === true),
+    buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/intent/tweet?url='+contentPlaceholder('url de la page')+'&text='+contentPlaceholder('titre ou texte descriptif de la page')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 420, share.disabled === true, share.disabled !== true ? 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)' : null),
+    buildShareLink('linkedin', 'Partager sur LinkedIn', 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url de la page')+'&title='+contentPlaceholder('titre ou texte descriptif de la page'), 550, 550, share.disabled === true),
     {
       name: 'mail',
       label: 'Partager par email',

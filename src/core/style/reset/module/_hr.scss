@@ -1,0 +1,10 @@
+////
+/// Core Module : Reset hr
+/// @group core
+////
+
+@if (map-get($reset-settings, hr)) {
+  hr {
+    @include build-hr();
+  }
+}

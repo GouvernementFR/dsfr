@@ -5,6 +5,5 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisi
 wrapper: col-8
 style:
   - core
-  - scheme
   - form
   - button

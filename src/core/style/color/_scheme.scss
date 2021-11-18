@@ -1,0 +1,10 @@
+////
+/// Core Scheme : Color
+/// @group core
+////
+
+@import 'scheme/decisions';
+
+@mixin _core-color-scheme($legacy: false) {
+  @include _core-color-decisions-scheme($legacy);
+}

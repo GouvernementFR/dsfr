@@ -3,54 +3,54 @@
 /// @group header
 ////
 
-#{ns(header)} {
-  @include scheme-element-bg-color(w-g750, true);
+@mixin _header-scheme($legacy: false) {
+  #{ns(header)} {
+    @include scheme-element-bg-color(elevated neutral, $legacy);
 
-  &__service {
-    @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
-    @include respond-from(lg) {
-      box-shadow: none;
+    &__service {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, top-1-in);
+      @include scheme-element-no-box-shadow(lg);
     }
-  }
 
-  &__menu-links {
-    #{ns(link)} {
-      @include scheme-element-box-shadow-color(g300, true, inset 0 -1px 0 0 $COLOR);
-    }
-  }
-
-  &__tools-links {
-    #{ns(link)} {
-      @include after {
-        @include scheme-element-bg-color(g400);
-      }
-    }
-  }
-
-  &__navbar {
-    #{ns(service)} {
-      @include title {
-        @include scheme-element-text-color(g800, true);
+    &__menu-links {
+      #{ns(link)} {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
       }
     }
 
-    #{ns(btn)} {
-      @include scheme-element-bg-color(t-plain, false, override);
-      @include scheme-element-text-color(bf500);
-
-      &--menu {
-        @include scheme-element-text-color(g700);
+    &__tools-links {
+      #{ns(link)} {
+        @include after {
+          @include scheme-element-box-shadow-color(default neutral, $legacy);
+        }
       }
     }
-  }
 
-  #{ns(header__menu)} {
-    @include respond-from(lg) {
-      @include scheme-element-box-shadow-color(g300, true, inset 0 1px 0 0 $COLOR);
+    &__navbar {
+      #{ns(service)} {
+        @include title {
+          @include scheme-element-text-color(title neutral, $legacy);
+        }
+      }
+
+      #{ns(btn)} {
+        @include scheme-element-bg-transparent($legacy, true);
+        @include scheme-element-text-color(action-high blue-france, $legacy);
+
+        &--menu {
+          @include scheme-element-text-color(default neutral, $legacy);
+        }
+      }
     }
-  }
 
-  #{ns(modal)} {
-    @include scheme-element-bg-color(w-g750);
+    #{ns(header__menu)} {
+      @include respond-from(lg) {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, true, top-1-in);
+      }
+    }
+
+    #{ns(modal)} {
+      @include scheme-element-bg-color(elevated neutral, $legacy);
+    }
   }
 }

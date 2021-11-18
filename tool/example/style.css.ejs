@@ -21,7 +21,7 @@ pre[class*="language-"] {
 .example-controls__content {
 
   padding: 16px;
-  background-color: var(--w-g750);
+  background-color: var(--background-elevated-white);
 }
 
 .example-controls .<%= prefix %>-collapse--expanded ~ [aria-expanded] {
@@ -34,6 +34,12 @@ pre[class*="language-"] {
 
 .example-controls [class*="-form-group"] {
   margin-bottom: 0;
+}
+
+.fr-display-button {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 2rem;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  

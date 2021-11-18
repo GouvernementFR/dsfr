@@ -1,0 +1,39 @@
+////
+/// Core Color Scheme : Decisions
+/// @group core
+////
+
+@mixin _core-color-decisions-scheme($legacy: false) {
+  $decisions: map-get(map-get($color-variable, utilities), decisions);
+
+  @each $part, $list in $decisions {
+    $tokens: map-get($scheme-decisions, $part);
+    @if $tokens == null {
+      @error 'part #{$part} doesn\'t exist in $scheme-decisions';
+    }
+    @each $token in $list {
+      $families: map-get($tokens, $token);
+      @if $families == null {
+        @error 'token #{$token} doesn\'t exist in $scheme-decisions';
+      }
+      @each $family, $shade in $families {
+        @each $tint, $shades in map-get($scheme-sets, $family) {
+          @if map-has-key($shades, $shade) {
+            $selector: '#{$part}-#{$token}--#{$tint}';
+            #{ns($selector)} {
+              @if $part == background {
+                @include scheme-element-bg-color($token $tint, $legacy, true);
+              }
+              @else if $part == text {
+                @include scheme-element-text-color($token $tint, $legacy, true);
+              }
+              @else if $part == artwork {
+                @include scheme-element-fill-color('artwork-#{$token}' $tint, $legacy, true);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,8 +3,12 @@
 /// @group Table
 ////
 
+// @TODO: remettre le code de table dans un sous-fichier pour préparation à @use
+
 #{ns(table)} {
   --table-offset: #{space(4v)};
+  @include set-text-margin(0);
+  @include set-title-margin(0);
 
   @include relative;
   @include margin-bottom(10v);
@@ -52,88 +56,18 @@
   }
 
   th {
-    font-weight: font-weight('bold');
+    font-weight: font-weight(bold);
   }
 
   thead {
     td,
     th {
-      font-weight: font-weight('bold');
+      font-weight: font-weight(bold);
+      @include padding-bottom(3.5v); // 0.5v for the box shadox
+      @include padding-bottom(4.5v, md);
     }
   }
-
-  /* Style bordered, enleve le style even/odd et ajoute des bordures entre chaque ligne */
-  &--bordered {
-    tbody {
-      td,
-      th {
-        border: 0;
-      }
-    }
-  }
-
-  /*
-  * Cache la caption
-  */
-  &--no-caption {
-    @include padding-top(0);
-
-    caption {
-      @include sr-only();
-      @include height(0);
-    }
-  }
-
-  /*
-  * Fixe le caption en bas du tableau
-  */
-  &--caption-bottom {
-    @include padding-top(0);
-    @include margin-bottom(0);
-    @include margin-top(4v);
-
-    table {
-      @include margin-bottom(calc(var(--table-offset) + #{space(11v)}));
-    }
-
-    &#{ns-attr(js-table, true)} {
-      caption {
-        @include absolute(100%, 0, 0, 0);
-        @include margin-top(4v);
-      }
-    }
-
-    caption {
-      @include margin-top(4v);
-      @include height(min-content);
-      caption-side: bottom;
-    }
-  }
-
-  /*
-  * pas de scroll ni de shadow
-  */
-  &--no-scroll {
-    @include min-width(auto);
-
-    table {
-      overflow-x: hidden;
-    }
-
-    caption {
-      @include max-width(calc(100vw - #{space(8v)})); // eol in mobile even if table overflow
-    }
-  }
-
-  /*
-  * Fixe la taille des colonnes du tableau
-  */
-  &--layout-fixed {
-    table {
-      display: table;
-      table-layout: fixed;
-    }
-  }
-
-  @import 'module/shadow';
 }
+
+@import 'module/variants';
+@import 'module/shadow';

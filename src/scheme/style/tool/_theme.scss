@@ -1,0 +1,13 @@
+////
+/// Schemes Tools : Properties
+/// @group schemes
+////
+
+@mixin theme-selector ($theme: null) {
+  @if $theme != 'dark' {
+    $theme: null;
+  }
+  :root#{ns-attr(theme, $theme)} {
+    @content;
+  }
+}

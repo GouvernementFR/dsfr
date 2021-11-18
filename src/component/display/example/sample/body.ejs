@@ -1,17 +1,23 @@
+<%
+  let element = {
+    path: 'radio/example/sample/radio-rich',
+    data: {
+        name: prefix + '-radios-theme',
+        rich: true,
+    }
+  }
+
+  let fields = {
+      legend: 'Choisissez un thème pour personnaliser l’apparence du site.',
+      choice: true,
+      elements: [
+          { ...element, data: { radio: {...element.data, image: {src: relativeRoot + 'dist/artwork/light.svg', type: 'svg'}, label: 'Thème clair', attributes: { value: 'light'}, id: element.data.name + '-light' } } },
+          { ...element, data: { radio: {...element.data, image: {src: relativeRoot + 'dist/artwork/dark.svg', type: 'svg'}, label: 'Thème sombre', attributes: { value: 'dark'}, id: element.data.name + '-dark' } } },
+          { ...element, data: { radio: {...element.data, image: {src: relativeRoot + 'dist/artwork/system.svg', type: 'svg'},  label: 'Système', hint: 'Utilise les paramètres système.', attributes: { value: 'system'}, id: element.data.name + '-system' } } },
+      ]
+  }
+%>
+
 <div id="<%= prefix %>-display" class="<%= prefix %>-form-group <%= prefix %>-display">
-  <fieldset class="<%= prefix %>-fieldset">
-      <legend class="<%= prefix %>-fieldset__legend <%= prefix %>-text--regular" >Choisissez un thème pour personnaliser l’apparence du site.</legend>
-      <div class="<%= prefix %>-fieldset__content">
-          <div class="<%= prefix %>-radio-group <%= prefix %>-radio-rich">
-              <input type="radio" id="<%= prefix %>-radios-theme-light" name="<%= prefix %>-radios-theme" value="light">
-              <label class="<%= prefix %>-label" for="<%= prefix %>-radios-theme-light">Thème clair
-              </label>
-          </div>
-          <div class="<%= prefix %>-radio-group <%= prefix %>-radio-rich">
-              <input type="radio" id="<%= prefix %>-radios-theme-dark" name="<%= prefix %>-radios-theme" value="dark" >
-              <label class="<%= prefix %>-label" for="<%= prefix %>-radios-theme-dark">Thème sombre
-              </label>
-          </div>
-      </div>
-  </fieldset>
+  <%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>
 </div>

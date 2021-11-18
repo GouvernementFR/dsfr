@@ -5,5 +5,4 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935138/Interrupteur+-+
 wrapper: container
 style:
   - core
-  - scheme
   - form

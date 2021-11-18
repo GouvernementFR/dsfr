@@ -1,0 +1,10 @@
+////
+/// Core Scheme : Typography
+/// @group core
+////
+
+@mixin _core-typography-scheme($legacy: false) {
+  @include title-selector {
+    @include scheme-element-text-color(title neutral, $legacy);
+  }
+}

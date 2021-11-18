@@ -1,11 +1,15 @@
+<% let header = locals.header || {}; %>
+<% let tools = header.tools || {}; %>
+<% let links = tools.links || {items:[]}; %>
+
 <ul class="<%= prefix %>-links-group">
     <%
     let item;
-    for (let i = 0; i < items.length; i++) {
-        item = items[i];
+    for (let i = 0; i < links.items.length; i++) {
+        item = links.items[i];
     %>
     <li>
-        <%- include('../../../link/template/ejs/link', { ... item, left: true }); %>
+        <%- include('../../../link/template/ejs/link', {link: { ... item, left: true }}); %>
     </li>
     <% } %>
 </ul>

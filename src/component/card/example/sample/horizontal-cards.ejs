@@ -6,7 +6,7 @@ let data = { img: true, horizontal: true };
     for (let i = 0; i < 4; i++) {
    %>
     <div class="<%= prefix %>-col-12">
-        <%- include('./card-default', data); %>
+        <%- include('./card-default', {card:data}); %>
     </div>
     <% } %>
 </div>

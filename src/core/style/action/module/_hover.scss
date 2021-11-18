@@ -1,0 +1,18 @@
+////
+/// Core Module : Action hover
+/// @group core
+////
+
+@include hover-media-query {
+  :root {
+    @include enable-blend;
+  }
+
+  @include hover-type-selector($action-elements, all) {
+    @include hover-blend();
+  }
+
+  @include hover-type-selector($action-elements, underline) {
+    @include disable-blend;
+  }
+}

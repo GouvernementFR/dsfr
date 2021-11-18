@@ -5,8 +5,3 @@ description: Ce package est utilisé de manière globale pour la compatibilité 
 draft: true
 wrapper: col-8
 module: false
-style:
-  - core
-follow:
-  style:
-    - scheme

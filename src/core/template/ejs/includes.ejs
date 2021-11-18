@@ -1,7 +1,20 @@
 (function (locals) {
   locals.includeAttrs = function (attrs) {
     let html = '';
-    for (const prop in attrs) html += prop + '="' + attrs[prop] + '" ';
+    for (const prop in attrs) {
+      switch(attrs[prop]) {
+        case '':
+        case null:
+          html += `${prop} `;
+          break;
+
+        case undefined:
+          break;
+
+        default:
+          html += `${prop}="${attrs[prop]}" `;
+      }
+    }
     return html;
   };
 

@@ -1,0 +1,51 @@
+////
+/// Radio Scheme : radio rich
+/// @group radio
+////
+
+@mixin _radio-scheme-rich($legacy: false) {
+  #{ns(radio-rich)} {
+    &__img {
+      @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
+    }
+
+    input[type="radio"] {
+      + label {
+        @include scheme-element-box-shadow-color(default neutral, $legacy, false, all-1-in);
+        @include scheme-element-bg-color(default neutral, $legacy);
+
+        @include before {
+          @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(false, sm));
+        }
+      }
+
+      @include disabled($legacy) {
+        + label {
+          @include before {
+            @include scheme-element-box-shadow-color(disabled neutral background-default neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false, sm));
+          }
+        }
+      }
+
+      &:checked {
+        + label {
+          @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
+
+          @include before {
+            @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(true, sm));
+          }
+        }
+
+        &[disabled],
+        &:disabled {
+          + label {
+            @include scheme-element-box-shadow-color(text-disabled neutral, $legacy, false, all-1-in);
+            @include before {
+              @include scheme-element-box-shadow-color(disabled neutral background-default neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true, sm));
+            }
+          }
+        }
+      }
+    }
+  }
+}

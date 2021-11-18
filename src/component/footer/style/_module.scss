@@ -7,8 +7,6 @@
   @include disable-link-style;
   @include disable-list-style;
   @include size(100%);
-  @include scheme-element-border-color(bf500, true, top, 2px solid $COLOR);
-  @include scheme-element-border-color(g400, true, bottom, 1px solid $COLOR);
   @include padding-top(10v);
 
   @include body {
@@ -41,35 +39,6 @@
     #{ns(logo)} + #{ns(footer__brand-link)} {
       @include margin-left(6v);
       @include margin-left(12v, md);
-    }
-
-    /**
-     * Styles quand un logo opérateur est présent
-     */
-    #{ns(footer__body--operator)} & {
-      // flex-basis: 100%;
-
-      #{ns(footer__brand-link)} + #{ns(footer__brand-link)} {
-        #{ns(footer__logo)} {
-          @include size(auto);
-          min-width: initial;
-          max-height: 100px;
-        }
-      }
-
-      #{ns(footer__logo)} {
-        min-width: initial;
-        max-width: 100%;
-
-        @include respond-from(sm) {
-          max-width: 200px;
-        }
-
-        @include respond-from(lg) {
-          min-width: 200px;
-          max-width: 100%;
-        }
-      }
     }
 
     @include respond-from(md) {

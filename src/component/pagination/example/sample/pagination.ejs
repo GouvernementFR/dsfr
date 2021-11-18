@@ -1,4 +1,5 @@
 <%
+    let pagination = locals.pagination || {};
     let pages = [];
     let i;
 
@@ -6,8 +7,7 @@
     pages.push({label:'…', displayedLg:true});
     for (i = 130; i < 133; i++) pages.push({label:i, title:'Page ' + i, href:'#', displayedLg: i < 132});
 
-    if (locals.index !== undefined) pages[index].active = true;
-    locals.title = undefined;
+    if (pagination.index !== undefined) pages[pagination.index].active = true;
 
     let data = {
         first: { label: 'Première page', href:'#' },
@@ -18,4 +18,4 @@
     }
 %>
 
-<%- include('../../template/ejs/pagination', data); %>
+<%- include('../../template/ejs/pagination', {pagination: data}); %>

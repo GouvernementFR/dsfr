@@ -1,1 +1,11 @@
-<%- include('../../template/ejs/button.ejs', {label: locals.label || 'Label bouton'}) %>
+<%
+const button = locals.button || {}
+const data = {
+  ...locals.button,
+  label: button.label || 'Label bouton'
+}
+
+if (button.iconPlace == 'only') data.title = locals.contentPlaceholder('Label bouton');
+
+%>
+<%- include('../../template/ejs/button.ejs', {button: data}) %>

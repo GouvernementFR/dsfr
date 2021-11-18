@@ -62,9 +62,4 @@
   &-title {
     @include title-style(h6, false);
   }
-
-  &-title,
-  &-tagline {
-    @include margin-bottom(0);
-  }
 }

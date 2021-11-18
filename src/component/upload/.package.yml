@@ -1,0 +1,8 @@
+id: upload
+title: Ajout de fichier
+description: Ce composant permet aux utilisateurs de sélectionner et envoyer un ou plusieurs fichiers.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/864190467/
+wrapper: col-8
+styles:
+  - core
+  - form

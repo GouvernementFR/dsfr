@@ -1,1 +1,31 @@
-<%- include('../../template/ejs/summary'); %>
+<%
+const getItem = (id) => {
+    return {
+        href: `#anchor-${id}`,
+        label: 'Titre du lien'
+    }
+};
+
+const summary = locals.summary;
+const links = summary.links || [0];
+
+let data = {list:[]};
+
+for (let i = 0; i < links.length; i++) {
+    let id = i + 1
+    const item = getItem(id);
+
+    if (links[i]) {
+        item.list = [];
+        for (let j = 0; j < links[i]; j++) {
+            id = `${i + 1}.${j + 1}`;
+            item.list.push(getItem(id));
+        }
+    }
+
+    data.list.push(item);
+}
+
+%>
+
+<%- include('../../template/ejs/summary', {summary:data}); %>

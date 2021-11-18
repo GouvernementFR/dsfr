@@ -3,9 +3,11 @@
 /// @group core
 ////
 
-@if (map-get($reset-settings, body)) {
-  body {
-    @include scheme-body;
-    @include scheme-element-text-color(g700);
+@mixin _core-reset-body-scheme($legacy: false) {
+  @if (map-get($reset-settings, body)) {
+    body {
+      @include scheme-element-bg-color(default neutral, $legacy);
+      @include scheme-element-text-color(default neutral, $legacy);
+    }
   }
 }

@@ -6,6 +6,8 @@
 #{ns(tile)} {
   @include relative;
   @include display-flex(column-reverse);
+  @include set-text-margin(0);
+  @include set-title-margin(0 0 2v);
 
   /**
    * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
@@ -61,7 +63,7 @@
     @include margin(0);
 
     + #{ns(tile__desc)} {
-      @include text-style(md);
+      @include margin(2v 0 0);
     }
   }
 
@@ -69,7 +71,6 @@
    * Description de la tuile
    */
   &__desc {
-    @include margin(2v 0 0);
     @include text-style(md);
   }
 

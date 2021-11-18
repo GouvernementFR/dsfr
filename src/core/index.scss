@@ -3,11 +3,8 @@
 /// @group core
 ////
 
+@import '../legacy/index';
 @import 'config';
 @import 'style/function';
 @import 'style/setting';
 @import 'style/tool';
-
-// TODO: à enlever quand la base de schemes sera dans le core
-@import '../scheme/style/setting';
-@import '../scheme/style/tool';

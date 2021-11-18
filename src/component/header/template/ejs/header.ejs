@@ -7,7 +7,7 @@ header = {
     brand: {
         logo: { voir logo },
         operator: {
-            img: 'url de l'img', // TODO: potentiellement à revoir
+            src: 'url de l'img',
             alt: 'texte alternatif',
             style: '' // TODO: taille de l'image gérée autrement
         },
@@ -43,13 +43,15 @@ header = {
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
+<% let header = locals.header || {};
+%>
 
 <header role="banner" class="<%= prefix %>-header">
 
-    <%- include('./body');%>
+    <%- include('./body', {header:header});%>
 
-    <% if (locals.navigation || (locals.tools && tools.links)) { %>
-        <%- include('./menu');%>
+    <% if (header.navigation || (header.tools && header.tools.links)) { %>
+        <%- include('./menu', {header:header});%>
     <% } %>
 
 </header>

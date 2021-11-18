@@ -1,0 +1,43 @@
+////
+/// Radio Scheme : radio
+/// @group radio
+////
+
+/**
+ * Modificateur pour la taille sm
+ */
+@mixin _radio-scheme-sm($legacy: false) {
+  #{ns-group(radio)}--sm {
+    input[type="radio"] {
+      + label {
+        @include before {
+          @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(false, sm));
+        }
+      }
+
+      @include disabled($legacy) {
+        + label {
+          @include before {
+            @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(false, sm));
+          }
+        }
+      }
+
+      &:checked {
+        + label {
+          @include before {
+            @include scheme-element-box-shadow-color(action-high neutral background-default neutral background-action-high blue-france, $legacy, false, radio-box-shadow(true, sm));
+          }
+        }
+
+        @include disabled($legacy) {
+          + label {
+            @include before {
+              @include scheme-element-box-shadow-color(disabled neutral background-disabled neutral  text-disabled neutral, $legacy, false, radio-box-shadow(true, sm));
+            }
+          }
+        }
+      }
+    }
+  }
+}

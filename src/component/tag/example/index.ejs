@@ -1,17 +1,18 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Tag seul sans icône', './sample/tag-default', {clickable: true}, true); %>
-<%- sample('Tag seul icône à gauche', './sample/tag-default', {clickable: true, iconPlace: 'left', icon: 'arrow-left-line'}, true); %>
-<%- sample('Tag seul icône à droite', './sample/tag-default', {clickable: true, iconPlace: 'right', icon: 'arrow-right-line'}, true); %>
-<%- sample('Tag seul cliquable', './sample/tag-default', {clickable: true}, true); %>
-<%- sample('Tag seul cliquable SM', './sample/tag-sm', {clickable: true}, true); %>
+<%- sample('Tag seul sans icône', './sample/tag-default', {tag:{clickable: true}}, true); %>
+<%- sample('Tag seul icône à gauche', './sample/tag-default', {tag:{clickable: true, iconPlace: 'left', icon: 'arrow-left-line'}}, true); %>
+<%- sample('Tag seul icône à droite', './sample/tag-default', {tag:{clickable: true, iconPlace: 'right', icon: 'arrow-right-line'}}, true); %>
+<%- sample('Tag seul cliquable', './sample/tag-default', {tag:{clickable: true}}, true); %>
+<%- sample('Tag seul cliquable SM', './sample/tag-sm', {tag:{clickable: true}}, true); %>
+<%- sample('Tag seul cliquable accentué', './sample/tag-default', {tag:{clickable: true, accent: 'green-emeraude'}}, true); %>
 <%- sample('Tag seul non cliquable', './sample/tag-default', {}, true); %>
 <%- sample('Tag seul non cliquable SM', './sample/tag-sm', {}, true); %>
-<%- sample('Tag seul désactivé', './sample/tag-default', {button:true, disabled:true}, true); %>
-<%- sample('Tag seul désactivé SM', './sample/tag-sm', {button:true, disabled:true}, true); %>
+<%- sample('Tag seul désactivé', './sample/tag-default', {tag:{button:true, disabled:true}}, true); %>
+<%- sample('Tag seul désactivé SM', './sample/tag-sm', {tag:{button:true, disabled:true}}, true); %>
 
-<%- sample('Groupe de tags cliquables', './sample/tag-default', {clickable: true, group: true}, true); %>
-<%- sample('Groupe de tags cliquables SM', './sample/tag-sm', {clickable: true, group: true}, true); %>
-<%- sample('Groupe de tags non cliquables', './sample/tag-default', {group: true}, true); %>
-<%- sample('Groupe de tags non cliquables SM', './sample/tag-sm', {group: true}, true); %>
+<%- sample('Groupe de tags cliquables', './sample/tag-default', {tag:{clickable: true, group: true}}, true); %>
+<%- sample('Groupe de tags cliquables SM', './sample/tag-sm', {tag:{clickable: true, group: true}}, true); %>
+<%- sample('Groupe de tags non cliquables', './sample/tag-default', {tag:{group: true}}, true); %>
+<%- sample('Groupe de tags non cliquables SM', './sample/tag-sm', {tag:{group: true}}, true); %>
 

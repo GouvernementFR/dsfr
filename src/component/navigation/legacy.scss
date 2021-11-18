@@ -1,8 +1,9 @@
 ////
-/// Navigation
-/// @group legacy
+/// Navigation Legacy
+/// @group core
 ////
 
 @import 'index';
-@import '../../legacy/index';
-@import 'style/legacy';
+@import 'style/scheme';
+
+@include _navigation-scheme(true);

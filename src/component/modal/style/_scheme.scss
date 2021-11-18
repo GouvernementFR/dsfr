@@ -3,25 +3,26 @@
 /// @group modal
 ////
 
-#{ns(modal)} {
-  @include scheme-element-bg-color(overlay);
+@mixin _modal-scheme($legacy: false) {
+  #{ns(modal)} {
+    @include modal-overlay($legacy);
 
-  @include body {
-    @include scheme-element-bg-color(w);
+    @include body {
+      @include scheme-element-bg-color(default neutral, $legacy);
 
-    &#{ns(scroll-shadow)} {
-      #{ns(modal)}__footer {
-        @include shadow(up);
-        @include scheme-element-bg-color(w-g750);
+      &#{ns(scroll-shadow)} {
+        #{ns(modal)}__footer {
+          @include scheme-element-bg-color(elevated neutral, $legacy);
+        }
       }
     }
-  }
 
-  &__title {
-    @include scheme-element-text-color(g800);
-  }
+    &__title {
+      @include scheme-element-text-color(title neutral, $legacy);
+    }
 
-  &__footer {
-    @include scheme-element-bg-color(w);
+    &__footer {
+      @include scheme-element-bg-color(default neutral, $legacy);
+    }
   }
 }
