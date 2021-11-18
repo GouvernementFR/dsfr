@@ -7,7 +7,6 @@
   body {
     @include font-family;
     @include text-adjustments;
-    @include scheme-body;
     @include margin(0);
     @include padding(0);
     @include text-style(md);

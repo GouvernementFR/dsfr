@@ -1,0 +1,10 @@
+////
+/// Toggle Legacy
+/// @group toggle
+////
+
+@import 'index';
+@import 'style/scheme';
+@import 'style/legacy';
+
+@include _toggle-scheme(true);

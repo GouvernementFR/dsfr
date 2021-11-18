@@ -1,6 +1,6 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Snippet à inclure dans <head></head>', '../../template/ejs/favicon/favicon.ejs', {path: relativeRoot + 'dist/favicon/'}, true) %>
+<%- sample('Snippet à inclure dans <head></head>', '../../template/ejs/favicon/favicon.ejs', {favicon: {path: relativeRoot + 'dist/favicon/'}}, true) %>
 
 <h4>Tailles et formats</h4>
 <p>L'icône de favori (favicon) du design système est disponible sous différents formats et tailles pour correspondre aux différents supports.

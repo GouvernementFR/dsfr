@@ -13,3 +13,18 @@
     }
   }
 }
+
+@function radio-box-shadow ($checked: true, $size: md) {
+  $max: 12;
+  @if $size == sm {
+    $max: 8;
+  }
+
+  $out: $max / 2;
+
+  @if not $checked {
+    $out: $max;
+  }
+
+  @return all-1-in all-#{$out}-in all-#{$max}-in;
+}

@@ -1,0 +1,134 @@
+////
+/// Radio Module : radio rich
+/// @group radio
+////
+
+#{ns(radio-rich)} {
+  @include relative;
+
+  input[type="radio"] {
+    + label {
+      @include padding-left(14v);
+      @include margin-left(0);
+      min-height: space(22v);
+      @include size(100%);
+      @include padding-top(2v);
+      @include padding-bottom(2v);
+      @include padding-right(26v);
+      @include display-flex(column, flex-start, center);
+
+      /**
+        * On applique la taille sm pour le bouton radio riche
+        */
+      @include before {
+        @include size(4v, 4v);
+        @include absolute(50%, null, null, 7v);
+        @include margin-top(-2v);
+      }
+
+      #{ns(hint-text)} {
+        @include margin-left(0);
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      + label {
+        filter: grayscale(1);
+      }
+    }
+
+    @include hover-media-query {
+      &:not(:disabled) + label {
+        @include hover-blend;
+      }
+    }
+  }
+
+  &__img {
+    @include padding-left(1v);
+    @include size(20v, 20v);
+    @include absolute(1v, 1v);
+    @include display-flex;
+    pointer-events: none;
+
+    img,
+    svg {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+/**
+ * Style spécifique des radios intégrés dans un fiedset
+ */
+#{ns(fieldset)} {
+  #{ns(radio-rich)} {
+    &:first-child {
+      input[type="radio"] + label {
+        @include margin-top(3v);
+      }
+    }
+
+    input[type="radio"] + label {
+      @include margin-top(2v);
+      @include margin-bottom(4v);
+    }
+
+    &:last-child {
+      input[type="radio"] + label {
+        @include margin-bottom(7v);
+      }
+    }
+  }
+
+  /**
+   * Modificateur pour afficher les radios en ligne
+   */
+  &--inline {
+    #{ns(radio-rich)} {
+      &:not(:last-child) {
+        input[type="radio"] + label {
+          @include margin-right(3v);
+          @include margin-bottom(2v);
+        }
+
+        #{ns(radio-rich)}__img {
+          right: space(4v);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+
+        input[type="radio"] + label {
+          @include margin-bottom(3v);
+        }
+      }
+
+      &:first-child {
+        #{ns(radio-rich)}__img {
+          top: space(4v);
+        }
+      }
+
+      &__img {
+        top: space(3v);
+      }
+    }
+
+    /**
+     * Écart entre le text d'aide et les radios riches dans le cas des radios inline
+     */
+    #{ns(hint-text)} + #{ns(fieldset__content)} {
+      #{ns(radio-rich)} {
+        &:first-child {
+          input[type="radio"] + label {
+            @include margin-top(6v);
+          }
+        }
+      }
+    }
+  }
+}

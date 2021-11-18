@@ -1,0 +1,22 @@
+////
+/// Core Tools : Color accent
+/// @group schemes
+////
+
+@mixin accent-modifiers () {
+  $tints: ();
+  $accent: map-get($scheme-sets, accent);
+  @each $tint, $value in $accent {
+    $tints: append($tints, $tint);
+  }
+
+  @at-root {
+    @each $tint in $tints {
+      &--#{$tint} {
+        $ACCENT: #{$tint} !global;
+        @content;
+      }
+    }
+    $ACCENT: none !global;
+  }
+}

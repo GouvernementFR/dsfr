@@ -1,0 +1,9 @@
+////
+/// Select Legacy
+/// @group select
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _select-scheme(true);

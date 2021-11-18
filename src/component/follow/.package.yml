@@ -4,6 +4,5 @@ description: Le bloc "Lettre d'information et Réseaux Sociaux" est composé d'u
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/779747332
 style:
   - core
-  - scheme
   - input
   - button

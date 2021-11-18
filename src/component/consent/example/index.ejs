@@ -6,4 +6,4 @@
 
 <%- sample('Placeholder cookies désactivés standard', './sample/placeholder.ejs', {}, true); %>
 
-<%- sample('Placeholder dans un bloc vidéo responsive grande taille', '../../content/example/sample/media-vid-1x1', {service: "Youtube", size:'lg', consent: false, title: '**Nom du service** est désactivé', body: 'Autorisez le dépôt de cookies pour accèder à cette fonctionnalité.', button: {size: 'md', label: "Autoriser"}}, true); %>
+<%- sample('Placeholder dans un bloc vidéo responsive grande taille', '../../content/example/sample/media-vid-1x1', {content: {service: "Youtube", size:'lg', consent: { title: '**Nom du service** est désactivé', body: 'Autorisez le dépôt de cookies pour accèder à cette fonctionnalité.', button: {size: 'md', label: "Autoriser"}}}}, true); %>

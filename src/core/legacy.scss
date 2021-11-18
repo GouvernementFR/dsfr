@@ -3,4 +3,8 @@
 /// @group core
 ////
 
-@import './index';
+@import 'index';
+@import 'style/legacy';
+@import 'style/scheme';
+
+@include _core-scheme(true);

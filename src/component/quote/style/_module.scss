@@ -9,17 +9,18 @@
   @include padding(0 2v 8v 2v);
   @include padding(0 0 0 8v, md);
 
+  background-size: 50% 1px;
+  background-repeat: no-repeat;
+  background-position: space(2v 100%);
+
+  @include respond-from(md) {
+    background-size: 1px 100%;
+    background-position: 0 0;
+  }
+
   @include icon(chat-quote-line,lg) {
     display: block;
     @include padding-bottom(2v);
-  }
-
-  @include after('', 'block') {
-    @include absolute(0,null, null, 2v, calc(50% - #{space(4v)}), 100%);
-    pointer-events: none;
-    @include respond-from(md) {
-      left: 0;
-    }
   }
 
   &--column {
@@ -52,9 +53,9 @@
 
   blockquote {
     @include margin(0);
+    @include set-text-margin(0 0 4v);
 
     p {
-      @include margin-bottom(4v);
       @include text-style(xl);
       @include font-weight(bold);
 

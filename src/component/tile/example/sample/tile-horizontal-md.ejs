@@ -1,9 +1,11 @@
 <%
+let tile = locals.tile || {};
 
 let data = {
+  ...tile,
   horizontalMd: true
 }
 
 %>
 
-<%- include('./tile-default', data); %>
+<%- include('./tile-default', {tile:data}); %>

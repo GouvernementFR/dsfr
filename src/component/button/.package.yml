@@ -5,7 +5,6 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284660/Boutons+-+Butto
 wrapper: col-8
 style:
   - core
-  - scheme
 script:
   - core
 follow:

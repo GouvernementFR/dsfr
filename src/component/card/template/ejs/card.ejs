@@ -1,41 +1,46 @@
 <%#
 # paramètres card
 
-* title (string, required) : Titre
+* card.title (string, required) : Titre de la carte
 
-* horizontal (boolean, optional) : si true, passe la card en mode horizontal
+* card.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la carte
 
-* img (string, optionnal) : url de l'image
+* card.horizontal (boolean, optional) : si true, passe la card en mode horizontal
 
-* alt (string, optionnal) : texte alternatif de l'image
+* card.img (string, optionnal) : url de l'image
 
-* detail (string, optional) : Détail
+* card.alt (string, optionnal) : texte alternatif de l'image
 
-* description (string, optional) : Description
+* card.detail (string, optional) : Détail de la card
 
-* arrow (boolean, optionnal) : détermine la présence de l'icon arrow
+* card.description (string, optional) : Description
+
+* card.arrow (boolean, optionnal) : détermine la présence de l'icon arrow
+
+* card.accent (string, optional): Couleur d'accenturation du composant
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let classes = locals.classes || [];
+let card = locals.card || {};
+let classes = card.classes || [];
+classes.push(`${prefix}-card`);
 
-classes.push(prefix + '-card');
-
-if (locals.horizontal !== undefined) classes.push(prefix + '-card--horizontal');
-if (locals.enlarge) classes.push(prefix + '-enlarge-link');
-if (locals.arrow === false) classes.push(prefix + '-card--no-arrow');
+if (card.enlarge) classes.push(`${prefix}-enlarge-link`);
+if (card.horizontal !== undefined) classes.push(`${prefix}-card--horizontal`);
+if (card.arrow === false) classes.push(`${prefix}-card--no-arrow`);
+if (card.accent !== undefined) classes.push(`${prefix}-card--${card.accent}`);
 %>
 <div <%- includeClasses(classes) %>>
     <div class="<%= prefix %>-card__body">
-        <h4 class="<%= prefix %>-card__title"><a href="#" class="<%= prefix %>-card__link"><%- title %></a></h4>
-        <% if (locals.description !== undefined) { %><p class="<%= prefix %>-card__desc"><%- description %></p><% } %>
-        <% if (locals.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- detail %></p><% } %>
+        <h4 class="<%= prefix %>-card__title"><a href="#" class="<%= prefix %>-card__link"><%- card.title %></a></h4>
+        <% if (card.description !== undefined) { %><p class="<%= prefix %>-card__desc"><%- card.description %></p><% } %>
+        <% if (card.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- card.detail %></p><% } %>
     </div>
-    <% if (locals.img !== undefined) { %>
+    <% if (card.img !== undefined) { %>
         <div class="<%= prefix %>-card__img">
-            <%- include('../../../../core/template/ejs/media/responsive-img.ejs', locals.img); %>
+            <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: card.img}); %>
         </div>
     <% } %>
 </div>

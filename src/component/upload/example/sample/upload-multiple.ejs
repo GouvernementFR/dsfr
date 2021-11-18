@@ -1,0 +1,13 @@
+<%
+let upload = locals.upload || {};
+let data = {};
+data.id = upload.id || uniqueId('upload');
+data.name = data.id;
+data.label = 'Ajouter des fichiers';
+data.hint = 'Taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.';
+data.multiple = true;
+if(upload.error) data.error = 'Format de fichier non supporté';
+%>
+
+<%- include('../../template/ejs/upload', {upload:data}); %>
+

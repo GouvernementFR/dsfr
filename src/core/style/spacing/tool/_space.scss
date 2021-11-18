@@ -3,45 +3,6 @@
 /// @group core
 ////
 
-/// Return space value from type map and convert to rem.
-///
-/// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
-///
-/// @example scss - Set margin-bottom to 24px
-///   .foo {
-///     margin-bottom: space(6v);
-///   }
-@function space($value) {
-  @if $value == 0 {
-    @return $value;
-  }
-
-  @if length($value) > 1 {
-    $result: ();
-    @each $v in $value {
-      $result: append($result, space($v));
-    }
-    @return $result;
-  }
-
-  $v: quote($value);
-
-  @if is-basic-unit($value) {
-    @return $value;
-  }
-
-  $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
-  $unit: str_slice($v, str-length($v), str_length($v));
-
-  @if is-unit($value, v) {
-    @return $q * 0.25rem;
-  }
-  @else if is-unit($value, w) {
-    @return $q * 0.5rem;
-  }
-  @return unquote($value);
-}
-
 /// Set space property
 ///
 /// @param {String} $property ["margin"] - propriété à appliquer à l'espacement `["margin", "padding"]`
@@ -53,10 +14,8 @@
 ///     @include _spacing("margin", 6v, "bottom");
 ///   }
 @mixin _spacing($property: margin, $value: 0, $direction: null) {
-
+  $v: space($value);
   @if $direction != null {
-    $v: space($value);
-
     @if $direction == 'x' {
       #{$property}-left: $v;
       #{$property}-right: $v;
@@ -70,13 +29,7 @@
     }
   }
   @else {
-    $spaces: ();
-
-    @each $v in $value {
-      $spaces: append($spaces, space($v));
-    }
-
-    #{$property}: $spaces;
+    #{$property}: $v;
   }
 }
 

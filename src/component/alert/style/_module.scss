@@ -7,20 +7,12 @@
   @include relative();
   @include padding(4v 9v 3v 14v);
   @include icon(null, md);
+  @include set-title-margin(0 0 1v);
+  @include set-text-margin(0 0 1v);
 
   @include before {
     @include absolute(0, null, null, 0, null, 100%);
     @include padding(4v 2v);
-  }
-
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @include margin-bottom(1v);
   }
 
   &__title {
@@ -37,19 +29,19 @@
   }
 
   &--info {
-    @include icon(information-fill);
+    @include icon(information-fill, null);
   }
 
   &--success {
-    @include icon(checkbox-circle-fill);
+    @include icon(checkbox-circle-fill, null);
   }
 
   &--error {
-    @include icon(alert-fill);
+    @include icon(alert-fill, null);
   }
 
   &--warning {
-    @include icon(error-warning-fill);
+    @include icon(error-warning-fill, null);
   }
 
   &--sm {

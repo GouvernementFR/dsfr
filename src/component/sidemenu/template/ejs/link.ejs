@@ -1,1 +1,15 @@
-<a class="<%= prefix %>-sidemenu__link" <%- locals.active ? 'aria-current="page"' : 'href="#" target="_self"' %>><%- label %></a>
+<%#
+
+Paramètres de sidemenu item
+
+* sidemenuItem.type (string, required) : type d'élément ('menu' ou 'link')
+
+* sidemenuItem.label (string, required) : label de l'entrée
+
+* sidemenuItem.active (booolean, optional) : si true, l'élement est actif
+
+%>
+
+<% let sidemenuItem = locals.sidemenuItem || {}; %>
+
+<a class="<%= prefix %>-sidemenu__link" <%- sidemenuItem.active ? 'aria-current="page"' : 'href="#" target="_self"' %>><%- sidemenuItem.label %></a>

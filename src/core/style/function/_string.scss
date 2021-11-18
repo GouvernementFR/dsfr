@@ -77,19 +77,29 @@
 /// @param {String} $needle - élément à chercher
 /// @param {String} $content - élément de remplacement
 /// @return {String} la chaîne de caractères transformée
-@function str-replace($stack, $needle, $content) {
+@function str-replace($stack, $needle, $content, $start: 1) {
   $is:quote($stack);
   $in:quote($needle);
   $ic:quote($content);
 
-  $i:str-index($is, $in);
-
-  @while $i != null {
-    $is:unquote(str_slice($is, 1, $i - 1) + $ic + str_slice($is, $i + str-length($in), str_length($is)));
-    $i:str-index($is, $in);
+  @if $in == $ic {
+    @return $stack;
   }
 
-  @return unquote($is);
+  $range: str_slice($is, $start, str_length($is));
+
+  $i: str-index($range, $in);
+
+  @if $i == null {
+    @return unquote($is);
+  }
+
+  $fi: $i + $start;
+  $end: $fi + str-length($in) -1;
+
+  $modified: str_slice($is, 1, $fi - 2) + $ic + str_slice($is, $end, str_length($is));
+
+  @return str-replace($modified, $needle, $content, $fi + str-length($ic) - 2);
 }
 
 /// Découpage d'une chaine de caractères avec un séparateur particulier

@@ -22,17 +22,19 @@ let ol = {
 
 <%- sample('Test de titre de paragraphe :', './sample/headings', {}, true); %>
 
-<%- sample('Test de paragraphe et de lien interne :', './sample/paragraph', { insert: '<a title="titre lien interne" href="#" target="_self">lien interne</a>' }, true); %>
+<%- sample('Test de paragraphe et de lien interne :', './sample/paragraph', { paragraph: {insert: '<a title="titre lien interne" href="#" target="_self">lien interne</a>'} }, true); %>
 
-<%- sample('Test de paragraphe et de lien externe :', './sample/paragraph', { insert: '<a title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>' }, true); %>
+<%- sample('Test de paragraphe et de lien externe :', './sample/paragraph', { paragraph: {insert: '<a title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>'} }, true); %>
 
-<%- sample('Test de lien externe raw-link :', './sample/paragraph', { insert: `<a class="${prefix}-raw-link" title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>` }, true); %>
+<%- sample('Test de lien externe raw-link :', './sample/paragraph', { paragraph: {insert: `<a class="${prefix}-raw-link" title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>`} }, true); %>
 
-<%- sample('Test de lien externe reset-link :', './sample/paragraph', { insert: `<a class="${prefix}-reset-link" title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>` }, true); %>
+<%- sample('Test de lien externe reset-link :', './sample/paragraph', { paragraph: {insert: `<a class="${prefix}-reset-link" title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>`} }, true); %>
 
-<%- sample('Test de liste non-ordonnée:', './sample/ul', ul, true); %>
+<%- sample('Test de liste non-ordonnée:', './sample/ul', {list:ul}, true); %>
 
-<%- sample('Test de liste ordonnée :', './sample/ol', ol, true); %>
+<%- sample('Test de liste ordonnée :', './sample/ol', {list:ol}, true); %>
+
+<%- sample('Séparateur de base - hr', './sample/hr', {}, true); %>
 
 <%- sample('Test d\'exposant :', './sample/paragraph', { insert: 'un texte avec un <sup>exposant</sup>' }, true); %>
 

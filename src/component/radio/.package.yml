@@ -9,6 +9,4 @@ doc:
 wrapper: col-8
 style:
   - core
-  - legacy
-  - scheme
   - form

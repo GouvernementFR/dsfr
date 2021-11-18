@@ -1,9 +1,11 @@
+<% let header = locals.header || {}; %>
+
 <div class="<%= prefix %>-header__body">
     <div class="<%= prefix %>-container" >
         <div class="<%= prefix %>-header__body-row">
-            <%- include('./brand', locals.brand); %>
+            <%- include('./brand', {header:header}); %>
 
-            <% if (locals.tools) { %>
+            <% if (header.tools) { %>
                 <%- include('./tools'); %>
             <% } %>
         </div>

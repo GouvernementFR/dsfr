@@ -1,0 +1,10 @@
+////
+/// Core Scheme : Action cursor
+/// @group core
+////
+
+@mixin _core-action-disabled-scheme($legacy: false) {
+  @include disabled-selector {
+    @include disabled-colors($legacy, true);
+  }
+}

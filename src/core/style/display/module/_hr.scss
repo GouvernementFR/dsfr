@@ -1,0 +1,13 @@
+////
+/// Core Module : Display hr
+/// @group core
+////
+
+#{ns(hr)} {
+  @include build-hr();
+
+  &--sm {
+    @include width(40v);
+    @include margin-x(auto);
+  }
+}

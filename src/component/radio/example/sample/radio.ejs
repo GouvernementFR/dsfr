@@ -1,12 +1,8 @@
 <%
-let data = JSON.parse(include('../../../form/example/sample/data'));
+let radio = locals.radio || {}
+let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
+let data = {...radio, ...jsonData};
 
-data.label = '1 Label radio';
-
+data.label = radio.label || 'Label radio';
 %>
-<% if (/*locals.group === */true) { %>
-    <%- include('../../template/ejs/radio-group', data); %>
-<% }
-else { %>
-    <%- include('../../template/ejs/radio', data); %>
-<% } %>
+<%- include('../../template/ejs/radio-group', {radio: data}); %>

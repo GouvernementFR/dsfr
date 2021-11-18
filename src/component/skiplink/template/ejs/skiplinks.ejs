@@ -1,10 +1,19 @@
+<%#
+# paramètres skiplink
+
+* skiplink.items (array, required): tableau de liens
+  ** skiplink.items.href : ancre vers un id dans la page
+  ** skiplink.items.label : label du lien
+
+%>
 <% eval(include('../../../../core/index.ejs')); %>
+<% let skiplink = locals.skiplink || {}; %>
 
 <div class="<%= prefix %>-skiplinks">
   <nav role="navigation" aria-label="Accès rapide" class="<%= prefix %>-container">
     <ul class="<%= prefix %>-skiplinks__list">
       <%
-        for (const item of locals.items) {
+        for (const item of skiplink.items) {
       %>
       <li>
         <a class="<%= prefix%>-link" href="<%= item.href %>" ><%= item.label %></a>

@@ -1,0 +1,10 @@
+////
+/// Core scheme : Display hr
+/// @group core
+////
+
+@mixin _core-display-hr-scheme($legacy: false) {
+  #{ns(hr)} {
+    @include build-hr-scheme($legacy);
+  }
+}

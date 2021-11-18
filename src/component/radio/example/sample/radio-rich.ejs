@@ -1,15 +1,11 @@
 <%
-let data = JSON.parse(include('../../../form/example/sample/data'));
+let radio = locals.radio || {}
+let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
+let data = {...radio, ...jsonData};
 
-data.label = 'Label radio';
-data.customIcon = `background-image: url(${imgData('img/placeholder.1x1.png').src})`;
-data.icon = 'no-icon';
+data.label = radio.label || 'Label radio';
+data.image = radio.image || imgData('img/placeholder.1x1.png');
 data.rich = true;
-
 %>
-<% if (/*locals.group === */true) { %>
-    <%- include('../../template/ejs/radio-group', data); %>
-<% }
-else { %>
-    <%- include('../../template/ejs/radio', data); %>
-<% } %>
+
+<%- include('../../template/ejs/radio-group', {radio: data}); %>

@@ -1,21 +1,39 @@
 <%#
 # paramètres radio group
 
-* size (string, optionnal) : la valeur sm permet d'opter pour de petites cases à cocher
+* radio.size (string, optional) : la valeur "sm" permet d'opter pour de petites cases à cocher
+
+* radio.rich (boolean, optional) : si true, radio de type radio-rich
+
+* radio.classes (array, optional) : Classes supplémentaires sur l'element
+
+* radio.attributes (object, optional) : Attributs supplémentaires sur l'element
+
+* radio.element (object, optional) : paramètre de chacun des radios d'un group
+
+* radio.icon (string, optional) : nom de l'icone illustrative
+
+* radio.disabled (boolean, optional) : si true, désactive le radio
+
+* radio.error (string, optional) : Message d'erreur
+
+* radio.valid (string, optional) : Message de succès
+
+* radio.customIcon (string, optional) : style du label (ex: "background-image: url(...)")
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
+let radio = locals.radio || {};
 let groupClasses = [prefix + '-radio-group'];
-if(locals.rich) groupClasses.push(prefix + '-radio-rich');
-switch(locals.size) {
+if(radio.rich) groupClasses.push(prefix + '-radio-rich');
+switch(radio.size) {
     case 'sm' :
         groupClasses.push(prefix + '-radio-group--sm');
         break;
-
 }
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./radio', {rich : locals.rich ? locals.rich : false, disabled: locals.disabled ? locals.disabled : false}); %>
+    <%- include('./radio', {radio: {...radio, disabled: radio.disabled ? radio.disabled : false}}); %>
 </div>

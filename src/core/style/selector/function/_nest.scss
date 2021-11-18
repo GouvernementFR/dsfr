@@ -1,0 +1,22 @@
+////
+/// Core Function : Selector nest
+/// @group core
+////
+
+@function nest($selectors...) {
+  $result: '';
+  @each $selector in $selectors {
+    @if $result == '' {
+      $result: quote($selector);
+    }
+    @else if $selector {
+      $segments: str-split($result, ',');
+      $concat: ();
+      @each $segment in $segments {
+        $concat: append($concat, selector-nest($segment, $selector), comma);
+      }
+      $result: quote($concat);
+    }
+  }
+  @return $result;
+}
