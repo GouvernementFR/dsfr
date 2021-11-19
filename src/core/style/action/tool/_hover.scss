@@ -40,7 +40,7 @@
 
   &:hover,
   &:active {
-    --blend-size: 100%; // 2048px 2048px;
+    --blend-size: var(--blend-full-size); // 2048px 2048px;
   }
 
   &:hover {
@@ -60,9 +60,9 @@
 }
 
 @mixin enable-blend() {
-  background-size: var(--blend-size);
+  --blend-full-size: 100%;
 }
 
 @mixin disable-blend() {
-  background-size: 0;
+  --blend-full-size: 0;
 }
