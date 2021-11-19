@@ -84,6 +84,8 @@
       @include display-flex(row, center, null, null, true);
       position: relative;
 
+      @include disable-blend;
+
       @include after('','block') {
         @include absolute(0,0,0,0,calc(100% - #{space(4v)}),calc(100% - #{space(1v)}));
         @include link-underline;
