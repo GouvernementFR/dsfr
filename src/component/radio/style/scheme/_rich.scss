@@ -39,7 +39,7 @@
         &[disabled],
         &:disabled {
           + label {
-            @include scheme-element-box-shadow-color(text-disabled grey, $legacy, false, all-1-in);
+            @include scheme-element-box-shadow-color(text disabled grey, $legacy, false, all-1-in);
             @include before {
               @include scheme-element-box-shadow-color((disabled grey) (background default grey) (text disabled grey), $legacy, false, radio-box-shadow(true, sm));
             }
