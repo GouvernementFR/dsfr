@@ -87,8 +87,8 @@ class Disclosure extends Instance {
     if (!this.disclosed) return false;
     this.pristine = false;
     this.disclosed = false;
-    if (!preventFocus) this.focus();
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
+    if (!preventFocus) this.focus();
     this.descend(DisclosureEmission.RESET);
     return true;
   }

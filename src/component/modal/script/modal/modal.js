@@ -6,7 +6,6 @@ import { ModalEmission } from './modal-emission.js';
 class Modal extends api.core.Disclosure {
   constructor () {
     super(api.core.DisclosureType.OPENED, ModalSelector.MODAL, ModalButton, 'ModalsGroup');
-    this.scrollDistance = 0;
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
   }
@@ -18,7 +17,7 @@ class Modal extends api.core.Disclosure {
   init () {
     super.init();
     this.listen('click', this.click.bind(this));
-    this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this), true, true);
+    this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
   }
 
   click (e) {
