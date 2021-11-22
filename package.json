@@ -39,7 +39,7 @@
     "browser-sync": "^2.27.7",
     "browserslist": "^4.18.1",
     "cross-env": "^7.0.3",
-    "cssnano": "^4.1.10",
+    "cssnano": "^5.0.11",
     "del": "^6.0.0",
     "ejs": "^3.1.6",
     "eslint": "^8.3.0",
@@ -82,7 +82,7 @@
     "standard": "^16.0.4",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.18.0",
+    "stylelint-scss": "^4.0.0",
     "svgo": "^2.8.0",
     "yargs": "^17.2.1"
   },
