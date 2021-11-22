@@ -32,8 +32,14 @@
  let uploadAttrs = upload.uploadAttrs || [];
  let labelAttrs = upload.labelAttrs || {};
  let labelClass = upload.labelClasses || [];
- if (upload.error) groupClasses.push(prefix + '-input-group--error');
- if (upload.valid) groupClasses.push(prefix + '-input-group--valid');
+ if (upload.error) {
+   groupClasses.push(prefix + '-input-group--error');
+   uploadAttrs['aria-describedby'] = upload.id + '-desc-error';
+ }
+ if (upload.valid) {
+   groupClasses.push(prefix + '-input-group--valid');
+   uploadAttrs['aria-describedby'] = upload.id + '-desc-valid';
+ }
  if (upload.disabled) uploadAttrs['disabled'] = '';
  if (upload.multiple) uploadAttrs['multiple'] = '';
  %>
