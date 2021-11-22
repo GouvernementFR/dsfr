@@ -80,4 +80,3 @@ class InjectSvg extends Instance {
 }
 
 export { InjectSvg };
-
