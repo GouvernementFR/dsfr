@@ -8,6 +8,7 @@ let tabsGroup = locals.tabs || {tabsCount: 2};
 let data = {tabs: []};
 let length = tabsGroup.tabsCount;
 if (tabsGroup.tabs) length = tabsGroup.tabs.length;
+if (tabsGroup.viewportWidth) data.viewportWidth = tabsGroup.viewportWidth;
 
 for (let i = 0; i < length; i++) {
   let label = `Label Tab ${i + 1}`;

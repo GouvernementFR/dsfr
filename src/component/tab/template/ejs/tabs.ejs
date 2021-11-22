@@ -16,6 +16,8 @@ tabsClasses.push(prefix + '-tabs');
 
 let id = [];
 
+if (tabsGroup.viewportWidth) tabsClasses.push(prefix + '-tabs--viewport-width');
+
 for (let i = 0; i < tabs.length; i++) {
     id.push(uniqueId('tabpanel'));
 }
