@@ -1,0 +1,28 @@
+////
+/// Header Legacy
+/// @group header
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif valeur 'initial' non prise en compte par IE
+  */
+  #{ns(header)} {
+    &__tools-links {
+      @include respond-from(lg) {
+        display: block;
+      }
+
+      #{ns(link)} {
+        overflow: visible;
+      }
+    }
+
+    #{ns(modal)} {
+      @include respond-from(lg) {
+        position: static;
+        overflow: visible;
+      }
+    }
+  }
+}
