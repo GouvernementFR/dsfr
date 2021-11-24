@@ -6,8 +6,8 @@
 /**
  * Styles du bouton et du lien d'accès direct du sidemnu
  */
- #{ns(sidemenu__link)},
- #{ns(sidemenu__btn)} {
+#{ns(sidemenu__link)},
+#{ns(sidemenu__btn)} {
   @include relative;
   @include display-flex(row, center);
   @include size(100%);
@@ -32,7 +32,7 @@
  * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
  * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
  */
- #{ns(sidemenu__btn)} {
+#{ns(sidemenu__btn)} {
   &[aria-expanded] {
     @include display-flex(row-reverse, center);
     @include padding(3v 8v 3v 2v, md);
