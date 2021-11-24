@@ -15,4 +15,4 @@ const test = async (settings) => {
   await testPa11y(packages);
 };
 
-module.exports =  { test };
+module.exports = { test };
