@@ -3,16 +3,16 @@
 /// @group core
 ////
 
-@include hover-media-query {
-  :root {
-    @include enable-blend;
-  }
+:root {
+  @include enable-blend;
+}
 
+a {
+  @include disable-blend;
+}
+
+@include hover-media-query {
   @include hover-type-selector($action-elements, all) {
     @include hover-blend();
-  }
-
-  @include hover-type-selector($action-elements, underline) {
-    @include disable-blend;
   }
 }

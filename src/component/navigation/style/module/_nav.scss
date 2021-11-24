@@ -85,6 +85,8 @@
       @include text-style(sm);
     }
 
+    @include enable-blend;
+
     &[aria-current] {
       position: relative;
       @include before('', block) {
