@@ -8,7 +8,7 @@
     @include scheme-element-bg-color(default neutral, $legacy);
     @include scheme-element-box-shadow-color(default neutral, $legacy);
 
-    &--neutral {
+    &--grey {
       @include scheme-element-bg-color(contrast neutral, $legacy);
     }
 
