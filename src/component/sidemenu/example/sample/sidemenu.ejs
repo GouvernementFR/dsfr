@@ -1,6 +1,7 @@
 <%
 let sidemenu = locals.sidemenu || {};
-const models = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
+const defaultModels = [ 'MALMMLMMLM', 'LMMLLLL', 'LLLLLL' ];
+const models1 = locals.models || defaultModels;
 const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 
 function link(level, active) {
@@ -13,31 +14,36 @@ function link(level, active) {
 
 function items(level, active) {
   const items = [];
-  let model = models[level];
-  (active===true) ? model = models2[level] : models[level];
+  let model = models1[level];
+  (active===true) ? model = models2[level] : models1[level];
 
   for (let i = 0; i < model.length; i++) switch(model.charAt(i)) {
-    case 'L':
+    case 'L': // 'L' pour Link
       items.push(link(level + 1, active && i === 1));
       break;
 
-    case 'M':
-      items.push(menu(level + 1));
+    case 'M': // 'M' pour Menu
+      items.push(menu(level + 1, false, true));
       break;
 
-    case 'A':
-      items.push(menu(level + 1, true));
+    case 'A': // 'A' pour Active
+      items.push(menu(level + 1, true, true));
+      break;
+
+    case 'O': // 'O' pour Open
+      items.push(menu(level + 1, false, false));
       break;
   }
   return items;
 }
 
-function menu(level, active) {
-  return {
+function menu(level, active, collapsable) {
+  return {  
     type: 'menu',
     active: active === true,
     label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
     collapseId: uniqueId('sidemenu'),
+    collapsable: collapsable === true,
     items: items(level, active)
   }
 }

@@ -29,16 +29,6 @@
           @include scheme-element-no-box-shadow(md);
         }
       }
-
-      &--active {
-        & > #{ns(sidemenu__btn)},
-        & > #{ns(sidemenu__link)} {
-          @include scheme-element-text-color(active blue-france, $legacy);
-          @include after {
-            @include scheme-element-bg-color(border-active blue-france, $legacy);
-          }
-        }
-      }
     }
 
     &__inner {
@@ -60,17 +50,23 @@
         }
       }
     }
-  }
 
-  #{ns(sidemenu__btn)} {
-    @include scheme-element-text-color(action-high neutral, $legacy);
+    &__link,
+    &__btn {
+      @include scheme-element-text-color(action-high neutral, $legacy);
 
-    @at-root #{ns(sidemenu__inner)} > #{&} {
-      @include scheme-element-bg-color(default neutral, $legacy);
+      &[aria-current] {
+        @include scheme-element-text-color(active blue-france, $legacy);
+        @include after {
+          @include scheme-element-bg-color(border-active blue-france, $legacy);
+        }
+      }
     }
-  }
 
-  #{ns(sidemenu__link)} {
-    @include scheme-element-text-color(action-high neutral, $legacy);
+    &__btn {
+      @at-root #{ns(sidemenu__inner)} > #{&} {
+        @include scheme-element-bg-color(default neutral, $legacy);
+      }
+    }
   }
 }

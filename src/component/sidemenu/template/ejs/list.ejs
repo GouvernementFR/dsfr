@@ -13,11 +13,8 @@ Paramètres de sidemenu btn
         for (let i = 0; i < sidemenuItems.length; i++) {
             let item = sidemenuItems[i];
             let classes = [prefix + '-sidemenu__item'];
-
-            if (item.active) classes.push(prefix + '-sidemenu__item--active');
     %>
         <li <%- includeClasses(classes); %>>
-
             <%- include('./' + item.type, {sidemenuItem : item}); %>
         </li>
     <% } %>
