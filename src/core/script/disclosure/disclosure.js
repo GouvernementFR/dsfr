@@ -31,9 +31,10 @@ class Disclosure extends Instance {
     const scope = this;
     const proxy = Object.assign(super.proxy, {
       disclose: scope.disclose.bind(scope),
-      conceal: scope.conceal.bind(scope),
       focus: scope.focus.bind(scope)
     });
+
+    if (this.type.canConceal) proxy.conceal = scope.conceal.bind(scope);
 
     const proxyAccessors = {
       get buttons () {
@@ -85,6 +86,7 @@ class Disclosure extends Instance {
 
   conceal (withhold, preventFocus) {
     if (!this.disclosed) return false;
+    if (!this.type.canConceal && this.group && this.group.current === this) return false;
     this.pristine = false;
     this.disclosed = false;
     if (!preventFocus) this.focus();
