@@ -16,7 +16,12 @@ Paramètres de sidemenu item
 
 <% let sidemenuItem = locals.sidemenuItem || {}; %>
 
-<%- include('./btn', {sidemenuBtn: sidemenuItem}); %>
-<div class="<%= prefix %>-collapse" id="<%= sidemenuItem.collapseId %>" >
+<% if (sidemenuItem.collapsable) { %>
+    <%- include('./btn', {sidemenuBtn: sidemenuItem}); %>
+<% } else { %>
+    <%- include('./link', {sidemenuItem: sidemenuItem}); %>
+<% } %>
+
+<div <% if (sidemenuItem.collapsable) { %>class="<%= prefix %>-collapse" id="<%= sidemenuItem.collapseId %>"<% } %> >
     <%- include('./list', {sidemenuItems: sidemenuItem.items}); %>
 </div>
