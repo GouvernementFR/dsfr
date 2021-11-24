@@ -72,6 +72,7 @@ Consulter la [documentation des paramètres d’affichage](https://gouvfr.atlass
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="dsfr/dsfr.min.css">
 
+    <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
     <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
