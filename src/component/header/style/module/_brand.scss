@@ -18,6 +18,20 @@
     @include size(100%);
     @include size(auto, null, lg);
   }
+
+  @include hover-media-query {
+    &#{ns(enlarge-link)} {
+      a[href] {
+        &:hover {
+          --a: 0.2;
+        }
+
+        &:active {
+          --a: 0.35;
+        }
+      }
+    }
+  }
 }
 
 &__logo,
