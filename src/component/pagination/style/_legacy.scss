@@ -1,0 +1,15 @@
+////
+/// Pagination Legacy
+/// @group pagination
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de la largeur de la légende d'un fieldset
+  */
+  #{ns(pagination)} {
+    &__list {
+      list-style: none;
+    }
+  }
+}

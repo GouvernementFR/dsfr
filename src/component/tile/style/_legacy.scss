@@ -1,0 +1,14 @@
+////
+/// Tile Legacy
+/// @group tile
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de la largeur du texte dans la tuile
+  */
+  #{ns(tile)}__body,
+  #{ns(tile)}__body > * {
+    max-width: 100%;
+  }
+}

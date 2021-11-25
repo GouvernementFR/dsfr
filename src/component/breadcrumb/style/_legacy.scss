@@ -1,0 +1,13 @@
+////
+/// Breadcrumb legacy
+/// @group breadcrumb
+////
+
+@include legacy(ie11) {
+  /**
+  * reset liste à puce
+  */
+  #{ns(breadcrumb)}__list {
+    list-style: none;
+  }
+}
