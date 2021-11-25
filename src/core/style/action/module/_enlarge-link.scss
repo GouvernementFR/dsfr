@@ -9,6 +9,7 @@
   a {
     background-image: none !important;
     outline-width: 0 !important;
+    @include enable-blend;
     @include before('', block) {
       @include hover-media-query {
         @include hover-blend-background;
