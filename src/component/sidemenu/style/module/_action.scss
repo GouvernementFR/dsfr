@@ -17,7 +17,8 @@
   @include scheme-element-no-box-shadow;
   text-align: left;
   font-weight: font-weight(bold);
-  background: none;
+
+  @include enable-blend;
 
   &[aria-current] {
     @include after('') {
