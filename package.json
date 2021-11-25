@@ -11,7 +11,7 @@
     "organisation": "@gouvfr"
   },
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=14.18.0"
   },
   "scripts": {
     "styleguide": "./node_modules/.bin/sassdoc src/*/styles/** -d ./doc/sassdoc",
