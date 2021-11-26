@@ -23,11 +23,11 @@
     &#{ns(enlarge-link)} {
       a[href] {
         &:hover {
-          --a: 0.2;
+          --a: 0.1;
         }
 
         &:active {
-          --a: 0.35;
+          --a: 0.2;
         }
       }
     }
