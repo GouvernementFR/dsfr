@@ -6,7 +6,7 @@
 @mixin _sidemenu-scheme($legacy: false) {
   #{ns(sidemenu)} {
     /*
-    @include scheme-element-bg-color(default neutral);
+    @include scheme-element-bg-color(default grey);
 
     @include respond-from(md) {
       @include scheme-element-bg-transparent($legacy, true);
@@ -14,18 +14,18 @@
     */
 
     @include title {
-      @include scheme-element-text-color(title neutral, $legacy);
-      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-text-color(title grey, $legacy);
+      @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
       @include scheme-element-no-box-shadow(md);
     }
 
     @include list-item {
-      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
       @include scheme-element-no-box-shadow(md);
 
       &:last-child {
         #{ns(sidemenu__btn)} {
-          @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+          @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
           @include scheme-element-no-box-shadow(md);
         }
       }
@@ -33,27 +33,27 @@
 
     &__inner {
       @include respond-from(md) {
-        @include scheme-element-box-shadow-color(default neutral, $legacy, false, right-1-in);
+        @include scheme-element-box-shadow-color(default grey, $legacy, false, right-1-in);
       }
     }
 
     @include respond-from(md) {
       &--right {
         #{ns(sidemenu__inner)} {
-          @include scheme-element-box-shadow-color(default neutral, $legacy, false, left-1-in);
+          @include scheme-element-box-shadow-color(default grey, $legacy, false, left-1-in);
         }
       }
 
       &--full-border {
         #{ns(sidemenu__inner)} {
-          @include scheme-element-box-shadow-color(default neutral, $legacy);
+          @include scheme-element-box-shadow-color(default grey, $legacy);
         }
       }
     }
 
     &__link,
     &__btn {
-      @include scheme-element-text-color(action-high neutral, $legacy);
+      @include scheme-element-text-color(action-high grey, $legacy);
 
       &[aria-current] {
         @include scheme-element-text-color(active blue-france, $legacy);
@@ -65,7 +65,7 @@
 
     &__btn {
       @at-root #{ns(sidemenu__inner)} > #{&} {
-        @include scheme-element-bg-color(default neutral, $legacy);
+        @include scheme-element-bg-color(default grey, $legacy);
       }
     }
   }

@@ -6,7 +6,7 @@
 @mixin _tab-scheme($legacy: false) {
   #{ns(tabs)} {
     @include after {
-      @include scheme-element-box-shadow-color(default neutral, $legacy, false, all-1-in);
+      @include scheme-element-box-shadow-color(default grey, $legacy, false, all-1-in);
     }
 
     /**
@@ -14,17 +14,17 @@
     */
     &__tab {
       @include after {
-        @include scheme-element-bg-image-color(border-active blue-france border-default neutral border-default neutral background-default neutral, $legacy);
+        @include scheme-element-bg-image-color(border-active blue-france border-default grey border-default grey background-default grey, $legacy);
       }
 
       &:not([aria-selected=true]) {
         @include scheme-element-bg-color(action-low blue-france, $legacy);
-        @include scheme-element-text-color(action-high neutral, $legacy);
+        @include scheme-element-text-color(action-high grey, $legacy);
       }
 
       &[aria-selected=true] {
         @include scheme-element-text-color(active blue-france, $legacy);
-        @include scheme-element-bg-color(default neutral, $legacy);
+        @include scheme-element-bg-color(default grey, $legacy);
       }
 
       @include disabled($legacy, true, true);

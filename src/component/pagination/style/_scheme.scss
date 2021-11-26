@@ -5,7 +5,7 @@
 
 @mixin _pagination-scheme($legacy: false) {
   #{ns(pagination)} {
-    @include scheme-element-text-color(action-high neutral, $legacy);
+    @include scheme-element-text-color(action-high grey, $legacy);
 
     &__link {
       &[aria-current] {

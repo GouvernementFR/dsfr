@@ -34,7 +34,7 @@
   }
 
   #{ns(label)} {
-    @include scheme-element-text-color(label neutral, $legacy);
+    @include scheme-element-text-color(label grey, $legacy);
 
     /**
     * Modificateur au niveau du label pour appliquer un état d'erreur au label
@@ -55,7 +55,7 @@
   * Style du texte d'aide
   */
   #{ns(hint-text)} {
-    @include scheme-element-text-color(mention neutral, $legacy);
+    @include scheme-element-text-color(mention grey, $legacy);
   }
 
   /**
@@ -86,7 +86,7 @@
     }
 
     &__legend {
-      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-text-color(title grey, $legacy);
     }
 
     /**
