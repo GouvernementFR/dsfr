@@ -8,6 +8,7 @@
 
 $scheme-options: (
   // grey
+  grey-50: #161616 0deg 0% 8.6%,
   grey-75: #1e1e1e 0deg 0% 11.8%,
   grey-100: #242424 0deg 0% 14.1%,
   grey-125: #2a2a2a 0deg 0% 16.5%,
@@ -18,11 +19,8 @@ $scheme-options: (
   grey-925: #e5e5e5 0deg 0% 89.8%,
   grey-950: #eee 0deg 0% 93.3%,
   grey-975: #f6f6f6 0deg 0% 96.5%,
+  grey-1000: #fff 0deg 0% 100%,
   grey-main-525: #7b7b7b 0deg 0% 48.2%,
-  // black
-  black-50: #161616 0deg 0% 8.6%,
-  // white
-  white-1000: #fff 0deg 0% 100%,
   // blue-france
   blue-france-75: #1b1b35 240deg 32.1% 15.7%,
   blue-france-100: #21213f 240deg 30.7% 18.8%,

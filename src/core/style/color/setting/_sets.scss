@@ -6,6 +6,7 @@
 $scheme-sets: (
   neutral: (
     grey: (
+      black: grey-50 grey-1000,
       darkest: grey-75 grey-975,
       darker: grey-100 grey-950,
       dark: grey-125 grey-925,
@@ -16,13 +17,8 @@ $scheme-sets: (
       light: grey-925 grey-125,
       lighter: grey-950 grey-100,
       lightest: grey-975 grey-75,
-    ),
-    black: (
-      black: black-50 white-1000,
-    ),
-    white: (
-      white: white-1000 black-50,
-      elevated: white-1000 grey-75,
+      white: grey-1000 grey-50,
+      elevated: grey-1000 grey-75,
     ),
   ),
   primary: (

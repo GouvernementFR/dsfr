@@ -7,7 +7,7 @@
   #{ns(share)} {
     &__link {
       @include scheme-element-text-color(action-high blue-france, $legacy);
-      @include scheme-element-box-shadow-color(default neutral, $legacy);
+      @include scheme-element-box-shadow-color(default grey, $legacy);
       @include disabled($legacy, true, false, true, true);
     }
   }

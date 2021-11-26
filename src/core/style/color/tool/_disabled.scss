@@ -5,15 +5,15 @@
 
 @mixin disabled-colors($legacy:false, $text:true, $background:false, $box-shadow-border: false) {
   @if $text {
-    @include scheme-element-text-color(disabled neutral, $legacy);
+    @include scheme-element-text-color(disabled grey, $legacy);
   }
 
   @if $background {
-    @include scheme-element-bg-color(disabled neutral, $legacy);
+    @include scheme-element-bg-color(disabled grey, $legacy);
   }
 
   @if $box-shadow-border == true {
-    @include scheme-element-box-shadow-color(disabled neutral, $legacy);
+    @include scheme-element-box-shadow-color(disabled grey, $legacy);
   }
   @else if $box-shadow-border != false {
     @include scheme-element-box-shadow-color(disabled neutral, $legacy, false, $box-shadow-border);
