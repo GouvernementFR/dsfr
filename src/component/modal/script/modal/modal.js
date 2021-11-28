@@ -2,6 +2,7 @@ import api from '../../api.js';
 import { ModalSelector } from './modal-selector.js';
 import { ModalButton } from './modal-button.js';
 import { ModalEmission } from './modal-emission.js';
+import { ModalAttribute } from './modal-attribute';
 
 class Modal extends api.core.Disclosure {
   constructor () {
@@ -21,7 +22,7 @@ class Modal extends api.core.Disclosure {
   }
 
   click (e) {
-    if (e.target === this.node) this.conceal();
+    if (e.target === this.node && this.getAttribute(ModalAttribute.CONCEALING_BACKDROP) !== 'false') this.conceal();
   }
 
   disclose (withhold) {
