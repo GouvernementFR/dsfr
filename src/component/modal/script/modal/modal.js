@@ -28,12 +28,14 @@ class Modal extends api.core.Disclosure {
     if (!super.disclose(withhold)) return false;
     this.descend(ModalEmission.ACTIVATE);
     this.isScrollLocked = true;
+    this.setAttribute('aria-modal', 'true');
     return true;
   }
 
   conceal (withhold, preventFocus) {
     if (!super.conceal(withhold, preventFocus)) return false;
     this.isScrollLocked = false;
+    this.removeAttribute('aria-modal');
     this.descend(ModalEmission.DEACTIVATE);
     return true;
   }
