@@ -1,0 +1,15 @@
+////
+/// Alert Legacy
+/// @group alert
+////
+
+@include legacy(ie11) {
+  /**
+  * reset des marges dans l'alerte
+  */
+  #{ns(alert)} {
+    &__title, p {
+      @include margin(0 0 1v);
+    }
+  }
+}
