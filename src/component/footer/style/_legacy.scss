@@ -1,0 +1,17 @@
+////
+/// Footer Legacy
+/// @group footer
+////
+
+@include legacy(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns(footer)} {
+    &__content-item,
+    &__top-list > li,
+    &__partners-sub ul > li {
+      list-style: none;
+    }
+  }
+}

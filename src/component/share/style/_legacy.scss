@@ -1,0 +1,15 @@
+////
+/// Share Legacy
+/// @group share
+////
+
+@include legacy(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns(share)}__group {
+    & > li {
+      list-style: none;
+    }
+  }
+}

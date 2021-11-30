@@ -1,0 +1,15 @@
+////
+/// Button Legacy
+/// @group button
+////
+
+@include legacy(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns-group(btns)} {
+    & > li {
+      list-style: none;
+    }
+  }
+}

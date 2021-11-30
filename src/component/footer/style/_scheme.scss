@@ -16,9 +16,9 @@
       @include scheme-element-bg-color(alt neutral, $legacy);
     }
 
-    &__top-link {
+    // &__top-link {
       // @include scheme-element-text-color(mention neutral, $legacy);
-    }
+    // }
 
     &__bottom {
       @include scheme-element-box-shadow-color(default neutral, $legacy, false, top-1-in);
