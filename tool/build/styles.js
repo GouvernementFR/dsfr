@@ -85,7 +85,7 @@ const buildStyle = async (data, dest, minify, map) => {
 
   await process(result.css.toString(),
     [
-      mqpacker({ sort: true }),
+      mqpacker({ sort: false }),
       combineDuplicatedSelectors,
       discardDuplicates,
       stylelint({ fix: true })
@@ -96,7 +96,7 @@ const buildStyle = async (data, dest, minify, map) => {
   options = { ...options, to: `${dest}.min.css` };
 
   await process(result.css.toString(), [
-    mqpacker({ sort: true }),
+    mqpacker({ sort: false }),
     combineDuplicatedSelectors,
     discardDuplicates,
     cssnano()
