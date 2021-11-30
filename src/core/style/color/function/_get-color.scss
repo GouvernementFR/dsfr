@@ -3,6 +3,30 @@
 /// @group core
 ////
 
+@function get-color($token, $type, $alpha: 1) {
+
+}
+
+@function _get-color($token, $type, $alpha: 1) {
+  @if index($type, hex) != null {
+
+  }
+  @else if index($type, hsl) != null {
+
+  }
+  @else if index($type, decision) != null {
+
+  }
+  @else if index($type, set) != null {
+
+  }
+  @else if index($type, blend) != null {
+
+  }
+}
+
+
+
 /// Obtenir une couleur depuis une combinaison
 /// @access private
 /// @param {String} $name - nom de l'option de couleur (voir setting/options)

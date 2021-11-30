@@ -5,15 +5,15 @@
 
 @mixin _input-scheme($legacy: false) {
   #{ns(input)} {
-    @include scheme-element-text-color(label neutral, $legacy);
-    @include scheme-element-bg-color(contrast neutral, $legacy);
-    @include scheme-element-box-shadow-color(plain neutral, $legacy, false, bottom-2-in);
+    @include scheme-element-text-color(label grey, $legacy);
+    @include scheme-element-bg-color(contrast grey, $legacy);
+    @include scheme-element-box-shadow-color(plain grey, $legacy, false, bottom-2-in);
 
     /**
     * Style du placeholder
     */
     @include placeholder {
-      @include scheme-element-text-color(mention neutral, $legacy);
+      @include scheme-element-text-color(mention grey, $legacy);
     }
 
     /**
@@ -40,8 +40,8 @@
     * sur les navigateurs webkit.
     */
     @include autofill {
-      @include scheme-element-box-shadow-color((plain neutral) (background contrast info), $legacy, false, bottom-2-in all-in);
-      @include _scheme-element(-webkit-text-fill-color, text, label neutral, $legacy);
+      @include scheme-element-box-shadow-color((plain grey) (background contrast info), $legacy, false, bottom-2-in all-in);
+      @include _scheme-element(-webkit-text-fill-color, text, label grey, $legacy);
     }
   }
 

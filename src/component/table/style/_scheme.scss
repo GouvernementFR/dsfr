@@ -6,20 +6,20 @@
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {
     caption {
-      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-text-color(title grey, $legacy);
     }
 
     thead {
-      @include scheme-element-box-shadow-color(plain neutral, $legacy, false, bottom-2-in);
-      @include scheme-element-bg-color(contrast neutral, $legacy);
-      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-box-shadow-color(plain grey, $legacy, false, bottom-2-in);
+      @include scheme-element-bg-color(contrast grey, $legacy);
+      @include scheme-element-text-color(title grey, $legacy);
     }
 
     tbody {
-      @include scheme-element-bg-color(alt neutral, $legacy);
+      @include scheme-element-bg-color(alt grey, $legacy);
 
       tr:nth-child(even) {
-        @include scheme-element-bg-color(contrast neutral, $legacy);
+        @include scheme-element-bg-color(contrast grey, $legacy);
       }
     }
 
@@ -51,7 +51,7 @@
     &--bordered {
       tbody {
         tr {
-          @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+          @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
 
           /* Style bordered, enleve le style even/odd  */
           &:nth-child(even) {

@@ -7,7 +7,7 @@
   #{ns(nav)} {
     &__link,
     &__btn {
-      @include scheme-element-text-color(action-high neutral, $legacy);
+      @include scheme-element-text-color(action-high grey, $legacy);
 
       &[aria-current] {
         @include scheme-element-text-color(active blue-france, $legacy);
@@ -27,7 +27,7 @@
     }
 
     @include list-item {
-      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+      @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
       @include scheme-element-no-box-shadow(lg);
     }
   }

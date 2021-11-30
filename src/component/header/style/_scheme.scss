@@ -5,23 +5,23 @@
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
-    @include scheme-element-bg-color(elevated neutral, $legacy);
+    @include scheme-element-bg-color(elevated grey, $legacy);
 
     &__service {
-      @include scheme-element-box-shadow-color(default neutral, $legacy, false, top-1-in);
+      @include scheme-element-box-shadow-color(default grey, $legacy, false, top-1-in);
       @include scheme-element-no-box-shadow(lg);
     }
 
     &__menu-links {
       #{ns(link)} {
-        @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-in);
+        @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
       }
     }
 
     &__tools-links {
       #{ns(link)} {
         @include after {
-          @include scheme-element-box-shadow-color(default neutral, $legacy);
+          @include scheme-element-box-shadow-color(default grey, $legacy);
         }
       }
     }
@@ -29,7 +29,7 @@
     &__navbar {
       #{ns(service)} {
         @include title {
-          @include scheme-element-text-color(title neutral, $legacy);
+          @include scheme-element-text-color(title grey, $legacy);
         }
       }
 
@@ -38,19 +38,19 @@
         @include scheme-element-text-color(action-high blue-france, $legacy);
 
         &--menu {
-          @include scheme-element-text-color(default neutral, $legacy);
+          @include scheme-element-text-color(default grey, $legacy);
         }
       }
     }
 
     #{ns(header__menu)} {
       @include respond-from(lg) {
-        @include scheme-element-box-shadow-color(default neutral, $legacy, true, top-1-in);
+        @include scheme-element-box-shadow-color(default grey, $legacy, true, top-1-in);
       }
     }
 
     #{ns(modal)} {
-      @include scheme-element-bg-color(elevated neutral, $legacy);
+      @include scheme-element-bg-color(elevated grey, $legacy);
     }
   }
 }

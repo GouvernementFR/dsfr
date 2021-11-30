@@ -16,7 +16,7 @@
     @include scheme-element-box-shadow-color(disabled grey, $legacy);
   }
   @else if $box-shadow-border != false {
-    @include scheme-element-box-shadow-color(disabled neutral, $legacy, false, $box-shadow-border);
+    @include scheme-element-box-shadow-color(disabled grey, $legacy, false, $box-shadow-border);
   }
 }
 

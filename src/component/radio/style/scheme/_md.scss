@@ -11,7 +11,7 @@
     input[type="radio"] {
       & + label {
         @include before {
-          @include scheme-element-box-shadow-color((action-high neutral) (background default neutral) (background action-high blue-france), $legacy, false, radio-box-shadow(false));
+          @include scheme-element-box-shadow-color((action-high grey) (background default neutral) (background action-high blue-france), $legacy, false, radio-box-shadow(false));
         }
       }
 
