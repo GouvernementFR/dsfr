@@ -11,4 +11,14 @@
   #{ns(tile)}__body > * {
     max-width: 100%;
   }
+
+  #{ns(tile)} {
+    &__title {
+      @include margin(0 0 2v);
+    }
+
+    &__desc {
+      @include margin(0);
+    }
+  }
 }
