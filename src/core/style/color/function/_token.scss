@@ -1,0 +1,40 @@
+////
+/// Core Function : Color tokenize
+/// @group core
+////
+
+/// Mise en forme des tokens de décisions .
+/// @access private
+/// @param {String} $context - contexte dans lequel est appliqué la couleur
+/// @param {String} $decisions - token de décision
+/// @return {String} Retourne une map contenant les tokens de décisions assainis.
+@function normalise-tokens($global-context, $tokens) {
+  $length: length($tokens);
+  @if type-of(nth($tokens, 1)) != list {
+    $length: 1;
+    $tokens: ($tokens);
+  }
+  $sanitized: ();
+  @for $i from 1 through $length {
+    $token: nth($tokens, $i);
+    $ctx: $global-context;
+    @if length($token) == 3 {
+      $ctx: nth($token, 1);
+    }
+    $use: nth($token, length($token) - 1);
+    $tint: nth($token, length($token));
+    @if $tint == accent {
+      $tint: $ACCENT;
+    }
+
+    $tokens: append($tokens, ($ctx $use $tint));
+  }
+  @return $tokens;
+}
+
+@function get-tokens-length($tokens) {
+  @if type-of(nth($tokens, 1)) != list {
+    @return 1;
+  }
+  @return length($tokens);
+}
