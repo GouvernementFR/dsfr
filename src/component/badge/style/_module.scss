@@ -1,24 +1,39 @@
 ////
-/// badge Module
+/// Badge Module
 /// @group badge
 ////
 
 @include build-badge();
 
 #{ns(badge)} {
+  @include nest-badge(md, left, null, null, false);
   @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
   border-radius: space(1v);
 
-  @include has-icon {
-    @include nest-badge(md, left, null, null, false);
+  &--info {
+    @include icon(information-fill, null);
+  }
+
+  &--success {
+    @include icon(checkbox-circle-fill, null);
+  }
+
+  &--error {
+    @include icon(alert-fill, null);
+  }
+
+  &--warning {
+    @include icon(error-warning-fill, null);
+  }
+
+  &--new {
+    @include icon(flashlight-fill, null);
   }
 
   &--sm {
-    @include has-icon {
-      @include nest-badge(sm, left, null, null, false);
-    }
+    @include nest-badge(sm, left, null, null, false);
   }
 }
 

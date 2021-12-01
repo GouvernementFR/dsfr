@@ -5,6 +5,10 @@
 
 ** label (string, required) : classes supplémentaires sur l'element
 
+** type (string, optional) : le type défini l'icone et la couleur du badge (error/success/warning/new)
+
+** accent (string, optional) : défini la couleur d'accentuation (type ne doit pas être défini)
+
 ** classes (array, optional) : classes supplémentaires sur l'element
 
 ** attrs (object, optional) : Attributs supplémentaires sur l'element
@@ -26,14 +30,19 @@
  badge.classes.push(prefix + '-badge');
 
  switch(badge.size) {
-     case 'sm':
-        badge.classes.push(prefix + '-badge--sm');
-       break;
+    case 'sm':
+       badge.classes.push(prefix + '-badge--sm');
+      break;
  }
 
+ if (badge.type !== undefined) badge.classes.push(prefix + '-badge--' + badge.type);
+
+ else if (badge.accent !== undefined) badge.classes.push(prefix + '-badge--' + badge.accent);
+
  if (badge.icon !== undefined) badge.classes.push(prefix + '-fi-' + badge.icon);
+
  if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
- %>
+%>
 
 <% if(badge.group) { %>
     <ul class="<%= prefix %>-badge-group">

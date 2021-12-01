@@ -1,9 +1,43 @@
 ////
-/// Label Module
-/// @group label
+/// Badge Module
+/// @group badge
 ////
 
-#{ns(badge)} {
-  @include scheme-element-text-color(bf500-plain, true);
-  @include scheme-element-bg-color(bf200-bf300, true);
+@mixin _badge-scheme($legacy: false) {
+  #{ns(badge)} {
+    // @include scheme-element-text-color(bf500-plain, true);
+    // @include scheme-element-bg-color(bf200-bf300, true);
+    @include scheme-element-text-color(default neutral, $legacy);
+    @include scheme-element-bg-color(contrast neutral, $legacy);
+
+    &--info {
+      @include scheme-element-text-color(default info, $legacy);
+      @include scheme-element-bg-color(contrast info, $legacy);
+    }
+
+    &--error {
+      @include scheme-element-text-color(default error, $legacy);
+      @include scheme-element-bg-color(contrast error, $legacy);
+    }
+
+    &--success {
+      @include scheme-element-text-color(default success, $legacy);
+      @include scheme-element-bg-color(contrast success, $legacy);
+    }
+
+    &--warning {
+      @include scheme-element-text-color(default warning, $legacy);
+      @include scheme-element-bg-color(contrast warning, $legacy);
+    }
+
+    &--new {
+      @include scheme-element-text-color(action-high yellow-moutarde, $legacy);
+      @include scheme-element-bg-color(contrast yellow-moutarde, $legacy);
+    }
+
+    @include accent-modifiers {
+      @include scheme-element-text-color(action-high accent, $legacy);
+      @include scheme-element-bg-color(contrast accent, $legacy);
+    }
+  }
 }
