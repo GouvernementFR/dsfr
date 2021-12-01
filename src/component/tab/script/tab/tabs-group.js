@@ -1,6 +1,8 @@
 import api from '../../api.js';
 import { TabSelector } from './tab-selector.js';
 
+const SCROLL_OFFSET = 16; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
+
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
@@ -23,7 +25,59 @@ class TabsGroup extends api.core.DisclosuresGroup {
     this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
     this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
 
+    this.list.addEventListener('scroll', this.scroll.bind(this));
     this.isRendering = true;
+    this.isResizing = true;
+  }
+
+  get isScrolling () {
+    return this._isScrolling;
+  }
+
+  set isScrolling (value) {
+    if (this._isScrolling === value) return;
+    this._isScrolling = value;
+
+    if (value) {
+      this.addClass(TabSelector.SHADOW);
+      this.scroll();
+    } else {
+      this.removeClass(TabSelector.SHADOW);
+      this.removeClass(TabSelector.SHADOW_LEFT);
+      this.removeClass(TabSelector.SHADOW_RIGHT);
+    }
+  }
+
+  /* ajoute la classe fr-table__shadow-left ou fr-table__shadow-right sur fr-table en fonction d'une valeur de scroll et du sens (right, left) */
+  scroll () {
+    const isMin = this.list.scrollLeft <= SCROLL_OFFSET;
+    const max = this.list.scrollWidth - this.list.clientWidth - SCROLL_OFFSET;
+
+    const isMax = Math.abs(this.list.scrollLeft) >= max;
+    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+    const minSelector = isRtl ? TabSelector.SHADOW_RIGHT : TabSelector.SHADOW_LEFT;
+    const maxSelector = isRtl ? TabSelector.SHADOW_LEFT : TabSelector.SHADOW_RIGHT;
+
+    if (isMin) {
+      this.removeClass(minSelector);
+    } else {
+      this.addClass(minSelector);
+    }
+
+    if (isMax) {
+      this.removeClass(maxSelector);
+    } else {
+      this.addClass(maxSelector);
+    }
+  }
+
+  resize () {
+    // this.isScrolling = this.list.offsetWidth >= this.node.offsetWidth;
+    this.isScrolling = this.list.scrollWidth > this.list.clientWidth + SCROLL_OFFSET;
+  }
+
+  dispose () {
+    this.isScrolling = false;
   }
 
   transitionend (e) {

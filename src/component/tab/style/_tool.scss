@@ -3,6 +3,8 @@
 /// @group tab
 ////
 
+@import 'tool/shadow';
+
 @mixin build-tab() {
   @include _build-link($tabs-settings);
 }
