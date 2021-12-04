@@ -5,10 +5,10 @@
 
 @mixin _breadcrumb-scheme($legacy: false) {
   #{ns(breadcrumb)} {
-    @include scheme-element-text-color(mention grey, $legacy);
+    @include scheme-element-text-color(mention grey, (legacy:$legacy));
 
     &__link[aria-current] {
-      @include scheme-element-text-color(active grey, $legacy);
+      @include scheme-element-text-color(active grey, (legacy:$legacy));
     }
   }
 }

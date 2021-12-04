@@ -7,50 +7,49 @@
   #{ns(toggle)} {
     label {
       @include before {
-        @include scheme-element-text-color(active blue-france, $legacy);
+        @include scheme-element-text-color(active blue-france, (legacy:$legacy));
       }
 
       @include after {
-        @include scheme-element-text-color(active blue-france, $legacy);
-        @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
-        @include scheme-element-bg-color(default grey, $legacy);
+        @include scheme-element-text-color(active blue-france, (legacy:$legacy));
+        @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), all-1-in);
+        @include scheme-element-bg-color(default grey, (legacy:$legacy));
       }
     }
 
     input[type="checkbox"] {
-      @include scheme-element-box-shadow-color(action-high blue-france, $legacy, false, all-1-in);
-      // @include disabled-toggle-choice(); // disabled
+      @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), all-1-in);
 
       &:checked {
-        @include scheme-element-bg-color(active blue-france, $legacy);
+        @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
       }
 
-      @include disabled($legacy, false, false, true) {
+      @include disabled((legacy: $legacy, box-shadow: true)) {
         &:checked {
-          @include disabled-colors($legacy, false, true);
+          @include disabled-colors((legacy: $legacy, background: true));
         }
 
         + label {
           @include before {
-            @include disabled-colors($legacy, true);
+            @include disabled-colors((legacy: $legacy, text: true));
           }
 
           @include after {
-            @include disabled-colors($legacy, true, false, true);
+            @include disabled-colors((legacy: $legacy, text: true, box-shadow: true));
           }
         }
       }
     }
 
     #{ns(hint-text)} {
-      @include scheme-element-text-color(mention grey, $legacy);
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
     /*
     * Ajout d'un séparateur
     */
     &--border-bottom {
-      @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
     }
   }
 }

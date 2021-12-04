@@ -11,16 +11,15 @@
 /// @param {Boolean} $important - Si true, applique !important à la règle css
 /// @param {} $value - définition de la valeur à traiter
 /// @return {String} Retourne une map contenant $part $token
-@function _get-result($tokens, $legacy: false, $value: $COLOR) {
-  $length: length($tokens);
+@function get-result($colors, $value: $COLOR) {
+  $length: length($colors);
   $result: str-replace($value, '$COLOR', '$color#1');
   @for $i from 1 through $length {
-    $token: nth($tokens, $i);
+    $color: nth($colors, $i);
     $needle: '$color#1';
     @if $length > 1 {
       $needle: '$color##{$i}';
     }
-    $color: _get-value($token, $legacy);
     $result: _replace_color($result, $color, $needle);
   }
   @return $result;

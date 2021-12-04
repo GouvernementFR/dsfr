@@ -3,31 +3,36 @@
 /// @group core
 ////
 
-@mixin disabled-colors($legacy:false, $text:true, $background:false, $box-shadow-border: false) {
+@mixin disabled-colors($options) {
+  $legacy: map-get($options, legacy);
+  $text: map-get($options, text);
+  $background: map-get($options, background);
+  $box-shadow: map-get($options, box-shadow);
+
   @if $text {
-    @include scheme-element-text-color(disabled grey, $legacy);
+    @include scheme-element-text-color(disabled grey, (legacy: $legacy));
   }
 
   @if $background {
-    @include scheme-element-bg-color(disabled grey, $legacy);
+    @include scheme-element-bg-color(disabled grey, (legacy: $legacy));
   }
 
-  @if $box-shadow-border == true {
-    @include scheme-element-box-shadow-color(disabled grey, $legacy);
+  @if $box-shadow == true {
+    @include scheme-element-box-shadow-color(disabled grey, (legacy: $legacy));
   }
-  @else if $box-shadow-border != false {
-    @include scheme-element-box-shadow-color(disabled grey, $legacy, false, $box-shadow-border);
+  @else if $box-shadow {
+    @include scheme-element-box-shadow-color(disabled grey, (legacy: $legacy), $box-shadow);
   }
 }
 
-@mixin disabled($legacy:false, $text:false, $background:false, $box-shadow-border: false, $can-be-link: false) {
+@mixin disabled($options) {
   $selectors: '&:disabled, &[disabled]';
-  @if $can-be-link {
+  @if map-get($options, can-be-link) {
     $selectors: append($selectors, selector-associate(&, 'a:not([href])'), comma);
   }
 
   @at-root #{$selectors} {
-    @include disabled-colors($legacy, $text, $background, $box-shadow-border);
+    @include disabled-colors($options);
     @content;
   }
 }

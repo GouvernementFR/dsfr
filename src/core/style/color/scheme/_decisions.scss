@@ -22,13 +22,13 @@
             $selector: '#{$context}-#{$use}--#{$tint}';
             #{ns($selector)} {
               @if $context == background {
-                @include scheme-element-bg-color($use $tint, $legacy, true);
+                @include scheme-element-bg-color($use $tint, (legacy: $legacy, important: true));
               }
               @else if $context == text {
-                @include scheme-element-text-color($use $tint, $legacy, true);
+                @include scheme-element-text-color($use $tint, (legacy: $legacy, important: true));
               }
               @else if $context == artwork {
-                @include scheme-element-fill-color('artwork-#{$use}' $tint, $legacy, true);
+                @include scheme-element-fill-color(artwork $use $tint, (legacy: $legacy, important: true));
               }
             }
           }

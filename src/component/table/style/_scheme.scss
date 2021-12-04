@@ -6,34 +6,34 @@
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {
     caption {
-      @include scheme-element-text-color(title grey, $legacy);
+      @include scheme-element-text-color(title grey, (legacy: $legacy));
     }
 
     thead {
-      @include scheme-element-box-shadow-color(plain grey, $legacy, false, bottom-2-in);
-      @include scheme-element-bg-color(contrast grey, $legacy);
-      @include scheme-element-text-color(title grey, $legacy);
+      @include scheme-element-box-shadow-color(plain grey, (legacy: $legacy), bottom-2-in);
+      @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
+      @include scheme-element-text-color(title grey, (legacy: $legacy));
     }
 
     tbody {
-      @include scheme-element-bg-color(alt grey, $legacy);
+      @include scheme-element-bg-color(alt grey, (legacy: $legacy));
 
       tr:nth-child(even) {
-        @include scheme-element-bg-color(contrast grey, $legacy);
+        @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
       }
     }
 
     @include accent-modifiers {
       thead {
-        @include scheme-element-box-shadow-color(plain accent, $legacy, false, bottom-2-in);
-        @include scheme-element-bg-color(contrast accent, $legacy);
+        @include scheme-element-box-shadow-color(plain accent, (legacy: $legacy), bottom-2-in);
+        @include scheme-element-bg-color(contrast accent, (legacy: $legacy));
       }
 
       tbody {
-        @include scheme-element-bg-color(alt accent, $legacy);
+        @include scheme-element-bg-color(alt accent, (legacy: $legacy));
 
         tr:nth-child(even) {
-          @include scheme-element-bg-color(contrast accent, $legacy);
+          @include scheme-element-bg-color(contrast accent, (legacy: $legacy));
         }
       }
 
@@ -41,7 +41,7 @@
       &#{ns(table--bordered)} {
         tbody {
           tr {
-            @include scheme-element-box-shadow-color(default accent, $legacy, false, bottom-1-in);
+            @include scheme-element-box-shadow-color(default accent, (legacy: $legacy), bottom-1-in);
           }
         }
       }
@@ -51,11 +51,11 @@
     &--bordered {
       tbody {
         tr {
-          @include scheme-element-box-shadow-color(default grey, $legacy, false, bottom-1-in);
+          @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), bottom-1-in);
 
           /* Style bordered, enleve le style even/odd  */
           &:nth-child(even) {
-            @include scheme-element-bg-transparent($legacy, true);
+            @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
           }
         }
       }

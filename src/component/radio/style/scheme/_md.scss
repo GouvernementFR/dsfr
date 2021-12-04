@@ -11,14 +11,14 @@
     input[type="radio"] {
       & + label {
         @include before {
-          @include scheme-element-box-shadow-color((action-high grey) (background default neutral) (background action-high blue-france), $legacy, false, radio-box-shadow(false));
+          @include scheme-element-box-shadow-color((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(false));
         }
       }
 
       @include disabled($legacy) {
         + label {
           @include before {
-            @include scheme-element-box-shadow-color((disabled neutral) (background default neutral) (text disabled neutral), $legacy, false, radio-box-shadow(false));
+            @include scheme-element-box-shadow-color((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(false));
           }
         }
       }
@@ -30,14 +30,14 @@
       &:checked {
         + label {
           @include before {
-            @include scheme-element-box-shadow-color((action-high neutral) (background default neutral) (background action-high blue-france), $legacy, false, radio-box-shadow(true));
+            @include scheme-element-box-shadow-color((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true));
           }
         }
 
         @include disabled($legacy) {
           + label {
             @include before {
-              @include scheme-element-box-shadow-color((disabled neutral) (background default neutral) (text disabled neutral), $legacy, false, radio-box-shadow(true));
+              @include scheme-element-box-shadow-color((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true));
             }
           }
         }

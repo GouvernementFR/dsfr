@@ -5,41 +5,41 @@
 
 @mixin _footer-scheme($legacy: false) {
   #{ns(footer)} {
-    @include scheme-element-box-shadow-color((plain blue-france) (default grey), $legacy, false, top-2-out bottom-1-in);
+    @include scheme-element-box-shadow-color((plain blue-france) (default grey), (legacy:$legacy), top-2-out bottom-1-in);
 
     &__content-link,
     &__top-cat {
-      @include scheme-element-text-color(title grey, $legacy);
+      @include scheme-element-text-color(title grey, (legacy:$legacy));
     }
 
     &__top {
-      @include scheme-element-bg-color(alt grey, $legacy);
+      @include scheme-element-bg-color(alt grey, (legacy:$legacy));
     }
 
     &__top-link {
-      // @include scheme-element-text-color(mention grey, $legacy);
+      // @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
     &__bottom {
-      @include scheme-element-box-shadow-color(default grey, $legacy, false, top-1-in);
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
     }
 
     &__bottom-item {
       @include before {
-        @include scheme-element-box-shadow-color(default grey, $legacy);
+        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
       }
     }
 
     &__bottom-link {
-      @include scheme-element-text-color(mention grey, $legacy);
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
     &__bottom-copy {
-      @include scheme-element-text-color(mention grey, $legacy);
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
     &__partners {
-      @include scheme-element-box-shadow-color(default grey, $legacy, false, top-1-in);
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
 
       a {
         background: $white;

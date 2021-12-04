@@ -12,7 +12,7 @@
   $length: length($tokens);
   @if type-of(nth($tokens, 1)) != list {
     $length: 1;
-    $tokens: ($tokens);
+    $tokens: append((), $tokens);
   }
   $sanitized: ();
   @for $i from 1 through $length {
@@ -27,9 +27,9 @@
       $tint: $ACCENT;
     }
 
-    $tokens: append($tokens, ($ctx $use $tint));
+    $sanitized: append($sanitized, ($ctx $use $tint));
   }
-  @return $tokens;
+  @return $sanitized;
 }
 
 @function get-tokens-length($tokens) {

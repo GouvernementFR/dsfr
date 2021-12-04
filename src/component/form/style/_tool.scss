@@ -13,8 +13,8 @@
 ///   .foo {
 ///     @include disabled-form-field(input);
 ///   }
-@mixin disabled-form-field($legacy) {
-  @include disabled($legacy, true, false, bottom-2-in) {
+@mixin disabled-form-field($options) {
+  @include disabled(map-merge($options, (text: true, box-shadow: bottom-2-in))) {
     @content;
   }
 }
