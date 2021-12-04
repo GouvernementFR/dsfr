@@ -10,7 +10,7 @@ $ACCENT: none;
   $important: map-get($options, important);
   $hover: map-get($options, hover);
 
-  $tokens: normalise-tokens($context, $tokens);
+  $tokens: normalise-tokens($tokens, $context);
   $type: decision;
   $options: (var: true);
   @if $legacy {
@@ -29,7 +29,7 @@ $ACCENT: none;
   $result: important($result, $important);
 
   @if $hover and $context == background and $legacy == false and length($tokens) == 1 {
-    $blend: nth(get-colors($tokens, decision, (var: true, blend: true)), 1);
+    $blend: get-color(nth($tokens, 1), decision, (var: true, blend: true));
     $blend: important($blend, $important);
 
     --blend: #{$blend};

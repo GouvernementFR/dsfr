@@ -6,7 +6,7 @@
 @mixin _tab-scheme($legacy: false) {
   #{ns(tabs)} {
     @include after {
-      @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), false, all-1-in);
+      @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), all-1-in);
     }
 
     /**

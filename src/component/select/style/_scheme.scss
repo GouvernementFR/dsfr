@@ -9,7 +9,7 @@
     @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
     @include scheme-element-box-shadow-color(plain grey, (legacy:$legacy), bottom-2-in);
 
-    // @include scheme-element-data-uri-svg(g800, $svg, background-image); // @TODO
+    @include scheme-element-data-uri-svg(text title grey, (legacy: $legacy), $select-arrow-down-svg);
 
     /**
     * Modificateur pour gérer l'état d'erreur
@@ -28,10 +28,9 @@
     /**
     * Mixin pour gérer l'état disabled
     */
-    @include disabled-form-field((legacy: $legacy));
-    // @include disabled-form-field(select) {
-    //   @include scheme-element-data-uri-svg(get-disabled-color(text), $svg, background-image); //@TODO disabled
-    // }
+    @include disabled-form-field((legacy: $legacy)) {
+      @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $select-arrow-down-svg);
+    }
 
     /**
     * On applique un style lorsque la valeur est automatiquement remplie par le navigateur

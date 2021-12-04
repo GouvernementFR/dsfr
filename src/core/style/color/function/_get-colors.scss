@@ -7,12 +7,12 @@
   $colors: ();
   $length: length($tokens);
   @for $i from 1 through $length {
-    $colors: append($colors, _get-color(nth($tokens, $i), $type, $options));
+    $colors: append($colors, get-color(nth($tokens, $i), $type, $options));
   }
   @return $colors;
 }
 
-@function _get-color($token, $type, $options) {
+@function get-color($token, $type, $options: ()) {
   @if $type == hex {
     @return _get-color-hex($token, $options);
   }
@@ -89,7 +89,6 @@
   }
 
   $prop: --#{$name};
-  @debug $token $settings;
   @if length($settings) > 2 {
     $prop: _set-prop-alpha($prop, nth($settings, 3));
   }
@@ -172,7 +171,6 @@
   $decision: map-get($families, $family);
   $shade: nth($decision, 1);
   $options: ();
-  @debug $decision length($decision);
   @if length($decision) > 1 {
     $options: nth($decision, 2);
   }

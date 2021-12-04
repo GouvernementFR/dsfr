@@ -15,13 +15,4 @@
   background-repeat: no-repeat;
   background-position: space(calc(100% - 2v) 50%);
   background-size: space(6v) space(6v);
-
-  //@TODO: fix temporaire
-  background-image: #{_replace_color($select-arrow-down-svg, $black, $COLOR, true)};
-}
-
-@include theme-selector(dark) {
-  #{ns(select)} {
-    background-image: #{_replace_color($select-arrow-down-svg, $white, $COLOR, true)};
-  }
 }

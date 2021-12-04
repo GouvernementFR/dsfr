@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@mixin disabled-colors($options) {
+@mixin disabled-colors($options: ()) {
   $legacy: map-get($options, legacy);
   $text: map-get($options, text);
   $background: map-get($options, background);
@@ -25,7 +25,7 @@
   }
 }
 
-@mixin disabled($options) {
+@mixin disabled($options: ()) {
   $selectors: '&:disabled, &[disabled]';
   @if map-get($options, can-be-link) {
     $selectors: append($selectors, selector-associate(&, 'a:not([href])'), comma);

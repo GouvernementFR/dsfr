@@ -8,7 +8,7 @@
 /// @param {String} $context - contexte dans lequel est appliqué la couleur
 /// @param {String} $decisions - token de décision
 /// @return {String} Retourne une map contenant les tokens de décisions assainis.
-@function normalise-tokens($global-context, $tokens) {
+@function normalise-tokens($tokens, $global-context: text) {
   $length: length($tokens);
   @if type-of(nth($tokens, 1)) != list {
     $length: 1;

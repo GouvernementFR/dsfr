@@ -17,8 +17,8 @@
         }
         @each $tint, $shades in map-get($scheme-sets, $family) {
           @if map-has-key($shades, $shade) {
-            $token: normalise-tokens($context, $context $use $tint);
-            $set: nth(get-colors($token, set), 1);
+            $token: $context $use $tint;
+            $set: get-color($token, set);
             $sets-tint: map-get($sets, $tint);
             @if $sets-tint == null {
               $sets-tint: ();
@@ -27,18 +27,18 @@
               $sets-tint: map-merge($sets-tint, ($set: $token));
             }
             $sets: map-merge($sets, ($tint: $sets-tint));
-            $decision-prop: nth(get-colors($token, decision), 1);
+            $decision-prop: get-color($token, decision);
 
-            @debug $decision-prop;
+            @if not $with-theme {
+              #{$decision-prop}: var($set);
 
-            #{$decision-prop}: var($set);
+              @if $context == background and $alpha == false {
+                $decision-prop-blend: get-color($token, decision, (blend: true));
+                $option: nth($set, 1);
+                $blend: get-color($token, blend);
 
-            @if $context == background and $alpha == false {
-              $decision-prop-blend: nth(get-colors($token, decision, (blend: true)), 1);
-              $option: nth($set, 1);
-              $blend: nth(get-colors($token, blend), 1);
-
-              #{$decision-prop-blend}: $blend;
+                #{$decision-prop-blend}: $blend;
+              }
             }
           }
         }
@@ -46,11 +46,16 @@
     }
   }
 
+  $options: (theme: light);
+  @if $with-theme {
+    $options: (theme: dark);
+  }
+
   @each $family, $tints in $scheme-sets {
     @each $tint, $shades in $tints {
       @if map-has-key($sets, $tint) {
         @each $set, $token in map-get($sets, $tint) {
-          #{$set}: nth(get-colors($token, hex), 1);
+          #{$set}: get-color($token, hex, $options);
         }
       }
     }
