@@ -3,35 +3,46 @@
 /// @group core
 ////
 
-/// Mise en forme des tokens de décisions .
-/// @access private
-/// @param {String} $context - contexte dans lequel est appliqué la couleur
-/// @param {String} $decisions - token de décision
-/// @return {String} Retourne une map contenant les tokens de décisions assainis.
-@function normalise-tokens($tokens, $global-context: text) {
+/// Mise en forme des tokens de décision
+/// @access public
+/// @param {list} $tokens - liste de token de décision
+/// @param {String} $context - contexte global provenant de l'usage de scheme-element
+/// @return {list} Retourne une liste contenant les tokens de décision normalisés
+@function normalise-tokens($tokens, $context: text) {
   $length: length($tokens);
   @if type-of(nth($tokens, 1)) != list {
     $length: 1;
     $tokens: append((), $tokens);
   }
-  $sanitized: ();
+  $normalised: ();
   @for $i from 1 through $length {
-    $token: nth($tokens, $i);
-    $ctx: $global-context;
-    @if length($token) == 3 {
-      $ctx: nth($token, 1);
-    }
-    $use: nth($token, length($token) - 1);
-    $tint: nth($token, length($token));
-    @if $tint == accent {
-      $tint: $ACCENT;
-    }
-
-    $sanitized: append($sanitized, ($ctx $use $tint));
+    $normalised: append($normalised, (normalise-token(nth($tokens, $i), $context)));
   }
-  @return $sanitized;
+  @return $normalised;
 }
 
+/// Mise en forme d'un token de décision .
+/// @access public
+/// @param {list} $token - token de décision (contexte, usage, teinte ou famille (accent))
+/// @param {String} $context - contexte global provenant de l'usage de scheme-element
+/// @return {list} Retourne le token de décision normalisé
+@function normalise-token($token, $context: text) {
+  @if length($token) == 3 {
+    $context: nth($token, 1);
+  }
+  $use: nth($token, length($token) - 1);
+  $tint: nth($token, length($token));
+  @if $tint == accent {
+    $tint: $ACCENT;
+  }
+
+  @return $context $use $tint;
+}
+
+/// Nombre de token de décision .
+/// @access public
+/// @param {list} $tokens - $tokens - liste de token de décision
+/// @return {int} Retourne le nombre de tokens de décision
 @function get-tokens-length($tokens) {
   @if type-of(nth($tokens, 1)) != list {
     @return 1;
