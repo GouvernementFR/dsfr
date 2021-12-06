@@ -16,16 +16,9 @@ $ACCENT: none;
   @if $legacy {
     $type: hex;
     $option: (theme: light);
-    @if map-has-key($options, alpha) {
-      $type: hsl;
-    }
-  }
-  @if map-has-key($options, alpha) {
-    $option: map-merge($options, (alpha: map-get($options, alpha)));
   }
   $colors: get-colors($tokens, $type, $options);
   $result: get-result($colors, $value);
-
   $result: important($result, $important);
 
   @if $hover and $context == background and $legacy == false and length($tokens) == 1 {
@@ -54,7 +47,7 @@ $ACCENT: none;
   @if not map-has-key($options, hover) {
     $options: map-merge($options, (hover: true));
   }
-  @include _scheme-element(background-color, background, $tokens, $options, $COLOR);
+  @include _scheme-element(background-color, background, $tokens, $options);
 }
 
 @mixin scheme-element-bg-transparent($options) {
