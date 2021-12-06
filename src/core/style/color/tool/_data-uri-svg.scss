@@ -9,7 +9,7 @@
 /// @param {Boolean} $legacy - si true, applique la couleur directement, sinon au travers d'une custom property
 /// @param {Object} $value - le SVG en data-uri
 /// @param {String} $prop - propriété sur laquelle est assignée le svg
-/// @example @include scheme-element-data-uri-svg(text-title grey, false, "<svg><path fill="$COLOR" /></svg>"));
+/// @example @include scheme-element-data-uri-svg(text-title grey, false, "<svg><path fill='$COLOR' /></svg>"));
 @mixin scheme-element-data-uri-svg($tokens, $options: (), $value: "<svg><path fill='$COLOR'></path></svg>", $prop: background-image) {
   $legacy: map-get($options, legacy);
   $important: map-get($options, important);
