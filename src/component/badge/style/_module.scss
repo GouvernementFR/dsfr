@@ -32,6 +32,12 @@
     @include icon(flashlight-fill, null);
   }
 
+  &--no-icon {
+    @include before {
+      content: none;
+    }
+  }
+
   &--sm {
     @include nest-badge(sm, left, null, null, false);
   }
@@ -45,7 +51,7 @@
 
   > li {
     display: inline-flex;
-    max-width: 100%;
+    @include max-width(100%);
   }
 
   #{ns(badge)} {

@@ -7,15 +7,20 @@
 <%- sample('badge sur une seule ligne - ellipsis', './sample/badge-ellipsis', {}, true); %>
 
 <%- sample('badge - succès', './sample/badge-default', {badge: {type: 'success'}}, true); %>
+<%- sample('badge - succès sans icone', './sample/badge-default', {badge: {type: 'success', icon: false}}, true); %>
 <%- sample('badge - erreur', './sample/badge-default', {badge: {type: 'error'}}, true); %>
+<%- sample('badge - erreur sans icone', './sample/badge-default', {badge: {type: 'error', icon: false}}, true); %>
 <%- sample('badge - information', './sample/badge-default', {badge: {type: 'info'}}, true); %>
+<%- sample('badge - information sans icone', './sample/badge-default', {badge: {type: 'info', icon: false}}, true); %>
 <%- sample('badge - avertissement', './sample/badge-default', {badge: {type: 'warning'}}, true); %>
+<%- sample('badge - avertissement sans icone', './sample/badge-default', {badge: {type: 'warning', icon: false}}, true); %>
 <%- sample('badge - nouveauté', './sample/badge-default', {badge: {type: 'new'}}, true); %>
+<%- sample('badge - nouveauté sans icone', './sample/badge-default', {badge: {type: 'new', icon: false}}, true); %>
 
 <%- sample('badge - personnalisé', './sample/badge-default', {badge: {accent: 'green-menthe'}}, true); %>
 
-<%- sample('badge seul SM', './sample/badge-sm', {}, true); %>
-<%- sample('badge seul SM avec icône', './sample/badge-sm', {badge: {icon: 'information-fill'}}, true); %>
+<%- sample('badge taille SM', './sample/badge-sm', {}, true); %>
+<%- sample('badge taille SM avec icône', './sample/badge-sm', {badge: {icon: 'information-fill'}}, true); %>
 
 <%- sample('Groupe de badges', './sample/badge-default', {badge: {group: true}}, true); %>
 <%- sample('Groupe de badges SM', './sample/badge-sm', {badge: {group: true}}, true); %>
