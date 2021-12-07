@@ -31,20 +31,23 @@ $scheme-decisions: (
     action-high: (
       primary: strong,
       accent: strong,
-      system: strong,
+      system: strong
     ),
     action-low: (
       primary: light,
-      accent: light,
+      accent: light
     ),
     active: (
-      primary: strong,
+      primary: strong
     ),
     open: (
-      primary: light,
+      primary: light
     ),
     disabled: (
       neutral: light
+    ),
+    overlay: (
+      neutral: black (alpha: 0.375)
     )
   ),
   text: (

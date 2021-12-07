@@ -1,8 +1,0 @@
-////
-/// Schemes Module : decisions
-/// @group schemes
-////
-
-@include theme-selector(dark) {
-  --background-overlay: #{nth($background-overlay-set, 2)};
-}

@@ -5,6 +5,6 @@
 
 @mixin _skiplink-scheme($legacy: false) {
   #{ns(skiplinks)} {
-    @include scheme-element-bg-color(contrast neutral, $legacy);
+    @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
   }
 }

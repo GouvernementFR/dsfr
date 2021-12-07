@@ -5,10 +5,10 @@
 
 @mixin _accordion-scheme($legacy: false) {
   #{ns(accordion)} {
-    @include scheme-element-box-shadow-color(default grey, $legacy, false, top-1-in bottom-1-out);
+    @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in bottom-1-out);
 
     &__btn {
-      @include scheme-element-text-color(action-high grey, $legacy);
+      @include scheme-element-text-color(action-high grey, (legacy:$legacy));
     }
   }
 }

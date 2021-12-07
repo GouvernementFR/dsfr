@@ -5,6 +5,6 @@
 
 @mixin _link-scheme($legacy: false) {
   #{ns(link)} {
-    @include scheme-element-text-color(action-high blue-france, $legacy);
+    @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
   }
 }

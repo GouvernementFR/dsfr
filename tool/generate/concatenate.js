@@ -3,8 +3,10 @@ const { getConfigJSON } = require('../utilities/config');
 const { createFile } = require('../utilities/file');
 
 const generateStyle = (pck, file) => {
-  const name = `${pck.id.toUpperCase()} ${file.toUpperCase()}`;
-  let content = `/* ${name} */
+  let content = `////
+/// ${pck.id.toLowerCase().replace(/^\w/, c => c.toUpperCase())} ${file.toLowerCase().replace(/^\w/, c => c.toUpperCase())}
+/// @group ${pck.id.toLowerCase()}
+////
 
 `;
 
@@ -23,7 +25,6 @@ const generateStyle = (pck, file) => {
 
 const generateScript = (pck, file) => {
   let content;
-
 
   const children = pck.children.filter(child => child.script && child.script.files.indexOf(file) > -1);
 
