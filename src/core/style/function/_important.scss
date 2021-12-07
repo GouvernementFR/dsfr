@@ -1,0 +1,11 @@
+////
+/// Core Function : important
+/// @group core
+////
+
+@function important($value, $important: true) {
+  @if $important {
+    @return #{$value} !important;
+  }
+  @return $value;
+}

@@ -7,11 +7,11 @@
   #{ns(menu)} {
     @include respond-from(lg) {
       @include after {
-        @include scheme-element-bg-color(elevated grey, $legacy);
+        @include scheme-element-bg-color(elevated grey, (legacy: $legacy));
       }
 
       #{ns(nav__link)} {
-        @include scheme-element-box-shadow-color(default grey, $legacy, false, 0 calc(-4v - 1px) 0 -4v $COLOR);
+        @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), 0 calc(-4v - 1px) 0 -4v $COLOR);
       }
     }
   }

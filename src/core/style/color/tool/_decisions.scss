@@ -4,31 +4,58 @@
 ////
 
 @mixin build-decisions($with-theme: false) {
-  $options: ();
-  $decisions: ();
-  @each $part, $tokens in $scheme-decisions {
-    @each $token, $families in $tokens {
-      @each $family, $shade in $families {
+  $sets: ();
+  @each $context, $uses in $scheme-decisions {
+    @each $use, $families in $uses {
+      @each $family, $settings in $families {
+        $shade: nth($settings, 1);
+        $alpha: false;
+        @if length($settings) > 1 {
+          @if map-has-key(nth($settings, 2), alpha) {
+            $alpha: true;
+          }
+        }
         @each $tint, $shades in map-get($scheme-sets, $family) {
           @if map-has-key($shades, $shade) {
-            $set: _get-scheme-set-by-shade($shade, $family, $tint);
-            $value: _get-color-from-set($set, light, hex);
-            @if $with-theme {
-              $value: var(--#{_get-set-prop(map-get($shades, $shade))});
+            $token: $context $use $tint;
+            $set: get-color($token, set);
+            $sets-tint: map-get($sets, $tint);
+            @if $sets-tint == null {
+              $sets-tint: ();
             }
+            @if not map-has-key($sets-tint, $set) {
+              $sets-tint: map-merge($sets-tint, ($set: $token));
+            }
+            $sets: map-merge($sets, ($tint: $sets-tint));
+            $decision-prop: get-color($token, decision);
 
-            #{_get-decision-prop($part, $token, $tint)}: $value;
+            @if not $with-theme {
+              #{$decision-prop}: var($set);
 
-            @if $part == background {
-              $option: nth($set, 1);
-              $blend: _get-blend-hsl-color($option, light);
-              @if $with-theme {
-                $blend: var(--#{_get-set-prop(map-get($shades, $shade))}-blend);
+              @if $context == background and $alpha == false {
+                $decision-prop-blend: get-color($token, decision, (blend: true));
+                $option: nth($set, 1);
+                $blend: get-color($token, blend);
+
+                #{$decision-prop-blend}: $blend;
               }
-
-              #{_get-decision-prop($part, $token, $tint)}-blend: $blend;
             }
           }
+        }
+      }
+    }
+  }
+
+  $options: (theme: light);
+  @if $with-theme {
+    $options: (theme: dark);
+  }
+
+  @each $family, $tints in $scheme-sets {
+    @each $tint, $shades in $tints {
+      @if map-has-key($sets, $tint) {
+        @each $set, $token in map-get($sets, $tint) {
+          #{$set}: get-color($token, hex, $options);
         }
       }
     }

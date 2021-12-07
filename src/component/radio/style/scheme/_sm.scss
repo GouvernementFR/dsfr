@@ -11,14 +11,14 @@
     input[type="radio"] {
       + label {
         @include before {
-          @include scheme-element-box-shadow-color(action-high grey background-default grey background-action-high blue-france, $legacy, false, radio-box-shadow(false, sm));
+          @include scheme-element-box-shadow-color((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(false, sm));
         }
       }
 
-      @include disabled($legacy) {
+      @include disabled {
         + label {
           @include before {
-            @include scheme-element-box-shadow-color(disabled grey background-disabled grey  text-disabled grey, $legacy, false, radio-box-shadow(false, sm));
+            @include scheme-element-box-shadow-color((disabled grey) (background disabled grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(false, sm));
           }
         }
       }
@@ -26,14 +26,14 @@
       &:checked {
         + label {
           @include before {
-            @include scheme-element-box-shadow-color(action-high grey background-default grey background-action-high blue-france, $legacy, false, radio-box-shadow(true, sm));
+            @include scheme-element-box-shadow-color((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true, sm));
           }
         }
 
-        @include disabled($legacy) {
+        @include disabled {
           + label {
             @include before {
-              @include scheme-element-box-shadow-color(disabled grey background-disabled grey  text-disabled grey, $legacy, false, radio-box-shadow(true, sm));
+              @include scheme-element-box-shadow-color((disabled grey) (background disabled grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true, sm));
             }
           }
         }
