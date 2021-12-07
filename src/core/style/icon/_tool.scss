@@ -33,7 +33,7 @@
 @mixin generate-icons($base) {
   @each $icon, $settings in $icons-settings {
     #{ns($base + '-' + $icon)} {
-      @include before(icon-glyph($icon));
+      @include before(icon-glyph($icon, true));
     }
   }
 }
@@ -48,8 +48,8 @@
   }
 }
 
-@mixin icon-content($icon) {
-  content: icon-glyph($icon);
+@mixin icon-content($icon, $is-ligature: false) {
+  content: icon-glyph($icon, $is-ligature);
 }
 
 @function font-icon($size: md) {
@@ -60,14 +60,14 @@
   font: font-icon($size);
 }
 
-@mixin icon($icon:null, $size:md, $pseudo:before) {
+@mixin icon($icon:null, $size:md, $pseudo:before, $is-ligature: false) {
   @include _pseudo($pseudo) {
     @if $size != null {
       @include font-icon($size);
     }
 
     @if $icon != null {
-      @include icon-content($icon);
+      @include icon-content($icon, $is-ligature);
     }
 
     @content;

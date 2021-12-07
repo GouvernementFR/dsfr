@@ -1,3 +1,18 @@
+alert-fill:
+    ligature: "Erreur"
+
+checkbox-circle-fill: 
+    ligature: "Succès"
+
+error-warning-fill:
+    ligature: "Attention"
+
+information-fill:
+    ligature: "Information"
+
+lock-fill:
+    ligature: "Verrouiller"
+
 menu-fill:
     ligature: "Menu"
 
