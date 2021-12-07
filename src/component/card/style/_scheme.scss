@@ -6,7 +6,7 @@
 @mixin _card-scheme($legacy: false) {
   #{ns(card)} {
     @include scheme-element-bg-color(default grey, (legacy:$legacy));
-    @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+    @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), , all-1-out);
 
     &--grey {
       @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
