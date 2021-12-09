@@ -1,6 +1,5 @@
 import api from '../../api.js';
 import { ModalSelector } from './modal-selector.js';
-import { ModalEmission } from './modal-emission.js';
 
 const OFFSET = 32; // 32px => 8v => 2rem
 
@@ -11,8 +10,6 @@ class ModalBody extends api.core.Instance {
 
   init () {
     this.listen('scroll', this.shade.bind(this));
-    this.addDescent(ModalEmission.ACTIVATE, this.activate.bind(this));
-    this.addDescent(ModalEmission.DEACTIVATE, this.deactivate.bind(this));
   }
 
   activate () {
