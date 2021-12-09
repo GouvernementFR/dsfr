@@ -1,0 +1,11 @@
+<%
+let tag = locals.tag || {};
+let data = {
+  ...tag,
+  clickable: true,
+  classes: [prefix + '-tag-active']
+}
+
+%>
+
+<%- include('./tag-default', {tag:data}); %>

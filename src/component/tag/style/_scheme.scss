@@ -20,6 +20,20 @@
         @include scheme-element-text-color(action-high accent, (legacy: $legacy));
         @include scheme-element-bg-color(action-low accent, (legacy: $legacy));
       }
+
+      &#{ns(tag)}-active {
+        @include scheme-element-text-color(inverted grey, (legacy: $legacy));
+        @include scheme-element-bg-transparent((legacy:$legacy));
+        // @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at 100% 0.1953125%, transparent 0.390625%, $COLOR 0.390625%));
+        @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at 99.853515625% 0.29296875%, transparent 0.29296875%, $COLOR 0.29296875%));
+
+        @include after {
+          @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
+        }
+        &#{ns(tag)}--sm {
+          @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at 99.90234375% 0.1953125%, transparent 0.244140625%, $COLOR 0.244140625%));
+        }
+      }
     }
   }
 }
