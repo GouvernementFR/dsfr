@@ -40,6 +40,7 @@
     overflow-x: auto;
     @include size(100%, 12v);
     @include absolute;
+    scroll-behavior: smooth;
 
     /**
     * overflow vertical de 4px pour le focus
