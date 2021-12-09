@@ -11,7 +11,7 @@
     @include absolute(1v, 0, 0, 0, null, 10v);
     @include z-index(moreover);
     @include _tabs-scroll-shadow(false, false);
-    opacity: 0.64;
+    opacity: 0.8;
     pointer-events: none;
     transition: box-shadow 0.3s;
   }

@@ -13,7 +13,7 @@
     $x: -8v;
   }
 
-  @return space(inset #{$x} 0 4v -8v $black);
+  @return space(inset #{$x} 0 6v -8v $black);
 }
 
 @mixin _tabs-scroll-shadow($left: false, $right: false) {
