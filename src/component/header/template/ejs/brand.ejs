@@ -39,14 +39,10 @@ let brand = header.brand || {};
                         path = brand.logo;
                         break;
 
-                    case 'object':
+                    default :
                         path = '../../../logo/template/ejs/logo';
                         data = brand.logo;
                         break;
-
-                    default:
-                        path = '../../../logo/template/ejs/logo';
-                        data = { title: 'République<br>Française' };
                 }
             %>
                 <%- include(path, {logo: data}); %>
