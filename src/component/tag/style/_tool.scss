@@ -12,3 +12,13 @@
     @content;
   }
 }
+
+@mixin pressed-selector() {
+  &[aria-pressed="true"] {
+    @content;
+  }
+}
+
+@function get-percentage-from-2048($px) {
+  @return $px * 100% / 2048;
+}

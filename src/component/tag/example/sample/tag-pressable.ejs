@@ -2,8 +2,8 @@
 let tag = locals.tag || {};
 let data = {
   ...tag,
-  clickable: true,
-  classes: [prefix + '-tag-active']
+  type: 'pressable',
+  attributes: {'aria-pressed': false}
 }
 
 %>

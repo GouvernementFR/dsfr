@@ -31,60 +31,55 @@
  if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
 
  switch(tag.size) {
-     case 'sm':
-         tagClasses.push(prefix + '-tag--sm');
-       break;
+    case 'sm':
+        tagClasses.push(prefix + '-tag--sm');
+    break;
+ }
+
+ switch(tag.type) {
+    case 'clickable':
+        if (tag.tag === undefined) tag.tag = 'a';
+        if (tag.disabled !== true) {
+            tagAttrs.href = tag.href || '[url - à modifier]';
+            switch (true) {
+                case tag.blank:
+                    tagAttrs.target = '_blank';
+                break;
+                case tag.self:
+                    tagAttrs.target = '_self';
+                break;
+            }
+        }
+    break;
+    case 'pressable':
+        if (tag.tag === undefined) tag.tag = 'button';
+        tagAttrs["aria-pressed"] = 'false';
+    break;
+    case 'dismissable':
+        if (tag.tag === undefined) tag.tag = 'button';
+        tagClasses.push(prefix + '-tag--dismiss');
+    break;
+    default:
+        if (tag.tag === undefined) tag.tag = 'p';
+    break;
  }
 
  if (tag.icon !== undefined) tagClasses.push(prefix + '-fi-' + tag.icon);
 
- if (tag.iconPlace !== undefined) switch(tag.iconPlace)
- {
+ if (tag.iconPlace !== undefined) switch(tag.iconPlace) {
+    case 'left':
+        tagClasses.push(prefix + '-tag--icon-left');
+        break;
 
-     case 'left':
-         tagClasses.push(prefix + '-tag--icon-left');
-         break;
-
-     case 'right':
-         tagClasses.push(prefix + '-tag--icon-right');
-         break;
-
+    case 'right':
+        tagClasses.push(prefix + '-tag--icon-right');
+        break;
  }
 
-if (tag.disabled === true) {
-  if (tag.button) tagAttrs['disabled'] = '';
-} else if (tag.clickable) {
-    tagAttrs.href = tag.href || '[url - à modifier]';
-  switch (true) {
-    case tag.blank:
-    tagAttrs.target = '_blank';
-    break;
-    case tag.self:
-    tagAttrs.target = '_self';
-    break;
-  }
-}
+ if (tag.disabled === true) {
+    if (tag.tag == 'button') tagAttrs['disabled'] = '';
+ }
 
- %>
+%>
 
-<% if(tag.group) { %>
-    <ul class="<%= prefix %>-tags-group">
-    <% for (let i = 0; i < 9; i++) { %>
-        <li>
-            <% if(tag.clickable) { %>
-                <a <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></a>
-            <% } else { %>
-                <p <%- includeClasses(tagClasses)%>><%- tag.label %></p>
-            <% } %>
-        </li>
-    <% } %>
-    </ul>
-<% } else { %>
-    <% if(tag.clickable) { %>
-        <a <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></a>
-    <% } else if (tag.button) { %>
-        <button <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></button>
-    <% } else { %>
-        <p <%- includeClasses(tagClasses)%>><%- tag.label %></p>
-    <% } %>
-<% } %>
+<<%= tag.tag %> <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></<%= tag.tag %>>

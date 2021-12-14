@@ -10,7 +10,7 @@ $tags-settings:(
       font-size: 12,
       min-height: 6v,
       padding-x: 3v,
-      icon: sm,
+      icon: xs,
       icon-margin-x: 1v
     ),
     md: (
@@ -21,6 +21,6 @@ $tags-settings:(
       icon-margin-x: 1v
     )
   ),
-  places: left right,
+  places: left,
   border-radius: true
 );

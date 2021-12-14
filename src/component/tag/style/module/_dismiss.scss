@@ -3,22 +3,21 @@
 /// @group tag
 ////
 
-
-#{ns(tag)} {
-  &#{ns(tag)}-active {
+@include clickable-selector {
+  &#{ns(tag)}#{ns(tag)}--dismiss {
     @include relative;
-    // background-color: transparent;
     background-position: 100% 0;
-    // background-image: radial-gradient(at top right, transparent 0.4150390625%, #000091 0.4150390625%);
     background-size: 2048px 2048px;
 
     @include icon(close-circle-line, sm, after) {
-      @include absolute(-0.5v, -1.5v);
+      @include absolute(4px, 0);
+      @include margin(-2v);
     }
 
     &#{ns(tag)}--sm {
       @include icon(null, xs, after){
-        @include absolute(-0.5v, -1v);
+        @include absolute(3px, 2px);
+        @include margin(-1.5v);
       }
     }
   }
