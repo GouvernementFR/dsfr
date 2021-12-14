@@ -1,0 +1,49 @@
+<%#
+# paramètres connect
+
+* connect.id (string) : id du bouton connect
+
+* connect.type (string, optionnal) type du bouton connect
+
+* connect.lang (string, optionnal) langue du bouton connect
+
+* connect.disabled (boolean, optionnal) : si valeur true, bouton désactivé
+
+%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+<% const content = JSON.parse(include('../../content.json')); %>
+
+
+<%
+ const connect = locals.connect || {};
+ let connectClasses = [];
+ let connectAttrs = {};
+ if (connect.id) connectAttrs.id = connect.id;
+
+ connectClasses.push(prefix + '-connect');
+
+ const login = (connect.lang && content.login[connect.lang]) ? content.login[connect.lang] : content.login.fr;
+
+ let brand = content.brand.default;
+ switch(connect.type) {
+     case 'plus':
+         connectClasses.push(prefix + '-connect--plus');
+         brand = content.brand.plus;
+        break;
+
+     case 'agent':
+         connectClasses.push(prefix + '-connect--agent');
+         brand = content.brand.agent;
+        break;
+ }
+ const label = `${login} ${brand}`;
+
+ if (connect.disabled === true) connectAttrs.disabled = '';
+
+ if (connect.lang) connectAttrs[`data-${prefix}-lang`] = connect.lang;
+
+ %>
+
+<button <%- includeClasses(connectClasses) %> <%- includeAttrs(connectAttrs); %> ><%- label %></button>
+

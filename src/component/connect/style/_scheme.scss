@@ -1,0 +1,11 @@
+////
+/// Connect Module
+/// @group connect
+////
+
+@mixin _connect-scheme($legacy: false) {
+  #{ns(connect)} {
+    @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
+    @include scheme-element-text-color(inverted blue-france, (legacy: $legacy));
+  }
+}
