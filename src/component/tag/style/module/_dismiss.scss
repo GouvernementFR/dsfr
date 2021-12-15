@@ -6,8 +6,8 @@
 @include clickable-selector {
   &#{ns(tag)}#{ns(tag)}--dismiss {
     @include relative;
-    background-position: 100% 0;
-    background-size: 2048px 2048px;
+    background-position: 100% 0, 100% 0;
+    background-size: var(--blend-size), 100% 100%;
 
     @include icon(close-circle-line, sm, after) {
       @include absolute(4px, 0);
