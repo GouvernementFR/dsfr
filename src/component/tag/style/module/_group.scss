@@ -29,6 +29,13 @@
       &#{ns(tag)} {
         @include margin-right(6v);
         @include margin-bottom(6v);
+
+        &#{ns(tag)}--dismiss {
+          @include icon(null, xs, after){
+            @include absolute(3px, 0);
+            @include margin(-1.5v);
+          }
+        }
       }
     }
   }

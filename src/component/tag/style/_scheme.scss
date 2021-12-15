@@ -29,7 +29,7 @@
       &#{ns(tag)}--dismiss {
         @include scheme-element-text-color(inverted grey, (legacy: $legacy));
         @include scheme-element-bg-transparent((legacy:$legacy, hover: false));
-        @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at #{100% - get-percentage-from-2048(0)}  get-percentage-from-2048(4), transparent get-percentage-from-2048(6.5), $COLOR get-percentage-from-2048(7)));
+        @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at 100% get-percentage-from-2048(4), transparent get-percentage-from-2048(6.5), $COLOR get-percentage-from-2048(7)));
 
         @include disabled {
           background-image: none;
@@ -40,7 +40,19 @@
         }
 
         &#{ns(tag)}--sm {
-          @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at #{100% - get-percentage-from-2048(2)}  get-percentage-from-2048(3), transparent get-percentage-from-2048(4.99), $COLOR get-percentage-from-2048(5.5)));
+          @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at 100% get-percentage-from-2048(3), transparent get-percentage-from-2048(4.99), $COLOR get-percentage-from-2048(5.5)));
+        }
+      }
+    }
+  }
+
+  #{ns-group(tags)} {
+    &#{ns-group(tags)}--sm {
+      @include clickable-selector {
+        &#{ns(tag)} {
+          &#{ns(tag)}--dismiss {
+            @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), radial-gradient(at 100% get-percentage-from-2048(3), transparent get-percentage-from-2048(4.99), $COLOR get-percentage-from-2048(5.5)));
+          }
         }
       }
     }

@@ -31,7 +31,7 @@ if (!tags.length && tagsGroup.groupCount !== undefined) {
 
   for (let i = 0; i < tagsGroup.groupCount; i++) {
     tags.push({
-      label: tagsGroup.label || 'Label tag ' + i+1,
+      label: tagsGroup.label || 'Label tag ' + (i+1),
       icon: tagsGroup.icon,
       type: tagsGroup.type,
       disabled: tagsGroup.disabled,
