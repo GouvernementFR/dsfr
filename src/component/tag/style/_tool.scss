@@ -18,7 +18,3 @@
     @content;
   }
 }
-
-@function get-percentage-from-2048($px) {
-  @return $px * 100% / 2048;
-}
