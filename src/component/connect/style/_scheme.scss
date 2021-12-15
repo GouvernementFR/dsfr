@@ -3,9 +3,9 @@
 /// @group connect
 ////
 
-@mixin _connect-scheme($legacy: false) {
+@mixin _connect-scheme($legacy: false, $standalone: false) {
   #{ns(connect)} {
-    @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
-    @include scheme-element-text-color(inverted blue-france, (legacy: $legacy));
+    @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy, standalone: $standalone));
+    @include scheme-element-text-color(inverted blue-france, (legacy: $legacy, standalone: $standalone));
   }
 }

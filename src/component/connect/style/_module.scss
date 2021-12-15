@@ -5,37 +5,30 @@
 
 #{ns(connect)} {
   @include padding(1v 3v 1v 16v);
-  font-size: 0;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
   background-repeat: no-repeat;
+  user-select: none;
+  font-size: 0;
   min-height: space(14v);
 
   @include hover-blend-background((url(svg-encode($fc-logo-svg, true)), url(svg-encode($fc-plus-svg, true))), (space(10v 12v), 0), (space(3v 1v), space(calc(100% - 3v) 50%)));
 
-  @include before(map-get($login, fr), block) {
-    $font-size: map-get($login-size, fr);
-    font-size: $font-size;
-    height: $font-size;
+  @include _pseudo(before after, null, block) {
     line-height: 1;
+    z-index: 1;
   }
 
-  @include after(map-get($brand, default), block) {
-    font-size: 1.125rem;
-    height: 1.125rem;
-    line-height: 1;
-    font-weight: bold;
-  }
+  @include connect-pseudo(login, fr);
+
+  @include connect-pseudo(brand, default);
 
   @each $code, $content in $login {
-    @if $code != fr {
-      &#{ns-attr(lang, $code)} {
-        @include before($content) {
-          font-size: map-get($login-size, $code);
-        }
-      }
+    [lang="#{$code}"] &,
+    &[lang="#{$code}"] {
+      @include connect-pseudo(login, $code);
     }
   }
 
@@ -45,9 +38,6 @@
   }
 
   &--agent {
-    @include after(map-get($brand, agent)) {
-      font-size: 1.1875rem;
-      height: 1.1875rem;
-    }
+    @include connect-pseudo(brand, agent);
   }
 }

@@ -3,6 +3,9 @@
 /// @group core
 ////
 
+$V: 0.25rem;
+$W: 0.5rem;
+
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
@@ -92,10 +95,10 @@
   $unit: str_slice($v, str-length($v), str_length($v));
 
   @if is-unit($value, v) {
-    @return $q * 0.25rem;
+    @return $q * $V;
   }
   @else if is-unit($value, w) {
-    @return $q * 0.5rem;
+    @return $q * $W;
   }
   @return $value;
 }

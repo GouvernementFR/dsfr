@@ -4,8 +4,13 @@
 ////
 
 $login-size: (
-  fr: 1.0625rem,
-  en: 1.0625rem,
-  de: 1.0625rem,
-  es: 1.0625rem,
+  fr: 17px,
+  en: 17px,
+  de: 17px,
+  es: 17px,
+);
+
+$brand-size: (
+  default: 18px,
+  agent: 19px,
 );

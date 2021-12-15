@@ -1,0 +1,18 @@
+////
+/// Connect core
+/// @group connect
+////
+
+#{ns(connect)} {
+  box-sizing: border-box;
+  @include _pseudo(before after) {
+    box-sizing: inherit;
+  }
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  margin: 0;
+}

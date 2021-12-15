@@ -1,0 +1,22 @@
+////
+/// Connect Standalone
+/// @group connect
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  CONNECT
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@import '../../core/index';
+@import 'index';
+
+@import 'standalone/font';
+@import 'standalone/spacing';
+@import 'standalone/reset';
+@import 'standalone/typography';
+@import 'standalone/action';
+
+@import 'style/module';
+@import 'style/scheme';
+
+@include _connect-scheme(false, true);

@@ -19,6 +19,7 @@
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
+    "standalone": "node tool/tool.js standalone",
     "serve": "browser-sync start --server --port 8080 --startPath example/"
   },
   "files": [
@@ -47,6 +48,7 @@
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-standard": "^5.0.0",
     "express": "^4.17.1",
+    "fonteditor-core": "^2.1.8",
     "husky": "^7.0.4",
     "icon-font-buildr": "^1.4.2",
     "jest": "^27.3.1",
@@ -76,6 +78,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^4.0.0",
+    "subset-font": "^1.4.0",
     "svgo": "^2.8.0",
     "yargs": "^17.2.1"
   },

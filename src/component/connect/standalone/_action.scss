@@ -1,0 +1,39 @@
+////
+/// Connect core
+/// @group connect
+////
+
+@mixin hover-blend($background-images: (), $background-sizes: (), $background-positions: ()) {
+  @include hover-blend-background($background-images, $background-sizes, $background-positions);
+}
+
+@mixin hover-blend-background-size($background-sizes: ()) {
+  background-size: $background-sizes, 0, 0;
+
+  &:hover {
+    background-size: $background-sizes, 100%, 0;
+  }
+
+  &:active {
+    background-size: $background-sizes, 0, 100%;
+  }
+}
+
+@mixin hover-blend-background($background-images: (), $background-sizes: (), $background-positions: ()) {
+  background-repeat: no-repeat;
+  @include hover-blend-background-size($background-sizes);
+  background-position: $background-positions, 50%, 50%;
+  $color: get-color(background action-high blue-france, blend);
+  $hsla-hover: unquote('hsla(#{$color}, #{$hover-alpha})');
+  $hsla-active: unquote('hsla(#{$color}, #{$active-alpha})');
+  background-image: $background-images, linear-gradient(0deg, $hsla-hover, $hsla-hover), linear-gradient(0deg, $hsla-active, $hsla-active);
+}
+
+#{ns(connect)} {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  margin: 0;
+}

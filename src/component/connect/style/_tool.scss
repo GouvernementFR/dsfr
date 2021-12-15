@@ -1,0 +1,26 @@
+////
+/// Connect Tool
+/// @group connect
+////
+
+@mixin connect-pseudo($type, $key) {
+  $pseudo: before;
+  $texts: $login;
+  $sizes: $login-size;
+  @if $type == brand {
+    $pseudo: after;
+    $texts: $brand;
+    $sizes: $brand-size;
+  }
+
+  $text: map-get($texts, $key);
+  $size: map-get($sizes, $key);
+
+  @include _pseudo($pseudo, $text) {
+    font-size: $size;
+    height: $size;
+    @if $type == brand {
+      font-weight: bold;
+    }
+  }
+}

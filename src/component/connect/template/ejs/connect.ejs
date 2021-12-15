@@ -10,7 +10,6 @@
 * connect.disabled (boolean, optionnal) : si valeur true, bouton désactivé
 
 %>
-
 <% eval(include('../../../../core/index.ejs')); %>
 <% const content = JSON.parse(include('../../content.json')); %>
 
@@ -37,11 +36,11 @@
          brand = content.brand.agent;
         break;
  }
- const label = `${login} ${brand}`;
+ const label = ''; //`${login} ${brand}`;
 
  if (connect.disabled === true) connectAttrs.disabled = '';
 
- if (connect.lang) connectAttrs[`data-${prefix}-lang`] = connect.lang;
+ if (connect.lang) connectAttrs.lang = connect.lang;
 
  %>
 

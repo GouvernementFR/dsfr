@@ -104,4 +104,4 @@ const buildStyle = async (data, dest, minify, map) => {
   ], options);
 };
 
-module.exports = buildStyles;
+module.exports = { buildStyles, buildStyle };
