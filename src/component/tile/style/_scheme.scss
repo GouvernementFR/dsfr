@@ -8,9 +8,5 @@
     @include scheme-element-box-shadow-color((default grey) (plain blue-france), (legacy: $legacy), all-1-in bottom-1v-in);
 
     @include scheme-element-bg-color(default grey, (legacy: $legacy));
-
-    &#{ns(enlarge-link)} {
-      @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
-    }
   }
 }
