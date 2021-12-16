@@ -9,7 +9,7 @@
 
     @include scheme-element-bg-color(default grey, (legacy: $legacy));
 
-    &#{ns(enlarge-link)} {
+    &--grey {
       @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
     }
   }
