@@ -5,7 +5,14 @@
 
 @font-face {
   font-family: '#{$namespace}-icon';
+  font-weight: 400;
   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
+}
+
+@font-face {
+  font-family: '#{$namespace}-icon';
+  font-weight: 700;
+  src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64-deprecated}") format("truetype");
 }
 
 @include has-icon {
@@ -24,8 +31,19 @@
   }
 }
 
+#{ns(icon)} {
+  @each $size, $value in $icon-size-map {
+    &--#{$size} {
+      @include _pseudo(before after) {
+        font-size: #{icon-size($size)} !important;
+      }
+    }
+  }
+}
+
 /**
  * Définitions des symboles des icones
  **/
 // $icons-settings est générée dans generated/_icons.scss
-@include generate-icons(fi);
+@include generate-icons(fi, true);
+@include generate-icons(icon);

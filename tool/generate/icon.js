@@ -45,33 +45,33 @@ const svgoConfig = {
   ]
 };
 
-const generateIcon = async (dest) => {
+const generateIcon = async (dir, suff, dest) => {
   const icons = [];
 
-  const ymlPath = root('src/core/icon/icon.yml');
+  const ymlPath = root(`${dir}/icon.yml`);
   const fileContents = fs.readFileSync(ymlPath, 'utf8');
   const yml = yaml.load(fileContents);
 
-  const dir = root('src/core/icon/svg');
-  fs.readdirSync(dir).forEach((file) => {
-    const ls = fs.lstatSync(path.join(dir, file));
+  const iconDir = root(`${dir}/svg`);
+  fs.readdirSync(iconDir).forEach((file) => {
+    const ls = fs.lstatSync(path.join(iconDir, file));
     if (ls.isFile() && path.extname(file) === '.svg') {
       const name = file.substring(0, file.length - 4);
       const icon = {
         icon: name,
-        ligatures: yml[name] && yml[name].ligature ? [`${yml[name].ligature}`] : []
+        ligatures: !!yml && yml[name] && yml[name].ligature ? [`${yml[name].ligature}`] : []
       };
       icons.push(icon);
     }
   });
 
   const config = {
-    sources: [root('src/core/icon/svg/[icon].svg')],
+    sources: [root(`${dir}/svg/[icon].svg`)],
     icons: icons,
     output: {
       codepoints: true,
       ligatures: true,
-      fontName: 'dsfr-icon',
+      fontName: `dsfr-icon${suff}`,
       fonts: '.config',
       formats: [
         'woff'
@@ -84,7 +84,7 @@ const generateIcon = async (dest) => {
   builder.pathsInit();
 
   for (const icon of icons) {
-    const filepath = root(`src/core/icon/svg/${icon.icon}.svg`);
+    const filepath = root(`${dir}/svg/${icon.icon}.svg`);
     const data = fs.readFileSync(filepath, 'utf8');
     const result = await optimize(data, svgoConfig);
     fs.writeFileSync(builder.getIconPath(icon.icon), result.data);
@@ -95,7 +95,7 @@ const generateIcon = async (dest) => {
   await buildFontSVG(builder);
 
   const svg = fs.readFileSync(builder.paths.cache.fontSVGRaw, 'utf-8');
-  const result = svg.replace(/(\d*\.\d\d\d)\d*/g, '$1');
+  // const result = svg.replace(/(\d*\.\d\d\d)\d*/g, '$1');
   fs.writeFileSync(builder.paths.cache.fontSVG, svg);
 
   await builder.buildFontTTF();
@@ -106,12 +106,12 @@ const generateIcon = async (dest) => {
   const filePath = builder.paths.cache.fontWOFF;
   const content = fs.readFileSync(filePath).toString('base64');
 
-  let sass = `$icons-base64: '${content}';\n\n`;
+  let sass = `$icons-base64${suff}: '${content}';\n\n`;
 
   const codepoints = builder.getIconsCodepoints();
   const ligatures = builder.getIconsLigatures();
 
-  sass += '$icons-settings: (\n';
+  sass += `$icons-settings${suff}: (\n`;
 
   for (const icon of icons) {
     sass += `  ${icon.icon}: (\n`;
@@ -121,14 +121,15 @@ const generateIcon = async (dest) => {
   }
   sass += ');\n';
 
-  const iconPath = root('.config/icon.scss');
+  const iconPath = root(`.config/icon${suff}.scss`);
   createFile(iconPath, sass);
 
   builder.pathsReset();
 };
 
 const buildFontSVG = async (builder) => {
-  return new Promise((res, rej) => {
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line new-cap
     const stream = new svg2font({
       // centerHorizontally: true,
       fontHeight: 1200,
@@ -139,8 +140,8 @@ const buildFontSVG = async (builder) => {
     });
 
     stream.pipe(fs.createWriteStream(builder.paths.cache.fontSVGRaw))
-      .on('finish', res)
-      .on('error', rej);
+      .on('finish', resolve)
+      .on('error', reject);
 
     Object.values(builder.config.icons).forEach(({ icon, name, codepoints, ligatures }) => {
       const filePath = builder.getIconPath(icon);

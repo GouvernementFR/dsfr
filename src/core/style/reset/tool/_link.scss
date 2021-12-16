@@ -11,7 +11,7 @@
 @mixin enable-link-style() {
   --link-underline: 0 1px 0 0 currentColor;
   --link-blank-font: #{font-icon(sm)};
-  --link-blank-content: "\00a0#{icon-glyph(external-link-line)}";
+  --link-blank-content: "\00a0#{icon-glyph(external-link-line, true)}";
 }
 
 @mixin disable-link-style() {
