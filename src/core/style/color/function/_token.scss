@@ -1,0 +1,51 @@
+////
+/// Core Function : Color tokenize
+/// @group core
+////
+
+/// Mise en forme des tokens de décision
+/// @access public
+/// @param {list} $tokens - liste de token de décision
+/// @param {String} $context - contexte global provenant de l'usage de scheme-element
+/// @return {list} Retourne une liste contenant les tokens de décision normalisés
+@function normalise-tokens($tokens, $context: text) {
+  $length: length($tokens);
+  @if type-of(nth($tokens, 1)) != list {
+    $length: 1;
+    $tokens: append((), $tokens);
+  }
+  $normalised: ();
+  @for $i from 1 through $length {
+    $normalised: append($normalised, (normalise-token(nth($tokens, $i), $context)));
+  }
+  @return $normalised;
+}
+
+/// Mise en forme d'un token de décision .
+/// @access public
+/// @param {list} $token - token de décision (contexte, usage, teinte ou famille (accent))
+/// @param {String} $context - contexte global provenant de l'usage de scheme-element
+/// @return {list} Retourne le token de décision normalisé
+@function normalise-token($token, $context: text) {
+  @if length($token) == 3 {
+    $context: nth($token, 1);
+  }
+  $use: nth($token, length($token) - 1);
+  $tint: nth($token, length($token));
+  @if $tint == accent {
+    $tint: $ACCENT;
+  }
+
+  @return $context $use $tint;
+}
+
+/// Nombre de token de décision .
+/// @access public
+/// @param {list} $tokens - $tokens - liste de token de décision
+/// @return {int} Retourne le nombre de tokens de décision
+@function get-tokens-length($tokens) {
+  @if type-of(nth($tokens, 1)) != list {
+    @return 1;
+  }
+  @return length($tokens);
+}

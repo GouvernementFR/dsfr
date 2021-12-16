@@ -15,7 +15,7 @@
     input[type="checkbox"] {
       + label {
         @include before {
-          @include scheme-element-box-shadow-color(action-high neutral, $legacy);
+          @include scheme-element-box-shadow-color(action-high grey, (legacy:$legacy));
         }
       }
 
@@ -27,8 +27,8 @@
       &:active:not(:disabled) {
         + label {
           @include before {
-            @include scheme-element-bg-color(active blue-france, $legacy);
-            @include scheme-element-text-color(inverted neutral, $legacy);
+            @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
+            @include scheme-element-text-color(inverted grey, (legacy:$legacy));
           }
         }
       }
@@ -36,17 +36,17 @@
       /**
       * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
       */
-      @include disabled($legacy) {
+      @include disabled {
         & + label {
           @include before {
-            @include disabled-colors($legacy, false, false, true);
+            @include disabled-colors((legacy: $legacy, box-shadow: true));
           }
         }
 
         &:checked {
           & + label {
             @include before {
-              @include disabled-colors($legacy, true, true);
+              @include disabled-colors((legacy: $legacy, text: true, background: true));
             }
           }
         }
@@ -58,11 +58,11 @@
     */
     &--error {
       input[type="checkbox"] + label {
-        @include scheme-element-text-color(default error, $legacy);
+        @include scheme-element-text-color(default error, (legacy:$legacy));
       }
 
       @include before {
-        @include scheme-element-box-shadow-color(plain error, $legacy, false, left-2-in);
+        @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
       }
     }
 
@@ -71,11 +71,11 @@
     */
     &--valid {
       input[type="checkbox"] + label {
-        @include scheme-element-text-color(default success, $legacy);
+        @include scheme-element-text-color(default success, (legacy:$legacy));
       }
 
       @include before {
-        @include scheme-element-box-shadow-color(plain success, $legacy, false, left-2-in);
+        @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
       }
     }
   }

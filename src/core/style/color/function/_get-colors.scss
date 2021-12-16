@@ -1,0 +1,217 @@
+////
+/// Core Function : Color get color
+/// @group core
+////
+
+@function get-colors($tokens, $type, $options: ()) {
+  $colors: ();
+  $length: length($tokens);
+  @for $i from 1 through $length {
+    $colors: append($colors, get-color(nth($tokens, $i), $type, $options));
+  }
+  @return $colors;
+}
+
+@function get-color($token, $type, $options: ()) {
+  @if $type == hex {
+    @return _get-color-hex($token, $options);
+  }
+  @else if $type == hsl {
+    @return _get-color-hsl($token, $options);
+  }
+  @else if $type == decision {
+    @return _get-color-decision($token, $options);
+  }
+  @else if $type == set {
+    @return _get-color-set($token, $options);
+  }
+  @else if $type == blend {
+    @return _get-color-blend($token, $options);
+  }
+}
+
+@function _get-color-hex($token, $options) {
+  $theme: map-get($options, theme);
+  $option: _get-option($token, $theme);
+  @if length($option) > 4 {
+    @return _get-color-hsl($token, $options);
+  }
+  @return nth($option, 1);
+}
+
+@function _get-color-hsl($token, $options) {
+  $theme: map-get($options, theme);
+  $alpha: map-get($options, alpha);
+
+  $option: _get-option($token, $theme);
+  $func: 'hsl';
+  $values: '#{nth($option, 2)},#{nth($option, 3)},#{nth($option, 4)}';
+
+  @if length($option) > 4 {
+    $func: 'hsla';
+    $values: '#{$values},#{nth($option, 5)}';
+  }
+
+  $hsl: '#{$func}(#{$values})';
+
+  @return unquote($hsl);
+}
+
+@function _get-color-decision($token, $options) {
+  $var: map-get($options, var);
+  $prop: --#{nth($token, 1)}-#{nth($token, 2)}-#{nth($token, 3)};
+
+  @if map-get($options, blend) == true {
+    $prop: #{$prop}-blend;
+  }
+
+  @if map-get($options, var) == true {
+    @return var($prop);
+  }
+  @return $prop;
+}
+
+@function _get-color-set($token, $options) {
+  $settings: _get-set-settings($token);
+  $light: nth($settings, 1);
+  $light-split: str-split($light, '-');
+  $light-length: length($light-split);
+  $dark: nth($settings, 2);
+  $dark-split: str-split($dark, '-');
+  $dark-length: length($dark-split);
+  $name: $light;
+  $identical: true;
+  @for $i from 1 through $dark-length {
+    $chunk: nth($dark-split, $i);
+    @if index($light-split, $chunk) == null {
+      $name: #{$name}-#{$chunk};
+    }
+  }
+
+  $prop: --#{$name};
+  @if length($settings) > 2 {
+    $prop: _set-prop-alpha($prop, nth($settings, 3));
+  }
+  @if map-get($options, var) == true {
+    @return var($prop);
+  }
+  @return $prop;
+}
+
+@function _get-color-blend($token, $options) {
+  $theme: map-get($options, theme);
+
+  $option: _get-option($token, $theme);
+  $hue: nth($option, 2);
+  $saturation: nth($option, 3);
+  $base: nth($option, 4);
+
+  $lightness: $base;
+
+  @if $theme == light {
+    @if $lightness > 35% {
+      $lightness: $base - 25%;
+    }
+    @else {
+      $lightness: $base + 25%;
+    }
+  }
+  @else {
+    @if $lightness < 70% {
+      $lightness: $base + 25%;
+    }
+    @else {
+      $lightness: $base - 25%;
+    }
+  }
+
+  $hsl: #{$hue}, #{$saturation}, #{$lightness};
+
+  @return $hsl;
+}
+
+/// Retourne l'option correspondante
+/// @access private
+/// @param {String} $token
+/// @param {String} $theme
+/// @return {String} Retourne la liste correspondant à l'option
+@function _get-set-settings($token, $theme: light) {
+  $context: nth($token, 1);
+  $use: nth($token, 2);
+  $tint: nth($token, 3);
+
+  $family: null;
+  @if map-has-key($scheme-sets, $tint) {
+    $family: $tint;
+  }
+  @else {
+    @each $set-family, $tints in $scheme-sets {
+      @if map-has-key($tints, $tint) {
+        $family: $set-family;
+      }
+    }
+  }
+  @if $family == null {
+    @error ('no family corresponding to tint #{$tint}');
+  }
+
+  @if not map-has-key($scheme-decisions, $context) {
+    @error ('no $context #{$context} in $scheme-decisions');
+  }
+  $uses: map-get($scheme-decisions, $context);
+
+  @if not map-has-key($uses, $use) {
+    @error ('no $use #{$use} in $scheme-decisions #{$context}');
+  }
+  $families: map-get($uses, $use);
+
+  @if not map-has-key($families, $family) {
+    @error ('no $family #{$family} in $scheme-decisions #{$context} #{$use}');
+  }
+  $decision: map-get($families, $family);
+  $shade: nth($decision, 1);
+  $options: ();
+  @if length($decision) > 1 {
+    $options: nth($decision, 2);
+  }
+
+  $set-families: map-get($scheme-sets, $family);
+  $set-shades: map-get($set-families, $tint);
+  $settings: map-get($set-shades, $shade);
+
+  @if map-has-key($options, alpha) {
+    $settings: append($settings, map-get($options, alpha));
+  }
+
+  @return $settings;
+}
+
+@function _get-option($token, $theme: light) {
+  $settings: _get-set-settings($token);
+  $index: 1;
+  @if $theme == dark {
+    $index: 2;
+  }
+  $name: nth($settings, $index);
+
+  @if not map-has-key($scheme-options, $name) {
+    @error ('color ' + $name + ' doesn\'t exists');
+  }
+
+  $option: map-get($scheme-options, $name);
+
+  @if length($settings) > 2 {
+    $option: append($option, nth($settings, 3));
+  }
+
+  @return $option;
+}
+
+@function _set-prop-alpha($prop, $alpha: 1) {
+  @if $alpha == null or $alpha == 1 {
+    @return $prop;
+  }
+
+  $a: nth(str-split(quote($alpha), '.'), 2);
+  @return #{$prop}-a#{$a};
+}

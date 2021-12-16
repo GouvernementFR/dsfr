@@ -6,9 +6,9 @@
 @mixin _share-scheme($legacy: false) {
   #{ns(share)} {
     &__link {
-      @include scheme-element-text-color(action-high blue-france, $legacy);
-      @include scheme-element-box-shadow-color(default grey, $legacy);
-      @include disabled($legacy, true, false, true, true);
+      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+      @include disabled((legacy: $legacy, text: true, box-shadow: true, can-be-link: true));
     }
   }
 }

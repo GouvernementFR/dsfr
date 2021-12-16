@@ -5,24 +5,24 @@
 
 @mixin _navigation-scheme-mega-menu($legacy: false) {
   #{ns(mega-menu)} {
-    @include scheme-element-bg-color(elevated neutral, $legacy);
+    @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
 
     > #{ns(container)} {
       @include respond-from(lg) {
         @include before {
-          @include scheme-element-bg-color(open blue-france, $legacy);
+          @include scheme-element-bg-color(open blue-france, (legacy:$legacy));
         }
       }
     }
 
     &__list {
-      @include scheme-element-box-shadow-color(default neutral, $legacy, false, bottom-1-out);
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-out);
       @include scheme-element-no-box-shadow(lg);
     }
 
     &__category {
       @include respond-from(lg) {
-        @include scheme-element-box-shadow-color(default neutral, $legacy, false, 0 calc(4v + 1px) 0 -4v $COLOR);
+        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), 0 calc(4v + 1px) 0 -4v $COLOR);
       }
     }
   }

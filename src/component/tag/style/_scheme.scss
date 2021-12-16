@@ -5,20 +5,20 @@
 
 @mixin _tag-scheme($legacy: false) {
   #{ns(tag)} {
-    @include scheme-element-text-color(label neutral, $legacy);
-    @include scheme-element-bg-color(contrast neutral, $legacy);
+    @include scheme-element-text-color(label grey, (legacy: $legacy));
+    @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
   }
 
   @include clickable-selector {
     &#{ns(tag)} {
-      @include scheme-element-text-color(action-high blue-france, $legacy);
-      @include scheme-element-bg-color(action-low blue-france, $legacy);
+      @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
+      @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
 
-      @include disabled($legacy, true, true);
+      @include disabled((legacy: $legacy, text: true, background: true));
 
       @include accent-modifiers {
-        @include scheme-element-text-color(action-high accent, $legacy);
-        @include scheme-element-bg-color(action-low accent, $legacy);
+        @include scheme-element-text-color(action-high accent, (legacy: $legacy));
+        @include scheme-element-bg-color(action-low accent, (legacy: $legacy));
       }
     }
   }

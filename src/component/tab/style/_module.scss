@@ -10,6 +10,7 @@
   @include disable-link-style;
   @include relative;
   overflow: hidden;
+  @include margin-x(0);
   @include margin-top(-4px);
   @include padding-top(4px);
   @include display-flex(row, flex-start);
@@ -20,11 +21,9 @@
   transition: height $tabs-transition-duration;
 
   // retire le padding du container en mobile
-  @include margin-x(calc(50% - 50vw));
-  @include margin-x(0, md);
-
-  #{ns(tabs)} {
-    @include margin-x(0);
+  &--viewport-width {
+    @include margin-x(calc(50% - 50vw));
+    @include margin-x(0, md);
   }
 
   @include after('', block) {
@@ -38,9 +37,11 @@
   @include list {
     @include display-flex(null, flex-end);
     overflow-x: auto;
-    @include size(100%, 12v);
+    @include width(100%);
+    @include min-height(12v);
     @include absolute;
     scroll-behavior: smooth;
+    z-index: z-index(over);
 
     /**
     * overflow vertical de 4px pour le focus
@@ -93,6 +94,7 @@
     @include padding(8v, md);
     @include margin-top(10v);
     @include margin-right(-100%);
+    z-index: z-index(base);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 

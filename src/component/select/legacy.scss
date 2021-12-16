@@ -5,5 +5,6 @@
 
 @import 'index';
 @import 'style/scheme';
+@import 'style/legacy';
 
 @include _select-scheme(true);
