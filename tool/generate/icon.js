@@ -45,7 +45,7 @@ const svgoConfig = {
   ]
 };
 
-const generateIcon = async (dir, suff, dest) => {
+const generateIcon = async (dir, suff) => {
   const icons = [];
 
   const ymlPath = root(`${dir}/icon.yml`);
