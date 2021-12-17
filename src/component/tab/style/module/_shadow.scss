@@ -9,7 +9,7 @@
 #{ns(tabs__shadow)} {
   @include before('', block) {
     @include absolute(1v, 0, 0, 0, null, 10v);
-    @include z-index(moreover);
+    @include z-index(above);
     @include _tabs-scroll-shadow(false, false);
     opacity: 1;
     pointer-events: none;
