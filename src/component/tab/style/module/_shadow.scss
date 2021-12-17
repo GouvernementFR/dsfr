@@ -1,0 +1,53 @@
+////
+/// Tab module : Shadow
+/// @group Tab
+////
+
+/*
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
+*/
+#{ns(tabs__shadow)} {
+  @include before('', block) {
+    @include absolute(1v, 0, 0, 0, null, 10v);
+    @include z-index(above);
+    @include _tabs-scroll-shadow(false, false);
+    opacity: 1;
+    pointer-events: none;
+    transition: box-shadow 0.3s;
+  }
+
+  /**
+  * Modifier ombre à gauche
+  **/
+  &--left {
+    @include before {
+      @include _tabs-scroll-shadow(true, false); // @TODO: à implementer dans la mixin shadow
+    }
+  }
+
+  /**
+  * Modifier ombre à droite
+  **/
+  &--right {
+    @include before {
+      @include _tabs-scroll-shadow(false, true);// @TODO: à implementer dans la mixin shadow
+    }
+  }
+
+  /**
+  * Modifier combinaison ombre à gauche et ombre à droite
+  **/
+  &--left#{&}--right {
+    @include before('', block) {
+      @include _tabs-scroll-shadow(true, true); // @TODO: à implementer dans la mixin shadow
+    }
+  }
+}
+
+@include theme-selector(dark) {
+  #{ns(tabs__shadow)} {
+    @include before {
+      opacity: 1;
+    }
+  }
+}

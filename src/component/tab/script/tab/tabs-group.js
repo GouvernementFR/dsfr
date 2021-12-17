@@ -1,5 +1,4 @@
 import api from '../../api.js';
-import { TabSelector } from './tab-selector.js';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
@@ -16,14 +15,18 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   init () {
     super.init();
-    this.list = this.querySelector(TabSelector.LIST);
     this.listen('transitionend', this.transitionend.bind(this));
     this.listenKey(api.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
     this.listenKey(api.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
     this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
     this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
-
     this.isRendering = true;
+
+    if (this.list) this.list.apply();
+  }
+
+  get list () {
+    return this.element.getDescendantInstances('TabsList', 'TabsGroup', true)[0];
   }
 
   transitionend (e) {
@@ -87,7 +90,9 @@ class TabsGroup extends api.core.DisclosuresGroup {
   };
 
   focus () {
-    if (this.current) this.current.focus();
+    if (this.current) {
+      this.current.focus();
+    }
   }
 
   apply () {
@@ -103,7 +108,9 @@ class TabsGroup extends api.core.DisclosuresGroup {
     const paneHeight = Math.round(this.current.node.offsetHeight);
     if (this.panelHeight === paneHeight) return;
     this.panelHeight = paneHeight;
-    this.style.height = (this.panelHeight + this.list.offsetHeight) + 'px';
+    let listHeight = 0;
+    if (this.list) listHeight = this.list.node.offsetHeight;
+    this.style.height = (this.panelHeight + listHeight) + 'px';
   }
 }
 

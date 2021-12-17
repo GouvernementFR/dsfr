@@ -18,7 +18,14 @@ class TabButton extends api.core.DisclosureButton {
     super.apply(value);
     if (this.isPrimary) {
       this.setAttribute('tabindex', value ? '0' : '-1');
+      if (value) {
+        if (this.list) this.list.focalize(this);
+      }
     }
+  }
+
+  get list () {
+    return this.element.getAscendantInstance('TabsList', 'TabsGroup');
   }
 }
 
