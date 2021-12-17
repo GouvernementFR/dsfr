@@ -7,10 +7,11 @@
 /// @type map
 $z-indexes: (
   auto: auto,
+  below: -2,
   under: -1,
   base: 0,
   over: 1,
-  moreover: 2,
+  above: 2,
   focus: 2000,
   menu: 2500,
   menu-focus: 3000,
