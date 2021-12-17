@@ -7,11 +7,32 @@
   /**
   * Correctif de l'alignement des menus sur la droite
   */
-  #{ns(nav)} {
-    @include respond-from(lg) {
-      &--align-right {
-        transform: translateX(-100%);
+  #{ns(nav)}__item {
+    &--align-right {
+      @include respond-from(lg) {
+        #{ns(collapse)} {
+          transform: translateX(-100%);
+        }
       }
+    }
+  }
+
+  /**
+  * reset liste à puce
+  */
+  #{ns(mega-menu)},
+  #{ns(menu)} {
+    &__list {
+      list-style: none;
+    }
+  }
+
+  /**
+  * reset margin
+  */
+  #{ns(mega-menu)} {
+    &__category {
+      margin: 0;
     }
   }
 }

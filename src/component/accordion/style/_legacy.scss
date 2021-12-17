@@ -1,0 +1,15 @@
+////
+/// Accordion Legacy
+/// @group accordion
+////
+
+@include legacy(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns-group(accordions)} {
+    & > li {
+      list-style: none;
+    }
+  }
+}

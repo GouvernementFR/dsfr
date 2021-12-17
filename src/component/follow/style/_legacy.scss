@@ -1,0 +1,15 @@
+////
+/// Follow Legacy
+/// @group follow
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de la largeur max des textes
+  */
+  #{ns(follow__newsletter)} {
+    & > * {
+      max-width: 100%;
+    }
+  }
+}

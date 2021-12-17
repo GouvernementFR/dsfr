@@ -1,0 +1,17 @@
+////
+/// Table Legacy
+/// @group table
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif placement caption
+  */
+  #{ns(table)} {
+    &#{ns-attr(js-table, true)} {
+      caption {
+        @include relative;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+////
+/// Form legacy
+/// @group form
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de la largeur de la légende d'un fieldset
+  */
+  #{ns(fieldset)} {
+    &__legend {
+      max-width: 100%;
+    }
+  }
+}

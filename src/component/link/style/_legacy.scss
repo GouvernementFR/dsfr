@@ -1,0 +1,15 @@
+////
+/// Link Legacy
+/// @group link
+////
+
+@include legacy(ie11) {
+  /**
+  * Reset liste à puce
+  */
+  #{ns-group(links)} {
+    & > li {
+      list-style: none;
+    }
+  }
+}

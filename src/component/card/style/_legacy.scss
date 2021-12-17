@@ -1,0 +1,21 @@
+////
+/// Card Legacy
+/// @group card
+////
+
+@include legacy(ie11) {
+  /**
+  * Correctif de la hauteur de la navigation latérale
+  */
+  #{ns(card)} {
+    &__title {
+      margin: 0;
+    }
+
+    &--horizontal {
+      #{ns(card)}__body {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

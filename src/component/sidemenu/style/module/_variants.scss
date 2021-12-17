@@ -46,12 +46,12 @@
    * Modificateur pour avoir une bordure tout autour du sidemenu
    */
   &--full-border {
-
     #{ns(sidemenu__title)} {
-      @include margin-top(2v);
+      @include padding-top(2v);
     }
+
     #{ns(sidemenu__inner)} {
-      @include padding(0 1v 0 1v, md);
+      @include padding(0 1v);
     }
   }
 }

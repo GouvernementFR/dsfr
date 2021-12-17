@@ -60,11 +60,6 @@
   @include title {
     @include text-style(md);
     @include font-weight(bold);
-    @include margin(0);
-
-    + #{ns(tile__desc)} {
-      @include margin(2v 0 0);
-    }
   }
 
   /**

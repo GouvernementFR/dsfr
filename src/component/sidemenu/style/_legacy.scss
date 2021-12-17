@@ -10,4 +10,11 @@
   #{ns(sidenav)} {
     height: auto;
   }
+
+  /**
+  * Reset de la liste à puce
+  */
+  #{ns(sidemenu)}__item {
+    list-style: none;
+  }
 }

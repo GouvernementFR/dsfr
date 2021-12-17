@@ -1,0 +1,19 @@
+////
+/// Callout Legacy
+/// @group callout
+////
+
+@include legacy(ie11) {
+  /**
+  * Marge des titres et textes
+  */
+  #{ns(callout)} {
+    &__title {
+      @include margin(0 0 2v);
+    }
+
+    &__text {
+      @include margin(0);
+    }
+  }
+}
