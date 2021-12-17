@@ -40,4 +40,8 @@
   &--agent {
     @include connect-pseudo(brand, agent);
   }
+
+  * {
+    display: none;
+  }
 }
