@@ -1,8 +1,0 @@
-////
-/// Core Function : get color option
-/// @group core
-////
-
-@function _get-color-option($name) {
-  @return map-get($scheme-options, $name);
-}

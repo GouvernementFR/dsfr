@@ -5,15 +5,15 @@
 
 @mixin _summary-scheme($legacy: false) {
   #{ns(summary)} {
-    @include scheme-element-bg-color(contrast neutral, $legacy);
-    // @include scheme-element-box-shadow-color(default neutral, $legacy);
+    @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
+    // @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
 
     @include title {
-      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-text-color(title grey, (legacy:$legacy));
     }
 
     li > a {
-      @include scheme-element-text-color(action-high neutral, $legacy);
+      @include scheme-element-text-color(action-high grey, (legacy:$legacy));
     }
   }
 }

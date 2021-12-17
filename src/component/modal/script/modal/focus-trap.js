@@ -23,6 +23,8 @@ const ordereds = [
 
 const ORDEREDS = ordereds.join();
 
+const IS_STUNNING = false;
+
 const isFocusable = (element, container) => {
   if (!(element instanceof Element)) return false;
   const style = window.getComputedStyle(element);
@@ -80,8 +82,10 @@ class FocusTrap {
     window.addEventListener('keydown', this.handling);
     document.body.addEventListener('focus', this.focusing, true);
 
-    this.stunneds = [];
-    // this.stun(document.body);
+    if (IS_STUNNING) {
+      this.stunneds = [];
+      this.stun(document.body);
+    }
   }
 
   stun (node) {
@@ -178,8 +182,10 @@ class FocusTrap {
 
     this.element = null;
 
-    // for (const stunned of this.stunneds) stunned.unstun();
-    // this.stunneds = [];
+    if (IS_STUNNING) {
+      for (const stunned of this.stunneds) stunned.unstun();
+      this.stunneds = [];
+    }
 
     if (this.onUntrap) this.onUntrap();
   }
@@ -192,16 +198,18 @@ class FocusTrap {
 class Stunned {
   constructor (element) {
     this.element = element;
-    this.hidden = element.getAttribute('aria-hidden');
+    // this.hidden = element.getAttribute('aria-hidden');
     this.inert = element.getAttribute('inert');
 
-    this.element.setAttribute('aria-hidden', true);
+    // this.element.setAttribute('aria-hidden', true);
     this.element.setAttribute('inert', '');
   }
 
   unstun () {
+    /*
     if (this.hidden === null) this.element.removeAttribute('aria-hidden');
     else this.element.setAttribute('aria-hidden', this.hidden);
+     */
 
     if (this.inert === null) this.element.removeAttribute('inert');
     else this.element.setAttribute('inert', this.inert);

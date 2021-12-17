@@ -5,25 +5,25 @@
 
 @mixin _card-scheme($legacy: false) {
   #{ns(card)} {
-    @include scheme-element-bg-color(default neutral, $legacy);
-    @include scheme-element-box-shadow-color(default neutral, $legacy);
+    @include scheme-element-bg-color(default grey, (legacy:$legacy));
+    @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-out);
 
     &--grey {
-      @include scheme-element-bg-color(contrast neutral, $legacy);
+      @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
     }
 
     &:not(&--no-arrow) &__body {
       @include after {
-        @include scheme-element-text-color(action-high blue-france, $legacy);
+        @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
       }
     }
 
     &__detail {
-      @include scheme-element-text-color(mention neutral, $legacy);
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
     &__title {
-      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-text-color(title grey, (legacy:$legacy));
     }
   }
 }

@@ -20,6 +20,8 @@
 
 * modal.attributes (object, optional) : attributs supplémentaires sur la modale
 
+* modal.concealingBackdrop (boolean, optional) : par défaut considéré à true, si la valeur false est passée, la modale ne se referme pas au click sur le backdrop.
+
   // TODO: revoir le template pour remettre les éléments de sample dans sample (footer en array d'objet de config de button par exemple)
 
 %>
@@ -75,6 +77,8 @@ switch(modal.size) {
   modalAttrs['aria-labelledby'] = titleId;
 
   if (modal.top) modalClasses.push(`${prefix}-modal--top`);
+
+  if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealing-backdrop`] = modal.concealingBackdrop;
 
  %>
 

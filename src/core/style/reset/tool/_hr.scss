@@ -14,5 +14,5 @@
 }
 
 @mixin build-hr-scheme($legacy) {
-  @include scheme-element-bg-image-color(border-default neutral, $legacy);
+  @include scheme-element-bg-image-color(border default grey, (legacy:$legacy));
 }

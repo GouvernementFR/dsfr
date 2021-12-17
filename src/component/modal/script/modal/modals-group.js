@@ -4,7 +4,7 @@ import { FocusTrap } from './focus-trap.js';
 class ModalsGroup extends api.core.DisclosuresGroup {
   constructor () {
     super('Modal', false);
-    this.trap = new FocusTrap();
+    this.focusTrap = new FocusTrap();
   }
 
   static get instanceClassName () {
@@ -13,8 +13,8 @@ class ModalsGroup extends api.core.DisclosuresGroup {
 
   apply (value, initial) {
     super.apply(value, initial);
-    if (this.current === null) this.trap.untrap();
-    else this.trap.trap(this.current.node);
+    if (this.current === null) this.focusTrap.untrap();
+    else this.focusTrap.trap(this.current.node);
   }
 }
 

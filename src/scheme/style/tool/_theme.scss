@@ -7,7 +7,12 @@
   @if $theme != 'dark' {
     $theme: null;
   }
-  :root#{ns-attr(theme, $theme)} {
-    @content;
+  $selector: &;
+  @at-root {
+    :root#{ns-attr(theme, $theme)} {
+      @include nest($selector) {
+        @content;
+      }
+    }
   }
 }

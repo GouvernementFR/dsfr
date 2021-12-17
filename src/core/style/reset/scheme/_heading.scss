@@ -12,7 +12,7 @@
       }
     }
     #{$titles} {
-      @include scheme-element-text-color(title neutral, $legacy);
+      @include scheme-element-text-color(title grey, (legacy: $legacy));
     }
   }
 }

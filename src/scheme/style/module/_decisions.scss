@@ -3,6 +3,6 @@
 /// @group schemes
 ////
 
-@include theme-selector {
+@include theme-selector(dark) {
   @include build-decisions(true);
 }

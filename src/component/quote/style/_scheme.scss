@@ -6,15 +6,15 @@
 @mixin _quote-scheme($legacy: false) {
   #{ns(quote)} {
     @include before {
-      @include scheme-element-text-color(artwork-minor blue-france, $legacy);
+      @include scheme-element-text-color((artwork minor blue-france), (legacy:$legacy));
     }
 
     @include accent-modifiers {
       @include before {
-        @include scheme-element-text-color(artwork-minor accent, $legacy);
+        @include scheme-element-text-color((artwork minor accent), (legacy:$legacy));
       }
     }
 
-    @include scheme-element-bg-image-color(border-default neutral, $legacy);
+    @include scheme-element-bg-image-color((border default grey), (legacy:$legacy));
   }
 }

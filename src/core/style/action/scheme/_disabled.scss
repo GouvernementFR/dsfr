@@ -5,6 +5,6 @@
 
 @mixin _core-action-disabled-scheme($legacy: false) {
   @include disabled-selector {
-    @include disabled-colors($legacy, true);
+    @include disabled-colors((legacy: $legacy, text: true));
   }
 }
