@@ -6,9 +6,7 @@
 /// Mixin pour gérer l'affichage des boutons radios riches
 @mixin radio-rich() {
   @at-root {
-    &[style*='background-image:'],
-    &[class^="#{ns(ifi-, '')}"],
-    &[class*=" #{ns(ifi-, '')}"] {
+    &[style*='background-image:'] {
       @content;
     }
   }
