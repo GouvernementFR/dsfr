@@ -81,15 +81,16 @@
   }
 }
 
-@function font-icon($size: md) {
-  @return normal normal normal #{icon-size($size)}/1 #{$namespace}-icon;
+@function font-icon($size: md, $deprecated: false) {
+  $font-weight: normal;
+  @if $deprecated {
+    $font-weight: 700;
+  }
+  @return normal $font-weight normal #{icon-size($size)}/1 #{$namespace}-icon;
 }
 
 @mixin font-icon($size: md, $deprecated: false) {
-  font: font-icon($size);
-  @if $deprecated {
-    font-weight: 700;
-  }
+  font: font-icon($size, $deprecated);
 }
 
 @mixin icon($icon: null, $size: md, $pseudo: before) {
