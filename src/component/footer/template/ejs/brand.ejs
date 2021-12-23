@@ -1,10 +1,9 @@
 <%#
 # paramètres footer brand
 
-* footer.brand.logo.title (string, required) : titre du logo bloc marque
+* footer.brand (object, required) : Paramètres du bloc marque
+  ** footer.brand.logo (object, optional) : Paramètres du logo bloc marque
 * footer.operator (object, optional) : Paramètres du logo operator
-	** footer.operator.src (string, required) : lien du logo operator
-	** footer.operator.alt (string, recommanded) : texte alternatif du logo operator
 
 %>
 <% let footer = locals.footer || {} %>

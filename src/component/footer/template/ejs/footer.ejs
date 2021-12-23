@@ -2,11 +2,12 @@
 # paramètres footer
 
 * footer.id (string, optional): id du footer
-* footer.top : Paramètres du bloc top (menu)
-* footer.brand : Paramètres du bloc marque
-* footer.content : Paramètres du bloc de contenu (texte + lien)
-* footer.partners : Paramètres du bloc partenaire (logos)
-* footer.bottom : Paramètres du bloc bottom (liens et copyright)
+* footer.top (object, optional) : Paramètres du bloc top (menu)
+* footer.brand (object, optional) : Paramètres du bloc marque
+* footer.operator (object, optional) : Paramètres du logo operator
+* footer.content (object, optional) : Paramètres du bloc de contenu (texte + lien)
+* footer.partners (object, optional) : Paramètres du bloc partenaire (logos)
+* footer.bottom (object, optional) : Paramètres du bloc bottom (liens et copyright)
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>

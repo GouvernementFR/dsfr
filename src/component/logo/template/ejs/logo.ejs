@@ -1,9 +1,11 @@
 <%#
 # paramètres logo
 
-* name (string, required) : nom de l'entité
+* logo.classes (array, optionnal) : classes spécifiques à rajouter sur le composant
 
-* size (string, optionnal) : modificateur de taille.
+* logo.title (string, required) : nom de l'entité
+
+* logo.size (string, optionnal) : modificateur de taille.
   valeurs:
   * lg : barre de recherche large
 
@@ -24,8 +26,6 @@
          classes.push(prefix + '-logo--lg');
          break;
  }
-
-
  %>
 
 <p <%- includeClasses(classes); %>>

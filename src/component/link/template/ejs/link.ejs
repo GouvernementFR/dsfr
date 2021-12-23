@@ -11,6 +11,11 @@
 
 * link.disabled (boolean, optionnal) : si valeur true, link désactivé
 
+* link.size (string, optional) : taille du lien
+  valeurs :
+  * sm
+  * lg
+
 * link.icon (string, optional) : icon du lien
 
 * link.iconPlace (string, optionnal) : emplacement de l'icone
@@ -20,6 +25,10 @@
   * right : icone à droite du label
 
 * link.alignOnContent (boolean, optionnal) : ajoute des marges négatives pour être aligné sur le contenu
+
+* link.attributes (object, optionnal) : attributs spécifiques à rajouter sur le composant
+
+* link.classes (array, optionnal) : classes spécifiques à rajouter sur le composant
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>

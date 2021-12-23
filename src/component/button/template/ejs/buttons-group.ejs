@@ -27,6 +27,11 @@ valeurs :
 
 * buttonGroup.attributes (object, optionnal) : Attributs suplémentaires sur le groupe de boutons
 
+* buttonGroup.iconPlace (string, optionnal) : emplacement des icones sur le groupe de bouton
+valeurs :
+    ** left : icone à gauche du label
+    ** right : icone à droite du label
+
 #%>
 
 <% eval(include('../../../../core/index.ejs')); %>
@@ -72,7 +77,6 @@ valeurs :
 
  if (buttonGroup.iconPlace !== undefined) switch(buttonGroup.iconPlace)
  {
-
      case 'left':
         groupClasses.push(prefix + '-btns-group--icon-left');
         break;

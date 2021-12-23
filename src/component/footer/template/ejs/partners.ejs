@@ -1,15 +1,16 @@
 <%#
 # paramètres footer partners
 
-* footer.partners.title (object, required) : Titre du bloc partenaire
-
-* footer.partners.mainPartner (object, required) : Paramètres du partenaire principal
-  ** footer.partners.mainPartner.src (object, required) : Paramètres du partenaire principal
+* footer.partners (object, required) : Paramètres du template
+  ** footer.partners.title (string, required) : Titre du bloc partenaire
+  ** footer.partners.mainPartner (object, required) : Paramètres du partenaire principal
   ** footer.partners.mainPartner.alt (object, recommanded) : Paramètres du partenaire principal
-
-* footer.partners.subPartners (array, required) : Tableau de sous partenaire
-  ** footer.partners.subPartners.src (object, required) : Paramètres du partenaire principal
-  ** footer.partners.subPartners.alt (object, recommanded) : Paramètres du partenaire principal
+    *** src (object, required) : Paramètres du partenaire principal
+  ** footer.partners.mainPartner.alt (object, recommanded) : Paramètres du partenaire principal
+    *** alt (object, recommanded) : Paramètres du partenaire principal
+  ** footer.partners.subPartners (array, required) : Tableau de sous partenaire
+    *** footer.partners.subPartners.src (object, required) : Paramètres du partenaire principal
+    *** footer.partners.subPartners.alt (object, recommanded) : Paramètres du partenaire principal
 
 %>
 <% let footer = locals.footer || {} %>
