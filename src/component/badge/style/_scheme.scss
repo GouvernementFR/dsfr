@@ -34,7 +34,7 @@
     }
 
     @include accent-modifiers {
-      @include scheme-element-text-color(action-high accent, (legacy: $legacy));
+      @include scheme-element-text-color(label accent, (legacy: $legacy));
       @include scheme-element-bg-color(contrast accent, (legacy: $legacy));
     }
   }
