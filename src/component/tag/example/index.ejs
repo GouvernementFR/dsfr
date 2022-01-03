@@ -11,12 +11,13 @@
 <%- sample('Tag désactivé SM', './sample/tag-sm', {tag:{button:true, disabled:true}}, true); %>
 
 
-<%- sample('Tag activable', './sample/tag-pressable', {accent: 'green-emeraude'}, true); %>
+<%- sample('Tag activable', './sample/tag-pressable', {}, true); %>
 <%- sample('Tag activable taille sm', './sample/tag-pressable', {tag:{size:'sm'}}, true); %>
+<%- sample('Le tag activable n\'autorise pas l\'accentuation', './sample/tag-pressable', {tag:{iconPlace: 'left', accent: 'green-emeraude', icon: 'information-line'}}, true); %>
 
-<%- sample('Tag supprimable', './sample/tag-dismissable', {accent: 'green-emeraude'}, true); %>
-<%- sample('Tag supprimable avec icone', './sample/tag-dismissable', {tag:{iconPlace: 'left', icon: 'information-line'}}, true); %>
+<%- sample('Tag supprimable', './sample/tag-dismissable', {}, true); %>
 <%- sample('Tag supprimable taille sm', './sample/tag-dismissable', {tag:{size:'sm'}}, true); %>
+<%- sample('Le tag supprimable n\'autorise ni accentuation ni icône personnalisée', './sample/tag-dismissable', {tag:{iconPlace: 'left', accent: 'green-emeraude', icon: 'information-line'}}, true); %>
 
 <%- sample('Groupe de tags non cliquables', './sample/tags-group', {tagsGroup:{groupCount: 9}}, true); %>
 <%- sample('Groupe de tags non cliquables SM', './sample/tags-group', {tagsGroup:{size: 'sm', groupCount: 9}}, true); %>

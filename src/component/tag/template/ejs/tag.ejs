@@ -58,6 +58,7 @@
     case 'dismissable':
         if (tag.tag === undefined) tag.tag = 'button';
         tagClasses.push(prefix + '-tag--dismiss');
+        tagAttrs["aria-label"] = "Retirer " + tag.label;
     break;
     default:
         if (tag.tag === undefined) tag.tag = 'p';

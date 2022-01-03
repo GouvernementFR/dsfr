@@ -13,8 +13,20 @@
   }
 }
 
-@mixin pressed-selector() {
+@mixin pressed-true-selector() {
   &[aria-pressed="true"] {
+    @content;
+  }
+}
+
+@mixin pressed-false-selector() {
+  &[aria-pressed="false"] {
+    @content;
+  }
+}
+
+@mixin pressed-selector() {
+  &[aria-pressed] {
     @content;
   }
 }
