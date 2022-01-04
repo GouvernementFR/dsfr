@@ -30,6 +30,8 @@
         @include scheme-element-text-color(inverted grey, (legacy: $legacy));
         @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
         @include scheme-element-bg-transparent((legacy:$legacy));
+        --a: 0;
+        --hsla: hsla(var(--blend), var(--a));
         @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), (radial-gradient(circle at 100% space(1v), transparent space(2.3125v), var(--hsla) space(2.5v)), radial-gradient(circle at 100% space(1v), transparent space(2.3125v), $COLOR space(2.5v)) ));
 
         @include disabled {

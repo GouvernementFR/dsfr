@@ -8,6 +8,7 @@
     // tag pressable
     @include pressed-true-selector {
       @include relative;
+      overflow: visible;
       background-position: 100% 0, 100% 0;
       background-size: var(--blend-size), 100% 100%;
 
