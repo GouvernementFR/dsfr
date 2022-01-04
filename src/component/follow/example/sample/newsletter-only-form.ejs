@@ -5,10 +5,11 @@ data = JSON.parse(include('./data.ejs'));
 data.socials = undefined;
 
 let follow = locals.follow || {newsletter: {}, socials: {}};
-let inputAttributes = [];
+let inputAttributes = {};
 let inputClasses = [];
 inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
 inputAttributes['title'] = 'Votre adresse électronique (ex. : nom@domaine.fr)';
+inputAttributes['autocomplete'] = 'email';
 
 if (follow.newsletter !== undefined) {
   if (follow.newsletter.error) {
