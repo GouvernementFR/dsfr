@@ -18,7 +18,7 @@
       }
 
       &#{ns(tag)}--sm {
-        @include icon(null, xs, after){
+        @include icon(null, xs, after) {
           @include absolute(3px, 0);
           @include margin(-1.5v);
         }
@@ -28,7 +28,7 @@
 
   // tag supprimable
   &#{ns(tag)}--dismiss {
-    @include before{
+    @include before {
       content: none;
     }
 
@@ -40,6 +40,7 @@
     &#{ns(tag)}--sm {
       @include icon(null, xs, after) {
         @include margin-right(-0.75v);
+        @include margin-left(0.5v);
       }
     }
   }
