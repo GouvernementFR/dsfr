@@ -40,7 +40,6 @@
     @include width(100%);
     @include min-height(12v);
     @include absolute;
-    scroll-behavior: smooth;
     z-index: z-index(over);
 
     /**
