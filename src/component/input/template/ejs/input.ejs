@@ -7,27 +7,27 @@
 
 * input.type (string, required) : type de l'input. si textarea, l'input est remplacé par un textarea
 
-* input.placeholder (string, optionnal) : text du placeholder de l'input
+* input.placeholder (string, optional) : text du placeholder de l'input
 
-* input.icon (string, optionnal) : nom de l'icone qui sera placée sur la partie droite de l'input
+* input.icon (string, optional) : nom de l'icone qui sera placée sur la partie droite de l'input
 
-* input.valid (string, optionnal) : message de validation
+* input.valid (string, optional) : message de validation
 
-* input.error (string, optionnal) : message d'erreur
+* input.error (string, optional) : message d'erreur
 
-* input.hint (string, optionnal) : message d'aide
+* input.hint (string, optional) : message d'aide
 
-* input.required (boolean, optionnal)
+* input.required (boolean, optional)
 
-* input.disabled (boolean, optionnal)
+* input.disabled (boolean, optional)
 
-* input.addon (boolean, optionnal)
+* input.addon (boolean, optional) : Si true, input complexe composé d'un addon (ex: pour associer un bouton)
 
-* input.button (object, optionnal) : attributs du bouton sur l'input
+* input.button (object, optional) : attributs du bouton collé à l'input (si addon true)
 
-* input.attributes (object, optionnal) : attributs spécifiques à rajouter sur l'input
+* input.attributes (object, optional) : attributs spécifiques à rajouter sur l'input
 
-* input.classes (array, optionnal) : classes spécifiques à rajouter sur l'input
+* input.classes (array, optional) : classes spécifiques à rajouter sur l'input
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
