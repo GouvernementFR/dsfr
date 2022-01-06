@@ -16,7 +16,7 @@
     $middle: '#{$breakpoint}-';
   }
 
-  $end: quote($value);
+  $end: quote(str-replace($value, '.', '-'));
 
   @if type-of($value) == 'number' and $value < 0 {
     $end: 'n#{abs($value)}';
@@ -75,13 +75,17 @@
   @each $prop, $settings in $props {
     $from: map_get($settings, from);
     $through: map_get($settings, through);
-    $special: map_get($settings, special);
+    $specials: map_get($settings, special);
 
     @for $i from $from through $through {
       @include _spacing-property-variations($prop, $i, $breakpoint);
+      // ajoute 0.5v & 1.5v
+      @if $i >= 0 and $i < 2 {
+        @include _spacing-property-variations($prop, $i + 0.5, $breakpoint);
+      }
     }
 
-    @if $special != null {
+    @each $special in $specials {
       @include _spacing-property-variations($prop, $special, $breakpoint);
     }
   }
