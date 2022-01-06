@@ -8,7 +8,8 @@
   * reset des marges dans l'alerte
   */
   #{ns(alert)} {
-    &__title, p {
+    &__title,
+    p {
       @include margin(0 0 1v);
     }
   }
