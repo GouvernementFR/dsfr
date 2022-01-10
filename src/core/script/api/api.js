@@ -4,6 +4,7 @@ import config from '../../config.js';
 import engine from './engine.js';
 import inspector from './inspect/inspector.js';
 import ns from './utilities/namespace.js';
+import { internals } from './utilities/internals.js';
 import { addClass, hasClass, removeClass } from './utilities/classes.js';
 import { queryParentSelector, querySelectorAllArray } from './utilities/query-selector.js';
 
@@ -39,6 +40,8 @@ api.hasClass = hasClass;
 api.removeClass = removeClass;
 api.queryParentSelector = queryParentSelector;
 api.querySelectorAllArray = querySelectorAllArray;
+
+api.internals = internals;
 
 api.start = engine.start;
 api.stop = engine.stop;
