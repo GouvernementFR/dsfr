@@ -1,0 +1,10 @@
+////
+/// Core Module : Reset sup
+/// @group core
+////
+
+@if (map-get($reset-settings, sup)) {
+  sup {
+    line-height: 1;
+  }
+}
