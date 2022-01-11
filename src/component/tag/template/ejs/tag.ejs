@@ -24,7 +24,7 @@
 <%
  let tag = locals.tag || {};
  let tagClasses = tag.classes || [];
- let tagAttrs = tag.attributes || {};
+ let tagAttrs = {};
 
  tagClasses.push(prefix + '-tag');
 
@@ -58,7 +58,7 @@
     case 'dismissable':
         if (tag.tag === undefined) tag.tag = 'button';
         tagClasses.push(prefix + '-tag--dismiss');
-        tagAttrs["aria-label"] = "Retirer " + tag.label;
+        tagAttrs["aria-label"] = 'Retirer [A Modifier - le filtre ' + tag.label + ']';
     break;
     default:
         if (tag.tag === undefined) tag.tag = 'p';
@@ -79,8 +79,13 @@
 
  if (tag.disabled === true) {
     if (tag.tag == 'button') tagAttrs['disabled'] = '';
+    // if (tag.tag == 'a') {
+    //     tagAttrs['aria-disabled'] = 'true';
+    //     tagAttrs['role'] = 'link';
+    // }
  }
 
+ tagAttrs = {...tagAttrs, ...tag.attributes}; // place les attributs venant du sample à la fin
 %>
 
 <<%= tag.tag %> <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></<%= tag.tag %>>
