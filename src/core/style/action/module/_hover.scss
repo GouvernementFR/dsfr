@@ -11,8 +11,15 @@ a {
   @include disable-blend;
 }
 
+@include hover-type-selector($action-elements, all) {
+  @include hover-blend();
+}
+
 @include hover-media-query {
-  @include hover-type-selector($action-elements, all) {
-    @include hover-blend();
+  @include hover-type-selector($action-elements, all, true) {
+    &:hover,
+    &:active {
+      --blend-size: var(--blend-full-size); // 2048px 2048px;
+    }
   }
 }

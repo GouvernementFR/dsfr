@@ -9,7 +9,7 @@
   }
 }
 
-@mixin hover-type-selector($elements, $type: all) {
+@mixin hover-type-selector($elements, $type: all, $check-disabled: false) {
   $selectors: ();
 
   @each $element, $setting in $elements {
@@ -17,7 +17,10 @@
     $selector: map-get($setting, selector);
     @if $hover {
       @if $type == map-get($hover, type) or $type == all {
-        $nested: nest($selector, map-get($hover, selector));
+        $nested: $selector;
+        @if $check-disabled {
+          $nested: nest($selector, map-get($hover, selector));
+        }
         $associated: $nested;
         @if & != null and quote(&) != ':root' {
           $associated: selector-associate(quote(&), $nested);
@@ -34,14 +37,11 @@
 
 @mixin hover-blend($background-images: (), $background-sizes: (), $background-positions: ()) {
   --hsla: #{css-hsl-alpha(var(--blend), var(--a))};
-  --blend-size: 0%; // 2048px 2048px;
+  --blend-size: 0; // 2048px 2048px;
   --blend-position: 50%;
-  @include hover-blend-background($background-images, $background-sizes, $background-positions);
+  --a: 0;
 
-  &:hover,
-  &:active {
-    --blend-size: var(--blend-full-size); // 2048px 2048px;
-  }
+  @include hover-blend-background($background-images, $background-sizes, $background-positions);
 
   &:hover {
     --a: #{$hover-alpha};
@@ -52,11 +52,15 @@
   }
 }
 
+@mixin hover-blend-background-size($background-sizes: ()) {
+  background-size: $background-sizes, var(--blend-size);
+}
+
 @mixin hover-blend-background($background-images: (), $background-sizes: (), $background-positions: ()) {
   background-repeat: no-repeat;
-  background-size: append($background-sizes, var(--blend-size));
-  background-position: append($background-positions, var(--blend-position));
-  background-image: append($background-images, radial-gradient(circle at center, var(--hsla), var(--hsla) 3%));
+  @include hover-blend-background-size($background-sizes);
+  background-position: $background-positions, var(--blend-position);
+  background-image: $background-images, radial-gradient(circle at center, var(--hsla), var(--hsla) 3%);
 }
 
 @mixin enable-blend() {
