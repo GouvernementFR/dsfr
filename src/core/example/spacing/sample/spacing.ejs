@@ -131,7 +131,7 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
         <tbody>
             <% for(var i = minToken; i <= maxToken; i++) { %>
               <tr>
-                <td><%= i %>v</td>
+                <td><%= i < 0 ? 'n' + Math.abs(i) : i %>v</td>
                 <td><%- i/4 %></td>
                 <td><%= i*4 %></td>
                 <td>
@@ -144,25 +144,33 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
               </tr>
 
               <% // exception pour 0.5v et 1.5v
-              if (i === 0 || i === 1) {
-                let half = i + 0.5;
+              if (i >= -2 && i < 2) {
+                let half, halfString = '';
+                if (i<0) {
+                  half = i + 0.5;
+                  halfString = 'n' + Math.abs(half);
+                } else {
+                  half = i + 0.5;
+                  halfString = half;
+                }
+                halfString = halfString.toString().replace('.', '-') + 'v';
               %>
                 <tr>
-                  <td><%= i %>-5v</td>
+                  <td><%= halfString %></td>
                   <td><%- half/4 %></td>
                   <td><%= half*4 %></td>
                   <td>
                     <div class="sample-box">
                       <span>1</span>
-                      <span class="<%= prefix %>-ml-<%= i + '-5v' %>">2</span>
+                      <span class="<%= prefix %>-ml-<%= halfString %>">2</span>
                     </div>
                   </td>
-                  <td><%= prefix %>-ml-<%= i + '-5v' %></td>
+                  <td><%= prefix %>-ml-<%= halfString %></td>
                 </tr>
               <% } %>
             <% } %>
 
-            // valeur spéciale (auto)
+            <% // valeur spéciale (auto) %>
             <tr>
               <td>auto</td>
               <td>auto</td>
