@@ -1,6 +1,15 @@
 <%
 let sampling = false;
 
+function section (title, desc, spacing = '32v') {
+  let sectionText = '';
+  sectionText += `<h3 class="fr-mt-${spacing}">${title}</h3>`;
+  if (desc) sectionText += `<p>${desc}</p>`;
+  return sectionText;
+}
+
+locals.section = section;
+
 function getSample (include) {
   return (title, path, data, snippet, layout, layoutData) => {
     sampling = false;
