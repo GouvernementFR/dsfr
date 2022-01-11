@@ -3,10 +3,7 @@ import options, { Modes } from './options/options.js';
 import config from '../../config.js';
 import engine from './engine.js';
 import inspector from './inspect/inspector.js';
-import ns from './utilities/namespace.js';
-import { internals } from './utilities/internals.js';
-import { addClass, hasClass, removeClass } from './utilities/classes.js';
-import { queryParentSelector, querySelectorAllArray } from './utilities/query-selector.js';
+import internals from './internals.js';
 
 inspector.info(`version ${config.version}`);
 
@@ -22,30 +19,10 @@ Object.defineProperty(api, 'mode', {
   get: () => options.mode
 });
 
-Object.defineProperty(api, 'preventManipulation', {
-  get: () => options.preventManipulation
-});
-
-Object.defineProperty(api, 'isLegacy', {
-  get: () => state.isLegacy
-});
-
-api.setLegacy = () => {
-  state.isLegacy = true;
-};
-
-api.ns = ns;
-api.addClass = addClass;
-api.hasClass = hasClass;
-api.removeClass = removeClass;
-api.queryParentSelector = queryParentSelector;
-api.querySelectorAllArray = querySelectorAllArray;
-
 api.internals = internals;
 
 api.start = engine.start;
 api.stop = engine.stop;
-api.register = engine.register;
 
 api.inspector = inspector;
 

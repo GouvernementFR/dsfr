@@ -1,7 +1,6 @@
 import { Collection } from '../utilities/collection.js';
+import api from '../api.js';
 import state from '../state.js';
-import ns from '../utilities/namespace.js';
-import { querySelectorAllArray } from '../utilities/query-selector';
 
 class Registration {
   constructor (selector, InstanceClass, creator) {
@@ -20,7 +19,7 @@ class Registration {
       .replace(/([0-9])([^0-9])/g, '$1-$2')
       .replace(/([^0-9])([0-9])/g, '$1-$2')
       .toLowerCase();
-    this._attribute = ns.attr(`js-${dashed}`);
+    this._attribute = api.internals.ns.attr(`js-${dashed}`);
   }
 
   getInstanceClassNames (InstanceClass) {
@@ -43,7 +42,7 @@ class Registration {
     const nodes = [];
     if (node.matches && node.matches(this.selector)) nodes.push(node);
     // eslint-disable-next-line no-useless-call
-    if (!nonRecursive && node.querySelectorAll && node.querySelector(this.selector)) nodes.push.apply(nodes, querySelectorAllArray(node, this.selector));
+    if (!nonRecursive && node.querySelectorAll && node.querySelector(this.selector)) nodes.push.apply(nodes, api.internals.dom.querySelectorAllArray(node, this.selector));
     return nodes;
   }
 
