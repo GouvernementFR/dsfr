@@ -39,8 +39,8 @@
     #{ns($base + '-' + $icon)} {
       @include before(icon-glyph($icon, $deprecated));
       @if is-deprecated($icon) {
-        @include before{
-          font-weight: 700;;
+        @include before {
+          font-weight: 700;
         }
       }
     }
