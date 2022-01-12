@@ -15,7 +15,10 @@
    */
   input[type="checkbox"] {
     @include absolute;
+    @include margin(0);
     opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
 
     /**
      * On applique un display grid sur le label afin de gérer le positionnement des élements

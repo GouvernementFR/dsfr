@@ -9,11 +9,12 @@ $ACCENT: none;
   $legacy: map-get($options, legacy);
   $important: map-get($options, important);
   $hover: map-get($options, hover);
+  $standalone: map-get($options, standalone);
 
   $tokens: normalise-tokens($tokens, $context);
   $type: decision;
   $options: (var: true);
-  @if $legacy {
+  @if $legacy or $standalone {
     $type: hex;
     $option: (theme: light);
   }

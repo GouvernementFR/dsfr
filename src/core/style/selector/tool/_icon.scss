@@ -3,14 +3,20 @@
 /// @group core
 ////
 
+$icon-prefixes: icon- fi-;
+
 @mixin has-icon() {
-  @include class-start-with(ns(fi-, '')) {
-    @content;
+  @each $prefix in $icon-prefixes {
+    @include class-start-with(ns($prefix, '')) {
+      @content;
+    }
   }
 }
 
 @mixin has-not-icon() {
-  @include class-not-start-with(ns(fi-, '')) {
-    @content;
+  @each $prefix in $icon-prefixes {
+    @include class-not-start-with(ns($prefix, '')) {
+      @content;
+    }
   }
 }

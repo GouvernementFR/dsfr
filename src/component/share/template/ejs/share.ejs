@@ -23,6 +23,11 @@ let dataLink = {};
 
 <div <%- includeClasses(shareClasses); %> >
     <p class="<%= prefix %>-share__title"><%- share.title %></p>
+
+    <% if (share.disabled) { %>
+        <p class="<%= prefix %>-share__text"><%- share.text %></p>
+    <% } %>
+
     <ul class="<%= prefix %>-share__group">
         <% for (let i=0; i < share.links.length; i++) { %>
             <li>
@@ -30,7 +35,4 @@ let dataLink = {};
             </li>
         <% } %>
     </ul>
-    <% if (share.disabled) { %>
-        <p class="<%= prefix %>-share__text"><%- share.text %></p>
-    <% } %>
 </div>

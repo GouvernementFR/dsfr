@@ -3,7 +3,6 @@ import { SchemeValue } from './scheme-value.js';
 import { SchemeAttribute } from './scheme-attribute.js';
 import { SchemeTheme } from './scheme-theme.js';
 import { SchemeEmission } from './scheme-emission.js';
-import { completeAssign } from '../../../core/script/api/utilities/propertie';
 
 class Scheme extends api.core.Instance {
   constructor () {
@@ -22,7 +21,7 @@ class Scheme extends api.core.Instance {
       this.request(this.restoreTransition.bind(this));
     }
 
-    const scheme = localStorage.getItem('scheme');
+    const scheme = api.internals.support.supportLocalStorage() ? localStorage.getItem('scheme') : '';
     const schemeAttr = this.getAttribute(SchemeAttribute.SCHEME);
 
     switch (scheme) {
@@ -63,7 +62,7 @@ class Scheme extends api.core.Instance {
       }
     };
 
-    return completeAssign(super.proxy, proxyAccessors);
+    return api.internals.property.completeAssign(super.proxy, proxyAccessors);
   }
 
   restoreTransition () {
@@ -106,7 +105,9 @@ class Scheme extends api.core.Instance {
     }
 
     this.descend(SchemeEmission.SCHEME, value);
-    localStorage.setItem('scheme', value);
+    if (api.internals.support.supportLocalStorage()) {
+      localStorage.setItem('scheme', value);
+    }
     this.setAttribute(SchemeAttribute.SCHEME, value);
   }
 

@@ -29,19 +29,19 @@
   }
 
   &--info {
-    @include icon(information-fill, null);
+    @include icon(info-fill, null);
   }
 
   &--success {
-    @include icon(checkbox-circle-fill, null);
+    @include icon(success-fill, null);
   }
 
   &--error {
-    @include icon(alert-fill, null);
+    @include icon(error-fill, null);
   }
 
   &--warning {
-    @include icon(error-warning-fill, null);
+    @include icon(warning-fill, null);
   }
 
   &--sm {
