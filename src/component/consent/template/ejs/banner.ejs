@@ -22,9 +22,9 @@ let consent = locals.consent || {};
  btnModalAttr['data-' + prefix + '-opened'] = false;
  btnModalAttr['aria-controls'] = prefix + '-consent-modal';
  let buttons = consent.buttons || [
-    { label: 'Tout accepter', title: null },
-    { label: 'Tout refuser',  title: null },
-    { label: 'Personnaliser', secondary: true, attributes: btnModalAttr, title: null }
+    { label: 'Tout accepter', title: 'Autoriser tous les cookies' },
+    { label: 'Tout refuser',  title: 'Refuser tous les cookies' },
+    { label: 'Personnaliser', secondary: true, attributes: btnModalAttr, title: 'Personnaliser les cookies' }
  ];
  %>
 

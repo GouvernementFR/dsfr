@@ -1,7 +1,9 @@
 <%
+let content = locals.content || {};
+content.svg = include(`../../../../core/example/media/sample/svg${content.illustration ? '--illu' : ''}.ejs`, true);
 let data = {
+    ...content,
     ...locals.content || {},
-    svg: include('../../../../core/example/media/sample/svg.ejs', true),
     caption: '© Légende de l‘image'
 };
 %>
