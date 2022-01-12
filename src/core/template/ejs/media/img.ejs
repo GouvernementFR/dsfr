@@ -25,7 +25,7 @@
 <% switch (media.alt) {
   case 'rendered':
     comment = "L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image";
-    alt = "[À MODIFIER | texte alternatif de l’image]";
+    alt = contentPlaceholder("texte alternatif de l’image");
     break;
 
   case 'unrendered':
@@ -35,13 +35,16 @@
 
   case 'unknown':
     comment = "L’alternative de l’image (attribut alt) doit toujours être présent, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte";
-    alt = "[À MODIFIER | vide ou texte alternatif de l’image]";
+    alt = contentPlaceholder("vide ou texte alternatif de l’image");
+    break;
+
+  default:
+    comment = "L’alternative de l’image (attribut alt) doit toujours être présent, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte";
+    alt = media.alt;
     break;
   }
 %>
+<% comment = media.comment || comment; %>
+
 <img <%- includeClasses(mediaClasses) %> <%- includeAttrs(mediaAttributes) %> src="<%= media.src %>" alt="<%= alt %>"  />
-<% if (media.comment !== undefined && media.comment !== null) { %>
-  <!-- <%= media.comment %> -->
-<% } else { %>
-  <!-- <%= comment %> -->
-<% } %>
+<!-- <%= comment %> -->
