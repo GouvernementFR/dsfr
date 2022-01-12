@@ -1,6 +1,6 @@
 import { supportLocalStorage } from './browser-support.js';
 
-const support = [];
+const support = {};
 
 support.supportLocalStorage = supportLocalStorage;
 
