@@ -1,7 +1,7 @@
 import { addClass, hasClass, removeClass } from './classes.js';
 import { queryParentSelector, querySelectorAllArray } from './query-selector.js';
 
-const dom = [];
+const dom = {};
 
 dom.addClass = addClass;
 dom.hasClass = hasClass;
