@@ -7,7 +7,7 @@ import support from './utilities/support/index';
 import property from './utilities/property/index';
 
 const internals = {};
-const legacy = [];
+const legacy = {};
 
 Object.defineProperty(legacy, 'isLegacy', {
   get: () => state.isLegacy
