@@ -1,6 +1,6 @@
 import { Instance } from '../api/register/instance.js';
-import api from '../../../api.js';
 import { DisclosureEmission } from './disclosure-emission.js';
+import { completeAssign } from '../api/utilities/propertie.js';
 
 class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
@@ -45,7 +45,7 @@ class DisclosuresGroup extends Instance {
       }
     };
 
-    return api.internals.property.completeAssign(super.proxy, proxyAccessors);
+    return completeAssign(super.proxy, proxyAccessors);
   }
 
   validate (member) {

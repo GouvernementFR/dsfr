@@ -1,4 +1,4 @@
-import api from '../api.js';
+import ns from '../utilities/namespace.js';
 import { Module } from '../module.js';
 
 class ScrollLocker extends Module {
@@ -19,14 +19,14 @@ class ScrollLocker extends Module {
       this._isLocked = true;
       this._scrollY = window.scrollY;
       document.body.style.top = this._scrollY * -1 + 'px';
-      document.documentElement.setAttribute(api.internals.ns.attr('scrolling'), 'false');
+      document.documentElement.setAttribute(ns.attr('scrolling'), 'false');
     }
   }
 
   unlock () {
     if (this._isLocked) {
       this._isLocked = false;
-      document.documentElement.removeAttribute(api.internals.ns.attr('scrolling'));
+      document.documentElement.removeAttribute(ns.attr('scrolling'));
       document.body.style.top = '';
       window.scroll(0, this._scrollY);
     }

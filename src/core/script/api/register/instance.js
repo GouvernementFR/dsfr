@@ -1,8 +1,9 @@
 import { Emitter } from '../utilities/emitter.js';
 import state from '../state.js';
-import api from '../../../api.js';
 import inspector from '../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
+import { addClass, removeClass, hasClass } from '../utilities/classes.js';
+import { queryParentSelector, querySelectorAllArray } from '../utilities/query-selector.js';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -250,15 +251,15 @@ class Instance {
   }
 
   addClass (className) {
-    api.internals.dom.addClass(this.node, className);
+    addClass(this.node, className);
   }
 
   removeClass (className) {
-    api.internals.dom.removeClass(this.node, className);
+    removeClass(this.node, className);
   }
 
   hasClass (className) {
-    return api.internals.dom.hasClass(this.node, className);
+    return hasClass(this.node, className);
   }
 
   setAttribute (attributeName, value) {
@@ -302,11 +303,11 @@ class Instance {
   }
 
   querySelectorAll (selectors) {
-    return api.internals.dom.querySelectorAllArray(this.node, selectors);
+    return querySelectorAllArray(this.node, selectors);
   }
 
   queryParentSelector (selectors) {
-    return api.internals.dom.queryParentSelector(this.node, selectors);
+    return queryParentSelector(this.node, selectors);
   }
 
   getRect () {

@@ -1,6 +1,6 @@
 import { completeAssign } from './complete-assign';
 
-const property = [];
+const property = {};
 
 property.completeAssign = completeAssign;
 
