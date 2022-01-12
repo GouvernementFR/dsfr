@@ -1,11 +1,11 @@
 import api from '../../api.js';
 
 export const TabSelector = {
-  TAB: api.ns.selector('tabs__tab'),
-  GROUP: api.ns.selector('tabs'),
-  PANEL: api.ns.selector('tabs__panel'),
-  LIST: api.ns.selector('tabs__list'),
-  SHADOW: api.ns.selector('tabs__shadow'),
-  SHADOW_LEFT: api.ns.selector('tabs__shadow--left'),
-  SHADOW_RIGHT: api.ns.selector('tabs__shadow--right')
+  TAB: api.internals.ns.selector('tabs__tab'),
+  GROUP: api.internals.ns.selector('tabs'),
+  PANEL: api.internals.ns.selector('tabs__panel'),
+  LIST: api.internals.ns.selector('tabs__list'),
+  SHADOW: api.internals.ns.selector('tabs__shadow'),
+  SHADOW_LEFT: api.internals.ns.selector('tabs__shadow--left'),
+  SHADOW_RIGHT: api.internals.ns.selector('tabs__shadow--right')
 };
