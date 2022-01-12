@@ -6,7 +6,7 @@ import ns from './utilities/namespace.js';
 import support from './utilities/support/index';
 import property from './utilities/property/index';
 
-const internals = [];
+const internals = {};
 const legacy = [];
 
 Object.defineProperty(legacy, 'isLegacy', {
