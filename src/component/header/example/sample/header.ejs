@@ -8,7 +8,7 @@ let hasMenu = false;
 data.brand = { logo: header.logo };
 
 if (header.operator !== undefined) {
-  data.brand.operator = imgData(header.operator.src, true, header.operator.style)
+  data.brand.operator = imgData(header.operator.src, 'rendered', null, header.operator.style)
 }
 
 let servicePlaceholder = {

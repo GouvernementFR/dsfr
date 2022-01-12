@@ -16,10 +16,6 @@
       @include scheme-element-bg-color(alt grey, (legacy:$legacy));
     }
 
-    // &__top-link {
-    //   @include scheme-element-text-color(mention neutral, $legacy);
-    // }
-
     &__bottom {
       @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
     }
