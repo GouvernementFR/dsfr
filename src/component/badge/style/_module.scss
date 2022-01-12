@@ -12,34 +12,37 @@
   text-transform: uppercase;
   border-radius: space(1v);
 
-  &--info {
-    @include icon(information-fill, null);
-  }
-
-  &--success {
-    @include icon(checkbox-circle-fill, null);
-  }
-
-  &--error {
-    @include icon(alert-fill, null);
-  }
-
-  &--warning {
-    @include icon(error-warning-fill, null);
-  }
-
-  &--new {
-    @include icon(flashlight-fill, null);
-  }
-
-  &--no-icon {
-    @include before {
-      content: none;
-    }
-  }
-
   &--sm {
     @include nest-badge(sm, left, null, null, false);
+  }
+
+  &,
+  &--sm {
+    &#{ns(badge)}--info {
+      @include icon(info-fill, null);
+    }
+
+    &#{ns(badge)}--success {
+      @include icon(success-fill, null);
+    }
+
+    &#{ns(badge)}--error {
+      @include icon(error-fill, null);
+    }
+
+    &#{ns(badge)}--warning {
+      @include icon(warning-fill, null);
+    }
+
+    &#{ns(badge)}--new {
+      @include icon(flashlight-fill, null);
+    }
+
+    &#{ns(badge)}--no-icon {
+      @include before {
+        content: none;
+      }
+    }
   }
 }
 
