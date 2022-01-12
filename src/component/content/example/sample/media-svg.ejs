@@ -1,6 +1,6 @@
 <%
 let content = locals.content || {};
-if (content.illustration) content.svg = include('../../../../core/example/media/sample/svg--illu.ejs', true);
+content.svg = include(`../../../../core/example/media/sample/svg${content.illustration ? '--illu' : ''}.ejs`, true);
 else content.svg = include('../../../../core/example/media/sample/svg.ejs', true);
 let data = {
     ...content,
