@@ -1,0 +1,11 @@
+////
+/// Core Module : Display ellispsis
+/// @group core
+////
+
+#{ns(ellipsis)} {
+  display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

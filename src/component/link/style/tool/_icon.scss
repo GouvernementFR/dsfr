@@ -23,7 +23,7 @@
 
   @if $place == left {
     overflow: initial;
-    max-width: none;
+    max-width: 100%;
     max-height: none;
     @include before {
       margin-left: -($icon-margin);
@@ -33,7 +33,7 @@
   }
   @else if $place == right {
     overflow: initial;
-    max-width: none;
+    max-width: 100%;
     max-height: none;
     @include before {
       margin-right: -($icon-margin);

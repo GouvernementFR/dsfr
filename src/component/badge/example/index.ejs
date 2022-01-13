@@ -1,0 +1,32 @@
+<% const sample = getSample(include); %>
+
+<%- sample('badge seul', './sample/badge-default', {}, true); %>
+
+<p>Il est conseillé d'ajouter une balise span avec la classe fr-ellipsis à l'interieur du badge pour que celui ci reste sur une seule ligne, avec le texte coupé par des points de suspensions.</p>
+<%- sample('badge sur une seule ligne - ellipsis', './sample/badge-ellipsis', {}, true); %>
+
+<%- sample('badge - succès', './sample/badge-default', {badge: {type: 'success'}}, true); %>
+<%- sample('badge - succès sans icone', './sample/badge-default', {badge: {type: 'success', icon: false}}, true); %>
+<%- sample('badge - erreur', './sample/badge-default', {badge: {type: 'error'}}, true); %>
+<%- sample('badge - erreur sans icone', './sample/badge-default', {badge: {type: 'error', icon: false}}, true); %>
+<%- sample('badge - information', './sample/badge-default', {badge: {type: 'info'}}, true); %>
+<%- sample('badge - information sans icone', './sample/badge-default', {badge: {type: 'info', icon: false}}, true); %>
+<%- sample('badge - avertissement', './sample/badge-default', {badge: {type: 'warning'}}, true); %>
+<%- sample('badge - avertissement sans icone', './sample/badge-default', {badge: {type: 'warning', icon: false}}, true); %>
+<%- sample('badge - nouveauté', './sample/badge-default', {badge: {type: 'new'}}, true); %>
+<%- sample('badge - nouveauté sans icone', './sample/badge-default', {badge: {type: 'new', icon: false}}, true); %>
+
+<%- sample('badge - personnalisé green-menthe', './sample/badge-default', {badge: {accent: 'green-menthe'}}, true); %>
+<%- sample('badge - personnalisé orange-terre-battue', './sample/badge-default', {badge: {accent: 'orange-terre-battue'}}, true); %>
+<%- sample('badge - personnalisé purple-glycine', './sample/badge-default', {badge: {accent: 'purple-glycine'}}, true); %>
+
+<%- sample('badge taille SM', './sample/badge-sm', {}, true); %>
+<%- sample('badge SM - succès', './sample/badge-sm', {badge: {type: 'success'}}, true); %>
+<%- sample('badge SM - erreur', './sample/badge-sm', {badge: {type: 'error'}}, true); %>
+<%- sample('badge SM - information', './sample/badge-sm', {badge: {type: 'info'}}, true); %>
+<%- sample('badge SM - avertissement', './sample/badge-sm', {badge: {type: 'warning'}}, true); %>
+<%- sample('badge SM - nouveauté', './sample/badge-sm', {badge: {type: 'new'}}, true); %>
+<%- sample('badge SM - personnalisé purple-glycine', './sample/badge-sm', {badge: {accent: 'purple-glycine'}}, true); %>
+
+<%- sample('Groupe de badges', './sample/badge-default', {badge: {group: true}}, true); %>
+<%- sample('Groupe de badges SM', './sample/badge-sm', {badge: {group: true}}, true); %>

@@ -1,0 +1,25 @@
+////
+/// Badge Setting
+/// @group badge
+////
+
+$badge-settings:(
+  selector: badge,
+  sizes: (
+    sm: (
+      font-size: 12,
+      min-height: 4.5v,
+      padding-x: 1.5v,
+      icon: xs,
+      icon-margin-x: 1v
+    ),
+    md: (
+      font-size: 14,
+      min-height: 6v,
+      padding-x: 2v,
+      icon: sm,
+      icon-margin-x: 1v
+    )
+  ),
+  places: left,
+);

@@ -1,0 +1,10 @@
+id: badge
+title: Badge
+description: Le composant badge permet de mettre en avant une information de type “statut” ou “état” sur un élément du site.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/851869737/
+wrapper: col-8
+style:
+  - core
+follow:
+  style:
+    - link

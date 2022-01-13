@@ -1,0 +1,9 @@
+////
+/// Badge Legacy
+/// @group badge
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _badge-scheme(true);

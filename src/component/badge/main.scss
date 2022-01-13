@@ -1,0 +1,14 @@
+////
+/// Badge Main
+/// @group badge
+////
+
+/* ------------------------------------ *\
+  Badge
+\* ------------------------------------ */
+
+@import 'index';
+@import 'style/module';
+@import 'style/scheme';
+
+@include _badge-scheme;
