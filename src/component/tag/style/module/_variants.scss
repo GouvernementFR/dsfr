@@ -6,7 +6,7 @@
 @include clickable-selector {
   &#{ns(tag)} {
     // tag pressable
-    @include pressed-true-selector {
+    @include pressed-selector(true) {
       @include relative;
       overflow: visible;
       background-position: 100% 0, 100% 0;

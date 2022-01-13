@@ -13,20 +13,13 @@
   }
 }
 
-@mixin pressed-true-selector() {
-  &[aria-pressed="true"] {
-    @content;
+@mixin pressed-selector($value:null) {
+  $attr-value: '';
+  @if $value == true or $value == false {
+    $attr-value: '="#{$value}"';
   }
-}
 
-@mixin pressed-false-selector() {
-  &[aria-pressed="false"] {
-    @content;
-  }
-}
-
-@mixin pressed-selector() {
-  &[aria-pressed] {
+  &[aria-pressed#{$attr-value}] {
     @content;
   }
 }

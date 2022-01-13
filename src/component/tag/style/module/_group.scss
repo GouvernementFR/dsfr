@@ -36,7 +36,7 @@
           }
         }
 
-        @include pressed-true-selector {
+        @include pressed-selector(true) {
           @include icon(null, xs, after) {
             @include absolute(3px, 0);
             @include margin(-1.5v);
