@@ -16,10 +16,10 @@
     $middle: '#{$breakpoint}-';
   }
 
-  $end: quote($value);
+  $end: quote(str-replace($value, '.', '-'));
 
   @if type-of($value) == 'number' and $value < 0 {
-    $end: 'n#{abs($value)}';
+    $end: 'n' + quote(str-replace(abs($value), '.', '-'));;
   }
 
   @if $value != 0 and $unit != null {
@@ -74,14 +74,24 @@
 @mixin _spacing-properties($props, $breakpoint:null) {
   @each $prop, $settings in $props {
     $from: map_get($settings, from);
+    $half: map_get($settings, half);
     $through: map_get($settings, through);
-    $special: map_get($settings, special);
+    $specials: map_get($settings, special);
 
     @for $i from $from through $through {
       @include _spacing-property-variations($prop, $i, $breakpoint);
+      // ajoute 0.5v & 1.5v et -0.5v & -1.5v ($half=2)
+      @if $i > -$half and $i < $half {
+        @if $i <= 0 {
+          @include _spacing-property-variations($prop, $i - 0.5, $breakpoint);
+        }
+        @if $i >= 0 {
+          @include _spacing-property-variations($prop, $i + 0.5, $breakpoint);
+        }
+      }
     }
 
-    @if $special != null {
+    @each $special in $specials {
       @include _spacing-property-variations($prop, $special, $breakpoint);
     }
   }

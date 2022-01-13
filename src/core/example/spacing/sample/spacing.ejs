@@ -129,33 +129,46 @@ Celles-ci suivent la structure suivante (entre crochets les valeurs, facultative
             </tr>
         </thead>
         <tbody>
-            <% for(var i = minToken; i <= maxToken; i+=2) { %>
-            <tr>
-              <td><%= i %>v</td>
-              <td><%- i/4 %></td>
-              <td><%= i*4 %></td>
-              <td>
-                <div class="sample-box">
-                  <span>1</span>
-                  <span class="<%= prefix %>-ml-<%= i < 0 ? 'n' + Math.abs(i) : i %><%- (i != 0) ? 'v' : '' %>">2</span>
-                </div>
-              </td>
-              <td><%= prefix %>-ml-<%= i < 0 ? 'n' + Math.abs(i) : i %><%- (i != 0) ? 'v' : '' %></td>
-            </tr>
+            <% for(var i = minToken; i <= maxToken; i++) { %>
+              <%- rowSpacingToken(i) %>
+
+              <% // exception pour 0.5v et 1.5v
+              if (i >= -2 && i < 2) { %>
+                <%- rowSpacingToken(i, true) %>
+              <% } %>
             <% } %>
 
-            <tr>
-              <td>auto</td>
-              <td>auto</td>
-              <td>auto</td>
-              <td>
-                <div class="sample-box">
-                  <span>1</span>
-                  <span class="<%= prefix %>-ml-auto">2</span>
-                </div>
-              </td>
-              <td>.<%= prefix %>-ml-auto</td>
-            </tr>
+            <% // valeur spéciale (auto) %>
+            <%- rowSpacingToken('auto') %>
         </tbody>
     </table>
 </div>
+
+<% function rowSpacingToken(value, isHalfRange = false) {
+  let halfString, token = '';
+  if (isHalfRange) {
+    if (value < 0) {
+      value = value + 0.5;
+      halfString = 'n' + Math.abs(value);
+    } else {
+      value = value + 0.5;
+      halfString = value;
+    }
+    token = halfString.toString().replace('.', '-') + 'v';
+  } else {
+    token = (value < 0) ? 'n' + Math.abs(value) : value;
+    token += (typeof(value) == 'number' && value !== 0) ? 'v' : '';
+  }
+  return `<tr>
+    <td>${token}</td>
+    <td>${value/4}</td>
+    <td>${value*4}</td>
+    <td>
+      <div class="sample-box">
+        <span>1</span>
+        <span class="${prefix}-ml-${token}">2</span>
+      </div>
+    </td>
+    <td>${prefix}-ml-${token}</td>
+  </tr>`;
+} %>
