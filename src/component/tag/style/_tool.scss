@@ -14,12 +14,12 @@
 }
 
 @mixin pressed-selector($value:null) {
-  $attr-value: '';
+  $attr: 'aria-pressed';
   @if $value == true or $value == false {
-    $attr-value: '="#{$value}"';
+    $attr: 'aria-pressed="#{$value}"';
   }
 
-  &[aria-pressed#{$attr-value}] {
+  &[#{$attr}] {
     @content;
   }
 }
