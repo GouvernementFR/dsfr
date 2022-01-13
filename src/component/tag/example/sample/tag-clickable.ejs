@@ -1,0 +1,11 @@
+<%
+let tag = locals.tag || {};
+let data = {
+  href: '#',
+  type: 'clickable',
+  ...tag
+}
+
+%>
+
+<%- include('./tag-default', {tag:data}); %>

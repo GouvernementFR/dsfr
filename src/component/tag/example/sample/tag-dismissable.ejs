@@ -1,0 +1,11 @@
+<%
+let tag = locals.tag || {};
+let data = {
+  ...tag,
+  type: 'dismissable',
+  attributes: {onclick: 'event.preventDefault(); this.parentNode.removeChild(this);'},
+}
+
+%>
+
+<%- include('./tag-default', {tag:data}); %>

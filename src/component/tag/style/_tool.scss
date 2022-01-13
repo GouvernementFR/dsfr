@@ -12,3 +12,14 @@
     @content;
   }
 }
+
+@mixin pressed-selector($value:null) {
+  $attr: 'aria-pressed';
+  @if $value == true or $value == false {
+    $attr: 'aria-pressed="#{$value}"';
+  }
+
+  &[#{$attr}] {
+    @content;
+  }
+}

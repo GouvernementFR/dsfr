@@ -131,12 +131,8 @@ const buildFontSVG = async (builder) => {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line new-cap
     const stream = new svg2font({
-      // centerHorizontally: true,
-      fontHeight: 1200,
+      fontHeight: 2048,
       fontName: builder.config.output.fontName,
-      // normalize: true,
-      descent: 200,
-      log: () => {}
     });
 
     stream.pipe(fs.createWriteStream(builder.paths.cache.fontSVGRaw))

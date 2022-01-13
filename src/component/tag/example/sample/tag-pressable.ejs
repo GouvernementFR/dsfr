@@ -1,0 +1,11 @@
+<%
+let tag = locals.tag || {};
+let data = {
+  ...tag,
+  type: 'pressable',
+  attributes: {'aria-pressed': false}
+}
+
+%>
+
+<%- include('./tag-default', {tag:data}); %>
