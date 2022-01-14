@@ -33,8 +33,6 @@ const tag = link.tag || 'a';
 
 linkClasses.push(prefix + '-link');
 
-if (link.disabled === true) linkAttrs['disabled'] = '';
-
 switch(link.size) {
   case 'sm':
     linkClasses.push(prefix + '-link--sm');
@@ -59,7 +57,17 @@ if (link.iconPlace !== undefined) switch(link.iconPlace)
 }
 
 if (link.disabled === true) {
-  if (tag === 'button') linkAttrs['disabled'] = '';
+  switch(tag) {
+    case 'input':
+    case 'button':
+      linkAttrs['disabled'] = '';
+    break;
+
+    case 'a':
+      linkAttrs['aria-disabled'] = 'true';
+      linkAttrs['role'] = 'link';
+    break;
+  }
 } else if (tag === 'a') {
   linkAttrs.href = link.href || '[url - à modifier]';
   switch (true) {

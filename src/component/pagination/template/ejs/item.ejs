@@ -54,6 +54,11 @@ if (paginationItem.disabled) {
       case 'button':
         attrs['disabled'] = '';
           break;
+
+      case 'a':
+        attrs['aria-disabled'] = 'true';
+        attrs['role'] = 'link';
+          break;
     }
 }
 %>
