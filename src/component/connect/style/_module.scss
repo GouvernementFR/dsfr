@@ -35,6 +35,11 @@
   &--plus {
     @include padding-right(12v);
     @include hover-blend-background-size((space(10v 12v), space(6v 6v)));
+    @include connect-pseudo(brand, plus) {
+      @include margin-right(-10px);
+      overflow: hidden;
+      @include width(100%);
+    }
   }
 
   &--agent {

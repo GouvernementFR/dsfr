@@ -22,5 +22,6 @@
     @if $type == brand {
       font-weight: bold;
     }
+    @content;
   }
 }
