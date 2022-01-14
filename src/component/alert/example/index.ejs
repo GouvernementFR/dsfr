@@ -7,11 +7,13 @@ Le titre est défini par la classe "fr-alert__title", la balise &#60;p&#62; peut
 
 <%- sample('Alerte par défaut', './sample/alert-default', {}, true); %>
 
-<%- sample('Alerte info', './sample/alert-default', {alert: {type: "info", title: "Information Covid"}}, true); %>
+<%- section(null, 'Les alertes de type erreur & succès doivent avoir un attribut role=\’alert\'.', 0); %>
 
 <%- sample('Alerte succès', './sample/alert-default', {alert: {type: "success", title: "Succès de l'envoi"}}, true); %>
 
 <%- sample('Alerte erreur', './sample/alert-default', {alert: {type: "error", title: "Erreur détectée dans le formulaire"}}, true); %>
+
+<%- sample('Alerte info', './sample/alert-default', {alert: {type: "info", title: "Information Covid"}}, true); %>
 
 <%- sample('Alerte attention', './sample/alert-default', {alert: {type: "warning", title: "Attention"}}, true); %>
 
