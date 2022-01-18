@@ -18,8 +18,6 @@ const sample = getSample(include);
 
 <%- sample('Alerte avec bouton fermer', './sample/alert-default', {alert: {type: "info", title: "Information Covid", buttonClose: true}}, true); %>
 
-<%- sample('Alerte refermable (dans un collapse)', './sample/alert-collapsible', {alert: {type: "info", title: "Information Covid"}}, true); %>
-
 <%- sample('Alerte taille SM', './sample/alert-default', {alert: {title:false, size: "sm", type: "info", text: "Information : titre de l'information"}}, true); %>
 
 <%- sample('Alerte taille SM refermable', './sample/alert-collapsible', {alert: {title:false, size: "sm", type: "info", text: "Information : cliquer sur la croix pour fermer l'alerte"}}, true); %>
