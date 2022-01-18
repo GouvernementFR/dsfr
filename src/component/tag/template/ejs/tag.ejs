@@ -26,7 +26,7 @@
 <%
  let tag = locals.tag || {};
  let tagClasses = tag.classes || [];
- let tagAttrs = {};
+ let tagAttrs = tag.attributes || {};
 
  tagClasses.push(prefix + '-tag');
 
@@ -42,7 +42,7 @@
     case 'clickable':
         if (tag.tag === undefined) tag.tag = 'a';
         if (tag.disabled !== true) {
-            tagAttrs.href = tag.href || '[url - à modifier]';
+            tagAttrs.href = tag.href || contentPlaceholder('url');
             switch (true) {
                 case tag.blank:
                     tagAttrs.target = '_blank';
@@ -60,7 +60,7 @@
     case 'dismissable':
         if (tag.tag === undefined) tag.tag = 'button';
         tagClasses.push(prefix + '-tag--dismiss');
-        tagAttrs["aria-label"] = 'Retirer [A Modifier - le filtre ' + tag.label + ']';
+        tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
     break;
     default:
         if (tag.tag === undefined) tag.tag = 'p';
@@ -80,11 +80,17 @@
  }
 
  if (tag.disabled === true) {
-    if (tag.tag == 'button') tagAttrs['disabled'] = '';
-    // if (tag.tag == 'a') {
-    //     tagAttrs['aria-disabled'] = 'true';
-    //     tagAttrs['role'] = 'link';
-    // }
+    switch(tag.tag) {
+    case 'input':
+    case 'button':
+        tagAttrs.disabled = '';
+        break;
+
+    case 'a':
+        tagAttrs['aria-disabled'] = 'true';
+        tagAttrs.role = 'link';
+        break;
+    }
  }
 
  tagAttrs = {...tagAttrs, ...tag.attributes}; // place les attributs venant du sample à la fin
