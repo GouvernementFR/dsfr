@@ -14,11 +14,11 @@
 <%- sample('Tag bouton cliquable désactivé', './sample/tag-clickable', {tag:{tag: 'button', disabled:true}}, true); %>
 <%- sample('Tag cliquable désactivé SM', './sample/tag-clickable', {tag:{size:'sm', disabled:true}}, true); %>
 
-<%- section('Tag activable', 'Le tag activable n\'autorise pas l\'accentuation.') %>
-<%- sample('Tag activable', './sample/tag-pressable', {}, true); %>
-<%- sample('Tag activable avec icone', './sample/tag-pressable', {tag:{iconPlace: 'left', icon: 'information-line'}}, true); %>
-<%- sample('Tag activable taille sm', './sample/tag-pressable', {tag:{size:'sm'}}, true); %>
-<%- sample('Tag activable désactivé', './sample/tag-pressable', {tag:{disabled:true}}, true); %>
+<%- section('Tag selectionnable', 'Le tag selectionnable n\'autorise pas l\'accentuation.') %>
+<%- sample('Tag selectionnable', './sample/tag-pressable', {}, true); %>
+<%- sample('Tag selectionnable avec icone', './sample/tag-pressable', {tag:{iconPlace: 'left', icon: 'information-line'}}, true); %>
+<%- sample('Tag selectionnable taille sm', './sample/tag-pressable', {tag:{size:'sm'}}, true); %>
+<%- sample('Tag selectionnable désactivé', './sample/tag-pressable', {tag:{disabled:true}}, true); %>
 
 <%- section('Tag supprimable', 'Le tag supprimable n\'autorise ni accentuation ni icône personnalisée. <br>Le javascript présent dans l\’attribut onclick est donné à titre d’exemple, à vous de l\’implémenter dans votre contexte technique.') %>
 <%- sample('Tag supprimable', './sample/tag-dismissable', {}, true); %>
@@ -30,7 +30,7 @@
 <%- sample('Groupe de tags non cliquables SM', './sample/tags-group', {tagsGroup:{size: 'sm', groupCount: 9}}, true); %>
 <%- sample('Groupe de tags cliquables', './sample/tags-group', {tagsGroup:{type:'clickable', groupCount: 9}}, true); %>
 <%- sample('Groupe de tags cliquables SM', './sample/tags-group', {tagsGroup:{type:'clickable', size: 'sm', groupCount: 9}}, true); %>
-<%- sample('Groupe de tags activables', './sample/tags-group', {tagsGroup:{type:'pressable', groupCount: 9}}, true); %>
-<%- sample('Groupe de tags activables SM', './sample/tags-group', {tagsGroup:{type:'pressable', size: 'sm', groupCount: 9}}, true); %>
+<%- sample('Groupe de tags selectionnables', './sample/tags-group', {tagsGroup:{type:'pressable', groupCount: 9}}, true); %>
+<%- sample('Groupe de tags selectionnables SM', './sample/tags-group', {tagsGroup:{type:'pressable', size: 'sm', groupCount: 9}}, true); %>
 <%- sample('Groupe de tags supprimables', './sample/tags-group', {tagsGroup:{type:'dismissable', tagAttributes: {onclick: 'event.preventDefault(); this.parentNode.removeChild(this);'}, groupCount: 9}}, true); %>
 <%- sample('Groupe de tags supprimables SM', './sample/tags-group', {tagsGroup:{type:'dismissable', tagAttributes: {onclick: 'event.preventDefault(); this.parentNode.removeChild(this);'}, size: 'sm', groupCount: 9}}, true); %>
