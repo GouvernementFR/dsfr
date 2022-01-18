@@ -30,7 +30,7 @@ class ToggleStatusLabel extends api.core.Instance {
 
     const style2 = getComputedStyle(this.node, 'before');
     const width = parseInt(style2.width);
-    if (secondVal > biggestVal) biggestVal = secondVal;
+    if (width > maxWidth) maxWidth = width;
     this.input.node.checked = checked;
 
     this.node.style = '--toggle-status-width:' + (biggestVal / 16) + 'rem';
