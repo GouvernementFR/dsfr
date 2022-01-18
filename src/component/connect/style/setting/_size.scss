@@ -4,13 +4,31 @@
 ////
 
 $login-size: (
-  fr: 17px,
-  en: 17px,
-  de: 17px,
-  es: 17px,
+  fr: (
+    width: 133,
+    height: 17
+  ),
+  en: (
+    width: 95,
+    height: 17
+  ),
+  de: (
+    width: 112,
+    height: 17
+  ),
+  es: (
+    width: 142,
+    height: 17
+  )
 );
 
 $brand-size: (
-  default: 18px,
-  agent: 19px,
+  default: (
+    width: 133,
+    height: 18
+  ),
+  agent: (
+    width: 134,
+    height: 19
+  )
 );

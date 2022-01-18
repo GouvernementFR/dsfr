@@ -3,6 +3,8 @@
 /// @group connect
 ////
 
+@import "../standalone/font";
+
 #{ns(connect)} {
   @include padding(1v 3v 1v 16v);
   display: flex;
@@ -17,22 +19,115 @@
   @include hover-blend-background((url(svg-encode($fc-logo-svg, true)), url(svg-encode($fc-plus-svg, true))), (space(10v 12v), 0), (space(3v 1v), space(calc(100% - 3v) 50%)));
 
   @include _pseudo(before after, null, block) {
-    line-height: 1;
     z-index: 1;
   }
 
-  @import "../standalone/font";
+  $GAP: 25;
+  $svg-body: '';
+  $count: 0;
+  $max-width: 0;
+  @each $code, $content in $login {
+    $size: map-get($login-size, $code);
+    $width: map-get($size, width);
+    $height: map-get($size, height);
+
+    @if #{$width} > #{$max-width} {
+      $max-width: #{$width};
+    }
+    $y: ($count*$GAP) +($height*0.75);
+    $svg-body: #{$svg-body}'<text x="0" y="#{$y}" font-size="#{$height}" font-family="Marianne" fill="white">#{$content}</text>';
+
+    $count: $count+1;
+  }
+
+  $full-height: $count*$GAP;
+
+  $svg-open: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$max-width} #{$full-height}">';
+  $svg-style: '<style>@font-face {font-family: "Marianne";src: url("data:font/truetype;charset=utf-8;base64,#{$connect-regular}") format("woff");font-weight: 400;font-style: normal;font-display: swap;}</style>';
+  $svg-close: '</svg>';
+
+  $count: 0;
+  @each $code, $content in $login {
+    $size: map-get($login-size, $code);
+    $width: map-get($size, width);
+    $height: map-get($size, height);
+    $y: -($count*$GAP);
+    $selectors: ();
+    @if $code == fr {
+      $selectors: append($selectors, #{&}, 'comma');
+    }
+    $selectors: append($selectors, unquote('[lang="#{$code}"] #{&}'), 'comma');
+    $selectors: append($selectors, unquote('#{&}[lang="#{$code}"]'), 'comma');
+
+    @debug $selectors;
+
+    @at-root #{$selectors} {
+      @include before {
+        width: #{$width}px;
+        height: #{$height}px;
+        background-size: #{$max-width}px #{$full-height}px;
+        background-position: 0 #{$y}px;
+      }
+    }
+    $count: $count+1;
+  }
 
   @include before('') {
     background-repeat: no-repeat;
-    background-size: 133px 17px;
     background-position: 0 0;
-    background-image: url(svg-encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133 17"><style>@font-face {font-family: "Marianne";src: url("data:font/truetype;charset=utf-8;base64,#{$connect-regular}") format("woff");font-weight: 400;font-style: normal;font-display: swap;}</style><text x="0" y="17" font-size="17" font-family="Marianne" fill="white">#{map-get($login, fr)}</text></svg>', true));
-    width: 133px;
-    height: 17px;
+    background-image: url(svg-encode(#{$svg-open}#{$svg-style}#{$svg-body}#{$svg-close}, true));
   }
 
-  * {
-    display: none;
+  &--plus {
+    @include padding-right(12v);
+    @include hover-blend-background-size((space(10v 12v), space(6v 6v)));
+  }
+
+  $svg-body: '';
+  $count: 0;
+  $max-width: 0;
+  @each $type, $content in $brand {
+    $size: map-get($brand-size, $type);
+    @if $size {
+      $width: map-get($size, width);
+      $height: map-get($size, height);
+
+      @if #{$width} > #{$max-width} {
+        $max-width: #{$width};
+      }
+      $y: ($count*$GAP) + ($height*0.75);
+      $svg-body: #{$svg-body}'<text x="0" y="#{$y}" font-size="#{$height}" font-family="Marianne" font-weight="bold" fill="white">#{$content}</text>';
+
+      $count: $count+1;
+    }
+  }
+
+  $full-height: $count*$GAP;
+
+  $svg-open: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 #{$max-width} #{$full-height}">';
+  $svg-style: '<style>@font-face {font-family: "Marianne";src: url("data:font/truetype;charset=utf-8;base64,#{$connect-bold}") format("woff");font-weight: 700;font-style: normal;font-display: swap;}</style>';
+  $svg-close: '</svg>';
+
+  @include after('') {
+    $size: map-get($brand-size, default);
+    $width: map-get($size, width);
+    $height: map-get($size, height);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url(svg-encode(#{$svg-open}#{$svg-style}#{$svg-body}#{$svg-close}, true));
+    width: #{$width}px;
+    height: #{$height}px;
+    background-size: #{$max-width}px #{$full-height}px;
+  }
+
+  &--agent {
+    @include after {
+      $size: map-get($brand-size, agent);
+      $width: map-get($size, width);
+      $height: map-get($size, height);
+      background-position: 0 -#{$GAP}px;
+      width: #{$width}px;
+      height: #{$height}px;
+    }
   }
 }
