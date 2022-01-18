@@ -2,9 +2,10 @@
 let sampling = false;
 
 function section (title, desc, spacing = '32v') {
-  let sectionText = '';
-  sectionText += `<h3 class="fr-mt-${spacing}">${title}</h3>`;
+  let sectionText = `<div class="fr-mt-${spacing}">`;
+  if (title) sectionText += `<h3>${title}</h3>`;
   if (desc) sectionText += `<p>${desc}</p>`;
+  sectionText += `</div>`;
   return sectionText;
 }
 

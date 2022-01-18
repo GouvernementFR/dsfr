@@ -4,7 +4,8 @@
    ...alert,
    id: uniqueId('alert'),
    text: alert.text || 'Cliquer sur la croix pour fermer l\'alerte',
-   collapse: true
+   button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: 'const alert = this.parentNode; alert.parentNode.removeChild(alert)'}},
+   dismissable: true
   };
  %>
 

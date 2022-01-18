@@ -13,10 +13,11 @@
 
 * alert.classes (array, optional): Classes supplémentaires sur l'alerte
 
-* alert.collapse (boolean, optional): englobe l'alert d'un collapse refermable
+* alert.attribute (object, optional): Attributs supplémentaires sur l'alerte
 
-* alert.buttonClose (boolean, optional): Ajoute un bouton de fermeture
+* alert.dismissable (boolean, optional): Ajoute un bouton de fermeture
 
+* alert.button (object, optional): Paramètre du bouton de fermeture (si dismissable: true)
 
 %>
 
@@ -31,36 +32,26 @@
  let type = alert.type || false;
  let size = alert.size || "md";
  let expanded = alert.expanded || true;
- let buttonClose = alert.buttonClose || false;
- let attrButton = {title: 'Masquer le message'};
+ let attrButton = alert.buttonAttrs;
  let classes = alert.classes || [];
+ let attributes = alert.attributes || {};
  classes.push(prefix + '-alert');
  if (type) classes.push(prefix + '-alert--' + type);
  if (size !== "md") classes.push(prefix + '-alert--' + size);
 
  %>
 
-<% if(alert.id && alert.collapse) { %>
-<div class="<%= prefix %>-collapse" id="<%= id %>">
-<% }%>
-  <div role="alert" <%- includeClasses(classes); %>>
+<div  <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
 
-    <% if(title) { %>
-      <p class="<%= prefix %>-alert__title"><%= title %></p>
-    <% } %>
+  <% if(title) { %>
+    <p class="<%= prefix %>-alert__title"><%= title %></p>
+  <% } %>
 
-    <% if(text) { %>
-      <p><%= text %></p>
-    <% } %>
+  <% if(text) { %>
+    <p><%= text %></p>
+  <% } %>
 
-    <% if(alert.collapse || buttonClose) { %>
-      <% if(!buttonClose) {
-        attrButton = {title: 'Masquer le message','aria-expanded': expanded , 'aria-controls': id};
-      }
-      %>
-      <%- include('../../../link/template/ejs/link', {link: {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}}) %>
-    <% } %>
-  </div>
-<% if(alert.collapse) { %>
+  <% if(alert.dismissable) { %>
+    <%- include('../../../link/template/ejs/link', {link: {size: 'md', tag: 'button', classes: [`${prefix}-link--close`], ...alert.button}}) %>
+  <% } %>
 </div>
-<% } %>
