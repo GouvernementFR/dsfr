@@ -25,7 +25,7 @@ class ToggleStatusLabel extends api.core.Instance {
   update () {
     const checked = this.input.isChecked;
     const style = getComputedStyle(this.node, 'before');
-    let biggestVal = parseInt(style.width);
+    let maxWidth = parseInt(style.width);
     this.input.node.checked = !checked;
 
     const style2 = getComputedStyle(this.node, 'before');
