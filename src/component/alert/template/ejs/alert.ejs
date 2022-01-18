@@ -17,6 +17,8 @@
 
 * alert.dismissable (boolean, optional): Ajoute un bouton de fermeture
 
+* alert.button (object, optional): Paramètre du bouton de fermeture (si dismissable: true)
+
 %>
 
 %>
@@ -50,6 +52,6 @@
   <% } %>
 
   <% if(alert.dismissable) { %>
-    <%- include('../../../link/template/ejs/link', {link: {label: 'Masquer le message', size: 'md', tag: 'button', attributes: attrButton, classes: [`${prefix}-link--close`]}}) %>
+    <%- include('../../../link/template/ejs/link', {link: {size: 'md', tag: 'button', classes: [`${prefix}-link--close`], ...alert.button}}) %>
   <% } %>
 </div>
