@@ -52,12 +52,12 @@ if (paginationItem.disabled) {
   switch(tag) {
       case 'input':
       case 'button':
-        attrs['disabled'] = '';
+        attrs.disabled = '';
           break;
 
       case 'a':
         attrs['aria-disabled'] = 'true';
-        attrs['role'] = 'link';
+        attrs.role = 'link';
           break;
     }
 }
