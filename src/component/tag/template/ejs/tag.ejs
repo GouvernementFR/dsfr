@@ -83,12 +83,12 @@
     switch(tag.tag) {
     case 'input':
     case 'button':
-        tagAttrs['disabled'] = '';
+        tagAttrs.disabled = '';
         break;
 
     case 'a':
         tagAttrs['aria-disabled'] = 'true';
-        tagAttrs['role'] = 'link';
+        tagAttrs.role = 'link';
         break;
     }
  }
