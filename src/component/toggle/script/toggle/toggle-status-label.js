@@ -11,6 +11,13 @@ class ToggleStatusLabel extends api.core.Instance {
     this.update();
   }
 
+  get proxy () {
+    const scope = this;
+    return Object.assign(super.proxy, {
+      update: scope.update.bind(scope)
+    });
+  }
+  
   get input () {
     return this.getRegisteredInstances('ToggleInput')[0];
   }
