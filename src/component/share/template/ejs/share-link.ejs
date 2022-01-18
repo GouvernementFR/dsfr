@@ -38,12 +38,12 @@ if (shareLink.disabled === true) {
   switch(tag) {
     case 'input':
     case 'button':
-      shareLinkAttrs['disabled'] = '';
+      shareLinkAttrs.disabled = '';
         break;
 
     case 'a':
       shareLinkAttrs['aria-disabled'] = 'true';
-      shareLinkAttrs['role'] = 'link';
+      shareLinkAttrs.role = 'link';
         break;
   }
 }
