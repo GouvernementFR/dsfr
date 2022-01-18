@@ -46,7 +46,7 @@
  * Style du texte d'erreur
  */
 #{ns(error-text)} {
-  @include display-flex(row, baseline);
+  @include display-flex(row, center);
   @include text-style(xs);
   @include margin-top(4v);
   @include margin-bottom(0);
@@ -61,7 +61,7 @@
  * Style du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include display-flex(row, baseline);
+  @include display-flex(row, center);
   @include text-style(xs);
   @include margin-top(4v);
   @include margin-bottom(0);
