@@ -33,7 +33,7 @@ class ToggleStatusLabel extends api.core.Instance {
     if (width > maxWidth) maxWidth = width;
     this.input.node.checked = checked;
 
-    this.node.style = '--toggle-status-width:' + (biggestVal / 16) + 'rem';
+    this.node.style = '--toggle-status-width:' + (maxWidth / 16) + 'rem';
   }
 }
 
