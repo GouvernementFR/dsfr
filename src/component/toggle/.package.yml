@@ -6,3 +6,5 @@ wrapper: container
 style:
   - core
   - form
+script:
+  - core

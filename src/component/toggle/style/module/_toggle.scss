@@ -33,7 +33,7 @@
     &:checked {
       ~ #{ns(toggle__label)} {
         &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
-          @include before(attr(#{ns-attr(checked-label, null, true)}) '\A' attr(#{ns-attr(unchecked-label, null, true)}));
+          @include before(attr(#{ns-attr(checked-label, null, true)}));
         }
 
         @include after {
@@ -59,7 +59,7 @@
     &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
       @include padding-left(0);
 
-      @include before(attr(#{ns-attr(unchecked-label, null, true)}) '\A' attr(#{ns-attr(checked-label, null, true)}));
+      @include before(attr(#{ns-attr(unchecked-label, null, true)}));
 
       + #{ns(hint-text)} {
         @include margin-top(2v);
@@ -81,6 +81,7 @@
       white-space: pre-wrap;
       overflow: hidden;
       outline: none !important;
+      width: var(--toggle-status-width);
     }
 
     /*
