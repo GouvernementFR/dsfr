@@ -25,11 +25,11 @@ class ToggleStatusLabel extends api.core.Instance {
   update () {
     const checked = this.input.isChecked;
     const style = getComputedStyle(this.node, 'before');
-    let maxWidth = parseInt(style.width);
+    let maxWidth = parseFloat(style.width);
     this.input.node.checked = !checked;
 
     const style2 = getComputedStyle(this.node, 'before');
-    const width = parseInt(style2.width);
+    const width = parseFloat(style2.width);
     if (width > maxWidth) maxWidth = width;
     this.input.node.checked = checked;
 
