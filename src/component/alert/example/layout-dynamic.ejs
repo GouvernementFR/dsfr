@@ -1,8 +1,10 @@
+<% eval(include('../../../core/index.ejs')); %>
+
 <% if (locals.title !== undefined && locals.title.length) { %>
   <h4><%= title %></h4>
   <% } %>
   <div class="<%= prefix %>-mb-6v" >
-    <button class="fr-btn" onclick="const component = document.createElement('div'); component.className = prefix + '-my-8v'; component.innerHTML = decodeURIComponent('<%- encodeURIComponent(component) %>'); this.after(component);"> click me</button>
+    <button class="fr-btn" onclick="const component = document.createElement('div'); component.className = 'fr-my-8v'; component.innerHTML = decodeURIComponent('<%- encodeURIComponent(component) %>'); this.after(component);">Bouton d'ajout</button>
 
 </div>
   <% if (locals.snippet !== undefined) { %>
