@@ -25,6 +25,7 @@ class ToggleStatusLabel extends api.core.Instance {
   update () {
     this.node.style.removeProperty('--toggle-status-width');
     const checked = this.input.isChecked;
+
     const style = getComputedStyle(this.node, ':before');
     let maxWidth = parseFloat(style.width);
     this.input.node.checked = !checked;
