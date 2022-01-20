@@ -30,7 +30,8 @@
      * On change l'ordre du texte d'état du label dans le content pour afficher
      * la valeur correspondant à l'état checked (optionnel).
      */
-    &:checked {
+    &:checked,
+    &[checked] {
       ~ #{ns(toggle__label)} {
         &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
           @include before(attr(#{ns-attr(checked-label, null, true)}));

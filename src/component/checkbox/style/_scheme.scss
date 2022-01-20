@@ -24,6 +24,7 @@
       * un état check ou active
       */
       &:checked,
+      &[checked],
       &:active:not(:disabled) {
         + label {
           @include before {
@@ -43,7 +44,8 @@
           }
         }
 
-        &:checked {
+        &:checked,
+        &[checked] {
           & + label {
             @include before {
               @include disabled-colors((legacy: $legacy, text: true, background: true));
