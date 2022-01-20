@@ -23,17 +23,19 @@ class ToggleStatusLabel extends api.core.Instance {
   }
 
   update () {
+    this.node.style.removeProperty('--toggle-status-width');
     const checked = this.input.isChecked;
-    const style = getComputedStyle(this.node, 'before');
+
+    const style = getComputedStyle(this.node, ':before');
     let maxWidth = parseFloat(style.width);
     this.input.node.checked = !checked;
 
-    const style2 = getComputedStyle(this.node, 'before');
+    const style2 = getComputedStyle(this.node, ':before');
     const width = parseFloat(style2.width);
     if (width > maxWidth) maxWidth = width;
     this.input.node.checked = checked;
 
-    this.node.style = '--toggle-status-width:' + (maxWidth / 16) + 'rem';
+    this.node.style.setProperty('--toggle-status-width', (maxWidth / 16) + 'rem');
   }
 }
 
