@@ -9,6 +9,7 @@ class ToggleStatusLabel extends api.core.Instance {
   init () {
     this.register(`input[id="${this.getAttribute('for')}"]`, ToggleInput);
     this.update();
+    this.isSwappingFont = true;
   }
 
   get proxy () {
@@ -36,6 +37,10 @@ class ToggleStatusLabel extends api.core.Instance {
     this.input.node.checked = checked;
 
     this.node.style.setProperty('--toggle-status-width', (maxWidth / 16) + 'rem');
+  }
+
+  swapFont (families) {
+    this.update();
   }
 }
 
