@@ -22,6 +22,6 @@ const sample = getSample(include);
 
 <%- sample('Alerte icône personnalisée', './sample/alert-default', {alert: {classes: ['fr-fi-lock-fill']}}, true); %>
 
-<%- sample('Alerte ajoutée dynamiquement (type)', './sample/alert-default', {alert: {alert: true}}, true, './layout-dynamic.ejs'); %>
+<%- sample('Alerte ajoutée dynamiquement (type)', './sample/alert-default', {alert: {alert: true, type: "error", title: "Erreur détectée dans le formulaire"}}, true, './layout-dynamic.ejs'); %>
 
 
