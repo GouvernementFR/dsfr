@@ -21,3 +21,7 @@ const sample = getSample(include);
 <%- sample('Alerte taille SM refermable', './sample/alert-dismissable', {alert: {title:false, size: "sm", type: "info", text: "Information : cliquer sur la croix pour fermer l'alerte"}}, true); %>
 
 <%- sample('Alerte icône personnalisée', './sample/alert-default', {alert: {classes: ['fr-fi-lock-fill']}}, true); %>
+
+<%- sample('Alerte ajoutée dynamiquement (type)', './sample/alert-default', {alert: {alert: true, type: "error", title: "Erreur détectée dans le formulaire"}}, true, './layout-dynamic.ejs'); %>
+
+
