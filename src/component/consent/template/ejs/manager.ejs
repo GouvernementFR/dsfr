@@ -2,12 +2,12 @@
 # paramètres du gestionnaire de consentement
 
 * consent.finalities (array, required) : Tableau de finalités
-* |- title (string, recommanded): titre de la finalité
-* |- desc (string, optional): texte de description additionnel
-* |- radios (array, optional): paramètres de boutons radios (par défaut 2 éléments accepter/refuser)
-* |_ services (array, optional) : Tableau de sous-finalités
-*   |- title (string, recommanded): titre de la finalité
-*   |- desc (string, optional): texte de description additionnel
+  ** consent.finalities[].title (string, recommanded): titre de la finalité
+  ** consent.finalities[].desc (string, optional): texte de description additionnel
+  ** consent.finalities[].radios (array, optional): paramètres de boutons radios (par défaut 2 éléments accepter/refuser)
+  ** consent.finalities[].services (array, optional) : Tableau de sous-finalités
+    *** consent.finalities[].services[].title (string, recommanded): titre de la finalité
+    *** consent.finalities[].services[].desc (string, optional): texte de description additionnel
 
 * consent.buttons (array, required): paramètres spécifique de chaque bouton du groupe
 
