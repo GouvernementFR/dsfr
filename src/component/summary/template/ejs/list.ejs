@@ -2,7 +2,7 @@
 # paramètres summary list
 
 * summaryList (array, required) : Tableau de liens (href, label)
-	** summaryList.list (array, required) : Tableau de liens enfants (href, label)
+	** summaryList[].list (array, required) : Tableau de liens enfants (href, label)
 
 %>
 <% let summaryList = locals.summaryList || []; %>
