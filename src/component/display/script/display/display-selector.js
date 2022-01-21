@@ -1,7 +1,7 @@
 import api from '../../api.js';
 
 export const DisplaySelector = {
-  DISPLAY: api.ns.selector('display'),
-  RADIO_BUTTONS: `input[name="${api.ns('radios-theme')}"]`,
-  FIELDSET: api.ns.selector('fieldset')
+  DISPLAY: api.internals.ns.selector('display'),
+  RADIO_BUTTONS: `input[name="${api.internals.ns('radios-theme')}"]`,
+  FIELDSET: api.internals.ns.selector('fieldset')
 };

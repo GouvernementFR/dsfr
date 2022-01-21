@@ -37,8 +37,16 @@ if (shareLink.disabled === true) {
   delete shareLinkAttrs.rel;
   delete shareLinkAttrs.href;
   delete shareLinkAttrs.target;
-  if (tag === 'button') {
-    shareLinkAttrs.disabled = '';
+  switch(tag) {
+    case 'input':
+    case 'button':
+      shareLinkAttrs.disabled = '';
+        break;
+
+    case 'a':
+      shareLinkAttrs['aria-disabled'] = 'true';
+      shareLinkAttrs.role = 'link';
+        break;
   }
 }
 %>

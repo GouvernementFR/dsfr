@@ -10,17 +10,17 @@ $tags-settings:(
       font-size: 12,
       min-height: 6v,
       padding-x: 2v,
-      icon: sm,
+      icon: xs,
       icon-margin-x: 1v
     ),
     md: (
       font-size: 14,
       min-height: 8v,
-      padding-x: 4v,
+      padding-x: 3v,
       icon: sm,
       icon-margin-x: 1v
     )
   ),
-  places: left right,
+  places: left,
   border-radius: true
 );

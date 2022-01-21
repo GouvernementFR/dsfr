@@ -3,11 +3,9 @@ let footer = locals.footer || {};
 let data = {
     id: footer.id || uniqueId('footer'),
     brand: {
-      logo: {
-          title: 'république<br>française',
-      },
+      logo: footer.logo
     },
-    operator: imgData('img/placeholder.16x9.png', true),
+    operator: imgData('img/placeholder.16x9.png', 'rendered'),
     content: {
       desc: lorem(),
       links: [

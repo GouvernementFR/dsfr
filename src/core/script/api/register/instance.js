@@ -2,8 +2,8 @@ import { Emitter } from '../utilities/emitter.js';
 import state from '../state.js';
 import inspector from '../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
-import { addClass, removeClass, hasClass } from '../utilities/classes.js';
-import { queryParentSelector, querySelectorAllArray } from '../utilities/query-selector.js';
+import { addClass, removeClass, hasClass } from '../utilities/dom/classes.js';
+import { queryParentSelector, querySelectorAllArray } from '../utilities/dom/query-selector.js';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -12,6 +12,7 @@ class Instance {
     this._isResizing = false;
     this._isScrollLocked = false;
     this._isLoading = false;
+    this._isSwappingFont = false;
     this._listeners = {};
     this._keyListenerTypes = [];
     this._keys = [];
@@ -173,6 +174,19 @@ class Instance {
 
   load () {}
 
+  get isSwappingFont () {
+    return this._isSwappingFont;
+  }
+
+  set isSwappingFont (value) {
+    if (this._isSwappingFont === value) return;
+    if (value) state.add('font-swap', this);
+    else state.remove('font-swap', this);
+    this._isSwappingFont = value;
+  }
+
+  swapFont () {}
+
   examine (attributeNames) {
     if (!this.node.matches(this.registration.selector)) {
       this._dispose();
@@ -195,6 +209,7 @@ class Instance {
     state.getModule('render').nexts.remove(this);
     this.isScrollLocked = false;
     this.isLoading = false;
+    this.isSwappingFont = false;
     this._emitter.dispose();
     this._emitter = null;
     this._ascent.dispose();

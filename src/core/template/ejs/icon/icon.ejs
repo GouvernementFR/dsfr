@@ -9,7 +9,7 @@
 <% eval(include('../../../index.ejs')); %>
 <% let icon = locals.icon || {} %>
 
-<span class="<%= prefix %>-fi-<%= icon.icon %> <% switch(icon.size) {
-  case 'sm': %><%= prefix %>-fi--sm<% break;
-  case 'lg': %><%= prefix %>-fi--lg<% break;
+<span class="<%= prefix %>-icon-<%= icon.icon %> <% switch(icon.size) {
+  case 'sm': %><%= prefix %>-icon--sm<% break;
+  case 'lg': %><%= prefix %>-icon--lg<% break;
 } %>" aria-hidden="true"></span>

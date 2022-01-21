@@ -6,6 +6,7 @@
 @include build-share();
 
 #{ns(share)} {
+  @include display-flex(column);
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
 
@@ -16,11 +17,13 @@
 
   &__title {
     @include text-style(md);
+    order: 1;
   }
 
   &__text {
     @include text-style(xs);
     @include max-width(72v, md);
+    order: 3;
   }
 
   &__group {
@@ -29,6 +32,7 @@
     flex-wrap: wrap;
     @include margin-x(-1v);
     @include margin-bottom(2v);
+    order: 2;
   }
 }
 

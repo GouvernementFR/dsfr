@@ -16,6 +16,7 @@ import { CollapseSelector } from './script/collapse/collapse-selector.js';
 import { Equisized } from './script/equisized/equisized.js';
 import { EquisizedsGroup } from './script/equisized/equisizeds-group.js';
 import { EquisizedEmission } from './script/equisized/equisized-emission.js';
+import { Toggle } from './script/action/toggle/toggle';
 import { RootSelector } from './script/api/stage/root.js';
 import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
@@ -37,6 +38,7 @@ api.core = {
   RootSelector: RootSelector,
   Equisized: Equisized,
   EquisizedEmission: EquisizedEmission,
+  Toggle: Toggle,
   EquisizedsGroup: EquisizedsGroup,
   InjectSvg: InjectSvg,
   InjectSvgSelector: InjectSvgSelector

@@ -30,16 +30,28 @@
   }
 }
 
-@mixin generate-icons($base) {
-  @each $icon, $settings in $icons-settings {
+@mixin generate-icons($base, $deprecated: false) {
+  $icons-settings: $icons-settings;
+  @if $deprecated {
+    $icons-settings: $icons-settings-deprecated;
+  }
+  @each $icon, $setting in $icons-settings {
     #{ns($base + '-' + $icon)} {
-      @include before(icon-glyph($icon));
+      @include before(icon-glyph($icon, $deprecated));
+      @if is-deprecated($icon) {
+        @include before {
+          font-weight: 700;
+        }
+      }
     }
   }
 }
 
-@function icon-glyph($icon, $is-ligature: false) {
+@function icon-glyph($icon, $deprecated: false, $is-ligature: false) {
   $icon-settings: map-get($icons-settings, $icon);
+  @if is-deprecated($icon) or $deprecated {
+    $icon-settings: map-get($icons-settings-deprecated, $icon);
+  }
   @if $is-ligature {
     @return "#{map-get($icon-settings, ligature)}";
   }
@@ -48,22 +60,44 @@
   }
 }
 
+@function is-deprecated($icon) {
+  @return not map-has-key($icons-settings, $icon);
+}
+
+@function get-icons-settings-version($deprecated: false) {
+  @if $deprecated {
+    @return $icons-settings-deprecated;
+  }
+  @else {
+    @return $icons-settings;
+  }
+}
+
 @mixin icon-content($icon) {
   content: icon-glyph($icon);
+  font-weight: 400;
+  @if is-deprecated($icon) {
+    font-weight: 700;
+  }
 }
 
-@function font-icon($size: md) {
-  @return normal normal normal #{icon-size($size)}/1 #{$namespace}-icon;
+@function font-icon($size: md, $deprecated: false) {
+  $font-weight: normal;
+  @if $deprecated {
+    $font-weight: 700;
+  }
+  @return normal $font-weight normal #{icon-size($size)}/1 #{$namespace}-icon;
 }
 
-@mixin font-icon($size: md) {
-  font: font-icon($size);
+@mixin font-icon($size: md, $deprecated: false) {
+  font: font-icon($size, $deprecated);
 }
 
-@mixin icon($icon:null, $size:md, $pseudo:before) {
+@mixin icon($icon: null, $size: md, $pseudo: before) {
   @include _pseudo($pseudo) {
     @if $size != null {
-      @include font-icon($size);
+      $deprecated: is-deprecated($icon);
+      @include font-icon($size, $deprecated);
     }
 
     @if $icon != null {

@@ -1,0 +1,47 @@
+<%#
+# exemple groupe de tags
+
+* tagsGroup.tags (array, optional): permet de définir les tags individuellement
+
+* tagsGroup.size (string, optional): Défini la taille des tags dans le groupe (valeur possible: 'sm')
+
+* tagsGroup.groupCount (integer, optional): Si tags n'est pas définie, groupCount permet de générer ce nombre de tags dans le groupe
+
+* tagsGroup.label (string, optional): Si tags n'est pas définie, label est défini pour tous les tags
+
+* tagsGroup.icon (string, optional): Si tags n'est pas définie, l'icone est définie pour tous les tags
+
+* tagsGroup.type (string, optional): Si tags n'est pas définie, le type est défini pour tous les tags
+
+* tagsGroup.disabled (boolean, optional): Si tags n'est pas définie, disabled est défini pour tous les tags
+
+* tagsGroup.tag (string, optional): Si tags n'est pas définie, le tag est défini pour tous les tags
+
+* tagsGroup.tagAttributes (object, optional): Si tags n'est pas définie, les tagAttributes sont définis pour tous les tags
+
+* tagsGroup.tagClasses (array, optional): Si tags n'est pas définie, les tagclasses sont définies pour tous les tags
+
+
+#%>
+<%
+const tagsGroup = locals.tagsGroup || {}
+const tags = tagsGroup.tags || [];
+
+if (!tags.length && tagsGroup.groupCount !== undefined) {
+
+  for (let i = 0; i < tagsGroup.groupCount; i++) {
+    tags.push({
+      label: tagsGroup.label || 'Label tag ' + (i+1),
+      icon: tagsGroup.icon,
+      type: tagsGroup.type,
+      disabled: tagsGroup.disabled,
+      tag: tagsGroup.tag,
+      attributes: tagsGroup.tagAttributes,
+      classes: tagsGroup.tagClasses,
+    });
+  }
+  tagsGroup.tags = tags;
+}
+%>
+
+<%- include('../../template/ejs/tags-group.ejs', {tagsGroup: tagsGroup}) %>

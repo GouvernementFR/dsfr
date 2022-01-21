@@ -39,8 +39,8 @@ class NavigationItem extends api.core.Instance {
   set isRightAligned (value) {
     if (this._isRightAligned === value) return;
     this._isRightAligned = value;
-    if (value) api.addClass(this.element.node, NavigationSelector.ITEM_RIGHT);
-    else api.removeClass(this.element.node, NavigationSelector.ITEM_RIGHT);
+    if (value) api.internals.dom.addClass(this.element.node, NavigationSelector.ITEM_RIGHT);
+    else api.internals.dom.removeClass(this.element.node, NavigationSelector.ITEM_RIGHT);
   }
 }
 

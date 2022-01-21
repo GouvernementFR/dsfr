@@ -5,9 +5,7 @@
         pdfCollections;
 
     statusCollections = [
-        ['alert-fill', 'alert-line', 'question-fill', 'question-line', 'information-fill', 'information-line', 'error-warning-fill', 'error-warning-line'],
-        ['close-line', 'check-line', 'checkbox-circle-fill', 'checkbox-circle-line', 'close-circle-fill', 'close-circle-line'],
-        ['add-circle-fill', 'add-circle-line', 'substract-line', 'add-line']
+        ['error-fill', 'error-line', 'success-fill', 'success-line', 'info-fill', 'info-line', 'warning-fill', 'warning-line', 'flashlight-fill', 'flashlight-line']
     ];
     navigationCollections = [
         ['menu-fill', 'menu-2-fill'],
@@ -15,6 +13,8 @@
         ['user-fill', 'user-line', 'account-fill', 'account-line', 'lock-fill', 'lock-line', 'logout-box-r-fill', 'logout-box-r-line']
     ];
     actionCollections = [
+        ['question-fill', 'question-line', 'information-fill', 'information-line', 'error-warning-fill', 'error-warning-line', 'close-line', 'check-line'],
+        ['add-circle-fill', 'add-circle-line', 'subtract-line', 'add-line'],
         ['search-fill', 'search-line'],
         ['eye-fill', 'eye-line', 'eye-off-fill', 'eye-off-line'],
         ['printer-fill', 'printer-line', 'upload-2-fill', 'upload-2-line', 'file-download-fill', 'file-download-line', 'download-line', 'external-link-line', 'edit-fill', 'edit-line', 'links-fill'],
@@ -35,15 +35,15 @@
         ['chat-quote-fill', 'chat-quote-line']
     ];
     socialsCollections = [
-        ['dailymotion-fill', 'dailymotion-line', 'facebook-circle-fill', 'facebook-circle-line', 'github-fill', 'github-line', 'instagram-fill', 'instagram-line', 'linkedin-box-fill', 'linkedin-box-line', 'npmjs-fill', 'npmjs-line', 'remixicon-fill', 'remixicon-line', 'slack-fill', 'slack-line', 'snapchat-fill', 'snapchat-line', 'telegram-fill', 'telegram-line', 'twitter-fill', 'twitter-line', 'tiktok-fill', 'tiktok-line', 'twitch-fill', 'twitch-line', 'vimeo-fill', 'vimeo-line', 'youtube-fill', 'youtube-line',]
+        ['dailymotion-fill', 'dailymotion-line', 'facebook-circle-fill', 'facebook-circle-line', 'github-fill', 'github-line', 'instagram-fill', 'instagram-line', 'linkedin-box-fill', 'linkedin-box-line', 'npmjs-fill', 'npmjs-line', 'remixicon-fill', 'remixicon-line', 'slack-fill', 'slack-line', 'snapchat-fill', 'snapchat-line', 'telegram-fill', 'telegram-line', 'twitter-fill', 'twitter-line', 'twitch-fill', 'twitch-line', 'vimeo-fill', 'vimeo-line', 'youtube-fill', 'youtube-line',]
     ];
 
     const families = [
-        { title : 'Statuts (Icon font / SVG symbols)', collections: statusCollections},
-        { title : 'Navigation (Icon font / SVG symbols)', collections: navigationCollections},
-        { title : 'Actions (Icon font / SVG symbols)', collections: actionCollections},
-        { title : 'Contenus et médias (Icon font / SVG symbols)', collections: contentMediaCollections},
-        { title : 'Réseaux Sociaux (Icon font / SVG symbols)', collections: socialsCollections}
+        { title : 'Statut (Icon font / SVG symbols)', collections: statusCollections, sample: './sample/icon'},
+        { title : 'Navigation (Icon font / SVG symbols)', collections: navigationCollections, sample: './sample/remix-icon'},
+        { title : 'Actions (Icon font / SVG symbols)', collections: actionCollections, sample: './sample/remix-icon'},
+        { title : 'Contenus et médias (Icon font / SVG symbols)', collections: contentMediaCollections, sample: './sample/remix-icon'},
+        { title : 'Réseaux Sociaux (Icon font / SVG symbols)', collections: socialsCollections, sample: './sample/remix-icon'}
     ];
 
     const sample = getSample(include);
@@ -58,12 +58,12 @@
         family.collections.forEach((collection) => {
     %>
     <div>
-        <%- sample('', './sample/icon', { icons: collection }, true); %>
+        <%- sample('', family.sample, { icons: collection }, true); %>
     </div>
     <% }); %>
 
 <% } %>
 
-<%- sample('Icone LG', '../../template/ejs/icon/icon', {icon: {icon:'alert-fill', size:'lg'}}, true); %>
-<%- sample('Icone MD (par défault)', '../../template/ejs/icon/icon', {icon: {icon:'alert-fill'}}, true); %>
-<%- sample('Icone SM', '../../template/ejs/icon/icon', {icon: {icon:'alert-fill', size:'sm'}}, true); %>
+<%- sample('Icone LG', '../../template/ejs/icon/icon', {icon: {icon:'warning-fill', size:'lg'}}, true); %>
+<%- sample('Icone MD (par défault)', '../../template/ejs/icon/icon', {icon: {icon:'warning-fill'}}, true); %>
+<%- sample('Icone SM', '../../template/ejs/icon/icon', {icon: {icon:'warning-fill', size:'sm'}}, true); %>

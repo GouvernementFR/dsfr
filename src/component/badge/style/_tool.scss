@@ -1,0 +1,14 @@
+////
+/// Badge Tool
+/// @group badge
+////
+
+@mixin build-badge() {
+  @include _build-link($badge-settings);
+}
+
+@mixin nest-badge($size:md, $place: null, $icon:null, $from: null, $insert: true) {
+  @include _nest-link($badge-settings, $size, $place, $icon, $from, $insert) {
+    @content;
+  }
+}

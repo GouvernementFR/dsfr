@@ -22,6 +22,8 @@
 
 <%- sample('Ensemble de boutons radio avec texte d‘aide spécifique, petite taille', './sample/radios.ejs', {radio: { id:'radio-hint-el-sm', size: 'sm', element: { hint: 'Texte de description additionnel' }}}, true); %>
 
+<%- sample('Ensemble de boutons radio, libellé en indice et exposant', './sample/radios.ejs', {radio: { id:'radio-sub', element: { label:'<span>Label radio <sup>sup</sup> <sub>sub</sub></span>' }}}, true); %>
+
 <%- sample('Ensemble de boutons radio riches, simple', './sample/radios-rich.ejs', {radio: { id:'radio-rich' }}, true); %>
 
 <%- sample('Ensemble de boutons radio riches, en ligne, simple', './sample/radios-rich.ejs', {radio: { id:'radio-rich-inline', inline:true}}, true); %>

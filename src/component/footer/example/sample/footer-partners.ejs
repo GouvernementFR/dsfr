@@ -3,9 +3,7 @@ let footer = locals.footer || {};
 let data = {
     id: footer.id || uniqueId('footer'),
     brand: {
-      logo: {
-          title: 'république<br>française',
-      },
+      logo: footer.logo
     },
     content: {
       desc: lorem(),
@@ -18,11 +16,11 @@ let data = {
     },
     partners: {
       title: 'Nos partenaires',
-      mainPartner: imgData('img/placeholder.16x9.png', true),
+      mainPartner: imgData('img/placeholder.16x9.png', 'rendered'),
       subPartners: [
-          imgData('img/placeholder.16x9.png', true),
-          imgData('img/placeholder.16x9.png', true),
-          imgData('img/placeholder.16x9.png', true)
+          imgData('img/placeholder.16x9.png', 'rendered'),
+          imgData('img/placeholder.16x9.png', 'rendered'),
+          imgData('img/placeholder.16x9.png', 'rendered')
       ]
     },
     bottom: {

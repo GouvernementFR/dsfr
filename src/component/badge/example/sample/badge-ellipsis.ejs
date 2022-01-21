@@ -1,0 +1,7 @@
+<%
+let badge = locals.badge || {}
+badge.label = 'Label badge très long, coupé par des points de suspensions lorsque le label dépasse la largeur du conteneur';
+badge.ellipsis = true;
+%>
+
+<%- include('../../template/ejs/badge', {badge}); %>

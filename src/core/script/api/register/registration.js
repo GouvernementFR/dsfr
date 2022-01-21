@@ -1,7 +1,7 @@
 import { Collection } from '../utilities/collection.js';
 import state from '../state.js';
 import ns from '../utilities/namespace.js';
-import { querySelectorAllArray } from '../utilities/query-selector';
+import { querySelectorAllArray } from '../utilities/dom/query-selector';
 
 class Registration {
   constructor (selector, InstanceClass, creator) {

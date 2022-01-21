@@ -1,0 +1,47 @@
+////
+/// Tag active Module
+/// @group tag
+////
+
+@include clickable-selector {
+  &#{ns(tag)} {
+    // tag pressable
+    @include pressed-selector(true) {
+      @include relative;
+      overflow: visible;
+      background-position: 100% 0, 100% 0;
+      background-size: var(--blend-size), 100% 100%;
+
+      @include icon(checkbox-circle-line, sm, after) {
+        @include absolute(4px, 0);
+        @include margin(-2v);
+      }
+
+      &#{ns(tag)}--sm {
+        @include icon(null, xs, after) {
+          @include absolute(3px, 0);
+          @include margin(-1.5v);
+        }
+      }
+    }
+  }
+
+  // tag supprimable
+  &#{ns(tag)}--dismiss {
+    @include before {
+      content: none;
+    }
+
+    @include icon(close-line, sm, after) {
+      @include margin-left(1v);
+      @include margin-right(-1v);
+    }
+
+    &#{ns(tag)}--sm {
+      @include icon(null, xs, after) {
+        @include margin-right(-0.75v);
+        @include margin-left(0.5v);
+      }
+    }
+  }
+}
