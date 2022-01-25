@@ -188,8 +188,8 @@ const generateJSON = () => {
 
 const generateConfig = async () => {
   generateCore();
-  await generateIcon('src/core/icon/deprecated', '-deprecated');
-  await generateIcon('src/core/icon', '');
+  await generateIcon('src/core/icon/deprecated', '-deprecated', 344);
+  await generateIcon('src/core/icon', '', 216);
   generateJSON();
 };
 
