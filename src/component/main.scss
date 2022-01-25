@@ -3,6 +3,8 @@
 /// @group component
 ////
 
+@import '../core/index';
+@include order-media-query();
 @import 'upload/main';
 @import 'logo/main';
 @import 'card/main';

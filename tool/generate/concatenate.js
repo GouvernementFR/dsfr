@@ -16,6 +16,13 @@ const generateStyle = (pck, file) => {
 
   const ascendance = `${pck.path}/`;
 
+  const depthLevel = (ascendance.match(/\//g) || []).length - 1;
+  let pathToCore = '';
+  for (let i = 0; i < depthLevel; i++) {
+    pathToCore += '../';
+  }
+  content += `@import '${pathToCore}core/index';\n@include order-media-query();\n`;
+
   for (const child of children) {
     content += `@import '${child.path.replace(ascendance, '')}/${file}';\n`;
   }

@@ -3,5 +3,7 @@
 /// @group dsfr
 ////
 
+@import 'core/index';
+@include order-media-query();
 @import 'core/legacy';
 @import 'component/legacy';

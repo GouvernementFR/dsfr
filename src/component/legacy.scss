@@ -3,6 +3,8 @@
 /// @group component
 ////
 
+@import '../core/index';
+@include order-media-query();
 @import 'logo/legacy';
 @import 'card/legacy';
 @import 'quote/legacy';

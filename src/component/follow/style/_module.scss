@@ -4,6 +4,7 @@
 ////
 
 #{ns(follow)} {
+  @include order-media-query();
   @include padding(6v 0);
   @include padding(8v 0, md);
   @include set-title-margin(0 0 2v);

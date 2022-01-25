@@ -3,6 +3,8 @@
 /// @group dsfr
 ////
 
+@import 'core/index';
+@include order-media-query();
 @import 'core/main';
 @import 'scheme/main';
 @import 'component/main';
