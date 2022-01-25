@@ -40,12 +40,12 @@ const svgoConfig = {
     'mergePaths',
     'convertShapeToPath',
     'sortAttrs',
-    'removeDimensions',
+    'removeDimensions'
     // { name: 'removeAttrs', params: { attrs: '(stroke|fill)' } },
   ]
 };
 
-const generateIcon = async (dir, suff) => {
+const generateIcon = async (dir, suff, descent) => {
   const icons = [];
 
   const ymlPath = root(`${dir}/icon.yml`);
@@ -92,7 +92,7 @@ const generateIcon = async (dir, suff) => {
 
   builder.paths.cache.fontSVGRaw = path.join(builder.paths.cache.root, `${builder.config.output.fontName}.raw.svg`);
   // await builder.buildFontSVG();
-  await buildFontSVG(builder);
+  await buildFontSVG(builder, descent);
 
   const svg = fs.readFileSync(builder.paths.cache.fontSVGRaw, 'utf-8');
   // const result = svg.replace(/(\d*\.\d\d\d)\d*/g, '$1');
@@ -127,12 +127,13 @@ const generateIcon = async (dir, suff) => {
   builder.pathsReset();
 };
 
-const buildFontSVG = async (builder) => {
+const buildFontSVG = async (builder, descent) => {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line new-cap
     const stream = new svg2font({
       fontHeight: 2048,
       fontName: builder.config.output.fontName,
+      descent: descent
     });
 
     stream.pipe(fs.createWriteStream(builder.paths.cache.fontSVGRaw))
