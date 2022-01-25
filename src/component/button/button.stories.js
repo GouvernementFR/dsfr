@@ -5,10 +5,10 @@ export default {
   argTypes: {
     label: { control: 'text' },
     size: {
-      options: ['', 'SM', 'LG'],
-      control: { type: 'select' },
-    },
-  },
+      options: ['default', 'SM', 'LG'],
+      control: { type: 'select' }
+    }
+  }
 };
 
 const sizeClass = {
@@ -17,12 +17,7 @@ const sizeClass = {
   LG: 'fr-btn--lg'
 };
 
-//👇 Some function to demonstrate the behavior
-// const someFunction = (size) => {};
-
 const buttonTemplate = (args) => {
-  // Assigns the function result to a variable
-  // const someFunctionResult = someFunction(args.size);
   return `<button class="fr-btn ${sizeClass[args.size]}">
       ${args.label}
     </button>`;
@@ -30,5 +25,5 @@ const buttonTemplate = (args) => {
 export const BoutonSimple = buttonTemplate.bind({});
 BoutonSimple.args = {
   label: 'Label bouton',
-  size: '',
+  size: 'default'
 };

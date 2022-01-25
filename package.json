@@ -92,6 +92,7 @@
     }
   },
   "dependencies": {
+    "copy-webpack-plugin": "^10.2.1",
     "ejs-compiled-loader": "^3.1.0"
   }
 }

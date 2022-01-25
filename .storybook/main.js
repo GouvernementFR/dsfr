@@ -10,16 +10,19 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   "framework": "@storybook/html",
-  staticDirs: ['../dist'],
-  webpackFinal: async (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'fs': path.resolve(__dirname, 'fsMock.js')
-    };
-    // config.module.rules.push({
-    //   test: /\.ejs$/,
-    //   loaders: ['ejs-compiled-loader']
-    // })
-    return config
-  }
+  staticDirs: ['../dist', '../src', '../.storybook'],
+  // webpackFinal: async (config) => {
+  //   config.node = {
+  //     fs: 'empty'
+  //   }
+  //   // config.resolve.alias = {
+  //   //   ...config.resolve.alias,
+  //   //   'fs': path.resolve(__dirname, 'fsMock.js')
+  //   // };
+  //   // config.module.rules.push({
+  //   //   test: /\.ejs$/,
+  //   //   loaders: ['ejs-compiled-loader']
+  //   // })
+  //   return config
+  // }
 };
