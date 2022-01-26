@@ -1,23 +1,29 @@
 <%
-let radio = locals.radio || {}
-let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
-let data = {...radio, ...jsonData};
-let element = {
-  path: 'radio/example/sample/radio',
-    data: {...radio, ...radio.element} || {}
+const radios = locals.radios || {}
+const radio = locals.radio || {};
+const jsonData = JSON.parse(include('../../../form/example/sample/data', { form: radios }));
+
+const id = radios.id;
+const elements = [];
+for (let i = 1; i < 4; i++) elements.push({
+    path: 'radio/example/sample/radio',
+    data: {
+        radio: {
+            ...radio,
+            id: `${id}-${i}`,
+            name: id,
+            checked: i === 2 && radios.checked
+        }
+    }
+});
+
+const fields = {
+    choice: true,
+    elements: elements,
+    ...radios,
+    ...jsonData
 }
 
-element.data.name = radio.id;
-
-let fields = {
-    choice:true,
-    elements: [
-        { ...element, data: { radio: {...element.data, id: radio.id + '-1' } } },
-        { ...element, data: { radio: {...element.data, id: radio.id + '-2', checked: true } } },
-        { ...element, data: { radio: {...element.data, id: radio.id + '-3' } } },
-    ],
-    ...data
-}
 %>
 
 <%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>
