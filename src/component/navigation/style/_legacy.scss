@@ -5,19 +5,6 @@
 
 @include legacy(ie11) {
   /**
-  * Correctif de l'alignement des menus sur la droite
-  */
-  #{ns(nav)}__item {
-    &--align-right {
-      @include respond-from(lg) {
-        #{ns(collapse)} {
-          transform: translateX(-100%);
-        }
-      }
-    }
-  }
-
-  /**
   * reset liste à puce
   */
   #{ns(mega-menu)},
@@ -33,6 +20,21 @@
   #{ns(mega-menu)} {
     &__category {
       margin: 0;
+    }
+  }
+}
+
+@include respond-from(lg) {
+  @include legacy(ie11) {
+    /**
+    * Correctif de l'alignement des menus sur la droite
+    */
+    #{ns(nav)}__item {
+      &--align-right {
+        #{ns(collapse)} {
+          transform: translateX(-100%);
+        }
+      }
     }
   }
 }

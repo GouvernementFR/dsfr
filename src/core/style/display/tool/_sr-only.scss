@@ -16,9 +16,11 @@
 
 @mixin sr-only-from() {
   @each $bp, $limits in $breakpoints {
-    #{ns('sr-only-' + $bp)} {
-      @include respond-from($bp) {
-        @include sr-only();
+    @if $bp != xs {
+      #{ns('sr-only-' + $bp)} {
+        @include respond-from($bp) {
+          @include sr-only();
+        }
       }
     }
   }
@@ -26,9 +28,11 @@
 
 @mixin sr-only-to() {
   @each $bp, $limits in $breakpoints {
-    #{ns('sr-only-to-' + $bp)} {
-      @include respond-to($bp) {
-        @include sr-only();
+    @if $bp != xs {
+      #{ns('sr-only-to-' + $bp)} {
+        @include respond-to($bp) {
+          @include sr-only();
+        }
       }
     }
   }

@@ -5,16 +5,18 @@
 
 @mixin hidden() {
   @each $bp, $limits in $breakpoints {
-    #{ns('hidden-' + $bp )} {
-      @include respond-from($bp) {
-        display: none !important;
+    @if $bp != xs {
+      #{ns('hidden-' + $bp )} {
+        @include respond-from($bp) {
+          display: none !important;
+        }
       }
-    }
 
-    #{ns('displayed-' + $bp)} {
-      display: none !important;
-      @include respond-from($bp) {
-        display: inherit !important;
+      #{ns('displayed-' + $bp)} {
+        display: none !important;
+        @include respond-from($bp) {
+          display: inherit !important;
+        }
       }
     }
   }

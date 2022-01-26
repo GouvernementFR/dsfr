@@ -3,24 +3,28 @@
 /// @group header
 ////
 
-@include legacy(ie11) {
-  /**
-  * Correctif valeur 'initial' non prise en compte par IE
-  */
-  #{ns(header)} {
-    &__tools-links {
-      @include respond-from(lg) {
+@include respond-from(lg) {
+  @include legacy(ie11) {
+    /**
+    * Correctif valeur 'initial' non prise en compte par IE
+    */
+    #{ns(header)} {
+      &__tools-links {
         display: block;
       }
 
-      #{ns(link)} {
+      #{ns(modal)} {
+        position: static;
         overflow: visible;
       }
     }
+  }
+}
 
-    #{ns(modal)} {
-      @include respond-from(lg) {
-        position: static;
+@include legacy(ie11) {
+  #{ns(header)} {
+    &__tools-links {
+      #{ns(link)} {
         overflow: visible;
       }
     }
