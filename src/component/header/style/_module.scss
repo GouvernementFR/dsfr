@@ -4,7 +4,6 @@
 ////
 
 #{ns(header)} {
-  @include order-media-query();
   @include disable-link-style;
   @include disable-list-style;
   @include set-text-margin(0);

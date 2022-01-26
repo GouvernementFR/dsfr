@@ -4,7 +4,6 @@
 ////
 
 #{ns(footer)} {
-  @include order-media-query();
   @include disable-link-style;
   @include disable-list-style;
   @include size(100%);

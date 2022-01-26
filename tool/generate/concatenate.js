@@ -21,7 +21,7 @@ const generateStyle = (pck, file) => {
   for (let i = 0; i < depthLevel; i++) {
     pathToCore += '../';
   }
-  content += `@import '${pathToCore}core/index';\n@include order-media-query();\n`;
+  content += `@import '${pathToCore}media-query-order';\n`;
 
   for (const child of children) {
     content += `@import '${child.path.replace(ascendance, '')}/${file}';\n`;
