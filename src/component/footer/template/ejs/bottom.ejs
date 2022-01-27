@@ -1,19 +1,18 @@
 <%#
 # paramètres footer bottom
 
-* footer.bottom.copyright (string, required) : texte de copyright
+* bottom.copyright (string, required) : texte de copyright
 
-* footer.bottom.links (array, optional) : tableau de liens
-  ** footer.bottom.links[].tag (string, optional) : tag du lien
-  ** footer.bottom.links[].label (string, required) : label du lien
-  ** footer.bottom.links[].classes (array, required) : classes supplémentaires du lien
-  ** footer.bottom.links[].attributes (array, required) : attributs supplémentaires du lien
+* bottom.links (array, optional) : tableau de liens
+  ** bottom.links[].tag (string, optional) : tag du lien
+  ** bottom.links[].label (string, required) : label du lien
+  ** bottom.links[].classes (array, required) : classes supplémentaires du lien
+  ** bottom.links[].attributes (array, required) : attributs supplémentaires du lien
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<% let footer = locals.footer || {} %>
-<% let bottom = footer.bottom || {} %>
+<% let bottom = locals.bottom || {} %>
 <% let links = bottom.links || [] %>
 <ul class="<%= prefix %>-footer__bottom-list">
   <%

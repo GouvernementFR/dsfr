@@ -1,6 +1,10 @@
-<% let header = locals.header || {}; %>
-<% let tools = header.tools || {}; %>
-<% let links = tools.links || {items:[]}; %>
+<%#
+# paramètres header links (raccourcis)
+
+* links (object, required) : Paramètres du template
+  ** links.items (array, required) : Tableau de liens d'accès direct - voir composant link
+%>
+<% let links = locals.links || {items:[]}; %>
 
 <ul class="<%= prefix %>-links-group">
     <%

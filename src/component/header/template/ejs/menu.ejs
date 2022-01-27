@@ -1,22 +1,31 @@
-<%
- let header = locals.header || {};
- let navbar = header.navbar || {};
- if (!header.navbar || !navbar.menu || !navbar.menu.id || !navbar.menu.modalId) throw new Error('navbar.menu is not correctely defined in header. id & modalId required');
-%>
+<%#
+# paramètres header menu
 
-<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= navbar.menu.modalId %>" aria-labelledby="<%= navbar.menu.id %>">
+* menu (object, required) : Paramètres du template
+  ** menu.navigation (object, optional) : Paramètres du menu de navigation
+    *** menu.navigation.id (String, optional) : Id du bouton d'ouverture du menu
+    *** menu.navigation.modalId (String, optional) : Id de la modale du menu de navigation
+  ** menu.tools (object, optional) : Paramètres des tools (raccourcis)
+    *** menu.tools.links (object, optional) : Paramètres des tools (raccourcis)
+    *** menu.tools.duplicateLinks (boolean, optional) : Si true, duplique le bloc de liens raccourcis dans le menu mobile (pour vue/angular/react)
+%>
+<%
+ let menu = locals.menu || {};
+ if (!menu.navigation || !menu.navigation.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');
+%>
+<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= menu.navigation.modalId %>" aria-labelledby="<%= menu.navigation.id %>">
     <div class="<%= prefix %>-container%>" >
-        <%- include('../../../link/template/ejs/link-close', {link: { closeId: navbar.menu.modalId }}); %>
-        <% if (header.tools && header.tools.links) { %>
+        <%- include('../../../link/template/ejs/link-close', {link: { closeId: menu.navigation.modalId }}); %>
+        <% if (menu.tools) { %>
           <div class="<%= prefix %>-header__menu-links">
-              <% if (header.duplicateLinks) { %>
-              <%- include('./links', {header: header}); %>
+              <% if (menu.tools.duplicateLinks && menu.tools.links) { %>
+              <%- include('./links', {links: menu.tools.links}); %>
               <% } %>
           </div>
         <% } %>
 
-        <% if (header.navigation) { %>
-            <%- include( (header.navigation !== undefined && header.navigation.sample !== undefined) ? header.navigation.sample : '../../../navigation/template/ejs/navigation', {navigation: header.navigation} ); %>
+        <% if (menu.navigation && menu.navigation.id) { %>
+            <%- include( menu.navigation.sample !== undefined ? menu.navigation.sample : '../../../navigation/template/ejs/navigation', {navigation: menu.navigation} ); %>
         <% } %>
     </div>
 </div>

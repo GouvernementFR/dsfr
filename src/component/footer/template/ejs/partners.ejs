@@ -1,14 +1,13 @@
 <%#
 # paramètres footer partners
 
-* footer.partners (object, required) : Paramètres du template
-  ** footer.partners.title (string, required) : Titre du bloc partenaire
-  ** footer.partners.mainPartner (object, required) : Paramètre de l'image du partenaire principal
-  ** footer.partners.subPartners (array, required) : Tableau de sous partenaire
+* partners (object, required) : Paramètres du template
+  ** partners.title (string, required) : Titre du bloc partenaire
+  ** partners.mainPartner (object, required) : Paramètre de l'image du partenaire principal
+  ** partners.subPartners (array, required) : Tableau de sous partenaire
 
 %>
-<% let footer = locals.footer || {} %>
-<% let partners = footer.partners || {} %>
+<% let partners = locals.partners || {} %>
 
 <h4 class="<%= prefix %>-footer__partners-title"><%- partners.title %></h4>
 <div class="<%= prefix %>-footer__partners-logos">
