@@ -20,7 +20,7 @@ module.exports = {
     {
       test: /\.ejs$/,
       loaders: ['ejs-compiled-loader'],
-    }
+    },
   ],
   plugins: [
     new CopyPlugin({
