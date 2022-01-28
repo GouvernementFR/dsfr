@@ -33,7 +33,8 @@ switch (typeof header.service) {
 
 if (header.links !== undefined || header.search) {
     hasNavbar = true;
-    data.body.tools = {};
+    const tools = {};
+    data.body.tools = tools;
 
     if (header.links === true) {
         hasMenu = true;
