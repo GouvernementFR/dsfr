@@ -60,6 +60,7 @@ header = {
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <% let header = locals.header || {menu: {}};
+if (header.menu.tools.duplicateLinks) header.menu.tools.links = header.body.tools.links;
 %>
 
 <header role="banner" class="<%= prefix %>-header">
