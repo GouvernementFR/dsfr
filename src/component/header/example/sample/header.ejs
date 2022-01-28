@@ -5,7 +5,8 @@ const navbar = {};
 let hasNavbar = false;
 let hasMenu = false;
 
-data.body.brand = { logo: header.logo };
+const brand = { logo: header.logo };
+data.body.brand = brand;
 
 if (header.operator !== undefined) {
   data.body.brand.operator = header.operator;
