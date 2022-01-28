@@ -111,7 +111,7 @@ if (hasMenu) {
     };
     if (header.navigation !== undefined) {
         navigation.id = header.navigationId || uniqueId('navigation');
-        data.menu.navigation.modalId = navbar.menu.modalId;
+        navigation.modalId = navbar.menu.modalId;
     }
     else {
         data.menu.navigation = navbar.menu;
