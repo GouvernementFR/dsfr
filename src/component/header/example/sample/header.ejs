@@ -69,7 +69,7 @@ if (header.links !== undefined || header.search) {
             sample: '../../../search/example/sample/search-default'
         }
         : header.search;
-        data.body.tools.search.id = header.searchId || uniqueId('search');
+        tools.search.id = header.searchId || uniqueId('search');
 
         navbar.search = {
             modalId: uniqueId('modal'),
