@@ -110,7 +110,7 @@ if (hasMenu) {
         id: uniqueId('button')
     };
     if (header.navigation !== undefined) {
-        data.menu.navigation.id = header.navigationId || uniqueId('navigation');
+        navigation.id = header.navigationId || uniqueId('navigation');
         data.menu.navigation.modalId = navbar.menu.modalId;
     }
     else {
