@@ -1,12 +1,14 @@
 <%
 let header = locals.header || {};
-let data = {body: {}, menu: {navigation: {}, tools: {}}};
+let data = {body: {}, menu: {}};
 const navbar = {};
+const menu = {navigation: {}, tools: {}};
 let hasNavbar = false;
 let hasMenu = false;
 
 const brand = { logo: header.logo };
 data.body.brand = brand;
+data.menu = menu;
 
 if (header.operator !== undefined) {
   brand.operator = header.operator;
@@ -78,24 +80,23 @@ if (header.links !== undefined || header.search) {
         tools.search.modalId = navbar.search.modalId;
         tools.id = uniqueId('tools');
     }
-
 }
 
 switch (true) {
     case header.navigation === 'min':
-        data.menu.navigation = {
+        menu.navigation = {
             sample: '../../../navigation/example/sample/navigation-min'
         };
         break;
 
     case header.navigation === true:
-        data.menu.navigation = {
+        menu.navigation = {
             sample: '../../../navigation/example/sample/navigation'
         };
         break;
 
     case typeof header.navigation === 'object':
-        data.menu.navigation = header.navigation;
+        menu.navigation = header.navigation;
         break;
 }
 
@@ -110,11 +111,11 @@ if (hasMenu) {
         id: uniqueId('button')
     };
     if (header.navigation !== undefined) {
-        data.menu.navigation.id = header.navigationId || uniqueId('navigation');
-        data.menu.navigation.modalId = navbar.menu.modalId;
+        menu.navigation.id = header.navigationId || uniqueId('navigation');
+        menu.navigation.modalId = navbar.menu.modalId;
     }
     else {
-        data.menu.navigation = navbar.menu;
+        menu.navigation = navbar.menu;
     }
 }
 
