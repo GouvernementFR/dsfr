@@ -1,14 +1,13 @@
 <%
 let header = locals.header || {};
-let data = {body: {}, menu: {}};
 const navbar = {};
 const menu = {navigation: {}, tools: {}};
+let data = {body: {}, menu: menu};
 let hasNavbar = false;
 let hasMenu = false;
 
 const brand = { logo: header.logo };
 data.body.brand = brand;
-data.menu = menu;
 
 if (header.operator !== undefined) {
   brand.operator = header.operator;
