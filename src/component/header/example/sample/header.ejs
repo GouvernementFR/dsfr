@@ -81,23 +81,21 @@ if (header.links !== undefined || header.search) {
 
 }
 
-const navigation = data.menu.navigation;
-
 switch (true) {
     case header.navigation === 'min':
-        navigation = {
+        data.menu.navigation = {
             sample: '../../../navigation/example/sample/navigation-min'
         };
         break;
 
     case header.navigation === true:
-        navigation = {
+        data.menu.navigation = {
             sample: '../../../navigation/example/sample/navigation'
         };
         break;
 
     case typeof header.navigation === 'object':
-        navigation = header.navigation;
+        data.menu.navigation = header.navigation;
         break;
 }
 
@@ -112,8 +110,8 @@ if (hasMenu) {
         id: uniqueId('button')
     };
     if (header.navigation !== undefined) {
-        navigation.id = header.navigationId || uniqueId('navigation');
-        navigation.modalId = navbar.menu.modalId;
+        data.menu.navigation.id = header.navigationId || uniqueId('navigation');
+        data.menu.navigation.modalId = navbar.menu.modalId;
     }
     else {
         data.menu.navigation = navbar.menu;
