@@ -3,8 +3,8 @@
 export default {
   title: 'Composant/Pied de page (footer)',
   argTypes: {
-    labelLogo: { control: 'text' },
-  },
+    labelLogo: { control: 'text' }
+  }
 };
 
 const footerTemplate = (args) =>
@@ -62,5 +62,5 @@ const footerTemplate = (args) =>
 
 export const Minimal = footerTemplate.bind({});
 Minimal.args = {
-  labelLogo: 'Intitulé<br>officiel',
+  labelLogo: 'Intitulé<br>officiel'
 };

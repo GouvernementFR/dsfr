@@ -17,7 +17,7 @@ const sizeClass = {
   LG: 'fr-btn--lg'
 };
 
-const buttonTemplate = (args) => {
+const buttonTemplate = async (args) => {
   return `<button class="fr-btn ${sizeClass[args.size]}">
       ${args.label}
     </button>`;

@@ -20,7 +20,7 @@
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook",
     "build-storybook": "build-storybook"
   },
   "files": [

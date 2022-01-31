@@ -10,7 +10,7 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   "framework": "@storybook/html",
-  staticDirs: ['../dist', '../src', '../.storybook'],
+  staticDirs: ['../dist', {from: '../src', to: 'views'}, '../.storybook'],
   // webpackFinal: async (config) => {
   //   config.node = {
   //     fs: 'empty'
