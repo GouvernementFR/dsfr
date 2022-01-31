@@ -1,19 +1,13 @@
 <%#
 # paramètres footer partners
 
-* footer.partners.title (object, required) : Titre du bloc partenaire
-
-* footer.partners.mainPartner (object, required) : Paramètres du partenaire principal
-  ** footer.partners.mainPartner.src (object, required) : Paramètres du partenaire principal
-  ** footer.partners.mainPartner.alt (object, recommanded) : Paramètres du partenaire principal
-
-* footer.partners.subPartners (array, required) : Tableau de sous partenaire
-  ** footer.partners.subPartners.src (object, required) : Paramètres du partenaire principal
-  ** footer.partners.subPartners.alt (object, recommanded) : Paramètres du partenaire principal
+* partners (object, required) : Paramètres du template
+  ** partners.title (string, required) : Titre du bloc partenaire
+  ** partners.mainPartner (object, required) : Paramètre de l'image du partenaire principal - voir src/core/template/ejs/media/img.ejs
+  ** partners.subPartners (array, required) : Tableau de paramètre des images des partenaires secondaires - voir src/core/template/ejs/media/img.ejs
 
 %>
-<% let footer = locals.footer || {} %>
-<% let partners = footer.partners || {} %>
+<% let partners = locals.partners || {} %>
 
 <h4 class="<%= prefix %>-footer__partners-title"><%- partners.title %></h4>
 <div class="<%= prefix %>-footer__partners-logos">

@@ -1,57 +1,74 @@
 <%#
 # paramètres header
 
-// TODO: documentation
+* header (object, required) : Paramètres du template
+  ** header.body (object, required) : Paramètres du template body
+  ** header.menu (object, optional) : Paramètres du template menu
+
+Exemple complet :
 
 header = {
-    brand: {
-        logo: { voir logo },
-        operator: {
-            src: 'url de l'img',
-            alt: 'texte alternatif',
-            style: '' // TODO: taille de l'image gérée autrement
+    body: {
+        brand: {
+            logo: { voir logo },
+            operator: {
+                src: 'url de l'img',
+                alt: 'texte alternatif',
+                style: ''
+            },
+            service: {
+                title: '',
+                tagline: ''
+            },
+            navbar: {
+                menu: {
+                    id: '',
+                    modalId: '',
+                    label: ''
+                }
+                search: {
+                    id: '',
+                    modalId: '',
+                    label: ''
+                }
+            }
         },
-        service: {
-            title: '',
-            tagline: ''
-        }
-    },
-    tools: {
-        links: { // TODO: à revoir avec groupe de links
-            items: [
-                { voir links }
-            ]
+        tools: {
+            links: {
+                items: [
+                    { voir links }
+                ]
+            },
+            search: {
+                id: '',
+                modalId: '', // identique à header.body.brand.navbar.search.modalId
+                sample: '',
+            }
         },
-        search: { voir search }
-    },
-    navigation: {
-        voir navigation
-    },
-    navbar: {
-        menu: {
-            id: '',
-            modalId: '',
-            label: ''
-        }
-        search: {
-            id: '',
-            modalId: '',
-            label: ''
+    }
+    menu: {
+        navigation: {
+            modalId: '', // identique à header.body.brand.navbar.menu.modalId
+            + voir composant navigation
+        },
+        tools: {
+            links: [],
+            duplicateLinks: false
         }
     }
 }
-
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% let header = locals.header || {};
+<% let header = locals.header || {menu: {}};
+if (header.menu.tools.duplicateLinks) header.menu.tools.links = header.body.tools.links;
 %>
 
 <header role="banner" class="<%= prefix %>-header">
 
-    <%- include('./body', {header:header});%>
+    <%- include('./body', {body: header.body});%>
 
-    <% if (header.navigation || (header.tools && header.tools.links)) { %>
-        <%- include('./menu', {header:header});%>
+    <% if ((header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
+        <%- include('./menu', {menu: { navigation: {...header.menu.navigation}, tools: header.body.tools }});%>
     <% } %>
 
 </header>

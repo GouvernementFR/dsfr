@@ -1,11 +1,15 @@
 <%#
 # paramètres logo
 
-* name (string, required) : nom de l'entité
+* logo.classes (array, optional) : classes spécifiques à rajouter sur le composant
 
-* size (string, optionnal) : modificateur de taille.
-  valeurs:
-  * lg : barre de recherche large
+* logo.title (string, required) : Attribut 'title' du logo (reprend le nom de l'entité)
+
+* logo.size (string, optional) : modificateur de taille.
+  valeurs :
+  * sm : logo small
+  * lg : logo large
+  * default : logo taille md
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -24,8 +28,6 @@
          classes.push(prefix + '-logo--lg');
          break;
  }
-
-
  %>
 
 <p <%- includeClasses(classes); %>>

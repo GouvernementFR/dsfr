@@ -22,7 +22,6 @@ let attributes = navigation.attributes || {};
 attributes.id = navigation.navigationId || navigation.id;
 attributes.role = 'navigation';
 attributes['aria-label'] = 'Menu principal'
-
 %>
 
 <nav <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>

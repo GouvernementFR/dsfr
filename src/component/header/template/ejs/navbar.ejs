@@ -1,6 +1,18 @@
+<%#
+# paramètres header navbar
+
+* navbar (object, required) : Paramètres du template
+  ** navbar.menu (object, optional) : Paramètres du menu (mobile)
+    *** navbar.menu.id (String, required) : id du bouton menu
+    *** navbar.menu.modalId (String, required) : id de la modal de menu
+    *** navbar.menu.label (String, optional) : label du bouton menu
+  ** navbar.search (object, optional) : Paramètres de la barre de recherche (mobile)
+    *** navbar.menu.id (String, optional) : id du bouton recherche
+    *** navbar.menu.modalId (String, optional) : id de la modal de recherche
+    *** navbar.menu.label (String, optional) : label du bouton recherche
+%>
 <%
-let header = locals.header || {};
-let navbar = header.navbar || {};
+let navbar = locals.navbar || {};
 let label;
 %>
 <div class="<%= prefix %>-header__navbar">

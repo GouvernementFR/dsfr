@@ -7,6 +7,18 @@
 
 * tag.blank (bool, optional) : si true, target prend la valeur _blank, sinon _self
 
+* tag.disabled (boolean, optional) : si true, composant désactivé
+
+* tag.clickable (bool, optional) : si true, rend cliquable le composant
+
+* tag.button (boolean, optional) : si true, le composant est un bouton
+
+* tag.size (string, optional) : taille du composant
+  valeurs {default: md} :
+  * sm : tag taille small
+
+* tag.accent (string, optional) : accentuation du composant
+
 * tag.icon (string, optional) : icon du lien
 
 * tag.accent (string, optional) : couleur d'accentuation
@@ -17,9 +29,9 @@
   * left : icone à gauche du label
   * right : icone à droite du label
 
-* tag.classes (array, optionnal) : Classes suplémentaires sur le bouton
+* tag.classes (array, optional) : Classes suplémentaires sur le bouton
 
-* tag.attributes (object, optionnal) : Attributs suplémentaires sur le tag
+* tag.attributes (object, optional) : Attributs suplémentaires sur le tag
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 

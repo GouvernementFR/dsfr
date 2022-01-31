@@ -1,13 +1,12 @@
 <%#
 # paramètres footer top
 
-* footer.top.categories (object, required) : Paramètre de catégories
-  ** footer.top.categories.label (string, required) : Label des catégories du menu
-  ** footer.top.categories.link (string, required) : Label des liens du menu
+* top.categories (object, required) : Paramètre de catégories
+  ** top.categories.label (string, required) : Label des catégories du menu
+  ** top.categories.link (string, required) : Label des liens du menu
 
 %>
-<% let footer = locals.footer || {} %>
-<% let top = footer.top || {} %>
+<% let top = locals.top || {} %>
 
 <%
   for (let i = 0; i < 6; i++) {
