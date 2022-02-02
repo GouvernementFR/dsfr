@@ -6,17 +6,23 @@
 $icon-prefixes: icon- fi-;
 
 @mixin has-icon() {
+  $start: ();
   @each $prefix in $icon-prefixes {
-    @include class-start-with(ns($prefix, '')) {
-      @content;
-    }
+    $start: append($start, class-start-with(ns($prefix, '')), 'comma');
+  }
+
+  @include _class-pattern($start) {
+    @content;
   }
 }
 
 @mixin has-not-icon() {
+  $start: '';
   @each $prefix in $icon-prefixes {
-    @include class-not-start-with(ns($prefix, '')) {
-      @content;
-    }
+    $start: '#{$start}#{class-not-start-with(ns($prefix, ''))}';
+  }
+
+  @include _class-pattern(unquote($start)) {
+    @content;
   }
 }
