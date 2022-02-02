@@ -20,14 +20,12 @@
     input[type="checkbox"] {
       @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), all-1-in);
 
-      &:checked,
-      &[checked] {
+      &:checked {
         @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
       }
 
       @include disabled((legacy: $legacy, box-shadow: true)) {
-        &:checked,
-        &[checked] {
+        &:checked {
           @include disabled-colors((legacy: $legacy, background: true));
         }
 

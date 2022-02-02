@@ -27,8 +27,7 @@
         }
       }
 
-      &:checked,
-      &[checked] {
+      &:checked {
         + label {
           @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), all-1-in);
 
