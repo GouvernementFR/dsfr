@@ -70,14 +70,10 @@ if (header.links !== undefined || header.search) {
             sample: '../../../search/example/sample/search-default'
         }
         : header.search;
-        tools.search.id = header.searchId || uniqueId('search');
 
-        navbar.search = {
-            modalId: uniqueId('modal'),
-            id: uniqueId('button')
-        }
-        tools.search.modalId = navbar.search.modalId;
-        tools.id = uniqueId('tools');
+        tools.search.id = header.searchId || uniqueId('search');
+        tools.search.modalId = uniqueId('modal'),
+        tools.search.btnId = uniqueId('button')
     }
 }
 
@@ -105,16 +101,11 @@ if (header.navigation !== undefined) {
 
 if (hasMenu) {
     hasNavbar = true;
-    navbar.menu = {
-        modalId: uniqueId('modal'),
-        id: uniqueId('button')
-    };
-    menu.modalId = navbar.menu.modalId;
-    menu.id = navbar.menu.id;
+    menu.modalId = uniqueId('modal');
+    menu.id = uniqueId('button');
 
     if (header.navigation !== undefined) {
         menu.navigation.id = header.navigationId || uniqueId('navigation');
-        menu.navigation.modalId = navbar.menu.modalId;
     }
 }
 

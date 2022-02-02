@@ -20,18 +20,6 @@ header = {
                 title: '',
                 tagline: ''
             },
-            navbar: {
-                menu: {
-                    id: '',
-                    modalId: '',
-                    label: ''
-                }
-                search: {
-                    id: '',
-                    modalId: '',
-                    label: ''
-                }
-            }
         },
         tools: {
             links: {
@@ -41,14 +29,17 @@ header = {
             },
             search: {
                 id: '',
-                modalId: '', // identique à header.body.brand.navbar.search.modalId
+                modalId: '',
+                btnId: '',
                 sample: '',
             }
         },
     }
     menu: {
+        id: '', // id du bouton du menu
+        modalId: '', // id de la modal de menu
         navigation: {
-            modalId: '', // identique à header.body.brand.navbar.menu.modalId
+            id: '', // id de la navigation
             + voir composant navigation
         },
         tools: {
@@ -59,8 +50,19 @@ header = {
 }
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% let header = locals.header || {menu: {}};
-if (header.menu.tools.duplicateLinks) header.menu.tools.links = header.body.tools.links;
+<% let header = locals.header || {body:{}, menu: {}};
+if (header.menu.tools && header.menu.tools.duplicateLinks) {
+    header.menu.tools.links = header.body.tools.links;
+}
+if (header.menu.modalId && header.menu.id) {
+    header.body.brand.navbar.menu = header.menu;
+}
+if (header.body.tools && header.body.tools.search && header.body.tools.search.modalId && header.body.tools.search.id) {
+    header.body.brand.navbar.search = header.body.tools.search;
+}
+if (header.menu.navigation && header.menu.modalId) {
+    header.menu.navigation.modalId = header.menu.modalId;
+}
 %>
 
 <header role="banner" class="<%= prefix %>-header">
