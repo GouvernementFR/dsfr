@@ -11,11 +11,11 @@
 %>
 <%
  let menu = locals.menu || {};
- if (!menu.navigation || !menu.navigation.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');
+ if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');
 %>
-<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= menu.navigation.modalId %>" aria-labelledby="<%= menu.navigation.id %>">
+<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= menu.modalId %>" aria-labelledby="<%= menu.id %>">
     <div class="<%= prefix %>-container%>" >
-        <%- include('../../../link/template/ejs/link-close', {link: { closeId: menu.navigation.modalId }}); %>
+        <%- include('../../../link/template/ejs/link-close', {link: { closeId: menu.modalId }}); %>
         <% if (menu.tools) { %>
           <div class="<%= prefix %>-header__menu-links">
               <% if (menu.tools.duplicateLinks && menu.tools.links) { %>

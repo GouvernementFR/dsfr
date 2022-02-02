@@ -109,12 +109,12 @@ if (hasMenu) {
         modalId: uniqueId('modal'),
         id: uniqueId('button')
     };
+    menu.modalId = navbar.menu.modalId;
+    menu.id = navbar.menu.id;
+
     if (header.navigation !== undefined) {
         menu.navigation.id = header.navigationId || uniqueId('navigation');
         menu.navigation.modalId = navbar.menu.modalId;
-    }
-    else {
-        menu.navigation = navbar.menu;
     }
 }
 

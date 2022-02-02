@@ -68,7 +68,7 @@ if (header.menu.tools.duplicateLinks) header.menu.tools.links = header.body.tool
     <%- include('./body', {body: header.body});%>
 
     <% if ((header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
-        <%- include('./menu', {menu: { navigation: {...header.menu.navigation}, tools: header.body.tools }});%>
+        <%- include('./menu', {menu: header.menu});%>
     <% } %>
 
 </header>
