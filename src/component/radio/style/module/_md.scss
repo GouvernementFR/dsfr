@@ -77,8 +77,7 @@
      * On applique les styles au pseudo élément before du label quand l'input présente
      * un état check
      */
-    &:checked,
-    &[checked] {
+    &:checked {
       + label {
         /**
          * Cas du radio riche

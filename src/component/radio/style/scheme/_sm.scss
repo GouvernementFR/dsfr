@@ -23,8 +23,7 @@
         }
       }
 
-      &:checked,
-      &[checked] {
+      &:checked {
         + label {
           @include before {
             @include scheme-element-box-shadow-color((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true, sm));
