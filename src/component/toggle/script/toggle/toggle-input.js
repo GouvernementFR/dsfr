@@ -6,7 +6,7 @@ class ToggleInput extends api.core.Instance {
   }
 
   get isChecked () {
-    return this.getAttribute('checked');
+    return this.hasAttribute('checked');
   }
 }
 
