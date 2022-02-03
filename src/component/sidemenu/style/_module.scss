@@ -21,8 +21,10 @@
   @include padding-right(8v, md);
 
   #{ns(collapse)} {
-    @include margin-x(-4px, md);
-    @include padding-x(4px, md);
+    @include margin(-1v -1v 0);
+    @include padding(1v 1v 0);
+    @include margin-x(-1v, md);
+    @include padding-x(1v, md);
   }
 
   @import 'module/title';
