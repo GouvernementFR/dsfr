@@ -1,0 +1,22 @@
+////
+/// Connect action
+/// @group connect
+////
+
+$connect-elements: (
+  a: map-get($action-elements, a),
+  button: map-get($action-elements, button),
+  input-buttons: map-get($action-elements, input-buttons),
+);
+
+@include cursor-selector(pointer, $connect-elements) {
+  @at-root #{selector-unify(&, ns(connect))} {
+    cursor: pointer;
+  }
+}
+
+@include cursor-selector(not-allowed, $connect-elements) {
+  @at-root #{selector-unify(&, ns(connect))} {
+    cursor: not-allowed;
+  }
+}

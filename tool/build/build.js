@@ -1,5 +1,5 @@
-const buildStyles = require('./styles');
-const buildScript = require('./scripts');
+const { buildStyles } = require('./styles');
+const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
 const { concatenate } = require('../generate/concatenate');
 const { copyImages, copyAssets } = require('./copy');
