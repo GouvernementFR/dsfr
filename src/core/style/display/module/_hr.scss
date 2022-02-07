@@ -3,9 +3,8 @@
 /// @group core
 ////
 
-#{ns(hr)} {
+@include build-utility(display, hr){
   @include build-hr();
-
   &--sm {
     @include width(40v);
     @include margin-x(auto);
