@@ -28,7 +28,7 @@ const standalone = async (settings) => {
 
   if (settings.styles) {
     try {
-      await buildStyle(`@import '${root('src/component/connect/standalone')}';`, root('standalone/connect.standalone'), settings.minify, settings.sourcemap);
+      await buildStyle(`@import '${root('src/component/connect/standalone')}';`, root('standalone/fr-connect'), settings.minify, settings.sourcemap);
     } catch (e) {
       log.error(e);
     }

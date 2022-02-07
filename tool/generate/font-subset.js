@@ -20,7 +20,8 @@ const standaloneFontSubset = async () => {
   const boldBuffer = await subsetFont(bold, boldText, { targetFormat: 'woff2' });
 
   const font = `$connect-regular: '${regularBuffer.toString('base64')}';
-$connect-bold: '${boldBuffer.toString('base64')}';`;
+$connect-bold: '${boldBuffer.toString('base64')}';
+`;
 
   createFile(root('src/component/connect/standalone/_font.scss'), font, true);
 };
