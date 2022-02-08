@@ -25,4 +25,5 @@
 
 #{ns(connect)} {
   font-family: 'Marianne-fc', arial, sans-serif;
+  @include font-smoothing;
 }
