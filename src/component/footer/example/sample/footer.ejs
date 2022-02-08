@@ -7,7 +7,10 @@ else data.id = uniqueId('footer');
 
 if(footer.top === true) data.top = { categories: {label: 'Nom de la catégorie', link: 'Lien de navigation'}};
 
-if(footer.brand === true) data.brand = {logo:{ title: 'Intitulé<br>officiel'}};
+if(footer.brand === true) {
+  data.brand = {};
+  data.brand.logo = footer.logo || { title: 'Intitulé<br>officiel'};
+}
 
 if(footer.operator === true) data.brand.operator = imgData('img/placeholder.16x9.png', 'rendered');
 
@@ -21,7 +24,7 @@ if(footer.content === true) data.content = {
   ]
 };
 
-if(footer.partner === true) data.partner = {
+if(footer.partners === true) data.partners = {
   title: 'Nos partenaires',
   mainPartner: imgData('img/placeholder.16x9.png', 'rendered'),
   subPartners: [
@@ -41,8 +44,6 @@ if(footer.bottom === true) data.bottom = {
   ],
   copyright: 'Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>'
 };
-
-console.log(data)
 %>
 
 <%- include('../../template/ejs/footer', {footer: data}); %>
