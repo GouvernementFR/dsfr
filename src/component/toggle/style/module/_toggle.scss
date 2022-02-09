@@ -39,7 +39,7 @@
         @include after {
           transform: translateX(space(4v));
           text-indent: 0;
-          @include z-index(focus);
+          @include z-index(higher);
         }
       }
     }
@@ -93,7 +93,6 @@
       @include absolute(4v, null, null, 0, 6v, 6v);
       border-radius: 50%;
       text-indent: -9999px;
-      @include z-index(over);
     }
   }
 
