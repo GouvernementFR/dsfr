@@ -7,12 +7,10 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <% let accordionsGroup = locals.accordionsGroup || {accordions: []} %>
-<ul class="<%= prefix %>-accordions-group" >
+<div class="<%= prefix %>-accordions-group" >
 <%
   for (let i = 0; i < accordionsGroup.accordions.length; i++) {
 %>
-  <li>
-    <%- include('./accordion', {accordion: accordionsGroup.accordions[i]}); %>
-  </li>
+  <%- include('./accordion', {accordion: accordionsGroup.accordions[i]}); %>
 <% } %>
-</ul>
+</div>
