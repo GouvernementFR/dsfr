@@ -1,0 +1,9 @@
+<%
+const connect = locals.connect || {}
+const data = {
+  ...locals.connect,
+  // label: connect.label || 'Label bouton'
+}
+
+%>
+<%- include('../../template/ejs/connect.ejs', {connect: data}) %>

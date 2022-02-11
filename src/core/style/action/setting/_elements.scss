@@ -89,6 +89,7 @@ $action-elements: (
   ),
   input-buttons: (
     selector: 'input[type="button"], input[type="image"], input[type="reset"], input[type="submit"]',
+    focus: (),
     cursor: (
       pointer: (),
       not-allowed: (

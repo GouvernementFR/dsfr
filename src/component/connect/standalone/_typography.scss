@@ -1,0 +1,29 @@
+////
+/// Connect Typography
+/// @group connect
+////
+
+@function font-size($font-size: 16px) {
+  @return $font-size;
+}
+
+@font-face {
+  font-family: 'Marianne-fc';
+  src: url("data:font/truetype;charset=utf-8;base64,#{$connect-regular}") format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Marianne-fc';
+  src: url("data:font/truetype;charset=utf-8;base64,#{$connect-bold}") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+#{ns(connect)} {
+  font-family: 'Marianne-fc', arial, sans-serif;
+  @include font-smoothing;
+}

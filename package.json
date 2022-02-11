@@ -19,6 +19,7 @@
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
     "deploy": "node tool/tool.js deploy",
+    "standalone": "node tool/tool.js standalone",
     "serve": "browser-sync start --server --port 8080 --startPath example/"
   },
   "files": [
@@ -53,7 +54,8 @@
     "js-beautify": "^1.14.0",
     "js-yaml": "^4.1.0",
     "mqpacker": "^7.0.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
+    "node-sass-json-importer": "^4.3.0",
     "node-sass-magic-importer": "^5.3.2",
     "pa11y": "^6.1.1",
     "path": "^0.12.7",
@@ -75,6 +77,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^4.0.0",
+    "subset-font": "^1.4.0",
     "svgo": "^2.8.0",
     "yargs": "^17.2.1"
   },
