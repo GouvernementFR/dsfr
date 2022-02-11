@@ -1,5 +1,5 @@
 import { Element } from './element.js';
-import ns from '../utilities/namespace.js';
+import ns from '../../utilities/namespace.js';
 
 class Root extends Element {
   constructor () {

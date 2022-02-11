@@ -1,4 +1,4 @@
-import ns from '../utilities/namespace.js';
+import ns from '../../utilities/namespace.js';
 import { Module } from '../module.js';
 
 class ScrollLocker extends Module {
