@@ -5,6 +5,7 @@ const build = require('./build/build');
 const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
+const standalone = require('./build/standalone');
 
 /**
  * Build
@@ -79,9 +80,7 @@ const buildHandler = async (argv) => {
     sourcemap: argv.sourcemap,
     clean: argv.clean,
     test: argv.test,
-    markdowns: argv.markdowns,
-    main: argv.main,
-    list: argv.list
+    markdowns: argv.markdowns
   };
 
   await build(settings);
@@ -110,9 +109,7 @@ const releaseHandler = async (argv) => {
     minify: true,
     legacy: true,
     sourcemap: true,
-    markdowns: true,
-    main: true,
-    list: true
+    markdowns: true
   });
 };
 
@@ -134,9 +131,7 @@ const deployHandler = async (argv) => {
     scripts: true,
     examples: true,
     clean: true,
-    legacy: true,
-    main: true,
-    list: true
+    legacy: true
   });
   await buildRouting();
   deployFavicons();
@@ -169,6 +164,57 @@ const testHandler = async (argv) => {
   await test(settings);
 };
 
+/**
+ * Standalone
+ */
+const standaloneBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0')
+    .example(
+      '$0 -p connect',
+      'compile les fichiers scripts et styles du package core et accordion en les minifiant'
+    )
+    .option('styles', {
+      alias: '-c',
+      describe: 'Filtre de compilation, inclue les styles',
+      type: 'boolean'
+    })
+    .option('examples', {
+      alias: '-h',
+      describe: 'Filtre de compilation, inclue les examples',
+      type: 'boolean'
+    })
+    .option('minify', {
+      alias: '-m',
+      describe: 'Minifie les styles et les scripts',
+      type: 'boolean'
+    })
+    .option('legacy', {
+      alias: '-l',
+      describe: 'Compilation des scripts supportant les systèmes antérieurs',
+      type: 'boolean'
+    })
+    .option('sourcemap', {
+      alias: '-s',
+      describe: 'Compilation des scripts et styles avec sourcemaps',
+      type: 'boolean'
+    });
+};
+
+const standaloneHandler = async (argv) => {
+  const all = argv.styles === undefined && argv.examples === undefined;
+
+  const settings = {
+    styles: argv.styles || all,
+    examples: argv.examples || all,
+    minify: argv.minify,
+    legacy: argv.legacy,
+    sourcemap: argv.sourcemap
+  };
+
+  await standalone(settings);
+};
+
 yargs
   .scriptName('tool')
   .command(
@@ -194,6 +240,12 @@ yargs
     'lint et test pa11y',
     testBuilder,
     testHandler
+  )
+  .command(
+    'standalone',
+    'compilation pour la version standalone de FranceConnect',
+    standaloneBuilder,
+    standaloneHandler
   )
   .help()
   .argv;

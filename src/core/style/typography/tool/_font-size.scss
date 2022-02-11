@@ -1,0 +1,12 @@
+////
+/// Core Tool : Typography font-size
+/// @group core
+////
+
+@function font-size($font-size: 16px) {
+  @return px-rem($font-size);
+}
+
+@mixin font-size($font-size: 16px) {
+  font-size: font-size($font-size);
+}

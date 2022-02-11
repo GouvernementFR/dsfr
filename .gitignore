@@ -4,3 +4,4 @@ public/
 .config/
 /dist/
 /example/
+/standalone/
