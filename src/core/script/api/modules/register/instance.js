@@ -1,9 +1,9 @@
-import { Emitter } from '../utilities/emitter.js';
-import state from '../state.js';
-import inspector from '../inspect/inspector.js';
+import { Emitter } from '../../utilities/emitter.js';
+import state from '../../state.js';
+import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
-import { addClass, removeClass, hasClass } from '../utilities/dom/classes.js';
-import { queryParentSelector, querySelectorAllArray } from '../utilities/dom/query-selector.js';
+import { addClass, removeClass, hasClass } from '../../utilities/dom/classes.js';
+import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -186,6 +186,20 @@ class Instance {
   }
 
   swapFont () {}
+
+  get isMouseMoving () { return this._isMouseMoving; }
+
+  set isMouseMoving (value) {
+    if (this._isMouseMoving === value) return;
+    if (value) {
+      state.add('mouse-move', this);
+    } else {
+      state.remove('mouse-move', this);
+    }
+    this._isMouseMoving = value;
+  }
+
+  mouseMove (point) {}
 
   examine (attributeNames) {
     if (!this.node.matches(this.registration.selector)) {
