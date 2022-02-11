@@ -1,0 +1,9 @@
+////
+/// Connect Legacy
+/// @group connect
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _connect-scheme(true);
