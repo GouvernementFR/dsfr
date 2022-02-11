@@ -48,10 +48,10 @@
   }
 
   /**
-   * On fixe une largeur maximale pour le logo opérateur
+   * Hauteur auto pour le logo opérateur
    */
   &__logo {
-    @include size(200px, auto);
+    @include size(null, auto);
     max-height: 100%;
   }
 
