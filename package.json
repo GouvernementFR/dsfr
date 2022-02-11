@@ -53,7 +53,7 @@
     "js-beautify": "^1.14.0",
     "js-yaml": "^4.1.0",
     "mqpacker": "^7.0.0",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "node-sass-magic-importer": "^5.3.2",
     "pa11y": "^6.1.1",
     "path": "^0.12.7",
