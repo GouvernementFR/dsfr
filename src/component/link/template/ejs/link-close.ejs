@@ -13,13 +13,13 @@
 let link = locals.link || {};
 %>
 <%- include('./link', {
-    link: {
-        tag: 'button',
-        classes: [prefix + '-link--close'],
-        label: link.label || 'Fermer',
-        title: link.title || link.label || 'Fermer',
-        attributes: {
-            'aria-controls': link.closeId,
-        }
+  link: {
+    tag: 'button',
+    classes: [prefix + '-link--close'],
+    label: link.label || 'Fermer',
+    title: link.title || link.label || 'Fermer',
+    attributes: {
+      'aria-controls': link.closeId,
     }
+  }
 });%>

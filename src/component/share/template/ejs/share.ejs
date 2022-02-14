@@ -11,7 +11,6 @@
 
 * share.disabled (boolean, optional) : Désactive les liens de partage
 
-
 %>
 <%
 eval(include('../../../../core/index.ejs'));
@@ -22,17 +21,17 @@ let dataLink = {};
 %>
 
 <div <%- includeClasses(shareClasses); %> >
-    <p class="<%= prefix %>-share__title"><%- share.title %></p>
+  <p class="<%= prefix %>-share__title"><%- share.title %></p>
 
-    <% if (share.disabled) { %>
-        <p class="<%= prefix %>-share__text"><%- share.text %></p>
+  <% if (share.disabled) { %>
+    <p class="<%= prefix %>-share__text"><%- share.text %></p>
+  <% } %>
+
+  <ul class="<%= prefix %>-share__group">
+    <% for (let i=0; i < share.links.length; i++) { %>
+      <li>
+        <%- include('./share-link', {shareLink: {...share.links[i]}, disabled: share.disabled }); %>
+      </li>
     <% } %>
-
-    <ul class="<%= prefix %>-share__group">
-        <% for (let i=0; i < share.links.length; i++) { %>
-            <li>
-                <%- include('./share-link', {shareLink: {...share.links[i]}, disabled: share.disabled }); %>
-            </li>
-        <% } %>
-    </ul>
+  </ul>
 </div>

@@ -9,13 +9,13 @@
 <% let body = locals.body || {}; %>
 
 <div class="<%= prefix %>-header__body">
-    <div class="<%= prefix %>-container" >
-        <div class="<%= prefix %>-header__body-row">
-            <%- include('./brand', {brand: body.brand}); %>
+  <div class="<%= prefix %>-container" >
+    <div class="<%= prefix %>-header__body-row">
+      <%- include('./brand', {brand: body.brand}); %>
 
-            <% if (body.tools) { %>
-                <%- include('./tools', {tools: body.tools}); %>
-            <% } %>
-        </div>
+      <% if (body.tools) { %>
+        <%- include('./tools', {tools: body.tools}); %>
+      <% } %>
     </div>
+  </div>
 </div>

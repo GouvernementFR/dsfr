@@ -16,13 +16,13 @@ let navbar = locals.navbar || {};
 let label;
 %>
 <div class="<%= prefix %>-header__navbar">
-    <%
-        const attrs = {};
-        attrs[`data-${prefix}-opened`] = false;
+  <%
+  const attrs = {};
+  attrs[`data-${prefix}-opened`] = false;
 
-        if (navbar.search) {
-            label = navbar.search.label || 'Rechercher';
-    %>
+  if (navbar.search) {
+      label = navbar.search.label || 'Rechercher';
+  %>
     <%- include('../../../button/template/ejs/button', {button: {
         classes: [prefix + '-btn--search'],
         title: label,
@@ -33,23 +33,23 @@ let label;
         label: label,
         id: navbar.search.btnId
     }}); %>
-    <% } %>
+<% } %>
 
-    <%
-        if (navbar.menu) {
-            label = navbar.menu.label || 'Menu';
+  <%
+    if (navbar.menu) {
+      label = navbar.menu.label || 'Menu';
 
-    %>
-    <%- include('../../../button/template/ejs/button', {button: {
-        classes: [prefix + '-btn--menu'],
-        title: label,
-        attributes: {
-            ...attrs,
-            'aria-controls': navbar.menu.modalId,
-            'aria-haspopup': 'menu'
-        },
-        label: label,
-        id: navbar.menu.id
-    }}); %>
-    <% } %>
+  %>
+  <%- include('../../../button/template/ejs/button', {button: {
+      classes: [prefix + '-btn--menu'],
+      title: label,
+      attributes: {
+          ...attrs,
+          'aria-controls': navbar.menu.modalId,
+          'aria-haspopup': 'menu'
+      },
+      label: label,
+      id: navbar.menu.id
+  }}); %>
+  <% } %>
 </div>

@@ -16,20 +16,20 @@
 
 <%
 let consent = locals.consent || {};
- let classes = [...consent.classes || [], prefix + '-consent-banner'];
- let attributes = consent.attributes || {};
- btnModalAttr = [];
- btnModalAttr['data-' + prefix + '-opened'] = false;
- btnModalAttr['aria-controls'] = prefix + '-consent-modal';
- let buttons = consent.buttons || [
-    { label: 'Tout accepter', title: 'Autoriser tous les cookies' },
-    { label: 'Tout refuser',  title: 'Refuser tous les cookies' },
-    { label: 'Personnaliser', secondary: true, attributes: btnModalAttr, title: 'Personnaliser les cookies' }
- ];
- %>
+let classes = [...consent.classes || [], prefix + '-consent-banner'];
+let attributes = consent.attributes || {};
+btnModalAttr = [];
+btnModalAttr['data-' + prefix + '-opened'] = false;
+btnModalAttr['aria-controls'] = prefix + '-consent-modal';
+let buttons = consent.buttons || [
+  { label: 'Tout accepter', title: 'Autoriser tous les cookies' },
+  { label: 'Tout refuser',  title: 'Refuser tous les cookies' },
+  { label: 'Personnaliser', secondary: true, attributes: btnModalAttr, title: 'Personnaliser les cookies' }
+];
+%>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (consent.title) { %><h2 class="<%= prefix %>-h6"><%= consent.title %></h2><% } %>
-    <% if (consent.body) { %><div class="<%= prefix %>-consent-banner__content"><%- consent.body %></div><% } %>
-    <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonGroup: {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}}); %>
+  <% if (consent.title) { %><h2 class="<%= prefix %>-h6"><%= consent.title %></h2><% } %>
+  <% if (consent.body) { %><div class="<%= prefix %>-consent-banner__content"><%- consent.body %></div><% } %>
+  <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonGroup: {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}}); %>
 </div>

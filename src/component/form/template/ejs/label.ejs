@@ -15,12 +15,12 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let label = locals.label || { label: 'label'};
- let labelClasses = label.classes || [];
- labelClasses.push(prefix + '-label');
- let labelAttrs = label.attributes || {};
- let id = label.id || '';
- %>
+let label = locals.label || { label: 'label'};
+let labelClasses = label.classes || [];
+labelClasses.push(prefix + '-label');
+let labelAttrs = label.attributes || {};
+let id = label.id || '';
+%>
 
 <label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>>
   <%- label.label %>

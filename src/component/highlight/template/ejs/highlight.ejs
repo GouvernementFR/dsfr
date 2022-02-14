@@ -13,13 +13,13 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let highlight = locals.highlight || {};
- let classes = highlight.classes || [];
+let highlight = locals.highlight || {};
+let classes = highlight.classes || [];
 
- if (highlight.accent !== undefined) classes.push(prefix + '-highlight--' + highlight.accent);
+if (highlight.accent !== undefined) classes.push(prefix + '-highlight--' + highlight.accent);
 
- classes.push(prefix + '-highlight');
- %>
+classes.push(prefix + '-highlight');
+%>
 
 <div <%- includeClasses(classes)%>>
   <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: highlight.text, size: highlight.size}}) %>

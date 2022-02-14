@@ -71,31 +71,30 @@ valeurs :
  }
 
  switch(buttonGroup.size) {
-     case 'sm':
-        groupClasses.push(prefix + '-btns-group--sm');
-        break;
+  case 'sm':
+    groupClasses.push(prefix + '-btns-group--sm');
+    break;
 
-     case 'lg':
-        groupClasses.push(prefix + '-btns-group--lg');
-        break;
+  case 'lg':
+    groupClasses.push(prefix + '-btns-group--lg');
+    break;
  }
 
- if (buttonGroup.iconPlace !== undefined) switch(buttonGroup.iconPlace)
- {
-     case 'left':
-        groupClasses.push(prefix + '-btns-group--icon-left');
-        break;
+ if (buttonGroup.iconPlace !== undefined) switch(buttonGroup.iconPlace) {
+  case 'left':
+    groupClasses.push(prefix + '-btns-group--icon-left');
+    break;
 
-     case 'right':
-        groupClasses.push(prefix + '-btns-group--icon-right');
-        break;
+  case 'right':
+    groupClasses.push(prefix + '-btns-group--icon-right');
+    break;
  }
  %>
 
 <ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
-<% for (let i = 0; i < buttons.length; i++) { %>
-   <li>
-      <%- include('./button.ejs', {button:{...buttons[i]}}); %>
-   </li>
-<% } %>
+  <% for (let i = 0; i < buttons.length; i++) { %>
+  <li>
+    <%- include('./button.ejs', {button:{...buttons[i]}}); %>
+  </li>
+  <% } %>
 </ul>

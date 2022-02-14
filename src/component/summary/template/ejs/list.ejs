@@ -7,11 +7,11 @@
 %>
 <% let summaryList = locals.summaryList || []; %>
 <ol>
-    <% for (let i = 0; i < summaryList.length; i++) {
-        const item = summaryList[i];
-        if (!item.list) item.list = undefined;
-    %>
+  <% for (let i = 0; i < summaryList.length; i++) {
+    const item = summaryList[i];
+    if (!item.list) item.list = undefined;
+  %>
 
-        <%- include('./item', {summaryItem: item}); %>
-    <% } %>
+  <%- include('./item', {summaryItem: item}); %>
+  <% } %>
 </ol>

@@ -37,60 +37,58 @@ valeurs :
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- const button = locals.button || {};
- let btnClasses = button.classes || [];
- let btnAttrs = button.attributes || {};
- if (button.id) btnAttrs.id = button.id;
+const button = locals.button || {};
+let btnClasses = button.classes || [];
+let btnAttrs = button.attributes || {};
+if (button.id) btnAttrs.id = button.id;
 
- const tag = button.tag || 'button';
+const tag = button.tag || 'button';
 
- btnClasses.push(prefix + '-btn');
+btnClasses.push(prefix + '-btn');
 
- switch(button.size) {
-     case 'sm':
-        btnClasses.push(prefix + '-btn--sm');
-        break;
+switch(button.size) {
+  case 'sm':
+    btnClasses.push(prefix + '-btn--sm');
+    break;
 
-     case 'lg':
-        btnClasses.push(prefix + '-btn--lg');
-        break;
- }
+  case 'lg':
+    btnClasses.push(prefix + '-btn--lg');
+    break;
+}
 
- if (button.icon !== undefined) btnClasses.push(prefix + '-fi-' + button.icon);
+if (button.icon !== undefined) btnClasses.push(prefix + '-fi-' + button.icon);
 
- if (button.iconPlace !== undefined) switch(button.iconPlace)
- {
-     case 'left':
-        btnClasses.push(prefix + '-btn--icon-left');
-        break;
+if (button.iconPlace !== undefined) switch(button.iconPlace) {
+  case 'left':
+    btnClasses.push(prefix + '-btn--icon-left');
+    break;
 
-     case 'right':
-        btnClasses.push(prefix + '-btn--icon-right');
-        break;
- }
+  case 'right':
+    btnClasses.push(prefix + '-btn--icon-right');
+    break;
+}
 
- if (button.secondary === true) btnClasses.push(prefix +'-btn--secondary');
+if (button.secondary === true) btnClasses.push(prefix +'-btn--secondary');
 
- if (button.disabled === true) {
-   if (tag === 'button') btnAttrs['disabled'] = '';
- } else if (tag === 'a') {
-   btnAttrs.href = button.href || '[url - à modifier]';
+if (button.disabled === true) {
+  if (tag === 'button') btnAttrs['disabled'] = '';
+} else if (tag === 'a') {
+  btnAttrs.href = button.href || '[url - à modifier]';
   switch (true) {
-   case button.blank:
-   btnAttrs.target = '_blank';
-   break;
+    case button.blank:
+    btnAttrs.target = '_blank';
+    break;
 
-   case button.self:
-   btnAttrs.target = '_self';
-   break;
+    case button.self:
+    btnAttrs.target = '_self';
+    break;
   }
- }
+}
 
- if (button.title) btnAttrs['title'] = button.title;
- if (button.type !== undefined) btnAttrs['type'] = button.type;
- %>
+if (button.title) btnAttrs['title'] = button.title;
+if (button.type !== undefined) btnAttrs['type'] = button.type;
+%>
 
-<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
-    <%= button.label %>
+<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %>>
+  <%= button.label %>
 </<%= tag %>>
-

@@ -15,23 +15,23 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- const tagsGroup = locals.tagsGroup || {};
- let groupClasses = tagsGroup.classes || [];
- let groupAttrs = tagsGroup.attributes || {};
- let tags = tagsGroup.tags || [];
- groupClasses.push(prefix + '-tags-group');
+const tagsGroup = locals.tagsGroup || {};
+let groupClasses = tagsGroup.classes || [];
+let groupAttrs = tagsGroup.attributes || {};
+let tags = tagsGroup.tags || [];
+groupClasses.push(prefix + '-tags-group');
 
- switch(tagsGroup.size) {
-     case 'sm':
-        groupClasses.push(prefix + '-tags-group--sm');
-        break;
+switch(tagsGroup.size) {
+  case 'sm':
+    groupClasses.push(prefix + '-tags-group--sm');
+    break;
  }
  %>
 
 <ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
 <% for (let i = 0; i < tags.length; i++) { %>
-   <li>
-      <%- include('./tag.ejs', {tag:{...tags[i]}}); %>
-   </li>
+  <li>
+    <%- include('./tag.ejs', {tag:{...tags[i]}}); %>
+  </li>
 <% } %>
 </ul>
