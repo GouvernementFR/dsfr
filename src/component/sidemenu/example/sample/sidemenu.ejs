@@ -38,7 +38,7 @@ function items(level, active) {
 }
 
 function menu(level, active, collapsable) {
-  return {  
+  return {
     type: 'menu',
     active: active === true,
     label: active === true ? 'Entrée menu active' : 'Niveau ' + level,
@@ -50,9 +50,10 @@ function menu(level, active, collapsable) {
 
 
 let data = {
-    items: items(0),
-    modifier: sidemenu.modifier,
-    collapseId: uniqueId('sidemenu')
+  items: items(0),
+  title: sidemenu.title || 'Titre de rubrique',
+  modifier: sidemenu.modifier,
+  collapseId: uniqueId('sidemenu')
 }
 
 %>
