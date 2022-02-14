@@ -58,7 +58,7 @@
 }
 
 &__content-link {
-  display: inline-flex;
+  @include enable-link-style;
   font-weight: bold;
   @include text-style(sm);
 }
