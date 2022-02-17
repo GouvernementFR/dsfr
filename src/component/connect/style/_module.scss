@@ -6,11 +6,7 @@
 #{ns(connect)} {
   @include relative;
   @include padding(1v 3v 1v 16v);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  user-select: none;
+  @include display-flex(column, flex-start, center);
   min-height: space(14v);
 
   @include before ('', block) {

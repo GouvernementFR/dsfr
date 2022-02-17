@@ -3,46 +3,65 @@
 
 * connect.id (string) : id du bouton connect
 
-* connect.type (string, optionnal) type du bouton connect
+* connect.type (string, optional) type du bouton connect
 
-* connect.lang (string, optionnal) langue du bouton connect
+* connect.lang (string, optional) langue du bouton connect
 
-* connect.disabled (boolean, optionnal) : si valeur true, bouton désactivé
+* connect.disabled (boolean, optional) : si valeur true, bouton désactivé
+
+* standalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <% const content = JSON.parse(include('../../content.json')); %>
 
-
 <%
- const connect = locals.connect || {};
- let connectClasses = [];
- let connectAttrs = {};
- if (connect.id) connectAttrs.id = connect.id;
+const connect = locals.connect || {};
+let connectClasses = [];
+let pClasses = [];
+let connectAttrs = {};
+if (connect.id) connectAttrs.id = connect.id;
 
- connectClasses.push(prefix + '-connect');
+connectClasses.push(prefix + '-connect');
 
- const login = (connect.lang && content.login[connect.lang]) ? content.login[connect.lang] : content.login.fr;
+if (locals.standalone === true) {
+  connectAttrs.style = 'margin-bottom: 12px';
+} else {
+  connectClasses.push(prefix + '-mb-3v');
+  pClasses.push(prefix + '-mb-4v');
+}
 
- let brand = content.brand.default;
- switch(connect.type) {
-     case 'plus':
-         connectClasses.push(prefix + '-connect--plus');
-         brand = content.brand.plus;
-        break;
+const login = (connect.lang && content.login[connect.lang]) ? content.login[connect.lang] : content.login.fr;
 
-     case 'agent':
-         connectClasses.push(prefix + '-connect--agent');
-         brand = content.brand.agent;
-        break;
- }
+let brand = content.brand.default;
+switch(connect.type) {
+  case 'plus':
+    connectClasses.push(prefix + '-connect--plus');
+    brand = content.brand.plus;
+  break;
 
- if (connect.disabled === true) connectAttrs.disabled = '';
+  case 'agent':
+    connectClasses.push(prefix + '-connect--agent');
+    brand = content.brand.agent;
+  break;
+}
 
- %>
+if (connect.disabled === true) connectAttrs.disabled = '';
+%>
 
 <button <%- includeClasses(connectClasses) %> <%- includeAttrs(connectAttrs); %> >
-    <span class="<%= prefix %>-connect__login"><%- login %></span>
-    <span class="<%= prefix %>-connect__brand"><%- brand %></span>
+  <span class="<%= prefix %>-connect__login"><%- login %></span>
+  <span class="<%= prefix %>-connect__brand"><%- brand %></span>
 </button>
 
+<% if (connect.link) { %>
+  <p <%- includeClasses(pClasses) %> >
+    <%- include('../../../link/template/ejs/link.ejs', {link: connect.link}) %>
+  </p>
+<% } %>
+
+<% if (connect.desc) { %>
+  <p <%- includeClasses(pClasses) %> >
+  <%- connect.desc %>
+  </p>
+<% } %>
