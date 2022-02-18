@@ -4,6 +4,7 @@ import options from './options/options.js';
 import dom from './utilities/dom/index';
 import ns from './utilities/namespace.js';
 import support from './utilities/support/index';
+import motion from './utilities/motion/index';
 import property from './utilities/property/index';
 
 const internals = {};
@@ -20,6 +21,7 @@ legacy.setLegacy = () => {
 internals.legacy = legacy;
 internals.dom = dom;
 internals.support = support;
+internals.motion = motion;
 internals.property = property;
 internals.ns = ns;
 internals.register = engine.register;
