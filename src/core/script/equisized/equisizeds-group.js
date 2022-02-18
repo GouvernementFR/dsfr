@@ -18,9 +18,11 @@ class EquisizedsGroup extends Instance {
 
   resize () {
     const equisizeds = this.element.getDescendantInstances('Equisized');
+    this.style.setProperty('--equisized-width', 'auto');
 
     const width = Math.max(...equisizeds.map(equisized => equisized.measure()));
-    equisizeds.forEach(equisized => equisized.adjust(width));
+    // equisizeds.forEach(equisized => equisized.adjust(width));
+    this.style.setProperty('--equisized-width', `${width}px`);
   }
 }
 

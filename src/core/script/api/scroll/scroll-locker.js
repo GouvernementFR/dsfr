@@ -18,7 +18,7 @@ class ScrollLocker extends Module {
     if (!this._isLocked) {
       this._isLocked = true;
       this._scrollY = window.scrollY;
-      document.body.style.top = this._scrollY * -1 + 'px';
+      document.body.style.setProperty('--scroll-top', this._scrollY * -1 + 'px');
       document.documentElement.setAttribute(ns.attr('scrolling'), 'false');
     }
   }
@@ -27,7 +27,7 @@ class ScrollLocker extends Module {
     if (this._isLocked) {
       this._isLocked = false;
       document.documentElement.removeAttribute(ns.attr('scrolling'));
-      document.body.style.top = '';
+      document.body.style.removeProperty('--scroll-top');
       window.scroll(0, this._scrollY);
     }
   }
