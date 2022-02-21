@@ -27,7 +27,6 @@
  * Contenu texte simple
  */
 &__content-desc {
-  @include enable-link-style;
   @include margin(0 0 2v);
   @include size(100%);
   @include text-style(sm);
@@ -58,7 +57,9 @@
 }
 
 &__content-link {
-  display: inline-flex;
+  @include enable-link-style;
+  @include link-no-underline;
+  @include link-blank;
   font-weight: bold;
   @include text-style(sm);
 }

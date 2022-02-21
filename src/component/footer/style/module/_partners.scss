@@ -98,7 +98,7 @@
  * Container des logos partenaires secondaires
  */
 &__partners-sub {
-    @include margin-bottom(2v);
+  @include margin-bottom(2v);
 
   &,
   & > ul {
