@@ -6,21 +6,21 @@
 $scheme-decisions: (
   background: (
     default: (
-      neutral: white
+      neutral: white (hover: true)
     ),
     elevated: (
-      neutral: elevated
+      neutral: elevated (hover: true)
     ),
     alt: (
-      neutral: lightest,
-      primary: lightest,
-      accent: lightest
+      neutral: lightest (hover: true),
+      primary: lightest (hover: true),
+      accent: lightest (hover: true)
     ),
     contrast: (
-      neutral: lighter,
-      primary: lighter,
-      accent: lighter,
-      system: lighter
+      neutral: lighter (hover: true),
+      primary: lighter (hover: true),
+      accent: lighter (hover: true),
+      system: lighter (hover: true)
     ),
     flat: (
       neutral: strongest,
@@ -29,13 +29,13 @@ $scheme-decisions: (
       system: strong,
     ),
     action-high: (
-      primary: strong,
-      accent: strong,
-      system: strong
+      primary: strong (hover: true),
+      accent: strong (hover: true),
+      system: strong (hover: true)
     ),
     action-low: (
-      primary: light,
-      accent: light
+      primary: light (hover: true),
+      accent: light (hover: true)
     ),
     active: (
       primary: strong

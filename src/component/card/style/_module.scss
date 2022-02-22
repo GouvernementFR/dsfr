@@ -68,4 +68,10 @@
       flex: 1 0 auto;
     }
   }
+
+  &#{ns(enlarg-link)} {
+    #{ns(card__img)} {
+      filter: brightness(var(--brightness));
+    }
+  }
 }

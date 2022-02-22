@@ -23,3 +23,7 @@
     @content;
   }
 }
+
+@function punched-radial-gradient ($color) {
+ @return radial-gradient(circle at 100% space(1v), transparent space(2.3125v), #{$color} space(2.5v))
+}

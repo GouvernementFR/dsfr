@@ -60,7 +60,7 @@
   @include set-title-margin(0);
   @include display-flex(row, center, null, null, true);
   @include z-index(over);
-  @include enable-blend;
+  @include enable-tint;
 }
 
 @mixin _build-link($settings) {

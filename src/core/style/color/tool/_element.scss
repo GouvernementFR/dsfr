@@ -22,20 +22,28 @@ $ACCENT: none;
   $result: get-result($colors, $value);
   $result: important($result, $important);
 
-  @if $hover and $context == background and $legacy == false and length($tokens) == 1 {
-    $blend: get-color(nth($tokens, 1), decision, (var: true, blend: true));
-    $blend: important($blend, $important);
-
-    --blend: #{$blend};
-  }
-
   @if $legacy {
     @include legacy(ie11) {
       #{$prop}: #{$result};
+
+      @if $hover and $context == background and length($tokens) == 1 {
+        &:hover {
+          #{$prop}: #{important(get-color(nth($tokens, 1), hex, (hover: true)), $important)};
+        }
+
+        &:active {
+          #{$prop}: #{important(get-color(nth($tokens, 1), hex, (active: true)), $important)};
+        }
+      }
     }
   }
   @else {
     #{$prop}: #{$result};
+
+    @if $hover and $context == background and length($tokens) == 1 {
+      --hover: #{important(get-color(nth($tokens, 1), decision, (var: true, hover: true)), $important)};
+      --active: #{important(get-color(nth($tokens, 1), decision, (var: true, active: true)), $important)};
+    }
   }
 }
 
@@ -76,7 +84,8 @@ $ACCENT: none;
   @else {
     background-color: transparent;
     @if $hover {
-      --blend: inherit;
+      --hover: inherit;
+      --active: inherit;
     }
   }
 }

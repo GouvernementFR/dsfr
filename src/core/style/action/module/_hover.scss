@@ -3,23 +3,18 @@
 /// @group core
 ////
 
-:root {
-  @include enable-blend;
-}
-
-a {
-  @include disable-blend;
-}
-
 @include hover-type-selector($action-elements, all) {
-  @include hover-blend();
+  @include enable-tint;
 }
 
 @include hover-media-query {
   @include hover-type-selector($action-elements, all, true) {
-    &:hover,
-    &:active {
-      --blend-size: var(--blend-full-size); // 2048px 2048px;
-    }
+    @include hover-tint;
   }
 }
+
+a {
+  @include disable-tint;
+}
+
+
