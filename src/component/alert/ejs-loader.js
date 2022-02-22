@@ -15,15 +15,16 @@ class EJSLoader {
   async render (args) {
     const template = await this.load();
     console.log(args);
-    const fn = ejs.compile(template, {client: true, async: true});
-    // const html = ejs.render(template, { ...args, prefix: 'fr' });
-    const html = await fn ({ ...args, prefix: 'fr' }, null, (p, d) => {
+    const html = ejs.render(template, { ...args, prefix: 'fr' });
+    /* const html = await fn ({ ...args, prefix: 'fr' }, null, (p, d) => {
       const loader = new EJSLoader(path.resolve(this.src, p));
       return await loader.render(d);
-    });
+    }); */
     console.log(html);
     return { content: html };
   }
+
+  /*
 
   async compile(template) {
     let promise = await new Promise((resolve, reject) => {
@@ -37,6 +38,8 @@ class EJSLoader {
 
     return promise
   }
+
+   */
 
 }
 
