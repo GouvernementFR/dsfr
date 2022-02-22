@@ -46,12 +46,12 @@
   }
 
   label {
+    --toggle-status-width: auto;
     display: inline-flex;
     flex-basis: space(calc(100% - 10v));
     min-height: space(6v);
     @include padding-left(8v);
     @include text-style(md);
-    --toggle-status-width: auto;
 
     /*
      * Si les data attributes sont présents, on assigne un content au pseudo element before,

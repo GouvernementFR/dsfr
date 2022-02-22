@@ -40,7 +40,8 @@ class ModalBody extends api.core.Instance {
 
   adjust () {
     const offset = OFFSET * (this.isBreakpoint(api.core.Breakpoints.MD) ? 2 : 1);
-    this.style.setProperty('--modal-max-height', `${window.innerHeight - offset}px`);
+    if (this.isLegacy) this.style.maxHeight = `${window.innerHeight - offset}px`;
+    else this.style.setProperty('--modal-max-height', `${window.innerHeight - offset}px`);
     this.shade();
   }
 }

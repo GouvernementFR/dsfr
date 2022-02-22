@@ -11,7 +11,12 @@ class Equisized extends Instance {
   }
 
   measure () {
+    if (this.isLegacy) this.style.width = 'auto';
     return this.getRect().width;
+  }
+
+  adjust (width) {
+    if (this.isLegacy) this.style.width = `${width}px`;
   }
 
   dispose () {

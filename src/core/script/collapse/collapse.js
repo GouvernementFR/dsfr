@@ -23,11 +23,15 @@ class Collapse extends Disclosure {
   }
 
   transitionend (e) {
-    if (!this.disclosed) this.style.removeProperty('--collapse-max-height');
+    if (!this.disclosed) {
+      if (this.isLegacy) this.style.maxHeight = '';
+      else this.style.removeProperty('--collapse-max-height');
+    }
   }
 
   unbound () {
-    this.style.setProperty('--collapse-max-height', 'none');
+    if (this.isLegacy) this.style.maxHeight = 'none';
+    else this.style.setProperty('--collapse-max-height', 'none');
   }
 
   disclose (withhold) {
