@@ -35,38 +35,22 @@
   }
 }
 
-@mixin hover-blend($background-images: (), $background-sizes: (), $background-positions: ()) {
-  --hsla: #{css-hsl-alpha(var(--blend), var(--a))};
-  --blend-size: 0; // 2048px 2048px;
-  --blend-position: 50%;
-  --a: 0;
-
-  @include hover-blend-background($background-images, $background-sizes, $background-positions);
-
+@mixin hover-tint () {
   &:hover {
-    --a: #{$hover-alpha};
+    background-color: var(--hover-tint);
   }
 
   &:active {
-    --a: #{$active-alpha};
+    background-color: var(--active-tint);
   }
 }
 
-@mixin hover-blend-background-size($background-sizes: ()) {
-  background-size: $background-sizes, var(--blend-size);
+@mixin enable-tint() {
+  --hover-tint: var(--hover);
+  --active-tint: var(--active);
 }
 
-@mixin hover-blend-background($background-images: (), $background-sizes: (), $background-positions: ()) {
-  background-repeat: no-repeat;
-  @include hover-blend-background-size($background-sizes);
-  background-position: $background-positions, var(--blend-position);
-  background-image: $background-images, radial-gradient(circle at center, var(--hsla), var(--hsla) 3%);
-}
-
-@mixin enable-blend() {
-  --blend-full-size: 100%;
-}
-
-@mixin disable-blend() {
-  --blend-full-size: 0;
+@mixin disable-tint() {
+  --hover-tint: transparent;
+  --active-tint: transparent;
 }

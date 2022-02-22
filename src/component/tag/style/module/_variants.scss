@@ -9,8 +9,18 @@
     @include pressed-selector(true) {
       @include relative;
       overflow: visible;
-      background-position: 100% 0, 100% 0;
-      background-size: var(--blend-size), 100% 100%;
+      background-position: 100% 0, 100% 0, 100% 0;
+      background-size: 0, 0, 100% 100%;
+
+      &:hover {
+        background-color: transparent;
+        background-size: 0, 100% 100%, 0;
+      }
+
+      &:active {
+        background-color: transparent;
+        background-size: 100% 100%, 0, 0;
+      }
 
       @include icon(checkbox-circle-line, sm, after) {
         @include absolute(4px, 0);
