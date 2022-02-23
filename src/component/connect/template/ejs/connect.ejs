@@ -24,13 +24,6 @@ if (connect.id) connectAttrs.id = connect.id;
 
 connectClasses.push(prefix + '-connect');
 
-if (locals.standalone === true) {
-  connectAttrs.style = 'margin-bottom: 12px';
-} else {
-  connectClasses.push(prefix + '-mb-3v');
-  pClasses.push(prefix + '-mb-4v');
-}
-
 const login = (connect.lang && content.login[connect.lang]) ? content.login[connect.lang] : content.login.fr;
 
 let brand = content.brand.default;
@@ -46,6 +39,10 @@ switch(connect.type) {
   break;
 }
 
+if (!locals.standalone) { %>
+<div class="<%= prefix %>-connect-group">
+<% } %>
+<%
 if (connect.disabled === true) connectAttrs.disabled = '';
 %>
 
@@ -55,13 +52,17 @@ if (connect.disabled === true) connectAttrs.disabled = '';
 </button>
 
 <% if (connect.link) { %>
-  <p <%- includeClasses(pClasses) %> >
+  <p>
     <%- include('../../../link/template/ejs/link.ejs', {link: connect.link}) %>
   </p>
 <% } %>
 
 <% if (connect.desc) { %>
-  <p <%- includeClasses(pClasses) %> >
+  <p>
   <%- connect.desc %>
   </p>
+<% } %>
+
+<% if (!locals.standalone) { %>
+<div <%-includeClasses() %>>
 <% } %>
