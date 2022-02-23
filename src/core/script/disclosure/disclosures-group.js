@@ -67,7 +67,7 @@ class DisclosuresGroup extends Instance {
   }
 
   get length () {
-    return this.members ? this.members.length : null;
+    return this.members ? this.members.length : 0;
   }
 
   getIndex () {
