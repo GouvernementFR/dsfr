@@ -21,6 +21,7 @@
 &__top-cat {
   @include margin(0 0 3v);
   @include text-style(xs);
+  display: block;
   font-weight: font-weight(bold);
   text-align: left;
 }
