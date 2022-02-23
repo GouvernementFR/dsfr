@@ -21,8 +21,7 @@ export default {
     iconPlace: {
       options: ['standalone', 'left', 'right'],
       control: { type: 'select' }
-    },
-    argTypes: { onClick: { action: 'clicked' } }
+    }
   }
 };
 
@@ -60,6 +59,29 @@ const buttonTemplate = (args) => {
 };
 export const BoutonSimple = buttonTemplate.bind({});
 BoutonSimple.args = {
+  label: 'Label bouton',
+  title: 'title bouton',
+  disabled: false,
+  variant: 'primary',
+  size: 'default',
+  iconName: 'none'
+};
+
+const buttonGroupeTemplate = (args) => {
+  return `<ul class="fr-btns-group">
+  <li>
+    ${buttonTemplate(args)}
+  </li>
+  <li>
+    ${buttonTemplate(args)}
+  </li>
+  <li>
+    ${buttonTemplate(args)}
+  </li>
+</ul>`;
+};
+export const BoutonGroupe = buttonGroupeTemplate.bind({});
+BoutonGroupe.args = {
   label: 'Label bouton',
   title: 'title bouton',
   disabled: false,
