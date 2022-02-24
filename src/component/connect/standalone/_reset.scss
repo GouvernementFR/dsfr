@@ -1,0 +1,12 @@
+////
+/// Connect reset
+/// @group connect
+////
+
+#{ns(connect)} {
+  box-sizing: border-box;
+  @include _pseudo(before after) {
+    box-sizing: inherit;
+  }
+  margin: 0;
+}

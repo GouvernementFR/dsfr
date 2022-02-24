@@ -22,7 +22,7 @@
     $append: '';
   }
 
-  font-size: #{$prepend} #{px-rem($font-size)} #{$append};
+  font-size: #{$prepend} font-size($font-size) #{$append};
 
   @if map-has-key($style, line-height) {
     line-height: #{$prepend} space(map-get($style, line-height)) #{$append};

@@ -102,5 +102,4 @@ const buildExample = (pck) => {
   log(38, pck.example.file);
 };
 
-
 module.exports = { buildExample };
