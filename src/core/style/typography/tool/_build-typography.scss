@@ -24,21 +24,29 @@
   @return $selectors;
 }
 
-@mixin build-typography() {
-  @each $name, $variation in $title-settings {
-    $type: display;
-    @if str-index(quote($name), 'h') == 1 {
-      $type: heading;
+@mixin build-utillity-typography() {
+  @if $text-utilities {
+    @each $name, $variation in $title-settings {
+      $type: display;
+      @if str-index(quote($name), 'h') == 1 {
+        $type: heading;
+      }
+
+      #{typography-selector($type, $name, true, map-get($variation, alt))} {
+        @include title-style($name, true, true, null, true);
+      }
     }
 
-    #{typography-selector($type, $name, false, map-get($variation, alt))} {
-      @include title-style($name, true, true, null, true);
+    #{ns(text--alt)} {
+      @include font-family(alt, true);
     }
   }
 
-  @each $name, $variation in $text-settings {
-    #{typography-selector(text, $name, true, map-get($variation, alt))} {
-      @include text-style($name, true, true, null, true);
+  @if $title-utilities {
+    @each $name, $variation in $text-settings {
+      #{typography-selector(text, $name, true, map-get($variation, alt))} {
+        @include text-style($name, true, true, null, true);
+      }
     }
   }
 }
