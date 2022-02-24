@@ -132,3 +132,8 @@ $title-settings: (
     margin: display
   )
 );
+
+$title-utilities: true !default;
+@if map-get($typography-vars, text) == false {
+  $title-utilities: false;
+}

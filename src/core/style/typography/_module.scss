@@ -3,12 +3,8 @@
 /// @group core
 ////
 
-@include font-weights();
+@include build-utillity-font-weight();
 
 @include generate-margin-vars();
 
-@include build-typography();
-
-#{ns(text--alt)} {
-  @include font-family(alt, true);
-}
+@include build-utillity-typography();

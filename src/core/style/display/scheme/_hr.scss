@@ -4,7 +4,7 @@
 ////
 
 @mixin _core-display-hr-scheme($legacy: false) {
-  #{ns(hr)} {
+  @include build-utility(display, hr) {
     @include build-hr-scheme($legacy);
   }
 }
