@@ -3,25 +3,31 @@
 /// @group core
 ////
 
+$underline-thickness: 100% / 24;
+
 @mixin a-reset {
   text-decoration: none;
   color: inherit;
 }
 
 @mixin enable-link-style() {
-  --link-underline: 0 1px 0 0 currentColor;
+  // --link-underline: 0 1px 0 0 currentColor;
   --link-blank-font: #{font-icon(sm, true)};
   --link-blank-content: "\00a0#{icon-glyph(external-link-line, true)}";
 }
 
 @mixin disable-link-style() {
-  --link-underline: none;
+  // --link-underline: none;
   --link-blank-font: none;
   --link-blank-content: none;
 }
 
 @mixin link-underline() {
-  box-shadow: var(--link-underline);
+  background-image: linear-gradient(0deg, currentColor, currentColor), linear-gradient(0deg, currentColor, currentColor);
+  background-position: 50% 87.5%, 50% 93.75%;
+  background-size: 0 6.25%, 100% 6.25%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 0.3s;
 }
 
 @mixin link-blank() {
