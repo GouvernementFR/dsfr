@@ -39,7 +39,9 @@ switch(connect.type) {
   break;
 }
 
-if (!locals.standalone) { %>
+if (!locals.standalone) {
+  pClasses.push(prefix + '-hint-text');
+%>
 <div class="<%= prefix %>-connect-group">
 <% } %>
 <%
@@ -58,11 +60,11 @@ if (connect.disabled === true) connectAttrs.disabled = '';
 <% } %>
 
 <% if (connect.desc) { %>
-  <p>
+  <p <%- includeClasses(pClasses) %>>
   <%- connect.desc %>
   </p>
 <% } %>
 
 <% if (!locals.standalone) { %>
-<div <%-includeClasses() %>>
+</div>
 <% } %>
