@@ -71,8 +71,7 @@
   }
 }
 
-@mixin _spacing-properties($props, $breakpoint:null) {
-  @each $prop, $settings in $props {
+@mixin _spacing-properties($prop, $settings, $breakpoint:null) {
     $active: map_get($settings, active);
     $from: map_get($settings, from);
     $half: map_get($settings, half);
@@ -97,17 +96,17 @@
         @include _spacing-property-variations($prop, $special, $breakpoint);
       }
     }
-  }
 }
 
 @mixin create-spacing-properties($settings) {
+  @each $prop, $setting in $settings {
+    @include _spacing-properties($prop, $setting);
 
-  @include _spacing-properties($settings);
-
-  @if map_has_key($settings, breakpoints) {
-    @each $breakpoint in map_get($settings, breakpoints) {
-      @include respond-from($breakpoint) {
-        @include _spacing-properties($settings, $breakpoint);
+    @if map_has_key($setting, breakpoints) {
+      @each $breakpoint in map_get($setting, breakpoints) {
+        @include respond-from($breakpoint) {
+          @include _spacing-properties($prop, $setting, $breakpoint);
+        }
       }
     }
   }
