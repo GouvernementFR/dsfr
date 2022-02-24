@@ -3,8 +3,10 @@
 /// @group core
 ////
 
-#{ns(hidden)} {
+@include build-utility(display, hidden){
   display: none !important;
 }
 
-@include hidden();
+@include build-utility(display, unhidden){
+  display: inherit !important;
+}

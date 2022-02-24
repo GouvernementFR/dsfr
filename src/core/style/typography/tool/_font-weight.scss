@@ -20,8 +20,13 @@
   font-weight: font-weight($scale);
 }
 
-@mixin font-weights() {
-  @each $name, $weight in $font-weight-scale {
+@mixin build-utillity-font-weight() {
+  $fontWeightValues: map-get($font-weight-vars, values);
+  @if $fontWeightValues == 'all' {
+    $fontWeightValues: map-keys($font-weight-names);
+  }
+  @each $weight in $fontWeightValues {
+    $name: map-get($font-weight-names, $weight);
     & #{ns('text--' + $name)} {
       font-weight: #{$weight} !important;
     }
