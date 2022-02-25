@@ -18,7 +18,7 @@
   text-align: left;
   font-weight: font-weight(bold);
 
-  @include enable-blend;
+  @include enable-tint;
 
   &[aria-current] {
     @include after('') {

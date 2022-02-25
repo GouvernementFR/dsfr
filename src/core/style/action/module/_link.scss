@@ -8,8 +8,8 @@ a {
 }
 
 :root {
-  @include enable-link-style;
   --underline-width: 0;
+  @include enable-link-style;
 }
 
 // TODO: à checker avec <area href="" >
@@ -31,4 +31,3 @@ a {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-

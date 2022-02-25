@@ -30,9 +30,8 @@ $font-weight-names: (
 $font-weight-vars: (
   values: 300 400 700 900,
   breakpoints: false
-)!default;
+) !default;
 
 @if (map-get($typography-vars, font-weight) != null) {
   $font-weight-vars: map-get($typography-vars, font-weight);
 }
-

@@ -85,7 +85,7 @@
       @include text-style(sm);
     }
 
-    @include enable-blend;
+    @include enable-tint;
 
     &[aria-current] {
       position: relative;

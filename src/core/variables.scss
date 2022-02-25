@@ -35,16 +35,13 @@ $variables: (
     ),
   ),
   colors: (
-    // shadow: (
-    //   active: false,
-    //   breakpoints: sm md lg
-    // ),
   ),
   typography: (
     text: true,
     title: true,
     font-weight: (
-      values: 300 400 700 900, // 100 200 300 400 500 600 700 800 900 = 'all'
+      // values: 100 200 300 400 500 600 700 800 900 = 'all'
+      values: 300 400 700 900
     )
   ),
   spacing: (
