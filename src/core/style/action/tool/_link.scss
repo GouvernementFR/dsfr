@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-$underline-thickness: 100% / 24;
+$underline-thickness: 0.0625em;
 
 @mixin a-reset {
   text-decoration: none;
@@ -11,23 +11,29 @@ $underline-thickness: 100% / 24;
 }
 
 @mixin enable-link-style() {
-  // --link-underline: 0 1px 0 0 currentColor;
+  --underline-thickness: #{$underline-thickness};
   --link-blank-font: #{font-icon(sm, true)};
   --link-blank-content: "\00a0#{icon-glyph(external-link-line, true)}";
 }
 
 @mixin disable-link-style() {
-  // --link-underline: none;
+  --underline-thickness: 0;
   --link-blank-font: none;
   --link-blank-content: none;
 }
 
 @mixin link-underline() {
   background-image: linear-gradient(0deg, currentColor, currentColor), linear-gradient(0deg, currentColor, currentColor);
-  background-position: 50% 87.5%, 50% 93.75%;
-  background-size: 0 6.25%, 100% 6.25%;
+  background-position: 50% calc(50% + 12 * var(--underline-thickness)), 50% calc(50% + 11 * var(--underline-thickness));
+  background-size: var(--underline-width) var(--underline-thickness), 100% var(--underline-thickness);
   background-repeat: no-repeat, no-repeat;
   transition: background-size 0.3s;
+}
+
+@mixin hover-link () {
+  &:hover, &:active {
+    --underline-width: 100%;
+  }
 }
 
 @mixin link-blank() {
