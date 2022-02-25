@@ -3,6 +3,9 @@
 /// @group button
 ////
 
-@include build-btn();
+@include build-btn() {
+  @include enable-tint;
+  @include disable-underline;
+};
 
 @import 'module/buttons-group.scss';

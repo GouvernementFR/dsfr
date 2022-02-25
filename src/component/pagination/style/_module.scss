@@ -6,7 +6,7 @@
 @include build-pagination();
 
 #{ns(pagination)} {
-  @include disable-link-style;
+  @include disable-underline;
   @include disable-list-style;
 
   @include list {

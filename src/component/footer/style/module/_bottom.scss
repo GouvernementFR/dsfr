@@ -61,7 +61,7 @@
  */
 &__bottom-copy {
   * {
-    @include enable-link-style;
+    @include enable-underline;
     @include text-style(xs);
     @include margin-bottom(4v);
     @include margin-top(2v);

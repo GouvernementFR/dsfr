@@ -33,7 +33,7 @@ $action-elements: (
     ),
     hover: (
       selector: '&:not([disabled]):not(:disabled)',
-      type: blend
+      type: tint
     ),
     disabled: (
       selector: '&[disabled], &:disabled'
@@ -98,7 +98,7 @@ $action-elements: (
     ),
     hover: (
       selector: '&:not([disabled]):not(:disabled)',
-      type: blend
+      type: tint
     ),
     clickable: true
   ),

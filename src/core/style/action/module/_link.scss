@@ -9,7 +9,7 @@ a {
 
 :root {
   --underline-width: 0;
-  @include enable-link-style;
+  @include enable-underline;
 }
 
 // TODO: à checker avec <area href="" >
@@ -23,11 +23,11 @@ a {
 }
 
 #{ns(raw-link)} {
-  @include disable-link-style;
+  @include disable-underline;
 }
 
 #{ns(reset-link)} {
-  @include disable-link-style;
+  @include disable-underline;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
