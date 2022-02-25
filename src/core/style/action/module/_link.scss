@@ -1,5 +1,15 @@
+////
+/// Core Module : Action link
+/// @group core
+////
+
+a {
+  @include a-reset;
+}
+
 :root {
   @include enable-link-style;
+  --underline-width: 0;
 }
 
 // TODO: à checker avec <area href="" >
