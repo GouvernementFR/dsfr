@@ -31,7 +31,8 @@ $underline-thickness: 0.0625em;
 }
 
 @mixin hover-link () {
-  &:hover, &:active {
+  &:hover,
+  &:active {
     --underline-width: 100%;
   }
 }

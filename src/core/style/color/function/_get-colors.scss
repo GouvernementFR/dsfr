@@ -100,7 +100,6 @@
     @if map-has-key($params, alpha) {
       $prop: _set-prop-alpha($prop, map-get($params, alpha));
     }
-
   }
 
   @if map-get($options, hover) == true {

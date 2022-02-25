@@ -6,7 +6,7 @@
 //TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
 
 #{ns(summary)} {
-  @include disable-link-style;
+  // @include disable-link-style;
   @include padding(6v);
   @include padding(8v, md);
   @include text-style(xs);
@@ -43,7 +43,7 @@
   &__link {
     display: inline-block;
     position: relative;
-    @include enable-blend;
+    // @include enable-tint;
     @include text-style(xs);
     @include before(var(--ol-content)) {
       @include absolute(null, null, null, 2v);
