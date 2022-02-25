@@ -27,7 +27,7 @@
  * Contenu texte simple
  */
 &__content-desc {
-  @include enable-link-style;
+  @include enable-underline;
   @include margin(0 0 2v);
   @include size(100%);
   @include text-style(sm);

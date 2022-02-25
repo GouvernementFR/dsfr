@@ -52,7 +52,7 @@
   }
 
   &__link {
-    @include disable-link-style;
+    @include disable-underline;
     display: inline-flex;
     @include size(100%);
     @include margin-top(auto);

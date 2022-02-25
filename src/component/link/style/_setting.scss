@@ -9,7 +9,7 @@ $links-settings:(
     sm: (
       font-size: 14,
       min-height: 8v,
-      padding-x: 3v,
+      padding-x: 0,
       icon: sm,
       icon-margin-x: 2v,
       icon-only: sm,
@@ -17,7 +17,7 @@ $links-settings:(
     md: (
       font-size: 16,
       min-height: 8v,
-      padding-x: 3v,
+      padding-x: 0,
       icon: sm,
       icon-margin-x: 2v,
       icon-only: md,
@@ -25,13 +25,11 @@ $links-settings:(
     lg: (
       font-size: 20,
       min-height: 12v,
-      padding-x: 4v,
+      padding-x: 0,
       icon: md,
       icon-margin-x: 2v,
       icon-only: lg,
     )
   ),
-  places: only left right,
-  border-radius: true,
-  align-on-content: true
+  places: left right
 );

@@ -4,7 +4,9 @@
 ////
 
 @mixin build-btn() {
-  @include _build-link($btns-settings);
+  @include _build-link($btns-settings) {
+    @content;
+  }
 }
 
 @mixin nest-btn($size: md, $place: null, $icon:null, $from: null, $insert: true) {

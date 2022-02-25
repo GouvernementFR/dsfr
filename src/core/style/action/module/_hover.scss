@@ -3,10 +3,6 @@
 /// @group core
 ////
 
-@include hover-type-selector($action-elements, all) {
-  @include enable-tint;
-}
-
 @include hover-media-query {
   @include hover-type-selector($action-elements, all, true) {
     @include hover-tint;
@@ -15,10 +11,10 @@
 
 a {
   @include disable-tint;
+}
 
-  @include hover-media-query {
-    @include hover-type-selector($action-elements, all, true) {
-      @include hover-link;
-    }
+@include hover-media-query {
+  @include hover-type-selector($action-elements, underline, true) {
+    @include hover-underline;
   }
 }

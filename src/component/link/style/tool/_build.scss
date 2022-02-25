@@ -55,12 +55,10 @@
 }
 
 @mixin _build-link-base {
-  @include disable-link-style;
   @include set-text-margin(0);
   @include set-title-margin(0);
   @include display-flex(row, center, null, null, true);
   @include z-index(over);
-  @include enable-tint;
 }
 
 @mixin _build-link($settings) {
@@ -72,6 +70,7 @@
 
   #{$base} {
     @include _build-link-base;
+    @content;
   }
 
   @each $size, $size-settings in $sizes {
@@ -102,5 +101,7 @@
 }
 
 @mixin build-link() {
-  @include _build-link($links-settings);
+  @include _build-link($links-settings) {
+    @content;
+  };
 }
