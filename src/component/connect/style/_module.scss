@@ -6,12 +6,9 @@
 #{ns(connect)} {
   @include relative;
   @include padding(1v 3v 1v 16v);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  user-select: none;
+  @include display-flex(column, flex-start, center);
   min-height: space(14v);
+  @include margin-bottom(3v);
 
   @include before ('', block) {
     @include absolute(1v, null, 1v, 3v, 10v, 12v);
@@ -60,4 +57,8 @@
     height: map-get($brand-size, agent);
   }
    */
+}
+
+#{ns-group(connect)} {
+  @include set-text-margin(0 0 4v 0);
 }
