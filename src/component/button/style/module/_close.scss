@@ -1,0 +1,10 @@
+////
+/// Button Module - Close
+/// @group button
+////
+
+#{ns(btn--close)} {
+  @include nest-btn(sm, right, close-line, null, false);
+  display: flex;
+  @include margin-left(auto);
+}

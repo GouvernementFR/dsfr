@@ -29,6 +29,13 @@
   @include size(100%, null, md);
 }
 
+#{ns(sidemenu__link)} {
+  &[aria-current]:not([href]) {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
 /**
  * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
  * Bouton pour la version mobile pour ouvrir/refermer le sidemenu

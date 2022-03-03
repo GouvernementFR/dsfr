@@ -98,6 +98,11 @@
 
   &__link {
     display: block;
+
+    &[aria-current]:not([href]) {
+      pointer-events: none;
+      cursor: default;
+    }
   }
 
   &__btn {

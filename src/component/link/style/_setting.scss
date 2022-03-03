@@ -8,7 +8,7 @@ $links-settings:(
   sizes: (
     sm: (
       font-size: 14,
-      min-height: 8v,
+      min-height: 0,
       padding-x: 0,
       icon: sm,
       icon-margin-x: 2v,
@@ -16,20 +16,21 @@ $links-settings:(
     ),
     md: (
       font-size: 16,
-      min-height: 8v,
+      min-height: 0,
       padding-x: 0,
       icon: sm,
       icon-margin-x: 2v,
       icon-only: md,
     ),
     lg: (
-      font-size: 20,
-      min-height: 12v,
+      font-size: 18,
+      min-height: 0,
       padding-x: 0,
       icon: md,
       icon-margin-x: 2v,
       icon-only: lg,
     )
   ),
-  places: left right
+  places: left right,
+  underline: true
 );

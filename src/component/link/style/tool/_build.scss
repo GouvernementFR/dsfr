@@ -67,9 +67,14 @@
   $border-radius: map-get($settings, border-radius);
   $align-on-content: map-get($settings, align-on-content);
   $base: ns(map-get($settings, selector));
+  $underline: map-get($settings, underline);
 
   #{$base} {
     @include _build-link-base;
+    @if $underline != true {
+      @include disable-underline;
+      @include tint-enabled(true, null);
+    }
     @content;
   }
 

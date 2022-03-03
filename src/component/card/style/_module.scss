@@ -69,7 +69,7 @@
     }
   }
 
-  &#{ns(enlarg-link)} {
+  &#{ns(enlarge-link)}:hover {
     #{ns(card__img)} {
       filter: brightness(var(--brightness));
     }

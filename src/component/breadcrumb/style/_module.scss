@@ -77,9 +77,10 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     }
 
     &[aria-current] {
-      @include disable-underline;
-      pointer-events: none;
-      cursor: default;
+      &:not([href]) {
+        pointer-events: none;
+        cursor: default;
+      }
     }
   }
 }

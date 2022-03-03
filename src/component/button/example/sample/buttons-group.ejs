@@ -28,7 +28,7 @@ if (!buttons.length && buttonGroup.groupCount !== undefined) {
       type: buttonGroup.type,
       disabled: buttonGroup.disabled,
       tag: buttonGroup.tag,
-      secondary: i > 0 || !buttonGroup.hierarchy
+      kind: i > 0 || !buttonGroup.hierarchy ? 2 : 1
     });
   }
   buttonGroup.buttons = buttons;

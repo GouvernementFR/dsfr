@@ -27,6 +27,15 @@ $font-settings: (
         font-style: italic,
         file: 'Marianne-Regular_Italic'
       ),
+      medium: (
+        font-weight: 500,
+        file: 'Marianne-Medium'
+      ),
+      medium-italic: (
+        font-weight: 500,
+        font-style: italic,
+        file: 'Marianne-Medium_Italic'
+      ),
       bold: (
         font-weight: 700,
         file: 'Marianne-Bold'
