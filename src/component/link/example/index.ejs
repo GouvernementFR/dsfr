@@ -11,3 +11,9 @@
 <%- sample('Lien seul LG', './sample/link-lg', {}, true); %>
 
 <%- sample('Lien seul désactivé', './sample/link-default', {link: {disabled: true}}, true); %>
+
+<%- section('Retour en haut de page', 'Le lien retour en haut de page est un \'fr-link\' composé de l\'icone \'arrow-up-fill\' alignée à gauche et du label "Haut de page". <br>Une fonction utilitaire disponible dans le core : <code>dsfr.tools.backToTop(event)</code> permet de scroller progressivement et de replacer le focus sur le premier element cliquable de la page.'); %>
+
+<%- sample('Haut de page simple - href="#"', './sample/link-back-to-top', {}, true); %>
+
+<%- sample('Haut de page smooth scroll + focus js', './sample/link-back-to-top', {link: {attributes: {onclick: "dsfr.tools.backToTop(event)"}}}, true); %>
