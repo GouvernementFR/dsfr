@@ -93,7 +93,6 @@
     @include padding(8v, md);
     @include margin-top(10v);
     @include margin-right(-100%);
-    z-index: z-index(base);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
