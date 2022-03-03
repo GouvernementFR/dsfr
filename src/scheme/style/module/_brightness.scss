@@ -1,0 +1,8 @@
+////
+/// Schemes Module : brightness
+/// @group schemes
+////
+
+@include theme-selector(dark) {
+  --brightness: 125%;
+}

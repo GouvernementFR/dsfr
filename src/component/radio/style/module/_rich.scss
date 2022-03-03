@@ -40,7 +40,8 @@
 
     @include hover-media-query {
       &:not(:disabled) + label {
-        @include hover-blend;
+        @include hover-tint;
+        @include enable-tint;
       }
     }
   }

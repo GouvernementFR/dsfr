@@ -45,12 +45,26 @@
   }
 }
 
-@mixin enable-tint() {
-  --hover-tint: var(--hover);
-  --active-tint: var(--active);
+@mixin enable-tint () {
+  @include tint-enabled(true, true);
 }
 
 @mixin disable-tint() {
-  --hover-tint: transparent;
-  --active-tint: transparent;
+  @include tint-enabled(false, false);
+}
+
+@mixin tint-enabled ($hover: null, $active: null) {
+  @if $hover {
+    --hover-tint: var(--hover);
+  }
+  @else if $hover == false {
+    --hover-tint: transparent;
+  }
+
+  @if $active {
+    --active-tint: var(--active);
+  }
+  @else if $active == false {
+    --active-tint: transparent;
+  }
 }

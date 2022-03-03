@@ -7,7 +7,7 @@
 
 * button.id (string) : id du bouton
 
-* button.secondary (boolean, optional) : si valeur true, bouton secondaire
+* button.kind (number, optional) : par défaut 1, qui équivaut au bouton primaire, sinon 2 pour secondary et 3 pour tertiary
 
 * button.type (string, optional) type du bouton
 
@@ -69,7 +69,19 @@ valeurs :
         break;
  }
 
- if (button.secondary === true) btnClasses.push(prefix +'-btn--secondary');
+ switch (button.kind) {
+     case 2:
+       btnClasses.push(prefix +'-btn--secondary');
+       break;
+
+     case 3:
+         btnClasses.push(prefix +'-btn--tertiary');
+         break;
+
+     case 4:
+         btnClasses.push(prefix +'-btn--tertiary-no-outline');
+         break;
+ }
 
  if (button.disabled === true) {
    if (tag === 'button') btnAttrs['disabled'] = '';

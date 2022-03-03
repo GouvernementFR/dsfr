@@ -1,5 +1,6 @@
 <% const sample = getSample(include); %>
 
+<%- section('Bouton primaire') %>
 <%- sample('Bouton simple', './sample/button-default', {}, true); %>
 
 <%- sample('Bouton simple SM', './sample/button-default', {button: {label: 'Label bouton SM', size:'sm'}}, true); %>
@@ -19,19 +20,49 @@
 
 <!-- <%- sample('Bouton tag div', './sample/button-default', {button: {tag:'div'}}, true); %> -->
 
-<%- sample('Bouton secondaire', './sample/button-default', {button: {secondary:true}}, true); %>
+<%- section('Bouton secondaire') %>
+<%- sample('Bouton secondaire', './sample/button-default', {button: {kind:2}}, true); %>
 
-<%- sample('Bouton secondaire désactivé', './sample/button-default', {button: {secondary:true, disabled:true}}, true); %>
+<%- sample('Bouton secondaire désactivé', './sample/button-default', {button: {kind:2, disabled:true}}, true); %>
 
-<%- sample('Bouton secondaire icon à gauche', './sample/button-default', {button: {secondary:true, icon :'checkbox-circle-line', iconPlace:'left'}}, true); %>
+<%- sample('Bouton secondaire icon à gauche', './sample/button-default', {button: {kind:2, icon :'checkbox-circle-line', iconPlace:'left'}}, true); %>
 
-<%- sample('Bouton secondaire icon à droite', './sample/button-default', {button: {secondary:true, icon :'checkbox-circle-line', iconPlace:'right'}}, true); %>
+<%- sample('Bouton secondaire icon à droite', './sample/button-default', {button: {kind:2, icon :'checkbox-circle-line', iconPlace:'right'}}, true); %>
 
-<%- sample('Bouton secondaire icon seule', './sample/button-default', {button: {secondary:true, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+<%- sample('Bouton secondaire icon seule', './sample/button-default', {button: {kind:2, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
 
 <p>L’exemple ci-dessous montre la possibilité d'appliquer le style du bouton secondaire sur un élément de type "lien" &lt;a&gt;. A n'appliquer qu'en cas <b>exceptionnel</b> d'impossibilité technique d'utiliser un 	&lt;button&gt;.</p>
-<%- sample('Bouton secondaire tag a href', './sample/button-default', {button: {secondary:true, tag :'a', attributes: {href:'#'}}}, true); %>
+<%- sample('Bouton secondaire tag a href', './sample/button-default', {button: {kind:2, tag :'a', attributes: {href:'#'}}}, true); %>
 
+<%- section('Bouton tertiaire') %>
+<%- sample('Bouton tertiaire', './sample/button-default', {button: {kind:3}}, true); %>
+
+<%- sample('Bouton tertiaire désactivé', './sample/button-default', {button: {kind:3, disabled:true}}, true); %>
+
+<%- sample('Bouton tertiaire icon à gauche', './sample/button-default', {button: {kind:3, icon :'checkbox-circle-line', iconPlace:'left'}}, true); %>
+
+<%- sample('Bouton tertiaire icon à droite', './sample/button-default', {button: {kind:3, icon :'checkbox-circle-line', iconPlace:'right'}}, true); %>
+
+<%- sample('Bouton tertiaire icon seule', './sample/button-default', {button: {kind:3, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+
+<p>L’exemple ci-dessous montre la possibilité d'appliquer le style du bouton secondaire sur un élément de type "lien" &lt;a&gt;. A n'appliquer qu'en cas <b>exceptionnel</b> d'impossibilité technique d'utiliser un 	&lt;button&gt;.</p>
+<%- sample('Bouton tertiaire tag a href', './sample/button-default', {button: {kind:3, tag :'a', attributes: {href:'#'}}}, true); %>
+
+<%- section('Bouton tertiaire sans contour') %>
+<%- sample('Bouton tertiaire sans contour', './sample/button-default', {button: {kind:4}}, true); %>
+
+<%- sample('Bouton tertiaire sans contour désactivé', './sample/button-default', {button: {kind:4, disabled:true}}, true); %>
+
+<%- sample('Bouton tertiaire sans contour icon à gauche', './sample/button-default', {button: {kind:4, icon :'checkbox-circle-line', iconPlace:'left'}}, true); %>
+
+<%- sample('Bouton tertiaire sans contour icon à droite', './sample/button-default', {button: {kind:4, icon :'checkbox-circle-line', iconPlace:'right'}}, true); %>
+
+<%- sample('Bouton tertiaire sans contour icon seule', './sample/button-default', {button: {kind:4, icon :'checkbox-circle-line', iconPlace:'only'}}, true); %>
+
+<p>L’exemple ci-dessous montre la possibilité d'appliquer le style du bouton secondaire sur un élément de type "lien" &lt;a&gt;. A n'appliquer qu'en cas <b>exceptionnel</b> d'impossibilité technique d'utiliser un 	&lt;button&gt;.</p>
+<%- sample('Bouton tertiaire sans contour tag a href', './sample/button-default', {button: {kind:4, tag :'a', attributes: {href:'#'}}}, true); %>
+
+<%- section('Groupe de bouton') %>
 <%- sample('Groupe de bouton', './sample/buttons-group', {buttonGroup: { groupCount: 3 }}, true); %>
 
 <%- sample('Groupe de bouton SM', './sample/buttons-group', {buttonGroup: {label: 'Label bouton SM', groupCount: 3, size:'sm'}}, true); %>

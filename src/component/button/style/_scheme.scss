@@ -20,5 +20,27 @@
         @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
       }
     }
+
+    &--tertiary,
+    &--tertiary-no-outline,
+    &--close {
+      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+    }
+
+    &--tertiary {
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+
+      @include disabled((legacy: $legacy, text: true, box-shadow: true, can-be-link: true)) {
+        @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+      }
+    }
+
+    &--tertiary-no-outline,
+    &--close {
+      @include disabled((legacy: $legacy, text: true, box-shadow: false, can-be-link: true)) {
+        @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+      }
+    }
   }
 }

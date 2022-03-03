@@ -32,8 +32,8 @@
     @include margin-x(0.5v);
     @include margin-bottom(4v);
 
-    &[aria-current] {
-      cursor: default !important;
+    &[aria-current]:not([href]) {
+      cursor: default;
     }
 
     &--first {

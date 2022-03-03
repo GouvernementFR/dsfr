@@ -7,14 +7,19 @@
   @include hover-type-selector($action-elements, all, true) {
     @include hover-tint;
   }
-}
 
-a {
-  @include disable-tint;
-}
-
-@include hover-media-query {
   @include hover-type-selector($action-elements, underline, true) {
     @include hover-underline;
   }
 }
+
+@include hover-type-selector($action-elements, tint) {
+  @include enable-tint;
+}
+
+@include hover-type-selector($action-elements, underline) {
+  @include tint-enabled(false, true);
+}
+
+
+

@@ -11,7 +11,9 @@
   line-height: $line-height;
 
   $min-height: space(map_get($size-settings, min-height));
-  min-height: $min-height;
+  @if $min-height > 0 {
+    min-height: $min-height;
+  }
 
   $max-icon-height: icon-size(md);
 
