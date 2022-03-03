@@ -198,8 +198,11 @@
   * fr-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
   */
   &--equisized {
+    --equisized-width: auto;
+
     #{ns(btn)} {
       justify-content: center;
+      width: var(--equisized-width);
     }
   }
 
