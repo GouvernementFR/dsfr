@@ -25,15 +25,19 @@ $underline-thickness: 0.0625em;
 @mixin link-underline() {
   background-image: var(--underline-img), var(--underline-img);
   background-position: 50% calc(50% + #{11.5 * $underline-thickness }), 50% calc(50% + #{10.5 * $underline-thickness });
-  background-size: 0 #{$underline-thickness }, 100% #{$underline-thickness };
   background-repeat: no-repeat, no-repeat;
   transition: background-size 0s;
+  @include link-underline-background-size(100%, 0);
+}
+
+@mixin link-underline-background-size($base-width: 100%, $hover-width: 100%) {
+  background-size: #{$hover-width} #{$underline-thickness }, #{$base-width} #{$underline-thickness };
 }
 
 @mixin hover-underline () {
   &:hover,
   &:active {
-    background-size: 100% #{$underline-thickness }, 100% #{$underline-thickness };
+    @include link-underline-background-size(100%, 100%);
   }
 }
 

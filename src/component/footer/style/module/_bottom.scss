@@ -54,6 +54,10 @@
  */
 &__bottom-link {
   @include text-style(xs);
+
+  &:not(:hover):not(:active) {
+    @include link-underline-background-size(0, 0);
+  }
 }
 
 /**
@@ -61,7 +65,6 @@
  */
 &__bottom-copy {
   * {
-    @include enable-underline;
     @include text-style(xs);
     @include margin-bottom(4v);
     @include margin-top(2v);
