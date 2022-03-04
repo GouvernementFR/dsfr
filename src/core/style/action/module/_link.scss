@@ -8,7 +8,6 @@ a {
 }
 
 :root {
-  --underline-width: 0;
   @include enable-underline;
 }
 
