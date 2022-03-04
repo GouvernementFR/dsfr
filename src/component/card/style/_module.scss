@@ -21,7 +21,7 @@
     }
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{ns(card__img)});
+  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
 
   &__img {
     @include relative(null, null, null, null, 100%, null);
