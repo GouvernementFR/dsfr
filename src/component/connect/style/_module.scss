@@ -6,7 +6,4 @@
 @import 'module/default';
 @import 'module/plus';
 // @import 'module/agent';
-
-#{ns-group(connect)} {
-  @include set-text-margin(0 0 4v 0);
-}
+@import 'module/group';
