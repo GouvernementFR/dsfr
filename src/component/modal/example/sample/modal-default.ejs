@@ -2,5 +2,5 @@
   let modal = locals.modal || {};
   let id = uniqueId('modal');
 %>
-<%- include('../../template/ejs/btn.ejs', {modal: { ...modal, id: id }}) %>
+<%- include('../../template/ejs/btn.ejs', {modalBtn: { ...modal, id: id }}) %>
 <%- include('../../template/ejs/modal.ejs', {modal: { ...modal, id: id }}) %>

@@ -39,7 +39,11 @@ modalClasses.push(`${prefix}-modal`);
 let modalAttrs = modal.attributes || {};
 
 const closeButton = modal.closeButton || {};
-closeButton.closeId = modal.id;
+closeButton.label = closeButton.label ? closeButton.label : 'Fermer';
+closeButton.title = closeButton.title ? closeButton.title : closeButton.label ? closeButton.label : 'Fermer';
+closeButton.attributes = {
+    'aria-controls': modal.id,
+}
 
 const gridClasses = [];
 const SIZES = {
@@ -92,7 +96,7 @@ switch(modal.size) {
             <div <%- includeClasses(gridClasses); %>>
                 <div class="<%= prefix %>-modal__body">
                     <div class="<%= prefix %>-modal__header">
-                        <%- include('../../../link/template/ejs/link-close', {link: closeButton} )%>
+                        <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...closeButton}}) %>
                     </div>
                     <div class="<%= prefix %>-modal__content">
                         <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
