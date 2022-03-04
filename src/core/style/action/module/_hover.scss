@@ -4,6 +4,10 @@
 ////
 
 @include hover-media-query {
+  :root {
+    --brighten: -1;
+  }
+
   @include hover-type-selector($action-elements, all, true) {
     @include hover-tint;
   }
@@ -20,6 +24,7 @@
 @include hover-type-selector($action-elements, underline) {
   @include tint-enabled(false, true);
 }
+
 
 
 

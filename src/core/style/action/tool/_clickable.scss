@@ -5,11 +5,10 @@
 
 @mixin clickable-selector($elements: $action-elements) {
   $selectors: ();
+  $elements: get-clickable-elements($elements);
   @each $element, $setting in $elements {
     $selector: map-get($setting, selector);
-    @if map-get($setting, clickable) {
-      $selectors: append($selectors, $selector, 'comma');
-    }
+    $selectors: append($selectors, $selector, 'comma');
   }
 
   #{$selectors} {

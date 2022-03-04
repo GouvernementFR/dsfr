@@ -68,3 +68,19 @@
     --active-tint: transparent;
   }
 }
+
+@mixin hover-brighten ($element, $img) {
+  @at-root #{$element} {
+    &:hover #{$img} {
+      --brightness: calc(100% + var(--brighten) * #{$hover-brighten});
+    }
+
+    &:active #{$img} {
+      --brightness: calc(100% + var(--brighten) * #{$hover-brighten * 2});
+    }
+  }
+}
+
+@mixin hover-brighten-filter () {
+  filter: brightness(var(--brightness));
+}
