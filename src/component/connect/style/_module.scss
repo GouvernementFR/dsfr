@@ -3,61 +3,6 @@
 /// @group connect
 ////
 
-#{ns(connect)} {
-  @include relative;
-  @include padding(1v 3v 1v 16v);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  user-select: none;
-  min-height: space(14v);
-
-  @include before ('', block) {
-    @include absolute(1v, null, 1v, 3v, 10v, 12v);
-    background-image: url(svg-encode($fc-logo-svg, true));
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: space(10v 12v);
-  }
-
-  &__login,
-  &__brand {
-    line-height: 1;
-    z-index: 1;
-  }
-
-  &__login {
-    font-size: map-get($login-size, default);
-    height: map-get($login-size, default);
-  }
-
-  &__brand {
-    font-weight: bold;
-    font-size: map-get($brand-size, default);
-    height: map-get($brand-size, default);
-  }
-
-  &--plus {
-    @include padding-right(12v);
-    @include after ('', block) {
-      @include absolute(4v, 3v, 4v, null, 6v, 6v);
-      background-repeat: repeat-x, repeat-y;
-      background-position: 50% 50%, 50% 50%;
-      background-size: 21.5% 21.5%, 21.5% 21.5%;
-    }
-  }
-
-  &--plus &__brand {
-    @include margin-right(-10px);
-    overflow: hidden;
-    @include width(100%);
-  }
-
-  /*
-  &--agent &__brand {
-    font-size: map-get($brand-size, agent);
-    height: map-get($brand-size, agent);
-  }
-   */
-}
+@import 'module/default';
+@import 'module/plus';
+// @import 'module/agent';

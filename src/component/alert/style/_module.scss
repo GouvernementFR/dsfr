@@ -20,7 +20,7 @@
   }
 
   #{ns(btn--close)} {
-    @include absolute(1v,3v);
+    @include absolute(1v,1v);
     @include nest-btn(sm, only, null, null, false);
   }
 
