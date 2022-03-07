@@ -212,7 +212,7 @@
   &--sm {
     #{ns(btn)} {
       @include has-not-icon {
-        @include nest-btn(sm, null, null, null, false);
+        @include nest-btn(sm, false, null, null, false);
       }
     }
 
@@ -248,7 +248,7 @@
   &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
     #{ns(btn)} {
       @include has-not-icon {
-        @include nest-btn(md, null, null, null, false);
+        @include nest-btn(md, false, null, null, false);
       }
     }
 
@@ -284,7 +284,7 @@
   &--lg {
     #{ns(btn)} {
       @include has-not-icon {
-        @include nest-btn(lg, null, null, null, false);
+        @include nest-btn(lg, false, null, null, false);
       }
     }
 

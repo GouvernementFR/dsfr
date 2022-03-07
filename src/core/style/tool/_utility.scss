@@ -14,11 +14,6 @@
     // breakpoints: all = xs, sm, md, lg, xl
     $breakpointsList: if($breakpointsVars == all, map-keys($breakpoints), $breakpointsVars);
 
-    // Ajoute xs dans tous les cas
-    @if index($breakpointsList, xs) == null {
-      $breakpointsList: if($breakpointsList == null, xs, join((xs), $breakpointsList));
-    }
-
     // si l'utilitaire n'est pas désactivé
     @if (map-get($utilityVars, 1) != false and map-get($utilityVars, active) != false) {
       @each $bp in $breakpointsList {

@@ -75,9 +75,12 @@
 
 @mixin icon-content($icon) {
   content: icon-glyph($icon);
-  font-weight: 400;
+
   @if is-deprecated($icon) {
     font-weight: 700;
+  }
+  @else {
+    font-weight: 400;
   }
 }
 

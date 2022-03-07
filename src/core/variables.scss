@@ -22,16 +22,16 @@ $variables: (
     input: true
   ),
   grid: (
-    breakpoints: sm md lg
+    breakpoints: first sm md lg
   ),
   display: (
     hr: true,
     ellipsis: true,
     hidden: (
-      breakpoints: all,
+      breakpoints: first sm md lg xl,
     ),
     unhidden: (
-      breakpoints: all,
+      breakpoints: sm md lg xl,
     ),
   ),
   colors: (
@@ -50,13 +50,13 @@ $variables: (
       through: 32,
       half: 2,
       special: auto,
-      breakpoints: md
+      breakpoints: first md
     ),
     padding: (
       from: 0,
       half: 2,
       through: 32,
-      breakpoints: md
+      breakpoints: first md
     )
   )
 );
