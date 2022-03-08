@@ -14,7 +14,7 @@
 }
 
 @mixin build-social-share-link($name, $icon) {
-  #{ns(share__link)}--#{$name} {
+  #{ns(share__btn)}--#{$name} {
     @include nest-share(md, only, $icon, null, false);
   }
 }

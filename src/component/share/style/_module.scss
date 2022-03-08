@@ -10,7 +10,7 @@
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
 
-  &__link {
+  &__btn {
     @include margin-x(1v);
     @include margin-bottom(2v);
   }
