@@ -31,6 +31,8 @@
     @include min-size(8v);
     @include margin-x(0.5v);
     @include margin-bottom(4v);
+    @include disable-underline;
+    @include relative;
 
     &[aria-current]:not([href]) {
       cursor: default;

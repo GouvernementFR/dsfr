@@ -28,8 +28,8 @@ let shareLinkClasses = shareLink.classes || [];
 let shareLinkAttrs = shareLink.attributes || {};
 const tag = shareLink.tag || 'a';
 
-shareLinkClasses.push(prefix + '-share__link');
-shareLinkClasses.push(prefix + '-share__link--' + shareLink.name);
+shareLinkClasses.push(prefix + '-share__btn');
+shareLinkClasses.push(prefix + '-share__btn--' + shareLink.name);
 if (shareLink.icon !== undefined) shareLinkClasses.push(prefix + '-fi-' + shareLink.icon);
 
 if (shareLink.disabled === true) {

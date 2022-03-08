@@ -74,26 +74,31 @@
     // bloc social
     @include set-text-margin(0 0 3v);
     @include set-title-margin(0 0 3v);
-    @include nest-link(md, only, null, null, true, true);
 
-    #{ns(links-group)} {
-      @include disable-list-style;
+    #{ns-group(btns)} {
+      &--inline {
+        @include margin-right(-4v);
+        @include margin-bottom(-4v);
+        @include width(auto);
+      }
 
-      &--lg {
-        @include nest-link(lg, only);
+      #{ns(btn)} {
+        justify-content: flex-start;
+      }
 
-        > li {
-          @include margin-right(2v);
-          @include margin-right(4v, md);
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include nest-btn(md, only, null, null, false);
+          }
         }
       }
 
-      > li {
-        @include margin-right(4v);
-        display: inline-flex;
-
-        &:last-child {
-          @include margin-right(0);
+      &--lg {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include nest-btn(lg, only, null, null, false);
+          }
         }
       }
     }

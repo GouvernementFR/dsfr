@@ -15,7 +15,7 @@ $pagination-build-settings:(
       icon-only: md
     )
   ),
-  border-radius: true
+  border-radius: false
 );
 
 $pagination-nest-settings: map-merge($pagination-build-settings, (places: only left right));

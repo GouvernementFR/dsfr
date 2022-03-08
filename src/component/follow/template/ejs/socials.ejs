@@ -12,8 +12,9 @@
 
 let socials = locals.socials || {networks: []};
 let socialsClasses = [prefix + '-follow__social'];
-let groupClasses = [prefix + '-links-group'];
-groupClasses.push(prefix + '-links-group--lg');
+let groupClasses = [prefix + '-btns-group'];
+groupClasses.push(prefix + '-btns-group--lg');
+groupClasses.push(prefix + '-btns-group--inline');
 %>
 
 <div <%- includeClasses(socialsClasses); %> >
@@ -21,7 +22,7 @@ groupClasses.push(prefix + '-links-group--lg');
   <ul  <%- includeClasses(groupClasses); %>>
     <% for (let i=0; i < socials.networks.length; i++) { %>
       <li>
-        <%- include('../../../link/template/ejs/link', { link: {attributes: {title: contentPlaceholder("Intitulé du lien") + " - nouvelle fenêtre"}, href: socials.networks[i].url, blank: true, label: socials.networks[i].label, classes: [prefix + '-link--' + socials.networks[i].label] }}); %>
+        <%- include('../../../button/template/ejs/button', { button: {tag: 'a', attributes: {title: contentPlaceholder("Intitulé du lien") + " - nouvelle fenêtre"}, href: socials.networks[i].url, blank: true, label: socials.networks[i].label, classes: [prefix + '-btn--' + socials.networks[i].label] }}); %>
       </li>
     <% } %>
   </ul>
