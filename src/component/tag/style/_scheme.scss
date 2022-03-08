@@ -28,14 +28,15 @@
         @include scheme-element-text-color(inverted grey, (legacy: $legacy));
         @include scheme-element-bg-transparent((legacy:$legacy));
 
-        $token: background action-high blue-france;
-        $type: decision;
-        $var: true;
-        @if $legacy {
-          $type: hex;
-          $var: false;
+        @include tag-punched-background(background action-high blue-france, $legacy);
+
+        &:hover {
+          @include tag-punched-background(background action-high blue-france, $legacy, (hover: true));
         }
-        background-image: punched-radial-gradient(get-color($token, $type, (var: $var, active: true))), punched-radial-gradient(get-color($token, $type, (var: $var, hover: true))), punched-radial-gradient(get-color($token, $type, (var: $var)));
+
+        &:active {
+          @include tag-punched-background(background action-high blue-france, $legacy, (active: true));
+        }
 
         @include disabled {
           background-image: none;

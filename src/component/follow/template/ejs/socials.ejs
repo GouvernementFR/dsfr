@@ -13,7 +13,7 @@
 let socials = locals.socials || {networks: []};
 let socialsClasses = [prefix + '-follow__social'];
 let groupClasses = [prefix + '-btns-group'];
-groupClasses.push(prefix + '-btns-group--lg');
+if (socials.size) groupClasses.push(`${prefix}-btns-group--${socials.size}`);
 groupClasses.push(prefix + '-btns-group--inline');
 %>
 

@@ -24,7 +24,3 @@
 @include hover-type-selector($action-elements, underline) {
   @include tint-enabled(false, true);
 }
-
-
-
-

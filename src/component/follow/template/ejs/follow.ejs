@@ -35,7 +35,8 @@
         </div>
       <% }
       if (follow.socials) {
-        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4'] %>
+        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4']
+        else follow.socials.size = 'lg'; %>
         <div <%- includeClasses(gClasses) %>>
           <%- include('socials.ejs', {socials: follow.socials}); %>
         </div>

@@ -46,6 +46,7 @@
         #{ns(btn)} {
           @include size(100%);
           @include min-size(null, 12v);
+          @include padding-left(0);
         }
       }
     }

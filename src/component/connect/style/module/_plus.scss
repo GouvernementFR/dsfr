@@ -3,9 +3,7 @@
 /// @group connect
 ////
 
-
 #{ns(connect)} {
-
   &--plus {
     @include padding-right(12v);
     @include after ('', block) {

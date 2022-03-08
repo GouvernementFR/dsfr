@@ -108,5 +108,5 @@
 @mixin build-link() {
   @include _build-link($links-settings) {
     @content;
-  };
+  }
 }
