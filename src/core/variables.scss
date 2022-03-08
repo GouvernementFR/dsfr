@@ -28,10 +28,10 @@ $variables: (
     hr: true,
     ellipsis: true,
     hidden: (
-      breakpoints: first sm md lg xl,
+      breakpoints: all,
     ),
     unhidden: (
-      breakpoints: sm md lg xl,
+      breakpoints: all,
     ),
   ),
   colors: (

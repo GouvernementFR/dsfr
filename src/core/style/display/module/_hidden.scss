@@ -7,10 +7,6 @@
   display: none !important;
 }
 
-@include class-start-with(#{ns('unhidden', '')}) {
-  display: none !important;
-}
-
 @include build-utility (display, unhidden) {
   display: inherit !important;
 }
