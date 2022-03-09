@@ -36,6 +36,7 @@
 
     &[aria-current]:not([href]) {
       cursor: default;
+      pointer-events: none;
     }
 
     &--first {
