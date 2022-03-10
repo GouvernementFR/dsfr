@@ -12,6 +12,6 @@
 
 <%- sample('Lien seul désactivé', './sample/link-default', {link: {disabled: true}}, true); %>
 
-<%- section('Retour en haut de page', 'Le lien retour en haut de page est un \'fr-link\' composé de l\'icone \'arrow-up-fill\' alignée à gauche et du label "Haut de page".<br>Placer un attribut <code>id</code> sur l\'élement le plus haut (ex: <<code>body id="top"></code>), et une ancre pointant vers cet id sur le lien "haut de page" (ex: <code>href="#top"</code>).'); %>
+<%- section('Retour en haut de page', 'Placer un attribut <code>id</code> sur l\'élement le plus haut (ex: <<code>body id="top"></code>), et une ancre pointant vers cet id sur le lien "haut de page" (ex: <code>href="#top"</code>).<br>Le lien haut de page est un lien classique <code>fr-link</code> composé de l\'icone <code>arrow-up-fill</code>, alignée à gauche, et du label "Haut de page".<br><br>Le lien peut être aligné sur la gauche ou la droite du contenu.<br><b>Actuce:</b> Pour aligner le lien à droite, l\'insérer dans une <<code>div class="fr-grid-row fr-grid-row--right"></code>.'); %>
 
 <%- sample('Lien Haut de page - id="top"', './sample/link-back-to-top', {link: {href: '#top'}}, true); %>
