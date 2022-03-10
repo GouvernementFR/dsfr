@@ -33,6 +33,7 @@ class Modal extends api.core.Disclosure {
     if (this.body) this.body.activate();
     this.isScrollLocked = true;
     this.setAttribute('aria-modal', 'true');
+    this.setAttribute('open', 'true');
     return true;
   }
 
@@ -40,6 +41,7 @@ class Modal extends api.core.Disclosure {
     if (!super.conceal(withhold, preventFocus)) return false;
     this.isScrollLocked = false;
     this.removeAttribute('aria-modal');
+    this.removeAttribute('open');
     if (this.body) this.body.deactivate();
     return true;
   }
