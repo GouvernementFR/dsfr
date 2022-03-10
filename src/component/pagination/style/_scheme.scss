@@ -8,8 +8,6 @@
     @include scheme-element-text-color(action-high grey, (legacy: $legacy));
 
     &__link {
-      background-image: none;
-
       &[aria-current] {
         @include scheme-element-bg-color(active blue-france, (legacy: $legacy));
         @include scheme-element-text-color(inverted blue-france, (legacy: $legacy));

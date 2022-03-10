@@ -84,25 +84,42 @@ valeurs :
  }
 
  if (button.disabled === true) {
-   if (tag === 'button') btnAttrs['disabled'] = '';
- } else if (tag === 'a') {
-   btnAttrs.href = button.href || '[url - à modifier]';
-  switch (true) {
-   case button.blank:
-   btnAttrs.target = '_blank';
-   break;
+     switch(tag) {
+         case 'input':
+         case 'button':
+             btnAttrs['disabled'] = '';
+             break;
 
-   case button.self:
-   btnAttrs.target = '_self';
-   break;
-  }
+         case 'a':
+             btnAttrs['aria-disabled'] = 'true';
+             btnAttrs.role = 'link';
+             break;
+     }
+ } else {
+     if (button.onclick) btnAttrs.onclick = button.onclick;
+
+     switch (tag) {
+         case 'a':
+             btnAttrs.href = button.href || '[url - à modifier]';
+             switch (true) {
+                 case button.blank:
+                     btnAttrs.target = '_blank';
+                     break;
+
+                 case button.self:
+                     btnAttrs.target = '_self';
+                     break;
+             }
+
+             if (button.rel) btnAttrs.rel = button.rel;
+             break;
+     }
  }
 
  if (button.title) btnAttrs['title'] = button.title;
  if (button.type !== undefined) btnAttrs['type'] = button.type;
  %>
 
-<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
-    <%= button.label %>
-</<%= tag %>>
+<% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
+<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> ><%= button.label %></<%= tag %>>
 

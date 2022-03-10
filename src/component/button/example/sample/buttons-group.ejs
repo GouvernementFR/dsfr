@@ -1,38 +1,38 @@
 <%#
 # exemple groupe de boutons
 
-* buttonGroup.buttons (array, optional): permet de définir les boutons individuellement
+* buttonsGroup.buttons (array, optional): permet de définir les boutons individuellement
 
-* buttonGroup.groupCount (integer, optional): Si buttons n'est pas définie, groupCount permet de générer ce nombre de boutons dans le groupe
+* buttonsGroup.groupCount (integer, optional): Si buttons n'est pas définie, groupCount permet de générer ce nombre de boutons dans le groupe
 
-* buttonGroup.label (string, optional): Si buttons n'est pas définie, label est définie pour tout les boutons
+* buttonsGroup.label (string, optional): Si buttons n'est pas définie, label est définie pour tout les boutons
 
-* buttonGroup.vary (boolean, optional): Si buttons n'est pas définie, génère des labels plus ou moins long
+* buttonsGroup.vary (boolean, optional): Si buttons n'est pas définie, génère des labels plus ou moins long
 
 #%>
 <%
-const buttonGroup = locals.buttonGroup || {}
-const buttons = buttonGroup.buttons || [];
+const buttonsGroup = locals.buttonsGroup || {}
+const buttons = buttonsGroup.buttons || [];
 
 const label = 'Label bouton';
 
-if (!buttons.length && buttonGroup.groupCount !== undefined) {
+if (!buttons.length && buttonsGroup.groupCount !== undefined) {
 
-  for (let i = 0; i < buttonGroup.groupCount; i++) {
-    const lbl = locals.lengthen(buttonGroup.vary ? i : 0, label);
+  for (let i = 0; i < buttonsGroup.groupCount; i++) {
+    const lbl = locals.lengthen(buttonsGroup.vary ? i : 0, label);
     buttons.push({
-      label: buttonGroup.label || lbl,
-      icon: buttonGroup.icon,
-      iconPlace: buttonGroup.iconPlace,
-      title: buttonGroup.iconPlace === 'only' ? locals.contentPlaceholder(lbl) : undefined,
-      type: buttonGroup.type,
-      disabled: buttonGroup.disabled,
-      tag: buttonGroup.tag,
-      kind: i > 0 || !buttonGroup.hierarchy ? 2 : 1
+      label: buttonsGroup.label || lbl,
+      icon: buttonsGroup.icon,
+      iconPlace: buttonsGroup.iconPlace,
+      title: buttonsGroup.iconPlace === 'only' ? locals.contentPlaceholder(lbl) : undefined,
+      type: buttonsGroup.type,
+      disabled: buttonsGroup.disabled,
+      tag: buttonsGroup.tag,
+      kind: i > 0 || !buttonsGroup.hierarchy ? 2 : 1
     });
   }
-  buttonGroup.buttons = buttons;
+  buttonsGroup.buttons = buttons;
 }
 %>
 
-<%- include('../../template/ejs/buttons-group.ejs', {buttonGroup: buttonGroup}) %>
+<%- include('../../template/ejs/buttons-group.ejs', {buttonsGroup: buttonsGroup}) %>
