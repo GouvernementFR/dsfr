@@ -3,28 +3,6 @@
 let share = locals.share || {};
 let data = {};
 
-/**
- * Fonction pour générer un objet shareLink
- **/
-function buildShareButton(type, label, href, width, height, disabled, comments) {
-  const title = `${label} - ${disabled ? 'désactivé' : 'nouvelle fenêtre'}`;
-  return {
-    name: name,
-    tag: 'a',
-    classes: [`${prefix}-btn--${modifier}`],
-    label: label,
-    comments: comments,
-    disabled: disabled,
-    attributes: {
-      title: title,
-      href: href,
-      target: '_blank',
-      rel: 'noopener',
-      onclick: `window.open(this.href,'${label}','toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${width},height=${height}'); event.preventDefault();`
-    }
-  }
-}
-
 data.share = {
   title: 'Partager la page',
   text: 'Veuillez <a href=' + contentPlaceholder("url page autorisation cookies") + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
