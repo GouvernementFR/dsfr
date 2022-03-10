@@ -4,6 +4,7 @@
 ////
 
 #{ns(logo)} {
+  @include set-text-margin(0);
   @include disable-underline;
   display: inline-block;
   @include padding(1em);
@@ -14,7 +15,6 @@
   vertical-align: middle;
   text-indent: -0.1em;
   @include logo-size(md);
-  @include margin-bottom(0);
 
   @include before('', block) {
     background-repeat: no-repeat, no-repeat, no-repeat;
