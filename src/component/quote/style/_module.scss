@@ -71,7 +71,7 @@
   &__author {
     @include font-weight(bold);
     @include text-style(sm);
-    @include margin-bottom(1v);
+    @include set-text-margin(0 0 1v);
   }
 
   &__image {

@@ -6,11 +6,6 @@
 #{ns(highlight)} {
   @include padding-left(6v);
   @include text-style(md);
-
   @include padding-left(8v, md);
   @include margin-left(8v, md);
-
-  p {
-    @include margin-bottom(0);
-  }
 }
