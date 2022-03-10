@@ -30,13 +30,19 @@
  */
 &__top-list {
   @include margin(0);
+
+  li {
+    @include margin-bottom(3v);
+  }
 }
 
 /**
  * Style du lien
  */
 &__top-link {
-  display: block;
   @include text-style(xs);
-  @include margin-bottom(3v);
+
+  &:not(:hover):not(:active) {
+    @include link-underline-background-size(0, 0);
+  }
 }

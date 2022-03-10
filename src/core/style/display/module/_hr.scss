@@ -3,8 +3,14 @@
 /// @group core
 ////
 
-@include build-utility(display, hr){
+// TODO: inclure le reset dans les variables
+hr {
   @include build-hr();
+}
+
+@include build-utility (display, hr) {
+  @include build-hr();
+
   &--sm {
     @include width(40v);
     @include margin-x(auto);

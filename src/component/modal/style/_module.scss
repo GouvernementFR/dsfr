@@ -89,7 +89,7 @@
     flex: auto 0 0;
     @include display-flex(null, center);
     @include padding(4v 4v 2v);
-    @include padding(4v, md);
+    @include padding(4v 8v, md);
   }
 
   &__content {

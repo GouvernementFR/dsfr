@@ -35,38 +35,52 @@
   }
 }
 
-@mixin hover-blend($background-images: (), $background-sizes: (), $background-positions: ()) {
-  --hsla: #{css-hsl-alpha(var(--blend), var(--a))};
-  --blend-size: 0; // 2048px 2048px;
-  --blend-position: 50%;
-  --a: 0;
-
-  @include hover-blend-background($background-images, $background-sizes, $background-positions);
-
+@mixin hover-tint () {
   &:hover {
-    --a: #{$hover-alpha};
+    background-color: var(--hover-tint);
   }
 
   &:active {
-    --a: #{$active-alpha};
+    background-color: var(--active-tint);
   }
 }
 
-@mixin hover-blend-background-size($background-sizes: ()) {
-  background-size: $background-sizes, var(--blend-size);
+@mixin enable-tint () {
+  @include tint-enabled(true, true);
 }
 
-@mixin hover-blend-background($background-images: (), $background-sizes: (), $background-positions: ()) {
-  background-repeat: no-repeat;
-  @include hover-blend-background-size($background-sizes);
-  background-position: $background-positions, var(--blend-position);
-  background-image: $background-images, radial-gradient(circle at center, var(--hsla), var(--hsla) 3%);
+@mixin disable-tint() {
+  @include tint-enabled(false, false);
 }
 
-@mixin enable-blend() {
-  --blend-full-size: 100%;
+@mixin tint-enabled ($hover: null, $active: null) {
+  @if $hover {
+    --hover-tint: var(--hover);
+  }
+  @else if $hover == false {
+    --hover-tint: transparent;
+  }
+
+  @if $active {
+    --active-tint: var(--active);
+  }
+  @else if $active == false {
+    --active-tint: transparent;
+  }
 }
 
-@mixin disable-blend() {
-  --blend-full-size: 0;
+@mixin hover-brighten ($element, $img) {
+  @at-root #{$element} {
+    &:hover #{$img} {
+      --brightness: calc(100% + var(--brighten) * #{$hover-brighten});
+    }
+
+    &:active #{$img} {
+      --brightness: calc(100% + var(--brighten) * #{$hover-brighten * 2});
+    }
+  }
+}
+
+@mixin hover-brighten-filter () {
+  filter: brightness(var(--brightness));
 }

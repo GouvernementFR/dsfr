@@ -16,53 +16,59 @@
   @if $type == hex {
     @return _get-color-hex($token, $options);
   }
-  @else if $type == hsl {
-    @return _get-color-hsl($token, $options);
-  }
   @else if $type == decision {
     @return _get-color-decision($token, $options);
   }
   @else if $type == set {
     @return _get-color-set($token, $options);
   }
-  @else if $type == blend {
-    @return _get-color-blend($token, $options);
-  }
 }
 
 @function _get-color-hex($token, $options) {
   $theme: map-get($options, theme);
-  $option: _get-option($token, $theme);
-  @if length($option) > 4 {
-    @return _get-color-hsl($token, $options);
+  $settings: _get-set-settings($token);
+  $index: 1;
+  @if $theme == dark {
+    $index: 2;
   }
-  @return nth($option, 1);
-}
+  $name: nth($settings, $index);
 
-@function _get-color-hsl($token, $options) {
-  $theme: map-get($options, theme);
-  $alpha: map-get($options, alpha);
-
-  $option: _get-option($token, $theme);
-  $func: 'hsl';
-  $values: '#{nth($option, 2)},#{nth($option, 3)},#{nth($option, 4)}';
-
-  @if length($option) > 4 {
-    $func: 'hsla';
-    $values: '#{$values},#{nth($option, 5)}';
+  @if not map-has-key($scheme-options, $name) {
+    @error ('color ' + $name + ' doesn\'t exists');
   }
 
-  $hsl: '#{$func}(#{$values})';
+  $option: map-get($scheme-options, $name);
 
-  @return unquote($hsl);
+  $hex: nth($option, 1);
+
+  @if map-get($options, hover) {
+    $hex: nth($option, 2);
+  }
+
+  @if map-get($options, active) {
+    $hex: nth($option, 3);
+  }
+
+  @if length($settings) > 2 {
+    $setting: nth($settings, 3);
+    @if map-has-key($setting, alpha) {
+      @return rgba($hex, map-get($setting, alpha));
+    }
+  }
+
+  @return $hex;
 }
 
 @function _get-color-decision($token, $options) {
   $var: map-get($options, var);
   $prop: --#{nth($token, 1)}-#{nth($token, 2)}-#{nth($token, 3)};
 
-  @if map-get($options, blend) == true {
-    $prop: #{$prop}-blend;
+  @if map-get($options, hover) == true {
+    $prop: #{$prop}-hover;
+  }
+
+  @if map-get($options, active) == true {
+    $prop: #{$prop}-active;
   }
 
   @if map-get($options, var) == true {
@@ -90,44 +96,24 @@
 
   $prop: --#{$name};
   @if length($settings) > 2 {
-    $prop: _set-prop-alpha($prop, nth($settings, 3));
+    $params: nth($settings, 3);
+    @if map-has-key($params, alpha) {
+      $prop: _set-prop-alpha($prop, map-get($params, alpha));
+    }
   }
+
+  @if map-get($options, hover) == true {
+    $prop: #{$prop}-hover;
+  }
+
+  @if map-get($options, active) == true {
+    $prop: #{$prop}-active;
+  }
+
   @if map-get($options, var) == true {
     @return var($prop);
   }
   @return $prop;
-}
-
-@function _get-color-blend($token, $options) {
-  $theme: map-get($options, theme);
-
-  $option: _get-option($token, $theme);
-  $hue: nth($option, 2);
-  $saturation: nth($option, 3);
-  $base: nth($option, 4);
-
-  $lightness: $base;
-
-  @if $theme == light {
-    @if $lightness > 35% {
-      $lightness: $base - 25%;
-    }
-    @else {
-      $lightness: $base + 25%;
-    }
-  }
-  @else {
-    @if $lightness < 70% {
-      $lightness: $base + 25%;
-    }
-    @else {
-      $lightness: $base - 25%;
-    }
-  }
-
-  $hsl: #{$hue}, #{$saturation}, #{$lightness};
-
-  @return $hsl;
 }
 
 /// Retourne l'option correspondante
@@ -170,41 +156,16 @@
   }
   $decision: map-get($families, $family);
   $shade: nth($decision, 1);
-  $options: ();
-  @if length($decision) > 1 {
-    $options: nth($decision, 2);
-  }
 
   $set-families: map-get($scheme-sets, $family);
   $set-shades: map-get($set-families, $tint);
   $settings: map-get($set-shades, $shade);
 
-  @if map-has-key($options, alpha) {
-    $settings: append($settings, map-get($options, alpha));
+  @if length($decision) > 1 {
+    $settings: append($settings, nth($decision, 2));
   }
 
   @return $settings;
-}
-
-@function _get-option($token, $theme: light) {
-  $settings: _get-set-settings($token);
-  $index: 1;
-  @if $theme == dark {
-    $index: 2;
-  }
-  $name: nth($settings, $index);
-
-  @if not map-has-key($scheme-options, $name) {
-    @error ('color ' + $name + ' doesn\'t exists');
-  }
-
-  $option: map-get($scheme-options, $name);
-
-  @if length($settings) > 2 {
-    $option: append($option, nth($settings, 3));
-  }
-
-  @return $option;
 }
 
 @function _set-prop-alpha($prop, $alpha: 1) {

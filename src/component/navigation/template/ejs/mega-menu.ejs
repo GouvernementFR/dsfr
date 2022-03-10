@@ -16,7 +16,7 @@
     <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-lg" >
         <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
             <div class="<%= prefix %>-col-12 <%= prefix %>-mb-n3v">
-              <%- include('../../../link/template/ejs/link-close', {link: { closeId: menu.collapseId, label: "Fermer" }}); %>
+              <%- include('../../../button/template/ejs/button-close', {button: { closeId: menu.collapseId, label: "Fermer" }}); %>
             </div>
             <%
                 if (menu.leader !== undefined) {

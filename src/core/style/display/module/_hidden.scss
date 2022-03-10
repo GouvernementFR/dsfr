@@ -3,10 +3,10 @@
 /// @group core
 ////
 
-@include build-utility(display, hidden){
+@include build-utility (display, hidden) {
   display: none !important;
 }
 
-@include build-utility(display, unhidden){
+@include build-utility (display, unhidden) {
   display: inherit !important;
 }

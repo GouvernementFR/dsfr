@@ -3,8 +3,8 @@
 /// @group core
 ////
 
+@import 'scheme/heading';
+
 @mixin _core-typography-scheme($legacy: false) {
-  @include title-selector {
-    @include scheme-element-text-color(title grey, (legacy:$legacy));
-  }
+  @include _core-typography-scheme-heading($legacy);
 }

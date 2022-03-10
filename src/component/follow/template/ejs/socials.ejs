@@ -10,19 +10,28 @@
 %>
 <% eval(include('../../../../core/index.ejs'));
 
-let socials = locals.socials || {networks: []};
+let socials = locals.socials || {buttons: []};
 let socialsClasses = [prefix + '-follow__social'];
-let groupClasses = [prefix + '-links-group'];
-groupClasses.push(prefix + '-links-group--lg');
+
+const mapSocialButton = (data) => {
+  const button = {
+      tag: 'a',
+      title: data.title,
+      label: data.label,
+      href: data.url,
+      blank: true,
+      classes: [`${prefix}-btn--${data.type}`]
+  }
+  return button;
+};
+
+const buttonsGroup = {
+    size: socials.size || 'md',
+    buttons: socials.buttons.map(button => mapSocialButton(button))
+}
 %>
 
 <div <%- includeClasses(socialsClasses); %> >
   <p class="<%= prefix %>-h5"><%- socials.title %></p>
-  <ul  <%- includeClasses(groupClasses); %>>
-    <% for (let i=0; i < socials.networks.length; i++) { %>
-      <li>
-        <%- include('../../../link/template/ejs/link', { link: {attributes: {title: contentPlaceholder("Intitulé du lien") + " - nouvelle fenêtre"}, href: socials.networks[i].url, blank: true, label: socials.networks[i].label, classes: [prefix + '-link--' + socials.networks[i].label] }}); %>
-      </li>
-    <% } %>
-  </ul>
+  <%- include('../../../button/template/ejs/buttons-group', {buttonsGroup : buttonsGroup}); %>
 </div>
