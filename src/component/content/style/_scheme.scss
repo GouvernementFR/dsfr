@@ -1,0 +1,14 @@
+////
+/// Content Scheme
+/// @group content
+////
+
+@mixin _content-scheme($legacy: false) {
+  #{ns(content-media)} {
+    &__transcription {
+      #{ns(btn)} {
+        @include btn-kind-scheme(4);
+      }
+    }
+  }
+}

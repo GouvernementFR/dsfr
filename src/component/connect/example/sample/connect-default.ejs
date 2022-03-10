@@ -1,0 +1,13 @@
+<%
+const connect = locals.connect || {}
+const data = {
+  ...locals.connect,
+  desc: connect.desc || 'FranceConnect est la solution proposée par l\’État pour sécuriser et simplifier la connexion à vos services en ligne.',
+  link: connect.link || {
+    label: 'Qu’est ce que France Connect ?',
+    href: 'https://franceconnect.gouv.fr/'
+  },
+}
+
+%>
+<%- include('../../template/ejs/connect.ejs', {connect: data}) %>

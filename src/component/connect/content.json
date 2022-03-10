@@ -1,0 +1,12 @@
+{
+  "login": {
+    "fr": "S’identifier avec",
+    "en": "Sign in with",
+    "de": "Einloggen mit",
+    "es": "Iniciar sesion con"
+  },
+  "brand": {
+    "default": "FranceConnect",
+    "plus": "FranceConnect+"
+  }
+}

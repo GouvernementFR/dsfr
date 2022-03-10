@@ -54,16 +54,21 @@
  */
 &__bottom-link {
   @include text-style(xs);
+
+  &:not(:hover):not(:active) {
+    @include link-underline-background-size(0, 0);
+  }
 }
 
 /**
  * Copyright
  */
 &__bottom-copy {
+  @include set-text-margin(0 0 4v 0);
+  @include margin-top(2v);
+  @include enable-link-style;
+
   * {
-    @include enable-link-style;
     @include text-style(xs);
-    @include margin-bottom(4v);
-    @include margin-top(2v);
   }
 }

@@ -92,7 +92,7 @@ switch(modal.size) {
             <div <%- includeClasses(gridClasses); %>>
                 <div class="<%= prefix %>-modal__body">
                     <div class="<%= prefix %>-modal__header">
-                        <%- include('../../../link/template/ejs/link-close', {link: closeButton} )%>
+                        <%- include('../../../button/template/ejs/button-close', {button: closeButton} )%>
                     </div>
                     <div class="<%= prefix %>-modal__content">
                         <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">

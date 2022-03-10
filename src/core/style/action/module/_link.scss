@@ -1,0 +1,32 @@
+////
+/// Core Module : Action link
+/// @group core
+////
+
+a {
+  @include a-reset;
+}
+
+:root {
+  @include enable-underline;
+}
+
+// TODO: à checker avec <area href="" >
+[href] {
+  @include link-underline;
+}
+
+// TODO: à checker avec <form target="_blank" >
+[target="_blank"] {
+  @include link-blank;
+}
+
+#{ns(raw-link)} {
+  @include disable-underline;
+}
+
+#{ns(reset-link)} {
+  @include disable-underline;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

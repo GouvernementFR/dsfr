@@ -28,7 +28,7 @@
     }
   }
 
-  #{ns(link--close)} {
+  #{ns(btn--close)} {
     display: none;
     @include respond-from(lg) {
       display: flex;

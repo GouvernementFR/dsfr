@@ -1,0 +1,14 @@
+<%
+const connect = locals.connect || {}
+const data = {
+  ...locals.connect,
+  type: 'plus',
+  desc: connect.desc || 'FranceConnect+ est la solution proposée par l’État pour vous connecter à vos démarches les plus sensibles.',
+  link: connect.link || {
+    label: 'Qu’est ce que France Connect+ ?',
+    href: 'https://franceconnect.gouv.fr/france-connect-plus'
+  },
+}
+
+%>
+<%- include('connect-default.ejs', {connect: data}) %>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FranceConnect</title>
+    <link href="fr-connect.css" rel="stylesheet" />
+</head>
+<body style="margin: 20px; padding: 0;">
+<%
+function getSample (include) {
+    return (title, path, data, snippet, layout, layoutData) => {
+        let component = include(path, JSON.parse(JSON.stringify(data)));
+        %>
+        <h4><%= title %></h4>
+
+        <div>
+            <%- component %>
+        </div>
+        <%
+    }
+}
+
+locals.getSample = getSample;
+ %>
+
+<%- include(path, {standalone: true}); %>
+</body>
+</html>

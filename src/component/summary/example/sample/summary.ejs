@@ -2,7 +2,7 @@
 const getItem = (id) => {
     return {
         href: `#anchor-${id}`,
-        label: 'Titre du lien'
+        label: String(id).indexOf('6') > -1 ? lorem() : 'Titre du lien'
     }
 };
 

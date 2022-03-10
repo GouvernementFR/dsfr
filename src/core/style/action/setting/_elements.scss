@@ -28,15 +28,15 @@ $action-elements: (
     cursor: (
       pointer: (),
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     ),
     hover: (
-      selector: '&:not([disabled]):not(:disabled)',
-      type: blend
+      selector: '&:not(:disabled)',
+      type: tint
     ),
     disabled: (
-      selector: '&[disabled], &:disabled'
+      selector: '&:disabled'
     ),
     clickable: true
   ),
@@ -45,11 +45,11 @@ $action-elements: (
     focus: (),
     cursor: (
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     ),
     disabled: (
-      selector: '&[disabled], &:disabled'
+      selector: '&:disabled'
     )
   ),
   choices: (
@@ -62,11 +62,11 @@ $action-elements: (
         selector: '&, & + label'
       ),
       not-allowed: (
-        selector: '&[disabled], &[disabled] + label, &:disabled + label'
+        selector: '&:disabled, &:disabled + label'
       )
     ),
     disabled: (
-      selector: '&[disabled], &[disabled] + label, &:disabled + label',
+      selector: '&:disabled, &:disabled + label',
     )
   ),
   input-upload: (
@@ -74,7 +74,7 @@ $action-elements: (
     cursor: (
       pointer: (),
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     )
   ),
@@ -83,21 +83,22 @@ $action-elements: (
     cursor: (
       pointer: (),
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     )
   ),
   input-buttons: (
     selector: 'input[type="button"], input[type="image"], input[type="reset"], input[type="submit"]',
+    focus: (),
     cursor: (
       pointer: (),
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     ),
     hover: (
-      selector: '&:not([disabled]):not(:disabled)',
-      type: blend
+      selector: '&:not(:disabled)',
+      type: tint
     ),
     clickable: true
   ),
@@ -107,7 +108,7 @@ $action-elements: (
     cursor: (
       pointer: (),
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     )
   ),
@@ -117,11 +118,11 @@ $action-elements: (
     cursor: (
       pointer: (),
       not-allowed: (
-        selector: '&[disabled], &:disabled'
+        selector: '&:disabled'
       )
     ),
     disabled: (
-      selector: '&[disabled], &:disabled'
+      selector: '&:disabled'
     )
   ),
   tabindex: (

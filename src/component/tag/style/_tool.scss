@@ -23,3 +23,19 @@
     @content;
   }
 }
+
+@mixin tag-punched-background ($token, $legacy, $options: ()) {
+  $legacy-target: ie11;
+  $type: hex;
+  @if not $legacy {
+    $legacy-target: null;
+    $type: decision;
+    $options: map-merge($options, (var: true));
+  }
+
+  $result: get-color($token, $type, $options);
+
+  @include legacy($legacy-target) {
+    background-image: radial-gradient(circle at 100% #{space(1v)}, transparent #{space(2.3125v)}, #{$result} #{space(2.5v)});
+  }
+}

@@ -27,7 +27,8 @@
  * Contenu texte simple
  */
 &__content-desc {
-  @include margin(0 0 2v);
+  @include enable-underline;
+  @include set-text-margin(0 0 2v 0);
   @include size(100%);
   @include text-style(sm);
 }
@@ -57,8 +58,10 @@
 }
 
 &__content-link {
-  @include enable-link-style;
-  @include link-blank;
   font-weight: bold;
   @include text-style(sm);
+
+  &:not(:hover):not(:active) {
+    @include link-underline-background-size(0, 0);
+  }
 }
