@@ -16,14 +16,13 @@ $variables: (
     focus: true,
     heading: true,
     hr: true,
-    link: true,
     list: true,
     text: true,
     button: true,
     input: true
   ),
   grid: (
-    breakpoints: sm md lg
+    breakpoints: first sm md lg
   ),
   display: (
     hr: true,
@@ -36,16 +35,13 @@ $variables: (
     ),
   ),
   colors: (
-    // shadow: (
-    //   active: false,
-    //   breakpoints: sm md lg
-    // ),
   ),
   typography: (
     text: true,
     title: true,
     font-weight: (
-      values: 300 400 700 900, // 100 200 300 400 500 600 700 800 900 = 'all'
+      // values: 100 200 300 400 500 600 700 800 900 = 'all'
+      values: 300 400 700 900
     )
   ),
   spacing: (
@@ -54,13 +50,13 @@ $variables: (
       through: 32,
       half: 2,
       special: auto,
-      breakpoints: md
+      breakpoints: first md
     ),
     padding: (
       from: 0,
       half: 2,
       through: 32,
-      breakpoints: md
+      breakpoints: first md
     )
   )
 );

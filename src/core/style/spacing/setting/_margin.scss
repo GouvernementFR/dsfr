@@ -17,7 +17,7 @@ $spacing-settings: (
     through: 32,
     breakpoints: md
   )
-)!default;
+) !default;
 
 @if (map_has_key($variables, spacing)) {
   $spacing-settings: map-get($variables, spacing);

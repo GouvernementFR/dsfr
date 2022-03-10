@@ -5,7 +5,7 @@
 
 #{ns(sidemenu)} {
   @include disable-list-style;
-  @include disable-link-style;
+  @include disable-underline;
   @include set-text-margin(0);
   @include set-title-margin(0);
   @include relative;

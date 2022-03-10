@@ -1,0 +1,37 @@
+////
+/// Connect action
+/// @group connect
+////
+
+#{ns(connect)} {
+  &:focus,
+  &:focus-visible {
+    z-index: z-index(focus);
+  }
+}
+
+@include focusable-selector ($clickable-elements) {
+  @at-root #{selector-unify(&, ns(connect))} {
+    outline-offset: 2px;
+    outline-width: 2px;
+    outline-color: $focus-color;
+  }
+}
+
+@include focusable-selector-focus ($clickable-elements) {
+  @at-root #{selector-unify(&, ns(connect))} {
+    outline-style: solid;
+  }
+}
+
+@include focusable-selector-focus-not-visible ($clickable-elements) {
+  &#{ns(connect)} {
+    outline-style: none;
+  }
+}
+
+@include focusable-selector-focus-visible ($clickable-elements) {
+  &#{ns(connect)} {
+    outline-style: solid;
+  }
+}

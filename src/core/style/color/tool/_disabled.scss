@@ -40,7 +40,7 @@
 ///   - text {boolean}: true, applique le token text disabled sur la couleur de texte
 ///   - box-shadow {}: si true, applique le token border disabled sur l'élément avec la box-shadow par défaut (encadré de 1 px). si une valeur de box-shadow est fournie, applique cette valeur (voir get-box-shadow)
 @mixin disabled($options: ()) {
-  $selectors: '&:disabled, &[disabled]';
+  $selectors: '&:disabled';
   @if map-get($options, can-be-link) {
     $selectors: append($selectors, selector-associate(&, 'a:not([href])'), comma);
   }

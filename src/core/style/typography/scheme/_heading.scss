@@ -1,0 +1,20 @@
+////
+/// Core Scheme : Reset headings
+/// @group core
+////
+
+@mixin _core-typography-scheme-heading($legacy: false) {
+  @include title-selector {
+    @include scheme-element-text-color(title grey, (legacy:$legacy));
+  }
+
+  $titles: ();
+  @each $title, $variation in ($title-settings) {
+    @if str-index(quote($title), 'h') == 1 {
+      $titles: append($titles, $title, comma);
+    }
+  }
+  #{$titles} {
+    @include scheme-element-text-color(title grey, (legacy: $legacy));
+  }
+}

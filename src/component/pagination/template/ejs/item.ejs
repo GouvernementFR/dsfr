@@ -47,7 +47,10 @@ switch(true) {
     break;
 }
 
-if (paginationItem.displayedLg === true) classes.push(prefix + '-displayed-lg');
+if (paginationItem.displayedLg === true) {
+  classes.push(prefix + '-hidden');
+  classes.push(prefix + '-unhidden-lg');
+}
 if (paginationItem.disabled) {
   switch(tag) {
       case 'input':

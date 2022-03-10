@@ -4,11 +4,7 @@
 ////
 
 @import 'scheme/body';
-@import 'scheme/heading';
-@import 'scheme/hr';
 
 @mixin _core-reset-scheme($legacy: false) {
   @include _core-reset-body-scheme($legacy);
-  @include _core-reset-heading-scheme($legacy);
-  @include _core-reset-hr-scheme($legacy);
 }

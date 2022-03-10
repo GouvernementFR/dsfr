@@ -1,0 +1,16 @@
+////
+/// Connect action
+/// @group connect
+////
+
+@include cursor-selector(pointer, $clickable-elements) {
+  &#{ns(connect)} {
+    cursor: pointer;
+  }
+}
+
+@include cursor-selector(not-allowed, $clickable-elements) {
+  &#{ns(connect)} {
+    cursor: not-allowed;
+  }
+}
