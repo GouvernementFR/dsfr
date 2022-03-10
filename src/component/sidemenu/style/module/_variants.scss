@@ -25,7 +25,7 @@
    * Modificateur pour que le sidemenu soit sticky
    */
   &--sticky {
-    @include sticky(0, null, null, null, null, 100vh);
+    @include sticky(2v);
     overflow: auto;
   }
 
@@ -33,12 +33,12 @@
    * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
    */
   &--sticky-full-height {
-    @include sticky(0, null, null, null, null, 100vh);
+    @include sticky(2v, null, null, null, null, 100vh);
     overflow: auto;
 
     #{ns(sidemenu__inner)} {
       overflow: auto;
-      @include size(null, 100vh);
+      @include size(null, 100%);
     }
   }
 
