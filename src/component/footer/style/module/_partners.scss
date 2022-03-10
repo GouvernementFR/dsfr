@@ -17,10 +17,7 @@
    */
   a {
     @include display-flex(null, center, center);
-    @include size(160px, 90px);
-    // @include padding(2v);
     @include scheme-element-no-box-shadow;
-    // @include margin(0 0 0 4v, md);
   }
 
   /**
@@ -28,7 +25,7 @@
    */
   #{ns(footer__logo)} {
     @include size(auto, auto);
-    max-width: 100%;
+    @include margin(1v);
   }
 
   + #{ns(footer__bottom)} {
@@ -51,11 +48,21 @@
  * Container des logos partenaires (principaux et secondaires)
  */
 &__partners-logos {
-  @include display-flex(null, null, null, wrap);
+  @include display-flex(column, null, null, wrap);
+  @include margin(1v 0 -1v 0);
+
+  @include respond-from(sm) {
+    @include display-flex(row, flex-start, flex-start);
+    @include margin(1v 0 -1v -1v);
+    @include before('', block) {
+      order: 2;
+      flex: 1;
+    }
+  }
 
   @include respond-from(md) {
     flex-wrap: nowrap;
-    @include margin(0 -4v);
+    @include margin(1v -3v -1v -1v);
   }
 }
 
@@ -63,27 +70,18 @@
  * Container des logos partenaires principaux
  */
 &__partners-main {
-  flex-basis: 100%;
-  @include padding-top(2v);
   @include display-flex(row,null,center);
-
-  a {
-    @include margin(0 0 0 4v, md);
-  }
+  @include margin-x(auto);
+  @include margin-bottom(2v);
 
   + #{ns(footer__partners-sub)} {
-    @include padding-top(4v);
 
     @include respond-from(md) {
       & > ul {
         justify-content: flex-end;
 
         & > li {
-          @include margin(0 4v 0 0);
-
-          a {
-            @include margin-left(0);
-          }
+          @include margin(0 2v 0 0);
         }
       }
       @include padding-left(8v);
@@ -92,9 +90,7 @@
   }
 
   @include respond-from(sm) {
-    flex-basis: auto;
-    @include padding-top(0);
-    @include margin-top(2v);
+    order: 1;
   }
 }
 
@@ -102,15 +98,14 @@
  * Container des logos partenaires secondaires
  */
 &__partners-sub {
-  @include margin(4v -4v 0, sm);
-  @include margin(2v 0 0 0, md);
+  @include margin-bottom(2v);
 
   &,
   & > ul {
-    flex-basis: 100%;
     @include display-flex(column, center, null, wrap);
     @include respond-from(sm) {
       flex-direction: row;
+      align-items: flex-start;
     }
   }
 
@@ -119,8 +114,9 @@
    */
   #{ns(footer)}__partners-link {
     @include scheme-element-no-box-shadow;
-    @include margin(0);
-    @include margin-bottom(2v);
-    @include margin(0 0 2v 4v, sm);
+  }
+
+  @include respond-from(sm) {
+    order: 3;
   }
 }

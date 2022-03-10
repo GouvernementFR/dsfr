@@ -1,9 +1,11 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Pied de page minimal', './sample/footer-minimal.ejs', {footer: {logo:{ title: 'Intitulé<br>officiel'}}}, true); %>
+<%- sample('Pied de page minimal', './sample/footer-minimal.ejs', {}, true); %>
 
-<%- sample('Pied de page avec navigation', './sample/footer-total.ejs', {footer: {logo:{ title: 'Intitulé<br>officiel'}}}, true); %>
+<%- sample('Pied de page avec navigation', './sample/footer-total.ejs', {}, true); %>
 
 <%- sample('Pied de page avec logo opérateur', './sample/footer-operator.ejs', {footer: {logo:{ title: 'République<br>Française'}}}, true); %>
 
-<%- sample('Pied de page avec logos partenaires', './sample/footer-partners.ejs', {footer: {logo:{ title: 'Intitulé<br>officiel'}}}, true); %>
+<%- sample('Pied de page avec logos partenaires', './sample/footer-partners.ejs', {}, true); %>
+
+<%- sample('Pied de page complet', './sample/footer.ejs', {footer: {brand: true, operator: true, bottom: true, content: true, partners: true, top: true}}, true); %>
