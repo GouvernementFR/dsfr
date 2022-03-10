@@ -5,13 +5,13 @@
 
 /// Set space property
 ///
-/// @param {String} $property ["margin"] - propriété à appliquer à l'espacement `["margin", "padding"]`
+/// @param {String} $property ['margin'] - propriété à appliquer à l'espacement `['margin', 'padding']`
 /// @param {Number | list} $value [2] - valeur de l'espacement en v ou w. peut être une liste si la direction n'est pas renseignée
-/// @param {String} $direction - direction de l'espacement `["x", "y", "top", "right", "bottom", "left"]`
+/// @param {String} $direction - direction de l'espacement `['x', 'y', 'top', 'right', 'bottom', 'left']`
 ///
 /// @example scss - Set margin-bottom to 24px
 ///   .foo {
-///     @include _spacing("margin", 6v, "bottom");
+///     @include _spacing('margin', 6v, 'bottom');
 ///   }
 @mixin _spacing($property: margin, $value: 0, $direction: null) {
   $v: space($value);

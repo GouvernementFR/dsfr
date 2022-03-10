@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@include build-utility(display, ellipsis){
+@include build-utility (display, ellipsis) {
   display: important(inline);
   white-space: important(nowrap);
   overflow: important(hidden);

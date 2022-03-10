@@ -7,7 +7,7 @@
 * Mixin d'ajout des icones des réseaux sociaux
 **/
 @mixin social-icon ($modifier, $icon) {
-  #{ns('link--' + $modifier)} {
+  #{ns('btn--' + $modifier)} {
     @include icon($icon, null);
   }
 }

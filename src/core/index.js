@@ -1,8 +1,8 @@
 import api from './script/api/api';
 
-import { Instance } from './script/api/register/instance.js';
-import { KeyCodes } from './script/api/register/key-codes.js';
-import { Breakpoints } from './script/api/register/breakpoints';
+import { Instance } from './script/api/modules/register/instance.js';
+import { KeyCodes } from './script/api/modules/register/key-codes.js';
+import { Breakpoints } from './script/api/modules/register/breakpoints';
 import { Disclosure } from './script/disclosure/disclosure.js';
 import { DisclosureButton } from './script/disclosure/disclosure-button.js';
 import { DisclosuresGroup } from './script/disclosure/disclosures-group.js';
@@ -17,7 +17,7 @@ import { Equisized } from './script/equisized/equisized.js';
 import { EquisizedsGroup } from './script/equisized/equisizeds-group.js';
 import { EquisizedEmission } from './script/equisized/equisized-emission.js';
 import { Toggle } from './script/action/toggle/toggle';
-import { RootSelector } from './script/api/stage/root.js';
+import { RootSelector } from './script/api/modules/stage/root.js';
 import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
 

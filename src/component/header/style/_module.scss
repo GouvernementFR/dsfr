@@ -4,7 +4,7 @@
 ////
 
 #{ns(header)} {
-  @include disable-link-style;
+  @include disable-underline;
   @include disable-list-style;
   @include set-text-margin(0);
   @include set-title-margin(0);

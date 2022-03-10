@@ -10,9 +10,15 @@
       @each $family, $settings in $families {
         $shade: nth($settings, 1);
         $alpha: false;
+        $hover: false;
+
         @if length($settings) > 1 {
-          @if map-has-key(nth($settings, 2), alpha) {
+          $params: nth($settings, 2);
+          @if map-has-key($params, alpha) {
             $alpha: true;
+          }
+          @if map-has-key($params, hover) {
+            $hover: true;
           }
         }
         @each $tint, $shades in map-get($scheme-sets, $family) {
@@ -23,21 +29,22 @@
             @if $sets-tint == null {
               $sets-tint: ();
             }
-            @if not map-has-key($sets-tint, $set) {
-              $sets-tint: map-merge($sets-tint, ($set: $token));
+            @if not map-has-key($sets-tint, $set) or $hover {
+              $sets-tint: map-merge($sets-tint, ($set: (token: $token, hover: $hover)));
             }
+
             $sets: map-merge($sets, ($tint: $sets-tint));
-            $decision-prop: get-color($token, decision);
 
             @if not $with-theme {
-              #{$decision-prop}: var($set);
+              $decision-prop: get-color($token, decision);
+              #{$decision-prop}: get-color($token, set, (var: true));
 
-              @if $context == background and $alpha == false {
-                $decision-prop-blend: get-color($token, decision, (blend: true));
-                $option: nth($set, 1);
-                $blend: get-color($token, blend);
+              @if $hover == true {
+                $decision-prop-hover: get-color($token, decision, (hover: true));
+                #{$decision-prop-hover}: get-color($token, set, (var: true, hover: true));
 
-                #{$decision-prop-blend}: $blend;
+                $decision-prop-active: get-color($token, decision, (active: true));
+                #{$decision-prop-active}: get-color($token, set, (var: true, active: true));
               }
             }
           }
@@ -46,16 +53,23 @@
     }
   }
 
-  $options: (theme: light);
+  $theme: light;
   @if $with-theme {
-    $options: (theme: dark);
+    $theme: dark;
   }
 
   @each $family, $tints in $scheme-sets {
     @each $tint, $shades in $tints {
       @if map-has-key($sets, $tint) {
-        @each $set, $token in map-get($sets, $tint) {
-          #{$set}: get-color($token, hex, $options);
+        @each $set, $map in map-get($sets, $tint) {
+          $token: map-get($map, token);
+          $hover: map-get($map, hover);
+          #{$set}: get-color($token, hex, (theme: $theme));
+
+          @if $hover {
+            #{$set}-hover: get-color($token, hex, (theme: $theme, hover: true));
+            #{$set}-active: get-color($token, hex, (theme: $theme, active: true));
+          }
         }
       }
     }

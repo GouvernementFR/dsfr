@@ -21,6 +21,12 @@
       }
     }
 
+    &__social {
+      #{ns(btn)} {
+        @include btn-kind-scheme(4, $legacy);
+      }
+    }
+
     #{ns(grid-row)} > *:not(:first-child) {
       // Séparateur en box-shadow
       @include scheme-element-box-shadow-color(default blue-france, (legacy: $legacy), top-1-out);

@@ -1,10 +1,11 @@
-import { Register } from './register/register.js';
-import { Stage } from './stage/stage.js';
-import { Renderer } from './render/renderer.js';
-import { Resizer } from './resize/resizer.js';
-import { ScrollLocker } from './scroll/scroll-locker.js';
-import { Load } from './load/load.js';
-import { FontSwap } from './font-swap/font-swap';
+import { Register } from './modules/register/register.js';
+import { Stage } from './modules/stage/stage.js';
+import { Renderer } from './modules/render/renderer.js';
+import { Resizer } from './modules/resize/resizer.js';
+import { ScrollLocker } from './modules/scroll/scroll-locker.js';
+import { Load } from './modules/load/load.js';
+import { FontSwap } from './modules/font-swap/font-swap';
+import { MouseMove } from './modules/mouse-move/mouse-move';
 import inspector from './inspect/inspector.js';
 import state from './state.js';
 
@@ -17,6 +18,7 @@ class Engine {
     state.create(ScrollLocker);
     state.create(Load);
     state.create(FontSwap);
+    state.create(MouseMove);
 
     const registerModule = state.getModule('register');
     this.register = registerModule.register.bind(registerModule);

@@ -4,7 +4,7 @@
 ////
 
 #{ns(logo)} {
-  @include disable-link-style;
+  @include disable-underline;
   display: inline-block;
   @include padding(1em);
   @include font-weight(bold);

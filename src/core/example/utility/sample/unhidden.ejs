@@ -1,0 +1,7 @@
+<%
+ const utility = locals.utility || {}
+ const append = utility.breakpoint ? `-${utility.breakpoint}` :'';
+ %>
+<div class="<%= prefix %>-hidden <%= prefix %>-unhidden<%= append %>" >
+    <p><%= lorem(); %></p>
+</div>
