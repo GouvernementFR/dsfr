@@ -44,18 +44,6 @@
       }
     }
   }
-
-  /*
-  &__group {
-    @include disable-list-style;
-    @include display-flex;
-    flex-wrap: wrap;
-    @include margin-x(-1v);
-    @include margin-bottom(2v);
-    order: 2;
-  }
-
-   */
 }
 
 @include build-share-btn(facebook, facebook-circle-line);
