@@ -16,13 +16,21 @@
       @if $families == null {
         @error 'use #{$use} doesn\'t exist in $scheme-decisions';
       }
-      @each $family, $shade in $families {
+      @each $family, $settings in $families {
+        $shade: nth($settings, 1);
         @each $tint, $shades in map-get($scheme-sets, $family) {
           @if map-has-key($shades, $shade) {
             $selector: '#{$context}-#{$use}--#{$tint}';
             #{ns($selector)} {
               @if $context == background {
-                @include scheme-element-bg-color($use $tint, (legacy: $legacy, important: true));
+                $hover: false;
+                @if length($settings) > 1 {
+                  $params: nth($settings, 2);
+                  @if map-get($params, hover) {
+                    $hover: true;
+                  }
+                }
+                @include scheme-element-bg-color($use $tint, (legacy: $legacy, important: true, hover: $hover));
               }
               @else if $context == text {
                 @include scheme-element-text-color($use $tint, (legacy: $legacy, important: true));

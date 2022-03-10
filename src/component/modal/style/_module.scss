@@ -72,11 +72,13 @@
   }
 
   @include body {
+    --modal-max-height: calc(100vh - 2rem);
     pointer-events: all;
     overflow-y: auto;
     flex: 1 1 auto;
     max-height: calc(100vh - 2rem);
     @include shadow(md);
+    max-height: var(--modal-max-height);
 
     @include respond-from(md) {
       max-height: 80vh !important;
@@ -87,7 +89,7 @@
     flex: auto 0 0;
     @include display-flex(null, center);
     @include padding(4v 4v 2v);
-    @include padding(4v, md);
+    @include padding(4v 8v, md);
   }
 
   &__content {

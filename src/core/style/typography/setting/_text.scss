@@ -46,7 +46,6 @@ $text-settings: (
   lg: (
     breakpoints: (
       first: 18,
-      md: 20,
     ),
     margin: text
   ),
@@ -54,8 +53,12 @@ $text-settings: (
     alt: lead,
     breakpoints: (
       first: 20,
-      md: 22,
     ),
     margin: text
   )
 );
+
+$text-utilities: true !default;
+@if map-get($typography-vars, text) == false {
+  $text-utilities: false;
+}

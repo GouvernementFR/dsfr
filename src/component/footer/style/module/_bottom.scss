@@ -54,6 +54,10 @@
  */
 &__bottom-link {
   @include text-style(xs);
+
+  &:not(:hover):not(:active) {
+    @include link-underline-background-size(0, 0);
+  }
 }
 
 /**

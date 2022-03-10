@@ -6,18 +6,20 @@
 @include build-tab();
 
 #{ns(tabs)} {
+  --tabs-height: auto;
   @include disable-list-style;
-  @include disable-link-style;
+  @include disable-underline;
   @include relative;
   overflow: hidden;
   @include margin-x(0);
   @include margin-top(-4px);
   @include padding-top(4px);
   @include display-flex(row, flex-start);
+  @include height(var(--tabs-height));
 
   /**
-    * Animation de la hauteur du panel
-    */
+  * Animation de la hauteur du panel
+  */
   transition: height $tabs-transition-duration;
 
   // retire le padding du container en mobile
@@ -85,7 +87,7 @@
   * Tab Panel
   */
   &__panel {
-    @include enable-link-style;
+    @include enable-underline;
     @include enable-list-style;
     display: block;
     @include relative(null, null, null, 0, 100%, auto);
@@ -103,6 +105,14 @@
       @include respond-from(md) {
         outline-offset: calc(-2rem + 2px);
       }
+    }
+
+    &--direction-end {
+      transform: translate(100%);
+    }
+
+    &--direction-start {
+      transform: translate(-100%);
     }
 
     /**

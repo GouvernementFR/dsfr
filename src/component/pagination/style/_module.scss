@@ -6,7 +6,7 @@
 @include build-pagination();
 
 #{ns(pagination)} {
-  @include disable-link-style;
+  @include disable-underline;
   @include disable-list-style;
 
   @include list {
@@ -31,9 +31,12 @@
     @include min-size(8v);
     @include margin-x(0.5v);
     @include margin-bottom(4v);
+    @include disable-underline;
+    @include relative;
 
-    &[aria-current] {
-      cursor: default !important;
+    &[aria-current]:not([href]) {
+      cursor: default;
+      pointer-events: none;
     }
 
     &--first {

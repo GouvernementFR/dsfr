@@ -64,29 +64,33 @@
 
 @mixin text-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
   $settings: map-get($text-settings, $name);
-  $append: '';
-  @if $important {
-    $append: ' !important';
-  }
+  @if $settings {
+    $append: '';
+    @if $important {
+      $append: ' !important';
+    }
 
-  @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend, $append);
+    @include _responsive-styles($settings, $text-styles, $is-responsive, $prepend, $append);
 
-  @if $with-spacing {
-    @include _space-text($settings);
+    @if $with-spacing {
+      @include _space-text($settings);
+    }
   }
 }
 
 @mixin title-style($name, $with-spacing: false, $is-responsive: true, $prepend: null, $important: false) {
   $settings: map-get($title-settings, $name);
-  $append: '';
-  @if $important {
-    $append: ' !important';
-  }
+  @if $settings {
+    $append: '';
+    @if $important {
+      $append: ' !important';
+    }
 
-  @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend, $append);
+    @include _responsive-styles($settings, $title-styles, $is-responsive, $prepend, $append);
 
-  @if $with-spacing {
-    @include _space-text($settings);
+    @if $with-spacing {
+      @include _space-text($settings);
+    }
   }
 }
 

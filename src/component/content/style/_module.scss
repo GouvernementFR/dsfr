@@ -35,7 +35,8 @@
   }
 
   &__transcription {
-    @include nest-link(sm, right, menu-2-fill, null, true, true);
+    @include nest-btn(sm, right, menu-2-fill, null, true);
+    @include margin-right(-4v);
   }
 
   $medias: (#{&}__img, ns(responsive-vid));

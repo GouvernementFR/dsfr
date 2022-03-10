@@ -5,11 +5,11 @@ attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
 const button = {
-    classes: [prefix + "-display-button", prefix + '-background-default--white'],
+    classes: [prefix + "-display-button", prefix + '-background-default--grey'],
     icon: 'theme-fill',
     attributes: {...attrModal},
     tag: 'button',
-    secondary: true,
+    kind: 2,
     size: 'lg'
 };
 

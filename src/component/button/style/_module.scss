@@ -3,6 +3,6 @@
 /// @group button
 ////
 
-@include build-btn();
-
+@import 'module/button';
 @import 'module/buttons-group.scss';
+@import 'module/close';
