@@ -58,7 +58,6 @@
 
 &__content-link {
   @include enable-link-style;
-  @include link-no-underline;
   @include link-blank;
   font-weight: bold;
   @include text-style(sm);
