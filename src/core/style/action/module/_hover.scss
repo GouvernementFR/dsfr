@@ -3,23 +3,24 @@
 /// @group core
 ////
 
-:root {
-  @include enable-blend;
-}
-
-a {
-  @include disable-blend;
-}
-
-@include hover-type-selector($action-elements, all) {
-  @include hover-blend();
-}
-
 @include hover-media-query {
-  @include hover-type-selector($action-elements, all, true) {
-    &:hover,
-    &:active {
-      --blend-size: var(--blend-full-size); // 2048px 2048px;
-    }
+  :root {
+    --brighten: -1;
   }
+
+  @include hover-type-selector($action-elements, all, true) {
+    @include hover-tint;
+  }
+
+  @include hover-type-selector($action-elements, underline, true) {
+    @include hover-underline;
+  }
+}
+
+@include hover-type-selector($action-elements, tint) {
+  @include enable-tint;
+}
+
+@include hover-type-selector($action-elements, underline) {
+  @include tint-enabled(false, true);
 }

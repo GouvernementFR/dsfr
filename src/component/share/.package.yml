@@ -5,6 +5,7 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/771555355/
 wrapper: col-8
 style:
   - core
+  - button
 follow:
   style:
     - link

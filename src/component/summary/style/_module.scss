@@ -6,31 +6,17 @@
 //TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
 
 #{ns(summary)} {
-  @include disable-link-style;
   @include padding(6v);
   @include padding(8v, md);
   @include text-style(xs);
 
-  /**
-   * la base de l'espace occupé par le marker est calculé sur 2 nbsp (270 em-square)
-   */
-  --summary-offset: 0.54;
-
-  /**
-   * on ajoute l'écart des éléments ajoutés à chaque sous niveau : un chiffre (600 em-square) et un point (270 em-square)
-   */
   ol {
-    --summary-base: calc(var(--summary-offset) + 0.87);
     list-style-type: none;
   }
 
   li {
-    --summary-offset: var(--summary-base);
     @include marker(none);
-
-    &:nth-of-type(1n + 10) {
-      --summary-offset: calc(var(--summary-base) + 0.4);
-    }
+    padding: space(2v 0);
   }
 
   @include title {
@@ -41,16 +27,17 @@
   }
 
   &__link {
-    display: inline-block;
+    display: inline;
     position: relative;
-    @include enable-blend;
     @include text-style(xs);
     @include before(var(--ol-content)) {
-      @include absolute(null, null, null, 2v);
+      @include absolute(null, 100%);
       font-size: var(--xl-size);
       font-weight: bold;
     }
-    @include padding(2v 2v 2v calc(var(--summary-offset) * var(--xl-size) + 2v));
-    @include margin(0 -2v -1v calc(var(--summary-offset) * var(--xl-size) * -1 - 2v));
+
+    &:not(:hover):not(:active) {
+      @include link-underline-background-size(0, 0);
+    }
   }
 }

@@ -3,44 +3,10 @@
 /// @group button
 ////
 
-@mixin _make-horizontal() {
-  width: calc(100% + #{space(4v)});
-
-  #{ns(btn)} {
-    width: auto;
-    @include margin-right(4v);
-    max-width: 100%;
-  }
-
-  > li {
-    display: inline-flex;
-    max-width: 100%;
-    width: auto;
-
-    @include before(none);
-  }
-}
-
-@mixin _make-vertical() {
-  @include margin-right(0);
-  @include margin-left(0);
-
-  > li {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  #{ns(btn)} {
-    width: 100%;
-    @include margin-right(0);
-    @include margin-left(0);
-  }
-}
-
 #{ns-group(btns)} {
   @include disable-list-style;
   @include display-flex(null,stretch,null,wrap);
-  @include _make-vertical;
+  @include vertical-btns-group;
 
   #{ns(btn)} {
     @include margin-bottom(4v);
@@ -52,7 +18,7 @@
   * fr-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
   */
   &--inline {
-    @include _make-horizontal;
+    @include horizontal-btns-group;
 
     &#{ns-group(btns)}--right {
       @include margin-left(-4v);
@@ -78,7 +44,7 @@
 
     &-sm {
       @include respond-from(sm) {
-        @include _make-horizontal;
+        @include horizontal-btns-group;
 
         &#{ns-group(btns)}--right {
           @include margin-left(-4v);
@@ -106,7 +72,7 @@
 
     &-md {
       @include respond-from(md) {
-        @include _make-horizontal;
+        @include horizontal-btns-group;
 
         &#{ns-group(btns)}--right {
           @include margin-left(-4v);
@@ -134,7 +100,7 @@
 
     &-lg {
       @include respond-from(lg) {
-        @include _make-horizontal;
+        @include horizontal-btns-group;
 
         &#{ns-group(btns)}--right {
           @include margin-left(-4v);
@@ -212,7 +178,7 @@
   &--sm {
     #{ns(btn)} {
       @include has-not-icon {
-        @include nest-btn(sm, null, null, null, false);
+        @include nest-btn(sm, false, null, null, false);
       }
     }
 
@@ -248,7 +214,7 @@
   &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
     #{ns(btn)} {
       @include has-not-icon {
-        @include nest-btn(md, null, null, null, false);
+        @include nest-btn(md, false, null, null, false);
       }
     }
 
@@ -284,7 +250,7 @@
   &--lg {
     #{ns(btn)} {
       @include has-not-icon {
-        @include nest-btn(lg, null, null, null, false);
+        @include nest-btn(lg, false, null, null, false);
       }
     }
 

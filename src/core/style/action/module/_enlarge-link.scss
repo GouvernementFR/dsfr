@@ -9,17 +9,23 @@
   a {
     background-image: none !important;
     outline-width: 0 !important;
-    @include enable-blend;
     @include before('', block) {
-      @include hover-media-query {
-        @include hover-blend-background;
-      }
       @include absolute(0, 0, 0, 0, 100%, 100%);
       outline-offset: 2px;
       outline-style: inherit;
       outline-color: inherit;
       outline-width: 2px;
       @include z-index(over);
+    }
+  }
+
+  @include hover-media-query {
+    &:hover {
+      background-color: var(--hover);
+    }
+
+    &:active {
+      background-color: var(--active);
     }
   }
 }

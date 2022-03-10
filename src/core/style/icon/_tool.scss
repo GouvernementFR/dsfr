@@ -4,7 +4,7 @@
 ////
 
 /// Return icon size from map
-/// @param {String} $size ["md"] - Icon size from `$icon-size-map` (Default to "md" = 16px)
+/// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)
 ///
 /// @example scss - Set icon size to `SM` (12px)
 ///   .foo {
@@ -53,10 +53,10 @@
     $icon-settings: map-get($icons-settings-deprecated, $icon);
   }
   @if $is-ligature {
-    @return "#{map-get($icon-settings, ligature)}";
+    @return '#{map-get($icon-settings, ligature)}';
   }
   @else {
-    @return "#{map-get($icon-settings, codepoint)}";
+    @return '#{map-get($icon-settings, codepoint)}';
   }
 }
 
@@ -75,9 +75,12 @@
 
 @mixin icon-content($icon) {
   content: icon-glyph($icon);
-  font-weight: 400;
+
   @if is-deprecated($icon) {
     font-weight: 700;
+  }
+  @else {
+    font-weight: 400;
   }
 }
 
