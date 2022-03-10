@@ -24,10 +24,6 @@
   box-shadow: var(--link-underline);
 }
 
-@mixin link-no-underline() {
-  box-shadow: none;
-}
-
 @mixin link-blank() {
   @include after(var(--link-blank-content)) {
     font: var(--link-blank-font);
