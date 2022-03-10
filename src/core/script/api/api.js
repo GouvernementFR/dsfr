@@ -4,7 +4,6 @@ import config from '../../config.js';
 import engine from './engine.js';
 import inspector from './inspect/inspector.js';
 import internals from './internals.js';
-import tools from './tools/tools.js';
 
 inspector.info(`version ${config.version}`);
 
@@ -26,7 +25,6 @@ api.start = engine.start;
 api.stop = engine.stop;
 
 api.inspector = inspector;
-api.tools = tools;
 
 options.configure(window[config.namespace], api.start);
 
