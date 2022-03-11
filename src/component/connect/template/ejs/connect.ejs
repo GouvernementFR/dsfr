@@ -18,7 +18,6 @@
 <%
 const connect = locals.connect || {};
 let connectClasses = [];
-let pClasses = [];
 let connectAttrs = {};
 if (connect.id) connectAttrs.id = connect.id;
 
@@ -40,7 +39,6 @@ switch(connect.type) {
 }
 
 if (!locals.standalone) {
-  pClasses.push(prefix + '-hint-text');
 %>
 <div class="<%= prefix %>-connect-group">
 <% } %>
@@ -60,7 +58,7 @@ if (connect.disabled === true) connectAttrs.disabled = '';
 <% } %>
 
 <% if (connect.desc) { %>
-  <p <%- includeClasses(pClasses) %>>
+  <p>
   <%- connect.desc %>
   </p>
 <% } %>
