@@ -3,6 +3,8 @@
 
 * sidemenu.items (array, required) : tableau d'elements
 
+* sidemenu.title (String, required) : titre du sidemenu
+
 * sidemenu.modifier (string, optional) : modifier de style de sidemenu ('full-border', 'sticky-full-height', 'sticky', 'right')
 
 * sidemenu.collapseId : id du collapse (mobile)
@@ -15,7 +17,7 @@
 	<div class="<%= prefix %>-sidemenu__inner">
 		<button class="<%= prefix %>-sidemenu__btn" aria-controls="<%= sidemenu.collapseId %>" aria-expanded="false">Dans cette rubrique</button>
 		<div class="<%= prefix %>-collapse" id="<%- sidemenu.collapseId %>">
-			<div class="<%= prefix %>-sidemenu__title">Titre de rubrique</div>
+			<div class="<%= prefix %>-sidemenu__title"><%- sidemenu.title %></div>
 			<%- include('./list', {sidemenuItems: sidemenu.items}); %>
 		</div>
 	</div>

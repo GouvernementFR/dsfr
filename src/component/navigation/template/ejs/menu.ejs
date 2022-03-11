@@ -9,17 +9,16 @@
 
 <% let menu = locals.menu || {}; %>
 <%- include('./btn', {menu:menu}); %>
-<div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= menu.collapseId %>" >
-    <ul class="<%= prefix %>-menu__list" >
-        <%
-            for (let i = 0; i < menu.items.length; i++) {
-                const item = menu.items[i];
-                item.isPage = true;
-        %>
-        <li>
-            <%- include('./link', {menu: item}); %>
-        </li>
-        <% } %>
-    </ul>
+<div class="<%= prefix %>-collapse <%= prefix %>-menu" id="<%= menu.collapseId %>">
+  <ul class="<%= prefix %>-menu__list">
+    <%
+    for (let i = 0; i < menu.items.length; i++) {
+      const item = menu.items[i];
+      item.isPage = true;
+    %>
+    <li>
+      <%- include('./link', {menu: item}); %>
+    </li>
+    <% } %>
+  </ul>
 </div>
-

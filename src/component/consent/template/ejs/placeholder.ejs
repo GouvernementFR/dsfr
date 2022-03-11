@@ -15,16 +15,16 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let consent = locals.consent || {};
- let classes = [...consent.classes || [], prefix + '-consent-placeholder'];
- let attributes = consent.attributes || {};
- let button = consent.button || {};
- if (!button.label) button.label = "Autoriser";
- button.tag = 'button';
- %>
+let consent = locals.consent || {};
+let classes = [...consent.classes || [], prefix + '-consent-placeholder'];
+let attributes = consent.attributes || {};
+let button = consent.button || {};
+if (!button.label) button.label = "Autoriser";
+button.tag = 'button';
+%>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
-    <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p> <% } %>
-    <% if (consent.body) { %><p><%- consent.body %></p><% } %>
-    <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
+  <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p> <% } %>
+  <% if (consent.body) { %><p><%- consent.body %></p><% } %>
+  <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
 </div>

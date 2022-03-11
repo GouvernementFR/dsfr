@@ -16,11 +16,11 @@
 <%
 let menu = locals.menu || {};
 const attrs = {
-    href: menu.href,
-    target: menu.target || '_self'
+  href: menu.href,
+  target: menu.target || '_self'
 }
 
 if (menu.active) attrs['aria-current'] = menu.isPage ? 'page' : 'true';
 
- %>
+%>
 <a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> ><%- menu.label %></a>

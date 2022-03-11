@@ -1,8 +1,8 @@
 <%
-    let pagination = locals.pagination || {};
-    let data = {
-        prev: { label: 'Page précédente', href:'#', hasLabel: pagination.hasLabel, hasLgLabel: pagination.hasLgLabel }
-    }
+  let pagination = locals.pagination || {};
+  let data = {
+    prev: { label: 'Page précédente', href:'#', hasLabel: pagination.hasLabel, hasLgLabel: pagination.hasLgLabel }
+  }
 %>
 
 <%- include('../../template/ejs/pagination', {pagination: data}); %>

@@ -53,21 +53,21 @@ if (paginationItem.displayedLg === true) {
 }
 if (paginationItem.disabled) {
   switch(tag) {
-      case 'input':
-      case 'button':
-        attrs.disabled = '';
-          break;
+    case 'input':
+    case 'button':
+      attrs.disabled = '';
+        break;
 
-      case 'a':
-        attrs['aria-disabled'] = 'true';
-        attrs.role = 'link';
-          break;
-    }
+    case 'a':
+      attrs['aria-disabled'] = 'true';
+      attrs.role = 'link';
+        break;
+  }
 }
 %>
 
 <li>
-    <<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
-        <% if (paginationItem.label !== undefined ) { %><%- paginationItem.label %><% } %>
-    </<%= tag %>>
+  <<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
+    <% if (paginationItem.label !== undefined ) { %><%- paginationItem.label %><% } %>
+  </<%= tag %>>
 </li>

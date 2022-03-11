@@ -4,19 +4,19 @@ let tabs = tabsGroup.tabs || [];
 let data = {tabs: []};
 
 for (let i = 0; i < 2; i++) {
-    const subdata = { tabs: [], tabsCount: 2 };
+  const subdata = { tabs: [], tabsCount: 2 };
 
-    for (let j = 0; j < 3 - i; j++) {
-      subdata.tabs[j] = {
-        content: include('./tabs-default', { tabs: {tabsCount:(2 + j) } }),
-        label: `Nested Tab s${j}`
-        }
-    }
+  for (let j = 0; j < 3 - i; j++) {
+    subdata.tabs[j] = {
+      content: include('./tabs-default', { tabs: {tabsCount:(2 + j) } }),
+      label: `Nested Tab s${j}`
+      }
+  }
 
-    data.tabs[i] = {
-      content: include('./tabs-default', {tabs: subdata}),
-      label: `Main Tab ${i}`
-    }
+  data.tabs[i] = {
+    content: include('./tabs-default', {tabs: subdata}),
+    label: `Main Tab ${i}`
+  }
 }
 %>
 

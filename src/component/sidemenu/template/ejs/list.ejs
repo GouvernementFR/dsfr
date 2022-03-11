@@ -9,13 +9,13 @@ Paramètres de sidemenu btn
 <% let sidemenuItems = locals.sidemenuItems || []; %>
 
 <ul class="<%= prefix %>-sidemenu__list" >
-    <%
-        for (let i = 0; i < sidemenuItems.length; i++) {
-            let item = sidemenuItems[i];
-            let classes = [prefix + '-sidemenu__item'];
-    %>
-        <li <%- includeClasses(classes); %>>
-            <%- include('./' + item.type, {sidemenuItem : item}); %>
-        </li>
-    <% } %>
+  <%
+  for (let i = 0; i < sidemenuItems.length; i++) {
+    let item = sidemenuItems[i];
+    let classes = [prefix + '-sidemenu__item'];
+  %>
+    <li <%- includeClasses(classes); %>>
+        <%- include('./' + item.type, {sidemenuItem : item}); %>
+    </li>
+  <% } %>
 </ul>

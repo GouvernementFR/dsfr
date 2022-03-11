@@ -16,11 +16,11 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
- let checkbox = locals.checkbox || {};
- let checkboxAttrs = checkbox.attributes || {};
- if (checkbox.checked === true) checkboxAttrs.checked = "";
- if (checkbox.disabled === true) checkboxAttrs.disabled = "";
- %>
+let checkbox = locals.checkbox || {};
+let checkboxAttrs = checkbox.attributes || {};
+if (checkbox.checked === true) checkboxAttrs.checked = "";
+if (checkbox.disabled === true) checkboxAttrs.disabled = "";
+%>
 <input <%- includeAttrs(checkboxAttrs); %> type="checkbox" id="<%= checkbox.id %>" name="<%= checkbox.id %>">
 <%- include('../../../form/template/ejs/label', {label: {label:checkbox.label, hint: checkbox.hint, id: checkbox.id}} ); %>
 <%- include('../../../form/template/ejs/message', {message: checkbox}); %>
