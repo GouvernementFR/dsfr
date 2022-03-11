@@ -25,34 +25,34 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let tile = locals.tile || {};
- let classes = tile.classes || [];
- classes.push(`${prefix}-tile`);
+let tile = locals.tile || {};
+let classes = tile.classes || [];
+classes.push(`${prefix}-tile`);
 
- if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
- if (tile.horizontal !== undefined) {
-    classes.push(`${prefix}-tile--horizontal`);
- }
- if (tile.horizontalMd !== undefined) {
-    classes.push(`${prefix}-tile--horizontal-md`);
- }
- if (tile.verticalMd !== undefined) {
-    classes.push(`${prefix}-tile--vertical-md`);
- }
+if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
+if (tile.horizontal !== undefined) {
+  classes.push(`${prefix}-tile--horizontal`);
+}
+if (tile.horizontalMd !== undefined) {
+  classes.push(`${prefix}-tile--horizontal-md`);
+}
+if (tile.verticalMd !== undefined) {
+  classes.push(`${prefix}-tile--vertical-md`);
+}
 
- if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
- %>
+if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
+%>
 
 <div <%- includeClasses(classes)%>>
-    <div class="<%= prefix %>-tile__body">
-        <h4 class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></h4>
-        <% if(tile.description !== undefined) { %>
-        <p class="<%= prefix %>-tile__desc"><%= tile.description %></p>
-        <% } %>
-    </div>
-    <% if (tile.img !== undefined) { %>
-        <div class="<%= prefix %>-tile__img">
-            <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media:tile.img}); %>
-        </div>
+  <div class="<%= prefix %>-tile__body">
+    <h4 class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></h4>
+    <% if(tile.description !== undefined) { %>
+    <p class="<%= prefix %>-tile__desc"><%= tile.description %></p>
     <% } %>
+  </div>
+  <% if (tile.img !== undefined) { %>
+  <div class="<%= prefix %>-tile__img">
+    <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media:tile.img}); %>
+  </div>
+  <% } %>
 </div>

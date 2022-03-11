@@ -12,6 +12,17 @@ let data = {
   row: table.row || 2,
 }
 
+data.data = new Array(data.row);
+for(let row = 0; row < data.row; row++) {
+  data.data[row] = new Array(data.col);
+  for(let col = 0; col < data.col; col++) {
+    if(row == 0) data.data[0][col] =  'th' + col;
+    else data.data[row][col] = lorem(null , Math.floor(Math.random() * 50));
+  }
+}
+data.col = undefined;
+data.row = undefined;
+data.data = undefined;
 %>
 
 <%- include('../../template/ejs/table', {table: data}); %>

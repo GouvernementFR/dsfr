@@ -21,22 +21,22 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let quote = locals.quote || {};
- let size = quote.size || undefined;
- let text = quote.text || '';
- let image = quote.image || undefined;
- let author = quote.author || false;
- let href = quote.href || undefined;
- let sources = quote.sources || [];
- let quoteClasses = [prefix + '-quote'];
- let citeAttr = [];
- let sizeClasses = [];
- const blockAttrs = {cite: href};
+let quote = locals.quote || {};
+let size = quote.size || undefined;
+let text = quote.text || '';
+let image = quote.image || undefined;
+let author = quote.author || false;
+let href = quote.href || undefined;
+let sources = quote.sources || [];
+let quoteClasses = [prefix + '-quote'];
+let citeAttr = [];
+let sizeClasses = [];
+const blockAttrs = {cite: href};
 
- if (quote.accent !== undefined) quoteClasses.push(prefix + '-quote--' + quote.accent);
- if (image) quoteClasses.push(prefix + '-quote--column');
- if (size) sizeClasses = [prefix+'-text--'+size];
- %>
+if (quote.accent !== undefined) quoteClasses.push(prefix + '-quote--' + quote.accent);
+if (image) quoteClasses.push(prefix + '-quote--column');
+if (size) sizeClasses = [prefix+'-text--'+size];
+%>
 
 <figure <%- includeClasses(quoteClasses) %>>
   <blockquote <%- includeAttrs(blockAttrs) %>>

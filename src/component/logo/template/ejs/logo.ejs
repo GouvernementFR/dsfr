@@ -15,21 +15,21 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let logo = locals.logo || {};
- let classes = logo.classes || [];
- classes.push(prefix + '-logo');
+let logo = locals.logo || {};
+let classes = logo.classes || [];
+classes.push(prefix + '-logo');
 
- switch(logo.size) {
-     case 'sm':
-         classes.push(prefix + '-logo--sm');
-         break;
+switch(logo.size) {
+  case 'sm':
+    classes.push(prefix + '-logo--sm');
+    break;
 
-     case 'lg':
-         classes.push(prefix + '-logo--lg');
-         break;
+  case 'lg':
+    classes.push(prefix + '-logo--lg');
+    break;
  }
  %>
 
 <p <%- includeClasses(classes); %>>
-    <%- logo.title %>
+  <%- logo.title %>
 </p>

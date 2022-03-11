@@ -18,23 +18,23 @@ let describedby = [];
 let checkboxAttrs = checkbox.attributes || {};
 
 if (checkbox.error !== undefined) {
-    groupClasses.push(prefix + '-checkbox-group--error');
-    describedby.push('checkboxes-error-desc-error');
+  groupClasses.push(prefix + '-checkbox-group--error');
+  describedby.push('checkboxes-error-desc-error');
 }
 
 if (checkbox.valid !== undefined) {
-    groupClasses.push(prefix + '-checkbox-group--valid');
-    describedby.push('checkboxes-valid-desc-valid');
+  groupClasses.push(prefix + '-checkbox-group--valid');
+  describedby.push('checkboxes-valid-desc-valid');
 }
 if (describedby.length > 0) checkboxAttrs['aria-describedby'] = describedby.join(' ');
 
 switch(checkbox.size) {
-    case 'sm' :
-        groupClasses.push(prefix + '-checkbox-group--sm');
-        break;
+  case 'sm' :
+    groupClasses.push(prefix + '-checkbox-group--sm');
+    break;
 }
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./checkbox', {checkbox: {...checkbox, attributes: checkboxAttrs}}); %>
+  <%- include('./checkbox', {checkbox: {...checkbox, attributes: checkboxAttrs}}); %>
 </div>
