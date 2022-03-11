@@ -8,6 +8,12 @@
     @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy, standalone: $standalone));
     @include scheme-element-text-color(inverted blue-france, (legacy: $legacy, standalone: $standalone));
 
+    &-group {
+      p {
+        @include scheme-element-text-color(mention grey, (legacy:$legacy));
+      }
+    }
+
     @include after {
       @include scheme-element-bg-image-color((text inverted blue-france, text inverted blue-france), (legacy: $legacy, standalone: $standalone));
     }
