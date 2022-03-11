@@ -11,31 +11,57 @@ $ACCENT: none;
   $hover: map-get($options, hover);
   $standalone: map-get($options, standalone);
 
+  $legacy-target: null;
+  @if $legacy {
+    $legacy-target: ie11;
+  }
+
   $tokens: normalise-tokens($tokens, $context);
   $type: decision;
   $options: (var: true);
+
   @if $legacy or $standalone {
     $type: hex;
     $option: (theme: light);
   }
+
   $colors: get-colors($tokens, $type, $options);
   $result: get-result($colors, $value);
   $result: important($result, $important);
 
-  @if $hover and $context == background and $legacy == false and length($tokens) == 1 {
-    $blend: get-color(nth($tokens, 1), decision, (var: true, blend: true));
-    $blend: important($blend, $important);
-
-    --blend: #{$blend};
-  }
-
-  @if $legacy {
-    @include legacy(ie11) {
-      #{$prop}: #{$result};
-    }
-  }
-  @else {
+  @include legacy($legacy-target) {
     #{$prop}: #{$result};
+  }
+
+  @if $hover and $context == background and length($tokens) == 1 {
+    $nest-hover: null;
+    $prop-hover: --hover;
+    $result-hover: #{important(get-color(nth($tokens, 1), decision, (var: true, hover: true)), $important)};
+    $nest-active: null;
+    $prop-active: --active;
+    $result-active: #{important(get-color(nth($tokens, 1), decision, (var: true, active: true)), $important)};
+
+    @if $legacy or $standalone {
+      $type: hex;
+      $option: (theme: light);
+
+      $nest-hover: '&:hover';
+      $prop-hover: $prop;
+      $result-hover: #{important(get-color(nth($tokens, 1), hex, (hover: true)), $important)};
+      $nest-active: '&:active';
+      $prop-active: $prop;
+      $result-active: #{important(get-color(nth($tokens, 1), hex, (active: true)), $important)};
+    }
+
+    @include legacy($legacy-target) {
+      @include nest($nest-hover) {
+        #{$prop-hover}: #{$result-hover};
+      }
+
+      @include nest($nest-active) {
+        #{$prop-active}: #{$result-active};
+      }
+    }
   }
 }
 
@@ -76,7 +102,8 @@ $ACCENT: none;
   @else {
     background-color: transparent;
     @if $hover {
-      --blend: inherit;
+      --hover: inherit;
+      --active: inherit;
     }
   }
 }

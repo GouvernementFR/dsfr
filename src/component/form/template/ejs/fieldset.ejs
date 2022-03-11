@@ -55,22 +55,22 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
 %>
 
 <div class="<%= prefix %>-form-group">
-    <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
-        <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
-            <%= fieldset.legend %>
-            <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
-        </legend>
-        <div class="<%= prefix %>-fieldset__content">
-            <%
-                let path;
-                for (let i = 0; i < fieldset.elements.length; i++) {
-                    let element = fieldset.elements[i];
-                    element.data.group = true;
-            %>
-                <%- include('../../../' + element.path, element.data); %>
+  <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
+    <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
+      <%= fieldset.legend %>
+      <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
+    </legend>
+    <div class="<%= prefix %>-fieldset__content">
+      <%
+        let path;
+        for (let i = 0; i < fieldset.elements.length; i++) {
+            let element = fieldset.elements[i];
+            element.data.group = true;
+      %>
+      <%- include('../../../' + element.path, element.data); %>
 
-            <% } %>
-        </div>
-        <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
-    </fieldset>
+      <% } %>
+    </div>
+    <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
+  </fieldset>
 </div>

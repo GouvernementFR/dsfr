@@ -1,0 +1,9 @@
+////
+/// Content Legacy
+/// @group content
+////
+
+@import 'index';
+@import 'style/scheme';
+
+@include _content-scheme(true);

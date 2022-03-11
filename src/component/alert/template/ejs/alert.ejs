@@ -29,21 +29,20 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let alert = locals.alert || {};
- let id = alert.id || uniqueId('alert');
- let title = alert.title || false;
- let text = alert.text || false;
- let type = alert.type || false;
- let size = alert.size || "md";
- let expanded = alert.expanded || true;
- let attrButton = alert.buttonAttrs;
- let classes = alert.classes || [];
- let attributes = alert.attributes || {};
- classes.push(prefix + '-alert');
- if (type) classes.push(prefix + '-alert--' + type);
- if (alert.alert) attributes.role = "alert";
- if (size !== "md") classes.push(prefix + '-alert--' + size);
-
+let alert = locals.alert || {};
+let id = alert.id || uniqueId('alert');
+let title = alert.title || false;
+let text = alert.text || false;
+let type = alert.type || false;
+let size = alert.size || "md";
+let expanded = alert.expanded || true;
+let attrButton = alert.buttonAttrs;
+let classes = alert.classes || [];
+let attributes = alert.attributes || {};
+classes.push(prefix + '-alert');
+if (type) classes.push(prefix + '-alert--' + type);
+if (alert.alert) attributes.role = "alert";
+if (size !== "md") classes.push(prefix + '-alert--' + size);
  %>
 
 <div  <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
@@ -57,6 +56,6 @@
   <% } %>
 
   <% if(alert.dismissable) { %>
-    <%- include('../../../link/template/ejs/link', {link: {size: 'md', tag: 'button', classes: [`${prefix}-link--close`], ...alert.button}}) %>
+    <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
   <% } %>
 </div>

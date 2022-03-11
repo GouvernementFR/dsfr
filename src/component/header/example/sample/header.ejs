@@ -6,7 +6,7 @@ const data = {body: {}, menu: menu};
 let hasNavbar = false;
 let hasMenu = false;
 
-const brand = { logo: header.logo };
+const brand = { logo: header.logo || {title: 'Intitulé<br>officiel'} };
 data.body.brand = brand;
 
 if (header.operator !== undefined) {
@@ -40,21 +40,24 @@ if (header.links !== undefined || header.search) {
     if (header.links === true) {
         hasMenu = true;
         tools.links = {
-            items: [
+            buttons: [
                 {
                     icon: 'add-circle-line',
-                    href: '#',
-                    label: 'Créer un espace'
+                    url: '#',
+                    label: 'Créer un espace',
+                    tag: 'a'
                 },
                 {
                     icon: 'lock-line',
-                    href: '#',
-                    label: 'Se connecter'
+                    url: '#',
+                    label: 'Se connecter',
+                    tag: 'a'
                 },
                 {
                     icon: 'account-line',
-                    href: '#',
-                    label: 'S’enregistrer'
+                    url: '#',
+                    label: 'S’enregistrer',
+                    tag: 'a'
                 }
             ]
         };

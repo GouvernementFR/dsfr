@@ -24,7 +24,7 @@
     overflow: initial;
   }
 
-  & > * > #{ns(link--close)} {
+  & > * > #{ns(btn--close)} {
     @include margin-bottom(6v);
     @include respond-from(lg) {
       display: none;

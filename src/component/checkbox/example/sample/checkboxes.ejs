@@ -6,21 +6,21 @@ const jsonData = JSON.parse(include('../../../form/example/sample/data', { form:
 const id = checkboxes.id;
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
-    path: 'checkbox/example/sample/checkbox',
-    data: {
-        checkbox: {
-            ...checkbox,
-            id: `${id}-${i}`,
-            checked: i === 2 && checkboxes.checked
-        }
+  path: 'checkbox/example/sample/checkbox',
+  data: {
+    checkbox: {
+      ...checkbox,
+      id: `${id}-${i}`,
+      checked: i === 2 && checkboxes.checked
     }
+  }
 });
 
 const fields = {
-    choice: true,
-    elements: elements,
-    ...checkboxes,
-    ...jsonData
+  choice: true,
+  elements: elements,
+  ...checkboxes,
+  ...jsonData
 }
 %>
 

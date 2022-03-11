@@ -46,6 +46,7 @@
   }
 
   label {
+    --toggle-status-width: auto;
     display: inline-flex;
     flex-basis: space(calc(100% - 10v));
     min-height: space(6v);

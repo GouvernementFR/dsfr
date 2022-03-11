@@ -2,14 +2,14 @@
 const getItem = (id) => {
     return {
         href: `#anchor-${id}`,
-        label: 'Titre du lien'
+        label: String(id).indexOf('6') > -1 ? lorem() : 'Titre du lien'
     }
 };
 
 const summary = locals.summary;
 const links = summary.links || [0];
-
 let data = {list:[]};
+data.title = summary.title || 'Sommaire';
 
 for (let i = 0; i < links.length; i++) {
     let id = i + 1

@@ -21,9 +21,12 @@
     }
   }
 
+  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
+
   &__img {
     @include relative(null, null, null, null, 100%, null);
     @include aspect-ratio(16x9);
+    @include hover-brighten-filter;
 
     img {
       @include absolute(0, 0, 0, 0, 100%, 100%);
@@ -52,8 +55,6 @@
   }
 
   &__link {
-    @include disable-link-style;
-    display: inline-flex;
     @include size(100%);
     @include margin-top(auto);
   }

@@ -3,14 +3,12 @@
 /// @group share
 ////
 
-@include build-share();
-
 #{ns(share)} {
   @include display-flex(column);
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
 
-  &__link {
+  &__btn {
     @include margin-x(1v);
     @include margin-bottom(2v);
   }
@@ -26,18 +24,29 @@
     order: 3;
   }
 
-  &__group {
-    @include disable-list-style;
-    @include display-flex;
-    flex-wrap: wrap;
-    @include margin-x(-1v);
+  #{ns-group(btns)} {
+    @include horizontal-btns-group;
+    @include margin-right(-4v);
     @include margin-bottom(2v);
+    @include width(auto);
     order: 2;
+
+    #{ns(btn)} {
+      justify-content: flex-start;
+    }
+
+    &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+      #{ns(btn)} {
+        @include has-not-icon {
+          @include nest-btn(md, only, null, null, false);
+        }
+      }
+    }
   }
 }
 
-@include build-social-share-link(facebook, facebook-circle-line);
-@include build-social-share-link(twitter, twitter-line);
-@include build-social-share-link(linkedin, linkedin-box-line);
-@include build-social-share-link(mail, mail-line);
-@include build-social-share-link(copy, links-fill);
+@include build-share-btn(facebook, facebook-circle-line);
+@include build-share-btn(twitter, twitter-line);
+@include build-share-btn(linkedin, linkedin-box-line);
+@include build-share-btn(mail, mail-line);
+@include build-share-btn(copy, links-fill);
