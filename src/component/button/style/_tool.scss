@@ -6,12 +6,14 @@
 @mixin build-btn() {
   @include _build-link($btns-settings) {
     @content;
+    @include font-weight(medium);
   }
 }
 
 @mixin nest-btn($size: md, $place: null, $icon:null, $from: null, $insert: true) {
   @include _nest-link($btns-settings, $size, $place, $icon, $from, $insert) {
     @content;
+    @include font-weight(medium);
   }
 }
 

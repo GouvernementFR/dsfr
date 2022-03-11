@@ -6,4 +6,11 @@
 @import 'index';
 @import 'style/scheme';
 
+
+// deprecated
+@import 'deprecated/style/scheme';
+
 @include _content-scheme(true);
+
+// deprecated
+@include _content-deprecated-scheme(true);

@@ -7,7 +7,4 @@
 @import 'style/scheme';
 @import 'style/legacy';
 
-// deprecated
-@import 'deprecated/style/module';
-
 @include _alert-scheme(true);
