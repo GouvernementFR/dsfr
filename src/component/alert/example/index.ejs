@@ -26,4 +26,8 @@ const sample = getSample(include);
 
 <%- sample('Alerte ajoutée dynamiquement (type)', './sample/alert-dismissable', {alert: {alert: true, type: "error", title: "Erreur détectée dans le formulaire"}}, true, './layout-dynamic.ejs'); %>
 
+<%- section('Dépréciation'); %>
+
+<%- sample('Alerte avec bouton fermer', '../deprecated/example/sample/alert-dismissable', {alert: {type: "info", title: "Information Covid"}}, true); %>
+
 

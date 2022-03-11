@@ -4,6 +4,12 @@
 ////
 
 @include legacy(ie11) {
+  #{ns-link} {
+    background-image: none;
+    text-decoration: unerline;
+  }
+
+
   /**
   * Reset liste à puce
   */
