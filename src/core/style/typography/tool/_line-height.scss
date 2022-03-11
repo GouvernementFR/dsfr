@@ -1,0 +1,13 @@
+
+////
+/// Core Tool : Typography line-height
+/// @group core
+////
+
+@function line-height($line-height: 24px) {
+  @return px-rem($line-height);
+}
+
+@mixin line-height($line-height: 24px) {
+  line-height: line-height($line-height);
+}

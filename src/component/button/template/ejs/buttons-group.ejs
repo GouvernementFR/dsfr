@@ -1,38 +1,38 @@
 <%#
 # paramètres groupe de boutons
 
-* buttonGroup.buttons (array, required): paramètres spécifique de chaque bouton du groupe
+* buttonsGroup.buttons (array, required): paramètres spécifique de chaque bouton du groupe
 
-* buttonGroup.inline (string|boolean, optional) : aligne les boutons horizontalement (dans la mesure du possible)
+* buttonsGroup.inline (string|boolean, optional) : aligne les boutons horizontalement (dans la mesure du possible)
 valeurs :
   * true : toujours en ligne
   * sm : en ligne a partir du breakpoint SM
   * md : en ligne a partir du breakpoint MD
   * lg : en ligne a partir du breakpoint LG
 
-* buttonGroup.align (string, optional) : définie l'alignement horizontal des boutons dans le groupe
+* buttonsGroup.align (string, optional) : définie l'alignement horizontal des boutons dans le groupe
   * right : align les boutons sur la droite
   * left : align les boutons sur la gauche
   * center : align les boutons au centre
 
-* buttonGroup.size (string, optional) : définie la taille des boutons dans le groupe (default md)
+* buttonsGroup.size (string, optional) : définie la taille des boutons dans le groupe (default md)
   * sm : Boutons taille sm
   * lg : Boutons taille lg
 
-* buttonGroup.equisized (boolean, optional) : si valeur true, fixe la largeur des boutons a celle du plus grand
+* buttonsGroup.equisized (boolean, optional) : si valeur true, fixe la largeur des boutons a celle du plus grand
 
-* buttonGroup.reverse (boolean, optional) : si valeur true, inverse l'ordre des boutons en mode inline
+* buttonsGroup.reverse (boolean, optional) : si valeur true, inverse l'ordre des boutons en mode inline
 
-* buttonGroup.classes (array, optional) : Classes suplémentaires sur le groupe de bouton
+* buttonsGroup.classes (array, optional) : Classes suplémentaires sur le groupe de bouton
 
-* buttonGroup.attributes (object, optional) : Attributs suplémentaires sur le groupe de boutons
+* buttonsGroup.attributes (object, optional) : Attributs suplémentaires sur le groupe de boutons
 
-* buttonGroup.iconPlace (string, optional) : emplacement des icones sur le groupe de bouton
+* buttonsGroup.iconPlace (string, optional) : emplacement des icones sur le groupe de bouton
 valeurs :
     ** left : icone à gauche du label
     ** right : icone à droite du label
 
-* buttonGroup.iconPlace (string, optional) : emplacement des icones sur le groupe de bouton
+* buttonsGroup.iconPlace (string, optional) : emplacement des icones sur le groupe de bouton
 valeurs :
     ** left : icone à gauche du label
     ** right : icone à droite du label
@@ -42,18 +42,18 @@ valeurs :
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- const buttonGroup = locals.buttonGroup || {};
- let groupClasses = buttonGroup.classes || [];
- let groupAttrs = buttonGroup.attributes || {};
- let buttons = buttonGroup.buttons || [];
+ const buttonsGroup = locals.buttonsGroup || {};
+ let groupClasses = buttonsGroup.classes || [];
+ let groupAttrs = buttonsGroup.attributes || {};
+ let buttons = buttonsGroup.buttons || [];
  groupClasses.push(prefix + '-btns-group');
 
- if (buttonGroup.align) groupClasses.push(prefix + '-btns-group--'+buttonGroup.align);
- if (buttonGroup.equisized) groupClasses.push(prefix + '-btns-group--equisized');
- if (buttonGroup.reverse) groupClasses.push(prefix + '-btns-group--inline-reverse');
+ if (buttonsGroup.align) groupClasses.push(prefix + '-btns-group--'+buttonsGroup.align);
+ if (buttonsGroup.equisized) groupClasses.push(prefix + '-btns-group--equisized');
+ if (buttonsGroup.reverse) groupClasses.push(prefix + '-btns-group--inline-reverse');
 
 
- switch(buttonGroup.inline) {
+ switch(buttonsGroup.inline) {
      case true:
         groupClasses.push(prefix + '-btns-group--inline');
         break;
@@ -70,7 +70,7 @@ valeurs :
         break;
  }
 
- switch(buttonGroup.size) {
+ switch(buttonsGroup.size) {
   case 'sm':
     groupClasses.push(prefix + '-btns-group--sm');
     break;
@@ -80,7 +80,7 @@ valeurs :
     break;
  }
 
- if (buttonGroup.iconPlace !== undefined) switch(buttonGroup.iconPlace) {
+ if (buttonsGroup.iconPlace !== undefined) switch(buttonsGroup.iconPlace) {
   case 'left':
     groupClasses.push(prefix + '-btns-group--icon-left');
     break;

@@ -1,0 +1,10 @@
+////
+/// Schemes Module : brightness
+/// @group schemes
+////
+
+@include hover-media-query {
+  @include theme-selector(dark) {
+    --brighten: 1;
+  }
+}

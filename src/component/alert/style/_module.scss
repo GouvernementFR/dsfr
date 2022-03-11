@@ -19,9 +19,9 @@
     @include title-style(h6);
   }
 
-  #{ns(link--close)} {
-    @include absolute(1v,3v);
-    @include nest-link(sm, only, null, null, false, false);
+  #{ns(btn--close)} {
+    @include absolute(1v,5v);
+    @include nest-btn(sm, only, null, null, false);
   }
 
   + #{ns(alert)} {

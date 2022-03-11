@@ -1,4 +1,5 @@
 import api from '../../api.js';
+import { TabPanelDirection } from './tab-panel-direction.js';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
@@ -30,7 +31,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
   }
 
   transitionend (e) {
-    this.style.transition = 'none';
+    this.isPreventingTransition = true;
   }
 
   get buttonHasFocus () {
@@ -96,11 +97,21 @@ class TabsGroup extends api.core.DisclosuresGroup {
   }
 
   apply () {
-    for (let i = 0; i < this._index; i++) this.members[i].translate(-1);
-    this.current.style.transition = '';
-    this.current.style.transform = '';
-    for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(1);
-    this.style.transition = '';
+    for (let i = 0; i < this._index; i++) this.members[i].translate(TabPanelDirection.START);
+    this.current.translate(TabPanelDirection.NONE);
+    for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(TabPanelDirection.END);
+    this.isPreventingTransition = false;
+  }
+
+  get isPreventingTransition () {
+    return this._isPreventingTransition;
+  }
+
+  set isPreventingTransition (value) {
+    if (this._isPreventingTransition === value) return;
+    if (value) this.addClass(api.internals.motion.TransitionSelector.NONE);
+    else this.removeClass(api.internals.motion.TransitionSelector.NONE);
+    this._isPreventingTransition = value === true;
   }
 
   render () {
@@ -110,7 +121,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
     this.panelHeight = paneHeight;
     let listHeight = 0;
     if (this.list) listHeight = this.list.node.offsetHeight;
-    this.style.height = (this.panelHeight + listHeight) + 'px';
+    this.style.setProperty('--tabs-height', (this.panelHeight + listHeight) + 'px');
   }
 }
 

@@ -7,7 +7,7 @@
 
 * button.id (string) : id du bouton
 
-* button.secondary (boolean, optional) : si valeur true, bouton secondaire
+* button.kind (number, optional) : par défaut 1, qui équivaut au bouton primaire, sinon 2 pour secondary et 3 pour tertiary
 
 * button.type (string, optional) type du bouton
 
@@ -68,19 +68,49 @@ if (button.iconPlace !== undefined) switch(button.iconPlace) {
     break;
 }
 
-if (button.secondary === true) btnClasses.push(prefix +'-btn--secondary');
-
-if (button.disabled === true) {
-  if (tag === 'button') btnAttrs['disabled'] = '';
-} else if (tag === 'a') {
-  btnAttrs.href = button.href || '[url - à modifier]';
-  switch (true) {
-    case button.blank:
-    btnAttrs.target = '_blank';
+switch (button.kind) {
+  case 2:
+    btnClasses.push(prefix +'-btn--secondary');
     break;
 
-    case button.self:
-    btnAttrs.target = '_self';
+  case 3:
+    btnClasses.push(prefix +'-btn--tertiary');
+    break;
+
+  case 4:
+    btnClasses.push(prefix +'-btn--tertiary-no-outline');
+    break;
+}
+
+if (button.disabled === true) {
+  switch(tag) {
+    case 'input':
+    case 'button':
+      btnAttrs['disabled'] = '';
+      break;
+
+    case 'a':
+      btnAttrs['aria-disabled'] = 'true';
+      btnAttrs.role = 'link';
+      break;
+  }
+} else {
+  if (button.onclick) btnAttrs.onclick = button.onclick;
+
+  switch (tag) {
+    case 'a':
+      btnAttrs.href = button.href || '[url - à modifier]';
+      switch (true) {
+        case button.blank:
+          btnAttrs.target = '_blank';
+          break;
+
+        case button.self:
+          btnAttrs.target = '_self';
+          break;
+      }
+
+      if (button.rel) btnAttrs.rel = button.rel;
     break;
   }
 }
@@ -89,6 +119,7 @@ if (button.title) btnAttrs['title'] = button.title;
 if (button.type !== undefined) btnAttrs['type'] = button.type;
 %>
 
-<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %>>
+<% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
+<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
   <%= button.label %>
 </<%= tag %>>

@@ -56,6 +56,6 @@ if (size !== "md") classes.push(prefix + '-alert--' + size);
   <% } %>
 
   <% if(alert.dismissable) { %>
-    <%- include('../../../link/template/ejs/link', {link: {size: 'md', tag: 'button', classes: [`${prefix}-link--close`], ...alert.button}}) %>
+    <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
   <% } %>
 </div>

@@ -22,7 +22,7 @@
   %>
     <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= tools.search.modalId %>">
       <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
-        <%- include('../../../link/template/ejs/link-close', {link: { closeId: tools.search.modalId }}); %>
+        <%- include('../../../button/template/ejs/button-close', {button: { closeId: tools.search.modalId }}); %>
         <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../search/template/ejs/search', {search: tools.search}); %>
       </div>
     </div>

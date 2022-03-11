@@ -3,9 +3,9 @@
 /// @group core
 ////
 
-#{ns(ellipsis)} {
-  display: inline;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@include build-utility (display, ellipsis) {
+  display: important(inline);
+  white-space: important(nowrap);
+  overflow: important(hidden);
+  text-overflow: important(ellipsis);
 }

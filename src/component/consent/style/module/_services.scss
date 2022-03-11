@@ -50,11 +50,10 @@
   **/
   &__desc {
     @include text-style(sm);
-    @include margin-bottom(3v);
-    @include margin-top(3v);
-    @include margin-top(1v,md);
-    @include margin-right(6v,md);
+    @include set-text-margin(3v 0 3v 0);
+
     @include respond-from(md) {
+      @include set-text-margin(1v 6v 3v 0);
       @include size(60%);
     }
   }
@@ -84,7 +83,7 @@
       @include display-flex(row, center, null, null, true);
       position: relative;
 
-      @include disable-blend;
+      @include disable-tint;
 
       @include after('','block') {
         @include absolute(0,0,0,0,calc(100% - #{space(4v)}),calc(100% - #{space(1v)}));
@@ -165,9 +164,10 @@
     }
 
     &__desc {
-      @include margin-bottom(3v);
-      @include margin-bottom(1v,md);
-      @include margin-top(1v);
+      @include set-text-margin(1v 0 3v 0);
+      @include respond-from(md) {
+        @include set-text-margin(1v 0 1v 0);
+      }
     }
   }
 }

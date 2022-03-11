@@ -18,7 +18,7 @@
   text-align: left;
   font-weight: font-weight(bold);
 
-  @include enable-blend;
+  @include enable-tint;
 
   &[aria-current] {
     @include after('') {
@@ -27,6 +27,13 @@
   }
 
   @include size(100%, null, md);
+}
+
+#{ns(sidemenu__link)} {
+  &[aria-current]:not([href]) {
+    pointer-events: none;
+    cursor: default;
+  }
 }
 
 /**
