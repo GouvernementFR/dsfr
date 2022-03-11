@@ -8,8 +8,8 @@ const getItem = (id) => {
 
 const summary = locals.summary;
 const links = summary.links || [0];
-
 let data = {list:[]};
+data.title = summary.title || 'Sommaire';
 
 for (let i = 0; i < links.length; i++) {
     let id = i + 1

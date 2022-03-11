@@ -28,23 +28,23 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
- let upload = locals.upload || {};
- let uploadClasses = [prefix + '-upload'];
- let groupClasses = [prefix + '-upload-group'];
- let uploadAttrs = upload.uploadAttrs || [];
- let labelAttrs = upload.labelAttrs || {};
- let labelClass = upload.labelClasses || [];
- if (upload.error) {
-   groupClasses.push(prefix + '-input-group--error');
-   uploadAttrs['aria-describedby'] = upload.id + '-desc-error';
- }
- if (upload.valid) {
-   groupClasses.push(prefix + '-input-group--valid');
-   uploadAttrs['aria-describedby'] = upload.id + '-desc-valid';
- }
- if (upload.disabled) uploadAttrs['disabled'] = '';
- if (upload.multiple) uploadAttrs['multiple'] = '';
- %>
+let upload = locals.upload || {};
+let uploadClasses = [prefix + '-upload'];
+let groupClasses = [prefix + '-upload-group'];
+let uploadAttrs = upload.uploadAttrs || [];
+let labelAttrs = upload.labelAttrs || {};
+let labelClass = upload.labelClasses || [];
+if (upload.error) {
+  groupClasses.push(prefix + '-input-group--error');
+  uploadAttrs['aria-describedby'] = upload.id + '-desc-error';
+}
+if (upload.valid) {
+  groupClasses.push(prefix + '-input-group--valid');
+  uploadAttrs['aria-describedby'] = upload.id + '-desc-valid';
+}
+if (upload.disabled) uploadAttrs['disabled'] = '';
+if (upload.multiple) uploadAttrs['multiple'] = '';
+%>
 
 <div <%- includeClasses(groupClasses); %>>
   <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
