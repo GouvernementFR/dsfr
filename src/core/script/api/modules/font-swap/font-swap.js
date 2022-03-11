@@ -9,7 +9,9 @@ class FontSwap extends Module {
   }
 
   activate () {
-    document.fonts.addEventListener('loadingdone', this.swapping);
+    if (document.fonts) {
+      document.fonts.addEventListener('loadingdone', this.swapping);
+    }
   }
 
   swap () {
