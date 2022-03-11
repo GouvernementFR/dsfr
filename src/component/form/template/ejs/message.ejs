@@ -13,13 +13,13 @@
 let message = locals.message || {}
 %>
 <% if(message.error != undefined) { %>
-    <p id="<%= message.id %>-desc-error" class="<%= prefix %>-error-text" >
-        <%= message.error %>
-    </p>
+  <p id="<%= message.id %>-desc-error" class="<%= prefix %>-error-text" >
+    <%= message.error %>
+  </p>
 <% } %>
 
 <% if(message.valid != undefined) { %>
-    <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
-        <%= message.valid %>
-    </p>
+  <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
+    <%= message.valid %>
+  </p>
 <% } %>

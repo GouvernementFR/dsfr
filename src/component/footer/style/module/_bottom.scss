@@ -66,7 +66,6 @@
 &__bottom-copy {
   @include set-text-margin(0 0 4v 0);
   @include margin-top(2v);
-  @include enable-link-style;
 
   * {
     @include text-style(xs);

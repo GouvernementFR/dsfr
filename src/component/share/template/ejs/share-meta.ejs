@@ -14,9 +14,9 @@
 <% let meta = locals.meta || {}; %>
 
 <% for (const item of locals.meta) { %>
-    <% if(item.property) { %>
-        <meta property="<%= item.property %>" content="<%= item.content %>">
-    <% } else if(item.name) { %>
-        <meta name="<%= item.name %>" content="<%= item.content %>">
-    <% }
+  <% if(item.property) { %>
+    <meta property="<%= item.property %>" content="<%= item.content %>">
+  <% } else if(item.name) { %>
+    <meta name="<%= item.name %>" content="<%= item.content %>">
+  <% }
 } %>

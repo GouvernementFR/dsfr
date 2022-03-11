@@ -33,14 +33,14 @@ if (card.arrow === false) classes.push(`${prefix}-card--no-arrow`);
 if (card.accent !== undefined) classes.push(`${prefix}-card--${card.accent}`);
 %>
 <div <%- includeClasses(classes) %>>
-    <div class="<%= prefix %>-card__body">
-        <h4 class="<%= prefix %>-card__title"><a href="#" class="<%= prefix %>-card__link"><%- card.title %></a></h4>
-        <% if (card.description !== undefined) { %><p class="<%= prefix %>-card__desc"><%- card.description %></p><% } %>
-        <% if (card.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- card.detail %></p><% } %>
-    </div>
-    <% if (card.img !== undefined) { %>
-        <div class="<%= prefix %>-card__img">
-            <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: card.img}); %>
-        </div>
-    <% } %>
+  <div class="<%= prefix %>-card__body">
+    <h4 class="<%= prefix %>-card__title"><a href="#" class="<%= prefix %>-card__link"><%- card.title %></a></h4>
+    <% if (card.description !== undefined) { %><p class="<%= prefix %>-card__desc"><%- card.description %></p><% } %>
+    <% if (card.detail !== undefined) { %><p class="<%= prefix %>-card__detail"><%- card.detail %></p><% } %>
+  </div>
+  <% if (card.img !== undefined) { %>
+  <div class="<%= prefix %>-card__img">
+    <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: card.img}); %>
+  </div>
+  <% } %>
 </div>

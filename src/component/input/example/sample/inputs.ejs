@@ -6,19 +6,19 @@ const jsonData = JSON.parse(include('../../../form/example/sample/data', { form:
 const id = inputs.id;
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
-    path: 'input/example/sample/input-text',
-    data: {
-        input: {
-            ...input,
-            id: `${id}-${i}`
-        }
+  path: 'input/example/sample/input-text',
+  data: {
+    input: {
+      ...input,
+      id: `${id}-${i}`
     }
+  }
 });
 
 const fields = {
-    elements: elements,
-    ...inputs,
-    ...jsonData
+  elements: elements,
+  ...inputs,
+  ...jsonData
 }
 %>
 
