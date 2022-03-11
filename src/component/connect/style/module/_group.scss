@@ -5,4 +5,8 @@
 
 #{ns-group(connect)} {
   @include set-text-margin(0 0 4v 0);
+
+  p {
+    @include text-style(xs);
+  }
 }
