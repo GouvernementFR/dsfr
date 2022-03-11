@@ -19,7 +19,7 @@ if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly
     <% if (menu.tools) { %>
       <div class="<%= prefix %>-header__menu-links">
         <% if (menu.tools.duplicateLinks && menu.tools.links) { %>
-        <%- include('./links', {links: menu.tools.links}); %>
+        <%- include('../../../button/template/ejs/buttons-group', {links: menu.tools.links}); %>
         <% } %>
       </div>
     <% } %>

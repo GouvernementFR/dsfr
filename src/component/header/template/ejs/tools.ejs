@@ -14,7 +14,7 @@
 <div class="<%= prefix %>-header__tools">
   <% if (tools.links !== undefined) { %>
     <div class="<%= prefix %>-header__tools-links">
-      <%- include('./links', {links: tools.links}); %>
+      <%- include('../../../button/template/ejs/buttons-group', {buttonsGroup: tools.links}); %>
     </div>
   <% } %>
   <% if (tools.search !== undefined) {
