@@ -5,7 +5,7 @@
 
 #{ns(skiplinks)} {
   @include disable-list-style;
-  @include absolute;
+  @include absolute(0);
   @include padding(4v 0);
   transform: translateY(-100%);
 
