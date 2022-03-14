@@ -6,6 +6,11 @@
 #{ns(accordion)} {
   position: relative;
 
+  @include before('', block) {
+    @include absolute(0, 0, 0 , 0, 100%, 100%);
+    pointer-events: none;
+  }
+
   // add heading style for accessibility concerns and reset margins
   @include title {
     @include margin(0);

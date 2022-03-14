@@ -30,5 +30,16 @@
 
 @include list-item {
   @include relative;
-  @include before(none);
+  @include before('', block) {
+    @include absolute(0, 0, 0 , 0, 100%, 100%);
+    pointer-events: none;
+
+    @include respond-from(md) {
+      content: none;
+    }
+  }
+
+  & & & {
+    @include before(none);
+  }
 }

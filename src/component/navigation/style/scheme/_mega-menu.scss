@@ -16,8 +16,9 @@
     }
 
     &__list {
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-out);
-      @include scheme-element-no-box-shadow(lg);
+      @include before {
+        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-out);
+      }
     }
 
     &__category {
