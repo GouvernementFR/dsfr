@@ -6,12 +6,11 @@
 #{ns-group(connect)} {
   @include set-text-margin(0 0 4v 0);
 
-  #{ns(link)} {
-    @include text-style(sm);
-
-  }
-
   p {
     @include text-style(xs);
+  }
+
+  #{ns(connect)} + p a {
+    @include text-style(sm);
   }
 }
