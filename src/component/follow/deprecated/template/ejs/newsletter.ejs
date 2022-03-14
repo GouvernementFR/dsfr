@@ -1,0 +1,48 @@
+<%#
+# paramètres newsletter
+
+* newsletter.title (string, required) : titre du bloc newsletter
+
+* newsletter.desc (string, optional) : description du bloc newsletter
+
+* newsletter.type (string, optional) [button|form]: type de bloc newsletter (avec bouton ou avec formulaire)
+
+* newsletter.form (object, optional) : paramètres du formulaire champ/boutton (si type form)
+  ** newsletter.form.input (object, required) : paramètres du champ mail
+  ** newsletter.form.button (object, optional) : paramètres du boutton
+  ** newsletter.form.error (string, optional) : texte d'erreur
+  ** newsletter.form.valid (string, optional) : texte valide
+  ** newsletter.form.hint (string, optional) : texte additionel
+
+* newsletter.button (object, optional) : paramètres du boutton (si type button)
+
+%>
+<% eval(include('../../../../../core/index.ejs'));
+
+let newsletter = locals.newsletter || {};
+let newsletterClasses = [prefix + '-follow__newsletter'];
+
+%>
+
+<div <%- includeClasses(newsletterClasses); %> >
+  <div>
+    <p class="<%= prefix %>-h5"><%- newsletter.title %></p>
+    <% if (newsletter.desc) { %>
+    <p class="<%= prefix %>-text--sm"><%- newsletter.desc %></p>
+    <% } %>
+  </div>
+  <div>
+    <% if (newsletter.type === 'form') { %>
+      <% if (newsletter.form && newsletter.form.input) { %>
+        <form action="">
+          <%- include('../../../../input/template/ejs/input.ejs', {input: {addon: true, hint: newsletter.form.hint != undefined, error: newsletter.form.error, valid: newsletter.form.valid, ...newsletter.form.input}}); %>
+          <% if (newsletter.form.hint) { %>
+            <p id="<%= newsletter.form.input.id %>-hint-text" class="<%= prefix %>-hint-text"><%- newsletter.form.hint %></p>
+          <% } %>
+        </form>
+      <% } %>
+    <% } else if (newsletter.type === 'button') { %>
+      <%- include('../../../../button/template/ejs/button.ejs', {button: newsletter.button}); %>
+    <% } %>
+  </div>
+</div>

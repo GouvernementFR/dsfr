@@ -1,0 +1,38 @@
+<% let data = {};
+data.socials = {
+  title: "Suivez-nous<br> sur les réseaux sociaux",
+  networks: [
+    {
+      label: "facebook",
+      url: contentPlaceholder("Lien vers le facebook de l'organisation"),
+    },
+    {
+      label: "twitter",
+      url: contentPlaceholder("Lien vers le twitter de l'organisation"),
+    },
+    {
+      label: "instagram",
+      url: contentPlaceholder("Lien vers l'instagram de l'organisation"),
+    },
+    {
+      label: "linkedin",
+      url: contentPlaceholder("Lien vers le linkedin de l'organisation"),
+    },
+    {
+      label: "youtube",
+      url: contentPlaceholder("Lien vers le youtube de l'organisation"),
+    }
+  ]
+};
+
+data.newsletter = {
+  title: "Abonnez-vous à notre lettre d’information",
+  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.",
+  type: "button",
+  button: {
+    label: "S'abonner",
+    title: "S‘abonner à notre lettre d’information"
+  }
+}
+%>
+<%- JSON.stringify(data); %>
