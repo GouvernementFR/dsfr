@@ -12,4 +12,11 @@
 @import 'style/module';
 @import 'style/scheme';
 
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
 @include _header-scheme;
+
+// deprecated
+@include _header-deprecated-scheme;

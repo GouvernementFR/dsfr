@@ -1,0 +1,14 @@
+////
+/// Content Deprecated Scheme
+/// @group content
+////
+
+@mixin _content-deprecated-scheme($legacy: false) {
+  #{ns(content-media)} {
+    &__transcription {
+      #{ns(link)} {
+        @include btn-kind-scheme(4);
+      }
+    }
+  }
+}
