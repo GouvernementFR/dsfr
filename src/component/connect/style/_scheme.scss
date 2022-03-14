@@ -9,6 +9,10 @@
     @include scheme-element-text-color(inverted blue-france, (legacy: $legacy, standalone: $standalone));
 
     &-group {
+      #{ns(connect)} + p a {
+        @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+      }
+
       p {
         @include scheme-element-text-color(mention grey, (legacy:$legacy));
       }
