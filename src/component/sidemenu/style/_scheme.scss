@@ -20,13 +20,19 @@
     }
 
     @include list-item {
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
-      @include scheme-element-no-box-shadow(md);
+      @include before {
+        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-out bottom-1-in);
+      }
+
+      &:first-child {
+        @include before {
+          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
+        }
+      }
 
       &:last-child {
-        #{ns(sidemenu__btn)} {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
-          @include scheme-element-no-box-shadow(md);
+        @include before {
+          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-out);
         }
       }
     }
