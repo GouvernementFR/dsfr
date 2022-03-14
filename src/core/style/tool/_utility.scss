@@ -13,6 +13,7 @@
 
     // breakpoints: all = xs, sm, md, lg, xl
     $breakpointsList: if($breakpointsVars == all, map-keys($breakpoints), $breakpointsVars);
+    @if ($breakpointsList == null) { $breakpointsList: first; } // default: first
 
     // si l'utilitaire n'est pas désactivé
     @if (map-get($utilityVars, 1) != false and map-get($utilityVars, active) != false) {

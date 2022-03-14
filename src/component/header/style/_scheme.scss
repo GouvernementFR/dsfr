@@ -37,6 +37,10 @@
 
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
+
+        &--menu {
+          @include scheme-element-text-color(default grey, (legacy:$legacy));
+        }
       }
     }
 
