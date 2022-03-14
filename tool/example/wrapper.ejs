@@ -11,6 +11,12 @@ function section (title, desc, spacing = '32v') {
 
 locals.section = section;
 
+function deprecation () {
+  return section('Dépréciation', '<span class="fr-icon-warning-fill"></span> Les exemples suivants sont dépréciés, ne pas utiliser comme référence<br>Pour support des versions précédentes');
+}
+
+locals.deprecation = deprecation;
+
 function getSample (include) {
   return (title, path, data, snippet, layout, layoutData) => {
     sampling = false;

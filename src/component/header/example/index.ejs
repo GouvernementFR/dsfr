@@ -17,3 +17,7 @@
 <%- sample('Header avec opérateur horizontal, nom de service, lien d’accès, recherche', './sample/header.ejs', {header: { logo:{ title: 'République<br>Française'}, operator: imgData('img/placeholder.16x9.png', 'rendered', null, 'max-width:9.0625rem;'), service: true, links:true, search: true, navigation: 'min' }}, true, './layout');  %>
 
 <%- sample('Header avec raccourcis dupliqués, pour Angular, React et Vue', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, duplicateLinks: true }}, true, './layout');  %>
+
+<%- deprecation(); %>
+
+<%- sample('Header sans navigation avec raccourcis', '../deprecated/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>

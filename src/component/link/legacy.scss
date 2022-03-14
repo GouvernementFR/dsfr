@@ -7,4 +7,11 @@
 @import 'style/scheme';
 @import 'style/legacy';
 
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
 @include _link-scheme(true);
+
+// deprecated
+@include _link-deprecated-scheme(true);

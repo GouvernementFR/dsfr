@@ -1,0 +1,55 @@
+
+<%
+let share = locals.share || {};
+let data = {};
+
+/**
+ * Fonction pour générer un objet shareLink
+ **/
+function buildShareLink(name, label, href, width, height, disabled, comments) {
+  const title = `${label} - ${disabled ? 'désactivé' : 'nouvelle fenêtre'}`;
+  return {
+    name: name,
+    label: label,
+    comments: comments,
+    disabled: disabled,
+    attributes: {
+      title: title,
+      href: href,
+      target: '_blank',
+      rel: 'noopener',
+      onclick: `window.open(this.href,'${label}','toolbar=no,location=yes,status=no,menubar=no,scrollbars=yes,resizable=yes,width=${width},height=${height}'); event.preventDefault();`
+    }
+  }
+}
+
+data.share = {
+  title: 'Partager la page',
+  text: 'Veuillez <a href=' + contentPlaceholder("url page autorisation cookies") + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
+  disabled: share.disabled === true,
+  links: [
+    buildShareLink('facebook', 'Partager sur Facebook', 'https://www.facebook.com/sharer.php?u='+contentPlaceholder('url de la page'), 600, 450, share.disabled === true),
+    buildShareLink('twitter', 'Partager sur Twitter', 'https://twitter.com/intent/tweet?url='+contentPlaceholder('url de la page')+'&text='+contentPlaceholder('titre ou texte descriptif de la page')+'&via='+contentPlaceholder('via')+'&hashtags='+contentPlaceholder('hashtags'), 600, 420, share.disabled === true, share.disabled !== true ? 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)' : null),
+    buildShareLink('linkedin', 'Partager sur LinkedIn', 'https://www.linkedin.com/shareArticle?url='+contentPlaceholder('url de la page')+'&title='+contentPlaceholder('titre ou texte descriptif de la page'), 550, 550, share.disabled === true),
+    {
+      name: 'mail',
+      label: 'Partager par email',
+      attributes: {
+        href: 'mailto:?subject='+contentPlaceholder('objet du mail')+'&body='+contentPlaceholder('titre ou texte descriptif de la page')+' '+contentPlaceholder('url de la page'),
+        title: 'Partager par email',
+        target: '_blank',
+      }
+    },
+    {
+      name: 'copy',
+      tag: 'button',
+      label: 'Copier dans le presse-papier',
+      attributes: {
+        title: 'Copier dans le presse-papier',
+        onclick: `navigator.clipboard.writeText(window.location);alert('Adresse copiée dans le presse papier.');` // @TODO: ajouter un polyfill pour IE11
+      }
+    }
+  ]
+} %>
+
+<%- include('../../template/ejs/share', data); %>
