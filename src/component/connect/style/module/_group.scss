@@ -9,4 +9,8 @@
   p {
     @include text-style(xs);
   }
+
+  #{ns(connect)} + p a {
+    @include text-style(sm);
+  }
 }
