@@ -1,0 +1,120 @@
+<%
+let header = locals.header || {};
+const navbar = {};
+const menu = {navigation: {}, tools: {}};
+const data = {body: {}, menu: menu};
+let hasNavbar = false;
+let hasMenu = false;
+
+const brand = { logo: header.logo || {title: 'Intitulé<br>officiel'} };
+data.body.brand = brand;
+
+if (header.operator !== undefined) {
+  brand.operator = header.operator;
+}
+
+let servicePlaceholder = {
+    title:'Nom du site / service',
+    tagline: 'baseline - précisions sur l‘organisation'
+};
+
+switch (typeof header.service) {
+    case 'boolean':
+        brand.service = servicePlaceholder;
+        break;
+
+    case 'string':
+        switch(header.service) {
+            case 'title':
+                brand.service = { title: servicePlaceholder.title };
+              break
+        }
+        break;
+}
+
+if (header.links !== undefined || header.search) {
+    hasNavbar = true;
+    const tools = {};
+    data.body.tools = tools;
+
+    if (header.links === true) {
+        hasMenu = true;
+        tools.links = {
+            items: [
+                {
+                    icon: 'add-circle-line',
+                    url: '#',
+                    label: 'Créer un espace',
+                    tag: 'a'
+                },
+                {
+                    icon: 'lock-line',
+                    url: '#',
+                    label: 'Se connecter',
+                    tag: 'a'
+                },
+                {
+                    icon: 'account-line',
+                    url: '#',
+                    label: 'S’enregistrer',
+                    tag: 'a'
+                }
+            ]
+        };
+    }
+    else if (header.links !== undefined) {
+        hasMenu = true;
+        tools.links = header.links;
+    }
+
+    if (header.search) {
+        tools.search = header.search === true ?
+        {
+            sample: '../../../../search/example/sample/search-default'
+        }
+        : header.search;
+
+        tools.search.id = header.searchId || uniqueId('search');
+        tools.search.modalId = uniqueId('modal'),
+        tools.search.btnId = uniqueId('button')
+    }
+}
+
+switch (true) {
+    case header.navigation === 'min':
+        menu.navigation = {
+            sample: '../../../../navigation/example/sample/navigation-min'
+        };
+        break;
+
+    case header.navigation === true:
+        menu.navigation = {
+            sample: '../../../../navigation/example/sample/navigation'
+        };
+        break;
+
+    case typeof header.navigation === 'object':
+        menu.navigation = header.navigation;
+        break;
+}
+
+if (header.navigation !== undefined) {
+    hasMenu = true;
+}
+
+if (hasMenu) {
+    hasNavbar = true;
+    menu.modalId = uniqueId('modal');
+    menu.id = uniqueId('button');
+
+    if (header.navigation !== undefined) {
+        menu.navigation.id = header.navigationId || uniqueId('navigation');
+    }
+}
+
+if (hasNavbar) brand.navbar = navbar;
+
+if (header.duplicateLinks !== undefined) data.menu.tools.duplicateLinks = header.duplicateLinks;
+%>
+
+<%- include('../../template/ejs/header', {header: data}); %>

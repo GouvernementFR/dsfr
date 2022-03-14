@@ -1,0 +1,10 @@
+////
+/// Link Deprecated Scheme
+/// @group link
+////
+
+@import 'scheme/close';
+
+@mixin _link-deprecated-scheme ($legacy: false) {
+  @include _link-close-deprecated-scheme ($legacy);
+}

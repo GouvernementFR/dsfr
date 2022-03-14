@@ -1,0 +1,16 @@
+////
+/// Follow Deprecated Tool
+/// @group follow
+////
+
+@mixin social-deprecated-icon ($modifier, $icon) {
+  #{ns('link--' + $modifier)} {
+    @include nest-btn(md, only, $icon, null, false);
+  }
+
+  #{ns(links-group--lg)} {
+    #{ns('link--' + $modifier)} {
+      @include nest-btn(lg, only, $icon, null, false);
+    }
+  }
+}
