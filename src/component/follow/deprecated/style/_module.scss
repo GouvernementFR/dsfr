@@ -11,6 +11,7 @@
     @include margin-bottom(-4v);
     @include width(auto);
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__social {
