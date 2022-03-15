@@ -94,7 +94,23 @@ valeurs :
 <ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
   <% for (let i = 0; i < buttons.length; i++) { %>
   <li>
-    <%- include('./button.ejs', {button:{...buttons[i]}}); %>
+      <%
+          const button = buttons[i];
+          let path;
+          switch(button.template) {
+              case 'display':
+                path = './button-display.ejs';
+                break;
+
+              case 'close':
+                path = './button-close.ejs';
+                break;
+
+              default:
+                path = './button.ejs';
+          }
+        %>
+    <%- include(path, {button:button}); %>
   </li>
   <% } %>
 </ul>

@@ -20,13 +20,22 @@
   %>
     <li class="<%= prefix %>-footer__bottom-item">
       <%
-        let classes = links[i].classes || [];
-        let tag = links[i].tag || 'a';
-        let attributes = links[i].attributes || {};
-        if (tag==='a') attributes["href"] = '#';
-        classes.push(prefix + '-footer__bottom-link');
-      %>
-      <<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= tag %>>
+        const link = links[i];
+
+        switch (link.template) {
+          case 'display':
+            %><%- include('../../../button/template/ejs/button-display', { button: link }); %><%
+            break;
+
+
+          default:
+            const classes = link.classes || [];
+            const tag = link.tag || 'a';
+            const attributes = link.attributes || {};
+            if (tag === 'a') attributes["href"] = link.url|| '#';
+            classes.push(`${prefix}-footer__bottom-link`);
+            %><<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= tag %>><%
+    } %>
     </li>
   <% } %>
 </ul>
