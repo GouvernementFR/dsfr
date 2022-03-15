@@ -70,6 +70,7 @@
     }
 
     @include respond-from(lg) {
+      position: initial;
       @include before(none);
       align-items: flex-start;
 
