@@ -5,10 +5,22 @@ const attrModal = [];
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
+const links = {
+  items: [
+    {
+      icon: 'theme-fill',
+      iconPlace: 'left',
+      label: 'Paramètres d\'affichage',
+      attributes: {...attrModal},
+      tag: 'button'
+    }
+  ]
+};
+
 let dataModal = {
   id: prefix + "-theme-modal",
   title: 'Paramètres d’affichage',
-  body: '../../../display/example/sample/body',
+  body: '../../../display/deprecated/example/sample/body',
   size: "sm"
 }
 
@@ -37,7 +49,8 @@ let dataFooter = {
         {label: 'Gestion des cookies'},
         {
           label: 'Paramètres d\'affichage',
-          template: 'display',
+          tag: 'button',
+          classes: [prefix + '-fi-theme-fill', prefix + '-link--icon-left'],
           attributes: {
             'aria-controls': prefix + '-theme-modal',
             [`data-${prefix}-opened`]: false,
@@ -49,19 +62,15 @@ let dataFooter = {
 }
 %>
 
-<%- include('../../header/example/sample/header.ejs', {header: { links: { buttons: [{ template: 'display', attributes: attrModal }] }, navigation: true, navigationId:'header-navigation' }}); %>
+<%- include('../../../header/deprecated/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Scheme - gestion du dark mode</h1>
-  <%- sample('bouton ouverture thèmes', '../../button/template/ejs/button-display', { button: { attributes: attrModal }}, true) %>
+  <%- sample('bouton ouverture thèmes', '../../../link/example/sample/link-default', {link:links.items[0]}, true) %>
 
   <!-- Le contenu de la modale des paramètres d'affichage est importé de manière globale dans les pages d'exemple -->
-  <%- sample('snippet modal de paramètres d\'affichage', '../../modal/template/ejs/modal.ejs', {modal:dataModal}, true, './layout-snippet-only'); %>
+  <%- sample('snippet modal de paramètres d\'affichage', '../../../modal/template/ejs/modal.ejs', {modal:dataModal}, true, './layout-snippet-only'); %>
 
 </div>
 
-<%- include('../../footer/template/ejs/footer.ejs', {footer: dataFooter }); %>
-
-<%- deprecation(); %>
-
-<%- include('../deprecated/example/index'); %>
+<%- include('../../../footer/template/ejs/footer.ejs', {footer: dataFooter }); %>
