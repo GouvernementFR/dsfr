@@ -1,0 +1,25 @@
+<%#
+# paramètres button-display
+
+* button.label (string, required) : contenu texte
+
+* button.title (string, optional) : titre du bouton
+
+* button.classes (array, optional) : Classes suplémentaires sur le bouton
+
+* button.attributes (object, optional) : Attributs suplémentaires sur le bouton
+
+%>
+
+<%
+const button = locals.button || {};
+
+button.tag = 'button';
+if (!button.classes) button.classes = [];
+if (!button.attributes) button.attributes = {};
+button.classes.push(prefix + '-btn--display');
+button.label = button.label || 'Paramètres d\'affichage';
+button.title = button.title || button.label || 'Paramètres d\'affichage';
+
+%>
+<%- include('./button', button);%>
