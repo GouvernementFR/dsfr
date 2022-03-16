@@ -8,10 +8,16 @@
     @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
       #{ns(btn)} {
         @include has-not-icon {
-          @include nest-btn(sm, null, null, null, false);
+          &:not(#{ns(btn--display)}) {
+            @include nest-btn(sm, null, null, null, false);
+          }
         }
 
         @include has-icon {
+          @include nest-btn(sm, left, null, null, false);
+        }
+
+        &#{ns(btn--display)} {
           @include nest-btn(sm, left, null, null, false);
         }
 
