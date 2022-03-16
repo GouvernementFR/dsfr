@@ -13,19 +13,18 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let follow = locals.follow || {};
- let followClasses = follow.classes || [];
- followClasses.push(prefix + '-follow');
+let follow = locals.follow || {};
+let followClasses = follow.classes || [];
+followClasses.push(prefix + '-follow');
 
- let followAttributes = follow.attributes || {};
- let socials = follow.socials || undefined;
- let newsletter = follow.newsletter || undefined;
- %>
+let followAttributes = follow.attributes || {};
+let socials = follow.socials || undefined;
+let newsletter = follow.newsletter || undefined;
+%>
 
 <div <%- includeClasses(followClasses); %> <%- includeAttrs(followAttributes) %>>
   <div class="<%= prefix %>-container">
     <div class="<%= prefix %>-grid-row">
-
       <%
       let gClasses = [prefix+'-col-12'];
       if (follow.newsletter) {
@@ -35,7 +34,8 @@
         </div>
       <% }
       if (follow.socials) {
-        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4'] %>
+        if (follow.newsletter) gClasses = [prefix+'-col-12', prefix+'-col-md-4'];
+      %>
         <div <%- includeClasses(gClasses) %>>
           <%- include('socials.ejs', {socials: follow.socials}); %>
         </div>

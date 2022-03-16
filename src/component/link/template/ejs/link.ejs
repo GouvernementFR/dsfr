@@ -24,15 +24,12 @@
   * left : icone à gauche du label
   * right : icone à droite du label
 
-* link.alignOnContent (boolean, optional) : ajoute des marges négatives pour être aligné sur le contenu
-
 * link.attributes (object, optional) : attributs spécifiques à rajouter sur le composant
 
 * link.classes (array, optional) : classes spécifiques à rajouter sur le composant
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-
 <%
 const link = locals.link || {};
 let linkClasses = link.classes || [];
@@ -42,55 +39,63 @@ const tag = link.tag || 'a';
 
 linkClasses.push(prefix + '-link');
 
-switch(link.size) {
-  case 'sm':
-    linkClasses.push(prefix + '-link--sm');
-  break;
+switch (link.size) {
+    case 'sm':
+        linkClasses.push(prefix + '-link--sm');
+        break;
 
-  case 'lg':
-    linkClasses.push(prefix + '-link--lg');
-  break;
+    case 'lg':
+        linkClasses.push(prefix + '-link--lg');
+        break;
 }
 
-if (link.icon !== undefined) linkClasses.push(prefix + '-fi-' + link.icon);
+if (link.icon !== undefined) linkClasses.push(`${prefix}-fi-${link.icon}`);
 
-if (link.iconPlace !== undefined) switch(link.iconPlace)
-{
-  case 'left':
-    linkClasses.push(prefix + '-link--icon-left');
-  break;
+if (link.iconPlace !== undefined) {
+    switch (link.iconPlace) {
+        case 'left':
+            linkClasses.push(`${prefix}-link--icon-left`);
+            break;
 
-  case 'right':
-    linkClasses.push(prefix + '-link--icon-right');
-  break;
+        case 'right':
+            linkClasses.push(`${prefix}-link--icon-right`);
+            break;
+    }
 }
 
 if (link.disabled === true) {
-  switch(tag) {
-    case 'input':
-    case 'button':
-      linkAttrs['disabled'] = '';
-    break;
+    switch (tag) {
+        case 'input':
+        case 'button':
+            linkAttrs['disabled'] = '';
+            break;
 
-    case 'a':
-      linkAttrs['aria-disabled'] = 'true';
-      linkAttrs['role'] = 'link';
-    break;
-  }
-} else if (tag === 'a') {
-  linkAttrs.href = link.href || '[url - à modifier]';
-  switch (true) {
-  case link.blank:
-    linkAttrs.target = '_blank';
-  break;
+        case 'a':
+            linkAttrs['aria-disabled'] = 'true';
+            linkAttrs.role = 'link';
+            linkAttrs.href = undefined;
+            break;
+    }
+} else {
+    switch (tag) {
+        case 'a':
+            linkAttrs.href = link.href || '[url - à modifier]';
+            switch (true) {
+                case link.blank:
+                    linkAttrs.target = '_blank';
+                    break;
 
-  case link.self:
-    linkAttrs.target = '_self';
-  break;
-  }
+                case link.self:
+                    linkAttrs.target = '_self';
+                    break;
+            }
+            if (link.rel) linkAttrs.rel = link.rel;
+            break;
+    }
 }
 
-if (link.alignOnContent) linkClasses.push(`${prefix}-link--align-on-content`)
 %>
 
-<<%= tag %> <%- includeClasses(linkClasses)%> <%- includeAttrs(linkAttrs); %>><%- link.label %></<%= tag %>>
+<<%= tag %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
+<%- link.label %>
+</<%= tag %>>

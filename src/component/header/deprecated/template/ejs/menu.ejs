@@ -1,0 +1,31 @@
+<%#
+# paramètres header menu
+
+* menu (object, required) : Paramètres du template
+  ** menu.navigation (object, optional) : Paramètres du menu de navigation
+    *** menu.navigation.id (String, optional) : Id du bouton d'ouverture du menu
+    *** menu.navigation.modalId (String, optional) : Id de la modale du menu de navigation
+  ** menu.tools (object, optional) : Paramètres des tools (raccourcis)
+    *** menu.tools.links (object, optional) : Paramètres des tools (raccourcis)
+    *** menu.tools.duplicateLinks (boolean, optional) : Si true, duplique le bloc de liens raccourcis dans le menu mobile (pour vue/angular/react)
+%>
+<%
+let menu = locals.menu || {};
+if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly defined in header. modalId required');
+%>
+<div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= menu.modalId %>" aria-labelledby="<%= menu.id %>">
+  <div class="<%= prefix %>-container%>" >
+    <%- include('../../../../link/deprecated/template/ejs/link-close', {link: { closeId: menu.modalId }}); %>
+    <% if (menu.tools) { %>
+      <div class="<%= prefix %>-header__menu-links">
+        <% if (menu.tools.duplicateLinks && menu.tools.links) { %>
+        <%- include('./links', {links: tools.links}); %>
+        <% } %>
+      </div>
+    <% } %>
+
+    <% if (menu.navigation && menu.navigation.id) { %>
+      <%- include( menu.navigation.sample !== undefined ? menu.navigation.sample : '../../../../navigation/template/ejs/navigation', {navigation: menu.navigation} ); %>
+    <% } %>
+  </div>
+</div>

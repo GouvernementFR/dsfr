@@ -1,0 +1,35 @@
+////
+/// Core Tool : Display ellipsis
+/// @group core
+////
+
+@mixin build-ellipsis() {
+  $display-ellipsis-vars: map-get($display-vars, ellipsis);
+  $buildBreakpoints: map-get($display-ellipsis-vars, breakpoints);
+  $breakpointsList: if($buildBreakpoints == all, $breakpoints, $buildBreakpoints);
+
+  @if ($display-ellipsis-vars != false and map-get($display-ellipsis-vars, active) != false) {
+    #{ns(ellipsis)} {
+      @include ellipsis();
+    }
+
+    @if ($breakpointsList != false) {
+      @each $bp, $limit in $breakpointsList {
+        @include respond-from($bp) {
+          #{ns(ellipsis)}-#{$bp} {
+            @include ellipsis();
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin ellipsis() {
+  #{ns(ellipsis)} {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

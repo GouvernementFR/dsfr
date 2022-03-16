@@ -36,76 +36,76 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
- let tag = locals.tag || {};
- let tagClasses = tag.classes || [];
- let tagAttrs = tag.attributes || {};
+let tag = locals.tag || {};
+let tagClasses = tag.classes || [];
+let tagAttrs = tag.attributes || {};
 
- tagClasses.push(prefix + '-tag');
+tagClasses.push(prefix + '-tag');
 
- if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
+if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
 
- switch(tag.size) {
-    case 'sm':
-        tagClasses.push(prefix + '-tag--sm');
+switch(tag.size) {
+  case 'sm':
+      tagClasses.push(prefix + '-tag--sm');
+  break;
+}
+
+switch(tag.type) {
+  case 'clickable':
+      if (tag.tag === undefined) tag.tag = 'a';
+      if (tag.disabled !== true) {
+          tagAttrs.href = tag.href || contentPlaceholder('url');
+          switch (true) {
+              case tag.blank:
+                  tagAttrs.target = '_blank';
+              break;
+              case tag.self:
+                  tagAttrs.target = '_self';
+              break;
+          }
+      }
+  break;
+  case 'pressable':
+      if (tag.tag === undefined) tag.tag = 'button';
+      tagAttrs["aria-pressed"] = 'false';
+  break;
+  case 'dismissable':
+      if (tag.tag === undefined) tag.tag = 'button';
+      tagClasses.push(prefix + '-tag--dismiss');
+      tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
+  break;
+  default:
+      if (tag.tag === undefined) tag.tag = 'p';
+  break;
+}
+
+if (tag.icon !== undefined) tagClasses.push(prefix + '-fi-' + tag.icon);
+
+if (tag.iconPlace !== undefined) switch(tag.iconPlace) {
+  case 'left':
+      tagClasses.push(prefix + '-tag--icon-left');
+      break;
+
+  case 'right':
+      tagClasses.push(prefix + '-tag--icon-right');
+      break;
+}
+
+if (tag.disabled === true) {
+  switch(tag.tag) {
+  case 'input':
+  case 'button':
+    tagAttrs.disabled = '';
     break;
- }
 
- switch(tag.type) {
-    case 'clickable':
-        if (tag.tag === undefined) tag.tag = 'a';
-        if (tag.disabled !== true) {
-            tagAttrs.href = tag.href || contentPlaceholder('url');
-            switch (true) {
-                case tag.blank:
-                    tagAttrs.target = '_blank';
-                break;
-                case tag.self:
-                    tagAttrs.target = '_self';
-                break;
-            }
-        }
+  case 'a':
+    tagAttrs['aria-disabled'] = 'true';
+    tagAttrs.role = 'link';
     break;
-    case 'pressable':
-        if (tag.tag === undefined) tag.tag = 'button';
-        tagAttrs["aria-pressed"] = 'false';
-    break;
-    case 'dismissable':
-        if (tag.tag === undefined) tag.tag = 'button';
-        tagClasses.push(prefix + '-tag--dismiss');
-        tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
-    break;
-    default:
-        if (tag.tag === undefined) tag.tag = 'p';
-    break;
- }
+  }
+}
 
- if (tag.icon !== undefined) tagClasses.push(prefix + '-fi-' + tag.icon);
-
- if (tag.iconPlace !== undefined) switch(tag.iconPlace) {
-    case 'left':
-        tagClasses.push(prefix + '-tag--icon-left');
-        break;
-
-    case 'right':
-        tagClasses.push(prefix + '-tag--icon-right');
-        break;
- }
-
- if (tag.disabled === true) {
-    switch(tag.tag) {
-    case 'input':
-    case 'button':
-        tagAttrs.disabled = '';
-        break;
-
-    case 'a':
-        tagAttrs['aria-disabled'] = 'true';
-        tagAttrs.role = 'link';
-        break;
-    }
- }
-
- tagAttrs = {...tagAttrs, ...tag.attributes}; // place les attributs venant du sample à la fin
+tagAttrs = {...tagAttrs, ...tag.attributes}; // place les attributs venant du sample à la fin
 %>
 
 <<%= tag.tag %> <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></<%= tag.tag %>>

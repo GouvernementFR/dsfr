@@ -1,4 +1,4 @@
-import { Instance } from '../api/register/instance';
+import { Instance } from '../api/modules/register/instance';
 import ns from '../api/utilities/namespace.js';
 
 class DisclosureButton extends Instance {

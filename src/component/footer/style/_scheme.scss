@@ -18,6 +18,9 @@
 
     &__bottom {
       @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
+      #{ns(btn)} {
+        @include scheme-element-text-color(mention grey, (legacy:$legacy));
+      }
     }
 
     &__bottom-item {

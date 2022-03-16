@@ -72,11 +72,13 @@
   }
 
   @include body {
+    --modal-max-height: calc(100vh - 2rem);
     pointer-events: all;
     overflow-y: auto;
     flex: 1 1 auto;
     max-height: calc(100vh - 2rem);
     @include shadow(md);
+    max-height: var(--modal-max-height);
 
     @include respond-from(md) {
       max-height: 80vh !important;
@@ -87,7 +89,7 @@
     flex: auto 0 0;
     @include display-flex(null, center);
     @include padding(4v 4v 2v);
-    @include padding(4v, md);
+    @include padding(4v 8v, md);
   }
 
   &__content {
@@ -106,7 +108,7 @@
     @include margin-top(-12v, md);
     @include sticky(null,null,0);
     transition: box-shadow 0.3s;
-    z-index: z-index(modal-footer-focus);
+    z-index: z-index(modal-footer);
 
     #{ns-group(btns)} {
       margin-bottom: -1rem;
@@ -115,15 +117,13 @@
   }
 
   &__title {
+    @include set-title-margin(0 0 4v 0);
     @include title-style('h4');
     @include font-weight('bold');
 
     @include has-icon {
       @include margin-right(2v);
     }
-
-    @include margin-top(0);
-    @include margin-bottom(4v);
   }
 
   &__body#{ns(scroll-shadow)} {

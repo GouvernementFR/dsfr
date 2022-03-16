@@ -1,4 +1,4 @@
-import { Instance } from '../api/register/instance.js';
+import { Instance } from '../api/modules/register/instance.js';
 import { DisclosureEmission } from './disclosure-emission.js';
 import { completeAssign } from '../api/utilities/property/complete-assign.js';
 
@@ -66,7 +66,9 @@ class DisclosuresGroup extends Instance {
     return this._members;
   }
 
-  get length () { return this.members.length; }
+  get length () {
+    return this.members ? this.members.length : 0;
+  }
 
   getIndex () {
     this._index = -1;

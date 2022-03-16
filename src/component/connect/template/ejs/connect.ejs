@@ -1,0 +1,73 @@
+<%#
+# paramètres connect
+
+* connect.id (string) : id du bouton connect
+
+* connect.link (object, required) paramètres du lien france connnect
+  ** connect.link.href (string, required) : lien vers france connect
+  ** connect.link.label (string, required) : label "Qu'est ce que france connect ?"
+  ** connect.link.attributes (object, optionnal) : Attributs supplémentaire sur le lien (ex: {target:'_blank'})
+
+* connect.type (string, optional) type du bouton connect
+
+* connect.lang (string, optional) langue du bouton connect
+
+* connect.disabled (boolean, optional) : si valeur true, bouton désactivé
+
+* standalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% const content = JSON.parse(include('../../content.json')); %>
+
+<%
+const connect = locals.connect || {};
+let connectClasses = [];
+let connectAttrs = {};
+if (connect.id) connectAttrs.id = connect.id;
+
+connectClasses.push(prefix + '-connect');
+
+const login = (connect.lang && content.login[connect.lang]) ? content.login[connect.lang] : content.login.fr;
+
+let brand = content.brand.default;
+switch(connect.type) {
+  case 'plus':
+    connectClasses.push(prefix + '-connect--plus');
+    brand = content.brand.plus;
+  break;
+
+  case 'agent':
+    connectClasses.push(prefix + '-connect--agent');
+    brand = content.brand.agent;
+  break;
+}
+
+if (!locals.standalone) {
+%>
+<div class="<%= prefix %>-connect-group">
+<% } %>
+<%
+if (connect.disabled === true) connectAttrs.disabled = '';
+%>
+
+<button <%- includeClasses(connectClasses) %> <%- includeAttrs(connectAttrs); %> >
+  <span class="<%= prefix %>-connect__login"><%- login %></span>
+  <span class="<%= prefix %>-connect__brand"><%- brand %></span>
+</button>
+
+<% if (connect.link) { %>
+  <p>
+    <a href="<%= connect.link.href %>" <%- includeAttrs(connect.link.attributes); %>><%= connect.link.label %></a>
+  </p>
+<% } %>
+
+<% if (connect.desc) { %>
+  <p>
+  <%- connect.desc %>
+  </p>
+<% } %>
+
+<% if (!locals.standalone) { %>
+</div>
+<% } %>

@@ -29,26 +29,26 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-  let toggle = locals.toggle || {};
-  let classes = toggle.classes || [];
-  let inputAttr = toggle.inputAttr || {};
+let toggle = locals.toggle || {};
+let classes = toggle.classes || [];
+let inputAttr = toggle.inputAttr || {};
 
-  if (toggle.hint) inputAttr["aria-describedby"] = toggle.groupId ? toggle.groupId + toggle.id + "-hint-text" : toggle.id + "-hint-text";
+if (toggle.hint) inputAttr["aria-describedby"] = toggle.groupId ? toggle.groupId + toggle.id + "-hint-text" : toggle.id + "-hint-text";
 
-  classes.push(prefix + '-toggle');
+classes.push(prefix + '-toggle');
 
-  if (toggle.border !== undefined) {
-    classes.push(prefix +'-toggle--border-bottom');
-  }
-  if (toggle.left !== undefined) {
-    classes.push(prefix +'-toggle--label-left');
-  }
-  if (toggle.disabled) inputAttr['disabled'] = '';
-  if (toggle.checked) inputAttr['checked'] = '';
+if (toggle.border !== undefined) {
+  classes.push(prefix +'-toggle--border-bottom');
+}
+if (toggle.left !== undefined) {
+  classes.push(prefix +'-toggle--label-left');
+}
+if (toggle.disabled) inputAttr['disabled'] = '';
+if (toggle.checked) inputAttr['checked'] = '';
 %>
 
 <div <%- includeClasses(classes)%>>
   <input type="checkbox" class="<%= prefix %>-toggle__input" <%- includeAttrs(inputAttr)%> id="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>">
   <label class="<%= prefix %>-toggle__label" for="<% if(toggle.groupId){ %><%= toggle.groupId %><%= toggle.id %><% } else {%><%= toggle.id %><% } %>" <% if(toggle.state){ %> data-<%= prefix %>-checked-label="Activé" data-<%= prefix %>-unchecked-label="Désactivé" <% } %>><%- toggle.label %></label>
-  <% if(toggle.hint){ %><p class="<%= prefix %>-hint-text" id="<%= toggle.groupId %><%= toggle.id %>-hint-text">Texte d’aide pour clarifier l’action</p><% } %>
+  <% if(toggle.hint){ %><p class="<%= prefix %>-hint-text" id="<%= toggle.groupId %><%= toggle.id %>-hint-text"><%- toggle.hint %></p><% } %>
 </div>

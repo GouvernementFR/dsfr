@@ -43,73 +43,73 @@ closeButton.closeId = modal.id;
 
 const gridClasses = [];
 const SIZES = {
-    sm: {
-        first: 12,
-        md: 6,
-        lg: 4
-    },
-    md: {
-        first: 12,
-        md: 8,
-        lg: 6
-    },
-    lg: {
-        first: 12,
-        md: 10,
-        lg: 8
-    },
+  sm: {
+    first: 12,
+    md: 6,
+    lg: 4
+  },
+  md: {
+    first: 12,
+    md: 8,
+    lg: 6
+  },
+  lg: {
+    first: 12,
+    md: 10,
+    lg: 8
+  },
 }
 const getGridClasses = (size) => {
   const classes = [];
   const settings = SIZES[size];
-   for (let bp in settings) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp }-${settings[bp]}` );
-   return classes;
+  for (let bp in settings) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp }-${settings[bp]}` );
+  return classes;
 }
 
 switch(modal.size) {
-    case 'sm':
-        case 'lg':
-        gridClasses.push.apply(gridClasses, getGridClasses(modal.size));
-        break;
-    default:
-        gridClasses.push.apply(gridClasses, getGridClasses('md'));
+  case 'sm':
+    case 'lg':
+    gridClasses.push.apply(gridClasses, getGridClasses(modal.size));
+    break;
+  default:
+    gridClasses.push.apply(gridClasses, getGridClasses('md'));
 }
 
- const titleId = modal.id + '-title';
+const titleId = modal.id + '-title';
 
-  modalAttrs.role = 'dialog';
-  modalAttrs['aria-labelledby'] = titleId;
+modalAttrs.role = 'dialog';
+modalAttrs['aria-labelledby'] = titleId;
 
-  if (modal.top) modalClasses.push(`${prefix}-modal--top`);
+if (modal.top) modalClasses.push(`${prefix}-modal--top`);
 
-  if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealing-backdrop`] = modal.concealingBackdrop;
+if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealing-backdrop`] = modal.concealingBackdrop;
 
- %>
+%>
 
-<dialog id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %> >
-    <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-md">
-        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
-            <div <%- includeClasses(gridClasses); %>>
-                <div class="<%= prefix %>-modal__body">
-                    <div class="<%= prefix %>-modal__header">
-                        <%- include('../../../link/template/ejs/link-close', {link: closeButton} )%>
-                    </div>
-                    <div class="<%= prefix %>-modal__content">
-                        <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
-                            <% if (modal.icon !== undefined) { %>
-                                <span class="<%= prefix %>-fi-<%= modal.icon %> <%= prefix %>-fi--lg" aria-hidden="true"></span>
-                            <% } %>
-                            <%= modal.title %>
-                        </h1>
-                        <%- include(modal.body) %>
-                    </div>
-                    <% if(modal.footer !== undefined) { %>
-                        <div class="<%= prefix %>-modal__footer">
-                            <%- include(modal.footer) %>
-                        </div>
-                    <% } %>
-                </div>
-            </div>
+<dialog id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
+  <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-md">
+    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
+      <div <%- includeClasses(gridClasses); %>>
+        <div class="<%= prefix %>-modal__body">
+          <div class="<%= prefix %>-modal__header">
+            <%- include('../../../button/template/ejs/button-close', {button: closeButton} )%>
+          </div>
+          <div class="<%= prefix %>-modal__content">
+            <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
+              <% if (modal.icon !== undefined) { %>
+              <span class="<%= prefix %>-fi-<%= modal.icon %> <%= prefix %>-fi--lg" aria-hidden="true"></span>
+              <% } %>
+              <%= modal.title %>
+            </h1>
+            <%- include(modal.body) %>
+          </div>
+          <% if(modal.footer !== undefined) { %>
+          <div class="<%= prefix %>-modal__footer">
+            <%- include(modal.footer) %>
+          </div>
+          <% } %>
         </div>
+      </div>
     </div>
+  </div>
 </dialog>

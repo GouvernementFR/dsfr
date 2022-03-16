@@ -4,12 +4,14 @@
 ////
 
 @mixin collapse($className: collapse) {
+  --collapse-max-height: 0;
+  --collapse: -99999px;
+  --collapser: '';
+
   overflow: hidden;
   transition: visibility 0.3s;
   max-height: 0;
-
-  --collapse: -99999px;
-  --collapser: '';
+  max-height: var(--collapse-max-height);
 
   &::before {
     display: block;

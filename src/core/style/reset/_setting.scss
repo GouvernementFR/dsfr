@@ -3,21 +3,4 @@
 /// @group core
 ////
 
-@import 'setting/font-face';
-
-$reset-settings: (
-  body: true,
-  box-sizing: true,
-  font-face: (
-    path:'../fonts'
-  ),
-  heading: true,
-  link: true,
-  list: true,
-  text: true,
-  hr: true,
-  button: true,
-  input: true,
-  sub: true,
-  sup: true
-) !default;
+$reset-settings: map-get($variables, reset);

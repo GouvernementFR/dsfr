@@ -92,4 +92,4 @@ const buildScript = async (pck, minify, legacy, map) => {
   }
 };
 
-module.exports = buildScript;
+module.exports = { buildScript };

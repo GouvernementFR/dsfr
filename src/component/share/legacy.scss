@@ -7,4 +7,10 @@
 @import 'style/scheme';
 @import 'style/legacy';
 
+// deprecated
+@import 'deprecated/style/scheme';
+
 @include _share-scheme(true);
+
+// deprecated
+@include _share-deprecated-scheme(true);

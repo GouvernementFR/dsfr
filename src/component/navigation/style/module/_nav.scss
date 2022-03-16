@@ -4,7 +4,7 @@
 ////
 
 #{ns(nav)} {
-  @include disable-link-style;
+  @include disable-underline;
   @include disable-list-style;
   @include set-text-margin(0);
   @include set-title-margin(0);
@@ -63,9 +63,15 @@
     @include display-flex(column, stretch);
     flex: 0 1 auto;
 
-    @include scheme-element-no-box-shadow(lg);
+    @include relative;
+    @include before('', block) {
+      @include absolute(0, 0, 0 , 0, 100%, 100%);
+      pointer-events: none;
+    }
 
     @include respond-from(lg) {
+      position: initial;
+      @include before(none);
       align-items: flex-start;
 
       &--align-right {
@@ -85,7 +91,7 @@
       @include text-style(sm);
     }
 
-    @include enable-blend;
+    @include enable-tint;
 
     &[aria-current] {
       position: relative;
@@ -98,6 +104,11 @@
 
   &__link {
     display: block;
+
+    &[aria-current]:not([href]) {
+      pointer-events: none;
+      cursor: default;
+    }
   }
 
   &__btn {

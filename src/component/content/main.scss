@@ -9,3 +9,13 @@
 
 @import 'index';
 @import 'style/module';
+@import 'style/scheme';
+
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
+@include _content-scheme;
+
+// deprecated
+@include _content-deprecated-scheme;

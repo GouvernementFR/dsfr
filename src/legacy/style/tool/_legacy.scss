@@ -16,6 +16,9 @@
       @content;
     }
   }
+  @else {
+    @content;
+  }
 }
 
 /// Styles spécifiques pour les plateformes modernes, excluant les plateformes antérieures

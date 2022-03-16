@@ -1,0 +1,34 @@
+////
+/// Connect Module
+/// @group connect
+////
+
+@mixin _connect-scheme($legacy: false, $standalone: false) {
+  #{ns(connect)} {
+    @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy, standalone: $standalone));
+    @include scheme-element-text-color(inverted blue-france, (legacy: $legacy, standalone: $standalone));
+
+    &-group {
+      #{ns(connect)} + p a {
+        @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+      }
+
+      p {
+        @include scheme-element-text-color(mention grey, (legacy:$legacy));
+      }
+    }
+
+    @include after {
+      @include scheme-element-bg-image-color((text inverted blue-france, text inverted blue-france), (legacy: $legacy, standalone: $standalone));
+    }
+
+    @include disabled ((can-be-link: true)) {
+      @include scheme-element-bg-color(disabled grey, (legacy: $legacy, standalone: $standalone));
+      @include scheme-element-text-color(disabled grey, (legacy: $legacy, standalone: $standalone));
+
+      @include after {
+        @include scheme-element-bg-image-color((text disabled grey, text disabled grey), (legacy: $legacy, standalone: $standalone));
+      }
+    }
+  }
+}

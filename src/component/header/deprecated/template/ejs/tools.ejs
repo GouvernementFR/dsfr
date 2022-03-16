@@ -1,0 +1,31 @@
+<%#
+# paramètres header tools
+
+* tools (object, required) : Paramètres du template
+  ** tools.links (object, optional) : Paramètres des liens d'accès direct - voir links
+  ** tools.search (object, optional) : Paramètres du bloc de recherche (voir compoosant search)
+    *** tools.search.id (string, required) : Id du champ de recherche
+    *** tools.search.modalId (string, required) : Id de la modale de recherche (mobile)
+    *** tools.search.placeholder (string, required) : placeholder du champ de recherche
+    *** tools.search.sample (string, optional) : chemin vers le template de search (si différent)
+%>
+<% let tools = locals.tools || {}; %>
+
+<div class="<%= prefix %>-header__tools">
+  <% if (tools.links !== undefined) { %>
+    <div class="<%= prefix %>-header__tools-links">
+      <%- include('./links', {links: tools.links}); %>
+    </div>
+  <% } %>
+  <% if (tools.search !== undefined) {
+      if (!tools.search.id || !tools.search.modalId) throw new Error('tools.search is not defined in header. id & modalId required');
+  %>
+    <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= tools.search.modalId %>">
+      <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
+        <%- include('../../../../link/deprecated/template/ejs/link-close', {link: { closeId: tools.search.modalId }}); %>
+        <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../../search/template/ejs/search', {search: tools.search}); %>
+      </div>
+    </div>
+
+  <% } %>
+</div>

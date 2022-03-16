@@ -1,0 +1,52 @@
+#{ns(header)} {
+  #{ns(links-group)} {
+    @include disable-list-style;
+    @include display-flex(null,stretch,null,wrap);
+    @include vertical-btns-group;
+
+    @include respond-from(lg) {
+      justify-content: flex-end;
+      @include horizontal-btns-group;
+
+      > *:not(:last-child) > #{ns(link)},
+      > #{ns(link)}:not(:last-child) {
+        @include after('', block) {
+          @include relative(null, -4v, null, null, 1px, 4v);
+        }
+      }
+    }
+
+    #{ns(link)} {
+      @include disable-underline;
+      @include enable-tint;
+      @include has-not-icon {
+        @include nest-btn(sm, null, null, null, false);
+      }
+
+      @include has-icon {
+        @include nest-btn(sm, left, null, null, false);
+      }
+
+      @include margin(0 1px 0 0);
+    }
+  }
+
+  & &__menu-links {
+    #{ns(links-group)} {
+      #{ns(link)} {
+        @include size(100%);
+        @include min-size(null, 12v);
+        @include padding-left(0);
+      }
+    }
+  }
+
+  #{ns(modal)} {
+    & > * > #{ns(link--close)} {
+      @include margin-bottom(6v);
+      @include respond-from(lg) {
+        display: none;
+      }
+    }
+  }
+}

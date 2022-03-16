@@ -1,4 +1,4 @@
-import { Instance } from '../api/register/instance.js';
+import { Instance } from '../api/modules/register/instance.js';
 import { EquisizedEmission } from './equisized-emission.js';
 
 class EquisizedsGroup extends Instance {
@@ -18,9 +18,11 @@ class EquisizedsGroup extends Instance {
 
   resize () {
     const equisizeds = this.element.getDescendantInstances('Equisized');
+    if (!this.isLegacy) this.style.setProperty('--equisized-width', 'auto');
 
     const width = Math.max(...equisizeds.map(equisized => equisized.measure()));
-    equisizeds.forEach(equisized => equisized.adjust(width));
+    if (this.isLegacy) equisizeds.forEach(equisized => equisized.adjust(width));
+    else this.style.setProperty('--equisized-width', `${width}px`);
   }
 }
 

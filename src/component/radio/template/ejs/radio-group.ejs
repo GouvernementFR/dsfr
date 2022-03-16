@@ -14,12 +14,12 @@ let radio = locals.radio || {};
 let groupClasses = [prefix + '-radio-group'];
 if(radio.rich) groupClasses.push(prefix + '-radio-rich');
 switch(radio.size) {
-    case 'sm' :
-        groupClasses.push(prefix + '-radio-group--sm');
-        break;
+  case 'sm' :
+    groupClasses.push(prefix + '-radio-group--sm');
+    break;
 }
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-    <%- include('./radio', {radio: {...radio, disabled: radio.disabled ? radio.disabled : false}}); %>
+  <%- include('./radio', {radio: {...radio, disabled: radio.disabled ? radio.disabled : false}}); %>
 </div>

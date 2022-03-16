@@ -12,13 +12,19 @@
 
     // Outline variant
     &--secondary {
-      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
-      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
-      @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy));
+      @include btn-kind-scheme(2, $legacy);
+    }
 
-      @include disabled((legacy: $legacy, text: true, box-shadow: true, can-be-link: true)) {
-        @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
-      }
+    // Grey outline variant
+    &--tertiary {
+      @include btn-kind-scheme(3, $legacy);
+    }
+
+    // Ghost variant
+    &--tertiary-no-outline,
+    &--close,
+    &--display {
+      @include btn-kind-scheme(4, $legacy);
     }
   }
 }

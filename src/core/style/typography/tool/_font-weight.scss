@@ -5,11 +5,11 @@
 
 /// Return font-weight value from font-weight map.
 ///
-/// @param {String} $scale ["regular"] - Type scale value from `$weight-scale` (Default to "regular" = 400)
+/// @param {String} $scale ['regular'] - Type scale value from `$weight-scale` (Default to 'regular' = 400)
 ///
 /// @example scss - Set font-weight to bold (700)
 ///   .foo {
-///     font-weight: font-weight("bold");
+///     font-weight: font-weight('bold');
 ///   }
 
 @function font-weight($scale: regular) {
@@ -20,8 +20,13 @@
   font-weight: font-weight($scale);
 }
 
-@mixin font-weights() {
-  @each $name, $weight in $font-weight-scale {
+@mixin build-utillity-font-weight() {
+  $fontWeightValues: map-get($font-weight-vars, values);
+  @if $fontWeightValues == 'all' {
+    $fontWeightValues: map-keys($font-weight-names);
+  }
+  @each $weight in $fontWeightValues {
+    $name: map-get($font-weight-names, $weight);
     & #{ns('text--' + $name)} {
       font-weight: #{$weight} !important;
     }

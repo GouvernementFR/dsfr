@@ -28,7 +28,7 @@
     }
   }
 
-  #{ns(link--close)} {
+  #{ns(btn--close)} {
     display: none;
     @include respond-from(lg) {
       display: flex;
@@ -58,5 +58,15 @@
 
   &__list {
     @include padding-bottom(6v);
+
+    @include relative;
+    @include before('', block) {
+      @include absolute(0, 0, 0 , 0, 100%, 100%);
+      pointer-events: none;
+    }
+
+    @include respond-from(lg) {
+      @include before(none);
+    }
   }
 }
