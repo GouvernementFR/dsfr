@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-input,
+input:not([type=checkbox]):not([type=radio]),
 select,
 textarea {
   -webkit-appearance: none;
