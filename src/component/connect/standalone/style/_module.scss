@@ -5,6 +5,10 @@
 
 @import 'module/reset';
 @import 'module/typography';
-@import 'module/action';
-@import 'module/cursor';
-@import 'module/focus';
+
+#{ns(connect)} {
+  @include a-reset(true);
+  @include btn-reset(true);
+  @include standalone-cursor($clickable-elements);
+  @include standalone-focus($clickable-elements);
+}

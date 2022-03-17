@@ -68,9 +68,9 @@ const process = async (data, dir, filename, minify, legacy, map) => {
   log.file(entryFilename, `${size} bytes`);
 };
 
-const buildScript = async (pck, minify, legacy, map) => {
-  const src = root(pck.path);
-  const dir = root(`${pck.dist}/`);
+const buildScript = async (pck, minify, legacy, map, standalone) => {
+  const src = root(`${pck.path}${standalone ? '/standalone' : ''}`);
+  const dir = root(`${standalone ? pck.standalone.dist : pck.dist}/`);
   let data = `import '${src}/main.js'\n`;
 
   if (pck.module) {

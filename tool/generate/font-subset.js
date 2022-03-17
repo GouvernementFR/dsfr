@@ -3,27 +3,36 @@ const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
 const { readFile } = require('fs').promises;
 
-const standaloneFontSubset = async () => {
-  const regular = await readFile(root('src/core/asset/fonts/Marianne-Regular.woff2'));
-  const bold = await readFile(root('src/core/asset/fonts/Marianne-Bold.woff2'));
-
-  const file = await readFile(root('src/component/connect/content.json'));
+const standaloneFontSubset = async (pck) => {
+  const file = await readFile(root(pck.standalone.content.file));
   const json = JSON.parse(file);
 
-  let regText = '';
-  for (const key in json.login) regText += json.login[key];
+  const content = {};
 
-  let boldText = '';
-  for (const key in json.brand) boldText += json.brand[key];
+  for (const key in json) {
+    const text = json[key];
+    const type = text.type;
+    if (content[type] === undefined) content[type] = '';
+    content[type] += text.value;
+  }
 
-  const regularBuffer = await subsetFont(regular, regText, { targetFormat: 'woff2' });
-  const boldBuffer = await subsetFont(bold, boldText, { targetFormat: 'woff2' });
+  let font = `$${pck.id}-subset: (
+  `;
 
-  const font = `$connect-regular: '${regularBuffer.toString('base64')}';
-$connect-bold: '${boldBuffer.toString('base64')}';
-`;
+  let separator = '';
 
-  createFile(root('src/component/connect/standalone/_font.scss'), font, true);
+  for (const key in content) {
+    const woff = await readFile(root(`src/core/asset/fonts/Marianne-${key}.woff2`));
+    const buffer = await subsetFont(woff, content[key], { targetFormat: 'woff2' });
+    font += `${separator}${key.toLowerCase()}: '${buffer.toString('base64')}'`;
+    separator = `,
+    `;
+  }
+
+  font += `
+);`;
+
+  createFile(root(pck.standalone.content.dest), font, true);
 };
 
 module.exports = { standaloneFontSubset };

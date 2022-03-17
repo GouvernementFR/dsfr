@@ -5,9 +5,11 @@
 
 $underline-thickness: 0.0625em;
 
-@mixin a-reset {
+@mixin a-reset ($minimal: false) {
   text-decoration: none;
-  color: inherit;
+  @if not $minimal {
+    color: inherit;
+  }
 }
 
 @mixin enable-underline() {
