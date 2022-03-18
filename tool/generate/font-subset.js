@@ -12,6 +12,7 @@ const standaloneFontSubset = async (pck) => {
   for (const key in json) {
     const text = json[key];
     const type = text.type;
+    if (!type) continue;
     if (content[type] === undefined) content[type] = '';
     content[type] += text.value;
   }

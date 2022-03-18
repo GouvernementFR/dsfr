@@ -1,0 +1,24 @@
+////
+/// Connect Typography
+/// @group connect
+////
+
+@mixin standalone-font-face($id, $subset, $types) {
+  $family: 'Marianne-#{$id}';
+
+  @at-root {
+    @each $type in $types {
+      $weight: map-get($font-weight-scale, $type);
+      @font-face {
+        font-family: $family;
+        src: url("data:font/truetype;charset=utf-8;base64,#{map-get($subset, $type)}") format('woff');
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+      }
+    }
+  }
+
+  font-family: $family, arial, sans-serif;
+  @include font-smoothing;
+}
