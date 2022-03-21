@@ -21,7 +21,13 @@
       display: inline-flex;
       @include margin-right(4v);
       @include margin-bottom(4v);
-      @include nest-btn();
+      @include nest-btn(md, only, null, null, false);
+    }
+
+    #{ns(links-group--lg)} {
+      #{ns(link)} {
+        @include nest-btn(lg, only, null, null, false);
+      }
     }
   }
 
