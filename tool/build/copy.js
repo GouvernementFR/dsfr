@@ -51,6 +51,12 @@ const copyAssets = (removeOrphans) => {
   copyDir(src, dest, ['woff', 'woff2', 'ico', 'jpg', 'png', 'svg', 'webmanifest'], removeOrphans);
 };
 
+const copyIcons = (removeOrphans) => {
+  const src = root('src/core/icon/');
+  const dest = root('dist/icons');
+
+  copyDir(src, dest, ['svg', 'png', 'jpg'], removeOrphans);
+};
 // const copyPackages = (removeOrphans) => {
 //   const packages = getPackages();
 
@@ -78,4 +84,4 @@ const deployRobots = () => {
   createFile(root('public/robots.txt'), content);
 };
 
-module.exports = { copyFiles, copyImages, copyAssets, deployFavicons, deployFiles, deployRobots };
+module.exports = { copyFiles, copyImages, copyAssets, copyIcons, deployFavicons, deployFiles, deployRobots };

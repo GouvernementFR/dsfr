@@ -16,7 +16,8 @@
 }
 
 @mixin icon-size($size:md) {
-  font-size: #{icon-size($size)} !important;
+  width: #{icon-size($size)};
+  height: #{icon-size($size)};
 }
 
 @mixin with-icon($size:md) {
@@ -37,28 +38,23 @@
   }
   @each $icon, $setting in $icons-settings {
     #{ns($base + '-' + $icon)} {
-      @include before(icon-glyph($icon, $deprecated));
-      @if is-deprecated($icon) {
-        @include before {
-          font-weight: 700;
-        }
-      }
+      @include icon-content($icon, $deprecated);
     }
   }
 }
 
-@function icon-glyph($icon, $deprecated: false, $is-ligature: false) {
-  $icon-settings: map-get($icons-settings, $icon);
-  @if is-deprecated($icon) or $deprecated {
-    $icon-settings: map-get($icons-settings-deprecated, $icon);
-  }
-  @if $is-ligature {
-    @return '#{map-get($icon-settings, ligature)}';
-  }
-  @else {
-    @return '#{map-get($icon-settings, codepoint)}';
-  }
-}
+// @function icon-glyph($icon, $deprecated: false, $is-ligature: false) {
+//   $icon-settings: map-get($icons-settings, $icon);
+//   @if is-deprecated($icon) or $deprecated {
+//     $icon-settings: map-get($icons-settings-deprecated, $icon);
+//   }
+//   @if $is-ligature {
+//     @return '#{map-get($icon-settings, ligature)}';
+//   }
+//   @else {
+//     @return '#{map-get($icon-settings, codepoint)}';
+//   }
+// }
 
 @function is-deprecated($icon) {
   @return not map-has-key($icons-settings, $icon);
@@ -73,38 +69,51 @@
   }
 }
 
-@mixin icon-content($icon) {
-  content: icon-glyph($icon);
+@mixin icon-content($icon, $deprecated: false, $pseudo: null) {
+  // content: icon-glyph($icon);
 
-  @if is-deprecated($icon) {
-    font-weight: 700;
-  }
-  @else {
-    font-weight: 400;
-  }
-}
-
-@function font-icon($size: md, $deprecated: false) {
-  $font-weight: normal;
+  $icon-path: '#{$dist-path}icons/svg/';
   @if $deprecated {
-    $font-weight: 700;
+    $icon-path: '#{$dist-path}icons/deprecated/svg/';
   }
-  @return normal $font-weight normal #{icon-size($size)}/1 #{$namespace}-icon;
+  $selector: null;
+  @if $pseudo == before or $pseudo == after {
+    $selector: '&::#{$pseudo}';
+  }
+  @include nest($selector) {
+    --icon-path: url('#{$icon-path}#{$icon}.svg');
+  }
 }
 
-@mixin font-icon($size: md, $deprecated: false) {
-  font: font-icon($size, $deprecated);
+// @function font-icon($size: md, $deprecated: false) {
+//   $font-weight: normal;
+//   @if $deprecated {
+//     $font-weight: 700;
+//   }
+//   @return normal $font-weight normal #{icon-size($size)}/1 #{$namespace}-icon;
+// }
+
+
+@mixin icon-style($size: md) {
+  // font: font-icon($size, $deprecated);
+  @include icon-size($size);
+  flex: 0 0 auto;
+  display: inline-block;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  vertical-align: top;
+  background-color: currentColor;
+  -webkit-mask-image: var(--icon-path);
+  mask-image: var(--icon-path);
 }
 
 @mixin icon($icon: null, $size: md, $pseudo: before) {
-  @include _pseudo($pseudo) {
-    @if $size != null {
-      $deprecated: is-deprecated($icon);
-      @include font-icon($size, $deprecated);
-    }
+  @include _pseudo($pseudo, '') {
+    $deprecated: is-deprecated($icon);
+    @include icon-style($size);
 
     @if $icon != null {
-      @include icon-content($icon);
+      @include icon-content($icon, $deprecated);
     }
 
     @content;

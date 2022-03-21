@@ -28,7 +28,8 @@
     @include before {
       margin-left: -($icon-margin);
       margin-right: $icon-margin-x;
-      font-size: $icon-size;
+      width: $icon-size;
+      height: $icon-size;
     }
   }
   @else if $place == right {
@@ -38,7 +39,8 @@
     @include before {
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
-      font-size: $icon-size;
+      width: $icon-size;
+      height: $icon-size;
     }
   }
   @else if $place == only {
@@ -55,7 +57,8 @@
     @include before {
       margin-left: 0;
       margin-right: $padding-x;
-      font-size: $icon-size;
+      width: $icon-size;
+      height: $icon-size;
     }
   }
 }
