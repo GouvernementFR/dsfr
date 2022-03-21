@@ -4,11 +4,6 @@
 ////
 
 @mixin standalone-focus ($elements, $element: &) {
-  &:focus,
-  &:focus-visible {
-    z-index: z-index(focus);
-  }
-
   @at-root {
     @include focusable-selector ($elements) {
       @at-root #{selector-unify(&, $element)} {

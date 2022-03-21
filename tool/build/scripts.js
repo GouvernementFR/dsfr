@@ -10,7 +10,7 @@ const fs = require('fs');
 const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
-const process = async (data, dir, filename, minify, legacy, map) => {
+const process = async (data, dir, filename, minify, legacy, map, standalone) => {
   const input = {
     input: 'entry',
     plugins: [
@@ -21,7 +21,7 @@ const process = async (data, dir, filename, minify, legacy, map) => {
     ]
   };
 
-  const entryFilename = `${filename}.${legacy ? 'no' : ''}module${minify ? '.min' : ''}.js`;
+  const entryFilename = `${filename}.${legacy ? 'no' : ''}module${minify ? '.min' : ''}${standalone ? '.standalone' : ''}.js`;
 
   const output = {
     format: legacy ? 'iife' : 'esm',
@@ -74,20 +74,20 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
   let data = `import '${src}/main.js'\n`;
 
   if (pck.module) {
-    await process(data, dir, pck.id, false, false, map);
+    await process(data, dir, pck.id, false, false, map, standalone);
 
     if (minify) {
-      await process(data, dir, pck.id, true, false, map);
+      await process(data, dir, pck.id, true, false, map, standalone);
     }
   }
 
   if (legacy && pck.nomodule) {
     if (pck.script.files.indexOf('legacy') > -1) data += `import '${src}/legacy.js'\n`;
 
-    await process(data, dir, pck.id, false, true, map);
+    await process(data, dir, pck.id, false, true, map, standalone);
 
     if (minify) {
-      await process(data, dir, pck.id, true, true, map);
+      await process(data, dir, pck.id, true, true, map, standalone);
     }
   }
 };
