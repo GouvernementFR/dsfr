@@ -18,6 +18,7 @@
 @include has-icon {
   @include before {
     @include icon-style;
+    @include icon-size(md);
   }
 }
 
@@ -25,8 +26,7 @@
   @each $size, $value in $icon-size-map {
     &--#{$size} {
       @include _pseudo(before after) {
-        width: #{icon-size($size)} !important;
-        height: #{icon-size($size)} !important;
+        @include icon-size($size);
       }
     }
   }
@@ -36,8 +36,7 @@
   @each $size, $value in $icon-size-map {
     &--#{$size} {
       @include _pseudo(before after) {
-        width: #{icon-size($size)} !important;
-        height: #{icon-size($size)} !important;
+        @include icon-size($size);
       }
     }
   }

@@ -16,7 +16,7 @@
   @include nest($selector) {
     @include respond-from($from) {
       @if $icon != null {
-        @include icon($icon);
+        @include icon($icon, md);
       }
       @else if $size != null {
         @include icon(null, $size);
