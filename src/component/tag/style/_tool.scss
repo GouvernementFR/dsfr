@@ -24,7 +24,7 @@
   }
 }
 
-@mixin tag-punched-background ($token, $legacy, $options: ()) {
+@mixin tag-punched-background ($token, $size: md, $legacy: false, $options: ()) {
   $legacy-target: ie11;
   $type: hex;
   @if not $legacy {
@@ -36,6 +36,11 @@
   $result: get-color($token, $type, $options);
 
   @include legacy($legacy-target) {
-    background-image: radial-gradient(circle at 100% #{space(1v)}, transparent #{space(2.3125v)}, #{$result} #{space(2.5v)});
+    @if $size == sm {
+      background-image: radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, #{$result} #{space(2v)});
+    }
+    @else {
+      background-image: radial-gradient(circle at 100% #{space(1v)}, transparent #{space(2.3125v)}, #{$result} #{space(2.5v)});
+    }
   }
 }
