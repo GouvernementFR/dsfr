@@ -16,28 +16,14 @@
 // }
 
 @include has-icon {
-  @include before {
-    @include icon-style;
-    @include icon-size(md);
-  }
-}
-
-#{ns(fi)} {
-  @each $size, $value in $icon-size-map {
-    &--#{$size} {
-      @include _pseudo(before after) {
-        @include icon-size($size);
-      }
-    }
-  }
+  @include icon-style;
+  @include icon-size(md);
 }
 
 #{ns(icon)} {
   @each $size, $value in $icon-size-map {
     &--#{$size} {
-      @include _pseudo(before after) {
-        @include icon-size($size);
-      }
+      @include icon-size($size);
     }
   }
 }
@@ -46,5 +32,5 @@
  * Définitions des symboles des icones
  **/
 // $icons-settings est générée dans generated/_icons.scss
-@include generate-icons(fi, true);
 @include generate-icons(icon);
+@include generate-icons(icon, remix);

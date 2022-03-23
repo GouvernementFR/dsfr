@@ -12,12 +12,10 @@ $underline-thickness: 0.0625em;
 
 @mixin enable-underline() {
   --underline-img: linear-gradient(0deg, currentColor, currentColor);
-  --icon-path: "\00a0#{icon-content(external-link-line, true)}";
 }
 
 @mixin disable-underline() {
   --underline-img: none;
-  --icon-path: none;
 }
 
 @mixin link-underline() {
@@ -42,6 +40,6 @@ $underline-thickness: 0.0625em;
 @mixin link-blank() {
   @include icon(external-link-line, sm, after){
     @include margin-left(1v);
-    @include margin-top(1v);
+    @include margin-bottom(1v);
   };
 }

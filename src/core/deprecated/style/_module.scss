@@ -3,10 +3,5 @@
 /// @group core
 ////
 
-#{ns(displayed-lg)} {
-  display: none !important;
-
-  @include respond-from(lg) {
-    display: inherit !important;
-  }
-}
+@import 'display/module';
+@import 'icon/module';

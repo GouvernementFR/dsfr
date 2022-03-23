@@ -16,10 +16,10 @@
   @include nest($selector) {
     @include respond-from($from) {
       @if $icon != null {
-        @include icon($icon, md);
+        @include icon($icon, md, before);
       }
       @else if $size != null {
-        @include icon(null, $size);
+        @include icon-size($size)
       }
 
       @include _build-link-size($size-settings, $border-radius);
