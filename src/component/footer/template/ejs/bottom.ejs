@@ -4,7 +4,7 @@
 * bottom.copyright (string, required) : texte de copyright
 
 * bottom.links (array, optional) : tableau de liens
-  ** bottom.links[].tag (string, optional) : tag du lien
+  ** bottom.links[].markup (string, optional) : markup du lien
   ** bottom.links[].label (string, required) : label du lien
   ** bottom.links[].classes (array, required) : classes supplémentaires du lien
   ** bottom.links[].attributes (array, required) : attributs supplémentaires du lien
@@ -30,11 +30,11 @@
 
           default:
             const classes = link.classes || [];
-            const tag = link.tag || 'a';
+            const markup = link.markup || 'a';
             const attributes = link.attributes || {};
-            if (tag === 'a') attributes["href"] = link.url|| '#';
+            if (markup === 'a') attributes["href"] = link.url|| '#';
             classes.push(`${prefix}-footer__bottom-link`);
-            %><<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= tag %>><%
+            %><<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= markup %>><%
     } %>
     </li>
   <% } %>

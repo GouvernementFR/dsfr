@@ -1,0 +1,47 @@
+////
+/// Badge Module - badge
+/// @group badge
+////
+
+@include build-badge();
+
+#{ns(badge)} {
+  @include nest-badge(md, left, null, null, false);
+  @include font-weight(bold);
+  @include max-width(100%);
+  text-transform: uppercase;
+  border-radius: space(1v);
+
+  &--sm {
+    @include nest-badge(sm, left, null, null, false);
+  }
+
+  &,
+  &--sm {
+    &#{ns(badge)}--info {
+      @include icon(info-fill, null);
+    }
+
+    &#{ns(badge)}--success {
+      @include icon(success-fill, null);
+    }
+
+    &#{ns(badge)}--error {
+      @include icon(error-fill, null);
+    }
+
+    &#{ns(badge)}--warning {
+      @include icon(warning-fill, null);
+    }
+
+    &#{ns(badge)}--new {
+      @include icon(flashlight-fill, null);
+    }
+
+    &#{ns(badge)}--no-icon {
+      @include before {
+        content: none;
+      }
+    }
+  }
+}

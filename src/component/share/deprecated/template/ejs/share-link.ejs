@@ -11,7 +11,7 @@
 
 ** shareLink.name (string, required) : nom du reseau social
 
-** shareLink.tag (string) : La balise utilisée pour le lien (default: a), si pas de href utiliser 'button'
+** shareLink.markup (string) : La balise utilisée pour le lien (default: a), si pas de href utiliser 'button'
 
 ** shareLink.disabled (boolean, optional) : si valeur true, link désactivé
 
@@ -26,7 +26,7 @@
 const shareLink = locals.shareLink || {};
 let shareLinkClasses = shareLink.classes || [];
 let shareLinkAttrs = shareLink.attributes || {};
-const tag = shareLink.tag || 'a';
+const markup = shareLink.markup || 'a';
 
 shareLinkClasses.push(prefix + '-share__link');
 shareLinkClasses.push(prefix + '-share__link--' + shareLink.name);
@@ -37,7 +37,7 @@ if (shareLink.disabled === true) {
     delete shareLinkAttrs.rel;
     delete shareLinkAttrs.href;
     delete shareLinkAttrs.target;
-    switch(tag) {
+    switch(markup) {
         case 'input':
         case 'button':
             shareLinkAttrs.disabled = '';
@@ -52,4 +52,4 @@ if (shareLink.disabled === true) {
 %>
 
 <% if (shareLink.comments) { %> <!-- <%= shareLink.comments %> --> <% } %>
-<<%= tag %> <%- includeClasses(shareLinkClasses)%> <%- includeAttrs(shareLinkAttrs); %>><%- shareLink.label %></<%= tag %>>
+<<%= markup %> <%- includeClasses(shareLinkClasses)%> <%- includeAttrs(shareLinkAttrs); %>><%- shareLink.label %></<%= markup %>>

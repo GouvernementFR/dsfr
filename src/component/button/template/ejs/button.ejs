@@ -3,7 +3,7 @@
 
 * button.label (string, required) : label du bouton
 
-* button.tag (string) : si non défini, button
+* button.markup (string) : si non défini, button
 
 * button.id (string) : id du bouton
 
@@ -42,7 +42,7 @@ let btnClasses = button.classes || [];
 let btnAttrs = button.attributes || {};
 if (button.id) btnAttrs.id = button.id;
 
-const tag = button.tag || 'button';
+const markup = button.markup || 'button';
 
 btnClasses.push(prefix + '-btn');
 
@@ -83,7 +83,7 @@ switch (button.kind) {
 }
 
 if (button.disabled === true) {
-  switch(tag) {
+  switch(markup) {
     case 'input':
     case 'button':
       btnAttrs['disabled'] = '';
@@ -97,7 +97,7 @@ if (button.disabled === true) {
 } else {
   if (button.onclick) btnAttrs.onclick = button.onclick;
 
-  switch (tag) {
+  switch (markup) {
     case 'a':
       btnAttrs.href = button.href || '[url - à modifier]';
       switch (true) {
@@ -120,6 +120,6 @@ if (button.type !== undefined) btnAttrs['type'] = button.type;
 %>
 
 <% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
-<<%= tag %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
+<<%= markup %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
   <%= button.label %>
-</<%= tag %>>
+</<%= markup %>>

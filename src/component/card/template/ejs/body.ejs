@@ -1,0 +1,30 @@
+<div class="<%= prefix %>-card__body">
+    <h4 class="<%= prefix %>-card__title">
+        <a href="#" class="<%= prefix %>-card__link"><%- card.title %></a>
+    </h4>
+
+    <% if (body.description !== undefined) { %>
+    <p class="<%= prefix %>-card__desc"><%- body.description %></p>
+    <% } %>
+
+    <% if (body.taxonomy) { %>
+    <div class="<%= prefix %>card__taxonomy" >
+        <% if (body.taxonomy.badges) { %>
+
+        <% } %>
+        <% if (body.taxonomy.tags) { %>
+
+        <% } %>
+    </div>
+    <% } %>
+
+    <% if (body.details !== undefined) { %>
+        <% for (const detail of body.details) { %>
+            <%
+            const detailClasses = [`${prefix}-card__detail`];
+            if (detail.bottom) detailClasses.push(`${prefix}-card__detail--bottom`);
+            %>
+            <p <%- includeClasses(detailClasses); %>><%- card.detail %></p>
+        <% } %>
+    <% } %>
+</div>

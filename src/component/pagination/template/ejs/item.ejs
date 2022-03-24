@@ -1,7 +1,7 @@
 <%#
 # Paramètres pagination item
 
-* paginationItem.tag (string, optional): tag html de l'élement (default: 'a'))
+* paginationItem.markup (string, optional): markup de l'élement (default: 'a'))
 
 * paginationItem.type (string, optional): type d'élement (first, prev, next, last)
 
@@ -26,7 +26,7 @@
 let paginationItem = locals.paginationItem || {};
 const classes = paginationItem.classes || [];
 const attrs = paginationItem.attributes || {};
-const tag = paginationItem.tag || 'a';
+const markup = paginationItem.markup || 'a';
 
 classes.push(prefix + '-pagination__link');
 
@@ -34,7 +34,7 @@ if (paginationItem.active) attrs['aria-current'] = 'page';
 
 if (paginationItem.type) classes.push(prefix + '-pagination__link--' + paginationItem.type);
 
-if (paginationItem.href !== undefined && !paginationItem.disabled && tag === 'a' && !paginationItem.active) attrs.href = paginationItem.href;
+if (paginationItem.href !== undefined && !paginationItem.disabled && markup === 'a' && !paginationItem.active) attrs.href = paginationItem.href;
 if (paginationItem.title) attrs.title = paginationItem.title;
 
 switch(true) {
@@ -52,7 +52,7 @@ if (paginationItem.displayedLg === true) {
   classes.push(prefix + '-unhidden-lg');
 }
 if (paginationItem.disabled) {
-  switch(tag) {
+  switch(markup) {
     case 'input':
     case 'button':
       attrs.disabled = '';
@@ -67,7 +67,7 @@ if (paginationItem.disabled) {
 %>
 
 <li>
-  <<%= tag %> <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
+  <<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attrs) %>>
     <% if (paginationItem.label !== undefined ) { %><%- paginationItem.label %><% } %>
-  </<%= tag %>>
+  </<%= markup %>>
 </li>

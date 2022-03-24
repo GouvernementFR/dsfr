@@ -38,7 +38,7 @@
 <%
 let tag = locals.tag || {};
 let tagClasses = tag.classes || [];
-let tagAttrs = tag.attributes || {};
+let tagAttrs = tag.attributes || {};
 
 tagClasses.push(prefix + '-tag');
 
@@ -52,7 +52,7 @@ switch(tag.size) {
 
 switch(tag.type) {
   case 'clickable':
-      if (tag.tag === undefined) tag.tag = 'a';
+      if (tag.markup === undefined) tag.markup = 'a';
       if (tag.disabled !== true) {
           tagAttrs.href = tag.href || contentPlaceholder('url');
           switch (true) {
@@ -66,16 +66,16 @@ switch(tag.type) {
       }
   break;
   case 'pressable':
-      if (tag.tag === undefined) tag.tag = 'button';
+      if (tag.markup === undefined) tag.markup = 'button';
       tagAttrs["aria-pressed"] = 'false';
   break;
   case 'dismissable':
-      if (tag.tag === undefined) tag.tag = 'button';
+      if (tag.markup === undefined) tag.markup = 'button';
       tagClasses.push(prefix + '-tag--dismiss');
       tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
   break;
   default:
-      if (tag.tag === undefined) tag.tag = 'p';
+      if (tag.markup === undefined) tag.markup = 'p';
   break;
 }
 
@@ -92,7 +92,7 @@ if (tag.iconPlace !== undefined) switch(tag.iconPlace) {
 }
 
 if (tag.disabled === true) {
-  switch(tag.tag) {
+  switch(tag.markup) {
   case 'input':
   case 'button':
     tagAttrs.disabled = '';
@@ -108,4 +108,4 @@ if (tag.disabled === true) {
 tagAttrs = {...tagAttrs, ...tag.attributes}; // place les attributs venant du sample à la fin
 %>
 
-<<%= tag.tag %> <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></<%= tag.tag %>>
+<<%= tag.markup %> <%- includeClasses(tagClasses)%> <%- includeAttrs(tagAttrs); %>><%- tag.label %></<%= tag.markup %>>

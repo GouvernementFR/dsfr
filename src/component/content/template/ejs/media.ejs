@@ -37,22 +37,22 @@ switch (content.size) {
 
 let type = (content.img !== undefined || content.svg !== undefined) ? 'img' : 'vid';
 
-let tag;
+let markup;
 
 switch (type) {
     case 'img':
-        tag = 'figure';
+        markup = 'figure';
         attributes["role"] = "group";
         if (content.caption != undefined) attributes["aria-label"] = content.caption;
         break;
 
     case 'vid':
-        tag = 'div';
+        markup = 'div';
         break;
 }
 %>
 
-<<%= tag %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+<<%= markup %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
 <%
 switch(type) {
     case 'img':
@@ -67,4 +67,4 @@ switch(type) {
 }
 %>
 
-</<%= tag %>>
+</<%= markup %>>
