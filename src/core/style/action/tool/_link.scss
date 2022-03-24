@@ -38,8 +38,8 @@ $underline-thickness: 0.0625em;
 }
 
 @mixin link-blank() {
-  @include icon(external-link-line, sm, after){
+  @include icon(external-link-line, sm, after) {
     @include margin-left(1v);
     @include margin-bottom(1v);
-  };
+  }
 }

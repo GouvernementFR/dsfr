@@ -19,7 +19,7 @@
         @include icon($icon, md, before);
       }
       @else if $size != null {
-        @include icon-size($size)
+        @include icon-size($size);
       }
 
       @include _build-link-size($size-settings, $border-radius);
