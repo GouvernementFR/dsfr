@@ -24,7 +24,7 @@
   }
 }
 
-@mixin tag-punched-backgrounds ($token, $size: md, $legacy: false, $hover:true, $active: true) {
+@mixin tag-punched-background-states ($token, $size: md, $legacy: false, $hover:true, $active: true) {
   @include tag-punched-background($token, $size, $legacy);
 
   @if $hover {
