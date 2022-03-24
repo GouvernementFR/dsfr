@@ -12,6 +12,11 @@
       @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
       @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
     }
+
+    &#{ns(tag)}--dismiss {
+      @include scheme-element-text-color(inverted grey, (legacy: $legacy));
+      @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
+    }
   }
 
   @include clickable-selector {
@@ -27,16 +32,7 @@
       @include pressed-selector(true) {
         @include scheme-element-text-color(inverted grey, (legacy: $legacy));
         @include scheme-element-bg-transparent((legacy:$legacy));
-
-        @include tag-punched-background(background action-high blue-france, md, $legacy);
-
-        &:hover {
-          @include tag-punched-background(background action-high blue-france, md, $legacy, (hover: true));
-        }
-
-        &:active {
-          @include tag-punched-background(background action-high blue-france, md, $legacy, (active: true));
-        }
+        @include tag-punched-backgrounds(background action-high blue-france, md, $legacy);
 
         @include disabled {
           background-image: none;
@@ -47,21 +43,8 @@
         }
 
         &#{ns(tag)}--sm {
-          @include tag-punched-background(background action-high blue-france, sm, $legacy);
-
-          &:hover {
-            @include tag-punched-background(background action-high blue-france, sm, $legacy, (hover: true));
-          }
-
-          &:active {
-            @include tag-punched-background(background action-high blue-france, sm, $legacy, (active: true));
-          }
+          @include tag-punched-backgrounds(background action-high blue-france, sm, $legacy);
         }
-      }
-
-      &#{ns(tag)}--dismiss {
-        @include scheme-element-text-color(inverted grey, (legacy: $legacy));
-        @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
       }
 
       @include disabled((legacy: $legacy, can-be-link: true, text: true, background: true));
@@ -73,15 +56,7 @@
       @include clickable-selector {
         &#{ns(tag)} {
           @include pressed-selector(true) {
-            @include tag-punched-background(background action-high blue-france, sm, $legacy);
-
-            &:hover {
-              @include tag-punched-background(background action-high blue-france, sm, $legacy, (hover: true));
-            }
-
-            &:active {
-              @include tag-punched-background(background action-high blue-france, sm, $legacy, (active: true));
-            }
+            @include tag-punched-backgrounds(background action-high blue-france, sm, $legacy);
           }
         }
       }

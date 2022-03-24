@@ -24,6 +24,22 @@
   }
 }
 
+@mixin tag-punched-backgrounds ($token, $size: md, $legacy: false, $hover:true, $active: true) {
+  @include tag-punched-background($token, $size, $legacy);
+
+  @if $hover {
+    &:hover {
+      @include tag-punched-background($token, $size, $legacy, (hover: true));
+    }
+  }
+
+  @if $active {
+    &:active {
+      @include tag-punched-background($token, $size, $legacy, (active: true));
+    }
+  }
+}
+
 @mixin tag-punched-background ($token, $size: md, $legacy: false, $options: ()) {
   $legacy-target: ie11;
   $type: hex;
