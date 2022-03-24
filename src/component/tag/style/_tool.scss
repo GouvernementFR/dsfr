@@ -50,13 +50,17 @@
   }
 
   $result: get-color($token, $type, $options);
+  $top: 1v;
+  $stop-1: 2.3125v;
+  $stop-2: 2.5v;
+
+  @if $size == sm {
+    $top: 0.75v;
+    $stop-1: 1.79v;
+    $stop-2: 2v;
+  }
 
   @include legacy($legacy-target) {
-    @if $size == sm {
-      background-image: radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, #{$result} #{space(2v)});
-    }
-    @else {
-      background-image: radial-gradient(circle at 100% #{space(1v)}, transparent #{space(2.3125v)}, #{$result} #{space(2.5v)});
-    }
+    background-image: radial-gradient(circle at 100% #{space($top)}, transparent #{space($stop-1)}, #{$result} #{space($stop-2)});
   }
 }
