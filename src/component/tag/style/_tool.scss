@@ -24,7 +24,23 @@
   }
 }
 
-@mixin tag-punched-background ($token, $legacy, $options: ()) {
+@mixin tag-punched-background-states ($token, $size: md, $legacy: false, $hover:true, $active: true) {
+  @include tag-punched-background($token, $size, $legacy);
+
+  @if $hover {
+    &:hover {
+      @include tag-punched-background($token, $size, $legacy, (hover: true));
+    }
+  }
+
+  @if $active {
+    &:active {
+      @include tag-punched-background($token, $size, $legacy, (active: true));
+    }
+  }
+}
+
+@mixin tag-punched-background ($token, $size: md, $legacy: false, $options: ()) {
   $legacy-target: ie11;
   $type: hex;
   @if not $legacy {
@@ -34,8 +50,17 @@
   }
 
   $result: get-color($token, $type, $options);
+  $top: 1v;
+  $stop-1: 2.3125v;
+  $stop-2: 2.5v;
+
+  @if $size == sm {
+    $top: 0.75v;
+    $stop-1: 1.79v;
+    $stop-2: 2v;
+  }
 
   @include legacy($legacy-target) {
-    background-image: radial-gradient(circle at 100% #{space(1v)}, transparent #{space(2.3125v)}, #{$result} #{space(2.5v)});
+    background-image: radial-gradient(circle at 100% #{space($top)}, transparent #{space($stop-1)}, #{$result} #{space($stop-2)});
   }
 }

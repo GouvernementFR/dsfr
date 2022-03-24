@@ -7,6 +7,16 @@
   #{ns(tag)} {
     @include scheme-element-text-color(label grey, (legacy: $legacy));
     @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
+
+    @include pressed-selector(false) {
+      @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
+      @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
+    }
+
+    &#{ns(tag)}--dismiss {
+      @include scheme-element-text-color(inverted grey, (legacy: $legacy));
+      @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
+    }
   }
 
   @include clickable-selector {
@@ -19,24 +29,10 @@
         @include scheme-element-bg-color(action-low accent, (legacy: $legacy));
       }
 
-      @include pressed-selector(false) {
-        @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
-        @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
-      }
-
       @include pressed-selector(true) {
         @include scheme-element-text-color(inverted grey, (legacy: $legacy));
         @include scheme-element-bg-transparent((legacy:$legacy));
-
-        @include tag-punched-background(background action-high blue-france, $legacy);
-
-        &:hover {
-          @include tag-punched-background(background action-high blue-france, $legacy, (hover: true));
-        }
-
-        &:active {
-          @include tag-punched-background(background action-high blue-france, $legacy, (active: true));
-        }
+        @include tag-punched-background-states(background action-high blue-france, md, $legacy);
 
         @include disabled {
           background-image: none;
@@ -47,13 +43,8 @@
         }
 
         &#{ns(tag)}--sm {
-          @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), (radial-gradient(circle at 100% space(0.75v), transparent space(1.79v), var(--hsla) space(2v)), radial-gradient(circle at 100% space(0.75v), transparent space(1.79v), $COLOR space(2v)) ));
+          @include tag-punched-background-states(background action-high blue-france, sm, $legacy);
         }
-      }
-
-      &#{ns(tag)}--dismiss {
-        @include scheme-element-text-color(inverted grey, (legacy: $legacy));
-        @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
       }
 
       @include disabled((legacy: $legacy, can-be-link: true, text: true, background: true));
@@ -65,7 +56,7 @@
       @include clickable-selector {
         &#{ns(tag)} {
           @include pressed-selector(true) {
-            @include scheme-element-bg-image-color(action-high blue-france, (legacy: $legacy), (radial-gradient(circle at 100% space(0.75v), transparent space(1.79v), var(--hsla) space(2v)), radial-gradient(circle at 100% space(0.75v), transparent space(1.79v), $COLOR space(2v)) ));
+            @include tag-punched-background-states(background action-high blue-france, sm, $legacy);
           }
         }
       }
