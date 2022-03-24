@@ -65,7 +65,7 @@ if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholde
 <%- include('../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint}}); %>
 
 <% if (input.icon != undefined) { %>
- <div class="<%= prefix %>-input-wrap <%- prefix %>-fi-<%= input.icon %>" >
+ <div class="<%= prefix %>-input-wrap <%- prefix %>-icon-<%= input.icon %>" >
 <% } %>
 
 <% if (input.addon && input.button != undefined) { %>
