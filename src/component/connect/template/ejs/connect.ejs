@@ -43,6 +43,11 @@ switch(connect.type) {
   break;
 }
 
+const linkAttributes = connect.link.attributes || {};
+
+linkAttributes.target = '_blank';
+linkAttributes.title = `${connect.link.label} - nouvelle fenêtre`;
+
 if (!locals.standalone) {
 %>
 <div class="<%= prefix %>-connect-group">
@@ -58,7 +63,7 @@ if (connect.disabled === true) connectAttrs.disabled = '';
 
 <% if (connect.link) { %>
   <p>
-    <a href="<%= connect.link.href %>" <%- includeAttrs(connect.link.attributes); %>><%= connect.link.label %></a>
+    <a href="<%= connect.link.href %>" <%- includeAttrs(linkAttributes); %>><%= connect.link.label %></a>
   </p>
 <% } %>
 
