@@ -38,7 +38,6 @@
 
         @include after {
           transform: translateX(space(4v));
-          text-indent: 0;
           @include z-index(higher);
         }
       }
@@ -86,14 +85,16 @@
     }
 
     /*
-     * On inclut l'icône check dans un pseudo-element after
-     * On la cache via un text-indent quand l'input n'est pas check
+     * On inclut l'icône check en background dans un pseudo-element after
+     *
      */
-    @include icon(check-line, sm, after) {
+    @include after('') {
       @include display-flex(null,center,center);
       @include absolute(4v, null, null, 0, 6v, 6v);
       border-radius: 50%;
-      text-indent: -9999px;
+      background-repeat: no-repeat;
+      background-size: space(4v);
+      background-position: center;
     }
   }
 

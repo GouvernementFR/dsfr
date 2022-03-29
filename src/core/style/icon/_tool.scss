@@ -15,14 +15,18 @@
   @return px-rem(map-get($icon-size-map, $size));
 }
 
-@mixin icon-size($size:md, $pseudo: null) {
-  $selector: null;
-  @if $pseudo == before or $pseudo == after {
-    $selector: '&::#{$pseudo}';
+@function is-remix-icon($icon) {
+  @return index($icons-settings-dsfr, $icon) == null;
+}
+
+@function get-url-icon($icon, $important: false) {
+  $remixIcon: is-remix-icon($icon);
+  $icon-path: '#{$dist-path}icons/dsfr/';
+  @if $remixIcon {
+    $icon-path: '#{$dist-path}icons/remix/';
   }
-  @include nest($selector) {
-    --icon-size: #{icon-size($size)};
-  }
+  $url: url('#{$icon-path}#{$icon}.svg');
+  @return important($url, $important);
 }
 
 @mixin with-icon($size:md) {
@@ -34,33 +38,19 @@
   }
 }
 
-@mixin generate-icons($base, $type: dsfr) {
-  $icons-settings: $icons-settings-dsfr;
-  @if $type == remix {
-    $icons-settings: $icons-settings-remix;
+@mixin icon-size($size:md, $pseudo: null) {
+  $selector: null;
+  @if $pseudo == before or $pseudo == after {
+    $selector: '&::#{$pseudo}';
   }
-  @each $icon, $setting in $icons-settings {
-    #{ns(#{$base}-#{$icon})} {
-      @include icon-content($icon, before, true);
-    }
+  @include nest($selector) {
+    --icon-size: #{icon-size($size)};
   }
-}
-
-@function is-remix-icon($icon) {
-  @return index($icons-settings-dsfr, $icon) == null;
 }
 
 @mixin icon-content($icon, $pseudo: before, $important: false) {
-  $remixIcon: is-remix-icon($icon);
-  $icon-path: '#{$dist-path}icons/dsfr/';
-  @if $remixIcon {
-    $icon-path: '#{$dist-path}icons/remix/';
-  }
-
-  $url: url('#{$icon-path}#{$icon}.svg');
-  $url: important($url, $important);
-
   @include _pseudo($pseudo, '') {
+    $url: get-url-icon($icon, $important);
     -webkit-mask-image: $url;
     mask-image: $url;
   }
@@ -72,8 +62,7 @@
     display: inline-block;
     vertical-align: middle;
     background-color: currentColor;
-    width: var(--icon-size);
-    height: var(--icon-size);
+    @include size(var(--icon-size), var(--icon-size));
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
@@ -94,5 +83,50 @@
 
   @include _pseudo($pseudo) {
     @content;
+  }
+}
+
+@mixin icon-legacy($icon: null, $size: md, $pseudo: before, $init: true) {
+  @include _pseudo($pseudo) {
+    @if $init {
+      background-color: transparent;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    @if $icon != null {
+      background-image: get-url-icon($icon, false);
+    }
+
+    @if $size != null {
+      $size: icon-size($size);
+      @include size($size, $size);
+    }
+    @content;
+  }
+}
+
+
+@mixin generate-icons($base, $type: dsfr) {
+  $icons-settings: $icons-settings-dsfr;
+  @if $type == remix {
+    $icons-settings: $icons-settings-remix;
+  }
+  @each $icon, $setting in $icons-settings {
+    #{ns(#{$base}-#{$icon})} {
+      @include icon-content($icon, before, true);
+    }
+  }
+}
+
+@mixin generate-icons-legacy($base, $type: dsfr) {
+  $icons-settings: $icons-settings-dsfr;
+  @if $type == remix {
+    $icons-settings: $icons-settings-remix;
+  }
+  @each $icon, $setting in $icons-settings {
+    #{ns(#{$base}-#{$icon})} {
+      @include icon-legacy($icon, null, before, false);
+    }
   }
 }

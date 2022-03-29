@@ -23,6 +23,28 @@
 
 @include legacy(ie11) {
   #{ns(header)} {
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+          #{ns(btn)} {
+            @include has-not-icon {
+              &:not(#{ns(btn--display)}) {
+                @include icon-legacy(null, sm, before, false);
+              }
+            }
+
+            @include has-icon {
+              @include icon-legacy(null, sm, before, false);
+            }
+
+            &#{ns(btn--display)} {
+              @include icon-legacy(null, sm, before, false);
+            }
+          }
+        }
+      }
+    }
+
     &__tools-links {
       #{ns(link)} {
         overflow: visible;

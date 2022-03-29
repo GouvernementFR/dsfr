@@ -8,7 +8,6 @@
 #{ns(badge)} {
   @include nest-badge(md, left, null, null, false);
   @include icon-style;
-  @include icon-size(sm);
   @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
@@ -16,7 +15,6 @@
 
   &--sm {
     @include nest-badge(sm, left, null, null, false);
-    @include icon-size(xs);
   }
 
   &,

@@ -1,13 +1,13 @@
 ////
-/// Content Scheme
+/// Content Legacy
 /// @group content
 ////
 
-@mixin _content-scheme($legacy: false) {
+@include legacy(ie11) {
   #{ns(content-media)} {
     &__transcription {
       #{ns(btn)} {
-        @include btn-kind-scheme(4, $legacy);
+        @include icon-legacy(menu-2-fill, sm, before);
       }
     }
   }

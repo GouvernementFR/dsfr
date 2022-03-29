@@ -8,6 +8,6 @@
 **/
 @mixin social-icon ($modifier, $icon) {
   #{ns('btn--' + $modifier)} {
-    @include icon($icon, md);
+    @include icon($icon);
   }
 }

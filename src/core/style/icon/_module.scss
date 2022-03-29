@@ -3,18 +3,6 @@
 /// @group core
 ////
 
-// @font-face {
-//   font-family: '#{$namespace}-icon';
-//   font-weight: 400;
-//   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64}") format("truetype");
-// }
-
-// @font-face {
-//   font-family: '#{$namespace}-icon';
-//   font-weight: 700;
-//   src: url("data:font/truetype;charset=utf-8;base64,#{$icons-base64-deprecated}") format("truetype");
-// }
-
 @include has-icon {
   @include icon-style;
   @include icon-size(md);

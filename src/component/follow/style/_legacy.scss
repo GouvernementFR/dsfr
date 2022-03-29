@@ -12,4 +12,42 @@
       max-width: 100%;
     }
   }
+
+  #{ns(follow)} {
+    #{ns(btn)} {
+      &--facebook {
+        @include icon-legacy(facebook-circle-fill, md);
+      }
+      &--twitter {
+        @include icon-legacy(twitter-fill);
+      }
+      &--instagram {
+        @include icon-legacy(instagram-fill);
+      }
+      &--linkedin {
+        @include icon-legacy(linkedin-box-fill);
+      }
+      &--youtube {
+        @include icon-legacy(youtube-fill);
+      }
+    }
+
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include icon-legacy(null, md);
+          }
+        }
+      }
+
+      &--lg {
+        #{ns(btn)} {
+          @include has-not-icon {
+            @include icon-legacy(null, lg);
+          }
+        }
+      }
+    }
+  }
 }

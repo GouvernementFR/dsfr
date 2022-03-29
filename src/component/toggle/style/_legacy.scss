@@ -8,5 +8,13 @@
     &::-ms-check {
       display: none;
     }
+
+    &:checked {
+      @include icon-legacy(check-line, md);
+    }
+  }
+
+  &__list {
+    list-style: none;
   }
 }
