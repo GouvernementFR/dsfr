@@ -99,6 +99,10 @@
         }
       }
 
+      #{ns(fieldset__legend)} {
+        @include scheme-element-text-color(default error, (legacy:$legacy));
+      }
+
       label {
         @include scheme-element-text-color(default error, (legacy:$legacy));
       }
@@ -112,6 +116,10 @@
         @include before {
           @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
         }
+      }
+
+      #{ns(fieldset__legend)} {
+        @include scheme-element-text-color(default success, (legacy:$legacy));
       }
 
       label {
