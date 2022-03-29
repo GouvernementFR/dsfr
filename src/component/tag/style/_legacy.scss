@@ -21,6 +21,7 @@
 
         &#{ns(tag)}--sm {
           @include icon-legacy(null, xs, after);
+          @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, $COLOR #{space(2v)})));
         }
       }
 
@@ -44,6 +45,8 @@
         }
 
         @include pressed-selector(true) {
+          @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, $COLOR #{space(2v)})));
+
           @include icon-legacy(null, xs, after) {
             background-color: transparent !important;
           }
