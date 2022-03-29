@@ -106,7 +106,6 @@
   }
 }
 
-
 @mixin generate-icons($base, $type: dsfr) {
   $icons-settings: $icons-settings-dsfr;
   @if $type == remix {

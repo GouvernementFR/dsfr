@@ -34,7 +34,6 @@
     }
   }
 
-
   &#{ns-group(tags)}--sm {
     @include icon-legacy(null, sm);
 
@@ -45,9 +44,9 @@
         }
 
         @include pressed-selector(true) {
-          @include icon-legacy(null, xs, after){
+          @include icon-legacy(null, xs, after) {
             background-color: transparent !important;
-          };
+          }
         }
       }
     }

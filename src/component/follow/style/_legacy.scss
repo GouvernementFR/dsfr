@@ -18,15 +18,19 @@
       &--facebook {
         @include icon-legacy(facebook-circle-fill, md);
       }
+
       &--twitter {
         @include icon-legacy(twitter-fill);
       }
+
       &--instagram {
         @include icon-legacy(instagram-fill);
       }
+
       &--linkedin {
         @include icon-legacy(linkedin-box-fill);
       }
+
       &--youtube {
         @include icon-legacy(youtube-fill);
       }
