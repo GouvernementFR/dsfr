@@ -3,7 +3,6 @@ const badgesGroup = locals.badgesGroup || {}
 const badges = badgesGroup.badges || [];
 
 if (!badges.length && badgesGroup.groupCount !== undefined) {
-
   for (let i = 0; i < badgesGroup.groupCount; i++) {
     badges.push({
       label: badgesGroup.label || 'Label badge ' + (i+1),

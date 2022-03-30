@@ -1,0 +1,31 @@
+<%#
+# paramètres du contenu principal de la carte
+
+* content.title (string, required) : Titre de la carte
+
+* content.description (string, optional) : Description
+
+* content.taxonomy (object, optional) : Taxonomie
+
+* content.details (array, optional) : Détails
+
+%>
+
+
+<div class="<%= prefix %>-card__content">
+    <h4 class="<%= prefix %>-card__title">
+        <a href="#" class="<%= prefix %>-card__link"><%- content.title %></a>
+    </h4>
+
+    <% if (content.description !== undefined) { %>
+    <p class="<%= prefix %>-card__desc"><%- content.description %></p>
+    <% } %>
+
+    <% if (content.taxonomy) { %>
+    <%- include('taxonomy', {taxonomy: content.taxonomy}); %>
+    <% } %>
+
+    <% if (content.details !== undefined) { %>
+    <%- include('details', {details: content.details}); %>
+    <% } %>
+</div>

@@ -1,0 +1,35 @@
+////
+/// Card Module - card
+/// @group card
+////
+
+#{ns(card)} {
+  @include display-flex(column);
+  @include relative();
+
+  &#{ns(enlarge-link)}:not(&--no-icon) {
+    @include has-not-icon {
+      @include icon(arrow-right-line);
+    }
+  }
+
+  @include before {
+    @include absolute(null, 8v, 8v);
+    @include icon-size(md);
+  }
+
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 6v (marge desc icon)
+  }
+
+
+  @include body() {
+    @include display-flex(column);
+    flex: 1 1 auto;
+    order: 2;
+  }
+
+  #{ns(grid-row)} & {
+    @include size(null, 100%);
+  }
+}

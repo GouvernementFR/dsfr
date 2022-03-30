@@ -1,0 +1,25 @@
+<%#
+# paramètres des détails de la carte
+
+* details (array, required) : collection d'objet définissant les détails
+
+* details[].label (string, required) : Intitulé du détail
+
+* details[].position (string, optionnal) : Détermine la position du détail
+
+%>
+
+<% for (const detail of details) {
+    const detailClasses = [`${prefix}-card__detail`];
+
+    switch(detail.position) {
+        case 'bottom':
+            detailClasses.push(`${prefix}-card__detail--bottom`);
+          break;
+    }
+
+    if (detail.icon) detailClasses.push(`${prefix}-icon-${detail.icon}`);
+
+%>
+<p <%- includeClasses(detailClasses); %>><%- detail.label %></p>
+<% } %>

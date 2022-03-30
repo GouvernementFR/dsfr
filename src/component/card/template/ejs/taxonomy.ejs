@@ -1,0 +1,17 @@
+<%#
+# paramètres de la taxonomie de la carte
+
+* badgesGroup (object, optionnal) : paramètres de configuration d'un groupe de badges
+
+* tagsGroup (object, optionnal) : paramètres de configuration d'un groupe de tags
+
+%>
+
+<div class="<%= prefix %>-card__taxonomy" >
+    <% if (taxonomy.badgesGroup) { %>
+    <%- include('../../../badge/template/ejs/badges-group', {badgesGroup: taxonomy.badgesGroup }); %>
+    <% } %>
+    <% if (taxonomy.tagsGroup) { %>
+    <%- include('../../../tag/template/ejs/tags-group', {tagsGroup: taxonomy.tagsGroup }); %>
+    <% } %>
+</div>

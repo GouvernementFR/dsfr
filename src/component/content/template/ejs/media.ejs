@@ -35,7 +35,17 @@ switch (content.size) {
         break;
 }
 
-let type = (content.img !== undefined || content.svg !== undefined) ? 'img' : 'vid';
+let type;
+switch (true) {
+    case content.img !== undefined:
+    case content.svg !== undefined:
+      type = 'img';
+      break;
+
+    case content.vid !== undefined:
+        type = 'vid';
+        break;
+}
 
 let markup;
 

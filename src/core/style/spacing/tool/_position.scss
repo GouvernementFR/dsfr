@@ -38,3 +38,19 @@
 @mixin sticky($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
   @include position(sticky, $top, $right, $bottom, $left, $width, $height);
 }
+
+@mixin top($top) {
+  top: space($top);
+}
+
+@mixin right($top) {
+  right: space($top);
+}
+
+@mixin bottom($top) {
+  bottom: space($top);
+}
+
+@mixin left($top) {
+  left: space($top);
+}

@@ -1,14 +1,58 @@
 <%
-let card = locals.card || {};
-let data = {
-  ...card,
-  detail: card.detail !== false ? 'Détail' : undefined,
-  title: 'Qu’est-ce que le Pass Culture et comment l’obtenir ?',
-  description: card.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
-  arrow: card.arrow !== false,
+const card = locals.card || {};
+const data = {
+  content: {
+    title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
+    description: card.description || lorem('', 60),
+  },
+  size: card.size,
   enlarge: card.enlarge !== false,
-  img: card.img ? imgData('img/placeholder.16x9.png', 'unrendered') : undefined
+  icon: card.icon
 }
+
+if (card.img || card.vid) {
+  data.header = {};
+
+  switch (true) {
+    case card.img !== undefined:
+      data.header.img = { ...imgData('img/placeholder.16x9.png', 'unrendered'), ...card.img};
+      break;
+
+    case card.vid !== undefined:
+      data.header.vid = { ...vidData(), ...card.vid };
+      break;
+  }
+
+
+  if (card.header && card.header.taxonomy) {
+    data.header.taxonomy = { badgesGroup: { badges: [{ label: 'label badge'}]}}
+  }
+}
+
+if (card.content) {
+  if (card.content.taxonomy) {
+    if (card.content.taxonomy.badges) {
+      data.content.taxonomy = { badgesGroup: { badges: [...Array(2)].map(() => { return { label: 'label badge'}})}};
+    }
+
+    if (card.content.taxonomy.tags) {
+      data.content.taxonomy = { tagsGroup: { tags: [...Array(2)].map(() => { return { label: 'label tag'}})}};
+    }
+  }
+
+  if (card.content.details) {
+    data.content.details = [];
+    for (const detail of card.content.details) {
+      const d = { label: 'détail (optionnel)'};
+      if (typeof detail === 'string') {
+        if (detail.indexOf('icon') > -1) d.icon = 'warning-fill';
+        if (detail.indexOf('bottom') > -1) d.position = 'bottom';
+      }
+      data.content.details.push(d);
+    }
+  }
+}
+
 %>
 
 <%- include('../../template/ejs/card', {card: data}); %>

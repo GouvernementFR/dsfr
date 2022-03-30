@@ -1,11 +1,37 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte verticale', './sample/vertical-cards', {}, true); %>
+<%- sample('Carte verticale', './sample/card-default', { card : { img: true }}, true, './layout', {col: {md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
 
-<%- sample('Carte verticale', './sample/vertical-cards', {}, true); %>
+<%- sample('Carte taille sm', './sample/card-default', { card: { img: true, size: 'sm' }}, true, './layout', {col: {md:3}, desc: 'dans une grille sur 3 à 4 colonnes en version desktop'}); %>
 
-<%- sample('Carte verticale sans image', './sample/vertical-cards-no-image', {}, true); %>
+<%- sample('Carte taille lg', './sample/card-default', { card: { img: true, size: 'lg' } }, true, './layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
 
-<%- sample('Carte verticale accentuée', './sample/vertical-cards', {card: {accent:'grey'}}, true); %>
+<%- sample('Carte verticale sans lien étendu à la carte', './sample/card-default', { card : { img: true, enlarge: false }}, true, './layout', {col: {md:4}}); %>
 
-<%- sample('Carte horizontale', './sample/horizontal-cards', {}, true); %>
+<%- sample('Carte verticale sans icône', './sample/card-default', { card : { img: true, icon: false }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec icône personnalisée', './sample/card-default', { card : { img: true, icon: 'warning-fill' }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte sans image', './sample/card-default', {}, true, './layout', {col: {md:4}}); %>
+
+<% for (const ratio of ['32x9', '3x2', '4x3', '1x1', '3x4', '2x3']) { %>
+<%- sample(`Carte verticale avec image au ratio d'aspect ${ratio}`, './sample/card-default', { card : { img: { ratio: ratio }}}, true, './layout', {col: {md:4}}); %>
+<% } %>
+
+<% for (const ratio of ['', '4x3', '1x1']) { %>
+<%- sample(`Carte vidéo au ratio d'aspect ${ratio ? ratio : 'par défaut'}`, './sample/card-default', { card : { vid: { ratio: ratio }}}, true, './layout', {col: {md:4}}); %>
+<% } %>
+
+<%- sample('Carte verticale avec taxonomie dans le header', './sample/card-default', { card : { img: true, header: { taxonomy: true} }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec badges dans le contenu', './sample/card-default', { card : { img: true, content: { taxonomy: { badges: true }} }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec tags dans le contenu', './sample/card-default', { card : { img: true, content: { taxonomy: { tags: true }} }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détail', './sample/card-default', { card : { img: true, content: { details: [true] } }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détail et icon', './sample/card-default', { card : { img: true, content: { details: ['icon'] } }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détail en bas', './sample/card-default', { card : { img: true, content: { details: ['bottom'] } }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détails en haut et en bas', './sample/card-default', { card : { img: true, content: { details: ['icon', 'bottom-icon'] } }}, true, './layout', {col: {md:4}}); %>

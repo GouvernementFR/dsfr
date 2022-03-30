@@ -12,10 +12,8 @@
       @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
     }
 
-    &:not(&--no-arrow) &__body {
-      @include after {
-        @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
-      }
+    @include before {
+      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
     }
 
     &__detail {

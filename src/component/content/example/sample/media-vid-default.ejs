@@ -1,6 +1,6 @@
 <%
 let data = {
-  vidTpl: '../../../../core/example/media/sample/vid',
+  vid: { ...vidData(), ratio: locals.content ? content.ratio : undefined},
   caption: '© Légende de la vidéo',
   transcription: 'Label du bouton de la transcription',
   ...locals.content || {},

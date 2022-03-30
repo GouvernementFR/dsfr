@@ -1,0 +1,68 @@
+////
+/// Card Module - size
+/// @group card
+////
+
+#{ns(card)} {
+  &--sm {
+    @include before {
+      @include icon-size(sm);
+      @include right(6v);
+      @include bottom(6v);
+    }
+  }
+
+  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include padding-bottom(14v); // 6v (padding card) + 4v (icon) + 4v (marge desc icon)
+  }
+
+  &--sm &__content {
+    @include padding(6v);
+  }
+
+  &--sm &__title {
+    @include title-style(h6);
+  }
+
+  &--sm &__detail--bottom {
+    @include margin-top(4v) // 4v (marge texte icon)
+  }
+
+  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__detail--bottom {
+    @include margin-bottom(-8v); // 4v (icon) + 4v (marge texte icon)
+    @include padding-right(6v); // 4v (icon) + 2v (marge)
+  }
+
+  &--lg {
+    @include before {
+      @include icon-size(lg);
+      @include right(10v);
+      @include bottom(10v);
+    }
+  }
+
+  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include padding-bottom(26v); // 10v (padding card) + 8v (icon) + 8v (marge desc icon)
+  }
+
+  &--lg &__content {
+    @include padding(10v);
+  }
+
+  &--lg &__title {
+    @include title-style(h4);
+  }
+
+  &--lg &__desc {
+    @include text-style(md);
+  }
+
+  &--lg &__detail--bottom {
+    @include margin-top(11v) // 8v (marge texte icon) + 1v (diff icon detail)
+  }
+
+  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__detail--bottom {
+    @include margin-bottom(-16v); // 8v (icon) + 8v (marge texte icon)
+    @include padding-right(10v); // 8v (icon) + 2v (marge)
+  }
+}

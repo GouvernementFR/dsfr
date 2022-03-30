@@ -1,19 +1,21 @@
 <%#
-# paramètres card
+# paramètres de la carte
 
-* card.title (string, required) : Titre de la carte
+* card.content (object, required) : Contenu central de la carte
+
+* card.header (object, optionnal) : Partie haute de la carte vertical, contenant l'image
+
+* card.action (object, optionnal) : Partie basse de la carte vertical, contenant les actions
+
+* card.size (string, optionnal) : Taille de la carte.
 
 * card.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la carte
 
 * card.horizontal (boolean, optional) : si true, passe la card en mode horizontal
 
-* card.img (object, optional) : paramètres de l'image
+* card.proportion (string, optional) : proportion de la carte contenant l'image en horizontal (valeurs : tier, half)
 
-* card.detail (string, optional) : Détail de la card
-
-* card.description (string, optional) : Description
-
-* card.arrow (boolean, optional) : détermine la présence de l'icon arrow
+* card.icon (string or boolean, optional) : icône illustrative ou suppression de l'icon avec false
 
 * card.accent (string, optional): Couleur d'accenturation du composant
 
@@ -28,18 +30,54 @@ let classes = card.classes || [];
 classes.push(`${prefix}-card`);
 
 if (card.enlarge) classes.push(`${prefix}-enlarge-link`);
-if (card.horizontal !== undefined) classes.push(`${prefix}-card--horizontal`);
-if (card.arrow === false) classes.push(`${prefix}-card--no-arrow`);
+
+switch (card.size) {
+  case 'sm':
+    classes.push(`${prefix}-card--sm`);
+    break;
+
+  case 'lg':
+    classes.push(`${prefix}-card--lg`);
+    break;
+}
+
+if (card.horizontal !== undefined) {
+  switch (card.proportion) {
+    case 'half':
+      classes.push(`${prefix}-card--horizontal-half`);
+      break;
+
+    case 'tier':
+      classes.push(`${prefix}-card--horizontal-tier`);
+      break
+
+    default:
+      classes.push(`${prefix}-card--horizontal`);
+  }
+}
+
+switch (card.icon) {
+  case undefined:
+    break;
+
+  case false:
+    classes.push(`${prefix}-card--no-icon`);
+    break;
+
+  default:
+    classes.push(`${prefix}-icon-${card.icon}`);
+}
+
 if (card.accent !== undefined) classes.push(`${prefix}-card--${card.accent}`);
 %>
 <div <%- includeClasses(classes) %>>
-
-  <% if (card.head !== undefined) { %>
-  <div class="<%= prefix%>-card_head" >
-    <div class="<%= prefix %>-card__img">
-      <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: card.img}); %>
-    </div>
-  </div>
-
+  <% if (card.header !== undefined) { %>
+  <%- include('header', { header: card.header}) %>
   <% } %>
+  <div class="<%= prefix %>-card__body" >
+    <%- include('content', { content: card.content}) %>
+    <% if (card.footer !== undefined) { %>
+    <%- include('footer', { footer: card.footer}) %>
+    <% } %>
+  </div>
 </div>
