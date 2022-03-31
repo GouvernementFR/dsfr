@@ -18,6 +18,10 @@
 
 <%- sample('Header avec raccourcis dupliqués, pour Angular, React et Vue', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, duplicateLinks: true }}, true, './layout');  %>
 
+<%- sample('Header avec bandeau BETA', './sample/header.ejs', {header: { logo:{ title: 'République<br>Française'}, beta: true, service: true, links:true, search: true, navigation: 'min' }}, true, './layout');  %>
+
+<%- sample('Header min avec bandeau BETA', './sample/header.ejs', {header: { logo:{ title: 'République<br>Française'}, beta: true, navigation: 'min' }}, true, './layout');  %>
+
 <%- deprecation(); %>
 
 <%- sample('Header déprécié', '../deprecated/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>

@@ -13,6 +13,10 @@ if (header.operator !== undefined) {
   brand.operator = header.operator;
 }
 
+if (header.beta !== undefined) {
+  brand.beta = true;
+}
+
 let servicePlaceholder = {
     title:'Nom du site / service',
     tagline: 'baseline - précisions sur l‘organisation'

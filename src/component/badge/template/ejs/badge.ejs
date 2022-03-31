@@ -9,6 +9,8 @@
 
 ** accent (string, optional) : défini la couleur d'accentuation (type ne doit pas être défini)
 
+** tag (string, optional) : balise html du tag (default: p)
+
 ** classes (array, optional) : classes supplémentaires sur l'element
 
 ** attrs (object, optional) : Attributs supplémentaires sur l'element
@@ -24,9 +26,10 @@
 
 <%
 let badge = locals.badge || {};
-if(!badge.classes) badge.classes = [];
-if(!badge.attrs) badge.attrs = {};
-
+if (!badge.classes) badge.classes = [];
+if (!badge.attrs) badge.attrs = {};
+let tag = 'p';
+if (badge.tag) tag = badge.tag;
 badge.classes.push(prefix + '-badge');
 
 switch(badge.size) {
@@ -49,10 +52,10 @@ if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.labe
 <ul class="<%= prefix %>-badge-group">
 	<% for (let i = 0; i < 9; i++) { %>
 	<li>
-		<p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
+		<<%= tag %> <%- includeClasses(badge.classes)%>><%- badge.label %></<%= tag %>>
 	</li>
 	<% } %>
 </ul>
 <% } else { %>
-<p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
+<<%= tag %> <%- includeClasses(badge.classes)%>><%- badge.label %></<%= tag %>>
 <% } %>
