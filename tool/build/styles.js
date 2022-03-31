@@ -25,30 +25,32 @@ const process = async (css, plugins, options) => {
   if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
 };
 
-const input = (path, file) => {
-  const filePath = root(`${path}/${file}`);
+const input = (path, file, standalone) => {
+  const insert = standalone ? 'standalone/' : '';
+  const filePath = root(`${path}/${insert}${file}`);
   return `@import '${filePath}';\r\n`;
 };
 
-const output = (pck, file) => {
+const output = (pck, file, standalone) => {
   const append = file ? `.${file}` : '';
-  const filePath = root(`${pck.dist}/${pck.id}${append}`);
+  const filePath = root(`${standalone ? pck.standalone.dist : pck.dist}/${pck.id}${append}${standalone ? '.standalone' : ''}`);
   return filePath;
 };
 
-const buildStyles = async (pck, minify, map) => {
+const buildStyles = async (pck, minify, map, standalone = false) => {
   let data = '';
-  if (pck.style.files.length > 1) {
-    for (const file of pck.style.files) {
+  const style = standalone ? pck.standalone.style : pck.style;
+  if (style.files.length > 1) {
+    for (const file of style.files) {
       const src = input(pck.path, file);
       await buildStyle(src, output(pck, file), minify, map);
       data += src;
     }
   } else {
-    data = input(pck.path, 'main');
+    data = input(pck.path, 'main', standalone);
   }
 
-  await buildStyle(data, output(pck), minify, map);
+  await buildStyle(data, output(pck, null, standalone), minify, map);
 };
 
 const buildStyle = async (data, dest, minify, map) => {

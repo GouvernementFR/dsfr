@@ -3,12 +3,14 @@
 /// @group core
 ////
 
-@mixin btn-reset {
+@mixin btn-reset ($minimal: false) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: transparent;
-  font-family: inherit;
   border: none;
   margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
+  @if not $minimal {
+    background-color: transparent;
+    font-family: inherit;
+  }
 }
