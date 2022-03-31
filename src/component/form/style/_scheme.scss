@@ -4,35 +4,6 @@
 ////
 
 @mixin _form-scheme($legacy: false) {
-  #{ns-group(select), ns-group(input)} {
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
-    */
-    &--valid {
-      label {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
-      }
-    }
-
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
-    */
-    &--error {
-      label {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
-      }
-    }
-
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
-    */
-    &--disabled {
-      label {
-        @include disabled-colors((legacy: $legacy, text: true));
-      }
-    }
-  }
-
   #{ns(label)} {
     @include scheme-element-text-color(label grey, (legacy:$legacy));
 
@@ -76,15 +47,6 @@
   * Style d'un ensemble de champs
   */
   #{ns(fieldset)} {
-    /**
-    * Mixin disabled pour gérer l'état disabled
-    */
-    @include disabled {
-      label {
-        @include disabled-colors((legacy: $legacy, text: true));
-      }
-    }
-
     &__legend {
       @include scheme-element-text-color(title grey, (legacy:$legacy));
     }
@@ -93,18 +55,25 @@
     * Modificateur pour gérer l'état d'erreur
     */
     &--error {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+      &#{ns(fieldset--radio)},
+      &#{ns(fieldset--checkbox)} {
+        #{ns(fieldset__content)} {
+          @include before {
+            @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+          }
         }
-      }
 
-      #{ns(fieldset__legend)} {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
+        #{ns(fieldset__legend)} {
+          @include scheme-element-text-color(default error, (legacy:$legacy));
+        }
       }
 
       label {
         @include scheme-element-text-color(default error, (legacy:$legacy));
+      }
+
+      #{ns(input)} {
+        @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), bottom-2-in);
       }
     }
 
@@ -112,19 +81,64 @@
     * Modificateur pour gérer l'état de validation
     */
     &--valid {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+      &#{ns(fieldset--radio)},
+      &#{ns(fieldset--checkbox)} {
+        #{ns(fieldset__content)} {
+          @include before {
+            @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+          }
         }
-      }
 
-      #{ns(fieldset__legend)} {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
+        #{ns(fieldset__legend)} {
+          @include scheme-element-text-color(default success, (legacy:$legacy));
+        }
       }
 
       label {
         @include scheme-element-text-color(default success, (legacy:$legacy));
       }
+
+      #{ns(input)} {
+        @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+      }
+    }
+  }
+
+  #{ns-group(select), ns-group(input)} {
+    /**
+    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+    */
+    &--valid {
+      label {
+        @include scheme-element-text-color(default success, (legacy:$legacy));
+      }
+    }
+
+    /**
+    * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
+    */
+    &--error {
+      label {
+        @include scheme-element-text-color(default error, (legacy:$legacy));
+      }
+    }
+
+    /**
+    * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
+    */
+    &--disabled {
+      label {
+        @include disabled-colors((legacy: $legacy, text: true));
+      }
+    }
+  }
+
+  /**
+  * Mixin disabled pour gérer l'état disabled
+  */
+  @include disabled {
+    label {
+      @include disabled-colors((legacy: $legacy, text: true));
     }
   }
 }

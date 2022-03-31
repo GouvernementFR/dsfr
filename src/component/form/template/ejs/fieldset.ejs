@@ -30,8 +30,10 @@
 let fieldset = locals.fieldset || {};
 let fieldsetClasses = [...fieldset.classes || [], prefix + '-fieldset'];
 let fieldsetAttrs = fieldset.attributes || {};
+let legendAttrs = {};
 let describedby = [];
 
+if (fieldset.id !== undefined) legendAttrs.id = fieldset.id + '-legend';
 if (fieldset.inline === true) fieldsetClasses.push(prefix + '-fieldset--inline');
 if (fieldset.error !== undefined) {
     fieldsetClasses.push(prefix + '-fieldset--error');
@@ -51,12 +53,15 @@ if (fieldset.error != undefined) describedby.push(fieldset.id + '-desc-error');
 if (fieldset.valid != undefined) describedby.push(fieldset.id + '-desc-valid');
 
 const legendClasses = [`${prefix}-fieldset__legend`];
-if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
+if (fieldset.choice) {
+  if (fieldset.choice === 'radio') fieldsetClasses.push(`${prefix}-fieldset--radio`);
+  if (fieldset.choice === 'checkbox') fieldsetClasses.push(`${prefix}-fieldset--checkbox`);
+}
 %>
 
 <div class="<%= prefix %>-form-group">
   <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
-    <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
+    <legend <%- includeClasses(legendClasses); %> <%- includeAttrs(legendAttrs); %>>
       <%= fieldset.legend %>
       <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
     </legend>

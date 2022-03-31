@@ -89,6 +89,13 @@
     @include margin-bottom(4v);
   }
 
+  &#{ns(fieldset--radio)},
+  &#{ns(fieldset--checkbox)} {
+    #{ns(fieldset__legend)} {
+      @include font-weight(regular);
+    }
+  }
+
   &__legend {
     @include margin-bottom(4v);
     @include text-style(md);

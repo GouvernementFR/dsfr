@@ -9,7 +9,7 @@ let element = {
 
 let fields = {
   legend: 'Choisissez un thème pour personnaliser l’apparence du site.',
-  choice: true,
+  choice: 'radio',
   elements: [
     { ...element, data: { radio: {...element.data, image: {src: relativeRoot + 'dist/artwork/light.svg', type: 'svg'}, label: 'Thème clair', attributes: { value: 'light'}, id: element.data.name + '-light' } } },
     { ...element, data: { radio: {...element.data, image: {src: relativeRoot + 'dist/artwork/dark.svg', type: 'svg'}, label: 'Thème sombre', attributes: { value: 'dark'}, id: element.data.name + '-dark' } } },
