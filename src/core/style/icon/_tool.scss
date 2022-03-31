@@ -48,8 +48,8 @@
   }
 }
 
-@mixin icon-content($icon, $pseudo: before, $important: false) {
-  @include _pseudo($pseudo, '') {
+@mixin icon-content($icon, $pseudo: before, $important: false, $content: '') {
+  @include _pseudo($pseudo, $content) {
     $url: get-url-icon($icon, $important);
     -webkit-mask-image: $url;
     mask-image: $url;
@@ -65,6 +65,7 @@
     @include size(var(--icon-size), var(--icon-size));
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
+    @content;
   }
 }
 
@@ -78,7 +79,7 @@
   }
 
   @if $size != null {
-    @include icon-size($size);
+    @include icon-size($size, $pseudo);
   }
 
   @include _pseudo($pseudo) {
@@ -95,6 +96,7 @@
     }
 
     @if $icon != null {
+      content: '';
       background-image: get-url-icon($icon, false);
     }
 

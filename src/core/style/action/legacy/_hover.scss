@@ -3,6 +3,10 @@
 /// @group core
 ////
 
-#{ns(enlarge-link)} {
-  @include scheme-element-bg-transparent((legacy: true, hover: true));
+@include legacy(ie11) {
+  #{ns(enlarge-link)} {
+    @include scheme-element-bg-transparent((legacy: true, hover: true));
+
+    @include disable-underline-legacy;
+  }
 }

@@ -12,10 +12,32 @@ $underline-thickness: 0.0625em;
 
 @mixin enable-underline() {
   --underline-img: linear-gradient(0deg, currentColor, currentColor);
+  --link-blank-content: '';
+}
+
+@mixin enable-underline-legacy() {
+  [href] {
+    text-decoration: underline;
+  }
+
+  [target='_blank']::after {
+    content: '';
+  }
 }
 
 @mixin disable-underline() {
   --underline-img: none;
+  --link-blank-content: none;
+}
+
+@mixin disable-underline-legacy() {
+  [href] {
+    text-decoration: none;
+  }
+
+  [target='_blank']::after {
+    content: none;
+  }
 }
 
 @mixin link-underline() {
@@ -38,8 +60,10 @@ $underline-thickness: 0.0625em;
 }
 
 @mixin link-blank() {
-  @include icon(external-link-line, sm, after) {
+  @include icon-style(after) {
     @include margin-left(1v);
     @include margin-bottom(1v);
   }
+  @include icon-size(sm, after);
+  @include icon-content(external-link-line, after, null, var(--link-blank-content));
 }

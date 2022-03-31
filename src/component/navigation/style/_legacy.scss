@@ -15,6 +15,8 @@
   }
 
   #{ns(nav)} {
+    @include disable-underline-legacy;
+
     &__link,
     &__btn {
       @include scheme-element-bg-transparent((legacy: true, hover: true));

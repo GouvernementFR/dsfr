@@ -11,5 +11,9 @@
     &__list {
       list-style: none;
     }
+
+    &__panel {
+      @include enable-underline-legacy;
+    }
   }
 }
