@@ -12,3 +12,10 @@
 @import 'style/scheme';
 
 @include _checkbox-scheme;
+
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
+// deprecated
+@include _checkbox-deprecated-scheme;

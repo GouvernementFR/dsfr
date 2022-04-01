@@ -1,0 +1,26 @@
+////
+/// Checkbox Module
+/// @group checkbox
+////
+
+/**
+ * L'input de type checkbox avec son label est contenu dans un groupe
+ * Ce groupe contient également les textes de succès, d'erreur et d'aide (optionnels)
+ */
+ #{ns(checkbox-group)} {
+  /**
+   * Texte valide
+   */
+  #{ns(valid-text)} {
+    @include margin-top(1v);
+  }
+
+  /**
+   * Modificateur pour gérer l'état validé
+   */
+  &--valid {
+    @include before('') {
+      @include absolute(3v, null, null, -2v, 2px, 6v);
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <%#
 # paramètres input
 
-* input.id (string, required) : id du label et de l'input, sert également à construire les ids des messages valid, error et hint
+* input.id (string, required) : id du label et de l'input, sert également à construire les ids des messages success, error et hint
 
 * input.label (string, required) : label
 
@@ -11,7 +11,7 @@
 
 * input.icon (string, optional) : nom de l'icone qui sera placée sur la partie droite de l'input
 
-* input.valid (string, optional) : message de validation
+* input.success (string, optional) : message de succès
 
 * input.error (string, optional) : message d'erreur
 
@@ -40,9 +40,9 @@ let describedby = [];
 
 inputClasses.push(prefix + '-input');
 
-if (input.valid !== undefined) {
-  inputClasses.push(prefix + '-input--valid');
-  describedby.push(input.id + '-desc-valid');
+if (input.success !== undefined) {
+  inputClasses.push(prefix + '-input--success');
+  describedby.push(input.id + '-desc-success');
 }
 
 if (input.error !== undefined) {

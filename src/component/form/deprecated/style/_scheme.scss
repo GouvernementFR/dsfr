@@ -1,0 +1,54 @@
+////
+/// form Scheme
+/// @group form
+////
+
+@mixin _form-deprecated-scheme($legacy: false) {
+  #{ns(label)} {
+    &--valid {
+      @include scheme-element-text-color(default success, (legacy:$legacy));
+    }
+  }
+
+  #{ns(valid-text)} {
+    @include scheme-element-text-color(default success, (legacy:$legacy));
+  }
+
+  /**
+  * Style d'un ensemble de champs valide
+  */
+  #{ns(fieldset)} {
+    &--valid {
+      &:not(:disabled) {
+        &#{ns(fieldset--radio)},
+        &#{ns(fieldset--checkbox)} {
+          #{ns(fieldset__content)} {
+            @include before {
+              @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+            }
+          }
+
+          #{ns(fieldset__legend)} {
+            @include scheme-element-text-color(default success, (legacy:$legacy));
+          }
+        }
+
+        label {
+          @include scheme-element-text-color(default success, (legacy:$legacy));
+        }
+
+        #{ns(input)} {
+          @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+        }
+      }
+    }
+  }
+
+  #{ns-group(select), ns-group(input)} {
+    &--valid {
+      label {
+        @include scheme-element-text-color(default success, (legacy:$legacy));
+      }
+    }
+  }
+}

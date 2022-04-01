@@ -1,7 +1,7 @@
 <%#
 # paramètres input group
 
-* input.valid (string, optional) : message de validation
+* input.success (string, optional) : message de succès
 
 * input.error (string, optional) : message d'erreur
 
@@ -15,7 +15,7 @@ let groupClasses = [prefix + '-input-group'];
 
 if (input.error !== undefined) groupClasses.push(prefix + '-input-group--error');
 if (input.disabled !== undefined) groupClasses.push(prefix + '-input-group--disabled');
-if (input.valid !== undefined) groupClasses.push(prefix + '-input-group--valid');
+if (input.success !== undefined) groupClasses.push(prefix + '-input-group--success');
 %>
 
 <div <%- includeClasses(groupClasses); %>>

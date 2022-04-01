@@ -1,0 +1,23 @@
+////
+/// Input Scheme
+/// @group input
+////
+
+@mixin _input-deprecated-scheme($legacy: false) {
+  #{ns(input)} {
+    /**
+    * Ancien nom pour success
+    */
+    &--valid {
+      @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+    }
+  }
+
+  #{ns(input-wrap)} {
+    > *:not(:last-child) {
+      &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
+        @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), bottom-2-in);
+      }
+    }
+  }
+}

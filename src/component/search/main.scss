@@ -12,3 +12,9 @@
 @import 'style/scheme';
 
 @include _search-scheme;
+
+// deprecated
+@import 'deprecated/style/scheme';
+
+// deprecated
+@include _search-deprecated-scheme;

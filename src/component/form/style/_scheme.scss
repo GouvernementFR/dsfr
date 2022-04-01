@@ -37,9 +37,9 @@
   }
 
   /**
-  * Style du texte de l'état validé
+  * Style du texte de l'état success
   */
-  #{ns(valid-text)} {
+  #{ns(success-text)} {
     @include scheme-element-text-color(default success, (legacy:$legacy));
   }
 
@@ -55,60 +55,64 @@
     * Modificateur pour gérer l'état d'erreur
     */
     &--error {
-      &#{ns(fieldset--radio)},
-      &#{ns(fieldset--checkbox)} {
-        #{ns(fieldset__content)} {
-          @include before {
-            @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+      &:not(:disabled) {
+        &#{ns(fieldset--radio)},
+        &#{ns(fieldset--checkbox)} {
+          #{ns(fieldset__content)} {
+            @include before {
+              @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+            }
+          }
+
+          #{ns(fieldset__legend)} {
+            @include scheme-element-text-color(default error, (legacy:$legacy));
           }
         }
 
-        #{ns(fieldset__legend)} {
+        label {
           @include scheme-element-text-color(default error, (legacy:$legacy));
         }
-      }
 
-      label {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
-      }
-
-      #{ns(input)} {
-        @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), bottom-2-in);
+        #{ns(input)} {
+          @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), bottom-2-in);
+        }
       }
     }
 
     /**
-    * Modificateur pour gérer l'état de validation
+    * Modificateur pour gérer l'état success
     */
-    &--valid {
-      &#{ns(fieldset--radio)},
-      &#{ns(fieldset--checkbox)} {
-        #{ns(fieldset__content)} {
-          @include before {
-            @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+    &--success {
+      &:not(:disabled) {
+        &#{ns(fieldset--radio)},
+        &#{ns(fieldset--checkbox)} {
+          #{ns(fieldset__content)} {
+            @include before {
+              @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+            }
+          }
+
+          #{ns(fieldset__legend)} {
+            @include scheme-element-text-color(default success, (legacy:$legacy));
           }
         }
 
-        #{ns(fieldset__legend)} {
+        label {
           @include scheme-element-text-color(default success, (legacy:$legacy));
         }
-      }
 
-      label {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
-      }
-
-      #{ns(input)} {
-        @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+        #{ns(input)} {
+          @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+        }
       }
     }
   }
 
   #{ns-group(select), ns-group(input)} {
     /**
-    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
+    * Modificateur au niveau du groupe pour appliquer un état success aux labels
     */
-    &--valid {
+    &--success {
       label {
         @include scheme-element-text-color(default success, (legacy:$legacy));
       }

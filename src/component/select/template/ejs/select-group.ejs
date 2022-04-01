@@ -1,7 +1,7 @@
 <%#
 # paramètres select group
 
-* select.valid (string, optional) : message de validation
+* select.success (string, optional) : message de succès
 
 * select.error (string, optional) : message d'erreur
 
@@ -16,7 +16,7 @@ let groupClasses = [prefix + '-select-group'];
 
 if (select.error !== undefined) groupClasses.push(prefix + '-select-group--error');
 if (select.disabled !== undefined) groupClasses.push(prefix + '-select-group--disabled');
-if (select.valid !== undefined) groupClasses.push(prefix + '-select-group--valid');
+if (select.success !== undefined) groupClasses.push(prefix + '-select-group--success');
 %>
 
 <div <%- includeClasses(groupClasses); %>>

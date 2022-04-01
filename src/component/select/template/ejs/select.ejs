@@ -1,7 +1,7 @@
 <%#
 # paramètres select
 
-* select.id (string, required) : id du label et du select, sert également à construire les ids des messages valid, error et hint
+* select.id (string, required) : id du label et du select, sert également à construire les ids des messages success, error et hint
 
 * select.label (string, required) : label
 
@@ -11,7 +11,7 @@
 
 * select.placeholder (string, optional) : text du placeholder du select
 
-* select.valid (string, optional) : message de validation
+* select.success (string, optional) : message de succès
 
 * select.error (string, optional) : message d'erreur
 
@@ -37,9 +37,9 @@ let selectAttrs = select.attributes || {};
 let describedby = [];
 selectClasses.push(prefix + '-select');
 
-if (select.valid !== undefined) {
-  selectClasses.push(prefix + '-select--valid');
-  describedby.push(select.id + '-desc-valid');
+if (select.success !== undefined) {
+  selectClasses.push(prefix + '-select--success');
+  describedby.push(select.id + '-desc-success');
 }
 
 if (select.error !== undefined) {

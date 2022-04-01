@@ -1,0 +1,32 @@
+////
+/// Form Module
+/// @group form
+////
+
+/**
+ * Ancien nom du texte de l'état validé
+ */
+#{ns(valid-text)} {
+  @include display-flex(row, center);
+  @include text-style(xs);
+  @include margin-top(4v);
+  @include margin-bottom(0);
+
+  @include icon(success-fill, sm) {
+    display: inline-block;
+    @include margin-right(1v);
+  }
+}
+
+/**
+ * Ancien modificateur pour gérer l'état de validation
+ */
+#{ns(fieldset)} {
+  &--valid {
+    #{ns(fieldset__content)} {
+      @include before('') {
+        @include absolute(3v, null, 3v, -2v, 2px);
+      }
+    }
+  }
+}

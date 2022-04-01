@@ -12,3 +12,9 @@
 @import 'style/scheme';
 
 @include _input-scheme;
+
+// deprecated
+@import 'deprecated/style/scheme';
+
+// deprecated
+@include _input-deprecated-scheme;

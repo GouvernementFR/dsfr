@@ -5,7 +5,7 @@
 
 * message.error (string, optional): message d'erreur
 
-* message.valid (string, optional): message de succès
+* message.success (string, optional): message de succès
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -18,8 +18,8 @@ let message = locals.message || {}
   </p>
 <% } %>
 
-<% if(message.valid != undefined) { %>
-  <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
-    <%= message.valid %>
+<% if(message.success != undefined) { %>
+  <p id="<%= message.id %>-desc-success" class="<%= prefix %>-success-text" >
+    <%= message.success %>
   </p>
 <% } %>

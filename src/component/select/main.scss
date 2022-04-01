@@ -12,3 +12,9 @@
 @import 'style/scheme';
 
 @include _select-scheme;
+
+// deprecated
+@import 'deprecated/style/scheme';
+
+// deprecated
+@include _select-deprecated-scheme;

@@ -1,0 +1,17 @@
+////
+/// Search Scheme
+/// @group search
+////
+
+@mixin _search-deprecated-scheme($legacy: false) {
+  #{ns(search-bar)} {
+    #{ns(input)} {
+      /**
+      * Ancien nom du modificateur pour le champ en etat succès
+      */
+      &--valid {
+        @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+      }
+    }
+  }
+}

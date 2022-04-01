@@ -49,7 +49,7 @@
       @include margin-bottom(0);
     }
 
-    #{ns(valid-text)},
+    #{ns(success-text)},
     #{ns(error-text)} {
       @include margin-top(4v);
       + #{ns(hint-text)} {
@@ -63,7 +63,7 @@
         @include margin-top(2v);
       }
 
-      #{ns(valid-text)},
+      #{ns(success-text)},
       #{ns(error-text)} {
         @include margin-top(4v);
       }

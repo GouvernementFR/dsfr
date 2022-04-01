@@ -12,3 +12,10 @@
 @import 'style/scheme';
 
 @include _form-scheme;
+
+// deprecated
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
+// deprecated
+@include _form-deprecated-scheme;

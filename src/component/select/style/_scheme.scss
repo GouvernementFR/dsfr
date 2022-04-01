@@ -19,9 +19,9 @@
     }
 
     /**
-    * Modificateur pour gérer l'état de validation
+    * Modificateur pour gérer l'état de succès
     */
-    &--valid {
+    &--success {
       @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
     }
 

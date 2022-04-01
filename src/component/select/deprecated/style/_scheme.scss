@@ -1,0 +1,15 @@
+////
+/// Select Module
+/// @group select
+////
+
+@mixin _select-deprecated-scheme($legacy: false) {
+  #{ns(select)} {
+    /**
+    * Ancien modificateur pour gérer l'état de validation => maintenant 'success'
+    */
+    &--valid {
+      @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+    }
+  }
+}

@@ -5,7 +5,7 @@
 
 * checkbox.size (string, optional) : la valeur sm permet d'opter pour de petites cases à cocher
 
-* checkbox.valid (string, optional) : message de succès
+* checkbox.success (string, optional) : message de succès
 
 * checkbox.attributes (object, optional): attributs sur l'input
 
@@ -22,9 +22,9 @@ if (checkbox.error !== undefined) {
   describedby.push('checkboxes-error-desc-error');
 }
 
-if (checkbox.valid !== undefined) {
-  groupClasses.push(prefix + '-checkbox-group--valid');
-  describedby.push('checkboxes-valid-desc-valid');
+if (checkbox.success !== undefined) {
+  groupClasses.push(prefix + '-checkbox-group--success');
+  describedby.push('checkboxes-success-desc-success');
 }
 if (describedby.length > 0) checkboxAttrs['aria-describedby'] = describedby.join(' ');
 

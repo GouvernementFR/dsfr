@@ -5,7 +5,7 @@
 
 /**
  * L'input de type checkbox avec son label est contenu dans un groupe
- * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
+ * Ce groupe contient également les textes de succès, d'erreur et d'aide (optionnels)
  */
 @mixin _checkbox-scheme($legacy: false) {
   #{ns(checkbox-group)} {
@@ -67,9 +67,9 @@
     }
 
     /**
-    * Modificateur pour gérer l'état validé
+    * Modificateur pour gérer l'état success
     */
-    &--valid {
+    &--success {
       input[type="checkbox"] + label {
         @include scheme-element-text-color(default success, (legacy:$legacy));
       }

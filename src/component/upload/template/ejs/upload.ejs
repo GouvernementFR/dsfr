@@ -17,7 +17,7 @@
 
 * upload.error (string, optional) : ajoute un texte d'erreur
 
-* upload.valid (string, optional) : ajoute un texte de succès
+* upload.success (string, optional) : ajoute un texte de succès
 
 * upload.success (string, optional) : ajoute un texte de succès
 
@@ -38,9 +38,9 @@ if (upload.error) {
   groupClasses.push(prefix + '-input-group--error');
   uploadAttrs['aria-describedby'] = upload.id + '-desc-error';
 }
-if (upload.valid) {
-  groupClasses.push(prefix + '-input-group--valid');
-  uploadAttrs['aria-describedby'] = upload.id + '-desc-valid';
+if (upload.success) {
+  groupClasses.push(prefix + '-input-group--success');
+  uploadAttrs['aria-describedby'] = upload.id + '-desc-success';
 }
 if (upload.disabled) uploadAttrs['disabled'] = '';
 if (upload.multiple) uploadAttrs['multiple'] = '';

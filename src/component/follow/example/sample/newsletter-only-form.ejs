@@ -16,15 +16,15 @@ if (follow.newsletter !== undefined) {
     inputAttributes['aria-describedby'] = prefix + '-newsletter-error-text ' + prefix + '-newsletter-hint-text';
     inputClasses.push(prefix + '-input--error');
   }
-  if (follow.newsletter.valid) {
-    inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
-    inputClasses.push(prefix + '-input--valid');
+  if (follow.newsletter.success) {
+    inputAttributes['aria-describedby'] = prefix + '-newsletter-success-text ' + prefix + '-newsletter-hint-text';
+    inputClasses.push(prefix + '-input--success');
   }
 }
 
 data.newsletter.type = 'form';
 data.newsletter.form = {
-  valid: follow.newsletter.valid,
+  success: follow.newsletter.success,
   error: follow.newsletter.error,
   hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
   input: {
