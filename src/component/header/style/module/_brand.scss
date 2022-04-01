@@ -64,7 +64,6 @@
 }
 
 &__service {
-  @include display-flex(column, null, center);
   @include padding-y(3v);
   @include margin-x(3v);
   @include margin-x(0, lg);
@@ -72,11 +71,6 @@
 
   @include respond-from(lg) {
     width: auto;
-  }
-
-  #{ns(badge)} {
-    @include margin(2v 0 100% 0);
-    pointer-events: none;
   }
 
   &-title {

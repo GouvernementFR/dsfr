@@ -78,15 +78,15 @@ let brand = locals.brand || {};
   <% if (brand.service !== undefined || brand.beta) { %>
     <div class="<%= prefix %>-header__service" >
       <% if (position === 'service') { %><%- link %><% } %>
-        <% if (brand.service && brand.service.title !== undefined) { %>
+        <% if (brand.service && (brand.service.title || brand.service.beta)) { %>
           <p class="<%= prefix %>-header__service-title">
-            <%- brand.service.title %>
-            <% if (brand.beta) { %>
+            <% if (brand.service.title) { %>
+              <%- brand.service.title %>
+            <% } %>
+            <% if (brand.service.beta) { %>
               <%- include('../../../badge/template/ejs/badge.ejs', {badge: {tag: 'span', label: "BETA", size: 'sm', accent: 'green-emeraude'} }) %>
             <% } %>
           </p>
-        <% } else { %>
-          <%- include('../../../badge/template/ejs/badge.ejs', {badge: {label: "BETA", size: 'sm', accent: 'green-emeraude'} }) %>
         <% } %>
       <% if (position === 'service') { %><%- '</a>' %><% } %>
       <% if (brand.service && brand.service.tagline !== undefined) { %>
