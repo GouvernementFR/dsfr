@@ -6,5 +6,10 @@
 #{ns(card)} {
   &__footer {
     order: 2;
+    @include padding(2v 8v 8v);
+
+    #{ns(btns-group)} {
+      @include margin-bottom(-4v);
+    }
   }
 }

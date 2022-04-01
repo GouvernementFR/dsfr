@@ -11,9 +11,8 @@
 
 * card.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la carte
 
-* card.horizontal (boolean, optional) : si true, passe la card en mode horizontal
-
-* card.proportion (string, optional) : proportion de la carte contenant l'image en horizontal (valeurs : tier, half)
+* card.horizontal (boolean || object, optional) : si true, passe la card en mode horizontal
+  ** card.horizontal.proportion (string, optional) : proportion de l'image par rapport à la carte en horizontal (valeurs : tier, half)
 
 * card.icon (string or boolean, optional) : icône illustrative ou suppression de l'icon avec false
 
@@ -42,7 +41,7 @@ switch (card.size) {
 }
 
 if (card.horizontal !== undefined) {
-  switch (card.proportion) {
+  switch (card.horizontal.proportion) {
     case 'half':
       classes.push(`${prefix}-card--horizontal-half`);
       break;

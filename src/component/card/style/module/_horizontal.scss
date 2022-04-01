@@ -8,20 +8,31 @@
     &--horizontal,
     &--horizontal-half,
     &--horizontal-tier {
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
 
-    &--horizontal &__img {
+    &--horizontal &__img,
+    &--horizontal-half &__img,
+    &--horizontal-tier &__img {
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--horizontal &__header {
       @include width(40%);
       flex: 1 0 40%;
     }
 
-    &--horizontal-half &__img {
+    &--horizontal-half &__header {
       @include width(50%);
       flex: 1 0 50%;
     }
 
-    &--horizontal-tier &__img {
+    &--horizontal-tier &__header {
       $tier: 100% / 3;
       @include width($tier);
       flex: 1 0 #{$tier};

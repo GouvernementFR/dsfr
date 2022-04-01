@@ -6,20 +6,51 @@
 #{ns(card)} {
   &__content {
     order: 1;
-    display: flex;
-    flex-direction: column;
-    @include padding(8v);
+    @include display-flex(column);
+    @include padding(6v 8v 8v);
+
+    @include nest-tag(sm);
   }
 
-  &__content &__taxonomy {
+  &__title {
+    order: 2;
+    @include title-style(h5);
+    @include font-weight(bold);
+    @include margin-bottom(0);
+  }
+
+  &__desc {
+    order: 3;
+    @include text-style(sm);
+    @include margin-top(3v);
+    @include margin-bottom(0);
+  }
+
+  &__start {
     order: 1;
+    @include margin-bottom(1v);
+
+    #{ns(badges-group)},
+    #{ns(tags-group)} {
+      @include margin-bottom(1v);
+    }
+  }
+
+  &__start &__detail {
+    @include margin-bottom(3v);
+  }
+
+  &__end {
+    order: 4;
+    @include display-flex(column);
+    @include margin-top(4v);
+    @include padding-top(2v);
   }
 
   &__detail {
-    order: 2;
     @include text-style(xs);
-    display: flex;
-    flex-direction: row;
+    @include display-flex(row, flex-start);
+    @include margin-bottom(0);
 
     @include has-icon {
       @include before {
@@ -27,33 +58,16 @@
         @include margin-right(2v);
       }
     }
-
-    &--bottom {
-      order: 5;
-      @include margin-top(7v); // 6v (marge texte icon) + 1v (diff icon detail)
-      @include margin-bottom(0);
-    }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__detail--bottom {
-    @include margin-bottom(-12v); // 6v (icon) + 6v (marge texte icon)
-    @include padding-right(8v); // 6v (icon) + 2v (marge)
+  &#{ns(enlarge-link)}:not(&--no-icon) &__end {
+    @include margin-bottom(-12v); // 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+    @include min-height(8v); // 6v (icon) + 2v (padding end)
+    @include padding-right(8v); // 6v (icon) + 2v (padding)
+    justify-content: flex-end;
   }
 
-  &__title {
-    order: 3;
-    @include title-style(h5);
-    @include font-weight(bold);
-  }
-
-  &__desc {
-    order: 4;
-    @include text-style(sm);
-    margin-bottom: 0;
-  }
-
-  &__link {
-    @include size(100%);
-    @include margin-top(auto);
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
   }
 }

@@ -18,7 +18,7 @@
     </div>
     <% } %>
 
-    <% if (header.taxonomy) { %>
-        <%- include('taxonomy', {taxonomy: header.taxonomy}); %>
+    <% if (header.badgesGroup) { %>
+    <%- include('../../../badge/template/ejs/badges-group', {badgesGroup: header.badgesGroup }); %>
     <% } %>
 </div>

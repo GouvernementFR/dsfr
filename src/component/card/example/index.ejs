@@ -22,16 +22,48 @@
 <%- sample(`Carte vidéo au ratio d'aspect ${ratio ? ratio : 'par défaut'}`, './sample/card-default', { card : { vid: { ratio: ratio }}}, true, './layout', {col: {md:4}}); %>
 <% } %>
 
-<%- sample('Carte verticale avec taxonomie dans le header', './sample/card-default', { card : { img: true, header: { taxonomy: true} }}, true, './layout', {col: {md:4}}); %>
+<%- sample('Carte verticale avec taxonomie dans le header', './sample/card-default', { card : { img: true, header: { badges: true} }}, true, './layout', {col: {md:4}}); %>
 
-<%- sample('Carte verticale avec badges dans le contenu', './sample/card-default', { card : { img: true, content: { taxonomy: { badges: true }} }}, true, './layout', {col: {md:4}}); %>
+<%- sample('Carte verticale avec badges dans le contenu', './sample/card-default', { card : { img: true, content: { badges: true } }}, true, './layout', {col: {md:4}}); %>
 
-<%- sample('Carte verticale avec tags dans le contenu', './sample/card-default', { card : { img: true, content: { taxonomy: { tags: true }} }}, true, './layout', {col: {md:4}}); %>
+<%- sample('Carte verticale avec tags dans le contenu', './sample/card-default', { card : { img: true, content: { tags: true } }}, true, './layout', {col: {md:4}}); %>
 
 <%- sample('Carte verticale avec détail', './sample/card-default', { card : { img: true, content: { details: [true] } }}, true, './layout', {col: {md:4}}); %>
 
 <%- sample('Carte verticale avec détail et icon', './sample/card-default', { card : { img: true, content: { details: ['icon'] } }}, true, './layout', {col: {md:4}}); %>
 
-<%- sample('Carte verticale avec détail en bas', './sample/card-default', { card : { img: true, content: { details: ['bottom'] } }}, true, './layout', {col: {md:4}}); %>
+<%- sample('Carte verticale avec détail en bas', './sample/card-default', { card : { img: true, content: { details: ['end'] } }}, true, './layout', {col: {md:4}}); %>
 
-<%- sample('Carte verticale avec détails en haut et en bas', './sample/card-default', { card : { img: true, content: { details: ['icon', 'bottom-icon'] } }}, true, './layout', {col: {md:4}}); %>
+<%- sample('Carte verticale avec détails en haut et en bas', './sample/card-default', { card : { img: true, content: { details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détails et badges', './sample/card-default', { card : { img: true, content: { badges: true, details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détails et tags', './sample/card-default', { card : { img: true, content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale sm avec détails et badges', './sample/card-default', { card : { img: true, size: 'sm', content: { badges: true, details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:3}}); %>
+
+<%- sample('Carte verticale sm avec détails et tags', './sample/card-default', { card : { img: true, size: 'sm', content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:3}}); %>
+
+<%- sample('Carte verticale lg avec détails et badges', './sample/card-default', { card : { img: true, size: 'lg', content: { badges: true, details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:6}}); %>
+
+<%- sample('Carte verticale lg avec détails et tags', './sample/card-default', { card : { img: true, size: 'lg', content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './layout', {col: {md:6}}); %>
+
+<%- sample('Carte verticale avec zone d\'action', './sample/card-default', { card : { img: true, footer: {buttons: true} }}, true, './layout', {col: {md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Carte verticale avec zone d\'action et détail', './sample/card-default', { card : { img: true, content: { details: ['end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale sm avec zone d\'action et détail', './sample/card-default', { card : { img: true, size: 'sm', content: { details: ['end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:3}}); %>
+
+<%- sample('Carte verticale lg avec zone d\'action et détail', './sample/card-default', { card : { img: true, size: 'lg', content: { details: ['end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:6}}); %>
+
+<%- sample('Carte horizontale avec zone d\'action, détails et tags', './sample/card-default', { card : { img: true, horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:8}}); %>
+
+<%- sample('Carte horizontale sm avec zone d\'action, détails et tags', './sample/card-default', { card : { img: true, size: 'sm', horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:6}}); %>
+
+<%- sample('Carte horizontale lg avec zone d\'action, détails et tags', './sample/card-default', { card : { img: true, size: 'lg', horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:12}}); %>
+
+<%- sample('Carte horizontale image proportion de moitié avec zone d\'action, détails et tags', './sample/card-default', { card : { img: true, horizontal: 'half', content: { tags: true, details: ['icon', 'end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:8}}); %>
+
+<%- sample('Carte horizontale image proportion du tiers moitié avec zone d\'action, détails et tags', './sample/card-default', { card : { img: true, horizontal: 'tier', content: { tags: true, details: ['icon', 'end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:8}}); %>
+
+<%- sample('Carte horizontale avec ratio particulier en mobile', './sample/card-default', { card : { img: { ratio: '32x9' }, horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] }, footer: {buttons: true} }}, true, './layout', {col: {md:8}}); %>

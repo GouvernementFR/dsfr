@@ -18,11 +18,6 @@
     @include icon-size(md);
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
-    @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 6v (marge desc icon)
-  }
-
-
   @include body() {
     @include display-flex(column);
     flex: 1 1 auto;

@@ -3,11 +3,24 @@ const card = locals.card || {};
 const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
-    description: card.description || lorem('', 60),
+    description: card.description || lorem('', 160),
   },
   size: card.size,
-  enlarge: card.enlarge !== false,
+  enlarge: card.enlarge !== false && card.footer === undefined,
   icon: card.icon
+}
+
+if (card.horizontal) {
+  const horizontal = {};
+
+  switch (card.horizontal) {
+    case 'half':
+    case 'tier':
+      horizontal.proportion = card.horizontal;
+      break;
+  }
+
+  data.horizontal = horizontal;
 }
 
 if (card.img || card.vid) {
@@ -24,21 +37,21 @@ if (card.img || card.vid) {
   }
 
 
-  if (card.header && card.header.taxonomy) {
-    data.header.taxonomy = { badgesGroup: { badges: [{ label: 'label badge'}]}}
+  if (card.header && card.header.badges) {
+    data.header.badgesGroup = { badges: [{ label: 'label badge'}]};
   }
 }
 
 if (card.content) {
-  if (card.content.taxonomy) {
-    if (card.content.taxonomy.badges) {
-      data.content.taxonomy = { badgesGroup: { badges: [...Array(2)].map(() => { return { label: 'label badge'}})}};
-    }
 
-    if (card.content.taxonomy.tags) {
-      data.content.taxonomy = { tagsGroup: { tags: [...Array(2)].map(() => { return { label: 'label tag'}})}};
-    }
+  if (card.content.badges) {
+    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'label badge'}})};
   }
+
+  if (card.content.tags) {
+    data.content.tagsGroup = { tags: [...Array(2)].map(() => { return { label: 'label tag'}})};
+  }
+
 
   if (card.content.details) {
     data.content.details = [];
@@ -46,10 +59,18 @@ if (card.content) {
       const d = { label: 'détail (optionnel)'};
       if (typeof detail === 'string') {
         if (detail.indexOf('icon') > -1) d.icon = 'warning-fill';
-        if (detail.indexOf('bottom') > -1) d.position = 'bottom';
+        if (detail.indexOf('end') > -1) d.position = 'end';
       }
       data.content.details.push(d);
     }
+  }
+}
+
+if (card.footer) {
+  data.footer = {};
+  const label = 'Label bouton';
+  if (card.footer.buttons) {
+    data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
   }
 }
 
