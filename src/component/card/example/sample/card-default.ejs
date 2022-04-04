@@ -7,7 +7,8 @@ const data = {
   },
   size: card.size,
   enlarge: card.enlarge !== false && card.footer === undefined,
-  icon: card.icon
+  icon: card.icon,
+  variations: card.variations
 }
 
 if (card.horizontal) {
@@ -71,6 +72,9 @@ if (card.footer) {
   const label = 'Label bouton';
   if (card.footer.buttons) {
     data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
+  }
+  if (card.footer.links) {
+    data.footer.linksGroup = { links: [...Array(2)].map(() => { return { label: 'label badge', href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
   }
 }
 

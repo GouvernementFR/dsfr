@@ -5,11 +5,20 @@
 
 @mixin _card-scheme($legacy: false) {
   #{ns(card)} {
-    @include scheme-element-bg-color(default grey, (legacy:$legacy));
-    @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-out);
+    &:not(&--no-background):not(&--shadow) {
+      @include scheme-element-bg-color(default grey, (legacy:$legacy));
+    }
 
-    &--grey {
+    &:not(&--no-border):not(&--shadow) {
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-out);
+    }
+
+    &--grey:not(&--no-background) {
       @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
+    }
+
+    &--shadow {
+      @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
     }
 
     @include before {

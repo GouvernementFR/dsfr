@@ -16,7 +16,7 @@
     @include padding(3v);
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, '&__img, &__vid');
+  @include hover-brighten(#{&}#{ns(enlarge-link)}, '#{&}__img, #{&}__vid');
 
   &__img,
   &__vid {

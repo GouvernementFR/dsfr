@@ -18,4 +18,8 @@
     @include margin-right(2v);
     @include margin-bottom(2v);
   }
+
+  &--sm {
+    @include nest-badge(sm);
+  }
 }

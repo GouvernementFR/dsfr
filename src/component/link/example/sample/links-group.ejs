@@ -1,0 +1,21 @@
+<%
+const linksGroup = locals.linksGroup || {}
+const links = linksGroup.links || [];
+
+if (!links.length && linksGroup.groupCount !== undefined) {
+  for (let i = 0; i < linksGroup.groupCount; i++) {
+    links.push({
+      label: linksGroup.label || 'Label lien ' + (i+1),
+      href: linksGroup.href || '#',
+      markup: linksGroup.markup,
+      icon: linksGroup.icon,
+      disabled: linksGroup.disabled,
+      attributes: linksGroup.badgeAttributes,
+      classes: linksGroup.badgeClasses,
+    });
+  }
+  linksGroup.links = links;
+}
+%>
+
+<%- include('../../template/ejs/links-group.ejs', {linksGroup: linksGroup}) %>
