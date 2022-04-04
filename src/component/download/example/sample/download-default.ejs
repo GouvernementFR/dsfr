@@ -1,0 +1,11 @@
+<%
+let download = locals.download || {};
+let data = {
+  detail: download.detail !== false ? '<abbr title="Adobe Portable Document Format">PDF</abbr> - 61,88 <abbr title="Kilo-octet">Ko</abbr>' : undefined,
+  title: 'Télécharger le document lorem ipsum sit dolores amet',
+  description: download.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
+  ...download,
+}
+%>
+
+<%- include('../../template/ejs/download', {download: data}); %>

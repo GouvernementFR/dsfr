@@ -1,0 +1,10 @@
+id: download
+title: Téléchargement de fichier
+description:
+doc:
+wrapper: container
+style:
+  - core
+follow:
+  style:
+    - link

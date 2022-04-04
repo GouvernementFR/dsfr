@@ -1,0 +1,18 @@
+<% const sample = getSample(include); %>
+
+<%- section('Téléchargement de fichier', 'Il existe 2 variantes possible pour ce composant. La forme de lien, et la forme de carte.', 0); %>
+
+<%- section('Lien de téléchargement', 'Par défault le composant prend la forme d\'un lien.', 0); %>
+
+<%- sample('Lien de téléchargement seul', './sample/download-default', {download: {href:'https://www.gouvernement.fr/sites/default/files/cfiles/coronavirus_mesures_barrieres_a3_fr_14032022.pdf'}}, true, './layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
+
+<%- sample('Groupe de liens de téléchargement', './sample/download-group', {downloadsGroup: {groupCount: 6, enlarge: false}}, true, './layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
+
+<%- sample('Groupe de liens de téléchargement', './sample/download-group', {downloadsGroup: {groupCount: 6, bordered: true, enlarge: false}}, true, './layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
+
+<%- section('Carte de téléchargement', 'Le modificateur "--card" sur un download ou un groupe de download permet d\'appliquer le style des carte. Il permet aussi d\'ajouter un texte de description.', 0); %>
+
+<%- sample('Carte de téléchargement', './sample/download-card', {}, true, './layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
+
+<%- sample('Groupe de carte de téléchargement', './sample/download-group', {downloadsGroup: {groupCount: 6, card: true}}, true,  './layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
+

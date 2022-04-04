@@ -1,0 +1,33 @@
+////
+/// Download Module : download
+/// @group download
+////
+
+#{ns(download)} {
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+  @include relative;
+  @include _nest-link($links-settings, md, right, arrow-down-s-line);
+
+  &__link {
+    @include icon(download-line, sm, after) {
+      @include margin-left(2v);
+      @include margin-bottom(1v);
+    };
+  }
+
+  &__desc {
+    @include text-style(sm);
+    display: none;
+  }
+
+  &__detail {
+    @include text-style(xs);
+    @include margin-top(1v);
+    max-width: calc(100% - #{space(17v)});
+
+    abbr {
+      text-decoration: none;
+    }
+  }
+}

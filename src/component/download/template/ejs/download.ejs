@@ -1,0 +1,43 @@
+<%#
+# paramètres download
+
+* download.title (string, required) : Titre de la carte
+
+* download.enlarge (boolean, optional) : Si true, agrandi la zone de clic à toute la carte
+
+* download.description (string, optional) : Description, unniquement si card = true
+
+* download.detail (string, optional) : Détail de l'élément download
+
+* download.lang (string, optional) : Langue du fichier à télécharger
+
+* download.href (string, optional) : href du fichier à télécharger
+
+* download.card (boolean, optional) : Détermine si c'est une carte ou un lien
+
+* download.size (string, optional) : Si type=card, valeur possible de size : 'sm' (default: md)
+
+* download.classes (array, optional): Classes suplémentaires sur le composant
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let download = locals.download || {};
+let classes = download.classes || [];
+const href = download.href || '#';
+classes.push(`${prefix}-download`);
+
+if (download.enlarge) classes.push(`${prefix}-enlarge-link`);
+if (download.card) classes.push(`${prefix}-download--card`);
+switch (download.size) {
+  case 'sm':
+    classes.push(`${prefix}-download--card`);
+    break;
+}
+%>
+<div <%- includeClasses(classes) %>>
+  <p class="<%= prefix %>-download__title"><a href="<%- href %>" class="<%= prefix %>-download__link"><%- download.title %></a></p>
+  <% if (download.description) { %><p class="<%= prefix %>-download__desc"><%- download.description %></p><% } %>
+  <% if (download.detail) { %><p class="<%= prefix %>-download__detail"><%- download.detail %></p><% } %>
+</div>

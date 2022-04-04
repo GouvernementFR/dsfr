@@ -1,0 +1,18 @@
+////
+/// Download Module : variants
+/// @group download
+////
+
+
+#{ns(download)} {
+  &--card {
+    @include padding(8v 8v 20v 8v);
+    @include set-text-margin(0 0 0 0);
+    @include set-title-margin(0 0 3v 0);
+    @include icon(download-line, md) {
+      @include absolute(null, 8v, 8v);
+    }
+
+    @include download-style-card;
+  }
+}

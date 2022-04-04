@@ -1,0 +1,44 @@
+<%#
+# paramètres groupe de downloads
+
+* downloadsGroup.downloads (array, required): paramètres spécifique de chaque élément du groupe
+
+* downloadsGroup.card (boolean, required): applique le style card à tous les éléments download
+
+* downloadsGroup.bordered (boolean, required): applique une bordure autour des liens
+
+* downloadsGroup.size (string, optional) : définie la taille des éléments dans le groupe (default md)
+  * sm : downloads taille sm
+
+* downloadsGroup.classes (array, optionnal) : classes suplémentaires sur le groupe de downloads
+
+* downloadsGroup.attributes (object, optionnal) : attributs suplémentaires sur le groupe de downloads
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const downloadsGroup = locals.downloadsGroup || {};
+let groupClasses = downloadsGroup.classes || [];
+let groupAttrs = downloadsGroup.attributes || {};
+let downloads = downloadsGroup.downloads || [];
+groupClasses.push(prefix + '-downloads-group');
+
+if (downloadsGroup.card === true) groupClasses.push(prefix + '-downloads-group--card');
+if (downloadsGroup.bordered === true) groupClasses.push(prefix + '-downloads-group--bordered');
+
+switch (downloadsGroup.size) {
+  case 'sm':
+    groupClasses.push(prefix + '-downloads-group--sm');
+    break;
+ }
+ %>
+
+<ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
+<% for (let i = 0; i < downloads.length; i++) { %>
+  <li>
+    <%- include('./download.ejs', {download:{...downloads[i]}}); %>
+  </li>
+<% } %>
+</ul>

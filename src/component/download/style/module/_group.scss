@@ -1,0 +1,28 @@
+////
+/// Download Module : download
+/// @group download
+////
+
+#{ns-group(downloads)} {
+  &--card {
+    @include disable-list-style;
+
+    #{ns(download)} {
+      @include padding(8v 8v 20v 8v);
+      @include set-text-margin(0 0 0 0);
+      @include set-title-margin(0 0 3v 0);
+      @include icon(download-line, md) {
+        @include absolute(null, 8v, 8v);
+      }
+      @include download-style-card;
+    }
+  }
+
+  &--bordered {
+    @include padding(8v 12v 2v);
+  }
+
+  > li {
+    @include padding-bottom(6v);
+  }
+}

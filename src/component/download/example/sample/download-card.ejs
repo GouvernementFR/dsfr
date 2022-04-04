@@ -1,0 +1,10 @@
+<%
+let download = locals.download || {};
+let data = {
+  ...download,
+  card: true,
+  enlarge: download.enlarge !== false
+};
+%>
+
+<%- include('./download-default', {download:data}); %>
