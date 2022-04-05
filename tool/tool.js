@@ -174,6 +174,16 @@ const standaloneBuilder = (yargs) => {
       '$0 -p connect',
       'compile les fichiers scripts et styles du package core et accordion en les minifiant'
     )
+    .option('packages', {
+      alias: 'p',
+      describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
+      type: 'array'
+    })
+    .option('scripts', {
+      alias: '-j',
+      describe: 'Filtre de compilation, inclue les scripts',
+      type: 'boolean'
+    })
     .option('styles', {
       alias: '-c',
       describe: 'Filtre de compilation, inclue les styles',
@@ -198,6 +208,10 @@ const standaloneBuilder = (yargs) => {
       alias: '-s',
       describe: 'Compilation des scripts et styles avec sourcemaps',
       type: 'boolean'
+    })
+    .option('clean', {
+      describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
+      type: 'boolean'
     });
 };
 
@@ -206,10 +220,13 @@ const standaloneHandler = async (argv) => {
 
   const settings = {
     styles: argv.styles || all,
+    scripts: argv.scripts || all,
     examples: argv.examples || all,
+    packages: argv.packages || [],
     minify: argv.minify,
     legacy: argv.legacy,
-    sourcemap: argv.sourcemap
+    sourcemap: argv.sourcemap,
+    clean: argv.clean
   };
 
   await standalone(settings);

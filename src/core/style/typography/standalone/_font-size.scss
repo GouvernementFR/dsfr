@@ -1,0 +1,8 @@
+////
+/// Connect Typography
+/// @group connect
+////
+
+@function font-size($font-size: 16px) {
+  @return $font-size;
+}

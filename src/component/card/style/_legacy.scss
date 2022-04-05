@@ -4,9 +4,6 @@
 ////
 
 @include legacy(ie11) {
-  /**
-  * Correctif de la hauteur de la navigation latérale
-  */
   #{ns(card)} {
     &__title {
       margin: 0;
@@ -16,6 +13,10 @@
       #{ns(card)}__body {
         flex-basis: 100%;
       }
+    }
+
+    &:not(&--no-arrow) &__body {
+      @include icon-legacy(arrow-right-line, md, after);
     }
   }
 }

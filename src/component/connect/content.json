@@ -1,12 +1,26 @@
 {
-  "login": {
-    "fr": "S’identifier avec",
-    "en": "Sign in with",
-    "de": "Einloggen mit",
-    "es": "Iniciar sesion con"
+  "login-fr": {
+    "value": "S’identifier avec",
+    "type": "Regular"
+  },
+  "login-en": {
+    "value": "Sign in with",
+    "type": "Regular"
+  },
+  "login-de": {
+    "value": "Einloggen mit",
+    "type": "Regular"
+  },
+  "login-es": {
+    "value": "Iniciar sesion con",
+    "type": "Regular"
   },
   "brand": {
-    "default": "FranceConnect",
-    "plus": "FranceConnect+"
+    "value": "FranceConnect",
+    "type": "Bold"
+  },
+  "brand-plus": {
+    "value": "FranceConnect+",
+    "type": "Bold"
   }
 }

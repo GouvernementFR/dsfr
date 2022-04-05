@@ -14,6 +14,15 @@
     }
   }
 
+  #{ns(nav)} {
+    @include disable-underline-legacy;
+
+    &__link,
+    &__btn {
+      @include scheme-element-bg-transparent((legacy: true, hover: true));
+    }
+  }
+
   /**
   * reset margin
   */
@@ -30,6 +39,8 @@
     * Correctif de l'alignement des menus sur la droite
     */
     #{ns(nav)}__item {
+      position: static;
+
       &--align-right {
         #{ns(collapse)} {
           transform: translateX(-100%);

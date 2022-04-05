@@ -5,21 +5,41 @@
 
 $underline-thickness: 0.0625em;
 
-@mixin a-reset {
+@mixin a-reset ($minimal: false) {
   text-decoration: none;
-  color: inherit;
+  @if not $minimal {
+    color: inherit;
+  }
 }
 
 @mixin enable-underline() {
   --underline-img: linear-gradient(0deg, currentColor, currentColor);
-  --link-blank-font: #{font-icon(sm, true)};
-  --link-blank-content: "\00a0#{icon-glyph(external-link-line, true)}";
+  --link-blank-content: '';
+}
+
+@mixin enable-underline-legacy() {
+  [href] {
+    text-decoration: underline;
+  }
+
+  [target='_blank']::after {
+    content: '';
+  }
 }
 
 @mixin disable-underline() {
   --underline-img: none;
-  --link-blank-font: none;
   --link-blank-content: none;
+}
+
+@mixin disable-underline-legacy() {
+  [href] {
+    text-decoration: none;
+  }
+
+  [target='_blank']::after {
+    content: none;
+  }
 }
 
 @mixin link-underline() {
@@ -42,7 +62,10 @@ $underline-thickness: 0.0625em;
 }
 
 @mixin link-blank() {
-  @include after(var(--link-blank-content)) {
-    font: var(--link-blank-font);
+  @include icon-style(after) {
+    @include margin-left(1v);
+    @include margin-bottom(1v);
   }
+  @include icon-size(sm, after);
+  @include icon-content(external-link-line, after, null, var(--link-blank-content));
 }

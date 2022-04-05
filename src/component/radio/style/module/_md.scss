@@ -8,6 +8,7 @@
  * Ce groupe contient également le texte d'aide (optionnels)
  */
 #{ns-group(radio)} {
+  @include relative;
   /**
    * Dans le cas d'un groupe de radios, on supprime l'espacement du premier groupe
    */
@@ -37,6 +38,7 @@
    */
   input[type="radio"] {
     @include absolute;
+    @include margin(0);
     opacity: 0;
     top: 50%;
     transform: translateY(-50%);

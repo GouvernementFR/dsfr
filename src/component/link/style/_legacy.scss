@@ -4,14 +4,20 @@
 ////
 
 @include legacy(ie11) {
-  #{ns-link} {
+  #{ns(link)} {
     background-image: none;
     text-decoration: underline;
+    @include icon-legacy(null, sm, before);
+
+    &--sm {
+      @include icon-legacy(null, sm, before);
+    }
+
+    &--lg {
+      @include icon-legacy(null, md, before);
+    }
   }
 
-  /**
-  * Reset liste à puce
-  */
   #{ns-group(links)} {
     & > li {
       list-style: none;

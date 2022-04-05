@@ -1,0 +1,19 @@
+////
+/// Consent legacy
+/// @group consent
+////
+
+@include legacy(ie11) {
+  #{ns(consent-service)} {
+    &__collapse {
+      #{&}-btn {
+        text-decoration: underline;
+        @include icon-legacy(arrow-down-s-line, sm);
+
+        &[aria-expanded="true"] {
+          @include icon-legacy(arrow-up-s-line, sm);
+        }
+      }
+    }
+  }
+}
