@@ -6,11 +6,11 @@
 #{ns(card)} {
   @include display-flex(column);
   @include relative();
+  @include icon(arrow-right-line);
 
-  &#{ns(enlarge-link)}:not(&--no-icon) {
-    @include has-not-icon {
-      @include icon(arrow-right-line);
-    }
+  &--no-icon,
+  &:not(#{ns(enlarge-link)}) {
+    @include before(none);
   }
 
   &--shadow {

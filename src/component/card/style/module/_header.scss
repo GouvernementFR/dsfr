@@ -7,6 +7,7 @@
   &__header {
     order: 1;
     position: relative;
+    flex: 0 0 auto;
   }
 
   &__header #{ns(badges-group)} {
