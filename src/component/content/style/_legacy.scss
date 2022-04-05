@@ -1,0 +1,14 @@
+////
+/// Content Legacy
+/// @group content
+////
+
+@include legacy(ie11) {
+  #{ns(content-media)} {
+    &__transcription {
+      #{ns(btn)} {
+        @include icon-legacy(menu-2-fill, sm, before);
+      }
+    }
+  }
+}

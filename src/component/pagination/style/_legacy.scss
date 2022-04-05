@@ -8,8 +8,30 @@
   * Correctif de la largeur de la légende d'un fieldset
   */
   #{ns(pagination)} {
+    @include disable-underline-legacy;
+
     &__list {
       list-style: none;
+    }
+
+    &__link {
+      @include scheme-element-bg-transparent((legacy: true, hover: true));
+
+      &--first {
+        @include icon-legacy(arrow-left-s-first-line, md);
+      }
+
+      &--prev {
+        @include icon-legacy(arrow-left-s-line, md);
+      }
+
+      &--next {
+        @include icon-legacy(arrow-right-s-line, md);
+      }
+
+      &--last {
+        @include icon-legacy(arrow-right-s-last-line, md);
+      }
     }
   }
 }

@@ -16,10 +16,7 @@
   @include nest($selector) {
     @include respond-from($from) {
       @if $icon != null {
-        @include icon($icon);
-      }
-      @else if $size != null {
-        @include icon(null, $size);
+        @include icon($icon, null, before);
       }
 
       @include _build-link-size($size-settings, $border-radius);
@@ -28,7 +25,7 @@
         @include before(none);
       }
       @else {
-        @include _build-link-icon($size-settings, $place, $size, false, $place == right);
+        @include _build-link-icon($size-settings, $place, $size, $place == right);
       }
 
       @if map-get($settings, align-on-content) and $align-on-content {

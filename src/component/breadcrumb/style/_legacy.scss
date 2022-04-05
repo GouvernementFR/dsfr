@@ -7,7 +7,15 @@
   /**
   * reset liste à puce
   */
-  #{ns(breadcrumb)}__list {
-    list-style: none;
+  #{ns(breadcrumb)} {
+    &__list {
+      list-style: none;
+    }
+
+    &__link {
+      &:not([aria-current]) {
+        @include icon-legacy(arrow-right-s-line, sm, after);
+      }
+    }
   }
 }
