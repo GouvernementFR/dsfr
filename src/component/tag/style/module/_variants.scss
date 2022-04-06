@@ -19,7 +19,7 @@
       }
 
       &#{ns(tag)}--sm {
-        @include icon(null, xs, after) {
+        @include icon(null, xs, after, false) {
           @include absolute(3px, 0);
           @include margin(-1.5v);
         }

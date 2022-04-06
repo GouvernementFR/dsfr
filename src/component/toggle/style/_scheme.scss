@@ -22,14 +22,26 @@
 
       &:checked {
         @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
+
+        ~ #{ns(toggle__label)} {
+          @include after {
+            @include scheme-element-data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-svg);
+          }
+        }
       }
 
       @include disabled((legacy: $legacy, box-shadow: true)) {
         &:checked {
           @include disabled-colors((legacy: $legacy, background: true));
+
+          ~ #{ns(toggle__label)} {
+            @include after {
+              @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $toggle-svg);
+            }
+          }
         }
 
-        + label {
+        ~ #{ns(toggle__label)} {
           @include before {
             @include disabled-colors((legacy: $legacy, text: true));
           }

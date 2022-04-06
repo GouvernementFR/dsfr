@@ -1,0 +1,37 @@
+////
+/// Badge Legacy
+/// @group badge
+////
+
+@include legacy(ie11) {
+  #{ns(badge)} {
+    @include icon-legacy(null, sm);
+
+    &--sm {
+      @include icon-legacy(null, xs, before, false);
+    }
+
+    &,
+    &--sm {
+      &#{ns(badge)}--info {
+        @include icon-legacy(info-fill, null, before, false);
+      }
+
+      &#{ns(badge)}--success {
+        @include icon-legacy(success-fill, null, before, false);
+      }
+
+      &#{ns(badge)}--error {
+        @include icon-legacy(error-fill, null, before, false);
+      }
+
+      &#{ns(badge)}--warning {
+        @include icon-legacy(warning-fill, null, before, false);
+      }
+
+      &#{ns(badge)}--new {
+        @include icon-legacy(flashlight-fill, null, before, false);
+      }
+    }
+  }
+}

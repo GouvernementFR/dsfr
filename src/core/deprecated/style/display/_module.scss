@@ -1,0 +1,12 @@
+////
+/// Core Deprecated Module
+/// @group core
+////
+
+#{ns(displayed-lg)} {
+  display: none !important;
+
+  @include respond-from(lg) {
+    display: inherit !important;
+  }
+}

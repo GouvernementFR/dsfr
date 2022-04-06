@@ -13,5 +13,9 @@
     &__partners-sub ul > li {
       list-style: none;
     }
+
+    &__content-desc {
+      @include enable-underline-legacy;
+    }
   }
 }

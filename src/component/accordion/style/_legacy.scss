@@ -12,4 +12,14 @@
       list-style: none;
     }
   }
+
+  #{ns(accordion)} {
+    &__btn {
+      @include icon-legacy(add-line, sm);
+
+      &[aria-expanded="true"] {
+        @include icon-legacy(subtract-line, null);
+      }
+    }
+  }
 }

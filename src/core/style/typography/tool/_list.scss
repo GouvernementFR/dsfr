@@ -11,7 +11,7 @@
   }
 
   @include nest($selector) {
-    --ul-type: "●\00a0\00a0";
+    --ul-type: disc;
     --ol-type: decimal;
     --ul-start: #{space(4v)};
     --ol-start: #{space(6v)};

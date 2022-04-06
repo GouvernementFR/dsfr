@@ -1,0 +1,18 @@
+////
+/// Core Legacy : Typography
+/// @group core
+////
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ul,
+ol {
+  @include padding-left(4v);
+  @include margin-y(2v);
+}
