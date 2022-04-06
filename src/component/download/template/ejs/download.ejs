@@ -9,7 +9,9 @@
 
 * download.detail (string, optional) : Détail de l'élément download
 
-* download.lang (string, optional) : Langue du fichier à télécharger
+* download.lang (object, optional) : Langue du fichier à télécharger
+  ** download.lang.code (object, required) : Code langue
+  ** download.lang.name (object, required) : Intitulé de la langue
 
 * download.href (string, optional) : href du fichier à télécharger
 
@@ -25,6 +27,7 @@
 <%
 let download = locals.download || {};
 let classes = download.classes || [];
+const markup = download.markup || 'p';
 const href = download.href || '#';
 classes.push(`${prefix}-download`);
 
@@ -36,8 +39,16 @@ switch (download.size) {
     break;
 }
 %>
-<div <%- includeClasses(classes) %>>
-  <p class="<%= prefix %>-download__title"><a href="<%- href %>" class="<%= prefix %>-download__link"><%- download.title %></a></p>
-  <% if (download.description) { %><p class="<%= prefix %>-download__desc"><%- download.description %></p><% } %>
-  <% if (download.detail) { %><p class="<%= prefix %>-download__detail"><%- download.detail %></p><% } %>
-</div>
+<<%= markup %> <%- includeClasses(classes) %>>
+  <a href="<%- href %>" class="<%= prefix %>-download__link"><%- download.title %>
+    <% if (download.description) { %><span class="<%= prefix %>-download__desc"><%- download.description %></span><% } %>
+    <% if (download.detail) { %>
+      <span class="<%= prefix %>-download__detail">
+        <%- download.detail %>
+        <% if (download.lang) { %>
+          - <span lang="<%- download.lang.code %>"><%- download.lang.name %></span>
+        <% } %>
+      </span>
+    <% } %>
+  </a>
+</<%= markup %>>

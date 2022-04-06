@@ -9,10 +9,32 @@
     @include padding(8v 8v 20v 8v);
     @include set-text-margin(0 0 0 0);
     @include set-title-margin(0 0 3v 0);
-    @include icon(download-line, md) {
-      @include absolute(null, 8v, 8v);
+
+    #{ns(download)}__link {
+      @include margin(0 0 3v 0);
+      @include title-style(h5);
+
+      @include after {
+        @include absolute(null, 8v, 8v);
+        @include icon-size(md);
+      }
     }
 
-    @include download-style-card;
+    #{ns(download)}__desc {
+      display: block;
+      @include margin-top(3v);
+    }
+
+    #{ns(download)}__detail {
+      @include absolute(null, null, 8v, 8v);
+      max-width: calc(100% - #{space(25v)});
+
+      @include has-icon {
+        @include before {
+          @include icon-size(sm);
+          @include margin-right(2v);
+        }
+      }
+    }
   }
 }

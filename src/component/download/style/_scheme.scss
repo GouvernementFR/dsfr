@@ -10,17 +10,13 @@
       @include scheme-element-bg-color(default grey, (legacy:$legacy));
       @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-out);
 
-      @include before {
-        @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
-      }
-
       #{ns(download__link)} {
         @include scheme-element-text-color(title grey, (legacy:$legacy));
-      }
-    }
 
-    @include after {
-      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+        @include after {
+          @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+        }
+      }
     }
 
     &__link {
@@ -29,10 +25,6 @@
 
     &__detail {
       @include scheme-element-text-color(mention grey, (legacy:$legacy));
-    }
-
-    &__title {
-      // @include scheme-element-text-color(title grey, (legacy:$legacy));
     }
   }
 
