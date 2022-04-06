@@ -14,7 +14,7 @@
     @include icon(download-line, sm, after) {
       @include margin-left(1v);
       @include margin-bottom(1v);
-    };
+    }
   }
 
   &__desc {
