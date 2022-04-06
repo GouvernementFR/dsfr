@@ -14,3 +14,10 @@
   @include fit-cover-center;
   @include absolute(0, 0, 0, 0, 100%, 100%);
 }
+
+@mixin aspect-ratio-legacy($ratio: 16x9, $important: false) {
+  @include before('', block) {
+    $pb: important(100% / map_get($ratio-scale, $ratio), $important);
+    padding-bottom: $pb;
+  }
+}

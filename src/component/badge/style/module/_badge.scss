@@ -7,7 +7,7 @@
 
 #{ns(badge)} {
   @include nest-badge(md, left, null, null, false);
-  @include icon-style;
+  @include icon-style(before, null);
   @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
@@ -20,23 +20,23 @@
   &,
   &--sm {
     &#{ns(badge)}--info {
-      @include icon-content(info-fill);
+      @include icon-content(info-fill, before, false, '');
     }
 
     &#{ns(badge)}--success {
-      @include icon-content(success-fill);
+      @include icon-content(success-fill, before, false, '');
     }
 
     &#{ns(badge)}--error {
-      @include icon-content(error-fill);
+      @include icon-content(error-fill, before, false, '');
     }
 
     &#{ns(badge)}--warning {
-      @include icon-content(warning-fill);
+      @include icon-content(warning-fill, before, false, '');
     }
 
     &#{ns(badge)}--new {
-      @include icon-content(flashlight-fill);
+      @include icon-content(flashlight-fill, before, false, '');
     }
 
     &#{ns(badge)}--no-icon {

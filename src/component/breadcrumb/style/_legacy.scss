@@ -8,9 +8,7 @@
   * reset liste à puce
   */
   #{ns(breadcrumb)} {
-    &__list {
-      list-style: none;
-    }
+    @include disable-list-style-legacy;
 
     &__link {
       &:not([aria-current]) {

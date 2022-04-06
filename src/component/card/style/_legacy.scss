@@ -11,18 +11,18 @@
       @include before(none);
     }
 
+    &__title,
+    &__desc {
+      flex: 1 0 auto;
+    }
+
+    &__detail {
+      @include icon-size-legacy(sm, before);
+    }
+
     &--horizontal &__body {
       flex-basis: 100%;
     }
-
-
-    /*
-    &__title {
-      margin: 0;
-    }
-
-
-     */
   }
 }
 

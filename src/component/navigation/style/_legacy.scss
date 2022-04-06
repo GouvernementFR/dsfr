@@ -7,15 +7,9 @@
   /**
   * reset liste à puce
   */
-  #{ns(mega-menu)},
-  #{ns(menu)} {
-    &__list {
-      list-style: none;
-    }
-  }
-
   #{ns(nav)} {
     @include disable-underline-legacy;
+    @include disable-list-style-legacy;
 
     &__link,
     &__btn {

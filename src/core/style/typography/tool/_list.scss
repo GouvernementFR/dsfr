@@ -31,3 +31,55 @@
   --li-bottom: 0;
   --ol-content: none;
 }
+
+@mixin enable-list-style-legacy($unify: false) {
+  $ul: ul;
+  $ol: ol;
+
+  @if $unify {
+    $ul: selector-associate('&', 'ul');
+    $ol: selector-associate('&', 'ol');
+  }
+
+  @at-root {
+    #{$ul} {
+      list-style-type: disc;
+    }
+
+    #{$ol} {
+      list-style-type: decimal;
+    }
+
+    #{$ul},
+    #{$ol} {
+      @include padding-left(4v);
+      @include margin-y(2v);
+    }
+  }
+}
+
+@mixin disable-list-style-legacy($unify: false) {
+  $ul: ul;
+  $ol: ol;
+
+  @if $unify {
+    $ul: selector-associate(&, ul);
+    $ol: selector-associate(&, ol);
+  }
+
+  @at-root {
+    #{$ul} {
+      list-style-type: none;
+    }
+
+    #{$ol} {
+      list-style-type: none;
+    }
+
+    #{$ul},
+    #{$ol} {
+      @include padding-left(0);
+      @include margin-y(0);
+    }
+  }
+}
