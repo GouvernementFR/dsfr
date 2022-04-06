@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<% for (const ratio of ['', '4x3', '1x1']) { %>
+<%- sample(`Carte vidéo au ratio d'aspect ${ratio ? ratio : 'par défaut'}`, './card-default', { card : { vid: { ratio: ratio }}}, true, './card-layout', {col: {md:4}}); %>
+<% } %>

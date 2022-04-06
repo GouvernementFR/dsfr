@@ -1,0 +1,10 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte verticale variation accentuée en contrast grey', './card-default', { card : { img: true, variations: ['grey'] }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale variation sans bordure', './card-default', { card : { img: true, variations: ['no-border'] }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale variation sans fond', './card-default', { card : { img: true, variations: ['no-background'] }}, true, './card-layout', { col: { md:4 }, layout: { classes: [`${prefix}-background-alt--grey`] }}); %>
+
+<%- sample('Carte verticale variation ombre portée', './card-default', { card : { img: true, variations: ['shadow'] }}, true, './card-layout', {col: {md:4}}); %>
+

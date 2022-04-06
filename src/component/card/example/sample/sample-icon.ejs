@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte verticale sans icône', './card-default', { card : { img: true, icon: false }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec icône personnalisée', './card-default', { card : { img: true, icon: 'warning-fill' }}, true, './card-layout', {col: {md:4}}); %>

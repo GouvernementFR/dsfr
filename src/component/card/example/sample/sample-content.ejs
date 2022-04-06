@@ -1,0 +1,25 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte verticale avec badges dans le contenu', './card-default', { card : { img: true, content: { badges: true } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec tags dans le contenu', './card-default', { card : { img: true, content: { tags: true } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détail', './card-default', { card : { img: true, content: { details: [true] } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détail et icon', './card-default', { card : { img: true, content: { details: ['icon'] } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détail en bas', './card-default', { card : { img: true, content: { details: ['end'] } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détails en haut et en bas', './card-default', { card : { img: true, content: { details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détails et badges', './card-default', { card : { img: true, content: { badges: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale avec détails et tags', './card-default', { card : { img: true, content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale sm avec détails et badges', './card-default', { card : { img: true, size: 'sm', content: { badges: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:3}}); %>
+
+<%- sample('Carte verticale sm avec détails et tags', './card-default', { card : { img: true, size: 'sm', content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:3}}); %>
+
+<%- sample('Carte verticale lg avec détails et badges', './card-default', { card : { img: true, size: 'lg', content: { badges: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:6}}); %>
+
+<%- sample('Carte verticale lg avec détails et tags', './card-default', { card : { img: true, size: 'lg', content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:6}}); %>

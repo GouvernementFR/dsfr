@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte taille sm', './card-default', { card: { img: true, size: 'sm' }}, true, './card-layout', {col: {md:3}, desc: 'dans une grille sur 3 à 4 colonnes en version desktop'}); %>
+
+<%- sample('Carte taille lg', './card-default', { card: { img: true, size: 'lg' } }, true, './card-layout', {col: {md:6}, desc: 'dans une grille sur 6 à 12 colonnes en version desktop'}); %>
