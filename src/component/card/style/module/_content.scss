@@ -8,8 +8,8 @@
     order: 1;
     @include display-flex(column);
     @include padding(6v 8v 8v);
-
     @include nest-tag(sm);
+    @include height(100%);
   }
 
   &__title {
@@ -45,6 +45,7 @@
     @include display-flex(column);
     @include margin-top(4v);
     @include padding-top(2v);
+    @include height(100%);
   }
 
   &__detail {
