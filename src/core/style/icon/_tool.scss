@@ -118,7 +118,6 @@
 }
 
 @mixin icon-legacy($icon: null, $size: md, $pseudo: before, $init: true) {
-
   @if $init {
     $content: null;
     @if $icon != null {
