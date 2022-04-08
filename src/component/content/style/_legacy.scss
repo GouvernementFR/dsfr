@@ -10,7 +10,6 @@
       @include aspect-ratio-legacy;
     }
 
-
     &__transcription {
       #{ns(btn)} {
         @include icon-legacy(menu-2-fill, sm, before);
