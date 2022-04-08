@@ -1,22 +1,54 @@
-<% const sample = getSample(include); %>
+<%
+const sample = getSample(include);
+const elements = [
+  {
+    title: 'Lien de téléchargement',
+    content: sample('Lien de téléchargement seul', './sample/download-default', {}, true)
+  },
+  {
+    title: 'Groupe de liens',
+    content: sample('Groupe de liens de téléchargement', './sample/download-group', {downloadsGroup: {groupCount: 3, enlarge: false}}, true)
+            + sample('Groupe de liens de téléchargement avec bordure', './sample/download-group', {downloadsGroup: {groupCount: 3, bordered: true, enlarge: false}}, true, './layout', {col: {md:6}, desc: 'dans une grille, sur 3 à 8 colonnes en version desktop'})
+            + sample('Groupe de liens de téléchargement avec bordure taille SM', './sample/download-group', {downloadsGroup: {groupCount: 3, bordered: true, size: 'sm', enlarge: false}}, true, './layout', {col: {md:5}, desc: 'dans une grille, sur 3 à 8 colonnes en version desktop'})
+  },
+  {
+    title: 'Carte de téléchargement',
+    content: section('Carte de téléchargement', 'Le modificateur "--card" sur un download ou un groupe de download permet d\'appliquer le style des carte. Il permet aussi d\'ajouter un texte de description (facultatif).', 0)
+            + sample('Carte de téléchargement', './sample/download-card', {}, true, './layout', {col: {md:6}, desc: 'dans une grille de 6 colonnes en version desktop'})
+  },
+  {
+    title: 'Groupe de cartes',
+    content: sample('Cartes de téléchargement en grille', './sample/download-card-grid', {downloads: [{}, {}, {}, {}]}, true)
+  },
+  {
+    title: 'Fichier en langue étrangère',
+    content: section('Fichier d\'une autre langue', 'Si la langue du fichier à télécharger est différente de celle de la page courante, il est nécéssaire d\'ajouter l\'attribut hreflang avec comme valeur le code langue (ex: hreflang="en") sur le lien. Il faut aussi ajouter le nom de la langue dans les détails (sauf remplissage automatique en js)', 0)
+            + sample('Lien de téléchargement - langue étrangère', './sample/download-default', {download: {lang: 'en'}}, true)
+            + sample('Carte de téléchargement - langue étrangère', './sample/download-card', {download: {lang: 'en'}}, true)
+  },
+  {
+    title: 'Utilitaire js',
+    content:
+      section('Remplissage automatique des informations du fichier', 'Un utilitaire JS est disponible via l\'attribut "data-fr-assess-file" pour remplacer le contenu du détails (type, poids, langue).<br> Pour récupérer le poids, il est nécessaire que le fichier soit sur le même domaine ou que celui-ci autorise les requêtes cross-domain.<br> Le type du fichier est déterminé par son extension depuis l\'attribut href.<br> La langue du fichier (si différente) doit être définie par son code langue dans l\'attribut hreflang', 0)
+      + sample('Lien de téléchargement remplissage automatique des détails', './sample/download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false}}, true)
+      + sample('Carte de téléchargement remplissage automatique des détails', './sample/download-card', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false}}, true)
+      + sample('Remplissage automatique des détails + langue différente', './sample/download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false, lang: 'en'}}, true)
+  },
+];
 
-<%- section('Téléchargement de fichier', 'Il existe 2 variantes possible pour ce composant. La forme de lien, et la forme de carte.', 0); %>
+const accordions = [];
+for (let element of elements) {
+  accordions.push({
+    label: element.title,
+    id: uniqueId('download'),
+    content: element.content
+  })
+}
+const data = {
+  accordions: accordions
+}
+%>
 
-<%- section('Lien de téléchargement', 'Par défault le composant prend la forme d\'un lien.', 0); %>
+<%- section('Téléchargement de fichier', 'Il existe 2 variantes possible pour ce composant. La forme de lien, et la forme de carte.<br> L\'intitulé du lien doit commencer par ‘Télécharger’.<br> Le détail est obligatoire et doit conntenir le type (extension du fichier), le poids, la langue (si différente)). Laisser le détail vide si utilisation de l\'utilitaire js de remplissage automatique', 0); %>
 
-<%- sample('Lien de téléchargement seul', './sample/download-default', {download: {href: relativeRoot + 'dist/artwork/dark.svg'}}, true); %>
-
-<%- sample('Groupe de liens de téléchargement', './sample/download-group', {downloadsGroup: {groupCount: 6, enlarge: false}}, true); %>
-
-<%- sample('Groupe de liens de téléchargement avec bordure', './sample/download-group', {downloadsGroup: {groupCount: 6, bordered: true, enlarge: false}}, true, './layout', {col: {md:6}, desc: 'dans une grille, sur 3 à 8 colonnes en version desktop'}); %>
-
-<%- sample('Groupe de liens de téléchargement avec bordure taille SM', './sample/download-group', {downloadsGroup: {groupCount: 6, bordered: true, size: 'sm', enlarge: false}}, true, './layout', {col: {md:5}, desc: 'dans une grille, sur 3 à 8 colonnes en version desktop'}); %>
-
-<%- section('Carte de téléchargement', 'Le modificateur "--card" sur un download ou un groupe de download permet d\'appliquer le style des carte. Il permet aussi d\'ajouter un texte de description.', 0); %>
-
-<%- sample('Carte de téléchargement', './sample/download-card', {}, true, './layout', {col: {md:6}, desc: 'dans une grille de 6 colonnes en version desktop'}); %>
-
-<%- sample('Carte de téléchargement fichier anglais', './sample/download-card', {download: {lang: {code:'en', name:'Anglais'}}}, true); %>
-
-<%- sample('Cartes de téléchargement en grille', './sample/download-card-grid', {downloads: [{}, {}, {}, {}]}, true); %>
-
+<%- include('../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>

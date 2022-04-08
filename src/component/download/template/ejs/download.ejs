@@ -7,13 +7,13 @@
 
 * download.description (string, optional) : Description, unniquement si card = true
 
-* download.detail (string, optional) : Détail de l'élément download
+* download.detail (string, optional) : Détail de l'élément download (extension, poids, et langue si différente)
 
-* download.lang (object, optional) : Langue du fichier à télécharger
-  ** download.lang.code (object, required) : Code langue
-  ** download.lang.name (object, required) : Intitulé de la langue
+* download.lang (string, optional) : Code langue (ex: "en") du fichier à télécharger (si différent de la langue de la page)
 
-* download.href (string, optional) : href du fichier à télécharger
+* download.href (string, optional) : url du fichier à télécharger
+
+* download.downloadable (string/boolean, optional) : Si true : le fichier est télécharger sans être ouvert, Si false : le fichier s'ouvre dans le navigateur (si possible, sinon télécharge), Si String : Renomme le fichier avant de le télécharger
 
 * download.card (boolean, optional) : Détermine si c'est une carte ou un lien
 
@@ -29,8 +29,12 @@ let download = locals.download || {};
 let classes = download.classes || [];
 const markup = download.markup || 'p';
 const href = download.href || '#';
+const assessAttrs = download.assess ? {'data-fr-assess-file':''} : {};
 classes.push(`${prefix}-download`);
 
+if (download.downloadable !== false) assessAttrs.download = '';
+if (typeof(download.downloadable) === 'String') assessAttrs.download = download.downloadable;
+if (download.lang) assessAttrs.hreflang = download.lang;
 if (download.enlarge) classes.push(`${prefix}-enlarge-link`);
 if (download.card) classes.push(`${prefix}-download--card`);
 switch (download.size) {
@@ -39,16 +43,15 @@ switch (download.size) {
     break;
 }
 %>
-<<%= markup %> <%- includeClasses(classes) %>>
-  <a href="<%- href %>" class="<%= prefix %>-download__link"><%- download.title %>
-    <% if (download.description) { %><span class="<%= prefix %>-download__desc"><%- download.description %></span><% } %>
-    <% if (download.detail) { %>
+<div <%- includeClasses(classes) %>>
+  <<%= markup %>>
+    <a href="<%- href %>" <%- includeAttrs(assessAttrs) %> class="<%= prefix %>-download__link"><%- download.title %>
       <span class="<%= prefix %>-download__detail">
-        <%- download.detail %>
-        <% if (download.lang) { %>
-          - <span lang="<%- download.lang.code %>"><%- download.lang.name %></span>
+        <% if (download.detail) { %>
+          <%- download.detail %>
         <% } %>
       </span>
-    <% } %>
-  </a>
-</<%= markup %>>
+    </a>
+  </<%= markup %>>
+  <% if (download.description) { %><p class="<%= prefix %>-download__desc"><%- download.description %></p><% } %>
+</div>

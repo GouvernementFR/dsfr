@@ -1,7 +1,8 @@
 <%
 let download = locals.download || {};
 let data = {
-  detail: download.detail !== false ? '<abbr title="Adobe Portable Document Format">PDF</abbr> - 61,88 <abbr title="kilo-octet">ko</abbr>' : undefined,
+  href: download.href || contentPlaceholder(relativeRoot + 'example/img/image.jpg'),
+  detail: download.detail !== false ? download.detail || 'JPG - 61,88 ko' + (download.lang === 'en' ? '- ANGLAIS': '') : undefined,
   title: 'Télécharger le document lorem ipsum sit dolores amet',
   description: download.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
   ...download,

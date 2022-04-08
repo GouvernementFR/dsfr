@@ -5,6 +5,8 @@ doc:
 wrapper: container
 style:
   - core
+script:
+  - core
 follow:
   style:
     - link

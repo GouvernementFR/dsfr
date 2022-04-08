@@ -11,6 +11,7 @@
   @include _nest-link($links-settings, md, right, arrow-down-s-line);
 
   &__link {
+    @include padding(0);
     @include icon(download-line, sm, after) {
       @include margin-left(1v);
       @include margin-bottom(1v);
