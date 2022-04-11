@@ -46,6 +46,7 @@ switch(connect.type) {
 const linkAttributes = connect.link.attributes || {};
 
 linkAttributes.target = '_blank';
+linkAttributes.rel = 'noopener';
 linkAttributes.title = `${connect.link.label} - nouvelle fenêtre`;
 
 if (!locals.standalone) {
