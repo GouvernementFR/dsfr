@@ -84,7 +84,7 @@ let brand = locals.brand || {};
               <%- brand.service.title %>
             <% } %>
             <% if (brand.service.beta) { %>
-              <%- include('../../../badge/template/ejs/badge.ejs', {badge: {tag: 'span', label: "BETA", size: 'sm', accent: 'green-emeraude'} }) %>
+              <%- include('../../../badge/template/ejs/badge.ejs', {badge: {markup: 'span', label: "BETA", size: 'sm', accent: 'green-emeraude'} }) %>
             <% } %>
           </p>
         <% } %>
