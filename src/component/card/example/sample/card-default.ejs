@@ -69,12 +69,12 @@ if (card.content) {
 
 if (card.footer) {
   data.footer = {};
-  const label = 'Label bouton';
+  const label = 'Label';
   if (card.footer.buttons) {
     data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
   }
   if (card.footer.links) {
-    data.footer.linksGroup = { links: [...Array(2)].map(() => { return { label: 'label badge', href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
+    data.footer.linksGroup = { links: [...Array(2)].map(() => { return { label: 'label', href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
   }
 }
 

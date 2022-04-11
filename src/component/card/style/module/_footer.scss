@@ -8,7 +8,8 @@
     order: 2;
     @include padding(2v 8v 8v);
 
-    #{ns(btns-group)} {
+    #{ns(btns-group)},
+    #{ns(links-group)} {
       @include margin-bottom(-4v);
     }
   }

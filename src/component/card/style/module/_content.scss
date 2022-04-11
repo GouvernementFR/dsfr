@@ -7,7 +7,7 @@
   &__content {
     order: 1;
     @include display-flex(column);
-    @include padding(6v 8v 8v);
+    @include padding(8v);
     @include nest-tag(sm);
     @include height(100%);
   }

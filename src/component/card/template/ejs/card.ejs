@@ -88,13 +88,13 @@ if (card.variations) for (const variation of card.variations) switch(variation) 
 if (card.accent !== undefined)
 %>
 <div <%- includeClasses(classes) %>>
-  <% if (card.header !== undefined) { %>
-  <%- include('header', { header: card.header}) %>
-  <% } %>
   <div class="<%= prefix %>-card__body" >
     <%- include('content', { content: card.content}) %>
     <% if (card.footer !== undefined) { %>
     <%- include('footer', { footer: card.footer}) %>
     <% } %>
   </div>
+  <% if (card.header !== undefined) { %>
+  <%- include('header', { header: card.header}) %>
+  <% } %>
 </div>
