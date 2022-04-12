@@ -7,8 +7,9 @@ class AssessFile extends api.core.Instance {
   }
 
   async init () {
-    this.pageLang = this.getpageLanguage().substring(0, 2).toLowerCase();
+    this.lang = this.getLang(this.node).substring(0, 2).toLowerCase();
     this.href = this.getAttribute('href');
+
     this.hreflang = this.getAttribute('hreflang');
     this.file = {};
     this.detail = this.querySelector(DownloadSelector.DOWNLOAD_DETAIL);
@@ -34,19 +35,20 @@ class AssessFile extends api.core.Instance {
       if (extension) this.detail.innerHTML = extension.toUpperCase();
     }
 
-    this.detail.innerHTML += ' - ' + length;
+    this.detail.innerHTML += ' – ' + length;
 
     if (this.hreflang) {
-      const displayNameLang = new Intl.DisplayNames([this.pageLang], { type: 'language' });
+      const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
       const langName = displayNameLang.of(this.hreflang);
       const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
-      this.detail.innerHTML += ' - ' + capitalizeLangName;
+      this.detail.innerHTML += ' – ' + capitalizeLangName;
     }
   }
 
-  getpageLanguage () {
-    if (document.documentElement.lang) return document.documentElement.lang;
-    else return navigator.browserLanguage;
+  getLang (elem) {
+    if (elem.lang) return elem.lang;
+    if (document.documentElement === elem) return navigator.browserLanguage;
+    return this.getLang(elem.parentElement);
   }
 
   parseExtension (url) {
@@ -58,7 +60,7 @@ class AssessFile extends api.core.Instance {
     if (bytes === 0) return 'n/a';
 
     let sizeUnits = ['octets', 'ko', 'Mo', 'Go', 'To'];
-    if (this.pageLang !== 'fr') {
+    if (this.lang !== 'fr') {
       sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB'];
     }
 

@@ -5,7 +5,11 @@
 
 #{ns-group(downloads)} {
   &--bordered {
-    @include padding(8v 12v 2v);
+    @include padding(8v 8v 2v);
+
+    > li {
+      @include margin-left(4v);
+    }
   }
 
   > li {

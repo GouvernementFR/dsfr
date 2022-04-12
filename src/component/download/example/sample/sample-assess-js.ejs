@@ -1,0 +1,7 @@
+<%
+const sample = getSample(include);
+%>
+<%- section('Remplissage automatique des informations du fichier', 'Un utilitaire JS est disponible via l\'attribut "data-fr-assess-file" pour remplacer le contenu du détails (type, poids, langue).<br> Pour récupérer le poids, il est nécessaire que le fichier soit sur le même domaine ou que celui-ci autorise les requêtes cross-domain.<br> Le type du fichier est déterminé par son extension depuis l\'attribut href.<br> La langue du fichier (si différente) doit être définie par son code langue dans l\'attribut hreflang', 0) %>
+<%- sample('Lien de téléchargement remplissage automatique des détails', './download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false}}, true) %>
+<%- sample('Carte de téléchargement remplissage automatique des détails', './download-card', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false}}, true) %>
+<%- sample('Remplissage automatique des détails + langue différente', './download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false, lang: 'en'}}, true) %>
