@@ -53,5 +53,5 @@ switch (download.size) {
       </span>
     </a>
   </<%= markup %>>
-  <% if (download.description) { %><p class="<%= prefix %>-download__desc"><%- download.description %></p><% } %>
+  <% if (download.description && download.card) { %><p class="<%= prefix %>-download__desc"><%- download.description %></p><% } %>
 </div>
