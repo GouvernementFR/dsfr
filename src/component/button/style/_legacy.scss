@@ -43,9 +43,7 @@
   }
 
   #{ns-group(btns)} {
-    & > li {
-      list-style: none;
-    }
+    @include disable-list-style-legacy(true);
 
     &--sm {
       @include class-not-start-with(#{ns(btns-group--icon-, '')}) {

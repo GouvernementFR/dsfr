@@ -1,0 +1,21 @@
+////
+/// Badge Module - group
+/// @group badge
+////
+
+#{ns-group(badge)} {
+  @include disable-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  @include margin-bottom(0);
+
+  > li {
+    display: inline-flex;
+    @include max-width(100%);
+  }
+
+  #{ns(badge)} {
+    @include margin-right(2v);
+    @include margin-bottom(2v);
+  }
+}

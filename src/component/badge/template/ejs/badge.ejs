@@ -17,8 +17,6 @@
 
 ** ellipsis (boolean, optional) [default: false] : Si true, ajoute un span ellipsis autour du label
 
-** group (boolean, optional) [default: false] : Si true, créé un groupe de badge
-
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
@@ -45,14 +43,5 @@ else if (badge.icon !== undefined) badge.classes.push(prefix + '-icon-' + badge.
 if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
 %>
 
-<% if (badge.group) { %>
-<ul class="<%= prefix %>-badge-group">
-	<% for (let i = 0; i < 9; i++) { %>
-	<li>
-		<p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
-	</li>
-	<% } %>
-</ul>
-<% } else { %>
 <p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
-<% } %>
+

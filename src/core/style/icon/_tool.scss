@@ -48,7 +48,18 @@
   }
 }
 
-@mixin icon-content($icon, $pseudo: before, $important: false, $content: '') {
+@mixin icon-size-legacy($size:md, $pseudo: null) {
+  $selector: null;
+  @if $pseudo == before or $pseudo == after {
+    $selector: '&::#{$pseudo}';
+  }
+  @include nest($selector) {
+    $size: icon-size($size);
+    @include size($size, $size);
+  }
+}
+
+@mixin icon-content($icon, $pseudo: before, $important: false, $content: null) {
   @include _pseudo($pseudo, $content) {
     $url: get-url-icon($icon, $important);
     -webkit-mask-image: $url;
@@ -56,8 +67,15 @@
   }
 }
 
-@mixin icon-style($pseudo: before) {
-  @include _pseudo($pseudo) {
+@mixin icon-content-legacy($icon, $pseudo: before, $important: false, $content: null) {
+  @include _pseudo($pseudo, $content) {
+    $url: get-url-icon($icon, $important);
+    background-image: $url;
+  }
+}
+
+@mixin icon-style($pseudo: before, $content: '') {
+  @include _pseudo($pseudo, $content) {
     flex: 0 0 auto;
     display: inline-block;
     vertical-align: middle;
@@ -69,8 +87,20 @@
   }
 }
 
+@mixin icon-style-legacy($pseudo: before, $content: null) {
+  @include _pseudo($pseudo, $content) {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
 @mixin icon($icon: null, $size: md, $pseudo: before, $init: true) {
   @if $init {
+    $content: '';
+    @if $icon == null {
+      $content: null;
+    }
     @include icon-style($pseudo);
   }
 
@@ -88,22 +118,23 @@
 }
 
 @mixin icon-legacy($icon: null, $size: md, $pseudo: before, $init: true) {
-  @include _pseudo($pseudo) {
-    @if $init {
-      background-color: transparent;
-      background-size: 100%;
-      background-repeat: no-repeat;
-    }
-
+  @if $init {
+    $content: null;
     @if $icon != null {
       content: '';
-      background-image: get-url-icon($icon, false);
     }
+    @include icon-style-legacy($pseudo, $content);
+  }
 
-    @if $size != null {
-      $size: icon-size($size);
-      @include size($size, $size);
-    }
+  @if $icon != null {
+    @include icon-content-legacy($icon, $pseudo);
+  }
+
+  @if $size != null {
+    @include icon-size-legacy($size, $pseudo);
+  }
+
+  @include _pseudo($pseudo) {
     @content;
   }
 }
@@ -127,7 +158,7 @@
   }
   @each $icon, $setting in $icons-settings {
     #{ns(#{$base}-#{$icon})} {
-      @include icon-legacy($icon, null, before, false);
+      @include icon-content-legacy($icon, before, true);
     }
   }
 }

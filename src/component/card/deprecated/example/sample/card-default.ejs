@@ -1,0 +1,24 @@
+<%
+const card = locals.card || {};
+const data = {
+    ...card,
+    detail: card.detail !== false ? 'Détail' : undefined,
+    title: 'Qu’est-ce que le Pass Culture et comment l’obtenir ?',
+    description: card.description || 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
+    arrow: card.arrow !== false,
+    enlarge: card.enlarge !== false,
+    img: card.img ? imgData('img/placeholder.16x9.png', 'unrendered') : undefined
+};
+
+const colClasses = [`${prefix}-col-12`];
+colClasses.push(`${prefix}-col-md-${card.horizontal ? '8' : '3'}`);
+
+%>
+
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+    <div <%- includeClasses(colClasses); %>>
+        <%- include('../../template/ejs/card', {card: data}); %>
+    </div>
+</div>
+
+

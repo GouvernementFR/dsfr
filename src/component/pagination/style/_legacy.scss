@@ -9,10 +9,7 @@
   */
   #{ns(pagination)} {
     @include disable-underline-legacy;
-
-    &__list {
-      list-style: none;
-    }
+    @include disable-list-style-legacy;
 
     &__link {
       @include scheme-element-bg-transparent((legacy: true, hover: true));

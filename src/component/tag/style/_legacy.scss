@@ -4,43 +4,47 @@
 ////
 
 @include legacy(ie11) {
-  &#{ns(tag)} {
+  #{ns(tag)} {
     @include icon-legacy(null, sm);
 
-    &#{ns(tag)}--sm {
+    #{ns(tag)}--sm {
       @include icon-legacy(null, xs, before);
     }
   }
 
   @include clickable-selector {
-    &#{ns(tag)} {
+    #{ns(tag)} {
       // empeche le hover du tag pressable sur ie
       @include pressed-selector(true) {
         background-size: 100% 100%, 100% 100%;
         @include icon-legacy(checkbox-circle-line, sm, after);
 
-        &#{ns(tag)}--sm {
+        #{ns(tag)}--sm {
           @include icon-legacy(null, xs, after);
           @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, $COLOR #{space(2v)})));
         }
       }
 
-      &#{ns(tag)}--dismiss {
+      #{ns(tag)}--dismiss {
         @include icon-legacy(close-line, sm, after);
 
-        &#{ns(tag)}--sm {
+        #{ns(tag)}--sm {
           @include icon-legacy(null, xs, after);
         }
       }
     }
   }
 
-  &#{ns-group(tags)}--sm {
+  #{ns-group(tags)} {
+    @include disable-list-style-legacy(true);
+  }
+
+  #{ns-group(tags)}--sm {
     @include icon-legacy(null, sm);
 
     @include clickable-selector {
-      &#{ns(tag)} {
-        &#{ns(tag)}--dismiss {
+      #{ns(tag)} {
+        #{ns(tag)}--dismiss {
           @include icon-legacy(null, xs, after);
         }
 
@@ -57,7 +61,7 @@
 }
 
 @include clickable-selector {
-  &#{ns(tag)} {
+  #{ns(tag)} {
     // empeche le hover du tag pressable sur ie
     @include pressed-selector(true) {
       @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% space(1v), transparent space(2.3125v), $COLOR space(2.5v)) ));

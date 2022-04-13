@@ -1,0 +1,29 @@
+////
+/// Link Module - group
+/// @group link
+////
+
+#{ns-group(links)} {
+  @include disable-list-style;
+  display: flex;
+  flex-wrap: wrap;
+  @include margin-bottom(0);
+
+  > li {
+    display: inline-flex;
+    @include max-width(100%);
+  }
+
+  #{ns(link)} {
+    @include margin-right(4v);
+    @include margin-bottom(4v);
+  }
+
+  &--sm {
+    @include nest-link(sm, null);
+  }
+
+  &--lg {
+    @include nest-link(lg, null);
+  }
+}

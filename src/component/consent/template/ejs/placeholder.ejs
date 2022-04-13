@@ -20,7 +20,7 @@ let classes = [...consent.classes || [], prefix + '-consent-placeholder'];
 let attributes = consent.attributes || {};
 let button = consent.button || {};
 if (!button.label) button.label = "Autoriser";
-button.tag = 'button';
+button.markup = 'button';
 %>
 
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>

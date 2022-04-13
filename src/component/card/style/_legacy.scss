@@ -5,18 +5,23 @@
 
 @include legacy(ie11) {
   #{ns(card)} {
-    &__title {
-      margin: 0;
+    @include icon-legacy(arrow-right-line, md, before);
+
+    &--no-icon {
+      @include before(none);
     }
 
-    &--horizontal {
-      #{ns(card)}__body {
-        flex-basis: 100%;
-      }
+    &__title,
+    &__desc {
+      flex: 1 0 auto;
     }
 
-    &:not(&--no-arrow) &__body {
-      @include icon-legacy(arrow-right-line, md, after);
+    &__detail {
+      @include icon-size-legacy(sm, before);
+    }
+
+    &--horizontal &__body {
+      flex-basis: 100%;
     }
   }
 }

@@ -1,0 +1,57 @@
+<%#
+# paramètres du contenu principal de la carte
+
+* content.title (string, required) : Titre de la carte
+
+* content.description (string, optional) : Description
+
+* content.badgesGroup (array, optional) : Groupe de badges (voir badge)
+
+* content.tagsGroup (array, optional) : Groupe de tags (voir tag)
+
+* content.details (array, optional) : Détails
+
+%>
+<%
+let start, end;
+
+const startDetails = content.details ? content.details.filter(detail => !detail.position || detail.position === 'start') : [];
+
+switch (true) {
+    case content.badgesGroup !== undefined :
+    case content.tagsGroup !== undefined :
+    case startDetails.length > 0 :
+      start = {};
+      if (content.badgesGroup) start.badgesGroup = content.badgesGroup;
+      if (content.tagsGroup) start.tagsGroup = content.tagsGroup;
+      if (startDetails.length) start.details = startDetails;
+      break;
+}
+
+const endDetails = content.details ? content.details.filter(detail => detail.position === 'end') : [];
+
+switch (true) {
+    case endDetails.length > 0 :
+        end = {};
+        if (endDetails.length) end.details = endDetails;
+        break;
+}
+ %>
+
+<div class="<%= prefix %>-card__content">
+    <h4 class="<%= prefix %>-card__title">
+        <a href="#" ><%- content.title %></a>
+    </h4>
+
+    <% if (content.description !== undefined) { %>
+    <p class="<%= prefix %>-card__desc"><%- content.description %></p>
+    <% } %>
+
+    <% if (start) { %>
+    <%- include('start', {start: start }); %>
+    <% } %>
+
+    <% if (end) { %>
+    <%- include('end', {end: end }); %>
+    <% } %>
+</div>

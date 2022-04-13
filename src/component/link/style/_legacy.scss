@@ -19,8 +19,6 @@
   }
 
   #{ns-group(links)} {
-    & > li {
-      list-style: none;
-    }
+    @include disable-list-style-legacy(true);
   }
 }

@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<% for (const ratio of ['32x9', '3x2', '4x3', '1x1', '3x4', '2x3']) { %>
+<%- sample(`Carte verticale avec image au ratio d'aspect ${ratio}`, './card-default', { card : { img: { ratio: ratio }}}, true, './card-layout', {col: {md:4}}); %>
+<% } %>

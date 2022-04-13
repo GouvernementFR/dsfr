@@ -3,23 +3,9 @@
 /// @group header
 ////
 
-@include respond-from(lg) {
-  @include legacy(ie11) {
-    #{ns(header)} {
-      &__tools-links {
-        display: block;
-      }
-
-      #{ns(modal)} {
-        position: static;
-        overflow: visible;
-      }
-    }
-  }
-}
-
 @include legacy(ie11) {
   #{ns(header)} {
+    @include disable-list-style-legacy;
     @include disable-underline-legacy;
 
     #{ns-group(btns)} {
@@ -46,6 +32,21 @@
 
     &__tools-links {
       #{ns(link)} {
+        overflow: visible;
+      }
+    }
+  }
+}
+
+@include respond-from(lg) {
+  @include legacy(ie11) {
+    #{ns(header)} {
+      &__tools-links {
+        display: block;
+      }
+
+      #{ns(modal)} {
+        position: static;
         overflow: visible;
       }
     }

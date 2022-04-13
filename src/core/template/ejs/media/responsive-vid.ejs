@@ -3,7 +3,7 @@
 
 * media.title : titre de l'iframe
 
-* media.vid : url de la vidéo
+* media.src : url de la vidéo
 
 * media.ratio (string, optional) : modificateur de ratio
   valeurs :
@@ -21,11 +21,8 @@
 
  switch(media.ratio) {
      case '4x3':
-         vidClasses.push(prefix + '-responsive-vid--4x3');
-         break;
-
      case '1x1':
-         vidClasses.push(prefix + '-responsive-vid--1x1');
+         vidClasses.push(`${prefix}-responsive-vid--${media.ratio}`);
          break;
  }
  %>

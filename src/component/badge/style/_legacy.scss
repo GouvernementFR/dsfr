@@ -14,24 +14,28 @@
     &,
     &--sm {
       &#{ns(badge)}--info {
-        @include icon-legacy(info-fill, null, before, false);
+        @include icon-content-legacy(info-fill);
       }
 
       &#{ns(badge)}--success {
-        @include icon-legacy(success-fill, null, before, false);
+        @include icon-content-legacy(success-fill);
       }
 
       &#{ns(badge)}--error {
-        @include icon-legacy(error-fill, null, before, false);
+        @include icon-content-legacy(error-fill);
       }
 
       &#{ns(badge)}--warning {
-        @include icon-legacy(warning-fill, null, before, false);
+        @include icon-content-legacy(warning-fill);
       }
 
       &#{ns(badge)}--new {
-        @include icon-legacy(flashlight-fill, null, before, false);
+        @include icon-content-legacy(flashlight-fill);
       }
     }
+  }
+
+  #{ns(badges-group)} {
+    @include disable-list-style-legacy(true);
   }
 }

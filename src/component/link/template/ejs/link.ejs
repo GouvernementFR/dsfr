@@ -3,7 +3,7 @@
 
 * link.label (string, required) : contenu texte
 
-* link.tag (string, optional) : si non défini, a
+* link.markup (string, optional) : si non défini, a
 
 * link.href (string, required) : adresse url du lien
 
@@ -35,7 +35,7 @@ const link = locals.link || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
 
-const tag = link.tag || 'a';
+const markup = link.markup || 'a';
 
 linkClasses.push(prefix + '-link');
 
@@ -64,7 +64,7 @@ if (link.iconPlace !== undefined) {
 }
 
 if (link.disabled === true) {
-    switch (tag) {
+    switch (markup) {
         case 'input':
         case 'button':
             linkAttrs['disabled'] = '';
@@ -77,7 +77,7 @@ if (link.disabled === true) {
             break;
     }
 } else {
-    switch (tag) {
+    switch (markup) {
         case 'a':
             linkAttrs.href = link.href || '[url - à modifier]';
             switch (true) {
@@ -96,6 +96,6 @@ if (link.disabled === true) {
 
 %>
 
-<<%= tag %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
+<<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
 <%- link.label %>
-</<%= tag %>>
+</<%= markup %>>
