@@ -75,6 +75,7 @@ const analyse = (id, path, ascendants = []) => {
   config.prepend = data.prepend === true;
   config.module = data.module !== false;
   config.nomodule = data.nomodule !== false;
+  config.detached = data.detached === true;
   const example = data.example || {};
   if (!example.style) example.style = [];
   if (!example.script) example.script = [];

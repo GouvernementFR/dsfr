@@ -1,7 +1,6 @@
 const { createFile } = require('../utilities/file');
 const sass = require('node-sass');
 const importer = require('node-sass-magic-importer');
-const jsonImporter = require('../module/node-sass-json-importer.js');
 const stylelint = require('stylelint');
 const discardDuplicates = require('postcss-discard-duplicates');
 const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
@@ -56,7 +55,7 @@ const buildStyles = async (pck, minify, map, standalone = false) => {
 const buildStyle = async (data, dest, minify, map) => {
   let options = {
     data: data,
-    importer: [importer(), jsonImporter()],
+    importer: [importer()],
     outFile: `${dest}.css`,
     outputStyle: 'expanded'
   };

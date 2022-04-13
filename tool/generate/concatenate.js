@@ -10,7 +10,7 @@ const generateStyle = (pck, file) => {
 
 `;
 
-  const children = pck.children.filter(child => child.style && child.style.files.indexOf(file) > -1);
+  const children = pck.children.filter(child => !child.detached && child.style && child.style.files.indexOf(file) > -1);
 
   children.sort((a, b) => a.style.level - b.style.level);
 
@@ -33,7 +33,7 @@ const generateStyle = (pck, file) => {
 const generateScript = (pck, file) => {
   let content;
 
-  const children = pck.children.filter(child => child.script && child.script.files.indexOf(file) > -1);
+  const children = pck.children.filter(child => !child.detached && child.script && child.script.files.indexOf(file) > -1);
 
   children.sort((a, b) => a.script.level - b.script.level);
 
