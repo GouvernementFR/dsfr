@@ -49,7 +49,7 @@ const analyse = (id, path, ascendants = []) => {
 
     if (children.some(child => child.style)) {
       files = ['main'];
-      files.push(...['scheme', 'legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
+      files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
       config.style = { level: -1, files: files };
       replace.style = [...children.map(child => child.replace.style).flat(), ...children.filter(child => child.style).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
     }
