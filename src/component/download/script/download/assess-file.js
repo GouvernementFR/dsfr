@@ -17,6 +17,7 @@ class AssessFile extends api.core.Instance {
   }
 
   async getFileLength () {
+    if (this.href === undefined) return null;
     const response = await fetch(this.href, { method: 'HEAD', mode: 'cors' });
     const length = response.headers.get('content-length');
     if (!length) {
