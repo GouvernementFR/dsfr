@@ -93,7 +93,7 @@
     @if $icon == null {
       $content: null;
     }
-    @include icon-style($pseudo);
+    @include icon-style($pseudo, $content);
   }
 
   @if $icon != null {
