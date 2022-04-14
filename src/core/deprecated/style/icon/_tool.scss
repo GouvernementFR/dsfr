@@ -6,7 +6,7 @@
 @mixin generate-deprecated-icons($ids, $config: $icons-config) {
   @each $icon, $setting in $config {
     @if index($ids, $icon) {
-      #{ns(icon-#{$icon})} {
+      #{ns(fi-#{$icon})} {
         @include icon-content($icon, before, true);
       }
     }
@@ -16,7 +16,7 @@
 @mixin generate-deprecated-icons-legacy($ids, $config: $icons-config) {
   @each $icon, $setting in $config {
     @if index($ids, $icon) {
-      #{ns(icon-#{$icon})} {
+      #{ns(fi-#{$icon})} {
         @include icon-content-legacy($icon, before, true);
       }
     }

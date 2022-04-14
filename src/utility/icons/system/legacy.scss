@@ -1,17 +1,14 @@
 ////
-/// Icon System Main
+/// Icon System Legacy
 /// @group icon-system
 ////
-
-/* ¯¯¯¯¯¯¯¯¯ *\
-  ICON SYSTEM
-\* ˍˍˍˍˍˍˍˍˍ */
 
 @import '../../../core/style/path/path-3';
 @import '../../../media-query-order';
 @import 'index';
-@import 'style/module';
+@import 'style/legacy';
 
 // deprecated
-//@import 'deprecated/style/module';
+@import 'deprecated/style/settings';
+@import 'deprecated/style/module';
 

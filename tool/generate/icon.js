@@ -5,6 +5,7 @@ const { createFile } = require('../utilities/file');
 
 const generateIcon = async (dir) => {
   let sass = '$icons-config: (\n';
+  const json = [];
   const absolute = root(dir);
   const categories = fs.readdirSync(absolute).filter((fd) => fs.lstatSync(`${absolute}/${fd}`).isDirectory());
   for (const category of categories) {
@@ -31,12 +32,15 @@ const generateIcon = async (dir) => {
       const p = `icons/${category}/${icon}`;
 
       sass += `  ${name}: ( family: '${family}', category: '${category}', path: '${p}' ),\n`;
+      json.push({ name: name, family: family, category: category, path: p });
     }
   }
   sass += ');\n';
 
-  const iconPath = root('.config/icon.scss');
-  createFile(iconPath, sass);
+  const sassPath = root('.config/icon.scss');
+  const jsonPath = root('.config/icon.json');
+  createFile(sassPath, sass);
+  createFile(jsonPath, JSON.stringify(json));
 };
 
 module.exports = { generateIcon };
