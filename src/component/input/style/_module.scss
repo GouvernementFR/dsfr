@@ -52,7 +52,7 @@
     @include size(100%);
   }
 
-  &#{ns(fi-calendar-line)} {
+  &#{ns(icon-calendar-line)} {
     > #{ns(input)}[type=date] {
       &::-webkit-calendar-picker-indicator {
         display: block;
