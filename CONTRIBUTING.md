@@ -136,7 +136,7 @@ Le DSFR utilise Sass pour la génération automatique des styles liés à chaque
 
 Les fichiers à la racine du composant importent les éléments nécessaires depuis le dossier style. Ceux-ci étant des points d'entrée principaux, ils n'ont pas d'underscore et ne contiennent que des `@import`, pas de déclaration.
 
- - index.scss : Fichier permettant de donner accès aux mixins, fonctions et settings du composant. Les fichiers importés ne continnent pas de déclaration directe et par conséquent il ne produit pas de code. Il importe également les index des dépendances.
+ - index.scss : Fichier permettant de donner accès aux mixins, fonctions et settings du composant. Les fichiers importés ne contiennent pas de déclaration directe et par conséquent il ne produit pas de code. Il importe également les index des dépendances.
  - main.scss : Fichier principal du composant servant d'entrée, il produit l'essentiel du code du composant. Il importe le fichier index ainsi que des fichiers modules du composant
  - legacy.scss : Permet de générer un fichier séparé pour le support navigateur
 
@@ -148,7 +148,7 @@ Dans le dossier style, on retrouve les fichiers suivants lorsqu'ils s'avèrent p
  - _function.scss : Contient les `functions` pouvant être utilisés par le composant
  - _tool.scss : Contient les `mixins` pouvant être utilisées par le composant
 
-Afin de limiter la longeur des fichiers de code (maximum une centaine de ligne), ces fichiers peuvent être redécomposer en sous fichiers qui prendront place dans des sous-dossier du même nom.
+Afin de limiter la longueur des fichiers de code (maximum une centaine de ligne), ces fichiers peuvent être découpés en sous fichiers qui prendront place dans des sous-dossier du même nom.
 
 
 ### Javascript
@@ -173,12 +173,12 @@ Certains packages font utilisation de javascript, afin d'apporter une couche int
 
 `main.js` : importe l'index et permet l'initialisation du composant.
 
-Un dossier `script` qui contient un dossier par fonctionalité js, ici `navigation` puis :
+Un dossier `script` qui contient un dossier par fonctionnalité js, ici `navigation` puis :
 
 `navigation.js` (ou nom-classe.js) contient le code de la fonctionnalité js, structurée en classes instanciables (es6) .
 
 Lors du `yarn release`, le javascript est compilé en version "module" (es6) et "nomodule" (es5), ainsi qu'en version .min et .map.
-En mode développement, `yarn build` permet de regénérer uniquement la version .module.js (es6 non minifié)
+En mode développement, `yarn build` permet de générer uniquement la version .module.js (es6 non minifié)
 
 ### EJS
 Nous utilisons au sein du DSFR, le langage de template EJS ([documentation officielle](https://ejs.co/#docs)), permettant la génération des pages d'exemples au format HTML, ainsi que les snippets de code de manière automatisée.
@@ -196,12 +196,12 @@ Les fichiers ejs sont séparés dans 2 dossiers, par exemple pour le package `ca
 ```
 
 Dans le dossier `example`,
-`ìndex.ejs` est la page d'exemple publiée, elle affiche les différents exemples grâce à la fonction `sample()` (qui inclut l'exemple et le snippet de code)
+`index.ejs` est la page d'exemple publiée, elle affiche les différents exemples grâce à la fonction `sample()` (qui inclut l'exemple et le snippet de code)
 Le dossier `samples` contient les différents types d'examples (inclusion des templates avec des données d'exemples)
 
 Dans le dossier `templates`, on insère ici les templates dans un sous-dossier nommé en fonction du système de templating utilisé (`ejs` pour l'instant). Ces templates sont paramétrables pour y injecter des données. Chaque fichier possède une documentation sommaire détaillant ces paramètres.
 
-Pour accèder aux fonctions du core (comme `includeClasses()` et `includeAttr()`), chaque template inclut l'`index.ejs` de core au début du fichier : ```<% eval(include('../../../core/index.ejs')); %>```
+Pour accéder aux fonctions du core (comme `includeClasses()` et `includeAttr()`), chaque template inclut l'`index.ejs` de core au début du fichier : ```<% eval(include('../../../core/index.ejs')); %>```
 
 La commande `yarn release` permet de générer toutes les page d'exemple.
 Plus spécifiquement avec la commande `yarn build`, le paramètre `-h` permet de reconstruire uniquement l'html : `yarn build -h [-p idPackage]`, avec `-p` pour préciser le(s) package(s).
@@ -215,7 +215,7 @@ git checkout -b prefixe/ma-branche dev
 ```
 
 ##### Nommage des branches <!-- omit in toc -->
-Afin d'organiser et d'identifier rapidement la nature du contenu des branches, il est nécessaire de prefixer les branches :
+Afin d'organiser et d'identifier rapidement la nature du contenu des branches, il est nécessaire de préfixer les branches :
 feature/nom-de-la-branche pour les nouvelles fonctionnalités ou nouveaux composants.
 fix/nom-de-la-branche pour les correctifs apportés sur des fonctionnalités ou composants existants.
 
@@ -238,7 +238,7 @@ Les valeurs possibles pour le `type` de commit sont :
 
 * **BREAKING CHANGE**: Un commit avec un footer `BREAKING CHANGE:` introduit un changement important dans le code ([[MAJOR]](https://semver.org/#summary))
 
-Les messages de commits sont écrits en français (exeption faite des mots réservés par conventional commit, ainsi que les termes techniques).
+Les messages de commits sont écrits en français (exception faite des mots réservés par conventional commit, ainsi que les termes techniques).
 
 Exemple de commit simple :
 
@@ -300,7 +300,7 @@ En mode développement, il est possible d'utiliser la commande :
 ```
 yarn build
 ```
-Cette commande permet de générer uniquement les fichiers css/js/html. Cette commande est plus rapide puisqu'elle n'éxécute pas les test, et ne compile pas les fichier .map, .md, .min.css, .nomodule.js...
+Cette commande permet de générer uniquement les fichiers css/js/html. Cette commande est plus rapide puisqu'elle n'exécute pas les test, et ne compile pas les fichier .map, .md, .min.css, .nomodule.js...
 De plus, grâce au paramètre `-p` il est possible de spécifier uniquement les packages que l'on souhaite recompiler.
 
 Pour voir les différents paramètres disponibles : `yarn build --help`
@@ -325,7 +325,7 @@ Cette commande permet la génération de la doc dans le dossier `sassdoc`, à la
 ### Tests
 Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du DSFR reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM.
 
-Ces tests sont éxecutés lors de la commande : `yarn release`
+Ces tests sont exécutés lors de la commande : `yarn release`
 Ou plus spécifiquement avec :
 
 ```

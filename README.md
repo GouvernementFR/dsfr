@@ -26,7 +26,7 @@ yarn add @gouvfr/dsfr
 Une fois terminé le dsfr sera alors installé dans le dossier ```node_modules/@gouvfr/dsfr/```.
 
 
-Pour visualiser les exemples, il est nécéssaire de lancer un serveur local :
+Pour visualiser les exemples, il est nécessaire de lancer un serveur local :
 
 
 ```
