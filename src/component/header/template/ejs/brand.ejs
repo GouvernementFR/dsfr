@@ -21,7 +21,7 @@ let brand = locals.brand || {};
   const logoPlaceholder = 'nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
 
   switch(true) {
-    case brand.service !== undefined && (brand.service.title || brand.service.tagline):
+    case brand.service !== undefined && brand.service.title !== undefined:
       position = 'service';
       title += contentPlaceholder(brand.service.title);
       if (brand.logo) title += ' - ' + contentPlaceholder(logoPlaceholder);
