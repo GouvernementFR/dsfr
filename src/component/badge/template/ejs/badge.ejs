@@ -9,6 +9,8 @@
 
 ** accent (string, optional) : défini la couleur d'accentuation (type ne doit pas être défini)
 
+** markup (string, optional) : balise html du markup (default: p)
+
 ** classes (array, optional) : classes supplémentaires sur l'element
 
 ** attrs (object, optional) : Attributs supplémentaires sur l'element
@@ -22,9 +24,9 @@
 
 <%
 let badge = locals.badge || {};
-if(!badge.classes) badge.classes = [];
-if(!badge.attrs) badge.attrs = {};
-
+if (!badge.classes) badge.classes = [];
+if (!badge.attrs) badge.attrs = {};
+const markup = badge.markup || 'p';
 badge.classes.push(prefix + '-badge');
 
 switch(badge.size) {
@@ -43,5 +45,4 @@ else if (badge.icon !== undefined) badge.classes.push(prefix + '-icon-' + badge.
 if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
 %>
 
-<p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
-
+<<%= markup %> <%- includeClasses(badge.classes)%>><%- badge.label %></<%= markup %>>

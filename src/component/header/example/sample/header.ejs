@@ -32,6 +32,9 @@ switch (typeof header.service) {
         break;
 }
 
+// copie la valeur de header.beta dans brand.service.beta
+(brand.service != undefined) ? brand.service.beta = header.beta === true || undefined : brand.service = {beta: header.beta === true || undefined};
+
 if (header.links !== undefined || header.search) {
     hasNavbar = true;
     const tools = {};
