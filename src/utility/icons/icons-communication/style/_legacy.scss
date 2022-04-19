@@ -1,0 +1,8 @@
+////
+/// Icon Communication Legacy
+/// @group icons-communication
+////
+
+@include legacy(ie11) {
+  @include generate-icons-legacy(filter-icons('communication'));
+}
