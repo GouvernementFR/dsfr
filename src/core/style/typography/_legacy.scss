@@ -1,0 +1,8 @@
+////
+/// Core Legacy : Typography
+/// @group core
+////
+
+@include legacy(ie11) {
+  @include enable-list-style-legacy;
+}

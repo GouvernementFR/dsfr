@@ -4975,11 +4975,6 @@ is-text-path@^1.0.1:
   dependencies:
     text-extensions "^1.0.0"
 
-is-there@^4.4.4:
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/is-there/-/is-there-4.5.1.tgz#ea292e7fad3fc4d70763fe0af40a286c9f5e1e2e"
-  integrity sha512-vIZ7HTXAoRoIwYSsTnxb0sg9L6rth+JOulNcavsbskQkCIWoSM2cjFOWZs4wGziGZER+Xgs/HXiCQZgiL8ppxQ==
-
 is-typedarray@^1.0.0, is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
@@ -5679,7 +5674,7 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.1.1, json5@^2.1.2:
+json5@^2.1.2:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
   integrity sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
@@ -6438,9 +6433,9 @@ minimist-options@4.1.0:
     kind-of "^6.0.3"
 
 minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass-collect@^1.0.2:
   version "1.0.2"
@@ -6645,15 +6640,6 @@ node-releases@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.2.tgz#7139fe71e2f4f11b47d4d2986aaf8c48699e0c01"
   integrity sha512-XxYDdcQ6eKqp/YjI+tb2C5WM2LgjnZrfYg4vgQt49EK268b6gYCHsBLrK2qvJo4FmCtqmKezb0WZFK4fkrZNsg==
-
-node-sass-json-importer@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/node-sass-json-importer/-/node-sass-json-importer-4.3.0.tgz#15773cc070f16aa20e93b378908366af85f6f742"
-  integrity sha512-+j+SsxPzYo7fWIDuz/etuLs+wfay5Zx2bkWE4LazkycdYGzEtCQz4tgIFXveeLBCBM6jvY4fp45z2JEj6U+VWQ==
-  dependencies:
-    is-there "^4.4.4"
-    json5 "^2.1.1"
-    lodash "^4.17.15"
 
 node-sass-magic-importer@^5.3.2:
   version "5.3.2"

@@ -102,4 +102,19 @@ const buildExample = (pck) => {
   log(38, pck.example.file);
 };
 
-module.exports = { buildExample };
+const buildStandaloneExample = (pck) => {
+  const page = fs.readFileSync(root(pck.standalone.example.src), {
+    encoding: 'utf8',
+    flag: 'r'
+  });
+  const html = ejs.render(page, {
+    path: root(pck.standalone.example.path),
+    root: root.toString()
+  });
+  const beautified = beautify(html, beautyOpts);
+
+  createFile(pck.standalone.example.dest, beautified, true);
+  log(38, pck.standalone.example.dest);
+};
+
+module.exports = { buildExample, buildStandaloneExample };

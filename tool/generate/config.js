@@ -34,6 +34,15 @@ const analyse = (id, path, ascendants = []) => {
       files.push(...['legacy'].filter(file => fs.existsSync(`${absolute}/${file}.js`)));
       config.script = { level: -1, files: files };
     }
+
+    if (fs.existsSync(`${absolute}/standalone/main.scss`)) {
+      config.standalone = { style: { files: ['main'] } };
+    }
+
+    if (fs.existsSync(`${absolute}/standalone/main.js`)) {
+      if (!config.standalone) config.standalone = {};
+      config.standalone.script = { files: ['main'] };
+    }
   } else if (fs.existsSync(`${absolute}/.folder.yml`)) {
     type = 'folder';
     children = parse(path, [...ascendants, id]);
@@ -86,6 +95,20 @@ const analyse = (id, path, ascendants = []) => {
   config.replace = replace;
   config.dist = data.dist ? data.dist : config.path.replace('src', 'dist');
   config.example.file = `${config.path.replace('src', 'example')}/index.html`;
+  if (config.standalone) {
+    config.standalone.dist = `standalone/${config.id}`;
+    if (fs.existsSync(`${absolute}/content.json`)) {
+      config.standalone.content = {
+        file: `${config.path}/content.json`,
+        dest: `.config/subsets/${config.id}.scss`
+      };
+    }
+    config.standalone.example = {
+      src: `${config.path}/standalone/index.ejs`,
+      path: `${config.path}/example/index.ejs`,
+      dest: `standalone/${config.id}/index.html`
+    };
+  }
 
   if (children) config.children = children;
 
@@ -188,8 +211,7 @@ const generateJSON = () => {
 
 const generateConfig = async () => {
   generateCore();
-  await generateIcon('src/core/icon/deprecated', '-deprecated', 344);
-  await generateIcon('src/core/icon', '', 216);
+  await generateIcon('src/core/icon');
   generateJSON();
 };
 

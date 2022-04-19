@@ -1,9 +1,78 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte verticale', './sample/vertical-cards', {}, true); %>
+<%
+        const elements = [
+                {
+                    title: 'Tailles',
+                    path: 'sample-sizes'
+                },
+                {
+                    title: 'Lien élargi',
+                    path: 'sample-enlarge'
+                },
+                {
+                    title: 'Icône',
+                    path: 'sample-icon'
+                },
+                {
+                    title: 'Variations',
+                    path: 'sample-variations'
+                },
+                {
+                    title: 'Sans image',
+                    path: 'sample-no-img'
+                },
+                {
+                    title: 'Image et ratio',
+                    path: 'sample-img'
+                },
+                {
+                    title: 'Vidéo et ratios',
+                    path: 'sample-vid'
+                },
+                {
+                    title: 'En-tête',
+                    path: 'sample-header'
+                },
+                {
+                    title: 'Contenu',
+                    path: 'sample-content'
+                },
+                {
+                    title: 'Zone d\'action',
+                    path: 'sample-footer'
+                },
+                {
+                    title: 'Carte horizontale',
+                    path: 'sample-horizontal'
+                },
+                {
+                    title: 'Grile de cartes',
+                    path: 'sample-grid'
+                },
+                {
+                    title: 'Grile de cartes horizontales',
+                    path: 'sample-grid-horizontal'
+                },
+                {
+                    title: 'Deprecated',
+                    path: '../../deprecated/example/index'
+                },
+        ];
 
-<%- sample('Carte verticale sans image', './sample/vertical-cards-no-image', {}, true); %>
+        const accordions = [];
 
-<%- sample('Carte verticale accentuée', './sample/vertical-cards', {card: {accent:'grey'}}, true); %>
+        for (let element of elements) {
+                accordions.push({
+                        label: element.title,
+                        id: uniqueId('card'),
+                        content: include(`./sample/${element.path}`)
+                })
+        }
 
-<%- sample('Carte horizontale', './sample/horizontal-cards', {}, true); %>
+        const data = {
+                accordions: accordions
+        }
+ %>
+
+<%- include('../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>

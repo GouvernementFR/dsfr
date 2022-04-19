@@ -8,8 +8,11 @@
   * Reset liste à puce
   */
   #{ns(tabs)} {
-    &__list {
-      list-style: none;
+    @include disable-list-style-legacy;
+
+    &__panel {
+      @include enable-list-style-legacy;
+      @include enable-underline-legacy;
     }
   }
 }

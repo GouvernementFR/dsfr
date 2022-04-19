@@ -1,11 +1,11 @@
 <%
  let list = locals.list || {lis:[]};
- let tag = list.ordered === true ? 'ol' : 'ul';
+ let markup = list.ordered === true ? 'ol' : 'ul';
  %>
 
 
 
-<<%= tag %> <%- includeClasses(list.classes); %>>
+<<%= markup %> <%- includeClasses(list.classes); %>>
     <% for (let i = 0; i < list.lis.length; i++) {
         let li = list.lis[i];
     %>
@@ -25,4 +25,4 @@
             }
         %></li>
     <% } %>
-</<%= tag %>>
+</<%= markup %>>

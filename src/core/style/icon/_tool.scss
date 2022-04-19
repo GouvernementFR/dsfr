@@ -15,98 +15,150 @@
   @return px-rem(map-get($icon-size-map, $size));
 }
 
-@mixin icon-size($size:md) {
-  font-size: #{icon-size($size)} !important;
+@function is-remix-icon($icon) {
+  @return index($icons-settings-dsfr, $icon) == null;
+}
+
+@function get-url-icon($icon, $important: false) {
+  $remixIcon: is-remix-icon($icon);
+  $icon-path: '#{$dist-path}icons/dsfr/';
+  @if $remixIcon {
+    $icon-path: '#{$dist-path}icons/remix/';
+  }
+  $url: url('#{$icon-path}#{$icon}.svg');
+  @return important($url, $important);
 }
 
 @mixin with-icon($size:md) {
   @include has-icon {
     @include before {
-      @if $size != md {
-        @include icon-size($size);
-      }
+      @include icon-size($size);
       @content;
     }
   }
 }
 
-@mixin generate-icons($base, $deprecated: false) {
-  $icons-settings: $icons-settings;
-  @if $deprecated {
-    $icons-settings: $icons-settings-deprecated;
+@mixin icon-size($size:md, $pseudo: null) {
+  $selector: null;
+  @if $pseudo == before or $pseudo == after {
+    $selector: '&::#{$pseudo}';
+  }
+  @include nest($selector) {
+    --icon-size: #{icon-size($size)};
+  }
+}
+
+@mixin icon-size-legacy($size:md, $pseudo: null) {
+  $selector: null;
+  @if $pseudo == before or $pseudo == after {
+    $selector: '&::#{$pseudo}';
+  }
+  @include nest($selector) {
+    $size: icon-size($size);
+    @include size($size, $size);
+  }
+}
+
+@mixin icon-content($icon, $pseudo: before, $important: false, $content: null) {
+  @include _pseudo($pseudo, $content) {
+    $url: get-url-icon($icon, $important);
+    -webkit-mask-image: $url;
+    mask-image: $url;
+  }
+}
+
+@mixin icon-content-legacy($icon, $pseudo: before, $important: false, $content: null) {
+  @include _pseudo($pseudo, $content) {
+    $url: get-url-icon($icon, $important);
+    background-image: $url;
+  }
+}
+
+@mixin icon-style($pseudo: before, $content: '') {
+  @include _pseudo($pseudo, $content) {
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: currentColor;
+    @include size(var(--icon-size), var(--icon-size));
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    @content;
+  }
+}
+
+@mixin icon-style-legacy($pseudo: before, $content: null) {
+  @include _pseudo($pseudo, $content) {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin icon($icon: null, $size: md, $pseudo: before, $init: true) {
+  @if $init {
+    $content: '';
+    @if $icon == null {
+      $content: null;
+    }
+    @include icon-style($pseudo);
+  }
+
+  @if $icon != null {
+    @include icon-content($icon, $pseudo);
+  }
+
+  @if $size != null {
+    @include icon-size($size, $pseudo);
+  }
+
+  @include _pseudo($pseudo) {
+    @content;
+  }
+}
+
+@mixin icon-legacy($icon: null, $size: md, $pseudo: before, $init: true) {
+  @if $init {
+    $content: null;
+    @if $icon != null {
+      content: '';
+    }
+    @include icon-style-legacy($pseudo, $content);
+  }
+
+  @if $icon != null {
+    @include icon-content-legacy($icon, $pseudo);
+  }
+
+  @if $size != null {
+    @include icon-size-legacy($size, $pseudo);
+  }
+
+  @include _pseudo($pseudo) {
+    @content;
+  }
+}
+
+@mixin generate-icons($base, $type: dsfr) {
+  $icons-settings: $icons-settings-dsfr;
+  @if $type == remix {
+    $icons-settings: $icons-settings-remix;
   }
   @each $icon, $setting in $icons-settings {
-    #{ns($base + '-' + $icon)} {
-      @include before(icon-glyph($icon, $deprecated));
-      @if is-deprecated($icon) {
-        @include before {
-          font-weight: 700;
-        }
-      }
+    #{ns(#{$base}-#{$icon})} {
+      @include icon-content($icon, before, true);
     }
   }
 }
 
-@function icon-glyph($icon, $deprecated: false, $is-ligature: false) {
-  $icon-settings: map-get($icons-settings, $icon);
-  @if is-deprecated($icon) or $deprecated {
-    $icon-settings: map-get($icons-settings-deprecated, $icon);
+@mixin generate-icons-legacy($base, $type: dsfr) {
+  $icons-settings: $icons-settings-dsfr;
+  @if $type == remix {
+    $icons-settings: $icons-settings-remix;
   }
-  @if $is-ligature {
-    @return '#{map-get($icon-settings, ligature)}';
-  }
-  @else {
-    @return '#{map-get($icon-settings, codepoint)}';
-  }
-}
-
-@function is-deprecated($icon) {
-  @return not map-has-key($icons-settings, $icon);
-}
-
-@function get-icons-settings-version($deprecated: false) {
-  @if $deprecated {
-    @return $icons-settings-deprecated;
-  }
-  @else {
-    @return $icons-settings;
-  }
-}
-
-@mixin icon-content($icon) {
-  content: icon-glyph($icon);
-
-  @if is-deprecated($icon) {
-    font-weight: 700;
-  }
-  @else {
-    font-weight: 400;
-  }
-}
-
-@function font-icon($size: md, $deprecated: false) {
-  $font-weight: normal;
-  @if $deprecated {
-    $font-weight: 700;
-  }
-  @return normal $font-weight normal #{icon-size($size)}/1 #{$namespace}-icon;
-}
-
-@mixin font-icon($size: md, $deprecated: false) {
-  font: font-icon($size, $deprecated);
-}
-
-@mixin icon($icon: null, $size: md, $pseudo: before) {
-  @include _pseudo($pseudo) {
-    @if $size != null {
-      $deprecated: is-deprecated($icon);
-      @include font-icon($size, $deprecated);
+  @each $icon, $setting in $icons-settings {
+    #{ns(#{$base}-#{$icon})} {
+      @include icon-content-legacy($icon, before, true);
     }
-
-    @if $icon != null {
-      @include icon-content($icon);
-    }
-
-    @content;
   }
 }

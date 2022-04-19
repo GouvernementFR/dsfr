@@ -1,14 +1,14 @@
 <%#
-# paramètres groupe de boutons
+# paramètres groupe de tags
 
-* tagsGroup.tags (array, required): paramètres spécifique de chaque bouton du groupe
+* tagsGroup.tags (array, required): paramètres spécifique de chaque tag du groupe
 
-* tagsGroup.size (string, optional) : définie la taille des boutons dans le groupe (default md)
+* tagsGroup.size (string, optional) : définie la taille des tags dans le groupe (default md)
   * sm : Tags taille sm
 
-* tagsGroup.classes (array, optionnal) : Classes suplémentaires sur le groupe de bouton
+* tagsGroup.classes (array, optionnal) : Classes suplémentaires sur le groupe de tags
 
-* tagsGroup.attributes (object, optionnal) : Attributs suplémentaires sur le groupe de boutons
+* tagsGroup.attributes (object, optionnal) : Attributs suplémentaires sur le groupe de tags
 
 #%>
 
@@ -31,7 +31,7 @@ switch(tagsGroup.size) {
 <ul <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
 <% for (let i = 0; i < tags.length; i++) { %>
   <li>
-    <%- include('./tag.ejs', {tag:{...tags[i]}}); %>
+    <%- include('./tag.ejs', { tag: tags[i] }); %>
   </li>
 <% } %>
 </ul>

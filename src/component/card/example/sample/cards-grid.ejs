@@ -1,0 +1,15 @@
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+    <%
+        const cards = locals.cards || [{}];
+        for (const card of cards) {
+           const col = card.col || { md: 4};
+           const colClasses = [`${prefix}-col-${col.start || 12}`];
+           for (const bp of ['sm', 'md', 'lg', 'xl']) if (col[bp]) colClasses.push(`${prefix}-col-${bp}-${col[bp]}`);
+           %>
+           <div <%- includeClasses(colClasses); %>>
+               <%- include('card-default', { card: card }); %>
+           </div>
+           <%
+        }
+    %>
+</div>

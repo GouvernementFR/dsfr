@@ -7,10 +7,17 @@
   /**
   * reset liste à puce
   */
-  #{ns(mega-menu)},
-  #{ns(menu)} {
-    &__list {
-      list-style: none;
+  #{ns(nav)} {
+    @include disable-underline-legacy;
+    @include disable-list-style-legacy;
+
+    &__link,
+    &__btn {
+      @include scheme-element-bg-transparent((legacy: true, hover: true));
+    }
+
+    &__btn {
+      @include icon-legacy(arrow-down-s-line, sm, after);
     }
   }
 
@@ -30,6 +37,8 @@
     * Correctif de l'alignement des menus sur la droite
     */
     #{ns(nav)}__item {
+      position: static;
+
       &--align-right {
         #{ns(collapse)} {
           transform: translateX(-100%);

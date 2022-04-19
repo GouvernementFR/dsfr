@@ -1,0 +1,29 @@
+////
+/// Core Legacy : Medias
+/// @group core
+////
+
+@include legacy(ie11) {
+  #{ns(responsive-img)} {
+    // @each $ratio, $value in $ratio-scale {
+    // &--#{$ratio} {
+    // position: relative;
+    // @include aspect-ratio-legacy($ratio, true);
+
+    // img, svg {
+    // @include absolute(0, 0, 0, 0, 100%, 100%);
+    // }
+    // }
+    // }
+  }
+
+  #{ns(responsive-vid)} {
+    @include aspect-ratio-legacy();
+
+    @each $ratio in (16x9 4x3 1x1) {
+      &--#{$ratio} {
+        @include aspect-ratio-legacy($ratio, true);
+      }
+    }
+  }
+}

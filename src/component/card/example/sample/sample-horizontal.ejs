@@ -1,0 +1,19 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte horizontale avec détails et tags', './card-default', { card : { img: true, horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:8}, desc: 'dans une grille sur 6 à 8 colonnes en version desktop'}); %>
+
+<%- sample('Carte horizontale sm avec détails et tags', './card-default', { card : { img: true, size: 'sm', horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] }}}, true, './card-layout', {col: {md:6}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Carte horizontale lg avec détails et tags', './card-default', { card : { img: true, size: 'lg', horizontal: true, content: { tags: true, details: ['icon', 'end-icon'] } }}, true, './card-layout', {col: {md:12}, desc: 'dans une grille sur 8 à 12 colonnes en version desktop'}); %>
+
+<%- sample('Carte horizontale avec zone d\'action, détails et tags', './card-default', { card : { img: true, horizontal: true, content: { tags: true, details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:8}}); %>
+
+<%- sample('Carte horizontale sm avec zone d\'action, détails et tags', './card-default', { card : { img: true, size: 'sm', horizontal: true, content: { tags: true, details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:6}}); %>
+
+<%- sample('Carte horizontale lg avec zone d\'action, détails et tags', './card-default', { card : { img: true, size: 'lg', horizontal: true, content: { tags: true, details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:12}}); %>
+
+<%- sample('Carte horizontale image proportion de moitié avec zone d\'action, détails et tags', './card-default', { card : { img: true, horizontal: 'half', content: { tags: true, details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:8}}); %>
+
+<%- sample('Carte horizontale image proportion du tiers moitié avec zone d\'action, détails et tags', './card-default', { card : { img: true, horizontal: 'tier', content: { tags: true, details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:8}}); %>
+
+<%- sample('Carte horizontale avec ratio d\'image particulier en mobile', './card-default', { card : { img: { ratio: '32x9' }, horizontal: true, content: { tags: true, details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:8}}); %>

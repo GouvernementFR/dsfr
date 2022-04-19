@@ -1,0 +1,14 @@
+////
+/// Input Legacy
+/// @group input
+////
+
+@include legacy(ie11) {
+  #{ns(input-wrap)} {
+    &--addon {
+      #{ns(btn)} {
+        flex-shrink: 0;
+      }
+    }
+  }
+}

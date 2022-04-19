@@ -8,8 +8,18 @@
   * Reset liste à puce
   */
   #{ns-group(accordions)} {
-    & > li {
-      list-style: none;
+    @include disable-list-style-legacy;
+  }
+
+  #{ns(accordion)} {
+    @include enable-list-style-legacy;
+
+    &__btn {
+      @include icon-legacy(add-line, sm);
+
+      &[aria-expanded="true"] {
+        @include icon-content-legacy(subtract-line);
+      }
     }
   }
 }

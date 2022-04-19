@@ -35,24 +35,34 @@ switch (content.size) {
         break;
 }
 
-let type = (content.img !== undefined || content.svg !== undefined) ? 'img' : 'vid';
+let type;
+switch (true) {
+    case content.img !== undefined:
+    case content.svg !== undefined:
+      type = 'img';
+      break;
 
-let tag;
+    case content.vid !== undefined:
+        type = 'vid';
+        break;
+}
+
+let markup;
 
 switch (type) {
     case 'img':
-        tag = 'figure';
+        markup = 'figure';
         attributes["role"] = "group";
         if (content.caption != undefined) attributes["aria-label"] = content.caption;
         break;
 
     case 'vid':
-        tag = 'div';
+        markup = 'div';
         break;
 }
 %>
 
-<<%= tag %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+<<%= markup %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
 <%
 switch(type) {
     case 'img':
@@ -67,4 +77,4 @@ switch(type) {
 }
 %>
 
-</<%= tag %>>
+</<%= markup %>>

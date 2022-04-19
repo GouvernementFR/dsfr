@@ -5,6 +5,13 @@
 
 #{ns(responsive-img)} {
   @include size(100%, auto);
+
+  @each $ratio, $value in $ratio-scale {
+    &--#{$ratio} {
+      @include aspect-ratio($ratio, true);
+      @include fit-cover-center;
+    }
+  }
 }
 
 #{ns(responsive-vid)} {
@@ -13,12 +20,10 @@
 
   @include aspect-ratio();
 
-  &--4x3 {
-    @include aspect-ratio(4x3, false);
-  }
-
-  &--1x1 {
-    @include aspect-ratio(1x1, false);
+  @each $ratio in (16x9 4x3 1x1) {
+    &--#{$ratio} {
+      @include aspect-ratio($ratio, true);
+    }
   }
 
   &__player, & > #{ns(consent-placeholder)} {
