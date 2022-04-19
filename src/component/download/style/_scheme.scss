@@ -7,7 +7,7 @@
   #{ns(download)} {
     &--card {
       @include scheme-element-bg-color(default grey, (legacy:$legacy));
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-out);
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-in);
 
       #{ns(download__link)} {
         @include scheme-element-text-color(title grey, (legacy:$legacy));
