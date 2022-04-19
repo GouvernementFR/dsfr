@@ -8,7 +8,7 @@
   * Correction largeur max du texte
   */
   #{ns(quote)} {
-    @include icon-legacy(chat-quote-line,lg);
+    @include icon-legacy(quote-line,lg);
 
     blockquote {
       max-width: 100%;

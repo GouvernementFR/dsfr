@@ -23,6 +23,8 @@ const generateStyle = (pck, file) => {
   }
   content += `@import '${pathToCore}media-query-order';\n`;
 
+  content += `@import '${pathToCore}core/style/path/path-${depthLevel}';\n`;
+
   for (const child of children) {
     content += `@import '${child.path.replace(ascendance, '')}/${file}';\n`;
   }
