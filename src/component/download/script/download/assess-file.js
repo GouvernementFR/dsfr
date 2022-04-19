@@ -48,7 +48,7 @@ class AssessFile extends api.core.Instance {
 
   getLang (elem) {
     if (elem.lang) return elem.lang;
-    if (document.documentElement === elem) return navigator.browserLanguage;
+    if (document.documentElement === elem) return window.navigator.browserLanguage;
     return this.getLang(elem.parentElement);
   }
 
