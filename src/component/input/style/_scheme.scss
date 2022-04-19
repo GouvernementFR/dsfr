@@ -43,6 +43,14 @@
       @include scheme-element-box-shadow-color((plain grey) (background contrast info), (legacy:$legacy), bottom-2-in all-in);
       @include _scheme-element(-webkit-text-fill-color, text, label grey, (legacy:$legacy));
     }
+
+    &[type=date] {
+      @include scheme-element-data-uri-svg(text title grey, (legacy: $legacy), $input-calendar-line);
+
+      @include disabled-form-field((legacy: $legacy)) {
+        @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
+      }
+    }
   }
 
   #{ns(input-wrap)} {

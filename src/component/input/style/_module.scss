@@ -27,9 +27,14 @@
 
   &[type=date] {
     min-height: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: space(calc(100% - 3v) 50%);
+    background-size: space(4v) space(4v);
 
     &::-webkit-calendar-picker-indicator {
-      display: none;
+      display: block;
+      @include margin-right(-1.5v);
+      opacity: 0;
     }
   }
 }
@@ -50,17 +55,6 @@
   &--addon {
     @include display-flex;
     @include size(100%);
-  }
-
-  &#{ns(icon-calendar-line)} {
-    > #{ns(input)}[type=date] {
-      &::-webkit-calendar-picker-indicator {
-        display: block;
-        @include margin-right(-8v);
-        z-index: z-index(over);
-        opacity: 0;
-      }
-    }
   }
 
   #{ns(input)} {
