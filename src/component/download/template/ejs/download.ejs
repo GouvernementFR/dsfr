@@ -21,15 +21,18 @@
 
 * download.classes (array, optional): Classes suplémentaires sur le composant
 
+* download.attributes (object, optional): Attributs suplémentaires sur le composant
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
 let download = locals.download || {};
-let classes = download.classes || [];
+const classes = download.classes || [];
+const attributes = download.attributes || {};
 const markup = download.markup || 'p';
 const href = download.href || '#';
-const assessAttrs = download.assess ? {'data-fr-assess-file':''} : {};
+const assessAttrs = download.assess ? {'data-fr-assess-file': typeof(download.assess) === 'string' ? download.assess : ''} : {};
 classes.push(`${prefix}-download`);
 
 if (download.downloadable !== false) assessAttrs.download = '';
@@ -43,7 +46,7 @@ switch (download.size) {
     break;
 }
 %>
-<div <%- includeClasses(classes) %>>
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
   <<%= markup %>>
     <a href="<%- href %>" <%- includeAttrs(assessAttrs) %> class="<%= prefix %>-download__link"><%- download.title %>
       <span class="<%= prefix %>-download__detail">

@@ -5,3 +5,4 @@ const sample = getSample(include);
 <%- sample('Lien de téléchargement remplissage automatique des détails', './download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false}}, true) %>
 <%- sample('Carte de téléchargement remplissage automatique des détails', './download-card', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false}}, true) %>
 <%- sample('Remplissage automatique des détails + langue différente', './download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: true, detail: false, lang: 'en'}}, true) %>
+<%- sample('Poids du fichier en Bytes', './download-default', {download: {href: relativeRoot + 'dist/favicon/favicon.ico', assess: 'bytes', title: 'Download file lorem ipsum', detail: false, attributes: {lang: 'en'}, lang: 'en'}}, true) %>

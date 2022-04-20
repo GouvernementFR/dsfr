@@ -7,7 +7,7 @@ class AssessFile extends api.core.Instance {
   }
 
   async init () {
-    this.lang = this.getLang(this.node).substring(0, 2).toLowerCase();
+    this.lang = this.getLang(this.node);
     this.href = this.getAttribute('href');
 
     this.hreflang = this.getAttribute('hreflang');
@@ -30,25 +30,30 @@ class AssessFile extends api.core.Instance {
 
   async update () {
     const length = await this.getFileLength();
+    let detail = '';
+    if (this.detail) {
+      if (this.href) {
+        const extension = this.parseExtension(this.href);
+        if (extension) detail += extension.toUpperCase();
+      }
 
-    if (this.href) {
-      const extension = this.parseExtension(this.href);
-      if (extension) this.detail.innerHTML = extension.toUpperCase();
+      if (length) {
+        detail += ' – ' + length;
+      }
+
+      if (this.hreflang) {
+        const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
+        const langName = displayNameLang.of(this.hreflang);
+        const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
+        detail += ' – ' + capitalizeLangName;
+      }
     }
-
-    this.detail.innerHTML += ' – ' + length;
-
-    if (this.hreflang) {
-      const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
-      const langName = displayNameLang.of(this.hreflang);
-      const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
-      this.detail.innerHTML += ' – ' + capitalizeLangName;
-    }
+    this.detail.innerHTML = detail;
   }
 
   getLang (elem) {
     if (elem.lang) return elem.lang;
-    if (document.documentElement === elem) return window.navigator.browserLanguage;
+    if (document.documentElement === elem) return window.navigator.language;
     return this.getLang(elem.parentElement);
   }
 
@@ -58,10 +63,10 @@ class AssessFile extends api.core.Instance {
   }
 
   bytesToSize (bytes) {
-    if (bytes === 0) return 'n/a';
+    if (bytes === 0) return null;
 
     let sizeUnits = ['octets', 'ko', 'Mo', 'Go', 'To'];
-    if (this.lang !== 'fr') {
+    if (this.getAttribute(api.internals.ns.attr('assess-file')) === 'bytes') {
       sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB'];
     }
 

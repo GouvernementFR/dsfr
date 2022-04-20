@@ -8,7 +8,6 @@
   @include set-title-margin(0);
   @include relative;
   @include padding-bottom(6v);
-  @include _nest-link($links-settings, md, right, arrow-down-s-line);
 
   &__link {
     @include padding(0);
