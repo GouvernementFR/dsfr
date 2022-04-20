@@ -5,16 +5,20 @@
 
 #{ns-group(downloads)} {
   &--bordered {
-    @include padding(8v 8v 2v);
+    @include padding(6v 6v 2v);
+    @include padding(8v 8v 2v, md);
   }
 
-  &--sm {
-    &#{ns-group(downloads)}--bordered {
-      @include padding(8v 9v 2v);
-    }
+  & > ul {
+    @include margin-y(0);
 
-    #{ns(download)} {
-      @include margin-bottom(4v);
+    & > li {
+      @include padding-bottom(0);
     }
+  }
+
+  #{ns(download)} {
+    @include margin-bottom(4v);
+    @include margin-bottom(6v, md);
   }
 }
