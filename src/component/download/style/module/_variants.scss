@@ -6,8 +6,8 @@
 #{ns(download)} {
   &--card {
     @include padding(8v 8v 20v 8v);
-    @include set-text-margin(0 0 0 0);
-    @include set-title-margin(0 0 3v 0);
+    @include set-text-margin(0);
+    @include set-title-margin(0);
 
     #{ns(download)}__link {
       @include margin(0 0 3v 0);

@@ -8,19 +8,13 @@
     @include padding(8v 8v 2v);
   }
 
-  ul > li {
-    @include padding-bottom(6v);
-  }
-
   &--sm {
-    &#{ns-group(downloads)} {
-      &--bordered {
-        @include padding(8v 9v 2v);
-      }
+    &#{ns-group(downloads)}--bordered {
+      @include padding(8v 9v 2v);
     }
 
-    ul > li {
-      @include padding-bottom(4v);
+    #{ns(download)} {
+      @include margin-bottom(4v);
     }
   }
 }

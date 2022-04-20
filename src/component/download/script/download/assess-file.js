@@ -47,8 +47,9 @@ class AssessFile extends api.core.Instance {
         const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
         detail += ' – ' + capitalizeLangName;
       }
+
+      this.detail.innerHTML = detail;
     }
-    this.detail.innerHTML = detail;
   }
 
   getLang (elem) {
@@ -58,7 +59,7 @@ class AssessFile extends api.core.Instance {
   }
 
   parseExtension (url) {
-    const regexExtension = /\.\w{3,4}($|\?)/;
+    const regexExtension = /\.(\w{1,9})(?:$|[?#])/;
     return url.match(regexExtension)[0].replace('.', '');
   }
 
