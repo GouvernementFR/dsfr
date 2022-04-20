@@ -32,7 +32,7 @@ const input = (path, file, standalone) => {
 
 const output = (pck, file, standalone) => {
   const append = file ? `.${file}` : '';
-  const filePath = root(`${standalone ? pck.standalone.dist : pck.dist}/${pck.id}${append}${standalone ? '.standalone' : ''}`);
+  const filePath = root(`${standalone ? pck.standalone.dist : pck.dist}/${pck.filename}${append}${standalone ? '.standalone' : ''}`);
   return filePath;
 };
 

@@ -74,10 +74,10 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
   let data = `import '${src}/main.js'\n`;
 
   if (pck.module) {
-    await process(data, dir, pck.id, false, false, map, standalone);
+    await process(data, dir, pck.filename, false, false, map, standalone);
 
     if (minify) {
-      await process(data, dir, pck.id, true, false, map, standalone);
+      await process(data, dir, pck.filename, true, false, map, standalone);
     }
   }
 

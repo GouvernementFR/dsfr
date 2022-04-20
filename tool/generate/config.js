@@ -51,14 +51,14 @@ const analyse = (id, path, ascendants = []) => {
       files = ['main'];
       files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
       config.style = { level: -1, files: files };
-      replace.style = [...children.map(child => child.replace.style).flat(), ...children.filter(child => child.style).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
+      replace.style = [...children.map(child => !child.detached ? child.replace.style : []).flat(), ...children.filter(child => child.style && !child.detached).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
     }
 
     if (children.some(child => child.script)) {
       files = ['main'];
       files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
       config.script = { level: -1, files: files };
-      replace.script = [...children.map(child => child.replace.script).flat(), ...children.filter(child => child.script).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
+      replace.script = [...children.map(child => !child.detached ? child.replace.script : []).flat(), ...children.filter(child => child.script && !child.detached).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
     }
   } else return null;
 
@@ -76,10 +76,15 @@ const analyse = (id, path, ascendants = []) => {
   config.module = data.module !== false;
   config.nomodule = data.nomodule !== false;
   config.detached = data.detached === true;
-  const example = data.example || {};
-  if (!example.style) example.style = [];
-  if (!example.script) example.script = [];
-  config.example = example;
+  config.filename = data.filename || data.id;
+
+  if (type === 'folder' || fs.existsSync(`${absolute}/example/index.ejs`)) {
+    const example = data.example || {};
+    if (!example.style) example.style = [];
+    if (!example.script) example.script = [];
+    config.example = example;
+  } else config.example = false;
+
   const dependencies = {
     style: [],
     script: []
