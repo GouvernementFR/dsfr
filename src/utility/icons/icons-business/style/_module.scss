@@ -1,0 +1,10 @@
+////
+/// Icon Business Module
+/// @group icons-business
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('business'));

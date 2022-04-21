@@ -1,0 +1,5 @@
+<%
+const sample = getSample(include);
+%>
+<%- section('Lien de téléchargment', 'L’attribut "download" permettant de télécharger directement le document, sans l’ouvrir, est optionnel. Ajouter un nom de fichier en valeur de cet attribut pour renommer le fichier avant de le télécharger. Mettre un attribut target=”_blank” pour ouvrir le document dans une nouvelle fenêtre.', 0) %>
+<%- sample('Lien de téléchargement seul', './download-default', {}, true) %>

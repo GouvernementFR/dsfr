@@ -1,0 +1,8 @@
+////
+/// Icon Development Legacy
+/// @group icons-development
+////
+
+@include legacy(ie11) {
+  @include generate-icons-legacy(filter-icons('development'));
+}

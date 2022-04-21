@@ -33,7 +33,7 @@ const mapShareButton = (data) => {
     case 'twitter':
     case 'linkedin':
       button.disabled = share.disabled;
-      button.tag = 'a';
+      button.markup = 'a';
       button.href = data.url;
       button.blank = true;
       button.rel = 'noopener';
@@ -41,13 +41,13 @@ const mapShareButton = (data) => {
       break;
 
     case 'mail':
-      button.tag = 'a';
+      button.markup = 'a';
       button.href = data.url;
       button.blank = true;
       break;
 
     case 'copy':
-      button.tag = 'button';
+      button.markup = 'button';
       button.onclick = data.onclick;
       break;
   }

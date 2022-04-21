@@ -3,70 +3,10 @@
 /// @group card
 ////
 
-#{ns(card)} {
-  @include display-flex(column-reverse);
-  @include relative();
-  @include set-text-margin(0 0 4v);
-  @include set-title-margin(0 0 2v);
-
-  #{ns(grid-row)} & {
-    @include size(null, 100%);
-  }
-
-  &:not(&--no-arrow) &__body {
-    @include icon(arrow-right-line, md, after) {
-      @include size(6v, 6v);
-      @include margin-top(auto);
-      @include margin-left(auto);
-    }
-  }
-
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
-
-  &__img {
-    @include relative(null, null, null, null, 100%, null);
-    @include aspect-ratio(16x9);
-    @include hover-brighten-filter;
-
-    img {
-      @include absolute(0, 0, 0, 0, 100%, 100%);
-      @include fit-cover-center;
-    }
-  }
-
-  @include body() {
-    @include display-flex(column);
-    flex: 1 1 auto;
-    @include padding(6v);
-  }
-
-  &__detail {
-    @include text-style(xs);
-    order: -1;
-  }
-
-  &__title {
-    @include title-style(h6);
-    @include font-weight(bold);
-  }
-
-  &__desc {
-    @include text-style(sm);
-  }
-
-  &__link {
-    @include size(100%);
-    @include margin-top(auto);
-  }
-
-  @include respond-from(md) {
-    &--horizontal {
-      flex-direction: row-reverse;
-    }
-
-    &--horizontal &__img {
-      @include max-width(41.666%);
-      flex: 1 0 auto;
-    }
-  }
-}
+@import 'module/card';
+@import 'module/header';
+@import 'module/content';
+@import 'module/footer';
+@import 'module/sm';
+@import 'module/lg';
+@import 'module/horizontal';

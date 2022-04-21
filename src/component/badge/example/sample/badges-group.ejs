@@ -1,0 +1,20 @@
+<%
+const badgesGroup = locals.badgesGroup || {}
+const badges = badgesGroup.badges || [];
+
+if (!badges.length && badgesGroup.groupCount !== undefined) {
+  for (let i = 0; i < badgesGroup.groupCount; i++) {
+    badges.push({
+      label: badgesGroup.label || 'Label badge ' + (i+1),
+      icon: badgesGroup.icon,
+      type: badgesGroup.type,
+      disabled: badgesGroup.disabled,
+      attributes: badgesGroup.badgeAttributes,
+      classes: badgesGroup.badgeClasses,
+    });
+  }
+  badgesGroup.badges = badges;
+}
+%>
+
+<%- include('../../template/ejs/badges-group.ejs', {badgesGroup: badgesGroup}) %>

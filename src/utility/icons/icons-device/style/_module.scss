@@ -1,0 +1,10 @@
+////
+/// Icon Device Module
+/// @group icons-device
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('device'));

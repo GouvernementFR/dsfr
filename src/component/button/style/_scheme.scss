@@ -5,7 +5,7 @@
 
 @mixin _button-scheme($legacy: false) {
   #{ns(btn)} {
-    @include scheme-element-bg-color(action-high blue-france, (legacy:$legacy));
+    @include scheme-element-bg-color(action-high blue-france, (legacy:$legacy, hover: true));
     @include scheme-element-text-color(inverted blue-france, (legacy:$legacy));
 
     @include disabled((legacy: $legacy, text: true, background: true, can-be-link: true));

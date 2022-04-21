@@ -18,9 +18,9 @@
     background-position: 0 0;
   }
 
-  @include icon(chat-quote-line,lg) {
+  @include icon(quote-line,lg) {
     display: block;
-    @include padding-bottom(2v);
+    @include margin-bottom(2v);
   }
 
   &--column {

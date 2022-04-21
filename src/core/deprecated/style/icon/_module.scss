@@ -1,0 +1,12 @@
+////
+/// Core Deprecated Module
+/// @group core
+////
+
+#{ns(fi)} {
+  @each $size, $value in $icon-size-map {
+    &--#{$size} {
+      @include icon-size($size);
+    }
+  }
+}

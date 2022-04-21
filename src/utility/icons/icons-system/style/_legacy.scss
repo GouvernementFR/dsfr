@@ -1,0 +1,8 @@
+////
+/// Icon System Legacy
+/// @group icons-system
+////
+
+@include legacy(ie11) {
+  @include generate-icons-legacy(filter-icons('system'));
+}

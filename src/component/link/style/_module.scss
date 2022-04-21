@@ -3,4 +3,5 @@
 /// @group link
 ////
 
-@include build-link();
+@import 'module/link';
+@import 'module/group';

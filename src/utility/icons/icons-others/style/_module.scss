@@ -1,0 +1,10 @@
+////
+/// Icon Others Module
+/// @group icons-others
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('others'));

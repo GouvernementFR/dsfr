@@ -14,7 +14,7 @@
 
 * connect.disabled (boolean, optional) : si valeur true, bouton désactivé
 
-* standalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
+* isStandalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -28,27 +28,28 @@ if (connect.id) connectAttrs.id = connect.id;
 
 connectClasses.push(prefix + '-connect');
 
-const login = (connect.lang && content.login[connect.lang]) ? content.login[connect.lang] : content.login.fr;
+const login = (connect.lang && content[`login-${connect.lang}`]) ? content[`login-${connect.lang}`].value : content['login-fr'].value;
 
-let brand = content.brand.default;
+let brand = content.brand.value;
 switch(connect.type) {
   case 'plus':
     connectClasses.push(prefix + '-connect--plus');
-    brand = content.brand.plus;
+    brand = content['brand-plus'].value;
   break;
 
   case 'agent':
     connectClasses.push(prefix + '-connect--agent');
-    brand = content.brand.agent;
+    brand = content['brand-agent'].value;
   break;
 }
 
 const linkAttributes = connect.link.attributes || {};
 
 linkAttributes.target = '_blank';
+linkAttributes.rel = 'noopener';
 linkAttributes.title = `${connect.link.label} - nouvelle fenêtre`;
 
-if (!locals.standalone) {
+if (!locals.isStandalone) {
 %>
 <div class="<%= prefix %>-connect-group">
 <% } %>
@@ -73,6 +74,6 @@ if (connect.disabled === true) connectAttrs.disabled = '';
   </p>
 <% } %>
 
-<% if (!locals.standalone) { %>
+<% if (!locals.isStandalone) { %>
 </div>
 <% } %>

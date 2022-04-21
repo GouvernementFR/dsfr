@@ -1,0 +1,10 @@
+////
+/// Icon Map Module
+/// @group icons-map
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('map'));

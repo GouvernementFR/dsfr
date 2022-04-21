@@ -105,6 +105,21 @@ const imgData = (src, alt, comment, style) => {
 
 locals.imgData = imgData;
 
+const vidData = (src, title, attributes) => {
+    const data = {
+        src: src || 'https://www.youtube.com/embed/HyirpmPL43I',
+        title: title || 'Titre de l\'iframe',
+        attributes: {
+            allow:'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
+            allowfullscreen:'',
+            ...attributes
+        }
+    };
+    return data;
+}
+
+locals.vidData = vidData;
+
 const randomContent = (id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;

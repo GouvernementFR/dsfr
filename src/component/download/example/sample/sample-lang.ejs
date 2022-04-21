@@ -1,0 +1,6 @@
+<%
+const sample = getSample(include);
+%>
+<%- section('Fichier d\'une autre langue', 'Si la langue du fichier à télécharger est différente de celle de la page courante, il est nécéssaire d\'ajouter l\'attribut hreflang avec comme valeur le code langue (ex: hreflang="en") sur le lien. L’attribut prend pour valeur le code langue selon la norme ISO 639-1 (<a href="https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1" target="_blank">Liste des codes ISO 639-1</a>). Il faut aussi ajouter le nom de la langue dans les détails (sauf remplissage automatique en js)', 0) %>
+<%- sample('Lien de téléchargement - langue étrangère', './download-default', {download: {lang: 'en'}}, true) %>
+<%- sample('Carte de téléchargement - langue étrangère', './download-card', {download: {lang: 'en'}}, true) %>

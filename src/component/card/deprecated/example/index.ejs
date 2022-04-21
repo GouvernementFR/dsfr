@@ -1,0 +1,15 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte verticale', './sample/card-default', {}, true); %>
+
+<%- sample('Carte verticale image', './sample/card-default', {card: { img: true }}, true); %>
+
+<%- sample('Carte verticale image', './sample/card-default', {card: { img: true, detail: false }}, true); %>
+
+<%- sample('Carte verticale image', './sample/card-default', {card: { img: true, enlarge: false }}, true); %>
+
+<%- sample('Carte verticale image', './sample/card-default', {card: { img: true, horizontal: true }}, true); %>
+
+<%- sample('Carte verticale image', './sample/card-default', {card: { img: true, detail: false, horizontal: true  }}, true); %>
+
+<%- sample('Carte verticale image', './sample/card-default', {card: { img: true, detail: false, horizontal: true, enlarge: false  }}, true); %>

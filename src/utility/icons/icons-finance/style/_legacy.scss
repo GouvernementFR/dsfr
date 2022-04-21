@@ -1,0 +1,8 @@
+////
+/// Icon Finance Legacy
+/// @group icons-finance
+////
+
+@include legacy(ie11) {
+  @include generate-icons-legacy(filter-icons('finance'));
+}

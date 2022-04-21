@@ -9,6 +9,8 @@
 
 ** accent (string, optional) : défini la couleur d'accentuation (type ne doit pas être défini)
 
+** markup (string, optional) : balise html du markup (default: p)
+
 ** classes (array, optional) : classes supplémentaires sur l'element
 
 ** attrs (object, optional) : Attributs supplémentaires sur l'element
@@ -17,16 +19,14 @@
 
 ** ellipsis (boolean, optional) [default: false] : Si true, ajoute un span ellipsis autour du label
 
-** group (boolean, optional) [default: false] : Si true, créé un groupe de badge
-
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
 let badge = locals.badge || {};
-if(!badge.classes) badge.classes = [];
-if(!badge.attrs) badge.attrs = {};
-
+if (!badge.classes) badge.classes = [];
+if (!badge.attrs) badge.attrs = {};
+const markup = badge.markup || 'p';
 badge.classes.push(prefix + '-badge');
 
 switch(badge.size) {
@@ -40,19 +40,9 @@ if (badge.type !== undefined) badge.classes.push(prefix + '-badge--' + badge.typ
 else if (badge.accent !== undefined) badge.classes.push(prefix + '-badge--' + badge.accent);
 
 if (badge.icon === false) badge.classes.push(prefix + '-badge--no-icon');
-else if (badge.icon !== undefined) badge.classes.push(prefix + '-fi-' + badge.icon);
+else if (badge.icon !== undefined) badge.classes.push(prefix + '-icon-' + badge.icon);
 
 if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
 %>
 
-<% if (badge.group) { %>
-<ul class="<%= prefix %>-badge-group">
-	<% for (let i = 0; i < 9; i++) { %>
-	<li>
-		<p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
-	</li>
-	<% } %>
-</ul>
-<% } else { %>
-<p <%- includeClasses(badge.classes)%>><%- badge.label %></p>
-<% } %>
+<<%= markup %> <%- includeClasses(badge.classes)%>><%- badge.label %></<%= markup %>>

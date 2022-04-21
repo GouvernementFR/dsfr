@@ -97,7 +97,7 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
           <div class="<%= prefix %>-modal__content">
             <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
               <% if (modal.icon !== undefined) { %>
-              <span class="<%= prefix %>-fi-<%= modal.icon %> <%= prefix %>-fi--lg" aria-hidden="true"></span>
+              <span class="<%= prefix %>-icon-<%= modal.icon %> <%= prefix %>-icon--lg" aria-hidden="true"></span>
               <% } %>
               <%= modal.title %>
             </h1>

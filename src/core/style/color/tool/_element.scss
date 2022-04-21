@@ -33,7 +33,7 @@ $ACCENT: none;
     #{$prop}: #{$result};
   }
 
-  @if $hover and $context == background and length($tokens) == 1 {
+  @if ($hover == true or ($hover == inherit and $legacy == false)) and ($context == background and length($tokens) == 1) {
     $nest-hover: null;
     $prop-hover: --hover;
     $result-hover: #{important(get-color(nth($tokens, 1), decision, (var: true, hover: true)), $important)};
@@ -73,7 +73,7 @@ $ACCENT: none;
 ///   - important {boolean}: si true, applique !important à la règle css
 @mixin scheme-element-bg-color($tokens, $options:()) {
   @if not map-has-key($options, hover) {
-    $options: map-merge($options, (hover: true));
+    $options: map-merge($options, (hover: inherit));
   }
   @include _scheme-element(background-color, background, $tokens, $options);
 }
@@ -87,20 +87,26 @@ $ACCENT: none;
   $legacy: map-get($options, legacy);
   $important: map-get($options, important);
   $hover: map-get($options, hover);
-
+  $tokens: normalise-tokens(default grey, background);
   $value: important(transparent, $important);
-
-  @if $important {
-    $value: #{$value} !important;
-  }
 
   @if $legacy {
     @include legacy(ie11) {
       background-color: transparent;
+
+      @if $hover {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
     }
   }
   @else {
-    background-color: transparent;
+    background-color: #{$value};
     @if $hover {
       --hover: inherit;
       --active: inherit;

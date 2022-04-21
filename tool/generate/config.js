@@ -34,22 +34,31 @@ const analyse = (id, path, ascendants = []) => {
       files.push(...['legacy'].filter(file => fs.existsSync(`${absolute}/${file}.js`)));
       config.script = { level: -1, files: files };
     }
+
+    if (fs.existsSync(`${absolute}/standalone/main.scss`)) {
+      config.standalone = { style: { files: ['main'] } };
+    }
+
+    if (fs.existsSync(`${absolute}/standalone/main.js`)) {
+      if (!config.standalone) config.standalone = {};
+      config.standalone.script = { files: ['main'] };
+    }
   } else if (fs.existsSync(`${absolute}/.folder.yml`)) {
     type = 'folder';
     children = parse(path, [...ascendants, id]);
 
     if (children.some(child => child.style)) {
       files = ['main'];
-      files.push(...['scheme', 'legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
+      files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
       config.style = { level: -1, files: files };
-      replace.style = [...children.map(child => child.replace.style).flat(), ...children.filter(child => child.style).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
+      replace.style = [...children.map(child => !child.detached ? child.replace.style : []).flat(), ...children.filter(child => child.style && !child.detached).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
     }
 
     if (children.some(child => child.script)) {
       files = ['main'];
       files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
       config.script = { level: -1, files: files };
-      replace.script = [...children.map(child => child.replace.script).flat(), ...children.filter(child => child.script).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
+      replace.script = [...children.map(child => !child.detached ? child.replace.script : []).flat(), ...children.filter(child => child.script && !child.detached).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
     }
   } else return null;
 
@@ -66,10 +75,16 @@ const analyse = (id, path, ascendants = []) => {
   config.prepend = data.prepend === true;
   config.module = data.module !== false;
   config.nomodule = data.nomodule !== false;
-  const example = data.example || {};
-  if (!example.style) example.style = [];
-  if (!example.script) example.script = [];
-  config.example = example;
+  config.detached = data.detached === true;
+  config.filename = data.filename || data.id;
+
+  if (type === 'folder' || fs.existsSync(`${absolute}/example/index.ejs`)) {
+    const example = data.example || {};
+    if (!example.style) example.style = [];
+    if (!example.script) example.script = [];
+    config.example = example;
+  } else config.example = false;
+
   const dependencies = {
     style: [],
     script: []
@@ -84,8 +99,22 @@ const analyse = (id, path, ascendants = []) => {
 
   config.dependencies = dependencies;
   config.replace = replace;
-  config.dist = data.dist ? data.dist : config.path.replace('src', 'dist');
+  config.dist = data.dist ? data.dist : config.path.replace('src', 'dist').replace(data.id, data.filename || data.id);
   config.example.file = `${config.path.replace('src', 'example')}/index.html`;
+  if (config.standalone) {
+    config.standalone.dist = `standalone/${config.id}`;
+    if (fs.existsSync(`${absolute}/content.json`)) {
+      config.standalone.content = {
+        file: `${config.path}/content.json`,
+        dest: `.config/subsets/${config.id}.scss`
+      };
+    }
+    config.standalone.example = {
+      src: `${config.path}/standalone/index.ejs`,
+      path: `${config.path}/example/index.ejs`,
+      dest: `standalone/${config.id}/index.html`
+    };
+  }
 
   if (children) config.children = children;
 
@@ -188,8 +217,7 @@ const generateJSON = () => {
 
 const generateConfig = async () => {
   generateCore();
-  await generateIcon('src/core/icon/deprecated', '-deprecated', 344);
-  await generateIcon('src/core/icon', '', 216);
+  await generateIcon('src/core/icon');
   generateJSON();
 };
 

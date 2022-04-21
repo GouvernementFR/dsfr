@@ -3,8 +3,12 @@
 /// @group core
 ////
 
+@import '../../core/style/path/path-2';
 @import 'index';
 @import 'style/scheme';
 @import 'style/legacy';
+
+// deprecated
+@import 'deprecated/style/legacy';
 
 @include _card-scheme(true);

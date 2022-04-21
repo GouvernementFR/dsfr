@@ -4,12 +4,65 @@
 ////
 
 @include legacy(ie11) {
-  /**
-  * Reset liste à puce
-  */
+  #{ns(btn)} {
+    @include icon-legacy(null, sm);
+
+    @include class-not-start-with(#{ns(btn--icon-, '')}) {
+      @include has-icon {
+        @include icon-legacy(null, md);
+      }
+    }
+
+    &--sm {
+      @include icon-legacy(null, xs);
+
+      @include class-not-start-with(#{ns(btn--icon-, '')}) {
+        @include has-icon {
+          @include icon-legacy(null, sm);
+        }
+      }
+    }
+
+    &--lg {
+      @include icon-legacy(null, md);
+
+      @include class-not-start-with(#{ns(btn--icon-, '')}) {
+        @include has-icon {
+          @include icon-legacy(null, lg);
+        }
+      }
+    }
+  }
+
+  #{ns(btn--close)} {
+    @include icon-legacy(close-line, sm);
+  }
+
+  #{ns(btn--display)} {
+    @include icon-legacy(theme-fill, sm);
+  }
+
   #{ns-group(btns)} {
-    & > li {
-      list-style: none;
+    @include disable-list-style-legacy(true);
+
+    &--sm {
+      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+        #{ns(btn)} {
+          @include has-icon {
+            @include icon-legacy(null, sm);
+          }
+        }
+      }
+    }
+
+    &--lg {
+      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+        #{ns(btn)} {
+          @include has-icon {
+            @include icon-legacy(null, lg);
+          }
+        }
+      }
     }
   }
 }

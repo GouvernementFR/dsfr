@@ -44,7 +44,7 @@ const buildExample = (pck) => {
 
   const up = pck.path.split('/').map(s => '../').join('');
 
-  const requiredStyle = ['core', 'scheme', 'link', 'accordion', 'form', 'radio', 'modal', 'button'];
+  const requiredStyle = ['core', 'scheme', 'link', 'accordion', 'form', 'radio', 'modal', 'button', 'utility'];
   const exampleStyle = pck.example.style.map(id => packages.filter(i => i.id === id)[0].usage.style).flat();
   const neededStyle = [...pck.usage.style, ...requiredStyle, ...exampleStyle].filter((id, index, array) => array.indexOf(id) === index);
 
@@ -91,6 +91,7 @@ const buildExample = (pck) => {
     files: files,
     relativeRoot: '../'.repeat(pck.path.split('/').length),
     root: root.toString(),
+    isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId
   };
@@ -102,4 +103,20 @@ const buildExample = (pck) => {
   log(38, pck.example.file);
 };
 
-module.exports = { buildExample };
+const buildStandaloneExample = (pck) => {
+  const page = fs.readFileSync(root(pck.standalone.example.src), {
+    encoding: 'utf8',
+    flag: 'r'
+  });
+  const html = ejs.render(page, {
+    path: root(pck.standalone.example.path),
+    root: root.toString(),
+    isStandalone: true
+  });
+  const beautified = beautify(html, beautyOpts);
+
+  createFile(pck.standalone.example.dest, beautified, true);
+  log(38, pck.standalone.example.dest);
+};
+
+module.exports = { buildExample, buildStandaloneExample };

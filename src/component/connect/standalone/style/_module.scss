@@ -3,8 +3,11 @@
 /// @group connect
 ////
 
-@import 'module/reset';
-@import 'module/typography';
-@import 'module/action';
-@import 'module/cursor';
-@import 'module/focus';
+#{ns(connect)} {
+  @include standalone-box-sizing;
+  @include standalone-font-face(connect, $connect-subset, regular bold);
+  @include a-reset(true);
+  @include btn-reset(true);
+  @include standalone-cursor(get-clickable-elements());
+  @include standalone-focus(get-clickable-elements());
+}

@@ -6,13 +6,13 @@
 #{ns(alert)} {
   @include relative();
   @include padding(4v 9v 3v 14v);
-  @include icon(null, md);
   @include set-title-margin(0 0 1v);
   @include set-text-margin(0 0 1v);
+  @include icon(null, md);
 
   @include before {
-    @include absolute(0, null, null, 0, null, 100%);
-    @include padding(4v 2v);
+    @include absolute(0, null, null, 0);
+    @include margin(4v 2v);
   }
 
   &__title {
@@ -29,26 +29,26 @@
   }
 
   &--info {
-    @include icon(info-fill, null);
+    @include icon-content(info-fill, before, false, '');
   }
 
   &--success {
-    @include icon(success-fill, null);
+    @include icon-content(success-fill, before, false, '');
   }
 
   &--error {
-    @include icon(error-fill, null);
+    @include icon-content(error-fill, before, false, '');
   }
 
   &--warning {
-    @include icon(warning-fill, null);
+    @include icon-content(warning-fill, before, false, '');
   }
 
   &--sm {
     @include padding(2v 9v 1v 12v);
 
     @include before {
-      @include padding(2v 2v);
+      @include margin(2v 2v);
     }
   }
 }

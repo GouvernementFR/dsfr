@@ -1,0 +1,10 @@
+////
+/// Icon Logo Module
+/// @group icons-logo
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('logo'));

@@ -1,0 +1,41 @@
+////
+/// Badge Legacy
+/// @group badge
+////
+
+@include legacy(ie11) {
+  #{ns(badge)} {
+    @include icon-legacy(null, sm);
+
+    &--sm {
+      @include icon-legacy(null, xs, before, false);
+    }
+
+    &,
+    &--sm {
+      &#{ns(badge)}--info {
+        @include icon-content-legacy(info-fill);
+      }
+
+      &#{ns(badge)}--success {
+        @include icon-content-legacy(success-fill);
+      }
+
+      &#{ns(badge)}--error {
+        @include icon-content-legacy(error-fill);
+      }
+
+      &#{ns(badge)}--warning {
+        @include icon-content-legacy(warning-fill);
+      }
+
+      &#{ns(badge)}--new {
+        @include icon-content-legacy(flashlight-fill);
+      }
+    }
+  }
+
+  #{ns(badges-group)} {
+    @include disable-list-style-legacy(true);
+  }
+}

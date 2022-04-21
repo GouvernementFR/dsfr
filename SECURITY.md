@@ -1,6 +1,6 @@
 ## Sécurité du Système de Design de l'État
 
-L’équipe derrière le Système de Design de l’Etat prend les risques liés à la sécurité très au sérieux. 
+L’équipe derrière le Système de Design de l’État prend les risques liés à la sécurité très au sérieux.
 C’est pour cette raison qu’un audit de sécurité à été réalisé sur l’ensemble des composants et des librairies avant la sortie ainsi que la mise en place de bonnes pratiques (double authentification, signature des paquets, etc.).
 
 ### Remonter un problème de sécurité

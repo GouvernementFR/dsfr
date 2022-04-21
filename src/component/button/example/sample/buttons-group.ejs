@@ -27,7 +27,7 @@ if (!buttons.length && buttonsGroup.groupCount !== undefined) {
       title: buttonsGroup.iconPlace === 'only' ? locals.contentPlaceholder(lbl) : undefined,
       type: buttonsGroup.type,
       disabled: buttonsGroup.disabled,
-      tag: buttonsGroup.tag,
+      markup: buttonsGroup.markup,
       kind: i > 0 || !buttonsGroup.hierarchy ? 2 : 1
     });
   }

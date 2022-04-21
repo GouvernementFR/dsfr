@@ -1,0 +1,11 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte verticale avec zone d\'action', './card-default', { card : { img: true, footer: {buttons: true} }}, true, './card-layout', {col: {md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Carte verticale avec zone d\'action boutons', './card-default', { card : { img: true, content: { details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale sm avec zone d\'action boutons', './card-default', { card : { img: true, size: 'sm', content: { details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:3}}); %>
+
+<%- sample('Carte verticale lg avec zone d\'action boutons', './card-default', { card : { img: true, size: 'lg', content: { details: ['icon'] }, footer: {buttons: true} }}, true, './card-layout', {col: {md:6}}); %>
+
+<%- sample('Carte verticale avec zone d\'action liens', './card-default', { card : { img: true, content: { details: ['icon'] }, footer: { links: true } }}, true, './card-layout', {col: {md:4}}); %>

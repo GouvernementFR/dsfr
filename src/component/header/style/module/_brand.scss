@@ -75,5 +75,10 @@
 
   &-title {
     @include title-style(h6, false);
+
+    #{ns(badge)} {
+      vertical-align: middle;
+      @include margin(-1v 0 0 1v);
+    }
   }
 }

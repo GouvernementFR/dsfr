@@ -1,0 +1,37 @@
+<% const sample = getSample(include); %>
+
+<%
+const cardH = { img: true, horizontal: true, col: {md:'8'}};
+%>
+<%- sample('Grilles de cartes horizontales', './cards-grid', { cards : [
+        { ...cardH, content: { tags: true}},
+        { ...cardH, content: { badges: true }},
+        { ...cardH, content: { details: ['icon']}},
+        { ...cardH, content: { details: ['end-icon']}},
+        { ...cardH, footer: {buttons: true}},
+        { ...cardH, footer: {links: true}}
+    ]}, true, './cards-layout'); %>
+
+<%
+const cardHSm = { img: true, horizontal: true, size:'sm', col: { md:'6'}};
+%>
+<%- sample('Grilles de cartes horizontales sm', './cards-grid', { cards : [
+        { ...cardHSm, content: { tags: true}},
+        { ...cardHSm, content: { badges: true }},
+        { ...cardHSm, content: { details: ['icon']}},
+        { ...cardHSm, content: { details: ['end-icon']}},
+        { ...cardHSm, footer: {buttons: true}},
+        { ...cardHSm, footer: {links: true}}
+    ]}, true, './cards-layout'); %>
+
+<%
+const cardHLg = { img: true, horizontal: true, size:'lg', col: { md:'12'}};
+%>
+<%- sample('Grilles de cartes horizontales lg', './cards-grid', { cards : [
+        { ...cardHLg, content: { tags: true}},
+        { ...cardHLg, content: { badges: true }},
+        { ...cardHLg, content: { details: ['icon']}},
+        { ...cardHLg, content: { details: ['end-icon']}},
+        { ...cardHLg, footer: {buttons: true}},
+        { ...cardHLg, footer: {links: true}}
+    ]}, true, './cards-layout'); %>

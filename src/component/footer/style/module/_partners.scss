@@ -25,7 +25,7 @@
    */
   #{ns(footer__logo)} {
     @include size(auto, auto);
-    @include margin(1v);
+    @include padding(1v);
   }
 
   + #{ns(footer__bottom)} {
@@ -34,8 +34,8 @@
 }
 
 &__partners-title {
+  @include set-title-margin(0 0 2v 0);
   @include text-style(sm);
-  @include margin(0);
   flex-basis: 100%;
   text-align: center;
 
@@ -49,11 +49,11 @@
  */
 &__partners-logos {
   @include display-flex(column, null, null, wrap);
-  @include margin(1v 0 -1v 0);
+  @include margin(0 0 -2v 0);
 
   @include respond-from(sm) {
     @include display-flex(row, flex-start, flex-start);
-    @include margin(1v 0 -1v -1v);
+    @include margin-right(-2v);
     @include before('', block) {
       order: 2;
       flex: 1;
@@ -61,8 +61,8 @@
   }
 
   @include respond-from(md) {
+    @include margin-right(-4v);
     flex-wrap: nowrap;
-    @include margin(1v -3v -1v -1v);
   }
 }
 
@@ -72,19 +72,20 @@
 &__partners-main {
   @include display-flex(row,null,center);
   @include margin-x(auto);
-  @include margin-bottom(2v);
+  @include margin-bottom(8v);
+  @include margin-bottom(4v, sm);
 
   + #{ns(footer__partners-sub)} {
+    & > ul > li {
+      @include margin(0 2v 0 2v, sm);
+      @include margin(0 4v 0 4v, md);
+    }
 
     @include respond-from(md) {
       & > ul {
         justify-content: flex-end;
-
-        & > li {
-          @include margin(0 2v 0 0);
-        }
       }
-      @include padding-left(8v);
+      @include padding-left(4v);
       @include padding-top(0);
     }
   }
@@ -114,6 +115,7 @@
    */
   #{ns(footer)}__partners-link {
     @include scheme-element-no-box-shadow;
+    @include margin-bottom(2v);
   }
 
   @include respond-from(sm) {

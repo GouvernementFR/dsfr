@@ -28,7 +28,7 @@
         + label {
           @include before {
             @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
-            @include scheme-element-text-color(inverted grey, (legacy:$legacy));
+            @include scheme-element-data-uri-svg(inverted grey, (legacy: $legacy), $checkbox-svg);
           }
         }
       }
@@ -47,6 +47,7 @@
           & + label {
             @include before {
               @include disabled-colors((legacy: $legacy, text: true, background: true));
+              @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $checkbox-svg);
             }
           }
         }

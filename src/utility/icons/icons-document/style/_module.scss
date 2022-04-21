@@ -1,0 +1,10 @@
+////
+/// Icon Document Module
+/// @group icons-document
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('document'));

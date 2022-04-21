@@ -1,0 +1,10 @@
+////
+/// Icon User Module
+/// @group icons-user
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('user'));

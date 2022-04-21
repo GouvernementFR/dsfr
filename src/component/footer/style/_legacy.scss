@@ -8,10 +8,10 @@
   * Reset liste à puce
   */
   #{ns(footer)} {
-    &__content-item,
-    &__top-list > li,
-    &__partners-sub ul > li {
-      list-style: none;
+    @include disable-list-style-legacy;
+
+    &__content-desc {
+      @include enable-underline-legacy;
     }
   }
 }

@@ -11,7 +11,7 @@
 <%- sample('Tag cliquable SM', './sample/tag-clickable', {tag:{size:'sm'}}, true); %>
 <%- sample('Tag cliquable accentué', './sample/tag-clickable', {tag:{accent: 'green-emeraude'}}, true); %>
 <%- sample('Tag cliquable désactivé', './sample/tag-clickable', {tag:{disabled:true}}, true); %>
-<%- sample('Tag bouton cliquable désactivé', './sample/tag-clickable', {tag:{tag: 'button', disabled:true}}, true); %>
+<%- sample('Tag bouton cliquable désactivé', './sample/tag-clickable', {tag:{markup: 'button', disabled:true}}, true); %>
 <%- sample('Tag cliquable désactivé SM', './sample/tag-clickable', {tag:{size:'sm', disabled:true}}, true); %>
 
 <%- section('Tag sélectionnable', 'Le tag sélectionnable n\'autorise pas l\'accentuation.') %>
@@ -25,7 +25,7 @@
 <%- sample('Tag supprimable taille sm', './sample/tag-dismissable', {tag:{size:'sm'}}, true); %>
 <%- sample('Tag supprimable désactivé', './sample/tag-dismissable', {tag:{disabled:true}}, true); %>
 
-<%- section('Groupes de tags', 'Lorsque que l\'on a plus d\'un tag, il convient d\'utiliser un groupe de tag. <br>La taille de tous les tags peut être définie au niveau du groupe.') %>
+<%- section('Groupe de tags', 'Lorsque que l\'on a plus d\'un tag, il convient d\'utiliser un groupe de tags. <br>La taille de tous les tags peut être définie au niveau du groupe.') %>
 <%- sample('Groupe de tags non cliquables', './sample/tags-group', {tagsGroup:{groupCount: 9}}, true); %>
 <%- sample('Groupe de tags non cliquables SM', './sample/tags-group', {tagsGroup:{size: 'sm', groupCount: 9}}, true); %>
 <%- sample('Groupe de tags cliquables', './sample/tags-group', {tagsGroup:{type:'clickable', groupCount: 9}}, true); %>

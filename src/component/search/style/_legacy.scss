@@ -1,0 +1,12 @@
+////
+/// Search Legacy
+/// @group search
+////
+
+@include legacy(ie11) {
+  #{ns(search-bar)} {
+    #{ns(btn)} {
+      @include icon-legacy(search-line, md);
+    }
+  }
+}

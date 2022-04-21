@@ -1,0 +1,5 @@
+<%
+const sample = getSample(include);
+%>
+<%- section('Carte de téléchargement', 'Le modificateur "--card" sur un download ou un groupe de download permet d\'appliquer le style des carte. Il permet aussi d\'ajouter un texte de description (facultatif).', 0) %>
+<%- sample('Carte de téléchargement', './download-card', {}, true, '../layout', {col: {md:6}, desc: 'dans une grille de 6 colonnes en version desktop'}) %>

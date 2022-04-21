@@ -7,7 +7,7 @@
   #{ns(content-media)} {
     &__transcription {
       #{ns(btn)} {
-        @include btn-kind-scheme(4);
+        @include btn-kind-scheme(4, $legacy);
       }
     }
   }

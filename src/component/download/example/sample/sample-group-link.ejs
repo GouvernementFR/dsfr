@@ -1,0 +1,5 @@
+<%
+const sample = getSample(include);
+%>
+<%- sample('Groupe de liens de téléchargement', './download-group', {downloadsGroup: {groupCount: 3, enlarge: false}}, true) %>
+<%- sample('Groupe de liens de téléchargement avec bordure', './download-group', {downloadsGroup: {groupCount: 3, title: "Titre facultatif", bordered: true, enlarge: false}}, true, '../layout', {col: {md:6}, desc: 'dans une grille, sur 3 à 8 colonnes en version desktop'}) %>

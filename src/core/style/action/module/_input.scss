@@ -16,3 +16,11 @@ textarea {
   background-color: transparent;
   margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
 }
+
+// Fix for NVDA
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
+}

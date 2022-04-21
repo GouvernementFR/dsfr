@@ -32,6 +32,9 @@ switch (typeof header.service) {
         break;
 }
 
+// copie la valeur de header.beta dans brand.service.beta
+(brand.service != undefined) ? brand.service.beta = header.beta === true || undefined : brand.service = {beta: header.beta === true || undefined};
+
 if (header.links !== undefined || header.search) {
     hasNavbar = true;
     const tools = {};
@@ -45,19 +48,19 @@ if (header.links !== undefined || header.search) {
                     icon: 'add-circle-line',
                     url: '#',
                     label: 'Créer un espace',
-                    tag: 'a'
+                    markup: 'a'
                 },
                 {
                     icon: 'lock-line',
                     url: '#',
                     label: 'Se connecter',
-                    tag: 'a'
+                    markup: 'a'
                 },
                 {
                     icon: 'account-line',
                     url: '#',
                     label: 'S’enregistrer',
-                    tag: 'a'
+                    markup: 'a'
                 }
             ]
         };

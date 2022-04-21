@@ -1,5 +1,12 @@
 <% const sample = getSample(include); %>
-<%- sample('Responsives img', './sample/img.ejs', {}, true); %>
-<%- sample('Responsives videos default 16x9', './sample/vid.ejs', {}, true); %>
-<%- sample('esponsives videos ratio d\'aspect 4x3', './sample/vid--4x3.ejs', {}, true); %>
-<%- sample('esponsives videos ratio d\'aspect 1x1', './sample/vid--1x1.ejs', {}, true); %>
+<%- sample('Image responsive', './sample/img.ejs', {}, true); %>
+
+<% for (const ratio of ['32x9', '16x9', '3x2', '4x3', '1x1', '3x4', '2x3']) { %>
+<%- sample(`Image responsive avec ratio d'aspect ${ratio}`, './sample/img.ejs', { media: {ratio: ratio}}, true); %>
+<% } %>
+
+<%- sample('Vidéo responsive avec ratio d\'aspect 16x9 par défaut', './sample/vid.ejs', {}, true); %>
+
+<% for (const ratio of ['4x3', '1x1']) { %>
+<%- sample(`Vidéo responsive avec ratio d'aspect ${ratio}`, './sample/vid.ejs', { media: {ratio: ratio}}, true); %>
+<% } %>

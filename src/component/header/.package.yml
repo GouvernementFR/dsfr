@@ -10,6 +10,7 @@ style:
   - navigation
   - modal
   - search
+  - badge
 script:
   - core
   - navigation

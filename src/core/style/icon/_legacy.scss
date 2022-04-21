@@ -1,0 +1,18 @@
+////
+/// Core Legacy : Icon
+/// @group core
+////
+
+@include legacy(ie11) {
+  @include has-icon {
+    @include icon-legacy(null, md, before);
+  }
+
+  #{ns(icon)} {
+    @each $size, $value in $icon-size-map {
+      &--#{$size} {
+        @include icon-legacy(null, $size, before, false);
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ const { buildStyles } = require('./styles');
 const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
 const { concatenate } = require('../generate/concatenate');
-const { copyImages, copyAssets } = require('./copy');
+const { copyImages, copyIcons, copyAssets } = require('./copy');
 const { getPackages } = require('../utilities/config');
 const global = require('../../package.json');
 const log = require('../utilities/log');
@@ -19,6 +19,7 @@ const build = async (settings) => {
     clean();
     await generateConfig();
     copyImages();
+    copyIcons();
     copyAssets();
   }
 
@@ -64,7 +65,7 @@ const build = async (settings) => {
     log.section('examples', true);
 
     for (const pck of packages) {
-      if (pck.draft) continue;
+      if (pck.draft || !pck.example) continue;
       try {
         await buildExample(pck);
       } catch (e) {

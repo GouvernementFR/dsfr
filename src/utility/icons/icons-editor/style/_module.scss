@@ -1,0 +1,10 @@
+////
+/// Icon Editor Module
+/// @group icons-editor
+////
+
+@include has-icon {
+  @include before('');
+}
+
+@include generate-icons(filter-icons('editor'));

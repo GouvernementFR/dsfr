@@ -12,4 +12,12 @@
       max-width: 100%;
     }
   }
+
+  #{ns(error-text)} {
+    @include icon-legacy(error-fill, sm);
+  }
+
+  #{ns(valid-text)} {
+    @include icon-legacy(success-fill, sm);
+  }
 }

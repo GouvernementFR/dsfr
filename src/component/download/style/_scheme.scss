@@ -1,0 +1,35 @@
+////
+/// Download Module
+/// @group download
+////
+
+@mixin _download-scheme($legacy: false) {
+  #{ns(download)} {
+    &--card {
+      @include scheme-element-bg-color(default grey, (legacy:$legacy));
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-in);
+
+      #{ns(download__link)} {
+        @include scheme-element-text-color(title grey, (legacy:$legacy));
+
+        @include after {
+          @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+        }
+      }
+    }
+
+    &__link {
+      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+    }
+
+    &__detail {
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
+    }
+  }
+
+  #{ns-group(downloads)} {
+    &--bordered {
+      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-in);
+    }
+  }
+}
