@@ -58,13 +58,13 @@
       }
     }
   }
-}
 
-@include clickable-selector {
-  #{ns(tag)} {
-    // empeche le hover du tag pressable sur ie
-    @include pressed-selector(true) {
-      @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% space(1v), transparent space(2.3125v), $COLOR space(2.5v)) ));
+  @include clickable-selector {
+    #{ns(tag)} {
+      // empeche le hover du tag pressable sur ie
+      @include pressed-selector(true) {
+        @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% space(1v), transparent space(2.3125v), $COLOR space(2.5v)) ));
+      }
     }
   }
 }
