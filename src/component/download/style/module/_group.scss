@@ -4,6 +4,11 @@
 ////
 
 #{ns-group(downloads)} {
+  &__title {
+    @include title-style(h4);
+    @include margin(var(--title-spacing));
+  }
+
   &--bordered {
     @include padding(6v 6v 2v);
     @include padding(8v 8v 2v, md);

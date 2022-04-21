@@ -4,14 +4,11 @@
 ////
 
 #{ns(download)} {
+  @include set-text-margin(0);
+  @include set-title-margin(0);
   @include relative;
   @include padding-bottom(6v);
-  @include margin(var(--text-spacing));
-
-  & > * {
-    @include set-text-margin(0);
-    @include set-title-margin(0);
-  }
+  @include margin(0 0 4v 0);
 
   &__link {
     @include padding(0);

@@ -36,7 +36,7 @@ switch (downloadsGroup.size) {
 
 <div <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
   <% if (downloadsGroup.title) { %>
-    <h4><%- downloadsGroup.title %></h4>
+    <p class="<%= prefix %>-downloads-group__title"><%- downloadsGroup.title %></p>
   <% } %>
   <ul>
     <% for (let i = 0; i < downloads.length; i++) { %>
