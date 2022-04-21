@@ -3,4 +3,8 @@
 /// @group icons-communication
 ////
 
+@include has-icon {
+  @include before('');
+}
+
 @include generate-icons(filter-icons('communication'));

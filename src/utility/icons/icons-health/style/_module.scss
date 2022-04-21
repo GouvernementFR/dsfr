@@ -3,4 +3,8 @@
 /// @group icons-health
 ////
 
+@include has-icon {
+  @include before('');
+}
+
 @include generate-icons(filter-icons('health'));
