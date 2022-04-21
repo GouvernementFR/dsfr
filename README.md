@@ -12,7 +12,7 @@ Il est possible de télécharger l'ensemble du **DSFR** au format zip ci-dessous
 [Fichiers statiques](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019574/D+veloppeurs#Fichiers-statiques)
 
 ### NPM
-Le **DSFR** est disponible sur NPM via un ensemble de packages qu'il est possible d'ajouter directement à votre projet. Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org), et d'avoir un fichier **package.json** à la racine de votre projet. (Il est possible d'en créer un directement via la commande ```npm init```).
+Le **DSFR** est disponible sur NPM via un ensemble de packages qu'il est possible d'ajouter directement à votre projet. Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org), et d'avoir un fichier **package.json** à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).
 
 Une fois en place, il suffit d'installer le package **@gouvfr/dsfr** contenant l’ensemble des composants:
 
@@ -48,13 +48,15 @@ Une structure minimale serait :
 
 ```
 / Racine du projet
-└── font
-└── dsfr
-  └── dsfr.min.css
-  └── dsfr.module.min.js
-  └── dsfr.nomodule.min.js
-└── favicon
 └── index.html
+└── dsfr.min.css
+└── dsfr.module.min.js
+└── dsfr.nomodule.min.js
+└── favicon
+└── font
+└── icons
+└── utility
+  └── icons
 ```
 Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spectral, sont des fichiers .woff et .woff2, ils doivent se trouver dans le répertoire font. Ce dossier doit être placé au même niveau que le dossier contenant le CSS du core dsfr ('dsfr' dans notre exemple puisque dsfr.min.css contient le core)
 
@@ -70,7 +72,8 @@ Consulter la [documentation des paramètres d’affichage](https://gouvfr.atlass
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="dsfr/dsfr.min.css">
+    <link rel="stylesheet" href="dsfr.min.css">
+    <link rel="stylesheet" href="utility/utility.min.css">
 
     <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
@@ -89,23 +92,23 @@ Consulter la [documentation des paramètres d’affichage](https://gouvfr.atlass
      -->
 
     <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
-    <script type="module" src="dsfr/dsfr.module.min.js"></script>
-    <script type="text/javascript" nomodule src="dsfr/dsfr.nomodule.min.js"></script>
+    <script type="module" src="dsfr.module.min.js"></script>
+    <script type="text/javascript" nomodule src="dsfr.nomodule.min.js"></script>
   </body>
 </html>
 ```
 
 **Les CSS**
 
-Afin d’inclure la totalité des composants et des styles du DS, il est nécessaire d’inclure la feuille de style ```dist/dsfr/dsfr.min.css```.
+Afin d’inclure la totalité des composants et des styles du DS, il est nécessaire d’inclure la feuille de style `dist/dsfr.min.css`. Les classes utilitaires, notamment les icônes, sont disponibles dans un fichier à part dans `dist/utility/utility.scss`.
 
-Il est aussi possible d’importer uniquement ce que l’on souhaite utiliser. En effet, pour ajouter un composant seul il suffit d’importer son CSS ainsi que celui de chacune des dépendances de ce composant. Ces dépendances sont listés dans le ```README.md``` de chaque package.
+Il est aussi possible d’importer uniquement ce que l’on souhaite utiliser. En effet, pour ajouter un composant seul il suffit d’importer son CSS ainsi que celui de chacune des dépendances de ce composant. Ces dépendances sont listés dans le `README.md` de chaque package.
 
 
 
 **Le Javascript**
 
-L’ensemble du code javascript nécessaire au bon fonctionnement du DS se trouve dans deux fichiers ```dist/dsfr/dsfr.module.min.js``` et ```dist/dsfr/dsfr.nomodule.min.js```.
+L’ensemble du code javascript nécessaire au bon fonctionnement du DS se trouve dans deux fichiers `dist/dsfr.module.min.js` et `dist/dsfr.nomodule.min.js`.
 
 De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
 
@@ -115,15 +118,24 @@ Le fichier dsfr.nomodule.min.js est utilisé par les anciens navigateurs ne supp
 Il est **impératif** d’appeler les **deux fichiers** javascript afin que le code s’exécute correctement sur l’ensemble des navigateurs supportés :
 
 ```html
-    <script type="module" src="dsfr/dsfr.module.min.js"></script>
-    <script type="text/javascript" nomodule src="dsfr/dsfr.nomodule.min.js"></script>
+    <script type="module" src="dsfr.module.min.js"></script>
+    <script type="text/javascript" nomodule src="dsfr.nomodule.min.js"></script>
   </body>
 </html>
 ```
 
+### Icônes
+Les icônes sont stockées dans `dist/icons` et classées par catégories.
+Le design système utilise principalement des icônes de la librairie remixIcon. Il existe aussi des icônes personnalisées, celles-ci sont préfixée par “fr--”.
+
+Afin d’utiliser ces icônes, des classes utilitaires CSS sont associés à chaque icône. Par ex. : `fr-icon-error-fill`
+Ces classes sont disponible dans `utility` qui importe `dist/utility/icons/icons.css`.
+Il est aussi possible d’importer uniquement certaines catégories d’icônes afin d’optimiser le poids. Par ex. :  `dist/utility/icons/system/system.css` pour les icônes “system”.
+
+Pour plus d’informations : [Voir la documentation des icônes](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396).
+
 ### Favicon
 [La documentation des favicons](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/577930274) détaille la façon de les implémenter dans vos pages.
-
 
 ## Fonctionnement
 

@@ -284,9 +284,10 @@ La pull request doit être faite depuis la branche de votre fork vers la branche
 
 
 ## Compilation
-La compilation des sources permet de créer un dossier `dist`, `exemple` et `.config` à la racine du projet. Le dossier `dist` contient les fichiers CSS et JS compilés, ainsi que les favicons et l'ensemble des fonts utilisées au sein du DSFR.
+La compilation des sources permet de créer un dossier `dist`, `exemple` et `.config` à la racine du projet. Le dossier `dist` contient les fichiers CSS et JS compilés, ainsi que les favicons et l'ensemble des fonts et icônes utilisées au sein du DSFR.
 
-Le dossier `.config` contient les variables générales JS et SCSS ainsi que la configuration nécessaire au build. Plus particulièrement le fichier `config.json` répertorie toute l’arborescence de src, les dépendances et leur ordre qu’il récupère depuis les fichiers `package.yml` de chaque package et `folder.yml` pour les dossier (src, component, page, pattern)
+Le dossier `.config` contient les variables générales JS et SCSS ainsi que la configuration nécessaire au build. Plus particulièrement, le fichier `config.json` répertorie toute l’arborescence de src, les dépendances et leur ordre qu’il récupère depuis les fichiers `package.yml` de chaque package et `folder.yml` pour les dossier (src, component, page, pattern).
+Le fichier `icon.scss` défini les variables d'icônes pour la génération des classes utilitaires.
 
 Le dossier `example` contient les exemples HTML générés depuis les samples ejs. L'ordre des imports css et js est défini par l'ordre des dépendances dans le `package.yml`.
 
@@ -308,12 +309,19 @@ Pour voir les différents paramètres disponibles : `yarn build --help`
 ## Autres commandes
 
 ### Icônes
-La gestion des icônes se fait à l'aide d'une webfont, chargée directement via CSS en base64. Celle-ci est générée automatiquement à partir des fichiers `.svg` se trouvant dans le dossier `src/core/icon/svg/`. Il est donc possible d'ajouter des icônes, en ajoutant des fichiers `.svg` à ce dossier, et en relançant le build :
+Les icônes, placées dans le répertoire `src/core/icon/`, sont exportées à la compilation dans dist/icons et des classes utilitaires CSS sont créées dans dist/utility/icons.
+Il est possible d'ajouter des icônes, en ajoutant des fichiers `.svg` dans `src/core/icon`, et en relançant le build :
 
 ```
 yarn build --clean
 ```
 
+NB : Un fichier icon.scss (et icon.json) est généré dans .config à la compilation.
+Il définit pour chaque icône :
+- son nom, défini par le nom de l’icone
+- sa catégorie, défini par son dossier
+- sa famille (dsfr ou remix), par défaut remix, dsfr si le nom de l’icone est préfixé par “fr--”
+- son chemin d’accès
 ### Sassdoc
 Des commentaires spéciaux sont utilisés sur l'ensemble des fichier `scss`, afin de permettre la génération d'une [Sassdoc](http://sassdoc.com/) automatiquement, documentant l'ensemble des `mixins` et `functions` utilisés sur le DSFR :
 
