@@ -6,7 +6,7 @@ class AssessFile extends api.core.Instance {
     return 'AssessFile';
   }
 
-  async init () {
+  init () {
     this.lang = this.getLang(this.node);
     this.href = this.getAttribute('href');
 
@@ -16,29 +16,39 @@ class AssessFile extends api.core.Instance {
     this.update();
   }
 
-  async getFileLength () {
-    if (this.href === undefined) return null;
-    const response = await fetch(this.href, { method: 'HEAD', mode: 'cors' });
-    const length = response.headers.get('content-length');
-    if (!length) {
-      console.warn('Impossible de détecter le poids du fichier ' + this.href + '\nErreur de récupération de l\'en-tête HTTP : "content-length"');
-      return null;
+  getFileLength () {
+    if (this.href === undefined) {
+      this.length = -1;
+      return;
     }
 
-    return this.bytesToSize(length);
+    fetch(this.href, { method: 'HEAD', mode: 'cors' }).then(response => {
+      const length = response.headers.get('content-length');
+      if (length) {
+        this.length = length;
+        this.update();
+      } else {
+        console.warn('Impossible de détecter le poids du fichier ' + this.href + '\nErreur de récupération de l\'en-tête HTTP : "content-length"');
+        this.length = -1;
+      }
+    });
   }
 
-  async update () {
-    const length = await this.getFileLength();
-    let details = [];
+  update () {
+    // TODO V2: implémenter async
+    if (!this.length) {
+      this.getFileLength();
+      return;
+    }
+    const details = [];
     if (this.detail) {
       if (this.href) {
         const extension = this.parseExtension(this.href);
         if (extension) details.push(extension.toUpperCase());
       }
 
-      if (length) {
-        details.push(length);
+      if (this.length !== -1) {
+        details.push(this.bytesToSize(this.length));
       }
 
       if (this.hreflang) {
@@ -64,7 +74,7 @@ class AssessFile extends api.core.Instance {
   }
 
   bytesToSize (bytes) {
-    if (bytes === 0) return null;
+    if (bytes === -1) return null;
 
     let sizeUnits = ['octets', 'ko', 'Mo', 'Go', 'To'];
     if (this.getAttribute(api.internals.ns.attr('assess-file')) === 'bytes') {
