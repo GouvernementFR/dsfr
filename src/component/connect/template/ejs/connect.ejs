@@ -14,7 +14,7 @@
 
 * connect.disabled (boolean, optional) : si valeur true, bouton désactivé
 
-* standalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
+* isStandalone (boolean, optional): si valeur true, génére la version standalone (sans dsfr)
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -49,7 +49,7 @@ linkAttributes.target = '_blank';
 linkAttributes.rel = 'noopener';
 linkAttributes.title = `${connect.link.label} - nouvelle fenêtre`;
 
-if (!locals.standalone) {
+if (!locals.isStandalone) {
 %>
 <div class="<%= prefix %>-connect-group">
 <% } %>
@@ -74,6 +74,6 @@ if (connect.disabled === true) connectAttrs.disabled = '';
   </p>
 <% } %>
 
-<% if (!locals.standalone) { %>
+<% if (!locals.isStandalone) { %>
 </div>
 <% } %>

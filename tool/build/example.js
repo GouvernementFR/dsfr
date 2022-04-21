@@ -91,6 +91,7 @@ const buildExample = (pck) => {
     files: files,
     relativeRoot: '../'.repeat(pck.path.split('/').length),
     root: root.toString(),
+    isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId
   };
@@ -109,7 +110,8 @@ const buildStandaloneExample = (pck) => {
   });
   const html = ejs.render(page, {
     path: root(pck.standalone.example.path),
-    root: root.toString()
+    root: root.toString(),
+    isStandalone: true
   });
   const beautified = beautify(html, beautyOpts);
 
