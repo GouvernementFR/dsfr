@@ -3,4 +3,8 @@
 /// @group icons-finance
 ////
 
+@include has-icon {
+  @include before('');
+}
+
 @include generate-icons(filter-icons('finance'));

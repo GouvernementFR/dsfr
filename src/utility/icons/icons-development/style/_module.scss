@@ -3,4 +3,8 @@
 /// @group icons-development
 ////
 
+@include has-icon {
+  @include before('');
+}
+
 @include generate-icons(filter-icons('development'));
