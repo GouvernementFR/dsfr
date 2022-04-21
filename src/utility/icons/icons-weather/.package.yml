@@ -1,0 +1,7 @@
+id: icons-weather
+title: Icônes Weather
+description:
+doc:
+wrapper: col-8
+style:
+  - core

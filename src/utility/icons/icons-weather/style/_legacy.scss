@@ -1,0 +1,8 @@
+////
+/// Icon Weather Legacy
+/// @group icons-weather
+////
+
+@include legacy(ie11) {
+  @include generate-icons-legacy(filter-icons('weather'));
+}

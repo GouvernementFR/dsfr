@@ -8,9 +8,7 @@
 
 $variables: (
   reset: (
-    font-face: (
-      path:'../fonts'
-    ),
+    font-face: true,
     body: true,
     box-sizing: true,
     focus: true,

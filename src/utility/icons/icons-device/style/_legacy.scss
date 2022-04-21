@@ -1,0 +1,8 @@
+////
+/// Icon Device Legacy
+/// @group icons-device
+////
+
+@include legacy(ie11) {
+  @include generate-icons-legacy(filter-icons('device'));
+}

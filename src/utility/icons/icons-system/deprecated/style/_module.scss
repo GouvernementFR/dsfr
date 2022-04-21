@@ -1,0 +1,6 @@
+////
+/// Icon System Module
+/// @group icon-system
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('system'));

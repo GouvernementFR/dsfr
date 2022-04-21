@@ -15,11 +15,4 @@
       }
     }
   }
-
-  /**
-  * Définitions des symboles des icones
-  **/
-  // $icons-settings est générée dans generated/_icons.scss
-  @include generate-icons-legacy(icon);
-  @include generate-icons-legacy(icon, remix);
 }

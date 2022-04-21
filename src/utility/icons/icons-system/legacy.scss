@@ -1,0 +1,13 @@
+////
+/// Icon System Legacy
+/// @group icons-system
+////
+
+@import '../../../core/style/path/path-3';
+@import '../../../media-query-order';
+@import 'index';
+@import 'style/legacy';
+
+// deprecated
+@import 'deprecated/style/settings';
+@import 'deprecated/style/legacy';

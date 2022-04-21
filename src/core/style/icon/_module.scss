@@ -15,10 +15,3 @@
     }
   }
 }
-
-/**
- * Définitions des symboles des icones
- **/
-// $icons-settings est générée dans generated/_icons.scss
-@include generate-icons(icon);
-@include generate-icons(icon, remix);
