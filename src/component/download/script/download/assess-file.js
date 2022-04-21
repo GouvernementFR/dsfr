@@ -30,25 +30,25 @@ class AssessFile extends api.core.Instance {
 
   async update () {
     const length = await this.getFileLength();
-    let detail = '';
+    let details = [];
     if (this.detail) {
       if (this.href) {
         const extension = this.parseExtension(this.href);
-        if (extension) detail += extension.toUpperCase();
+        if (extension) details.push(extension.toUpperCase());
       }
 
       if (length) {
-        detail += ' – ' + length;
+        details.push(length);
       }
 
       if (this.hreflang) {
         const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
         const langName = displayNameLang.of(this.hreflang);
         const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
-        detail += ' – ' + capitalizeLangName;
+        details.push(capitalizeLangName);
       }
 
-      this.detail.innerHTML = detail;
+      this.detail.innerHTML = details.join(' - ');
     }
   }
 
