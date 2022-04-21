@@ -33,10 +33,13 @@ class AssessFile extends api.core.Instance {
 
   update () {
     // TODO V2: implémenter async
+    if (this.legacy) this.length = -1;
+
     if (!this.length) {
       this.getFileLength();
       return;
     }
+
     const details = [];
     if (this.detail) {
       if (this.href) {
