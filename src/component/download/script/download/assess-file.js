@@ -23,14 +23,11 @@ class AssessFile extends api.core.Instance {
     }
 
     fetch(this.href, { method: 'HEAD', mode: 'cors' }).then(response => {
-      const length = response.headers.get('content-length');
-      if (length) {
-        this.length = length;
-        this.update();
-      } else {
+      this.length = response.headers.get('content-length') || -1;
+      if (this.length === -1) {
         console.warn('Impossible de détecter le poids du fichier ' + this.href + '\nErreur de récupération de l\'en-tête HTTP : "content-length"');
-        this.length = -1;
       }
+      this.update();
     });
   }
 
