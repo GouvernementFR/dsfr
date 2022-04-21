@@ -287,7 +287,7 @@ La pull request doit être faite depuis la branche de votre fork vers la branche
 La compilation des sources permet de créer un dossier `dist`, `exemple` et `.config` à la racine du projet. Le dossier `dist` contient les fichiers CSS et JS compilés, ainsi que les favicons et l'ensemble des fonts et icônes utilisées au sein du DSFR.
 
 Le dossier `.config` contient les variables générales JS et SCSS ainsi que la configuration nécessaire au build. Plus particulièrement, le fichier `config.json` répertorie toute l’arborescence de src, les dépendances et leur ordre qu’il récupère depuis les fichiers `package.yml` de chaque package et `folder.yml` pour les dossier (src, component, page, pattern).
-Le fichier `icon.scss` défini les variables d'icônes pour la génération des classes utilitaires.
+Les fichiers `icon.scss` et `icon.json` définissent les variables d'icônes pour la génération des classes utilitaires.
 
 Le dossier `example` contient les exemples HTML générés depuis les samples ejs. L'ordre des imports css et js est défini par l'ordre des dépendances dans le `package.yml`.
 
