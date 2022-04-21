@@ -1,0 +1,22 @@
+<%
+const downloadsGroup = locals.downloadsGroup || {}
+const downloads = downloadsGroup.downloads || [];
+
+if (!downloads.length && downloadsGroup.groupCount !== undefined) {
+
+  for (let i = 0; i < downloadsGroup.groupCount; i++) {
+    downloads.push({
+      href: downloadsGroup.href || contentPlaceholder(relativeRoot + 'example/img/image.jpg'),
+      title: 'Télécharger le document lorem ipsum sit dolores amet',
+      description: 'Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…',
+      detail: 'PDF – 61,88 Ko',
+      attributes: downloadsGroup.downloadAttributes,
+      classes: downloadsGroup.downloadClasses,
+      enlarge: downloadsGroup.enlarge !== false
+    });
+  }
+  downloadsGroup.downloads = downloads;
+}
+%>
+
+<%- include('../../template/ejs/downloads-group.ejs', {downloadsGroup: downloadsGroup}) %>

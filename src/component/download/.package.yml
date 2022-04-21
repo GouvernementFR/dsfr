@@ -1,0 +1,9 @@
+id: download
+title: Téléchargement de fichier
+description: Ce composant permet aux utilisateurs de télécharger un ou plusieurs fichiers.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/980025345
+wrapper: container
+style:
+  - core
+script:
+  - core
