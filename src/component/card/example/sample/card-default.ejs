@@ -29,7 +29,7 @@ if (card.img || card.vid) {
 
   switch (true) {
     case card.img !== undefined:
-      data.header.img = { ...imgData('img/placeholder.16x9.png', 'unrendered'), ...card.img};
+      data.header.img = { ...imgData('img/placeholder.16x9.png', 'unknown'), ...card.img};
       break;
 
     case card.vid !== undefined:
