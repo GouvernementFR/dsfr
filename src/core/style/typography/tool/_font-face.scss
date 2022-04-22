@@ -19,9 +19,7 @@
   @font-face {
     font-family: #{$name};
     src: url('#{$dist-path}fonts/#{$filename}.woff2') format("woff2 supports variations"),
-    url('#{$dist-path}fonts/#{$filename}.woff') format("woff supports variations"),
-    url('#{$dist-path}fonts/#{$filename}.woff2') format('woff2-variations'),
-    url('#{$dist-path}fonts/#{$filename}.woff') format('woff-variations');
+    url('#{$dist-path}fonts/#{$filename}.woff2') format('woff2-variations');
     font-weight: #{$font-weight};
     font-display: #{$font-display};
   }
@@ -61,16 +59,26 @@
   @return join($name, $fallback, 'comma');
 }
 
-@mixin font-family($type: primary, $important: false, $settings: $font-settings, $isVariableFont: true) {
+@mixin font-family($type: primary, $legacy: false, $important: false, $settings: $font-settings) {
   $type-settings: map-get($settings, $type);
   $styles-settings: map-get($type-settings, styles);
   $name: map-get($type-settings, name);
   $fallback: map-get($type-settings, fallback);
   $families: font-family($name, $fallback);
-  font-family: important($families, $important);
-  @if map-get($styles-settings, variable) {
-    @supports (font-variation-settings: normal) {
-      $families: font-family('#{$name} VF', $fallback);
+
+  @if $legacy {
+    font-family: important($families, $important);
+  } @else {
+    @if map-get($styles-settings, variable) {
+      @supports not (font-variation-settings: normal) {
+        font-family: important($families, $important);
+      }
+
+      @supports (font-variation-settings: normal) {
+        $families: font-family('#{$name} VF', $fallback);
+        font-family: important($families, $important);
+      }
+    } @else {
       font-family: important($families, $important);
     }
   }

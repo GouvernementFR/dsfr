@@ -5,4 +5,10 @@
 
 @include legacy(ie11) {
   @include enable-list-style-legacy;
+
+  @if (map-get($reset-settings, body)) {
+    body {
+      @include font-family(primary, true);
+    }
+  }
 }

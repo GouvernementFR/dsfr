@@ -1,0 +1,12 @@
+////
+/// Core Legacy : Action hover
+/// @group core
+////
+
+@include legacy(ie11) {
+  input,
+  select,
+  textarea {
+    @include font-family(primary, true);
+  }
+}
