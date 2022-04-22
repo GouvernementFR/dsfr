@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use "sass:math";
+
 @function _pow10($exponent) {
   @if $exponent == 0 {
     @return 1;
@@ -59,7 +61,7 @@
   $length: length($float);
   @if $length > 0 {
     @for $i from 1 through $length {
-      $result: $result + (nth($float, $i) / _pow10($i));
+      $result: $result + math.div(nth($float, $i), _pow10($i));
     }
   }
 

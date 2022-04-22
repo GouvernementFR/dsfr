@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use "sass:math";
+
 /// Retourne la valeur numérique sans unité.
 /// @access public
 /// @param {String} $value - la valeur avec unité
@@ -12,7 +14,7 @@
   @if $value == null {
     @return null;
   }
-  @return ($value / ($value * 0 + 1));
+  @return math.div($value, $value * 0 + 1);
 }
 
 /// Return rem from px
@@ -25,7 +27,7 @@
 ///     font-size: px-rem(12px);
 ///   }
 @function px-rem($px, $root-font-size: 16px) {
-  @return clean-unit($px / $root-font-size) * 1rem;
+  @return clean-unit(math.div($px, $root-font-size)) * 1rem;
 }
 
 @function is-unit($value, $unit) {
