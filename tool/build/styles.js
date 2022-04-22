@@ -1,5 +1,5 @@
 const { createFile } = require('../utilities/file');
-const sass = require('node-sass');
+const sass = require('sass');
 const stylelint = require('stylelint');
 const discardDuplicates = require('postcss-discard-duplicates');
 const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
