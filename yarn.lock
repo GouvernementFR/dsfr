@@ -7748,6 +7748,11 @@ sass-graph@4.0.0:
     scss-tokenizer "^0.3.0"
     yargs "^17.2.1"
 
+sass-migrator@^1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/sass-migrator/-/sass-migrator-1.5.4.tgz#1378d90eb92898863d29208272f43d055dd2fc21"
+  integrity sha512-KPnoY84/dKYPW5TW6qXASR3yOpap4+tPfCygzNKhaodg3cF+dwlyTwnbJj0QZd64nQD8g7RsicFbqSG6ts0WlQ==
+
 sass-true@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/sass-true/-/sass-true-6.0.1.tgz#c159fa27df2f9ee22bb624a851144a8af7dc8a32"
