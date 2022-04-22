@@ -15,6 +15,18 @@
   }
 }
 
+@mixin variable-font-face($name, $filename, $font-weight: 100 1000, $font-display: swap) {
+  @font-face {
+    font-family: #{$name};
+    src: url('#{$dist-path}fonts/#{$filename}.woff2') format("woff2 supports variations"),
+    url('#{$dist-path}fonts/#{$filename}.woff') format("woff supports variations"),
+    url('#{$dist-path}fonts/#{$filename}.woff2') format('woff2-variations'),
+    url('#{$dist-path}fonts/#{$filename}.woff') format('woff-variations');
+    font-weight: #{$font-weight};
+    font-display: #{$font-display};
+  }
+}
+
 @mixin build-font-faces($settings: $font-settings) {
   @each $type, $type-settings in $settings {
     $name: map-get($type-settings, name);
@@ -28,6 +40,7 @@
     $font-weight: map_get($variation, font-weight);
     $font-style: map_get($variation, font-style);
     $filename: map_get($variation, file);
+    $font-name: if(map_get($variation, name), map_get($variation, name), $name);
 
     @if $font-style == null {
       $font-style: normal;
@@ -35,23 +48,31 @@
     @if $display == null {
       $display: swap;
     }
-    @include font-face ($name, $filename, $font-weight, $font-style, $display);
+
+    @if $style == variable {
+      @include variable-font-face ($font-name, $filename, $font-weight, $display);
+    } @else {
+      @include font-face ($font-name, $filename, $font-weight, $font-style, $display);
+    }
   }
 }
 
-@function font-family($type: primary, $settings: $font-settings) {
+@function font-family($name, $fallback: ()) {
+  @return join($name, $fallback, 'comma');
+}
+
+@mixin font-family($type: primary, $important: false, $settings: $font-settings, $isVariableFont: true) {
   $type-settings: map-get($settings, $type);
-  $families: join(map-get($type-settings, name), map-get($type-settings, fallback), 'comma');
-  @return $families;
-}
-
-@mixin font-family($type: primary, $important: false, $settings: $font-settings) {
-  $families: font-family($type, $settings);
-  @if $important {
-    font-family: $families !important;
-  }
-  @else {
-    font-family: $families;
+  $styles-settings: map-get($type-settings, styles);
+  $name: map-get($type-settings, name);
+  $fallback: map-get($type-settings, fallback);
+  $families: font-family($name, $fallback);
+  font-family: important($families, $important);
+  @if map-get($styles-settings, variable) {
+    @supports (font-variation-settings: normal) {
+      $families: font-family('#{$name} VF', $fallback);
+      font-family: important($families, $important);
+    }
   }
 }
 

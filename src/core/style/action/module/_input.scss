@@ -6,10 +6,10 @@
 input,
 select,
 textarea {
+  @include font-family;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  @include font-family;
   @include text-adjustments;
   border-radius: 0;
   border: 0;

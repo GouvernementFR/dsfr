@@ -9,6 +9,11 @@ $font-settings: (
     fallback: arial sans-serif,
     display: swap,
     styles: (
+      variable: (
+        name: 'Marianne VF',
+        font-weight: 200 800,
+        file:'Marianne-VF'
+      ),
       light: (
         font-weight: 300,
         file:'Marianne-Light'
