@@ -33,7 +33,7 @@ class AssessFile extends api.core.Instance {
 
   update () {
     // TODO V2: implémenter async
-    if (this.islLegacy) this.length = -1;
+    if (this.isLegacy) this.length = -1;
 
     if (!this.length) {
       this.getFileLength();
