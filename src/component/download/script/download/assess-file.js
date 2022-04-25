@@ -52,8 +52,11 @@ class AssessFile extends api.core.Instance {
       }
 
       if (this.hreflang) {
-        const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
-        const langName = displayNameLang.of(this.hreflang);
+        let langName = this.hreflang;
+        if (!this.isLegacy) {
+          const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
+          langName = displayNameLang.of(this.hreflang);
+        }
         const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
         details.push(capitalizeLangName);
       }
