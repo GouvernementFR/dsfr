@@ -33,7 +33,7 @@ class AssessFile extends api.core.Instance {
 
   update () {
     // TODO V2: implémenter async
-    if (this.legacy) this.length = -1;
+    if (this.isLegacy) this.length = -1;
 
     if (!this.length) {
       this.getFileLength();
@@ -52,10 +52,7 @@ class AssessFile extends api.core.Instance {
       }
 
       if (this.hreflang) {
-        const displayNameLang = new Intl.DisplayNames([this.lang], { type: 'language' });
-        const langName = displayNameLang.of(this.hreflang);
-        const capitalizeLangName = langName.charAt(0).toUpperCase() + langName.slice(1);
-        details.push(capitalizeLangName);
+        details.push(this.getLangDisplayName(this.hreflang));
       }
 
       this.detail.innerHTML = details.join(' - ');
@@ -71,6 +68,13 @@ class AssessFile extends api.core.Instance {
   parseExtension (url) {
     const regexExtension = /\.(\w{1,9})(?:$|[?#])/;
     return url.match(regexExtension)[0].replace('.', '');
+  }
+
+  getLangDisplayName (locale) {
+    if (this.isLegacy) return locale;
+    const displayNames = new Intl.DisplayNames([this.lang], { type: 'language' });
+    const name = displayNames.of(locale);
+    return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
   bytesToSize (bytes) {

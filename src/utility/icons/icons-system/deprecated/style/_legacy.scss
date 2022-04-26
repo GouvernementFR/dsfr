@@ -5,4 +5,20 @@
 
 @include legacy(ie11) {
   @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('system'));
+
+  #{ns(fi-delete-line)} {
+    @include icon-content-legacy(delete-bin-line, before, true);
+  }
+
+  #{ns(fi-delete-fill)} {
+    @include icon-content-legacy(delete-bin-fill, before, true);
+  }
+
+  #{ns(icon-delete-line)} {
+    @include icon-content(delete-bin-line, before, true);
+  }
+
+  #{ns(icon-delete-fill)} {
+    @include icon-content(delete-bin-fill, before, true);
+  }
 }

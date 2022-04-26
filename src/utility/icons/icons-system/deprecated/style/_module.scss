@@ -4,3 +4,19 @@
 ////
 
 @include generate-deprecated-icons($deprecated-icons, filter-icons('system'));
+
+#{ns(fi-delete-line)} {
+  @include icon-content(delete-bin-line, before, true);
+}
+
+#{ns(fi-delete-fill)} {
+  @include icon-content(delete-bin-fill, before, true);
+}
+
+#{ns(icon-delete-line)} {
+  @include icon-content(delete-bin-line, before, true);
+}
+
+#{ns(icon-delete-fill)} {
+  @include icon-content(delete-bin-fill, before, true);
+}

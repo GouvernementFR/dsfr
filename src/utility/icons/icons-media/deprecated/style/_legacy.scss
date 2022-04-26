@@ -1,0 +1,24 @@
+////
+/// Icon Media Legacy
+/// @group icon-media
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('media'));
+
+  #{ns(fi-play-line)} {
+    @include icon-content-legacy(play-circle-line, before, true);
+  }
+
+  #{ns(fi-play-fill)} {
+    @include icon-content-legacy(play-circle-fill, before, true);
+  }
+
+  #{ns(icon-play-line)} {
+    @include icon-content-legacy(play-circle-line, before, true);
+  }
+
+  #{ns(icon-play-fill)} {
+    @include icon-content-legacy(play-circle-fill, before, true);
+  }
+}

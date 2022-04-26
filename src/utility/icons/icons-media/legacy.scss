@@ -7,3 +7,7 @@
 @import '../../../media-query-order';
 @import 'index';
 @import 'style/legacy';
+
+// deprecated
+@import 'deprecated/style/setting';
+@import 'deprecated/style/legacy';

@@ -1,0 +1,22 @@
+////
+/// Icon User Module
+/// @group icon-user
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('user'));
+
+#{ns(fi-account-line)} {
+  @include icon-content(account-circle-line, before, true);
+}
+
+#{ns(fi-account-fill)} {
+  @include icon-content(account-circle-fill, before, true);
+}
+
+#{ns(icon-account-line)} {
+  @include icon-content(account-circle-line, before, true);
+}
+
+#{ns(icon-account-fill)} {
+  @include icon-content(account-circle-fill, before, true);
+}

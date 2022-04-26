@@ -1,0 +1,8 @@
+////
+/// Icon Logo Legacy
+/// @group icon-logo
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('logo'));
+}
