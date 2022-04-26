@@ -1,0 +1,8 @@
+////
+/// Icon Document Legacy
+/// @group icon-document
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('document'));
+}

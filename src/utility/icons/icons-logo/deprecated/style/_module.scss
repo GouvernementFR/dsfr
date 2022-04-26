@@ -1,0 +1,6 @@
+////
+/// Icon Logo Module
+/// @group icon-logo
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('logo'));

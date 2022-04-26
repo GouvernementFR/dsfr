@@ -1,0 +1,6 @@
+////
+/// Icon Development Module
+/// @group icon-development
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('development'));

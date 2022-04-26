@@ -11,3 +11,7 @@
 @import '../../../media-query-order';
 @import 'index';
 @import 'style/module';
+
+// deprecated
+@import 'deprecated/style/setting';
+@import 'deprecated/style/module';
