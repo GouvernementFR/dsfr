@@ -14,23 +14,23 @@
     &,
     &--sm {
       &#{ns(badge)}--info {
-        @include icon-content-legacy(info-fill);
+        @include icon-image-legacy(info-fill);
       }
 
       &#{ns(badge)}--success {
-        @include icon-content-legacy(success-fill);
+        @include icon-image-legacy(success-fill);
       }
 
       &#{ns(badge)}--error {
-        @include icon-content-legacy(error-fill);
+        @include icon-image-legacy(error-fill);
       }
 
       &#{ns(badge)}--warning {
-        @include icon-content-legacy(warning-fill);
+        @include icon-image-legacy(warning-fill);
       }
 
       &#{ns(badge)}--new {
-        @include icon-content-legacy(flashlight-fill);
+        @include icon-image-legacy(flashlight-fill);
       }
     }
   }

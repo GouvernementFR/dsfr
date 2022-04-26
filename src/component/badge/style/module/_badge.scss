@@ -20,23 +20,23 @@
   &,
   &--sm {
     &#{ns(badge)}--info {
-      @include icon-content(info-fill, before, false, '');
+      @include icon-image(info-fill, before, false, '');
     }
 
     &#{ns(badge)}--success {
-      @include icon-content(success-fill, before, false, '');
+      @include icon-image(success-fill, before, false, '');
     }
 
     &#{ns(badge)}--error {
-      @include icon-content(error-fill, before, false, '');
+      @include icon-image(error-fill, before, false, '');
     }
 
     &#{ns(badge)}--warning {
-      @include icon-content(warning-fill, before, false, '');
+      @include icon-image(warning-fill, before, false, '');
     }
 
     &#{ns(badge)}--new {
-      @include icon-content(flashlight-fill, before, false, '');
+      @include icon-image(flashlight-fill, before, false, '');
     }
 
     &#{ns(badge)}--no-icon {

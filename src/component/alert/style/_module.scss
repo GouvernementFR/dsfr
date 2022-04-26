@@ -29,19 +29,19 @@
   }
 
   &--info {
-    @include icon-content(info-fill, before, false, '');
+    @include icon-image(info-fill, before, false, '');
   }
 
   &--success {
-    @include icon-content(success-fill, before, false, '');
+    @include icon-image(success-fill, before, false, '');
   }
 
   &--error {
-    @include icon-content(error-fill, before, false, '');
+    @include icon-image(error-fill, before, false, '');
   }
 
   &--warning {
-    @include icon-content(warning-fill, before, false, '');
+    @include icon-image(warning-fill, before, false, '');
   }
 
   &--sm {

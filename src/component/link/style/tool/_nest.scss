@@ -13,16 +13,18 @@
     $selector: ns(map-get($settings, selector));
   }
 
+  $pseudo: _get-link-icon-pseudo(map-get($settings, places));
+
   @include nest($selector) {
     @include respond-from($from) {
       @if $icon != null {
-        @include icon($icon, null, before);
+        @include icon($icon, null, $pseudo);
       }
 
       @include _build-link-size($size-settings, $border-radius);
 
       @if $place == null {
-        @include before(none);
+        @include _pseudo($pseudo, none);
       }
       @else {
         @include _build-link-icon($size-settings, $place, $size, $place == right);

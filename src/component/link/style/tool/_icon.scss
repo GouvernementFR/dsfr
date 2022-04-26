@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@mixin _build-link-icon($size-settings, $place, $size:md, $reverse: false) {
+@mixin _build-link-icon($size-settings, $place, $size:md) {
 
   $icon-size: icon-size(map_get($size-settings, icon));
 
@@ -11,17 +11,10 @@
     $icon-size: icon-size(map_get($size-settings, icon-only));
   }
 
-  @if $reverse {
-    flex-direction: row-reverse;
-  }
-  @else {
-    flex-direction: row;
-  }
-
   $icon-margin: _link-icon-margin(map_get($size-settings, icon));
   $icon-margin-x: space(map_get($size-settings, icon-margin-x));
 
-  @include before {
+  @include _pseudo(before after) {
     --icon-size: #{$icon-size};
   }
 
@@ -38,7 +31,7 @@
     overflow: initial;
     max-width: 100%;
     max-height: none;
-    @include before {
+    @include after {
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
     }

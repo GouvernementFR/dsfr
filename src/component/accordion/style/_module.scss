@@ -33,7 +33,7 @@
 
     &[aria-expanded="true"] {
       @include font-weight('bold');
-      @include icon-content(subtract-line, before);
+      @include icon-image(subtract-line, before);
     }
 
     @include padding(3v 0);

@@ -51,7 +51,7 @@
   }
 }
 
-@mixin icon-content($icon, $pseudo: before, $important: false, $content: null) {
+@mixin icon-image($icon, $pseudo: before, $important: false, $content: null) {
   @include _pseudo($pseudo, $content) {
     $url: get-url-icon($icon, $important);
     -webkit-mask-image: $url;
@@ -59,7 +59,7 @@
   }
 }
 
-@mixin icon-content-legacy($icon, $pseudo: before, $important: false, $content: null) {
+@mixin icon-image-legacy($icon, $pseudo: before, $important: false, $content: null) {
   @include _pseudo($pseudo, $content) {
     $url: get-url-icon($icon, $important);
     background-image: $url;
@@ -97,7 +97,7 @@
   }
 
   @if $icon != null {
-    @include icon-content($icon, $pseudo);
+    @include icon-image($icon, $pseudo);
   }
 
   @if $size != null {
@@ -119,7 +119,7 @@
   }
 
   @if $icon != null {
-    @include icon-content-legacy($icon, $pseudo);
+    @include icon-image-legacy($icon, $pseudo);
   }
 
   @if $size != null {
@@ -144,7 +144,7 @@
 @mixin generate-icons($config: $icons-config) {
   @each $icon, $setting in $config {
     #{ns(icon-#{$icon})} {
-      @include icon-content($icon, before, true);
+      @include icon-image($icon, before, true);
     }
   }
 }
@@ -152,7 +152,7 @@
 @mixin generate-icons-legacy($config: $icons-config) {
   @each $icon, $setting in $config {
     #{ns(icon-#{$icon})} {
-      @include icon-content-legacy($icon, before, true);
+      @include icon-image-legacy($icon, before, true);
     }
   }
 }

@@ -18,7 +18,7 @@
       @include icon-legacy(add-line, sm);
 
       &[aria-expanded="true"] {
-        @include icon-content-legacy(subtract-line);
+        @include icon-image-legacy(subtract-line);
       }
     }
   }

@@ -67,5 +67,5 @@ $underline-thickness: 0.0625em;
     @include margin-bottom(1v);
   }
   @include icon-size(sm, after);
-  @include icon-content(external-link-line, after, null, var(--link-blank-content));
+  @include icon-image(external-link-line, after, null, var(--link-blank-content));
 }
