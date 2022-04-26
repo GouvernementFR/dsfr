@@ -13,4 +13,12 @@
   #{ns(fi-account-fill)} {
     @include icon-content-legacy(account-circle-fill, before, true);
   }
+
+  #{ns(icon-account-line)} {
+    @include icon-content-legacy(account-circle-line, before, true);
+  }
+
+  #{ns(icon-account-fill)} {
+    @include icon-content-legacy(account-circle-fill, before, true);
+  }
 }

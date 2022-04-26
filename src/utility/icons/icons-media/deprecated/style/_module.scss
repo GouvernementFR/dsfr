@@ -12,3 +12,11 @@
 #{ns(fi-play-fill)} {
   @include icon-content(play-circle-fill, before, true);
 }
+
+#{ns(icon-play-line)} {
+  @include icon-content(play-circle-line, before, true);
+}
+
+#{ns(icon-play-fill)} {
+  @include icon-content(play-circle-fill, before, true);
+}
