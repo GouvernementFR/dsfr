@@ -84,10 +84,10 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
   if (legacy && pck.nomodule) {
     if (pck.script.files.indexOf('legacy') > -1) data += `import '${src}/legacy.js'\n`;
 
-    await process(data, dir, pck.id, false, true, map, standalone);
+    await process(data, dir, pck.filename, false, true, map, standalone);
 
     if (minify) {
-      await process(data, dir, pck.id, true, true, map, standalone);
+      await process(data, dir, pck.filename, true, true, map, standalone);
     }
   }
 };
