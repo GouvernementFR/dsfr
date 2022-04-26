@@ -12,3 +12,11 @@
 #{ns(fi-account-fill)} {
   @include icon-content(account-circle-fill, before, true);
 }
+
+#{ns(icon-account-line)} {
+  @include icon-content(account-circle-line, before, true);
+}
+
+#{ns(icon-account-fill)} {
+  @include icon-content(account-circle-fill, before, true);
+}

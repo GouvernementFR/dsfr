@@ -13,4 +13,12 @@
   #{ns(fi-play-fill)} {
     @include icon-content-legacy(play-circle-fill, before, true);
   }
+
+  #{ns(icon-play-line)} {
+    @include icon-content-legacy(play-circle-line, before, true);
+  }
+
+  #{ns(icon-play-fill)} {
+    @include icon-content-legacy(play-circle-fill, before, true);
+  }
 }

@@ -13,4 +13,12 @@
   #{ns(fi-delete-fill)} {
     @include icon-content-legacy(delete-bin-fill, before, true);
   }
+
+  #{ns(icon-delete-line)} {
+    @include icon-content(delete-bin-line, before, true);
+  }
+
+  #{ns(icon-delete-fill)} {
+    @include icon-content(delete-bin-fill, before, true);
+  }
 }
