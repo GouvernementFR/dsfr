@@ -1,0 +1,8 @@
+////
+/// Icon Others Legacy
+/// @group icon-others
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('others'));
+}

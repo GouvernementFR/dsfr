@@ -1,0 +1,6 @@
+////
+/// Icon Weather Module
+/// @group icon-weather
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('weather'));

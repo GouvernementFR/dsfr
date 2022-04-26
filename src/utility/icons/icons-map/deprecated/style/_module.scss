@@ -1,0 +1,6 @@
+////
+/// Icon Map Module
+/// @group icon-map
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('map'));

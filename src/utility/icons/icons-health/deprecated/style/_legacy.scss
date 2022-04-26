@@ -1,0 +1,8 @@
+////
+/// Icon Health Legacy
+/// @group icon-health
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('health'));
+}

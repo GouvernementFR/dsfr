@@ -1,0 +1,6 @@
+////
+/// Icon Buildings Module
+/// @group icon-buildings
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('buildings'));

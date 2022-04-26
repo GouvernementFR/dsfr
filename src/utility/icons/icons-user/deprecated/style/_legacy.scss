@@ -1,0 +1,16 @@
+////
+/// Icon User Legacy
+/// @group icon-user
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('user'));
+
+  #{ns(fi-account-line)} {
+    @include icon-content-legacy(account-circle-line, before, true);
+  }
+
+  #{ns(fi-account-fill)} {
+    @include icon-content-legacy(account-circle-fill, before, true);
+  }
+}

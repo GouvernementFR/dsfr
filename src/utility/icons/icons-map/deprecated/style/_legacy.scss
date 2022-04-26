@@ -1,0 +1,8 @@
+////
+/// Icon Map Legacy
+/// @group icon-map
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('map'));
+}

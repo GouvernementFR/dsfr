@@ -1,0 +1,8 @@
+////
+/// Icon Editor Legacy
+/// @group icon-editor
+////
+
+@include legacy(ie11) {
+  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('editor'));
+}

@@ -1,0 +1,6 @@
+////
+/// Icon Editor Module
+/// @group icon-editor
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('editor'));

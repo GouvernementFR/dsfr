@@ -1,0 +1,6 @@
+////
+/// Icon Document Module
+/// @group icon-document
+////
+
+@include generate-deprecated-icons($deprecated-icons, filter-icons('document'));
