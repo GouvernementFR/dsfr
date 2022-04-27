@@ -19,9 +19,9 @@
     @include max-width(300v);
     @include padding(4v 9v 3v 10v);
 
-    @include icon(null, md){
+    @include icon(null, md) {
       @include absolute(null, null, null, 0);
-    };
+    }
   }
 
   #{ns(btn--close)} {
