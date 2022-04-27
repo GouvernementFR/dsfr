@@ -1,0 +1,15 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section('Bandeau statique', 'Seul le bandeau de type information est disponible pour le moment. <br> Le titre est défini par la classe "fr-notice__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.', 0); %>
+
+<%- sample('Bandeau par défaut', './sample/notice-default', {}, true); %>
+
+<%- sample('Bandeau avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Information Covid"}}, true); %>
+
+<%- sample('Bandeau avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' target='_blank'>lien au fil du texte</a>"}}, true); %>
+
+<%- section('Bandeau dynamique', 'Ajouter l\'attribut role="notice" lorsque le bandeau est ajouté dynamiquement dans le DOM (en js après le chargement de la page)', 0); %>
+
+<%- sample('Bandeau ajoutée dynamiquement (type)', './sample/notice-dismissable', {notice: {notice: true, type: "info", title: "Erreur détectée dans le formulaire"}}, true, './layout-dynamic.ejs'); %>

@@ -1,0 +1,57 @@
+<%#
+# paramètres notice
+
+* notice.id (String, required): id
+
+* notice.title (String, optional): Titre du bandeau
+
+* notice.text (string, optional) : Texte de decription de bandeau
+
+* notice.type (String, required): Type de bandeau [info]
+
+* notice.dismissable (boolean, optional): Ajoute un bouton de fermeture
+
+* notice.expanded (boolean, optional) [default: true] : valeur de l'attribut aria-expanded du bouton de fermeture de l'noticee
+
+* notice.button (object, optional): Paramètre du bouton de fermeture (si dismissable: true)
+
+* notice.notice (boolean, optional): Si true, ajoute un role notice (si insertion à la volée du bandeau)
+
+* notice.classes (array, optional): Classes supplémentaires sur le bandeau
+
+* notice.attribute (object, optional): Attributs supplémentaires sur le bandeau
+
+%>
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let notice = locals.notice || {};
+let id = notice.id || uniqueId('notice');
+let title = notice.title || false;
+let type = notice.type || false;
+let size = notice.size || "md";
+let expanded = notice.expanded || true;
+let attrButton = notice.buttonAttrs;
+let classes = notice.classes || [];
+let attributes = notice.attributes || {};
+classes.push(prefix + '-notice');
+if (type) classes.push(prefix + '-notice--' + type);
+if (notice.notice) attributes.role = "notice";
+ %>
+
+<div  <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
+  <div class="<%= prefix %>-container">
+    <div class="<%= prefix %>-grid-row">
+      <div class="<%=prefix %>-col-12">
+        <% if(title) { %>
+          <p class="<%= prefix %>-notice__title"><%- title %></p>
+        <% } %>
+        <% if(notice.dismissable) { %>
+          <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>

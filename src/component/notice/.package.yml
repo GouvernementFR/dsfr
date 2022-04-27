@@ -1,0 +1,7 @@
+id: notice
+title: Bandeau d'information
+description: Le bandeau d’information importante permet aux utilisateurs de voir ou d’accéder à une information importante et temporaire.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/992903190/
+style:
+  - core
+  - button

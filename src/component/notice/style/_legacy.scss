@@ -1,0 +1,20 @@
+////
+/// Notice Legacy
+/// @group notice
+////
+
+@include legacy(ie11) {
+  /**
+  * reset des marges dans l'noticee
+  */
+  #{ns(notice)} {
+    &__title,
+    p {
+      @include margin(0 0 1v);
+    }
+
+    &--info {
+      @include icon-legacy(info-fill, null, before, false);
+    }
+  }
+}
