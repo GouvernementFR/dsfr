@@ -6,9 +6,9 @@ const sample = getSample(include);
 
 <%- sample('Bandeau par défaut', './sample/notice-default', {}, true); %>
 
-<%- sample('Bandeau avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Information Covid"}}, true); %>
+<%- sample('Bandeau d\'information avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau"}}, true); %>
 
-<%- sample('Bandeau avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' target='_blank'>lien au fil du texte</a>"}}, true); %>
+<%- sample('Bandeau d\'information avec lien', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' target='_blank'>lien au fil du texte</a>"}}, true); %>
 
 <%- section('Bandeau dynamique', 'Ajouter l\'attribut role="notice" lorsque le bandeau est ajouté dynamiquement dans le DOM (en js après le chargement de la page)', 0); %>
 
