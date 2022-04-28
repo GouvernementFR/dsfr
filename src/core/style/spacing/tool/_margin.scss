@@ -4,10 +4,10 @@
 ////
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
-  $start: str_slice($prop, 1, 1);
+  $start: str-slice($prop, 1, 1);
 
   @if $side != null {
-    $start: '#{str_slice($prop, 1, 1)}#{str_slice($side, 1, 1)}';
+    $start: '#{str-slice($prop, 1, 1)}#{str-slice($side, 1, 1)}';
   }
 
   $middle: '';
