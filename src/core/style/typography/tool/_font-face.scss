@@ -7,8 +7,8 @@
   @font-face {
     font-family: #{$name};
     src:
-      url('#{$dist-path}fonts/#{$filename}.woff2') format('woff2'),
-      url('#{$dist-path}fonts/#{$filename}.woff') format('woff');
+      url('#{$DIST-PATH}fonts/#{$filename}.woff2') format('woff2'),
+      url('#{$DIST-PATH}fonts/#{$filename}.woff') format('woff');
     font-weight: #{$font-weight};
     font-style: #{$font-style};
     font-display: #{$font-display};

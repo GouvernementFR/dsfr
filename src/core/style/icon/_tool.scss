@@ -17,7 +17,7 @@
 
 @function get-url-icon($icon, $important: false) {
   $config: map-get($icons-config, $icon);
-  $url: url('#{$dist-path}#{map-get($config, path)}');
+  $url: url('#{$DIST-PATH}#{map-get($config, path)}');
   @return important($url, $important);
 }
 
