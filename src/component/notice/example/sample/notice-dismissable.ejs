@@ -1,9 +1,10 @@
 <%
 let notice = locals.notice || {};
+const id = uniqueId('notice');
 let data = {
   ...notice,
-  id: uniqueId('notice'),
-  button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: 'const notice = this.parentNode; notice.parentNode.removeChild(notice)'}},
+  id: id,
+  button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: `const notice = document.getElementById(${id}); notice.parentNode.removeChild(notice)`}},
   dismissable: true
 };
  %>

@@ -5,28 +5,31 @@
 
 #{ns(notice)} {
   @include relative();
-  @include set-title-margin(0 0 1v);
-  @include set-text-margin(0 0 1v);
+  @include set-title-margin(0);
+  @include set-text-margin(0);
+  @include padding-y(4v);
 
-  & > #{ns(container)} {
+  &__body {
     @include relative;
-  }
-
-  &__title {
-    @include relative;
-    @include text-style(md);
-    @include font-weight(bold);
-    @include max-width(300v);
-    @include padding(4v 9v 3v 10v);
+    @include padding(0 9v 0 6v);
 
     @include icon(null, md) {
       @include absolute(null, null, null, 0);
     }
   }
 
+  &__title {
+    @include relative;
+    @include text-style(md);
+    @include font-weight(bold);
+  }
+
   #{ns(btn--close)} {
-    @include absolute(3v,5v);
     @include nest-btn(sm, only, null, null, false);
+    @include absolute(-1v, 4v);
+    @include respond-from(md) {
+      right: space(6v);
+    }
   }
 
   &--info {

@@ -31,27 +31,23 @@ let notice = locals.notice || {};
 let id = notice.id || uniqueId('notice');
 let title = notice.title || false;
 let type = notice.type || false;
-let size = notice.size || "md";
-let expanded = notice.expanded || true;
-let attrButton = notice.buttonAttrs;
 let classes = notice.classes || [];
 let attributes = notice.attributes || {};
+if (notice.dismissable) attributes.id = id;
 classes.push(prefix + '-notice');
 if (type) classes.push(prefix + '-notice--' + type);
 if (notice.notice) attributes.role = "notice";
  %>
 
-<div  <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
+<div <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
   <div class="<%= prefix %>-container">
-    <div class="<%= prefix %>-grid-row">
-      <div class="<%=prefix %>-col-12">
-        <% if(title) { %>
-          <p class="<%= prefix %>-notice__title"><%- title %></p>
-        <% } %>
-        <% if(notice.dismissable) { %>
-          <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
-        <% } %>
-      </div>
+    <div class="<%= prefix %>-notice__body">
+      <% if (title) { %>
+        <p class="<%= prefix %>-notice__title"><%- title %></p>
+      <% } %>
+      <% if (notice.dismissable) { %>
+        <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
+      <% } %>
     </div>
   </div>
 </div>
