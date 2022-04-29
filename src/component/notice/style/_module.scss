@@ -11,7 +11,7 @@
 
   &__body {
     @include relative;
-    @include padding(0 9v 0 6v);
+    @include padding(0 9v 0 10v);
 
     @include icon(null, md) {
       @include absolute(null, null, null, 0);
@@ -33,7 +33,7 @@
   }
 
   &--info {
-    #{ns(notice)}__title {
+    #{ns(notice)}__body {
       @include icon-content(info-fill, before, false, '');
     }
   }

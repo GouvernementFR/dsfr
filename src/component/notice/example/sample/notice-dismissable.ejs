@@ -4,7 +4,7 @@ const id = uniqueId('notice');
 let data = {
   ...notice,
   id: id,
-  button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: `const notice = document.getElementById(${id}); notice.parentNode.removeChild(notice)`}},
+  button: { label: 'Masquer le message', attributes: {title: 'Masquer le message', onclick: `const notice = document.getElementById('${id}'); notice.parentNode.removeChild(notice)`}},
   dismissable: true
 };
  %>

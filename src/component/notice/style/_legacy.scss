@@ -5,16 +5,18 @@
 
 @include legacy(ie11) {
   /**
-  * reset des marges dans l'noticee
+  * reset des marges dans le bandeau
   */
   #{ns(notice)} {
     &__title,
     p {
-      @include margin(0 0 1v);
+      @include margin(0);
     }
 
     &--info {
-      @include icon-legacy(info-fill, null, before, false);
+      #{ns(notice)}__body {
+        @include icon-legacy(info-fill, null, before, false);
+      }
     }
   }
 }
