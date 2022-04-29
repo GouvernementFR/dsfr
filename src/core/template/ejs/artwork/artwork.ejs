@@ -29,6 +29,6 @@ if (artwork.accent) classes.push(prefix + '-artwork--' + artwork.accent);
     break;
 } %>
 
-<svg <%- includeClasses(classes) %> <%= size %>>
+<svg <%- includeClasses(classes) %> <%- size %>>
   <use xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork"></use>
 </svg>
