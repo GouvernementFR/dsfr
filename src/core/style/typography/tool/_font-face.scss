@@ -18,8 +18,8 @@
 @mixin variable-font-face($name, $filename, $font-weight: 100 1000, $font-display: swap) {
   @font-face {
     font-family: #{$name};
-    src: url('#{$dist-path}fonts/#{$filename}.woff2') format("woff2 supports variations"),
-    url('#{$dist-path}fonts/#{$filename}.woff2') format('woff2-variations');
+    src: url('#{$DIST-PATH}fonts/#{$filename}.woff2') format("woff2 supports variations"),
+    url('#{$DIST-PATH}fonts/#{$filename}.woff2') format('woff2-variations');
     font-weight: #{$font-weight};
     font-display: #{$font-display};
   }
