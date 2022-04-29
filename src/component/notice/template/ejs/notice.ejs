@@ -1,17 +1,13 @@
 <%#
 # paramètres notice
 
-* notice.id (String, required): id
-
 * notice.title (String, optional): Titre du bandeau
 
 * notice.text (string, optional) : Texte de decription de bandeau
 
-* notice.type (String, required): Type de bandeau [info]
+* notice.type (String, optional): Type de bandeau [info]
 
 * notice.dismissable (boolean, optional): Ajoute un bouton de fermeture
-
-* notice.expanded (boolean, optional) [default: true] : valeur de l'attribut aria-expanded du bouton de fermeture de l'noticee
 
 * notice.button (object, optional): Paramètre du bouton de fermeture (si dismissable: true)
 
@@ -28,12 +24,10 @@
 
 <%
 let notice = locals.notice || {};
-let id = notice.id || uniqueId('notice');
 let title = notice.title || false;
 let type = notice.type || false;
 let classes = notice.classes || [];
 let attributes = notice.attributes || {};
-if (notice.dismissable) attributes.id = id;
 classes.push(prefix + '-notice');
 if (type) classes.push(prefix + '-notice--' + type);
 if (notice.notice) attributes.role = "notice";
