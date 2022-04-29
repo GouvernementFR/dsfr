@@ -15,7 +15,7 @@
 
     &--info {
       #{ns(notice)}__body {
-        @include icon-legacy(info-fill, null, before, true);
+        @include icon-legacy(info-fill, md, before, true);
       }
     }
   }
