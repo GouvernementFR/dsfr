@@ -17,7 +17,7 @@
 	<div class="<%= prefix %>-sidemenu__inner">
 		<button class="<%= prefix %>-sidemenu__btn" aria-controls="<%= sidemenu.collapseId %>" aria-expanded="false">Dans cette rubrique</button>
 		<div class="<%= prefix %>-collapse" id="<%- sidemenu.collapseId %>">
-			<div class="<%= prefix %>-sidemenu__title"><%- sidemenu.title %></div>
+			<p class="<%= prefix %>-sidemenu__title"><%- sidemenu.title %></p>
 			<%- include('./list', {sidemenuItems: sidemenu.items}); %>
 		</div>
 	</div>
