@@ -88,8 +88,8 @@
 
   $v: quote($value);
 
-  $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
-  $unit: str_slice($v, str-length($v), str_length($v));
+  $q: str-to-num(unquote(str_slice($v, 0, str-length($v) - 1)));
+  $unit: str_slice($v, str-length($v), str-length($v));
 
   @if is-unit($value, v) {
     @return $q * $V;

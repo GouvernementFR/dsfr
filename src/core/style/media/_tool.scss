@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use "sass:math";
+
 /// Force un ratio d'aspect sur le block par l'ajout d'un pseudo-element en before
 /// @param {String} $ratio - key du ratio attendu selon la map $ratio-scale
 /// @param {Size | Bool} $block - détermine si le block est créé et sa taille correspondante
@@ -17,7 +19,7 @@
 
 @mixin aspect-ratio-legacy($ratio: 16x9, $important: false) {
   @include before('', block) {
-    $pb: important(100% / map_get($ratio-scale, $ratio), $important);
+    $pb: important(math.div(100%, map_get($ratio-scale, $ratio)), $important);
     padding-bottom: $pb;
   }
 }

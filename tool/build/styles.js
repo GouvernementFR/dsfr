@@ -1,5 +1,5 @@
 const { createFile } = require('../utilities/file');
-const sass = require('node-sass');
+const sass = require('sass');
 const stylelint = require('stylelint');
 const discardDuplicates = require('postcss-discard-duplicates');
 const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
@@ -26,7 +26,7 @@ const process = async (css, plugins, options) => {
 const input = (path, file, standalone) => {
   const insert = standalone ? 'standalone/' : '';
   const filePath = root(`${path}/${insert}${file}`);
-  return `@import '${filePath}';\r\n`;
+  return `@use '${filePath}';\r\n`;
 };
 
 const output = (pck, file, standalone) => {
@@ -53,23 +53,22 @@ const buildStyles = async (pck, minify, map, standalone = false) => {
 
 const buildStyle = async (data, dest, minify, map) => {
   let options = {
-    data: data,
     outFile: `${dest}.css`,
-    outputStyle: 'expanded'
+    style: 'expanded'
   };
 
   if (map) {
     options.sourceMap = true;
-    options.sourceMapContents = true;
-    options.omitSourceMapUrl = true;
+    options.sourceMapIncludeSources = true;
   }
 
   let result;
 
   try {
-    result = sass.renderSync(options);
+    // TODO : Mettre à jour les options. Ou alors utiliser compile directement sur le fichier ?
+    result = sass.compileString(data, options);
   } catch (e) {
-    log.error(e.formatted);
+    log.error(e.message);
     try {
       process.kill(0);
     } catch (e) {
@@ -80,8 +79,10 @@ const buildStyle = async (data, dest, minify, map) => {
   options = { from: undefined, to: `${dest}.css` };
 
   if (map) {
-    options.map = { prev: result.map.toString() };
+    options.map = { prev: result.sourceMap.toString() };
   }
+
+  log.info(result.css.toString());
 
   await process(result.css.toString(),
     [
