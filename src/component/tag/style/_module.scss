@@ -3,6 +3,6 @@
 /// @group tag
 ////
 
-@include build-tag();
+@import 'module/default';
 @import 'module/variants';
 @import 'module/group';
