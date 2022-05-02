@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use "sass:math";
+
 @function _pow10($exponent) {
   @if $exponent == 0 {
     @return 1;
@@ -59,7 +61,7 @@
   $length: length($float);
   @if $length > 0 {
     @for $i from 1 through $length {
-      $result: $result + (nth($float, $i) / _pow10($i));
+      $result: $result + math.div(nth($float, $i), _pow10($i));
     }
   }
 
@@ -86,7 +88,7 @@
     @return $haystack;
   }
 
-  $range: str_slice($is, $start, str_length($is));
+  $range: str-slice($is, $start, str-length($is));
 
   $i: str-index($range, $in);
 
@@ -97,7 +99,7 @@
   $fi: $i + $start;
   $end: $fi + str-length($in) -1;
 
-  $modified: str_slice($is, 1, $fi - 2) + $ic + str_slice($is, $end, str_length($is));
+  $modified: str-slice($is, 1, $fi - 2) + $ic + str-slice($is, $end, str-length($is));
 
   @return str-replace($modified, $needle, $content, $fi + str-length($ic) - 2);
 }
