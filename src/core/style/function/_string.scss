@@ -80,47 +80,52 @@
 /// @param {String} $content - élément de remplacement
 /// @return {String} la chaîne de caractères transformée
 @function str-replace($haystack, $needle, $content, $start: 1) {
-  $is:'#{$haystack}';
-  $in:'#{$needle}';
-  $ic:'#{$content}';
-
-  @if $in == $ic {
-    @return $haystack;
-  }
-
-  $range: str-slice($is, $start, str-length($is));
-
-  $i: str-index($range, $in);
-  // @debug $i $range $in;
-
-  @if $i == null {
-    @return $is;
-  }
-
-  $fi: $i + $start;
-  $end: $fi + str-length($in) - 1;
-
-  $modified: str-slice($is, 1, $fi - 2) + $ic + str-slice($is, $end, str-length($is));
-
-  @return str-replace($modified, $needle, $content, $fi + str-length($ic) - 2);
+  $chunks: str-split($haystack, $needle);
+  $result: str-join($chunks, $content);
+  @return $result;
 }
 
 /// Découpage d'une chaine de caractères avec un séparateur particulier
 /// @access public
 /// @param {String} $string - chaine de caractère à découper
 /// @param {String} $separator - séparateur
-@function str-split($string, $separator:',') {
-  $tmp: str-slice($string, 1);
-  $list: ();
-  $index: str-index($string, $separator);
+@function str-split($haystack, $needle:',', $separator: comma) {
+  @if type-of($haystack) != string {
+    $haystack: '#{$haystack}';
+  }
+  @if type-of($needle) != string {
+    $needle: '#{$needle}';
+  }
 
-  @if $index == null {
-    $list: ($string);
+  $list: ();
+  $length: str-length($needle);
+  $index: -1;
+
+  @while $index != null {
+    $index: str-index($haystack, $needle);
+
+    @if $index != null {
+      $list: append($list, str-slice($haystack, 1, $index - 1), $separator);
+      $haystack: str-slice($haystack, $index + $length);
+    }
+    @else {
+      $list: append($list, $haystack, $separator);
+    }
   }
-  @else {
-    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1), $separator));
-  }
+
   @return $list;
+}
+
+@function str-join($list, $separator:',') {
+  $result: '';
+  $s: '';
+
+  @each $item in $list {
+    $result: '#{$result}#{$s}#{$item}';
+    $s: $separator;
+  }
+
+  @return $result;
 }
 
 @function is-heading($name) {
