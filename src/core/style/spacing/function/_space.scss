@@ -59,11 +59,11 @@
       @return unquote('#{$start}(#{$middle})#{$end}');
     }
 
-    @if str-index($value, ',') {
+    @if not str-index($value, ',') == null {
       @return space(str-split($value, ','));
     }
 
-    @if str-index($value, ' ') {
+    @if not str-index($value, ' ') == null {
       @return space(str-split($value, ' '));
     }
 
