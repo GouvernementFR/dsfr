@@ -7,6 +7,8 @@
     #{ns(link)} {
       @include disable-underline;
       @include enable-tint;
+      @include margin(0);
+
       @include has-not-icon {
         @include nest-btn(sm, null, null, null, false);
       }
@@ -15,7 +17,6 @@
         @include nest-btn(sm, left, null, null, false);
       }
 
-      @include margin(0 1px 0 0);
     }
   }
 
