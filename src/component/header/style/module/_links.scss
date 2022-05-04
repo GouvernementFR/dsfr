@@ -7,7 +7,7 @@
   &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
     @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
       #{ns(btn)} {
-        @include margin(0);
+        @include margin-bottom(0);
         @include has-not-icon {
           &:not(#{ns(btn--display)}) {
             @include nest-btn(sm, null, null, null, false);

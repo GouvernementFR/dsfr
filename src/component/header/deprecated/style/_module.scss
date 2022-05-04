@@ -7,7 +7,7 @@
     #{ns(link)} {
       @include disable-underline;
       @include enable-tint;
-      @include margin(0);
+      @include margin-bottom(0);
 
       @include has-not-icon {
         @include nest-btn(sm, null, null, null, false);
