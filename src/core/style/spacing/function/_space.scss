@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use "sass:math";
+
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
@@ -86,16 +88,11 @@
     @return $value;
   }
 
-  $v: '#{$value}';
-
-  $q: str-to-num(unquote(str_slice($v, 0, str-length($v) - 1)));
-  $unit: str_slice($v, str-length($v), str-length($v));
-
   @if is-unit($value, v) {
-    @return $q * $V;
+    @return math.div($value, 1v) * $V;
   }
   @else if is-unit($value, w) {
-    @return $q * $W;
+    @return math.div($value, 1w) * $W;
   }
   @return $value;
 }
