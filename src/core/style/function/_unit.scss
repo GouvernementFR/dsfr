@@ -31,8 +31,8 @@
 }
 
 @function is-unit($value, $unit) {
-  $v: to-lower-case(quote($value));
-  $u: quote($unit);
+  $v: to-lower-case('#{$value}');
+  $u: '#{$unit}';
   @return str-index($v, $u) == (str-length($v) - str-length($u) + 1);
 }
 

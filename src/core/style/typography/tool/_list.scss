@@ -59,12 +59,12 @@
 }
 
 @mixin disable-list-style-legacy($unify: false) {
-  $ul: & ul;
-  $ol: & ol;
+  $ul: '#{&} ul';
+  $ol: '#{&} ol';
 
   @if $unify {
-    $ul: selector-associate(&, ul);
-    $ol: selector-associate(&, ol);
+    $ul: selector-associate('#{&}', 'ul');
+    $ol: selector-associate('#{&}', 'ol');
   }
 
   @at-root {

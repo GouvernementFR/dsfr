@@ -25,8 +25,8 @@ const process = async (css, plugins, options) => {
 
 const input = (path, file, standalone) => {
   const insert = standalone ? 'standalone/' : '';
-  const filePath = root(`${path}/${insert}${file}`);
-  return `@use '${filePath}';\r\n`;
+  const filePath = `${path}/${insert}${file}`;
+  return `@import '${filePath}';\r\n`;
 };
 
 const output = (pck, file, standalone) => {
@@ -54,7 +54,8 @@ const buildStyles = async (pck, minify, map, standalone = false) => {
 const buildStyle = async (data, dest, minify, map) => {
   let options = {
     outFile: `${dest}.css`,
-    style: 'expanded'
+    style: 'expanded',
+    loadPaths: [`${root('.')}`]
   };
 
   if (map) {
@@ -66,7 +67,7 @@ const buildStyle = async (data, dest, minify, map) => {
 
   try {
     // TODO : Mettre à jour les options. Ou alors utiliser compile directement sur le fichier ?
-    result = sass.compileString(data, options);
+    result = await sass.compileStringAsync(data, options);
   } catch (e) {
     log.error(e.message);
     try {
@@ -81,8 +82,6 @@ const buildStyle = async (data, dest, minify, map) => {
   if (map) {
     options.map = { prev: result.sourceMap.toString() };
   }
-
-  log.info(result.css.toString());
 
   await process(result.css.toString(),
     [

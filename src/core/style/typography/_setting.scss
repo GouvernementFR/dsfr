@@ -3,9 +3,7 @@
 /// @group core
 ////
 
-// TODO: à corriger avant passage en @use
-$typography-vars: map-get($variables, typography);
-
+@import 'setting/variables';
 @import 'setting/font-face';
 @import 'setting/font-weight';
 @import 'setting/text';

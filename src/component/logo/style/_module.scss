@@ -20,12 +20,14 @@
 
   @include before('', block) {
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-image: url(svg-encode($svg-marianne, true)), linear-gradient(90deg, $blue-france 0%, $blue-france 50%, $red-marianne 50%, $red-marianne 100%), linear-gradient(90deg, $black 0%, $black 100%);
+
   }
 
   @include after('', block) {
     background-repeat: no-repeat;
-    background-image: url(svg-encode($svg-motto, true));
+    $data-uri: svg-encode($svg-motto, true);
+    @debug $data-uri;
+    background-image: url($data-uri);
   }
 
   &--sm {

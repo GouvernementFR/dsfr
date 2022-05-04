@@ -86,7 +86,7 @@
     @return $value;
   }
 
-  $v: quote($value);
+  $v: '#{$value}';
 
   $q: str-to-num(unquote(str_slice($v, 0, str-length($v) - 1)));
   $unit: str_slice($v, str-length($v), str-length($v));
