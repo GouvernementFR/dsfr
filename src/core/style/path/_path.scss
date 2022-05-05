@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'sass:meta';
+
 @function dist-path($levels) {
   $path: '';
   @for $level from 0 to $levels {
@@ -12,7 +14,7 @@
 }
 
 @mixin dist-path($level) {
-  @if $DIST-PATH == null {
+  @if meta.global-variable-exists(DIST-PATH) {
     $DIST-PATH: dist-path($level) !global;
   }
 }
