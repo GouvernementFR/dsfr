@@ -6,10 +6,12 @@ const sample = getSample(include);
 
 <%- sample('Bandeau par défaut', './sample/notice-default', {}, true, './layout.ejs'); %>
 
+<%- sample('Bandeau d\'information', './sample/notice-default', {notice: {type: "info", title: "Titre du bandeau d'information"}}, true, './layout.ejs'); %>
+
 <%- sample('Bandeau d\'information avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau"}}, true, './layout.ejs'); %>
 
 <%- sample('Bandeau d\'information avec lien', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' target='_blank'>lien au fil du texte</a>"}}, true, './layout.ejs'); %>
 
-<%- section('Bandeau dynamique', 'Ajouter l\'attribut role="notice" lorsque le bandeau est ajouté dynamiquement dans le DOM (en js après le chargement de la page)', 0, true); %>
+<%- section('Bandeau dynamique', 'Ajouter l\'attribut role="notice" lorsque le bandeau est ajouté dynamiquement dans le DOM (en js après le chargement de la page)', '16v', true); %>
 
-<%- sample('Bandeau ajoutée dynamiquement (type)', './sample/notice-dismissable', {notice: {notice: true, type: "info", title: "Information qui apparait"}}, true, './layout-dynamic.ejs'); %>
+<%- sample('Bandeau ajouté dynamiquement (exemple)', './sample/notice-dismissable', {notice: {notice: true, type: "info", title: "Information qui apparait"}}, true, './layout-dynamic.ejs'); %>
