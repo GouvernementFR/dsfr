@@ -11,6 +11,7 @@
 		</g>
 	</defs>
 
+	<!-- Deprecated inject svg support -->
 	<use class="fr-artwork-decorative" fill="#ECECFF" xlink:href="#artwork-decorative"></use>
   <use class="fr-artwork-minor" fill="#E1000F" xlink:href="#artwork-minor"></use>
   <use class="fr-artwork-major" fill="#000091" xlink:href="#artwork-major"></use>
