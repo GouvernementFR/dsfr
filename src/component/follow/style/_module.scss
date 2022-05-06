@@ -77,8 +77,7 @@
 
     #{ns-group(btns)} {
       @include horizontal-btns-group;
-      @include margin-right(-4v);
-      @include margin-bottom(-4v);
+      @include margin(0 -4v -4v -4v);
       @include width(auto);
 
       #{ns(btn)} {

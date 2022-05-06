@@ -46,11 +46,11 @@
 }
 
 @mixin horizontal-btns-group() {
-  width: calc(100% + #{space(4v)});
+  @include margin-x(-2v);
 
   #{ns(btn)} {
     width: auto;
-    @include margin-right(4v);
+    @include margin-x(2v);
     max-width: 100%;
   }
 

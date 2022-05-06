@@ -7,7 +7,6 @@
     #{ns(link)} {
       @include disable-underline;
       @include enable-tint;
-      @include margin-bottom(0);
 
       @include has-not-icon {
         @include nest-btn(sm, null, null, null, false);
@@ -16,7 +15,6 @@
       @include has-icon {
         @include nest-btn(sm, left, null, null, false);
       }
-
     }
   }
 
@@ -25,6 +23,7 @@
       @include respond-from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
+        @include margin(0 -4v -4v -4v);
 
         #{ns(link)} {
           @include margin-x(1v);
@@ -46,6 +45,7 @@
         @include size(100%);
         @include min-size(null, 12v);
         @include padding-left(0);
+        @include margin-bottom(0);
       }
     }
   }
