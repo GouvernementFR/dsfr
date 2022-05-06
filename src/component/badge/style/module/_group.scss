@@ -7,6 +7,7 @@
   @include disable-list-style;
   display: flex;
   flex-wrap: wrap;
+  @include margin-x(-1v);
   @include margin-bottom(0);
 
   > li {
@@ -15,8 +16,7 @@
   }
 
   #{ns(badge)} {
-    @include margin-right(2v);
-    @include margin-bottom(2v);
+    @include margin(0 1v 2v 1v);
   }
 
   &--sm {
