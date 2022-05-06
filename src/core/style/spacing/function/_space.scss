@@ -71,28 +71,29 @@
 
     $value: unquote($value);
   }
-
-  @if $value == 0 {
-    @return $value;
-  }
-
-  @if length($value) > 1 {
-    $result: ();
-    @each $v in $value {
-      $result: append($result, space($v));
+  @else {
+    @if $value == 0 {
+      @return $value;
     }
-    @return $result;
-  }
 
-  @if is-basic-unit($value) {
-    @return $value;
-  }
+    @if length($value) > 1 {
+      $result: ();
+      @each $v in $value {
+        $result: append($result, space($v));
+      }
+      @return $result;
+    }
 
-  @if is-unit($value, v) {
-    @return math.div($value, 1v) * $V;
-  }
-  @else if is-unit($value, w) {
-    @return math.div($value, 1w) * $W;
+    @if is-basic-unit($value) {
+      @return $value;
+    }
+
+    @if is-unit($value, v) {
+      @return math.div($value, 1v) * $V;
+    }
+    @else if is-unit($value, w) {
+      @return math.div($value, 1w) * $W;
+    }
   }
   @return $value;
 }
