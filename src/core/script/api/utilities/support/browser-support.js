@@ -6,4 +6,8 @@ const supportLocalStorage = () => {
   }
 };
 
-export { supportLocalStorage };
+const supportAspectRatio = () => {
+  return CSS.supports('aspect-ratio: 16 / 9');
+};
+
+export { supportLocalStorage, supportAspectRatio };
