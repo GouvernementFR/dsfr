@@ -10,6 +10,7 @@
 #{ns(responsive-vid)} {
   @include relative;
   @include size(100%);
+  display: block;
 
   @include fit-cover-center;
 
