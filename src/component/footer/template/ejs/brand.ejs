@@ -17,7 +17,7 @@
 		</a>
 	<% } else { %>
 		<a class="<%= prefix %>-footer__brand-link" href="/" title="Retour à l’accueil">
-			<%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: { ...brand.operator, classes: [prefix + '-footer__logo']}}); %>
+			<%- include('../../../../core/template/ejs/media/img.ejs', {media: { ...brand.operator, classes: [prefix + '-footer__logo']}}); %>
 		</a>
 	<% } %>
 </div>

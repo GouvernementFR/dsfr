@@ -1,8 +1,10 @@
 <%
+const content = locals.content || {};
+const ratio = content.ratio || null;
 let data = {
-  ...locals.content || {},
-  img: imgData('img/placeholder.16x9.png', 'unknown'),
-  caption: '© Légende de l‘image'
+  img: imgData('img/placeholder.16x9.png', 'unknown', ratio ? ratio : '16x9'),
+  caption: '© Légende de l‘image',
+  ...content
 };
 %>
 

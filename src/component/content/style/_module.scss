@@ -12,13 +12,11 @@
 
   &__img {
     @include size(100%);
-    @include relative;
-    @include aspect-ratio();
   }
 
-  &__img > *,
-  &__asset {
-    @include media-overlay-cover;
+  #{class-start-with(ns('responsive-img', ''))},
+  #{class-start-with(ns('responsive-vid', ''))} {
+    @include aspect-ratio();
   }
 
   &__caption,
