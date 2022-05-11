@@ -1,0 +1,50 @@
+<%#
+# paramètres média image
+
+* media.src (string, required): url de l'image
+
+* media.alt (string, optional): texte alternatif de l'image (peut être vide si l'image est illlustrative)
+
+* media.classes (array, optional) : classes sur l'image
+
+* media.attributes (object, optional) : Attributs supplémentaires sur l'image
+
+* media.style (object, optional) : raccourci vers l'attribut style
+
+%>
+<% eval(include('../../../../index.ejs')); %>
+
+<%
+ let media = locals.media || {};
+ const mediaClasses = media.classes || [];
+ const mediaAttributes = media.attributes || {};
+ let comment, alt;
+ if (media.style) mediaAttributes.style = media.style;
+ %>
+
+<% switch (media.alt) {
+  case 'rendered':
+    comment = "L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image";
+    alt = contentPlaceholder("texte alternatif de l’image");
+    break;
+
+  case 'unrendered':
+    comment = "L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance";
+    alt = "";
+    break;
+
+  case 'unknown':
+    comment = "L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte";
+    alt = contentPlaceholder("vide ou texte alternatif de l’image");
+    break;
+
+  default:
+    comment = "L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte";
+    alt = media.alt;
+    break;
+  }
+%>
+<% comment = media.comment || comment; %>
+
+<img <%- includeClasses(mediaClasses) %> <%- includeAttrs(mediaAttributes) %> src="<%= media.src %>" alt="<%= alt %>"  />
+<!-- <%= comment %> -->

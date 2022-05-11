@@ -5,7 +5,7 @@
 
 @supports (aspect-ratio: 16 / 9) {
   @each $ratio, $value in $ratio-scale {
-    @include build-utility(media, ratio, $ratio){
+    @include build-utility(media, ratio, $ratio) {
       @include aspect-ratio($ratio, true);
     }
   }

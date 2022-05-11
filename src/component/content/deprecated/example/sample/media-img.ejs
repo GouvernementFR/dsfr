@@ -1,0 +1,11 @@
+<%
+const content = locals.content || {};
+const ratio = content.ratio || null;
+let data = {
+  img: imgData('img/placeholder.16x9.png', 'unknown', ratio ? ratio : '16x9'),
+  caption: '© Légende de l‘image',
+  ...content
+};
+%>
+
+<%- include('../../template/ejs/media', {content:data}); %>
