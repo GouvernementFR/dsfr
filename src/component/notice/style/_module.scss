@@ -11,7 +11,7 @@
 
   &__body {
     @include relative;
-    @include padding(0 9v 0 10v);
+    @include padding(0 10v 0 10v);
 
     @include icon(null, md) {
       @include absolute(null, null, null, 0);
@@ -27,9 +27,6 @@
   #{ns(btn--close)} {
     @include nest-btn(sm, only, null, null, false);
     @include absolute(-1v, 4v);
-    @include respond-from(md) {
-      right: space(6v);
-    }
   }
 
   &--info {

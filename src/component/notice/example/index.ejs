@@ -2,16 +2,12 @@
 const sample = getSample(include);
 %>
 
-<%- section('Bandeau statique', 'Seul le bandeau de type information est disponible pour le moment. <br> Le titre est défini par la classe "fr-notice__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.', 0, true); %>
+<%- section('Bandeau d\'information', 'Seul le bandeau de type information est disponible pour le moment. <br> Le titre est défini par la classe "fr-notice__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.', 0, true); %>
 
-<%- sample('Bandeau par défaut', './sample/notice-default', {}, true, './layout.ejs'); %>
-
-<%- sample('Bandeau d\'information', './sample/notice-default', {notice: {type: "info", title: "Titre du bandeau d'information"}}, true, './layout.ejs'); %>
+<%- sample('Bandeau d\'information simple', './sample/notice-default', {notice: {type: "info", title: "Titre du bandeau d'information"}}, true, './layout.ejs'); %>
 
 <%- sample('Bandeau d\'information avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau"}}, true, './layout.ejs'); %>
 
 <%- sample('Bandeau d\'information avec lien', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' target='_blank'>lien au fil du texte</a>"}}, true, './layout.ejs'); %>
 
-<%- section('Bandeau dynamique', 'Ajouter l\'attribut role="notice" lorsque le bandeau est ajouté dynamiquement dans le DOM (en js après le chargement de la page)', '16v', true); %>
-
-<%- sample('Bandeau ajouté dynamiquement (exemple)', './sample/notice-dismissable', {notice: {notice: true, type: "info", title: "Information qui apparait"}}, true, './layout-dynamic.ejs'); %>
+<%- sample('Bandeau d\'information titre long', './sample/notice-dismissable', {notice: {type: "info", title: "Titre de bandeau très long, pour tester le comportement du composant avec un texte très long, et un <a href='#' target='_blank'>lien au fil du texte</a> lorem ipsum dolor sit lorem ipsum dolor sit."}}, true, './layout.ejs'); %>
