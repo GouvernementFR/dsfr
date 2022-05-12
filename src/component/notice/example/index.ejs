@@ -2,7 +2,7 @@
 const sample = getSample(include);
 %>
 
-<%- section('Bandeau d\'information', 'Seul le bandeau de type information est disponible pour le moment. <br> Le titre est défini par la classe "fr-notice__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.', 0, true); %>
+<%- section('Bandeau d\'information', 'Seul le bandeau de type information est disponible pour le moment. <br> Le titre est défini par la classe "fr-notice__title", la balise &#60;p&#62; peut être remplacée par un niveau de titre hx suivant le contexte.<br>Le bandeau doit être placé au début du contenu de la page, pour être le premier élément au clique sur le lien d\'évitement "aller au contenu".', 0, true); %>
 
 <%- sample('Bandeau d\'information simple', './sample/notice-default', {notice: {type: "info", title: "Titre du bandeau d'information"}}, true, './layout.ejs'); %>
 
