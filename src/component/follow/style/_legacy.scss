@@ -16,7 +16,7 @@
   #{ns(follow)} {
     #{ns(btn)} {
       &--facebook {
-        @include icon-legacy(facebook-circle-fill, md);
+        @include icon-legacy(facebook-circle-fill);
       }
 
       &--twitter {
