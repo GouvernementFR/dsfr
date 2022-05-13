@@ -30,7 +30,7 @@ if (artwork.accent) classes.push(prefix + '-artwork--' + artwork.accent);
 } %>
 
 <svg <%- includeClasses(classes) %> <%- size %>>
-  <use class="<%= prefix %>-artwork-decorative" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-decorative"></use>
-  <use class="<%= prefix %>-artwork-minor" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-minor"></use>
-  <use class="<%= prefix %>-artwork-major" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-major"></use>
+  <use class="<%= prefix %>-artwork-decorative" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-<%= artwork.name %>-decorative"></use>
+  <use class="<%= prefix %>-artwork-minor" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-<%= artwork.name %>-minor"></use>
+  <use class="<%= prefix %>-artwork-major" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-<%= artwork.name %>-major"></use>
 </svg>
