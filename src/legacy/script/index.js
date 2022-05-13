@@ -5,6 +5,7 @@ import './polyfill-io/add-event-listener-polyfill.min';
 import './polyfill-io/foreach-polyfill.min';
 import './polyfill-io/contains-polyfill.min';
 import './polyfill-io/matches-polyfill.min';
+import './svgxuse/svgxuse.min';
 
 // import { ObjectFitPolyfill } from './object-fit-polyfill/object-fit-polyfill';
 
