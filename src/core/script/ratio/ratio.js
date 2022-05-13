@@ -10,7 +10,6 @@ class Ratio extends Instance {
     if (!api.internals.support.supportAspectRatio()) {
       this.ratio = 16 / 9;
       for (const className in this.classNames) {
-        console.log(this.classNames[className], this.registration.selector.indexOf(this.classNames[className]), this.classNames[className].split('--'));
         if (this.registration.selector.indexOf(this.classNames[className]) > 0) {
           const ratio = this.classNames[className].split('--');
           if (ratio[1]) {
@@ -30,11 +29,7 @@ class Ratio extends Instance {
 
   update () {
     this.currentWidth = this.getRect().width;
-    console.log(this.currentWidth, this.ratio, this.currentWidth / this.ratio + 'px');
-    console.log(this.style.height);
-
     this.style.height = this.currentWidth / this.ratio + 'px';
-    console.log(this.style.height);
   }
 }
 
