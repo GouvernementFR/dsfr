@@ -7,6 +7,7 @@ const supportLocalStorage = () => {
 };
 
 const supportAspectRatio = () => {
+  if (!CSS) return false;
   return CSS.supports('aspect-ratio: 16 / 9');
 };
 
