@@ -8,6 +8,6 @@ const sample = getSample(include);
 
 <%- sample('Bandeau d\'information avec bouton fermer', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau"}}, true, './layout.ejs'); %>
 
-<%- sample('Bandeau d\'information avec lien', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' target='_blank'>lien au fil du texte</a>"}}, true, './layout.ejs'); %>
+<%- sample('Bandeau d\'information avec lien', './sample/notice-dismissable', {notice: {type: "info", title: "Titre du bandeau, <a href='#' rel='noopener' target='_blank'>lien au fil du texte</a>"}}, true, './layout.ejs'); %>
 
-<%- sample('Bandeau d\'information titre long', './sample/notice-dismissable', {notice: {type: "info", title: "Titre de bandeau très long, pour tester le comportement du composant avec un texte très long, et un <a href='#' target='_blank'>lien au fil du texte</a> lorem ipsum dolor sit lorem ipsum dolor sit."}}, true, './layout.ejs'); %>
+<%- sample('Bandeau d\'information titre long', './sample/notice-dismissable', {notice: {type: "info", title: "Titre de bandeau très long, pour tester le comportement du composant avec un texte très long, et un <a href='#' rel='noopener' target='_blank'>lien au fil du texte</a> lorem ipsum dolor sit lorem ipsum dolor sit."}}, true, './layout.ejs'); %>
