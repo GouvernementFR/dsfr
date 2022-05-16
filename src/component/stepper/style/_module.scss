@@ -1,0 +1,42 @@
+////
+/// Stepper Module
+/// @group stepper
+////
+
+#{ns(stepper)} {
+  @include set-title-margin(0);
+  @include set-text-margin(0);
+  @include margin-bottom(8v);
+
+  @include title {
+    @include title-style(h6);
+  }
+
+  &__steps {
+    @include text-style(sm);
+    @include margin-bottom(1v);
+  }
+
+  &__nextStep {
+    @include text-style(xs);
+  }
+
+  &__tiles {
+    @include display-flex(row, null, null, no-wrap);
+    @include margin-y(3v);
+    @include disable-list-style;
+
+    #{ns(stepper__tile)} {
+      @include size(100%, 1.5v);
+      @include relative;
+
+      a {
+        @include absolute(0, 0, 0, 0);
+      }
+
+      &:not(:last-child) {
+        @include margin-right(1.5v);
+      }
+    }
+  }
+}

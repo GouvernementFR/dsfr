@@ -1,0 +1,28 @@
+////
+/// Stepper Scheme
+/// @group stepper
+////
+
+@mixin _stepper-scheme($legacy: false) {
+  #{ns(stepper)} {
+    @include title {
+      @include scheme-element-text-color(title grey, (legacy:$legacy));
+    }
+
+    &__steps {
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
+    }
+
+    &__nextStep {
+      @include scheme-element-text-color(mention grey, (legacy:$legacy));
+    }
+
+    &__tile {
+      @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
+
+      &-active {
+        @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<%
+ let data = {
+   title: 'Titre de l’étape en cours',
+   nextStep: 'Titre de la prochaine étape',
+   currentStep: 1,
+   stepCount: 3,
+    ...locals.stepper,
+  };
+ %>
+
+<%- include('../../template/ejs/stepper.ejs', {stepper:data}); %>

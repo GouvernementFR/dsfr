@@ -1,0 +1,40 @@
+<%#
+# paramètres stepper (indicateur d'étapes)
+
+* stepper.title (string, optional): Titre de l'indicateur d'étapes
+
+* stepper.currentStep (integer, optional): Numéro de l'étape courrante
+
+* stepper.stepCount (integer, optional): Nombre d'étapes
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+ let stepper = locals.stepper || {};
+ let classes = stepper.classes || [];
+ classes.push(prefix + '-stepper');
+%>
+
+<div <%- includeClasses(classes); %>>
+  <% if (stepper.currentStep && stepper.stepCount) { %>
+    <p class="<%= prefix%>-stepper__steps">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></p>
+  <% } %>
+
+  <% if (stepper.title !== undefined) { %>
+    <h6 class="<%= prefix%>-stepper__title"><%= stepper.title %></h6>
+  <% } %>
+
+  <% if (stepper.currentStep && stepper.stepCount) { %>
+    <div class="<%= prefix%>-stepper__tiles">
+      <% const activeTile = prefix + '-stepper__tile-active'; %>
+      <% for (let step = 0; step < stepper.stepCount; step++) { %>
+        <div class="<%= prefix%>-stepper__tile <%= step <= stepper.currentStep ? activeTile : '' %>"></div>
+      <% } %>
+      </div>
+  <% } %>
+
+  <% if (stepper.nextStep !== undefined) { %>
+    <p class="<%= prefix %>-stepper__nextStep"><b>Étape suivante :</b> <%- stepper.nextStep %></p>
+  <% } %>
+</div>
