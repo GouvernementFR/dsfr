@@ -8,9 +8,8 @@
   @include padding(4v 9v 3v 14v);
   @include set-title-margin(0 0 1v);
   @include set-text-margin(0 0 1v);
-  @include icon(null, md);
-
-  @include before {
+  @include icon-size(md, before);
+  @include icon-style(before) {
     @include absolute(0, null, null, 0);
     @include margin(4v 2v);
   }
@@ -29,19 +28,26 @@
   }
 
   &--info {
-    @include icon-image(info-fill, before, false, '');
+    @include icon-image(info-fill, before);
   }
 
   &--success {
-    @include icon-image(success-fill, before, false, '');
+    @include icon-image(success-fill, before);
   }
 
   &--error {
-    @include icon-image(error-fill, before, false, '');
+    @include icon-image(error-fill, before);
   }
 
   &--warning {
-    @include icon-image(warning-fill, before, false, '');
+    @include icon-image(warning-fill, before);
+  }
+
+  &--info,
+  &--success,
+  &--error,
+  &--warning {
+    @include icon-content;
   }
 
   &--sm {

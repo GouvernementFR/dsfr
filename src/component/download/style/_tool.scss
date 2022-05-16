@@ -1,0 +1,16 @@
+////
+/// Button Tool
+/// @group button
+////
+
+@mixin build-download-link() {
+  @include _build-link($download-settings) {
+    @content;
+  }
+}
+
+@mixin nest-download-link() {
+  @include _nest-link($download-settings, md, right, download-line) {
+    @content;
+  }
+}

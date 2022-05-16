@@ -12,60 +12,65 @@ $underline-thickness: 0.0625em;
   }
 }
 
+@mixin init-underline() {
+  --underline-max-width: 100%;
+  --underline-hover-width: 0;
+  --underline-idle-width: var(--underline-max-width);
+  --underline-x: calc(var(--underline-max-width) * 0.5);
+}
+
 @mixin enable-underline() {
   --underline-img: linear-gradient(0deg, currentColor, currentColor);
-  --link-blank-content: '';
 }
 
 @mixin enable-underline-legacy() {
   [href] {
     text-decoration: underline;
   }
-
-  [target='_blank']::after {
-    content: '';
-  }
 }
 
 @mixin disable-underline() {
   --underline-img: none;
-  --link-blank-content: none;
 }
 
 @mixin disable-underline-legacy() {
   [href] {
     text-decoration: none;
   }
-
-  [target='_blank']::after {
-    content: none;
-  }
 }
 
 @mixin link-underline() {
   background-image: var(--underline-img), var(--underline-img);
-  background-position: 50% calc(50% + #{10.5 * $underline-thickness }), 50% calc(50% + #{10.5 * $underline-thickness });
+  background-position: var(--underline-x) calc(100% - #{$underline-thickness}), var(--underline-x) calc(100% - #{$underline-thickness});
   background-repeat: no-repeat, no-repeat;
   transition: background-size 0s;
-  @include link-underline-background-size(100%, 0);
+  background-size: var(--underline-hover-width) #{$underline-thickness * 2 }, var(--underline-idle-width) #{$underline-thickness };
 }
 
-@mixin link-underline-background-size($base-width: 100%, $hover-width: 100%) {
-  background-size: #{$hover-width} #{$underline-thickness * 2 }, #{$base-width} #{$underline-thickness };
+@mixin link-underline-hover-only() {
+  --underline-idle-width: 0;
 }
 
 @mixin hover-underline () {
   &:hover,
   &:active {
-    @include link-underline-background-size(100%, 100%);
+    --underline-hover-width: var(--underline-max-width);
   }
 }
 
 @mixin link-blank() {
-  @include icon-style(after) {
-    @include margin-left(1v);
-    @include margin-bottom(1v);
-  }
+  @include icon-style(after);
   @include icon-size(sm, after);
-  @include icon-image(external-link-line, after, null, var(--link-blank-content));
+  @include icon-image(external-link-line, after);
+  @include after(var(--link-blank-content)) {
+    @include margin-left(1v);
+  }
+}
+
+@mixin enable-blank() {
+  --link-blank-content: '';
+}
+
+@mixin disable-blank() {
+  --link-blank-content: none;
 }

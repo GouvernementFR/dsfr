@@ -3,8 +3,4 @@
 /// @group icons-media
 ////
 
-@include has-icon {
-  @include before('');
-}
-
 @include generate-icons(filter-icons('media'));

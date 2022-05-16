@@ -3,58 +3,47 @@
 /// @group core
 ////
 
-@mixin icon-size-legacy($size:md, $pseudo: null) {
-  $selector: null;
-  @if $pseudo == before or $pseudo == after {
-    $selector: '&::#{$pseudo}';
-  }
-  @include nest($selector) {
+@mixin icon-size-legacy($size:md, $restrain: null) {
+  @include _icon-pseudo($restrain) {
     $size: icon-size($size);
     @include size($size, $size);
   }
 }
 
-@mixin icon-image-legacy($icon, $pseudo: before, $important: false, $content: null) {
-  @include _pseudo($pseudo, $content) {
-    $url: get-icon-url($icon, $important);
+@mixin icon-image-legacy($icon, $restrain: null, $important: false) {
+  $url: get-icon-url($icon, $important);
+
+  @include _icon-pseudo($restrain) {
     background-image: $url;
   }
 }
 
-@mixin icon-style-legacy($pseudo: before, $content: null) {
-  @include _pseudo($pseudo, $content) {
+@mixin icon-style-legacy($restrain: null) {
+  @include _icon-pseudo($restrain) {
     background-color: transparent;
     background-size: 100%;
     background-repeat: no-repeat;
   }
 }
 
-@mixin icon-legacy($icon: null, $size: md, $pseudo: before, $init: true) {
-  @if $init {
-    $content: null;
-    @if $icon != null {
-      content: '';
-    }
-    @include icon-style-legacy($pseudo, $content);
+@mixin icon-legacy($icon: null, $size: md, $restrain: null, $styling: true) {
+  @if $styling {
+    @include icon-style-legacy($restrain);
   }
 
   @if $icon != null {
-    @include icon-image-legacy($icon, $pseudo);
+    @include icon-image-legacy($icon, $restrain);
   }
 
   @if $size != null {
-    @include icon-size-legacy($size, $pseudo);
-  }
-
-  @include _pseudo($pseudo) {
-    @content;
+    @include icon-size-legacy($size, $restrain);
   }
 }
 
 @mixin generate-icons-legacy($config: $icons-config) {
   @each $icon, $setting in $config {
     #{ns(icon-#{$icon})} {
-      @include icon-image-legacy($icon, before, true);
+      @include icon-image-legacy($icon);
     }
   }
 }

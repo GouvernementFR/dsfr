@@ -21,19 +21,20 @@
 
   &__btn {
     @include _build-link-base;
+    @include _link-display(flex);
     @include nest-accordion-button(add-line);
     @include size(100%);
     text-align: left;
     @include margin(0);
 
-    @include before {
+    @include after {
       @include margin-right(0);
       @include margin-left(auto);
     }
 
     &[aria-expanded="true"] {
       @include font-weight('bold');
-      @include icon-image(subtract-line, before);
+      @include icon-image(subtract-line, after);
     }
 
     @include padding(3v 0);

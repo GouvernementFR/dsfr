@@ -7,18 +7,18 @@
   @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('user'));
 
   #{ns(fi-account-line)} {
-    @include icon-content-legacy(account-circle-line, before, true);
+    @include icon-image-legacy(account-circle-line, null, true);
   }
 
   #{ns(fi-account-fill)} {
-    @include icon-content-legacy(account-circle-fill, before, true);
+    @include icon-image-legacy(account-circle-fill, null, true);
   }
 
   #{ns(icon-account-line)} {
-    @include icon-content-legacy(account-circle-line, before, true);
+    @include icon-image-legacy(account-circle-line, null, true);
   }
 
   #{ns(icon-account-fill)} {
-    @include icon-content-legacy(account-circle-fill, before, true);
+    @include icon-image-legacy(account-circle-fill, null, true);
   }
 }

@@ -47,11 +47,16 @@
 }
 
 @mixin _link-display($display) {
-  @if $display == inline {
-    display: inline;
+  @if $display == flex {
+    @include display-flex(row, center, null, null, true);
+    width: -moz-fit-content;
+    width: fit-content;
+    @include _pseudo(before after) {
+      display: block;
+    }
   }
   @else  {
-    @include display-flex(row, center, null, null, true);
+    display: inline;
   }
 }
 
@@ -74,26 +79,34 @@
     @content;
   }
 
-  @each $size, $size-settings in $sizes {
-    @include _link-class($base, $size) {
-      @include _build-link-size($size-settings, $border-radius);
-    }
-
-    @if $align-on-content {
-      @include _link-class($base, $size, null, true) {
-        @include _link-align-on-content($size, null, $size-settings);
+  @if map_get($settings, no-modifier) != true {
+    @each $size, $size-settings in $sizes {
+      @include _link-class($base, $size) {
+        @include _build-link-size($size-settings, $border-radius);
       }
-    }
 
-    @if $places != null {
-      @each $place in $places {
-        @include _link-class($base, $size, $place) {
-          @include _build-link-icon($size-settings, $place, $size);
+      @if $align-on-content {
+        @include _link-class($base, $size, null, true) {
+          @include _link-align-on-content($size, null, $size-settings);
+        }
+      }
+
+      @if $places != null {
+        @each $place in $places {
+          @include _link-class($base, $size, $place) {
+            @include _build-link-icon($size-settings, $place, $size);
+          }
+
+          @if $align-on-content {
+            @include _link-class($base, $size, $place, true) {
+              @include _link-align-on-content($size, $place, $size-settings);
+            }
+          }
         }
 
-        @if $align-on-content {
-          @include _link-class($base, $size, $place, true) {
-            @include _link-align-on-content($size, $place, $size-settings);
+        @if index($places, only) == null {
+          @include _link-class($base, $size, only) {
+            @include before(none);
           }
         }
       }

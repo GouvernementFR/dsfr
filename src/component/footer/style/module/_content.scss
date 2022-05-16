@@ -62,6 +62,6 @@
   @include text-style(sm);
 
   &:not(:hover):not(:active) {
-    @include link-underline-background-size(0, 0);
+    @include link-underline-hover-only;
   }
 }

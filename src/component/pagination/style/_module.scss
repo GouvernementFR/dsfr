@@ -73,13 +73,25 @@
     &--last {
       @include margin-right(-2.5v);
       @include margin-left(3.5v);
+    }
 
+    &--next {
       &#{ns(pagination__link--label)} {
-        @include nest-pagination(right);
+        @include nest-pagination(right, arrow-right-s-line);
       }
 
       &#{ns(pagination__link--lg-label)} {
-        @include nest-pagination(right, null, lg);
+        @include nest-pagination(right, arrow-right-s-line, lg);
+      }
+    }
+
+    &--last {
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(right, arrow-right-s-last-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(right, arrow-right-s-last-line, lg);
       }
     }
   }

@@ -54,8 +54,7 @@
     @include margin-bottom(0);
 
     @include has-icon {
-      @include before {
-        @include icon-size(sm);
+      @include icon-size(sm, before) {
         @include margin-right(2v);
       }
     }

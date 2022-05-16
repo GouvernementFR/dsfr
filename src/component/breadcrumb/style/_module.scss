@@ -47,11 +47,25 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
   @include list() {
     @include disable-list-style;
-    @include display-flex(row, null, null, wrap, true);
     transform: translateY(4px);
 
     @include respond-from(md) {
       transform: none;
+    }
+
+    li {
+      display: inline;
+      line-height: space(7v);
+      vertical-align: top;
+
+      /**
+      * flèche séparatrice en font-icon
+      */
+      &:not(:first-child) {
+        @include icon(arrow-right-s-line, sm, before) {
+          @include margin-x(1v);
+        }
+      }
     }
   }
 
@@ -59,22 +73,9 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
    * margin-bottom de 2v pour créer cet espace entre chaque ligne
    */
   &__link {
+    // vertical-align: top;
     position: relative;
-    display: inline-flex;
     @include text-style(xs);
-    @include margin-bottom(2v);
-
-    /**
-     * flèche séparatrice en font-icon
-     */
-    &:not([aria-current]) {
-      @include margin-right(6v);
-      @include icon(arrow-right-s-line, sm, after);
-      @include after {
-        @include absolute(0.5v, -5v);
-        pointer-events: none;
-      }
-    }
 
     &[aria-current] {
       &:not([href]) {
@@ -84,5 +85,3 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     }
   }
 }
-
-@import 'scheme';

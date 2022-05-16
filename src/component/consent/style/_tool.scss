@@ -1,0 +1,16 @@
+////
+/// Button Tool
+/// @group button
+////
+
+@mixin build-consent-btn() {
+  @include _build-link($consent-btn-settings) {
+    @content;
+  }
+}
+
+@mixin nest-consent-btn() {
+  @include _nest-link($consent-btn-settings, md, right, arrow-down-s-line) {
+    @content;
+  }
+}

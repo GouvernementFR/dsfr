@@ -3,6 +3,8 @@
 /// @group download
 ////
 
+@include build-download-link;
+
 #{ns(download)} {
   @include set-text-margin(0);
   @include set-title-margin(0);
@@ -10,13 +12,16 @@
   @include padding-bottom(6v);
   @include margin(0 0 4v 0);
 
+  @include nest-download-link;
+
+  /*
   &__link {
     @include padding(0);
     @include icon(download-line, sm, after) {
       @include margin-left(1v);
-      @include margin-bottom(1v);
     }
   }
+   */
 
   &__desc {
     @include text-style(sm);

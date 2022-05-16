@@ -41,13 +41,6 @@
       #{ns(btn)} {
         @include margin-x(1v);
       }
-
-      > *:not(:last-child) > #{ns(btn)},
-      > #{ns(btn)}:not(:last-child) {
-        @include after('', block) {
-          @include relative(null, -4v, null, null, 1px, 4v);
-        }
-      }
     }
   }
 }

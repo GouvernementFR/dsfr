@@ -13,9 +13,8 @@
     * Tab button
     */
     &__tab {
-      @include after {
-        @include scheme-element-bg-image-color((border active blue-france) (border default grey) (border default grey) (background default grey), (legacy: $legacy));
-      }
+      @include scheme-element-bg-image-color((border active blue-france) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+      @include scheme-element-box-shadow-color(background default grey, (legacy: $legacy), bottom-2-out);
 
       &:not([aria-selected=true]) {
         @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));

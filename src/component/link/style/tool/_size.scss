@@ -36,7 +36,7 @@
 }
 
 @function _link-icon-margin($size) {
-  @return icon-size($size) / 6;
+  @return icon-size($size) / 8;
 }
 
 @mixin _link-align-on-content($size, $place, $size-settings) {

@@ -3,31 +3,43 @@
 /// @group link
 ////
 
+
+
 @mixin _nest-link($settings: $links-settings, $size: md, $place: null, $icon: null, $from: null, $insert: true, $align-on-content: false) {
   $selector: null;
   $sizes: map_get($settings, sizes);
   $size-settings: map_get($sizes, $size);
   $border-radius: map-get($settings, border-radius);
+  $places: map-get($links-settings, places);
 
   @if $insert {
     $selector: ns(map-get($settings, selector));
   }
 
-  $pseudo: _get-link-icon-pseudo(map-get($settings, places));
-
   @include nest($selector) {
     @include respond-from($from) {
-      @if $icon != null {
-        @include icon($icon, null, $pseudo);
-      }
-
       @include _build-link-size($size-settings, $border-radius);
 
-      @if $place == null {
-        @include _pseudo($pseudo, none);
+      @if $icon != null {
+        $restrain: _get-link-restrain($places, $place);
+        $is-before: _get-link-is-before($places, $place);
+        $icon-size: _get-link-icon-size($size-settings, $places, $place);
+        @if $place != null {
+          @include _build-link-icon($size-settings, $place, $size);
+        }
+        @include icon-style($restrain);
+        @include icon-image($icon, $restrain);
+        @include icon-content($is-before, not $is-before);
       }
       @else {
-        @include _build-link-icon($size-settings, $place, $size, $place == right);
+        @if $place != null {
+          @include _build-link-icon($size-settings, $place, $size);
+        }
+        @else if $size != null {
+          $restrain: _get-link-restrain($places, $place);
+          $icon-size: _get-link-icon-size($size-settings, $places, $place);
+          @include icon-size($icon-size, $restrain);
+        }
       }
 
       @if map-get($settings, align-on-content) and $align-on-content {

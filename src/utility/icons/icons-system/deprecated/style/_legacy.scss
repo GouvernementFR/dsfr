@@ -7,18 +7,18 @@
   @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('system'));
 
   #{ns(fi-delete-line)} {
-    @include icon-content-legacy(delete-bin-line, before, true);
+    @include icon-image-legacy(delete-bin-line, null, true);
   }
 
   #{ns(fi-delete-fill)} {
-    @include icon-content-legacy(delete-bin-fill, before, true);
+    @include icon-image-legacy(delete-bin-fill, null, true);
   }
 
   #{ns(icon-delete-line)} {
-    @include icon-content(delete-bin-line, before, true);
+    @include icon-image-legacy(delete-bin-line, null, true);
   }
 
   #{ns(icon-delete-fill)} {
-    @include icon-content(delete-bin-fill, before, true);
+    @include icon-image-legacy(delete-bin-fill, null, true);
   }
 }

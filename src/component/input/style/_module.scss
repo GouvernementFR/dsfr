@@ -47,11 +47,11 @@
   display: block;
 
   @include has-icon {
-    @include before {
+    @include icon-size(sm, before) {
       @include absolute(3v, 3v, 3v);
       @include margin(auto);
       pointer-events: none;
-      @include icon-size(sm);
+
     }
   }
 

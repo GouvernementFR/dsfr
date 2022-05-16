@@ -37,6 +37,7 @@
 @mixin icon-size ($size:md, $restrain: null) {
   @include _icon-pseudo($restrain) {
     --icon-size: #{icon-size($size)};
+    @content;
   }
 }
 
@@ -48,11 +49,11 @@
   }
 }
 
-@mixin icon-style($pseudo: before, $restrain: null) {
+@mixin icon-style($restrain: null) {
   @include _icon-pseudo($restrain) {
     flex: 0 0 auto;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
     background-color: currentColor;
     @include size(var(--icon-size), var(--icon-size));
     @include mask-image-size(100% 100%);
@@ -60,33 +61,36 @@
   }
 }
 
-@mixin icon-content($position: before, $change: true) {
-  @include _pseudo($position, '');
-  @if $change {
-    $pseudo: list-remove(before after, $position);
-    @include _pseudo($pseudo, none);
+@mixin icon-content($is-before: true, $override: false) {
+  $pseudos: before after;
+  @if not $is-before {
+    $pseudos: after before;
+  }
+  @include _pseudo(nth($pseudos, 1), '') {
+    @content;
+  }
+  @if $override {
+    @include _pseudo(nth($pseudos, 2), none);
   }
 }
 
-@mixin icon($icon: null, $size: md, $pseudo: before, $init: true) {
-  @if $init {
-    $content: '';
-    @if $icon == null {
-      $content: null;
-    }
-    @include icon-style($pseudo, $content);
+@mixin icon($icon: null, $size: md, $restrain: null, $styling: true, $is-before: $restrain != after, $override: false) {
+  @if $styling {
+    @include icon-style($restrain);
   }
 
   @if $icon != null {
-    @include icon-image($icon, $pseudo);
+    @include icon-image($icon, $restrain);
   }
 
   @if $size != null {
-    @include icon-size($size, $pseudo);
+    @include icon-size($size, $restrain);
   }
 
-  @include _pseudo($pseudo) {
-    @content;
+  @if $is-before != null {
+    @include icon-content($is-before, $override) {
+      @content;
+    }
   }
 }
 
@@ -103,7 +107,7 @@
 @mixin generate-icons($config: $icons-config) {
   @each $icon, $setting in $config {
     #{ns(icon-#{$icon})} {
-      @include icon-image($icon, before, true);
+      @include icon-image($icon);
     }
   }
 }

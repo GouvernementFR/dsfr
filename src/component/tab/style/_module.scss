@@ -47,7 +47,7 @@
     /**
     * overflow vertical de 4px pour le focus
     */
-    @include margin(-4px 0);
+    @include margin(-4px 0 -4px);
     @include padding(4px 3v);
   }
 
@@ -61,25 +61,14 @@
     @include z-index(over);
     @include margin(0 1v);
     white-space: nowrap;
-    // transition: background-color 0.3s;
+    background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
+    transition: background-size 0.3s, background-color 0.3s;
+
 
     &[aria-selected=true] {
-      pointer-events: none;
-    }
-
-    @include after('', block) {
-      @include size();
-      @include absolute(0, 0, -2px, 0, 100%);
-      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 100% 3px;
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-      background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
-      // transition: background-size 0.3s;
-    }
-
-    &:not([aria-selected=true]) {
-      @include after {
-        background-size: 0 2px, 1px 0, 1px 0, 0 3px;
-      }
+      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
     }
   }
 

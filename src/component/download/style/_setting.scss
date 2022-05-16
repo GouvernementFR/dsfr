@@ -1,17 +1,16 @@
-$consent-btn-settings:(
-  selector: 'consent-service__collapse-btn',
+$download-settings:(
+  selector: 'download__link',
   sizes: (
     md: (
-      font-size: 14,
+      font-size: 16,
       min-height: 0,
       padding-x: 0,
       padding-y: 0,
       icon: sm,
-      icon-margin-x: 1v
+      icon-margin-x: 2v
     )
   ),
   places: right,
   underline: true,
-  display: flex,
   no-modifier: true
 );
