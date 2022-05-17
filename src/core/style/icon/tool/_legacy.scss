@@ -13,7 +13,6 @@
 
 @mixin icon-image-legacy($icon, $restrain: null, $important: false) {
   $url: get-icon-url($icon, $important);
-
   @include _icon-pseudo($restrain) {
     background-image: $url;
   }

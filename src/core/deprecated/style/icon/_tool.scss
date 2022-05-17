@@ -7,7 +7,7 @@
   @each $icon, $setting in $config {
     @if index($ids, $icon) {
       #{ns(fi-#{$icon})} {
-        @include icon-image($icon, null, true);
+        @include icon-image($icon, null);
       }
     }
   }
@@ -17,7 +17,7 @@
   @each $icon, $setting in $config {
     @if index($ids, $icon) {
       #{ns(fi-#{$icon})} {
-        //@include icon-image-legacy($icon, before, true);
+        @include icon-image-legacy($icon, before);
       }
     }
   }
