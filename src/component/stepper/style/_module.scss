@@ -7,26 +7,28 @@
   @include set-title-margin(0);
   @include set-text-margin(0);
   @include margin-bottom(8v);
+  @include display-flex(column);
 
   @include title {
     @include title-style(h6);
   }
 
-  &__steps {
+  &__state {
     @include text-style(sm);
     @include margin-bottom(1v);
+    order: -1;
   }
 
-  &__nextStep {
+  &__details {
     @include text-style(xs);
   }
 
-  &__tiles {
+  &__steps {
     @include display-flex(row, null, null, no-wrap);
     @include margin-y(3v);
     @include disable-list-style;
 
-    #{ns(stepper__tile)} {
+    #{ns(stepper__step)} {
       @include size(100%, 1.5v);
       @include relative;
 

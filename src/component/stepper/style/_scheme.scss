@@ -9,19 +9,19 @@
       @include scheme-element-text-color(title grey, (legacy:$legacy));
     }
 
-    &__steps {
+    &__state {
       @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
-    &__nextStep {
+    &__details {
       @include scheme-element-text-color(mention grey, (legacy:$legacy));
     }
 
-    &__tile {
-      @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
+    &__step {
+      @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
 
-      &-active {
-        @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
+      &[aria-current] ~  #{ns(stepper__step)} {
+        @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
       }
     }
   }
