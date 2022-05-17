@@ -20,6 +20,8 @@ import { Toggle } from './script/action/toggle/toggle';
 import { RootSelector } from './script/api/modules/stage/root.js';
 import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
+import { Artwork } from './script/artwork/artwork';
+import { ArtworkSelector } from './script/artwork/artwork-selector';
 
 api.core = {
   Instance: Instance,
@@ -41,7 +43,9 @@ api.core = {
   Toggle: Toggle,
   EquisizedsGroup: EquisizedsGroup,
   InjectSvg: InjectSvg,
-  InjectSvgSelector: InjectSvgSelector
+  InjectSvgSelector: InjectSvgSelector,
+  Artwork: Artwork,
+  ArtworkSelector: ArtworkSelector
 };
 
 export default api;
