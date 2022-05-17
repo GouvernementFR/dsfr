@@ -59,7 +59,6 @@ class InjectSvg extends Instance {
     if (name) {
       name = name.slice(0, -1);
 
-      console.log(this.svg.innerHTML);
       if (['dark', 'light', 'system'].includes(name)) {
         this.svg.innerHTML = this.svg.innerHTML.replaceAll('id="artwork-', `id="${name}-artwork-`);
         this.svg.innerHTML = this.svg.innerHTML.replaceAll('"#artwork-', `"#${name}-artwork-`);
