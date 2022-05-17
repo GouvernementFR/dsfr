@@ -75,6 +75,7 @@ class TabsList extends api.core.Instance {
 
   resize () {
     this.isScrolling = this.node.scrollWidth > this.node.clientWidth + SCROLL_OFFSET;
+    this.setProperty('--tab-list-height', `${this.getRect().height}px`);
   }
 
   dispose () {

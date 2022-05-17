@@ -5,7 +5,7 @@
 
 @function _get-tabs-shadow($side, $active: true, $theme: light) {
   @if $active == false {
-    @return inset 0 0 0 0 $black;
+    @return inset 0 0 0 0 $black-0;
   }
 
   $x: 8v;

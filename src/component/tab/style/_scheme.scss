@@ -5,8 +5,10 @@
 
 @mixin _tab-scheme($legacy: false) {
   #{ns(tabs)} {
-    @include after {
-      @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), all-1-in);
+    @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), bottom-1-in);
+
+    @include before {
+      @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), top-1-in left-1-in right-1-in);
     }
 
     /**

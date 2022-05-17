@@ -6,3 +6,8 @@
 @include build-tag();
 @import 'module/variants';
 @import 'module/group';
+
+#{ns(tag)} {
+  @include min-width(9v);
+  justify-content: center;
+}

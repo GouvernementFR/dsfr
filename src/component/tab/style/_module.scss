@@ -14,7 +14,7 @@
   @include margin-x(0);
   @include margin-top(-4px);
   @include padding-top(4px);
-  @include display-flex(row, flex-start);
+  @include display-flex(row, flex-start, null, wrap);
   @include height(var(--tabs-height));
 
   /**
@@ -28,21 +28,22 @@
     @include margin-x(0, md);
   }
 
-  @include after('', block) {
-    @include absolute(11v, 0, 0, 0);
-    pointer-events: none;
+  @include before('', block) {
+    @include size(100%, 100%);
+    @include margin-top(-1px);
+    order: 2;
   }
 
   /**
    * ul : element srollable des boutons
    */
   @include list {
-    @include display-flex(null, flex-end);
+    @include display-flex(null, stretch);
     overflow-x: auto;
     @include width(100%);
     @include min-height(12v);
-    @include absolute;
     z-index: z-index(over);
+    order: 1;
 
     /**
     * overflow vertical de 4px pour le focus
@@ -60,12 +61,12 @@
     font-weight: font-weight(bold);
     @include z-index(over);
     @include margin(0 1v);
+    @include height(100%);
     white-space: nowrap;
     background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
     transition: background-size 0.3s, background-color 0.3s;
-
 
     &[aria-selected=true] {
       background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
@@ -79,10 +80,11 @@
     @include enable-underline;
     @include enable-list-style;
     display: block;
+    order: 3;
     @include relative(null, null, null, 0, 100%, auto);
     @include padding(4v);
     @include padding(8v, md);
-    @include margin-top(10v);
+    transform: translate(-100%);
     @include margin-right(-100%);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
@@ -96,11 +98,11 @@
     }
 
     &--direction-end {
-      transform: translate(100%);
+      transform: translate(0%);
     }
 
     &--direction-start {
-      transform: translate(-100%);
+      transform: translate(-200%);
     }
 
     /**
