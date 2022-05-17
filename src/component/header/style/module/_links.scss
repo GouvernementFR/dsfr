@@ -20,8 +20,6 @@
         &#{ns(btn--display)} {
           @include nest-btn(sm, left, null, null, false);
         }
-
-        @include margin(0 1px 0 0);
       }
     }
   }
@@ -35,13 +33,20 @@
   }
 
   #{ns-group(btns)} {
-    @include horizontal-btns-group;
-    justify-content: flex-end;
+    @include respond-from(lg) {
+      @include horizontal-btns-group;
+      justify-content: flex-end;
+      @include margin(0 -4v -4v -4v);
 
-    > *:not(:last-child) > #{ns(btn)},
-    > #{ns(btn)}:not(:last-child) {
-      @include after('', block) {
-        @include relative(null, -4v, null, null, 1px, 4v);
+      #{ns(btn)} {
+        @include margin-x(1v);
+      }
+
+      > *:not(:last-child) > #{ns(btn)},
+      > #{ns(btn)}:not(:last-child) {
+        @include after('', block) {
+          @include relative(null, -4v, null, null, 1px, 4v);
+        }
       }
     }
   }
@@ -57,6 +62,7 @@
           @include size(100%);
           @include min-size(null, 12v);
           @include padding-left(0);
+          @include margin-bottom(0);
         }
       }
     }

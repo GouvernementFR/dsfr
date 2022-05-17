@@ -6,6 +6,7 @@
 #{ns-group(tags)} {
   @include disable-list-style;
   @include display-flex;
+  @include margin-x(-1.5v);
   flex-wrap: wrap;
 
   > li {
@@ -13,22 +14,20 @@
   }
 
   #{ns(tag)} {
-    @include margin-right(2v);
-    @include margin-bottom(2v);
+    @include margin(0 1v 2v 1v);
   }
 
   &#{ns-group(tags)}--sm {
     @include nest-tag(sm, null);
+    @include margin-x(-3v);
 
     #{ns(tag)} {
-      @include margin-right(3v);
-      @include margin-bottom(3v);
+      @include margin(0 1.5v 3v 1.5v);
     }
 
     @include clickable-selector {
       &#{ns(tag)} {
-        @include margin-right(6v);
-        @include margin-bottom(6v);
+        @include margin(0 3v 6v 3v);
 
         &#{ns(tag)}--dismiss {
           @include icon(null, xs, after) {
@@ -48,12 +47,10 @@
 
   @include clickable-selector {
     &#{ns(tag)} {
-      @include margin-right(3v);
-      @include margin-bottom(3v);
+      @include margin(0 1.5v 3v 1.5v);
 
       &--sm {
-        @include margin-right(6v);
-        @include margin-bottom(6v);
+        @include margin(0 3v 6v 3v);
       }
     }
   }
