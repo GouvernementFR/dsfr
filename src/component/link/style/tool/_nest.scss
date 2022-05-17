@@ -3,8 +3,6 @@
 /// @group link
 ////
 
-
-
 @mixin _nest-link($settings: $links-settings, $size: md, $place: null, $icon: null, $from: null, $insert: true, $align-on-content: false) {
   $selector: null;
   $sizes: map_get($settings, sizes);

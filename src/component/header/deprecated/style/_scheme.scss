@@ -15,11 +15,6 @@
     &__tools-links {
       #{ns(link)} {
         @include btn-kind-scheme(4, $legacy);
-        /*
-        @include after {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
-        }
-         */
       }
     }
   }

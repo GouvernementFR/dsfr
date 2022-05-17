@@ -41,41 +41,31 @@
 
     &--first {
       @include nest-pagination(only, arrow-left-s-first-line);
+
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(left, arrow-left-s-first-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(left, arrow-left-s-first-line, lg);
+      }
     }
 
     &--prev {
       @include nest-pagination(only, arrow-left-s-line);
+
+      &#{ns(pagination__link--label)} {
+        @include nest-pagination(left, arrow-left-s-line);
+      }
+
+      &#{ns(pagination__link--lg-label)} {
+        @include nest-pagination(left, arrow-left-s-line, lg);
+      }
     }
 
     &--next {
       @include nest-pagination(only, arrow-right-s-line);
-    }
 
-    &--last {
-      @include nest-pagination(only, arrow-right-s-last-line);
-    }
-
-    &--first,
-    &--prev {
-      @include margin-right(3.5v);
-      @include margin-left(-2.5v);
-
-      &#{ns(pagination__link--label)} {
-        @include nest-pagination(left);
-      }
-
-      &#{ns(pagination__link--lg-label)} {
-        @include nest-pagination(left, null, lg);
-      }
-    }
-
-    &--next,
-    &--last {
-      @include margin-right(-2.5v);
-      @include margin-left(3.5v);
-    }
-
-    &--next {
       &#{ns(pagination__link--label)} {
         @include nest-pagination(right, arrow-right-s-line);
       }
@@ -86,6 +76,8 @@
     }
 
     &--last {
+      @include nest-pagination(only, arrow-right-s-last-line);
+
       &#{ns(pagination__link--label)} {
         @include nest-pagination(right, arrow-right-s-last-line);
       }
@@ -93,6 +85,18 @@
       &#{ns(pagination__link--lg-label)} {
         @include nest-pagination(right, arrow-right-s-last-line, lg);
       }
+    }
+
+    &--first,
+    &--prev {
+      @include margin-right(3.5v);
+      @include margin-left(-2.5v);
+    }
+
+    &--next,
+    &--last {
+      @include margin-right(-2.5v);
+      @include margin-left(3.5v);
     }
   }
 }

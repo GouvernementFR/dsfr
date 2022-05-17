@@ -19,9 +19,9 @@
     max-width: 100%;
     max-height: none;
     @include before {
+      --icon-size: #{$icon-size};
       margin-left: -($icon-margin);
       margin-right: $icon-margin-x;
-      --icon-size: #{$icon-size};
     }
   }
   @else if $place == right {
@@ -29,9 +29,9 @@
     max-width: 100%;
     max-height: none;
     @include icon-content(false, true) {
+      --icon-size: #{$icon-size};
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
-      --icon-size: #{$icon-size};
     }
   }
   @else if $place == only {
@@ -46,9 +46,9 @@
     padding-right: $padding-x;
 
     @include before {
+      --icon-size: #{$icon-size};
       margin-left: 0;
       margin-right: $padding-x;
-      --icon-size: #{$icon-size};
     }
   }
 }
