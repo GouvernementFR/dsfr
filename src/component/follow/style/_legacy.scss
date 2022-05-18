@@ -19,6 +19,10 @@
         @include icon-legacy(facebook-circle-fill, md);
       }
 
+      &--github {
+        @include icon-legacy(github-fill, md);
+      }
+
       &--twitter {
         @include icon-legacy(twitter-fill);
       }

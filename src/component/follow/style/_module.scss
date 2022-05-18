@@ -161,6 +161,7 @@
   }
 
   @include social-icon(facebook, facebook-circle-fill);
+  @include social-icon(github, github-fill);
   @include social-icon(twitter, twitter-fill);
   @include social-icon(instagram, instagram-fill);
   @include social-icon(linkedin, linkedin-box-fill);

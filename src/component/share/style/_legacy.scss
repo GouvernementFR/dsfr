@@ -24,6 +24,9 @@
     #{ns(btn)}--facebook {
       @include icon-legacy(facebook-circle-line, md, before);
     }
+    #{ns(btn)}--github {
+      @include icon-legacy(github-line, md, before);
+    }
     #{ns(btn)}--twitter {
       @include icon-legacy(twitter-line, md, before);
     }
