@@ -15,6 +15,7 @@
 
   #{ns(link)} {
     @include margin(0 2v 4v);
+    vertical-align: top;
   }
 
   &--sm {

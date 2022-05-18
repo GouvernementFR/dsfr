@@ -7,7 +7,6 @@
   @include set-text-margin(0);
   @include disable-underline;
   display: inline-block;
-  @include padding(1em);
   @include font-weight(bold);
   line-height: #{(13 / 12.6)}em;
   letter-spacing: -0.01em;

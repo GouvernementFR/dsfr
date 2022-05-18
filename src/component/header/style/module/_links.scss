@@ -36,7 +36,7 @@
     @include respond-from(lg) {
       @include horizontal-btns-group;
       justify-content: flex-end;
-      @include margin(0 -4v -4v -4v);
+      @include margin(0 -1v -2v);
 
       #{ns(btn)} {
         @include margin-x(1v);
@@ -52,7 +52,7 @@
         @include display-flex(column);
 
         #{ns(btn)} {
-          @include size(100%);
+          @include width(calc(100% - 4v));
           @include min-size(null, 12v);
           @include padding-left(0);
           @include margin-bottom(0);

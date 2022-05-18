@@ -7,9 +7,10 @@
   @include disable-list-style;
   @include display-flex(null, stretch, null, wrap);
   @include vertical-btns-group;
+  @include margin-x(-2v);
 
   #{ns(btn)} {
-    @include margin-bottom(4v);
+    @include margin(0 2v 4v);
     justify-content: center;
   }
 

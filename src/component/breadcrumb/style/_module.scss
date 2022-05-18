@@ -56,7 +56,6 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     li {
       display: inline;
       line-height: space(7v);
-      vertical-align: top;
 
       /**
       * flèche séparatrice en font-icon
@@ -73,7 +72,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
    * margin-bottom de 2v pour créer cet espace entre chaque ligne
    */
   &__link {
-    // vertical-align: top;
+    vertical-align: top;
     position: relative;
     @include text-style(xs);
 

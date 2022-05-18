@@ -4,8 +4,8 @@
 ////
 
 @mixin logo-size($size) {
-  $font-size: map-get($logo-sizes, $size);
-  font-size: #{($font-size * 1.05)};
+  $font-size: space(map-get($logo-sizes, $size));
+  font-size: #{$font-size * 1.05};
 
   @include before {
     @include size(#{2.75 * $font-size}, #{$font-size});
@@ -33,10 +33,12 @@
 @mixin logo($size: md, $size-md: null) {
   #{ns(logo)} {
     @include logo-size($size);
+    @include padding(map-get($logo-sizes, $size));
 
     @if $size-md != null {
       @include respond-from(md) {
         @include logo-size($size-md);
+        @include padding(map-get($logo-sizes, $size-md));
       }
     }
 
