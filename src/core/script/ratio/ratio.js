@@ -11,7 +11,7 @@ class Ratio extends Instance {
       this.ratio = 16 / 9;
       for (const className in this.classNames) {
         if (this.registration.selector.indexOf(this.classNames[className]) > 0) {
-          const ratio = this.classNames[className].split('--');
+          const ratio = this.classNames[className].split('ratio-');
           if (ratio[1]) {
             this.ratio = ratio[1].split('x')[0] / ratio[1].split('x')[1];
           }

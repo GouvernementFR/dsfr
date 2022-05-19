@@ -24,7 +24,7 @@
           $mod: '';
         }
         @if $modifier {
-          $mod: #{$mod + '--' + $modifier};
+          $mod: #{$mod + '-' + $modifier};
         }
         @include respond-from($bp) {
           #{ns($name)}#{$mod} {
