@@ -1,0 +1,16 @@
+////
+/// Button Tool - default
+/// @group button
+////
+
+@mixin build-btn() {
+  @include _build-link($btn-settings) {
+    @content;
+  }
+}
+
+@mixin nest-btn($size: md, $place: null, $icon:null, $from: null, $insert: true, $align-on-content: false) {
+  @include _nest-link($btn-settings, $size, $place, $icon, $from, $insert, $align-on-content) {
+    @content;
+  }
+}

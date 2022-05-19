@@ -63,6 +63,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       &:not(:first-child) {
         @include icon(arrow-right-s-line, sm, before) {
           @include margin-x(1v);
+          vertical-align: calc((1.05rem - var(--icon-size)) * 0.5);
         }
       }
     }
