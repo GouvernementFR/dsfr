@@ -19,23 +19,27 @@ class Artwork extends Instance {
   }
 
   fetch () {
-    this.xlink = this.getAttribute('xlink:href');
+    this.xlink = this.node.getAttribute('xlink:href');
     const splitUrl = this.xlink.split('#');
     this.svgUrl = splitUrl[0];
     this.svgName = splitUrl[1];
 
-    fetch(this.svgUrl)
-      .then(data => data.text())
-      .then(response => {
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(response, 'text/html');
-        this.realSvgContent = xmlDoc.getElementById(this.svgName);
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      // const that = this;
+      // console.log(that);
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
+      this.realSvgContent = xmlDoc.getElementById(this.svgName);
 
-        if (this.realSvgContent) {
-          this.realSvgContent.classList = this.node.classList;
-          this.replace();
-        }
-      });
+      console.log(xmlDoc, this.svgName, this.realSvgContent);
+      if (this.realSvgContent) {
+        this.realSvgContent.classList = this.node.classList;
+        this.replace();
+      }
+    };
+    xhr.open('GET', this.svgUrl);
+    xhr.send();
   }
 
   replace () {
