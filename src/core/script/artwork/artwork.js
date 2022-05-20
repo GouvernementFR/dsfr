@@ -34,7 +34,7 @@ class Artwork extends Instance {
 
       console.log(xmlDoc, this.svgName, this.realSvgContent);
       if (this.realSvgContent) {
-        this.realSvgContent.classList = this.node.classList;
+        this.realSvgContent.classList.add(this.node.classList);
         this.replace();
       }
     };
