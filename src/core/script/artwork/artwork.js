@@ -26,13 +26,10 @@ class Artwork extends Instance {
 
     const xhr = new XMLHttpRequest();
     xhr.onload = () => {
-      // const that = this;
-      // console.log(that);
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xhr.responseText, 'text/html');
       this.realSvgContent = xmlDoc.getElementById(this.svgName);
 
-      console.log(xmlDoc, this.svgName, this.realSvgContent);
       if (this.realSvgContent) {
         this.realSvgContent.classList.add(this.node.classList);
         this.replace();
