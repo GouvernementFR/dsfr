@@ -1,0 +1,35 @@
+////
+/// Button Tool - group
+/// @group button
+////
+
+@mixin horizontal-btns-group() {
+  #{ns(btn)} {
+    width: auto;
+    max-width: 100%;
+  }
+
+  > li {
+    display: inline-flex;
+    max-width: 100%;
+    width: auto;
+
+    @include before(none);
+  }
+}
+
+@mixin vertical-btns-group() {
+  @include margin-right(0);
+  @include margin-left(0);
+
+  > li {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #{ns(btn)} {
+    width: 100%;
+    @include margin-right(0);
+    @include margin-left(0);
+  }
+}

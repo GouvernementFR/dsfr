@@ -3,4 +3,6 @@
 /// @group button
 ////
 
-@include build-btn();
+@include build-btn() {
+  @include font-weight(medium);
+}

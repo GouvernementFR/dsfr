@@ -14,7 +14,8 @@ $pagination-build-settings:(
       icon-margin-x: 2v,
       icon-only: md
     )
-  )
+  ),
+  display: flex
 );
 
 $pagination-nest-settings: map-merge($pagination-build-settings, (places: only left right));

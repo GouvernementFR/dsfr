@@ -6,17 +6,17 @@
 @include generate-deprecated-icons($deprecated-icons, filter-icons('user'));
 
 #{ns(fi-account-line)} {
-  @include icon-content(account-circle-line, before, true);
+  @include icon-image(account-circle-line, null, true);
 }
 
 #{ns(fi-account-fill)} {
-  @include icon-content(account-circle-fill, before, true);
+  @include icon-image(account-circle-fill, null, true);
 }
 
 #{ns(icon-account-line)} {
-  @include icon-content(account-circle-line, before, true);
+  @include icon-image(account-circle-line, null, true);
 }
 
 #{ns(icon-account-fill)} {
-  @include icon-content(account-circle-fill, before, true);
+  @include icon-image(account-circle-fill, null, true);
 }

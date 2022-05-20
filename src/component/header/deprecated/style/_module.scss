@@ -4,6 +4,11 @@
     @include display-flex(null, stretch, null, wrap);
     @include vertical-btns-group;
 
+    @include respond-from(lg) {
+      justify-content: flex-end;
+      @include horizontal-btns-group;
+    }
+
     #{ns(link)} {
       @include disable-underline;
       @include enable-tint;
@@ -14,6 +19,7 @@
 
       @include has-icon {
         @include nest-btn(sm, left, null, null, false);
+        @include before('');
       }
     }
   }
@@ -23,17 +29,10 @@
       @include respond-from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
-        @include margin(0 -4v -4v -4v);
+        @include margin(0 -1v -2v);
 
         #{ns(link)} {
           @include margin-x(1v);
-        }
-
-        > *:not(:last-child) > #{ns(link)},
-        > #{ns(link)}:not(:last-child) {
-          @include after('', block) {
-            @include relative(null, -4v, null, null, 1px, 4v);
-          }
         }
       }
     }

@@ -20,15 +20,13 @@ locals.deprecation = deprecation;
 function getSample (include) {
   return (title, path, data, snippet, layout, layoutData) => {
     sampling = false;
-    const cd = {...data};
-    const sd = {...data};
-    let component = include(path, JSON.parse(JSON.stringify(data)));
+    let component = include(path, {...data});
 
     if (locals.noSnippet) snippet = undefined;
 
     if (snippet === true) {
         sampling = true;
-        let html =  include(path, JSON.parse(JSON.stringify(data)));
+        let html =  include(path, {...data});
         sampling = false;
         html = beautify(html);
 

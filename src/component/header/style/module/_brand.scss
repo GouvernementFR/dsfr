@@ -7,10 +7,12 @@
   @include display-flex(row, center, flex-start, wrap);
   @include margin-y(-4v, lg);
   @include size(100%);
+  @include padding-x(1v);
 
   @include respond-from(lg) {
     flex-wrap: nowrap;
     @include size(auto);
+    @include padding-x(0);
   }
 
   &-top {
@@ -49,7 +51,7 @@
   flex: 0 0 auto;
   @include padding(3v);
   @include logo(sm, null) {
-    @include margin(-1em);
+    @include margin(-3v);
   }
 }
 

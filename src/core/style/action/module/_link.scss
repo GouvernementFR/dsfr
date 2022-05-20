@@ -8,7 +8,9 @@ a {
 }
 
 :root {
+  @include init-underline;
   @include enable-underline;
+  @include enable-blank;
 }
 
 // TODO: à checker avec <area href="" >

@@ -9,9 +9,8 @@ const { getPackages } = require('../utilities/config');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
-beautyOpts.indent_inner_html = true;
+beautyOpts.indent_inner_html = false;
 beautyOpts.indent_handlebars = true;
-
 beautyOpts.inline = [];
 
 let count = 0;

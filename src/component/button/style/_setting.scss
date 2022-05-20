@@ -3,7 +3,7 @@
 /// @group button
 ////
 
-$btns-settings:(
+$btn-settings:(
   selector: btn,
   sizes: (
     sm: (
@@ -31,5 +31,7 @@ $btns-settings:(
       icon-only: lg,
     )
   ),
-  places: only left right
+  places: only left right,
+  display: flex,
+  align-on-content: true
 );
