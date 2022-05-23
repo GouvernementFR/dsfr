@@ -18,63 +18,9 @@
     }
 
     &__steps {
-      @include _scheme-element(--step1, background, active blue-france, (legacy:$legacy));
-      @include _scheme-element(--step2, background, contrast grey, (legacy:$legacy));
-      @include _scheme-element(--step3, background, contrast grey, (legacy:$legacy));
-      @include _scheme-element(--step4, background, contrast grey, (legacy:$legacy));
-      @include _scheme-element(--step5, background, contrast grey, (legacy:$legacy));
-      @include _scheme-element(--step6, background, contrast grey, (legacy:$legacy));
-      @include _scheme-element(--step7, background, contrast grey, (legacy:$legacy));
-      @include _scheme-element(--step8, background, contrast grey, (legacy:$legacy));
-
-      &[data-fr-current-step="2"],
-      &[data-fr-current-step="3"],
-      &[data-fr-current-step="4"],
-      &[data-fr-current-step="5"],
-      &[data-fr-current-step="6"],
-      &[data-fr-current-step="7"],
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step2, background, active blue-france, (legacy:$legacy));
-      }
-
-      &[data-fr-current-step="3"],
-      &[data-fr-current-step="4"],
-      &[data-fr-current-step="5"],
-      &[data-fr-current-step="6"],
-      &[data-fr-current-step="7"],
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step3, background, active blue-france, (legacy:$legacy));
-      }
-
-      &[data-fr-current-step="4"],
-      &[data-fr-current-step="5"],
-      &[data-fr-current-step="6"],
-      &[data-fr-current-step="7"],
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step4, background, active blue-france, (legacy:$legacy));
-      }
-
-      &[data-fr-current-step="5"],
-      &[data-fr-current-step="6"],
-      &[data-fr-current-step="7"],
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step5, background, active blue-france, (legacy:$legacy));
-      }
-
-      &[data-fr-current-step="6"],
-      &[data-fr-current-step="7"],
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step6, background, active blue-france, (legacy:$legacy));
-      }
-
-      &[data-fr-current-step="7"],
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step7, background, active blue-france, (legacy:$legacy));
-      }
-
-      &[data-fr-current-step="8"] {
-        @include _scheme-element(--step8, background, active blue-france, (legacy:$legacy));
-      }
+      $active-step: 'repeating-linear-gradient(to right, $color#1 0%, $color#1 var(--active-inner), transparent var(--active-inner), transparent var(--active-outer) )';
+      $default-step: 'repeating-linear-gradient(to right, $color#2 0%, $color#2 var(--default-inner), transparent var(--default-inner), transparent var(--default-outer) )';
+      @include _scheme-element(background-image, background, (active blue-france) (contrast grey), (legacy:$legacy), '#{$active-step}, #{$default-step}');
     }
   }
 }

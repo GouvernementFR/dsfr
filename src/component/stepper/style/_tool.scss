@@ -1,0 +1,20 @@
+////
+/// Share Tool
+/// @group share
+////
+
+@mixin stepper-build () {
+  @for $i from 2 through 8 {
+    &#{ns-attr(steps, $i)} {
+      --steps: #{$i};
+      --step-width: calc(100% / #{$i});
+    }
+  }
+
+  --current-step: 0;
+  @for $i from 1 through 8 {
+    &#{ns-attr(current-step, $i)} {
+      --current-step: #{$i};
+    }
+  }
+}
