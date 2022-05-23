@@ -18,7 +18,7 @@
     }
 
     &__steps {
-      @include _scheme-element(--step1, background, contrast grey, (legacy:$legacy));
+      @include _scheme-element(--step1, background, active blue-france, (legacy:$legacy));
       @include _scheme-element(--step2, background, contrast grey, (legacy:$legacy));
       @include _scheme-element(--step3, background, contrast grey, (legacy:$legacy));
       @include _scheme-element(--step4, background, contrast grey, (legacy:$legacy));
