@@ -24,21 +24,11 @@
   }
 
   &__steps {
-    @include display-flex(row, null, null, no-wrap);
     @include margin-y(3v);
-    @include disable-list-style;
-
-    #{ns(stepper__step)} {
-      @include size(100%, 1.5v);
-      @include relative;
-
-      a {
-        @include absolute(0, 0, 0, 0);
-      }
-
-      &:not(:last-child) {
-        @include margin-right(1.5v);
-      }
-    }
+    @include size(100%, 1.5v);
+    background-repeat: no-repeat;
+    background-size: calc(100% + #{space(1.5v)});
+    background-position: 50%;
+    @include stepper-build();
   }
 }

@@ -15,7 +15,7 @@
 <%
  let stepper = locals.stepper || {};
  let classes = stepper.classes || [];
- let currentStepAttrs = {};
+ let stepAttrs = {};
  classes.push(prefix + '-stepper');
 %>
 
@@ -29,12 +29,9 @@
   <% } %>
 
   <% if (stepper.currentStep && stepper.stepCount) { %>
-    <div class="<%= prefix%>-stepper__steps">
-      <% for (let step = 1; step <= stepper.stepCount; step++) { %>
-        <% step === stepper.currentStep ? currentStepAttrs['aria-current'] = 'step' : currentStepAttrs = {} %>
-        <div class="<%= prefix%>-stepper__step" <%- includeAttrs(currentStepAttrs) %>></div>
-      <% } %>
-      </div>
+    <% stepAttrs['data-' + prefix + '-current-step'] = stepper.currentStep %>
+    <% stepAttrs['data-' + prefix + '-steps'] = stepper.stepCount %>
+    <div class="<%= prefix%>-stepper__steps" <%- includeAttrs(stepAttrs) %>></div>
   <% } %>
 
   <% if (stepper.nextStep !== undefined) { %>

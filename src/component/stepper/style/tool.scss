@@ -1,0 +1,20 @@
+////
+/// Share Tool
+/// @group share
+////
+
+@mixin stepper-build () {
+  @for $i from 2 through 8 {
+    $steps: (to right, var(--step1) 0%);
+    @for $j from 1 to $i {
+      $steps: append($steps , var(--step#{$j}) calc(#{$j * 100%} / #{$i} - 3px), comma);
+      $steps: append($steps , transparent calc(#{$j * 100%} / #{$i} - 3px), comma);
+      $steps: append($steps , transparent calc(#{$j * 100%} / #{$i} + 3px), comma);
+      $steps: append($steps , var(--step#{$j + 1}) calc(#{$j * 100%} / #{$i} + 3px), comma);
+    }
+    $steps: append($steps , var(--step#{$i}) 100%, comma);
+    &#{ns-attr(steps, $i)} {
+      background-image: linear-gradient($steps);
+    }
+  }
+}
