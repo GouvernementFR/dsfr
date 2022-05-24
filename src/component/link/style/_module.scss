@@ -4,3 +4,36 @@
 ////
 
 @include build-link();
+
+#{ns(link)} {
+  position: relative;
+  &--icon-left {
+    @include padding-left(6v);
+    @include before {
+      @include absolute(50%, null, null, 0);
+      @include margin-top(-2v);
+    }
+  }
+
+  &--icon-left#{&}--lg {
+    @include padding-left(8v);
+    @include before {
+      @include margin-top(-3v);
+    }
+  }
+
+  &--icon-right {
+    @include padding-right(6v);
+    @include before {
+      @include absolute(50%, 0);
+      @include margin-top(-2v);
+    }
+  }
+
+  &--icon-right#{&}--lg {
+    @include padding-right(8v);
+    @include before {
+      @include margin-top(-3v);
+    }
+  }
+}
