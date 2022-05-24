@@ -21,12 +21,12 @@
 
 <div <%- includeClasses(classes); %>>
   <% if (stepper.title !== undefined) { %>
-    <h6 class="<%= prefix%>-stepper__title">
+    <h2 class="<%= prefix%>-stepper__title">
       <% if (stepper.currentStep && stepper.stepCount) { %>
-        <span class="<%= prefix%>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
+        <span class="<%= prefix %>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
       <% } %>
-      <%= stepper.title %>
-    </h6>
+      <%- stepper.title %>
+    </h2>
   <% } %>
 
 
