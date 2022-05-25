@@ -11,11 +11,14 @@
 
   @include title {
     @include title-style(h6);
+    @include set-title-margin(0 0 3v 0);
+    @include set-text-margin(0 0 3v 0);
   }
 
   &__state {
     @include text-style(sm);
-    @include margin-bottom(1v);
+    @include set-title-margin(0 0 1v 0);
+    @include set-text-margin(0 0 1v 0);
     @include font-weight(regular);
     @include after('\00000a') {
       white-space: pre;
@@ -32,7 +35,7 @@
     --default-inner: calc(var(--default-outer) - 6px);
     --active-outer: calc((100% + 6px) / var(--current-step));
     --active-inner: calc(var(--active-outer) - 6px);
-    @include margin-y(3v);
+    @include margin-bottom(3v);
     @include size(calc(100% + 6px), 6px);
     background-repeat: no-repeat;
     background-size: calc(var(--current-step) * var(--step-width) - 6px) 100%, calc(var(--default-steps) * var(--step-width) - 6px) 100%;
