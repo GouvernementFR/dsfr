@@ -5,6 +5,15 @@
 
 @mixin build-share-btn($name, $icon) {
   #{ns(btn)}--#{$name} {
-    @include nest-btn(md, only, $icon, null, false);
+    @include icon($icon, md, before);
   }
 }
+
+@mixin build-share-social-btns() {
+  @each $name, $icon in $share-icons {
+    #{ns(btn)}--#{$name} {
+      @include icon($icon, md, before);
+    }
+  }
+}
+

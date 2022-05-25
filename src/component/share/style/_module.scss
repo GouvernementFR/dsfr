@@ -21,15 +21,11 @@
 
   #{ns-group(btns)} {
     @include horizontal-btns-group;
-    //@include margin-x(-1v);
-    //@include margin-bottom(2v);
     @include width(auto);
     order: 2;
 
     #{ns(btn)} {
       justify-content: flex-start;
-      //@include margin-x(1v);
-      //@include margin-bottom(2v);
     }
 
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
@@ -42,8 +38,6 @@
   }
 }
 
-@include build-share-btn(facebook, facebook-circle-line);
-@include build-share-btn(twitter, twitter-line);
-@include build-share-btn(linkedin, linkedin-box-line);
+@include build-share-social-btns();
 @include build-share-btn(mail, mail-line);
 @include build-share-btn(copy, links-fill);

@@ -159,9 +159,5 @@
     }
   }
 
-  @include social-icon(facebook, facebook-circle-fill);
-  @include social-icon(twitter, twitter-fill);
-  @include social-icon(instagram, instagram-fill);
-  @include social-icon(linkedin, linkedin-box-fill);
-  @include social-icon(youtube, youtube-fill);
+  @include build-follow-social-icons();
 }
