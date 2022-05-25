@@ -22,6 +22,7 @@
     @include font-weight(regular);
     @include after('\00000a') {
       white-space: pre;
+      line-height: space(8v);
     }
   }
 
