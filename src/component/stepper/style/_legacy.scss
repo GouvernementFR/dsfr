@@ -6,7 +6,7 @@
 @include legacy(ie11) {
   #{ns(stepper)} {
     @include title {
-      margin-bottom: 0;
+      @include margin-bottom(3v);
     }
 
     &__steps {
