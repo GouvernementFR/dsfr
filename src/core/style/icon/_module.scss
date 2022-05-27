@@ -4,7 +4,7 @@
 ////
 
 @include has-icon {
-  @include icon-style(before, null);
+  @include icon-style(before, '');
   @include icon-size(md);
 }
 
