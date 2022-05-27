@@ -80,7 +80,7 @@ const buildStyle = async (data, dest, minify, map) => {
   options = { from: undefined, to: `${dest}.css` };
 
   if (map) {
-    options.map = { prev: result.sourceMap.toString() };
+    options.map = { prev: result.sourceMap };
   }
 
   await process(result.css.toString(),
