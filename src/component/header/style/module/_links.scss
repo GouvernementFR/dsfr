@@ -52,15 +52,15 @@
         @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
           @include display-flex(column);
 
-        #{ns(btn)} {
-          @include width(calc(100% - 4v));
-          @include min-size(null, 12v);
-          @include padding-left(0);
-          @include margin-bottom(0);
+          #{ns(btn)} {
+            @include width(calc(100% - 4v));
+            @include min-size(null, 12v);
+            @include padding-left(0);
+            @include margin-bottom(0);
+          }
         }
       }
     }
-  }
 
     @include respond-from(lg) {
       display: none;

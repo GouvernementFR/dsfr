@@ -57,10 +57,10 @@
   &__bottom-link {
     @include text-style(xs);
 
-  &:not(:hover):not(:active) {
-    @include link-underline-hover-only;
+    &:not(:hover):not(:active) {
+      @include link-underline-hover-only;
+    }
   }
-}
 
   /**
   * Copyright

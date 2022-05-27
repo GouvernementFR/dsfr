@@ -9,7 +9,7 @@
     "scss/at-rule-no-unknown": true,
     "no-descending-specificity": null,
     "unit-case": null,
-    "unit-no-unknown": [true, { "ignoreFunctions": ["space", "calc"], "ignoreUnits": ["N", "v", "w", "/x[0-9]+/"] }],
+    "unit-no-unknown": [true, { "ignoreFunctions": ["space", "calc"], "ignoreUnits": ["Hz", "kHz", "N", "v", "w", "/x[0-9]+/"] }],
     "at-rule-empty-line-before": null,
     "declaration-empty-line-before": null,
     "font-family-no-missing-generic-family-keyword": [true,{ "ignoreFontFamilies": ["icons"] }],
