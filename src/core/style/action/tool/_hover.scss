@@ -22,8 +22,8 @@
           $nested: nest($selector, map-get($hover, selector));
         }
         $associated: $nested;
-        @if & != null and quote(&) != ':root' {
-          $associated: selector-associate(quote(&), $nested);
+        @if & != null and '#{&}' != ':root' {
+          $associated: selector-associate('#{&}', $nested);
         }
         $selectors: append($selectors, $associated, 'comma');
       }

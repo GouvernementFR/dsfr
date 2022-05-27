@@ -10,7 +10,7 @@
 
   $titles: ();
   @each $title, $variation in ($title-settings) {
-    @if str-index(quote($title), 'h') == 1 {
+    @if is-heading($title) {
       $titles: append($titles, $title, comma);
     }
   }

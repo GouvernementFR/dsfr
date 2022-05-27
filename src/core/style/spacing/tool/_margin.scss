@@ -16,10 +16,10 @@
     $middle: '#{$breakpoint}-';
   }
 
-  $end: quote(str-replace($value, '.', '-'));
+  $end: "#{str-replace($value, '.', '-')}";
 
   @if type-of($value) == 'number' and $value < 0 {
-    $end: 'n' + quote(str-replace(abs($value), '.', '-'));
+    $end: "n#{str-replace(abs($value), '.', '-')}";
   }
 
   @if $value != 0 and $unit != null {

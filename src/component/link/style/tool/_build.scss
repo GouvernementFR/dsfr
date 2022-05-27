@@ -5,6 +5,7 @@
 
 @mixin _link-class($base, $size: md, $place: null, $align-on-content: false) {
   $selector: '';
+  $base: '#{$base}';
 
   @if $size != md {
     $selector: '#{$base}--#{$size}';
@@ -18,7 +19,7 @@
     @if $selector == '' {
       $selector: '#{$base}';
     }
-    $selector: '#{$selector}:not([class*="#{str-slice(quote($base), 2)}--icon-"])';
+    $selector: '#{$selector}:not([class*="#{str-slice($base, 2)}--icon-"])';
   }
   @else if $place == left or $place == right {
     $selector: '#{$selector}#{$base}--icon-#{$place}';

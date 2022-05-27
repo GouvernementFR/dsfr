@@ -31,9 +31,7 @@
 }
 
 @function is-unit($value, $unit) {
-  $v: to-lower-case(quote($value));
-  $u: quote($unit);
-  @return str-index($v, $u) == (str-length($v) - str-length($u) + 1);
+  @return math.unit($value) == $unit;
 }
 
 @function is-basic-unit($value) {
