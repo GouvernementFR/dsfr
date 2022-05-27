@@ -27,7 +27,8 @@
     flex-basis: 100%;
 
     @include logo(md, lg) {
-      @include margin(-1em);
+      @include margin(-4v);
+      @include margin(-5v, md);
     }
 
     /**
