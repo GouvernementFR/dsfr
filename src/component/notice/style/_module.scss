@@ -13,7 +13,8 @@
     @include relative;
     @include padding(0 10v 0 10v);
 
-    @include icon(null, md) {
+    @include icon-size(md, before);
+    @include icon-style(before) {
       @include absolute(null, null, null, 0);
     }
   }
@@ -25,13 +26,14 @@
   }
 
   #{ns(btn--close)} {
-    @include nest-btn(sm, only, null, null, false);
+    @include nest-btn(sm, only, close-line, null, false);
     @include absolute(-1v, 4v);
   }
 
   &--info {
     #{ns(notice)}__body {
-      @include icon-content(info-fill, before, false, '');
+      @include icon-image(info-fill, before);
+      @include icon-content;
     }
   }
 }

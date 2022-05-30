@@ -9,7 +9,7 @@
     @include scheme-element-text-color(title grey, (legacy:$legacy));
 
     &--info {
-      @include scheme-element-bg-color(contrast info, (legacy:$legacy, hover: false, active: false));
+      @include scheme-element-bg-color(contrast info, (legacy:$legacy));
       @include scheme-element-text-color(default info, (legacy:$legacy));
     }
   }
