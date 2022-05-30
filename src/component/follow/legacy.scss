@@ -8,4 +8,12 @@
 @import 'style/scheme';
 @import 'style/legacy';
 
+// deprecated
+@import 'deprecated/style/tool';
+@import 'deprecated/style/legacy';
+@import 'deprecated/style/scheme';
+
 @include _follow-scheme(true);
+
+// deprecated
+@include _follow-deprecated-scheme(true);

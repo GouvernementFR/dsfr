@@ -1,10 +1,12 @@
 <%
 let sampling = false;
 
-function section (title, desc, spacing = '32v') {
+function section (title, desc, spacing = '32v', container = false) {
   let sectionText = `<div class="fr-mt-${spacing}">`;
+  if (container) sectionText += `<div class="fr-container">`;
   if (title) sectionText += `<h3>${title}</h3>`;
   if (desc) sectionText += `<p>${desc}</p>`;
+  if (container) sectionText += `</div>`;
   sectionText += `</div>`;
   return sectionText;
 }
@@ -91,11 +93,12 @@ locals.lengthen = (length, label) => {
 
 locals.imgAltText = 'texte alternatif de l’image';
 
-const imgData = (src, alt, comment, style) => {
+const imgData = (src, alt, ratio, comment, style) => {
   const data = {
       src: `${relativeRoot}example/${src ? src : 'img/placeholder.16x9.png'}`,
       alt: alt,
       comment: comment,
+      ratio: ratio,
       style: style
   };
   return data;
@@ -103,10 +106,11 @@ const imgData = (src, alt, comment, style) => {
 
 locals.imgData = imgData;
 
-const vidData = (src, title, attributes) => {
+const vidData = (src, title, ratio, attributes) => {
     const data = {
         src: src || 'https://www.youtube.com/embed/HyirpmPL43I',
         title: title || 'Titre de l\'iframe',
+        ratio: ratio,
         attributes: {
             allow:'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
             allowfullscreen:'',

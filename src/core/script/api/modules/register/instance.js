@@ -2,7 +2,7 @@ import { Emitter } from '../../utilities/emitter.js';
 import state from '../../state.js';
 import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
-import { addClass, removeClass, hasClass } from '../../utilities/dom/classes.js';
+import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 
 class Instance {
@@ -289,6 +289,10 @@ class Instance {
 
   hasClass (className) {
     return hasClass(this.node, className);
+  }
+
+  get classNames () {
+    return getClassNames(this.node);
   }
 
   setAttribute (attributeName, value) {

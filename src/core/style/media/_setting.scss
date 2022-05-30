@@ -3,13 +3,15 @@
 /// @group core
 ////
 
+@use "sass:math";
+
 // Ratio
 $ratio-scale: (
-  32x9: 32 / 9,
-  16x9: 16 / 9,
+  32x9: math.div(32, 9),
+  16x9: math.div(16, 9),
   3x2: 1.5,
-  4x3: 4 / 3,
+  4x3: math.div(4, 3),
   1x1: 1,
   3x4: 0.75,
-  2x3: 2 / 3
+  2x3: math.div(2, 3)
 );

@@ -3,21 +3,50 @@
 /// @group core
 ////
 
-@function _pow10($exponent) {
-  @if $exponent == 0 {
-    @return 1;
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+@use "sass:map";
+
+@function char-is-int($str) {
+  @for $i from 0 through 9 {
+    @if '#{$i}' == $str {
+      @return true;
+    }
   }
-  $result: 1;
-  @for $i from 1 through $exponent {
-    $result: $result * 10;
+  @return false;
+}
+
+@function char-to-int($str) {
+  @for $i from 0 through 9 {
+    @if '#{$i}' == $str {
+      @return $i;
+    }
   }
-  @return $result;
+  @return $str;
+}
+
+@function str-is-num($value) {
+  $char: string.slice($value, 1, 1);
+  @if char-is-int($char) {
+    @return true;
+  }
+  @if $char == '-' and string.length($value) >= 2 {
+    $char: string.slice($value, 2, 2);
+    @if char-is-int($char) {
+      @return true;
+    }
+  }
+  @return false;
 }
 
 /// Fonction de transformation d'une string en nombre intégral
 /// @access public
 /// @param {String} $value - le nombre en chaîne de caractères
 @function str-to-num($value) {
+  @if meta.type-of($value) != string {
+    @return $value;
+  }
   $length: str-length($value);
   $int: ();
   $float: ();
@@ -25,7 +54,7 @@
   $neg: false;
 
   @for $i from 1 through $length {
-    $n: str-slice($value, $i, $i);
+    $n: string.slice($value, $i, $i);
 
     @if $n == '.' {
       $floating: true;
@@ -34,14 +63,12 @@
       $neg: true;
     }
     @else {
-      @for $d from 0 through 9 {
-        @if quote($d) == $n {
-          @if $floating {
-            $float: append($float, $d);
-          }
-          @else {
-            $int: append($int, $d);
-          }
+      @if char-is-int($n) {
+        @if $floating {
+          $float: append($float, char-to-int($n));
+        }
+        @else {
+          $int: append($int, char-to-int($n));
         }
       }
     }
@@ -52,23 +79,34 @@
   $length: length($int);
   @if $length > 0 {
     @for $i from 1 through $length {
-      $result: $result + (nth($int, $i) * _pow10($length - $i));
+      $result: $result + (nth($int, $i) * math.pow(10, $length - $i));
     }
   }
 
   $length: length($float);
   @if $length > 0 {
     @for $i from 1 through $length {
-      $result: $result + (nth($float, $i) / _pow10($i));
+      $result: $result + math.div(nth($float, $i), math.pow(10, $i));
     }
   }
 
   @if $neg {
-    @return -$result;
+    $result: -$result;
   }
-  @else {
+
+  @if '#{$result}' == $value {
     @return $result;
   }
+
+  $unit: string.slice($value, string.length('#{$result}' + 1));
+
+  $units: ('v': 1v, 'w': 1w, 'px': 1px, 'cm': 1cm, 'mm': 1mm, '%': 1%, 'ch': 1ch, 'in': 1in, 'em': 1em, 'rem': 1rem, 'pt': 1pt, 'pc': 1pc, 'ex': 1ex, 'vw': 1vw, 'vh': 1vh, 'vmin': 1vmin, 'vmax': 1vmax, 'deg': 1deg, 'turn': 1turn, 'rad': 1rad, 'grad': 1grad, 's': 1s, 'ms': 1ms, 'Hz': 1Hz, 'kHz': 1kHz, 'dppx': 1dppx, 'dpcm': 1dpcm, 'dpi': 1dpi);
+
+  @if map.has-key($units, $unit) {
+    @return $result * map.get($units, $unit);
+  }
+
+  @return $result;
 }
 
 /// Remplacement dans une chaine de caractères
@@ -78,44 +116,54 @@
 /// @param {String} $content - élément de remplacement
 /// @return {String} la chaîne de caractères transformée
 @function str-replace($haystack, $needle, $content, $start: 1) {
-  $is:quote($haystack);
-  $in:quote($needle);
-  $ic:quote($content);
-
-  @if $in == $ic {
-    @return $haystack;
-  }
-
-  $range: str_slice($is, $start, str_length($is));
-
-  $i: str-index($range, $in);
-
-  @if $i == null {
-    @return unquote($is);
-  }
-
-  $fi: $i + $start;
-  $end: $fi + str-length($in) -1;
-
-  $modified: str_slice($is, 1, $fi - 2) + $ic + str_slice($is, $end, str_length($is));
-
-  @return str-replace($modified, $needle, $content, $fi + str-length($ic) - 2);
+  $chunks: str-split($haystack, $needle);
+  $result: str-join($chunks, $content);
+  @return $result;
 }
 
 /// Découpage d'une chaine de caractères avec un séparateur particulier
 /// @access public
 /// @param {String} $string - chaine de caractère à découper
 /// @param {String} $separator - séparateur
-@function str-split($string, $separator:',') {
-  $tmp: str-slice($string, 1);
-  $list: ();
-  $index: str-index($string, $separator);
+@function str-split($haystack, $needle:',', $separator: comma) {
+  @if type-of($haystack) != string {
+    $haystack: '#{$haystack}';
+  }
+  @if type-of($needle) != string {
+    $needle: '#{$needle}';
+  }
 
-  @if $index == null {
-    $list: ($string);
+  $list: ();
+  $length: string.length($needle);
+  $index: -1;
+
+  @while $index != null {
+    $index: string.index($haystack, $needle);
+
+    @if $index != null {
+      $list: append($list, string.slice($haystack, 1, $index - 1), $separator);
+      $haystack: string.slice($haystack, $index + $length);
+    }
+    @else {
+      $list: append($list, $haystack, $separator);
+    }
   }
-  @else {
-    $list: join((str-slice($string, 1, $index - 1)), str-split(str-slice($string, $index + 1), $separator));
-  }
+
   @return $list;
+}
+
+@function str-join($list, $separator:',') {
+  $result: '';
+  $s: '';
+
+  @each $item in $list {
+    $result: '#{$result}#{$s}#{$item}';
+    $s: $separator;
+  }
+
+  @return $result;
+}
+
+@function is-heading($name) {
+  @return string.index('#{$name}', 'h') == 1;
 }

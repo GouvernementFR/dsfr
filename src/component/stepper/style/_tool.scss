@@ -1,0 +1,20 @@
+////
+/// Stepper Tool
+/// @group stepper
+////
+
+@mixin stepper-build () {
+  @for $i from 2 through map-get($stepper-settings, max-steps) {
+    &#{ns-attr(steps, $i)} {
+      --steps: #{$i};
+      --step-width: calc(100% / #{$i});
+    }
+  }
+
+  --current-step: 0;
+  @for $i from 1 through map-get($stepper-settings, max-steps) {
+    &#{ns-attr(current-step, $i)} {
+      --current-step: #{$i};
+    }
+  }
+}

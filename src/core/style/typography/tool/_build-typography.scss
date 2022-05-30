@@ -28,7 +28,7 @@
   @if $text-utilities {
     @each $name, $variation in $title-settings {
       $type: display;
-      @if str-index(quote($name), 'h') == 1 {
+      @if is-heading($name) {
         $type: heading;
       }
 
@@ -55,7 +55,7 @@
   $titles: ();
   @each $name, $variation in $title-settings {
     $type: display;
-    @if str-index(quote($name), 'h') == 1 {
+    @if is-heading($name) {
       $type: heading;
     }
 

@@ -54,6 +54,17 @@ class InjectSvg extends Instance {
       this.svg.setAttribute('id', this.imgID);
     }
 
+    // gestion de la dépréciation
+    let name = this.imgURL.match(/[ \w-]+\./)[0];
+    if (name) {
+      name = name.slice(0, -1);
+
+      if (['dark', 'light', 'system'].includes(name)) {
+        this.svg.innerHTML = this.svg.innerHTML.replaceAll('id="artwork-', `id="${name}-artwork-`);
+        this.svg.innerHTML = this.svg.innerHTML.replaceAll('"#artwork-', `"#${name}-artwork-`);
+      }
+    }
+
     if (this.imgClass && typeof this.imgClass !== 'undefined') {
       this.svg.setAttribute('class', this.imgClass);
     }

@@ -3,31 +3,6 @@
 /// @group core
 ////
 
-#{ns(responsive-img)} {
-  @include size(100%, auto);
-
-  @each $ratio, $value in $ratio-scale {
-    &--#{$ratio} {
-      @include aspect-ratio($ratio, true);
-      @include fit-cover-center;
-    }
-  }
-}
-
-#{ns(responsive-vid)} {
-  @include relative;
-  @include size(100%);
-
-  @include aspect-ratio();
-
-  @each $ratio in (16x9 4x3 1x1) {
-    &--#{$ratio} {
-      @include aspect-ratio($ratio, true);
-    }
-  }
-
-  &__player, & > #{ns(consent-placeholder)} {
-    @include media-overlay-cover;
-    border: 0;
-  }
-}
+@import 'module/iframe';
+@import 'module/ratio';
+@import 'module/responsive';

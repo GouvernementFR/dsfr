@@ -3,6 +3,10 @@
 /// @group core
 ////
 
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
@@ -12,7 +16,33 @@
 ///     margin-bottom: space(6v);
 ///   }
 @function space($value) {
-  @if type-of($value) == list {
+  $type: meta.type-of($value);
+  // @debug $type $value;
+  @if $type == map {
+    @error 'space function with map';
+  }
+
+  @if $type == arglist {
+    @error 'space function with arglist';
+  }
+
+  @if $type == function {
+    @error 'space function with function';
+  }
+
+  @if $type == color {
+    @return $value;
+  }
+
+  @if $type == bool {
+    @return $value;
+  }
+
+  @if $type == calculation {
+    @return space('#{$value}');
+  }
+
+  @if $type == list {
     $list: ();
     $separator: list-separator($value);
     @each $v in $value {
@@ -20,15 +50,31 @@
     }
     @return $list;
   }
-  @if type-of($value) == string {
-    $c: str-index($value, '(');
+
+  @if $type == number {
+    $u: math.unit($value);
+
+    @if $u == 'v' {
+      @return math.div($value, 1v) * $V;
+    }
+
+    @if $u == 'w' {
+      @return math.div($value, 1w) * $W;
+    }
+
+    @return $value;
+  }
+
+  @if $type == string {
+    $c: string.index($value, '(');
+
     @if $c {
       $b: null;
       $n: 0;
       $i: $c + 1;
       $l: str-length($value);
       @while $b == null and $i <= $l {
-        $char: str-slice($value, $i, $i);
+        $char: string.slice($value, $i, $i);
         @if $char == '(' {
           $n: $n + 1;
         }
@@ -44,58 +90,40 @@
       }
 
       $start: unquote('');
-      $middle: space(str-slice($value, $c + 1, $b - 1));
+      $middle: space(string.slice($value, $c + 1, $b - 1));
       $end: unquote('');
 
       @if $c > 1 {
-        $start: space(str-slice($value, 1, $c - 1));
+        $start: space(string.slice($value, 1, $c - 1));
       }
 
       $l: str-length($value);
       @if $b < $l {
-        $end: space(str-slice($value, $b + 1, $l));
+        $end: space(string.slice($value, $b + 1, $l));
       }
 
       @return unquote('#{$start}(#{$middle})#{$end}');
     }
 
-    @if str-index($value, ',') {
+    @if string.index($value, ',') != null {
       @return space(str-split($value, ','));
     }
 
-    @if str-index($value, ' ') {
-      @return space(str-split($value, ' '));
+    @if string.index($value, ' ') != null {
+      $list: str-split($value, ' ');
+      $result: ();
+      @each $item in $list {
+        $result: append($result, space($item), space);
+      }
+      @return $result;
     }
 
-    $value: unquote($value);
-  }
-
-  @if $value == 0 {
-    @return $value;
-  }
-
-  @if length($value) > 1 {
-    $result: ();
-    @each $v in $value {
-      $result: append($result, space($v));
+    @if str-is-num($value) {
+      @return space(str-to-num($value));
     }
-    @return $result;
+
+    @return unquote($value);
   }
 
-  @if is-basic-unit($value) {
-    @return $value;
-  }
-
-  $v: quote($value);
-
-  $q: str-to-num(unquote(str_slice($v, 0, str_length($v) - 1)));
-  $unit: str_slice($v, str-length($v), str_length($v));
-
-  @if is-unit($value, v) {
-    @return $q * $V;
-  }
-  @else if is-unit($value, w) {
-    @return $q * $W;
-  }
   @return $value;
 }

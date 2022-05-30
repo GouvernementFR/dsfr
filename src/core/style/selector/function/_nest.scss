@@ -7,7 +7,7 @@
   $result: '';
   @each $selector in $selectors {
     @if $result == '' {
-      $result: quote($selector);
+      $result: '#{$selector}';
     }
     @else if $selector {
       $segments: str-split($result, ',');
@@ -15,7 +15,7 @@
       @each $segment in $segments {
         $concat: append($concat, selector-nest($segment, $selector), comma);
       }
-      $result: quote($concat);
+      $result: '#{$concat}';
     }
   }
   @return $result;

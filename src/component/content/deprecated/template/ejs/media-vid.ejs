@@ -8,6 +8,8 @@
 
 * content.vidTpl (string, optional): template de video
 
+* content.vid (object, optional): paramètre de la video
+
 * content.transcription (string, optional): texte de transcription
 
 * content.caption (string, optional): paramètres de l'image
@@ -21,7 +23,7 @@
     <%- include('../../../../consent/template/ejs/placeholder', {consent: content.consent}) %>
     </div>
 <% } else { %>
-    <%- include(content.vidTpl !== undefined ? content.vidTpl  : '../../../../../core/template/ejs/media/responsive-vid', {media: content}) %>
+    <%- include(content.vidTpl !== undefined ? content.vidTpl  : '../../../../../core/deprecated/template/ejs/media/responsive-vid', {media: content.vid}) %>
 <% } %>
 <% if (content.caption != undefined) { %>
     <div class="<%= prefix %>-content-media__caption" ><%= content.caption %></div>

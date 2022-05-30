@@ -1,0 +1,15 @@
+////
+/// Alert Legacy
+/// @group alert
+////
+
+@include legacy(ie11) {
+  /**
+  * reset des marges dans l'alerte
+  */
+  #{ns(alert)} {
+    #{ns(link--close)} {
+      @include icon-legacy(close-line, sm);
+    }
+  }
+}
