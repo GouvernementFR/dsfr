@@ -14,7 +14,7 @@
 * media.style (object, optional) : raccourci vers l'attribut style
 
 %>
-<% eval(include('../../../index.ejs')); %>
+<% eval(include('../../../../index.ejs')); %>
 
 <%
  let media = locals.media || {};
@@ -28,7 +28,7 @@
      case '1x1':
      case '3x4':
      case '2x3':
-         mediaClasses.push(`${prefix}-ratio-${media.ratio}`);
+         mediaClasses.push(`${prefix}-responsive-img--${media.ratio}`);
          break;
  }
  %>

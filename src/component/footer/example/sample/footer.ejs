@@ -12,7 +12,7 @@ if(footer.brand === true) {
   data.brand.logo = footer.logo || { title: 'Intitulé<br>officiel'};
 }
 
-if(footer.operator === true) data.brand.operator = imgData('img/placeholder.16x9.png', 'rendered', null, 'max-width:12.5rem');
+if(footer.operator === true) data.brand.operator = imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:12.5rem');
 
 if(footer.content === true) data.content = {
   desc: lorem(),
@@ -26,11 +26,11 @@ if(footer.content === true) data.content = {
 
 if(footer.partners === true) data.partners = {
   title: 'Nos partenaires',
-  mainPartner: imgData('img/placeholder.16x9.png', 'rendered', null, 'height: 5.625rem'),
+  mainPartner: imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
   subPartners: [
-      imgData('img/placeholder.16x9.png', 'rendered', null, 'height: 5.625rem'),
-      imgData('img/placeholder.1x1.png', 'rendered', null, 'height: 5.625rem'),
-      imgData('img/placeholder.9x16.png', 'rendered', null, 'height: 5.625rem')
+      imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
+      imgData('img/placeholder.1x1.png', 'rendered', null, null, 'height: 5.625rem'),
+      imgData('img/placeholder.9x16.png', 'rendered', null, null, 'height: 5.625rem')
   ]
 };
 

@@ -17,7 +17,8 @@ $variables: (
     list: true,
     text: true,
     button: true,
-    input: true
+    input: true,
+    iframe: true
   ),
   grid: (
     breakpoints: first sm md lg
@@ -30,6 +31,11 @@ $variables: (
     ),
     unhidden: (
       breakpoints: all,
+    ),
+  ),
+  media: (
+    ratio: (
+      breakpoints: first,
     ),
   ),
   colors: (
