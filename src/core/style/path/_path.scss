@@ -12,7 +12,7 @@
 }
 
 @mixin dist-path($level) {
-  @if not global-variable-exists(DIST-PATH) {
+  @if $DIST-PATH == null {
     $DIST-PATH: dist-path($level) !global;
   }
 }

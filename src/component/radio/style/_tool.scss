@@ -18,7 +18,7 @@
     $max: 8;
   }
 
-  $out: $max / 2;
+  $out: $max * 0.5;
 
   @if not $checked {
     $out: $max;

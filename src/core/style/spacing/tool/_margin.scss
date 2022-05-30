@@ -4,10 +4,10 @@
 ////
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
-  $start: str_slice($prop, 1, 1);
+  $start: str-slice($prop, 1, 1);
 
   @if $side != null {
-    $start: '#{str_slice($prop, 1, 1)}#{str_slice($side, 1, 1)}';
+    $start: '#{str-slice($prop, 1, 1)}#{str-slice($side, 1, 1)}';
   }
 
   $middle: '';
@@ -16,10 +16,10 @@
     $middle: '#{$breakpoint}-';
   }
 
-  $end: quote(str-replace($value, '.', '-'));
+  $end: "#{str-replace($value, '.', '-')}";
 
   @if type-of($value) == 'number' and $value < 0 {
-    $end: 'n' + quote(str-replace(abs($value), '.', '-'));
+    $end: "n#{str-replace(abs($value), '.', '-')}";
   }
 
   @if $value != 0 and $unit != null {
@@ -38,13 +38,13 @@
 
   $w: null;
   @if (abs($value) % 2) == 0 and $value != 0 {
-    $w: abs($value) / 2;
+    $w: abs($value) * 0.5;
   }
 
   $selectors:'#{ns(_spacing-name($prop, $side, $value, v, $breakpoint))}';
 
   @if $w != null {
-    $selectors: '#{$selectors},#{ns(_spacing-name($prop, $side, $value / 2, w, $breakpoint))}';
+    $selectors: '#{$selectors},#{ns(_spacing-name($prop, $side, $value * 0.5, w, $breakpoint))}';
   }
 
   @return $selectors;

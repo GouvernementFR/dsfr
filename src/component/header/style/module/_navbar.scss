@@ -3,29 +3,31 @@
 /// @group header
 ////
 
-&__navbar {
-  @include display-flex(row,flex-end);
-  @include padding(1v);
-  @include margin-left(auto);
-  order: 3;
-  flex: 0 0 auto;
-  align-self: flex-start;
-  @include z-index(menu);
-
-  @include respond-from(lg) {
-    display: none;
-  }
-
-  @include nest-btn(md, only) {
+#{ns(header)} {
+  &__navbar {
+    @include display-flex(row,flex-end);
+    @include padding(1v);
+    @include margin-left(auto);
+    order: 3;
     flex: 0 0 auto;
-    white-space: nowrap;
+    align-self: flex-start;
+    @include z-index(menu);
 
-    &--menu {
-      @include icon(menu-fill);
+    @include respond-from(lg) {
+      display: none;
     }
 
-    &--search {
-      @include icon(search-line);
+    @include nest-btn(md, only) {
+      flex: 0 0 auto;
+      white-space: nowrap;
+
+      &--menu {
+        @include icon(menu-fill);
+      }
+
+      &--search {
+        @include icon(search-line);
+      }
     }
   }
 }
