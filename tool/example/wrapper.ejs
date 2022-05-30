@@ -1,10 +1,12 @@
 <%
 let sampling = false;
 
-function section (title, desc, spacing = '32v') {
+function section (title, desc, spacing = '32v', container = false) {
   let sectionText = `<div class="fr-mt-${spacing}">`;
+  if (container) sectionText += `<div class="fr-container">`;
   if (title) sectionText += `<h3>${title}</h3>`;
   if (desc) sectionText += `<p>${desc}</p>`;
+  if (container) sectionText += `</div>`;
   sectionText += `</div>`;
   return sectionText;
 }

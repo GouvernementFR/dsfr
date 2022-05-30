@@ -1,6 +1,6 @@
 ////
-/// Alert Legacy
-/// @group alert
+/// Notice Legacy
+/// @group notice
 ////
 
 @import '../../core/style/path/path-2';
@@ -8,7 +8,4 @@
 @import 'style/scheme';
 @import 'style/legacy';
 
-// deprecated
-@import 'deprecated/style/legacy';
-
-@include _alert-scheme(true);
+@include _notice-scheme(true);

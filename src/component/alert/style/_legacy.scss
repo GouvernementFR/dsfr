@@ -30,5 +30,9 @@
     &--warning {
       @include icon-legacy(warning-fill, null, before, false);
     }
+
+    #{ns(btn--close)} {
+      @include icon-legacy(close-line, sm);
+    }
   }
 }
