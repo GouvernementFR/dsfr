@@ -20,6 +20,8 @@ import { Toggle } from './script/action/toggle/toggle';
 import { RootSelector } from './script/api/modules/stage/root.js';
 import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
+import { Artwork } from './script/artwork/artwork';
+import { ArtworkSelector } from './script/artwork/artwork-selector';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
 
@@ -44,6 +46,8 @@ api.core = {
   EquisizedsGroup: EquisizedsGroup,
   InjectSvg: InjectSvg,
   InjectSvgSelector: InjectSvgSelector,
+  Artwork: Artwork,
+  ArtworkSelector: ArtworkSelector
   Ratio: Ratio,
   RatioSelector: RatioSelector
 };

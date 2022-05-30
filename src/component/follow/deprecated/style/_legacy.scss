@@ -1,0 +1,48 @@
+////
+/// Follow Legacy
+/// @group follow
+////
+
+@include legacy(ie11) {
+  #{ns(follow)} {
+    #{ns(link)} {
+      &--facebook {
+        @include icon-content-legacy(facebook-circle-fill);
+      }
+
+      &--twitter {
+        @include icon-content-legacy(twitter-fill);
+      }
+
+      &--instagram {
+        @include icon-content-legacy(instagram-fill);
+      }
+
+      &--linkedin {
+        @include icon-content-legacy(linkedin-box-fill);
+      }
+
+      &--youtube {
+        @include icon-content-legacy(youtube-fill);
+      }
+    }
+
+    #{ns-group(links)} {
+      &:not(#{ns-group(links)}--sm):not(#{ns-group(links)}--lg) {
+        #{ns(link)} {
+          @include has-not-icon {
+            @include icon-legacy(null, md);
+          }
+        }
+      }
+
+      &--lg {
+        #{ns(link)} {
+          @include has-not-icon {
+            @include icon-legacy(null, lg);
+          }
+        }
+      }
+    }
+  }
+}
