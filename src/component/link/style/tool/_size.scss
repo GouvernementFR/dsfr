@@ -3,6 +3,8 @@
 /// @group link
 ////
 
+@use "sass:math";
+
 @mixin _build-link-size($size-settings, $border-radius: false) {
   $font-size: map_get($size-settings, font-size);
   $style: get-text-style($font-size);
@@ -31,12 +33,12 @@
   padding: #{$padding-y} #{$padding-x};
 
   @if $border-radius {
-    border-radius: #{$min-height / 2};
+    border-radius: #{$min-height * 0.5};
   }
 }
 
 @function _link-icon-margin($size) {
-  @return icon-size($size) / 6;
+  @return math.div(icon-size($size), 8);
 }
 
 @mixin _link-align-on-content($size, $place, $size-settings) {
@@ -58,7 +60,7 @@
   @else if $place == only {
     $icon-size: icon-size(map_get($size-settings, icon-only));
     $min-height: space(map_get($size-settings, min-height));
-    $padding-x: ($min-height - $icon-size) / 2;
+    $padding-x: ($min-height - $icon-size) * 0.5;
 
     margin-left: -($padding-x);
     margin-right: -($padding-x);

@@ -1,0 +1,30 @@
+<%#
+# paramètres média video
+
+* media.title : titre de l'iframe
+
+* media.src : url de la vidéo
+
+* media.ratio (string, optional) : modificateur de ratio
+  valeurs :
+  - 4x3 : ratio d'aspect 4x3
+  - 1x1 : ratio d'aspect carré
+
+* media.attributes : attributs spécifiques de l'iframe
+
+%>
+<% eval(include('../../../../index.ejs')); %>
+
+<%
+ let media = locals.media || {};
+ let vidClasses = [prefix + '-responsive-vid'];
+
+ switch(media.ratio) {
+     case '4x3':
+     case '1x1':
+         vidClasses.push(`${prefix}-responsive-vid--${media.ratio}`);
+         break;
+ }
+ %>
+
+<iframe title="<%= media.title %>" <%- includeClasses(vidClasses); %> src="<%= media.src %>" <%- includeAttrs(media.attributes) %>></iframe>

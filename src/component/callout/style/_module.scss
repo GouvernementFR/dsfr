@@ -14,12 +14,14 @@
   /**
    * Inclusion de l'icône (optionnel)
    */
-  @include with-icon {
-    display: block;
-    @include margin(-2v 0 2v);
+  @include has-icon {
+    @include before {
+      display: block;
+      @include margin(-2v 0 2v);
 
-    @include respond-from(md) {
-      @include margin(-4v 0 4v -8v);
+      @include respond-from(md) {
+        @include margin(-4v 0 4v -8v);
+      }
     }
   }
 

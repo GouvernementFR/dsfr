@@ -38,10 +38,7 @@ let dataFooter = {
         {
           label: 'Paramètres d\'affichage',
           template: 'display',
-          attributes: {
-            'aria-controls': prefix + '-theme-modal',
-            [`data-${prefix}-opened`]: false,
-          }
+          attributes: attrModal
         }
       ],
       copyright: 'Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>'
@@ -53,7 +50,8 @@ let dataFooter = {
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Scheme - gestion du dark mode</h1>
-  <%- sample('bouton ouverture thèmes', '../../button/template/ejs/button-display', { button: { attributes: attrModal }}, true) %>
+    <% const buttonData = { button: { attributes: attrModal, bla:'bla' }}; %>
+  <%- sample('bouton ouverture thèmes', '../../button/template/ejs/button-display', buttonData, true) %>
 
   <!-- Le contenu de la modale des paramètres d'affichage est importé de manière globale dans les pages d'exemple -->
   <%- sample('snippet modal de paramètres d\'affichage', '../../modal/template/ejs/modal.ejs', {modal:dataModal}, true, './layout-snippet-only'); %>

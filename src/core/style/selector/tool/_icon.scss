@@ -8,7 +8,10 @@ $icon-prefixes: icon- fi-;
 @mixin has-icon() {
   $start: ();
   @each $prefix in $icon-prefixes {
-    $start: append($start, class-start-with(ns($prefix, '')), 'comma');
+    $list: class-start-with(ns($prefix, ''));
+    @each $item in $list {
+      $start: append($start, $item, 'comma');
+    }
   }
 
   @include _class-pattern($start) {

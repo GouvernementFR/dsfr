@@ -1,0 +1,9 @@
+<%
+let notice = locals.notice || {};
+let data = {
+  ...notice,
+  title: (notice.title === false) ? false : notice.title ? notice.title : 'Titre du bandeau'
+};
+ %>
+
+<%- include('../../template/ejs/notice.ejs', {notice:data}); %>

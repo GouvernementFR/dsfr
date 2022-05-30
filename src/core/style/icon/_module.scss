@@ -4,8 +4,9 @@
 ////
 
 @include has-icon {
-  @include icon-style(before, null);
-  @include icon-size(md);
+  @include icon-style;
+  @include icon-size;
+  @include icon-content;
 }
 
 #{ns(icon)} {

@@ -8,11 +8,6 @@
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
 
-  &__btn {
-    @include margin-x(1v);
-    @include margin-bottom(2v);
-  }
-
   &__title {
     @include text-style(md);
     order: 1;
@@ -26,13 +21,15 @@
 
   #{ns-group(btns)} {
     @include horizontal-btns-group;
-    @include margin-right(-4v);
-    @include margin-bottom(2v);
+    //@include margin-x(-1v);
+    //@include margin-bottom(2v);
     @include width(auto);
     order: 2;
 
     #{ns(btn)} {
       justify-content: flex-start;
+      //@include margin-x(1v);
+      //@include margin-bottom(2v);
     }
 
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {

@@ -5,18 +5,17 @@
 
 #{ns-group(links)} {
   @include disable-list-style;
-  display: flex;
-  flex-wrap: wrap;
-  @include margin-bottom(0);
+  display: inline-block;
+  @include margin(0 -2v);
 
   > li {
-    display: inline-flex;
-    @include max-width(100%);
+    display: inline;
+    line-height: space(11v);
   }
 
   #{ns(link)} {
-    @include margin-right(4v);
-    @include margin-bottom(4v);
+    @include margin(0 2v 4v);
+    vertical-align: top;
   }
 
   &--sm {

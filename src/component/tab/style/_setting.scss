@@ -16,7 +16,8 @@ $tabs-settings:(
       icon-only: sm
     )
   ),
-  places: only left
+  places: only left,
+  display: flex
 );
 
 $tabs-transition-duration: $global-transition-duration;

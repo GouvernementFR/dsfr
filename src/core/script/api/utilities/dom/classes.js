@@ -2,6 +2,8 @@ const sanitize = (className) => className.charAt(0) === '.' ? className.substr(1
 
 const getClassNames = (element) => element.className ? element.className.split(' ') : [];
 
+export { getClassNames };
+
 const modifyClass = (element, className, remove) => {
   className = sanitize(className);
   const classNames = getClassNames(element);

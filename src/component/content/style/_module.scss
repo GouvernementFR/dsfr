@@ -12,13 +12,11 @@
 
   &__img {
     @include size(100%);
-    @include relative;
-    @include aspect-ratio();
   }
 
-  &__img > *,
-  &__asset {
-    @include media-overlay-cover;
+  #{class-start-with(ns('responsive-img', ''))},
+  #{class-start-with(ns('responsive-vid', ''))} {
+    @include aspect-ratio();
   }
 
   &__caption,
@@ -33,8 +31,7 @@
   }
 
   &__transcription {
-    @include nest-btn(sm, right, menu-2-fill, null, true);
-    @include margin-right(-4v);
+    @include nest-btn(sm, right, menu-2-fill, null, true, true);
   }
 
   $medias: (#{&}__img, ns(responsive-vid));

@@ -5,7 +5,7 @@
 
 @if (map-get($reset-settings, heading)) {
   @each $title, $variation in ($title-settings) {
-    @if str-index(quote($title), 'h') == 1 {
+    @if is-heading($title) {
       #{$title} {
         @include title-style($title, true);
       }

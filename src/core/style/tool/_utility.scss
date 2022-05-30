@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@mixin build-utility($category, $name) {
+@mixin build-utility($category, $name, $modifier: null) {
   // Récupération des variables depuis src/variables.scss
   $utilityVars: map-get($variables, $category);
 
@@ -22,6 +22,9 @@
         @if ($bp == xs or $bp == first) {
           $bp: first;
           $mod: '';
+        }
+        @if $modifier {
+          $mod: #{$mod + '-' + $modifier};
         }
         @include respond-from($bp) {
           #{ns($name)}#{$mod} {

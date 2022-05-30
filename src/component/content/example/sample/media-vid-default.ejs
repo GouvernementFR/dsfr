@@ -1,9 +1,10 @@
 <%
-let data = {
-  vid: { ...vidData(), ratio: locals.content ? content.ratio : undefined},
+const content = locals.content || {};
+const data = {
+  vid: { ...vidData(null, null, content.ratio || null)},
   caption: '© Légende de la vidéo',
   transcription: 'Label du bouton de la transcription',
-  ...locals.content || {},
+  ...content
 };
 %>
 

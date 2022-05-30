@@ -8,9 +8,8 @@
   @include padding(4v 9v 3v 14v);
   @include set-title-margin(0 0 1v);
   @include set-text-margin(0 0 1v);
-  @include icon(null, md);
-
-  @include before {
+  @include icon-size(md, before);
+  @include icon-style(before) {
     @include absolute(0, null, null, 0);
     @include margin(4v 2v);
   }
@@ -21,7 +20,7 @@
 
   #{ns(btn--close)} {
     @include absolute(1v,5v);
-    @include nest-btn(sm, only, null, null, false);
+    @include nest-btn(sm, only, close-line, null, false);
   }
 
   + #{ns(alert)} {
@@ -29,19 +28,26 @@
   }
 
   &--info {
-    @include icon-content(info-fill, before, false, '');
+    @include icon-image(info-fill, before);
   }
 
   &--success {
-    @include icon-content(success-fill, before, false, '');
+    @include icon-image(success-fill, before);
   }
 
   &--error {
-    @include icon-content(error-fill, before, false, '');
+    @include icon-image(error-fill, before);
   }
 
   &--warning {
-    @include icon-content(warning-fill, before, false, '');
+    @include icon-image(warning-fill, before);
+  }
+
+  &--info,
+  &--success,
+  &--error,
+  &--warning {
+    @include icon-content;
   }
 
   &--sm {

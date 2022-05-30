@@ -5,6 +5,7 @@
 
 $focus-color: #0a76f6;
 $black: nth(map-get($scheme-options, grey-50), 1);
+$black-0: rgba(nth(map-get($scheme-options, grey-50), 1), 0);
 $white: nth(map-get($scheme-options, grey-1000), 1);
 $blue-france: nth(map-get($scheme-options, blue-france-sun-113), 1);
 $red-marianne: nth(map-get($scheme-options, red-marianne-main-472), 1);

@@ -22,11 +22,9 @@
  switch(media.ratio) {
      case '4x3':
      case '1x1':
-         vidClasses.push(`${prefix}-responsive-vid--${media.ratio}`);
+         vidClasses.push(`${prefix}-ratio-${media.ratio}`);
          break;
  }
  %>
 
-<div <%- includeClasses(vidClasses); %> >
-    <iframe title="<%= media.title %>" class="<%= prefix %>-responsive-vid__player" src="<%= media.src %>" <%- includeAttrs(media.attributes) %>></iframe>
-</div>
+<iframe title="<%= media.title %>" <%- includeClasses(vidClasses); %> src="<%= media.src %>" <%- includeAttrs(media.attributes) %>></iframe>

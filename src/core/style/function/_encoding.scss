@@ -5,7 +5,7 @@
 
 @function svg-encode($svg, $legacy) {
   $svg: str-replace($svg, '#', '%23');
-  @if ($legacy) {
+  @if $legacy {
     $svg: str-replace($svg, '<', '%3C');
     $svg: str-replace($svg, '>', '%3E');
     $svg: str-replace($svg, '"', '\'');

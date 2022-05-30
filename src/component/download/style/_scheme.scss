@@ -28,6 +28,10 @@
   }
 
   #{ns-group(downloads)} {
+    li::marker {
+      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+    }
+
     &--bordered {
       @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-in);
     }

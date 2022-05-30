@@ -3,17 +3,19 @@
 /// @group header
 ////
 
-#{ns(nav)} {
-  @include respond-from(lg) {
-    justify-content: flex-start;
+#{ns(header)} {
+  #{ns(nav)} {
+    @include respond-from(lg) {
+      justify-content: flex-start;
 
-    &__list {
-      max-width: calc(100% + #{space(4v)});
-    }
+      &__list {
+        max-width: calc(100% + #{space(4v)});
+      }
 
-    #{ns(menu)}::after,
-    #{ns(mega-menu)} {
-      @include shadow(md);
+      #{ns(menu)}::after,
+      #{ns(mega-menu)} {
+        @include shadow(md);
+      }
     }
   }
 }

@@ -22,6 +22,8 @@ import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
 import { Artwork } from './script/artwork/artwork';
 import { ArtworkSelector } from './script/artwork/artwork-selector';
+import { RatioSelector } from './script/ratio/ratio-selector.js';
+import { Ratio } from './script/ratio/ratio.js';
 
 api.core = {
   Instance: Instance,
@@ -46,6 +48,8 @@ api.core = {
   InjectSvgSelector: InjectSvgSelector,
   Artwork: Artwork,
   ArtworkSelector: ArtworkSelector
+  Ratio: Ratio,
+  RatioSelector: RatioSelector
 };
 
 export default api;

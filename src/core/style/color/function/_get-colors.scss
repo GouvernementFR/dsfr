@@ -173,6 +173,6 @@
     @return $prop;
   }
 
-  $a: nth(str-split(quote($alpha), '.'), 2);
+  $a: nth(str-split('#{$alpha}', '.'), 2);
   @return #{$prop}-a#{$a};
 }

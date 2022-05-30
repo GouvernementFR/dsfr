@@ -1,0 +1,10 @@
+////
+/// Core Module : Media - iframe reset
+/// @group core
+////
+
+@if (map-get($reset-settings, iframe)) {
+  iframe {
+    border: 0;
+  }
+}
