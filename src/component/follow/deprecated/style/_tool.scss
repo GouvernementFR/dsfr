@@ -8,3 +8,9 @@
     @include icon($icon, null, before, true);
   }
 }
+
+@mixin social-deprecated-legacy-icon ($modifier, $icon) {
+  #{ns(link--)}#{$modifier} {
+    @include icon-legacy($icon);
+  }
+}

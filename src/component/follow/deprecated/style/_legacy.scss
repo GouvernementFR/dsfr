@@ -5,27 +5,11 @@
 
 @include legacy(ie11) {
   #{ns(follow)} {
-    #{ns(link)} {
-      &--facebook {
-        @include icon-content-legacy(facebook-circle-fill);
-      }
-
-      &--twitter {
-        @include icon-content-legacy(twitter-fill);
-      }
-
-      &--instagram {
-        @include icon-content-legacy(instagram-fill);
-      }
-
-      &--linkedin {
-        @include icon-content-legacy(linkedin-box-fill);
-      }
-
-      &--youtube {
-        @include icon-content-legacy(youtube-fill);
-      }
-    }
+    @include social-deprecated-legacy-icon(facebook, facebook-circle-fill);
+    @include social-deprecated-legacy-icon(twitter, twitter-fill);
+    @include social-deprecated-legacy-icon(instagram, instagram-fill);
+    @include social-deprecated-legacy-icon(linkedin, linkedin-box-fill);
+    @include social-deprecated-legacy-icon(youtube, youtube-fill);
 
     #{ns-group(links)} {
       &:not(#{ns-group(links)}--sm):not(#{ns-group(links)}--lg) {

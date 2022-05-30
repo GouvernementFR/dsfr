@@ -47,7 +47,7 @@ api.core = {
   InjectSvg: InjectSvg,
   InjectSvgSelector: InjectSvgSelector,
   Artwork: Artwork,
-  ArtworkSelector: ArtworkSelector
+  ArtworkSelector: ArtworkSelector,
   Ratio: Ratio,
   RatioSelector: RatioSelector
 };
