@@ -21,7 +21,7 @@
       }
     }
 
-    @include build-share-social-legacy();
+    @include build-share-social-icons-legacy();
 
     #{ns(btn)}--mail {
       @include icon-legacy(mail-line, md, before);

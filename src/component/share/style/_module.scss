@@ -38,6 +38,6 @@
   }
 }
 
-@include build-share-social-btns();
-@include build-share-btn(mail, mail-line);
-@include build-share-btn(copy, links-fill);
+@include build-share-social-icons();
+@include build-share-icon(mail, mail-line);
+@include build-share-icon(copy, links-fill);
