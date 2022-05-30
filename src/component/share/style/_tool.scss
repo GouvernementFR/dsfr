@@ -17,3 +17,11 @@
   }
 }
 
+@mixin build-share-social-legacy() {
+  @each $name, $icon in $share-icons {
+    #{ns(btn)}--#{$name} {
+      @include icon-legacy($icon, md, before);
+    }
+  }
+}
+
