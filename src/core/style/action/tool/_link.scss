@@ -6,29 +6,35 @@
 $underline-thickness: 0.0625em;
 
 @mixin a-reset ($minimal: false) {
-  text-decoration: none;
+  // text-decoration: none;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 0.0625em;
   @if not $minimal {
     color: inherit;
   }
 }
 
-@mixin enable-underline() {
-  --underline-img: linear-gradient(0deg, currentColor, currentColor);
+@mixin enable-underline($is-root: false) {
+  // --underline-img: linear-gradient(0deg, currentColor, currentColor);
+  @if not $is-root {
+    $selector: selector-unify(&, 'a');
+    @at-root #{$selector} {
+      text-decoration: underline;
+    }
+  }
+
   --link-blank-content: '';
 }
 
-@mixin enable-underline-legacy() {
-  [href] {
-    text-decoration: underline;
+@mixin disable-underline($is-root: false) {
+  // --underline-img: none;
+  @if not $is-root {
+    $selector: selector-unify(&, 'a');
+    @at-root #{$selector} {
+      text-decoration: none;
+    }
   }
 
-  [target='_blank']::after {
-    content: '';
-  }
-}
-
-@mixin disable-underline() {
-  --underline-img: none;
   --link-blank-content: none;
 }
 
@@ -43,21 +49,22 @@ $underline-thickness: 0.0625em;
 }
 
 @mixin link-underline() {
-  background-image: var(--underline-img), var(--underline-img);
-  background-position: 50% calc(50% + #{10.5 * $underline-thickness }), 50% calc(50% + #{10.5 * $underline-thickness });
-  background-repeat: no-repeat, no-repeat;
-  transition: background-size 0s;
-  @include link-underline-background-size(100%, 0);
+  // background-image: var(--underline-img), var(--underline-img);
+  // background-position: 50% calc(50% + #{10.5 * $underline-thickness }), 50% calc(50% + #{10.5 * $underline-thickness });
+  // background-repeat: no-repeat, no-repeat;
+  // transition: background-size 0s;
+  // @include link-underline-background-size(100%, 0);
 }
 
 @mixin link-underline-background-size($base-width: 100%, $hover-width: 100%) {
-  background-size: #{$hover-width} #{$underline-thickness * 2 }, #{$base-width} #{$underline-thickness };
+  //background-size: #{$hover-width} #{$underline-thickness }, #{$base-width} #{$underline-thickness };
 }
 
 @mixin hover-underline () {
   &:hover,
   &:active {
-    @include link-underline-background-size(100%, 100%);
+    text-decoration-thickness: 0.125em;
+    // @include link-underline-background-size(100%, 100%);
   }
 }
 
