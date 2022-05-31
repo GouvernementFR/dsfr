@@ -11,13 +11,19 @@ const root = require('../utilities/root');
 const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
-const process = async (css, plugins, options) => {
+const process = async (pck, css, plugins, options) => {
   plugins.push(postcssBanner({ banner: getBanner(), important: true }));
   const result = await postcss(plugins)
     .process(css, options);
+  const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
+
+  if (pck.inject) {
+    if (!pck.injection) pck.injection = {};
+    pck.injection[filename] = result.css;
+    return;
+  }
 
   const size = createFile(result.opts.to, result.css, true);
-  const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
 
   log.file(filename, `${size} bytes`);
   if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
@@ -41,17 +47,17 @@ const buildStyles = async (pck, minify, map, standalone = false) => {
   if (style.files.length > 1) {
     for (const file of style.files) {
       const src = input(pck.path, file);
-      await buildStyle(src, output(pck, file), minify, map);
+      await buildStyle(pck, src, output(pck, file), minify, map);
       data += src;
     }
   } else {
     data = input(pck.path, 'main', standalone);
   }
 
-  await buildStyle(data, output(pck, null, standalone), minify, map);
+  await buildStyle(pck, data, output(pck, null, standalone), minify, map);
 };
 
-const buildStyle = async (data, dest, minify, map) => {
+const buildStyle = async (pck, data, dest, minify, map) => {
   let options = {
     outFile: `${dest}.css`,
     style: 'expanded',
@@ -83,7 +89,7 @@ const buildStyle = async (data, dest, minify, map) => {
     options.map = { prev: result.sourceMap };
   }
 
-  await process(result.css.toString(),
+  await process(pck, result.css.toString(),
     [
       mqpacker({ sort: false }),
       combineDuplicatedSelectors,
@@ -95,7 +101,7 @@ const buildStyle = async (data, dest, minify, map) => {
 
   options = { ...options, to: `${dest}.min.css` };
 
-  await process(result.css.toString(), [
+  await process(pck, result.css.toString(), [
     mqpacker({ sort: false }),
     combineDuplicatedSelectors,
     discardDuplicates,

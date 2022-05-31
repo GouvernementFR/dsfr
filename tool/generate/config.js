@@ -77,6 +77,7 @@ const analyse = (id, path, ascendants = []) => {
   config.nomodule = data.nomodule !== false;
   config.detached = data.detached === true;
   config.filename = data.filename || data.id;
+  config.inject = data.inject === true;
 
   if (type === 'folder' || fs.existsSync(`${absolute}/example/index.ejs`)) {
     const example = data.example || {};
