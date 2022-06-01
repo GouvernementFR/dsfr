@@ -2,6 +2,5 @@ node_modules/
 */sassdoc/
 public/
 .config/
-/dist/
 /example/
 /standalone/
