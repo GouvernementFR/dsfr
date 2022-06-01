@@ -1,0 +1,176 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@media (min-width: 36em) {
+  /*! media sm */
+}
+@media (min-width: 48em) {
+  /*! media md */
+}
+@media (min-width: 62em) {
+  /*! media lg */
+}
+@media (min-width: 78em) {
+  /*! media xl */
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .fr-icon-bluetooth-fill::before {
+    background-image: url("../../../icons/device/bluetooth-fill.svg") !important;
+  }
+
+  .fr-icon-bluetooth-line::before {
+    background-image: url("../../../icons/device/bluetooth-line.svg") !important;
+  }
+
+  .fr-icon-computer-fill::before {
+    background-image: url("../../../icons/device/computer-fill.svg") !important;
+  }
+
+  .fr-icon-computer-line::before {
+    background-image: url("../../../icons/device/computer-line.svg") !important;
+  }
+
+  .fr-icon-dashboard-3-fill::before {
+    background-image: url("../../../icons/device/dashboard-3-fill.svg") !important;
+  }
+
+  .fr-icon-dashboard-3-line::before {
+    background-image: url("../../../icons/device/dashboard-3-line.svg") !important;
+  }
+
+  .fr-icon-database-fill::before {
+    background-image: url("../../../icons/device/database-fill.svg") !important;
+  }
+
+  .fr-icon-database-line::before {
+    background-image: url("../../../icons/device/database-line.svg") !important;
+  }
+
+  .fr-icon-device-fill::before {
+    background-image: url("../../../icons/device/device-fill.svg") !important;
+  }
+
+  .fr-icon-device-line::before {
+    background-image: url("../../../icons/device/device-line.svg") !important;
+  }
+
+  .fr-icon-hard-drive-2-fill::before {
+    background-image: url("../../../icons/device/hard-drive-2-fill.svg") !important;
+  }
+
+  .fr-icon-hard-drive-2-line::before {
+    background-image: url("../../../icons/device/hard-drive-2-line.svg") !important;
+  }
+
+  .fr-icon-mac-fill::before {
+    background-image: url("../../../icons/device/mac-fill.svg") !important;
+  }
+
+  .fr-icon-mac-line::before {
+    background-image: url("../../../icons/device/mac-line.svg") !important;
+  }
+
+  .fr-icon-phone-fill::before {
+    background-image: url("../../../icons/device/phone-fill.svg") !important;
+  }
+
+  .fr-icon-phone-line::before {
+    background-image: url("../../../icons/device/phone-line.svg") !important;
+  }
+
+  .fr-icon-qr-code-fill::before {
+    background-image: url("../../../icons/device/qr-code-fill.svg") !important;
+  }
+
+  .fr-icon-qr-code-line::before {
+    background-image: url("../../../icons/device/qr-code-line.svg") !important;
+  }
+
+  .fr-icon-rss-fill::before {
+    background-image: url("../../../icons/device/rss-fill.svg") !important;
+  }
+
+  .fr-icon-rss-line::before {
+    background-image: url("../../../icons/device/rss-line.svg") !important;
+  }
+
+  .fr-icon-save-3-fill::before {
+    background-image: url("../../../icons/device/save-3-fill.svg") !important;
+  }
+
+  .fr-icon-save-3-line::before {
+    background-image: url("../../../icons/device/save-3-line.svg") !important;
+  }
+
+  .fr-icon-save-fill::before {
+    background-image: url("../../../icons/device/save-fill.svg") !important;
+  }
+
+  .fr-icon-save-line::before {
+    background-image: url("../../../icons/device/save-line.svg") !important;
+  }
+
+  .fr-icon-server-fill::before {
+    background-image: url("../../../icons/device/server-fill.svg") !important;
+  }
+
+  .fr-icon-server-line::before {
+    background-image: url("../../../icons/device/server-line.svg") !important;
+  }
+
+  .fr-icon-smartphone-fill::before {
+    background-image: url("../../../icons/device/smartphone-fill.svg") !important;
+  }
+
+  .fr-icon-smartphone-line::before {
+    background-image: url("../../../icons/device/smartphone-line.svg") !important;
+  }
+
+  .fr-icon-tablet-fill::before {
+    background-image: url("../../../icons/device/tablet-fill.svg") !important;
+  }
+
+  .fr-icon-tablet-line::before {
+    background-image: url("../../../icons/device/tablet-line.svg") !important;
+  }
+
+  .fr-icon-tv-fill::before {
+    background-image: url("../../../icons/device/tv-fill.svg") !important;
+  }
+
+  .fr-icon-tv-line::before {
+    background-image: url("../../../icons/device/tv-line.svg") !important;
+  }
+
+  .fr-icon-wifi-fill::before {
+    background-image: url("../../../icons/device/wifi-fill.svg") !important;
+  }
+
+  .fr-icon-wifi-line::before {
+    background-image: url("../../../icons/device/wifi-line.svg") !important;
+  }
+
+  .fr-fi-phone-fill::before {
+    background-image: url("../../../icons/device/phone-fill.svg") !important;
+  }
+
+  .fr-fi-phone-line::before {
+    background-image: url("../../../icons/device/phone-line.svg") !important;
+  }
+
+  .fr-fi-rss-fill::before {
+    background-image: url("../../../icons/device/rss-fill.svg") !important;
+  }
+
+  .fr-fi-rss-line::before {
+    background-image: url("../../../icons/device/rss-line.svg") !important;
+  }
+
+  .fr-fi-save-fill::before {
+    background-image: url("../../../icons/device/save-fill.svg") !important;
+  }
+
+  .fr-fi-save-line::before {
+    background-image: url("../../../icons/device/save-line.svg") !important;
+  }
+}

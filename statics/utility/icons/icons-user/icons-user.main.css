@@ -1,0 +1,181 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-account-circle-fill::before {
+  -webkit-mask-image: url("../../../icons/user/account-circle-fill.svg") !important;
+  mask-image: url("../../../icons/user/account-circle-fill.svg") !important;
+}
+
+.fr-icon-account-circle-line::before {
+  -webkit-mask-image: url("../../../icons/user/account-circle-line.svg") !important;
+  mask-image: url("../../../icons/user/account-circle-line.svg") !important;
+}
+
+.fr-icon-account-pin-circle-fill::before {
+  -webkit-mask-image: url("../../../icons/user/account-pin-circle-fill.svg") !important;
+  mask-image: url("../../../icons/user/account-pin-circle-fill.svg") !important;
+}
+
+.fr-icon-account-pin-circle-line::before {
+  -webkit-mask-image: url("../../../icons/user/account-pin-circle-line.svg") !important;
+  mask-image: url("../../../icons/user/account-pin-circle-line.svg") !important;
+}
+
+.fr-icon-admin-fill::before {
+  -webkit-mask-image: url("../../../icons/user/admin-fill.svg") !important;
+  mask-image: url("../../../icons/user/admin-fill.svg") !important;
+}
+
+.fr-icon-admin-line::before {
+  -webkit-mask-image: url("../../../icons/user/admin-line.svg") !important;
+  mask-image: url("../../../icons/user/admin-line.svg") !important;
+}
+
+.fr-icon-group-fill::before {
+  -webkit-mask-image: url("../../../icons/user/group-fill.svg") !important;
+  mask-image: url("../../../icons/user/group-fill.svg") !important;
+}
+
+.fr-icon-group-line::before {
+  -webkit-mask-image: url("../../../icons/user/group-line.svg") !important;
+  mask-image: url("../../../icons/user/group-line.svg") !important;
+}
+
+.fr-icon-parent-fill::before {
+  -webkit-mask-image: url("../../../icons/user/parent-fill.svg") !important;
+  mask-image: url("../../../icons/user/parent-fill.svg") !important;
+}
+
+.fr-icon-parent-line::before {
+  -webkit-mask-image: url("../../../icons/user/parent-line.svg") !important;
+  mask-image: url("../../../icons/user/parent-line.svg") !important;
+}
+
+.fr-icon-team-fill::before {
+  -webkit-mask-image: url("../../../icons/user/team-fill.svg") !important;
+  mask-image: url("../../../icons/user/team-fill.svg") !important;
+}
+
+.fr-icon-team-line::before {
+  -webkit-mask-image: url("../../../icons/user/team-line.svg") !important;
+  mask-image: url("../../../icons/user/team-line.svg") !important;
+}
+
+.fr-icon-user-add-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-add-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-add-fill.svg") !important;
+}
+
+.fr-icon-user-add-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-add-line.svg") !important;
+  mask-image: url("../../../icons/user/user-add-line.svg") !important;
+}
+
+.fr-icon-user-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-fill.svg") !important;
+}
+
+.fr-icon-user-heart-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-heart-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-heart-fill.svg") !important;
+}
+
+.fr-icon-user-heart-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-heart-line.svg") !important;
+  mask-image: url("../../../icons/user/user-heart-line.svg") !important;
+}
+
+.fr-icon-user-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-line.svg") !important;
+  mask-image: url("../../../icons/user/user-line.svg") !important;
+}
+
+.fr-icon-user-search-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-search-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-search-fill.svg") !important;
+}
+
+.fr-icon-user-search-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-search-line.svg") !important;
+  mask-image: url("../../../icons/user/user-search-line.svg") !important;
+}
+
+.fr-icon-user-setting-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-setting-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-setting-fill.svg") !important;
+}
+
+.fr-icon-user-setting-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-setting-line.svg") !important;
+  mask-image: url("../../../icons/user/user-setting-line.svg") !important;
+}
+
+.fr-icon-user-star-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-star-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-star-fill.svg") !important;
+}
+
+.fr-icon-user-star-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-star-line.svg") !important;
+  mask-image: url("../../../icons/user/user-star-line.svg") !important;
+}
+
+.fr-fi-user-fill::before {
+  -webkit-mask-image: url("../../../icons/user/user-fill.svg") !important;
+  mask-image: url("../../../icons/user/user-fill.svg") !important;
+}
+
+.fr-fi-user-line::before {
+  -webkit-mask-image: url("../../../icons/user/user-line.svg") !important;
+  mask-image: url("../../../icons/user/user-line.svg") !important;
+}
+
+.fr-fi-account-line::before {
+  -webkit-mask-image: url("../../../icons/user/account-circle-line.svg") !important;
+  mask-image: url("../../../icons/user/account-circle-line.svg") !important;
+}
+
+.fr-fi-account-fill::before {
+  -webkit-mask-image: url("../../../icons/user/account-circle-fill.svg") !important;
+  mask-image: url("../../../icons/user/account-circle-fill.svg") !important;
+}
+
+.fr-icon-account-line::before {
+  -webkit-mask-image: url("../../../icons/user/account-circle-line.svg") !important;
+  mask-image: url("../../../icons/user/account-circle-line.svg") !important;
+}
+
+.fr-icon-account-fill::before {
+  -webkit-mask-image: url("../../../icons/user/account-circle-fill.svg") !important;
+  mask-image: url("../../../icons/user/account-circle-fill.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}

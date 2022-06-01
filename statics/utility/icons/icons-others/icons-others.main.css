@@ -1,0 +1,101 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-leaf-fill::before {
+  -webkit-mask-image: url("../../../icons/others/leaf-fill.svg") !important;
+  mask-image: url("../../../icons/others/leaf-fill.svg") !important;
+}
+
+.fr-icon-leaf-line::before {
+  -webkit-mask-image: url("../../../icons/others/leaf-line.svg") !important;
+  mask-image: url("../../../icons/others/leaf-line.svg") !important;
+}
+
+.fr-icon-lightbulb-fill::before {
+  -webkit-mask-image: url("../../../icons/others/lightbulb-fill.svg") !important;
+  mask-image: url("../../../icons/others/lightbulb-fill.svg") !important;
+}
+
+.fr-icon-lightbulb-line::before {
+  -webkit-mask-image: url("../../../icons/others/lightbulb-line.svg") !important;
+  mask-image: url("../../../icons/others/lightbulb-line.svg") !important;
+}
+
+.fr-icon-plant-fill::before {
+  -webkit-mask-image: url("../../../icons/others/plant-fill.svg") !important;
+  mask-image: url("../../../icons/others/plant-fill.svg") !important;
+}
+
+.fr-icon-plant-line::before {
+  -webkit-mask-image: url("../../../icons/others/plant-line.svg") !important;
+  mask-image: url("../../../icons/others/plant-line.svg") !important;
+}
+
+.fr-icon-recycle-fill::before {
+  -webkit-mask-image: url("../../../icons/others/recycle-fill.svg") !important;
+  mask-image: url("../../../icons/others/recycle-fill.svg") !important;
+}
+
+.fr-icon-recycle-line::before {
+  -webkit-mask-image: url("../../../icons/others/recycle-line.svg") !important;
+  mask-image: url("../../../icons/others/recycle-line.svg") !important;
+}
+
+.fr-icon-scales-3-fill::before {
+  -webkit-mask-image: url("../../../icons/others/scales-3-fill.svg") !important;
+  mask-image: url("../../../icons/others/scales-3-fill.svg") !important;
+}
+
+.fr-icon-scales-3-line::before {
+  -webkit-mask-image: url("../../../icons/others/scales-3-line.svg") !important;
+  mask-image: url("../../../icons/others/scales-3-line.svg") !important;
+}
+
+.fr-icon-seedling-fill::before {
+  -webkit-mask-image: url("../../../icons/others/seedling-fill.svg") !important;
+  mask-image: url("../../../icons/others/seedling-fill.svg") !important;
+}
+
+.fr-icon-seedling-line::before {
+  -webkit-mask-image: url("../../../icons/others/seedling-line.svg") !important;
+  mask-image: url("../../../icons/others/seedling-line.svg") !important;
+}
+
+.fr-icon-umbrella-fill::before {
+  -webkit-mask-image: url("../../../icons/others/umbrella-fill.svg") !important;
+  mask-image: url("../../../icons/others/umbrella-fill.svg") !important;
+}
+
+.fr-icon-umbrella-line::before {
+  -webkit-mask-image: url("../../../icons/others/umbrella-line.svg") !important;
+  mask-image: url("../../../icons/others/umbrella-line.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}

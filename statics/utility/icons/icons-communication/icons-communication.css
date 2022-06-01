@@ -1,0 +1,231 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-chat-2-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-2-fill.svg") !important;
+  mask-image: url("../../../icons/communication/chat-2-fill.svg") !important;
+}
+
+.fr-icon-chat-2-line::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-2-line.svg") !important;
+  mask-image: url("../../../icons/communication/chat-2-line.svg") !important;
+}
+
+.fr-icon-chat-3-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-3-fill.svg") !important;
+  mask-image: url("../../../icons/communication/chat-3-fill.svg") !important;
+}
+
+.fr-icon-chat-3-line::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-3-line.svg") !important;
+  mask-image: url("../../../icons/communication/chat-3-line.svg") !important;
+}
+
+.fr-icon-chat-check-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-check-fill.svg") !important;
+  mask-image: url("../../../icons/communication/chat-check-fill.svg") !important;
+}
+
+.fr-icon-chat-check-line::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-check-line.svg") !important;
+  mask-image: url("../../../icons/communication/chat-check-line.svg") !important;
+}
+
+.fr-icon-chat-delete-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-delete-fill.svg") !important;
+  mask-image: url("../../../icons/communication/chat-delete-fill.svg") !important;
+}
+
+.fr-icon-chat-delete-line::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-delete-line.svg") !important;
+  mask-image: url("../../../icons/communication/chat-delete-line.svg") !important;
+}
+
+.fr-icon-chat-poll-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-poll-fill.svg") !important;
+  mask-image: url("../../../icons/communication/chat-poll-fill.svg") !important;
+}
+
+.fr-icon-chat-poll-line::before {
+  -webkit-mask-image: url("../../../icons/communication/chat-poll-line.svg") !important;
+  mask-image: url("../../../icons/communication/chat-poll-line.svg") !important;
+}
+
+.fr-icon-discuss-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/discuss-fill.svg") !important;
+  mask-image: url("../../../icons/communication/discuss-fill.svg") !important;
+}
+
+.fr-icon-discuss-line::before {
+  -webkit-mask-image: url("../../../icons/communication/discuss-line.svg") !important;
+  mask-image: url("../../../icons/communication/discuss-line.svg") !important;
+}
+
+.fr-icon-feedback-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/feedback-fill.svg") !important;
+  mask-image: url("../../../icons/communication/feedback-fill.svg") !important;
+}
+
+.fr-icon-feedback-line::before {
+  -webkit-mask-image: url("../../../icons/communication/feedback-line.svg") !important;
+  mask-image: url("../../../icons/communication/feedback-line.svg") !important;
+}
+
+.fr-icon-message-2-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/message-2-fill.svg") !important;
+  mask-image: url("../../../icons/communication/message-2-fill.svg") !important;
+}
+
+.fr-icon-message-2-line::before {
+  -webkit-mask-image: url("../../../icons/communication/message-2-line.svg") !important;
+  mask-image: url("../../../icons/communication/message-2-line.svg") !important;
+}
+
+.fr-icon-question-answer-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/question-answer-fill.svg") !important;
+  mask-image: url("../../../icons/communication/question-answer-fill.svg") !important;
+}
+
+.fr-icon-question-answer-line::before {
+  -webkit-mask-image: url("../../../icons/communication/question-answer-line.svg") !important;
+  mask-image: url("../../../icons/communication/question-answer-line.svg") !important;
+}
+
+.fr-icon-questionnaire-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/questionnaire-fill.svg") !important;
+  mask-image: url("../../../icons/communication/questionnaire-fill.svg") !important;
+}
+
+.fr-icon-questionnaire-line::before {
+  -webkit-mask-image: url("../../../icons/communication/questionnaire-line.svg") !important;
+  mask-image: url("../../../icons/communication/questionnaire-line.svg") !important;
+}
+
+.fr-icon-video-chat-fill::before {
+  -webkit-mask-image: url("../../../icons/communication/video-chat-fill.svg") !important;
+  mask-image: url("../../../icons/communication/video-chat-fill.svg") !important;
+}
+
+.fr-icon-video-chat-line::before {
+  -webkit-mask-image: url("../../../icons/communication/video-chat-line.svg") !important;
+  mask-image: url("../../../icons/communication/video-chat-line.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .fr-icon-chat-2-fill::before {
+    background-image: url("../../../icons/communication/chat-2-fill.svg") !important;
+  }
+
+  .fr-icon-chat-2-line::before {
+    background-image: url("../../../icons/communication/chat-2-line.svg") !important;
+  }
+
+  .fr-icon-chat-3-fill::before {
+    background-image: url("../../../icons/communication/chat-3-fill.svg") !important;
+  }
+
+  .fr-icon-chat-3-line::before {
+    background-image: url("../../../icons/communication/chat-3-line.svg") !important;
+  }
+
+  .fr-icon-chat-check-fill::before {
+    background-image: url("../../../icons/communication/chat-check-fill.svg") !important;
+  }
+
+  .fr-icon-chat-check-line::before {
+    background-image: url("../../../icons/communication/chat-check-line.svg") !important;
+  }
+
+  .fr-icon-chat-delete-fill::before {
+    background-image: url("../../../icons/communication/chat-delete-fill.svg") !important;
+  }
+
+  .fr-icon-chat-delete-line::before {
+    background-image: url("../../../icons/communication/chat-delete-line.svg") !important;
+  }
+
+  .fr-icon-chat-poll-fill::before {
+    background-image: url("../../../icons/communication/chat-poll-fill.svg") !important;
+  }
+
+  .fr-icon-chat-poll-line::before {
+    background-image: url("../../../icons/communication/chat-poll-line.svg") !important;
+  }
+
+  .fr-icon-discuss-fill::before {
+    background-image: url("../../../icons/communication/discuss-fill.svg") !important;
+  }
+
+  .fr-icon-discuss-line::before {
+    background-image: url("../../../icons/communication/discuss-line.svg") !important;
+  }
+
+  .fr-icon-feedback-fill::before {
+    background-image: url("../../../icons/communication/feedback-fill.svg") !important;
+  }
+
+  .fr-icon-feedback-line::before {
+    background-image: url("../../../icons/communication/feedback-line.svg") !important;
+  }
+
+  .fr-icon-message-2-fill::before {
+    background-image: url("../../../icons/communication/message-2-fill.svg") !important;
+  }
+
+  .fr-icon-message-2-line::before {
+    background-image: url("../../../icons/communication/message-2-line.svg") !important;
+  }
+
+  .fr-icon-question-answer-fill::before {
+    background-image: url("../../../icons/communication/question-answer-fill.svg") !important;
+  }
+
+  .fr-icon-question-answer-line::before {
+    background-image: url("../../../icons/communication/question-answer-line.svg") !important;
+  }
+
+  .fr-icon-questionnaire-fill::before {
+    background-image: url("../../../icons/communication/questionnaire-fill.svg") !important;
+  }
+
+  .fr-icon-questionnaire-line::before {
+    background-image: url("../../../icons/communication/questionnaire-line.svg") !important;
+  }
+
+  .fr-icon-video-chat-fill::before {
+    background-image: url("../../../icons/communication/video-chat-fill.svg") !important;
+  }
+
+  .fr-icon-video-chat-line::before {
+    background-image: url("../../../icons/communication/video-chat-line.svg") !important;
+  }
+}

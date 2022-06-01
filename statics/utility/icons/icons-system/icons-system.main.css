@@ -1,0 +1,906 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON SYSTEM
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-add-circle-fill::before {
+  -webkit-mask-image: url("../../../icons/system/add-circle-fill.svg") !important;
+  mask-image: url("../../../icons/system/add-circle-fill.svg") !important;
+}
+
+.fr-icon-add-circle-line::before {
+  -webkit-mask-image: url("../../../icons/system/add-circle-line.svg") !important;
+  mask-image: url("../../../icons/system/add-circle-line.svg") !important;
+}
+
+.fr-icon-add-line::before {
+  -webkit-mask-image: url("../../../icons/system/add-line.svg") !important;
+  mask-image: url("../../../icons/system/add-line.svg") !important;
+}
+
+.fr-icon-alarm-warning-fill::before {
+  -webkit-mask-image: url("../../../icons/system/alarm-warning-fill.svg") !important;
+  mask-image: url("../../../icons/system/alarm-warning-fill.svg") !important;
+}
+
+.fr-icon-alarm-warning-line::before {
+  -webkit-mask-image: url("../../../icons/system/alarm-warning-line.svg") !important;
+  mask-image: url("../../../icons/system/alarm-warning-line.svg") !important;
+}
+
+.fr-icon-alert-fill::before {
+  -webkit-mask-image: url("../../../icons/system/alert-fill.svg") !important;
+  mask-image: url("../../../icons/system/alert-fill.svg") !important;
+}
+
+.fr-icon-alert-line::before {
+  -webkit-mask-image: url("../../../icons/system/alert-line.svg") !important;
+  mask-image: url("../../../icons/system/alert-line.svg") !important;
+}
+
+.fr-icon-arrow-down-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-down-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-down-fill.svg") !important;
+}
+
+.fr-icon-arrow-down-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-down-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-down-line.svg") !important;
+}
+
+.fr-icon-arrow-down-s-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-down-s-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-down-s-fill.svg") !important;
+}
+
+.fr-icon-arrow-down-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-down-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-down-s-line.svg") !important;
+}
+
+.fr-icon-arrow-go-back-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-go-back-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-go-back-fill.svg") !important;
+}
+
+.fr-icon-arrow-go-back-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-go-back-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-go-back-line.svg") !important;
+}
+
+.fr-icon-arrow-go-forward-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-go-forward-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-go-forward-fill.svg") !important;
+}
+
+.fr-icon-arrow-go-forward-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-go-forward-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-go-forward-line.svg") !important;
+}
+
+.fr-icon-arrow-left-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-left-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-left-fill.svg") !important;
+}
+
+.fr-icon-arrow-left-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-left-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-left-line.svg") !important;
+}
+
+.fr-icon-arrow-left-s-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-left-s-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-left-s-fill.svg") !important;
+}
+
+.fr-icon-arrow-left-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-left-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-left-s-line.svg") !important;
+}
+
+.fr-icon-arrow-right-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-fill.svg") !important;
+}
+
+.fr-icon-arrow-right-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-line.svg") !important;
+}
+
+.fr-icon-arrow-right-s-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-s-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-s-fill.svg") !important;
+}
+
+.fr-icon-arrow-right-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-s-line.svg") !important;
+}
+
+.fr-icon-arrow-right-up-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-up-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-up-line.svg") !important;
+}
+
+.fr-icon-arrow-up-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-fill.svg") !important;
+}
+
+.fr-icon-arrow-up-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-line.svg") !important;
+}
+
+.fr-icon-arrow-up-s-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-s-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-s-fill.svg") !important;
+}
+
+.fr-icon-arrow-up-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-s-line.svg") !important;
+}
+
+.fr-icon-check-line::before {
+  -webkit-mask-image: url("../../../icons/system/check-line.svg") !important;
+  mask-image: url("../../../icons/system/check-line.svg") !important;
+}
+
+.fr-icon-checkbox-circle-fill::before {
+  -webkit-mask-image: url("../../../icons/system/checkbox-circle-fill.svg") !important;
+  mask-image: url("../../../icons/system/checkbox-circle-fill.svg") !important;
+}
+
+.fr-icon-checkbox-circle-line::before {
+  -webkit-mask-image: url("../../../icons/system/checkbox-circle-line.svg") !important;
+  mask-image: url("../../../icons/system/checkbox-circle-line.svg") !important;
+}
+
+.fr-icon-checkbox-fill::before {
+  -webkit-mask-image: url("../../../icons/system/checkbox-fill.svg") !important;
+  mask-image: url("../../../icons/system/checkbox-fill.svg") !important;
+}
+
+.fr-icon-checkbox-line::before {
+  -webkit-mask-image: url("../../../icons/system/checkbox-line.svg") !important;
+  mask-image: url("../../../icons/system/checkbox-line.svg") !important;
+}
+
+.fr-icon-close-circle-fill::before {
+  -webkit-mask-image: url("../../../icons/system/close-circle-fill.svg") !important;
+  mask-image: url("../../../icons/system/close-circle-fill.svg") !important;
+}
+
+.fr-icon-close-circle-line::before {
+  -webkit-mask-image: url("../../../icons/system/close-circle-line.svg") !important;
+  mask-image: url("../../../icons/system/close-circle-line.svg") !important;
+}
+
+.fr-icon-close-line::before {
+  -webkit-mask-image: url("../../../icons/system/close-line.svg") !important;
+  mask-image: url("../../../icons/system/close-line.svg") !important;
+}
+
+.fr-icon-delete-bin-fill::before {
+  -webkit-mask-image: url("../../../icons/system/delete-bin-fill.svg") !important;
+  mask-image: url("../../../icons/system/delete-bin-fill.svg") !important;
+}
+
+.fr-icon-delete-bin-line::before {
+  -webkit-mask-image: url("../../../icons/system/delete-bin-line.svg") !important;
+  mask-image: url("../../../icons/system/delete-bin-line.svg") !important;
+}
+
+.fr-icon-download-fill::before {
+  -webkit-mask-image: url("../../../icons/system/download-fill.svg") !important;
+  mask-image: url("../../../icons/system/download-fill.svg") !important;
+}
+
+.fr-icon-download-line::before {
+  -webkit-mask-image: url("../../../icons/system/download-line.svg") !important;
+  mask-image: url("../../../icons/system/download-line.svg") !important;
+}
+
+.fr-icon-error-warning-fill::before {
+  -webkit-mask-image: url("../../../icons/system/error-warning-fill.svg") !important;
+  mask-image: url("../../../icons/system/error-warning-fill.svg") !important;
+}
+
+.fr-icon-error-warning-line::before {
+  -webkit-mask-image: url("../../../icons/system/error-warning-line.svg") !important;
+  mask-image: url("../../../icons/system/error-warning-line.svg") !important;
+}
+
+.fr-icon-external-link-fill::before {
+  -webkit-mask-image: url("../../../icons/system/external-link-fill.svg") !important;
+  mask-image: url("../../../icons/system/external-link-fill.svg") !important;
+}
+
+.fr-icon-external-link-line::before {
+  -webkit-mask-image: url("../../../icons/system/external-link-line.svg") !important;
+  mask-image: url("../../../icons/system/external-link-line.svg") !important;
+}
+
+.fr-icon-eye-fill::before {
+  -webkit-mask-image: url("../../../icons/system/eye-fill.svg") !important;
+  mask-image: url("../../../icons/system/eye-fill.svg") !important;
+}
+
+.fr-icon-eye-line::before {
+  -webkit-mask-image: url("../../../icons/system/eye-line.svg") !important;
+  mask-image: url("../../../icons/system/eye-line.svg") !important;
+}
+
+.fr-icon-eye-off-fill::before {
+  -webkit-mask-image: url("../../../icons/system/eye-off-fill.svg") !important;
+  mask-image: url("../../../icons/system/eye-off-fill.svg") !important;
+}
+
+.fr-icon-eye-off-line::before {
+  -webkit-mask-image: url("../../../icons/system/eye-off-line.svg") !important;
+  mask-image: url("../../../icons/system/eye-off-line.svg") !important;
+}
+
+.fr-icon-filter-fill::before {
+  -webkit-mask-image: url("../../../icons/system/filter-fill.svg") !important;
+  mask-image: url("../../../icons/system/filter-fill.svg") !important;
+}
+
+.fr-icon-filter-line::before {
+  -webkit-mask-image: url("../../../icons/system/filter-line.svg") !important;
+  mask-image: url("../../../icons/system/filter-line.svg") !important;
+}
+
+.fr-icon-arrow-left-s-first-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-left-s-first-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-left-s-first-line.svg") !important;
+}
+
+.fr-icon-arrow-left-s-line-double::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-left-s-line-double.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-left-s-line-double.svg") !important;
+}
+
+.fr-icon-arrow-right-s-last-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-right-s-last-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-right-s-last-line.svg") !important;
+}
+
+.fr-icon-arrow-right-s-line-double::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-right-s-line-double.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-right-s-line-double.svg") !important;
+}
+
+.fr-icon-error-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--error-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--error-fill.svg") !important;
+}
+
+.fr-icon-error-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--error-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--error-line.svg") !important;
+}
+
+.fr-icon-info-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--info-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--info-fill.svg") !important;
+}
+
+.fr-icon-info-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--info-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--info-line.svg") !important;
+}
+
+.fr-icon-success-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--success-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--success-fill.svg") !important;
+}
+
+.fr-icon-success-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--success-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--success-line.svg") !important;
+}
+
+.fr-icon-theme-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--theme-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--theme-fill.svg") !important;
+}
+
+.fr-icon-warning-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--warning-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--warning-fill.svg") !important;
+}
+
+.fr-icon-warning-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--warning-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--warning-line.svg") !important;
+}
+
+.fr-icon-information-fill::before {
+  -webkit-mask-image: url("../../../icons/system/information-fill.svg") !important;
+  mask-image: url("../../../icons/system/information-fill.svg") !important;
+}
+
+.fr-icon-information-line::before {
+  -webkit-mask-image: url("../../../icons/system/information-line.svg") !important;
+  mask-image: url("../../../icons/system/information-line.svg") !important;
+}
+
+.fr-icon-lock-fill::before {
+  -webkit-mask-image: url("../../../icons/system/lock-fill.svg") !important;
+  mask-image: url("../../../icons/system/lock-fill.svg") !important;
+}
+
+.fr-icon-lock-line::before {
+  -webkit-mask-image: url("../../../icons/system/lock-line.svg") !important;
+  mask-image: url("../../../icons/system/lock-line.svg") !important;
+}
+
+.fr-icon-lock-unlock-fill::before {
+  -webkit-mask-image: url("../../../icons/system/lock-unlock-fill.svg") !important;
+  mask-image: url("../../../icons/system/lock-unlock-fill.svg") !important;
+}
+
+.fr-icon-lock-unlock-line::before {
+  -webkit-mask-image: url("../../../icons/system/lock-unlock-line.svg") !important;
+  mask-image: url("../../../icons/system/lock-unlock-line.svg") !important;
+}
+
+.fr-icon-logout-box-r-fill::before {
+  -webkit-mask-image: url("../../../icons/system/logout-box-r-fill.svg") !important;
+  mask-image: url("../../../icons/system/logout-box-r-fill.svg") !important;
+}
+
+.fr-icon-logout-box-r-line::before {
+  -webkit-mask-image: url("../../../icons/system/logout-box-r-line.svg") !important;
+  mask-image: url("../../../icons/system/logout-box-r-line.svg") !important;
+}
+
+.fr-icon-menu-2-fill::before {
+  -webkit-mask-image: url("../../../icons/system/menu-2-fill.svg") !important;
+  mask-image: url("../../../icons/system/menu-2-fill.svg") !important;
+}
+
+.fr-icon-menu-fill::before {
+  -webkit-mask-image: url("../../../icons/system/menu-fill.svg") !important;
+  mask-image: url("../../../icons/system/menu-fill.svg") !important;
+}
+
+.fr-icon-more-fill::before {
+  -webkit-mask-image: url("../../../icons/system/more-fill.svg") !important;
+  mask-image: url("../../../icons/system/more-fill.svg") !important;
+}
+
+.fr-icon-more-line::before {
+  -webkit-mask-image: url("../../../icons/system/more-line.svg") !important;
+  mask-image: url("../../../icons/system/more-line.svg") !important;
+}
+
+.fr-icon-notification-badge-fill::before {
+  -webkit-mask-image: url("../../../icons/system/notification-badge-fill.svg") !important;
+  mask-image: url("../../../icons/system/notification-badge-fill.svg") !important;
+}
+
+.fr-icon-notification-badge-line::before {
+  -webkit-mask-image: url("../../../icons/system/notification-badge-line.svg") !important;
+  mask-image: url("../../../icons/system/notification-badge-line.svg") !important;
+}
+
+.fr-icon-question-fill::before {
+  -webkit-mask-image: url("../../../icons/system/question-fill.svg") !important;
+  mask-image: url("../../../icons/system/question-fill.svg") !important;
+}
+
+.fr-icon-question-line::before {
+  -webkit-mask-image: url("../../../icons/system/question-line.svg") !important;
+  mask-image: url("../../../icons/system/question-line.svg") !important;
+}
+
+.fr-icon-refresh-fill::before {
+  -webkit-mask-image: url("../../../icons/system/refresh-fill.svg") !important;
+  mask-image: url("../../../icons/system/refresh-fill.svg") !important;
+}
+
+.fr-icon-refresh-line::before {
+  -webkit-mask-image: url("../../../icons/system/refresh-line.svg") !important;
+  mask-image: url("../../../icons/system/refresh-line.svg") !important;
+}
+
+.fr-icon-search-fill::before {
+  -webkit-mask-image: url("../../../icons/system/search-fill.svg") !important;
+  mask-image: url("../../../icons/system/search-fill.svg") !important;
+}
+
+.fr-icon-search-line::before {
+  -webkit-mask-image: url("../../../icons/system/search-line.svg") !important;
+  mask-image: url("../../../icons/system/search-line.svg") !important;
+}
+
+.fr-icon-settings-5-fill::before {
+  -webkit-mask-image: url("../../../icons/system/settings-5-fill.svg") !important;
+  mask-image: url("../../../icons/system/settings-5-fill.svg") !important;
+}
+
+.fr-icon-settings-5-line::before {
+  -webkit-mask-image: url("../../../icons/system/settings-5-line.svg") !important;
+  mask-image: url("../../../icons/system/settings-5-line.svg") !important;
+}
+
+.fr-icon-shield-fill::before {
+  -webkit-mask-image: url("../../../icons/system/shield-fill.svg") !important;
+  mask-image: url("../../../icons/system/shield-fill.svg") !important;
+}
+
+.fr-icon-shield-line::before {
+  -webkit-mask-image: url("../../../icons/system/shield-line.svg") !important;
+  mask-image: url("../../../icons/system/shield-line.svg") !important;
+}
+
+.fr-icon-star-fill::before {
+  -webkit-mask-image: url("../../../icons/system/star-fill.svg") !important;
+  mask-image: url("../../../icons/system/star-fill.svg") !important;
+}
+
+.fr-icon-star-line::before {
+  -webkit-mask-image: url("../../../icons/system/star-line.svg") !important;
+  mask-image: url("../../../icons/system/star-line.svg") !important;
+}
+
+.fr-icon-star-s-fill::before {
+  -webkit-mask-image: url("../../../icons/system/star-s-fill.svg") !important;
+  mask-image: url("../../../icons/system/star-s-fill.svg") !important;
+}
+
+.fr-icon-star-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/star-s-line.svg") !important;
+  mask-image: url("../../../icons/system/star-s-line.svg") !important;
+}
+
+.fr-icon-subtract-line::before {
+  -webkit-mask-image: url("../../../icons/system/subtract-line.svg") !important;
+  mask-image: url("../../../icons/system/subtract-line.svg") !important;
+}
+
+.fr-icon-thumb-down-fill::before {
+  -webkit-mask-image: url("../../../icons/system/thumb-down-fill.svg") !important;
+  mask-image: url("../../../icons/system/thumb-down-fill.svg") !important;
+}
+
+.fr-icon-thumb-down-line::before {
+  -webkit-mask-image: url("../../../icons/system/thumb-down-line.svg") !important;
+  mask-image: url("../../../icons/system/thumb-down-line.svg") !important;
+}
+
+.fr-icon-thumb-up-fill::before {
+  -webkit-mask-image: url("../../../icons/system/thumb-up-fill.svg") !important;
+  mask-image: url("../../../icons/system/thumb-up-fill.svg") !important;
+}
+
+.fr-icon-thumb-up-line::before {
+  -webkit-mask-image: url("../../../icons/system/thumb-up-line.svg") !important;
+  mask-image: url("../../../icons/system/thumb-up-line.svg") !important;
+}
+
+.fr-icon-time-fill::before {
+  -webkit-mask-image: url("../../../icons/system/time-fill.svg") !important;
+  mask-image: url("../../../icons/system/time-fill.svg") !important;
+}
+
+.fr-icon-time-line::before {
+  -webkit-mask-image: url("../../../icons/system/time-line.svg") !important;
+  mask-image: url("../../../icons/system/time-line.svg") !important;
+}
+
+.fr-icon-timer-fill::before {
+  -webkit-mask-image: url("../../../icons/system/timer-fill.svg") !important;
+  mask-image: url("../../../icons/system/timer-fill.svg") !important;
+}
+
+.fr-icon-timer-line::before {
+  -webkit-mask-image: url("../../../icons/system/timer-line.svg") !important;
+  mask-image: url("../../../icons/system/timer-line.svg") !important;
+}
+
+.fr-icon-upload-2-fill::before {
+  -webkit-mask-image: url("../../../icons/system/upload-2-fill.svg") !important;
+  mask-image: url("../../../icons/system/upload-2-fill.svg") !important;
+}
+
+.fr-icon-upload-2-line::before {
+  -webkit-mask-image: url("../../../icons/system/upload-2-line.svg") !important;
+  mask-image: url("../../../icons/system/upload-2-line.svg") !important;
+}
+
+.fr-icon-upload-fill::before {
+  -webkit-mask-image: url("../../../icons/system/upload-fill.svg") !important;
+  mask-image: url("../../../icons/system/upload-fill.svg") !important;
+}
+
+.fr-icon-upload-line::before {
+  -webkit-mask-image: url("../../../icons/system/upload-line.svg") !important;
+  mask-image: url("../../../icons/system/upload-line.svg") !important;
+}
+
+.fr-icon-zoom-in-fill::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-in-fill.svg") !important;
+  mask-image: url("../../../icons/system/zoom-in-fill.svg") !important;
+}
+
+.fr-icon-zoom-in-line::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-in-line.svg") !important;
+  mask-image: url("../../../icons/system/zoom-in-line.svg") !important;
+}
+
+.fr-icon-zoom-out-fill::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-out-fill.svg") !important;
+  mask-image: url("../../../icons/system/zoom-out-fill.svg") !important;
+}
+
+.fr-icon-zoom-out-line::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-out-line.svg") !important;
+  mask-image: url("../../../icons/system/zoom-out-line.svg") !important;
+}
+
+.fr-fi-add-circle-fill::before {
+  -webkit-mask-image: url("../../../icons/system/add-circle-fill.svg") !important;
+  mask-image: url("../../../icons/system/add-circle-fill.svg") !important;
+}
+
+.fr-fi-add-circle-line::before {
+  -webkit-mask-image: url("../../../icons/system/add-circle-line.svg") !important;
+  mask-image: url("../../../icons/system/add-circle-line.svg") !important;
+}
+
+.fr-fi-add-line::before {
+  -webkit-mask-image: url("../../../icons/system/add-line.svg") !important;
+  mask-image: url("../../../icons/system/add-line.svg") !important;
+}
+
+.fr-fi-arrow-down-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-down-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-down-line.svg") !important;
+}
+
+.fr-fi-arrow-down-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-down-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-down-s-line.svg") !important;
+}
+
+.fr-fi-arrow-go-back-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-go-back-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-go-back-fill.svg") !important;
+}
+
+.fr-fi-arrow-go-back-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-go-back-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-go-back-line.svg") !important;
+}
+
+.fr-fi-arrow-left-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-left-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-left-line.svg") !important;
+}
+
+.fr-fi-arrow-left-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-left-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-left-s-line.svg") !important;
+}
+
+.fr-fi-arrow-right-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-line.svg") !important;
+}
+
+.fr-fi-arrow-right-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-s-line.svg") !important;
+}
+
+.fr-fi-arrow-right-up-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-right-up-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-right-up-line.svg") !important;
+}
+
+.fr-fi-arrow-up-fill::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-fill.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-fill.svg") !important;
+}
+
+.fr-fi-arrow-up-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-line.svg") !important;
+}
+
+.fr-fi-arrow-up-s-line::before {
+  -webkit-mask-image: url("../../../icons/system/arrow-up-s-line.svg") !important;
+  mask-image: url("../../../icons/system/arrow-up-s-line.svg") !important;
+}
+
+.fr-fi-check-line::before {
+  -webkit-mask-image: url("../../../icons/system/check-line.svg") !important;
+  mask-image: url("../../../icons/system/check-line.svg") !important;
+}
+
+.fr-fi-close-line::before {
+  -webkit-mask-image: url("../../../icons/system/close-line.svg") !important;
+  mask-image: url("../../../icons/system/close-line.svg") !important;
+}
+
+.fr-fi-download-line::before {
+  -webkit-mask-image: url("../../../icons/system/download-line.svg") !important;
+  mask-image: url("../../../icons/system/download-line.svg") !important;
+}
+
+.fr-fi-error-warning-fill::before {
+  -webkit-mask-image: url("../../../icons/system/error-warning-fill.svg") !important;
+  mask-image: url("../../../icons/system/error-warning-fill.svg") !important;
+}
+
+.fr-fi-error-warning-line::before {
+  -webkit-mask-image: url("../../../icons/system/error-warning-line.svg") !important;
+  mask-image: url("../../../icons/system/error-warning-line.svg") !important;
+}
+
+.fr-fi-external-link-line::before {
+  -webkit-mask-image: url("../../../icons/system/external-link-line.svg") !important;
+  mask-image: url("../../../icons/system/external-link-line.svg") !important;
+}
+
+.fr-fi-eye-fill::before {
+  -webkit-mask-image: url("../../../icons/system/eye-fill.svg") !important;
+  mask-image: url("../../../icons/system/eye-fill.svg") !important;
+}
+
+.fr-fi-eye-line::before {
+  -webkit-mask-image: url("../../../icons/system/eye-line.svg") !important;
+  mask-image: url("../../../icons/system/eye-line.svg") !important;
+}
+
+.fr-fi-eye-off-fill::before {
+  -webkit-mask-image: url("../../../icons/system/eye-off-fill.svg") !important;
+  mask-image: url("../../../icons/system/eye-off-fill.svg") !important;
+}
+
+.fr-fi-eye-off-line::before {
+  -webkit-mask-image: url("../../../icons/system/eye-off-line.svg") !important;
+  mask-image: url("../../../icons/system/eye-off-line.svg") !important;
+}
+
+.fr-fi-filter-fill::before {
+  -webkit-mask-image: url("../../../icons/system/filter-fill.svg") !important;
+  mask-image: url("../../../icons/system/filter-fill.svg") !important;
+}
+
+.fr-fi-filter-line::before {
+  -webkit-mask-image: url("../../../icons/system/filter-line.svg") !important;
+  mask-image: url("../../../icons/system/filter-line.svg") !important;
+}
+
+.fr-fi-arrow-left-s-first-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-left-s-first-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-left-s-first-line.svg") !important;
+}
+
+.fr-fi-arrow-left-s-line-double::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-left-s-line-double.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-left-s-line-double.svg") !important;
+}
+
+.fr-fi-arrow-right-s-last-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-right-s-last-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-right-s-last-line.svg") !important;
+}
+
+.fr-fi-arrow-right-s-line-double::before {
+  -webkit-mask-image: url("../../../icons/system/fr--arrow-right-s-line-double.svg") !important;
+  mask-image: url("../../../icons/system/fr--arrow-right-s-line-double.svg") !important;
+}
+
+.fr-fi-error-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--error-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--error-fill.svg") !important;
+}
+
+.fr-fi-error-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--error-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--error-line.svg") !important;
+}
+
+.fr-fi-info-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--info-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--info-fill.svg") !important;
+}
+
+.fr-fi-info-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--info-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--info-line.svg") !important;
+}
+
+.fr-fi-success-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--success-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--success-fill.svg") !important;
+}
+
+.fr-fi-success-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--success-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--success-line.svg") !important;
+}
+
+.fr-fi-theme-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--theme-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--theme-fill.svg") !important;
+}
+
+.fr-fi-warning-fill::before {
+  -webkit-mask-image: url("../../../icons/system/fr--warning-fill.svg") !important;
+  mask-image: url("../../../icons/system/fr--warning-fill.svg") !important;
+}
+
+.fr-fi-warning-line::before {
+  -webkit-mask-image: url("../../../icons/system/fr--warning-line.svg") !important;
+  mask-image: url("../../../icons/system/fr--warning-line.svg") !important;
+}
+
+.fr-fi-information-fill::before {
+  -webkit-mask-image: url("../../../icons/system/information-fill.svg") !important;
+  mask-image: url("../../../icons/system/information-fill.svg") !important;
+}
+
+.fr-fi-information-line::before {
+  -webkit-mask-image: url("../../../icons/system/information-line.svg") !important;
+  mask-image: url("../../../icons/system/information-line.svg") !important;
+}
+
+.fr-fi-lock-fill::before {
+  -webkit-mask-image: url("../../../icons/system/lock-fill.svg") !important;
+  mask-image: url("../../../icons/system/lock-fill.svg") !important;
+}
+
+.fr-fi-lock-line::before {
+  -webkit-mask-image: url("../../../icons/system/lock-line.svg") !important;
+  mask-image: url("../../../icons/system/lock-line.svg") !important;
+}
+
+.fr-fi-logout-box-r-fill::before {
+  -webkit-mask-image: url("../../../icons/system/logout-box-r-fill.svg") !important;
+  mask-image: url("../../../icons/system/logout-box-r-fill.svg") !important;
+}
+
+.fr-fi-logout-box-r-line::before {
+  -webkit-mask-image: url("../../../icons/system/logout-box-r-line.svg") !important;
+  mask-image: url("../../../icons/system/logout-box-r-line.svg") !important;
+}
+
+.fr-fi-menu-2-fill::before {
+  -webkit-mask-image: url("../../../icons/system/menu-2-fill.svg") !important;
+  mask-image: url("../../../icons/system/menu-2-fill.svg") !important;
+}
+
+.fr-fi-menu-fill::before {
+  -webkit-mask-image: url("../../../icons/system/menu-fill.svg") !important;
+  mask-image: url("../../../icons/system/menu-fill.svg") !important;
+}
+
+.fr-fi-question-fill::before {
+  -webkit-mask-image: url("../../../icons/system/question-fill.svg") !important;
+  mask-image: url("../../../icons/system/question-fill.svg") !important;
+}
+
+.fr-fi-question-line::before {
+  -webkit-mask-image: url("../../../icons/system/question-line.svg") !important;
+  mask-image: url("../../../icons/system/question-line.svg") !important;
+}
+
+.fr-fi-refresh-fill::before {
+  -webkit-mask-image: url("../../../icons/system/refresh-fill.svg") !important;
+  mask-image: url("../../../icons/system/refresh-fill.svg") !important;
+}
+
+.fr-fi-refresh-line::before {
+  -webkit-mask-image: url("../../../icons/system/refresh-line.svg") !important;
+  mask-image: url("../../../icons/system/refresh-line.svg") !important;
+}
+
+.fr-fi-search-fill::before {
+  -webkit-mask-image: url("../../../icons/system/search-fill.svg") !important;
+  mask-image: url("../../../icons/system/search-fill.svg") !important;
+}
+
+.fr-fi-search-line::before {
+  -webkit-mask-image: url("../../../icons/system/search-line.svg") !important;
+  mask-image: url("../../../icons/system/search-line.svg") !important;
+}
+
+.fr-fi-subtract-line::before {
+  -webkit-mask-image: url("../../../icons/system/subtract-line.svg") !important;
+  mask-image: url("../../../icons/system/subtract-line.svg") !important;
+}
+
+.fr-fi-timer-fill::before {
+  -webkit-mask-image: url("../../../icons/system/timer-fill.svg") !important;
+  mask-image: url("../../../icons/system/timer-fill.svg") !important;
+}
+
+.fr-fi-timer-line::before {
+  -webkit-mask-image: url("../../../icons/system/timer-line.svg") !important;
+  mask-image: url("../../../icons/system/timer-line.svg") !important;
+}
+
+.fr-fi-upload-2-fill::before {
+  -webkit-mask-image: url("../../../icons/system/upload-2-fill.svg") !important;
+  mask-image: url("../../../icons/system/upload-2-fill.svg") !important;
+}
+
+.fr-fi-upload-2-line::before {
+  -webkit-mask-image: url("../../../icons/system/upload-2-line.svg") !important;
+  mask-image: url("../../../icons/system/upload-2-line.svg") !important;
+}
+
+.fr-fi-zoom-in-fill::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-in-fill.svg") !important;
+  mask-image: url("../../../icons/system/zoom-in-fill.svg") !important;
+}
+
+.fr-fi-zoom-in-line::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-in-line.svg") !important;
+  mask-image: url("../../../icons/system/zoom-in-line.svg") !important;
+}
+
+.fr-fi-zoom-out-fill::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-out-fill.svg") !important;
+  mask-image: url("../../../icons/system/zoom-out-fill.svg") !important;
+}
+
+.fr-fi-zoom-out-line::before {
+  -webkit-mask-image: url("../../../icons/system/zoom-out-line.svg") !important;
+  mask-image: url("../../../icons/system/zoom-out-line.svg") !important;
+}
+
+.fr-fi-delete-line::before {
+  -webkit-mask-image: url("../../../icons/system/delete-bin-line.svg") !important;
+  mask-image: url("../../../icons/system/delete-bin-line.svg") !important;
+}
+
+.fr-fi-delete-fill::before {
+  -webkit-mask-image: url("../../../icons/system/delete-bin-fill.svg") !important;
+  mask-image: url("../../../icons/system/delete-bin-fill.svg") !important;
+}
+
+.fr-icon-delete-line::before {
+  -webkit-mask-image: url("../../../icons/system/delete-bin-line.svg") !important;
+  mask-image: url("../../../icons/system/delete-bin-line.svg") !important;
+}
+
+.fr-icon-delete-fill::before {
+  -webkit-mask-image: url("../../../icons/system/delete-bin-fill.svg") !important;
+  mask-image: url("../../../icons/system/delete-bin-fill.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}

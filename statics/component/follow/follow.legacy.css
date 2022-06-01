@@ -1,0 +1,151 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/**
+* Mixin d'ajout des icones des réseaux sociaux
+**/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * Correctif de la largeur max des textes
+  */
+  .fr-follow__newsletter > * {
+    max-width: 100%;
+  }
+
+  .fr-follow .fr-btn--facebook {
+    content: '';
+  }
+
+  .fr-follow .fr-btn--facebook::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/logo/facebook-circle-fill.svg");
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fr-follow .fr-btn--twitter {
+    content: '';
+  }
+
+  .fr-follow .fr-btn--twitter::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/logo/twitter-fill.svg");
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fr-follow .fr-btn--instagram {
+    content: '';
+  }
+
+  .fr-follow .fr-btn--instagram::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/logo/instagram-fill.svg");
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fr-follow .fr-btn--linkedin {
+    content: '';
+  }
+
+  .fr-follow .fr-btn--linkedin::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/logo/linkedin-box-fill.svg");
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fr-follow .fr-btn--youtube {
+    content: '';
+  }
+
+  .fr-follow .fr-btn--youtube::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/logo/youtube-fill.svg");
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fr-follow .fr-btns-group:not(.fr-btns-group--sm):not(.fr-btns-group--lg) .fr-btn:not([class^="fr-icon-"]):not([class*=" fr-icon-"]):not([class^="fr-fi-"]):not([class*=" fr-fi-"])::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .fr-follow .fr-btns-group--lg .fr-btn:not([class^="fr-icon-"]):not([class*=" fr-icon-"]):not([class^="fr-fi-"]):not([class*=" fr-fi-"])::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .fr-follow {
+    background-color: #f5f5fe;
+  }
+
+  .fr-follow .fr-input {
+    background-color: #fff;
+  }
+
+  .fr-follow__title {
+    color: #161616;
+  }
+
+  .fr-follow__newsletter-legal {
+    color: #666;
+  }
+
+  .fr-follow__social .fr-btn {
+    background-color: transparent;
+    color: #000091;
+  }
+
+  .fr-follow__social .fr-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .fr-follow__social .fr-btn:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .fr-follow__social .fr-btn:disabled,
+  .fr-follow__social a.fr-btn:not([href]) {
+    color: #929292;
+    background-color: transparent;
+  }
+
+  .fr-follow__social .fr-btn:disabled:hover,
+  .fr-follow__social a.fr-btn:not([href]):hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .fr-follow__social .fr-btn:disabled:active,
+  .fr-follow__social a.fr-btn:not([href]):active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .fr-follow .fr-grid-row > *:not(:first-child) {
+    box-shadow: 0 -1px 0 0 #6a6af4;
+  }
+}
+@media all and (min-width: 48em) and (-ms-high-contrast: none), (min-width: 48em) and (-ms-high-contrast: active) {
+  .fr-follow .fr-grid-row > *:not(:first-child) {
+    box-shadow: -1px 0 0 0 #6a6af4;
+  }
+}

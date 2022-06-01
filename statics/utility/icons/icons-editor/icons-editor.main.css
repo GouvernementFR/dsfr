@@ -1,0 +1,191 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-code-view::before {
+  -webkit-mask-image: url("../../../icons/editor/code-view.svg") !important;
+  mask-image: url("../../../icons/editor/code-view.svg") !important;
+}
+
+.fr-icon-font-size::before {
+  -webkit-mask-image: url("../../../icons/editor/font-size.svg") !important;
+  mask-image: url("../../../icons/editor/font-size.svg") !important;
+}
+
+.fr-icon-bold::before {
+  -webkit-mask-image: url("../../../icons/editor/fr--bold.svg") !important;
+  mask-image: url("../../../icons/editor/fr--bold.svg") !important;
+}
+
+.fr-icon-highlight::before {
+  -webkit-mask-image: url("../../../icons/editor/fr--highlight.svg") !important;
+  mask-image: url("../../../icons/editor/fr--highlight.svg") !important;
+}
+
+.fr-icon-quote-fill::before {
+  -webkit-mask-image: url("../../../icons/editor/fr--quote-fill.svg") !important;
+  mask-image: url("../../../icons/editor/fr--quote-fill.svg") !important;
+}
+
+.fr-icon-quote-line::before {
+  -webkit-mask-image: url("../../../icons/editor/fr--quote-line.svg") !important;
+  mask-image: url("../../../icons/editor/fr--quote-line.svg") !important;
+}
+
+.fr-icon-h-1::before {
+  -webkit-mask-image: url("../../../icons/editor/h-1.svg") !important;
+  mask-image: url("../../../icons/editor/h-1.svg") !important;
+}
+
+.fr-icon-h-2::before {
+  -webkit-mask-image: url("../../../icons/editor/h-2.svg") !important;
+  mask-image: url("../../../icons/editor/h-2.svg") !important;
+}
+
+.fr-icon-h-3::before {
+  -webkit-mask-image: url("../../../icons/editor/h-3.svg") !important;
+  mask-image: url("../../../icons/editor/h-3.svg") !important;
+}
+
+.fr-icon-h-4::before {
+  -webkit-mask-image: url("../../../icons/editor/h-4.svg") !important;
+  mask-image: url("../../../icons/editor/h-4.svg") !important;
+}
+
+.fr-icon-h-5::before {
+  -webkit-mask-image: url("../../../icons/editor/h-5.svg") !important;
+  mask-image: url("../../../icons/editor/h-5.svg") !important;
+}
+
+.fr-icon-h-6::before {
+  -webkit-mask-image: url("../../../icons/editor/h-6.svg") !important;
+  mask-image: url("../../../icons/editor/h-6.svg") !important;
+}
+
+.fr-icon-hashtag::before {
+  -webkit-mask-image: url("../../../icons/editor/hashtag.svg") !important;
+  mask-image: url("../../../icons/editor/hashtag.svg") !important;
+}
+
+.fr-icon-italic::before {
+  -webkit-mask-image: url("../../../icons/editor/italic.svg") !important;
+  mask-image: url("../../../icons/editor/italic.svg") !important;
+}
+
+.fr-icon-link-unlink::before {
+  -webkit-mask-image: url("../../../icons/editor/link-unlink.svg") !important;
+  mask-image: url("../../../icons/editor/link-unlink.svg") !important;
+}
+
+.fr-icon-link::before {
+  -webkit-mask-image: url("../../../icons/editor/link.svg") !important;
+  mask-image: url("../../../icons/editor/link.svg") !important;
+}
+
+.fr-icon-list-ordered::before {
+  -webkit-mask-image: url("../../../icons/editor/list-ordered.svg") !important;
+  mask-image: url("../../../icons/editor/list-ordered.svg") !important;
+}
+
+.fr-icon-list-unordered::before {
+  -webkit-mask-image: url("../../../icons/editor/list-unordered.svg") !important;
+  mask-image: url("../../../icons/editor/list-unordered.svg") !important;
+}
+
+.fr-icon-question-mark::before {
+  -webkit-mask-image: url("../../../icons/editor/question-mark.svg") !important;
+  mask-image: url("../../../icons/editor/question-mark.svg") !important;
+}
+
+.fr-icon-separator::before {
+  -webkit-mask-image: url("../../../icons/editor/separator.svg") !important;
+  mask-image: url("../../../icons/editor/separator.svg") !important;
+}
+
+.fr-icon-space::before {
+  -webkit-mask-image: url("../../../icons/editor/space.svg") !important;
+  mask-image: url("../../../icons/editor/space.svg") !important;
+}
+
+.fr-icon-subscript::before {
+  -webkit-mask-image: url("../../../icons/editor/subscript.svg") !important;
+  mask-image: url("../../../icons/editor/subscript.svg") !important;
+}
+
+.fr-icon-superscript::before {
+  -webkit-mask-image: url("../../../icons/editor/superscript.svg") !important;
+  mask-image: url("../../../icons/editor/superscript.svg") !important;
+}
+
+.fr-icon-table-2::before {
+  -webkit-mask-image: url("../../../icons/editor/table-2.svg") !important;
+  mask-image: url("../../../icons/editor/table-2.svg") !important;
+}
+
+.fr-icon-translate-2::before {
+  -webkit-mask-image: url("../../../icons/editor/translate-2.svg") !important;
+  mask-image: url("../../../icons/editor/translate-2.svg") !important;
+}
+
+.fr-fi-font-size::before {
+  -webkit-mask-image: url("../../../icons/editor/font-size.svg") !important;
+  mask-image: url("../../../icons/editor/font-size.svg") !important;
+}
+
+.fr-fi-bold::before {
+  -webkit-mask-image: url("../../../icons/editor/fr--bold.svg") !important;
+  mask-image: url("../../../icons/editor/fr--bold.svg") !important;
+}
+
+.fr-fi-highlight::before {
+  -webkit-mask-image: url("../../../icons/editor/fr--highlight.svg") !important;
+  mask-image: url("../../../icons/editor/fr--highlight.svg") !important;
+}
+
+.fr-fi-italic::before {
+  -webkit-mask-image: url("../../../icons/editor/italic.svg") !important;
+  mask-image: url("../../../icons/editor/italic.svg") !important;
+}
+
+.fr-fi-link-unlink::before {
+  -webkit-mask-image: url("../../../icons/editor/link-unlink.svg") !important;
+  mask-image: url("../../../icons/editor/link-unlink.svg") !important;
+}
+
+.fr-fi-list-ordered::before {
+  -webkit-mask-image: url("../../../icons/editor/list-ordered.svg") !important;
+  mask-image: url("../../../icons/editor/list-ordered.svg") !important;
+}
+
+.fr-fi-list-unordered::before {
+  -webkit-mask-image: url("../../../icons/editor/list-unordered.svg") !important;
+  mask-image: url("../../../icons/editor/list-unordered.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}
