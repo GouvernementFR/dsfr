@@ -2,6 +2,19 @@
 
 Le Système de design de l’État (ci-après, le **DSFR**) est un ensemble de composants html / css / js ayant pour but de faciliter la vie des développeurs et intégrateurs pour bâtir leurs interfaces.
 
+## CDN
+
+CSS :
+- https://cdn.jsdelivr.net/gh/replicateur/dsfr@v1.5.1-statics/dist/dsfr.min.css
+- https://cdn.jsdelivr.net/gh/replicateur/dsfr@v1.5.1-statics/dist/utility/utility.scss
+
+JS :
+- https://cdn.jsdelivr.net/gh/replicateur/dsfr@v1.5.1-statics/dist/dsfr.module.min.js
+- https://cdn.jsdelivr.net/gh/replicateur/dsfr@v1.5.1-statics/dist/dsfr.nomodule.min.js
+
+Exemple :
+- https://codepen.io/replicateur/pen/eYVrReZ
+
 ## Installation
 
 L'installation du Système de Design de l'État (ci-après, le **DSFR**) peut se faire de manières différentes. En téléchargeant l'ensemble des fichiers nécessaires à son utilisation, en utilisant le gestionnaire de paquets **NPM**, ou encore via **git**.
