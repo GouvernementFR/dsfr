@@ -108,6 +108,7 @@ const buildStandaloneExample = (pck) => {
     flag: 'r'
   });
   const html = ejs.render(page, {
+    ...pck,
     path: root(pck.standalone.example.path),
     root: root.toString(),
     isStandalone: true
