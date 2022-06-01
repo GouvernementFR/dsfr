@@ -1,0 +1,183 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  CONTENT
+\* ˍˍˍˍˍˍˍˍˍ */
+.fr-content-media {
+  width: 100%;
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  --text-spacing: 0;
+  --title-spacing: 0;
+}
+
+.fr-content-media__img {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1.77778;
+}
+
+.fr-content-media__img > *,
+.fr-content-media__asset {
+  object-fit: cover;
+  object-position: 50% 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fr-content-media__caption,
+.fr-content-media__transcription {
+  width: 100%;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.fr-content-media__caption {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+.fr-content-media__transcription {
+  margin-right: -1rem;
+}
+
+.fr-content-media__transcription .fr-btn {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.75rem;
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+  font-weight: 500;
+  background-color: transparent;
+
+  --hover: inherit;
+  --active: inherit;
+  color: var(--text-action-high-blue-france);
+}
+
+.fr-content-media__transcription .fr-btn::before {
+  content: "";
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-image: url("../../icons/system/menu-2-fill.svg");
+  mask-image: url("../../icons/system/menu-2-fill.svg");
+  --icon-size: 1rem;
+  margin-right: -0.16667rem;
+  margin-left: 0.5rem;
+}
+
+.fr-content-media--sm .fr-content-media__img,
+.fr-content-media--sm .fr-responsive-vid,
+.fr-content-media--sm .fr-content-media__caption,
+.fr-content-media--sm .fr-content-media__transcription {
+  width: 83.33333%;
+}
+
+.fr-content-media--lg .fr-content-media__img,
+.fr-content-media--lg .fr-responsive-vid,
+.fr-content-media--lg .fr-content-media__caption,
+.fr-content-media--lg .fr-content-media__transcription {
+  width: 116.66667%;
+}
+
+.fr-content-media--lg .fr-content-media__img,
+.fr-content-media--lg .fr-responsive-vid {
+  max-width: 100vw;
+}
+
+.fr-content-media--lg .fr-content-media__caption,
+.fr-content-media--lg .fr-content-media__transcription {
+  max-width: calc(100vw - 2rem);
+}
+
+.fr-content-media__transcription .fr-link {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.75rem;
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+  font-weight: 500;
+
+  --underline-img: none;
+  --link-blank-content: none;
+  --hover-tint: var(--hover);
+  background-color: transparent;
+
+  --hover: inherit;
+  --active: inherit;
+  color: var(--text-action-high-blue-france);
+}
+
+.fr-content-media__transcription .fr-link::before {
+  content: "";
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-image: url("../../icons/system/menu-2-fill.svg");
+  mask-image: url("../../icons/system/menu-2-fill.svg");
+  --icon-size: 1rem;
+  margin-right: -0.16667rem;
+  margin-left: 0.5rem;
+}
+
+.fr-content-media__transcription .fr-btn:disabled,
+.fr-content-media__transcription a.fr-btn:not([href]) {
+  color: var(--text-disabled-grey);
+  background-color: transparent;
+
+  --hover: inherit;
+  --active: inherit;
+}
+
+.fr-content-media__transcription .fr-link:disabled,
+.fr-content-media__transcription a.fr-link:not([href]) {
+  color: var(--text-disabled-grey);
+  background-color: transparent;
+
+  --hover: inherit;
+  --active: inherit;
+}
+
+@media (min-width: 48em) {
+  .fr-content-media--sm .fr-content-media__img,
+  .fr-content-media--sm .fr-responsive-vid,
+  .fr-content-media--sm .fr-content-media__caption,
+  .fr-content-media--sm .fr-content-media__transcription {
+    width: 75%;
+  }
+
+  .fr-content-media--lg .fr-content-media__img,
+  .fr-content-media--lg .fr-responsive-vid,
+  .fr-content-media--lg .fr-content-media__caption,
+  .fr-content-media--lg .fr-content-media__transcription {
+    width: 125%;
+  }
+}

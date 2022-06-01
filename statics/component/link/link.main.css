@@ -1,0 +1,253 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  LINK
+\* ˍˍˍˍˍˍˍˍˍ */
+.fr-link {
+  --text-spacing: 0;
+  --title-spacing: 0;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding: 0 0;
+  color: var(--text-action-high-blue-france);
+}
+
+.fr-link--icon-left[class^="fr-icon-"],
+.fr-link--icon-left[class*=" fr-icon-"],
+.fr-link--icon-left[class^="fr-fi-"],
+.fr-link--icon-left[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-link--icon-left[class^="fr-icon-"]::before,
+.fr-link--icon-left[class*=" fr-icon-"]::before,
+.fr-link--icon-left[class^="fr-fi-"]::before,
+.fr-link--icon-left[class*=" fr-fi-"]::before {
+  --icon-size: 1rem;
+  margin-left: -0.16667rem;
+  margin-right: 0.5rem;
+}
+
+.fr-link--icon-right[class^="fr-icon-"],
+.fr-link--icon-right[class*=" fr-icon-"],
+.fr-link--icon-right[class^="fr-fi-"],
+.fr-link--icon-right[class*=" fr-fi-"] {
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-link--icon-right[class^="fr-icon-"]::before,
+.fr-link--icon-right[class*=" fr-icon-"]::before,
+.fr-link--icon-right[class^="fr-fi-"]::before,
+.fr-link--icon-right[class*=" fr-fi-"]::before {
+  --icon-size: 1rem;
+  margin-right: -0.16667rem;
+  margin-left: 0.5rem;
+}
+
+.fr-link--sm {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding: 0 0;
+}
+
+.fr-link--sm.fr-link--icon-left[class^="fr-icon-"],
+.fr-link--sm.fr-link--icon-left[class*=" fr-icon-"],
+.fr-link--sm.fr-link--icon-left[class^="fr-fi-"],
+.fr-link--sm.fr-link--icon-left[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-link--sm.fr-link--icon-left[class^="fr-icon-"]::before,
+.fr-link--sm.fr-link--icon-left[class*=" fr-icon-"]::before,
+.fr-link--sm.fr-link--icon-left[class^="fr-fi-"]::before,
+.fr-link--sm.fr-link--icon-left[class*=" fr-fi-"]::before {
+  --icon-size: 1rem;
+  margin-left: -0.16667rem;
+  margin-right: 0.5rem;
+}
+
+.fr-link--sm.fr-link--icon-right[class^="fr-icon-"],
+.fr-link--sm.fr-link--icon-right[class*=" fr-icon-"],
+.fr-link--sm.fr-link--icon-right[class^="fr-fi-"],
+.fr-link--sm.fr-link--icon-right[class*=" fr-fi-"] {
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-link--sm.fr-link--icon-right[class^="fr-icon-"]::before,
+.fr-link--sm.fr-link--icon-right[class*=" fr-icon-"]::before,
+.fr-link--sm.fr-link--icon-right[class^="fr-fi-"]::before,
+.fr-link--sm.fr-link--icon-right[class*=" fr-fi-"]::before {
+  --icon-size: 1rem;
+  margin-right: -0.16667rem;
+  margin-left: 0.5rem;
+}
+
+.fr-link--lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding: 0 0;
+}
+
+.fr-link--lg.fr-link--icon-left[class^="fr-icon-"],
+.fr-link--lg.fr-link--icon-left[class*=" fr-icon-"],
+.fr-link--lg.fr-link--icon-left[class^="fr-fi-"],
+.fr-link--lg.fr-link--icon-left[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-link--lg.fr-link--icon-left[class^="fr-icon-"]::before,
+.fr-link--lg.fr-link--icon-left[class*=" fr-icon-"]::before,
+.fr-link--lg.fr-link--icon-left[class^="fr-fi-"]::before,
+.fr-link--lg.fr-link--icon-left[class*=" fr-fi-"]::before {
+  --icon-size: 1.5rem;
+  margin-left: -0.25rem;
+  margin-right: 0.5rem;
+}
+
+.fr-link--lg.fr-link--icon-right[class^="fr-icon-"],
+.fr-link--lg.fr-link--icon-right[class*=" fr-icon-"],
+.fr-link--lg.fr-link--icon-right[class^="fr-fi-"],
+.fr-link--lg.fr-link--icon-right[class*=" fr-fi-"] {
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-link--lg.fr-link--icon-right[class^="fr-icon-"]::before,
+.fr-link--lg.fr-link--icon-right[class*=" fr-icon-"]::before,
+.fr-link--lg.fr-link--icon-right[class^="fr-fi-"]::before,
+.fr-link--lg.fr-link--icon-right[class*=" fr-fi-"]::before {
+  --icon-size: 1.5rem;
+  margin-right: -0.25rem;
+  margin-left: 0.5rem;
+}
+
+.fr-links-group {
+  --ul-type: none;
+  --ol-type: none;
+  --ul-start: 0;
+  --ol-start: 0;
+  --xl-block: 0;
+  --li-bottom: 0;
+  --ol-content: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.fr-links-group > li {
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.fr-links-group .fr-link {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.fr-links-group--sm .fr-link {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding: 0 0;
+}
+
+.fr-links-group--sm .fr-link::before {
+  content: none;
+}
+
+.fr-links-group--lg .fr-link {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding: 0 0;
+}
+
+.fr-links-group--lg .fr-link::before {
+  content: none;
+}
+
+.fr-link--close {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.75rem;
+  flex-direction: row-reverse;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+  font-weight: 500;
+  display: flex;
+  margin-left: auto;
+  margin-right: -1rem;
+  background-color: transparent;
+
+  --hover: inherit;
+  --active: inherit;
+  color: var(--text-action-high-blue-france);
+}
+
+.fr-link--close::before {
+  content: "";
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: currentColor;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-image: url("../../icons/system/close-line.svg");
+  mask-image: url("../../icons/system/close-line.svg");
+  --icon-size: 1rem;
+  margin-right: -0.16667rem;
+  margin-left: 0.5rem;
+}
+
+.fr-link.fr-link--icon-left.fr-fi-theme-fill {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  flex-direction: row;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+  font-weight: 500;
+}
+
+.fr-link.fr-link--icon-left.fr-fi-theme-fill::before {
+  --icon-size: 1rem;
+  margin-left: -0.16667rem;
+  margin-right: 0.5rem;
+}
+
+.fr-link--close:disabled,
+a.fr-link--close:not([href]) {
+  color: var(--text-disabled-grey);
+  background-color: transparent;
+
+  --hover: inherit;
+  --active: inherit;
+}

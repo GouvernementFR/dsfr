@@ -1,0 +1,115 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+.fr-sidemenu {
+  /*
+    @include scheme-element-bg-color(default grey);
+
+    @include respond-from(md) {
+      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+    }
+    */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * Correctif de la hauteur de la navigation latérale
+  */
+  .fr-sidemenu {
+    height: auto;
+  }
+
+  .fr-sidemenu ul {
+    list-style-type: none;
+  }
+
+  .fr-sidemenu ol {
+    list-style-type: none;
+  }
+
+  .fr-sidemenu ul,
+  .fr-sidemenu ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .fr-sidemenu [href] {
+    text-decoration: none;
+  }
+
+  .fr-sidemenu [target='_blank']::after {
+    content: none;
+  }
+
+  .fr-sidemenu__btn[aria-expanded] {
+    content: '';
+  }
+
+  .fr-sidemenu__btn[aria-expanded]::before {
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../../icons/system/arrow-down-s-line.svg");
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .fr-sidemenu__title {
+    color: #161616;
+    box-shadow: inset 0 -1px 0 0 #e5e5e5;
+  }
+
+  .fr-sidemenu__item::before {
+    box-shadow: 0 -1px 0 0 #e5e5e5, inset 0 -1px 0 0 #e5e5e5;
+  }
+
+  .fr-sidemenu__item:first-child::before {
+    box-shadow: inset 0 -1px 0 0 #e5e5e5;
+  }
+
+  .fr-sidemenu__item:last-child::before {
+    box-shadow: 0 -1px 0 0 #e5e5e5;
+  }
+
+  .fr-sidemenu__link,
+  .fr-sidemenu__btn {
+    color: #161616;
+  }
+
+  .fr-sidemenu__link[aria-current],
+  .fr-sidemenu__btn[aria-current] {
+    color: #000091;
+  }
+
+  .fr-sidemenu__link[aria-current]::after,
+  .fr-sidemenu__btn[aria-current]::after {
+    background-color: #000091;
+  }
+
+  .fr-sidemenu__inner > .fr-sidemenu__btn {
+    background-color: #fff;
+  }
+}
+
+@media (min-width: 48em) {
+  .fr-sidemenu__title {
+    box-shadow: none;
+  }
+}
+
+@media all and (min-width: 48em) and (-ms-high-contrast: none), (min-width: 48em) and (-ms-high-contrast: active) {
+  .fr-sidemenu__inner {
+    box-shadow: inset -1px 0 0 0 #e5e5e5;
+  }
+
+  .fr-sidemenu--right .fr-sidemenu__inner {
+    box-shadow: inset 1px 0 0 0 #e5e5e5;
+  }
+
+  .fr-sidemenu--full-border .fr-sidemenu__inner {
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+  }
+}

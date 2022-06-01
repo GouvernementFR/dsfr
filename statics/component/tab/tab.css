@@ -1,0 +1,379 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  TAB
+\* ˍˍˍˍˍˍˍˍˍ */
+.fr-tabs__tab {
+  --text-spacing: 0;
+  --title-spacing: 0;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  --underline-img: none;
+  --link-blank-content: none;
+  --hover-tint: var(--hover);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: visible;
+  font-weight: 700;
+  z-index: 1;
+  margin: 0 0.25rem;
+  white-space: nowrap;
+}
+
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class^="fr-icon-"],
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class*=" fr-icon-"],
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class^="fr-fi-"],
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class^="fr-icon-"]::before,
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class*=" fr-icon-"]::before,
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class^="fr-fi-"]::before,
+.fr-tabs__tab:not([class*="fr-tabs__tab--icon-"])[class*=" fr-fi-"]::before {
+  --icon-size: 1rem;
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+.fr-tabs__tab--icon-left[class^="fr-icon-"],
+.fr-tabs__tab--icon-left[class*=" fr-icon-"],
+.fr-tabs__tab--icon-left[class^="fr-fi-"],
+.fr-tabs__tab--icon-left[class*=" fr-fi-"] {
+  flex-direction: row;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+}
+
+.fr-tabs__tab--icon-left[class^="fr-icon-"]::before,
+.fr-tabs__tab--icon-left[class*=" fr-icon-"]::before,
+.fr-tabs__tab--icon-left[class^="fr-fi-"]::before,
+.fr-tabs__tab--icon-left[class*=" fr-fi-"]::before {
+  --icon-size: 1rem;
+  margin-left: -0.16667rem;
+  margin-right: 0.5rem;
+}
+
+.fr-tabs {
+  --tabs-height: auto;
+  --ul-type: none;
+  --ol-type: none;
+  --ul-start: 0;
+  --ol-start: 0;
+  --xl-block: 0;
+  --li-bottom: 0;
+  --ol-content: none;
+  --underline-img: none;
+  --link-blank-content: none;
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: -4px;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: var(--tabs-height);
+
+  /**
+  * Animation de la hauteur du panel
+  */
+  transition: height 0.3s;
+
+  /**
+   * ul : element srollable des boutons
+   */
+
+  /**
+  * Tab button
+  */
+
+  /**
+  * Tab Panel
+  */
+  /**
+    * Tab button
+    */
+  /**
+    * Tab button
+    */
+}
+
+.fr-tabs--viewport-width {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.fr-tabs::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2.75rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--border-default-grey);
+}
+
+.fr-tabs__list {
+  display: flex;
+  align-items: flex-end;
+  overflow-x: auto;
+  width: 100%;
+  min-height: 3rem;
+  position: absolute;
+  z-index: 1;
+
+  /**
+    * overflow vertical de 4px pour le focus
+    */
+  margin: -4px 0;
+  padding: 4px 0.75rem;
+}
+
+.fr-tabs__tab[aria-selected=true] {
+  pointer-events: none;
+  color: var(--text-active-blue-france);
+  background-color: var(--background-default-grey);
+
+  --hover: var(--background-default-grey-hover);
+  --active: var(--background-default-grey-active);
+}
+
+.fr-tabs__tab::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 100% 3px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
+  background-image: linear-gradient(0deg, var(--border-active-blue-france), var(--border-active-blue-france)), linear-gradient(0deg, var(--border-default-grey), var(--border-default-grey)), linear-gradient(0deg, var(--border-default-grey), var(--border-default-grey)), linear-gradient(0deg, var(--background-default-grey), var(--background-default-grey));
+}
+
+.fr-tabs__tab:not([aria-selected=true])::after {
+  background-size: 0 2px, 1px 0, 1px 0, 0 3px;
+}
+
+.fr-tabs__panel {
+  --underline-img: linear-gradient(0deg, currentColor, currentColor);
+  --link-blank-content: '';
+  --ul-type: disc;
+  --ol-type: decimal;
+  --ul-start: 1rem;
+  --ol-start: 1.5rem;
+  --xl-block: 0.5rem;
+  --li-bottom: 0.25rem;
+  --xl-base: 1em;
+  --ol-content: counters(li-counter, ".") ".\00a0\00a0";
+  display: block;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  margin-top: 2.5rem;
+  margin-right: -100%;
+  flex: 0 0 100%;
+  transition: visibility 0.3s, transform 0.3s;
+
+  /**
+    * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
+    * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
+    *
+    * tabs
+    * └─ panel selected
+    * └─ panel (visibility hidden, tabindex -1)
+    *    └─ tabs
+    *       └─ panel selected (visibility visible tabindex 0)
+    *            ↑ ce panel est accessible alors que caché par son panel parent
+    * solution : visibility hidden seulement sur les éléments non sélectionnés
+    **/
+}
+
+.fr-tabs__panel:focus,
+.fr-tabs__panel:focus-visible {
+  outline-offset: calc(-1rem + 2px);
+}
+
+.fr-tabs__panel--direction-end {
+  transform: translate(100%);
+}
+
+.fr-tabs__panel--direction-start {
+  transform: translate(-100%);
+}
+
+.fr-tabs__panel:not(.fr-tabs__panel--selected) {
+  visibility: hidden;
+}
+
+/*
+* Ombres ajoutées en Js si le contenu est plus grand que le conteneur
+*/
+.fr-tabs__shadow {
+  /**
+  * Modifier ombre à gauche
+  **/
+
+  /**
+  * Modifier ombre à droite
+  **/
+
+  /**
+  * Modifier combinaison ombre à gauche et ombre à droite
+  **/
+}
+
+.fr-tabs__shadow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2.5rem;
+  z-index: 2;
+  box-shadow: inset 0 0 0 0 #161616, inset 0 0 0 0 #161616;
+  opacity: 1;
+  pointer-events: none;
+  transition: box-shadow 0.3s;
+}
+
+.fr-tabs__shadow--left::before {
+  box-shadow: inset 2rem 0 1.5rem -2rem #161616, inset 0 0 0 0 #161616;
+}
+
+.fr-tabs__shadow--right::before {
+  box-shadow: inset 0 0 0 0 #161616, inset -2rem 0 1.5rem -2rem #161616;
+}
+
+.fr-tabs__shadow--left.fr-tabs__shadow--right::before {
+  content: "";
+  display: block;
+  box-shadow: inset 2rem 0 1.5rem -2rem #161616, inset -2rem 0 1.5rem -2rem #161616;
+}
+
+:root[data-fr-theme="dark"] .fr-tabs__shadow::before {
+  opacity: 1;
+}
+
+.fr-tabs__tab:not([aria-selected=true]) {
+  background-color: var(--background-action-low-blue-france);
+
+  --hover: var(--background-action-low-blue-france-hover);
+  --active: var(--background-action-low-blue-france-active);
+  color: var(--text-action-high-grey);
+}
+
+.fr-tabs__tab:disabled {
+  color: var(--text-disabled-grey);
+  background-color: var(--background-disabled-grey);
+
+  --hover: var(--background-disabled-grey-hover);
+  --active: var(--background-disabled-grey-active);
+}
+
+@media (min-width: 48em) {
+  .fr-tabs--viewport-width {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .fr-tabs__panel {
+    padding: 2rem;
+  }
+
+  .fr-tabs__panel:focus,
+  .fr-tabs__panel:focus-visible {
+    outline-offset: calc(-2rem + 2px);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+  * Reset liste à puce
+  */
+  .fr-tabs ul {
+    list-style-type: none;
+  }
+
+  .fr-tabs ol {
+    list-style-type: none;
+  }
+
+  .fr-tabs ul,
+  .fr-tabs ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul,
+  ol {
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .fr-tabs__panel [href] {
+    text-decoration: underline;
+  }
+
+  .fr-tabs__panel [target='_blank']::after {
+    content: '';
+  }
+
+  .fr-tabs::after {
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+  }
+
+  .fr-tabs__tab::after {
+    background-image: linear-gradient(0deg, #000091, #000091), linear-gradient(0deg, #e5e5e5, #e5e5e5), linear-gradient(0deg, #e5e5e5, #e5e5e5), linear-gradient(0deg, #fff, #fff);
+  }
+
+  .fr-tabs__tab:not([aria-selected=true]) {
+    background-color: #e3e3fd;
+    color: #161616;
+  }
+
+  .fr-tabs__tab[aria-selected=true] {
+    color: #000091;
+    background-color: #fff;
+  }
+
+  .fr-tabs__tab:disabled {
+    color: #929292;
+    background-color: #e5e5e5;
+  }
+}

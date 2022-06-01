@@ -1,0 +1,429 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON DESIGN
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-ball-pen-fill::before {
+  -webkit-mask-image: url("../../../icons/design/ball-pen-fill.svg") !important;
+  mask-image: url("../../../icons/design/ball-pen-fill.svg") !important;
+}
+
+.fr-icon-ball-pen-line::before {
+  -webkit-mask-image: url("../../../icons/design/ball-pen-line.svg") !important;
+  mask-image: url("../../../icons/design/ball-pen-line.svg") !important;
+}
+
+.fr-icon-brush-3-fill::before {
+  -webkit-mask-image: url("../../../icons/design/brush-3-fill.svg") !important;
+  mask-image: url("../../../icons/design/brush-3-fill.svg") !important;
+}
+
+.fr-icon-brush-3-line::before {
+  -webkit-mask-image: url("../../../icons/design/brush-3-line.svg") !important;
+  mask-image: url("../../../icons/design/brush-3-line.svg") !important;
+}
+
+.fr-icon-brush-fill::before {
+  -webkit-mask-image: url("../../../icons/design/brush-fill.svg") !important;
+  mask-image: url("../../../icons/design/brush-fill.svg") !important;
+}
+
+.fr-icon-brush-line::before {
+  -webkit-mask-image: url("../../../icons/design/brush-line.svg") !important;
+  mask-image: url("../../../icons/design/brush-line.svg") !important;
+}
+
+.fr-icon-contrast-fill::before {
+  -webkit-mask-image: url("../../../icons/design/contrast-fill.svg") !important;
+  mask-image: url("../../../icons/design/contrast-fill.svg") !important;
+}
+
+.fr-icon-contrast-line::before {
+  -webkit-mask-image: url("../../../icons/design/contrast-line.svg") !important;
+  mask-image: url("../../../icons/design/contrast-line.svg") !important;
+}
+
+.fr-icon-crop-fill::before {
+  -webkit-mask-image: url("../../../icons/design/crop-fill.svg") !important;
+  mask-image: url("../../../icons/design/crop-fill.svg") !important;
+}
+
+.fr-icon-crop-line::before {
+  -webkit-mask-image: url("../../../icons/design/crop-line.svg") !important;
+  mask-image: url("../../../icons/design/crop-line.svg") !important;
+}
+
+.fr-icon-drag-move-2-fill::before {
+  -webkit-mask-image: url("../../../icons/design/drag-move-2-fill.svg") !important;
+  mask-image: url("../../../icons/design/drag-move-2-fill.svg") !important;
+}
+
+.fr-icon-drag-move-2-line::before {
+  -webkit-mask-image: url("../../../icons/design/drag-move-2-line.svg") !important;
+  mask-image: url("../../../icons/design/drag-move-2-line.svg") !important;
+}
+
+.fr-icon-drop-fill::before {
+  -webkit-mask-image: url("../../../icons/design/drop-fill.svg") !important;
+  mask-image: url("../../../icons/design/drop-fill.svg") !important;
+}
+
+.fr-icon-drop-line::before {
+  -webkit-mask-image: url("../../../icons/design/drop-line.svg") !important;
+  mask-image: url("../../../icons/design/drop-line.svg") !important;
+}
+
+.fr-icon-edit-box-fill::before {
+  -webkit-mask-image: url("../../../icons/design/edit-box-fill.svg") !important;
+  mask-image: url("../../../icons/design/edit-box-fill.svg") !important;
+}
+
+.fr-icon-edit-box-line::before {
+  -webkit-mask-image: url("../../../icons/design/edit-box-line.svg") !important;
+  mask-image: url("../../../icons/design/edit-box-line.svg") !important;
+}
+
+.fr-icon-edit-fill::before {
+  -webkit-mask-image: url("../../../icons/design/edit-fill.svg") !important;
+  mask-image: url("../../../icons/design/edit-fill.svg") !important;
+}
+
+.fr-icon-edit-line::before {
+  -webkit-mask-image: url("../../../icons/design/edit-line.svg") !important;
+  mask-image: url("../../../icons/design/edit-line.svg") !important;
+}
+
+.fr-icon-ink-bottle-fill::before {
+  -webkit-mask-image: url("../../../icons/design/ink-bottle-fill.svg") !important;
+  mask-image: url("../../../icons/design/ink-bottle-fill.svg") !important;
+}
+
+.fr-icon-ink-bottle-line::before {
+  -webkit-mask-image: url("../../../icons/design/ink-bottle-line.svg") !important;
+  mask-image: url("../../../icons/design/ink-bottle-line.svg") !important;
+}
+
+.fr-icon-layout-grid-fill::before {
+  -webkit-mask-image: url("../../../icons/design/layout-grid-fill.svg") !important;
+  mask-image: url("../../../icons/design/layout-grid-fill.svg") !important;
+}
+
+.fr-icon-layout-grid-line::before {
+  -webkit-mask-image: url("../../../icons/design/layout-grid-line.svg") !important;
+  mask-image: url("../../../icons/design/layout-grid-line.svg") !important;
+}
+
+.fr-icon-mark-pen-fill::before {
+  -webkit-mask-image: url("../../../icons/design/mark-pen-fill.svg") !important;
+  mask-image: url("../../../icons/design/mark-pen-fill.svg") !important;
+}
+
+.fr-icon-mark-pen-line::before {
+  -webkit-mask-image: url("../../../icons/design/mark-pen-line.svg") !important;
+  mask-image: url("../../../icons/design/mark-pen-line.svg") !important;
+}
+
+.fr-icon-paint-brush-fill::before {
+  -webkit-mask-image: url("../../../icons/design/paint-brush-fill.svg") !important;
+  mask-image: url("../../../icons/design/paint-brush-fill.svg") !important;
+}
+
+.fr-icon-paint-brush-line::before {
+  -webkit-mask-image: url("../../../icons/design/paint-brush-line.svg") !important;
+  mask-image: url("../../../icons/design/paint-brush-line.svg") !important;
+}
+
+.fr-icon-paint-fill::before {
+  -webkit-mask-image: url("../../../icons/design/paint-fill.svg") !important;
+  mask-image: url("../../../icons/design/paint-fill.svg") !important;
+}
+
+.fr-icon-paint-line::before {
+  -webkit-mask-image: url("../../../icons/design/paint-line.svg") !important;
+  mask-image: url("../../../icons/design/paint-line.svg") !important;
+}
+
+.fr-icon-palette-fill::before {
+  -webkit-mask-image: url("../../../icons/design/palette-fill.svg") !important;
+  mask-image: url("../../../icons/design/palette-fill.svg") !important;
+}
+
+.fr-icon-palette-line::before {
+  -webkit-mask-image: url("../../../icons/design/palette-line.svg") !important;
+  mask-image: url("../../../icons/design/palette-line.svg") !important;
+}
+
+.fr-icon-pantone-fill::before {
+  -webkit-mask-image: url("../../../icons/design/pantone-fill.svg") !important;
+  mask-image: url("../../../icons/design/pantone-fill.svg") !important;
+}
+
+.fr-icon-pantone-line::before {
+  -webkit-mask-image: url("../../../icons/design/pantone-line.svg") !important;
+  mask-image: url("../../../icons/design/pantone-line.svg") !important;
+}
+
+.fr-icon-pen-nib-fill::before {
+  -webkit-mask-image: url("../../../icons/design/pen-nib-fill.svg") !important;
+  mask-image: url("../../../icons/design/pen-nib-fill.svg") !important;
+}
+
+.fr-icon-pen-nib-line::before {
+  -webkit-mask-image: url("../../../icons/design/pen-nib-line.svg") !important;
+  mask-image: url("../../../icons/design/pen-nib-line.svg") !important;
+}
+
+.fr-icon-pencil-fill::before {
+  -webkit-mask-image: url("../../../icons/design/pencil-fill.svg") !important;
+  mask-image: url("../../../icons/design/pencil-fill.svg") !important;
+}
+
+.fr-icon-pencil-line::before {
+  -webkit-mask-image: url("../../../icons/design/pencil-line.svg") !important;
+  mask-image: url("../../../icons/design/pencil-line.svg") !important;
+}
+
+.fr-icon-pencil-ruler-fill::before {
+  -webkit-mask-image: url("../../../icons/design/pencil-ruler-fill.svg") !important;
+  mask-image: url("../../../icons/design/pencil-ruler-fill.svg") !important;
+}
+
+.fr-icon-pencil-ruler-line::before {
+  -webkit-mask-image: url("../../../icons/design/pencil-ruler-line.svg") !important;
+  mask-image: url("../../../icons/design/pencil-ruler-line.svg") !important;
+}
+
+.fr-icon-sip-fill::before {
+  -webkit-mask-image: url("../../../icons/design/sip-fill.svg") !important;
+  mask-image: url("../../../icons/design/sip-fill.svg") !important;
+}
+
+.fr-icon-sip-line::before {
+  -webkit-mask-image: url("../../../icons/design/sip-line.svg") !important;
+  mask-image: url("../../../icons/design/sip-line.svg") !important;
+}
+
+.fr-icon-table-fill::before {
+  -webkit-mask-image: url("../../../icons/design/table-fill.svg") !important;
+  mask-image: url("../../../icons/design/table-fill.svg") !important;
+}
+
+.fr-icon-table-line::before {
+  -webkit-mask-image: url("../../../icons/design/table-line.svg") !important;
+  mask-image: url("../../../icons/design/table-line.svg") !important;
+}
+
+.fr-fi-edit-fill::before {
+  -webkit-mask-image: url("../../../icons/design/edit-fill.svg") !important;
+  mask-image: url("../../../icons/design/edit-fill.svg") !important;
+}
+
+.fr-fi-edit-line::before {
+  -webkit-mask-image: url("../../../icons/design/edit-line.svg") !important;
+  mask-image: url("../../../icons/design/edit-line.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .fr-icon-ball-pen-fill::before {
+    background-image: url("../../../icons/design/ball-pen-fill.svg") !important;
+  }
+
+  .fr-icon-ball-pen-line::before {
+    background-image: url("../../../icons/design/ball-pen-line.svg") !important;
+  }
+
+  .fr-icon-brush-3-fill::before {
+    background-image: url("../../../icons/design/brush-3-fill.svg") !important;
+  }
+
+  .fr-icon-brush-3-line::before {
+    background-image: url("../../../icons/design/brush-3-line.svg") !important;
+  }
+
+  .fr-icon-brush-fill::before {
+    background-image: url("../../../icons/design/brush-fill.svg") !important;
+  }
+
+  .fr-icon-brush-line::before {
+    background-image: url("../../../icons/design/brush-line.svg") !important;
+  }
+
+  .fr-icon-contrast-fill::before {
+    background-image: url("../../../icons/design/contrast-fill.svg") !important;
+  }
+
+  .fr-icon-contrast-line::before {
+    background-image: url("../../../icons/design/contrast-line.svg") !important;
+  }
+
+  .fr-icon-crop-fill::before {
+    background-image: url("../../../icons/design/crop-fill.svg") !important;
+  }
+
+  .fr-icon-crop-line::before {
+    background-image: url("../../../icons/design/crop-line.svg") !important;
+  }
+
+  .fr-icon-drag-move-2-fill::before {
+    background-image: url("../../../icons/design/drag-move-2-fill.svg") !important;
+  }
+
+  .fr-icon-drag-move-2-line::before {
+    background-image: url("../../../icons/design/drag-move-2-line.svg") !important;
+  }
+
+  .fr-icon-drop-fill::before {
+    background-image: url("../../../icons/design/drop-fill.svg") !important;
+  }
+
+  .fr-icon-drop-line::before {
+    background-image: url("../../../icons/design/drop-line.svg") !important;
+  }
+
+  .fr-icon-edit-box-fill::before {
+    background-image: url("../../../icons/design/edit-box-fill.svg") !important;
+  }
+
+  .fr-icon-edit-box-line::before {
+    background-image: url("../../../icons/design/edit-box-line.svg") !important;
+  }
+
+  .fr-icon-edit-fill::before {
+    background-image: url("../../../icons/design/edit-fill.svg") !important;
+  }
+
+  .fr-icon-edit-line::before {
+    background-image: url("../../../icons/design/edit-line.svg") !important;
+  }
+
+  .fr-icon-ink-bottle-fill::before {
+    background-image: url("../../../icons/design/ink-bottle-fill.svg") !important;
+  }
+
+  .fr-icon-ink-bottle-line::before {
+    background-image: url("../../../icons/design/ink-bottle-line.svg") !important;
+  }
+
+  .fr-icon-layout-grid-fill::before {
+    background-image: url("../../../icons/design/layout-grid-fill.svg") !important;
+  }
+
+  .fr-icon-layout-grid-line::before {
+    background-image: url("../../../icons/design/layout-grid-line.svg") !important;
+  }
+
+  .fr-icon-mark-pen-fill::before {
+    background-image: url("../../../icons/design/mark-pen-fill.svg") !important;
+  }
+
+  .fr-icon-mark-pen-line::before {
+    background-image: url("../../../icons/design/mark-pen-line.svg") !important;
+  }
+
+  .fr-icon-paint-brush-fill::before {
+    background-image: url("../../../icons/design/paint-brush-fill.svg") !important;
+  }
+
+  .fr-icon-paint-brush-line::before {
+    background-image: url("../../../icons/design/paint-brush-line.svg") !important;
+  }
+
+  .fr-icon-paint-fill::before {
+    background-image: url("../../../icons/design/paint-fill.svg") !important;
+  }
+
+  .fr-icon-paint-line::before {
+    background-image: url("../../../icons/design/paint-line.svg") !important;
+  }
+
+  .fr-icon-palette-fill::before {
+    background-image: url("../../../icons/design/palette-fill.svg") !important;
+  }
+
+  .fr-icon-palette-line::before {
+    background-image: url("../../../icons/design/palette-line.svg") !important;
+  }
+
+  .fr-icon-pantone-fill::before {
+    background-image: url("../../../icons/design/pantone-fill.svg") !important;
+  }
+
+  .fr-icon-pantone-line::before {
+    background-image: url("../../../icons/design/pantone-line.svg") !important;
+  }
+
+  .fr-icon-pen-nib-fill::before {
+    background-image: url("../../../icons/design/pen-nib-fill.svg") !important;
+  }
+
+  .fr-icon-pen-nib-line::before {
+    background-image: url("../../../icons/design/pen-nib-line.svg") !important;
+  }
+
+  .fr-icon-pencil-fill::before {
+    background-image: url("../../../icons/design/pencil-fill.svg") !important;
+  }
+
+  .fr-icon-pencil-line::before {
+    background-image: url("../../../icons/design/pencil-line.svg") !important;
+  }
+
+  .fr-icon-pencil-ruler-fill::before {
+    background-image: url("../../../icons/design/pencil-ruler-fill.svg") !important;
+  }
+
+  .fr-icon-pencil-ruler-line::before {
+    background-image: url("../../../icons/design/pencil-ruler-line.svg") !important;
+  }
+
+  .fr-icon-sip-fill::before {
+    background-image: url("../../../icons/design/sip-fill.svg") !important;
+  }
+
+  .fr-icon-sip-line::before {
+    background-image: url("../../../icons/design/sip-line.svg") !important;
+  }
+
+  .fr-icon-table-fill::before {
+    background-image: url("../../../icons/design/table-fill.svg") !important;
+  }
+
+  .fr-icon-table-line::before {
+    background-image: url("../../../icons/design/table-line.svg") !important;
+  }
+
+  .fr-fi-edit-fill::before {
+    background-image: url("../../../icons/design/edit-fill.svg") !important;
+  }
+
+  .fr-fi-edit-line::before {
+    background-image: url("../../../icons/design/edit-line.svg") !important;
+  }
+}

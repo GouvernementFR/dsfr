@@ -1,0 +1,501 @@
+/*!
+ * DSFR v1.5.1 | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions)
+ */
+@charset "UTF-8";
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  ICON COMMUNICATION
+\* ˍˍˍˍˍˍˍˍˍ */
+
+[class^="fr-icon-"]::before,
+[class*=" fr-icon-"]::before,
+[class^="fr-fi-"]::before,
+[class*=" fr-fi-"]::before {
+  content: "";
+}
+
+.fr-icon-anchor-fill::before {
+  -webkit-mask-image: url("../../../icons/map/anchor-fill.svg") !important;
+  mask-image: url("../../../icons/map/anchor-fill.svg") !important;
+}
+
+.fr-icon-anchor-line::before {
+  -webkit-mask-image: url("../../../icons/map/anchor-line.svg") !important;
+  mask-image: url("../../../icons/map/anchor-line.svg") !important;
+}
+
+.fr-icon-bike-fill::before {
+  -webkit-mask-image: url("../../../icons/map/bike-fill.svg") !important;
+  mask-image: url("../../../icons/map/bike-fill.svg") !important;
+}
+
+.fr-icon-bike-line::before {
+  -webkit-mask-image: url("../../../icons/map/bike-line.svg") !important;
+  mask-image: url("../../../icons/map/bike-line.svg") !important;
+}
+
+.fr-icon-bus-fill::before {
+  -webkit-mask-image: url("../../../icons/map/bus-fill.svg") !important;
+  mask-image: url("../../../icons/map/bus-fill.svg") !important;
+}
+
+.fr-icon-bus-line::before {
+  -webkit-mask-image: url("../../../icons/map/bus-line.svg") !important;
+  mask-image: url("../../../icons/map/bus-line.svg") !important;
+}
+
+.fr-icon-car-fill::before {
+  -webkit-mask-image: url("../../../icons/map/car-fill.svg") !important;
+  mask-image: url("../../../icons/map/car-fill.svg") !important;
+}
+
+.fr-icon-car-line::before {
+  -webkit-mask-image: url("../../../icons/map/car-line.svg") !important;
+  mask-image: url("../../../icons/map/car-line.svg") !important;
+}
+
+.fr-icon-caravan-fill::before {
+  -webkit-mask-image: url("../../../icons/map/caravan-fill.svg") !important;
+  mask-image: url("../../../icons/map/caravan-fill.svg") !important;
+}
+
+.fr-icon-caravan-line::before {
+  -webkit-mask-image: url("../../../icons/map/caravan-line.svg") !important;
+  mask-image: url("../../../icons/map/caravan-line.svg") !important;
+}
+
+.fr-icon-charging-pile-2-fill::before {
+  -webkit-mask-image: url("../../../icons/map/charging-pile-2-fill.svg") !important;
+  mask-image: url("../../../icons/map/charging-pile-2-fill.svg") !important;
+}
+
+.fr-icon-charging-pile-2-line::before {
+  -webkit-mask-image: url("../../../icons/map/charging-pile-2-line.svg") !important;
+  mask-image: url("../../../icons/map/charging-pile-2-line.svg") !important;
+}
+
+.fr-icon-compass-3-fill::before {
+  -webkit-mask-image: url("../../../icons/map/compass-3-fill.svg") !important;
+  mask-image: url("../../../icons/map/compass-3-fill.svg") !important;
+}
+
+.fr-icon-compass-3-line::before {
+  -webkit-mask-image: url("../../../icons/map/compass-3-line.svg") !important;
+  mask-image: url("../../../icons/map/compass-3-line.svg") !important;
+}
+
+.fr-icon-cup-fill::before {
+  -webkit-mask-image: url("../../../icons/map/cup-fill.svg") !important;
+  mask-image: url("../../../icons/map/cup-fill.svg") !important;
+}
+
+.fr-icon-cup-line::before {
+  -webkit-mask-image: url("../../../icons/map/cup-line.svg") !important;
+  mask-image: url("../../../icons/map/cup-line.svg") !important;
+}
+
+.fr-icon-earth-fill::before {
+  -webkit-mask-image: url("../../../icons/map/earth-fill.svg") !important;
+  mask-image: url("../../../icons/map/earth-fill.svg") !important;
+}
+
+.fr-icon-earth-line::before {
+  -webkit-mask-image: url("../../../icons/map/earth-line.svg") !important;
+  mask-image: url("../../../icons/map/earth-line.svg") !important;
+}
+
+.fr-icon-france-fill::before {
+  -webkit-mask-image: url("../../../icons/map/france-fill.svg") !important;
+  mask-image: url("../../../icons/map/france-fill.svg") !important;
+}
+
+.fr-icon-france-line::before {
+  -webkit-mask-image: url("../../../icons/map/france-line.svg") !important;
+  mask-image: url("../../../icons/map/france-line.svg") !important;
+}
+
+.fr-icon-gas-station-fill::before {
+  -webkit-mask-image: url("../../../icons/map/gas-station-fill.svg") !important;
+  mask-image: url("../../../icons/map/gas-station-fill.svg") !important;
+}
+
+.fr-icon-gas-station-line::before {
+  -webkit-mask-image: url("../../../icons/map/gas-station-line.svg") !important;
+  mask-image: url("../../../icons/map/gas-station-line.svg") !important;
+}
+
+.fr-icon-goblet-fill::before {
+  -webkit-mask-image: url("../../../icons/map/goblet-fill.svg") !important;
+  mask-image: url("../../../icons/map/goblet-fill.svg") !important;
+}
+
+.fr-icon-goblet-line::before {
+  -webkit-mask-image: url("../../../icons/map/goblet-line.svg") !important;
+  mask-image: url("../../../icons/map/goblet-line.svg") !important;
+}
+
+.fr-icon-map-pin-2-fill::before {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-fill.svg") !important;
+  mask-image: url("../../../icons/map/map-pin-2-fill.svg") !important;
+}
+
+.fr-icon-map-pin-2-line::before {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-line.svg") !important;
+  mask-image: url("../../../icons/map/map-pin-2-line.svg") !important;
+}
+
+.fr-icon-map-pin-user-fill::before {
+  -webkit-mask-image: url("../../../icons/map/map-pin-user-fill.svg") !important;
+  mask-image: url("../../../icons/map/map-pin-user-fill.svg") !important;
+}
+
+.fr-icon-map-pin-user-line::before {
+  -webkit-mask-image: url("../../../icons/map/map-pin-user-line.svg") !important;
+  mask-image: url("../../../icons/map/map-pin-user-line.svg") !important;
+}
+
+.fr-icon-motorbike-fill::before {
+  -webkit-mask-image: url("../../../icons/map/motorbike-fill.svg") !important;
+  mask-image: url("../../../icons/map/motorbike-fill.svg") !important;
+}
+
+.fr-icon-motorbike-line::before {
+  -webkit-mask-image: url("../../../icons/map/motorbike-line.svg") !important;
+  mask-image: url("../../../icons/map/motorbike-line.svg") !important;
+}
+
+.fr-icon-passport-fill::before {
+  -webkit-mask-image: url("../../../icons/map/passport-fill.svg") !important;
+  mask-image: url("../../../icons/map/passport-fill.svg") !important;
+}
+
+.fr-icon-passport-line::before {
+  -webkit-mask-image: url("../../../icons/map/passport-line.svg") !important;
+  mask-image: url("../../../icons/map/passport-line.svg") !important;
+}
+
+.fr-icon-restaurant-fill::before {
+  -webkit-mask-image: url("../../../icons/map/restaurant-fill.svg") !important;
+  mask-image: url("../../../icons/map/restaurant-fill.svg") !important;
+}
+
+.fr-icon-restaurant-line::before {
+  -webkit-mask-image: url("../../../icons/map/restaurant-line.svg") !important;
+  mask-image: url("../../../icons/map/restaurant-line.svg") !important;
+}
+
+.fr-icon-road-map-fill::before {
+  -webkit-mask-image: url("../../../icons/map/road-map-fill.svg") !important;
+  mask-image: url("../../../icons/map/road-map-fill.svg") !important;
+}
+
+.fr-icon-road-map-line::before {
+  -webkit-mask-image: url("../../../icons/map/road-map-line.svg") !important;
+  mask-image: url("../../../icons/map/road-map-line.svg") !important;
+}
+
+.fr-icon-sailboat-fill::before {
+  -webkit-mask-image: url("../../../icons/map/sailboat-fill.svg") !important;
+  mask-image: url("../../../icons/map/sailboat-fill.svg") !important;
+}
+
+.fr-icon-sailboat-line::before {
+  -webkit-mask-image: url("../../../icons/map/sailboat-line.svg") !important;
+  mask-image: url("../../../icons/map/sailboat-line.svg") !important;
+}
+
+.fr-icon-ship-2-fill::before {
+  -webkit-mask-image: url("../../../icons/map/ship-2-fill.svg") !important;
+  mask-image: url("../../../icons/map/ship-2-fill.svg") !important;
+}
+
+.fr-icon-ship-2-line::before {
+  -webkit-mask-image: url("../../../icons/map/ship-2-line.svg") !important;
+  mask-image: url("../../../icons/map/ship-2-line.svg") !important;
+}
+
+.fr-icon-signal-tower-fill::before {
+  -webkit-mask-image: url("../../../icons/map/signal-tower-fill.svg") !important;
+  mask-image: url("../../../icons/map/signal-tower-fill.svg") !important;
+}
+
+.fr-icon-signal-tower-line::before {
+  -webkit-mask-image: url("../../../icons/map/signal-tower-line.svg") !important;
+  mask-image: url("../../../icons/map/signal-tower-line.svg") !important;
+}
+
+.fr-icon-suitcase-2-fill::before {
+  -webkit-mask-image: url("../../../icons/map/suitcase-2-fill.svg") !important;
+  mask-image: url("../../../icons/map/suitcase-2-fill.svg") !important;
+}
+
+.fr-icon-suitcase-2-line::before {
+  -webkit-mask-image: url("../../../icons/map/suitcase-2-line.svg") !important;
+  mask-image: url("../../../icons/map/suitcase-2-line.svg") !important;
+}
+
+.fr-icon-taxi-fill::before {
+  -webkit-mask-image: url("../../../icons/map/taxi-fill.svg") !important;
+  mask-image: url("../../../icons/map/taxi-fill.svg") !important;
+}
+
+.fr-icon-taxi-line::before {
+  -webkit-mask-image: url("../../../icons/map/taxi-line.svg") !important;
+  mask-image: url("../../../icons/map/taxi-line.svg") !important;
+}
+
+.fr-icon-train-fill::before {
+  -webkit-mask-image: url("../../../icons/map/train-fill.svg") !important;
+  mask-image: url("../../../icons/map/train-fill.svg") !important;
+}
+
+.fr-icon-train-line::before {
+  -webkit-mask-image: url("../../../icons/map/train-line.svg") !important;
+  mask-image: url("../../../icons/map/train-line.svg") !important;
+}
+
+.fr-fi-map-pin-2-fill::before {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-fill.svg") !important;
+  mask-image: url("../../../icons/map/map-pin-2-fill.svg") !important;
+}
+
+.fr-fi-map-pin-2-line::before {
+  -webkit-mask-image: url("../../../icons/map/map-pin-2-line.svg") !important;
+  mask-image: url("../../../icons/map/map-pin-2-line.svg") !important;
+}
+
+.fr-fi-road-map-fill::before {
+  -webkit-mask-image: url("../../../icons/map/road-map-fill.svg") !important;
+  mask-image: url("../../../icons/map/road-map-fill.svg") !important;
+}
+
+.fr-fi-road-map-line::before {
+  -webkit-mask-image: url("../../../icons/map/road-map-line.svg") !important;
+  mask-image: url("../../../icons/map/road-map-line.svg") !important;
+}
+
+@media (min-width: 36em) {
+  /*! media sm */
+}
+
+@media (min-width: 48em) {
+  /*! media md */
+}
+
+@media (min-width: 62em) {
+  /*! media lg */
+}
+
+@media (min-width: 78em) {
+  /*! media xl */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .fr-icon-anchor-fill::before {
+    background-image: url("../../../icons/map/anchor-fill.svg") !important;
+  }
+
+  .fr-icon-anchor-line::before {
+    background-image: url("../../../icons/map/anchor-line.svg") !important;
+  }
+
+  .fr-icon-bike-fill::before {
+    background-image: url("../../../icons/map/bike-fill.svg") !important;
+  }
+
+  .fr-icon-bike-line::before {
+    background-image: url("../../../icons/map/bike-line.svg") !important;
+  }
+
+  .fr-icon-bus-fill::before {
+    background-image: url("../../../icons/map/bus-fill.svg") !important;
+  }
+
+  .fr-icon-bus-line::before {
+    background-image: url("../../../icons/map/bus-line.svg") !important;
+  }
+
+  .fr-icon-car-fill::before {
+    background-image: url("../../../icons/map/car-fill.svg") !important;
+  }
+
+  .fr-icon-car-line::before {
+    background-image: url("../../../icons/map/car-line.svg") !important;
+  }
+
+  .fr-icon-caravan-fill::before {
+    background-image: url("../../../icons/map/caravan-fill.svg") !important;
+  }
+
+  .fr-icon-caravan-line::before {
+    background-image: url("../../../icons/map/caravan-line.svg") !important;
+  }
+
+  .fr-icon-charging-pile-2-fill::before {
+    background-image: url("../../../icons/map/charging-pile-2-fill.svg") !important;
+  }
+
+  .fr-icon-charging-pile-2-line::before {
+    background-image: url("../../../icons/map/charging-pile-2-line.svg") !important;
+  }
+
+  .fr-icon-compass-3-fill::before {
+    background-image: url("../../../icons/map/compass-3-fill.svg") !important;
+  }
+
+  .fr-icon-compass-3-line::before {
+    background-image: url("../../../icons/map/compass-3-line.svg") !important;
+  }
+
+  .fr-icon-cup-fill::before {
+    background-image: url("../../../icons/map/cup-fill.svg") !important;
+  }
+
+  .fr-icon-cup-line::before {
+    background-image: url("../../../icons/map/cup-line.svg") !important;
+  }
+
+  .fr-icon-earth-fill::before {
+    background-image: url("../../../icons/map/earth-fill.svg") !important;
+  }
+
+  .fr-icon-earth-line::before {
+    background-image: url("../../../icons/map/earth-line.svg") !important;
+  }
+
+  .fr-icon-france-fill::before {
+    background-image: url("../../../icons/map/france-fill.svg") !important;
+  }
+
+  .fr-icon-france-line::before {
+    background-image: url("../../../icons/map/france-line.svg") !important;
+  }
+
+  .fr-icon-gas-station-fill::before {
+    background-image: url("../../../icons/map/gas-station-fill.svg") !important;
+  }
+
+  .fr-icon-gas-station-line::before {
+    background-image: url("../../../icons/map/gas-station-line.svg") !important;
+  }
+
+  .fr-icon-goblet-fill::before {
+    background-image: url("../../../icons/map/goblet-fill.svg") !important;
+  }
+
+  .fr-icon-goblet-line::before {
+    background-image: url("../../../icons/map/goblet-line.svg") !important;
+  }
+
+  .fr-icon-map-pin-2-fill::before {
+    background-image: url("../../../icons/map/map-pin-2-fill.svg") !important;
+  }
+
+  .fr-icon-map-pin-2-line::before {
+    background-image: url("../../../icons/map/map-pin-2-line.svg") !important;
+  }
+
+  .fr-icon-map-pin-user-fill::before {
+    background-image: url("../../../icons/map/map-pin-user-fill.svg") !important;
+  }
+
+  .fr-icon-map-pin-user-line::before {
+    background-image: url("../../../icons/map/map-pin-user-line.svg") !important;
+  }
+
+  .fr-icon-motorbike-fill::before {
+    background-image: url("../../../icons/map/motorbike-fill.svg") !important;
+  }
+
+  .fr-icon-motorbike-line::before {
+    background-image: url("../../../icons/map/motorbike-line.svg") !important;
+  }
+
+  .fr-icon-passport-fill::before {
+    background-image: url("../../../icons/map/passport-fill.svg") !important;
+  }
+
+  .fr-icon-passport-line::before {
+    background-image: url("../../../icons/map/passport-line.svg") !important;
+  }
+
+  .fr-icon-restaurant-fill::before {
+    background-image: url("../../../icons/map/restaurant-fill.svg") !important;
+  }
+
+  .fr-icon-restaurant-line::before {
+    background-image: url("../../../icons/map/restaurant-line.svg") !important;
+  }
+
+  .fr-icon-road-map-fill::before {
+    background-image: url("../../../icons/map/road-map-fill.svg") !important;
+  }
+
+  .fr-icon-road-map-line::before {
+    background-image: url("../../../icons/map/road-map-line.svg") !important;
+  }
+
+  .fr-icon-sailboat-fill::before {
+    background-image: url("../../../icons/map/sailboat-fill.svg") !important;
+  }
+
+  .fr-icon-sailboat-line::before {
+    background-image: url("../../../icons/map/sailboat-line.svg") !important;
+  }
+
+  .fr-icon-ship-2-fill::before {
+    background-image: url("../../../icons/map/ship-2-fill.svg") !important;
+  }
+
+  .fr-icon-ship-2-line::before {
+    background-image: url("../../../icons/map/ship-2-line.svg") !important;
+  }
+
+  .fr-icon-signal-tower-fill::before {
+    background-image: url("../../../icons/map/signal-tower-fill.svg") !important;
+  }
+
+  .fr-icon-signal-tower-line::before {
+    background-image: url("../../../icons/map/signal-tower-line.svg") !important;
+  }
+
+  .fr-icon-suitcase-2-fill::before {
+    background-image: url("../../../icons/map/suitcase-2-fill.svg") !important;
+  }
+
+  .fr-icon-suitcase-2-line::before {
+    background-image: url("../../../icons/map/suitcase-2-line.svg") !important;
+  }
+
+  .fr-icon-taxi-fill::before {
+    background-image: url("../../../icons/map/taxi-fill.svg") !important;
+  }
+
+  .fr-icon-taxi-line::before {
+    background-image: url("../../../icons/map/taxi-line.svg") !important;
+  }
+
+  .fr-icon-train-fill::before {
+    background-image: url("../../../icons/map/train-fill.svg") !important;
+  }
+
+  .fr-icon-train-line::before {
+    background-image: url("../../../icons/map/train-line.svg") !important;
+  }
+
+  .fr-fi-map-pin-2-fill::before {
+    background-image: url("../../../icons/map/map-pin-2-fill.svg") !important;
+  }
+
+  .fr-fi-map-pin-2-line::before {
+    background-image: url("../../../icons/map/map-pin-2-line.svg") !important;
+  }
+
+  .fr-fi-road-map-fill::before {
+    background-image: url("../../../icons/map/road-map-fill.svg") !important;
+  }
+
+  .fr-fi-road-map-line::before {
+    background-image: url("../../../icons/map/road-map-line.svg") !important;
+  }
+}
