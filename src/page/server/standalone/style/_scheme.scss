@@ -1,0 +1,28 @@
+////
+/// Server Standalone Scheme
+/// @group server
+////
+
+body {
+  background-color: nth(map-get($scheme-options, 'blue-france-975'), 1);
+}
+
+a {
+  outline-color: $focus-color;
+}
+
+#{ns(btn)} {
+  &--tertiary {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px nth(map-get($scheme-options, 'grey-925'), 1);
+    color: $blue-france;
+
+    &:hover {
+      background-color: nth(map-get($scheme-options, 'blue-france-975'), 2);
+    }
+
+    &:active {
+      background-color: nth(map-get($scheme-options, 'blue-france-975'), 3);
+    }
+  }
+}
