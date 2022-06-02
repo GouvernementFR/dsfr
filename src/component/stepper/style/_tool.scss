@@ -18,3 +18,16 @@
     }
   }
 }
+
+// cache le detail de la dernière étape
+@mixin hide-last-step-detail () {
+  $lastActives: ();
+
+  @for $i from 2 through map-get($stepper-settings, max-steps) {
+    $lastActives: append($lastActives, '#{ns(stepper__steps)}#{ns-attr(steps, $i)}#{ns-attr(current-step, $i)} + #{ns(stepper__details)}', $separator: comma);
+  }
+
+  #{$lastActives} {
+    display: none;
+  }
+}
