@@ -25,4 +25,8 @@ a {
       background-color: nth(map-get($scheme-options, 'blue-france-975'), 3);
     }
   }
+
+  svg {
+    fill: $blue-france;
+  }
 }
