@@ -21,6 +21,10 @@ a {
 // TODO: à checker avec <form target="_blank" >
 [target="_blank"] {
   @include link-blank;
+
+  @include has-icon {
+    @include link-blank;
+  }
 }
 
 #{ns(raw-link)} {
