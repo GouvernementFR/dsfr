@@ -11,7 +11,9 @@
   }
 }
 
-#{class-start-with(ns(ratio, ''))} {
-  @include fit-cover-center;
-  @include size(100%);
+#{class-start-with(ns('ratio', ''))} {
+  &:not(iframe) {
+    @include fit-cover-center;
+    @include size(100%);
+  }
 }
