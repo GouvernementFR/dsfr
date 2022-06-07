@@ -21,7 +21,7 @@ function uniqueId (module) {
 }
 
 const buildExample = (pck) => {
-  const pagePath = root('tool/example/example.ejs');
+  const pagePath = root('tool/example/decorator.ejs');
   const page = fs.readFileSync(pagePath, {
     encoding: 'utf8',
     flag: 'r'
@@ -88,6 +88,7 @@ const buildExample = (pck) => {
     ...global.config,
     ...pck,
     files: files,
+    entry: root('tool/example/example.ejs'),
     relativeRoot: '../'.repeat(pck.path.split('/').length),
     root: root.toString(),
     isStandalone: false,

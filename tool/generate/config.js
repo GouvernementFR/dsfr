@@ -79,12 +79,7 @@ const analyse = (id, path, ascendants = []) => {
   config.filename = data.filename || data.id;
   config.inject = data.inject === true;
 
-  if (type === 'folder' || fs.existsSync(`${absolute}/example/index.ejs`)) {
-    const example = data.example || {};
-    if (!example.style) example.style = [];
-    if (!example.script) example.script = [];
-    config.example = example;
-  } else config.example = false;
+  config.example = getExampleConfig(absolute, data.example);
 
   const dependencies = {
     style: [],
@@ -127,6 +122,19 @@ const parse = (path = '', ascendants = []) => {
   const ids = fs.readdirSync(absolute).filter((fd) => fs.lstatSync(`${absolute}/${fd}`).isDirectory());
   const packages = ids.map(id => analyse(id, `${path}/${id}`, ascendants)).filter(pck => pck);
   return packages;
+};
+
+const getExampleConfig = (path, data) => {
+  const example = data || {};
+  if (!example.style) example.style = [];
+  if (!example.script) example.script = [];
+
+  if (type === 'folder' || fs.existsSync(`${absolute}/example/index.ejs`)) {
+    const example = data.example || {};
+    if (!example.style) example.style = [];
+    if (!example.script) example.script = [];
+    config.example = example;
+  } else config.example = false;
 };
 
 const getDeepDependencies = (id, packages, type) => {
