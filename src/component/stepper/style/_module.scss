@@ -30,6 +30,8 @@
     @include text-style(xs);
   }
 
+  @include hide-last-step-detail();
+
   &__steps {
     --default-steps: calc(var(--steps) - var(--current-step));
     --default-outer: calc((100% + 6px) / var(--default-steps));
