@@ -32,6 +32,7 @@
       #{ns(btn)} {
         @include has-not-icon {
           @include nest-btn(md, only, null, null, false);
+          @include icon(null, md, before);
         }
       }
     }
