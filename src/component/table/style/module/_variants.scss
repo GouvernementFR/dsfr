@@ -65,3 +65,15 @@
     table-layout: fixed;
   }
 }
+
+
+/* Style bordered, ajoute des bordures entre chaque ligne */
+#{ns(table--bordered)} {
+  tbody {
+    tr {
+      background-size: 100% 1px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+  }
+}

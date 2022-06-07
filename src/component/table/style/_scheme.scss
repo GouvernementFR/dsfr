@@ -10,7 +10,8 @@
     }
 
     thead {
-      @include scheme-element-box-shadow-color(plain grey, (legacy: $legacy), bottom-2-in);
+      @include scheme-element-bg-image-color(border plain grey, (legacy: $legacy));
+
       @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
       @include scheme-element-text-color(title grey, (legacy: $legacy));
     }
@@ -25,7 +26,7 @@
 
     @include accent-modifiers {
       thead {
-        @include scheme-element-box-shadow-color(plain accent, (legacy: $legacy), bottom-2-in);
+        @include scheme-element-bg-image-color(border plain accent, (legacy: $legacy));
         @include scheme-element-bg-color(contrast accent, (legacy: $legacy));
       }
 
@@ -41,7 +42,7 @@
       &#{ns(table--bordered)} {
         tbody {
           tr {
-            @include scheme-element-box-shadow-color(default accent, (legacy: $legacy), bottom-1-in);
+            @include scheme-element-bg-image-color(border default accent, (legacy: $legacy));
           }
         }
       }
@@ -51,7 +52,7 @@
     &--bordered {
       tbody {
         tr {
-          @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), bottom-1-in);
+          @include scheme-element-bg-image-color(border default grey, (legacy: $legacy));
 
           /* Style bordered, enleve le style even/odd  */
           &:nth-child(even) {

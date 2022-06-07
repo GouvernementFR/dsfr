@@ -58,6 +58,10 @@
   }
 
   thead {
+    background-size: 100% 2px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
     td,
     th {
       font-weight: font-weight(bold);
