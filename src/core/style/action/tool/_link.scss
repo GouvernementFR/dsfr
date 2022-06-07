@@ -58,19 +58,31 @@ $underline-thickness: 0.0625em;
   }
 }
 
-@mixin link-blank() {
+@mixin external-link() {
   @include icon-style(after);
   @include icon-size(sm, after);
   @include icon-image(external-link-line, after);
-  @include after(var(--link-blank-content)) {
+  @include after(var(--external-link-content)) {
     @include margin-left(1v);
   }
 }
 
-@mixin enable-blank() {
-  --link-blank-content: '';
+@mixin enable-external() {
+  --external-link-content: '';
 }
 
-@mixin disable-blank() {
-  --link-blank-content: none;
+@mixin disable-external() {
+  --external-link-content: none;
+}
+
+@mixin target-blank ($unify: false) {
+  @if $unify and & {
+    &[target="_blank"] {
+      @content;
+    }
+  } @else {
+    [target="_blank"] {
+      @content;
+    }
+  }
 }
