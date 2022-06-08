@@ -37,7 +37,7 @@
       @include respond-from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
-        @include margin(0 -1v -2v);
+        @include margin(0 -1v -4v);
 
         #{ns(btn)} {
           @include margin-x(1v);
