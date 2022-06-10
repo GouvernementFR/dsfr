@@ -88,6 +88,7 @@
         #{ns(btn)} {
           @include has-not-icon {
             @include nest-btn(md, only, null, null, false);
+            @include icon(null, md, before);
           }
         }
       }
@@ -96,6 +97,7 @@
         #{ns(btn)} {
           @include has-not-icon {
             @include nest-btn(lg, only, null, null, false);
+            @include icon(null, lg, before);
           }
         }
       }

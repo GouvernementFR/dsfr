@@ -1,6 +1,25 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Réseaux sociaux seuls', './sample/socials-only.ejs', {}, true); %>
+<%- section('Réseaux sociaux seuls', 'Les icones réseaux sociaux disponibles pour ce composant sont définies dans :', 0, true); %>
+
+<div class="fr-container">
+    <%
+    const accordion = {
+        label: 'src/component/follow/style/_setting.scss',
+        id: uniqueId('snippet'),
+        content: '<pre class=" language-scss"><code>' + include('../style/_setting.scss') + '</code></pre>'
+    };
+    %>
+    <div class="<%= prefix %>-mb-4v" >
+        <%- include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion}); %>
+    </div>
+
+
+    <%- section(null, 'Il est aussi possible d\'appliquer une classe utilitaire sur un bouton pour utiliser une icone du dsfr (ex: "fr-icon-rss-line")', 0); %>
+
+</div>
+
+<%- sample('', './sample/socials-only.ejs', {}, true); %>
 
 <%- sample('Lettre d\'info seule', './sample/newsletter-only.ejs', {}, true); %>
 

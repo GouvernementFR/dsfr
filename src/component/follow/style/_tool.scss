@@ -9,7 +9,7 @@
 @mixin build-follow-social-icons() {
   @each $name, $icon in $follow-icons {
     #{ns('btn--' + $name)} {
-      @include icon($icon);
+      @include icon-image($icon, before);
     }
   }
 }
@@ -20,7 +20,7 @@
 @mixin build-follow-social-icons-legacy() {
   @each $name, $icon in $follow-icons {
     #{ns('btn--' + $name)} {
-      @include icon-legacy($icon);
+      @include icon-image-legacy($icon, before);
     }
   }
 }
