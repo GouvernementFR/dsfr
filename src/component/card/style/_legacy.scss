@@ -16,6 +16,12 @@
       flex: 1 0 auto;
     }
 
+    &__title {
+      @include target-blank {
+        @include icon-size-legacy(lg, after);
+      }
+    }
+
     &__detail {
       @include icon-size-legacy(sm, before);
     }

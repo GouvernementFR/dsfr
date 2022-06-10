@@ -84,6 +84,12 @@
     @each $size, $size-settings in $sizes {
       @include _link-class($base, $size) {
         @include _build-link-size($size-settings, $border-radius);
+
+        @if map_get($settings, blank)  {
+          @include target-blank(true) {
+            @include _build-link-icon($size-settings, right, $size, false);
+          }
+        }
       }
 
       @if $align-on-content {
