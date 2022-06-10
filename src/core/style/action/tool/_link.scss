@@ -80,7 +80,8 @@ $underline-thickness: 0.0625em;
     &[target="_blank"] {
       @content;
     }
-  } @else {
+  }
+  @else {
     [target="_blank"] {
       @content;
     }
