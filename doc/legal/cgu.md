@@ -88,11 +88,12 @@ Toutes les Ressources sont la propriété de l’État.
 Toutes les Ressources sont mises à disposition des Utilisateurs dans les conditions suivantes étant précisé que la Documentation est accessible aux Utilisateurs mais ses modifications sont strictement réservées à l’équipe du DSFR :  
 
 ##### I° Conditions d’utilisation des Ressources par les seuls Utilisateurs de l’État
-Pendant toute la durée pendant laquelle les Ressources sont accessibles sur le DSFR, les Utilisateurs de l’État doivent les utiliser exclusivement aux seules fins de concevoir et développer les sites Internet et applications mobiles des Entités autorisées. 
+
+Pendant toute la durée pendant laquelle les Ressources sont accessibles sur le DSFR, les Utilisateurs de l’État peuvent les utiliser afin de concevoir et développer les sites Internet et applications mobiles des Entités autorisées.
 
 Le DSFR étant évolutif, certains Composants peuvent être remplacés par des nouveaux régulièrement et les Entités Autorisées devront assurer la substitution requise par le SIG. 
 
-Aux fins de garantir la cohérence, la qualité et l’harmonisation des sites et des applications mobiles des Entités Autorisées, il est précisé aux Utilisateurs de l’État qu’ils ne peuvent pas modifier les Éléments d’Identité, les Éléments d’Interface et Fondamentaux Techniques lors de leur utilisation ; la Documentation spécifique propre à chaque Composant précise toutes les caractéristiques techniques à respecter.
+Aux fins de garantir la cohérence, la qualité et l’harmonisation des sites et des applications mobiles des Entités Autorisées, il est précisé aux Utilisateurs de l’État qu’ils ne peuvent pas modifier les Éléments d’Identité, les Éléments d’Interface et Fondamentaux Techniques lors de leur utilisation pour leurs sites ou applications mobiles ; la Documentation spécifique propre à chaque Composant précise toutes les caractéristiques techniques à respecter.
 
 Dans le cas où les besoins fonctionnels des Utilisateurs de l’État ne sont pas couverts par les Ressources mises à disposition, les Utilisateurs de l’État peuvent construire de nouveaux composants à partir des Fondamentaux Techniques et des Éléments d’Identité, dans le respect des Composants déjà existants, de l’esprit et des principes de design du DSFR afin de garantir sa cohérence.
 
