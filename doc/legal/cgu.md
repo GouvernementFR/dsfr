@@ -101,8 +101,7 @@ Chaque nouveau site des Entités Autorisées ou refonte de ces sites fera l’ob
 
 ##### 2° Conditions d’utilisation des Composants par les Autres Utilisateurs
 
-Tous les Autres Utilisateurs sont autorisés à consulter le code source et contribuer aux Composants selon les conditions de la licence MIT étant précisé que conformément aux dispositions de l’article L.323-3 du Code des Relations entre le Public et l’Administration : 
-Ces Autres Utilisateurs ne sont pas autorisés à utiliser et reproduire les Éléments d’Identité, les Fondamentaux Techniques, et les Éléments d’Interface à d’autres fins qu’au développement des sites internet et des applications mobiles des Entités Autorisées et ce pour éviter toute confusion concernant ces types de Composants qui sont propres à l’État. Les Autres Utilisateurs ne sont donc pas autorisés à en faire un usage commercial. 
+Tous les Autres Utilisateurs sont autorisés à utiliser le code source selon les conditions de la licence MIT.
 
 Il est expressément rappelé aux Autres Utilisateurs que toute utilisation des Composants en dehors des limites visées aux présentes ou dans le but de les détourner et de s’approprier d’une manière ou d’une autre la Marque de l’État est punissable de sanctions civiles et/ou pénales.
 
