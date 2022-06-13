@@ -38,6 +38,16 @@ $underline-thickness: 0.0625em;
   --link-blank-content: none;
 }
 
+@mixin enable-underline-legacy() {
+  [href] {
+    text-decoration: underline;
+  }
+
+  [target='_blank']::after {
+    content: '';
+  }
+}
+
 @mixin disable-underline-legacy() {
   [href] {
     text-decoration: none;
