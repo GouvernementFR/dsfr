@@ -18,12 +18,17 @@ a {
   @include link-underline;
 }
 
-// TODO: à checker avec <form target="_blank" >
 @include target-blank {
   @include external-link;
 
   @include has-icon {
     @include external-link;
+  }
+}
+
+form {
+  @include target-blank(true) {
+    @include after(none);
   }
 }
 
