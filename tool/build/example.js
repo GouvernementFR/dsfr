@@ -21,11 +21,13 @@ function uniqueId (module) {
 }
 
 const buildExample = (pck) => {
+  /*
   const pagePath = root('tool/example/decorator.ejs');
   const page = fs.readFileSync(pagePath, {
     encoding: 'utf8',
     flag: 'r'
   });
+  */
 
   const packages = getPackages();
 
@@ -96,12 +98,32 @@ const buildExample = (pck) => {
     uniqueId: uniqueId
   };
 
+
+
+  /*
   const html = ejs.render(page, options);
   const beautified = beautify(html, beautyOpts);
 
   createFile(pck.example.file, beautified, true);
   log(38, pck.example.file);
+   */
 };
+
+const renderExample = (options, dest, tree) => {
+  if (tree.hasContent) {
+    ejs.renderFile(root('tool/example/decorator.ejs'), { ...options, entry: 'example' }, (error, str) => {
+      if (error) {
+        console.log(error);
+      } else {
+        const beautified = beautify(str, beautyOpts);
+
+        createFile(pck.example.file, beautified, true);
+        log(38, pck.example.file);
+      }
+    });
+  }
+
+}
 
 const buildStandaloneExample = (pck) => {
   const page = fs.readFileSync(root(pck.standalone.example.src), {

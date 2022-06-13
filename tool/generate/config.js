@@ -99,7 +99,7 @@ const analyse = (id, path, ascendants = []) => {
   config.dependencies = dependencies;
   config.replace = replace;
   config.dist = data.dist ? data.dist : config.path.replace('src', 'dist').replace(data.id, data.filename || data.id);
-  config.example.file = `${config.path.replace('src', 'example')}/index.html`;
+  // config.example.file = `${config.path.replace('src', 'example')}/index.html`;
   if (config.standalone) {
     config.standalone.dist = `standalone/${config.id}`;
     if (fs.existsSync(`${absolute}/content.json`)) {
