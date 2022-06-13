@@ -7,6 +7,7 @@
 
 #{ns(link)} {
   position: relative;
+
   &--icon-left {
     @include padding-left(6v);
     @include before {
