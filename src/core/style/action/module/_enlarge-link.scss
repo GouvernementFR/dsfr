@@ -7,7 +7,7 @@
   position: relative;
 
   a {
-    background-image: none !important;
+    @include disable-underline;
     outline-width: 0 !important;
     @include before('', block) {
       @include absolute(0, 0, 0, 0, 100%, 100%);
