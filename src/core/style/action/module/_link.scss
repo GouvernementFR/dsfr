@@ -27,6 +27,12 @@ a {
   }
 }
 
+form {
+  @include target-blank(true) {
+    @include after(none);
+  }
+}
+
 #{ns(raw-link)} {
   @include disable-underline;
 }
