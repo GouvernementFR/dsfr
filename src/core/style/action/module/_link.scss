@@ -18,7 +18,6 @@ a {
   @include link-underline;
 }
 
-// TODO: à checker avec <form target="_blank" >
 @include target-blank {
   @include external-link;
 
