@@ -15,12 +15,15 @@ $underline-thickness: 0.0625em;
 }
 
 @mixin enable-underline($is-root: false) {
-  // --underline-img: linear-gradient(0deg, currentColor, currentColor);
   @if not $is-root {
     $selector: selector-unify(&, 'a');
     @at-root #{$selector} {
       text-decoration: underline;
     }
+  }
+
+  a {
+    text-decoration: underline;
   }
 
   --link-blank-content: '';
@@ -35,24 +38,20 @@ $underline-thickness: 0.0625em;
     }
   }
 
+  a {
+    text-decoration: none;
+  }
+
   --link-blank-content: none;
 }
 
 @mixin enable-underline-legacy() {
-  [href] {
-    text-decoration: underline;
-  }
-
   [target='_blank']::after {
     content: '';
   }
 }
 
 @mixin disable-underline-legacy() {
-  [href] {
-    text-decoration: none;
-  }
-
   [target='_blank']::after {
     content: none;
   }
