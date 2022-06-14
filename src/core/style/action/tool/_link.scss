@@ -17,8 +17,12 @@ $underline-thickness: 0.0625em;
   @if not $is-root {
     $selector: selector-unify(&, 'a');
     @at-root #{$selector} {
-      text-decoration: underline;
+      text-decoration-line: underline;
     }
+  }
+
+  a {
+    text-decoration-line: underline;
   }
 
   --link-blank-font: #{font-icon(sm, true)};
@@ -30,8 +34,12 @@ $underline-thickness: 0.0625em;
   @if not $is-root {
     $selector: selector-unify(&, 'a');
     @at-root #{$selector} {
-      text-decoration: none;
+      text-decoration-line: none;
     }
+  }
+
+  a {
+    text-decoration-line: none;
   }
 
   --link-blank-font: none;
