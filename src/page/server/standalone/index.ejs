@@ -9,26 +9,27 @@
     </style>
 </head>
 <body>
-  <div class="fr-container">
-    <div class="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
-      <div class="fr-server__body fr-col-12 fr-col-md-6">
-        <h1 class="fr-h1">Service indisponible</h2>
-        <p class="fr-text--xl">Le service [Nom du site] rencontre un problème, nous travaillons pour le résoudre le plus rapidement possible.</p>
-        <p class="fr-text--sm">Merci de réessayer plus tard ou de vous rendre sur nos réseaux sociaux, vous serez bientôt en mesure de réutiliser le service.</p>
+  <main role="main" id="content">
+    <div class="fr-container">
+      <div class="fr-grid-row fr-grid-row--center fr-grid-row--gutters">
+        <div class="fr-server__body fr-col-12 fr-col-md-6">
+          <h1 class="fr-h1">Service indisponible</h1>
+          <p class="fr-text--xl">Le service [Nom du site] rencontre un problème, nous travaillons pour le résoudre le plus rapidement possible.</p>
+          <p class="fr-text--sm">Merci de réessayer plus tard ou de vous rendre sur nos réseaux sociaux, vous serez bientôt en mesure de réutiliser le service.</p>
 
-        <%- include(root + 'src/component/button/example/sample/buttons-group.ejs', {buttonsGroup: { size: 'sm', inline: true, buttons: [{label: include(root + 'src/core/icon/logo/facebook-circle-fill.svg') + 'Facebook', kind: 3, markup: 'a', href: '[À MODIFIER - https://facebook.com/...]'}, {label: include(root + 'src/core/icon/logo/twitter-fill.svg') + 'Twitter', kind: 3, markup: 'a', href: '[À MODIFIER - https://twitter.com/...]'}, {label: include(root + 'src/core/icon/logo/linkedin-box-fill.svg') + 'Linkedin', kind: 3, markup: 'a', href: '[À MODIFIER - https://linkedin.com/...]'}] }}); %>
-      </div>
-      <div class="fr-server__image fr-col-12 fr-col-md-3 fr-col-offset-md-1">
-        <img src="<%- imgToBase64('asset/pictogramme-erreur.png'); %>" alt="">
+          <%- include(root + 'src/component/button/example/sample/buttons-group.ejs', {buttonsGroup: { size: 'sm', inline: true, buttons: [{label: include(root + 'src/core/icon/logo/facebook-circle-fill.svg') + 'Facebook', kind: 3, markup: 'a', href: '[À MODIFIER - https://facebook.com/...]'}, {label: include(root + 'src/core/icon/logo/twitter-fill.svg') + 'Twitter', kind: 3, markup: 'a', href: '[À MODIFIER - https://twitter.com/...]'}, {label: include(root + 'src/core/icon/logo/linkedin-box-fill.svg') + 'Linkedin', kind: 3, markup: 'a', href: '[À MODIFIER - https://linkedin.com/...]'}] }}); %>
+        </div>
+        <div class="fr-server__image fr-col-12 fr-col-md-3 fr-col-offset-md-1">
+          <img src="<%- imgToBase64('asset/pictogramme-erreur.png'); %>" alt="">
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="fr-server__footer">
-    <div class="fr-grid-row fr-grid-row--center">
-      <img width="66px" height="24px" src="<%- imgToBase64('asset/marianne.png'); %>" alt="Marianne">
+    <div class="fr-server__footer">
+      <div class="fr-grid-row fr-grid-row--center">
+        <img width="66px" height="24px" src="<%- imgToBase64('asset/marianne.png'); %>" alt="Marianne">
+      </div>
     </div>
-  </div>
-
+  </main>
 </body>
 </html>
