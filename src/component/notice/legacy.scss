@@ -1,0 +1,11 @@
+////
+/// Notice Legacy
+/// @group notice
+////
+
+@import '../../core/style/path/path-2';
+@import 'index';
+@import 'style/scheme';
+@import 'style/legacy';
+
+@include _notice-scheme(true);

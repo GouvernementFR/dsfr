@@ -3,22 +3,9 @@
 /// @group link
 ////
 
-@function _sort-sizes($sizes) {
-  $sorted-map: (
-    md: map_get($sizes, md)
-  );
-
-  @each $size, $size-settings in $sizes {
-    @if $size != md {
-      $sorted-map: map-merge($sorted-map, ($size: $size-settings));
-    }
-  }
-
-  @return $sorted-map;
-}
-
 @mixin _link-class($base, $size: md, $place: null, $align-on-content: false) {
   $selector: '';
+  $base: '#{$base}';
 
   @if $size != md {
     $selector: '#{$base}--#{$size}';
@@ -32,7 +19,7 @@
     @if $selector == '' {
       $selector: '#{$base}';
     }
-    $selector: '#{$selector}:not([class*="#{str-slice(quote($base), 2)}--icon-"])';
+    $selector: '#{$selector}:not([class*="#{str-slice($base, 2)}--icon-"])';
   }
   @else if $place == left or $place == right {
     $selector: '#{$selector}#{$base}--icon-#{$place}';
@@ -57,13 +44,26 @@
 @mixin _build-link-base {
   @include set-text-margin(0);
   @include set-title-margin(0);
-  @include display-flex(row, center, null, null, true);
   @include z-index(over);
+}
+
+@mixin _link-display($display) {
+  @if $display == flex {
+    @include display-flex(row, center, null, null, true);
+    width: -moz-fit-content;
+    width: fit-content;
+    @include _pseudo(before after) {
+      display: block;
+    }
+  }
+  @else {
+    display: inline;
+  }
 }
 
 @mixin _build-link($settings) {
   $places: map_get($settings, places);
-  $sizes: _sort-sizes(map_get($settings, sizes));
+  $sizes: _link-sort-sizes(map_get($settings, sizes));
   $border-radius: map-get($settings, border-radius);
   $align-on-content: map-get($settings, align-on-content);
   $base: ns(map-get($settings, selector));
@@ -71,6 +71,8 @@
 
   #{$base} {
     @include _build-link-base;
+    @include _link-display(map-get($settings, display));
+
     @if $underline != true {
       @include disable-underline;
       @include tint-enabled(true, null);
@@ -78,26 +80,40 @@
     @content;
   }
 
-  @each $size, $size-settings in $sizes {
-    @include _link-class($base, $size) {
-      @include _build-link-size($size-settings, $border-radius);
-    }
+  @if map_get($settings, no-modifier) != true {
+    @each $size, $size-settings in $sizes {
+      @include _link-class($base, $size) {
+        @include _build-link-size($size-settings, $border-radius);
 
-    @if $align-on-content {
-      @include _link-class($base, $size, null, true) {
-        @include _link-align-on-content($size, null, $size-settings);
+        @if map_get($settings, blank) {
+          @include target-blank(true) {
+            @include _build-link-icon($size-settings, right, $size, false);
+          }
+        }
       }
-    }
 
-    @if $places != null {
-      @each $place in $places {
-        @include _link-class($base, $size, $place) {
-          @include _build-link-icon($size-settings, $place, $size, $place == right);
+      @if $align-on-content {
+        @include _link-class($base, $size, null, true) {
+          @include _link-align-on-content($size, null, $size-settings);
+        }
+      }
+
+      @if $places != null {
+        @each $place in $places {
+          @include _link-class($base, $size, $place) {
+            @include _build-link-icon($size-settings, $place, $size);
+          }
+
+          @if $align-on-content {
+            @include _link-class($base, $size, $place, true) {
+              @include _link-align-on-content($size, $place, $size-settings);
+            }
+          }
         }
 
-        @if $align-on-content {
-          @include _link-class($base, $size, $place, true) {
-            @include _link-align-on-content($size, $place, $size-settings);
+        @if index($places, only) == null {
+          @include _link-class($base, $size, only) {
+            @include before(none);
           }
         }
       }

@@ -27,7 +27,7 @@
   }
   @each $weight in $fontWeightValues {
     $name: map-get($font-weight-names, $weight);
-    & #{ns('text--' + $name)} {
+    #{ns('text--' + $name)} {
       font-weight: #{$weight} !important;
     }
   }

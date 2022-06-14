@@ -3,7 +3,6 @@
 /// @group core
 ////
 
-$dist-path: null;
 @function dist-path($levels) {
   $path: '';
   @for $level from 0 to $levels {
@@ -13,7 +12,7 @@ $dist-path: null;
 }
 
 @mixin dist-path($level) {
-  @if not $dist-path {
-    $dist-path: dist-path($level) !global;
+  @if $DIST-PATH == null {
+    $DIST-PATH: dist-path($level) !global;
   }
 }

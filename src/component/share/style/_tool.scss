@@ -3,8 +3,24 @@
 /// @group share
 ////
 
-@mixin build-share-btn($name, $icon) {
+@mixin build-share-icon($name, $icon) {
   #{ns(btn)}--#{$name} {
-    @include nest-btn(md, only, $icon, null, false);
+    @include icon-image($icon, before);
+  }
+}
+
+@mixin build-share-social-icons() {
+  @each $name, $icon in $share-icons {
+    #{ns(btn)}--#{$name} {
+      @include icon-image($icon, before);
+    }
+  }
+}
+
+@mixin build-share-social-icons-legacy() {
+  @each $name, $icon in $share-icons {
+    #{ns(btn)}--#{$name} {
+      @include icon-image-legacy($icon, before);
+    }
   }
 }

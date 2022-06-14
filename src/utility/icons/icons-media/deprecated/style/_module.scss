@@ -6,17 +6,17 @@
 @include generate-deprecated-icons($deprecated-icons, filter-icons('media'));
 
 #{ns(fi-play-line)} {
-  @include icon-content(play-circle-line, before, true);
+  @include icon-image(play-circle-line, null, true);
 }
 
 #{ns(fi-play-fill)} {
-  @include icon-content(play-circle-fill, before, true);
+  @include icon-image(play-circle-fill, null, true);
 }
 
 #{ns(icon-play-line)} {
-  @include icon-content(play-circle-line, before, true);
+  @include icon-image(play-circle-line, null, true);
 }
 
 #{ns(icon-play-fill)} {
-  @include icon-content(play-circle-fill, before, true);
+  @include icon-image(play-circle-fill, null, true);
 }

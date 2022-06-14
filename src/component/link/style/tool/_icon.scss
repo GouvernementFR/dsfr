@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@mixin _build-link-icon($size-settings, $place, $size:md, $reverse: false) {
+@mixin _build-link-icon($size-settings, $place, $size:md, $override: true) {
 
   $icon-size: icon-size(map_get($size-settings, icon));
 
@@ -11,25 +11,15 @@
     $icon-size: icon-size(map_get($size-settings, icon-only));
   }
 
-  @if $reverse {
-    flex-direction: row-reverse;
-  }
-  @else {
-    flex-direction: row;
-  }
-
   $icon-margin: _link-icon-margin(map_get($size-settings, icon));
   $icon-margin-x: space(map_get($size-settings, icon-margin-x));
-
-  @include before {
-    --icon-size: #{$icon-size};
-  }
 
   @if $place == left {
     overflow: initial;
     max-width: 100%;
     max-height: none;
     @include before {
+      --icon-size: #{$icon-size};
       margin-left: -($icon-margin);
       margin-right: $icon-margin-x;
     }
@@ -38,14 +28,15 @@
     overflow: initial;
     max-width: 100%;
     max-height: none;
-    @include before {
+    @include icon-content(false, $override) {
+      --icon-size: #{$icon-size};
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
     }
   }
   @else if $place == only {
     $min-height: space(map_get($size-settings, min-height));
-    $padding-x: ($min-height - $icon-size) / 2;
+    $padding-x: ($min-height - $icon-size) * 0.5;
 
     overflow: hidden;
     white-space: nowrap;
@@ -55,6 +46,7 @@
     padding-right: $padding-x;
 
     @include before {
+      --icon-size: #{$icon-size};
       margin-left: 0;
       margin-right: $padding-x;
     }

@@ -46,10 +46,12 @@
   @include relative;
   display: block;
 
-  @include with-icon(sm) {
-    @include absolute(3v, 3v, 3v);
-    @include margin(auto);
-    pointer-events: none;
+  @include has-icon {
+    @include icon-size(sm, before) {
+      @include absolute(3v, 3v, 3v);
+      @include margin(auto);
+      pointer-events: none;
+    }
   }
 
   &--addon {

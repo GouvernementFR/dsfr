@@ -24,18 +24,17 @@
 
     &--horizontal &__header {
       @include width(40%);
-      flex: 1 0 40%;
+      flex: 0 0 40%;
     }
 
     &--horizontal-half &__header {
       @include width(50%);
-      flex: 1 0 50%;
+      flex: 0 0 50%;
     }
 
     &--horizontal-tier &__header {
-      $tier: 100% / 3;
-      @include width($tier);
-      flex: 1 0 #{$tier};
+      @include width(calc(100% / 3));
+      flex: 0 0 #{calc(100% / 3)};
     }
   }
 }

@@ -14,27 +14,7 @@
   }
 
   #{ns(follow)} {
-    #{ns(btn)} {
-      &--facebook {
-        @include icon-legacy(facebook-circle-fill, md);
-      }
-
-      &--twitter {
-        @include icon-legacy(twitter-fill);
-      }
-
-      &--instagram {
-        @include icon-legacy(instagram-fill);
-      }
-
-      &--linkedin {
-        @include icon-legacy(linkedin-box-fill);
-      }
-
-      &--youtube {
-        @include icon-legacy(youtube-fill);
-      }
-    }
+    @include build-follow-social-icons-legacy();
 
     #{ns-group(btns)} {
       &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {

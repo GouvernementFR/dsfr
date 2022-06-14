@@ -1,7 +1,7 @@
-$collapse-btn-settings:(
+$consent-btn-settings:(
   selector: 'consent-service__collapse-btn',
   sizes: (
-    sm: (
+    md: (
       font-size: 14,
       min-height: 0,
       padding-x: 0,
@@ -10,5 +10,8 @@ $collapse-btn-settings:(
       icon-margin-x: 1v
     )
   ),
-  places: right
+  places: right,
+  underline: true,
+  display: flex,
+  no-modifier: true
 );

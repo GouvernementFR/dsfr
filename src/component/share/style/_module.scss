@@ -8,11 +8,6 @@
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
 
-  &__btn {
-    @include margin-x(1v);
-    @include margin-bottom(2v);
-  }
-
   &__title {
     @include text-style(md);
     order: 1;
@@ -26,8 +21,6 @@
 
   #{ns-group(btns)} {
     @include horizontal-btns-group;
-    @include margin-right(-4v);
-    @include margin-bottom(2v);
     @include width(auto);
     order: 2;
 
@@ -39,14 +32,13 @@
       #{ns(btn)} {
         @include has-not-icon {
           @include nest-btn(md, only, null, null, false);
+          @include icon(null, md, before);
         }
       }
     }
   }
 }
 
-@include build-share-btn(facebook, facebook-circle-line);
-@include build-share-btn(twitter, twitter-line);
-@include build-share-btn(linkedin, linkedin-box-line);
-@include build-share-btn(mail, mail-line);
-@include build-share-btn(copy, links-fill);
+@include build-share-social-icons();
+@include build-share-icon(mail, mail-line);
+@include build-share-icon(copy, links-fill);

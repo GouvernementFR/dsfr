@@ -24,7 +24,7 @@
   @include margin-top(4v);
 
   table {
-    @include margin-bottom(calc(var(--table-offset) + 11v));
+    @include margin-bottom(calc(var(--table-offset) + space(11v)));
   }
 
   &#{ns-attr(js-table, true)} {
@@ -63,5 +63,16 @@
   table {
     display: table;
     table-layout: fixed;
+  }
+}
+
+/* Style bordered, ajoute des bordures entre chaque ligne */
+#{ns(table--bordered)} {
+  tbody {
+    tr {
+      background-size: 100% 1px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
   }
 }

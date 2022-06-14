@@ -65,31 +65,7 @@
     @include margin-top(-1v);
     @include margin-bottom(3v);
     @include size(100%);
-
-    @include _nest-link($collapse-btn-settings, sm, right, arrow-down-s-line) {
-      background: transparent;
-      @include padding(0);
-      color: inherit;
-
-      &[aria-expanded="true"] {
-        @include icon(arrow-up-s-line, sm);
-      }
-    }
-
-    /**
-    * Bouton d'ouverture/fermeture du collapse
-    **/
-    &-btn {
-      @include display-flex(row, center, null, null, true);
-      position: relative;
-
-      @include disable-tint;
-
-      @include after('','block') {
-        @include absolute(0,0,0,0,calc(100% - #{space(4v)}),calc(100% - #{space(1v)}));
-        @include link-underline;
-      }
-    }
+    @include nest-consent-btn;
   }
 
   /**
@@ -123,6 +99,24 @@
         @include absolute;
         left: calc(#{space(-6v)} - 1px);
         top: space(3v);
+      }
+    }
+  }
+
+  @include build-consent-btn {
+    background: transparent;
+    @include padding(0);
+    color: inherit;
+    @include disable-tint;
+    @include link-underline;
+    @include after {
+      @include margin-right(-5v);
+      transition: transform 0.3s;
+    }
+
+    &[aria-expanded="true"] {
+      @include after {
+        transform: rotate(-180deg);
       }
     }
   }

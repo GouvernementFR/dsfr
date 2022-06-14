@@ -1,8 +1,8 @@
 <%
 const sample = getSample(include);
 
-const attrModal = [];
-attrModal['aria-controls'] = prefix + '-theme-modal';
+const attrModal = {};
+attrModal['aria-controls'] = prefix + '-theme-modal-deprecated';
 attrModal[`data-${prefix}-opened`] = false;
 
 const links = {
@@ -18,7 +18,7 @@ const links = {
 };
 
 let dataModal = {
-  id: prefix + "-theme-modal",
+  id: prefix + "-theme-modal-deprecated",
   title: 'Paramètres d’affichage',
   body: '../../../display/deprecated/example/sample/body',
   size: "sm"
@@ -52,7 +52,7 @@ let dataFooter = {
           markup: 'button',
           classes: [prefix + '-fi-theme-fill', prefix + '-link--icon-left'],
           attributes: {
-            'aria-controls': prefix + '-theme-modal',
+            'aria-controls': prefix + '-theme-modal-deprecated',
             [`data-${prefix}-opened`]: false,
           }
         }
@@ -68,8 +68,7 @@ let dataFooter = {
   <h1>Scheme - gestion du dark mode</h1>
   <%- sample('bouton ouverture thèmes', '../../../link/example/sample/link-default', {link:links.items[0]}, true) %>
 
-  <!-- Le contenu de la modale des paramètres d'affichage est importé de manière globale dans les pages d'exemple -->
-  <%- sample('snippet modal de paramètres d\'affichage', '../../../modal/template/ejs/modal.ejs', {modal:dataModal}, true, './layout-snippet-only'); %>
+  <%- sample('snippet modal de paramètres d\'affichage', '../../../modal/template/ejs/modal.ejs', {modal:dataModal}, true); %>
 
 </div>
 

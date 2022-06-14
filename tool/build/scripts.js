@@ -10,7 +10,7 @@ const fs = require('fs');
 const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
-const process = async (data, dir, filename, minify, legacy, map, standalone) => {
+const process = async (pck, data, dir, filename, minify, legacy, map, standalone) => {
   const input = {
     input: 'entry',
     plugins: [
@@ -57,15 +57,20 @@ const process = async (data, dir, filename, minify, legacy, map, standalone) => 
 
   try {
     const bundle = await rollup.rollup(input);
-    await bundle.write(output);
+    if (pck.inject) {
+      const result = await bundle.generate(output);
+      if (!pck.injection) pck.injection = {};
+      console.log(result.output);
+      pck.injection[entryFilename] = result.output[0].code;
+    } else {
+      await bundle.write(output);
+      const size = fs.statSync(dir + entryFilename).size;
+      log.file(entryFilename, `${size} bytes`);
+    }
     await bundle.close();
   } catch (e) {
     log.error(e);
   }
-
-  const size = fs.statSync(dir + entryFilename).size;
-
-  log.file(entryFilename, `${size} bytes`);
 };
 
 const buildScript = async (pck, minify, legacy, map, standalone) => {
@@ -74,20 +79,20 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
   let data = `import '${src}/main.js'\n`;
 
   if (pck.module) {
-    await process(data, dir, pck.filename, false, false, map, standalone);
+    await process(pck, data, dir, pck.filename, false, false, map, standalone);
 
     if (minify) {
-      await process(data, dir, pck.filename, true, false, map, standalone);
+      await process(pck, data, dir, pck.filename, true, false, map, standalone);
     }
   }
 
   if (legacy && pck.nomodule) {
     if (pck.script.files.indexOf('legacy') > -1) data += `import '${src}/legacy.js'\n`;
 
-    await process(data, dir, pck.filename, false, true, map, standalone);
+    await process(pck, data, dir, pck.filename, false, true, map, standalone);
 
     if (minify) {
-      await process(data, dir, pck.filename, true, true, map, standalone);
+      await process(pck, data, dir, pck.filename, true, true, map, standalone);
     }
   }
 };

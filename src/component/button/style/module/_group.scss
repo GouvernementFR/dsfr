@@ -5,11 +5,12 @@
 
 #{ns-group(btns)} {
   @include disable-list-style;
-  @include display-flex(null,stretch,null,wrap);
+  @include display-flex(null, stretch, null, wrap);
   @include vertical-btns-group;
+  @include margin-x(-2v);
 
   #{ns(btn)} {
-    @include margin-bottom(4v);
+    @include margin(0 2v 4v);
     justify-content: center;
   }
 
@@ -21,24 +22,9 @@
     @include horizontal-btns-group;
 
     &#{ns-group(btns)}--right {
-      @include margin-left(-4v);
-      #{ns(btn)} {
-        @include margin-right(0);
-        @include margin-left(4v);
-      }
-
       &#{ns-group(btns)}--inline-reverse {
         flex-direction: row-reverse;
         justify-content: flex-start;
-      }
-    }
-
-    &#{ns-group(btns)}--center,
-    &#{ns-group(btns)}--left {
-      @include margin-right(-4v);
-      #{ns(btn)} {
-        @include margin-right(4v);
-        @include margin-left(0);
       }
     }
 
@@ -47,24 +33,9 @@
         @include horizontal-btns-group;
 
         &#{ns-group(btns)}--right {
-          @include margin-left(-4v);
-          #{ns(btn)} {
-            @include margin-right(0);
-            @include margin-left(4v);
-          }
-
           &#{ns-group(btns)}--inline-reverse {
             flex-direction: row-reverse;
             justify-content: flex-start;
-          }
-        }
-
-        &#{ns-group(btns)}--center,
-        &#{ns-group(btns)}--left {
-          @include margin-right(-4v);
-          #{ns(btn)} {
-            @include margin-right(4v);
-            @include margin-left(0);
           }
         }
       }
@@ -75,24 +46,9 @@
         @include horizontal-btns-group;
 
         &#{ns-group(btns)}--right {
-          @include margin-left(-4v);
-          #{ns(btn)} {
-            @include margin-right(0);
-            @include margin-left(4v);
-          }
-
           &#{ns-group(btns)}--inline-reverse {
             flex-direction: row-reverse;
             justify-content: flex-start;
-          }
-        }
-
-        &#{ns-group(btns)}--center,
-        &#{ns-group(btns)}--left {
-          @include margin-right(-4v);
-          #{ns(btn)} {
-            @include margin-right(4v);
-            @include margin-left(0);
           }
         }
       }
@@ -103,24 +59,9 @@
         @include horizontal-btns-group;
 
         &#{ns-group(btns)}--right {
-          @include margin-left(-4v);
-          #{ns(btn)} {
-            @include margin-right(0);
-            @include margin-left(4v);
-          }
-
           &#{ns-group(btns)}--inline-reverse {
             flex-direction: row-reverse;
             justify-content: flex-start;
-          }
-        }
-
-        &#{ns-group(btns)}--center,
-        &#{ns-group(btns)}--left {
-          @include margin-right(-4v);
-          #{ns(btn)} {
-            @include margin-right(4v);
-            @include margin-left(0);
           }
         }
       }

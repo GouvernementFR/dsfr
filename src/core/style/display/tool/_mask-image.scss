@@ -1,0 +1,19 @@
+////
+/// Core Tool : mask-image
+/// @group core
+////
+
+@mixin mask-image($value) {
+  -webkit-mask-image: $value;
+  mask-image: $value;
+}
+
+@mixin mask-image-size($value) {
+  -webkit-mask-size: $value;
+  mask-size: $value;
+}
+
+@mixin mask-image-position($value) {
+  -webkit-mask-position: $value;
+  mask-position: $value;
+}

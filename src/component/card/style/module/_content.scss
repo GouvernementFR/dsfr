@@ -17,6 +17,10 @@
     @include title-style(h5);
     @include font-weight(bold);
     @include margin-bottom(0);
+
+    @include target-blank {
+      @include icon-size(md, after);
+    }
   }
 
   &__desc {
@@ -54,8 +58,7 @@
     @include margin-bottom(0);
 
     @include has-icon {
-      @include before {
-        @include icon-size(sm);
+      @include icon-size(sm, before) {
         @include margin-right(2v);
       }
     }

@@ -7,8 +7,7 @@
   &__group {
     @include disable-list-style;
     @include horizontal-btns-group;
-    @include margin-right(-4v);
-    @include margin-bottom(2v);
+    @include margin-x(-2v);
     @include width(auto);
     order: 2;
     display: flex;
@@ -18,7 +17,7 @@
     @include disable-underline;
     @include tint-enabled(true, null);
     display: inline-flex;
-    @include margin-right(4v);
+    @include margin-x(2v);
     @include margin-bottom(4v);
   }
 }

@@ -4,17 +4,17 @@
 ////
 
 @function class-start-with($start) {
-  @return (unquote('[class^="#{$start}"]'), unquote('[class*=" #{$start}"]'));
+  @return ('[class^="#{$start}"]', '[class*=" #{$start}"]');
 }
 
 @function class-not-start-with($start) {
-  @return unquote(':not([class^="#{$start}"]):not([class*=" #{$start}"])');
+  @return ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
 }
 
 @function class-end-with($end) {
-  @return (unquote('[class$="#{$end}"]'), unquote('[class*="#{$end} "]'));
+  @return ('[class$="#{$end}"]', '[class*="#{$end} "]');
 }
 
 @function class-not-end-with($end) {
-  @return unquote(':not([class$="#{$end}"]):not([class*="#{$end} "])');
+  @return ':not([class$="#{$end}"]):not([class*="#{$end} "])';
 }

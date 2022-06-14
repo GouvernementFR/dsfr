@@ -25,9 +25,13 @@ internals.motion = motion;
 internals.property = property;
 internals.ns = ns;
 internals.register = engine.register;
+internals.state = state;
 
 Object.defineProperty(internals, 'preventManipulation', {
   get: () => options.preventManipulation
+});
+Object.defineProperty(internals, 'stage', {
+  get: () => state.getModule('stage')
 });
 
 export default internals;

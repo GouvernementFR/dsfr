@@ -3,6 +3,8 @@
 /// @group content
 ////
 
+@use "sass:math";
+
 @mixin content-media-sizes($medias, $captions, $gap) {
   @each $size in $content-sizes {
     $g: $gap;
@@ -14,7 +16,7 @@
     &--#{$size} {
       #{$medias},
       #{$captions} {
-        width: #{100% + ($g / 1.5)};
+        width: #{100% + math.div($g, 1.5)};
 
         @include respond-from(md) {
           width: #{100% + $g};

@@ -6,8 +6,21 @@
 /**
 * Mixin d'ajout des icones des réseaux sociaux
 **/
-@mixin social-icon ($modifier, $icon) {
-  #{ns('btn--' + $modifier)} {
-    @include icon($icon);
+@mixin build-follow-social-icons() {
+  @each $name, $icon in $follow-icons {
+    #{ns('btn--' + $name)} {
+      @include icon-image($icon, before);
+    }
+  }
+}
+
+/**
+* Mixin d'ajout des icones des réseaux sociaux
+**/
+@mixin build-follow-social-icons-legacy() {
+  @each $name, $icon in $follow-icons {
+    #{ns('btn--' + $name)} {
+      @include icon-image-legacy($icon, before);
+    }
   }
 }

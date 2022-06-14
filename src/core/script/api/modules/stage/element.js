@@ -36,6 +36,7 @@ class Element {
   }
 
   get html () {
+    if (!this.node || !this.node.outerHTML) return '';
     const end = this.node.outerHTML.indexOf('>');
     return this.node.outerHTML.substring(0, end + 1);
   }

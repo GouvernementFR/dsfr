@@ -3,6 +3,11 @@
 /// @group tag
 ////
 
-@include build-tag();
+@import 'module/default';
 @import 'module/variants';
 @import 'module/group';
+
+#{ns(tag)} {
+  @include min-width(9v);
+  justify-content: center;
+}

@@ -1,0 +1,61 @@
+////
+/// Link Function
+/// @group link
+////
+
+@function _link-sort-sizes($sizes) {
+  $sorted-map: (
+    md: map_get($sizes, md)
+  );
+
+  @each $size, $size-settings in $sizes {
+    @if $size != md {
+      $sorted-map: map-merge($sorted-map, ($size: $size-settings));
+    }
+  }
+
+  @return $sorted-map;
+}
+
+@function _get-link-restrain($places, $place: null) {
+  @if $place == right {
+    @return after;
+  }
+  @if $place == left or $place == only {
+    @return before;
+  }
+
+  @if $places == null {
+    @return null;
+  }
+  @if index($places, only) == null and index($places, left) == null and index($places, right) == null {
+    @return null;
+  }
+  @if length($places) == 1 and nth($places) == right {
+    @return after;
+  }
+  @if index($places, right) == null {
+    @return before;
+  }
+  @return null;
+}
+
+@function _get-link-icon-size($size-settings, $places, $place: null) {
+  @if $place == only {
+    @return map_get($size-settings, icon-only);
+  }
+  @if length($places) == 1 and nth($places) == only {
+    @return map_get($size-settings, icon-only);
+  }
+  @return map_get($size-settings, icon);
+}
+
+@function _get-link-is-before($places, $place: null) {
+  @if $place == right {
+    @return false;
+  }
+  @if length($places) == 1 and nth($places) == right {
+    @return false;
+  }
+  @return true;
+}

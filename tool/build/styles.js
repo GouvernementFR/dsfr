@@ -1,6 +1,5 @@
 const { createFile } = require('../utilities/file');
-const sass = require('node-sass');
-const importer = require('node-sass-magic-importer');
+const sass = require('sass');
 const stylelint = require('stylelint');
 const discardDuplicates = require('postcss-discard-duplicates');
 const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
@@ -12,13 +11,19 @@ const root = require('../utilities/root');
 const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
-const process = async (css, plugins, options) => {
+const process = async (pck, css, plugins, options) => {
   plugins.push(postcssBanner({ banner: getBanner(), important: true }));
   const result = await postcss(plugins)
     .process(css, options);
+  const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
+
+  if (pck.inject) {
+    if (!pck.injection) pck.injection = {};
+    pck.injection[filename] = result.css;
+    return;
+  }
 
   const size = createFile(result.opts.to, result.css, true);
-  const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
 
   log.file(filename, `${size} bytes`);
   if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
@@ -26,7 +31,7 @@ const process = async (css, plugins, options) => {
 
 const input = (path, file, standalone) => {
   const insert = standalone ? 'standalone/' : '';
-  const filePath = root(`${path}/${insert}${file}`);
+  const filePath = `${path}/${insert}${file}`;
   return `@import '${filePath}';\r\n`;
 };
 
@@ -42,36 +47,35 @@ const buildStyles = async (pck, minify, map, standalone = false) => {
   if (style.files.length > 1) {
     for (const file of style.files) {
       const src = input(pck.path, file);
-      await buildStyle(src, output(pck, file), minify, map);
+      await buildStyle(pck, src, output(pck, file), minify, map);
       data += src;
     }
   } else {
     data = input(pck.path, 'main', standalone);
   }
 
-  await buildStyle(data, output(pck, null, standalone), minify, map);
+  await buildStyle(pck, data, output(pck, null, standalone), minify, map);
 };
 
-const buildStyle = async (data, dest, minify, map) => {
+const buildStyle = async (pck, data, dest, minify, map) => {
   let options = {
-    data: data,
-    importer: [importer()],
     outFile: `${dest}.css`,
-    outputStyle: 'expanded'
+    style: 'expanded',
+    loadPaths: [`${root('.')}`]
   };
 
   if (map) {
     options.sourceMap = true;
-    options.sourceMapContents = true;
-    options.omitSourceMapUrl = true;
+    options.sourceMapIncludeSources = true;
   }
 
   let result;
 
   try {
-    result = sass.renderSync(options);
+    // TODO : Mettre à jour les options. Ou alors utiliser compile directement sur le fichier ?
+    result = await sass.compileStringAsync(data, options);
   } catch (e) {
-    log.error(e.formatted);
+    log.error(e.message);
     try {
       process.kill(0);
     } catch (e) {
@@ -82,10 +86,10 @@ const buildStyle = async (data, dest, minify, map) => {
   options = { from: undefined, to: `${dest}.css` };
 
   if (map) {
-    options.map = { prev: result.map.toString() };
+    options.map = { prev: result.sourceMap };
   }
 
-  await process(result.css.toString(),
+  await process(pck, result.css.toString(),
     [
       mqpacker({ sort: false }),
       combineDuplicatedSelectors,
@@ -97,7 +101,7 @@ const buildStyle = async (data, dest, minify, map) => {
 
   options = { ...options, to: `${dest}.min.css` };
 
-  await process(result.css.toString(), [
+  await process(pck, result.css.toString(), [
     mqpacker({ sort: false }),
     combineDuplicatedSelectors,
     discardDuplicates,

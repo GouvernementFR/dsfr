@@ -21,15 +21,8 @@
       }
     }
 
-    #{ns(btn)}--facebook {
-      @include icon-legacy(facebook-circle-line, md, before);
-    }
-    #{ns(btn)}--twitter {
-      @include icon-legacy(twitter-line, md, before);
-    }
-    #{ns(btn)}--linkedin {
-      @include icon-legacy(linkedin-box-line, md, before);
-    }
+    @include build-share-social-icons-legacy();
+
     #{ns(btn)}--mail {
       @include icon-legacy(mail-line, md, before);
     }

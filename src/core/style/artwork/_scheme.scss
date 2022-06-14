@@ -1,0 +1,28 @@
+////
+/// Core Module : Artwork
+/// @group core
+////
+
+@mixin _core-artwork-scheme($legacy: false) {
+  #{ns(artwork)} {
+    &-decorative {
+      @include scheme-element-fill-color(artwork decorative blue-france, (legacy: $legacy));
+    }
+
+    &-minor {
+      @include scheme-element-fill-color(artwork minor red-marianne, (legacy: $legacy));
+    }
+
+    &-major {
+      @include scheme-element-fill-color(artwork major blue-france, (legacy: $legacy));
+    }
+
+    @each $tint, $shades in map-get($scheme-sets, accent) {
+      &--#{$tint} {
+        #{ns(artwork-minor)} {
+          @include scheme-element-fill-color(artwork minor $tint, (legacy: $legacy));
+        }
+      }
+    }
+  }
+}

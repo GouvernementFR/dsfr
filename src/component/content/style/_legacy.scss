@@ -5,11 +5,6 @@
 
 @include legacy(ie11) {
   #{ns(content-media)} {
-    &__img {
-      //le padding permettant de définir le ratio d'aspect est appliqué sur un pseudo-élément before qui hérite de la modification de taille --lg et --sm de l'élément img ou vid
-      @include aspect-ratio-legacy;
-    }
-
     &__transcription {
       #{ns(btn)} {
         @include icon-legacy(menu-2-fill, sm, before);

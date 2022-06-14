@@ -1,0 +1,16 @@
+////
+/// Stepper Module
+/// @group stepper
+////
+
+@include legacy(ie11) {
+  #{ns(stepper)} {
+    @include title {
+      @include margin-bottom(3v);
+    }
+
+    &__steps {
+      display: none;
+    }
+  }
+}

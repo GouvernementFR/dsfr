@@ -1,0 +1,10 @@
+////
+/// Skiplink Legacy
+/// @group skiplink
+////
+
+@import 'index';
+@import 'style/legacy';
+@import 'style/scheme';
+
+@include _stepper-scheme(true);

@@ -8,7 +8,9 @@ a {
 }
 
 :root {
+  @include init-underline;
   @include enable-underline;
+  @include enable-external;
 }
 
 // TODO: à checker avec <area href="" >
@@ -16,9 +18,18 @@ a {
   @include link-underline;
 }
 
-// TODO: à checker avec <form target="_blank" >
-[target="_blank"] {
-  @include link-blank;
+@include target-blank {
+  @include external-link;
+
+  @include has-icon {
+    @include external-link;
+  }
+}
+
+form {
+  @include target-blank(true) {
+    @include after(none);
+  }
 }
 
 #{ns(raw-link)} {

@@ -1,0 +1,72 @@
+////
+/// Table Module : default
+/// @group Table
+////
+
+#{ns(table)} {
+  --table-offset: #{space(4v)};
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+
+  @include relative;
+  @include margin-bottom(10v);
+  @include padding-top(var(--table-offset));
+
+  @include before('', block) {
+    @include size(100%, 0);
+  }
+
+  &:not(#{ns(table--no-scroll)}) {
+    table {
+      width: 100%;
+    }
+  }
+
+  table {
+    @include size(100%);
+    display: block;
+    overflow: auto;
+    border-spacing: 0;
+  }
+
+  &#{ns-attr(js-table, true)} {
+    caption {
+      @include absolute(0);
+    }
+  }
+
+  caption {
+    position: initial;
+    @include title-style(h4, true);
+    @include font-weight(bold);
+    text-align: left;
+  }
+
+  td,
+  th {
+    text-align: left;
+    vertical-align: middle;
+    display: table-cell;
+    border: 0;
+    @include padding(3v);
+    @include padding(4v, md);
+    @include text-style(sm);
+  }
+
+  th {
+    font-weight: font-weight(bold);
+  }
+
+  thead {
+    background-size: 100% 2px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    td,
+    th {
+      font-weight: font-weight(bold);
+      @include padding-bottom(3.5v); // 0.5v for the box shadow
+      @include padding-bottom(4.5v, md);
+    }
+  }
+}

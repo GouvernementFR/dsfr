@@ -3,66 +3,67 @@
 /// @group header
 ////
 
-#{ns-group(btns)} {
-  &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
-    @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
-      #{ns(btn)} {
-        @include has-not-icon {
-          &:not(#{ns(btn--display)}) {
-            @include nest-btn(sm, null, null, null, false);
-          }
-        }
-
-        @include has-icon {
-          @include nest-btn(sm, left, null, null, false);
-        }
-
-        &#{ns(btn--display)} {
-          @include nest-btn(sm, left, null, null, false);
-        }
-
-        @include margin(0 1px 0 0);
-      }
-    }
-  }
-}
-
-&__tools-links {
-  display: none;
-
-  @include respond-from(lg) {
-    display: initial;
-  }
-
-  #{ns-group(btns)} {
-    @include horizontal-btns-group;
-    justify-content: flex-end;
-
-    > *:not(:last-child) > #{ns(btn)},
-    > #{ns(btn)}:not(:last-child) {
-      @include after('', block) {
-        @include relative(null, -4v, null, null, 1px, 4v);
-      }
-    }
-  }
-}
-
-& &__menu-links {
+#{ns(header)} {
   #{ns-group(btns)} {
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
       @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
-        @include display-flex(column);
-
         #{ns(btn)} {
-          @include size(100%);
-          @include min-size(null, 12v);
-          @include padding-left(0);
+          @include has-not-icon {
+            &:not(#{ns(btn--display)}) {
+              @include nest-btn(sm, null, null, null, false);
+            }
+          }
+
+          @include has-icon {
+            @include nest-btn(sm, left, null, null, false);
+          }
+
+          &#{ns(btn--display)} {
+            @include nest-btn(sm, left, null, null, false);
+          }
         }
       }
     }
   }
 
-  @include respond-from(lg) {
+  &__tools-links {
     display: none;
+
+    @include respond-from(lg) {
+      display: initial;
+    }
+
+    #{ns-group(btns)} {
+      @include respond-from(lg) {
+        @include horizontal-btns-group;
+        justify-content: flex-end;
+        @include margin(0 -1v -4v);
+
+        #{ns(btn)} {
+          @include margin-x(1v);
+        }
+      }
+    }
+  }
+
+  & &__menu-links {
+    #{ns-group(btns)} {
+      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+        @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
+          @include display-flex(column);
+
+          #{ns(btn)} {
+            @include width(calc(100% - 4v));
+            @include min-size(null, 12v);
+            @include padding-left(0);
+            @include margin-bottom(0);
+          }
+        }
+      }
+    }
+
+    @include respond-from(lg) {
+      display: none;
+    }
   }
 }
