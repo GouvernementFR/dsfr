@@ -18,6 +18,37 @@ $underline-thickness: 0.0625em;
   @if not $is-root {
     $selector: selector-unify(&, 'a');
     @at-root #{$selector} {
+      text-decoration-line: underline;
+    }
+  }
+
+  a {
+    text-decoration-line: underline;
+  }
+
+  --link-blank-content: '';
+}
+
+@mixin disable-underline($is-root: false) {
+  // --underline-img: none;
+  @if not $is-root {
+    $selector: selector-unify(&, 'a');
+    @at-root #{$selector} {
+      text-decoration-line: none;
+    }
+  }
+
+  a {
+    text-decoration-line: none;
+  }
+
+  --link-blank-content: none;
+}
+
+@mixin enable-underline-legacy($is-root: false) {
+  @if not $is-root {
+    $selector: selector-unify(&, 'a');
+    @at-root #{$selector} {
       text-decoration: underline;
     }
   }
@@ -26,11 +57,12 @@ $underline-thickness: 0.0625em;
     text-decoration: underline;
   }
 
-  --link-blank-content: '';
+  [target='_blank']::after {
+    content: '';
+  }
 }
 
-@mixin disable-underline($is-root: false) {
-  // --underline-img: none;
+@mixin disable-underline-legacy($is-root: false) {
   @if not $is-root {
     $selector: selector-unify(&, 'a');
     @at-root #{$selector} {
@@ -42,16 +74,6 @@ $underline-thickness: 0.0625em;
     text-decoration: none;
   }
 
-  --link-blank-content: none;
-}
-
-@mixin enable-underline-legacy() {
-  [target='_blank']::after {
-    content: '';
-  }
-}
-
-@mixin disable-underline-legacy() {
   [target='_blank']::after {
     content: none;
   }
