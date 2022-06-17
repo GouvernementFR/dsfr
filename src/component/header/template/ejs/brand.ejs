@@ -8,6 +8,10 @@
   ** brand.logo (string, optional) : chemin du template logo, ou paramètres du logo bloc marque - voir composant logo src/component/logo/template/ejs/logo.ejs
   ** brand.operator (object, optional) : Paramètres logo opérateur - voir src/core/template/ejs/media/img.ejs
   ** brand.navbar (object, optional) : Paramètres de la navbar - voir navbar
+  ** brand.link (object, optional) : Paramètres du lien
+    *** brand.link.title (string, required) : Titre du lien "Accueil - nom service - nom entité"
+    *** brand.link.href (string, optional) : Href du lien, généralement "/" pour retourner à la racine du site
+    *** brand.link.position (string, optional) : Elément sur lequel positionner le lien ('logo', 'service', ou 'operator')
 
 %>
 <%
@@ -15,34 +19,14 @@ let brand = locals.brand || {};
 %>
 <div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
   <%
-  let position;
-  let title = 'Accueil - ';
+  const linkInfos = brand.link || brandData('header', header.logo !== undefined, brand.service !== undefined && brand.service.title !== undefined, brand.operator !== undefined);
 
-  const logoPlaceholder = 'nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
-
-  switch(true) {
-    case brand.service !== undefined && brand.service.title !== undefined:
-      position = 'service';
-      title += contentPlaceholder(brand.service.title);
-      if (brand.logo) title += ' - ' + contentPlaceholder(logoPlaceholder);
-      break;
-
-    case brand.operator !== undefined:
-      position = 'operator';
-      title += contentPlaceholder(imgAltText);
-      break;
-
-    default:
-      position = 'logo';
-      title += contentPlaceholder(logoPlaceholder);
-  }
-
-  const link = `<a href="/" title="${title}" >`;
+  const link = `<a href="${linkInfos.href}" title="${linkInfos.title}" >`;
   %>
 
   <div class="<%= prefix %>-header__brand-top" >
     <div class="<%= prefix %>-header__logo" >
-      <% if (position === 'logo') { %><%- link %><% } %>
+      <% if (linkInfos.position === 'logo') { %><%- link %><% } %>
         <%
           let path, data;
           switch(typeof brand.logo) {
@@ -57,15 +41,15 @@ let brand = locals.brand || {};
           }
         %>
         <%- include(path, {logo: data}); %>
-      <% if (position === 'logo') { %><%- '</a>' %><% } %>
+      <% if (linkInfos.position === 'logo') { %><%- '</a>' %><% } %>
     </div>
 
 
     <% if (brand.operator !== undefined) { %>
       <div class="<%= prefix %>-header__operator">
-        <% if (position === 'operator') { %><%- link %><% } %>
+        <% if (linkInfos.position === 'operator') { %><%- link %><% } %>
         <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: brand.operator}); %>
-        <% if (position === 'operator') { %><%- '</a>' %><% } %>
+        <% if (linkInfos.position === 'operator') { %><%- '</a>' %><% } %>
       </div>
     <% } %>
 
@@ -74,10 +58,9 @@ let brand = locals.brand || {};
     <% } %>
   </div>
 
-
-  <% if (brand.service !== undefined || brand.beta) { %>
+  <% if (brand.service !== undefined) { %>
     <div class="<%= prefix %>-header__service" >
-      <% if (position === 'service') { %><%- link %><% } %>
+      <% if (linkInfos.position === 'service') { %><%- link %><% } %>
         <% if (brand.service && (brand.service.title || brand.service.beta)) { %>
           <p class="<%= prefix %>-header__service-title">
             <% if (brand.service.title) { %>
@@ -88,7 +71,7 @@ let brand = locals.brand || {};
             <% } %>
           </p>
         <% } %>
-      <% if (position === 'service') { %><%- '</a>' %><% } %>
+      <% if (linkInfos.position === 'service') { %><%- '</a>' %><% } %>
       <% if (brand.service && brand.service.tagline !== undefined) { %>
         <p class="<%= prefix %>-header__service-tagline"><%- brand.service.tagline %></p>
       <% } %>

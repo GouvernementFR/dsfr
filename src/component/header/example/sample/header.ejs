@@ -11,6 +11,7 @@ data.body.brand = brand;
 
 if (header.operator !== undefined) {
   brand.operator = header.operator;
+  brand.logo.title = 'République<br>Française';
 }
 
 let servicePlaceholder = {
@@ -32,8 +33,10 @@ switch (typeof header.service) {
         break;
 }
 
+brand.link = brandData('header', header.logo !== undefined, brand.service !== undefined && brand.service.title !== undefined, brand.operator !== undefined, '/');
+
 // copie la valeur de header.beta dans brand.service.beta
-(brand.service != undefined) ? brand.service.beta = header.beta === true || undefined : brand.service = {beta: header.beta === true || undefined};
+(brand.service != undefined) ? brand.service.beta = header.beta === true || undefined : brand.service = header.beta ? {beta: header.beta} : undefined;
 
 if (header.links !== undefined || header.search) {
     hasNavbar = true;
