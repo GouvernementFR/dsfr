@@ -6,17 +6,17 @@
 @include generate-deprecated-icons($deprecated-icons, filter-icons('system'));
 
 #{ns(fi-delete-line)} {
-  @include icon-image(delete-bin-line, null, true);
+  @include icon-image(delete-bin-line);
 }
 
 #{ns(fi-delete-fill)} {
-  @include icon-image(delete-bin-fill, null, true);
+  @include icon-image(delete-bin-fill);
 }
 
 #{ns(icon-delete-line)} {
-  @include icon-image(delete-bin-line, null, true);
+  @include icon-image(delete-bin-line);
 }
 
 #{ns(icon-delete-fill)} {
-  @include icon-image(delete-bin-fill, null, true);
+  @include icon-image(delete-bin-fill);
 }

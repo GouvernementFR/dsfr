@@ -3,8 +3,10 @@
 /// @group dsfr
 ////
 
-@import 'media-query-order';
-@import 'core/style/path/path-0';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(0);
+@include dsfr.media-query-order;
+
 @import 'core/main';
 @import 'scheme/main';
 @import 'component/main';

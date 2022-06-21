@@ -7,5 +7,9 @@
   SCHEME
 \* ˍˍˍˍˍˍˍˍˍ */
 
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(1);
+@include dsfr.media-query-order;
+
 @import 'index';
 @import 'style/module';

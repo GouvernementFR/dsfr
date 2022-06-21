@@ -7,8 +7,10 @@
   CORE
 \* ˍˍˍˍˍˍˍˍˍ */
 
-@import 'style/path/path-1';
-@import '../media-query-order';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(1);
+@include dsfr.media-query-order;
+
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';

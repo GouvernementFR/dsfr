@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/dsfr';
+
 /// Return icon size from map
 /// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)
 ///
@@ -17,7 +19,7 @@
 
 @function get-icon-url($icon, $important: false) {
   $config: map-get($icons-config, $icon);
-  $url: url('#{$DIST-PATH}#{map-get($config, path)}');
+  $url: url('#{dsfr.get-dist-path()}#{map-get($config, path)}');
   @return important($url, $important);
 }
 
