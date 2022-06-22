@@ -3,6 +3,7 @@ let civility = locals.civility || {};
 const data = { 
     id:'civility-family-situation-select',
     type: civility.type,
+<<<<<<< HEAD
     label: getContent('form.legend.call-title'),
     placeholder: getContent('form.select.placeholder'),
     items: [
@@ -13,6 +14,18 @@ const data = {
         {value:'5', label: getContent('form.label.doctor')},
         {value:'6', label: getContent('form.label.principal')},
         {value:'7', label: getContent('form.label.no-answer')}
+=======
+    label: 'Situation familiale',
+    placeholder: 'Sélectionner une option',
+    items: [
+        {value:'1', label:'Recteur'},
+        {value:'2', label:'Inspecteur'},
+        {value:'3', label:'Proviseur'},
+        {value:'4', label:'Professeur'},
+        {value:'5', label:'Docteur'},
+        {value:'6', label:'Principal'},
+        {value:'7', label:'Sans réponse'}
+>>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
     ]
 }
 %>
