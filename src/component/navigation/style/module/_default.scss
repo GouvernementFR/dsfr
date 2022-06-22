@@ -46,13 +46,7 @@
             @include before {
               @include absolute(auto, null, 0, 0, 100%, 2px);
               @include margin-top(0);
-            }
-
-            /**
-             * Pour conserver le souligné de selection  par dessus la barre de mega-menu
-             */
-            &:not([aria-expanded="true"]) {
-              @include z-index(nav);
+              @include z-index(nav); //Pour conserver le souligné de selection  par dessus la barre de mega-menu
             }
           }
         }
@@ -69,6 +63,12 @@
     @include before('', block) {
       @include absolute(0, 0, 0 , 0, 100%, 100%);
       pointer-events: none;
+    }
+
+    #{ns(btn)},
+    #{ns(link)} {
+      @include min-height(12v);
+      @include min-height(auto, lg);
     }
 
     @include respond-from(lg) {

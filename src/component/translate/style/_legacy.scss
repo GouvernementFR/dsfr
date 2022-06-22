@@ -1,0 +1,13 @@
+////
+/// Translate Legacy
+/// @group translate
+////
+
+@include legacy(ie11) {
+  #{ns(translate)} {
+    &__btn {
+      @include icon-legacy(translate-2, sm, before);
+      @include icon-legacy(arrow-down-s-fill, sm, after);
+    }
+  }
+}

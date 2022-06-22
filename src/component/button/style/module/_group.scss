@@ -9,11 +9,6 @@
   @include vertical-btns-group;
   @include margin-x(-2v);
 
-  #{ns(btn)} {
-    @include margin-bottom(4v);
-    justify-content: center;
-  }
-
   /**
   * fr-btns-group--inline : aligne les boutons horizontalement dans tout les cas
   * fr-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)

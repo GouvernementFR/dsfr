@@ -23,8 +23,14 @@
   @include list {
     @include margin(0);
     @include padding(2v 0 6v);
-    @include padding(0, lg);
-    @include size(80v, null, lg);
+
+    @include respond-from(lg) {
+      @include width(80v);
+      @include max-height(calc(12v * 8)); // 8 liens max
+      overflow-y: auto;
+      @include padding(0);
+      @include margin-bottom(8v);
+    }
 
     & > *:first-child,
     & > *:hover,

@@ -1,0 +1,80 @@
+////
+/// Header Module : translate
+/// @group header
+////
+
+#{ns(translate)} {
+  position: relative;
+  @include z-index(translate);
+
+  #{ns(translate__btn)} {
+    @include nest-btn(md, left, translate-2, null, false);
+    @include font-weight(medium);
+    @include min-height(12v);
+    @include min-height(auto, lg);
+    @include width(100%);
+    @include width(auto, lg);
+    @include margin-bottom(4v, lg);
+
+    @include icon(arrow-down-s-fill, sm, after) {
+      @include margin-left(auto);
+      @include margin-left(1v, lg);
+      @include margin-right(-1v, lg);
+      transition: transform 0.3s;
+    }
+
+    &[aria-expanded=true] {
+      @include after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    @include respond-from(lg) {
+      @include text-style(sm);
+      @include icon-size(sm, before);
+      @include padding(1v 3v);
+    }
+  }
+
+  // Cache le langage courant en mobile
+  &__language {
+    white-space: nowrap;
+
+    &[aria-current] {
+      display: none;
+      @include respond-from(lg) {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__menu {
+    @include z-index(nav);
+    @include margin(0);
+    @include margin(-5v -4v 0, lg);
+  }
+
+  #{ns(nav)} {
+    &__item {
+      @include before(none);
+    }
+  }
+
+  #{ns(menu)} {
+    @include after {
+      @include shadow(md);
+    }
+
+    &__list {
+      @include width(auto);
+    }
+  }
+}
+
+#{ns-group(btns)} {
+  #{ns(translate)} {
+    &__menu {
+      @include margin(-5v -3v 0, lg);
+    }
+  }
+}

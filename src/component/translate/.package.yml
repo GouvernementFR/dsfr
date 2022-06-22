@@ -1,0 +1,12 @@
+id: translate
+title: Sélecteur de langue
+description:
+doc:
+wrapper: col-8
+style:
+  - core
+  - button
+  - navigation
+script:
+  - core
+  - navigation

@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Sélecteur de langue', './sample/translate.ejs', {}, true);  %>
+
+<%- sample('Sélecteur de langue sans bordure', './sample/translate.ejs', {translate: {button: {kind:4}}}, true);  %>

@@ -26,9 +26,18 @@
     }
 
     &__menu-links {
+      @include after {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
         @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+        @include color.no-box-shadow;
+      }
+
+      ul > li:last-child #{ns(btn)} {
+        @include color.no-box-shadow;
       }
     }
 
