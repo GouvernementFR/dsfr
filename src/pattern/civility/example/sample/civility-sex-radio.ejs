@@ -1,0 +1,16 @@
+<%
+const civility = { 
+    id:'civility-radio-sexe',
+    legend:'Sexe',
+    items:[
+        {
+            label: 'Feminin',
+        },
+        {
+            label: 'Masculin',
+        } 
+    ]
+};
+%>
+
+<%- include('../../template/ejs/civility', {civility: civility}); %>

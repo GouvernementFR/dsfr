@@ -1,0 +1,13 @@
+<%
+const civility = { 
+    id:'civility-title-radio',
+    legend:'Titre d’appel',
+    items: [
+        {label: 'Docteur',},
+        {label: 'Inspecteur',},
+        {label: 'Sans réponse',} 
+    ]
+}
+%>
+
+<%- include('../../template/ejs/civility', {civility: civility}); %>

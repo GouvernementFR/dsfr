@@ -1,0 +1,20 @@
+<%
+let civility = locals.civility || {};
+const data = { 
+    id:'civility-title-select',
+    type: civility.type,
+    label: 'Titre d’appel',
+    placeholder: 'Sélectionner une option',
+    items: [
+        {value:'1', label:'Célibataire'},
+        {value:'2', label:'Concubinage'},
+        {value:'3', label:'Pacsé'},
+        {value:'4', label:'Marié'},
+        {value:'5', label:'Veuf'},
+        {value:'6', label:'Divorcé'},
+        {value:'7', label:'Sans réponse'}
+    ]
+}
+%>
+
+<%- include('../../template/ejs/civility', {civility: data}); %>

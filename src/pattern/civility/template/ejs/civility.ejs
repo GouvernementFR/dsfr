@@ -1,0 +1,72 @@
+<%#
+# paramètres civility
+
+* civility (object, required) : objet contenant les paramètres
+
+* civility.id (string, required) : id du composant
+
+* civility.legend (string, optionnal) : légende du composant
+
+* civility.label (string, optionnal) : libellé du composant
+
+* civility.placeholder (string, optionnal) : placeholder du composant
+
+* civility.type (string) : si non défini, radio
+    ** radio : civilité bouton radio
+    ** select : civilité liste déroulante
+
+* civility.items (array, required) : tableau de données de chaque enfant du composant
+
+* civility.items[].value (string, required) : valeur du champ
+
+* civility.items[].label (string, required) : libellé du champ
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const civility = locals.civility || {};
+const type = civility.type || 'radio';
+const data = {};
+const componentPath = `${type}/example/sample/${type}`;
+
+if (type === 'radio') {
+  const elements = [];
+  if (civility.items && civility.items.length) {
+    civility.items.forEach((item, index) => {
+      elements.push({
+        path: componentPath,
+        data: {
+          radio: {
+            id: `${civility.id}-${index}`,
+            name: civility.id,
+            label: item.label || '',
+            value: item.value || '',
+            checked: index === 0,
+          }
+        }
+      });
+    });
+  }
+  data.elements = elements;
+} else {
+  data.placeholder = civility.placeholder || '';
+  data.elements = [
+    {
+      path: componentPath,
+      data: {
+        select: {
+          id: civility.id,
+          name: civility.id,
+          label: civility.label || '',
+          options: civility.items,
+        }
+      }
+    }
+  ];
+}
+
+data.legend = civility.legend || '';
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: data}) %>
