@@ -146,5 +146,23 @@ const randomContent = (id) => {
 };
 
 locals.randomContent = randomContent;
+
+const texts = JSON.parse(include(`../../lang/${locals.lang || 'fr'}.json`));
+
+const getText = (key) => {
+    const keys = key.split('.');
+    let text = texts;
+    for (const k of keys) text = text[k];
+    return text;
+};
+
+locals.getText = getText;
+
+const getSubdir = (key) => {
+  return getText(`subdir.${key}`);
+}
+
+locals.getSubdir = getSubdir;
+
 %>
 <%- include(entry); %>

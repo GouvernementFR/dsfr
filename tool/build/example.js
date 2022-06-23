@@ -21,14 +21,6 @@ function uniqueId (module) {
 }
 
 const buildExample = (pck) => {
-  /*
-  const pagePath = root('tool/example/decorator.ejs');
-  const page = fs.readFileSync(pagePath, {
-    encoding: 'utf8',
-    flag: 'r'
-  });
-  */
-
   const packages = getPackages();
 
   const files = {
@@ -42,8 +34,6 @@ const buildExample = (pck) => {
       nomodule: []
     }
   };
-
-  const up = pck.path.split('/').map(s => '../').join('');
 
   const requiredStyle = ['core', 'scheme', 'link', 'accordion', 'form', 'radio', 'modal', 'button', 'utility'];
   const exampleStyle = pck.example.style.map(id => packages.filter(i => i.id === id)[0].usage.style).flat();
@@ -60,11 +50,10 @@ const buildExample = (pck) => {
 
   style.forEach(id => {
     const p = packages.filter(i => i.id === id)[0];
-    const path = up + p.dist;
     if (p.style.files.length > 1) {
-      p.style.files.forEach(f => files.style[f].push(`${path}/${p.id}.${f}.css`));
+      p.style.files.forEach(f => files.style[f].push(`${p.dist}/${p.id}.${f}.css`));
     } else {
-      files.style.main.push(`${path}/${p.id}.css`);
+      files.style.main.push(`${p.dist}/${p.id}.css`);
     }
   });
 
@@ -81,9 +70,9 @@ const buildExample = (pck) => {
 
   script.forEach(id => {
     const p = packages.filter(i => i.id === id)[0];
-    const path = up + p.dist;
-    if (p.module) files.script.module.push(`${path}/${p.id}.module.js`);
-    if (p.nomodule) files.script.nomodule.push(`${path}/${p.id}.nomodule.js`);
+    // const path = up + p.dist;
+    if (p.module) files.script.module.push(`${p.dist}/${p.id}.module.js`);
+    if (p.nomodule) files.script.nomodule.push(`${p.dist}/${p.id}.nomodule.js`);
   });
 
   const options = {
@@ -91,14 +80,13 @@ const buildExample = (pck) => {
     ...pck,
     files: files,
     entry: root('tool/example/example.ejs'),
-    relativeRoot: '../'.repeat(pck.path.split('/').length),
     root: root.toString(),
     isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId
   };
 
-
+  renderExample(options, pck.example.root);
 
   /*
   const html = ejs.render(page, options);
@@ -109,21 +97,31 @@ const buildExample = (pck) => {
    */
 };
 
-const renderExample = (options, dest, tree) => {
-  if (tree.hasContent) {
-    ejs.renderFile(root('tool/example/decorator.ejs'), { ...options, entry: 'example' }, (error, str) => {
-      if (error) {
-        console.log(error);
-      } else {
-        const beautified = beautify(str, beautyOpts);
+const renderExample = (options, node) => {
+  if (node.hasContent) {
+    ejs.renderFile(root('tool/example/decorator.ejs'),
+      {
+        ...options,
+        entry: 'example',
+        src: node.src,
+        relativeRoot: '../'.repeat(node.dest.split('/').length - 1),
+        subdir: node.subdir || []
+      }, (error, str) => {
+        if (error) {
+          console.log(error);
+        } else {
+          const beautified = beautify(str, beautyOpts);
 
-        createFile(pck.example.file, beautified, true);
-        log(38, pck.example.file);
-      }
-    });
+          createFile(root(node.dest), beautified, true);
+          log(38, node.dest);
+        }
+      });
   }
 
-}
+  if (node.children) {
+    for (const child of node.children) renderExample(options, child);
+  }
+};
 
 const buildStandaloneExample = (pck) => {
   const page = fs.readFileSync(root(pck.standalone.example.src), {

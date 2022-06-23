@@ -22,5 +22,17 @@
   "brand-plus": {
     "value": "FranceConnect+",
     "type": "Bold"
+  },
+  "link-fr": {
+    "value": "Qu’est ce que FranceConnect ?"
+  },
+  "href-fr": {
+    "value": "https://franceconnect.gouv.fr/"
+  },
+  "link-plus-fr": {
+    "value": "Qu’est ce que FranceConnect+ ?"
+  },
+  "href-plus-fr": {
+    "value": "https://franceconnect.gouv.fr/france-connect-plus"
   }
 }

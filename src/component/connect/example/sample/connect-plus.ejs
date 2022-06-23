@@ -1,12 +1,13 @@
 <%
-const connect = locals.connect || {}
+const connect = locals.connect || {};
+const content = JSON.parse(include('../../content.json'));
 const data = {
   ...locals.connect,
   type: 'plus',
   link: connect.link || {
-    label: 'Qu’est ce que FranceConnect+ ?',
-    href: 'https://franceconnect.gouv.fr/france-connect-plus'
-  },
+    label: (connect.lang && content[`link-plus-${connect.lang}`]) ? content[`link-plus-${connect.lang}`].value : content['link-plus-fr'].value,
+    href: (connect.lang && content[`href-plus-${connect.lang}`]) ? content[`href-plus-${connect.lang}`].value : content['href-plus-fr'].value
+  }
 }
 
 %>

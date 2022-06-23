@@ -1,11 +1,18 @@
 const fs = require('fs');
 
 class ExampleNode {
-  constructor (dir, path = '') {
+  constructor (dir, relative = '') {
     this.dir = dir;
-    this.path = path;
-    const entries = fs.readdirSync(`${dir}/${path}`, { withFileTypes: true });
+    this.relative = relative;
+    this.path = relative ? `${dir}/${relative}` : dir;
+    this._hasContent = false;
     this._children = [];
+
+    if (fs.existsSync(this.path)) this._parse();
+  }
+
+  _parse () {
+    const entries = fs.readdirSync(this.path, { withFileTypes: true });
 
     for (const entry of entries) {
       switch (true) {
@@ -21,7 +28,7 @@ class ExampleNode {
   }
 
   addChild (name) {
-    const child = new ExampleNode(this.dir, `${this.path}/${name}`);
+    const child = new ExampleNode(this.dir, `${this.relative}${name}`);
     if (child.hasContent) this._children.push(child);
   }
 
@@ -32,7 +39,9 @@ class ExampleNode {
   get data () {
     const data = {
       hasContent: this._hasContent === true,
-      path: this.path
+      src: `${this.path}/index.ejs`,
+      dest: `${this.path.replace('/example', '').replace('src', 'example')}/index.html`,
+      subdir: this._children.map(child => child.relative)
     };
 
     if (this._children.length) data.children = this._children.map(child => child.data);

@@ -80,7 +80,7 @@ const analyse = (id, path, ascendants = []) => {
   config.filename = data.filename || data.id;
   config.inject = data.inject === true;
 
-  const example = new Example(type, `${absolute}/example`, data.example);
+  const example = new Example(type, `${path}/example`, data.example);
   config.example = example.data;
   console.log(JSON.stringify(config.example));
 

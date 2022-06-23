@@ -6,5 +6,24 @@
 <%- include('heading'); %>
 <% } %>
 
-<%- include(`${root}/tool/example/element.ejs`) %>
+<%
+switch(type) {
+case 'package':
+%>
+<%- include(root + 'tool/example/package', {type:undefined}); %>
+<%
+    break;
+
+case 'folder':
+%>
+<%- include(root + 'tool/example/folder', {type:undefined}); %>
+<%
+    break;
+}
+%>
+
+<% if (locals.subdir.length) { %><%- include('subdir'); %><% } %>
+
+
+
 

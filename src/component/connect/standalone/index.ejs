@@ -10,7 +10,7 @@
 <%
 function getSample (include) {
     return (title, path, data, snippet, layout, layoutData) => {
-        let component = include(path, JSON.parse(JSON.stringify(data)));
+        let component = include(path, {...data});
         %>
         <h4><%= title %></h4>
 
