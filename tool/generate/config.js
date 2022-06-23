@@ -74,6 +74,7 @@ const analyse = (id, path, ascendants = []) => {
   config.doc = data.doc;
   if (data.wrapper) config.wrapper = data.wrapper;
   config.prepend = data.prepend === true;
+  config.noHeading = data.noHeading === true;
   config.module = data.module !== false;
   config.nomodule = data.nomodule !== false;
   config.detached = data.detached === true;
@@ -82,7 +83,6 @@ const analyse = (id, path, ascendants = []) => {
 
   const example = new Example(type, `${path}/example`, data.example);
   config.example = example.data;
-  console.log(JSON.stringify(config.example));
 
   const dependencies = {
     style: [],
