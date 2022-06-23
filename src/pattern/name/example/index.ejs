@@ -1,0 +1,33 @@
+<%
+const sample = getSample(include);
+%>
+
+<div class="<%= prefix %>-container">
+    <%- section('Demande d’un nom et d’un prénom en France', '', 0); %>
+
+    <div class="<%= prefix %>-grid-row" >
+        <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-5 <%= prefix %>-mb-2w">    
+            <%- sample(
+                'DÉFAUT',
+                '../../../component/input/example/sample/inputs',
+                { 
+                    inputs: { 
+                        id: 'text',
+                        legend: false,
+                        items: ['Nom', 'Prénom']
+                    }
+                },
+                true,
+                './layout');
+            %>
+        </div>
+        <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-5 <%= prefix %>-col-offset-md-1 <%= prefix %>-mb-2w">
+            <%- sample(
+                'AVEC PRÉNOM DÉSACTIVÉ',
+                './sample/surname-disabled',
+                {},
+                true,
+                './layout');
+            %>
+        </div>
+</div>
