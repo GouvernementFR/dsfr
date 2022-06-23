@@ -43,10 +43,6 @@
 @include respond-from(lg) {
   @include legacy.is(ie11) {
     #{ns(header)} {
-      &__tools-links {
-        display: block;
-      }
-
       #{ns(modal)} {
         position: static;
         overflow: visible;

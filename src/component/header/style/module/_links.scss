@@ -32,13 +32,14 @@
     @include respond-from(lg) {
       @include display-flex(row, null, flex-end);
       gap: space(2v);
+      @include margin-bottom(-4v);
     }
 
     #{ns-group(btns)} {
       @include respond-from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
-        @include margin(0 -1v -4v);
+        @include margin(0 -1v);
 
         & > li {
           align-items: flex-start;
@@ -60,6 +61,11 @@
     #{ns(translate)} {
       @include margin-x(-2v);
       @include margin-x(0, lg);
+      @include margin-bottom(-4v, lg);
+
+      &__btn {
+        @include padding-x(2v);
+      }
     }
 
     #{ns-group(btns)} {

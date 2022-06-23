@@ -12,6 +12,10 @@
       @include padding-x(4v);
       @include margin-left(auto);
       flex: 1 0 auto;
+
+      &-links + #{ns(header__search)} {
+        @include margin-top(4v);
+      }
     }
 
     #{ns(header__search)} {

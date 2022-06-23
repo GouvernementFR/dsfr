@@ -61,10 +61,6 @@
   }
 
   #{ns(menu)} {
-    @include after {
-      @include shadow(md);
-    }
-
     &__list {
       @include width(auto);
     }
