@@ -35,7 +35,7 @@ const standalone = async (settings) => {
       if (!pck.standalone) continue;
       if (!pck.standalone.style) continue;
       log.info(pck.id.toLowerCase());
-      if (pck.standalone.content) {
+      if (pck.fontSubset) {
         try {
           await standaloneFontSubset(pck);
         } catch (e) {

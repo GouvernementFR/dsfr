@@ -2,7 +2,7 @@ const { createFile } = require('../utilities/file');
 const Readme = require('./readme');
 const root = require('../utilities/root');
 const log = require('../utilities/log');
-const { AggregatedI18n } = require('../config/i18n/aggregated-i18n');
+const { AggregatedI18n } = require('../classes/i18n/aggregated-i18n');
 
 const generateMarkdown = (pck, packages, locale) => {
   const i18n = new AggregatedI18n(pck.path, locale);

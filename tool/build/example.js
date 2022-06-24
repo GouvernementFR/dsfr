@@ -6,7 +6,7 @@ const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
 const { getPackages } = require('../utilities/config');
-const { AggregatedI18n } = require('../config/i18n/aggregated-i18n');
+const { AggregatedI18n } = require('../classes/i18n/aggregated-i18n');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -21,7 +21,7 @@ function uniqueId (module) {
   return `${module}-${count}`;
 }
 
-const buildExample = (pck, local) => {
+const buildExample = (pck, locale) => {
   const packages = getPackages();
 
   const files = {
@@ -71,7 +71,6 @@ const buildExample = (pck, local) => {
 
   script.forEach(id => {
     const p = packages.filter(i => i.id === id)[0];
-    // const path = up + p.dist;
     if (p.module) files.script.module.push(`${p.dist}/${p.id}.module.js`);
     if (p.nomodule) files.script.nomodule.push(`${p.dist}/${p.id}.nomodule.js`);
   });
@@ -80,7 +79,7 @@ const buildExample = (pck, local) => {
     ...global.config,
     ...pck,
     files: files,
-    entry: root('tool/example/example.ejs'),
+    entry: 'example',
     root: root.toString(),
     isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
@@ -102,14 +101,15 @@ const buildExample = (pck, local) => {
 
 const renderExample = (options, node) => {
   if (node.hasData) {
-    ejs.renderFile(root('tool/example/decorator.ejs'),
-      {
-        ...options,
-        entry: 'example',
-        src: node.src,
-        relativeRoot: '../'.repeat(node.dest.split('/').length - 1),
-        subdir: node.subdir || []
-      }, (error, str) => {
+    const opts = {
+      ...options,
+      src: node.src,
+      relativeRoot: '../'.repeat(node.dest.split('/').length - 1),
+      subdir: node.subdir || []
+    };
+
+    ejs.renderFile(root('tool/example/decorator.ejs'), opts
+      , (error, str) => {
         if (error) {
           console.log(error);
         } else {
@@ -126,21 +126,19 @@ const renderExample = (options, node) => {
   }
 };
 
-const buildStandaloneExample = (pck) => {
-  const page = fs.readFileSync(root(pck.standalone.example.src), {
-    encoding: 'utf8',
-    flag: 'r'
-  });
-  const html = ejs.render(page, {
+const buildStandaloneExample = (pck, locale) => {
+  const options = {
     ...pck,
-    path: root(pck.standalone.example.path),
+    entry: 'standalone',
     root: root.toString(),
-    isStandalone: true
-  });
-  const beautified = beautify(html, beautyOpts);
+    beautify: (html) => { return beautify(html, beautyOpts); },
+    isStandalone: true,
+    uniqueId: uniqueId,
+    i18n: new AggregatedI18n(pck.path, locale),
+    locale: locale
+  };
 
-  createFile(pck.standalone.example.dest, beautified, true);
-  log(38, pck.standalone.example.dest);
+  renderExample(options, pck.standalone.example.root);
 };
 
 module.exports = { buildExample, buildStandaloneExample };

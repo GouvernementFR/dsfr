@@ -1,9 +1,10 @@
 const fs = require('fs');
 
 class ExampleNode {
-  constructor (dir, relative = '') {
+  constructor (dir, relative = '', isStandalone) {
     this.dir = dir;
     this.relative = relative;
+    this.isStandalone = isStandalone;
     this.path = relative ? `${dir}/${relative}` : dir;
     this._hasData = false;
     this._children = [];
@@ -36,11 +37,17 @@ class ExampleNode {
     return this._hasData || this._children.some(child => child.hasData);
   }
 
+  get _dest () {
+    const replace = this.isStandalone ? 'standalone' : 'example';
+    const remove = this.isStandalone ? 'standalone/example' : 'example';
+    return `${this.path.replace(remove, '').replace('src', replace)}index.html`;
+  }
+
   get data () {
     const data = {
       hasData: this._hasData === true,
       src: `${this.path}/index.ejs`,
-      dest: `${this.path.replace('/example', '').replace('src', 'example')}/index.html`,
+      dest: this._dest,
       subdir: this._children.map(child => child.relative)
     };
 

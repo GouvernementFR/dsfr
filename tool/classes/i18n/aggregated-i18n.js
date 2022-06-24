@@ -3,8 +3,8 @@ const { I18n } = require('./i18n');
 class AggregatedI18n {
   constructor (path, locale = 'fr') {
     this.locale = locale;
-    this.main = new I18n('i18n');
-    this.secondary = new I18n(`${path}/i18n`);
+    this.main = new I18n('.');
+    this.secondary = new I18n(path);
 
     const mainDefault = this.main.data.locales.fr;
     const secondaryDefault = this.secondary.hasData ? this.secondary.data.locales.fr : {};
@@ -16,8 +16,6 @@ class AggregatedI18n {
       const secondaryLocalised = this.secondary.hasData && this.secondary.data.locales[locale] ? this.secondary.data.locales[locale] : {};
       this.locales[locale] = { ...mainLocalised, ...secondaryLocalised };
     }
-
-    console.log(this.locales);
   }
 
   getText (key) {

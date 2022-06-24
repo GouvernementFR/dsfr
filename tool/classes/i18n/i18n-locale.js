@@ -11,9 +11,18 @@ class I18nLocale {
     this.data = yaml.load(yml);
   }
 
+  getText (key) {
+    let text = this.data;
+    const keys = key.split('.');
+    for (const k of keys) {
+      text = text[k];
+      if (!text) return '';
+    }
+    return text;
+  }
+
   get entry () {
     return [this.locale, this.data];
-
   }
 }
 

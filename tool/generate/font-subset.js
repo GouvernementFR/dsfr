@@ -1,21 +1,14 @@
 const subsetFont = require('subset-font');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
+const { I18n } = require('../classes/i18n/i18n');
 const { readFile } = require('fs').promises;
 
 const standaloneFontSubset = async (pck) => {
-  const file = await readFile(root(pck.standalone.content.file));
-  const json = JSON.parse(file);
-
+  const i18n = new I18n(pck.path);
   const content = {};
 
-  for (const key in json) {
-    const text = json[key];
-    const type = text.type;
-    if (!type) continue;
-    if (content[type] === undefined) content[type] = '';
-    content[type] += text.value;
-  }
+  for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(key => i18n.getContent(key)).join('');
 
   let font = `$${pck.id}-subset: (
   `;
@@ -33,7 +26,7 @@ const standaloneFontSubset = async (pck) => {
   font += `
 );`;
 
-  createFile(root(pck.standalone.content.dest), font, true);
+  createFile(root(`.config/subsets/${pck.id}.scss`), font, true);
 };
 
 module.exports = { standaloneFontSubset };

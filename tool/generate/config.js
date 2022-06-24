@@ -5,8 +5,7 @@ const { createFile } = require('../utilities/file');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
-const { Example } = require('../config/example/example');
-const { I18n } = require('../config/i18n/i18n');
+const { Example } = require('../classes/example/example');
 
 const analyse = (id, path, ascendants = []) => {
   const absolute = root(path);
@@ -75,12 +74,13 @@ const analyse = (id, path, ascendants = []) => {
   config.doc = data.doc;
   if (data.wrapper) config.wrapper = data.wrapper;
   config.prepend = data.prepend === true;
-  config.noHeading = data.noHeading === true;
+  config.noHeading = data['no-heading'] === true;
   config.module = data.module !== false;
   config.nomodule = data.nomodule !== false;
   config.detached = data.detached === true;
   config.filename = data.filename || data.id;
   config.inject = data.inject === true;
+  config.fontSubset = data['font-subset'];
 
   const example = new Example(type, `${path}/example`, data.example);
   config.example = example.data;
@@ -100,28 +100,10 @@ const analyse = (id, path, ascendants = []) => {
   config.dependencies = dependencies;
   config.replace = replace;
   config.dist = data.dist ? data.dist : config.path.replace('src', 'dist').replace(data.id, data.filename || data.id);
-  // config.example.file = `${config.path.replace('src', 'example')}/index.html`;
-
-  /*
-  const i18n = new I18n(`${absolute}/i18n`);
-  if (i18n.hasData) config.i18n = i18n.data;
-   */
 
   if (config.standalone) {
-    config.standalone.dist = `standalone/${config.id}`;
-    /*
-    if (fs.existsSync(`${absolute}/content.json`)) {
-      config.standalone.content = {
-        file: `${config.path}/content.json`,
-        dest: `.config/subsets/${config.id}.scss`
-      };
-    }
-     */
-    config.standalone.example = {
-      src: `${config.path}/standalone/index.ejs`,
-      path: `${config.path}/example/index.ejs`,
-      dest: `standalone/${config.id}/index.html`
-    };
+    config.standalone.dist = config.path.replace('src', 'standalone').replace(data.id, data.filename || data.id);
+    config.standalone.example = new Example(type, `${path}/standalone/example`, data.example, true).data;
   }
 
   if (children) config.children = children;

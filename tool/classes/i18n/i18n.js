@@ -3,7 +3,7 @@ const { I18nLocale } = require('./i18n-locale');
 
 class I18n {
   constructor (path) {
-    this.path = path;
+    this.path = `${path}/i18n`;
     this._hasData = false;
     this.locales = [];
     if (fs.existsSync(this.path)) this.parse();
@@ -15,6 +15,10 @@ class I18n {
     for (const entry of entries) if (entry.isFile() && entry.name.indexOf('.yml') > -1) this.locales.push(new I18nLocale(entry.name, this.path));
 
     this._hasData = this.locales.length > 0;
+  }
+
+  getContent (key) {
+    return this.locales.map(locale => locale.getText(key)).join('');
   }
 
   get hasData () {

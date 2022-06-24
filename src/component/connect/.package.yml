@@ -7,3 +7,10 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/967868417
 wrapper: col-8
 style:
   - core
+font-subset:
+  Regular:
+    - login
+  Bold:
+    - brand
+    - brand-plus
+    - brand-agent
