@@ -5,7 +5,7 @@ readme:
   dependencies: Dépendances
 subdirs: Autres examples
 subdir:
-  artwork: Icônes illustratives
+  artwork: Pictogramme
   collapse: Panneau dépliant
   display: Affichage
   favicon: Icône de favori
