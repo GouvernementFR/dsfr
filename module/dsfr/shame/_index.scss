@@ -1,6 +1,5 @@
 @use '../media-query';
 
-
 @mixin media-query-order () {
   @each $bp, $limits in media-query.$breakpoints {
     @if $bp != xs {
