@@ -6,6 +6,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
 const { Example } = require('../config/example');
+const { I18n } = require('../config/i18n');
 
 const analyse = (id, path, ascendants = []) => {
   const absolute = root(path);
@@ -100,14 +101,22 @@ const analyse = (id, path, ascendants = []) => {
   config.replace = replace;
   config.dist = data.dist ? data.dist : config.path.replace('src', 'dist').replace(data.id, data.filename || data.id);
   // config.example.file = `${config.path.replace('src', 'example')}/index.html`;
+
+  /*
+  const i18n = new I18n(`${absolute}/i18n`);
+  if (i18n.hasData) config.i18n = i18n.data;
+   */
+
   if (config.standalone) {
     config.standalone.dist = `standalone/${config.id}`;
+    /*
     if (fs.existsSync(`${absolute}/content.json`)) {
       config.standalone.content = {
         file: `${config.path}/content.json`,
         dest: `.config/subsets/${config.id}.scss`
       };
     }
+     */
     config.standalone.example = {
       src: `${config.path}/standalone/index.ejs`,
       path: `${config.path}/example/index.ejs`,

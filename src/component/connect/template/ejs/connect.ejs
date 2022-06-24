@@ -18,7 +18,6 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% const content = JSON.parse(include('../../content.json')); %>
 
 <%
 const connect = locals.connect || {};
@@ -28,18 +27,18 @@ if (connect.id) connectAttrs.id = connect.id;
 
 connectClasses.push(prefix + '-connect');
 
-const login = (connect.lang && content[`login-${connect.lang}`]) ? content[`login-${connect.lang}`].value : content['login-fr'].value;
+const login = getText('login');
 
-let brand = content.brand.value;
+let brand = getText('brand');
 switch(connect.type) {
   case 'plus':
     connectClasses.push(prefix + '-connect--plus');
-    brand = content['brand-plus'].value;
+    brand = getText('brand-plus');
   break;
 
   case 'agent':
     connectClasses.push(prefix + '-connect--agent');
-    brand = content['brand-agent'].value;
+    brand = getText('brand-agent');
   break;
 }
 

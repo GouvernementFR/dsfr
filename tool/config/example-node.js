@@ -5,7 +5,7 @@ class ExampleNode {
     this.dir = dir;
     this.relative = relative;
     this.path = relative ? `${dir}/${relative}` : dir;
-    this._hasContent = false;
+    this._hasData = false;
     this._children = [];
 
     if (fs.existsSync(this.path)) this._parse();
@@ -17,7 +17,7 @@ class ExampleNode {
     for (const entry of entries) {
       switch (true) {
         case entry.isFile() && entry.name === 'index.ejs':
-          this._hasContent = true;
+          this._hasData = true;
           break;
 
         case entry.isDirectory():
@@ -29,16 +29,16 @@ class ExampleNode {
 
   addChild (name) {
     const child = new ExampleNode(this.dir, `${this.relative}${name}`);
-    if (child.hasContent) this._children.push(child);
+    if (child.hasData) this._children.push(child);
   }
 
-  get hasContent () {
-    return this._hasContent || this._children.some(child => child.hasContent);
+  get hasData () {
+    return this._hasData || this._children.some(child => child.hasData);
   }
 
   get data () {
     const data = {
-      hasContent: this._hasContent === true,
+      hasData: this._hasData === true,
       src: `${this.path}/index.ejs`,
       dest: `${this.path.replace('/example', '').replace('src', 'example')}/index.html`,
       subdir: this._children.map(child => child.relative)

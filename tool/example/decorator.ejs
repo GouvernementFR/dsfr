@@ -147,12 +147,16 @@ const randomContent = (id) => {
 
 locals.randomContent = randomContent;
 
-const texts = JSON.parse(include(`../../lang/${locals.lang || 'fr'}.json`));
-
-const getText = (key) => {
+const getText = (key, locale = locals.locale) => {
     const keys = key.split('.');
-    let text = texts;
-    for (const k of keys) text = text[k];
+    let text = locals.locales[locale];
+    for (const k of keys) {
+      text = text[k];
+      if (!text) {
+        if (locale === 'fr') throw new Error(`missing text ${key} in locale ${locale}`);
+        return getText(key, 'fr');
+      }
+    }
     return text;
 };
 

@@ -1,11 +1,10 @@
 <%
 const connect = locals.connect || {}
-const content = JSON.parse(include('../../content.json'));
 const data = {
   ...locals.connect,
   link: connect.link || {
-    label: (connect.lang && content[`link-${connect.lang}`]) ? content[`link-${connect.lang}`].value : content['link-fr'].value,
-    href: (connect.lang && content[`href-${connect.lang}`]) ? content[`href-${connect.lang}`].value : content['href-fr'].value
+    label: getText('link'),
+    href: getText('href')
   },
 }
 

@@ -1,0 +1,19 @@
+label: libellé
+label-short: libl
+label-long: libellé de l'élément
+readme:
+  dependencies: Dépendances
+subdirs: Autres examples
+subdir:
+  artwork: Icônes illustratives
+  collapse: Panneau dépliant
+  display: Affichage
+  favicon: Icône de favori
+  grid: Grille
+  icon: Icônes
+  media: Médias
+  reset: Réinitialisation
+  spacing: Espacements
+  typography: Typographie
+  utility: Utilitaires
+  imbrication: Imbrication dans d'autres composants

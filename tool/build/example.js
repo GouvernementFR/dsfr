@@ -6,6 +6,8 @@ const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
 const { getPackages } = require('../utilities/config');
+const { I18n } = require('../config/i18n');
+const { AggregatedI18n } = require('../config/aggregated-i18n');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -20,7 +22,7 @@ function uniqueId (module) {
   return `${module}-${count}`;
 }
 
-const buildExample = (pck) => {
+const buildExample = (pck, locale = 'fr') => {
   const packages = getPackages();
 
   const files = {
@@ -83,7 +85,9 @@ const buildExample = (pck) => {
     root: root.toString(),
     isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
-    uniqueId: uniqueId
+    uniqueId: uniqueId,
+    locales: new AggregatedI18n(pck.path, locale).locales,
+    locale: locale
   };
 
   renderExample(options, pck.example.root);
@@ -98,7 +102,7 @@ const buildExample = (pck) => {
 };
 
 const renderExample = (options, node) => {
-  if (node.hasContent) {
+  if (node.hasData) {
     ejs.renderFile(root('tool/example/decorator.ejs'),
       {
         ...options,

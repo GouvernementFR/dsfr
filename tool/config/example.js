@@ -9,9 +9,9 @@ class Example {
     };
 
     const root = new ExampleNode(path);
-    if (type === 'folder') root._hasContent = true;
+    if (type === 'folder') root._hasData = true;
 
-    if (root.hasContent) this._data.root = root.data;
+    if (root.hasData) this._data.root = root.data;
   }
 
   get data () {
