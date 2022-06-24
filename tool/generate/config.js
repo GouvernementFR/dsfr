@@ -5,8 +5,8 @@ const { createFile } = require('../utilities/file');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
-const { Example } = require('../config/example');
-const { I18n } = require('../config/i18n');
+const { Example } = require('../config/example/example');
+const { I18n } = require('../config/i18n/i18n');
 
 const analyse = (id, path, ascendants = []) => {
   const absolute = root(path);

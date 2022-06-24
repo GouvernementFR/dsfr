@@ -78,7 +78,7 @@ const build = async (settings) => {
     log.section('markdowns', true);
     for (const pck of packages) {
       try {
-        generateMarkdown(pck, packages);
+        generateMarkdown(pck, packages, settings.locale);
       } catch (e) {
         log.error(e);
       }

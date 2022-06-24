@@ -2,18 +2,12 @@ label: libellé
 label-short: libl
 label-long: libellé de l'élément
 readme:
-  dependencies: Dépendances
-subdirs: Autres examples
-subdir:
-  artwork: Pictogramme
-  collapse: Panneau dépliant
-  display: Affichage
-  favicon: Icône de favori
-  grid: Grille
-  icon: Icônes
-  media: Médias
-  reset: Réinitialisation
-  spacing: Espacements
-  typography: Typographie
-  utility: Utilitaires
-  imbrication: Imbrication dans d'autres composants
+  dependencies:
+    title: Dépendances
+  use:
+    title: Utilisation
+    description: Afin d’utiliser le composant `${id}`, il est nécessaire d’ajouter les fichiers de styles et de scripts présents dans le dossier dist dans l'ordre suivant :\n
+  doc:
+    title: Documentation
+    item: Consulter [la documentation](${url}) sur le module ${title}
+subdirs: Autres exemples

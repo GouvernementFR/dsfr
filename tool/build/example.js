@@ -6,8 +6,7 @@ const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
 const { getPackages } = require('../utilities/config');
-const { I18n } = require('../config/i18n');
-const { AggregatedI18n } = require('../config/aggregated-i18n');
+const { AggregatedI18n } = require('../config/i18n/aggregated-i18n');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -22,7 +21,7 @@ function uniqueId (module) {
   return `${module}-${count}`;
 }
 
-const buildExample = (pck, locale = 'fr') => {
+const buildExample = (pck, local) => {
   const packages = getPackages();
 
   const files = {
@@ -86,7 +85,7 @@ const buildExample = (pck, locale = 'fr') => {
     isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId,
-    locales: new AggregatedI18n(pck.path, locale).locales,
+    i18n: new AggregatedI18n(pck.path, locale),
     locale: locale
   };
 

@@ -1,6 +1,7 @@
 class Readme {
-  constructor (id) {
+  constructor (id, i18n) {
     this.id = id;
+    this.i18n = i18n;
     this.head = `# ${id}`;
   }
 
@@ -10,15 +11,15 @@ class Readme {
 
   depends (id) {
     if (this.dependencies === undefined) {
-      this.dependencies = '\n\n## Dépendances\n```shell\n';
+      this.dependencies = `\n\n## ${this.i18n.getText('readme.dependencies.title')}\n\`\`\`shell\n`;
       this.dependencies += `${this.id}\n`;
     }
     this.dependencies += `└─ ${id}\n`;
   }
 
   _initUse () {
-    this.usage = '\n\n## Utilisation\n';
-    this.usage += `Afin d’utiliser le composant \`${this.id}\`, il est nécessaire d’ajouter les fichiers de styles et de scripts présents dans le dossier dist dans l'ordre suivant :\n`;
+    this.usage = `\n\n## ${this.i18n.getText('readme.use.title')}\n`;
+    this.usage += `${this.i18n.getText('readme.use.description').replace('${id}', this.id)}\n`;
     this.usage += '```html\n<html>\n  <head>\n';
     this.styles = '';
     this.scripts = '';
@@ -38,9 +39,9 @@ class Readme {
 
   document (title, url) {
     if (this.documentation === undefined) {
-      this.documentation = '\n\n## Documentation';
+      this.documentation = `\n\n## ${this.i18n.getText('readme.doc.title')}`;
     }
-    this.documentation += `\n\nConsulter [la documentation](${url}) sur le module ${title}`;
+    this.documentation += `\n\n${this.i18n.getText('readme.doc.item').replace('${url}', url).replace('${title}', title)}`;
   }
 
   publish () {
