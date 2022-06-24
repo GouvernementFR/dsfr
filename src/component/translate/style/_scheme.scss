@@ -6,10 +6,6 @@
 @mixin _translate-scheme($legacy: false) {
   #{ns(translate)} {
     #{ns(translate)}__btn {
-      @include after {
-        @include scheme-element-text-color(action-high grey, (legacy:$legacy));
-      }
-
       &[aria-expanded="true"] {
         @include respond-from(lg) {
           @include scheme-element-text-color(active blue-france, (legacy: $legacy));

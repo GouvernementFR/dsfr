@@ -37,7 +37,7 @@ const collapseId = translate.collapseId || uniqueId('translate');
           if (lang.active) attrs['aria-current'] = true;
         %>
           <li>
-            <a class="<%= prefix %>-translate__language <%= prefix %>-nav__link" lang="<%- lang.locale %>" <%- includeAttrs(attrs); %> ><%= [lang.locale.toUpperCase(), lang.name].join(' - '); %></a>
+            <a class="<%= prefix %>-translate__language <%= prefix %>-nav__link" hreflang="<%- lang.locale %>" lang="<%- lang.locale %>" <%- includeAttrs(attrs); %> ><%= [lang.locale.toUpperCase(), lang.name].join(' - '); %></a>
           </li>
         <% } %>
       </ul>
