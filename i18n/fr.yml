@@ -1,9 +1,10 @@
 title: Nom du composant
 description: description du composant
 doc: lien vers la documentation
-label: libellé
-label-short: libl
-label-long: libellé de l'élément
+content:
+  label: libellé
+  label-short: libl
+  label-long: libellé de l'élément
 readme:
   dependencies:
     title: Dépendances
@@ -13,4 +14,5 @@ readme:
   doc:
     title: Documentation
     item: Consulter [la documentation](${url}) sur le module ${title}
-subdirs: Autres exemples
+subdir:
+  title: Autres exemples

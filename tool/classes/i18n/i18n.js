@@ -17,7 +17,7 @@ class I18n {
     this._hasData = this.locales.length > 0;
   }
 
-  getContent (key) {
+  joinTexts (key) {
     return this.locales.map(locale => locale.getText(key)).join('');
   }
 

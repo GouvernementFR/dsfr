@@ -1,5 +1,5 @@
-subdirs: Pages d'exemples
 subdir:
+  title: Pages d'exemples
   artwork: Pictogramme
   collapse: Panneau dépliant
   display: Affichage

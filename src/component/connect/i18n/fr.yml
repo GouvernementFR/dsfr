@@ -1,8 +1,14 @@
-login: S’identifier avec
-brand: FranceConnect
-brand-plus: FranceConnect+
-brand-agent: AgentConnect
-link: Qu’est ce que FranceConnect ?
-href: https://franceconnect.gouv.fr/
-link-plus: Qu’est ce que FranceConnect+ ?
-href-plus: https://franceconnect.gouv.fr/france-connect-plus
+title: Bouton FranceConnect
+description: |
+  Le bouton FranceConnect est un bouton spécifique permettant d'interagir avec l'API FranceConnect.
+  https://franceconnect.gouv.fr/
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/967868417
+content:
+  login: S’identifier avec
+  brand: FranceConnect
+  brand-plus: FranceConnect+
+  brand-agent: AgentConnect
+  link: Qu’est ce que FranceConnect ?
+  href: https://franceconnect.gouv.fr/
+  link-plus: Qu’est ce que FranceConnect+ ?
+  href-plus: https://franceconnect.gouv.fr/france-connect-plus

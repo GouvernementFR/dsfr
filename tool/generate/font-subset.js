@@ -8,7 +8,7 @@ const standaloneFontSubset = async (pck) => {
   const i18n = new I18n(pck.path);
   const content = {};
 
-  for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(key => i18n.getContent(key)).join('');
+  for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(key => i18n.joinTexts(key)).join('');
 
   let font = `$${pck.id}-subset: (
   `;

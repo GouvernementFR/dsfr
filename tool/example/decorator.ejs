@@ -159,5 +159,11 @@ const getSubdir = (key) => {
 
 locals.getSubdir = getSubdir;
 
+const getContent = (key) => {
+    return getText(`content.${key}`);
+}
+
+locals.getContent = getContent;
+
 %>
 <%- include(entry); %>
