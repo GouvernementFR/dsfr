@@ -44,9 +44,11 @@
 
       @if not $legacy {
         #{ns(footer__partners-link)} {
-          background: $white;
-          --hover-tint: #{$white};
-          --active-tint: #{$white};
+          &,
+          &:hover,
+          &:active {
+            background: $white;
+          }
         }
       }
     }
