@@ -4,6 +4,6 @@
         const dependencies = files.style[file];
         for (const dependency of dependencies) {
         %>
-<link href="<%= dependency %>" rel="stylesheet" file="<%= file %>">
+<link href="<%= relativeRoot %><%= dependency %>" rel="stylesheet" file="<%= file %>">
 <% }
  } %>

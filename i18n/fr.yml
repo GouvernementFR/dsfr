@@ -1,0 +1,16 @@
+title: Nom du composant
+description: description du composant
+doc: lien vers la documentation
+label: libellé
+label-short: libl
+label-long: libellé de l'élément
+readme:
+  dependencies:
+    title: Dépendances
+  use:
+    title: Utilisation
+    description: Afin d’utiliser le composant `${id}`, il est nécessaire d’ajouter les fichiers de styles et de scripts présents dans le dossier dist dans l'ordre suivant :\n
+  doc:
+    title: Documentation
+    item: Consulter [la documentation](${url}) sur le module ${title}
+subdirs: Autres exemples

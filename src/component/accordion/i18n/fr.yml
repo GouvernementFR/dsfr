@@ -1,0 +1,7 @@
+about:
+  title: Accordéon
+  description: L'accordéon permet aux utilisateurs d'afficher et de masquer des sections de contenu présentés dans une page.
+  doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/312082509/Accord+on+-+Accordion
+subdirs: Mises en situation
+subdir:
+  imbrication: Imbrication d'accordéons

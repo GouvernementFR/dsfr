@@ -1,12 +1,12 @@
 <%
-const connect = locals.connect || {}
+const connect = locals.connect || {};
 const data = {
   ...locals.connect,
   type: 'plus',
   link: connect.link || {
-    label: 'Qu’est ce que FranceConnect+ ?',
-    href: 'https://franceconnect.gouv.fr/france-connect-plus'
-  },
+    label: getText('link-plus'),
+    href: getText('href-plus')
+  }
 }
 
 %>

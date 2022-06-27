@@ -1,8 +1,8 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Bouton FranceConnect', './sample/connect-default', {}, true); %>
+<%- sample('Bouton FranceConnect', './sample/connect-default', {}, !locals.standalone); %>
 
-<%- sample('Bouton FranceConnect+', './sample/connect-plus', {}, true); %>
+<%- sample('Bouton FranceConnect+', './sample/connect-plus', {}, !locals.standalone); %>
 
 <%- //sample('Bouton AgentConnect', './sample/connect-default', {connect: {type: 'agent'}}, true); %>
 
