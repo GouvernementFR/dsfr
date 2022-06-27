@@ -11,6 +11,7 @@ data.body.brand = brand;
 
 if (header.operator !== undefined) {
   brand.operator = header.operator;
+  brand.operator.alt = contentPlaceholder(imgAltText + ' : nom de l\'opérateur ou du site serviciel');
   brand.logo.title = 'République<br>Française';
 }
 
