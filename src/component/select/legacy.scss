@@ -3,6 +3,10 @@
 /// @group select
 ////
 
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(2);
+@include dsfr.media-query-order;
+
 @import 'index';
 @import 'style/scheme';
 @import 'style/legacy';

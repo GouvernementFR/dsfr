@@ -3,6 +3,8 @@
 /// @group utility
 ////
 
-@import '../media-query-order';
-@import '../core/style/path/path-1';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(1);
+@include dsfr.media-query-order;
+
 @import 'icons/main';

@@ -3,5 +3,8 @@
 /// @group dsfr
 ////
 
-@import '../core/style/path/path-1';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(1);
+@include dsfr.media-query-order;
+
 @import '../legacy';

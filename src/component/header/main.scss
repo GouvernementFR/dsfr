@@ -7,8 +7,10 @@
   HEADER
 \* ˍˍˍˍˍˍˍˍˍ */
 
-@import '../../core/style/path/path-2';
-@import '../../media-query-order';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(2);
+@include dsfr.media-query-order;
+
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';

@@ -3,8 +3,10 @@
 /// @group icons
 ////
 
-@import '../../media-query-order';
-@import '../../core/style/path/path-2';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(2);
+@include dsfr.media-query-order;
+
 @import 'icons-buildings/legacy';
 @import 'icons-business/legacy';
 @import 'icons-communication/legacy';

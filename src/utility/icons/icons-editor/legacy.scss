@@ -3,8 +3,10 @@
 /// @group icons-editor
 ////
 
-@import '../../../core/style/path/path-3';
-@import '../../../media-query-order';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(3);
+@include dsfr.media-query-order;
+
 @import 'index';
 @import 'style/legacy';
 
