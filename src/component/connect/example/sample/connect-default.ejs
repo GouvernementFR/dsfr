@@ -2,13 +2,13 @@
 const connect = locals.connect || {}
 const data = {
   ...locals.connect,
-  login: getText('login'),
-  brand: getText('brand'),
-  brandPlus: getText('brand-plus'),
-  brandAgent: getText('brand-agent'),
+  login: getContent('login'),
+  brand: getContent('brand'),
+  brandPlus: getContent('brand-plus'),
+  brandAgent: getContent('brand-agent'),
   link: connect.link || {
-    label: getText('link'),
-    href: getText('href')
+    label: getContent('link'),
+    href: getContent('href')
   },
 }
 

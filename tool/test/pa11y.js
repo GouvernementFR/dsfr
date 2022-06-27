@@ -10,55 +10,57 @@ const displayResults = (results, darkmode) => {
   if (results.issues.length) {
     log.error(`Found ${results.issues.length} error(s)\n`);
 
-    results.issues.map(issue => {
+    results.issues.forEach(issue => {
       log.error(`Error found at ${issue.selector}\n${issue.context}\n ${issue.message}`);
     });
 
     process.exit(1);
   } else {
-    log(38, 'No errors');
+    log(33, 'No errors');
   }
 };
 
 // Run pa11y tests on each package
-const runPa11yTests = async (urls) => {
-  const browser = await Puppeteer.launch();
+const runPa11yTest = async (path, browser) => {
   const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label, [class*="--disabled"] > label';
 
-  const tests = urls.map(async (url) => {
-    const page = await browser.newPage();
+  log(38, `\n${path}`);
+  const page = await browser.newPage();
 
-    // pa11y
-    await Pa11y(url, {
-      browser,
-      page,
-      timeout: 120000,
-      ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
-      hideElements: hideElements
-    }).then(results => {
-      displayResults(results);
-    });
+  const url = `http://localhost:8081/${path}`;
 
-    // pa11y - dark mode
-    await Pa11y(url, {
-      browser,
-      page,
-      timeout: 120000,
-      hideElements: hideElements,
-      ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
-      actions: [
-        'check field #fr-radios-theme-dark'
-      ]
-    }).then(results => {
-      displayResults(results, true);
-    });
-
-    await page.close();
+  // pa11y
+  await Pa11y(url, {
+    browser,
+    page,
+    timeout: 120000,
+    ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
+    hideElements: hideElements
+  }).then(results => {
+    displayResults(results);
   });
 
-  await Promise.all(tests);
+  // pa11y - dark mode
+  await Pa11y(url, {
+    browser,
+    page,
+    timeout: 120000,
+    hideElements: hideElements,
+    ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
+    actions: [
+      'check field #fr-radios-theme-dark'
+    ]
+  }).then(results => {
+    displayResults(results, true);
+  });
 
-  await browser.close();
+  await page.close();
+};
+
+const getPackageNodeDest = (node) => {
+  const dest = [node.dest];
+  if (node.children) dest.push(...node.children.map(child => getPackageNodeDest(child)));
+  return dest;
 };
 
 const testPa11y = async (packages) => {
@@ -67,21 +69,17 @@ const testPa11y = async (packages) => {
   const server = app.listen('8081');
   app.use(Express.static('./'));
 
-  // Get all packages
-  // const packageUrls = packages.map(pck => {
-  //   return `http://localhost:8081/${pck.example.file}`;
-  // });
+  const publisheds = packages.filter(pck => !pck.draft);
 
-  // Get all Components packages
-  const componentPackages = packages.filter(pck => {
-    return pck.dist.includes('component');
-  });
-  const componentUrls = componentPackages.map(pck => {
-    return `http://localhost:8081/${pck.example.file}`;
-  });
+  const paths = publisheds.map(pck => {
+    return pck.example.root ? getPackageNodeDest(pck.example.root) : [];
+  }).flat(1000);
 
-  // Run tests on components
-  await runPa11yTests(componentUrls);
+  const browser = await Puppeteer.launch();
+
+  for (const path of paths) await runPa11yTest(path, browser);
+
+  await browser.close();
 
   // Close server
   server.close();

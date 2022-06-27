@@ -39,8 +39,8 @@ class ExampleNode {
 
   get _dest () {
     const replace = this.isStandalone ? 'standalone' : 'example';
-    const remove = this.isStandalone ? 'standalone/example' : 'example';
-    return `${this.path.replace(remove, '').replace('src', replace)}index.html`;
+    const remove = this.isStandalone ? '/standalone/example' : '/example';
+    return `${this.path.replace(remove, '').replace('src', replace)}/index.html`;
   }
 
   get data () {
