@@ -41,7 +41,7 @@ $underline-thickness: 0.0625em;
 
 @mixin link-underline() {
   background-image: var(--underline-img), var(--underline-img);
-  background-position: var(--underline-x) calc(100% - #{$underline-thickness}), var(--underline-x) calc(100% - #{$underline-thickness * 2});
+  background-position: var(--underline-x) 100%, var(--underline-x) calc(100% - #{$underline-thickness});
   background-repeat: no-repeat, no-repeat;
   transition: background-size 0s;
   background-size: var(--underline-hover-width) #{$underline-thickness * 2 }, var(--underline-idle-width) #{$underline-thickness };
