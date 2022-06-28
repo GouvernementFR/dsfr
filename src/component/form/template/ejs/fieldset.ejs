@@ -56,10 +56,12 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
 
 <div class="<%= prefix %>-form-group">
   <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
-    <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
-      <%= fieldset.legend %>
-      <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
-    </legend>
+    <% if (fieldset.legend !== undefined && !!fieldset.legend && fieldset.legend.length) { %>
+      <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
+        <%= fieldset.legend %>
+        <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
+      </legend>
+    <% } %>
     <div class="<%= prefix %>-fieldset__content">
       <%
         let path;
