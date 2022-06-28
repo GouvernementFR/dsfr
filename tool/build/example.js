@@ -127,7 +127,7 @@ const renderExample = (options, node) => {
 const buildStandaloneExample = (pck, locale) => {
   const options = {
     ...pck,
-    imgToBase64: path => imgToBase64(pck.standalone.example.src.substring(0, pck.standalone.example.root.src.indexOf('index.ejs')) + path),
+    imgToBase64: path => imgToBase64(`${pck.path}/${path}`),
     entry: 'standalone',
     root: root.toString(),
     beautify: (html) => { return beautify(html, beautyOpts); },
