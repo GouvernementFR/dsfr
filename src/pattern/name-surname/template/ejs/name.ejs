@@ -1,0 +1,50 @@
+<%#
+# paramètres name
+
+* name (object, required) : objet contenant les paramètres
+
+* name.id (string, required) : id du composant
+
+* name.legend (string, optionnal) : légende du composant
+
+* name.label (string, optionnal) : libellé du composant
+
+* name.placeholder (string, optionnal) : placeholder du composant
+
+* name.items (array, required) : tableau de données de chaque enfant du composant
+
+* name.items[].type (string) : type de champs à ajouter au composant, si non défini, input
+    ** input : champs de texte
+    ** checkbox : case à cocher
+
+* name.items[].value (string, required) : valeur du champ
+
+* name.items[].label (string, required) : libellé du champ
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const name = locals.name || {};
+const type = name.type || 'input';
+const data = {};
+const elements = [];
+if (name.items && name.items.length) {
+    name.items.forEach((item, index) => {
+        elements.push({
+            path: `${item.type}/template/ejs/${item.type}`,
+            data: {
+                radio: {
+                    id: `${name.id}-${index}`,
+                    name: name.id,
+                    label: item.label || '',
+                    value: item.value || '',
+                }
+            }
+        });
+    });
+}
+data.elements = elements;
+data.legend = name.legend || '';
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: data}) %>
