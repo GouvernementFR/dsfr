@@ -1,11 +1,11 @@
 <%
 const civility = { 
     id:'civility-title-radio',
-    legend:'Titre d’appel',
+    legend: getContent('form.legend.call-title'),
     items: [
-        {label: 'Docteur',},
-        {label: 'Inspecteur',},
-        {label: 'Sans réponse',} 
+        {label: getContent('form.label.doctor'),},
+        {label: getContent('form.label.inspector'),},
+        {label: getContent('form.label.no-answer'),} 
     ]
 }
 %>
