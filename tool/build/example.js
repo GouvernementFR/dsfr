@@ -1,6 +1,5 @@
 const root = require('../utilities/root');
 const ejs = require('ejs');
-const fs = require('fs');
 const global = require('../../package.json');
 const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
@@ -89,14 +88,6 @@ const buildExample = (pck, locale) => {
   };
 
   renderExample(options, pck.example.root);
-
-  /*
-  const html = ejs.render(page, options);
-  const beautified = beautify(html, beautyOpts);
-
-  createFile(pck.example.file, beautified, true);
-  log(38, pck.example.file);
-   */
 };
 
 const renderExample = (options, node) => {
