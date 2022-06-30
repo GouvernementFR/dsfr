@@ -5,6 +5,8 @@
 
 @use "sass:math";
 
+$media-settings: map-get($variables, media);
+
 // Ratio
 $ratio-scale: (
   32x9: math.div(32, 9),

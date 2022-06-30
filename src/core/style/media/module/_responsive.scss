@@ -3,25 +3,25 @@
 /// @group core
 ////
 
-#{ns(responsive-img)} {
-  @include size(100%, auto);
-}
-
-#{ns(responsive-vid)} {
-  @include relative;
-  @include size(100%);
-  @include aspect-ratio();
-  display: block;
-
-  @include fit-cover-center;
-
-  &__player, & > #{ns(consent-placeholder)} {
-    @include size(100%, 100%);
-    display: block;
-    border: 0;
+@if (map-get($media-settings, responsive)) {
+  #{ns(responsive-img)} {
+    @include size(100%, auto);
   }
 
-  & > #{ns(consent-placeholder)} {
-    @include media-overlay-cover;
+  #{ns(responsive-vid)} {
+    @include relative;
+    @include size(100%);
+    @include aspect-ratio();
+    display: block;
+
+    &__player, & > #{ns(consent-placeholder)} {
+      @include size(100%, 100%);
+      display: block;
+      border: 0;
+    }
+
+    & > #{ns(consent-placeholder)} {
+      @include media-overlay-cover;
+    }
   }
 }

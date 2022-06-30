@@ -34,6 +34,8 @@ $variables: (
     ),
   ),
   media: (
+    responsive: true,
+    fluid: true,
     ratio: (
       breakpoints: first,
     ),

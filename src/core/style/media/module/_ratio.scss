@@ -11,7 +11,11 @@
   }
 }
 
-#{class-start-with(ns(ratio, ''))} {
+#{class-start-with(ns('ratio', ''))} {
   @include fit-cover-center;
   @include size(100%);
+}
+
+#{selector-unify(iframe, #{class-start-with(ns('ratio', ''))})} {
+  object-fit: fill;
 }

@@ -1,7 +1,7 @@
 <%
 const content = locals.content || {};
 const data = {
-  vid: vidData(),
+  vid: { ...vidData(null, null, content.ratio || null)},
   caption: '© Légende de la vidéo',
   transcription: 'Label du bouton de la transcription',
   ...content,
