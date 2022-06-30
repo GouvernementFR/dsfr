@@ -74,7 +74,7 @@ const standalone = async (settings) => {
       if (pck.draft) continue;
       if (!pck.standalone) continue;
       try {
-        await buildStandaloneExample(pck);
+        await buildStandaloneExample(pck, settings.locale);
       } catch (e) {
         log.error(e);
       }

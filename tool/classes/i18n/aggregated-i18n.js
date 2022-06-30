@@ -11,7 +11,7 @@ class AggregatedI18n {
     this.locales = {};
     this.locales.fr = { ...mainDefault, ...secondaryDefault };
 
-    if (locale && locale !== 'fr') {
+    if (locale !== 'fr') {
       const mainLocalised = this.main.data.locales[locale] || {};
       const secondaryLocalised = this.secondary.hasData && this.secondary.data.locales[locale] ? this.secondary.data.locales[locale] : {};
       this.locales[locale] = { ...mainLocalised, ...secondaryLocalised };
