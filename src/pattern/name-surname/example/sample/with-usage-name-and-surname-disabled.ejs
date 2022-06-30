@@ -1,0 +1,35 @@
+<%
+const name = { 
+    id: uniqueId('with-usage-name-and-surname-disabled'),
+    label: getContent('sample.with-usage-name-and-surname-disabled'),
+    items:[
+        {
+            type: 'input',
+            label: getContent('name-surname.label.name'),
+            value: 'name'
+        },
+        {
+            type: 'input',
+            label: getContent('name-surname.label.usage-name'),
+            hint: getContent('name-surname.hint.usage-name'),
+            value: 'usage-name'
+        },
+        {
+            type: 'input',
+            label: getContent('name-surname.label.surname'),
+            value: 'surname',
+            disabled: true,
+        },
+        {
+            type: 'checkbox',
+            label: getContent('name-surname.label.no-surname'),
+            value: 'surname-disabled',
+            checked: true,
+            size: 'sm',
+            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const surnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { surnameFieldset.setAttribute('disabled', ''); } else { surnameFieldset.removeAttribute('disabled'); }`},
+        }
+    ]
+}
+%>
+
+<%- include('../../template/ejs/name-surname', {name: name}); %>

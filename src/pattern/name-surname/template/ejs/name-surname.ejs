@@ -1,0 +1,70 @@
+<%#
+# paramètres name
+
+* name (object, required) : objet contenant les paramètres
+
+* name.id (string, required) : id du composant
+
+* name.label (string, optionnal) : libellé du composant
+
+* name.placeholder (string, optionnal) : placeholder du composant
+
+* name.items (array, required) : tableau de données de chaque enfant du composant
+
+* name.items[].type (string) : type de champs à ajouter au composant, si non défini, input
+    ** input : champs de texte
+    ** checkbox : case à cocher
+
+* name.items[].value (string, required) : valeur du champ
+
+* name.items[].label (string, required) : libellé du champ
+
+* name.items[].hint (string, required) : indice du champ
+
+* name.items[].checked (string, required) : attribut checked du champ
+
+* name.items[].disabled (string, required) : attribut disabled du champ
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const name = locals.name || {};
+const fieldset = {};
+const elements = [];
+if (name.items && name.items.length) {
+    name.items.forEach((item, index) => {
+        const type = item.type || 'input';
+        elements.push({
+            path: 'form/template/ejs/fieldset',
+            data: {
+                fieldset: {
+                    disabled: item.disabled || undefined,
+                    attributes: {
+                        'aria-label': item.label,
+                    },
+                    elements: [{
+                        path: `${type}/template/ejs/${type}-group`,
+                        data: {
+                            [type]: {
+                                id: `${name.id}-${index}`,
+                                name: name.id,
+                                label: item.label || '',
+                                value: item.value || '',
+                                hint: item.hint || '',
+                                checked: item.checked || false,
+                                size: item.size || '',
+                                attributes: item.attributes || {},
+                            }
+                        }
+                    }]
+                }
+            }
+        });
+    });
+}
+fieldset.elements = elements;
+fieldset.id = name.id;
+fieldset.attributes = { 'aria-label': name.label,}
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>

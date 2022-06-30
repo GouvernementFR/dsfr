@@ -2,6 +2,12 @@
 const sample = getSample(include);
 %>
 
-<%- section('Demande d’un nom et d’un prénom en France', '', 0); %>
+<%- section(getContent('section.default'), '', 0); %>
 
-<%- sample('DÉFAUT', './sample/name-default', {}, true, './layout'); %>
+<%- sample(getContent('sample.default'), './sample/name-surname', {}, true, './layout'); %>
+
+<%- sample(getContent('sample.with-surname-disabled'), './sample/with-surname-disabled', {}, true, './layout'); %>
+
+<%- sample(getContent('sample.with-usage-name'), './sample/with-usage-name', {}, true, './layout'); %>
+
+<%- sample(getContent('sample.with-usage-name-and-surname-disabled'), './sample/with-usage-name-and-surname-disabled', {}, true, './layout'); %>

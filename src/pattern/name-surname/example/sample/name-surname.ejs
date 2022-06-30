@@ -1,0 +1,20 @@
+<%
+const name = { 
+    id: uniqueId('name-default'),
+    label: getContent('sample.default'),
+    items:[
+        {
+            type: 'input',
+            label: getContent('name-surname.label.name'),
+            value: 'name'
+        },
+        {
+            type: 'input',
+            label: getContent('name-surname.label.surname'),
+            value: 'surname'
+        } 
+    ]
+}
+%>
+
+<%- include('../../template/ejs/name-surname', {name: name}); %>
