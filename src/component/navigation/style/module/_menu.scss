@@ -17,6 +17,7 @@
   }
 
   @include respond-from(lg) {
+    pointer-events: none;
     @include absolute(100%);
   }
 
@@ -26,8 +27,7 @@
 
     @include respond-from(lg) {
       @include width(80v);
-      @include max-height(calc(12v * 8)); // 8 liens max
-      overflow-y: auto;
+      pointer-events: auto;
       @include padding(0);
       @include margin-bottom(8v);
     }

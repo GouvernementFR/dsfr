@@ -42,11 +42,13 @@
           min-height: spacing.space(14v);
           font-weight: normal;
 
+          @include z-index(auto);
+
           &[aria-current] {
             @include before {
               @include absolute(auto, null, 0, 0, 100%, 2px);
               @include margin-top(0);
-              @include z-index(nav); //Pour conserver le souligné de selection  par dessus la barre de mega-menu
+              @include z-index(menu-focus);
             }
           }
         }

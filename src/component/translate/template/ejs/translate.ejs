@@ -29,18 +29,8 @@ const collapseId = translate.collapseId || uniqueId('translate');
     <%- include('../../../button/template/ejs/button', {button:translateBtn}); %>
 
     <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= translate.collapseId %>">
-      <ul class="<%= prefix %>-menu__list">
-        <%
-        for (let i = 0; i < translate.languages.length; i++) {
-          const lang = translate.languages[i];
-          const attrs = {href:'#'};
-          if (lang.active) attrs['aria-current'] = true;
-        %>
-          <li>
-            <a class="<%= prefix %>-translate__language <%= prefix %>-nav__link" hreflang="<%- lang.locale %>" lang="<%- lang.locale %>" <%- includeAttrs(attrs); %> ><%= [lang.locale.toUpperCase(), lang.name].join(' - '); %></a>
-          </li>
-        <% } %>
-      </ul>
+
+        <%- include('languages.ejs', {languages: translate.languages}) %>
     </div>
   </div>
 </nav>

@@ -15,7 +15,6 @@
   $url: get-icon-url($icon, $important);
   @include _icon-pseudo($restrain) {
     background-image: $url;
-    @debug $url;
   }
 }
 
