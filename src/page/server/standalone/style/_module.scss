@@ -20,6 +20,11 @@ body {
   @include display-flex(column, center, center);
 }
 
+main {
+  @include display-flex(column, null, space-between);
+  flex: 1;
+}
+
 a {
   @include a-reset(true);
   outline-offset: 2px;
