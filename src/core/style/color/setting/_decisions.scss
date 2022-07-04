@@ -84,11 +84,20 @@ $scheme-decisions: (
     ),
     disabled: (
       neutral: soft
-    )
+    ),
+    raised: (
+      neutral: raised
+    ),
+    overlap: (
+      neutral: overlap
+    ),
+    raised: (
+      lifted: lifted
+    ),
   ),
   border: (
     default: (
-      neutral: light,
+      neutral: border,
       primary: main,
       accent: main
     ),
