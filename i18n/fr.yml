@@ -17,14 +17,6 @@ fieldset:
   legend: Une légende
 hint:
   default: Texte de description additionnel
-name-surname:
-  hint:
-    usage-name: Nom marital…
-  label:
-    name: Nom
-    surname: Prénom
-    usage-name: Nom d'usage
-    no-surname: Je n'ai pas de prénom
 site:
   name: '[Nom du site]'
 social:
