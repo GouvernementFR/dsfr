@@ -101,6 +101,12 @@ a {
   @include padding(0);
   @include margin-y(-2v);
 
+  #{ns(btn)} {
+    > span {
+      @include display-flex(row, center, null, null, true);
+    }
+  }
+
   &--inline {
     @include display-flex(row, null, null, wrap);
     @include margin-x(-2v);
