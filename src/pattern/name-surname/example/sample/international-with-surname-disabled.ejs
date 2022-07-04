@@ -1,8 +1,19 @@
 <%
 const name = { 
-    id: uniqueId('with-surname-disabled'),
-    label: getText('name-surname.sample.with-surname-disabled'),
+    id: uniqueId('name-surname-international'),
+    label: getText('name-surname.sample'),
     items:[
+        {
+            type: 'select',
+            template: 'select-group',
+            label: getText('name-surname.label.country'),
+            placeholder: getText('name-surname.option.placeholder'),
+            options: [
+                {value:'1', label: getText('name-surname.country.england')},
+                {value:'2', label: getText('name-surname.country.france')},
+                {value:'3', label: getText('name-surname.country.japan')},
+            ]
+        },
         {
             type: 'input',
             template: 'input-group',

@@ -1,0 +1,38 @@
+<%
+const name = { 
+    id: uniqueId('with-button'),
+    label: getText('name-surname.sample.with-button'),
+    items:[
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('name-surname.label.name'),
+            value: 'name'
+        },
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('name-surname.label.surname'),
+            value: 'surname'
+        },
+        {
+            type: 'button',
+            template: 'button',
+            label: getText('name-surname.label.add-surname'),
+            kind: 3,
+            size: 'sm',
+        },
+        {
+            type: 'checkbox',
+            template: 'checkbox-group',
+            label: getText('name-surname.label.no-surname'),
+            value: 'surname-disabled',
+            checked: false,
+            size: 'sm',
+            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const surnameFieldset = formGroup && formGroup.previousElementSibling.previousElementSibling.firstElementChild; const buttonFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { surnameFieldset.setAttribute('disabled', ''); buttonFieldset.setAttribute('disabled', ''); } else { surnameFieldset.removeAttribute('disabled'); buttonFieldset.removeAttribute('disabled'); }`},
+        }
+    ]
+}
+%>
+
+<%- include('../../template/ejs/name-surname', {name: name}); %>

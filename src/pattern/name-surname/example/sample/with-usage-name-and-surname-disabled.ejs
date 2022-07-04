@@ -1,28 +1,32 @@
 <%
 const name = { 
     id: uniqueId('with-usage-name-and-surname-disabled'),
-    label: getContent('sample.with-usage-name-and-surname-disabled'),
+    label: getText('name-surname.sample.with-usage-name-and-surname-disabled'),
     items:[
         {
             type: 'input',
-            label: getContent('name-surname.label.name'),
+            template: 'input-group',
+            label: getText('name-surname.label.name'),
             value: 'name'
         },
         {
             type: 'input',
-            label: getContent('name-surname.label.usage-name'),
-            hint: getContent('name-surname.hint.usage-name'),
+            template: 'input-group',
+            label: getText('name-surname.label.usage-name'),
+            hint: getText('name-surname.hint.usage-name'),
             value: 'usage-name'
         },
         {
             type: 'input',
-            label: getContent('name-surname.label.surname'),
+            template: 'input-group',
+            label: getText('name-surname.label.surname'),
             value: 'surname',
             disabled: true,
         },
         {
             type: 'checkbox',
-            label: getContent('name-surname.label.no-surname'),
+            template: 'checkbox-group',
+            label: getText('name-surname.label.no-surname'),
             value: 'surname-disabled',
             checked: true,
             size: 'sm',

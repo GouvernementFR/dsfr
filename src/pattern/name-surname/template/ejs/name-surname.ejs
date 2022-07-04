@@ -43,7 +43,7 @@ if (name.items && name.items.length) {
                         'aria-label': item.label,
                     },
                     elements: [{
-                        path: `${type}/template/ejs/${type}-group`,
+                        path: `${type}/template/ejs/${item.template}`,
                         data: {
                             [type]: {
                                 id: `${name.id}-${index}`,
@@ -54,6 +54,9 @@ if (name.items && name.items.length) {
                                 checked: item.checked || false,
                                 size: item.size || '',
                                 attributes: item.attributes || {},
+                                kind: item.kind || '',
+                                options: item.options || [],
+                                placeholder: item.placeholder || '',
                             }
                         }
                     }]

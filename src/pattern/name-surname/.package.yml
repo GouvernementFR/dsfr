@@ -9,4 +9,5 @@ example:
   style:
     - input
     - checkbox
+    - select
     

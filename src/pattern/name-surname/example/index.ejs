@@ -2,12 +2,22 @@
 const sample = getSample(include);
 %>
 
-<%- section(getContent('section.default'), '', 0); %>
+<%- section(getText('name-surname.section.default'), '', 0); %>
 
-<%- sample(getContent('sample.default'), './sample/name-surname', {}, true, './layout'); %>
+<%- sample(getText('name-surname.sample.default'), './sample/name-surname', {}, true, './layout'); %>
 
-<%- sample(getContent('sample.with-surname-disabled'), './sample/with-surname-disabled', {}, true, './layout'); %>
+<%- sample(getText('name-surname.sample.with-surname-disabled'), './sample/with-surname-disabled', {}, true, './layout'); %>
 
-<%- sample(getContent('sample.with-usage-name'), './sample/with-usage-name', {}, true, './layout'); %>
+<%- sample(getText('name-surname.sample.with-usage-name'), './sample/with-usage-name', {}, true, './layout'); %>
 
-<%- sample(getContent('sample.with-usage-name-and-surname-disabled'), './sample/with-usage-name-and-surname-disabled', {}, true, './layout'); %>
+<%- sample(getText('name-surname.sample.with-usage-name-and-surname-disabled'), './sample/with-usage-name-and-surname-disabled', {}, true, './layout'); %>
+
+<%- sample(getText('name-surname.sample.with-button'), './sample/with-button', {}, true, './layout'); %>
+
+<%- sample(getText('name-surname.sample.with-button-and-surname-disabled'), './sample/with-button-and-surname-disabled', {}, true, './layout'); %>
+
+<%- section(getText('name-surname.section.international'), '', 0); %>
+
+<%- sample(getText('name-surname.sample.default'), './sample/name-surname-international', {}, true, './layout'); %>
+
+<%- sample(getText('name-surname.sample.with-surname-disabled'), './sample/international-with-surname-disabled', {}, true, './layout'); %>

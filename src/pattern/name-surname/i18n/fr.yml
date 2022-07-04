@@ -2,13 +2,29 @@ id: name-surname
 title: Modèle de bloc de nom et prénom
 description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
 doc:
-content:
+name-surname:
+  hint:
+    usage-name: Nom marital…
   label:
-    test: test
+    add-surname: Ajouter un prénom
+    country: Pays
+    name: Nom
+    surname: Prénom
+    usage-name: Nom d'usage
+    no-surname: Je n'ai pas de prénom
+  option:
+    placeholder: Sélectionner une option
+  country:
+    japan: Japon
+    france: France
+    england: Angleterre
   sample:
     default: DÉFAUT
+    with-button: AVEC BOUTON
+    with-button-and-surname-disabled: AVEC BOUTON + PRÉNOM DÉSACTIVÉ
+    with-surname-disabled: AVEC PRÉNOM DÉSACTIVÉ
     with-usage-name: AVEC NOM D’USAGE
     with-usage-name-and-surname-disabled: AVEC NOM D’USAGE + PRÉNOM DÉSACTIVÉ
-    with-surname-disabled: AVEC PRÉNOM DÉSACTIVÉ
   section:
     default: Demande d’un nom et d’un prénom en France
+    international: Demande d’un nom et d’un prénom à l’international

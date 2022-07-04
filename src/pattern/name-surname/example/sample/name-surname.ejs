@@ -1,16 +1,18 @@
 <%
 const name = { 
     id: uniqueId('name-default'),
-    label: getContent('sample.default'),
+    label: getText('name-surname.sample.default'),
     items:[
         {
             type: 'input',
-            label: getContent('name-surname.label.name'),
+            template: 'input-group',
+            label: getText('name-surname.label.name'),
             value: 'name'
         },
         {
             type: 'input',
-            label: getContent('name-surname.label.surname'),
+            template: 'input-group',
+            label: getText('name-surname.label.surname'),
             value: 'surname'
         } 
     ]
