@@ -11,10 +11,11 @@ const { generateMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 const generateConfig = require('../generate/config');
 const clean = require('../utilities/clean');
+const { I18n } = require('../classes/i18n/i18n');
+const { Config } = require('../classes/config/config');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
-
   if (settings.clean) {
     clean();
     await generateConfig();
@@ -23,9 +24,12 @@ const build = async (settings) => {
     copyAssets();
   }
 
+  await I18n.merge();
   concatenate();
 
-  const packages = getPackages().filter(pck => settings.packages && settings.packages.length ? settings.packages.indexOf(pck.id) > -1 : true);
+  const config = await Config.get();
+
+  const packages = config.getPackagesByIds(settings.packages);
 
   if (settings.test) {
     log.section('lint');
@@ -78,7 +82,7 @@ const build = async (settings) => {
     log.section('markdowns', true);
     for (const pck of packages) {
       try {
-        generateMarkdown(pck, packages, settings.locale);
+        await generateMarkdown(pck, settings.locale);
       } catch (e) {
         log.error(e);
       }

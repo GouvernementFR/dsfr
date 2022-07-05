@@ -147,23 +147,23 @@ const randomContent = (id) => {
 
 locals.randomContent = randomContent;
 
-const getText = (key) => {
-  return locals.i18n.getText(key);
+const getText = (key, id, preventError) => {
+  return locals.i18n.getText(key, id, preventError);
 };
 
 locals.getText = getText;
 
+const hasText = (key, id, withFallback) => {
+    return locals.i18n.hasText(key, id, withFallback);
+};
+
+locals.hasText = hasText;
+
 const getSubdir = (key) => {
-  return getText(`subdir.${key}`);
+  return getText(`subdir.${key}`, id);
 }
 
 locals.getSubdir = getSubdir;
-
-const getContent = (key) => {
-    return getText(`content.${key}`);
-}
-
-locals.getContent = getContent;
 
 %>
 <%- include(entry); %>

@@ -5,10 +5,10 @@ const { I18n } = require('../classes/i18n/i18n');
 const { readFile } = require('fs').promises;
 
 const standaloneFontSubset = async (pck) => {
-  const i18n = new I18n(pck.path);
+  const i18n = new I18n();
   const content = {};
 
-  for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(key => i18n.joinTexts(key)).join('');
+  for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(item => (typeof item === 'string' ? i18n.joinTexts(item, pck.id) : i18n.joinTexts(item.key, item.id))).join('');
 
   let font = `$${pck.id}-subset: (
   `;
