@@ -16,8 +16,6 @@ const { Config } = require('../classes/config/config');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
-  const config = await Config.get();
-
   if (settings.clean) {
     clean();
     await generateConfig();
@@ -28,6 +26,8 @@ const build = async (settings) => {
 
   await I18n.merge();
   concatenate();
+
+  const config = await Config.get();
 
   const packages = config.getPackagesByIds(settings.packages);
 
