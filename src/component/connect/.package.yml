@@ -9,8 +9,8 @@ style:
   - core
 font-subset:
   Regular:
-    - content.login
+    - default.login
   Bold:
-    - content.brand
-    - content.brand-plus
-    - content.brand-agent
+    - default.brand
+    - plus.brand
+    - agent.brand

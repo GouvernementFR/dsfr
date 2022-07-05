@@ -1,10 +1,7 @@
-title: Nom du composant
-description: description du composant
-doc: lien vers la documentation
-content:
-  label: libellé
-  label-short: libl
-  label-long: libellé de l'élément
+label:
+  default: libellé
+  short: libl
+  long: libellé de l'élément
 readme:
   dependencies:
     title: Dépendances

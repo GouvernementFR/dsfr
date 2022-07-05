@@ -60,4 +60,4 @@ class Readme {
   }
 }
 
-module.exports = Readme;
+module.exports = { Readme };
