@@ -2,12 +2,7 @@
 const sample = getSample(include);
 %>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<%- sample(getContent('sample.title.sex'), './sample/civility-sex-radio', {}, true, './layout'); %>
-=======
 <%- sample(getText('sample.sex', 'civility'), './sample/civility-sex-radio', {}, true, './layout'); %>
->>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
 
 <%- sample(getText('sample.family-situation', 'civility'), './sample/civility-family-situation-select', {}, true, './layout'); %>
 
@@ -17,21 +12,4 @@ const sample = getSample(include);
 
 <%- section(null, getText('section.preference', 'civility'), 0) %>
 
-<<<<<<< HEAD
-<%- sample(getContent('sample.title.call-title'), './sample/civility-title-select', {civility: {type: 'select'}}, true, './layout'); %>
-=======
-<%- sample('Demande du sexe', './sample/civility-sex-radio', {}, true, './layout'); %>
-
-<%- sample('Demande de situation familiale', './sample/civility-family-situation-select', {civility: {type: 'select'}}, true, './layout'); %>
-
-<%- section(null, 'Les boutons radios sont recommandés lorsque l’utilisateur doit choisir un élément parmi 2 à 5 choix possibles.', 0) %>
-
-<%- sample('Demande du titre d’appel', './sample/civility-title-radio',{}, true,'./layout'); %>
-
-<%- section(null, 'Au delà de 5 choix ou lorsque l’espace n’est pas suffisant, il est préférable d\'utiliser une liste déroulante.', 0) %>
-
-<%- sample('Demande du titre d’appel', './sample/civility-title-select', {civility: {type: 'select'}}, true, './layout'); %>
->>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
-=======
 <%- sample(getText('sample.call-title', 'civility'), './sample/civility-title-select', {}, true, './layout'); %>
->>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
