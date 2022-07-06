@@ -1,0 +1,23 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section(getText('section.default', 'name-firstname'), '', 0); %>
+
+<%- sample(getText('sample.default', 'name-firstname'), './sample/name-firstname', {}, true, './layout'); %>
+
+<%- sample(getText('sample.firstname-disabled', 'name-firstname'), './sample/firstname-disabled', {}, true, './layout'); %>
+
+<%- sample(getText('sample.usage-name', 'name-firstname'), './sample/usage-name', {}, true, './layout'); %>
+
+<%- sample(getText('sample.usage-name-and-firstname-disabled', 'name-firstname'), './sample/usage-name-and-firstname-disabled', {}, true, './layout'); %>
+
+<%- sample(getText('sample.button.default', 'name-firstname'), './sample/button', {}, true, './layout'); %>
+
+<%- sample(getText('sample.button.firstname-disabled', 'name-firstname'), './sample/button-and-firstname-disabled', {}, true, './layout'); %>
+
+<%- section(getText('section.international', 'name-firstname'), '', 0); %>
+
+<%- sample(getText('sample.default', 'name-firstname'), './sample/international-name-firstname', {}, true, './layout'); %>
+
+<%- sample(getText('sample.firstname-disabled', 'name-firstname'), './sample/international-and-firstname-disabled', {}, true, './layout'); %>

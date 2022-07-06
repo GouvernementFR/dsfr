@@ -1,0 +1,41 @@
+<%
+const name = { 
+    id: uniqueId('name-firstname-international'),
+    label: getText('sample', 'name-firstname'),
+    items:[
+        {
+            type: 'select',
+            template: 'select-group',
+            label: getText('label.country', 'name-firstname'),
+            placeholder: getText('option.placeholder', 'select'),
+            options: [
+                {value:'1', label: getText('country.england', 'name-firstname')},
+                {value:'2', label: getText('country.france', 'name-firstname')},
+                {value:'3', label: getText('country.japan', 'name-firstname')},
+            ]
+        },
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('label.name', 'name-firstname'),
+            value: 'name'
+        },
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('label.firstname', 'name-firstname'),
+            value: 'firstname',
+        },
+        {
+            type: 'checkbox',
+            template: 'checkbox-group',
+            label: getText('label.no-firstname', 'name-firstname'),
+            value: 'firstname-disabled',
+            size: 'sm',
+            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); }`},
+        } 
+    ]
+}
+%>
+
+<%- include('../../template/ejs/name-firstname', {name: name}); %>

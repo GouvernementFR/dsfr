@@ -1,0 +1,39 @@
+<%
+const name = { 
+    id: uniqueId('usage-name-and-firstname-disabled'),
+    label: getText('sample.usage-name-and-firstname-disabled', 'name-firstname'),
+    items:[
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('label.name', 'name-firstname'),
+            value: 'name'
+        },
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('label.usage-name', 'name-firstname'),
+            hint: getText('hint.usage-name', 'name-firstname'),
+            value: 'usage-name'
+        },
+        {
+            type: 'input',
+            template: 'input-group',
+            label: getText('label.firstname', 'name-firstname'),
+            value: 'firstname',
+            disabled: true,
+        },
+        {
+            type: 'checkbox',
+            template: 'checkbox-group',
+            label: getText('label.no-firstname', 'name-firstname'),
+            value: 'firstname-disabled',
+            checked: true,
+            size: 'sm',
+            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); }`},
+        }
+    ]
+}
+%>
+
+<%- include('../../template/ejs/name-firstname', {name: name}); %>
