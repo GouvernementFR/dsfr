@@ -3,16 +3,21 @@ const sample = getSample(include);
 %>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%- sample(getContent('sample.title.sex'), './sample/civility-sex-radio', {}, true, './layout'); %>
+=======
+<%- sample(getText('sample.sex', 'civility'), './sample/civility-sex-radio', {}, true, './layout'); %>
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
 
-<%- sample(getContent('sample.title.family-situation'), './sample/civility-family-situation-select', {civility: {type: 'select'}}, true, './layout'); %>
+<%- sample(getText('sample.family-situation', 'civility'), './sample/civility-family-situation-select', {}, true, './layout'); %>
 
-<%- section(null, getContent('section.title.recommandation'), 0) %>
+<%- section(null, getText('section.recommandation', 'civility'), 0) %>
 
-<%- sample(getContent('sample.title.call-title'), './sample/civility-title-radio',{}, true,'./layout'); %>
+<%- sample(getText('sample.call-title', 'civility'), './sample/civility-title-radio',{}, true,'./layout'); %>
 
-<%- section(null, getContent('section.title.preference'), 0) %>
+<%- section(null, getText('section.preference', 'civility'), 0) %>
 
+<<<<<<< HEAD
 <%- sample(getContent('sample.title.call-title'), './sample/civility-title-select', {civility: {type: 'select'}}, true, './layout'); %>
 =======
 <%- sample('Demande du sexe', './sample/civility-sex-radio', {}, true, './layout'); %>
@@ -27,3 +32,6 @@ const sample = getSample(include);
 
 <%- sample('Demande du titre d’appel', './sample/civility-title-select', {civility: {type: 'select'}}, true, './layout'); %>
 >>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
+=======
+<%- sample(getText('sample.call-title', 'civility'), './sample/civility-title-select', {}, true, './layout'); %>
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)

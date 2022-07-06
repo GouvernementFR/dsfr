@@ -1,5 +1,6 @@
 <%
 const civility = { 
+<<<<<<< HEAD
     id:'civility-title-radio',
 <<<<<<< HEAD
     legend: getContent('form.legend.call-title'),
@@ -14,6 +15,26 @@ const civility = {
         {label: 'Inspecteur',},
         {label: 'Sans réponse',} 
 >>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
+=======
+    id: uniqueId('civility-title-radio'),
+    legend: getText('legend.call-title', 'civility'),
+    items: [
+        {
+            type: 'radio',
+            template: 'radio-group',
+            label: getText('option.title.doctor', 'civility')
+        },
+        {
+            type: 'radio',
+            template: 'radio-group',
+            label: getText('option.title.inspector', 'civility')
+        },
+        {
+            type: 'radio',
+            template: 'radio-group',
+            label: getText('option.no-answer', 'radio')
+        }
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
     ]
 }
 %>

@@ -1,6 +1,7 @@
 <%
 let civility = locals.civility || {};
 const data = { 
+<<<<<<< HEAD
     id:'civility-family-situation-select',
     type: civility.type,
 <<<<<<< HEAD
@@ -26,6 +27,26 @@ const data = {
         {value:'6', label:'Principal'},
         {value:'7', label:'Sans réponse'}
 >>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
+=======
+    id: uniqueId('civility-family-situation-select'),
+    label: getText('sample.call-title', 'civility'),
+    items: [
+        {
+            type: 'select',
+            label: getText('legend.call-title', 'civility'),
+            template: 'select-group',
+            placeholder: getText('option.placeholder', 'select'),
+            options: [
+                {value:'1', label: getText('option.title.rector', 'civility')},
+                {value:'2', label: getText('option.title.inspector', 'civility')},
+                {value:'3', label: getText('option.title.provisor', 'civility')},
+                {value:'4', label: getText('option.title.professor', 'civility')},
+                {value:'5', label: getText('option.title.doctor', 'civility')},
+                {value:'6', label: getText('option.title.principal', 'civility')},
+                {value:'7', label: getText('option.no-answer', 'select')}
+            ]
+        }
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
     ]
 }
 %>

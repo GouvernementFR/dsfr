@@ -1,6 +1,7 @@
 <%
 let civility = locals.civility || {};
 const data = { 
+<<<<<<< HEAD
     id:'civility-title-select',
     type: civility.type,
 <<<<<<< HEAD
@@ -26,6 +27,26 @@ const data = {
         {value:'6', label:'Divorcé'},
         {value:'7', label:'Sans réponse'}
 >>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
+=======
+    id: uniqueId('civility-title-select'),
+    label: getText('sample.call-title', 'civility'),
+    items: [
+        {
+            type: 'select',
+            template: 'select-group',
+            label: getText('legend.family-situation', 'civility'),
+            placeholder: getText('option.placeholder', 'select'),
+            options: [
+                {value:'1', label: getText('option.marital.single', 'civility')},
+                {value:'2', label: getText('option.marital.concubinage', 'civility')},
+                {value:'3', label: getText('option.marital.pacsed', 'civility')},
+                {value:'4', label: getText('option.marital.maried', 'civility')},
+                {value:'5', label: getText('option.marital.widow', 'civility')},
+                {value:'6', label: getText('option.marital.divorced', 'civility')},
+                {value:'7', label: getText('option.no-answer', 'select')}
+            ]
+        }
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
     ]
 }
 %>

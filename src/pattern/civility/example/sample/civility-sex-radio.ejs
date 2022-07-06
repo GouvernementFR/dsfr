@@ -1,14 +1,21 @@
 <%
 const civility = { 
+<<<<<<< HEAD
     id:'civility-radio-sexe',
 <<<<<<< HEAD
     legend: getContent('form.legend.sex'),
+=======
+    id: uniqueId('civility-radio-sexe'),
+    legend: getText('legend.sex', 'civility'),
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
     items:[
         {
-            
-            label: getContent('form.label.feminin'),
+            type: 'radio',
+            template: 'radio-group',
+            label: getText('option.civility.female', 'civility'),
         },
         {
+<<<<<<< HEAD
             label: getContent('form.label.masculin'),
 =======
     legend:'Sexe',
@@ -20,6 +27,12 @@ const civility = {
             label: 'Masculin',
 >>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
         } 
+=======
+            type: 'radio',
+            template: 'radio-group',
+            label: getText('option.civility.male', 'civility'),
+        }
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
     ]
 };
 %>

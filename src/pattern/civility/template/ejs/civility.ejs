@@ -11,7 +11,7 @@
 
 * civility.placeholder (string, optionnal) : placeholder du composant
 
-* civility.type (string) : si non défini, radio
+* civility.type (string) : type de champs utilisé chaque enfant du composant
     ** radio : civilité bouton radio
     ** select : civilité liste déroulante
 
@@ -26,51 +26,54 @@
 
 <%
 const civility = locals.civility || {};
-const type = civility.type || 'radio';
-const data = {};
-const componentPath = `${type}/example/sample/${type}`;
-
-if (type === 'radio') {
-  const elements = [];
-  if (civility.items && civility.items.length) {
-    civility.items.forEach((item, index) => {
-      elements.push({
-        path: componentPath,
-        data: {
-          radio: {
-            id: `${civility.id}-${index}`,
-            name: civility.id,
-            label: item.label || '',
-            value: item.value || '',
-            checked: index === 0,
-          }
-        }
-      });
+const fieldset = {};
+const elements = [];
+if (civility.items && civility.items.length) {
+  civility.items.forEach((item, index) => {
+        elements.push({
+            path: 'form/template/ejs/fieldset',
+            data: {
+                fieldset: {
+                    disabled: item.disabled || undefined,
+                    attributes: {
+                        'aria-label': item.label,
+                    },
+                    elements: [{
+                        path: `${item.type}/template/ejs/${item.template}`,
+                        data: {
+                            [item.type]: {
+                                id: `${civility.id}-${index}`,
+                                name: civility.id,
+                                label: item.label || '',
+                                value: item.value || '',
+                                hint: item.hint || '',
+                                checked: item.checked || false,
+                                size: item.size || '',
+                                attributes: item.attributes || {},
+                                kind: item.kind || '',
+                                options: item.options || [],
+                                placeholder: item.placeholder || '',
+                            }
+                        }
+                    }]
+                }
+            }
+        });
     });
-  }
-  data.elements = elements;
-} else {
-  data.placeholder = civility.placeholder || '';
-  data.elements = [
-    {
-      path: componentPath,
-      data: {
-        select: {
-          id: civility.id,
-          name: civility.id,
-          label: civility.label || '',
-          options: civility.items,
-        }
-      }
-    }
-  ];
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 data.id = civility.id;
 =======
 >>>>>>> 56640180e (feat(pattern): ajoute le modele de civilite)
 data.legend = civility.legend || '';
+=======
+fieldset.elements = elements;
+fieldset.legend = civility.legend;
+fieldset.id = civility.id;
+fieldset.attributes = { 'aria-label': civility.label,}
+>>>>>>> dbf169de3 (feat(pattern-civility): met a jour les traductions)
 %>
 
-<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: data}) %>
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
