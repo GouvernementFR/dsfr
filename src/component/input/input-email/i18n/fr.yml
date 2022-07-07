@@ -1,0 +1,12 @@
+title: Modèle de champ email
+description: La demande d’une adresse électronique permet d’aider un utilisateur à saisir une adresse électronique. Précisez à l’utilisateur le format de saisie attendu.
+doc:
+
+sample:
+  default: Demande d'une adresse électronique
+  indication: Demande et indication de traitement d’une adresse électronique
+label: Adresse électronique
+hint:
+  format: 'Format attendu : nom@domaine.fr'
+  indication: Cette adresse est utilisée uniquement pour la connexion au service.
+error: 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@exemple.org'

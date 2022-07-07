@@ -34,7 +34,7 @@
 * input.labelAttrs (Object, optional) :  attributs spécifiques à rajouter sur le label
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../core/index.ejs')); %>
 
 <%
 const input = locals.input || {};
@@ -42,6 +42,7 @@ const inputClasses = input.classes || [];
 const inputAttrs = input.attributes || {};
 const labelClasses = input.labelClasses || [];
 const labelAttrs = input.labelAttrs || {};
+const inputType = input.type || 'text';
 const describedby = [];
 
 inputClasses.push(prefix + '-input');
@@ -82,11 +83,11 @@ if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholde
 <textarea <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %>  id="<%= input.id %>" name="<%= input.id %>"></textarea>
 <% }
 else {%>
-<input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= input.type %>" id="<%= input.id %>" name="<%= input.id %>">
+<input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= inputType %>" id="<%= input.id %>" name="<%= input.id %>">
 <% } %>
 
 <% if (input.addon && input.button != undefined) { %>
-  <%- include('../../../button/template/ejs/button', {button:input.button}); %>
+  <%- include('../../../../button/template/ejs/button', {button:input.button}); %>
   </div>
 <% } %>
 
@@ -94,4 +95,4 @@ else {%>
 </div>
 <% } %>
 
-<%- include('../../../form/template/ejs/message', {message:input}); %>
+<%- include('../../../../form/template/ejs/message', {message:input}); %>

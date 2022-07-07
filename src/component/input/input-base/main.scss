@@ -1,0 +1,18 @@
+////
+/// Input Main
+/// @group input
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  INPUT
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(2);
+@include dsfr.media-query-order;
+
+@import 'index';
+@import 'style/module';
+@import 'style/scheme';
+
+@include _input-scheme;
