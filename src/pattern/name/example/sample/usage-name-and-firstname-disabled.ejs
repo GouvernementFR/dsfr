@@ -1,32 +1,32 @@
 <%
 const name = { 
     id: uniqueId('usage-name-and-firstname-disabled'),
-    label: getText('sample.usage-name-and-firstname-disabled', 'name-firstname'),
+    label: `${getText('sample.with', 'name')} ${getText('sample.usage-name', 'name')} + ${getText('sample.firstname-disabled', 'name')}`,
     items:[
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.name', 'name-firstname'),
+            label: getText('label.name', 'name'),
             value: 'name'
         },
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.usage-name', 'name-firstname'),
-            hint: getText('hint.usage-name', 'name-firstname'),
+            label: getText('label.usage-name', 'name'),
+            hint: getText('hint.usage-name', 'name'),
             value: 'usage-name'
         },
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.firstname', 'name-firstname'),
+            label: getText('label.firstname', 'name'),
             value: 'firstname',
             disabled: true,
         },
         {
             type: 'checkbox',
             template: 'checkbox-group',
-            label: getText('label.no-firstname', 'name-firstname'),
+            label: getText('label.no-firstname', 'name'),
             value: 'firstname-disabled',
             checked: true,
             size: 'sm',
@@ -36,4 +36,4 @@ const name = {
 }
 %>
 
-<%- include('../../template/ejs/name-firstname', {name: name}); %>
+<%- include('../../template/ejs/name', {name: name}); %>

@@ -1,35 +1,35 @@
 <%
 const name = { 
-    id: uniqueId('name-firstname-international'),
-    label: getText('sample', 'name-firstname'),
+    id: uniqueId('name-international'),
+    label: getText('sample', 'name'),
     items:[
         {
             type: 'select',
             template: 'select-group',
-            label: getText('label.country', 'name-firstname'),
+            label: getText('label.country', 'name'),
             placeholder: getText('option.placeholder', 'select'),
             options: [
-                {value:'1', label: getText('country.england', 'name-firstname')},
-                {value:'2', label: getText('country.france', 'name-firstname')},
-                {value:'3', label: getText('country.japan', 'name-firstname')},
+                {value:'1', label: getText('country.england', 'name')},
+                {value:'2', label: getText('country.france', 'name')},
+                {value:'3', label: getText('country.japan', 'name')},
             ]
         },
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.name', 'name-firstname'),
+            label: getText('label.name', 'name'),
             value: 'name'
         },
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.firstname', 'name-firstname'),
+            label: getText('label.firstname', 'name'),
             value: 'firstname',
         },
         {
             type: 'checkbox',
             template: 'checkbox-group',
-            label: getText('label.no-firstname', 'name-firstname'),
+            label: getText('label.no-firstname', 'name'),
             value: 'firstname-disabled',
             size: 'sm',
             attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); }`},
@@ -38,4 +38,4 @@ const name = {
 }
 %>
 
-<%- include('../../template/ejs/name-firstname', {name: name}); %>
+<%- include('../../template/ejs/name', {name: name}); %>

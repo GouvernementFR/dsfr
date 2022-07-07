@@ -1,0 +1,23 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- section(getText('section.default', 'name'), '', 0); %>
+
+<%- sample({subtitle: getText('sample.default', 'name')}, './sample/name', {}, true); %>
+
+<%- sample({subtitle: `${getText('sample.with', 'name')} ${getText('sample.firstname-disabled', 'name')}`}, './sample/firstname-disabled', {}, true); %>
+
+<%- sample({subtitle: `${getText('sample.with', 'name')} ${getText('sample.usage-name', 'name')}`}, './sample/usage-name', {}, true); %>
+
+<%- sample({subtitle: `${getText('sample.with', 'name')} ${getText('sample.usage-name', 'name')} + ${getText('sample.firstname-disabled', 'name')}`}, './sample/usage-name-and-firstname-disabled', {}, true); %>
+
+<%- sample({subtitle: `${getText('sample.with', 'name')} ${getText('sample.button', 'name')}`}, './sample/button', {}, true); %>
+
+<%- sample({subtitle: `${getText('sample.with', 'name')} ${getText('sample.button', 'name')} + ${getText('sample.firstname-disabled', 'name')}`}, './sample/button-and-firstname-disabled', {}, true); %>
+
+<%- section(getText('section.international', 'name'), '', 0); %>
+
+<%- sample({subtitle: getText('sample.default', 'name')}, './sample/international', {}, true); %>
+
+<%- sample({subtitle: `${getText('sample.with', 'name')} ${getText('sample.firstname-disabled', 'name')}`}, './sample/international-and-firstname-disabled', {}, true); %>

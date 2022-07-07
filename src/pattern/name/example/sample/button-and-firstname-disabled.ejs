@@ -1,38 +1,40 @@
 <%
 const name = { 
-    id: uniqueId('button'),
-    label: getText('sample.button.default', 'name-firstname'),
+    id: uniqueId('button-and-firstname-disabled'),
+    label: `getText('sample.with', 'name') getText('sample.button', 'name') + getText('sample.firstname-disabled', 'name')`,
     items:[
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.name', 'name-firstname'),
+            label: getText('label.name', 'name'),
             value: 'name'
         },
         {
             type: 'input',
             template: 'input-group',
-            label: getText('label.firstname', 'name-firstname'),
-            value: 'firstname'
+            label: getText('label.firstname', 'name'),
+            value: 'firstname',
+            disabled: true
         },
         {
             type: 'button',
             template: 'button',
-            label: getText('label.add-firstname', 'name-firstname'),
+            label: getText('label.add-firstname', 'name'),
             kind: 3,
             size: 'sm',
+            disabled: true
         },
         {
             type: 'checkbox',
             template: 'checkbox-group',
-            label: getText('label.no-firstname', 'name-firstname'),
+            label: getText('label.no-firstname', 'name'),
             value: 'firstname-disabled',
-            checked: false,
+            checked: true,
             size: 'sm',
             attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.previousElementSibling.firstElementChild; const buttonFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); buttonFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); buttonFieldset.removeAttribute('disabled'); }`},
-        }
+        } 
     ]
 }
 %>
 
-<%- include('../../template/ejs/name-firstname', {name: name}); %>
+<%- include('../../template/ejs/name', {name: name}); %>

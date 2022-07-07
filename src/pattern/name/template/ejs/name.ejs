@@ -3,27 +3,37 @@
 
 * name (object, required) : objet contenant les paramètres
 
-* name.id (string, required) : id du composant
+    ** name.id (string, required) : id du composant
 
-* name.label (string, optionnal) : libellé du composant
+    ** name.label (string, optionnal) : libellé du composant
 
-* name.placeholder (string, optionnal) : placeholder du composant
+    ** name.placeholder (string, optionnal) : placeholder du composant
 
-* name.items (array, required) : tableau de données de chaque enfant du composant
+    ** name.items (array, required) : tableau de données de chaque enfant du composant
 
-* name.items[].type (string) : type de champs à ajouter au composant, si non défini, input
-    ** input : champs de texte
-    ** checkbox : case à cocher
+        *** name.items[].type (string) : type de champs à ajouter au composant, si non défini, input
+            **** input : champs de texte
+            **** checkbox : case à cocher
 
-* name.items[].value (string, required) : valeur du champ
+        *** name.items[].value (string, optionnal) : valeur du champ
 
-* name.items[].label (string, required) : libellé du champ
+        *** name.items[].label (string, optionnal) : libellé du champ
 
-* name.items[].hint (string, required) : indice du champ
+        *** name.items[].hint (string, optionnal) : indice du champ
 
-* name.items[].checked (string, required) : attribut checked du champ
+        *** name.items[].checked (string, optionnal) : attribut checked du champ
 
-* name.items[].disabled (string, required) : attribut disabled du champ
+        *** name.items[].size (string, optionnal) : valeur de la taille du champ
+
+        *** name.items[].kind (string, optionnal) : type de bouton
+
+        *** name.items[].disabled (string, optionnal) : attribut disabled du champ
+
+        *** name.items[].placeholder (string, optionnal) : attribut placeholder du champ de type select
+
+        *** name.items[].options (array, optionnal) : attribut placeholder du champ de type select
+
+        *** name.items[].attributes (string, optionnal) : attributs supplementaires du champ
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 

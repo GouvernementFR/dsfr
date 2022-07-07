@@ -1,4 +1,4 @@
-id: name-firstname
+id: name
 title: Modèle de bloc de nom et prénom
 description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
 doc:
@@ -18,13 +18,11 @@ country:
   france: France
   england: Angleterre
 sample:
-  default: DÉFAUT
-  button: 
-    default: AVEC BOUTON
-    firstname-disabled: AVEC BOUTON + PRÉNOM DÉSACTIVÉ
-  firstname-disabled: AVEC PRÉNOM DÉSACTIVÉ
-  usage-name: AVEC NOM D’USAGE
-  usage-name-and-firstname-disabled: AVEC NOM D’USAGE + PRÉNOM DÉSACTIVÉ
+  default: Défaut
+  button: bouton
+  firstname-disabled: prénom désactivé
+  usage-name: nom d'usage
+  with: Avec
 section:
   default: Demande d’un nom et d’un prénom en France
   international: Demande d’un nom et d’un prénom à l’international
