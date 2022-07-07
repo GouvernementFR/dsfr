@@ -51,8 +51,10 @@ function getSample (include) {
     if (layout === undefined) layout = root + 'tool/example/layout';
     if (layoutData === undefined) layoutData = {};
 
+    const sampleTitle = typeof(title) === 'string' ? title : title.title;
+    const sampleSubtitle = typeof(title) === 'object' ? title.subtitle : undefined;
 
-    return include(layout, {...layoutData, title: title, component: component, snippet: snippet});
+    return include(layout, {...layoutData, title: sampleTitle, subtitle: sampleSubtitle, component: component, snippet: snippet});
   }
 }
 
