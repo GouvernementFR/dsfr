@@ -1,6 +1,6 @@
 id: input-email
 title: Modèle de champ email
-wrapper: container
+wrapper: col-8
 style:
   - core
   - input-base
