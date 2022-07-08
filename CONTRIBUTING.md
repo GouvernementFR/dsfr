@@ -1,7 +1,8 @@
 # Contribuer au Système de Design de l'État <!-- omit in toc -->
 
-Avant de commencer à utiliser le Système de Design de l'État (ci-après, **DSFR**) , veillez à prendre connaissance
+Avant de commencer à utiliser le Système de Design de l'État (ci-après, **DSFR**), veillez à prendre connaissance
 des [conditions générales d'utilisations](doc/legal/cgu.md).
+
 Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des documents relatifs à la [cession des droits d'auteur](doc/legal/cession.md) et du [certificat garantissant l'originalité](doc/legal/cgod.md) de votre contribution.
 
 - [Installation](#installation)
@@ -31,7 +32,7 @@ Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est
 
 Le dépôt est disponible à cette adresse: https://github.com/GouvernementFR/dsfr
 
-Afin de pouvoir commencer à développer et contribuer au DSFR, assurez-vous tout d'abord de faire un fork du projet depuis votre compte github (https://help.github.com/articles/fork-a-repo/)
+Afin de pouvoir commencer à développer et contribuer au DSFR, assurez-vous tout d'abord de faire un fork du projet depuis votre compte GitHub (https://help.github.com/articles/fork-a-repo/)
 
 Il suffit ensuite de cloner votre fork, en téléchargeant les sources depuis le bouton “clone” de github, ou via un terminal avec commande :
 ```
