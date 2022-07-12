@@ -27,6 +27,15 @@
     }
 
     /**
+    * Modificateur au niveau du groupe pour appliquer un état informatif aux labels
+    */
+    &--info {
+      label {
+        @include scheme-element-text-color(default info, (legacy:$legacy));
+      }
+    }
+
+    /**
     * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
     */
     &--disabled {
@@ -52,6 +61,13 @@
     &--success {
       @include color.text(default success, (legacy:$legacy));
     }
+
+    /**
+    * Modificateur au niveau du label pour appliquer un état informatif au label
+    */
+    &--info {
+      @include scheme-element-text-color(default info, (legacy:$legacy));
+    }
   }
 
   /**
@@ -73,6 +89,13 @@
   */
   #{ns(valid-text)} {
     @include color.text(default success, (legacy:$legacy));
+  }
+
+  /**
+  * Style du texte de l'état validé
+  */
+  #{ns(info-text)} {
+    @include scheme-element-text-color(default info, (legacy:$legacy));
   }
 
   /**
@@ -119,6 +142,21 @@
 
       label {
         @include color.text(default success, (legacy:$legacy));
+      }
+    }
+
+    /**
+    * Modificateur pour gérer l'état de validation
+    */
+    &--info {
+      #{ns(fieldset__content)} {
+        @include before {
+          @include scheme-element-box-shadow-color(plain info, (legacy:$legacy), left-2-in);
+        }
+      }
+
+      label {
+        @include scheme-element-text-color(default info, (legacy:$legacy));
       }
     }
   }
