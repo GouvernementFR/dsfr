@@ -1,0 +1,10 @@
+<%
+const data = {
+    title: getText('page.title', 'error-404'),
+    subtitle: getText('page.subtitle', 'error-404'),
+    description: getText('page.description', 'error-404'),
+    text: getText('page.text', 'error-404')
+};
+%>
+
+<%- include('../../../../example/sample/error-default.ejs', data); %>

@@ -1,0 +1,15 @@
+id: error-404-without-search
+title: Page Erreur 404, sans recherche
+description:
+doc:
+style:
+  - core
+  - button
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

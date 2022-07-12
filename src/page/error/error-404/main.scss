@@ -1,0 +1,13 @@
+////
+/// Error-404 Main
+/// @group error-404
+////
+
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(3);
+@include dsfr.media-query-order;
+
+@import 'error-404-complete/main';
+@import 'error-404-without-contact/main';
+@import 'error-404-without-search/main';
+@import 'error-404-simple/main';
