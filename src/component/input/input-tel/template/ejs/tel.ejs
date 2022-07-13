@@ -1,0 +1,32 @@
+<%#
+# paramètres input tel
+
+tel (object, required) : objet contenant les paramètres du champ tel (voir composant input)
+
+* tel.id (string, required) : id du champ
+
+* tel.label (string, optional) : libellé du champ
+
+* tel.hint (string, optional) : texte alternatif du champ
+
+* tel.error (string, optional) : message d'erreur sous le champ
+
+* tel.autocomplete (string, optional) : attribut autocomplete du champ
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+const tel = locals.tel || {};
+
+const data = {
+  ...tel,
+  id: tel.id || uniqueId('tel'),
+  attributes: {...tel.attributes},
+  type: 'tel',
+}
+
+if (tel.autocomplete) data.attributes.autocomplete = 'tel';
+%>
+
+<%- include('../../../input-base/template/ejs/input-group', {input:data}); %>
