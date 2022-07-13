@@ -3,15 +3,17 @@
 /// @group core
 ////
 
+@use 'module/string';
+
 @function svg-encode($svg, $legacy) {
-  $svg: str-replace($svg, '#', '%23');
+  $svg: string.replace($svg, '#', '%23');
   @if $legacy {
-    $svg: str-replace($svg, '<', '%3C');
-    $svg: str-replace($svg, '>', '%3E');
-    $svg: str-replace($svg, '"', '\'');
-    $svg: str-replace($svg, '{', '%7B');
-    $svg: str-replace($svg, '}', '%7D');
-    $svg: str-replace($svg, '’', '%E2%80%99');
+    $svg: string.replace($svg, '<', '%3C');
+    $svg: string.replace($svg, '>', '%3E');
+    $svg: string.replace($svg, '"', '\'');
+    $svg: string.replace($svg, '{', '%7B');
+    $svg: string.replace($svg, '}', '%7D');
+    $svg: string.replace($svg, '’', '%E2%80%99');
   }
   @return 'data:image/svg+xml;charset=utf8,' + $svg;
 }

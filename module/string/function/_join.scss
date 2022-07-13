@@ -1,0 +1,11 @@
+@function join($list, $separator:',') {
+  $result: '';
+  $s: '';
+
+  @each $item in $list {
+    $result: '#{$result}#{$s}#{$item}';
+    $s: $separator;
+  }
+
+  @return $result;
+}

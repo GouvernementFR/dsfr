@@ -5,6 +5,8 @@
 
 $ACCENT: none;
 
+@use 'module/spacing';
+
 @mixin _scheme-element($prop, $context, $tokens, $options: (), $value: $COLOR) {
   $legacy: map-get($options, legacy);
   $important: map-get($options, important);
@@ -212,7 +214,7 @@ $ACCENT: none;
   @if $has-keys {
     $value: $transformed;
   }
-  @include _scheme-element(box-shadow, border, $tokens, $options, space($value));
+  @include _scheme-element(box-shadow, border, $tokens, $options, spacing.space($value));
 }
 
 /// Supprime la shadow-box sur l'élément

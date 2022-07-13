@@ -3,6 +3,8 @@
 /// @group Table
 ////
 
+@use 'module/spacing';
+
 @function _get-tabs-shadow($side, $active: true, $theme: light) {
   @if $active == false {
     @return inset 0 0 0 0 $black-0;
@@ -13,7 +15,7 @@
     $x: -8v;
   }
 
-  @return space(inset #{$x} 0 6v -8v $black);
+  @return spacing.space(inset #{$x} 0 6v -8v $black);
 }
 
 @mixin _tabs-scroll-shadow($left: false, $right: false) {

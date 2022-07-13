@@ -3,6 +3,8 @@
 /// @group schemes
 ////
 
+@use 'module/color';
+
 @include theme-selector(dark) {
-  @include build-decisions(true);
+  @include color.define(dark);
 }

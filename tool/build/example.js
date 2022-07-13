@@ -21,6 +21,8 @@ function uniqueId (module) {
 }
 
 const buildExample = (pck, locale) => {
+  if (!pck.example || !pck.example.root) return;
+
   const packages = getPackages();
 
   const files = {

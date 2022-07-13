@@ -1,0 +1,20 @@
+@use 'sass:list';
+@use 'sass:map';
+@use '../function/associate';
+
+// TODO
+
+/// Applique les couleurs disabled sur l'élément avec les sélecteurs appropriés
+/// @access public
+/// @param {map} map des options :
+///   - can-be-link {boolean}: ajoute le sélecteur de lien sans href.
+@mixin disabled($options: ()) {
+  $selectors: '&:disabled';
+  @if map.get($options, can-be-link) {
+    $selectors: list.append($selectors, associate.associate(&, 'a:not([href])'), comma);
+  }
+
+  @at-root #{$selectors} {
+    @content;
+  }
+}

@@ -3,15 +3,17 @@
 /// @group connect
 ////
 
+@use 'module/color';
+
 @mixin _connect-scheme-group($legacy: false, $standalone: false) {
   #{ns(connect)} {
     &-group {
       #{ns(connect)} + p a {
-        @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+        @include color.text(action-high blue-france, (legacy:$legacy));
       }
 
       p {
-        @include scheme-element-text-color(mention grey, (legacy:$legacy));
+        @include color.text(mention grey, (legacy:$legacy));
       }
     }
   }

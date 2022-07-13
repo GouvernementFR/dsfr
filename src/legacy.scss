@@ -3,9 +3,11 @@
 /// @group dsfr
 ////
 
-@use 'module/dsfr';
-@include dsfr.set-dist-path-level(0);
-@include dsfr.media-query-order;
+@use 'module/path';
+@use 'module/shame/media-query';
+
+@include path.to-dist(0);
+@include media-query.order;
 
 @import 'core/legacy';
 @import 'component/legacy';

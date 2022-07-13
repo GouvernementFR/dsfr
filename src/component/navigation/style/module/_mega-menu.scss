@@ -4,7 +4,7 @@
 ////
 
 #{ns(mega-menu)} {
-  @include z-index(menu, true);
+  @include z-index(menu);
   @include margin(-1v -4v 1px);
   @include padding(1v 4v 0);
 

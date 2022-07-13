@@ -3,9 +3,11 @@
 /// @group core
 ////
 
+@use 'module/color';
+
 @include legacy(ie11) {
   #{ns(enlarge-link)} {
-    @include scheme-element-bg-transparent((legacy: true, hover: true));
+    @include color.transparent-background((legacy: true, hover: true));
 
     @include disable-underline-legacy;
   }

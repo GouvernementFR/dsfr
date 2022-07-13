@@ -3,12 +3,14 @@
 /// @group breadcrumb
 ////
 
+@use 'module/color';
+
 @mixin _breadcrumb-scheme($legacy: false) {
   #{ns(breadcrumb)} {
-    @include scheme-element-text-color(mention grey, (legacy:$legacy));
+    @include color.text(mention grey, (legacy:$legacy));
 
     &__link[aria-current] {
-      @include scheme-element-text-color(active grey, (legacy:$legacy));
+      @include color.text(active grey, (legacy:$legacy));
     }
   }
 }

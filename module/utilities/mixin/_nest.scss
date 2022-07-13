@@ -1,0 +1,10 @@
+@mixin nest($selector: null) {
+  @if $selector {
+    #{$selector} {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}

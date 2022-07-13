@@ -3,11 +3,13 @@
 /// @group core
 ////
 
+@use 'module/color';
+
 @mixin _core-reset-body-scheme($legacy: false) {
   @if (map-get($reset-settings, body)) {
     body {
-      @include scheme-element-bg-color(default grey, (legacy:$legacy));
-      @include scheme-element-text-color(default grey, (legacy:$legacy));
+      @include color.background(default grey, (legacy:$legacy));
+      @include color.text(default grey, (legacy:$legacy));
     }
   }
 }

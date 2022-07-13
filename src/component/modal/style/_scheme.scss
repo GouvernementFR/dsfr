@@ -12,7 +12,7 @@
 
       &#{ns(scroll-shadow)} {
         #{ns(modal)}__footer {
-          @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+          // @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
         }
       }
     }

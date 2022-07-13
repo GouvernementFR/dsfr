@@ -7,7 +7,7 @@
   #{ns(menu)} {
     @include respond-from(lg) {
       @include after {
-        @include scheme-element-bg-color(elevated grey, (legacy: $legacy));
+        // @include scheme-element-bg-color(elevated grey, (legacy: $legacy));
       }
 
       #{ns(nav__link)} {

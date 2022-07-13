@@ -4,22 +4,22 @@
 ////
 
 $text-styles: (
-  12: (
+  3v: (
     line-height: 5v
   ),
-  14: (
+  3.5v: (
     line-height: 6v
   ),
-  16: (
+  4v: (
     line-height: 6v
   ),
-  18: (
+  4.5v: (
     line-height: 7v
   ),
-  20: (
+  5v: (
     line-height: 8v
   ),
-  22: (
+  5.5v: (
     line-height: 9v
   ),
 );
@@ -27,32 +27,32 @@ $text-styles: (
 $text-settings: (
   xs: (
     breakpoints: (
-      first: 12,
+      first: 3v,
     ),
     margin: text
   ),
   sm: (
     breakpoints: (
-      first: 14,
+      first: 3.5v,
     ),
     margin: text
   ),
   md: (
     breakpoints: (
-      first: 16,
+      first: 4v,
     ),
     margin: text
   ),
   lg: (
     breakpoints: (
-      first: 18,
+      first: 4.5v,
     ),
     margin: text
   ),
   xl: (
     alt: lead,
     breakpoints: (
-      first: 20,
+      first: 5v,
     ),
     margin: text
   )

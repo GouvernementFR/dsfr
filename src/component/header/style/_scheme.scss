@@ -5,7 +5,7 @@
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
-    @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+    // @include scheme-element-bg-color(elevated grey, (legacy:$legacy)); TODO: shadow
 
     &__service {
       @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
@@ -51,7 +51,7 @@
     }
 
     #{ns(modal)} {
-      @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+      // @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
     }
   }
 }

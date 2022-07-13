@@ -5,7 +5,7 @@
 
 @mixin _navigation-scheme-mega-menu($legacy: false) {
   #{ns(mega-menu)} {
-    @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+    // @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
 
     > #{ns(container)} {
       @include respond-from(lg) {

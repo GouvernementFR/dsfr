@@ -3,6 +3,8 @@
 /// @group radio
 ////
 
+@use 'module/spacing';
+
 @include legacy(ie11) {
   /**
   * Correctif radio
@@ -12,7 +14,7 @@
       &:last-child {
         input[type="radio"] + label {
           @include radio-rich() {
-            margin-bottom: space(2v) !important;
+            margin-bottom: spacing.space(2v) !important;
           }
         }
       }

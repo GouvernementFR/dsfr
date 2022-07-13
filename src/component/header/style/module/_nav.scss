@@ -14,7 +14,7 @@
 
       #{ns(menu)}::after,
       #{ns(mega-menu)} {
-        @include shadow(md);
+        // @include shadow(md); TODO: shadow
       }
     }
   }

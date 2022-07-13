@@ -1,0 +1,39 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'module/string';
+@use 'module/color';
+@use 'module/elevation/variable/backgrounds';
+@use 'module/elevation/variable/z-indexes';
+@use 'module/elevation/variable/shadows';
+
+
+@mixin elevate($level, $options: ()) {
+  $layer: list.nth(string.split($level, '-'), 1);
+  $legacy: map.get($options, legacy);
+  $usage: _usage($options);
+
+  @if not $legacy {
+    @if map.has-key(z-indexes.$values, $level) {
+      z-index: calc(var(--ground) + #{map.get(z-indexes.$values, $level)});
+    }
+    @if not $legacy and map.has-key(shadows.$values, $layer) {
+      filter: drop-shadow(map.get(shadows.$values, $layer));
+    }
+  }
+  @if map.has-key(backgrounds.$values, $usage) {
+    $tokens: map.get(backgrounds.$values, $usage);
+    @if map.has-key($tokens, $layer) {
+      @include color.background(map.get($tokens, $layer), (legacy: $legacy));
+    }
+  }
+}
+
+@function _usage($options) {
+  @if map.has-key($options, usage) {
+    $usage: map.get($options, usage);
+    @if map.has-key(backgrounds.$values, $usage) {
+      @return $usage;
+    }
+  }
+  @return default;
+}

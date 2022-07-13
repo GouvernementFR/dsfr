@@ -1,0 +1,12 @@
+@use 'module/media-query/variable/breakpoints';
+@use 'module/media-query';
+
+@mixin order () {
+  @each $bp, $limits in breakpoints.$values {
+    @if $bp != xs {
+      @include media-query.respond-from($bp) {
+        /*! media #{$bp} */
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@function is-int($str) {
+  @for $i from 0 through 9 {
+    @if '#{$i}' == $str {
+      @return true;
+    }
+  }
+  @return false;
+}
+
+@function to-int($str) {
+  @for $i from 0 through 9 {
+    @if '#{$i}' == $str {
+      @return $i;
+    }
+  }
+  @return $str;
+}

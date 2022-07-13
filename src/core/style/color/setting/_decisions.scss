@@ -8,9 +8,6 @@ $scheme-decisions: (
     default: (
       neutral: white (hover: true)
     ),
-    elevated: (
-      neutral: elevated (hover: true)
-    ),
     alt: (
       neutral: lightest (hover: true),
       primary: lightest (hover: true),
@@ -48,6 +45,27 @@ $scheme-decisions: (
     ),
     overlay: (
       neutral: black (alpha: 0.375)
+    ),
+    raised: (
+      neutral: raised
+    ),
+    overlap: (
+      neutral: overlap
+    ),
+    lifted: (
+      neutral: lifted
+    ),
+    alt-raised: (
+      neutral: alt-raised
+    ),
+    alt-overlap: (
+      neutral: alt-overlap
+    ),
+    contast-raised: (
+      neutral: contrast-raised
+    ),
+    contast-overlap: (
+      neutral: contrast-overlap
     )
   ),
   text: (
@@ -84,16 +102,7 @@ $scheme-decisions: (
     ),
     disabled: (
       neutral: soft
-    ),
-    raised: (
-      neutral: raised
-    ),
-    overlap: (
-      neutral: overlap
-    ),
-    raised: (
-      lifted: lifted
-    ),
+    )
   ),
   border: (
     default: (

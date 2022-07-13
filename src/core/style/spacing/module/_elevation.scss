@@ -1,0 +1,10 @@
+////
+/// Core Module : Spacing elevation
+/// @group core
+////
+
+@use 'module/elevation';
+
+:root {
+  @include elevation.ground(0);
+}

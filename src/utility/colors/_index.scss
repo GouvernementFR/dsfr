@@ -1,0 +1,16 @@
+@use 'style/variable/decisions';
+$decisions: decisions.$decisions !default;
+@use 'style/mixin/scheme' with ($decisions: $decisions);
+
+@mixin base() {
+  @include scheme.scheme();
+}
+
+@mixin legacy() {
+  @include scheme.scheme(true);
+}
+
+@mixin full() {
+  @include base;
+  @include legacy;
+}

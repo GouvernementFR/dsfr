@@ -4,7 +4,7 @@
 ////
 
 #{ns(menu)} {
-  @include z-index(menu, true);
+  @include z-index(menu);
   @include margin(0 -4v);
   @include padding(0 4v);
   @include size(auto);

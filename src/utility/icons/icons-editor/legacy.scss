@@ -3,9 +3,11 @@
 /// @group icons-editor
 ////
 
-@use 'module/dsfr';
-@include dsfr.set-dist-path-level(3);
-@include dsfr.media-query-order;
+@use 'module/path';
+@use 'module/shame/media-query';
+
+@include path.to-dist(3);
+@include media-query.order;
 
 @import 'index';
 @import 'style/legacy';

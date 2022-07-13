@@ -1,0 +1,14 @@
+@use 'split';
+@use 'join';
+
+/// Remplacement dans une chaine de caractères
+/// @access public
+/// @param {String} $haystack - chaine de caractère où chercher
+/// @param {String} $needle - élément à chercher
+/// @param {String} $content - élément de remplacement
+/// @return {String} la chaîne de caractères transformée
+@function replace($haystack, $needle, $content, $start: 1) {
+  $chunks: split.split($haystack, $needle);
+  $result: join.join($chunks, $content);
+  @return $result;
+}
