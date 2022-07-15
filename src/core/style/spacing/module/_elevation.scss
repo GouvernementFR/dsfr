@@ -5,6 +5,4 @@
 
 @use 'module/elevation';
 
-:root {
-  @include elevation.ground(0);
-}
+@include elevation.define;

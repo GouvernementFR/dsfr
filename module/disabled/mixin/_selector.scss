@@ -1,6 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'module/color';
+@use 'colors';
 @use 'module/selector';
 
 /// Applique les couleurs disabled sur l'élément avec les sélecteurs appropriés
@@ -11,14 +11,16 @@
 ///   - background {boolean}: true, applique le token background disabled sur la couleur de fond
 ///   - text {boolean}: true, applique le token text disabled sur la couleur de texte
 ///   - box-shadow {}: si true, applique le token border disabled sur l'élément avec la box-shadow par défaut (encadré de 1 px). si une valeur de box-shadow est fournie, applique cette valeur (voir get-box-shadow)
-@mixin apply($options: ()) {
+@mixin selector($options: (), $colors: null) {
   $selectors: '&:disabled';
   @if map.get($options, can-be-link) {
     $selectors: list.append($selectors, selector.associate(&, 'a:not([href])'), comma);
   }
 
   @at-root #{$selectors} {
-    @include color.disabled($options);
+    @if $colors != null {
+      @include colors.colors($colors);
+    }
     @content;
   }
 }

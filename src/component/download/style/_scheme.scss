@@ -3,37 +3,39 @@
 /// @group download
 ////
 
+@use 'module/color';
+
 @mixin _download-scheme($legacy: false) {
   #{ns(download)} {
     &--card {
-      @include scheme-element-bg-color(default grey, (legacy:$legacy));
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-in);
+      @include color.background(default grey, (legacy:$legacy));
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
 
       #{ns(download__link)} {
-        @include scheme-element-text-color(title grey, (legacy:$legacy));
+        @include color.text(title grey, (legacy:$legacy));
 
         @include after {
-          @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+          @include color.text(action-high blue-france, (legacy:$legacy));
         }
       }
     }
 
     &__link {
-      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
     }
 
     &__detail {
-      @include scheme-element-text-color(mention grey, (legacy:$legacy));
+      @include color.text(mention grey, (legacy:$legacy));
     }
   }
 
   #{ns-group(downloads)} {
     li::marker {
-      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
     }
 
     &--bordered {
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-in);
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
     }
   }
 }

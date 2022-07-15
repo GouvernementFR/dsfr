@@ -4,7 +4,7 @@
 ////
 
 @use 'module/color';
-@use 'module/selector';
+@use 'module/disabled';
 
 /**
  * L'input de type checkbox avec son label est contenu dans un groupe
@@ -39,17 +39,17 @@
       /**
       * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
       */
-      @include selector.disabled {
+      @include disabled.selector {
         & + label {
           @include before {
-            @include color.disabled((legacy: $legacy, box-shadow: true));
+            @include disabled.colors((legacy: $legacy, box-shadow: true));
           }
         }
 
         &:checked {
           & + label {
             @include before {
-              @include color.disabled((legacy: $legacy, text: true, background: true));
+              @include disabled.colors((legacy: $legacy, text: true, background: true));
               @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $checkbox-svg);
             }
           }

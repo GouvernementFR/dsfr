@@ -4,7 +4,7 @@
 ////
 
 @use 'module/color';
-@use 'module/selector';
+@use 'module/disabled';
 
 @mixin _connect-scheme-default($legacy: false, $standalone: false) {
   #{ns(connect)} {
@@ -15,7 +15,7 @@
       @include color.background-image((text inverted blue-france, text inverted blue-france), (legacy: $legacy, standalone: $standalone));
     }
 
-    @include selector.disabled ((can-be-link: true)) {
+    @include disabled.selector((can-be-link: true)) {
       @include color.background(disabled grey, (legacy: $legacy, standalone: $standalone));
       @include color.text(disabled grey, (legacy: $legacy, standalone: $standalone));
 

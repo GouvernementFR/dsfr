@@ -3,21 +3,23 @@
 /// @group follow
 ////
 
+@use 'module/color';
+
 @mixin _follow-scheme($legacy: false) {
   #{ns(follow)} {
-    @include scheme-element-bg-color(alt blue-france, (legacy: $legacy));
+    @include color.background(alt blue-france, (legacy: $legacy));
 
     #{ns(input)} {
-      @include scheme-element-bg-color(default grey, (legacy: $legacy));
+      @include color.background(default grey, (legacy: $legacy));
     }
 
     &__title {
-      @include scheme-element-text-color(title grey, (legacy: $legacy));
+      @include color.text(title grey, (legacy: $legacy));
     }
 
     &__newsletter {
       &-legal {
-        @include scheme-element-text-color(mention grey, (legacy: $legacy));
+        @include color.text(mention grey, (legacy: $legacy));
       }
     }
 
@@ -29,9 +31,9 @@
 
     #{ns(grid-row)} > *:not(:first-child) {
       // Séparateur en box-shadow
-      @include scheme-element-box-shadow-color(default blue-france, (legacy: $legacy), top-1-out);
+      @include color.box-shadow(default blue-france, (legacy: $legacy), top-1-out);
       @include respond-from(md) {
-        @include scheme-element-box-shadow-color(default blue-france, (legacy: $legacy), left-1-out);
+        @include color.box-shadow(default blue-france, (legacy: $legacy), left-1-out);
       }
     }
   }

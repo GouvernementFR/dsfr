@@ -3,28 +3,22 @@
 /// @group navigation
 ////
 
+@use 'module/color';
+
 #{ns(menu)} {
   @include z-index(menu);
-  @include margin(0 -4v);
-  @include padding(0 4v);
+  @include margin(-4px -4v);
+  @include padding(4px 4v);
   @include size(auto);
 
   @include respond-from(lg) {
     @include absolute(100%);
-    @include margin-top(-1v);
-    @include padding-top(1v);
-
-    @include after('', block) {
-      @include absolute(0,0,0,0);
-      @include margin(1v 4v 8v);
-      @include z-index(under);
-    }
   }
 
   @include list {
     @include margin(0);
     @include padding(2v 0 6v);
-    @include padding(0 0 8v, lg);
+    @include padding(0, lg);
     @include size(80v, null, lg);
 
     & > *:first-child,
@@ -32,7 +26,7 @@
     & > *:hover + * {
       &,
       & > #{ns(nav__link)} {
-        @include scheme-element-no-box-shadow;
+        @include color.no-box-shadow;
       }
     }
   }

@@ -4,6 +4,8 @@
 ////
 
 @use 'module/spacing';
+@use 'module/elevation';
+@use 'module/color';
 
 #{ns(modal)} {
   // reset dialog @TODO à déplacer dans reset ?
@@ -11,11 +13,14 @@
   color: inherit;
   visibility: hidden;
   opacity: 0;
+  background-color: color.$black-a64;
+
+  @include elevation.ground(modal);
+
   @include padding(0);
   @include margin(0);
   @include display-flex(column, stretch, space-between);
   @include fixed(0, 0, 0, 0, 100%, 100%);
-  z-index: z-index(modal);
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
 
@@ -79,7 +84,7 @@
     overflow-y: auto;
     flex: 1 1 auto;
     max-height: var(--modal-max-height);
-    // @include shadow(md); TODO: shadow
+
 
     @include respond-from(md) {
       max-height: 80vh !important;

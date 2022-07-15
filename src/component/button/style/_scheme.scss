@@ -12,7 +12,7 @@
     @include color.text(inverted blue-france, (legacy:$legacy));
 
 
-    @include disabled.apply((legacy: $legacy, text: true, background: true, can-be-link: true));
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
 
     // Outline variant
     &--secondary {

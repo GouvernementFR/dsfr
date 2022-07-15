@@ -3,6 +3,8 @@
 /// @group navigation
 ////
 
+@use 'module/color';
+
 @include legacy(ie11) {
   /**
   * reset liste à puce
@@ -13,7 +15,7 @@
 
     &__link,
     &__btn {
-      @include scheme-element-bg-transparent((legacy: true, hover: true));
+      @include color.transparent-background((legacy: true, hover: true));
     }
 
     &__btn {

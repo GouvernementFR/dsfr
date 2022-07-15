@@ -2,6 +2,8 @@
 @use 'sass:map';
 @use 'module/string';
 @use 'module/color';
+@use 'module/legacy';
+@use 'module/utilities';
 @use 'module/elevation/variable/backgrounds';
 @use 'module/elevation/variable/z-indexes';
 @use 'module/elevation/variable/shadows';
@@ -11,19 +13,30 @@
   $layer: list.nth(string.split($level, '-'), 1);
   $legacy: map.get($options, legacy);
   $usage: _usage($options);
+  $target: null;
+  $background: map.get($options, background);
 
-  @if not $legacy {
+  @if $legacy {
+    $target: ie11;
+  }
+  @else {
     @if map.has-key(z-indexes.$values, $level) {
       z-index: calc(var(--ground) + #{map.get(z-indexes.$values, $level)});
     }
-    @if not $legacy and map.has-key(shadows.$values, $layer) {
-      filter: drop-shadow(map.get(shadows.$values, $layer));
+    @if map.has-key(shadows.$values, $layer) {
+      filter: drop-shadow(var(--#{$layer}-shadow));
     }
   }
+
   @if map.has-key(backgrounds.$values, $usage) {
     $tokens: map.get(backgrounds.$values, $usage);
     @if map.has-key($tokens, $layer) {
-      @include color.background(map.get($tokens, $layer), (legacy: $legacy));
+      @include legacy.is($target) {
+        @include utilities.nest($background) {
+          @debug &;
+          @include color.background(map.get($tokens, $layer), (legacy: $legacy));
+        }
+      }
     }
   }
 }

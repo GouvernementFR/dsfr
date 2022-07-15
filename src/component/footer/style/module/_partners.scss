@@ -3,6 +3,8 @@
 /// @group Footer
 ////
 
+@use 'module/color';
+
 /**
  * La partie "partners" du footer est constituée de logos organisés
  * en partenaires principaux (ferré à gauche) et secondaires (ferrés à droite)
@@ -17,7 +19,7 @@
     */
     a {
       @include display-flex(null, center, center);
-      @include scheme-element-no-box-shadow;
+      @include color.no-box-shadow;
     }
 
     /**
@@ -114,7 +116,7 @@
     * On surcharge le style du lien pour les logos secondaires
     */
     #{ns(footer)}__partners-link {
-      @include scheme-element-no-box-shadow;
+      @include color.no-box-shadow;
       @include margin-bottom(2v);
     }
 

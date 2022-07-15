@@ -1,6 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'element';
+@use 'module/color';
 
 // TODO
 
@@ -11,24 +11,24 @@
 ///   - background {boolean}: true, applique le token background disabled sur la couleur de fond
 ///   - text {boolean}: true, applique le token text disabled sur la couleur de texte
 ///   - box-shadow {}: si true, applique le token border disabled sur l'élément avec la box-shadow par défaut (encadré de 1 px). si une valeur de box-shadow est fournie, applique cette valeur (voir get-box-shadow)
-@mixin disabled($options: ()) {
+@mixin colors($options: ()) {
   $legacy: map.get($options, legacy);
   $text: map.get($options, text);
   $background: map.get($options, background);
   $box-shadow: map.get($options, box-shadow);
 
   @if $text {
-    @include element.text(disabled grey, (legacy: $legacy));
+    @include color.text(disabled grey, (legacy: $legacy));
   }
 
   @if $background {
-    @include element.background(disabled grey, (legacy: $legacy));
+    @include color.background(disabled grey, (legacy: $legacy));
   }
 
   @if $box-shadow == true {
-    @include element.box-shadow(disabled grey, (legacy: $legacy));
+    @include color.box-shadow(disabled grey, (legacy: $legacy));
   }
   @else if $box-shadow {
-    @include element.box-shadow(disabled grey, (legacy: $legacy), $box-shadow);
+    @include color.box-shadow(disabled grey, (legacy: $legacy), $box-shadow);
   }
 }
