@@ -7,7 +7,7 @@ required:
 label:
   default: Libellé
   short: libl
-  long: libellé de l'élément
+  long: Libellé de l'élément
 fieldset:
   legend: Une légende
 hint:
