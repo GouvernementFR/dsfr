@@ -4,6 +4,7 @@
 ////
 
 @use 'module/color';
+@use 'module/elevation';
 
 @mixin _consent-scheme($legacy: false) {
   #{ns(consent-placeholder)} {
@@ -11,7 +12,8 @@
   }
 
   #{ns(consent-banner)} {
-    @include color.background(contrast grey, (legacy:$legacy));
+    // @include color.background(contrast grey, (legacy:$legacy));
+    @include elevation.elevate(overlap-above, (legacy:$legacy, usage: contrast));
     @include color.box-shadow(default grey, (legacy:$legacy));
   }
 
