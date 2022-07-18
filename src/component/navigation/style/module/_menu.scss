@@ -11,6 +11,11 @@
   @include padding(4px 4v);
   @include size(auto);
 
+  &#{ns(collapsing)} {
+    @include margin-top(0);
+    @include padding-top(0);
+  }
+
   @include respond-from(lg) {
     @include absolute(100%);
   }

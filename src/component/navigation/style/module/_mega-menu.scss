@@ -11,7 +11,11 @@
   @include respond-from(lg) {
     @include absolute(100%, 0, null, 0);
     @include margin(-2px 0 0);
-    @include padding(0 0 9v);
+    @include padding(0);
+
+    @include after('', block) {
+      @include padding-bottom(9v);
+    }
   }
 
   &:focus {
@@ -20,7 +24,9 @@
 
   > #{ns(container)} {
     @include respond-from(lg) {
-      @include padding-top(4v);
+      @include before('') {
+        @include padding-top(4v);
+      }
     }
   }
 

@@ -5,11 +5,23 @@
 
 @use 'module/color';
 @use 'module/elevation';
+@use 'module/media-query';
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
     // @include color.background(elevated grey, (legacy:$legacy)); TODO: shadow
-    @include elevation.elevate(raised);
+
+    &__brand {
+      @include elevation.elevate(raised, (legacy: $legacy));
+    }
+
+    @include media-query.respond-from(lg) {
+      @include elevation.elevate(raised, (legacy: $legacy));
+
+      &__brand {
+        @include elevation.drop();
+      }
+    }
 
     &__service {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
@@ -55,7 +67,7 @@
     }
 
     #{ns(modal)} {
-      // @include color.background(elevated grey, (legacy:$legacy));
+      @include color.background(lifted grey, (legacy:$legacy));
     }
   }
 }
