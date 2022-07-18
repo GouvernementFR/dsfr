@@ -39,7 +39,7 @@ $COLOR: constant.$value;
   $result: specificity.important($result, $important);
 
   @include legacy.is($legacy-target) {
-    #{$prop}: #{string.unquote($result)};
+    #{$prop}: #{string.unstringify($result)};
   }
 
   @if ($hover == true or ($hover == inherit and $legacy == false)) and ($context == background and list.length($tokens) == 1) {
@@ -86,7 +86,7 @@ $COLOR: constant.$value;
   $result: specificity.important($result, $important);
 
   @include utilities.nest($nest) {
-    #{$p}: #{string.unquote($result)};
+    #{$p}: #{string.unstringify($result)};
   }
 }
 

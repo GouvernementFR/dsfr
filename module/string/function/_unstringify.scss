@@ -1,0 +1,9 @@
+@use 'sass:string';
+@use 'sass:meta';
+
+@function unstringify ($value) {
+  @if meta.type-of($value) == string {
+    @return string.unquote($value);
+  }
+  @return $value;
+}
