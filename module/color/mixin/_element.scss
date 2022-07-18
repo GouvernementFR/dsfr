@@ -39,38 +39,54 @@ $COLOR: constant.$value;
   $result: specificity.important($result, $important);
 
   @include legacy.is($legacy-target) {
-    #{$prop}: #{$result};
+    #{$prop}: #{string.unquote($result)};
   }
 
-  @if ($hover == true or ($hover == inherit and $legacy == false)) and ($context == background and length($tokens) == 1) {
-    $nest-hover: null;
-    $prop-hover: --hover;
-    $result-hover: #{specificity.important(colors.from(nth($tokens, 1), decision, (var: true, hover: true)), $important)};
-    $nest-active: null;
-    $prop-active: --active;
-    $result-active: #{specificity.important(colors.from(nth($tokens, 1), decision, (var: true, active: true)), $important)};
+  @if ($hover == true or ($hover == inherit and $legacy == false)) and ($context == background and list.length($tokens) == 1) {
 
+    $token: nth($tokens, 1);
     @if $legacy or $standalone {
-      $type: hex;
-      $option: (theme: light);
-
-      $nest-hover: '&:hover';
-      $prop-hover: $prop;
-      $result-hover: #{specificity.important(colors.from(nth($tokens, 1), hex, (hover: true)), $important)};
-      $nest-active: '&:active';
-      $prop-active: $prop;
-      $result-active: #{specificity.important(colors.from(nth($tokens, 1), hex, (active: true)), $important)};
+      @include _apply-pseudos($token, false, true, $legacy-target, $prop, $value, $important);
     }
-
-    @include legacy.is($legacy-target) {
-      @include utilities.nest($nest-hover) {
-        #{$prop-hover}: #{$result-hover};
+    @else {
+      @if $prop == background-color {
+        @include _apply-pseudos($token, true, false, null, $prop, $value, $important);
       }
-
-      @include utilities.nest($nest-active) {
-        #{$prop-active}: #{$result-active};
+      @else {
+        @include _apply-pseudos($token, true, true, null, $prop, $value, $important);
       }
     }
+  }
+}
+
+@mixin _apply-pseudos($token, $decision: true, $pseudo: false, $target: null, $prop: background-color, $value: constant.$value, $important: false) {
+  @include legacy.is($target) {
+    @include _apply-pseudo($token, hover, $decision, $pseudo, $prop, $value, $important);
+    @include _apply-pseudo($token, active, $decision, $pseudo, $prop, $value, $important);
+  }
+}
+
+@mixin _apply-pseudo($token, $type, $decision: true, $pseudo: false, $prop: background-color, $value: constant.$value, $important: false) {
+  $nest: null;
+  $p: --#{$type};
+  @if $pseudo {
+    $nest: '&:#{$type}';
+    $p: $prop;
+  }
+
+  $t: hex;
+  $options: (#{$type}: true);
+  @if $decision {
+    $t: decision;
+    $options: (var: true, #{$type}: true);
+  }
+
+  $color: colors.from($token, $t, $options);
+  $result: result.get($color, $value);
+  $result: specificity.important($result, $important);
+
+  @include utilities.nest($nest) {
+    #{$p}: #{string.unquote($result)};
   }
 }
 

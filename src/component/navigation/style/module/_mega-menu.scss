@@ -24,7 +24,7 @@
 
   > #{ns(container)} {
     @include respond-from(lg) {
-      @include before('') {
+      @include before('', block) {
         @include padding-top(4v);
       }
     }

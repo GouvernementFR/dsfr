@@ -27,23 +27,7 @@
   }
 }
 
-@mixin tag-punched-background-states ($token, $size: md, $legacy: false, $hover:true, $active: true) {
-  @include tag-punched-background($token, $size, $legacy);
-
-  @if $hover {
-    &:hover {
-      @include tag-punched-background($token, $size, $legacy, (hover: true));
-    }
-  }
-
-  @if $active {
-    &:active {
-      @include tag-punched-background($token, $size, $legacy, (active: true));
-    }
-  }
-}
-
-@mixin tag-punched-background ($token, $size: md, $legacy: false, $options: ()) {
+@mixin tag-punched-background ($token, $size: md, $legacy: false) {
   $top: 1v;
   $stop-1: 2.3125v;
   $stop-2: 2.5v;
@@ -54,5 +38,5 @@
     $stop-2: 2v;
   }
 
-  @include color.background-image($token, (legacy: $legacy), 'radial-gradient(circle at 100% #{spacing.space($top)}, transparent #{spacing.space($stop-1)}, $COLOR #{spacing.space($stop-2)})');
+  @include color.background-image($token, (legacy: $legacy, hover: true), 'radial-gradient(circle at 100% #{spacing.space($top)}, transparent #{spacing.space($stop-1)}, $COLOR #{spacing.space($stop-2)})');
 }
