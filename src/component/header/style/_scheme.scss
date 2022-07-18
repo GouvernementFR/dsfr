@@ -9,18 +9,15 @@
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
-    // @include color.background(elevated grey, (legacy:$legacy)); TODO: shadow
-
     &__brand {
       @include elevation.elevate(raised, (legacy: $legacy));
     }
 
     @include media-query.respond-from(lg) {
-      @include elevation.elevate(raised, (legacy: $legacy));
-
       &__brand {
         @include elevation.drop();
       }
+      @include elevation.elevate(raised, (legacy: $legacy));
     }
 
     &__service {
