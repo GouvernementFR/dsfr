@@ -4,8 +4,9 @@
 ////
 
 @use 'module/color';
+@use 'module/legacy';
 
-@include legacy(ie11) {
+@include legacy.is(ie11) {
   /**
   * reset liste à puce
   */
@@ -34,7 +35,7 @@
 }
 
 @include respond-from(lg) {
-  @include legacy(ie11) {
+  @include legacy.is(ie11) {
     /**
     * Correctif de l'alignement des menus sur la droite
     */

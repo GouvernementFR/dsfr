@@ -4,7 +4,8 @@
 ////
 
 @use 'module/color';
+@use 'module/selector';
 
-@include theme-selector(dark) {
+@include selector.theme(dark) {
   @include color.define(dark);
 }

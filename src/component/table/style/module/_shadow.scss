@@ -3,6 +3,8 @@
 /// @group Table
 ////
 
+@use 'module/selector';
+
 /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */
@@ -62,7 +64,7 @@
   }
 }
 
-@include theme-selector(dark) {
+@include selector.theme(dark) {
   #{ns(table__shadow)} {
     @include before {
       opacity: 1;

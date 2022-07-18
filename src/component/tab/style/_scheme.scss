@@ -3,32 +3,35 @@
 /// @group tab
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _tab-scheme($legacy: false) {
   #{ns(tabs)} {
-    @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), bottom-1-in);
+    @include color.box-shadow(default grey, (legacy: $legacy), bottom-1-in);
 
     @include before {
-      @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), top-1-in left-1-in right-1-in);
+      @include color.box-shadow(default grey, (legacy: $legacy), top-1-in left-1-in right-1-in);
     }
 
     /**
     * Tab button
     */
     &__tab {
-      @include scheme-element-bg-image-color((border active blue-france) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
-      @include scheme-element-box-shadow-color(background default grey, (legacy: $legacy), bottom-2-out);
+      @include color.background-image((border active blue-france) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+      @include color.box-shadow(background default grey, (legacy: $legacy), bottom-2-out);
 
       &:not([aria-selected=true]) {
-        @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
-        @include scheme-element-text-color(action-high grey, (legacy: $legacy));
+        @include color.background(action-low blue-france, (legacy: $legacy));
+        @include color.text(action-high grey, (legacy: $legacy));
       }
 
       &[aria-selected=true] {
-        @include scheme-element-text-color(active blue-france, (legacy: $legacy));
-        @include scheme-element-bg-color(default grey, (legacy: $legacy));
+        @include color.background(default grey, (legacy: $legacy));
+        @include color.text(active blue-france, (legacy: $legacy));
       }
 
-      @include disabled((legacy: $legacy, text: true, background: true));
+      @include disabled.selector((), (legacy: $legacy, text: true, background: true));
     }
   }
 }

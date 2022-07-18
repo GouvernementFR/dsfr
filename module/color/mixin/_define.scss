@@ -4,7 +4,6 @@
 @use '../variable/decisions';
 @use '../variable/sets';
 
-
 @mixin define($theme: light) {
   $sets: ();
   @each $context, $uses in decisions.$values {

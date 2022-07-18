@@ -6,7 +6,6 @@
 @use 'module/color';
 @use 'module/elevation';
 
-
 @mixin _modal-scheme($legacy: false) {
   #{ns(modal)} {
     @include body {

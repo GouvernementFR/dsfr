@@ -82,7 +82,7 @@
     /**
     * Mixin disabled pour gérer l'état disabled
     */
-    @include disabled {
+    @include disabled.selector {
       label {
         @include disabled.colors((legacy: $legacy, text: true));
       }
@@ -98,12 +98,12 @@
     &--error {
       #{ns(fieldset__content)} {
         @include before {
-          @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+          @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
         }
       }
 
       label {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
+        @include color.text(default error, (legacy:$legacy));
       }
     }
 
@@ -113,12 +113,12 @@
     &--valid {
       #{ns(fieldset__content)} {
         @include before {
-          @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+          @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
         }
       }
 
       label {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
+        @include color.text(default success, (legacy:$legacy));
       }
     }
   }

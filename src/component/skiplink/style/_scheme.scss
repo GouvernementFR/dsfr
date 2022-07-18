@@ -3,8 +3,10 @@
 /// @group skiplink
 ////
 
+@use 'module/color';
+
 @mixin _skiplink-scheme($legacy: false) {
   #{ns(skiplinks)} {
-    @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy));
   }
 }

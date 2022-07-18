@@ -3,6 +3,9 @@
 /// @group tag
 ////
 
+@use 'module/color';
+@use 'module/spacing';
+
 @mixin build-tag() {
   @include _build-link($tags-settings);
 }
@@ -41,15 +44,6 @@
 }
 
 @mixin tag-punched-background ($token, $size: md, $legacy: false, $options: ()) {
-  $legacy-target: ie11;
-  $type: hex;
-  @if not $legacy {
-    $legacy-target: null;
-    $type: decision;
-    $options: map-merge($options, (var: true));
-  }
-
-  $result: get-color($token, $type, $options);
   $top: 1v;
   $stop-1: 2.3125v;
   $stop-2: 2.5v;
@@ -60,7 +54,5 @@
     $stop-2: 2v;
   }
 
-  @include legacy($legacy-target) {
-    background-image: radial-gradient(circle at 100% #{space($top)}, transparent #{space($stop-1)}, #{$result} #{space($stop-2)});
-  }
+  @include color.background-image($token, (legacy: $legacy), 'radial-gradient(circle at 100% #{spacing.space($top)}, transparent #{spacing.space($stop-1)}, $COLOR #{spacing.space($stop-2)})');
 }

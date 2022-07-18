@@ -11,6 +11,7 @@
   #{ns(menu)} {
     @include respond-from(lg) {
       @include elevation.elevate(overlap, (background: #{'&__list'}, legacy: $legacy));
+
       &__list {
         @include color.box-shadow(open blue-france, (legacy:$legacy), top-1-in);
       }

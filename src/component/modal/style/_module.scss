@@ -85,7 +85,6 @@
     flex: 1 1 auto;
     max-height: var(--modal-max-height);
 
-
     @include respond-from(md) {
       max-height: 80vh !important;
     }

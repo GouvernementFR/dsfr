@@ -8,7 +8,6 @@
 @use 'module/elevation/variable/z-indexes';
 @use 'module/elevation/variable/shadows';
 
-
 @mixin elevate($level, $options: ()) {
   $layer: list.nth(string.split($level, '-'), 1);
   $legacy: map.get($options, legacy);
@@ -33,7 +32,6 @@
     @if map.has-key($tokens, $layer) {
       @include legacy.is($target) {
         @include utilities.nest($background) {
-          @debug &;
           @include color.background(map.get($tokens, $layer), (legacy: $legacy));
         }
       }

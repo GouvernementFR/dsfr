@@ -7,6 +7,7 @@
 @mixin define () {
   :root {
     @include ground.ground(default);
+
     --shadow-color: #{map.get(colors.$values, light)};
 
     @each $id, $value in shadows.$values {
@@ -17,6 +18,4 @@
   @include selector.theme(dark) {
     --shadow-color: #{map.get(colors.$values, dark)};
   }
-
-
 }

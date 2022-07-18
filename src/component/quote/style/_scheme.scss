@@ -3,18 +3,20 @@
 /// @group quote
 ////
 
+@use 'module/color';
+
 @mixin _quote-scheme($legacy: false) {
   #{ns(quote)} {
     @include before {
-      @include scheme-element-text-color((artwork minor blue-france), (legacy:$legacy));
+      @include color.text((artwork minor blue-france), (legacy:$legacy));
     }
 
-    @include accent-modifiers {
+    @include color.accentuate {
       @include before {
-        @include scheme-element-text-color((artwork minor accent), (legacy:$legacy));
+        @include color.text((artwork minor accent), (legacy:$legacy));
       }
     }
 
-    @include scheme-element-bg-image-color((border default grey), (legacy:$legacy));
+    @include color.background-image((border default grey), (legacy:$legacy));
   }
 }

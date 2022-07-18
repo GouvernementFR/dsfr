@@ -3,38 +3,40 @@
 /// @group Table
 ////
 
+@use 'module/color';
+
 @mixin _table-scheme($legacy: false) {
   #{ns(table)} {
     caption {
-      @include scheme-element-text-color(title grey, (legacy: $legacy));
+      @include color.text(title grey, (legacy: $legacy));
     }
 
     thead {
-      @include scheme-element-bg-image-color(border plain grey, (legacy: $legacy));
+      @include color.background-image(border plain grey, (legacy: $legacy));
 
-      @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
-      @include scheme-element-text-color(title grey, (legacy: $legacy));
+      @include color.background(contrast grey, (legacy: $legacy));
+      @include color.text(title grey, (legacy: $legacy));
     }
 
     tbody {
-      @include scheme-element-bg-color(alt grey, (legacy: $legacy));
+      @include color.background(alt grey, (legacy: $legacy));
 
       tr:nth-child(even) {
-        @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
+        @include color.background(contrast grey, (legacy: $legacy));
       }
     }
 
-    @include accent-modifiers {
+    @include color.accentuate {
       thead {
-        @include scheme-element-bg-image-color(border plain accent, (legacy: $legacy));
-        @include scheme-element-bg-color(contrast accent, (legacy: $legacy));
+        @include color.background-image(border plain accent, (legacy: $legacy));
+        @include color.background(contrast accent, (legacy: $legacy));
       }
 
       tbody {
-        @include scheme-element-bg-color(alt accent, (legacy: $legacy));
+        @include color.background(alt accent, (legacy: $legacy));
 
         tr:nth-child(even) {
-          @include scheme-element-bg-color(contrast accent, (legacy: $legacy));
+          @include color.background(contrast accent, (legacy: $legacy));
         }
       }
 
@@ -42,7 +44,7 @@
       &#{ns(table--bordered)} {
         tbody {
           tr {
-            @include scheme-element-bg-image-color(border default accent, (legacy: $legacy));
+            @include color.background-image(border default accent, (legacy: $legacy));
           }
         }
       }
@@ -52,11 +54,11 @@
     &--bordered {
       tbody {
         tr {
-          @include scheme-element-bg-image-color(border default grey, (legacy: $legacy));
+          @include color.background-image(border default grey, (legacy: $legacy));
 
           /* Style bordered, enleve le style even/odd  */
           &:nth-child(even) {
-            @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+            @include color.transparent-background((legacy:$legacy, hover: true));
           }
         }
       }

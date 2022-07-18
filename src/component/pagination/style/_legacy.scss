@@ -3,7 +3,10 @@
 /// @group pagination
 ////
 
-@include legacy(ie11) {
+@use 'module/color';
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   /**
   * Correctif de la largeur de la légende d'un fieldset
   */
@@ -12,7 +15,7 @@
     @include disable-list-style-legacy;
 
     &__link {
-      @include scheme-element-bg-transparent((legacy: true, hover: true));
+      @include color.transparent-background((legacy: true, hover: true));
 
       &--first {
         @include icon-legacy(arrow-left-s-first-line, md);

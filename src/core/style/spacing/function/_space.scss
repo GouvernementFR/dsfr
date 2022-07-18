@@ -9,8 +9,6 @@
 @use 'sass:list';
 @use 'module/string' as str;
 
-
-
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem

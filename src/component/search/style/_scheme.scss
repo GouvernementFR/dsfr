@@ -3,23 +3,25 @@
 /// @group search
 ////
 
+@use 'module/color';
+
 @mixin _search-scheme($legacy: false) {
   #{ns(search-bar)} {
     #{ns(input)} {
-      @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), bottom-2-in);
+      @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
 
       /**
       * Modificateur pour le champ validés
       */
       &--valid {
-        @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+        @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
       }
 
       /**
       * Modificateur pour le champ présentant des erreurs
       */
       &--error {
-        @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), bottom-2-in);
+        @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
       }
     }
   }
