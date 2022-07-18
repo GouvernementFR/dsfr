@@ -13,7 +13,7 @@
 
   #{ns(consent-banner)} {
     // @include color.background(contrast grey, (legacy:$legacy));
-    @include elevation.elevate(overlap-above, (legacy:$legacy, usage: contrast));
+    @include elevation.elevate(overlap-above, (legacy:$legacy, usage: alt));
     @include color.box-shadow(default grey, (legacy:$legacy));
   }
 
