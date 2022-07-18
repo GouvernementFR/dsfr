@@ -1,9 +1,13 @@
 error:
-  short: erreur
+  short: Erreur
+disabled:
+  default: Désactivé
+required:
+  default: Obligatoire
 label:
-  default: libellé
+  default: Libellé
   short: libl
-  long: libellé de l'élément
+  long: Libellé de l'élément
 fieldset:
   legend: Une légende
 hint:
