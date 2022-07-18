@@ -10,7 +10,7 @@
 
   @include respond-from(lg) {
     @include absolute(100%, 0, null, 0);
-    @include margin(-2px 0 0);
+    @include margin(0);
     @include padding(0);
 
     @include after('', block) {
