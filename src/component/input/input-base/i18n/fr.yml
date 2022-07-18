@@ -1,0 +1,19 @@
+title: Champs de saisie
+description: Les champs permettent à un utilisateur d'entrer du contenu et données.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input
+
+sample:
+  text: Champs de type "text"
+  number: Champs de type "number"
+  search: Champs de type "search"
+  date: Champs de type "date"
+  textarea: Champs de type "textarea"
+  password: Champs de type "password"
+  button: Combo champs + bouton
+  placeholder: Champs avec placeholder
+  value: Champs avec valeur initiale
+  disabled: Champs désactivé
+  hint: Champs avec texte additionnel
+  icon: Champs avec icône personalisée
+  valid: Champs valide avec texte de succès
+  error: Champs en erreur avec texte d'erreur
