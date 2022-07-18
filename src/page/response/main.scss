@@ -1,0 +1,8 @@
+////
+/// Error Main
+/// @group error
+////
+
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(2);
+@include dsfr.media-query-order;

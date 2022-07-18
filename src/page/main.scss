@@ -1,8 +1,10 @@
-/* PAGE MAIN */
+////
+/// Page Main
+/// @group page
+////
 
-@use 'module/path';
-@use 'module/shame/media-query';
+@use 'module/dsfr';
+@include dsfr.set-dist-path-level(1);
+@include dsfr.media-query-order;
 
-@include path.to-dist(2);
-@include media-query.order;
-
+@import 'response/main';

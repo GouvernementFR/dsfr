@@ -1,0 +1,15 @@
+id: response
+title: Modèle de page d'erreur
+description:
+doc:
+style:
+  - core
+  - button
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header
