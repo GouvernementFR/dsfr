@@ -1,9 +1,13 @@
-<% if (locals.title !== undefined && locals.title.length) { %>
+<%
+if (!locals.globals.hasOwnProperty('zIndex')) locals.globals.zIndex = 1500;
+locals.globals.zIndex -= 10
+
+if (locals.title !== undefined && locals.title.length) { %>
 <div class="<%= prefix %>-container" >
     <h4 class="<%= prefix %>-h4"><%= title %></h4>
 </div>
 <% } %>
-<div class="<%= prefix %>-mb-6v" >
+<div class="<%= prefix %>-mb-6v relative-sample@lg" style="z-index:<%= locals.globals.zIndex %>;">
     <%- component %>
 </div>
 <% if (locals.snippet !== undefined) { %>

@@ -7,7 +7,7 @@ $btn-settings:(
   selector: btn,
   sizes: (
     sm: (
-      font-size: 14,
+      font-size: 3.5v,
       min-height: 8v,
       padding-x: 3v,
       icon: sm,
@@ -15,7 +15,7 @@ $btn-settings:(
       icon-only: sm,
     ),
     md: (
-      font-size: 16,
+      font-size: 4v,
       min-height: 10v,
       padding-x: 4v,
       icon: sm,
@@ -23,7 +23,7 @@ $btn-settings:(
       icon-only: md,
     ),
     lg: (
-      font-size: 18,
+      font-size: 4.5v,
       min-height: 12v,
       padding-x: 6v,
       icon: md,

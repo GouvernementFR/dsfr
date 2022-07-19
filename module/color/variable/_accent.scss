@@ -1,0 +1,9 @@
+$value: none;
+
+@mixin set ($tint) {
+  $value: $tint !global;
+}
+
+@mixin end () {
+  $value: none !global;
+}

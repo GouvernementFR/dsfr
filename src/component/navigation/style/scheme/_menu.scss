@@ -3,15 +3,21 @@
 /// @group navigation
 ////
 
+@use 'sass:selector';
+@use 'module/color';
+@use 'module/elevation';
+
 @mixin _navigation-scheme-menu($legacy: false) {
   #{ns(menu)} {
     @include respond-from(lg) {
-      @include after {
-        @include scheme-element-bg-color(elevated grey, (legacy: $legacy));
+      @include elevation.elevate(overlap, (background: #{'&__list'}, legacy: $legacy));
+
+      &__list {
+        @include color.box-shadow(open blue-france, (legacy:$legacy), top-1-in);
       }
 
       #{ns(nav__link)} {
-        @include scheme-element-box-shadow-color(default grey, (legacy: $legacy), 0 calc(-4v - 1px) 0 -4v $COLOR);
+        @include color.box-shadow(default grey, (legacy: $legacy), 0 calc(-4v - 1px) 0 -4v color.$constant);
       }
     }
   }

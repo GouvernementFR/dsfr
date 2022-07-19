@@ -3,30 +3,33 @@
 /// @group button
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin btn-kind-scheme ($kind: 2, $legacy: false) {
   @if ($kind == 2) {
-    @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
-    @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
-    @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy));
+    @include color.transparent-background((legacy:$legacy, hover: true));
+    @include color.text(action-high blue-france, (legacy:$legacy));
+    @include color.box-shadow(action-high blue-france, (legacy:$legacy));
 
-    @include disabled((legacy: $legacy, text: true, box-shadow: true, can-be-link: true)) {
-      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, box-shadow: true)) {
+      @include color.transparent-background((legacy:$legacy, hover: true));
     }
   }
   @else if ($kind == 3) {
-    @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
-    @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
-    @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+    @include color.transparent-background((legacy:$legacy, hover: true));
+    @include color.text(action-high blue-france, (legacy:$legacy));
+    @include color.box-shadow(default grey, (legacy:$legacy));
 
-    @include disabled((legacy: $legacy, text: true, box-shadow: true, can-be-link: true)) {
-      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, box-shadow: true)) {
+      @include color.transparent-background((legacy:$legacy, hover: true));
     }
   }
   @else if ($kind == 4) {
-    @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
-    @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
-    @include disabled((legacy: $legacy, text: true, box-shadow: false, can-be-link: true)) {
-      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+    @include color.transparent-background((legacy:$legacy, hover: true));
+    @include color.text(action-high blue-france, (legacy:$legacy));
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, box-shadow: false)) {
+      @include color.transparent-background((legacy:$legacy, hover: true));
     }
   }
 }

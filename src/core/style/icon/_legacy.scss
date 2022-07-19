@@ -3,7 +3,9 @@
 /// @group core
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   @include has-icon {
     @include icon-legacy(null, md, before);
   }

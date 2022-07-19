@@ -3,6 +3,8 @@
 /// @group toggle
 ////
 
+@use 'module/spacing';
+
 /*
  * Passage du label ferré à gauche, le toggle ferré à droite
  */
@@ -32,7 +34,7 @@
 
     @include after {
       left: auto;
-      right: space(4v);
+      right: spacing.space(4v);
     }
   }
 

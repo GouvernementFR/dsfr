@@ -3,7 +3,9 @@
 /// @group quote
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   /**
   * Correction largeur max du texte
   */

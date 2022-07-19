@@ -3,18 +3,22 @@
 /// @group core
 ////
 
+@use 'sass:list';
+@use 'module/color';
+@use 'module/typography';
+
 @mixin _core-typography-scheme-heading($legacy: false) {
   @include title-selector {
-    @include scheme-element-text-color(title grey, (legacy:$legacy));
+    @include color.text(title grey, (legacy:$legacy));
   }
 
   $titles: ();
   @each $title, $variation in ($title-settings) {
-    @if is-heading($title) {
-      $titles: append($titles, $title, comma);
+    @if typography.is-heading($title) {
+      $titles: list.append($titles, $title, comma);
     }
   }
   #{$titles} {
-    @include scheme-element-text-color(title grey, (legacy: $legacy));
+    @include color.text(title grey, (legacy: $legacy));
   }
 }

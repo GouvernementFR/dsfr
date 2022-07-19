@@ -3,6 +3,9 @@
 /// @group checkboxe
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 /**
  * L'input de type checkbox avec son label est contenu dans un groupe
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
@@ -15,7 +18,7 @@
     input[type="checkbox"] {
       + label {
         @include before {
-          @include scheme-element-box-shadow-color(action-high grey, (legacy:$legacy));
+          @include color.box-shadow(action-high grey, (legacy:$legacy));
         }
       }
 
@@ -27,8 +30,8 @@
       &:active:not(:disabled) {
         + label {
           @include before {
-            @include scheme-element-bg-color(active blue-france, (legacy:$legacy));
-            @include scheme-element-data-uri-svg(inverted grey, (legacy: $legacy), $checkbox-svg);
+            @include color.background(active blue-france, (legacy:$legacy));
+            @include color.data-uri-svg(inverted grey, (legacy: $legacy), $checkbox-svg);
           }
         }
       }
@@ -36,18 +39,18 @@
       /**
       * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
       */
-      @include disabled {
+      @include disabled.selector {
         & + label {
           @include before {
-            @include disabled-colors((legacy: $legacy, box-shadow: true));
+            @include disabled.colors((legacy: $legacy, box-shadow: true));
           }
         }
 
         &:checked {
           & + label {
             @include before {
-              @include disabled-colors((legacy: $legacy, text: true, background: true));
-              @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $checkbox-svg);
+              @include disabled.colors((legacy: $legacy, text: true, background: true));
+              @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $checkbox-svg);
             }
           }
         }
@@ -59,11 +62,11 @@
     */
     &--error {
       input[type="checkbox"] + label {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
+        @include color.text(default error, (legacy:$legacy));
       }
 
       @include before {
-        @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+        @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
       }
     }
 
@@ -72,11 +75,11 @@
     */
     &--valid {
       input[type="checkbox"] + label {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
+        @include color.text(default success, (legacy:$legacy));
       }
 
       @include before {
-        @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+        @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
       }
     }
   }

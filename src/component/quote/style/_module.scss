@@ -3,6 +3,8 @@
 /// @group quote
 ////
 
+@use 'module/spacing';
+
 #{ns(quote)} {
   @include relative;
   @include margin(0);
@@ -11,7 +13,7 @@
 
   background-size: 50% 1px;
   background-repeat: no-repeat;
-  background-position: space(2v 100%);
+  background-position: spacing.space(2v 100%);
 
   @include respond-from(md) {
     background-size: 1px 100%;

@@ -3,9 +3,11 @@
 /// @group core
 ////
 
+@use 'module/specificity';
+
 @include build-utility (display, ellipsis) {
-  display: important(inline);
-  white-space: important(nowrap);
-  overflow: important(hidden);
-  text-overflow: important(ellipsis);
+  display: specificity.important(inline);
+  white-space: specificity.important(nowrap);
+  overflow: specificity.important(hidden);
+  text-overflow: specificity.important(ellipsis);
 }

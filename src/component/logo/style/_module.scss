@@ -3,7 +3,8 @@
 /// @group logo
 ////
 
-@use "sass:math";
+@use 'sass:math';
+@use 'module/color';
 
 #{ns(logo)} {
   @include set-text-margin(0);
@@ -20,7 +21,7 @@
   @include before('', block) {
     background-repeat: no-repeat, no-repeat, no-repeat;
     $marianne: svg-encode($svg-marianne, true);
-    background-image: url($marianne), linear-gradient(90deg, $blue-france 0%, $blue-france 50%, $red-marianne 50%, $red-marianne 100%), linear-gradient(90deg, $black 0%, $black 100%);
+    background-image: url($marianne), linear-gradient(90deg, color.$blue-france 0%, color.$blue-france 50%, color.$red-marianne 50%, color.$red-marianne 100%), linear-gradient(90deg, color.$black 0%, color.$black 100%);
   }
 
   @include after('', block) {
@@ -40,6 +41,6 @@
 
 :root#{ns-attr(mourning)} #{ns(logo)} {
   @include before {
-    box-shadow: 0 0 0 1px $white;
+    box-shadow: 0 0 0 1px color.$white;
   }
 }

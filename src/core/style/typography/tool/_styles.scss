@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/spacing';
+
 @function get-text-style($font-size) {
   @return map-get($text-styles, $font-size);
 }
@@ -22,10 +24,10 @@
     $append: '';
   }
 
-  font-size: #{$prepend} font-size($font-size) #{$append};
+  font-size: #{$prepend} spacing.space($font-size) #{$append};
 
   @if map-has-key($style, line-height) {
-    line-height: #{$prepend} space(map-get($style, line-height)) #{$append};
+    line-height: #{$prepend} spacing.space(map-get($style, line-height)) #{$append};
   }
 }
 

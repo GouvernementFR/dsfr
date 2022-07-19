@@ -3,8 +3,10 @@
 /// @group logo
 ////
 
+@use 'module/color';
+
 @mixin _logo-scheme($legacy: false) {
   #{ns(logo)} {
-    @include scheme-element-text-color(title grey, (legacy:$legacy));
+    @include color.text(title grey, (legacy:$legacy));
   }
 }

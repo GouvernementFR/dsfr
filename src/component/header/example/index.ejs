@@ -1,5 +1,13 @@
 <% const sample = getSample(include); %>
 
+<style>
+    @media (min-width: 62em) {
+        .relative-sample\@lg {
+            position: relative;
+        }
+    }
+</style>
+
 <%- sample('Header avec Navigation complète', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>
 
 <%- sample('Header minimal', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, navigation: 'min' }}, true, './layout');  %>

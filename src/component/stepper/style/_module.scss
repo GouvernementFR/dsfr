@@ -3,6 +3,8 @@
 /// @group stepper
 ////
 
+@use 'module/spacing';
+
 #{ns(stepper)} {
   @include set-title-margin(0);
   @include set-text-margin(0);
@@ -22,7 +24,7 @@
     @include font-weight(regular);
     @include after('\00000a') {
       white-space: pre;
-      line-height: space(8v);
+      line-height: spacing.space(8v);
     }
   }
 

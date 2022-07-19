@@ -3,6 +3,8 @@
 /// @group Tab
 ////
 
+@use 'module/selector';
+
 /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */
@@ -49,7 +51,7 @@
   }
 }
 
-@include theme-selector(dark) {
+@include selector.theme(dark) {
   #{ns(tabs__shadow)} > #{ns(tabs__list)} {
     @include before {
       opacity: 1;

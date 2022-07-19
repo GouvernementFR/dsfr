@@ -18,7 +18,7 @@
 
   li {
     @include marker(none);
-    padding: space(2v 0);
+    @include padding(2v 0);
   }
 
   @include title {

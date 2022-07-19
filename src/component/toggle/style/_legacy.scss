@@ -3,7 +3,9 @@
 /// @group toggle
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   #{ns(toggle)} {
     input[type="checkbox"] {
       &::-ms-check {

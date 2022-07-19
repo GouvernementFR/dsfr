@@ -3,6 +3,8 @@
 /// @group radio
 ////
 
+@use 'module/spacing';
+
 #{ns(radio-rich)} {
   @include relative;
 
@@ -10,7 +12,7 @@
     + label {
       @include padding-left(14v);
       @include margin-left(0);
-      min-height: space(22v);
+      min-height: spacing.space(22v);
       @include size(100%);
       @include padding-top(2v);
       @include padding-bottom(2v);
@@ -56,7 +58,7 @@
 
     img,
     svg {
-      max-width: space(20v);
+      max-width: spacing.space(20v);
       object-fit: cover;
     }
   }
@@ -97,7 +99,7 @@
         }
 
         #{ns(radio-rich)}__img {
-          right: space(4v);
+          right: spacing.space(4v);
         }
       }
 
@@ -111,12 +113,12 @@
 
       &:first-child {
         #{ns(radio-rich)}__img {
-          top: space(4v);
+          top: spacing.space(4v);
         }
       }
 
       &__img {
-        top: space(3v);
+        top: spacing.space(3v);
       }
     }
 

@@ -3,9 +3,11 @@
 /// @group core
 ////
 
-@use "sass:math";
-@use "sass:meta";
-@use "sass:string";
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
+@use 'sass:list';
+@use 'module/string' as str;
 
 /// Return space value from type map and convert to rem.
 ///
@@ -44,7 +46,7 @@
 
   @if $type == list {
     $list: ();
-    $separator: list-separator($value);
+    $separator: list.separator($value);
     @each $v in $value {
       $list: append($list, space($v), $separator);
     }
@@ -72,7 +74,7 @@
       $b: null;
       $n: 0;
       $i: $c + 1;
-      $l: str-length($value);
+      $l: string.length($value);
       @while $b == null and $i <= $l {
         $char: string.slice($value, $i, $i);
         @if $char == '(' {
@@ -110,7 +112,7 @@
     }
 
     @if string.index($value, ' ') != null {
-      $list: str-split($value, ' ');
+      $list: str.split($value, ' ');
       $result: ();
       @each $item in $list {
         $result: append($result, space($item), space);
@@ -118,8 +120,8 @@
       @return $result;
     }
 
-    @if str-is-num($value) {
-      @return space(str-to-num($value));
+    @if str.is-num($value) {
+      @return space(str.to-num($value));
     }
 
     @return unquote($value);

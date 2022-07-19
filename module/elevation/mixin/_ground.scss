@@ -1,0 +1,13 @@
+@use 'sass:list';
+@use 'sass:map';
+@use '../variable/grounds';
+
+@mixin ground ($level) {
+  $ground: map.get(grounds.$values, $level);
+
+  --ground: #{list.nth($ground, 1)};
+
+  @if list.length($ground) > 1 {
+    z-index: #{list.nth($ground, 2)};
+  }
+}

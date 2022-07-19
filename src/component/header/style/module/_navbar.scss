@@ -3,6 +3,8 @@
 /// @group header
 ////
 
+@use 'module/elevation';
+
 #{ns(header)} {
   &__navbar {
     @include display-flex(row,flex-end);
@@ -11,7 +13,7 @@
     order: 3;
     flex: 0 0 auto;
     align-self: flex-start;
-    @include z-index(menu);
+    @include elevation.z-index(overlap);
 
     @include respond-from(lg) {
       display: none;

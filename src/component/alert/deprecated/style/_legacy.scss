@@ -3,7 +3,9 @@
 /// @group alert
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   /**
   * reset des marges dans l'alerte
   */

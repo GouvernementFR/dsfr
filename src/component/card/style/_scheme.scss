@@ -3,36 +3,43 @@
 /// @group card
 ////
 
+@use 'module/color';
+@use 'module/elevation';
+
 @mixin _card-scheme($legacy: false) {
   #{ns(card)} {
-    @include scheme-element-bg-color(default grey, (legacy:$legacy));
+    @include color.background(default grey, (legacy:$legacy));
 
     &:not(&--no-border):not(&--shadow) {
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), all-1-out);
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-out);
     }
 
     &--grey {
-      @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
+      @include color.background(contrast grey, (legacy:$legacy));
     }
 
     &--shadow {
-      @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+      @include elevation.elevate(raised, (legacy: $legacy));
+    }
+
+    &--shadow#{&}--grey {
+      @include color.background(contrast-raised grey, (legacy:$legacy));
     }
 
     &--no-background {
-      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+      @include color.transparent-background((legacy:$legacy, hover: true));
     }
 
     @include before {
-      @include scheme-element-text-color(action-high blue-france, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
     }
 
     &__detail {
-      @include scheme-element-text-color(mention grey, (legacy:$legacy));
+      @include color.text(mention grey, (legacy:$legacy));
     }
 
     &__title {
-      @include scheme-element-text-color(title grey, (legacy:$legacy));
+      @include color.text(title grey, (legacy:$legacy));
     }
   }
 }

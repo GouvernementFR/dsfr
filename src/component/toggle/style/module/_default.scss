@@ -3,6 +3,8 @@
 /// @group toggle
 ////
 
+@use 'module/spacing';
+
 #{ns(toggle)} {
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +21,7 @@
   input[type="checkbox"] {
     flex-shrink: 0;
     @include size(10v, 6v);
-    border-radius: space(3v);
+    border-radius: spacing.space(3v);
     @include margin(0);
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -47,8 +49,8 @@
   label {
     --toggle-status-width: auto;
     display: inline-flex;
-    flex-basis: space(calc(100% - 10v));
-    min-height: space(6v);
+    flex-basis: spacing.space(calc(100% - 10v));
+    min-height: spacing.space(6v);
     @include padding-left(8v);
     @include text-style(md);
 
@@ -72,8 +74,8 @@
      */
     @include before {
       flex-shrink: 0;
-      min-width: space(10v);
-      height: space(calc(5v + 1px));
+      min-width: spacing.space(10v);
+      height: spacing.space(calc(5v + 1px));
       @include margin-top(6v);
       @include margin-left(-10v);
       @include margin-right(4v);
@@ -93,7 +95,7 @@
       @include absolute(4v, null, null, 0, 6v, 6v);
       border-radius: 50%;
       background-repeat: no-repeat;
-      background-size: space(4v);
+      background-size: spacing.space(4v);
       background-position: center;
     }
   }
