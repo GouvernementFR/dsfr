@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/color';
+
 @mixin build-hr() {
   @include padding(var(--text-spacing));
   @include margin(0);
@@ -14,5 +16,5 @@
 }
 
 @mixin build-hr-scheme($legacy) {
-  @include scheme-element-bg-image-color(border default grey, (legacy:$legacy));
+  @include color.background-image(border default grey, (legacy:$legacy));
 }

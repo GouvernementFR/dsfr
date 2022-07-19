@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/spacing';
+
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
   position: #{$position};
   @if $top != null {
@@ -40,17 +42,17 @@
 }
 
 @mixin top($top) {
-  top: space($top);
+  top: spacing.space($top);
 }
 
 @mixin right($top) {
-  right: space($top);
+  right: spacing.space($top);
 }
 
 @mixin bottom($top) {
-  bottom: space($top);
+  bottom: spacing.space($top);
 }
 
 @mixin left($top) {
-  left: space($top);
+  left: spacing.space($top);
 }

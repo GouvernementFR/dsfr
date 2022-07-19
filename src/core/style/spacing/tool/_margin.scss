@@ -3,11 +3,14 @@
 /// @group tools
 ////
 
+@use 'module/spacing';
+@use 'module/string';
+
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
-  $start: str-slice($prop, 1, 1);
+  $start: string.slice($prop, 1, 1);
 
   @if $side != null {
-    $start: '#{str-slice($prop, 1, 1)}#{str-slice($side, 1, 1)}';
+    $start: '#{string.slice($prop, 1, 1)}#{string.slice($side, 1, 1)}';
   }
 
   $middle: '';
@@ -16,10 +19,10 @@
     $middle: '#{$breakpoint}-';
   }
 
-  $end: "#{str-replace($value, '.', '-')}";
+  $end: "#{string.replace($value, '.', '-')}";
 
   @if type-of($value) == 'number' and $value < 0 {
-    $end: "n#{str-replace(abs($value), '.', '-')}";
+    $end: "n#{string.replace(abs($value), '.', '-')}";
   }
 
   @if $value != 0 and $unit != null {
@@ -54,7 +57,7 @@
   $v: $value;
 
   @if type-of($value) == 'number' {
-    $v: space('#{$value}v') !important;
+    $v: spacing.space('#{$value}v') !important;
   }
 
   #{_spacing-selectors($prop, null, $value, $breakpoint)} {

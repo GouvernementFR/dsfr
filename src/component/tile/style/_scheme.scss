@@ -3,14 +3,16 @@
 /// @group tile
 ////
 
+@use 'module/color';
+
 @mixin _tile-scheme($legacy: false) {
   #{ns(tile)} {
-    @include scheme-element-box-shadow-color((default grey) (plain blue-france), (legacy: $legacy), all-1-in bottom-1v-in);
+    @include color.box-shadow((default grey) (plain blue-france), (legacy: $legacy), all-1-in bottom-1v-in);
 
-    @include scheme-element-bg-color(default grey, (legacy: $legacy));
+    @include color.background(default grey, (legacy: $legacy));
 
     &--grey {
-      @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
+      @include color.background(contrast grey, (legacy: $legacy));
     }
   }
 }

@@ -3,33 +3,36 @@
 /// @group select
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _select-scheme($legacy: false) {
   #{ns(select)} {
-    @include scheme-element-text-color(title grey, (legacy:$legacy));
-    @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
-    @include scheme-element-box-shadow-color(plain grey, (legacy:$legacy), bottom-2-in);
+    @include color.text(title grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy));
+    @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
 
-    @include scheme-element-data-uri-svg(text title grey, (legacy: $legacy), $select-arrow-down-svg);
+    @include color.data-uri-svg(text title grey, (legacy: $legacy), $select-arrow-down-svg);
 
     /**
     * Modificateur pour gérer l'état d'erreur
     */
     &--error {
-      @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), bottom-2-in);
+      @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
     }
 
     /**
     * Modificateur pour gérer l'état de validation
     */
     &--valid {
-      @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+      @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
     }
 
     /**
     * Mixin pour gérer l'état disabled
     */
-    @include disabled-form-field((legacy: $legacy)) {
-      @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $select-arrow-down-svg);
+    @include disabled.selector((), (legacy: $legacy, text: true, box-shadow: bottom-2-in)) {
+      @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $select-arrow-down-svg);
     }
 
     /**
@@ -39,8 +42,8 @@
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
-      @include scheme-element-box-shadow-color((plain grey) (background contrast blue-france), (legacy:$legacy), bottom-2-in all-in);
-      @include _scheme-element(-webkit-text-fill-color, text, label grey, (legacy:$legacy));
+      @include color.box-shadow((plain grey) (background contrast blue-france), (legacy:$legacy), bottom-2-in all-in);
+      @include color.text-fill(label grey, (legacy:$legacy));
     }
   }
 }

@@ -3,51 +3,54 @@
 /// @group tag
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _tag-scheme($legacy: false) {
   #{ns(tag)} {
-    @include scheme-element-text-color(label grey, (legacy: $legacy));
-    @include scheme-element-bg-color(contrast grey, (legacy: $legacy));
+    @include color.text(label grey, (legacy: $legacy));
+    @include color.background(contrast grey, (legacy: $legacy));
 
     @include pressed-selector(false) {
-      @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
-      @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
+      @include color.text(action-high blue-france, (legacy: $legacy));
+      @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
     }
 
     &#{ns(tag)}--dismiss {
-      @include scheme-element-text-color(inverted grey, (legacy: $legacy));
-      @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy));
+      @include color.text(inverted grey, (legacy: $legacy));
+      @include color.background(action-high blue-france, (legacy: $legacy, hover: true));
     }
   }
 
   @include clickable-selector {
     &#{ns(tag)} {
-      @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
-      @include scheme-element-bg-color(action-low blue-france, (legacy: $legacy));
+      @include color.text(action-high blue-france, (legacy: $legacy));
+      @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
 
-      @include accent-modifiers {
-        @include scheme-element-text-color(action-high accent, (legacy: $legacy));
-        @include scheme-element-bg-color(action-low accent, (legacy: $legacy));
+      @include color.accentuate {
+        @include color.text(action-high accent, (legacy: $legacy));
+        @include color.background(action-low accent, (legacy: $legacy, hover: true));
       }
 
       @include pressed-selector(true) {
-        @include scheme-element-text-color(inverted grey, (legacy: $legacy));
-        @include scheme-element-bg-transparent((legacy:$legacy));
-        @include tag-punched-background-states(background action-high blue-france, md, $legacy);
+        @include color.text(inverted grey, (legacy: $legacy));
+        @include color.transparent-background((legacy:$legacy));
+        @include tag-punched-background(background action-high blue-france, md, $legacy);
 
-        @include disabled {
+        @include disabled.selector {
           background-image: none;
         }
 
         @include after {
-          @include scheme-element-text-color(action-high blue-france, (legacy: $legacy));
+          @include color.text(action-high blue-france, (legacy: $legacy));
         }
 
         &#{ns(tag)}--sm {
-          @include tag-punched-background-states(background action-high blue-france, sm, $legacy);
+          @include tag-punched-background(background action-high blue-france, sm, $legacy);
         }
       }
 
-      @include disabled((legacy: $legacy, can-be-link: true, text: true, background: true));
+      @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
     }
   }
 
@@ -56,7 +59,7 @@
       @include clickable-selector {
         &#{ns(tag)} {
           @include pressed-selector(true) {
-            @include tag-punched-background-states(background action-high blue-france, sm, $legacy);
+            @include tag-punched-background(background action-high blue-france, sm, $legacy);
           }
         }
       }

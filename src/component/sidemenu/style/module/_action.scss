@@ -3,6 +3,8 @@
 /// @group sidemenu
 ////
 
+@use 'module/color';
+
 /**
  * Styles du bouton et du lien d'accès direct du sidemnu
  */
@@ -14,7 +16,7 @@
   @include padding(3v 2v);
   @include margin(0, md);
   @include text-style(md);
-  @include scheme-element-no-box-shadow;
+  @include color.no-box-shadow;
   text-align: left;
   font-weight: font-weight(bold);
 
@@ -55,7 +57,7 @@
   }
 
   &[aria-expanded="true"] {
-    @include scheme-element-no-box-shadow;
+    @include color.no-box-shadow;
     @include after {
       transform: rotate(-180deg);
     }

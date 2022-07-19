@@ -1,0 +1,5 @@
+@use "sass:string";
+
+@function is-heading($name) {
+  @return string.index('#{$name}', 'h') == 1;
+}

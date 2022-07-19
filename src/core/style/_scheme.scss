@@ -6,7 +6,6 @@
 @import 'action/scheme';
 @import 'artwork/scheme';
 @import 'typography/scheme';
-@import 'color/scheme';
 @import 'reset/scheme';
 @import 'display/scheme';
 
@@ -15,6 +14,5 @@
   @include _core-action-scheme($legacy);
   @include _core-artwork-scheme($legacy);
   @include _core-typography-scheme($legacy);
-  @include _core-color-scheme($legacy);
   @include _core-display-scheme($legacy);
 }

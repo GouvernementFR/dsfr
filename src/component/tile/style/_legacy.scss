@@ -3,7 +3,9 @@
 /// @group tile
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   /**
   * Correctif de la largeur du texte dans la tuile
   */

@@ -3,18 +3,21 @@
 /// @group pagination
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _pagination-scheme($legacy: false) {
   #{ns(pagination)} {
-    @include scheme-element-text-color(action-high grey, (legacy: $legacy));
+    @include color.text(action-high grey, (legacy: $legacy));
 
     &__link {
       &[aria-current] {
-        @include scheme-element-bg-color(active blue-france, (legacy: $legacy, hover: true));
-        @include scheme-element-text-color(inverted blue-france, (legacy: $legacy));
+        @include color.background(active blue-france, (legacy: $legacy, hover: true));
+        @include color.text(inverted blue-france, (legacy: $legacy));
       }
 
       &:not([aria-current]) {
-        @include disabled((legacy: $legacy, text: true, can-be-link: true));
+        @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true,));
       }
     }
   }

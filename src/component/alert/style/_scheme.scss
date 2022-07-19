@@ -3,28 +3,30 @@
 /// @group alert
 ////
 
+@use 'module/color';
+
 @mixin _alert-scheme($legacy: false) {
   #{ns(alert)} {
-    @include scheme-element-box-shadow-color((plain grey) (background flat grey), (legacy:$legacy), all-1-in left-10v-in);
+    @include color.box-shadow((plain grey) (background flat grey), (legacy:$legacy), all-1-in left-10v-in);
 
     @include before {
-      @include scheme-element-text-color(inverted grey, (legacy:$legacy));
+      @include color.text(inverted grey, (legacy:$legacy));
     }
 
     &--info {
-      @include scheme-element-box-shadow-color((plain info) (background flat info), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.box-shadow((plain info) (background flat info), (legacy:$legacy), all-1-in left-10v-in);
     }
 
     &--error {
-      @include scheme-element-box-shadow-color((plain error) (background flat error), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.box-shadow((plain error) (background flat error), (legacy:$legacy), all-1-in left-10v-in);
     }
 
     &--success {
-      @include scheme-element-box-shadow-color((plain success) (background flat success), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.box-shadow((plain success) (background flat success), (legacy:$legacy), all-1-in left-10v-in);
     }
 
     &--warning {
-      @include scheme-element-box-shadow-color((plain warning) (background flat warning), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.box-shadow((plain warning) (background flat warning), (legacy:$legacy), all-1-in left-10v-in);
     }
   }
 }

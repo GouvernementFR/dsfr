@@ -3,7 +3,9 @@
 /// @group icon-user
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('user'));
 
   #{ns(fi-account-line)} {

@@ -3,17 +3,24 @@
 /// @group modal
 ////
 
+@use 'module/spacing';
+@use 'module/elevation';
+@use 'module/color';
+
 #{ns(modal)} {
   // reset dialog @TODO à déplacer dans reset ?
   border: none;
   color: inherit;
   visibility: hidden;
   opacity: 0;
+  background-color: color.$black-a64;
+
+  @include elevation.ground(modal);
+
   @include padding(0);
   @include margin(0);
   @include display-flex(column, stretch, space-between);
   @include fixed(0, 0, 0, 0, 100%, 100%);
-  z-index: z-index(modal);
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
 
@@ -27,12 +34,12 @@
 
   @include before('', block) {
     @include size(0, 8v);
-    flex: 1 0 space(8v);
+    flex: 1 0 spacing.space(8v);
   }
 
   @include after(none, block) {
     @include size(0, 8v);
-    flex: 1 0 space(8v);
+    flex: 1 0 spacing.space(8v);
   }
 
   /**
@@ -76,8 +83,6 @@
     pointer-events: all;
     overflow-y: auto;
     flex: 1 1 auto;
-    max-height: calc(100vh - 2rem);
-    @include shadow(md);
     max-height: var(--modal-max-height);
 
     @include respond-from(md) {
@@ -128,7 +133,7 @@
 
   &__body#{ns(scroll-shadow)} {
     #{ns(modal)}__footer {
-      @include shadow(up);
+      box-shadow: spacing.space(inset 0 -8v 6v -8v color.$black);
     }
   }
 }

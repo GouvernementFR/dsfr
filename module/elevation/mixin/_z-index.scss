@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use 'module/elevation/variable/z-indexes';
+
+@mixin z-index($level) {
+  @if map.has-key(z-indexes.$values, $level) {
+    z-index: calc(var(--ground) + #{map.get(z-indexes.$values, $level)});
+  }
+}

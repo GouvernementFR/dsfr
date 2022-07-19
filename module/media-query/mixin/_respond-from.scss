@@ -1,0 +1,23 @@
+@use '../variable/breakpoints';
+
+/// Set media query styles
+///
+/// @param {String} $media [md] - Layout size `['xs', 'sm', 'md', 'lg', 'xl']`
+///
+/// @example scss -
+///   .foo {
+///     @include respond-from(md) {
+///     }
+///   }
+@mixin respond-from($media) {
+  $limits: map_get(breakpoints.$values, $media);
+
+  @if $limits != null {
+    @media (min-width: nth($limits, 1)) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}

@@ -1,0 +1,93 @@
+@use 'sass:list';
+@use 'sass:map';
+@use '../function/colors';
+@use '../variable/decisions';
+@use '../variable/sets';
+
+@mixin define($theme: light) {
+  $sets: ();
+  @each $context, $uses in decisions.$values {
+    @each $use, $families in $uses {
+      @each $family, $settings in $families {
+        $shade: list.nth($settings, 1);
+        $alpha: false;
+        $hover: false;
+
+        @if list.length($settings) > 1 {
+          $params: list.nth($settings, 2);
+          @if map.has-key($params, alpha) {
+            $alpha: true;
+          }
+          @if map.has-key($params, hover) {
+            $hover: true;
+          }
+        }
+        @each $tint, $shades in map.get(sets.$values, $family) {
+          @if map.has-key($shades, $shade) {
+            $token: $context $use $tint;
+            $set: colors.from($token, set);
+            $sets-tint: map.get($sets, $tint);
+            @if $sets-tint == null {
+              $sets-tint: ();
+            }
+            @if not map.has-key($sets-tint, $set) or $hover {
+              $sets-tint: map.merge($sets-tint, ($set: (token: $token, hover: $hover)));
+            }
+
+            $sets: map.merge($sets, ($tint: $sets-tint));
+
+            @if $theme == light {
+              @include _decide($token);
+
+              @if $hover == true {
+                @include _decide($token, hover);
+                @include _decide($token, active);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @each $family, $tints in sets.$values {
+    @each $tint, $shades in $tints {
+      @if map.has-key($sets, $tint) {
+        @each $set, $map in map.get($sets, $tint) {
+          $token: map.get($map, token);
+          $hover: map.get($map, hover);
+          @include _set($token, $theme);
+
+          @if $hover {
+            @include _set($token, $theme, hover);
+            @include _set($token, $theme, active);
+          }
+        }
+      }
+    }
+  }
+}
+
+@function _parameter($type: null) {
+  @if $type == null {
+    @return ();
+  }
+  @if $type == hover {
+    @return (hover: true);
+  }
+  @if $type == active {
+    @return (active: true);
+  }
+}
+
+@mixin _decide($token, $type: null) {
+  $parameters: _parameter($type);
+  $var: colors.from($token, decision, $parameters);
+  #{$var}: colors.from($token, set, map.merge($parameters, (var: true)));
+}
+
+@mixin _set($token, $theme, $type: null) {
+  $parameters: _parameter($type);
+  $var: colors.from($token, set, $parameters);
+  #{$var}: colors.from($token, hex, map.merge($parameters, (theme: $theme)));
+}

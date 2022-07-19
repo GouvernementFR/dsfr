@@ -3,26 +3,27 @@
 /// @group modal
 ////
 
+@use 'module/color';
+@use 'module/elevation';
+
 @mixin _modal-scheme($legacy: false) {
   #{ns(modal)} {
-    @include scheme-element-bg-color(overlay grey, (legacy:$legacy, hover:false));
-
     @include body {
-      @include scheme-element-bg-color(default grey, (legacy:$legacy));
+      @include elevation.elevate(lifted, (legacy: $legacy));
 
       &#{ns(scroll-shadow)} {
         #{ns(modal)}__footer {
-          @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+          // @include color.background(elevated grey, (legacy:$legacy));
         }
       }
     }
 
     &__title {
-      @include scheme-element-text-color(title grey, (legacy:$legacy));
+      @include color.text(title grey, (legacy:$legacy));
     }
 
     &__footer {
-      @include scheme-element-bg-color(default grey, (legacy:$legacy));
+      @include color.background(default grey, (legacy:$legacy));
     }
   }
 }

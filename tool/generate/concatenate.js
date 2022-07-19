@@ -18,7 +18,7 @@ const generateStyle = (pck, file) => {
 
   const depthLevel = (ascendance.match(/\//g) || []).length - 1;
 
-  content += `@use 'module/dsfr';\n@include dsfr.set-dist-path-level(${depthLevel});\n@include dsfr.media-query-order;\n\n`;
+  content += `@use 'module/path';\n@use 'module/shame/media-query';\n\n@include path.to-dist(${depthLevel});\n@include media-query.order;\n\n`;
 
   for (const child of children) {
     content += `@import '${child.path.replace(ascendance, '')}/${file}';\n`;

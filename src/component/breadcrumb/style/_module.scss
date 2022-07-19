@@ -3,6 +3,8 @@
 /// @group breadcrumb
 ////
 
+@use 'module/spacing';
+
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
@@ -55,7 +57,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
 
     li {
       display: inline;
-      line-height: space(7v);
+      line-height: spacing.space(7v);
 
       /**
       * flèche séparatrice en font-icon

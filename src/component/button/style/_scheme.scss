@@ -3,12 +3,15 @@
 /// @group button
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _button-scheme($legacy: false) {
   #{ns(btn)} {
-    @include scheme-element-bg-color(action-high blue-france, (legacy:$legacy, hover: true));
-    @include scheme-element-text-color(inverted blue-france, (legacy:$legacy));
+    @include color.background(action-high blue-france, (legacy:$legacy, hover: true));
+    @include color.text(inverted blue-france, (legacy:$legacy));
 
-    @include disabled((legacy: $legacy, text: true, background: true, can-be-link: true));
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
 
     // Outline variant
     &--secondary {

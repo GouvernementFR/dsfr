@@ -3,21 +3,24 @@
 /// @group connect
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _connect-scheme-default($legacy: false, $standalone: false) {
   #{ns(connect)} {
-    @include scheme-element-bg-color(action-high blue-france, (legacy: $legacy, standalone: $standalone));
-    @include scheme-element-text-color(inverted blue-france, (legacy: $legacy, standalone: $standalone));
+    @include color.background(action-high blue-france, (legacy: $legacy, standalone: $standalone));
+    @include color.text(inverted blue-france, (legacy: $legacy, standalone: $standalone));
 
     @include after {
-      @include scheme-element-bg-image-color((text inverted blue-france, text inverted blue-france), (legacy: $legacy, standalone: $standalone));
+      @include color.background-image((text inverted blue-france, text inverted blue-france), (legacy: $legacy, standalone: $standalone));
     }
 
-    @include disabled ((can-be-link: true)) {
-      @include scheme-element-bg-color(disabled grey, (legacy: $legacy, standalone: $standalone));
-      @include scheme-element-text-color(disabled grey, (legacy: $legacy, standalone: $standalone));
+    @include disabled.selector((can-be-link: true)) {
+      @include color.background(disabled grey, (legacy: $legacy, standalone: $standalone));
+      @include color.text(disabled grey, (legacy: $legacy, standalone: $standalone));
 
       @include after {
-        @include scheme-element-bg-image-color((text disabled grey, text disabled grey), (legacy: $legacy, standalone: $standalone));
+        @include color.background-image((text disabled grey, text disabled grey), (legacy: $legacy, standalone: $standalone));
       }
     }
   }

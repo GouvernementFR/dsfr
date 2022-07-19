@@ -3,6 +3,8 @@
 /// @group icon-buildings
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('buildings'));
 }

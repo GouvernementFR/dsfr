@@ -1,0 +1,15 @@
+@use 'sass:math';
+@use '../variable/units';
+
+@function is-unit($value, $unit) {
+  @return math.unit($value) == $unit;
+}
+
+@function is-basic-unit($value) {
+  @each $unit, $m in units.$values {
+    @if is-unit($value, $unit) {
+      @return true;
+    }
+  }
+  @return false;
+}

@@ -1,0 +1,9 @@
+@use 'options';
+
+$focus: #0a76f6;
+$black: nth(map-get(options.$values, grey-50), 1);
+$black-a0: rgba(nth(map-get(options.$values, grey-50), 1), 0);
+$black-a64: rgba(nth(map-get(options.$values, grey-50), 1), 64%);
+$white: nth(map-get(options.$values, grey-1000), 1);
+$blue-france: nth(map-get(options.$values, blue-france-sun-113), 1);
+$red-marianne: nth(map-get(options.$values, red-marianne-main-472), 1);

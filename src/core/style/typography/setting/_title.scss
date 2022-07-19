@@ -4,40 +4,40 @@
 ////
 
 $title-styles: (
-  18: (
+  4.5v: (
     line-height: 6v
   ),
-  20: (
+  5v: (
     line-height: 7v
   ),
-  22: (
+  5.5v: (
     line-height: 7v
   ),
-  24: (
+  6v: (
     line-height: 8v
   ),
-  28: (
+  7v: (
     line-height: 9v
   ),
-  32: (
+  8v: (
     line-height: 10v
   ),
-  40: (
+  10v: (
     line-height: 12v
   ),
-  48: (
+  12v: (
     line-height: 14v
   ),
-  56: (
+  14v: (
     line-height: 16v
   ),
-  64: (
+  16v: (
     line-height: 18v
   ),
-  72: (
+  18v: (
     line-height: 20v
   ),
-  80: (
+  20v: (
     line-height: 22v
   )
 );
@@ -46,88 +46,88 @@ $title-settings: (
   h6: (
     weight: bold,
     breakpoints: (
-      first: 18,
-      md: 20
+      first: 4.5v,
+      md: 5v
     ),
     margin: title
   ),
   h5: (
     weight: bold,
     breakpoints: (
-      first: 20,
-      md: 22
+      first: 5v,
+      md: 5.5v
     ),
     margin: title
   ),
   h4: (
     weight: bold,
     breakpoints: (
-      first: 22,
-      md: 24
+      first: 5.5v,
+      md: 6v
     ),
     margin: title
   ),
   h3: (
     weight: bold,
     breakpoints: (
-      first: 24,
-      md: 28
+      first: 6v,
+      md: 7v
     ),
     margin: title
   ),
   h2: (
     weight: bold,
     breakpoints: (
-      first: 28,
-      md: 32
+      first: 7v,
+      md: 8v
     ),
     margin: title
   ),
   h1: (
     weight: bold,
     breakpoints: (
-      first: 32,
-      md: 40
+      first: 8v,
+      md: 10v
     ),
     margin: title
   ),
   xs: (
     weight: bold,
     breakpoints: (
-      first: 40,
-      md: 48
+      first: 10v,
+      md: 12v
     ),
     margin: display
   ),
   sm: (
     weight: bold,
     breakpoints: (
-      first: 48,
-      md: 56
+      first: 12v,
+      md: 14v
     ),
     margin: display
   ),
   md: (
     weight: bold,
     breakpoints: (
-      first: 56,
-      md: 64
+      first: 14v,
+      md: 16v
     ),
     margin: display
   ),
   lg: (
     weight: bold,
     breakpoints: (
-      first: 64,
-      md: 72
+      first: 16v,
+      md: 18v
     ),
     margin: display
   ),
   xl: (
     weight: bold,
     breakpoints: (
-      first: 72,
-      md: 80
+      first: 18v,
+      md: 20v
     ),
     margin: display
   )

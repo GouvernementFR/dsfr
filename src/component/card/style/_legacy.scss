@@ -3,7 +3,9 @@
 /// @group card
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   #{ns(card)} {
     @include icon-legacy(arrow-right-line, md, before);
 

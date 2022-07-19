@@ -3,10 +3,12 @@
 /// @group core
 ////
 
-@function font-size($font-size: 16px) {
-  @return px-rem($font-size);
+@use 'module/spacing';
+
+@function font-size($font-size: 4v) {
+  @return spacing.space($font-size);
 }
 
-@mixin font-size($font-size: 16px) {
+@mixin font-size($font-size: 4v) {
   font-size: font-size($font-size);
 }

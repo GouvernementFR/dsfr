@@ -3,36 +3,39 @@
 /// @group input
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _input-scheme($legacy: false) {
   #{ns(input)} {
-    @include scheme-element-text-color(label grey, (legacy:$legacy));
-    @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
-    @include scheme-element-box-shadow-color(plain grey, (legacy:$legacy), bottom-2-in);
+    @include color.text(label grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy));
+    @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
 
     /**
     * Style du placeholder
     */
     @include placeholder {
-      @include scheme-element-text-color(mention grey, (legacy:$legacy));
+      @include color.text(mention grey, (legacy:$legacy));
     }
 
     /**
     * Style pour l'état désactivé
     */
-    @include disabled-form-field((legacy: $legacy));
+    @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in));
 
     /**
     * Modificateur pour les champs validés
     */
     &--valid {
-      @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), bottom-2-in);
+      @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
     }
 
     /**
     * Modificateur pour les champs présentant des erreurs
     */
     &--error {
-      @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), bottom-2-in);
+      @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
     }
 
     /**
@@ -40,15 +43,15 @@
     * sur les navigateurs webkit.
     */
     @include autofill {
-      @include scheme-element-box-shadow-color((plain grey) (background contrast info), (legacy:$legacy), bottom-2-in all-in);
-      @include _scheme-element(-webkit-text-fill-color, text, label grey, (legacy:$legacy));
+      @include color.box-shadow((plain grey) (background contrast info), (legacy:$legacy), bottom-2-in all-in);
+      @include color.text-fill(label grey, (legacy:$legacy));
     }
 
     &[type=date] {
-      @include scheme-element-data-uri-svg(text title grey, (legacy: $legacy), $input-calendar-line);
+      @include color.data-uri-svg(text title grey, (legacy: $legacy), $input-calendar-line);
 
-      @include disabled-form-field((legacy: $legacy)) {
-        @include scheme-element-data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
+      @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in)) {
+        @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
       }
     }
   }
@@ -56,7 +59,7 @@
   #{ns(input-wrap)} {
     > *:not(:last-child) {
       &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
-        @include scheme-element-box-shadow-color(action-high blue-france, (legacy:$legacy), bottom-2-in);
+        @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
       }
     }
   }

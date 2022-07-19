@@ -7,7 +7,7 @@ attrModal[`data-${prefix}-opened`] = false;
 const button = {
     classes: [prefix + "-display-button", prefix + '-background-default--grey'],
     icon: 'theme-fill',
-    attributes: {...attrModal},
+    attributes: {...attrModal, style: 'z-index: 1600'},
     tag: 'button',
     kind: 2,
     size: 'lg'

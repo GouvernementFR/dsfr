@@ -3,8 +3,10 @@
 /// @group schemes
 ////
 
+@use 'module/selector';
+
 @include hover-media-query {
-  @include theme-selector(dark) {
+  @include selector.theme(dark) {
     --brighten: 1;
   }
 }

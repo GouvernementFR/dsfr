@@ -3,6 +3,8 @@
 /// @group badge
 ////
 
+@use 'module/spacing';
+
 @include build-badge();
 
 #{ns(badge)} {
@@ -11,7 +13,7 @@
   @include font-weight(bold);
   @include max-width(100%);
   text-transform: uppercase;
-  border-radius: space(1v);
+  border-radius: spacing.space(1v);
 
   &--sm {
     @include nest-badge(sm, left, null, null, false);

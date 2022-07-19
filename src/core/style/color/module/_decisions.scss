@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/color';
+
 :root {
-  @include build-decisions;
+  @include color.define();
 }

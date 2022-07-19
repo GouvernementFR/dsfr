@@ -3,6 +3,8 @@
 /// @group link
 ////
 
+@use 'module/spacing';
+
 #{ns-group(links)} {
   @include disable-list-style;
   display: inline-block;
@@ -10,7 +12,7 @@
 
   > li {
     display: inline;
-    line-height: space(11v);
+    line-height: spacing.space(11v);
   }
 
   #{ns(link)} {

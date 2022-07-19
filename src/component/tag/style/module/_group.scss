@@ -3,6 +3,8 @@
 /// @group tag
 ////
 
+@use 'module/spacing';
+
 #{ns-group(tags)} {
   @include disable-list-style;
   @include display-flex;
@@ -10,7 +12,7 @@
   flex-wrap: wrap;
 
   > li {
-    line-height: space(11v);
+    line-height: spacing.space(11v);
   }
 
   #{ns(tag)} {
