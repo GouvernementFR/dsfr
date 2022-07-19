@@ -58,14 +58,14 @@
     --hover-tint: var(--hover);
   }
   @else if $hover == false {
-    --hover-tint: transparent;
+    --hover-tint: var(--idle);
   }
 
   @if $active {
     --active-tint: var(--active);
   }
   @else if $active == false {
-    --active-tint: transparent;
+    --active-tint: var(--idle);
   }
 }
 
