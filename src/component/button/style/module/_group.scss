@@ -10,7 +10,7 @@
   @include margin-x(-2v);
 
   #{ns(btn)} {
-    @include margin(0 2v 4v);
+    @include margin-bottom(4v);
     justify-content: center;
   }
 
@@ -152,7 +152,7 @@
   /**
   * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
   */
-  &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+  &:where(:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg)) {
     #{ns(btn)} {
       @include has-not-icon {
         @include nest-btn(md, false, null, null, false);
