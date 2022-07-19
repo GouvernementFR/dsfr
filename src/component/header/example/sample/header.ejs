@@ -6,34 +6,7 @@ const data = {body: {}, menu: menu};
 let hasNavbar = false;
 let hasMenu = false;
 
-const brand = { logo: header.logo || {title: 'Intitulé<br>officiel'} };
-data.body.brand = brand;
-
-if (header.operator !== undefined) {
-  brand.operator = header.operator;
-}
-
-let servicePlaceholder = {
-    title:'Nom du site / service',
-    tagline: 'baseline - précisions sur l‘organisation'
-};
-
-switch (typeof header.service) {
-    case 'boolean':
-        brand.service = servicePlaceholder;
-        break;
-
-    case 'string':
-        switch(header.service) {
-            case 'title':
-                brand.service = { title: servicePlaceholder.title };
-              break
-        }
-        break;
-}
-
-// copie la valeur de header.beta dans brand.service.beta
-(brand.service != undefined) ? brand.service.beta = header.beta === true || undefined : brand.service = {beta: header.beta === true || undefined};
+data.body.brand = brandData('header', header.logo !== undefined, header.service !== undefined, header.operator !== undefined, header.beta === true, '/');
 
 if (header.links !== undefined || header.search) {
     hasNavbar = true;
@@ -115,7 +88,7 @@ if (hasMenu) {
     }
 }
 
-if (hasNavbar) brand.navbar = navbar;
+if (hasNavbar) data.body.brand.navbar = navbar;
 
 if (header.duplicateLinks !== undefined) data.menu.tools.duplicateLinks = header.duplicateLinks;
 %>

@@ -95,6 +95,84 @@ locals.lengthen = (length, label) => {
 
 locals.imgAltText = 'texte alternatif de l’image';
 
+const brandData = (component = 'header', logo = true, service = false, operator = false, beta = false, href = '/') => {
+    const data = {};
+    const logoPlaceholder = 'Nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
+    const logoTitlePlaceholder = 'Intitulé<br>officiel';
+    const logoPlaceholderOperator = 'République Française';
+    const logoTitlePlaceholderOperator = 'République<br>Française';
+    const operatorPlaceholder = imgAltText + ' : nom de l\'opérateur ou du site serviciel';
+    const servicePlaceholder = {
+        title: 'Nom du site / service',
+        tagline: 'baseline - précisions sur l‘organisation'
+    };
+    let titleLinkPlaceholder = 'Accueil';
+    let position;
+    if (component === 'footer') {
+        titleLinkPlaceholder = 'Retour à l’accueil du site';
+    }
+    const fullTitle = [titleLinkPlaceholder];
+    if (service) {
+        fullTitle.push(contentPlaceholder(servicePlaceholder.title));
+        switch (typeof service) {
+            case 'boolean':
+                data.service = servicePlaceholder;
+                break;
+            case 'string':
+                switch(service) {
+                    case 'title':
+                        data.service = { title: servicePlaceholder.title };
+                        break
+                }
+                break;
+            default:
+                data.service = service;
+        }
+    }
+    if (operator) {
+        fullTitle.push(contentPlaceholder(operatorPlaceholder));
+        switch (typeof operator) {
+            case 'boolean':
+                if (operator) data.operator = imgData('img/placeholder.9x16.png', 'rendered', null,  null, 'width:3.5rem;');
+                break;
+            default:
+                data.operator = operator;
+        }
+    }
+    if (logo) {
+        data.logo = {
+            title: logoTitlePlaceholder
+        };
+        if (operator) {
+            fullTitle.push(logoPlaceholderOperator);
+            data.logo.title = logoTitlePlaceholderOperator;
+        } else {
+            fullTitle.push(logoPlaceholder);
+        }
+    }
+    switch (true) {
+        case service !== false :
+            position = 'service';
+            break;
+        case operator !== false:
+            position = 'operator';
+            break;
+        default:
+            position = 'logo';
+    }
+    if (beta) {
+        service ? data.service.beta = beta === true || undefined : data.service = beta ? {beta: beta} : undefined;
+    }
+    data.link = {
+        position: position,
+        href: href,
+        title: fullTitle.join(' - ')
+    };
+    return data;
+}
+
+locals.brandData = brandData;
+
 const imgData = (src, alt, ratio, comment, style) => {
   const data = {
       src: `${relativeRoot}example/${src ? src : 'img/placeholder.16x9.png'}`,

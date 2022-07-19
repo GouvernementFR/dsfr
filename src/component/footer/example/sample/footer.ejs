@@ -2,19 +2,16 @@
 let footer = locals.footer || {};
 let data = {}
 
-if(footer.id) data.id = footer.id || uniqueId('footer');
+if (footer.id) data.id = footer.id || uniqueId('footer');
 else data.id = uniqueId('footer');
 
-if(footer.top === true) data.top = { categories: {label: 'Nom de la catégorie', link: 'Lien de navigation'}};
+if (footer.top === true) data.top = { categories: {label: 'Nom de la catégorie', link: 'Lien de navigation'}};
 
-if(footer.brand === true) {
-  data.brand = {};
-  data.brand.logo = footer.logo || { title: 'Intitulé<br>officiel'};
+if (footer.brand === true) {
+  data.brand = brandData('footer', footer.logo !== false, false, footer.operator !== undefined);
 }
 
-if(footer.operator === true) data.brand.operator = imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:12.5rem');
-
-if(footer.content === true) data.content = {
+if (footer.content === true) data.content = {
   desc: lorem(),
   links: [
     {label: 'legifrance.gouv.fr'},
@@ -24,7 +21,7 @@ if(footer.content === true) data.content = {
   ]
 };
 
-if(footer.partners === true) data.partners = {
+if (footer.partners === true) data.partners = {
   title: 'Nos partenaires',
   mainPartner: imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
   subPartners: [
@@ -34,7 +31,7 @@ if(footer.partners === true) data.partners = {
   ]
 };
 
-if(footer.bottom === true) data.bottom = {
+if (footer.bottom === true) data.bottom = {
   links: [
     {label: 'Plan du site'},
     {label: 'Accessibilité : non/partiellement/totalement conforme'},

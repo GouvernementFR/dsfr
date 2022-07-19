@@ -42,8 +42,14 @@
     &__partners {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
 
-      a {
-        background: color.$white;
+      @if not $legacy {
+        #{ns(footer__partners-link)} {
+          &,
+          &:hover,
+          &:active {
+            background: color.$white;
+          }
+        }
       }
     }
   }
