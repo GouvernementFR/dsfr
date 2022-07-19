@@ -51,6 +51,7 @@ $COLOR: constant.$value;
     @else {
       @if $prop == background-color {
         @include _apply-pseudos($token, true, false, null, $prop, $value, $important);
+        --idle: #{$result};
       }
       @else {
         @include _apply-pseudos($token, true, true, null, $prop, $value, $important);
