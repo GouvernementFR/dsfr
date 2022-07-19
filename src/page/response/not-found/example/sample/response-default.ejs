@@ -1,0 +1,12 @@
+<%
+const data = {
+    title: getText('page.title', 'not-found'),
+    subtitle: getText('page.subtitle', 'not-found'),
+    description: getText('page.description', 'not-found'),
+    text: getText('page.text', 'not-found')
+};
+%>
+
+<%- include('../../template/ejs/response.ejs'); %>
+
+

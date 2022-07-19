@@ -10,7 +10,7 @@ page:
   title: Page non trouvée
 subdir:
   title: Page Erreur 404
-  response-404-complete: Page Erreur 404, complète
-  response-404-simple: Page Erreur 404, simple
-  response-404-without-contact: Page Erreur 404, sans contact
-  response-404-without-search: Page Erreur 404, sans recherche
+  complete: Page Erreur 404, complète
+  default: Page Erreur 404, simple
+  without-contact: Page Erreur 404, sans contact
+  without-search: Page Erreur 404, sans recherche

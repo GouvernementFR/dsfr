@@ -6,9 +6,9 @@ const search = locals.search || false;
     <h4><%= title %></h4>
 <% } %>
 <div class="<%= prefix %>-mb-6v" >
-    <%- include('../../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: search, navigation: true }}, true); %>
+    <%- include('../../../../component/header/example/sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: search, navigation: true }}, true); %>
     <%- component %>
-    <%- include('../../../component/footer/example/sample/footer-minimal.ejs'); %>
+    <%- include('../../../../component/footer/example/sample/footer-minimal.ejs'); %>
 </div>
 <% if (locals.snippet !== undefined) { %>
     <div class="<%= prefix %>-mb-12v" >

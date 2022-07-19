@@ -21,11 +21,11 @@
     }
 
     &-background {
-      @include color.fill(artwork major blue-france, (legacy: $legacy));
+      @include color.fill(artwork background grey, (legacy: $legacy));
     }
 
     &-motif {
-      @include color.fill(artwork major blue-france, (legacy: $legacy));
+      @include color.fill(artwork motif grey, (legacy: $legacy));
     }
 
     @include color.accentuate {
@@ -35,3 +35,5 @@
     }
   }
 }
+
+

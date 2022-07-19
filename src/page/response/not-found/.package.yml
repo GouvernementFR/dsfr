@@ -1,7 +1,8 @@
-id: response
+id: not-found
 title: Modèle de page d'erreur
 description:
 doc:
+no-heading: true
 style:
   - core
   - button
