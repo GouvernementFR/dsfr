@@ -46,6 +46,7 @@
   }
 
   &__leader {
+    @include enable-underline;
     @include padding-x(4v);
     @include padding-top(4v);
     @include padding-top(0, lg);
