@@ -26,6 +26,7 @@
 
   &__img img {
     @include aspect-ratio(16x9);
+    @include fit-cover-center;
     display: block;
   }
 }
