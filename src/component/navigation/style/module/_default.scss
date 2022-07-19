@@ -10,7 +10,6 @@
   @include disable-list-style;
   @include set-text-margin(0);
   @include set-title-margin(0);
-  @include z-index(nav);
 
   @include list {
     @include display-flex(column);
@@ -42,13 +41,12 @@
           min-height: spacing.space(14v);
           font-weight: normal;
 
-          @include z-index(auto);
+          // @include z-index(auto);
 
           &[aria-current] {
             @include before {
               @include absolute(auto, null, 0, 0, 100%, 2px);
               @include margin-top(0);
-              @include z-index(menu-focus);
             }
           }
         }

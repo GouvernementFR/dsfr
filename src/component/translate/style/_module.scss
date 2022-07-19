@@ -6,7 +6,6 @@
 #{ns(translate)} {
   --rows: 8;
   position: relative;
-  @include z-index(menu);
 
   #{ns(translate__btn)} {
     @include nest-btn(md, left, translate-2, null, false);
@@ -50,9 +49,11 @@
   }
 
   &__menu {
-    @include z-index(translate);
     @include margin(0);
-    @include margin(-5v -4v 0, lg);
+    @include margin(-1v -4v 0, lg);
+    @include respond-from(lg) {
+      @include top(calc(100% - 4v));
+    }
   }
 
   #{ns(nav)} {
@@ -62,12 +63,6 @@
   }
 
   #{ns(menu)} {
-    @include respond-from(lg) {
-      @include after {
-        @include shadow(md);
-      }
-    }
-
     &__list {
       @include width(auto);
       @include padding(0);

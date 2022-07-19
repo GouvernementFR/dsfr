@@ -17,7 +17,7 @@
       }
 
       &__list {
-        @include scheme-element-box-shadow-color(open blue-france, (legacy: $legacy), top-1-out);
+        @include color.box-shadow(open blue-france, (legacy: $legacy), top-1-out);
       }
 
       #{ns(nav__link)} {

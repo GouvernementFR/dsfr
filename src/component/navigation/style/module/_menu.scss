@@ -6,7 +6,6 @@
 @use 'module/color';
 
 #{ns(menu)} {
-  @include z-index(menu);
   @include margin(-4px -4v);
   @include padding(4px 4v);
   @include size(auto);

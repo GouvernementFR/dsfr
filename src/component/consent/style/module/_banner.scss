@@ -9,7 +9,6 @@
   @include fixed(null, null, 0, 0, 100%);
   max-height: calc(100% - #{space(32v)});
   @include padding(4v);
-  @include z-index(consent);
   overflow: auto;
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
