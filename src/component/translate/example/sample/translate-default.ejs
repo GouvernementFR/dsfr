@@ -3,25 +3,7 @@ let translate = locals.translate || {};
 const data = {
   collapseId: translate.collapseId || uniqueId('translate'),
   button: translate.button || {kind: 3},
-  languages: translate.languages || [
-      {
-          name: 'Français',
-          locale: 'fr',
-          active: true
-      },
-      {
-          name: 'English',
-          locale: 'en',
-      },
-      {
-          name: 'Español',
-          locale: 'es',
-      },
-      {
-          name: 'Deutsch',
-          locale: 'de',
-      }
-  ]
+  languages: translate.languages || eval(include('get-translations'))(4)
 }
 %>
 

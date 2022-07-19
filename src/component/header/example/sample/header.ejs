@@ -17,33 +17,7 @@ if (header.links !== undefined || header.search) {
     tools.translate = {
       collapseId: header.translate.collapseId || uniqueId('translate'),
       button: header.translate.button || {kind: 3},
-      languages: header.translate.languages || [
-        {
-          name: 'Français',
-          locale: 'fr',
-          active: true
-        },
-        {
-          name: 'English',
-          locale: 'en',
-        },
-        {
-          name: 'Español',
-          locale: 'es',
-        },
-        {
-          name: 'Ἑλληνική',
-          locale: 'el',
-        },
-        {
-          name: '國語',
-          locale: 'zh',
-        },
-        {
-          name: 'Українська',
-          locale: 'uk',
-        },
-      ]
+      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
     }
   }
 
