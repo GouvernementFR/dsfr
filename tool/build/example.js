@@ -1,4 +1,5 @@
 const root = require('../utilities/root');
+const fs = require('fs');
 const ejs = require('ejs');
 const global = require('../../package.json');
 const { createFile } = require('../utilities/file');
