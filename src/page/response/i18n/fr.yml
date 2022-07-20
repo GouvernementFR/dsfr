@@ -1,0 +1,11 @@
+title: Codes de Statut HTML
+description: Modèles de pages correspondant aux réponses de statut HTML
+button:
+  home: Page d'accueil
+  contact: Contactez-nous
+contact:
+  address: adresse email du contact
+  object: objet du mail
+  body:
+    content: titre ou texte descriptif de la page
+    url: url de la page
