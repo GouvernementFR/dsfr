@@ -16,6 +16,8 @@
 
 <%- sample('Header sans navigation avec raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>
 
+<%- sample('Header avec selecteur de langues', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, navigation: true, translate: true, service: true}}, true, './layout');  %>
+
 <%- sample('Header avec nom de service, lien d’accès', './sample/header.ejs', {header: { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }}, true, './layout');  %>
 
 <%- sample('Header avec nom de service, recherche', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: 'title', search: true, navigation: 'min' }}, true, './layout');  %>

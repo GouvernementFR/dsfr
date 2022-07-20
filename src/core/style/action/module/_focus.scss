@@ -5,11 +5,6 @@
 
 @use 'module/color';
 
-*:focus,
-*:focus-visible {
-  z-index: z-index(focus);
-}
-
 @include focusable-selector {
   outline-offset: 2px;
   outline-width: 2px;

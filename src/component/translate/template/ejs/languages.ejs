@@ -1,0 +1,22 @@
+<%#
+# paramètres translate Languages
+
+* languages (array, required) : Tableau d'objets langues
+  ** languages[].name (string, required) : Nom de la langue dans son alphabet
+  ** languages[].locale (string, required) : Code de la langue en 2 caratères
+  ** languages[].active (boolean, required) : La langue qui apparait dans le bouton et en style active dans la liste (1 seule langue active)
+%>
+<% const languages = locals.languages || {}; %>
+
+<ul class="<%= prefix %>-menu__list">
+  <%
+  for (let i = 0; i < languages.length; i++) {
+    const lang = languages[i];
+    const attrs = {href:'#'};
+    if (lang.active) attrs['aria-current'] = true;
+  %>
+    <li>
+      <a class="<%= prefix %>-translate__language <%= prefix %>-nav__link" hreflang="<%- lang.locale %>" lang="<%- lang.locale %>" <%- includeAttrs(attrs); %> ><%= [lang.locale.toUpperCase(), lang.name].join(' - '); %></a>
+    </li>
+  <% } %>
+</ul>

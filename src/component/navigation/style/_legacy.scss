@@ -48,5 +48,14 @@
         }
       }
     }
+
+    /**
+    * Override du reset des marges des ul
+    **/
+    #{ns(menu)} {
+      #{ns(menu__list)} {
+        @include margin-bottom(8v);
+      }
+    }
   }
 }

@@ -29,7 +29,7 @@
       @include respond-from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
-        @include margin(0 -1v -4v);
+        @include margin(0 -1v);
 
         #{ns(link)} {
           @include margin-x(1v);
