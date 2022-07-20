@@ -21,7 +21,11 @@ const collapseId = translate.collapseId || uniqueId('translate');
     const activeLanguage = translate.languages.find(lang => lang.active === true);
     translateBtn.label = activeLanguage.locale.toUpperCase() + `<span class="${prefix}-hidden-lg">&nbsp;- ` + activeLanguage.name + '</span>';
     const minBtnClasses = [`${prefix}-translate__btn`];
-    const minBtnAttrs = {'aria-controls': collapseId, 'aria-expanded': false};
+    const minBtnAttrs = {
+      'aria-controls': collapseId,
+      'aria-expanded': false,
+      title: translateBtn.title || getText('button.title', 'translate')
+    };
     translateBtn.classes = translateBtn.classes !== undefined ? translateBtn.classes.concat(minBtnClasses) : minBtnClasses;
     translateBtn.attributes = translateBtn.attributes !== undefined ? {...minBtnAttrs, ...translateBtn.attributes} : minBtnAttrs;
     %>

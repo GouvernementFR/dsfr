@@ -1,0 +1,10 @@
+title: Sélecteur de langue
+description: Le sélecteur de langue permet à l’utilisateur de choisir la langue dans laquelle est affichée le contenu du site, si celui-ci est disponible en plusieurs langues.
+doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/1034158081
+
+button:
+  title: Sélectionner une langue
+sample:
+  default: Sélecteur de langue
+  no-outline: Sélecteur de langue sans bordure
+  column: Sélecteur de langue sur plusieurs colones
