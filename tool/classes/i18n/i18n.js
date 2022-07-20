@@ -31,6 +31,11 @@ class I18n {
   }
 
   getText (key, id = 'global', preventError = false) {
+    const text = this._getText(key, id, preventError);
+    return text.replace(/\n/gi, '<br>');
+  }
+
+  _getText (key, id = 'global', preventError = false) {
     const keys = key.split('.');
     const localised = getText([id, this.locale, ...keys], this._data);
     if (localised) return localised;

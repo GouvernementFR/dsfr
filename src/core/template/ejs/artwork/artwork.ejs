@@ -17,19 +17,7 @@ classes.push(prefix + '-artwork');
 if (artwork.accent) classes.push(prefix + '-artwork--' + artwork.accent);
 %>
 
-<% switch(artwork.size) {
-  case 'sm':
-    size = 'viewBox="0 0 40 40" width="40px" height="40px"';
-    break;
-  case 'lg':
-    size = 'viewBox="0 0 120 120" width="120px" height="120px"';
-    break;
-  default:
-    size = 'viewBox="0 0 80 80" width="80px" height="80px"';
-    break;
-} %>
-
-<svg <%- includeClasses(classes) %> <%- size %>>
+<svg xmlns="http://www.w3.org/2000/svg" <%- includeClasses(classes) %> width="80px" height="80px" viewBox="0 0 80 80">
   <use class="<%= prefix %>-artwork-decorative" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-decorative"></use>
   <use class="<%= prefix %>-artwork-minor" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-minor"></use>
   <use class="<%= prefix %>-artwork-major" xlink:href="<%= relativeRoot %>dist/artwork/<%= artwork.name %>.svg#artwork-major"></use>

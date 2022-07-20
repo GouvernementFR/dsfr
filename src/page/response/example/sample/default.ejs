@@ -1,0 +1,27 @@
+<%
+    const getContact = (contact) => {
+        if (contact === true) return {
+          button: getText('button.contact', 'response'),
+          link: {
+              href: `mailto:${contentPlaceholder(getText('contact.address', 'response'))}?subject=${contentPlaceholder(getText('contact.object', 'response'))}&body=${contentPlaceholder(getText('contact.body.content', 'response'))} ${contentPlaceholder(getText('contact.body.url', 'response'))}`,
+              title: getText('button.contact', 'response'),
+              target: '_blank'
+          }
+        }
+
+        if (typeof contact === 'object') return contact;
+
+        return false;
+    };
+
+    const response = locals.response || {};
+
+    const data = {
+        ...response,
+        contact: getContact(response.contact),
+        home : getText('button.home', 'response')
+    };
+
+ %>
+
+<%- include('../../template/ejs/response.ejs', { response: data }); %>

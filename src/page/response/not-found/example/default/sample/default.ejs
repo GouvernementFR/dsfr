@@ -1,0 +1,15 @@
+<%
+    const response = locals.response || {};
+
+    const data = {
+        title: response.title || getText('page.title', 'not-found'),
+        subtitle: response.subtitle || getText('page.subtitle', 'not-found'),
+        lead: response.lead || getText('page.lead', 'not-found'),
+        description: response.description || getText('page.description', 'not-found'),
+        contact: response.contact
+    };
+%>
+
+<%- include('../../../../example/sample/default.ejs', { response: data }); %>
+
+
