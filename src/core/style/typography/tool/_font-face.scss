@@ -3,12 +3,14 @@
 /// @group core
 ////
 
+@use 'module/path';
+
 @mixin font-face($name, $filename, $font-weight: 400, $font-style: normal, $font-display: swap) {
   @font-face {
     font-family: #{$name};
     src:
-      url('#{$DIST-PATH}fonts/#{$filename}.woff2') format('woff2'),
-      url('#{$DIST-PATH}fonts/#{$filename}.woff') format('woff');
+      url('#{path.dist()}fonts/#{$filename}.woff2') format('woff2'),
+      url('#{path.dist()}fonts/#{$filename}.woff') format('woff');
     font-weight: #{$font-weight};
     font-style: #{$font-style};
     font-display: #{$font-display};

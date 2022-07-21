@@ -3,12 +3,13 @@
 /// @group navigation
 ////
 
+@use 'module/spacing';
+
 #{ns(nav)} {
   @include disable-underline;
   @include disable-list-style;
   @include set-text-margin(0);
   @include set-title-margin(0);
-  @include z-index(nav, true);
 
   @include list {
     @include display-flex(column);
@@ -37,20 +38,15 @@
           @include padding(4v);
           @include margin(0);
           @include size(auto, 100%);
-          min-height: space(14v);
+          min-height: spacing.space(14v);
           font-weight: normal;
+
+          // @include z-index(auto);
 
           &[aria-current] {
             @include before {
               @include absolute(auto, null, 0, 0, 100%, 2px);
               @include margin-top(0);
-            }
-
-            /**
-             * Pour conserver le souligné de selection  par dessus la barre de mega-menu
-             */
-            &:not([aria-expanded="true"]) {
-              @include z-index(nav);
             }
           }
         }
@@ -67,6 +63,12 @@
     @include before('', block) {
       @include absolute(0, 0, 0 , 0, 100%, 100%);
       pointer-events: none;
+    }
+
+    #{ns(btn)},
+    #{ns(link)} {
+      @include min-height(12v);
+      @include min-height(auto, lg);
     }
 
     @include respond-from(lg) {

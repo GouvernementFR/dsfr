@@ -3,6 +3,8 @@
 /// @group link
 ////
 
+@use 'module/spacing';
+
 @mixin _build-link-icon($size-settings, $place, $size:md, $override: true) {
 
   $icon-size: icon-size(map_get($size-settings, icon));
@@ -12,7 +14,7 @@
   }
 
   $icon-margin: _link-icon-margin(map_get($size-settings, icon));
-  $icon-margin-x: space(map_get($size-settings, icon-margin-x));
+  $icon-margin-x: spacing.space(map_get($size-settings, icon-margin-x));
 
   @if $place == left {
     overflow: initial;
@@ -35,7 +37,7 @@
     }
   }
   @else if $place == only {
-    $min-height: space(map_get($size-settings, min-height));
+    $min-height: spacing.space(map_get($size-settings, min-height));
     $padding-x: ($min-height - $icon-size) * 0.5;
 
     overflow: hidden;

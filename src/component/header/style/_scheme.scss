@@ -3,19 +3,41 @@
 /// @group header
 ////
 
+@use 'module/color';
+@use 'module/elevation';
+@use 'module/media-query';
+
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
-    @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+    &__brand {
+      @include elevation.elevate(raised, (legacy: $legacy));
+    }
+
+    @include media-query.respond-from(lg) {
+      &__brand {
+        @include elevation.drop();
+      }
+      @include elevation.elevate(raised, (legacy: $legacy));
+    }
 
     &__service {
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
-      @include scheme-element-no-box-shadow(lg);
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      @include color.no-box-shadow(lg);
     }
 
     &__menu-links {
+      @include after {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+        @include color.no-box-shadow;
+      }
+
+      ul > li:last-child #{ns(btn)} {
+        @include color.no-box-shadow;
       }
     }
 
@@ -23,7 +45,7 @@
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
         @include after {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+          @include color.box-shadow(default grey, (legacy:$legacy));
         }
       }
     }
@@ -31,7 +53,7 @@
     &__navbar {
       #{ns(service)} {
         @include title {
-          @include scheme-element-text-color(title grey, (legacy:$legacy));
+          @include color.text(title grey, (legacy:$legacy));
         }
       }
 
@@ -39,19 +61,19 @@
         @include btn-kind-scheme(4, $legacy);
 
         &--menu {
-          @include scheme-element-text-color(default grey, (legacy:$legacy));
+          @include color.text(default grey, (legacy:$legacy));
         }
       }
     }
 
     #{ns(header__menu)} {
       @include respond-from(lg) {
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-in);
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
     }
 
     #{ns(modal)} {
-      @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
+      @include color.background(lifted grey, (legacy:$legacy));
     }
   }
 }

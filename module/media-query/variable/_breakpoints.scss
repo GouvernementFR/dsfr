@@ -1,0 +1,12 @@
+////
+/// Media query : breakpoints
+/// @group media-query
+////
+
+$values: (
+  xs: 0 35.98em,
+  sm: 36em 47.98em,
+  md: 48em 61.98em,
+  lg: 62em 77.98em,
+  xl: 78em,
+) !default;

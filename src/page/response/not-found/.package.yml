@@ -1,0 +1,16 @@
+id: not-found
+title: Modèle de page ressource non trouvée
+description:
+doc:
+no-heading: true
+style:
+  - core
+  - button
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

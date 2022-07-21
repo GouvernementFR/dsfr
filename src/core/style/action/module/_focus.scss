@@ -3,15 +3,12 @@
 /// @group core
 ////
 
-*:focus,
-*:focus-visible {
-  z-index: z-index(focus);
-}
+@use 'module/color';
 
 @include focusable-selector {
   outline-offset: 2px;
   outline-width: 2px;
-  outline-color: $focus-color;
+  outline-color: color.$focus;
 }
 
 @include focusable-selector-focus {

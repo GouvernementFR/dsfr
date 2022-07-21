@@ -1,0 +1,5 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- sample('', '../default/sample/default', { response: { description: getText('page.description.search', 'not-found') } }, true, '../layout', { search: true }); %>

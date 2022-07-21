@@ -3,27 +3,26 @@
 /// @group navigation
 ////
 
+@use 'module/color';
+@use 'module/elevation';
+@use 'module/media-query';
+
 @mixin _navigation-scheme-mega-menu($legacy: false) {
   #{ns(mega-menu)} {
-    @include scheme-element-bg-color(elevated grey, (legacy:$legacy));
-
-    > #{ns(container)} {
-      @include respond-from(lg) {
-        @include before {
-          @include scheme-element-bg-color(open blue-france, (legacy:$legacy));
-        }
-      }
+    @include media-query.respond-from(lg) {
+      @include elevation.elevate(overlap, (legacy: $legacy));
+      @include color.box-shadow(open blue-france, (legacy:$legacy), top-1-in);
     }
 
     &__list {
       @include before {
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-out);
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-out);
       }
     }
 
     &__category {
       @include respond-from(lg) {
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), 0 calc(4v + 1px) 0 -4v $COLOR);
+        @include color.box-shadow(default grey, (legacy:$legacy), 0 calc(4v + 1px) 0 -4v color.$constant);
       }
     }
   }

@@ -3,6 +3,8 @@
 /// @group stepper
 ////
 
+@use 'module/spacing';
+
 #{ns(stepper)} {
   @include set-title-margin(0);
   @include set-text-margin(0);
@@ -22,7 +24,7 @@
     @include font-weight(regular);
     @include after('\00000a') {
       white-space: pre;
-      line-height: space(8v);
+      line-height: spacing.space(8v);
     }
   }
 
@@ -33,16 +35,15 @@
   @include hide-last-step-detail();
 
   &__steps {
-    --default-steps: calc(var(--steps) - var(--current-step));
-    --default-outer: calc((100% + 6px) / var(--default-steps));
+    --default-outer: calc((100% + 6px) / var(--steps));
     --default-inner: calc(var(--default-outer) - 6px);
     --active-outer: calc((100% + 6px) / var(--current-step));
     --active-inner: calc(var(--active-outer) - 6px);
     @include margin-bottom(3v);
-    @include size(calc(100% + 6px), 6px);
+    @include size(100%, 6px);
     background-repeat: no-repeat;
-    background-size: calc(var(--current-step) * var(--step-width) - 6px) 100%, calc(var(--default-steps) * var(--step-width) - 6px) 100%;
-    background-position: 0 0, calc(100% - 6px) 0;
+    background-size: calc((100% + 6px) * var(--current-step) / var(--steps) - 6px) 100%, 100% 100%;
+    background-position: 0 0, 0 0;
     @include stepper-build();
   }
 }

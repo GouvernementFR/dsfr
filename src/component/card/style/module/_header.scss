@@ -24,8 +24,15 @@
     @include hover-brighten-filter;
   }
 
-  &__img img {
+  &__img img,
+  &__img svg,
+  &__vid iframe,
+  &__vid video {
     @include aspect-ratio(16x9);
+    @include fit-cover-center;
+  }
+
+  &__img img {
     display: block;
   }
 }

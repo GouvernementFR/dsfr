@@ -3,6 +3,9 @@
 /// @group schemes
 ////
 
-@include theme-selector(dark) {
-  @include build-decisions(true);
+@use 'module/color';
+@use 'module/selector';
+
+@include selector.theme(dark) {
+  @include color.define(dark);
 }

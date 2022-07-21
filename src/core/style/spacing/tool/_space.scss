@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/spacing';
+
 /// Set space property
 ///
 /// @param {String} $property ['margin'] - propriété à appliquer à l'espacement `['margin', 'padding']`
@@ -14,7 +16,7 @@
 ///     @include _spacing('margin', 6v, 'bottom');
 ///   }
 @mixin _spacing($property: margin, $value: 0, $direction: null) {
-  $v: space($value);
+  $v: spacing.space($value);
   @if $direction != null {
     @if $direction == 'x' {
       #{$property}-left: $v;

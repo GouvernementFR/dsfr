@@ -24,7 +24,7 @@
   @include margin-top(4v);
 
   table {
-    @include margin-bottom(calc(var(--table-offset) + space(11v)));
+    @include margin-bottom(calc(var(--table-offset) + 11v));
   }
 
   &#{ns-attr(js-table, true)} {

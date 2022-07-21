@@ -3,14 +3,16 @@
 /// @group notice
 ////
 
+@use 'module/color';
+
 @mixin _notice-scheme($legacy: false) {
   #{ns(notice)} {
-    @include scheme-element-bg-color(contrast grey, (legacy:$legacy, hover: false, active: false));
-    @include scheme-element-text-color(title grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy, hover: false, active: false));
+    @include color.text(title grey, (legacy:$legacy));
 
     &--info {
-      @include scheme-element-bg-color(contrast info, (legacy:$legacy));
-      @include scheme-element-text-color(default info, (legacy:$legacy));
+      @include color.background(contrast info, (legacy:$legacy));
+      @include color.text(default info, (legacy:$legacy));
     }
   }
 }

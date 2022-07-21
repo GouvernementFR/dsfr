@@ -3,6 +3,11 @@
 /// @group utility
 ////
 
-@import '../media-query-order';
-@import '../core/style/path/path-1';
+@use 'module/path';
+@use 'module/shame/media-query';
+
+@include path.to-dist(1);
+@include media-query.order;
+
+@import 'colors/main';
 @import 'icons/main';

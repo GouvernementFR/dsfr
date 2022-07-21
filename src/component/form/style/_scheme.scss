@@ -3,6 +3,9 @@
 /// @group form
 ////
 
+@use 'module/color';
+@use 'module/disabled';
+
 @mixin _form-scheme($legacy: false) {
   #{ns-group(select), ns-group(input)} {
     /**
@@ -10,7 +13,7 @@
     */
     &--valid {
       label {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
+        @include color.text(default success, (legacy:$legacy));
       }
     }
 
@@ -19,7 +22,7 @@
     */
     &--error {
       label {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
+        @include color.text(default error, (legacy:$legacy));
       }
     }
 
@@ -28,26 +31,26 @@
     */
     &--disabled {
       label {
-        @include disabled-colors((legacy: $legacy, text: true));
+        @include disabled.colors((legacy: $legacy, text: true));
       }
     }
   }
 
   #{ns(label)} {
-    @include scheme-element-text-color(label grey, (legacy:$legacy));
+    @include color.text(label grey, (legacy:$legacy));
 
     /**
     * Modificateur au niveau du label pour appliquer un état d'erreur au label
     */
     &--error {
-      @include scheme-element-text-color(default error, (legacy:$legacy));
+      @include color.text(default error, (legacy:$legacy));
     }
 
     /**
     * Modificateur au niveau du label pour appliquer un état de succès au label
     */
     &--success {
-      @include scheme-element-text-color(default success, (legacy:$legacy));
+      @include color.text(default success, (legacy:$legacy));
     }
   }
 
@@ -55,21 +58,21 @@
   * Style du texte d'aide
   */
   #{ns(hint-text)} {
-    @include scheme-element-text-color(mention grey, (legacy:$legacy));
+    @include color.text(mention grey, (legacy:$legacy));
   }
 
   /**
   * Style du texte d'erreur
   */
   #{ns(error-text)} {
-    @include scheme-element-text-color(default error, (legacy:$legacy));
+    @include color.text(default error, (legacy:$legacy));
   }
 
   /**
   * Style du texte de l'état validé
   */
   #{ns(valid-text)} {
-    @include scheme-element-text-color(default success, (legacy:$legacy));
+    @include color.text(default success, (legacy:$legacy));
   }
 
   /**
@@ -79,14 +82,14 @@
     /**
     * Mixin disabled pour gérer l'état disabled
     */
-    @include disabled {
+    @include disabled.selector {
       label {
-        @include disabled-colors((legacy: $legacy, text: true));
+        @include disabled.colors((legacy: $legacy, text: true));
       }
     }
 
     &__legend {
-      @include scheme-element-text-color(title grey, (legacy:$legacy));
+      @include color.text(title grey, (legacy:$legacy));
     }
 
     /**
@@ -95,12 +98,12 @@
     &--error {
       #{ns(fieldset__content)} {
         @include before {
-          @include scheme-element-box-shadow-color(plain error, (legacy:$legacy), left-2-in);
+          @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
         }
       }
 
       label {
-        @include scheme-element-text-color(default error, (legacy:$legacy));
+        @include color.text(default error, (legacy:$legacy));
       }
     }
 
@@ -110,12 +113,12 @@
     &--valid {
       #{ns(fieldset__content)} {
         @include before {
-          @include scheme-element-box-shadow-color(plain success, (legacy:$legacy), left-2-in);
+          @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
         }
       }
 
       label {
-        @include scheme-element-text-color(default success, (legacy:$legacy));
+        @include color.text(default success, (legacy:$legacy));
       }
     }
   }

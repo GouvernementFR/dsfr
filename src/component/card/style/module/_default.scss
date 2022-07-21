@@ -13,10 +13,6 @@
     @include before(none);
   }
 
-  &--shadow {
-    @include shadow(md);
-  }
-
   @include before {
     @include absolute(null, 8v, 8v);
     @include icon-size(md);

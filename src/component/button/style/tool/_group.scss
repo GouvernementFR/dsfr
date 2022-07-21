@@ -7,29 +7,25 @@
   #{ns(btn)} {
     width: auto;
     max-width: 100%;
+    @include margin-x(2v);
   }
 
   > li {
     display: inline-flex;
     max-width: 100%;
     width: auto;
-
-    @include before(none);
   }
 }
 
 @mixin vertical-btns-group() {
-  @include margin-right(0);
-  @include margin-left(0);
-
   > li {
     width: 100%;
     max-width: 100%;
   }
 
   #{ns(btn)} {
-    width: 100%;
-    @include margin-right(0);
-    @include margin-left(0);
+    @include size(calc(100% - 4v));
+    @include margin(0 2v 4v);
+    justify-content: center;
   }
 }

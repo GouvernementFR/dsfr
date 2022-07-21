@@ -3,6 +3,8 @@
 /// @group follow
 ////
 
+@use 'module/spacing';
+
 #{ns(follow)} {
   @include padding(6v 0);
   @include padding(8v 0, md);
@@ -34,12 +36,12 @@
         flex-direction: row;
 
         #{ns(btn)} {
-          border-radius: 0 #{space(1v)} 0 0;
+          border-radius: 0 #{spacing.space(1v)} 0 0;
         }
 
         #{ns(input)} {
           @include margin-bottom(0);
-          border-radius: #{space(1v)} 0 0 0;
+          border-radius: #{spacing.space(1v)} 0 0 0;
         }
       }
     }

@@ -1,0 +1,32 @@
+/// Styles spécifiques pour les plateformes antérieures
+///
+/// @example scss -
+///   .foo {
+///     @include ie-hack() {
+///     }
+///   }
+@mixin is($target) {
+  @if $target == ie10 or $target == ie11 {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+/// Styles spécifiques pour les plateformes modernes, excluant les plateformes antérieures
+///
+/// @example scss -
+///   .foo {
+///     @include ie-hack() {
+///     }
+///   }
+@mixin is-not($target) {
+  @if $target == ie10 or $target == ie11 {
+    @supports not (-ms-high-contrast: none) {
+      @content;
+    }
+  }
+}

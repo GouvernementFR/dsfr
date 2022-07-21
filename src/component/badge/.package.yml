@@ -5,6 +5,3 @@ doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/851869737/
 wrapper: col-8
 style:
   - core
-follow:
-  style:
-    - link

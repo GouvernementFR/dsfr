@@ -3,11 +3,13 @@
 /// @group connect
 ////
 
+@use 'module/spacing';
+
 #{ns(connect)} {
   @include relative;
   @include padding(1v 3v 1v 16v);
   @include display-flex(column, flex-start, center);
-  height: space(14v);
+  height: spacing.space(14v);
   @include margin-bottom(3v);
 
   @include before('', block) {
@@ -15,13 +17,13 @@
     background-image: url(svg-encode($fc-logo-svg, true));
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: space(10v 12v);
+    background-size: spacing.space(10v 12v);
   }
 
   &__login,
   &__brand {
     line-height: 1;
-    z-index: 1;
+    @include z-index(over);
   }
 
   &__login {

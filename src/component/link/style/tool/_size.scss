@@ -4,15 +4,16 @@
 ////
 
 @use "sass:math";
+@use 'module/spacing';
 
 @mixin _build-link-size($size-settings, $border-radius: false) {
   $font-size: map_get($size-settings, font-size);
   $style: get-text-style($font-size);
-  $line-height: space(map_get($style, line-height));
-  font-size: px-rem($font-size);
+  $line-height: spacing.space(map_get($style, line-height));
+  font-size: spacing.space($font-size);
   line-height: $line-height;
 
-  $min-height: space(map_get($size-settings, min-height));
+  $min-height: spacing.space(map_get($size-settings, min-height));
   @if $min-height > 0 {
     min-height: $min-height;
   }
@@ -26,9 +27,9 @@
     $max-icon-height: icon-size(map_get($size-settings, icon));
   }
 
-  $space-y: max($line-height, $max-icon-height);
-  $padding-x: space(map_get($size-settings, padding-x));
-  $padding-y: max(($min-height - $space-y) / 2, 0);
+  $space-y: math.max($line-height, $max-icon-height);
+  $padding-x: spacing.space(map_get($size-settings, padding-x));
+  $padding-y: math.max(($min-height - $space-y) * 0.5, 0);
 
   padding: #{$padding-y} #{$padding-x};
 
@@ -42,7 +43,7 @@
 }
 
 @mixin _link-align-on-content($size, $place, $size-settings) {
-  $padding-x: space(map_get($size-settings, padding-x));
+  $padding-x: spacing.space(map_get($size-settings, padding-x));
   $icon-margin: _link-icon-margin(map_get($size-settings, icon));
 
   @if $place == null {
@@ -59,7 +60,7 @@
   }
   @else if $place == only {
     $icon-size: icon-size(map_get($size-settings, icon-only));
-    $min-height: space(map_get($size-settings, min-height));
+    $min-height: spacing.space(map_get($size-settings, min-height));
     $padding-x: ($min-height - $icon-size) * 0.5;
 
     margin-left: -($padding-x);

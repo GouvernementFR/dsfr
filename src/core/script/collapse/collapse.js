@@ -23,6 +23,7 @@ class Collapse extends Disclosure {
   }
 
   transitionend (e) {
+    this.removeClass(CollapseSelector.COLLAPSING);
     if (!this.disclosed) {
       if (this.isLegacy) this.style.maxHeight = '';
       else this.style.removeProperty('--collapse-max-height');
@@ -38,6 +39,7 @@ class Collapse extends Disclosure {
     if (this.disclosed) return;
     this.unbound();
     this.request(() => {
+      this.addClass(CollapseSelector.COLLAPSING);
       this.adjust();
       this.request(() => {
         super.disclose(withhold);
@@ -48,6 +50,7 @@ class Collapse extends Disclosure {
   conceal (withhold, preventFocus) {
     if (!this.disclosed) return;
     this.request(() => {
+      this.addClass(CollapseSelector.COLLAPSING);
       this.adjust();
       this.request(() => {
         super.conceal(withhold, preventFocus);

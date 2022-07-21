@@ -3,21 +3,22 @@
 /// @group consent
 ////
 
+@use 'module/spacing';
+
 #{ns(consent-banner)} {
   @include fixed(null, null, 0, 0, 100%);
   max-height: calc(100% - #{space(32v)});
   @include padding(4v);
-  @include z-index(consent);
   overflow: auto;
   @include set-text-margin(0 0 4v);
   @include set-title-margin(0 0 4v);
 
   @include respond-from(md) {
     @include padding(8v);
-    bottom: space(10v);
-    left: space(10v);
-    max-width: space(160v);
-    max-height: calc(100% - #{space(20v)});
+    bottom: spacing.space(10v);
+    left: spacing.space(10v);
+    max-width: spacing.space(160v);
+    max-height: calc(100% - #{spacing.space(20v)});
   }
 
   &__title {

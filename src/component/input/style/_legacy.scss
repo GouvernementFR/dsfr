@@ -3,7 +3,9 @@
 /// @group input
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   #{ns(input-wrap)} {
     &--addon {
       #{ns(btn)} {

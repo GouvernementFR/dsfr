@@ -1,0 +1,19 @@
+// TODO
+
+@function data-uri ($data, $type, $charset: utf-8, $base64: false) {
+  $uri: 'data:';
+
+  @if $type == svg {
+    $uri: '#{$uri}image/svg+xml';
+  }
+
+  @if $charset != null {
+    $uri: '#{$uri};charset=#{$charset}';
+  }
+
+  @if $base64 {
+    $uri: '#{$uri};base64';
+  }
+
+  @return '#{$uri},#{$data}';
+}

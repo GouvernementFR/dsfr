@@ -3,7 +3,9 @@
 /// @group badge
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   #{ns(badge)} {
     @include icon-legacy(null, sm);
 

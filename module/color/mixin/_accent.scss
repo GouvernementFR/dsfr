@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '../variable/accent';
+@use '../variable/sets';
+
+@mixin accentuate () {
+  $accents: map.get(sets.$values, accent);
+  @at-root {
+    @each $tint, $value in $accents {
+      @include accent.set($tint);
+      &--#{$tint} {
+        @content;
+      }
+    }
+  }
+  @include accent.end();
+}

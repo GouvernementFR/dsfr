@@ -3,76 +3,86 @@
 /// @group sidemenu
 ////
 
+@use 'module/color';
+@use 'module/elevation';
+@use 'module/media-query';
+
 @mixin _sidemenu-scheme($legacy: false) {
   #{ns(sidemenu)} {
-    /*
-    @include scheme-element-bg-color(default grey);
-
-    @include respond-from(md) {
-      @include scheme-element-bg-transparent((legacy:$legacy, hover: true));
+    @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
+    @include media-query.respond-from(md) {
+      @include color.no-box-shadow();
     }
-    */
+
+    /*
+    @include elevation.elevate(raised);
+    @include respond-from(md) {
+      @include elevation.drop;
+    }
+     */
 
     @include title {
-      @include scheme-element-text-color(title grey, (legacy:$legacy));
-      @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
-      @include scheme-element-no-box-shadow(md);
+      @include color.text(title grey, (legacy:$legacy));
+      @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+      @include color.no-box-shadow(md);
     }
 
     @include list-item {
       @include before {
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-out bottom-1-in);
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
       }
 
       &:first-child {
         @include before {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
+          @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
         }
       }
 
       &:last-child {
         @include before {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-out);
+          @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
         }
       }
     }
 
     &__inner {
-      @include respond-from(md) {
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), right-1-in);
+      @include media-query.respond-from(md) {
+        @include color.box-shadow(default grey, (legacy:$legacy), right-1-in);
       }
     }
 
-    @include respond-from(md) {
+    @include media-query.respond-from(md) {
       &--right {
         #{ns(sidemenu__inner)} {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), left-1-in);
+          @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
         }
       }
 
       &--full-border {
         #{ns(sidemenu__inner)} {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+          @include color.box-shadow(default grey, (legacy:$legacy));
         }
       }
     }
 
     &__link,
     &__btn {
-      @include scheme-element-text-color(action-high grey, (legacy:$legacy));
+      @include color.text(action-high grey, (legacy:$legacy));
 
       &[aria-current] {
-        @include scheme-element-text-color(active blue-france, (legacy:$legacy));
+        @include color.text(active blue-france, (legacy:$legacy));
         @include before {
-          @include scheme-element-bg-color(border active blue-france, (legacy:$legacy));
+          @include color.background(border active blue-france, (legacy:$legacy));
         }
       }
     }
 
+    /*
     &__btn {
       @at-root #{ns(sidemenu__inner)} > #{&} {
-        @include scheme-element-bg-color(default grey, (legacy:$legacy));
+        @include color.background(default grey, (legacy:$legacy));
       }
     }
+     */
   }
 }

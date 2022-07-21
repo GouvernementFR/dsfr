@@ -3,10 +3,12 @@
 /// @group input
 ////
 
+@use 'module/spacing';
+
 #{ns(input)} {
   display: block;
   @include size(100%);
-  border-radius: space(1v) space(1v) 0 0;
+  border-radius: spacing.space(1v) spacing.space(1v) 0 0;
   @include text-style(md);
   @include padding(2v 4v);
 
@@ -28,8 +30,8 @@
   &[type=date] {
     min-height: 2.5rem;
     background-repeat: no-repeat;
-    background-position: space(calc(100% - 3v) 50%);
-    background-size: space(4v) space(4v);
+    background-position: spacing.space(calc(100% - 3v) 50%);
+    background-size: spacing.space(4v) spacing.space(4v);
 
     &::-webkit-calendar-picker-indicator {
       display: block;
@@ -69,13 +71,13 @@
     }
 
     @include respond-from(md) {
-      border-radius: space(1v 0 0 0);
+      border-radius: spacing.space(1v 0 0 0);
     }
   }
 
   > *:last-child:not(:first-child) {
     @include respond-from(md) {
-      border-radius: space(0 1v 0 0);
+      border-radius: spacing.space(0 1v 0 0);
     }
   }
 
@@ -85,5 +87,5 @@
 }
 
 textarea#{ns(input)} {
-  min-height: space(15v);
+  min-height: spacing.space(15v);
 }

@@ -3,6 +3,8 @@
 /// @group download
 ////
 
+@use 'module/spacing';
+
 #{ns(download)} {
   &--card {
     @include padding(6v 6v 16v 6v);
@@ -21,8 +23,8 @@
 
       @include respond-from(md) {
         @include icon-size(md);
-        bottom: space(8v);
-        right: space(8v);
+        bottom: spacing.space(8v);
+        right: spacing.space(8v);
       }
     }
   }
@@ -38,8 +40,8 @@
     max-width: calc(100% - #{space(25v)});
 
     @include respond-from(md) {
-      bottom: space(8v);
-      left: space(8v);
+      bottom: spacing.space(8v);
+      left: spacing.space(8v);
     }
 
     @include has-icon {

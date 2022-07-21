@@ -4,6 +4,24 @@ const { ESLint } = require('eslint');
 const root = require('../utilities/root');
 const log = require('../utilities/log');
 
+const lintModule = async () => {
+  let result;
+  try {
+    result = await stylelint.lint({ files: root('module/**/*.scss'), formatter: 'unix' });
+  } catch (e) {
+    return true;
+  }
+
+  if (result.errored) {
+    log.error(`module ✖`);
+    console.log('\n\r', result.output);
+    return false;
+  }
+
+  log.info('module ✓');
+  return true;
+};
+
 const lintStyles = async (pck) => {
   let result;
   try {
@@ -48,6 +66,8 @@ const lintScripts = async (pck) => {
 const lint = async (packages) => {
   let success = true;
   let result;
+
+  await lintModule();
 
   for (const pck of packages) {
     if (pck.type === 'folder') continue;

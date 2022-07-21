@@ -18,28 +18,22 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% const content = JSON.parse(include('../../content.json')); %>
 
 <%
 const connect = locals.connect || {};
-let connectClasses = [];
-let connectAttrs = {};
+const connectClasses = [];
+const connectAttrs = {};
 if (connect.id) connectAttrs.id = connect.id;
 
 connectClasses.push(prefix + '-connect');
 
-const login = (connect.lang && content[`login-${connect.lang}`]) ? content[`login-${connect.lang}`].value : content['login-fr'].value;
-
-let brand = content.brand.value;
 switch(connect.type) {
   case 'plus':
     connectClasses.push(prefix + '-connect--plus');
-    brand = content['brand-plus'].value;
   break;
 
   case 'agent':
     connectClasses.push(prefix + '-connect--agent');
-    brand = content['brand-agent'].value;
   break;
 }
 
@@ -58,8 +52,8 @@ if (connect.disabled === true) connectAttrs.disabled = '';
 %>
 
 <button <%- includeClasses(connectClasses) %> <%- includeAttrs(connectAttrs); %> >
-  <span class="<%= prefix %>-connect__login"><%- login %></span>
-  <span class="<%= prefix %>-connect__brand"><%- brand %></span>
+  <span class="<%= prefix %>-connect__login"><%- connect.login %></span>
+  <span class="<%= prefix %>-connect__brand"><%- connect.brand %></span>
 </button>
 
 <% if (connect.link) { %>

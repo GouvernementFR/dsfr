@@ -1,0 +1,249 @@
+<% eval(include(root + 'src/core/index.ejs')); %>
+
+<%
+let sampling = false;
+
+function section (title, desc, spacing = '32v', container = false) {
+  let sectionText = `<div class="fr-mt-${spacing}">`;
+  if (container) sectionText += `<div class="fr-container">`;
+  if (title) sectionText += `<h3>${title}</h3>`;
+  if (desc) sectionText += `<p>${desc}</p>`;
+  if (container) sectionText += `</div>`;
+  sectionText += `</div>`;
+  return sectionText;
+}
+
+locals.section = section;
+
+function deprecation () {
+  return section('Dépréciation', '<span class="fr-icon-warning-fill"></span> Les exemples suivants sont dépréciés, ne pas utiliser comme référence<br>Pour support des versions précédentes');
+}
+
+locals.deprecation = deprecation;
+
+function getSample (include) {
+  return (title, path, data, snippet, layout, layoutData) => {
+    sampling = false;
+    let component = include(path, {...data});
+
+    if (locals.noSnippet) snippet = undefined;
+
+    if (snippet === true) {
+        sampling = true;
+        let html =  include(path, {...data});
+        sampling = false;
+        html = beautify(html);
+
+        html = html.replace(/(class=".*)\s(")/gm, '$1$2');
+        html = html.replace(/&/g, '&amp;');
+        html = html.replace(/</g, '&lt;');
+        html = html.replace(/>/g, '&gt;');
+
+        const accordion = {
+            label: 'Extrait de code',
+            id: uniqueId('snippet'),
+            content: '<pre class=" language-html"><code>' + html + '</code></pre>'
+        };
+
+        snippet = include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion});
+    }
+
+    if (layout === undefined) layout = root + 'tool/example/layout';
+    if (layoutData === undefined) layoutData = {};
+
+
+    return include(layout, {...layoutData, title: title, component: component, snippet: snippet});
+  }
+}
+
+locals.getSample = getSample;
+
+const lorem = (insert, length) => {
+  let content = 'Lorem ';
+  content += sampling ? '[...] ' : 'ipsum dolor sit amet, consectetur ';
+  content += !sampling || insert ? 'adipiscing, ' : '';
+  content += insert ? insert + ' ' : '';
+  content += !sampling || insert ? 'incididunt, ' : '';
+  content += !sampling ? 'ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing ' : insert ? '[...] ' : '';
+  content += 'elit ut.';
+
+  return content.substring(0, length);
+}
+
+locals.lorem = lorem;
+
+locals.contentPlaceholder = (text) => {
+  if (text === 'alt') text = 'texte alternatif de l’image';
+  return `[À MODIFIER - ${text}]`;
+};
+
+locals.lengthen = (length, label) => {
+    switch (length) {
+        case 1:
+            return label + ' long';
+
+        case 2:
+            return label + ' plus long';
+
+        case 3:
+            return label + ' beaucoup plus long';
+
+        default:
+            return label;
+    }
+}
+
+locals.imgAltText = 'texte alternatif de l’image';
+
+const brandData = (component = 'header', logo = true, service = false, operator = false, beta = false, href = '/') => {
+    const data = {};
+    const logoPlaceholder = 'Nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
+    const logoTitlePlaceholder = 'Intitulé<br>officiel';
+    const logoPlaceholderOperator = 'République Française';
+    const logoTitlePlaceholderOperator = 'République<br>Française';
+    const operatorPlaceholder = imgAltText + ' : nom de l\'opérateur ou du site serviciel';
+    const servicePlaceholder = {
+        title: 'Nom du site / service',
+        tagline: 'baseline - précisions sur l‘organisation'
+    };
+    let titleLinkPlaceholder = 'Accueil';
+    let position;
+    if (component === 'footer') {
+        titleLinkPlaceholder = 'Retour à l’accueil du site';
+    }
+    const fullTitle = [titleLinkPlaceholder];
+    if (service) {
+        fullTitle.push(contentPlaceholder(servicePlaceholder.title));
+        switch (typeof service) {
+            case 'boolean':
+                data.service = servicePlaceholder;
+                break;
+            case 'string':
+                switch(service) {
+                    case 'title':
+                        data.service = { title: servicePlaceholder.title };
+                        break
+                }
+                break;
+            default:
+                data.service = service;
+        }
+    }
+    if (operator) {
+        fullTitle.push(contentPlaceholder(operatorPlaceholder));
+        switch (typeof operator) {
+            case 'boolean':
+                if (operator) data.operator = imgData('img/placeholder.9x16.png', 'rendered', null,  null, 'width:3.5rem;');
+                break;
+            default:
+                data.operator = operator;
+        }
+    }
+    if (logo) {
+        data.logo = {
+            title: logoTitlePlaceholder
+        };
+        if (operator) {
+            fullTitle.push(logoPlaceholderOperator);
+            data.logo.title = logoTitlePlaceholderOperator;
+        } else {
+            fullTitle.push(logoPlaceholder);
+        }
+    }
+    switch (true) {
+        case service !== false :
+            position = 'service';
+            break;
+        case operator !== false:
+            position = 'operator';
+            break;
+        default:
+            position = 'logo';
+    }
+    if (beta) {
+        service ? data.service.beta = beta === true || undefined : data.service = beta ? {beta: beta} : undefined;
+    }
+    data.link = {
+        position: position,
+        href: href,
+        title: fullTitle.join(' - ')
+    };
+    return data;
+}
+
+locals.brandData = brandData;
+
+const imgData = (src, alt, ratio, comment, style) => {
+  const data = {
+      src: `${relativeRoot}example/${src ? src : 'img/placeholder.16x9.png'}`,
+      alt: alt,
+      comment: comment,
+      ratio: ratio,
+      style: style
+  };
+  return data;
+}
+
+locals.imgData = imgData;
+
+const vidData = (src, title, ratio, attributes) => {
+    const data = {
+        src: src || 'https://www.youtube.com/embed/HyirpmPL43I',
+        title: title || 'Titre de l\'iframe',
+        ratio: ratio,
+        attributes: {
+            allow:'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
+            allowfullscreen:'',
+            ...attributes
+        }
+    };
+    return data;
+}
+
+locals.vidData = vidData;
+
+const randomContent = (id) => {
+  let content = '<!-- données de test -->';
+  if (sampling) return content;
+  content += `<div><h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
+  if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
+  for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
+  content += '<ul>';
+  for (let i = Math.random() * 2 + 1; i > 0; i--) {
+    content += '<li>list item';
+    if (Math.random() < .4) {
+      content += '<ul>';
+      for (let j = Math.random() * 2 + 1; j > 0; j--) content += '<li>list item niveau 2</li>';
+
+      content += '</ul>';
+    }
+    content += '</li>';
+  }
+  content += '</ul></div>';
+  return content;
+};
+
+locals.randomContent = randomContent;
+
+const getText = (key, id, preventError) => {
+  return locals.i18n.getText(key, id, preventError);
+};
+
+locals.getText = getText;
+
+const hasText = (key, id, withFallback) => {
+    return locals.i18n.hasText(key, id, withFallback);
+};
+
+locals.hasText = hasText;
+
+const getSubdir = (key) => {
+  return getText(`subdir.${key}`, id);
+}
+
+locals.getSubdir = getSubdir;
+
+locals.globals = {};
+
+%>
+<%- include(entry); %>

@@ -3,22 +3,24 @@
 /// @group icon-system
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('system'));
 
   #{ns(fi-delete-line)} {
-    @include icon-image-legacy(delete-bin-line, null, true);
+    @include icon-image-legacy(delete-bin-line);
   }
 
   #{ns(fi-delete-fill)} {
-    @include icon-image-legacy(delete-bin-fill, null, true);
+    @include icon-image-legacy(delete-bin-fill);
   }
 
   #{ns(icon-delete-line)} {
-    @include icon-image-legacy(delete-bin-line, null, true);
+    @include icon-image-legacy(delete-bin-line);
   }
 
   #{ns(icon-delete-fill)} {
-    @include icon-image-legacy(delete-bin-fill, null, true);
+    @include icon-image-legacy(delete-bin-fill);
   }
 }

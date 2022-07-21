@@ -3,10 +3,17 @@
 /// @group component
 ////
 
-@import '../media-query-order';
-@import '../core/style/path/path-1';
+@use 'module/path';
+@use 'module/shame/media-query';
+
+@include path.to-dist(1);
+@include media-query.order;
+
 @import 'upload/main';
+@import 'accordion/main';
+@import 'badge/main';
 @import 'logo/main';
+@import 'button/main';
 @import 'connect/main';
 @import 'quote/main';
 @import 'breadcrumb/main';
@@ -15,32 +22,30 @@
 @import 'link/main';
 @import 'sidemenu/main';
 @import 'highlight/main';
+@import 'tab/main';
+@import 'pagination/main';
 @import 'summary/main';
 @import 'table/main';
+@import 'tag/main';
 @import 'download/main';
 @import 'tile/main';
-@import 'accordion/main';
-@import 'badge/main';
-@import 'button/main';
+@import 'alert/main';
+@import 'notice/main';
 @import 'radio/main';
+@import 'card/main';
 @import 'checkbox/main';
+@import 'input/main';
+@import 'content/main';
 @import 'toggle/main';
 @import 'skiplink/main';
 @import 'select/main';
-@import 'tab/main';
-@import 'pagination/main';
-@import 'footer/main';
-@import 'tag/main';
-@import 'alert/main';
-@import 'notice/main';
-@import 'card/main';
-@import 'input/main';
-@import 'content/main';
 @import 'callout/main';
 @import 'modal/main';
 @import 'navigation/main';
 @import 'share/main';
+@import 'footer/main';
 @import 'search/main';
 @import 'consent/main';
 @import 'follow/main';
+@import 'translate/main';
 @import 'header/main';

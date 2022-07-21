@@ -9,11 +9,6 @@
   @include vertical-btns-group;
   @include margin-x(-2v);
 
-  #{ns(btn)} {
-    @include margin(0 2v 4v);
-    justify-content: center;
-  }
-
   /**
   * fr-btns-group--inline : aligne les boutons horizontalement dans tout les cas
   * fr-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
@@ -152,7 +147,7 @@
   /**
   * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
   */
-  &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+  &:where(:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg)) {
     #{ns(btn)} {
       @include has-not-icon {
         @include nest-btn(md, false, null, null, false);

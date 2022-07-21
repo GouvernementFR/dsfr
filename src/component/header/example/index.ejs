@@ -1,5 +1,13 @@
 <% const sample = getSample(include); %>
 
+<style>
+    @media (min-width: 62em) {
+        .relative-sample\@lg {
+            position: relative;
+        }
+    }
+</style>
+
 <%- sample('Header avec Navigation complète', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>
 
 <%- sample('Header minimal', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, navigation: 'min' }}, true, './layout');  %>
@@ -7,6 +15,8 @@
 <%- sample('Header sans navigation', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: true }}, true, './layout');  %>
 
 <%- sample('Header sans navigation avec raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec selecteur de langues', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, navigation: true, translate: true, service: true}}, true, './layout');  %>
 
 <%- sample('Header avec nom de service, lien d’accès', './sample/header.ejs', {header: { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }}, true, './layout');  %>
 

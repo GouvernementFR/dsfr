@@ -3,15 +3,6 @@
 /// @group radio
 ////
 
-/// Mixin pour gérer l'affichage des boutons radios riches
-@mixin radio-rich() {
-  @at-root {
-    &[style*='background-image:'] {
-      @content;
-    }
-  }
-}
-
 @function radio-box-shadow ($checked: true, $size: md) {
   $max: 12;
   @if $size == sm {

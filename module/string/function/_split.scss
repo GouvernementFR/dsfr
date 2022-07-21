@@ -1,0 +1,32 @@
+@use 'sass:string';
+
+/// Découpage d'une chaine de caractères avec un séparateur particulier
+/// @access public
+/// @param {String} $string - chaine de caractère à découper
+/// @param {String} $separator - séparateur
+@function split($haystack, $needle:',', $separator: comma) {
+  @if type-of($haystack) != string {
+    $haystack: '#{$haystack}';
+  }
+  @if type-of($needle) != string {
+    $needle: '#{$needle}';
+  }
+
+  $list: ();
+  $length: string.length($needle);
+  $index: -1;
+
+  @while $index != null {
+    $index: string.index($haystack, $needle);
+
+    @if $index != null {
+      $list: append($list, string.slice($haystack, 1, $index - 1), $separator);
+      $haystack: string.slice($haystack, $index + $length);
+    }
+    @else {
+      $list: append($list, $haystack, $separator);
+    }
+  }
+
+  @return $list;
+}

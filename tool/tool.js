@@ -61,9 +61,18 @@ const buildBuilder = (yargs) => {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
     })
+    .option('config', {
+      describe: 'génère la configuration',
+      type: 'boolean'
+    })
     .option('markdowns', {
       describe: 'Génère les fichiers readme',
       type: 'boolean'
+    })
+    .option('locale', {
+      alias: 'loc',
+      describe: 'Locale',
+      type: 'string'
     });
 };
 
@@ -79,8 +88,10 @@ const buildHandler = async (argv) => {
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
     clean: argv.clean,
+    config: argv.config,
     test: argv.test,
-    markdowns: argv.markdowns
+    markdowns: argv.markdowns,
+    locale: argv.locale
   };
 
   await build(settings);
@@ -96,7 +107,12 @@ const releaseBuilder = (yargs) => {
     .example(
       '$0',
       ''
-    );
+    )
+    .option('locale', {
+      alias: 'loc',
+      describe: 'Locale',
+      type: 'string'
+    });
 };
 
 const releaseHandler = async (argv) => {
@@ -109,7 +125,8 @@ const releaseHandler = async (argv) => {
     minify: true,
     legacy: true,
     sourcemap: true,
-    markdowns: true
+    markdowns: true,
+    locale: argv.locale
   });
 };
 
@@ -122,7 +139,11 @@ const deployBuilder = (yargs) => {
     .example(
       '$0',
       ''
-    );
+    ).option('locale', {
+      alias: 'loc',
+      describe: 'Locale',
+      type: 'string'
+    });
 };
 
 const deployHandler = async (argv) => {
@@ -131,7 +152,8 @@ const deployHandler = async (argv) => {
     scripts: true,
     examples: true,
     clean: true,
-    legacy: true
+    legacy: true,
+    locale: argv.locale
   });
   await buildRouting();
   deployFavicons();
@@ -212,6 +234,15 @@ const standaloneBuilder = (yargs) => {
     .option('clean', {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
+    })
+    .option('config', {
+      describe: 'génère la configuration',
+      type: 'boolean'
+    })
+    .option('locale', {
+      alias: 'loc',
+      describe: 'Locale',
+      type: 'string'
     });
 };
 
@@ -226,7 +257,9 @@ const standaloneHandler = async (argv) => {
     minify: argv.minify,
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
-    clean: argv.clean
+    clean: argv.clean,
+    config: argv.config,
+    locale: argv.locale
   };
 
   await standalone(settings);

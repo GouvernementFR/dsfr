@@ -1,0 +1,50 @@
+@use 'sass:meta';
+@use 'sass:list';
+@use '../variable/accent';
+
+/// Mise en forme des tokens de décision
+/// @access public
+/// @param {list} $tokens - liste de token de décision
+/// @param {String} $context - contexte global provenant de l'usage de scheme-element
+/// @return {list} Retourne une liste contenant les tokens de décision normalisés
+@function normalise($tokens, $context: text) {
+  $length: length($tokens);
+  @if meta.type-of(list.nth($tokens, 1)) != list {
+    $length: 1;
+    $tokens: list.append((), $tokens);
+  }
+  $normalised: ();
+  @for $i from 1 through $length {
+    $normalised: list.append($normalised, (_normalise(list.nth($tokens, $i), $context)));
+  }
+  @return $normalised;
+}
+
+/// Mise en forme d'un token de décision .
+/// @access public
+/// @param {list} $token - token de décision (contexte, usage, teinte ou famille (accent))
+/// @param {String} $context - contexte global provenant de l'usage de scheme-element
+/// @return {list} Retourne le token de décision normalisé
+@function _normalise($token, $context: text) {
+  @if list.length($token) == 3 {
+    $context: list.nth($token, 1);
+  }
+  $use: list.nth($token, list.length($token) - 1);
+  $tint: list.nth($token, list.length($token));
+  @if $tint == accent {
+    $tint: accent.$value;
+  }
+
+  @return $context $use $tint;
+}
+
+/// Nombre de token de décision .
+/// @access public
+/// @param {list} $tokens - $tokens - liste de token de décision
+/// @return {int} Retourne le nombre de tokens de décision
+@function length($tokens) {
+  @if meta.type-of(list.nth($tokens, 1)) != list {
+    @return 1;
+  }
+  @return list.length($tokens);
+}

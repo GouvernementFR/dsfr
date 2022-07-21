@@ -3,7 +3,9 @@
 /// @group footer
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   /**
   * Reset liste à puce
   */

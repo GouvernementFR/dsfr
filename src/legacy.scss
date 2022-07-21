@@ -3,7 +3,11 @@
 /// @group dsfr
 ////
 
-@import 'media-query-order';
-@import 'core/style/path/path-0';
+@use 'module/path';
+@use 'module/shame/media-query';
+
+@include path.to-dist(0);
+@include media-query.order;
+
 @import 'core/legacy';
 @import 'component/legacy';

@@ -25,7 +25,7 @@ class NavigationItem extends api.core.Instance {
   calculate () {
     const collapse = this.element.getDescendantInstances(api.core.Collapse.instanceClassName, null, true)[0];
     if (collapse && this.isBreakpoint(api.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelector.MENU)) {
-      const right = this.element.node.parentElement.getBoundingClientRect().right;
+      const right = this.element.node.parentElement.getBoundingClientRect().right; // todo: ne fonctionne que si la nav fait 100% du container
       const width = collapse.element.node.getBoundingClientRect().width;
       const left = this.element.node.getBoundingClientRect().left;
       this.isRightAligned = left + width > right;

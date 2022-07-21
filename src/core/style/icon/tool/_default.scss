@@ -3,6 +3,10 @@
 /// @group core
 ////
 
+@use 'module/path';
+@use 'module/spacing';
+@use 'module/specificity';
+
 /// Return icon size from map
 /// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)
 ///
@@ -12,13 +16,13 @@
 ///     height: icon-size(sm);
 ///   }
 @function icon-size($size: md) {
-  @return px-rem(map-get($icon-size-map, $size));
+  @return spacing.space(map-get($icon-size-map, $size));
 }
 
 @function get-icon-url($icon, $important: false) {
   $config: map-get($icons-config, $icon);
-  $url: url('#{$DIST-PATH}#{map-get($config, path)}');
-  @return important($url, $important);
+  $url: url('#{path.dist()}#{map-get($config, path)}');
+  @return specificity.important($url, $important);
 }
 
 @function get-icon-pseudo($restrain) {

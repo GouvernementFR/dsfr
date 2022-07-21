@@ -5,6 +5,18 @@ const attrModal = {};
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
+const links = { 
+  buttons: [
+    { 
+      icon: 'theme-fill',
+      iconPlace: 'left',
+      label: 'Paramètres d\'affichage',
+      attributes: {...attrModal},
+      markup: 'button'
+    }
+  ]
+};
+
 let dataModal = {
   id: prefix + "-theme-modal",
   title: 'Paramètres d’affichage',
@@ -46,7 +58,7 @@ let dataFooter = {
 }
 %>
 
-<%- include('../../header/example/sample/header.ejs', {header: { links: { buttons: [{ template: 'display', attributes: attrModal }] }, navigation: true, navigationId:'header-navigation' }}); %>
+<%- include('../../header/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Scheme - gestion du dark mode</h1>

@@ -1,0 +1,77 @@
+<%#
+# paramètres response
+
+* title (String, optional): Titre de l'erreur
+
+* subtitle (String, optional) : Sous-titre de l'erreur
+
+* description (String, optional) : Description de l'erreur
+
+* text (String, optional) : Texte de l'erreur
+
+* contact (Boolean, optional): Option d'affichage du bouton de contact
+
+%>
+
+<%
+    const response = locals.response;
+
+    const title = response.title || false;
+    const subtitle = response.subtitle || false;
+    const lead = response.lead || false;
+    const description = response.description || false;
+    const contact = response.contact || false;
+    const home = response.home;
+%>
+
+<main role="main" id="content">
+    <div class="<%= prefix %>-container" >
+        <div class="<%= prefix %>-my-7w <%= prefix %>-mt-md-12w <%= prefix %>-mb-md-10w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle">
+            <div class="<%= prefix %>-py-0 <%= prefix %>-col-12 <%= prefix %>-col-md-6 <%= prefix %>-col-offset-md-1">
+                <% if(title) { %>
+                    <h1><%= title %></h1>
+                <% } %>
+
+                <% if(subtitle) { %>
+                    <p class="<%= prefix %>-text--sm <%= prefix %>-mb-3w" ><%= subtitle %></p>
+                <% } %>
+
+                <% if(lead) { %>
+                    <p class="<%= prefix %>-text--lg <%= prefix %>-mb-3w" ><%= lead %></p>
+                <% } %>
+
+                <% if(description) { %>
+                    <p class="<%= prefix %>-text--sm <%= prefix %>-mb-6w" >
+                        <%- description %>
+                    </p>
+                <% } %>
+
+                <ul class="fr-btns-group fr-btns-group--inline-md">
+                    <li>
+                        <a class="<%= prefix %>-btn" href="/" >
+                            <%= home %>
+                        </a>
+                    </li>
+                    <% if(contact) { %>
+                        <li>
+                            <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary" href="<%= contact.href %>">
+                                <%= contact.button %>
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-3 <%= prefix %>-col-offset-md-1 <%= prefix %>-px-6w <%= prefix %>-px-md-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="<%= prefix %>-responsive-img fr-artwork" aria-hidden="true" width="160" height="200" viewBox="0 0 160 200">
+                    <use class="<%= prefix %>-artwork-motif" href="<%= relativeRoot %>dist/artwork/background/ovoid.svg#artwork-motif"></use>
+                    <use class="<%= prefix %>-artwork-background" href="<%= relativeRoot %>dist/artwork/background/ovoid.svg#artwork-background"></use>
+                    <g transform="translate(40, 60)">
+                        <use class="<%= prefix %>-artwork-decorative" href="<%= relativeRoot %>dist/artwork/technical-error.svg#artwork-decorative"></use>
+                        <use class="<%= prefix %>-artwork-minor" href="<%= relativeRoot %>dist/artwork/technical-error.svg#artwork-minor"></use>
+                        <use class="<%= prefix %>-artwork-major" href="<%= relativeRoot %>dist/artwork/technical-error.svg#artwork-major"></use>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+</main>

@@ -3,6 +3,8 @@
 /// @group consent
 ////
 
+@use 'module/color';
+
 #{ns(consent-manager)} {
   &__header {
     @include padding-top(0);
@@ -46,6 +48,6 @@
   }
 
   #{ns(consent-service)}:last-of-type {
-    @include scheme-element-no-box-shadow;
+    @include color.no-box-shadow;
   }
 }

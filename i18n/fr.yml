@@ -1,0 +1,51 @@
+title: Nom du composant
+description: description du composant
+doc: lien vers la documentation
+error:
+  short: erreur
+label:
+  default: libellé
+  short: libl
+  long: libellé de l'élément
+email:
+  label: Adresse électronique
+  hint:
+    default: 'Format attendu : nom@domaine.fr'
+    indication: Cette adresse est utilisée uniquement pour la connexion au service.
+  error: 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@exemple.org'
+fieldset:
+  legend: Une légende
+hint:
+  default: Texte de description additionnel
+name-surname:
+  hint:
+    usage-name: Nom marital…
+  label:
+    name: Nom
+    surname: Prénom
+    usage-name: Nom d'usage
+    no-surname: Je n'ai pas de prénom
+site:
+  name: '[Nom du site]'
+social:
+  facebook:
+    default: Facebook
+    url: https://facebook.com/
+  twitter:
+    default: Twitter
+    url: https://twitter.com/
+  linkedin:
+    default: Linkedin
+    url: https://linkedin.com/
+marianne: Marianne
+readme:
+  dependencies:
+    title: Dépendances
+  use:
+    title: Utilisation
+    description: Afin d’utiliser le composant `${id}`, il est nécessaire d’ajouter les fichiers de styles et de scripts présents dans le dossier dist dans l'ordre suivant :\n
+  doc:
+    title: Documentation
+    item: Consulter [la documentation](${url}) sur le module ${title}
+subdir:
+  title: Autres exemples

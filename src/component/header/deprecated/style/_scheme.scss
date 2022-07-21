@@ -3,12 +3,14 @@
 /// @group header
 ////
 
+@use 'module/color';
+
 @mixin _header-deprecated-scheme($legacy: false) {
   #{ns(header)} {
     &__menu-links {
       #{ns(link)} {
         @include btn-kind-scheme(4, $legacy);
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
       }
     }
 

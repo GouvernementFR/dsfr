@@ -3,7 +3,6 @@ const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
 const { concatenate } = require('../generate/concatenate');
 const { copyImages, copyIcons, copyAssets } = require('./copy');
-const { getPackages } = require('../utilities/config');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
@@ -11,21 +10,25 @@ const { generateMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 const generateConfig = require('../generate/config');
 const clean = require('../utilities/clean');
+const { I18n } = require('../classes/i18n/i18n');
+const { Config } = require('../classes/config/config');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
-
-  if (settings.clean) {
-    clean();
+  if (settings.clean) clean();
+  if (settings.clean || settings.config) {
     await generateConfig();
     copyImages();
     copyIcons();
     copyAssets();
   }
 
+  await I18n.merge();
   concatenate();
 
-  const packages = getPackages().filter(pck => settings.packages && settings.packages.length ? settings.packages.indexOf(pck.id) > -1 : true);
+  const config = await Config.get();
+
+  const packages = config.getPackagesByIds(settings.packages);
 
   if (settings.test) {
     log.section('lint');
@@ -67,7 +70,7 @@ const build = async (settings) => {
     for (const pck of packages) {
       if (pck.draft || !pck.example) continue;
       try {
-        await buildExample(pck);
+        await buildExample(pck, settings.locale);
       } catch (e) {
         log.error(e);
       }
@@ -78,7 +81,7 @@ const build = async (settings) => {
     log.section('markdowns', true);
     for (const pck of packages) {
       try {
-        generateMarkdown(pck, packages);
+        await generateMarkdown(pck, settings.locale);
       } catch (e) {
         log.error(e);
       }

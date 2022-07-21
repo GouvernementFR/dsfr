@@ -1,0 +1,19 @@
+<%
+const connect = locals.connect || {};
+const getLink = () => {
+  if (!hasText('agent.link', 'connect') || !hasText('agent.href', 'connect')) return null;
+  return {
+    label: getText('agent.link', 'connect'),
+    href: getText('agent.href', 'connect')
+  }
+};
+
+const data = {
+  ...locals.connect,
+  type: 'agent',
+  brand: getText('agent.brand', 'connect', true),
+  link: connect.link || getLink(connect.link)
+}
+
+%>
+<%- include('connect-default.ejs', {connect: data}) %>

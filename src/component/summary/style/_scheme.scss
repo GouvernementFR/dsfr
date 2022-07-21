@@ -3,17 +3,19 @@
 /// @group summary
 ////
 
+@use 'module/color';
+
 @mixin _summary-scheme($legacy: false) {
   #{ns(summary)} {
-    @include scheme-element-bg-color(contrast grey, (legacy:$legacy));
-    // @include scheme-element-box-shadow-color(default grey, (legacy:$legacy));
+    @include color.background(contrast grey, (legacy:$legacy));
+    // @include color.box-shadow(default grey, (legacy:$legacy));
 
     @include title {
-      @include scheme-element-text-color(title grey, (legacy:$legacy));
+      @include color.text(title grey, (legacy:$legacy));
     }
 
     li > a {
-      @include scheme-element-text-color(action-high grey, (legacy:$legacy));
+      @include color.text(action-high grey, (legacy:$legacy));
     }
   }
 }

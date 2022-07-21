@@ -11,11 +11,6 @@
       &__list {
         max-width: calc(100% + #{space(4v)});
       }
-
-      #{ns(menu)}::after,
-      #{ns(mega-menu)} {
-        @include shadow(md);
-      }
     }
   }
 }

@@ -17,13 +17,8 @@ const generateStyle = (pck, file) => {
   const ascendance = `${pck.path}/`;
 
   const depthLevel = (ascendance.match(/\//g) || []).length - 1;
-  let pathToCore = '';
-  for (let i = 0; i < depthLevel; i++) {
-    pathToCore += '../';
-  }
-  content += `@import '${pathToCore}media-query-order';\n`;
 
-  content += `@import '${pathToCore}core/style/path/path-${depthLevel}';\n`;
+  content += `@use 'module/path';\n@use 'module/shame/media-query';\n\n@include path.to-dist(${depthLevel});\n@include media-query.order;\n\n`;
 
   for (const child of children) {
     content += `@import '${child.path.replace(ascendance, '')}/${file}';\n`;

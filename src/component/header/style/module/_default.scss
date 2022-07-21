@@ -9,7 +9,6 @@
   @include set-text-margin(0);
   @include set-title-margin(0);
   @include size(100%);
-  @include shadow(md);
   @include relative;
 
   @include body {

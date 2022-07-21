@@ -121,5 +121,5 @@ if (button.type !== undefined) btnAttrs['type'] = button.type;
 
 <% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
 <<%= markup %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
-  <%= button.label %>
+  <%- button.label %>
 </<%= markup %>>

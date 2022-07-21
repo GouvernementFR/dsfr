@@ -3,25 +3,34 @@
 /// @group core
 ////
 
+@use 'module/color';
+@use 'module/selector';
+
 @mixin _core-artwork-scheme($legacy: false) {
-  #{ns(artwork)} {
+  #{selector.ns(artwork)} {
     &-decorative {
-      @include scheme-element-fill-color(artwork decorative blue-france, (legacy: $legacy));
+      @include color.fill(artwork decorative blue-france, (legacy: $legacy));
     }
 
     &-minor {
-      @include scheme-element-fill-color(artwork minor red-marianne, (legacy: $legacy));
+      @include color.fill(artwork minor red-marianne, (legacy: $legacy));
     }
 
     &-major {
-      @include scheme-element-fill-color(artwork major blue-france, (legacy: $legacy));
+      @include color.fill(artwork major blue-france, (legacy: $legacy));
     }
 
-    @each $tint, $shades in map-get($scheme-sets, accent) {
-      &--#{$tint} {
-        #{ns(artwork-minor)} {
-          @include scheme-element-fill-color(artwork minor $tint, (legacy: $legacy));
-        }
+    &-background {
+      @include color.fill(artwork background grey, (legacy: $legacy));
+    }
+
+    &-motif {
+      @include color.fill(artwork motif grey, (legacy: $legacy));
+    }
+
+    @include color.accentuate {
+      #{selector.ns(artwork-minor)} {
+        @include color.fill(artwork minor accent, (legacy: $legacy));
       }
     }
   }

@@ -3,6 +3,8 @@
 /// @group Tile
 ////
 
+@use 'module/spacing';
+
 /**
  * Modificateur tuile horizontale
  **/
@@ -79,7 +81,7 @@
         @include respond-from(md) {
           @include padding(0);
           @include margin(8v);
-          min-height: space(20v);
+          min-height: spacing.space(20v);
         }
       }
 

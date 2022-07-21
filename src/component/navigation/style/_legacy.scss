@@ -3,7 +3,10 @@
 /// @group navigation
 ////
 
-@include legacy(ie11) {
+@use 'module/color';
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   /**
   * reset liste à puce
   */
@@ -13,7 +16,7 @@
 
     &__link,
     &__btn {
-      @include scheme-element-bg-transparent((legacy: true, hover: true));
+      @include color.transparent-background((legacy: true, hover: true));
     }
 
     &__btn {
@@ -32,7 +35,7 @@
 }
 
 @include respond-from(lg) {
-  @include legacy(ie11) {
+  @include legacy.is(ie11) {
     /**
     * Correctif de l'alignement des menus sur la droite
     */
@@ -43,6 +46,15 @@
         #{ns(collapse)} {
           transform: translateX(-100%);
         }
+      }
+    }
+
+    /**
+    * Override du reset des marges des ul
+    **/
+    #{ns(menu)} {
+      #{ns(menu__list)} {
+        @include margin-bottom(8v);
       }
     }
   }

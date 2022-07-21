@@ -1,17 +1,21 @@
 const { createFile } = require('../utilities/file');
-const Readme = require('./readme');
+const { Readme } = require('../classes/md/readme');
 const root = require('../utilities/root');
 const log = require('../utilities/log');
+const { I18n } = require('../classes/i18n/i18n');
+const { Config } = require('../classes/config/config');
 
-const generateMarkdown = (pck, packages) => {
-  const readme = new Readme(pck.id);
+const generateMarkdown = async (pck, locale) => {
+  const i18n = new I18n(locale);
+  const readme = new Readme(pck.id, i18n);
+  const config = await Config.get();
 
   if (pck.description) readme.describe(pck.description);
 
   for (const dependency of pck.combination) readme.depends(dependency);
 
   for (const p of pck.usage.style) readme.useStyle(p);
-  for (const p of pck.usage.script) readme.useScript(p, packages);
+  for (const p of pck.usage.script) readme.useScript(p, config.flat);
 
   switch (true) {
     case Array.isArray(pck.doc):

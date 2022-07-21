@@ -9,6 +9,7 @@ const generateConfig = require('../generate/config');
 const { getPackages } = require('../utilities/config');
 const { buildScript } = require('./scripts');
 const { buildStandaloneExample } = require('./example');
+const { I18n } = require('../classes/i18n/i18n');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -23,9 +24,13 @@ const standalone = async (settings) => {
   if (settings.clean) {
     deleteDir(root('standalone'));
     deleteDir(root('.config'));
+  }
 
+  if (settings.clean || settings.config) {
     await generateConfig();
   }
+
+  await I18n.merge();
 
   const packages = getPackages().filter(pck => settings.packages && (settings.packages.length ? settings.packages.indexOf(pck.id) > -1 : true));
 
@@ -35,7 +40,7 @@ const standalone = async (settings) => {
       if (!pck.standalone) continue;
       if (!pck.standalone.style) continue;
       log.info(pck.id.toLowerCase());
-      if (pck.standalone.content) {
+      if (pck.fontSubset) {
         try {
           await standaloneFontSubset(pck);
         } catch (e) {
@@ -74,7 +79,7 @@ const standalone = async (settings) => {
       if (pck.draft) continue;
       if (!pck.standalone) continue;
       try {
-        await buildStandaloneExample(pck);
+        await buildStandaloneExample(pck, settings.locale);
       } catch (e) {
         log.error(e);
       }

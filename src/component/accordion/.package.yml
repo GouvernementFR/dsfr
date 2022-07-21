@@ -7,9 +7,6 @@ style:
   - core
 script:
   - core
-follow:
-  style:
-    - link
 example:
   style:
     - tab

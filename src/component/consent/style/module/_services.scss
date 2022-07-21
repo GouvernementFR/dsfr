@@ -3,6 +3,9 @@
 /// @group consent
 ////
 
+@use 'module/spacing';
+@use 'module/color';
+
 /**
 * Consent service correspond à un bloc de finalité (titre, radios, description)
 **/
@@ -98,7 +101,7 @@
         @include size(1px, 6v);
         @include absolute;
         left: calc(#{space(-6v)} - 1px);
-        top: space(3v);
+        top: spacing.space(3v);
       }
     }
   }
@@ -133,7 +136,7 @@
   #{ns(consent-service)} {
     &,
     &:last-child {
-      @include scheme-element-no-box-shadow;
+      @include color.no-box-shadow;
       > #{ns(fieldset)} {
         @include padding(0);
       }

@@ -1,0 +1,7 @@
+<% const sample = getSample(include); %>
+
+<%- sample(getText('sample', 'translate'), './sample/translate-default.ejs', {}, true);  %>
+
+<%- sample(getText('sample.no-outline', 'translate'), './sample/translate-default.ejs', {translate: {button: {kind:4}}}, true);  %>
+
+<%- sample(getText('sample.column', 'translate'), './sample/translate-big.ejs', {translate: {col: 3}}, true);  %>

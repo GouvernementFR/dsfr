@@ -3,16 +3,18 @@
 /// @group navigation
 ////
 
+@use 'module/color';
+
 @mixin _navigation-scheme-nav($legacy: false) {
   #{ns(nav)} {
     &__link,
     &__btn {
-      @include scheme-element-text-color(action-high grey, (legacy: $legacy));
+      @include color.text(action-high grey, (legacy: $legacy));
 
       &[aria-current] {
-        @include scheme-element-text-color(active blue-france, (legacy: $legacy));
+        @include color.text(active blue-france, (legacy: $legacy));
         @include before {
-          @include scheme-element-bg-color(active blue-france, (legacy: $legacy));
+          @include color.background(active blue-france, (legacy: $legacy));
         }
       }
     }
@@ -20,26 +22,26 @@
     &__btn {
       &[aria-expanded="true"] {
         @include respond-from(lg) {
-          @include scheme-element-text-color(active blue-france, (legacy: $legacy));
-          @include scheme-element-bg-color(open blue-france, (legacy: $legacy));
+          @include color.text(active blue-france, (legacy: $legacy));
+          @include color.background(open blue-france, (legacy: $legacy));
         }
       }
     }
 
     @include list-item {
       @include before {
-        @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-out bottom-1-in);
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
       }
 
       &:first-child {
         @include before {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), bottom-1-in);
+          @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
         }
       }
 
       &:last-child {
         @include before {
-          @include scheme-element-box-shadow-color(default grey, (legacy:$legacy), top-1-out);
+          @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
         }
       }
     }

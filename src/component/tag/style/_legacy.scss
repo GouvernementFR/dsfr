@@ -3,7 +3,11 @@
 /// @group tag
 ////
 
-@include legacy(ie11) {
+@use 'module/color';
+@use 'module/spacing';
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   #{ns(tag)} {
     @include icon-legacy(null, sm);
 
@@ -21,7 +25,6 @@
 
         #{ns(tag)}--sm {
           @include icon-legacy(null, xs, after);
-          @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, $COLOR #{space(2v)})));
         }
       }
 
@@ -49,21 +52,11 @@
         }
 
         @include pressed-selector(true) {
-          @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% #{space(0.75v)}, transparent #{space(1.79v)}, $COLOR #{space(2v)})));
 
           @include icon-legacy(null, xs, after) {
             background-color: transparent !important;
           }
         }
-      }
-    }
-  }
-
-  @include clickable-selector {
-    #{ns(tag)} {
-      // empeche le hover du tag pressable sur ie
-      @include pressed-selector(true) {
-        @include scheme-element-bg-image-color(action-high blue-france, (legacy: true, hover:true, important: true), (radial-gradient(circle at 100% space(1v), transparent space(2.3125v), $COLOR space(2.5v)) ));
       }
     }
   }

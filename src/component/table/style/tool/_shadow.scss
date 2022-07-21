@@ -3,9 +3,12 @@
 /// @group Table
 ////
 
+@use 'module/spacing';
+@use 'module/color';
+
 @function _get-table-shadow($side, $active: true, $theme: light) {
   @if $active == false {
-    @return inset 0 0 0 0 $black;
+    @return inset 0 0 0 0 color.$black;
   }
 
   $x: 8v;
@@ -13,7 +16,7 @@
     $x: -8v;
   }
 
-  @return space(inset #{$x} 0 4v -8v $black);
+  @return spacing.space(inset #{$x} 0 4v -8v color.$black);
 }
 
 @mixin _table-scroll-shadow($left: false, $right: false) {

@@ -1,0 +1,7 @@
+id: colors
+title: Utilitaires de couleur
+description:
+doc:
+wrapper: col-8
+style:
+  - core

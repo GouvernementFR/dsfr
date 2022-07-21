@@ -3,7 +3,9 @@
 /// @group header
 ////
 
-@include legacy(ie11) {
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
   #{ns(header)} {
     @include disable-list-style-legacy;
     @include disable-underline-legacy;
@@ -39,12 +41,8 @@
 }
 
 @include respond-from(lg) {
-  @include legacy(ie11) {
+  @include legacy.is(ie11) {
     #{ns(header)} {
-      &__tools-links {
-        display: block;
-      }
-
       #{ns(modal)} {
         position: static;
         overflow: visible;
