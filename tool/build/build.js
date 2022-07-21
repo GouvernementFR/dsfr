@@ -3,7 +3,6 @@ const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
 const { concatenate } = require('../generate/concatenate');
 const { copyImages, copyIcons, copyAssets } = require('./copy');
-const { getPackages } = require('../utilities/config');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
@@ -16,8 +15,8 @@ const { Config } = require('../classes/config/config');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);
-  if (settings.clean) {
-    clean();
+  if (settings.clean) clean();
+  if (settings.clean || settings.config) {
     await generateConfig();
     copyImages();
     copyIcons();

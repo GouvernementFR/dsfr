@@ -61,6 +61,10 @@ const buildBuilder = (yargs) => {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
     })
+    .option('config', {
+      describe: 'génère la configuration',
+      type: 'boolean'
+    })
     .option('markdowns', {
       describe: 'Génère les fichiers readme',
       type: 'boolean'
@@ -84,6 +88,7 @@ const buildHandler = async (argv) => {
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
     clean: argv.clean,
+    config: argv.config,
     test: argv.test,
     markdowns: argv.markdowns,
     locale: argv.locale
@@ -230,6 +235,10 @@ const standaloneBuilder = (yargs) => {
       describe: 'Supprime le dossier public avant compilation pour repartir de zéro',
       type: 'boolean'
     })
+    .option('config', {
+      describe: 'génère la configuration',
+      type: 'boolean'
+    })
     .option('locale', {
       alias: 'loc',
       describe: 'Locale',
@@ -249,6 +258,7 @@ const standaloneHandler = async (argv) => {
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
     clean: argv.clean,
+    config: argv.config,
     locale: argv.locale
   };
 
