@@ -24,7 +24,9 @@ const standalone = async (settings) => {
   if (settings.clean) {
     deleteDir(root('standalone'));
     deleteDir(root('.config'));
+  }
 
+  if (settings.clean || settings.config) {
     await generateConfig();
   }
 

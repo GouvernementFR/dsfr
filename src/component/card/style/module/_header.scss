@@ -25,9 +25,10 @@
   }
 
   &__img img,
+  &__img svg,
   &__vid iframe,
   &__vid video {
-    @include aspect-ratio(16 x9);
+    @include aspect-ratio(16x9);
     @include fit-cover-center;
   }
 
