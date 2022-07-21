@@ -23,7 +23,7 @@
           $result: list.append($result, $v, $separator: space);
         }
       }
-      
+
       --#{$id}-shadow: #{$result};
     }
   }
