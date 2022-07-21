@@ -13,6 +13,9 @@
     @include z-index.z-index($level);
     @include shadow.shadow($layer);
   }
+  @else {
+    z-index: #{$level};
+  }
 
   @include background.background($layer, $options);
 }
