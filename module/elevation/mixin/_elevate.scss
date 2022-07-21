@@ -4,6 +4,8 @@
 @use 'background';
 @use 'z-index';
 @use 'shadow';
+@use 'module/elevation/variable/z-indexes';
+@use 'module/legacy';
 
 @mixin elevate($level, $options: ()) {
   $layer: list.nth(string.split($level, '-'), 1);
@@ -14,7 +16,9 @@
     @include shadow.shadow($layer);
   }
   @else {
-    z-index: #{map.get(z-indexes.$values, $level)};
+    @include legacy.is(ie11) {
+      z-index: #{map.get(z-indexes.$values, $level)};
+    }
   }
 
   @include background.background($layer, $options);
