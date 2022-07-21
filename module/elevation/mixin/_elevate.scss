@@ -14,7 +14,7 @@
     @include shadow.shadow($layer);
   }
   @else {
-    z-index: #{$level};
+    z-index: #{map.get(z-indexes.$values, $level)};
   }
 
   @include background.background($layer, $options);
