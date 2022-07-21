@@ -4,8 +4,4 @@ button:
   home: Page d'accueil
   contact: Contactez-nous
 contact:
-  address: adresse email du contact
-  object: objet du mail
-  body:
-    content: titre ou texte descriptif de la page
-    url: url de la page
+  link: lien vers un formulaire de contact
