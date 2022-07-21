@@ -1,6 +1,20 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 
+const sanitize = function (object) {
+  for (const prop in object) {
+    switch (typeof object[prop]) {
+      case 'string':
+        object[prop] = object[prop].replace(/\n$/, '').replace(/\n/gi, '<br>');
+        break;
+
+      case 'object':
+        sanitize(object[prop]);
+        break;
+    }
+  }
+};
+
 class I18nLocale {
   constructor (file, path) {
     this.locale = file.replace('.yml', '');
@@ -9,6 +23,7 @@ class I18nLocale {
       flag: 'r'
     });
     this.data = yaml.load(yml);
+    sanitize(this.data);
   }
 
   getText (key) {
@@ -21,7 +36,7 @@ class I18nLocale {
     return text;
   }
 
-  get entry () {
+  get entry() {
     return [this.locale, this.data];
   }
 }

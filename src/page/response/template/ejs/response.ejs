@@ -26,7 +26,7 @@
 
 <main role="main" id="content">
     <div class="<%= prefix %>-container" >
-        <div class="<%= prefix %>-mt-12w <%= prefix %>-mb-10w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle">
+        <div class="<%= prefix %>-my-7w <%= prefix %>-mt-md-12w <%= prefix %>-mb-md-10w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--middle">
             <div class="<%= prefix %>-py-0 <%= prefix %>-col-12 <%= prefix %>-col-md-6 <%= prefix %>-col-offset-md-1">
                 <% if(title) { %>
                     <h1><%= title %></h1>
@@ -54,7 +54,7 @@
                     </li>
                     <% if(contact) { %>
                         <li>
-                            <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary" <%- includeAttrs(contact.link); %>>
+                            <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary" href="<%= contact.href %>">
                                 <%= contact.button %>
                             </a>
                         </li>

@@ -32,7 +32,7 @@ class I18n {
 
   getText (key, id = 'global', preventError = false) {
     const text = this._getText(key, id, preventError);
-    return text.replace(/\n/gi, '<br>');
+    return text;
   }
 
   _getText (key, id = 'global', preventError = false) {
