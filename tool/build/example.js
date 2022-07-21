@@ -1,4 +1,5 @@
 const root = require('../utilities/root');
+const fs = require('fs');
 const ejs = require('ejs');
 const global = require('../../package.json');
 const { createFile } = require('../utilities/file');
@@ -19,6 +20,11 @@ function uniqueId (module) {
   count++;
   return `${module}-${count}`;
 }
+
+const imgToBase64 = (path, format = 'png') => {
+  const img = fs.readFileSync(path, { encoding: 'base64' });
+  return `data:image/${format};base64,${img}`;
+};
 
 const buildExample = (pck, locale) => {
   if (!pck.example || !pck.example.root) return;
@@ -122,6 +128,7 @@ const renderExample = (options, node) => {
 const buildStandaloneExample = (pck, locale) => {
   const options = {
     ...pck,
+    imgToBase64: path => imgToBase64(`${pck.path}/${path}`),
     entry: 'standalone',
     root: root.toString(),
     beautify: (html) => { return beautify(html, beautyOpts); },
