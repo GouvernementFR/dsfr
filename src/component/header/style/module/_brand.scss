@@ -3,6 +3,8 @@
 /// @group header
 ////
 
+@use 'module/media-query';
+
 #{ns(header)} {
   &__brand {
     @include display-flex(row, center, flex-start, wrap);
@@ -10,7 +12,7 @@
     @include size(100%);
     @include padding-x(1v);
 
-    @include respond-from(lg) {
+    @include media-query.respond-from(lg) {
       flex-wrap: nowrap;
       @include size(auto);
       @include padding-x(0);
@@ -72,7 +74,7 @@
     @include margin-x(0, lg);
     @include size(100%);
 
-    @include respond-from(lg) {
+    @include media-query.respond-from(lg) {
       width: auto;
     }
 

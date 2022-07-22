@@ -16,7 +16,7 @@
 
     &__btn {
       &[aria-expanded] {
-        @include icon-legacy(arrow-down-s-line, sm);
+        @include icon-legacy(arrow-down-s-line, sm, after);
       }
     }
   }

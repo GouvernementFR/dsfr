@@ -3,8 +3,6 @@
 /// @group consent
 ////
 
-@use 'module/color';
-
 #{ns(consent-manager)} {
   &__header {
     @include padding-top(0);
@@ -45,9 +43,5 @@
   &__buttons {
     @include margin-bottom(-12v);
     @include margin-top(4v);
-  }
-
-  #{ns(consent-service)}:last-of-type {
-    @include color.no-box-shadow;
   }
 }

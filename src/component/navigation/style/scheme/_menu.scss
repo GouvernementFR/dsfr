@@ -14,6 +14,15 @@
 
       &__list {
         @include color.box-shadow(open blue-france, (legacy:$legacy), top-1-in);
+
+        & > *:first-child,
+        & > *:hover,
+        & > *:hover + * {
+          &,
+          & > #{ns(nav__link)} {
+            @include color.no-box-shadow((legacy:$legacy));
+          }
+        }
       }
 
       #{ns(nav__link)} {
