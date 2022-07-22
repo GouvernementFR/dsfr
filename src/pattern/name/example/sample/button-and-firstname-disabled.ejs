@@ -1,5 +1,5 @@
 <%
-const name = { 
+const name = {
     id: uniqueId('button-and-firstname-disabled'),
     label: `getText('sample.with', 'name') getText('sample.button', 'name') + getText('sample.firstname-disabled', 'name')`,
     items:[
@@ -32,7 +32,7 @@ const name = {
             checked: true,
             size: 'sm',
             attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.previousElementSibling.firstElementChild; const buttonFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); buttonFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); buttonFieldset.removeAttribute('disabled'); }`},
-        } 
+        }
     ]
 }
 %>

@@ -1,5 +1,5 @@
 <%
-const name = { 
+const name = {
     id: uniqueId('firstname-disabled'),
     label: getText('sample.firstname-disabled', 'name'),
     items:[
@@ -24,7 +24,7 @@ const name = {
             checked: true,
             size: 'sm',
             attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); }`},
-        } 
+        }
     ]
 }
 %>

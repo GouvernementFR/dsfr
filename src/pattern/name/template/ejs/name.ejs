@@ -44,6 +44,7 @@ const elements = [];
 if (name.items && name.items.length) {
     name.items.forEach((item, index) => {
         const type = item.type || 'input';
+        const path = type === 'input' ? 'input/input-base' : type;
         elements.push({
             path: 'form/template/ejs/fieldset',
             data: {
@@ -53,7 +54,7 @@ if (name.items && name.items.length) {
                         'aria-label': item.label,
                     },
                     elements: [{
-                        path: `${type}/template/ejs/${item.template}`,
+                        path: `${path}/template/ejs/${item.template}`,
                         data: {
                             [type]: {
                                 id: `${name.id}-${index}`,
