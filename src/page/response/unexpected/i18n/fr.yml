@@ -1,0 +1,13 @@
+title: Page d'erreur
+description:
+button:
+  contact: Contactez-nous
+page:
+  description: Désolé, le service rencontre un problème, nous travaillons pour le résoudre le plus rapidement possible.
+  lead: Essayez de rafraichir la page ou bien ressayez plus tard.
+  subtitle: Erreur 500
+  title: Erreur inattendue
+subdir:
+  title: Page Erreur 500
+  default: Page Erreur 500, simple
+  contact: Page Erreur 500, avec contact

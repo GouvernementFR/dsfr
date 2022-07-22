@@ -1,0 +1,16 @@
+id: unexpected
+title: Modèle de page erreur inattendue
+description:
+doc:
+no-heading: true
+style:
+  - core
+  - button
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header
