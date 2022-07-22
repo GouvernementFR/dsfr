@@ -1,0 +1,29 @@
+<% const sample = getSample(include); %>
+
+<%- sample(getText('sample.text', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-text'}}, true); %>
+
+<%- sample(getText('sample.number', 'input-base'), './sample/input-number.ejs', {input: { id:'text-input-number'}}, true); %>
+
+<%- sample(getText('sample.search', 'input-base'), './sample/input-search.ejs', {input: { id:'text-input-search'}}, true); %>
+
+<%- sample(getText('sample.date', 'input-base'), './sample/input-date.ejs', {input: { id:'text-input-date' }}, true); %>
+
+<%- sample(getText('sample.textarea', 'input-base'), './sample/textarea.ejs', {input: { id:'textarea' }}, true); %>
+
+<%- sample(getText('sample.password', 'input-base'), './sample/input-password.ejs', {input: { id:'text-input-password' }}, true); %>
+
+<%- sample(getText('sample.button', 'input-base'), './sample/input-button.ejs', {input: { id:'text-input-button' }}, true); %>
+
+<%- sample(getText('sample.placeholder', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-placeholder', placeholder:'placeholder'}}, true); %>
+
+<%- sample(getText('sample.value', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-value', attributes: {value:'value'}}}, true); %>
+
+<%- sample(getText('sample.icon', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-icon', hint: true, icon:'alert-line'}}, true); %>
+
+<%- sample(getText('sample.disabled', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-disabled', disabled:true}}, true); %>
+
+<%- sample(getText('sample.hint', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-hint', hint: true}}, true); %>
+
+<%- sample(getText('sample.valid', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-valid', valid: true}}, true); %>
+
+<%- sample(getText('sample.error', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-error', error: true}}, true); %>

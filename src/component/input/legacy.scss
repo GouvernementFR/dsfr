@@ -1,6 +1,6 @@
 ////
 /// Input Legacy
-/// @group core
+/// @group input
 ////
 
 @use 'module/path';
@@ -9,8 +9,4 @@
 @include path.to-dist(2);
 @include media-query.order;
 
-@import 'index';
-@import 'style/scheme';
-@import 'style/legacy';
-
-@include _input-scheme(true);
+@import 'input-base/legacy';

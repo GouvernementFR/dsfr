@@ -1,0 +1,8 @@
+id: input-email
+title: Modèle de champ email
+wrapper: col-8
+style:
+  - core
+  - input-base
+  - form
+
