@@ -49,7 +49,7 @@ if (radio.checked) radioAttrs.checked = '';
   <% if (radio.image.type && radio.image.type === 'svg') imageAttrs['data-' + prefix + '-inject-svg'] = ''; %>
   <div class="<%= prefix %>-radio-rich__img" <%- includeAttrs(imageAttrs) %>>
     <% if (radio.image.type && radio.image.type === 'artwork') { %>
-      <%- include('../../../../core/template/ejs/artwork/artwork.ejs', {artwork: radio.image}); %>
+      <%- include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: radio.image}); %>
     <% } else { %>
       <%- include('../../../../core/template/ejs/media/img.ejs', {media: radio.image}); %>
     <% } %>
