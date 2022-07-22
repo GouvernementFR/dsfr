@@ -46,9 +46,9 @@ if (fieldset.valid !== undefined) {
 
 if (fieldset.disabled === true) fieldsetAttrs['disabled'] = '';
 
-if (fieldset.hint != undefined) describedby.push(fieldset.id + '-desc-hint');
-if (fieldset.error != undefined) describedby.push(fieldset.id + '-desc-error');
-if (fieldset.valid != undefined) describedby.push(fieldset.id + '-desc-valid');
+if (fieldset.hint !== undefined) describedby.push(fieldset.id + '-desc-hint');
+if (fieldset.error !== undefined) describedby.push(fieldset.id + '-desc-error');
+if (fieldset.valid !== undefined) describedby.push(fieldset.id + '-desc-valid');
 
 const legendClasses = [`${prefix}-fieldset__legend`];
 if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
@@ -59,7 +59,7 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
     <% if (fieldset.legend !== undefined && !!fieldset.legend && fieldset.legend.length) { %>
       <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
         <%= fieldset.legend %>
-        <% if (fieldset.hint != undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
+        <% if (fieldset.hint !== undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
       </legend>
     <% } %>
     <div class="<%= prefix %>-fieldset__content">
