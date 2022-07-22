@@ -30,4 +30,11 @@
       }
     }
   }
+
+  #{ns(consent-service)} {
+    &:last-of-type,
+    &:last-child {
+      @include color.no-box-shadow((legacy: $legacy));
+    }
+  }
 }

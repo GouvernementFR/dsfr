@@ -13,12 +13,20 @@
       @include elevation.elevate(raised, (legacy: $legacy));
     }
 
-    @include media-query.respond-from(lg) {
-      @include elevation.elevate(raised, (legacy: $legacy));
-    }
-
     &__service {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+    }
+
+    @include media-query.respond-from(lg) {
+      @include elevation.elevate(raised, (legacy: $legacy));
+
+      &__brand {
+        @include elevation.drop((legacy:$legacy));
+      }
+
+      &__service {
+        @include color.no-box-shadow((legacy:$legacy));
+      }
     }
 
     &__menu-links {
@@ -28,16 +36,13 @@
 
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
-        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+        @include color.no-box-shadow((legacy: $legacy));
       }
     }
 
     &__tools-links {
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
-        @include after {
-          @include color.box-shadow(default grey, (legacy:$legacy));
-        }
       }
     }
 

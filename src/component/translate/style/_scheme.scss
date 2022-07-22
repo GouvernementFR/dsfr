@@ -19,7 +19,7 @@
 
     &__menu {
       #{ns(translate)}__language {
-        @include color.no-box-shadow;
+        @include color.no-box-shadow((legacy:$legacy));
       }
     }
   }

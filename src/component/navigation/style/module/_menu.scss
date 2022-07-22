@@ -3,8 +3,6 @@
 /// @group navigation
 ////
 
-@use 'module/color';
-
 #{ns(menu)} {
   @include margin(-4px -4v);
   @include padding(4px 4v);
@@ -29,15 +27,6 @@
       pointer-events: auto;
       @include padding(0);
       @include margin-bottom(8v);
-    }
-
-    & > *:first-child,
-    & > *:hover,
-    & > *:hover + * {
-      &,
-      & > #{ns(nav__link)} {
-        @include color.no-box-shadow;
-      }
     }
   }
 

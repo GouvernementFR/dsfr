@@ -3,8 +3,6 @@
 /// @group header
 ////
 
-@use 'module/color';
-
 #{ns(header)} {
   #{ns-group(btns)} {
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
@@ -58,14 +56,6 @@
     @include after('', block) {
       @include margin(3v -4v);
       @include size(calc(100% + 8v), 1px);
-    }
-
-    #{ns(btn)} {
-      @include color.no-box-shadow;
-    }
-
-    ul > li:last-child #{ns(btn)} {
-      @include color.no-box-shadow;
     }
 
     #{ns(translate)} {

@@ -3,10 +3,7 @@
 /// @group header
 ////
 
-@use 'module/elevation';
 @use 'module/media-query';
-@use 'module/color';
-
 
 #{ns(header)} {
   &__brand {
@@ -19,7 +16,6 @@
       flex-wrap: nowrap;
       @include size(auto);
       @include padding-x(0);
-      @include elevation.drop();
     }
 
     &-top {
@@ -80,7 +76,6 @@
 
     @include media-query.respond-from(lg) {
       width: auto;
-      @include color.no-box-shadow;
     }
 
     &-title {
