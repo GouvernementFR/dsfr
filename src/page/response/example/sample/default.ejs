@@ -15,7 +15,7 @@
     const data = {
         ...response,
         contact: getContact(response.contact),
-        home : getText('button.home', 'response')
+        home : response.home && getText('button.home', 'response')
     };
 
  %>

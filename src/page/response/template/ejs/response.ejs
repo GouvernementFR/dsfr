@@ -21,7 +21,7 @@
     const lead = response.lead || false;
     const description = response.description || false;
     const contact = response.contact || false;
-    const home = response.home;
+    const home = response.home || false;
 %>
 
 <main role="main" id="content">
@@ -47,11 +47,13 @@
                 <% } %>
 
                 <ul class="fr-btns-group fr-btns-group--inline-md">
-                    <li>
-                        <a class="<%= prefix %>-btn" href="/" >
-                            <%= home %>
-                        </a>
-                    </li>
+                    <% if(home) { %>
+                        <li>
+                            <a class="<%= prefix %>-btn" href="/" >
+                                <%= home %>
+                            </a>
+                        </li>
+                    <% } %>
                     <% if(contact) { %>
                         <li>
                             <a class="<%= prefix %>-btn <%= prefix %>-btn--secondary" href="<%= contact.href %>">
