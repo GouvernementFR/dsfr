@@ -1,30 +1,17 @@
-title: Nom du composant
-description: description du composant
-doc: lien vers la documentation
 error:
-  short: erreur
+  short: Erreur
+disabled:
+  default: Désactivé
+required:
+  default: Obligatoire
 label:
-  default: libellé
+  default: Libellé
   short: libl
-  long: libellé de l'élément
-email:
-  label: Adresse électronique
-  hint:
-    default: 'Format attendu : nom@domaine.fr'
-    indication: Cette adresse est utilisée uniquement pour la connexion au service.
-  error: 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@exemple.org'
+  long: Libellé de l'élément
 fieldset:
   legend: Une légende
 hint:
   default: Texte de description additionnel
-name-surname:
-  hint:
-    usage-name: Nom marital…
-  label:
-    name: Nom
-    surname: Prénom
-    usage-name: Nom d'usage
-    no-surname: Je n'ai pas de prénom
 site:
   name: '[Nom du site]'
 social:
