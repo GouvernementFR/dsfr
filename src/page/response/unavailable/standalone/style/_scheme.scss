@@ -20,7 +20,6 @@ a {
     @include color.text(action-high blue-france, (standalone: true));
   }
 
-
   svg {
     @include color.fill(text action-high blue-france, (standalone: true));
   }
