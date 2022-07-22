@@ -11,20 +11,20 @@
   #{ns(sidemenu)} {
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
     @include media-query.respond-from(md) {
-      @include color.no-box-shadow();
+      @include color.no-box-shadow((legacy: $legacy));
     }
 
     /*
-    @include elevation.elevate(raised);
+    @include elevation.elevate(raised, (legacy:$legacy));
     @include respond-from(md) {
-      @include elevation.drop;
+      @include elevation.drop((legacy:$legacy));
     }
      */
 
     @include title {
       @include color.text(title grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
-      @include color.no-box-shadow(md);
+      @include color.no-box-shadow((breakpoint: md, legacy: $legacy));
     }
 
     @include list-item {
@@ -76,13 +76,5 @@
         }
       }
     }
-
-    /*
-    &__btn {
-      @at-root #{ns(sidemenu__inner)} > #{&} {
-        @include color.background(default grey, (legacy:$legacy));
-      }
-    }
-     */
   }
 }

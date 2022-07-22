@@ -2,6 +2,7 @@ id: colors
 title: Utilitaires de couleur
 description:
 doc:
+draft: true
 wrapper: col-8
 style:
   - core

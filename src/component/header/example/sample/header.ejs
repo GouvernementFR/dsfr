@@ -6,7 +6,7 @@ const data = {body: {}, menu: menu};
 let hasNavbar = false;
 let hasMenu = false;
 
-data.body.brand = brandData('header', header.logo !== undefined, header.service !== undefined, header.operator !== undefined, header.beta === true, '/');
+data.body.brand = brandData('header', header.logo, header.service, header.operator, header.beta === true, '/');
 
 if (header.links !== undefined || header.search) {
   hasNavbar = true;

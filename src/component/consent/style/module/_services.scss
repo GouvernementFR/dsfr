@@ -4,7 +4,6 @@
 ////
 
 @use 'module/spacing';
-@use 'module/color';
 
 /**
 * Consent service correspond à un bloc de finalité (titre, radios, description)
@@ -136,7 +135,6 @@
   #{ns(consent-service)} {
     &,
     &:last-child {
-      @include color.no-box-shadow;
       > #{ns(fieldset)} {
         @include padding(0);
       }

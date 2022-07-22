@@ -205,9 +205,18 @@ $COLOR: constant.$value;
   @include _element($prop, border, $tokens, $options, $value);
 }
 
-@mixin no-border($breakpoint: null) {
+@mixin no-border($options: ()) {
+  $breakpoint: map.get($options, breakpoint);
+  $legacy: map.get($options, legacy);
   @include media-query.respond-from($breakpoint) {
-    border: 0;
+    @if $legacy {
+      @include legacy.is(ie11) {
+        border: 0;
+      }
+    }
+    @else {
+      border: 0;
+    }
   }
 }
 
@@ -254,8 +263,17 @@ $COLOR: constant.$value;
 /// Supprime la shadow-box sur l'élément
 /// @access public
 /// @param {string} $breakpoint - la shadow-box est retiré à partir d'un breakpoint si celui-ci est défini
-@mixin no-box-shadow($breakpoint: null) {
+@mixin no-box-shadow($options) {
+  $breakpoint: map.get($options, breakpoint);
+  $legacy: map.get($options, legacy);
   @include media-query.respond-from($breakpoint) {
-    box-shadow: none;
+    @if $legacy {
+      @include legacy.is(ie11) {
+        box-shadow: none;
+      }
+    }
+    @else {
+      box-shadow: none;
+    }
   }
 }
