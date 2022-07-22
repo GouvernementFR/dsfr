@@ -8,7 +8,7 @@ else data.id = uniqueId('footer');
 if (footer.top === true) data.top = { categories: {label: 'Nom de la catégorie', link: 'Lien de navigation'}};
 
 if (footer.brand === true) {
-  data.brand = brandData('footer', footer.logo !== false, false, footer.operator !== undefined);
+  data.brand = brandData('footer', footer.logo, false, footer.operator);
 }
 
 if (footer.content === true) data.content = {
