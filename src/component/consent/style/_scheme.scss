@@ -33,7 +33,7 @@
 
   #{ns(consent-service)} {
     &:last-of-type,
-    &:last-child {
+    #{ns(consent-service)} {
       @include color.no-box-shadow((legacy: $legacy));
     }
   }
