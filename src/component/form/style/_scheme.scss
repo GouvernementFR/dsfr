@@ -31,7 +31,7 @@
     */
     &--info {
       label {
-        @include scheme-element-text-color(default info, (legacy:$legacy));
+        @include color.text(default info, (legacy:$legacy));
       }
     }
 
@@ -66,7 +66,7 @@
     * Modificateur au niveau du label pour appliquer un état informatif au label
     */
     &--info {
-      @include scheme-element-text-color(default info, (legacy:$legacy));
+      @include color.text(default info, (legacy:$legacy));
     }
   }
 
@@ -95,7 +95,7 @@
   * Style du texte de l'état validé
   */
   #{ns(info-text)} {
-    @include scheme-element-text-color(default info, (legacy:$legacy));
+    @include color.text(default info, (legacy:$legacy));
   }
 
   /**
@@ -151,12 +151,12 @@
     &--info {
       #{ns(fieldset__content)} {
         @include before {
-          @include scheme-element-box-shadow-color(plain info, (legacy:$legacy), left-2-in);
+          @include color.box-shadow(plain info, (legacy:$legacy), left-2-in);
         }
       }
 
       label {
-        @include scheme-element-text-color(default info, (legacy:$legacy));
+        @include color.text(default info, (legacy:$legacy));
       }
     }
   }
