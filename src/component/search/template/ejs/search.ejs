@@ -38,6 +38,6 @@ case 'lg':
 %>
 
 <div <%- includeClasses(searchClasses); %> <%- includeAttrs(attributes) %>>
-  <%- include('../../../input/template/ejs/input.ejs', {input:{...search.input, type: 'search', id: search.id + '-input' }}); %>
+  <%- include('../../../input/input-base/template/ejs/input.ejs', {input:{...search.input, type: 'search', id: search.id + '-input' }}); %>
   <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
 </div>
