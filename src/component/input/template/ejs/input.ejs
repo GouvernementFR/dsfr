@@ -3,7 +3,7 @@
 
 * input.id (string, required) : id du label et de l'input, sert également à construire les ids des messages valid, error et hint
 
-* input.label (string, required) : label
+* input.label (string, required) : intitulé du label
 
 * input.type (string, required) : type de l'input. si textarea, l'input est remplacé par un textarea
 
@@ -29,14 +29,20 @@
 
 * input.classes (array, optional) : classes spécifiques à rajouter sur l'input
 
+* input.labelClasses (Array, optional) : classes spécifiques à rajouter sur le label
+
+* input.labelAttrs (Object, optional) :  attributs spécifiques à rajouter sur le label
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let input = locals.input || {};
-let inputClasses = input.classes || [];
-let inputAttrs = input.attributes || {};
-let describedby = [];
+const input = locals.input || {};
+const inputClasses = input.classes || [];
+const inputAttrs = input.attributes || {};
+const labelClasses = input.labelClasses || [];
+const labelAttrs = input.labelAttrs || {};
+const describedby = [];
 
 inputClasses.push(prefix + '-input');
 
@@ -62,7 +68,7 @@ if (input.disabled === true) inputAttrs['disabled'] = '';
 if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholder;
 %>
 
-<%- include('../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint}}); %>
+<%- include('../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, classes: labelClasses, attributes: labelAttrs}}); %>
 
 <% if (input.icon != undefined) { %>
  <div class="<%= prefix %>-input-wrap <%- prefix %>-icon-<%= input.icon %>" >
