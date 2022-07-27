@@ -1,0 +1,12 @@
+////
+/// Search Scheme
+/// @group search
+////
+
+@mixin _password-scheme($legacy: false) {
+  #{ns(password)} {
+    &__btn {
+      @include btn-kind-scheme(4, $legacy);
+    }
+  }
+}

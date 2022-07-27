@@ -1,0 +1,26 @@
+////
+/// Password Module
+/// @group password
+////
+
+#{ns(password)} {
+  @include relative;
+
+  &__format {
+    @include margin-top(3v);
+
+    #{ns(error-text)},
+    #{ns(valid-text)},
+    #{ns(info-text)} {
+      @include margin-top(1v);
+    }
+  }
+
+  &__checkbox {
+    @include absolute(-3v, 0);
+  }
+
+  &__label {
+    @include padding-right(24v);
+  }
+}

@@ -1,0 +1,14 @@
+title: Mot de passe
+description: La demande de mot de passe permet d’aider un utilisateur à créer ou saisir un mot de passe.
+doc:
+
+show: Afficher
+click-to: Cliquer pour
+password:
+  default: Mot de passe
+  long: le mot de passe
+format:
+  label: 'Votre mot de passe doit contenir :'
+  digit: 1 chiffre minimum
+  special: 1 caractère spécial minimum
+  characters: 12 caractères minimum

@@ -1,0 +1,12 @@
+<%
+let search = locals.search || {};
+
+let data = {
+  id: uniqueId('search'),
+  ...search,
+  input: {placeholder: 'Rechercher', label:'Rechercher', ...search.input},
+  button: {label: 'Rechercher', title: 'Rechercher', ...search.button},
+}
+%>
+
+<%- include('../../template/ejs/search.ejs', {search: data}); %>
