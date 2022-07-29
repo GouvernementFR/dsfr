@@ -1,0 +1,8 @@
+<%
+let data = {
+  input: {value: 'x8A@'},
+  format: {items: [{label: getText('format.characters', 'password'), state: 'error'}, {label: getText('format.special', 'password'), state: 'valid'}, {label: getText('format.digit', 'password'), state: 'valid'}]},
+}
+%>
+
+<%- include('./password-default.ejs', {password: data}); %>

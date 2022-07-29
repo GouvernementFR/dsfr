@@ -7,5 +7,6 @@ style:
   - core
   - input
   - checkbox
+  - link
 script:
   - core

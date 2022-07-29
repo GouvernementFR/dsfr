@@ -9,6 +9,10 @@
 
 * input.name (string, optional) : attribut name de l'input
 
+* input.value (string, optional) : attribut value de l'input
+
+* input.autocomplete (string, optional) : attribut autocomplete  de l'input
+
 * input.placeholder (string, optional) : text du placeholder de l'input
 
 * input.icon (string, optional) : nom de l'icone qui sera placée sur la partie droite de l'input
@@ -66,10 +70,12 @@ if (input.hint === true) {
 
 if (describedby.length > 0) inputAttrs['aria-describedby'] = describedby.join(' ');
 
-if (input.required === true) inputAttrs['required'] = '';
+if (input.required === true) inputAttrs['aria-required'] = true;
 if (input.disabled === true) inputAttrs['disabled'] = '';
 if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholder;
 if (input.name) inputAttrs.name = input.name;
+if (input.value) inputAttrs.value = input.value;
+if (input.autocomplete) inputAttrs.autocomplete = input.autocomplete;
 inputAttrs.id = input.id;
 %>
 

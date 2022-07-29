@@ -7,15 +7,12 @@ class PasswordLabel extends api.core.Instance {
   }
 
   init () {
-    // this.addDescent(PasswordEmission.ADJUST, this.adjust.bind(this));
-    this.addAscent(PasswordEmission.ADJUST, this.descend.bind(this));
-
-    console.log('adjust');
+    this.addDescent(PasswordEmission.ADJUST, this.adjust.bind(this));
   }
 
   adjust (value) {
-    this.node.style.width = value + 'px';
-    console.log('adjust', value);
+    const valueREM = Math.ceil(value / 16);
+    this.node.style.paddingRight = valueREM + 'rem';
   }
 }
 

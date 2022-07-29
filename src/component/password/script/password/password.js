@@ -7,40 +7,16 @@ class Password extends api.core.Instance {
   }
 
   init () {
-    this.update();
-    this.addAscent(PasswordEmission.TOGGLE, this.descend.bind(this));
-    this.isSwappingFont = true;
-    api.internals.register(api.password.PasswordSelector.LABEL, api.password.PasswordLabel);
+    this.addAscent(PasswordEmission.TOGGLE, this.toggle.bind(this));
+    this.addAscent(PasswordEmission.ADJUST, this.adjust.bind(this));
   }
 
-  get proxy () {
-    const scope = this;
-    return Object.assign(super.proxy, {
-      update: scope.update.bind(scope)
-    });
+  toggle (value) {
+    this.descend(PasswordEmission.TOGGLE, value);
   }
 
-  // get input () {
-  //   return this.element.getRegisteredInstances('PasswordInput')[0];
-  // }
-
-  // get toggle () {
-  //   return this.element.getRegisteredInstances('PasswordToggle')[0];
-  // }
-
-  get label () {
-    return this.getRegisteredInstances('PasswordLabel')[0];
-  }
-
-  update () {
-    // const style = getComputedStyle(this.toggle.node);
-    // const maxWidth = parseFloat(style.width);
-    // this.label.style.maxWidth = `${maxWidth}px`;
-    console.log('------------------', this.label);
-  }
-
-  swapFont (families) {
-    this.update();
+  adjust (value) {
+    this.descend(PasswordEmission.ADJUST, value);
   }
 }
 

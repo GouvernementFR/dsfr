@@ -7,16 +7,13 @@ class PasswordInput extends api.core.Instance {
   }
 
   init () {
-    this.addAscent(PasswordEmission.TOGGLE, this.toggle.bind(this));
-    console.log('------------------', this.getAttribute('type'));
+    this.addDescent(PasswordEmission.TOGGLE, this.toggle.bind(this));
     this._isRevealed = this.hasAttribute('type') === 'password';
-    this.listen('keydown', this.capslock.bind(this));
-    this.listen('keyup', this.capslock.bind(this));
+    this.listen('keydown', this.capslock.bind(this)); // for capslock enabled
+    this.listen('keyup', this.capslock.bind(this)); // for capslock desabled
   }
 
   toggle (value) {
-    console.log('-----------------TOOGLE-', value);
-
     this.isRevealed = value;
     this.setAttribute('type', value ? 'text' : 'password');
   }
@@ -26,17 +23,15 @@ class PasswordInput extends api.core.Instance {
   }
 
   capslock (event) {
-    console.log('------------------', event.keyCode);
     if (event.getModifierState('CapsLock')) {
-      this.node.parentNode.classList.add(api.internals.ns.selector('icon-capslock-line', ''));
+      this.node.parentNode.setAttribute(api.internals.ns.attr('capslock'), '');
     } else {
-      this.node.parentNode.classList.remove(api.internals.ns.selector('icon-capslock-line', ''));
+      this.node.parentNode.removeAttribute(api.internals.ns.attr('capslock'));
     }
   }
 
   set isRevealed (value) {
     this._isRevealed = value;
-    console.log('------------------', this.getAttribute('type'));
     this.setAttribute('type', value ? 'text' : 'password');
   }
 }
