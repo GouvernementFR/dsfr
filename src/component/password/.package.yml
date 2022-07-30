@@ -1,0 +1,12 @@
+id: password
+title: Mot de passe
+description: La demande de mot de passe permet d’aider un utilisateur à créer ou saisir un mot de passe.
+doc:
+wrapper: col-8
+style:
+  - core
+  - input
+  - checkbox
+  - link
+script:
+  - core

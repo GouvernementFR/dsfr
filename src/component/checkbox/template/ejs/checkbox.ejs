@@ -5,6 +5,8 @@
 
 * checkbox.attributes (object, optional): attributs sur l'input
 
+* checkbox.name (object, optional): attributs sur l'input
+
 * checkbox.label (string, optional): label du checkbox
 
 * checkbox.hint (string, optional) : message de description additionel
@@ -20,7 +22,10 @@ let checkbox = locals.checkbox || {};
 let checkboxAttrs = checkbox.attributes || {};
 if (checkbox.checked === true) checkboxAttrs.checked = "";
 if (checkbox.disabled === true) checkboxAttrs.disabled = "";
+if (checkbox.name) checkboxAttrs.name = checkbox.name;
+checkboxAttrs.id = checkbox.id;
+checkboxAttrs.type = "checkbox";
 %>
-<input <%- includeAttrs(checkboxAttrs); %> type="checkbox" id="<%= checkbox.id %>" name="<%= checkbox.id %>">
+<input <%- includeAttrs(checkboxAttrs); %>>
 <%- include('../../../form/template/ejs/label', {label: {label:checkbox.label, hint: checkbox.hint, id: checkbox.id}} ); %>
 <%- include('../../../form/template/ejs/message', {message: checkbox}); %>
