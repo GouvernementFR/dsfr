@@ -25,6 +25,9 @@
   "files": [
     "/dist",
     "/src",
+    "/module",
+    "/standalone",
+    "/i18n",
     "/example",
     "/doc",
     "/.config",
