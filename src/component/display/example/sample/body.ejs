@@ -11,9 +11,9 @@ let fields = {
   legend: 'Choisissez un thème pour personnaliser l’apparence du site.',
   choice: true,
   elements: [
-    { ...element, data: { radio: {...element.data, image: {name: 'light', type: 'artwork'}, label: 'Thème clair', attributes: { value: 'light'}, id: element.data.name + '-light' } } },
-    { ...element, data: { radio: {...element.data, image: {name: 'dark', type: 'artwork'}, label: 'Thème sombre', attributes: { value: 'dark'}, id: element.data.name + '-dark' } } },
-    { ...element, data: { radio: {...element.data, image: {name: 'system', type: 'artwork'}, label: 'Système', hint: 'Utilise les paramètres système.', attributes: { value: 'system'}, id: element.data.name + '-system' } } },
+    { ...element, data: { radio: {...element.data, image: {name: 'sun', type: 'pictogram'}, label: 'Thème clair', attributes: { value: 'light'}, id: element.data.name + '-light' } } },
+    { ...element, data: { radio: {...element.data, image: {name: 'moon', type: 'pictogram'}, label: 'Thème sombre', attributes: { value: 'dark'}, id: element.data.name + '-dark' } } },
+    { ...element, data: { radio: {...element.data, image: {name: 'system', type: 'pictogram'}, label: 'Système', hint: 'Utilise les paramètres système.', attributes: { value: 'system'}, id: element.data.name + '-system' } } },
   ]
 }
 %>
