@@ -6,9 +6,9 @@
 * radio.attributes (object, optional) : Attributs supplémentaires sur l'element
 
 * radio.image (object, optional) : Paramètres de l'image sur le radio
-  ** radio.image.type (string, optional) : Type d'image sur le radio [img/svg/artwork]
+  ** radio.image.type (string, optional) : Type d'image sur le radio [img/svg/pictogram]
   ** radio.image.src (string, optional) : Chemin vers l'image ou le svg
-  ** radio.image.type (string, optional) : Si type artwork, nom de l'artwork
+  ** radio.image.name (string, optional) : Si type pictogram, nom du pictogramme
 
 * radio.element (object, optional) : paramètre de chacun des radios d'un group
 
@@ -48,8 +48,8 @@ if (radio.checked) radioAttrs.checked = '';
 <% if (radio.image !== undefined) { %>
   <% if (radio.image.type && radio.image.type === 'svg') imageAttrs['data-' + prefix + '-inject-svg'] = ''; %>
   <div class="<%= prefix %>-radio-rich__img" <%- includeAttrs(imageAttrs) %>>
-    <% if (radio.image.type && radio.image.type === 'artwork') { %>
-      <%- include('../../../../core/template/ejs/artwork/artwork.ejs', {artwork: radio.image}); %>
+    <% if (radio.image.type && radio.image.type === 'pictogram') { %>
+      <%- include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: radio.image}); %>
     <% } else { %>
       <%- include('../../../../core/template/ejs/media/img.ejs', {media: radio.image}); %>
     <% } %>
