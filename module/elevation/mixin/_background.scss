@@ -1,9 +1,9 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'module/string';
-@use 'module/color';
-@use 'module/utilities';
-@use 'module/elevation/variable/backgrounds';
+@use '../../string';
+@use '../../color';
+@use '../../utilities';
+@use '../../elevation/variable/backgrounds';
 
 @mixin background($layer, $options: ()) {
   $legacy: map.get($options, legacy);

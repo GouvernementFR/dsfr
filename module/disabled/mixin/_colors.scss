@@ -1,8 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'module/color';
-
-// TODO
+@use '../../color';
 
 /// Applique les couleurs disabled sur l'élément
 /// @access public

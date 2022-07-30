@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'module/string';
-@use 'module/spacing';
+@use '../../string';
+@use '../../spacing';
 @use '../variable/box-shadows';
 @use '../variable/constant';
 

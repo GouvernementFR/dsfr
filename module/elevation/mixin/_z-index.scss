@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'module/elevation/variable/z-indexes';
-@use 'module/legacy';
+@use '../../elevation/variable/z-indexes';
+@use '../../legacy';
 
 @mixin z-index($level, $legacy: false) {
   @if map.has-key(z-indexes.$values, $level) {
