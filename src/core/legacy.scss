@@ -10,7 +10,7 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/legacy';
-@import 'style/scheme';
+@import '.TODO/style/legacy';
+@import '.TODO/style/scheme';
 
 @include _core-scheme(true);

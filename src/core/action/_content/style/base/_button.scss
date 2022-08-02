@@ -1,0 +1,10 @@
+////
+/// Core Module : Reset button
+/// @group core
+////
+
+@use '../../../../../../module/reset';
+
+button {
+  @include reset.button;
+}

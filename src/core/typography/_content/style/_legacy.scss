@@ -1,0 +1,10 @@
+////
+/// Core Legacy : Typography
+/// @group core
+////
+
+@use '../../../../../module/legacy/index';
+
+@include legacy.is(ie11) {
+  @include enable-list-style-legacy;
+}

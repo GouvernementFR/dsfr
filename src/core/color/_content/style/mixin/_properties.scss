@@ -1,0 +1,12 @@
+////
+/// Color base : properties
+/// @group color
+////
+
+@use '../../../../../../module/color';
+
+@mixin define() {
+  :root {
+    @include color.define();
+  }
+}

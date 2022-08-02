@@ -1,0 +1,18 @@
+////
+/// Core Scheme
+/// @group core
+////
+
+@import '../../action/_content/style/scheme';
+@import '../../artwork/_content/style/scheme';
+@import '../../typography/_content/style/scheme';
+@import 'reset/scheme';
+@import '../../display/_content/style/scheme';
+
+@mixin _core-scheme($legacy: false) {
+  @include _core-reset-scheme($legacy);
+  @include _core-action-scheme($legacy);
+  @include _core-artwork-scheme($legacy);
+  @include _core-typography-scheme($legacy);
+  @include _core-display-scheme($legacy);
+}

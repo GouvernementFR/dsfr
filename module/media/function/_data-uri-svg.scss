@@ -1,0 +1,19 @@
+@use '../../string';
+
+
+@function encode-svg($svg, $legacy) {
+  $svg: string.replace($svg, '#', '%23');
+  @if $legacy {
+    $svg: string.replace($svg, '<', '%3C');
+    $svg: string.replace($svg, '>', '%3E');
+    $svg: string.replace($svg, '"', '\'');
+    $svg: string.replace($svg, '{', '%7B');
+    $svg: string.replace($svg, '}', '%7D');
+    $svg: string.replace($svg, '’', '%E2%80%99');
+  }
+  @return $svg;
+}
+
+@function data-uri-svg($svg, $legacy: false) {
+  @return url('data:image/svg+xml;charset=utf8,#{encode-svg($svg)}');
+}

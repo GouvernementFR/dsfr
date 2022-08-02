@@ -3,7 +3,8 @@
 /// @group connect
 ////
 
-@use 'module/spacing';
+@use '../../../../../module/spacing';
+@use '../../../../../module/media';
 
 #{ns(connect)} {
   @include relative;
@@ -14,7 +15,7 @@
 
   @include before('', block) {
     @include absolute(1v, null, 1v, 3v, 10v, 12v);
-    background-image: url(svg-encode($fc-logo-svg, true));
+    background-image: media.data-uri-svg($fc-logo-svg, true);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: spacing.space(10v 12v);

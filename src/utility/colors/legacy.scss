@@ -3,6 +3,6 @@
 /// @group colors
 ////
 
-@use '../colors';
+@use '_content/index';
 
 @include colors.legacy;

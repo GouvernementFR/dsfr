@@ -1,0 +1,6 @@
+@mixin a ($minimal: false) {
+  text-decoration: none;
+  @if not $minimal {
+    color: inherit;
+  }
+}

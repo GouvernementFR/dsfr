@@ -14,10 +14,10 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/module';
-@import 'style/scheme';
+@import '.TODO/style/module';
+@import '.TODO/style/scheme';
 
 // deprecated
-@import 'deprecated/style/module';
+@import '_content/deprecated/style/module';
 
 @include _core-scheme;

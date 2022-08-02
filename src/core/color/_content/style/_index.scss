@@ -1,0 +1,10 @@
+////
+/// Color base
+/// @group color
+////
+
+@use 'mixin/properties';
+
+@mixin base() {
+  @include properties.define();
+}

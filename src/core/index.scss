@@ -4,9 +4,9 @@
 ////
 
 @import 'config';
-@import 'style/function';
-@import 'style/setting';
-@import 'style/tool';
+@import '.TODO/style/function';
+@import '.TODO/style/setting';
+@import '.TODO/style/tool';
 
 // deprecated
-@import 'deprecated/style/tool';
+@import '_content/deprecated/style/tool';

@@ -1,29 +1,29 @@
-import api from './script/api/api';
+import api from './api/_content/script/api';
 
-import { Instance } from './script/api/modules/register/instance.js';
-import { KeyCodes } from './script/api/modules/register/key-codes.js';
-import { Breakpoints } from './script/api/modules/register/breakpoints';
-import { Disclosure } from './script/disclosure/disclosure.js';
-import { DisclosureButton } from './script/disclosure/disclosure-button.js';
-import { DisclosuresGroup } from './script/disclosure/disclosures-group.js';
-import { DisclosureType } from './script/disclosure/disclosure-type.js';
-import { DisclosureEvent } from './script/disclosure/disclosure-event.js';
-import { DisclosureEmission } from './script/disclosure/disclosure-emission.js';
-import { CollapseButton } from './script/collapse/collapse-button.js';
-import { Collapse } from './script/collapse/collapse.js';
-import { CollapsesGroup } from './script/collapse/collapses-group.js';
-import { CollapseSelector } from './script/collapse/collapse-selector.js';
-import { Equisized } from './script/equisized/equisized.js';
-import { EquisizedsGroup } from './script/equisized/equisizeds-group.js';
-import { EquisizedEmission } from './script/equisized/equisized-emission.js';
-import { Toggle } from './script/action/toggle/toggle';
-import { RootSelector } from './script/api/modules/stage/root.js';
-import { InjectSvg } from './script/inject/inject-svg';
-import { InjectSvgSelector } from './script/inject/inject-svg-selector';
-import { Artwork } from './script/artwork/artwork';
-import { ArtworkSelector } from './script/artwork/artwork-selector';
-import { RatioSelector } from './script/ratio/ratio-selector.js';
-import { Ratio } from './script/ratio/ratio.js';
+import { Instance } from './api/_content/script/modules/register/instance.js';
+import { KeyCodes } from './api/_content/script/modules/register/key-codes.js';
+import { Breakpoints } from './api/_content/script/modules/register/breakpoints';
+import { Disclosure } from './.TODO/script/disclosure/disclosure.js';
+import { DisclosureButton } from './.TODO/script/disclosure/disclosure-button.js';
+import { DisclosuresGroup } from './.TODO/script/disclosure/disclosures-group.js';
+import { DisclosureType } from './.TODO/script/disclosure/disclosure-type.js';
+import { DisclosureEvent } from './.TODO/script/disclosure/disclosure-event.js';
+import { DisclosureEmission } from './.TODO/script/disclosure/disclosure-emission.js';
+import { CollapseButton } from './collapse/_content/script/collapse/collapse-button.js';
+import { Collapse } from './collapse/_content/script/collapse/collapse.js';
+import { CollapsesGroup } from './collapse/_content/script/collapse/collapses-group.js';
+import { CollapseSelector } from './collapse/_content/script/collapse/collapse-selector.js';
+import { Equisized } from './.TODO/script/equisized/equisized.js';
+import { EquisizedsGroup } from './.TODO/script/equisized/equisizeds-group.js';
+import { EquisizedEmission } from './.TODO/script/equisized/equisized-emission.js';
+import { Toggle } from './action/_content/script/toggle/toggle';
+import { RootSelector } from './api/_content/script/modules/stage/root.js';
+import { InjectSvg } from './artwork/_content/deprecated/script/inject/inject-svg';
+import { InjectSvgSelector } from './artwork/_content/deprecated/script/inject/inject-svg-selector';
+import { Artwork } from './artwork/_content/script/artwork/artwork';
+import { ArtworkSelector } from './artwork/_content/script/artwork/artwork-selector';
+import { RatioSelector } from './.TODO/script/ratio/ratio-selector.js';
+import { Ratio } from './.TODO/script/ratio/ratio.js';
 
 api.core = {
   Instance: Instance,

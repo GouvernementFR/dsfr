@@ -1,0 +1,17 @@
+////
+/// Core Module
+/// @group core
+////
+
+@import '../../action/_content/style/module';
+@import 'motion/module';
+@import '../../typography/_content/style/module';
+@import '../../color/_content/style/mixin';
+@import 'reset/module';
+@import 'icon/module';
+@import '../../display/_content/style/module';
+@import '../../media/_content/style/module';
+@import '../../../utility/grid/style/module';
+@import 'selector/module';
+@import '../../collapse/_content/style/module';
+@import 'spacing/module';
