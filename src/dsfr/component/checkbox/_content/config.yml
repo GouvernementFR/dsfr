@@ -1,0 +1,10 @@
+id: checkbox
+style:
+  dependencies:
+    - color
+    - typography
+    - action
+    - disabled
+    - form
+example:
+  wrapper: col-8

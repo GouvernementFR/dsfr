@@ -1,0 +1,10 @@
+////
+/// Tag Module : default
+/// @group tag
+////
+
+@import '../tool';
+
+@mixin first() {
+  @include build-tag();
+}

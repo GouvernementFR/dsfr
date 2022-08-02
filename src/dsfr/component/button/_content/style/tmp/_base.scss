@@ -1,0 +1,18 @@
+////
+/// Button Module
+/// @group button
+////
+
+@use 'base/default';
+@use 'base/group';
+@use 'base/close';
+@use 'base/display';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include group.first();
+  @include close.first();
+  @include display.first();
+}

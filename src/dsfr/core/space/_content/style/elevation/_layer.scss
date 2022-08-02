@@ -1,0 +1,11 @@
+@use '../../../../../../sass/elevation';
+
+@mixin layer () {
+  :root {
+    @include elevation.ground(default);
+
+    @each $layer, $values in elevation.$shadows {
+      @include elevation.shadow($layer, $values);
+    }
+  }
+}

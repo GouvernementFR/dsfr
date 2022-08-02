@@ -1,0 +1,13 @@
+////
+/// Logo Scheme
+/// @group logo
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(logo) {
+    @include color.text(title grey, (legacy:$legacy));
+  }
+}

@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../../../../../sass/selector';
+@use 'elevation';
+@use 'color';
+
+$options: () !default;
+
+@mixin first() {
+  $families: map.get($options, families);
+  @include selector.theme {
+    @include color.set($families);
+    @include color.decide($families);
+    @include elevation.color;
+  }
+}

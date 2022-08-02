@@ -89,6 +89,7 @@ module.exports = {
   createDir,
   createFile,
   deleteDir,
+  deleteFile,
   copyDir,
   copyFile
 };

@@ -1,0 +1,19 @@
+////
+/// Core Module : Grid col
+/// @group core
+////
+
+#{selector.ns(col)} {
+  // alignment
+  &--top {
+    align-self: flex-start;
+  }
+
+  &--bottom {
+    align-self: flex-end;
+  }
+
+  &--middle {
+    align-self: center;
+  }
+}

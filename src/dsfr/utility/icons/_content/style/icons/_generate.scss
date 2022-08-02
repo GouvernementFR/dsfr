@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+
+@mixin generate($icons, $situation: recommended, $legacy: false) {
+  $block: map.get(icon.$situations, $situation);
+
+  @each $icon in $icons {
+    @include selector.class('#{$block}-#{$icon}') {
+      @if $legacy {
+        @include icon.legacy-image($icon)
+      }
+      @else {
+        @include icon.image($icon);
+      }
+    }
+  }
+}

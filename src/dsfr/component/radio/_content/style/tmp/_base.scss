@@ -1,0 +1,16 @@
+////
+/// Radio base
+/// @group radio
+////
+
+@use 'base/default';
+@use 'base/sm';
+@use 'base/rich';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include sm.first();
+  @include rich.first();
+}

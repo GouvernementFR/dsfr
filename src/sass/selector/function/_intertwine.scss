@@ -1,0 +1,21 @@
+@use 'sass:selector';
+@use 'sass:list';
+@use '../../string';
+
+@function intertwine($selectors...) {
+  $result: '';
+  @each $selector in $selectors {
+    @if $result == '' {
+      $result: '#{$selector}';
+    }
+    @else if $selector {
+      $segments: string.split($result, ',');
+      $concat: ();
+      @each $segment in $segments {
+        $concat: list.append($concat, selector.nest($segment, $selector), comma);
+      }
+      $result: '#{$concat}';
+    }
+  }
+  @return $result;
+}

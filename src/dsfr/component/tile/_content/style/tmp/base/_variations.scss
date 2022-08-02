@@ -1,0 +1,113 @@
+////
+/// Tile module : Variations
+/// @group Tile
+////
+
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns(tile)} {
+    &--horizontal {
+      flex-direction: row-reverse;
+      align-items: center;
+
+      #{selector.ns(tile__img)} {
+        @include spacing.size(12v, 12v);
+        @include spacing.margin(6v 0 6v 6v);
+
+        @include spacing.size(20v, 20v, md);
+        @include spacing.margin(8v 0 8v 8v, md);
+      }
+
+      #{selector.ns(tile__body)} {
+        align-items: flex-start;
+        @include spacing.padding(0);
+        @include spacing.margin(6v);
+        @include spacing.margin(8v, md);
+        text-align: left;
+      }
+    }
+
+    /**
+  * Modificateur vertical à partir du breakpoint md -> horizontal en dessous du breakpoint md
+  **/
+    &--vertical-md {
+      flex-direction: row-reverse;
+      align-items: center;
+
+      #{selector.ns(tile__img)} {
+        @include spacing.size(12v, 12v);
+        @include spacing.margin(6v 0 6v 6v);
+
+        @include spacing.size(20v, 20v, md);
+        @include spacing.margin(8v auto 0, md);
+      }
+
+      #{selector.ns(tile__body)} {
+        align-items: flex-start;
+        @include spacing.padding(0);
+        @include spacing.margin(6v);
+        text-align: left;
+
+        @include media-query.from(md) {
+          align-items: center;
+          @include spacing.padding(6v);
+          @include spacing.margin(0);
+          text-align: center;
+        }
+      }
+
+      @include media-query.from(md) {
+        flex-direction: column-reverse;
+        align-items: initial;
+      }
+    }
+
+    /**
+  * Modificateur horizontal à partir du breakpoint md -> vertical en dessous du breakpoint md
+  **/
+    &--horizontal-md {
+      flex-direction: column-reverse;
+
+      #{selector.ns(tile__img)} {
+        @include spacing.size(20v, 20v);
+        @include spacing.margin(8v auto 0);
+
+        + #{selector.ns(tile__body)} {
+          min-height: initial;
+
+          @include media-query.from(md) {
+            @include spacing.padding(0);
+            @include spacing.margin(8v);
+            min-height: spacing.space(20v);
+          }
+        }
+
+        @include media-query.from(md) {
+          @include spacing.margin(8v 0 8v 8v);
+        }
+      }
+
+      #{selector.ns(tile__body)} {
+        align-items: center;
+        @include spacing.padding(4v);
+        @include spacing.margin(0);
+        text-align: center;
+
+        @include media-query.from(md) {
+          align-items: flex-start;
+          @include spacing.padding(0);
+          @include spacing.margin(8v);
+          text-align: left;
+        }
+      }
+
+      @include media-query.from(md) {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-<% eval(include(root + 'src/core/index.ejs')); %>
+<% eval(include(root + 'src/_content/env.js')); %>
 
 <%
 let sampling = false;
@@ -45,14 +45,16 @@ function getSample (include) {
             content: '<pre class=" language-html"><code>' + html + '</code></pre>'
         };
 
-        snippet = include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion});
+        snippet = include(root + 'src/component/accordion/_content/template/ejs/accordion', {accordion: accordion});
     }
 
     if (layout === undefined) layout = root + 'tool/example/layout';
     if (layoutData === undefined) layoutData = {};
 
+    const sampleTitle = typeof(title) === 'string' ? title : title.title;
+    const sampleSubtitle = typeof(title) === 'object' ? title.subtitle : undefined;
 
-    return include(layout, {...layoutData, title: title, component: component, snippet: snippet});
+    return include(layout, {...layoutData, title: sampleTitle, subtitle: sampleSubtitle, component: component, snippet: snippet});
   }
 }
 
@@ -206,7 +208,7 @@ const randomContent = (id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;
   content += `<div><h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
-  if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
+  if (Math.random() < .4) content += include(root + 'src/core/media/_content/template/ejs/responsive-img.ejs', {media: imgData()});
   for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
   content += '<ul>';
   for (let i = Math.random() * 2 + 1; i > 0; i--) {

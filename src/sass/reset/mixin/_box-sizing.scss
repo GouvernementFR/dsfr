@@ -1,0 +1,22 @@
+@use '../../utilities';
+@use '../../selector';
+
+@mixin box-sizing ($hasDescendants: false, $with-markup: false) {
+  @include utilities.nest(if($with-markup, ':root', null)) {
+    box-sizing: border-box;
+    $element: '#{&}';
+    @if $element != ':root' {
+      @include selector.pseudo(before after) {
+        box-sizing: inherit;
+      }
+    }
+
+    @if $hasDescendants {
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+    }
+  }
+}

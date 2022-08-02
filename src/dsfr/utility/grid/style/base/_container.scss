@@ -1,0 +1,11 @@
+////
+/// Core Module : Grid container
+/// @group core
+////
+
+@use '../../../../../sass/spacing';
+
+#{selector.ns(container)} {
+  @include spacing.size(100%);
+  @include spacing.margin-x(auto);
+}

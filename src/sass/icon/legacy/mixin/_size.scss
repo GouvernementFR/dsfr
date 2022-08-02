@@ -1,0 +1,11 @@
+@use '../../mixin/pseudo';
+@use '../../function/size';
+@use '../../../spacing';
+
+@mixin size($size:md, $restrain: null) {
+  @include pseudo.pseudo($restrain) {
+    $size: size.size($size);
+    @include spacing.size($size, $size);
+    @content;
+  }
+}

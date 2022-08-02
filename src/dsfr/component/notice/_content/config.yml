@@ -1,0 +1,8 @@
+id: notice
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - action
+    - button

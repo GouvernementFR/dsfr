@@ -1,0 +1,18 @@
+@use '../../../../../../sass/media';
+@use '../../../../../../sass/media/outdated';
+@use '../../../../../../sass/media/legacy';
+@use '../../../../../../sass/selector';
+
+@mixin utility ($ratio, $support: recent, $important: false) {
+  @include selector.class(ratio, (modifier: $ratio)) {
+    @if $support == recent {
+      @include media.aspect-ratio($ratio);
+    }
+    @else if $support == outdated {
+      @include outdated.aspect-ratio($ratio);
+    }
+    @else if $support == legacy {
+      @include legacy.aspect-ratio($ratio);
+    }
+  }
+}

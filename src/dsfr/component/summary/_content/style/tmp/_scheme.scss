@@ -1,0 +1,22 @@
+////
+/// Summary Module
+/// @group summary
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(summary)} {
+    @include color.background(contrast grey, (legacy:$legacy));
+    // @include color.box-shadow(default grey, (legacy:$legacy));
+
+    @include selector.title {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    li > a {
+      @include color.text(action-high grey, (legacy:$legacy));
+    }
+  }
+}

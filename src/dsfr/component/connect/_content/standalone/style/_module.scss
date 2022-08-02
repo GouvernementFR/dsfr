@@ -1,0 +1,15 @@
+////
+/// Connect Standalone Module
+/// @group connect
+////
+
+@use '../../../../../../sass/reset/index';
+
+@include selector.class(connect) {
+  @include standalone-box-sizing;
+  @include standalone-font-face(connect, $connect-subset, regular bold);
+  @include reset.a(true);
+  @include reset.button(true);
+  @include standalone-cursor(get-clickable-elements());
+  @include standalone-focus(get-clickable-elements());
+}

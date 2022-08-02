@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'pseudo';
+@use '../../../../../../sass/condition';
+
+$options: () !default;
+
+@mixin first() {
+  @include condition.option($options, pseudo) {
+    @include pseudo.generate;
+  }
+}
+
+@mixin sm() {
+  @include condition.option($options, pseudo, sm) {
+    @include pseudo.generate(sm);
+  }
+}
+
+@mixin md() {
+  @include condition.option($options, pseudo, md) {
+    @include pseudo.generate(md);
+  }
+}
+
+@mixin lg() {
+  @include condition.option($options, pseudo, lg) {
+    @include pseudo.generate(lg);
+  }
+}
+
+@mixin xl() {
+  @include condition.option($options, pseudo, xl) {
+    @include pseudo.generate(xl);
+  }
+}

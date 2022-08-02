@@ -1,0 +1,28 @@
+<%
+const checkboxes = locals.checkboxes || {};
+const checkbox = locals.checkbox || {};
+const jsonData = JSON.parse(include('../../../../../core/form/_content/example/sample/data', { form: checkboxes }));
+
+const id = checkboxes.id;
+const elements = [];
+for (let i = 1; i < 4; i++) elements.push({
+  path: 'component/checkbox/_content/example/sample/checkbox',
+  data: {
+    checkbox: {
+      ...checkbox,
+      id: `${id}-${i}`,
+      name: `${id}-${i}`,
+      checked: i === 2 && checkboxes.checked
+    }
+  }
+});
+
+const fields = {
+  choice: true,
+  elements: elements,
+  ...checkboxes,
+  ...jsonData
+}
+%>
+
+<%- include('../../../../../core/form/_content/example/sample/fieldset', {fieldset: fields}) %>

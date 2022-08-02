@@ -1,0 +1,56 @@
+////
+/// Tag active Module
+/// @group tag
+////
+
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@import '../tool';
+
+@mixin first() {
+  @include action.clickable-selector {
+    &#{selector.ns(tag)} {
+      // tag pressable
+      @include pressed-selector(true) {
+        @include spacing.relative;
+        overflow: visible;
+        background-position: 50%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+        @include icon.icon(checkbox-circle-line, sm, after) {
+          @include spacing.absolute(4px, 0);
+          @include spacing.margin(-2v);
+        }
+
+        &#{selector.ns(tag)}--sm {
+          @include icon.icon(null, xs, after, false) {
+            @include spacing.absolute(3px, 0);
+            @include spacing.margin(-1.5v);
+          }
+        }
+      }
+    }
+
+    // tag supprimable
+    &#{selector.ns(tag)}--dismiss {
+      @include selector.before {
+        content: none;
+      }
+
+      @include icon.icon(close-line, sm, after) {
+        @include spacing.margin-left(1v);
+        @include spacing.margin-right(-1v);
+      }
+
+      &#{selector.ns(tag)}--sm {
+        @include icon.icon(null, xs, after) {
+          @include spacing.margin-right(-0.75v);
+          @include spacing.margin-left(0.5v);
+        }
+      }
+    }
+  }
+}

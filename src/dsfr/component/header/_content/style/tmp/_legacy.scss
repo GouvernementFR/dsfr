@@ -1,0 +1,52 @@
+////
+/// Header Legacy
+/// @group header
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/media-query';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include selector.class(header) {
+    @include typography.disable-list-style-legacy;
+    @include action.disable-underline-legacy;
+
+    @include selector.class(btns, (group: true)) {
+      &:not(#{(selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg)))}) {
+        @include selector.not-start(btns, (group: true, modifier: icon-)) {
+          @include selector.class(btn) {
+            @include icon.not-selector {
+              @include selector.class(btn, (modifier: display, combine: not)) {
+                @include icon.icon-legacy(null, sm, before, false);
+              }
+            }
+
+            @include icon.selector {
+              @include icon.icon-legacy(null, sm, before, false);
+            }
+
+            @include selector.class(btn, (modifier: display, combine: true))} {
+              @include icon.icon-legacy(null, sm, before, false);
+            }
+          }
+        }
+      }
+    }
+
+    &__tools-links {
+      @include selector.class(link) {
+        overflow: visible;
+      }
+    }
+
+    @include selector.class(modal) {
+      @include media-query.from(lg) {
+        position: static;
+        overflow: visible;
+      }
+    }
+  }
+}

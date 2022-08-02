@@ -1,0 +1,67 @@
+////
+/// Navigation Legacy
+/// @group navigation
+////
+
+@use '../../../../../sass/action';
+@use '../../../../../sass/color';
+@use '../../../../../sass/icon';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/typography';
+
+@mixin first() {
+  /**
+  * reset liste à puce
+  */
+  #{selector.ns(nav)} {
+    @include action.disable-underline-legacy;
+    @include typography.disable-list-style-legacy;
+
+    &__link,
+    &__btn {
+      @include color.transparent-background(
+        (
+          legacy: true,
+          hover: true,
+        )
+      );
+    }
+
+    &__btn {
+      @include icon.icon-legacy(arrow-down-s-line, sm, after);
+    }
+  }
+
+  /**
+  * reset margin
+  */
+  #{selector.ns(mega-menu)} {
+    &__category {
+      margin: 0;
+    }
+  }
+
+  @include media-query.from(lg) {
+    /**
+    * Correctif de l'alignement des menus sur la droite
+    */
+    #{selector.ns(nav)}__item {
+      position: static;
+
+      &--align-right {
+        #{selector.ns(collapse)} {
+          transform: translateX(-100%);
+        }
+      }
+    }
+
+    /**
+    * Override du reset des marges des ul
+    **/
+    #{selector.ns(menu)} {
+      #{selector.ns(menu__list)} {
+        @include spacing.margin-bottom(8v);
+      }
+    }
+  }
+}

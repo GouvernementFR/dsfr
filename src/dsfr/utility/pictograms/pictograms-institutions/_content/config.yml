@@ -1,0 +1,8 @@
+id: pictograms-institutions
+asset:
+  type: pictogram
+example:
+  wrapper: col-8
+style:
+  dependencies:
+    - artwork

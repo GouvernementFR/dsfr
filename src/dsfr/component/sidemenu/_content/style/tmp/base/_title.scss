@@ -1,0 +1,24 @@
+////
+/// Sidemenu Module : title
+/// @group sidemenu
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(sidemenu)} {
+    /**
+  * Titre facultatif
+   */
+    @include selector.title {
+      @include spacing.padding(4v 0);
+      @include typography.text-style(lg);
+      @include typography.font-weight(bold);
+
+      @include spacing.margin(0 0 6v, md);
+      @include spacing.padding(0, md);
+    }
+  }
+}

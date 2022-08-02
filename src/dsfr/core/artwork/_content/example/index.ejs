@@ -1,0 +1,15 @@
+<%
+  const sample = getSample(include);
+%>
+
+<%- section('Pictogramme - artwork', 'Les pictogrammes svg, ou "artwork", sont disponibles dans le dossier <b>dist/artwork/pictograms</b>.<br> Contrairement aux icônes, les pictogrammes sont composés de 3 couleurs : "decorative", "minor", "major". <br>La couleur mineure peut être modifiée par un modificateur d\'accentuation (ex: fr-artwork--green-emeraude)', 0) %>
+
+<%- sample('Ajout d\'un pictogramme', '../../template/ejs/artwork/pictogram', {pictogram: {name:'moon'}}, true); %>
+
+<%- sample('Pictogramme accentué en green-emeraude', '../../template/ejs/artwork/pictogram', {pictogram: {name:'moon', accent: 'green-emeraude'}}, true); %>
+
+<%- section('Formatage du SVG', 'Pour fonctionner en accord avec les couleurs du design system, les fichiers SVG doivent être formatés de cette façon :', 0) %>
+
+<%- sample('', root + 'dist/artwork/pictograms/environment/moon.svg', {}, true, './layout') %>
+
+<%- section('Liste des pictogrammes disponibles dans les utilitaires.') %>

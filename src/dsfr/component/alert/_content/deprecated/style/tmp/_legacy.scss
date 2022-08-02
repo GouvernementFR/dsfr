@@ -1,0 +1,16 @@
+////
+/// Alert Legacy
+/// @group alert
+////
+
+@use '../../../../../../../sass/legacy';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/icon';
+
+@include legacy.is(ie11) {
+  #{selector.ns(alert)} {
+    #{selector.ns(link--close)} {
+      @include icon.icon-legacy(close-line, sm);
+    }
+  }
+}

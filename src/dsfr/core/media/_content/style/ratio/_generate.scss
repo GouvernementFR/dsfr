@@ -1,0 +1,23 @@
+@use 'sass:meta';
+@use 'sass:list';
+@use 'sass:map';
+@use 'utility';
+
+@mixin generate ($prop, $options, $breakpoint: null, $important: false) {
+  $from: map.get($options, from);
+  $through: map.get($options, through);
+  $half: map.get($options, half);
+  $specials: map.get($options, special);
+  $directions: map.get($options, directions);
+
+  @for $i from $from through $through {
+    @include _directions($prop, $directions, $i, v, $breakpoint, $important);
+    @if $i >= -$half and $i < $half {
+      @include _directions($prop, $directions, $i + 0.5 , v, $breakpoint, $important);
+    }
+  }
+
+  @each $special in $specials {
+    @include _directions($prop, $directions, $special, null, $breakpoint, $important);
+  }
+}

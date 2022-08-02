@@ -1,0 +1,17 @@
+////
+/// Highlight Scheme
+/// @group Highlight
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(highlight)} {
+    @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);
+
+    @include color.accentuate {
+      @include color.box-shadow(default accent, (legacy:$legacy), left-1v-in);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+id: navigation
+style:
+  dependencies:
+    - typography
+    - color
+    - elevation
+    - spacing
+    - action
+    - link
+    - button
+script:
+  dependencies:
+    - api
+    - action

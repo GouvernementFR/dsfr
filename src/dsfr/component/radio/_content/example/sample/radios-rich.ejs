@@ -1,0 +1,29 @@
+<%
+const radios = locals.radios || {}
+const radio = locals.radio || {};
+const jsonData = JSON.parse(include('../../../../../core/form/_content/example/sample/data', { form: radios }));
+
+const id = radios.id;
+const elements = [];
+for (let i = 1; i < 4; i++) elements.push({
+  path: 'component/radio/_content/example/sample/radio-rich',
+  data: {
+    radio: {
+      ...radio,
+      id: `${id}-${i}`,
+      name: id,
+      rich: true,
+      checked: i === 2 && radios.checked
+    }
+  }
+});
+
+const fields = {
+  choice: true,
+  elements: elements,
+  ...radios,
+  ...jsonData
+}
+%>
+
+<%- include('../../../../../core/form/_content/example/sample/fieldset', {fieldset: fields}) %>

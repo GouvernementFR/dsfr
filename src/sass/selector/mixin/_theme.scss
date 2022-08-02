@@ -1,0 +1,15 @@
+@use 'attribute';
+@use 'root';
+
+@mixin theme($theme: null) {
+  @if $theme == light or $theme == dark {
+    @include attribute.attribute(theme, (value: $theme, root: true)) {
+      @content;
+    }
+  }
+  @else {
+    @include root.root {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../../../_content/style/icons';
+
+$options: () !default;
+
+@mixin first() {
+  @include icons.generate(map.get($options, icons), recommended, true);
+}

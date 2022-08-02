@@ -1,0 +1,57 @@
+////
+/// footer Scheme
+/// @group footer
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/color';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(footer) {
+    @include color.box-shadow((plain blue-france) (default grey), (legacy:$legacy), top-2-out bottom-1-in);
+
+    &__content-link,
+    &__top-cat {
+      @include color.text(title grey, (legacy:$legacy));
+    }
+
+    &__top {
+      @include color.background(alt grey, (legacy:$legacy));
+    }
+
+    &__bottom {
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      @include selector.class(btn) {
+        @include color.text(mention grey, (legacy:$legacy));
+      }
+    }
+
+    &__bottom-item {
+      @include selector.before {
+        @include color.box-shadow(default grey, (legacy:$legacy));
+      }
+    }
+
+    &__bottom-link {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    &__bottom-copy {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    &__partners {
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+
+      @if not $legacy {
+        @include selector.class(footer, (element: partners-link)) {
+          &,
+          &:hover,
+          &:active {
+            background: color.$white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,3 +5,7 @@ public/
 /dist/
 /example/
 /standalone/
+/src/dsfr/**/*.*
+!/src/dsfr/**/_content/**/*.*
+/src/sass/icon/property/_icons.scss
+/src/sass/selector/property/_prefix.scss

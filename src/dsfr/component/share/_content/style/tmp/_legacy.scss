@@ -1,0 +1,37 @@
+////
+/// Share Legacy
+/// @group share
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@import './tool';
+
+@mixin first() {
+  @include selector.class(share) {
+    &__group {
+      & > li {
+        list-style: none;
+      }
+    }
+
+    @include selector.class(btns, (group: true)) {
+      &:not(#{selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg))}) {
+        @include selector.class(btn) {
+          @include icon.not-selector {
+            @include icon.icon-legacy(null, md);
+          }
+        }
+      }
+    }
+
+    @include build-share-social-icons-legacy();
+
+    @include selector.class(btn, (modifier: mail)) {
+      @include icon.icon-legacy(mail-line, md, before);
+    }
+    @include selector.class(btn, (modifier: copy)) {
+      @include icon.icon-legacy(links-fill, md, before);
+    }
+  }
+}

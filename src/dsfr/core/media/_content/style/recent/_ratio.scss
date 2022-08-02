@@ -1,0 +1,25 @@
+////
+/// Core Module : Media - aspect ratio utilities
+/// @group core
+////
+
+
+
+@supports (aspect-ratio: 16 / 9) {
+  @each $ratio, $value in $ratio-scale {
+    @include build-utility(media, ratio, $ratio) {
+      @include media.aspect-ratio($ratio, true);
+    }
+  }
+}
+
+@include selector.start(ratio) {
+  @include fit-cover-center;
+  @include size(100%);
+}
+
+iframe {
+  @include selector.start(ratio)} {
+    object-fit: fill;
+  }
+}

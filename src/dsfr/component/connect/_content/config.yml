@@ -1,0 +1,15 @@
+id: connect
+style:
+  dependencies:
+    - color
+    - typography
+    - action
+example:
+  wrapper: col-8
+font-subset:
+  Regular:
+    - default.login
+  Bold:
+    - default.brand
+    - plus.brand
+    - agent.brand

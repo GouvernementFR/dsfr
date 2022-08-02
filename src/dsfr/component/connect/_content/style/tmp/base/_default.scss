@@ -1,0 +1,49 @@
+////
+/// Connect Module : default
+/// @group connect
+////
+
+@use 'sass:map';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/media';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/elevation';
+
+@import '../setting/logo';
+@import '../setting/size';
+
+@mixin first() {
+  #{selector.ns(connect)} {
+    @include spacing.relative;
+    @include spacing.padding(1v 3v 1v 16v);
+    @include display.flex(column, flex-start, center);
+    height: spacing.space(14v);
+    @include spacing.margin-bottom(3v);
+
+    @include selector.before('', block) {
+      @include spacing.absolute(1v, null, 1v, 3v, 10v, 12v);
+      background-image: media.data-uri-svg($fc-logo-svg, true);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: spacing.space(10v 12v);
+    }
+
+    &__login,
+    &__brand {
+      line-height: 1;
+      @include elevation.z-index(over);
+    }
+
+    &__login {
+      font-size: map-get($login-size, default);
+      height: map-get($login-size, default);
+    }
+
+    &__brand {
+      font-weight: bold;
+      font-size: map-get($brand-size, default);
+      height: map-get($brand-size, default);
+    }
+  }
+}

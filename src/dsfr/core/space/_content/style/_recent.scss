@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use 'elevation';
+@use 'reset';
+
+$options: () !default;
+
+@mixin first() {
+  @if map.get($options, box-sizing) {
+    @include reset.box-sizing;
+  }
+  @if map.get($options, elevation) {
+    @include elevation.layer;
+  }
+}

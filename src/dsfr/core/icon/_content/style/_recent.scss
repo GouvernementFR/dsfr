@@ -1,0 +1,19 @@
+////
+/// Core Module : Icons
+/// @group core
+////
+
+@use '../../../../../sass/icon';
+@use 'icon' as icon-style;
+
+$options: () !default;
+
+@mixin first () {
+  @include icon.selector {
+    @include icon.size;
+    @include icon.style;
+    @include icon.content;
+  }
+
+  @include icon-style.sizes;
+}

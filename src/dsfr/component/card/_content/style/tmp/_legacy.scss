@@ -1,0 +1,39 @@
+////
+/// Card Legacy
+/// @group card
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+
+@mixin first() {
+  @include legacy.is(ie11) {
+    @include selector.class(card) {
+      @include icon.icon-legacy(arrow-right-line, md, before);
+
+      &--no-icon {
+        @include selector.before(none);
+      }
+
+      &__title,
+      &__desc {
+        flex: 1 0 auto;
+      }
+
+      &__title {
+        @include selector.target-blank {
+          @include icon.size-legacy(lg, after);
+        }
+      }
+
+      &__detail {
+        @include icon.size-legacy(sm, before);
+      }
+
+      &--horizontal &__body {
+        flex-basis: 100%;
+      }
+    }
+  }
+}

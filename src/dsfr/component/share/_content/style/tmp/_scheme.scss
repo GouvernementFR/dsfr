@@ -1,0 +1,15 @@
+////
+/// Share Scheme
+/// @group share
+////
+
+@use '../../../../../../sass/selector';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(share)} {
+    #{selector.ns(btn)} {
+      @include btn-kind-scheme(3, $legacy);
+    }
+  }
+}

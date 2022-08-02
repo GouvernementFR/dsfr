@@ -1,0 +1,4 @@
+@mixin fit($fit: cover, $position: 50% 50%) {
+  object-fit: cover;
+  object-position: 50% 50%;
+}

@@ -1,0 +1,6 @@
+id: dsfr-deprecated
+detached: true
+filename: dsfr
+script:
+  dependencies:
+    - dsfr

@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use '../property/statics';
+
+@function get($value) {
+  @return map.get(statics.$values, $value);
+}

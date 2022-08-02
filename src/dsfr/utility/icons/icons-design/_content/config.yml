@@ -1,0 +1,11 @@
+id: icons-design
+asset:
+  type: icon
+  category: design
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: edit-fill edit-line

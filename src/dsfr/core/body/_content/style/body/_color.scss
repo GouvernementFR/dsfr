@@ -1,0 +1,8 @@
+@use '../../../../../../sass/color';
+
+@mixin color($legacy: false) {
+  body {
+    @include color.background(default grey, (legacy:$legacy));
+    @include color.text(default grey, (legacy:$legacy));
+  }
+}

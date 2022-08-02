@@ -1,0 +1,27 @@
+////
+/// header Scheme
+/// @group header
+////
+
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/selector';
+
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(header)} {
+    &__menu-links {
+      #{selector.ns(link)} {
+        @include btn-kind-scheme(4, $legacy);
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+      }
+    }
+
+    &__tools-links {
+      #{selector.ns(link)} {
+        @include btn-kind-scheme(4, $legacy);
+      }
+    }
+  }
+}

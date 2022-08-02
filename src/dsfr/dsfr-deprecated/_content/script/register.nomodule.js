@@ -1,0 +1,1 @@
+import '../../../nomodule.js';

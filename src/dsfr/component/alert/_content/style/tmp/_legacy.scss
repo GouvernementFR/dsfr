@@ -1,0 +1,42 @@
+////
+/// Alert Legacy
+/// @group alert
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/legacy';
+
+@mixin first() {
+  @include legacy.is(ie11) {
+    @include selector.class(alert) {
+      @include icon.icon-legacy(null, md);
+
+      &__title,
+      p {
+        @include spacing.margin(0 0 1v);
+      }
+
+      &--info {
+        @include icon.icon-legacy(info-fill, null, before, false);
+      }
+
+      &--success {
+        @include icon.icon-legacy(success-fill, null, before, false);
+      }
+
+      &--error {
+        @include icon.icon-legacy(error-fill, null, before, false);
+      }
+
+      &--warning {
+        @include icon.icon-legacy(warning-fill, null, before, false);
+      }
+
+      @include selector.class(btn, (modifier: close)) {
+        @include icon.icon-legacy(close-line, sm);
+      }
+    }
+  }
+}

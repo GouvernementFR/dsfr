@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use 'body';
+
+$options: () !default;
+
+@mixin first() {
+  @include body.color(true);
+}

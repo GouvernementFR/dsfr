@@ -1,0 +1,25 @@
+////
+/// Toggle Legacy
+/// @group toggle
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+
+@mixin first() {
+  #{selector.ns(toggle)} {
+    input[type='checkbox'] {
+      &::-ms-check {
+        display: none;
+      }
+
+      &:checked {
+        @include icon.icon-legacy(check-line, md);
+      }
+    }
+
+    &__list {
+      list-style: none;
+    }
+  }
+}

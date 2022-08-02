@@ -1,0 +1,22 @@
+////
+/// Tab Legacy
+/// @group tab
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+@import '../../../../link/_content/style/tmp/tool';
+
+@mixin first() {
+  /**
+  * Reset liste à puce
+  */
+  @include selector.class((tabs) {
+    @include typography.disable-list-style-legacy;
+
+    &__panel {
+      @include typography.enable-list-style-legacy;
+      @include action.enable-underline-legacy;
+    }
+  }
+}

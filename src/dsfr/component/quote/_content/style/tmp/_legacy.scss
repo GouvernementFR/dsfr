@@ -1,0 +1,20 @@
+////
+/// Quote Legacy
+/// @group quote
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+
+@mixin first() {
+  /**
+  * Correction largeur max du texte
+  */
+  @include selector.class(quote) {
+    @include icon.icon-legacy(quote-line,lg);
+
+    blockquote {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '../property/font-weights';
+
+@function font-weight($value) {
+  @if meta.type-of($value) == number {
+    @return $value;
+  }
+  @if map.has-key(font-weights.$values, $value) {
+    @return map.get(font-weights.$values, $value);
+  }
+  @return map.get(font-weights.$values, regular);
+}

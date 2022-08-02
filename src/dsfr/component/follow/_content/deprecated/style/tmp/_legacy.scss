@@ -1,0 +1,38 @@
+////
+/// Follow Legacy
+/// @group follow
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/icon';
+
+@import 'setting';
+@import 'tool';
+
+@mixin first() {
+  #{selector.ns(follow)} {
+    @include social-deprecated-legacy-icon(facebook, facebook-circle-fill);
+    @include social-deprecated-legacy-icon(twitter, twitter-fill);
+    @include social-deprecated-legacy-icon(instagram, instagram-fill);
+    @include social-deprecated-legacy-icon(linkedin, linkedin-box-fill);
+    @include social-deprecated-legacy-icon(youtube, youtube-fill);
+
+    #{selector.ns-group(links)} {
+      &:not(#{selector.ns-group(links)}--sm):not(#{selector.ns-group(links)}--lg) {
+        #{selector.ns(link)} {
+          @include icon.not-selector {
+            @include icon.icon-legacy(null, md);
+          }
+        }
+      }
+
+      &--lg {
+        #{selector.ns(link)} {
+          @include icon.not-selector {
+            @include icon.icon-legacy(null, lg);
+          }
+        }
+      }
+    }
+  }
+}

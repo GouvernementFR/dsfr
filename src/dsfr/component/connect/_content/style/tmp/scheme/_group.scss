@@ -1,0 +1,21 @@
+////
+/// Connect Scheme : default
+/// @group connect
+////
+
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/selector';
+
+@mixin scheme($legacy: false, $standalone: false) {
+  #{selector.ns(connect)} {
+    &-group {
+      #{selector.ns(connect)} + p a {
+        @include color.text(action-high blue-france, (legacy:$legacy));
+      }
+
+      p {
+        @include color.text(mention grey, (legacy:$legacy));
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use 'sass:list';
+@use '../property/situations';
+@use '../../selector';
+@use '../../string';
+
+@mixin selector($situations: recommended deprecated) {
+  $start: ();
+  @each $situation, $block in situations.$values {
+    @if list.index($situations, $situation) != null {
+      $list: selector.start('#{$block}-');
+      @each $item in $list {
+        $start: list.append($start, $item, 'comma');
+      }
+    }
+  }
+
+  @include selector.pattern($start) {
+    @content;
+  }
+}
+
+@mixin not-selector($situations: recommended deprecated) {
+  $start: '';
+  @each $situation, $block in situations.$values {
+    @if list.index($situations, $situation) != null {
+      $start: '#{$start}#{selector.not-start('#{$block}-')}';
+    }
+  }
+
+  @include selector.pattern(string.unquote($start)) {
+    @content;
+  }
+}

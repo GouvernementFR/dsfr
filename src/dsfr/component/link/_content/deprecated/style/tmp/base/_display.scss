@@ -1,0 +1,3 @@
+#{selector.ns(link)}#{selector.ns(link--icon-left)}#{selector.ns(fi-theme-fill)} {
+  @include nest-btn(md, left, null, null, false);
+}

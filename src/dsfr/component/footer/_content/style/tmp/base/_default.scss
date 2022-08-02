@@ -1,0 +1,77 @@
+////
+/// Footer Module : default
+/// @group footer
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/media-query';
+
+@import '../../../../../logo/_content/style/tmp/setting';
+@import '../../../../../logo/_content/style/tmp/tool';
+
+@mixin first() {
+  #{selector.ns(footer)} {
+    @include typography.disable-list-style;
+    @include spacing.size(100%);
+    @include spacing.padding-top(10v);
+
+    @include selector.body {
+      @include display.flex(row, center, null, wrap);
+      @include spacing.margin-bottom(4v);
+      @include spacing.margin-bottom(6v, md);
+
+      & + #{selector.ns(footer__bottom)} {
+        @include spacing.margin-top(4v);
+      }
+    }
+
+    /**
+    * Conteneur du bloc marque, avec le logo principal et éventuellement
+    * un logo opérateur
+    */
+    &__brand {
+      @include display.flex(row, center);
+      flex-basis: 100%;
+
+      @include logo(md, lg) {
+        @include spacing.margin(-4v);
+        @include spacing.margin(-5v, md);
+      }
+
+      &-link {
+        @include display.flex;
+      }
+
+      /**
+      * Si on ajoute un logo opérateur à côté du logo principal, on lui applique une marge à gauche
+      * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
+      * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
+      */
+      #{selector.ns(logo)} + #{selector.ns(footer__brand-link)} {
+        @include spacing.margin-left(6v);
+        @include spacing.margin-left(12v, md);
+      }
+
+      @include media-query.from(md) {
+        flex-basis: auto;
+        @include spacing.margin-right(4v);
+
+        &#{selector.ns(enlarge-link)} {
+          @include spacing.margin(-4v 0 -4v -4v);
+          @include spacing.padding(4v);
+        }
+      }
+    }
+
+    /**
+    * Hauteur auto pour le logo opérateur
+    */
+    &__logo {
+      @include spacing.size(null, auto);
+      max-height: 100%;
+    }
+  }
+}

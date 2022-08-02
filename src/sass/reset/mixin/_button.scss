@@ -1,0 +1,16 @@
+@use '../../utilities';
+
+@mixin button ($minimal: false, $with-markup: false) {
+  @include utilities.nest(if($with-markup, button, null)) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
+    @if not $minimal {
+      color: inherit;
+      background-color: transparent;
+      font-family: inherit;
+    }
+  }
+}

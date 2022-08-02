@@ -1,0 +1,13 @@
+////
+/// Link Scheme
+/// @group link
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(link) {
+    @include color.text(action-high blue-france, (legacy:$legacy));
+  }
+}

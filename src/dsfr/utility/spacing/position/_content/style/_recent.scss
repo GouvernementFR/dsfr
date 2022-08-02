@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use '../../../_content/style/spacing';
+@use '../../../../../../sass/condition';
+
+$options: () !default;
+
+@mixin position($position, $breakpoint: null) {
+  @include condition.option($options, $position, $breakpoint) {
+    @include spacing.generate($position, map.get($options, $position), $breakpoint, true);
+  }
+}
+
+@mixin positions($breakpoint: null) {
+  @include position(top, $breakpoint);
+  @include position(right, $breakpoint);
+  @include position(bottom, $breakpoint);
+  @include position(left, $breakpoint);
+}
+
+@mixin first() {
+  @include positions();
+}
+
+@mixin sm() {
+  @include positions(sm);
+}
+
+@mixin md() {
+  @include positions(md);
+}
+
+@mixin lg() {
+  @include positions(lg);
+}
+
+@mixin xl() {
+  @include positions(xl);
+}

@@ -1,0 +1,35 @@
+////
+/// Link Module - group
+/// @group link
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@import '../tool';
+
+@mixin first() {
+  #{selector.ns-group(links)} {
+    @include typography.disable-list-style;
+    display: inline-block;
+    @include spacing.margin(0 -2v);
+
+    > li {
+      display: inline;
+      line-height: spacing.space(11v);
+    }
+
+    #{selector.ns(link)} {
+      @include spacing.margin(0 2v 4v);
+      vertical-align: top;
+    }
+
+    &--sm {
+      @include nest-link(sm, null);
+    }
+
+    &--lg {
+      @include nest-link(lg, null);
+    }
+  }
+}

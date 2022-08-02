@@ -1,0 +1,8 @@
+@use 'api';
+
+$options: () !default;
+
+@mixin first () {
+  @include api.transition;
+  @include api.no-scroll;
+}

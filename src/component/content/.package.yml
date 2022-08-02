@@ -1,8 +1,0 @@
-id: content
-title: Contenu média
-description: Les médias désignent vos contenus photos et vidéos. Lorsqu’ils sont intégré à une page de contenu, il est recommandé de suivre les règles décrites dans la documentation.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019554/M+dias+int+gr+s+au+contenu+-+Responsive+medias
-wrapper: col-8
-style:
-  - core
-  - button

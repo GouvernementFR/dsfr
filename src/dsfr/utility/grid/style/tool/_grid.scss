@@ -1,0 +1,156 @@
+////
+/// Core Tool : Grid
+/// @group core
+////
+
+/// Génère les classes de colonne pour la grille ainsi que les offsets (optionnel)
+///
+/// @param {Map} $columns [$grid-settings] - configuration de la grille
+/// @param {Bool} $with-container [true] - si true, définit les containers
+/// @param {Bool} $with-offsets [true] - si true, définit les offsets
+///
+/// @require {variable} $grid-columns
+///
+/// @example scss - Génère les colonnes
+///   @include grid-generator();
+
+
+@use 'sass:map';
+@use 'sass:list';
+@use 'col';
+@use '../../../../../sass/spacing';
+@use '../../../../../sass/selector';
+
+@mixin grid($settings: $grid-settings, $with-container: true, $with-offsets: true) {
+  $columns: map.get($settings, columns);
+  $breakpoints-settings: map.get($grid-settings, breakpoints);
+  $last-gutter: 0;
+  $last-max-width: null;
+  $containers: ();
+  $row-gutters: ();
+
+  @each $breakpoint, $limits in $breakpoints {
+    $mod: '-#{$breakpoint}';
+
+    @if $breakpoint == xs {
+      $breakpoint: first;
+      $mod: '';
+    }
+
+    @include respond-from($breakpoint) {
+      $breakpoint-settings: map.get($breakpoints-settings, $breakpoint);
+      $gutter: null;
+      $max-width: null;
+
+      @if $breakpoint-settings != null {
+        $gutter: map.get($breakpoint-settings, gutter);
+        $max-width: map.get($breakpoint-settings, max-width);
+
+        @if $gutter != null {
+          $last-gutter: $gutter;
+        }
+
+        @if $max-width != null {
+          $last-max-width: $max-width;
+        }
+      }
+
+      // Container
+      @if $with-container {
+
+        $container: selector.ns('container' + $mod);
+
+        @if list.length($containers) > 0 {
+          #{$containers} {
+            @if $gutter != null {
+              @include spacing.padding-x($gutter * 2);
+            }
+
+            @if $max-width != null {
+              @include spacing.max-size($max-width + $last-gutter * 4);
+            }
+          }
+        }
+
+        $containers: list.append($containers, $container, 'comma');
+
+        #{$container} {
+          @if $last-gutter != 0 {
+            @include spacing.padding-x($last-gutter * 2);
+          }
+
+          @if $last-max-width != null {
+            @include spacing.max-size($last-max-width + $last-gutter * 4);
+          }
+        }
+
+        #{selector.ns('container' + $mod + '--fluid')} {
+          @include spacing.padding-x(0);
+          @include spacing.max-size(none);
+        }
+      }
+
+      // Gutters
+      $row-gutter: selector.ns(grid-row#{$mod}--gutters);
+      $g: $last-gutter;
+
+      @if $gutter != null {
+        $g: $gutter;
+        @if list.length($row-gutters) > 0 {
+          #{$row-gutters} {
+            @include spacing.margin(-$g);
+
+            > {
+              #{selector.start(col-)},
+              #{selector.class(col)} {
+                @include spacing.padding($g);
+              }
+            }
+          }
+        }
+      }
+
+      #{$row-gutter} {
+        @include spacing.margin(-$g);
+
+        > {
+          #{selector.start(col-)},
+          #{selector.class(col)} {
+            @include spacing.padding($g);
+          }
+        }
+      }
+
+      $row-gutters: list.append($row-gutters, $row-gutter, 'comma');
+
+      #{selector.ns(grid-row + $mod + --no-gutters)} {
+        @include spacing.margin(0);
+
+        > {
+          #{selector.start(col-)},
+          #{selector.class(col)} {
+            @include spacing.padding(0);
+          }
+        }
+      }
+
+      // Cols
+      #{selector.ns('col' + $mod)} {
+        flex: 1;
+      }
+
+      @for $i from 1 through $columns {
+        $append: '#{$mod}-#{$i}';
+        #{selector.ns('col' + $append)} {
+          @include col.grid-col($i, $columns);
+        }
+
+        @if $with-offsets {
+          #{selector.ns('col-offset' + $append)} {
+            @include col.grid-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}

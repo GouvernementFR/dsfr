@@ -1,0 +1,23 @@
+<%
+    const getContact = (contact) => {
+        if (contact === true) return {
+          button: getText('button.contact', 'response'),
+          href: contentPlaceholder(getText('contact.link', 'response')),
+        }
+
+        if (typeof contact === 'object') return contact;
+
+        return false;
+    };
+
+    const response = locals.response || {};
+
+    const data = {
+        ...response,
+        contact: getContact(response.contact),
+        home : response.home && getText('button.home', 'response')
+    };
+
+ %>
+
+<%- include('../../template/ejs/response.ejs', { response: data }); %>

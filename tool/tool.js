@@ -6,6 +6,8 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
+const { Configurator } = require('./classes/configurator/configurator');
+const { Builder } = require('./classes/builder/builder');
 
 /**
  * Build
@@ -15,11 +17,11 @@ const buildBuilder = (yargs) => {
     .usage('Usage: $0 -p core accordion')
     .example(
       '$0 -p core accordion -jcm',
-      'compile les fichiers scripts et styles du package core et accordion en les minifiant'
+      'compile les fichiers scripts et styles des parts core et accordion en les minifiant'
     )
-    .option('packages', {
+    .option('parts', {
       alias: 'p',
-      describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
+      describe: 'liste des id des parts à compiler. Si non renseigné, tous les parts sont compilés',
       type: 'array'
     })
     .option('scripts', {
@@ -83,7 +85,7 @@ const buildHandler = async (argv) => {
     styles: argv.styles || all,
     scripts: argv.scripts || all,
     examples: argv.examples || all,
-    packages: argv.packages || [],
+    parts: argv.parts || [],
     minify: argv.minify,
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
@@ -94,7 +96,13 @@ const buildHandler = async (argv) => {
     locale: argv.locale
   };
 
-  await build(settings);
+  const conf = new Configurator();
+  conf.build();
+
+  const builder = new Builder();
+  builder.build(settings);
+
+  //await build(settings);
 };
 
 /**
@@ -169,21 +177,27 @@ const testBuilder = (yargs) => {
     .usage('Usage: $0 -p core accordion')
     .example(
       '$0 -p core accordion -jcm',
-      'compile les fichiers scripts et styles du package core et accordion en les minifiant'
+      'compile les fichiers scripts et styles des parts core et accordion en les minifiant'
     )
-    .option('packages', {
+    .option('parts', {
       alias: 'p',
-      describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
+      describe: 'liste des id des parts à compiler. Si non renseigné, tous les parts sont compilés',
       type: 'array'
     });
 };
 
 const testHandler = async (argv) => {
   const settings = {
-    packages: argv.packages || []
+    parts: argv.parts || []
   };
 
-  await test(settings);
+  // await test(settings);
+
+  const conf = new Configurator();
+  conf.build();
+
+  const builder = new Builder();
+  builder.build(settings);
 };
 
 /**
@@ -194,11 +208,11 @@ const standaloneBuilder = (yargs) => {
     .usage('Usage: $0')
     .example(
       '$0 -p connect',
-      'compile les fichiers scripts et styles du package core et accordion en les minifiant'
+      'compile les fichiers scripts et styles des parts core et accordion en les minifiant'
     )
-    .option('packages', {
+    .option('parts', {
       alias: 'p',
-      describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
+      describe: 'liste des id des parts à compiler. Si non renseigné, tous les parts sont compilés',
       type: 'array'
     })
     .option('scripts', {
@@ -253,7 +267,7 @@ const standaloneHandler = async (argv) => {
     styles: argv.styles || all,
     scripts: argv.scripts || all,
     examples: argv.examples || all,
-    packages: argv.packages || [],
+    parts: argv.parts || [],
     minify: argv.minify,
     legacy: argv.legacy,
     sourcemap: argv.sourcemap,
@@ -269,7 +283,7 @@ yargs
   .scriptName('tool')
   .command(
     'build',
-    'compilation de package',
+    'compilation de part',
     buildBuilder,
     buildHandler
   )

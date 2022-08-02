@@ -1,0 +1,19 @@
+////
+/// Content Deprecated Scheme
+/// @group content
+////
+
+@use '../../../../../../../sass/selector';
+
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(content-media)} {
+    &__transcription {
+      #{selector.ns(link)} {
+        @include btn-kind-scheme(4, $legacy);
+      }
+    }
+  }
+}

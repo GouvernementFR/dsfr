@@ -1,0 +1,15 @@
+@use 'sass:list';
+@use '../../selector';
+
+@mixin content($is-before: true, $override: false) {
+  $pseudos: before after;
+  @if not $is-before {
+    $pseudos: after before;
+  }
+  @include selector.pseudo(list.nth($pseudos, 1), '') {
+    @content;
+  }
+  @if $override {
+    @include selector.pseudo(list.nth($pseudos, 2), none);
+  }
+}

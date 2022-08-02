@@ -1,0 +1,15 @@
+id: breadcrumb
+asset:
+  dependencies:
+    - icons-system
+script:
+  dependencies:
+    - action
+    - api
+style:
+  dependencies:
+    - action
+    - color
+    - typography
+example:
+  wrapper: col-8

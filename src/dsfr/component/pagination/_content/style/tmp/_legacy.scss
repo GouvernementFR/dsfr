@@ -1,0 +1,40 @@
+////
+/// Pagination Legacy
+/// @group pagination
+////
+
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  /**
+  * Correctif de la largeur de la légende d'un fieldset
+  */
+  #{selector.ns(pagination)} {
+    @include action.disable-underline-legacy;
+    @include typography.disable-list-style-legacy;
+
+    &__link {
+      @include color.transparent-background((legacy: true, hover: true));
+
+      &--first {
+        @include icon.icon-legacy(arrow-left-s-first-line, md);
+      }
+
+      &--prev {
+        @include icon.icon-legacy(arrow-left-s-line, md);
+      }
+
+      &--next {
+        @include icon.icon-legacy(arrow-right-s-line, md);
+      }
+
+      &--last {
+        @include icon.icon-legacy(arrow-right-s-last-line, md);
+      }
+    }
+  }
+}

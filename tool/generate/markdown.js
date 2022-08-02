@@ -2,11 +2,11 @@ const { createFile } = require('../utilities/file');
 const { Readme } = require('../classes/md/readme');
 const root = require('../utilities/root');
 const log = require('../utilities/log');
-const { I18n } = require('../classes/i18n/i18n');
-const { Config } = require('../classes/config/config');
+// const { I18n } = require('../classes/configurator/i18n/i18n');
+const { Config } = require('../classes/builder/configuration');
 
 const generateMarkdown = async (pck, locale) => {
-  const i18n = new I18n(locale);
+  // const i18n = new I18n(locale);
   const readme = new Readme(pck.id, i18n);
   const config = await Config.get();
 

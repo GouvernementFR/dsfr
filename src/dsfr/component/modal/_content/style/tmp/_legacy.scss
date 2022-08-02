@@ -1,0 +1,14 @@
+////
+/// Modal Legacy
+/// @group modal
+////
+
+@use '../../../../../../sass/selector';
+
+@mixin first() {
+  @include selector.class(modal) {
+    @include selector.body {
+      max-height: calc(100vh - 2rem);
+    }
+  }
+}

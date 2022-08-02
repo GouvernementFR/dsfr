@@ -1,0 +1,26 @@
+////
+/// Breadcrumb legacy
+/// @group breadcrumb
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include legacy.is(ie11) {
+    /**
+    * reset liste à puce
+    */
+    @include selector.class(breadcrumb) {
+      @include typography.disable-list-style-legacy;
+
+      &__link {
+        &:not([aria-current]) {
+          @include icon.icon-legacy(arrow-right-s-line, sm, after);
+        }
+      }
+    }
+  }
+}

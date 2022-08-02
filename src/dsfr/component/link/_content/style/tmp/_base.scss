@@ -1,0 +1,14 @@
+////
+/// Link base
+/// @group link
+////
+
+@use 'base/default';
+@use 'base/group';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include group.first();
+}

@@ -1,0 +1,16 @@
+////
+/// Follow Deprecated Tool
+/// @group follow
+////
+
+@mixin social-deprecated-icon ($modifier, $icon) {
+  #{selector.ns(link--)}#{$modifier} {
+    @include icon.icon($icon, null, before, true);
+  }
+}
+
+@mixin social-deprecated-legacy-icon ($modifier, $icon) {
+  #{selector.ns(link--)}#{$modifier} {
+    @include icon.icon-legacy($icon);
+  }
+}

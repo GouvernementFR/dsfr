@@ -1,0 +1,80 @@
+////
+/// Radio Module : radio md
+/// @group radio
+////
+
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  /**
+ * L'input de type radio avec son label est contenu dans un groupe
+ * Ce groupe contient également le texte d'aide (optionnels)
+ */
+  #{selector.ns-group(radio)} {
+    @include spacing.relative;
+
+    /**
+   * Dans le cas d'un groupe de radios, on supprime l'espacement du premier groupe
+   */
+    &:first-child {
+      @include spacing.margin-top(-3v);
+
+      input[type='radio'] + label {
+        @include spacing.margin-top(0);
+      }
+    }
+
+    /**
+   * Dans le cas d'un groupe de radios, on supprime l'espacement du dernier groupe
+   */
+    &:last-child {
+      @include spacing.margin-bottom(-3v);
+    }
+
+    /**
+   * On cache l'input de type radio pour le styler via le label
+   */
+    input[type='radio'] {
+      @include spacing.absolute;
+      @include spacing.margin(0);
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      /**
+     * On applique un display grid sur le label afin de gérer le positionnement des élements
+     */
+      + label {
+        @include spacing.relative;
+        @include spacing.padding(3v 0);
+        @include typography.text-style(md);
+        -webkit-tap-highlight-color: transparent;
+        @include display.flex(row, center, flex-start, wrap);
+        @include spacing.margin-left(8v);
+
+        /**
+       * Style du texte d'aide dans le label
+       */
+        #{selector.ns(hint-text)} {
+          @include spacing.margin(0);
+          @include spacing.size(100%);
+        }
+
+        /**
+       * On utilise un pseudo element before pour customiser l'aspect du bouton radio
+       */
+        @include selector.before('', inline-block) {
+          @include spacing.absolute(0, null, null, -8v);
+          @include spacing.size(6v, 6v);
+          @include spacing.margin-top(3v);
+          @include spacing.margin-right(2v);
+          border-radius: 50%;
+          // transition: box-shadow 0.3s;
+        }
+      }
+    }
+  }
+}

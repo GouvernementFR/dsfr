@@ -1,0 +1,18 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+
+@mixin option($options, $prop, $breakpoint: null) {
+  $option: map.get($options, $prop);
+  @if $option {
+    @if $breakpoint == null {
+      @content;
+    }
+    @else if meta.type-of($option) == map {
+      $breakpoints: map.get($option, breakpoints);
+      @if $breakpoints and list.index($breakpoints, $breakpoint) {
+        @content;
+      }
+    }
+  }
+}

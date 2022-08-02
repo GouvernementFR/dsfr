@@ -1,0 +1,17 @@
+////
+/// Highlight Module
+/// @group Highlight
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+@use '../../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns(highlight)} {
+    @include spacing.padding-left(6v);
+    @include typography.text-style(md);
+    @include spacing.padding-left(8v, md);
+    @include spacing.margin-left(8v, md);
+  }
+}

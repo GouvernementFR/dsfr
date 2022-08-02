@@ -1,0 +1,16 @@
+////
+/// Navigation base
+/// @group navigation
+////
+
+@use 'base/default';
+@use 'base/menu';
+@use 'base/mega-menu';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include menu.first();
+  @include menu-menu.first();
+}

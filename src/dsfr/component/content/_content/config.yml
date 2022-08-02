@@ -1,0 +1,9 @@
+id: content
+style:
+  dependencies:
+    - color
+    - typography
+    - media
+    - button
+example:
+  wrapper: col-8

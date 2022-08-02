@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../property/font-faces';
+
+@function font-stack($type: primary) {
+  $properties: map-get(font-faces.$values, $type);
+  $stack: join(map-get($properties, name), map-get($properties, fallback), 'comma');
+  @return $stack;
+}

@@ -1,0 +1,9 @@
+id: icons-finance
+asset:
+  type: icon
+  category: finance
+style:
+  options:
+    asset:
+      type: icon
+      property: icons

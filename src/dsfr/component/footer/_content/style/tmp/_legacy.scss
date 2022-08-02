@@ -1,0 +1,17 @@
+////
+/// Footer Legacy
+/// @group footer
+////
+
+@use '../../../../../../sass/typography';
+@use '../../../../../../sass/action';
+
+@mixin first {
+  @include selector.class(footer) {
+    @include typography.disable-list-style-legacy;
+
+    &__content-desc {
+      @include action.enable-underline-legacy;
+    }
+  }
+}

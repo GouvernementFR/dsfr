@@ -1,0 +1,19 @@
+////
+/// Stepper Module
+/// @group stepper
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns(stepper)} {
+    @include selector.title {
+      @include spacing.margin-bottom(3v);
+    }
+
+    &__steps {
+      display: none;
+    }
+  }
+}

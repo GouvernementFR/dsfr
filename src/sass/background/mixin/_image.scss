@@ -1,0 +1,15 @@
+
+@mixin image($url, $repeat: no-repeat, $size: cover, $position: 50%) {
+  @if $url {
+    background-image: $url;
+  }
+  @if $repeat {
+    background-repeat: $repeat;
+  }
+  @if $size {
+    background-size: $size;
+  }
+  @if $position {
+    background-image: $position;
+  }
+}

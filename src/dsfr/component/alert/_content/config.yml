@@ -1,0 +1,12 @@
+id: alert
+asset:
+  dependencies:
+    - icons-system
+style:
+  dependencies:
+    - action
+    - typography
+    - button
+    - color
+example:
+  wrapper: col-8

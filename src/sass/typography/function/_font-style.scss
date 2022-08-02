@@ -1,0 +1,9 @@
+@use 'sass:list';
+@use '../property/font-styles';
+
+@function font-style($value) {
+  @if list.index(font-styles.$values, $value) != null {
+    @return $value;
+  }
+  @return nth(font-styles.$values, 1);
+}

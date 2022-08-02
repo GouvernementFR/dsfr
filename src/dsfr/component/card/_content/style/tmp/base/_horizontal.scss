@@ -1,0 +1,46 @@
+////
+/// Card Module - horizontal
+/// @group card
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/media-query';
+
+@mixin first() {
+  #{selector.ns(card)} {
+    @include media-query.from(md) {
+      &--horizontal,
+      &--horizontal-half,
+      &--horizontal-tier {
+        flex-direction: row;
+      }
+
+      &--horizontal &__img,
+      &--horizontal-half &__img,
+      &--horizontal-tier &__img {
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &--horizontal &__header {
+        @include spacing.width(40%);
+        flex: 0 0 40%;
+      }
+
+      &--horizontal-half &__header {
+        @include spacing.width(50%);
+        flex: 0 0 50%;
+      }
+
+      &--horizontal-tier &__header {
+        @include spacing.width(calc(100% / 3));
+        flex: 0 0 #{calc(100% / 3)};
+      }
+    }
+  }
+}

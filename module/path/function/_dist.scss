@@ -1,5 +1,0 @@
-@use '../variable/dist';
-
-@function dist() {
-  @return dist.$value;
-}

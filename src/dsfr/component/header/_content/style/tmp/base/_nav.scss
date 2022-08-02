@@ -1,0 +1,21 @@
+////
+/// Header Module : navigation
+/// @group header
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/media-query';
+
+@mixin first() {
+  #{selector.ns(header)} {
+    #{selector.ns(nav)} {
+      @include media-query.from(lg) {
+        justify-content: flex-start;
+
+        &__list {
+          max-width: calc(100% + #{space(4v)});
+        }
+      }
+    }
+  }
+}

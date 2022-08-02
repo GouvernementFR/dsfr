@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<%- sample(getText('password', 'password') + '-' + getText('sample.register', 'password'), './sample/password-default.ejs', {}, true); %>
+
+<%- sample(getText('password', 'password') + '-' + getText('sample.hint', 'password'), './sample/sample-description.ejs', {}, true); %>
+
+<%- sample(getText('password', 'password') + '-' + getText('sample.validate', 'password'), './sample/sample-validate.ejs', {}, true); %>
+
+<%- sample(getText('password', 'password') + '-' + getText('sample.login', 'password'), './sample/password-connection.ejs', {}, true); %>

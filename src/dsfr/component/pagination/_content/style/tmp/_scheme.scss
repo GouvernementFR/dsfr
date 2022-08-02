@@ -1,0 +1,25 @@
+////
+/// Pagination Scheme
+/// @group pagination
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(pagination)} {
+    @include color.text(action-high grey, (legacy: $legacy));
+
+    &__link {
+      &[aria-current] {
+        @include color.background(active blue-france, (legacy: $legacy, hover: true));
+        @include color.text(inverted blue-france, (legacy: $legacy));
+      }
+
+      &:not([aria-current]) {
+        @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true,));
+      }
+    }
+  }
+}

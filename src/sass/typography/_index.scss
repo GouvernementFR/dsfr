@@ -1,0 +1,26 @@
+@forward 'function/font-stack';
+@forward 'function/font-weight';
+@forward 'function/font-style';
+@forward 'function/heading';
+@forward 'mixin/font-face';
+@forward 'mixin/font-face-reset';
+@forward 'mixin/font-family';
+@forward 'mixin/font-stack';
+@forward 'mixin/font-weight';
+@forward 'mixin/font-style';
+@forward 'mixin/font-smoothing';
+@forward 'mixin/render';
+
+@use 'property/font-weights';
+@use 'property/font-styles';
+@use 'property/font-displays';
+@use 'property/optimizations';
+@use 'property/texts';
+@use 'property/titles';
+
+$font-weights: font-weights.$values;
+$font-styles: font-styles.$values;
+$font-displays: font-displays.$values;
+$optimizations: optimizations.$values;
+$texts: texts.$values;
+$titles: titles.$values;

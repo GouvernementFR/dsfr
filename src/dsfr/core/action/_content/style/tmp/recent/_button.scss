@@ -1,0 +1,10 @@
+////
+/// Core Module : Reset button
+/// @group core
+////
+
+@use '../../../../../../../sass/reset/index';
+
+button {
+  @include reset.button;
+}

@@ -1,0 +1,23 @@
+////
+/// quote Scheme
+/// @group quote
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(quote) {
+    @include selector.before {
+      @include color.text((artwork minor blue-france), (legacy:$legacy));
+    }
+
+    @include color.accentuate {
+      @include selector.before {
+        @include color.text((artwork minor accent), (legacy:$legacy));
+      }
+    }
+
+    @include color.background-image((border default grey), (legacy:$legacy));
+  }
+}

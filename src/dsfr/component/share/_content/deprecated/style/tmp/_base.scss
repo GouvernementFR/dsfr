@@ -1,0 +1,29 @@
+////
+/// Share Deprecated Module
+/// @group share
+////
+
+#{selector.ns(share)} {
+  &__group {
+    @include typography.disable-list-style;
+    @include horizontal-btns-group;
+    @include spacing.margin-x(-2v);
+    @include spacing.width(auto);
+    order: 2;
+    display: flex;
+  }
+
+  &__link {
+    @include action.disable-underline;
+    @include tint-enabled(true, null);
+    display: inline-flex;
+    @include spacing.margin-x(2v);
+    @include spacing.margin-bottom(4v);
+  }
+}
+
+@include build-share-link(facebook, facebook-circle-line);
+@include build-share-link(twitter, twitter-line);
+@include build-share-link(linkedin, linkedin-box-line);
+@include build-share-link(mail, mail-line);
+@include build-share-link(copy, links-fill);

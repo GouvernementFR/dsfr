@@ -1,0 +1,29 @@
+////
+/// Header Module : default
+/// @group header
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(header)} {
+    @include action.disable-underline;
+    @include typography.disable-list-style;
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
+    @include spacing.size(100%);
+    @include spacing.relative;
+
+    @include selector.body {
+      &-row {
+        @include display.flex(row, center, flex-start);
+        @include spacing.margin(0 -4v);
+        @include spacing.padding(6v 0, lg);
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+id: stepper
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+example:
+  wrapper: col-8

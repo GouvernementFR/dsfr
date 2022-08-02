@@ -1,0 +1,15 @@
+@use '../mixin/pseudo';
+@use '../../spacing';
+@use '../../mask';
+
+@mixin style($restrain: null) {
+  @include pseudo.pseudo($restrain) {
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
+    background-color: currentColor;
+    @include spacing.size(var(--icon-size), var(--icon-size));
+    @include mask.size(100% 100%);
+    @content;
+  }
+}

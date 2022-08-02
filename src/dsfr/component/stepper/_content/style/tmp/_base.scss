@@ -1,0 +1,59 @@
+////
+/// Stepper Module
+/// @group stepper
+////
+
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import './tool';
+
+@mixin first() {
+  #{selector.ns(stepper)} {
+    @include typography.set-title-margin(0);
+    @include typography.set-text-margin(0);
+    @include spacing.margin-bottom(8v);
+    @include display.flex(column);
+
+    @include selector.title {
+      @include typography.title-style(h6);
+      @include typography.set-title-margin(0 0 3v 0);
+      @include typography.set-text-margin(0 0 3v 0);
+    }
+
+    &__state {
+      @include typography.text-style(sm);
+      @include typography.set-title-margin(0 0 1v 0);
+      @include typography.set-text-margin(0 0 1v 0);
+      @include typography.font-weight(regular);
+      @include selector.after('\00000a') {
+        white-space: pre;
+        line-height: spacing.space(8v);
+      }
+    }
+
+    &__details {
+      @include typography.text-style(xs);
+    }
+
+    @include hide-last-step-detail();
+
+    &__steps {
+      --default-outer: calc((100% + 6px) / var(--steps));
+      --default-inner: calc(var(--default-outer) - 6px);
+      --active-outer: calc((100% + 6px) / var(--current-step));
+      --active-inner: calc(var(--active-outer) - 6px);
+      @include spacing.margin-bottom(3v);
+      @include spacing.size(100%, 6px);
+      background-repeat: no-repeat;
+      background-size: calc(
+            (100% + 6px) * var(--current-step) / var(--steps) - 6px
+          )
+          100%,
+        100% 100%;
+      background-position: 0 0, 0 0;
+      @include stepper-build();
+    }
+  }
+}

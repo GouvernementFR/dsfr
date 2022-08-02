@@ -1,0 +1,29 @@
+@use 'space';
+
+@mixin padding($values: 0 0 0 0, $important: false) {
+  @include space.space(padding, $values, null, $important);
+}
+
+@mixin padding-x($value: 0, $important: false) {
+  @include space.space(padding, $value, x, $important);
+}
+
+@mixin padding-y($value: 0, $important: false) {
+  @include space.space(padding, $value, y, $important);
+}
+
+@mixin padding-top($value: 0, $important: false) {
+  @include space.space(padding, $value, top, $important);
+}
+
+@mixin padding-right($value: 0, $important: false) {
+  @include space.space(padding, $value, right, $important);
+}
+
+@mixin padding-bottom($value: 0, $important: false) {
+  @include space.space(padding, $value, bottom, $important);
+}
+
+@mixin padding-left($value: 0, $important: false) {
+  @include space.space(padding, $value, left, $important);
+}

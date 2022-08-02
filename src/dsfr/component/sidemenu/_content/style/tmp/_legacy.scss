@@ -1,0 +1,26 @@
+////
+/// Sidemenu Legacy
+/// @group sidemenu
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+@import '../../../../link/_content/style/tmp/tool';
+
+@mixin first() {
+  /**
+  * Correctif de la hauteur de la navigation latérale
+  */
+  #{selector.ns(sidemenu)} {
+    height: auto;
+    @include typography.disable-list-style-legacy;
+    @include action.disable-underline-legacy;
+
+    &__btn {
+      &[aria-expanded] {
+        @include icon.icon-legacy(arrow-down-s-line, sm, after);
+      }
+    }
+  }
+}

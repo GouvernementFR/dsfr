@@ -1,0 +1,23 @@
+////
+/// Consent legacy
+/// @group consent
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+
+@mixin first() {
+  @include selector.class(consent-service) {
+    &__collapse {
+      #{&}-btn {
+        text-decoration: underline;
+        @include icon.icon-legacy(arrow-down-s-line, sm);
+
+        &[aria-expanded="true"] {
+          @include icon.icon-legacy(arrow-up-s-line, sm);
+        }
+      }
+    }
+  }
+}

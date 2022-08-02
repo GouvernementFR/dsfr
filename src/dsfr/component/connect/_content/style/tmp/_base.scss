@@ -1,0 +1,15 @@
+////
+/// Connect base
+/// @group connect
+////
+
+@use 'base/default';
+@use 'base/plus';
+@use 'base/group';
+// @use 'base/agent';
+
+@mixin scheme($legacy: false, $standalone: false) {
+  @include default.first($legacy, $standalone);
+  @include group.first($legacy, $standalone);
+  @include plus.first($legacy, $standalone);
+}

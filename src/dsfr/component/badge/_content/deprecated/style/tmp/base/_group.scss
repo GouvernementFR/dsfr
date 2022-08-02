@@ -1,0 +1,27 @@
+////
+/// Badge Module - group
+/// @group badge
+////
+
+@use '../../../../../../../../sass/selector';
+@use '../../../../../../../../sass/typography';
+@use '../../../../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns-group(badge)} {
+    @include typography.disable-list-style;
+    display: flex;
+    flex-wrap: wrap;
+    @include spacing.margin-bottom(0);
+
+    > li {
+      display: inline-flex;
+      @include spacing.max-width(100%);
+    }
+
+    #{selector.ns(badge)} {
+      @include spacing.margin-right(2v);
+      @include spacing.margin-bottom(2v);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@mixin flex($direction: row, $align: null, $justify: null, $wrap: null, $inline: false) {
+
+  @if $inline == true {
+    display: inline-flex;
+  }
+  @else {
+    display: flex;
+  }
+
+  @if $direction != null {
+    flex-direction: #{$direction};
+  }
+
+  @if $align != null {
+    align-items: #{$align};
+  }
+
+  @if $justify != null {
+    justify-content: #{$justify};
+  }
+
+  @if $wrap != null {
+    flex-wrap: #{$wrap};
+  }
+}

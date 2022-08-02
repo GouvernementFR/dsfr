@@ -1,0 +1,22 @@
+@forward 'sass:selector';
+@forward 'function/namespace';
+@forward 'function/class';
+@forward 'function/attribute';
+@forward 'function/associate';
+@forward 'function/extremities';
+@forward 'function/intertwine';
+@forward 'mixin/class';
+@forward 'mixin/attribute';
+@forward 'mixin/autofill';
+@forward 'mixin/extremities';
+@forward 'mixin/pseudo';
+@forward 'mixin/root';
+@forward 'mixin/theme';
+
+@forward 'bem';
+@forward 'generic' as generic-*;
+@forward 'block' as block-*;
+
+@use 'property/prefix';
+
+$prefix: prefix.$value;

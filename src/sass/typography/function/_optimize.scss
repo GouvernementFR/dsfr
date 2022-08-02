@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use '../property/optimizations';
+
+@function optimize($value) {
+  $text-rendering: map.get(optimizations.$values, $value);
+  @if $text-rendering {
+    @return $text-rendering;
+  }
+  @return map.get(optimizations.$values, legibility);
+}

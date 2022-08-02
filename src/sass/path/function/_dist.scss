@@ -1,0 +1,5 @@
+@use '../property/dist';
+
+@function dist() {
+  @return dist.$value;
+}

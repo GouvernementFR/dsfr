@@ -1,0 +1,8 @@
+@mixin first () {
+  @import '../../../../button/_content/style/tmp/tool';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
+
+  @include _share-deprecated-scheme;
+}

@@ -1,0 +1,11 @@
+id: icons-device
+asset:
+  type: icon
+  category: device
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: phone-fill phone-line rss-fill rss-line save-fill save-line

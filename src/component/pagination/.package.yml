@@ -1,7 +1,0 @@
-id: pagination
-title: Pagination
-description: La pagination permet à l’utilisateur de naviguer entre les différentes pages d’une liste d'éléments.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223051980/Pagination+-+Pagination
-wrapper: container
-style:
-  - core

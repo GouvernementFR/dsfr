@@ -1,0 +1,5 @@
+id: dsfr
+style:
+  options:
+    excludes:
+      - colors

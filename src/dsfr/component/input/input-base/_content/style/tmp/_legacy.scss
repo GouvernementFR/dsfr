@@ -1,0 +1,16 @@
+////
+/// Input Legacy
+/// @group input
+////
+
+@use '../../../../../../../sass/selector';
+
+@mixin first() {
+  #{selector.ns(input-wrap)} {
+    &--addon {
+      #{selector.ns(btn)} {
+        flex-shrink: 0;
+      }
+    }
+  }
+}

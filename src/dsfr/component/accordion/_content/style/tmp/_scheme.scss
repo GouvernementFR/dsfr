@@ -1,0 +1,19 @@
+////
+/// Accordion Scheme
+/// @group accordion
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme ($legacy: false) {
+  @include selector.class(accordion) {
+    @include selector.before() {
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-out);
+    }
+
+    &__btn {
+      @include color.text(action-high grey, (legacy:$legacy));
+    }
+  }
+}

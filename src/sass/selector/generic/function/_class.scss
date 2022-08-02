@@ -1,0 +1,26 @@
+@use '../../bem';
+@use 'sass:map';
+@use 'breakpoint';
+
+/// Sélecteur simple permettant de cibler les éléments en fonction de la valeur de l'attribut class
+/// @access public
+/// @param {String} $name - nom de l'élément
+/// @param {String} $breakpoint - point de rupture
+@function class($block, $options: ()) {
+  @if map.get($options, group) {
+    $block: '#{$block}-group';
+  }
+  @if map.has-key($options, element) {
+    $block: bem.bem-element($block, map.get($options, element));
+  }
+  @if map.has-key($options, modifier) {
+    $block: bem.bem-modifier($block, map.get($options, modifier));
+  }
+  @if map.has-key($options, breakpoint) {
+    $block: breakpoint.breakpoint($block, map.get($options, breakpoint));
+  }
+  @if map.has-key($options, dot) and map.get($options, dot) == false {
+    @return $block;
+  }
+  @return '.#{$block}';
+}

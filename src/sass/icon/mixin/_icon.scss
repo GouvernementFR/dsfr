@@ -1,0 +1,24 @@
+@use 'style';
+@use 'image';
+@use 'size';
+@use 'content';
+
+@mixin icon($icon: null, $size: md, $restrain: null, $styling: true, $is-before: $restrain != after, $override: false) {
+  @if $styling {
+    @include style.style($restrain);
+  }
+
+  @if $icon != null {
+    @include image.image($icon, $restrain);
+  }
+
+  @if $size != null {
+    @include size.size($size, $restrain);
+  }
+
+  @if $is-before != null {
+    @include content.content($is-before, $override) {
+      @content;
+    }
+  }
+}

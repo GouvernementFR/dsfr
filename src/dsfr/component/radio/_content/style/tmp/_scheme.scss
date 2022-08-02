@@ -1,0 +1,16 @@
+////
+/// Radio Scheme
+/// @group radio
+////
+
+@use 'scheme/default';
+@use 'scheme/sm';
+@use 'scheme/rich';
+
+$options: () !default;
+
+@mixin scheme($legacy: false) {
+  @include default.first($legacy);
+  @include sm.first($legacy);
+  @include rich.first($legacy);
+}

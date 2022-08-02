@@ -1,0 +1,8 @@
+id: upload
+style:
+  dependencies:
+    - typography
+    - color
+    - form
+example:
+  wrapper: col-8

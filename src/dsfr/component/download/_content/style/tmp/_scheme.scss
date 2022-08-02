@@ -1,0 +1,42 @@
+////
+/// Download Module
+/// @group download
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(download) {
+    &--card {
+      @include color.background(default grey, (legacy:$legacy));
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
+
+      @include selector.class(download__link) {
+        @include color.text(title grey, (legacy:$legacy));
+
+        @include selector.after {
+          @include color.text(action-high blue-france, (legacy:$legacy));
+        }
+      }
+    }
+
+    &__link {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    &__detail {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+  }
+
+  @include selector.class(downloads, (group: true)) {
+    li::marker {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    &--bordered {
+      @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
+    }
+  }
+}

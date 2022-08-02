@@ -1,0 +1,66 @@
+////
+/// Tag Legacy
+/// @group tag
+////
+
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(tag)} {
+    @include icon.icon-legacy(null, sm);
+
+    #{selector.ns(tag)}--sm {
+      @include icon.icon-legacy(null, xs, before);
+    }
+  }
+
+  @include action.clickable-selector {
+    #{selector.ns(tag)} {
+      // empeche le hover du tag pressable sur ie
+      @include pressed-selector(true) {
+        background-size: 100% 100%, 100% 100%;
+        @include icon.icon-legacy(checkbox-circle-line, sm, after);
+
+        #{selector.ns(tag)}--sm {
+          @include icon.icon-legacy(null, xs, after);
+        }
+      }
+
+      #{selector.ns(tag)}--dismiss {
+        @include icon.icon-legacy(close-line, sm, after);
+
+        #{selector.ns(tag)}--sm {
+          @include icon.icon-legacy(null, xs, after);
+        }
+      }
+    }
+  }
+
+  #{selector.ns-group(tags)} {
+    @include typography.disable-list-style-legacy(true);
+  }
+
+  #{selector.ns-group(tags)}--sm {
+    @include icon.icon-legacy(null, sm);
+
+    @include action.clickable-selector {
+      #{selector.ns(tag)} {
+        #{selector.ns(tag)}--dismiss {
+          @include icon.icon-legacy(null, xs, after);
+        }
+
+        @include pressed-selector(true) {
+
+          @include icon.icon-legacy(null, xs, after) {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}

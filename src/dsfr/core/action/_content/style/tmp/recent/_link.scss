@@ -1,0 +1,51 @@
+////
+/// Core Module : Action link
+/// @group core
+////
+
+@use '../../../../../../../sass/reset';
+@import '../tool/link';
+@import '../../../../../icon/_content/style/tmp/tool/default';
+
+@mixin first () {
+  a {
+    @include reset.a;
+  }
+
+  :root {
+    @include init-underline;
+    @include enable-underline;
+    @include enable-external;
+  }
+
+  // TODO: à checker avec <area href="" >
+  [href] {
+    @include link-underline;
+  }
+
+  @include target-blank {
+    @include external-link;
+
+    @include has-icon {
+      @include external-link;
+    }
+  }
+
+  form {
+    @include target-blank(true) {
+      @include after(none);
+    }
+  }
+
+  @include selector.class(raw-link) {
+    @include disable-underline;
+  }
+
+  @include selector.class(reset-link) {
+    @include disable-underline;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+}
+
+

@@ -1,0 +1,6 @@
+@use 'font-family';
+@use '../function/font-stack';
+
+@mixin font-stack($type: primary, $important: false) {
+  @include font-family.font-family(font-stack.font-stack($type), $important);
+}

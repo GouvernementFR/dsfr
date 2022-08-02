@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '<%= top %>sass/condition';
+@use '<%= top %>sass/path';
+@use 'options';
+
+$options: options.$options !default;
+<%- uses.filter((use, index, array) => use.module.isLocal && array.map(use => use.module.options).indexOf(use.module.options) === index).map(use => `${use.module.options}: map.get($options, ${use.id});\n`).join(''); %>
+<%- uses.map(use => `@use '${use.path}' as ${use.module.name} with ($options: ${use.module.options});\n`).join(''); %>
+@include path.to-dist(map.get($options, depth));<%
+for (const mixin of mixins) {
+  let s = '  ';
+  let open = `\n\n@mixin ${mixin.name} ($situations: recommended deprecated, $breakpoints: first sm md lg xl, $with-media-query: true) {\n`;
+  let close = '}';
+
+  if (mixin.name === 'legacy') {
+    open += `${s}@include condition.legacy($with-media-query) {\n`;
+    close = `${s}}\n${close}`;
+    s += '  ';
+  }
+
+  for (const breakpoint of mixin.breakpoints) {
+    let bs = s;
+    let bpo = '';
+    let bpc = '';
+
+    bpo = `${bs}@include condition.breakpoint(${breakpoint.id}, $breakpoints, $with-media-query) {\n`;
+    bpc = `${bs}}\n`;
+    bs = s + '  ';
+
+    if (breakpoint.modules) for (const module of breakpoint.modules) {
+      bpo += `${bs}@include ${module.name}.${mixin.name}($situations, ${breakpoint.id}, false);\n`
+    }
+
+    if (breakpoint.situations) for (const situation of breakpoint.situations) {
+      bpo += `${bs}@if list.index($situations, ${situation.id}) {\n`;
+      for (const module of situation.modules) {
+        bpo += `${bs}  $include: map.get(${module.options}, include);\n`
+        bpo += `${bs}  @if $include {\n`
+        bpo += `${bs}    @include ${module.name}.${breakpoint.id}();\n`;
+        bpo += `${bs}  }\n`
+      }
+      bpo += `${bs}}\n`;
+    }
+    open += bpo + bpc;
+  }
+%><%- (open + close) %><% } %>

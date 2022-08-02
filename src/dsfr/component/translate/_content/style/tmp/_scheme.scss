@@ -1,0 +1,28 @@
+////
+/// translate Scheme
+/// @group translate
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+
+@mixin scheme ($legacy: false) {
+  #{selector.ns(translate)} {
+    #{selector.ns(translate)}__btn {
+      &[aria-expanded="true"] {
+        @include media-query.from(lg) {
+          @include color.text(active blue-france, (legacy: $legacy));
+          @include color.background(open blue-france, (legacy: $legacy));
+          @include action.hover-tint;
+        }
+      }
+    }
+
+    &__menu {
+      #{selector.ns(translate)}__language {
+        @include color.no-box-shadow((legacy:$legacy));
+      }
+    }
+  }
+}

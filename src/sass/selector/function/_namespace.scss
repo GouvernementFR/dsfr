@@ -1,0 +1,9 @@
+@use '../property/prefix';
+
+@function namespace ($name) {
+  @return prefix.$value + '-' + $name;
+}
+
+@function namespace-attribute ($name) {
+  @return 'data-#{namespace($name)}';
+}

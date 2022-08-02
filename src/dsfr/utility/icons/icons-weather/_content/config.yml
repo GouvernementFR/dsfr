@@ -1,0 +1,11 @@
+id: icons-weather
+asset:
+  type: icon
+  category: weather
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: flashlight-fill flashlight-line

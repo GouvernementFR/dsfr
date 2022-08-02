@@ -1,0 +1,11 @@
+id: search
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - action
+    - input
+    - button
+example:
+  wrapper: col-8

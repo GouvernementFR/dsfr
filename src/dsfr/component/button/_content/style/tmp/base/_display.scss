@@ -1,0 +1,15 @@
+////
+/// Button Module - Display
+/// @group button
+////
+
+@use '../../../../../../../sass/selector';
+@import '../../../../../link/_content/style/tmp/tool';
+@import '../setting';
+@import '../tool';
+
+@mixin first() {
+  @include selector.class(btn, (modifier: display)) {
+    @include nest-btn(md, left, theme-fill, null, false);
+  }
+}

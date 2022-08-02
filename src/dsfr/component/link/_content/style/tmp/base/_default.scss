@@ -1,0 +1,10 @@
+////
+/// Link Module : default
+/// @group link
+////
+
+@import '../tool';
+
+@mixin first() {
+  @include build-link();
+}

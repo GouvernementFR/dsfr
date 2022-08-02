@@ -1,0 +1,16 @@
+////
+/// Navigation Scheme
+/// @group navigation
+////
+
+@use 'scheme/default';
+@use 'scheme/menu';
+@use 'scheme/mega-menu';
+
+$options: () !default;
+
+@mixin scheme($legacy: false) {
+  @include default.first();
+  @include menu.first();
+  @include menu-menu.first();
+}

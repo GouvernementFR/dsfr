@@ -1,0 +1,12 @@
+id: table
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - selector
+script:
+  dependencies:
+    - api
+example:
+  wrapper: container

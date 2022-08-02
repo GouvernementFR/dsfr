@@ -1,0 +1,21 @@
+////
+/// Connect Module : default
+/// @group connect
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns-group(connect)} {
+    @include typography.set-text-margin(0 0 4v 0);
+
+    p {
+      @include typography.text-style(xs);
+    }
+
+    #{selector.ns(connect)} + p a {
+      @include typography.text-style(sm);
+    }
+  }
+}

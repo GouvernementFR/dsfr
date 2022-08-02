@@ -1,0 +1,84 @@
+////
+/// Table module : Shadow
+/// @group Table
+////
+
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@import '../tool';
+
+@mixin first() {
+  #{selector.ns(table__shadow)} {
+    @include selector.before('', block) {
+      @include spacing.absolute(var(--table-offset), 0, 0, 0);
+      @include elevation.z-index(over);
+      @include _table-scroll-shadow(false, false);
+      opacity: 0.32;
+      pointer-events: none;
+      transition: box-shadow 0.3s;
+    }
+
+    /**
+  * Modifier ombre à gauche
+  **/
+    &--left {
+      @include selector.before {
+        @include _table-scroll-shadow(
+          true,
+          false
+        ); // @TODO: à implementer dans la mixin shadow
+      }
+    }
+
+    /**
+  * Modifier ombre à droite
+  **/
+    &--right {
+      @include selector.before {
+        @include _table-scroll-shadow(
+          false,
+          true
+        ); // @TODO: à implementer dans la mixin shadow
+      }
+    }
+
+    /**
+  * Modifier combinaison ombre à gauche et ombre à droite
+  **/
+    &--left#{&}--right {
+      @include selector.before('', block) {
+        @include _table-scroll-shadow(
+          true,
+          true
+        ); // @TODO: à implementer dans la mixin shadow
+      }
+    }
+  }
+
+  /*
+* Positionnement ombres sur le tableau sans caption
+*/
+  #{selector.ns(table--no-caption)} #{selector.ns(table__shadow)} {
+    @include selector.before('', block) {
+      @include spacing.absolute(0, 0, 0, 0);
+    }
+  }
+
+  /*
+* Positionnement ombres sur le tableau avec caption en bas
+*/
+  #{selector.ns(table--caption-bottom)} #{selector.ns(table__shadow)} {
+    @include selector.before('', block) {
+      @include spacing.absolute(0, 0, 0, 0);
+    }
+  }
+
+  @include selector.theme(dark) {
+    @include selector.class(table, (element: shadow)) {
+      @include selector.before {
+        opacity: 1;
+      }
+    }
+  }
+}

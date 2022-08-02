@@ -1,0 +1,147 @@
+////
+/// Radio Module : radio rich
+/// @group radio
+////
+
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(radio-rich)} {
+    @include spacing.relative;
+
+    input[type='radio'] {
+      + label {
+        @include spacing.padding-left(14v);
+        @include spacing.margin-left(0);
+        min-height: spacing.space(22v);
+        @include spacing.size(100%);
+        @include spacing.padding-top(2v);
+        @include spacing.padding-bottom(2v);
+        @include spacing.padding-right(26v);
+        @include display.flex(column, flex-start, center);
+
+        /**
+        * On applique la taille sm pour le bouton radio riche
+        */
+        @include selector.before {
+          @include spacing.size(4v, 4v);
+          @include spacing.absolute(50%, null, null, 7v);
+          @include spacing.margin-top(-2v);
+        }
+
+        #{selector.ns(hint-text)} {
+          @include spacing.margin-left(0);
+        }
+      }
+
+      &:disabled,
+      &[disabled] {
+        ~ #{selector.ns(radio-rich__img)} {
+          filter: grayscale(1);
+        }
+      }
+
+      &:not(:disabled) ~ label {
+        @include action.hover-tint;
+        @include action.enable-tint;
+      }
+
+      @include action.hover-brighten(
+        '&:not(:disabled) ~ label',
+        '~ #{selector.ns(radio-rich__img)}'
+      );
+    }
+
+    &__img {
+      @include action.hover-brighten-filter;
+      @include spacing.padding-left(1v);
+      @include spacing.size(21v, 20v);
+      @include spacing.absolute(1v, 1v);
+      @include display.flex;
+      pointer-events: none;
+
+      img,
+      svg {
+        max-width: spacing.space(20v);
+        object-fit: cover;
+      }
+    }
+  }
+
+  /**
+ * Style spécifique des radios intégrés dans un fiedset
+ */
+  #{selector.ns(fieldset)} {
+    #{selector.ns(radio-rich)} {
+      &:first-child {
+        input[type='radio'] + label {
+          @include spacing.margin-top(3v);
+        }
+      }
+
+      input[type='radio'] + label {
+        @include spacing.margin-top(2v);
+        @include spacing.margin-bottom(4v);
+      }
+
+      &:last-child {
+        input[type='radio'] + label {
+          @include spacing.margin-bottom(7v);
+        }
+      }
+    }
+
+    /**
+   * Modificateur pour afficher les radios en ligne
+   */
+    &--inline {
+      #{selector.ns(radio-rich)} {
+        &:not(:last-child) {
+          input[type='radio'] + label {
+            @include spacing.margin-right(3v);
+            @include spacing.margin-bottom(2v);
+          }
+
+          #{selector.ns(radio-rich)}__img {
+            right: spacing.space(4v);
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          input[type='radio'] + label {
+            @include spacing.margin-bottom(3v);
+          }
+        }
+
+        &:first-child {
+          #{selector.ns(radio-rich)}__img {
+            top: spacing.space(4v);
+          }
+        }
+
+        &__img {
+          top: spacing.space(3v);
+        }
+      }
+
+      /**
+     * Écart entre le text d'aide et les radios riches dans le cas des radios inline
+     */
+      #{selector.ns(hint-text)} + #{selector.ns(fieldset__content)} {
+        #{selector.ns(radio-rich)} {
+          &:first-child {
+            input[type='radio'] + label {
+              @include spacing.margin-top(6v);
+            }
+          }
+        }
+      }
+    }
+  }
+}

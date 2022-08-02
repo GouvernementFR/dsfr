@@ -1,8 +1,0 @@
-////
-/// Button Module : default
-/// @group button
-////
-
-@include build-btn() {
-  @include font-weight(medium);
-}

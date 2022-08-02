@@ -1,0 +1,23 @@
+<%
+let element = {
+  path: 'component/radio/example/sample/radio-rich',
+  data: {
+      name: prefix + '-radios-theme',
+      rich: true,
+  }
+}
+
+let fields = {
+  legend: 'Choisissez un thème pour personnaliser l’apparence du site.',
+  choice: true,
+  elements: [
+    { ...element, data: { radio: {...element.data, image: {name: 'sun', type: 'pictogram'}, label: 'Thème clair', attributes: { value: 'light'}, id: element.data.name + '-light' } } },
+    { ...element, data: { radio: {...element.data, image: {name: 'moon', type: 'pictogram'}, label: 'Thème sombre', attributes: { value: 'dark'}, id: element.data.name + '-dark' } } },
+    { ...element, data: { radio: {...element.data, image: {name: 'system', type: 'pictogram'}, label: 'Système', hint: 'Utilise les paramètres système.', attributes: { value: 'system'}, id: element.data.name + '-system' } } },
+  ]
+}
+%>
+
+<div id="<%= prefix %>-display" class="<%= prefix %>-display">
+  <%- include('../../../../../core/form/_content/example/sample/fieldset', {fieldset: fields}) %>
+</div>

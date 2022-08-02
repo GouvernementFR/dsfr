@@ -1,0 +1,22 @@
+////
+/// Callout Legacy
+/// @group callout
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/selector';
+
+@mixin first() {
+  @include legacy.is(ie11) {
+    @include selector.class(callout) {
+      &__title {
+        @include spacing.margin(0 0 2v);
+      }
+
+      &__text {
+        @include spacing.margin(0);
+      }
+    }
+  }
+}

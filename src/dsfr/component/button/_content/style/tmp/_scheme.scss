@@ -1,0 +1,37 @@
+////
+/// button Scheme
+/// @group button
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@import '../../../../link/_content/style/tmp/tool';
+@import 'setting';
+@import 'tool';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(btn) {
+    @include color.background(action-high blue-france, (legacy:$legacy, hover: true));
+    @include color.text(inverted blue-france, (legacy:$legacy));
+
+    @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
+
+    // Outline variant
+    &--secondary {
+      @include btn-kind-scheme(2, $legacy);
+    }
+
+    // Grey outline variant
+    &--tertiary {
+      @include btn-kind-scheme(3, $legacy);
+    }
+
+    // Ghost variant
+    &--tertiary-no-outline,
+    &--close,
+    &--display {
+      @include btn-kind-scheme(4, $legacy);
+    }
+  }
+}

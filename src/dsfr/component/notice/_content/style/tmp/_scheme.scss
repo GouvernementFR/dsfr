@@ -1,0 +1,19 @@
+////
+/// notice Scheme
+/// @group notice
+////
+
+@use '../../../../../sass/color';
+@use '../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(notice) {
+    @include color.background(contrast grey, (legacy:$legacy, hover: false, active: false));
+    @include color.text(title grey, (legacy:$legacy));
+
+    &--info {
+      @include color.background(contrast info, (legacy:$legacy));
+      @include color.text(default info, (legacy:$legacy));
+    }
+  }
+}

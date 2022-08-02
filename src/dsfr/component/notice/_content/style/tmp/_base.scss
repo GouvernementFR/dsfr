@@ -1,0 +1,47 @@
+////
+/// Notice Module
+/// @group notice
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin first() {
+  @include selector.class(notice) {
+    @include spacing.relative();
+    @include typography.set-title-margin(0);
+    @include typography.set-text-margin(0);
+    @include spacing.padding-y(4v);
+
+    &__body {
+      @include spacing.relative;
+      @include spacing.padding(0 10v 0 10v);
+
+      @include icon.size(md, before);
+      @include icon.style(before) {
+        @include spacing.absolute(null, null, null, 0);
+      }
+    }
+
+    &__title {
+      @include spacing.relative;
+      @include typography.text-style(md);
+      @include typography.font-weight(bold);
+    }
+
+    @include selector.class(btn, (modifier: close)) {
+      @include nest-btn(sm, only, close-line, null, false);
+      @include spacing.absolute(-1v, 4v);
+    }
+
+    &--info {
+      @include selector.class(notice, (element: body)) {
+        @include icon.image(info-fill, before);
+        @include icon.content;
+      }
+    }
+  }
+}

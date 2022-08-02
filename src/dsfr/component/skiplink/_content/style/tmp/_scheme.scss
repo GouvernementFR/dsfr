@@ -1,0 +1,13 @@
+////
+/// Skiplink Scheme
+/// @group skiplink
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(skiplinks)} {
+    @include color.background(contrast grey, (legacy:$legacy));
+  }
+}

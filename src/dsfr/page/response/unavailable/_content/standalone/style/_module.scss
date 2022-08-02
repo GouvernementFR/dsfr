@@ -1,0 +1,184 @@
+////
+/// Connect Standalone Module
+/// @group connect
+////
+
+@import '../../../../../core/index';
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  @include typography.font-family;
+  @include typography.text-adjustments;
+  @include spacing.margin(0);
+  @include spacing.padding(0);
+  @include typography.text-style(md);
+  @include standalone-box-sizing(true);
+  @include display-flex(column, center, center);
+}
+
+main {
+  @include display-flex(column, null, space-between);
+  flex: 1;
+}
+
+a {
+  @include a-reset(true);
+  outline-offset: 2px;
+  outline-width: 2px;
+}
+
+*:focus-visible {
+  z-index: 500;
+  outline-style: solid;
+}
+
+#{selector.ns(container)} {
+  @include size(100%);
+  @include spacing.max-width(312v);
+  @include spacing.margin-x(auto);
+  @include spacing.padding-x(4v);
+  @include spacing.padding-x(6v, md);
+  @include display-flex(row, center);
+  flex: 1;
+}
+
+#{selector.ns(grid-row)} {
+  @include display-flex;
+  flex-wrap: wrap;
+  @include spacing.margin(0);
+  @include spacing.padding(0);
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--gutters {
+    @include spacing.margin(-2v);
+
+    > {
+      @include selector.start(col-) {
+        @include spacing.padding(2v);
+      }
+    }
+  }
+}
+
+#{selector.ns(col-offset-md-1)} {
+  @include respond-from(md) {
+    margin-left: calc(100% / 12);
+  }
+}
+
+#{selector.ns(col-md-6)} {
+  @include respond-from(md) {
+    flex: 0 0 calc(600% / 12);
+    width: calc(600% / 12);
+    max-width: calc(600% / 12);
+  }
+}
+
+#{selector.ns(col-md-3)} {
+  @include respond-from(md) {
+    flex: 0 0 calc(300% / 12);
+    width: calc(300% / 12);
+    max-width: calc(300% / 12);
+  }
+}
+
+#{selector.ns(col-12)} {
+  flex: 0 0 calc(1200% / 12);
+  width: calc(1200% / 12);
+  max-width: calc(1200% / 12);
+}
+
+#{selector.ns-group(btns)} {
+  list-style: none;
+  @include spacing.padding(0);
+  @include spacing.margin-y(-2v);
+
+  #{selector.ns(btn)} {
+    > span {
+      @include display-flex(row, center, null, null, true);
+    }
+  }
+
+  &--inline {
+    @include display-flex(row, null, null, wrap);
+    @include spacing.margin-x(-2v);
+
+    #{selector.ns(btn)} {
+      @include spacing.margin-x(2v);
+    }
+  }
+
+  &--sm {
+    #{selector.ns(btn)} {
+      @include typography.text-style(sm);
+    }
+  }
+}
+
+#{selector.ns(btn)} {
+  border-radius: 0;
+  @include spacing.padding(1v 3v);
+  @include spacing.margin-y(2v);
+  background-color: transparent;
+  overflow: initial;
+  max-width: 100%;
+  max-height: none;
+  font-weight: 500;
+  @include display-flex(row, center, null, null, true);
+
+  svg {
+    @include size(4v, 4v);
+    @include spacing.margin-left(-0.5v);
+    @include spacing.margin-right(2v);
+  }
+}
+
+#{selector.ns(server)} {
+  &__body {
+    @include spacing.margin-y(14v);
+  }
+
+  &__footer {
+    @include spacing.margin-top(14v);
+    @include spacing.margin-bottom(8v);
+  }
+
+  &__image {
+    @include display-flex(row, center, center);
+    @include spacing.margin-y(14v, md);
+    @include spacing.margin-bottom(14v);
+
+    img {
+      @include spacing.width(53v);
+      @include spacing.width(100%, md);
+      @include spacing.margin(0 auto);
+    }
+  }
+}
+
+#{selector.ns(h1)} {
+  @include typography.title-style(h1);
+  @include spacing.margin-top(0);
+  @include spacing.margin-bottom(6v);
+  @include typography.font-weight(bold);
+}
+
+#{selector.ns(text--xl)} {
+  @include typography.text-style(xl);
+  @include spacing.margin-top(0);
+  @include spacing.margin-bottom(6v);
+}
+
+#{selector.ns(text--sm)} {
+  @include typography.text-style(sm);
+  @include spacing.margin-top(0);
+  @include spacing.margin-bottom(4v);
+}

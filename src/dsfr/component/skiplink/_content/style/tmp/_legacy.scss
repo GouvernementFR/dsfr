@@ -1,0 +1,18 @@
+////
+/// Skiplink Legacy
+/// @group skiplink
+////
+
+@use '../../../../../../sass/selector';
+
+@include first() {
+  /**
+  * Correctif
+  */
+  #{selector.ns(skiplinks)} {
+    &.focus-within {
+      position: relative;
+      transform: translateY(0);
+    }
+  }
+}

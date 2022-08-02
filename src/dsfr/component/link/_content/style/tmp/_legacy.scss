@@ -1,0 +1,28 @@
+////
+/// Link Legacy
+/// @group link
+////
+
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include selector.class(link) {
+    background-image: none;
+    text-decoration: underline;
+    @include icon.icon-legacy(null, sm, before);
+
+    &--sm {
+      @include icon.icon-legacy(null, sm, before);
+    }
+
+    &--lg {
+      @include icon.icon-legacy(null, md, before);
+    }
+  }
+
+  @include selector.class(links, (group: true))} {
+    @include typography.disable-list-style-legacy(true);
+  }
+}

@@ -1,0 +1,9 @@
+id: callout
+style:
+  dependencies:
+    - action
+    - color
+    - typography
+    - button
+example:
+  wrapper: col-8

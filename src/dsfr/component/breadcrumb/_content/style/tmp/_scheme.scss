@@ -1,0 +1,16 @@
+////
+/// Breadcrumb Scheme
+/// @group breadcrumb
+////
+
+@use '../../../../../../sass/color';
+
+@mixin scheme ($legacy: false) {
+  @include selector.class(breadcrumb) {
+    @include color.text(mention grey, (legacy:$legacy));
+
+    &__link[aria-current] {
+      @include color.text(active grey, (legacy:$legacy));
+    }
+  }
+}

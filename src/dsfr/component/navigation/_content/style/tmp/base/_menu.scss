@@ -1,0 +1,52 @@
+////
+/// Navigation Module : Menu
+/// @group navigation
+////
+
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns(menu)} {
+    @include spacing.margin(-4px -4v);
+    @include spacing.padding(4px 4v);
+    @include spacing.size(auto);
+
+    &#{selector.ns(collapsing)} {
+      @include spacing.margin-top(0);
+      @include spacing.padding-top(0);
+    }
+
+    @include media-query.from(lg) {
+      pointer-events: none;
+      @include spacing.absolute(100%);
+    }
+
+    @include selector.list {
+      @include spacing.margin(0);
+      @include spacing.padding(2v 0 6v);
+
+      @include media-query.from(lg) {
+        @include spacing.width(80v);
+        pointer-events: auto;
+        @include spacing.padding(0);
+        @include spacing.margin-bottom(8v);
+      }
+    }
+
+    #{selector.ns(nav__link)} {
+      @include spacing.padding-x(4v);
+      @include selector.before {
+        left: 0;
+      }
+      @include media-query.from(lg) {
+        @include spacing.padding(3v 4v);
+        @include selector.before {
+          left: 0;
+        }
+      }
+    }
+  }
+}

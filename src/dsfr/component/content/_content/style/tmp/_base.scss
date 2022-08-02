@@ -1,0 +1,56 @@
+////
+/// Content Module
+/// @group content
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/media';
+@use '../../../../../../sass/typography';
+
+@import '../../../../button/_content/style/tmp/setting';
+@import '../../../../button/_content/style/tmp/tool';
+@import 'setting';
+@import 'tool';
+
+@mixin first() {
+  @include selector.class(content-media) {
+    @include spacing.size(100%);
+    @include spacing.margin(10v 0);
+    @include display.flex(column, center);
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
+
+    &__img {
+      @include spacing.size(100%);
+    }
+
+    @include selector.start(responsive-img) {
+      @include media.aspect-ratio();
+    }
+
+    @include selector.start(responsive-vid) {
+      @include media.aspect-ratio();
+    }
+
+    &__caption,
+    &__transcription {
+      @include spacing.size(100%);
+      @include spacing.margin-top(2v);
+      text-align: right;
+    }
+
+    &__caption {
+      @include typography.text-style(xs);
+    }
+
+    &__transcription {
+      @include nest-btn(sm, right, menu-2-fill, null, true, true);
+    }
+
+    $medias: (#{&}__img, selector.class(responsive-vid));
+    $captions: (#{&}__caption, #{&}__transcription);
+    @include content-media-sizes($medias, $captions, 25%);
+  }
+}

@@ -1,0 +1,14 @@
+////
+/// Tile Module
+/// @group tile
+////
+
+@use 'base/default';
+@use 'base/variations';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include variations.first();
+}

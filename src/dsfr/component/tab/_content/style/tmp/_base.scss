@@ -1,0 +1,14 @@
+////
+/// Tab base
+/// @group tab
+////
+
+@use 'base/default';
+@use 'base/shadow';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include shadow.first();
+}

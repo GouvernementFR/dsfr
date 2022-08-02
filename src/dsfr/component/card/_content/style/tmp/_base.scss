@@ -1,0 +1,24 @@
+////
+/// Card base
+/// @group card
+////
+
+@use 'base/default';
+@use 'base/header';
+@use 'base/content';
+@use 'base/footer';
+@use 'base/sm';
+@use 'base/lg';
+@use 'base/horizontal';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include header.first();
+  @include content.first();
+  @include footer.first();
+  @include sm.first();
+  @include lg.first();
+  @include horizontal.first();
+}

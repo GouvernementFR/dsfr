@@ -1,0 +1,18 @@
+////
+/// Content Legacy
+/// @group content
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+
+@mixin first {
+  @include selector.class(content-media) {
+    &__transcription {
+      @include selector.class(btn) {
+        @include icon.icon-legacy(menu-2-fill, sm, before);
+      }
+    }
+  }
+}

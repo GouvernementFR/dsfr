@@ -1,0 +1,44 @@
+////
+/// Upload Module
+/// @group upload
+////
+///
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns-group(upload)} {
+    #{selector.ns(label)} {
+      #{selector.ns(hint-text)} {
+        @include spacing.margin-top(3v);
+      }
+
+      + #{selector.ns(upload)} {
+        @include spacing.margin-top(4v);
+      }
+    }
+  }
+
+  #{selector.ns(upload)} {
+    @include typography.text-style(sm);
+    @include spacing.width(100%);
+    display: inline-flex;
+    @include spacing.margin(0);
+
+    &:disabled {
+      &::-webkit-file-upload-button {
+        outline-style: none;
+        cursor: not-allowed;
+      }
+    }
+
+    &::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+      cursor: pointer;
+      @include spacing.margin-right(2v);
+    }
+  }
+}

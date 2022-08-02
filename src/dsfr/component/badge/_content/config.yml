@@ -1,0 +1,12 @@
+id: badge
+asset:
+  dependencies:
+    - icons-system
+style:
+  dependencies:
+    - action
+    - typography
+    - icon
+    - color
+example:
+  wrapper: col-8

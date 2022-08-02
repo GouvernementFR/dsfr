@@ -1,0 +1,66 @@
+////
+/// Badge Module : default
+/// @group badge
+////
+
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/selector';
+@import '../../../../../link/_content/style/tmp/tool';
+@import '../setting';
+@import '../tool';
+
+@mixin first() {
+  @include build-badge();
+
+  #{selector.ns(badge)} {
+    @include nest-badge(md, left, null, null, false);
+    @include icon.style(before);
+    @include typography.font-weight(bold);
+    @include spacing.max-width(100%);
+    text-transform: uppercase;
+    border-radius: spacing.space(1v);
+
+    &--sm {
+      @include nest-badge(sm, left, null, null, false);
+    }
+
+    &,
+    &--sm {
+      &#{selector.ns(badge)}--info {
+        @include icon.image(info-fill, before);
+      }
+
+      &#{selector.ns(badge)}--success {
+        @include icon.image(success-fill, before);
+      }
+
+      &#{selector.ns(badge)}--error {
+        @include icon.image(error-fill, before);
+      }
+
+      &#{selector.ns(badge)}--warning {
+        @include icon.image(warning-fill, before);
+      }
+
+      &#{selector.ns(badge)}--new {
+        @include icon.image(flashlight-fill, before);
+      }
+
+      &--info,
+      &--success,
+      &--error,
+      &--warning,
+      &--new {
+        @include icon.content;
+      }
+
+      &#{selector.ns(badge)}--no-icon {
+        @include selector.before {
+          content: none;
+        }
+      }
+    }
+  }
+}

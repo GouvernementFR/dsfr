@@ -1,0 +1,41 @@
+////
+/// Password Module
+/// @group password
+////
+
+@use '../../../../../sass/selector';
+@use '../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns(password)} {
+    @include spacing.relative;
+
+    &__format {
+      #{selector.ns(error-text)},
+      #{selector.ns(valid-text)},
+      #{selector.ns(info-text)} {
+        @include spacing.margin-top(1v);
+        @include selector.before(','); // Ajoute une pause aux lecteurs d'écran
+      }
+    }
+
+    #{ns-attr(capslock)} {
+      @include selector.before('', block) {
+        @include spacing.absolute(3v, 3v, null, null, 4v, 4v);
+        pointer-events: none;
+      }
+    }
+
+    &__checkbox {
+      @include spacing.absolute(-3v, 0);
+    }
+
+    &__input {
+      @include spacing.margin-bottom(3v);
+    }
+
+    &__label {
+      @include spacing.padding-right(24v);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+////
+/// Core Legacy : Action hover
+/// @group core
+////
+
+@use '../../../../../../../sass/color/index';
+@use '../../../../../../../sass/legacy/index';
+
+@include legacy.is(ie11) {
+  @include selector.class(enlarge-link) {
+    @include color.transparent-background((legacy: true, hover: true));
+
+    @include disable-underline-legacy;
+  }
+}

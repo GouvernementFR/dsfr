@@ -1,0 +1,9 @@
+id: icons-health
+asset:
+  type: icon
+  category: health
+style:
+  options:
+    asset:
+      type: icon
+      property: icons

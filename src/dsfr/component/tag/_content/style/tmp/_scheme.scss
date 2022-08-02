@@ -1,0 +1,71 @@
+////
+/// Tag Module
+/// @group tag
+////
+
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
+@import './tool';
+
+@mixin _table-scheme($legacy: false) {
+  @include selector.class(tag) {
+    @include color.text(label grey, (legacy: $legacy));
+    @include color.background(contrast grey, (legacy: $legacy));
+
+    @include pressed-selector(false) {
+      @include color.text(action-high blue-france, (legacy: $legacy));
+      @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+    }
+
+    @include selector.class(tag, (modifier: dismiss, combine: true)) {
+      @include color.text(inverted grey, (legacy: $legacy));
+      @include color.background(action-high blue-france, (legacy: $legacy, hover: true));
+    }
+  }
+
+  @include action.clickable-selector {
+    @include selector.class(tag, (combine: true)) {
+      @include color.text(action-high blue-france, (legacy: $legacy));
+      @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
+
+      @include color.accentuate {
+        @include color.text(action-high accent, (legacy: $legacy));
+        @include color.background(action-low accent, (legacy: $legacy, hover: true));
+      }
+
+      @include pressed-selector(true) {
+        @include color.text(inverted grey, (legacy: $legacy));
+        @include color.transparent-background((legacy:$legacy));
+        @include tag-punched-background(background action-high blue-france, md, $legacy);
+
+        @include disabled.selector {
+          background-image: none;
+        }
+
+        @include selector.after {
+          @include color.text(action-high blue-france, (legacy: $legacy));
+        }
+
+        &#{selector.ns(tag)}--sm {
+          @include tag-punched-background(background action-high blue-france, sm, $legacy);
+        }
+      }
+
+      @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
+    }
+  }
+
+  #{selector.ns-group(tags)} {
+    &#{selector.ns-group(tags)}--sm {
+      @include action.clickable-selector {
+        &#{selector.ns(tag)} {
+          @include pressed-selector(true) {
+            @include tag-punched-background(background action-high blue-france, sm, $legacy);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+id: highlight
+style:
+  dependencies:
+    - typography
+    - color
+example:
+  wrapper: col-8

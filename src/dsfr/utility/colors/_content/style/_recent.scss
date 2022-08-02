@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use 'colors';
+
+$options: () !default;
+
+@mixin first() {
+  @include colors.colors(map.get($options, decisions));
+}

@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use 'sass:string';
+@use '../function/class';
+
+@mixin combine ($selector, $combine) {
+  @if not $combine {
+    #{$selector} {
+      @content;
+    }
+  }
+  @else if $combine == true {
+    &#{$selector} {
+      @content;
+    }
+  }
+  @else if string.quote($combine) == "not" {
+    &:not(#{$selector}) {
+      @content;
+    }
+  }
+  @else if $combine == child {
+    > #{$selector} {
+      @content;
+    }
+  }
+  @else if $combine == ajacent {
+    + #{$selector} {
+      @content;
+    }
+  }
+  @else if $combine == child {
+    ~ #{$selector} {
+      @content;
+    }
+  }
+}

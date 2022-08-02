@@ -1,0 +1,47 @@
+////
+/// Follow Scheme
+/// @group follow
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/media-query';
+
+@import '../../../../button/_content/style/tmp/setting';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
+  @include selector.class(follow) {
+    @include color.background(alt blue-france, (legacy: $legacy));
+
+    @include selector.class(input) {
+      @include color.background(default grey, (legacy: $legacy));
+    }
+
+    &__title {
+      @include color.text(title grey, (legacy: $legacy));
+    }
+
+    &__newsletter {
+      &-legal {
+        @include color.text(mention grey, (legacy: $legacy));
+      }
+    }
+
+    &__social {
+      @include selector.class(btn) {
+        @include btn-kind-scheme(4, $legacy);
+      }
+    }
+
+    @include selector.class(grid-row) {
+      > *:not(:first-child) {
+        // Séparateur en box-shadow
+        @include color.box-shadow(default blue-france, (legacy: $legacy), top-1-out);
+        @include media-query.from(md) {
+          @include color.box-shadow(default blue-france, (legacy: $legacy), left-1-out);
+        }
+      }
+    }
+  }
+}

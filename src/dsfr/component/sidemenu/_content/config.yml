@@ -1,0 +1,12 @@
+id: sidemenu
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - action
+    - icon
+script:
+  dependencies:
+    - api
+    - action

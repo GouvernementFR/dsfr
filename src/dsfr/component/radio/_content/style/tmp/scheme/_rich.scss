@@ -1,0 +1,55 @@
+////
+/// Radio Scheme : radio rich
+/// @group radio
+////
+
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/disabled';
+@use '../../../../../../../sass/selector';
+@import '../tool';
+
+@mixin first($legacy: false) {
+  #{selector.ns(radio-rich)} {
+    &__img {
+      @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
+    }
+
+    input[type="radio"] {
+      + label {
+        @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
+        @include color.background(default grey, (legacy:$legacy));
+
+        @include selector.before {
+          @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(false, sm));
+        }
+      }
+
+      @include disabled.selector {
+        + label {
+          @include selector.before {
+            @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(false, sm));
+          }
+        }
+      }
+
+      &:checked {
+        + label {
+          @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-in);
+
+          @include selector.before {
+            @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true, sm));
+          }
+        }
+
+        @include disabled.selector {
+          + label {
+            @include color.box-shadow(text disabled grey, (legacy:$legacy), all-1-in);
+            @include selector.before {
+              @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true, sm));
+            }
+          }
+        }
+      }
+    }
+  }
+}

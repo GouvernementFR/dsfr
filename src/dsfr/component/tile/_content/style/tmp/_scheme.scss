@@ -1,0 +1,19 @@
+////
+/// Tile Module
+/// @group tile
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(tile)} {
+    @include color.box-shadow((default grey) (plain blue-france), (legacy: $legacy), all-1-in bottom-1v-in);
+
+    @include color.background(default grey, (legacy: $legacy));
+
+    &--grey {
+      @include color.background(contrast grey, (legacy: $legacy));
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use 'tmp/base';
+
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
+}

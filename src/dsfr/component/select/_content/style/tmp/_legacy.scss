@@ -1,0 +1,16 @@
+////
+/// Select legacy
+/// @group select
+////
+
+@use '../../../../../../sass/selector';
+
+@mixin first() {  /**
+  * Cache l'icone native du select sur IE
+  */
+  @include selector.class(select) {
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}

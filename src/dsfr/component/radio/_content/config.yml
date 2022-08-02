@@ -1,0 +1,10 @@
+id: radio
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - disabled
+    - form
+example:
+  wrapper: col-8

@@ -1,0 +1,38 @@
+////
+/// Sidemenu Module : default
+/// @group sidemenu
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(sidemenu)} {
+    @include typography.disable-list-style;
+    @include action.disable-underline;
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
+    @include spacing.relative;
+    @include spacing.margin-x(-4v);
+
+    a:not([href]) {
+      cursor: default;
+    }
+
+    @include spacing.margin-x(0, md);
+    @include spacing.padding-right(8v, md);
+
+    #{selector.ns(collapse)} {
+      @include spacing.margin(-1v -1v 0);
+      @include spacing.padding(1v 1v 0);
+      @include spacing.margin-x(-1v, md);
+      @include spacing.padding-x(1v, md);
+
+      &#{selector.ns(collapsing)} {
+        @include spacing.margin-y(0);
+        @include spacing.padding-y(0);
+      }
+    }
+  }
+}

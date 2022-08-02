@@ -1,0 +1,11 @@
+id: icons-user
+asset:
+  type: icon
+  category: user
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: user-fill user-line

@@ -1,0 +1,11 @@
+id: icons-editor
+asset:
+  type: icon
+  category: editor
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: font-size bold highlight italic link-unlink list-ordered list-unordered

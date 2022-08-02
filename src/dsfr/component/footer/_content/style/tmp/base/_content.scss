@@ -1,0 +1,77 @@
+////
+/// Footer module : Content
+/// @group Footer
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/media-query';
+
+@mixin first() {
+  /**
+  * La partie "content" représente les informations sous forme de texte rajoutées dans le footer
+  * ainsi que les éventuels liens simples
+  */
+  #{selector.ns(footer)} {
+    &__content {
+      @include display.flex(null, null, null, wrap);
+      flex-basis: 100%;
+      @include spacing.margin-top(6v);
+
+      @include media-query.from(md) {
+        @include spacing.margin-left(auto);
+      }
+
+      @include media-query.from(lg) {
+        @include spacing.margin-top(0);
+        flex-basis: calc(100% - (100% / 2));
+      }
+    }
+
+    /**
+    * Contenu texte simple
+    */
+    &__content-desc {
+      @include action.enable-underline;
+      @include typography.set-text-margin(0 0 2v 0);
+      @include spacing.size(100%);
+      @include typography.text-style(sm);
+    }
+
+    /**
+    * Liste des liens situés en dessous de la partie texte
+    */
+    &__content-list {
+      @include display.flex(row);
+      align-self: center;
+      // @include spacing.margin-bottom(-4v);
+      // @include spacing.margin-bottom(4v, md);
+      flex-wrap: wrap;
+
+      > li {
+        @include spacing.margin-right(4v);
+        @include spacing.margin-right(6v, sm);
+        @include spacing.margin-top(2v);
+        @include spacing.margin-bottom(2v);
+
+        @include selector.before(none);
+
+        &:last-child {
+          @include spacing.margin-right(0);
+        }
+      }
+    }
+
+    &__content-link {
+      font-weight: bold;
+      @include typography.text-style(sm);
+
+      &:not(:hover):not(:active) {
+        @include action.link-underline-hover-only;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+@use '../../../../../../sass/reset';
+
+@mixin iframe() {
+  @include reset.iframe(true);
+}

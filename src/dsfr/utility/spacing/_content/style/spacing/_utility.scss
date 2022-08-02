@@ -1,0 +1,9 @@
+@use '../../../../../../sass/spacing';
+
+@mixin utility ($property, $direction: null, $value: 0, $unit: null, $breakpoint: null, $important: false) {
+  $size: if($unit, '#{$value}#{$unit}', $value);
+
+  @include spacing.selector($property, $direction, $value, $unit, $breakpoint) {
+    @include spacing.space($property, $size, $direction, $important);
+  }
+}

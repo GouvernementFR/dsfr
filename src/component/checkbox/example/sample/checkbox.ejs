@@ -1,9 +1,0 @@
-<%
-let checkbox = locals.checkbox || {};
-let jsonData = JSON.parse(include('../../../form/example/sample/data', {form: checkbox}));
-
-let data = {...checkbox, ...jsonData}
-data.label = checkbox.label || 'Label checkbox';
-%>
-
-<%- include('../../template/ejs/checkbox-group', {checkbox: data}); %>

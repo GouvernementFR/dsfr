@@ -1,0 +1,27 @@
+////
+/// Connect Module : plus
+/// @group connect
+////
+
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/selector';
+
+@mixin first() {
+  #{selector.ns(connect)} {
+    &--plus {
+      @include spacing.padding-right(12v);
+      @include selector.after ('', block) {
+        @include spacing.absolute(4v, 3v, 4v, null, 6v, 6v);
+        background-repeat: repeat-x, repeat-y;
+        background-position: 50% 50%, 50% 50%;
+        background-size: 21.5% 21.5%, 21.5% 21.5%;
+      }
+    }
+
+    &--plus &__brand {
+      @include spacing.margin-right(-10px);
+      overflow: hidden;
+      @include spacing.width(100%);
+    }
+  }
+}

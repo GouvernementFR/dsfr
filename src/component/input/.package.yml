@@ -1,9 +1,0 @@
-id: input
-title: Champs de saisie
-description: Les champs permettent à un utilisateur d'entrer du contenu et données.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input
-wrapper: col-8
-style:
-  - core
-  - form
-  - button

@@ -1,0 +1,12 @@
+////
+/// Connect Module
+/// @group connect
+////
+
+@use 'scheme/default';
+@use 'scheme/group';
+
+@mixin scheme($legacy: false, $standalone: false) {
+  @include default.scheme($legacy, $standalone);
+  @include group.scheme($legacy, $standalone);
+}

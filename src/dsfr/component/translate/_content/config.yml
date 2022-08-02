@@ -1,0 +1,17 @@
+id: translate
+asset:
+  dependencies:
+    - icons-system
+style:
+  dependencies:
+    - typography
+    - color
+    - action
+    - button
+    - navigation
+script:
+  dependencies:
+    - api
+    - action
+example:
+  wrapper: col-8

@@ -1,0 +1,10 @@
+@forward 'function/data-uri-svg';
+@forward 'mixin/aspect-ratio';
+@forward 'image' as image-*;
+@forward 'video' as video-*;
+@forward 'outdated' as outdated*;
+@forward 'legacy' as legacy-*;
+
+@use 'property/aspect-ratios';
+
+$aspect-ratios: aspect-ratios.$values

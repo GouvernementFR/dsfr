@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use '../../string';
+@use '../../spacing';
+@use '../property/box-shadows';
+@use '../property/constant';
+
+@function has($id) {
+  @return map.has-key(box-shadows.$values, $id);
+}
+
+@function get($id, $index: 1) {
+  @return string.replace(spacing.space(map.get(box-shadows.$values, $id)), constant.$value, '$color##{$index}');
+}

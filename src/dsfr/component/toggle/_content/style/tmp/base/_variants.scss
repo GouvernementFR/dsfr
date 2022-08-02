@@ -1,0 +1,44 @@
+////
+/// Toggle Module : Variants
+/// @group toggle
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
+@mixin first() {
+  #{selector.ns(toggle--label-left)} {
+    #{selector.ns(toggle__input)} {
+      order: 1;
+      @include spacing.margin(0 0 0 auto);
+
+      &#{selector.ns-attr(checked-label)} ~ #{selector.ns(toggle__label)} {
+        @include spacing.padding-left(0);
+        @include spacing.padding-right(4v);
+      }
+    }
+
+    #{selector.ns(toggle__label)} {
+      justify-content: space-between;
+      @include spacing.padding-left(0);
+      width: calc(100% - #{space(10v)});
+
+      @include selector.before {
+        flex-shrink: 0;
+        order: 1;
+        @include spacing.margin-right(-10v);
+        @include spacing.margin-left(4v);
+        text-align: right;
+      }
+
+      @include selector.after {
+        left: auto;
+        right: spacing.space(4v);
+      }
+    }
+
+    #{selector.ns(hint-text)} {
+      order: 2;
+    }
+  }
+}

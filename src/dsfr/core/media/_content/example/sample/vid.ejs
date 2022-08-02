@@ -1,0 +1,7 @@
+<%
+ let data = {
+     ...vidData(),
+    ...locals.media
+ }
+ %>
+<%- include('../../template/ejs/responsive-vid', {media:data}); %>

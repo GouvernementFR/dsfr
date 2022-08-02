@@ -1,0 +1,107 @@
+////
+/// Header Module : shortcuts
+/// @group header
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/media-query';
+
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+
+@mixin first() {
+  #{selector.ns(header)} {
+    #{selector.ns-group(btns)} {
+      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
+        @include selector.not-start(btns, (group: true, modifier: icon-)) {
+          #{selector.ns(btn)} {
+            @include icon.not-selector {
+              &:not(#{selector.ns(btn--display)}) {
+                @include nest-btn(sm, null, null, null, false);
+              }
+            }
+
+            @include icon.selector {
+              @include nest-btn(sm, left, null, null, false);
+            }
+
+            &#{selector.ns(btn--display)} {
+              @include nest-btn(sm, left, null, null, false);
+            }
+          }
+        }
+      }
+    }
+
+    &__tools-links {
+      display: none;
+
+      @include media-query.from(lg) {
+        @include display.flex(row, null, flex-end);
+        gap: space(2v);
+        @include spacing.margin-bottom(-4v);
+      }
+
+      #{selector.ns-group(btns)} {
+        @include media-query.from(lg) {
+          @include horizontal-btns-group;
+          justify-content: flex-end;
+          @include spacing.margin(0 -1v);
+
+          & > li {
+            align-items: flex-start;
+          }
+
+          #{selector.ns(btn)} {
+            @include spacing.margin-x(1v);
+          }
+        }
+      }
+    }
+
+    & &__menu-links {
+      @include selector.after('', block) {
+        @include spacing.margin(3v -4v);
+        @include spacing.size(calc(100% + 8v), 1px);
+      }
+
+      #{selector.ns(translate)} {
+        @include spacing.margin-x(-2v);
+        @include spacing.margin-x(0, lg);
+        @include spacing.margin-bottom(-4v, lg);
+
+        &__btn {
+          @include spacing.padding-x(2v);
+        }
+      }
+
+      #{selector.ns-group(btns)} {
+        &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
+          @include selector.not-start(btns, (group: true, modifier: icon-)) {
+            @include display.flex(column);
+
+            #{selector.ns(btn)} {
+              @include spacing.width(calc(100% - 4v));
+              @include spacing.min-size(null, 12v);
+              @include spacing.padding-x(0);
+              @include spacing.margin-bottom(0);
+              @include typography.text-style(md);
+
+              @include media-query.from(lg) {
+                @include typography.text-style(sm);
+              }
+            }
+          }
+        }
+      }
+
+      @include media-query.from(lg) {
+        display: none;
+      }
+    }
+  }
+}

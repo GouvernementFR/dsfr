@@ -1,0 +1,7 @@
+@use 'artwork';
+
+$options: () !default;
+
+@mixin first () {
+  @include artwork.color(true);
+}

@@ -1,0 +1,60 @@
+$values: (
+  primary: (
+    name: 'Marianne',
+    fallback: arial sans-serif,
+    display: swap,
+    faces: (
+      light: (
+        weight: light,
+        filename:'Marianne-Light'
+      ),
+      light-italic: (
+        weight: light,
+        style: italic,
+        filename: 'Marianne-Light_Italic'
+      ),
+      regular: (
+        weight: regular,
+        filename: 'Marianne-Regular'
+      ),
+      regular-italic: (
+        weight: regular,
+        style: italic,
+        filename: 'Marianne-Regular_Italic'
+      ),
+      medium: (
+        weight: medium,
+        filename: 'Marianne-Medium'
+      ),
+      medium-italic: (
+        weight: medium,
+        style: italic,
+        filename: 'Marianne-Medium_Italic'
+      ),
+      bold: (
+        weight: bold,
+        filename: 'Marianne-Bold'
+      ),
+      bold-italic: (
+        weight: bold,
+        style: italic,
+        filename: 'Marianne-Bold_Italic'
+      )
+    )
+  ),
+  secondary: (
+    name: 'Spectral',
+    fallback: georgia serif,
+    display: swap,
+    faces: (
+      regular: (
+        weight: regular,
+        filename: 'Spectral-Regular'
+      ),
+      extra-bold: (
+        weight: extra-bold,
+        filename: 'Spectral-ExtraBold'
+      )
+    ),
+  )
+);

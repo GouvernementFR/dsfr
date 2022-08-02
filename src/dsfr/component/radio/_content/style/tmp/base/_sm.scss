@@ -1,0 +1,23 @@
+////
+/// Radio Module : radio sm
+/// @group radio
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
+/**
+ * Modificateur pour la taille sm
+ */
+@mixin first() {
+  #{selector.ns-group(radio)}--sm {
+    input[type='radio'] {
+      & + label {
+        @include selector.before {
+          @include spacing.size(4v, 4v);
+          @include spacing.margin-top(4v);
+        }
+      }
+    }
+  }
+}

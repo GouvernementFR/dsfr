@@ -1,0 +1,12 @@
+////
+/// Core Legacy : Icon
+/// @group core
+////
+
+@use '../../style/icon';
+
+$options: () !default;
+
+@mixin first () {
+  @include icon.sizes(deprecated, true);
+}

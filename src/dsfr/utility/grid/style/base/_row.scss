@@ -1,0 +1,40 @@
+////
+/// Core Module : Grid row
+/// @group core
+////
+
+@use '../../../../../sass/spacing';
+@use '../../../../../sass/display';
+@use '../../../../../sass/selector';
+
+#{selector.ns(grid-row)} {
+  @include display.flex(null, null, null, wrap);
+  @include spacing.margin(0);
+  @include spacing.padding(0);
+
+  // Vertical alignment
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  // Horizontal alignment
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+}

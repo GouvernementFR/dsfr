@@ -1,0 +1,3 @@
+@use '../../string';
+
+$value: string.unquote('$COLOR') !default;

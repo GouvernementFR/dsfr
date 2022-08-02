@@ -1,0 +1,22 @@
+@use 'style';
+@use 'image';
+@use 'size';
+@use '../../mixin/pseudo';
+
+@mixin icon($icon: null, $size: md, $restrain: null, $styling: true) {
+  @if $styling {
+    @include style.style($restrain);
+  }
+
+  @if $icon != null {
+    @include image.image($icon, $restrain);
+  }
+
+  @if $size != null {
+    @include size.size($size, $restrain);
+  }
+
+  @include pseudo.pseudo($restrain) {
+    @content;
+  }
+}

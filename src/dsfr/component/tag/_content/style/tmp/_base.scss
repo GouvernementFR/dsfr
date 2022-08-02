@@ -1,0 +1,23 @@
+////
+/// Tag base
+/// @group tag
+////
+
+@use 'base/default';
+@use 'base/variants';
+@use 'base/group';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include variants.first();
+  @include group.first();
+
+  #{selector.ns(tag)} {
+    @include spacing.min-width(9v);
+    justify-content: center;
+  }
+}

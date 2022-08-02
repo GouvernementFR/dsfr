@@ -1,0 +1,40 @@
+////
+/// Stepper Tool
+/// @group stepper
+////
+
+@use '../../../../../../../sass/selector';
+@import './setting';
+
+@mixin stepper-build() {
+  @for $i from 2 through map-get($stepper-settings, max-steps) {
+    &#{selector.ns-attr(steps, $i)} {
+      --steps: #{$i};
+      --step-width: calc(100% / #{$i});
+    }
+  }
+
+  --current-step: 0;
+  @for $i from 1 through map-get($stepper-settings, max-steps) {
+    &#{selector.ns-attr(current-step, $i)} {
+      --current-step: #{$i};
+    }
+  }
+}
+
+// cache le detail de la dernière étape
+@mixin hide-last-step-detail() {
+  $lastActives: ();
+
+  @for $i from 2 through map-get($stepper-settings, max-steps) {
+    $lastActives: append(
+      $lastActives,
+      '#{selector.ns(stepper__steps)}#{selector.ns-attr(steps, $i)}#{selector.ns-attr(current-step, $i)} + #{selector.ns(stepper__details)}',
+      $separator: comma
+    );
+  }
+
+  #{$lastActives} {
+    display: none;
+  }
+}

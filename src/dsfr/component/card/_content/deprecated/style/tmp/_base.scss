@@ -1,0 +1,45 @@
+////
+/// Card Module - deprecated
+/// @group card
+////
+
+#{selector.ns(card)} {
+  &__body {
+    @include spacing.padding(0 8v);
+  }
+
+  &__content {
+    @include spacing.margin(0 -8v);
+  }
+
+  &__footer {
+    @include spacing.margin(0 -8v);
+  }
+
+  &__body > &__detail,
+  &__body > &__title {
+    @include spacing.margin-top(8v);
+  }
+
+  &__body > &__detail {
+    @include spacing.margin-bottom(-4v);
+  }
+
+  &__body > &__desc,
+  &__body > &__title {
+    @include spacing.margin-bottom(8v);
+  }
+
+  &__body > &__desc {
+    @include spacing.margin-top(-4v);
+  }
+
+  &#{selector.ns(enlarge-link)}:not(&--no-arrow) &__body > &__desc,
+  &#{selector.ns(enlarge-link)}:not(&--no-arrow) &__body > &__title {
+    @include spacing.margin-bottom(18v);
+  }
+
+  &#{selector.ns(enlarge-link)}:not(&--no-arrow) &__body > &__desc {
+    @include spacing.margin-top(-14v);
+  }
+}

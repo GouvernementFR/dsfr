@@ -1,0 +1,20 @@
+////
+/// Table Legacy
+/// @group table
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+
+@mixin first() {
+  /**
+  * Correctif placement caption
+  */
+  @include selector.class(table) {
+    @include selector.attribute(js-table, (combine: true)) {
+      caption {
+        @include spacing.relative;
+      }
+    }
+  }
+}

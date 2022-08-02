@@ -1,0 +1,11 @@
+id: icons-system
+asset:
+  type: icon
+  category: system
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: add-circle-fill add-circle-line add-line arrow-down-line arrow-down-s-line arrow-go-back-fill arrow-go-back-line arrow-left-line arrow-left-s-line arrow-right-line arrow-right-s-line arrow-right-up-line arrow-up-fill arrow-up-line arrow-up-s-line check-line checkbox-circle-line close-line download-line error-warning-fill error-warning-line external-link-line eye-fill eye-line eye-off-fill eye-off-line filter-fill filter-line arrow-left-s-first-line arrow-left-s-line-double arrow-right-s-last-line arrow-right-s-line-double error-fill error-line info-fill info-line success-fill success-line theme-fill warning-fill warning-line information-fill information-line lock-fill lock-line logout-box-r-fill logout-box-r-line menu-2-fill menu-fill question-fill question-line refresh-fill refresh-line search-fill search-line subtract-line timer-fill timer-line upload-2-fill upload-2-line zoom-in-fill zoom-in-line zoom-out-fill zoom-out-line

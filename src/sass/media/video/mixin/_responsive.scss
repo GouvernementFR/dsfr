@@ -1,0 +1,10 @@
+@use '../../../spacing';
+@use '../../../display';
+@use '../../mixin/aspect-ratio';
+
+@mixin responsive () {
+  @include spacing.relative;
+  @include spacing.width(100%);
+  @include aspect-ratio.aspect-ratio;
+  @include display.block;
+}

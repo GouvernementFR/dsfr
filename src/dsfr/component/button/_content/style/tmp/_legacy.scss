@@ -1,0 +1,73 @@
+////
+/// Button Legacy
+/// @group button
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include selector.class(btn) {
+    @include icon.icon-legacy(null, sm);
+
+    @include selector.not-start(btn, (modifier: icon-)) {
+      @include icon.selector {
+        @include icon.icon-legacy(null, md);
+      }
+    }
+
+    &--sm {
+      @include icon.icon-legacy(null, xs);
+
+      @include selector.not-start(btn, (modifier: icon-)) {
+        @include icon.selector {
+          @include icon.icon-legacy(null, sm);
+        }
+      }
+    }
+
+    &--lg {
+      @include icon.icon-legacy(null, md);
+
+      @include selector.not-start(btn, (modifier: icon-)) {
+        @include icon.selector {
+          @include icon.icon-legacy(null, lg);
+        }
+      }
+    }
+  }
+
+  @include selector.class(btn, (modifier: close)) {
+    @include icon.icon-legacy(close-line, sm);
+  }
+
+  @include selector.class(btn, (modifier: display)) {
+    @include icon.icon-legacy(theme-fill, sm);
+  }
+
+  @include selector.class(btns, (group: true)) {
+    @include typography.disable-list-style-legacy(true);
+
+    &--sm {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
+        @include selector.class(btn) {
+          @include icon.selector {
+            @include icon.icon-legacy(null, sm);
+          }
+        }
+      }
+    }
+
+    &--lg {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
+        @include selector.class(btn) {
+          @include icon.selector {
+            @include icon.icon-legacy(null, lg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use '../../elevation/property/shadows';
+
+@mixin shade($layer) {
+  @if map.has-key(shadows.$values, $layer) {
+    filter: drop-shadow(var(--#{$layer}-shadow));
+  }
+}
+
+@mixin shadow($layer, $values) {
+  $result: ();
+  // on divise les valeurs par 2 pour correspondance entre box-shadow et drop-shadow
+  @each $value in $values {
+    @if meta.type-of($value) == number {
+      $value: $value * 0.5;
+    }
+    $result: list.append($result, $value, $separator: space);
+  }
+
+  --#{$layer}-shadow: #{$result};
+}

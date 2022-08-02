@@ -1,0 +1,37 @@
+////
+/// Core Module : Artwork
+/// @group core
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+
+@mixin color($legacy: false) {
+  @include selector.class(artwork) {
+    &-decorative {
+      @include color.fill(artwork decorative blue-france, (legacy: $legacy));
+    }
+
+    &-minor {
+      @include color.fill(artwork minor red-marianne, (legacy: $legacy));
+    }
+
+    &-major {
+      @include color.fill(artwork major blue-france, (legacy: $legacy));
+    }
+
+    &-background {
+      @include color.fill(artwork background grey, (legacy: $legacy));
+    }
+
+    &-motif {
+      @include color.fill(artwork motif grey, (legacy: $legacy));
+    }
+
+    @include color.accentuate {
+      @include selector.class(artwork-minor) {
+        @include color.fill(artwork minor accent, (legacy: $legacy));
+      }
+    }
+  }
+}

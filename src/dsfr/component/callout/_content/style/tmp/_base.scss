@@ -1,0 +1,48 @@
+////
+/// Callout Module
+/// @group callout
+////
+///
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include selector.class(callout) {
+    @include spacing.relative();
+    @include spacing.padding(6v);
+    @include spacing.padding(8v 12v, md);
+    @include typography.set-title-margin(0 0 2v);
+    @include typography.set-text-margin(0);
+    @include spacing.margin(map-get($text-spacing, text));
+
+    /**
+    * Inclusion de l'icône (optionnel)
+    */
+    @include icon.selector {
+      @include selector.before {
+        display: block;
+        @include spacing.margin(-2v 0 2v);
+
+        @include media-query.from(md) {
+          @include spacing.margin(-4v 0 4v -8v);
+        }
+      }
+    }
+
+    @include selector.title() {
+      @include typography.title-style(h4);
+    }
+
+    &__text {
+      @include typography.text-style(lg);
+    }
+
+    /**
+    * Ajout de marge quand on inclut un bouton (optionnel)
+    */
+    @include selector.class(btn) {
+      @include spacing.margin-top(4v);
+    }
+  }
+}

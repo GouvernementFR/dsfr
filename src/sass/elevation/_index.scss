@@ -1,0 +1,11 @@
+@forward 'mixin/elevate';
+@forward 'mixin/ground';
+@forward 'mixin/color';
+@forward 'mixin/background';
+@forward 'mixin/z-index';
+@forward 'mixin/shadow';
+@forward 'mixin/drop';
+
+@use 'property/shadows';
+
+$shadows: shadows.$values;

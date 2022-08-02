@@ -1,0 +1,20 @@
+////
+/// Footer base
+/// @group footer
+////
+
+@use 'base/default';
+@use 'base/content';
+@use 'base/top';
+@use 'base/bottom';
+@use 'base/partners';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include content.first();
+  @include top.first();
+  @include bottom.first();
+  @include partners.first();
+}

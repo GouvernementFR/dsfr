@@ -1,0 +1,59 @@
+////
+/// Download Module : variants
+/// @group download
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/icon';
+
+@mixin first() {
+  #{selector.ns(download)} {
+    &--card {
+      @include spacing.padding(6v 6v 16v 6v);
+      @include spacing.padding(8v 8v 20v 8v, md);
+      @include typography.set-text-margin(0);
+      @include typography.set-title-margin(0);
+    }
+
+    &--card &__link {
+      @include typography.title-style(h5);
+
+      @include selector.after {
+        @include spacing.absolute(null, 6v, 6v);
+        @include icon.size(sm);
+        @include spacing.margin(0);
+
+        @include media-query.from(md) {
+          @include icon.size(md);
+          bottom: spacing.space(8v);
+          right: spacing.space(8v);
+        }
+      }
+    }
+
+    &--card &__desc {
+      display: block;
+      @include spacing.margin-top(2v);
+      @include spacing.margin-top(3v, md);
+    }
+
+    &--card &__detail {
+      @include spacing.absolute(null, null, 6v, 6v);
+      max-width: calc(100% - #{space(25v)});
+
+      @include media-query.from(md) {
+        bottom: spacing.space(8v);
+        left: spacing.space(8v);
+      }
+
+      @include icon.selector {
+        @include selector.before {
+          @include icon.size(sm);
+          @include spacing.margin-right(2v);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+id: toggle
+style:
+  dependencies:
+    - typography
+    - color
+    - disabled
+    - spacing
+    - action
+    - form
+script:
+  dependencies:
+    - api
+    - action
+example:
+  wrapper: container

@@ -1,0 +1,28 @@
+////
+/// Accordion Legacy
+/// @group accordion
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include legacy.is(ie11) {
+    #{selector.ns-group(accordions)} {
+      @include typography.disable-list-style-legacy;
+    }
+
+    #{selector.ns(accordion)} {
+      @include typography.enable-list-style-legacy;
+
+      &__btn {
+        @include icon.legacy(add-line, sm);
+
+        &[aria-expanded="true"] {
+          @include icon.image-legacy(subtract-line);
+        }
+      }
+    }
+  }
+}

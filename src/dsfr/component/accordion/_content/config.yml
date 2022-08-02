@@ -1,0 +1,20 @@
+id: accordion
+asset:
+  dependencies:
+    - icons-system
+script:
+  dependencies:
+    - action
+    - api
+style:
+  dependencies:
+    - action
+    - typography
+    - color
+example:
+  wrapper: col-8
+  styles:
+    - tab
+    - button
+  scripts:
+    - tab

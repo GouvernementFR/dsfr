@@ -1,0 +1,15 @@
+id: tag
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - selector
+    - action
+    - icon
+script:
+  dependencies:
+    - api
+    - action
+example:
+  wrapper: container

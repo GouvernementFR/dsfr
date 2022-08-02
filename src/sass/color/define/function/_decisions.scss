@@ -1,0 +1,41 @@
+@use 'sass:list';
+@use 'sass:meta';
+@use 'sass:map';
+@use '../../property/decisions';
+@use '../../property/sets';
+
+@function _get-params ($settings) {
+  $alpha: false;
+  $hover: false;
+  @if list.length($settings) > 1 {
+    $params: list.nth($settings, 2);
+    @if map.has-key($params, alpha) {
+      $alpha: true;
+    }
+    @if map.has-key($params, hover) {
+      $hover: true;
+    }
+  }
+  @return ( alpha:$alpha, hover: $hover );
+}
+
+@function decisions($filter) {
+  $decisions: ();
+  @each $context, $uses in decisions.$values {
+    @each $use, $families in $uses {
+      @each $family, $settings in $families {
+        $shade: list.nth($settings, 1);
+        $params: _get-params($settings);
+
+        @if meta.type-of($filter) != list or list.index($filter, $family) != null {
+          @each $tint, $shades in map.get(sets.$values, $family) {
+            @if map.has-key($shades, $shade) {
+              $decisions: list.append($decisions, (token: $context $use $tint, hover: map.get($params, hover) == true));
+            }
+          }
+        }
+      }
+    }
+  }
+  @return $decisions;
+}

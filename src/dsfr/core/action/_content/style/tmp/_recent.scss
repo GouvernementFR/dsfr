@@ -1,0 +1,17 @@
+////
+/// Core Module : Action
+/// @group core
+////
+
+@use 'recent/link';
+
+@mixin action-tmp-first () {
+  @include link.first();
+  // @import 'recent/button';
+  // @import 'recent/input';
+  // @import 'recent/focus';
+  // @import 'recent/hover';
+  // @import 'recent/cursor';
+  // @import 'recent/disabled';
+  // @import 'recent/enlarge-link';
+}

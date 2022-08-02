@@ -1,0 +1,7 @@
+id: footer
+style:
+  dependencies:
+    - typography
+    - color
+    - link
+    - logo

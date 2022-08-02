@@ -1,0 +1,40 @@
+@use 'space';
+
+@mixin width($width: null, $important: false) {
+  @include space.space(width, $width, null, $important);
+}
+
+@mixin min-width($width: null, $important: false) {
+  @include space.space(min-width, $width, null, $important);
+}
+
+@mixin max-width($width: null, $important: false) {
+  @include space.space(max-width, $width, null, $important);
+}
+
+@mixin height($height: null, $important: false) {
+  @include space.space(height, $height, null, $important);
+}
+
+@mixin min-height($height: null, $important: false) {
+  @include space.space(min-height, $height, null, $important);
+}
+
+@mixin max-height($height: null, $important: false) {
+  @include space.space(max-height, $height, null, $important);
+}
+
+@mixin size($width: null, $height: null, $important: false) {
+  @include space.space(width, $width, null, $important);
+  @include space.space(height, $height, null, $important);
+}
+
+@mixin min-size($width: null, $height: null, $important: false) {
+  @include space.space(min-width, $width, null, $important);
+  @include space.space(min-height, $height, null, $important);
+}
+
+@mixin max-size($width: null, $height: null, $important: false) {
+  @include space.space(max-width, $width, null, $important);
+  @include space.space(max-height, $height, null, $important);
+}

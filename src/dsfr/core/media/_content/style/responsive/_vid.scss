@@ -1,0 +1,12 @@
+@use '../../../../../../sass/media/video';
+@use '../../../../../../sass/selector';
+
+@mixin vid() {
+  @include selector.class(responsive-vid) {
+    @include video.responsive;
+
+    &__player {
+      @include video.responsive-player;
+    }
+  }
+}

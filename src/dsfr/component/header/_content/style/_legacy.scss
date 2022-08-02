@@ -1,0 +1,9 @@
+@use 'tmp/legacy';
+@use 'tmp/scheme';
+
+$options: () !default;
+
+@mixin first() {
+  @include legacy.first();
+  @include scheme.scheme(true);
+}

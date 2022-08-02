@@ -1,0 +1,10 @@
+id: artwork
+style:
+  dependencies:
+    - color
+script:
+  dependencies:
+    - api
+deprecated:
+  asset:
+    dist: artwork

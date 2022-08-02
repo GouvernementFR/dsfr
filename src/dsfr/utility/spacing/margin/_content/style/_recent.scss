@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use '../../../_content/style/spacing';
+@use '../../../../../../sass/condition';
+
+$options: () !default;
+
+@mixin first() {
+  @include condition.option($options, margin) {
+    @include spacing.generate(margin, map.get($options, margin), null, true);
+  }
+}
+
+@mixin sm() {
+  @include condition.option($options, margin, sm) {
+    @include spacing.generate(margin, map.get($options, margin), sm, true);
+  }
+}
+
+@mixin md() {
+  @include condition.option($options, margin, md) {
+    @include spacing.generate(margin, map.get($options, margin), md, true);
+  }
+}
+
+@mixin lg() {
+  @include condition.option($options, margin, lg) {
+    @include spacing.generate(margin, map.get($options, margin), lg, true);
+  }
+}
+
+@mixin xl() {
+  @include condition.option($options, margin, xl) {
+    @include spacing.generate(margin, map.get($options, margin), xl, true);
+  }
+}

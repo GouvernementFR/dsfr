@@ -1,0 +1,68 @@
+////
+/// Alert Module
+/// @group alert
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin first() {
+  @include selector.class(alert) {
+    @include spacing.relative();
+    @include spacing.padding(4v 9v 3v 14v);
+    @include typography.set-title-margin(0 0 1v);
+    @include typography.set-text-margin(0 0 1v);
+    @include icon.size(md, before);
+    @include icon.style(before) {
+      @include spacing.absolute(0, null, null, 0);
+      @include spacing.margin(4v 2v);
+    }
+
+    @include selector.block-title {
+      @include typography.title-style(h6);
+    }
+
+    @include selector.class(btn, (modifier: close))} {
+      @include spacing.absolute(1v,5v);
+      @include nest-btn(sm, only, close-line, null, false);
+    }
+
+    @include selector.class(alert, (combine: adjacent)) {
+      @include spacing.margin-top(4v);
+    }
+
+    &--info {
+      @include icon.image(info-fill, before);
+    }
+
+    &--success {
+      @include icon.image(success-fill, before);
+    }
+
+    &--error {
+      @include icon.image(error-fill, before);
+    }
+
+    &--warning {
+      @include icon.image(warning-fill, before);
+    }
+
+    &--info,
+    &--success,
+    &--error,
+    &--warning {
+      @include icon.content;
+    }
+
+    &--sm {
+      @include spacing.padding(2v 9v 1v 12v);
+
+      @include selector.before {
+        @include spacing.margin(2v 2v);
+      }
+    }
+  }
+}

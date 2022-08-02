@@ -1,0 +1,8 @@
+@mixin first () {
+  @import '../../../../badge/_content/style/tmp/tool';
+  @import '../../../../tag/_content/style/tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
+
+  @include _card-deprecated-scheme;
+}

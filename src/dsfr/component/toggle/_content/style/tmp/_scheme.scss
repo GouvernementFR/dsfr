@@ -1,0 +1,72 @@
+////
+/// Toggle Scheme
+/// @group toggle
+////
+
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
+@import './setting';
+
+@mixin scheme($legacy: false) {
+  #{selector.ns(toggle)} {
+    label {
+      @include selector.before {
+        @include color.text(active blue-france, (legacy:$legacy));
+      }
+
+      @include selector.after {
+        @include color.text(active blue-france, (legacy:$legacy));
+        @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-in);
+        @include color.background(default grey, (legacy:$legacy));
+      }
+    }
+
+    input[type="checkbox"] {
+      @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-in);
+
+      &:checked {
+        @include color.background(active blue-france, (legacy:$legacy));
+
+        ~ #{selector.ns(toggle__label)} {
+          @include selector.after {
+            @include color.data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-svg);
+          }
+        }
+      }
+
+      @include disabled.selector((), (legacy: $legacy, box-shadow: true)) {
+        &:checked {
+          @include disabled.colors((legacy: $legacy, background: true));
+
+          ~ #{selector.ns(toggle__label)} {
+            @include selector.after {
+              @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $toggle-svg);
+            }
+          }
+        }
+
+        ~ #{selector.ns(toggle__label)} {
+          @include selector.before {
+            @include disabled.colors((legacy: $legacy, text: true));
+          }
+
+          @include selector.after {
+            @include disabled.colors((legacy: $legacy, text: true, box-shadow: true));
+          }
+        }
+      }
+    }
+
+    #{selector.ns(hint-text)} {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
+
+    /*
+    * Ajout d'un séparateur
+    */
+    &--border-bottom {
+      @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+    }
+  }
+}

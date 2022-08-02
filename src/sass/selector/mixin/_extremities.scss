@@ -1,0 +1,55 @@
+@use 'sass:map';
+@use 'sass:selector';
+@use '../function/extremities';
+
+@function is-unifying($options) {
+  @if not map.has-key($options, unify) {
+    @return true;
+  }
+  @if map.get($options, unify) == false {
+    @return false;
+  }
+  @return true;
+}
+
+@mixin pattern($selector, $unify: true) {
+  @if & == null {
+    @at-root #{$selector} {
+      @content;
+    }
+  }
+  @else if $unify {
+    @at-root #{selector.unify(&, $selector)} {
+      @content;
+    }
+  }
+  @else {
+    #{$selector} {
+      @content;
+    }
+  }
+}
+
+@mixin start($start, $options: ()) {
+  @include pattern(extremities.start($start, $options), is-unifying($options)) {
+    @content;
+  }
+}
+
+@mixin not-start($start, $options: ()) {
+  @include pattern(extremities.not-start($start, $options), is-unifying($options)) {
+    @content;
+  }
+}
+
+@mixin end($end, $options: ()) {
+  @include pattern(extremities.end($end, $options), is-unifying($options)) {
+    @content;
+  }
+}
+
+@mixin not-end($end, $options: ()) {
+  @include pattern(extremities.not-end($end, $options), is-unifying($options)) {
+    @content;
+  }
+}

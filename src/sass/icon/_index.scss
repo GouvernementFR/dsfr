@@ -1,0 +1,20 @@
+@forward 'function/filter';
+
+@forward 'mixin/icon';
+@forward 'mixin/content';
+@forward 'mixin/image';
+@forward 'mixin/size';
+@forward 'mixin/style';
+
+@forward 'mixin/selector';
+
+@forward 'legacy' as legacy-*;
+
+@use 'property/icons';
+@use 'property/situations';
+@use 'property/sizes';
+
+$icons: icons.$values;
+$situations: situations.$values;
+$sizes: sizes.$values;
+

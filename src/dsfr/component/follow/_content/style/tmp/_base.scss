@@ -1,0 +1,178 @@
+////
+/// Follow Module
+/// @group follow
+////
+
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/icon';
+
+@import '../../../../button/_content/style/tmp/setting';
+@import '../../../../button/_content/style/tmp/tool';
+@import 'setting';
+@import 'tool';
+
+@mixin first() {
+  @include selector.class(follow) {
+    @include spacing.padding(6v 0);
+    @include spacing.padding(8v 0, md);
+    @include typography.set-title-margin(0 0 2v);
+    @include typography.set-text-margin(0 0 4v);
+
+    &__newsletter {
+      // bloc newsletter
+
+      @include selector.class(label) {
+        @include display.sr-only();
+      }
+
+      @include selector.class(input-wrap) {
+        @include display.flex(column);
+        @include spacing.max-width(150v);
+        @include spacing.margin-top(0);
+
+        @include selector.class(input) {
+          @include spacing.margin-bottom(4v);
+          @include spacing.margin-top(0);
+        }
+
+        @include selector.class(btn) {
+          justify-content: center;
+        }
+
+        @include media-query.from(sm) {
+          flex-direction: row;
+
+          @include selector.class(btn) {
+            border-radius: 0 #{spacing.space(1v)} 0 0;
+          }
+
+          @include selector.class(input) {
+            @include spacing.margin-bottom(0);
+            border-radius: #{spacing.space(1v)} 0 0 0;
+          }
+        }
+      }
+
+      @include selector.class(hint-text) {
+        @include spacing.margin-top(6v);
+        @include spacing.margin-bottom(0);
+      }
+
+      #{selector.class(valid-text)},
+      #{selector.class(error-text)} {
+        @include spacing.margin-top(4v);
+        @include selector.class(hint-text, (combine: adjacent)) {
+          @include spacing.margin-top(4v);
+          @include spacing.margin-top(2v, md);
+        }
+      }
+
+      @include media-query.from(sm) {
+        @include selector.class(hint-text) {
+          @include spacing.margin-top(2v);
+        }
+
+        #{selector.class(valid-text)},
+        #{selector.class(error-text)} {
+          @include spacing.margin-top(4v);
+        }
+      }
+    }
+
+    &__social {
+      // bloc social
+      @include typography.set-text-margin(0 0 3v);
+      @include typography.set-title-margin(0 0 3v);
+
+      #@include selector.class(btns, (group: true)) {
+        @include horizontal-btns-group;
+        @include spacing.margin(0 -4v -4v -4v);
+        @include spacing.width(auto);
+
+        #{selector.ns(btn)} {
+          justify-content: flex-start;
+        }
+
+        &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
+          #{selector.ns(btn)} {
+            @include icon.not-selector {
+              @include nest-btn(md, only, null, null, false);
+              @include icon.icon(null, md, before);
+            }
+          }
+        }
+
+        &--lg {
+          #{selector.ns(btn)} {
+            @include icon.not-selector {
+              @include nest-btn(lg, only, null, null, false);
+              @include icon.icon(null, lg, before);
+            }
+          }
+        }
+      }
+    }
+
+    #{selector.ns(grid-row)} {
+      > * > div {
+        @include media-query.from(md) {
+          @include display.flex(column, flex-start, center);
+          @include spacing.height(100%);
+        }
+      }
+
+      > *:not(:first-child) {
+        // Séparateur en box-shadow dans schemes
+        @include spacing.padding-left(calc(100% / 12), md);
+        @include spacing.margin-top(6v);
+        @include spacing.padding-top(6v);
+        @include spacing.padding-top(0, md);
+        @include spacing.margin-top(0, md);
+      }
+
+      > *:not(:last-child) {
+        @include spacing.padding-right(calc(100% / 12), md);
+      }
+
+      > *:first-child:last-child {
+        > div {
+          @include media-query.from(md) {
+            @include display.flex(row, center, space-between);
+          }
+        }
+
+        > #{selector.ns(follow)}__newsletter {
+          // code spécifique à newsletter seul
+          @include typography.set-text-margin(0,md);
+          @include media-query.from(md) {
+            & > * {
+              @include spacing.max-width(50%);
+              @include spacing.padding-right(3v);
+              @include spacing.padding-left(3v);
+            }
+
+            & > :first-child {
+              @include spacing.padding-right(3v);
+              @include spacing.padding-left(0);
+            }
+
+            & > :last-child {
+              @include spacing.padding-right(0);
+              @include spacing.padding-left(3v);
+            }
+          }
+        }
+
+        > #{selector.ns(follow)}__social {
+          // code spécifique à social seul
+          @include typography.set-title-margin(0, md);
+        }
+      }
+    }
+
+    @include build-follow-social-icons();
+  }
+}

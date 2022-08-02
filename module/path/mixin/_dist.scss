@@ -1,9 +1,0 @@
-@use '../variable/dist';
-
-@mixin to-dist($levels) {
-  $dist: '';
-  @for $i from 0 to $levels {
-    $dist: '../#{$dist}';
-  }
-  @include dist.set($dist);
-}

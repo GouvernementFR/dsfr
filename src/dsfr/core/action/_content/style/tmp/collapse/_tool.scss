@@ -1,0 +1,38 @@
+////
+/// Core Tool : Collapse
+/// @group core
+////
+
+@mixin collapse($legacy: false) {
+  --collapse-max-height: 0;
+  --collapse: -99999px;
+  --collapser: '';
+
+  overflow: hidden;
+  transition: visibility 0.3s;
+  max-height: var(--collapse-max-height);
+
+  @include before(var(--collapser), block) {
+    transition: margin-top 0.3s;
+    margin-top: 0;
+  }
+
+  #{&}:not(&--expanded) {
+    visibility: hidden;
+    @include before {
+      margin-top: var(--collapse);
+    }
+  }
+}
+
+@mixin legacy() {
+  max-height: 0;
+
+  @include before('');
+
+  #{&}:not(&--expanded) {
+    @include before {
+      margin-top: -99999px;
+    }
+  }
+}

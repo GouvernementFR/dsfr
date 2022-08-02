@@ -1,0 +1,44 @@
+@use 'sass:math';
+@use '../../string';
+@use '../../selector';
+
+@function selector ($prop: margin, $direction:top, $value:1, $unit: null, $breakpoint: null) {
+  $selector: '';
+  $chunks: string.split($prop, '-');
+
+  @each $chunk in $chunks {
+    $selector: '#{$selector}#{string.slice($chunk, 1, 1)}';
+  }
+
+  @if $direction != null {
+    $selector: '#{$selector}#{string.slice($direction, 1, 1)}';
+  }
+
+  $selector: '#{$selector}-';
+
+  @if type-of($value) == 'number' {
+    $u: math.unit($value);
+
+    @if $u != '' {
+      $unit: $u;
+      @if $u == '%' {
+        $unit: '\\%';
+      }
+      $value: math.div($value, ($value * 0 + 1));
+    }
+
+    @if $value < 0 {
+      $selector: '#{$selector}n';
+    }
+
+    $selector: '#{$selector}#{string.replace(math.abs($value), '.', '-')}';
+
+    @if $value != 0 and $unit != null {
+      $selector: '#{$selector}#{$unit}';
+    }
+  }
+  @else {
+    $selector: '#{$selector}#{$value}';
+  }
+  @return selector.class($selector, (breakpoint: $breakpoint, combine: 'not'));
+}

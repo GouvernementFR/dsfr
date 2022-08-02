@@ -1,0 +1,94 @@
+////
+/// Sidemenu Module : action
+/// @group sidemenu
+////
+
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  /**
+ * Styles du bouton et du lien d'accès direct du sidemnu
+ */
+  #{selector.ns(sidemenu__link)},
+  #{selector.ns(sidemenu__btn)} {
+    @include spacing.relative;
+    @include display.flex(row, center);
+    @include spacing.size(100%);
+    @include spacing.padding(3v 2v);
+    @include spacing.margin(0, md);
+    @include typography.text-style(md);
+    text-align: left;
+    @include typography.font-weight(bold);
+
+    @include action.enable-tint;
+
+    &[aria-current] {
+      @include selector.before('') {
+        @include spacing.absolute(3v, null, 3v, 0, 2px);
+      }
+    }
+
+    @include spacing.size(100%, null, md);
+  }
+
+  #{selector.ns(sidemenu__link)} {
+    &[aria-current]:not([href]) {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  /**
+ * Style du bouton du sidemnenu pour ouvrir/refermer les listes de niveaux 1 et 2
+ * Bouton pour la version mobile pour ouvrir/refermer le sidemenu
+ */
+  #{selector.ns(sidemenu__btn)} {
+    &[aria-expanded] {
+      @include display.flex(row, center);
+      @include spacing.padding(3v 8v 3v 2v, md);
+
+      @include icon.icon(arrow-down-s-line, sm, after) {
+        @include spacing.margin-left(auto);
+        @include spacing.margin-right(0);
+        transition: transform 0.3s;
+
+        @include spacing.margin-right(-6v, md);
+      }
+    }
+
+    &[aria-expanded='true'] {
+      @include selector.after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  /**
+ * Modificateur pour le bouton en version mobile permettant d'ouvrir/refermer le sidemenu
+ * L'icône de gauche est défini dans _sidemenu.scss (provisoire)
+ */
+  // @TODO transformer en modifier
+  #{selector.ns(sidemenu__inner)} > #{selector.ns(sidemenu__btn)} {
+    @include spacing.size(100%);
+    font-weight: normal;
+    @include selector.after {
+      @include spacing.margin-right(4v);
+    }
+
+    /**
+  * Ajout de l'icône de menu en mode mobile (provisoire)
+  */
+    @include icon.icon(menu-2-fill, sm, before) {
+      @include spacing.margin-x(2v);
+    }
+
+    @include media-query.from(md) {
+      display: none;
+    }
+  }
+}

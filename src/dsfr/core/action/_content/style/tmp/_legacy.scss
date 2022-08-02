@@ -1,0 +1,9 @@
+////
+/// Core Legacy : Action
+/// @group core
+////
+
+@mixin first () {
+  @import 'legacy/hover';
+  @import 'legacy/link';
+}

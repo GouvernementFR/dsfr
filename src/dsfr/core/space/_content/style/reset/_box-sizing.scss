@@ -1,0 +1,6 @@
+@use '../../../../../../sass/reset';
+
+@mixin box-sizing() {
+  @include reset.box-sizing(true, true);
+
+}

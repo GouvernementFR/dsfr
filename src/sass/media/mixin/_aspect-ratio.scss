@@ -1,0 +1,6 @@
+@use '../../specificity';
+@use '../function/aspect-ratio';
+
+@mixin aspect-ratio($ratio: 16x9, $important: false) {
+  aspect-ratio: specificity.important(aspect-ratio.aspect-ratio($ratio), $important);
+}

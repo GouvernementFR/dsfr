@@ -1,0 +1,48 @@
+////
+/// Badge Legacy
+/// @group badge
+////
+
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/typography';
+
+@mixin first() {
+  @include legacy.is(ie11) {
+    @include selector.class(badge) {
+      @include icon.icon-legacy(null, sm);
+
+      &--sm {
+        @include icon.icon-legacy(null, xs, before, false);
+      }
+
+      &,
+      &--sm {
+        @include selector.class(badge, (modifier: info, combine: true)) {
+          @include icon.image-legacy(info-fill);
+        }
+
+        @include selector.class(badge, (modifier: success, combine: true)) {
+          @include icon.image-legacy(success-fill);
+        }
+
+        @include selector.class(badge, (modifier: error, combine: true)) {
+          @include icon.image-legacy(error-fill);
+        }
+
+        @include selector.class(badge, (modifier: warning, combine: true)) {
+          @include icon.image-legacy(warning-fill);
+        }
+
+        @include selector.class(badge, (modifier: new, combine: true)) {
+          @include icon.image-legacy(flashlight-fill);
+        }
+      }
+    }
+
+    @include selector.class(badges, (group: true))} {
+      @include typography.disable-list-style-legacy(true);
+    }
+  }
+}

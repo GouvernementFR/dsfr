@@ -1,0 +1,11 @@
+id: icons-document
+asset:
+  type: icon
+  category: document
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: file-download-fill file-download-line file-fill file-line file-pdf-fill file-pdf-line

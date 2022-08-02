@@ -1,0 +1,14 @@
+////
+/// Badge Module
+/// @group badge
+////
+
+@use 'base/default';
+@use 'base/group';
+
+$options: () !default;
+
+@mixin first () {
+  @include default.first();
+  @include group.first();
+}

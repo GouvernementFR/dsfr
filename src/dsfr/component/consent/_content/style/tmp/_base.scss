@@ -1,0 +1,16 @@
+////
+/// Consent base
+/// @group consent
+////
+
+@use 'base/placeholder';
+@use 'base/banner';
+@use 'base/services';
+@use 'base/manager';
+
+@mixin first() {
+  @include placeholder.first();
+  @include banner.first();
+  @include services.first();
+  @include manager.first();
+}

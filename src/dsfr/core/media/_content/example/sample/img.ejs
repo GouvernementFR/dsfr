@@ -1,0 +1,4 @@
+<%
+ const media = locals.media || {};
+ %>
+<%- include('../../template/ejs/responsive-img', {media: {...imgData(null, 'unknown'), ...media}}); %>

@@ -1,0 +1,9 @@
+id: summary
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - selector
+example:
+  wrapper: col-8

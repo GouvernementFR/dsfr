@@ -1,0 +1,10 @@
+title: Modèle de champ numéro de téléphone
+description: La demande de numéro de téléphone permet d’aider un utilisateur à saisir son numéro de téléphone. Précisez à l’utilisateur le format de saisie attendu.
+doc:
+
+sample:
+  default: Demande d'un numéro de téléphone
+label: Numéro de téléphone
+hint:
+  format: 'Format attendu : (+33) 1 22 33 44 55'
+error: 'Le format de numéro de téléphone saisie n’est pas valide. Le format attendu est : (+33) 2 43 55 55 55'
