@@ -1,46 +1,8 @@
-
 <%
+const follow = locals.follow || {newsletter: {}};
 let data = {};
-data = JSON.parse(include('./data.ejs'));
-let follow = locals.follow || {newsletter: {}, socials: {}};
-
-let inputAttributes = {};
-let inputClasses = [];
-inputAttributes['aria-describedby'] = prefix + '-newsletter-hint-text';
-inputAttributes['title'] = 'Votre adresse électronique (ex. : nom@domaine.fr)';
-inputAttributes['autocomplete'] = 'email';
-
-if (follow.newsletter !== undefined) {
-  if (follow.newsletter.error) {
-    inputAttributes['aria-describedby'] = prefix + '-newsletter-error-text ' + prefix + '-newsletter-hint-text';
-    inputClasses.push(prefix + '-input--error');
-  }
-  if (follow.newsletter.valid) {
-    inputAttributes['aria-describedby'] = prefix + '-newsletter-valid-text ' + prefix + '-newsletter-hint-text';
-    inputClasses.push(prefix + '-input--valid');
-  }
-}
-
-data.newsletter.type = 'form';
-data.newsletter.form = {
-  valid: follow.newsletter.valid,
-  error: follow.newsletter.error,
-  hint: "En renseignant votre adresse électronique, vous acceptez de recevoir nos actualités par courriel. Vous pouvez vous désinscrire à tout moment à l’aide des liens de désinscription ou en nous contactant.",
-  input: {
-    id: "newsletter-email",
-    placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
-    label: "Votre adresse électronique (ex. : nom@domaine.fr)",
-    type: "email",
-    inputClasses: inputClasses,
-    attributes: inputAttributes,
-    button: {
-      id: "newsletter-button",
-      label: "S\'abonner",
-      type: "submit",
-      title: "S‘abonner à notre lettre d’information",
-    }
-  }
-};
+const newsletter = JSON.parse(include('../data/newsletter-form.json.ejs', {newsletter: {error: follow.newsletter.error}}));
+const socials = JSON.parse(include('../data/socials.json.ejs'));
+data = {...newsletter, ...socials};
 %>
 <%- include('../../template/ejs/follow.ejs', {follow: data}); %>
-

@@ -2,6 +2,8 @@ id: content
 style:
   dependencies:
     - color
+    - link
+    - transcription
     - typography
     - media
     - button

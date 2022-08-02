@@ -9,7 +9,7 @@ L'installation du Système de Design de l'État (ci-après, le **DSFR**) peut se
 ### Fichiers statiques
 Il est possible de télécharger l'ensemble du **DSFR** au format zip ci-dessous. Le zip contient un ensemble de fichiers CSS et Javascript, ainsi que les différentes polices web utilisées, à savoir la Marianne et la Spectral.
 
-[Fichiers statiques](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019574/D+veloppeurs#Fichiers-statiques)
+[Fichiers statiques](www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs/prise-en-main-du-dsfr)
 
 ### NPM
 Le **DSFR** est disponible sur NPM via un ensemble de packages qu'il est possible d'ajouter directement à votre projet. Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org), et d'avoir un fichier **package.json** à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).
@@ -64,7 +64,7 @@ Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spe
 Le point de départ de l’utilisation du DSFR  est la création de fichiers HTML, afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. L’exemple ci dessous est le code minimal afin de pouvoir utiliser le DSFR.
 
 L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont system, light, dark.La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
-Consulter la [documentation des paramètres d’affichage](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/579928166) afin d’en savoir plus.
+Consulter la [documentation des paramètres d’affichage](www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametres-d-affichage) afin d’en savoir plus.
 
 ```html
 <!doctype html>
@@ -132,10 +132,10 @@ Afin d’utiliser ces icônes, des classes utilitaires CSS sont associés à cha
 Ces classes sont disponible dans `utility` qui importe `dist/utility/icons/icons.css`.
 Il est aussi possible d’importer uniquement certaines catégories d’icônes afin d’optimiser le poids. Par ex. :  `dist/utility/icons/system/system.css` pour les icônes “system”.
 
-Pour plus d’informations : [Voir la documentation des icônes](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396).
+Pour plus d’informations : [Voir la documentation des icônes](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones).
 
 ### Favicon
-[La documentation des favicons](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/577930274) détaille la façon de les implémenter dans vos pages.
+[La documentation des favicons](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/icones-de-favoris) détaille la façon de les implémenter dans vos pages.
 
 ## Fonctionnement
 
@@ -157,4 +157,4 @@ Le processus de contribution est détaillé sur la [page CONTRIBUTING.md](CONTRI
 
 ## Documentation
 
-[Documentation développeurs](https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019574/D+veloppeurs)
+[Documentation développeurs](https://www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs)

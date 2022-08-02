@@ -43,6 +43,10 @@
     @include icon.icon-legacy(close-line, sm);
   }
 
+  @include selector.class(btn, (modifier: fullscreen)) {
+    @include icon-legacy(fullscreen-line, sm);
+  }
+
   @include selector.class(btn, (modifier: display)) {
     @include icon.icon-legacy(theme-fill, sm);
   }

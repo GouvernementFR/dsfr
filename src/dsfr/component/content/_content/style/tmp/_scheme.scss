@@ -3,12 +3,13 @@
 /// @group content
 ////
 
+@use 'module/color';
+
 @mixin _content-scheme($legacy: false) {
-  @include selector.class(content-media) {
-    &__transcription {
-      @include selector.class(btn) {
-        @include btn-kind-scheme(4, $legacy);
-      }
+  #{ns(content-media)} {
+    &__caption,
+    #{ns(link)} {
+      @include color.text(mention grey, (legacy:$legacy));
     }
   }
 }

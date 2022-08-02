@@ -24,6 +24,7 @@
  let callout = locals.callout || {};
  let classes = callout.classes || [];
  classes.push(prefix + '-callout');
+ const markup = locals.markup || 'h3';
 
  if (callout.icon !== undefined) classes.push(prefix + '-' + callout.icon);
  if (callout.accent !== undefined) classes.push(prefix + '-callout--' + callout.accent);
@@ -35,7 +36,7 @@
 <div <%- includeClasses(classes); %>>
 
   <% if(callout.title !== undefined) { %>
-    <h4 class="<%= prefix%>-callout__title"><%= callout.title %></h4>
+    <<%= markup %> class="<%= prefix%>-callout__title"><%= callout.title %></<%= markup %>>
   <% } %>
 
   <%- include('../../../../../core/typography/_content/template/ejs/paragraph', {paragraph: {content: callout.text, classes: [`${prefix}-callout__text`]}}) %>

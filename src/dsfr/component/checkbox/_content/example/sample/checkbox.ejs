@@ -1,8 +1,9 @@
 <%
-let checkbox = locals.checkbox || {};
-let jsonData = JSON.parse(include('../../../../../core/form/_content/example/sample/data', {form: checkbox}));
-
-let data = {...checkbox, ...jsonData}
+const checkbox = locals.checkbox || {};
+checkbox.valid = validData(checkbox.valid);
+checkbox.error = errorData(checkbox.error);
+checkbox.hint = hintData(checkbox.hint);
+const data = { ...checkbox };
 data.label = checkbox.label || 'Label checkbox';
 %>
 

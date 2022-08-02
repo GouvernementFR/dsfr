@@ -106,6 +106,14 @@
       }
     }
 
+    &--between {
+      &,
+      li {
+        justify-content: space-between;
+        text-align: center;
+      }
+    }
+
     /**
     * fr-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
     */
@@ -225,5 +233,9 @@
         }
       }
     }
+  }
+
+  #{ns(fieldset__element)} > & {
+    @include margin-bottom(-4v);
   }
 }

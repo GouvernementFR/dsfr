@@ -14,15 +14,14 @@
 @import '../tool';
 
 @mixin first() {
-  /**
-  * Consent service correspond à un bloc de finalité (titre, radios, description)
-  **/
   #{selector.ns(consent-service)} {
     @include spacing.relative;
 
     > #{selector.ns(fieldset)} {
       @include spacing.padding(0 0 5v);
       @include spacing.padding(0 0 5v, md);
+      @include margin(0);
+      align-items: flex-start;
       @include display.flex(column);
       @include spacing.size(100%);
       position: initial;
@@ -43,9 +42,6 @@
       }
     }
 
-    /**
-    * Nom du service
-    **/
     &__title {
       @include typography.title-style(h6);
       @include spacing.padding(8v 0 3v);
@@ -56,9 +52,6 @@
       }
     }
 
-    /**
-    * Description du service
-    **/
     &__desc {
       @include typography.text-style(sm);
       @include typography.set-text-margin(3v 0 3v 0);
@@ -69,9 +62,6 @@
       }
     }
 
-    /**
-    * Bloc dépliable, contient des sous services
-    **/
     &__collapse {
       @include spacing.margin-top(-1v);
       @include spacing.margin-bottom(3v);
@@ -79,11 +69,8 @@
       @include nest-consent-btn;
     }
 
-    /**
-    * Conteneur des radio-group
-    **/
     &__radios {
-      // @include spacing.margin-bottom(3v);
+      @include spacing.margin-y(3v);
       @include display.flex(row, null, null, wrap);
 
       @include media-query.from(md) {
@@ -94,9 +81,6 @@
       }
     }
 
-    /**
-    * Groupe de radios avec séparateur
-    **/
     #{selector.ns-group(radio)} {
       position: relative;
 
@@ -107,9 +91,7 @@
       &:not(:first-child) {
         @include selector.before('','block') {
           @include spacing.size(1px, 6v);
-          @include spacing.absolute;
-          left: calc(#{space(-6v)} - 1px);
-          top: spacing.space(3v);
+          @include absolute(0, null, null, calc(#{space(-6v)} - 1px));
         }
       }
     }
@@ -133,9 +115,6 @@
     }
   }
 
-  /**
-  * fr-consent-services contient les sous services
-  **/
   #{selector.ns(consent-services)} {
     @include spacing.margin-top(2v);
     @include spacing.margin-bottom(-2v);
@@ -170,7 +149,7 @@
       &__desc {
         @include typography.set-text-margin(1v 0 3v 0);
         @include media-query.from(md) {
-          @include typography.set-text-margin(1v 0 1v 0);
+          @include typography.set-text-margin(1v 0 2v 0);
         }
       }
     }

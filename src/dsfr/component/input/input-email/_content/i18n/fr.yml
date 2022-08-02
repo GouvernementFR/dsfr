@@ -1,7 +1,6 @@
 title: Modèle de champ email
 description: La demande d’une adresse électronique permet d’aider un utilisateur à saisir une adresse électronique. Précisez à l’utilisateur le format de saisie attendu.
-doc:
-
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/champ-de-saisie
 sample:
   default: Demande d'une adresse électronique
   indication: Demande et indication de traitement d’une adresse électronique

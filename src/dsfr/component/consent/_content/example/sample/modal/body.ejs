@@ -49,12 +49,12 @@ function getRadios (id, itemId, type) {
   return [
     {
       name: id + '-' + name,
-      element: elementAccept,
+      ...elementAccept,
       id: id + '-' + name + '-accept',
     },
     {
       name: id + '-' + name,
-      element: elementRefuse,
+      ... elementRefuse,
       id: id + '-' + name + '-refuse',
       disabled: disabled
     }

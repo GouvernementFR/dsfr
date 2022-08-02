@@ -1,0 +1,30 @@
+#{ns(message)} {
+  @include display-flex(row, center);
+  @include text-style(xs);
+  @include margin(0 0 1v 0);
+
+  &:last-child {
+    @include margin-bottom(0);
+  }
+
+  &--error,
+  &--valid,
+  &--info {
+    @include icon(null, sm, before) {
+      display: inline-block;
+      @include margin-right(1v);
+    }
+  }
+
+  &--error {
+    @include icon-image(error-fill, before);
+  }
+
+  &--valid {
+    @include icon-image(success-fill, before);
+  }
+
+  &--info {
+    @include icon-image(information-fill, before);
+  }
+}

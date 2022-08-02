@@ -4,6 +4,5 @@
 $options: () !default;
 
 @mixin first() {
-  @include legacy.first();
   @include scheme.scheme(true);
 }

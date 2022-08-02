@@ -4,7 +4,8 @@ const data = {
   label: email.label || getText('label', 'input-email'),
   hint: email.hint || getText('hint.format', 'input-email'),
   error: email.error ? getText('error', 'input-email') : undefined,
-  autocomplete: email.autocomplete || true,
+  autocomplete: email.autocomplete || 'email',
+  spellcheck : false
 }
 %>
 

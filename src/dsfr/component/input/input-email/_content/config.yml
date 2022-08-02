@@ -1,3 +1,8 @@
 id: input-email
 example:
   wrapper: col-8
+style:
+  dependencies:
+    - core
+    - form
+    - input-base

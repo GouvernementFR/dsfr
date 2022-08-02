@@ -11,6 +11,8 @@
 
 * content.details (array, optional) : Détails
 
+* content.markup (string, optional) : (défaut : h3) niveau de titre
+
 %>
 <%
 let start, end;
@@ -39,9 +41,9 @@ switch (true) {
  %>
 
 <div class="<%= prefix %>-card__content">
-    <h4 class="<%= prefix %>-card__title">
+    <<%= markup %> class="<%= prefix %>-card__title">
         <a href="#" ><%- content.title %></a>
-    </h4>
+    </<%= markup %>>
 
     <% if (content.description !== undefined) { %>
     <p class="<%= prefix %>-card__desc"><%- content.description %></p>

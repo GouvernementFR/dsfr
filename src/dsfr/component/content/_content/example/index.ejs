@@ -24,23 +24,25 @@
 
 <%- sample('Média image, SVG décoratif', './sample/media-svg', {content:{illustration:true}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 16/9 par défaut', './sample/media-vid-default', {}, true); %>
+<%- sample('Média image avec une transcription', './sample/media-img', {content: {transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 16/9 par défaut, petite taille', './sample/media-vid-default', {content:{size:'sm'}}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 16/9 par défaut', './sample/media-vid-default', {content: {transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 16/9 par défaut, grande taille', './sample/media-vid-default', {content:{size:'lg'}}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 16/9 par défaut, petite taille', './sample/media-vid-default', {content:{size:'sm', transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 4x3', './sample/media-vid-4x3', {}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 16/9 par défaut, grande taille', './sample/media-vid-default', {content:{size:'lg', transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 4x3, petite taille', './sample/media-vid-4x3', {content:{size:'sm'}}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 4x3', './sample/media-vid-4x3', {content: {transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 4x3, grande taille', './sample/media-vid-4x3', {content:{size:'lg'}}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 4x3, petite taille', './sample/media-vid-4x3', {content:{size:'sm', transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 1x1', './sample/media-vid-1x1', {}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 4x3, grande taille', './sample/media-vid-4x3', {content:{size:'lg', transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 1x1, petite taille', './sample/media-vid-1x1', {content:{size:'sm'}}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 1x1', './sample/media-vid-1x1', {content: {transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
-<%- sample('Média video edito, ratio d‘aspect 1x1, grande taille', './sample/media-vid-1x1', {content:{size:'lg'}}, true); %>
+<%- sample('Média video edito, ratio d‘aspect 1x1, petite taille', './sample/media-vid-1x1', {content:{size:'sm', transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
+
+<%- sample('Média video edito, ratio d‘aspect 1x1, grande taille', './sample/media-vid-1x1', {content:{size:'lg', transcription: {id: uniqueId('transcription'), content: randomContent(['title', 'text', 'list'])}}}, true); %>
 
 <%- deprecation(); %>
 

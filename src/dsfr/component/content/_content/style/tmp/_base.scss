@@ -34,23 +34,21 @@
       @include media.aspect-ratio();
     }
 
-    &__caption,
-    &__transcription {
-      @include spacing.size(100%);
-      @include spacing.margin-top(2v);
-      text-align: right;
-    }
-
     &__caption {
-      @include typography.text-style(xs);
+      @include display-flex(column);
+      @include size(100%);
+      @include margin-top(3v);
+      @include text-style(xs);
+      @include nest-link(xs, null) {
+        @include margin-right(auto);
+      }
     }
 
-    &__transcription {
-      @include nest-btn(sm, right, menu-2-fill, null, true, true);
+    #{ns(transcription)} {
+      @include margin-top(3w);
     }
 
     $medias: (#{&}__img, selector.class(responsive-vid));
-    $captions: (#{&}__caption, #{&}__transcription);
-    @include content-media-sizes($medias, $captions, 25%);
+    @include content-media-sizes($medias, 25%);
   }
 }

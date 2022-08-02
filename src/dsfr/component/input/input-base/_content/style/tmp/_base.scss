@@ -15,7 +15,7 @@
   #{selector.ns(input)} {
     display: block;
     @include spacing.size(100%);
-    border-radius: spacing.space(1v) spacing.space(1v) 0 0;
+    border-radius: spacing.space(1v 1v 0 0);
     @include typography.text-style(md);
     @include spacing.padding(2v 4v);
 
@@ -89,11 +89,19 @@
     }
 
     + #{selector.ns(hint-text)} {
-      @include spacing.margin-top(2v);
+      @include spacing.margin-top(4v);
     }
   }
 
   textarea#{selector.ns(input)} {
     min-height: spacing.space(15v);
+  }
+}
+
+#{ns(input-group)} {
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
+    }
   }
 }

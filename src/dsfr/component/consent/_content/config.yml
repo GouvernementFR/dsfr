@@ -9,6 +9,7 @@ style:
     - form
     - radio
     - modal
+    - transcription
 script:
   dependencies:
     - modal
