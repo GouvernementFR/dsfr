@@ -1,0 +1,13 @@
+@use '../../../module/media-query';
+@use 'sass:meta';
+@use '_content/style';
+
+@mixin base() {
+  @include style.base;
+
+  @if meta.mixin-exists(base\@lg, style) {
+    @include media-query.respond-from(lg) {
+      @include style.base\@lg;
+    }
+  }
+}

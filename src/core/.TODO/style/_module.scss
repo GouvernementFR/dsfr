@@ -3,15 +3,15 @@
 /// @group core
 ////
 
-@import '../../action/_content/style/module';
+@import '../../action/_content/style/base';
 @import 'motion/module';
-@import '../../typography/_content/style/module';
+@import '../../typography/_content/style/base';
 @import '../../color/_content/style/mixin';
 @import 'reset/module';
 @import 'icon/module';
-@import '../../display/_content/style/module';
-@import '../../media/_content/style/module';
-@import '../../../utility/grid/style/module';
+@import '../../display/_content/style/base';
+@import '../../media/_content/style/base';
+@import '../../../utility/grid/style/base';
 @import 'selector/module';
 @import '../../collapse/_content/style/module';
 @import 'spacing/module';

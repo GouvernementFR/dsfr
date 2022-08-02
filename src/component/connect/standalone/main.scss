@@ -14,8 +14,8 @@
 @import '../../../../.config/subsets/connect';
 @import 'style/module';
 
-@import '../style/module/default';
-@import '../style/module/plus';
+@import '../style/base/default';
+@import '../style/base/plus';
 @import '../style/scheme/default';
 
 @include _connect-scheme-default(false, true);

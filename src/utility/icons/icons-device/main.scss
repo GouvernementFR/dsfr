@@ -14,8 +14,8 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/module';
+@import 'style/base';
 
 // deprecated
 @import 'deprecated/style/setting';
-@import 'deprecated/style/module';
+@import 'deprecated/style/base';

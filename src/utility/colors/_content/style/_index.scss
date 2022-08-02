@@ -1,0 +1,18 @@
+@use 'sass:map';
+
+$setting: () !default;
+@use 'mixin/scheme' with ($decisions: map.get($setting, decisions));
+
+@mixin base() {
+  @include scheme.scheme();
+}
+
+@mixin base\@lg () {
+  /**
+  go lg
+   */
+}
+
+@mixin legacy() {
+  @include scheme.scheme(true);
+}
