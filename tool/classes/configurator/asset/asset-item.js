@@ -34,8 +34,8 @@ class AssetItem {
       const s = filename.split('--');
       switch (s[0]) {
         case 'fr':
-          this.family = 'dsfr';
-          this.name = s.slice(1).join('--');
+          this._data.family = this.family = 'dsfr';
+          this._data.name = this.name = s.slice(1).join('--');
           break;
       }
     } else {
