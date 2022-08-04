@@ -1,0 +1,10 @@
+id: pictograms-health
+asset:
+  type: pictogram
+  dist: artwork/pictograms/health
+example:
+  wrapper: col-8
+style:
+  dependencies:
+    - core
+

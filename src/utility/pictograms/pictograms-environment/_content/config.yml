@@ -1,0 +1,10 @@
+id: pictograms-environment
+asset:
+  type: pictogram
+  dist: artwork/pictograms/environment
+example:
+  wrapper: col-8
+style:
+  dependencies:
+    - core
+

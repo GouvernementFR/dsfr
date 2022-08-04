@@ -17,11 +17,11 @@ class AssetItem {
 
       switch (type) {
         case 'icon':
-          this._icon(src);
+          this._icon();
           break;
 
         case 'pictogram':
-          this._pictogram(src);
+          this._pictogram();
           break;
       }
     }

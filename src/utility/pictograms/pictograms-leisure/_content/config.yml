@@ -1,0 +1,10 @@
+id: pictograms-leisure
+asset:
+  type: pictogram
+  dist: artwork/pictograms/leisure
+example:
+  wrapper: col-8
+style:
+  dependencies:
+    - core
+
