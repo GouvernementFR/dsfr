@@ -3,7 +3,7 @@
 /// @group header
 ////
 
-@use 'module/media-query';
+@use 'sass/media-query';
 
 #{ns(header)} {
   &__brand {

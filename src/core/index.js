@@ -1,8 +1,8 @@
-import api from './api/_content/script/api';
+import api from './api/_content/script/api/api';
 
-import { Instance } from './api/_content/script/modules/register/instance.js';
-import { KeyCodes } from './api/_content/script/modules/register/key-codes.js';
-import { Breakpoints } from './api/_content/script/modules/register/breakpoints';
+import { Instance } from './api/_content/script/api/modules/register/instance.js';
+import { KeyCodes } from './api/_content/script/api/modules/register/key-codes.js';
+import { Breakpoints } from './api/_content/script/api/modules/register/breakpoints';
 import { Disclosure } from './.TODO/script/disclosure/disclosure.js';
 import { DisclosureButton } from './.TODO/script/disclosure/disclosure-button.js';
 import { DisclosuresGroup } from './.TODO/script/disclosure/disclosures-group.js';
@@ -17,7 +17,7 @@ import { Equisized } from './.TODO/script/equisized/equisized.js';
 import { EquisizedsGroup } from './.TODO/script/equisized/equisizeds-group.js';
 import { EquisizedEmission } from './.TODO/script/equisized/equisized-emission.js';
 import { Toggle } from './action/_content/script/toggle/toggle';
-import { RootSelector } from './api/_content/script/modules/stage/root.js';
+import { RootSelector } from './api/_content/script/api/modules/stage/root.js';
 import { InjectSvg } from './artwork/_content/deprecated/script/inject/inject-svg';
 import { InjectSvgSelector } from './artwork/_content/deprecated/script/inject/inject-svg-selector';
 import { Artwork } from './artwork/_content/script/artwork/artwork';

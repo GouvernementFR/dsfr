@@ -4,8 +4,8 @@
 ////
 
 @use 'sass:list';
-@use '../../../../../../module/color/index';
-@use '../../../../../../module/typography/index';
+@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/typography/index';
 
 @mixin _core-typography-scheme-heading($legacy: false) {
   @include title-selector {

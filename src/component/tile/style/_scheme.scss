@@ -3,7 +3,7 @@
 /// @group tile
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _tile-scheme($legacy: false) {
   #{ns(tile)} {

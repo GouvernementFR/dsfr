@@ -3,14 +3,14 @@
 /// @group core
 ////
 
-@use 'module/path';
-@use 'module/shame/media-query';
+@use 'sass/path';
+@use 'sass/shame/media-query';
 
 @include path.to-dist(2);
 @include media-query.order;
 
 @import 'index';
-@import '../button/style/tool';
+@import '../button/_content/style/tool';
 @import 'style/scheme';
 @import 'style/legacy';
 

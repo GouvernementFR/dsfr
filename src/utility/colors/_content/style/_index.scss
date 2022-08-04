@@ -3,11 +3,11 @@
 $setting: () !default;
 @use 'mixin/scheme' with ($decisions: map.get($setting, decisions));
 
-@mixin base() {
+@mixin first() {
   @include scheme.scheme();
 }
 
-@mixin base\@lg () {
+@mixin lg () {
   /**
   go lg
    */

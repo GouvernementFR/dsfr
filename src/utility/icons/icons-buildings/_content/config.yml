@@ -1,0 +1,5 @@
+id: icons-buildings
+asset:
+  type: icon
+  dist: icons/buildings
+  category: buildings

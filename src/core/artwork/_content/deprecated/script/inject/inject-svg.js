@@ -1,5 +1,5 @@
-import { Instance } from '../../../../../api/_content/script/modules/register/instance.js';
-import { setAttributes } from '../../../../../api/_content/script/utilities/attribute';
+import { Instance } from '../../../../../api/_content/script/api/modules/register/instance.js';
+import { setAttributes } from '../../../../../api/_content/script/api/utilities/attribute';
 
 class InjectSvg extends Instance {
   static get instanceClassName () {

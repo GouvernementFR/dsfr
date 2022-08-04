@@ -3,7 +3,7 @@
 /// @group summary
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _summary-scheme($legacy: false) {
   #{ns(summary)} {

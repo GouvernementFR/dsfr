@@ -3,8 +3,8 @@
 /// @group tab
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'sass/color';
+@use 'sass/disabled';
 
 @mixin _tab-scheme($legacy: false) {
   #{ns(tabs)} {

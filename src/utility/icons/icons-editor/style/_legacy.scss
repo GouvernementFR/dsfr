@@ -3,7 +3,7 @@
 /// @group icons-editor
 ////
 
-@use 'module/legacy';
+@use 'sass/legacy';
 
 @include legacy.is(ie11) {
   @include generate-icons-legacy(filter-icons('editor'));

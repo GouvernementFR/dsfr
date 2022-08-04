@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@use 'module/spacing';
+@use 'sass/spacing';
 
 #{ns-group(links)} {
   @include disable-list-style;

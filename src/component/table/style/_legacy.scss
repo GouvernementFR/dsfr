@@ -3,7 +3,7 @@
 /// @group table
 ////
 
-@use 'module/legacy';
+@use 'sass/legacy';
 
 @include legacy.is(ie11) {
   /**

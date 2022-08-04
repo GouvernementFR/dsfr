@@ -3,8 +3,8 @@
 /// @group radio
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'sass/color';
+@use 'sass/disabled';
 
 @mixin _radio-scheme-md($legacy: false) {
   #{ns-group(radio)} {

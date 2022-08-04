@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../../module/reset';
+@use '../../../../../../sass/reset';
 
 button {
   @include reset.button;

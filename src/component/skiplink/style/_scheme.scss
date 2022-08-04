@@ -3,7 +3,7 @@
 /// @group skiplink
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _skiplink-scheme($legacy: false) {
   #{ns(skiplinks)} {

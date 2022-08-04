@@ -5,7 +5,7 @@ const { createFile } = require('../utilities/file');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
-const { Example } = require('../classes/example/example');
+const { Example } = require('../classes/configurator/example/example-part');
 const { generatePictogram } = require('./pictogram');
 
 const analyse = (id, path, ascendants = []) => {

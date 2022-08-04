@@ -3,7 +3,7 @@
 /// @group header
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _header-deprecated-scheme($legacy: false) {
   #{ns(header)} {

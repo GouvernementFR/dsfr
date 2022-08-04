@@ -4,8 +4,8 @@
 ////
 
 @use 'sass:math';
-@use '../../../../module/color';
-@use '../../../../module/media';
+@use '../../../../sass/color';
+@use '../../../../sass/media';
 
 #{ns(logo)} {
   @include set-text-margin(0);

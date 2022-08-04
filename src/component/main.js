@@ -1,7 +1,7 @@
 import api from './api.js';
-import './accordion/main.js';
-import './button/main.js';
-import './breadcrumb/main.js';
+import './accordion/_content/script/register.js';
+import './button/_content/script/register.js';
+import './breadcrumb/_content/script/register.js';
 import './toggle/main.js';
 import './sidemenu/main.js';
 import './modal/main.js';

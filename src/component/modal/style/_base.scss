@@ -3,9 +3,9 @@
 /// @group modal
 ////
 
-@use 'module/spacing';
-@use 'module/elevation';
-@use 'module/color';
+@use 'sass/spacing';
+@use 'sass/elevation';
+@use 'sass/color';
 
 #{ns(modal)} {
   // reset dialog @TODO à déplacer dans reset ?

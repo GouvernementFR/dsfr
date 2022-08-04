@@ -3,11 +3,11 @@
 /// @group core
 ////
 
-@import 'module/font-face';
-@import 'module/heading';
-@import 'module/paragraph';
-@import 'module/list';
-@import 'module/sub';
-@import 'module/sup';
-@import 'module/font-weight';
-@import '../../../../../module/typography/index';
+@import 'sass/font-face';
+@import 'sass/heading';
+@import 'sass/paragraph';
+@import 'sass/list';
+@import 'sass/sub';
+@import 'sass/sup';
+@import 'sass/font-weight';
+@import '../../../../../sass/typography/index';

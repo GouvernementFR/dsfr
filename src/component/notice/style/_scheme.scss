@@ -3,7 +3,7 @@
 /// @group notice
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _notice-scheme($legacy: false) {
   #{ns(notice)} {

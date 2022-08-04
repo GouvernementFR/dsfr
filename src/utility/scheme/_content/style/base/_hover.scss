@@ -3,7 +3,7 @@
 /// @group schemes
 ////
 
-@use '../../../../../../module/selector/index';
+@use '../../../../../../sass/selector/index';
 
 @include hover-media-query {
   @include selector.theme(dark) {

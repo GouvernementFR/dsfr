@@ -3,7 +3,7 @@
 /// @group server
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 body {
   @include color.background(alt grey, (standalone: true));

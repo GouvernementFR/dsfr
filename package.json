@@ -25,7 +25,7 @@
   "files": [
     "/dist",
     "/src",
-    "/module",
+    "/sass",
     "/standalone",
     "/i18n",
     "/example",

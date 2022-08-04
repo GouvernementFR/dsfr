@@ -10,8 +10,8 @@ const { generateMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 const generateConfig = require('../generate/config');
 const clean = require('../utilities/clean');
-const { I18n } = require('../classes/i18n/i18n');
-const { Config } = require('../classes/config/config');
+const { I18n } = require('../classes/configurator/i18n/i18n');
+const { Config } = require('../classes/builder/configuration');
 
 const build = async (settings) => {
   log(36, `build ${global.config.namespace} - version ${global.version}`);

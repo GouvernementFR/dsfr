@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../module/legacy/index';
+@use '../../../../../sass/legacy/index';
 
 @include legacy.is(ie11) {
   @include has-icon {

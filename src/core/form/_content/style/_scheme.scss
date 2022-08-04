@@ -3,8 +3,8 @@
 /// @group form
 ////
 
-@use '../../../../../module/color/index';
-@use '../../../../../module/disabled/index';
+@use '../../../../../sass/color/index';
+@use '../../../../../sass/disabled/index';
 
 @mixin _form-scheme($legacy: false) {
   #{ns-group(select), ns-group(input)} {

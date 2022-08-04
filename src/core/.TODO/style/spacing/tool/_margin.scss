@@ -3,8 +3,8 @@
 /// @group tools
 ////
 
-@use '../../../../../../module/spacing/index';
-@use '../../../../../../module/string/index';
+@use '../../../../../../sass/spacing/index';
+@use '../../../../../../sass/string/index';
 
 @function _spacing-name($prop: margin, $side:top, $value:1, $unit: null, $breakpoint: null) {
   $start: string.slice($prop, 1, 1);

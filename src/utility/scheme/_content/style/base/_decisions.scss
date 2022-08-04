@@ -3,8 +3,8 @@
 /// @group schemes
 ////
 
-@use '../../../../../../module/color/index';
-@use '../../../../../../module/selector/index';
+@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/selector/index';
 
 @include selector.theme(dark) {
   @include color.define(dark);

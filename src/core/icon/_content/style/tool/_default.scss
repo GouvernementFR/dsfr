@@ -3,9 +3,9 @@
 /// @group core
 ////
 
-@use '../../../../../../module/path/index';
-@use '../../../../../../module/spacing/index';
-@use '../../../../../../module/specificity/index';
+@use '../../../../../../sass/path/index';
+@use '../../../../../../sass/spacing/index';
+@use '../../../../../../sass/specificity/index';
 
 /// Return icon size from map
 /// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)

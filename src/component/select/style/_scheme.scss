@@ -3,8 +3,8 @@
 /// @group select
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'sass/color';
+@use 'sass/disabled';
 
 @mixin _select-scheme($legacy: false) {
   #{ns(select)} {

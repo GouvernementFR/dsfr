@@ -1,5 +1,5 @@
-import { Instance } from '../../../../api/_content/script/modules/register/instance.js';
-import { completeAssign } from '../../../../api/_content/script/utilities/property/complete-assign.js';
+import { Instance } from '../../../../api/_content/script/api/modules/register/instance.js';
+import { completeAssign } from '../../../../api/_content/script/api/utilities/property/complete-assign.js';
 import { ToggleEvent } from './toggle-event.js';
 
 class Toggle extends Instance {

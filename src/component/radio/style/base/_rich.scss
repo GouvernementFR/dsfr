@@ -3,7 +3,7 @@
 /// @group radio
 ////
 
-@use 'module/spacing';
+@use 'sass/spacing';
 
 #{ns(radio-rich)} {
   @include relative;

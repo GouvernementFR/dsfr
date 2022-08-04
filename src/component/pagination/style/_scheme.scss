@@ -3,8 +3,8 @@
 /// @group pagination
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'sass/color';
+@use 'sass/disabled';
 
 @mixin _pagination-scheme($legacy: false) {
   #{ns(pagination)} {

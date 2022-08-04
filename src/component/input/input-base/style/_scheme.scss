@@ -3,8 +3,8 @@
 /// @group input
 ////
 
-@use 'module/color';
-@use 'module/disabled';
+@use 'sass/color';
+@use 'sass/disabled';
 
 @mixin _input-scheme($legacy: false) {
   #{ns(input)} {

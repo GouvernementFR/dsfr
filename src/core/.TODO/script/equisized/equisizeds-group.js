@@ -1,4 +1,4 @@
-import { Instance } from '../../../api/_content/script/modules/register/instance.js';
+import { Instance } from '../../../api/_content/script/api/modules/register/instance.js';
 import { EquisizedEmission } from './equisized-emission.js';
 
 class EquisizedsGroup extends Instance {

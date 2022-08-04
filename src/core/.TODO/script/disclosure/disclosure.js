@@ -1,7 +1,7 @@
-import { Instance } from '../../../api/_content/script/modules/register/instance.js';
+import { Instance } from '../../../api/_content/script/api/modules/register/instance.js';
 import { DisclosureEvent } from './disclosure-event.js';
 import { DisclosureEmission } from './disclosure-emission.js';
-import { completeAssign } from '../../../api/_content/script/utilities/property/complete-assign.js';
+import { completeAssign } from '../../../api/_content/script/api/utilities/property/complete-assign.js';
 
 class Disclosure extends Instance {
   constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {

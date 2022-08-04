@@ -3,7 +3,7 @@
 /// @group navigation
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _navigation-scheme-nav($legacy: false) {
   #{ns(nav)} {

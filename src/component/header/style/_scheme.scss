@@ -3,9 +3,9 @@
 /// @group header
 ////
 
-@use 'module/color';
-@use 'module/elevation';
-@use 'module/media-query';
+@use 'sass/color';
+@use 'sass/elevation';
+@use 'sass/media-query';
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {

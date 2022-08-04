@@ -1,7 +1,7 @@
 const subsetFont = require('subset-font');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
-const { I18n } = require('../classes/i18n/i18n');
+const { I18n } = require('../classes/configurator/i18n/i18n');
 const { readFile } = require('fs').promises;
 
 const standaloneFontSubset = async (pck) => {

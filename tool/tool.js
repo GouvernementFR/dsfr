@@ -6,6 +6,7 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
+const { Configurator } = require('./classes/configurator/configurator');
 
 /**
  * Build
@@ -183,7 +184,9 @@ const testHandler = async (argv) => {
     packages: argv.packages || []
   };
 
-  await test(settings);
+  // await test(settings);
+
+  const conf = new Configurator();
 };
 
 /**

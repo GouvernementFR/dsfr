@@ -3,7 +3,7 @@
 /// @group translate
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _translate-scheme($legacy: false) {
   #{ns(translate)} {

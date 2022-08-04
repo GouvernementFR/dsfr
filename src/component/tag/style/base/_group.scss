@@ -3,7 +3,7 @@
 /// @group tag
 ////
 
-@use 'module/spacing';
+@use 'sass/spacing';
 
 #{ns-group(tags)} {
   @include disable-list-style;

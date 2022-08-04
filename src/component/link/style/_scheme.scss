@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _link-scheme($legacy: false) {
   #{ns(link)} {

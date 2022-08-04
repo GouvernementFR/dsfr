@@ -7,8 +7,8 @@
   ICON DESIGN
 \* ˍˍˍˍˍˍˍˍˍ */
 
-@use 'module/path';
-@use 'module/shame/media-query';
+@use 'sass/path';
+@use 'sass/shame/media-query';
 
 @include path.to-dist(3);
 @include media-query.order;

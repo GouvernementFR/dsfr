@@ -3,7 +3,7 @@
 /// @group password
 ////
 
-@use 'module/color';
+@use 'sass/color';
 
 @mixin _password-scheme($legacy: false) {
   #{ns(password)} {

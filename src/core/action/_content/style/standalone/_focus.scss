@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../../module/color';
+@use '../../../../../../sass/color';
 
 @mixin standalone-focus ($elements, $element: &) {
   @at-root {

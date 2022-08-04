@@ -3,8 +3,8 @@
 /// @group core
 ////
 
-@use '../../../../../../module/color';
-@use '../../../../../../module/disabled';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
 
 @mixin _core-action-disabled-scheme($legacy: false) {
   @include disabled-selector {

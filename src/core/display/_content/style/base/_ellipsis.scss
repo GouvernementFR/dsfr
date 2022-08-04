@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../../module/specificity/index';
+@use '../../../../../../sass/specificity/index';
 
 @include build-utility (display, ellipsis) {
   display: specificity.important(inline);
