@@ -1,5 +1,5 @@
-import { DisclosureType } from '../../../../action/_content/script/disclosure/disclosure-type.js';
-import { DisclosureButton } from '../../../../action/_content/script/disclosure/disclosure-button.js';
+import { DisclosureType } from '../disclosure/disclosure-type.js';
+import { DisclosureButton } from '../disclosure/disclosure-button.js';
 
 class CollapseButton extends DisclosureButton {
   constructor () {

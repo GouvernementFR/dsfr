@@ -1,13 +1,8 @@
-import { Disclosure } from '../../../../action/_content/script/disclosure/disclosure.js';
+import { Disclosure } from '../disclosure/disclosure.js';
 import { CollapseSelector } from './collapse-selector.js';
-import { DisclosureType } from '../../../../action/_content/script/disclosure/disclosure-type.js';
+import { DisclosureType } from '../disclosure/disclosure-type.js';
 import { CollapseButton } from './collapse-button.js';
 
-/**
- * Tab coorespond au panel d'un élement Tabs (tab panel)
- * Tab étend disclosure qui ajoute/enleve le modifier --selected,
- * et ajoute/eleve l'attribut hidden, sur le panel
- */
 class Collapse extends Disclosure {
   constructor () {
     super(DisclosureType.EXPAND, CollapseSelector.COLLAPSE, CollapseButton, 'CollapsesGroup');

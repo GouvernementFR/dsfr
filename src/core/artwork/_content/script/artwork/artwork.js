@@ -1,6 +1,6 @@
-import { Instance } from '../../../../api/_content/script/api/modules/register/instance.js';
+import ref from '../../../ref.js';
 
-class Artwork extends Instance {
+class Artwork extends ref.api.Instance {
   static get instanceClassName () {
     return 'Artwork';
   }

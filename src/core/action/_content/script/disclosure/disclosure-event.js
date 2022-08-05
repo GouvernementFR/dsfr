@@ -1,8 +1,8 @@
-import ns from '../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../ref';
 
 const DisclosureEvent = {
-  DISCLOSE: ns.event('disclose'),
-  CONCEAL: ns.event('conceal')
+  DISCLOSE: ref.internals.ns.event('disclose'),
+  CONCEAL: ref.internals.ns.event('conceal')
 };
 
 export { DisclosureEvent };

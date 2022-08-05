@@ -9,10 +9,10 @@ import { DisclosuresGroup } from './action/_content/script/disclosure/disclosure
 import { DisclosureType } from './action/_content/script/disclosure/disclosure-type.js';
 import { DisclosureEvent } from './action/_content/script/disclosure/disclosure-event.js';
 import { DisclosureEmission } from './action/_content/script/disclosure/disclosure-emission.js';
-import { CollapseButton } from './collapse/_content/script/collapse/collapse-button.js';
-import { Collapse } from './collapse/_content/script/collapse/collapse.js';
-import { CollapsesGroup } from './collapse/_content/script/collapse/collapses-group.js';
-import { CollapseSelector } from './collapse/_content/script/collapse/collapse-selector.js';
+import { CollapseButton } from './action/_content/script/collapse/collapse-button.js';
+import { Collapse } from './action/_content/script/collapse/collapse.js';
+import { CollapsesGroup } from './action/_content/script/collapse/collapses-group.js';
+import { CollapseSelector } from './action/_content/script/collapse/collapse-selector.js';
 import { Equisized } from './spacing/_content/script/equisized/equisized.js';
 import { EquisizedsGroup } from './spacing/_content/script/equisized/equisizeds-group.js';
 import { EquisizedEmission } from './spacing/_content/script/equisized/equisized-emission.js';

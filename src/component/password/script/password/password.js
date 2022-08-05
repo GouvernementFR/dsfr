@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import window from '../../api.js';
 import { PasswordEmission } from './password-emission.js';
 
-class Password extends api.core.Instance {
+class Password extends window.core.Instance {
   static get instanceClassName () {
     return 'Password';
   }

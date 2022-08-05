@@ -1,6 +1,9 @@
 id: artwork
 asset:
   dist: artwork
+script:
+  dependencies:
+    - api
 deprecated:
   asset:
     dist: artwork

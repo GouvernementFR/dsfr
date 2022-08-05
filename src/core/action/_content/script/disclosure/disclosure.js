@@ -1,9 +1,8 @@
-import { Instance } from '../../../../api/_content/script/api/modules/register/instance.js';
+import ref from '../../../ref.js';
 import { DisclosureEvent } from './disclosure-event.js';
 import { DisclosureEmission } from './disclosure-emission.js';
-import { completeAssign } from '../../../../api/_content/script/api/utilities/property/complete-assign.js';
 
-class Disclosure extends Instance {
+class Disclosure extends ref.api.Instance {
   constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {
     super();
     this.type = type;
@@ -46,7 +45,7 @@ class Disclosure extends Instance {
       }
     };
 
-    return completeAssign(proxy, proxyAccessors);
+    return ref.internals.property.completeAssign(proxy, proxyAccessors);
   }
 
   get buttons () {

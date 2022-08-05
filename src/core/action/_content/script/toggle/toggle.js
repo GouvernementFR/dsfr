@@ -1,8 +1,7 @@
-import { Instance } from '../../../../api/_content/script/api/modules/register/instance.js';
-import { completeAssign } from '../../../../api/_content/script/api/utilities/property/complete-assign.js';
+import ref from '../../../ref';
 import { ToggleEvent } from './toggle-event.js';
 
-class Toggle extends Instance {
+class Toggle extends ref.api.Instance {
   static get instanceClassName () {
     return 'Toggle';
   }
@@ -40,7 +39,7 @@ class Toggle extends Instance {
       }
     };
 
-    return completeAssign(proxy, proxyAccessors);
+    return ref.internals.property.completeAssign(proxy, proxyAccessors);
   }
 }
 

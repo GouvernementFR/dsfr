@@ -37,7 +37,6 @@ class AssetPart {
   }
 
   _parse (relative = '') {
-    console.log('parse');
     const dir = `${this.path}${relative}`;
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 

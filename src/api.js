@@ -1,2 +1,2 @@
-import api from './core/api/_content/script/api.js';
-export default api;
+import window from './core/api/_content/script/reference.js';
+export default window;

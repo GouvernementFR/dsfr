@@ -1,5 +1,5 @@
-import ns from '../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../ref.js';
 
 export const ArtworkSelector = {
-  ARTWORK_USE: `${ns.selector('artwork')} use`
+  ARTWORK_USE: `${ref.internals.ns.selector('artwork')} use`
 };

@@ -17,10 +17,19 @@ class Configurator {
 
   analyse () {
     this.root.analyse();
+
+    const scripts = this.root.flat.filter(part => part.script.has);
+    let hinged = false;
+    while (!hinged) {
+      hinged = true;
+      for (const part of scripts) {
+        if (!part.script.hinge()) hinged = false;
+      }
+    }
   }
 
   order () {
-
+    this.root.order();
   }
 
   generate () {
@@ -32,7 +41,6 @@ class Configurator {
 
   _generateIcons () {
     const items = this.flat.map(part => part.asset.icons).flat();
-    console.log(items);
     const sass = '$icons-config: (\n' +
       items.map(item => `  ${item.name}: '${item.dist}',\n`).join('') +
       ');\n';

@@ -1,4 +1,3 @@
-import './_content/script/legacy@pre';
-import './_content/script/define';
-import './_content/script/legacy';
-import './_content/script/register';
+import './_content/script/pre.legacy.js';
+import './_content/script/define.js';
+import './_content/script/register.js';

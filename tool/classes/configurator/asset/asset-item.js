@@ -13,7 +13,7 @@ class AssetItem {
     if (category) this._data.category = category;
 
     if (type) {
-      this._data.type = this.type = type;
+      this._data.type = type;
 
       switch (type) {
         case 'icon':
@@ -27,6 +27,22 @@ class AssetItem {
     }
   }
 
+  get data () {
+    return this._data;
+  }
+
+  get type () {
+    return this._data.type;
+  }
+
+  get name () {
+    return this._data.name;
+  }
+
+  get family () {
+    return this._data.family;
+  }
+
   _icon () {
     const filename = path.basename(this.src, path.extname(this.src));
 
@@ -34,23 +50,19 @@ class AssetItem {
       const s = filename.split('--');
       switch (s[0]) {
         case 'fr':
-          this._data.family = this.family = 'dsfr';
-          this._data.name = this.name = s.slice(1).join('--');
+          this._data.family = 'dsfr';
+          this._data.name = s.slice(1).join('--');
           break;
       }
     } else {
-      this._data.family = this.family = 'remix';
-      this._data.name = this.name = filename;
+      this._data.family = 'remix';
+      this._data.name = filename;
     }
   }
 
   _pictogram () {
     const filename = path.basename(this.src, path.extname(this.src));
-    this._data.name = this.name = filename;
-  }
-
-  get data () {
-    return this._data;
+    this._data.name = filename;
   }
 }
 

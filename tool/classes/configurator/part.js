@@ -7,8 +7,11 @@ const { ScriptPart } = require('./script/script-part');
 const { Deprecated } = require('./alt/deprecated');
 
 class Part {
-  constructor (path) {
+  constructor (path, level = 0, parent = null) {
     this.path = path;
+    this._level = level;
+    this._parent = parent;
+    this.top = '../'.repeat(level + 1);
     this._children = [];
     this.init();
   }
@@ -19,6 +22,30 @@ class Part {
 
   get children () {
     return this._children;
+  }
+
+  get descendants () {
+    return this._descendants;
+  }
+
+  get parent () {
+    return this._parent;
+  }
+
+  get root () {
+    return this._parent ? this._parent.root : this;
+  }
+
+  get level () {
+    return this._level;
+  }
+
+  get detached () {
+    return this._data.detached === true;
+  }
+
+  get draft () {
+    return this._data.draft === true;
   }
 
   get flat () {
@@ -33,8 +60,22 @@ class Part {
       children: this._children.map(child => child.data)
     };
     if (this.asset.has) data.asset = this.asset.data;
+    if (this.script.has) data.script = this.script.data;
     if (this.deprecated.has) data.deprecated = this.deprecated.data;
     return data;
+  }
+
+  getPart (id) {
+    return this.root._getPart(id);
+  }
+
+  _getPart (id) {
+    if (this.id === id) return this;
+    for (const child of this._children) {
+      const part = child._getPart(id);
+      if (part) return part;
+    }
+    return null;
   }
 
   init () {
@@ -46,6 +87,7 @@ class Part {
     this.id = this._config.id;
     this._data = {
       id: this._config.id,
+      src: `src/${this.path}`,
       draft: this._config.draft === true,
       detached: this._config.detached === true
     };
@@ -66,23 +108,35 @@ class Part {
       }
     }
 
-    // console.log(this.id, this._children);
+    this._descendants = [];
+    for (const child of this.children) {
+      this._descendants.push(child, ...child._descendants);
+    }
   }
 
   addChild (path) {
-    const child = new Part(`${this.path}/${path}`);
+    const child = new Part(`${this.path}/${path}`, this.level + 1, this);
     if (child.has) this._children.push(child);
   }
 
   analyse () {
     this._children.forEach(child => child.analyse());
 
-    if (this.asset.has) this.asset.analyse();
-    if (this.deprecated.has) this.deprecated.analyse();
+    this.asset.analyse();
+    this.script.analyse();
+    this.deprecated.analyse();
+  }
+
+  order () {
+    this._children.forEach(child => child.order());
+
+    this.script.order();
   }
 
   generate () {
     this._children.forEach(child => child.generate());
+
+    this.script.generate();
   }
 }
 

@@ -1,0 +1,4 @@
+id: action
+script:
+  dependencies:
+    - api

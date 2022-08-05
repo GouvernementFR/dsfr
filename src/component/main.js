@@ -1,4 +1,4 @@
-import api from './api.js';
+import window from './api.js';
 import './accordion/_content/script/register.js';
 import './button/_content/script/register.js';
 import './breadcrumb/_content/script/register.js';
@@ -13,4 +13,4 @@ import './tag/main.js';
 import './download/main.js';
 import './header/main.js';
 import './display/main.js';
-export default api;
+export default window;

@@ -26,6 +26,7 @@ class Deprecated {
   }
 
   analyse () {
+    if (!this.has) return;
     this.asset.analyse();
   }
 }

@@ -1,7 +1,7 @@
-import ns from '../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../ref';
 
 const ToggleEvent = {
-  TOGGLE: ns.event('toggle')
+  TOGGLE: ref.internals.ns.event('toggle')
 };
 
 export { ToggleEvent };

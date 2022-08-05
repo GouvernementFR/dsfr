@@ -1,2 +1,2 @@
-import api from '../api.js';
-export default api;
+import window from '../api.js';
+export default window;

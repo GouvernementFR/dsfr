@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import window from '../../api.js';
 import { PasswordEmission } from './password-emission.js';
 
-class PasswordInput extends api.core.Instance {
+class PasswordInput extends window.core.Instance {
   static get instanceClassName () {
     return 'PasswordInput';
   }
@@ -24,9 +24,9 @@ class PasswordInput extends api.core.Instance {
 
   capslock (event) {
     if (event.getModifierState('CapsLock')) {
-      this.node.parentNode.setAttribute(api.internals.ns.attr('capslock'), '');
+      this.node.parentNode.setAttribute(window.internals.ns.attr('capslock'), '');
     } else {
-      this.node.parentNode.removeAttribute(api.internals.ns.attr('capslock'));
+      this.node.parentNode.removeAttribute(window.internals.ns.attr('capslock'));
     }
   }
 

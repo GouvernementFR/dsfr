@@ -1,11 +1,10 @@
-import { Instance } from '../../../../api/_content/script/api/modules/register/instance';
-import ns from '../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../ref.js';
 
-class DisclosureButton extends Instance {
+class DisclosureButton extends ref.api.Instance {
   constructor (type) {
     super();
     this.type = type;
-    this.attributeName = type.ariaState ? 'aria-' + type.id : ns.attr(type.id);
+    this.attributeName = type.ariaState ? 'aria-' + type.id : ref.internals.ns.attr(type.id);
   }
 
   static get instanceClassName () {

@@ -1,8 +1,7 @@
-import { Instance } from '../../../../api/_content/script/api/modules/register/instance.js';
+import ref from '../../../ref';
 import { DisclosureEmission } from './disclosure-emission.js';
-import { completeAssign } from '../../../../api/_content/script/api/utilities/property/complete-assign.js';
 
-class DisclosuresGroup extends Instance {
+class DisclosuresGroup extends ref.api.Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
     super(jsAttribute);
     this.disclosureInstanceClassName = disclosureInstanceClassName;
@@ -45,7 +44,7 @@ class DisclosuresGroup extends Instance {
       }
     };
 
-    return completeAssign(super.proxy, proxyAccessors);
+    return ref.internals.property.completeAssign(super.proxy, proxyAccessors);
   }
 
   validate (member) {

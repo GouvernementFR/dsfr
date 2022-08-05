@@ -1,0 +1,4 @@
+id: accordion
+script:
+  dependencies:
+    - action

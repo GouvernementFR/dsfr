@@ -1,11 +1,11 @@
-import ns from '../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../ref.js';
 
 const DisclosureEmission = {
-  RESET: ns.emission('disclosure', 'reset'),
-  ADDED: ns.emission('disclosure', 'added'),
-  REMOVED: ns.emission('disclosure', 'removed'),
-  GROUP: ns.emission('disclosure', 'group'),
-  UNGROUP: ns.emission('disclosure', 'ungroup')
+  RESET: ref.internals.ns.emission('disclosure', 'reset'),
+  ADDED: ref.internals.ns.emission('disclosure', 'added'),
+  REMOVED: ref.internals.ns.emission('disclosure', 'removed'),
+  GROUP: ref.internals.ns.emission('disclosure', 'group'),
+  UNGROUP: ref.internals.ns.emission('disclosure', 'ungroup')
 };
 
 export { DisclosureEmission };
