@@ -1,6 +1,6 @@
-import { Disclosure } from '../../../../.TODO/script/disclosure/disclosure.js';
+import { Disclosure } from '../../../../action/_content/script/disclosure/disclosure.js';
 import { CollapseSelector } from './collapse-selector.js';
-import { DisclosureType } from '../../../../.TODO/script/disclosure/disclosure-type.js';
+import { DisclosureType } from '../../../../action/_content/script/disclosure/disclosure-type.js';
 import { CollapseButton } from './collapse-button.js';
 
 /**

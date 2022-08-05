@@ -1,5 +1,5 @@
-import { Instance } from '../../../api/_content/script/api/modules/register/instance';
-import ns from '../../../api/_content/script/api/utilities/namespace.js';
+import { Instance } from '../../../../api/_content/script/api/modules/register/instance';
+import ns from '../../../../api/_content/script/api/utilities/namespace.js';
 
 class DisclosureButton extends Instance {
   constructor (type) {

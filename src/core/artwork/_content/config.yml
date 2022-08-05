@@ -1,0 +1,6 @@
+id: artwork
+asset:
+  dist: artwork
+deprecated:
+  asset:
+    dist: artwork

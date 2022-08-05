@@ -3,6 +3,7 @@
 /// @group core
 ////
 
+@use '../../../../../../.config/icons';
 @use '../../../../../../sass/path/index';
 @use '../../../../../../sass/spacing/index';
 @use '../../../../../../sass/specificity/index';
@@ -20,8 +21,7 @@
 }
 
 @function get-icon-url($icon, $important: false) {
-  $config: map-get($icons-config, $icon);
-  $url: url('#{path.dist()}#{map-get($config, path)}');
+  $url: url('#{path.dist()}#{map.get(icons, $icon)}');
   @return specificity.important($url, $important);
 }
 

@@ -3,9 +3,10 @@ const { AssetItem } = require('./asset-item');
 
 class AssetPart {
   constructor (path, config) {
-    this.path = `src${path}/_content/asset`;
+    this.path = path;
     this.items = [];
-    this.init(config);
+    this._config = config;
+    this.init();
   }
 
   get has () {
@@ -13,23 +14,25 @@ class AssetPart {
   }
 
   get data () {
-    const data = {};
-    return {};
+    return {
+      items: this.items.map(item => item.data)
+    };
   }
 
-  get sass () {
-
+  get icons () {
+    return this.items.filter(item => item.type === 'icon');
   }
 
-  init (config) {
+  init () {
     if (!fs.existsSync(this.path)) return;
     this._has = true;
-    this.dist = config.dist;
-    this.type = config.type;
-    this.category = config.category;
+    this.dist = this._config.dist || '';
+    this.type = this._config.type;
+    this.category = this._config.category;
   }
 
   analyse () {
+    if (!this.has) return;
     this._parse();
   }
 
@@ -41,7 +44,7 @@ class AssetPart {
     for (const entry of entries) {
       switch (true) {
         case entry.isFile():
-          this.items.push(new AssetItem(`${dir}/${entry.name}`, `${this.dist}${relative}/${entry.name}`, this.type, this.category));
+          if (!(/(^|\/)\.[^/.]/g).test(entry.name)) this.items.push(new AssetItem(`${dir}/${entry.name}`, `${this.dist}${relative}/${entry.name}`, this.type, this.category));
           break;
 
         case entry.isDirectory():
@@ -49,8 +52,6 @@ class AssetPart {
           break;
       }
     }
-
-    console.log(this.items);
   }
 
   generate () {

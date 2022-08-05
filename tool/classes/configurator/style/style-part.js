@@ -3,7 +3,8 @@ const fs = require('fs');
 class StylePart {
   constructor (path, config) {
     this.path = path;
-    this.init(config);
+    this._config = config || {};
+    this.init();
   }
 
   get has () {
@@ -14,9 +15,8 @@ class StylePart {
     return {};
   }
 
-  init (config) {
-    const path = `src/${this.path}/_content/asset`;
-    if (!fs.existsSync(path)) return;
+  init () {
+    if (!fs.existsSync(this.path)) return;
     this._has = true;
   }
 

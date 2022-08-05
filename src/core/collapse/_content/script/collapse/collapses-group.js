@@ -1,4 +1,4 @@
-import { DisclosuresGroup } from '../../../../.TODO/script/disclosure/disclosures-group.js';
+import { DisclosuresGroup } from '../../../../action/_content/script/disclosure/disclosures-group.js';
 
 class CollapsesGroup extends DisclosuresGroup {
   constructor () {

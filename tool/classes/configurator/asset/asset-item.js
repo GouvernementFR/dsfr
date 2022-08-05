@@ -1,9 +1,9 @@
-const fs = require('fs');
 const path = require('path');
 
 class AssetItem {
   constructor (src, dist, type, category) {
     this.src = src;
+    this.dist = dist;
     this._data = {
       src: src,
       dist: dist,
@@ -13,7 +13,7 @@ class AssetItem {
     if (category) this._data.category = category;
 
     if (type) {
-      this._data.type = type;
+      this._data.type = this.type = type;
 
       switch (type) {
         case 'icon':
@@ -28,7 +28,7 @@ class AssetItem {
   }
 
   _icon () {
-    const filename = path.basename(this.src);
+    const filename = path.basename(this.src, path.extname(this.src));
 
     if (filename.indexOf('--') > -1) {
       const s = filename.split('--');
@@ -39,21 +39,18 @@ class AssetItem {
           break;
       }
     } else {
-      this.family = 'remix';
-      this.name = filename;
+      this._data.family = this.family = 'remix';
+      this._data.name = this.name = filename;
     }
   }
 
   _pictogram () {
-
+    const filename = path.basename(this.src, path.extname(this.src));
+    this._data.name = this.name = filename;
   }
 
   get data () {
     return this._data;
-  }
-
-  get sass () {
-    return '';
   }
 }
 

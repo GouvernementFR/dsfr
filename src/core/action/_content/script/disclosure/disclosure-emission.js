@@ -1,4 +1,4 @@
-import ns from '../../../api/_content/script/api/utilities/namespace.js';
+import ns from '../../../../api/_content/script/api/utilities/namespace.js';
 
 const DisclosureEmission = {
   RESET: ns.emission('disclosure', 'reset'),
