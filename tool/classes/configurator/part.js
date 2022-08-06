@@ -5,6 +5,7 @@ const { AssetPart } = require('./asset/asset-part');
 const { StylePart } = require('./style/style-part');
 const { ScriptPart } = require('./script/script-part');
 const { Deprecated } = require('./alt/deprecated');
+const global = require('../../../package.json');
 
 class Part {
   constructor (path, level = 0, parent = null) {
@@ -18,6 +19,14 @@ class Part {
 
   get has () {
     return this._has === true;
+  }
+
+  get id () {
+    return this._data.id;
+  }
+
+  get filename () {
+    return this._filename;
   }
 
   get children () {
@@ -81,14 +90,14 @@ class Part {
   init () {
     const path = `src/${this.path}/_content/config.yml`;
     if (!fs.existsSync(path)) return;
-    this._has = true;
     const fileContents = fs.readFileSync(path, 'utf8');
     this._config = yaml.load(fileContents);
-    this.id = this._config.id;
+    if (this._config.ignore === true) return;
+    this._has = true;
+    this._filename = this._config.filename || this._config.id;
     this._data = {
       id: this._config.id,
-      src: `src/${this.path}`,
-      draft: this._config.draft === true,
+      src: `src${this.path}`,
       detached: this._config.detached === true
     };
     this.extract();
@@ -137,6 +146,10 @@ class Part {
     this._children.forEach(child => child.generate());
 
     this.script.generate();
+  }
+
+  banner (content) {
+    return `/*! ${global.config.namespace.toUpperCase()} v${global.version} | SPDX-License-Identifier: MIT | License-Filename: LICENSE.md | restricted use (see terms and conditions) */\n\n/* ${this.id.toUpperCase()} */\n\n${content}`;
   }
 }
 

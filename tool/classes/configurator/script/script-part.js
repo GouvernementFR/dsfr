@@ -1,124 +1,91 @@
-const fs = require('fs');
-const path = require('path');
-const { createFile } = require('../../../utilities/file');
-
-const FILES = ['pre', 'pre.legacy', 'define', 'define.legacy', 'register', 'register.legacy', 'post', 'post.legacy'];
-const MODULE = ['pre', 'define', 'register', 'post'];
-const NOMODULE = ['pre', 'pre.legacy', 'define', 'define.legacy', 'register', 'register.legacy', 'post', 'post.legacy'];
+const { ScriptReference } = require('./script-reference');
+const { KINDS, BASE } = require('./kinds');
+const { ScriptKind } = require('./script-kind');
+const { TYPES } = require('./types');
+const { ScriptItem } = require('./script-item');
+const { ScriptDependency } = require('./script-dependency');
 
 class ScriptPart {
   constructor (part, config) {
     this.part = part;
     this._config = config || {};
     this._data = {};
-    this.files = [];
-    this._hinged = false;
+    this._items = [];
     this.init();
   }
 
   get has () {
-    return this._has || this._possess;
+    return this._has || this._carries;
   }
 
   get data () {
     return this._data;
   }
 
+  get dependencies () {
+    return this._dependency.dependencies;
+  }
+
+  get contains () {
+    return this._dependency.contains;
+  }
+
+  get hinged () {
+    return this._dependency.hinged;
+  }
+
   get level () {
-    return this._level;
+    return this._dependency.level;
   }
 
   init () {
-    const script = `src${this.part.path}/_content/script`;
-    if (fs.existsSync(script)) {
-      this.files.push(...FILES.filter(file => fs.existsSync(`${script}/${file}.js`)));
-    }
-    this._has = this.files.length !== 0;
-    this._possess = this.part.children.some(child => child.script.has);
+    this._carries = this.part.children.some(child => child.script.has);
+
+    this.kinds = KINDS
+      .map(kind => new ScriptKind(kind, this.part))
+      .filter(kind => kind.has)
+      .filter((kind, index, array) => !(array.length === 2 && kind.kind === BASE));
+    this._has = this.kinds.length > 0;
 
     if (this.has) {
-      this._contains = [];
-      for (const child of this.part.children) {
-        if (child.detached || !child.script.has) continue;
-        if (child.script._has) this._contains.push(child);
-        if (child.script._contains) this._contains.push(...child.script._contains);
+      this.reference = new ScriptReference(this.part);
+      this._dependency = new ScriptDependency(this.part, this._config.dependencies);
+      for (const kind of KINDS) {
+        for (const type of TYPES) {
+          const item = new ScriptItem(this.part, kind, type);
+          if (item.has) this._items.push(item);
+        }
       }
     }
   }
 
   analyse () {
     if (!this.has) return;
-    this._directs = this._config.dependencies ? this._config.dependencies.map(id => this.part.getPart(id)) : [];
+    this._dependency.analyse();
   }
 
   hinge () {
-    if (this._hinged) return true;
-
-    const dependencies = [];
-    for (const part of this._directs) {
-      if (!part.script._hinged) return false;
-      dependencies.push(part, ...part.script._dependencies);
-    }
-
-    for (const part of this._contains) {
-      if (!part.script.has) continue;
-      if (!part.script._hinged) return false;
-      dependencies.push(...part.script._dependencies);
-    }
-
-    this._dependencies = dependencies.filter((part, index, array) => this._contains.indexOf(part) === -1 && array.indexOf(part) === index).sort((a, b) => a.script.level - b.script.level);
-
-    console.log(this.part.id, this._dependencies.map(p => p.id));
-
-    this._level = this._dependencies.length ? Math.max(...dependencies.map(part => part.script.level)) + 1 : 0;
-
-    this._hinged = true;
-    return true;
+    this._dependency.hinge();
   }
 
   order () {
     if (!this.has) return;
-    this._contains = this._contains.sort((a, b) => a.script.level - b.script.level);
-    console.log('order', this.part.id, this._contains.map(p => p.id));
+    this._dependency.order();
+    this._data.dependencies = this.dependencies.map(part => part.id);
+    this._data.contains = this.contains.map(part => part.id);
+    this._data.level = this.level;
   }
 
   generate () {
     if (!this.has) return;
 
-    if (this._has && this.part.id !== 'api') {
-      const api = this.part.getPart('api');
-      const relative = path.relative(`src${this.part.path}`, `src${api.path}/_content/script/reference.js`);
-      const ref = `import ref from '${relative}';\nexport default ref;\n`;
-      createFile(`src${this.part.path}/ref.js`, ref);
+    if (this.reference && this.reference.has) this.reference.generate();
+
+    this._data.items = [];
+    for (const item of this._items) {
+      item.generate(this._dependency);
+      if (item.generated) this._items.push(item.data);
     }
-
-    const src = {};
-
-    const module = MODULE.map(file => this._getImport(file)).join('');
-    if (module) {
-      src.module = `src${this.part.path}/module.js`;
-      createFile(src.module, module);
-    }
-
-    const nomodule = NOMODULE.map(file => this._getImport(file)).join('');
-    if (nomodule) {
-      src.nomodule = `src${this.part.path}/nomodule.js`;
-      createFile(src.nomodule, nomodule);
-    }
-
-    if (Object.keys(src).length > 0) {
-      this._data.src = src;
-      this._data.dest = `dist${this.part.path}/${this.part.id}`;
-    }
-  }
-
-  _getImport (file) {
-    return this._contains.map(part => {
-      if (part.script.files.indexOf(file) === -1) return '';
-      const script = path.relative(`src${this.part.path}`, `src${part.path}/_content/script`);
-      const current = script.charAt(0) !== '.' ? './' : '';
-      return `import '${current}${script}/${file}.js';\n`;
-    }).join('');
   }
 }
 

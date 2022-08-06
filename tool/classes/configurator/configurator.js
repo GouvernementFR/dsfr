@@ -1,6 +1,7 @@
 const { Part } = require('./part');
 const { I18nPart } = require('./i18n/i18n-part');
 const { createFile } = require('../../utilities/file');
+const global = require('../../../package.json');
 
 class Configurator {
   constructor () {
@@ -23,7 +24,8 @@ class Configurator {
     while (!hinged) {
       hinged = true;
       for (const part of scripts) {
-        if (!part.script.hinge()) hinged = false;
+        part.script.hinge();
+        hinged &&= part.script.hinged;
       }
     }
   }
@@ -33,6 +35,7 @@ class Configurator {
   }
 
   generate () {
+    this._generateJsConfig();
     this.root.generate();
     this._generateIcons();
     this._generateI18n();
@@ -59,6 +62,16 @@ class Configurator {
 
   _generateConfig () {
     createFile('.config/config.json', JSON.stringify(this.root.data, null, 4));
+  }
+
+  _generateJsConfig () {
+    const keys = Object.keys(global.config);
+    const lines = keys.map(key => `  ${key}: '${global.config[key]}'`);
+    lines.push(`  version: '${global.version}'`);
+
+    const js = `const config = {\n${lines.join(',\n')}\n};\n\nexport default config;\n`;
+    const file = `src${this.root.getPart('api').path}/config.js`;
+    createFile(file , js);
   }
 }
 

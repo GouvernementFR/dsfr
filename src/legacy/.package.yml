@@ -1,7 +1,0 @@
-id: legacy
-title: Systèmes antérieurs
-order: 3
-description: Ce package est utilisé de manière globale pour la compatibilité Internet Explorer 11 du Design System de l'Etat.
-draft: true
-wrapper: col-8
-module: false
