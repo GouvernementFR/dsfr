@@ -12,8 +12,7 @@ class ScriptSource {
     return this._has === true;
   }
 
-  getImports (from, type) {
-    if (this.filename.types.index(type) === -1) return '';
+  getImports (from) {
     return this.sources.map(src => path.relative(from, src)).map(src => `${src.charAt(0) !== '.' ? './' : ''}${src}`).map(src => `import '${src}';\n`);
   }
 

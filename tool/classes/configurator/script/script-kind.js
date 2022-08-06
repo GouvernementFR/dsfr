@@ -7,7 +7,7 @@ class ScriptKind {
   constructor (kind, part) {
     this.kind = kind;
     this.part = part;
-    this.sources = [];
+    this.init();
   }
 
   get has () {
@@ -19,18 +19,16 @@ class ScriptKind {
 
     if (dirs.length === 0) return;
 
-    for (const filename of FILENAMES) {
-      this.sources.push(...dirs.map(dir => new ScriptSource(filename, dir)).filter(file => file.has));
-    }
+    this._sources = FILENAMES.map(filename => new ScriptSource(filename, dirs)).filter(src => src.has);
 
-    this._has = this.sources.length > 0;
+    this._has = this._sources.length > 0;
 
-    this.types = TYPES.filter(type => this.sources.some(src => src.filename.types.indexOf(type) > -1));
+    this.types = TYPES.filter(type => this._sources.some(src => src.filename.types.indexOf(type) > -1));
   }
 
   getImports (from, filename) {
-    const source = this.sources.filter(src => src.filename === filename)[0];
-    if (source) return source.getImports(from, filename);
+    const source = this._sources.filter(src => src.filename === filename)[0];
+    if (source) return source.getImports(from);
     return [];
   }
 }

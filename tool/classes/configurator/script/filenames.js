@@ -19,28 +19,28 @@ const FILENAMES = [
   },
   {
     name: 'define',
-    types: [MODULE]
+    types: [MODULE, NOMODULE]
   },
   {
     name: 'define.legacy',
-    types: [MODULE, NOMODULE]
+    types: [NOMODULE]
   },
   {
     name: 'register',
-    types: [MODULE]
+    types: [MODULE, NOMODULE]
   },
   {
     name: 'register.legacy',
-    types: [MODULE, NOMODULE]
+    types: [NOMODULE]
   },
   {
     name: 'post',
-    types: [MODULE]
+    types: [MODULE, NOMODULE]
   },
   {
     name: 'post.legacy',
-    types: [MODULE, NOMODULE]
+    types: [NOMODULE]
   }
 ];
 
-module.export = { FILENAMES };
+module.exports = { FILENAMES };

@@ -8,10 +8,11 @@ const { Deprecated } = require('./alt/deprecated');
 const global = require('../../../package.json');
 
 class Part {
-  constructor (path, level = 0, parent = null) {
+  constructor (path, level = 0, ascendants = null) {
     this.path = path;
     this._level = level;
-    this._parent = parent;
+    this._parent = ascendants ? ascendants[0] : null;
+    this._ascendants = ascendants || [];
     this.top = '../'.repeat(level + 1);
     this._children = [];
     this.init();
@@ -35,6 +36,10 @@ class Part {
 
   get descendants () {
     return this._descendants;
+  }
+
+  get ascendants () {
+    return this._ascendants;
   }
 
   get parent () {
@@ -124,7 +129,7 @@ class Part {
   }
 
   addChild (path) {
-    const child = new Part(`${this.path}/${path}`, this.level + 1, this);
+    const child = new Part(`${this.path}/${path}`, this.level + 1, [this, ...this._ascendants]);
     if (child.has) this._children.push(child);
   }
 

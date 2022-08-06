@@ -30,12 +30,23 @@ class ScriptPart {
     return this._dependency.contains;
   }
 
+  get imports () {
+    return this._dependency.imports;
+  }
+
   get hinged () {
     return this._dependency.hinged;
   }
 
   get level () {
     return this._dependency.level;
+  }
+
+  getKind (kind) {
+    for (const sk of this.kinds) {
+      if (sk.kind === kind) return sk;
+    }
+    return null;
   }
 
   init () {
@@ -52,8 +63,7 @@ class ScriptPart {
       this._dependency = new ScriptDependency(this.part, this._config.dependencies);
       for (const kind of KINDS) {
         for (const type of TYPES) {
-          const item = new ScriptItem(this.part, kind, type);
-          if (item.has) this._items.push(item);
+          this._items.push(new ScriptItem(this.part, kind, type));
         }
       }
     }

@@ -21,12 +21,15 @@ class Configurator {
 
     const scripts = this.root.flat.filter(part => part.script.has);
     let hinged = false;
+    let count = 20;
     while (!hinged) {
       hinged = true;
       for (const part of scripts) {
         part.script.hinge();
         hinged &&= part.script.hinged;
       }
+      count--;
+      if (count < 0) break;
     }
   }
 

@@ -1,13 +1,13 @@
 const BASE = {
   id: 'base',
   paths: ['script'],
-  ser: '.base',
+  src: '.base',
   dest: '.base'
 };
 
 const DEPRECATED = {
   id: 'deprecated',
-  paths: ['script/deprecated'],
+  paths: ['deprecated/script'],
   src: '.deprecated',
   dest: '.deprecated'
 };

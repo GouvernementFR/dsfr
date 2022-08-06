@@ -4,6 +4,7 @@ import { Artwork } from './artwork/artwork';
 import { ArtworkSelector } from './artwork/artwork-selector';
 
 ref.artwork = {
+  ...ref.artwork,
   Artwork: Artwork,
   ArtworkSelector: ArtworkSelector
 };
