@@ -1,5 +1,6 @@
+const fs = require('fs');
 const { FILENAMES } = require('./filenames');
-const { createFile } = require('../../../utilities/file');
+const { createFile, deleteFile } = require('../../../utilities/file');
 
 class ScriptItem {
   constructor (part, kind, support) {
@@ -38,6 +39,8 @@ class ScriptItem {
       }
     }
     this._filled = this.imports.length > 0;
+
+    if (!this._filled && fs.existsSync(this.src)) deleteFile(this.src);
   }
 
   create () {

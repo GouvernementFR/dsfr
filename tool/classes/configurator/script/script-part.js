@@ -1,8 +1,7 @@
 const { ScriptReference } = require('./script-reference');
-const { KINDS, BASE } = require('./kinds');
+const { KINDS } = require('./kinds');
 const { ScriptKind } = require('./script-kind');
 const { SUPPORTS } = require('./supports');
-const { ScriptItem } = require('./script-item');
 const { ScriptDependency } = require('./script-dependency');
 const { ScriptSupport } = require('./script-support');
 
