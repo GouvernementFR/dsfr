@@ -1,45 +1,45 @@
-const { MODULE, NOMODULE } = require('./types');
+const { MODULE, NOMODULE } = require('./supports');
 
 const FILENAMES = [
   {
     name: 'module',
-    types: [MODULE]
+    supports: [MODULE]
   },
   {
     name: 'nomodule',
-    types: [NOMODULE]
+    supports: [NOMODULE]
   },
   {
     name: 'pre',
-    types: [MODULE, NOMODULE]
+    supports: [MODULE, NOMODULE]
   },
   {
     name: 'pre.legacy',
-    types: [NOMODULE]
+    supports: [NOMODULE]
   },
   {
     name: 'define',
-    types: [MODULE, NOMODULE]
+    supports: [MODULE, NOMODULE]
   },
   {
     name: 'define.legacy',
-    types: [NOMODULE]
+    supports: [NOMODULE]
   },
   {
     name: 'register',
-    types: [MODULE, NOMODULE]
+    supports: [MODULE, NOMODULE]
   },
   {
     name: 'register.legacy',
-    types: [NOMODULE]
+    supports: [NOMODULE]
   },
   {
     name: 'post',
-    types: [MODULE, NOMODULE]
+    supports: [MODULE, NOMODULE]
   },
   {
     name: 'post.legacy',
-    types: [NOMODULE]
+    supports: [NOMODULE]
   }
 ];
 

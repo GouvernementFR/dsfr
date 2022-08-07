@@ -6,7 +6,7 @@ const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
 const { getPackages } = require('../utilities/config');
-const { I18n } = require('../classes/configurator/i18n/i18n');
+// const { I18n } = require('../classes/configurator/i18n/i18n');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
 beautyOpts.max_preserve_newlines = 0;
@@ -91,7 +91,7 @@ const buildExample = (pck, locale) => {
     isStandalone: false,
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId,
-    i18n: new I18n(locale),
+    // i18n: new I18n(locale),
     locale: locale
   };
 
@@ -134,7 +134,7 @@ const buildStandaloneExample = (pck, locale) => {
     beautify: (html) => { return beautify(html, beautyOpts); },
     isStandalone: true,
     uniqueId: uniqueId,
-    i18n: new I18n(locale),
+    // i18n: new I18n(locale),
     locale: locale
   };
 

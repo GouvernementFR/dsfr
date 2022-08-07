@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { FILENAMES } = require('./filenames');
-const { TYPES } = require('./types');
+const { SUPPORTS } = require('./supports');
 const { ScriptSource } = require('./script-source');
 
 class ScriptKind {
@@ -23,7 +23,11 @@ class ScriptKind {
 
     this._has = this._sources.length > 0;
 
-    this.types = TYPES.filter(type => this._sources.some(src => src.filename.types.indexOf(type) > -1));
+    this.supports = SUPPORTS.filter(support => this._sources.some(src => src.filename.supports.includes(support)));
+  }
+
+  isSupporting (support) {
+    return this.supports.includes(support);
   }
 
   getImports (from, filename) {

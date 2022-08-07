@@ -10,7 +10,7 @@ const { generateMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 const generateConfig = require('../generate/config');
 const clean = require('../utilities/clean');
-const { I18n } = require('../classes/configurator/i18n/i18n');
+// const { I18n } = require('../classes/configurator/i18n/i18n');
 const { Config } = require('../classes/builder/configuration');
 
 const build = async (settings) => {
@@ -23,7 +23,7 @@ const build = async (settings) => {
     copyAssets();
   }
 
-  await I18n.merge();
+  // await I18n.merge();
   concatenate();
 
   const config = await Config.get();

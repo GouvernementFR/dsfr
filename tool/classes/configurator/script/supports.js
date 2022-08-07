@@ -8,6 +8,6 @@ const NOMODULE = {
   filename: 'nomodule'
 };
 
-const TYPES = [MODULE, NOMODULE];
+const SUPPORTS = [MODULE, NOMODULE];
 
-module.exports = { TYPES, MODULE, NOMODULE };
+module.exports = { SUPPORTS, MODULE, NOMODULE };

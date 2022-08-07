@@ -1,6 +1,3 @@
-const { I18nPackage } = require('./i18n-package');
-const { Config } = require('../../builder/configuration');
-const { createFile } = require('../../../utilities/file');
 const fs = require('fs');
 const log = require('../../../utilities/log');
 
@@ -61,22 +58,6 @@ class I18n {
       if (text) texts.push(text);
     }
     return texts.join('');
-  }
-
-  static async merge () {
-    const i18n = {};
-    const global = new I18nPackage('.');
-    i18n.global = global.data;
-
-    const config = await Config.get();
-    const packages = config.flat;
-
-    for (const pck of packages) {
-      const pI18n = new I18nPackage(pck.path);
-      if (pI18n.hasData) i18n[pck.id] = pI18n.data;
-    }
-
-    createFile('.config/i18n.json', JSON.stringify(i18n, null, 4));
   }
 }
 

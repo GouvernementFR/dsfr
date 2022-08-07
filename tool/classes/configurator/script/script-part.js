@@ -1,16 +1,16 @@
 const { ScriptReference } = require('./script-reference');
 const { KINDS, BASE } = require('./kinds');
 const { ScriptKind } = require('./script-kind');
-const { TYPES } = require('./types');
+const { SUPPORTS } = require('./supports');
 const { ScriptItem } = require('./script-item');
 const { ScriptDependency } = require('./script-dependency');
+const { ScriptSupport } = require('./script-support');
 
 class ScriptPart {
   constructor (part, config) {
     this.part = part;
     this._config = config || {};
     this._data = {};
-    this._items = [];
     this.init();
   }
 
@@ -54,18 +54,13 @@ class ScriptPart {
 
     this.kinds = KINDS
       .map(kind => new ScriptKind(kind, this.part))
-      .filter(kind => kind.has)
-      .filter((kind, index, array) => !(array.length === 2 && kind.kind === BASE));
+      .filter(kind => kind.has);
     this._has = this.kinds.length > 0;
 
     if (this.has) {
       this.reference = new ScriptReference(this.part);
       this._dependency = new ScriptDependency(this.part, this._config.dependencies);
-      for (const kind of KINDS) {
-        for (const type of TYPES) {
-          this._items.push(new ScriptItem(this.part, kind, type));
-        }
-      }
+      this._supports = SUPPORTS.map(support => new ScriptSupport(this.part, support));
     }
   }
 
@@ -91,11 +86,12 @@ class ScriptPart {
 
     if (this.reference && this.reference.has) this.reference.generate();
 
-    this._data.items = [];
-    for (const item of this._items) {
-      item.generate(this._dependency);
-      if (item.generated) this._items.push(item.data);
+    const items = [];
+    for (const support of this._supports) {
+      support.produce(this._dependency);
+      items.push(...support.items);
     }
+    this._data.items = items.map(item => item.data);
   }
 }
 

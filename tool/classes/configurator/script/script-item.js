@@ -2,14 +2,16 @@ const { FILENAMES } = require('./filenames');
 const { createFile } = require('../../../utilities/file');
 
 class ScriptItem {
-  constructor (part, kind, type) {
+  constructor (part, kind, support) {
     this.part = part;
     this.kind = kind;
-    this.type = type;
+    this.support = support;
+    this.imports = [];
+    this._filled = false;
     this._data = {
-      src: `src${part.path}/${type.filename}${kind.src}.js`,
-      dest: `dist${part.path}/${part.filename}.${type.filename}${kind.dest}.js`,
-      type: type.id
+      src: `src${part.path}/${support.filename}${kind.src}.js`,
+      dest: `dist${part.path}/${part.filename}.${support.filename}${kind.dest}.js`,
+      support: support.id
     };
   }
 
@@ -21,20 +23,25 @@ class ScriptItem {
     return this._data.src;
   }
 
-  generate (dependency) {
+  get filled () {
+    return this._filled;
+  }
+
+  produce (dependency) {
     const from = `src${this.part.path}`;
-    const imports = [];
     for (const filename of FILENAMES) {
-      if (!filename.types.includes(this.type)) continue;
+      if (!filename.supports.includes(this.support)) continue;
       for (const part of dependency.imports) {
         const kind = part.script.getKind(this.kind);
-        if (!kind) continue;
-        imports.push(...kind.getImports(from, filename));
+        if (!kind || !kind.isSupporting(this.support)) continue;
+        this.imports.push(...kind.getImports(from, filename));
       }
     }
-    console.log(this.part.id, this.src, imports);
+    this._filled = this.imports.length > 0;
+  }
 
-    // createFile(this.src, this.part.banner(content));
+  create () {
+    createFile(this.src, this.part.banner(this.imports.join('')));
   }
 }
 

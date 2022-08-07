@@ -1,14 +1,14 @@
 const subsetFont = require('subset-font');
 const root = require('../utilities/root');
 const { createFile } = require('../utilities/file');
-const { I18n } = require('../classes/configurator/i18n/i18n');
+// const { I18n } = require('../classes/configurator/i18n/i18n');
 const { readFile } = require('fs').promises;
 
 const standaloneFontSubset = async (pck) => {
-  const i18n = new I18n();
+  // const i18n = new I18n();
   const content = {};
 
-  for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(item => (typeof item === 'string' ? i18n.joinTexts(item, pck.id) : i18n.joinTexts(item.key, item.id))).join('');
+  // for (const type in pck.fontSubset) content[type] = pck.fontSubset[type].map(item => (typeof item === 'string' ? i18n.joinTexts(item, pck.id) : i18n.joinTexts(item.key, item.id))).join('');
 
   let font = `$${pck.id}-subset: (
   `;
