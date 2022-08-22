@@ -1,24 +1,26 @@
-const BASE = {
+const { RECOMMENDED, DEPRECATED } = require('./situations');
+
+const BASE_KIND = {
   id: 'base',
-  paths: ['script'],
+  situations: [RECOMMENDED],
   src: '.base',
   dest: '.base'
 };
 
-const DEPRECATED = {
+const DEPRECATED_KIND = {
   id: 'deprecated',
-  paths: ['deprecated/script'],
+  situations: [DEPRECATED],
   src: '.deprecated',
   dest: '.deprecated'
 };
 
-const UNIFIED = {
-  id: 'unified',
-  paths: [].concat(BASE.paths, DEPRECATED.paths),
+const FULL_KIND = {
+  id: 'full',
+  situations: [RECOMMENDED, DEPRECATED],
   src: '.full',
   dest: ''
 };
 
-const KINDS = [BASE, DEPRECATED, UNIFIED];
+const KINDS = [BASE_KIND, DEPRECATED_KIND, FULL_KIND];
 
-module.exports = { KINDS, BASE, DEPRECATED, UNIFIED };
+module.exports = { KINDS, BASE_KIND, DEPRECATED_KIND, FULL_KIND };

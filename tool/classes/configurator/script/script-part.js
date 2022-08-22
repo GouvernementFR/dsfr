@@ -1,9 +1,9 @@
 const { ScriptReference } = require('./script-reference');
 const { KINDS } = require('./kinds');
-const { ScriptKind } = require('./script-kind');
+const { ScriptCollector } = require('./script-collector');
 const { SUPPORTS } = require('./supports');
 const { ScriptDependency } = require('./script-dependency');
-const { ScriptSupport } = require('./script-support');
+const { ScriptProducer } = require('./script-producer');
 
 class ScriptPart {
   constructor (part, config) {
@@ -41,9 +41,9 @@ class ScriptPart {
     return this._dependency.level;
   }
 
-  getKind (kind) {
-    for (const sk of this.kinds) {
-      if (sk.kind === kind) return sk;
+  getCollector (kind) {
+    for (const collector of this.collectors) {
+      if (collector.kind === kind) return collector;
     }
     return null;
   }
@@ -51,15 +51,15 @@ class ScriptPart {
   init () {
     this._carries = this.part.children.some(child => child.script.has);
 
-    this.kinds = KINDS
-      .map(kind => new ScriptKind(kind, this.part))
+    this.collectors = KINDS
+      .map(kind => new ScriptCollector(this.part, kind))
       .filter(kind => kind.has);
-    this._has = this.kinds.length > 0;
+    this._has = this.collectors.length > 0;
 
     if (this.has) {
       this.reference = new ScriptReference(this.part);
       this._dependency = new ScriptDependency(this.part, this._config.dependencies);
-      this._supports = SUPPORTS.map(support => new ScriptSupport(this.part, support));
+      this._producers = SUPPORTS.map(support => new ScriptProducer(this.part, support));
     }
   }
 
@@ -86,9 +86,9 @@ class ScriptPart {
     if (this.reference && this.reference.has) this.reference.generate();
 
     const items = [];
-    for (const support of this._supports) {
-      support.produce(this._dependency);
-      items.push(...support.items);
+    for (const producer of this._producers) {
+      producer.produce(this._dependency);
+      items.push(...producer.items);
     }
     this._data.items = items.map(item => item.data);
   }

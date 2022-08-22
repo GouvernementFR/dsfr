@@ -1,0 +1,16 @@
+////
+/// Skiplink Legacy
+/// @group skiplink
+////
+
+@use '../../../../sass/path/index';
+@use '../../../../sass/shame/media-query/index';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import '_content/index';
+@import '_content/style/legacy';
+@import '_content/style/scheme';
+
+@include _stepper-scheme(true);

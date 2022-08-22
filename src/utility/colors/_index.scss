@@ -1,13 +1,54 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '../../../sass/path';
 @use '../../../sass/media-query';
-@use 'sass:meta';
-@use '_content/style';
+@use 'setting';
 
-@mixin base() {
-  @include style.base;
+$setting: setting.$setting !default;
 
-  @if meta.mixin-exists(base\@lg, style) {
-    @include media-query.respond-from(lg) {
-      @include style.base\@lg;
+@use '_content/style/base' as colors-base-recommended with ($setting: map.get($setting, colors));
+@use '_content/deprecated/style/base' as colors-base-deprecated with ($setting: map.get($setting, colors));
+@use '_content/style/legacy' as colors-legacy-recommended with ($setting: map.get($setting, colors));
+
+@include path.to-dist(map.get($setting, depth));
+
+@mixin base ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+  @if list.index($situations, recommended) {
+    @include colors-base-recommended.first();
+  }
+  @if list.index($situations, deprecated) {
+    @include colors-base-deprecated.first();
+  }
+  @include media-query.condition(sm, $breakpoints, $with-media-query) {
+    @if list.index($situations, recommended) {
+      @include colors-base-recommended.sm();
+    }
+  }
+  @include media-query.condition(md, $breakpoints, $with-media-query) {
+    @if list.index($situations, recommended) {
+      @include colors-base-recommended.md();
+    }
+    @if list.index($situations, deprecated) {
+      @include colors-base-deprecated.md();
+    }
+  }
+  @include media-query.condition(lg, $breakpoints, $with-media-query) {
+    @if list.index($situations, recommended) {
+      @include colors-base-recommended.lg();
+    }
+    @if list.index($situations, deprecated) {
+      @include colors-base-deprecated.lg();
+    }
+  }
+}
+
+@mixin legacy ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+  @if list.index($situations, recommended) {
+    @include colors-legacy-recommended.first();
+  }
+  @include media-query.condition(lg, $breakpoints, $with-media-query) {
+    @if list.index($situations, recommended) {
+      @include colors-legacy-recommended.lg();
     }
   }
 }

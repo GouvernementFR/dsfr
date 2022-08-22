@@ -3,11 +3,13 @@
 /// @group core
 ////
 
-@import 'base/link';
-@import 'base/button';
-@import 'base/input';
-@import 'base/focus';
-@import 'base/hover';
-@import 'base/cursor';
-@import 'base/disabled';
-@import 'base/enlarge-link';
+@mixin first () {
+  @import 'base/link';
+  @import 'base/button';
+  @import 'base/input';
+  @import 'base/focus';
+  @import 'base/hover';
+  @import 'base/cursor';
+  @import 'base/disabled';
+  @import 'base/enlarge-link';
+}

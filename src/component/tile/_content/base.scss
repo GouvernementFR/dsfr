@@ -1,0 +1,20 @@
+////
+/// Tile Main
+/// @group tile
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  TILE
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@use '../../../../sass/path/index';
+@use '../../../../sass/shame/media-query/index';
+
+@include path.to-dist(2);
+@include media-query.order;
+
+@import '_content/index';
+@import '_content/style/base';
+@import '_content/style/scheme';
+
+@include _tile-scheme;

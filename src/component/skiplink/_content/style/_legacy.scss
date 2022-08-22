@@ -1,0 +1,18 @@
+////
+/// Skiplink Legacy
+/// @group skiplink
+////
+
+@use '../../../../../sass/legacy/index';
+
+@include legacy.is(ie11) {
+  /**
+  * Correctif
+  */
+  #{ns(skiplinks)} {
+    &.focus-within {
+      position: relative;
+      transform: translateY(0);
+    }
+  }
+}

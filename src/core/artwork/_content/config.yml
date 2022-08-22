@@ -1,6 +1,9 @@
 id: artwork
 asset:
   dist: artwork
+style:
+  dependencies:
+    - color
 script:
   dependencies:
     - api

@@ -33,9 +33,9 @@ class ScriptItem {
     for (const filename of FILENAMES) {
       if (!filename.supports.includes(this.support)) continue;
       for (const part of dependency.imports) {
-        const kind = part.script.getKind(this.kind);
-        if (!kind || !kind.isSupporting(this.support)) continue;
-        this.imports.push(...kind.getImports(from, filename));
+        const collector = part.script.getCollector(this.kind);
+        if (!collector || !collector.isSupporting(this.support)) continue;
+        this.imports.push(...collector.getImports(from, filename));
       }
     }
     this._filled = this.imports.length > 0;

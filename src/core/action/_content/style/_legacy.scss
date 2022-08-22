@@ -3,5 +3,7 @@
 /// @group core
 ////
 
-@import 'legacy/hover';
-@import 'legacy/link';
+@mixin first () {
+  @import 'legacy/hover';
+  @import 'legacy/link';
+}

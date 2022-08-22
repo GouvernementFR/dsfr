@@ -1,0 +1,14 @@
+@use '../variable/breakpoints';
+
+@mixin from($media) {
+  $limits: map_get(breakpoints.$values, $media);
+
+  @if $limits != null {
+    @media (min-width: nth($limits, 1)) {
+      @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}

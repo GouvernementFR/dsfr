@@ -19,17 +19,24 @@ class Configurator {
   analyse () {
     this.root.analyse();
 
-    const scripts = this.root.flat.filter(part => part.script.has);
     let hinged = false;
-    let count = 20;
+    const styles = this.root.flat.filter(part => part.style.has);
+    while (!hinged) {
+      hinged = true;
+      for (const part of styles) {
+        part.style.hinge();
+        hinged &&= part.style.hinged;
+      }
+    }
+
+    hinged = false;
+    const scripts = this.root.flat.filter(part => part.script.has);
     while (!hinged) {
       hinged = true;
       for (const part of scripts) {
         part.script.hinge();
         hinged &&= part.script.hinged;
       }
-      count--;
-      if (count < 0) break;
     }
   }
 

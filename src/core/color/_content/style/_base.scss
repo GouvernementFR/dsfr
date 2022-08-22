@@ -1,0 +1,5 @@
+@use 'base/properties';
+
+@mixin first() {
+  @include properties.define();
+}

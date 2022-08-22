@@ -4,16 +4,15 @@ const { I18nPart } = require('./i18n/i18n-part');
 const { AssetPart } = require('./asset/asset-part');
 const { StylePart } = require('./style/style-part');
 const { ScriptPart } = require('./script/script-part');
-const { Deprecated } = require('./alt/deprecated');
 const global = require('../../../package.json');
 
 class Part {
-  constructor (path, level = 0, ascendants = null) {
+  constructor (path, depth = 0, ascendants = null) {
     this.path = path;
-    this._level = level;
+    this._depth = depth;
     this._parent = ascendants ? ascendants[0] : null;
     this._ascendants = ascendants || [];
-    this.top = '../'.repeat(level + 1);
+    this.top = '../'.repeat(depth + 1);
     this._children = [];
     this.init();
   }
@@ -50,8 +49,8 @@ class Part {
     return this._parent ? this._parent.root : this;
   }
 
-  get level () {
-    return this._level;
+  get depth () {
+    return this._depth;
   }
 
   get detached () {
@@ -69,13 +68,11 @@ class Part {
   }
 
   get data () {
-    const data = {
-      ...this._data,
-      children: this._children.map(child => child.data)
-    };
+    const data = { ...this._data };
     if (this.asset.has) data.asset = this.asset.data;
+    if (this.style.has) data.script = this.style.data;
     if (this.script.has) data.script = this.script.data;
-    if (this.deprecated.has) data.deprecated = this.deprecated.data;
+    data.children = this._children.map(child => child.data);
     return data;
   }
 
@@ -106,11 +103,10 @@ class Part {
       detached: this._config.detached === true
     };
     this.extract();
-    this.i18n = new I18nPart(`src/${this.path}/_content/i18n`);
-    this.asset = new AssetPart(`src${this.path}/_content/asset`, this._config.asset);
-    // this.style = new StylePart(`src${this.path}/_content/style`, this._config.style);
+    this.i18n = new I18nPart(this);
+    this.asset = new AssetPart(this, this._config.asset);
+    this.style = new StylePart(this, this._config.style);
     this.script = new ScriptPart(this, this._config.script);
-    this.deprecated = new Deprecated(this.path, this._config.deprecated);
   }
 
   extract () {
@@ -129,7 +125,7 @@ class Part {
   }
 
   addChild (path) {
-    const child = new Part(`${this.path}/${path}`, this.level + 1, [this, ...this._ascendants]);
+    const child = new Part(`${this.path}/${path}`, this.depth + 1, [this, ...this._ascendants]);
     if (child.has) this._children.push(child);
   }
 
@@ -137,19 +133,21 @@ class Part {
     this._children.forEach(child => child.analyse());
 
     this.asset.analyse();
+    this.style.analyse();
     this.script.analyse();
-    this.deprecated.analyse();
   }
 
   order () {
     this._children.forEach(child => child.order());
 
+    this.style.order();
     this.script.order();
   }
 
   generate () {
     this._children.forEach(child => child.generate());
 
+    this.style.generate();
     this.script.generate();
   }
 

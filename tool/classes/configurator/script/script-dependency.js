@@ -90,8 +90,6 @@ class ScriptDependency {
 
   order () {
     if (this._imports) this._imports = this._imports.sort((a, b) => a.script.level - b.script.level);
-
-    console.log(this.part.id, this._imports.map(p => p.id));
   }
 }
 

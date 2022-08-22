@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '../../../sass/path';
+@use '../../../sass/media-query';
+@use 'setting';
+
+$setting: setting.$setting !default;
+
+@use '_content/style/base' as color-base-recommended with ($setting: map.get($setting, color));
+
+@include path.to-dist(map.get($setting, depth));
+
+@mixin base ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+  @if list.index($situations, recommended) {
+    @include color-base-recommended.first();
+  }
+}
+
+@mixin legacy ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+}

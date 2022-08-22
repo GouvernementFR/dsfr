@@ -1,0 +1,20 @@
+////
+/// Input Main
+/// @group input
+////
+
+/* ¯¯¯¯¯¯¯¯¯ *\
+  INPUT
+\* ˍˍˍˍˍˍˍˍˍ */
+
+@use '../../../../../sass/path/index';
+@use '../../../../../sass/shame/media-query/index';
+
+@include path.to-dist(3);
+@include media-query.order;
+
+@import '_content/index';
+@import '_content/style/base';
+@import '_content/style/scheme';
+
+@include _input-scheme;

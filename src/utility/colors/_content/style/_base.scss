@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+$setting: () !default;
+@use 'mixin/scheme' with ($decisions: map.get($setting, decisions));
+
+@mixin first() {
+  @include scheme.scheme();
+}
+
+@mixin sm () {
+  /**
+  go lg
+   */
+}
+
+
+@mixin md () {
+  /**
+  go lg
+   */
+}
+
+
+@mixin lg () {
+  /**
+  go lg
+   */
+}

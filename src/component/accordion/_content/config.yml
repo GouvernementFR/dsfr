@@ -1,4 +1,7 @@
 id: accordion
+asset:
+  dependencies:
+    - icons-system
 script:
   dependencies:
     - action

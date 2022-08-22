@@ -2,8 +2,9 @@ const fs = require('fs');
 const { AssetItem } = require('./asset-item');
 
 class AssetPart {
-  constructor (path, config) {
-    this.path = path;
+  constructor (part, config) {
+    this.part = part;
+    this._paths = [`src${part.path}/_content/asset`, `src${part.path}/_content/deprecated/asset`];
     this.items = [];
     this._config = config;
     this.init();
@@ -24,7 +25,8 @@ class AssetPart {
   }
 
   init () {
-    if (!fs.existsSync(this.path)) return;
+    this._paths = this._paths.filter(path => fs.existsSync(path));
+    if (!this._paths.length > 0) return;
     this._has = true;
     this.dist = this._config.dist || '';
     this.type = this._config.type;
@@ -33,11 +35,11 @@ class AssetPart {
 
   analyse () {
     if (!this.has) return;
-    this._parse();
+    this._paths.forEach(path => this._parse(path));
   }
 
-  _parse (relative = '') {
-    const dir = `${this.path}${relative}`;
+  _parse (path, relative = '') {
+    const dir = `${path}${relative}`;
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
     for (const entry of entries) {
@@ -47,7 +49,7 @@ class AssetPart {
           break;
 
         case entry.isDirectory():
-          this._parse(`${relative}/${entry.name}`);
+          this._parse(path, `${relative}/${entry.name}`);
           break;
       }
     }

@@ -1,0 +1,60 @@
+////
+/// Accordion Module
+/// @group accordion
+////
+
+#{ns(accordion)} {
+  position: relative;
+
+  @include before('', block) {
+    @include absolute(0, 0, 0 , 0, 100%, 100%);
+    pointer-events: none;
+  }
+
+  // add heading style for accessibility concerns and reset margins
+  @include title {
+    @include margin(0);
+    display: block;
+    font-size: unset;
+    line-height: unset;
+  }
+
+  &__btn {
+    @include _build-link-base;
+    @include _link-display(flex);
+    @include nest-accordion-button(add-line);
+    @include size(100%);
+    text-align: left;
+    @include margin(0);
+
+    @include after {
+      @include margin-right(0);
+      @include margin-left(auto);
+    }
+
+    &[aria-expanded="true"] {
+      @include font-weight('bold');
+      @include icon-image(subtract-line, after);
+    }
+
+    @include padding(3v 0);
+    @include padding(3v 4v, md);
+  }
+
+  #{ns(collapse)} {
+    @include enable-list-style;
+    @include margin(0 -1v, md);
+    @include padding-x(4v, md);
+
+    transition: visibility 0.3s, padding 0.3s;
+
+    &--expanded {
+      @include padding-top(4v);
+      @include padding-bottom(6v);
+    }
+  }
+}
+
+#{ns-group(accordions)} {
+  @include disable-list-style;
+}

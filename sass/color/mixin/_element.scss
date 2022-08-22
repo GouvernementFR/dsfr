@@ -208,7 +208,7 @@ $COLOR: constant.$value;
 @mixin no-border($options: ()) {
   $breakpoint: map.get($options, breakpoint);
   $legacy: map.get($options, legacy);
-  @include media-query.respond-from($breakpoint) {
+  @include media-query.from($breakpoint) {
     @if $legacy {
       @include legacy.is(ie11) {
         border: 0;
@@ -266,7 +266,7 @@ $COLOR: constant.$value;
 @mixin no-box-shadow($options) {
   $breakpoint: map.get($options, breakpoint);
   $legacy: map.get($options, legacy);
-  @include media-query.respond-from($breakpoint) {
+  @include media-query.from($breakpoint) {
     @if $legacy {
       @include legacy.is(ie11) {
         box-shadow: none;

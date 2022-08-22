@@ -4,7 +4,7 @@
 @mixin order () {
   @each $bp, $limits in breakpoints.$values {
     @if $bp != xs {
-      @include media-query.respond-from($bp) {
+      @include media-query.from($bp) {
         /*! media #{$bp} */
       }
     }

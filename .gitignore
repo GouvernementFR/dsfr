@@ -5,3 +5,5 @@ public/
 /dist/
 /example/
 /standalone/
+/src/**/*.*
+!/src/**/_content/*.*
