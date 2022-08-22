@@ -6,4 +6,4 @@ public/
 /example/
 /standalone/
 /src/**/*.*
-!/src/**/_content/*.*
+!/src/**/_content/**/*.*
