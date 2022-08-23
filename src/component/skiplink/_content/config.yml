@@ -1,0 +1,18 @@
+id: skiplink
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - action
+    - icon
+    - link
+example:
+  preprend: true
+  styles:
+    - header
+    - footer
+  scripts:
+    - navigation
+    - header
+    - modal

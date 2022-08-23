@@ -1,20 +1,12 @@
-id: accordion
+id: alert
 asset:
   dependencies:
     - icons-system
-script:
-  dependencies:
-    - action
-    - api
 style:
   dependencies:
     - action
     - typography
+    - button
     - color
 example:
   wrapper: col-8
-  styles:
-    - tab
-    - button
-  scripts:
-    - tab

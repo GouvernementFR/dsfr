@@ -1,0 +1,8 @@
+id: logo
+style:
+  dependencies:
+    - typography
+    - color
+    - media
+example:
+  wrapper: col-8

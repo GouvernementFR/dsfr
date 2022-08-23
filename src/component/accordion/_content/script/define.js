@@ -1,4 +1,4 @@
-import api from '../api.js';
+import api from '../ref.js';
 import { AccordionsGroup } from './accordion/accordions-group.js';
 import { AccordionSelector } from './accordion/accordion-selector.js';
 

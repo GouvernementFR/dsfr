@@ -1,0 +1,9 @@
+id: pagination
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - action
+example:
+  wrapper: container

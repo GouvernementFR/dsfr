@@ -1,0 +1,10 @@
+id: download
+style:
+  dependencies:
+    - typography
+    - color
+script:
+  dependencies:
+    - api
+example:
+  wrapper: container

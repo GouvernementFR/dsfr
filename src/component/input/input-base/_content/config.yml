@@ -1,0 +1,10 @@
+id: input-base
+style:
+  dependencies:
+    - typography
+    - color
+    - disabled
+    - form
+    - button
+example:
+  wrapper: col-8

@@ -81,7 +81,7 @@ class Configurator {
 
     const js = `const config = {\n${lines.join(',\n')}\n};\n\nexport default config;\n`;
     const file = `src${this.root.getPart('api').path}/config.js`;
-    createFile(file , js);
+    createFile(file, js);
   }
 }
 

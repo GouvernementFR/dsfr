@@ -1,0 +1,14 @@
+id: card
+style:
+  dependencies:
+    - color
+    - typography
+    - action
+    - media
+    - core
+    - link
+    - button
+    - badge
+    - tag
+example:
+  wrapper: col-8

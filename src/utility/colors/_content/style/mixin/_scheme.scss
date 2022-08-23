@@ -6,8 +6,8 @@
 @use 'sass:list';
 @use 'sass:map';
 @use '../../../../../../sass/color';
-@use '../../../../../../sass/color/variable/sets';
-@use '../../../../../../sass/color/variable/decisions';
+@use '../../../../../../sass/color/property/sets';
+@use '../../../../../../sass/color/property/decisions';
 @use '../../../../../../sass/selector';
 
 $decisions: () !default;

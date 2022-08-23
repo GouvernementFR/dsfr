@@ -1,0 +1,13 @@
+id: button
+script:
+  dependencies:
+    - action
+    - api
+style:
+  dependencies:
+    - action
+    - color
+    - typography
+    - icon
+example:
+  wrapper: col-8

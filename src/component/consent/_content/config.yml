@@ -1,0 +1,20 @@
+id: consent
+style:
+  dependencies:
+    - color
+    - typography
+    - action
+    - link
+    - button
+    - form
+    - radio
+    - modal
+script:
+  dependencies:
+    - modal
+    - action
+    - api
+example:
+  wrapper: col-8
+  styles:
+    - content

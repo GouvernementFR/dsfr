@@ -1,4 +1,4 @@
-id: accordion
+id: breadcrumb
 asset:
   dependencies:
     - icons-system
@@ -9,12 +9,7 @@ script:
 style:
   dependencies:
     - action
-    - typography
     - color
+    - typography
 example:
   wrapper: col-8
-  styles:
-    - tab
-    - button
-  scripts:
-    - tab

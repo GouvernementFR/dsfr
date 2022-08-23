@@ -1,0 +1,8 @@
+id: follow
+style:
+  dependencies:
+    - typography
+    - color
+    - icon
+    - input
+    - button

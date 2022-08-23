@@ -1,0 +1,19 @@
+id: modal
+style:
+  dependencies:
+    - typography
+    - color
+    - elevation
+    - spacing
+    - action
+    - link
+    - button
+script:
+  dependencies:
+    - api
+    - action
+example:
+  wrapper: col-8
+  styles:
+    - form
+    - input

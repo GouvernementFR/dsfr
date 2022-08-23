@@ -1,0 +1,14 @@
+id: tab
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - elevation
+    - action
+script:
+  dependencies:
+    - api
+    - action
+example:
+  wrapper: col-8
