@@ -1,0 +1,15 @@
+id: translate
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - action
+    - button
+    - navigation
+script:
+  dependencies:
+    - api
+    - action
+example:
+  wrapper: col-8
