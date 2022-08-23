@@ -71,6 +71,7 @@ class StylePart {
   }
 
   generate () {
+    console.log(this.part.id, 'generate', this.has);
     if (!this.has) return;
     this._producer.produce(this._dependency);
     this._data.items = this._producer.items;

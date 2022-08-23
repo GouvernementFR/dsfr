@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { FILENAMES } = require('./filenames');
 const { createFile, deleteFile } = require('../../../utilities/file');
 
 class StyleItem {

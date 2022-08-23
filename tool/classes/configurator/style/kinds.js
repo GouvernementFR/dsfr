@@ -1,26 +1,42 @@
-const { BASE, LEGACY } = require('./filenames');
+const { RECENT, OUTDATED, LEGACY } = require('./supports');
 const { RECOMMENDED, DEPRECATED } = require('./situations');
 
-const BASE_RECOMMENDED_KIND = {
-  id: 'base.recommended',
+const RECENT_RECOMMENDED_KIND = {
+  id: 'recent.recommended',
   situations: [RECOMMENDED],
-  filenames: [BASE],
-  src: 'base.recommended',
-  dest: '.base.recommended'
+  supports: [RECENT],
+  src: 'recent.recommended',
+  dest: '.recent.recommended'
 };
 
-const BASE_DEPRECATED_KIND = {
-  id: 'base.deprecated',
+const RECENT_DEPRECATED_KIND = {
+  id: 'recent.deprecated',
   situations: [DEPRECATED],
-  filenames: [BASE],
-  src: 'base.deprecated',
-  dest: '.base.deprecated'
+  supports: [RECENT],
+  src: 'recent.deprecated',
+  dest: '.recent.deprecated'
+};
+
+const OUTDATED_RECOMMENDED_KIND = {
+  id: 'outdated.recommended',
+  situations: [RECOMMENDED],
+  supports: [OUTDATED],
+  src: 'outdated.recommended',
+  dest: '.outdated.recommended'
+};
+
+const OUTDATED_DEPRECATED_KIND = {
+  id: 'outdated.deprecated',
+  situations: [DEPRECATED],
+  supports: [OUTDATED],
+  src: 'outdated.deprecated',
+  dest: '.outdated.deprecated'
 };
 
 const LEGACY_RECOMMENDED_KIND = {
   id: 'legacy.recommended',
   situations: [RECOMMENDED],
-  filenames: [LEGACY],
+  supports: [LEGACY],
   src: 'legacy.recommended',
   dest: '.legacy.recommended'
 };
@@ -28,35 +44,43 @@ const LEGACY_RECOMMENDED_KIND = {
 const LEGACY_DEPRECATED_KIND = {
   id: 'legacy.deprecated',
   situations: [DEPRECATED],
-  filenames: [LEGACY],
+  supports: [LEGACY],
   src: 'legacy.deprecated',
   dest: '.legacy.deprecated'
 };
 
-const BASE_KIND = {
-  id: 'base',
+const MODERN_KIND = {
+  id: 'modern',
   situations: [RECOMMENDED, DEPRECATED],
-  filenames: [BASE],
-  src: 'base',
-  dest: '.base'
+  supports: [RECENT, OUTDATED],
+  src: 'modern',
+  dest: '.modern'
 };
 
 const RECOMMENDED_KIND = {
   id: 'recommended',
   situations: [RECOMMENDED],
-  filenames: [BASE, LEGACY],
+  supports: [RECENT, OUTDATED, LEGACY],
   src: 'recommended',
   dest: '.recommended'
+};
+
+const MODERN_RECOMMENDED_KIND = {
+  id: 'recommended',
+  situations: [RECOMMENDED],
+  supports: [RECENT, OUTDATED],
+  src: 'modern.recommended',
+  dest: '.modern.recommended'
 };
 
 const FULL_KIND = {
   id: 'full',
   situations: [RECOMMENDED, DEPRECATED],
-  filenames: [BASE, LEGACY],
+  supports: [RECENT, OUTDATED, LEGACY],
   src: 'full',
   dest: ''
 };
 
-const KINDS = [BASE_RECOMMENDED_KIND, BASE_DEPRECATED_KIND, LEGACY_RECOMMENDED_KIND, LEGACY_DEPRECATED_KIND, BASE_KIND, RECOMMENDED_KIND, FULL_KIND];
+const KINDS = [RECENT_RECOMMENDED_KIND, RECENT_DEPRECATED_KIND, OUTDATED_RECOMMENDED_KIND, OUTDATED_DEPRECATED_KIND, LEGACY_RECOMMENDED_KIND, LEGACY_DEPRECATED_KIND, MODERN_KIND, RECOMMENDED_KIND, MODERN_RECOMMENDED_KIND, FULL_KIND];
 
 module.exports = { KINDS };

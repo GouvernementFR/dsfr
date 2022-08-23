@@ -1,54 +1,56 @@
 @use 'sass:map';
 @use 'sass:list';
+@use '../../../sass/legacy';
 @use '../../../sass/path';
 @use '../../../sass/media-query';
-@use 'setting';
+@use 'options';
 
-$setting: setting.$setting !default;
+$options: options.$options !default;
+@use '_content/style/recent' as colors-recent-recommended with ($options: map.get($options, colors));
+@use '_content/deprecated/style/recent' as colors-recent-deprecated with ($options: map.get($options, colors));
+@use '_content/style/legacy' as colors-legacy-recommended with ($options: map.get($options, colors));
 
-@use '_content/style/base' as colors-base-recommended with ($setting: map.get($setting, colors));
-@use '_content/deprecated/style/base' as colors-base-deprecated with ($setting: map.get($setting, colors));
-@use '_content/style/legacy' as colors-legacy-recommended with ($setting: map.get($setting, colors));
+@include path.to-dist(map.get($options, depth));
 
-@include path.to-dist(map.get($setting, depth));
-
-@mixin base ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+@mixin recent ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
   @if list.index($situations, recommended) {
-    @include colors-base-recommended.first();
+    @include colors-recent-recommended.first();
   }
   @if list.index($situations, deprecated) {
-    @include colors-base-deprecated.first();
+    @include colors-recent-deprecated.first();
   }
   @include media-query.condition(sm, $breakpoints, $with-media-query) {
     @if list.index($situations, recommended) {
-      @include colors-base-recommended.sm();
+      @include colors-recent-recommended.sm();
     }
   }
   @include media-query.condition(md, $breakpoints, $with-media-query) {
     @if list.index($situations, recommended) {
-      @include colors-base-recommended.md();
+      @include colors-recent-recommended.md();
     }
     @if list.index($situations, deprecated) {
-      @include colors-base-deprecated.md();
+      @include colors-recent-deprecated.md();
     }
   }
   @include media-query.condition(lg, $breakpoints, $with-media-query) {
     @if list.index($situations, recommended) {
-      @include colors-base-recommended.lg();
+      @include colors-recent-recommended.lg();
     }
     @if list.index($situations, deprecated) {
-      @include colors-base-deprecated.lg();
+      @include colors-recent-deprecated.lg();
     }
   }
 }
 
 @mixin legacy ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
-  @if list.index($situations, recommended) {
-    @include colors-legacy-recommended.first();
-  }
-  @include media-query.condition(lg, $breakpoints, $with-media-query) {
+  @include legacy.condition($with-media-query) {
     @if list.index($situations, recommended) {
-      @include colors-legacy-recommended.lg();
+      @include colors-legacy-recommended.first();
+    }
+    @include media-query.condition(lg, $breakpoints, $with-media-query) {
+      @if list.index($situations, recommended) {
+        @include colors-legacy-recommended.lg();
+      }
     }
   }
 }

@@ -5,3 +5,18 @@ asset:
 script:
   dependencies:
     - action
+style:
+  dependencies:
+    - action
+example:
+  wrapper: col-8
+  draft: true
+  styles:
+    - dfhdfgh
+  scripts:
+    - sdgdf
+
+
+
+
+

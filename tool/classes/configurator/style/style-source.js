@@ -2,9 +2,9 @@ const fs = require('fs');
 const { BREAKPOINTS } = require('./breakpoints');
 
 class StyleSource {
-  constructor (part, filename, situation) {
+  constructor (part, support, situation) {
     this.part = part;
-    this.filename = filename;
+    this.support = support;
     this.situation = situation;
     this.init();
   }
@@ -17,25 +17,19 @@ class StyleSource {
     return this._breakpoints;
   }
 
-  getUse () {
-    return {
-      path: this._to,
-      module: this._module,
-      id: this.part.id
-    };
+  get use () {
+    return this._use;
   }
 
   get module () {
-    return {
-      id: this._module,
-      situation: this.situation.id
-    };
+    return this._module;
   }
 
   init () {
-    this._to = `_content/${this.situation.path}/${this.filename.module}`;
-    const file = `src${this.part.path}/_content/${this.situation.path}/${this.filename.name}.scss`;
+    const file = `src${this.part.path}/_content/${this.situation.path}/_${this.support.filename}.scss`;
     this._has = fs.existsSync(file);
+
+    console.log(this._has, file);
 
     if (!this._has) return;
 
@@ -43,8 +37,16 @@ class StyleSource {
 
     this._breakpoints = BREAKPOINTS.filter(breakpoint => new RegExp(`@mixin ${breakpoint}\\s?\\(`).test(content));
 
+    this._has &&= this._breakpoints.length > 0;
+
     console.log(this.breakpoints);
-    this._module = `${this.part.id}-${this.filename.module}${this.situation.module}`;
+    this._module = `${this.part.id}${this.support.module}${this.situation.module}`;
+
+    this._use = {
+      path: `_content/${this.situation.path}/${this.support.filename}`,
+      module: this._module,
+      id: this.part.id
+    };
   }
 }
 

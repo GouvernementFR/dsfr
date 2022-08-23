@@ -9,8 +9,9 @@ script:
   - core
 example:
   style:
-    - tab
-    - button
+    dependencies:
+      - tab
+      - button
   script:
     - tab
 

@@ -9,12 +9,6 @@ class Mixin {
     this._breakpoints = BREAKPOINTS.map(id => new Breakpoint(id));
   }
 
-  addSource (source) {
-    if (source.filename !== this._filename) return;
-    this._sources.push(source);
-    this._breakpoints.forEach(breakpoint => breakpoint.addSource(source));
-  }
-
   has () {
     return this._sources.length > 0;
   }

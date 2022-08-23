@@ -1,9 +1,6 @@
-const ejs = require('ejs');
-const fs = require('fs');
-const { createFile, deleteFile } = require('../../../utilities/file');
-const { KINDS, BASE } = require('./kinds');
+const { KINDS, MODERN_KIND } = require('./kinds');
 const { StyleItem } = require('./style-item');
-const { StyleModule } = require('./module/style-module');
+const { StyleModule } = require('./style-module');
 
 class StyleProducer {
   constructor (part) {
@@ -25,7 +22,7 @@ class StyleProducer {
     this._producers.forEach(item => item.produce(dependency));
     this._items = this._producers
       .filter(producer => producer.filled)
-      .filter((producer, index, array) => !(array.length === 2 && producer.kind === BASE));
+      // .filter((producer, index, array) => !(array.length === 2 && producer.kind === MODERN_KIND));
 
     this._items.forEach(item => item.create());
   }
