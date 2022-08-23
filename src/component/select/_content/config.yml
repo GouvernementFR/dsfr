@@ -1,0 +1,10 @@
+id: select
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - form
+    - disabled
+example:
+  wrapper: col-8

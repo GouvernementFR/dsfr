@@ -1,9 +1,9 @@
 @forward 'sass:color';
-@forward 'variable/static';
+@forward 'property/static';
 @forward 'mixin/element';
 @forward 'mixin/data-uri-svg';
 @forward 'mixin/define';
 @forward 'mixin/accent';
-@use 'variable/constant';
+@use 'property/constant';
 
 $constant: constant.$value;

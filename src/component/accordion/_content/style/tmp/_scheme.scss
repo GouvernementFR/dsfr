@@ -3,7 +3,7 @@
 /// @group accordion
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../../sass/color/';
 
 @mixin _accordion-scheme($legacy: false) {
   #{ns(accordion)} {

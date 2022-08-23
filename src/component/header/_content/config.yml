@@ -1,0 +1,20 @@
+id: header
+style:
+  dependencies:
+    - typography
+    - color
+    - action
+    - link
+    - button
+    - logo
+    - navigation
+    - modal
+    - search
+    - badge
+    - translate
+script:
+  dependencies:
+    - api
+    - action
+    - navigation
+    - modal

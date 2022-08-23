@@ -1,20 +1,12 @@
-id: accordion
+id: badge
 asset:
   dependencies:
     - icons-system
-script:
-  dependencies:
-    - action
-    - api
 style:
   dependencies:
     - action
     - typography
+    - icon
     - color
 example:
   wrapper: col-8
-  styles:
-    - tab
-    - button
-  scripts:
-    - tab

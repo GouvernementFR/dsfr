@@ -1,0 +1,8 @@
+id: link
+style:
+  dependencies:
+    - typography
+    - color
+    - disabled
+example:
+  wrapper: col-8

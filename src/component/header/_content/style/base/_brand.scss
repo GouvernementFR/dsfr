@@ -2,8 +2,9 @@
 /// Header Module : brand
 /// @group header
 ////
-
-@use '../../../../../../sass/media-query/index';
+@use '../../../../../../sass/elevation';
+@use '../../../../../../sass/media-query';
+@use '../../../../../../sass/color';
 
 #{ns(header)} {
   &__brand {
@@ -12,10 +13,11 @@
     @include size(100%);
     @include padding-x(1v);
 
-    @include media-query.from(lg) {
+    @include media-query.respond-from(lg) {
       flex-wrap: nowrap;
       @include size(auto);
       @include padding-x(0);
+      @include elevation.drop();
     }
 
     &-top {
@@ -74,8 +76,9 @@
     @include margin-x(0, lg);
     @include size(100%);
 
-    @include media-query.from(lg) {
+    @include media-query.respond-from(lg) {
       width: auto;
+      @include color.no-box-shadow;
     }
 
     &-title {
@@ -88,3 +91,4 @@
     }
   }
 }
+

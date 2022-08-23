@@ -1,0 +1,13 @@
+id: share
+style:
+  dependencies:
+    - typography
+    - color
+    - spacing
+    - disabled
+    - button
+follow:
+  style:
+    - link
+example:
+  wrapper: col-8
