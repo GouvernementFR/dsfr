@@ -29,8 +29,6 @@ class StyleSource {
     const file = `src${this.part.path}/_content/${this.situation.path}/_${this.support.filename}.scss`;
     this._has = fs.existsSync(file);
 
-    console.log(this._has, file);
-
     if (!this._has) return;
 
     const content = fs.readFileSync(file, 'utf8');
@@ -39,7 +37,6 @@ class StyleSource {
 
     this._has &&= this._breakpoints.length > 0;
 
-    console.log(this.breakpoints);
     this._module = `${this.part.id}${this.support.module}${this.situation.module}`;
 
     this._use = {

@@ -1,3 +1,5 @@
+const log = require('../../../utilities/log');
+
 class StyleDependency {
   constructor (part, config) {
     this.part = part;
@@ -44,7 +46,24 @@ class StyleDependency {
       if (!child.detached && child.style.has) this._imports.push(child);
     }
 
-    this._provided = this._config ? this._config.map(id => this.part.getPart(id)) : [];
+    this._provided = [];
+    if (this._config) {
+      this._config.forEach(id => {
+        const part = this.part.getPart(id);
+        switch (true) {
+          case !part:
+            log.error(`${this.part.id} : provided style dependency '${id}' doesn't exist`);
+            break;
+
+          case !part.style.has:
+            log.error(`${this.part.id} : provided style dependency '${id}' doesn't have style - thus, it will be removed`);
+            break;
+
+          default:
+            this._provided.push(part);
+        }
+      });
+    }
   }
 
   hinge () {
@@ -88,8 +107,6 @@ class StyleDependency {
 
   order () {
     if (this._imports) this._imports = this._imports.sort((a, b) => a.style.level - b.style.level);
-
-    console.log(this.part.id, this._imports.map(p => p.id));
   }
 }
 

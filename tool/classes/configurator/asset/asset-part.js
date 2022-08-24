@@ -6,7 +6,7 @@ class AssetPart {
     this.part = part;
     this._paths = [`src${part.path}/_content/asset`, `src${part.path}/_content/deprecated/asset`];
     this.items = [];
-    this._config = config;
+    this._config = config || {};
     this.init();
   }
 

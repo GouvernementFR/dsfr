@@ -1,3 +1,5 @@
+const log = require('../../../utilities/log');
+
 class ScriptDependency {
   constructor (part, config) {
     this.part = part;
@@ -46,7 +48,24 @@ class ScriptDependency {
     }
     if (this.part.script._has) this._imports.push(this.part);
 
-    this._provided = this._config ? this._config.map(id => this.part.getPart(id)) : [];
+    this._provided = [];
+    if (this._config) {
+      this._config.forEach(id => {
+        const part = this.part.getPart(id);
+        switch (true) {
+          case !part:
+            log.error(`${this.part.id} : provided script dependency '${id}' doesn't exist`);
+            break;
+
+          case !part.script.has:
+            log.error(`${this.part.id} : provided script dependency '${id}' doesn't have script - thus, it will be removed`);
+            break;
+
+          default:
+            this._provided.push(part);
+        }
+      });
+    }
   }
 
   hinge () {
