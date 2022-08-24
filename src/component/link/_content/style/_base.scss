@@ -1,7 +1,11 @@
-////
-/// Link base
-/// @group link
-////
+@mixin first () {
+  @import '../../../link/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/group';
+  @import '../deprecated/style/base';
+
+  @include _link-scheme;
+}

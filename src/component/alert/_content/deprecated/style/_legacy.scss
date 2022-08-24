@@ -1,5 +1,5 @@
 @mixin first () {
   @import 'tmp/legacy';
 
-  @include _alert-scheme(true);
+  @include _alert-deprecated-scheme(true);
 }

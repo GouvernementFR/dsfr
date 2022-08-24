@@ -1,7 +1,7 @@
 @mixin first () {
   @import 'tmp/setting';
   @import 'tmp/scheme';
-  @import 'tmp/base';
+  @import 'tmp/legacy';
 
   @include _toggle-scheme(true);
 }

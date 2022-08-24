@@ -1,0 +1,38 @@
+////
+/// Follow Deprecated Module
+/// @group follow
+////
+
+#{ns(follow)} {
+  #{ns(links-group)} {
+    @include disable-list-style;
+    @include horizontal-btns-group;
+    @include margin(0 -4v -4v -4v);
+    @include width(auto);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__social {
+    #{ns(link)} {
+      @include disable-underline;
+      @include tint-enabled(true, null);
+      display: inline-flex;
+      @include margin-x(2v);
+      @include margin-bottom(4v);
+      @include nest-btn(md, only, null, null, false);
+    }
+
+    #{ns(links-group--lg)} {
+      #{ns(link)} {
+        @include nest-btn(lg, only, null, null, false);
+      }
+    }
+  }
+
+  @include social-deprecated-icon(facebook, facebook-circle-fill);
+  @include social-deprecated-icon(twitter, twitter-fill);
+  @include social-deprecated-icon(instagram, instagram-fill);
+  @include social-deprecated-icon(linkedin, linkedin-box-fill);
+  @include social-deprecated-icon(youtube, youtube-fill);
+}

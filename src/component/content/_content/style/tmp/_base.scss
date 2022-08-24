@@ -1,0 +1,40 @@
+////
+/// Content Module
+/// @group content
+////
+
+#{ns(content-media)} {
+  @include size(100%);
+  @include margin(10v 0);
+  @include display-flex(column, center);
+  @include set-text-margin(0);
+  @include set-title-margin(0);
+
+  &__img {
+    @include size(100%);
+  }
+
+  #{class-start-with(ns('responsive-img', ''))},
+  #{class-start-with(ns('responsive-vid', ''))} {
+    @include aspect-ratio();
+  }
+
+  &__caption,
+  &__transcription {
+    @include size(100%);
+    @include margin-top(2v);
+    text-align: right;
+  }
+
+  &__caption {
+    @include text-style(xs);
+  }
+
+  &__transcription {
+    @include nest-btn(sm, right, menu-2-fill, null, true, true);
+  }
+
+  $medias: (#{&}__img, ns(responsive-vid));
+  $captions: (#{&}__caption, #{&}__transcription);
+  @include content-media-sizes($medias, $captions, 25%);
+}

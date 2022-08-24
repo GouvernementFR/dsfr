@@ -1,0 +1,12 @@
+////
+/// Logo Scheme
+/// @group logo
+////
+
+@use '../../../../../../sass/color/index';
+
+@mixin _logo-scheme($legacy: false) {
+  #{ns(logo)} {
+    @include color.text(title grey, (legacy:$legacy));
+  }
+}

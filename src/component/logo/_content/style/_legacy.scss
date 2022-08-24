@@ -1,0 +1,8 @@
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
+
+  @include _logo-scheme(true);
+}

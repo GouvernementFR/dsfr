@@ -1,8 +1,7 @@
-////
-/// Link Deprecated base
-/// @group link
-////
+@mixin first () {
+  @import '../../../button/_content/style/tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import '../../../../button/_content/index';
-@import 'base/close';
-@import 'base/display';
+  @include _link-deprecated-scheme;
+}

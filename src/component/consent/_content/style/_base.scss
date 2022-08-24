@@ -1,9 +1,9 @@
-////
-/// Consent base
-/// @group consent
-////
+@mixin first () {
+  @import '../../../link/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/placeholder';
-@import 'base/banner';
-@import 'base/services';
-@import 'base/manager';
+  @include _content-scheme;
+}

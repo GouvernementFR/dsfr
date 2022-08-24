@@ -1,12 +1,10 @@
-////
-/// Card base
-/// @group card
-////
+@mixin first () {
+  @import '../../../badge/_content/style/tmp/tool';
+  @import '../../../tag/_content/style/tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/header';
-@import 'base/content';
-@import 'base/footer';
-@import 'base/sm';
-@import 'base/lg';
-@import 'base/horizontal';
+  @import '../deprecated/style/base';
+
+  @include _card-scheme;
+}
