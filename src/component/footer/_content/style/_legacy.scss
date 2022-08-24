@@ -1,19 +1,10 @@
-////
-/// Footer Legacy
-/// @group footer
-////
+@mixin first () {
+  @import '../../../link/_content/style/tmp/tool';
+  @import '../../../logo/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  /**
-  * Reset liste à puce
-  */
-  #{ns(footer)} {
-    @include disable-list-style-legacy;
-
-    &__content-desc {
-      @include enable-underline-legacy;
-    }
-  }
+  @include _footer-scheme(true);
 }

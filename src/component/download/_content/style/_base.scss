@@ -1,8 +1,9 @@
-////
-/// Download base
-/// @group download
-////
+@mixin first () {
+  @import '../../../link/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/download';
-@import 'base/variants';
-@import 'base/group';
+  @include _download-scheme;
+}

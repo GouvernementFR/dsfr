@@ -1,21 +1,6 @@
-////
-/// Callout Legacy
-/// @group callout
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  /**
-  * Marge des titres et textes
-  */
-  #{ns(callout)} {
-    &__title {
-      @include margin(0 0 2v);
-    }
-
-    &__text {
-      @include margin(0);
-    }
-  }
+  @include _callout-scheme(true);
 }

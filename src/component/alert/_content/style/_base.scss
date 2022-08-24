@@ -1,7 +1,9 @@
 @mixin first () {
-  @import '../../../button/_content/style/tmp/tool';
   @import 'tmp/scheme';
   @import 'tmp/base';
-
-  @include _alert-scheme;
+  
+  @import '../deprecated/style/base';
+  
+  @include _breadcrumb-scheme;
+  @include _breadcrumb-deprecated-scheme;
 }
