@@ -1,17 +1,7 @@
-////
-/// Select legacy
-/// @group select
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  /**
-  * Cache l'icone native du select sur IE
-  */
-  #{ns(select)} {
-    &::-ms-expand {
-      display: none;
-    }
-  }
+  @include _select-scheme(true);
 }

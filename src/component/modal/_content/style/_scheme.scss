@@ -3,8 +3,8 @@
 /// @group modal
 ////
 
-@use '../../../../../sass/color/index';
-@use '../../../../../sass/elevation/index';
+@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/elevation/index';
 
 @mixin _modal-scheme($legacy: false) {
   #{ns(modal)} {

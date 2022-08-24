@@ -3,6 +3,7 @@ style:
   dependencies:
     - typography
     - color
+    - disabled
     - spacing
     - action
     - form

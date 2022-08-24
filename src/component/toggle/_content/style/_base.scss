@@ -1,8 +1,7 @@
-////
-/// Toggle base
-/// @group toggle
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/variants';
-@import 'base/group';
+  @include _toggle-scheme;
+}

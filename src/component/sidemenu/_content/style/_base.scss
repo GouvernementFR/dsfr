@@ -1,11 +1,6 @@
-////
-/// Sidemenu base
-/// @group sidemenu
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/title';
-@import 'base/list';
-@import 'base/inner';
-@import 'base/variants';
-@import 'base/action';
+  @include _sidemenu-scheme;
+}

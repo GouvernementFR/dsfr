@@ -1,18 +1,8 @@
-////
-/// Stepper Module
-/// @group stepper
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  #{ns(stepper)} {
-    @include title {
-      @include margin-bottom(3v);
-    }
-
-    &__steps {
-      display: none;
-    }
-  }
+  @include _stepper-scheme(true);
 }

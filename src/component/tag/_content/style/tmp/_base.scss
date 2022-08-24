@@ -1,0 +1,13 @@
+////
+/// Tag base
+/// @group tag
+////
+
+@import 'base/default';
+@import 'base/variants';
+@import 'base/group';
+
+#{ns(tag)} {
+  @include min-width(9v);
+  justify-content: center;
+}

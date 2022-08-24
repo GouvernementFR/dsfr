@@ -1,8 +1,6 @@
-////
-/// Navigation base
-/// @group navigation
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/menu';
-@import 'base/mega-menu';
+  @include _navigation-scheme;
+}

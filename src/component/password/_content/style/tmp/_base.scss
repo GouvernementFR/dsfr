@@ -1,0 +1,36 @@
+////
+/// Password Module
+/// @group password
+////
+
+#{ns(password)} {
+  @include relative;
+
+  &__format {
+    #{ns(error-text)},
+    #{ns(valid-text)},
+    #{ns(info-text)} {
+      @include margin-top(1v);
+      @include before(','); // Ajoute une pause aux lecteurs d'écran
+    }
+  }
+
+  #{ns-attr(capslock)} {
+    @include before('', block) {
+      @include absolute(3v, 3v, null, null, 4v, 4v);
+      pointer-events: none;
+    }
+  }
+
+  &__checkbox {
+    @include absolute(-3v, 0);
+  }
+
+  &__input {
+    @include margin-bottom(3v);
+  }
+
+  &__label {
+    @include padding-right(24v);
+  }
+}

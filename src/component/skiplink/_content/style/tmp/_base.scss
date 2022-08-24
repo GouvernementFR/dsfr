@@ -1,0 +1,41 @@
+////
+/// Skiplinks Module
+/// @group skiplinks
+////
+
+#{ns(skiplinks)} {
+  @include disable-list-style;
+  @include absolute(0);
+  @include padding(4v 0);
+  transform: translateY(-100%);
+
+  &:focus-within {
+    @include relative;
+    transform: translateY(0);
+  }
+
+  @include list {
+    @include display-flex(column);
+    @include margin(0 -4v -6v);
+
+    > li {
+      @include margin(0 4v 6v);
+      @include margin(0 4v, md);
+
+      @include before(none);
+
+      @include nest-link(md, null, null, null, true);
+    }
+
+    @include respond-from(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      @include margin(0 -4v);
+    }
+
+    &:focus-within {
+      @include relative;
+      transform: translateY(0);
+    }
+  }
+}
