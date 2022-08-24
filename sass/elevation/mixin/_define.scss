@@ -3,8 +3,8 @@
 @use 'sass:meta';
 @use 'ground';
 @use '../../selector';
-@use '../variable/colors';
-@use '../variable/shadows';
+@use '../property/colors';
+@use '../property/shadows';
 
 @mixin define () {
   :root {

@@ -4,7 +4,7 @@
 @use 'sass:list';
 @use 'sass:map';
 @use 'character';
-@use '../../spacing/variable/units';
+@use '../../spacing/property/units';
 
 @function is-num($value) {
   $char: string.slice($value, 1, 1);

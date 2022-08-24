@@ -2,7 +2,7 @@
 @use 'sass:meta';
 @use 'sass:list';
 @use '../../string';
-@use '../variable/units';
+@use '../property/units';
 
 $V: units.$V;
 $W: units.$W;

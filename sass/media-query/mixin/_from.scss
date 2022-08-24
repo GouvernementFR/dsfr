@@ -1,4 +1,4 @@
-@use '../variable/breakpoints';
+@use '../property/breakpoints';
 
 @mixin from($media) {
   $limits: map_get(breakpoints.$values, $media);

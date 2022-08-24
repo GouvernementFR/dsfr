@@ -1,5 +1,6 @@
 const path = require('path');
 const { SUPPORTS } = require('./supports');
+const { SITUATIONS } = require('./situations');
 const { StyleSupport } = require('./style-support');
 const { BREAKPOINTS } = require('./breakpoints');
 
@@ -7,11 +8,16 @@ class StyleCollector {
   constructor (part) {
     this.part = part;
     this._contains = {};
+    this._bits = 0;
     this.init();
   }
 
   get has () {
     return this._has === true;
+  }
+
+  get bits () {
+    return this._bits;
   }
 
   getUse (from) {
@@ -21,21 +27,38 @@ class StyleCollector {
     };
   }
 
-  contains (support, breakpoint, situation) {
-    if (this._containing(support, breakpoint, situation)) return true;
+  contains (support, situation, breakpoint) {
+    if (this._containing(support, situation, breakpoint)) return true;
 
-    if (this.part.children.some(child => child.style.has && child.style.collector.contains(support, breakpoint, situation))) return true;
-
-    return false;
+    return this.part.children.some(child => child.style.has && child.style.collector.contains(support, situation, breakpoint));
   }
 
-  _containing (support, breakpoint, situation) {
+  _containing (support, situation, breakpoint = null) {
     for (const supportStyle of this._supports) {
       if (supportStyle.id === support) {
-        return supportStyle.hasBreakpoint(breakpoint, situation);
+        return supportStyle.contains(situation, breakpoint);
       }
     }
     return false;
+  }
+
+  init () {
+    this._supports = [];
+
+    for (const SUPPORT of SUPPORTS) {
+      const support = new StyleSupport(this.part, SUPPORT);
+      if (support.has) this._supports.push(support);
+    }
+
+    for (let i = 0; i < SUPPORTS.length; i++) {
+      for (let j = 0; j < SITUATIONS.length; j++) {
+        this._bits |= this.contains(SUPPORTS[i].id, SITUATIONS[j].id) ? 1 << (i * SITUATIONS.length + j) : 0;
+      }
+    }
+
+    console.log(this.part.id, this._bits);
+
+    this._has = this._supports.length > 0;
   }
 
   getModule (dependency) {
@@ -51,7 +74,7 @@ class StyleCollector {
         breakpoints: BREAKPOINTS.map(breakpoint => {
           return {
             id: breakpoint,
-            modules: dependency.imports.filter(part => part.style.collector.contains(support.id, breakpoint, false)).map(part => part.id)
+            modules: dependency.imports.filter(part => part.style.collector.contains(support.id, false, breakpoint)).map(part => part.id)
           };
         })
       };
@@ -79,19 +102,6 @@ class StyleCollector {
       uses: uses,
       mixins: mixins.filter(mixin => mixin.breakpoints.length > 0)
     };
-  }
-
-  init () {
-    this._supports = [];
-
-    for (const SUPPORT of SUPPORTS) {
-      const support = new StyleSupport(this.part, SUPPORT);
-      if (support.has) this._supports.push(support);
-    }
-
-    this._has = this._supports.length > 0;
-
-    if (!this._has) return;
   }
 }
 

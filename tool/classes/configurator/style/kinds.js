@@ -2,7 +2,7 @@ const { RECENT, OUTDATED, LEGACY } = require('./supports');
 const { RECOMMENDED, DEPRECATED } = require('./situations');
 
 const RECENT_RECOMMENDED_KIND = {
-  id: 'recent.recommended',
+  id: 'recent-recommended',
   situations: [RECOMMENDED],
   supports: [RECENT],
   src: 'recent.recommended',
@@ -10,7 +10,7 @@ const RECENT_RECOMMENDED_KIND = {
 };
 
 const RECENT_DEPRECATED_KIND = {
-  id: 'recent.deprecated',
+  id: 'recent-deprecated',
   situations: [DEPRECATED],
   supports: [RECENT],
   src: 'recent.deprecated',
@@ -18,7 +18,7 @@ const RECENT_DEPRECATED_KIND = {
 };
 
 const OUTDATED_RECOMMENDED_KIND = {
-  id: 'outdated.recommended',
+  id: 'outdated-recommended',
   situations: [RECOMMENDED],
   supports: [OUTDATED],
   src: 'outdated.recommended',
@@ -26,7 +26,7 @@ const OUTDATED_RECOMMENDED_KIND = {
 };
 
 const OUTDATED_DEPRECATED_KIND = {
-  id: 'outdated.deprecated',
+  id: 'outdated-deprecated',
   situations: [DEPRECATED],
   supports: [OUTDATED],
   src: 'outdated.deprecated',
@@ -34,7 +34,7 @@ const OUTDATED_DEPRECATED_KIND = {
 };
 
 const LEGACY_RECOMMENDED_KIND = {
-  id: 'legacy.recommended',
+  id: 'legacy-recommended',
   situations: [RECOMMENDED],
   supports: [LEGACY],
   src: 'legacy.recommended',
@@ -42,7 +42,7 @@ const LEGACY_RECOMMENDED_KIND = {
 };
 
 const LEGACY_DEPRECATED_KIND = {
-  id: 'legacy.deprecated',
+  id: 'legacy-deprecated',
   situations: [DEPRECATED],
   supports: [LEGACY],
   src: 'legacy.deprecated',
@@ -66,7 +66,7 @@ const RECOMMENDED_KIND = {
 };
 
 const MODERN_RECOMMENDED_KIND = {
-  id: 'recommended',
+  id: 'modern-recommended',
   situations: [RECOMMENDED],
   supports: [RECENT, OUTDATED],
   src: 'modern.recommended',
@@ -81,6 +81,6 @@ const FULL_KIND = {
   dest: ''
 };
 
-const KINDS = [RECENT_RECOMMENDED_KIND, RECENT_DEPRECATED_KIND, OUTDATED_RECOMMENDED_KIND, OUTDATED_DEPRECATED_KIND, LEGACY_RECOMMENDED_KIND, LEGACY_DEPRECATED_KIND, MODERN_KIND, RECOMMENDED_KIND, MODERN_RECOMMENDED_KIND, FULL_KIND];
+const KINDS = [FULL_KIND, RECENT_RECOMMENDED_KIND, RECENT_DEPRECATED_KIND, OUTDATED_RECOMMENDED_KIND, OUTDATED_DEPRECATED_KIND, LEGACY_RECOMMENDED_KIND, LEGACY_DEPRECATED_KIND, MODERN_KIND, RECOMMENDED_KIND, MODERN_RECOMMENDED_KIND];
 
 module.exports = { KINDS };

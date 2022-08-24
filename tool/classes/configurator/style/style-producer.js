@@ -1,4 +1,4 @@
-const { KINDS, MODERN_KIND } = require('./kinds');
+const { KINDS } = require('./kinds');
 const { StyleItem } = require('./style-item');
 const { StyleModule } = require('./style-module');
 
@@ -13,18 +13,25 @@ class StyleProducer {
   }
 
   init () {
-    this._producers = KINDS.map(kind => new StyleItem(this.part, kind));
     this._module = new StyleModule(this.part);
+    this._items = KINDS.map(kind => new StyleItem(this.part, kind));
+  }
+
+  analyse () {
+    this._items.forEach(item => item.analyse());
+
+    const bits = [];
+    for (const item of this._items) {
+      if (!item.filled || bits.includes(item.bits)) item.remove();
+      bits.push(item.bits);
+    }
+
+    this._items = this._items.filter(item => item.filled);
   }
 
   produce (dependency) {
     this._module.produce(dependency);
-    this._producers.forEach(item => item.produce());
-    this._items = this._producers
-      .filter(producer => producer.filled)
-      // .filter((producer, index, array) => !(array.length === 2 && producer.kind === MODERN_KIND));
-
-    this._items.forEach(item => item.create());
+    this._items.forEach(item => item.produce());
   }
 }
 

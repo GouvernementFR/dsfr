@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../variable/units';
+@use '../property/units';
 
 @function is-unit($value, $unit) {
   @return math.unit($value) == $unit;

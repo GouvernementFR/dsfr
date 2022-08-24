@@ -1,6 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
-@use '../variable/grounds';
+@use '../property/grounds';
 
 @mixin ground ($level) {
   $ground: map.get(grounds.$values, $level);

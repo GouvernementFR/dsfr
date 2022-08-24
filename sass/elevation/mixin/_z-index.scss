@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../../elevation/variable/z-indexes';
+@use '../../elevation/property/z-indexes';
 @use '../../legacy';
 
 @mixin z-index($level, $legacy: false) {

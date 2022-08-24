@@ -70,7 +70,7 @@ class Part {
   get data () {
     const data = { ...this._data };
     if (this.asset.filled) data.asset = this.asset.data;
-    if (this.style.has) data.script = this.style.data;
+    if (this.style.has) data.style = this.style.data;
     if (this.script.has) data.script = this.script.data;
     data.children = this._children.map(child => child.data);
     return data;

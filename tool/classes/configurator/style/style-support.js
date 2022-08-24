@@ -17,11 +17,14 @@ class StyleSupport {
     return this._sources.map(source => source.use);
   }
 
-  hasBreakpoint (breakpoint, situation) {
+  contains (situation, breakpoint = null) {
     for (const source of this._sources) {
-      if (source.breakpoints.includes(breakpoint)) {
-        if (situation === false) return true;
-        if (source.situation.id === situation) return true;
+      switch (true) {
+        case situation === false && breakpoint === null:
+        case situation === false && source.breakpoints.includes(breakpoint):
+        case situation === source.situation.id && breakpoint === null:
+        case situation === source.situation.id && source.breakpoints.includes(breakpoint):
+          return true;
       }
     }
     return false;

@@ -2,9 +2,9 @@
 @use 'sass:map';
 @use 'sass:color';
 @use '../../string';
-@use '../variable/options';
-@use '../variable/sets';
-@use '../variable/decisions';
+@use '../property/options';
+@use '../property/sets';
+@use '../property/decisions';
 
 @function from-list($tokens, $type, $parameters: ()) {
   $colors: ();

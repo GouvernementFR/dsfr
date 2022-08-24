@@ -1,8 +1,8 @@
 @use 'sass:map';
 @use '../../string';
 @use '../../spacing';
-@use '../variable/box-shadows';
-@use '../variable/constant';
+@use '../property/box-shadows';
+@use '../property/constant';
 
 @function has($id) {
   @return map.has-key(box-shadows.$values, $id);

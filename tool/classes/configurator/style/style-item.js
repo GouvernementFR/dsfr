@@ -1,5 +1,7 @@
 const fs = require('fs');
 const { createFile, deleteFile } = require('../../../utilities/file');
+const { SUPPORTS } = require('./supports');
+const { SITUATIONS } = require('./situations');
 
 class StyleItem {
   constructor (part, kind) {
@@ -25,15 +27,37 @@ class StyleItem {
     return this._filled;
   }
 
-  produce () {
-    this.content = `@use '../${this.part.id}';\n\n`;
-
-    const situations = this.kind.situations.map(situation => situation.id).join(' ');
-    this.content += this.kind.supports.map(support => `@include ${this.part.id}.${support.id}(${situations});\n`).join('');
+  get bits () {
+    return this._bits;
   }
 
-  create () {
-    createFile(this.src, this.part.banner(this.content));
+  analyse () {
+    let bits = 0;
+    for (let i = 0; i < SUPPORTS.length; i++) {
+      for (let j = 0; j < SITUATIONS.length; j++) {
+        bits |= this.kind.supports.includes(SUPPORTS[i]) && this.kind.situations.includes(SITUATIONS[j]) ? 1 << (i * SITUATIONS.length + j) : 0;
+      }
+    }
+
+    this._bits = this.part.style.collector.bits & bits;
+    this._filled = this._bits > 0;
+  }
+
+  produce () {
+    const folder = `src${this.part.path}`.split('/').pop();
+    const content = [`@use '../${folder}' as ${this.part.id};\n\n`];
+
+    const situations = this.kind.situations.map(situation => situation.id).join(' ');
+    for (const support of this.kind.supports) {
+      if (this.kind.situations.some(situation => this.part.style.collector.contains(support.id, situation.id))) content.push(`@include ${this.part.id}.${support.id}(${situations});\n`);
+    }
+
+    createFile(this.src, this.part.banner(content.join('')));
+  }
+
+  remove () {
+    deleteFile(this.src);
+    this._filled = false;
   }
 }
 

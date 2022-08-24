@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use '../../elevation/variable/shadows';
+@use '../../elevation/property/shadows';
 
 @mixin shadow($layer) {
   @if map.has-key(shadows.$values, $layer) {

@@ -3,7 +3,7 @@
 @use '../../string';
 @use '../../color';
 @use '../../utilities';
-@use '../../elevation/variable/backgrounds';
+@use '../../elevation/property/backgrounds';
 
 @mixin background($layer, $options: ()) {
   $legacy: map.get($options, legacy);

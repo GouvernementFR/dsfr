@@ -1,6 +1,7 @@
 const { StyleCollector } = require('./style-collector');
 const { StyleDependency } = require('./style-dependency');
 const { StyleProducer } = require('./style-producer');
+const { StyleOptions } = require('./style-options');
 
 class StylePart {
   constructor (part, config) {
@@ -50,11 +51,13 @@ class StylePart {
     if (this.has) {
       this._dependency = new StyleDependency(this.part, this._config.dependencies);
       this._producer = new StyleProducer(this.part);
+      this._options = new StyleOptions(this.part);
     }
   }
 
   analyse () {
     if (!this.has) return;
+    this._producer.analyse();
     this._dependency.analyse();
   }
 
@@ -73,7 +76,8 @@ class StylePart {
   generate () {
     if (!this.has) return;
     this._producer.produce(this._dependency);
-    this._data.items = this._producer.items;
+    this._data.items = this._producer.items.map(item => item.data);
+    this._options.generate();
   }
 }
 

@@ -1,8 +1,8 @@
 @use 'sass:list';
 @use 'sass:map';
 @use '../function/colors';
-@use '../variable/decisions';
-@use '../variable/sets';
+@use '../property/decisions';
+@use '../property/sets';
 
 @mixin define($theme: light) {
   $sets: ();

@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:list';
-@use '../variable/accent';
-@use '../variable/sets';
+@use '../property/accent';
+@use '../property/sets';
 
 @mixin accentuate () {
   $accents: map.get(sets.$values, accent);
