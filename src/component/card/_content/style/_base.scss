@@ -4,7 +4,5 @@
   @import 'tmp/scheme';
   @import 'tmp/base';
 
-  @import '../deprecated/style/base';
-
   @include _card-scheme;
 }

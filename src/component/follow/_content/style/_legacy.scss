@@ -5,7 +5,5 @@
   @import 'tmp/scheme';
   @import 'tmp/legacy';
 
-  @import '../deprecated/style/legacy';
-
   @include _follow-scheme(true);
 }
