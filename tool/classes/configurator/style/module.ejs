@@ -10,7 +10,7 @@ $options: options.$options !default;
 @include path.to-dist(map.get($options, depth));<%
 for (const mixin of mixins) {
   let s = '  ';
-  let open = `\n\n@mixin ${mixin.name} ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {\n`;
+  let open = `\n\n@mixin ${mixin.name} ($situations: recommended deprecated, $breakpoints: first sm md lg xl, $with-media-query: true) {\n`;
   let close = '}';
 
   if (mixin.name === 'legacy') {
@@ -31,7 +31,7 @@ for (const mixin of mixins) {
     }
 
     if (breakpoint.modules) for (const module of breakpoint.modules) {
-      bpo += `${bs}@include ${module}.${mixin.name}(${breakpoint.id}, false, $situations);\n`
+      bpo += `${bs}@include ${module}.${mixin.name}($situations, ${breakpoint.id}, false);\n`
     }
 
     if (breakpoint.situations) for (const situation of breakpoint.situations) {

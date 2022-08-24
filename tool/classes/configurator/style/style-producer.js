@@ -19,7 +19,7 @@ class StyleProducer {
 
   produce (dependency) {
     this._module.produce(dependency);
-    this._producers.forEach(item => item.produce(dependency));
+    this._producers.forEach(item => item.produce());
     this._items = this._producers
       .filter(producer => producer.filled)
       // .filter((producer, index, array) => !(array.length === 2 && producer.kind === MODERN_KIND));

@@ -3,7 +3,7 @@
 /// @group icons-system
 ////
 
-@use 'sass/legacy';
+@use '../../../../../../sass/legacy/index';
 
 @include legacy.is(ie11) {
   @include generate-icons-legacy(filter-icons('system'));

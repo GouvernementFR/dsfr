@@ -12,7 +12,7 @@ $options: options.$options !default;
 
 @include path.to-dist(map.get($options, depth));
 
-@mixin recent ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+@mixin recent ($situations: recommended deprecated, $breakpoints: first sm md lg xl, $with-media-query: true) {
   @if list.index($situations, recommended) {
     @include colors-recent-recommended.first();
   }
@@ -42,7 +42,7 @@ $options: options.$options !default;
   }
 }
 
-@mixin legacy ($breakpoints: first sm md lg xl, $with-media-query: true, $situations: recommended deprecated) {
+@mixin legacy ($situations: recommended deprecated, $breakpoints: first sm md lg xl, $with-media-query: true) {
   @include legacy.condition($with-media-query) {
     @if list.index($situations, recommended) {
       @include colors-legacy-recommended.first();

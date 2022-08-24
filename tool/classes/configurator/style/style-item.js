@@ -25,26 +25,15 @@ class StyleItem {
     return this._filled;
   }
 
-  produce (dependency) {
-    /*
-    const from = `src${this.part.path}`;
-    for (const filename of FILENAMES) {
-      if (!filename.supports.includes(this.support)) continue;
-      for (const part of dependency.imports) {
-        const collector = part.script.getCollector(this.kind);
-        if (!collector || !collector.isSupporting(this.support)) continue;
-        this.imports.push(...collector.getImports(from, filename));
-      }
-    }
-    this._filled = this.imports.length > 0;
+  produce () {
+    this.content = `@use '../${this.part.id}';\n\n`;
 
-    if (!this._filled && fs.existsSync(this.src)) deleteFile(this.src);
-
-     */
+    const situations = this.kind.situations.map(situation => situation.id).join(' ');
+    this.content += this.kind.supports.map(support => `@include ${this.part.id}.${support.id}(${situations});\n`).join('');
   }
 
   create () {
-    // createFile(this.src, this.part.banner(this.imports.join('')));
+    createFile(this.src, this.part.banner(this.content));
   }
 }
 
