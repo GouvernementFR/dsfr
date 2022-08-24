@@ -3,7 +3,7 @@
 /// @group breadcrumb
 ////
 
-@use '../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy/index';
 
 @include legacy.is(ie11) {
   /**
