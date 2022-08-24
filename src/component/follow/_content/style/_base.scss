@@ -5,7 +5,5 @@
   @import 'tmp/scheme';
   @import 'tmp/base';
 
-  @import '../deprecated/style/base';
-
-  @include _footer-scheme;
+  @include _follow-scheme;
 }

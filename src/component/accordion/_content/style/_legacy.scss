@@ -1,9 +1,9 @@
 @mixin first () {
-  @import '../../../link/index';
-  @import 'tmp/style/setting';
-  @import 'tmp/style/tool';
-  @import 'tmp/style/scheme';
-  @import 'tmp/style/legacy';
+  @import '../../../link/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
   @include _accordion-scheme(true);
 }

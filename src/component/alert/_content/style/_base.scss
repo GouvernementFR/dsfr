@@ -2,7 +2,5 @@
   @import 'tmp/scheme';
   @import 'tmp/base';
 
-  @import '../deprecated/style/base';
-
-  @include _breadcrumb-scheme;
+  @include _alert-scheme;
 }
