@@ -1,19 +1,8 @@
-////
-/// Table Legacy
-/// @group table
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  /**
-  * Correctif placement caption
-  */
-  #{ns(table)} {
-    &#{ns-attr(js-table, true)} {
-      caption {
-        @include relative;
-      }
-    }
-  }
+  @include _table-scheme(true);
 }

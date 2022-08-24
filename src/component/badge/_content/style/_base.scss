@@ -1,7 +1,9 @@
-////
-/// Badge Module
-/// @group badge
-////
+@mixin first() {
+  @import '../../../link/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/group';
+  @include _badge-scheme;
+}

@@ -1,8 +1,8 @@
-////
-/// Table base
-/// @group Table
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/variants';
-@import 'base/shadow';
+  @include _table-scheme;
+}

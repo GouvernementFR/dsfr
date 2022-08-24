@@ -1,0 +1,39 @@
+////
+/// Notice Module
+/// @group notice
+////
+
+#{ns(notice)} {
+  @include relative();
+  @include set-title-margin(0);
+  @include set-text-margin(0);
+  @include padding-y(4v);
+
+  &__body {
+    @include relative;
+    @include padding(0 10v 0 10v);
+
+    @include icon-size(md, before);
+    @include icon-style(before) {
+      @include absolute(null, null, null, 0);
+    }
+  }
+
+  &__title {
+    @include relative;
+    @include text-style(md);
+    @include font-weight(bold);
+  }
+
+  #{ns(btn--close)} {
+    @include nest-btn(sm, only, close-line, null, false);
+    @include absolute(-1v, 4v);
+  }
+
+  &--info {
+    #{ns(notice)}__body {
+      @include icon-image(info-fill, before);
+      @include icon-content;
+    }
+  }
+}

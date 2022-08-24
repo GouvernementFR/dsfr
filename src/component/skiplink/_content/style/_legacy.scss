@@ -1,18 +1,6 @@
-////
-/// Skiplink Legacy
-/// @group skiplink
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  /**
-  * Correctif
-  */
-  #{ns(skiplinks)} {
-    &.focus-within {
-      position: relative;
-      transform: translateY(0);
-    }
-  }
+  @include _sidemenu-scheme(true);
 }

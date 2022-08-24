@@ -1,4 +1,7 @@
 id: translate
+asset:
+  dependencies:
+    - icons-system
 style:
   dependencies:
     - typography

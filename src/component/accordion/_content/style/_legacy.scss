@@ -1,5 +1,5 @@
 @mixin first () {
-  @import '../../../link/_content/style/tmp/tool';
+  @import '../../../link/index';
   @import 'tmp/style/setting';
   @import 'tmp/style/tool';
   @import 'tmp/style/scheme';

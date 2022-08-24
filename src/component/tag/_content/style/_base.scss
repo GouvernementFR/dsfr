@@ -1,13 +1,9 @@
-////
-/// Tag base
-/// @group tag
-////
+@mixin first () {
+  @import '../../../link/_content/style/tmp/tool';
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/variants';
-@import 'base/group';
-
-#{ns(tag)} {
-  @include min-width(9v);
-  justify-content: center;
+  @include _tag-scheme;
 }

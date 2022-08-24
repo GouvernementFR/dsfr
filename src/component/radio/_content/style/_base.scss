@@ -1,8 +1,7 @@
-////
-/// Radio base
-/// @group radio
-////
+@mixin first () {
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/sm';
-@import 'base/rich';
+  @include _radio-scheme;
+}

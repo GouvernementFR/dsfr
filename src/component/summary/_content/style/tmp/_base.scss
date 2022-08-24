@@ -1,0 +1,44 @@
+////
+/// Summary Module
+/// @group summary
+////
+
+//TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
+
+#{ns(summary)} {
+  @include set-text-margin(0 0 2v 0);
+  @include set-title-margin(0 0 2v 0);
+  @include padding(6v);
+  @include padding(8v, md);
+  @include text-style(xs);
+
+  ol {
+    list-style-type: none;
+  }
+
+  li {
+    @include marker(none);
+    @include padding(2v 0);
+  }
+
+  @include title {
+    @include text-style(xs);
+    font-weight: font-weight(bold);
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: inline;
+    position: relative;
+    @include text-style(xs);
+    @include before(var(--ol-content)) {
+      @include absolute(null, 100%);
+      font-size: var(--xl-size);
+      font-weight: bold;
+    }
+
+    &:not(:hover):not(:active) {
+      @include link-underline-hover-only;
+    }
+  }
+}

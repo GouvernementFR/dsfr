@@ -1,26 +1,6 @@
-////
-/// Tile Legacy
-/// @group tile
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
-
-@include legacy.is(ie11) {
-  /**
-  * Correctif de la largeur du texte dans la tuile
-  */
-  #{ns(tile)} {
-    &__body,
-    &__body > * {
-      max-width: 100%;
-    }
-
-    &__title {
-      @include margin(0 0 2v);
-    }
-
-    &__desc {
-      @include margin(0);
-    }
-  }
+  @include _tile-scheme(true);
 }

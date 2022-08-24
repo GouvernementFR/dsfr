@@ -1,7 +1,8 @@
-////
-/// Tile Module
-/// @group tile
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'sass/default';
-@import 'sass/variations';
+  @include _tag-scheme;
+}
