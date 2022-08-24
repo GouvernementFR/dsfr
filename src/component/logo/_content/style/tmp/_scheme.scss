@@ -3,7 +3,7 @@
 /// @group logo
 ////
 
-@use '../../../../../sass/color/index';
+@use '../../../../../../sass/color/index';
 
 @mixin _logo-scheme($legacy: false) {
   #{ns(logo)} {

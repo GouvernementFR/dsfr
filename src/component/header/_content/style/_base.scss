@@ -1,12 +1,10 @@
-////
-/// Header base
-/// @group header
-////
+@mixin first () {
+  @import '../../../button/_content/style/tmp/tool';
+  @import '../../../logo/_content/style/tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@import 'base/default';
-@import 'base/brand';
-@import 'base/modal';
-@import 'base/navbar';
-@import 'base/tools';
-@import 'base/links';
-@import 'base/nav';
+  @import '../deprecated/style/base';
+
+  @include _header-scheme;
+}

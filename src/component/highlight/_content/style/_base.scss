@@ -1,11 +1,6 @@
-////
-/// Highlight Module
-/// @group Highlight
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-#{ns(highlight)} {
-  @include padding-left(6v);
-  @include text-style(md);
-  @include padding-left(8v, md);
-  @include margin-left(8v, md);
+  @include _highlight-scheme;
 }

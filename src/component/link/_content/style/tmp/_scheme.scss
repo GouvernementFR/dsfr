@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@use '../../../../../sass/color/index';
+@use '../../../../../../sass/color/index';
 
 @mixin _link-scheme($legacy: false) {
   #{ns(link)} {

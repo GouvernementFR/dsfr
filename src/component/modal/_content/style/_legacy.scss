@@ -1,10 +1,6 @@
-////
-/// Modal Legacy
-/// @group modal
-////
+@mixin first () {
+  @import 'tmp/scheme';
+  @import 'tmp/legacy';
 
-#{ns(modal)} {
-  @include body {
-    max-height: calc(100vh - 2rem);
-  }
+  @include _modal-scheme(true);
 }

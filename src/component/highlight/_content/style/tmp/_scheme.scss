@@ -3,7 +3,7 @@
 /// @group Highlight
 ////
 
-@use '../../../../../sass/color/index';
+@use '../../../../../../sass/color/index';
 
 @mixin _highlight-scheme($legacy: false) {
   #{ns(highlight)} {

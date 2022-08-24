@@ -3,9 +3,9 @@
 /// @group header
 ////
 
-@use '../../../../../sass/color/index';
-@use '../../../../../sass/elevation/index';
-@use '../../../../../sass/media-query/index';
+@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/elevation/index';
+@use '../../../../../../sass/media-query/index';
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {

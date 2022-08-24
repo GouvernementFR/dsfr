@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@use '../../../../../../sass/spacing/index';
+@use '../../../../../../../sass/spacing/index';
 
 #{ns-group(links)} {
   @include disable-list-style;

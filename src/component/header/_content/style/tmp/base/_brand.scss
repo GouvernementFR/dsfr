@@ -2,9 +2,9 @@
 /// Header Module : brand
 /// @group header
 ////
-@use '../../../../../../sass/elevation';
-@use '../../../../../../sass/media-query';
-@use '../../../../../../sass/color';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/color';
 
 #{ns(header)} {
   &__brand {

@@ -2,7 +2,7 @@
   @import 'tmp/setting';
   @import 'tmp/tool';
   @import 'tmp/scheme';
-  @import 'tmp/base';
+  @import 'tmp/legacy';
 
-  @include _logo-scheme;
+  @include _logo-scheme(true);
 }

@@ -1,16 +1,8 @@
-////
-/// Input Legacy
-/// @group input
-////
+@mixin first () {
+  @import 'tmp/setting';
+  @import 'tmp/tool';
+  @import 'tmp/scheme';
+  @import 'tmp/base';
 
-@use '../../../../../../sass/legacy/';
-
-@include legacy.is(ie11) {
-  #{ns(input-wrap)} {
-    &--addon {
-      #{ns(btn)} {
-        flex-shrink: 0;
-      }
-    }
-  }
+  @include _input-scheme(true);
 }

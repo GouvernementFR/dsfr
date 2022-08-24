@@ -3,7 +3,7 @@
 /// @group header
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../../sass/color/index';
 
 @mixin _header-deprecated-scheme($legacy: false) {
   #{ns(header)} {

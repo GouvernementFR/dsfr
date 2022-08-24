@@ -5,5 +5,8 @@
   @import 'tmp/scheme';
   @import 'tmp/base';
 
+  @import '../deprecated/style/base';
+
   @include _share-scheme;
+  @include _share-deprecated-scheme;
 }
