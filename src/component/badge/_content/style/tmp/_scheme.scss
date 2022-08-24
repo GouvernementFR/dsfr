@@ -3,7 +3,7 @@
 /// @group badge
 ////
 
-@use '../../../../../sass/color/index';
+@use '../../../../../../sass/color/index';
 
 @mixin _badge-scheme($legacy: false) {
   #{ns(badge)} {

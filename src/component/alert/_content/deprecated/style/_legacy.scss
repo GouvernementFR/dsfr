@@ -1,5 +1,4 @@
 @mixin first () {
-  @import 'tmp/scheme';
   @import 'tmp/legacy';
 
   @include _alert-scheme(true);

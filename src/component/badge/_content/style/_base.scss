@@ -1,4 +1,5 @@
 @mixin first() {
+  @import '../../../link/_content/style/tmp/tool';
   @import 'tmp/setting';
   @import 'tmp/tool';
   @import 'tmp/scheme';
