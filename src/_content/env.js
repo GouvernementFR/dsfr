@@ -2,7 +2,7 @@
   locals.includeAttrs = function (attrs) {
     let html = '';
     for (const prop in attrs) {
-      switch(attrs[prop]) {
+      switch (attrs[prop]) {
         case '':
         case null:
           html += `${prop} `;
@@ -23,3 +23,12 @@
     return '';
   };
 }(locals));
+
+const pck = `<%- include('../../package.json') %>`;
+const json = JSON.parse(pck);
+locals.prefix = json.config.prefix;
+locals.namespace = json.config.namespace;
+locals.organisation = json.config.organisation;
+
+
+
