@@ -1,18 +1,21 @@
 const fs = require('fs');
 
 class ExampleNode {
-  constructor (dir, relative = '', isStandalone) {
-    this.dir = dir;
+  constructor (part, relative = '') {
+    this.part = part;
     this.relative = relative;
-    this.isStandalone = isStandalone;
-    this.path = relative ? `${dir}/${relative}` : dir;
-    this._hasData = false;
+    this.path = `src${this.part.path}/_content/example${relative}`;
+    this._has = false;
     this._children = [];
-
-    this._init();
+    this._data = {};
+    this.init();
   }
 
-  _init () {
+  get has () {
+    return this._has || this._children.some(child => child.has);
+  }
+
+  init () {
     if (!fs.existsSync(this.path)) return;
 
     const entries = fs.readdirSync(this.path, { withFileTypes: true });
@@ -20,7 +23,9 @@ class ExampleNode {
     for (const entry of entries) {
       switch (true) {
         case entry.isFile() && entry.name === 'index.ejs':
-          this._hasData = true;
+          this._has = true;
+          this._data.src = `${this.path}/index.ejs`;
+          this._data.dest = `example${this.part.path}${this.relative}/index.html`;
           break;
 
         case entry.isDirectory():
@@ -28,34 +33,18 @@ class ExampleNode {
           break;
       }
     }
+
+    this._data.has = this._has;
+    if (this._children.length) this._data.children = this._children.map(child => child.data);
   }
 
   addChild (name) {
-    const child = new ExampleNode(this.dir, `${this.relative}${name}`);
-    if (child.hasData) this._children.push(child);
-  }
-
-  get hasData () {
-    return this._hasData || this._children.some(child => child.hasData);
-  }
-
-  get _dest () {
-    const replace = this.isStandalone ? 'standalone' : 'example';
-    const remove = this.isStandalone ? '/standalone/example' : '/example';
-    return `${this.path.replace(remove, '').replace('src', replace)}/index.html`;
+    const child = new ExampleNode(this.part, `${this.relative}/${name}`);
+    if (child.has) this._children.push(child);
   }
 
   get data () {
-    const data = {
-      hasData: this._hasData === true,
-      src: `${this.path}/index.ejs`,
-      dest: this._dest,
-      subdir: this._children.map(child => child.relative)
-    };
-
-    if (this._children.length) data.children = this._children.map(child => child.data);
-
-    return data;
+    return this._data;
   }
 }
 

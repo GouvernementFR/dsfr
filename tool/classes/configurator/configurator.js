@@ -71,7 +71,13 @@ class Configurator {
   }
 
   _generateConfig () {
-    createFile('.config/config.json', JSON.stringify(this.root.data, null, 4));
+    const config = {
+      ...global.config,
+      version: global.version,
+      data: this.root.data
+    };
+
+    createFile('.config/config.json', JSON.stringify(config, null, 4));
   }
 
   _generateJsConfig () {

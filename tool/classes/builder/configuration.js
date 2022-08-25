@@ -21,7 +21,15 @@ const sortByScript = (a, b) => {
 };
 
 class Configuration {
-  constructor (data) {
+  constructor (path = '') {
+    try {
+      const file = `${path}.config/config.json`;
+      const fileContents = fs.readFileSync(file, 'utf8');
+      const data = JSON.parse(fileContents);
+    } catch (e) {
+      log.error(e);
+    }
+
     this._data = data;
     this._flat = flatten(this._data);
     this._sortedByStyle = [...this._flat].sort(sortByStyle);
@@ -48,15 +56,8 @@ class Configuration {
     return this._flat.filter(pck => ids && ids.length ? ids.indexOf(pck.id) > -1 : true);
   }
 
-  static async get (path = './') {
-    try {
-      const file = `${path}.config/config.json`;
-      const fileContents = fs.readFileSync(file, 'utf8');
-      const data = JSON.parse(fileContents);
-      return new Configuration(data);
-    } catch (e) {
-      log.error(e);
-    }
+  static async get (path = '') {
+
   }
 }
 

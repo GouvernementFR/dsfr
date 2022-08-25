@@ -5,6 +5,7 @@ const { AssetPart } = require('./asset/asset-part');
 const { StylePart } = require('./style/style-part');
 const { ScriptPart } = require('./script/script-part');
 const global = require('../../../package.json');
+const { ExamplePart } = require('./example/example-part');
 
 class Part {
   constructor (path, depth = 0, ascendants = null) {
@@ -72,6 +73,7 @@ class Part {
     if (this.asset.filled) data.asset = this.asset.data;
     if (this.style.has) data.style = this.style.data;
     if (this.script.has) data.script = this.script.data;
+    if (this.example.has) data.example = this.example.data;
     data.children = this._children.map(child => child.data);
     return data;
   }
@@ -107,6 +109,7 @@ class Part {
     this.asset = new AssetPart(this, this._config.asset);
     this.style = new StylePart(this, this._config.style);
     this.script = new ScriptPart(this, this._config.script);
+    this.example = new ExamplePart(this, this._config.example);
   }
 
   extract () {
