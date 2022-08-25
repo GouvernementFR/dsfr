@@ -4,10 +4,6 @@ const { createFile } = require('../../utilities/file');
 const global = require('../../../package.json');
 
 class Configurator {
-  constructor () {
-    this.build();
-  }
-
   build () {
     this.root = new Part('');
     this.flat = this.root.flat;

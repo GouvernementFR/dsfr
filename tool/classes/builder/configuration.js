@@ -8,32 +8,29 @@ const flatten = (element) => {
   return flat;
 };
 
-const sortByStyle = (a, b) => {
-  const aLevel = a.style ? a.style.level || 1000 : 1000;
-  const bLevel = b.style ? b.style.level || 1000 : 1000;
-  return aLevel - bLevel;
-};
-
-const sortByScript = (a, b) => {
-  const aLevel = a.script ? a.script.level || 1000 : 1000;
-  const bLevel = b.script ? b.script.level || 1000 : 1000;
-  return aLevel - bLevel;
-};
-
 class Configuration {
   constructor (path = '') {
+    this.load(path);
+    this.init();
+  }
+
+  load (path) {
     try {
       const file = `${path}.config/config.json`;
       const fileContents = fs.readFileSync(file, 'utf8');
-      const data = JSON.parse(fileContents);
+      this._data = JSON.parse(fileContents);
     } catch (e) {
       log.error(e);
     }
+  }
 
-    this._data = data;
-    this._flat = flatten(this._data);
-    this._sortedByStyle = [...this._flat].sort(sortByStyle);
-    this._sortedByScript = [...this._flat].sort(sortByScript);
+  get has () {
+    return this._data !== undefined;
+  }
+
+  init () {
+    if (!this.has) return;
+    this._flat = flatten(this._data.data);
   }
 
   get data () {
@@ -44,16 +41,8 @@ class Configuration {
     return this._flat;
   }
 
-  get sortedByStyle () {
-    return this._sortedByStyle;
-  }
-
-  get sortedByScript () {
-    return this._sortedByScript;
-  }
-
-  getPackagesByIds (ids) {
-    return this._flat.filter(pck => ids && ids.length ? ids.indexOf(pck.id) > -1 : true);
+  getPartsByIds (ids) {
+    return ids ? this._flat.filter(pck => ids && ids.length ? ids.indexOf(pck.id) > -1 : true) : this._flat;
   }
 
   static async get (path = '') {
@@ -61,4 +50,4 @@ class Configuration {
   }
 }
 
-module.exports = { Config: Configuration };
+module.exports = { Configuration };
