@@ -1,4 +1,4 @@
-@use 'base/properties';
+@use 'recent/properties';
 
 @mixin first() {
   @include properties.define();
