@@ -10,7 +10,7 @@ if (!isNaN(tabsGroup.tabsCount)) {
     for (let j = 0; j < (i + 1 + (tabsGroup.repeat || 0)); j++) content += '<p>' + lorem() + '</p>';
     data.tabs[i] = {
       label: `Label Tab ${i + 1}`,
-      content: include('../../../accordion/example/sample/accordion'),
+      content: include('../../../../accordion/_content/example/sample/accordion'),
       icon: tabsGroup.icon
     }
   }

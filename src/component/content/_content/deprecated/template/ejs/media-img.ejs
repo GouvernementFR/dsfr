@@ -17,7 +17,7 @@
 
 <div class="<%= prefix %>-content-media__img" >
     <% if (content.img != undefined) { %>
-        <%- include('../../../../../core/deprecated/template/ejs/media/responsive-img.ejs', {media: content.img}); %>
+        <%- include('../../../../../../core/media/_content/deprecated/template/ejs/responsive-img.ejs', {media: content.img}); %>
     <% } else if (content.svg != undefined) { %>
         <%- content.svg %>
     <% } %>

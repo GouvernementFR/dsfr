@@ -15,11 +15,11 @@ if (!menu.id || !menu.modalId) throw new Error('menu.navigation is not correctly
 %>
 <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="<%= menu.modalId %>" aria-labelledby="<%= menu.id %>">
   <div class="<%= prefix %>-container%>" >
-    <%- include('../../../button/template/ejs/button-close', {button: { closeId: menu.modalId }}); %>
+    <%- include('../../../../button/_content/template/ejs/button-close', {button: { closeId: menu.modalId }}); %>
     <% if (menu.tools) { %>
       <div class="<%= prefix %>-header__menu-links">
         <% if (menu.tools.duplicateLinks && menu.tools.links) { %>
-        <%- include('../../../button/template/ejs/buttons-group', {links: menu.tools.links}); %>
+        <%- include('../../../../button/_content/template/ejs/buttons-group', {links: menu.tools.links}); %>
         <% } %>
       </div>
     <% } %>

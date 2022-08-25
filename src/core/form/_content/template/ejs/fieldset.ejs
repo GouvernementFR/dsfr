@@ -69,7 +69,7 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
             let element = fieldset.elements[i];
             element.data.group = true;
       %>
-      <%- include('../../../' + element.path, element.data); %>
+      <%- include('../../../../../' + element.path, element.data); %>
 
       <% } %>
     </div>

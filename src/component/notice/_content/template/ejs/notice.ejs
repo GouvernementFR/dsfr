@@ -40,7 +40,7 @@ if (notice.notice) attributes.role = "notice";
         <p class="<%= prefix %>-notice__title"><%- title %></p>
       <% } %>
       <% if (notice.dismissable) { %>
-        <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
+        <%- include('../../../../button/_content/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...notice.button}}) %>
       <% } %>
     </div>
   </div>

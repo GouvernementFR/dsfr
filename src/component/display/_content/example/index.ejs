@@ -5,9 +5,9 @@ const attrModal = {};
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
-const links = { 
+const links = {
   buttons: [
-    { 
+    {
       icon: 'theme-fill',
       iconPlace: 'left',
       label: 'Paramètres d\'affichage',
@@ -58,7 +58,7 @@ let dataFooter = {
 }
 %>
 
-<%- include('../../header/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
+<%- include('../../../header/_content/example/sample/header.ejs', {header: { links: links, navigation: true, navigationId:'header-navigation' }}); %>
 
 <div class="<%= prefix%>-container <%= prefix %>-mt-8v">
   <h1>Scheme - gestion du dark mode</h1>
@@ -70,7 +70,7 @@ let dataFooter = {
 
 </div>
 
-<%- include('../../footer/template/ejs/footer.ejs', {footer: dataFooter }); %>
+<%- include('../../../footer/_content/template/ejs/footer.ejs', {footer: dataFooter }); %>
 
 <%- deprecation(); %>
 

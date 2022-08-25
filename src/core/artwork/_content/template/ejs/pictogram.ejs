@@ -6,9 +6,9 @@
 * pictogram.accent (string, optional): couleur d'accentuation (ex: green-emeraude)
 
 %>
-<% eval(include('../../../../../env.js')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <%
-  const pictograms = JSON.parse(include('../../../../../.config/pictogram.json'));
+  const pictograms = JSON.parse(include('../../../../../../.config/pictogram.json'));
 
   const pictogram = locals.pictogram || {} ;
   let classes = pictogram.classes || [];

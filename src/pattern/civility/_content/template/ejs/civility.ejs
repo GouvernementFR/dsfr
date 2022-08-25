@@ -31,7 +31,7 @@ const elements = [];
 if (civility.items && civility.items.length) {
   civility.items.forEach((item, index) => {
         elements.push({
-            path: 'form/template/ejs/fieldset',
+            path: 'core/form/_content/template/ejs/fieldset',
             data: {
                 fieldset: {
                     disabled: item.disabled || undefined,
@@ -39,7 +39,7 @@ if (civility.items && civility.items.length) {
                         'aria-label': item.label,
                     },
                     elements: [{
-                        path: `${item.type}/template/ejs/${item.template}`,
+                        path: `component/${item.type}/_content/template/ejs/${item.template}`,
                         data: {
                             [item.type]: {
                                 id: `${civility.id}-${index}`,
@@ -67,4 +67,4 @@ fieldset.id = civility.id;
 fieldset.attributes = { 'aria-label': civility.label,}
 %>
 
-<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+<%- include('../../../../../core/form/_content/template/ejs/fieldset', {fieldset: fieldset}) %>

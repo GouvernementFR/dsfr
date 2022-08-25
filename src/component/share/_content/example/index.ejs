@@ -6,13 +6,13 @@
 
 <%
 const accordion = {
-    label: 'src/component/share/style/_setting.scss',
+    label: 'src/component/share/_content/style/tmp/_setting.scss',
     id: uniqueId('snippet'),
-    content: '<pre class=" language-scss"><code>' + include('../style/_setting.scss') + '</code></pre>'
+    content: '<pre class=" language-scss"><code>' + include('../style/tmp/_setting.scss') + '</code></pre>'
 };
 %>
 <div class="<%= prefix %>-mb-4v" >
-    <%- include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion}); %>
+    <%- include(root + 'src/component/accordion/_content/template/ejs/accordion', {accordion: accordion}); %>
 </div>
 
 

@@ -1,12 +1,12 @@
 <%
 const inputs = locals.inputs || {};
 const input = locals.input || {};
-const jsonData = JSON.parse(include('../../../../form/example/sample/data', { form: inputs }));
+const jsonData = JSON.parse(include('../../../../../../core/form/_content/example/sample/data', { form: inputs }));
 
 const id = inputs.id;
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
-  path: 'input/input-base/example/sample/input-text',
+  path: 'component/input/input-base/example/sample/input-text',
   data: {
     input: {
       ...input,
@@ -23,4 +23,4 @@ const fields = {
 }
 %>
 
-<%- include('../../../../form/example/sample/fieldset', {fieldset: fields}) %>
+<%- include('../../../../../../core/form/_content/example/sample/fieldset', {fieldset: fields}) %>

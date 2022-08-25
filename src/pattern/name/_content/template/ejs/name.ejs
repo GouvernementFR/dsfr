@@ -46,7 +46,7 @@ if (name.items && name.items.length) {
         const type = item.type || 'input';
         const path = type === 'input' ? 'input/input-base' : type;
         elements.push({
-            path: 'form/template/ejs/fieldset',
+            path: 'core/form/_content/template/ejs/fieldset',
             data: {
                 fieldset: {
                     disabled: item.disabled || undefined,
@@ -54,7 +54,7 @@ if (name.items && name.items.length) {
                         'aria-label': item.label,
                     },
                     elements: [{
-                        path: `${path}/template/ejs/${item.template}`,
+                        path: `component/${path}/_content/template/ejs/${item.template}`,
                         data: {
                             [type]: {
                                 id: `${name.id}-${index}`,
@@ -81,4 +81,4 @@ fieldset.id = name.id;
 fieldset.attributes = { 'aria-label': name.label,}
 %>
 
-<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+<%- include('../../../../core/form/_content/template/ejs/fieldset', {fieldset: fieldset}) %>

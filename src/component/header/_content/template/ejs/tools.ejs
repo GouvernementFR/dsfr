@@ -19,14 +19,14 @@
         <% if (tools.links.buttons) { %>
           <% for (let i = 0; i < tools.links.buttons.length; i++) { %>
           <li>
-            <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[i]}); %>
+            <%- include('../../../../button/_content/template/ejs/button', {button:tools.links.buttons[i]}); %>
           </li>
           <% } %>
         <% } %>
       </ul>
 
       <% if (tools.translate !== undefined) { %>
-        <%- include ('../../../translate/template/ejs/translate.ejs', {translate: tools.translate}); %>
+        <%- include('../../../../translate/_content/template/ejs/translate.ejs', {translate: tools.translate}); %>
       <% } %>
     </div>
   <% } %>
@@ -36,8 +36,8 @@
   %>
     <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="<%= tools.search.modalId %>">
       <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid" >
-        <%- include('../../../button/template/ejs/button-close', {button: { closeId: tools.search.modalId }}); %>
-        <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../search/template/ejs/search', {search: tools.search}); %>
+        <%- include('../../../../button/_content/template/ejs/button-close', {button: { closeId: tools.search.modalId }}); %>
+        <%- include( tools.search.sample !== undefined ? tools.search.sample : '../../../../search/_content/template/ejs/search', {search: tools.search}); %>
       </div>
     </div>
 
