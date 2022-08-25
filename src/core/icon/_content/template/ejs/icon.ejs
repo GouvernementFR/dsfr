@@ -6,7 +6,7 @@
 * icon.size (string, required) [default: 'md']: taille de l'icone (sm|md|lg)
 
 %>
-<% eval(include('../../../index.ejs')); %>
+<% eval(include('../../../../../env.js')); %>
 <% let icon = locals.icon || {} %>
 
 <span class="<%= prefix %>-icon-<%= icon.name %> <% switch(icon.size) {
