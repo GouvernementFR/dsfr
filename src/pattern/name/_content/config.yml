@@ -1,0 +1,10 @@
+id: name
+style:
+  dependencies:
+    - core
+example:
+  wrapper: container
+  style:
+    - input
+    - checkbox
+    - select
