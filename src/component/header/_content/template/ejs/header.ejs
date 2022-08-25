@@ -49,7 +49,7 @@ header = {
   }
 }
 %>
-<% eval(include('../../../../_content/env.js')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <% let header = locals.header || {body:{}, menu: {}};
 if (header.menu.tools && header.menu.tools.duplicateLinks) {
   header.menu.tools.links = header.body.tools.links;

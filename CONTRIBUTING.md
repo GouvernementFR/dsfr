@@ -202,7 +202,7 @@ Le dossier `samples` contient les différents types d'examples (inclusion des te
 
 Dans le dossier `templates`, on insère ici les templates dans un sous-dossier nommé en fonction du système de templating utilisé (`ejs` pour l'instant). Ces templates sont paramétrables pour y injecter des données. Chaque fichier possède une documentation sommaire détaillant ces paramètres.
 
-Pour accéder aux variables d'environement et aux fonctions de base (comme `includeClasses()` et `includeAttr()`), chaque template inclut `env.js`, situé dans `src/_content/`, au début du fichier : ```<% eval(include('../../../../_content/env.js')); %>```
+Pour accéder aux variables d'environement et aux fonctions de base (comme `includeClasses()` et `includeAttr()`), chaque template inclut `env.js`, situé dans `src/_content/`, au début du fichier : ```<% eval(include('../../../../../_content/env.js')); %>```
 
 La commande `yarn release` permet de générer toutes les page d'exemple.
 Plus spécifiquement avec la commande `yarn build`, le paramètre `-h` permet de reconstruire uniquement l'html : `yarn build -h [-p idPackage]`, avec `-p` pour préciser le(s) package(s).
