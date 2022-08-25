@@ -8,7 +8,7 @@
 * radio.disabled (boolean, optional) : si true, désactive le radio
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../_content/env.js')); %>
 <%
 let radio = locals.radio || {};
 let groupClasses = [prefix + '-radio-group'];

@@ -31,7 +31,7 @@
 * radio.customIcon (string, optional) : style du label (ex: "background-image: url(...)")
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../_content/env.js')); %>
 <%
 let radio = locals.radio || {};
 let radioAttrs = radio.attributes || {};

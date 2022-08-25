@@ -8,7 +8,7 @@
   ** socials.networks[].url (string, required) : adresse url du réseau social
 
 %>
-<% eval(include('../../../../../core/index.ejs'));
+<% eval(include('../../../../../_content/env.js'));
 
 let socials = locals.socials || {networks: []};
 let socialsClasses = [prefix + '-follow__social'];

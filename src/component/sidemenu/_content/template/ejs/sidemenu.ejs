@@ -11,7 +11,7 @@
 
 %>
 <% let sidemenu = locals.sidemenu || {}; %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../_content/env.js')); %>
 
 <nav class="<%= prefix %>-sidemenu<% if(sidemenu.modifier){%> <%= prefix %>-sidemenu--<%- sidemenu.modifier %><%}%>" role="navigation" aria-label="Menu latéral">
 	<div class="<%= prefix %>-sidemenu__inner">

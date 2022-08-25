@@ -10,7 +10,7 @@
 * meta.name (string, optional) : meta name
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../_content/env.js')); %>
 <% let meta = locals.meta || {}; %>
 
 <% for (const item of locals.meta) { %>

@@ -6,7 +6,7 @@
   ** summary.title (String, required) : Titre du sommaire
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../_content/env.js')); %>
 <% let summary = locals.summary || {}; %>
 
 <nav class="<%= prefix %>-summary" role="navigation" aria-labelledby="<%= prefix %>-summary-title">

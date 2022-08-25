@@ -4,7 +4,7 @@
 * accordionGroup.accordions (array, required) : tableau d'accordion
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../_content/env.js')); %>
 
 <% let accordionsGroup = locals.accordionsGroup || {accordions: []} %>
 <div class="<%= prefix %>-accordions-group" >
