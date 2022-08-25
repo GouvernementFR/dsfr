@@ -5,8 +5,8 @@
   ** brand.service (object, optional) : Paramètres des services
     *** brand.service.title (String, required) : titre du service
     *** brand.service.tagline (String, optional) : description du service - précisions sur l‘organisation
-  ** brand.logo (string, optional) : chemin du template logo, ou paramètres du logo bloc marque - voir composant logo src/component/logo/template/ejs/logo.ejs
-  ** brand.operator (object, optional) : Paramètres logo opérateur - voir src/core/template/ejs/media/img.ejs
+  ** brand.logo (string, optional) : chemin du template logo, ou paramètres du logo bloc marque - voir composant logo src/component/logo/_content/template/ejs/logo.ejs
+  ** brand.operator (object, optional) : Paramètres logo opérateur - voir src/core/media/_content/template/ejs/img.ejs
   ** brand.navbar (object, optional) : Paramètres de la navbar - voir navbar
 
 %>
@@ -51,7 +51,7 @@ let brand = locals.brand || {};
               break;
 
             default :
-              path = '../../../../logo/template/ejs/logo';
+              path = '../../../../../logo/_content/template/ejs/logo';
               data = brand.logo;
               break;
           }
@@ -64,7 +64,7 @@ let brand = locals.brand || {};
     <% if (brand.operator !== undefined) { %>
       <div class="<%= prefix %>-header__operator">
         <% if (position === 'operator') { %><%- link %><% } %>
-        <%- include('../../../../../core/template/ejs/media/responsive-img.ejs', {media: brand.operator}); %>
+        <%- include('../../../../../../core/media/_content/template/ejs/responsive-img.ejs', {media: brand.operator}); %>
         <% if (position === 'operator') { %><%- '</a>' %><% } %>
       </div>
     <% } %>

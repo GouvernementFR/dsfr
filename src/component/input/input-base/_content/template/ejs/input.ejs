@@ -40,7 +40,7 @@
 * input.labelAttrs (Object, optional) :  attributs spécifiques à rajouter sur le label
 
 %>
-<% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../../../../../../_content/env.js')); %>
 
 <%
 const input = locals.input || {};
@@ -79,7 +79,7 @@ if (input.autocomplete) inputAttrs.autocomplete = input.autocomplete;
 inputAttrs.id = input.id;
 %>
 
-<%- include('../../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, classes: labelClasses, attributes: labelAttrs}}); %>
+<%- include('../../../../../../core/form/_content/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, classes: labelClasses, attributes: labelAttrs}}); %>
 
 <% if (input.icon != undefined) { %>
   <% let icon = prefix + '-icon-' + input.icon; %>
@@ -100,7 +100,7 @@ else {%>
 <% } %>
 
 <% if (input.addon && input.button != undefined) { %>
-  <%- include('../../../../button/template/ejs/button', {button:input.button}); %>
+  <%- include('../../../../../button/_content/template/ejs/button', {button:input.button}); %>
   </div>
 <% } %>
 
@@ -108,4 +108,4 @@ else {%>
 </div>
 <% } %>
 
-<%- include('../../../../form/template/ejs/message', {message:input}); %>
+<%- include('../../../../../../core/form/_content/template/ejs/message', {message:input}); %>

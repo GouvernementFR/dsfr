@@ -26,7 +26,7 @@
 %>
 
 %>
-<% eval(include('../../../../_content/env.js')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let alert = locals.alert || {};
@@ -54,6 +54,6 @@ if (size !== "md") classes.push(prefix + '-alert--' + size);
   <% } %>
 
   <% if(alert.dismissable) { %>
-    <%- include('../../../button/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
+    <%- include('../../../../button/_content/template/ejs/button', {button: {size: 'md', classes: [`${prefix}-btn--close`], ...alert.button}}) %>
   <% } %>
 </div>

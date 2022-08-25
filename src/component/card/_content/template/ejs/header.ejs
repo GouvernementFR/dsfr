@@ -10,15 +10,15 @@
 <div class="<%= prefix%>-card__header" >
     <% if (header.img) { %>
     <div class="<%= prefix %>-card__img">
-        <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: header.img}); %>
+        <%- include('../../../../../core/media/_content/template/ejs/responsive-img.ejs', {media: header.img}); %>
     </div>
     <% } else if (header.vid) { %>
     <div class="<%= prefix %>-card__vid">
-        <%- include('../../../../core/template/ejs/media/responsive-vid.ejs', {media: header.vid}); %>
+        <%- include('../../../../../core/media/_content/template/ejs/responsive-vid.ejs', {media: header.vid}); %>
     </div>
     <% } %>
 
     <% if (header.badgesGroup) { %>
-    <%- include('../../../badge/template/ejs/badges-group', {badgesGroup: header.badgesGroup }); %>
+    <%- include('../../../../badge/_content/template/ejs/badges-group', {badgesGroup: header.badgesGroup }); %>
     <% } %>
 </div>

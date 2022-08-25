@@ -27,7 +27,7 @@
 
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let select = locals.select || {};
@@ -53,7 +53,7 @@ if (select.required === true) selectAttrs['required'] = '';
 if (select.disabled === true) selectAttrs['disabled'] = '';
 %>
 
-<%- include('../../../form/template/ejs/label', {label:select}); %>
+<%- include('../../../../../core/form/_content/template/ejs/label', {label:select}); %>
 
 <select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.id %>">
   <% if (select.placeholder != undefined) { %>
@@ -68,4 +68,4 @@ if (select.disabled === true) selectAttrs['disabled'] = '';
   <% } %>
 </select>
 
-<%- include('../../../form/template/ejs/message', {message:select}); %>
+<%- include('../../../../../core/form/_content/template/ejs/message', {message:select}); %>

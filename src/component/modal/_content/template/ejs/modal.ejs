@@ -29,7 +29,7 @@
   // TODO: revoir le template pour remettre les éléments de sample dans sample (footer en array d'objet de config de button par exemple)
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let modal = locals.modal || {};
@@ -92,7 +92,7 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
       <div <%- includeClasses(gridClasses); %>>
         <div class="<%= prefix %>-modal__body">
           <div class="<%= prefix %>-modal__header">
-            <%- include('../../../button/template/ejs/button-close', {button: closeButton} )%>
+            <%- include('../../../../button/_content/template/ejs/button-close', {button: closeButton} )%>
           </div>
           <div class="<%= prefix %>-modal__content">
             <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">

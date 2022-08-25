@@ -14,7 +14,7 @@
 * footer.bottom (object, optional) : Paramètres du bloc bottom (liens et copyright)
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <% let footer = locals.footer || {brand: {}} %>
 
 <footer class="<%= prefix %>-footer" role="contentinfo" <% if (footer.id !== undefined) { %>id="<%- footer.id %>"<% } %>>

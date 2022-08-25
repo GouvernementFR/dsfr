@@ -7,9 +7,9 @@
 
 <div class="<%= prefix %>-card__footer" >
     <% if (footer.buttonsGroup) { %>
-    <%- include('../../../button/template/ejs/buttons-group', { buttonsGroup: footer.buttonsGroup }); %>
+    <%- include('../../../../button/_content/template/ejs/buttons-group', { buttonsGroup: footer.buttonsGroup }); %>
     <% } %>
     <% if (footer.linksGroup) { %>
-    <%- include('../../../link/template/ejs/links-group', { linksGroup: footer.linksGroup }); %>
+    <%- include('../../../../link/_content/template/ejs/links-group', { linksGroup: footer.linksGroup }); %>
     <% } %>
 </div>

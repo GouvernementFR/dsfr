@@ -13,12 +13,12 @@
 
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <% let content = locals.content || {} %>
 
 <div class="<%= prefix %>-content-media__img" >
     <% if (content.img != undefined) { %>
-        <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: content.img}); %>
+        <%- include('../../../../../core/media/_content/template/ejs/responsive-img.ejs', {media: content.img}); %>
     <% } else if (content.svg != undefined) { %>
         <%- content.svg %>
     <% } %>

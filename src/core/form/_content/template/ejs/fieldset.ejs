@@ -24,7 +24,7 @@
 * fieldset.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let fieldset = locals.fieldset || {};
@@ -69,7 +69,7 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
             let element = fieldset.elements[i];
             element.data.group = true;
       %>
-      <%- include('../../../' + element.path, element.data); %>
+      <%- include('../../../../../' + element.path, element.data); %>
 
       <% } %>
     </div>

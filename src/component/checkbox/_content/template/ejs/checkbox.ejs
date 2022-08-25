@@ -16,7 +16,7 @@
 * checkbox.checked (boolean, optional) : si true, la checkbox est cochée
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <%
 let checkbox = locals.checkbox || {};
 let checkboxAttrs = checkbox.attributes || {};
@@ -27,5 +27,5 @@ checkboxAttrs.id = checkbox.id;
 checkboxAttrs.type = "checkbox";
 %>
 <input <%- includeAttrs(checkboxAttrs); %>>
-<%- include('../../../form/template/ejs/label', {label: {label:checkbox.label, hint: checkbox.hint, id: checkbox.id}} ); %>
-<%- include('../../../form/template/ejs/message', {message: checkbox}); %>
+<%- include('../../../../../core/form/_content/template/ejs/label', {label: {label:checkbox.label, hint: checkbox.hint, id: checkbox.id}} ); %>
+<%- include('../../../../../core/form/_content/template/ejs/message', {message: checkbox}); %>

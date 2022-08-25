@@ -23,7 +23,7 @@ let label;
   if (navbar.search) {
       label = navbar.search.label || 'Rechercher';
   %>
-    <%- include('../../../../button/template/ejs/button', {button: {
+    <%- include('../../../../../button/_content/template/ejs/button', {button: {
         classes: [prefix + '-btn--search'],
         title: label,
         attributes: {
@@ -40,7 +40,7 @@ let label;
       label = navbar.menu.label || 'Menu';
 
   %>
-  <%- include('../../../../button/template/ejs/button', {button: {
+  <%- include('../../../../../button/_content/template/ejs/button', {button: {
       classes: [prefix + '-btn--menu'],
       title: label,
       attributes: {

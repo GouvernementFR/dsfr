@@ -12,7 +12,7 @@
 * consent.attributes (object, optional) : Attributs supplémentaires sur l'element
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let consent = locals.consent || {};
@@ -31,5 +31,5 @@ let buttons = consent.buttons || [
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
   <% if (consent.title) { %><h2 class="<%= prefix %>-h6"><%= consent.title %></h2><% } %>
   <% if (consent.body) { %><div class="<%= prefix %>-consent-banner__content"><%- consent.body %></div><% } %>
-  <%- include('../../../button/template/ejs/buttons-group.ejs', {buttonsGroup: {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}}); %>
+  <%- include('../../../../button/_content/template/ejs/buttons-group.ejs', {buttonsGroup: {classes: [prefix + '-consent-banner__buttons'], inline: 'sm', align:'right', reverse: true, buttons: buttons}}); %>
 </div>

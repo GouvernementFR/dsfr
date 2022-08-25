@@ -1,0 +1,15 @@
+id: not-found
+no-heading: true
+style:
+  dependencies:
+    - core
+    - button
+script:
+  dependencies:
+    - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

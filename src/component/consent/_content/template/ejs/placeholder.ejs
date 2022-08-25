@@ -12,7 +12,7 @@
 * consent.attributes (object, optional) : Attributs supplémentaires sur l'element
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let consent = locals.consent || {};
@@ -26,5 +26,5 @@ button.markup = 'button';
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
   <% if (consent.title) { %><p class="<%= prefix %>-h6"><%= consent.title %></p> <% } %>
   <% if (consent.body) { %><p><%- consent.body %></p><% } %>
-  <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
+  <%- include('../../../../button/_content/template/ejs/button.ejs', {button: button}); %>
 </div>

@@ -8,7 +8,7 @@
   ** socials.networks[].url (string, required) : adresse url du réseau social
 
 %>
-<% eval(include('../../../../core/index.ejs'));
+<% eval(include('../../../../../_content/env.js'));
 
 let socials = locals.socials || {buttons: []};
 let socialsClasses = [prefix + '-follow__social'];
@@ -33,5 +33,5 @@ const buttonsGroup = {
 
 <div <%- includeClasses(socialsClasses); %> >
   <p class="<%= prefix %>-h5"><%- socials.title %></p>
-  <%- include('../../../button/template/ejs/buttons-group', {buttonsGroup : buttonsGroup}); %>
+  <%- include('../../../../button/_content/template/ejs/buttons-group', {buttonsGroup : buttonsGroup}); %>
 </div>

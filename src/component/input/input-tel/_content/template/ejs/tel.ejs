@@ -14,7 +14,7 @@ tel (object, required) : objet contenant les paramètres du champ tel (voir comp
 * tel.autocomplete (string, optional) : attribut autocomplete du champ
 
 %>
-<% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../../../../../../_content/env.js')); %>
 
 <%
 const tel = locals.tel || {};
@@ -29,4 +29,4 @@ const data = {
 if (tel.autocomplete) data.attributes.autocomplete = 'tel';
 %>
 
-<%- include('../../../input-base/template/ejs/input-group', {input:data}); %>
+<%- include('../../../../input-base/_content/template/ejs/input-group', {input:data}); %>

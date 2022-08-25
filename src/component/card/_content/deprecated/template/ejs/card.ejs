@@ -20,7 +20,7 @@
 * card.classes (array, optional): Classes suplémentaires sur le composant
 
 %>
-<% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../../../../../../_content/env.js')); %>
 
 <%
 let card = locals.card || {};
@@ -40,7 +40,7 @@ if (card.accent !== undefined) classes.push(`${prefix}-card--${card.accent}`);
     </div>
     <% if (card.img !== undefined) { %>
     <div class="<%= prefix %>-card__img">
-        <%- include('../../../../../core/template/ejs/media/responsive-img.ejs', {media: card.img}); %>
+        <%- include('../../../../../../core/media/_content/template/ejs/responsive-img.ejs', {media: card.img}); %>
     </div>
     <% } %>
 </div>

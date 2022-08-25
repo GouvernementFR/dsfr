@@ -18,7 +18,7 @@
 * callout.icon (string, optional): nom de l'icône du composant
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
  let callout = locals.callout || {};
@@ -38,12 +38,12 @@
     <h4 class="<%= prefix%>-callout__title"><%= callout.title %></h4>
   <% } %>
 
-  <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: callout.text, classes: [`${prefix}-callout__text`]}}) %>
+  <%- include('../../../../../core/typography/_content/template/ejs/paragraph', {paragraph: {content: callout.text, classes: [`${prefix}-callout__text`]}}) %>
 
   <% if(callout.button !== undefined) {
         if (callout.icon === undefined) callout.button.icon = undefined;
   %>
-    <%- include('../../../button/template/ejs/button.ejs', {button: callout.button}); %>
+    <%- include('../../../../button/_content/template/ejs/button.ejs', {button: callout.button}); %>
   <% } else if (callout.buttonTpl !== undefined) { %>
     <%- include(callout.buttonTpl, {button: {icon:undefined}}); %>
   <% } %>

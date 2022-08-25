@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 (function (locals) {
   locals.includeAttrs = function (attrs) {
     let html = '';
@@ -24,11 +25,8 @@
   };
 }(locals));
 
-const pck = `<%- include('../../package.json') %>`;
+const pck = '<%- include(\'../../package.json\') %>';
 const json = JSON.parse(pck);
 locals.prefix = json.config.prefix;
 locals.namespace = json.config.namespace;
 locals.organisation = json.config.organisation;
-
-
-

@@ -16,7 +16,7 @@ email (object, required) : objet contenant les paramètres du champ email (voir 
 * email.autocomplete (string, optional) : attribut autocomplete du champ
 
 %>
-<% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../../../../../../_content/env.js')); %>
 
 <%
 const email = locals.email || {};
@@ -31,4 +31,4 @@ const data = {
 if (email.autocomplete) data.attributes.autocomplete = 'email';
 %>
 
-<%- include('../../../input-base/template/ejs/input-group', {input:data}); %>
+<%- include('../../../../input-base/_content/template/ejs/input-group', {input:data}); %>

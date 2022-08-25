@@ -13,15 +13,15 @@
 * content.caption (string, optional): paramètres de l'image
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <% let content = locals.content || {} %>
 
 <% if (content.consent !== undefined) { %>
     <div class="<%= prefix %>-responsive-vid">
-    <%- include('../../../consent/template/ejs/placeholder', {consent: content.consent}) %>
+    <%- include('../../../../consent/_content/template/ejs/placeholder', {consent: content.consent}) %>
     </div>
 <% } else { %>
-    <%- include('../../../../core/template/ejs/media/responsive-vid', {media: content.vid}) %>
+    <%- include('../../../../../core/media/_content/template/ejs/responsive-vid', {media: content.vid}) %>
 <% } %>
 <% if (content.caption != undefined) { %>
     <div class="<%= prefix %>-content-media__caption" ><%= content.caption %></div>
@@ -34,6 +34,6 @@ if (content.transcription != undefined) {
     }
 %>
     <div class="<%= prefix %>-content-media__transcription" >
-        <%- include('../../../button/template/ejs/button', {button: data}); %>
+        <%- include('../../../../button/_content/template/ejs/button', {button: data}); %>
     </div>
 <% } %>

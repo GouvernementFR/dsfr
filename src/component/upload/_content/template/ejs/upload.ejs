@@ -26,7 +26,7 @@
 * upload.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 <%
 let upload = locals.upload || {};
 let uploadClasses = [prefix + '-upload'];
@@ -47,7 +47,7 @@ if (upload.multiple) uploadAttrs['multiple'] = '';
 %>
 
 <div <%- includeClasses(groupClasses); %>>
-  <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
+  <%- include('../../../../../core/form/_content/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
   <input <%- includeClasses(uploadClasses); %> <%- includeAttrs(uploadAttrs); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
-  <%- include('../../../form/template/ejs/message', {message: upload}); %>
+  <%- include('../../../../../core/form/_content/template/ejs/message', {message: upload}); %>
 </div>

@@ -1,6 +1,6 @@
 <%
 let input = locals.input || {}
-let jsonData = JSON.parse(include('../../../../form/example/sample/data'));
+let jsonData = JSON.parse(include('../../../../../../core/form/_content/example/sample/data'));
 let data = {...input, ...jsonData};
 data.type = input.type || 'text';
 data.label = input.label || 'Label champs de saisie';

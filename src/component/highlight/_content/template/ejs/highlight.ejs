@@ -10,7 +10,7 @@
 * highlight.accent (string, optional): Couleur d'accenturation du composant
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let highlight = locals.highlight || {};
@@ -22,5 +22,5 @@ classes.push(prefix + '-highlight');
 %>
 
 <div <%- includeClasses(classes)%>>
-  <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: highlight.text, size: highlight.size}}) %>
+  <%- include('../../../../../core/typography/_content/template/ejs/paragraph', {paragraph: {content: highlight.text, size: highlight.size}}) %>
 </div>

@@ -18,7 +18,7 @@
 * search.classes (array, optional) : classes spécifiques à rajouter sur le search
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let search = locals.search || {button:{}, input:{}}
@@ -38,6 +38,6 @@ case 'lg':
 %>
 
 <div <%- includeClasses(searchClasses); %> <%- includeAttrs(attributes) %>>
-  <%- include('../../../input/input-base/template/ejs/input.ejs', {input:{...search.input, type: 'search', id: search.id + '-input' }}); %>
-  <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
+  <%- include('../../../../input/input-base/_content/template/ejs/input.ejs', {input:{...search.input, type: 'search', id: search.id + '-input' }}); %>
+  <%- include('../../../../button/_content/template/ejs/button.ejs', {button: button}); %>
 </div>

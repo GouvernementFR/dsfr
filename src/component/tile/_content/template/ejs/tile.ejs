@@ -22,7 +22,7 @@
 * tile.classes (array, optional) : Classes suplémentaires sur la tuile
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../../../_content/env.js')); %>
 
 <%
 let tile = locals.tile || {};
@@ -52,7 +52,7 @@ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
   </div>
   <% if (tile.img !== undefined) { %>
   <div class="<%= prefix %>-tile__img">
-    <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media:tile.img}); %>
+    <%- include('../../../../../core/media/_content/template/ejs/responsive-img.ejs', {media:tile.img}); %>
   </div>
   <% } %>
 </div>

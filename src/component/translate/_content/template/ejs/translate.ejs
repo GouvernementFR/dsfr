@@ -30,7 +30,7 @@ const collapseId = translate.collapseId || uniqueId('translate');
     translateBtn.attributes = translateBtn.attributes !== undefined ? {...minBtnAttrs, ...translateBtn.attributes} : minBtnAttrs;
     %>
 
-    <%- include('../../../button/template/ejs/button', {button:translateBtn}); %>
+    <%- include('../../../../button/_content/template/ejs/button', {button:translateBtn}); %>
 
     <div class="<%= prefix %>-collapse <%= prefix %>-translate__menu <%= prefix %>-menu" id="<%= translate.collapseId %>">
 
