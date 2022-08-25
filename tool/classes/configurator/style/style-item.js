@@ -56,7 +56,7 @@ class StyleItem {
   }
 
   remove () {
-    deleteFile(this.src);
+    if (fs.existsSync(this.src)) deleteFile(this.src);
     this._filled = false;
   }
 }
