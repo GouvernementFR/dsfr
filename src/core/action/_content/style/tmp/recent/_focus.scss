@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../../sass/color/index';
 
 @include focusable-selector {
   outline-offset: 2px;

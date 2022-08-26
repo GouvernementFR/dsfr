@@ -10,9 +10,7 @@
 @use '../../../../../../sass/color/property/decisions';
 @use '../../../../../../sass/selector';
 
-$decisions: () !default;
-
-@mixin scheme($legacy: false) {
+@mixin scheme($decisions, $legacy: false) {
   @each $context, $list in $decisions {
 
     $uses: map.get(decisions.$values, $context);

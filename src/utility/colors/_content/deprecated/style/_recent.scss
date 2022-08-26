@@ -1,5 +1,7 @@
 @use 'sass:map';
 
+$options: () !default;
+
 @mixin first() {
   /**
   go first

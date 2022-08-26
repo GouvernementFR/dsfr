@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../../sass/reset';
+@use '../../../../../../../sass/reset/index';
 
 a {
   @include reset.a;

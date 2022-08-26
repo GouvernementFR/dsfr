@@ -6,7 +6,7 @@
 ///     }
 ///   }
 @mixin is($target) {
-  @if $target == ie10 or $target == ie11 {
+  @if false and ($target == ie10 or $target == ie11) {
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       @content;
     }

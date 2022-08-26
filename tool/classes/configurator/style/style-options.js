@@ -20,8 +20,6 @@ class StyleOptions {
     const contents = [];
     if (this._has) contents.push(this._content);
 
-    console.log('content', this.part.id);
-
     for (const part of this.part.children) {
       if (!part.detached && part.style && part.style.has) contents.push(...part.style._options.getContent());
     }

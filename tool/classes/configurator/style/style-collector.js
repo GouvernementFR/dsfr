@@ -55,18 +55,6 @@ class StyleCollector {
         this._bits |= this.contains(SUPPORTS[i].id, SITUATIONS[j].id) ? 1 << (i * SITUATIONS.length + j) : 0;
       }
     }
-/*
-    1: recent reco
-    2: recent deprecated
-    4: outdatd reco
-    8: outdate deprecated
-    16: legacy reco
-    32: legacy deprecated
-
-    51 32 16
-*/
-
-    console.log(this.part.id, this._bits);
 
     this._has = this._supports.length > 0;
   }
