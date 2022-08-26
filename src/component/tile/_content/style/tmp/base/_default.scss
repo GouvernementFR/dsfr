@@ -30,7 +30,7 @@
       @include spacing.size(100%);
     }
 
-    @include action.hover-brighten(#{&}#{selector.ns(enlarge-link)}, #{&}__img);
+  @include hover-brighten(#{&}#{selector.ns(enlarge-link)}, #{&}__img);
 
     /**
    * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image

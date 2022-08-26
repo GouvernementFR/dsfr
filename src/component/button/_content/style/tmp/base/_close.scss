@@ -3,6 +3,12 @@
 /// @group button
 ////
 
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
+@import '../setting';
+@import '../tool';
+
 #{selector.ns(btn--close)} {
   @include nest-btn(sm, right, close-line, null, false);
   display: flex;

@@ -1,8 +1,9 @@
-@mixin first () {
-  @import '../../../badge/_content/style/tmp/tool';
-  @import '../../../tag/_content/style/tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+@use 'tmp/base';
+@use 'tmp/scheme';
 
-  @include _card-scheme;
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
+  @include scheme.scheme();
 }

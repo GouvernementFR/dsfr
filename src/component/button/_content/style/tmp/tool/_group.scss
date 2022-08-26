@@ -3,6 +3,9 @@
 /// @group button
 ////
 
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
 @mixin horizontal-btns-group() {
   #{selector.ns(btn)} {
     width: auto;

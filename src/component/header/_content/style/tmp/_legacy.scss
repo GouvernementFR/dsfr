@@ -12,15 +12,15 @@
 
     #{ns-group(btns)} {
       &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
-        @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
           #{selector.ns(btn)} {
-            @include has-not-icon {
+            @include icon.not-selector {
               &:not(#{selector.ns(btn--display)}) {
                 @include icon.icon-legacy(null, sm, before, false);
               }
             }
 
-            @include has-icon {
+            @include icon.selector {
               @include icon.icon-legacy(null, sm, before, false);
             }
 

@@ -3,7 +3,16 @@
 /// @group button
 ////
 
-@import 'base/default';
-@import 'base/group';
-@import 'base/close';
-@import 'base/display';
+@use 'tmp/default';
+@use 'tmp/group';
+@use 'tmp/close';
+@use 'tmp/display';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include group.first();
+  @include close.first();
+  @include display.first();
+}

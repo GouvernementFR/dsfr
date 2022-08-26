@@ -3,59 +3,68 @@
 /// @group card
 ////
 
-#{selector.ns(card)} {
-  &--sm {
-    @include selector.before {
-      @include icon.size(sm);
-      @include right(6v);
-      @include bottom(6v);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/icon';
+
+@import '../../../../../badge/_content/style/tmp/tool';
+
+@mixin first() {
+  #{selector.ns(card)} {
+    &--sm {
+      @include selector.before {
+        @include icon.size(sm);
+        @include spacing.right(6v);
+        @include spacing.bottom(6v);
+      }
     }
-  }
 
-  &--sm &__header {
-    @include nest-badge(sm);
-  }
-
-  &--sm &__content {
-    @include nest-badge(sm);
-    @include spacing.padding(6v);
-  }
-
-  &--sm &__title {
-    @include typography.title-style(h6);
-  }
-
-  &--sm &__desc {
-    @include spacing.margin-top(2v);
-  }
-
-  &--sm &__start {
-    #{selector.ns(badges-group)},
-    #{selector.ns(tags-group)} {
-      @include spacing.margin-bottom(0);
+    &--sm &__header {
+      @include nest-badge(sm);
     }
-  }
 
-  &--sm &__start &__detail {
-    @include spacing.margin-bottom(2v);
-  }
+    &--sm &__content {
+      @include nest-badge(sm);
+      @include spacing.padding(6v);
+    }
 
-  &--sm &__end {
-    @include spacing.margin-top(3v);
-    @include spacing.padding-top(1v);
-  }
+    &--sm &__title {
+      @include typography.title-style(h6);
+    }
 
-  &--sm#{selector.ns(enlarge-link)}:not(&--no-icon) &__end {
-    @include spacing.margin-bottom(-8v); // 4v (icon) + 1v (padding end) + 3v (marge texte icon)
-    @include spacing.min-height(5v); // 4v (icon) + 1v (padding end)
-    @include spacing.padding-right(6v); // 4v (icon) + 2v (padding)
-  }
+    &--sm &__desc {
+      @include spacing.margin-top(2v);
+    }
 
-  &--sm#{selector.ns(enlarge-link)}:not(&--no-icon) &__content {
-    @include spacing.padding-bottom(14v); // 6v (padding card) + 4v (icon) + 1v (padding end) + 3v (marge texte icon)
-  }
+    &--sm &__start {
+      #{selector.ns(badges-group)},
+      #{selector.ns(tags-group)} {
+        @include spacing.margin-bottom(0);
+      }
+    }
 
-  &--sm &__footer {
-    @include spacing.padding(2v 6v 6v);
+    &--sm &__start &__detail {
+      @include spacing.margin-bottom(2v);
+    }
+
+    &--sm &__end {
+      @include spacing.margin-top(3v);
+      @include spacing.padding-top(1v);
+    }
+
+    &--sm#{selector.ns(enlarge-link)}:not(&--no-icon) &__end {
+      @include spacing.margin-bottom(-8v); // 4v (icon) + 1v (padding end) + 3v (marge texte icon)
+      @include spacing.min-height(5v); // 4v (icon) + 1v (padding end)
+      @include spacing.padding-right(6v); // 4v (icon) + 2v (padding)
+    }
+
+    &--sm#{selector.ns(enlarge-link)}:not(&--no-icon) &__content {
+      @include spacing.padding-bottom(14v); // 6v (padding card) + 4v (icon) + 1v (padding end) + 3v (marge texte icon)
+    }
+
+    &--sm &__footer {
+      @include spacing.padding(2v 6v 6v);
+    }
   }
 }

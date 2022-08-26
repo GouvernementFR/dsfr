@@ -11,7 +11,7 @@
   #{ns(responsive-vid)} {
     @include relative;
     @include size(100%);
-    @include aspect-ratio();
+    @include media.aspect-ratio();
     display: block;
 
     &__player, & > #{ns(consent-placeholder)} {

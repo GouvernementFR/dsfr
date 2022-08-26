@@ -16,7 +16,7 @@
 
   #{class-start-with(ns('responsive-img', ''))},
   #{class-start-with(ns('responsive-vid', ''))} {
-    @include aspect-ratio();
+    @include media.aspect-ratio();
   }
 
   &__caption,

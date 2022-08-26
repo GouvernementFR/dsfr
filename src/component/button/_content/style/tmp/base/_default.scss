@@ -3,6 +3,12 @@
 /// @group button
 ////
 
-@include build-btn() {
-  @include typography.font-weight(medium);
+@use '../../../../../../../sass/typography';
+@import '../setting';
+@import '../tool';
+
+@mixin first() {
+  @include build-btn() {
+    @include typography.font-weight(medium);
+  }
 }

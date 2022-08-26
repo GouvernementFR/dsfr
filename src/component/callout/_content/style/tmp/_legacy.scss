@@ -4,18 +4,19 @@
 ////
 
 @use '../../../../../../sass/legacy';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/selector';
 
-@include legacy.is(ie11) {
-  /**
-  * Marge des titres et textes
-  */
-  #{selector.ns(callout)} {
-    &__title {
-      @include spacing.margin(0 0 2v);
-    }
+@mixin first() {
+  @include legacy.is(ie11) {
+    #{selector.ns(callout)} {
+      &__title {
+        @include spacing.margin(0 0 2v);
+      }
 
-    &__text {
-      @include spacing.margin(0);
+      &__text {
+        @include spacing.margin(0);
+      }
     }
   }
 }

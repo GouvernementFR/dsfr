@@ -126,7 +126,7 @@
     @include typography.title-style('h4');
     @include typography.font-weight('bold');
 
-    @include has-icon {
+    @include icon.selector {
       @include spacing.margin-right(2v);
     }
   }

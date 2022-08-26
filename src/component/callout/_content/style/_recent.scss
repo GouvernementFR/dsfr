@@ -1,6 +1,9 @@
-@mixin first () {
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+@use 'tmp/base';
+@use 'tmp/scheme';
 
-  @include _callout-scheme;
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
+  @include scheme.scheme();
 }
