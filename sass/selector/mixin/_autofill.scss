@@ -1,0 +1,11 @@
+
+@mixin autofill () {
+  &:autofill,
+  &:autofill:hover,
+  &:autofill:focus,
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    @content;
+  }
+}

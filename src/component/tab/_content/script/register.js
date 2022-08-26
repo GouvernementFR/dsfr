@@ -1,7 +1,7 @@
-import api from './define';
+import ref from './define';
 
-api.internals.register(api.tab.TabSelector.PANEL, api.tab.TabPanel);
-api.internals.register(api.tab.TabSelector.GROUP, api.tab.TabsGroup);
-api.internals.register(api.tab.TabSelector.LIST, api.tab.TabsList);
+ref.internals.register(ref.tab.TabSelector.PANEL, ref.tab.TabPanel);
+ref.internals.register(ref.tab.TabSelector.GROUP, ref.tab.TabsGroup);
+ref.internals.register(ref.tab.TabSelector.LIST, ref.tab.TabsList);
 
-export default api;
+export default ref;

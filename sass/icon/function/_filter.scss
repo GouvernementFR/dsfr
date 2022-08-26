@@ -1,0 +1,11 @@
+@use '../property/icons';
+
+@function filter($category) {
+  $filtered: ();
+  @each $icon, $properties in icons.$icons {
+    @if map-get($properties, category) == $category {
+      $filtered: map-merge($filtered, (#{$icon}: $properties));
+    }
+  }
+  @return $filtered;
+}

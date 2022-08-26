@@ -1,0 +1,16 @@
+
+@function start-with($start) {
+  @return ('[class^="#{$start}"]', '[class*=" #{$start}"]');
+}
+
+@function not-start-with($start) {
+  @return ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
+}
+
+@function end-with($end) {
+  @return ('[class$="#{$end}"]', '[class*="#{$end} "]');
+}
+
+@function not-end-with($end) {
+  @return ':not([class$="#{$end}"]):not([class*="#{$end} "])';
+}

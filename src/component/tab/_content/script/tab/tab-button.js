@@ -1,13 +1,13 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 /**
   * TabButton correspond au bouton cliquable qui change le panel
   * TabButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-selected,
   * Et change l'attributte tabindex a 0 si le boutton est actif (value=true), -1 s'il n'est pas actif (value=false)
  */
-class TabButton extends api.core.DisclosureButton {
+class TabButton extends ref.core.DisclosureButton {
   constructor () {
-    super(api.core.DisclosureType.SELECT);
+    super(ref.core.DisclosureType.SELECT);
   }
 
   static get instanceClassName () {

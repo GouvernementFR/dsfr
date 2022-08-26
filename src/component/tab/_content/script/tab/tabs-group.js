@@ -1,11 +1,11 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { TabPanelDirection } from './tab-panel-direction.js';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
-class TabsGroup extends api.core.DisclosuresGroup {
+class TabsGroup extends ref.core.DisclosuresGroup {
   constructor () {
     super('TabPanel');
   }
@@ -17,10 +17,10 @@ class TabsGroup extends api.core.DisclosuresGroup {
   init () {
     super.init();
     this.listen('transitionend', this.transitionend.bind(this));
-    this.listenKey(api.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
-    this.listenKey(api.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
-    this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
-    this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
+    this.listenKey(ref.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
+    this.listenKey(ref.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
+    this.listenKey(ref.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
+    this.listenKey(ref.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
     this.isRendering = true;
 
     if (this.list) this.list.apply();
@@ -31,7 +31,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
   }
 
   transitionend (e) {
-    this.isPreventingTransition = true;
+    this.isTransitioning = true;
   }
 
   get buttonHasFocus () {
@@ -100,18 +100,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
     for (let i = 0; i < this._index; i++) this.members[i].translate(TabPanelDirection.START);
     this.current.translate(TabPanelDirection.NONE);
     for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(TabPanelDirection.END);
-    this.isPreventingTransition = false;
-  }
-
-  get isPreventingTransition () {
-    return this._isPreventingTransition;
-  }
-
-  set isPreventingTransition (value) {
-    if (this._isPreventingTransition === value) return;
-    if (value) this.addClass(api.internals.motion.TransitionSelector.NONE);
-    else this.removeClass(api.internals.motion.TransitionSelector.NONE);
-    this._isPreventingTransition = value === true;
+    this.isTransitioning = false;
   }
 
   render () {

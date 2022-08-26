@@ -1,0 +1,14 @@
+@use '../property/icons';
+@use '../property/prefixes';
+@use '../../selector';
+@use 'image';
+
+@mixin generate($icons: icons.$icons, $situations: recommended deprecated) {
+  @each $icon, $properties in $icons {
+    @each $situation, $prefix in prefixes.$prefixes {
+      #{selector.ns(#{$prefix}-#{$icon})} {
+        @include image.image($icon);
+      }
+    }
+  }
+}

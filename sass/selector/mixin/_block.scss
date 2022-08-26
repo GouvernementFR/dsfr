@@ -1,0 +1,24 @@
+
+@mixin title() {
+  &__title {
+    @content;
+  }
+}
+
+@mixin body() {
+  &__body {
+    @content;
+  }
+}
+
+@mixin list() {
+  &__list {
+    @content;
+  }
+}
+
+@mixin list-item() {
+  &__item {
+    @content;
+  }
+}

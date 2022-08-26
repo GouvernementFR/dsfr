@@ -3,6 +3,8 @@ const { I18nPart } = require('./i18n/i18n-part');
 const { createFile } = require('../../utilities/file');
 const global = require('../../../package.json');
 
+const SASS_PATH = 'sass/';
+
 class Configurator {
   build () {
     this.root = new Part('');
@@ -50,10 +52,10 @@ class Configurator {
 
   _generateIcons () {
     const items = this.flat.map(part => part.asset.icons).flat();
-    const sass = '$icons-config: (\n' +
-      items.map(item => `  ${item.name}: '${item.dist}',\n`).join('') +
+    const sass = '$icons: (\n' +
+      items.map(item => `  ${item.name}: ( category: ${item.category}, path: '${item.dist}'),\n`).join('') +
       ');\n';
-    createFile('.config/icons.scss', sass);
+    createFile(`${SASS_PATH}icon/property/_icons.scss`, sass);
   }
 
   _generateI18n () {

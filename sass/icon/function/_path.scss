@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../../path';
+@use '../../specificity';
+@use '../property/icons';
+
+@function path($icon, $important: false) {
+  $url: url('#{path.dist()}#{map.get(icons.$icons, $icon)}');
+  @return specificity.important($url, $important);
+}

@@ -1,4 +1,11 @@
 @forward 'sass:selector';
 @forward 'function/associate';
+@forward 'function/extremities';
+@forward 'mixin/autofill';
+@forward 'mixin/block';
+@forward 'mixin/group';
+@forward 'mixin/link';
 @forward 'mixin/namespace';
+@forward 'mixin/pattern';
+@forward 'mixin/pseudo';
 @forward 'mixin/theme';

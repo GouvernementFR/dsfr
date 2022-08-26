@@ -1,4 +1,4 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { TabButton } from './tab-button.js';
 import { TabSelector } from './tab-selector.js';
 import { TabPanelDirection } from './tab-panel-direction.js';
@@ -8,11 +8,10 @@ import { TabPanelDirection } from './tab-panel-direction.js';
   * Tab étend disclosure qui ajoute/enleve le modifier --selected,
   * et ajoute/eleve l'attribut hidden, sur le panel
   */
-class TabPanel extends api.core.Disclosure {
+class TabPanel extends ref.core.Disclosure {
   constructor () {
-    super(api.core.DisclosureType.SELECT, TabSelector.PANEL, TabButton, 'TabsGroup');
+    super(ref.core.DisclosureType.SELECT, TabSelector.PANEL, TabButton, 'TabsGroup');
     this._direction = TabPanelDirection.NONE;
-    this._isPreventingTransition = false;
   }
 
   static get instanceClassName () {
@@ -54,19 +53,8 @@ class TabPanel extends api.core.Disclosure {
     }
   }
 
-  get isPreventingTransition () {
-    return this._isPreventingTransition;
-  }
-
-  set isPreventingTransition (value) {
-    if (this._isPreventingTransition === value) return;
-    if (value) this.addClass(api.internals.motion.TransitionSelector.NONE);
-    else this.removeClass(api.internals.motion.TransitionSelector.NONE);
-    this._isPreventingTransition = value === true;
-  }
-
   translate (direction, initial) {
-    this.isPreventingTransition = initial;
+    this.isTransitioning = initial;
     this.direction = direction;
   }
 

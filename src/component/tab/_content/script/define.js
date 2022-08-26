@@ -1,11 +1,11 @@
-import api from '../ref.js';
-import { TabPanel } from './script/tab/tab-panel.js';
-import { TabButton } from './script/tab/tab-button.js';
-import { TabsGroup } from './script/tab/tabs-group.js';
-import { TabsList } from './script/tab/tabs-list.js';
-import { TabSelector } from './script/tab/tab-selector.js';
+import ref from '../../ref.js';
+import { TabPanel } from './tab/tab-panel.js';
+import { TabButton } from './tab/tab-button.js';
+import { TabsGroup } from './tab/tabs-group.js';
+import { TabsList } from './tab/tabs-list.js';
+import { TabSelector } from './tab/tab-selector.js';
 
-api.tab = {
+ref.tab = {
   TabPanel: TabPanel,
   TabButton: TabButton,
   TabsGroup: TabsGroup,
@@ -13,4 +13,4 @@ api.tab = {
   TabSelector: TabSelector
 };
 
-export default api;
+export default ref;

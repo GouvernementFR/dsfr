@@ -1,0 +1,14 @@
+@use '../../selector';
+
+@function _pseudo($restrain) {
+  @if $restrain == before or $restrain == after {
+    @return $restrain;
+  }
+  @return before after;
+}
+
+@mixin pseudo ($restrain: null) {
+  @include selector.pseudo(_pseudo($restrain)) {
+    @content;
+  }
+}

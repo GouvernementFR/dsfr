@@ -1,10 +1,10 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { TabSelector } from './tab-selector';
 
 const FOCALIZE_OFFSET = 16;
 const SCROLL_OFFSET = 16; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
 
-class TabsList extends api.core.Instance {
+class TabsList extends ref.core.Instance {
   static get instanceClassName () {
     return 'TabsList';
   }

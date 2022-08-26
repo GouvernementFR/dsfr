@@ -1,0 +1,6 @@
+@use '../property/sizes';
+@use '../../spacing';
+
+@function size($size: md) {
+  @return spacing.space(map-get(sizes.$sizes, $size));
+}

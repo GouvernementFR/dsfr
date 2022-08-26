@@ -1,0 +1,20 @@
+////
+/// Core Module : Display no-scroll
+/// @group core
+////
+
+@use '../../../../../../sass/selector';
+
+@mixin first () {
+  // Fixe le scroll en arrière plan
+  :root#{selector.ns-attr(scrolling)} body {
+    --scroll-top: 0;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    top: var(--scroll-top);
+  }
+}

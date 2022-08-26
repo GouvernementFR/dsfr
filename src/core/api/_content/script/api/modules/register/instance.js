@@ -4,6 +4,7 @@ import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
+import { TransitionSelector} from '../../utilities/motion/transition-selector';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -13,6 +14,7 @@ class Instance {
     this._isScrollLocked = false;
     this._isLoading = false;
     this._isSwappingFont = false;
+    this._isTransitioning = true;
     this._listeners = {};
     this._keyListenerTypes = [];
     this._keys = [];
@@ -200,6 +202,17 @@ class Instance {
   }
 
   mouseMove (point) {}
+
+  get isTransitioning () {
+    return this._isTransitioning;
+  }
+
+  set isTransitioning (value) {
+    if (this._isTransitioning === value) return;
+    this._isTransitioning = value === true;
+    if (this._isTransitioning) this.addClass(TransitionSelector.NONE);
+    else this.removeClass(TransitionSelector.NONE);
+  }
 
   examine (attributeNames) {
     if (!this.node.matches(this.registration.selector)) {

@@ -1,0 +1,33 @@
+@use 'sass:list';
+@use '../property/prefixes';
+@use '../../selector';
+@use '../../string';
+
+@mixin selector($situations: recommended deprecated) {
+  $start: ();
+  @each $situation, $prefix in prefixes.$prefixes {
+    @if list.index($situations, $situation) != null {
+      $list: selector.start-with(selector.ns($prefix, ''));
+      @each $item in $list {
+        $start: list.append($start, $item, 'comma');
+      }
+    }
+  }
+
+  @include selector.pattern($start) {
+    @content;
+  }
+}
+
+@mixin not-selector($situations: recommended deprecated) {
+  $start: '';
+  @each $situation, $prefix in prefixes.$prefixes {
+    @if list.index($situations, $situation) != null {
+      $start: '#{$start}#{selector.not-start-with(selector.ns($prefix, ''))}';
+    }
+  }
+
+  @include selector.pattern(string.unquote($start)) {
+    @content;
+  }
+}

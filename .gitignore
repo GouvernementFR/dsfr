@@ -7,3 +7,4 @@ public/
 /standalone/
 /src/**/*.*
 !/src/**/_content/**/*.*
+/sass/icon/property/_icons.scss

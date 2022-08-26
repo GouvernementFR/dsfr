@@ -1,0 +1,4 @@
+@mixin position($value) {
+  -webkit-mask-position: $value;
+  mask-position: $value;
+}

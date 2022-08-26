@@ -1,0 +1,9 @@
+@use 'utilities/transition';
+@use 'utilities/no-scroll';
+
+$options: () !default;
+
+@mixin first () {
+  @include transition.first;
+  @include no-scroll.first;
+}
