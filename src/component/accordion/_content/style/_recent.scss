@@ -1,9 +1,9 @@
+@use 'tmp/scheme';
 @use 'tmp/base';
 
 $options: () !default;
 
 @mixin first () {
   @include base.first();
-
-  // @include _accordion-scheme;
+  @include scheme.first();
 }

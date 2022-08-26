@@ -3,11 +3,12 @@
 /// @group accordion
 ////
 
-@use '../../../../../../../sass/color/';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _accordion-scheme($legacy: false) {
+@mixin first ($legacy: false) {
   #{ns(accordion)} {
-    @include before {
+    @include selector.before() {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-out);
     }
 
