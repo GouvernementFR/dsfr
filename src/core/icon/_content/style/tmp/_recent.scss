@@ -3,16 +3,21 @@
 /// @group core
 ////
 
-@include has-icon {
-  @include icon-style;
-  @include icon-size;
-  @include icon-content;
-}
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
 
-#{ns(icon)} {
-  @each $size, $value in $icon-size-map {
-    &--#{$size} {
-      @include icon-size($size);
+@mixin first () {
+  @include icon.selector {
+    @include icon.style;
+    @include icon.size;
+    @include icon.content;
+  }
+
+  #{selector.ns(icon)} {
+    @each $size, $value in icon.$sizes {
+      &--#{$size} {
+        @include icon.size($size);
+      }
     }
   }
 }

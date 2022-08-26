@@ -1,10 +1,10 @@
 const { RECOMMENDED, DEPRECATED } = require('./situations');
 
-const BASE_KIND = {
-  id: 'base',
+const RECOMMENDED_KIND = {
+  id: 'recommended',
   situations: [RECOMMENDED],
-  src: '.base',
-  dest: '.base'
+  src: '.recommended',
+  dest: '.recommended'
 };
 
 const DEPRECATED_KIND = {
@@ -21,6 +21,6 @@ const FULL_KIND = {
   dest: ''
 };
 
-const KINDS = [BASE_KIND, DEPRECATED_KIND, FULL_KIND];
+const KINDS = [RECOMMENDED_KIND, DEPRECATED_KIND, FULL_KIND];
 
-module.exports = { KINDS, BASE_KIND, DEPRECATED_KIND, FULL_KIND };
+module.exports = { KINDS, RECOMMENDED_KIND, DEPRECATED_KIND, FULL_KIND };

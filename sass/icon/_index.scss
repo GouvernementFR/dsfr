@@ -1,4 +1,6 @@
 
+@forward 'property/sizes';
+
 @forward 'function/filter';
 @forward 'mixin/selector';
 @forward 'mixin/icon';
@@ -8,3 +10,5 @@
 @forward 'mixin/size';
 @forward 'mixin/style';
 @forward 'mixin/generate';
+
+@forward 'mixin/legacy';

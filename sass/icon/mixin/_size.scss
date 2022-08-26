@@ -1,16 +1,9 @@
 @use 'pseudo';
 @use '../function/size';
-@use '../../spacing';
 
-@mixin size ($size:md, $restrain: null, $legacy: false) {
+@mixin size ($size:md, $restrain: null) {
   @include pseudo.pseudo($restrain) {
-    $size: size.size($size);
-    @if $legacy {
-      @include spacing.size($size, $size);
-    }
-    @else {
-      --icon-size: #{$size};
-    }
+    --icon-size: #{size.size($size)};
     @content;
   }
 }

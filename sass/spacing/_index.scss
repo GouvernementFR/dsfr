@@ -1,6 +1,4 @@
-@use 'property/units';
+@forward 'property/units';
 @forward 'function/space';
 @forward 'function/unit';
 @forward 'mixin/size';
-
-$units: units.$values;

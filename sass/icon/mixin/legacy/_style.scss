@@ -1,0 +1,9 @@
+@use '../pseudo';
+@use '../../../background';
+
+@mixin style($restrain: null) {
+  @include pseudo.pseudo($restrain) {
+    @include background.background(transparent, null, no-repeat, 100%, null);
+    @content;
+  }
+}

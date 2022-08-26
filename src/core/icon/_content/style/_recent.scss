@@ -1,0 +1,7 @@
+@use 'tmp/recent';
+
+$options: () !default;
+
+@mixin first() {
+  @include recent.first;
+}

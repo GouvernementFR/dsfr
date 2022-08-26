@@ -1,0 +1,7 @@
+@use 'color';
+@use 'image';
+
+@mixin background($color, $image, $repeat: no-repeat, $size: cover, $position: 50%) {
+  @include color.color($color);
+  @include image.image($image, $repeat, $size, $position);
+}

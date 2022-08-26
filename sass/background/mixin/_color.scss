@@ -1,0 +1,5 @@
+@mixin color($color) {
+  @if $color {
+    background-color: $color;
+  }
+}

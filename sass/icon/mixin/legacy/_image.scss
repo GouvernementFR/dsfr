@@ -1,0 +1,10 @@
+@use '../../function/path';
+@use '../pseudo';
+@use '../../../background';
+
+@mixin image($icon, $restrain: null, $important: false) {
+  $url: path.path($icon, $important);
+  @include pseudo.pseudo($restrain) {
+    @include background.image($url, null, null, null);
+  }
+}

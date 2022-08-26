@@ -4,9 +4,6 @@
 @use '../../string';
 @use '../property/units';
 
-$V: units.$V;
-$W: units.$W;
-
 /// Return space value from type map and convert to rem.
 ///
 /// @param {Number} $value - valeur de l'espacement, permet de convertir cet espacement de v (4px) ou w (8px) en rem
@@ -55,11 +52,11 @@ $W: units.$W;
     $u: math.unit($value);
 
     @if $u == 'v' {
-      @return math.div($value, 1v) * $V;
+      @return math.div($value, 1v) * units.$V;
     }
 
     @if $u == 'w' {
-      @return math.div($value, 1w) * $W;
+      @return math.div($value, 1w) * units.$W;
     }
 
     @return $value;

@@ -2,12 +2,18 @@
 @use '../property/prefixes';
 @use '../../selector';
 @use 'image';
+@use 'legacy/image' as legacy;
 
-@mixin generate($icons: icons.$icons, $situations: recommended deprecated) {
+@mixin generate($icons: icons.$icons, $situations: recommended deprecated, $legacy: false) {
   @each $icon, $properties in $icons {
     @each $situation, $prefix in prefixes.$prefixes {
       #{selector.ns(#{$prefix}-#{$icon})} {
-        @include image.image($icon);
+        @if $legacy {
+          @include legacy.image($icon)
+        }
+        @else {
+          @include image.image($icon);
+        }
       }
     }
   }
