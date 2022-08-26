@@ -1,14 +1,15 @@
 const log = require('../../utilities/log');
-const mqpacker = require('mqpacker');
-const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
-const discardDuplicates = require('postcss-discard-duplicates');
-const postcssBanner = require('postcss-banner');
-const { getBanner } = require('../../../generate/banner');
-const postcss = require('postcss');
-const { createFile } = require('../../../utilities/file');
-const cssnano = require('cssnano');
+const { createFile } = require('../../utilities/file');
+const rollup = require('rollup');
+const fs = require('fs');
+const virtual = require('@rollup/plugin-virtual');
+const banner2 = require('rollup-plugin-banner2');
+const { getBanner } = require('../../generate/banner');
+const sourcemaps = require('rollup-plugin-sourcemaps');
+const buble = require('@rollup/plugin-buble');
+const { terser } = require('rollup-plugin-terser');
 
-class StyleBuilder {
+class ScriptBuilder {
   constructor (config) {
     this.config = config;
   }
@@ -20,58 +21,51 @@ class StyleBuilder {
   }
 
   async compile (item, minify, map) {
-    let options = {
-      outFile: item.dest,
-      style: 'expanded'
+    const inputOptions = {
+      input: item.src,
+      plugins: []
+    };
+
+    const outputOptions = {
+      format: item.format ? 'iife' : 'esm',
+      file: item.dest,
+      minifyInternalExports: minify
     };
 
     if (map) {
-      options.sourceMap = true;
-      options.sourceMapIncludeSources = true;
+      inputOptions.plugins.push(sourcemaps());
+      outputOptions.sourcemap = true;
     }
 
+    if (item.support === 'nomodule') {
+      inputOptions.plugins.push(
+        buble({
+          target: {
+            ie: '11'
+          },
+          transforms: {
+            dangerousForOf: true
+          }
+        })
+      );
+    }
+
+    if (minify) inputOptions.plugins.push(terser());
+  }
+
+  async process (item, inputOptions, outputOptions) {
     let result;
 
     try {
-      result = await sass.compileAsync(item.src, options);
+      const bundle = await rollup.rollup(inputOptions);
+      result = await bundle.generate(outputOptions);
+      await bundle.write(outputOptions);
+      await bundle.close();
+      const size = fs.statSync(outputOptions.file).size;
+      log.file(outputOptions.file, `${size} bytes`);
     } catch (e) {
-      log.error(e.message);
-      try {
-        process.kill(0);
-      } catch (e) {
-        return;
-      }
+      log.error(e);
     }
-
-    options = { from: undefined, to: item.dest };
-
-    if (map) {
-      options.map = { prev: result.sourceMap };
-    }
-
-    await this.process(item, result.css.toString(),
-      [
-        mqpacker({ sort: false }),
-        combineDuplicatedSelectors,
-        discardDuplicates,
-        stylelint({ fix: true })
-      ], options);
-
-    if (!minify) return;
-
-    options = { ...options, to: item.dest.replace('.css', '.min.css') };
-
-    await this.process(pck, result.css.toString(), [
-      mqpacker({ sort: false }),
-      combineDuplicatedSelectors,
-      discardDuplicates,
-      cssnano()
-    ], options);
-  }
-
-  async process (item, css, plugins, options) {
-    const result = await postcss(plugins)
-      .process(css, options);
 
     /*
     if (pck.inject) {
@@ -80,12 +74,7 @@ class StyleBuilder {
       return;
     }
      */
-
-    const size = createFile(item.dest, result.css, true);
-
-    log.file(item.dest, `${size} bytes`);
-    if (result.map) createFile(result.opts.to + '.map', result.map.toString(), true);
   }
 }
 
-module.exports = { StyleBuilder };
+module.exports = { ScriptBuilder };

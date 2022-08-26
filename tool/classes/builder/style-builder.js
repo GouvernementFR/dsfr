@@ -61,7 +61,7 @@ class StyleBuilder {
 
     options = { ...options, to: item.dest.replace('.css', '.min.css') };
 
-    await this.process(pck, result.css.toString(), [
+    await this.process(item, result.css.toString(), [
       mqpacker({ sort: false }),
       combineDuplicatedSelectors,
       discardDuplicates,

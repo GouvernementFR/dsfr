@@ -3,10 +3,11 @@
 /// @group core
 ////
 
-@use '../../../../../../.config/icons';
-@use '../../../../../../sass/path/index';
-@use '../../../../../../sass/spacing/index';
-@use '../../../../../../sass/specificity/index';
+@use 'sass:map';
+@use '../../../../../../../.config/icons';
+@use '../../../../../../../sass/path';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/specificity';
 
 /// Return icon size from map
 /// @param {String} $size ['md'] - Icon size from `$icon-size-map` (Default to 'md' = 16px)
@@ -21,7 +22,7 @@
 }
 
 @function get-icon-url($icon, $important: false) {
-  $url: url('#{path.dist()}#{map.get(icons, $icon)}');
+  $url: url('#{path.dist()}#{map.get(icons.$icons-config, $icon)}');
   @return specificity.important($url, $important);
 }
 
@@ -33,9 +34,13 @@
 }
 
 @mixin _icon-pseudo ($restrain: null) {
+  /*
   @include _pseudo(get-icon-pseudo($restrain)) {
     @content;
   }
+
+   */
+  @content;
 }
 
 @mixin icon-size ($size:md, $restrain: null) {

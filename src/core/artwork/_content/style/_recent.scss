@@ -1,0 +1,7 @@
+@use 'tmp/scheme';
+
+$options: () !default;
+
+@mixin first () {
+  @include scheme.scheme();
+}

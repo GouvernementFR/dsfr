@@ -1,11 +1,9 @@
-@use '../../../../../sass/string';
+@use 'tmp/base';
+
+$options: () !default;
 
 @mixin first () {
-  @import '../../../link/_content/style/tmp/tool';
-  @import 'tmp/setting';
-  @import 'tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+  @include base.first();
 
-  @include _accordion-scheme;
+  // @include _accordion-scheme;
 }

@@ -3,10 +3,10 @@
 /// @group core
 ////
 
-@use '../../../../../sass/color';
-@use '../../../../../sass/selector';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _core-artwork-scheme($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(artwork)} {
     &-decorative {
       @include color.fill(artwork decorative blue-france, (legacy: $legacy));
