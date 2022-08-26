@@ -3,26 +3,26 @@
 /// @group tile
 ////
 
-#{ns(tile)} {
-  @include relative;
-  @include display-flex(column-reverse);
-  @include set-text-margin(0);
-  @include set-title-margin(0 0 2v);
+#{selector.ns(tile)} {
+  @include spacing.relative;
+  @include display.flex(column-reverse);
+  @include typography.set-text-margin(0);
+  @include typography.set-title-margin(0 0 2v);
 
   /**
    * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
    */
-  #{ns(grid-row)} & {
-    @include size(null, 100%);
+  #{selector.ns(grid-row)} & {
+    @include spacing.size(null, 100%);
   }
 
   &__link {
     display: inline-flex;
     @include disable-underline;
-    @include size(100%);
+    @include spacing.size(100%);
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
+  @include hover-brighten(#{&}#{selector.ns(enlarge-link)}, #{&}__img);
 
   /**
    * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
@@ -31,10 +31,10 @@
    * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
    */
   &__img {
-    @include display-flex(null, center, center);
+    @include display.flex(null, center, center);
     flex-shrink: 0;
-    @include size(20v, 20v);
-    @include margin(8v auto 0);
+    @include spacing.size(20v, 20v);
+    @include spacing.margin(8v auto 0);
     overflow: hidden;
     @include hover-brighten-filter;
 
@@ -42,33 +42,33 @@
      * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
      */
     > svg {
-      @include size(100%);
+      @include spacing.size(100%);
     }
   }
 
   /**
    * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
    */
-  @include body {
-    @include display-flex(column, center, center);
+  @include selector.body {
+    @include display.flex(column, center, center);
     flex-grow: 1;
-    @include padding(4v);
-    @include padding(6v,md);
+    @include spacing.padding(4v);
+    @include spacing.padding(6v,md);
     text-align: center;
   }
 
   /**
    * Titre de la tuile
    */
-  @include title {
-    @include text-style(md);
-    @include font-weight(bold);
+  @include selector.title {
+    @include typography.text-style(md);
+    @include typography.font-weight(bold);
   }
 
   /**
    * Description de la tuile
    */
   &__desc {
-    @include text-style(md);
+    @include typography.text-style(md);
   }
 }

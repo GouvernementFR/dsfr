@@ -3,41 +3,45 @@
 /// @group badge
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/typography';
 
-@include legacy.is(ie11) {
-  #{ns(badge)} {
-    @include icon-legacy(null, sm);
+@mixin first() {
+  @include legacy.is(ie11) {
+    #{selector.ns(badge)} {
+      @include icon.icon-legacy(null, sm);
 
-    &--sm {
-      @include icon-legacy(null, xs, before, false);
+      &--sm {
+        @include icon.icon-legacy(null, xs, before, false);
+      }
+
+      &,
+      &--sm {
+        &#{selector.ns(badge)}--info {
+          @include icon.image-legacy(info-fill);
+        }
+
+        &#{selector.ns(badge)}--success {
+          @include icon.image-legacy(success-fill);
+        }
+
+        &#{selector.ns(badge)}--error {
+          @include icon.image-legacy(error-fill);
+        }
+
+        &#{selector.ns(badge)}--warning {
+          @include icon.image-legacy(warning-fill);
+        }
+
+        &#{selector.ns(badge)}--new {
+          @include icon.image-legacy(flashlight-fill);
+        }
+      }
     }
 
-    &,
-    &--sm {
-      &#{ns(badge)}--info {
-        @include icon-image-legacy(info-fill);
-      }
-
-      &#{ns(badge)}--success {
-        @include icon-image-legacy(success-fill);
-      }
-
-      &#{ns(badge)}--error {
-        @include icon-image-legacy(error-fill);
-      }
-
-      &#{ns(badge)}--warning {
-        @include icon-image-legacy(warning-fill);
-      }
-
-      &#{ns(badge)}--new {
-        @include icon-image-legacy(flashlight-fill);
-      }
+    #{selector.ns(badges-group)} {
+      @include typography.disable-list-style-legacy(true);
     }
-  }
-
-  #{ns(badges-group)} {
-    @include disable-list-style-legacy(true);
   }
 }

@@ -5,12 +5,12 @@
 
 @use '../../../../../../../sass/spacing/index';
 
-#{ns(input)} {
+#{selector.ns(input)} {
   display: block;
-  @include size(100%);
+  @include spacing.size(100%);
   border-radius: spacing.space(1v) spacing.space(1v) 0 0;
-  @include text-style(md);
-  @include padding(2v 4v);
+  @include typography.text-style(md);
+  @include spacing.padding(2v 4v);
 
   /**
    * Style du placeholder
@@ -35,7 +35,7 @@
 
     &::-webkit-calendar-picker-indicator {
       display: block;
-      @include margin-right(-1.5v);
+      @include spacing.margin-right(-1.5v);
       opacity: 0;
     }
   }
@@ -44,48 +44,48 @@
 /**
  * Ajout d'un wrapper quand on a besoin de mettre une icône
  */
-#{ns(input-wrap)} {
-  @include relative;
+#{selector.ns(input-wrap)} {
+  @include spacing.relative;
   display: block;
 
   @include has-icon {
-    @include icon-size(sm, before) {
-      @include absolute(3v, 3v, 3v);
-      @include margin(auto);
+    @include icon.size(sm, before) {
+      @include spacing.absolute(3v, 3v, 3v);
+      @include spacing.margin(auto);
       pointer-events: none;
     }
   }
 
   &--addon {
-    @include display-flex;
-    @include size(100%);
+    @include display.flex;
+    @include spacing.size(100%);
   }
 
-  #{ns(input)} {
-    @include padding-right(10v);
+  #{selector.ns(input)} {
+    @include spacing.padding-right(10v);
   }
 
   > *:first-child:not(:last-child) {
-    &#{ns(input)} {
-      @include padding-right(4v);
+    &#{selector.ns(input)} {
+      @include spacing.padding-right(4v);
     }
 
-    @include respond-from(md) {
+    @include media-query.from(md) {
       border-radius: spacing.space(1v 0 0 0);
     }
   }
 
   > *:last-child:not(:first-child) {
-    @include respond-from(md) {
+    @include media-query.from(md) {
       border-radius: spacing.space(0 1v 0 0);
     }
   }
 
-  + #{ns(hint-text)} {
-    @include margin-top(2v);
+  + #{selector.ns(hint-text)} {
+    @include spacing.margin-top(2v);
   }
 }
 
-textarea#{ns(input)} {
+textarea#{selector.ns(input)} {
   min-height: spacing.space(15v);
 }

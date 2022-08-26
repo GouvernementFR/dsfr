@@ -1,15 +1,15 @@
-#{ns(header)} {
-  #{ns(links-group)} {
-    @include disable-list-style;
-    @include display-flex(null, stretch, null, wrap);
+#{selector.ns(header)} {
+  #{selector.ns(links-group)} {
+    @include typography.disable-list-style;
+    @include display.flex(null, stretch, null, wrap);
     @include vertical-btns-group;
 
-    @include respond-from(lg) {
+    @include media-query.from(lg) {
       justify-content: flex-end;
       @include horizontal-btns-group;
     }
 
-    #{ns(link)} {
+    #{selector.ns(link)} {
       @include disable-underline;
       @include enable-tint;
 
@@ -19,40 +19,40 @@
 
       @include has-icon {
         @include nest-btn(sm, left, null, null, false);
-        @include before('');
+        @include selector.before('');
       }
     }
   }
 
   &__tools-links {
     #{ns-group(links)} {
-      @include respond-from(lg) {
+      @include media-query.from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
-        @include margin(0 -1v);
+        @include spacing.margin(0 -1v);
 
-        #{ns(link)} {
-          @include margin-x(1v);
+        #{selector.ns(link)} {
+          @include spacing.margin-x(1v);
         }
       }
     }
   }
 
   & &__menu-links {
-    #{ns(links-group)} {
-      #{ns(link)} {
-        @include size(100%);
-        @include min-size(null, 12v);
-        @include padding-left(0);
-        @include margin-bottom(0);
+    #{selector.ns(links-group)} {
+      #{selector.ns(link)} {
+        @include spacing.size(100%);
+        @include spacing.min-size(null, 12v);
+        @include spacing.padding-left(0);
+        @include spacing.margin-bottom(0);
       }
     }
   }
 
-  #{ns(modal)} {
-    & > * > #{ns(link--close)} {
-      @include margin-bottom(6v);
-      @include respond-from(lg) {
+  #{selector.ns(modal)} {
+    & > * > #{selector.ns(link--close)} {
+      @include spacing.margin-bottom(6v);
+      @include media-query.from(lg) {
         display: none;
       }
     }

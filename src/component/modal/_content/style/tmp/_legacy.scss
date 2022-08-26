@@ -3,8 +3,8 @@
 /// @group modal
 ////
 
-#{ns(modal)} {
-  @include body {
+#{selector.ns(modal)} {
+  @include selector.body {
     max-height: calc(100vh - 2rem);
   }
 }

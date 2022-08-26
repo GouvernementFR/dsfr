@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _link-scheme($legacy: false) {
-  #{ns(link)} {
+  #{selector.ns(link)} {
     @include color.text(action-high blue-france, (legacy:$legacy));
   }
 }

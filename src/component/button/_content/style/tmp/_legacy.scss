@@ -3,65 +3,65 @@
 /// @group button
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  #{ns(btn)} {
-    @include icon-legacy(null, sm);
+  #{selector.ns(btn)} {
+    @include icon.icon-legacy(null, sm);
 
-    @include class-not-start-with(#{ns(btn--icon-, '')}) {
+    @include class-not-start-with(#{selector.ns(btn--icon-, '')}) {
       @include has-icon {
-        @include icon-legacy(null, md);
+        @include icon.icon-legacy(null, md);
       }
     }
 
     &--sm {
-      @include icon-legacy(null, xs);
+      @include icon.icon-legacy(null, xs);
 
-      @include class-not-start-with(#{ns(btn--icon-, '')}) {
+      @include class-not-start-with(#{selector.ns(btn--icon-, '')}) {
         @include has-icon {
-          @include icon-legacy(null, sm);
+          @include icon.icon-legacy(null, sm);
         }
       }
     }
 
     &--lg {
-      @include icon-legacy(null, md);
+      @include icon.icon-legacy(null, md);
 
-      @include class-not-start-with(#{ns(btn--icon-, '')}) {
+      @include class-not-start-with(#{selector.ns(btn--icon-, '')}) {
         @include has-icon {
-          @include icon-legacy(null, lg);
+          @include icon.icon-legacy(null, lg);
         }
       }
     }
   }
 
-  #{ns(btn--close)} {
-    @include icon-legacy(close-line, sm);
+  #{selector.ns(btn--close)} {
+    @include icon.icon-legacy(close-line, sm);
   }
 
-  #{ns(btn--display)} {
-    @include icon-legacy(theme-fill, sm);
+  #{selector.ns(btn--display)} {
+    @include icon.icon-legacy(theme-fill, sm);
   }
 
   #{ns-group(btns)} {
-    @include disable-list-style-legacy(true);
+    @include typography.disable-list-style-legacy(true);
 
     &--sm {
-      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
-        #{ns(btn)} {
+      @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
           @include has-icon {
-            @include icon-legacy(null, sm);
+            @include icon.icon-legacy(null, sm);
           }
         }
       }
     }
 
     &--lg {
-      @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
-        #{ns(btn)} {
+      @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
           @include has-icon {
-            @include icon-legacy(null, lg);
+            @include icon.icon-legacy(null, lg);
           }
         }
       }

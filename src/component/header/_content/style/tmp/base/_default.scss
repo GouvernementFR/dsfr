@@ -3,19 +3,19 @@
 /// @group header
 ////
 
-#{ns(header)} {
+#{selector.ns(header)} {
   @include disable-underline;
-  @include disable-list-style;
-  @include set-text-margin(0);
-  @include set-title-margin(0);
-  @include size(100%);
-  @include relative;
+  @include typography.disable-list-style;
+  @include typography.set-text-margin(0);
+  @include typography.set-title-margin(0);
+  @include spacing.size(100%);
+  @include spacing.relative;
 
-  @include body {
+  @include selector.body {
     &-row {
-      @include display-flex(row, center, flex-start);
-      @include margin(0 -4v);
-      @include padding(6v 0, lg);
+      @include display.flex(row, center, flex-start);
+      @include spacing.margin(0 -4v);
+      @include spacing.padding(6v 0, lg);
     }
   }
 }

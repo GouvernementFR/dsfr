@@ -13,7 +13,7 @@
       @include typography.disable-list-style-legacy;
     }
 
-    #{ns(accordion)} {
+    #{selector.ns(accordion)} {
       @include typography.enable-list-style-legacy;
 
       &__btn {

@@ -62,21 +62,21 @@
  * Icone du texte d'erreur
  */
 #{ns(error-text)} {
-  @include icon-image(error-fill);
+  @include icon.image(error-fill);
 }
 
 /**
  * Icone du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include icon-image(success-fill);
+  @include icon.image(success-fill);
 }
 
 /**
  * Icone du texte état informatif
  */
 #{ns(info-text)} {
-  @include icon-image(information-fill);
+  @include icon.image(information-fill);
 }
 
 #{ns-group(form)} {

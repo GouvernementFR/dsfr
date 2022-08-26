@@ -5,13 +5,13 @@
 
 @use '../../../../../../../sass/spacing/index';
 
-#{ns(toggle)} {
+#{selector.ns(toggle)} {
   display: flex;
   flex-wrap: wrap;
-  @include relative;
-  @include padding(4v 0);
-  @include set-text-margin(0);
-  @include set-title-margin(0);
+  @include spacing.relative;
+  @include spacing.padding(4v 0);
+  @include typography.set-text-margin(0);
+  @include typography.set-title-margin(0);
 
   /*
    * On utilise un input de type checkbox pour gérer le toggle
@@ -20,9 +20,9 @@
    */
   input[type="checkbox"] {
     flex-shrink: 0;
-    @include size(10v, 6v);
+    @include spacing.size(10v, 6v);
     border-radius: spacing.space(3v);
-    @include margin(0);
+    @include spacing.margin(0);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -33,14 +33,14 @@
      * la valeur correspondant à l'état checked (optionnel).
      */
     &:checked {
-      ~ #{ns(toggle__label)} {
+      ~ #{selector.ns(toggle__label)} {
         &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
-          @include before(attr(#{ns-attr(checked-label, null, true)}));
+          @include selector.before(attr(#{ns-attr(checked-label, null, true)}));
         }
 
-        @include after {
+        @include selector.after {
           transform: translateX(space(4v));
-          @include z-index(higher);
+          @include elevation.z-index(higher);
         }
       }
     }
@@ -51,20 +51,20 @@
     display: inline-flex;
     flex-basis: spacing.space(calc(100% - 10v));
     min-height: spacing.space(6v);
-    @include padding-left(8v);
-    @include text-style(md);
+    @include spacing.padding-left(8v);
+    @include typography.text-style(md);
 
     /*
      * Si les data attributes sont présents, on assigne un content au pseudo element before,
      * et on enlève le padding left du label.
      */
     &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
-      @include padding-left(0);
+      @include spacing.padding-left(0);
 
-      @include before(attr(#{ns-attr(unchecked-label, null, true)}));
+      @include selector.before(attr(#{ns-attr(unchecked-label, null, true)}));
 
-      + #{ns(hint-text)} {
-        @include margin-top(2v);
+      + #{selector.ns(hint-text)} {
+        @include spacing.margin-top(2v);
       }
     }
 
@@ -72,14 +72,14 @@
      * On prévoit un pseudo-élément pour afficher l'état du bouton( optionnel)
      * On récupère le text via l'attribut [data-fr-unchecked-label]
      */
-    @include before {
+    @include selector.before {
       flex-shrink: 0;
       min-width: spacing.space(10v);
       height: spacing.space(calc(5v + 1px));
-      @include margin-top(6v);
-      @include margin-left(-10v);
-      @include margin-right(4v);
-      @include text-style(xs);
+      @include spacing.margin-top(6v);
+      @include spacing.margin-left(-10v);
+      @include spacing.margin-right(4v);
+      @include typography.text-style(xs);
       white-space: pre-wrap;
       overflow: hidden;
       outline: none !important;
@@ -90,9 +90,9 @@
      * On inclut l'icône check en background dans un pseudo-element after
      *
      */
-    @include after('') {
-      @include display-flex(null,center,center);
-      @include absolute(4v, null, null, 0, 6v, 6v);
+    @include selector.after('') {
+      @include display.flex(null,center,center);
+      @include spacing.absolute(4v, null, null, 0, 6v, 6v);
       border-radius: 50%;
       background-repeat: no-repeat;
       background-size: spacing.space(4v);
@@ -100,10 +100,10 @@
     }
   }
 
-  #{ns(hint-text)} {
+  #{selector.ns(hint-text)} {
     display: block;
-    @include margin-top(4v);
-    @include text-style(xs);
+    @include spacing.margin-top(4v);
+    @include typography.text-style(xs);
     flex-basis: 100%;
   }
 }

@@ -7,33 +7,33 @@
 @use '../../../../../../sass/elevation/index';
 
 @mixin _consent-scheme($legacy: false) {
-  #{ns(consent-placeholder)} {
+  #{selector.ns(consent-placeholder)} {
     @include color.background(contrast grey, (legacy:$legacy));
   }
 
-  #{ns(consent-banner)} {
+  #{selector.ns(consent-banner)} {
     // @include color.background(contrast grey, (legacy:$legacy));
     @include elevation.elevate(overlap-above, (legacy:$legacy, usage: alt));
     @include color.box-shadow(default grey, (legacy:$legacy));
   }
 
-  #{ns(consent-manager__header)},
-  #{ns(consent-service)} {
+  #{selector.ns(consent-manager__header)},
+  #{selector.ns(consent-service)} {
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
     @include color.text(default grey, (legacy:$legacy));
 
     #{ns-group(radio)} {
       + #{ns-group(radio)} {
-        @include before {
+        @include selector.before {
           @include color.box-shadow(default grey, (legacy:$legacy));
         }
       }
     }
   }
 
-  #{ns(consent-service)} {
+  #{selector.ns(consent-service)} {
     &:last-of-type,
-    #{ns(consent-service)} {
+    #{selector.ns(consent-service)} {
       @include color.no-box-shadow((legacy: $legacy));
     }
   }

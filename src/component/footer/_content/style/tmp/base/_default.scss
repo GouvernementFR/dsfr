@@ -3,18 +3,18 @@
 /// @group footer
 ////
 
-#{ns(footer)} {
-  @include disable-list-style;
-  @include size(100%);
-  @include padding-top(10v);
+#{selector.ns(footer)} {
+  @include typography.disable-list-style;
+  @include spacing.size(100%);
+  @include spacing.padding-top(10v);
 
-  @include body {
-    @include display-flex(row, center, null, wrap);
-    @include margin-bottom(4v);
-    @include margin-bottom(6v, md);
+  @include selector.body {
+    @include display.flex(row, center, null, wrap);
+    @include spacing.margin-bottom(4v);
+    @include spacing.margin-bottom(6v, md);
 
-    & + #{ns(footer__bottom)} {
-      @include margin-top(4v);
+    & + #{selector.ns(footer__bottom)} {
+      @include spacing.margin-top(4v);
     }
   }
 
@@ -23,16 +23,16 @@
    * un logo opérateur
    */
   &__brand {
-    @include display-flex(row, center);
+    @include display.flex(row, center);
     flex-basis: 100%;
 
     @include logo(md, lg) {
-      @include margin(-4v);
-      @include margin(-5v, md);
+      @include spacing.margin(-4v);
+      @include spacing.margin(-5v, md);
     }
 
     &-link {
-      @include display-flex;
+      @include display.flex;
     }
 
     /**
@@ -40,18 +40,18 @@
      * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
      * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
      */
-    #{ns(logo)} + #{ns(footer__brand-link)} {
-      @include margin-left(6v);
-      @include margin-left(12v, md);
+    #{selector.ns(logo)} + #{selector.ns(footer__brand-link)} {
+      @include spacing.margin-left(6v);
+      @include spacing.margin-left(12v, md);
     }
 
-    @include respond-from(md) {
+    @include media-query.from(md) {
       flex-basis: auto;
-      @include margin-right(4v);
+      @include spacing.margin-right(4v);
 
-      &#{ns(enlarge-link)} {
-        @include margin(-4v 0 -4v -4v);
-        @include padding(4v);
+      &#{selector.ns(enlarge-link)} {
+        @include spacing.margin(-4v 0 -4v -4v);
+        @include spacing.padding(4v);
       }
     }
   }
@@ -60,7 +60,7 @@
    * Hauteur auto pour le logo opérateur
    */
   &__logo {
-    @include size(null, auto);
+    @include spacing.size(null, auto);
     max-height: 100%;
   }
 }

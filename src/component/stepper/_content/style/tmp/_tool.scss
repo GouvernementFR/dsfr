@@ -24,7 +24,7 @@
   $lastActives: ();
 
   @for $i from 2 through map-get($stepper-settings, max-steps) {
-    $lastActives: append($lastActives, '#{ns(stepper__steps)}#{ns-attr(steps, $i)}#{ns-attr(current-step, $i)} + #{ns(stepper__details)}', $separator: comma);
+    $lastActives: append($lastActives, '#{selector.ns(stepper__steps)}#{ns-attr(steps, $i)}#{ns-attr(current-step, $i)} + #{selector.ns(stepper__details)}', $separator: comma);
   }
 
   #{$lastActives} {

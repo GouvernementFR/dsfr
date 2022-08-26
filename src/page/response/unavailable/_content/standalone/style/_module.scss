@@ -11,11 +11,11 @@ html {
 
 body {
   min-height: 100%;
-  @include font-family;
+  @include typography.font-family;
   @include text-adjustments;
-  @include margin(0);
-  @include padding(0);
-  @include text-style(md);
+  @include spacing.margin(0);
+  @include spacing.padding(0);
+  @include typography.text-style(md);
   @include standalone-box-sizing(true);
   @include display-flex(column, center, center);
 }
@@ -36,21 +36,21 @@ a {
   outline-style: solid;
 }
 
-#{ns(container)} {
+#{selector.ns(container)} {
   @include size(100%);
-  @include max-width(312v);
-  @include margin-x(auto);
-  @include padding-x(4v);
-  @include padding-x(6v, md);
+  @include spacing.max-width(312v);
+  @include spacing.margin-x(auto);
+  @include spacing.padding-x(4v);
+  @include spacing.padding-x(6v, md);
   @include display-flex(row, center);
   flex: 1;
 }
 
-#{ns(grid-row)} {
+#{selector.ns(grid-row)} {
   @include display-flex;
   flex-wrap: wrap;
-  @include margin(0);
-  @include padding(0);
+  @include spacing.margin(0);
+  @include spacing.padding(0);
 
   &--center {
     justify-content: center;
@@ -58,23 +58,23 @@ a {
   }
 
   &--gutters {
-    @include margin(-2v);
+    @include spacing.margin(-2v);
 
     > {
       #{class-start-with(ns(col-, ''))} {
-        @include padding(2v);
+        @include spacing.padding(2v);
       }
     }
   }
 }
 
-#{ns(col-offset-md-1)} {
+#{selector.ns(col-offset-md-1)} {
   @include respond-from(md) {
     margin-left: calc(100% / 12);
   }
 }
 
-#{ns(col-md-6)} {
+#{selector.ns(col-md-6)} {
   @include respond-from(md) {
     flex: 0 0 calc(600% / 12);
     width: calc(600% / 12);
@@ -82,7 +82,7 @@ a {
   }
 }
 
-#{ns(col-md-3)} {
+#{selector.ns(col-md-3)} {
   @include respond-from(md) {
     flex: 0 0 calc(300% / 12);
     width: calc(300% / 12);
@@ -90,7 +90,7 @@ a {
   }
 }
 
-#{ns(col-12)} {
+#{selector.ns(col-12)} {
   flex: 0 0 calc(1200% / 12);
   width: calc(1200% / 12);
   max-width: calc(1200% / 12);
@@ -98,10 +98,10 @@ a {
 
 #{ns-group(btns)} {
   list-style: none;
-  @include padding(0);
-  @include margin-y(-2v);
+  @include spacing.padding(0);
+  @include spacing.margin-y(-2v);
 
-  #{ns(btn)} {
+  #{selector.ns(btn)} {
     > span {
       @include display-flex(row, center, null, null, true);
     }
@@ -109,24 +109,24 @@ a {
 
   &--inline {
     @include display-flex(row, null, null, wrap);
-    @include margin-x(-2v);
+    @include spacing.margin-x(-2v);
 
-    #{ns(btn)} {
-      @include margin-x(2v);
+    #{selector.ns(btn)} {
+      @include spacing.margin-x(2v);
     }
   }
 
   &--sm {
-    #{ns(btn)} {
-      @include text-style(sm);
+    #{selector.ns(btn)} {
+      @include typography.text-style(sm);
     }
   }
 }
 
-#{ns(btn)} {
+#{selector.ns(btn)} {
   border-radius: 0;
-  @include padding(1v 3v);
-  @include margin-y(2v);
+  @include spacing.padding(1v 3v);
+  @include spacing.margin-y(2v);
   background-color: transparent;
   overflow: initial;
   max-width: 100%;
@@ -136,49 +136,49 @@ a {
 
   svg {
     @include size(4v, 4v);
-    @include margin-left(-0.5v);
-    @include margin-right(2v);
+    @include spacing.margin-left(-0.5v);
+    @include spacing.margin-right(2v);
   }
 }
 
-#{ns(server)} {
+#{selector.ns(server)} {
   &__body {
-    @include margin-y(14v);
+    @include spacing.margin-y(14v);
   }
 
   &__footer {
-    @include margin-top(14v);
-    @include margin-bottom(8v);
+    @include spacing.margin-top(14v);
+    @include spacing.margin-bottom(8v);
   }
 
   &__image {
     @include display-flex(row, center, center);
-    @include margin-y(14v, md);
-    @include margin-bottom(14v);
+    @include spacing.margin-y(14v, md);
+    @include spacing.margin-bottom(14v);
 
     img {
-      @include width(53v);
-      @include width(100%, md);
-      @include margin(0 auto);
+      @include spacing.width(53v);
+      @include spacing.width(100%, md);
+      @include spacing.margin(0 auto);
     }
   }
 }
 
-#{ns(h1)} {
-  @include title-style(h1);
-  @include margin-top(0);
-  @include margin-bottom(6v);
-  @include font-weight(bold);
+#{selector.ns(h1)} {
+  @include typography.title-style(h1);
+  @include spacing.margin-top(0);
+  @include spacing.margin-bottom(6v);
+  @include typography.font-weight(bold);
 }
 
-#{ns(text--xl)} {
-  @include text-style(xl);
-  @include margin-top(0);
-  @include margin-bottom(6v);
+#{selector.ns(text--xl)} {
+  @include typography.text-style(xl);
+  @include spacing.margin-top(0);
+  @include spacing.margin-bottom(6v);
 }
 
-#{ns(text--sm)} {
-  @include text-style(sm);
-  @include margin-top(0);
-  @include margin-bottom(4v);
+#{selector.ns(text--sm)} {
+  @include typography.text-style(sm);
+  @include spacing.margin-top(0);
+  @include spacing.margin-bottom(4v);
 }

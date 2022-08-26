@@ -3,41 +3,41 @@
 /// @group navigation
 ////
 
-#{ns(menu)} {
-  @include margin(-4px -4v);
-  @include padding(4px 4v);
-  @include size(auto);
+#{selector.ns(menu)} {
+  @include spacing.margin(-4px -4v);
+  @include spacing.padding(4px 4v);
+  @include spacing.size(auto);
 
-  &#{ns(collapsing)} {
-    @include margin-top(0);
-    @include padding-top(0);
+  &#{selector.ns(collapsing)} {
+    @include spacing.margin-top(0);
+    @include spacing.padding-top(0);
   }
 
-  @include respond-from(lg) {
+  @include media-query.from(lg) {
     pointer-events: none;
-    @include absolute(100%);
+    @include spacing.absolute(100%);
   }
 
-  @include list {
-    @include margin(0);
-    @include padding(2v 0 6v);
+  @include selector.list {
+    @include spacing.margin(0);
+    @include spacing.padding(2v 0 6v);
 
-    @include respond-from(lg) {
-      @include width(80v);
+    @include media-query.from(lg) {
+      @include spacing.width(80v);
       pointer-events: auto;
-      @include padding(0);
-      @include margin-bottom(8v);
+      @include spacing.padding(0);
+      @include spacing.margin-bottom(8v);
     }
   }
 
-  #{ns(nav__link)} {
-    @include padding-x(4v);
-    @include before {
+  #{selector.ns(nav__link)} {
+    @include spacing.padding-x(4v);
+    @include selector.before {
       left: 0;
     }
-    @include respond-from(lg) {
-      @include padding(3v 4v);
-      @include before {
+    @include media-query.from(lg) {
+      @include spacing.padding(3v 4v);
+      @include selector.before {
         left: 0;
       }
     }

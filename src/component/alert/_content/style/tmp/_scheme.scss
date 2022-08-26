@@ -5,11 +5,11 @@
 
 @use '../../../../../../sass/color';
 
-@mixin _alert-scheme($legacy: false) {
-  #{ns(alert)} {
+@mixin scheme($legacy: false) {
+  #{selector.ns(alert)} {
     @include color.box-shadow((plain grey) (background flat grey), (legacy:$legacy), all-1-in left-10v-in);
 
-    @include before {
+    @include selector.before {
       @include color.text(inverted grey, (legacy:$legacy));
     }
 

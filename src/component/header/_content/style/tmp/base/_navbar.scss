@@ -5,17 +5,17 @@
 
 @use '../../../../../../../sass/elevation/index';
 
-#{ns(header)} {
+#{selector.ns(header)} {
   &__navbar {
-    @include display-flex(row,flex-end);
-    @include padding(1v);
-    @include margin-left(auto);
+    @include display.flex(row,flex-end);
+    @include spacing.padding(1v);
+    @include spacing.margin-left(auto);
     order: 3;
     flex: 0 0 auto;
     align-self: flex-start;
     @include elevation.z-index(overlap);
 
-    @include respond-from(lg) {
+    @include media-query.from(lg) {
       display: none;
     }
 
@@ -24,11 +24,11 @@
       white-space: nowrap;
 
       &--menu {
-        @include icon(menu-fill);
+        @include icon.icon(menu-fill);
       }
 
       &--search {
-        @include icon(search-line);
+        @include icon.icon(search-line);
       }
     }
   }

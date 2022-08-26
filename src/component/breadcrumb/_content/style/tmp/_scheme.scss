@@ -3,10 +3,10 @@
 /// @group breadcrumb
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
 
-@mixin _breadcrumb-scheme($legacy: false) {
-  #{ns(breadcrumb)} {
+@mixin scheme ($legacy: false) {
+  #{selector.ns(breadcrumb)} {
     @include color.text(mention grey, (legacy:$legacy));
 
     &__link[aria-current] {

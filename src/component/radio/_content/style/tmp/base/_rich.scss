@@ -5,37 +5,37 @@
 
 @use '../../../../../../../sass/spacing/index';
 
-#{ns(radio-rich)} {
-  @include relative;
+#{selector.ns(radio-rich)} {
+  @include spacing.relative;
 
   input[type="radio"] {
     + label {
-      @include padding-left(14v);
-      @include margin-left(0);
+      @include spacing.padding-left(14v);
+      @include spacing.margin-left(0);
       min-height: spacing.space(22v);
-      @include size(100%);
-      @include padding-top(2v);
-      @include padding-bottom(2v);
-      @include padding-right(26v);
-      @include display-flex(column, flex-start, center);
+      @include spacing.size(100%);
+      @include spacing.padding-top(2v);
+      @include spacing.padding-bottom(2v);
+      @include spacing.padding-right(26v);
+      @include display.flex(column, flex-start, center);
 
       /**
         * On applique la taille sm pour le bouton radio riche
         */
-      @include before {
-        @include size(4v, 4v);
-        @include absolute(50%, null, null, 7v);
-        @include margin-top(-2v);
+      @include selector.before {
+        @include spacing.size(4v, 4v);
+        @include spacing.absolute(50%, null, null, 7v);
+        @include spacing.margin-top(-2v);
       }
 
-      #{ns(hint-text)} {
-        @include margin-left(0);
+      #{selector.ns(hint-text)} {
+        @include spacing.margin-left(0);
       }
     }
 
     &:disabled,
     &[disabled] {
-      ~ #{ns(radio-rich__img)} {
+      ~ #{selector.ns(radio-rich__img)} {
         filter: grayscale(1);
       }
     }
@@ -45,15 +45,15 @@
       @include enable-tint;
     }
 
-    @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__img)}');
+    @include hover-brighten('&:not(:disabled) ~ label', '~ #{selector.ns(radio-rich__img)}');
   }
 
   &__img {
     @include hover-brighten-filter;
-    @include padding-left(1v);
-    @include size(21v, 20v);
-    @include absolute(1v, 1v);
-    @include display-flex;
+    @include spacing.padding-left(1v);
+    @include spacing.size(21v, 20v);
+    @include spacing.absolute(1v, 1v);
+    @include display.flex;
     pointer-events: none;
 
     img,
@@ -67,22 +67,22 @@
 /**
  * Style spécifique des radios intégrés dans un fiedset
  */
-#{ns(fieldset)} {
-  #{ns(radio-rich)} {
+#{selector.ns(fieldset)} {
+  #{selector.ns(radio-rich)} {
     &:first-child {
       input[type="radio"] + label {
-        @include margin-top(3v);
+        @include spacing.margin-top(3v);
       }
     }
 
     input[type="radio"] + label {
-      @include margin-top(2v);
-      @include margin-bottom(4v);
+      @include spacing.margin-top(2v);
+      @include spacing.margin-bottom(4v);
     }
 
     &:last-child {
       input[type="radio"] + label {
-        @include margin-bottom(7v);
+        @include spacing.margin-bottom(7v);
       }
     }
   }
@@ -91,14 +91,14 @@
    * Modificateur pour afficher les radios en ligne
    */
   &--inline {
-    #{ns(radio-rich)} {
+    #{selector.ns(radio-rich)} {
       &:not(:last-child) {
         input[type="radio"] + label {
-          @include margin-right(3v);
-          @include margin-bottom(2v);
+          @include spacing.margin-right(3v);
+          @include spacing.margin-bottom(2v);
         }
 
-        #{ns(radio-rich)}__img {
+        #{selector.ns(radio-rich)}__img {
           right: spacing.space(4v);
         }
       }
@@ -107,12 +107,12 @@
         margin-bottom: 0;
 
         input[type="radio"] + label {
-          @include margin-bottom(3v);
+          @include spacing.margin-bottom(3v);
         }
       }
 
       &:first-child {
-        #{ns(radio-rich)}__img {
+        #{selector.ns(radio-rich)}__img {
           top: spacing.space(4v);
         }
       }
@@ -125,11 +125,11 @@
     /**
      * Écart entre le text d'aide et les radios riches dans le cas des radios inline
      */
-    #{ns(hint-text)} + #{ns(fieldset__content)} {
-      #{ns(radio-rich)} {
+    #{selector.ns(hint-text)} + #{selector.ns(fieldset__content)} {
+      #{selector.ns(radio-rich)} {
         &:first-child {
           input[type="radio"] + label {
-            @include margin-top(6v);
+            @include spacing.margin-top(6v);
           }
         }
       }

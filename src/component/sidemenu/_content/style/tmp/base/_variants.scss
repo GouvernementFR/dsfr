@@ -3,21 +3,21 @@
 /// @group sidemenu
 ////
 
-#{ns(sidemenu)} {
+#{selector.ns(sidemenu)} {
   /**
    * Variantes du sidemenu proposées juste à partir du breakpoint md
    */
-  @include respond-from(md) {
+  @include media-query.from(md) {
     /**
      * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
      * La bordure se met sur la gauche
      */
     &--right {
-      @include padding-left(8v);
-      @include padding-right(0);
+      @include spacing.padding-left(8v);
+      @include spacing.padding-right(0);
 
-      #{ns(sidemenu__inner)} {
-        @include padding(0 4v 0 8v);
+      #{selector.ns(sidemenu__inner)} {
+        @include spacing.padding(0 4v 0 8v);
         border-right: 0;
       }
     }
@@ -28,8 +28,8 @@
     &--sticky {
       @include sticky(0);
 
-      #{ns(sidemenu__inner)} {
-        @include padding-top(2v);
+      #{selector.ns(sidemenu__inner)} {
+        @include spacing.padding-top(2v);
         overflow: auto;
         max-height: 100vh;
       }
@@ -41,10 +41,10 @@
     &--sticky-full-height {
       @include sticky(0, null, null, null, null, 100vh);
 
-      #{ns(sidemenu__inner)} {
-        @include padding-top(2v);
+      #{selector.ns(sidemenu__inner)} {
+        @include spacing.padding-top(2v);
         overflow: auto;
-        @include size(null, 100%);
+        @include spacing.size(null, 100%);
       }
     }
 
@@ -52,12 +52,12 @@
      * Modificateur pour avoir une bordure tout autour du sidemenu
      */
     &--full-border {
-      #{ns(sidemenu__title)} {
-        @include padding-top(2v);
+      #{selector.ns(sidemenu__title)} {
+        @include spacing.padding-top(2v);
       }
 
-      #{ns(sidemenu__inner)} {
-        @include padding(2v 4v);
+      #{selector.ns(sidemenu__inner)} {
+        @include spacing.padding(2v 4v);
       }
     }
   }

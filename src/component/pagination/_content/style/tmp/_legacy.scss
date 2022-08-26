@@ -4,33 +4,33 @@
 ////
 
 @use '../../../../../../sass/color/index';
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
   /**
   * Correctif de la largeur de la légende d'un fieldset
   */
-  #{ns(pagination)} {
+  #{selector.ns(pagination)} {
     @include disable-underline-legacy;
-    @include disable-list-style-legacy;
+    @include typography.disable-list-style-legacy;
 
     &__link {
       @include color.transparent-background((legacy: true, hover: true));
 
       &--first {
-        @include icon-legacy(arrow-left-s-first-line, md);
+        @include icon.icon-legacy(arrow-left-s-first-line, md);
       }
 
       &--prev {
-        @include icon-legacy(arrow-left-s-line, md);
+        @include icon.icon-legacy(arrow-left-s-line, md);
       }
 
       &--next {
-        @include icon-legacy(arrow-right-s-line, md);
+        @include icon.icon-legacy(arrow-right-s-line, md);
       }
 
       &--last {
-        @include icon-legacy(arrow-right-s-last-line, md);
+        @include icon.icon-legacy(arrow-right-s-last-line, md);
       }
     }
   }

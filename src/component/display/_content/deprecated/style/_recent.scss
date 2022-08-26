@@ -1,5 +1,5 @@
 @import '../../../../button/_content/index';
 
-#{ns(link)}#{ns(link--icon-left)}#{ns(fi-theme-fill)} {
+#{selector.ns(link)}#{selector.ns(link--icon-left)}#{selector.ns(fi-theme-fill)} {
   @include nest-btn(md, left);
 }

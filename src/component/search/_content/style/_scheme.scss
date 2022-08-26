@@ -6,8 +6,8 @@
 @use '../../../../../sass/color/index';
 
 @mixin _search-scheme($legacy: false) {
-  #{ns(search-bar)} {
-    #{ns(input)} {
+  #{selector.ns(search-bar)} {
+    #{selector.ns(input)} {
       @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
 
       /**

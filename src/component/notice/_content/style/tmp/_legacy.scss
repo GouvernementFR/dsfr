@@ -9,22 +9,22 @@
   /**
   * reset des marges dans le bandeau
   */
-  #{ns(notice)} {
+  #{selector.ns(notice)} {
     &__title,
     p {
-      @include margin(0);
+      @include spacing.margin(0);
     }
 
     &--info {
-      #{ns(notice)}__body {
-        @include icon-legacy(info-fill, md, before, false) {
+      #{selector.ns(notice)}__body {
+        @include icon.icon-legacy(info-fill, md, before, false) {
           color: transparent;
         }
       }
     }
 
-    #{ns(btn--close)} {
-      @include icon-legacy(close-line, sm);
+    #{selector.ns(btn--close)} {
+      @include icon.icon-legacy(close-line, sm);
     }
   }
 }

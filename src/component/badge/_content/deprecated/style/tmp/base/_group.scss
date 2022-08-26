@@ -3,19 +3,25 @@
 /// @group badge
 ////
 
-#{ns-group(badge)} {
-  @include disable-list-style;
-  display: flex;
-  flex-wrap: wrap;
-  @include margin-bottom(0);
+@use '../../../../../../../../sass/selector';
+@use '../../../../../../../../sass/typography';
+@use '../../../../../../../../sass/spacing';
 
-  > li {
-    display: inline-flex;
-    @include max-width(100%);
-  }
+@mixin first() {
+  #{selector.ns-group(badge)} {
+    @include typography.disable-list-style;
+    display: flex;
+    flex-wrap: wrap;
+    @include spacing.margin-bottom(0);
 
-  #{ns(badge)} {
-    @include margin-right(2v);
-    @include margin-bottom(2v);
+    > li {
+      display: inline-flex;
+      @include spacing.max-width(100%);
+    }
+
+    #{selector.ns(badge)} {
+      @include spacing.margin-right(2v);
+      @include spacing.margin-bottom(2v);
+    }
   }
 }

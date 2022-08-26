@@ -6,17 +6,17 @@
 @use '../../../../../../../sass/spacing/index';
 
 #{ns-group(links)} {
-  @include disable-list-style;
+  @include typography.disable-list-style;
   display: inline-block;
-  @include margin(0 -2v);
+  @include spacing.margin(0 -2v);
 
   > li {
     display: inline;
     line-height: spacing.space(11v);
   }
 
-  #{ns(link)} {
-    @include margin(0 2v 4v);
+  #{selector.ns(link)} {
+    @include spacing.margin(0 2v 4v);
     vertical-align: top;
   }
 

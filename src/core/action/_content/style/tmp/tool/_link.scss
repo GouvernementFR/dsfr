@@ -54,7 +54,7 @@ $underline-thickness: 0.0625em;
 @mixin external-link() {
   @include icon-style(after);
   @include icon-size(sm, after);
-  @include icon-image(external-link-line, after);
+  @include icon.image(external-link-line, after);
   @include after(var(--external-link-content)) {
     @include margin-left(1v);
   }

@@ -3,75 +3,75 @@
 /// @group card
 ////
 
-#{ns(card)} {
+#{selector.ns(card)} {
   &__content {
     order: 1;
-    @include display-flex(column);
-    @include padding(8v);
+    @include display.flex(column);
+    @include spacing.padding(8v);
     @include nest-tag(sm);
-    @include height(100%);
+    @include spacing.height(100%);
   }
 
   &__title {
     order: 2;
-    @include title-style(h5);
-    @include font-weight(bold);
-    @include margin-bottom(0);
+    @include typography.title-style(h5);
+    @include typography.font-weight(bold);
+    @include spacing.margin-bottom(0);
 
     @include target-blank {
-      @include icon-size(md, after);
+      @include icon.size(md, after);
     }
   }
 
   &__desc {
     order: 3;
-    @include text-style(sm);
-    @include margin-top(3v);
-    @include margin-bottom(0);
+    @include typography.text-style(sm);
+    @include spacing.margin-top(3v);
+    @include spacing.margin-bottom(0);
   }
 
   &__start {
     order: 1;
-    @include margin-bottom(1v);
+    @include spacing.margin-bottom(1v);
 
-    #{ns(badges-group)},
-    #{ns(tags-group)} {
-      @include margin-bottom(1v);
+    #{selector.ns(badges-group)},
+    #{selector.ns(tags-group)} {
+      @include spacing.margin-bottom(1v);
     }
   }
 
   &__start &__detail {
-    @include margin-bottom(3v);
+    @include spacing.margin-bottom(3v);
   }
 
   &__end {
     order: 4;
-    @include display-flex(column);
-    @include margin-top(4v);
-    @include padding-top(2v);
-    @include height(100%);
+    @include display.flex(column);
+    @include spacing.margin-top(4v);
+    @include spacing.padding-top(2v);
+    @include spacing.height(100%);
   }
 
   &__detail {
-    @include text-style(xs);
-    @include display-flex(row, flex-start);
-    @include margin-bottom(0);
+    @include typography.text-style(xs);
+    @include display.flex(row, flex-start);
+    @include spacing.margin-bottom(0);
 
     @include has-icon {
-      @include icon-size(sm, before) {
-        @include margin-right(2v);
+      @include icon.size(sm, before) {
+        @include spacing.margin-right(2v);
       }
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__end {
-    @include margin-bottom(-12v); // 6v (icon) + 2v (padding end) + 4v (marge texte icon)
-    @include min-height(8v); // 6v (icon) + 2v (padding end)
-    @include padding-right(8v); // 6v (icon) + 2v (padding)
+  &#{selector.ns(enlarge-link)}:not(&--no-icon) &__end {
+    @include spacing.margin-bottom(-12v); // 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+    @include spacing.min-height(8v); // 6v (icon) + 2v (padding end)
+    @include spacing.padding-right(8v); // 6v (icon) + 2v (padding)
     justify-content: flex-end;
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
-    @include padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
+  &#{selector.ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include spacing.padding-bottom(20v); // 8v (padding card) + 6v (icon) + 2v (padding end) + 4v (marge texte icon)
   }
 }

@@ -8,37 +8,37 @@
 /*
  * Passage du label ferré à gauche, le toggle ferré à droite
  */
-#{ns(toggle--label-left)} {
-  #{ns(toggle__input)} {
+#{selector.ns(toggle--label-left)} {
+  #{selector.ns(toggle__input)} {
     order: 1;
-    @include margin(0 0 0 auto);
+    @include spacing.margin(0 0 0 auto);
 
-    &#{ns-attr(checked-label)} ~ #{ns(toggle__label)} {
-      @include padding-left(0);
-      @include padding-right(4v);
+    &#{ns-attr(checked-label)} ~ #{selector.ns(toggle__label)} {
+      @include spacing.padding-left(0);
+      @include spacing.padding-right(4v);
     }
   }
 
-  #{ns(toggle__label)} {
+  #{selector.ns(toggle__label)} {
     justify-content: space-between;
-    @include padding-left(0);
+    @include spacing.padding-left(0);
     width: calc(100% - #{space(10v)});
 
-    @include before {
+    @include selector.before {
       flex-shrink: 0;
       order: 1;
-      @include margin-right(-10v);
-      @include margin-left(4v);
+      @include spacing.margin-right(-10v);
+      @include spacing.margin-left(4v);
       text-align: right;
     }
 
-    @include after {
+    @include selector.after {
       left: auto;
       right: spacing.space(4v);
     }
   }
 
-  #{ns(hint-text)} {
+  #{selector.ns(hint-text)} {
     order: 2;
   }
 }

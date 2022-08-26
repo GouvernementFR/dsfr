@@ -3,14 +3,14 @@
 /// @group quote
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
   /**
   * Correction largeur max du texte
   */
-  #{ns(quote)} {
-    @include icon-legacy(quote-line,lg);
+  #{selector.ns(quote)} {
+    @include icon.icon-legacy(quote-line,lg);
 
     blockquote {
       max-width: 100%;

@@ -6,13 +6,13 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _quote-scheme($legacy: false) {
-  #{ns(quote)} {
-    @include before {
+  #{selector.ns(quote)} {
+    @include selector.before {
       @include color.text((artwork minor blue-france), (legacy:$legacy));
     }
 
     @include color.accentuate {
-      @include before {
+      @include selector.before {
         @include color.text((artwork minor accent), (legacy:$legacy));
       }
     }

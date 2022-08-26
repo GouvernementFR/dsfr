@@ -3,6 +3,6 @@
 /// @group button
 ////
 
-#{ns(btn--display)} {
+#{selector.ns(btn--display)} {
   @include nest-btn(md, left, theme-fill, null, false);
 }

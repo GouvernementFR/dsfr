@@ -3,24 +3,24 @@
 /// @group tile
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
   /**
   * Correctif de la largeur du texte dans la tuile
   */
-  #{ns(tile)} {
+  #{selector.ns(tile)} {
     &__body,
     &__body > * {
       max-width: 100%;
     }
 
     &__title {
-      @include margin(0 0 2v);
+      @include spacing.margin(0 0 2v);
     }
 
     &__desc {
-      @include margin(0);
+      @include spacing.margin(0);
     }
   }
 }

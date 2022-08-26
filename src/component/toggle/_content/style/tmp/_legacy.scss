@@ -3,17 +3,17 @@
 /// @group toggle
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  #{ns(toggle)} {
+  #{selector.ns(toggle)} {
     input[type="checkbox"] {
       &::-ms-check {
         display: none;
       }
 
       &:checked {
-        @include icon-legacy(check-line, md);
+        @include icon.icon-legacy(check-line, md);
       }
     }
 

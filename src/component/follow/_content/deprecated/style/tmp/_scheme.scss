@@ -4,9 +4,9 @@
 ////
 
 @mixin _follow-deprecated-scheme($legacy: false) {
-  #{ns(follow)} {
+  #{selector.ns(follow)} {
     &__social {
-      #{ns(link)} {
+      #{selector.ns(link)} {
         @include btn-kind-scheme(4, $legacy);
       }
     }

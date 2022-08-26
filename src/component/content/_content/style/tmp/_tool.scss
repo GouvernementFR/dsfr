@@ -18,7 +18,7 @@
       #{$captions} {
         width: #{100% + math.div($g, 1.5)};
 
-        @include respond-from(md) {
+        @include media-query.from(md) {
           width: #{100% + $g};
         }
       }

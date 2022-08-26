@@ -3,12 +3,12 @@
 /// @group stepper
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  #{ns(stepper)} {
-    @include title {
-      @include margin-bottom(3v);
+  #{selector.ns(stepper)} {
+    @include selector.title {
+      @include spacing.margin-bottom(3v);
     }
 
     &__steps {

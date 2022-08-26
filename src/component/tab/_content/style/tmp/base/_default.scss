@@ -5,17 +5,17 @@
 
 @include build-tab();
 
-#{ns(tabs)} {
+#{selector.ns(tabs)} {
   --tabs-height: auto;
-  @include disable-list-style;
+  @include typography.disable-list-style;
   @include disable-underline;
-  @include relative;
+  @include spacing.relative;
   overflow: hidden;
-  @include margin-x(0);
-  @include margin-top(-4px);
-  @include padding-top(4px);
-  @include display-flex(row, flex-start, null, wrap);
-  @include height(var(--tabs-height));
+  @include spacing.margin-x(0);
+  @include spacing.margin-top(-4px);
+  @include spacing.padding-top(4px);
+  @include display.flex(row, flex-start, null, wrap);
+  @include spacing.height(var(--tabs-height));
 
   /**
   * Animation de la hauteur du panel
@@ -24,44 +24,44 @@
 
   // retire le padding du container en mobile
   &--viewport-width {
-    @include margin-x(calc(50% - 50vw));
-    @include margin-x(0, md);
+    @include spacing.margin-x(calc(50% - 50vw));
+    @include spacing.margin-x(0, md);
   }
 
-  @include before('', block) {
-    @include size(100%, 100%);
-    @include margin-top(-1px);
+  @include selector.before('', block) {
+    @include spacing.size(100%, 100%);
+    @include spacing.margin-top(-1px);
     order: 2;
   }
 
   /**
    * ul : element srollable des boutons
    */
-  @include list {
-    @include display-flex(null, stretch);
+  @include selector.list {
+    @include display.flex(null, stretch);
     overflow-x: auto;
-    @include width(100%);
-    @include min-height(12v);
+    @include spacing.width(100%);
+    @include spacing.min-height(12v);
     z-index: z-index(over);
     order: 1;
 
     /**
     * overflow vertical de 4px pour le focus
     */
-    @include margin(-4px 0 -4px);
-    @include padding(4px 3v);
+    @include spacing.margin(-4px 0 -4px);
+    @include spacing.padding(4px 3v);
   }
 
   /**
   * Tab button
   */
   &__tab {
-    @include relative;
+    @include spacing.relative;
     overflow: visible;
-    font-weight: font-weight(bold);
-    @include z-index(over);
-    @include margin(0 1v);
-    @include height(100%);
+    font-weight: typography.font-weight(bold);
+    @include elevation.z-index(over);
+    @include spacing.margin(0 1v);
+    @include spacing.height(100%);
     white-space: nowrap;
     background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
@@ -78,21 +78,21 @@
   */
   &__panel {
     @include enable-underline;
-    @include enable-list-style;
+    @include typography.enable-list-style;
     display: block;
     order: 3;
-    @include relative(null, null, null, 0, 100%, auto);
-    @include padding(4v);
-    @include padding(8v, md);
+    @include spacing.relative(null, null, null, 0, 100%, auto);
+    @include spacing.padding(4v);
+    @include spacing.padding(8v, md);
     transform: translate(-100%);
-    @include margin-right(-100%);
+    @include spacing.margin-right(-100%);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
     &:focus,
     &:focus-visible {
       outline-offset: calc(-1rem + 2px);
-      @include respond-from(md) {
+      @include media-query.from(md) {
         outline-offset: calc(-2rem + 2px);
       }
     }

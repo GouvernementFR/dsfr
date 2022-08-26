@@ -3,18 +3,23 @@
 /// @group breadcrumb
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/typography';
 
-@include legacy.is(ie11) {
-  /**
-  * reset liste à puce
-  */
-  #{ns(breadcrumb)} {
-    @include disable-list-style-legacy;
+@mixin first() {
+  @include legacy.is(ie11) {
+    /**
+    * reset liste à puce
+    */
+    #{selector.ns(breadcrumb)} {
+      @include typography.disable-list-style-legacy;
 
-    &__link {
-      &:not([aria-current]) {
-        @include icon-legacy(arrow-right-s-line, sm, after);
+      &__link {
+        &:not([aria-current]) {
+          @include icon.icon-legacy(arrow-right-s-line, sm, after);
+        }
       }
     }
   }

@@ -7,11 +7,11 @@
 @use '../../../../../../../sass/disabled/index';
 
 @mixin _connect-scheme-default($legacy: false, $standalone: false) {
-  #{ns(connect)} {
+  #{selector.ns(connect)} {
     @include color.background(action-high blue-france, (legacy: $legacy, standalone: $standalone));
     @include color.text(inverted blue-france, (legacy: $legacy, standalone: $standalone));
 
-    @include after {
+    @include selector.after {
       @include color.background-image((text inverted blue-france, text inverted blue-france), (legacy: $legacy, standalone: $standalone));
     }
 
@@ -19,7 +19,7 @@
       @include color.background(disabled grey, (legacy: $legacy, standalone: $standalone));
       @include color.text(disabled grey, (legacy: $legacy, standalone: $standalone));
 
-      @include after {
+      @include selector.after {
         @include color.background-image((text disabled grey, text disabled grey), (legacy: $legacy, standalone: $standalone));
       }
     }

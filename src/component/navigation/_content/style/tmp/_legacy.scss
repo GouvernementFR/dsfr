@@ -10,9 +10,9 @@
   /**
   * reset liste à puce
   */
-  #{ns(nav)} {
+  #{selector.ns(nav)} {
     @include disable-underline-legacy;
-    @include disable-list-style-legacy;
+    @include typography.disable-list-style-legacy;
 
     &__link,
     &__btn {
@@ -20,30 +20,30 @@
     }
 
     &__btn {
-      @include icon-legacy(arrow-down-s-line, sm, after);
+      @include icon.icon-legacy(arrow-down-s-line, sm, after);
     }
   }
 
   /**
   * reset margin
   */
-  #{ns(mega-menu)} {
+  #{selector.ns(mega-menu)} {
     &__category {
       margin: 0;
     }
   }
 }
 
-@include respond-from(lg) {
+@include media-query.from(lg) {
   @include legacy.is(ie11) {
     /**
     * Correctif de l'alignement des menus sur la droite
     */
-    #{ns(nav)}__item {
+    #{selector.ns(nav)}__item {
       position: static;
 
       &--align-right {
-        #{ns(collapse)} {
+        #{selector.ns(collapse)} {
           transform: translateX(-100%);
         }
       }
@@ -52,9 +52,9 @@
     /**
     * Override du reset des marges des ul
     **/
-    #{ns(menu)} {
-      #{ns(menu__list)} {
-        @include margin-bottom(8v);
+    #{selector.ns(menu)} {
+      #{selector.ns(menu__list)} {
+        @include spacing.margin-bottom(8v);
       }
     }
   }

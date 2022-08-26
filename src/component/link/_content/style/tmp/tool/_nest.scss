@@ -11,11 +11,11 @@
   $places: map-get($links-settings, places);
 
   @if $insert {
-    $selector: ns(map-get($settings, selector));
+    $selector: selector.ns(map-get($settings, selector));
   }
 
   @include nest($selector) {
-    @include respond-from($from) {
+    @include media-query.from($from) {
       @include _build-link-size($size-settings, $border-radius);
 
       @if $icon != null {
@@ -25,9 +25,9 @@
         @if $place != null {
           @include _build-link-icon($size-settings, $place, $size);
         }
-        @include icon-style($restrain);
-        @include icon-image($icon, $restrain);
-        @include icon-content($is-before, not $is-before);
+        @include icon.style($restrain);
+        @include icon.image($icon, $restrain);
+        @include icon.content($is-before, not $is-before);
       }
       @else {
         @if $place != null {
@@ -36,7 +36,7 @@
         @else if $size != null {
           $restrain: _get-link-restrain($places, $place);
           $icon-size: _get-link-icon-size($size-settings, $places, $place);
-          @include icon-size($icon-size, $restrain);
+          @include icon.size($icon-size, $restrain);
         }
       }
 

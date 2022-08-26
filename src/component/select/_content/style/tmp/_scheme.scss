@@ -7,7 +7,7 @@
 @use '../../../../../../sass/disabled/index';
 
 @mixin _select-scheme($legacy: false) {
-  #{ns(select)} {
+  #{selector.ns(select)} {
     @include color.text(title grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);

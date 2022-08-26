@@ -6,28 +6,28 @@
 @use '../../../../../../../sass/media-query';
 @use '../../../../../../../sass/color';
 
-#{ns(header)} {
+#{selector.ns(header)} {
   &__brand {
-    @include display-flex(row, center, flex-start, wrap);
-    @include margin-y(-4v, lg);
-    @include size(100%);
-    @include padding-x(1v);
+    @include display.flex(row, center, flex-start, wrap);
+    @include spacing.margin-y(-4v, lg);
+    @include spacing.size(100%);
+    @include spacing.padding-x(1v);
 
-    @include media-query.respond-from(lg) {
+    @include media-query.from(lg) {
       flex-wrap: nowrap;
-      @include size(auto);
-      @include padding-x(0);
+      @include spacing.size(auto);
+      @include spacing.padding-x(0);
       @include elevation.drop();
     }
 
     &-top {
-      @include display-flex(row, center, flex-start);
-      @include size(100%);
-      @include size(auto, null, lg);
+      @include display.flex(row, center, flex-start);
+      @include spacing.size(100%);
+      @include spacing.size(auto, null, lg);
     }
 
-    @include hover-media-query {
-      &#{ns(enlarge-link)} {
+    @include media-query.hover {
+      &#{selector.ns(enlarge-link)} {
         a[href] {
           &:hover {
             --a: 0.1;
@@ -44,24 +44,24 @@
   &__logo,
   &__operator,
   &__service {
-    @include padding(4v, lg);
+    @include spacing.padding(4v, lg);
 
     &:not(:last-child) {
-      @include margin-right(2v, lg);
+      @include spacing.margin-right(2v, lg);
     }
   }
 
   &__logo {
     order: 1;
     flex: 0 0 auto;
-    @include padding(3v);
+    @include spacing.padding(3v);
     @include logo(sm, null) {
-      @include margin(-3v);
+      @include spacing.margin(-3v);
     }
   }
 
   &__operator {
-    @include padding(3v);
+    @include spacing.padding(3v);
     order: 2;
     flex: 0 1 auto;
 
@@ -71,22 +71,22 @@
   }
 
   &__service {
-    @include padding-y(3v);
-    @include margin-x(3v);
-    @include margin-x(0, lg);
-    @include size(100%);
+    @include spacing.padding-y(3v);
+    @include spacing.margin-x(3v);
+    @include spacing.margin-x(0, lg);
+    @include spacing.size(100%);
 
-    @include media-query.respond-from(lg) {
+    @include media-query.from(lg) {
       width: auto;
       @include color.no-box-shadow;
     }
 
     &-title {
-      @include title-style(h6, false);
+      @include typography.title-style(h6, false);
 
-      #{ns(badge)} {
+      #{selector.ns(badge)} {
         vertical-align: middle;
-        @include margin(-1v 0 0 1v);
+        @include spacing.margin(-1v 0 0 1v);
       }
     }
   }

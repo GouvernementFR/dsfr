@@ -6,6 +6,6 @@
 /*
  * On surcharge les styles de base
  */
-#{ns(toggle)}__list {
-  @include disable-list-style;
+#{selector.ns(toggle)}__list {
+  @include typography.disable-list-style;
 }

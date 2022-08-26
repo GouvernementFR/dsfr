@@ -11,7 +11,7 @@
   }
 }
 
-@mixin icon-image-legacy($icon, $restrain: null, $important: false) {
+@mixin icon.image-legacy($icon, $restrain: null, $important: false) {
   $url: get-icon-url($icon, $important);
   @include _icon-pseudo($restrain) {
     background-image: $url;
@@ -33,7 +33,7 @@
   }
 
   @if $icon != null {
-    @include icon-image-legacy($icon, $restrain);
+    @include icon.image-legacy($icon, $restrain);
   }
 
   @if $size != null {
@@ -48,7 +48,7 @@
 @mixin generate-icons-legacy($config: $icons-config) {
   @each $icon, $setting in $config {
     #{ns(icon-#{$icon})} {
-      @include icon-image-legacy($icon);
+      @include icon.image-legacy($icon);
     }
   }
 }

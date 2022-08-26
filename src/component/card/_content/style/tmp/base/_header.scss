@@ -3,21 +3,21 @@
 /// @group card
 ////
 
-#{ns(card)} {
+#{selector.ns(card)} {
   &__header {
     order: 1;
     position: relative;
     flex: 0 0 auto;
   }
 
-  &__header #{ns(badges-group)} {
+  &__header #{selector.ns(badges-group)} {
     position: absolute;
     top: 0;
     left: 0;
-    @include padding(3v);
+    @include spacing.padding(3v);
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, '#{&}__img, #{&}__vid');
+  @include hover-brighten(#{&}#{selector.ns(enlarge-link)}, '#{&}__img, #{&}__vid');
 
   &__img,
   &__vid {

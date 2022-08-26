@@ -6,10 +6,10 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _translate-scheme($legacy: false) {
-  #{ns(translate)} {
-    #{ns(translate)}__btn {
+  #{selector.ns(translate)} {
+    #{selector.ns(translate)}__btn {
       &[aria-expanded="true"] {
-        @include respond-from(lg) {
+        @include media-query.from(lg) {
           @include color.text(active blue-france, (legacy: $legacy));
           @include color.background(open blue-france, (legacy: $legacy));
           @include hover-tint;
@@ -18,7 +18,7 @@
     }
 
     &__menu {
-      #{ns(translate)}__language {
+      #{selector.ns(translate)}__language {
         @include color.no-box-shadow((legacy:$legacy));
       }
     }

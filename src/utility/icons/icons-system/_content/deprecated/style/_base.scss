@@ -5,18 +5,18 @@
 
 @include generate-deprecated-icons($deprecated-icons, filter-icons('system'));
 
-#{ns(fi-delete-line)} {
-  @include icon-image(delete-bin-line);
+#{selector.ns(fi-delete-line)} {
+  @include icon.image(delete-bin-line);
 }
 
-#{ns(fi-delete-fill)} {
-  @include icon-image(delete-bin-fill);
+#{selector.ns(fi-delete-fill)} {
+  @include icon.image(delete-bin-fill);
 }
 
-#{ns(icon-delete-line)} {
-  @include icon-image(delete-bin-line);
+#{selector.ns(icon-delete-line)} {
+  @include icon.image(delete-bin-line);
 }
 
-#{ns(icon-delete-fill)} {
-  @include icon-image(delete-bin-fill);
+#{selector.ns(icon-delete-fill)} {
+  @include icon.image(delete-bin-fill);
 }

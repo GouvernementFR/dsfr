@@ -5,34 +5,34 @@
 
 @include build-pagination();
 
-#{ns(pagination)} {
+#{selector.ns(pagination)} {
   @include disable-underline;
-  @include disable-list-style;
+  @include typography.disable-list-style;
 
-  @include list {
-    @include display-flex(row, center, flex-start, wrap);
+  @include selector.list {
+    @include display.flex(row, center, flex-start, wrap);
 
     & > *:first-child {
       &,
       & * {
-        @include margin-left(0);
+        @include spacing.margin-left(0);
       }
     }
 
     & > *:last-child {
       &,
       & * {
-        @include margin-right(0);
+        @include spacing.margin-right(0);
       }
     }
   }
 
   &__link {
-    @include min-size(8v);
-    @include margin-x(0.5v);
-    @include margin-bottom(4v);
+    @include spacing.min-size(8v);
+    @include spacing.margin-x(0.5v);
+    @include spacing.margin-bottom(4v);
     @include disable-underline;
-    @include relative;
+    @include spacing.relative;
 
     &[aria-current]:not([href]) {
       cursor: default;
@@ -42,11 +42,11 @@
     &--first {
       @include nest-pagination(only, arrow-left-s-first-line);
 
-      &#{ns(pagination__link--label)} {
+      &#{selector.ns(pagination__link--label)} {
         @include nest-pagination(left, arrow-left-s-first-line);
       }
 
-      &#{ns(pagination__link--lg-label)} {
+      &#{selector.ns(pagination__link--lg-label)} {
         @include nest-pagination(left, arrow-left-s-first-line, lg);
       }
     }
@@ -54,11 +54,11 @@
     &--prev {
       @include nest-pagination(only, arrow-left-s-line);
 
-      &#{ns(pagination__link--label)} {
+      &#{selector.ns(pagination__link--label)} {
         @include nest-pagination(left, arrow-left-s-line);
       }
 
-      &#{ns(pagination__link--lg-label)} {
+      &#{selector.ns(pagination__link--lg-label)} {
         @include nest-pagination(left, arrow-left-s-line, lg);
       }
     }
@@ -66,11 +66,11 @@
     &--next {
       @include nest-pagination(only, arrow-right-s-line);
 
-      &#{ns(pagination__link--label)} {
+      &#{selector.ns(pagination__link--label)} {
         @include nest-pagination(right, arrow-right-s-line);
       }
 
-      &#{ns(pagination__link--lg-label)} {
+      &#{selector.ns(pagination__link--lg-label)} {
         @include nest-pagination(right, arrow-right-s-line, lg);
       }
     }
@@ -78,25 +78,25 @@
     &--last {
       @include nest-pagination(only, arrow-right-s-last-line);
 
-      &#{ns(pagination__link--label)} {
+      &#{selector.ns(pagination__link--label)} {
         @include nest-pagination(right, arrow-right-s-last-line);
       }
 
-      &#{ns(pagination__link--lg-label)} {
+      &#{selector.ns(pagination__link--lg-label)} {
         @include nest-pagination(right, arrow-right-s-last-line, lg);
       }
     }
 
     &--first,
     &--prev {
-      @include margin-right(3.5v);
-      @include margin-left(-2.5v);
+      @include spacing.margin-right(3.5v);
+      @include spacing.margin-left(-2.5v);
     }
 
     &--next,
     &--last {
-      @include margin-right(-2.5v);
-      @include margin-left(3.5v);
+      @include spacing.margin-right(-2.5v);
+      @include spacing.margin-left(3.5v);
     }
   }
 }

@@ -7,22 +7,22 @@
  * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
  * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
  */
-#{ns(footer)} {
+#{selector.ns(footer)} {
   &__top {
-    @include display-flex(null);
-    @include margin(-10v 0 4v);
-    @include margin(-10v 0 10v, md);
-    @include padding(8v 0 4v);
+    @include display.flex(null);
+    @include spacing.margin(-10v 0 4v);
+    @include spacing.margin(-10v 0 10v, md);
+    @include spacing.padding(8v 0 4v);
   }
 
   /**
   * Catégorie (optionnel)
   */
   &__top-cat {
-    @include margin(0 0 3v);
-    @include text-style(xs);
+    @include spacing.margin(0 0 3v);
+    @include typography.text-style(xs);
     display: block;
-    font-weight: font-weight(bold);
+    font-weight: typography.font-weight(bold);
     text-align: left;
   }
 
@@ -30,10 +30,10 @@
   * Style de la liste
   */
   &__top-list {
-    @include margin(0);
+    @include spacing.margin(0);
 
     li {
-      @include margin-bottom(3v);
+      @include spacing.margin-bottom(3v);
     }
   }
 
@@ -41,7 +41,7 @@
   * Style du lien
   */
   &__top-link {
-    @include text-style(xs);
+    @include typography.text-style(xs);
 
     &:not(:hover):not(:active) {
       @include link-underline-hover-only;

@@ -3,14 +3,14 @@
 /// @group card
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  #{ns(card)} {
-    @include icon-legacy(arrow-right-line, md, before);
+  #{selector.ns(card)} {
+    @include icon.icon-legacy(arrow-right-line, md, before);
 
     &--no-icon {
-      @include before(none);
+      @include selector.before(none);
     }
 
     &__title,
@@ -20,12 +20,12 @@
 
     &__title {
       @include target-blank {
-        @include icon-size-legacy(lg, after);
+        @include icon.size-legacy(lg, after);
       }
     }
 
     &__detail {
-      @include icon-size-legacy(sm, before);
+      @include icon.size-legacy(sm, before);
     }
 
     &--horizontal &__body {

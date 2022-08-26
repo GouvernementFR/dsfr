@@ -9,9 +9,9 @@
 #{ns-group(radio)}--sm {
   input[type="radio"] {
     & + label {
-      @include before {
-        @include size(4v, 4v);
-        @include margin-top(4v);
+      @include selector.before {
+        @include spacing.size(4v, 4v);
+        @include spacing.margin-top(4v);
       }
     }
   }

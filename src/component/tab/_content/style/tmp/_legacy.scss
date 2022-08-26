@@ -9,11 +9,11 @@
   /**
   * Reset liste à puce
   */
-  #{ns(tabs)} {
-    @include disable-list-style-legacy;
+  #{selector.ns(tabs)} {
+    @include typography.disable-list-style-legacy;
 
     &__panel {
-      @include enable-list-style-legacy;
+      @include typography.enable-list-style-legacy;
       @include enable-underline-legacy;
     }
   }

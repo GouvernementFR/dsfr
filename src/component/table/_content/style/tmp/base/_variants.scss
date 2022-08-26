@@ -6,37 +6,37 @@
 /*
 * Cache la caption
 */
-#{ns(table--no-caption)} {
-  @include padding-top(0);
+#{selector.ns(table--no-caption)} {
+  @include spacing.padding-top(0);
 
   caption {
     @include sr-only();
-    @include height(0);
+    @include spacing.height(0);
   }
 }
 
 /*
 * Fixe le caption en bas du tableau
 */
-#{ns(table--caption-bottom)} {
-  @include padding-top(0);
-  @include margin-bottom(0);
-  @include margin-top(4v);
+#{selector.ns(table--caption-bottom)} {
+  @include spacing.padding-top(0);
+  @include spacing.margin-bottom(0);
+  @include spacing.margin-top(4v);
 
   table {
-    @include margin-bottom(calc(var(--table-offset) + 11v));
+    @include spacing.margin-bottom(calc(var(--table-offset) + 11v));
   }
 
   &#{ns-attr(js-table, true)} {
     caption {
-      @include absolute(100%, 0, 0, 0);
-      @include margin-top(4v);
+      @include spacing.absolute(100%, 0, 0, 0);
+      @include spacing.margin-top(4v);
     }
   }
 
   caption {
-    @include margin-top(4v);
-    @include height(min-content);
+    @include spacing.margin-top(4v);
+    @include spacing.height(min-content);
     caption-side: bottom;
   }
 }
@@ -44,22 +44,22 @@
 /*
 * pas de scroll ni de shadow
 */
-#{ns(table--no-scroll)} {
-  @include min-width(auto);
+#{selector.ns(table--no-scroll)} {
+  @include spacing.min-width(auto);
 
   table {
     overflow-x: hidden;
   }
 
   caption {
-    @include max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
+    @include spacing.max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
   }
 }
 
 /*
 * Fixe la taille des colonnes du tableau
 */
-#{ns(table--layout-fixed)} {
+#{selector.ns(table--layout-fixed)} {
   table {
     display: table;
     table-layout: fixed;
@@ -67,7 +67,7 @@
 }
 
 /* Style bordered, ajoute des bordures entre chaque ligne */
-#{ns(table--bordered)} {
+#{selector.ns(table--bordered)} {
   tbody {
     tr {
       background-size: 100% 1px;

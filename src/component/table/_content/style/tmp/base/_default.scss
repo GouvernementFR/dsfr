@@ -3,27 +3,27 @@
 /// @group Table
 ////
 
-#{ns(table)} {
+#{selector.ns(table)} {
   --table-offset: #{space(4v)};
-  @include set-text-margin(0);
-  @include set-title-margin(0);
+  @include typography.set-text-margin(0);
+  @include typography.set-title-margin(0);
 
-  @include relative;
-  @include margin-bottom(10v);
-  @include padding-top(var(--table-offset));
+  @include spacing.relative;
+  @include spacing.margin-bottom(10v);
+  @include spacing.padding-top(var(--table-offset));
 
-  @include before('', block) {
-    @include size(100%, 0);
+  @include selector.before('', block) {
+    @include spacing.size(100%, 0);
   }
 
-  &:not(#{ns(table--no-scroll)}) {
+  &:not(#{selector.ns(table--no-scroll)}) {
     table {
       width: 100%;
     }
   }
 
   table {
-    @include size(100%);
+    @include spacing.size(100%);
     display: block;
     overflow: auto;
     border-spacing: 0;
@@ -31,14 +31,14 @@
 
   &#{ns-attr(js-table, true)} {
     caption {
-      @include absolute(0);
+      @include spacing.absolute(0);
     }
   }
 
   caption {
     position: initial;
-    @include title-style(h4, true);
-    @include font-weight(bold);
+    @include typography.title-style(h4, true);
+    @include typography.font-weight(bold);
     text-align: left;
   }
 
@@ -48,13 +48,13 @@
     vertical-align: middle;
     display: table-cell;
     border: 0;
-    @include padding(3v);
-    @include padding(4v, md);
-    @include text-style(sm);
+    @include spacing.padding(3v);
+    @include spacing.padding(4v, md);
+    @include typography.text-style(sm);
   }
 
   th {
-    font-weight: font-weight(bold);
+    font-weight: typography.font-weight(bold);
   }
 
   thead {
@@ -64,9 +64,9 @@
 
     td,
     th {
-      font-weight: font-weight(bold);
-      @include padding-bottom(3.5v); // 0.5v for the box shadow
-      @include padding-bottom(4.5v, md);
+      font-weight: typography.font-weight(bold);
+      @include spacing.padding-bottom(3.5v); // 0.5v for the box shadow
+      @include spacing.padding-bottom(4.5v, md);
     }
   }
 }

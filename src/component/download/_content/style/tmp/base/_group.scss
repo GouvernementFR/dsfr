@@ -5,25 +5,25 @@
 
 #{ns-group(downloads)} {
   &__title {
-    @include title-style(h4);
-    @include margin(var(--title-spacing));
+    @include typography.title-style(h4);
+    @include spacing.margin(var(--title-spacing));
   }
 
   &--bordered {
-    @include padding(6v 6v 2v);
-    @include padding(8v 8v 2v, md);
+    @include spacing.padding(6v 6v 2v);
+    @include spacing.padding(8v 8v 2v, md);
   }
 
   & > ul {
-    @include margin-y(0);
+    @include spacing.margin-y(0);
 
     & > li {
-      @include padding-bottom(0);
+      @include spacing.padding-bottom(0);
     }
   }
 
-  #{ns(download)} {
-    @include margin-bottom(4v);
-    @include margin-bottom(6v, md);
+  #{selector.ns(download)} {
+    @include spacing.margin-bottom(4v);
+    @include spacing.margin-bottom(6v, md);
   }
 }

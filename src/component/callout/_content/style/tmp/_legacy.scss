@@ -3,19 +3,19 @@
 /// @group callout
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
   /**
   * Marge des titres et textes
   */
-  #{ns(callout)} {
+  #{selector.ns(callout)} {
     &__title {
-      @include margin(0 0 2v);
+      @include spacing.margin(0 0 2v);
     }
 
     &__text {
-      @include margin(0);
+      @include spacing.margin(0);
     }
   }
 }

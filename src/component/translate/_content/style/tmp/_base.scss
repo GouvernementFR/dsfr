@@ -3,36 +3,36 @@
 /// @group header
 ////
 
-#{ns(translate)} {
+#{selector.ns(translate)} {
   --rows: 8;
   position: relative;
 
-  #{ns(translate__btn)} {
+  #{selector.ns(translate__btn)} {
     @include nest-btn(md, left, translate-2, null, false);
-    @include font-weight(medium);
-    @include min-height(12v);
-    @include min-height(auto, lg);
-    @include width(100%);
-    @include width(auto, lg);
-    @include margin-bottom(4v, lg);
+    @include typography.font-weight(medium);
+    @include spacing.min-height(12v);
+    @include spacing.min-height(auto, lg);
+    @include spacing.width(100%);
+    @include spacing.width(auto, lg);
+    @include spacing.margin-bottom(4v, lg);
 
-    @include icon(arrow-down-s-fill, sm, after) {
-      @include margin-left(auto);
-      @include margin-left(1v, lg);
-      @include margin-right(-1v, lg);
+    @include icon.icon(arrow-down-s-fill, sm, after) {
+      @include spacing.margin-left(auto);
+      @include spacing.margin-left(1v, lg);
+      @include spacing.margin-right(-1v, lg);
       transition: transform 0.3s;
     }
 
     &[aria-expanded=true] {
-      @include after {
+      @include selector.after {
         transform: rotate(-180deg);
       }
     }
 
-    @include respond-from(lg) {
-      @include text-style(sm);
-      @include icon-size(sm, before);
-      @include padding(1v 3v);
+    @include media-query.from(lg) {
+      @include typography.text-style(sm);
+      @include icon.size(sm, before);
+      @include spacing.padding(1v 3v);
     }
   }
 
@@ -42,32 +42,32 @@
 
     &[aria-current] {
       display: none;
-      @include respond-from(lg) {
+      @include media-query.from(lg) {
         display: inline-flex;
       }
     }
   }
 
   &__menu {
-    @include margin(0);
-    @include margin(-1v -4v 0, lg);
-    @include respond-from(lg) {
+    @include spacing.margin(0);
+    @include spacing.margin(-1v -4v 0, lg);
+    @include media-query.from(lg) {
       @include top(calc(100% - 4v));
     }
   }
 
-  #{ns(nav)} {
+  #{selector.ns(nav)} {
     &__item {
-      @include before(none);
+      @include selector.before(none);
     }
   }
 
-  #{ns(menu)} {
+  #{selector.ns(menu)} {
     &__list {
-      @include width(auto);
-      @include padding(0);
+      @include spacing.width(auto);
+      @include spacing.padding(0);
 
-      @include respond-from(lg) {
+      @include media-query.from(lg) {
         display: grid;
         grid-template-rows: repeat(var(--rows), auto); // 8 items max per col
         grid-auto-flow: column;
@@ -77,9 +77,9 @@
 }
 
 #{ns-group(btns)} {
-  #{ns(translate)} {
+  #{selector.ns(translate)} {
     &__menu {
-      @include margin(-5v -3v 0, lg);
+      @include spacing.margin(-5v -3v 0, lg);
     }
   }
 }

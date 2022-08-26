@@ -5,22 +5,22 @@
 
 #{ns-group(upload)} {
 
-  #{ns(label)} {
-    #{ns(hint-text)} {
-      @include margin-top(3v);
+  #{selector.ns(label)} {
+    #{selector.ns(hint-text)} {
+      @include spacing.margin-top(3v);
     }
 
-    + #{ns(upload)} {
-      @include margin-top(4v);
+    + #{selector.ns(upload)} {
+      @include spacing.margin-top(4v);
     }
   }
 }
 
-#{ns(upload)} {
-  @include text-style(sm);
-  @include width(100%);
+#{selector.ns(upload)} {
+  @include typography.text-style(sm);
+  @include spacing.width(100%);
   display: inline-flex;
-  @include margin(0);
+  @include spacing.margin(0);
 
   &:disabled {
     &::-webkit-file-upload-button {
@@ -33,6 +33,6 @@
     -webkit-appearance: button;
     font: inherit;
     cursor: pointer;
-    @include margin-right(2v);
+    @include spacing.margin-right(2v);
   }
 }

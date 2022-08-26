@@ -7,7 +7,7 @@
 @use '../../../../../../sass/disabled/index';
 
 @mixin _pagination-scheme($legacy: false) {
-  #{ns(pagination)} {
+  #{selector.ns(pagination)} {
     @include color.text(action-high grey, (legacy: $legacy));
 
     &__link {

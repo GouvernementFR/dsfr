@@ -9,15 +9,15 @@
  * L'input de type checkbox avec son label est contenu dans un groupe
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
-#{ns(checkbox-group)} {
-  @include relative;
+#{selector.ns(checkbox-group)} {
+  @include spacing.relative;
 
   /**
    * On cache l'input de type checkbox pour le styler via le label
    */
   input[type="checkbox"] {
-    @include absolute;
-    @include margin(0);
+    @include spacing.absolute;
+    @include spacing.margin(0);
     opacity: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -26,28 +26,28 @@
      * On applique un display grid sur le label afin de gérer le positionnement des élements
      */
     + label {
-      @include relative;
-      @include padding(3v 0);
+      @include spacing.relative;
+      @include spacing.padding(3v 0);
       -webkit-tap-highlight-color: transparent;
-      @include display-flex(row, center, flex-start, wrap);
-      @include margin-left(8v);
+      @include display.flex(row, center, flex-start, wrap);
+      @include spacing.margin-left(8v);
 
       /**
       * Style du texte d'aide dans le label
       */
-      #{ns(hint-text)} {
-        @include margin(0);
-        @include size(100%);
+      #{selector.ns(hint-text)} {
+        @include spacing.margin(0);
+        @include spacing.size(100%);
       }
 
       /**
       * On ajoute l'icône check-line en taille sm via un pseudo element before
       */
-      @include before('', block) {
-        @include absolute(0, null, null, -8v);
-        @include margin-top(3v);
-        @include size(6v, 6v);
-        @include margin-right(2v);
+      @include selector.before('', block) {
+        @include spacing.absolute(0, null, null, -8v);
+        @include spacing.margin-top(3v);
+        @include spacing.size(6v, 6v);
+        @include spacing.margin-right(2v);
         background-size: spacing.space(4v);
         background-position: center;
         background-repeat: no-repeat;
@@ -61,22 +61,22 @@
    * Dans le cas d'un fieldset, on supprime l'espacement du premier groupe
    */
   &:first-child {
-    @include margin-top(-3v);
+    @include spacing.margin-top(-3v);
   }
 
   /**
    * Dans le cas d'un fieldset, on supprime l'espacement du dernier groupe
    */
   &:last-child {
-    @include margin-bottom(-3v);
+    @include spacing.margin-bottom(-3v);
   }
 
   /**
    * Texte de validation et d'erreur
    */
-  #{ns(error-text)},
-  #{ns(valid-text)} {
-    @include margin-top(1v);
+  #{selector.ns(error-text)},
+  #{selector.ns(valid-text)} {
+    @include spacing.margin-top(1v);
   }
 
   /**
@@ -85,9 +85,9 @@
   &--sm {
     input[type="checkbox"] {
       + label {
-        @include before {
-          @include size(4v, 4v);
-          @include margin-top(4v);
+        @include selector.before {
+          @include spacing.size(4v, 4v);
+          @include spacing.margin-top(4v);
           left: #{space(-7v)};
         }
       }
@@ -98,8 +98,8 @@
    * Modificateur pour gérer l'état erreur
    */
   &--error {
-    @include before('') {
-      @include absolute(3v, null, null, -2v, 2px, 6v);
+    @include selector.before('') {
+      @include spacing.absolute(3v, null, null, -2v, 2px, 6v);
     }
   }
 
@@ -107,8 +107,8 @@
    * Modificateur pour gérer l'état validé
    */
   &--valid {
-    @include before('') {
-      @include absolute(3v, null, null, -2v, 2px, 6v);
+    @include selector.before('') {
+      @include spacing.absolute(3v, null, null, -2v, 2px, 6v);
     }
   }
 }

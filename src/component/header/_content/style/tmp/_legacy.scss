@@ -3,29 +3,29 @@
 /// @group header
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  #{ns(header)} {
-    @include disable-list-style-legacy;
+  #{selector.ns(header)} {
+    @include typography.disable-list-style-legacy;
     @include disable-underline-legacy;
 
     #{ns-group(btns)} {
       &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
-        @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
-          #{ns(btn)} {
+        @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+          #{selector.ns(btn)} {
             @include has-not-icon {
-              &:not(#{ns(btn--display)}) {
-                @include icon-legacy(null, sm, before, false);
+              &:not(#{selector.ns(btn--display)}) {
+                @include icon.icon-legacy(null, sm, before, false);
               }
             }
 
             @include has-icon {
-              @include icon-legacy(null, sm, before, false);
+              @include icon.icon-legacy(null, sm, before, false);
             }
 
-            &#{ns(btn--display)} {
-              @include icon-legacy(null, sm, before, false);
+            &#{selector.ns(btn--display)} {
+              @include icon.icon-legacy(null, sm, before, false);
             }
           }
         }
@@ -33,13 +33,13 @@
     }
 
     &__tools-links {
-      #{ns(link)} {
+      #{selector.ns(link)} {
         overflow: visible;
       }
     }
 
-    #{ns(modal)} {
-      @include respond-from(lg) {
+    #{selector.ns(modal)} {
+      @include media-query.from(lg) {
         position: static;
         overflow: visible;
       }

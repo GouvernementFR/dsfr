@@ -4,7 +4,7 @@
 ////
 
 @mixin build-share-link($name, $icon) {
-  #{ns(share__link)}--#{$name} {
+  #{selector.ns(share__link)}--#{$name} {
     @include nest-btn(md, only, $icon, null, false);
   }
 }

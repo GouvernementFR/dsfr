@@ -4,5 +4,5 @@
 ////
 
 @include build-btn() {
-  @include font-weight(medium);
+  @include typography.font-weight(medium);
 }

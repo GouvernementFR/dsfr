@@ -7,7 +7,7 @@
 @use '../../../../../../sass/disabled/index';
 
 @mixin _tag-scheme($legacy: false) {
-  #{ns(tag)} {
+  #{selector.ns(tag)} {
     @include color.text(label grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
 
@@ -16,14 +16,14 @@
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
     }
 
-    &#{ns(tag)}--dismiss {
+    &#{selector.ns(tag)}--dismiss {
       @include color.text(inverted grey, (legacy: $legacy));
       @include color.background(action-high blue-france, (legacy: $legacy, hover: true));
     }
   }
 
   @include clickable-selector {
-    &#{ns(tag)} {
+    &#{selector.ns(tag)} {
       @include color.text(action-high blue-france, (legacy: $legacy));
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
 
@@ -41,11 +41,11 @@
           background-image: none;
         }
 
-        @include after {
+        @include selector.after {
           @include color.text(action-high blue-france, (legacy: $legacy));
         }
 
-        &#{ns(tag)}--sm {
+        &#{selector.ns(tag)}--sm {
           @include tag-punched-background(background action-high blue-france, sm, $legacy);
         }
       }
@@ -57,7 +57,7 @@
   #{ns-group(tags)} {
     &#{ns-group(tags)}--sm {
       @include clickable-selector {
-        &#{ns(tag)} {
+        &#{selector.ns(tag)} {
           @include pressed-selector(true) {
             @include tag-punched-background(background action-high blue-france, sm, $legacy);
           }

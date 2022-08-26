@@ -4,7 +4,7 @@
 ////
 
 @mixin _link-close-deprecated-scheme ($legacy) {
-  #{ns(link--close)} {
+  #{selector.ns(link--close)} {
     @include btn-kind-scheme(4, $legacy);
   }
 }

@@ -7,12 +7,12 @@
 @use '../../../../../../sass/elevation/index';
 
 @mixin _modal-scheme($legacy: false) {
-  #{ns(modal)} {
-    @include body {
+  #{selector.ns(modal)} {
+    @include selector.body {
       @include elevation.elevate(lifted, (legacy: $legacy));
 
-      &#{ns(scroll-shadow)} {
-        #{ns(modal)}__footer {
+      &#{selector.ns(scroll-shadow)} {
+        #{selector.ns(modal)}__footer {
           // @include color.background(elevated grey, (legacy:$legacy));
         }
       }

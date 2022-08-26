@@ -3,9 +3,9 @@
 /// @group header
 ////
 
-#{ns(header)} {
-  #{ns(nav)} {
-    @include respond-from(lg) {
+#{selector.ns(header)} {
+  #{selector.ns(nav)} {
+    @include media-query.from(lg) {
       justify-content: flex-start;
 
       &__list {
