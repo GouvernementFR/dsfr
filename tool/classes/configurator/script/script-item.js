@@ -12,7 +12,8 @@ class ScriptItem {
     this._data = {
       src: `src${part.path}/${support.filename}${kind.src}.js`,
       dest: `dist${part.path}/${part.filename}.${support.filename}${kind.dest}.js`,
-      support: support.id
+      support: support.id,
+      format: support.format
     };
   }
 

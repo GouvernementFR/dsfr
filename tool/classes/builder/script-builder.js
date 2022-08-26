@@ -2,9 +2,6 @@ const log = require('../../utilities/log');
 const { createFile } = require('../../utilities/file');
 const rollup = require('rollup');
 const fs = require('fs');
-const virtual = require('@rollup/plugin-virtual');
-const banner2 = require('rollup-plugin-banner2');
-const { getBanner } = require('../../generate/banner');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 const buble = require('@rollup/plugin-buble');
 const { terser } = require('rollup-plugin-terser');
@@ -15,12 +12,23 @@ class ScriptBuilder {
   }
 
   async build (settings) {
+    log.info('script');
     for (const item of this.config.items) {
       await this.compile(item, settings.minify, settings.sourcemap);
     }
   }
 
   async compile (item, minify, map) {
+    await this.process(item, false, map);
+
+    if (minify) {
+      await this.process(item, true, map);
+    }
+  }
+
+  async process (item, minify, map) {
+    let result;
+
     const inputOptions = {
       input: item.src,
       plugins: []
@@ -51,10 +59,6 @@ class ScriptBuilder {
     }
 
     if (minify) inputOptions.plugins.push(terser());
-  }
-
-  async process (item, inputOptions, outputOptions) {
-    let result;
 
     try {
       const bundle = await rollup.rollup(inputOptions);

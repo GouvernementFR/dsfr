@@ -1,5 +1,5 @@
 import state from '../state.js';
-import config from '../../../../../config.js';
+import config from '../../../../config.js';
 
 class LogLevel {
   constructor (level, light, dark, logger) {

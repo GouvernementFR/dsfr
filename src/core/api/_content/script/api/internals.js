@@ -1,11 +1,11 @@
 import state from './state.js';
 import engine from './engine.js';
 import options from './options/options.js';
-import dom from './utilities/dom';
+import dom from './utilities/dom/index.js';
 import ns from './utilities/namespace.js';
-import support from './utilities/support';
-import motion from './utilities/motion';
-import property from './utilities/property';
+import support from './utilities/support/index.js';
+import motion from './utilities/motion/index.js';
+import property from './utilities/property/index.js';
 
 const internals = {};
 const legacy = {};

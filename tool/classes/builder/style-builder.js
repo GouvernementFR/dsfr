@@ -14,6 +14,7 @@ class StyleBuilder {
   }
 
   async build (settings) {
+    log.info('style');
     for (const item of this.config.items) {
       await this.compile(item, settings.minify, settings.sourcemap);
     }
