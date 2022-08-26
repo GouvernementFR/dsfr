@@ -3,10 +3,11 @@
 /// @group toggle
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/disabled/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
 
-@mixin _toggle-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(toggle)} {
     label {
       @include selector.before {
