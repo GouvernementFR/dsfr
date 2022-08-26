@@ -3,83 +3,92 @@
 /// @group header
 ////
 
-#{selector.ns(translate)} {
-  --rows: 8;
-  position: relative;
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/media-query';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import '../../button/_content/style/tmp/tool';
 
-  #{selector.ns(translate__btn)} {
-    @include nest-btn(md, left, translate-2, null, false);
-    @include typography.font-weight(medium);
-    @include spacing.min-height(12v);
-    @include spacing.min-height(auto, lg);
-    @include spacing.width(100%);
-    @include spacing.width(auto, lg);
-    @include spacing.margin-bottom(4v, lg);
-
-    @include icon.icon(arrow-down-s-fill, sm, after) {
-      @include spacing.margin-left(auto);
-      @include spacing.margin-left(1v, lg);
-      @include spacing.margin-right(-1v, lg);
-      transition: transform 0.3s;
-    }
-
-    &[aria-expanded=true] {
-      @include selector.after {
-        transform: rotate(-180deg);
-      }
-    }
-
-    @include media-query.from(lg) {
-      @include typography.text-style(sm);
-      @include icon.size(sm, before);
-      @include spacing.padding(1v 3v);
-    }
-  }
-
-  // Cache le langage courant en mobile
-  &__language {
-    white-space: nowrap;
-
-    &[aria-current] {
-      display: none;
-      @include media-query.from(lg) {
-        display: inline-flex;
-      }
-    }
-  }
-
-  &__menu {
-    @include spacing.margin(0);
-    @include spacing.margin(-1v -4v 0, lg);
-    @include media-query.from(lg) {
-      @include top(calc(100% - 4v));
-    }
-  }
-
-  #{selector.ns(nav)} {
-    &__item {
-      @include selector.before(none);
-    }
-  }
-
-  #{selector.ns(menu)} {
-    &__list {
-      @include spacing.width(auto);
-      @include spacing.padding(0);
-
-      @include media-query.from(lg) {
-        display: grid;
-        grid-template-rows: repeat(var(--rows), auto); // 8 items max per col
-        grid-auto-flow: column;
-      }
-    }
-  }
-}
-
-#{ns-group(btns)} {
+@mixin first() {
   #{selector.ns(translate)} {
+    --rows: 8;
+    position: relative;
+
+    #{selector.ns(translate__btn)} {
+      @include nest-btn(md, left, translate-2, null, false);
+      @include typography.font-weight(medium);
+      @include spacing.min-height(12v);
+      @include spacing.min-height(auto, lg);
+      @include spacing.width(100%);
+      @include spacing.width(auto, lg);
+      @include spacing.margin-bottom(4v, lg);
+
+      @include icon.icon(arrow-down-s-fill, sm, after) {
+        @include spacing.margin-left(auto);
+        @include spacing.margin-left(1v, lg);
+        @include spacing.margin-right(-1v, lg);
+        transition: transform 0.3s;
+      }
+
+      &[aria-expanded='true'] {
+        @include selector.after {
+          transform: rotate(-180deg);
+        }
+      }
+
+      @include media-query.from(lg) {
+        @include typography.text-style(sm);
+        @include icon.size(sm, before);
+        @include spacing.padding(1v 3v);
+      }
+    }
+
+    // Cache le langage courant en mobile
+    &__language {
+      white-space: nowrap;
+
+      &[aria-current] {
+        display: none;
+        @include media-query.from(lg) {
+          display: inline-flex;
+        }
+      }
+    }
+
     &__menu {
-      @include spacing.margin(-5v -3v 0, lg);
+      @include spacing.margin(0);
+      @include spacing.margin(-1v -4v 0, lg);
+      @include media-query.from(lg) {
+        @include top(calc(100% - 4v));
+      }
+    }
+
+    #{selector.ns(nav)} {
+      &__item {
+        @include selector.before(none);
+      }
+    }
+
+    #{selector.ns(menu)} {
+      &__list {
+        @include spacing.width(auto);
+        @include spacing.padding(0);
+
+        @include media-query.from(lg) {
+          display: grid;
+          grid-template-rows: repeat(var(--rows), auto); // 8 items max per col
+          grid-auto-flow: column;
+        }
+      }
+    }
+  }
+
+  #{ns-group(btns)} {
+    #{selector.ns(translate)} {
+      &__menu {
+        @include spacing.margin(-5v -3v 0, lg);
+      }
     }
   }
 }

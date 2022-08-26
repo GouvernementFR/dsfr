@@ -2,37 +2,43 @@
 /// Upload Module
 /// @group upload
 ////
+///
 
-#{ns-group(upload)} {
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
 
-  #{selector.ns(label)} {
-    #{selector.ns(hint-text)} {
-      @include spacing.margin-top(3v);
-    }
+@mixin first() {
+  #{ns-group(upload)} {
+    #{selector.ns(label)} {
+      #{selector.ns(hint-text)} {
+        @include spacing.margin-top(3v);
+      }
 
-    + #{selector.ns(upload)} {
-      @include spacing.margin-top(4v);
+      + #{selector.ns(upload)} {
+        @include spacing.margin-top(4v);
+      }
     }
   }
-}
 
-#{selector.ns(upload)} {
-  @include typography.text-style(sm);
-  @include spacing.width(100%);
-  display: inline-flex;
-  @include spacing.margin(0);
+  #{selector.ns(upload)} {
+    @include typography.text-style(sm);
+    @include spacing.width(100%);
+    display: inline-flex;
+    @include spacing.margin(0);
 
-  &:disabled {
+    &:disabled {
+      &::-webkit-file-upload-button {
+        outline-style: none;
+        cursor: not-allowed;
+      }
+    }
+
     &::-webkit-file-upload-button {
-      outline-style: none;
-      cursor: not-allowed;
+      -webkit-appearance: button;
+      font: inherit;
+      cursor: pointer;
+      @include spacing.margin-right(2v);
     }
-  }
-
-  &::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    font: inherit;
-    cursor: pointer;
-    @include spacing.margin-right(2v);
   }
 }

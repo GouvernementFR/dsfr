@@ -4,8 +4,10 @@
 ////
 
 @use '../../../../../../sass/color/index';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/color';
 
-@mixin _translate-scheme($legacy: false) {
+@mixin first ($legacy: false) {
   #{selector.ns(translate)} {
     #{selector.ns(translate)}__btn {
       &[aria-expanded="true"] {
