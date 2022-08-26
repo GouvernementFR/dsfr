@@ -3,9 +3,11 @@
 /// @group toggle
 ////
 
-/*
- * On surcharge les styles de base
- */
-#{ns(toggle)}__list {
-  @include disable-list-style;
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(toggle)}__list {
+    @include typography.disable-list-style;
+  }
 }

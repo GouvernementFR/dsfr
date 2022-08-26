@@ -7,10 +7,10 @@
 @use '../../../../../../sass/disabled/index';
 
 @mixin _tab-scheme($legacy: false) {
-  #{ns(tabs)} {
+  #{selector.ns(tabs)} {
     @include color.box-shadow(default grey, (legacy: $legacy), bottom-1-in);
 
-    @include before {
+    @include selector.before {
       @include color.box-shadow(default grey, (legacy: $legacy), top-1-in left-1-in right-1-in);
     }
 

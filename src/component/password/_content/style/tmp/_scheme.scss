@@ -6,13 +6,13 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _password-scheme($legacy: false) {
-  #{ns(password)} {
+  #{selector.ns(password)} {
     &__btn {
       @include btn-kind-scheme(4, $legacy);
     }
 
     #{ns-attr(capslock)} {
-      @include before {
+      @include selector.before {
         @include color.data-uri-svg(default grey, (legacy: $legacy), $capslock-svg);
       }
     }

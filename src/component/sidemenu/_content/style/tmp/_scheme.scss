@@ -8,7 +8,7 @@
 @use '../../../../../../sass/media-query/index';
 
 @mixin _sidemenu-scheme($legacy: false) {
-  #{ns(sidemenu)} {
+  #{selector.ns(sidemenu)} {
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
     @include media-query.from(md) {
       @include color.no-box-shadow((legacy: $legacy));
@@ -16,30 +16,30 @@
 
     /*
     @include elevation.elevate(raised, (legacy:$legacy));
-    @include respond-from(md) {
+    @include media-query.from(md) {
       @include elevation.drop((legacy:$legacy));
     }
      */
 
-    @include title {
+    @include selector.title {
       @include color.text(title grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
       @include color.no-box-shadow((breakpoint: md, legacy: $legacy));
     }
 
-    @include list-item {
-      @include before {
+    @include selector.list-item {
+      @include selector.before {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
       }
 
       &:first-child {
-        @include before {
+        @include selector.before {
           @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
         }
       }
 
       &:last-child {
-        @include before {
+        @include selector.before {
           @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
         }
       }
@@ -53,13 +53,13 @@
 
     @include media-query.from(md) {
       &--right {
-        #{ns(sidemenu__inner)} {
+        #{selector.ns(sidemenu__inner)} {
           @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
         }
       }
 
       &--full-border {
-        #{ns(sidemenu__inner)} {
+        #{selector.ns(sidemenu__inner)} {
           @include color.box-shadow(default grey, (legacy:$legacy));
         }
       }
@@ -71,7 +71,7 @@
 
       &[aria-current] {
         @include color.text(active blue-france, (legacy:$legacy));
-        @include before {
+        @include selector.before {
           @include color.background(border active blue-france, (legacy:$legacy));
         }
       }

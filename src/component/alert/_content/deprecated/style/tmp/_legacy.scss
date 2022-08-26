@@ -3,15 +3,14 @@
 /// @group alert
 ////
 
-@use '../../../../../../../sass/legacy/index';
+@use '../../../../../../../sass/legacy';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/icon';
 
 @include legacy.is(ie11) {
-  /**
-  * reset des marges dans l'alerte
-  */
-  #{ns(alert)} {
-    #{ns(link--close)} {
-      @include icon-legacy(close-line, sm);
+  #{selector.ns(alert)} {
+    #{selector.ns(link--close)} {
+      @include icon.icon-legacy(close-line, sm);
     }
   }
 }

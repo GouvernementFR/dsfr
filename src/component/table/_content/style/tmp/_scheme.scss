@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _table-scheme($legacy: false) {
-  #{ns(table)} {
+  #{selector.ns(table)} {
     caption {
       @include color.text(title grey, (legacy: $legacy));
     }
@@ -41,7 +41,7 @@
       }
 
       /* Style bordered, ajoute des bordures entre chaque ligne */
-      &#{ns(table--bordered)} {
+      &#{selector.ns(table--bordered)} {
         tbody {
           tr {
             @include color.background-image(border default accent, (legacy: $legacy));

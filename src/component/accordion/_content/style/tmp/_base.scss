@@ -49,7 +49,7 @@
       @include spacing.padding(3v 4v, md);
     }
 
-    #{ns(collapse)} {
+    #{selector.ns(collapse)} {
       @include typography.enable-list-style;
       @include spacing.margin(0 -1v, md);
       @include spacing.padding-x(4v, md);

@@ -5,18 +5,18 @@
 
 @include generate-deprecated-icons($deprecated-icons, filter-icons('user'));
 
-#{ns(fi-account-line)} {
-  @include icon-image(account-circle-line);
+#{selector.ns(fi-account-line)} {
+  @include icon.image(account-circle-line);
 }
 
-#{ns(fi-account-fill)} {
-  @include icon-image(account-circle-fill);
+#{selector.ns(fi-account-fill)} {
+  @include icon.image(account-circle-fill);
 }
 
-#{ns(icon-account-line)} {
-  @include icon-image(account-circle-line);
+#{selector.ns(icon-account-line)} {
+  @include icon.image(account-circle-line);
 }
 
-#{ns(icon-account-fill)} {
-  @include icon-image(account-circle-fill);
+#{selector.ns(icon-account-fill)} {
+  @include icon.image(account-circle-fill);
 }

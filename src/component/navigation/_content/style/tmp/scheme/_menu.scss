@@ -8,8 +8,8 @@
 @use '../../../../../../../sass/elevation/index';
 
 @mixin _navigation-scheme-menu($legacy: false) {
-  #{ns(menu)} {
-    @include respond-from(lg) {
+  #{selector.ns(menu)} {
+    @include media-query.from(lg) {
       @include elevation.elevate(overlap, (background: #{'&__list'}, legacy: $legacy));
 
       &__list {
@@ -19,13 +19,13 @@
         & > *:hover,
         & > *:hover + * {
           &,
-          & > #{ns(nav__link)} {
+          & > #{selector.ns(nav__link)} {
             @include color.no-box-shadow((legacy:$legacy));
           }
         }
       }
 
-      #{ns(nav__link)} {
+      #{selector.ns(nav__link)} {
         @include color.box-shadow(default grey, (legacy: $legacy), 0 calc(-4v - 1px) 0 -4v color.$constant);
       }
     }

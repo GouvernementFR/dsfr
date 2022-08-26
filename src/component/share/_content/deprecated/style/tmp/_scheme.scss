@@ -4,7 +4,7 @@
 ////
 
 @mixin _share-deprecated-scheme($legacy: false) {
-  #{ns(share__link)} {
+  #{selector.ns(share__link)} {
     @include btn-kind-scheme(3, $legacy);
   }
 }

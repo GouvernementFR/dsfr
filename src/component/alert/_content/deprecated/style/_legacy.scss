@@ -1,5 +1,7 @@
-@mixin first () {
-  @import 'tmp/legacy';
+@use 'tmp/legacy';
 
-  @include _alert-deprecated-scheme(true);
+$options: () !default;
+
+@mixin first () {
+  @include legacy.first();
 }

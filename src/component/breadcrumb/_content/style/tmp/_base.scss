@@ -3,86 +3,91 @@
 /// @group breadcrumb
 ////
 
-@use '../../../../../../sass/spacing/index';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@use '../../../../../../sass/icon';
 
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
  */
-#{ns(breadcrumb)} {
-  @include margin(4v 0 8v);
-  @include margin-bottom(10v, md);
-  @include text-style(xs);
-  @include set-text-margin(0 0 2v);
-  position: relative;
+@mixin first() {
+  #{selector.ns(breadcrumb)} {
+    @include spacing.margin(4v 0 8v);
+    @include spacing.margin-bottom(10v, md);
+    @include typography.text-style(xs);
+    @include typography.set-text-margin(0 0 2v);
+    position: relative;
 
-  &__button {
-    @include link-underline;
-    @include text-style(xs);
-    @include margin(0);
-    @include padding(0);
-    color: inherit;
+    &__button {
+      @include link-underline;
+      @include typography.text-style(xs);
+      @include spacing.margin(0);
+      @include spacing.padding(0);
+      color: inherit;
 
-    &[aria-expanded="true"] {
-      display: none;
+      &[aria-expanded="true"] {
+        display: none;
+      }
+
+      @include media-query.from(md) {
+        display: none;
+      }
     }
 
-    @include respond-from(md) {
-      display: none;
-    }
-  }
+    #{selector.ns(collapse)} {
+      @include spacing.margin-x(-4px);
+      @include spacing.padding-x(4px);
+      transform: translateY(-4px);
 
-  #{ns(collapse)} {
-    @include margin-x(-4px);
-    @include padding-x(4px);
-    transform: translateY(-4px);
-
-    @include respond-from(md) {
-      @include margin-x(0);
-      @include padding-x(0);
-      transform: none;
-      visibility: inherit;
-      overflow: visible;
-      max-height: initial;
-      @include before(none);
-    }
-  }
-
-  @include list() {
-    @include disable-list-style;
-    transform: translateY(4px);
-
-    @include respond-from(md) {
-      transform: none;
+      @include media-query.from(md) {
+        @include spacing.margin-x(0);
+        @include spacing.padding-x(0);
+        transform: none;
+        visibility: inherit;
+        overflow: visible;
+        max-height: initial;
+        @include selector.before(none);
+      }
     }
 
-    li {
-      display: inline;
-      line-height: spacing.space(7v);
+    @include selector.list() {
+      @include typography.disable-list-style;
+      transform: translateY(4px);
 
-      /**
-      * flèche séparatrice en font-icon
-      */
-      &:not(:first-child) {
-        @include icon(arrow-right-s-line, sm, before) {
-          @include margin-x(1v);
-          vertical-align: calc((1.05rem - var(--icon-size)) * 0.5);
+      @include media-query.from(md) {
+        transform: none;
+      }
+
+      li {
+        display: inline;
+        line-height: spacing.space(7v);
+
+        /**
+        * flèche séparatrice en font-icon
+        */
+        &:not(:first-child) {
+          @include icon.icon(arrow-right-s-line, sm, before) {
+            @include spacing.margin-x(1v);
+            vertical-align: calc((1.05rem - var(--icon-size)) * 0.5);
+          }
         }
       }
     }
-  }
 
-  /**
-   * margin-bottom de 2v pour créer cet espace entre chaque ligne
-   */
-  &__link {
-    vertical-align: top;
-    position: relative;
-    @include text-style(xs);
+    /**
+    * margin-bottom de 2v pour créer cet espace entre chaque ligne
+    */
+    &__link {
+      vertical-align: top;
+      position: relative;
+      @include typography.text-style(xs);
 
-    &[aria-current] {
-      &:not([href]) {
-        pointer-events: none;
-        cursor: default;
+      &[aria-current] {
+        &:not([href]) {
+          pointer-events: none;
+          cursor: default;
+        }
       }
     }
   }

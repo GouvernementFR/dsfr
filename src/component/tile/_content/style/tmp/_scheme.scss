@@ -3,10 +3,11 @@
 /// @group tile
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _tile-scheme($legacy: false) {
-  #{ns(tile)} {
+@mixin first($legacy: false) {
+  #{selector.ns(tile)} {
     @include color.box-shadow((default grey) (plain blue-france), (legacy: $legacy), all-1-in bottom-1v-in);
 
     @include color.background(default grey, (legacy: $legacy));

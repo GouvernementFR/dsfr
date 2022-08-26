@@ -3,12 +3,12 @@
 /// @group share
 ////
 
-#{ns(share)} {
+#{selector.ns(share)} {
   &__group {
-    @include disable-list-style;
+    @include typography.disable-list-style;
     @include horizontal-btns-group;
-    @include margin-x(-2v);
-    @include width(auto);
+    @include spacing.margin-x(-2v);
+    @include spacing.width(auto);
     order: 2;
     display: flex;
   }
@@ -17,8 +17,8 @@
     @include disable-underline;
     @include tint-enabled(true, null);
     display: inline-flex;
-    @include margin-x(2v);
-    @include margin-bottom(4v);
+    @include spacing.margin-x(2v);
+    @include spacing.margin-bottom(4v);
   }
 }
 

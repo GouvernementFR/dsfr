@@ -3,38 +3,39 @@
 /// @group alert
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/legacy';
 
-@include legacy.is(ie11) {
-  /**
-  * reset des marges dans l'alerte
-  */
-  #{ns(alert)} {
-    @include icon-legacy(null, md);
+@mixin first() {
+  @include legacy.is(ie11) {
+    #{selector.ns(alert)} {
+      @include icon.icon-legacy(null, md);
 
-    &__title,
-    p {
-      @include margin(0 0 1v);
-    }
+      &__title,
+      p {
+        @include spacing.margin(0 0 1v);
+      }
 
-    &--info {
-      @include icon-legacy(info-fill, null, before, false);
-    }
+      &--info {
+        @include icon.icon-legacy(info-fill, null, before, false);
+      }
 
-    &--success {
-      @include icon-legacy(success-fill, null, before, false);
-    }
+      &--success {
+        @include icon.icon-legacy(success-fill, null, before, false);
+      }
 
-    &--error {
-      @include icon-legacy(error-fill, null, before, false);
-    }
+      &--error {
+        @include icon.icon-legacy(error-fill, null, before, false);
+      }
 
-    &--warning {
-      @include icon-legacy(warning-fill, null, before, false);
-    }
+      &--warning {
+        @include icon.icon-legacy(warning-fill, null, before, false);
+      }
 
-    #{ns(btn--close)} {
-      @include icon-legacy(close-line, sm);
+      #{selector.ns(btn--close)} {
+        @include icon.icon-legacy(close-line, sm);
+      }
     }
   }
 }

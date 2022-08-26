@@ -3,8 +3,8 @@
 /// @group card
 ////
 
-#{ns(card)} {
-  @include respond-from(md) {
+#{selector.ns(card)} {
+  @include media-query.from(md) {
     &--horizontal,
     &--horizontal-half,
     &--horizontal-tier {
@@ -23,17 +23,17 @@
     }
 
     &--horizontal &__header {
-      @include width(40%);
+      @include spacing.width(40%);
       flex: 0 0 40%;
     }
 
     &--horizontal-half &__header {
-      @include width(50%);
+      @include spacing.width(50%);
       flex: 0 0 50%;
     }
 
     &--horizontal-tier &__header {
-      @include width(calc(100% / 3));
+      @include spacing.width(calc(100% / 3));
       flex: 0 0 #{calc(100% / 3)};
     }
   }

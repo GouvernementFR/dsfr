@@ -3,10 +3,10 @@
 /// @group card
 ////
 
-#{ns(card)} {
+#{selector.ns(card)} {
   &--sm {
-    @include before {
-      @include icon-size(sm);
+    @include selector.before {
+      @include icon.size(sm);
       @include right(6v);
       @include bottom(6v);
     }
@@ -18,44 +18,44 @@
 
   &--sm &__content {
     @include nest-badge(sm);
-    @include padding(6v);
+    @include spacing.padding(6v);
   }
 
   &--sm &__title {
-    @include title-style(h6);
+    @include typography.title-style(h6);
   }
 
   &--sm &__desc {
-    @include margin-top(2v);
+    @include spacing.margin-top(2v);
   }
 
   &--sm &__start {
-    #{ns(badges-group)},
-    #{ns(tags-group)} {
-      @include margin-bottom(0);
+    #{selector.ns(badges-group)},
+    #{selector.ns(tags-group)} {
+      @include spacing.margin-bottom(0);
     }
   }
 
   &--sm &__start &__detail {
-    @include margin-bottom(2v);
+    @include spacing.margin-bottom(2v);
   }
 
   &--sm &__end {
-    @include margin-top(3v);
-    @include padding-top(1v);
+    @include spacing.margin-top(3v);
+    @include spacing.padding-top(1v);
   }
 
-  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__end {
-    @include margin-bottom(-8v); // 4v (icon) + 1v (padding end) + 3v (marge texte icon)
-    @include min-height(5v); // 4v (icon) + 1v (padding end)
-    @include padding-right(6v); // 4v (icon) + 2v (padding)
+  &--sm#{selector.ns(enlarge-link)}:not(&--no-icon) &__end {
+    @include spacing.margin-bottom(-8v); // 4v (icon) + 1v (padding end) + 3v (marge texte icon)
+    @include spacing.min-height(5v); // 4v (icon) + 1v (padding end)
+    @include spacing.padding-right(6v); // 4v (icon) + 2v (padding)
   }
 
-  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__content {
-    @include padding-bottom(14v); // 6v (padding card) + 4v (icon) + 1v (padding end) + 3v (marge texte icon)
+  &--sm#{selector.ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include spacing.padding-bottom(14v); // 6v (padding card) + 4v (icon) + 1v (padding end) + 3v (marge texte icon)
   }
 
   &--sm &__footer {
-    @include padding(2v 6v 6v);
+    @include spacing.padding(2v 6v 6v);
   }
 }

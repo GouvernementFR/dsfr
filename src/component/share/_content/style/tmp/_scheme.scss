@@ -4,8 +4,8 @@
 ////
 
 @mixin _share-scheme($legacy: false) {
-  #{ns(share)} {
-    #{ns(btn)} {
+  #{selector.ns(share)} {
+    #{selector.ns(btn)} {
       @include btn-kind-scheme(3, $legacy);
     }
   }

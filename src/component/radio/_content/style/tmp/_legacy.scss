@@ -4,17 +4,17 @@
 ////
 
 @use '../../../../../../sass/spacing/index';
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
   /**
   * Correctif radio
   */
-  #{ns(fieldset--inline)} {
-    #{ns(radio-rich)} {
+  #{selector.ns(fieldset--inline)} {
+    #{selector.ns(radio-rich)} {
       &:last-child {
         input[type="radio"] + label {
-          @include margin-bottom(2v !important);
+          @include spacing.margin-bottom(2v !important);
         }
       }
     }
@@ -24,9 +24,9 @@
   * Correctif alignement vertical IE
   * Inconvéniant : fixe la height à la min-height, soit 5.5 rem
   */
-  #{ns(radio-rich)} {
-    input[type="radio"] + #{ns(label)} {
-      @include height(1px);
+  #{selector.ns(radio-rich)} {
+    input[type="radio"] + #{selector.ns(label)} {
+      @include spacing.height(1px);
     }
   }
 }

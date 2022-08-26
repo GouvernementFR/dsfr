@@ -4,13 +4,13 @@
 ////
 
 #{ns-group(connect)} {
-  @include set-text-margin(0 0 4v 0);
+  @include typography.set-text-margin(0 0 4v 0);
 
   p {
-    @include text-style(xs);
+    @include typography.text-style(xs);
   }
 
-  #{ns(connect)} + p a {
-    @include text-style(sm);
+  #{selector.ns(connect)} + p a {
+    @include typography.text-style(sm);
   }
 }

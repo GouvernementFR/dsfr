@@ -6,17 +6,17 @@
 @use '../../../../../../../sass/spacing/index';
 
 #{ns-group(tags)} {
-  @include disable-list-style;
-  @include display-flex;
-  @include margin-x(-1v);
+  @include typography.disable-list-style;
+  @include display.flex;
+  @include spacing.margin-x(-1v);
   flex-wrap: wrap;
 
   > li {
     line-height: spacing.space(11v);
   }
 
-  #{ns(tag)} {
-    @include margin(0 1v 2v 1v);
+  #{selector.ns(tag)} {
+    @include spacing.margin(0 1v 2v 1v);
     vertical-align: top;
   }
 
@@ -24,17 +24,17 @@
     @include nest-tag(sm, null);
 
     @include clickable-selector {
-      &#{ns(tag)} {
-        &#{ns(tag)}--dismiss {
-          @include icon(null, xs, after) {
-            @include margin-right(-0.75v);
+      &#{selector.ns(tag)} {
+        &#{selector.ns(tag)}--dismiss {
+          @include icon.icon(null, xs, after) {
+            @include spacing.margin-right(-0.75v);
           }
         }
 
         @include pressed-selector(true) {
-          @include icon(null, xs, after) {
-            @include absolute(3px, 0);
-            @include margin(-1.5v);
+          @include icon.icon(null, xs, after) {
+            @include spacing.absolute(3px, 0);
+            @include spacing.margin(-1.5v);
           }
         }
       }

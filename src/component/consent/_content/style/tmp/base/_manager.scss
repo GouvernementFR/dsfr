@@ -3,45 +3,45 @@
 /// @group consent
 ////
 
-#{ns(consent-manager)} {
+#{selector.ns(consent-manager)} {
   &__header {
-    @include padding-top(0);
+    @include spacing.padding-top(0);
 
-    #{ns(consent-service)}__title {
+    #{selector.ns(consent-service)}__title {
       width: 100%;
-      @include padding(0 0 3v 0);
-      @include text-style(md);
-      @include font-weight(regular);
+      @include spacing.padding(0 0 3v 0);
+      @include typography.text-style(md);
+      @include typography.font-weight(regular);
 
-      @include respond-from(lg) {
+      @include media-query.from(lg) {
         width: 44%;
       }
 
-      @include respond-from(xl) {
+      @include media-query.from(xl) {
         width: 50%;
       }
     }
 
-    #{ns(consent-service)}__radios {
+    #{selector.ns(consent-service)}__radios {
       width: 100%;
       justify-content: flex-start;
       top: 0;
       position: initial;
 
-      @include respond-from(lg) {
+      @include media-query.from(lg) {
         width: 56%;
         position: absolute;
         justify-content: flex-end;
       }
 
-      @include respond-from(xl) {
+      @include media-query.from(xl) {
         width: 50%;
       }
     }
   }
 
   &__buttons {
-    @include margin-bottom(-12v);
-    @include margin-top(4v);
+    @include spacing.margin-bottom(-12v);
+    @include spacing.margin-top(4v);
   }
 }

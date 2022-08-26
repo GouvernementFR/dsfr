@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _logo-scheme($legacy: false) {
-  #{ns(logo)} {
+  #{selector.ns(logo)} {
     @include color.text(title grey, (legacy:$legacy));
   }
 }

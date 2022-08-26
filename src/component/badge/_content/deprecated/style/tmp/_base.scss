@@ -1,6 +1,12 @@
 ////
-/// Badge Module
+/// Badge Module deprecated
 /// @group badge
 ////
 
-@import 'base/group';
+@use 'base/group';
+
+$options: () !default;
+
+@mixin first () {
+  @include group.first();
+}

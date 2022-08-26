@@ -5,15 +5,15 @@
 
 @use '../../../../../sass/spacing/index';
 
-#{ns(search-bar)} {
-  @include display-flex(row);
+#{selector.ns(search-bar)} {
+  @include display.flex(row);
 
-  #{ns(label)} {
+  #{selector.ns(label)} {
     @include sr-only();
   }
 
-  #{ns(input)} {
-    @include margin(0);
+  #{selector.ns(input)} {
+    @include spacing.margin(0);
     border-radius: spacing.space(1v) 0 0;
     max-height: none;
 

@@ -3,17 +3,18 @@
 /// @group toggle
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/disabled/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
 
-@mixin _toggle-scheme($legacy: false) {
-  #{ns(toggle)} {
+@mixin first($legacy: false) {
+  #{selector.ns(toggle)} {
     label {
-      @include before {
+      @include selector.before {
         @include color.text(active blue-france, (legacy:$legacy));
       }
 
-      @include after {
+      @include selector.after {
         @include color.text(active blue-france, (legacy:$legacy));
         @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-in);
         @include color.background(default grey, (legacy:$legacy));
@@ -26,8 +27,8 @@
       &:checked {
         @include color.background(active blue-france, (legacy:$legacy));
 
-        ~ #{ns(toggle__label)} {
-          @include after {
+        ~ #{selector.ns(toggle__label)} {
+          @include selector.after {
             @include color.data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-svg);
           }
         }
@@ -37,26 +38,26 @@
         &:checked {
           @include disabled.colors((legacy: $legacy, background: true));
 
-          ~ #{ns(toggle__label)} {
-            @include after {
+          ~ #{selector.ns(toggle__label)} {
+            @include selector.after {
               @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $toggle-svg);
             }
           }
         }
 
-        ~ #{ns(toggle__label)} {
-          @include before {
+        ~ #{selector.ns(toggle__label)} {
+          @include selector.before {
             @include disabled.colors((legacy: $legacy, text: true));
           }
 
-          @include after {
+          @include selector.after {
             @include disabled.colors((legacy: $legacy, text: true, box-shadow: true));
           }
         }
       }
     }
 
-    #{ns(hint-text)} {
+    #{selector.ns(hint-text)} {
       @include color.text(mention grey, (legacy:$legacy));
     }
 

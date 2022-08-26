@@ -3,9 +3,13 @@
 /// @group alert
 ////
 
-#{ns(alert)} {
-  #{ns(link--close)} {
-    @include absolute(1v, 5v);
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@import '../../../../button/_content/style/tmp/tool';
+
+#{selector.ns(alert)} {
+  #{selector.ns(link--close)} {
+    @include spacing.absolute(1v, 5v);
     @include nest-btn(sm, only, close-line, null, false);
     align-items: center;
   }

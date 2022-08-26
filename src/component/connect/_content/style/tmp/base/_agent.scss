@@ -3,7 +3,7 @@
 /// @group connect
 ////
 
-#{ns(connect)} {
+#{selector.ns(connect)} {
   &--agent &__brand {
     font-size: map-get($brand-size, agent);
     height: map-get($brand-size, agent);

@@ -6,8 +6,8 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _stepper-scheme($legacy: false) {
-  #{ns(stepper)} {
-    @include title {
+  #{selector.ns(stepper)} {
+    @include selector.title {
       @include color.text(title grey, (legacy:$legacy));
     }
 

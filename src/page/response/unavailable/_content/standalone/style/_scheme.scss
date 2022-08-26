@@ -13,7 +13,7 @@ a {
   outline-color: color.$focus;
 }
 
-#{ns(btn)} {
+#{selector.ns(btn)} {
   &--tertiary {
     @include color.background(alt grey, (standalone: true, hover: true));
     @include color.box-shadow(default grey, (standalone: true), all-1-in);

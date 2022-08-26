@@ -3,10 +3,10 @@
 /// @group badge
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
 
-@mixin _badge-scheme($legacy: false) {
-  #{ns(badge)} {
+@mixin scheme($legacy: false) {
+  #{selector.ns(badge)} {
     @include color.text(default grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
 

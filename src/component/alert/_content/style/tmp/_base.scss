@@ -3,58 +3,66 @@
 /// @group alert
 ////
 
-#{ns(alert)} {
-  @include relative();
-  @include padding(4v 9v 3v 14v);
-  @include set-title-margin(0 0 1v);
-  @include set-text-margin(0 0 1v);
-  @include icon-size(md, before);
-  @include icon-style(before) {
-    @include absolute(0, null, null, 0);
-    @include margin(4v 2v);
-  }
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import '../../../../button/_content/style/tmp/tool';
 
-  &__title {
-    @include title-style(h6);
-  }
+@mixin first() {
+  #{selector.ns(alert)} {
+    @include spacing.relative();
+    @include spacing.padding(4v 9v 3v 14v);
+    @include typography.set-title-margin(0 0 1v);
+    @include typography.set-text-margin(0 0 1v);
+    @include icon.size(md, before);
+    @include icon.style(before) {
+      @include spacing.absolute(0, null, null, 0);
+      @include spacing.margin(4v 2v);
+    }
 
-  #{ns(btn--close)} {
-    @include absolute(1v,5v);
-    @include nest-btn(sm, only, close-line, null, false);
-  }
+    &__title {
+      @include typography.title-style(h6);
+    }
 
-  + #{ns(alert)} {
-    @include margin-top(4v);
-  }
+    #{selector.ns(btn--close)} {
+      @include spacing.absolute(1v,5v);
+      @include nest-btn(sm, only, close-line, null, false);
+    }
 
-  &--info {
-    @include icon-image(info-fill, before);
-  }
+    + #{selector.ns(alert)} {
+      @include spacing.margin-top(4v);
+    }
 
-  &--success {
-    @include icon-image(success-fill, before);
-  }
+    &--info {
+      @include icon.image(info-fill, before);
+    }
 
-  &--error {
-    @include icon-image(error-fill, before);
-  }
+    &--success {
+      @include icon.image(success-fill, before);
+    }
 
-  &--warning {
-    @include icon-image(warning-fill, before);
-  }
+    &--error {
+      @include icon.image(error-fill, before);
+    }
 
-  &--info,
-  &--success,
-  &--error,
-  &--warning {
-    @include icon-content;
-  }
+    &--warning {
+      @include icon.image(warning-fill, before);
+    }
 
-  &--sm {
-    @include padding(2v 9v 1v 12v);
+    &--info,
+    &--success,
+    &--error,
+    &--warning {
+      @include icon.content;
+    }
 
-    @include before {
-      @include margin(2v 2v);
+    &--sm {
+      @include spacing.padding(2v 9v 1v 12v);
+
+      @include selector.before {
+        @include spacing.margin(2v 2v);
+      }
     }
   }
 }

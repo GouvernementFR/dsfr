@@ -3,16 +3,16 @@
 /// @group sidemenu
 ////
 
-#{ns(sidemenu)} {
+#{selector.ns(sidemenu)} {
   /**
   * Titre facultatif
    */
-  @include title {
-    @include padding(4v 0);
-    @include text-style(lg);
-    font-weight: font-weight(bold);
+  @include selector.title {
+    @include spacing.padding(4v 0);
+    @include typography.text-style(lg);
+    font-weight: typography.font-weight(bold);
 
-    @include margin(0 0 6v, md);
-    @include padding(0, md);
+    @include spacing.margin(0 0 6v, md);
+    @include spacing.padding(0, md);
   }
 }

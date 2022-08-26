@@ -6,15 +6,15 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _callout-scheme($legacy: false) {
-  #{ns(callout)} {
+  #{selector.ns(callout)} {
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);
 
-    @include before {
+    @include selector.before {
       @include color.text(title grey, (legacy:$legacy));
     }
 
-    @include title {
+    @include selector.title {
       @include color.text(title grey, (legacy:$legacy));
     }
 

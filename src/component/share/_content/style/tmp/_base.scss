@@ -3,36 +3,36 @@
 /// @group share
 ////
 
-#{ns(share)} {
-  @include display-flex(column);
-  @include set-text-margin(0 0 4v);
-  @include set-title-margin(0 0 4v);
+#{selector.ns(share)} {
+  @include display.flex(column);
+  @include typography.set-text-margin(0 0 4v);
+  @include typography.set-title-margin(0 0 4v);
 
   &__title {
-    @include text-style(md);
+    @include typography.text-style(md);
     order: 1;
   }
 
   &__text {
-    @include text-style(xs);
-    @include max-width(72v, md);
+    @include typography.text-style(xs);
+    @include spacing.max-width(72v, md);
     order: 3;
   }
 
   #{ns-group(btns)} {
     @include horizontal-btns-group;
-    @include width(auto);
+    @include spacing.width(auto);
     order: 2;
 
-    #{ns(btn)} {
+    #{selector.ns(btn)} {
       justify-content: flex-start;
     }
 
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
-      #{ns(btn)} {
+      #{selector.ns(btn)} {
         @include has-not-icon {
           @include nest-btn(md, only, null, null, false);
-          @include icon(null, md, before);
+          @include icon.icon(null, md, before);
         }
       }
     }

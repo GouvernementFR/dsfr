@@ -3,28 +3,28 @@
 /// @group follow
 ////
 
-#{ns(follow)} {
-  #{ns(links-group)} {
-    @include disable-list-style;
+#{selector.ns(follow)} {
+  #{selector.ns(links-group)} {
+    @include typography.disable-list-style;
     @include horizontal-btns-group;
-    @include margin(0 -4v -4v -4v);
-    @include width(auto);
+    @include spacing.margin(0 -4v -4v -4v);
+    @include spacing.width(auto);
     display: flex;
     flex-wrap: wrap;
   }
 
   &__social {
-    #{ns(link)} {
+    #{selector.ns(link)} {
       @include disable-underline;
       @include tint-enabled(true, null);
       display: inline-flex;
-      @include margin-x(2v);
-      @include margin-bottom(4v);
+      @include spacing.margin-x(2v);
+      @include spacing.margin-bottom(4v);
       @include nest-btn(md, only, null, null, false);
     }
 
-    #{ns(links-group--lg)} {
-      #{ns(link)} {
+    #{selector.ns(links-group--lg)} {
+      #{selector.ns(link)} {
         @include nest-btn(lg, only, null, null, false);
       }
     }

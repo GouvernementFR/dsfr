@@ -3,28 +3,28 @@
 /// @group card
 ////
 
-#{ns(card)} {
-  @include display-flex(column);
-  @include relative();
-  @include icon(arrow-right-line);
+#{selector.ns(card)} {
+  @include display.flex(column);
+  @include spacing.relative();
+  @include icon.icon(arrow-right-line);
 
   &--no-icon,
-  &:not(#{ns(enlarge-link)}) {
-    @include before(none);
+  &:not(#{selector.ns(enlarge-link)}) {
+    @include selector.before(none);
   }
 
-  @include before {
-    @include absolute(null, 8v, 8v);
-    @include icon-size(md);
+  @include selector.before {
+    @include spacing.absolute(null, 8v, 8v);
+    @include icon.size(md);
   }
 
-  @include body() {
-    @include display-flex(column);
+  @include selector.body() {
+    @include display.flex(column);
     flex: 1 1 auto;
     order: 2;
   }
 
-  #{ns(grid-row)} & {
-    @include size(null, 100%);
+  #{selector.ns(grid-row)} & {
+    @include spacing.size(null, 100%);
   }
 }

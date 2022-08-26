@@ -7,35 +7,35 @@
  * La partie "partners" du footer est constituée de logos organisés
  * en partenaires principaux (ferré à gauche) et secondaires (ferrés à droite)
  */
-#{ns(footer)} {
+#{selector.ns(footer)} {
   &__partners {
-    @include margin-top(4v);
-    @include padding-top(4v);
+    @include spacing.margin-top(4v);
+    @include spacing.padding-top(4v);
 
     a {
-      @include display-flex(null, center, center);
+      @include display.flex(null, center, center);
     }
 
     /**
     * On surcharge le style du logo de base
     */
-    #{ns(footer__logo)} {
-      @include size(auto, auto);
-      @include padding(1v);
+    #{selector.ns(footer__logo)} {
+      @include spacing.size(auto, auto);
+      @include spacing.padding(1v);
     }
 
-    + #{ns(footer__bottom)} {
-      @include margin-top(2v);
+    + #{selector.ns(footer__bottom)} {
+      @include spacing.margin-top(2v);
     }
   }
 
   &__partners-title {
-    @include set-title-margin(0 0 2v 0);
-    @include text-style(sm);
+    @include typography.set-title-margin(0 0 2v 0);
+    @include typography.text-style(sm);
     flex-basis: 100%;
     text-align: center;
 
-    @include respond-from(sm) {
+    @include media-query.from(sm) {
       text-align: left;
     }
   }
@@ -44,20 +44,20 @@
   * Container des logos partenaires (principaux et secondaires)
   */
   &__partners-logos {
-    @include display-flex(column, null, null, wrap);
-    @include margin(0 0 -2v 0);
+    @include display.flex(column, null, null, wrap);
+    @include spacing.margin(0 0 -2v 0);
 
-    @include respond-from(sm) {
-      @include display-flex(row, flex-start, flex-start);
-      @include margin-right(-2v);
-      @include before('', block) {
+    @include media-query.from(sm) {
+      @include display.flex(row, flex-start, flex-start);
+      @include spacing.margin-right(-2v);
+      @include selector.before('', block) {
         order: 2;
         flex: 1;
       }
     }
 
-    @include respond-from(md) {
-      @include margin-right(-4v);
+    @include media-query.from(md) {
+      @include spacing.margin-right(-4v);
       flex-wrap: nowrap;
     }
   }
@@ -66,27 +66,27 @@
   * Container des logos partenaires principaux
   */
   &__partners-main {
-    @include display-flex(row,null,center);
-    @include margin-x(auto);
-    @include margin-bottom(8v);
-    @include margin-bottom(4v, sm);
+    @include display.flex(row,null,center);
+    @include spacing.margin-x(auto);
+    @include spacing.margin-bottom(8v);
+    @include spacing.margin-bottom(4v, sm);
 
-    + #{ns(footer__partners-sub)} {
+    + #{selector.ns(footer__partners-sub)} {
       & > ul > li {
-        @include margin(0 2v 0 2v, sm);
-        @include margin(0 4v 0 4v, md);
+        @include spacing.margin(0 2v 0 2v, sm);
+        @include spacing.margin(0 4v 0 4v, md);
       }
 
-      @include respond-from(md) {
+      @include media-query.from(md) {
         & > ul {
           justify-content: flex-end;
         }
-        @include padding-left(4v);
-        @include padding-top(0);
+        @include spacing.padding-left(4v);
+        @include spacing.padding-top(0);
       }
     }
 
-    @include respond-from(sm) {
+    @include media-query.from(sm) {
       order: 1;
     }
   }
@@ -95,12 +95,12 @@
   * Container des logos partenaires secondaires
   */
   &__partners-sub {
-    @include margin-bottom(2v);
+    @include spacing.margin-bottom(2v);
 
     &,
     & > ul {
-      @include display-flex(column, center, null, wrap);
-      @include respond-from(sm) {
+      @include display.flex(column, center, null, wrap);
+      @include media-query.from(sm) {
         flex-direction: row;
         align-items: flex-start;
       }
@@ -109,11 +109,11 @@
     /**
     * On surcharge le style du lien pour les logos secondaires
     */
-    #{ns(footer)}__partners-link {
-      @include margin-bottom(2v);
+    #{selector.ns(footer)}__partners-link {
+      @include spacing.margin-bottom(2v);
     }
 
-    @include respond-from(sm) {
+    @include media-query.from(sm) {
       order: 3;
     }
   }

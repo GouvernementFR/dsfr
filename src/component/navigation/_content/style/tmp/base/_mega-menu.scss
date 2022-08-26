@@ -3,17 +3,17 @@
 /// @group navigation
 ////
 
-#{ns(mega-menu)} {
-  @include margin(0 -4v 1px);
-  @include padding(0 4v 0);
+#{selector.ns(mega-menu)} {
+  @include spacing.margin(0 -4v 1px);
+  @include spacing.padding(0 4v 0);
 
-  @include respond-from(lg) {
-    @include absolute(100%, 0, null, 0);
-    @include margin(0);
-    @include padding(0);
+  @include media-query.from(lg) {
+    @include spacing.absolute(100%, 0, null, 0);
+    @include spacing.margin(0);
+    @include spacing.padding(0);
 
-    @include after('', block) {
-      @include padding-bottom(9v);
+    @include selector.after('', block) {
+      @include spacing.padding-bottom(9v);
     }
   }
 
@@ -21,54 +21,54 @@
     outline: none;
   }
 
-  > #{ns(container)} {
-    @include respond-from(lg) {
-      @include before('', block) {
-        @include padding-top(4v);
+  > #{selector.ns(container)} {
+    @include media-query.from(lg) {
+      @include selector.before('', block) {
+        @include spacing.padding-top(4v);
       }
     }
   }
 
-  #{ns(btn--close)} {
+  #{selector.ns(btn--close)} {
     display: none;
-    @include respond-from(lg) {
+    @include media-query.from(lg) {
       display: flex;
     }
   }
 
-  #{ns(nav__link)} {
-    @include padding-x(4v);
-    @include padding(3v 4v, lg);
-    @include before {
+  #{selector.ns(nav__link)} {
+    @include spacing.padding-x(4v);
+    @include spacing.padding(3v 4v, lg);
+    @include selector.before {
       left: 0;
     }
   }
 
   &__leader {
     @include enable-underline;
-    @include padding-x(4v);
-    @include padding-top(4v);
-    @include padding-top(0, lg);
-    @include padding-x(0, lg);
-    @include set-text-margin(0 0 2v);
-    @include set-title-margin(0 0 2v);
+    @include spacing.padding-x(4v);
+    @include spacing.padding-top(4v);
+    @include spacing.padding-top(0, lg);
+    @include spacing.padding-x(0, lg);
+    @include typography.set-text-margin(0 0 2v);
+    @include typography.set-title-margin(0 0 2v);
   }
 
   &__category {
-    @include font-weight(bold);
+    @include typography.font-weight(bold);
   }
 
   &__list {
-    @include padding-bottom(6v);
+    @include spacing.padding-bottom(6v);
 
-    @include relative;
-    @include before('', block) {
-      @include absolute(0, 0, 0 , 0, 100%, 100%);
+    @include spacing.relative;
+    @include selector.before('', block) {
+      @include spacing.absolute(0, 0, 0 , 0, 100%, 100%);
       pointer-events: none;
     }
 
-    @include respond-from(lg) {
-      @include before(none);
+    @include media-query.from(lg) {
+      @include selector.before(none);
     }
   }
 }

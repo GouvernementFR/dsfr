@@ -3,13 +3,13 @@
 /// @group skiplink
 ////
 
-@use '../../../../../../sass/legacy/index';
+@use '../../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
   /**
   * Correctif
   */
-  #{ns(skiplinks)} {
+  #{selector.ns(skiplinks)} {
     &.focus-within {
       position: relative;
       transform: translateY(0);

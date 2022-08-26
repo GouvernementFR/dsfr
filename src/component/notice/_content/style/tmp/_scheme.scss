@@ -6,7 +6,7 @@
 @use '../../../../../sass/color/index';
 
 @mixin _notice-scheme($legacy: false) {
-  #{ns(notice)} {
+  #{selector.ns(notice)} {
     @include color.background(contrast grey, (legacy:$legacy, hover: false, active: false));
     @include color.text(title grey, (legacy:$legacy));
 

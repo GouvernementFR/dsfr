@@ -4,13 +4,13 @@
 ////
 
 @mixin social-deprecated-icon ($modifier, $icon) {
-  #{ns(link--)}#{$modifier} {
-    @include icon($icon, null, before, true);
+  #{selector.ns(link--)}#{$modifier} {
+    @include icon.icon($icon, null, before, true);
   }
 }
 
 @mixin social-deprecated-legacy-icon ($modifier, $icon) {
-  #{ns(link--)}#{$modifier} {
-    @include icon-legacy($icon);
+  #{selector.ns(link--)}#{$modifier} {
+    @include icon.icon-legacy($icon);
   }
 }

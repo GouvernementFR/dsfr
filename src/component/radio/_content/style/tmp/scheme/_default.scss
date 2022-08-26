@@ -13,14 +13,14 @@
     */
     input[type="radio"] {
       & + label {
-        @include before {
+        @include selector.before {
           @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(false));
         }
       }
 
       @include disabled.selector {
         + label {
-          @include before {
+          @include selector.before {
             @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(false));
           }
         }
@@ -32,14 +32,14 @@
       */
       &:checked {
         + label {
-          @include before {
+          @include selector.before {
             @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true));
           }
         }
 
         @include disabled.selector {
           + label {
-            @include before {
+            @include selector.before {
               @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true));
             }
           }

@@ -3,8 +3,8 @@
 /// @group header
 ////
 
-#{ns(header)} {
-  #{ns(modal)} {
+#{selector.ns(header)} {
+  #{selector.ns(modal)} {
     overflow: auto;
     justify-content: initial;
 
@@ -12,12 +12,12 @@
       transition: none;
     }
 
-    @include before(none);
-    @include after(none);
+    @include selector.before(none);
+    @include selector.after(none);
 
-    @include respond-from(lg) {
-      @include margin(0);
-      @include size(auto, auto);
+    @include media-query.from(lg) {
+      @include spacing.margin(0);
+      @include spacing.size(auto, auto);
       visibility: inherit;
       opacity: 1;
       position: initial;
@@ -25,22 +25,22 @@
       overflow: initial;
     }
 
-    & > * > #{ns(btn--close)} {
-      @include margin-bottom(6v);
-      @include respond-from(lg) {
+    & > * > #{selector.ns(btn--close)} {
+      @include spacing.margin-bottom(6v);
+      @include media-query.from(lg) {
         display: none;
       }
     }
 
-    & > #{ns(container)} {
+    & > #{selector.ns(container)} {
       pointer-events: all;
-      @include padding-top(4v);
-      @include padding-bottom(18v);
-      @include height(100%);
+      @include spacing.padding-top(4v);
+      @include spacing.padding-bottom(18v);
+      @include spacing.height(100%);
 
-      @include respond-from(lg) {
-        @include padding-y(0);
-        @include height(auto);
+      @include media-query.from(lg) {
+        @include spacing.padding-y(0);
+        @include spacing.height(auto);
       }
     }
   }

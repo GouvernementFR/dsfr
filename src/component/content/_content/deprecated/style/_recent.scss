@@ -3,9 +3,9 @@
 /// @group content
 ////
 
-#{ns(content-media)} {
+#{selector.ns(content-media)} {
   &__transcription {
-    #{ns(link)} {
+    #{selector.ns(link)} {
       @include nest-btn(sm, right, menu-2-fill, null, false);
       @include disable-underline;
       @include tint-enabled(true, null);

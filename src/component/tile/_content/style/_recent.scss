@@ -1,8 +1,9 @@
-@mixin first () {
-  @import 'tmp/setting';
-  @import 'tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+@use 'tmp/scheme';
+@use 'tmp/base';
 
-  @include _tag-scheme;
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
+  @include scheme.first();
 }

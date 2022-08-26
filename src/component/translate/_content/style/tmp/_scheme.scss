@@ -4,12 +4,14 @@
 ////
 
 @use '../../../../../../sass/color/index';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/color';
 
-@mixin _translate-scheme($legacy: false) {
-  #{ns(translate)} {
-    #{ns(translate)}__btn {
+@mixin first ($legacy: false) {
+  #{selector.ns(translate)} {
+    #{selector.ns(translate)}__btn {
       &[aria-expanded="true"] {
-        @include respond-from(lg) {
+        @include media-query.from(lg) {
           @include color.text(active blue-france, (legacy: $legacy));
           @include color.background(open blue-france, (legacy: $legacy));
           @include hover-tint;
@@ -18,7 +20,7 @@
     }
 
     &__menu {
-      #{ns(translate)}__language {
+      #{selector.ns(translate)}__language {
         @include color.no-box-shadow((legacy:$legacy));
       }
     }

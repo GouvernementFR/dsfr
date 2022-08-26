@@ -7,7 +7,7 @@
 @use '../../../../../../../sass/disabled/index';
 
 @mixin _input-scheme($legacy: false) {
-  #{ns(input)} {
+  #{selector.ns(input)} {
     @include color.text(label grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
@@ -56,9 +56,9 @@
     }
   }
 
-  #{ns(input-wrap)} {
+  #{selector.ns(input-wrap)} {
     > *:not(:last-child) {
-      &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
+      &#{selector.ns(input)}:not(#{selector.ns(input--valid)}):not(#{selector.ns(input--error)}) {
         @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
       }
     }

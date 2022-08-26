@@ -3,38 +3,38 @@
 /// @group skiplinks
 ////
 
-#{ns(skiplinks)} {
-  @include disable-list-style;
-  @include absolute(0);
-  @include padding(4v 0);
+#{selector.ns(skiplinks)} {
+  @include typography.disable-list-style;
+  @include spacing.absolute(0);
+  @include spacing.padding(4v 0);
   transform: translateY(-100%);
 
   &:focus-within {
-    @include relative;
+    @include spacing.relative;
     transform: translateY(0);
   }
 
-  @include list {
-    @include display-flex(column);
-    @include margin(0 -4v -6v);
+  @include selector.list {
+    @include display.flex(column);
+    @include spacing.margin(0 -4v -6v);
 
     > li {
-      @include margin(0 4v 6v);
-      @include margin(0 4v, md);
+      @include spacing.margin(0 4v 6v);
+      @include spacing.margin(0 4v, md);
 
-      @include before(none);
+      @include selector.before(none);
 
       @include nest-link(md, null, null, null, true);
     }
 
-    @include respond-from(md) {
+    @include media-query.from(md) {
       flex-direction: row;
       flex-wrap: wrap;
-      @include margin(0 -4v);
+      @include spacing.margin(0 -4v);
     }
 
     &:focus-within {
-      @include relative;
+      @include spacing.relative;
       transform: translateY(0);
     }
   }

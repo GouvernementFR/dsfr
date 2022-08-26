@@ -6,9 +6,9 @@
 @use '../../../../../../../sass/color/index';
 
 @mixin _connect-scheme-group($legacy: false, $standalone: false) {
-  #{ns(connect)} {
+  #{selector.ns(connect)} {
     &-group {
-      #{ns(connect)} + p a {
+      #{selector.ns(connect)} + p a {
         @include color.text(action-high blue-france, (legacy:$legacy));
       }
 

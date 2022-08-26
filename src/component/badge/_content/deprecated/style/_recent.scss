@@ -1,6 +1,7 @@
-@mixin first() {
-  @import '../../../../link/_content/style/tmp/tool';
-  @import 'tmp/base';
+@use 'tmp/base';
 
-  @include _badge-deprecated-scheme;
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
 }

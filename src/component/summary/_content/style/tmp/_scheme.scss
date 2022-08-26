@@ -6,11 +6,11 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _summary-scheme($legacy: false) {
-  #{ns(summary)} {
+  #{selector.ns(summary)} {
     @include color.background(contrast grey, (legacy:$legacy));
     // @include color.box-shadow(default grey, (legacy:$legacy));
 
-    @include title {
+    @include selector.title {
       @include color.text(title grey, (legacy:$legacy));
     }
 

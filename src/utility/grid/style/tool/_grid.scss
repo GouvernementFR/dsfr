@@ -50,7 +50,7 @@
       // Container
       @if $with-container {
 
-        $container: ns('container' + $mod);
+        $container: selector.ns('container' + $mod);
 
         @if length($containers) > 0 {
           #{$containers} {
@@ -76,14 +76,14 @@
           }
         }
 
-        #{ns('container' + $mod + '--fluid')} {
+        #{selector.ns('container' + $mod + '--fluid')} {
           @include padding-x(0);
           @include max-size(none);
         }
       }
 
       // Gutters
-      $row-gutter: ns(grid-row#{$mod}--gutters);
+      $row-gutter: selector.ns(grid-row#{$mod}--gutters);
       $g: $last-gutter;
 
       @if $gutter != null {
@@ -94,7 +94,7 @@
 
             > {
               #{class-start-with(ns(col-, ''))},
-              #{ns(col)} {
+              #{selector.ns(col)} {
                 @include padding($g);
               }
             }
@@ -107,7 +107,7 @@
 
         > {
           #{class-start-with(ns(col-, ''))},
-          #{ns(col)} {
+          #{selector.ns(col)} {
             @include padding($g);
           }
         }
@@ -115,30 +115,30 @@
 
       $row-gutters: append($row-gutters, $row-gutter, 'comma');
 
-      #{ns(grid-row + $mod + --no-gutters)} {
+      #{selector.ns(grid-row + $mod + --no-gutters)} {
         @include margin(0);
 
         > {
           #{class-start-with(ns(col-, ''))},
-          #{ns(col)} {
+          #{selector.ns(col)} {
             @include padding(0);
           }
         }
       }
 
       // Cols
-      #{ns('col' + $mod)} {
+      #{selector.ns('col' + $mod)} {
         flex: 1;
       }
 
       @for $i from 1 through $columns {
         $append: '#{$mod}-#{$i}';
-        #{ns('col' + $append)} {
+        #{selector.ns('col' + $append)} {
           @include grid-col($i, $columns);
         }
 
         @if $with-offsets {
-          #{ns('col-offset' + $append)} {
+          #{selector.ns('col-offset' + $append)} {
             @include grid-col-offset($i, $columns);
           }
         }

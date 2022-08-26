@@ -6,8 +6,8 @@
 @use '../../../../../../sass/color';
 @use '../../../../../../sass/selector';
 
-@mixin first ($legacy: false) {
-  #{ns(accordion)} {
+@mixin scheme ($legacy: false) {
+  #{selector.ns(accordion)} {
     @include selector.before() {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-out);
     }

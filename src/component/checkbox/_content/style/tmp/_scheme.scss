@@ -11,13 +11,13 @@
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
 @mixin _checkbox-scheme($legacy: false) {
-  #{ns(checkbox-group)} {
+  #{selector.ns(checkbox-group)} {
     /**
     * On cache l'input de type checkbox pour le styler via le label
     */
     input[type="checkbox"] {
       + label {
-        @include before {
+        @include selector.before {
           @include color.box-shadow(action-high grey, (legacy:$legacy));
         }
       }
@@ -29,7 +29,7 @@
       &:checked,
       &:active:not(:disabled) {
         + label {
-          @include before {
+          @include selector.before {
             @include color.background(active blue-france, (legacy:$legacy));
             @include color.data-uri-svg(inverted grey, (legacy: $legacy), $checkbox-svg);
           }
@@ -41,14 +41,14 @@
       */
       @include disabled.selector {
         & + label {
-          @include before {
+          @include selector.before {
             @include disabled.colors((legacy: $legacy, box-shadow: true));
           }
         }
 
         &:checked {
           & + label {
-            @include before {
+            @include selector.before {
               @include disabled.colors((legacy: $legacy, text: true, background: true));
               @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $checkbox-svg);
             }
@@ -65,7 +65,7 @@
         @include color.text(default error, (legacy:$legacy));
       }
 
-      @include before {
+      @include selector.before {
         @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
       }
     }
@@ -78,7 +78,7 @@
         @include color.text(default success, (legacy:$legacy));
       }
 
-      @include before {
+      @include selector.before {
         @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
       }
     }

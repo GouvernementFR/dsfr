@@ -50,7 +50,7 @@
   }
 }
 
-@mixin icon-image ($icon, $restrain: null, $important: false) {
+@mixin icon.image ($icon, $restrain: null, $important: false) {
   $url: get-icon-url($icon, $important);
 
   @include _icon-pseudo($restrain) {
@@ -89,7 +89,7 @@
   }
 
   @if $icon != null {
-    @include icon-image($icon, $restrain);
+    @include icon.image($icon, $restrain);
   }
 
   @if $size != null {
@@ -116,7 +116,7 @@
 @mixin generate-icons($config: $icons-config) {
   @each $icon, $setting in $config {
     #{ns(icon-#{$icon})} {
-      @include icon-image($icon);
+      @include icon.image($icon);
     }
   }
 }

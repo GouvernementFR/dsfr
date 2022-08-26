@@ -8,7 +8,7 @@
 @use '../../../../../../sass/media-query/index';
 
 @mixin _header-scheme($legacy: false) {
-  #{ns(header)} {
+  #{selector.ns(header)} {
     &__brand {
       @include elevation.elevate(raised, (legacy: $legacy));
     }
@@ -30,30 +30,30 @@
     }
 
     &__menu-links {
-      @include after {
+      @include selector.after {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
 
-      #{ns(btn)} {
+      #{selector.ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
         @include color.no-box-shadow((legacy: $legacy));
       }
     }
 
     &__tools-links {
-      #{ns(btn)} {
+      #{selector.ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
       }
     }
 
     &__navbar {
-      #{ns(service)} {
-        @include title {
+      #{selector.ns(service)} {
+        @include selector.title {
           @include color.text(title grey, (legacy:$legacy));
         }
       }
 
-      #{ns(btn)} {
+      #{selector.ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
 
         &--menu {
@@ -62,13 +62,13 @@
       }
     }
 
-    #{ns(header__menu)} {
-      @include respond-from(lg) {
+    #{selector.ns(header__menu)} {
+      @include media-query.from(lg) {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
     }
 
-    #{ns(modal)} {
+    #{selector.ns(modal)} {
       @include color.background(lifted grey, (legacy:$legacy));
     }
   }

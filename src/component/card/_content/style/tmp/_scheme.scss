@@ -7,7 +7,7 @@
 @use '../../../../../../sass/elevation/index';
 
 @mixin _card-scheme($legacy: false) {
-  #{ns(card)} {
+  #{selector.ns(card)} {
     @include color.background(default grey, (legacy:$legacy));
 
     &:not(&--no-border):not(&--shadow) {
@@ -30,7 +30,7 @@
       @include color.transparent-background((legacy:$legacy, hover: true));
     }
 
-    @include before {
+    @include selector.before {
       @include color.text(action-high blue-france, (legacy:$legacy));
     }
 

@@ -3,11 +3,11 @@
 /// @group connect
 ////
 
-#{ns(connect)} {
+#{selector.ns(connect)} {
   &--plus {
-    @include padding-right(12v);
-    @include after ('', block) {
-      @include absolute(4v, 3v, 4v, null, 6v, 6v);
+    @include spacing.padding-right(12v);
+    @include selector.after ('', block) {
+      @include spacing.absolute(4v, 3v, 4v, null, 6v, 6v);
       background-repeat: repeat-x, repeat-y;
       background-position: 50% 50%, 50% 50%;
       background-size: 21.5% 21.5%, 21.5% 21.5%;
@@ -15,8 +15,8 @@
   }
 
   &--plus &__brand {
-    @include margin-right(-10px);
+    @include spacing.margin-right(-10px);
     overflow: hidden;
-    @include width(100%);
+    @include spacing.width(100%);
   }
 }

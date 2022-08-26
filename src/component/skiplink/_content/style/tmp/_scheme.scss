@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color/index';
 
 @mixin _skiplink-scheme($legacy: false) {
-  #{ns(skiplinks)} {
+  #{selector.ns(skiplinks)} {
     @include color.background(contrast grey, (legacy:$legacy));
   }
 }

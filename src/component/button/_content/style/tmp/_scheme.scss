@@ -7,7 +7,7 @@
 @use '../../../../../../sass/disabled/index';
 
 @mixin _button-scheme($legacy: false) {
-  #{ns(btn)} {
+  #{selector.ns(btn)} {
     @include color.background(action-high blue-france, (legacy:$legacy, hover: true));
     @include color.text(inverted blue-france, (legacy:$legacy));
 

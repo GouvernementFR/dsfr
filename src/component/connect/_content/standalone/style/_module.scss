@@ -5,7 +5,7 @@
 
 @use '../../../../../../sass/reset/index';
 
-#{ns(connect)} {
+#{selector.ns(connect)} {
   @include standalone-box-sizing;
   @include standalone-font-face(connect, $connect-subset, regular bold);
   @include reset.a(true);

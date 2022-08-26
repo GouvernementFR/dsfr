@@ -4,10 +4,10 @@
 ////
 
 @mixin horizontal-btns-group() {
-  #{ns(btn)} {
+  #{selector.ns(btn)} {
     width: auto;
     max-width: 100%;
-    @include margin-x(2v);
+    @include spacing.margin-x(2v);
   }
 
   > li {
@@ -23,9 +23,9 @@
     max-width: 100%;
   }
 
-  #{ns(btn)} {
-    @include size(calc(100% - 4v));
-    @include margin(0 2v 4v);
+  #{selector.ns(btn)} {
+    @include spacing.size(calc(100% - 4v));
+    @include spacing.margin(0 2v 4v);
     justify-content: center;
   }
 }
