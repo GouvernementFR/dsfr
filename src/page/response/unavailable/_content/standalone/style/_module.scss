@@ -96,7 +96,7 @@ a {
   max-width: calc(1200% / 12);
 }
 
-#{ns-group(btns)} {
+#{selector.ns-group(btns)} {
   list-style: none;
   @include spacing.padding(0);
   @include spacing.margin-y(-2v);

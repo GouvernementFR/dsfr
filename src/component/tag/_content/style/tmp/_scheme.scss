@@ -54,8 +54,8 @@
     }
   }
 
-  #{ns-group(tags)} {
-    &#{ns-group(tags)}--sm {
+  #{selector.ns-group(tags)} {
+    &#{selector.ns-group(tags)}--sm {
       @include clickable-selector {
         &#{selector.ns(tag)} {
           @include pressed-selector(true) {

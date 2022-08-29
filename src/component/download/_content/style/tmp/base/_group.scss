@@ -3,7 +3,7 @@
 /// @group download
 ////
 
-#{ns-group(downloads)} {
+#{selector.ns-group(downloads)} {
   &__title {
     @include typography.title-style(h4);
     @include spacing.margin(var(--title-spacing));

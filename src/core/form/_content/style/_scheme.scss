@@ -7,7 +7,7 @@
 @use '../../../../../sass/disabled/index';
 
 @mixin _form-scheme($legacy: false) {
-  #{ns-group(select), ns-group(input)} {
+  #{selector.ns-group(select), selector.ns-group(input)} {
     /**
     * Modificateur au niveau du groupe pour appliquer un état validé aux labels
     */

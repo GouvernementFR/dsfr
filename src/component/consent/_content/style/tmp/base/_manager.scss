@@ -3,45 +3,52 @@
 /// @group consent
 ////
 
-#{selector.ns(consent-manager)} {
-  &__header {
-    @include spacing.padding-top(0);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/typography';
 
-    #{selector.ns(consent-service)}__title {
-      width: 100%;
-      @include spacing.padding(0 0 3v 0);
-      @include typography.text-style(md);
-      @include typography.font-weight(regular);
+@mixin first() {
+  #{selector.ns(consent-manager)} {
+    &__header {
+      @include spacing.padding-top(0);
 
-      @include media-query.from(lg) {
-        width: 44%;
+      #{selector.ns(consent-service)}__title {
+        width: 100%;
+        @include spacing.padding(0 0 3v 0);
+        @include typography.text-style(md);
+        @include typography.font-weight(regular);
+
+        @include media-query.from(lg) {
+          width: 44%;
+        }
+
+        @include media-query.from(xl) {
+          width: 50%;
+        }
       }
 
-      @include media-query.from(xl) {
-        width: 50%;
+      #{selector.ns(consent-service)}__radios {
+        width: 100%;
+        justify-content: flex-start;
+        top: 0;
+        position: initial;
+
+        @include media-query.from(lg) {
+          width: 56%;
+          position: absolute;
+          justify-content: flex-end;
+        }
+
+        @include media-query.from(xl) {
+          width: 50%;
+        }
       }
     }
 
-    #{selector.ns(consent-service)}__radios {
-      width: 100%;
-      justify-content: flex-start;
-      top: 0;
-      position: initial;
-
-      @include media-query.from(lg) {
-        width: 56%;
-        position: absolute;
-        justify-content: flex-end;
-      }
-
-      @include media-query.from(xl) {
-        width: 50%;
-      }
+    &__buttons {
+      @include spacing.margin-bottom(-12v);
+      @include spacing.margin-top(4v);
     }
-  }
-
-  &__buttons {
-    @include spacing.margin-bottom(-12v);
-    @include spacing.margin-top(4v);
   }
 }

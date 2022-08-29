@@ -5,7 +5,7 @@
 
 @use '../../../../../../../sass/spacing/index';
 
-#{ns-group(links)} {
+#{selector.ns-group(links)} {
   @include typography.disable-list-style;
   display: inline-block;
   @include spacing.margin(0 -2v);

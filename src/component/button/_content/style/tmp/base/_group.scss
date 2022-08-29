@@ -13,7 +13,7 @@
 @import '../tool';
 
 @mixin first() {
-  #{ns-group(btns)} {
+  #{selector.ns-group(btns)} {
     @include typography.disable-list-style;
     @include display.flex(null, stretch, null, wrap);
     @include vertical-btns-group;
@@ -26,8 +26,8 @@
     &--inline {
       @include horizontal-btns-group;
 
-      &#{ns-group(btns)}--right {
-        &#{ns-group(btns)}--inline-reverse {
+      &#{selector.ns-group(btns)}--right {
+        &#{selector.ns-group(btns)}--inline-reverse {
           flex-direction: row-reverse;
           justify-content: flex-start;
         }
@@ -37,8 +37,8 @@
         @include media-query.from(sm) {
           @include horizontal-btns-group;
 
-          &#{ns-group(btns)}--right {
-            &#{ns-group(btns)}--inline-reverse {
+          &#{selector.ns-group(btns)}--right {
+            &#{selector.ns-group(btns)}--inline-reverse {
               flex-direction: row-reverse;
               justify-content: flex-start;
             }
@@ -50,8 +50,8 @@
         @include media-query.from(md) {
           @include horizontal-btns-group;
 
-          &#{ns-group(btns)}--right {
-            &#{ns-group(btns)}--inline-reverse {
+          &#{selector.ns-group(btns)}--right {
+            &#{selector.ns-group(btns)}--inline-reverse {
               flex-direction: row-reverse;
               justify-content: flex-start;
             }
@@ -63,8 +63,8 @@
         @include media-query.from(lg) {
           @include horizontal-btns-group;
 
-          &#{ns-group(btns)}--right {
-            &#{ns-group(btns)}--inline-reverse {
+          &#{selector.ns-group(btns)}--right {
+            &#{selector.ns-group(btns)}--inline-reverse {
               flex-direction: row-reverse;
               justify-content: flex-start;
             }
@@ -137,7 +137,7 @@
         }
       }
 
-      &#{ns-group(btns)}--icon-left {
+      &#{selector.ns-group(btns)}--icon-left {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(sm, left, null, null, false);
@@ -145,7 +145,7 @@
         }
       }
 
-      &#{ns-group(btns)}--icon-right {
+      &#{selector.ns-group(btns)}--icon-right {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(sm, right, null, null, false);
@@ -157,7 +157,7 @@
     /**
     * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
     */
-    &:where(:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg)) {
+    &:where(:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg)) {
       #{selector.ns(btn)} {
         @include icon.not-selector {
           @include nest-btn(md, false, null, null, false);
@@ -173,7 +173,7 @@
         }
       }
 
-      &#{ns-group(btns)}--icon-left {
+      &#{selector.ns-group(btns)}--icon-left {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(md, left, null, null, false);
@@ -181,7 +181,7 @@
         }
       }
 
-      &#{ns-group(btns)}--icon-right {
+      &#{selector.ns-group(btns)}--icon-right {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(md, right, null, null, false);
@@ -209,7 +209,7 @@
         }
       }
 
-      &#{ns-group(btns)}--icon-left {
+      &#{selector.ns-group(btns)}--icon-left {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(lg, left, null, null, false);
@@ -217,7 +217,7 @@
         }
       }
 
-      &#{ns-group(btns)}--icon-right {
+      &#{selector.ns-group(btns)}--icon-right {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(lg, right, null, null, false);

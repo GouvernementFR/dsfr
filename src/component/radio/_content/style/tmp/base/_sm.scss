@@ -6,7 +6,7 @@
 /**
  * Modificateur pour la taille sm
  */
-#{ns-group(radio)}--sm {
+#{selector.ns-group(radio)}--sm {
   input[type="radio"] {
     & + label {
       @include selector.before {

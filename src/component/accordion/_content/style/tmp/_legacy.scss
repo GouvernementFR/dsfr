@@ -9,7 +9,7 @@
 
 @mixin first() {
   @include legacy.is(ie11) {
-    #{ns-group(accordions)} {
+    #{selector.ns-group(accordions)} {
       @include typography.disable-list-style-legacy;
     }
 

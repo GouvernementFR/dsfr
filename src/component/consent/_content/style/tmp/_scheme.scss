@@ -3,10 +3,11 @@
 /// @group consent
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/elevation/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/elevation';
+@use '../../../../../../sass/selector';
 
-@mixin _consent-scheme($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(consent-placeholder)} {
     @include color.background(contrast grey, (legacy:$legacy));
   }
@@ -22,8 +23,8 @@
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
     @include color.text(default grey, (legacy:$legacy));
 
-    #{ns-group(radio)} {
-      + #{ns-group(radio)} {
+    #{selector.ns-group(radio)} {
+      + #{selector.ns-group(radio)} {
         @include selector.before {
           @include color.box-shadow(default grey, (legacy:$legacy));
         }

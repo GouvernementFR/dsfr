@@ -3,10 +3,11 @@
 /// @group connect
 ////
 
-@use '../../../../../../../sass/color/index';
-@use '../../../../../../../sass/disabled/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/disabled';
+@use '../../../../../../../sass/selector';
 
-@mixin _connect-scheme-default($legacy: false, $standalone: false) {
+@mixin scheme($legacy: false, $standalone: false) {
   #{selector.ns(connect)} {
     @include color.background(action-high blue-france, (legacy: $legacy, standalone: $standalone));
     @include color.text(inverted blue-france, (legacy: $legacy, standalone: $standalone));

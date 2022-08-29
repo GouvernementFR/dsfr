@@ -77,7 +77,7 @@
     @include typography.set-text-margin(0 0 3v);
     @include typography.set-title-margin(0 0 3v);
 
-    #{ns-group(btns)} {
+    #{selector.ns-group(btns)} {
       @include horizontal-btns-group;
       @include spacing.margin(0 -4v -4v -4v);
       @include spacing.width(auto);
@@ -86,7 +86,7 @@
         justify-content: flex-start;
       }
 
-      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
         #{selector.ns(btn)} {
           @include icon.not-selector {
             @include nest-btn(md, only, null, null, false);

@@ -4,7 +4,7 @@
 ////
 
 @mixin first() {
-  #{ns-group(badges)} {
+  #{selector.ns-group(badges)} {
     @include typography.disable-list-style;
     display: flex;
     flex-wrap: wrap;
