@@ -3,42 +3,47 @@
 /// @group summary
 ////
 
-//TODO: rapprocher de la liste ordonnée et vérifier les sous-niveaux.
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import '../../../../link/_content/style/tmp/tool';
 
-#{selector.ns(summary)} {
-  @include typography.set-text-margin(0 0 2v 0);
-  @include typography.set-title-margin(0 0 2v 0);
-  @include spacing.padding(6v);
-  @include spacing.padding(8v, md);
-  @include typography.text-style(xs);
-
-  ol {
-    list-style-type: none;
-  }
-
-  li {
-    @include marker(none);
-    @include spacing.padding(2v 0);
-  }
-
-  @include selector.title {
+@mixin first() {
+  #{selector.ns(summary)} {
+    @include typography.set-text-margin(0 0 2v 0);
+    @include typography.set-title-margin(0 0 2v 0);
+    @include spacing.padding(6v);
+    @include spacing.padding(8v, md);
     @include typography.text-style(xs);
-    font-weight: typography.font-weight(bold);
-    text-transform: uppercase;
-  }
 
-  &__link {
-    display: inline;
-    position: relative;
-    @include typography.text-style(xs);
-    @include selector.before(var(--ol-content)) {
-      @include spacing.absolute(null, 100%);
-      font-size: var(--xl-size);
-      font-weight: bold;
+    ol {
+      list-style-type: none;
     }
 
-    &:not(:hover):not(:active) {
-      @include link-underline-hover-only;
+    li {
+      @include marker(none);
+      @include spacing.padding(2v 0);
+    }
+
+    @include selector.title {
+      @include typography.text-style(xs);
+      font-weight: typography.font-weight(bold);
+      text-transform: uppercase;
+    }
+
+    &__link {
+      display: inline;
+      position: relative;
+      @include typography.text-style(xs);
+      @include selector.before(var(--ol-content)) {
+        @include spacing.absolute(null, 100%);
+        font-size: var(--xl-size);
+        font-weight: bold;
+      }
+
+      &:not(:hover):not(:active) {
+        @include link-underline-hover-only;
+      }
     }
   }
 }

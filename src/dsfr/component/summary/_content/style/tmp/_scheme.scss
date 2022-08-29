@@ -3,9 +3,10 @@
 /// @group summary
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _summary-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(summary)} {
     @include color.background(contrast grey, (legacy:$legacy));
     // @include color.box-shadow(default grey, (legacy:$legacy));
