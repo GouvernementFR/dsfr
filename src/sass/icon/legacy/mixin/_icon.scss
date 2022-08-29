@@ -1,9 +1,9 @@
 @use 'style';
 @use 'image';
 @use 'size';
-@use '../pseudo';
+@use '../../mixin/pseudo';
 
-@mixin legacy($icon: null, $size: md, $restrain: null, $styling: true) {
+@mixin icon($icon: null, $size: md, $restrain: null, $styling: true) {
   @if $styling {
     @include style.style($restrain);
   }

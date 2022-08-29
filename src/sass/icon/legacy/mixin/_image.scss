@@ -1,5 +1,5 @@
 @use '../../function/path';
-@use '../pseudo';
+@use '../../mixin/pseudo';
 @use '../../../background';
 
 @mixin image($icon, $restrain: null, $important: false) {
