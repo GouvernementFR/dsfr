@@ -3,9 +3,10 @@
 /// @group skiplink
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _skiplink-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(skiplinks)} {
     @include color.background(contrast grey, (legacy:$legacy));
   }
