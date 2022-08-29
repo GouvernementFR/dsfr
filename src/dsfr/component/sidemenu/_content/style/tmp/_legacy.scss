@@ -3,9 +3,12 @@
 /// @group sidemenu
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+@import '../../../../link/_content/style/tmp/tool';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * Correctif de la hauteur de la navigation latérale
   */

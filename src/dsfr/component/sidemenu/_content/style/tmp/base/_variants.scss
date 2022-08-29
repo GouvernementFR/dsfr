@@ -3,61 +3,67 @@
 /// @group sidemenu
 ////
 
-#{selector.ns(sidemenu)} {
-  /**
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(sidemenu)} {
+    /**
    * Variantes du sidemenu proposées juste à partir du breakpoint md
    */
-  @include media-query.from(md) {
-    /**
+    @include media-query.from(md) {
+      /**
      * Modificateur pour que le sidemenu s'adapte à un affichage à droite du contenu
      * La bordure se met sur la gauche
      */
-    &--right {
-      @include spacing.padding-left(8v);
-      @include spacing.padding-right(0);
+      &--right {
+        @include spacing.padding-left(8v);
+        @include spacing.padding-right(0);
 
-      #{selector.ns(sidemenu__inner)} {
-        @include spacing.padding(0 4v 0 8v);
-        border-right: 0;
+        #{selector.ns(sidemenu__inner)} {
+          @include spacing.padding(0 4v 0 8v);
+          border-right: 0;
+        }
       }
-    }
 
-    /**
+      /**
      * Modificateur pour que le sidemenu soit sticky
      */
-    &--sticky {
-      @include sticky(0);
+      &--sticky {
+        @include sticky(0);
 
-      #{selector.ns(sidemenu__inner)} {
-        @include spacing.padding-top(2v);
-        overflow: auto;
-        max-height: 100vh;
+        #{selector.ns(sidemenu__inner)} {
+          @include spacing.padding-top(2v);
+          overflow: auto;
+          max-height: 100vh;
+        }
       }
-    }
 
-    /**
+      /**
      * Modificateur pour que le sidemenu soit à la fois sticky et prenne toute la hauteur de la page
      */
-    &--sticky-full-height {
-      @include sticky(0, null, null, null, null, 100vh);
+      &--sticky-full-height {
+        @include sticky(0, null, null, null, null, 100vh);
 
-      #{selector.ns(sidemenu__inner)} {
-        @include spacing.padding-top(2v);
-        overflow: auto;
-        @include spacing.size(null, 100%);
+        #{selector.ns(sidemenu__inner)} {
+          @include spacing.padding-top(2v);
+          overflow: auto;
+          @include spacing.size(null, 100%);
+        }
       }
-    }
 
-    /**
+      /**
      * Modificateur pour avoir une bordure tout autour du sidemenu
      */
-    &--full-border {
-      #{selector.ns(sidemenu__title)} {
-        @include spacing.padding-top(2v);
-      }
+      &--full-border {
+        #{selector.ns(sidemenu__title)} {
+          @include spacing.padding-top(2v);
+        }
 
-      #{selector.ns(sidemenu__inner)} {
-        @include spacing.padding(2v 4v);
+        #{selector.ns(sidemenu__inner)} {
+          @include spacing.padding(2v 4v);
+        }
       }
     }
   }
