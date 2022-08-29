@@ -3,10 +3,10 @@
 /// @group button
 ////
 
-@use 'tmp/default';
-@use 'tmp/group';
-@use 'tmp/close';
-@use 'tmp/display';
+@use 'base/default';
+@use 'base/group';
+@use 'base/close';
+@use 'base/display';
 
 $options: () !default;
 
