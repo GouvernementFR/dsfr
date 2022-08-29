@@ -3,9 +3,12 @@
 /// @group stepper
 ////
 
-@mixin stepper-build () {
+@use '../../../../../../../sass/selector';
+@import './setting';
+
+@mixin stepper-build() {
   @for $i from 2 through map-get($stepper-settings, max-steps) {
-    &#{ns-attr(steps, $i)} {
+    &#{selector.ns-attr(steps, $i)} {
       --steps: #{$i};
       --step-width: calc(100% / #{$i});
     }
@@ -13,18 +16,22 @@
 
   --current-step: 0;
   @for $i from 1 through map-get($stepper-settings, max-steps) {
-    &#{ns-attr(current-step, $i)} {
+    &#{selector.ns-attr(current-step, $i)} {
       --current-step: #{$i};
     }
   }
 }
 
 // cache le detail de la dernière étape
-@mixin hide-last-step-detail () {
+@mixin hide-last-step-detail() {
   $lastActives: ();
 
   @for $i from 2 through map-get($stepper-settings, max-steps) {
-    $lastActives: append($lastActives, '#{selector.ns(stepper__steps)}#{ns-attr(steps, $i)}#{ns-attr(current-step, $i)} + #{selector.ns(stepper__details)}', $separator: comma);
+    $lastActives: append(
+      $lastActives,
+      '#{selector.ns(stepper__steps)}#{selector.ns-attr(steps, $i)}#{selector.ns-attr(current-step, $i)} + #{selector.ns(stepper__details)}',
+      $separator: comma
+    );
   }
 
   #{$lastActives} {

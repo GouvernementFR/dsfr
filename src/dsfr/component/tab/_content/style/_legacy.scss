@@ -7,12 +7,3 @@ $options: () !default;
   @include legacy.first();
   @include scheme.first(true);
 }
-
-@mixin first () {
-  @import '../tmp/setting';
-  @import '../tmp/tool';
-  @import '../tmp/scheme';
-  @import '../tmp/legacy';
-
-  @include _tab-scheme(true);
-}

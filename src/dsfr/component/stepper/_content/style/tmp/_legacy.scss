@@ -3,9 +3,10 @@
 /// @group stepper
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
 
-@include legacy.is(ie11) {
+@mixin first() {
   #{selector.ns(stepper)} {
     @include selector.title {
       @include spacing.margin-bottom(3v);

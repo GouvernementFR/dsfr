@@ -3,14 +3,15 @@
 /// @group table
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * Correctif placement caption
   */
   #{selector.ns(table)} {
-    &#{ns-attr(js-table, true)} {
+    &#{selector.ns-attr(js-table, true)} {
       caption {
         @include spacing.relative;
       }
