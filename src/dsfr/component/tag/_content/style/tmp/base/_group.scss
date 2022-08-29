@@ -3,38 +3,43 @@
 /// @group tag
 ////
 
-@use '../../../../../../../sass/spacing/index';
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@import '../tool';
 
-#{selector.ns-group(tags)} {
-  @include typography.disable-list-style;
-  @include display.flex;
-  @include spacing.margin-x(-1v);
-  flex-wrap: wrap;
+@mixin first() {
+  #{selector.ns-group(tags)} {
+    @include typography.disable-list-style;
+    @include display.flex;
+    @include spacing.margin-x(-1v);
+    flex-wrap: wrap;
 
-  > li {
-    line-height: spacing.space(11v);
-  }
+    > li {
+      line-height: spacing.space(11v);
+    }
 
-  #{selector.ns(tag)} {
-    @include spacing.margin(0 1v 2v 1v);
-    vertical-align: top;
-  }
+    #{selector.ns(tag)} {
+      @include spacing.margin(0 1v 2v 1v);
+      vertical-align: top;
+    }
 
-  &#{selector.ns-group(tags)}--sm {
-    @include nest-tag(sm, null);
+    &#{selector.ns-group(tags)}--sm {
+      @include nest-tag(sm, null);
 
-    @include clickable-selector {
-      &#{selector.ns(tag)} {
-        &#{selector.ns(tag)}--dismiss {
-          @include icon.icon(null, xs, after) {
-            @include spacing.margin-right(-0.75v);
+      @include action.clickable-selector {
+        &#{selector.ns(tag)} {
+          &#{selector.ns(tag)}--dismiss {
+            @include icon.icon(null, xs, after) {
+              @include spacing.margin-right(-0.75v);
+            }
           }
-        }
 
-        @include pressed-selector(true) {
-          @include icon.icon(null, xs, after) {
-            @include spacing.absolute(3px, 0);
-            @include spacing.margin(-1.5v);
+          @include pressed-selector(true) {
+            @include icon.icon(null, xs, after) {
+              @include spacing.absolute(3px, 0);
+              @include spacing.margin(-1.5v);
+            }
           }
         }
       }

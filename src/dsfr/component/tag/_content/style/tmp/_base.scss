@@ -3,11 +3,21 @@
 /// @group tag
 ////
 
-@import 'base/default';
-@import 'base/variants';
-@import 'base/group';
+@use 'base/default';
+@use 'base/variants';
+@use 'base/group';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
 
-#{selector.ns(tag)} {
-  @include spacing.min-width(9v);
-  justify-content: center;
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include variants.first();
+  @include group.first();
+
+  #{selector.ns(tag)} {
+    @include spacing.min-width(9v);
+    justify-content: center;
+  }
 }

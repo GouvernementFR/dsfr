@@ -6,6 +6,7 @@
 @use '../../../../../../sass/color';
 @use '../../../../../../sass/disabled';
 @use '../../../../../../sass/selector';
+@import './setting';
 
 @mixin first($legacy: false) {
   #{selector.ns(toggle)} {

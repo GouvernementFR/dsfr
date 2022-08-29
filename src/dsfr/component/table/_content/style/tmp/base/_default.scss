@@ -3,70 +3,76 @@
 /// @group Table
 ////
 
-#{selector.ns(table)} {
-  --table-offset: #{space(4v)};
-  @include typography.set-text-margin(0);
-  @include typography.set-title-margin(0);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
 
-  @include spacing.relative;
-  @include spacing.margin-bottom(10v);
-  @include spacing.padding-top(var(--table-offset));
+@mixin first() {
+  #{selector.ns(table)} {
+    --table-offset: #{space(4v)};
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
 
-  @include selector.before('', block) {
-    @include spacing.size(100%, 0);
-  }
+    @include spacing.relative;
+    @include spacing.margin-bottom(10v);
+    @include spacing.padding-top(var(--table-offset));
 
-  &:not(#{selector.ns(table--no-scroll)}) {
+    @include selector.before('', block) {
+      @include spacing.size(100%, 0);
+    }
+
+    &:not(#{selector.ns(table--no-scroll)}) {
+      table {
+        width: 100%;
+      }
+    }
+
     table {
-      width: 100%;
+      @include spacing.size(100%);
+      display: block;
+      overflow: auto;
+      border-spacing: 0;
     }
-  }
 
-  table {
-    @include spacing.size(100%);
-    display: block;
-    overflow: auto;
-    border-spacing: 0;
-  }
+    &#{ns-attr(js-table, true)} {
+      caption {
+        @include spacing.absolute(0);
+      }
+    }
 
-  &#{ns-attr(js-table, true)} {
     caption {
-      @include spacing.absolute(0);
+      position: initial;
+      @include typography.title-style(h4, true);
+      @include typography.font-weight(bold);
+      text-align: left;
     }
-  }
-
-  caption {
-    position: initial;
-    @include typography.title-style(h4, true);
-    @include typography.font-weight(bold);
-    text-align: left;
-  }
-
-  td,
-  th {
-    text-align: left;
-    vertical-align: middle;
-    display: table-cell;
-    border: 0;
-    @include spacing.padding(3v);
-    @include spacing.padding(4v, md);
-    @include typography.text-style(sm);
-  }
-
-  th {
-    font-weight: typography.font-weight(bold);
-  }
-
-  thead {
-    background-size: 100% 2px;
-    background-position: bottom;
-    background-repeat: no-repeat;
 
     td,
     th {
+      text-align: left;
+      vertical-align: middle;
+      display: table-cell;
+      border: 0;
+      @include spacing.padding(3v);
+      @include spacing.padding(4v, md);
+      @include typography.text-style(sm);
+    }
+
+    th {
       font-weight: typography.font-weight(bold);
-      @include spacing.padding-bottom(3.5v); // 0.5v for the box shadow
-      @include spacing.padding-bottom(4.5v, md);
+    }
+
+    thead {
+      background-size: 100% 2px;
+      background-position: bottom;
+      background-repeat: no-repeat;
+
+      td,
+      th {
+        font-weight: typography.font-weight(bold);
+        @include spacing.padding-bottom(3.5v); // 0.5v for the box shadow
+        @include spacing.padding-bottom(4.5v, md);
+      }
     }
   }
 }

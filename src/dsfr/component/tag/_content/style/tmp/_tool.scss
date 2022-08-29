@@ -3,8 +3,9 @@
 /// @group tag
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/spacing/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/spacing';
+@import './settings';
 
 @mixin build-tag() {
   @include _build-link($tags-settings);

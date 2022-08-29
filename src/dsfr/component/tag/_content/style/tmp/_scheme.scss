@@ -3,10 +3,13 @@
 /// @group tag
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/disabled/index';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
+@import './tool';
 
-@mixin _tag-scheme($legacy: false) {
+@mixin _table-scheme($legacy: false) {
   #{selector.ns(tag)} {
     @include color.text(label grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
@@ -22,7 +25,7 @@
     }
   }
 
-  @include clickable-selector {
+  @include action.clickable-selector {
     &#{selector.ns(tag)} {
       @include color.text(action-high blue-france, (legacy: $legacy));
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
@@ -56,7 +59,7 @@
 
   #{selector.ns-group(tags)} {
     &#{selector.ns-group(tags)}--sm {
-      @include clickable-selector {
+      @include action.clickable-selector {
         &#{selector.ns(tag)} {
           @include pressed-selector(true) {
             @include tag-punched-background(background action-high blue-france, sm, $legacy);

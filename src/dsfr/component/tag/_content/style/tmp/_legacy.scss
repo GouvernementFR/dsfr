@@ -3,11 +3,14 @@
 /// @group tag
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/spacing/index';
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
 
-@include legacy.is(ie11) {
+@mixin first() {
   #{selector.ns(tag)} {
     @include icon.icon-legacy(null, sm);
 
@@ -16,7 +19,7 @@
     }
   }
 
-  @include clickable-selector {
+  @include action.clickable-selector {
     #{selector.ns(tag)} {
       // empeche le hover du tag pressable sur ie
       @include pressed-selector(true) {
@@ -45,7 +48,7 @@
   #{selector.ns-group(tags)}--sm {
     @include icon.icon-legacy(null, sm);
 
-    @include clickable-selector {
+    @include action.clickable-selector {
       #{selector.ns(tag)} {
         #{selector.ns(tag)}--dismiss {
           @include icon.icon-legacy(null, xs, after);
