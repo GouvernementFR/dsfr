@@ -9,6 +9,7 @@
 @use '../../../../../../../sass/selector';
 @use '../../../../../../../sass/spacing';
 @use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/action';
 
 @mixin first() {
   @include build-tab();
@@ -16,7 +17,7 @@
   #{selector.ns(tabs)} {
     --tabs-height: auto;
     @include typography.disable-list-style;
-    @include disable-underline;
+    @include action.disable-underline;
     @include spacing.relative;
     overflow: hidden;
     @include spacing.margin-x(0);

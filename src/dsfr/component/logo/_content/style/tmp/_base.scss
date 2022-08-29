@@ -9,7 +9,7 @@
 
 #{selector.ns(logo)} {
   @include typography.set-text-margin(0);
-  @include disable-underline;
+  @include action.disable-underline;
   display: inline-block;
   @include typography.font-weight(bold);
   line-height: #{math.div(13, 12.6)}em;

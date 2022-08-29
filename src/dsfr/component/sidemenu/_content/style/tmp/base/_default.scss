@@ -10,7 +10,7 @@
 @mixin first() {
   #{selector.ns(sidemenu)} {
     @include typography.disable-list-style;
-    @include disable-underline;
+    @include action.disable-underline;
     @include typography.set-text-margin(0);
     @include typography.set-title-margin(0);
     @include spacing.relative;

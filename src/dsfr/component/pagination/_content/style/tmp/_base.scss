@@ -6,7 +6,7 @@
 @include build-pagination();
 
 #{selector.ns(pagination)} {
-  @include disable-underline;
+  @include action.disable-underline;
   @include typography.disable-list-style;
 
   @include selector.list {
@@ -31,7 +31,7 @@
     @include spacing.min-size(8v);
     @include spacing.margin-x(0.5v);
     @include spacing.margin-bottom(4v);
-    @include disable-underline;
+    @include action.disable-underline;
     @include spacing.relative;
 
     &[aria-current]:not([href]) {

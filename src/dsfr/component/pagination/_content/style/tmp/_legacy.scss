@@ -11,7 +11,7 @@
   * Correctif de la largeur de la légende d'un fieldset
   */
   #{selector.ns(pagination)} {
-    @include disable-underline-legacy;
+    @include action.disable-underline-legacy;
     @include typography.disable-list-style-legacy;
 
     &__link {

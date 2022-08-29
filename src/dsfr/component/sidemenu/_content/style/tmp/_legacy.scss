@@ -15,7 +15,7 @@
   #{selector.ns(sidemenu)} {
     height: auto;
     @include typography.disable-list-style-legacy;
-    @include disable-underline-legacy;
+    @include action.disable-underline-legacy;
 
     &__btn {
       &[aria-expanded] {

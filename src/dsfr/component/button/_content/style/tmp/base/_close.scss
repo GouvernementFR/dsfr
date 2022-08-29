@@ -9,9 +9,11 @@
 @import '../setting';
 @import '../tool';
 
-#{selector.ns(btn--close)} {
-  @include nest-btn(sm, right, close-line, null, false);
-  display: flex;
-  @include spacing.margin-left(auto);
-  @include spacing.margin-right(-4v);
+@mixin first() {
+  #{selector.ns(btn--close)} {
+    @include nest-btn(sm, right, close-line, null, false);
+    display: flex;
+    @include spacing.margin-left(auto);
+    @include spacing.margin-right(-4v);
+  }
 }

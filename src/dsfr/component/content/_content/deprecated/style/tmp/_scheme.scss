@@ -3,7 +3,12 @@
 /// @group content
 ////
 
-@mixin _content-deprecated-scheme($legacy: false) {
+@use '../../../../../../../sass/selector';
+
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
   #{selector.ns(content-media)} {
     &__transcription {
       #{selector.ns(link)} {

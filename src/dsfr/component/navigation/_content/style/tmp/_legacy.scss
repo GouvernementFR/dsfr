@@ -11,7 +11,7 @@
   * reset liste à puce
   */
   #{selector.ns(nav)} {
-    @include disable-underline-legacy;
+    @include action.disable-underline-legacy;
     @include typography.disable-list-style-legacy;
 
     &__link,

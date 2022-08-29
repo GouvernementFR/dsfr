@@ -15,8 +15,8 @@
 
   &__social {
     #{selector.ns(link)} {
-      @include disable-underline;
-      @include tint-enabled(true, null);
+      @include action.disable-underline;
+      @include action.tint-enabled(true, null);
       display: inline-flex;
       @include spacing.margin-x(2v);
       @include spacing.margin-bottom(4v);

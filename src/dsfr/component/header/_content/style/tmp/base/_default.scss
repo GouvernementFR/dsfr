@@ -4,7 +4,7 @@
 ////
 
 #{selector.ns(header)} {
-  @include disable-underline;
+  @include action.disable-underline;
   @include typography.disable-list-style;
   @include typography.set-text-margin(0);
   @include typography.set-title-margin(0);

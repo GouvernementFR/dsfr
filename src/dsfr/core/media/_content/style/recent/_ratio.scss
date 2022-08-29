@@ -11,11 +11,11 @@
   }
 }
 
-#{class-start-with(ns('ratio', ''))} {
+#{selector.class-start-with(selector.ns('ratio', ''))} {
   @include fit-cover-center;
   @include size(100%);
 }
 
-#{selector-unify(iframe, #{class-start-with(ns('ratio', ''))})} {
+#{selector-unify(iframe, #{selector.class-start-with(selector.ns('ratio', ''))})} {
   object-fit: fill;
 }

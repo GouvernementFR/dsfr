@@ -6,7 +6,7 @@
 @use '../../../../../../../sass/spacing/index';
 
 #{selector.ns(nav)} {
-  @include disable-underline;
+  @include action.disable-underline;
   @include typography.disable-list-style;
   @include typography.set-text-margin(0);
   @include typography.set-title-margin(0);

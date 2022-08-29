@@ -4,9 +4,12 @@
 ////
 
 @use '../../../../../../../sass/selector';
+@import '../../../../../link/_content/style/tmp/tool';
 @import '../setting';
 @import '../tool';
 
-#{selector.ns(btn--display)} {
-  @include nest-btn(md, left, theme-fill, null, false);
+@mixin first() {
+  #{selector.ns(btn--display)} {
+    @include nest-btn(md, left, theme-fill, null, false);
+  }
 }

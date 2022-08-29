@@ -1,14 +1,9 @@
-////
-/// Content Deprecated Module
-/// @group content
-////
+@use 'tmp/base';
+@use 'tmp/scheme';
 
-#{selector.ns(content-media)} {
-  &__transcription {
-    #{selector.ns(link)} {
-      @include nest-btn(sm, right, menu-2-fill, null, false);
-      @include disable-underline;
-      @include tint-enabled(true, null);
-    }
-  }
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
+  @include scheme.scheme();
 }
