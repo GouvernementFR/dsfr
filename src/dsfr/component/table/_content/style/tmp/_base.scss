@@ -3,6 +3,14 @@
 /// @group Table
 ////
 
-@import 'base/default';
-@import 'base/variants';
-@import 'base/shadow';
+@use 'base/default';
+@use 'base/variants';
+@use 'base/shadow';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include variants.first(true);
+  @include shadow.first(true);
+}

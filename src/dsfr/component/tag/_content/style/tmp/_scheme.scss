@@ -9,7 +9,7 @@
 @use '../../../../../../sass/selector';
 @import './tool';
 
-@mixin first() {
+@mixin _table-scheme($legacy: false) {
   #{selector.ns(tag)} {
     @include color.text(label grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));

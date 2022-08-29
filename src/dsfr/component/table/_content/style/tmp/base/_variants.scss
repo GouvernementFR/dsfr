@@ -3,76 +3,84 @@
 /// @group Table
 ////
 
-/*
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+
+@mixin first() {
+  /*
 * Cache la caption
 */
-#{selector.ns(table--no-caption)} {
-  @include spacing.padding-top(0);
+  #{selector.ns(table--no-caption)} {
+    @include spacing.padding-top(0);
 
-  caption {
-    @include sr-only();
-    @include spacing.height(0);
-  }
-}
-
-/*
-* Fixe le caption en bas du tableau
-*/
-#{selector.ns(table--caption-bottom)} {
-  @include spacing.padding-top(0);
-  @include spacing.margin-bottom(0);
-  @include spacing.margin-top(4v);
-
-  table {
-    @include spacing.margin-bottom(calc(var(--table-offset) + 11v));
-  }
-
-  &#{ns-attr(js-table, true)} {
     caption {
-      @include spacing.absolute(100%, 0, 0, 0);
-      @include spacing.margin-top(4v);
+      @include display.sr-only();
+      @include spacing.height(0);
     }
   }
 
-  caption {
+  /*
+* Fixe le caption en bas du tableau
+*/
+  #{selector.ns(table--caption-bottom)} {
+    @include spacing.padding-top(0);
+    @include spacing.margin-bottom(0);
     @include spacing.margin-top(4v);
-    @include spacing.height(min-content);
-    caption-side: bottom;
-  }
-}
 
-/*
+    table {
+      @include spacing.margin-bottom(calc(var(--table-offset) + 11v));
+    }
+
+    &#{ns-attr(js-table, true)} {
+      caption {
+        @include spacing.absolute(100%, 0, 0, 0);
+        @include spacing.margin-top(4v);
+      }
+    }
+
+    caption {
+      @include spacing.margin-top(4v);
+      @include spacing.height(min-content);
+      caption-side: bottom;
+    }
+  }
+
+  /*
 * pas de scroll ni de shadow
 */
-#{selector.ns(table--no-scroll)} {
-  @include spacing.min-width(auto);
+  #{selector.ns(table--no-scroll)} {
+    @include spacing.min-width(auto);
 
-  table {
-    overflow-x: hidden;
+    table {
+      overflow-x: hidden;
+    }
+
+    caption {
+      @include spacing.max-width(
+        calc(100vw - 8v)
+      ); // eol in mobile even if table overflow
+    }
   }
 
-  caption {
-    @include spacing.max-width(calc(100vw - 8v)); // eol in mobile even if table overflow
-  }
-}
-
-/*
+  /*
 * Fixe la taille des colonnes du tableau
 */
-#{selector.ns(table--layout-fixed)} {
-  table {
-    display: table;
-    table-layout: fixed;
+  #{selector.ns(table--layout-fixed)} {
+    table {
+      display: table;
+      table-layout: fixed;
+    }
   }
-}
 
-/* Style bordered, ajoute des bordures entre chaque ligne */
-#{selector.ns(table--bordered)} {
-  tbody {
-    tr {
-      background-size: 100% 1px;
-      background-position: bottom;
-      background-repeat: no-repeat;
+  /* Style bordered, ajoute des bordures entre chaque ligne */
+  #{selector.ns(table--bordered)} {
+    tbody {
+      tr {
+        background-size: 100% 1px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
