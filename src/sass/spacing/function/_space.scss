@@ -14,7 +14,6 @@
 ///   }
 @function space($value) {
   $type: meta.type-of($value);
-  // @debug $type $value;
   @if $type == map {
     @error 'space function with map';
   }

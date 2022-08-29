@@ -1,7 +1,7 @@
-import api from '../../../api';
+import ref from '../../../ref';
 
 export const SchemeEmission = {
-  SCHEME: api.internals.ns.emission('scheme', 'scheme'),
-  THEME: api.internals.ns.emission('scheme', 'theme'),
-  ASK: api.internals.ns.emission('scheme', 'ask')
+  SCHEME: ref.internals.ns.emission('scheme', 'scheme'),
+  THEME: ref.internals.ns.emission('scheme', 'theme'),
+  ASK: ref.internals.ns.emission('scheme', 'ask')
 };

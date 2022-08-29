@@ -1,7 +1,7 @@
-import api from '../../../api';
+import ref from '../../../ref';
 
 export const SchemeAttribute = {
-  THEME: api.internals.ns.attr('theme'),
-  SCHEME: api.internals.ns.attr('scheme'),
-  TRANSITION: api.internals.ns.attr('transition')
+  THEME: ref.internals.ns.attr('theme'),
+  SCHEME: ref.internals.ns.attr('scheme'),
+  TRANSITION: ref.internals.ns.attr('transition')
 };

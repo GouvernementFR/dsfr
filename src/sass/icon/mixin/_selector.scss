@@ -14,10 +14,7 @@
     }
   }
 
-  @debug $start;
-
   @include selector.pattern($start) {
-    @debug &;
     @content;
   }
 }

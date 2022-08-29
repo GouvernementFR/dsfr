@@ -4,44 +4,74 @@
 @use '../property/decisions';
 @use '../property/sets';
 
-@mixin define($theme: light) {
+@function _get-params ($settings) {
+  $alpha: false;
+  $hover: false;
+  @if list.length($settings) > 1 {
+    $params: list.nth($settings, 2);
+    @if map.has-key($params, alpha) {
+      $alpha: true;
+    }
+    @if map.has-key($params, hover) {
+      $hover: true;
+    }
+  }
+  @return ( alpha:$alpha, hover: $hover );
+}
+
+@mixin _decide($token, $type: null) {
+  $parameters: _parameter($type);
+  $var: colors.from($token, decision, $parameters);
+  #{$var}: colors.from($token, set, map.merge($parameters, (var: true)));
+}
+
+@mixin _set($token, $theme, $type: null) {
+  $parameters: _parameter($type);
+  $var: colors.from($token, set, $parameters);
+  #{$var}: colors.from($token, hex, map.merge($parameters, (theme: $theme)));
+}
+
+@function _contains($family, $options) {
+  @if not map.has-key($options, families) {
+    @return true;
+  }
+  $families: map.get($options, families);
+  @if list.index($families, $family) != null {
+    @return true;
+  }
+  @return false;
+}
+
+@mixin define($theme: light, $options: ()) {
   $sets: ();
   @each $context, $uses in decisions.$values {
     @each $use, $families in $uses {
       @each $family, $settings in $families {
         $shade: list.nth($settings, 1);
-        $alpha: false;
-        $hover: false;
+        $params: _get-params($settings);
 
-        @if list.length($settings) > 1 {
-          $params: list.nth($settings, 2);
-          @if map.has-key($params, alpha) {
-            $alpha: true;
-          }
-          @if map.has-key($params, hover) {
-            $hover: true;
-          }
-        }
-        @each $tint, $shades in map.get(sets.$values, $family) {
-          @if map.has-key($shades, $shade) {
-            $token: $context $use $tint;
-            $set: colors.from($token, set);
-            $sets-tint: map.get($sets, $tint);
-            @if $sets-tint == null {
-              $sets-tint: ();
-            }
-            @if not map.has-key($sets-tint, $set) or $hover {
-              $sets-tint: map.merge($sets-tint, ($set: (token: $token, hover: $hover)));
-            }
+        @if _contains($family, $options) {
+          @each $tint, $shades in map.get(sets.$values, $family) {
+            @if map.has-key($shades, $shade) {
+              $token: $context $use $tint;
+              $set: colors.from($token, set);
+              $sets-tint: map.get($sets, $tint);
+              @if $sets-tint == null {
+                $sets-tint: ();
+              }
+              @if not map.has-key($sets-tint, $set) or map.get($params, hover) {
+                $sets-tint: map.merge($sets-tint, ($set: (token: $token, hover: map.get($params, hover))));
+              }
 
-            $sets: map.merge($sets, ($tint: $sets-tint));
+              $sets: map.merge($sets, ($tint: $sets-tint));
 
-            @if $theme == light {
-              @include _decide($token);
+              @if $theme == light {
+                @include _decide($token);
 
-              @if $hover == true {
-                @include _decide($token, hover);
-                @include _decide($token, active);
+                @if map.get($params, hover) != false {
+                  @include _decide($token, hover);
+                  @include _decide($token, active);
+                }
               }
             }
           }
@@ -78,16 +108,4 @@
   @if $type == active {
     @return (active: true);
   }
-}
-
-@mixin _decide($token, $type: null) {
-  $parameters: _parameter($type);
-  $var: colors.from($token, decision, $parameters);
-  #{$var}: colors.from($token, set, map.merge($parameters, (var: true)));
-}
-
-@mixin _set($token, $theme, $type: null) {
-  $parameters: _parameter($type);
-  $var: colors.from($token, set, $parameters);
-  #{$var}: colors.from($token, hex, map.merge($parameters, (theme: $theme)));
 }

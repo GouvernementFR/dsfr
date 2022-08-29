@@ -1,5 +1,9 @@
-@use 'recent/custom-properties';
+@use '../../../../../sass/color';
+
+$options: () !default;
 
 @mixin first() {
-  @include custom-properties.define();
+  :root {
+    @include color.define(light, $options);
+  }
 }

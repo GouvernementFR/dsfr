@@ -3,11 +3,6 @@
 /// @group core
 ////
 
-@mixin hover-media-query () {
-  @media (hover: hover) and (pointer: fine) {
-    @content;
-  }
-}
 
 @mixin hover-type-selector($elements, $type: all, $check-disabled: false) {
   $selectors: ();

@@ -14,7 +14,11 @@ const FILENAMES = [
     supports: [MODULE, NOMODULE]
   },
   {
-    name: 'pre.legacy',
+    name: 'pre.module',
+    supports: [MODULE]
+  },
+  {
+    name: 'pre.nomodule',
     supports: [NOMODULE]
   },
   {
@@ -22,7 +26,11 @@ const FILENAMES = [
     supports: [MODULE, NOMODULE]
   },
   {
-    name: 'define.legacy',
+    name: 'define.module',
+    supports: [MODULE]
+  },
+  {
+    name: 'define.nomodule',
     supports: [NOMODULE]
   },
   {
@@ -30,7 +38,11 @@ const FILENAMES = [
     supports: [MODULE, NOMODULE]
   },
   {
-    name: 'register.legacy',
+    name: 'register.module',
+    supports: [MODULE]
+  },
+  {
+    name: 'register.nomodule',
     supports: [NOMODULE]
   },
   {
@@ -38,7 +50,11 @@ const FILENAMES = [
     supports: [MODULE, NOMODULE]
   },
   {
-    name: 'post.legacy',
+    name: 'post.module',
+    supports: [MODULE]
+  },
+  {
+    name: 'post.nomodule',
     supports: [NOMODULE]
   }
 ];

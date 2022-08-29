@@ -1,11 +1,11 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 import { Scheme } from './scheme/scheme.js';
 import { SchemeValue } from './scheme/scheme-value.js';
 import { SchemeSelector } from './scheme/scheme-selector.js';
 import { SchemeEmission } from './scheme/scheme-emission.js';
 import { SchemeTheme } from './scheme/scheme-theme.js';
 
-api.scheme = {
+ref.scheme = {
   Scheme: Scheme,
   SchemeValue: SchemeValue,
   SchemeSelector: SchemeSelector,
@@ -13,4 +13,4 @@ api.scheme = {
   SchemeTheme: SchemeTheme
 };
 
-export default api;
+export default ref;

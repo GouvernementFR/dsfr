@@ -3,5 +3,19 @@
 /// @group scheme
 ////
 
-@import 'recent/decisions';
-@import 'recent/hover';
+$options: () !default;
+
+@use '../../../../../sass/color';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/media-query';
+
+@mixin first () {
+  @include selector.theme(dark) {
+    @include color.define(dark, $options);
+  }
+  @include media-query.hover {
+    @include selector.theme(dark) {
+      --brighten: 1;
+    }
+  }
+}
