@@ -1,11 +1,11 @@
-@use '../../../.config/config';
+@use '../property/prefix';
 
 /// Préfixage d'un élément css, généralement un nom de classe
 /// @access public
 /// @param {String} $name - nom de l'élément
 /// @param {String} $notation - notation du sélecteur, par défaut un point pour les classes
 @function ns($name, $notation: '.') {
-  $class-name: $notation + config.$prefix + '-' + $name;
+  $class-name: $notation + prefix.$prefix + '-' + $name;
   @return $class-name;
 }
 

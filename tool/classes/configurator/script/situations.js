@@ -1,11 +1,11 @@
 const RECOMMENDED = {
   id: 'recommended',
-  path: 'script'
+  path: 'script/'
 };
 
 const DEPRECATED = {
   id: 'deprecated',
-  path: 'deprecated/script'
+  path: 'deprecated/script/'
 };
 
 const SITUATIONS = [RECOMMENDED, DEPRECATED];

@@ -1,5 +1,6 @@
 const path = require('path');
 const { createFile } = require('../../../utilities/file');
+const { SRC } = require('../src');
 
 class ScriptReference {
   constructor (part) {
@@ -17,9 +18,9 @@ class ScriptReference {
 
   generate () {
     const api = this.part.getPart('api');
-    const relative = path.relative(`src${this.part.path}`, `src${api.path}/_content/script/reference.js`);
+    const relative = path.relative(`${SRC}${this.part.path}`, `${SRC}${api.path}_content/script/reference.js`);
     const ref = `import ref from '${relative}';\nexport default ref;\n`;
-    createFile(`src${this.part.path}/ref.js`, ref);
+    createFile(`${SRC}${this.part.path}ref.js`, ref);
   }
 }
 

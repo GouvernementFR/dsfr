@@ -2,8 +2,9 @@ const { Part } = require('./part');
 const { I18nPart } = require('./i18n/i18n-part');
 const { createFile } = require('../../utilities/file');
 const global = require('../../../package.json');
+const { SRC } = require('./src');
 
-const SASS_PATH = 'sass/';
+const SASS_PATH = 'src/sass/';
 
 class Configurator {
   build () {
@@ -44,6 +45,7 @@ class Configurator {
 
   generate () {
     this._generateJsConfig();
+    this._generateSassPrefix();
     this.root.generate();
     this._generateIcons();
     this._generateI18n();
@@ -84,8 +86,14 @@ class Configurator {
     lines.push(`  version: '${global.version}'`);
 
     const js = `const config = {\n${lines.join(',\n')}\n};\n\nexport default config;\n`;
-    const file = `src${this.root.getPart('api').path}/config.js`;
+    const file = `${SRC}${this.root.getPart('api').path}config.js`;
     createFile(file, js);
+  }
+
+  _generateSassPrefix () {
+    const sass = `$prefix: ${global.config.prefix};\n`;
+    const file = `${SASS_PATH}selector/property/_prefix.scss`;
+    createFile(file, sass);
   }
 }
 

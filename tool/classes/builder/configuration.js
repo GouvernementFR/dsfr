@@ -17,7 +17,6 @@ class Configuration {
   load (path) {
     try {
       const file = `${path}.config/config.json`;
-      console.log(file);
       const fileContents = fs.readFileSync(file, 'utf8');
       this._data = JSON.parse(fileContents);
     } catch (e) {

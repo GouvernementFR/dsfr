@@ -1,10 +1,11 @@
 const fs = require('fs');
+const { SRC } = require('../src');
 
 class ExampleNode {
   constructor (part, relative = '') {
     this.part = part;
     this.relative = relative;
-    this.path = `src${this.part.path}/_content/example${relative}`;
+    this.path = `${SRC}${this.part.path}_content/example/${relative}`;
     this._has = false;
     this._children = [];
     this._data = {};
@@ -24,8 +25,8 @@ class ExampleNode {
       switch (true) {
         case entry.isFile() && entry.name === 'index.ejs':
           this._has = true;
-          this._data.src = `${this.path}/index.ejs`;
-          this._data.dest = `example${this.part.path}${this.relative}/index.html`;
+          this._data.src = `${this.path}index.ejs`;
+          this._data.dest = `example/${this.part.path}${this.relative}index.html`;
           break;
 
         case entry.isDirectory():
@@ -39,7 +40,7 @@ class ExampleNode {
   }
 
   addChild (name) {
-    const child = new ExampleNode(this.part, `${this.relative}/${name}`);
+    const child = new ExampleNode(this.part, `${this.relative}${name}/`);
     if (child.has) this._children.push(child);
   }
 

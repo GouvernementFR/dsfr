@@ -2,6 +2,7 @@ const fs = require('fs');
 const { createFile, deleteFile } = require('../../../utilities/file');
 const { SUPPORTS } = require('./supports');
 const { SITUATIONS } = require('./situations');
+const { SRC } = require('../src');
 
 class StyleItem {
   constructor (part, kind) {
@@ -10,8 +11,8 @@ class StyleItem {
     this.imports = [];
     this._filled = false;
     this._data = {
-      src: `src${part.path}/${kind.src}.scss`,
-      dest: `dist${part.path}/${part.filename}${kind.dest}.css`
+      src: `${SRC}${part.path}${kind.src}.scss`,
+      dest: `dist/${part.path}${part.filename}${kind.dest}.css`
     };
   }
 
@@ -44,7 +45,7 @@ class StyleItem {
   }
 
   produce () {
-    const folder = `src${this.part.path}`.split('/').pop();
+    const folder = `${SRC}${this.part.path}`.split('/').splice(-2, 1)[0];
     const content = [`@use '../${folder}' as ${this.part.id};\n\n`];
 
     const situations = this.kind.situations.map(situation => situation.id).join(' ');

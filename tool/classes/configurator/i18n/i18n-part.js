@@ -1,9 +1,11 @@
 const fs = require('fs');
 const { I18nLocale } = require('./i18n-locale');
 
+const { SRC } = require('../src');
+
 class I18nPart {
   constructor (part) {
-    this.path = `src/${part.path}/_content/i18n`;
+    this.path = `${SRC}${part.path}_content/i18n`;
     this.locales = [];
     this.init();
   }

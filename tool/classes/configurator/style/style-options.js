@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { createFile } = require('../../../utilities/file');
+const { SRC } = require('../src');
 
 class StyleOptions {
   constructor (part) {
@@ -27,7 +28,7 @@ class StyleOptions {
   }
 
   init () {
-    const file = `src${this.part.path}/_content/style/_options.scss`;
+    const file = `${SRC}${this.part.path}_content/style/_options.scss`;
     this._has = fs.existsSync(file);
 
     if (!this._has) return;
@@ -40,7 +41,7 @@ class StyleOptions {
   generate () {
     const contents = [`  depth: ${this.part.depth}`, ...this.getContent()];
     const content = `$options: (\n${contents.join(',\n')}\n);\n`;
-    const path = `src${this.part.path}/options.scss`;
+    const path = `${SRC}${this.part.path}options.scss`;
 
     createFile(path, content);
   }

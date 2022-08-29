@@ -3,6 +3,7 @@ const { SUPPORTS } = require('./supports');
 const { SITUATIONS } = require('./situations');
 const { StyleSupport } = require('./style-support');
 const { BREAKPOINTS } = require('./breakpoints');
+const { SRC } = require('../src');
 
 class StyleCollector {
   constructor (part) {
@@ -22,7 +23,7 @@ class StyleCollector {
 
   getUse (from) {
     return {
-      path: path.relative(from, `src/${this.part.path}`),
+      path: path.relative(from, `${SRC}${this.part.path}`),
       module: this.part.id
     };
   }
@@ -63,7 +64,7 @@ class StyleCollector {
     const uses = [];
 
     for (const part of dependency.imports) {
-      uses.push(part.style.collector.getUse(`src/${this.part.path}`));
+      uses.push(part.style.collector.getUse(`${SRC}${this.part.path}`));
     }
 
     const mixins = SUPPORTS.map(support => {

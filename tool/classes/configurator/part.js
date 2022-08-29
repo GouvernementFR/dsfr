@@ -6,6 +6,7 @@ const { StylePart } = require('./style/style-part');
 const { ScriptPart } = require('./script/script-part');
 const global = require('../../../package.json');
 const { ExamplePart } = require('./example/example-part');
+const { SRC } = require('./src');
 
 class Part {
   constructor (path, depth = 0, ascendants = null) {
@@ -92,7 +93,7 @@ class Part {
   }
 
   init () {
-    const path = `src/${this.path}/_content/config.yml`;
+    const path = `${SRC}${this.path}_content/config.yml`;
     if (!fs.existsSync(path)) return;
     const fileContents = fs.readFileSync(path, 'utf8');
     this._config = yaml.load(fileContents);
@@ -101,7 +102,7 @@ class Part {
     this._filename = this._config.filename || this._config.id;
     this._data = {
       id: this._config.id,
-      src: `src${this.path}`,
+      src: `${SRC}${this.path}`,
       detached: this._config.detached === true
     };
     this.extract();
@@ -113,7 +114,7 @@ class Part {
   }
 
   extract () {
-    const entries = fs.readdirSync(`src/${this.path}`, { withFileTypes: true });
+    const entries = fs.readdirSync(`${SRC}${this.path}`, { withFileTypes: true });
 
     for (const entry of entries) {
       if (entry.isDirectory() && entry.name !== '_content') {
@@ -128,7 +129,7 @@ class Part {
   }
 
   addChild (path) {
-    const child = new Part(`${this.path}/${path}`, this.depth + 1, [this, ...this._ascendants]);
+    const child = new Part(`${this.path}${path}/`, this.depth + 1, [this, ...this._ascendants]);
     if (child.has) this._children.push(child);
   }
 

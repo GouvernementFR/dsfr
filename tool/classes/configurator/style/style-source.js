@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { BREAKPOINTS } = require('./breakpoints');
+const { SRC } = require('../src');
 
 class StyleSource {
   constructor (part, support, situation) {
@@ -26,7 +27,7 @@ class StyleSource {
   }
 
   init () {
-    const file = `src${this.part.path}/_content/${this.situation.path}/_${this.support.filename}.scss`;
+    const file = `${SRC}${this.part.path}_content/${this.situation.path}/_${this.support.filename}.scss`;
     this._has = fs.existsSync(file);
 
     if (!this._has) return;
@@ -40,7 +41,7 @@ class StyleSource {
     this._module = `${this.part.id}${this.support.module}${this.situation.module}`;
 
     this._use = {
-      path: `_content/${this.situation.path}/${this.support.filename}`,
+      path: `_content/${this.situation.path}${this.support.filename}`,
       module: this._module,
       id: this.part.id
     };

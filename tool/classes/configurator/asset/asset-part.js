@@ -1,10 +1,11 @@
 const fs = require('fs');
 const { AssetItem } = require('./asset-item');
+const { SRC } = require('../src');
 
 class AssetPart {
   constructor (part, config) {
     this.part = part;
-    this._paths = [`src${part.path}/_content/asset`, `src${part.path}/_content/deprecated/asset`];
+    this._paths = [`${SRC}${part.path}_content/asset/`, `${SRC}${SRC}${part.path}_content/deprecated/asset/`];
     this.items = [];
     this._config = config || {};
     this._data = {};
@@ -54,11 +55,11 @@ class AssetPart {
     for (const entry of entries) {
       switch (true) {
         case entry.isFile():
-          if (!(/(^|\/)\.[^/.]/g).test(entry.name)) this.items.push(new AssetItem(`${dir}/${entry.name}`, `${this.dist}${relative}/${entry.name}`, this.type, this.category));
+          if (!(/(^|\/)\.[^/.]/g).test(entry.name)) this.items.push(new AssetItem(`${dir}${entry.name}`, `${this.dist}${relative}${entry.name}`, this.type, this.category));
           break;
 
         case entry.isDirectory():
-          this._parse(path, `${relative}/${entry.name}`);
+          this._parse(path, `${relative}${entry.name}/`);
           break;
       }
     }

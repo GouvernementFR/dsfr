@@ -2,6 +2,7 @@ const fs = require('fs');
 const { FILENAMES } = require('./filenames');
 const { SUPPORTS } = require('./supports');
 const { ScriptSource } = require('./script-source');
+const { SRC } = require('../src');
 
 class ScriptCollector {
   constructor (part, kind) {
@@ -19,7 +20,7 @@ class ScriptCollector {
   }
 
   init () {
-    const dirs = this.kind.situations.map(situation => `src${this.part.path}/_content/${situation.path}`).filter(dir => fs.existsSync(dir));
+    const dirs = this.kind.situations.map(situation => `${SRC}${this.part.path}_content/${situation.path}`).filter(dir => fs.existsSync(dir));
 
     if (dirs.length === 0) return;
 
