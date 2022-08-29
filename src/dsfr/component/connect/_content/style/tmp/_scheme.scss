@@ -3,10 +3,10 @@
 /// @group connect
 ////
 
-@import 'scheme/default';
-@import 'scheme/group';
+@use 'scheme/default';
+@use 'scheme/group';
 
-@mixin _connect-scheme($legacy: false, $standalone: false) {
-  @include _connect-scheme-default($legacy, $standalone);
-  @include _connect-scheme-group($legacy, $standalone);
+@mixin scheme($legacy: false, $standalone: false) {
+  @include default.scheme($legacy, $standalone);
+  @include group.scheme($legacy, $standalone);
 }

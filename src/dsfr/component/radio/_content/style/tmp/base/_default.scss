@@ -7,7 +7,7 @@
  * L'input de type radio avec son label est contenu dans un groupe
  * Ce groupe contient également le texte d'aide (optionnels)
  */
-#{ns-group(radio)} {
+#{selector.ns-group(radio)} {
   @include spacing.relative;
 
   /**

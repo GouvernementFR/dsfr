@@ -5,7 +5,7 @@
 
 @use '../../../../../../../sass/spacing/index';
 
-#{ns-group(tags)} {
+#{selector.ns-group(tags)} {
   @include typography.disable-list-style;
   @include display.flex;
   @include spacing.margin-x(-1v);
@@ -20,7 +20,7 @@
     vertical-align: top;
   }
 
-  &#{ns-group(tags)}--sm {
+  &#{selector.ns-group(tags)}--sm {
     @include nest-tag(sm, null);
 
     @include clickable-selector {

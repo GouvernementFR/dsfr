@@ -13,8 +13,8 @@
     @include social-deprecated-legacy-icon(linkedin, linkedin-box-fill);
     @include social-deprecated-legacy-icon(youtube, youtube-fill);
 
-    #{ns-group(links)} {
-      &:not(#{ns-group(links)}--sm):not(#{ns-group(links)}--lg) {
+    #{selector.ns-group(links)} {
+      &:not(#{selector.ns-group(links)}--sm):not(#{selector.ns-group(links)}--lg) {
         #{selector.ns(link)} {
           @include icon.not-selector {
             @include icon.icon-legacy(null, md);

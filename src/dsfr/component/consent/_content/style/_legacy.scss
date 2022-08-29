@@ -1,9 +1,9 @@
-@mixin first () {
-  @import '../../../link/_content/style/tmp/tool';
-  @import 'tmp/setting';
-  @import 'tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/legacy';
+@use 'tmp/base';
+@use 'tmp/legacy';
 
-  @include _consent-scheme(true);
+$options: () !default;
+
+@mixin first() {
+  @include legacy.first();
+  @include scheme.scheme(true);
 }

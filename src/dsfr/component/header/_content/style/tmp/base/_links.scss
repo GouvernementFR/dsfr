@@ -4,8 +4,8 @@
 ////
 
 #{selector.ns(header)} {
-  #{ns-group(btns)} {
-    &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+  #{selector.ns-group(btns)} {
+    &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
       @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
         #{selector.ns(btn)} {
           @include icon.not-selector {
@@ -35,7 +35,7 @@
       @include spacing.margin-bottom(-4v);
     }
 
-    #{ns-group(btns)} {
+    #{selector.ns-group(btns)} {
       @include media-query.from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
@@ -68,8 +68,8 @@
       }
     }
 
-    #{ns-group(btns)} {
-      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+    #{selector.ns-group(btns)} {
+      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
         @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
           @include display.flex(column);
 

@@ -4,16 +4,20 @@
 ////
 
 @use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
 
-@include legacy.is(ie11) {
-  #{selector.ns(consent-service)} {
-    &__collapse {
-      #{&}-btn {
-        text-decoration: underline;
-        @include icon.icon-legacy(arrow-down-s-line, sm);
+@mixin first() {
+  @include legacy.is(ie11) {
+    #{selector.ns(consent-service)} {
+      &__collapse {
+        #{&}-btn {
+          text-decoration: underline;
+          @include icon.icon-legacy(arrow-down-s-line, sm);
 
-        &[aria-expanded="true"] {
-          @include icon.icon-legacy(arrow-up-s-line, sm);
+          &[aria-expanded="true"] {
+            @include icon.icon-legacy(arrow-up-s-line, sm);
+          }
         }
       }
     }

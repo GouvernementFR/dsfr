@@ -20,7 +20,7 @@
   @include spacing.padding(0);
   @include spacing.margin(0);
   @include display.flex(column, stretch, space-between);
-  @include fixed(0, 0, 0, 0, 100%, 100%);
+  @include spacing.fixed(0, 0, 0, 0, 100%, 100%);
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
 
@@ -115,7 +115,7 @@
     transition: box-shadow 0.3s;
     z-index: z-index(modal-footer);
 
-    #{ns-group(btns)} {
+    #{selector.ns-group(btns)} {
       margin-bottom: -1rem;
       width: calc(100% + #{space(4v)});
     }

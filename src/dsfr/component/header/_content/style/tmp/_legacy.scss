@@ -10,8 +10,8 @@
     @include typography.disable-list-style-legacy;
     @include disable-underline-legacy;
 
-    #{ns-group(btns)} {
-      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+    #{selector.ns-group(btns)} {
+      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
         @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
           #{selector.ns(btn)} {
             @include icon.not-selector {

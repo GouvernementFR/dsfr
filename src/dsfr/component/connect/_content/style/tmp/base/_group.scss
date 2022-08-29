@@ -3,14 +3,19 @@
 /// @group connect
 ////
 
-#{ns-group(connect)} {
-  @include typography.set-text-margin(0 0 4v 0);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
 
-  p {
-    @include typography.text-style(xs);
-  }
+@mixin first() {
+  #{selector.ns-group(connect)} {
+    @include typography.set-text-margin(0 0 4v 0);
 
-  #{selector.ns(connect)} + p a {
-    @include typography.text-style(sm);
+    p {
+      @include typography.text-style(xs);
+    }
+
+    #{selector.ns(connect)} + p a {
+      @include typography.text-style(sm);
+    }
   }
 }

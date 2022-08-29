@@ -7,7 +7,7 @@
 @use '../../../../../../../sass/disabled/index';
 
 @mixin _radio-scheme-md($legacy: false) {
-  #{ns-group(radio)} {
+  #{selector.ns-group(radio)} {
     /**
     * On cache l'input de type radio pour le styler via le label
     */

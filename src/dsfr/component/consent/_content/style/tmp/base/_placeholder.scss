@@ -3,10 +3,17 @@
 /// @group consent
 ////
 
-#{selector.ns(consent-placeholder)} {
-  @include display.flex(column,center,center);
-  @include spacing.padding(20v 8v);
-  text-align: center;
-  @include typography.set-text-margin(0 0 6v);
-  @include typography.set-title-margin(0 0 2v);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/typography';
+
+@mixin first() {
+  #{selector.ns(consent-placeholder)} {
+    @include display.flex(column,center,center);
+    @include spacing.padding(20v 8v);
+    text-align: center;
+    @include typography.set-text-margin(0 0 6v);
+    @include typography.set-title-margin(0 0 2v);
+  }
 }

@@ -83,7 +83,7 @@
     }
   }
 
-  #{ns-group(btns)} {
+  #{selector.ns-group(btns)} {
     #{selector.ns(translate)} {
       &__menu {
         @include spacing.margin(-5v -3v 0, lg);

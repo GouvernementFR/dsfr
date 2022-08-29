@@ -3,9 +3,10 @@
 /// @group connect
 ////
 
-@use '../../../../../../../sass/color/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/selector';
 
-@mixin _connect-scheme-group($legacy: false, $standalone: false) {
+@mixin scheme($legacy: false, $standalone: false) {
   #{selector.ns(connect)} {
     &-group {
       #{selector.ns(connect)} + p a {

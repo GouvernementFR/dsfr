@@ -10,7 +10,7 @@
  * Modificateur pour la taille sm
  */
 @mixin _radio-scheme-sm($legacy: false) {
-  #{ns-group(radio)}--sm {
+  #{selector.ns-group(radio)}--sm {
     input[type="radio"] {
       + label {
         @include selector.before {

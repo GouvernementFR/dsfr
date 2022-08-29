@@ -3,7 +3,7 @@
 /// @group form
 ////
 
-#{ns-group(select), ns-group(input)} {
+#{selector.ns-group(select), selector.ns-group(input)} {
   &:not(:last-child) {
     @include margin-bottom(6v);
   }
@@ -79,7 +79,7 @@
   @include icon.image(information-fill);
 }
 
-#{ns-group(form)} {
+#{selector.ns-group(form)} {
   @include margin-bottom(8v);
 }
 
@@ -121,7 +121,7 @@
       @include margin(-3v 0);
     }
 
-    #{ns-group(checkbox)} {
+    #{selector.ns-group(checkbox)} {
       display: inline-flex;
       @include margin-bottom(0);
 
@@ -138,7 +138,7 @@
       }
     }
 
-    #{ns-group(radio)} {
+    #{selector.ns-group(radio)} {
       display: inline-flex;
 
       &:not(:last-child) {

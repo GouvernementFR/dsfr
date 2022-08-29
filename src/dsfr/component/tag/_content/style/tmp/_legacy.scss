@@ -38,11 +38,11 @@
     }
   }
 
-  #{ns-group(tags)} {
+  #{selector.ns-group(tags)} {
     @include typography.disable-list-style-legacy(true);
   }
 
-  #{ns-group(tags)}--sm {
+  #{selector.ns-group(tags)}--sm {
     @include icon.icon-legacy(null, sm);
 
     @include clickable-selector {

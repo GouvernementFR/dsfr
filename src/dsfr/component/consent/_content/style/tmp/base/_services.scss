@@ -3,165 +3,175 @@
 /// @group consent
 ////
 
-@use '../../../../../../../sass/spacing/index';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/display';
 
-/**
-* Consent service correspond à un bloc de finalité (titre, radios, description)
-**/
-#{selector.ns(consent-service)} {
-  @include spacing.relative;
+@import '../../../../../link/_content/style/tmp/tool';
+@import '../setting';
+@import '../tool';
 
-  > #{selector.ns(fieldset)} {
-    @include spacing.padding(0 0 5v);
-    @include spacing.padding(0 0 5v, md);
-    @include display.flex(column);
-    @include spacing.size(100%);
-    position: initial;
-
-    @include media-query.from(md) {
-      @include display.flex(row,null,null,wrap);
-    }
-  }
-
-  &:last-child {
-    > #{selector.ns(fieldset)} {
-      @include spacing.padding(8v 0 4v);
-      @include spacing.padding(5v 0 4v, md);
-
-      #{selector.ns(consent-service)} > #{selector.ns(fieldset)}:last-child {
-        @include spacing.margin-bottom(0);
-      }
-    }
-  }
-
+@mixin first() {
   /**
-  * Nom du service
+  * Consent service correspond à un bloc de finalité (titre, radios, description)
   **/
-  &__title {
-    @include typography.title-style(h6);
-    @include spacing.padding(8v 0 3v);
-    @include spacing.margin(0);
-
-    @include media-query.from(md) {
-      @include spacing.size(50%);
-    }
-  }
-
-  /**
-  * Description du service
-  **/
-  &__desc {
-    @include typography.text-style(sm);
-    @include typography.set-text-margin(3v 0 3v 0);
-
-    @include media-query.from(md) {
-      @include typography.set-text-margin(1v 6v 3v 0);
-      @include spacing.size(60%);
-    }
-  }
-
-  /**
-  * Bloc dépliable, contient des sous services
-  **/
-  &__collapse {
-    @include spacing.margin-top(-1v);
-    @include spacing.margin-bottom(3v);
-    @include spacing.size(100%);
-    @include nest-consent-btn;
-  }
-
-  /**
-  * Conteneur des radio-group
-  **/
-  &__radios {
-    // @include spacing.margin-bottom(3v);
-    @include display.flex(row, null, null, wrap);
-
-    @include media-query.from(md) {
-      @include display.flex(row,center,flex-end);
-      @include spacing.margin-bottom(0);
-      @include spacing.absolute(5v, 0);
-      @include spacing.size(50%);
-    }
-  }
-
-  /**
-  * Groupe de radios avec séparateur
-  **/
-  #{ns-group(radio)} {
-    position: relative;
-
-    &:not(:last-child) input[type="radio"] + label {
-      @include spacing.margin-right(12v);
-    }
-
-    &:not(:first-child) {
-      @include selector.before('','block') {
-        @include spacing.size(1px, 6v);
-        @include spacing.absolute;
-        left: calc(#{space(-6v)} - 1px);
-        top: spacing.space(3v);
-      }
-    }
-  }
-
-  @include build-consent-btn {
-    background: transparent;
-    @include spacing.padding(0);
-    color: inherit;
-    @include disable-tint;
-    @include link-underline;
-    @include selector.after {
-      @include spacing.margin-right(-5v);
-      transition: transform 0.3s;
-    }
-
-    &[aria-expanded="true"] {
-      @include selector.after {
-        transform: rotate(-180deg);
-      }
-    }
-  }
-}
-
-/**
-* fr-consent-services contient les sous services
-**/
-#{selector.ns(consent-services)} {
-  @include spacing.margin-top(2v);
-  @include spacing.margin-bottom(-2v);
-  @include spacing.size(100%);
-
   #{selector.ns(consent-service)} {
-    &,
-    &:last-child {
-      > #{selector.ns(fieldset)} {
-        @include spacing.padding(0);
-      }
-    }
+    @include spacing.relative;
 
-    &:last-child {
-      > #{selector.ns(fieldset)} {
-        @include spacing.margin-bottom(5v);
-      }
-    }
+    > #{selector.ns(fieldset)} {
+      @include spacing.padding(0 0 5v);
+      @include spacing.padding(0 0 5v, md);
+      @include display.flex(column);
+      @include spacing.size(100%);
+      position: initial;
 
-    & + #{selector.ns(consent-service)} {
-      @include spacing.margin-top(-1v, md);
-    }
-
-    &__title {
-      @include spacing.padding-top(3v);
-    }
-
-    &__radios {
-      top: 0;
-    }
-
-    &__desc {
-      @include typography.set-text-margin(1v 0 3v 0);
       @include media-query.from(md) {
-        @include typography.set-text-margin(1v 0 1v 0);
+        @include display.flex(row,null,null,wrap);
+      }
+    }
+
+    &:last-child {
+      > #{selector.ns(fieldset)} {
+        @include spacing.padding(8v 0 4v);
+        @include spacing.padding(5v 0 4v, md);
+
+        #{selector.ns(consent-service)} > #{selector.ns(fieldset)}:last-child {
+          @include spacing.margin-bottom(0);
+        }
+      }
+    }
+
+    /**
+    * Nom du service
+    **/
+    &__title {
+      @include typography.title-style(h6);
+      @include spacing.padding(8v 0 3v);
+      @include spacing.margin(0);
+
+      @include media-query.from(md) {
+        @include spacing.size(50%);
+      }
+    }
+
+    /**
+    * Description du service
+    **/
+    &__desc {
+      @include typography.text-style(sm);
+      @include typography.set-text-margin(3v 0 3v 0);
+
+      @include media-query.from(md) {
+        @include typography.set-text-margin(1v 6v 3v 0);
+        @include spacing.size(60%);
+      }
+    }
+
+    /**
+    * Bloc dépliable, contient des sous services
+    **/
+    &__collapse {
+      @include spacing.margin-top(-1v);
+      @include spacing.margin-bottom(3v);
+      @include spacing.size(100%);
+      @include nest-consent-btn;
+    }
+
+    /**
+    * Conteneur des radio-group
+    **/
+    &__radios {
+      // @include spacing.margin-bottom(3v);
+      @include display.flex(row, null, null, wrap);
+
+      @include media-query.from(md) {
+        @include display.flex(row,center,flex-end);
+        @include spacing.margin-bottom(0);
+        @include spacing.absolute(5v, 0);
+        @include spacing.size(50%);
+      }
+    }
+
+    /**
+    * Groupe de radios avec séparateur
+    **/
+    #{selector.ns-group(radio)} {
+      position: relative;
+
+      &:not(:last-child) input[type="radio"] + label {
+        @include spacing.margin-right(12v);
+      }
+
+      &:not(:first-child) {
+        @include selector.before('','block') {
+          @include spacing.size(1px, 6v);
+          @include spacing.absolute;
+          left: calc(#{space(-6v)} - 1px);
+          top: spacing.space(3v);
+        }
+      }
+    }
+
+    @include build-consent-btn {
+      background: transparent;
+      @include spacing.padding(0);
+      color: inherit;
+      @include disable-tint;
+      @include link-underline;
+      @include selector.after {
+        @include spacing.margin-right(-5v);
+        transition: transform 0.3s;
+      }
+
+      &[aria-expanded="true"] {
+        @include selector.after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  /**
+  * fr-consent-services contient les sous services
+  **/
+  #{selector.ns(consent-services)} {
+    @include spacing.margin-top(2v);
+    @include spacing.margin-bottom(-2v);
+    @include spacing.size(100%);
+
+    #{selector.ns(consent-service)} {
+      &,
+      &:last-child {
+        > #{selector.ns(fieldset)} {
+          @include spacing.padding(0);
+        }
+      }
+
+      &:last-child {
+        > #{selector.ns(fieldset)} {
+          @include spacing.margin-bottom(5v);
+        }
+      }
+
+      & + #{selector.ns(consent-service)} {
+        @include spacing.margin-top(-1v, md);
+      }
+
+      &__title {
+        @include spacing.padding-top(3v);
+      }
+
+      &__radios {
+        top: 0;
+      }
+
+      &__desc {
+        @include typography.set-text-margin(1v 0 3v 0);
+        @include media-query.from(md) {
+          @include typography.set-text-margin(1v 0 1v 0);
+        }
       }
     }
   }

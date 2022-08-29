@@ -19,7 +19,7 @@
     order: 3;
   }
 
-  #{ns-group(btns)} {
+  #{selector.ns-group(btns)} {
     @include horizontal-btns-group;
     @include spacing.width(auto);
     order: 2;
@@ -28,7 +28,7 @@
       justify-content: flex-start;
     }
 
-    &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+    &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
       #{selector.ns(btn)} {
         @include icon.not-selector {
           @include nest-btn(md, only, null, null, false);

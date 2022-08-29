@@ -29,7 +29,7 @@
     }
   }
 
-  #{ns-group(downloads)} {
+  #{selector.ns-group(downloads)} {
     li::marker {
       @include color.text(action-high blue-france, (legacy:$legacy));
     }

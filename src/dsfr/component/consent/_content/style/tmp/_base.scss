@@ -3,7 +3,14 @@
 /// @group consent
 ////
 
-@import 'base/placeholder';
-@import 'base/banner';
-@import 'base/services';
-@import 'base/manager';
+@use 'base/placeholder';
+@use 'base/banner';
+@use 'base/services';
+@use 'base/manager';
+
+@mixin first() {
+  @include placeholder.first();
+  @include banner.first();
+  @include services.first();
+  @include manager.first();
+}

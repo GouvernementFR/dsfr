@@ -20,7 +20,7 @@
     }
   }
 
-  #{ns-group(links)} {
+  #{selector.ns-group(links)} {
     @include typography.disable-list-style-legacy(true);
   }
 }

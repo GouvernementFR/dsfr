@@ -18,8 +18,8 @@
   #{selector.ns(follow)} {
     @include build-follow-social-icons-legacy();
 
-    #{ns-group(btns)} {
-      &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
+    #{selector.ns-group(btns)} {
+      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
         #{selector.ns(btn)} {
           @include icon.not-selector {
             @include icon.icon-legacy(null, md);

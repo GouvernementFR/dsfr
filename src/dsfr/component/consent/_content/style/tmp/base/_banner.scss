@@ -3,32 +3,37 @@
 /// @group consent
 ////
 
-@use '../../../../../../../sass/spacing/index';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/typography';
 
-#{selector.ns(consent-banner)} {
-  @include fixed(null, null, 0, 0, 100%);
-  max-height: calc(100% - #{space(32v)});
-  @include spacing.padding(4v);
-  overflow: auto;
-  @include typography.set-text-margin(0 0 4v);
-  @include typography.set-title-margin(0 0 4v);
+@mixin first() {
+  #{selector.ns(consent-banner)} {
+    @include spacing.fixed(null, null, 0, 0, 100%);
+    max-height: calc(100% - #{space(32v)});
+    @include spacing.padding(4v);
+    overflow: auto;
+    @include typography.set-text-margin(0 0 4v);
+    @include typography.set-title-margin(0 0 4v);
 
-  @include media-query.from(md) {
-    @include spacing.padding(8v);
-    bottom: spacing.space(10v);
-    left: spacing.space(10v);
-    max-width: spacing.space(160v);
-    max-height: calc(100% - #{spacing.space(20v)});
-  }
+    @include media-query.from(md) {
+      @include spacing.padding(8v);
+      bottom: spacing.space(10v);
+      left: spacing.space(10v);
+      max-width: spacing.space(160v);
+      max-height: calc(100% - #{spacing.space(20v)});
+    }
 
-  &__title {
-    @include typography.title-style(h6);
-    @include spacing.margin-bottom(4v);
-  }
+    &__title {
+      @include typography.title-style(h6);
+      @include spacing.margin-bottom(4v);
+    }
 
-  &__buttons {
-    @include spacing.margin-top(6v);
-    @include spacing.margin-top(8v, md);
-    @include spacing.margin-bottom(-4v);
+    &__buttons {
+      @include spacing.margin-top(6v);
+      @include spacing.margin-top(8v, md);
+      @include spacing.margin-bottom(-4v);
+    }
   }
 }

@@ -48,7 +48,7 @@
       @include icon.icon-legacy(theme-fill, sm);
     }
 
-    #{ns-group(btns)} {
+    #{selector.ns-group(btns)} {
       @include typography.disable-list-style-legacy(true);
 
       &--sm {
