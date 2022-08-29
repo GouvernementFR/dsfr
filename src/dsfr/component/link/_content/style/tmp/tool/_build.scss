@@ -31,7 +31,7 @@
 
   #{$selector} {
     @if $place != null {
-      @include has-icon {
+      @include icon.selector {
         @content;
       }
     }

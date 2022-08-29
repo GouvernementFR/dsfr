@@ -3,14 +3,19 @@
 /// @group card
 ////
 
-#{selector.ns(card)} {
-  &__footer {
-    order: 2;
-    @include spacing.padding(2v 8v 8v);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
 
-    #{selector.ns(btns-group)},
-    #{selector.ns(links-group)} {
-      @include spacing.margin-bottom(-4v);
+@mixin first() {
+  #{selector.ns(card)} {
+    &__footer {
+      order: 2;
+      @include spacing.padding(2v 8v 8v);
+
+      #{selector.ns(btns-group)},
+      #{selector.ns(links-group)} {
+        @include spacing.margin-bottom(-4v);
+      }
     }
   }
 }

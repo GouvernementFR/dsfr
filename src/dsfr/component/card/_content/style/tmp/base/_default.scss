@@ -3,28 +3,35 @@
 /// @group card
 ////
 
-#{selector.ns(card)} {
-  @include display.flex(column);
-  @include spacing.relative();
-  @include icon.icon(arrow-right-line);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/icon';
 
-  &--no-icon,
-  &:not(#{selector.ns(enlarge-link)}) {
-    @include selector.before(none);
-  }
-
-  @include selector.before {
-    @include spacing.absolute(null, 8v, 8v);
-    @include icon.size(md);
-  }
-
-  @include selector.body() {
+@mixin first() {
+  #{selector.ns(card)} {
     @include display.flex(column);
-    flex: 1 1 auto;
-    order: 2;
-  }
+    @include spacing.relative();
+    @include icon.icon(arrow-right-line);
 
-  #{selector.ns(grid-row)} & {
-    @include spacing.size(null, 100%);
+    &--no-icon,
+    &:not(#{selector.ns(enlarge-link)}) {
+      @include selector.before(none);
+    }
+
+    @include selector.before {
+      @include spacing.absolute(null, 8v, 8v);
+      @include icon.size(md);
+    }
+
+    @include selector.body() {
+      @include display.flex(column);
+      flex: 1 1 auto;
+      order: 2;
+    }
+
+    #{selector.ns(grid-row)} & {
+      @include spacing.size(null, 100%);
+    }
   }
 }

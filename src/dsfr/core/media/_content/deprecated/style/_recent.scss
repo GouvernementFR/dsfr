@@ -6,7 +6,7 @@
 #{ns(responsive-img)} {
   @each $ratio, $value in $ratio-scale {
     &--#{$ratio} {
-      @include aspect-ratio($ratio, true);
+      @include media.aspect-ratio($ratio, true);
       @include fit-cover-center;
     }
   }
@@ -15,7 +15,7 @@
 #{ns(responsive-vid)} {
   @each $ratio in (16x9 4x3 1x1) {
     &--#{$ratio} {
-      @include aspect-ratio($ratio, true);
+      @include media.aspect-ratio($ratio, true);
     }
   }
 }

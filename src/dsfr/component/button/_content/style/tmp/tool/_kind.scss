@@ -3,8 +3,8 @@
 /// @group button
 ////
 
-@use '../../../../../../../sass/color/index';
-@use '../../../../../../../sass/disabled/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/disabled';
 
 @mixin btn-kind-scheme ($kind: 2, $legacy: false) {
   @if ($kind == 2) {

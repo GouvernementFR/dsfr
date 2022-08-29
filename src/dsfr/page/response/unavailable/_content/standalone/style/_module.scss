@@ -12,7 +12,7 @@ html {
 body {
   min-height: 100%;
   @include typography.font-family;
-  @include text-adjustments;
+  @include typography.text-adjustments;
   @include spacing.margin(0);
   @include spacing.padding(0);
   @include typography.text-style(md);

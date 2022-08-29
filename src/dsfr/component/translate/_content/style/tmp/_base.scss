@@ -56,12 +56,11 @@
       }
     }
 
-    &__menu {
-      @include spacing.margin(0);
-      @include spacing.margin(-1v -4v 0, lg);
-      @include media-query.from(lg) {
-        @include top(calc(100% - 4v));
-      }
+  &__menu {
+    @include spacing.margin(0);
+    @include spacing.margin(-1v -4v 0, lg);
+    @include media-query.from(lg) {
+      @include spacing.top(calc(100% - 4v));
     }
 
     #{selector.ns(nav)} {

@@ -45,11 +45,11 @@
       @include enable-tint;
     }
 
-    @include hover-brighten('&:not(:disabled) ~ label', '~ #{selector.ns(radio-rich__img)}');
+    @include action.hover-brighten('&:not(:disabled) ~ label', '~ #{selector.ns(radio-rich__img)}');
   }
 
   &__img {
-    @include hover-brighten-filter;
+    @include action.hover-brighten-filter;
     @include spacing.padding-left(1v);
     @include spacing.size(21v, 20v);
     @include spacing.absolute(1v, 1v);

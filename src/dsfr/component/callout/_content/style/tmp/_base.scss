@@ -2,41 +2,47 @@
 /// Callout Module
 /// @group callout
 ////
+///
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
 
-#{selector.ns(callout)} {
-  @include spacing.relative();
-  @include spacing.padding(6v);
-  @include spacing.padding(8v 12v, md);
-  @include typography.set-title-margin(0 0 2v);
-  @include typography.set-text-margin(0);
-  @include spacing.margin(map-get($text-spacing, text));
+@mixin first() {
+  #{selector.ns(callout)} {
+    @include spacing.relative();
+    @include spacing.padding(6v);
+    @include spacing.padding(8v 12v, md);
+    @include typography.set-title-margin(0 0 2v);
+    @include typography.set-text-margin(0);
+    @include spacing.margin(map-get($text-spacing, text));
 
-  /**
-   * Inclusion de l'icône (optionnel)
-   */
-  @include has-icon {
-    @include selector.before {
-      display: block;
-      @include spacing.margin(-2v 0 2v);
+    /**
+    * Inclusion de l'icône (optionnel)
+    */
+    @include icon.selector {
+      @include selector.before {
+        display: block;
+        @include spacing.margin(-2v 0 2v);
 
-      @include media-query.from(md) {
-        @include spacing.margin(-4v 0 4v -8v);
+        @include media-query.from(md) {
+          @include spacing.margin(-4v 0 4v -8v);
+        }
       }
     }
-  }
 
-  @include selector.title() {
-    @include typography.title-style(h4);
-  }
+    @include selector.title() {
+      @include typography.title-style(h4);
+    }
 
-  &__text {
-    @include typography.text-style(lg);
-  }
+    &__text {
+      @include typography.text-style(lg);
+    }
 
-  /**
-   * Ajout de marge quand on inclut un bouton (optionnel)
-   */
-  #{selector.ns(btn)} {
-    @include spacing.margin-top(4v);
+    /**
+    * Ajout de marge quand on inclut un bouton (optionnel)
+    */
+    #{selector.ns(btn)} {
+      @include spacing.margin-top(4v);
+    }
   }
 }

@@ -2,215 +2,226 @@
 /// Buttons-group Module
 /// @group button
 ////
+///
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/icon';
 
-#{ns-group(btns)} {
-  @include typography.disable-list-style;
-  @include display.flex(null, stretch, null, wrap);
-  @include vertical-btns-group;
-  @include spacing.margin-x(-2v);
+@import '../setting';
+@import '../tool';
 
-  /**
-  * fr-btns-group--inline : aligne les boutons horizontalement dans tout les cas
-  * fr-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
-  */
-  &--inline {
-    @include horizontal-btns-group;
+@mixin first() {
+  #{ns-group(btns)} {
+    @include typography.disable-list-style;
+    @include display.flex(null, stretch, null, wrap);
+    @include vertical-btns-group;
+    @include spacing.margin-x(-2v);
 
-    &#{ns-group(btns)}--right {
-      &#{ns-group(btns)}--inline-reverse {
-        flex-direction: row-reverse;
+    /**
+    * fr-btns-group--inline : aligne les boutons horizontalement dans tout les cas
+    * fr-btns-group--inline-(sm/md/lg) : permet de passer en horizontal à partir de la valeur du breakpoint appliqué (sm, md, lg)
+    */
+    &--inline {
+      @include horizontal-btns-group;
+
+      &#{ns-group(btns)}--right {
+        &#{ns-group(btns)}--inline-reverse {
+          flex-direction: row-reverse;
+          justify-content: flex-start;
+        }
+      }
+
+      &-sm {
+        @include media-query.from(sm) {
+          @include horizontal-btns-group;
+
+          &#{ns-group(btns)}--right {
+            &#{ns-group(btns)}--inline-reverse {
+              flex-direction: row-reverse;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+
+      &-md {
+        @include media-query.from(md) {
+          @include horizontal-btns-group;
+
+          &#{ns-group(btns)}--right {
+            &#{ns-group(btns)}--inline-reverse {
+              flex-direction: row-reverse;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+
+      &-lg {
+        @include media-query.from(lg) {
+          @include horizontal-btns-group;
+
+          &#{ns-group(btns)}--right {
+            &#{ns-group(btns)}--inline-reverse {
+              flex-direction: row-reverse;
+              justify-content: flex-start;
+            }
+          }
+        }
+      }
+    }
+
+    /**
+    * fr-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
+    */
+    &--left {
+      &,
+      li {
         justify-content: flex-start;
+        text-align: left;
       }
     }
 
-    &-sm {
-      @include media-query.from(sm) {
-        @include horizontal-btns-group;
+    /**
+    * fr-btns-group--right : aligne les boutons sur la droite
+    */
+    &--right {
+      &,
+      li {
+        justify-content: flex-end;
+        text-align: right;
+      }
+    }
 
-        &#{ns-group(btns)}--right {
-          &#{ns-group(btns)}--inline-reverse {
-            flex-direction: row-reverse;
+    /**
+    * fr-btns-group--center : aligne les boutons au centre du conteneur
+    */
+    &--center {
+      &,
+      li {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /**
+    * fr-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
+    */
+    &--equisized {
+      --equisized-width: auto;
+
+      #{selector.ns(btn)} {
+        justify-content: center;
+        width: var(--equisized-width);
+      }
+    }
+
+    /**
+    * fr-btns-group--sm : Fixe les boutons à la taille SM
+    */
+    &--sm {
+      #{selector.ns(btn)} {
+        @include icon.not-selector {
+          @include nest-btn(sm, false, null, null, false);
+        }
+      }
+
+      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(sm, only, null, null, false);
             justify-content: flex-start;
+          }
+        }
+      }
+
+      &#{ns-group(btns)}--icon-left {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(sm, left, null, null, false);
+          }
+        }
+      }
+
+      &#{ns-group(btns)}--icon-right {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(sm, right, null, null, false);
           }
         }
       }
     }
 
-    &-md {
-      @include media-query.from(md) {
-        @include horizontal-btns-group;
+    /**
+    * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
+    */
+    &:where(:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg)) {
+      #{selector.ns(btn)} {
+        @include icon.not-selector {
+          @include nest-btn(md, false, null, null, false);
+        }
+      }
 
-        &#{ns-group(btns)}--right {
-          &#{ns-group(btns)}--inline-reverse {
-            flex-direction: row-reverse;
+      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(md, only, null, null, false);
             justify-content: flex-start;
+          }
+        }
+      }
+
+      &#{ns-group(btns)}--icon-left {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(md, left, null, null, false);
+          }
+        }
+      }
+
+      &#{ns-group(btns)}--icon-right {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(md, right, null, null, false);
           }
         }
       }
     }
 
-    &-lg {
-      @include media-query.from(lg) {
-        @include horizontal-btns-group;
+    /**
+    * fr-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
+    */
+    &--lg {
+      #{selector.ns(btn)} {
+        @include icon.not-selector {
+          @include nest-btn(lg, false, null, null, false);
+        }
+      }
 
-        &#{ns-group(btns)}--right {
-          &#{ns-group(btns)}--inline-reverse {
-            flex-direction: row-reverse;
+      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(lg, only, null, null, false);
             justify-content: flex-start;
           }
         }
       }
-    }
-  }
 
-  /**
-  * fr-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
-  */
-  &--left {
-    &,
-    li {
-      justify-content: flex-start;
-      text-align: left;
-    }
-  }
-
-  /**
-  * fr-btns-group--right : aligne les boutons sur la droite
-  */
-  &--right {
-    &,
-    li {
-      justify-content: flex-end;
-      text-align: right;
-    }
-  }
-
-  /**
-  * fr-btns-group--center : aligne les boutons au centre du conteneur
-  */
-  &--center {
-    &,
-    li {
-      justify-content: center;
-      text-align: center;
-    }
-  }
-
-  /**
-  * fr-btns-group--equisized : Fixe la largeur des boutons à celle du plus grand. Géré en grande partie en JS.
-  */
-  &--equisized {
-    --equisized-width: auto;
-
-    #{selector.ns(btn)} {
-      justify-content: center;
-      width: var(--equisized-width);
-    }
-  }
-
-  /**
-  * fr-btns-group--sm : Fixe les boutons à la taille SM
-  */
-  &--sm {
-    #{selector.ns(btn)} {
-      @include has-not-icon {
-        @include nest-btn(sm, false, null, null, false);
-      }
-    }
-
-    @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(sm, only, null, null, false);
-          justify-content: flex-start;
+      &#{ns-group(btns)}--icon-left {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(lg, left, null, null, false);
+          }
         }
       }
-    }
 
-    &#{ns-group(btns)}--icon-left {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(sm, left, null, null, false);
-        }
-      }
-    }
-
-    &#{ns-group(btns)}--icon-right {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(sm, right, null, null, false);
-        }
-      }
-    }
-  }
-
-  /**
-  * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
-  */
-  &:where(:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg)) {
-    #{selector.ns(btn)} {
-      @include has-not-icon {
-        @include nest-btn(md, false, null, null, false);
-      }
-    }
-
-    @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(md, only, null, null, false);
-          justify-content: flex-start;
-        }
-      }
-    }
-
-    &#{ns-group(btns)}--icon-left {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(md, left, null, null, false);
-        }
-      }
-    }
-
-    &#{ns-group(btns)}--icon-right {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(md, right, null, null, false);
-        }
-      }
-    }
-  }
-
-  /**
-  * fr-btns-group--lg : Fixe les boutons à la taille LG (sans modfifieur => MD)
-  */
-  &--lg {
-    #{selector.ns(btn)} {
-      @include has-not-icon {
-        @include nest-btn(lg, false, null, null, false);
-      }
-    }
-
-    @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(lg, only, null, null, false);
-          justify-content: flex-start;
-        }
-      }
-    }
-
-    &#{ns-group(btns)}--icon-left {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(lg, left, null, null, false);
-        }
-      }
-    }
-
-    &#{ns-group(btns)}--icon-right {
-      #{selector.ns(btn)} {
-        @include has-icon {
-          @include nest-btn(lg, right, null, null, false);
+      &#{ns-group(btns)}--icon-right {
+        #{selector.ns(btn)} {
+          @include icon.selector {
+            @include nest-btn(lg, right, null, null, false);
+          }
         }
       }
     }

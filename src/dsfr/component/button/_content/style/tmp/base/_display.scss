@@ -3,6 +3,10 @@
 /// @group button
 ////
 
+@use '../../../../../../../sass/selector';
+@import '../setting';
+@import '../tool';
+
 #{selector.ns(btn--display)} {
   @include nest-btn(md, left, theme-fill, null, false);
 }

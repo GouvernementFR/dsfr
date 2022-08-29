@@ -44,7 +44,7 @@
       left: spacing.space(8v);
     }
 
-    @include has-icon {
+    @include icon.selector {
       @include selector.before {
         @include icon.size(sm);
         @include spacing.margin-right(2v);

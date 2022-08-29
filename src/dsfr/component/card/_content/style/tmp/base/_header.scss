@@ -3,36 +3,43 @@
 /// @group card
 ////
 
-#{selector.ns(card)} {
-  &__header {
-    order: 1;
-    position: relative;
-    flex: 0 0 auto;
-  }
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/media';
 
-  &__header #{selector.ns(badges-group)} {
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include spacing.padding(3v);
-  }
+@mixin first() {
+  #{selector.ns(card)} {
+    &__header {
+      order: 1;
+      position: relative;
+      flex: 0 0 auto;
+    }
 
-  @include hover-brighten(#{&}#{selector.ns(enlarge-link)}, '#{&}__img, #{&}__vid');
+    &__header #{selector.ns(badges-group)} {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include spacing.padding(3v);
+    }
 
-  &__img,
-  &__vid {
-    @include hover-brighten-filter;
-  }
+    @include action.hover-brighten(#{&}#{selector.ns(enlarge-link)}, '#{&}__img, #{&}__vid');
 
-  &__img img,
-  &__img svg,
-  &__vid iframe,
-  &__vid video {
-    @include aspect-ratio(16x9);
-    @include fit-cover-center;
-  }
+    &__img,
+    &__vid {
+      @include action.hover-brighten-filter;
+    }
 
-  &__img img {
-    display: block;
+    &__img img,
+    &__img svg,
+    &__vid iframe,
+    &__vid video {
+      @include media.aspect-ratio(16x9);
+      @include media.fit-cover-center;
+    }
+
+    &__img img {
+      display: block;
+    }
   }
 }

@@ -48,7 +48,7 @@
   @include spacing.relative;
   display: block;
 
-  @include has-icon {
+  @include icon.selector {
     @include icon.size(sm, before) {
       @include spacing.absolute(3v, 3v, 3v);
       @include spacing.margin(auto);

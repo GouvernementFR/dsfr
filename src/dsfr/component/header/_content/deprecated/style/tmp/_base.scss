@@ -13,11 +13,11 @@
       @include disable-underline;
       @include enable-tint;
 
-      @include has-not-icon {
+      @include icon.not-selector {
         @include nest-btn(sm, null, null, null, false);
       }
 
-      @include has-icon {
+      @include icon.selector {
         @include nest-btn(sm, left, null, null, false);
         @include selector.before('');
       }

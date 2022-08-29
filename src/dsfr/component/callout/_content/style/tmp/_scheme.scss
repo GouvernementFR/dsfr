@@ -3,9 +3,9 @@
 /// @group callout
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
 
-@mixin _callout-scheme($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(callout)} {
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);

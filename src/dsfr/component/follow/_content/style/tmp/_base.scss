@@ -88,7 +88,7 @@
 
       &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
         #{selector.ns(btn)} {
-          @include has-not-icon {
+          @include icon.not-selector {
             @include nest-btn(md, only, null, null, false);
             @include icon.icon(null, md, before);
           }
@@ -97,7 +97,7 @@
 
       &--lg {
         #{selector.ns(btn)} {
-          @include has-not-icon {
+          @include icon.not-selector {
             @include nest-btn(lg, only, null, null, false);
             @include icon.icon(null, lg, before);
           }

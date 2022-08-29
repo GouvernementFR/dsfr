@@ -21,7 +21,7 @@
     #{ns-group(btns)} {
       &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
         #{selector.ns(btn)} {
-          @include has-not-icon {
+          @include icon.not-selector {
             @include icon.icon-legacy(null, md);
           }
         }
@@ -29,7 +29,7 @@
 
       &--lg {
         #{selector.ns(btn)} {
-          @include has-not-icon {
+          @include icon.not-selector {
             @include icon.icon-legacy(null, lg);
           }
         }

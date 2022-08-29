@@ -1,8 +1,9 @@
-@mixin first() {
-  @import '../../../badge/_content/style/tmp/tool';
-  @import '../../../tag/_content/style/tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/legacy';
+@use 'tmp/base';
+@use 'tmp/legacy';
 
-  @include _card-scheme(true);
+$options: () !default;
+
+@mixin first() {
+  @include legacy.first();
+  @include scheme.scheme(true);
 }
