@@ -3,8 +3,8 @@
 /// @group Table
 ////
 
-@use '../../../../../../../sass/spacing/index';
-@use '../../../../../../../sass/color/index';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/color';
 
 @function _get-tabs-shadow($side, $active: true, $theme: light) {
   @if $active == false {

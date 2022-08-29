@@ -4,6 +4,7 @@
 ////
 
 @import 'tool/shadow';
+@import './setting';
 
 @mixin build-tab() {
   @include _build-link($tabs-settings);

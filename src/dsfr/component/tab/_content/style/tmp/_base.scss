@@ -3,5 +3,12 @@
 /// @group tab
 ////
 
-@import 'base/default';
-@import 'base/shadow';
+@use 'base/default';
+@use 'base/shadow';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include shadow.first();
+}
