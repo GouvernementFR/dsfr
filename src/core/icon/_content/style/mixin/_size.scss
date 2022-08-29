@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/icon/property/blocks';
+
+@mixin generate ($situation: recommended, $legacy: false) {
+  $prefix: map.get(prefixes.$prefixes, $situation);
+}
