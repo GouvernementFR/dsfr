@@ -3,9 +3,10 @@
 /// @group tab
 ////
 
-@use '../../../../../sass/legacy/index';
+@use '../../../../../sass/typography';
+@import '../../../../link/_content/style/tmp/tool';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * Reset liste à puce
   */

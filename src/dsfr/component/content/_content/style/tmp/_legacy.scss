@@ -4,8 +4,10 @@
 ////
 
 @use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
 
-@include legacy.is(ie11) {
+@mixin first {
   #{selector.ns(content-media)} {
     &__transcription {
       #{selector.ns(btn)} {

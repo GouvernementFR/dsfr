@@ -3,109 +3,121 @@
 /// @group tab
 ////
 
-@include build-tab();
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/action';
 
-#{selector.ns(tabs)} {
-  --tabs-height: auto;
-  @include typography.disable-list-style;
-  @include disable-underline;
-  @include spacing.relative;
-  overflow: hidden;
-  @include spacing.margin-x(0);
-  @include spacing.margin-top(-4px);
-  @include spacing.padding-top(4px);
-  @include display.flex(row, flex-start, null, wrap);
-  @include spacing.height(var(--tabs-height));
+@mixin first() {
+  @include build-tab();
 
-  /**
-  * Animation de la hauteur du panel
-  */
-  transition: height $tabs-transition-duration;
-
-  // retire le padding du container en mobile
-  &--viewport-width {
-    @include spacing.margin-x(calc(50% - 50vw));
-    @include spacing.margin-x(0, md);
-  }
-
-  @include selector.before('', block) {
-    @include spacing.size(100%, 100%);
-    @include spacing.margin-top(-1px);
-    order: 2;
-  }
-
-  /**
-   * ul : element srollable des boutons
-   */
-  @include selector.list {
-    @include display.flex(null, stretch);
-    overflow-x: auto;
-    @include spacing.width(100%);
-    @include spacing.min-height(12v);
-    z-index: z-index(over);
-    order: 1;
+  #{selector.ns(tabs)} {
+    --tabs-height: auto;
+    @include typography.disable-list-style;
+    @include action.disable-underline;
+    @include spacing.relative;
+    overflow: hidden;
+    @include spacing.margin-x(0);
+    @include spacing.margin-top(-4px);
+    @include spacing.padding-top(4px);
+    @include display.flex(row, flex-start, null, wrap);
+    @include spacing.height(var(--tabs-height));
 
     /**
+  * Animation de la hauteur du panel
+  */
+    transition: height $tabs-transition-duration;
+
+    // retire le padding du container en mobile
+    &--viewport-width {
+      @include spacing.margin-x(calc(50% - 50vw));
+      @include spacing.margin-x(0, md);
+    }
+
+    @include selector.before('', block) {
+      @include spacing.size(100%, 100%);
+      @include spacing.margin-top(-1px);
+      order: 2;
+    }
+
+    /**
+   * ul : element srollable des boutons
+   */
+    @include selector.list {
+      @include display.flex(null, stretch);
+      overflow-x: auto;
+      @include spacing.width(100%);
+      @include spacing.min-height(12v);
+      z-index: z-index(over);
+      order: 1;
+
+      /**
     * overflow vertical de 4px pour le focus
     */
-    @include spacing.margin(-4px 0 -4px);
-    @include spacing.padding(4px 3v);
-  }
+      @include spacing.margin(-4px 0 -4px);
+      @include spacing.padding(4px 3v);
+    }
 
-  /**
+    /**
   * Tab button
   */
-  &__tab {
-    @include spacing.relative;
-    overflow: visible;
-    font-weight: typography.font-weight(bold);
-    @include elevation.z-index(over);
-    @include spacing.margin(0 1v);
-    @include spacing.height(100%);
-    white-space: nowrap;
-    background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
-    // transition: background-size 0.3s;
+    &__tab {
+      @include spacing.relative;
+      overflow: visible;
+      font-weight: typography.font-weight(bold);
+      @include elevation.z-index(over);
+      @include spacing.margin(0 1v);
+      @include spacing.height(100%);
+      white-space: nowrap;
+      background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px),
+        100% 100%;
+      // transition: background-size 0.3s;
 
-    &[aria-selected=true] {
-      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
-    }
-  }
-
-  /**
-  * Tab Panel
-  */
-  &__panel {
-    @include enable-underline;
-    @include typography.enable-list-style;
-    display: block;
-    order: 3;
-    @include spacing.relative(null, null, null, 0, 100%, auto);
-    @include spacing.padding(4v);
-    @include spacing.padding(8v, md);
-    transform: translate(-100%);
-    @include spacing.margin-right(-100%);
-    flex: 0 0 100%;
-    transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
-
-    &:focus,
-    &:focus-visible {
-      outline-offset: calc(-1rem + 2px);
-      @include media-query.from(md) {
-        outline-offset: calc(-2rem + 2px);
+      &[aria-selected='true'] {
+        background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px),
+          0 1px;
       }
     }
 
-    &--direction-end {
-      transform: translate(0%);
-    }
-
-    &--direction-start {
-      transform: translate(-200%);
-    }
-
     /**
+  * Tab Panel
+  */
+    &__panel {
+      @include enable-underline;
+      @include typography.enable-list-style;
+      display: block;
+      order: 3;
+      @include spacing.relative(null, null, null, 0, 100%, auto);
+      @include spacing.padding(4v);
+      @include spacing.padding(8v, md);
+      transform: translate(-100%);
+      @include spacing.margin-right(-100%);
+      flex: 0 0 100%;
+      transition: visibility $tabs-transition-duration,
+        transform $tabs-transition-duration;
+
+      &:focus,
+      &:focus-visible {
+        outline-offset: calc(-1rem + 2px);
+        @include media-query.from(md) {
+          outline-offset: calc(-2rem + 2px);
+        }
+      }
+
+      &--direction-end {
+        transform: translate(0%);
+      }
+
+      &--direction-start {
+        transform: translate(-200%);
+      }
+
+      /**
     * Les éléments non sélectionnés sont cachés et rendus innaccessibles au focus
     * Point d'attention : visibility hidden sur le panel et surcharge sur l'élément selected avec visibility visible créé des problèmes dans la gestion du focus en cas d'imbrication d'onglets
     *
@@ -117,8 +129,9 @@
     *            ↑ ce panel est accessible alors que caché par son panel parent
     * solution : visibility hidden seulement sur les éléments non sélectionnés
     **/
-    @at-root #{&}:not(&--selected) {
-      visibility: hidden;
+      @at-root #{&}:not(&--selected) {
+        visibility: hidden;
+      }
     }
   }
 }

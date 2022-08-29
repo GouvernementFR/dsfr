@@ -3,39 +3,46 @@
 /// @group skiplinks
 ////
 
-#{selector.ns(skiplinks)} {
-  @include typography.disable-list-style;
-  @include spacing.absolute(0);
-  @include spacing.padding(4v 0);
-  transform: translateY(-100%);
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
 
-  &:focus-within {
-    @include spacing.relative;
-    transform: translateY(0);
-  }
-
-  @include selector.list {
-    @include display.flex(column);
-    @include spacing.margin(0 -4v -6v);
-
-    > li {
-      @include spacing.margin(0 4v 6v);
-      @include spacing.margin(0 4v, md);
-
-      @include selector.before(none);
-
-      @include nest-link(md, null, null, null, true);
-    }
-
-    @include media-query.from(md) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      @include spacing.margin(0 -4v);
-    }
+@mixin first() {
+  #{selector.ns(skiplinks)} {
+    @include typography.disable-list-style;
+    @include spacing.absolute(0);
+    @include spacing.padding(4v 0);
+    transform: translateY(-100%);
 
     &:focus-within {
       @include spacing.relative;
       transform: translateY(0);
+    }
+
+    @include selector.list {
+      @include display.flex(column);
+      @include spacing.margin(0 -4v -6v);
+
+      > li {
+        @include spacing.margin(0 4v 6v);
+        @include spacing.margin(0 4v, md);
+
+        @include selector.before(none);
+
+        @include nest-link(md, null, null, null, true);
+      }
+
+      @include media-query.from(md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        @include spacing.margin(0 -4v);
+      }
+
+      &:focus-within {
+        @include spacing.relative;
+        transform: translateY(0);
+      }
     }
   }
 }

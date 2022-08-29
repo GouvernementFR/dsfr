@@ -3,9 +3,20 @@
 /// @group sidemenu
 ////
 
-@import 'base/default';
-@import 'base/title';
-@import 'base/list';
-@import 'base/inner';
-@import 'base/variants';
-@import 'base/action';
+@use 'base/default';
+@use 'base/title';
+@use 'base/list';
+@use 'base/inner';
+@use 'base/variants';
+@use 'base/action';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include title.first();
+  @include list.first();
+  @include inner.first();
+  @include variants.first();
+  @include action.first();
+}

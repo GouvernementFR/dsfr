@@ -3,23 +3,16 @@
 /// @group sidemenu
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/elevation/index';
-@use '../../../../../../sass/media-query/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/media-query';
+@use '../../../../../../sass/selector';
 
-@mixin _sidemenu-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(sidemenu)} {
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
     @include media-query.from(md) {
       @include color.no-box-shadow((legacy: $legacy));
     }
-
-    /*
-    @include elevation.elevate(raised, (legacy:$legacy));
-    @include media-query.from(md) {
-      @include elevation.drop((legacy:$legacy));
-    }
-     */
 
     @include selector.title {
       @include color.text(title grey, (legacy:$legacy));

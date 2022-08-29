@@ -3,9 +3,10 @@
 /// @group Table
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _table-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(table)} {
     caption {
       @include color.text(title grey, (legacy: $legacy));

@@ -10,7 +10,7 @@
     }
 
     #{selector.ns(link)} {
-      @include disable-underline;
+      @include action.disable-underline;
       @include enable-tint;
 
       @include icon.not-selector {

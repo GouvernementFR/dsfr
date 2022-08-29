@@ -1,8 +1,9 @@
-@mixin first () {
-  @import 'tmp/setting';
-  @import 'tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+@use 'tmp/base';
+@use 'tmp/scheme';
 
-  @include _stepper-scheme;
+$options: () !default;
+
+@mixin first() {
+  @include base.first();
+  @include scheme.first();
 }

@@ -15,7 +15,7 @@
     $base: '#{$type + $separator}';
   }
 
-  $selectors: (ns('#{$base + $name}'));
+  $selectors: (selector.ns('#{$base + $name}'));
 
   @if $alt != null {
     $selectors: append($selectors, ns('#{$base + $alt}'), 'comma');

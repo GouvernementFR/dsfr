@@ -1,8 +1,0 @@
-id: sidemenu
-title: Menu latéral
-description: Le menu latéral permet aux utilisateurs de naviguer entre les différentes pages d’une rubrique ou d’un même thème.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/258998801/Menu+lat+ral+-+Side+menu
-style:
-  - core
-script:
-  - core

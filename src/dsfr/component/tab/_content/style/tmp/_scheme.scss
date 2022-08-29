@@ -3,10 +3,11 @@
 /// @group tab
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/disabled/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
 
-@mixin _tab-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(tabs)} {
     @include color.box-shadow(default grey, (legacy: $legacy), bottom-1-in);
 

@@ -32,7 +32,7 @@
       @include spacing.margin-bottom(calc(var(--table-offset) + 11v));
     }
 
-    &#{ns-attr(js-table, true)} {
+    &#{selector.ns-attr(js-table, true)} {
       caption {
         @include spacing.absolute(100%, 0, 0, 0);
         @include spacing.margin-top(4v);

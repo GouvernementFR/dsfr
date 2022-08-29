@@ -8,7 +8,7 @@
 @include legacy.is(ie11) {
   #{selector.ns(header)} {
     @include typography.disable-list-style-legacy;
-    @include disable-underline-legacy;
+    @include action.disable-underline-legacy;
 
     #{selector.ns-group(btns)} {
       &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {

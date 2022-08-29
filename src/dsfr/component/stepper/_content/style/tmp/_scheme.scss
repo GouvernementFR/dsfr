@@ -3,9 +3,10 @@
 /// @group stepper
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _stepper-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(stepper)} {
     @include selector.title {
       @include color.text(title grey, (legacy:$legacy));

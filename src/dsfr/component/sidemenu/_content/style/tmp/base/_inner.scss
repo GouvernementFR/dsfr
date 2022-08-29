@@ -3,30 +3,37 @@
 /// @group sidemenu
 ////
 
-#{selector.ns(sidemenu)} {
-  &__inner {
-    @include spacing.padding(0 8v 0 1v, md);
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
 
-    /**
+@mixin first() {
+  #{selector.ns(sidemenu)} {
+    &__inner {
+      @include spacing.padding(0 8v 0 1v, md);
+
+      /**
     * Ce wrapper ne sert que pour la version mobile
     * On l'utilise pour l'ouverture/fermeture du sidemenu entier
     */
-    > #{selector.ns(collapse)} {
-      @include spacing.margin(-1v 3v 0);
-      @include spacing.padding(1v 1v 0);
-      @include spacing.padding(0, md);
-      @include spacing.margin(0, md);
+      > #{selector.ns(collapse)} {
+        @include spacing.margin(-1v 3v 0);
+        @include spacing.padding(1v 1v 0);
+        @include spacing.padding(0, md);
+        @include spacing.margin(0, md);
 
-      @include media-query.from(md) {
-        overflow: initial;
-        max-height: none;
+        @include media-query.from(md) {
+          overflow: initial;
+          max-height: none;
 
-        @include selector.before {
-          display: none;
-        }
+          @include selector.before {
+            display: none;
+          }
 
-        &:not(#{selector.ns(collapse)}--expanded) {
-          visibility: inherit;
+          &:not(#{selector.ns(collapse)}--expanded) {
+            visibility: inherit;
+          }
         }
       }
     }

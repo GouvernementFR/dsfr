@@ -9,64 +9,62 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include legacy.is(ie11) {
-    #{selector.ns(btn)} {
-      @include icon.icon-legacy(null, sm);
+  #{selector.ns(btn)} {
+    @include icon.icon-legacy(null, sm);
+
+    @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+      @include icon.selector {
+        @include icon.icon-legacy(null, md);
+      }
+    }
+
+    &--sm {
+      @include icon.icon-legacy(null, xs);
 
       @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
         @include icon.selector {
-          @include icon.icon-legacy(null, md);
+          @include icon.icon-legacy(null, sm);
         }
       }
+    }
 
-      &--sm {
-        @include icon.icon-legacy(null, xs);
+    &--lg {
+      @include icon.icon-legacy(null, md);
 
-        @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+      @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+        @include icon.selector {
+          @include icon.icon-legacy(null, lg);
+        }
+      }
+    }
+  }
+
+  #{selector.ns(btn--close)} {
+    @include icon.icon-legacy(close-line, sm);
+  }
+
+  #{selector.ns(btn--display)} {
+    @include icon.icon-legacy(theme-fill, sm);
+  }
+
+  #{selector.ns-group(btns)} {
+    @include typography.disable-list-style-legacy(true);
+
+    &--sm {
+      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
           @include icon.selector {
             @include icon.icon-legacy(null, sm);
           }
         }
       }
+    }
 
-      &--lg {
-        @include icon.icon-legacy(null, md);
-
-        @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+    &--lg {
+      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
           @include icon.selector {
             @include icon.icon-legacy(null, lg);
-          }
-        }
-      }
-    }
-
-    #{selector.ns(btn--close)} {
-      @include icon.icon-legacy(close-line, sm);
-    }
-
-    #{selector.ns(btn--display)} {
-      @include icon.icon-legacy(theme-fill, sm);
-    }
-
-    #{selector.ns-group(btns)} {
-      @include typography.disable-list-style-legacy(true);
-
-      &--sm {
-        @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-          #{selector.ns(btn)} {
-            @include icon.selector {
-              @include icon.icon-legacy(null, sm);
-            }
-          }
-        }
-      }
-
-      &--lg {
-        @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-          #{selector.ns(btn)} {
-            @include icon.selector {
-              @include icon.icon-legacy(null, lg);
-            }
           }
         }
       }

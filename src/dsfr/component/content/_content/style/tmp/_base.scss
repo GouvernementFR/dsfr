@@ -3,38 +3,50 @@
 /// @group content
 ////
 
-#{selector.ns(content-media)} {
-  @include spacing.size(100%);
-  @include spacing.margin(10v 0);
-  @include display.flex(column, center);
-  @include typography.set-text-margin(0);
-  @include typography.set-title-margin(0);
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/typography';
 
-  &__img {
+@import '../../../../button/_content/style/tmp/setting';
+@import '../../../../button/_content/style/tmp/tool';
+@import 'setting';
+@import 'tool';
+
+@mixin first() {
+  #{selector.ns(content-media)} {
     @include spacing.size(100%);
-  }
+    @include spacing.margin(10v 0);
+    @include display.flex(column, center);
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
 
-  #{class-start-with(ns('responsive-img', ''))},
-  #{class-start-with(ns('responsive-vid', ''))} {
-    @include media.aspect-ratio();
-  }
+    &__img {
+      @include spacing.size(100%);
+    }
 
-  &__caption,
-  &__transcription {
-    @include spacing.size(100%);
-    @include spacing.margin-top(2v);
-    text-align: right;
-  }
+    #{selector.class-start-with(selector.ns('responsive-img', ''))},
+    #{selector.class-start-with(selector.ns('responsive-vid', ''))} {
+      @include media.aspect-ratio();
+    }
 
-  &__caption {
-    @include typography.text-style(xs);
-  }
+    &__caption,
+    &__transcription {
+      @include spacing.size(100%);
+      @include spacing.margin-top(2v);
+      text-align: right;
+    }
 
-  &__transcription {
-    @include nest-btn(sm, right, menu-2-fill, null, true, true);
-  }
+    &__caption {
+      @include typography.text-style(xs);
+    }
 
-  $medias: (#{&}__img, selector.ns(responsive-vid));
-  $captions: (#{&}__caption, #{&}__transcription);
-  @include content-media-sizes($medias, $captions, 25%);
+    &__transcription {
+      @include nest-btn(sm, right, menu-2-fill, null, true, true);
+    }
+
+    $medias: (#{&}__img, selector.ns(responsive-vid));
+    $captions: (#{&}__caption, #{&}__transcription);
+    @include content-media-sizes($medias, $captions, 25%);
+  }
 }

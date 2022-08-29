@@ -3,9 +3,9 @@
 /// @group skiplink
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
 
-@include legacy.is(ie11) {
+@include first() {
   /**
   * Correctif
   */

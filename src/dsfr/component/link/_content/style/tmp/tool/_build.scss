@@ -74,8 +74,8 @@
     @include _link-display(map-get($settings, display));
 
     @if $underline != true {
-      @include disable-underline;
-      @include tint-enabled(true, null);
+      @include action.disable-underline;
+      @include action.tint-enabled(true, null);
     }
     @content;
   }

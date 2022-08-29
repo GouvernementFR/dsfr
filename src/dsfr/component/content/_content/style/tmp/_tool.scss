@@ -4,6 +4,7 @@
 ////
 
 @use "sass:math";
+@use '../../../../../../sass/media-query';
 
 @mixin content-media-sizes($medias, $captions, $gap) {
   @each $size in $content-sizes {

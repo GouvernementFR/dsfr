@@ -1,7 +1,0 @@
-id: stepper
-title: Indicateur d'étapes
-description: L’indicateur d'étape permet d’indiquer à l’utilisateur où il se trouve dans un formulaire ou dans une démarche.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/1010860097
-wrapper: col-8
-style:
-  - core

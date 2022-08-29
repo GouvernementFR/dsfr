@@ -118,7 +118,7 @@
       background: transparent;
       @include spacing.padding(0);
       color: inherit;
-      @include disable-tint;
+      @include action.disable-tint;
       @include link-underline;
       @include selector.after {
         @include spacing.margin-right(-5v);

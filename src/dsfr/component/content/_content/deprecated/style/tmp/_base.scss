@@ -1,0 +1,22 @@
+////
+/// Content Deprecated Module
+/// @group content
+////
+
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/action';
+
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+
+@mixin first() {
+  #{selector.ns(content-media)} {
+    &__transcription {
+      #{selector.ns(link)} {
+        @include nest-btn(sm, right, menu-2-fill, null, false);
+        @include action.disable-underline;
+        @include action.tint-enabled(true, null);
+      }
+    }
+  }
+}

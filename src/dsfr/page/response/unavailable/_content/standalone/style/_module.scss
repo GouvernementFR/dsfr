@@ -61,7 +61,7 @@ a {
     @include spacing.margin(-2v);
 
     > {
-      #{class-start-with(ns(col-, ''))} {
+      #{selector.class-start-with(selector.ns(col-, ''))} {
         @include spacing.padding(2v);
       }
     }
