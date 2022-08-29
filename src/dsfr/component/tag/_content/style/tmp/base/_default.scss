@@ -3,4 +3,8 @@
 /// @group tag
 ////
 
-@include build-tag();
+@import '../tool';
+
+@mixin first() {
+  @include build-tag();
+}

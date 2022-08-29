@@ -1,11 +1,9 @@
-@use 'tmp/setting';
 @use 'tmp/scheme';
 @use 'tmp/base';
 
 $options: () !default;
 
 @mixin first() {
-  @include setting.first();
   @include base.first();
   @include scheme.first();
 }

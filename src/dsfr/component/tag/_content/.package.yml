@@ -1,9 +1,0 @@
-id: tag
-title: Tag
-description: Le tag catégorise/classe/organise les contenus à l'aide de mots-clés. Il aide les utilisateurs à rechercher et à trouver facilement une information.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/310706305/Tag
-wrapper: col-8
-style:
-  - core
-script:
-  - core
