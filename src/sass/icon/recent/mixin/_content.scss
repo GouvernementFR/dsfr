@@ -1,5 +1,5 @@
 @use 'sass:list';
-@use '../../selector';
+@use '../../../selector';
 
 @mixin content($is-before: true, $override: false) {
   $pseudos: before after;

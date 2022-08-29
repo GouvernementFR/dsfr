@@ -1,7 +1,18 @@
-@use 'tmp/recent';
+////
+/// Core Module : Icons
+/// @group core
+////
+
+@use '../../../../../sass/icon';
 
 $options: () !default;
 
-@mixin first() {
-  @include recent.first;
+@mixin first () {
+  @include icon.selector {
+    @include icon.size;
+    @include icon.style;
+    @include icon.content;
+  }
+
+  @include icon.modify(recommended, false);
 }

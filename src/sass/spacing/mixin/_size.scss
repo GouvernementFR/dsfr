@@ -1,67 +1,64 @@
-////
-/// Core Tool : Spacing size
-/// @group core
-////
+@use '../function/space';
 
 @mixin width($width:null) {
   @if $width != null {
-    width: #{space($width)};
+    width: #{space.space($width)};
   }
 }
 
 @mixin min-width($width:null) {
   @if $width != null {
-    min-width: #{space($width)};
+    min-width: #{space.space($width)};
   }
 }
 
 @mixin max-width($width:null) {
   @if $width != null {
-    max-width: #{space($width)};
+    max-width: #{space.space($width)};
   }
 }
 
 @mixin height($height:null) {
   @if $height != null {
-    height: #{space($height)};
+    height: #{space.space($height)};
   }
 }
 
 @mixin min-height($height:null) {
   @if $height != null {
-    min-height: #{space($height)};
+    min-height: #{space.space($height)};
   }
 }
 
 @mixin max-height($height:null) {
   @if $height != null {
-    max-height: #{space($height)};
+    max-height: #{space.space($height)};
   }
 }
 
 @mixin size($width:null, $height:null) {
   @if $width != null {
-    width: #{space($width)};
+    width: #{space.space($width)};
   }
   @if $height != null {
-    height: #{space($height)};
+    height: #{space.space($height)};
   }
 }
 
 @mixin min-size($min-width:null, $min-height:null) {
   @if $min-width != null {
-    min-width: #{space($min-width)};
+    min-width: #{space.space($min-width)};
   }
   @if $min-height != null {
-    min-height: #{space($min-height)};
+    min-height: #{space.space($min-height)};
   }
 }
 
 @mixin max-size($max-width:null, $max-height:null) {
   @if $max-width != null {
-    max-width: #{space($max-width)};
+    max-width: #{space.space($max-width)};
   }
   @if $max-height != null {
-    max-height: #{space($max-height)};
+    max-height: #{space.space($max-height)};
   }
 }

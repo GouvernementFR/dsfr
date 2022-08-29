@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use '../../selector';
+@use '../recent';
+@use '../legacy';
+@use '../property/situations';
+@use '../property/sizes';
+
+@mixin modify ($situation: recommended, $legacy: false) {
+  $block: map.get(situations.$situations, $situation);
+
+  #{selector.ns($block)} {
+    @each $size, $value in sizes.$sizes {
+      &--#{$size} {
+        @if $legacy {
+          @include legacy.legacy-size($size);
+        }
+        @else {
+          @include recent.size($size);
+        }
+      }
+    }
+  }
+}

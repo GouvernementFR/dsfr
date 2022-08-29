@@ -1,18 +1,18 @@
 @use '../property/icons';
-@use '../property/blocks';
+@use '../property/situations';
 @use '../../selector';
-@use 'image';
-@use 'legacy/image' as legacy;
+@use '../recent';
+@use '../legacy';
 
 @mixin generate($icons: icons.$icons, $situations: recommended deprecated, $legacy: false) {
   @each $icon, $properties in $icons {
-    @each $situation, $block in blocks.$blocks {
+    @each $situation, $block in situations.$situations {
       #{selector.ns(#{$block}-#{$icon})} {
         @if $legacy {
-          @include legacy.image($icon)
+          @include legacy.legacy-image($icon)
         }
         @else {
-          @include image.image($icon);
+          @include recent.image($icon);
         }
       }
     }

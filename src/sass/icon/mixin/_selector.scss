@@ -1,11 +1,11 @@
 @use 'sass:list';
-@use '../property/blocks';
+@use '../property/situations';
 @use '../../selector';
 @use '../../string';
 
 @mixin selector($situations: recommended deprecated) {
   $start: ();
-  @each $situation, $block in blocks.$blocks {
+  @each $situation, $block in situations.$situations {
     @if list.index($situations, $situation) != null {
       $list: selector.start-with(selector.ns($block, ''));
       @each $item in $list {
@@ -14,14 +14,17 @@
     }
   }
 
+  @debug $start;
+
   @include selector.pattern($start) {
+    @debug &;
     @content;
   }
 }
 
 @mixin not-selector($situations: recommended deprecated) {
   $start: '';
-  @each $situation, $block in blocks.$blocks {
+  @each $situation, $block in situations.$situations {
     @if list.index($situations, $situation) != null {
       $start: '#{$start}#{selector.not-start-with(selector.ns($block, ''))}';
     }

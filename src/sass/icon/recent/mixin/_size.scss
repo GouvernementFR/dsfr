@@ -1,5 +1,5 @@
-@use 'pseudo';
-@use '../function/size';
+@use '../../mixin/pseudo';
+@use '../../function/size';
 
 @mixin size ($size:md, $restrain: null) {
   @include pseudo.pseudo($restrain) {

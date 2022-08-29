@@ -1,6 +1,6 @@
-@use 'pseudo';
-@use 'size';
-@use '../../mask';
+@use '../../mixin/pseudo';
+@use '../../../spacing';
+@use '../../../mask';
 
 @mixin style($restrain: null) {
   @include pseudo.pseudo($restrain) {
@@ -8,7 +8,7 @@
     display: inline-block;
     vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
     background-color: currentColor;
-    @include size.size(var(--icon-size), var(--icon-size));
+    @include spacing.size(var(--icon-size), var(--icon-size));
     @include mask.size(100% 100%);
     @content;
   }

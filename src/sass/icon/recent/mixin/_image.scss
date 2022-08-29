@@ -1,6 +1,6 @@
-@use '../../mask';
-@use '../function/path';
-@use 'pseudo';
+@use '../../../mask';
+@use '../../function/path';
+@use '../../mixin/pseudo';
 
 @mixin image ($icon, $restrain: null, $important: false) {
   $url: path.path($icon, $important);

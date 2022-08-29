@@ -1,0 +1,16 @@
+////
+/// Core Legacy : Icon
+/// @group core
+////
+
+@use '../../../../../sass/icon';
+
+$options: () !default;
+
+@mixin first () {
+  @include icon.selector(recommended) {
+    @include icon.legacy-icon(null, md, before);
+  }
+
+  @include icon.modify(recommended, true);
+}
