@@ -15,7 +15,7 @@
 
     &__panel {
       @include typography.enable-list-style-legacy;
-      @include enable-underline-legacy;
+      @include action.enable-underline-legacy;
     }
   }
 }

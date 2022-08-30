@@ -3,36 +3,44 @@
 /// @group download
 ////
 
-@include build-download-link;
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/spacing';
+@import '../setting';
+@import '../tool';
 
-#{selector.ns(download)} {
-  @include typography.set-text-margin(0);
-  @include typography.set-title-margin(0);
-  @include spacing.relative;
-  @include spacing.padding-bottom(6v);
-  @include spacing.margin(0 0 4v 0);
+@mixin first() {
+  @include build-download-link;
 
-  @include nest-download-link;
+  #{selector.ns(download)} {
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
+    @include spacing.relative;
+    @include spacing.padding-bottom(6v);
+    @include spacing.margin(0 0 4v 0);
 
-  &__desc {
-    @include typography.text-style(sm);
-    @include typography.font-weight(regular);
-    display: none;
-  }
+    @include nest-download-link;
 
-  &__detail {
-    @include spacing.absolute(null, null, 0, 0);
-    @include typography.text-style(xs);
-    @include typography.font-weight(regular);
-    max-width: 100%;
-    white-space: nowrap;
-    pointer-events: none;
-    cursor: text;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    &__desc {
+      @include typography.text-style(sm);
+      @include typography.font-weight(regular);
+      display: none;
+    }
 
-    abbr {
-      text-decoration: none;
+    &__detail {
+      @include spacing.absolute(null, null, 0, 0);
+      @include typography.text-style(xs);
+      @include typography.font-weight(regular);
+      max-width: 100%;
+      white-space: nowrap;
+      pointer-events: none;
+      cursor: text;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      abbr {
+        text-decoration: none;
+      }
     }
   }
 }

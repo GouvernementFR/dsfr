@@ -3,6 +3,14 @@
 /// @group download
 ////
 
-@import 'base/download';
-@import 'base/variants';
-@import 'base/group';
+@use 'base/download';
+@use 'base/variants';
+@use 'base/group';
+
+$options: () !default;
+
+@mixin first() {
+  @include download.first();
+  @include variants.first();
+  @include group.first();
+}

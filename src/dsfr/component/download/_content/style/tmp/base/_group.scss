@@ -3,27 +3,33 @@
 /// @group download
 ////
 
-#{selector.ns-group(downloads)} {
-  &__title {
-    @include typography.title-style(h4);
-    @include spacing.margin(var(--title-spacing));
-  }
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/spacing';
 
-  &--bordered {
-    @include spacing.padding(6v 6v 2v);
-    @include spacing.padding(8v 8v 2v, md);
-  }
-
-  & > ul {
-    @include spacing.margin-y(0);
-
-    & > li {
-      @include spacing.padding-bottom(0);
+@mixin first() {
+  #{selector.ns-group(downloads)} {
+    &__title {
+      @include typography.title-style(h4);
+      @include spacing.margin(var(--title-spacing));
     }
-  }
 
-  #{selector.ns(download)} {
-    @include spacing.margin-bottom(4v);
-    @include spacing.margin-bottom(6v, md);
+    &--bordered {
+      @include spacing.padding(6v 6v 2v);
+      @include spacing.padding(8v 8v 2v, md);
+    }
+
+    & > ul {
+      @include spacing.margin-y(0);
+
+      & > li {
+        @include spacing.padding-bottom(0);
+      }
+    }
+
+    #{selector.ns(download)} {
+      @include spacing.margin-bottom(4v);
+      @include spacing.margin-bottom(6v, md);
+    }
   }
 }

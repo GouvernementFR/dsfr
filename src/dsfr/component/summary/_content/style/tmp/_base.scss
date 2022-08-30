@@ -27,7 +27,7 @@
 
     @include selector.title {
       @include typography.text-style(xs);
-      font-weight: typography.font-weight(bold);
+      @include typography.font-weight(bold);
       text-transform: uppercase;
     }
 
@@ -42,7 +42,7 @@
       }
 
       &:not(:hover):not(:active) {
-        @include link-underline-hover-only;
+        @include action.link-underline-hover-only;
       }
     }
   }

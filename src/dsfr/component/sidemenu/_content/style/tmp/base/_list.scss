@@ -11,17 +11,17 @@
 @mixin first() {
   #{selector.ns(sidemenu)} {
     @include selector.list {
-      font-weight: typography.font-weight('bold');
+      @include typography.font-weight('bold');
 
       #{selector.ns(sidemenu__list)} {
         @include spacing.margin(0 2v 6v);
         @include spacing.margin(0 4v, md);
-        font-weight: typography.font-weight();
+        @include typography.font-weight();
 
         #{selector.ns(sidemenu__link)},
         #{selector.ns(sidemenu__btn)} {
           @include typography.text-style(md);
-          font-weight: typography.font-weight();
+          @include typography.font-weight();
         }
 
         #{selector.ns(sidemenu__list)} {

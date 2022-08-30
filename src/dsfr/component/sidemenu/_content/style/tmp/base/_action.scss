@@ -23,7 +23,7 @@
     @include spacing.margin(0, md);
     @include typography.text-style(md);
     text-align: left;
-    font-weight: typography.font-weight(bold);
+    @include typography.font-weight(bold);
 
     @include enable-tint;
 

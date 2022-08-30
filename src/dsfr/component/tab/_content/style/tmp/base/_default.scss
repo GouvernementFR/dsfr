@@ -67,7 +67,7 @@
     &__tab {
       @include spacing.relative;
       overflow: visible;
-      font-weight: typography.font-weight(bold);
+      @include typography.font-weight(bold);
       @include elevation.z-index(over);
       @include spacing.margin(0 1v);
       @include spacing.height(100%);
@@ -88,7 +88,7 @@
   * Tab Panel
   */
     &__panel {
-      @include enable-underline;
+      @include action.enable-underline;
       @include typography.enable-list-style;
       display: block;
       order: 3;

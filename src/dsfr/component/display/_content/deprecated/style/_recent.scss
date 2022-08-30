@@ -1,5 +1,8 @@
-@import '../../../../button/_content/index';
+@import '../../../../button/_content/style/tmp/setting';
+@import '../../../../button/_content/style/tmp/tool';
 
-#{selector.ns(link)}#{selector.ns(link--icon-left)}#{selector.ns(fi-theme-fill)} {
-  @include nest-btn(md, left);
+@mixin first() {
+  #{selector.ns(link)}#{selector.ns(link--icon-left)}#{selector.ns(fi-theme-fill)} {
+    @include nest-btn(md, left);
+  }
 }

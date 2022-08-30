@@ -3,9 +3,13 @@
 /// @group follow
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
 
-@include legacy.is(ie11) {
+@import 'setting';
+@import 'tool';
+
+@mixin first() {
   /**
   * Correctif de la largeur max des textes
   */

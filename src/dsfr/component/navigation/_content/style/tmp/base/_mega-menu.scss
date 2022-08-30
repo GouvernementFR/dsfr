@@ -45,7 +45,7 @@
   }
 
   &__leader {
-    @include enable-underline;
+    @include action.enable-underline;
     @include spacing.padding-x(4v);
     @include spacing.padding-top(4v);
     @include spacing.padding-top(0, lg);

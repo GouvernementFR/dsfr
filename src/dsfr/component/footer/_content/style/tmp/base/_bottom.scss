@@ -3,74 +3,87 @@
 /// @group Footer
 ////
 
-/**
- * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
- * ainsi que du copyright (ferré à droite)
- */
-#{selector.ns(footer)} {
-  &__bottom {
-    @include display.flex(row, center, null, wrap);
-    @include spacing.margin-top(10v);
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/action';
 
-    @include nest-footer-bottom-btn(xs, left);
-  }
+@import '../../../../../link/_content/style/tmp/setting';
+@import '../../../../../link/_content/style/tmp/tool';
+@import '../setting';
+@import '../tool';
 
+@mixin first() {
   /**
-  * Liste de liens avec séparateur
+  * La partie "bottom" du footer est constituée d'une liste de liens simples (ferrée à gauche)
+  * ainsi que du copyright (ferré à droite)
   */
-  &__bottom-list {
-    flex-wrap: wrap;
-    align-items: center;
-    @include spacing.size(100%);
-    @include spacing.padding(2v 0 4v);
-    @include spacing.size(100%);
-    @include spacing.margin(0);
-  }
+  #{selector.ns(footer)} {
+    &__bottom {
+      @include display.flex(row, center, null, wrap);
+      @include spacing.margin-top(10v);
 
-  &__bottom-item {
-    @include spacing.relative;
-    @include spacing.margin(2v 0 0 1v);
-    @include spacing.margin(2v 0 0 3v, md);
-    display: inline;
+      @include nest-footer-bottom-btn(xs, left);
+    }
 
-    @include selector.before('', inline-block) {
-      vertical-align: middle;
+    /**
+    * Liste de liens avec séparateur
+    */
+    &__bottom-list {
+      flex-wrap: wrap;
+      align-items: center;
+      @include spacing.size(100%);
+      @include spacing.padding(2v 0 4v);
+      @include spacing.size(100%);
+      @include spacing.margin(0);
+    }
+
+    &__bottom-item {
       @include spacing.relative;
-      @include spacing.size(1px, 4v);
-      @include spacing.margin-right(1v);
-      @include spacing.margin-right(3v, md);
-      @include spacing.margin-bottom(2v);
-      @include spacing.margin-bottom(1v, md);
-      @include spacing.margin-top(2v);
-      @include spacing.margin-top(1v, md);
+      @include spacing.margin(2v 0 0 1v);
+      @include spacing.margin(2v 0 0 3v, md);
+      display: inline;
+
+      @include selector.before('', inline-block) {
+        vertical-align: middle;
+        @include spacing.relative;
+        @include spacing.size(1px, 4v);
+        @include spacing.margin-right(1v);
+        @include spacing.margin-right(3v, md);
+        @include spacing.margin-bottom(2v);
+        @include spacing.margin-bottom(1v, md);
+        @include spacing.margin-top(2v);
+        @include spacing.margin-top(1v, md);
+      }
+
+      &:first-child {
+        @include spacing.margin(2v 0 0);
+        @include selector.before(none);
+      }
     }
 
-    &:first-child {
-      @include spacing.margin(2v 0 0);
-      @include selector.before(none);
-    }
-  }
-
-  /**
-  * Style du lien de la liste
-  */
-  &__bottom-link {
-    @include typography.text-style(xs);
-
-    &:not(:hover):not(:active) {
-      @include link-underline-hover-only;
-    }
-  }
-
-  /**
-  * Copyright
-  */
-  &__bottom-copy {
-    @include typography.set-text-margin(0 0 4v 0);
-    @include spacing.margin-top(2v);
-
-    * {
+    /**
+    * Style du lien de la liste
+    */
+    &__bottom-link {
       @include typography.text-style(xs);
+
+      &:not(:hover):not(:active) {
+        @include action.link-underline-hover-only;
+      }
+    }
+
+    /**
+    * Copyright
+    */
+    &__bottom-copy {
+      @include typography.set-text-margin(0 0 4v 0);
+      @include spacing.margin-top(2v);
+
+      * {
+        @include typography.text-style(xs);
+      }
     }
   }
 }
