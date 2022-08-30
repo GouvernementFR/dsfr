@@ -13,14 +13,17 @@ class ScriptProducer {
   }
 
   init () {
-    this._producers = KINDS.map(kind => new ScriptItem(this.part, kind, this.support));
+    this._items = KINDS.map(kind => new ScriptItem(this.part, kind, this.support));
   }
 
   produce (dependency) {
-    this._producers.forEach(item => item.produce(dependency));
-    this._items = this._producers
-      .filter(producer => producer.filled)
-      .filter((producer, index, array) => !(array.length === 2 && producer.kind === BASE_KIND));
+    const all = this._items;
+    this._items.forEach(item => item.produce(dependency));
+    this._items = this._items
+      .filter(item => item.filled)
+      .filter((item, index, array) => array.map(item => item.bits).indexOf(item.bits) === index);
+
+    all.filter(item => !this._items.includes(item)).forEach(item => item.remove());
 
     this._items.forEach(item => item.create());
   }
