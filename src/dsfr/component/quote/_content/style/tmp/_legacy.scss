@@ -3,9 +3,10 @@
 /// @group quote
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * Correction largeur max du texte
   */
