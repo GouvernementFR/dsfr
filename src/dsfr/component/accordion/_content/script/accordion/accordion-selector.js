@@ -1,6 +1,6 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const AccordionSelector = {
-  GROUP: api.internals.ns.selector('accordions-group'),
-  COLLAPSE: `${api.internals.ns.selector('accordion')} > ${api.internals.ns.selector('collapse')}`
+  GROUP: ref.internals.ns.selector('accordions-group'),
+  COLLAPSE: `${ref.internals.ns.selector('accordion')} > ${ref.internals.ns.selector('collapse')}`
 };

@@ -1,9 +1,9 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 import { ModalSelector } from './modal-selector.js';
 
 const OFFSET = 32; // 32px => 8v => 2rem
 
-class ModalBody extends api.core.Instance {
+class ModalBody extends ref.core.Instance {
   static get instanceClassName () {
     return 'ModalBody';
   }
@@ -39,7 +39,7 @@ class ModalBody extends api.core.Instance {
   }
 
   adjust () {
-    const offset = OFFSET * (this.isBreakpoint(api.core.Breakpoints.MD) ? 2 : 1);
+    const offset = OFFSET * (this.isBreakpoint(ref.core.Breakpoints.MD) ? 2 : 1);
     if (this.isLegacy) this.style.maxHeight = `${window.innerHeight - offset}px`;
     else this.style.setProperty('--modal-max-height', `${window.innerHeight - offset}px`);
     this.shade();

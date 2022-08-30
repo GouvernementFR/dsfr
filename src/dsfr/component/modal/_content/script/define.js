@@ -1,4 +1,4 @@
-import api from '../ref.js';
+import ref from '../../ref.js';
 
 import { Modal } from './modal/modal.js';
 import { ModalButton } from './modal/modal-button.js';
@@ -6,7 +6,7 @@ import { ModalsGroup } from './modal/modals-group.js';
 import { ModalBody } from './modal/modal-body.js';
 import { ModalSelector } from './modal/modal-selector.js';
 
-api.modal = {
+ref.modal = {
   Modal: Modal,
   ModalButton: ModalButton,
   ModalBody: ModalBody,
@@ -14,4 +14,4 @@ api.modal = {
   ModalSelector: ModalSelector
 };
 
-export default api;
+export default ref;

@@ -1,9 +1,9 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const NavigationSelector = {
-  NAVIGATION: api.internals.ns.selector('nav'),
-  COLLAPSE: `${api.internals.ns.selector('nav__item')} > ${api.internals.ns.selector('collapse')}`,
-  ITEM: api.internals.ns.selector('nav__item'),
-  ITEM_RIGHT: api.internals.ns('nav__item--align-right'),
-  MENU: api.internals.ns.selector('menu')
+  NAVIGATION: ref.internals.ns.selector('nav'),
+  COLLAPSE: `${ref.internals.ns.selector('nav__item')} > ${ref.internals.ns.selector('collapse')}`,
+  ITEM: ref.internals.ns.selector('nav__item'),
+  ITEM_RIGHT: ref.internals.ns('nav__item--align-right'),
+  MENU: ref.internals.ns.selector('menu')
 };

@@ -1,11 +1,11 @@
-import api from '../ref.js';
+import ref from '../../ref.js';
 import { PasswordToggle } from './password/password-toggle.js';
 import { Password } from './password/password.js';
 import { PasswordSelector } from './password/password-selector.js';
 import { PasswordInput } from './password/password-input.js';
 import { PasswordLabel } from './password/password-label.js';
 
-api.password = {
+ref.password = {
   Password: Password,
   PasswordToggle: PasswordToggle,
   PasswordSelector: PasswordSelector,
@@ -13,4 +13,4 @@ api.password = {
   PasswordLabel: PasswordLabel
 };
 
-export default api;
+export default ref;

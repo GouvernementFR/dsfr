@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { AccordionSelector } from './accordion-selector.js';
 
-class AccordionsGroup extends api.core.CollapsesGroup {
+class AccordionsGroup extends ref.core.CollapsesGroup {
   static get instanceClassName () {
     return 'AccordionsGroup';
   }

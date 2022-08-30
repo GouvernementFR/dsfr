@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { ToggleInput } from './toggle-input.js';
 
-class ToggleStatusLabel extends api.core.Instance {
+class ToggleStatusLabel extends ref.core.Instance {
   static get instanceClassName () {
     return 'ToggleStatusLabel';
   }

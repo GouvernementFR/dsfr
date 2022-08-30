@@ -1,8 +1,8 @@
-import api from '../api.js';
+import ref from '../ref.js';
 import { ButtonSelector } from './button/button-selector';
 
-api.button = {
+ref.button = {
   ButtonSelector: ButtonSelector
 };
 
-export default api;
+export default ref;

@@ -1,20 +1,19 @@
-import { Instance } from '../../../api/_content/script/modules/register/instance.js';
-import api from '../../../api.js';
+import ref from '../../../ref.js';
+import { RATIOS } from './ratios';
 
-class Ratio extends Instance {
+class Ratio extends ref.api.Instance {
   static get instanceClassName () {
     return 'Ratio';
   }
 
   init () {
-    if (!api.internals.support.supportAspectRatio()) {
+    if (!ref.internals.support.supportAspectRatio()) {
       this.ratio = 16 / 9;
-      for (const className in this.classNames) {
-        if (this.registration.selector.indexOf(this.classNames[className]) > 0) {
-          const ratio = this.classNames[className].split('ratio-');
-          if (ratio[1]) {
-            this.ratio = ratio[1].split('x')[0] / ratio[1].split('x')[1];
-          }
+      for (const className of this.classNames) {
+        if (this.registration.selector.indexOf(className) > 0) {
+          const modifier = className.split('--')[1];
+          const ratio = RATIOS.filter(ratio => ratio.id === modifier)[0];
+          if (ratio) this.ratio = ratio.ratio;
         }
       }
       this.isRendering = true;

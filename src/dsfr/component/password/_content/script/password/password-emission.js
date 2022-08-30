@@ -1,6 +1,6 @@
-import window from '../../api.js';
+import ref from '../../../ref.js';
 
 export const PasswordEmission = {
-  TOGGLE: window.internals.ns.emission('password', 'toggle'),
-  ADJUST: window.internals.ns.emission('password', 'adjust')
+  TOGGLE: ref.internals.ns.emission('password', 'toggle'),
+  ADJUST: ref.internals.ns.emission('password', 'adjust')
 };

@@ -1,6 +1,6 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.navigation.NavigationSelector.NAVIGATION, api.navigation.Navigation);
-api.internals.register(api.navigation.NavigationSelector.ITEM, api.navigation.NavigationItem);
+ref.internals.register(ref.navigation.NavigationSelector.NAVIGATION, ref.navigation.Navigation);
+ref.internals.register(ref.navigation.NavigationSelector.ITEM, ref.navigation.NavigationItem);
 
-export default api;
+export default ref;

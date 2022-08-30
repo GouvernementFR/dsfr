@@ -1,9 +1,9 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { TableEmission } from './table-emission.js';
 
 const PADDING = '1rem'; // padding de 4v sur le caption
 
-class Table extends api.core.Instance {
+class Table extends ref.core.Instance {
   static get instanceClassName () {
     return 'Table';
   }

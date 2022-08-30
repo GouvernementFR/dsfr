@@ -1,4 +1,4 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 
 const unordereds = [
   '[tabindex="0"]',
@@ -140,12 +140,12 @@ class FocusTrap {
   }
 
   get focusables () {
-    let unordereds = api.internals.dom.querySelectorAllArray(this.element, UNORDEREDS);
+    let unordereds = ref.internals.dom.querySelectorAllArray(this.element, UNORDEREDS);
 
     /**
      *  filtrage des radiobutttons de même name (la navigations d'un groupe de radio se fait à la flèche et non pas au tab
      **/
-    const radios = api.internals.dom.querySelectorAllArray(document.documentElement, 'input[type="radio"]');
+    const radios = ref.internals.dom.querySelectorAllArray(document.documentElement, 'input[type="radio"]');
 
     if (radios.length) {
       const groups = {};
@@ -163,7 +163,7 @@ class FocusTrap {
       });
     }
 
-    const ordereds = api.internals.dom.querySelectorAllArray(this.element, ORDEREDS);
+    const ordereds = ref.internals.dom.querySelectorAllArray(this.element, ORDEREDS);
 
     ordereds.sort((a, b) => a.tabIndex - b.tabIndex);
 

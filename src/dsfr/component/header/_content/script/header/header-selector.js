@@ -1,9 +1,9 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const HeaderSelector = {
-  HEADER: api.internals.ns.selector('header'),
-  TOOLS_LINKS: api.internals.ns.selector('header__tools-links'),
-  MENU_LINKS: api.internals.ns.selector('header__menu-links'),
-  BUTTONS: `${api.internals.ns.selector('header__tools-links')} ${api.internals.ns.selector('btns-group')}, ${api.internals.ns.selector('header__tools-links')} ${api.internals.ns.selector('links-group')}`,
-  MODALS: `${api.internals.ns.selector('header__search')}${api.internals.ns.selector('modal')}, ${api.internals.ns.selector('header__menu')}${api.internals.ns.selector('modal')}`
+  HEADER: ref.internals.ns.selector('header'),
+  TOOLS_LINKS: ref.internals.ns.selector('header__tools-links'),
+  MENU_LINKS: ref.internals.ns.selector('header__menu-links'),
+  BUTTONS: `${ref.internals.ns.selector('header__tools-links')} ${ref.internals.ns.selector('btns-group')}, ${ref.internals.ns.selector('header__tools-links')} ${ref.internals.ns.selector('links-group')}`,
+  MODALS: `${ref.internals.ns.selector('header__search')}${ref.internals.ns.selector('modal')}, ${ref.internals.ns.selector('header__menu')}${ref.internals.ns.selector('modal')}`
 };

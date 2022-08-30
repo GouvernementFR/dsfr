@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { DownloadSelector } from './download-selector';
 
-class AssessFile extends api.core.Instance {
+class AssessFile extends ref.core.Instance {
   static get instanceClassName () {
     return 'AssessFile';
   }
@@ -81,7 +81,7 @@ class AssessFile extends api.core.Instance {
     if (bytes === -1) return null;
 
     let sizeUnits = ['octets', 'ko', 'Mo', 'Go', 'To'];
-    if (this.getAttribute(api.internals.ns.attr('assess-file')) === 'bytes') {
+    if (this.getAttribute(ref.internals.ns.attr('assess-file')) === 'bytes') {
       sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB'];
     }
 

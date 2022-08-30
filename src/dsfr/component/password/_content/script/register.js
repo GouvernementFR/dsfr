@@ -1,8 +1,8 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.password.PasswordSelector.INPUT, api.password.PasswordInput);
-api.internals.register(api.password.PasswordSelector.PASSWORD, api.password.Password);
-api.internals.register(api.password.PasswordSelector.TOOGLE, api.password.PasswordToggle);
-api.internals.register(api.password.PasswordSelector.LABEL, api.password.PasswordLabel);
+ref.internals.register(ref.password.PasswordSelector.INPUT, ref.password.PasswordInput);
+ref.internals.register(ref.password.PasswordSelector.PASSWORD, ref.password.Password);
+ref.internals.register(ref.password.PasswordSelector.TOOGLE, ref.password.PasswordToggle);
+ref.internals.register(ref.password.PasswordSelector.LABEL, ref.password.PasswordLabel);
 
-export default api;
+export default ref;

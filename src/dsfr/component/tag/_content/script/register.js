@@ -1,5 +1,5 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.tag.TagSelector.TAG_PRESSABLE, api.core.Toggle);
+ref.internals.register(ref.tag.TagSelector.TAG_PRESSABLE, ref.core.Toggle);
 
-export default api;
+export default ref;

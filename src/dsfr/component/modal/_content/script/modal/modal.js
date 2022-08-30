@@ -1,11 +1,11 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { ModalSelector } from './modal-selector.js';
 import { ModalButton } from './modal-button.js';
 import { ModalAttribute } from './modal-attribute';
 
-class Modal extends api.core.Disclosure {
+class Modal extends ref.core.Disclosure {
   constructor () {
-    super(api.core.DisclosureType.OPENED, ModalSelector.MODAL, ModalButton, 'ModalsGroup');
+    super(ref.core.DisclosureType.OPENED, ModalSelector.MODAL, ModalButton, 'ModalsGroup');
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
   }
@@ -17,7 +17,7 @@ class Modal extends api.core.Disclosure {
   init () {
     super.init();
     this.listen('click', this.click.bind(this));
-    this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
+    this.listenKey(ref.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
   }
 
   get body () {

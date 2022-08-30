@@ -1,5 +1,5 @@
-import ns from '../../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../../ref.js';
 
 export const InjectSvgSelector = {
-  INJECT_SVG: `[${ns.attr('inject-svg')}]`
+  INJECT_SVG: `[${ref.internals.ns.attr('inject-svg')}]`
 };

@@ -1,8 +1,8 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 
-class ModalButton extends api.core.DisclosureButton {
+class ModalButton extends ref.core.DisclosureButton {
   constructor () {
-    super(api.core.DisclosureType.OPENED);
+    super(ref.core.DisclosureType.OPENED);
   }
 
   static get instanceClassName () {

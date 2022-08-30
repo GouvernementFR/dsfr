@@ -1,10 +1,10 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const TableSelector = {
-  TABLE: api.internals.ns.selector('table'),
-  SHADOW: api.internals.ns.selector('table__shadow'),
-  SHADOW_LEFT: api.internals.ns.selector('table__shadow--left'),
-  SHADOW_RIGHT: api.internals.ns.selector('table__shadow--right'),
-  ELEMENT: `${api.internals.ns.selector('table')}:not(${api.internals.ns.selector('table--no-scroll')}) table`,
-  CAPTION: `${api.internals.ns.selector('table')} table caption`
+  TABLE: ref.internals.ns.selector('table'),
+  SHADOW: ref.internals.ns.selector('table__shadow'),
+  SHADOW_LEFT: ref.internals.ns.selector('table__shadow--left'),
+  SHADOW_RIGHT: ref.internals.ns.selector('table__shadow--right'),
+  ELEMENT: `${ref.internals.ns.selector('table')}:not(${ref.internals.ns.selector('table--no-scroll')}) table`,
+  CAPTION: `${ref.internals.ns.selector('table')} table caption`
 };

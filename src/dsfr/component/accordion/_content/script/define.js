@@ -1,10 +1,10 @@
-import api from '../ref.js';
+import ref from '../ref.js';
 import { AccordionsGroup } from './accordion/accordions-group.js';
 import { AccordionSelector } from './accordion/accordion-selector.js';
 
-api.accordion = {
+ref.accordion = {
   AccordionSelector: AccordionSelector,
   AccordionsGroup: AccordionsGroup
 };
 
-export default api;
+export default ref;

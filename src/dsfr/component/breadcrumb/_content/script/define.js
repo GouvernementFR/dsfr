@@ -1,10 +1,10 @@
-import api from '../api.js';
+import ref from '../ref.js';
 import { Breadcrumb } from './breadcrumb/breadcrumb.js';
 import { BreadcrumbSelector } from './breadcrumb/breadcrumb-selector.js';
 
-api.breadcrumb = {
+ref.breadcrumb = {
   BreadcrumbSelector: BreadcrumbSelector,
   Breadcrumb: Breadcrumb
 };
 
-export default api;
+export default ref;

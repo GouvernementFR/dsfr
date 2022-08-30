@@ -1,4 +1,4 @@
-import api from './define.js';
+import api from './api/api.js';
 
 api.internals.register(api.core.CollapseSelector.COLLAPSE, api.core.Collapse);
 api.internals.register(api.core.InjectSvgSelector.INJECT_SVG, api.core.InjectSvg);

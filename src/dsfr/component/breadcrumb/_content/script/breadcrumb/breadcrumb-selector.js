@@ -1,5 +1,5 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const BreadcrumbSelector = {
-  BREADCRUMB: api.internals.ns.selector('breadcrumb')
+  BREADCRUMB: ref.internals.ns.selector('breadcrumb')
 };

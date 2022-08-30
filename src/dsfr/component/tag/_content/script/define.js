@@ -1,8 +1,8 @@
-import api from '../ref.js';
+import ref from '../ref.js';
 import { TagSelector } from './script/tag/tag-selector';
 
-api.tag = {
+ref.tag = {
   TagSelector: TagSelector
 };
 
-export default api;
+export default ref;

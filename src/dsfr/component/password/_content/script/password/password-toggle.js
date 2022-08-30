@@ -1,7 +1,7 @@
-import window from '../../api.js';
+import ref from '../../../ref.js';
 import { PasswordEmission } from './password-emission.js';
 
-class PasswordToggle extends window.core.Instance {
+class PasswordToggle extends ref.core.Instance {
   static get instanceClassName () {
     return 'PasswordToggle';
   }

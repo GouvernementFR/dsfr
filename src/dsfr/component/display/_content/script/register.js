@@ -1,5 +1,5 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.display.DisplaySelector.DISPLAY, api.display.Display);
+ref.internals.register(ref.display.DisplaySelector.DISPLAY, ref.display.Display);
 
-export default api;
+export default ref;

@@ -1,7 +1,7 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.table.TableSelector.TABLE, api.table.Table);
-api.internals.register(api.table.TableSelector.ELEMENT, api.table.TableElement);
-api.internals.register(api.table.TableSelector.CAPTION, api.table.TableCaption);
+ref.internals.register(ref.table.TableSelector.TABLE, ref.table.Table);
+ref.internals.register(ref.table.TableSelector.ELEMENT, ref.table.TableElement);
+ref.internals.register(ref.table.TableSelector.CAPTION, ref.table.TableCaption);
 
-export default api;
+export default ref;

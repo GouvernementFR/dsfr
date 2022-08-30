@@ -1,5 +1,5 @@
-import api from './define';
+import ref from './define';
 
-api.internals.register(api.breadcrumb.BreadcrumbSelector.BREADCRUMB, api.breadcrumb.Breadcrumb);
+ref.internals.register(ref.breadcrumb.BreadcrumbSelector.BREADCRUMB, ref.breadcrumb.Breadcrumb);
 
-export default api;
+export default ref;

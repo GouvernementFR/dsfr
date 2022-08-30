@@ -1,5 +1,5 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.download.DownloadSelector.DOWNLOAD_ASSESS_FILE, api.download.AssessFile);
+ref.internals.register(ref.download.DownloadSelector.DOWNLOAD_ASSESS_FILE, ref.download.AssessFile);
 
-export default api;
+export default ref;

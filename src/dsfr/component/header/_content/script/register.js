@@ -1,6 +1,6 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.header.HeaderSelector.BUTTONS, api.header.HeaderLinks);
-api.internals.register(api.header.HeaderSelector.MODALS, api.header.HeaderModal);
+ref.internals.register(ref.header.HeaderSelector.BUTTONS, ref.header.HeaderLinks);
+ref.internals.register(ref.header.HeaderSelector.MODALS, ref.header.HeaderModal);
 
-export default api;
+export default ref;

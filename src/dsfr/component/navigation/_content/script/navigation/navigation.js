@@ -1,8 +1,8 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { NavigationSelector } from './navigation-selector.js';
 import { NavigationMousePosition } from './navigation-mouse-position.js';
 
-class Navigation extends api.core.CollapsesGroup {
+class Navigation extends ref.core.CollapsesGroup {
   static get instanceClassName () {
     return 'Navigation';
   }
@@ -20,13 +20,13 @@ class Navigation extends api.core.CollapsesGroup {
   }
 
   down (e) {
-    if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
+    if (!this.isBreakpoint(ref.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
     this.position = this.current.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
     this.requestPosition();
   }
 
   focusOut (e) {
-    if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
+    if (!this.isBreakpoint(ref.core.Breakpoints.LG)) return;
     this.out = true;
     this.requestPosition();
   }

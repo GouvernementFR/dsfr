@@ -1,6 +1,6 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.button.ButtonSelector.EQUISIZED_BUTTON, api.core.Equisized);
-api.internals.register(api.button.ButtonSelector.EQUISIZED_GROUP, api.core.EquisizedsGroup);
+ref.internals.register(ref.button.ButtonSelector.EQUISIZED_BUTTON, ref.core.Equisized);
+ref.internals.register(ref.button.ButtonSelector.EQUISIZED_GROUP, ref.core.EquisizedsGroup);
 
-export default api;
+export default ref;

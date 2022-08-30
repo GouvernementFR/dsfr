@@ -1,5 +1,5 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const TagSelector = {
-  TAG_PRESSABLE: `${api.internals.ns.selector('tag')}[aria-pressed]`
+  TAG_PRESSABLE: `${ref.internals.ns.selector('tag')}[aria-pressed]`
 };

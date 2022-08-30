@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 import { FocusTrap } from './focus-trap.js';
 
-class ModalsGroup extends api.core.DisclosuresGroup {
+class ModalsGroup extends ref.core.DisclosuresGroup {
   constructor () {
     super('Modal', false);
     this.focusTrap = new FocusTrap();

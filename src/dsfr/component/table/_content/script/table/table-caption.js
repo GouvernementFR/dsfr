@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 import { TableEmission } from './table-emission.js';
 
-class TableCaption extends api.core.Instance {
+class TableCaption extends ref.core.Instance {
   static get instanceClassName () {
     return 'TableCaption';
   }

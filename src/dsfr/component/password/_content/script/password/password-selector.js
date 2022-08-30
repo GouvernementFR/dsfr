@@ -1,8 +1,8 @@
-import window from '../../api.js';
+import ref from '../../../ref.js';
 
 export const PasswordSelector = {
-  PASSWORD: window.internals.ns.selector('password'),
-  INPUT: window.internals.ns.selector('password__input'),
-  LABEL: window.internals.ns.selector('password__label'),
-  TOOGLE: `${window.internals.ns.selector('password__checkbox')} input[type="checkbox"]`
+  PASSWORD: ref.internals.ns.selector('password'),
+  INPUT: ref.internals.ns.selector('password__input'),
+  LABEL: ref.internals.ns.selector('password__label'),
+  TOOGLE: `${ref.internals.ns.selector('password__checkbox')} input[type="checkbox"]`
 };

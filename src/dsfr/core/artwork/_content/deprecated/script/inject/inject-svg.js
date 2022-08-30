@@ -1,7 +1,6 @@
-import { Instance } from '../../../../../api/_content/script/api/modules/register/instance.js';
-import { setAttributes } from '../../../../../api/_content/script/api/utilities/attribute';
+import ref from '../../../../ref.js';
 
-class InjectSvg extends Instance {
+class InjectSvg extends ref.api.Instance {
   static get instanceClassName () {
     return 'InjectSvg';
   }
@@ -74,11 +73,8 @@ class InjectSvg extends Instance {
     }
 
     this.node.setAttribute('data-fr-inject-svg', true);
-    const svgAttributes = {
-      'aria-hidden': true,
-      focusable: false
-    };
-    setAttributes(this.svg, svgAttributes);
+    this.svg.setAttribute('aria-hidden', true);
+    this.svg.setAttribute('focusable', false);
     this.node.replaceChild(this.svg, this.img);
   }
 

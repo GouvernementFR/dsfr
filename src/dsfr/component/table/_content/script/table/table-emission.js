@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const TableEmission = {
-  SCROLLABLE: api.internals.ns.emission('table', 'scrollable'),
-  CHANGE: api.internals.ns.emission('table', 'change'),
-  CAPTION_HEIGHT: api.internals.ns.emission('table', 'captionheight')
+  SCROLLABLE: ref.internals.ns.emission('table', 'scrollable'),
+  CHANGE: ref.internals.ns.emission('table', 'change'),
+  CAPTION_HEIGHT: ref.internals.ns.emission('table', 'captionheight')
 };

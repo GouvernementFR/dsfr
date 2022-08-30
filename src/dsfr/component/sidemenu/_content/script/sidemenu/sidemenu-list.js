@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { SidemenuSelector } from './sidemenu-selector.js';
 
-class SidemenuList extends api.core.CollapsesGroup {
+class SidemenuList extends ref.core.CollapsesGroup {
   static get instanceClassName () {
     return 'SidemenuList';
   }

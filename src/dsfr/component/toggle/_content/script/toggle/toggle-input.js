@@ -1,6 +1,6 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
-class ToggleInput extends api.core.Instance {
+class ToggleInput extends ref.core.Instance {
   static get instanceClassName () {
     return 'ToggleInput';
   }

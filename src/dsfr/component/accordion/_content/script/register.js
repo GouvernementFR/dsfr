@@ -1,5 +1,5 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.accordion.AccordionSelector.GROUP, api.accordion.AccordionsGroup);
+ref.internals.register(ref.accordion.AccordionSelector.GROUP, ref.accordion.AccordionsGroup);
 
-export default api;
+export default ref;

@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 import { HeaderSelector } from './header-selector.js';
 
-class HeaderLinks extends api.core.Instance {
+class HeaderLinks extends ref.core.Instance {
   static get instanceClassName () {
     return 'HeaderLinks';
   }
@@ -20,13 +20,13 @@ class HeaderLinks extends api.core.Instance {
 
     if (toolsHtmlDuplicateId === menuHtml) return;
 
-    switch (api.mode) {
-      case api.Modes.ANGULAR:
-      case api.Modes.REACT:
-      case api.Modes.VUE:
-        api.inspector.warn(`header__tools-links content is different from header__menu-links content.
+    switch (ref.mode) {
+      case ref.Modes.ANGULAR:
+      case ref.Modes.REACT:
+      case ref.Modes.VUE:
+        ref.inspector.warn(`header__tools-links content is different from header__menu-links content.
 As you're using a dynamic framework, you should handle duplication of this content yourself, please refer to documentation:
-${api.header.doc}`);
+${ref.header.doc}`);
         break;
 
       default:

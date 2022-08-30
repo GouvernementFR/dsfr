@@ -1,8 +1,8 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.header.HeaderSelector.BUTTONS, api.header.HeaderLinks);
-api.internals.register(api.modal.ModalSelector.MODAL, api.modal.Modal);
-api.internals.register(api.modal.ModalSelector.BODY, api.modal.ModalBody);
-api.internals.register(api.core.RootSelector.ROOT, api.modal.ModalsGroup);
+ref.internals.register(ref.header.HeaderSelector.BUTTONS, ref.header.HeaderLinks);
+ref.internals.register(ref.modal.ModalSelector.MODAL, ref.modal.Modal);
+ref.internals.register(ref.modal.ModalSelector.BODY, ref.modal.ModalBody);
+ref.internals.register(ref.core.RootSelector.ROOT, ref.modal.ModalsGroup);
 
-export default api;
+export default ref;

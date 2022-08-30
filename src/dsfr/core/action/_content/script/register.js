@@ -1,7 +1,7 @@
-import api from './define.js';
+import ref from '../../ref.js';
 
-api.internals.register(api.core.CollapseSelector.COLLAPSE, api.core.Collapse);
-api.internals.register(api.core.InjectSvgSelector.INJECT_SVG, api.core.InjectSvg);
-api.internals.register(api.core.RatioSelector.RATIO, api.core.Ratio);
+ref.internals.register(ref.core.CollapseSelector.COLLAPSE, ref.core.Collapse);
+ref.internals.register(ref.core.InjectSvgSelector.INJECT_SVG, ref.core.InjectSvg);
+ref.internals.register(ref.core.RatioSelector.RATIO, ref.core.Ratio);
 
-export default api;
+export default ref;

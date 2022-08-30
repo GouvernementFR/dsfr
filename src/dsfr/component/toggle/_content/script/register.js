@@ -1,5 +1,5 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.toggle.ToggleSelector.STATUS_LABEL, api.toggle.ToggleStatusLabel);
+ref.internals.register(ref.toggle.ToggleSelector.STATUS_LABEL, ref.toggle.ToggleStatusLabel);
 
-export default api;
+export default ref;

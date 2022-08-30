@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { DisplaySelector } from './display-selector.js';
 
-class Display extends api.core.Instance {
+class Display extends ref.core.Instance {
   static get instanceClassName () {
     return 'Display';
   }
@@ -9,11 +9,11 @@ class Display extends api.core.Instance {
   init () {
     this.radios = this.querySelectorAll(DisplaySelector.RADIO_BUTTONS);
 
-    if (api.scheme) {
+    if (ref.scheme) {
       this.changing = this.change.bind(this);
       for (const radio of this.radios) radio.addEventListener('change', this.changing);
-      this.addDescent(api.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
-      this.ascend(api.scheme.SchemeEmission.ASK);
+      this.addDescent(ref.scheme.SchemeEmission.SCHEME, this.apply.bind(this));
+      this.ascend(ref.scheme.SchemeEmission.ASK);
     } else {
       this.querySelector(DisplaySelector.FIELDSET).setAttribute('disabled', '');
     }
@@ -24,16 +24,16 @@ class Display extends api.core.Instance {
   }
 
   set scheme (value) {
-    if (this._scheme === value || !api.scheme) return;
+    if (this._scheme === value || !ref.scheme) return;
     switch (value) {
-      case api.scheme.SchemeValue.SYSTEM:
-      case api.scheme.SchemeValue.LIGHT:
-      case api.scheme.SchemeValue.DARK:
+      case ref.scheme.SchemeValue.SYSTEM:
+      case ref.scheme.SchemeValue.LIGHT:
+      case ref.scheme.SchemeValue.DARK:
         this._scheme = value;
         for (const radio of this.radios) {
           radio.checked = radio.value === value;
         }
-        this.ascend(api.scheme.SchemeEmission.SCHEME, value);
+        this.ascend(ref.scheme.SchemeEmission.SCHEME, value);
         break;
     }
   }

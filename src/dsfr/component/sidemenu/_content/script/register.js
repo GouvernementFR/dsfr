@@ -1,5 +1,5 @@
-import api from './define';
+import ref from '../../ref.js';
 
-api.internals.register(api.sidemenu.SidemenuSelector.LIST, api.sidemenu.SidemenuList);
+ref.internals.register(ref.sidemenu.SidemenuSelector.LIST, ref.sidemenu.SidemenuList);
 
-export default api;
+export default ref;

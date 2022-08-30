@@ -1,5 +1,5 @@
-import api from '../../api';
+import ref from '../../ref.js';
 
 export const ModalAttribute = {
-  CONCEALING_BACKDROP: api.internals.ns.attr('concealing-backdrop')
+  CONCEALING_BACKDROP: ref.internals.ns.attr('concealing-backdrop')
 };

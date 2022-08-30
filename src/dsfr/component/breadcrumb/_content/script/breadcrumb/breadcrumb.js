@@ -1,6 +1,6 @@
-import api from '../../api.js';
+import ref from '../../ref.js';
 
-class Breadcrumb extends api.core.Instance {
+class Breadcrumb extends ref.core.Instance {
   constructor () {
     super();
     this.count = 0;
@@ -27,9 +27,9 @@ class Breadcrumb extends api.core.Instance {
   getCollapse () {
     const collapse = this.collapse;
     if (collapse) {
-      collapse.listen(api.core.DisclosureEvent.DISCLOSE, this.focusing);
+      collapse.listen(ref.core.DisclosureEvent.DISCLOSE, this.focusing);
     } else {
-      this.addAscent(api.core.DisclosureEmission.ADDED, this.getCollapse.bind(this));
+      this.addAscent(ref.core.DisclosureEmission.ADDED, this.getCollapse.bind(this));
     }
   }
 
@@ -38,7 +38,7 @@ class Breadcrumb extends api.core.Instance {
     const links = this.links;
     if (!collapse || !links.length) return;
 
-    if (this.isBreakpoint(api.core.Breakpoints.MD)) {
+    if (this.isBreakpoint(ref.core.Breakpoints.MD)) {
       if (collapse.buttonHasFocus) links[0].focus();
     } else {
       if (links.indexOf(document.activeElement) > -1) collapse.focus();
@@ -50,7 +50,7 @@ class Breadcrumb extends api.core.Instance {
   }
 
   get collapse () {
-    return this.element.getDescendantInstances(api.core.Collapse.instanceClassName, null, true)[0];
+    return this.element.getDescendantInstances(ref.core.Collapse.instanceClassName, null, true)[0];
   }
 
   focus () {

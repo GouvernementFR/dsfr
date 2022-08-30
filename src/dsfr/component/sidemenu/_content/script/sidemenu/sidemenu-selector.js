@@ -1,6 +1,6 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const SidemenuSelector = {
-  LIST: api.internals.ns.selector('sidemenu__list'),
-  COLLAPSE: `${api.internals.ns.selector('sidemenu__item')} > ${api.internals.ns.selector('collapse')}`
+  LIST: ref.internals.ns.selector('sidemenu__list'),
+  COLLAPSE: `${ref.internals.ns.selector('sidemenu__item')} > ${ref.internals.ns.selector('collapse')}`
 };

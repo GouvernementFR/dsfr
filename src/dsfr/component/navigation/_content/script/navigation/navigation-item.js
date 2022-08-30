@@ -1,7 +1,7 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 import { NavigationSelector } from './navigation-selector.js';
 
-class NavigationItem extends api.core.Instance {
+class NavigationItem extends ref.core.Instance {
   constructor () {
     super();
     this._isRightAligned = false;
@@ -12,8 +12,8 @@ class NavigationItem extends api.core.Instance {
   }
 
   init () {
-    this.addAscent(api.core.DisclosureEmission.ADDED, this.calculate.bind(this));
-    this.addAscent(api.core.DisclosureEmission.REMOVED, this.calculate.bind(this));
+    this.addAscent(ref.core.DisclosureEmission.ADDED, this.calculate.bind(this));
+    this.addAscent(ref.core.DisclosureEmission.REMOVED, this.calculate.bind(this));
     this.isResizing = true;
     this.calculate();
   }
@@ -23,8 +23,8 @@ class NavigationItem extends api.core.Instance {
   }
 
   calculate () {
-    const collapse = this.element.getDescendantInstances(api.core.Collapse.instanceClassName, null, true)[0];
-    if (collapse && this.isBreakpoint(api.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelector.MENU)) {
+    const collapse = this.element.getDescendantInstances(ref.core.Collapse.instanceClassName, null, true)[0];
+    if (collapse && this.isBreakpoint(ref.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelector.MENU)) {
       const right = this.element.node.parentElement.getBoundingClientRect().right; // todo: ne fonctionne que si la nav fait 100% du container
       const width = collapse.element.node.getBoundingClientRect().width;
       const left = this.element.node.getBoundingClientRect().left;
@@ -39,8 +39,8 @@ class NavigationItem extends api.core.Instance {
   set isRightAligned (value) {
     if (this._isRightAligned === value) return;
     this._isRightAligned = value;
-    if (value) api.internals.dom.addClass(this.element.node, NavigationSelector.ITEM_RIGHT);
-    else api.internals.dom.removeClass(this.element.node, NavigationSelector.ITEM_RIGHT);
+    if (value) ref.internals.dom.addClass(this.element.node, NavigationSelector.ITEM_RIGHT);
+    else ref.internals.dom.removeClass(this.element.node, NavigationSelector.ITEM_RIGHT);
   }
 }
 

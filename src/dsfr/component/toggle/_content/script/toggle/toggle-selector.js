@@ -1,5 +1,5 @@
-import api from '../../api.js';
+import ref from '../../../ref.js';
 
 export const ToggleSelector = {
-  STATUS_LABEL: `${api.internals.ns.selector('toggle__label')}${api.internals.ns.attr.selector('checked-label')}${api.internals.ns.attr.selector('unchecked-label')}`
+  STATUS_LABEL: `${ref.internals.ns.selector('toggle__label')}${ref.internals.ns.attr.selector('checked-label')}${ref.internals.ns.attr.selector('unchecked-label')}`
 };
