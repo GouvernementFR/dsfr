@@ -1,9 +1,0 @@
-id: search
-title: Barre de recherche
-description: La barre de recherche est un système de navigation qui permet à l'utilisateur d’accéder rapidement à un contenu en lançant une recherche sur un mot clé ou une expression.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217186376/Barre+de+recherche+-+Search+bar
-wrapper: col-8
-style:
-  - core
-  - input
-  - button

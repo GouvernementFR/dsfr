@@ -1,0 +1,15 @@
+////
+/// Search Legacy
+/// @group search
+////
+
+@use '../../../../../sass/icon';
+@use '../../../../../sass/selector';
+
+@mixin first() {
+  #{selector.ns(search-bar)} {
+    #{selector.ns(btn)} {
+      @include icon.icon-legacy(search-line, md);
+    }
+  }
+}

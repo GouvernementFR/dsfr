@@ -1,0 +1,44 @@
+////
+/// Search Module
+/// @group search
+////
+
+@use '../../../../../sass/display';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/spacing';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin first() {
+  #{selector.ns(search-bar)} {
+    @include display.flex(row);
+
+    #{selector.ns(label)} {
+      @include display.sr-only();
+    }
+
+    #{selector.ns(input)} {
+      @include spacing.margin(0);
+      border-radius: spacing.space(1v) 0 0;
+      max-height: none;
+
+    /* TODO: intégrer la croix en background pour effacer la search bar
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+    */
+
+      &::placeholder {
+        font-style: italic;
+      }
+    }
+
+    @include nest-btn(md, only, search-line) {
+      flex: 1 0 auto;
+      border-radius: 0 spacing.space(1v) 0 0;
+    }
+
+    &--lg {
+      @include nest-btn(lg, left, null, md);
+    }
+  }
+}
