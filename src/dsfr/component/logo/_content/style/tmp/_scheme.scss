@@ -3,9 +3,10 @@
 /// @group logo
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _logo-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(logo)} {
     @include color.text(title grey, (legacy:$legacy));
   }

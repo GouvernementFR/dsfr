@@ -1,7 +1,0 @@
-id: logo
-title: Bloc marque
-description: Bloc marque de l'état
-doc:
-wrapper: col-8
-style:
-  - core

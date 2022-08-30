@@ -4,7 +4,10 @@
 ////
 
 @use "sass:math";
-@use '../../../../../../sass/spacing/index';
+@use '../../../../../../sass/media-query';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@import './setting';
 
 @mixin logo-size($size) {
   $font-size: spacing.space(map-get($logo-sizes, $size));
@@ -16,7 +19,7 @@
     background-size: #{2.75 * $font-size} #{1.125 * $font-size}, #{2.75 * $font-size} #{$font-size}, 0;
     background-position: 0 #{(-0.0625 * $font-size)}, 0 0, 0 0;
 
-    @at-root :root#{ns-attr(mourning)} #{&} {
+    @at-root :root#{selector.ns-attr(mourning)} #{&} {
       background-size: #{2.75 * $font-size} #{1.125 * $font-size}, 0, #{2.75 * $font-size} #{$font-size};
     }
   }
@@ -27,7 +30,7 @@
     background-position: 0 calc(100% + #{1.875 * $font-size});
     padding-top: #{(math.div(53, 24) * $font-size)};
 
-    @at-root #{ns-attr(theme, 'dark')} #{&} {
+    @at-root #{selector.ns-attr(theme, 'dark')} #{&} {
       background-position: #{-2.625 * $font-size} 100%;
     }
   }
