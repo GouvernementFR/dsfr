@@ -3,10 +3,12 @@
 /// @group select
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/disabled/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
+@import './setting';
 
-@mixin _select-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(select)} {
     @include color.text(title grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));
