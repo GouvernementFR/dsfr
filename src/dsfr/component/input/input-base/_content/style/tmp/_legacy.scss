@@ -3,9 +3,9 @@
 /// @group input
 ////
 
-@use '../../../../../../../sass/legacy/';
+@use '../../../../../../../sass/selector';
 
-@include legacy.is(ie11) {
+@mixin first() {
   #{selector.ns(input-wrap)} {
     &--addon {
       #{selector.ns(btn)} {

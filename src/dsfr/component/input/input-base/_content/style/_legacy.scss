@@ -1,8 +1,9 @@
-@mixin first () {
-  @import 'tmp/setting';
-  @import 'tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+@use 'tmp/scheme';
+@use 'tmp/legacy';
 
-  @include _input-scheme(true);
+$options: () !default;
+
+@mixin first() {
+  @include legacy.first();
+  @include scheme.first(true);
 }
