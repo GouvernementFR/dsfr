@@ -3,11 +3,12 @@
 /// @group navigation
 ////
 
-@use '../../../../../../../sass/color/index';
-@use '../../../../../../../sass/elevation/index';
-@use '../../../../../../../sass/media-query/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
 
-@mixin _navigation-scheme-mega-menu($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(mega-menu)} {
     @include media-query.from(lg) {
       @include elevation.elevate(overlap, (legacy: $legacy));
