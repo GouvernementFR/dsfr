@@ -3,12 +3,14 @@
 /// @group radio
 ////
 
-@import 'scheme/default';
-@import 'scheme/sm';
-@import 'scheme/rich';
+@use 'scheme/default';
+@use 'scheme/sm';
+@use 'scheme/rich';
 
-@mixin _radio-scheme($legacy: false) {
-  @include _radio-scheme-md($legacy);
-  @include _radio-scheme-sm($legacy);
-  @include _radio-scheme-rich($legacy);
+$options: () !default;
+
+@mixin first($legacy: false) {
+  @include default.first($legacy);
+  @include sm.first($legacy);
+  @include rich.first($legacy);
 }
