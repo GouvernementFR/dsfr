@@ -1,59 +1,76 @@
-#{selector.ns(header)} {
-  #{selector.ns(links-group)} {
-    @include typography.disable-list-style;
-    @include display.flex(null, stretch, null, wrap);
-    @include vertical-btns-group;
+////
+/// Header Deprecated Module
+/// @group header
+////
 
-    @include media-query.from(lg) {
-      justify-content: flex-end;
-      @include horizontal-btns-group;
-    }
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/icon';
 
-    #{selector.ns(link)} {
-      @include action.disable-underline;
-      @include enable-tint;
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
 
-      @include icon.not-selector {
-        @include nest-btn(sm, null, null, null, false);
-      }
+@mixin first() {
+  #{selector.ns(header)} {
+    #{selector.ns(links-group)} {
+      @include typography.disable-list-style;
+      @include display.flex(null, stretch, null, wrap);
+      @include vertical-btns-group;
 
-      @include icon.selector {
-        @include nest-btn(sm, left, null, null, false);
-        @include selector.before('');
-      }
-    }
-  }
-
-  &__tools-links {
-    #{selector.ns-group(links)} {
       @include media-query.from(lg) {
-        @include horizontal-btns-group;
         justify-content: flex-end;
-        @include spacing.margin(0 -1v);
+        @include horizontal-btns-group;
+      }
 
-        #{selector.ns(link)} {
-          @include spacing.margin-x(1v);
+      #{selector.ns(link)} {
+        @include action.disable-underline;
+        @include action.enable-tint;
+
+        @include icon.not-selector {
+          @include nest-btn(sm, null, null, null, false);
+        }
+
+        @include icon.selector {
+          @include nest-btn(sm, left, null, null, false);
+          @include selector.before('');
         }
       }
     }
-  }
 
-  & &__menu-links {
-    #{selector.ns(links-group)} {
-      #{selector.ns(link)} {
-        @include spacing.size(100%);
-        @include spacing.min-size(null, 12v);
-        @include spacing.padding-left(0);
-        @include spacing.margin-bottom(0);
+    &__tools-links {
+      #{selector.ns-group(links)} {
+        @include media-query.from(lg) {
+          @include horizontal-btns-group;
+          justify-content: flex-end;
+          @include spacing.margin(0 -1v);
+
+          #{selector.ns(link)} {
+            @include spacing.margin-x(1v);
+          }
+        }
       }
     }
-  }
 
-  #{selector.ns(modal)} {
-    & > * > #{selector.ns(link--close)} {
-      @include spacing.margin-bottom(6v);
-      @include media-query.from(lg) {
-        display: none;
+    & &__menu-links {
+      #{selector.ns(links-group)} {
+        #{selector.ns(link)} {
+          @include spacing.size(100%);
+          @include spacing.min-size(null, 12v);
+          @include spacing.padding-left(0);
+          @include spacing.margin-bottom(0);
+        }
+      }
+    }
+
+    #{selector.ns(modal)} {
+      & > * > #{selector.ns(link--close)} {
+        @include spacing.margin-bottom(6v);
+        @include media-query.from(lg) {
+          display: none;
+        }
       }
     }
   }

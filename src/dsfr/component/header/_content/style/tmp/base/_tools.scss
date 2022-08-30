@@ -3,25 +3,31 @@
 /// @group header
 ////
 
-#{selector.ns(header)} {
-  &__tools {
-    @include media-query.from(lg) {
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: right;
-      @include spacing.padding-x(4v);
-      @include spacing.margin-left(auto);
-      flex: 1 0 auto;
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/media-query';
 
-      &-links + #{selector.ns(header__search)} {
-        @include spacing.margin-top(4v);
-      }
-    }
-
-    #{selector.ns(header__search)} {
+@mixin first() {
+  #{selector.ns(header)} {
+    &__tools {
       @include media-query.from(lg) {
-        @include spacing.max-size(100v);
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        @include spacing.padding-x(4v);
         @include spacing.margin-left(auto);
+        flex: 1 0 auto;
+
+        &-links + #{selector.ns(header__search)} {
+          @include spacing.margin-top(4v);
+        }
+      }
+
+      #{selector.ns(header__search)} {
+        @include media-query.from(lg) {
+          @include spacing.max-size(100v);
+          @include spacing.margin-left(auto);
+        }
       }
     }
   }

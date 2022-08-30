@@ -3,44 +3,50 @@
 /// @group header
 ////
 
-#{selector.ns(header)} {
-  #{selector.ns(modal)} {
-    overflow: auto;
-    justify-content: initial;
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/media-query';
 
-    &:not([role="dialog"]) {
-      transition: none;
-    }
+@mixin first() {
+  #{selector.ns(header)} {
+    #{selector.ns(modal)} {
+      overflow: auto;
+      justify-content: initial;
 
-    @include selector.before(none);
-    @include selector.after(none);
-
-    @include media-query.from(lg) {
-      @include spacing.margin(0);
-      @include spacing.size(auto, auto);
-      visibility: inherit;
-      opacity: 1;
-      position: initial;
-      background-color: transparent;
-      overflow: initial;
-    }
-
-    & > * > #{selector.ns(btn--close)} {
-      @include spacing.margin-bottom(6v);
-      @include media-query.from(lg) {
-        display: none;
+      &:not([role="dialog"]) {
+        transition: none;
       }
-    }
 
-    & > #{selector.ns(container)} {
-      pointer-events: all;
-      @include spacing.padding-top(4v);
-      @include spacing.padding-bottom(18v);
-      @include spacing.height(100%);
+      @include selector.before(none);
+      @include selector.after(none);
 
       @include media-query.from(lg) {
-        @include spacing.padding-y(0);
-        @include spacing.height(auto);
+        @include spacing.margin(0);
+        @include spacing.size(auto, auto);
+        visibility: inherit;
+        opacity: 1;
+        position: initial;
+        background-color: transparent;
+        overflow: initial;
+      }
+
+      & > * > #{selector.ns(btn--close)} {
+        @include spacing.margin-bottom(6v);
+        @include media-query.from(lg) {
+          display: none;
+        }
+      }
+
+      & > #{selector.ns(container)} {
+        pointer-events: all;
+        @include spacing.padding-top(4v);
+        @include spacing.padding-bottom(18v);
+        @include spacing.height(100%);
+
+        @include media-query.from(lg) {
+          @include spacing.padding-y(0);
+          @include spacing.height(auto);
+        }
       }
     }
   }

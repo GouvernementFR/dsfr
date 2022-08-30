@@ -3,10 +3,22 @@
 /// @group header
 ////
 
-@import 'base/default';
-@import 'base/brand';
-@import 'base/modal';
-@import 'base/navbar';
-@import 'base/tools';
-@import 'base/links';
-@import 'base/nav';
+@use 'base/default';
+@use 'base/brand';
+@use 'base/modal';
+@use 'base/navbar';
+@use 'base/tools';
+@use 'base/links';
+@use 'base/nav';
+
+$options: () !default;
+
+@mixin first() {
+  @include default.first();
+  @include brand.first();
+  @include modal.first();
+  @include navbar.first();
+  @include tools.first();
+  @include links.first();
+  @include nav.first();
+}

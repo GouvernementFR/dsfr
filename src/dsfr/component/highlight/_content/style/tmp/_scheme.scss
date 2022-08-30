@@ -3,9 +3,10 @@
 /// @group Highlight
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _highlight-scheme($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(highlight)} {
     @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);
 

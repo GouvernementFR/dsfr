@@ -3,13 +3,18 @@
 /// @group header
 ////
 
-#{selector.ns(header)} {
-  #{selector.ns(nav)} {
-    @include media-query.from(lg) {
-      justify-content: flex-start;
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/media-query';
 
-      &__list {
-        max-width: calc(100% + #{space(4v)});
+@mixin first() {
+  #{selector.ns(header)} {
+    #{selector.ns(nav)} {
+      @include media-query.from(lg) {
+        justify-content: flex-start;
+
+        &__list {
+          max-width: calc(100% + #{space(4v)});
+        }
       }
     }
   }

@@ -66,6 +66,7 @@
       flex: 0 1 auto;
 
       @include spacing.relative;
+
       @include selector.before('', block) {
         @include spacing.absolute(0, 0, 0, 0, 100%, 100%);
         pointer-events: none;
