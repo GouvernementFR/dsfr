@@ -3,9 +3,10 @@
 /// @group link
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _link-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(link)} {
     @include color.text(action-high blue-france, (legacy:$legacy));
   }

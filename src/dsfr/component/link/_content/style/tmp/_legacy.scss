@@ -3,9 +3,11 @@
 /// @group link
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
 
-@include legacy.is(ie11) {
+@mixin first() {
   #{selector.ns(link)} {
     background-image: none;
     text-decoration: underline;

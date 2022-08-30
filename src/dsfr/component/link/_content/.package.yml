@@ -1,7 +1,0 @@
-id: link
-title: Lien
-description: Le lien permet la navigation entre une page et un autre contenu au sein de la même page, du même site ou externe. Pour les actions d’un autre type - comme la soumission d’un formulaire - il faut utiliser le composant bouton.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217284725/Liens+-+Links
-wrapper: col-8
-style:
-  - core
