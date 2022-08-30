@@ -3,72 +3,81 @@
 /// @group navigation
 ////
 
-#{selector.ns(mega-menu)} {
-  @include spacing.margin(0 -4v 1px);
-  @include spacing.padding(0 4v 0);
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
 
-  @include media-query.from(lg) {
-    @include spacing.absolute(100%, 0, null, 0);
-    @include spacing.margin(0);
-    @include spacing.padding(0);
+@mixin first() {
+  #{selector.ns(mega-menu)} {
+    @include spacing.margin(0 -4v 1px);
+    @include spacing.padding(0 4v 0);
 
-    @include selector.after('', block) {
-      @include spacing.padding-bottom(9v);
-    }
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  > #{selector.ns(container)} {
     @include media-query.from(lg) {
-      @include selector.before('', block) {
-        @include spacing.padding-top(4v);
+      @include spacing.absolute(100%, 0, null, 0);
+      @include spacing.margin(0);
+      @include spacing.padding(0);
+
+      @include selector.after('', block) {
+        @include spacing.padding-bottom(9v);
       }
     }
-  }
 
-  #{selector.ns(btn--close)} {
-    display: none;
-    @include media-query.from(lg) {
-      display: flex;
-    }
-  }
-
-  #{selector.ns(nav__link)} {
-    @include spacing.padding-x(4v);
-    @include spacing.padding(3v 4v, lg);
-    @include selector.before {
-      left: 0;
-    }
-  }
-
-  &__leader {
-    @include enable-underline;
-    @include spacing.padding-x(4v);
-    @include spacing.padding-top(4v);
-    @include spacing.padding-top(0, lg);
-    @include spacing.padding-x(0, lg);
-    @include typography.set-text-margin(0 0 2v);
-    @include typography.set-title-margin(0 0 2v);
-  }
-
-  &__category {
-    @include typography.font-weight(bold);
-  }
-
-  &__list {
-    @include spacing.padding-bottom(6v);
-
-    @include spacing.relative;
-    @include selector.before('', block) {
-      @include spacing.absolute(0, 0, 0 , 0, 100%, 100%);
-      pointer-events: none;
+    &:focus {
+      outline: none;
     }
 
-    @include media-query.from(lg) {
-      @include selector.before(none);
+    > #{selector.ns(container)} {
+      @include media-query.from(lg) {
+        @include selector.before('', block) {
+          @include spacing.padding-top(4v);
+        }
+      }
+    }
+
+    #{selector.ns(btn--close)} {
+      display: none;
+      @include media-query.from(lg) {
+        display: flex;
+      }
+    }
+
+    #{selector.ns(nav__link)} {
+      @include spacing.padding-x(4v);
+      @include spacing.padding(3v 4v, lg);
+      @include selector.before {
+        left: 0;
+      }
+    }
+
+    &__leader {
+      @include action.enable-underline;
+      @include spacing.padding-x(4v);
+      @include spacing.padding-top(4v);
+      @include spacing.padding-top(0, lg);
+      @include spacing.padding-x(0, lg);
+      @include typography.set-text-margin(0 0 2v);
+      @include typography.set-title-margin(0 0 2v);
+    }
+
+    &__category {
+      @include typography.font-weight(bold);
+    }
+
+    &__list {
+      @include spacing.padding-bottom(6v);
+
+      @include spacing.relative;
+      @include selector.before('', block) {
+        @include spacing.absolute(0, 0, 0, 0, 100%, 100%);
+        pointer-events: none;
+      }
+
+      @include media-query.from(lg) {
+        @include selector.before(none);
+      }
     }
   }
 }

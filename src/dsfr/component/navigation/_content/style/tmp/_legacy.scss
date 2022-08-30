@@ -3,10 +3,13 @@
 /// @group navigation
 ////
 
-@use '../../../../../sass/color/index';
-@use '../../../../../sass/legacy/index';
+@use '../../../../../sass/action';
+@use '../../../../../sass/color';
+@use '../../../../../sass/icon';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/typography';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * reset liste à puce
   */
@@ -16,7 +19,12 @@
 
     &__link,
     &__btn {
-      @include color.transparent-background((legacy: true, hover: true));
+      @include color.transparent-background(
+        (
+          legacy: true,
+          hover: true,
+        )
+      );
     }
 
     &__btn {
@@ -32,10 +40,8 @@
       margin: 0;
     }
   }
-}
 
-@include media-query.from(lg) {
-  @include legacy.is(ie11) {
+  @include media-query.from(lg) {
     /**
     * Correctif de l'alignement des menus sur la droite
     */

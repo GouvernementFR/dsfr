@@ -3,9 +3,12 @@
 /// @group password
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
+@import './setting';
+@import '../../../../button/_content/style/tmp/tool';
 
-@mixin _password-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(password)} {
     &__btn {
       @include btn-kind-scheme(4, $legacy);

@@ -3,6 +3,16 @@
 /// @group link
 ////
 
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/typography';
+@import './size';
+@import '../function';
+@import '../setting';
+
 @mixin _link-class($base, $size: md, $place: null, $align-on-content: false) {
   $selector: '';
   $base: '#{$base}';

@@ -1,11 +1,9 @@
-@mixin first () {
-  @import '../../../link/_content/style/tmp/tool';
-  @import 'tmp/setting';
-  @import 'tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/base';
+@use 'tmp/base';
+@use 'tmp/scheme';
 
-  @import '../deprecated/style/base';
+$options: () !default;
 
-  @include _link-scheme;
+@mixin first() {
+  @include base.first();
+  @include scheme.first();
 }

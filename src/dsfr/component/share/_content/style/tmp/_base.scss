@@ -3,42 +3,52 @@
 /// @group share
 ////
 
-#{selector.ns(share)} {
-  @include display.flex(column);
-  @include typography.set-text-margin(0 0 4v);
-  @include typography.set-title-margin(0 0 4v);
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import './tool';
+@import '../../../../button/_content/style/tmp/tool';
 
-  &__title {
-    @include typography.text-style(md);
-    order: 1;
-  }
+@mixin first() {
+  #{selector.ns(share)} {
+    @include display.flex(column);
+    @include typography.set-text-margin(0 0 4v);
+    @include typography.set-title-margin(0 0 4v);
 
-  &__text {
-    @include typography.text-style(xs);
-    @include spacing.max-width(72v, md);
-    order: 3;
-  }
-
-  #{selector.ns-group(btns)} {
-    @include horizontal-btns-group;
-    @include spacing.width(auto);
-    order: 2;
-
-    #{selector.ns(btn)} {
-      justify-content: flex-start;
+    &__title {
+      @include typography.text-style(md);
+      order: 1;
     }
 
-    &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
+    &__text {
+      @include typography.text-style(xs);
+      @include spacing.max-width(72v, md);
+      order: 3;
+    }
+
+    #{selector.ns-group(btns)} {
+      @include horizontal-btns-group;
+      @include spacing.width(auto);
+      order: 2;
+
       #{selector.ns(btn)} {
-        @include icon.not-selector {
-          @include nest-btn(md, only, null, null, false);
-          @include icon.icon(null, md, before);
+        justify-content: flex-start;
+      }
+
+      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
+        #{selector.ns(btn)} {
+          @include icon.not-selector {
+            @include nest-btn(md, only, null, null, false);
+            @include icon.icon(null, md, before);
+          }
         }
       }
     }
   }
-}
 
-@include build-share-social-icons();
-@include build-share-icon(mail, mail-line);
-@include build-share-icon(copy, links-fill);
+  @include build-share-social-icons();
+  @include build-share-icon(mail, mail-line);
+  @include build-share-icon(copy, links-fill);
+}

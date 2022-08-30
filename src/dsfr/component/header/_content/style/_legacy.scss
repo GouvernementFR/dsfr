@@ -1,6 +1,9 @@
-@mixin first () {
-  @import 'tmp/scheme';
-  @import 'tmp/legacy';
+@use 'tmp/legacy';
+@use 'tmp/scheme';
 
-  @include _header-scheme(true);
+$options: () !default;
+
+@mixin first() {
+  @include legacy.first();
+  @include scheme.scheme(true);
 }

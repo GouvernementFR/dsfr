@@ -3,10 +3,13 @@
 /// @group input
 ////
 
-@use '../../../../../../../sass/color/index';
-@use '../../../../../../../sass/disabled/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/disabled';
+@use '../../../../../../../sass/selector';
+@import './setting';
+@import './tool';
 
-@mixin _input-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(input)} {
     @include color.text(label grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));

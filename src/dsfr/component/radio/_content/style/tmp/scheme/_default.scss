@@ -3,10 +3,12 @@
 /// @group radio
 ////
 
-@use '../../../../../../../sass/color/index';
-@use '../../../../../../../sass/disabled/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/disabled';
+@use '../../../../../../../sass/selector';
+@import '../tool';
 
-@mixin _radio-scheme-md($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns-group(radio)} {
     /**
     * On cache l'input de type radio pour le styler via le label

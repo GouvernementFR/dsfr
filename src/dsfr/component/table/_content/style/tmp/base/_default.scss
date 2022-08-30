@@ -59,7 +59,7 @@
     }
 
     th {
-      font-weight: typography.font-weight(bold);
+      @include typography.font-weight(bold);
     }
 
     thead {
@@ -69,7 +69,7 @@
 
       td,
       th {
-        font-weight: typography.font-weight(bold);
+        @include typography.font-weight(bold);
         @include spacing.padding-bottom(3.5v); // 0.5v for the box shadow
         @include spacing.padding-bottom(4.5v, md);
       }

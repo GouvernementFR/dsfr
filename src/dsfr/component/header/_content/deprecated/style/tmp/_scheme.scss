@@ -3,9 +3,13 @@
 /// @group header
 ////
 
-@use '../../../../../../../sass/color/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/selector';
 
-@mixin _header-deprecated-scheme($legacy: false) {
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
   #{selector.ns(header)} {
     &__menu-links {
       #{selector.ns(link)} {

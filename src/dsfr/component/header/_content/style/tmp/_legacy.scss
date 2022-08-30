@@ -3,9 +3,13 @@
 /// @group header
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/media-query';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/typography';
 
-@include legacy.is(ie11) {
+@mixin first() {
   #{selector.ns(header)} {
     @include typography.disable-list-style-legacy;
     @include action.disable-underline-legacy;

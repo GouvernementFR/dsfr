@@ -3,9 +3,11 @@
 /// @group navigation
 ////
 
-@use '../../../../../../../sass/color/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
 
-@mixin _navigation-scheme-nav($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(nav)} {
     &__link,
     &__btn {

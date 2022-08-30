@@ -4,42 +4,57 @@
 ////
 
 @use 'sass:math';
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/media/index';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/media';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
+@import './setting';
+@import './tool';
 
-#{selector.ns(logo)} {
-  @include typography.set-text-margin(0);
-  @include action.disable-underline;
-  display: inline-block;
-  @include typography.font-weight(bold);
-  line-height: #{math.div(13, 12.6)}em;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  vertical-align: middle;
-  text-indent: -0.1em;
-  @include logo-size(md);
+@mixin first() {
+  #{selector.ns(logo)} {
+    @include typography.set-text-margin(0);
+    @include action.disable-underline;
+    display: inline-block;
+    @include typography.font-weight(bold);
+    line-height: #{math.div(13, 12.6)}em;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-indent: -0.1em;
+    @include logo-size(md);
 
-  @include selector.before('', block) {
-    background-repeat: no-repeat, no-repeat, no-repeat;
-    background-image: media.data-uri-svg($svg-marianne, true), linear-gradient(90deg, color.$blue-france 0%, color.$blue-france 50%, color.$red-marianne 50%, color.$red-marianne 100%), linear-gradient(90deg, color.$black 0%, color.$black 100%);
+    @include selector.before('', block) {
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-image: media.data-uri-svg($svg-marianne, true),
+        linear-gradient(
+          90deg,
+          color.$blue-france 0%,
+          color.$blue-france 50%,
+          color.$red-marianne 50%,
+          color.$red-marianne 100%
+        ),
+        linear-gradient(90deg, color.$black 0%, color.$black 100%);
+    }
+
+    @include selector.after('', block) {
+      background-repeat: no-repeat;
+      background-image: media.data-uri-svg($svg-motto, true);
+    }
+
+    &--sm {
+      @include logo-size(sm);
+    }
+
+    &--lg {
+      @include logo-size(lg);
+    }
   }
 
-  @include selector.after('', block) {
-    background-repeat: no-repeat;
-    background-image: media.data-uri-svg($svg-motto, true);
-  }
-
-  &--sm {
-    @include logo-size(sm);
-  }
-
-  &--lg {
-    @include logo-size(lg);
-  }
-}
-
-:root#{ns-attr(mourning)} #{selector.ns(logo)} {
-  @include selector.before {
-    box-shadow: 0 0 0 1px color.$white;
+  :root#{selector.ns-attr(mourning)} #{selector.ns(logo)} {
+    @include selector.before {
+      box-shadow: 0 0 0 1px color.$white;
+    }
   }
 }

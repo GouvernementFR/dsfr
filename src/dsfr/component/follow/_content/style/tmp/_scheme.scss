@@ -3,9 +3,14 @@
 /// @group follow
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/media-query';
 
-@mixin _follow-scheme($legacy: false) {
+@import '../../../../button/_content/style/tmp/setting';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin scheme($legacy: false) {
   #{selector.ns(follow)} {
     @include color.background(alt blue-france, (legacy: $legacy));
 

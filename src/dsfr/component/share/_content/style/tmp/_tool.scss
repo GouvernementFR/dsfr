@@ -3,6 +3,8 @@
 /// @group share
 ////
 
+@import './setting';
+
 @mixin build-share-icon($name, $icon) {
   #{selector.ns(btn)}--#{$name} {
     @include icon.image($icon, before);

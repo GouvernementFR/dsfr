@@ -3,36 +3,47 @@
 /// @group follow
 ////
 
-#{selector.ns(follow)} {
-  #{selector.ns(links-group)} {
-    @include typography.disable-list-style;
-    @include horizontal-btns-group;
-    @include spacing.margin(0 -4v -4v -4v);
-    @include spacing.width(auto);
-    display: flex;
-    flex-wrap: wrap;
-  }
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/action';
 
-  &__social {
-    #{selector.ns(link)} {
-      @include action.disable-underline;
-      @include action.tint-enabled(true, null);
-      display: inline-flex;
-      @include spacing.margin-x(2v);
-      @include spacing.margin-bottom(4v);
-      @include nest-btn(md, only, null, null, false);
+@import '../../../../../button/_content/style/tmp/setting';
+@import '../../../../../button/_content/style/tmp/tool';
+@import 'tool';
+
+@mixin first() {
+  #{selector.ns(follow)} {
+    #{selector.ns(links-group)} {
+      @include typography.disable-list-style;
+      @include horizontal-btns-group;
+      @include spacing.margin(0 -4v -4v -4v);
+      @include spacing.width(auto);
+      display: flex;
+      flex-wrap: wrap;
     }
 
-    #{selector.ns(links-group--lg)} {
+    &__social {
       #{selector.ns(link)} {
-        @include nest-btn(lg, only, null, null, false);
+        @include action.disable-underline;
+        @include action.tint-enabled(true, null);
+        display: inline-flex;
+        @include spacing.margin-x(2v);
+        @include spacing.margin-bottom(4v);
+        @include nest-btn(md, only, null, null, false);
+      }
+
+      #{selector.ns(links-group--lg)} {
+        #{selector.ns(link)} {
+          @include nest-btn(lg, only, null, null, false);
+        }
       }
     }
-  }
 
-  @include social-deprecated-icon(facebook, facebook-circle-fill);
-  @include social-deprecated-icon(twitter, twitter-fill);
-  @include social-deprecated-icon(instagram, instagram-fill);
-  @include social-deprecated-icon(linkedin, linkedin-box-fill);
-  @include social-deprecated-icon(youtube, youtube-fill);
+    @include social-deprecated-icon(facebook, facebook-circle-fill);
+    @include social-deprecated-icon(twitter, twitter-fill);
+    @include social-deprecated-icon(instagram, instagram-fill);
+    @include social-deprecated-icon(linkedin, linkedin-box-fill);
+    @include social-deprecated-icon(youtube, youtube-fill);
+  }
 }

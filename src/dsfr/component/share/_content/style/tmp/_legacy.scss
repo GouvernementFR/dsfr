@@ -3,9 +3,11 @@
 /// @group share
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@import './tool';
 
-@include legacy.is(ie11) {
+@mixin first() {
   #{selector.ns(share)} {
     &__group {
       & > li {

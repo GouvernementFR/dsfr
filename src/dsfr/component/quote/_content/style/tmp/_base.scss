@@ -3,118 +3,125 @@
 /// @group quote
 ////
 
-@use '../../../../../sass/spacing/index';
+@use '../../../../../sass/display';
+@use '../../../../../sass/icon';
+@use '../../../../../sass/media-query';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/spacing';
+@use '../../../../../sass/typography';
 
-#{selector.ns(quote)} {
-  @include spacing.relative;
-  @include spacing.margin(0);
-  @include spacing.padding(0 2v 8v 2v);
-  @include spacing.padding(0 0 0 8v, md);
+@mixin first() {
+  #{selector.ns(quote)} {
+    @include spacing.relative;
+    @include spacing.margin(0);
+    @include spacing.padding(0 2v 8v 2v);
+    @include spacing.padding(0 0 0 8v, md);
 
-  background-size: 50% 1px;
-  background-repeat: no-repeat;
-  background-position: spacing.space(2v 100%);
-
-  @include media-query.from(md) {
-    background-size: 1px 100%;
-    background-position: 0 0;
-  }
-
-  @include icon.icon(quote-line,lg) {
-    display: block;
-    @include spacing.margin-bottom(2v);
-  }
-
-  &--column {
-    @include display.flex(column, flex-start, center);
-    @include spacing.margin-left(52v, md);
+    background-size: 50% 1px;
+    background-repeat: no-repeat;
+    background-position: spacing.space(2v 100%);
 
     @include media-query.from(md) {
-      @include spacing.min-height(52v);
+      background-size: 1px 100%;
+      background-position: 0 0;
     }
 
-    #{selector.ns(quote__author)} {
-      @include spacing.margin-left(21v);
-      @include spacing.margin-left(0, md);
+    @include icon.icon(quote-line, lg) {
+      display: block;
+      @include spacing.margin-bottom(2v);
     }
 
-    #{selector.ns(quote__source)} {
-      @include spacing.margin-left(21v);
-      @include spacing.margin-left(0, md);
+    &--column {
+      @include display.flex(column, flex-start, center);
+      @include spacing.margin-left(52v, md);
+
+      @include media-query.from(md) {
+        @include spacing.min-height(52v);
+      }
+
+      #{selector.ns(quote__author)} {
+        @include spacing.margin-left(21v);
+        @include spacing.margin-left(0, md);
+      }
+
+      #{selector.ns(quote__source)} {
+        @include spacing.margin-left(21v);
+        @include spacing.margin-left(0, md);
+      }
+
+      figcaption {
+        @include spacing.min-height(17v);
+        @include display.flex(column, flex-start, center);
+
+        @include media-query.from(md) {
+          @include spacing.min-height(auto);
+        }
+      }
+    }
+
+    blockquote {
+      @include spacing.margin(0);
+      @include typography.set-text-margin(0 0 4v);
+
+      p {
+        @include typography.text-style(xl);
+        @include typography.font-weight(bold);
+
+        // Pour ajouter les guillets en css
+        // @include selector.before('«\0000A0', 'inline-block');
+
+        // &:last-of-type() {
+        //   @include selector.after('\0000A0»', 'inline-block');
+        // }
+      }
+    }
+
+    &__author {
+      @include typography.font-weight(bold);
+      @include typography.text-style(sm);
+      @include typography.set-text-margin(0 0 1v);
+    }
+
+    &__image {
+      @include spacing.size(17v);
+      background-size: cover;
+      border-radius: 50%;
+      overflow: hidden;
+      @include spacing.absolute;
+      @include display.flex;
+
+      img {
+        @include spacing.size(100%, 100%);
+      }
+
+      @include media-query.from(md) {
+        @include spacing.absolute(50%, null, null, -52v, 46v, 46v);
+        @include spacing.margin-top(-23v);
+      }
+    }
+
+    cite {
+      @include typography.text-style(xs);
+      font-style: italic;
     }
 
     figcaption {
-      @include spacing.min-height(17v);
-      @include display.flex(column, flex-start, center);
-
-      @include media-query.from(md) {
-        @include spacing.min-height(auto);
-      }
-    }
-  }
-
-  blockquote {
-    @include spacing.margin(0);
-    @include typography.set-text-margin(0 0 4v);
-
-    p {
-      @include typography.text-style(xl);
-      @include typography.font-weight(bold);
-
-      // Pour ajouter les guillets en css
-      // @include selector.before('«\0000A0', 'inline-block');
-
-      // &:last-of-type() {
-      //   @include selector.after('\0000A0»', 'inline-block');
-      // }
-    }
-  }
-
-  &__author {
-    @include typography.font-weight(bold);
-    @include typography.text-style(sm);
-    @include typography.set-text-margin(0 0 1v);
-  }
-
-  &__image {
-    @include spacing.size(17v);
-    background-size: cover;
-    border-radius: 50%;
-    overflow: hidden;
-    @include spacing.absolute;
-    @include display.flex;
-
-    img {
-      @include spacing.size(100%, 100%);
-    }
-
-    @include media-query.from(md) {
-      @include spacing.absolute(50%,null,null,-52v,46v,46v);
-      @include spacing.margin-top(-23v);
-    }
-  }
-
-  cite {
-    @include typography.text-style(xs);
-    font-style: italic;
-  }
-
-  figcaption {
-    @include typography.disable-list-style;
-
-    li {
-      @include typography.text-style(xs);
-    }
-
-    #{selector.ns(quote)}__source {
-      @include display.flex(row,null,flex-start,wrap);
+      @include typography.disable-list-style;
 
       li {
-        display: inline-block;
+        @include typography.text-style(xs);
+      }
 
-        &:not(:last-child) {
-          @include selector.after('·', 'inline-block') {
-            @include spacing.padding-x(1v);
+      #{selector.ns(quote)}__source {
+        @include display.flex(row, null, flex-start, wrap);
+
+        li {
+          display: inline-block;
+
+          &:not(:last-child) {
+            @include selector.after('·', 'inline-block') {
+              @include spacing.padding-x(1v);
+            }
           }
         }
       }

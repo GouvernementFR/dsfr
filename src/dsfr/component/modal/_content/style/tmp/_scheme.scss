@@ -3,19 +3,20 @@
 /// @group modal
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/elevation/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/elevation';
+@use '../../../../../../sass/selector';
 
-@mixin _modal-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(modal)} {
     @include selector.body {
       @include elevation.elevate(lifted, (legacy: $legacy));
 
-      &#{selector.ns(scroll-shadow)} {
-        #{selector.ns(modal)}__footer {
-          // @include color.background(elevated grey, (legacy:$legacy));
-        }
-      }
+      // &#{selector.ns(scroll-shadow)} {
+      //   #{selector.ns(modal)}__footer {
+      //     @include color.background(elevated grey, (legacy:$legacy));
+      //   }
+      // }
     }
 
     &__title {

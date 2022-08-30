@@ -3,10 +3,9 @@
 /// @group select
 ////
 
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
 
-@include legacy.is(ie11) {
-  /**
+@mixin first() {  /**
   * Cache l'icone native du select sur IE
   */
   #{selector.ns(select)} {

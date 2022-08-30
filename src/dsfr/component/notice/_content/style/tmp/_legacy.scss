@@ -3,9 +3,10 @@
 /// @group notice
 ////
 
-@use '../../../../../sass/legacy/index';
+@use '../../../../../sass/icon';
+@use '../../../../../sass/selector';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * reset des marges dans le bandeau
   */

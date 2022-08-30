@@ -3,10 +3,11 @@
 /// @group pagination
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/disabled/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/disabled';
+@use '../../../../../../sass/selector';
 
-@mixin _pagination-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(pagination)} {
     @include color.text(action-high grey, (legacy: $legacy));
 

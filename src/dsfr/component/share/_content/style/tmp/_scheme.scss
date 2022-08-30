@@ -3,7 +3,10 @@
 /// @group share
 ////
 
-@mixin _share-scheme($legacy: false) {
+@use '../../../../../../sass/selector';
+@import '../../../../button/_content/style/tmp/tool';
+
+@mixin first($legacy: false) {
   #{selector.ns(share)} {
     #{selector.ns(btn)} {
       @include btn-kind-scheme(3, $legacy);

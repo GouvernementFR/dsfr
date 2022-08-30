@@ -3,19 +3,27 @@
 /// @group header
 ////
 
-#{selector.ns(header)} {
-  @include action.disable-underline;
-  @include typography.disable-list-style;
-  @include typography.set-text-margin(0);
-  @include typography.set-title-margin(0);
-  @include spacing.size(100%);
-  @include spacing.relative;
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
 
-  @include selector.body {
-    &-row {
-      @include display.flex(row, center, flex-start);
-      @include spacing.margin(0 -4v);
-      @include spacing.padding(6v 0, lg);
+@mixin first() {
+  #{selector.ns(header)} {
+    @include action.disable-underline;
+    @include typography.disable-list-style;
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
+    @include spacing.size(100%);
+    @include spacing.relative;
+
+    @include selector.body {
+      &-row {
+        @include display.flex(row, center, flex-start);
+        @include spacing.margin(0 -4v);
+        @include spacing.padding(6v 0, lg);
+      }
     }
   }
 }

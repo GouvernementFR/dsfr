@@ -3,48 +3,56 @@
 /// @group Footer
 ////
 
-/**
- * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
- * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
- */
-#{selector.ns(footer)} {
-  &__top {
-    @include display.flex(null);
-    @include spacing.margin(-10v 0 4v);
-    @include spacing.margin(-10v 0 10v, md);
-    @include spacing.padding(8v 0 4v);
-  }
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/action';
 
+@mixin first() {
   /**
-  * Catégorie (optionnel)
+  * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
+  * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
   */
-  &__top-cat {
-    @include spacing.margin(0 0 3v);
-    @include typography.text-style(xs);
-    display: block;
-    font-weight: typography.font-weight(bold);
-    text-align: left;
-  }
-
-  /**
-  * Style de la liste
-  */
-  &__top-list {
-    @include spacing.margin(0);
-
-    li {
-      @include spacing.margin-bottom(3v);
+  #{selector.ns(footer)} {
+    &__top {
+      @include display.flex(null);
+      @include spacing.margin(-10v 0 4v);
+      @include spacing.margin(-10v 0 10v, md);
+      @include spacing.padding(8v 0 4v);
     }
-  }
 
-  /**
-  * Style du lien
-  */
-  &__top-link {
-    @include typography.text-style(xs);
+    /**
+    * Catégorie (optionnel)
+    */
+    &__top-cat {
+      @include spacing.margin(0 0 3v);
+      @include typography.text-style(xs);
+      display: block;
+      @include typography.font-weight(bold);
+      text-align: left;
+    }
 
-    &:not(:hover):not(:active) {
-      @include link-underline-hover-only;
+    /**
+    * Style de la liste
+    */
+    &__top-list {
+      @include spacing.margin(0);
+
+      li {
+        @include spacing.margin-bottom(3v);
+      }
+    }
+
+    /**
+    * Style du lien
+    */
+    &__top-link {
+      @include typography.text-style(xs);
+
+      &:not(:hover):not(:active) {
+        @include action.link-underline-hover-only;
+      }
     }
   }
 }

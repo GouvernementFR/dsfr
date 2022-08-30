@@ -15,7 +15,7 @@
     @include selector.title {
       @include spacing.padding(4v 0);
       @include typography.text-style(lg);
-      font-weight: typography.font-weight(bold);
+      @include typography.font-weight(bold);
 
       @include spacing.margin(0 0 6v, md);
       @include spacing.padding(0, md);

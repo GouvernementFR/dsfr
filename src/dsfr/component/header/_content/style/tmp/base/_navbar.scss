@@ -3,32 +3,38 @@
 /// @group header
 ////
 
-@use '../../../../../../../sass/elevation/index';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/icon';
 
-#{selector.ns(header)} {
-  &__navbar {
-    @include display.flex(row,flex-end);
-    @include spacing.padding(1v);
-    @include spacing.margin-left(auto);
-    order: 3;
-    flex: 0 0 auto;
-    align-self: flex-start;
-    @include elevation.z-index(overlap);
-
-    @include media-query.from(lg) {
-      display: none;
-    }
-
-    @include nest-btn(md, only) {
+@mixin first() {
+  #{selector.ns(header)} {
+    &__navbar {
+      @include display.flex(row,flex-end);
+      @include spacing.padding(1v);
+      @include spacing.margin-left(auto);
+      order: 3;
       flex: 0 0 auto;
-      white-space: nowrap;
+      align-self: flex-start;
+      @include elevation.z-index(overlap);
 
-      &--menu {
-        @include icon.icon(menu-fill);
+      @include media-query.from(lg) {
+        display: none;
       }
 
-      &--search {
-        @include icon.icon(search-line);
+      @include nest-btn(md, only) {
+        flex: 0 0 auto;
+        white-space: nowrap;
+
+        &--menu {
+          @include icon.icon(menu-fill);
+        }
+
+        &--search {
+          @include icon.icon(search-line);
+        }
       }
     }
   }

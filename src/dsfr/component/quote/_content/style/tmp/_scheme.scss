@@ -3,9 +3,10 @@
 /// @group quote
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _quote-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(quote)} {
     @include selector.before {
       @include color.text((artwork minor blue-france), (legacy:$legacy));

@@ -1,7 +1,9 @@
-@mixin first () {
-  @import '../../../button/_content/style/tmp/tool';
-  @import 'tmp/scheme';
-  @import 'tmp/legacy';
+@use 'tmp/scheme';
+@use 'tmp/legacy';
 
-  @include _notice-scheme(true);
+$options: () !default;
+
+@mixin first() {
+  @include legacy.first();
+  @include scheme.first(true);
 }

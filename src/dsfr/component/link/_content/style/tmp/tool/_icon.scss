@@ -3,7 +3,9 @@
 /// @group link
 ////
 
-@use '../../../../../../../sass/spacing/index';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
 
 @mixin _build-link-icon($size-settings, $place, $size:md, $override: true) {
 

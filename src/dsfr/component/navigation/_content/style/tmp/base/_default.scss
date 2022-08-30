@@ -3,134 +3,142 @@
 /// @group navigation
 ////
 
-@use '../../../../../../../sass/spacing/index';
+@use '../../../../../../../sass/action';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/typography';
 
-#{selector.ns(nav)} {
-  @include action.disable-underline;
-  @include typography.disable-list-style;
-  @include typography.set-text-margin(0);
-  @include typography.set-title-margin(0);
+@mixin first() {
+  #{selector.ns(nav)} {
+    @include action.disable-underline;
+    @include typography.disable-list-style;
+    @include typography.set-text-margin(0);
+    @include typography.set-title-margin(0);
 
-  @include selector.list {
-    @include display.flex(column);
-    @include spacing.margin(0);
-    @include spacing.padding(0);
+    @include selector.list {
+      @include display.flex(column);
+      @include spacing.margin(0);
+      @include spacing.padding(0);
 
-    @include media-query.from(lg) {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      @include spacing.margin(0 -4v);
+      @include media-query.from(lg) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        @include spacing.margin(0 -4v);
 
-      & > *:first-child:nth-last-child(2) ~ *,
-      & > *:first-child:nth-last-child(3) ~ *,
-      & > *:first-child:nth-last-child(4) ~ * {
-        @include spacing.margin-left(5v);
+        & > *:first-child:nth-last-child(2) ~ *,
+        & > *:first-child:nth-last-child(3) ~ *,
+        & > *:first-child:nth-last-child(4) ~ * {
+          @include spacing.margin-left(5v);
+        }
       }
-    }
 
-    &,
-    & > * {
-      & > #{selector.ns(nav__link)},
-      & > #{selector.ns(nav__btn)} {
-        font-weight: bold;
+      &,
+      & > * {
+        & > #{selector.ns(nav__link)},
+        & > #{selector.ns(nav__btn)} {
+          font-weight: bold;
 
-        @include media-query.from(lg) {
-          @include spacing.padding(4v);
-          @include spacing.margin(0);
-          @include spacing.size(auto, 100%);
-          min-height: spacing.space(14v);
-          font-weight: normal;
+          @include media-query.from(lg) {
+            @include spacing.padding(4v);
+            @include spacing.margin(0);
+            @include spacing.size(auto, 100%);
+            min-height: spacing.space(14v);
+            font-weight: normal;
 
-          // @include elevation.z-index(auto);
+            // @include elevation.z-index(auto);
 
-          &[aria-current] {
-            @include selector.before {
-              @include spacing.absolute(auto, null, 0, 0, 100%, 2px);
-              @include spacing.margin-top(0);
+            &[aria-current] {
+              @include selector.before {
+                @include spacing.absolute(auto, null, 0, 0, 100%, 2px);
+                @include spacing.margin-top(0);
+              }
             }
           }
         }
       }
     }
-  }
 
-  @include selector.list-item {
-    // TODO: supprimer la stylisation de la liste item, trouver une solution différente pour l'affichage du menu à droite et la barre d'espacement grise en mobile
-    @include display.flex(column, stretch);
-    flex: 0 1 auto;
+    @include selector.list-item {
+      // TODO: supprimer la stylisation de la liste item, trouver une solution différente pour l'affichage du menu à droite et la barre d'espacement grise en mobile
+      @include display.flex(column, stretch);
+      flex: 0 1 auto;
 
-    @include spacing.relative;
-    @include selector.before('', block) {
-      @include spacing.absolute(0, 0, 0 , 0, 100%, 100%);
-      pointer-events: none;
-    }
+      @include spacing.relative;
 
-    #{selector.ns(btn)},
-    #{selector.ns(link)} {
-      @include spacing.min-height(12v);
-      @include spacing.min-height(auto, lg);
-    }
-
-    @include media-query.from(lg) {
-      position: initial;
-      @include selector.before(none);
-      align-items: flex-start;
-
-      &--align-right {
-        align-items: flex-end;
-      }
-    }
-  }
-
-  &__link,
-  &__btn {
-    @include spacing.size(100%);
-    @include spacing.padding(3v 0);
-    @include typography.text-style(md);
-    text-align: left;
-
-    @include media-query.from(lg) {
-      @include typography.text-style(sm);
-    }
-
-    @include enable-tint;
-
-    &[aria-current] {
-      position: relative;
       @include selector.before('', block) {
-        @include spacing.absolute(50%, null, null, -4v, 2px, 6v);
-        @include spacing.margin-top(-3v);
+        @include spacing.absolute(0, 0, 0, 0, 100%, 100%);
+        pointer-events: none;
+      }
+
+      #{selector.ns(btn)},
+      #{selector.ns(link)} {
+        @include spacing.min-height(12v);
+        @include spacing.min-height(auto, lg);
+      }
+
+      @include media-query.from(lg) {
+        position: initial;
+        @include selector.before(none);
+        align-items: flex-start;
+
+        &--align-right {
+          align-items: flex-end;
+        }
       }
     }
-  }
 
-  &__link {
-    display: block;
+    &__link,
+    &__btn {
+      @include spacing.size(100%);
+      @include spacing.padding(3v 0);
+      @include typography.text-style(md);
+      text-align: left;
 
-    &[aria-current]:not([href]) {
-      pointer-events: none;
-      cursor: default;
-    }
-  }
+      @include media-query.from(lg) {
+        @include typography.text-style(sm);
+      }
 
-  &__btn {
-    @include display.flex(null, center, space-between);
-    flex-direction: row;
-    @include spacing.padding(4v 3v 4v 4v, lg);
+      @include action.enable-tint;
 
-    @include icon.icon(arrow-down-s-line, sm, after) {
-      @include spacing.margin-left(2v);
-      @include spacing.margin-right(0);
-      transition: transform 0.3s;
-    }
-
-    @include media-query.from(lg) {
-      justify-content: flex-start;
+      &[aria-current] {
+        position: relative;
+        @include selector.before('', block) {
+          @include spacing.absolute(50%, null, null, -4v, 2px, 6v);
+          @include spacing.margin-top(-3v);
+        }
+      }
     }
 
-    &[aria-expanded="true"] {
-      @include selector.after {
-        transform: rotate(-180deg);
+    &__link {
+      display: block;
+
+      &[aria-current]:not([href]) {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+
+    &__btn {
+      @include display.flex(null, center, space-between);
+      flex-direction: row;
+      @include spacing.padding(4v 3v 4v 4v, lg);
+
+      @include icon.icon(arrow-down-s-line, sm, after) {
+        @include spacing.margin-left(2v);
+        @include spacing.margin-right(0);
+        transition: transform 0.3s;
+      }
+
+      @include media-query.from(lg) {
+        justify-content: flex-start;
+      }
+
+      &[aria-expanded='true'] {
+        @include selector.after {
+          transform: rotate(-180deg);
+        }
       }
     }
   }

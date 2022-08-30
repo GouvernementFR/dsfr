@@ -6,7 +6,7 @@
 @use '../../../../../../../sass/selector';
 @use '../../../../../../../sass/spacing';
 
-@mixin horizontal-btselector.ns-group() {
+@mixin horizontal-btns-group() {
   #{selector.ns(btn)} {
     width: auto;
     max-width: 100%;
@@ -20,7 +20,7 @@
   }
 }
 
-@mixin vertical-btselector.ns-group() {
+@mixin vertical-btns-group() {
   > li {
     width: 100%;
     max-width: 100%;

@@ -3,10 +3,10 @@
 /// @group radio
 ////
 
-@use '../../../../../../sass/spacing/index';
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * Correctif radio
   */

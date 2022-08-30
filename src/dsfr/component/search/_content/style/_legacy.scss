@@ -1,14 +1,9 @@
-////
-/// Search Legacy
-/// @group search
-////
+@use 'tmp/scheme';
+@use 'tmp/legacy';
 
-@use '../../../../../sass/legacy/index';
+$options: () !default;
 
-@include legacy.is(ie11) {
-  #{selector.ns(search-bar)} {
-    #{selector.ns(btn)} {
-      @include icon.icon-legacy(search-line, md);
-    }
-  }
+@mixin first() {
+  @include legacy.first();
+  @include scheme.first(true);
 }

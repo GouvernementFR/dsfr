@@ -3,4 +3,8 @@
 /// @group link
 ////
 
-@include build-link();
+@import '../tool';
+
+@mixin first() {
+  @include build-link();
+}

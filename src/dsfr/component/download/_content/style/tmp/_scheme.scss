@@ -3,9 +3,10 @@
 /// @group download
 ////
 
-@use '../../../../../../sass/color/index';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
-@mixin _download-scheme($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(download)} {
     &--card {
       @include color.background(default grey, (legacy:$legacy));
