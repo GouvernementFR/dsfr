@@ -3,8 +3,12 @@
 /// @group modal
 ////
 
-#{selector.ns(modal)} {
-  @include selector.body {
-    max-height: calc(100vh - 2rem);
+@use '../../../../../../sass/selector';
+
+@mixin first() {
+  #{selector.ns(modal)} {
+    @include selector.body {
+      max-height: calc(100vh - 2rem);
+    }
   }
 }
