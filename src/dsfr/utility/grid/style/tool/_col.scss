@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use '../../../../../sass/spacing';
+
 /// Définit la largeur de colonne
 ///
 /// @param {Number} $size - Proportion de la taille de colonne
@@ -42,10 +44,10 @@
   }
 
   &:not(&--right) {
-    @include margin-left($calc);
+    @include spacing.margin-left($calc);
   }
 
   &--right {
-    @include margin-right($calc);
+    @include spacing.margin-right($calc);
   }
 }

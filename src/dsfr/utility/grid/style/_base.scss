@@ -3,9 +3,9 @@
 /// @group core
 ////
 
-@import 'sass/row';
-@import 'sass/col';
-@import 'sass/container';
+@import 'base/row';
+@import 'base/col';
+@import 'base/container';
 
 // Génère les conteneurs, les colonnes et les écarts de colonnes
 @include grid($grid-settings);

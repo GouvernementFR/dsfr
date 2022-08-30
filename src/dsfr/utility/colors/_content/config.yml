@@ -1,1 +1,5 @@
 id: colors
+
+example:
+  draft: true
+  wrapper: col-8

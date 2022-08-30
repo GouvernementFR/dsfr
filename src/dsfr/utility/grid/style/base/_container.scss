@@ -3,7 +3,9 @@
 /// @group core
 ////
 
+@use '../../../../../sass/spacing';
+
 #{selector.ns(container)} {
-  @include size(100%);
-  @include margin-x(auto);
+  @include spacing.size(100%);
+  @include spacing.margin-x(auto);
 }
