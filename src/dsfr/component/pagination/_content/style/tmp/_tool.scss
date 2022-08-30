@@ -3,6 +3,8 @@
 /// @group button
 ////
 
+@import './setting';
+
 @mixin build-pagination() {
   @include _build-link($pagination-build-settings);
 }

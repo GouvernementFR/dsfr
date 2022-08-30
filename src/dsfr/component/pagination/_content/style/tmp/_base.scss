@@ -3,100 +3,109 @@
 /// @group pagination
 ////
 
-@include build-pagination();
+@use '../../../../../sass/action';
+@use '../../../../../sass/display';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/spacing';
+@use '../../../../../sass/typography';
+@import './tool';
 
-#{selector.ns(pagination)} {
-  @include action.disable-underline;
-  @include typography.disable-list-style;
+@mixin first() {
+  @include build-pagination();
 
-  @include selector.list {
-    @include display.flex(row, center, flex-start, wrap);
-
-    & > *:first-child {
-      &,
-      & * {
-        @include spacing.margin-left(0);
-      }
-    }
-
-    & > *:last-child {
-      &,
-      & * {
-        @include spacing.margin-right(0);
-      }
-    }
-  }
-
-  &__link {
-    @include spacing.min-size(8v);
-    @include spacing.margin-x(0.5v);
-    @include spacing.margin-bottom(4v);
+  #{selector.ns(pagination)} {
     @include action.disable-underline;
-    @include spacing.relative;
+    @include typography.disable-list-style;
 
-    &[aria-current]:not([href]) {
-      cursor: default;
-      pointer-events: none;
-    }
+    @include selector.list {
+      @include display.flex(row, center, flex-start, wrap);
 
-    &--first {
-      @include nest-pagination(only, arrow-left-s-first-line);
-
-      &#{selector.ns(pagination__link--label)} {
-        @include nest-pagination(left, arrow-left-s-first-line);
+      & > *:first-child {
+        &,
+        & * {
+          @include spacing.margin-left(0);
+        }
       }
 
-      &#{selector.ns(pagination__link--lg-label)} {
-        @include nest-pagination(left, arrow-left-s-first-line, lg);
-      }
-    }
-
-    &--prev {
-      @include nest-pagination(only, arrow-left-s-line);
-
-      &#{selector.ns(pagination__link--label)} {
-        @include nest-pagination(left, arrow-left-s-line);
-      }
-
-      &#{selector.ns(pagination__link--lg-label)} {
-        @include nest-pagination(left, arrow-left-s-line, lg);
+      & > *:last-child {
+        &,
+        & * {
+          @include spacing.margin-right(0);
+        }
       }
     }
 
-    &--next {
-      @include nest-pagination(only, arrow-right-s-line);
+    &__link {
+      @include spacing.min-size(8v);
+      @include spacing.margin-x(0.5v);
+      @include spacing.margin-bottom(4v);
+      @include action.disable-underline;
+      @include spacing.relative;
 
-      &#{selector.ns(pagination__link--label)} {
-        @include nest-pagination(right, arrow-right-s-line);
+      &[aria-current]:not([href]) {
+        cursor: default;
+        pointer-events: none;
       }
 
-      &#{selector.ns(pagination__link--lg-label)} {
-        @include nest-pagination(right, arrow-right-s-line, lg);
+      &--first {
+        @include nest-pagination(only, arrow-left-s-first-line);
+
+        &#{selector.ns(pagination__link--label)} {
+          @include nest-pagination(left, arrow-left-s-first-line);
+        }
+
+        &#{selector.ns(pagination__link--lg-label)} {
+          @include nest-pagination(left, arrow-left-s-first-line, lg);
+        }
       }
-    }
 
-    &--last {
-      @include nest-pagination(only, arrow-right-s-last-line);
+      &--prev {
+        @include nest-pagination(only, arrow-left-s-line);
 
-      &#{selector.ns(pagination__link--label)} {
-        @include nest-pagination(right, arrow-right-s-last-line);
+        &#{selector.ns(pagination__link--label)} {
+          @include nest-pagination(left, arrow-left-s-line);
+        }
+
+        &#{selector.ns(pagination__link--lg-label)} {
+          @include nest-pagination(left, arrow-left-s-line, lg);
+        }
       }
 
-      &#{selector.ns(pagination__link--lg-label)} {
-        @include nest-pagination(right, arrow-right-s-last-line, lg);
+      &--next {
+        @include nest-pagination(only, arrow-right-s-line);
+
+        &#{selector.ns(pagination__link--label)} {
+          @include nest-pagination(right, arrow-right-s-line);
+        }
+
+        &#{selector.ns(pagination__link--lg-label)} {
+          @include nest-pagination(right, arrow-right-s-line, lg);
+        }
       }
-    }
 
-    &--first,
-    &--prev {
-      @include spacing.margin-right(3.5v);
-      @include spacing.margin-left(-2.5v);
-    }
+      &--last {
+        @include nest-pagination(only, arrow-right-s-last-line);
 
-    &--next,
-    &--last {
-      @include spacing.margin-right(-2.5v);
-      @include spacing.margin-left(3.5v);
+        &#{selector.ns(pagination__link--label)} {
+          @include nest-pagination(right, arrow-right-s-last-line);
+        }
+
+        &#{selector.ns(pagination__link--lg-label)} {
+          @include nest-pagination(right, arrow-right-s-last-line, lg);
+        }
+      }
+
+      &--first,
+      &--prev {
+        @include spacing.margin-right(3.5v);
+        @include spacing.margin-left(-2.5v);
+      }
+
+      &--next,
+      &--last {
+        @include spacing.margin-right(-2.5v);
+        @include spacing.margin-left(3.5v);
+      }
     }
   }
 }

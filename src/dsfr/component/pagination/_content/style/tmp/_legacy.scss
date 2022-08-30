@@ -3,10 +3,13 @@
 /// @group pagination
 ////
 
-@use '../../../../../../sass/color/index';
-@use '../../../../../../sass/legacy';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/typography';
 
-@include legacy.is(ie11) {
+@mixin first() {
   /**
   * Correctif de la largeur de la légende d'un fieldset
   */
