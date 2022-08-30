@@ -9,7 +9,7 @@
 
 $options: () !default;
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   @include default.first($legacy);
   @include sm.first($legacy);
   @include rich.first($legacy);

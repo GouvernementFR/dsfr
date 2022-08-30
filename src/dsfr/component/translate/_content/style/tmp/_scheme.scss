@@ -3,18 +3,18 @@
 /// @group translate
 ////
 
-@use '../../../../../../sass/color/index';
 @use '../../../../../../sass/selector';
+@use '../../../../../../sass/action';
 @use '../../../../../../sass/color';
 
-@mixin first ($legacy: false) {
+@mixin scheme ($legacy: false) {
   #{selector.ns(translate)} {
     #{selector.ns(translate)}__btn {
       &[aria-expanded="true"] {
         @include media-query.from(lg) {
           @include color.text(active blue-france, (legacy: $legacy));
           @include color.background(open blue-france, (legacy: $legacy));
-          @include hover-tint;
+          @include action.hover-tint;
         }
       }
     }

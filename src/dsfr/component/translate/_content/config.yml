@@ -6,7 +6,6 @@ style:
   dependencies:
     - typography
     - color
-    - spacing
     - action
     - button
     - navigation

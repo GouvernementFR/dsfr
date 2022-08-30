@@ -8,12 +8,10 @@
 @use '../../../../../../sass/selector';
 
 @mixin first() {
-  @include legacy.is(ie11) {
-    #{selector.ns(translate)} {
-      #{selector.ns(translate)} &__btn {
-        @include icon.icon-legacy(translate-2, sm, before);
-        @include icon.icon-legacy(arrow-down-s-fill, sm, after);
-      }
+  #{selector.ns(translate)} {
+    #{selector.ns(translate)} &__btn {
+      @include icon.icon-legacy(translate-2, sm, before);
+      @include icon.icon-legacy(arrow-down-s-fill, sm, after);
     }
   }
 }

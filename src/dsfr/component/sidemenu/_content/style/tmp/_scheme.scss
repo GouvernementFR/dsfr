@@ -7,7 +7,7 @@
 @use '../../../../../../sass/media-query';
 @use '../../../../../../sass/selector';
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(sidemenu)} {
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
     @include media-query.from(md) {

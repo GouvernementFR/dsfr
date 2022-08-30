@@ -7,7 +7,7 @@
 @use '../../../../../../sass/elevation';
 @use '../../../../../../sass/selector';
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(modal)} {
     @include selector.body {
       @include elevation.elevate(lifted, (legacy: $legacy));

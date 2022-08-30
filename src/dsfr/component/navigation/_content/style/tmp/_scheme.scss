@@ -9,7 +9,7 @@
 
 $options: () !default;
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   @include default.first();
   @include menu.first();
   @include menu-menu.first();

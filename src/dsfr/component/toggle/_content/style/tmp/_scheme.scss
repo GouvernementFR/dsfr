@@ -8,7 +8,7 @@
 @use '../../../../../../sass/selector';
 @import './setting';
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(toggle)} {
     label {
       @include selector.before {
