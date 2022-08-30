@@ -3,9 +3,10 @@
 /// @group notice
 ////
 
-@use '../../../../../sass/color/index';
+@use '../../../../../sass/color';
+@use '../../../../../sass/selector';
 
-@mixin _notice-scheme($legacy: false) {
+@mixin first($legacy: false) {
   #{selector.ns(notice)} {
     @include color.background(contrast grey, (legacy:$legacy, hover: false, active: false));
     @include color.text(title grey, (legacy:$legacy));

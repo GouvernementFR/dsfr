@@ -3,11 +3,11 @@
 /// @group pagination
 ////
 
-@use '../../../../../sass/action';
-@use '../../../../../sass/display';
-@use '../../../../../sass/selector';
-@use '../../../../../sass/spacing';
-@use '../../../../../sass/typography';
+@use '../../../../../../sass/action';
+@use '../../../../../../sass/display';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
 @import './tool';
 
 @mixin first() {

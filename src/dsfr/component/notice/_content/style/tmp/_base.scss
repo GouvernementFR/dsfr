@@ -3,37 +3,45 @@
 /// @group notice
 ////
 
-#{selector.ns(notice)} {
-  @include spacing.relative();
-  @include typography.set-title-margin(0);
-  @include typography.set-text-margin(0);
-  @include spacing.padding-y(4v);
+@use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+@import '../../../../button/_content/style/tmp/tool';
 
-  &__body {
-    @include spacing.relative;
-    @include spacing.padding(0 10v 0 10v);
+@mixin first() {
+  #{selector.ns(notice)} {
+    @include spacing.relative();
+    @include typography.set-title-margin(0);
+    @include typography.set-text-margin(0);
+    @include spacing.padding-y(4v);
 
-    @include icon.size(md, before);
-    @include icon.style(before) {
-      @include spacing.absolute(null, null, null, 0);
+    &__body {
+      @include spacing.relative;
+      @include spacing.padding(0 10v 0 10v);
+
+      @include icon.size(md, before);
+      @include icon.style(before) {
+        @include spacing.absolute(null, null, null, 0);
+      }
     }
-  }
 
-  &__title {
-    @include spacing.relative;
-    @include typography.text-style(md);
-    @include typography.font-weight(bold);
-  }
+    &__title {
+      @include spacing.relative;
+      @include typography.text-style(md);
+      @include typography.font-weight(bold);
+    }
 
-  #{selector.ns(btn--close)} {
-    @include nest-btn(sm, only, close-line, null, false);
-    @include spacing.absolute(-1v, 4v);
-  }
+    #{selector.ns(btn--close)} {
+      @include nest-btn(sm, only, close-line, null, false);
+      @include spacing.absolute(-1v, 4v);
+    }
 
-  &--info {
-    #{selector.ns(notice)}__body {
-      @include icon.image(info-fill, before);
-      @include icon.content;
+    &--info {
+      #{selector.ns(notice)}__body {
+        @include icon.image(info-fill, before);
+        @include icon.content;
+      }
     }
   }
 }
