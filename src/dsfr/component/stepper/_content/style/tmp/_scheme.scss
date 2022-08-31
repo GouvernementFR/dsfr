@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color';
 @use '../../../../../../sass/selector';
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(stepper)} {
     @include selector.title {
       @include color.text(title grey, (legacy:$legacy));

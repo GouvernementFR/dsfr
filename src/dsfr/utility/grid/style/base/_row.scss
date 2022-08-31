@@ -3,10 +3,14 @@
 /// @group core
 ////
 
+@use '../../../../../sass/spacing';
+@use '../../../../../sass/display';
+@use '../../../../../sass/selector';
+
 #{selector.ns(grid-row)} {
-  @include display-flex(null, null, null, wrap);
-  @include margin(0);
-  @include padding(0);
+  @include display.flex(null, null, null, wrap);
+  @include spacing.margin(0);
+  @include spacing.padding(0);
 
   // Vertical alignment
   &--top {

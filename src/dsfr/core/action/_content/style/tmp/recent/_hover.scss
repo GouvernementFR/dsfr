@@ -9,7 +9,7 @@
   }
 
   @include hover-type-selector($action-elements, all, true) {
-    @include hover-tint;
+    @include action.hover-tint;
   }
 
   @include hover-type-selector($action-elements, underline, true) {

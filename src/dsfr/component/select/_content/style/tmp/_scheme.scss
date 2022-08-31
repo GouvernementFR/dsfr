@@ -8,7 +8,7 @@
 @use '../../../../../../sass/selector';
 @import './setting';
 
-@mixin first($legacy: false) {
+@mixin scheme($legacy: false) {
   #{selector.ns(select)} {
     @include color.text(title grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));

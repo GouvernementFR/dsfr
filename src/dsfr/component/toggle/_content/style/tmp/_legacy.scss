@@ -4,25 +4,22 @@
 ////
 
 @use '../../../../../../sass/icon';
-@use '../../../../../../sass/legacy';
 @use '../../../../../../sass/selector';
 
 @mixin first() {
-  @include legacy.is(ie11) {
-    #{selector.ns(toggle)} {
-      input[type='checkbox'] {
-        &::-ms-check {
-          display: none;
-        }
-
-        &:checked {
-          @include icon.icon-legacy(check-line, md);
-        }
+  #{selector.ns(toggle)} {
+    input[type='checkbox'] {
+      &::-ms-check {
+        display: none;
       }
 
-      &__list {
-        list-style: none;
+      &:checked {
+        @include icon.icon-legacy(check-line, md);
       }
+    }
+
+    &__list {
+      list-style: none;
     }
   }
 }

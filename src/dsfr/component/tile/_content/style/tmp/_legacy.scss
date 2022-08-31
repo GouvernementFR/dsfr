@@ -3,28 +3,22 @@
 /// @group tile
 ////
 
-@use '../../../../../../sass/legacy';
 @use '../../../../../../sass/selector';
 @use '../../../../../../sass/spacing';
 
 @mixin first() {
-  @include legacy.is(ie11) {
-    /**
-  * Correctif de la largeur du texte dans la tuile
-  */
-    #{selector.ns(tile)} {
-      &__body,
-      &__body > * {
-        max-width: 100%;
-      }
+  #{selector.ns(tile)} {
+    &__body,
+    &__body > * {
+      max-width: 100%;
+    }
 
-      &__title {
-        @include spacing.margin(0 0 2v);
-      }
+    &__title {
+      @include spacing.margin(0 0 2v);
+    }
 
-      &__desc {
-        @include spacing.margin(0);
-      }
+    &__desc {
+      @include spacing.margin(0);
     }
   }
 }
