@@ -1,0 +1,15 @@
+title: Modèle de date unique
+description:
+hint:
+  birthdate : Texte de description additionnel
+  day: 'Exemple : 14'
+  month: 'Exemple : 12'
+  year: 'Exemple : 1984'
+legend:
+  birthdate: Date de naissance
+option:
+  day: Jour
+  month: Mois
+  year: Année
+sample:
+  default: Défaut

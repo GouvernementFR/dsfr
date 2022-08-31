@@ -1,0 +1,72 @@
+<%#
+# paramètres date
+
+* date (object, required) : objet contenant les paramètres
+
+* date.id (string, required) : id du composant
+
+* date.legend (string, optionnal) : légende du composant
+
+* date.hint (string, optionnal) : légende du composant
+
+* date.label (string, optionnal) : libellé du composant
+
+* date.placeholder (string, optionnal) : placeholder du composant
+
+* date.type (string) : type de champs utilisé chaque enfant du composant
+    ** input : date champs de saisie
+
+* date.items (array, required) : tableau de données de chaque enfant du composant
+
+* date.items[].value (string, required) : valeur du champ
+
+* date.items[].label (string, required) : libellé du champ
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const date = locals.date || {};
+const fieldset = {};
+const elements = [];
+if (date.items && date.items.length) {
+  date.items.forEach((item, index) => {
+        elements.push({
+            path: 'form/template/ejs/fieldset',
+            data: {
+                fieldset: {
+                    disabled: item.disabled || undefined,
+                    attributes: {
+                        'aria-label': item.label,
+                    },
+                    elements: [{
+                        path: `${item.type}/${item.subtype}/template/ejs/${item.template}`,
+                        data: {
+                            [item.type]: {
+                                id: `${date.id}-${index}`,
+                                name: date.id,
+                                label: item.label || '',
+                                value: item.value || '',
+                                hint: item.hint || '',
+                                checked: item.checked || false,
+                                size: item.size || '',
+                                attributes: item.attributes || {},
+                                kind: item.kind || '',
+                                options: item.options || [],
+                                placeholder: item.placeholder || '',
+                            }
+                        }
+                    }]
+                }
+            }
+        });
+    });
+}
+fieldset.elements = elements;
+fieldset.legend = date.legend;
+fieldset.id = date.id;
+fieldset.hint = date.hint;
+fieldset.attributes = { 'aria-label': date.label,}
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
