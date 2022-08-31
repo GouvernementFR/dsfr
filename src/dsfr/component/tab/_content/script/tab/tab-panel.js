@@ -8,9 +8,9 @@ import { TabPanelDirection } from './tab-panel-direction.js';
   * Tab étend disclosure qui ajoute/enleve le modifier --selected,
   * et ajoute/eleve l'attribut hidden, sur le panel
   */
-class TabPanel extends ref.core.Disclosure {
+class TabPanel extends ref.action.Disclosure {
   constructor () {
-    super(ref.core.DisclosureType.SELECT, TabSelector.PANEL, TabButton, 'TabsGroup');
+    super(ref.action.DisclosureType.SELECT, TabSelector.PANEL, TabButton, 'TabsGroup');
     this._direction = TabPanelDirection.NONE;
   }
 

@@ -1,7 +1,7 @@
 import ref from '../../ref.js';
 import { FocusTrap } from './focus-trap.js';
 
-class ModalsGroup extends ref.core.DisclosuresGroup {
+class ModalsGroup extends ref.action.DisclosuresGroup {
   constructor () {
     super('Modal', false);
     this.focusTrap = new FocusTrap();

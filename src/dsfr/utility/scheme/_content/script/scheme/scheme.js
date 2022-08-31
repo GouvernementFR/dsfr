@@ -4,7 +4,7 @@ import { SchemeAttribute } from './scheme-attribute.js';
 import { SchemeTheme } from './scheme-theme.js';
 import { SchemeEmission } from './scheme-emission.js';
 
-class Scheme extends ref.core.Instance {
+class Scheme extends ref.api.Instance {
   constructor () {
     super(false);
   }

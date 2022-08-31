@@ -1,0 +1,5 @@
+@use '../../../../../sass/elevation';
+
+@mixin first() {
+  @include elevation.define;
+}

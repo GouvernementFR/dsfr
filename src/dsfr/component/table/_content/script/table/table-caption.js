@@ -1,7 +1,7 @@
 import ref from '../../ref.js';
 import { TableEmission } from './table-emission.js';
 
-class TableCaption extends ref.core.Instance {
+class TableCaption extends ref.api.Instance {
   static get instanceClassName () {
     return 'TableCaption';
   }

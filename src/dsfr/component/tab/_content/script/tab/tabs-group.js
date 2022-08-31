@@ -5,7 +5,7 @@ import { TabPanelDirection } from './tab-panel-direction.js';
 * TabGroup est la classe étendue de DiscosuresGroup
 * Correspond à un objet Tabs avec plusieurs tab-button & Tab (panel)
 */
-class TabsGroup extends ref.core.DisclosuresGroup {
+class TabsGroup extends ref.action.DisclosuresGroup {
   constructor () {
     super('TabPanel');
   }
@@ -17,10 +17,10 @@ class TabsGroup extends ref.core.DisclosuresGroup {
   init () {
     super.init();
     this.listen('transitionend', this.transitionend.bind(this));
-    this.listenKey(ref.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
-    this.listenKey(ref.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
-    this.listenKey(ref.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
-    this.listenKey(ref.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
+    this.listenKey(ref.api.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
+    this.listenKey(ref.api.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
+    this.listenKey(ref.api.KeyCodes.HOME, this.pressHome.bind(this), true, true);
+    this.listenKey(ref.api.KeyCodes.END, this.pressEnd.bind(this), true, true);
     this.isRendering = true;
 
     if (this.list) this.list.apply();

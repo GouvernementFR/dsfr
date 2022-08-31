@@ -1,7 +1,7 @@
 import ref from '../../../ref.js';
 import { DisplaySelector } from './display-selector.js';
 
-class Display extends ref.core.Instance {
+class Display extends ref.api.Instance {
   static get instanceClassName () {
     return 'Display';
   }

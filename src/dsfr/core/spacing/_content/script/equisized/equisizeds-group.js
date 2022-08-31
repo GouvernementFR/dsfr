@@ -1,7 +1,7 @@
-import { Instance } from '../../../../api/_content/script/api/modules/register/instance.js';
+import ref from '../../../ref.js';
 import { EquisizedEmission } from './equisized-emission.js';
 
-class EquisizedsGroup extends Instance {
+class EquisizedsGroup extends ref.api.Instance {
   static get instanceClassName () {
     return 'EquisizedsGroup';
   }

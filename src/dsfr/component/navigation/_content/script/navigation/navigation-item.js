@@ -1,7 +1,7 @@
 import ref from '../../../ref.js';
 import { NavigationSelector } from './navigation-selector.js';
 
-class NavigationItem extends ref.core.Instance {
+class NavigationItem extends ref.api.Instance {
   constructor () {
     super();
     this._isRightAligned = false;
@@ -12,8 +12,8 @@ class NavigationItem extends ref.core.Instance {
   }
 
   init () {
-    this.addAscent(ref.core.DisclosureEmission.ADDED, this.calculate.bind(this));
-    this.addAscent(ref.core.DisclosureEmission.REMOVED, this.calculate.bind(this));
+    this.addAscent(ref.action.DisclosureEmission.ADDED, this.calculate.bind(this));
+    this.addAscent(ref.action.DisclosureEmission.REMOVED, this.calculate.bind(this));
     this.isResizing = true;
     this.calculate();
   }
@@ -23,8 +23,8 @@ class NavigationItem extends ref.core.Instance {
   }
 
   calculate () {
-    const collapse = this.element.getDescendantInstances(ref.core.Collapse.instanceClassName, null, true)[0];
-    if (collapse && this.isBreakpoint(ref.core.Breakpoints.LG) && collapse.element.node.matches(NavigationSelector.MENU)) {
+    const collapse = this.element.getDescendantInstances(ref.action.Collapse.instanceClassName, null, true)[0];
+    if (collapse && this.isBreakpoint(ref.api.Breakpoints.LG) && collapse.element.node.matches(NavigationSelector.MENU)) {
       const right = this.element.node.parentElement.getBoundingClientRect().right; // todo: ne fonctionne que si la nav fait 100% du container
       const width = collapse.element.node.getBoundingClientRect().width;
       const left = this.element.node.getBoundingClientRect().left;

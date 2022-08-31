@@ -3,7 +3,7 @@ import { ModalSelector } from './modal-selector.js';
 
 const OFFSET = 32; // 32px => 8v => 2rem
 
-class ModalBody extends ref.core.Instance {
+class ModalBody extends ref.api.Instance {
   static get instanceClassName () {
     return 'ModalBody';
   }
@@ -39,7 +39,7 @@ class ModalBody extends ref.core.Instance {
   }
 
   adjust () {
-    const offset = OFFSET * (this.isBreakpoint(ref.core.Breakpoints.MD) ? 2 : 1);
+    const offset = OFFSET * (this.isBreakpoint(ref.api.Breakpoints.MD) ? 2 : 1);
     if (this.isLegacy) this.style.maxHeight = `${window.innerHeight - offset}px`;
     else this.style.setProperty('--modal-max-height', `${window.innerHeight - offset}px`);
     this.shade();

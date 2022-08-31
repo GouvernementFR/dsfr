@@ -1,7 +1,7 @@
 import ref from '../../../ref.js';
 import { DownloadSelector } from './download-selector';
 
-class AssessFile extends ref.core.Instance {
+class AssessFile extends ref.api.Instance {
   static get instanceClassName () {
     return 'AssessFile';
   }

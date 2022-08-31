@@ -1,8 +1,8 @@
 import ref from '../../ref.js';
 
-class ModalButton extends ref.core.DisclosureButton {
+class ModalButton extends ref.action.DisclosureButton {
   constructor () {
-    super(ref.core.DisclosureType.OPENED);
+    super(ref.action.DisclosureType.OPENED);
   }
 
   static get instanceClassName () {

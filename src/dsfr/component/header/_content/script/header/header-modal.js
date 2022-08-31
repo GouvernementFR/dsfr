@@ -1,6 +1,6 @@
 import ref from '../../../ref.js';
 
-class HeaderModal extends ref.core.Instance {
+class HeaderModal extends ref.api.Instance {
   static get instanceClassName () {
     return 'HeaderModal';
   }
@@ -10,7 +10,7 @@ class HeaderModal extends ref.core.Instance {
   }
 
   resize () {
-    if (this.isBreakpoint(ref.core.Breakpoints.LG)) this.unqualify();
+    if (this.isBreakpoint(ref.api.Breakpoints.LG)) this.unqualify();
     else this.qualify();
   }
 

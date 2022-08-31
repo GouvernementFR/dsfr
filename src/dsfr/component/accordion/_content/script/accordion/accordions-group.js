@@ -1,7 +1,7 @@
 import ref from '../../../ref.js';
 import { AccordionSelector } from './accordion-selector.js';
 
-class AccordionsGroup extends ref.core.CollapsesGroup {
+class AccordionsGroup extends ref.action.CollapsesGroup {
   static get instanceClassName () {
     return 'AccordionsGroup';
   }

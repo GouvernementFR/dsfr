@@ -1,6 +1,6 @@
 import ref from '../../ref.js';
 
-class Breadcrumb extends ref.core.Instance {
+class Breadcrumb extends ref.api.Instance {
   constructor () {
     super();
     this.count = 0;
@@ -27,9 +27,9 @@ class Breadcrumb extends ref.core.Instance {
   getCollapse () {
     const collapse = this.collapse;
     if (collapse) {
-      collapse.listen(ref.core.DisclosureEvent.DISCLOSE, this.focusing);
+      collapse.listen(ref.action.DisclosureEvent.DISCLOSE, this.focusing);
     } else {
-      this.addAscent(ref.core.DisclosureEmission.ADDED, this.getCollapse.bind(this));
+      this.addAscent(ref.action.DisclosureEmission.ADDED, this.getCollapse.bind(this));
     }
   }
 
@@ -38,7 +38,7 @@ class Breadcrumb extends ref.core.Instance {
     const links = this.links;
     if (!collapse || !links.length) return;
 
-    if (this.isBreakpoint(ref.core.Breakpoints.MD)) {
+    if (this.isBreakpoint(ref.api.Breakpoints.MD)) {
       if (collapse.buttonHasFocus) links[0].focus();
     } else {
       if (links.indexOf(document.activeElement) > -1) collapse.focus();
@@ -50,7 +50,7 @@ class Breadcrumb extends ref.core.Instance {
   }
 
   get collapse () {
-    return this.element.getDescendantInstances(ref.core.Collapse.instanceClassName, null, true)[0];
+    return this.element.getDescendantInstances(ref.action.Collapse.instanceClassName, null, true)[0];
   }
 
   focus () {

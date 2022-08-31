@@ -1,7 +1,7 @@
 import ref from '../../ref.js';
 import { HeaderSelector } from './header-selector.js';
 
-class HeaderLinks extends ref.core.Instance {
+class HeaderLinks extends ref.api.Instance {
   static get instanceClassName () {
     return 'HeaderLinks';
   }

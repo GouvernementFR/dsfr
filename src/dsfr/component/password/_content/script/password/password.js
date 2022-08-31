@@ -1,7 +1,7 @@
 import ref from '../../../ref.js';
 import { PasswordEmission } from './password-emission.js';
 
-class Password extends ref.core.Instance {
+class Password extends ref.api.Instance {
   static get instanceClassName () {
     return 'Password';
   }

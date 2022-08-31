@@ -5,9 +5,9 @@ import ref from '../../../ref.js';
   * TabButton étend de DisclosureButton qui ajoute/enelve l'attribut aria-selected,
   * Et change l'attributte tabindex a 0 si le boutton est actif (value=true), -1 s'il n'est pas actif (value=false)
  */
-class TabButton extends ref.core.DisclosureButton {
+class TabButton extends ref.action.DisclosureButton {
   constructor () {
-    super(ref.core.DisclosureType.SELECT);
+    super(ref.action.DisclosureType.SELECT);
   }
 
   static get instanceClassName () {

@@ -1,5 +1,5 @@
-import ns from '../../../../api/_content/script/api/utilities/namespace.js';
+import ref from '../../../ref.js';
 
 export const EquisizedEmission = {
-  CHANGE: ns('equisized', 'change')
+  CHANGE: ref.internals.ns('equisized', 'change')
 };

@@ -1,7 +1,7 @@
 import ref from '../../../ref.js';
 import { SidemenuSelector } from './sidemenu-selector.js';
 
-class SidemenuList extends ref.core.CollapsesGroup {
+class SidemenuList extends ref.action.CollapsesGroup {
   static get instanceClassName () {
     return 'SidemenuList';
   }
