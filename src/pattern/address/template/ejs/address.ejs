@@ -1,0 +1,68 @@
+<%#
+# paramètres address
+
+* address (object, required) : objet contenant les paramètres
+
+* address.id (string, required) : id du composant
+
+* address.legend (string, optionnal) : légende du composant
+
+* address.label (string, optionnal) : libellé du composant
+
+* address.placeholder (string, optionnal) : placeholder du composant
+
+* address.type (string) : type de champs utilisé chaque enfant du composant
+    ** radio : civilité bouton radio
+    ** select : civilité liste déroulante
+
+* address.items (array, required) : tableau de données de chaque enfant du composant
+
+* address.items[].value (string, required) : valeur du champ
+
+* address.hamlet : paramètre du champ 'lieu-dit'
+* address.hamlet.label : label du champ 'lieu-dit'
+* address.hamlet.name : attribut name du champ 'lieu-dit'
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const address = locals.address || {};
+const fieldset = {};
+const elements = [];
+if (address.items && address.items.length) {
+  address.items.forEach((item, index) => {
+    const type = item.type || 'input';
+    const path = type === 'input' ? 'input/input-base' : type;
+
+    elements.push({
+      path: `${path}/template/ejs/${item.template}`,
+      modifier: item.modifier || null,
+      inline: item.inline || null,
+      breakAfter: item.breakAfter || null,
+      data: {
+        [item.type]: {
+          id: `${address.id}-${item.name}`,
+          name: item.name,
+          label: item.label || '',
+          value: item.value || null,
+          hint: item.hint || null,
+          checked: item.checked || false,
+          size: item.size || null,
+          attributes: item.attributes || {},
+          kind: item.kind || null,
+          options: item.options || [],
+          placeholder: item.placeholder || null,
+        }
+      }
+    });
+
+  });
+}
+fieldset.elements = elements;
+fieldset.legend = address.legend || null;
+fieldset.id = address.id;
+// fieldset.attributes = { 'aria-label': address.label,}
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>

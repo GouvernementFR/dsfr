@@ -1,0 +1,24 @@
+title: Modèle de bloc d'adresse'
+description: La demande de civilité permet à un utilisateur de donner sa civilité (sexe, situation familière, titre d’appel).
+doc:
+
+label:
+  address: Adresse
+  complement: Complément d’adresse
+  optional: (optionnel)
+  hamlet: Lieu-dit, commune déléguée ou boîte postale
+  postal: Code postal
+  city: Ville ou commune
+  number: Numéro
+  street: Voie
+  building-name: Immeuble
+  building-number: Bâtiment
+  stare: Escalier
+  flat: Numéro d'appartement
+hint:
+  address: Numéro et voie
+  complement: Bâtiment, immeuble, escalier et numéro d’appartement
+sample:
+  national: Demande d’une adresse postale nationale
+  complement: Complément d'adresse
+  international: Demande d’une adresse postale internationale
