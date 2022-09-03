@@ -1,4 +1,4 @@
-const { KINDS, BASE_KIND } = require('./kinds');
+const { KINDS } = require('./kinds');
 const { ScriptItem } = require('./script-item');
 
 class ScriptProducer {

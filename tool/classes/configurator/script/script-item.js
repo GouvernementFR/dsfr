@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { FILENAMES } = require('./filenames');
+const { LEVELS } = require('./filenames');
 const { SITUATIONS } = require('./situations');
 const { createFile, deleteFile } = require('../../../utilities/file');
 const { SRC } = require('../src');
@@ -38,13 +38,14 @@ class ScriptItem {
 
   produce (dependency) {
     const from = `${SRC}${this.part.path}`;
-    for (const filename of FILENAMES) {
-      if (!filename.supports.includes(this.support)) continue;
+    for (const level of LEVELS) {
+      const filenames = level.filter(filename => filename.supports.includes(this.support));
+      if (filenames.length === 0) continue;
       for (const part of dependency.imports) {
         const collector = part.script.getCollector(this.kind);
         if (!collector || !collector.isSupporting(this.support)) continue;
         this._situations.push(...collector.situations.filter(situation => !this._situations.includes(situation)));
-        this.imports.push(...collector.getImports(from, filename));
+        filenames.forEach(filename => this.imports.push(...collector.getImports(from, filename)));
       }
     }
     this._filled = this.imports.length > 0;
