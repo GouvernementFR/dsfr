@@ -82,16 +82,16 @@
   @include icon-image(information-fill);
 }
 
-#{ns-group(form)} {
-  @include margin-bottom(8v);
-}
+// #{ns-group(form)} {
+//   @include margin-bottom(8v);
+// }
 
 /**
  * Style d'un ensemble de champs
  */
 #{ns(fieldset)} {
   @include relative;
-  @include margin(0);
+  @include margin(0 0 8v 0);
   @include padding(0);
   border: 0;
 
