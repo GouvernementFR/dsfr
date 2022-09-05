@@ -204,7 +204,7 @@
   &--postal {
     flex: 0 0 space(28v);
 
-    &:not(#{$control}--inline-grow) {
+    &:not(#{$control}--inline) {
       @include margin-right(calc(100% - 28v));
     }
   }
@@ -212,7 +212,7 @@
   &--number {
     flex: 0 0 space(18v);
 
-    &:not(#{$control}--inline-grow) {
+    &:not(#{$control}--inline) {
       @include margin-right(calc(100% - 18v));
     }
   }
