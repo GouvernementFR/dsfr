@@ -3,24 +3,23 @@
 /// @group form
 ////
 
+// [DEPRECATED]
 #{ns-group(select), ns-group(input)} {
   &:not(:last-child) {
     @include margin-bottom(6v);
   }
 
-  // #{ns(label)} {
-  //   #{ns(hint-text)} {
-  //     @include margin-top(1v);
-  //     @include margin-bottom(2v);
-  //   }
-  // }
+  #{ns(label)} {
+    #{ns(hint-text)} {
+      @include margin-top(1v);
+    }
+  }
 }
 
 #{ns(label)} {
   display: block;
   @include text-style(md);
 
-  // todo : a supprimer ?
   & + #{ns(input)},
   & + #{ns(input-wrap)},
   & + #{ns(select)} {
@@ -34,7 +33,6 @@
 #{ns(hint-text)} {
   display: block;
   @include text-style(xs);
-  // @include margin-y(0);
   @include set-text-margin(0 0 4v);
 }
 
@@ -75,10 +73,6 @@
   @include icon-image(information-fill);
 }
 
-// #{ns-group(form)} {
-//   @include margin-bottom(8v);
-// }
-
 /**
  * Style d'un ensemble de champs
  */
@@ -87,10 +81,6 @@
   @include margin(0 0 8v 0);
   @include padding(0);
   border: 0;
-
-  // #{ns(hint-text)} {
-  //   @include margin-bottom(4v);
-  // }
 
   &__legend {
     @include margin-bottom(4v);
@@ -196,6 +186,12 @@
   flex: 1 1 100%;
   @include margin-x(2v);
   @include margin-bottom(4v);
+
+  & > #{ns(label)} {
+    #{ns(hint-text)} {
+      @include margin-top(1v);
+    }
+  }
 
   &--inline {
     flex: 0 0 auto;
