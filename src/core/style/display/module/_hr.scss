@@ -15,4 +15,9 @@ hr {
     @include width(40v);
     @include margin-x(auto);
   }
+
+  &--break-line {
+    @include width(100%);
+    @include padding(0);
+  }
 }

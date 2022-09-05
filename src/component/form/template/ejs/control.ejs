@@ -1,0 +1,37 @@
+<%#
+# paramètres control
+
+* control.path (String, required): Chemin du template de l'élement de control
+
+* control.data (object, required): Paramètres de l'élément de control
+
+* control.inline (boolean, optional) : ajoute le modifier inline sur le control
+
+* control.inlineMin (boolean, optional) : ajoute le modifier inline-min sur le control
+
+* control.modifier (String, optional) : nom du modifieur de control, ex: 'postal' ou 'number'
+
+* control.breakAfter (boolean, optional) : ajoute un hr pour forcer le retour à la ligne
+
+* control.attributes (object, optional) : attributs spécifiques à rajouter sur le control
+
+* control.classes (array, optional) : classes spécifiques à rajouter sur le control
+
+%>
+<%
+  let control = locals.control || {};
+  let controlClasses = control.classes || [];
+  let controlAttrs = control.attributes || {};
+  controlClasses = [prefix + '-control'];
+  if (control.inline) controlClasses.push(prefix + '-control--inline');
+  if (control.inlineMin) controlClasses.push(prefix + '-control--inline-min');
+  if (control.modifier) controlClasses.push(prefix + '-control--' + control.modifier);
+%>
+
+<div <%- includeClasses(controlClasses); %> <%- includeAttrs(controlAttrs); %>>
+  <%- include('../../../' + control.path, control.data); %>
+</div>
+
+<% if (control.breakAfter) { %>
+  <hr class="<%= prefix %>-hr--break-line">
+<% } %>
