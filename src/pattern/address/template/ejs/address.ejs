@@ -39,6 +39,7 @@ if (address.items && address.items.length) {
       path: `${path}/template/ejs/${item.template}`,
       modifier: item.modifier || null,
       inline: item.inline || null,
+      grow: item.grow || null,
       breakAfter: item.breakAfter || null,
       data: {
         [item.type]: {
