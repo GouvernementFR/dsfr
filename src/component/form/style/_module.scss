@@ -8,12 +8,12 @@
     @include margin-bottom(6v);
   }
 
-  #{ns(label)} {
-    #{ns(hint-text)} {
-      @include margin-top(1v);
-      @include margin-bottom(2v);
-    }
-  }
+  // #{ns(label)} {
+  //   #{ns(hint-text)} {
+  //     @include margin-top(1v);
+  //     @include margin-bottom(2v);
+  //   }
+  // }
 }
 
 #{ns(label)} {
@@ -36,13 +36,6 @@
   @include text-style(xs);
   // @include margin-y(0);
   @include set-text-margin(0 0 4v);
-
-  // TODO a supprimer ?
-  & + #{ns(input)},
-  & + #{ns(input-wrap)},
-  & + #{ns(select)} {
-    @include margin-top(2v);
-  }
 }
 
 /**
@@ -175,7 +168,7 @@
   &--error {
     #{ns(fieldset__content)} {
       @include before('') {
-        @include absolute(0, null, 4v, -2.5v, 2px);
+        @include absolute(0, null, 4v, -2v, 2px);
       }
     }
   }
@@ -186,7 +179,7 @@
   &--valid {
     #{ns(fieldset__content)} {
       @include before('') {
-        @include absolute(0, null, 4v, -2.5v, 2px);
+        @include absolute(0, null, 4v, -2v, 2px);
       }
     }
   }
@@ -205,17 +198,17 @@
   @include margin-bottom(4v);
 
   &--inline {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
 
-    &-min {
-      flex: 0 0 auto;
+    &-grow {
+      flex-grow: 1;
     }
   }
 
   &--postal {
     flex: 0 0 space(28v);
 
-    &:not(#{$control}--inline) {
+    &:not(#{$control}--inline-grow) {
       @include margin-right(calc(100% - 28v));
     }
   }
@@ -223,7 +216,7 @@
   &--number {
     flex: 0 0 space(18v);
 
-    &:not(#{$control}--inline) {
+    &:not(#{$control}--inline-grow) {
       @include margin-right(calc(100% - 18v));
     }
   }
