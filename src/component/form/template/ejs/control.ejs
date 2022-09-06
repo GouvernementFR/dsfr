@@ -22,7 +22,7 @@
   let control = locals.control || {};
   let controlClasses = control.classes || [];
   let controlAttrs = control.attributes || {};
-  controlClasses = [prefix + '-control'];
+  controlClasses.push(prefix + '-control');
   if (control.inline) controlClasses.push(prefix + '-control--inline');
   if (control.grow) controlClasses.push(prefix + '-control--inline-grow');
   if (control.modifier) controlClasses.push(prefix + '-control--' + control.modifier);
