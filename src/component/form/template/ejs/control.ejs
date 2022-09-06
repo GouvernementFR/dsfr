@@ -22,15 +22,16 @@
   let control = locals.control || {};
   let controlClasses = control.classes || [];
   let controlAttrs = control.attributes || {};
+  let controlTag = control.tag || 'div';
   controlClasses.push(prefix + '-control');
   if (control.inline) controlClasses.push(prefix + '-control--inline');
   if (control.grow) controlClasses.push(prefix + '-control--inline-grow');
   if (control.modifier) controlClasses.push(prefix + '-control--' + control.modifier);
 %>
 
-<div <%- includeClasses(controlClasses); %> <%- includeAttrs(controlAttrs); %>>
+<<%= controlTag %> <%- includeClasses(controlClasses); %> <%- includeAttrs(controlAttrs); %>>
   <%- include('../../../' + control.path, control.data); %>
-</div>
+</<%= controlTag %>>
 
 <% if (control.breakAfter) { %>
   <hr class="<%= prefix %>-hr--break-line">
