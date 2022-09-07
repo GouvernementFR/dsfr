@@ -1,0 +1,25 @@
+@use '../function/space';
+@use '../../specificity';
+
+@mixin space($property: null, $value: null, $direction: null, $important: false) {
+  $v: specificity.important(space.space($value), $important);
+
+  @if $property != null and $value != null {
+    @if $direction != null {
+      @if $direction == 'x' {
+        #{$property}-left: #{$v};
+        #{$property}-right: #{$v};
+      }
+      @else if $direction == 'y' {
+        #{$property}-top: #{$v};
+        #{$property}-bottom: #{$v};
+      }
+      @else {
+        #{$property}-#{$direction}: #{$v};
+      }
+    }
+    @else {
+      #{$property}: #{$v};
+    }
+  }
+}

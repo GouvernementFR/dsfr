@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../../function/colors';
+@use '../function/parameter';
+
+@mixin decide($token, $type: null) {
+  $parameters: parameter.type($type);
+  $var: colors.from($token, decision, $parameters);
+  #{$var}: colors.from($token, set, map.merge($parameters, (var: true)));
+}

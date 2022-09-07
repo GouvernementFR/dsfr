@@ -1,0 +1,5 @@
+@use '../function/z-index';
+
+@mixin z-index($id) {
+  z-index: z-index.z-index($id);
+}

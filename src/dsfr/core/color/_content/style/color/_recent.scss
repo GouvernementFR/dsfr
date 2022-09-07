@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '../../../../../../sass/color/define';
+
+@mixin set($filter, $theme: light) {
+  $sets: define.sets($filter);
+  @each $set in $sets {
+    @include define.set(map.get($set, token), $theme);
+    @if map.get($set, hover) {
+      @include define.set(map.get($set, token), $theme, hover);
+      @include define.set(map.get($set, token), $theme, active);
+    }
+  }
+}
+
+@mixin decide($filter) {
+  $decisions: define.decisions($filter);
+  @each $decision in $decisions {
+    @include define.decide(map.get($decision, token));
+    @if map.get($decision, hover) {
+      @include define.decide(map.get($decision, token), hover);
+      @include define.decide(map.get($decision, token), active);
+    }
+  }
+}

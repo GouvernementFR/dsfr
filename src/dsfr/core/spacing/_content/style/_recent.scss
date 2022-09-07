@@ -1,5 +1,7 @@
-@use '../../../../../sass/elevation';
+@use 'elevation/recent' as elevation;
+
+$options: () !default;
 
 @mixin first() {
-  @include elevation.define;
+  @include elevation.define();
 }

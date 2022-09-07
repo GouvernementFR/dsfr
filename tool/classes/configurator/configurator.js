@@ -10,9 +10,14 @@ class Configurator {
   build () {
     this.root = new Part('');
     this.flat = this.root.flat;
+    this.begin();
     this.analyse();
     this.order();
     this.generate();
+  }
+
+  begin () {
+    this.root.begin();
   }
 
   analyse () {

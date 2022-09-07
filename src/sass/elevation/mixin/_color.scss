@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../../selector';
+@use '../property/colors';
+
+@mixin color($theme: light) {
+  --shadow-color: #{map.get(colors.$values, $theme)};
+}

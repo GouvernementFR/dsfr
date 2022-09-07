@@ -3,9 +3,9 @@ const { createFile } = require('../../../utilities/file');
 const { SRC } = require('../src');
 
 class StyleOptions {
-  constructor (part) {
+  constructor (part, config) {
     this.part = part;
-    this.init();
+    this._config = config;
   }
 
   get has () {
@@ -27,8 +27,9 @@ class StyleOptions {
     return contents;
   }
 
-  init () {
-    const file = `${SRC}${this.part.path}_content/style/_options.scss`;
+  begin () {
+    const path = this._config ? this.part.getPart(this._config).path : this.part.path;
+    const file = `${SRC}${path}_content/style/_options.scss`;
     this._has = fs.existsSync(file);
 
     if (!this._has) return;

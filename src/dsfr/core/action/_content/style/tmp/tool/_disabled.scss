@@ -9,7 +9,7 @@
     $disabled: map-get($setting, disabled);
     $selector: map-get($setting, selector);
     @if $disabled {
-      $selectors: append($selectors, nest($selector, map-get($disabled, selector)), 'comma');
+      $selectors: append($selectors, intertwine($selector, map-get($disabled, selector)), 'comma');
     }
   }
 

@@ -9,7 +9,7 @@
     $focus: map-get($setting, focus);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, map-get($focus, selector)), 'comma');
+      $selectors: append($selectors, intertwine($selector, map-get($focus, selector)), 'comma');
     }
   }
 
@@ -24,7 +24,7 @@
     $focus: map-get($setting, focus);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+      $selectors: append($selectors, intertwine($selector, '&:focus', map-get($focus, selector)), 'comma');
     }
   }
 
@@ -39,7 +39,7 @@
     $focus: map-get($setting, focus);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
+      $selectors: append($selectors, intertwine($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
     }
   }
 
@@ -55,7 +55,7 @@
     $focus: map-get($setting, focus);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
+      $selectors: append($selectors, intertwine($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
     }
   }
 

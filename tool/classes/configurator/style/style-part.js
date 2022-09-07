@@ -51,8 +51,12 @@ class StylePart {
     if (this.has) {
       this._dependency = new StyleDependency(this.part, this._config.dependencies);
       this._producer = new StyleProducer(this.part);
-      this._options = new StyleOptions(this.part);
+      this._options = new StyleOptions(this.part, this._config.options);
     }
+  }
+
+  begin () {
+    if (this.has) this._options.begin();
   }
 
   analyse () {

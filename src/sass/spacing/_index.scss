@@ -1,4 +1,9 @@
 @forward 'property/units';
 @forward 'function/space';
 @forward 'function/unit';
+@forward 'mixin/margin';
+@forward 'mixin/padding';
 @forward 'mixin/size';
+@forward 'mixin/position';
+@forward 'mixin/z-index';
+@forward 'mixin/utility';

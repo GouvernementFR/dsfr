@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+$values: (
+  32x9: math.div(32, 9),
+  16x9: math.div(16, 9),
+  3x2: 1.5,
+  4x3: math.div(4, 3),
+  1x1: 1,
+  3x4: 0.75,
+  2x3: math.div(2, 3)
+);

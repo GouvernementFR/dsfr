@@ -1,0 +1,12 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../../../specificity';
+@use '../../../selector';
+@use '../../property/aspect-ratio';
+
+@mixin aspect-ratio($ratio: 16x9, $important: false) {
+  @include selector.before('', block) {
+    $pb: specificity.important(math.div(100%, map.get(aspect-ratio.$ratios, $ratio)), $important);
+    padding-bottom: $pb;
+  }
+}

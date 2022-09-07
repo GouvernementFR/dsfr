@@ -1,64 +1,40 @@
-@use '../function/space';
+@use 'space';
 
-@mixin width($width:null) {
-  @if $width != null {
-    width: #{space.space($width)};
-  }
+@mixin width($width: null, $important: false) {
+  @include space.space(width, $width, null, $important);
 }
 
-@mixin min-width($width:null) {
-  @if $width != null {
-    min-width: #{space.space($width)};
-  }
+@mixin min-width($width: null, $important: false) {
+  @include space.space(min-width, $width, null, $important);
 }
 
-@mixin max-width($width:null) {
-  @if $width != null {
-    max-width: #{space.space($width)};
-  }
+@mixin max-width($width: null, $important: false) {
+  @include space.space(max-width, $width, null, $important);
 }
 
-@mixin height($height:null) {
-  @if $height != null {
-    height: #{space.space($height)};
-  }
+@mixin height($height: null, $important: false) {
+  @include space.space(height, $height, null, $important);
 }
 
-@mixin min-height($height:null) {
-  @if $height != null {
-    min-height: #{space.space($height)};
-  }
+@mixin min-height($height: null, $important: false) {
+  @include space.space(min-height, $height, null, $important);
 }
 
-@mixin max-height($height:null) {
-  @if $height != null {
-    max-height: #{space.space($height)};
-  }
+@mixin max-height($height: null, $important: false) {
+  @include space.space(max-height, $height, null, $important);
 }
 
-@mixin size($width:null, $height:null) {
-  @if $width != null {
-    width: #{space.space($width)};
-  }
-  @if $height != null {
-    height: #{space.space($height)};
-  }
+@mixin size($width: null, $height: null, $important: false) {
+  @include space.space(width, $width, null, $important);
+  @include space.space(height, $height, null, $important);
 }
 
-@mixin min-size($min-width:null, $min-height:null) {
-  @if $min-width != null {
-    min-width: #{space.space($min-width)};
-  }
-  @if $min-height != null {
-    min-height: #{space.space($min-height)};
-  }
+@mixin min-size($width: null, $height: null, $important: false) {
+  @include space.space(min-width, $width, null, $important);
+  @include space.space(min-height, $height, null, $important);
 }
 
-@mixin max-size($max-width:null, $max-height:null) {
-  @if $max-width != null {
-    max-width: #{space.space($max-width)};
-  }
-  @if $max-height != null {
-    max-height: #{space.space($max-height)};
-  }
+@mixin max-size($width: null, $height: null, $important: false) {
+  @include space.space(max-width, $width, null, $important);
+  @include space.space(max-height, $height, null, $important);
 }

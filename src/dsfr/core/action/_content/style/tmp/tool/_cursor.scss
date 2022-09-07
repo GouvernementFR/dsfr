@@ -11,7 +11,7 @@
     @if $cursor {
       $kind: map-get($cursor, $type);
       @if $kind {
-        $selectors: append($selectors, nest($selector, map-get($kind, selector)), 'comma');
+        $selectors: append($selectors, intertwine($selector, map-get($kind, selector)), 'comma');
       }
     }
   }

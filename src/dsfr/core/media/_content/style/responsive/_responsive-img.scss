@@ -1,0 +1,8 @@
+@use '../../../../../../sass/media';
+@use '../../../../../../sass/selector';
+
+@mixin responsive-img() {
+  #{selector.ns(responsive-img)} {
+    @include media.responsive-img;
+  }
+}

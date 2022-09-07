@@ -1,9 +1,15 @@
-@use '../../../../../sass/color';
+@use 'sass:map';
+@use '../../../../../sass/selector';
+@use 'elevation/recent' as elevation;
+@use 'color/recent' as color;
 
 $options: () !default;
 
 @mixin first() {
-  :root {
-    @include color.define(light, $options);
+  $families: map.get($options, families);
+  @include selector.theme {
+    @include color.set($families);
+    @include color.decide($families);
+    @include elevation.define;
   }
 }

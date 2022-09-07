@@ -3,12 +3,13 @@
 @use '../../utilities';
 
 @mixin theme($theme: null) {
-  @if $theme != 'dark' {
-    $theme: null;
+  $root: ':root';
+  @if $theme != null {
+    $root: ':root#{namespace.ns-attr(theme, $theme)}';
   }
   $selector: &;
   @at-root {
-    :root:where(#{namespace.ns-attr(theme, $theme)}) {
+    #{$root} {
       @include utilities.nest($selector) {
         @content;
       }

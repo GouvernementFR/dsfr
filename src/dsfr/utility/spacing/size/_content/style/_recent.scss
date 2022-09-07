@@ -1,0 +1,40 @@
+@use 'sass:map';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/utilities';
+
+$options: () !default;
+
+@mixin size($size, $breakpoint: null) {
+  @include utilities.option($options, $size, $breakpoint) {
+    @include spacing.utilities($size, map.get($options, $size), $breakpoint, true);
+  }
+}
+
+@mixin sizes($breakpoint: null) {
+  @include size(width, $breakpoint);
+  @include size(min-width, $breakpoint);
+  @include size(max-width, $breakpoint);
+  @include size(height, $breakpoint);
+  @include size(min-height, $breakpoint);
+  @include size(max-height, $breakpoint);
+}
+
+@mixin first() {
+  @include sizes();
+}
+
+@mixin sm() {
+  @include sizes(sm);
+}
+
+@mixin md() {
+  @include sizes(md);
+}
+
+@mixin lg() {
+  @include sizes(lg);
+}
+
+@mixin xl() {
+  @include sizes(xl);
+}

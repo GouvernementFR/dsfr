@@ -14,7 +14,7 @@
       @if $type == map-get($hover, type) or $type == all {
         $nested: $selector;
         @if $check-disabled {
-          $nested: nest($selector, map-get($hover, selector));
+          $nested: intertwine($selector, map-get($hover, selector));
         }
         $associated: $nested;
         @if & != null and '#{&}' != ':root' {

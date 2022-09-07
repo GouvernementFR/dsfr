@@ -1,0 +1,44 @@
+@use 'space';
+@use 'size';
+
+@mixin top($value, $important: false) {
+  @include space.space(top, $value, null, $important);
+}
+
+@mixin right($value, $important: false) {
+  @include space.space(right, $value, null, $important);
+}
+
+@mixin bottom($value, $important: false) {
+  @include space.space(bottom, $value, null, $important);
+}
+
+@mixin left($value, $important: false) {
+  @include space.space(left, $value, null, $important);
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  position: #{$position};
+  @include top($top);
+  @include right($right);
+  @include bottom($bottom);
+  @include left($left);
+  @include size.size($width, $height);
+  @content;
+}
+
+@mixin relative($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(relative, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(absolute, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin fixed($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(fixed, $top, $right, $bottom, $left, $width, $height);
+}
+
+@mixin sticky($top: null, $right: null, $bottom: null, $left: null, $width: null, $height: null) {
+  @include position(sticky, $top, $right, $bottom, $left, $width, $height);
+}

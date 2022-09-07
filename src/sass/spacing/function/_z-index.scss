@@ -1,0 +1,5 @@
+@use '../property/z-index';
+
+@function z-index($id) {
+  @return map-get(z-index.$values, $id);
+}

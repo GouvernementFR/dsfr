@@ -1,0 +1,11 @@
+@function type($type: null) {
+  @if $type == null {
+    @return ();
+  }
+  @if $type == hover {
+    @return (hover: true);
+  }
+  @if $type == active {
+    @return (active: true);
+  }
+}

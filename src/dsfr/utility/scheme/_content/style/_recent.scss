@@ -1,21 +1,14 @@
-////
-/// Scheme Module
-/// @group scheme
-////
+@use 'sass:map';
+@use '../../../../../sass/selector';
+@use '../../../../core/color/_content/style/elevation/recent' as elevation;
+@use '../../../../core/color/_content/style/color/recent' as color;
 
 $options: () !default;
 
-@use '../../../../../sass/color';
-@use '../../../../../sass/selector';
-@use '../../../../../sass/media-query';
-
-@mixin first () {
+@mixin first() {
+  $families: map.get($options, families);
   @include selector.theme(dark) {
-    @include color.define(dark, $options);
-  }
-  @include media-query.hover {
-    @include selector.theme(dark) {
-      --brighten: 1;
-    }
+    @include color.set($families, dark);
+    @include elevation.define(dark);
   }
 }

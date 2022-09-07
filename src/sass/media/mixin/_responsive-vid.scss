@@ -1,0 +1,9 @@
+@use '../../spacing';
+@use 'aspect-ratio';
+
+@mixin responsive-vid() {
+  @include spacing.relative;
+  @include spacing.size(100%);
+  @include aspect-ratio.aspect-ratio();
+  display: block;
+}

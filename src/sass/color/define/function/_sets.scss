@@ -1,0 +1,21 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'decisions';
+@use '../../function/colors';
+
+@function sets($filter) {
+  $sets: ();
+  $decisions: decisions.decisions(filter);
+  @each $decision in $decisions {
+    $token: map.get($decision, token);
+    $hover: map.get($decision, hover);
+    $var: colors.from($token, set);
+    $item: map.get($sets, $var);
+    @if $item {
+      $hover: $hover or map.get($item, hover);
+    }
+    $set: (token: $token, hover: $hover);
+    $sets: map.set($sets, $var, $set);
+  }
+  @return map.values($sets);
+}

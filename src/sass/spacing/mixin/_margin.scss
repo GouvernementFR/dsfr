@@ -1,0 +1,29 @@
+@use 'space';
+
+@mixin margin($values: 0 0 0 0, $important: false) {
+  @include space.space(margin, $values, null, $important);
+}
+
+@mixin margin-x($value: 0, $important: false) {
+  @include space.space(margin, $value, x, $important);
+}
+
+@mixin margin-y($value: 0, $important: false) {
+  @include space.space(margin, $value, y, $important);
+}
+
+@mixin margin-top($value: 0, $important: false) {
+  @include space.space(margin, $value, top, $important);
+}
+
+@mixin margin-right($value: 0, $important: false) {
+  @include space.space(margin, $value, right, $important);
+}
+
+@mixin margin-bottom($value: 0, $important: false) {
+  @include space.space(margin, $value, bottom, $important);
+}
+
+@mixin margin-left($value: 0, $important: false) {
+  @include space.space(margin, $value, left, $important);
+}
