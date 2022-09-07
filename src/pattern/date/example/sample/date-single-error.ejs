@@ -3,6 +3,7 @@ const date = {
   id: uniqueId('date-default'),
   legend: getText('legend.birthdate', 'date'),
   hint: getText('hint.birthdate', 'date'),
+  error: [{label: getText('error.day', 'date')}, {label: getText('error.month', 'date')}, {label: getText('error.year', 'date')}],
   items:[
     {
       type: 'input',

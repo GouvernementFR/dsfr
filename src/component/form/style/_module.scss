@@ -4,7 +4,8 @@
 ////
 
 // [DEPRECATED]
-#{ns-group(select), ns-group(input)} {
+#{ns-group(select),
+ns-group(input)} {
   &:not(:last-child) {
     @include margin-bottom(6v);
   }
@@ -32,8 +33,21 @@
  */
 #{ns(hint-text)} {
   display: block;
+  @include margin-bottom(0);
   @include text-style(xs);
   @include set-text-margin(0 0 4v);
+
+  #{ns(error-text)},
+  #{ns(valid-text)},
+  #{ns(info-text)} {
+    @include margin-top(1v);
+    @include before(','); // Ajoute une pause aux lecteurs d'écran
+
+    &:first-child {
+      @include margin-top(4v);
+      @include before(''); // Retire la pause aux lecteurs d'écran pour le premier element
+    }
+  }
 }
 
 /**
@@ -129,7 +143,7 @@
       display: inline-flex;
 
       &:not(:last-child) {
-        input[type="radio"] + label {
+        input[type='radio'] + label {
           @include margin-right(7v);
         }
       }
@@ -137,7 +151,7 @@
       &:first-child {
         @include margin-top(0);
 
-        input[type="radio"] + label {
+        input[type='radio'] + label {
           @include margin-top(0);
         }
       }
@@ -145,7 +159,7 @@
       &:last-child {
         @include margin-bottom(0);
 
-        input[type="radio"] + label {
+        input[type='radio'] + label {
           @include margin-bottom(0);
         }
       }
@@ -201,6 +215,7 @@
     }
   }
 
+  &--year,
   &--postal {
     flex: 0 0 space(28v);
 

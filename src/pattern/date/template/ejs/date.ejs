@@ -31,41 +31,38 @@ const fieldset = {};
 const elements = [];
 if (date.items && date.items.length) {
   date.items.forEach((item, index) => {
-        elements.push({
-            path: 'form/template/ejs/fieldset',
-            data: {
-                fieldset: {
-                    disabled: item.disabled || undefined,
-                    attributes: {
-                        'aria-label': item.label,
-                    },
-                    elements: [{
-                        path: `${item.type}/${item.subtype}/template/ejs/${item.template}`,
-                        data: {
-                            [item.type]: {
-                                id: `${date.id}-${index}`,
-                                name: date.id,
-                                label: item.label || '',
-                                value: item.value || '',
-                                hint: item.hint || '',
-                                checked: item.checked || false,
-                                size: item.size || '',
-                                attributes: item.attributes || {},
-                                kind: item.kind || '',
-                                options: item.options || [],
-                                placeholder: item.placeholder || '',
-                            }
-                        }
-                    }]
-                }
-            }
-        });
-    });
+    const type = item.type || 'input';
+    const template = item.template || 'input';
+    const path = type === 'input' ? 'input/input-base' : type;
+    
+    elements.push({
+      path: `${path}/template/ejs/${template}`,
+      modifier: item.modifier || null,
+      inline: item.inline || null,
+      grow: item.grow || null,
+      breakAfter: item.breakAfter || null,
+      data: {
+        [item.type]: {
+          id: `${date.id}-${index}`,
+          name: date.id,
+          label: item.label || '',
+          value: item.value || '',
+          hint: item.hint || null,
+          size: item.size || '',
+          attributes: item.attributes || {},
+          kind: item.kind || '',
+          options: item.options || [],
+          placeholder: item.placeholder || '',
+        }
+      }
+    }); 
+  });
 }
 fieldset.elements = elements;
 fieldset.legend = date.legend;
-fieldset.id = date.id;
 fieldset.hint = date.hint;
+fieldset.error = date.error;
+fieldset.id = date.id;
 fieldset.attributes = { 'aria-label': date.label,}
 %>
 
