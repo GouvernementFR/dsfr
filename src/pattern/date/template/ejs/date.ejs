@@ -9,18 +9,22 @@
 
 * date.hint (string, optionnal) : légende du composant
 
-* date.label (string, optionnal) : libellé du composant
-
-* date.placeholder (string, optionnal) : placeholder du composant
-
-* date.type (string) : type de champs utilisé chaque enfant du composant
-    ** input : date champs de saisie
+* date.error (string || array, optionnal) : libellé ou tableau de données des libellés erreur du composant
 
 * date.items (array, required) : tableau de données de chaque enfant du composant
 
-* date.items[].value (string, required) : valeur du champ
+* date.items[].type (string) : type de champs utilisé
+    ** input : date champs de saisie
+  
+* date.items[].hint (string, required) : légende du champ
 
 * date.items[].label (string, required) : libellé du champ
+
+* date.items[].inline (boolean, optional) : ajoute le modifier inline sur le composant control
+
+* date.items[].grow (boolean, optional) : ajoute le modifier inline-grow sur le composant control
+
+* date.items[].modifier (string, optional) : nom du modifieur de control, ex: 'year' ou 'number'
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -63,7 +67,6 @@ fieldset.legend = date.legend;
 fieldset.hint = date.hint;
 fieldset.error = date.error;
 fieldset.id = date.id;
-fieldset.attributes = { 'aria-label': date.label,}
 %>
 
 <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
