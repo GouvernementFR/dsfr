@@ -27,7 +27,8 @@
   if (control.inline) controlClasses.push(prefix + '-control--inline');
   if (control.grow) controlClasses.push(prefix + '-control--inline-grow');
   if (control.modifier) controlClasses.push(prefix + '-control--' + control.modifier);
-%>
+  if (control.disabled) controlClasses.push(prefix + '-control--disabled');
+  %>
 
 <<%= controlTag %> <%- includeClasses(controlClasses); %> <%- includeAttrs(controlAttrs); %>>
   <%- include('../../../' + control.path, control.data); %>

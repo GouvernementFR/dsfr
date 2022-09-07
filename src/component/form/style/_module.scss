@@ -3,19 +3,6 @@
 /// @group form
 ////
 
-// [DEPRECATED]
-#{ns-group(select), ns-group(input)} {
-  &:not(:last-child) {
-    @include margin-bottom(6v);
-  }
-
-  #{ns(label)} {
-    #{ns(hint-text)} {
-      @include margin-top(1v);
-    }
-  }
-}
-
 #{ns(label)} {
   display: block;
   @include text-style(md);
@@ -100,59 +87,6 @@
   }
 
   /**
-   * Modificateur pour afficher les éléments en inline [DEPRECATED]
-   */
-  &--inline {
-    #{ns(fieldset__content)} {
-      @include display-flex(null, baseline, flex-start, wrap);
-      @include margin(-3v 0);
-    }
-
-    #{ns-group(checkbox)} {
-      display: inline-flex;
-      @include margin-bottom(0);
-
-      &:first-child {
-        @include margin-top(0);
-      }
-
-      &:not(:last-child) {
-        @include margin-right(5v);
-      }
-
-      &:last-child {
-        @include margin-bottom(0);
-      }
-    }
-
-    #{ns-group(radio)} {
-      display: inline-flex;
-
-      &:not(:last-child) {
-        input[type="radio"] + label {
-          @include margin-right(7v);
-        }
-      }
-
-      &:first-child {
-        @include margin-top(0);
-
-        input[type="radio"] + label {
-          @include margin-top(0);
-        }
-      }
-
-      &:last-child {
-        @include margin-bottom(0);
-
-        input[type="radio"] + label {
-          @include margin-bottom(0);
-        }
-      }
-    }
-  }
-
-  /**
    * Modificateur pour gérer l'état d'erreur
    */
   &--error {
@@ -191,6 +125,10 @@
     #{ns(hint-text)} {
       @include margin-top(1v);
     }
+  }
+
+  #{ns(fieldset)} {
+    @include margin-bottom(0);
   }
 
   &--inline {

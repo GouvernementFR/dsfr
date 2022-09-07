@@ -7,44 +7,6 @@
 @use 'module/disabled';
 
 @mixin _form-scheme($legacy: false) {
-  #{ns-group(select), ns-group(input)} {
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
-    */
-    &--valid {
-      label {
-        @include color.text(default success, (legacy:$legacy));
-      }
-    }
-
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
-    */
-    &--error {
-      label {
-        @include color.text(default error, (legacy:$legacy));
-      }
-    }
-
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état informatif aux labels
-    */
-    &--info {
-      label {
-        @include color.text(default info, (legacy:$legacy));
-      }
-    }
-
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
-    */
-    &--disabled {
-      label {
-        @include disabled.colors((legacy: $legacy, text: true));
-      }
-    }
-  }
-
   #{ns(label)} {
     @include color.text(label grey, (legacy:$legacy));
 
