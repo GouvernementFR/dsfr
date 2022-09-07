@@ -2,6 +2,7 @@
 let society = locals.society || {};
 const data = {
   id: uniqueId('siret'),
+  label: getText('fieldset.siret', 'society'),
   items: [
     {
       type: 'input',
@@ -25,4 +26,4 @@ const data = {
 }
 %>
 
-<%- include('../../template/ejs/siret', {society: data}); %>
+<%- include('../../template/ejs/society', {society: data}); %>

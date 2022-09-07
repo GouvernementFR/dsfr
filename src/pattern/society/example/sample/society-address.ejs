@@ -1,8 +1,17 @@
 <%
-let address = locals.address || {};
+let society = locals.society || {};
+const countries = JSON.parse(include('../../../address/example/sample/data/country.ejs'));
+
 const data = {
-  id: uniqueId('address'),
+  id: uniqueId('society-address'),
+  label: getText('fieldset.address', 'society'),
   items: [
+    {
+      type: 'input',
+      label: getText('label.denomination', 'society'),
+      name: 'denomination',
+      template: 'input',
+    },
     {
       type: 'input',
       label: getText('label.address', 'address'),
@@ -37,9 +46,28 @@ const data = {
       label: getText('label.city', 'address'),
       name: 'city',
       template: 'input',
-    }
+    },
+    {
+      type: 'input',
+      inline: true,
+      grow: true,
+      modifier: 'postal',
+      label: getText('label.cedex', 'address'),
+      name: 'cedex',
+      disabled: true,
+      template: 'input',
+    },
+    {
+      type: 'select',
+      template: 'select-group',
+      disabled: true,
+      name: 'country',
+      label: getText('label.country', 'society'),
+      placeholder: getText('option.placeholder', 'select'),
+      options: countries.min
+    },
   ]
 }
 %>
 
-<%- include('../../template/ejs/address', {address: data}); %>
+<%- include('../../template/ejs/society', {society: data}); %>
