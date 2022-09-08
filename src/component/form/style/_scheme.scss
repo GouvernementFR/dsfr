@@ -122,4 +122,15 @@
       }
     }
   }
+
+  /**
+  * Style d'un élément de control
+  **/
+  #{ns(control)} {
+    &--disabled {
+      #{ns(label)} {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
+  }
 }
