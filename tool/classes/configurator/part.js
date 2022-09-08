@@ -133,11 +133,6 @@ class Part {
     if (child.has) this._children.push(child);
   }
 
-  begin () {
-    this._children.forEach(child => child.begin());
-    this.style.begin();
-  }
-
   analyse () {
     this._children.forEach(child => child.analyse());
 

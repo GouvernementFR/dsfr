@@ -1,3 +1,4 @@
 id: scheme
 style:
-  options: color
+  options:
+    id: color

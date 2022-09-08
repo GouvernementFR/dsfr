@@ -1,6 +1,6 @@
-@use '../../mixin/pseudo';
-@use '../../../spacing';
-@use '../../../mask';
+@use '../mixin/pseudo';
+@use '../../spacing';
+@use '../../mask';
 
 @mixin style($restrain: null) {
   @include pseudo.pseudo($restrain) {

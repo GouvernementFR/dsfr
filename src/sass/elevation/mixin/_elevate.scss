@@ -13,6 +13,6 @@
   @include background.background($layer, $options);
 
   @if not $legacy {
-    @include shadow.shadow($layer);
+    @include shadow.shade($layer);
   }
 }

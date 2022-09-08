@@ -4,6 +4,7 @@
 ////
 
 @use '../../../../../sass/icon';
+@use 'modifiers/sizes';
 
 $options: () !default;
 
@@ -12,5 +13,5 @@ $options: () !default;
     @include icon.legacy-icon(null, md, before);
   }
 
-  @include icon.modify(recommended, true);
+  @include sizes.modify(recommended, true);
 }

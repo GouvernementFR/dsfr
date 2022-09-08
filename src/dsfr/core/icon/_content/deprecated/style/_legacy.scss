@@ -3,10 +3,10 @@
 /// @group core
 ////
 
-@use '../../../../../../sass/icon';
+@use '../../style/modifiers/sizes';
 
 $options: () !default;
 
 @mixin first () {
-  @include icon.modify(deprecated, true);
+  @include sizes.modify(deprecated, true);
 }

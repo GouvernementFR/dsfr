@@ -43,6 +43,10 @@ class StylePart {
     return this._collector;
   }
 
+  gather (data = []) {
+    if (this._options) this._options.gather(data);
+  }
+
   init () {
     this._carries = this.part.children.some(child => child.style.has);
     this._collector = new StyleCollector(this.part);
@@ -55,14 +59,11 @@ class StylePart {
     }
   }
 
-  begin () {
-    if (this.has) this._options.begin();
-  }
-
   analyse () {
     if (!this.has) return;
     this._producer.analyse();
     this._dependency.analyse();
+    this._options.analyse();
   }
 
   hinge () {

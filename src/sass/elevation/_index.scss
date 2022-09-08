@@ -1,3 +1,6 @@
+@use 'property/shadows';
+$shadows: shadows.$values;
+
 @forward 'mixin/elevate';
 @forward 'mixin/ground';
 @forward 'mixin/color';

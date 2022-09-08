@@ -71,6 +71,7 @@
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.49.8",
+    "sass-export": "^2.1.2",
     "sass-true": "^6.0.1",
     "sassdoc": "^2.7.3",
     "standard": "^16.0.4",

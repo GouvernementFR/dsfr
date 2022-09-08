@@ -2,5 +2,5 @@
 @use '../../spacing';
 
 @function size($size: md) {
-  @return spacing.space(map-get(sizes.$sizes, $size));
+  @return spacing.space(map-get(sizes.$values, $size));
 }

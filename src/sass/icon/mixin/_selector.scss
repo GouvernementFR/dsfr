@@ -5,7 +5,7 @@
 
 @mixin selector($situations: recommended deprecated) {
   $start: ();
-  @each $situation, $block in situations.$situations {
+  @each $situation, $block in situations.$values {
     @if list.index($situations, $situation) != null {
       $list: selector.start-with(selector.ns($block, ''));
       @each $item in $list {

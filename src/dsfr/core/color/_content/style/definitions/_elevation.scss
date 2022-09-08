@@ -1,5 +1,5 @@
 @use '../../../../../../sass/elevation';
 
-@mixin define($theme: null) {
+@mixin color($theme: null) {
   @include elevation.color($theme);
 }

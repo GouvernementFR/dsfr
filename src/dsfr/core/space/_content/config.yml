@@ -1,0 +1,4 @@
+id: space
+style:
+  dependencies:
+    - api

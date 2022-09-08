@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../../../../../sass/selector';
-@use '../../../../core/color/_content/style/elevation/recent' as elevation;
-@use '../../../../core/color/_content/style/color/recent' as color;
+@use '../../../../core/color/_content/style/definitions/elevation';
+@use '../../../../core/color/_content/style/definitions/color';
 
 $options: () !default;
 
@@ -9,6 +9,6 @@ $options: () !default;
   $families: map.get($options, families);
   @include selector.theme(dark) {
     @include color.set($families, dark);
-    @include elevation.define(dark);
+    @include elevation.color(dark);
   }
 }

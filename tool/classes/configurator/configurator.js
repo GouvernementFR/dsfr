@@ -10,14 +10,9 @@ class Configurator {
   build () {
     this.root = new Part('');
     this.flat = this.root.flat;
-    this.begin();
     this.analyse();
     this.order();
     this.generate();
-  }
-
-  begin () {
-    this.root.begin();
   }
 
   analyse () {
@@ -59,7 +54,7 @@ class Configurator {
 
   _generateIcons () {
     const items = this.flat.map(part => part.asset.icons).flat();
-    const sass = '$icons: (\n' +
+    const sass = '$values: (\n' +
       items.map(item => `  ${item.name}: ( category: ${item.category}, path: '${item.dist}'),\n`).join('') +
       ');\n';
     createFile(`${SASS_PATH}icon/property/_icons.scss`, sass);

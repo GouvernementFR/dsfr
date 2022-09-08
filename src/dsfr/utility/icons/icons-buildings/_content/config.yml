@@ -3,3 +3,10 @@ asset:
   type: icon
   dist: icons/buildings
   category: buildings
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: home-4-line home-4-fill

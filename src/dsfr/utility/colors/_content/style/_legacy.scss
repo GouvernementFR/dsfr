@@ -6,9 +6,3 @@ $options: () !default;
 @mixin first() {
   @include scheme.scheme(map.get($options, decisions), true);
 }
-
-@mixin lg () {
-  /**
-  go lg
-   */
-}

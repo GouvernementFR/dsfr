@@ -7361,6 +7361,15 @@ sass-convert@^0.5.0:
     through2 "^2.0.0"
     which "^1.0.5"
 
+sass-export@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/sass-export/-/sass-export-2.1.2.tgz#93cfac5eff20f47ca2f559d75bd12a5b370b81d6"
+  integrity sha512-p6bLjnD/0l+aoVkoToClGSUgIK3PsL3x9/lratp4kVtcvYqoM/JFCxnhcumW8lFVkF8o7K9kWQ6q8upC22S0dA==
+  dependencies:
+    glob "^7.1.6"
+    minimist "^1.2.5"
+    sass "^1.32.8"
+
 sass-true@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/sass-true/-/sass-true-6.0.1.tgz#c159fa27df2f9ee22bb624a851144a8af7dc8a32"
@@ -7369,6 +7378,15 @@ sass-true@^6.0.1:
     chalk "^4.1.0"
     css "^3.0.0"
     lodash "^4.17.19"
+
+sass@^1.32.8:
+  version "1.54.9"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.54.9.tgz#b05f14ed572869218d1a76961de60cd647221762"
+  integrity sha512-xb1hjASzEH+0L0WI9oFjqhRi51t/gagWnxLiwUNMltA0Ab6jIDkAacgKiGYKM9Jhy109osM7woEEai6SXeJo5Q==
+  dependencies:
+    chokidar ">=3.0.0 <4.0.0"
+    immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
 
 sass@^1.49.8:
   version "1.49.8"

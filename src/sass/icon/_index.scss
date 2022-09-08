@@ -1,11 +1,20 @@
+@use 'property/icons';
+$icons: icons.$values;
+@use 'property/situations';
+$situations: situations.$values;
+@use 'property/sizes';
+$sizes: sizes.$values;
 
-@forward 'property/sizes';
 
 @forward 'function/filter';
 
-@forward 'recent';
-@forward 'legacy';
+@forward 'mixin/icon';
+@forward 'mixin/content';
+@forward 'mixin/image';
+@forward 'mixin/size';
+@forward 'mixin/style';
 
 @forward 'mixin/selector';
-@forward 'mixin/generate';
-@forward 'mixin/modify';
+
+@forward 'legacy' as legacy-*;
+

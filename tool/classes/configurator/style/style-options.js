@@ -1,6 +1,50 @@
 const fs = require('fs');
 const { createFile } = require('../../../utilities/file');
 const { SRC } = require('../src');
+const exporter = require('sass-export').exporter;
+
+const formatMap = (structure, level = 0) => {
+  const space = '  '.repeat(level);
+  if (!structure.name) {
+    return null;
+  } else if (structure.mapValue !== undefined) {
+    return `${space}${structure.name}: (\n${structure.mapValue.map(struct => formatMap(struct, level + 1)).join(',\n')}\n${space})`;
+  } else if (structure.value !== undefined) {
+    return `${space}${structure.name}: ${structure.value}`;
+  }
+  return null;
+};
+
+const parse = (object) => {
+  const data = [];
+  for (const prop in object) {
+    const props = { name: prop };
+    const value = object[prop];
+    switch (true) {
+      case value === null:
+        break;
+
+      case Array.isArray(value):
+        props.value = value.join(' ');
+        data.push(props);
+        break;
+
+      case typeof value === 'object':
+        props.mapValue = parse(value);
+        data.push(props);
+        break;
+
+      case typeof value === 'boolean':
+      case typeof value === 'string':
+      case typeof value === 'number':
+        props.value = value;
+        data.push(props);
+        break;
+    }
+  }
+
+  return data;
+};
 
 class StyleOptions {
   constructor (part, config) {
@@ -9,39 +53,76 @@ class StyleOptions {
   }
 
   get has () {
-    return this._has === true;
+    return this.mapValue.length > 0;
   }
 
-  get contains () {
-    if (this._has) return true;
-    return this.part.children.some(part => part.style && part.style.has && part.style.options.contains);
-  }
-
-  getContent () {
-    const contents = [];
-    if (this._has) contents.push(this._content);
+  gather (data = []) {
+    if (this.mapValue.length) {
+      data.push({
+        name: this.part.id,
+        mapValue: this.mapValue
+      });
+    }
 
     for (const part of this.part.children) {
-      if (!part.detached && part.style && part.style.has) contents.push(...part.style._options.getContent());
+      if (!part.detached && part.style && part.style.has) {
+        part.style.gather(data);
+      }
     }
-    return contents;
+    return data;
   }
 
-  begin () {
-    const path = this._config ? this.part.getPart(this._config).path : this.part.path;
+  analyse () {
+    this.mapValue = [];
+
+    this.load();
+
+    if (this._config) {
+      this.asset();
+      this.insert();
+    }
+  }
+
+  load () {
+    const path = this._config && this._config.id ? this.part.getPart(this._config.id).path : this.part.path;
     const file = `${SRC}${path}_content/style/_options.scss`;
-    this._has = fs.existsSync(file);
 
-    if (!this._has) return;
+    if (fs.existsSync(file)) {
+      const options = {
+        inputFiles: [file]
+      };
 
-    const content = fs.readFileSync(file, 'utf-8');
+      const content = exporter(options).getStructured();
+      this.mapValue.push(...content.variables[0].mapValue);
+    }
+  }
 
-    this._content = content.replace('$options', `  ${this.part.id}`).replace(');\n', ')').replace(');', ')').replace(/\n/g, '\n  ');
+  insert () {
+    if (this._config.insert) {
+      const insert = parse(this._config.insert);
+      this.mapValue.push(...insert);
+    }
+  }
+
+  asset () {
+    if (this._config.asset && this.part.asset.has) {
+      const data = {};
+      const asset = this._config.asset;
+      data.name = asset.property;
+      console.log(asset.type);
+      console.log(this.part.asset.items.length);
+      data.value = this.part.asset.items.filter(item => asset.type === undefined || item.type === asset.type).map(item => item.name).join(' ');
+      console.log(data);
+      this.mapValue.push(data);
+    }
   }
 
   generate () {
-    const contents = [`  depth: ${this.part.depth}`, ...this.getContent()];
-    const content = `$options: (\n${contents.join(',\n')}\n);\n`;
+    const data = this.gather();
+    data.unshift({ name: 'depth', value: this.part.depth });
+
+    const content = `${formatMap({ name: '$options', mapValue: data })};\n`;
+
     const path = `${SRC}${this.part.path}options.scss`;
 
     createFile(path, content);
