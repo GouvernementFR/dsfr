@@ -12,7 +12,7 @@
 <%
 let message = locals.message || {}
 %>
-<% if(message.error != undefined) { %>
+<% if(message.error != undefined && typeof message.error != 'boolean') { %>
   <% if(typeof message.error == 'object' && message.error.length > 0) { %>
     <p id="<%= message.id %>-desc-error" class="<%= prefix %>-hint-text" >
       <% for (let i = 0; i < message.error.length; i++) { %>

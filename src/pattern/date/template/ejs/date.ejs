@@ -48,7 +48,7 @@ if (date.items && date.items.length) {
       data: {
         [item.type]: {
           id: `${date.id}-${index}`,
-          name: date.id,
+          name: item.name,
           label: item.label || '',
           value: item.value || '',
           hint: item.hint || null,
@@ -57,6 +57,8 @@ if (date.items && date.items.length) {
           kind: item.kind || '',
           options: item.options || [],
           placeholder: item.placeholder || '',
+          error: item.error,
+          type: item.inputType,
         }
       }
     }); 
