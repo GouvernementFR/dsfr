@@ -5,6 +5,7 @@
 
 #{ns(password)} {
   @include relative;
+  @include set-text-margin(0 0 2v 0);
 
   &__format {
     #{ns(error-text)},
