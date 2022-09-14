@@ -1,0 +1,19 @@
+id: login
+title: Formulaire de connexion
+description: Modèles de pages de connexion
+doc:
+
+label:
+  default: Connexion à [Nom de service-site]
+  connect: Se connecter avec FranceConnect
+  login: Se connecter avec son compte
+  register: Vous n’avez pas de compte ?
+  password: Mot de passe
+  identifier: Identifiant
+  remember: Se souvenir de moi
+  fieldset: Formulaire de connexion
+  button:
+    connect: Se connecter
+    create: Créer un compte
+hint:
+  identifier: "Format attendu : nom@domaine.fr"

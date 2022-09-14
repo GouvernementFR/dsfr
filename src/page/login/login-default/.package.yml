@@ -1,0 +1,22 @@
+id: login-default
+title: Modèle de page de connexion
+description:
+doc:
+no-heading: true
+style:
+  - core
+  - connect
+  - checkbox
+  - input
+  - password
+  - button
+  - form
+script:
+  - core
+  - password
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

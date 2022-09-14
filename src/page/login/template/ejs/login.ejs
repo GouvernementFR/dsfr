@@ -1,0 +1,116 @@
+<%#
+# paramètres response
+
+* title (String, optional): Titre de l'erreur
+
+* subtitle (String, optional) : Sous-titre de l'erreur
+
+* description (String, optional) : Description de l'erreur
+
+* text (String, optional) : Texte de l'erreur
+
+* contact (Boolean, optional): Option d'affichage du bouton de contact
+
+%>
+
+<%
+  const login = locals.login;
+
+  const connect = login.connect || {};
+  const title = login.title || null;
+
+%>
+
+<main role="main" id="content">
+  <div class="<%= prefix %>-container">
+    <div class="<%= prefix %>-my-7w <%= prefix %>-mt-md-12w <%= prefix %>-mb-md-10w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-background-alt--grey <%= prefix %>-py-0 <%= prefix %>-col-12 <%= prefix %>-col-md-6">
+        <div class="<%= prefix %>-my-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
+          <div class="<%= prefix %>-col-8">
+            <% if (title) { %>
+            <h4><%= title %></h1>
+            <% } %>
+
+            <% if(login.connect) { %>
+            <div>
+              <% if (login.connect.title) { %>
+              <h5><%= login.connect.title %></h5>
+              <% } %>
+
+              <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: login.connect})  %>
+
+            </div>
+              <% if(login.login) { %>
+                <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+              <% } %>
+            <% } %>
+
+            <% if(login.login) { %>
+            <div>
+              <% if (login.login.title) { %>
+              <h5><%= login.login.title %></h5>
+              <% } %>
+
+              <form>
+                <%
+                const form = login.login.form || {};
+                const fieldset = {};
+                const elements = [];
+                if (form.items && form.items.length) {
+                  form.items.forEach((item, index) => {
+                    const type = item.type || 'input';
+                    let path = type === 'input' ? 'input/input-base' : type;
+                    path = item.template === 'buttons-group' ? 'button' : path;
+                    elements.push({
+                      path: `${path}/template/ejs/${item.template}`,
+                      disabled: item.disabled || undefined,
+                      data: {
+                        [type]: {
+                          id: `${form.id}-${index}`,
+                          name: item.name || undefined,
+                          label: item.label || '',
+                          input: item.input || undefined,
+                          checkbox: item.checkbox || undefined,
+                          link: item.link || undefined,
+                          format: item.format || undefined,
+                          value: item.value || '',
+                          hint: item.hint || '',
+                          checked: item.checked || false,
+                          size: item.size || '',
+                          buttons: item.buttons || undefined,
+                          disabled: item.disabled || undefined,
+                          attributes: item.attributes || {},
+                          kind: item.kind || '',
+                          options: item.options || [],
+                          placeholder: item.placeholder || '',
+                        }
+                      }
+                    });
+                  });
+                }
+                fieldset.elements = elements;
+                fieldset.classes = form.classes || [];
+                fieldset.id = form.id;
+                fieldset.attributes = { 'aria-label': form.label,}
+                %>
+
+                <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+              </form>
+            </div>
+            <% } %>
+
+            <% if(login.register) { %>
+            <hr class="<%= prefix %>-mt-n6v">
+            <div>
+              <% if(login.register.title) { %>
+              <h5><%= login.register.title %></h5>
+              <% } %>
+
+              <%- include('../../../../component/button/template/ejs/buttons-group', {buttonsGroup: {buttons:[{...login.register.button}]}}) %>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>

@@ -1,0 +1,83 @@
+<%
+	const sample = getSample(include);
+
+	const connect = {
+		login: getText('default.login', 'connect'),
+		brand: getText('default.brand', 'connect'),
+		link: {
+			label: getText('default.link', 'connect'),
+			href: getText('default.href', 'connect')
+		},
+	};
+
+	const form = {
+    id: uniqueId('login'),
+    label: getText('label.fieldset', 'login'),
+    items:[
+			{
+				type: 'input',
+				template: 'input',
+				hint: getText('hint.identifier', 'login'),
+				label: getText('label.identifier', 'login'),
+				name: 'identifier'
+			},
+			{
+				type: 'password',
+				template: 'password',
+				name: 'password',
+				data: {toto: ''},
+				id: uniqueId('password'),
+				input: {label: getText('label.password', 'login'), autocomplete: 'current-password'},
+				checkbox: {},
+				format: false,
+				link: {
+					href: contentPlaceholder(getText('link.href', 'password')),
+					label: getText('link.label', 'password'),
+				}
+			},
+			{
+				type: 'checkbox',
+				template: 'checkbox-group',
+				label: getText('label.remember', 'login'),
+				name: 'remember',
+				checked: false,
+				size: 'sm',
+			},
+			{
+				type: 'buttonsGroup',
+				template: 'buttons-group',
+				buttons: [
+					{
+						label: getText('label.button.connect', 'login'),
+						kind: 1,
+						classes: [prefix + '-mt-2v']
+					}
+				]
+			},
+    ]
+	};
+
+	const registerButton = {
+		label: getText('label.button.create', 'login'),
+		kind: 2
+	};
+
+	const data = {
+		title: getText('label.default', 'login'),
+		connect: {
+			...connect,
+			title: getText('label.connect', 'login'),
+		},
+		login: {
+			title: getText('label.login', 'login'),
+			form: {...form},
+		},
+		register: {
+			title: getText('label.register', 'login'),
+			button: registerButton
+		}
+	};
+
+ %>
+
+<%- include('../../template/ejs/login.ejs', { login: data }); %>
