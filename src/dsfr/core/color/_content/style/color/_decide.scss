@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use '../../../../../../sass/color/define';
+
+@mixin decide($filter) {
+  $decisions: define.decisions($filter);
+  @each $decision in $decisions {
+    @include define.decide(map.get($decision, token));
+    @if map.get($decision, hover) {
+      @include define.decide(map.get($decision, token), hover);
+      @include define.decide(map.get($decision, token), active);
+    }
+  }
+}

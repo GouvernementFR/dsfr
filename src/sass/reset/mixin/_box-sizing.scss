@@ -1,0 +1,19 @@
+@use '../../selector';
+
+@mixin box-sizing($hasDescendants: false) {
+  box-sizing: border-box;
+  $element: '#{&}';
+  @if $element != ':root' {
+    @include selector.pseudo(before after) {
+      box-sizing: inherit;
+    }
+  }
+
+  @if $hasDescendants {
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+  }
+}

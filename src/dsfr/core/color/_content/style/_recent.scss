@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../../../../../sass/selector';
-@use 'definitions/elevation';
-@use 'definitions/color';
+@use 'elevation';
+@use 'color';
 
 $options: () !default;
 

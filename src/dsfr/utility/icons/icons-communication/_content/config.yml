@@ -1,0 +1,9 @@
+id: icons-communication
+asset:
+  type: icon
+  category: communication
+style:
+  options:
+    asset:
+      type: icon
+      property: icons

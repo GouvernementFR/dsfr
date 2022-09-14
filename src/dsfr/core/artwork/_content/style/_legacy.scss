@@ -1,7 +1,7 @@
-@use 'utilities/scheme';
+@use 'artwork';
 
 $options: () !default;
 
 @mixin first () {
-  @include scheme.scheme(true);
+  @include artwork.color(true);
 }

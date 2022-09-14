@@ -1,0 +1,33 @@
+$values: (
+  xs: (
+    breakpoints: (
+      first: 3v,
+    ),
+    margin: text
+  ),
+  sm: (
+    breakpoints: (
+      first: 3.5v,
+    ),
+    margin: text
+  ),
+  md: (
+    breakpoints: (
+      first: 4v,
+    ),
+    margin: text
+  ),
+  lg: (
+    breakpoints: (
+      first: 4.5v,
+    ),
+    margin: text
+  ),
+  xl: (
+    alt: lead,
+    breakpoints: (
+      first: 5v,
+    ),
+    margin: text
+  )
+);

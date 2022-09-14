@@ -1,35 +1,35 @@
 @use 'sass:map';
-@use '../../../../../../sass/spacing';
-@use '../../../../../../sass/utilities';
+@use '../../../_content/style/spacing';
+@use '../../../../../../sass/condition';
 
 $options: () !default;
 
 @mixin first() {
-  @include utilities.option($options, padding) {
-    @include spacing.utilities(padding, map.get($options, padding), null, true);
+  @include condition.option($options, padding) {
+    @include spacing.generate(padding, map.get($options, padding), null, true);
   }
 }
 
 @mixin sm() {
-  @include utilities.option($options, padding, sm) {
-    @include spacing.utilities(padding, map.get($options, padding), sm, true);
+  @include condition.option($options, padding, sm) {
+    @include spacing.generate(padding, map.get($options, padding), sm, true);
   }
 }
 
 @mixin md() {
-  @include utilities.option($options, padding, md) {
-    @include spacing.utilities(padding, map.get($options, padding), md, true);
+  @include condition.option($options, padding, md) {
+    @include spacing.generate(padding, map.get($options, padding), md, true);
   }
 }
 
 @mixin lg() {
-  @include utilities.option($options, padding, lg) {
-    @include spacing.utilities(padding, map.get($options, padding), lg, true);
+  @include condition.option($options, padding, lg) {
+    @include spacing.generate(padding, map.get($options, padding), lg, true);
   }
 }
 
 @mixin xl() {
-  @include utilities.option($options, padding, xl) {
-    @include spacing.utilities(padding, map.get($options, padding), xl, true);
+  @include condition.option($options, padding, xl) {
+    @include spacing.generate(padding, map.get($options, padding), xl, true);
   }
 }

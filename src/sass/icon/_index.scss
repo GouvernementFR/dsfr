@@ -1,11 +1,3 @@
-@use 'property/icons';
-$icons: icons.$values;
-@use 'property/situations';
-$situations: situations.$values;
-@use 'property/sizes';
-$sizes: sizes.$values;
-
-
 @forward 'function/filter';
 
 @forward 'mixin/icon';
@@ -17,4 +9,12 @@ $sizes: sizes.$values;
 @forward 'mixin/selector';
 
 @forward 'legacy' as legacy-*;
+
+@use 'property/icons';
+@use 'property/situations';
+@use 'property/sizes';
+
+$icons: icons.$values;
+$situations: situations.$values;
+$sizes: sizes.$values;
 

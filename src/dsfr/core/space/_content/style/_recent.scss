@@ -1,7 +1,10 @@
-@use 'definitions/elevation';
+@use 'sass:map';
+@use 'elevation';
 
 $options: () !default;
 
 @mixin first() {
-  @include elevation.define();
+  @if map.get($options, elevation) {
+    @include elevation.layer;
+  }
 }

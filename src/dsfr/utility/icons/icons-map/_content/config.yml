@@ -1,0 +1,11 @@
+id: icons-map
+asset:
+  type: icon
+  category: map
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: map-pin-2-fill map-pin-2-line road-map-fill road-map-line

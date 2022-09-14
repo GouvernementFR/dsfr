@@ -1,0 +1,15 @@
+@use 'sass:list';
+@use '../../media-query';
+
+@mixin breakpoint($breakpoint, $breakpoints, $with-media-query) {
+  @if list.index($breakpoints, $breakpoint) != null {
+    @if $with-media-query {
+      @include media-query.from($breakpoint) {
+        @content;
+      }
+    }
+    @else {
+      @content;
+    }
+  }
+}

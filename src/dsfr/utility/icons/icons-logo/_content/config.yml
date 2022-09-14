@@ -1,0 +1,11 @@
+id: icons-logo
+asset:
+  type: icon
+  category: logo
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: facebook-circle-fill facebook-circle-line dailymotion-fill dailymotion-line github-fill github-line instagram-fill instagram-line linkedin-box-fill linkedin-box-line npmjs-fill npmjs-line remixicon-fill remixicon-line slack-fill slack-line snapchat-fill snapchat-line telegram-fill telegram-line twitch-fill twitch-line twitter-fill twitter-line vimeo-fill vimeo-line youtube-fill youtube-line

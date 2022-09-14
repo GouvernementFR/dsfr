@@ -1,0 +1,16 @@
+@use '../../../../../../../sass/selector';
+
+@mixin generate($breakpoint: null) {
+  $append: '';
+  @if $breakpoint {
+    $append: '\\@#{$breakpoint}'
+  }
+
+  #{selector.ns(no-before)}#{$append} {
+    @include selector.before(none);
+  }
+
+  #{selector.ns(no-after)}#{$append} {
+    @include selector.after(none);
+  }
+}

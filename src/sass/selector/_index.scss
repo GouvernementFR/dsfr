@@ -10,3 +10,7 @@
 @forward 'mixin/pattern';
 @forward 'mixin/pseudo';
 @forward 'mixin/theme';
+
+@use 'property/prefix';
+
+$prefix: prefix.$value;

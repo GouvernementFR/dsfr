@@ -109,10 +109,9 @@ class StyleOptions {
       const data = {};
       const asset = this._config.asset;
       data.name = asset.property;
-      console.log(asset.type);
-      console.log(this.part.asset.items.length);
-      data.value = this.part.asset.items.filter(item => asset.type === undefined || item.type === asset.type).map(item => item.name).join(' ');
-      console.log(data);
+      const items = this.part.asset.items.filter(item => asset.type === undefined || item.type === asset.type).map(item => item.name);
+
+      data.value = items.join(' ');
       this.mapValue.push(data);
     }
   }

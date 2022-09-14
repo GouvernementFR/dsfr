@@ -1,7 +1,7 @@
 const path = require('path');
 
 class AssetItem {
-  constructor (src, dist, type, category) {
+  constructor (src, dist, config) {
     this.src = src;
     this.dist = dist;
     this._data = {
@@ -10,12 +10,12 @@ class AssetItem {
       dest: `dist/${dist}`
     };
 
-    if (category) this._data.category = category;
+    if (config.category) this._data.category = config.category;
 
-    if (type) {
-      this._data.type = type;
+    if (config.type) {
+      this._data.type = config.type;
 
-      switch (type) {
+      switch (config.type) {
         case 'icon':
           this._icon();
           break;
@@ -33,6 +33,10 @@ class AssetItem {
 
   get type () {
     return this._data.type;
+  }
+
+  get category () {
+    return this._data.category;
   }
 
   get name () {

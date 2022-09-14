@@ -1,0 +1,12 @@
+$options: (
+  family: primary,
+  rendering: (
+    optimize: legibility,
+    smoothing: true,
+    adjust: true
+  ),
+  style: (
+    font-size: md
+  ),
+  spacing: true
+);

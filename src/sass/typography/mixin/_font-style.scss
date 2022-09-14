@@ -1,0 +1,5 @@
+@use '../function/font-style';
+
+@mixin font-style($value) {
+  font-weight: font-style.font-style($value);
+}

@@ -1,0 +1,5 @@
+@use '../../specificity';
+
+@mixin font-family($family, $important: false) {
+  font-family: specificity.important($family, $important);
+}

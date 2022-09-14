@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use '../../../../../../../sass/typography';
+
+@mixin generate($font) {
+  $display: map.get($font, display);
+  $families: map.get($font, families);
+  @each $family, $faces in $families {
+    @each $face in $faces {
+      @at-root {
+        @include typography.font-face-reset($family, $face, $display);
+      }
+    }
+  }
+}

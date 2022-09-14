@@ -5,7 +5,7 @@
 /// @param {String} $name - nom de l'élément
 /// @param {String} $notation - notation du sélecteur, par défaut un point pour les classes
 @function ns($name, $notation: '.') {
-  $class-name: $notation + prefix.$prefix + '-' + $name;
+  $class-name: $notation + prefix.$value + '-' + $name;
   @return $class-name;
 }
 

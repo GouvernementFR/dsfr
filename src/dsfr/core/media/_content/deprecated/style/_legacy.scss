@@ -4,6 +4,7 @@
 ////
 
 @use '../../../../../../sass/legacy';
+@use '../../../../../../sass/media';
 
 @include legacy.is(ie11) {
   #{ns(responsive-vid)} {

@@ -1,0 +1,11 @@
+id: icons-business
+asset:
+  type: icon
+  category: business
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: attachment-fill attachment-line calendar-fill calendar-line line-chart-fill line-chart-line links-fill mail-fill mail-line printer-fill printer-line

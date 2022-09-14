@@ -3,8 +3,7 @@
 /// @group core
 ////
 
-@use '../../../../../sass/legacy/index';
+//@use '../../../../../sass/legacy/index';
 
-@include legacy.is(ie11) {
-  @include enable-list-style-legacy;
-}
+  // @include enable-list-style-legacy;
+

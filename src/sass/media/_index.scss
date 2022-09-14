@@ -3,3 +3,7 @@
 @forward 'mixin/responsive-img';
 @forward 'mixin/responsive-vid';
 @forward 'legacy';
+
+@use 'property/aspect-ratios';
+
+$aspect-ratios: aspect-ratios.$values

@@ -1,7 +1,0 @@
-id: icons-map
-title: Icônes Map
-description: Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilisateur dans ses actions et qui aident à sa compréhension de l’interface.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396/Ic+nes+-+Icons#Map
-wrapper: col-8
-style:
-  - core

@@ -1,0 +1,5 @@
+id: body
+style:
+  dependencies:
+    - color
+    - typography

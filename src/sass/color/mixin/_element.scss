@@ -20,11 +20,6 @@ $COLOR: constant.$value;
   $hover: map.get($options, hover);
   $standalone: map.get($options, standalone);
 
-  $legacy-target: null;
-  @if $legacy {
-    $legacy-target: ie11;
-  }
-
   $tokens: token.normalise($tokens, $context);
   $type: decision;
   $options: (var: true);
@@ -38,33 +33,29 @@ $COLOR: constant.$value;
   $result: result.get($colors, $value);
   $result: specificity.important($result, $important);
 
-  @include legacy.is($legacy-target) {
-    #{$prop}: #{string.unstringify($result)};
-  }
+  #{$prop}: #{string.unstringify($result)};
 
   @if ($hover == true or ($hover == inherit and $legacy == false)) and ($context == background and list.length($tokens) == 1) {
 
     $token: nth($tokens, 1);
     @if $legacy or $standalone {
-      @include _apply-pseudos($token, false, true, $legacy-target, $prop, $value, $important);
+      @include _apply-pseudos($token, false, true, $prop, $value, $important);
     }
     @else {
       @if $prop == background-color {
         --idle: transparent; // #{$result};
-        @include _apply-pseudos($token, true, false, null, $prop, $value, $important);
+        @include _apply-pseudos($token, true, false, $prop, $value, $important);
       }
       @else {
-        @include _apply-pseudos($token, true, true, null, $prop, $value, $important);
+        @include _apply-pseudos($token, true, true, $prop, $value, $important);
       }
     }
   }
 }
 
-@mixin _apply-pseudos($token, $decision: true, $pseudo: false, $target: null, $prop: background-color, $value: constant.$value, $important: false) {
-  @include legacy.is($target) {
-    @include _apply-pseudo($token, hover, $decision, $pseudo, $prop, $value, $important);
-    @include _apply-pseudo($token, active, $decision, $pseudo, $prop, $value, $important);
-  }
+@mixin _apply-pseudos($token, $decision: true, $pseudo: false, $prop: background-color, $value: constant.$value, $important: false) {
+  @include _apply-pseudo($token, hover, $decision, $pseudo, $prop, $value, $important);
+  @include _apply-pseudo($token, active, $decision, $pseudo, $prop, $value, $important);
 }
 
 @mixin _apply-pseudo($token, $type, $decision: true, $pseudo: false, $prop: background-color, $value: constant.$value, $important: false) {
@@ -117,17 +108,15 @@ $COLOR: constant.$value;
   $value: specificity.important(transparent, $important);
 
   @if $legacy {
-    @include legacy.is(ie11) {
-      background-color: transparent;
+    background-color: transparent;
 
-      @if $hover {
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.05);
-        }
+    @if $hover {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
 
-        &:active {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
+      &:active {
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -206,18 +195,7 @@ $COLOR: constant.$value;
 }
 
 @mixin no-border($options: ()) {
-  $breakpoint: map.get($options, breakpoint);
-  $legacy: map.get($options, legacy);
-  @include media-query.from($breakpoint) {
-    @if $legacy {
-      @include legacy.is(ie11) {
-        border: 0;
-      }
-    }
-    @else {
-      border: 0;
-    }
-  }
+  border: 0;
 }
 
 /// Ajout d'une couleur d'outline sur un élément
@@ -264,16 +242,5 @@ $COLOR: constant.$value;
 /// @access public
 /// @param {string} $breakpoint - la shadow-box est retiré à partir d'un breakpoint si celui-ci est défini
 @mixin no-box-shadow($options) {
-  $breakpoint: map.get($options, breakpoint);
-  $legacy: map.get($options, legacy);
-  @include media-query.from($breakpoint) {
-    @if $legacy {
-      @include legacy.is(ie11) {
-        box-shadow: none;
-      }
-    }
-    @else {
-      box-shadow: none;
-    }
-  }
+  box-shadow: none;
 }

@@ -1,3 +1,6 @@
 @forward 'mixin/from';
-@forward 'mixin/condition';
 @forward 'mixin/hover';
+
+@use 'property/breakpoints';
+
+$breakpoints: breakpoints.$values;

@@ -1,10 +1,8 @@
-////
-/// Icon System Legacy
-/// @group icons-system
-////
+@use 'sass:map';
+@use '../../../_content/style/icons';
 
-@use '../../../../../../sass/legacy/index';
+$options: () !default;
 
-@include legacy.is(ie11) {
-  @include generate-icons-legacy(filter-icons('system'));
+@mixin first() {
+  @include icons.generate(map.get($options, icons), recommended, true);
 }

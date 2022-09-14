@@ -46,7 +46,7 @@ class StyleItem {
 
   produce () {
     const folder = `${SRC}${this.part.path}`.split('/').splice(-2, 1)[0];
-    const content = [`@use '../${folder}' as ${this.part.id};\n\n`];
+    const content = [`@use '../${folder}';\n\n`];
 
     const situations = this.kind.situations.map(situation => situation.id).join(' ');
     for (const support of this.kind.supports) {

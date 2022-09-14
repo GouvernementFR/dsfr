@@ -1,0 +1,9 @@
+id: icons-others
+asset:
+  type: icon
+  category: others
+style:
+  options:
+    asset:
+      type: icon
+      property: icons

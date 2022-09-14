@@ -1,5 +1,5 @@
-@use '../property/z-index';
+@use '../property/z-indexes';
 
 @function z-index($id) {
-  @return map-get(z-index.$values, $id);
+  @return map-get(z-indexes.$values, $id);
 }

@@ -1,0 +1,11 @@
+id: icons-media
+asset:
+  type: icon
+  category: media
+style:
+  options:
+    asset:
+      type: icon
+      property: icons
+    insert:
+      deprecated: equalizer-fill equalizer-line image-fill image-line pause-circle-fill pause-circle-line volume-down-fill volume-down-line volume-mute-fill volume-mute-line volume-up-fill volume-up-line

@@ -1,8 +1,7 @@
 @use 'sass:map';
 @use 'sass:list';
-@use '<%= top %>sass/legacy';
+@use '<%= top %>sass/condition';
 @use '<%= top %>sass/path';
-@use '<%= top %>sass/media-query';
 @use 'options';
 
 $options: options.$options !default;
@@ -14,7 +13,7 @@ for (const mixin of mixins) {
   let close = '}';
 
   if (mixin.name === 'legacy') {
-    open += `${s}@include legacy.condition($with-media-query) {\n`;
+    open += `${s}@include condition.legacy($with-media-query) {\n`;
     close = `${s}}\n${close}`;
     s += '  ';
   }
@@ -24,11 +23,9 @@ for (const mixin of mixins) {
     let bpo = '';
     let bpc = '';
 
-    if (breakpoint.id !== 'first') {
-      bpo = `${bs}@include media-query.condition(${breakpoint.id}, $breakpoints, $with-media-query) {\n`;
-      bpc = `${bs}}\n`;
-      bs = s + '  ';
-    }
+    bpo = `${bs}@include condition.breakpoint(${breakpoint.id}, $breakpoints, $with-media-query) {\n`;
+    bpc = `${bs}}\n`;
+    bs = s + '  ';
 
     if (breakpoint.modules) for (const module of breakpoint.modules) {
       bpo += `${bs}@include ${module}.${mixin.name}($situations, ${breakpoint.id}, false);\n`

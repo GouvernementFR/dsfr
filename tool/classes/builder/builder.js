@@ -10,10 +10,9 @@ class Builder {
 
     const parts = this.configuration.getPartsByIds(settings.parts).map(config => new PartBuilder(config));
 
-    const buildEach = async (part) => {
+    for (const part of parts) {
       await part.build(settings);
-    };
-    parts.forEach(buildEach);
+    }
   }
 }
 

@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use 'font-smoothing';
+@use '../function/optimize';
+
+@mixin render($rendering: ( optimize: legibility, smoothing: true, adjust: true )) {
+  $optimize: map.get($rendering, optimize);
+  @if $optimize {
+    text-rendering: optimize.optimize($optimize);
+  }
+  $smoothing: map.get($rendering, smoothing);
+  @if $smoothing {
+    @include font-smoothing.font-smoothing;
+  }
+  $adjust: map.get($rendering, adjust);
+  @if $adjust {
+    -webkit-text-size-adjust: 100%;
+  }
+}

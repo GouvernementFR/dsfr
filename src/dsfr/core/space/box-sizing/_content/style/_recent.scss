@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use 'box-sizing';
+
+$options: () !default;
+
+@mixin first() {
+  @if map.get($options, active) {
+    @include box-sizing.reset;
+  }
+}

@@ -1,8 +1,15 @@
 @forward 'sass:color';
-@forward 'property/static';
+@forward 'function/get';
 @forward 'mixin/element';
 @forward 'mixin/data-uri-svg';
 @forward 'mixin/accent';
+
 @use 'property/constant';
+@use 'property/options';
+@use 'property/sets';
+@use 'property/decisions';
 
 $constant: constant.$value;
+$options: options.$values;
+$sets: sets.$values;
+$decisions: decisions.$values;

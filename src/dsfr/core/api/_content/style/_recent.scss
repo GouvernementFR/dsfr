@@ -1,9 +1,8 @@
-@use 'utilities/transition';
-@use 'utilities/no-scroll';
+@use 'api';
 
 $options: () !default;
 
 @mixin first () {
-  @include transition.first;
-  @include no-scroll.first;
+  @include api.transition;
+  @include api.no-scroll;
 }

@@ -1,12 +1,12 @@
 @use 'sass:map';
-@use '../../../../../../sass/spacing';
-@use '../../../../../../sass/utilities';
+@use '../../../_content/style/spacing';
+@use '../../../../../../sass/condition';
 
 $options: () !default;
 
 @mixin size($size, $breakpoint: null) {
-  @include utilities.option($options, $size, $breakpoint) {
-    @include spacing.utilities($size, map.get($options, $size), $breakpoint, true);
+  @include condition.option($options, $size, $breakpoint) {
+    @include spacing.generate($size, map.get($options, $size), $breakpoint, true);
   }
 }
 

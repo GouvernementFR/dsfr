@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '../../specificity';
-@use '../property/aspect-ratio';
+@use '../property/aspect-ratios';
 
 @mixin aspect-ratio($ratio: 16x9, $important: false) {
-  aspect-ratio: specificity.important(map.get(aspect-ratio.$values, $ratio), $important);
+  aspect-ratio: specificity.important(map.get(aspect-ratios.$values, $ratio), $important);
 }

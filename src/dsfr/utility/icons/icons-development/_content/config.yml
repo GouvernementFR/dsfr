@@ -1,0 +1,9 @@
+id: icons-development
+asset:
+  type: icon
+  category: development
+style:
+  options:
+    asset:
+      type: icon
+      property: icons

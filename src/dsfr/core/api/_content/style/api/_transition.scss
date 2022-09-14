@@ -1,0 +1,15 @@
+////
+///
+/// @group api
+////
+
+@use '../../../../../../sass/selector';
+
+@mixin transition () {
+  #{selector.ns(transition)} {
+    &-none {
+      transition: none !important;
+    }
+  }
+}
+

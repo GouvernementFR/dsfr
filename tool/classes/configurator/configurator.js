@@ -91,7 +91,7 @@ class Configurator {
   }
 
   _generateSassPrefix () {
-    const sass = `$prefix: ${global.config.prefix};\n`;
+    const sass = `$value: ${global.config.prefix};\n`;
     const file = `${SASS_PATH}selector/property/_prefix.scss`;
     createFile(file, sass);
   }

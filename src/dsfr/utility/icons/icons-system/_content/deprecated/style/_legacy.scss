@@ -1,26 +1,8 @@
-////
-/// Icon System Legacy
-/// @group icon-system
-////
+@use 'sass:map';
+@use '../../../../_content/style/icons';
 
-@use '../../../../../../../sass/legacy/index';
+$options: () !default;
 
-@include legacy.is(ie11) {
-  @include generate-deprecated-icons-legacy($deprecated-icons, filter-icons('system'));
-
-  #{selector.ns(fi-delete-line)} {
-    @include icon.image-legacy(delete-bin-line);
-  }
-
-  #{selector.ns(fi-delete-fill)} {
-    @include icon.image-legacy(delete-bin-fill);
-  }
-
-  #{selector.ns(icon-delete-line)} {
-    @include icon.image-legacy(delete-bin-line);
-  }
-
-  #{selector.ns(icon-delete-fill)} {
-    @include icon.image-legacy(delete-bin-fill);
-  }
+@mixin first() {
+  @include icons.generate(map.get($options, deprecated), deprecated, true);
 }

@@ -5,7 +5,7 @@ const { SRC } = require('../src');
 class AssetPart {
   constructor (part, config) {
     this.part = part;
-    this._paths = [`${SRC}${part.path}_content/asset/`, `${SRC}${SRC}${part.path}_content/deprecated/asset/`];
+    this._paths = [`${SRC}${part.path}_content/asset/`, `${SRC}${part.path}_content/deprecated/asset/`];
     this.items = [];
     this._config = config || {};
     this._data = {};
@@ -17,7 +17,7 @@ class AssetPart {
   }
 
   get filled () {
-    return this._data.item || this._data.dependencies;
+    return this._data.items || this._data.dependencies;
   }
 
   get data () {
@@ -33,8 +33,7 @@ class AssetPart {
     this._has = this._paths.length > 0;
     if (!this._has) return;
     this.dist = this._config.dist || '';
-    this.type = this._config.type;
-    this.category = this._config.category;
+    if (this.dist !== '' && this.dist.charAt(this.dist.length - 1) !== '/') this.dist += '/';
   }
 
   analyse () {
@@ -55,7 +54,7 @@ class AssetPart {
     for (const entry of entries) {
       switch (true) {
         case entry.isFile():
-          if (!(/(^|\/)\.[^/.]/g).test(entry.name)) this.items.push(new AssetItem(`${dir}${entry.name}`, `${this.dist}${relative}${entry.name}`, this.type, this.category));
+          if (!(/(^|\/)\.[^/.]/g).test(entry.name)) this.items.push(new AssetItem(`${dir}${entry.name}`, `${this.dist}${relative}${entry.name}`, this._config));
           break;
 
         case entry.isDirectory():

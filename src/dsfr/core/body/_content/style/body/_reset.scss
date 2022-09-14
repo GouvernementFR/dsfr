@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use '../../../../../../sass/spacing';
+@use '../../../../../../sass/typography';
+
+@mixin reset($body) {
+  body {
+    $family: map.get($body, family);
+    @if $family {
+      @include typography.font-stack($family);
+    }
+    $rendering: map.get($body, rendering);
+    @if $rendering {
+      @include typography.render($rendering);
+    }
+    $style: map.get($body, style);
+    @if $style {
+      // @include typography.style(map.get($style, font-size));
+    }
+    $spacing: map.get($body, spacing);
+    @if $spacing {
+      @include spacing.margin(0);
+      @include spacing.padding(0);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use 'font-face';
+@use '../function/font-weight';
+@use '../function/font-style';
+@use '../function/font-display';
+@use '../property/font-faces';
+@use '../../path';
+
+@mixin font-face-reset($type: primary, $face: regular, $display: null) {
+  $family: map.get(font-faces.$values, $type);
+  $name: map.get($family, name);
+  $faces: map.get($family, faces);
+  $face: map.get($faces, $face);
+  $filename: map.get($face, filename);
+  $src: url('#{path.dist()}fonts/#{$filename}.woff2') format('woff2'), url('#{path.dist()}fonts/#{$filename}.woff') format('woff');
+  $weight: font-weight.font-weight(map.get($face, weight));
+  $style: font-style.font-style(map.get($face, style));
+  $display: font-display.font-display($display, map.get($family, display));
+
+  @include font-face.font-face($name, $src, $weight, $style, $display);
+}

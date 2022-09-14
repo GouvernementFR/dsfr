@@ -4,6 +4,7 @@
 @use '../property/icons';
 
 @function path($icon, $important: false) {
-  $url: url('#{path.dist()}#{map.get(icons.$icons, $icon)}');
+  $properties: map.get(icons.$values, $icon);
+  $url: url('#{path.dist()}#{map.get($properties, path)}');
   @return specificity.important($url, $important);
 }

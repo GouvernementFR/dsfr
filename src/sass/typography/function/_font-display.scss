@@ -1,0 +1,12 @@
+@use 'sass:list';
+@use '../property/font-displays';
+
+@function font-display($value, $fallback: null) {
+  @if list.index(font-displays.$values, $value) != null {
+    @return $value;
+  }
+  @if $fallback != null {
+    @return font-display($fallback);
+  }
+  @return nth(font-displays.$values, 1);
+}
