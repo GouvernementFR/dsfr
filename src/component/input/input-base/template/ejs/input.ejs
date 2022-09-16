@@ -55,12 +55,12 @@ inputClasses.push(prefix + '-input');
 
 if (input.valid !== undefined) {
   inputClasses.push(prefix + '-input--valid');
-  describedby.push(input.id + '-desc-valid');
+  if (typeof input.valid === 'string') describedby.push(input.id + '-desc-valid');
 }
 
 if (input.error !== undefined) {
   inputClasses.push(prefix + '-input--error');
-  describedby.push(input.id + '-desc-error');
+  if (typeof input.error === 'string') describedby.push(input.id + '-desc-error');
 }
 
 if (input.hint === true) {
@@ -79,7 +79,7 @@ if (input.autocomplete) inputAttrs.autocomplete = input.autocomplete;
 inputAttrs.id = input.id;
 %>
 
-<%- include('../../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, classes: labelClasses, attributes: labelAttrs}}); %>
+<%- include('../../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, error: input.error, valid: input.valid, classes: labelClasses, attributes: labelAttrs}}); %>
 
 <% if (input.icon != undefined) { %>
   <% let icon = prefix + '-icon-' + input.icon; %>

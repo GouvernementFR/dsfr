@@ -1,15 +1,21 @@
 <%#
-# paramètres response
+# paramètres login
 
-* title (String, optional): Titre de l'erreur
+* title (String, optional): Titre de la page de connexion
 
-* subtitle (String, optional) : Sous-titre de l'erreur
+* login (object, optional) : Bloc de connexion
+** login.title (String, optional) : Titre du bloc
+** login.desc (String, optional) : Description du bloc
+** login.form (object, required): Paramètres du formulaire de connexion (voir fieldset)
 
-* description (String, optional) : Description de l'erreur
 
-* text (String, optional) : Texte de l'erreur
+* connect (object, optional) : Bloc bouton France connect
+** connect.title (String, optional) : Titre du bloc france connect
+** ... Autre paramètres connect (voir composant connect)
 
-* contact (Boolean, optional): Option d'affichage du bouton de contact
+* register (object, optional) : Bloc bouton s'enregistrer
+** register.title (String, optional) : Titre du bloc bouton s'enregistrer
+** register.button (object, required) : paramètres du bouton
 
 %>
 
@@ -23,15 +29,15 @@
 
 <main role="main" id="content">
   <div class="<%= prefix %>-container">
-    <div class="<%= prefix %>-my-7w <%= prefix %>-mt-md-12w <%= prefix %>-mb-md-10w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
-      <div class="<%= prefix %>-background-alt--grey <%= prefix %>-py-0 <%= prefix %>-col-12 <%= prefix %>-col-md-6">
-        <div class="<%= prefix %>-my-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
-          <div class="<%= prefix %>-col-8">
+    <div class="<%= prefix %>-my-2w <%= prefix %>-my-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-background-alt--grey <%= prefix %>-py-0 <%= prefix %>-col-12  <%= prefix %>-col-md-8 <%= prefix %>-col-lg-6">
+        <div class="<%= prefix %>-mt-7w <%= prefix %>-mb-5w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
+          <div class="<%= prefix %>-col-10 <%= prefix %>-col-md-8">
             <% if (title) { %>
             <h4><%= title %></h1>
             <% } %>
 
-            <% if(login.connect) { %>
+            <% if (login.connect) { %>
             <div>
               <% if (login.connect.title) { %>
               <h5><%= login.connect.title %></h5>
@@ -51,6 +57,10 @@
               <h5><%= login.login.title %></h5>
               <% } %>
 
+              <% if (login.login.desc) { %>
+              <p><%= login.login.desc %></p>
+              <% } %>
+
               <form>
                 <%
                 const form = login.login.form || {};
@@ -59,30 +69,38 @@
                 if (form.items && form.items.length) {
                   form.items.forEach((item, index) => {
                     const type = item.type || 'input';
-                    let path = type === 'input' ? 'input/input-base' : type;
-                    path = item.template === 'buttons-group' ? 'button' : path;
+                    item.base ? path = item.base : path = type;
                     elements.push({
                       path: `${path}/template/ejs/${item.template}`,
                       disabled: item.disabled || undefined,
+                      control: item.control,
+                      classes: item.classes || undefined,
                       data: {
                         [type]: {
                           id: `${form.id}-${index}`,
+                          classes: item.data ? item.data.classes : undefined,
+                          attributes: item.data ? item.data.attributes : undefined,
                           name: item.name || undefined,
-                          label: item.label || '',
+                          label: item.label || undefined,
+                          text: item.text || undefined,
+                          content: item.content || undefined,
                           input: item.input || undefined,
                           checkbox: item.checkbox || undefined,
                           link: item.link || undefined,
                           format: item.format || undefined,
-                          value: item.value || '',
-                          hint: item.hint || '',
+                          value: item.value || undefined,
+                          hint: item.hint || undefined,
+                          error: item.error || undefined,
+                          valid: item.valid || undefined,
                           checked: item.checked || false,
-                          size: item.size || '',
+                          labelClasses: item.labelClasses || undefined,
+                          size: item.size || undefined,
                           buttons: item.buttons || undefined,
                           disabled: item.disabled || undefined,
-                          attributes: item.attributes || {},
-                          kind: item.kind || '',
-                          options: item.options || [],
-                          placeholder: item.placeholder || '',
+                          kind: item.kind || undefined,
+                          options: item.options || undefined,
+                          placeholder: item.placeholder || undefined,
+                          type: item.data ? item.data.type : undefined,
                         }
                       }
                     });
@@ -90,8 +108,10 @@
                 }
                 fieldset.elements = elements;
                 fieldset.classes = form.classes || [];
+                fieldset.hint = form.hint || undefined;
+                fieldset.desc = form.desc || undefined;
                 fieldset.id = form.id;
-                fieldset.attributes = { 'aria-label': form.label,}
+                fieldset.attributes = { 'aria-label': form.label};
                 %>
 
                 <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>

@@ -12,13 +12,13 @@
 <%
 let message = locals.message || {}
 %>
-<% if(message.error != undefined) { %>
+<% if(message.error != undefined && typeof message.error === 'string') { %>
   <p id="<%= message.id %>-desc-error" class="<%= prefix %>-error-text" >
     <%= message.error %>
   </p>
 <% } %>
 
-<% if(message.valid != undefined) { %>
+<% if(message.valid != undefined && typeof message.valid === 'string') { %>
   <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
     <%= message.valid %>
   </p>

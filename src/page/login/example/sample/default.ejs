@@ -1,6 +1,6 @@
 <%
 	const sample = getSample(include);
-
+	const login = locals.login || {};
 	const connect = {
 		login: getText('default.login', 'connect'),
 		brand: getText('default.brand', 'connect'),
@@ -10,24 +10,59 @@
 		},
 	};
 
+  const alert = {
+		id: uniqueId('alert'),
+		type: "error",
+		size: 'sm',
+		text: getText('label.error.login', 'login'),
+		data: {
+			type: 'error',
+			classes: [prefix + '-mb-2v']
+		},
+		type: 'alert',
+		template: 'alert',
+	};
+
 	const form = {
     id: uniqueId('login'),
     label: getText('label.fieldset', 'login'),
     items:[
 			{
+				type: 'paragraph',
+				template: 'typography/paragraph',
+				base: '../core',
+				content: getText('hint.fieldset', 'login'),
+				data: {
+					classes: [prefix + '-hint-text', prefix + '-mb-0']
+				},
+			},
+			{
 				type: 'input',
+				base:'input/input-base',
 				template: 'input',
 				hint: getText('hint.identifier', 'login'),
 				label: getText('label.identifier', 'login'),
+				error: login.error || undefined,
+				attributes: {
+					'aria-describedby': alert ? alert.id : undefined
+				},
+				labelClasses: login.error ? [prefix + '-label--error'] : undefined,
 				name: 'identifier'
 			},
 			{
 				type: 'password',
 				template: 'password',
 				name: 'password',
-				data: {toto: ''},
 				id: uniqueId('password'),
-				input: {label: getText('label.password', 'login'), autocomplete: 'current-password'},
+				input: {
+					error: login.error || undefined,
+					label: getText('label.password', 'login'),
+					labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+					attributes: {
+						'aria-describedby': alert ? alert.id : undefined
+					},
+					autocomplete: 'current-password'
+				},
 				checkbox: {},
 				format: false,
 				link: {
@@ -45,6 +80,7 @@
 			},
 			{
 				type: 'buttonsGroup',
+				base: 'button',
 				template: 'buttons-group',
 				buttons: [
 					{
@@ -62,6 +98,10 @@
 		kind: 2
 	};
 
+	if (login.error) {
+		form.items.unshift(alert);
+	}
+
 	const data = {
 		title: getText('label.default', 'login'),
 		connect: {
@@ -70,6 +110,7 @@
 		},
 		login: {
 			title: getText('label.login', 'login'),
+			desc: getText('label.desc', 'login'),
 			form: {...form},
 		},
 		register: {
