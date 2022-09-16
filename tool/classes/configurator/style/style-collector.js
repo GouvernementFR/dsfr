@@ -24,7 +24,7 @@ class StyleCollector {
   getUse (from) {
     return {
       path: path.relative(from, `${SRC}${this.part.path}`),
-      module: this.part.id
+      module: this.part.style.module
     };
   }
 
@@ -73,7 +73,7 @@ class StyleCollector {
         breakpoints: BREAKPOINTS.map(breakpoint => {
           return {
             id: breakpoint,
-            modules: dependency.imports.filter(part => part.style.collector.contains(support.id, false, breakpoint)).map(part => part.id)
+            modules: dependency.imports.filter(part => part.style.collector.contains(support.id, false, breakpoint)).map(part => part.style.module)
           };
         })
       };

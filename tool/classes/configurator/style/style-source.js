@@ -7,6 +7,12 @@ class StyleSource {
     this.part = part;
     this.support = support;
     this.situation = situation;
+    this._module = {
+      isLocal: true,
+      id: part.id,
+      name: `${this.part.id}${this.support.module}${this.situation.module}`,
+      options: `$options-${part.id}`
+    };
     this.init();
   }
 
@@ -37,8 +43,6 @@ class StyleSource {
     this._breakpoints = BREAKPOINTS.filter(breakpoint => new RegExp(`@mixin ${breakpoint}\\s?\\(`).test(content));
 
     this._has &&= this._breakpoints.length > 0;
-
-    this._module = `${this.part.id}${this.support.module}${this.situation.module}`;
 
     this._use = {
       path: `_content/${this.situation.path}${this.support.filename}`,

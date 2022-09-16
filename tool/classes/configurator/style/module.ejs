@@ -5,7 +5,8 @@
 @use 'options';
 
 $options: options.$options !default;
-<%- uses.map(use => `@use '${use.path}' as ${use.module} with ($options: ${use.id ? 'map.get($options, ' + use.id + ')' : '$options'});\n`).join(''); %>
+<%- uses.filter((use, index, array) => use.module.isLocal && array.map(use => use.module.options).indexOf(use.module.options) === index).map(use => `${use.module.options}: map.get($options, ${use.id});\n`).join(''); %>
+<%- uses.map(use => `@use '${use.path}' as ${use.module.name} with ($options: ${use.module.options});\n`).join(''); %>
 @include path.to-dist(map.get($options, depth));<%
 for (const mixin of mixins) {
   let s = '  ';
@@ -28,13 +29,16 @@ for (const mixin of mixins) {
     bs = s + '  ';
 
     if (breakpoint.modules) for (const module of breakpoint.modules) {
-      bpo += `${bs}@include ${module}.${mixin.name}($situations, ${breakpoint.id}, false);\n`
+      bpo += `${bs}@include ${module.name}.${mixin.name}($situations, ${breakpoint.id}, false);\n`
     }
 
     if (breakpoint.situations) for (const situation of breakpoint.situations) {
       bpo += `${bs}@if list.index($situations, ${situation.id}) {\n`;
       for (const module of situation.modules) {
-        bpo += `${bs}  @include ${module}.${breakpoint.id}();\n`;
+        bpo += `${bs}  $include: map.get(${module.options}, include);\n`
+        bpo += `${bs}  @if $include {\n`
+        bpo += `${bs}    @include ${module.name}.${breakpoint.id}();\n`;
+        bpo += `${bs}  }\n`
       }
       bpo += `${bs}}\n`;
     }

@@ -8,6 +8,12 @@ class StylePart {
     this.part = part;
     this._config = config || {};
     this._data = {};
+    this._module = {
+      isLocal: false,
+      id: part.id,
+      name: part.id,
+      options: '$options'
+    };
     this.init();
   }
 
@@ -43,8 +49,12 @@ class StylePart {
     return this._collector;
   }
 
-  gather (data = []) {
-    if (this._options) this._options.gather(data);
+  get module () {
+    return this._module;
+  }
+
+  gather (excludes = [], data = []) {
+    if (this._options) this._options.gather(excludes, data);
   }
 
   init () {

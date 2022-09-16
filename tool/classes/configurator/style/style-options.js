@@ -56,17 +56,19 @@ class StyleOptions {
     return this.mapValue.length > 0;
   }
 
-  gather (data = []) {
-    if (this.mapValue.length) {
+  gather (excludes = [], data = []) {
+    if (this.part.style.collector.has) {
+      const mapValue = [...parse({ include: !excludes.includes(this.part.id) }), ...this.mapValue];
+
       data.push({
         name: this.part.id,
-        mapValue: this.mapValue
+        mapValue: mapValue
       });
     }
 
     for (const part of this.part.children) {
       if (!part.detached && part.style && part.style.has) {
-        part.style.gather(data);
+        part.style.gather(excludes, data);
       }
     }
     return data;
@@ -117,7 +119,8 @@ class StyleOptions {
   }
 
   generate () {
-    const data = this.gather();
+    const excludes = this._config && this._config.excludes ? this._config.excludes : [];
+    const data = this.gather(excludes);
     data.unshift({ name: 'depth', value: this.part.depth });
 
     const content = `${formatMap({ name: '$options', mapValue: data })};\n`;
