@@ -1,10 +1,8 @@
 id: pictograms-digital
 asset:
   type: pictogram
-  dist: artwork/pictograms/digital
 example:
   wrapper: col-8
 style:
   dependencies:
-    - core
-
+    - artwork

@@ -1,10 +1,8 @@
 id: pictograms-map
 asset:
   type: pictogram
-  dist: artwork/pictograms/map
 example:
   wrapper: col-8
 style:
   dependencies:
-    - core
-
+    - artwork
