@@ -60,13 +60,5 @@
         @include padding(2v 4v);
       }
     }
-
-    &--sticky,
-    &--sticky-full-height {
-      [data-fr-scrolling="false"] & {
-        position: absolute;
-        top: calc(var(--scroll-top)*-1);
-      }
-    }
   }
 }
