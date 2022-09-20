@@ -15,18 +15,19 @@
 <%
  let stepper = locals.stepper || {};
  let classes = stepper.classes || [];
+ const tag = stepper.tag || 'h2';
  let stepAttrs = {};
  classes.push(prefix + '-stepper');
 %>
 
 <div <%- includeClasses(classes); %>>
   <% if (stepper.title !== undefined) { %>
-    <h2 class="<%= prefix%>-stepper__title">
+    <<%= tag %> class="<%= prefix%>-stepper__title">
       <% if (stepper.currentStep && stepper.stepCount) { %>
         <span class="<%= prefix %>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
       <% } %>
       <%- stepper.title %>
-    </h2>
+    </<%= tag %>>
   <% } %>
 
 

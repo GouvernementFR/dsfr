@@ -34,7 +34,7 @@
         <div class="<%= prefix %>-mt-7w <%= prefix %>-mb-5w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
           <div class="<%= prefix %>-col-10 <%= prefix %>-col-md-8">
             <% if (title) { %>
-            <h4><%= title %></h1>
+            <h4><%= title %></h4>
             <% } %>
 
             <% if (login.connect) { %>
@@ -54,11 +54,11 @@
             <% if(login.login) { %>
             <div>
               <% if (login.login.title) { %>
-              <h5><%= login.login.title %></h5>
+                <h5 class="<%= prefix %>-mb-4v"><%= login.login.title %></h5>
               <% } %>
 
               <% if (login.login.desc) { %>
-              <p><%= login.login.desc %></p>
+                <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= login.login.desc %></p>
               <% } %>
 
               <form>

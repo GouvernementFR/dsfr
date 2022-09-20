@@ -1,0 +1,21 @@
+id: step-identity
+title: Modèle de page de renseignement d'identité - étape 2
+description:
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+  - checkbox
+  - input
+  - button
+  - form
+  - stepper
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

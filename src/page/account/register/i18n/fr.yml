@@ -1,0 +1,23 @@
+title: Création de compte
+description: Modèles de pages de création de compte
+doc:
+
+label:
+  default: Création de compte sur [Nom de service-site]
+  register:
+    default: Se créer un compte en choisissant un identifiant
+  desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  fieldset: Formulaire de création de compte
+  checkbox: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
+  step:
+    identifier: Choisir un identifiant
+    identity: Renseigner une identité
+    address: Saisir des coordonnées
+  button:
+    valid: Valider
+    previous: Précédent
+hint:
+  identifier: "Format attendu : nom@domaine.fr"
+  fieldset: Sauf mention contraire, tous les champs sont obligatoires.
+chapo:
+  default: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.

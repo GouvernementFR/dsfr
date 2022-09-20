@@ -8,6 +8,9 @@
   @include set-text-margin(0 0 2v 0);
 
   &__format {
+    @include margin-top(3v);
+    @include margin-bottom(2v);
+
     #{ns(error-text)},
     #{ns(valid-text)},
     #{ns(info-text)} {

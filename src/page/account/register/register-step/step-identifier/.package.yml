@@ -1,0 +1,24 @@
+id: step-identifier
+title: Modèle de page de création d'identifiants - étape 1
+description:
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+  - connect
+  - checkbox
+  - input
+  - password
+  - button
+  - form
+  - stepper
+script:
+  - core
+  - password
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

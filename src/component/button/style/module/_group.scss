@@ -16,6 +16,10 @@
   &--inline {
     @include horizontal-btns-group;
 
+    &#{ns-group(btns)}--space-between {
+      justify-content: space-between;
+    }
+
     &#{ns-group(btns)}--right {
       &#{ns-group(btns)}--inline-reverse {
         flex-direction: row-reverse;

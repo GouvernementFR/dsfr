@@ -1,0 +1,23 @@
+id: register-default
+title: Modèle de page de création de compte
+description:
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+  - connect
+  - checkbox
+  - input
+  - password
+  - button
+  - form
+script:
+  - core
+  - password
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

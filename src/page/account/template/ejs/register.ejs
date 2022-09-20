@@ -1,0 +1,81 @@
+<%#
+# paramètres login
+
+* title (String, optional): Titre de la page de connexion
+
+* login (object, optional) : Bloc de connexion
+** login.title (String, optional) : Titre du bloc
+** login.desc (String, optional) : Description du bloc
+** login.form (object, required): Paramètres du formulaire de connexion (voir fieldset)
+
+
+* connect (object, optional) : Bloc bouton France connect
+** connect.title (String, optional) : Titre du bloc france connect
+** ... Autre paramètres connect (voir composant connect)
+
+* register (object, optional) : Bloc bouton s'enregistrer
+** register.title (String, optional) : Titre du bloc bouton s'enregistrer
+** register.button (object, required) : paramètres du bouton
+
+%>
+
+<%
+  const register = locals.register;
+
+  const connect = register.connect || {};
+
+%>
+
+<main role="main" id="content">
+  <div class="<%= prefix %>-container">
+    <div class="<%= prefix %>-my-4w <%= prefix %>-my-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-py-0 <%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+
+        <% if (register.title) { %>
+          <h2><%= register.title %></h2>
+        <% } %>
+
+        <% if (register.chapo) { %>
+          <p class="<%= prefix %>-text--lead"><%= register.chapo %></p>
+        <% } %>
+
+        <div class=" <%= prefix %>-background-alt--grey <%= prefix %>-mt-2w  <%= prefix %>-mt-md-7w <%= prefix %>-pb-md-2w  <%= prefix %>-pt-4w <%= prefix %>-pt-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
+          <div class="<%= prefix %>-col-10 <%= prefix %>-col-md-8">
+            <% if (register.stepper) { %>
+              <%- include('../../../../component/stepper/template/ejs/stepper.ejs', {stepper: register.stepper})  %>
+              <hr class="<%= prefix %>-mt-5w <%= prefix %>-mb-2w">
+            <% } %>
+
+            <% if (register.connect) { %>
+              <div>
+                <% if (register.connect.title) { %>
+                <h5><%= register.connect.title %></h5>
+                <% } %>
+
+                <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: register.connect})  %>
+              </div>
+
+              <% if(register.create) { %>
+                <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+              <% } %>
+            <% } %>
+
+            <% if(register.create) { %>
+              <div>
+                <% if (register.create.title) { %>
+                <h5 class="<%= prefix %>-mb-4v"><%= register.create.title %></h5>
+                <% } %>
+
+                <% if (register.create.desc) { %>
+                <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= register.create.desc %></p>
+                <% } %>
+
+                <%- include('../../../../component/form/template/ejs/form.ejs', {form: register.create.form})  %>
+
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
