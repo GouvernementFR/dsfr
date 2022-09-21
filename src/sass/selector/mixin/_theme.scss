@@ -1,18 +1,15 @@
-// TODO
-@use 'namespace';
-@use '../../utilities';
+@use 'attribute';
+@use 'root';
 
 @mixin theme($theme: null) {
-  $root: ':root';
-  @if $theme != null {
-    $root: ':root#{namespace.ns-attr(theme, $theme)}';
+  @if $theme == light or $theme == dark {
+    @include attribute.attribute(theme, (value: $theme, root: true)) {
+      @content;
+    }
   }
-  $selector: &;
-  @at-root {
-    #{$root} {
-      @include utilities.nest($selector) {
-        @content;
-      }
+  @else {
+    @include root.root {
+      @content;
     }
   }
 }

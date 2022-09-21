@@ -1,0 +1,5 @@
+@use '../../../../../../sass/reset';
+
+@mixin svg() {
+  @include reset.svg(true);
+}

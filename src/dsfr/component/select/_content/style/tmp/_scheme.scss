@@ -9,7 +9,7 @@
 @import './setting';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(select)} {
+  @include selector.class(select) {
     @include color.text(title grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);

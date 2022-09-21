@@ -1,0 +1,13 @@
+@use '../../utilities';
+@use 'combine';
+
+@mixin root () {
+  $ampersand: &;
+  @at-root :root {
+    :root {
+      @include utilities.nest($ampersand) {
+        @content;
+      }
+    }
+  }
+}

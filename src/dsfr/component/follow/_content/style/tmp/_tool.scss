@@ -8,7 +8,7 @@
 **/
 @mixin build-follow-social-icons() {
   @each $name, $icon in $follow-icons {
-    #{selector.ns('btn--' + $name)} {
+    @include selector.class(btn, (modifier: $name)) {
       @include icon.image($icon, before);
     }
   }
@@ -19,7 +19,7 @@
 **/
 @mixin build-follow-social-icons-legacy() {
   @each $name, $icon in $follow-icons {
-    #{selector.ns('btn--' + $name)} {
+    @include selector.class(btn, (modifier: $name)) {
       @include icon.image-legacy($icon, before);
     }
   }

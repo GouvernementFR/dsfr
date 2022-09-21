@@ -6,7 +6,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin transition () {
-  #{selector.ns(transition)} {
+  @include selector.class(transition) {
     &-none {
       transition: none !important;
     }

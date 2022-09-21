@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+
+
 @supports (aspect-ratio: 16 / 9) {
   @each $ratio, $value in $ratio-scale {
     @include build-utility(media, ratio, $ratio) {
@@ -11,11 +13,13 @@
   }
 }
 
-#{selector.class-start-with(selector.ns('ratio', ''))} {
+@include selector.start(ratio) {
   @include fit-cover-center;
   @include size(100%);
 }
 
-#{selector-unify(iframe, #{selector.class-start-with(selector.ns('ratio', ''))})} {
-  object-fit: fill;
+iframe {
+  @include selector.start(ratio)} {
+    object-fit: fill;
+  }
 }

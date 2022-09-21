@@ -1,0 +1,17 @@
+@use 'attribute';
+
+@function start($start) {
+  @return (attribute.attribute(class, (value: $start, operator: '^')), attribute.attribute(class, (value: ' #{$start}', operator: '*')));
+}
+
+@function not-start($start) {
+  @return ':not(#{start($start)})';
+}
+
+@function end($end, $options: ()) {
+  @return (attribute.attribute(class, (value: $end, operator: '$')), attribute.attribute(class, (value: '#{$end} ', operator: '*')));
+}
+
+@function not-end($end, $options: ()) {
+  @return ':not(#{end($end)})';
+}

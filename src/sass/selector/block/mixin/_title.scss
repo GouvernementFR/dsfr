@@ -1,0 +1,5 @@
+@mixin title() {
+  &__title {
+    @content;
+  }
+}

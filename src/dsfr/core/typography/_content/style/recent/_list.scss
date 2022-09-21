@@ -46,10 +46,10 @@ li {
   @include padding-bottom(var(--li-bottom));
 }
 
-#{ns(raw-list)} {
+@include selector.class(raw-list) {
   @include disable-list-style;
 }
 
-#{ns(list)} {
+@include selector.class(list) {
   @include enable-list-style;
 }

@@ -1,16 +1,19 @@
+@use 'sass:map';
+@use 'class';
+@use '../generic';
 
-@function start-with($start) {
-  @return ('[class^="#{$start}"]', '[class*=" #{$start}"]');
+@function start($start, $options: ()) {
+  @return generic.start(class.class($start, map.merge($options, (dot: false))));
 }
 
-@function not-start-with($start) {
-  @return ':not([class^="#{$start}"]):not([class*=" #{$start}"])';
+@function not-start($start, $options: ()) {
+  @return generic.not-start(class.class($start, map.merge($options, (dot: false))));
 }
 
-@function end-with($end) {
-  @return ('[class$="#{$end}"]', '[class*="#{$end} "]');
+@function end($end, $options: ()) {
+  @return generic.end(class.class($end, map.merge($options, (dot: false))));
 }
 
-@function not-end-with($end) {
-  @return ':not([class$="#{$end}"]):not([class*="#{$end} "])';
+@function not-end($end, $options: ()) {
+  @return generic.not-end(class.class($end, map.merge($options, (dot: false))));
 }

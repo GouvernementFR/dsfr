@@ -1,0 +1,7 @@
+@function breakpoint ($selector, $breakpoint: null) {
+  @if $breakpoint == null {
+    @return $selector;
+  }
+
+  @return #{$selector}\@#{$breakpoint};
+}

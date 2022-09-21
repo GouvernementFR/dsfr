@@ -9,10 +9,10 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  #{selector.ns(btn)} {
+  @include selector.class(btn) {
     @include icon.icon-legacy(null, sm);
 
-    @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+    @include selector.not-start(btn, (modifier: icon-)) {
       @include icon.selector {
         @include icon.icon-legacy(null, md);
       }
@@ -21,7 +21,7 @@
     &--sm {
       @include icon.icon-legacy(null, xs);
 
-      @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+      @include selector.not-start(btn, (modifier: icon-)) {
         @include icon.selector {
           @include icon.icon-legacy(null, sm);
         }
@@ -31,7 +31,7 @@
     &--lg {
       @include icon.icon-legacy(null, md);
 
-      @include selector.class-not-start-with(#{selector.ns(btn--icon-, '')}) {
+      @include selector.not-start(btn, (modifier: icon-)) {
         @include icon.selector {
           @include icon.icon-legacy(null, lg);
         }
@@ -39,20 +39,20 @@
     }
   }
 
-  #{selector.ns(btn--close)} {
+  @include selector.class(btn, (modifier: close)) {
     @include icon.icon-legacy(close-line, sm);
   }
 
-  #{selector.ns(btn--display)} {
+  @include selector.class(btn, (modifier: display)) {
     @include icon.icon-legacy(theme-fill, sm);
   }
 
-  #{selector.ns-group(btns)} {
+  @include selector.class(btns, (group: true)) {
     @include typography.disable-list-style-legacy(true);
 
     &--sm {
-      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-        #{selector.ns(btn)} {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
+        @include selector.class(btn) {
           @include icon.selector {
             @include icon.icon-legacy(null, sm);
           }
@@ -61,8 +61,8 @@
     }
 
     &--lg {
-      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-        #{selector.ns(btn)} {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
+        @include selector.class(btn) {
           @include icon.selector {
             @include icon.icon-legacy(null, lg);
           }

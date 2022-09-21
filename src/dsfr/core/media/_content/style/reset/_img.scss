@@ -1,0 +1,5 @@
+@use '../../../../../../sass/reset';
+
+@mixin img() {
+  @include reset.img(true);
+}

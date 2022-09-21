@@ -7,7 +7,7 @@
 @use '../../../../../../../sass/legacy/index';
 
 @include legacy.is(ie11) {
-  #{ns(enlarge-link)} {
+  @include selector.class(enlarge-link) {
     @include color.transparent-background((legacy: true, hover: true));
 
     @include disable-underline-legacy;

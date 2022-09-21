@@ -6,7 +6,7 @@
   $block: map.get(icon.$situations, $situation);
 
   @each $icon in $icons {
-    #{selector.ns(#{$block}-#{$icon})} {
+    @include selector.class('#{$block}-#{$icon}') {
       @if $legacy {
         @include icon.legacy-image($icon)
       }

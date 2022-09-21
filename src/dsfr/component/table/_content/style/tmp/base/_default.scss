@@ -34,7 +34,7 @@
       border-spacing: 0;
     }
 
-    &#{selector.ns-attr(js-table, true)} {
+    @include selector.attribute(js-table, (value: true, combine: true)) {
       caption {
         @include spacing.absolute(0);
       }

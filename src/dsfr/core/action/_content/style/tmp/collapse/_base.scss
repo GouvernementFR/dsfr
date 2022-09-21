@@ -3,6 +3,6 @@
 /// @group core
 ////
 
-#{ns(collapse)} {
+@include selector.class(collapse) {
   @include collapse();
 }

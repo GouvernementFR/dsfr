@@ -1,0 +1,11 @@
+@use 'sass:string';
+@use 'namespace';
+@use '../generic';
+
+/// Ce sélecteur permet de cibler les éléments d'un document en fonction de la valeur d'un de leurs attributs.
+/// @access public
+/// @param {String} $name - nom de l'attribut
+/// @param {String} $value - valeur de l'attribut
+@function attribute($attr, $options: ()) {
+  @return generic.attribute(namespace.namespace-attribute($attr), $options);
+}

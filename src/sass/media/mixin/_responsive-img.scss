@@ -1,5 +1,0 @@
-@use '../../spacing';
-
-@mixin responsive-img() {
-  @include spacing.size(100%, auto);
-}

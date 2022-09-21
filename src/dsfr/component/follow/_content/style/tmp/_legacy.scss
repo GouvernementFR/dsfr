@@ -13,18 +13,18 @@
   /**
   * Correctif de la largeur max des textes
   */
-  #{selector.ns(follow__newsletter)} {
+  @include selector.class(follow, (element: newsletter)} {
     & > * {
       max-width: 100%;
     }
   }
 
-  #{selector.ns(follow)} {
+  @include selector.class(follow) {
     @include build-follow-social-icons-legacy();
 
-    #{selector.ns-group(btns)} {
-      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
-        #{selector.ns(btn)} {
+    @include selector.class(btns, (group: true)) {
+      &:not(#{(selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg)))}) {
+        @include selector.class(btn) {
           @include icon.not-selector {
             @include icon.icon-legacy(null, md);
           }
@@ -32,7 +32,7 @@
       }
 
       &--lg {
-        #{selector.ns(btn)} {
+        @include selector.class(btn) {
           @include icon.not-selector {
             @include icon.icon-legacy(null, lg);
           }

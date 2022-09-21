@@ -12,7 +12,7 @@
  * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
  */
 @mixin scheme($legacy: false) {
-  #{selector.ns(checkbox-group)} {
+  @include selector.class(checkbox-group) {
     /**
     * On cache l'input de type checkbox pour le styler via le label
     */

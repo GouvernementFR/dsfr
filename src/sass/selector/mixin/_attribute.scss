@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use '../../utilities';
+@use '../function/attribute';
+@use 'combine';
+
+@mixin attribute ($attr, $options: ()) {
+  $combine: map.get($options, combine);
+  $root: map.get($options, root);
+
+  @if $root {
+    $ampersand: &;
+    @at-root {
+      @include combine.combine(attribute.attribute($attr, $options), $combine) {
+        @include utilities.nest($ampersand) {
+          @content;
+        }
+      }
+    }
+  }
+  @else {
+    @include combine.combine(attribute.attribute($attr, $options), $combine) {
+      @content;
+    }
+  }
+}

@@ -4,12 +4,13 @@
 ////
 
 @use '../../../../../../sass/legacy';
+@use '../../../../../../sass/selector';
 @use '../../../../../../sass/icon';
 @use '../../../../../../sass/typography';
 
 @mixin first() {
   @include legacy.is(ie11) {
-    #{selector.ns(badge)} {
+    @include selector.class(badge) {
       @include icon.icon-legacy(null, sm);
 
       &--sm {
@@ -18,29 +19,29 @@
 
       &,
       &--sm {
-        &#{selector.ns(badge)}--info {
+        @include selector.class(badge, (modifier: info, combine: true)) {
           @include icon.image-legacy(info-fill);
         }
 
-        &#{selector.ns(badge)}--success {
+        @include selector.class(badge, (modifier: success, combine: true)) {
           @include icon.image-legacy(success-fill);
         }
 
-        &#{selector.ns(badge)}--error {
+        @include selector.class(badge, (modifier: error, combine: true)) {
           @include icon.image-legacy(error-fill);
         }
 
-        &#{selector.ns(badge)}--warning {
+        @include selector.class(badge, (modifier: warning, combine: true)) {
           @include icon.image-legacy(warning-fill);
         }
 
-        &#{selector.ns(badge)}--new {
+        @include selector.class(badge, (modifier: new, combine: true)) {
           @include icon.image-legacy(flashlight-fill);
         }
       }
     }
 
-    #{selector.ns(badges-group)} {
+    @include selector.class(badges, (group: true))} {
       @include typography.disable-list-style-legacy(true);
     }
   }

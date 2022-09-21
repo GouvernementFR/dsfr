@@ -7,6 +7,7 @@
 @use '../../../../../../../sass/spacing';
 @use '../../../../../../../sass/display';
 @use '../../../../../../../sass/typography';
+@use '../../../../../../../sass/media/video';
 
 @mixin first() {
   #{selector.ns(consent-placeholder)} {
@@ -15,5 +16,8 @@
     text-align: center;
     @include typography.set-text-margin(0 0 6v);
     @include typography.set-title-margin(0 0 2v);
+    @include video.responsive-player();
+    @include display.fit;
+    @include spacing.absolute(0, 0, 0, 0, 100%, 100%);
   }
 }

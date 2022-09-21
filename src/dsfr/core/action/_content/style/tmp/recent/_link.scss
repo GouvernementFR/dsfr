@@ -37,11 +37,11 @@
     }
   }
 
-  #{ns(raw-link)} {
+  @include selector.class(raw-link) {
     @include disable-underline;
   }
 
-  #{ns(reset-link)} {
+  @include selector.class(reset-link) {
     @include disable-underline;
     text-decoration: underline;
     text-underline-offset: 2px;

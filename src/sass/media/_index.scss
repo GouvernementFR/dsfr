@@ -1,8 +1,9 @@
 @forward 'function/data-uri-svg';
 @forward 'mixin/aspect-ratio';
-@forward 'mixin/responsive-img';
-@forward 'mixin/responsive-vid';
-@forward 'legacy';
+@forward 'image' as image-*;
+@forward 'video' as video-*;
+@forward 'outdated' as outdated*;
+@forward 'legacy' as legacy-*;
 
 @use 'property/aspect-ratios';
 

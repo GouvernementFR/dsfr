@@ -3,10 +3,11 @@
 /// @group badge
 ////
 
+@use '../../../../../../sass/selector';
 @use '../../../../../../sass/color';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(badge)} {
+  @include selector.class(badge)} {
     @include color.text(default grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
 

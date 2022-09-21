@@ -3,6 +3,7 @@
 /// @group button
 ////
 
+@use '../../../../../../sass/selector';
 @use '../../../../../../sass/color';
 @use '../../../../../../sass/disabled';
 @import '../../../../link/_content/style/tmp/tool';
@@ -10,7 +11,7 @@
 @import 'tool';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(btn)} {
+  @include selector.class(btn) {
     @include color.background(action-high blue-france, (legacy:$legacy, hover: true));
     @include color.text(inverted blue-france, (legacy:$legacy));
 

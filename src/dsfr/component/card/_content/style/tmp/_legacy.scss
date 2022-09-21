@@ -9,7 +9,7 @@
 
 @mixin first() {
   @include legacy.is(ie11) {
-    #{selector.ns(card)} {
+    @include selector.class(card) {
       @include icon.icon-legacy(arrow-right-line, md, before);
 
       &--no-icon {

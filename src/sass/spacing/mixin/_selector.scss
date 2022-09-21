@@ -1,0 +1,7 @@
+@use '../function/selector';
+
+@mixin selector ($property, $direction, $value, $unit, $breakpoint) {
+  #{selector.selector($property, $direction, $value, $unit, $breakpoint)} {
+    @content;
+  }
+}

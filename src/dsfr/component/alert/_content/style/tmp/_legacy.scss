@@ -4,12 +4,13 @@
 ////
 
 @use '../../../../../../sass/icon';
+@use '../../../../../../sass/selector';
 @use '../../../../../../sass/spacing';
 @use '../../../../../../sass/legacy';
 
 @mixin first() {
   @include legacy.is(ie11) {
-    #{selector.ns(alert)} {
+    @include selector.class(alert) {
       @include icon.icon-legacy(null, md);
 
       &__title,
@@ -33,7 +34,7 @@
         @include icon.icon-legacy(warning-fill, null, before, false);
       }
 
-      #{selector.ns(btn--close)} {
+      @include selector.class(btn, (modifier: close)) {
         @include icon.icon-legacy(close-line, sm);
       }
     }

@@ -7,19 +7,19 @@
 
 @include legacy.is(ie11) {
   [href],
-  #{ns(reset-link)} {
+  @include selector.class(reset-link) {
     text-decoration: underline;
   }
 
-  #{ns(raw-link)} {
+  @include selector.class(raw-link) {
     text-decoration: none;
   }
 
-  #{ns(reset-link)} {
+  @include selector.class(reset-link) {
     @include after(none);
   }
 
-  [target="_blank"] {
+  @include selector.generic-attribute(target, '_blank') {
     @include icon-legacy(external-link-line, sm, after);
   }
 }

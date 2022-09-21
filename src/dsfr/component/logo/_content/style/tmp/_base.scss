@@ -13,7 +13,7 @@
 @import './tool';
 
 @mixin first() {
-  #{selector.ns(logo)} {
+  @include selector.class(logo) {
     @include typography.set-text-margin(0);
     @include action.disable-underline;
     display: inline-block;
@@ -52,7 +52,8 @@
     }
   }
 
-  :root#{selector.ns-attr(mourning)} #{selector.ns(logo)} {
+  @include selector.attribute(mourning, null, null, (root: true)) {
+    @include selector.class(logo) {}
     @include selector.before {
       box-shadow: 0 0 0 1px color.$white;
     }

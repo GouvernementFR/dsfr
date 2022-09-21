@@ -8,23 +8,23 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(consent-placeholder)} {
+  @include selector.class(consent-placeholder) {
     @include color.background(contrast grey, (legacy:$legacy));
   }
 
-  #{selector.ns(consent-banner)} {
+  @include selector.class(consent-banner) {
     // @include color.background(contrast grey, (legacy:$legacy));
     @include elevation.elevate(overlap-above, (legacy:$legacy, usage: alt));
     @include color.box-shadow(default grey, (legacy:$legacy));
   }
 
-  #{selector.ns(consent-manager__header)},
-  #{selector.ns(consent-service)} {
+  #{selector.class(consent-manager, (element: header))},
+  #{selector.class(consent-service)} {
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
     @include color.text(default grey, (legacy:$legacy));
 
-    #{selector.ns-group(radio)} {
-      + #{selector.ns-group(radio)} {
+    @include selector.class(radio, (group: true)) {
+      @include selector.class(radio, (group: true, combine: adjacent)) {
         @include selector.before {
           @include color.box-shadow(default grey, (legacy:$legacy));
         }
@@ -32,9 +32,9 @@
     }
   }
 
-  #{selector.ns(consent-service)} {
+  @include selector.class(consent-service) {
     &:last-of-type,
-    #{selector.ns(consent-service)} {
+    #{selector.class(consent-service)} {
       @include color.no-box-shadow((legacy: $legacy));
     }
   }

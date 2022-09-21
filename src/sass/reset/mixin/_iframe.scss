@@ -1,0 +1,8 @@
+@use '../../utilities';
+@use '../../border';
+
+@mixin iframe ($with-markup: false) {
+  @include utilities.nest(if($with-markup, iframe, null)) {
+    @include border.none;
+  }
+}

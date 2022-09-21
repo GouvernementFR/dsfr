@@ -5,15 +5,13 @@
 @mixin sizes ($situation: recommended, $legacy: false) {
   $block: map.get(icon.$situations, $situation);
 
-  #{selector.ns($block)} {
-    @each $size, $value in icon.$sizes {
-      &--#{$size} {
-        @if $legacy {
-          @include icon.legacy-size($size);
-        }
-        @else {
-          @include icon.size($size);
-        }
+  @each $size, $value in icon.$sizes {
+    @include selector.class($block, (modifier: $size)) {
+      @if $legacy {
+        @include icon.legacy-size($size);
+      }
+      @else {
+        @include icon.size($size);
       }
     }
   }

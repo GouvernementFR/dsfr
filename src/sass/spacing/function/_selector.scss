@@ -40,10 +40,5 @@
   @else {
     $selector: '#{$selector}#{$value}';
   }
-
-  @if $breakpoint == null {
-    @return selector.ns($selector);
-  }
-
-  @return selector.ns(#{$selector}\@#{$breakpoint});
+  @return selector.class($selector, (breakpoint: $breakpoint, combine: 'not'));
 }

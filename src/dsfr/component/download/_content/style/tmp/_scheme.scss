@@ -7,12 +7,12 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(download)} {
+  @include selector.class(download) {
     &--card {
       @include color.background(default grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
 
-      #{selector.ns(download__link)} {
+      @include selector.class(download__link) {
         @include color.text(title grey, (legacy:$legacy));
 
         @include selector.after {
@@ -30,7 +30,7 @@
     }
   }
 
-  #{selector.ns-group(downloads)} {
+  @include selector.class(downloads, (group: true)) {
     li::marker {
       @include color.text(action-high blue-france, (legacy:$legacy));
     }

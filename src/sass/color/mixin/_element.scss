@@ -194,10 +194,6 @@ $COLOR: constant.$value;
   @include _element($prop, border, $tokens, $options, $value);
 }
 
-@mixin no-border($options: ()) {
-  border: 0;
-}
-
 /// Ajout d'une couleur d'outline sur un élément
 /// @access public
 /// @param {list} $tokens - liste des tokens de décision
@@ -236,11 +232,4 @@ $COLOR: constant.$value;
     $value: $transformed;
   }
   @include _element(box-shadow, border, $tokens, $options, spacing.space($value));
-}
-
-/// Supprime la shadow-box sur l'élément
-/// @access public
-/// @param {string} $breakpoint - la shadow-box est retiré à partir d'un breakpoint si celui-ci est défini
-@mixin no-box-shadow($options) {
-  box-shadow: none;
 }

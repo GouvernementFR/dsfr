@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color';
 
 @mixin scheme ($legacy: false) {
-  #{selector.ns(breadcrumb)} {
+  @include selector.class(breadcrumb) {
     @include color.text(mention grey, (legacy:$legacy));
 
     &__link[aria-current] {

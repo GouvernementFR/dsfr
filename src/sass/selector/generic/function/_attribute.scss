@@ -1,0 +1,26 @@
+@use 'sass:string';
+@use 'sass:map';
+
+/// Ce sélecteur permet de cibler les éléments d'un document en fonction de la valeur d'un de leurs attributs.
+/// @access public
+/// @param {String} $name - nom de l'attribut
+/// @param {String} $value - valeur de l'attribut
+@function attribute($attr, $options: ()) {
+  $value: map.get($options, value);
+  $operator: map.get($options, operator);
+  @if $operator == null or string.index('~*|^$', $operator) == null {
+    $operator: '';
+  }
+
+  @if $value != null {
+    $attr: '[#{$attr}#{$operator}="#{$value}"]';
+  }
+  @else {
+    $attr: '[#{$attr}]';
+  }
+
+  @if map.get($options, root) {
+    @return ':root#{$attr}';
+  }
+  @return $attr;
+}

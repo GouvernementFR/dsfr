@@ -8,7 +8,7 @@
 @use '../../../../../../sass/icon';
 
 @mixin first() {
-  #{selector.ns(consent-service)} {
+  @include selector.class(consent-service) {
     &__collapse {
       #{&}-btn {
         text-decoration: underline;

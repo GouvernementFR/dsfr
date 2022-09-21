@@ -75,7 +75,7 @@
   }
 
   @include selector.theme(dark) {
-    #{selector.ns(table__shadow)} {
+    @include selector.class(table, (element: shadow)) {
       @include selector.before {
         opacity: 1;
       }

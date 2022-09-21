@@ -1,12 +1,12 @@
 @use 'sass:math';
 @use 'sass:map';
+@use '../../function/aspect-ratio';
 @use '../../../specificity';
 @use '../../../selector';
-@use '../../property/aspect-ratio';
+@use '../../../spacing';
 
 @mixin aspect-ratio($ratio: 16x9, $important: false) {
   @include selector.before('', block) {
-    $pb: specificity.important(math.div(100%, map.get(aspect-ratio.$ratios, $ratio)), $important);
-    padding-bottom: $pb;
+    @include spacing.padding-bottom(specificity.important(math.div(100%, aspect-ratio.aspect-ratio($ratio)), $important));
   }
 }

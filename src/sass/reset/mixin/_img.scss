@@ -1,0 +1,8 @@
+@use '../../utilities';
+@use '../../spacing';
+
+@mixin img ($with-markup: false) {
+  @include utilities.nest(if($with-markup, img, null)) {
+    @include spacing.size(100%, auto);
+  }
+}

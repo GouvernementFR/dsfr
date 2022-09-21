@@ -9,7 +9,7 @@
 
 @mixin first() {
   @include legacy.is(ie11) {
-    #{selector.ns(callout)} {
+    @include selector.class(callout) {
       &__title {
         @include spacing.margin(0 0 2v);
       }

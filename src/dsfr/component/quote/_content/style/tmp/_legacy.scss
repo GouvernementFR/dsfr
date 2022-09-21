@@ -10,7 +10,7 @@
   /**
   * Correction largeur max du texte
   */
-  #{selector.ns(quote)} {
+  @include selector.class(quote) {
     @include icon.icon-legacy(quote-line,lg);
 
     blockquote {

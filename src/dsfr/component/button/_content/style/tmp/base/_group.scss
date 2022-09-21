@@ -128,7 +128,7 @@
         }
       }
 
-      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(sm, only, null, null, false);
@@ -164,7 +164,7 @@
         }
       }
 
-      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(md, only, null, null, false);
@@ -200,7 +200,7 @@
         }
       }
 
-      @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+      @include selector.not-start(btns, (group: true, modifier: icon-)) {
         #{selector.ns(btn)} {
           @include icon.selector {
             @include nest-btn(lg, only, null, null, false);

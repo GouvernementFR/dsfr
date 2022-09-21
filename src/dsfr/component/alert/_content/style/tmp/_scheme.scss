@@ -3,10 +3,11 @@
 /// @group alert
 ////
 
+@use '../../../../../../sass/selector';
 @use '../../../../../../sass/color';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(alert)} {
+  @include selector.class(alert) {
     @include color.box-shadow((plain grey) (background flat grey), (legacy:$legacy), all-1-in left-10v-in);
 
     @include selector.before {

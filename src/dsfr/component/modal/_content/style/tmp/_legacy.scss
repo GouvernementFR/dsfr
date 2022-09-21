@@ -6,7 +6,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin first() {
-  #{selector.ns(modal)} {
+  @include selector.class(modal) {
     @include selector.body {
       max-height: calc(100vh - 2rem);
     }

@@ -6,7 +6,7 @@
 @use '../../../../../../sass/color';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(callout)} {
+  @include selector.class(callout) {
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);
 

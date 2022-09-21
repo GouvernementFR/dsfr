@@ -1,0 +1,6 @@
+@use '../../../spacing';
+
+@mixin fluid() {
+  @include spacing.max-width(100%);
+  @include spacing.height(auto);
+}

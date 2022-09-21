@@ -11,7 +11,7 @@
 @use '../../../../../sass/typography';
 
 @mixin first() {
-  #{selector.ns(quote)} {
+  @include selector.class(quote) {
     @include spacing.relative;
     @include spacing.margin(0);
     @include spacing.padding(0 2v 8v 2v);
@@ -39,12 +39,12 @@
         @include spacing.min-height(52v);
       }
 
-      #{selector.ns(quote__author)} {
+      @include selector.class(quote, (element: author)) {
         @include spacing.margin-left(21v);
         @include spacing.margin-left(0, md);
       }
 
-      #{selector.ns(quote__source)} {
+      @include selector.class(quote, (element: source)) {
         @include spacing.margin-left(21v);
         @include spacing.margin-left(0, md);
       }
@@ -112,7 +112,7 @@
         @include typography.text-style(xs);
       }
 
-      #{selector.ns(quote)}__source {
+      @include selector.class(quote, (element: source)) {
         @include display.flex(row, null, flex-start, wrap);
 
         li {

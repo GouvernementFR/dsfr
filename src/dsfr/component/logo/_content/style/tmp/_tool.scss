@@ -7,6 +7,7 @@
 @use '../../../../../../sass/media-query';
 @use '../../../../../../sass/selector';
 @use '../../../../../../sass/spacing';
+@use '../../../../../../sass/utilities';
 @import './setting';
 
 @mixin logo-size($size) {
@@ -19,8 +20,8 @@
     background-size: #{2.75 * $font-size} #{1.125 * $font-size}, #{2.75 * $font-size} #{$font-size}, 0;
     background-position: 0 #{(-0.0625 * $font-size)}, 0 0, 0 0;
 
-    @at-root :root#{selector.ns-attr(mourning)} #{&} {
-      background-size: #{2.75 * $font-size} #{1.125 * $font-size}, 0, #{2.75 * $font-size} #{$font-size};
+    @include selector.attribute(mourning, (root: true)) {
+        background-size: #{2.75 * $font-size} #{1.125 * $font-size}, 0, #{2.75 * $font-size} #{$font-size};
     }
   }
 
@@ -30,14 +31,14 @@
     background-position: 0 calc(100% + #{1.875 * $font-size});
     padding-top: #{(math.div(53, 24) * $font-size)};
 
-    @at-root #{selector.ns-attr(theme, 'dark')} #{&} {
+    @include selector.theme(dark) {
       background-position: #{-2.625 * $font-size} 100%;
     }
   }
 }
 
 @mixin logo($size: md, $size-md: null) {
-  #{selector.ns(logo)} {
+  @include selector.class(logo) {
     @include logo-size($size);
     @include spacing.padding(map-get($logo-sizes, $size));
 

@@ -1,6 +1,10 @@
-@mixin a ($minimal: false) {
-  text-decoration: none;
-  @if not $minimal {
-    color: inherit;
+@use '../../utilities';
+
+@mixin a ($minimal: false, $with-markup: false) {
+  @include utilities.nest(if($with-markup, a, null)) {
+    text-decoration: none;
+    @if not $minimal {
+      color: inherit;
+    }
   }
 }

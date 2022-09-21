@@ -101,8 +101,8 @@
             @include spacing.margin(-$g);
 
             > {
-              #{selector.class-start-with(selector.ns(col-, ''))},
-              #{selector.ns(col)} {
+              #{selector.start(col-)},
+              #{selector.class(col)} {
                 @include spacing.padding($g);
               }
             }
@@ -114,8 +114,8 @@
         @include spacing.margin(-$g);
 
         > {
-          #{selector.class-start-with(selector.ns(col-, ''))},
-          #{selector.ns(col)} {
+          #{selector.start(col-)},
+          #{selector.class(col)} {
             @include spacing.padding($g);
           }
         }
@@ -127,8 +127,8 @@
         @include spacing.margin(0);
 
         > {
-          #{selector.class-start-with(selector.ns(col-, ''))},
-          #{selector.ns(col)} {
+          #{selector.start(col-)},
+          #{selector.class(col)} {
             @include spacing.padding(0);
           }
         }

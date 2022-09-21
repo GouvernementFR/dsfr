@@ -3,12 +3,12 @@
 /// @group header
 ////
 
-@use '../../../../../../sass/selector';
-@use '../../../../../../sass/display';
-@use '../../../../../../sass/elevation';
-@use '../../../../../../sass/spacing';
-@use '../../../../../../sass/icon';
-@use '../../../../../../sass/media-query';
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/display';
+@use '../../../../../../../sass/elevation';
+@use '../../../../../../../sass/spacing';
+@use '../../../../../../../sass/icon';
+@use '../../../../../../../sass/media-query';
 
 @import '../../../../../button/_content/style/tmp/setting';
 @import '../../../../../button/_content/style/tmp/tool';
@@ -17,7 +17,7 @@
   #{selector.ns(header)} {
     #{selector.ns-group(btns)} {
       &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
-        @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        @include selector.not-start(btns, (group: true, modifier: icon-)) {
           #{selector.ns(btn)} {
             @include icon.not-selector {
               &:not(#{selector.ns(btn--display)}) {
@@ -81,7 +81,7 @@
 
       #{selector.ns-group(btns)} {
         &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
-          @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+          @include selector.not-start(btns, (group: true, modifier: icon-)) {
             @include display.flex(column);
 
             #{selector.ns(btn)} {

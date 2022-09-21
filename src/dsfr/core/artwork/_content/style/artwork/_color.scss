@@ -7,7 +7,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin color($legacy: false) {
-  #{selector.ns(artwork)} {
+  @include selector.class(artwork) {
     &-decorative {
       @include color.fill(artwork decorative blue-france, (legacy: $legacy));
     }
@@ -29,7 +29,7 @@
     }
 
     @include color.accentuate {
-      #{selector.ns(artwork-minor)} {
+      @include selector.class(artwork-minor) {
         @include color.fill(artwork minor accent, (legacy: $legacy));
       }
     }

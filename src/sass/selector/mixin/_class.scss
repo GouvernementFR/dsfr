@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use '../function/class';
+@use 'combine';
+
+@mixin class ($block, $options: ()) {
+  $combine: map.get($options, combine);
+  @include combine.combine(class.class($block, $options), $combine) {
+    @content;
+  }
+}

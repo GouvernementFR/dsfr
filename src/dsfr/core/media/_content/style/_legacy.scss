@@ -3,10 +3,11 @@
 /// @group core
 ////
 
-@use '../../../../../sass/legacy/index';
+@use '../../../../../sass/selector';
+@use '../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  #{ns(responsive-vid)} {
+  @include selector.class(responsive-vid) {
     @include media.aspect-ratio-legacy();
   }
 }

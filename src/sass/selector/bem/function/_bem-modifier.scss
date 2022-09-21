@@ -1,0 +1,7 @@
+@function bem-modifier ($selector, $modifier: null) {
+  @if $modifier == null {
+    @return $selector;
+  }
+
+  @return #{$selector}--#{$modifier};
+}

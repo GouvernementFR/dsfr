@@ -1,0 +1,8 @@
+/// element est un nom réservé pour le css, on utilise donc une alternative
+@function bem-element ($selector, $element: null) {
+  @if $element == null {
+    @return $selector;
+  }
+
+  @return #{$selector}__#{$element};
+}

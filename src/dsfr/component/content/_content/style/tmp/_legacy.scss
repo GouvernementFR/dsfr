@@ -8,9 +8,9 @@
 @use '../../../../../../sass/icon';
 
 @mixin first {
-  #{selector.ns(content-media)} {
+  @include selector.class(content-media) {
     &__transcription {
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include icon.icon-legacy(menu-2-fill, sm, before);
       }
     }

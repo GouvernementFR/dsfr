@@ -15,7 +15,7 @@
 @import 'tool';
 
 @mixin first() {
-  #{selector.ns(follow)} {
+  @include selector.class(follow) {
     @include spacing.padding(6v 0);
     @include spacing.padding(8v 0, md);
     @include typography.set-title-margin(0 0 2v);
@@ -24,59 +24,59 @@
     &__newsletter {
       // bloc newsletter
 
-      #{selector.ns(label)} {
+      @include selector.class(label) {
         @include display.sr-only();
       }
 
-      #{selector.ns(input-wrap)} {
+      @include selector.class(input-wrap) {
         @include display.flex(column);
         @include spacing.max-width(150v);
         @include spacing.margin-top(0);
 
-        #{selector.ns(input)} {
+        @include selector.class(input) {
           @include spacing.margin-bottom(4v);
           @include spacing.margin-top(0);
         }
 
-        #{selector.ns(btn)} {
+        @include selector.class(btn) {
           justify-content: center;
         }
 
         @include media-query.from(sm) {
           flex-direction: row;
 
-          #{selector.ns(btn)} {
+          @include selector.class(btn) {
             border-radius: 0 #{spacing.space(1v)} 0 0;
           }
 
-          #{selector.ns(input)} {
+          @include selector.class(input) {
             @include spacing.margin-bottom(0);
             border-radius: #{spacing.space(1v)} 0 0 0;
           }
         }
       }
 
-      #{selector.ns(hint-text)} {
+      @include selector.class(hint-text) {
         @include spacing.margin-top(6v);
         @include spacing.margin-bottom(0);
       }
 
-      #{selector.ns(valid-text)},
-      #{selector.ns(error-text)} {
+      #{selector.class(valid-text)},
+      #{selector.class(error-text)} {
         @include spacing.margin-top(4v);
-        + #{selector.ns(hint-text)} {
+        @include selector.class(hint-text, (combine: adjacent)) {
           @include spacing.margin-top(4v);
           @include spacing.margin-top(2v, md);
         }
       }
 
       @include media-query.from(sm) {
-        #{selector.ns(hint-text)} {
+        @include selector.class(hint-text) {
           @include spacing.margin-top(2v);
         }
 
-        #{selector.ns(valid-text)},
-        #{selector.ns(error-text)} {
+        #{selector.class(valid-text)},
+        #{selector.class(error-text)} {
           @include spacing.margin-top(4v);
         }
       }
@@ -87,7 +87,7 @@
       @include typography.set-text-margin(0 0 3v);
       @include typography.set-title-margin(0 0 3v);
 
-      #{selector.ns-group(btns)} {
+      #@include selector.class(btns, (group: true)) {
         @include horizontal-btns-group;
         @include spacing.margin(0 -4v -4v -4v);
         @include spacing.width(auto);

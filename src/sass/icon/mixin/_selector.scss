@@ -7,7 +7,7 @@
   $start: ();
   @each $situation, $block in situations.$values {
     @if list.index($situations, $situation) != null {
-      $list: selector.start-with(selector.ns($block, ''));
+      $list: selector.start('#{$block}-');
       @each $item in $list {
         $start: list.append($start, $item, 'comma');
       }
@@ -21,9 +21,9 @@
 
 @mixin not-selector($situations: recommended deprecated) {
   $start: '';
-  @each $situation, $block in situations.$situations {
+  @each $situation, $block in situations.$values {
     @if list.index($situations, $situation) != null {
-      $start: '#{$start}#{selector.not-start-with(selector.ns($block, ''))}';
+      $start: '#{$start}#{selector.not-start('#{$block}-')}';
     }
   }
 

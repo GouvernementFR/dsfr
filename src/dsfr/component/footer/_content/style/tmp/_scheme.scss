@@ -7,7 +7,7 @@
 @use '../../../../../../sass/color';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(footer)} {
+  @include selector.class(footer) {
     @include color.box-shadow((plain blue-france) (default grey), (legacy:$legacy), top-2-out bottom-1-in);
 
     &__content-link,
@@ -21,7 +21,7 @@
 
     &__bottom {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include color.text(mention grey, (legacy:$legacy));
       }
     }
@@ -44,7 +44,7 @@
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
 
       @if not $legacy {
-        #{selector.ns(footer__partners-link)} {
+        @include selector.class(footer, (element: partners-link)) {
           &,
           &:hover,
           &:active {

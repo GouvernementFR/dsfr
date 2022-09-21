@@ -1,8 +1,13 @@
+@use '../../../../../../sass/selector';
 @import '../../../../button/_content/style/tmp/setting';
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin first() {
-  #{selector.ns(link)}#{selector.ns(link--icon-left)}#{selector.ns(fi-theme-fill)} {
-    @include nest-btn(md, left);
+  @include selector.class(link) {
+    @include selector.class(link, (modifier: icon-left, combine: true)) {
+      @include selector.class(fi-theme-fill) {
+        @include nest-btn(md, left);
+      }
+    }
   }
 }

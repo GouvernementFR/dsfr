@@ -10,16 +10,16 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  #{selector.ns(header)} {
+  @include selector.class(header) {
     @include typography.disable-list-style-legacy;
     @include action.disable-underline-legacy;
 
-    #{selector.ns-group(btns)} {
-      &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
-        @include selector.class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
-          #{selector.ns(btn)} {
+    @include selector.class(btns, (group: true)) {
+      &:not(#{(selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg)))}) {
+        @include selector.not-start(btns, (group: true, modifier: icon-)) {
+          @include selector.class(btn) {
             @include icon.not-selector {
-              &:not(#{selector.ns(btn--display)}) {
+              @include selector.class(btn, (modifier: display, combine: not)) {
                 @include icon.icon-legacy(null, sm, before, false);
               }
             }
@@ -28,7 +28,7 @@
               @include icon.icon-legacy(null, sm, before, false);
             }
 
-            &#{selector.ns(btn--display)} {
+            @include selector.class(btn, (modifier: display, combine: true))} {
               @include icon.icon-legacy(null, sm, before, false);
             }
           }
@@ -37,12 +37,12 @@
     }
 
     &__tools-links {
-      #{selector.ns(link)} {
+      @include selector.class(link) {
         overflow: visible;
       }
     }
 
-    #{selector.ns(modal)} {
+    @include selector.class(modal) {
       @include media-query.from(lg) {
         position: static;
         overflow: visible;

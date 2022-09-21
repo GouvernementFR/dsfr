@@ -12,7 +12,7 @@
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(header)} {
+  @include selector.class(header) {
     &__brand {
       @include elevation.elevate(raised, (legacy: $legacy));
     }
@@ -38,26 +38,26 @@
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
 
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include btn-kind-scheme(4, $legacy);
         @include color.no-box-shadow((legacy: $legacy));
       }
     }
 
     &__tools-links {
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include btn-kind-scheme(4, $legacy);
       }
     }
 
     &__navbar {
-      #{selector.ns(service)} {
+      @include selector.class(service) {
         @include selector.title {
           @include color.text(title grey, (legacy:$legacy));
         }
       }
 
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include btn-kind-scheme(4, $legacy);
 
         &--menu {
@@ -66,13 +66,13 @@
       }
     }
 
-    #{selector.ns(header__menu)} {
+    @include selector.class(header, (element: menu)) {
       @include media-query.from(lg) {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
     }
 
-    #{selector.ns(modal)} {
+    @include selector.class(modal) {
       @include color.background(lifted grey, (legacy:$legacy));
     }
   }

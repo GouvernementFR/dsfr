@@ -11,10 +11,10 @@
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin scheme($legacy: false) {
-  #{selector.ns(follow)} {
+  @include selector.class(follow) {
     @include color.background(alt blue-france, (legacy: $legacy));
 
-    #{selector.ns(input)} {
+    @include selector.class(input) {
       @include color.background(default grey, (legacy: $legacy));
     }
 
@@ -29,16 +29,18 @@
     }
 
     &__social {
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include btn-kind-scheme(4, $legacy);
       }
     }
 
-    #{selector.ns(grid-row)} > *:not(:first-child) {
-      // Séparateur en box-shadow
-      @include color.box-shadow(default blue-france, (legacy: $legacy), top-1-out);
-      @include media-query.from(md) {
-        @include color.box-shadow(default blue-france, (legacy: $legacy), left-1-out);
+    @include selector.class(grid-row) {
+      > *:not(:first-child) {
+        // Séparateur en box-shadow
+        @include color.box-shadow(default blue-france, (legacy: $legacy), top-1-out);
+        @include media-query.from(md) {
+          @include color.box-shadow(default blue-france, (legacy: $legacy), left-1-out);
+        }
       }
     }
   }

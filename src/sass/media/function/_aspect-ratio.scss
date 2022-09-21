@@ -1,0 +1,9 @@
+@use 'sass:map';
+@use '../property/aspect-ratios';
+
+@function aspect-ratio($ratio) {
+  @if map.has-key(aspect-ratios.$values, $ratio) {
+    @return map.get(aspect-ratios.$values, $ratio);
+  }
+  @return map.get(aspect-ratios.$values, 16x9);
+}

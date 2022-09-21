@@ -7,7 +7,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme ($legacy: false) {
-  #{selector.ns(accordion)} {
+  @include selector.class(accordion) {
     @include selector.before() {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in bottom-1-out);
     }

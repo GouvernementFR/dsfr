@@ -10,8 +10,8 @@
   /**
   * Correctif placement caption
   */
-  #{selector.ns(table)} {
-    &#{selector.ns-attr(js-table, true)} {
+  @include selector.class(table) {
+    @include selector.attribute(js-table, (combine: true)) {
       caption {
         @include spacing.relative;
       }

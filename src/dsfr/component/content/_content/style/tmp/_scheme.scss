@@ -4,9 +4,9 @@
 ////
 
 @mixin _content-scheme($legacy: false) {
-  #{selector.ns(content-media)} {
+  @include selector.class(content-media) {
     &__transcription {
-      #{selector.ns(btn)} {
+      @include selector.class(btn) {
         @include btn-kind-scheme(4, $legacy);
       }
     }

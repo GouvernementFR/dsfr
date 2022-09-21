@@ -11,10 +11,10 @@
   /*
 * Ombres ajoutées en Js si le contenu est plus grand que le conteneur
 */
-  #{selector.ns(tabs__shadow)} {
+  @include selector.class(tabs, (element: shadow)) {
     --tab-list-height: #{space(12v)};
 
-    & > #{selector.ns(tabs__list)} {
+    @include selector.class(tabs, (element: list, combine: child)) {
       @include selector.before('', block) {
         @include spacing.absolute(4px, 0, null, 0);
         @include elevation.z-index(above);
@@ -29,44 +29,52 @@
     /**
   * Modifier ombre à gauche
   **/
-    &--left > #{selector.ns(tabs__list)} {
-      @include selector.before {
-        @include _tabs-scroll-shadow(
-          true,
-          false
-        ); // @TODO: à implementer dans la mixin shadow
+    &--left {
+      @include selector.class(tabs, (element: list, combine: child)) {
+        @include selector.before {
+          @include _tabs-scroll-shadow(
+              true,
+              false
+          ); // @TODO: à implementer dans la mixin shadow
+        }
       }
     }
 
     /**
   * Modifier ombre à droite
   **/
-    &--right > #{selector.ns(tabs__list)} {
-      @include selector.before {
-        @include _tabs-scroll-shadow(
-          false,
-          true
-        ); // @TODO: à implementer dans la mixin shadow
+    &--right {
+      @include selector.class(tabs, (element: list, combine: child)) {
+        @include selector.before {
+          @include _tabs-scroll-shadow(
+            false,
+            true
+          ); // @TODO: à implementer dans la mixin shadow
+        }
       }
     }
 
     /**
   * Modifier combinaison ombre à gauche et ombre à droite
   **/
-    &--left#{&}--right > #{selector.ns(tabs__list)} {
-      @include selector.before {
-        @include _tabs-scroll-shadow(
-          true,
-          true
-        ); // @TODO: à implementer dans la mixin shadow
+    &--left#{&}--right {
+      @include selector.class(tabs, (element: list, combine: child)) {
+        @include selector.before {
+          @include _tabs-scroll-shadow(
+              true,
+              true
+          ); // @TODO: à implementer dans la mixin shadow
+        }
       }
     }
   }
 
   @include selector.theme(dark) {
-    #{selector.ns(tabs__shadow)} > #{selector.ns(tabs__list)} {
-      @include selector.before {
-        opacity: 1;
+    @include selector.class(tabs, (element: shadow)) {
+      @include selector.class(tabs, (element: list, combine: child)) {
+        @include selector.before {
+          opacity: 1;
+        }
       }
     }
   }
