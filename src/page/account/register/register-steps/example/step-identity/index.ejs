@@ -12,15 +12,6 @@ const form = {
   label: getText('label.fieldset', 'register'),
   items:[
     {
-      type: 'paragraph',
-      template: 'typography/paragraph',
-      base: '../core',
-      data: {
-        content: getText('hint.fieldset', 'login'),
-        classes: [prefix + '-hint-text', prefix + '-mb-0']
-      },
-    },
-    {
       type: 'fieldset',
       base:'form',
       template: 'fieldset',
@@ -115,6 +106,7 @@ const form = {
 const create = {
   form: form,
   title: getText('label.step.identity', 'register'),
+  hint: getText('hint.fieldset', 'login'),
   desc: false
 }
 %>

@@ -11,14 +11,14 @@ label:
   fieldset: Formulaire de création de compte
   checkbox: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
   step:
-    identifier: Choisir un identifiant
+    login: Choisir un identifiant
     identity: Renseigner une identité
     address: Saisir des coordonnées
   button:
     valid: Valider
     previous: Précédent
 hint:
-  identifier: "Format attendu : nom@domaine.fr"
+  username: "Format attendu : nom@domaine.fr"
   fieldset: Sauf mention contraire, tous les champs sont obligatoires.
 chapo:
   default: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.

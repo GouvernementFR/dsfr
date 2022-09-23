@@ -62,6 +62,14 @@
                   <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= login.login.desc %></p>
                 <% } %>
 
+                <% if (login.login.alert) { %>
+                  <%- include('../../../../component/alert/template/ejs/alert.ejs', {alert: login.login.alert})  %>
+                <% } %>
+
+                <% if (login.login.hint) { %>
+                  <p class="<%= prefix %>-hint-text"><%= login.login.hint %></p>
+                <% } %>
+
                 <%- include('../../../../component/form/template/ejs/form.ejs', {form: login.login.form})  %>
 
               </div>

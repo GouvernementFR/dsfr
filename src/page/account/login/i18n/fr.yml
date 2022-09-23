@@ -9,7 +9,7 @@ label:
   desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   register: Vous n’avez pas de compte ?
   password: Mot de passe
-  identifier: Identifiant
+  username: Identifiant
   remember: Se souvenir de moi
   fieldset: Formulaire de connexion
   error:
@@ -18,5 +18,5 @@ label:
     connect: Se connecter
     create: Créer un compte
 hint:
-  identifier: "Format attendu : nom@domaine.fr"
+  username: "Format attendu : nom@domaine.fr"
   fieldset: Sauf mention contraire, tous les champs sont obligatoires.

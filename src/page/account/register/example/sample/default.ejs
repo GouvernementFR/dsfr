@@ -17,29 +17,21 @@
 	const create = register.create || {};
 	create.title = create.title || getText('label.register', 'register');
 	create.desc = create.desc !== false ? create.desc || getText('label.desc', 'register') : false;
+	create.hint = create.hint !== false ? create.hint || getText('hint.fieldset', 'register') : false;
 
 	const form = create.form || {
     id: uniqueId('register'),
     label: getText('label.fieldset', 'register'),
     items:[
 			{
-				type: 'paragraph',
-				template: 'typography/paragraph',
-				base: '../core',
-				data: {
-					content: getText('hint.fieldset', 'login'),
-					classes: [prefix + '-hint-text', prefix + '-mb-0']
-				},
-			},
-			{
 				type: 'input',
 				base:'input/input-base',
 				template: 'input',
 				data: {
-					id: uniqueId('identifier'),
-					hint: getText('hint.identifier', 'login'),
-					label: getText('label.identifier', 'login'),
-					name: 'identifier'
+					id: uniqueId('username'),
+					hint: getText('hint.username', 'login'),
+					label: getText('label.username', 'login'),
+					name: 'username'
 				}
 			},
 			{
@@ -110,7 +102,8 @@
 		chapo: getText('chapo.default', 'register'),
 		stepper: register.stepper ? register.stepper : undefined,
 		connect: connect,
-		create: create
+		create: create,
+		text: register.text || undefined
 	};
 
 	create.form = form;

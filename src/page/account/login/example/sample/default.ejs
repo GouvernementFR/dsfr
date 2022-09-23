@@ -1,6 +1,7 @@
 <%
 	const sample = getSample(include);
 	const login = locals.login || {};
+	const alert = login.alert || undefined;
 	const connect = {
 		login: getText('default.login', 'connect'),
 		brand: getText('default.brand', 'connect'),
@@ -10,45 +11,26 @@
 		},
 	};
 
-  const alert = {
-		type: 'alert',
-		template: 'alert',
-		data: {
-			id: uniqueId('alert'),
-			size: 'sm',
-			text: getText('label.error.login', 'login'),
-			type: 'error',
-			classes: [prefix + '-mb-2v']
-		},
-	};
-
 	const form = {
     id: uniqueId('login'),
     label: getText('label.fieldset', 'login'),
     items:[
 			{
-				type: 'paragraph',
-				template: 'typography/paragraph',
-				base: '../core',
-				data: {
-					content: getText('hint.fieldset', 'login'),
-					classes: [prefix + '-hint-text', prefix + '-mb-0']
-				},
-			},
-			{
 				type: 'input',
 				base:'input/input-base',
 				template: 'input',
 				data: {
-					id: uniqueId('identifier'),
-					hint: getText('hint.identifier', 'login'),
-					label: getText('label.identifier', 'login'),
-					error: login.error || undefined,
+					id: uniqueId('username'),
+					hint: getText('hint.username', 'login'),
+					label: getText('label.username', 'login'),
+					error: alert ? alert.type === 'error' : undefined,
 					attributes: {
-						'aria-describedby': alert ? alert.id : undefined
+						'aria-describedby': alert ? alert.id : undefined,
+						'autocomplete': 'username',
+						'aria-required': true
 					},
 					labelClasses: login.error ? [prefix + '-label--error'] : undefined,
-					name: 'identifier'
+					name: 'username'
 				}
 			},
 			{
@@ -58,7 +40,7 @@
 					name: 'password',
 					id: uniqueId('password'),
 					input: {
-						error: login.error || undefined,
+						error: alert ? alert.type === 'error' : undefined,
 						label: getText('label.password', 'login'),
 						labelClasses: login.error ? [prefix + '-label--error'] : undefined,
 						attributes: {
@@ -107,10 +89,6 @@
 		kind: 2
 	};
 
-	if (login.error) {
-		form.items.unshift(alert);
-	}
-
 	const data = {
 		title: getText('label.default', 'login'),
 		connect: {
@@ -120,6 +98,8 @@
 		login: {
 			title: getText('label.login', 'login'),
 			desc: getText('label.desc', 'login'),
+			hint: getText('hint.fieldset', 'login'),
+			alert: alert,
 			form: {...form},
 		},
 		register: {
