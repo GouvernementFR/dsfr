@@ -52,6 +52,7 @@
       &#{ns(enlarge-link)} {
         @include margin(-4v 0 -4v -4v);
         @include padding(4v);
+        align-self: flex-start;
       }
     }
   }
