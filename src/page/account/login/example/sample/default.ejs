@@ -11,16 +11,15 @@
 	};
 
   const alert = {
-		id: uniqueId('alert'),
-		type: "error",
-		size: 'sm',
-		text: getText('label.error.login', 'login'),
+		type: 'alert',
+		template: 'alert',
 		data: {
+			id: uniqueId('alert'),
+			size: 'sm',
+			text: getText('label.error.login', 'login'),
 			type: 'error',
 			classes: [prefix + '-mb-2v']
 		},
-		type: 'alert',
-		template: 'alert',
 	};
 
 	const form = {
@@ -31,8 +30,8 @@
 				type: 'paragraph',
 				template: 'typography/paragraph',
 				base: '../core',
-				content: getText('hint.fieldset', 'login'),
 				data: {
+					content: getText('hint.fieldset', 'login'),
 					classes: [prefix + '-hint-text', prefix + '-mb-0']
 				},
 			},
@@ -40,55 +39,65 @@
 				type: 'input',
 				base:'input/input-base',
 				template: 'input',
-				hint: getText('hint.identifier', 'login'),
-				label: getText('label.identifier', 'login'),
-				error: login.error || undefined,
-				attributes: {
-					'aria-describedby': alert ? alert.id : undefined
-				},
-				labelClasses: login.error ? [prefix + '-label--error'] : undefined,
-				name: 'identifier'
+				data: {
+					id: uniqueId('identifier'),
+					hint: getText('hint.identifier', 'login'),
+					label: getText('label.identifier', 'login'),
+					error: login.error || undefined,
+					attributes: {
+						'aria-describedby': alert ? alert.id : undefined
+					},
+					labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+					name: 'identifier'
+				}
 			},
 			{
 				type: 'password',
 				template: 'password',
-				name: 'password',
-				id: uniqueId('password'),
-				input: {
-					error: login.error || undefined,
-					label: getText('label.password', 'login'),
-					labelClasses: login.error ? [prefix + '-label--error'] : undefined,
-					attributes: {
-						'aria-describedby': alert ? alert.id : undefined
+				data: {
+					name: 'password',
+					id: uniqueId('password'),
+					input: {
+						error: login.error || undefined,
+						label: getText('label.password', 'login'),
+						labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+						attributes: {
+							'aria-describedby': alert ? alert.id : undefined
+						},
+						autocomplete: 'current-password'
 					},
-					autocomplete: 'current-password'
-				},
-				checkbox: {},
-				format: false,
-				link: {
-					href: contentPlaceholder(getText('link.href', 'password')),
-					label: getText('link.label', 'password'),
+					checkbox: {},
+					format: false,
+					link: {
+						href: contentPlaceholder(getText('link.href', 'password')),
+						label: getText('link.label', 'password'),
+					}
 				}
 			},
 			{
 				type: 'checkbox',
 				template: 'checkbox-group',
-				label: getText('label.remember', 'login'),
-				name: 'remember',
-				checked: false,
-				size: 'sm',
+				data: {
+					id: uniqueId('remember'),
+					label: getText('label.remember', 'login'),
+					name: 'remember',
+					checked: false,
+					size: 'sm',
+				}
 			},
 			{
 				type: 'buttonsGroup',
 				base: 'button',
 				template: 'buttons-group',
-				buttons: [
-					{
-						label: getText('label.button.connect', 'login'),
-						kind: 1,
-						classes: [prefix + '-mt-2v']
-					}
-				]
+				data: {
+					buttons: [
+						{
+							label: getText('label.button.connect', 'login'),
+							kind: 1,
+							classes: [prefix + '-mt-2v']
+						}
+					]
+				}
 			},
     ]
 	};

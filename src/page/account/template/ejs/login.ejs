@@ -28,107 +28,56 @@
 %>
 
 <main role="main" id="content">
-  <div class="<%= prefix %>-container">
-    <div class="<%= prefix %>-my-2w <%= prefix %>-my-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
-      <div class="<%= prefix %>-background-alt--grey <%= prefix %>-py-0 <%= prefix %>-col-12  <%= prefix %>-col-md-8 <%= prefix %>-col-lg-6">
-        <div class="<%= prefix %>-mt-7w <%= prefix %>-mb-5w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
-          <div class="<%= prefix %>-col-10 <%= prefix %>-col-md-8">
-            <% if (title) { %>
-            <h4><%= title %></h4>
-            <% } %>
-
-            <% if (login.connect) { %>
-            <div>
-              <% if (login.connect.title) { %>
-              <h5><%= login.connect.title %></h5>
+  <div class="<%= prefix %>-container--fluid <%= prefix %>-container <%= prefix %>-my-md-14v">
+    <div class=" <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-8 <%= prefix %>-col-lg-6">
+        <div class="<%= prefix %>-container <%= prefix %>-background-alt--grey <%= prefix %>-pt-10v <%= prefix %>-pt-md-14v <%= prefix %>-pb-6v <%= prefix %>-pb-md-10v">
+          <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+              <% if (title) { %>
+              <h4><%= title %></h4>
               <% } %>
 
-              <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: login.connect})  %>
+              <% if (login.connect) { %>
+              <div>
+                <% if (login.connect.title) { %>
+                <h5><%= login.connect.title %></h5>
+                <% } %>
 
-            </div>
+                <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: login.connect})  %>
+
+              </div>
+                <% if(login.login) { %>
+                  <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+                <% } %>
+              <% } %>
+
               <% if(login.login) { %>
-                <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+              <div>
+                <% if (login.login.title) { %>
+                  <h5 class="<%= prefix %>-mb-4v"><%= login.login.title %></h5>
+                <% } %>
+
+                <% if (login.login.desc) { %>
+                  <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= login.login.desc %></p>
+                <% } %>
+
+                <%- include('../../../../component/form/template/ejs/form.ejs', {form: login.login.form})  %>
+
+              </div>
               <% } %>
-            <% } %>
 
-            <% if(login.login) { %>
-            <div>
-              <% if (login.login.title) { %>
-                <h5 class="<%= prefix %>-mb-4v"><%= login.login.title %></h5>
+              <% if(login.register) { %>
+              <hr class="<%= prefix %>-mt-n6v">
+              <div>
+                <% if(login.register.title) { %>
+                <h5><%= login.register.title %></h5>
+                <% } %>
+
+                <%- include('../../../../component/button/template/ejs/buttons-group', {buttonsGroup: {buttons:[{...login.register.button}]}}) %>
+              </div>
               <% } %>
-
-              <% if (login.login.desc) { %>
-                <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= login.login.desc %></p>
-              <% } %>
-
-              <form>
-                <%
-                const form = login.login.form || {};
-                const fieldset = {};
-                const elements = [];
-                if (form.items && form.items.length) {
-                  form.items.forEach((item, index) => {
-                    const type = item.type || 'input';
-                    item.base ? path = item.base : path = type;
-                    elements.push({
-                      path: `${path}/template/ejs/${item.template}`,
-                      disabled: item.disabled || undefined,
-                      control: item.control,
-                      classes: item.classes || undefined,
-                      data: {
-                        [type]: {
-                          id: `${form.id}-${index}`,
-                          classes: item.data ? item.data.classes : undefined,
-                          attributes: item.data ? item.data.attributes : undefined,
-                          name: item.name || undefined,
-                          label: item.label || undefined,
-                          text: item.text || undefined,
-                          content: item.content || undefined,
-                          input: item.input || undefined,
-                          checkbox: item.checkbox || undefined,
-                          link: item.link || undefined,
-                          format: item.format || undefined,
-                          value: item.value || undefined,
-                          hint: item.hint || undefined,
-                          error: item.error || undefined,
-                          valid: item.valid || undefined,
-                          checked: item.checked || false,
-                          labelClasses: item.labelClasses || undefined,
-                          size: item.size || undefined,
-                          buttons: item.buttons || undefined,
-                          disabled: item.disabled || undefined,
-                          kind: item.kind || undefined,
-                          options: item.options || undefined,
-                          placeholder: item.placeholder || undefined,
-                          type: item.data ? item.data.type : undefined,
-                        }
-                      }
-                    });
-                  });
-                }
-                fieldset.elements = elements;
-                fieldset.classes = form.classes || [];
-                fieldset.hint = form.hint || undefined;
-                fieldset.desc = form.desc || undefined;
-                fieldset.id = form.id;
-                fieldset.attributes = { 'aria-label': form.label};
-                %>
-
-                <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
-              </form>
             </div>
-            <% } %>
-
-            <% if(login.register) { %>
-            <hr class="<%= prefix %>-mt-n6v">
-            <div>
-              <% if(login.register.title) { %>
-              <h5><%= login.register.title %></h5>
-              <% } %>
-
-              <%- include('../../../../component/button/template/ejs/buttons-group', {buttonsGroup: {buttons:[{...login.register.button}]}}) %>
-            </div>
-            <% } %>
           </div>
         </div>
       </div>

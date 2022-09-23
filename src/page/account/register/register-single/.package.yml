@@ -1,18 +1,20 @@
-id: step-identity
-title: Modèle de page de renseignement d'identité - étape 2
+id: register-single
+title: Modèle de page de création de compte
 description:
 doc:
 no-heading: true
 style:
   - core
   - alert
+  - connect
   - checkbox
   - input
+  - password
   - button
   - form
-  - stepper
 script:
   - core
+  - password
 example:
   style:
     - header

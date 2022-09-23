@@ -15,8 +15,8 @@ const form = {
       type: 'paragraph',
       template: 'typography/paragraph',
       base: '../core',
-      content: getText('hint.fieldset', 'login'),
       data: {
+        content: getText('hint.fieldset', 'login'),
         classes: [prefix + '-hint-text', prefix + '-mb-0']
       },
     },
@@ -31,6 +31,8 @@ const form = {
         elements: [
           {
             path: 'radio/template/ejs/radio-group',
+            type: 'radio',
+            template: 'radio',
             data: {
               radio: {
                 name: 'civility',
@@ -42,6 +44,8 @@ const form = {
           },
           {
             path: 'radio/template/ejs/radio-group',
+            type: 'radio',
+            template: 'radio',
             data: {
               radio: {
                 name: 'civility',
@@ -58,24 +62,31 @@ const form = {
       type: 'input',
       base:'input/input-base',
       template: 'input',
-      label: getText('label.name', 'name'),
-      name: 'name'
+      data: {
+        id: uniqueId('name'),
+        label: getText('label.name', 'name'),
+        name: 'name'
+      }
     },
     {
       type: 'input',
       base:'input/input-base',
       template: 'input',
-      label: getText('label.firstname', 'name'),
-      name: 'firstname'
+      data: {
+        id: uniqueId('firstname'),
+        label: getText('label.firstname', 'name'),
+        name: 'firstname'
+      }
     },
     {
       type: 'checkbox',
       template: 'checkbox-group',
-      label: getText('label.no-firstname', 'name'),
-      name: 'no-firstname',
-      size: 'sm',
-      checked: false,
       data: {
+        id: uniqueId('checkbox-no-firstname'),
+        label: getText('label.no-firstname', 'name'),
+        name: 'no-firstname',
+        size: 'sm',
+        checked: false,
         attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`},
       },
     },
@@ -85,18 +96,19 @@ const form = {
       template: 'buttons-group',
       data: {
         inline: true,
-        classes: [prefix + '-btns-group--space-between', prefix + '-mt-2v'],
+        classes: [prefix + '-btns-group--right', prefix + '-mt-2v'],
+        buttons: [
+          {
+            label: getText('label.button.previous', 'register'),
+            kind: 2,
+          },
+          {
+            label: getText('label.button.valid', 'register'),
+            kind: 1,
+            type: 'submit',
+          }
+        ]
       },
-      buttons: [
-        {
-          label: getText('label.button.previous', 'register'),
-          kind: 2,
-        },
-        {
-          label: getText('label.button.valid', 'register'),
-          kind: 1,
-        }
-      ]
     },
   ]
 };

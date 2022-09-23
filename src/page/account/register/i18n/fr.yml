@@ -6,6 +6,7 @@ label:
   default: Création de compte sur [Nom de service-site]
   register:
     default: Se créer un compte en choisissant un identifiant
+    connect: Se créer un compte avec FranceConnect
   desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   fieldset: Formulaire de création de compte
   checkbox: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est

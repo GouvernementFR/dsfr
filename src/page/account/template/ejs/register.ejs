@@ -27,53 +27,60 @@
 %>
 
 <main role="main" id="content">
-  <div class="<%= prefix %>-container">
-    <div class="<%= prefix %>-my-4w <%= prefix %>-my-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
-      <div class="<%= prefix %>-py-0 <%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+  <div class="<%= prefix %>-container <%= prefix %>-mt-8v <%= prefix %>-mt-md-16v">
+    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+      <% if (register.title) { %>
+        <h2><%= register.title %></h2>
+      <% } %>
 
-        <% if (register.title) { %>
-          <h2><%= register.title %></h2>
-        <% } %>
+      <% if (register.chapo) { %>
+        <p class="<%= prefix %>-text--lead"><%= register.chapo %></p>
+      <% } %>
+      </div>
+    </div>
+  </div>
 
-        <% if (register.chapo) { %>
-          <p class="<%= prefix %>-text--lead"><%= register.chapo %></p>
-        <% } %>
+  <div class="<%= prefix %>-container <%= prefix %>-container--fluid">
+    <div class="<%= prefix %>-mb-0 <%= prefix %>-mb-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+        <div class="<%= prefix %>-container <%= prefix %>-background-alt--grey <%= prefix %>-pb-md-4v  <%= prefix %>-pt-8v  <%= prefix %>-mt-4v  <%= prefix %>-mt-md-8v <%= prefix %>-pt-md-7w ">
+          <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10">
+              <% if (register.stepper) { %>
+                <%- include('../../../../component/stepper/template/ejs/stepper.ejs', {stepper: register.stepper})  %>
+                <hr class="<%= prefix %>-mt-5w <%= prefix %>-mb-2w">
+              <% } %>
 
-        <div class=" <%= prefix %>-background-alt--grey <%= prefix %>-mt-2w  <%= prefix %>-mt-md-7w <%= prefix %>-pb-md-2w  <%= prefix %>-pt-4w <%= prefix %>-pt-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
-          <div class="<%= prefix %>-col-10 <%= prefix %>-col-md-8">
-            <% if (register.stepper) { %>
-              <%- include('../../../../component/stepper/template/ejs/stepper.ejs', {stepper: register.stepper})  %>
-              <hr class="<%= prefix %>-mt-5w <%= prefix %>-mb-2w">
-            <% } %>
+              <% if (register.connect) { %>
+                <div>
+                  <% if (register.connect.title) { %>
+                  <h6><%= register.connect.title %></h6>
+                  <% } %>
 
-            <% if (register.connect) { %>
-              <div>
-                <% if (register.connect.title) { %>
-                <h5><%= register.connect.title %></h5>
+                  <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: register.connect})  %>
+                </div>
+
+                <% if(register.create) { %>
+                  <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
                 <% } %>
-
-                <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: register.connect})  %>
-              </div>
+              <% } %>
 
               <% if(register.create) { %>
-                <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+                <div>
+                  <% if (register.create.title) { %>
+                  <h6 class="<%= prefix %>-mb-4v"><%= register.create.title %></h6>
+                  <% } %>
+
+                  <% if (register.create.desc) { %>
+                  <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= register.create.desc %></p>
+                  <% } %>
+
+                  <%- include('../../../../component/form/template/ejs/form.ejs', {form: register.create.form})  %>
+
+                </div>
               <% } %>
-            <% } %>
-
-            <% if(register.create) { %>
-              <div>
-                <% if (register.create.title) { %>
-                <h5 class="<%= prefix %>-mb-4v"><%= register.create.title %></h5>
-                <% } %>
-
-                <% if (register.create.desc) { %>
-                <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= register.create.desc %></p>
-                <% } %>
-
-                <%- include('../../../../component/form/template/ejs/form.ejs', {form: register.create.form})  %>
-
-              </div>
-            <% } %>
+            </div>
           </div>
         </div>
       </div>

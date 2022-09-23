@@ -26,8 +26,8 @@
 				type: 'paragraph',
 				template: 'typography/paragraph',
 				base: '../core',
-				content: getText('hint.fieldset', 'login'),
 				data: {
+					content: getText('hint.fieldset', 'login'),
 					classes: [prefix + '-hint-text', prefix + '-mb-0']
 				},
 			},
@@ -35,44 +35,55 @@
 				type: 'input',
 				base:'input/input-base',
 				template: 'input',
-				hint: getText('hint.identifier', 'login'),
-				label: getText('label.identifier', 'login'),
-				name: 'identifier'
+				data: {
+					id: uniqueId('identifier'),
+					hint: getText('hint.identifier', 'login'),
+					label: getText('label.identifier', 'login'),
+					name: 'identifier'
+				}
 			},
 			{
 				type: 'password',
 				template: 'password',
 				name: 'password',
-				id: uniqueId('password'),
-				input: {
-					label: getText('label.password', 'login'),
-					autocomplete: 'new-password'
-				},
-				checkbox: true,
-				format: {
-					label: getText('format.label', 'password'),
-					items: [
-						{label: getText('format.characters', 'password'), state: 'info'},
-						{label: getText('format.special', 'password'), state: 'info'},
-						{label: getText('format.digit', 'password'), state: 'info'}
-					]
-				},
+				data: {
+					id: uniqueId('password'),
+					input: {
+						label: getText('label.password', 'login'),
+						autocomplete: 'new-password'
+					},
+					checkbox: true,
+					format: {
+						label: getText('format.label', 'password'),
+						items: [
+							{label: getText('format.characters', 'password'), state: 'info'},
+							{label: getText('format.special', 'password'), state: 'info'},
+							{label: getText('format.digit', 'password'), state: 'info'}
+						]
+					},
+				}
 			},
 			{
 				type: 'checkbox',
 				template: 'checkbox-group',
-				label: getText('label.checkbox', 'register'),
-				name: 'checkbox-cnil',
-				checked: false,
-				size: 'sm',
+				data: {
+					id: uniqueId('checkbox-cnil'),
+					label: getText('label.checkbox', 'register'),
+					name: 'checkbox-cnil',
+					checked: false,
+					size: 'sm',
+				}
 			},
-						{
+			{
 				type: 'checkbox',
 				template: 'checkbox-group',
-				label: getText('label.checkbox', 'register'),
-				name: 'checkbox-cnil',
-				checked: false,
-				size: 'sm',
+				data: {
+					id: uniqueId('checkbox-cnil'),
+					label: getText('label.checkbox', 'register'),
+					name: 'checkbox-cnil',
+					checked: false,
+					size: 'sm',
+				}
 			},
 			{
 				type: 'buttonsGroup',
@@ -81,14 +92,15 @@
 				data: {
 					inline: true,
 					classes: [prefix + '-btns-group--right'],
+					buttons: [
+						{
+							label: getText('label.button.valid', 'register'),
+							kind: 1,
+							type: 'submit',
+							classes: [prefix + '-mt-2v']
+						}
+					]
 				},
-				buttons: [
-					{
-						label: getText('label.button.valid', 'register'),
-						kind: 1,
-						classes: [prefix + '-mt-2v']
-					}
-				]
 			},
     ]
 	};

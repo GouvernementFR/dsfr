@@ -1,3 +1,25 @@
+<%#
+# paramètres form
+
+* form.id (string, required) : id du fieldset
+
+* form.items (array, optional) : tableau d'élément de control
+
+* form.label (array, optional) : Texte du aria-label du fieldset (required si pas de légende)
+
+* form.legend (string, optional) : légende du composant
+
+* form.hint (string, optional) : message de description additionel
+
+* form.error (string, optional) : message d'erreur
+
+* form.valid (string, optional) : message de succès
+
+* form.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
+
+* form.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
+
+%>
 
  <%
  const form = locals.form || {};
@@ -9,41 +31,20 @@
  <%
   if (form.items && form.items.length) {
     form.items.forEach((item, index) => {
-      const type = item.type || 'input';
-      item.base ? path = item.base : path = type;
+      let type = item.type;
+      let componentPath = item.base ? item.base : item.type;
+      let template = item.template || item.type;
       elements.push({
-        path: `${path}/template/ejs/${item.template}`,
+        path: `${componentPath}/template/ejs/${template}`,
         disabled: item.disabled || undefined,
         control: item.control,
         classes: item.classes || undefined,
+        inline: item.inline || undefined,
+        grow: item.grow || undefined,
+        modifier: item.modifier || undefined,
         data: {
           [type]: {
             ...item.data,
-            id: `${form.id}-${index}`,
-            classes: item.data ? item.data.classes : undefined,
-            attributes: item.data ? item.data.attributes : undefined,
-            name: item.name || undefined,
-            label: item.label || undefined,
-            text: item.text || undefined,
-            content: item.content || undefined,
-            input: item.input || undefined,
-            checkbox: item.checkbox || undefined,
-            link: item.link || undefined,
-            format: item.format || undefined,
-            value: item.value || undefined,
-            hint: item.hint || undefined,
-            error: item.error || undefined,
-            valid: item.valid || undefined,
-            checked: item.checked || false,
-            labelClasses: item.labelClasses || undefined,
-            size: item.size || undefined,
-            buttons: item.buttons || undefined,
-            disabled: item.disabled || undefined,
-            kind: item.kind || undefined,
-            format: item.format || undefined,
-            options: item.options || undefined,
-            placeholder: item.placeholder || undefined,
-            type: item.data ? item.data.type : undefined,
           }
         }
       });
