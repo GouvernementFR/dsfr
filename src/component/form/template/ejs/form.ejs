@@ -27,9 +27,11 @@
  const elements = [];
  %>
 
-<form>
- <%
+<%
   if (form.items && form.items.length) {
+%>
+  <form>
+<%
     form.items.forEach((item, index) => {
       let type = item.type;
       let componentPath = item.base ? item.base : item.type;
@@ -49,14 +51,16 @@
         }
       });
     });
-  }
-  fieldset.elements = elements;
-  fieldset.classes = form.classes || [];
-  fieldset.hint = form.hint || undefined;
-  fieldset.desc = form.desc || undefined;
-  fieldset.id = form.id;
-  fieldset.attributes = { 'aria-label': form.label};
-  %>
 
-  <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
-</form>
+    fieldset.elements = elements;
+    fieldset.classes = form.classes || [];
+    fieldset.hint = form.hint || undefined;
+    fieldset.desc = form.desc || undefined;
+    fieldset.id = form.id;
+    fieldset.attributes = { 'aria-label': form.label};
+%>
+    <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+  </form>
+<%
+  }
+%>

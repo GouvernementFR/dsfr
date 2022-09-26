@@ -15,13 +15,15 @@
 	} : false;
 
 	const create = register.create || {};
-	create.title = create.title || getText('label.register', 'register');
+	create.alert = create.alert || false;
+	create.title = create.title !== false ? create.title || getText('label.register', 'register') : false;
 	create.desc = create.desc !== false ? create.desc || getText('label.desc', 'register') : false;
 	create.hint = create.hint !== false ? create.hint || getText('hint.fieldset', 'register') : false;
 
-	const form = create.form || {
+	const form = create.form !== false ? create.form || {
     id: uniqueId('register'),
     label: getText('label.fieldset', 'register'),
+		classes: [prefix + '-mb-0'],
     items:[
 			{
 				type: 'input',
@@ -95,7 +97,7 @@
 				},
 			},
     ]
-	};
+	} : false;
 
 	const data = {
 		title: getText('label.default', 'register'),

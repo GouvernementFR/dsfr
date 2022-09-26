@@ -20,5 +20,10 @@ label:
 hint:
   username: "Format attendu : nom@domaine.fr"
   fieldset: Sauf mention contraire, tous les champs sont obligatoires.
+  confirmation: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
 chapo:
   default: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+alert:
+  confirmation:
+    create: Votre compte a bien été créé. Vous recevrez un courriel dans quelques instants contenant un lien de confirmation.
+    activate: Votre compte a bien été activé. Vous pouvez dès maintenant commencer à l’utiliser.
