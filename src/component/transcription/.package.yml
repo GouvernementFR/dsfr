@@ -1,0 +1,12 @@
+id: transcription
+title: Transcription
+description:
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/transcription
+wrapper: col-8
+style:
+  - core
+  - button
+  - download
+  - modal
+script:
+  - core

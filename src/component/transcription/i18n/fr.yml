@@ -1,0 +1,13 @@
+title: Transcription
+description:
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/transcription
+
+collapse:
+  title: Transcription
+button:
+  close: Fermer
+  fullscreen: Voir en entier
+link:
+  download: Télécharger
+sample:
+  default: Transcription avec zone d’action

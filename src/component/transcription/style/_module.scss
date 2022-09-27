@@ -1,0 +1,196 @@
+////
+/// Transcription Module : transcription
+/// @group transcription
+////
+
+@use 'module/media-query';
+
+#{ns(transcription)} {
+  position: relative;
+
+  @include before('', block) {
+    @include absolute(0, 0, 0, 0, 100%, 100%);
+    pointer-events: none;
+  }
+
+  &__btn {
+    @include _build-link-base;
+    @include _link-display(flex);
+    @include nest-transcription-button(add-line);
+    @include size(100%);
+    text-align: left;
+    @include margin(0);
+    @include padding(3v 4v);
+    @include after {
+      @include margin-right(0);
+      @include margin-left(auto);
+    }
+    @include icon(align-left, sm, before) {
+      @include margin-right(2v);
+    }
+
+    &[aria-expanded='true'] {
+      @include icon-image(subtract-line, after);
+    }
+  }
+
+  &__content {
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      pointer-events: none;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    @include padding(3v 4v);
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      pointer-events: none;
+    }
+
+    #{ns-group(btns)} {
+      @include margin-left(0);
+      @include margin-right(0);
+
+      &--inline {
+        
+        #{ns(btn)} {
+          @include margin-left(2w);
+          @include margin-right(0);
+          @include margin-bottom(0);
+          
+          
+          &--tertiary-no-outline {
+            &[class*=" fr-icon-"] {
+              overflow: hidden;
+              white-space: nowrap;
+              max-width: 2rem;
+              max-height: 2rem;
+              justify-content: flex-end;
+              @include padding-left(0);
+              @include padding-right(2.5v);
+
+              @include media-query.respond-from(sm) {
+                max-width: inherit;
+                max-height: inherit;
+                justify-content: center;
+                @include padding-left(3v);
+                @include padding-right(3v);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #{ns(download)} {
+      @include padding-bottom(0);
+      @include padding-top(.5v);
+      @include margin-bottom(0);
+
+      &__link {
+        @include text-style(sm);
+        @include font-weight('medium');
+        display: inline-flex;
+        align-items: center;
+
+        @include after {
+          @include margin-left(1v);
+        }
+      }
+
+      &__detail {
+        --transcription-detail-max-width: 5.25rem;
+        position: relative;
+        display: inline-block;
+        color: var(--text-action-high-blue-france);
+        @include text-style(sm);
+        @include font-weight('medium');
+        @include padding-left(2v);
+        @include padding-right(2v);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: var(--transcription-detail-max-width);
+
+        @include media-query.respond-from(sm) {
+          max-width: inherit;
+        }
+
+        @include before {
+          content: '(';
+          position: absolute;
+          left: .25rem;
+        }
+
+        @include after {
+          content: ')';
+          position: absolute;
+          right: .25rem;
+        }
+      }
+    }
+  }
+
+  #{ns(collapse)}--expanded {
+    position: relative;
+    @include margin(0 .25v);
+  }
+
+  #{ns(modal)} {
+    &:not(#{ns(modal)}--opened) {
+      visibility: inherit;
+      opacity: inherit;
+      background-color: inherit;
+      position: inherit;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+
+      > #{ns(container)} {
+        @include padding(0 0 1px);
+
+        > #{ns(grid)}-row {
+          display: inherit;
+
+          > {
+            #{class-start-with(ns(col-, ''))},
+            #{ns(col)} {
+              flex: inherit;
+              width: inherit;
+              max-width: inherit;
+            }
+          }
+        }
+      }
+
+      #{ns(modal)}__body {
+        @include respond-from(md) {
+          max-height: inherit !important;
+          background-color: inherit;
+          filter: inherit;
+        }
+      }
+
+      #{ns(modal)}__header {
+        display: none;
+      }
+
+      #{ns(transcription)}__content {
+        --transcription-max-height: 9.5rem;
+        overflow-y: auto;
+        max-height: var(--transcription-max-height);
+        @include margin(0);
+        @include padding(4v);
+      }
+    }
+
+    &--opened {
+      #{ns(transcription)}__footer {
+        display: none;
+      }
+    }
+  }
+}

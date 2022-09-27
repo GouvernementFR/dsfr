@@ -1,0 +1,59 @@
+<%#
+# paramètres transcription
+
+* transcription.id (string, required) : Identifiant du composant (lie le bouton au collapse).
+
+* transcription.content (string, optional) : contenu du composant
+
+* transcription.isExpanded (boolean, optional) [default: false] : le composant est-il ouvert au départ.
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const transcription = locals.transcription || {};
+const isExpanded = transcription.isExpanded === false;
+ %>
+
+<div class="<%= prefix %>-transcription">
+  <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="transcription-77"><%= transcription.title %></button>
+  <div class="<%= prefix %>-collapse" id="transcription-77">
+    <dialog id="modal-<%= transcription.id %>" class="<%= prefix %>-modal" role="dialog">
+        <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-md">
+            <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
+                <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+                    <div class="<%= prefix %>-modal__body <%= prefix %>-transcription__body">
+                        <div class="<%= prefix %>-modal__header">
+                            <button class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-<%= transcription.id %>" title="Fermer">
+                              <%= transcription.close %>
+                            </button>
+                        </div>
+                        <div class="<%= prefix %>-modal__content <%= prefix %>-transcription__content">
+                            <% if (transcription.content !== undefined) { %>
+                                <%- transcription.content %>
+                            <% } %>
+                        </div>
+                        <div class="<%= prefix %>-transcription__footer">
+                            <ul class="<%= prefix %>-btns-group <%= prefix %>-btns-group--sm <%= prefix %>-btns-group--right <%= prefix %>-btns-group--inline <%= prefix %>-btns-group--icon-left">
+                                <li>
+                                    <div class="<%= prefix %>-download">
+                                        <p>
+                                            <a href="[À MODIFIER - ../../../example/img/image.jpg]" download class="<%= prefix %>-download__link <%= prefix %>-link--sm"><%= transcription.download %><span class="<%= prefix %>-download__detail">PDF – 68 ko</span></a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button class="<%= prefix %>-btn <%= prefix %>-icon-fullscreen-line <%= prefix %>-btn--icon-right <%= prefix %>-btn--tertiary-no-outline" aria-controls="modal-<%= transcription.id %>" data-fr-opened="false" title="<%= transcription.fullscreen %>">
+                                      <%= transcription.fullscreen %>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+  </div>
+</div>
