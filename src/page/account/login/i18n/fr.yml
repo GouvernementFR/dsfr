@@ -1,4 +1,4 @@
-title: Formulaire de connexion
+title: Page de connexion
 description: Modèles de pages de connexion
 doc:
 
@@ -20,3 +20,8 @@ label:
 hint:
   username: "Format attendu : nom@domaine.fr"
   fieldset: Sauf mention contraire, tous les champs sont obligatoires.
+
+subdir:
+  title: Pages de connexion
+  login-default: Page de connexion
+  login-error: Page de connexion avec erreur

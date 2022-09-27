@@ -1,10 +1,11 @@
-id: login-default
-title: Modèle de page de connexion
-description:
+id: login
+title: Pages de connexion
+description: Modèles de pages de connexion
 doc:
 no-heading: true
 style:
   - core
+  - alert
   - connect
   - checkbox
   - input
