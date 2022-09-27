@@ -7,7 +7,7 @@ api.header = {
   HeaderLinks: HeaderLinks,
   HeaderModal: HeaderModal,
   HeaderSelector: HeaderSelector,
-  doc: 'https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222789846/En-t+te+-+Header'
+  doc: 'https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/en-tete'
 };
 
 export default api;
