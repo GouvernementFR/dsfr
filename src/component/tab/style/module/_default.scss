@@ -65,12 +65,10 @@
     white-space: nowrap;
     background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px),
-      100% 100%;
+    background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
 
     &[aria-selected='true'] {
-      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px),
-        0 1px;
+      background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
     }
   }
 
@@ -87,8 +85,7 @@
     @include padding(8v, md);
     @include margin-right(-100%);
     flex: 0 0 100%;
-    transition: visibility $tabs-transition-duration,
-      transform $tabs-transition-duration;
+    transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
     &:focus,
     &:focus-visible {
