@@ -5,7 +5,7 @@
 
 @use 'module/color';
 
-@mixin _translate-scheme($legacy: false) {
+@mixin _transcription-scheme($legacy: false) {
   #{ns(transcription)} {
     @include before {
       @include color.box-shadow(default grey, (legacy:$legacy));
