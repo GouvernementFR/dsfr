@@ -33,7 +33,7 @@
   @include text-style(xs);
   @include margin-top(4v);
   @include margin-bottom(0);
-  @include icon(null, sm) {
+  @include icon(null, sm, before) {
     display: inline-block;
     @include margin-right(1v);
   }
@@ -43,21 +43,21 @@
  * Icone du texte d'erreur
  */
 #{ns(error-text)} {
-  @include icon-image(error-fill);
+  @include icon-image(error-fill, before);
 }
 
 /**
  * Icone du texte de l'état validé
  */
 #{ns(valid-text)} {
-  @include icon-image(success-fill);
+  @include icon-image(success-fill, before);
 }
 
 /**
  * Icone du texte état informatif
  */
 #{ns(info-text)} {
-  @include icon-image(information-fill);
+  @include icon-image(information-fill, before);
 }
 
 /**
@@ -116,7 +116,6 @@
 }
 
 #{ns(control) } {
-  $control: #{&};
   flex: 1 1 100%;
   @include margin-x(2v);
   @include margin-bottom(4v);
@@ -141,17 +140,17 @@
 
   &--postal {
     flex: 0 0 space(28v);
-
-    &:not(#{$control}--inline) {
-      @include margin-right(calc(100% - 28v));
-    }
+  }
+  
+  &:not(#{&--inline}) {
+    @include margin-right(calc(100% - 28v));
   }
 
   &--number {
     flex: 0 0 space(18v);
-
-    &:not(#{$control}--inline) {
-      @include margin-right(calc(100% - 18v));
-    }
+  }
+  
+  &:not(#{&--inline}) {
+    @include margin-right(calc(100% - 18v));
   }
 }
