@@ -2,6 +2,7 @@ node_modules/
 */sassdoc/
 public/
 .config/
+.vscode/
 /dist/
 /example/
 /standalone/
