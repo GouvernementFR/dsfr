@@ -1,0 +1,16 @@
+id: register-confirmation
+title: Page de confirmation
+description: Modèle de page de confirmation de création de compte
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+  script:
+    - header

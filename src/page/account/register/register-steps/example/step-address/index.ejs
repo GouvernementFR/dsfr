@@ -1,0 +1,99 @@
+<%
+const sample = getSample(include);
+const stepper = {
+  tag: 'h5',
+  title: getText('label.step.address', 'register'),
+  nextStep: undefined,
+  currentStep: 3,
+  stepCount: 3,
+};
+const form = {
+  id: 'register-step-3',
+  label: getText('label.fieldset', 'register'),
+  classes: [prefix + '-mb-0'],
+  items:[
+    {
+      type: 'input',
+      base: 'input/input-base',
+      template: 'input',
+      data: {
+        id: uniqueId('address'),
+        label: getText('label.address', 'address'),
+        hint: getText('hint.address', 'address'),
+        name: 'address',
+      }
+    },
+    {
+      type: 'input',
+      base: 'input/input-base',
+      template: 'input',
+      data: {
+        id: uniqueId('complement'),
+        label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
+        hint: getText('hint.complement', 'address'),
+        name: 'complement',
+      }
+    },
+    {
+      type: 'input',
+      base: 'input/input-base',
+      template: 'input',
+      data: {
+        id: uniqueId('hamlet'),
+        label: getText('label.hamlet', 'address'),
+        name: 'hamlet',
+      }
+    },
+    {
+      type: 'input',
+      base: 'input/input-base',
+      template: 'input',
+      inline: true,
+      grow: true,
+      modifier: 'postal',
+      data: {
+        id: uniqueId('postal'),
+        label: getText('label.postal', 'address'),
+        name: 'postal',
+      }
+    },
+    {
+      type: 'input',
+      base: 'input/input-base',
+      template: 'input',
+      data: {
+        id: uniqueId('city'),
+        label: getText('label.city', 'address'),
+        name: 'city',
+      }
+    },
+    {
+      type: 'buttonsGroup',
+      base: 'button',
+      template: 'buttons-group',
+      data: {
+        inline: true,
+        classes: [prefix + '-btns-group--right', prefix + '-mt-2v'],
+        buttons: [
+          {
+            label: getText('label.button.previous', 'register'),
+            kind: 2,
+          },
+          {
+            label: getText('label.button.valid', 'register'),
+            type: 'submit',
+            kind: 1,
+          }
+        ]
+      },
+    },
+  ]
+};
+const create = {
+  form: form,
+  title: getText('label.step.identity', 'register'),
+  desc: false
+}
+%>
+
+<%- sample('', '../../../example/sample/default.ejs', {register:{connect:false,stepper:stepper, create: create}}, true, '../../../../example/layout', {}); %>

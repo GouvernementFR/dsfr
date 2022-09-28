@@ -1,0 +1,114 @@
+<%
+	const sample = getSample(include);
+	const register = locals.register || {};
+	const connectData = register.connect || {};
+
+	const connect = register.connect !== false ? {
+		title: connectData.title || getText('label.connect', 'login'),
+		desc: connectData.desc,
+		login: getText('default.login', 'connect'),
+		brand: getText('default.brand', 'connect'),
+		link: {
+			label: getText('default.link', 'connect'),
+			href: getText('default.href', 'connect')
+		},
+	} : false;
+
+	const create = register.create || {};
+	create.alert = create.alert || false;
+	create.title = create.title !== false ? create.title || getText('label.register', 'register') : false;
+	create.desc = create.desc !== false ? create.desc || getText('label.desc', 'register') : false;
+	create.hint = create.hint !== false ? create.hint || getText('hint.fieldset', 'register') : false;
+
+	const form = create.form !== false ? create.form || {
+    id: uniqueId('register'),
+    label: getText('label.fieldset', 'register'),
+		classes: [prefix + '-mb-0'],
+    items:[
+			{
+				type: 'input',
+				base:'input/input-base',
+				template: 'input',
+				data: {
+					id: uniqueId('username'),
+					hint: getText('hint.username', 'login'),
+					label: getText('label.username', 'login'),
+					name: 'username'
+				}
+			},
+			{
+				type: 'password',
+				template: 'password',
+				name: 'password',
+				data: {
+					id: uniqueId('password'),
+					input: {
+						label: getText('label.password', 'login'),
+						autocomplete: 'new-password'
+					},
+					checkbox: true,
+					format: {
+						label: getText('format.label', 'password'),
+						items: [
+							{label: getText('format.characters', 'password'), state: 'info'},
+							{label: getText('format.special', 'password'), state: 'info'},
+							{label: getText('format.digit', 'password'), state: 'info'}
+						]
+					},
+				}
+			},
+			{
+				type: 'checkbox',
+				template: 'checkbox-group',
+				data: {
+					id: uniqueId('checkbox-cnil'),
+					label: getText('label.checkbox', 'register'),
+					name: 'checkbox-cnil',
+					checked: false,
+					size: 'sm',
+				}
+			},
+			{
+				type: 'checkbox',
+				template: 'checkbox-group',
+				data: {
+					id: uniqueId('checkbox-cnil'),
+					label: getText('label.checkbox', 'register'),
+					name: 'checkbox-cnil',
+					checked: false,
+					size: 'sm',
+				}
+			},
+			{
+				type: 'buttonsGroup',
+				base: 'button',
+				template: 'buttons-group',
+				data: {
+					inline: true,
+					classes: [prefix + '-btns-group--right'],
+					buttons: [
+						{
+							label: getText('label.button.valid', 'register'),
+							kind: 1,
+							type: 'submit',
+							classes: [prefix + '-mt-2v']
+						}
+					]
+				},
+			},
+    ]
+	} : false;
+
+	const data = {
+		title: getText('label.default', 'register'),
+		chapo: getText('chapo.default', 'register'),
+		stepper: register.stepper ? register.stepper : undefined,
+		connect: connect,
+		create: create,
+	};
+
+	create.form = form;
+
+ %>
+
+<%- include('../../../template/ejs/register.ejs', { register: data }); %>
