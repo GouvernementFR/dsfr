@@ -30,36 +30,25 @@ const fieldset = {};
 const elements = [];
 if (civility.items && civility.items.length) {
   civility.items.forEach((item, index) => {
-        elements.push({
-            path: 'form/template/ejs/fieldset',
-            data: {
-                fieldset: {
-                    disabled: item.disabled || undefined,
-                    attributes: {
-                        'aria-label': item.label,
-                    },
-                    elements: [{
-                        path: `${item.type}/template/ejs/${item.template}`,
-                        data: {
-                            [item.type]: {
-                                id: `${civility.id}-${index}`,
-                                name: civility.id,
-                                label: item.label || '',
-                                value: item.value || '',
-                                hint: item.hint || '',
-                                checked: item.checked || false,
-                                size: item.size || '',
-                                attributes: item.attributes || {},
-                                kind: item.kind || '',
-                                options: item.options || [],
-                                placeholder: item.placeholder || '',
-                            }
-                        }
-                    }]
-                }
-            }
-        });
+    elements.push({
+      path: `${item.type}/template/ejs/${item.template}`,
+      data: {
+        [item.type]: {
+          id: `${civility.id}-${index}`,
+          name: civility.id,
+          label: item.label || '',
+          value: item.value || '',
+          hint: item.hint || '',
+          checked: item.checked || false,
+          size: item.size || '',
+          attributes: item.attributes || {},
+          kind: item.kind || '',
+          options: item.options || [],
+          placeholder: item.placeholder || '',
+        }
+      }
     });
+  });
 }
 fieldset.elements = elements;
 fieldset.legend = civility.legend;

@@ -46,31 +46,22 @@ if (name.items && name.items.length) {
         const type = item.type || 'input';
         const path = type === 'input' ? 'input/input-base' : type;
         elements.push({
-            path: 'form/template/ejs/fieldset',
+            path: `${path}/template/ejs/${item.template}`,
+            disabled: item.disabled || undefined,
             data: {
-                fieldset: {
+                [type]: {
+                    id: `${name.id}-${index}`,
+                    name: name.id,
+                    label: item.label || '',
+                    value: item.value || '',
+                    hint: item.hint || '',
+                    checked: item.checked || false,
+                    size: item.size || '',
                     disabled: item.disabled || undefined,
-                    attributes: {
-                        'aria-label': item.label,
-                    },
-                    elements: [{
-                        path: `${path}/template/ejs/${item.template}`,
-                        data: {
-                            [type]: {
-                                id: `${name.id}-${index}`,
-                                name: name.id,
-                                label: item.label || '',
-                                value: item.value || '',
-                                hint: item.hint || '',
-                                checked: item.checked || false,
-                                size: item.size || '',
-                                attributes: item.attributes || {},
-                                kind: item.kind || '',
-                                options: item.options || [],
-                                placeholder: item.placeholder || '',
-                            }
-                        }
-                    }]
+                    attributes: item.attributes || {},
+                    kind: item.kind || '',
+                    options: item.options || [],
+                    placeholder: item.placeholder || '',
                 }
             }
         });

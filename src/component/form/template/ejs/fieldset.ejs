@@ -5,9 +5,9 @@
 
 * fieldset.choice (boolean, optional) : si true, la graisse du label devient normal
 
-* fieldset.elements (array, optional) : tableau d'éléments
+* fieldset.grid (boolean, optional) : (default: false) Ajoute une grid-row autour des éléments
 
-* fieldset.inline (boolean, optional): determine l'orientation des éléments dans le fieldset, horizontal si true
+* fieldset.elements (array, optional) : tableau d'éléments control (voir control)
 
 * fieldset.disabled (boolean, optional): attribut disabled du composant
 
@@ -32,16 +32,15 @@ let fieldsetClasses = [...fieldset.classes || [], prefix + '-fieldset'];
 let fieldsetAttrs = fieldset.attributes || {};
 let describedby = [];
 
-if (fieldset.inline === true) fieldsetClasses.push(prefix + '-fieldset--inline');
 if (fieldset.error !== undefined) {
-    fieldsetClasses.push(prefix + '-fieldset--error');
-    fieldsetAttrs['aria-labelledby'] = fieldset.id + '-legend ' + fieldset.id + '-desc-error';
-    fieldsetAttrs['role'] = 'group';
+  fieldsetClasses.push(prefix + '-fieldset--error');
+  fieldsetAttrs['aria-labelledby'] = fieldset.id + '-legend ' + fieldset.id + '-desc-error';
+  fieldsetAttrs['role'] = 'group';
 }
 if (fieldset.valid !== undefined) {
-    fieldsetClasses.push(prefix + '-fieldset--valid');
-    fieldsetAttrs['aria-labelledby'] = fieldset.id + '-legend ' + fieldset.id + '-desc-valid';
-    fieldsetAttrs['role'] = 'group';
+  fieldsetClasses.push(prefix + '-fieldset--valid');
+  fieldsetAttrs['aria-labelledby'] = fieldset.id + '-legend ' + fieldset.id + '-desc-valid';
+  fieldsetAttrs['role'] = 'group';
 }
 
 if (fieldset.disabled === true) fieldsetAttrs['disabled'] = '';
@@ -54,25 +53,23 @@ const legendClasses = [`${prefix}-fieldset__legend`];
 if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
 %>
 
-<div class="<%= prefix %>-form-group">
-  <fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
-    <% if (fieldset.legend !== undefined && !!fieldset.legend && fieldset.legend.length) { %>
-      <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
-        <%= fieldset.legend %>
-        <% if (fieldset.hint !== undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
-      </legend>
-    <% } %>
-    <div class="<%= prefix %>-fieldset__content">
+<fieldset <%- includeClasses(fieldsetClasses); %> <%- includeAttrs(fieldsetAttrs); %>>
+  <% if (fieldset.legend !== undefined && !!fieldset.legend && fieldset.legend.length) { %>
+    <legend <%- includeClasses(legendClasses); %> id='<%= fieldset.id %>-legend'>
+      <%= fieldset.legend %>
+      <% if (fieldset.hint !== undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
+    </legend>
+  <% } %>
+  <div class="<%= prefix %>-fieldset__content">
+    <div class="<%= prefix %>-controls-group">
       <%
         let path;
+        let colClasses;
         for (let i = 0; i < fieldset.elements.length; i++) {
-            let element = fieldset.elements[i];
-            element.data.group = true;
       %>
-      <%- include('../../../' + element.path, element.data); %>
-
+          <%- include('./control', {control: fieldset.elements[i]}); %>
       <% } %>
     </div>
-    <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
-  </fieldset>
-</div>
+  </div>
+  <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
+</fieldset>

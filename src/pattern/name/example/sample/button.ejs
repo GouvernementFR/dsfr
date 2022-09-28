@@ -1,19 +1,19 @@
 <%
 const name = {
     id: uniqueId('button'),
-    label: `getText('sample.with', 'name') getText('sample.button', 'name')`,
+    label: getText('sample.with', 'name') + ' ' + getText('sample.button', 'name'),
     items:[
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.name', 'name'),
-            value: 'name'
+            name: 'name'
         },
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.firstname', 'name'),
-            value: 'firstname'
+            name: 'firstname'
         },
         {
             type: 'button',
@@ -26,10 +26,10 @@ const name = {
             type: 'checkbox',
             template: 'checkbox-group',
             label: getText('label.no-firstname', 'name'),
-            value: 'firstname-disabled',
+            name: 'firstname-disabled',
             checked: false,
             size: 'sm',
-            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.previousElementSibling.firstElementChild; const buttonFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); buttonFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); buttonFieldset.removeAttribute('disabled'); }`},
+            attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input');  const button = control.previousElementSibling.firstElementChild; if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); button.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); button.removeAttribute('disabled'); }`},
         }
     ]
 }
