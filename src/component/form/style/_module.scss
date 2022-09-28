@@ -142,7 +142,7 @@
     flex: 0 0 space(28v);
   }
   
-  &--postal:not(#{&--inline}) {
+  &--postal:not(&--inline) {
     @include margin-right(calc(100% - 28v));
   }
 
@@ -150,7 +150,7 @@
     flex: 0 0 space(18v);
   }
   
-  &--number:not(#{&--inline}) {
+  &--number:not(&--inline) {
     @include margin-right(calc(100% - 18v));
   }
 }
