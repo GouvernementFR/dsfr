@@ -1,0 +1,40 @@
+<%
+let address = locals.address || {};
+const data = {
+  id: uniqueId('address'),
+  items: [
+    {
+      type: 'input',
+      inline: true,
+      grow: true,
+      modifier: 'number',
+      label: getText('label.number', 'address'),
+      name: 'number',
+      template: 'input',
+    },
+    {
+      type: 'input',
+      inline: true,
+      grow: true,
+      label: getText('label.street', 'address'),
+      name: 'street',
+      breakAfter: true,
+      template: 'input',
+    },
+    {
+      type: 'input',
+      label: getText('label.building-name', 'address'),
+      name: 'building-name',
+      template: 'input',
+    },
+    {
+      type: 'input',
+      label: getText('label.building-number', 'address'),
+      name: 'building-number',
+      template: 'input',
+    }
+  ]
+}
+%>
+
+<%- include('../../template/ejs/address', {address: data}); %>
