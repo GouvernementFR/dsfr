@@ -1,0 +1,35 @@
+<%
+let society = locals.society || {};
+const data = {
+  id: uniqueId('representative'),
+  label: getText('fieldset.representative', 'society'),
+  items: [
+    {
+      type: 'input',
+      label: getText('label.usage-name', 'name'),
+      name: 'usage-name',
+      template: 'input',
+    },
+    {
+      type: 'input',
+      label: getText('label.birth-name', 'name'),
+      name: 'birth-name',
+      template: 'input',
+    },
+    {
+      type: 'input',
+      label: getText('label.firstname', 'name'),
+      name: 'firstname',
+      template: 'input',
+    },
+    {
+      type: 'input',
+      label: getText('label.position', 'society'),
+      name: 'position',
+      template: 'input',
+    }
+  ]
+}
+%>
+
+<%- include('../../template/ejs/society', {society: data}); %>
