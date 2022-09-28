@@ -116,6 +116,53 @@
 }
 
 #{ns(control) } {
+  $control: #{&};
+  flex: 1 1 100%;
+  @include margin-x(2v);
+  @include margin-bottom(4v);
+
+  & > #{ns(label)} {
+    #{ns(hint-text)} {
+      @include margin-top(1v);
+    }
+  }
+
+  #{ns(fieldset)} {
+    @include margin-bottom(0);
+  }
+
+  &--inline {
+    flex: 0 0 auto;
+
+    &-grow {
+      flex-grow: 1;
+    }
+  }
+
+  &--postal {
+    flex: 0 0 space(28v);
+
+    &:not(#{$control}--inline) {
+      @include margin-right(calc(100% - 28v));
+    }
+  }
+
+  &--number {
+    flex: 0 0 space(18v);
+
+    &:not(#{$control}--inline) {
+      @include margin-right(calc(100% - 18v));
+    }
+  }
+}
+
+#{ns-group(controls) } {
+  @include display-flex(row, flex-end, null, wrap);
+  @include margin-x(-2v);
+  @include margin-bottom(-4v);
+}
+
+#{ns(control) } {
   flex: 1 1 100%;
   @include margin-x(2v);
   @include margin-bottom(4v);
