@@ -1,0 +1,27 @@
+title: Page de connexion
+description: Modèles de pages de connexion
+doc:
+
+label:
+  default: Connexion à [Nom de service-site]
+  connect: Se connecter avec FranceConnect
+  login: Se connecter avec son compte
+  desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  register: Vous n’avez pas de compte ?
+  password: Mot de passe
+  username: Identifiant
+  remember: Se souvenir de moi
+  fieldset: Formulaire de connexion
+  error:
+    login: Identifiant/mot de passe incorrect
+  button:
+    connect: Se connecter
+    create: Créer un compte
+hint:
+  username: "Format attendu : nom@domaine.fr"
+  fieldset: Sauf mention contraire, tous les champs sont obligatoires.
+
+subdir:
+  title: Pages de connexion
+  login-default: Page de connexion
+  login-error: Page de connexion avec erreur

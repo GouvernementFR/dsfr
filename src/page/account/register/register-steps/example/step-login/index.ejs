@@ -1,0 +1,15 @@
+<%
+const sample = getSample(include);
+const stepper = {
+  tag: 'h5',
+  title: getText('label.step.login', 'register'),
+  nextStep: getText('label.step.identity', 'register'),
+  currentStep: 1,
+  stepCount: 3,
+};
+const connect = {
+  title: getText('label.register.connect', 'register'),
+}
+%>
+
+<%- sample('', '../../../example/sample/default.ejs', {register:{connect:connect,stepper:stepper}}, true, '../../../../example/layout', {}); %>

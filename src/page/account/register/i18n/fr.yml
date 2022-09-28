@@ -1,0 +1,29 @@
+title: Création de compte
+description: Modèles de pages de création de compte
+doc:
+
+label:
+  default: Création de compte sur [Nom de service-site]
+  register:
+    default: Se créer un compte en choisissant un identifiant
+    connect: Se créer un compte avec FranceConnect
+  desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  fieldset: Formulaire de création de compte
+  checkbox: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
+  step:
+    login: Choisir un identifiant
+    identity: Renseigner une identité
+    address: Saisir des coordonnées
+  button:
+    valid: Valider
+    previous: Précédent
+hint:
+  username: "Format attendu : nom@domaine.fr"
+  fieldset: Sauf mention contraire, tous les champs sont obligatoires.
+  confirmation: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
+chapo:
+  default: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+alert:
+  confirmation:
+    create: Votre compte a bien été créé. Vous recevrez un courriel dans quelques instants contenant un lien de confirmation.
+    activate: Votre compte a bien été activé. Vous pouvez dès maintenant commencer à l’utiliser.

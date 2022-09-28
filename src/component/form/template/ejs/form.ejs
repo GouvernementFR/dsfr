@@ -1,0 +1,66 @@
+<%#
+# paramètres form
+
+* form.id (string, required) : id du fieldset
+
+* form.items (array, optional) : tableau d'élément de control
+
+* form.label (array, optional) : Texte du aria-label du fieldset (required si pas de légende)
+
+* form.legend (string, optional) : légende du composant
+
+* form.hint (string, optional) : message de description additionel
+
+* form.error (string, optional) : message d'erreur
+
+* form.valid (string, optional) : message de succès
+
+* form.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
+
+* form.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
+
+%>
+
+ <%
+ const form = locals.form || {};
+ const fieldset = {};
+ const elements = [];
+ %>
+
+<%
+  if (form.items && form.items.length) {
+%>
+  <form>
+<%
+    form.items.forEach((item, index) => {
+      let type = item.type;
+      let componentPath = item.base ? item.base : item.type;
+      let template = item.template || item.type;
+      elements.push({
+        path: `${componentPath}/template/ejs/${template}`,
+        disabled: item.disabled || undefined,
+        control: item.control,
+        classes: item.classes || undefined,
+        inline: item.inline || undefined,
+        grow: item.grow || undefined,
+        modifier: item.modifier || undefined,
+        data: {
+          [type]: {
+            ...item.data,
+          }
+        }
+      });
+    });
+
+    fieldset.elements = elements;
+    fieldset.classes = form.classes || [];
+    fieldset.hint = form.hint || undefined;
+    fieldset.desc = form.desc || undefined;
+    fieldset.id = form.id;
+    fieldset.attributes = { 'aria-label': form.label};
+%>
+    <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+  </form>
+<%
+  }
+%>

@@ -3,9 +3,19 @@
 /// @group core
 ////
 
+@use '../../../../../module/color';
+
 @mixin _core-display-hr-scheme($legacy: false) {
   hr {
     @include build-hr-scheme($legacy);
+  }
+
+  #{ns(hr)} {
+    &--or {
+      @include _pseudo(before after) {
+        @include color.background(border default grey, (legacy:$legacy));
+      }
+    }
   }
 
   @include build-utility(display, hr) {

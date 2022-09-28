@@ -26,7 +26,7 @@ let message = locals.message || {}
   <% } %>
 <% } %>
 
-<% if(message.valid != undefined) { %>
+<% if(message.valid != undefined && typeof message.valid === 'string') { %>
   <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
     <%= message.valid %>
   </p>
