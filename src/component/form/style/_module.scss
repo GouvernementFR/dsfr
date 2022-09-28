@@ -19,6 +19,7 @@
  */
 #{ns(hint-text)} {
   display: block;
+  @include margin-bottom(0);
   @include text-style(xs);
   @include set-text-margin(0 0 4v);
 }
@@ -97,6 +98,7 @@
     }
   }
 
+
   /**
    * Modificateur pour gérer l'état de validation
    */
@@ -108,6 +110,8 @@
     }
   }
 }
+
+
 
 #{ns-group(controls) } {
   @include display-flex(row, flex-end, null, wrap);
@@ -139,19 +143,21 @@
     }
   }
 
+  &--year,
   &--postal {
     flex: 0 0 space(28v);
-
-    &:not(#{$control}--inline) {
-      @include margin-right(calc(100% - 28v));
-    }
+  }
+  
+  &--year:not(&--inline),
+  &--postal:not(&--inline) {
+    @include margin-right(calc(100% - 28v));
   }
 
   &--number {
     flex: 0 0 space(18v);
-
-    &:not(#{$control}--inline) {
-      @include margin-right(calc(100% - 18v));
-    }
+  }
+  
+  &--number:not(&--inline) {
+    @include margin-right(calc(100% - 18v));
   }
 }

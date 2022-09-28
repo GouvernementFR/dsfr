@@ -1,0 +1,22 @@
+title: Modèle de date unique
+description:
+error:
+  day: Le jour est invalide
+  global: La date est postérieure à aujourd’hui
+  month: Le mois est invalide
+  year: L’année est invalide
+hint:
+  birthdate : Texte de description additionnel
+  day: 'Exemple : 14'
+  month: 'Exemple : 12'
+  year: 'Exemple : 1984'
+legend:
+  birthdate: Date de naissance
+option:
+  day: Jour
+  month: Mois
+  year: Année
+sample:
+  default: Défaut
+  single-error: Erreur unitaire
+  global-error: Erreur globale
