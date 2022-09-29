@@ -7,11 +7,12 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% let summary = locals.summary || {}; %>
+<% let summary = locals.summary || {};
+const tag = summary.tag || 'h2'; %>
 
 <nav class="<%= prefix %>-summary" role="navigation" aria-labelledby="<%= prefix %>-summary-title">
   <% if (summary.title) { %>
-    <p class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title"><%- summary.title %></p>
+    <<%= tag %> class="<%= prefix %>-summary__title" id="<%= prefix %>-summary-title"><%- summary.title %></<%= tag %>>
   <% } %>
   <%- include('./list', {summaryList: summary.list}); %>
 </nav>
