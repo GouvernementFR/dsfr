@@ -6,7 +6,7 @@ label:
   address: Adresse
   complement: Complément d’adresse
   optional: (optionnel)
-  hamlet: Lieu-dit, commune déléguée ou boîte postale
+  locality: Lieu-dit, commune déléguée ou boîte postale
   postal: Code postal
   city: Ville ou commune
   number: Numéro
