@@ -15,9 +15,6 @@
   }
 }
 
-/**
-* Modificateur pour afficher les éléments en inline [DEPRECATED]
-*/
 #{ns(fieldset)} {
   &--inline {
     #{ns(fieldset__content)} {
@@ -69,9 +66,6 @@
     }
   }
 
-  /**
-   * Modificateur pour gérer l'état d'erreur
-   */
   &--error {
     #{ns(fieldset__content)} {
       @include before('') {
@@ -80,9 +74,6 @@
     }
   }
 
-  /**
-   * Modificateur pour gérer l'état de validation
-   */
   &--valid {
     #{ns(fieldset__content)} {
       @include before('') {

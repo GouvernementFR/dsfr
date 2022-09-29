@@ -2,8 +2,8 @@
 const sample = getSample(include);
 %>
 
-<%- sample(getText('sample.national', 'address'), './sample/address-national', {}, true, './layout'); %>
+<%- sample(getText('sample.national', 'address'), './sample/address-national', {}, true, '../../example/layout'); %>
 
-<%- sample(getText('sample.national', 'address') + ' + ' + getText('label.hamlet', 'address'), './sample/address-national', {}, true, './layout'); %>
+<%- sample(getText('sample.national', 'address') + ' + ' + getText('label.hamlet', 'address'), './sample/address-national', {}, true, '../../example/layout'); %>
 
-<%- sample(getText('sample.complement', 'address'), './sample/address-complement', {}, true, './layout'); %>
+<%- sample(getText('sample.complement', 'address'), './sample/address-complement', {}, true, '../../example/layout'); %>

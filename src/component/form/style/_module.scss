@@ -14,9 +14,6 @@
   }
 }
 
-/**
- * Style du texte d'aide
- */
 #{ns(hint-text)} {
   display: block;
   @include margin-bottom(0);
@@ -24,9 +21,6 @@
   @include set-text-margin(0 0 4v);
 }
 
-/**
- * Style de texte de validation formulaire
- */
 #{ns(error-text)},
 #{ns(valid-text)},
 #{ns(info-text)} {
@@ -40,30 +34,30 @@
   }
 }
 
-/**
- * Icone du texte d'erreur
- */
+#{ns(hint-text)},
+#{ns(error-text)},
+#{ns(valid-text)},
+#{ns(info-text)} {
+  & + #{ns(hint-text)},
+  & + #{ns(error-text)},
+  & + #{ns(valid-text)},
+  & + #{ns(info-text)} {
+    @include margin-top(1v);
+  }
+}
+
 #{ns(error-text)} {
   @include icon-image(error-fill, before);
 }
 
-/**
- * Icone du texte de l'état validé
- */
 #{ns(valid-text)} {
   @include icon-image(success-fill, before);
 }
 
-/**
- * Icone du texte état informatif
- */
 #{ns(info-text)} {
   @include icon-image(information-fill, before);
 }
 
-/**
- * Style d'un ensemble de champs
- */
 #{ns(fieldset)} {
   @include relative;
   @include margin(0 0 8v 0);
@@ -87,9 +81,6 @@
     @include relative;
   }
 
-  /**
-   * Modificateur pour gérer l'état d'erreur
-   */
   &--error {
     #{ns(fieldset__content)} {
       @include before('') {
@@ -98,10 +89,6 @@
     }
   }
 
-
-  /**
-   * Modificateur pour gérer l'état de validation
-   */
   &--valid {
     #{ns(fieldset__content)} {
       @include before('') {
@@ -110,7 +97,6 @@
     }
   }
 }
-
 
 
 #{ns-group(controls) } {
@@ -147,7 +133,7 @@
   &--postal {
     flex: 0 0 space(28v);
   }
-  
+
   &--year:not(&--inline),
   &--postal:not(&--inline) {
     @include margin-right(calc(100% - 28v));
@@ -156,7 +142,7 @@
   &--number {
     flex: 0 0 space(18v);
   }
-  
+
   &--number:not(&--inline) {
     @include margin-right(calc(100% - 18v));
   }

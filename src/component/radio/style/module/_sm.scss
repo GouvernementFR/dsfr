@@ -3,9 +3,6 @@
 /// @group radio
 ////
 
-/**
- * Modificateur pour la taille sm
- */
 #{ns-group(radio)}--sm {
   input[type="radio"] {
     & + label {

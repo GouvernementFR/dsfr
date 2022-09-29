@@ -6,9 +6,6 @@
 @use 'module/legacy';
 
 @include legacy.is(ie11) {
-  /**
-  * Correctif de la largeur de la légende d'un fieldset
-  */
   #{ns(fieldset)} {
     &__legend {
       max-width: 100%;
