@@ -1,10 +1,6 @@
 <%
 let transcription = locals.transcription || {};
 let data = {
-  close: getText('button.close', 'transcription'),
-  download: getText('link.download', 'transcription'),
-  fullscreen: getText('button.fullscreen', 'transcription'),
-  title: getText('collapse.title', 'transcription'),
   id: uniqueId('transcription'),
   content: transcription.content || randomContent(),
   ...transcription

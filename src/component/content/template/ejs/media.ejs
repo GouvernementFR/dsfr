@@ -47,34 +47,58 @@ switch (true) {
         break;
 }
 
-let markup;
+if (type === 'img' && content.caption != undefined) attributes["aria-label"] = content.caption;
 
-switch (type) {
-    case 'img':
-        markup = 'figure';
-        attributes["role"] = "group";
-        if (content.caption != undefined) attributes["aria-label"] = content.caption;
-        break;
-
-    case 'vid':
-        markup = 'div';
-        break;
-}
 %>
 
-<<%= markup %> <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+<figure role="group" <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
 <%
 switch(type) {
     case 'img':
 %>
-        <%- include('./media-img', {content: content}); %>
+        <div class="<%= prefix %>-content-media__img" >
+            <% if (content.img != undefined) { %>
+                <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media: content.img}); %>
+            <% } else if (content.svg != undefined) { %>
+                <%- content.svg %>
+            <% } %>
+        </div>
 <%      break;
 
     case 'vid':
 %>
-        <%- include('./media-vid', {content: content}); %>
+        <% if (content.consent !== undefined) { %>
+            <div class="<%= prefix %>-responsive-vid">
+            <%- include('../../../consent/template/ejs/placeholder', {consent: content.consent}) %>
+            </div>
+        <% } else { %>
+            <%- include('../../../../core/template/ejs/media/responsive-vid', {media: content.vid}) %>
+        <% } %>
 <%      break;
 }
 %>
 
-</<%= markup %>>
+<% if (content.caption != undefined) { %>
+    <figcaption class="<%= prefix %>-content-media__caption" >
+        <%= content.caption %>
+        <% if (content.link != undefined) {
+            let data = {
+                label: content.link
+            }
+        %>
+            <%- include('../../../link/template/ejs/link', {link: data}); %>
+        <% } %>
+    </figcaption>
+<% } %>
+
+<%
+if (type === 'vid' && content.transcription != undefined) {
+    let data = content.transcription;
+%>
+    <%- include('../../../transcription/template/ejs/transcription', {transcription: data}); %>
+<% } %>
+
+</figure>
+
+
+

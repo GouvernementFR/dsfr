@@ -15,12 +15,6 @@
       @include color.text(action-high blue-france, (legacy:$legacy));
     }
 
-    #{ns(collapse)}--expanded {
-      @include before {
-        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
-      }
-    }
-
     &__content {
       @include before {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
@@ -30,6 +24,22 @@
     &__footer {
       @include before {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+      }
+    }
+
+    #{ns(modal)} {
+      &:not(#{ns(modal)}--opened) {
+        @include before {
+          @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+        }
+      }
+    }
+
+    &__actions-group {
+      #{ns(download)} {
+        &__detail {
+          color: var(--text-action-high-blue-france);
+        }
       }
     }
   }

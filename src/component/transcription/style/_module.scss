@@ -44,54 +44,42 @@
   &__footer {
     position: relative;
     @include padding(3v 4v);
+    @include margin(0);
     @include before('', block) {
       @include absolute(0, 0, 0, 0, 100%, 100%);
       pointer-events: none;
     }
+  }
 
-    #{ns-group(btns)} {
-      @include margin-left(0);
+  &__actions-group {
+    @include disable-list-style;
+    @include display-flex(null, center, flex-end, nowrap);
+    @include vertical-btns-group;
+    @include horizontal-btns-group;
+    @include nest-btn(sm, only, null, null) {
+      @include margin-bottom(0);
       @include margin-right(0);
+      justify-content: flex-start;
+    }
+    @include nest-btn(sm, right, null, md) {
+      @include margin-bottom(0);
+      @include margin-right(0);
+    }
+    @include nest-link(sm, null);
 
-      &--inline {
-        
-        #{ns(btn)} {
-          @include margin-left(2w);
-          @include margin-right(0);
-          @include margin-bottom(0);
-          
-          
-          &--tertiary-no-outline {
-            &[class*=" fr-icon-"] {
-              overflow: hidden;
-              white-space: nowrap;
-              max-width: 2rem;
-              max-height: 2rem;
-              justify-content: flex-end;
-              @include padding-left(0);
-              @include padding-right(2.5v);
-
-              @include media-query.respond-from(sm) {
-                max-width: inherit;
-                max-height: inherit;
-                justify-content: center;
-                @include padding-left(3v);
-                @include padding-right(3v);
-              }
-            }
-          }
-        }
+    > * {
+      &:not(:first-child) {
+        @include margin-left(2w);
       }
     }
 
     #{ns(download)} {
-      @include padding-bottom(0);
-      @include padding-top(.5v);
-      @include margin-bottom(0);
+      @include padding(4px);
+      @include margin(-4px);
+      overflow: hidden;
 
       &__link {
         @include text-style(sm);
-        @include font-weight('medium');
         display: inline-flex;
         align-items: center;
 
@@ -101,17 +89,11 @@
       }
 
       &__detail {
-        --transcription-detail-max-width: 5.25rem;
         position: relative;
         display: inline-block;
-        color: var(--text-action-high-blue-france);
         @include text-style(sm);
-        @include font-weight('medium');
         @include padding-left(2v);
         @include padding-right(2v);
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: var(--transcription-detail-max-width);
 
         @include media-query.respond-from(sm) {
           max-width: inherit;
@@ -120,21 +102,22 @@
         @include before {
           content: '(';
           position: absolute;
-          left: .25rem;
+          left: 0.25rem;
         }
 
         @include after {
           content: ')';
           position: absolute;
-          right: .25rem;
+          right: 0.25rem;
         }
       }
     }
   }
 
-  #{ns(collapse)}--expanded {
-    position: relative;
-    @include margin(0 .25v);
+  #{ns(collapse)} {
+    &--expanded {
+      @include margin(0 0.25v);
+    }
   }
 
   #{ns(modal)} {
@@ -142,15 +125,19 @@
       visibility: inherit;
       opacity: inherit;
       background-color: inherit;
-      position: inherit;
+      position: relative;
 
-      &::before,
       &::after {
         content: none;
       }
 
+      @include before('', block) {
+        @include absolute(0, 0, 0, 0, 100%, 100%);
+        pointer-events: none;
+      }
+
       > #{ns(container)} {
-        @include padding(0 0 1px);
+        @include padding(0.25v 0);
 
         > #{ns(grid)}-row {
           display: inherit;
@@ -167,18 +154,16 @@
       }
 
       #{ns(modal)}__body {
-        @include respond-from(md) {
-          max-height: inherit !important;
-          background-color: inherit;
-          filter: inherit;
-        }
+        filter: inherit;
+        max-height: inherit;
+        background-color: inherit;
       }
 
       #{ns(modal)}__header {
         display: none;
       }
 
-      #{ns(transcription)}__content {
+      #{ns(modal)}__content {
         --transcription-max-height: 9.5rem;
         overflow-y: auto;
         max-height: var(--transcription-max-height);
