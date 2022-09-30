@@ -1,25 +1,37 @@
 <%
-const civility = { 
-    id: uniqueId('civility-title-radio'),
-    legend: getText('legend.call-title', 'civility'),
-    items: [
-        {
-            type: 'radio',
-            template: 'radio-group',
-            label: getText('option.title.doctor', 'civility')
-        },
-        {
-            type: 'radio',
-            template: 'radio-group',
-            label: getText('option.title.inspector', 'civility')
-        },
-        {
-            type: 'radio',
-            template: 'radio-group',
-            label: getText('option.no-answer', 'radio')
-        }
-    ]
+const civility = {
+	id: uniqueId('civility-title-radio'),
+	legend: getText('legend.call-title', 'civility'),
+	items: [
+		{
+			type: 'radio',
+			template: 'radio-group',
+			data: {
+				name: 'civility-title',
+        id: uniqueId('civility-title'),
+				label: getText('option.title.doctor', 'civility')
+			}
+		},
+		{
+			type: 'radio',
+			template: 'radio-group',
+			data: {
+				name: 'civility-title',
+        id: uniqueId('civility-title'),
+				label: getText('option.title.inspector', 'civility')
+			}
+		},
+		{
+			type: 'radio',
+			template: 'radio-group',
+			data: {
+				name: 'civility-title',
+        id: uniqueId('civility-title'),
+				label: getText('option.no-answer', 'radio')
+			}
+		}
+	]
 }
 %>
 
-<%- include('../../template/ejs/civility', {civility: civility}); %>
+<%- include('./civility-default', {civility: civility}); %>

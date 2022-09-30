@@ -6,30 +6,38 @@ const data = {
   items: [
     {
       type: 'input',
-      label: getText('label.usage-name', 'name'),
-      name: 'usage-name',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.usage-name', 'name'),
+        name: 'usage-name',
+      }
     },
     {
       type: 'input',
-      label: getText('label.birth-name', 'name'),
-      name: 'birth-name',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.birth-name', 'name'),
+        name: 'birth-name',
+      }
     },
     {
       type: 'input',
-      label: getText('label.firstname', 'name'),
-      name: 'firstname',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.firstname', 'name'),
+        name: 'firstname',
+      }
     },
     {
       type: 'input',
-      label: getText('label.position', 'society'),
-      name: 'position',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.position', 'society'),
+        name: 'position',
+      }
     }
   ]
 }
 %>
 
-<%- include('../../template/ejs/society', {society: data}); %>
+<%- include('./society-default', {society: data}); %>

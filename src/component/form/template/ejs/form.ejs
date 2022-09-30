@@ -9,6 +9,8 @@
 
 * form.legend (string, optional) : légende du composant
 
+* form.controlTag (string, optional) : tag de l'élément de controle (default: div)
+
 * form.hint (string, optional) : message de description additionel
 
 * form.error (string, optional) : message d'erreur
@@ -18,7 +20,6 @@
 * form.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
 
 * form.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
-
 %>
 
  <%
@@ -27,10 +28,10 @@
  const elements = [];
  %>
 
-<%
-  if (form.items && form.items.length) {
-%>
+<% if (form.items && form.items.length) { %>
+  <% if (form.form !== false) { %>
   <form>
+  <% } %>
 <%
     form.items.forEach((item, index) => {
       let type = item.type;
@@ -38,29 +39,38 @@
       let template = item.template || item.type;
       elements.push({
         path: `${componentPath}/template/ejs/${template}`,
-        disabled: item.disabled || undefined,
+        disabled: item.disabled,
         control: item.control,
-        classes: item.classes || undefined,
-        inline: item.inline || undefined,
-        grow: item.grow || undefined,
-        modifier: item.modifier || undefined,
+        tag: item.tag,
+        classes: item.classes,
+        inline: item.inline,
+        grow: item.grow,
+        modifier: item.modifier,
+        breakAfter: item.breakAfter,
         data: {
           [type]: {
             ...item.data,
+            id: item.data.id || uniqueId(item.data.name) || undefined
           }
         }
       });
     });
 
     fieldset.elements = elements;
+    fieldset.error = form.error;
+    fieldset.valid = form.valid;
     fieldset.classes = form.classes || [];
     fieldset.hint = form.hint || undefined;
     fieldset.desc = form.desc || undefined;
     fieldset.id = form.id;
-    fieldset.attributes = { 'aria-label': form.label};
+    if (form.legend) fieldset.legend = form.legend;
+    else fieldset.attributes = { 'aria-label': form.label};
 %>
     <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+
+  <% if (form.form !== false) { %>
   </form>
+  <% } %>
 <%
   }
 %>

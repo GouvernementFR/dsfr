@@ -8,66 +8,80 @@ const data = {
   items: [
     {
       type: 'input',
-      label: getText('label.denomination', 'society'),
-      name: 'denomination',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.denomination', 'society'),
+        name: 'denomination',
+      }
     },
     {
       type: 'input',
-      label: getText('label.address', 'address'),
-      hint: getText('hint.address', 'address'),
-      name: 'address',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.address', 'address'),
+        hint: getText('hint.address', 'address'),
+        name: 'address',
+      }
     },
     {
       type: 'input',
-      label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
-      hint: getText('hint.complement', 'address'),
-      name: 'complement',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
+        hint: getText('hint.complement', 'address'),
+        name: 'complement',
+      }
     },
     {
       type: 'input',
-      label: getText('label.hamlet', 'address'),
-      name: 'hamlet',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.hamlet', 'address'),
+        name: 'hamlet',
+      }
     },
     {
       type: 'input',
+      base: 'input/input-base',
       inline: true,
       grow: true,
       modifier: 'postal',
-      label: getText('label.postal', 'address'),
-      name: 'postal',
-      template: 'input',
+      data: {
+        label: getText('label.postal', 'address'),
+        name: 'postal',
+      }
     },
     {
       type: 'input',
-      label: getText('label.city', 'address'),
-      name: 'city',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.city', 'address'),
+        name: 'city',
+      }
     },
     {
       type: 'input',
+      base: 'input/input-base',
       inline: true,
       grow: true,
       modifier: 'postal',
-      label: getText('label.cedex', 'address'),
-      name: 'cedex',
-      disabled: true,
-      template: 'input',
+      data: {
+        label: getText('label.cedex', 'address'),
+        name: 'cedex',
+      }
     },
     {
       type: 'select',
       template: 'select-group',
-      disabled: true,
-      name: 'country',
-      label: getText('label.country', 'society'),
-      placeholder: getText('option.placeholder', 'select'),
-      options: countries.min
+      data: {
+        name: 'country',
+        label: getText('label.country', 'society'),
+        placeholder: getText('option.placeholder', 'select'),
+        options: countries.min
+      }
     },
   ]
 }
 %>
 
-<%- include('../../template/ejs/society', {society: data}); %>
+<%- include('./society-default', {society: data}); %>

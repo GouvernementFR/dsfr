@@ -1,0 +1,10 @@
+<%
+const address = locals.address || {};
+const data = {
+  ...address,
+  id: uniqueId('address'),
+  form: false
+}
+%>
+
+<%- include('../../../../component/form/template/ejs/form', {form: data}); %>

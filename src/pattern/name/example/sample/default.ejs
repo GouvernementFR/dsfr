@@ -1,0 +1,94 @@
+<%
+const name = locals.name || {};
+const countries = JSON.parse(include('../../../address/example/sample/data/country'));
+const items = [];
+
+if (name.country === true) items.push(
+  {
+    type: 'select',
+    template: 'select-group',
+    data: {
+      label: getText('label.country', 'name'),
+      placeholder: getText('option.placeholder', 'select'),
+      name: 'country',
+      options: countries.min
+    }
+  },
+);
+
+items.push(
+  {
+    type: 'input',
+    base: 'input/input-base',
+    data: {
+      label: getText('label.name', 'name'),
+      name: 'name'
+    }
+  },
+);
+
+if (name.usage === true) items.push(
+  {
+    type: 'input',
+    base: 'input/input-base',
+    data: {
+      label: getText('label.usage-name', 'name'),
+      hint: getText('hint.usage-name', 'name'),
+      name: 'usage-name'
+    }
+  }
+);
+
+items.push(
+  {
+    type: 'input',
+    base: 'input/input-base',
+    data: {
+      label: getText('label.firstname', 'name'),
+      name: 'firstname',
+      disabled: name.disabled || undefined
+    }
+  },
+);
+
+if (name.button === true) items.push(
+  {
+    type: 'button',
+    template: 'button',
+    data: {
+      label: getText('label.add-firstname', 'name'),
+      kind: 3,
+      size: 'sm',
+      disabled: name.disabled || undefined
+    }
+  }
+);
+
+if (name.checkbox === true) items.push(
+  {
+    type: 'checkbox',
+    template: 'checkbox-group',
+    data: {
+      label: getText('label.no-firstname', 'name'),
+      name: 'firstname-disabled',
+      checked: name.checked || false,
+      size: 'sm',
+      attributes: {
+        onclick: name.button === true ?
+        `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input');  const button = control.previousElementSibling.firstElementChild; if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); button.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); button.removeAttribute('disabled'); }`
+        : `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`
+      },
+    }
+  }
+);
+
+const data = {
+  id: name.id || uniqueId('name-default'),
+  label: name.label || getText('sample.default', 'name'),
+  form: false,
+  items: items
+}
+
+%>
+
+<%- include('../../../../component/form/template/ejs/form', {form: data}); %>

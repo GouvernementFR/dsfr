@@ -1,36 +1,52 @@
 <%
-const date = { 
-  id: uniqueId('date-default'),
-  legend: getText('legend.birthdate', 'date'),
-  hint: getText('hint.birthdate', 'date'),
+const date = locals.date || {};
+
+const data = {
+  id: date.id || uniqueId('date-default'),
+  legend: date.legend || getText('legend.birthdate', 'date'),
+  hint: date.hint || getText('hint.birthdate', 'date'),
+  error: date.error || undefined,
+  form: false,
   items:[
     {
       type: 'input',
-      name: 'day',
-      label: getText('option.day', 'date'),
-      hint: getText('hint.day', 'date'),
+      base: 'input/input-base',
       inline: true,
       modifier: 'number',
+      data: {
+        name: 'day',
+        label: getText('option.day', 'date'),
+        hint: getText('hint.day', 'date'),
+        error: date.error ? true : undefined
+      }
     },
     {
       type: 'input',
-      name: 'month',
-      label: getText('option.month', 'date'),
-      hint: getText('hint.month', 'date'),
+      base: 'input/input-base',
       inline: true,
       modifier: 'number',
+      data: {
+        name: 'month',
+        label: getText('option.month', 'date'),
+        hint: getText('hint.month', 'date'),
+        error: date.error ? true : undefined
+      }
     },
     {
       type: 'input',
-      name: 'year',
-      label: getText('option.year', 'date'),
-      hint: getText('hint.year', 'date'),
+      base: 'input/input-base',
       inline: true,
       grow: true,
       modifier: 'year',
+      data: {
+        name: 'year',
+        label: getText('option.year', 'date'),
+        hint: getText('hint.year', 'date'),
+        error: date.error ? true : undefined
+      }
     },
   ]
 };
 %>
 
-<%- include('../../template/ejs/date', { date: date }); %>
+<%- include('../../../../component/form/template/ejs/form', { form: data }); %>

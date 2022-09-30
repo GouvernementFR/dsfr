@@ -1,41 +1,12 @@
 <%
-const countries = JSON.parse(include('../../../address/example/sample/data/country'));
-const name = {
-    id: uniqueId('name-international'),
-    label: getText('sample.default', 'name'),
-    items:[
-        {
-            type: 'select',
-            template: 'select-group',
-            label: getText('label.country', 'name'),
-            name: 'country',
-            placeholder: getText('option.placeholder', 'select'),
-            options: countries.min
-        },
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.name', 'name'),
-            name: 'name'
-        },
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.firstname', 'name'),
-            name: 'firstname',
-            disabled: true
-        },
-        {
-            type: 'checkbox',
-            template: 'checkbox-group',
-            label: getText('label.no-firstname', 'name'),
-            name: 'firstname-disabled',
-            checked: true,
-            size: 'sm',
-            attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`},
-        }
-    ]
+const data = {
+  id: uniqueId('name-international'),
+  label: getText('sample.default', 'name'),
+  country: true,
+  disabled: true,
+  checkbox: true,
+  checked: true,
 }
 %>
 
-<%- include('../../template/ejs/name', {name: name}); %>
+<%- include('./default', {name: data}); %>

@@ -1,29 +1,9 @@
 <%
-const name = {
-    id: uniqueId('usage-name'),
-    label: getText('sample.usage-name', 'name'),
-    items:[
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.name', 'name'),
-            name: 'name'
-        },
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.usage-name', 'name'),
-            hint: getText('hint.usage-name', 'name'),
-            name: 'usage-name'
-        },
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.firstname', 'name'),
-            name: 'firstname'
-        }
-    ]
+const data = {
+  id: uniqueId('usage-name'),
+  label: getText('sample.usage-name', 'name'),
+  usage: true
 }
 %>
 
-<%- include('../../template/ejs/name', {name: name}); %>
+<%- include('./default', {name: data}); %>

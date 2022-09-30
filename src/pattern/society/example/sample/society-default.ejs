@@ -1,0 +1,11 @@
+<%
+let society = locals.society || {};
+const data = {
+  id: society.id || uniqueId('civility'),
+  label: society.label || undefined,
+  items: society.items || undefined,
+  form: false
+}
+%>
+
+<%- include('../../../../component/form/template/ejs/form', {form: data}); %>

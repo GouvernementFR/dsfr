@@ -5,41 +5,61 @@ const data = {
   items: [
     {
       type: 'input',
-      label: getText('label.address', 'address'),
-      hint: getText('hint.address', 'address'),
-      name: 'address',
+      base: 'input/input-base',
       template: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.address', 'address'),
+        hint: getText('hint.address', 'address'),
+        name: 'address',
+      }
     },
     {
       type: 'input',
-      label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
-      hint: getText('hint.complement', 'address'),
-      name: 'complement',
+      base: 'input/input-base',
       template: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
+        hint: getText('hint.complement', 'address'),
+        name: 'complement',
+      }
     },
     {
       type: 'input',
-      label: getText('label.hamlet', 'address'),
-      name: 'hamlet',
+      base: 'input/input-base',
       template: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.hamlet', 'address'),
+        name: 'hamlet',
+      }
     },
     {
       type: 'input',
+      base: 'input/input-base',
+      template: 'input',
       inline: true,
       grow: true,
       modifier: 'postal',
-      label: getText('label.postal', 'address'),
-      name: 'postal',
-      template: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.postal', 'address'),
+        name: 'postal',
+      }
     },
     {
       type: 'input',
-      label: getText('label.city', 'address'),
-      name: 'city',
+      base: 'input/input-base',
       template: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.city', 'address'),
+        name: 'city',
+      }
     }
   ]
 }
 %>
 
-<%- include('../../template/ejs/address', {address: data}); %>
+<%- include('./address-default', {address: data}); %>

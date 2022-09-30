@@ -1,32 +1,11 @@
 <%
-const name = {
-    id: uniqueId('firstname-disabled'),
-    label: getText('sample.firstname-disabled', 'name'),
-    items:[
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.name', 'name'),
-            name: 'name'
-        },
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.firstname', 'name'),
-            name: 'firstname',
-            disabled: true
-        },
-        {
-            type: 'checkbox',
-            template: 'checkbox-group',
-            label: getText('label.no-firstname', 'name'),
-            value: 'firstname-disabled',
-            checked: true,
-            size: 'sm',
-            attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`},
-        }
-    ]
+const data = {
+  id: uniqueId('firstname-disabled'),
+  label: getText('sample.firstname-disabled', 'name'),
+  disabled: true,
+  checkbox: true,
+  checked: true,
 }
 %>
 
-<%- include('../../template/ejs/name', {name: name}); %>
+<%- include('./default', {name: data}); %>

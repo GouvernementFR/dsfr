@@ -6,24 +6,28 @@ const data = {
   items: [
     {
       type: 'input',
-      label: getText('label.siret', 'society'),
-      name: 'siret',
-      template: 'input',
+      base: 'input/input-base',
+      data: {
+        label: getText('label.siret', 'society'),
+        name: 'siret',
+      }
     },
     {
       type: 'link',
-      label: getText('directory.label', 'society'),
-      href: getText('directory.href', 'society'),
-      attributes: {
-        target: '_blank',
-        rel: 'noopener',
-      },
-      controlTag: 'p',
-      controlClasses: [prefix + '-mt-n1v'],
       template: 'link',
+      tag: 'p',
+      classes: [prefix + '-mt-n1v'],
+      data: {
+        label: getText('directory.label', 'society'),
+        href: getText('directory.href', 'society'),
+        attributes: {
+          target: '_blank',
+          rel: 'noopener',
+        },
+      }
     }
   ]
 }
 %>
 
-<%- include('../../template/ejs/society', {society: data}); %>
+<%- include('./society-default', {society: data}); %>
