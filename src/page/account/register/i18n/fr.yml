@@ -22,7 +22,7 @@ login:
   optin: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
   button: Valider
 identity:
-  legend: Renseigner une identité
+  legend: Identité personnelle
 address:
   legend: Coordonnées personnelles
 confirmation:
