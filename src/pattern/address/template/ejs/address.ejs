@@ -19,9 +19,9 @@
 
 * address.items[].value (string, required) : valeur du champ
 
-* address.hamlet : paramètre du champ 'lieu-dit'
-* address.hamlet.label : label du champ 'lieu-dit'
-* address.hamlet.name : attribut name du champ 'lieu-dit'
+* address.locality : paramètre du champ 'Lieu-dit, commune déléguée ou boîte postale'
+* address.locality.label : label du champ 'Lieu-dit, commune déléguée ou boîte postale'
+* address.locality.name : attribut name du champ 'Lieu-dit, commune déléguée ou boîte postale'
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
@@ -31,7 +31,7 @@ const address = locals.address || {};
 const fieldset = {};
 const elements = [];
 if (address.items && address.items.length) {
-  address.items.forEach((item, index) => {
+  address.items.forEach((item) => {
     const type = item.type || 'input';
     const path = type === 'input' ? 'input/input-base' : type;
 

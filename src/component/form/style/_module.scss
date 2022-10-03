@@ -98,7 +98,6 @@
     }
   }
 
-
   /**
    * Modificateur pour gérer l'état de validation
    */
@@ -110,8 +109,6 @@
     }
   }
 }
-
-
 
 #{ns-group(controls) } {
   @include display-flex(row, flex-end, null, wrap);
@@ -147,7 +144,7 @@
   &--postal {
     flex: 0 0 space(28v);
   }
-  
+
   &--year:not(&--inline),
   &--postal:not(&--inline) {
     @include margin-right(calc(100% - 28v));
@@ -156,7 +153,7 @@
   &--number {
     flex: 0 0 space(18v);
   }
-  
+
   &--number:not(&--inline) {
     @include margin-right(calc(100% - 18v));
   }
