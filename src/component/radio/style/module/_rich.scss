@@ -8,10 +8,6 @@
 #{ns(radio-rich)} {
   @include relative;
 
-  &#{ns-group(radio)} {
-    @include margin-y(0);
-  }
-
   input[type="radio"] {
     + label {
       @include padding-left(14v);
@@ -62,5 +58,11 @@
       max-width: spacing.space(20v);
       object-fit: cover;
     }
+  }
+}
+
+#{ns(control)} {
+  > #{ns(radio-rich)}#{ns-group(radio)} {
+    @include margin-y(0);
   }
 }

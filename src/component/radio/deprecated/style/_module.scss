@@ -1,0 +1,70 @@
+@use '../../../../../module/spacing';
+
+#{ns(fieldset)} {
+  #{ns(fieldset__content)} {
+
+    #{ns(radio-rich)} {
+      &:first-child {
+        input[type="radio"] + label {
+          @include margin-top(3v);
+        }
+      }
+
+      input[type="radio"] + label {
+        @include margin-top(2v);
+        @include margin-bottom(4v);
+      }
+
+      &:last-child {
+        input[type="radio"] + label {
+          @include margin-bottom(7v);
+        }
+      }
+    }
+  }
+
+  &--inline {
+    #{ns(fieldset__content)} {
+      #{ns(radio-rich)} {
+        &:not(:last-child) {
+          input[type="radio"] + label {
+            @include margin-right(3v);
+            @include margin-bottom(2v);
+          }
+
+          #{ns(radio-rich)}__img {
+            right: spacing.space(4v);
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          input[type="radio"] + label {
+            @include margin-bottom(3v);
+          }
+        }
+
+        &:first-child {
+          #{ns(radio-rich)}__img {
+            top: spacing.space(4v);
+          }
+        }
+
+        &__img {
+          top: spacing.space(3v);
+        }
+      }
+    }
+
+    #{ns(hint-text)} + #{ns(fieldset__content)} {
+      #{ns(radio-rich)} {
+        &:first-child {
+          input[type="radio"] + label {
+            @include margin-top(6v);
+          }
+        }
+      }
+    }
+  }
+}

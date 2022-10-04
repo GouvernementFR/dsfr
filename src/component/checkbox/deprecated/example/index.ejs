@@ -1,15 +1,5 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Case à cocher seule', './sample/checkbox.ejs', {checkbox: {id:'checkbox'}}, true); %>
-
-<%- sample('Case à cocher seule, exemple avec indice et exposant', './sample/checkbox.ejs', {checkbox: {id:'checkbox-sup-sub', label:'<span>Label checkbox <sub>sub</sub> et <sup>sup</sup></span>'}}, true); %>
-
-<%- sample('Case à cocher avec texte d‘aide', './sample/checkbox.ejs', {checkbox: {id:'checkbox-hint', hint:true}}, true); %>
-
-<%- sample('Case à cocher seule, validée', './sample/checkbox.ejs', {checkbox: {id:'checkbox-valid', valid:true}}, true); %>
-
-<%- sample('Case à cocher seule avec erreur', './sample/checkbox.ejs', {checkbox: {id:'checkbox-error', error:true}}, true); %>
-
 <%- sample('Ensemble de cases à cocher', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes', checked: true}}, true); %>
 
 <%- sample('Ensemble de cases à cocher, petite taille', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-small', checked: true}, checkbox: {size: 'sm'}}, true); %>
@@ -32,6 +22,3 @@
 
 <%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique,  petite taille', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-hint-el-sm'}, checkbox: {size: 'sm', hint:'Texte de description additionnel'}}, true); %>
 
-<%- deprecation(); %>
-
-<%- include('../deprecated/example/index');  %>

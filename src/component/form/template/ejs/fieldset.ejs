@@ -60,16 +60,14 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
       <% if (fieldset.hint !== undefined) { %><%- include('./hint', {hint: {id: fieldset.id + '-desc-hint'}});%><% } %>
     </legend>
   <% } %>
-  <div class="<%= prefix %>-fieldset__content">
-    <div class="<%= prefix %>-controls-group">
-      <%
-        let path;
-        let colClasses;
-        for (let i = 0; i < fieldset.elements.length; i++) {
-      %>
-          <%- include('./control', {control: fieldset.elements[i]}); %>
-      <% } %>
-    </div>
+  <div class="<%= prefix %>-controls-group">
+    <%
+      let path;
+      let colClasses;
+      for (let i = 0; i < fieldset.elements.length; i++) {
+    %>
+        <%- include('./control', {control: fieldset.elements[i]}); %>
+    <% } %>
   </div>
   <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
 </fieldset>

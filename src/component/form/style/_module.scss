@@ -3,6 +3,8 @@
 /// @group form
 ////
 
+@use '../../../../module/spacing';
+
 #{ns(label)} {
   display: block;
   @include text-style(md);
@@ -77,23 +79,13 @@
     }
   }
 
-  &__content {
-    @include relative;
-  }
-
-  &--error {
-    #{ns(fieldset__content)} {
-      @include before('') {
-        @include absolute(0, null, 4v, -2v, 2px);
-      }
-    }
-  }
-
-  &--valid {
-    #{ns(fieldset__content)} {
-      @include before('') {
-        @include absolute(0, null, 4v, -2v, 2px);
-      }
+  &--valid,
+  &--error,
+  &--info {
+    #{ns-group(controls)} {
+      background-size: 2px calc(100% - spacing.space(4v));
+      background-repeat: no-repeat;
+      background-position: 0 0;
     }
   }
 }

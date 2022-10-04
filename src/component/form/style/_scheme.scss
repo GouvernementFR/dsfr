@@ -51,10 +51,8 @@
     }
 
     &--error {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
-        }
+      #{ns-group(controls)} {
+        @include color.background-image(border plain error, (legacy:$legacy));
       }
 
       label {
@@ -63,10 +61,8 @@
     }
 
     &--valid {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
-        }
+      #{ns-group(controls)} {
+        @include color.background-image(border plain success, (legacy:$legacy));
       }
 
       label {
@@ -75,10 +71,8 @@
     }
 
     &--info {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain info, (legacy:$legacy), left-2-in);
-        }
+      #{ns-group(controls)} {
+        @include color.background-image(border plain info, (legacy:$legacy));
       }
 
       label {
