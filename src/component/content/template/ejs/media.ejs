@@ -16,6 +16,8 @@
 
 * content.attributes (object, optional) : Attributs supplémentaires sur l'élément
 
+* content.transcription (object, optional) : Attributs de la transcription sur l'élément
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <% let content = locals.content || {} %>
@@ -92,13 +94,10 @@ switch(type) {
 <% } %>
 
 <%
-if (type === 'vid' && content.transcription != undefined) {
+if (content.transcription != undefined) {
     let data = content.transcription;
 %>
     <%- include('../../../transcription/template/ejs/transcription', {transcription: data}); %>
 <% } %>
 
 </figure>
-
-
-

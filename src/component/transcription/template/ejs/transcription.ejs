@@ -17,7 +17,7 @@ const isExpanded = transcription.isExpanded === false;
 const title = getText('collapse.title', 'transcription');
 
 let modal = {
-        body: include('../../example/sample/body/content'),
+        body: transcription.content,
         customFooter: include('../../example/sample/footer/actions'),
         size: 'lg',
     }
