@@ -1,0 +1,29 @@
+#{ns(messages-group)} {
+  > * {
+    @include margin-top(1v);
+    @include margin-bottom(0);
+  }
+}
+
+#{ns(message)} {
+  @include display-flex(row, center);
+  @include text-style(xs);
+  @include margin-top(4v);
+  @include margin-bottom(0);
+  @include icon(null, sm, before) {
+    display: inline-block;
+    @include margin-right(1v);
+  }
+
+  &--error {
+    @include icon-image(error-fill, before);
+  }
+
+  &--valid {
+    @include icon-image(success-fill, before);
+  }
+
+  &--info {
+    @include icon-image(information-fill, before);
+  }
+}

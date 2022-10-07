@@ -1,0 +1,70 @@
+@use '../../../../../module/spacing';
+
+#{ns(fieldset)} {
+  @include relative;
+  @include margin(0 -2v 8v);
+  @include padding(0);
+  @include display-flex(row, flex-end, null, wrap);
+  border: 0;
+
+  &__legend {
+    @include margin-bottom(4v);
+    @include padding-x(2v);
+    @include text-style(md);
+    @include font-weight(bold);
+    @include width(100%);
+
+    #{ns(hint-text)} {
+      @include margin-top(2v);
+      @include margin-bottom(0);
+      @include font-weight(regular);
+    }
+  }
+
+  &--valid,
+  &--valid &__legend,
+  &--error,
+  &--error &__legend,
+  &--info,
+  &--info &__legend {
+    background-size: spacing.space(2px calc(100% - (4v)));
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  &__element {
+    flex: 1 1 100%;
+    @include padding-x(2v);
+    @include margin-bottom(4v);
+
+    #{ns(fieldset)} {
+      @include margin-bottom(0);
+    }
+
+    &--inline {
+      flex: 0 0 auto;
+
+      &-grow {
+        flex-grow: 1;
+      }
+    }
+
+    &--year,
+    &--postal {
+      flex: 0 0 space(28v);
+    }
+
+    &--year:not(&--inline),
+    &--postal:not(&--inline) {
+      @include margin-right(calc(100% - 28v));
+    }
+
+    &--number {
+      flex: 0 0 space(18v);
+    }
+
+    &--number:not(&--inline) {
+      @include margin-right(calc(100% - 18v));
+    }
+  }
+}

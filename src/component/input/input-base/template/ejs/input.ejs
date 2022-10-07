@@ -50,17 +50,42 @@ const labelClasses = input.labelClasses || [];
 const labelAttrs = input.labelAttrs || {};
 const inputType = input.type || 'text';
 const describedby = [];
+const messages = [];
 
-inputClasses.push(prefix + '-input');
+inputClasses.push(`${prefix}-input`);
 
-if (input.valid !== undefined) {
-  inputClasses.push(prefix + '-input--valid');
-  if (typeof input.valid === 'string') describedby.push(input.id + '-desc-valid');
+if (input.valid) {
+  inputClasses.push(`${prefix}-input--valid`);
+
+  switch (typeof input.valid) {
+    case 'string':
+      const id = `${input.id}-desc-valid`;
+      describedby.push(id);
+      messages.push({ type: 'valid', id: id, text: input.valid });
+      break;
+
+    case 'object':
+      describedby.push(input.valid.id);
+      messages.push(input.valid);
+      break;
+  }
 }
 
-if (input.error !== undefined) {
-  inputClasses.push(prefix + '-input--error');
-  if (typeof input.error === 'string') describedby.push(input.id + '-desc-error');
+if (input.error) {
+  inputClasses.push(`${prefix}-input--error`);
+
+  switch (typeof input.error) {
+    case 'string':
+      const id = `${input.id}-desc-error`;
+      describedby.push(id);
+      messages.push({ type: 'error', id: id, text: input.error });
+      break;
+
+    case 'object':
+      describedby.push(input.error.id);
+      messages.push(input.error);
+      break;
+  }
 }
 
 if (input.hint === true) {
@@ -99,13 +124,13 @@ else {%>
 <input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= inputType %>">
 <% } %>
 
-<% if (input.addon && input.button != undefined) { %>
-  <%- include('../../../../button/template/ejs/button', {button:input.button}); %>
+<% if (input.addon && input.button !== undefined) { %>
+  <%- include('../../../../button/template/ejs/button', { button:input.button }); %>
   </div>
 <% } %>
 
-<% if (input.icon != undefined) { %>
+<% if (input.icon !== undefined) { %>
 </div>
 <% } %>
 
-<%- include('../../../../form/template/ejs/message', {message:input}); %>
+<%- include('../../../../form/template/ejs/message/messages-group', { messagesGroup: { id: `${input.id}-messages`, messages: messages }}); %>

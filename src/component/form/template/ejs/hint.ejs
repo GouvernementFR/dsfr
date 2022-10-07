@@ -1,11 +1,19 @@
 <%#
 # paramètres hint
 
-* label.hint (string, required) : texte additionel
+* hint.text (string, required) : texte additionel
+
+* hint.id (string, optional) : id du hint
+
+* hint.attributes (object, optional) : attributs spécifiques à rajouter sur le hint
+
+* hint.classes (array, optional) : classes spécifiques à rajouter sur le hint
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
-let form = locals.form || {hint:'texte additionel'};
+  const hint = locals.hint || {};
+  const classes = [...hint.classes || [], `${prefix}-hint-text`];
+  const attributes = { ...hint.attributes, id: hint.id };
 %>
-<span class="<%= prefix%>-hint-text"><%= form.hint %></span>
+<span class="<%= prefix %>-hint-text"><%= form.hint %></span>

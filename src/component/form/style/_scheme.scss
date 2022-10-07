@@ -27,16 +27,18 @@
     @include color.text(mention grey, (legacy:$legacy));
   }
 
-  #{ns(error-text)} {
-    @include color.text(default error, (legacy:$legacy));
-  }
+  #{ns(message)} {
+    &--error {
+      @include color.text(default error, (legacy:$legacy));
+    }
 
-  #{ns(valid-text)} {
-    @include color.text(default success, (legacy:$legacy));
-  }
+    &--valid {
+      @include color.text(default success, (legacy:$legacy));
+    }
 
-  #{ns(info-text)} {
-    @include color.text(default info, (legacy:$legacy));
+    &--info {
+      @include color.text(default info, (legacy:$legacy));
+    }
   }
 
   #{ns(fieldset)} {
@@ -50,34 +52,34 @@
       @include color.text(title grey, (legacy:$legacy));
     }
 
-    &--error {
-      #{ns-group(controls)} {
-        @include color.background-image(border plain error, (legacy:$legacy));
-      }
-
-      label {
-        @include color.text(default error, (legacy:$legacy));
-      }
+    &--error,
+    &--error &__legend  {
+      @include color.background-image(border plain error, (legacy:$legacy));
     }
 
-    &--valid {
-      #{ns-group(controls)} {
-        @include color.background-image(border plain success, (legacy:$legacy));
-      }
-
-      label {
-        @include color.text(default success, (legacy:$legacy));
-      }
+    &--error &__legend,
+    &--error #{ns(label)} {
+      @include color.text(default error, (legacy:$legacy));
     }
 
-    &--info {
-      #{ns-group(controls)} {
-        @include color.background-image(border plain info, (legacy:$legacy));
-      }
+    &--valid,
+    &--valid &__legend  {
+      @include color.background-image(border plain success, (legacy:$legacy));
+    }
 
-      label {
-        @include color.text(default info, (legacy:$legacy));
-      }
+    &--valid &__legend,
+    &--valid #{ns(label)} {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info,
+    &--info &__legend {
+      @include color.background-image(border plain info, (legacy:$legacy));
+    }
+
+    &--info &__legend,
+    &--info #{ns(label)} {
+      @include color.text(default info, (legacy:$legacy));
     }
   }
 

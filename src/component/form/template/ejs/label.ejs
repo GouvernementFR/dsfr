@@ -16,10 +16,8 @@
 
 <%
 let label = locals.label || { label: 'label'};
-let labelClasses = label.classes || [];
-labelClasses.push(prefix + '-label');
-let labelAttrs = label.attributes || {};
-let id = label.id || '';
+let labelClasses = [...label.classes || [], `${prefix}-label`];
+let labelAttrs = { ...label.attributes, 'for': label.id || '' };
 %>
 
 <label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>>

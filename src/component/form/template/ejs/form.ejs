@@ -9,68 +9,27 @@
 
 * form.legend (string, optional) : légende du composant
 
-* form.controlTag (string, optional) : tag de l'élément de controle (default: div)
-
 * form.hint (string, optional) : message de description additionel
 
 * form.error (string, optional) : message d'erreur
 
 * form.valid (string, optional) : message de succès
 
-* form.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
+* form.attributes (object, optional) : attributs spécifiques à rajouter sur le form
 
-* form.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
+* form.classes (array, optional) : classes spécifiques à rajouter sur le form
 %>
 
  <%
  const form = locals.form || {};
- const fieldset = {};
- const elements = [];
+ const classes = [...form.classes || []];
+ const attributes = { ...form.attributes, id: form.id };
+ const fieldset = {...form, attributes: {}, id: `${form.id}-fieldset`};
+ if (!form.legend) fieldset.attributes['aria-label'] = form.label;
  %>
 
-<% if (form.items && form.items.length) { %>
-  <% if (form.form !== false) { %>
-  <form>
-  <% } %>
-<%
-    form.items.forEach((item, index) => {
-      let type = item.type;
-      let componentPath = item.base ? item.base : item.type;
-      let template = item.template || item.type;
-      elements.push({
-        path: `${componentPath}/template/ejs/${template}`,
-        disabled: item.disabled,
-        control: item.control,
-        tag: item.tag,
-        classes: item.classes,
-        inline: item.inline,
-        grow: item.grow,
-        modifier: item.modifier,
-        breakAfter: item.breakAfter,
-        data: {
-          [type]: {
-            ...item.data,
-            id: item.data.id || uniqueId(item.data.name) || undefined
-          }
-        }
-      });
-    });
-
-    fieldset.elements = elements;
-    fieldset.error = form.error;
-    fieldset.valid = form.valid;
-    fieldset.classes = form.classes || [];
-    fieldset.hint = form.hint || undefined;
-    fieldset.desc = form.desc || undefined;
-    fieldset.id = form.id;
-    if (form.legend) fieldset.legend = form.legend;
-    else fieldset.attributes = { 'aria-label': form.label};
-%>
-    <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
-
-  <% if (form.form !== false) { %>
+<% if (form.elements && form.elements.length) { %>
+  <form <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+    <%- include('fieldset/fieldset', { fieldset: fieldset }); %>
   </form>
-  <% } %>
-<%
-  }
-%>
+<% } %>

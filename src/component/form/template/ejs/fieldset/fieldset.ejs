@@ -1,0 +1,101 @@
+<%#
+# paramètres fieldset
+
+* fieldset.id (string, required) : id du fieldset
+
+* fieldset.choice (boolean, optional) : si true, la graisse du label devient normal
+
+* fieldset.grid (boolean, optional) : (default: false) Ajoute une grid-row autour des éléments
+
+* fieldset.elements (array, optional) : tableau d'éléments control (voir control)
+
+* fieldset.disabled (boolean, optional): attribut disabled du composant
+
+* fieldset.legend (string, optional) : légende du composant
+
+* fieldset.hint (string, optional) : message de description additionel
+
+* fieldset.error (string, optional) : message d'erreur
+
+* fieldset.valid (string, optional) : message de succès
+
+* fieldset.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
+
+* fieldset.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+const fieldset = locals.fieldset || {};
+const classes = [...fieldset.classes || [], `${prefix}-fieldset`];
+const attributes = { ...fieldset.attributes, id: fieldset.id };
+let legend;
+const labelledBy = [];
+const messages = [];
+const ids = {
+  legend: `${fieldset.id}-legend`,
+  hint: `${fieldset.id}-desc-hint`,
+  error: `${fieldset.id}-desc-error`,
+  valid: `${fieldset.id}-desc-valid`
+}
+
+if (fieldset.legend || fieldset.hint) {
+  let hint;
+
+  console.log(fieldset.legend);
+
+  if (fieldset.legend) {
+    labelledBy.push(ids.legend);
+  }
+
+  if (fieldset.hint) {
+    hint = {
+      label: fieldset.hint,
+      id: ids.hint
+    };
+    labelledBy.push(ids.hint);
+  }
+
+  const legendClasses = [];
+  if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
+
+  legend = {
+    id: ids.legend,
+    label: fieldset.legend,
+    hint: hint,
+    classes: legendClasses
+  };
+}
+
+if (fieldset.error) {
+  classes.push(`${prefix}-fieldset--error`);
+  labelledBy.push(ids.error);
+  attributes.role = 'group';
+  messages.push({ type: 'error', id: ids.error, text: fieldset.error });
+}
+if (fieldset.valid) {
+  classes.push(`${prefix}-fieldset--valid`);
+  labelledBy.push(ids.valid);
+  attributes.role = 'group';
+  messages.push({ type: 'valid', id: ids.valid, text: fieldset.valid });
+}
+
+if (fieldset.disabled === true) attributes.disabled = '';
+
+if (labelledBy.length) attributes['aria-labelledby'] = labelledBy.join(' ');
+%>
+
+<fieldset <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+  <% if (legend) { %>
+    <%- include('legend', { legend: legend }); %>
+  <% } %>
+  <% for (const element of fieldset.elements) {
+  console.log(element);
+  %>
+    <%- include('element', { element: element }); %>
+  <% } %>
+  <% if (messages.length > 0) { %>
+  <%- include('../message/messages-group', { messagesGroup: { id: `${fieldset.id}-messages`, messages: messages }}); %>
+  <% } %>
+</fieldset>

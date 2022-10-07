@@ -12,11 +12,17 @@
     }
   }
 
-  #{ns(error-text)} {
-    @include icon-legacy(error-fill, sm);
-  }
+  #{ns(message)} {
+    &--error {
+      @include icon-legacy(error-fill, sm);
+    }
 
-  #{ns(valid-text)} {
-    @include icon-legacy(success-fill, sm);
+    &--valid {
+      @include icon-legacy(success-fill, sm);
+    }
+
+    &--info {
+      @include icon-legacy(information-fill, sm);
+    }
   }
 }

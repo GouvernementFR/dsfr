@@ -33,6 +33,18 @@
     }
   }
 
+  #{ns(error-text)} {
+    @include color.text(default error, (legacy:$legacy));
+  }
+
+  #{ns(valid-text)} {
+    @include color.text(default success, (legacy:$legacy));
+  }
+
+  #{ns(info-text)} {
+    @include color.text(default info, (legacy:$legacy));
+  }
+
   #{ns(fieldset)} {
     &--valid {
       #{ns(fieldset__content)} {
