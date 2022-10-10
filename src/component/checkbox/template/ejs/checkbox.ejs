@@ -25,7 +25,12 @@ if (checkbox.disabled === true) checkboxAttrs.disabled = "";
 if (checkbox.name) checkboxAttrs.name = checkbox.name;
 checkboxAttrs.id = checkbox.id;
 checkboxAttrs.type = "checkbox";
+const label = {
+  label: checkbox.label,
+  for: checkbox.id,
+  classes: checkbox.classes,
+  hint: checkbox.hint
+};
 %>
 <input <%- includeAttrs(checkboxAttrs); %>>
-<%- include('../../../form/template/ejs/label', {label: {label:checkbox.label, hint: checkbox.hint, id: checkbox.id}} ); %>
-<%- include('../../../form/template/ejs/message', {message: checkbox}); %>
+<%- include('../../../form/template/ejs/label', {label: label} ); %>
