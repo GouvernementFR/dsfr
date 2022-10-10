@@ -2,7 +2,7 @@
 
 #{ns(fieldset)} {
   @include relative;
-  @include margin(0 -2v 8v);
+  @include margin(0 -2v 4v);
   @include padding(0);
   @include display-flex(row, flex-end, null, wrap);
   border: 0;
@@ -49,7 +49,7 @@
     @include margin-bottom(4v);
 
     #{ns(fieldset)} {
-      @include margin-bottom(0);
+      @include margin-bottom(-4v);
     }
 
     &--inline {
@@ -79,7 +79,7 @@
     }
   }
 
-  #{ns(messages-group)} {
+  > #{ns(messages-group)} {
     flex: 1 1 100%;
     @include padding-x(2v);
     @include margin-bottom(4v);

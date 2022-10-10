@@ -33,10 +33,17 @@
 <%
 let select = locals.select || {};
 
-let selectClasses = select.classes || [];
-let selectAttrs = select.attributes || {};
+let classes = select.classes || [];
+let attributes = select.attributes || {};
 let describedby = [];
-selectClasses.push(`${prefix}-select`);
+classes.push(`${prefix}-select`);
+
+const label = {
+    label: select.label,
+    for: select.id,
+    classes: select.labeClasses,
+    attributes: select.labelAttributes,
+}
 
 const builder = new MessageBuilder(select.id);
 
@@ -48,15 +55,19 @@ if (select.error) {
 }
 describedby.push(...builder.ids);
 
-if (describedby.length > 0) selectAttrs['aria-describedby'] = describedby.join(' ');
+if (select.hint) {
+    label.hint = select.hint;
+}
 
-if (select.required === true) selectAttrs['required'] = '';
-if (select.disabled === true) selectAttrs['disabled'] = '';
+if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
+
+if (select.required === true) attributes['required'] = '';
+if (select.disabled === true) attributes['disabled'] = '';
 %>
 
-<%- include('../../../form/template/ejs/label', {label:{label:select.label, id: select.id, hint: select.hint}}); %>
+<%- include('../../../form/template/ejs/label', { label: label }); %>
 
-<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
+<select <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
   <% if (select.placeholder != undefined) { %>
   <option value="" selected disabled hidden><%= select.placeholder %></option>
   <% } %>

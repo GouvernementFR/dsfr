@@ -8,7 +8,7 @@
 #{ns(input)} {
   display: block;
   @include size(100%);
-  border-radius: spacing.space(1v) spacing.space(1v) 0 0;
+  border-radius: spacing.space(1v 1v 0 0);
   @include text-style(md);
   @include padding(2v 4v);
 
@@ -83,6 +83,13 @@
 
   + #{ns(hint-text)} {
     @include margin-top(4v);
+  }
+}
+
+#{ns(input-group)} {
+  #{ns(messages-group)} {
+    @include margin-top(4v);
+    @include margin-bottom(0);
   }
 }
 

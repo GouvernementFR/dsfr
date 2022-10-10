@@ -18,3 +18,10 @@
   background-position: spacing.space(calc(100% - 2v) 50%);
   background-size: spacing.space(6v) spacing.space(6v);
 }
+
+#{ns(select-group)} {
+  #{ns(messages-group)} {
+    @include margin-top(4v);
+    @include margin-bottom(0);
+  }
+}
