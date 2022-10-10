@@ -8,7 +8,7 @@
     & + label {
       @include before {
         @include size(4v, 4v);
-        @include margin-top(4v);
+        @include margin-top(1v);
       }
     }
   }

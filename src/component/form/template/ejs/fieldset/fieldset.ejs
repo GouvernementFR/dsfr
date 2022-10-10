@@ -92,7 +92,5 @@ if (labelledBy.length) attributes['aria-labelledby'] = labelledBy.join(' ');
   <% for (const element of fieldset.elements) { %>
     <%- include('element', { element: element }); %>
   <% } %>
-  <% if (messages.length > 0) { %>
-  <%- include('../message/messages-group', { messagesGroup: { id: `${fieldset.id}-messages`, messages: messages }}); %>
-  <% } %>
+  <%- include('../message/messages-group', { messagesGroup: builder.messagesGroup }); %>
 </fieldset>

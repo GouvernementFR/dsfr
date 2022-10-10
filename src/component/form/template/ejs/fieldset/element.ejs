@@ -20,11 +20,12 @@
 %>
 <%
   let element = locals.element || {};
-  let elementClasses = [...element.classes || [], `${prefix}-fieldset__element`];
+  const elementClass = `${prefix}-fieldset__element`
+  let elementClasses = [...element.classes || [], elementClass];
   let elementAttrs = element.attributes || {};
-  if (element.inline) elementClasses.push(prefix + '-element--inline');
-  if (element.grow) elementClasses.push(prefix + '-element--inline-grow');
-  if (element.modifier) elementClasses.push(prefix + '-element--' + element.modifier);
+  if (element.inline) elementClasses.push(`${elementClass}--inline`);
+  if (element.grow) elementClasses.push(`${elementClass}--inline-grow`);
+  if (element.modifier) elementClasses.push(`${elementClass}--${element.modifer}`);
 
   let path, data;
 

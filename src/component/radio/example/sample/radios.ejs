@@ -1,7 +1,21 @@
 <%
 const radios = locals.radios || {}
 const radio = locals.radio || {};
+
 const jsonData = JSON.parse(include('../../../form/example/sample/data', { form: radios }));
+
+if (!radio.label) radio.label = getText('label', 'form') + ' ' + getText('title', 'radio').toLowerCase();
+
+
+switch (typeof radio.hint) {
+  case 'boolean':
+    radio.hint = { hint: getText('hint', 'form')};
+    break;
+
+  case 'string':
+    radio.hint = { hint: radio.hint };
+    break;
+}
 
 const id = radios.id;
 const elements = [];

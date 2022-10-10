@@ -1,14 +1,13 @@
 #{ns(messages-group)} {
   > * {
-    @include margin-top(1v);
-    @include margin-bottom(0);
+    @include margin-bottom(1v);
   }
 }
 
 #{ns(message)} {
   @include display-flex(row, center);
   @include text-style(xs);
-  @include margin-top(4v);
+  @include margin-bottom(4v);
   @include margin-bottom(0);
   @include icon(null, sm, before) {
     display: inline-block;

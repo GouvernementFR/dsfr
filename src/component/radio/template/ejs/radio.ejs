@@ -35,17 +35,22 @@
 <%
 const radio = locals.radio || {};
 const attributes = radio.attributes || {};
-const labelClasses = radio.classes || [];
+const label = {
+  label: radio.label,
+  for: radio.id,
+  classes: radio.classes,
+  hint: radio.hint
+};
 let element, imageAttrs = {};
-if (radio.element) element = radio.element;
+// if (radio.element) element = radio.element;
 if (radio.disabled) attributes.disabled = '';
 if (radio.checked) attributes.checked = '';
+
 %>
 
 <input <%- includeAttrs(attributes); %> type="radio" id="<%= radio.id %>" name="<%= radio.name %>">
-<%- include('../../../form/template/ejs/label', { label: { ...radio, ...element, classes: radio.classes }}); %>
-<%- include('../../../form/template/ejs/hint', {hint: {hint: radio.hint} }); %>
-<% if (radio.image !== undefined) { %>
+<%- include('../../../form/template/ejs/label', { label: label }); %>
+<% if (radio.image) { %>
   <% if (radio.image.type && radio.image.type === 'svg') imageAttrs['data-' + prefix + '-inject-svg'] = ''; %>
   <div class="<%= prefix %>-radio-rich__img" <%- includeAttrs(imageAttrs) %>>
     <% if (radio.image.type && radio.image.type === 'pictogram') { %>

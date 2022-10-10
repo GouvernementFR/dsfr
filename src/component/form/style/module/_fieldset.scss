@@ -78,4 +78,10 @@
       @include margin-right(calc(100% - 18v));
     }
   }
+
+  #{ns(messages-group)} {
+    flex: 1 1 100%;
+    @include padding-x(2v);
+    @include margin-bottom(4v);
+  }
 }

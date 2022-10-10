@@ -15,7 +15,7 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-const label = locals.label || { label: 'label'};
+const label = locals.label;
 const classes = [...label.classes || [], `${prefix}-label`];
 const attributes = { ...label.attributes, 'for': label.for };
 %>
