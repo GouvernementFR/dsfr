@@ -27,7 +27,8 @@
     }
   }
 
-  #{ns(hint-text)} {
+  #{ns(hint-text)},
+  #{ns(message)} {
     @include color.text(mention grey, (legacy:$legacy));
   }
 

@@ -39,8 +39,11 @@ const label = {
   label: radio.label,
   for: radio.id,
   classes: radio.classes,
-  hint: radio.hint
+  hint: radio.hint || undefined
 };
+
+console.log(label);
+
 let element, imageAttrs = {};
 // if (radio.element) element = radio.element;
 if (radio.disabled) attributes.disabled = '';

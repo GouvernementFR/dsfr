@@ -22,5 +22,5 @@ const attributes = { ...label.attributes, 'for': label.for };
 
 <label <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
   <%- label.label %>
-  <% if (label.hint) { %><%- include('./hint', { hint: label.hint });%><% } %>
+  <% if (label.hint) { %><%- include('./hint', { hint: { text: label.hint } });%><% } %>
 </label>
