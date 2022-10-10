@@ -2,7 +2,7 @@ class MessageBuilder {
   constructor (id) {
     this.id = id;
     this.messages = [];
-    this.describedby = [];
+    this._ids = [];
     this.appends = {
       error: -1,
       valid: -1,
@@ -17,18 +17,26 @@ class MessageBuilder {
     };
   }
 
+  get ids () {
+    return this._ids;
+  }
+
+  get describedby () {
+    return this._ids;
+  }
+
   add (type, data) {
     this.appends[type]++;
     const append = this.appends[type] > 0 ? '-' + this.appends[type] : '';
     const id = `${this.id}-message-${type}${append}`;
     switch (typeof data) {
       case 'string':
-        this.describedby.push(id);
+        this._ids.push(id);
         this.messages.push({ type: type, id: id, text: data });
         break;
 
       case 'object':
-        this.describedby.push(data.id);
+        this._ids.push(data.id);
         this.messages.push(data);
         break;
     }

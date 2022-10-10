@@ -47,30 +47,40 @@
 const input = locals.input || {};
 const classes = input.classes || [];
 const attributes = input.attributes || {};
-const labelClasses = input.labelClasses || [];
-const labelAttrs = input.labelAttrs || {};
 const inputType = input.type || 'text';
-
+const describedby = [];
 const messages = [];
+const label = {
+  label: input.label,
+  for: input.id,
+  classes: input.labeClasses,
+  attributes: input.labelAttributes,
+}
 
 classes.push(`${prefix}-input`);
 
 const builder = new MessageBuilder(input.id);
 
-if (input.valid) builder.addValid(input.valid);
-if (input.error) builder.addError(input.error);
+if (input.valid) {
+  builder.addValid(input.valid);
+}
+if (input.error) {
+  builder.addError(input.error);
+}
 
-const describedby = builder.describedby;
+describedby.push(...builder.ids);
 
-if (input.hint === true) {
+if (input.hint) {
   describedby.push(input.id + '-hint-text');
-  input.hint = undefined;
+  label.hint = input.hint;
 }
 
 if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
 
 if (input.required === true) attributes['aria-required'] = true;
-if (input.disabled === true) attributes['disabled'] = '';
+if (input.disabled === true) {
+  attributes['disabled'] = '';
+}
 if (input.placeholder) attributes['placeholder'] = input.placeholder;
 if (input.name) attributes.name = input.name;
 if (input.value) attributes.value = input.value;
@@ -78,7 +88,7 @@ if (input.autocomplete) attributes.autocomplete = input.autocomplete;
 attributes.id = input.id;
 %>
 
-<%- include('../../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, error: input.error, valid: input.valid, classes: labelClasses, attributes: labelAttrs}}); %>
+<%- include('../../../../form/template/ejs/label', { label: label }); %>
 
 <% if (input.icon) { %>
   <% let icon = prefix + '-icon-' + input.icon; %>

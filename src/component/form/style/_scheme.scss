@@ -21,6 +21,10 @@
     &--info {
       @include color.text(default info, (legacy:$legacy));
     }
+
+    &--disabled {
+      @include disabled.colors((legacy: $legacy, text: true));
+    }
   }
 
   #{ns(hint-text)} {
@@ -80,14 +84,6 @@
     &--info &__legend,
     &--info #{ns(label)} {
       @include color.text(default info, (legacy:$legacy));
-    }
-  }
-
-  #{ns(control)} {
-    &--disabled {
-      #{ns(label)} {
-        @include disabled.colors((legacy: $legacy, text: true));
-      }
     }
   }
 }

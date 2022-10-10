@@ -6,19 +6,17 @@ const jsonData = JSON.parse(include('../../../form/example/sample/data', { form:
 const id = radios.id;
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
-  path: 'radio/example/sample/radio',
+  type: 'radio',
   inline: radios.inline || null,
   data: {
-    radio: {
-      ...radio,
-      id: `${id}-${i}`,
-      name: id,
-      checked: i === 2 && radios.checked
-    }
+    ...radio,
+    id: `${id}-${i}`,
+    name: id,
+    checked: i === 2 && radios.checked
   }
 });
 
-const fields = {
+const fieldset = {
   choice: true,
   elements: elements,
   ...radios,
@@ -27,4 +25,4 @@ const fields = {
 
 %>
 
-<%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>
+<%- include('../../../form/example/sample/fieldset', {fieldset: fieldset}) %>

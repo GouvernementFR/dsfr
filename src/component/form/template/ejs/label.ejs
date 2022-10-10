@@ -15,12 +15,12 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let label = locals.label || { label: 'label'};
-let labelClasses = [...label.classes || [], `${prefix}-label`];
-let labelAttrs = { ...label.attributes, 'for': label.id || '' };
+const label = locals.label || { label: 'label'};
+const classes = [...label.classes || [], `${prefix}-label`];
+const attributes = { ...label.attributes, 'for': label.for };
 %>
 
-<label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>>
+<label <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
   <%- label.label %>
-  <% if (label.hint != undefined) { %><%- include('./hint', {form: label});%><% } %>
+  <% if (label.hint) { %><%- include('./hint', { hint: label.hint });%><% } %>
 </label>

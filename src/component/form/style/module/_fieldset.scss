@@ -27,9 +27,20 @@
   &--error &__legend,
   &--info,
   &--info &__legend {
-    background-size: spacing.space(2px calc(100% - (4v)));
     background-repeat: no-repeat;
     background-position: 0 0;
+  }
+
+  &--valid,
+  &--error,
+  &--info {
+    background-size: spacing.space(2px calc(100% - (4v)));
+  }
+
+  &--valid &__legend,
+  &--error &__legend,
+  &--info &__legend {
+    background-size: 2px 100%;
   }
 
   &__element {

@@ -25,6 +25,7 @@
 
 %>
 <% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../message/builder.js')); %>
 
 <%
 const fieldset = locals.fieldset || {};
@@ -35,9 +36,7 @@ const labelledBy = [];
 const messages = [];
 const ids = {
   legend: `${fieldset.id}-legend`,
-  hint: `${fieldset.id}-desc-hint`,
-  error: `${fieldset.id}-desc-error`,
-  valid: `${fieldset.id}-desc-valid`
+  hint: `${fieldset.id}-desc-hint`
 }
 
 if (fieldset.legend || fieldset.hint) {
@@ -66,18 +65,20 @@ if (fieldset.legend || fieldset.hint) {
   };
 }
 
+const builder = new MessageBuilder(fieldset.id);
+
 if (fieldset.error) {
   classes.push(`${prefix}-fieldset--error`);
-  labelledBy.push(ids.error);
   attributes.role = 'group';
-  messages.push({ type: 'error', id: ids.error, text: fieldset.error });
+  builder.addError(fieldset.error);
 }
 if (fieldset.valid) {
   classes.push(`${prefix}-fieldset--valid`);
-  labelledBy.push(ids.valid);
   attributes.role = 'group';
-  messages.push({ type: 'valid', id: ids.valid, text: fieldset.valid });
+  builder.addValid(fieldset.valid);
 }
+
+labelledBy.push(...builder.ids);
 
 if (fieldset.disabled === true) attributes.disabled = '';
 
