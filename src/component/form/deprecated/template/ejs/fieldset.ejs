@@ -54,6 +54,6 @@ if (fieldset.choice) legendClasses.push(`${prefix}-text--regular`);
       <%- include('../../../../' + element.path, element.data); %>
       <% } %>
     </div>
-    <%- include('../../../template/ejs/message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
+    <%- include('./message', {message: {id: fieldset.id, hint: fieldset.hint, error: fieldset.error, valid: fieldset.valid}}); %>
   </fieldset>
 </div>

@@ -27,26 +27,25 @@
 
 
 %>
-<% eval(include('../../../../core/index.ejs')); %>
-<% eval(include('../../../form/template/ejs/message/builder.js')); %>
+<% eval(include('../../../../../core/index.ejs')); %>
 
 <%
-let select = locals.select || {};
+const select = locals.select || {};
 
-let selectClasses = select.classes || [];
-let selectAttrs = select.attributes || {};
-let describedby = [];
+const selectClasses = select.classes || [];
+const selectAttrs = select.attributes || {};
+const describedby = [];
 selectClasses.push(`${prefix}-select`);
 
-const builder = new MessageBuilder(select.id);
+if (select.valid !== undefined) {
+  selectClasses.push(`${prefix}-select--valid`);
+  describedby.push(`${select.id}-desc-valid`);
+}
 
-if (select.valid) {
-  builder.addValid(select.valid);
+if (select.error !== undefined) {
+  selectClasses.push(`${prefix}-select--error`);
+  describedby.push(`${select.id}-desc-error`);
 }
-if (select.error) {
-  builder.addError(select.error);
-}
-describedby.push(...builder.ids);
 
 if (describedby.length > 0) selectAttrs['aria-describedby'] = describedby.join(' ');
 
@@ -54,7 +53,7 @@ if (select.required === true) selectAttrs['required'] = '';
 if (select.disabled === true) selectAttrs['disabled'] = '';
 %>
 
-<%- include('../../../form/template/ejs/label', {label:{label:select.label, id: select.id, hint: select.hint}}); %>
+<%- include('../../../../form/template/ejs/label', {label:{label:select.label, id: select.id, hint: select.hint}}); %>
 
 <select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
   <% if (select.placeholder != undefined) { %>
@@ -69,8 +68,4 @@ if (select.disabled === true) selectAttrs['disabled'] = '';
   <% } %>
 </select>
 
-<%
-if (select.valid || select.error) {
-%>
-  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
-<% } %>
+<%- include('../../../../form/deprecated/template/ejs/message', {message:select}); %>
