@@ -43,8 +43,6 @@ const ids = {
 if (fieldset.legend || fieldset.hint) {
   let hint;
 
-  console.log(fieldset.legend);
-
   if (fieldset.legend) {
     labelledBy.push(ids.legend);
   }
@@ -90,9 +88,7 @@ if (labelledBy.length) attributes['aria-labelledby'] = labelledBy.join(' ');
   <% if (legend) { %>
     <%- include('legend', { legend: legend }); %>
   <% } %>
-  <% for (const element of fieldset.elements) {
-  console.log(element);
-  %>
+  <% for (const element of fieldset.elements) { %>
     <%- include('element', { element: element }); %>
   <% } %>
   <% if (messages.length > 0) { %>

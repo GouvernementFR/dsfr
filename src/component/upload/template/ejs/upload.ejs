@@ -49,5 +49,5 @@ if (upload.multiple) uploadAttrs['multiple'] = '';
 <div <%- includeClasses(groupClasses); %>>
   <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
   <input <%- includeClasses(uploadClasses); %> <%- includeAttrs(uploadAttrs); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
-  <%- include('../../../form/template/ejs/message', {message: upload}); %>
+  <%- include('../../../form/template/ejs/message/messagesGroup', {message: upload}); %>
 </div>

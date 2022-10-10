@@ -41,6 +41,7 @@
 
 %>
 <% eval(include('../../../../../core/index.ejs')); %>
+<% eval(include('../../../../form/template/ejs/message/builder.js')); %>
 
 <%
 const input = locals.input || {};
@@ -54,50 +55,21 @@ const messages = [];
 
 inputClasses.push(`${prefix}-input`);
 
-if (input.valid) {
-  inputClasses.push(`${prefix}-input--valid`);
+const builder = new MessageBuilder(input.id);
 
-  switch (typeof input.valid) {
-    case 'string':
-      const id = `${input.id}-desc-valid`;
-      describedby.push(id);
-      messages.push({ type: 'valid', id: id, text: input.valid });
-      break;
-
-    case 'object':
-      describedby.push(input.valid.id);
-      messages.push(input.valid);
-      break;
-  }
-}
-
-if (input.error) {
-  inputClasses.push(`${prefix}-input--error`);
-
-  switch (typeof input.error) {
-    case 'string':
-      const id = `${input.id}-desc-error`;
-      describedby.push(id);
-      messages.push({ type: 'error', id: id, text: input.error });
-      break;
-
-    case 'object':
-      describedby.push(input.error.id);
-      messages.push(input.error);
-      break;
-  }
-}
+if (input.valid) builder.addError(input.valid);
+if (input.error) builder.addError(input.error);
 
 if (input.hint === true) {
   describedby.push(input.id + '-hint-text');
   input.hint = undefined;
 }
 
-if (describedby.length > 0) inputAttrs['aria-describedby'] = describedby.join(' ');
+if (builder.describedby.length > 0) inputAttrs['aria-describedby'] = builder.describedby.join(' ');
 
 if (input.required === true) inputAttrs['aria-required'] = true;
 if (input.disabled === true) inputAttrs['disabled'] = '';
-if (input.placeholder != undefined) inputAttrs['placeholder'] = input.placeholder;
+if (input.placeholder) inputAttrs['placeholder'] = input.placeholder;
 if (input.name) inputAttrs.name = input.name;
 if (input.value) inputAttrs.value = input.value;
 if (input.autocomplete) inputAttrs.autocomplete = input.autocomplete;
@@ -106,14 +78,14 @@ inputAttrs.id = input.id;
 
 <%- include('../../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, error: input.error, valid: input.valid, classes: labelClasses, attributes: labelAttrs}}); %>
 
-<% if (input.icon != undefined) { %>
+<% if (input.icon) { %>
   <% let icon = prefix + '-icon-' + input.icon; %>
   <% if (input.icon === true) icon = '';
   %>
  <div class="<%= prefix %>-input-wrap <%= icon %>" >
 <% } %>
 
-<% if (input.addon && input.button != undefined) { %>
+<% if (input.addon && input.button) { %>
   <div class="<%= prefix %>-input-wrap <%- prefix %>-input-wrap--addon" >
 <% } %>
 
@@ -124,13 +96,13 @@ else {%>
 <input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= inputType %>">
 <% } %>
 
-<% if (input.addon && input.button !== undefined) { %>
+<% if (input.addon && input.button) { %>
   <%- include('../../../../button/template/ejs/button', { button:input.button }); %>
   </div>
 <% } %>
 
-<% if (input.icon !== undefined) { %>
+<% if (input.icon) { %>
 </div>
 <% } %>
 
-<%- include('../../../../form/template/ejs/message/messages-group', { messagesGroup: { id: `${input.id}-messages`, messages: messages }}); %>
+<%- include('../../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
