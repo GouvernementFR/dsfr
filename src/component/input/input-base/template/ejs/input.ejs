@@ -45,35 +45,37 @@
 
 <%
 const input = locals.input || {};
-const inputClasses = input.classes || [];
-const inputAttrs = input.attributes || {};
+const classes = input.classes || [];
+const attributes = input.attributes || {};
 const labelClasses = input.labelClasses || [];
 const labelAttrs = input.labelAttrs || {};
 const inputType = input.type || 'text';
-const describedby = [];
+
 const messages = [];
 
-inputClasses.push(`${prefix}-input`);
+classes.push(`${prefix}-input`);
 
 const builder = new MessageBuilder(input.id);
 
-if (input.valid) builder.addError(input.valid);
+if (input.valid) builder.addValid(input.valid);
 if (input.error) builder.addError(input.error);
+
+const describedby = builder.describedby;
 
 if (input.hint === true) {
   describedby.push(input.id + '-hint-text');
   input.hint = undefined;
 }
 
-if (builder.describedby.length > 0) inputAttrs['aria-describedby'] = builder.describedby.join(' ');
+if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
 
-if (input.required === true) inputAttrs['aria-required'] = true;
-if (input.disabled === true) inputAttrs['disabled'] = '';
-if (input.placeholder) inputAttrs['placeholder'] = input.placeholder;
-if (input.name) inputAttrs.name = input.name;
-if (input.value) inputAttrs.value = input.value;
-if (input.autocomplete) inputAttrs.autocomplete = input.autocomplete;
-inputAttrs.id = input.id;
+if (input.required === true) attributes['aria-required'] = true;
+if (input.disabled === true) attributes['disabled'] = '';
+if (input.placeholder) attributes['placeholder'] = input.placeholder;
+if (input.name) attributes.name = input.name;
+if (input.value) attributes.value = input.value;
+if (input.autocomplete) attributes.autocomplete = input.autocomplete;
+attributes.id = input.id;
 %>
 
 <%- include('../../../../form/template/ejs/label', {label: {id: input.id, label: input.label, hint: input.hint, error: input.error, valid: input.valid, classes: labelClasses, attributes: labelAttrs}}); %>
@@ -90,10 +92,10 @@ inputAttrs.id = input.id;
 <% } %>
 
 <% if (input.type === 'textarea') { %>
-<textarea <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %>></textarea>
+<textarea <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>></textarea>
 <% }
 else {%>
-<input <%- includeClasses(inputClasses); %> <%- includeAttrs(inputAttrs); %> type="<%= inputType %>">
+<input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="<%= inputType %>">
 <% } %>
 
 <% if (input.addon && input.button) { %>
