@@ -56,12 +56,7 @@
     @include display-flex(null, center, flex-end, nowrap);
     @include vertical-btns-group;
     @include horizontal-btns-group;
-    @include nest-btn(sm, only, null, null) {
-      @include margin-bottom(0);
-      @include margin-right(0);
-      justify-content: flex-start;
-    }
-    @include nest-btn(sm, right, null, md) {
+    @include nest-btn(sm, right, null, false) {
       @include margin-bottom(0);
       @include margin-right(0);
     }
@@ -70,46 +65,6 @@
     > * {
       &:not(:first-child) {
         @include margin-left(2w);
-      }
-    }
-
-    #{ns(download)} {
-      @include padding(4px);
-      @include margin(-4px);
-      overflow: hidden;
-
-      &__link {
-        @include text-style(sm);
-        display: inline-flex;
-        align-items: center;
-
-        @include after {
-          @include margin-left(1v);
-        }
-      }
-
-      &__detail {
-        position: relative;
-        display: inline-block;
-        @include text-style(sm);
-        @include padding-left(2v);
-        @include padding-right(2v);
-
-        @include media-query.respond-from(sm) {
-          max-width: inherit;
-        }
-
-        @include before {
-          content: '(';
-          position: absolute;
-          left: 0.25rem;
-        }
-
-        @include after {
-          content: ')';
-          position: absolute;
-          right: 0.25rem;
-        }
       }
     }
   }

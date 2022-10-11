@@ -2,7 +2,7 @@
 let transcription = locals.transcription || {};
 let data = {
   id: uniqueId('transcription'),
-  content: transcription.content || randomContent(true),
+  content: transcription.content || randomContent(['title', 'text', 'list']),
   ...transcription
 }
 %>

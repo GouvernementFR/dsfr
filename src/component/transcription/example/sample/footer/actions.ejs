@@ -1,18 +1,12 @@
 <%
 const fullscreen = getText('button.fullscreen', 'transcription');
-const download = {
-    href: contentPlaceholder(relativeRoot + 'example/transcription.pdf'),
-    detail: 'JPG – 61,88 ko',
-    title: getText('link.download', 'transcription'),
-}
 let modalId = prefix + '-transcription__modal-' + transcription.id;
 %> 
 
 <div class="<%= prefix %>-transcription__footer">
   <div class="<%= prefix %>-transcription__actions-group">
-      <%- include('../../../../download/template/ejs/download', {download: download}); %>
-      <button class="<%= prefix %>-btn <%= prefix %>-btn--fullscreen" aria-controls="<%= modalId %>" data-fr-opened="false" title="<%= transcription.fullscreen %>">
-          <%= fullscreen %>
-      </button>
+    <button class="<%= prefix %>-btn <%= prefix %>-btn--fullscreen" aria-controls="<%= modalId %>" data-fr-opened="false" title="<%= transcription.fullscreen %>">
+      <%= fullscreen %>
+    </button>
   </div>
 </div>

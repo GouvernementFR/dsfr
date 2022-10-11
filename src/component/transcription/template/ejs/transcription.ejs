@@ -17,17 +17,17 @@ const isExpanded = transcription.isExpanded === false;
 const title = getText('collapse.title', 'transcription');
 
 let modal = {
-        body: transcription.content,
-        customFooter: include('../../example/sample/footer/actions'),
-        size: 'lg',
-    }
+  body: transcription.content,
+  customFooter: include('../../example/sample/footer/actions'),
+  size: 'lg',
+}
 let modalId = prefix + '-transcription__modal-' + transcription.id;
 let collapseId = prefix + '-transcription__collapse-' + transcription.id;
 %>
 
 <div class="<%= prefix %>-transcription">
-    <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
-    <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
-        <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
-    </div>
+  <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
+  <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
+    <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
+  </div>  
 </div>

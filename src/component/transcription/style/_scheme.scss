@@ -34,13 +34,5 @@
         }
       }
     }
-
-    &__actions-group {
-      #{ns(download)} {
-        &__detail {
-          color: var(--text-action-high-blue-france);
-        }
-      }
-    }
   }
 }

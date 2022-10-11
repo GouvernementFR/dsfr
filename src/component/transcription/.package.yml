@@ -6,7 +6,6 @@ wrapper: col-8
 style:
   - core
   - button
-  - download
   - modal
 script:
   - core
