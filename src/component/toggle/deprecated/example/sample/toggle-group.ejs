@@ -1,0 +1,11 @@
+<%
+
+let data = {
+  label: 'Label action interrupteur',
+  ...locals.toggle || {},
+  hint: toggle.hint === true ? 'Texte d’aide pour clarifier l’action' : toggle.hint,
+}
+
+%>
+
+<%- include('../../template/ejs/toggle-group', {toggle:data}); %>

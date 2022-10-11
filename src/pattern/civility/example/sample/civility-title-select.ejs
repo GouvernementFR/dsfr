@@ -3,10 +3,9 @@ let civility = locals.civility || {};
 const data = {
   id: uniqueId('civility-title-select'),
   label: getText('sample.call-title', 'civility'),
-  items: [
+  elements: [
     {
       type: 'select',
-      template: 'select-group',
       data: {
         label: getText('legend.family-situation', 'civility'),
         placeholder: getText('option.placeholder', 'select'),

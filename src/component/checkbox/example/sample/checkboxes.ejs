@@ -10,16 +10,6 @@ checkbox.hint = hintData(checkbox.hint);
 
 if (!checkbox.label) checkbox.label = getText('label', 'form') + ' ' + getText('title', 'checkbox').toLowerCase();
 
-switch (typeof checkbox.hint) {
-  case 'boolean':
-    checkbox.hint = { hint: getText('hint', 'form')};
-    break;
-
-  case 'string':
-    checkbox.hint = { hint: checkbox.hint };
-    break;
-}
-
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
   type: 'checkbox',

@@ -1,7 +1,6 @@
 title: Champs de saisie
 description: Les champs permettent à un utilisateur d'entrer du contenu et données.
 doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input
-
 sample:
   text: Champs de type "text"
   number: Champs de type "number"
@@ -17,3 +16,6 @@ sample:
   icon: Champs avec icône personalisée
   valid: Champs valide avec texte de succès
   error: Champs en erreur avec texte d'erreur
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée

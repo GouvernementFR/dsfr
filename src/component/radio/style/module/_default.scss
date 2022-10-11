@@ -5,7 +5,6 @@
 
 #{ns-group(radio)} {
   @include relative;
-  @include margin-y(1v);
 
   input[type="radio"] {
     @include absolute;
