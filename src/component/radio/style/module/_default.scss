@@ -7,16 +7,6 @@
   @include relative;
   @include margin-y(1v);
 
-  /*
-  &:first-child {
-    @include margin-top(-3v);
-  }
-
-  &:last-child {
-    @include margin-bottom(-3v);
-  }
-   */
-
   input[type="radio"] {
     @include absolute;
     @include margin(0);
@@ -26,8 +16,6 @@
 
     + label {
       @include relative;
-      // @include padding(3v 0);
-      @include text-style(md);
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
       @include margin-left(8v);
@@ -40,7 +28,6 @@
       @include before('', inline-block) {
         @include absolute(0, null, null, -8v);
         @include size(6v, 6v);
-        // @include margin-top(3v);
         @include margin-right(2v);
         border-radius: 50%;
         // transition: box-shadow 0.3s;

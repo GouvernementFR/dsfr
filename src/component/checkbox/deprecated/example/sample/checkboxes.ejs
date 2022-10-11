@@ -1,7 +1,11 @@
 <%
 const checkboxes = locals.checkboxes || {};
 const checkbox = locals.checkbox || {};
-const jsonData = JSON.parse(include('../../../../form/example/sample/data', { form: checkboxes }));
+
+checkboxes.valid = validData(checkboxes.valid);
+checkboxes.error = errorData(checkboxes.error);
+checkboxes.hint = hintData(checkboxes.hint);
+checkbox.hint = hintData(checkbox.hint);
 
 const id = checkboxes.id;
 const elements = [];
@@ -18,12 +22,8 @@ for (let i = 1; i < 4; i++) elements.push({
   }
 });
 
-const fields = {
-  choice: true,
-  elements: elements,
-  ...checkboxes,
-  ...jsonData
-}
+checkboxes.choice = true;
+checkboxes.elements = elements;
 %>
 
-<%- include('../../../../form/deprecated/example/sample/fieldset', {fieldset: fields}) %>
+<%- include('../../../../form/deprecated/example/sample/fieldset', {fieldset: checkboxes}) %>

@@ -211,7 +211,7 @@ locals.vidData = vidData;
 
 const hintData = (hint) => {
   if (!hint) {
-    return null;
+    return undefined;
   }
   switch (typeof hint) {
     case 'string':
@@ -221,11 +221,47 @@ const hintData = (hint) => {
       if (hint) return getText('hint', 'form');
 
     default:
-      return null;
+      return undefined;
   }
 }
 
 locals.hintData = hintData;
+
+const validData = (valid) => {
+    if (!valid) {
+        return undefined;
+    }
+    switch (typeof valid) {
+        case 'string':
+            return valid;
+
+        case 'boolean':
+            if (valid) return getText('message.valid', 'form');
+
+        default:
+            return undefined;
+    }
+}
+
+locals.validData = validData;
+
+const errorData = (error) => {
+    if (!error) {
+        return undefined;
+    }
+    switch (typeof error) {
+        case 'string':
+            return error;
+
+        case 'boolean':
+            if (error) return getText('message.error', 'form');
+
+        default:
+            return undefined;
+    }
+}
+
+locals.errorData = errorData;
 
 const randomContent = (id) => {
     let content = '<!-- données de test -->';

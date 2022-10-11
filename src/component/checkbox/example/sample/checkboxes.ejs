@@ -1,8 +1,12 @@
 <%
 const checkboxes = locals.checkboxes || {};
 const checkbox = locals.checkbox || {};
-const jsonData = JSON.parse(include('../../../form/example/sample/data', { form: checkboxes }));
 const id = checkboxes.id;
+
+checkboxes.valid = validData(checkboxes.valid);
+checkboxes.error = errorData(checkboxes.error);
+checkboxes.hint = hintData(checkboxes.hint);
+checkbox.hint = hintData(checkbox.hint);
 
 if (!checkbox.label) checkbox.label = getText('label', 'form') + ' ' + getText('title', 'checkbox').toLowerCase();
 
@@ -28,12 +32,9 @@ for (let i = 1; i < 4; i++) elements.push({
   }
 });
 
-const fields = {
-  choice: true,
-  elements: elements,
-  ...checkboxes,
-  ...jsonData
-}
+checkboxes.choice = true;
+checkboxes.elements = elements;
+
 %>
 
-<%- include('../../../form/example/sample/fieldset', {fieldset: fields}) %>
+<%- include('../../../form/example/sample/fieldset', {fieldset: checkboxes}) %>

@@ -12,3 +12,6 @@ message:
     default: Texte d’erreur obligatoire
   valid:
     default: Texte de validation
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée

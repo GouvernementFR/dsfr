@@ -1,6 +1,9 @@
 <%
   let select = locals.select || {};
-  let jsonData = JSON.parse(include('../../../../form/example/sample/data', {form:select}));
+
+  select.valid = validData(select.valid);
+  select.error = errorData(select.error);
+  select.hint = hintData(select.hint);
   select.placeholder = select.placeholder || 'Selectionnez une option';
   select.label = select.label ||  'Label pour liste déroulante';
 
@@ -10,7 +13,6 @@
     {value:'3', label:'Option 3'},
     {value:'4', label:'Option 4'}
   ];
-  let data = {...select, ...jsonData};
 %>
 
-<%- include('../../template/ejs/select-group', {select: data}); %>
+<%- include('../../template/ejs/select-group', {select: select}); %>

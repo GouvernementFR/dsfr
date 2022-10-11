@@ -1,13 +1,11 @@
 <%
-let input = locals.input || {};
-let attributes = input.attributes || {};
-attributes.pattern = '[0-9]*';
-attributes.inputmode = 'numeric';
-let data = {
-    ...input,
-    type:'number',
-    attributes:attributes
-  }
+const input = locals.input || {};
+input.type = 'number';
+input.attributes = {
+  ...input.attributes,
+  pattern: '[0-9]*',
+  inputmode: 'numeric'
+}
  %>
 
-<%- include('./input-text', {input: data}); %>
+<%- include('./input-text', { input: input }); %>

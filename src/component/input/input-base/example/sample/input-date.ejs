@@ -1,1 +1,6 @@
-<%- include('./input-text', {input: { ...locals.input || {}, type : 'date'}}); %>
+<%
+const input = locals.input || {};
+input.type = 'date';
+%>
+
+<%- include('input-text', { input: input }); %>
