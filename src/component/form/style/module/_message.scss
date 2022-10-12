@@ -1,10 +1,10 @@
 #{ns(message)} {
   @include display-flex(row, center);
   @include text-style(xs);
-  @include set-text-margin(0 0 1v 0);
+  @include margin(0 0 1v 0);
 
   &:last-child {
-    @include set-text-margin(0 0 4v 0);
+    @include margin-bottom(0);
   }
 
   &--error,

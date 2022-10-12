@@ -87,9 +87,10 @@
 }
 
 #{ns(input-group)} {
-  #{ns(messages-group)} {
-    @include margin-top(4v);
-    @include margin-bottom(0);
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
+    }
   }
 }
 

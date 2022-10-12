@@ -2,14 +2,14 @@
 
 #{ns(fieldset)} {
   @include relative;
-  @include margin(0 -2v 4v);
+  @include margin(0 -3v 4v);
   @include padding(0);
   @include display-flex(row, flex-end, null, wrap);
   border: 0;
 
   &__legend {
     @include margin-bottom(4v);
-    @include padding-x(2v);
+    @include padding-x(3v);
     @include text-style(md);
     @include font-weight(bold);
     @include width(100%);
@@ -45,7 +45,7 @@
 
   &__element {
     flex: 1 1 100%;
-    @include padding-x(2v);
+    @include padding-x(3v);
     @include margin-bottom(4v);
 
     #{ns(fieldset)} {
@@ -81,6 +81,7 @@
 
   > #{ns(messages-group)} {
     flex: 1 1 100%;
-    @include padding-x(2v);
+    @include padding-x(3v);
+    @include margin-bottom(4v);
   }
 }

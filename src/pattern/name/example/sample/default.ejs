@@ -1,9 +1,9 @@
 <%
 const name = locals.name || {};
 const countries = JSON.parse(include('../../../address/example/sample/data/country'));
-const items = [];
+const elements = [];
 
-if (name.country === true) items.push(
+if (name.country) elements.push(
   {
     type: 'select',
     template: 'select-group',
@@ -16,7 +16,7 @@ if (name.country === true) items.push(
   },
 );
 
-items.push(
+elements.push(
   {
     type: 'input',
     base: 'input/input-base',
@@ -27,7 +27,7 @@ items.push(
   },
 );
 
-if (name.usage === true) items.push(
+if (name.usage === true) elements.push(
   {
     type: 'input',
     base: 'input/input-base',
@@ -39,7 +39,7 @@ if (name.usage === true) items.push(
   }
 );
 
-items.push(
+elements.push(
   {
     type: 'input',
     base: 'input/input-base',
@@ -51,7 +51,7 @@ items.push(
   },
 );
 
-if (name.button === true) items.push(
+if (name.button === true) elements.push(
   {
     type: 'button',
     template: 'button',
@@ -64,7 +64,7 @@ if (name.button === true) items.push(
   }
 );
 
-if (name.checkbox === true) items.push(
+if (name.checkbox === true) elements.push(
   {
     type: 'checkbox',
     template: 'checkbox-group',
@@ -86,7 +86,7 @@ const data = {
   id: name.id || uniqueId('name-default'),
   label: name.label || getText('sample.default', 'name'),
   form: false,
-  items: items
+  elements: elements
 }
 
 %>
