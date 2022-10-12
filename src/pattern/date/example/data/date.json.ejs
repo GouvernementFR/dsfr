@@ -1,0 +1,45 @@
+<%
+const date = locals.date || {};
+
+const data = {
+  id: date.id || uniqueId('date-default'),
+  legend: date.legend || getText('legend.birthdate', 'date'),
+  hint: date.hint || getText('hint.birthdate', 'date'),
+  error: date.error,
+  elements:[
+    {
+      type: 'input',
+      inline: true,
+      modifier: 'number',
+      data: {
+        name: 'day',
+        label: getText('option.day', 'date'),
+        hint: getText('hint.day', 'date')
+      }
+    },
+    {
+      type: 'input',
+      inline: true,
+      modifier: 'number',
+      data: {
+        name: 'month',
+        label: getText('option.month', 'date'),
+        hint: getText('hint.month', 'date')
+      }
+    },
+    {
+      type: 'input',
+      inline: true,
+      grow: true,
+      modifier: 'year',
+      data: {
+        name: 'year',
+        label: getText('option.year', 'date'),
+        hint: getText('hint.year', 'date')
+      }
+    }
+  ]
+};
+%>
+
+<%- JSON.stringify(data); %>

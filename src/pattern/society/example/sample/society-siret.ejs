@@ -3,13 +3,13 @@ let society = locals.society || {};
 const data = {
   id: uniqueId('siret'),
   label: getText('fieldset.siret', 'society'),
-  items: [
+  elements: [
     {
       type: 'input',
       base: 'input/input-base',
       data: {
         label: getText('label.siret', 'society'),
-        name: 'siret',
+        name: 'siret'
       }
     },
     {
@@ -22,7 +22,7 @@ const data = {
         href: getText('directory.href', 'society'),
         attributes: {
           target: '_blank',
-          rel: 'noopener',
+          rel: 'noopener'
         },
       }
     }

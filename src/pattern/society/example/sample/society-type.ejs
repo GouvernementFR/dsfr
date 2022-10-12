@@ -1,6 +1,5 @@
 <%
 let society = locals.society || {};
-const countriesData = JSON.parse(include('../../../address/example/sample/data/country.ejs'));
 
 const data = {
   id: uniqueId('society-address'),
@@ -25,7 +24,7 @@ const data = {
           {value: 'SCA', label: getText('type.SCA', 'society')},
         ]
       }
-    },
+    }
   ]
 }
 %>

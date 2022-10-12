@@ -1,26 +1,25 @@
 <%
-const civility = {
-  id: uniqueId('civility-radio-sexe'),
+const data = {
+  id: uniqueId('civility-gender'),
   legend: getText('legend.sex', 'civility'),
   elements:[
     {
       type: 'radio',
       data: {
-        name: 'civility-sexe',
-        id: uniqueId('civility-sexe'),
+        name: 'civility-gender',
+        id: uniqueId('civility-gender-female'),
         label: getText('option.civility.female', 'civility'),
       }
     },
     {
       type: 'radio',
       data: {
-        name: 'civility-sexe',
-        id: uniqueId('civility-sexe'),
+        name: 'civility-gender-radio-male',
+        id: uniqueId('civility-gender'),
         label: getText('option.civility.male', 'civility'),
       }
     }
   ]
 };
-%>
-
-<%- include('./civility-default', {civility: civility}); %>
+ %>
+<%- JSON.stringify(data); %>

@@ -36,8 +36,12 @@ class MessageBuilder {
         break;
 
       case 'object':
-        this._ids.push(data.id);
-        this.messages.push(data);
+        if (Array.isArray(data)) {
+          data.forEach(msg => this.add(type, msg));
+        } else {
+          this._ids.push(data.id);
+          this.messages.push(data);
+        }
         break;
     }
   }

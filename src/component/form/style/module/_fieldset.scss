@@ -3,13 +3,14 @@
 #{ns(fieldset)} {
   @include relative;
   @include margin(0 -3v 4v);
-  @include padding(0);
+  @include padding(0 1v);
   @include display-flex(row, flex-end, null, wrap);
   border: 0;
 
   &__legend {
     @include margin-bottom(4v);
     @include padding-x(3v);
+    @include margin-x(-1v);
     @include text-style(md);
     @include font-weight(bold);
     @include width(100%);
@@ -45,7 +46,7 @@
 
   &__element {
     flex: 1 1 100%;
-    @include padding-x(3v);
+    @include padding-x(2v);
     @include margin-bottom(4v);
 
     #{ns(fieldset)} {
@@ -62,26 +63,26 @@
 
     &--year,
     &--postal {
-      flex: 0 0 space(28v);
+      flex: 0 0 space(32v);
     }
 
     &--year:not(&--inline),
     &--postal:not(&--inline) {
-      @include margin-right(calc(100% - 28v));
+      @include margin-right(calc(100% - 32v));
     }
 
     &--number {
-      flex: 0 0 space(18v);
+      flex: 0 0 space(22v);
     }
 
     &--number:not(&--inline) {
-      @include margin-right(calc(100% - 18v));
+      @include margin-right(calc(100% - 22v));
     }
   }
 
   > #{ns(messages-group)} {
     flex: 1 1 100%;
-    @include padding-x(3v);
+    @include padding-x(2v);
     @include margin-bottom(4v);
   }
 }

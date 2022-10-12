@@ -2,11 +2,9 @@
 let address = locals.address || {};
 const data = {
   id: uniqueId('address'),
-  items: [
+  elements: [
     {
       type: 'input',
-      template: 'input',
-      base: 'input/input-base',
       inline: true,
       grow: true,
       modifier: 'number',
@@ -18,9 +16,7 @@ const data = {
     },
     {
       type: 'input',
-      base: 'input/input-base',
       breakAfter: true,
-      template: 'input',
       inline: true,
       grow: true,
       data: {
@@ -31,8 +27,6 @@ const data = {
     },
     {
       type: 'input',
-      base: 'input/input-base',
-      template: 'input',
       data: {
         id: uniqueId('address-item'),
         label: getText('label.building-name', 'address'),
@@ -41,8 +35,6 @@ const data = {
     },
     {
       type: 'input',
-      base: 'input/input-base',
-      template: 'input',
       data: {
         id: uniqueId('address-item'),
         label: getText('label.building-number', 'address'),

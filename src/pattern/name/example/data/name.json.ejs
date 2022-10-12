@@ -1,0 +1,114 @@
+<%
+const name = locals.name || {};
+const countries = JSON.parse(include('../../../address/example/sample/data/country'));
+const elements = [];
+
+if (name.country) {
+  const country = {
+    type: 'select',
+    data: {
+      label: getText('label.country', 'name'),
+      placeholder: getText('option.placeholder', 'select'),
+      name: 'country',
+      options: countries.min
+    }
+  };
+  elements.push(country);
+}
+
+const lastname = {
+  type: 'input',
+  data: {
+    id: uniqueId('input-lastname'),
+    label: getText('label.lastname', 'name'),
+    name: 'lastname'
+  }
+};
+elements.push(lastname);
+
+
+if (name.usage === true) {
+  const usage = {
+    type: 'input',
+    data: {
+      id: uniqueId('input-usage-name'),
+      label: getText('label.usage-name', 'name'),
+      hint: getText('hint.usage-name', 'name'),
+      name: 'usage-name'
+    }
+  };
+  elements.push(usage);
+}
+
+const firstnameId = uniqueId('input-firstname');
+
+const firstname = {
+  type: 'input',
+  data: {
+    id: firstnameId,
+    label: getText('label.firstname', 'name'),
+    name: 'firstname'
+  }
+};
+
+const button = {
+  type: 'button',
+  data: {
+    label: getText('label.add-firstname', 'name'),
+    kind: 3,
+    size: 'sm',
+    attributes: {
+      onclick: include('js/add-firstname.js', { id: firstnameId }),
+      type: 'button'
+    }
+  }
+};
+
+if (name.checkbox) {
+  const firstnameElements = [];
+  firstnameElements.push(firstname);
+  if (name.button) firstnameElements.push(button);
+
+  const fieldsetId = uniqueId('firstname-fieldset');
+
+  const fieldset = {
+    type: 'fieldset',
+    data: {
+      id: fieldsetId,
+      elements: firstnameElements,
+      disabled: name.disabled
+    }
+  };
+
+  elements.push(fieldset);
+
+  if (name.checkbox) {
+    const checkbox = {
+      type: 'checkbox',
+      data: {
+        id: uniqueId('checkbox-name'),
+        label: getText('label.no-firstname', 'name'),
+        name: 'firstname-disabled',
+        checked: name.checked || false,
+        size: 'sm',
+        attributes: {
+          onclick: include('js/toggle-disable.js', { id: fieldsetId })
+        }
+      }
+    };
+    elements.push(checkbox);
+  }
+
+} else {
+  elements.push(firstname);
+  if (name.button) elements.push(button);
+}
+
+const data = {
+  id: name.id || uniqueId('name-default'),
+  label: name.label || getText('sample.default', 'name'),
+  elements: elements
+}
+%>
+
+<%- JSON.stringify(data); %>

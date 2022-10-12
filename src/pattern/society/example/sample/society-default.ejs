@@ -3,9 +3,10 @@ let society = locals.society || {};
 const data = {
   id: society.id || uniqueId('civility'),
   label: society.label || undefined,
-  items: society.items || undefined,
-  form: false
+  elements: society.elements || undefined
 }
+
+console.log(data);
 %>
 
-<%- include('../../../../component/form/template/ejs/form', {form: data}); %>
+<%- include('../../../../component/form/template/ejs/form', { form: data }); %>

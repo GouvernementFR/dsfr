@@ -25,7 +25,7 @@ let elementClasses = [...element.classes || [], elementClass];
 let elementAttrs = element.attributes || {};
 if (element.inline) elementClasses.push(`${elementClass}--inline`);
 if (element.grow) elementClasses.push(`${elementClass}--inline-grow`);
-if (element.modifier) elementClasses.push(`${elementClass}--${element.modifer}`);
+if (element.modifier) elementClasses.push(`${elementClass}--${element.modifier}`);
 
 let path, data;
 
@@ -78,6 +78,16 @@ switch (element.type) {
   case 'button':
     path = '../../../../button/template/ejs/button';
     data = { button: element.data };
+    break;
+
+  case 'buttonsGroup':
+    path = '../../../../button/template/ejs/buttons-group';
+    data = { buttonsGroup: element.data };
+    break;
+
+  case 'link':
+    path = '../../../../link/template/ejs/link';
+    data = { link: element.data };
     break;
 
 }
