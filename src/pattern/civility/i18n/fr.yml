@@ -1,4 +1,4 @@
-title: Modèle
+title: Civilité
 description:
 option:
   sex:
@@ -19,11 +19,11 @@ option:
     provisor: Proviseur
     rector: Recteur
 legend:
-  position: Titre d’appel
+  honorific: Titre d’appel
   family: Situation familiale
   sex: Sexe
 sample:
-  position: Demande du titre d’appel
+  honorific: Demande du titre d’appel
   family: Demande de situation familiale
   sex: Demande du sexe
 section:
