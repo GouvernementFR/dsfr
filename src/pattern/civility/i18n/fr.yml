@@ -1,7 +1,7 @@
 title: Modèle
 description:
 option:
-  gender:
+  sex:
     female: Feminin
     male: Masculin
   family:
@@ -11,7 +11,7 @@ option:
     pacsed: Pacsé
     single: Célibataire
     widow: Veuf
-  position:
+  honorific:
     doctor: Docteur
     inspector: Inspecteur
     principal: Principal
@@ -21,11 +21,11 @@ option:
 legend:
   position: Titre d’appel
   family: Situation familiale
-  gender: Sexe
+  sex: Sexe
 sample:
   position: Demande du titre d’appel
   family: Demande de situation familiale
-  gender: Demande du sexe
+  sex: Demande du sexe
 section:
   preference: Au delà de 5 choix ou lorsque l’espace n’est pas suffisant, il est préférable d’utiliser une liste déroulante.
   recommandation: Les boutons radios sont recommandés lorsque l’utilisateur doit choisir un élément parmi 2 à 5 choix possibles.

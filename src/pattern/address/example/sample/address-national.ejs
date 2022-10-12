@@ -1,55 +1,6 @@
 <%
 let address = locals.address || {};
-const data = {
-  id: uniqueId('address'),
-  elements: [
-    {
-      type: 'input',
-      data: {
-        id: uniqueId('address-item'),
-        label: getText('label.address', 'address'),
-        hint: getText('hint.address', 'address'),
-        name: 'address',
-      }
-    },
-    {
-      type: 'input',
-      data: {
-        id: uniqueId('address-item'),
-        label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
-        hint: getText('hint.complement', 'address'),
-        name: 'complement',
-      }
-    },
-    {
-      type: 'input',
-      data: {
-        id: uniqueId('address-item'),
-        label: getText('label.locality', 'address'),
-        name: 'locality',
-      }
-    },
-    {
-      type: 'input',
-      inline: true,
-      grow: true,
-      modifier: 'postal',
-      data: {
-        id: uniqueId('address-item'),
-        label: getText('label.postal', 'address'),
-        name: 'postal'
-      }
-    },
-    {
-      type: 'input',
-      data: {
-        id: uniqueId('address-item'),
-        label: getText('label.city', 'address'),
-        name: 'city'
-      }
-    }
-  ]
-}
+const data = JSON.parse(include('../data/address-national.json.ejs', { address: address }));
 %>
 
-<%- include('./address-default', {address: data}); %>
+<%- include('./address-default', { address: data }); %>

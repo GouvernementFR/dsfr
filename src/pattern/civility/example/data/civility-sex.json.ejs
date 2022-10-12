@@ -1,0 +1,25 @@
+<%
+const data = {
+  id: uniqueId('sex'),
+  legend: getText('legend.sex', 'civility'),
+  elements:[
+    {
+      type: 'radio',
+      data: {
+        name: 'sex',
+        id: uniqueId('sex-female'),
+        label: getText('option.sex.female', 'civility'),
+      }
+    },
+    {
+      type: 'radio',
+      data: {
+        name: 'sex',
+        id: uniqueId('sex-male'),
+        label: getText('option.sex.male', 'civility'),
+      }
+    }
+  ]
+};
+ %>
+<%- JSON.stringify(data); %>

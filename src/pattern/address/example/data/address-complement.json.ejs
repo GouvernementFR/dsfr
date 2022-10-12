@@ -1,0 +1,48 @@
+<%
+let address = locals.address || {};
+const data = {
+  id: uniqueId('address'),
+  elements: [
+    {
+      type: 'input',
+      inline: true,
+      grow: true,
+      modifier: 'number',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.number', 'address'),
+        name: 'number',
+      }
+    },
+    {
+      type: 'input',
+      breakAfter: true,
+      inline: true,
+      grow: true,
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.street', 'address'),
+        name: 'street',
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.building-name', 'address'),
+        name: 'building-name',
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('address-item'),
+        label: getText('label.building-number', 'address'),
+        name: 'building-number',
+      }
+    }
+  ]
+}
+%>
+
+<%- JSON.stringify(data); %>
