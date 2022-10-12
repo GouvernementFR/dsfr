@@ -13,6 +13,8 @@
 
 * input.autocomplete (string, optional) : attribut autocomplete  de l'input
 
+* input.describedby (array, optional) : Tableau d'id d'éléments à lier avec un aria-describedby
+
 * input.placeholder (string, optional) : text du placeholder de l'input
 
 * input.icon (string, optional) : nom de l'icone qui sera placée sur la partie droite de l'input
@@ -48,7 +50,7 @@ const input = locals.input || {};
 const classes = input.classes || [];
 const attributes = input.attributes || {};
 const inputType = input.type || 'text';
-const describedby = [];
+const describedby = input.describedby || [];
 const label = {
   label: input.label,
   for: input.id,

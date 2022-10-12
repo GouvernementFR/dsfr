@@ -1,7 +1,14 @@
 <%
 let data = {
   input: {value: 'x8A@'},
-  format: {items: [{label: getText('format.characters', 'password'), state: 'error'}, {label: getText('format.special', 'password'), state: 'valid'}, {label: getText('format.digit', 'password'), state: 'valid'}]},
+  messagesGroup: {
+    messages: [
+      {id: uniqueId('message'), text: getText('format.label', 'password'), type: 'hint'},
+      {id: uniqueId('message'), text: getText('format.characters', 'password'), type: 'error'},
+      {id: uniqueId('message'), text: getText('format.special', 'password'), type: 'valid'},
+      {id: uniqueId('message'), text: getText('format.digit', 'password'), type: 'valid'}
+    ]
+  },
 }
 %>
 

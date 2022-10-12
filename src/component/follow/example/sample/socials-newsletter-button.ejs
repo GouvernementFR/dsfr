@@ -1,8 +1,7 @@
 
 <%
-const follow = locals.follow || {newsletter: {}};
 let data = {};
-const newsletter = JSON.parse(include('../data/newsletter-form.json.ejs', {newsletter: {error: follow.newsletter.error}}));
+const newsletter = JSON.parse(include('../data/newsletter-button.json.ejs'));
 const socials = JSON.parse(include('../data/socials.json.ejs'));
 data = {...newsletter, ...socials};
  %>
