@@ -1,17 +1,17 @@
 <% if (locals.title !== undefined && locals.title.length) { %>
-<h4><%= title %></h4>
+  <h4><%= title %></h4>
 <% } %>
 
 <% if (locals.subtitle !== undefined && locals.subtitle.length) { %>
-    <p class="fr-text--sm fr-text-mention-grey"><%= subtitle %></p>
+  <p class="fr-text--sm fr-text-mention-grey"><%= subtitle %></p>
 <% } %>
 
-<div class="<%= prefix %>-mb-6v" >
-    <%- component %>
+<div class="<%= prefix %>-mb-6v">
+  <%- component %>
 </div>
 <% if (locals.snippet) { %>
-<div class="<%= prefix %>-mb-12v" >
+  <div class="<%= prefix %>-mb-12v">
     <%- snippet %>
-</div>
+  </div>
 <% } %>
 

@@ -8,7 +8,7 @@ hint:
 label:
   add-firstname: Ajouter un prénom
   country: Pays
-  name: Nom
+  lastname: Nom
   firstname: Prénom
   usage-name: Nom d'usage
   birth-name: Nom de naissance

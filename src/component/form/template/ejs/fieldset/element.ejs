@@ -19,63 +19,69 @@
 
 %>
 <%
-  let element = locals.element || {};
-  const elementClass = `${prefix}-fieldset__element`
-  let elementClasses = [...element.classes || [], elementClass];
-  let elementAttrs = element.attributes || {};
-  if (element.inline) elementClasses.push(`${elementClass}--inline`);
-  if (element.grow) elementClasses.push(`${elementClass}--inline-grow`);
-  if (element.modifier) elementClasses.push(`${elementClass}--${element.modifer}`);
+let element = locals.element || {};
+const elementClass = `${prefix}-fieldset__element`
+let elementClasses = [...element.classes || [], elementClass];
+let elementAttrs = element.attributes || {};
+if (element.inline) elementClasses.push(`${elementClass}--inline`);
+if (element.grow) elementClasses.push(`${elementClass}--inline-grow`);
+if (element.modifier) elementClasses.push(`${elementClass}--${element.modifer}`);
 
-  let path, data;
+let path, data;
 
-  switch(element.type) {
-    case 'input':
-      path = '../../../../input/input-base/template/ejs/input-group';
-      data = { input: element.data };
-      break;
+switch (element.type) {
+  case 'input':
+    path = '../../../../input/input-base/template/ejs/input-group';
+    data = { input: element.data };
+    break;
 
-    case 'email':
-      path = '../../../../input/input-email/template/ejs/email';
-      data = { input: element.data };
-      break;
+  case 'email':
+    path = '../../../../input/input-email/template/ejs/email';
+    data = { input: element.data };
+    break;
 
-    case 'tel':
-      path = '../../../../input/input-tel/template/ejs/tel';
-      data = { input: element.data };
-      break;
+  case 'tel':
+    path = '../../../../input/input-tel/template/ejs/tel';
+    data = { input: element.data };
+    break;
 
-    case 'select':
-      path = '../../../../select/template/ejs/select-group';
-      data = { select: element.data };
-      break;
+  case 'select':
+    path = '../../../../select/template/ejs/select-group';
+    data = { select: element.data };
+    break;
 
-    case 'checkbox':
-      path = '../../../../checkbox/template/ejs/checkbox-group';
-      data = { checkbox: element.data };
-      break;
+  case 'checkbox':
+    path = '../../../../checkbox/template/ejs/checkbox-group';
+    data = { checkbox: element.data };
+    break;
 
-    case 'radio':
-      path = '../../../../radio/template/ejs/radio-group';
-      data = { radio: element.data };
-      break;
+  case 'radio':
+    path = '../../../../radio/template/ejs/radio-group';
+    data = { radio: element.data };
+    break;
 
-    case 'toggle':
-      path = '../../../../toggle/template/ejs/toggle-group';
-      data = { toggle: element.data };
-      break;
+  case 'toggle':
+    path = '../../../../toggle/template/ejs/toggle-group';
+    data = { toggle: element.data };
+    break;
 
-    case 'password':
-      path = '../../../../password/template/ejs/password';
-      data = { password: element.data };
-      break;
+  case 'password':
+    path = '../../../../password/template/ejs/password';
+    data = { password: element.data };
+    break;
 
-    case 'fieldset':
-      path = './fieldset';
-      data = { fieldset: element.data };
-      break;
-  }
-  %>
+  case 'fieldset':
+    path = './fieldset';
+    data = { fieldset: element.data };
+    break;
+
+  case 'button':
+    path = '../../../../button/template/ejs/button';
+    data = { button: element.data };
+    break;
+
+}
+%>
 
 <div <%- includeClasses(elementClasses); %> <%- includeAttrs(elementAttrs); %>>
   <%- include(path, data); %>

@@ -1,9 +1,9 @@
 <%
-    for (const file of Object.keys(files.style)) {
+for (const file of Object.keys(files.style)) {
 
-        const dependencies = files.style[file];
-        for (const dependency of dependencies) {
-        %>
-<link href="<%= relativeRoot %><%= dependency %>" rel="stylesheet" file="<%= file %>">
+  const dependencies = files.style[file];
+  for (const dependency of dependencies) {
+%>
+  <link href="<%= relativeRoot %><%= dependency %>" rel="stylesheet" file="<%= file %>">
 <% }
- } %>
+} %>

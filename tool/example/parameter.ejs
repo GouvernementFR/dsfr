@@ -1,16 +1,18 @@
 <%
-
 const attrModal = [];
 attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
 const button = {
-    classes: [prefix + "-display-button", prefix + '-background-default--grey'],
-    icon: 'theme-fill',
-    attributes: {...attrModal, style: 'z-index: 1600'},
-    tag: 'button',
-    kind: 2,
-    size: 'lg'
+  classes: [prefix + "-display-button", prefix + '-background-default--grey'],
+  icon: 'theme-fill',
+  attributes: {
+    ...attrModal,
+    style: 'z-index: 1600'
+  },
+  tag: 'button',
+  kind: 2,
+  size: 'lg'
 };
 
 let dataModal = {
@@ -19,7 +21,6 @@ let dataModal = {
   body: '../../../display/example/sample/body',
   size: "sm"
 }
-
 %>
 
 
