@@ -6,7 +6,7 @@ label:
   siret: Numéro de SIRET
   type: Type de société
   position: Fonction(s) dans la société
-type:
+structure:
   EI: Entrepreneur individuel (EI)
   EURL: Entreprise unipersonnelle à responsabilité limitée (EURL)
   SARL: Société à responsabilité limitée (SARL)
@@ -19,7 +19,7 @@ type:
 fieldset:
   siret: SIRET de l'entreprise
   address: Adresse du siège social
-  type: Type de société
+  structure: Type de société
   name: Nom du représentant moral
   representative: Représentant moral de l'entreprise
 directory:
@@ -28,5 +28,5 @@ directory:
 sample:
   siret: Demande d'un numéro de SIRET
   address: Demande d’une adresse de siège social
-  type: Demande d’un type de société
+  structure: Demande d’un type de société
   representative: Demande d’un représentant moral

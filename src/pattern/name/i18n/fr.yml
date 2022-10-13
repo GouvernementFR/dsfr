@@ -10,7 +10,7 @@ label:
   country: Pays
   family: Nom
   given: Prénom
-  married: Nom d'usage
+  usual: Nom d'usage
   birth: Nom de naissance
   no-firstname: Je n'ai pas de prénom
 option:

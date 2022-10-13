@@ -23,11 +23,29 @@ const lastname = {
   }
 };
 
+const usual = {
+  type: 'input',
+  data: {
+    id: uniqueId('input-usual-name'),
+    label: getText('label.usual', 'name'),
+    name: 'usual-name'
+  }
+};
+
+const birth = {
+  type: 'input',
+  data: {
+    id: uniqueId('input-birth-name'),
+    label: getText('label.birth', 'name'),
+    name: 'birth-name'
+  }
+};
+
 const married = {
   type: 'input',
   data: {
     id: uniqueId('input-married-name'),
-    label: getText('label.married', 'name'),
+    label: getText('label.usual', 'name'),
     hint: getText('hint.married', 'name'),
     name: 'married-name'
   }
@@ -99,6 +117,14 @@ for (const field of fields) {
 
     case 'lastname':
       elements.push(lastname);
+      break;
+
+    case 'usual':
+      elements.push(usual);
+      break;
+
+    case 'birth':
+      elements.push(birth);
       break;
 
     case 'married':
