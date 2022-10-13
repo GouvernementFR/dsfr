@@ -1,8 +1,8 @@
 <%
-let society = locals.society || {};
+let company = locals.company || {};
 const data = {
   id: uniqueId('representative'),
-  label: getText('fieldset.representative', 'society'),
+  label: getText('fieldset.representative', 'company'),
   elements: [
     {
       type: 'input',
@@ -31,7 +31,7 @@ const data = {
       type: 'input',
       base: 'input/input-base',
       data: {
-        label: getText('label.position', 'society'),
+        label: getText('label.position', 'company'),
         name: 'position'
       }
     }
@@ -39,4 +39,4 @@ const data = {
 }
 %>
 
-<%- include('./society-default', {society: data}); %>
+<%- include('./company-default', {company: data}); %>

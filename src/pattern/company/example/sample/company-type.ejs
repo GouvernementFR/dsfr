@@ -1,0 +1,32 @@
+<%
+let company = locals.company || {};
+
+const data = {
+  id: uniqueId('company-address'),
+  label: getText('fieldset.address', 'company'),
+  items: [
+    {
+      type: 'select',
+      template: 'select',
+      data: {
+        name: 'company-type',
+        label: getText('label.type', 'company'),
+        placeholder: getText('option.placeholder', 'select'),
+        options: [
+          {value: 'EI', label: getText('type.EI', 'company')},
+          {value: 'EURL', label: getText('type.EURL', 'company')},
+          {value: 'SARL', label: getText('type.SARL', 'company')},
+          {value: 'SASU', label: getText('type.SASU', 'company')},
+          {value: 'SAS', label: getText('type.SAS', 'company')},
+          {value: 'SA', label: getText('type.SA', 'company')},
+          {value: 'SNC', label: getText('type.SNC', 'company')},
+          {value: 'SCS', label: getText('type.SCS', 'company')},
+          {value: 'SCA', label: getText('type.SCA', 'company')},
+        ]
+      }
+    }
+  ]
+}
+%>
+
+<%- include('./company-default', {company: data}); %>

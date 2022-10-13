@@ -1,16 +1,16 @@
 <%
 const name = locals.name || {};
-const countries = JSON.parse(include('../../../address/example/sample/data/country'));
 const elements = [];
 
 if (name.country) {
+  const countries = JSON.parse(include('../../../address/example/data/countries-select-options.json.ejs', { countries: { minimal: true }}));
   const country = {
     type: 'select',
     data: {
-      label: getText('label.country', 'name'),
+      label: getText('label.country', 'address'),
       placeholder: getText('option.placeholder', 'select'),
       name: 'country',
-      options: countries.min
+      options: countries
     }
   };
   elements.push(country);
@@ -19,25 +19,25 @@ if (name.country) {
 const lastname = {
   type: 'input',
   data: {
-    id: uniqueId('input-lastname'),
-    label: getText('label.lastname', 'name'),
-    name: 'lastname'
+    id: uniqueId('input-family-name'),
+    label: getText('label.family', 'name'),
+    name: 'family-name'
   }
 };
 elements.push(lastname);
 
 
-if (name.usage === true) {
-  const usage = {
+if (name.married === true) {
+  const married = {
     type: 'input',
     data: {
-      id: uniqueId('input-usage-name'),
-      label: getText('label.usage-name', 'name'),
-      hint: getText('hint.usage-name', 'name'),
-      name: 'usage-name'
+      id: uniqueId('input-married-name'),
+      label: getText('label.married', 'name'),
+      hint: getText('hint.married', 'name'),
+      name: 'married-name'
     }
   };
-  elements.push(usage);
+  elements.push(married);
 }
 
 const firstnameId = uniqueId('input-firstname');
@@ -46,8 +46,8 @@ const firstname = {
   type: 'input',
   data: {
     id: firstnameId,
-    label: getText('label.firstname', 'name'),
-    name: 'firstname'
+    label: getText('label.given', 'name'),
+    name: 'given-name'
   }
 };
 

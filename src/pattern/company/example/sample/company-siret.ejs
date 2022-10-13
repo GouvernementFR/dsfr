@@ -1,14 +1,14 @@
 <%
-let society = locals.society || {};
+let company = locals.company || {};
 const data = {
   id: uniqueId('siret'),
-  label: getText('fieldset.siret', 'society'),
+  label: getText('fieldset.siret', 'company'),
   elements: [
     {
       type: 'input',
       base: 'input/input-base',
       data: {
-        label: getText('label.siret', 'society'),
+        label: getText('label.siret', 'company'),
         name: 'siret'
       }
     },
@@ -18,8 +18,8 @@ const data = {
       tag: 'p',
       classes: [prefix + '-mt-n1v'],
       data: {
-        label: getText('directory.label', 'society'),
-        href: getText('directory.href', 'society'),
+        label: getText('directory.label', 'company'),
+        href: getText('directory.href', 'company'),
         attributes: {
           target: '_blank',
           rel: 'noopener'
@@ -30,4 +30,4 @@ const data = {
 }
 %>
 
-<%- include('./society-default', {society: data}); %>
+<%- include('./company-default', {company: data}); %>

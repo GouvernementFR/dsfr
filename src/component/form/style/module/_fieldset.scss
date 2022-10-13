@@ -56,9 +56,17 @@
     &--inline {
       flex: 0 0 auto;
 
-      &-grow {
+      &\@md {
+        @include respond-from(md) {
+          flex: 0 0 auto;
+        }
+      }
+
+      &-grow,
+      &\@md#{&}-grow {
         flex-grow: 1;
       }
+
     }
 
     &--year,

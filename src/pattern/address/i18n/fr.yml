@@ -11,11 +11,13 @@ label:
   city: Ville ou commune
   number: Numéro
   street: Voie
-  building-name: Immeuble
-  building-number: Bâtiment
+  block: Immeuble
+  building: Bâtiment
   stare: Escalier
-  flat: Numéro d'appartement
+  apartment: Numéro d'appartement
   cedex: Cedex
+  name: Dénomination
+  country: Pays
 hint:
   address: Numéro et voie
   complement: Bâtiment, immeuble, escalier et numéro d’appartement

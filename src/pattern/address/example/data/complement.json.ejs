@@ -1,0 +1,64 @@
+<%
+const complement = locals.complement || {};
+const data = {
+  id: uniqueId('complement'),
+  elements: [
+    {
+      type: 'input',
+      inline: true,
+      grow: true,
+      modifier: 'number',
+      data: {
+        id: uniqueId('complement-item'),
+        label: getText('label.number', 'address'),
+        name: 'number'
+      }
+    },
+    {
+      type: 'input',
+      breakAfter: true,
+      inline: true,
+      grow: true,
+      data: {
+        id: uniqueId('complement-item'),
+        label: getText('label.street', 'address'),
+        name: 'street'
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('complement-item'),
+        label: getText('label.block', 'address'),
+        name: 'block'
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('complement-item'),
+        label: getText('label.building', 'address'),
+        name: 'building'
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('complement-item'),
+        label: getText('label.stare', 'address'),
+        name: 'stare'
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('complement-item'),
+        label: getText('label.apartment', 'address'),
+        name: 'apartment'
+      }
+    }
+  ]
+}
+%>
+
+<%- JSON.stringify(data); %>

@@ -8,9 +8,9 @@ const sample = getSample(include);
 
 <%- sample(`${getText('sample.with', 'name')} ${getText('sample.firstname-disabled', 'name')}`, './sample/firstname-disabled', {}, true, '../../example/layout'); %>
 
-<%- sample(`${getText('sample.with', 'name')} ${getText('sample.usage-name', 'name')}`, './sample/usage-name', {}, true, '../../example/layout'); %>
+<%- sample(`${getText('sample.with', 'name')} ${getText('sample.married', 'name')}`, './sample/married', {}, true, '../../example/layout'); %>
 
-<%- sample(`${getText('sample.with', 'name')} ${getText('sample.usage-name', 'name')} + ${getText('sample.firstname-disabled', 'name')}`, './sample/usage-name-and-firstname-disabled', {}, true, '../../example/layout'); %>
+<%- sample(`${getText('sample.with', 'name')} ${getText('sample.married', 'name')} + ${getText('sample.firstname-disabled', 'name')}`, './sample/married-and-firstname-disabled', {}, true, '../../example/layout'); %>
 
 <%- sample(`${getText('sample.with', 'name')} ${getText('sample.button', 'name')}`, './sample/button', {}, true, '../../example/layout'); %>
 

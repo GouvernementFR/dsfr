@@ -23,7 +23,15 @@ let element = locals.element || {};
 const elementClass = `${prefix}-fieldset__element`
 let elementClasses = [...element.classes || [], elementClass];
 let elementAttrs = element.attributes || {};
-if (element.inline) elementClasses.push(`${elementClass}--inline`);
+switch (element.inline) {
+  case 'md':
+    elementClasses.push(`${elementClass}--inline@md`);
+    break;
+
+  case true:
+    elementClasses.push(`${elementClass}--inline`);
+    break;
+}
 if (element.grow) elementClasses.push(`${elementClass}--inline-grow`);
 if (element.modifier) elementClasses.push(`${elementClass}--${element.modifier}`);
 

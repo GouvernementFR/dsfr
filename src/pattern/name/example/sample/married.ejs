@@ -1,0 +1,9 @@
+<%
+const data = {
+  id: uniqueId('married-name'),
+  label: getText('sample.married', 'name'),
+  married: true
+}
+%>
+
+<%- include('./default', {name: data}); %>

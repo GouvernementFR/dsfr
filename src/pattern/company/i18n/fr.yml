@@ -4,8 +4,6 @@ doc:
 
 label:
   siret: Numéro de SIRET
-  denomination: Denomination
-  country: Pays
   type: Type de société
   position: Fonction(s) dans la société
 type:

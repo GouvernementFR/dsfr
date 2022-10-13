@@ -1,16 +1,16 @@
 <%
-let society = locals.society || {};
+let company = locals.company || {};
 const options = JSON.parse(include('../../../address/example/data/countries-select-options.json.ejs', { countries: { minimal: true }}));
 
 const data = {
-  id: uniqueId('society-address'),
-  label: getText('fieldset.address', 'society'),
+  id: uniqueId('company-address'),
+  label: getText('fieldset.address', 'company'),
   elements: [
     {
       type: 'input',
       base: 'input/input-base',
       data: {
-        label: getText('label.denomination', 'society'),
+        label: getText('label.denomination', 'company'),
         name: 'denomination'
       }
     },
@@ -70,7 +70,7 @@ const data = {
       type: 'select',
       data: {
         name: 'country',
-        label: getText('label.country', 'society'),
+        label: getText('label.country', 'company'),
         placeholder: getText('option.placeholder', 'select'),
         options: options
       }
@@ -79,4 +79,4 @@ const data = {
 }
 %>
 
-<%- include('./society-default', { society: data }); %>
+<%- include('./company-default', { company: data }); %>

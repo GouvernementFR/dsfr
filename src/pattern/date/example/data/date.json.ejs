@@ -1,8 +1,9 @@
 <%
 const date = locals.date || {};
+const id = date.id || uniqueId('date-default');
 
 const data = {
-  id: date.id || uniqueId('date-default'),
+  id: id,
   legend: date.legend || getText('legend.birthdate', 'date'),
   hint: date.hint || getText('hint.birthdate', 'date'),
   error: date.error,
@@ -12,7 +13,8 @@ const data = {
       inline: true,
       modifier: 'number',
       data: {
-        name: 'day',
+        id: `${id}-bday-day`,
+        name: 'bday-day',
         label: getText('option.day', 'date'),
         hint: getText('hint.day', 'date')
       }
@@ -22,7 +24,8 @@ const data = {
       inline: true,
       modifier: 'number',
       data: {
-        name: 'month',
+        id: `${id}-bday-month`,
+        name: 'bday-month',
         label: getText('option.month', 'date'),
         hint: getText('hint.month', 'date')
       }
@@ -33,7 +36,8 @@ const data = {
       grow: true,
       modifier: 'year',
       data: {
-        name: 'year',
+        id: `${id}-bday-year`,
+        name: 'bday-year',
         label: getText('option.year', 'date'),
         hint: getText('hint.year', 'date')
       }

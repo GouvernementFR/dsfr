@@ -1,0 +1,12 @@
+<%
+let company = locals.company || {};
+const data = {
+  id: company.id || uniqueId('civility'),
+  label: company.label || undefined,
+  elements: company.elements || undefined
+}
+
+console.log(data);
+%>
+
+<%- include('../../../../component/form/template/ejs/form', { form: data }); %>
