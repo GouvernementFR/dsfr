@@ -2,7 +2,7 @@
 const data = {
   id: uniqueId('married-and-firstname-disabled'),
   label: `${getText('sample.with', 'name')} ${getText('sample.married', 'name')} + ${getText('sample.firstname-disabled', 'name')}`,
-  married: true,
+  fields: ['lastname', 'married', 'firstname'],
   disabled: true,
   checked: true,
   checkbox: true,

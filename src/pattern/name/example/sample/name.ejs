@@ -1,2 +1,8 @@
-
-<%- include('./default', {}); %>
+<%
+const data = {
+  id: uniqueId('firstname-disabled'),
+  label: getText('sample.firstname-disabled', 'name'),
+  fields: ['lastname', 'firstname']
+}
+%>
+<%- include('./default', { name: data }); %>

@@ -1,20 +1,18 @@
 <%
 const name = locals.name || {};
+const fields = name.fields || [];
 const elements = [];
 
-if (name.country) {
-  const countries = JSON.parse(include('../../../address/example/data/countries-select-options.json.ejs', { countries: { minimal: true }}));
-  const country = {
-    type: 'select',
-    data: {
-      label: getText('label.country', 'address'),
-      placeholder: getText('option.placeholder', 'select'),
-      name: 'country',
-      options: countries
-    }
-  };
-  elements.push(country);
-}
+const countries = JSON.parse(include('../../../address/example/data/countries-select-options.json.ejs', { countries: { minimal: true }}));
+const country = {
+  type: 'select',
+  data: {
+    label: getText('label.country', 'address'),
+    placeholder: getText('option.placeholder', 'select'),
+    name: 'country',
+    options: countries
+  }
+};
 
 const lastname = {
   type: 'input',
@@ -24,24 +22,18 @@ const lastname = {
     name: 'family-name'
   }
 };
-elements.push(lastname);
 
-
-if (name.married === true) {
-  const married = {
-    type: 'input',
-    data: {
-      id: uniqueId('input-married-name'),
-      label: getText('label.married', 'name'),
-      hint: getText('hint.married', 'name'),
-      name: 'married-name'
-    }
-  };
-  elements.push(married);
-}
+const married = {
+  type: 'input',
+  data: {
+    id: uniqueId('input-married-name'),
+    label: getText('label.married', 'name'),
+    hint: getText('hint.married', 'name'),
+    name: 'married-name'
+  }
+};
 
 const firstnameId = uniqueId('input-firstname');
-
 const firstname = {
   type: 'input',
   data: {
@@ -64,7 +56,7 @@ const button = {
   }
 };
 
-if (name.checkbox) {
+const buildFieldset = () => {
   const firstnameElements = [];
   firstnameElements.push(firstname);
   if (name.button) firstnameElements.push(button);
@@ -82,26 +74,45 @@ if (name.checkbox) {
 
   elements.push(fieldset);
 
-  if (name.checkbox) {
-    const checkbox = {
-      type: 'checkbox',
-      data: {
-        id: uniqueId('checkbox-name'),
-        label: getText('label.no-firstname', 'name'),
-        name: 'firstname-disabled',
-        checked: name.checked || false,
-        size: 'sm',
-        attributes: {
-          onclick: include('js/toggle-disable.js', { id: fieldsetId })
-        }
+  const checkbox = {
+    type: 'checkbox',
+    data: {
+      id: uniqueId('checkbox-name'),
+      label: getText('label.no-firstname', 'name'),
+      name: 'firstname-disabled',
+      checked: name.checked || false,
+      size: 'sm',
+      attributes: {
+        onclick: include('js/toggle-disable.js', { id: fieldsetId })
       }
-    };
-    elements.push(checkbox);
-  }
+    }
+  };
+  elements.push(checkbox);
 
-} else {
-  elements.push(firstname);
-  if (name.button) elements.push(button);
+};
+
+for (const field of fields) {
+  switch (field) {
+    case 'country':
+      elements.push(country);
+      break;
+
+    case 'lastname':
+      elements.push(lastname);
+      break;
+
+    case 'married':
+      elements.push(married);
+      break;
+
+    case 'firstname':
+      if (name.checkbox) buildFieldset();
+      else {
+        elements.push(firstname);
+        if (name.button) elements.push(button);
+      }
+      break;
+  }
 }
 
 const data = {

@@ -15,7 +15,7 @@ const data = {
       type: 'input',
       base: 'input/input-base',
       data: {
-        label: getText('label.birth-name', 'name'),
+        label: getText('label.birth', 'name'),
         name: 'birth-name'
       }
     },
@@ -39,4 +39,4 @@ const data = {
 }
 %>
 
-<%- include('./company-default', {company: data}); %>
+<%- JSON.stringify(data); %>
