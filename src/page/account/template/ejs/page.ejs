@@ -1,0 +1,13 @@
+<%
+ const page = locals.page || {};
+ %>
+
+<main role="main" id="content">
+  <% if (page.h2) { %>
+  <%- include('elements/h2', { h2: page.h2 }); %>
+  <% } %>
+
+  <% if (page.block) { %>
+    <%- include(`elements/blocks/${page.block.type}`, { block: page.block }); %>
+  <% } %>
+</main>
