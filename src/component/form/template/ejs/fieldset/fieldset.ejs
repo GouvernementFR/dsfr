@@ -37,7 +37,7 @@ const messages = [];
 const ids = {
   legend: `${fieldset.id}-legend`,
   hint: `${fieldset.id}-hint`
-}
+};
 
 if (fieldset.legend || fieldset.hint) {
   let hint;
@@ -47,7 +47,6 @@ if (fieldset.legend || fieldset.hint) {
       text: fieldset.hint,
       id: ids.hint
     };
-    labelledBy.push(ids.hint);
   }
 
   const legendClasses = [];
@@ -79,7 +78,7 @@ labelledBy.push(...builder.ids);
 if (fieldset.disabled === true) attributes.disabled = '';
 
 if (labelledBy.length) {
-  if (fieldset.legend) labelledBy.push(ids.legend);
+  if (legend) labelledBy.push(ids.legend);
   attributes['aria-labelledby'] = labelledBy.join(' ');
 }
 

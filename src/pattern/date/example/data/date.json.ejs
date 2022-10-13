@@ -1,6 +1,7 @@
 <%
 const date = locals.date || {};
 const id = date.id || uniqueId('date-default');
+const prepend = date.birthday ? 'bday-' : '';
 
 const data = {
   id: id,
@@ -14,7 +15,7 @@ const data = {
       modifier: 'number',
       data: {
         id: `${id}-bday-day`,
-        name: 'bday-day',
+        name: `${prepend}day`,
         label: getText('option.day', 'date'),
         hint: getText('hint.day', 'date')
       }
@@ -25,7 +26,7 @@ const data = {
       modifier: 'number',
       data: {
         id: `${id}-bday-month`,
-        name: 'bday-month',
+        name: `${prepend}month`,
         label: getText('option.month', 'date'),
         hint: getText('hint.month', 'date')
       }
@@ -37,7 +38,7 @@ const data = {
       modifier: 'year',
       data: {
         id: `${id}-bday-year`,
-        name: 'bday-year',
+        name: `${prepend}year`,
         label: getText('option.year', 'date'),
         hint: getText('hint.year', 'date')
       }

@@ -4,75 +4,102 @@ const login = locals.login || {};
 const alert = login.alert || undefined;
 const connect = JSON.parse(include('../../../../../component/connect/example/data/connect.json.ejs'));
 
+const elements = [];
+
+elements.push({
+  type: 'paragraph',
+  data: {
+    content: getText('label.desc', 'login'),
+    size: 'sm'
+  }
+});
+
+if (alert) {
+  elements.push({
+    type: 'alert',
+    data: alert
+  });
+}
+
+elements.push({
+  type: 'hint',
+  data: {
+    text: getText('hint.fieldset', 'login')
+  }
+})
+
+elements.push({
+  type: 'input',
+  base: 'input/input-base',
+  template: 'input',
+  data: {
+    id: uniqueId('username'),
+    hint: getText('hint.username', 'login'),
+    label: getText('label.username', 'login'),
+    error: alert ? alert.type === 'error' : undefined,
+    attributes: {
+      'aria-describedby': alert ? alert.id : undefined,
+      'autocomplete': 'username',
+      'aria-required': true
+    },
+    labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+    name: 'username'
+  }
+});
+
+elements.push({
+  type: 'password',
+  template: 'password',
+  data: {
+    name: 'password',
+    id: uniqueId('password'),
+    input: {
+      error: alert ? alert.type === 'error' : undefined,
+      label: getText('label.password', 'login'),
+      labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+      attributes: {
+        'aria-describedby': alert ? alert.id : undefined
+      },
+      autocomplete: 'current-password'
+    },
+    checkbox: {},
+    format: false,
+    link: {
+      href: contentPlaceholder(getText('link.href', 'password')),
+      label: getText('link.label', 'password'),
+    }
+  }
+});
+
+elements.push({
+  type: 'checkbox',
+  template: 'checkbox-group',
+  data: {
+    id: uniqueId('remember'),
+    label: getText('label.remember', 'login'),
+    name: 'remember',
+    checked: false,
+    size: 'sm',
+  }
+});
+
+elements.push({
+  type: 'buttonsGroup',
+  data: {
+    buttons: [
+      {
+        label: getText('label.button.connect', 'login'),
+        kind: 1,
+        classes: [prefix + '-mt-2v']
+      }
+    ]
+  }
+});
+
 const form = {
   id: uniqueId('login'),
-  label: getText('label.fieldset', 'login'),
-  elements: [
-    {
-      type: 'input',
-      base: 'input/input-base',
-      template: 'input',
-      data: {
-        id: uniqueId('username'),
-        hint: getText('hint.username', 'login'),
-        label: getText('label.username', 'login'),
-        error: alert ? alert.type === 'error' : undefined,
-        attributes: {
-          'aria-describedby': alert ? alert.id : undefined,
-          'autocomplete': 'username',
-          'aria-required': true
-        },
-        labelClasses: login.error ? [prefix + '-label--error'] : undefined,
-        name: 'username'
-      }
-    },
-    {
-      type: 'password',
-      template: 'password',
-      data: {
-        name: 'password',
-        id: uniqueId('password'),
-        input: {
-          error: alert ? alert.type === 'error' : undefined,
-          label: getText('label.password', 'login'),
-          labelClasses: login.error ? [prefix + '-label--error'] : undefined,
-          attributes: {
-            'aria-describedby': alert ? alert.id : undefined
-          },
-          autocomplete: 'current-password'
-        },
-        checkbox: {},
-        format: false,
-        link: {
-          href: contentPlaceholder(getText('link.href', 'password')),
-          label: getText('link.label', 'password'),
-        }
-      }
-    },
-    {
-      type: 'checkbox',
-      template: 'checkbox-group',
-      data: {
-        id: uniqueId('remember'),
-        label: getText('label.remember', 'login'),
-        name: 'remember',
-        checked: false,
-        size: 'sm',
-      }
-    },
-    {
-      type: 'buttonsGroup',
-      data: {
-        buttons: [
-          {
-            label: getText('label.button.connect', 'login'),
-            kind: 1,
-            classes: [prefix + '-mt-2v']
-          }
-        ]
-      }
-    },
-  ]
+  legend: `<h5>${getText('label.login', 'login')}</h5>`,
+  elements: elements
 };
 
 const registerButton = {
@@ -87,11 +114,7 @@ const data = {
     title: getText('label.connect', 'login'),
   },
   login: {
-    title: getText('label.login', 'login'),
-    desc: getText('label.desc', 'login'),
-    hint: getText('hint.fieldset', 'login'),
-    alert: alert,
-    form: { ...form },
+    form: form,
   },
   register: {
     title: getText('label.register', 'login'),

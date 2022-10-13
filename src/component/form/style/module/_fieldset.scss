@@ -20,6 +20,14 @@
       @include margin-bottom(0);
       @include font-weight(regular);
     }
+
+    #{ns(hint-text)}:first-child {
+      @include margin-top(0);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      @include margin-bottom(0);
+    }
   }
 
   &--valid,
@@ -48,6 +56,7 @@
     flex: 1 1 100%;
     @include padding-x(2v);
     @include margin-bottom(4v);
+    @include set-text-margin(0);
 
     #{ns(fieldset)} {
       @include margin-bottom(-4v);

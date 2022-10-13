@@ -15,7 +15,7 @@ const classes = [...legend.classes || [], `${prefix}-fieldset__legend`];
 const attributes = { ...fieldset.attributes, id: legend.id };
 %>
 <legend <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
-    <%= legend.label %>
+    <%- legend.label %>
     <% if (legend.hint) { %>
     <%- include('../hint', { hint: legend.hint });%>
     <% } %>

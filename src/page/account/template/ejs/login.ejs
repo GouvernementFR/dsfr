@@ -54,23 +54,7 @@
 
               <% if(login.login) { %>
               <div>
-                <% if (login.login.title) { %>
-                  <h5 class="<%= prefix %>-mb-4v"><%= login.login.title %></h5>
-                <% } %>
-
-                <% if (login.login.desc) { %>
-                  <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= login.login.desc %></p>
-                <% } %>
-
-                <% if (login.login.alert) { %>
-                  <%- include('../../../../component/alert/template/ejs/alert.ejs', {alert: login.login.alert})  %>
-                <% } %>
-
-                <% if (login.login.hint) { %>
-                  <p class="<%= prefix %>-hint-text"><%= login.login.hint %></p>
-                <% } %>
-
-                <%- include('../../../../component/form/template/ejs/form.ejs', {form: login.login.form})  %>
+                <%- include('../../../../component/form/template/ejs/form.ejs', {form: { ...login.login.form, hint: login.login.hint}})  %>
 
               </div>
               <% } %>

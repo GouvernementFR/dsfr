@@ -83,6 +83,11 @@ switch (element.type) {
     data = { fieldset: element.data };
     break;
 
+  case 'hint':
+    path = '../hint';
+    data = { hint: element.data };
+    break;
+
   case 'button':
     path = '../../../../button/template/ejs/button';
     data = { button: element.data };
@@ -96,6 +101,16 @@ switch (element.type) {
   case 'link':
     path = '../../../../link/template/ejs/link';
     data = { link: element.data };
+    break;
+
+  case 'paragraph':
+    path = '../../../../../core/template/ejs/typography/paragraph';
+    data = { paragraph: element.data };
+    break;
+
+  case 'alert':
+    path = '../../../../alert/template/ejs/alert';
+    data = { alert: element.data };
     break;
 
 }
