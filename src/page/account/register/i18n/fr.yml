@@ -30,6 +30,11 @@ alert:
 
 subdir:
   title: Pages de création de compte
-  register-single: Page de création de compte
-  register-steps: Page de création de compte en plusieurs étapes
-  register-confirmation: Page de confirmation
+  1-single: Page de création de compte
+  2-steps: Page de création de compte en plusieurs étapes
+  2a-login: Étape 1 - Formulaires de création de compte - identifiant
+  2b-identity: Étape 2 - Formulaires de création de compte - identité
+  2c-address: Étape 3 - Formulaires de création de compte - coordonnées
+  3-confirmation: Page de confirmation
+  3a-create: Confirmation de création de compte
+  3b-activate: Confirmation d'activation de compte
