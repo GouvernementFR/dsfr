@@ -1,0 +1,19 @@
+////
+/// Transcription Setting
+/// @group transcription
+////
+
+$transcriptions-settings:(
+  selector: transcription__btn,
+  sizes: (
+    md: (
+      font-size: 4v,
+      min-height: 12v,
+      padding-x: 4v,
+      icon: sm,
+      icon-margin-x: 1v
+    )
+  ),
+  places: right,
+  display: flex
+);

@@ -5,4 +5,5 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/conte
 wrapper: col-8
 style:
   - core
-  - button
+  - link
+  - transcription

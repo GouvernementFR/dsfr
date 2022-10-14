@@ -1,0 +1,10 @@
+////
+/// Transcription Tool
+/// @group transcription
+////
+
+@mixin nest-transcription-button($icon:null) {
+  @include _nest-link($transcriptions-settings, md, right, $icon, null, false) {
+    @content;
+  }
+}

@@ -1,0 +1,33 @@
+<%#
+# paramètres transcription
+
+* transcription.id (string, required) : Identifiant du composant (lie le bouton au collapse).
+
+* transcription.content (string, optional) : contenu du composant
+
+* transcription.isExpanded (boolean, optional) [default: false] : le composant est-il ouvert au départ.
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const transcription = locals.transcription || {};
+const isExpanded = transcription.isExpanded === false;
+const title = getText('collapse.title', 'transcription');
+
+let modal = {
+  body: transcription.content,
+  customFooter: include('../../example/sample/footer/actions'),
+  size: 'lg',
+}
+let modalId = prefix + '-transcription__modal-' + transcription.id;
+let collapseId = prefix + '-transcription__collapse-' + transcription.id;
+%>
+
+<div class="<%= prefix %>-transcription">
+  <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
+  <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
+    <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
+  </div>  
+</div>
