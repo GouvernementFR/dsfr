@@ -1,6 +1,6 @@
 title: Champs de saisie
 description: Les champs permettent à un utilisateur d'entrer du contenu et données.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088099/Champs+de+saisie+-+Text+input
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/champ-de-saisie
 
 sample:
   text: Champs de type "text"
