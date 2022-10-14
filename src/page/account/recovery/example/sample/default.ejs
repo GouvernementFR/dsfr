@@ -1,14 +1,18 @@
 <%
-	const sample = getSample(include);
-	const recovery = locals.recovery || {};
+const sample = getSample(include);
+const recovery = locals.recovery || {};
 
-	const create = recovery.create || {};
+const page = {
+  h2: {
+    title: getText('label.default', 'recovery'),
+    chapo: getText('chapo.default', 'recovery')
+  },
+  block: {
+    type: 'col-6-grey-bg',
+    path: `../../../../recovery/template/ejs/${recovery.template}`,
+    data: { recovery: recovery }
+  }
+};
+%>
 
-	const data = {
-		title: getText('label.default', 'recovery'),
-		chapo: getText('chapo.default', 'recovery'),
-		create: create,
-	};
- %>
-
-<%- include('../../../template/ejs/recovery.ejs', { recovery: data }); %>
+<%- include('../../../template/ejs/page.ejs', { page: page }); %>

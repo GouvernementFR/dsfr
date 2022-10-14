@@ -1,0 +1,33 @@
+<%#
+# paramètres recovery
+
+* title (String, optional): Titre de la page
+* chapo (String, optional): Chapô de la page
+* hint (String, optional): hint text
+
+* stepper (object, optional) : Bloc de connexion
+** ... voir composant stepper
+
+* connect (object, optional) : Bloc bouton France connect
+** connect.title (String, optional) : Titre du bloc france connect
+** ... Autre paramètres connect (voir composant connect)
+
+* create (object, optional) : Bloc bouton s'enregistrer
+** create.title (String, optional) : Titre du bloc
+** create.desc (String, optional) : description du bloc
+** create.alert (object, optional) : paramètre une alerte
+** create.hint (String, optional) : texte additionnel du bloc
+** create.form (object, optional) : paramètres du formulaire
+
+%>
+
+<%
+const recovery = locals.recovery;
+%>
+
+<% if(recovery) { %>
+  <div>
+    <%- include('../../../../../component/form/template/ejs/form.ejs', {form: recovery.form})  %>
+
+  </div>
+<% } %>

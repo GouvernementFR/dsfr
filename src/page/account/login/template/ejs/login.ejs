@@ -1,0 +1,62 @@
+<%#
+# paramètres login
+
+* title (String, optional): Titre de la page de connexion
+
+* login (object, optional) : Bloc de connexion
+** login.title (String, optional) : Titre du bloc
+** login.desc (String, optional) : Description du bloc
+** login.form (object, required): Paramètres du formulaire de connexion (voir fieldset)
+
+
+* connect (object, optional) : Bloc bouton France connect
+** connect.title (String, optional) : Titre du bloc france connect
+** ... Autre paramètres connect (voir composant connect)
+
+* register (object, optional) : Bloc bouton s'enregistrer
+** register.title (String, optional) : Titre du bloc bouton s'enregistrer
+** register.button (object, required) : paramètres du bouton
+
+%>
+
+<%
+  const login = locals.login;
+
+  const connect = login.connect || {};
+  const title = login.title || null;
+
+%>
+<% if (title) { %>
+<h4><%= title %></h4>
+<% } %>
+
+<% if (login.connect) { %>
+<div>
+  <% if (login.connect.title) { %>
+    <h5><%= login.connect.title %></h5>
+  <% } %>
+
+  <%- include('../../../../../component/connect/template/ejs/connect.ejs', {connect: login.connect})  %>
+</div>
+<% } %>
+
+<% if(login.connect && login.login) { %>
+<p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+<% } %>
+
+<% if(login.login) { %>
+<div>
+  <%- include('../../../../../component/form/template/ejs/form.ejs', {form: { ...login.login.form, hint: login.login.hint}})  %>
+</div>
+<% } %>
+
+<% if(login.register) { %>
+<hr class="<%= prefix %>-mt-n6v">
+<div class="<%= prefix %>-mb-n4v">
+  <% if(login.register.title) { %>
+  <h5><%= login.register.title %></h5>
+  <% } %>
+
+  <%- include('../../../../../component/button/template/ejs/buttons-group', {buttonsGroup: {buttons:[{...login.register.button}]}}) %>
+</div>
+<% } %>

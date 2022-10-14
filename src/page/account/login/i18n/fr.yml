@@ -23,5 +23,5 @@ hint:
 
 subdir:
   title: Pages de connexion
-  login-default: Page de connexion
-  login-error: Page de connexion avec erreur
+  1-login-default: Page de connexion
+  2-login-error: Page de connexion avec erreur

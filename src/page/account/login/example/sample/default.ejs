@@ -121,6 +121,15 @@ const data = {
     button: registerButton
   }
 };
+
+const page = {
+  block: {
+    type: 'col-4-grey-bg',
+    path: '../../../../login/template/ejs/login',
+    data: { login: data }
+  }
+};
+
 %>
 
-<%- include('../../../template/ejs/login.ejs', { login: data }); %>
+<%- include('../../../template/ejs/page.ejs', { page: page }); %>

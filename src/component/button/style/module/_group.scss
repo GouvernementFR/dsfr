@@ -215,4 +215,8 @@
       }
     }
   }
+
+  #{ns(fieldset__element)} > & {
+    @include margin-bottom(-4v);
+  }
 }

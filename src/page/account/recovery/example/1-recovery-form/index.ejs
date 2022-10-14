@@ -38,9 +38,10 @@ const form = {
     },
   ]
 };
-const create = {
+const recovery = {
+  template: 'form',
   form: form
 }
 %>
 
-<%- sample('', '../../example/sample/default.ejs', {recovery: { create: create } }, true, '../../../../example/layout', {}); %>
+<%- sample('', '../../example/sample/default.ejs', { recovery: recovery }, true, '../../../../example/layout', {}); %>

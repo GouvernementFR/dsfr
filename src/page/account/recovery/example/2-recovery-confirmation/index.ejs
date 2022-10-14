@@ -1,0 +1,16 @@
+<%
+const sample = getSample(include);
+const recovery = {
+  template: 'confirmation',
+  hint: getText('hint.confirmation', 'recovery'),
+  alert: {
+    id: uniqueId('alert'),
+    size: 'sm',
+    text: getText('alert.confirmation', 'recovery'),
+    type: 'success',
+    classes: [prefix + '-mb-6v']
+  }
+};
+%>
+
+<%- sample('', '../../example/sample/default.ejs', { recovery: recovery }, true, '../../../../example/layout', {}); %>

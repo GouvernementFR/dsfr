@@ -19,5 +19,5 @@ alert:
   confirmation: Votre demande de récupération de mot de passe a été transmise. Vous recevrez un courriel dans quelques instants.
 subdir:
   title: Pages de Récupération - Mot de passe oublié
-  recovery-form: Récupération de mot de passe
-  recovery-confirmation: Confirmation de récupération de mot de passe
+  1-recovery-form: Récupération de mot de passe
+  2-recovery-confirmation: Confirmation de récupération de mot de passe
