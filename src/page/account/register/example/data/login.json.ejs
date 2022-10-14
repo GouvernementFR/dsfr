@@ -1,0 +1,98 @@
+<%
+
+const elements = [];
+
+elements.push({
+  type: 'input',
+  base: 'input/input-base',
+  template: 'input',
+  data: {
+    id: uniqueId('username'),
+    hint: getText('hint.username', 'login'),
+    label: getText('label.username', 'login'),
+    name: 'username'
+  }
+})
+
+elements.push({
+  type: 'password',
+  template: 'password',
+  name: 'password',
+  data: {
+    id: uniqueId('password'),
+    input: {
+      label: getText('label.password', 'login'),
+      autocomplete: 'new-password'
+    },
+    checkbox: true,
+    format: {
+      label: getText('format.label', 'password'),
+      items: [
+        {
+          label: getText('format.characters', 'password'),
+          state: 'info'
+        },
+        {
+          label: getText('format.special', 'password'),
+          state: 'info'
+        },
+        {
+          label: getText('format.digit', 'password'),
+          state: 'info'
+        }
+      ]
+    },
+  }
+})
+
+
+elements.push({
+  type: 'checkbox',
+  template: 'checkbox-group',
+  data: {
+    id: uniqueId('checkbox-cnil'),
+    label: getText('label.checkbox', 'register'),
+    name: 'checkbox-cnil',
+    checked: false,
+    size: 'sm',
+  }
+})
+
+elements.push({
+  type: 'checkbox',
+  template: 'checkbox-group',
+  data: {
+    id: uniqueId('checkbox-cnil'),
+    label: getText('label.checkbox', 'register'),
+    name: 'checkbox-cnil',
+    checked: false,
+    size: 'sm',
+  }
+})
+
+elements.push({
+  type: 'buttonsGroup',
+  base: 'button',
+  template: 'buttons-group',
+  data: {
+    inline: true,
+    classes: [prefix + '-btns-group--right'],
+    buttons: [
+      {
+        label: getText('label.button.valid', 'register'),
+        kind: 1,
+        type: 'submit',
+        classes: [prefix + '-mt-2v']
+      }
+    ]
+  },
+});
+
+const data = {
+  id: uniqueId('login'),
+  label: getText('label.fieldset', 'register'),
+  classes: [prefix + '-mb-0'],
+  elements: elements
+};
+ %>
+<%- JSON.stringify(data); %>

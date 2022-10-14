@@ -1,10 +1,16 @@
 <%
  const page = locals.page || {};
+ const classes = page.classes || [];
+ const attributes = {
+   ...page.attributes || {},
+   role: 'main',
+   id: 'content'
+ };
  %>
 
-<main role="main" id="content">
-  <% if (page.h2) { %>
-  <%- include('elements/h2', { h2: page.h2 }); %>
+<main <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+  <% if (page.heading) { %>
+  <%- include('elements/heading', { heading: page.heading }); %>
   <% } %>
 
   <% if (page.block) { %>

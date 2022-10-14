@@ -1,0 +1,41 @@
+<%
+const data = {
+  id: 'recovery',
+  legend: `<h6>${getText('label.recovery', 'recovery')}</h6>`,
+  classes: [`${prefix}-mb-0`],
+  elements:[
+    {
+      type: 'paragraph',
+      data: {
+        content: getText('label.desc', 'recovery'),
+        size: 'sm'
+      }
+    },
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('username'),
+        label: getText('label.username', 'recovery'),
+        hint: getText('hint.username', 'recovery'),
+        name: 'username'
+      }
+    },
+    {
+      type: 'buttonsGroup',
+      data: {
+        inline: true,
+        classes: [`${prefix}-btns-group--right`, `${prefix}-mt-2v`],
+        buttons: [
+          {
+            label: getText('label.button.valid', 'recovery'),
+            type: 'submit',
+            kind: 1
+          }
+        ]
+      }
+    }
+  ]
+};
+ %>
+
+<%- JSON.stringify(data); %>

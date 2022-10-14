@@ -1,11 +1,5 @@
 <%
 const sample = getSample(include);
-const alert = {
-  id: uniqueId('alert'),
-  size: 'sm',
-  text: getText('label.error.login', 'login'),
-  type: 'error'
-};
 %>
 
-<%- sample('', '../sample/default.ejs', {login: {alert: alert}}, true, '../../../../example/layout', {}); %>
+<%- sample('', '../sample/default.ejs', {login: { error: true }}, true, '../../../../example/layout', {}); %>

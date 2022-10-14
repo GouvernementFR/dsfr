@@ -46,12 +46,12 @@
 
 <% if(login.login) { %>
 <div>
-  <%- include('../../../../../component/form/template/ejs/form.ejs', {form: { ...login.login.form, hint: login.login.hint}})  %>
+  <%- include('../../../../../component/form/template/ejs/form.ejs', { form: login.login.form })  %>
 </div>
 <% } %>
 
 <% if(login.register) { %>
-<hr class="<%= prefix %>-mt-n6v">
+<hr>
 <div class="<%= prefix %>-mb-n4v">
   <% if(login.register.title) { %>
   <h5><%= login.register.title %></h5>

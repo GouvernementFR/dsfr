@@ -10,6 +10,8 @@ const stepper = {
 const connect = {
   title: getText('label.register.connect', 'register'),
 }
+
+const register = { connect: connect, stepper:stepper };
 %>
 
-<%- sample('', '../../../example/sample/default.ejs', {register:{connect:connect, stepper:stepper}}, true, '../../../../../example/layout', {}); %>
+<%- sample('', '../../../example/sample/default.ejs', { register: register }, true, '../../../../../example/layout', {}); %>

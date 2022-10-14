@@ -1,111 +1,43 @@
 <%
-	const sample = getSample(include);
-	const register = locals.register || {};
-	const connect = JSON.parse(include('../../../../../component/connect/example/data/connect.json.ejs'));
+const sample = getSample(include);
+const register = locals.register || {};
+const connect = JSON.parse(include('../../../../../component/connect/example/data/connect.json.ejs'));
 
-	const elements = [];
+const create = register.create || {};
+create.alert = create.alert || false;
+create.title = create.title !== false ? create.title || getText('label.register', 'register') : false;
+create.desc = create.desc !== false ? create.desc || getText('label.desc', 'register') : false;
+create.hint = create.hint !== false ? create.hint || getText('hint.fieldset', 'register') : false;
 
-	elements.push({
-		type: 'input',
-		base:'input/input-base',
-		template: 'input',
-		data: {
-			id: uniqueId('username'),
-			hint: getText('hint.username', 'login'),
-			label: getText('label.username', 'login'),
-			name: 'username'
-		}
-	})
+const form = create.form !== false ? create.form || {
+  id: uniqueId('register'),
+  label: getText('label.fieldset', 'register'),
+  classes: [prefix + '-mb-0'],
+  elements: elements
+} : false;
 
-	elements.push({
-		type: 'password',
-		template: 'password',
-		name: 'password',
-		data: {
-			id: uniqueId('password'),
-			input: {
-				label: getText('label.password', 'login'),
-				autocomplete: 'new-password'
-			},
-			checkbox: true,
-			format: {
-				label: getText('format.label', 'password'),
-				items: [
-					{label: getText('format.characters', 'password'), state: 'info'},
-					{label: getText('format.special', 'password'), state: 'info'},
-					{label: getText('format.digit', 'password'), state: 'info'}
-				]
-			},
-		}
-	})
+create.form = form;
 
+const data = {
+  title: getText('label.default', 'register'),
+  chapo: getText('chapo.default', 'register'),
+  stepper: register.stepper ? register.stepper : undefined,
+  connect: register.connect !== false ? connect : false,
+  create: create
+};
 
-	elements.push({
-		type: 'checkbox',
-		template: 'checkbox-group',
-		data: {
-			id: uniqueId('checkbox-cnil'),
-			label: getText('label.checkbox', 'register'),
-			name: 'checkbox-cnil',
-			checked: false,
-			size: 'sm',
-		}
-	})
+const page = {
+  heading: {
+    title: getText('label.default', 'register'),
+    chapo: getText('chapo.default', 'register')
+  },
+  block: {
+    type: 'colored',
+    col: 6,
+    path: `../../../../register/template/ejs/register`,
+    data: { register: data }
+  }
+};
+%>
 
-	elements.push({
-		type: 'checkbox',
-		template: 'checkbox-group',
-		data: {
-			id: uniqueId('checkbox-cnil'),
-			label: getText('label.checkbox', 'register'),
-			name: 'checkbox-cnil',
-			checked: false,
-			size: 'sm',
-		}
-	})
-
-	elements.push({
-		type: 'buttonsGroup',
-		base: 'button',
-		template: 'buttons-group',
-		data: {
-			inline: true,
-			classes: [prefix + '-btns-group--right'],
-			buttons: [
-				{
-					label: getText('label.button.valid', 'register'),
-					kind: 1,
-					type: 'submit',
-					classes: [prefix + '-mt-2v']
-				}
-			]
-		},
-	})
-
-	const create = register.create || {};
-	create.alert = create.alert || false;
-	create.title = create.title !== false ? create.title || getText('label.register', 'register') : false;
-	create.desc = create.desc !== false ? create.desc || getText('label.desc', 'register') : false;
-	create.hint = create.hint !== false ? create.hint || getText('hint.fieldset', 'register') : false;
-
-	const form = create.form !== false ? create.form || {
-    id: uniqueId('register'),
-    label: getText('label.fieldset', 'register'),
-		classes: [prefix + '-mb-0'],
-    elements: elements
-	} : false;
-	
-	create.form = form;
-
-	const data = {
-		title: getText('label.default', 'register'),
-		chapo: getText('chapo.default', 'register'),
-		stepper: register.stepper ? register.stepper : undefined,
-		connect: register.connect !== false ? connect : false,
-		create: create,
-	};
-
-
- %>
-
-<%- include('../../../template/ejs/register.ejs', { register: data }); %>
+<%- include('../../../template/ejs/page.ejs', { page: page }); %>
