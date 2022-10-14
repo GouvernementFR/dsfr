@@ -27,3 +27,9 @@ alert:
   confirmation:
     create: Votre compte a bien été créé. Vous recevrez un courriel dans quelques instants contenant un lien de confirmation.
     activate: Votre compte a bien été activé. Vous pouvez dès maintenant commencer à l’utiliser.
+
+subdir:
+  title: Pages de création de compte
+  register-single: Page de création de compte
+  register-steps: Page de création de compte en plusieurs étapes
+  register-confirmation: Page de confirmation
