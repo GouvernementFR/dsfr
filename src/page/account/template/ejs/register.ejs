@@ -25,7 +25,6 @@
   const register = locals.register;
 
   const connect = register.connect || {};
-
 %>
 
 <main role="main" id="content">
@@ -82,15 +81,9 @@
                     <%- include('../../../../component/alert/template/ejs/alert.ejs', {alert: register.create.alert})  %>
                   <% } %>
 
-                  <% if (register.create.hint) { %>
-                    <p class="<%= prefix %>-hint-text"><%= register.create.hint %></p>
-                  <% } %>
-
-                  <%- include('../../../../component/form/template/ejs/form.ejs', {form: register.create.form})  %>
-
+                  <%- include('../../../../component/form/template/ejs/form.ejs', {form: { ...register.create.form, hint: register.create.hint}}) %>
                 </div>
               <% } %>
-
             </div>
           </div>
         </div>

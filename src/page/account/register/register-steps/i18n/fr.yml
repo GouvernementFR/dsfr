@@ -3,6 +3,6 @@ description: Modèles de pages de création de compte avec indicateur d'étapes
 
 subdir:
   title: Formulaires de création de compte en plusieurs étapes
-  step-address: Formulaires de création de compte - coordonnées - étape 3
-  step-identity: Formulaires de création de compte - identité - étape 2
-  step-login: Formulaires de création de compte - identifiant - étape 1
+  step-address: Étape 3 - Formulaires de création de compte - coordonnées
+  step-identity: Étape 2 - Formulaires de création de compte - identité
+  step-login: Étape 1 - Formulaires de création de compte - identifiant

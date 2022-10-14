@@ -1,5 +1,6 @@
 <%
 const sample = getSample(include);
+const civilitySexData = JSON.parse(include('../../../../../../pattern/civility/example/data/civility-sex.json.ejs'));
 const stepper = {
   tag: 'h5',
   title: getText('label.step.identity', 'register'),
@@ -7,11 +8,19 @@ const stepper = {
   currentStep: 2,
   stepCount: 3,
 };
+
+const elements = [];
+
+elements.push(civilitySexData);
+elements.push({
+  
+})
+
 const form = {
   id: 'register-step-2',
   label: getText('label.fieldset', 'register'),
   classes: [prefix + '-mb-0'],
-  items:[
+  elements: [
     {
       type: 'fieldset',
       data: {
@@ -20,29 +29,21 @@ const form = {
         choice: true,
         elements: [
           {
-            path: 'radio/template/ejs/radio-group',
             type: 'radio',
-            template: 'radio',
             data: {
-              radio: {
-                name: 'civility',
-                id: 'civility-female',
-                size: 'sm',
-                label: getText('option.civility.female', 'civility'),
-              }
+              name: 'civility',
+              id: 'civility-female',
+              size: 'sm',
+              label: getText('option.sex.female', 'civility'),
             }
           },
           {
-            path: 'radio/template/ejs/radio-group',
             type: 'radio',
-            template: 'radio',
             data: {
-              radio: {
-                name: 'civility',
-                id: 'civility-male',
-                size: 'sm',
-                label: getText('option.civility.male', 'civility'),
-              }
+              name: 'civility',
+              id: 'civility-male',
+              size: 'sm',
+              label: getText('option.sex.male', 'civility'),
             }
           },
         ]
@@ -54,7 +55,7 @@ const form = {
       template: 'input',
       data: {
         id: uniqueId('name'),
-        label: getText('label.name', 'name'),
+        label: getText('label.family', 'name'),
         name: 'name'
       }
     },
@@ -64,7 +65,7 @@ const form = {
       template: 'input',
       data: {
         id: uniqueId('firstname'),
-        label: getText('label.firstname', 'name'),
+        label: getText('label.given', 'name'),
         name: 'firstname'
       }
     },
