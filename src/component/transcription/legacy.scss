@@ -1,11 +1,7 @@
 ////
-/// Translate Main
-/// @group translate
+/// Transcription Legacy
+/// @group core
 ////
-
-/* ¯¯¯¯¯¯¯¯¯ *\
-  TRANSLATE
-\* ˍˍˍˍˍˍˍˍˍ */
 
 @use 'module/path';
 @use 'module/shame/media-query';
@@ -14,7 +10,7 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/module';
 @import 'style/scheme';
+@import 'style/legacy';
 
-@include _translate-scheme;
+@include _transcription-scheme(true);

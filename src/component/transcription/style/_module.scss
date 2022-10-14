@@ -1,0 +1,136 @@
+////
+/// Transcription Module : transcription
+/// @group transcription
+////
+
+@use 'module/media-query';
+
+#{ns(transcription)} {
+  position: relative;
+
+  @include before('', block) {
+    @include absolute(0, 0, 0, 0, 100%, 100%);
+    pointer-events: none;
+  }
+
+  &__btn {
+    @include _build-link-base;
+    @include _link-display(flex);
+    @include nest-transcription-button(add-line);
+    @include size(100%);
+    text-align: left;
+    @include margin(0);
+    @include padding(3v 4v);
+    @include after {
+      @include margin-right(0);
+      @include margin-left(auto);
+    }
+    @include icon(align-left, sm, before) {
+      @include margin-right(2v);
+    }
+
+    &[aria-expanded='true'] {
+      @include icon-image(subtract-line, after);
+    }
+  }
+
+  &__content {
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      pointer-events: none;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    @include padding(3v 4v);
+    @include margin(0);
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      pointer-events: none;
+    }
+  }
+
+  &__actions-group {
+    @include disable-list-style;
+    @include display-flex(null, center, flex-end, nowrap);
+    @include vertical-btns-group;
+    @include horizontal-btns-group;
+    @include nest-btn(sm, right, null, false) {
+      @include margin-bottom(0);
+      @include margin-right(0);
+    }
+    @include nest-link(sm, null);
+
+    > * {
+      &:not(:first-child) {
+        @include margin-left(2w);
+      }
+    }
+  }
+
+  #{ns(collapse)} {
+    &--expanded {
+      @include margin(0 0.25v);
+    }
+  }
+
+  #{ns(modal)} {
+    &:not(#{ns(modal)}--opened) {
+      visibility: inherit;
+      opacity: inherit;
+      background-color: inherit;
+      position: relative;
+
+      &::after {
+        content: none;
+      }
+
+      @include before('', block) {
+        @include absolute(0, 0, 0, 0, 100%, 100%);
+        pointer-events: none;
+      }
+
+      > #{ns(container)} {
+        @include padding(0.25v 0);
+
+        > #{ns(grid)}-row {
+          display: inherit;
+
+          > {
+            #{class-start-with(ns(col-, ''))},
+            #{ns(col)} {
+              flex: inherit;
+              width: inherit;
+              max-width: inherit;
+            }
+          }
+        }
+      }
+
+      #{ns(modal)}__body {
+        filter: inherit;
+        max-height: inherit;
+        background-color: inherit;
+      }
+
+      #{ns(modal)}__header {
+        display: none;
+      }
+
+      #{ns(modal)}__content {
+        --transcription-max-height: 9.5rem;
+        overflow-y: auto;
+        max-height: var(--transcription-max-height);
+        @include margin(0);
+        @include padding(4v);
+      }
+    }
+
+    &--opened {
+      #{ns(transcription)}__footer {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 ////
-/// Translate Main
-/// @group translate
+/// Transcription Main
+/// @group transcription
 ////
 
 /* ¯¯¯¯¯¯¯¯¯ *\
-  TRANSLATE
+  TRANSCRIPTION
 \* ˍˍˍˍˍˍˍˍˍ */
 
 @use 'module/path';
@@ -17,4 +17,4 @@
 @import 'style/module';
 @import 'style/scheme';
 
-@include _translate-scheme;
+@include _transcription-scheme;
