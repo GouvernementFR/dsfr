@@ -4,7 +4,7 @@ const data = {
   label: tel.label || getText('label', 'input-tel'),
   hint: tel.hint || getText('hint.format', 'input-tel'),
   error: tel.error ? getText('error', 'input-tel') : undefined,
-  autocomplete: tel.autocomplete || true,
+  autocomplete: tel.autocomplete || 'tel',
 }
 %>
 
