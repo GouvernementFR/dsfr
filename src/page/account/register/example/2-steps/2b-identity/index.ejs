@@ -2,7 +2,7 @@
 const sample = getSample(include);
 const civilitySexData = JSON.parse(include('../../../../../../pattern/civility/example/data/civility-sex.json.ejs'));
 const stepper = {
-  tag: 'h5',
+  markup: 'h5',
   title: getText('label.step.identity', 'register'),
   nextStep: getText('label.step.address', 'register'),
   currentStep: 2,
@@ -12,9 +12,6 @@ const stepper = {
 const elements = [];
 
 elements.push(civilitySexData);
-elements.push({
-  
-})
 
 const form = {
   id: 'register-step-2',

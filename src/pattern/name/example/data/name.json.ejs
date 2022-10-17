@@ -19,7 +19,11 @@ const lastname = {
   data: {
     id: uniqueId('input-family-name'),
     label: getText('label.family', 'name'),
-    name: 'family-name'
+    name: 'family-name',
+    attributes: {
+      spellcheck: false,
+      autocomplete: 'family-name'
+    }
   }
 };
 
@@ -28,7 +32,10 @@ const usual = {
   data: {
     id: uniqueId('input-usual-name'),
     label: getText('label.usual', 'name'),
-    name: 'usual-name'
+    name: 'usual-name',
+    attributes: {
+      spellcheck: false
+    }
   }
 };
 
@@ -37,7 +44,10 @@ const birth = {
   data: {
     id: uniqueId('input-birth-name'),
     label: getText('label.birth', 'name'),
-    name: 'birth-name'
+    name: 'birth-name',
+    attributes: {
+      spellcheck: false
+    }
   }
 };
 
@@ -47,7 +57,10 @@ const married = {
     id: uniqueId('input-married-name'),
     label: getText('label.usual', 'name'),
     hint: getText('hint.married', 'name'),
-    name: 'married-name'
+    name: 'married-name',
+    attributes: {
+      spellcheck: false
+    }
   }
 };
 
@@ -57,7 +70,11 @@ const firstname = {
   data: {
     id: firstnameId,
     label: getText('label.given', 'name'),
-    name: 'given-name'
+    name: 'given-name',
+    attributes: {
+      spellcheck: false,
+      autocomplete: 'given-name'
+    }
   }
 };
 
