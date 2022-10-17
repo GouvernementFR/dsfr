@@ -7,6 +7,7 @@ const countries = JSON.parse(include('../../../address/example/data/countries-se
 const country = {
   type: 'select',
   data: {
+    id: uniqueId('country-select'),
     label: getText('label.country', 'address'),
     placeholder: getText('option.placeholder', 'select'),
     name: 'country',
@@ -160,7 +161,7 @@ for (const field of fields) {
 
 const data = {
   id: name.id || uniqueId('name-default'),
-  label: name.label || getText('sample.default', 'name'),
+  label: name.label || getText('label.fieldset', 'name'),
   elements: elements
 }
 %>
