@@ -10,6 +10,7 @@ label:
   country: Pays
   family: Nom
   given: Prénom
+  fieldset: Demande de nom et prénom
   usual: Nom d'usage
   birth: Nom de naissance
   no-firstname: Je n'ai pas de prénom
