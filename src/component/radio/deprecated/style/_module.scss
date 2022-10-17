@@ -1,8 +1,7 @@
-@use '../../../../../module/spacing';
+@use 'module/spacing';
 
 #{ns(fieldset)} {
   #{ns(fieldset__content)} {
-
     #{ns-group(radio)} {
       &--sm {
         label {
