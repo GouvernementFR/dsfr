@@ -2,8 +2,12 @@
 const sample = getSample(include);
 
 const recovery = {
-  template: 'form',
-  form: form
+  segments: [
+    {
+      type: 'form',
+      data: JSON.parse(include('../data/recovery.json.ejs'))
+    }
+  ]
 }
 %>
 

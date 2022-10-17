@@ -1,0 +1,15 @@
+<%
+const segment = locals.segment;
+const data = segment.data || {};
+%>
+<div class="<%= prefix %>-mb-6v">
+  <% if (data.title) { %>
+    <h6><%= data.title %></h6>
+  <% } %>
+
+  <% if (data.desc) { %>
+    <p class="<%= prefix %>-text--sm <%= prefix %>"><%= data.desc %></p>
+  <% } %>
+
+  <%- include('../../../../../../../component/connect/template/ejs/connect.ejs', { connect: data.connect })  %>
+</div>

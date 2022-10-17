@@ -37,9 +37,6 @@ const classes = {
   }
 }
 
-
-
-
 %>
 
 <div <%- includeClasses(classes.outer.container); %> >
@@ -48,7 +45,9 @@ const classes = {
       <div <%- includeClasses(classes.inner.container); %> >
         <div <%- includeClasses(classes.inner.grid); %> >
           <div <%- includeClasses(classes.inner.col); %> >
-            <%- include(block.path, block.data); %>
+            <% if (block.segments) { %>
+            <%- include('segments', { segments: block.segments }); %>
+            <% } %>
           </div>
         </div>
       </div>

@@ -2,9 +2,54 @@
 const sample = getSample(include);
 const login = locals.login || {};
 const connect = JSON.parse(include('../../../../../component/connect/example/data/connect.json.ejs'));
-
 const form = JSON.parse(include('../data/login.json.ejs', { login: login }));
 
+
+const segments = [
+  {
+    type: 'heading',
+    data: {
+      title: getText('label.default', 'login')
+    }
+  },
+  {
+    type: 'connect',
+    data: {
+      title: getText('label.connect', 'login'),
+      connect: connect
+    }
+  },
+  {
+    type: 'hr',
+    or: true,
+    data: {
+      text: getText('or', 'global')
+    }
+  },
+  {
+    type: 'form',
+    data: form
+  },
+  {
+    type: 'hr'
+  },
+  {
+    type: 'button',
+    data: {
+      title: getText('label.register', 'login'),
+      buttonsGroup:
+      {
+        buttons:
+        [
+          {
+            label: getText('label.button.create', 'login'),
+            kind: 2
+          }
+        ]
+      }
+    }
+  }
+];
 
 const registerButton = {
   label: getText('label.button.create', 'login'),
@@ -12,11 +57,6 @@ const registerButton = {
 };
 
 const data = {
-  title: getText('label.default', 'login'),
-  connect: {
-    ...connect,
-    title: getText('label.connect', 'login'),
-  },
   login: {
     form: form,
   },
@@ -31,8 +71,7 @@ const page = {
   block: {
     type: 'colored',
     col: 4,
-    path: '../../../../login/template/ejs/login',
-    data: { login: data }
+    segments: segments
   }
 };
 
