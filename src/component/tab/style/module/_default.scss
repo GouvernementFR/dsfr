@@ -66,9 +66,8 @@
     background-size: 0 2px, 1px 0, 1px 0, 100% 1px;
     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     background-position: 0 0, 0 calc(100% - 1px), 100% calc(100% - 1px), 100% 100%;
-    // transition: background-size 0.3s;
 
-    &[aria-selected=true] {
+    &[aria-selected='true'] {
       background-size: 100% 2px, 1px calc(100% - 1px), 1px calc(100% - 1px), 0 1px;
     }
   }
@@ -81,10 +80,9 @@
     @include enable-list-style;
     display: block;
     order: 3;
-    @include relative(null, null, null, 0, 100%, auto);
+    @include relative(null, null, null, -100%, 100%, auto);
     @include padding(4v);
     @include padding(8v, md);
-    transform: translate(-100%);
     @include margin-right(-100%);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
@@ -98,11 +96,11 @@
     }
 
     &--direction-end {
-      transform: translate(0%);
+      transform: translate(100%);
     }
 
     &--direction-start {
-      transform: translate(-200%);
+      transform: translate(-100%);
     }
 
     /**

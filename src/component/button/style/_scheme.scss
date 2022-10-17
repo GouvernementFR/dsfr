@@ -26,7 +26,8 @@
     // Ghost variant
     &--tertiary-no-outline,
     &--close,
-    &--display {
+    &--display,
+    &--fullscreen {
       @include btn-kind-scheme(4, $legacy);
     }
   }

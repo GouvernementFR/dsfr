@@ -6,6 +6,14 @@
 $links-settings:(
   selector: link,
   sizes: (
+    xs: (
+      font-size: 3v,
+      min-height: 0,
+      padding-x: 0,
+      icon: xs,
+      icon-margin-x: 2v,
+      icon-only: xs,
+    ),
     sm: (
       font-size: 3.5v,
       min-height: 0,

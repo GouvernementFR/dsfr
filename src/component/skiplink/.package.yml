@@ -1,7 +1,7 @@
 id: skiplink
 title: Liens d'évitement
 description: Les liens d’évitement permettent aux utilisateurs naviguant au clavier, ou équipés de lecteurs d'écran, d’accéder plus rapidement à des zones précises de la page.
-doc: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/260014417/Liens+d+vitement+-+Skiplinks
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/liens-d-evitement
 prepend: true
 style:
   - core

@@ -263,24 +263,34 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
-const randomContent = (id) => {
+const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;
-  content += `<div><h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
-  if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', { media: imgData() });
-  for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
-  content += '<ul>';
-  for (let i = Math.random() * 2 + 1; i > 0; i--) {
-    content += '<li>list item';
-    if (Math.random() < .4) {
-      content += '<ul>';
-      for (let j = Math.random() * 2 + 1; j > 0; j--) content += '<li>list item niveau 2</li>';
-
-      content += '</ul>';
-    }
-    content += '</li>';
+  content += `<div>`;
+  if (types.includes('title')) {
+    content += `<h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
   }
-  content += '</ul></div>';
+  if (types.includes('img')) {
+    if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
+  }
+  if (types.includes('text')) {
+    for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
+  }
+  if (types.includes('list')) {
+    content += '<ul>';
+    for (let i = Math.random() * 2 + 1; i > 0; i--) {
+      content += '<li>list item';
+      if (Math.random() < .4) {
+        content += '<ul>';
+        for (let j = Math.random() * 2 + 1; j > 0; j--) content += '<li>list item niveau 2</li>';
+
+        content += '</ul>';
+      }
+      content += '</li>';
+    }
+    content += '</ul>';
+  }
+  content += '</div>';
   return content;
 };
 

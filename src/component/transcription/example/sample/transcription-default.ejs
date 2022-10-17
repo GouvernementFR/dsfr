@@ -1,0 +1,10 @@
+<%
+let transcription = locals.transcription || {};
+let data = {
+  id: uniqueId('transcription'),
+  content: transcription.content || randomContent(['title', 'text', 'list']),
+  ...transcription
+}
+%>
+
+<%- include('../../template/ejs/transcription', {transcription: data}); %>
