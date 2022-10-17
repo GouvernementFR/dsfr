@@ -3,6 +3,16 @@
 #{ns(fieldset)} {
   #{ns(fieldset__content)} {
 
+    #{ns-group(radio)} {
+      &--sm {
+        label {
+          &::before {
+            @include margin-top(4v);
+          }
+        }
+      }
+    }
+
     #{ns(radio-rich)} {
       &:first-child {
         input[type="radio"] + label {
@@ -17,7 +27,7 @@
 
       &:last-child {
         input[type="radio"] + label {
-          @include margin-bottom(7v);
+          @include margin-bottom(3v);
         }
       }
     }

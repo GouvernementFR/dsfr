@@ -19,7 +19,7 @@
   &--inline {
     #{ns(fieldset__content)} {
       @include display-flex(null, baseline, flex-start, wrap);
-      @include margin(-3v 0);
+      @include margin(-3v 0 0 2v);
     }
 
     #{ns-group(checkbox)} {
@@ -68,20 +68,21 @@
 
   &__content {
     @include relative;
-  }
+    @include margin-left(2v);
+    width: 100%;
 
-  &--error {
-    #{ns(fieldset__content)} {
-      @include before('') {
-        @include absolute(3v, null, 3v, -2v, 2px);
+    #{ns-group(radio)},
+    #{ns-group(checkbox)} {
+      &:first-child {
+        @include margin-top(-4v);
       }
-    }
-  }
+      
+      label {
+        @include padding(3v 0);
 
-  &--valid {
-    #{ns(fieldset__content)} {
-      @include before('') {
-        @include absolute(3v, null, 3v, -2v, 2px);
+        &::before {
+          @include margin-top(3v);
+        }
       }
     }
   }
@@ -92,8 +93,9 @@
 #{ns(info-text)} {
   @include display-flex(row, center);
   @include text-style(xs);
-  @include margin-top(4v);
+  @include margin-top(0);
   @include margin-bottom(0);
+  @include margin-left(2v);
   @include icon(null, sm, before) {
     display: inline-block;
     @include margin-right(1v);
