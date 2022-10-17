@@ -78,12 +78,11 @@ labelledBy.push(...builder.ids);
 if (fieldset.disabled === true) attributes.disabled = '';
 
 if (labelledBy.length) {
-  if (legend) labelledBy.push(ids.legend);
+  if (legend) labelledBy.unshift(ids.legend);
   attributes['aria-labelledby'] = labelledBy.join(' ');
 }
 
 const messagesGroup = builder.messagesGroup;
-messagesGroup.includeEmpty = true;
 %>
 
 <fieldset <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>

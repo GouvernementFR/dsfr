@@ -21,6 +21,8 @@
 
 * select.disabled (boolena, optional)
 
+* select.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
 * select.attributes (object, optional) : attributs spécifiques à rajouter sur le select
 
 * select.classes (array, optional) : classes spécifiques à rajouter sur le select
@@ -45,7 +47,7 @@ const label = {
     attributes: select.labelAttributes,
 }
 
-const builder = new MessageBuilder(select.id);
+const builder = new MessageBuilder(select.id, select.includeEmptyMessagesGroup);
 
 if (select.valid) {
   builder.addValid(select.valid);
@@ -53,7 +55,7 @@ if (select.valid) {
 if (select.error) {
   builder.addError(select.error);
 }
-describedby.push(...builder.ids);
+if (select.includeEmptyMessagesGroup !== false) describedby.push(...builder.ids);
 
 if (select.hint) {
     label.hint = select.hint;
@@ -61,7 +63,7 @@ if (select.hint) {
 
 if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
 
-if (select.required === true) attributes['required'] = '';
+if (select.required === true) attributes['aria-required'] = true;
 if (select.disabled === true) attributes['disabled'] = '';
 %>
 
@@ -80,8 +82,5 @@ if (select.disabled === true) attributes['disabled'] = '';
   <% } %>
 </select>
 
-<%
-if (select.valid || select.error) {
-%>
-  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
-<% } %>
+<%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+

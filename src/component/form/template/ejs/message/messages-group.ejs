@@ -14,7 +14,7 @@
 <%
 const messagesGroup = locals.messagesGroup || {};
 const classes = [...messagesGroup.classes || [], `${prefix}-messages-group`];
-const attributes = { ...messagesGroup.attributes, id: messagesGroup.id };
+const attributes = { ...messagesGroup.attributes, id: messagesGroup.id, 'aria-live': 'assertive' };
 const messages = messagesGroup.messages || [];
 %>
 <% if (messages.length > 0 || messagesGroup.includeEmpty) { %>

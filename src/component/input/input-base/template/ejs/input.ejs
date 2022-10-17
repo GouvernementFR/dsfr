@@ -29,6 +29,8 @@
 
 * input.disabled (boolean, optional)
 
+* input.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
 * input.addon (boolean, optional) : Si true, input complexe composé d'un addon (ex: pour associer un bouton)
 
 * input.button (object, optional) : attributs du bouton collé à l'input (si addon true)
@@ -50,7 +52,7 @@ const input = locals.input || {};
 const classes = input.classes || [];
 const attributes = input.attributes || {};
 const inputType = input.type || 'text';
-const describedby = input.describedby || [];
+const describedby = input.describedby || [];
 const label = {
   label: input.label,
   for: input.id,
@@ -60,7 +62,7 @@ const label = {
 
 classes.push(`${prefix}-input`);
 
-const builder = new MessageBuilder(input.id);
+const builder = new MessageBuilder(input.id, input.includeEmptyMessagesGroup);
 
 if (input.valid) {
   builder.addValid(input.valid);
@@ -69,7 +71,7 @@ if (input.error) {
   builder.addError(input.error);
 }
 
-describedby.push(...builder.ids);
+if (input.includeEmptyMessagesGroup !== false) describedby.push(...builder.ids);
 
 if (input.hint) {
   label.hint = input.hint;
@@ -78,9 +80,8 @@ if (input.hint) {
 if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
 
 if (input.required === true) attributes['aria-required'] = true;
-if (input.disabled === true) {
-  attributes['disabled'] = '';
-}
+if (input.disabled === true) attributes['disabled'] = '';
+
 if (input.placeholder) attributes['placeholder'] = input.placeholder;
 if (input.name) attributes.name = input.name;
 if (input.value) attributes.value = input.value;
@@ -118,3 +119,4 @@ else {%>
 <% } %>
 
 <%- include('../../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+
