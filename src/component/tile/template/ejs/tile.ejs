@@ -3,7 +3,7 @@
 
 * tile.title (string, required) : titre de la tuile
 
-* tile.tag (string, optional) : Tag du titre de la tuile
+* tile.markup (string, optional) : (default: h3) Niveau de titre de la tuile
 
 * tile.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la tuile
 
@@ -29,7 +29,7 @@
 <%
 let tile = locals.tile || {};
 let classes = tile.classes || [];
-const tag = tile.tag || 'h3';
+const markup = tile.markup || 'h3';
 classes.push(`${prefix}-tile`);
 
 if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
@@ -48,7 +48,7 @@ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 
 <div <%- includeClasses(classes)%>>
   <div class="<%= prefix %>-tile__body">
-    <<%= tag %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></<%= tag %>>
+    <<%= markup %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></<%= markup %>>
     <% if(tile.description !== undefined) { %>
     <p class="<%= prefix %>-tile__desc"><%= tile.description %></p>
     <% } %>
