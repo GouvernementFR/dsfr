@@ -1,0 +1,43 @@
+<%
+const addressData = JSON.parse(include('../../../../../pattern/address/example/data/address.json.ejs'));
+
+const data = {
+  id: 'identity',
+  legend: `<h6>${getText('address.legend', 'register')}</h6>`,
+  classes: [prefix + '-mb-0'],
+  elements: [
+    {
+      type: 'hint',
+      data: {
+        text: getText('hint.mandatory', 'form')
+      }
+    },
+    {
+      type: 'fieldset',
+      data: addressData
+    },
+    {
+      type: 'buttonsGroup',
+      base: 'button',
+      template: 'buttons-group',
+      data: {
+        inline: true,
+        classes: [prefix + '-btns-group--right', prefix + '-mt-2v'],
+        buttons: [
+          {
+            label: getText('button.previous', 'register'),
+            kind: 2
+          },
+          {
+            label: getText('button.valid', 'register'),
+            kind: 1,
+            type: 'submit'
+          }
+        ]
+      }
+    }
+  ]
+};
+%>
+
+<%- JSON.stringify(data); %>

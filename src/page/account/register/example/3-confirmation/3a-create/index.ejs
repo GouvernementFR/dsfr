@@ -1,21 +1,17 @@
 <%
 const sample = getSample(include);
 const register = {
-  create: {
-    form: false,
-    hint: getText('hint.confirmation', 'register'),
-    title: false,
-    desc: false,
-    alert: {
-      id: uniqueId('alert'),
-      size: 'sm',
-      text: getText('alert.confirmation.create', 'register'),
-      type: 'success',
-      classes: [prefix + '-mb-6v']
+  segments: [
+    {
+      type: 'alert',
+      data: {
+        text: getText('confirmation.create.alert', 'register'),
+        type: 'success',
+        hint: getText('confirmation.create.alert.hint', 'register')
+      }
     }
-  },
-  connect: false,
+  ]
 };
 %>
 
-<%- sample('', '../../../example/sample/default.ejs', {register: register}, true, '../../../../../example/layout', {}); %>
+<%- sample('', '../../sample/default.ejs', { register: register }, true, '../../../../../example/layout', {}); %>

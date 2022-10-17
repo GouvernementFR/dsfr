@@ -1,114 +1,28 @@
 <%
 const sample = getSample(include);
-const civilitySexData = JSON.parse(include('../../../../../../pattern/civility/example/data/civility-sex.json.ejs'));
-const stepper = {
-  tag: 'h5',
-  title: getText('label.step.identity', 'register'),
-  nextStep: getText('label.step.address', 'register'),
-  currentStep: 2,
-  stepCount: 3,
-};
+const form = JSON.parse(include('../../data/identity.json.ejs', {}));
 
-const elements = [];
-
-elements.push(civilitySexData);
-elements.push({
-  
-})
-
-const form = {
-  id: 'register-step-2',
-  label: getText('label.fieldset', 'register'),
-  classes: [prefix + '-mb-0'],
-  elements: [
+const register = {
+  segments:
+  [
     {
-      type: 'fieldset',
+      type: 'stepper',
       data: {
-        id: uniqueId('civility-sex'),
-        legend: getText('legend.sex', 'civility'),
-        choice: true,
-        elements: [
-          {
-            type: 'radio',
-            data: {
-              name: 'civility',
-              id: 'civility-female',
-              size: 'sm',
-              label: getText('option.sex.female', 'civility'),
-            }
-          },
-          {
-            type: 'radio',
-            data: {
-              name: 'civility',
-              id: 'civility-male',
-              size: 'sm',
-              label: getText('option.sex.male', 'civility'),
-            }
-          },
-        ]
+        title: getText('steps.identity', 'register'),
+        nextStep: getText('steps.address', 'register'),
+        currentStep: 2,
+        stepCount: 3
       }
     },
     {
-      type: 'input',
-      base:'input/input-base',
-      template: 'input',
-      data: {
-        id: uniqueId('name'),
-        label: getText('label.family', 'name'),
-        name: 'name'
-      }
+      type:'hr'
     },
     {
-      type: 'input',
-      base:'input/input-base',
-      template: 'input',
-      data: {
-        id: uniqueId('firstname'),
-        label: getText('label.given', 'name'),
-        name: 'firstname'
-      }
-    },
-    {
-      type: 'checkbox',
-      template: 'checkbox-group',
-      data: {
-        id: uniqueId('checkbox-no-firstname'),
-        label: getText('label.no-firstname', 'name'),
-        name: 'no-firstname',
-        size: 'sm',
-        checked: false,
-        attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`},
-      },
-    },
-    {
-      type: 'buttonsGroup',
-      base: 'button',
-      template: 'buttons-group',
-      data: {
-        inline: true,
-        classes: [prefix + '-btns-group--right', prefix + '-mt-2v'],
-        buttons: [
-          {
-            label: getText('label.button.previous', 'register'),
-            kind: 2,
-          },
-          {
-            label: getText('label.button.valid', 'register'),
-            kind: 1,
-            type: 'submit',
-          }
-        ]
-      },
-    },
+      type: 'form',
+      data: form
+    }
   ]
-};
-const create = {
-  form: form,
-  title: getText('label.step.identity', 'register'),
-  hint: getText('hint.fieldset', 'login'),
-  desc: false
 }
 %>
 
-<%- sample('', '../../../example/sample/default.ejs', {register:{connect:false,stepper:stepper, create: create}}, true, '../../../../../example/layout', {}); %>
+<%- sample('', '../../../example/sample/default.ejs', { register: register }, true, '../../../../../example/layout', {}); %>

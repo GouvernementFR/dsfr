@@ -5,13 +5,13 @@ const recovery = {
     {
       type: 'alert',
       data: {
-        text: getText('alert.confirmation', 'recovery'),
+        text: getText('confirmation.alert', 'recovery'),
         type: 'success',
-        hint: getText('hint.confirmation', 'recovery')
+        hint: getText('confirmation.alert.hint', 'recovery')
       }
     }
   ]
 };
 %>
 
-<%- sample('', '../../example/sample/default.ejs', { recovery: recovery }, true, '../../../../example/layout', {}); %>
+<%- sample('', '../sample/default.ejs', { recovery: recovery }, true, '../../../../example/layout', {}); %>

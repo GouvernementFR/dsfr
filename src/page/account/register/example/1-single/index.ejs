@@ -1,5 +1,34 @@
 <%
 const sample = getSample(include);
+
+const connect = JSON.parse(include('../../../../../component/connect/example/data/connect.json.ejs'));
+const form = JSON.parse(include('../data/login.json.ejs', {}));
+
+const register = {
+  segments:
+  [
+    {
+      type: 'connect',
+      data: {
+        title: getText('connect.title', 'register'),
+        desc: getText('connect.desc', 'register'),
+        connect: connect
+      }
+    },
+    {
+      type: 'hr',
+      or: true,
+      data: {
+        text: getText('or', 'global')
+      }
+    },
+    {
+      type: 'form',
+      data: form
+    }
+  ]
+};
+
 %>
 
-<%- sample('', '../../example/sample/default.ejs', {}, true, '../../../../example/layout', {}); %>
+<%- sample('', '../../example/sample/default.ejs', { register: register }, true, '../../../../example/layout', {}); %>

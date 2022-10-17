@@ -1,13 +1,13 @@
 <%
 const data = {
   id: 'recovery',
-  legend: `<h6>${getText('label.recovery', 'recovery')}</h6>`,
+  legend: `<h6>${getText('recovery.legend', 'recovery')}</h6>`,
   classes: [`${prefix}-mb-0`],
   elements:[
     {
       type: 'paragraph',
       data: {
-        content: getText('label.desc', 'recovery'),
+        content: getText('recovery.desc', 'recovery'),
         size: 'sm'
       }
     },
@@ -15,8 +15,8 @@ const data = {
       type: 'input',
       data: {
         id: uniqueId('username'),
-        label: getText('label.username', 'recovery'),
-        hint: getText('hint.username', 'recovery'),
+        label: getText('recovery.username', 'recovery'),
+        hint: getText('recovery.username.hint', 'recovery'),
         name: 'username'
       }
     },
@@ -27,7 +27,7 @@ const data = {
         classes: [`${prefix}-btns-group--right`, `${prefix}-mt-2v`],
         buttons: [
           {
-            label: getText('label.button.valid', 'recovery'),
+            label: getText('recovery.button', 'recovery'),
             type: 'submit',
             kind: 1
           }

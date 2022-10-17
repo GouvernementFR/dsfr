@@ -7,6 +7,7 @@ label:
   long: Libellé de l'élément
 hint:
   default: Texte de description additionnel
+  mandatory: Sauf mention contraire, tous les champs sont obligatoires.
 message:
   error:
     default: Texte d’erreur obligatoire

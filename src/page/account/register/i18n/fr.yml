@@ -2,32 +2,41 @@ title: Création de compte
 description: Modèles de pages de création de compte
 doc:
 
-label:
-  default: Création de compte sur [Nom de service-site]
-  register:
-    default: Se créer un compte en choisissant un identifiant
-    connect: Se créer un compte avec FranceConnect
+heading:
+  title: Création de compte sur [Nom de service-site]
+  desc: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+steps:
+  login: Choisir un identifiant
+  identity: Renseigner une identité
+  address: Saisir des coordonnées
+connect:
+  title: Se créer un compte avec FranceConnect
+  desc: FranceConnect est la solution proposée par l’État pour sécuriser et simplifier la connexion aux services en ligne.
+login:
+  legend: Se créer un compte en choisissant un identifiant
   desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  fieldset: Formulaire de création de compte
-  checkbox: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
-  step:
-    login: Choisir un identifiant
-    identity: Renseigner une identité
-    address: Saisir des coordonnées
-  button:
-    valid: Valider
-    previous: Précédent
-hint:
-  username: "Format attendu : nom@domaine.fr"
-  fieldset: Sauf mention contraire, tous les champs sont obligatoires.
-  confirmation: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
-chapo:
-  default: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-alert:
-  confirmation:
-    create: Votre compte a bien été créé. Vous recevrez un courriel dans quelques instants contenant un lien de confirmation.
-    activate: Votre compte a bien été activé. Vous pouvez dès maintenant commencer à l’utiliser.
-
+  username:
+    default: Identifiant
+    hint: "Format attendu : nom@domaine.fr"
+  password: Mot de passe
+  optin: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
+  button: Valider
+identity:
+  legend: Renseigner une identité
+address:
+  legend: Coordonnées personnelles
+confirmation:
+  create:
+    alert:
+      default: Votre compte a bien été créé. Vous recevrez un courriel dans quelques instants contenant un lien de confirmation.
+      hint: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
+  activate:
+    alert:
+      default: Votre compte a bien été activé. Vous pouvez dès maintenant commencer à l’utiliser.
+      hint: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
+button:
+  valid: Valider
+  previous: Précédent
 subdir:
   title: Pages de création de compte
   1-single: Page de création de compte

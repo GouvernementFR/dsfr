@@ -4,7 +4,7 @@ const login = locals.login || {};
 const alert = {
   id: uniqueId('alert'),
   size: 'sm',
-  text: getText('label.error.login', 'login'),
+  text: getText('login.error', 'login'),
   type: 'error'
 };
 
@@ -13,7 +13,7 @@ const elements = [];
 elements.push({
   type: 'paragraph',
   data: {
-    content: getText('label.desc', 'login'),
+    content: getText('login.desc', 'login'),
     size: 'sm'
   }
 });
@@ -29,7 +29,7 @@ if (login.error) {
 fieldsetElements.push({
   type: 'hint',
   data: {
-    text: getText('hint.fieldset', 'login')
+    text: getText('hint.mandatory', 'form')
   }
 })
 
@@ -44,8 +44,8 @@ fieldsetElements.push({
   type: 'input',
   data: {
     id: uniqueId('username'),
-    hint: getText('hint.username', 'login'),
-    label: getText('label.username', 'login'),
+    label: getText('login.username', 'login'),
+    hint: getText('login.username.hint', 'login'),
     attributes: {
       ...attributes,
       'autocomplete': 'username',
@@ -61,7 +61,7 @@ fieldsetElements.push({
     name: 'password',
     id: uniqueId('password'),
     input: {
-      label: getText('label.password', 'login'),
+      label: getText('login.password', 'login'),
       attributes: attributes,
       autocomplete: 'current-password'
     },
@@ -87,7 +87,7 @@ elements.push({
   type: 'checkbox',
   data: {
     id: uniqueId('remember'),
-    label: getText('label.remember', 'login'),
+    label: getText('login.remember', 'login'),
     name: 'remember',
     checked: false,
     size: 'sm',
@@ -99,7 +99,7 @@ elements.push({
   data: {
     buttons: [
       {
-        label: getText('label.button.connect', 'login'),
+        label: getText('login.button', 'login'),
         kind: 1,
         classes: [prefix + '-mt-2v']
       }
@@ -109,7 +109,7 @@ elements.push({
 
 const data = {
   id: uniqueId('login'),
-  legend: `<h5>${getText('label.login', 'login')}</h5>`,
+  legend: `<h6>${getText('login.legend', 'login')}</h6>`,
   elements: elements
 };
  %>
