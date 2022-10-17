@@ -10,10 +10,10 @@
 
 <main <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
   <% if (page.heading) { %>
-  <%- include('elements/heading', { heading: page.heading }); %>
+  <%- include('blocks/heading', { heading: page.heading }); %>
   <% } %>
 
   <% if (page.block) { %>
-    <%- include(`elements/blocks/${page.block.type}`, { block: page.block }); %>
+    <%- include(`blocks/${page.block.type}`, { block: page.block }); %>
   <% } %>
 </main>

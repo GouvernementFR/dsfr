@@ -12,9 +12,9 @@
  %>
 
 <div>
-  <%- include('../../../../../../component/alert/template/ejs/alert.ejs', { alert: alert })  %>
+  <%- include('../../../../../component/alert/template/ejs/alert.ejs', { alert: alert })  %>
 
   <% if (data.hint) { %>
-    <%- include('../../../../../../component/form/template/ejs/hint.ejs', { hint: { text: data.hint } });  %>
+    <%- include('../../../../../component/form/template/ejs/hint.ejs', { hint: { text: data.hint } });  %>
   <% } %>
 </div>
