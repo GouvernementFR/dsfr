@@ -18,7 +18,6 @@ elements.push({
   }
 });
 
-
 if (login.error) {
   elements.push({
     type: 'alert',
@@ -111,7 +110,7 @@ elements.push({
 
 const data = {
   id: uniqueId('login'),
-  legend: `<h6>${getText('login.legend', 'login')}</h6>`,
+  legend: `<h5>${getText('login.legend', 'login')}</h5>`,
   elements: elements
 };
  %>

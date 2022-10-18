@@ -1,4 +1,5 @@
 <%
   const segment = locals.segment || {};
+  const stepper = { ...segment.data, markup: 'h3' };
  %>
-<%- include('../../../../../component/stepper/template/ejs/stepper.ejs', { stepper: segment.data })  %>
+<%- include('../../../../../component/stepper/template/ejs/stepper.ejs', { stepper: stepper })  %>
