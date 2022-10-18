@@ -53,9 +53,9 @@ if (select.required === true) selectAttrs['required'] = '';
 if (select.disabled === true) selectAttrs['disabled'] = '';
 %>
 
-<%- include('../../../form/template/ejs/label', {label:select}); %>
+<%- include('../../../form/template/ejs/label', {label:{label:select.label, id: select.id, hint: select.hint}}); %>
 
-<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.id %>">
+<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
   <% if (select.placeholder != undefined) { %>
   <option value="" selected disabled hidden><%= select.placeholder %></option>
   <% } %>

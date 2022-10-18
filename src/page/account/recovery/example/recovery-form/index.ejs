@@ -1,0 +1,45 @@
+<%
+const sample = getSample(include);
+
+const form = {
+  id: 'recovery',
+  label: getText('label.fieldset', 'recovery'),
+  classes: [prefix + '-mb-0'],
+  items:[
+    {
+      type: 'input',
+      base: 'input/input-base',
+      template: 'input',
+      data: {
+        id: uniqueId('username'),
+        label: getText('label.username', 'recovery'),
+        hint: getText('hint.username', 'recovery'),
+        name: 'username',
+      }
+    },
+    {
+      type: 'buttonsGroup',
+      base: 'button',
+      template: 'buttons-group',
+      data: {
+        inline: true,
+        classes: [prefix + '-btns-group--right', prefix + '-mt-2v'],
+        buttons: [
+          {
+            label: getText('label.button.valid', 'recovery'),
+            type: 'submit',
+            kind: 1,
+          }
+        ]
+      },
+    },
+  ]
+};
+const create = {
+  form: form,
+  title: getText('label.recovery', 'recovery'),
+  desc: getText('label.desc', 'recovery'),
+}
+%>
+
+<%- sample('', '../../example/sample/default.ejs', {recovery:{create: create}}, true, '../../../example/layout', {}); %>

@@ -1,0 +1,21 @@
+<%
+const sample = getSample(include);
+const register = {
+  create: {
+    form: false,
+    hint: getText('hint.confirmation', 'register'),
+    title: false,
+    desc: false,
+    alert: {
+      id: uniqueId('alert'),
+      size: 'sm',
+      text: getText('alert.confirmation.activate', 'register'),
+      type: 'success',
+      classes: [prefix + '-mb-6v']
+    }
+  },
+  connect: false,
+};
+%>
+
+<%- sample('', '../../../example/sample/default.ejs', {register: register}, true, '../../../../example/layout', {}); %>

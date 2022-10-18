@@ -1,0 +1,74 @@
+<%#
+# paramètres date
+
+* date (object, required) : objet contenant les paramètres
+
+* date.id (string, required) : id du composant
+
+* date.legend (string, optionnal) : légende du composant
+
+* date.hint (string, optionnal) : légende du composant
+
+* date.error (string || array, optionnal) : libellé ou tableau de données des libellés erreur du composant
+
+* date.items (array, required) : tableau de données de chaque enfant du composant
+
+* date.items[].type (string) : type de champs utilisé
+    ** input : date champs de saisie
+  
+* date.items[].hint (string, required) : légende du champ
+
+* date.items[].label (string, required) : libellé du champ
+
+* date.items[].inline (boolean, optional) : ajoute le modifier inline sur le composant control
+
+* date.items[].grow (boolean, optional) : ajoute le modifier inline-grow sur le composant control
+
+* date.items[].modifier (string, optional) : nom du modifieur de control, ex: 'year' ou 'number'
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const date = locals.date || {};
+const fieldset = {};
+const elements = [];
+if (date.items && date.items.length) {
+  date.items.forEach((item, index) => {
+    const type = item.type || 'input';
+    const template = item.template || 'input';
+    const path = type === 'input' ? 'input/input-base' : type;
+    
+    elements.push({
+      path: `${path}/template/ejs/${template}`,
+      modifier: item.modifier || null,
+      inline: item.inline || null,
+      grow: item.grow || null,
+      breakAfter: item.breakAfter || null,
+      data: {
+        [item.type]: {
+          id: `${date.id}-${index}`,
+          name: item.name,
+          label: item.label || '',
+          value: item.value || '',
+          hint: item.hint || null,
+          size: item.size || '',
+          attributes: item.attributes || {},
+          kind: item.kind || '',
+          options: item.options || [],
+          placeholder: item.placeholder || '',
+          error: item.error,
+          type: item.inputType,
+        }
+      }
+    }); 
+  });
+}
+fieldset.elements = elements;
+fieldset.legend = date.legend;
+fieldset.hint = date.hint;
+fieldset.error = date.error;
+fieldset.id = date.id;
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>

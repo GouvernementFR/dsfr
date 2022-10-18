@@ -1,0 +1,113 @@
+<%
+	const sample = getSample(include);
+	const login = locals.login || {};
+	const alert = login.alert || undefined;
+	const connect = {
+		login: getText('default.login', 'connect'),
+		brand: getText('default.brand', 'connect'),
+		link: {
+			label: getText('default.link', 'connect'),
+			href: getText('default.href', 'connect')
+		},
+	};
+
+	const form = {
+    id: uniqueId('login'),
+    label: getText('label.fieldset', 'login'),
+    items:[
+			{
+				type: 'input',
+				base:'input/input-base',
+				template: 'input',
+				data: {
+					id: uniqueId('username'),
+					hint: getText('hint.username', 'login'),
+					label: getText('label.username', 'login'),
+					error: alert ? alert.type === 'error' : undefined,
+					attributes: {
+						'aria-describedby': alert ? alert.id : undefined,
+						'autocomplete': 'username',
+						'aria-required': true
+					},
+					labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+					name: 'username'
+				}
+			},
+			{
+				type: 'password',
+				template: 'password',
+				data: {
+					name: 'password',
+					id: uniqueId('password'),
+					input: {
+						error: alert ? alert.type === 'error' : undefined,
+						label: getText('label.password', 'login'),
+						labelClasses: login.error ? [prefix + '-label--error'] : undefined,
+						attributes: {
+							'aria-describedby': alert ? alert.id : undefined
+						},
+						autocomplete: 'current-password'
+					},
+					checkbox: {},
+					format: false,
+					link: {
+						href: contentPlaceholder(getText('link.href', 'password')),
+						label: getText('link.label', 'password'),
+					}
+				}
+			},
+			{
+				type: 'checkbox',
+				template: 'checkbox-group',
+				data: {
+					id: uniqueId('remember'),
+					label: getText('label.remember', 'login'),
+					name: 'remember',
+					checked: false,
+					size: 'sm',
+				}
+			},
+			{
+				type: 'buttonsGroup',
+				base: 'button',
+				template: 'buttons-group',
+				data: {
+					buttons: [
+						{
+							label: getText('label.button.connect', 'login'),
+							kind: 1,
+							classes: [prefix + '-mt-2v']
+						}
+					]
+				}
+			},
+    ]
+	};
+
+	const registerButton = {
+		label: getText('label.button.create', 'login'),
+		kind: 2
+	};
+
+	const data = {
+		title: getText('label.default', 'login'),
+		connect: {
+			...connect,
+			title: getText('label.connect', 'login'),
+		},
+		login: {
+			title: getText('label.login', 'login'),
+			desc: getText('label.desc', 'login'),
+			hint: getText('hint.fieldset', 'login'),
+			alert: alert,
+			form: {...form},
+		},
+		register: {
+			title: getText('label.register', 'login'),
+			button: registerButton
+		}
+	};
+
+ %>
+
+<%- include('../../../template/ejs/login.ejs', { login: data }); %>

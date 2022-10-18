@@ -30,6 +30,7 @@
 
   &__details {
     @include text-style(xs);
+    @include margin-top(3v);
   }
 
   @include hide-last-step-detail();
@@ -39,7 +40,6 @@
     --default-inner: calc(var(--default-outer) - 6px);
     --active-outer: calc((100% + 6px) / var(--current-step));
     --active-inner: calc(var(--active-outer) - 6px);
-    @include margin-bottom(3v);
     @include size(100%, 6px);
     background-repeat: no-repeat;
     background-size: calc((100% + 6px) * var(--current-step) / var(--steps) - 6px) 100%, 100% 100%;

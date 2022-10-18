@@ -1,4 +1,6 @@
 <%
+const countries = JSON.parse(include('../../../address/example/sample/data/country'));
+
 const name = {
     id: uniqueId('name-international'),
     label: getText('sample', 'name'),
@@ -8,31 +10,28 @@ const name = {
             template: 'select-group',
             label: getText('label.country', 'name'),
             placeholder: getText('option.placeholder', 'select'),
-            options: [
-                {value:'1', label: getText('country.england', 'name')},
-                {value:'2', label: getText('country.france', 'name')},
-                {value:'3', label: getText('country.japan', 'name')},
-            ]
+            name: 'country',
+            options: countries.min
         },
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.name', 'name'),
-            value: 'name'
+            name: 'name'
         },
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.firstname', 'name'),
-            value: 'firstname',
+            name: 'firstname',
         },
         {
             type: 'checkbox',
             template: 'checkbox-group',
             label: getText('label.no-firstname', 'name'),
-            value: 'firstname-disabled',
+            name: 'firstname-disabled',
             size: 'sm',
-            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); }`},
+            attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`},
         }
     ]
 }

@@ -1,0 +1,66 @@
+<%#
+# paramètres Siret
+
+* society (object, required) : objet contenant les paramètres
+
+* society.id (string, required) : id du composant
+
+* society.legend (string, optionnal) : légende du composant
+
+* society.label (string, optionnal) : libellé du composant
+
+* society.type (string) : type de champs utilisé chaque enfant du composant
+    ** radio : civilité bouton radio
+    ** select : civilité liste déroulante
+
+* society.items (array, required) : tableau de données de chaque enfant du composant
+
+* society.items[].value (string, required) : valeur du champ
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const society = locals.society || {};
+const fieldset = {};
+const elements = [];
+if (society.items && society.items.length) {
+  society.items.forEach((item, index) => {
+    const type = item.type || 'input';
+    const path = type === 'input' ? 'input/input-base' : type;
+
+    elements.push({
+      path: `${path}/template/ejs/${item.template}`,
+      modifier: item.modifier || null,
+      inline: item.inline || null,
+      grow: item.grow || null,
+      breakAfter: item.breakAfter || null,
+      classes: item.controlClasses || [],
+      tag: item.controlTag || 'div',
+      disabled: item.disabled || null,
+      data: {
+        [item.type]: {
+          id: `${society.id}-${item.name}`,
+          href: item.href || null,
+          name: item.name || null,
+          classes: item.classes || [],
+          label: item.label || '',
+          options: item.options || null,
+          value: item.value || null,
+          hint: item.hint || null,
+          attributes: item.attributes || {},
+          disabled: item.disabled || null,
+          placeholder: item.placeholder || null,
+        }
+      }
+    });
+
+  });
+}
+fieldset.elements = elements;
+fieldset.legend = society.legend || null;
+fieldset.id = society.id;
+if (society.label) fieldset.attributes = { 'aria-label': society.label}
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>

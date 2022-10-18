@@ -1,0 +1,36 @@
+<%
+const date = { 
+  id: uniqueId('date-default'),
+  legend: getText('legend.birthdate', 'date'),
+  hint: getText('hint.birthdate', 'date'),
+  items:[
+    {
+      type: 'input',
+      name: 'day',
+      label: getText('option.day', 'date'),
+      hint: getText('hint.day', 'date'),
+      inline: true,
+      modifier: 'number',
+    },
+    {
+      type: 'input',
+      name: 'month',
+      label: getText('option.month', 'date'),
+      hint: getText('hint.month', 'date'),
+      inline: true,
+      modifier: 'number',
+    },
+    {
+      type: 'input',
+      name: 'year',
+      label: getText('option.year', 'date'),
+      hint: getText('hint.year', 'date'),
+      inline: true,
+      grow: true,
+      modifier: 'year',
+    },
+  ]
+};
+%>
+
+<%- include('../../template/ejs/date', { date: date }); %>

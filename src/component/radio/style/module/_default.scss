@@ -16,9 +16,9 @@
   &:first-child {
     @include margin-top(-3v);
 
-    input[type="radio"] + label {
-      @include margin-top(0);
-    }
+    // input[type="radio"] + label {
+    //   @include margin-top(0);
+    // }
   }
 
   /**

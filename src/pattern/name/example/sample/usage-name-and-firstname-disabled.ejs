@@ -5,32 +5,32 @@ const name = {
     items:[
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.name', 'name'),
-            value: 'name'
+            name: 'name'
         },
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.usage-name', 'name'),
             hint: getText('hint.usage-name', 'name'),
-            value: 'usage-name'
+            name: 'usage-name'
         },
         {
             type: 'input',
-            template: 'input-group',
+            template: 'input',
             label: getText('label.firstname', 'name'),
-            value: 'firstname',
+            name: 'firstname',
             disabled: true,
         },
         {
             type: 'checkbox',
             template: 'checkbox-group',
             label: getText('label.no-firstname', 'name'),
-            value: 'firstname-disabled',
+            name: 'firstname-disabled',
             checked: true,
             size: 'sm',
-            attributes: {onclick: `const formGroup = this.closest('.fr-form-group'); const firstnameFieldset = formGroup && formGroup.previousElementSibling.firstElementChild; if (this.checked) { firstnameFieldset.setAttribute('disabled', ''); } else { firstnameFieldset.removeAttribute('disabled'); }`},
+            attributes: {onclick: `const control = this.closest('.fr-control'); const firstnameControl = control.previousElementSibling; const firstnameInput = firstnameControl.querySelector('input'); if (this.checked) { firstnameControl.classList.add('fr-control--disabled'); firstnameInput.setAttribute('disabled', ''); } else { firstnameControl.classList.remove('fr-control--disabled'); firstnameInput.removeAttribute('disabled'); }`},
         }
     ]
 }
