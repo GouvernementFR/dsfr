@@ -15,5 +15,6 @@
   const hint = locals.hint || {};
   const classes = [...hint.classes || [], `${prefix}-hint-text`];
   const attributes = { ...hint.attributes, id: hint.id };
+  const markup = hint.markup || 'span';
 %>
-<span class="<%= prefix %>-hint-text"><%= hint.text %></span>
+<<%= markup%> class="<%= prefix %>-hint-text"><%= hint.text %></<%= markup%>>

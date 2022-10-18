@@ -5,7 +5,7 @@ doc:
 heading:
   title: Récupération de mot de passe sur [Nom du service-site]
   desc: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
-recovery:
+recover:
   legend: Récupérer le mot de passe de votre compte
   desc: Description — Veuillez saisir l’adresse électronique associée à votre compte. Nous vous enverrons plus d’informations sur pour réinitialiser votre mot de passe
   username:

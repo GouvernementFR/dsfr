@@ -1,16 +1,16 @@
 <%
 const sample = getSample(include);
-const recovery = locals.recovery || {};
+const recover = locals.recover || {};
 
 const page = {
   heading: {
-    title: getText('heading.title', 'recovery'),
-    chapo: getText('heading.desc', 'recovery')
+    title: getText('heading.title', 'recover'),
+    chapo: getText('heading.desc', 'recover')
   },
   block: {
     type: 'colored',
     col: 6,
-    segments: recovery.segments
+    segments: recover.segments
   }
 };
 %>
