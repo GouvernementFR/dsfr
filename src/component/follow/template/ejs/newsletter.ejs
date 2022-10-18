@@ -25,7 +25,7 @@ let newsletterClasses = [prefix + '-follow__newsletter'];
 
 <div <%- includeClasses(newsletterClasses); %> >
   <div>
-    <p class="<%= prefix %>-h5"><%- newsletter.title %></p>
+    <h2 class="<%= prefix %>-h5"><%- newsletter.title %></h2>
     <% if (newsletter.desc) { %>
     <p class="<%= prefix %>-text--sm"><%- newsletter.desc %></p>
     <% } %>

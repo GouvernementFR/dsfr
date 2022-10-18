@@ -9,25 +9,28 @@
 
 * stepper.nextStep (String, required): Titre de la prochaine étape
 
+* stepper.markup (string, optional) : (défaut : h2) niveau de titre
+
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
  let stepper = locals.stepper || {};
  let classes = stepper.classes || [];
- const tag = stepper.tag || 'h2';
+ const markup = stepper.markup || 'h2';
+
  let stepAttrs = {};
  classes.push(prefix + '-stepper');
 %>
 
 <div <%- includeClasses(classes); %>>
   <% if (stepper.title !== undefined) { %>
-    <<%= tag %> class="<%= prefix%>-stepper__title">
+    <<%= markup %> class="<%= prefix%>-stepper__title">
       <% if (stepper.currentStep && stepper.stepCount) { %>
         <span class="<%= prefix %>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
       <% } %>
       <%- stepper.title %>
-    </<%= tag %>>
+    </<%= markup %>>
   <% } %>
 
 
