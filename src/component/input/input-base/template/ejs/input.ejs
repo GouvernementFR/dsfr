@@ -37,6 +37,8 @@
 
 * input.button (object, optional) : attributs du bouton collé à l'input (si addon true)
 
+* input spellcheck (boolean, optional) : ajout de l'attribut spellcheck si définit avec la valeur définie
+
 * input.attributes (object, optional) : attributs spécifiques à rajouter sur l'input
 
 * input.classes (array, optional) : classes spécifiques à rajouter sur l'input
@@ -93,6 +95,7 @@ if (input.name) attributes.name = input.name;
 if (input.value) attributes.value = input.value;
 if (input.autocomplete) attributes.autocomplete = input.autocomplete;
 attributes.id = input.id;
+if (input.spellcheck === true || input.spellcheck === false) attributes.spellcheck = `${input.spellcheck}`;
 %>
 
 <%- include('../../../../form/template/ejs/label', { label: label }); %>

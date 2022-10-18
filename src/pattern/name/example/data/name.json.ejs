@@ -21,8 +21,8 @@ const lastname = {
     id: uniqueId('family-name'),
     label: getText('label.family', 'name'),
     name: 'family-name',
+    spellcheck: false,
     attributes: {
-      spellcheck: false,
       autocomplete: 'family-name'
     }
   }
@@ -34,9 +34,7 @@ const usual = {
     id: uniqueId('usual'),
     label: getText('label.usual', 'name'),
     name: 'usual-name',
-    attributes: {
-      spellcheck: false
-    }
+    spellcheck: false
   }
 };
 
@@ -46,9 +44,7 @@ const birth = {
     id: uniqueId('birth'),
     label: getText('label.birth', 'name'),
     name: 'birth-name',
-    attributes: {
-      spellcheck: false
-    }
+    spellcheck: false
   }
 };
 
@@ -59,9 +55,7 @@ const married = {
     label: getText('label.usual', 'name'),
     hint: getText('hint.married', 'name'),
     name: 'married-name',
-    attributes: {
-      spellcheck: false
-    }
+    spellcheck: false
   }
 };
 
@@ -72,8 +66,8 @@ const firstname = {
     id: firstnameId,
     label: getText('label.given', 'name'),
     name: 'given-name',
+    spellcheck: false,
     attributes: {
-      spellcheck: false,
       autocomplete: 'given-name'
     }
   }
