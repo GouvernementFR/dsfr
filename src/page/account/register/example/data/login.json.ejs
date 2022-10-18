@@ -19,8 +19,6 @@ elements.push({
 
 elements.push({
   type: 'input',
-  base: 'input/input-base',
-  template: 'input',
   data: {
     id: uniqueId('username'),
     label: getText('login.username', 'login'),
@@ -31,8 +29,6 @@ elements.push({
 
 elements.push({
   type: 'password',
-  template: 'password',
-  name: 'password',
   data: {
     id: uniqueId('password'),
     input: {
@@ -40,23 +36,12 @@ elements.push({
       autocomplete: 'new-password'
     },
     checkbox: true,
-    format: {
-      label: getText('format.label', 'password'),
-      items: [
-        {
-          label: getText('format.characters', 'password'),
-          state: 'info'
-        },
-        {
-          label: getText('format.special', 'password'),
-          state: 'info'
-        },
-        {
-          label: getText('format.digit', 'password'),
-          state: 'info'
-        }
-      ]
-    }
+    messages: [
+      { text: getText('format.label', 'password') },
+      { text: getText('format.characters', 'password'), type: 'info'},
+      { text: getText('format.special', 'password'), type: 'info'},
+      { text: getText('format.digit', 'password'), type: 'info'}
+    ]
   }
 })
 

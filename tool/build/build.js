@@ -69,7 +69,6 @@ const build = async (settings) => {
 
     for (const pck of packages) {
       if (pck.draft || !pck.example) continue;
-      console.log(pck.id);
       try {
         await buildExample(pck, settings.locale);
       } catch (e) {

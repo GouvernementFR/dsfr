@@ -3,7 +3,7 @@ const company = locals.company || {};
 const name = {
   id: company.id || uniqueId('representative'),
   label: company.label || getText('fieldset.representative', 'company'),
-  fields: ['usual', 'birth', 'firstname']
+  fields: ['usual', 'birth', 'firstnames']
 }
 const data = JSON.parse(include('../../../name/example/data/name.json.ejs', { name : name }));
 

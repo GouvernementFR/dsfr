@@ -9,15 +9,11 @@ class ExampleNode {
     this._hasData = false;
     this._children = [];
 
-    console.log('node', this.path, fs.existsSync(this.path));
-
     if (fs.existsSync(this.path)) this._parse();
   }
 
   _parse () {
     const entries = fs.readdirSync(this.path, { withFileTypes: true });
-
-    console.log(entries.length, this.path);
 
     for (const entry of entries) {
       switch (true) {
