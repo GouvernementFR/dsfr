@@ -23,6 +23,8 @@
 
 * input.error (string, optional) : message d'erreur
 
+* input.massages (array, optional) : array de messages
+
 * input.hint (string, optional) : message d'aide
 
 * input.required (boolean, optional)
@@ -69,6 +71,10 @@ if (input.valid) {
 }
 if (input.error) {
   builder.addError(input.error);
+}
+
+if (input.messages) {
+  input.messages.forEach(message => builder.add(message.type, message.text));
 }
 
 if (input.includeEmptyMessagesGroup !== false) describedby.push(...builder.ids);
