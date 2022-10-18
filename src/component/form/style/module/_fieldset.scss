@@ -84,14 +84,14 @@
 
   &__legend,
   &__element {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    #{ns(fieldset)} {
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6,
+    > p,
+    > #{ns(fieldset)} {
       &:last-child {
         @include after('', block) {
           @include margin-bottom(-4v);
