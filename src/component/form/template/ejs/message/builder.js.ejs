@@ -15,6 +15,10 @@ class MessageBuilder {
     };
   }
 
+  get isIncluded () {
+    return this._group.includeEmpty || this.messages.length > 0;
+  }
+
   get messagesGroup () {
     return {
       ...this._group,

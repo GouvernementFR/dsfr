@@ -13,6 +13,8 @@
 
 * checkbox.disabled (boolean, optional) : si true, désactive la checkbox
 
+* input.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
 * checkbox.checked (boolean, optional) : si true, la checkbox est cochée
 
 %>
@@ -34,7 +36,7 @@ const label = {
   hint: checkbox.hint
 };
 
-const builder = new MessageBuilder(checkbox.id);
+const builder = new MessageBuilder(checkbox.id, checkbox.includeEmptyMessagesGroup);
 
 if (checkbox.valid) {
     builder.addValid(checkbox.valid);
@@ -43,7 +45,7 @@ if (checkbox.error) {
     builder.addError(checkbox.error);
 }
 
-describedby.push(...builder.ids);
+if (builder.isIncluded) describedby.push(...builder.ids);
 
 if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
 

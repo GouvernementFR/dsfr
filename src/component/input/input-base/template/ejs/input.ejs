@@ -77,7 +77,7 @@ if (input.messages) {
   input.messages.forEach(message => builder.add(message.type, message.text));
 }
 
-if (input.includeEmptyMessagesGroup !== false) describedby.push(...builder.ids);
+if (builder.isIncluded) describedby.push(...builder.ids);
 
 if (input.hint) {
   label.hint = input.hint;

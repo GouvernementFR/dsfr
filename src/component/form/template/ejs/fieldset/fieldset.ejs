@@ -19,6 +19,10 @@
 
 * fieldset.valid (string, optional) : message de succès
 
+* fieldset.massages (array, optional) : array de messages
+
+* fieldset.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
 * fieldset.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
 
 * fieldset.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
@@ -60,7 +64,7 @@ if (fieldset.legend || fieldset.hint) {
   };
 }
 
-const builder = new MessageBuilder(fieldset.id);
+const builder = new MessageBuilder(fieldset.id, fieldset.includeEmptyMessagesGroup);
 
 if (fieldset.error) {
   classes.push(`${prefix}-fieldset--error`);
@@ -73,7 +77,11 @@ if (fieldset.valid) {
   builder.addValid(fieldset.valid);
 }
 
-labelledBy.push(...builder.ids);
+if (fieldset.messages) {
+  fieldset.messages.forEach(message => builder.add(message.type, message.text));
+}
+
+if (builder.isIncluded) labelledBy.push(...builder.ids);
 
 if (fieldset.disabled === true) attributes.disabled = '';
 

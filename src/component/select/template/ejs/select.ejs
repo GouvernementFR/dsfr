@@ -55,7 +55,7 @@ if (select.valid) {
 if (select.error) {
   builder.addError(select.error);
 }
-if (select.includeEmptyMessagesGroup !== false) describedby.push(...builder.ids);
+if (builder.isIncluded) describedby.push(...builder.ids);
 
 if (select.hint) {
     label.hint = select.hint;

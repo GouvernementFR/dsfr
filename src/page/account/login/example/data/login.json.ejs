@@ -18,13 +18,15 @@ elements.push({
   }
 });
 
-const fieldsetElements = [];
+
 if (login.error) {
-  fieldsetElements.push({
+  elements.push({
     type: 'alert',
     data: alert
   });
 }
+
+const fieldsetElements = [];
 
 fieldsetElements.push({
   type: 'hint',
