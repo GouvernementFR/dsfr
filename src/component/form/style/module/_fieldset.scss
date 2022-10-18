@@ -91,7 +91,6 @@
     h5,
     h6,
     p,
-    #{ns(hint-text)},
     #{ns(fieldset)} {
       &:last-child {
         @include after('', block) {
