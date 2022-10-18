@@ -7,7 +7,7 @@ const countries = JSON.parse(include('../../../address/example/data/countries-se
 const country = {
   type: 'select',
   data: {
-    id: uniqueId('country-select'),
+    id: uniqueId('country'),
     label: getText('label.country', 'address'),
     placeholder: getText('option.placeholder', 'select'),
     name: 'country',
@@ -18,7 +18,7 @@ const country = {
 const lastname = {
   type: 'input',
   data: {
-    id: uniqueId('input-family-name'),
+    id: uniqueId('family-name'),
     label: getText('label.family', 'name'),
     name: 'family-name',
     attributes: {
@@ -31,7 +31,7 @@ const lastname = {
 const usual = {
   type: 'input',
   data: {
-    id: uniqueId('input-usual-name'),
+    id: uniqueId('usual'),
     label: getText('label.usual', 'name'),
     name: 'usual-name',
     attributes: {
@@ -43,7 +43,7 @@ const usual = {
 const birth = {
   type: 'input',
   data: {
-    id: uniqueId('input-birth-name'),
+    id: uniqueId('birth'),
     label: getText('label.birth', 'name'),
     name: 'birth-name',
     attributes: {
@@ -55,7 +55,7 @@ const birth = {
 const married = {
   type: 'input',
   data: {
-    id: uniqueId('input-married-name'),
+    id: uniqueId('married'),
     label: getText('label.usual', 'name'),
     hint: getText('hint.married', 'name'),
     name: 'married-name',
@@ -65,7 +65,7 @@ const married = {
   }
 };
 
-const firstnameId = uniqueId('input-firstname');
+const firstnameId = uniqueId('given');
 const firstname = {
   type: 'input',
   data: {
@@ -113,7 +113,7 @@ const buildFieldset = () => {
   const checkbox = {
     type: 'checkbox',
     data: {
-      id: uniqueId('checkbox-name'),
+      id: uniqueId('disabler'),
       label: getText('label.no-firstname', 'name'),
       name: 'firstname-disabled',
       checked: name.checked || false,
@@ -160,7 +160,7 @@ for (const field of fields) {
 }
 
 const data = {
-  id: name.id || uniqueId('name-default'),
+  id: name.id || uniqueId('name'),
   label: name.label || getText('label.fieldset', 'name'),
   elements: elements
 }

@@ -6,7 +6,7 @@ if (address.professional) {
   elements.push({
     type: 'input',
     data: {
-      id: uniqueId('address-item'),
+      id: uniqueId('name'),
       label: getText('label.name', 'address'),
       name: 'name'
     }
@@ -16,7 +16,7 @@ if (address.professional) {
 elements.push({
   type: 'input',
   data: {
-    id: uniqueId('address-item'),
+    id: uniqueId('address'),
     label: getText('label.address', 'address'),
     hint: getText('hint.address', 'address'),
     name: 'address-line1',
@@ -26,7 +26,7 @@ elements.push({
 elements.push({
   type: 'input',
   data: {
-    id: uniqueId('address-item'),
+    id: uniqueId('complement'),
     label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
     hint: getText('hint.complement', 'address'),
     name: 'address-line2',
@@ -37,7 +37,7 @@ if (address.locality) {
   elements.push({
     type: 'input',
     data: {
-      id: uniqueId('address-item'),
+      id: uniqueId('locality'),
       label: getText('label.locality', 'address'),
       name: 'address-level3',
     }
@@ -49,7 +49,7 @@ elements.push({
   inline: true,
   modifier: 'postal',
   data: {
-    id: uniqueId('address-item'),
+    id: uniqueId('postal'),
     label: getText('label.postal', 'address'),
     name: 'postal-code'
   }
@@ -60,7 +60,7 @@ elements.push({
   inline: 'md',
   grow: true,
   data: {
-    id: uniqueId('address-item'),
+    id: uniqueId('city'),
     label: getText('label.city', 'address'),
     name: 'address-level2'
   }
@@ -70,7 +70,7 @@ if (address.professional) {
   elements.push({
     type: 'input',
     data: {
-      id: uniqueId('address-item'),
+      id: uniqueId('cedex'),
       label: getText('label.cedex', 'address'),
       name: 'business-postal-code'
     }
@@ -83,6 +83,7 @@ if (address.international) {
     type: 'select',
     data: {
       name: 'country',
+      id: uniqueId('country'),
       label: getText('label.country', 'address'),
       placeholder: getText('option.placeholder', 'select'),
       options: options

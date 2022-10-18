@@ -9,8 +9,8 @@ const data = JSON.parse(include('../../../name/example/data/name.json.ejs', { na
 
 data.elements.push({
   type: 'input',
-  base: 'input/input-base',
   data: {
+    id: company.id || uniqueId('representative'),
     label: getText('label.position', 'company'),
     name: 'position'
   }

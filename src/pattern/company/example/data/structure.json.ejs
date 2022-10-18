@@ -5,13 +5,14 @@ const structures = ['EI', 'EURL', 'SARL', 'SASU', 'SAS', 'SA', 'SNC', 'SCS', 'SC
 const options = structures.map(structure => { return {value: structure, label: getText(`structure.${structure}`, 'company')}; })
 
 const data = {
-  id: uniqueId('company-structure'),
+  id: uniqueId('structure'),
   label: getText('fieldset.structure', 'company'),
   elements: [
     {
       type: 'select',
       data: {
         name: 'structure',
+        id: uniqueId('structure'),
         label: getText('label.type', 'company'),
         placeholder: getText('option.placeholder', 'select'),
         options: options
