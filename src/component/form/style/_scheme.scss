@@ -58,7 +58,7 @@
     }
 
     &--error,
-    &--error &__legend  {
+    &--error &__legend {
       @include color.background-image(border plain error, (legacy:$legacy));
     }
 
@@ -68,7 +68,7 @@
     }
 
     &--valid,
-    &--valid &__legend  {
+    &--valid &__legend {
       @include color.background-image(border plain success, (legacy:$legacy));
     }
 

@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@media all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm) {
+@-moz-document url-prefix() {
   :root#{ns-attr(scrolling)} body {
     position: sticky;
   }

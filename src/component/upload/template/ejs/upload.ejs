@@ -27,7 +27,7 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% eval(include('../../../form/template/ejs/message/builder.js')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
 <%
 const upload = locals.upload || {};
 const classes = [prefix + '-upload'];

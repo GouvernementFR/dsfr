@@ -17,7 +17,7 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
-<% eval(include('../../../form/template/ejs/message/builder.js')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
 <%
 let checkbox = locals.checkbox || {};
 let attributes = checkbox.attributes || {};

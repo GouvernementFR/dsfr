@@ -53,6 +53,7 @@
         }
       }
     }
+
     &--error {
       #{ns(fieldset__content)} {
         @include before {
@@ -60,6 +61,7 @@
         }
       }
     }
+
     &--info {
       #{ns(fieldset__content)} {
         @include before {

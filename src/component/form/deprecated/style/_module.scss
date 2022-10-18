@@ -76,7 +76,7 @@
       &:first-child {
         @include margin-top(-4v);
       }
-      
+
       label {
         @include padding(3v 0);
 
@@ -106,11 +106,7 @@
     display: inline-block;
     @include margin-right(1v);
   }
-}
 
-#{ns(error-text)},
-#{ns(valid-text)},
-#{ns(info-text)} {
   & + #{ns(error-text)},
   & + #{ns(valid-text)},
   & + #{ns(info-text)} {
