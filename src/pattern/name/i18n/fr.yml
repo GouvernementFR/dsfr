@@ -10,7 +10,7 @@ label:
   country: Pays
   family: Nom
   given: Prénom
-  givens: Prénoms
+  givens: Prénom(s)
   fieldset: Demande de nom et prénom
   usual: Nom d'usage
   birth: Nom de naissance
