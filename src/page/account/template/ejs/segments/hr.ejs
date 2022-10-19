@@ -1,0 +1,10 @@
+<%
+const segment = locals.segment;
+const data = segment.data || {};
+%>
+<% if (segment.or) { %>
+  <%- include('../../../../../core/template/ejs/display/hr-or', { hr: data })  %>
+<% }  else { %>
+  <%- include('../../../../../core/template/ejs/display/hr')  %>
+<% } %>
+

@@ -19,5 +19,7 @@ example:
   style:
     - header
     - footer
+    - breadcrumb
   script:
     - header
+    - breadcrumb

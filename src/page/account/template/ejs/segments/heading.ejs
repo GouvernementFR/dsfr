@@ -1,0 +1,6 @@
+<%
+const segment = locals.segment || {};
+const data = segment.data || {};
+const markup = data.markup || 'h4';
+ %>
+<<%= markup %>><%- data.title %></<%= markup %>>

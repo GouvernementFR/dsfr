@@ -11,7 +11,7 @@
   }
 
   #{ns(hr)} {
-    &--or {
+    &-or {
       @include _pseudo(before after) {
         @include color.background(border default grey, (legacy:$legacy));
       }

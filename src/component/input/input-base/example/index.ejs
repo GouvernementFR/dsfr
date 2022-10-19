@@ -1,16 +1,21 @@
 <% const sample = getSample(include); %>
 
+<%
+  const dateSubtitle = 'Préférez l\'utilisation du modèle de bloc de <a href="../../../pattern/date/">Date unique</a>';
+  const passwordSubtitle = 'Préférez l\'utilisation du composant <a href="../../password/">Mot de passe</a>';
+%>
+
 <%- sample(getText('sample.text', 'input-base'), './sample/input-text.ejs', {input: { id:'text-input-text'}}, true); %>
 
 <%- sample(getText('sample.number', 'input-base'), './sample/input-number.ejs', {input: { id:'text-input-number'}}, true); %>
 
 <%- sample(getText('sample.search', 'input-base'), './sample/input-search.ejs', {input: { id:'text-input-search'}}, true); %>
 
-<%- sample(getText('sample.date', 'input-base'), './sample/input-date.ejs', {input: { id:'text-input-date' }}, true); %>
+<%- sample({title: getText('sample.date', 'input-base'), subtitle: dateSubtitle}, './sample/input-date.ejs', {input: { id:'text-input-date' }}, true); %>
 
 <%- sample(getText('sample.textarea', 'input-base'), './sample/textarea.ejs', {input: { id:'textarea' }}, true); %>
 
-<%- sample(getText('sample.password', 'input-base'), './sample/input-password.ejs', {input: { id:'text-input-password' }}, true); %>
+<%- sample({title: getText('sample.password', 'input-base'), subtitle: passwordSubtitle}, './sample/input-password.ejs', {input: { id:'text-input-password' }}, true); %>
 
 <%- sample(getText('sample.button', 'input-base'), './sample/input-button.ejs', {input: { id:'text-input-button' }}, true); %>
 

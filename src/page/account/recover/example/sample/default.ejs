@@ -1,0 +1,18 @@
+<%
+const sample = getSample(include);
+const recover = locals.recover || {};
+
+const page = {
+  heading: {
+    title: getText('heading.title', 'recover'),
+    chapo: getText('heading.desc', 'recover')
+  },
+  block: {
+    type: 'colored',
+    col: 6,
+    segments: recover.segments
+  }
+};
+%>
+
+<%- include('../../../template/ejs/page.ejs', { page: page }); %>

@@ -1,0 +1,6 @@
+<%
+let civility = locals.civility || {};
+const data = JSON.parse(include('../data/family.json.ejs'));
+%>
+
+<%- include('./civility-default', { civility: data }); %>

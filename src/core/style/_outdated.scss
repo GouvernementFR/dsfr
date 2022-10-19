@@ -1,0 +1,10 @@
+////
+/// Core Outdated
+/// @group core
+////
+
+@-moz-document url-prefix() {
+  :root#{ns-attr(scrolling)} body {
+    position: sticky;
+  }
+}

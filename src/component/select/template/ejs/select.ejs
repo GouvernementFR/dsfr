@@ -21,6 +21,8 @@
 
 * select.disabled (boolena, optional)
 
+* select.includeEmptyMessagesGroup (boolean, optional) : true par défaut
+
 * select.attributes (object, optional) : attributs spécifiques à rajouter sur le select
 
 * select.classes (array, optional) : classes spécifiques à rajouter sur le select
@@ -28,34 +30,46 @@
 
 %>
 <% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
 
 <%
 let select = locals.select || {};
 
-let selectClasses = select.classes || [];
-let selectAttrs = select.attributes || {};
+let classes = select.classes || [];
+let attributes = select.attributes || {};
 let describedby = [];
-selectClasses.push(prefix + '-select');
+classes.push(`${prefix}-select`);
 
-if (select.valid !== undefined) {
-  selectClasses.push(prefix + '-select--valid');
-  describedby.push(select.id + '-desc-valid');
+const label = {
+    label: select.label,
+    for: select.id,
+    classes: select.labeClasses,
+    attributes: select.labelAttributes,
 }
 
-if (select.error !== undefined) {
-  selectClasses.push(prefix + '-select--error');
-  describedby.push(select.id + '-desc-error');
+const builder = new MessageBuilder(select.id, select.includeEmptyMessagesGroup);
+
+if (select.valid) {
+  builder.addValid(select.valid);
+}
+if (select.error) {
+  builder.addError(select.error);
+}
+if (builder.isIncluded) describedby.push(...builder.ids);
+
+if (select.hint) {
+    label.hint = select.hint;
 }
 
-if (describedby.length > 0) selectAttrs['aria-describedby'] = describedby.join(' ');
+if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
 
-if (select.required === true) selectAttrs['required'] = '';
-if (select.disabled === true) selectAttrs['disabled'] = '';
+if (select.required === true) attributes['aria-required'] = true;
+if (select.disabled === true) attributes['disabled'] = '';
 %>
 
-<%- include('../../../form/template/ejs/label', {label:{label:select.label, id: select.id, hint: select.hint}}); %>
+<%- include('../../../form/template/ejs/label', { label: label }); %>
 
-<select <%- includeClasses(selectClasses); %> <%- includeAttrs(selectAttrs); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
+<select <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> id="<%= select.id %>" name="<%= select.name || select.id %>">
   <% if (select.placeholder != undefined) { %>
   <option value="" selected disabled hidden><%= select.placeholder %></option>
   <% } %>
@@ -68,4 +82,5 @@ if (select.disabled === true) selectAttrs['disabled'] = '';
   <% } %>
 </select>
 
-<%- include('../../../form/template/ejs/message', {message:select}); %>
+<%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+

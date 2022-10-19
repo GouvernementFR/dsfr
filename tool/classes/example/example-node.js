@@ -5,7 +5,7 @@ class ExampleNode {
     this.dir = dir;
     this.relative = relative;
     this.isStandalone = isStandalone;
-    this.path = relative ? `${dir}/${relative}` : dir;
+    this.path = `${dir}${relative}/`;
     this._hasData = false;
     this._children = [];
 
@@ -29,7 +29,7 @@ class ExampleNode {
   }
 
   addChild (name) {
-    const child = new ExampleNode(this.dir, `${this.relative}${name}`);
+    const child = new ExampleNode(this.path, name);
     if (child.hasData) this._children.push(child);
   }
 
@@ -40,13 +40,13 @@ class ExampleNode {
   get _dest () {
     const replace = this.isStandalone ? 'standalone' : 'example';
     const remove = this.isStandalone ? '/standalone/example' : '/example';
-    return `${this.path.replace(remove, '').replace('src', replace)}/index.html`;
+    return `${this.path.replace(remove, '').replace('src', replace)}index.html`;
   }
 
   get data () {
     const data = {
       hasData: this._hasData === true,
-      src: `${this.path}/index.ejs`,
+      src: `${this.path}index.ejs`,
       dest: this._dest,
       subdir: this._children.map(child => child.relative)
     };

@@ -1,0 +1,29 @@
+<%
+const checkboxes = locals.checkboxes || {};
+const checkbox = locals.checkbox || {};
+
+checkboxes.valid = validData(checkboxes.valid);
+checkboxes.error = errorData(checkboxes.error);
+checkboxes.hint = hintData(checkboxes.hint);
+checkbox.hint = hintData(checkbox.hint);
+
+const id = checkboxes.id;
+const elements = [];
+for (let i = 1; i < 4; i++) elements.push({
+  path: 'checkbox/example/sample/checkbox',
+  inline: checkboxes.inline || null,
+  data: {
+    checkbox: {
+      ...checkbox,
+      id: `${id}-${i}`,
+      name: `${id}-${i}`,
+      checked: i === 2 && checkboxes.checked
+    }
+  }
+});
+
+checkboxes.choice = true;
+checkboxes.elements = elements;
+%>
+
+<%- include('../../../../form/deprecated/example/sample/fieldset', {fieldset: checkboxes}) %>

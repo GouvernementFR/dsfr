@@ -3,3 +3,6 @@ description:
 option:
   placeholder: Sélectionner une option
   no-answer: Sans réponse
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée

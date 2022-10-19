@@ -3,15 +3,17 @@ title: Modèle de bloc de nom et prénom
 description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
 doc:
 hint:
-  usage-name: Nom marital…
-  birth-name: Nom de famille non rectifié après décision du tribunal
+  married: Ancien nom…
+  birth: Nom de famille non rectifié après décision du tribunal
 label:
   add-firstname: Ajouter un prénom
   country: Pays
-  name: Nom
-  firstname: Prénom
-  usage-name: Nom d'usage
-  birth-name: Nom de naissance
+  family: Nom
+  given: Prénom
+  givens: Prénom(s)
+  fieldset: Demande de nom et prénom
+  usual: Nom d'usage
+  birth: Nom de naissance
   no-firstname: Je n'ai pas de prénom
 option:
   placeholder: Sélectionner une option
@@ -23,7 +25,7 @@ sample:
   default: Défaut
   button: bouton
   firstname-disabled: prénom désactivé
-  usage-name: nom d'usage
+  married: nom d'usage
   with: Avec
 section:
   default: Demande d’un nom et d’un prénom en France

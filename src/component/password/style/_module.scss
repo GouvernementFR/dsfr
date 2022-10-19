@@ -7,18 +7,6 @@
   @include relative;
   @include set-text-margin(0 0 2v 0);
 
-  &__format {
-    @include margin-top(3v);
-    @include margin-bottom(2v);
-
-    #{ns(error-text)},
-    #{ns(valid-text)},
-    #{ns(info-text)} {
-      @include margin-top(1v);
-      @include before(','); // Ajoute une pause aux lecteurs d'écran
-    }
-  }
-
   #{ns-attr(capslock)} {
     @include before('', block) {
       @include absolute(3v, 3v, null, null, 4v, 4v);
@@ -27,7 +15,7 @@
   }
 
   &__checkbox {
-    @include absolute(-3v, 0);
+    @include absolute(0, 0);
   }
 
   &__input {

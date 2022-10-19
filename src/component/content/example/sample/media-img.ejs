@@ -3,7 +3,8 @@ const content = locals.content || {};
 const ratio = content.ratio || null;
 let data = {
   img: imgData('img/placeholder.16x9.png', 'unknown', ratio ? ratio : '16x9'),
-  caption: '© Légende de l‘image',
+  caption: 'Description / Source',
+  link: 'Label lien',
   ...content
 };
 %>

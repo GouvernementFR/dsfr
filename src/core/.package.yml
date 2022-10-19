@@ -25,15 +25,15 @@ description: |
   La grille proposée par le design system vous permet de structurer vos pages et vos contenus simplement.
 doc:
   - title: Typographie
-    url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019527/Typographie+-+Typography
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-identite-de-l-etat/typographie
   - title: Icônes
-    url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331396/Ic+nes+-+Icons
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones
   - title: Icônes de favoris - Favicon
-    url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/577930274/Ic+nes+de+favoris+-+Favicons
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/icones-de-favoris
   - title: Médias fondamentaux
-    url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/223019554/M+dias+int+gr+s+au+contenu+-+Responsive+medias
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/contenu-medias
   - title: Grille
-    url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/222331372/Grille+et+points+de+rupture+-+Grid+and+breakpoints
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/grille-et-points-de-rupture
 wrapper: container
 script:
   - legacy
