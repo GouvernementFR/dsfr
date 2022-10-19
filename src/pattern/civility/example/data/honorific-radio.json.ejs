@@ -3,7 +3,8 @@ const civility = locals.civility || {};
 
 const data = {
   id: uniqueId('honorific'),
-  legend: getText('sample.honorific', 'civility'),
+  label: getText('sample.honorific', 'civility'),
+  legend: getText('legend.honorific', 'civility'),
   choice: true,
   elements: ['honorific.doctor', 'honorific.inspector', 'no-answer'].map(key => {
     return {
