@@ -1,0 +1,8 @@
+<%
+let input = locals.input || {}
+let jsonData = JSON.parse(include('../../../../../form/deprecated/example/sample/data', {form:input}));
+let data = {...input, ...jsonData};
+data.type = input.type || 'text';
+data.label = getText('label', 'form') + ' ' + getText('title', 'input-base').toLowerCase();
+%>
+<%- include('../../template/ejs/input-group', {input:data}); %>

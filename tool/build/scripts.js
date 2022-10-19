@@ -60,7 +60,6 @@ const process = async (pck, data, dir, filename, minify, legacy, map, standalone
     if (pck.inject) {
       const result = await bundle.generate(output);
       if (!pck.injection) pck.injection = {};
-      console.log(result.output);
       pck.injection[entryFilename] = result.output[0].code;
     } else {
       await bundle.write(output);

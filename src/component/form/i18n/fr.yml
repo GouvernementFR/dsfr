@@ -1,0 +1,18 @@
+fieldset:
+  legend:
+    default: Légende pour l’ensemble des éléments
+label:
+  default: Libellé
+  short: libl
+  long: Libellé de l'élément
+hint:
+  default: Texte de description additionnel
+  mandatory: Sauf mention contraire, tous les champs sont obligatoires.
+message:
+  error:
+    default: Texte d’erreur obligatoire
+  valid:
+    default: Texte de validation
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée

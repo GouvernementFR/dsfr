@@ -1,0 +1,3 @@
+<% for (const segment of locals.segments) { %>
+<%- include(`${segment.type}`, { segment : segment }); %>
+<% } %>

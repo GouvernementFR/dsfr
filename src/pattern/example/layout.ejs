@@ -1,0 +1,21 @@
+<% if (locals.title !== undefined && locals.title.length) { %>
+  <div class="<%= prefix %>-grid-row <%= prefix %>-mb-6v" >
+      <div class="<%= prefix %>-col-12">
+          <h4><%= title %></h4>
+      </div>
+  </div>
+<% } %>
+<div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center <%= prefix %>-mb-6v" >
+  <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-xl-6 <%= prefix %>-col-12">
+      <%- component %>
+  </div>
+</div>
+<% if (locals.snippet !== undefined) { %>
+  <div class="<%= prefix %>-grid-row <%= prefix %>-mb-6v" >
+      <div class="<%= prefix %>-col-12">
+          <div class="<%= prefix %>-mb-12v">
+              <%- snippet %>
+          </div>
+      </div>
+  </div>
+<% } %>

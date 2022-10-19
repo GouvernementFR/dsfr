@@ -1,0 +1,13 @@
+<%
+const toggle = locals.toggle || {};
+
+const data = {
+  label: 'Label action interrupteur',
+  id: uniqueId('toggle'),
+  ...toggle,
+  hint: toggle.hint === true ? 'Texte d’aide pour clarifier l’action' : toggle.hint
+}
+
+%>
+
+<%- include('../../template/ejs/toggle', {toggle: data}); %>

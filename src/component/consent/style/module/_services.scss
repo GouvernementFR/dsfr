@@ -5,15 +5,14 @@
 
 @use 'module/spacing';
 
-/**
-* Consent service correspond à un bloc de finalité (titre, radios, description)
-**/
 #{ns(consent-service)} {
   @include relative;
 
   > #{ns(fieldset)} {
     @include padding(0 0 5v);
     @include padding(0 0 5v, md);
+    @include margin(0);
+    align-items: flex-start;
     @include display-flex(column);
     @include size(100%);
     position: initial;
@@ -34,9 +33,6 @@
     }
   }
 
-  /**
-  * Nom du service
-  **/
   &__title {
     @include title-style(h6);
     @include padding(8v 0 3v);
@@ -47,9 +43,6 @@
     }
   }
 
-  /**
-  * Description du service
-  **/
   &__desc {
     @include text-style(sm);
     @include set-text-margin(3v 0 3v 0);
@@ -60,9 +53,6 @@
     }
   }
 
-  /**
-  * Bloc dépliable, contient des sous services
-  **/
   &__collapse {
     @include margin-top(-1v);
     @include margin-bottom(3v);
@@ -70,24 +60,17 @@
     @include nest-consent-btn;
   }
 
-  /**
-  * Conteneur des radio-group
-  **/
   &__radios {
-    // @include margin-bottom(3v);
+    @include margin-y(3v);
     @include display-flex(row, null, null, wrap);
 
     @include respond-from(md) {
       @include display-flex(row,center,flex-end);
-      @include margin-bottom(0);
       @include absolute(5v, 0);
       @include size(50%);
     }
   }
 
-  /**
-  * Groupe de radios avec séparateur
-  **/
   #{ns-group(radio)} {
     position: relative;
 
@@ -98,9 +81,7 @@
     &:not(:first-child) {
       @include before('','block') {
         @include size(1px, 6v);
-        @include absolute;
-        left: calc(#{space(-6v)} - 1px);
-        top: spacing.space(3v);
+        @include absolute(0, null, null, calc(#{space(-6v)} - 1px));
       }
     }
   }
@@ -124,9 +105,6 @@
   }
 }
 
-/**
-* fr-consent-services contient les sous services
-**/
 #{ns(consent-services)} {
   @include margin-top(2v);
   @include margin-bottom(-2v);
@@ -161,7 +139,7 @@
     &__desc {
       @include set-text-margin(1v 0 3v 0);
       @include respond-from(md) {
-        @include set-text-margin(1v 0 1v 0);
+        @include set-text-margin(1v 0 2v 0);
       }
     }
   }

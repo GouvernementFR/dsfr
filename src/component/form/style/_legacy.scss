@@ -6,20 +6,23 @@
 @use 'module/legacy';
 
 @include legacy.is(ie11) {
-  /**
-  * Correctif de la largeur de la légende d'un fieldset
-  */
   #{ns(fieldset)} {
     &__legend {
       max-width: 100%;
     }
   }
 
-  #{ns(error-text)} {
-    @include icon-legacy(error-fill, sm);
-  }
+  #{ns(message)} {
+    &--error {
+      @include icon-legacy(error-fill, sm);
+    }
 
-  #{ns(valid-text)} {
-    @include icon-legacy(success-fill, sm);
+    &--valid {
+      @include icon-legacy(success-fill, sm);
+    }
+
+    &--info {
+      @include icon-legacy(information-fill, sm);
+    }
   }
 }

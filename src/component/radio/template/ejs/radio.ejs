@@ -33,19 +33,24 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <%
-let radio = locals.radio || {};
-let radioAttrs = radio.attributes || {};
-let labelClass = radio.classes || [];
-let element, labelAttr, imageAttrs = {};
-if (radio.element) element = radio.element;
-if (radio.disabled) radioAttrs.disabled = '';
-if (radio.checked) radioAttrs.checked = '';
+const radio = locals.radio || {};
+const attributes = radio.attributes || {};
+const label = {
+  label: radio.label,
+  for: radio.id,
+  hint: radio.hint || undefined
+};
+
+let element, imageAttrs = {};
+// if (radio.element) element = radio.element;
+if (radio.disabled) attributes.disabled = '';
+if (radio.checked) attributes.checked = '';
+
 %>
 
-<input <%- includeAttrs(radioAttrs); %> type="radio" id="<%= radio.id %>" name="<%= radio.name %>">
-<%- include('../../../form/template/ejs/label', {label: {...radio, ...element, classes: labelClass, attributes: labelAttr}}); %>
-<%- include('../../../form/template/ejs/message', {message: {hint: radio.hint} }); %>
-<% if (radio.image !== undefined) { %>
+<input <%- includeAttrs(attributes); %> type="radio" id="<%= radio.id %>" name="<%= radio.name %>">
+<%- include('../../../form/template/ejs/label', { label: label }); %>
+<% if (radio.image) { %>
   <% if (radio.image.type && radio.image.type === 'svg') imageAttrs['data-' + prefix + '-inject-svg'] = ''; %>
   <div class="<%= prefix %>-radio-rich__img" <%- includeAttrs(imageAttrs) %>>
     <% if (radio.image.type && radio.image.type === 'pictogram') { %>

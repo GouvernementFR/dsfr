@@ -1,22 +1,7 @@
 <%
-const name = {
-    id: uniqueId('name-default'),
-    label: getText('sample.default', 'name'),
-    items:[
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.name', 'name'),
-            name: 'name'
-        },
-        {
-            type: 'input',
-            template: 'input',
-            label: getText('label.firstname', 'name'),
-            name: 'firstname'
-        }
-    ]
+const data = {
+  id: uniqueId('firstname-disabled'),
+  fields: ['lastname', 'firstname']
 }
 %>
-
-<%- include('../../template/ejs/name', {name: name}); %>
+<%- include('./default', { name: data }); %>

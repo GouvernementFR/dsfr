@@ -30,7 +30,7 @@ let buttons = consent.buttons || [{label: 'Confirmer mes choix'}];
         fieldsetAttrs['role'] = 'group';
       }
     %>
-    <fieldset <%- includeAttrs(fieldsetAttrs) %> class="<%= prefix %>-fieldset <%= prefix %>-fieldset--inline">
+    <fieldset <%- includeAttrs(fieldsetAttrs) %> class="<%= prefix %>-fieldset">
       <% if (finalities[finality].title) { %>
         <legend id="<%= finalities[finality].id %>-legend" class="<%= prefix %>-consent-service__title"><%- finalities[finality].title %></legend>
       <% } %>

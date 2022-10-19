@@ -1,0 +1,21 @@
+id: recover
+title: Pages de récupération de mot de passe
+description: Modèles de pages de récupération de mot de passe
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+  - input
+  - button
+  - form
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+    - breadcrumb
+  script:
+    - header
+    - breadcrumb

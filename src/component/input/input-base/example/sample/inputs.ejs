@@ -1,26 +1,28 @@
 <%
 const inputs = locals.inputs || {};
 const input = locals.input || {};
-const jsonData = JSON.parse(include('../../../../form/example/sample/data', { form: inputs }));
+
+inputs.valid = validData(inputs.valid);
+inputs.error = errorData(inputs.error);
+inputs.hint = hintData(inputs.hint);
+input.hint = hintData(input.hint);
+
+input.type = input.type || 'text';
+input.label = input.label || (getText('label', 'form') + ' ' + getText('title', 'input-base').toLowerCase());
+
 
 const id = inputs.id;
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
-  path: 'input/input-base/example/sample/input-text',
+  type: 'input',
   data: {
-    input: {
-      ...input,
-      id: `${id}-${i}`,
-      name: `${id}`,
-    }
+    ...input,
+    id: `${id}-${i}`,
+    name: `${id}`
   }
 });
 
-const fields = {
-  elements: elements,
-  ...inputs,
-  ...jsonData
-}
+inputs.elements = elements;
 %>
 
-<%- include('../../../../form/example/sample/fieldset', {fieldset: fields}) %>
+<%- include('../../../../form/example/sample/fieldset', {fieldset: inputs}) %>

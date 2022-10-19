@@ -1,0 +1,33 @@
+<%
+const radios = locals.radios || {}
+const radio = locals.radio || {};
+
+radios.valid = validData(radios.valid);
+radios.error = errorData(radios.error);
+radios.hint = hintData(radios.hint);
+radio.hint = hintData(radio.hint);
+
+const id = radios.id;
+const elements = [];
+for (let i = 1; i < 4; i++) elements.push({
+  path: 'radio/deprecated/example/sample/radio',
+  inline: radios.inline || null,
+  data: {
+    radio: {
+      ...radio,
+      id: `${id}-${i}`,
+      name: id,
+      checked: i === 2 && radios.checked
+    }
+  }
+});
+
+const fields = {
+  choice: true,
+  elements: elements,
+  ...radios
+}
+
+%>
+
+<%- include('../../../../form/deprecated/example/sample/fieldset', {fieldset: fields}) %>

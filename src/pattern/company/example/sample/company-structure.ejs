@@ -1,0 +1,6 @@
+<%
+let company = locals.company || {};
+const data = JSON.parse(include('../data/structure.json.ejs'));
+%>
+
+<%- include('./company-default', { company: data }); %>

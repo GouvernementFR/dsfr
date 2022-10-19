@@ -1,0 +1,5 @@
+<%
+const countries = JSON.parse(include('countries.json.ejs'));
+const options = countries.map(country => { return { value: country.id, label: country.name }});
+%>
+<%- JSON.stringify(options) %>

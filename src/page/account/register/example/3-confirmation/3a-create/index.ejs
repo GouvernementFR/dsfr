@@ -1,0 +1,17 @@
+<%
+const sample = getSample(include);
+const register = {
+  segments: [
+    {
+      type: 'alert',
+      data: {
+        text: getText('confirmation.create.alert', 'register'),
+        type: 'success',
+        hint: getText('confirmation.create.alert.hint', 'register')
+      }
+    }
+  ]
+};
+%>
+
+<%- sample('', '../../sample/default.ejs', { register: register }, true, '../../../../../example/layout', {}); %>

@@ -1,5 +1,4 @@
 <% eval(include(root + 'src/core/index.ejs')); %>
-
 <%
 let sampling = false;
 
@@ -24,37 +23,43 @@ locals.deprecation = deprecation;
 function getSample (include) {
   return (title, path, data, snippet, layout, layoutData) => {
     sampling = false;
-    let component = include(path, {...data});
+    let component = include(path, { ...data });
 
     if (locals.noSnippet) snippet = undefined;
 
     if (snippet === true) {
-        sampling = true;
-        let html =  include(path, {...data});
-        sampling = false;
-        html = beautify(html);
+      sampling = true;
+      let html = include(path, { ...data });
+      sampling = false;
+      html = beautify(html);
 
-        html = html.replace(/(class=".*)\s(")/gm, '$1$2');
-        html = html.replace(/&/g, '&amp;');
-        html = html.replace(/</g, '&lt;');
-        html = html.replace(/>/g, '&gt;');
+      html = html.replace(/(class=".*)\s(")/gm, '$1$2');
+      html = html.replace(/&/g, '&amp;');
+      html = html.replace(/</g, '&lt;');
+      html = html.replace(/>/g, '&gt;');
 
-        const accordion = {
-            label: 'Extrait de code',
-            id: uniqueId('snippet'),
-            content: '<pre class=" language-html"><code>' + html + '</code></pre>'
-        };
+      const accordion = {
+        label: 'Extrait de code',
+        id: uniqueId('snippet'),
+        content: '<pre class=" language-html"><code>' + html + '</code></pre>'
+      };
 
-        snippet = include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion});
+      snippet = include(root + 'src/component/accordion/template/ejs/accordion', { accordion: accordion });
     }
 
     if (layout === undefined) layout = root + 'tool/example/layout';
     if (layoutData === undefined) layoutData = {};
 
-    const sampleTitle = typeof(title) === 'string' ? title : title.title;
-    const sampleSubtitle = typeof(title) === 'object' ? title.subtitle : undefined;
+    const sampleTitle = typeof (title) === 'string' ? title : title.title;
+    const sampleSubtitle = typeof (title) === 'object' ? title.subtitle : undefined;
 
-    return include(layout, {...layoutData, title: sampleTitle, subtitle: sampleSubtitle, component: component, snippet: snippet});
+    return include(layout, {
+      ...layoutData,
+      title: sampleTitle,
+      subtitle: sampleSubtitle,
+      component: component,
+      snippet: snippet
+    });
   }
 }
 
@@ -80,108 +85,108 @@ locals.contentPlaceholder = (text) => {
 };
 
 locals.lengthen = (length, label) => {
-    switch (length) {
-        case 1:
-            return label + ' long';
+  switch (length) {
+    case 1:
+      return label + ' long';
 
-        case 2:
-            return label + ' plus long';
+    case 2:
+      return label + ' plus long';
 
-        case 3:
-            return label + ' beaucoup plus long';
+    case 3:
+      return label + ' beaucoup plus long';
 
-        default:
-            return label;
-    }
+    default:
+      return label;
+  }
 }
 
 locals.imgAltText = 'texte alternatif de l’image';
 
 const brandData = (component = 'header', logo = true, service = false, operator = false, beta = false, href = '/') => {
-    const data = {};
-    const logoPlaceholder = 'Nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
-    const logoTitlePlaceholder = 'Intitulé<br>officiel';
-    const logoPlaceholderOperator = 'République Française';
-    const logoTitlePlaceholderOperator = 'République<br>Française';
-    const operatorPlaceholder = imgAltText + ' : nom de l\'opérateur ou du site serviciel';
-    const servicePlaceholder = {
-        title: 'Nom du site / service',
-        tagline: 'baseline - précisions sur l‘organisation'
-    };
-    let titleLinkPlaceholder = 'Accueil';
-    let position;
-    if (component === 'footer') {
-        titleLinkPlaceholder = 'Retour à l’accueil du site';
-    }
-    const fullTitle = [titleLinkPlaceholder];
-    if (service) {
-        fullTitle.push(contentPlaceholder(servicePlaceholder.title));
-        switch (typeof service) {
-            case 'boolean':
-                data.service = servicePlaceholder;
-                break;
-            case 'string':
-                switch(service) {
-                    case 'title':
-                        data.service = { title: servicePlaceholder.title };
-                        break
-                }
-                break;
-            default:
-                data.service = service;
+  const data = {};
+  const logoPlaceholder = 'Nom de l’entité (ministère, secrétariat d‘état, gouvernement)';
+  const logoTitlePlaceholder = 'Intitulé<br>officiel';
+  const logoPlaceholderOperator = 'République Française';
+  const logoTitlePlaceholderOperator = 'République<br>Française';
+  const operatorPlaceholder = imgAltText + ' : nom de l\'opérateur ou du site serviciel';
+  const servicePlaceholder = {
+    title: 'Nom du site / service',
+    tagline: 'baseline - précisions sur l‘organisation'
+  };
+  let titleLinkPlaceholder = 'Accueil';
+  let position;
+  if (component === 'footer') {
+    titleLinkPlaceholder = 'Retour à l’accueil du site';
+  }
+  const fullTitle = [titleLinkPlaceholder];
+  if (service) {
+    fullTitle.push(contentPlaceholder(servicePlaceholder.title));
+    switch (typeof service) {
+      case 'boolean':
+        data.service = servicePlaceholder;
+        break;
+      case 'string':
+        switch (service) {
+          case 'title':
+            data.service = { title: servicePlaceholder.title };
+            break
         }
+        break;
+      default:
+        data.service = service;
     }
+  }
+  if (operator) {
+    fullTitle.push(contentPlaceholder(operatorPlaceholder));
+    switch (typeof operator) {
+      case 'boolean':
+        if (operator) data.operator = imgData('img/placeholder.9x16.png', 'rendered', null, null, 'width:3.5rem;');
+        break;
+      default:
+        data.operator = operator;
+    }
+  }
+  if (logo) {
+    data.logo = {
+      title: logoTitlePlaceholder
+    };
     if (operator) {
-        fullTitle.push(contentPlaceholder(operatorPlaceholder));
-        switch (typeof operator) {
-            case 'boolean':
-                if (operator) data.operator = imgData('img/placeholder.9x16.png', 'rendered', null,  null, 'width:3.5rem;');
-                break;
-            default:
-                data.operator = operator;
-        }
+      fullTitle.push(logoPlaceholderOperator);
+      data.logo.title = logoTitlePlaceholderOperator;
+    } else {
+      fullTitle.push(logoPlaceholder);
     }
-    if (logo) {
-        data.logo = {
-            title: logoTitlePlaceholder
-        };
-        if (operator) {
-            fullTitle.push(logoPlaceholderOperator);
-            data.logo.title = logoTitlePlaceholderOperator;
-        } else {
-            fullTitle.push(logoPlaceholder);
-        }
-    }
-    switch (true) {
-        case service !== false :
-            position = 'service';
-            break;
-        case operator !== false:
-            position = 'operator';
-            break;
-        default:
-            position = 'logo';
-    }
-    if (beta) {
-        service ? data.service.beta = beta === true || undefined : data.service = beta ? {beta: beta} : undefined;
-    }
-    data.link = {
-        position: position,
-        href: href,
-        title: fullTitle.join(' - ')
-    };
-    return data;
+  }
+  switch (true) {
+    case service !== false :
+      position = 'service';
+      break;
+    case operator !== false:
+      position = 'operator';
+      break;
+    default:
+      position = 'logo';
+  }
+  if (beta) {
+    service ? data.service.beta = beta === true || undefined : data.service = beta ? { beta: beta } : undefined;
+  }
+  data.link = {
+    position: position,
+    href: href,
+    title: fullTitle.join(' - ')
+  };
+  return data;
 }
 
 locals.brandData = brandData;
 
 const imgData = (src, alt, ratio, comment, style) => {
   const data = {
-      src: `${relativeRoot}example/${src ? src : 'img/placeholder.16x9.png'}`,
-      alt: alt,
-      comment: comment,
-      ratio: ratio,
-      style: style
+    src: `${relativeRoot}example/${src ? src : 'img/placeholder.16x9.png'}`,
+    alt: alt,
+    comment: comment,
+    ratio: ratio,
+    style: style
   };
   return data;
 }
@@ -189,20 +194,74 @@ const imgData = (src, alt, ratio, comment, style) => {
 locals.imgData = imgData;
 
 const vidData = (src, title, ratio, attributes) => {
-    const data = {
-        src: src || 'https://www.youtube.com/embed/HyirpmPL43I',
-        title: title || 'Titre de l\'iframe',
-        ratio: ratio,
-        attributes: {
-            allow:'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
-            allowfullscreen:'',
-            ...attributes
-        }
-    };
-    return data;
+  const data = {
+    src: src || 'https://www.youtube.com/embed/HyirpmPL43I',
+    title: title || 'Titre de l\'iframe',
+    ratio: ratio,
+    attributes: {
+      allow: 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture',
+      allowfullscreen: '',
+      ...attributes
+    }
+  };
+  return data;
 }
 
 locals.vidData = vidData;
+
+const hintData = (hint) => {
+  if (!hint) {
+    return undefined;
+  }
+  switch (typeof hint) {
+    case 'string':
+      return hint;
+
+    case 'boolean':
+      if (hint) return getText('hint', 'form');
+
+    default:
+      return undefined;
+  }
+}
+
+locals.hintData = hintData;
+
+const validData = (valid) => {
+  if (!valid) {
+    return undefined;
+  }
+  switch (typeof valid) {
+    case 'string':
+      return valid;
+
+    case 'boolean':
+      if (valid) return getText('message.valid', 'form');
+
+    default:
+      return undefined;
+  }
+}
+
+locals.validData = validData;
+
+const errorData = (error) => {
+  if (!error) {
+    return undefined;
+  }
+  switch (typeof error) {
+    case 'string':
+      return error;
+
+    case 'boolean':
+      if (error) return getText('message.error', 'form');
+
+    default:
+      return undefined;
+  }
+}
+
+locals.errorData = errorData;
 
 const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
   let content = '<!-- données de test -->';
@@ -244,7 +303,7 @@ const getText = (key, id, preventError) => {
 locals.getText = getText;
 
 const hasText = (key, id, withFallback) => {
-    return locals.i18n.hasText(key, id, withFallback);
+  return locals.i18n.hasText(key, id, withFallback);
 };
 
 locals.hasText = hasText;
@@ -256,6 +315,5 @@ const getSubdir = (key) => {
 locals.getSubdir = getSubdir;
 
 locals.globals = {};
-
 %>
 <%- include(entry); %>
