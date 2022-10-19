@@ -1,33 +1,6 @@
 <%
 const sample = getSample(include);
 const register = locals.register || {};
-const connect = JSON.parse(include('../../../../../component/connect/example/data/connect.json.ejs'));
-
-/*
-const create = register.create || {};
-create.alert = create.alert || false;
-create.title = create.title !== false ? create.title || getText('label.register', 'register') : false;
-create.desc = create.desc !== false ? create.desc || getText('label.desc', 'register') : false;
-create.hint = create.hint !== false ? create.hint || getText('hint.fieldset', 'register') : false;
-
-const form = create.form !== false ? create.form || {
-  id: uniqueId('register'),
-  label: getText('label.fieldset', 'register'),
-  classes: [prefix + '-mb-0'],
-  elements: elements
-} : false;
-
-create.form = form;
-
-const data = {
-  title: getText('label.default', 'register'),
-  chapo: getText('chapo.default', 'register'),
-  stepper: register.stepper ? register.stepper : undefined,
-  connect: register.connect !== false ? connect : false,
-  create: create
-};
-
- */
 
 const page = {
   heading: {
@@ -37,7 +10,7 @@ const page = {
   block: {
     type: 'colored',
     col: 6,
-    segments: register.segments,
+    segments: register.segments
   }
 };
 %>

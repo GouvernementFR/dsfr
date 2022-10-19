@@ -2,6 +2,10 @@
 const sample = getSample(include);
 const form = JSON.parse(include('../../data/identity.json.ejs', {}));
 
+const buttonsGroup = JSON.parse(include('../../data/buttons-group.json.ejs', { page: { currentStep: 2, stepCount: 3}}));
+
+form.elements.push(buttonsGroup);
+
 const register = {
   segments:
   [

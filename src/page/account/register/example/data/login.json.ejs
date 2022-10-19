@@ -70,24 +70,6 @@ elements.push({
   }
 })
 
-elements.push({
-  type: 'buttonsGroup',
-  base: 'button',
-  template: 'buttons-group',
-  data: {
-    inline: true,
-    classes: [prefix + '-btns-group--right'],
-    buttons: [
-      {
-        label: getText('login.button', 'register'),
-        kind: 1,
-        type: 'submit',
-        classes: [prefix + '-mt-2v']
-      }
-    ]
-  },
-});
-
 const data = {
   id: uniqueId('login'),
   legend: `<h5>${getText('login.legend', 'register')}</h5>`,
