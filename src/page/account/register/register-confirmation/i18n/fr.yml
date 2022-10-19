@@ -1,7 +1,0 @@
-title: Pages de confirmation
-description: Modèles de pages de confirmation de création de compte
-
-subdir:
-  title: Pages de confirmation
-  confirmation-create: Confirmation de création de compte
-  confirmation-activate: Confirmation d'activation de compte

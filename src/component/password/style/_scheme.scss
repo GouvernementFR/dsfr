@@ -16,5 +16,9 @@
         @include color.data-uri-svg(default grey, (legacy: $legacy), $capslock-svg);
       }
     }
+
+    & &__checkbox #{ns(label)} {
+      @include color.text(default grey, (legacy: $legacy));
+    }
   }
 }

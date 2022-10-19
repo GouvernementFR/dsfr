@@ -1,0 +1,10 @@
+#{ns(hint-text)} {
+  display: block;
+  // @include margin-bottom(0);
+  @include text-style(xs);
+  @include set-text-margin(0 0 4v);
+
+  & + #{ns(hint-text)} {
+    @include margin-top(1v);
+  }
+}

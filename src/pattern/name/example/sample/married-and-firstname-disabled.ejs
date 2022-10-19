@@ -1,0 +1,11 @@
+<%
+const data = {
+  id: uniqueId('married-and-firstname-disabled'),
+  fields: ['lastname', 'married', 'firstname'],
+  disabled: true,
+  checked: true,
+  checkbox: true,
+}
+%>
+
+<%- include('./default', {name: data}); %>

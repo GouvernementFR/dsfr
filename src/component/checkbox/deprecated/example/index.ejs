@@ -1,0 +1,24 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Ensemble de cases à cocher', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes', checked: true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher, petite taille', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-small', checked: true}, checkbox: {size: 'sm'}}, true); %>
+
+<%- sample('Ensemble de cases à cocher désactivées', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-disabled', checked: true}, checkbox: {disabled:true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher en ligne', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-inline', inline: true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec texte d‘aide', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-hint'}, checkbox: {hint:true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec erreur', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-error', error: true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher validées', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-valid', valid: true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec erreur, en ligne', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-error-inline', error: true, inline:true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher validées, en ligne', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-valid-inline', valid: true, inline:true}}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-hint-element'}, checkbox: {hint:'Texte de description additionnel'}}, true); %>
+
+<%- sample('Ensemble de cases à cocher avec texte d‘aide spécifique,  petite taille', './sample/checkboxes.ejs', {checkboxes: {id:'checkboxes-hint-el-sm'}, checkbox: {size: 'sm', hint:'Texte de description additionnel'}}, true); %>
+

@@ -1,12 +1,12 @@
-<div class="<%= prefix %>-container" >
-    <ul class="<%= prefix %>-col-12">
-        <%
-        for (const pck of children) {
-            if(pck.draft) continue;
-        %>
-        <li class="<%= prefix %>-mb-1w">
-            <a href='./<%= pck.id %>/'><%= pck.title %> (<%= pck.id %>)</a>
-        </li>
-        <% } %>
-    </ul>
+<div class="<%= prefix %>-container">
+  <ul class="<%= prefix %>-col-12">
+    <%
+    for (const pck of children) {
+      if (pck.draft) continue;
+    %>
+    <li class="<%= prefix %>-mb-1w">
+      <a href='./<%= pck.id %>/'><%= pck.title %> (<%= pck.id %>)</a>
+    </li>
+    <% } %>
+  </ul>
 </div>

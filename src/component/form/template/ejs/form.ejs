@@ -15,52 +15,21 @@
 
 * form.valid (string, optional) : message de succès
 
-* form.attributes (object, optional) : attributs spécifiques à rajouter sur le fieldset
+* form.attributes (object, optional) : attributs spécifiques à rajouter sur le form
 
-* form.classes (array, optional) : classes spécifiques à rajouter sur le fieldset
-
+* form.classes (array, optional) : classes spécifiques à rajouter sur le form
 %>
 
  <%
  const form = locals.form || {};
- const fieldset = {};
- const elements = [];
+ const classes = [...form.classes || []];
+ const attributes = { ...form.attributes, id: form.id };
+ const fieldset = {...form, attributes: {}, id: `${form.id}-fieldset`};
+ if (!form.legend) fieldset.attributes['aria-label'] = form.label;
  %>
 
-<%
-  if (form.items && form.items.length) {
-%>
-  <form>
-<%
-    form.items.forEach((item, index) => {
-      let type = item.type;
-      let componentPath = item.base ? item.base : item.type;
-      let template = item.template || item.type;
-      elements.push({
-        path: `${componentPath}/template/ejs/${template}`,
-        disabled: item.disabled || undefined,
-        control: item.control,
-        classes: item.classes || undefined,
-        inline: item.inline || undefined,
-        grow: item.grow || undefined,
-        modifier: item.modifier || undefined,
-        data: {
-          [type]: {
-            ...item.data,
-          }
-        }
-      });
-    });
-
-    fieldset.elements = elements;
-    fieldset.classes = form.classes || [];
-    fieldset.hint = form.hint || undefined;
-    fieldset.desc = form.desc || undefined;
-    fieldset.id = form.id;
-    fieldset.attributes = { 'aria-label': form.label};
-%>
-    <%- include('../../../../component/form/template/ejs/fieldset', {fieldset: fieldset}) %>
+<% if (form.elements && form.elements.length) { %>
+  <form <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+    <%- include('fieldset/fieldset', { fieldset: fieldset }); %>
   </form>
-<%
-  }
-%>
+<% } %>

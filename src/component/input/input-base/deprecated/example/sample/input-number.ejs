@@ -1,0 +1,13 @@
+<%
+let input = locals.input || {};
+let attributes = input.attributes || {};
+attributes.pattern = '[0-9]*';
+attributes.inputmode = 'numeric';
+let data = {
+    ...input,
+    type:'number',
+    attributes:attributes
+  }
+ %>
+
+<%- include('./input-text', {input: data}); %>

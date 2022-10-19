@@ -2,3 +2,6 @@ title: Bouton radio
 description:
 option:
   no-answer: Sans réponse
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée

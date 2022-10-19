@@ -10,63 +10,43 @@
   #{ns(label)} {
     @include color.text(label grey, (legacy:$legacy));
 
-    /**
-    * Modificateur au niveau du label pour appliquer un état d'erreur au label
-    */
     &--error {
       @include color.text(default error, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur au niveau du label pour appliquer un état de succès au label
-    */
     &--success {
       @include color.text(default success, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur au niveau du label pour appliquer un état informatif au label
-    */
+    &--info {
+      @include color.text(default info, (legacy:$legacy));
+    }
+
+    &--disabled {
+      @include disabled.colors((legacy: $legacy, text: true));
+    }
+  }
+
+  #{ns(hint-text)},
+  #{ns(message)} {
+    @include color.text(mention grey, (legacy:$legacy));
+  }
+
+  #{ns(message)} {
+    &--error {
+      @include color.text(default error, (legacy:$legacy));
+    }
+
+    &--valid {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
     &--info {
       @include color.text(default info, (legacy:$legacy));
     }
   }
 
-  /**
-  * Style du texte d'aide
-  */
-  #{ns(hint-text)} {
-    @include color.text(mention grey, (legacy:$legacy));
-  }
-
-  /**
-  * Style du texte d'erreur
-  */
-  #{ns(error-text)} {
-    @include color.text(default error, (legacy:$legacy));
-  }
-
-  /**
-  * Style du texte de l'état validé
-  */
-  #{ns(valid-text)} {
-    @include color.text(default success, (legacy:$legacy));
-  }
-
-  /**
-  * Style du texte de l'état validé
-  */
-  #{ns(info-text)} {
-    @include color.text(default info, (legacy:$legacy));
-  }
-
-  /**
-  * Style d'un ensemble de champs
-  */
   #{ns(fieldset)} {
-    /**
-    * Mixin disabled pour gérer l'état disabled
-    */
     @include disabled.selector {
       label {
         @include disabled.colors((legacy: $legacy, text: true));
@@ -77,60 +57,34 @@
       @include color.text(title grey, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur pour gérer l'état d'erreur
-    */
-    &--error {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
-        }
-      }
-
-      label {
-        @include color.text(default error, (legacy:$legacy));
-      }
+    &--error,
+    &--error &__legend {
+      @include color.background-image(border plain error, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur pour gérer l'état de validation
-    */
-    &--valid {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
-        }
-      }
-
-      label {
-        @include color.text(default success, (legacy:$legacy));
-      }
+    &--error &__legend,
+    &--error #{ns(label)} {
+      @include color.text(default error, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur pour gérer l'état de validation
-    */
-    &--info {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain info, (legacy:$legacy), left-2-in);
-        }
-      }
-
-      label {
-        @include color.text(default info, (legacy:$legacy));
-      }
+    &--valid,
+    &--valid &__legend {
+      @include color.background-image(border plain success, (legacy:$legacy));
     }
-  }
 
-  /**
-  * Style d'un élément de control
-  **/
-  #{ns(control)} {
-    &--disabled {
-      #{ns(label)} {
-        @include disabled.colors((legacy: $legacy, text: true));
-      }
+    &--valid &__legend,
+    &--valid #{ns(label)} {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info,
+    &--info &__legend {
+      @include color.background-image(border plain info, (legacy:$legacy));
+    }
+
+    &--info &__legend,
+    &--info #{ns(label)} {
+      @include color.text(default info, (legacy:$legacy));
     }
   }
 }

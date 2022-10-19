@@ -1,0 +1,10 @@
+<%
+let company = locals.company || {};
+const data = {
+  id: company.id || uniqueId('company'),
+  label: company.label,
+  elements: company.elements
+}
+%>
+
+<%- include('../../../../component/form/template/ejs/form', { form: data }); %>

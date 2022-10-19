@@ -1,0 +1,80 @@
+<%
+
+const elements = [];
+
+elements.push({
+  type: 'paragraph',
+  data: {
+    content: getText('login.desc', 'login'),
+    size: 'sm'
+  }
+});
+
+elements.push({
+  type: 'hint',
+  data: {
+    text: getText('hint.mandatory', 'form')
+  }
+})
+
+elements.push({
+  type: 'input',
+  data: {
+    id: uniqueId('username'),
+    label: getText('login.username', 'login'),
+    hint: getText('login.username.hint', 'login'),
+    name: 'username'
+  }
+})
+
+elements.push({
+  type: 'password',
+  data: {
+    id: uniqueId('password'),
+    input: {
+      label: getText('login.password', 'login'),
+      autocomplete: 'new-password'
+    },
+    checkbox: true,
+    messages: [
+      { text: getText('format.label', 'password') },
+      { text: getText('format.characters', 'password'), type: 'info'},
+      { text: getText('format.special', 'password'), type: 'info'},
+      { text: getText('format.digit', 'password'), type: 'info'}
+    ]
+  }
+})
+
+
+elements.push({
+  type: 'checkbox',
+  template: 'checkbox-group',
+  data: {
+    id: uniqueId('checkbox-cnil'),
+    label: getText('login.optin', 'register'),
+    name: 'checkbox-cnil',
+    checked: false,
+    size: 'sm',
+  }
+})
+
+elements.push({
+  type: 'checkbox',
+  template: 'checkbox-group',
+  data: {
+    id: uniqueId('checkbox-cnil'),
+    label: getText('login.optin', 'register'),
+    name: 'checkbox-cnil',
+    checked: false,
+    size: 'sm',
+  }
+})
+
+const data = {
+  id: uniqueId('login'),
+  legend: `<h5>${getText('login.legend', 'register')}</h5>`,
+  classes: [prefix + '-mb-0'],
+  elements: elements
+};
+ %>
+<%- JSON.stringify(data); %>

@@ -1,7 +1,7 @@
 <%
   let fieldset = locals.fieldset || {};
   let data = JSON.parse(include('./data'));
-  if (fieldset.legend === undefined) data.legend = 'Légende pour l’ensemble de champs';
+  if (!fieldset.legend) data.legend = getText('fieldset.legend', 'form');
 %>
 
-<%- include('../../template/ejs/fieldset', {fieldset: {...fieldset, ...data}}); %>
+<%- include('../../template/ejs/fieldset/fieldset', {fieldset: {...fieldset, ...data}}); %>

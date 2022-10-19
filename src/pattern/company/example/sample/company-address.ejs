@@ -1,0 +1,6 @@
+<%
+let company = locals.company || {};
+const data = JSON.parse(include('../../../address/example/data/address.json.ejs', { address: { ...company, locality: true, international: true, professional: true }}));
+%>
+
+<%- include('./company-default', { company: data }); %>

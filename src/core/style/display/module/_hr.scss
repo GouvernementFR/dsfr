@@ -16,13 +16,9 @@ hr {
     @include margin-x(auto);
   }
 
-  &--break-line {
-    @include width(100%);
-    @include padding(0);
-  }
-
-  &--or {
+  &-or {
     @include text-style(sm);
+    text-transform: uppercase;
     @include font-weight(bold);
     @include display-flex(row, center, center, no-wrap, inline);
     @include _pseudo(before after, '', inline-flex) {
