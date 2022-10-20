@@ -13,6 +13,8 @@
 
 * modal.footer (string, optional) : contenu du footer de la modale, généralement des boutons
 
+* modal.customFooter (string, optional) : contenu du footer custom de la modale
+
 * modal.size (string, optional) : modificateur de taille
   valeurs :
   * sm : modale étroite
@@ -30,7 +32,6 @@
 
 %>
 <% eval(include('../../../../../_content/env.js')); %>
-
 <%
 let modal = locals.modal || {};
 let modalClasses = modal.classes || [];
@@ -62,13 +63,13 @@ const SIZES = {
 const getGridClasses = (size) => {
   const classes = [];
   const settings = SIZES[size];
-  for (let bp in settings) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp }-${settings[bp]}` );
+  for (let bp in settings) classes.push(`${prefix}-col${bp === 'first' ? '' : '-' + bp}-${settings[bp]}`);
   return classes;
 }
 
-switch(modal.size) {
+switch (modal.size) {
   case 'sm':
-    case 'lg':
+  case 'lg':
     gridClasses.push.apply(gridClasses, getGridClasses(modal.size));
     break;
   default:
@@ -78,12 +79,11 @@ switch(modal.size) {
 const titleId = modal.id + '-title';
 
 modalAttrs.role = 'dialog';
-modalAttrs['aria-labelledby'] = titleId;
+if (modal.title) modalAttrs['aria-labelledby'] = titleId;
 
 if (modal.top) modalClasses.push(`${prefix}-modal--top`);
 
 if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealing-backdrop`] = modal.concealingBackdrop;
-
 %>
 
 <dialog id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
@@ -92,21 +92,26 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
       <div <%- includeClasses(gridClasses); %>>
         <div class="<%= prefix %>-modal__body">
           <div class="<%= prefix %>-modal__header">
-            <%- include('../../../../button/_content/template/ejs/button-close', {button: closeButton} )%>
+            <%- include('../../../../button/_content/template/ejs/button-close', {button: closeButton} ) %>
           </div>
           <div class="<%= prefix %>-modal__content">
-            <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
-              <% if (modal.icon !== undefined) { %>
-              <span class="<%= prefix %>-icon-<%= modal.icon %> <%= prefix %>-icon--lg" aria-hidden="true"></span>
-              <% } %>
-              <%= modal.title %>
-            </h1>
-            <%- include(modal.body) %>
+            <% if(modal.title !== undefined) { %>
+              <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
+                <% if (modal.icon !== undefined) { %>
+                  <span class="<%= prefix %>-icon-<%= modal.icon %> <%= prefix %>-icon--lg" aria-hidden="true"></span>
+                <% } %>
+                <%= modal.title %>
+              </h1>
+            <% } %>
+            <%- modal.body %>
           </div>
           <% if(modal.footer !== undefined) { %>
-          <div class="<%= prefix %>-modal__footer">
-            <%- include(modal.footer) %>
-          </div>
+            <div class="<%= prefix %>-modal__footer">
+              <%- modal.footer %>
+            </div>
+          <% } %>
+          <% if(modal.customFooter !== undefined) { %>
+            <%- modal.customFooter %>
           <% } %>
         </div>
       </div>

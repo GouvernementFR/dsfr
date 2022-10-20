@@ -4,20 +4,20 @@ const sample = getSample(include);
 let dataText = {
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
-    body: '../../example/sample/body/text',
+    body: include('../example/sample/body/text'),
 }
 
 let dataForm = {
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
-    body: '../../example/sample/body/form',
+    body: include('../example/sample/body/form'),
 }
 
 let dataFooterButtons = {
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
-    body: '../../example/sample/body/text',
-    footer: '../../example/sample/footer/buttons',
+    body: include('../example/sample/body/text'),
+  footer: include('../example/sample/footer/buttons'),
 }
 %>
 
@@ -29,7 +29,7 @@ let dataFooterButtons = {
 
 <%- sample('Modale formulaire', './sample/modal-default', {modal: { ...dataForm, label: 'Modal formulaire'}}, true ); %>
 
-<%- sample('Modale avec iframe', './sample/modal-default', {modal: { ...dataText, label: 'Modal iframe', body: '../../example/sample/body/iframe'}}, true ); %>
+<%- sample('Modale avec iframe', './sample/modal-default', {modal: { ...dataText, label: 'Modal iframe', body: include('../example/sample/body/iframe')}}, true ); %>
 
 <%- sample('Modal avec zone d\'action', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale avec zone d\'action'}}, true ); %>
 
