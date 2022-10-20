@@ -3,6 +3,7 @@ import options, { Modes } from './options/options.js';
 import config from '../../config.js';
 import engine from './engine.js';
 import inspector from './inspect/inspector.js';
+import colors from './utilities/colors/colors.js';
 import internals from './internals.js';
 
 inspector.info(`version ${config.version}`);
@@ -25,6 +26,7 @@ api.start = engine.start;
 api.stop = engine.stop;
 
 api.inspector = inspector;
+api.colors = colors;
 
 options.configure(window[config.namespace], api.start);
 
