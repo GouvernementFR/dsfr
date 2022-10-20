@@ -12,7 +12,8 @@ data.elements.push({
   data: {
     id: company.id || uniqueId('representative'),
     label: getText('label.position', 'company'),
-    name: 'position'
+    name: 'position',
+    autocomplete: 'organization-title'
   }
 });
 
