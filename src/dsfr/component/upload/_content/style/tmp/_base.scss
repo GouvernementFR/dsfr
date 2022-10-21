@@ -19,6 +19,12 @@
         @include spacing.margin-top(4v);
       }
     }
+
+    #{ns(message)} {
+      &:first-child {
+        @include margin-top(2v);
+      }
+    }
   }
 
   #{selector.ns(upload)} {

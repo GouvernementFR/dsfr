@@ -15,4 +15,22 @@ hr {
     @include width(40v);
     @include margin-x(auto);
   }
+
+  &-or {
+    @include text-style(sm);
+    text-transform: uppercase;
+    @include font-weight(bold);
+    @include display-flex(row, center, center, no-wrap, inline);
+    @include _pseudo(before after, '', inline-flex) {
+      height: 1px;
+      width: 100%;
+    }
+    @include before {
+      @include margin-right(3v);
+    }
+    @include after {
+      @include margin-left(3v);
+    }
+  }
 }
+

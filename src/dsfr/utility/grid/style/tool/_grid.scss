@@ -87,6 +87,7 @@
         #{selector.ns('container' + $mod + '--fluid')} {
           @include spacing.padding-x(0);
           @include spacing.max-size(none);
+          overflow: hidden;
         }
       }
 

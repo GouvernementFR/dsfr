@@ -12,42 +12,31 @@
 * upload.labelAttrs (object, optional) : Pour passer des attributs au label
 
 * upload.labelClasses (array, optional) : Pour passer des classes au label
-
-* upload.uploadAttrs (array, optional) : Pour passer des attributs au input
-
+* upload.attributes (array, optional) : Pour passer des attributs au input
 * upload.error (string, optional) : ajoute un texte d'erreur
-
 * upload.valid (string, optional) : ajoute un texte de succès
-
 * upload.success (string, optional) : ajoute un texte de succès
-
 * upload.multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
-
 * upload.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
-
 %>
-<% eval(include('../../../../../_content/env.js')); %>
+<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
 <%
-let upload = locals.upload || {};
-let uploadClasses = [prefix + '-upload'];
-let groupClasses = [prefix + '-upload-group'];
-let uploadAttrs = upload.uploadAttrs || [];
-let labelAttrs = upload.labelAttrs || {};
-let labelClass = upload.labelClasses || [];
-if (upload.error) {
-  groupClasses.push(prefix + '-input-group--error');
-  uploadAttrs['aria-describedby'] = upload.id + '-desc-error';
-}
-if (upload.valid) {
-  groupClasses.push(prefix + '-input-group--valid');
-  uploadAttrs['aria-describedby'] = upload.id + '-desc-valid';
-}
-if (upload.disabled) uploadAttrs['disabled'] = '';
-if (upload.multiple) uploadAttrs['multiple'] = '';
+const upload = locals.upload || {};
+const classes = [prefix + '-upload'];
+const groupClasses = [prefix + '-upload-group'];
+const attributes = upload.attributes || [];
+const labelAttrs = upload.labelAttrs || {};
+const labelClass = upload.labelClasses || [];
+const builder = new MessageBuilder(upload.id);
+if (upload.valid) builder.addError(upload.valid);
+if (upload.error) builder.addError(upload.error);
+if (builder.describedby.length > 0) attributes['aria-describedby'] = builder.describedby.join(' ');
+if (upload.disabled) attributes['disabled'] = '';
+if (upload.multiple) attributes['multiple'] = '';
 %>
-
 <div <%- includeClasses(groupClasses); %>>
-  <%- include('../../../../../core/form/_content/template/ejs/label', {label : {label: upload.label, hint: upload.hint, id: upload.id, attributes: labelAttrs}}); %>
-  <input <%- includeClasses(uploadClasses); %> <%- includeAttrs(uploadAttrs); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
-  <%- include('../../../../../core/form/_content/template/ejs/message', {message: upload}); %>
+  <%- include('../../../form/template/ejs/label', {label : {label: upload.label, hint: upload.hint, for: upload.id, attributes: labelAttrs}}); %>
+  <input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="file" id="<%= upload.id %>" name="<%= upload.name %>">
+  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
 </div>

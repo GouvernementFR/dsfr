@@ -1,0 +1,11 @@
+////
+/// Core Outdated
+/// @group core
+////
+
+// TODO: mixin
+@-moz-document url-prefix() {
+  :root#{ns-attr(scrolling)} body {
+    position: sticky;
+  }
+}
