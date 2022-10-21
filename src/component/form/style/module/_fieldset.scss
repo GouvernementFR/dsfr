@@ -15,6 +15,10 @@
     @include font-weight(bold);
     @include width(100%);
 
+    &--default {
+      @include font-weight(regular);
+    }
+
     #{ns(hint-text)} {
       @include margin-top(2v);
       @include font-weight(regular);

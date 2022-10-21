@@ -23,7 +23,10 @@
     }
 
     &--disabled {
-      @include disabled.colors((legacy: $legacy, text: true));
+      &,
+      & #{ns(hint-text)} {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
     }
   }
 
@@ -48,7 +51,9 @@
 
   #{ns(fieldset)} {
     @include disabled.selector {
-      label {
+      label,
+      legend,
+      #{ns(hint-text)} {
         @include disabled.colors((legacy: $legacy, text: true));
       }
     }

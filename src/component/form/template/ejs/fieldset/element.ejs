@@ -113,6 +113,11 @@ switch (element.type) {
     data = { alert: element.data };
     break;
 
+  case 'upload':
+    path = '../../../../upload/template/ejs/upload';
+    data = { upload: element.data };
+    break;
+
 }
 %>
 

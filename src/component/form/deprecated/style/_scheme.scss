@@ -7,7 +7,7 @@
 @use 'module/disabled';
 
 @mixin _deprecated-form-scheme($legacy: false) {
-  #{ns-group(select), ns-group(input)} {
+  #{ns-group(select), ns-group(input), ns-group(upload)} {
     &--valid {
       label {
         @include color.text(default success, (legacy:$legacy));
