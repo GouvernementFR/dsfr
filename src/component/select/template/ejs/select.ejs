@@ -17,9 +17,11 @@
 
 * select.hint (string, optional) : message d'aide
 
-* select.required (boolean, optional)
+* select.required (boolean, optional) : attribut "aria-required" sur le select
 
-* select.disabled (boolena, optional)
+* select.disabled (boolena, optional) : attribut "disabled" sur le select
+
+* select.autocomplete (String, optional) : attribut "autocomplete" sur le select
 
 * select.includeEmptyMessagesGroup (boolean, optional) : true par défaut
 
@@ -37,6 +39,7 @@ let select = locals.select || {};
 
 let classes = select.classes || [];
 let attributes = select.attributes || {};
+attributes.autocomplete = select.autocomplete;
 let describedby = [];
 classes.push(`${prefix}-select`);
 
@@ -62,7 +65,7 @@ if (select.hint) {
 }
 
 if (describedby.length > 0) attributes['aria-describedby'] = describedby.join(' ');
-
+if (select.autocomplete) attributes.autocomplete = select.autocomplete;
 if (select.required === true) attributes['aria-required'] = true;
 if (select.disabled === true) attributes['disabled'] = '';
 %>
