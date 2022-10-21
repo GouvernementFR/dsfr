@@ -1,18 +1,21 @@
 class Colors {
   getColors (context, use, tint, options = {}) {
-    const option = getOption(options) || '';
-    const cssVar = `--${context}-${use}-${tint}${option}`;
-    return getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim() || null;
+    const option = getOption(options);
+    const decision = `--${context}-${use}-${tint}${option}`;
+    return getComputedStyle(document.documentElement).getPropertyValue(decision).trim() || null;
   }
 }
 
-function getOption (options) {
-  if (options.hover) {
-    return '-hover';
-  } else if (options.active) {
-    return '-active';
+const getOption = (options) => {
+  switch (true) {
+    case options.hover:
+      return '-hover';
+    case options.active:
+      return '-active';
+    default:
+      return '';
   }
-}
+};
 
 const colors = new Colors();
 
