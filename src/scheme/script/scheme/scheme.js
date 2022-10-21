@@ -3,6 +3,7 @@ import { SchemeValue } from './scheme-value.js';
 import { SchemeAttribute } from './scheme-attribute.js';
 import { SchemeTheme } from './scheme-theme.js';
 import { SchemeEmission } from './scheme-emission.js';
+import { SchemeEvent } from './scheme-event.js';
 
 class Scheme extends api.core.Instance {
   constructor () {
@@ -109,6 +110,7 @@ class Scheme extends api.core.Instance {
       localStorage.setItem('scheme', value);
     }
     this.setAttribute(SchemeAttribute.SCHEME, value);
+    this.dispatch(SchemeEvent.SCHEME, this.scheme);
   }
 
   get theme () {
