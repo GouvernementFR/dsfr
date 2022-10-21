@@ -1,0 +1,5 @@
+<%
+let radio = locals.radio || {}
+let jsonData = JSON.parse(include('../../../../form/deprecated/example/sample/data', {form:radio}));
+let data = {...radio, ...jsonData};
+data.label = radio.label || 'Label radio';

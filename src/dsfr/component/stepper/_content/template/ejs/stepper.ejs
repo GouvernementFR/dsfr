@@ -9,35 +9,35 @@
 
 * stepper.nextStep (String, required): Titre de la prochaine étape
 
+* stepper.markup (string, optional) : (défaut : h2) niveau de titre
 %>
-<% eval(include('../../../../../_content/env.js')); %>
-
+<% eval(include('../../../../core/index.ejs')); %>
 <%
- let stepper = locals.stepper || {};
- let classes = stepper.classes || [];
- let stepAttrs = {};
- classes.push(prefix + '-stepper');
+let stepper = locals.stepper || {};
+let classes = stepper.classes || [];
+const markup = stepper.markup || 'h2';
+let stepAttrs = {};
+classes.push(prefix + '-stepper');
 %>
-
 <div <%- includeClasses(classes); %>>
   <% if (stepper.title !== undefined) { %>
-    <h2 class="<%= prefix%>-stepper__title">
-      <% if (stepper.currentStep && stepper.stepCount) { %>
-        <span class="<%= prefix %>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
-      <% } %>
-      <%- stepper.title %>
-    </h2>
-  <% } %>
+    <<%= markup %> class="<%= prefix %>-stepper__title">
+    <% if (stepper.currentStep && stepper.stepCount) { %>
+      <span class="<%= prefix %>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
+    <% } %>
+    <%- stepper.title %>
+</<%= markup %>>
+<% } %>
 
 
+<% if (stepper.currentStep && stepper.stepCount) { %>
+  <% stepAttrs['data-' + prefix + '-current-step'] = stepper.currentStep %>
+  <% stepAttrs['data-' + prefix + '-steps'] = stepper.stepCount %>
+  <div class="<%= prefix %>-stepper__steps" <%- includeAttrs(stepAttrs) %>></div>
+<% } %>
 
-  <% if (stepper.currentStep && stepper.stepCount) { %>
-    <% stepAttrs['data-' + prefix + '-current-step'] = stepper.currentStep %>
-    <% stepAttrs['data-' + prefix + '-steps'] = stepper.stepCount %>
-    <div class="<%= prefix%>-stepper__steps" <%- includeAttrs(stepAttrs) %>></div>
-  <% } %>
-
-  <% if (stepper.nextStep !== undefined) { %>
-    <p class="<%= prefix %>-stepper__details"><span class="<%= prefix %>-text--bold">Étape suivante :</span> <%- stepper.nextStep %></p>
-  <% } %>
+<% if (stepper.nextStep !== undefined) { %>
+  <p class="<%= prefix %>-stepper__details"><span
+            class="<%= prefix %>-text--bold">Étape suivante :</span> <%- stepper.nextStep %></p>
+<% } %>
 </div>

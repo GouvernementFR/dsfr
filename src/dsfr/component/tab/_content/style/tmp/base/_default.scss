@@ -92,7 +92,7 @@
       @include typography.enable-list-style;
       display: block;
       order: 3;
-      @include spacing.relative(null, null, null, 0, 100%, auto);
+      @include spacing.relative(null, null, null, 0, -100%, auto);
       @include spacing.padding(4v);
       @include spacing.padding(8v, md);
       transform: translate(-100%);
@@ -110,11 +110,11 @@
       }
 
       &--direction-end {
-        transform: translate(0%);
+        transform: translate(100%);
       }
 
       &--direction-start {
-        transform: translate(-200%);
+        transform: translate(-100%);
       }
 
       /**

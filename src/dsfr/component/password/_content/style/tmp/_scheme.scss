@@ -3,21 +3,22 @@
 /// @group password
 ////
 
-@use '../../../../../../sass/color';
-@use '../../../../../../sass/selector';
-@import './setting';
-@import '../../../../button/_content/style/tmp/tool';
+@use 'module/color';
 
-@mixin scheme($legacy: false) {
-  #{selector.ns(password)} {
+@mixin _password-scheme($legacy: false) {
+  #{ns(password)} {
     &__btn {
       @include btn-kind-scheme(4, $legacy);
     }
 
     #{ns-attr(capslock)} {
-      @include selector.before {
+      @include before {
         @include color.data-uri-svg(default grey, (legacy: $legacy), $capslock-svg);
       }
+    }
+
+    & &__checkbox #{ns(label)} {
+      @include color.text(default grey, (legacy: $legacy));
     }
   }
 }

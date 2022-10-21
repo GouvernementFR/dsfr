@@ -22,3 +22,11 @@
     background-size: spacing.space(6v) spacing.space(6v);
   }
 }
+
+#{ns(select-group)} {
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
+    }
+  }
+}

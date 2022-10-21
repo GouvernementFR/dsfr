@@ -8,9 +8,6 @@
 @use '../../../../../../../sass/selector';
 @import '../tool';
 
-/**
- * Modificateur pour la taille sm
- */
  @mixin first($legacy: false) {
   #{selector.ns-group(radio)}--sm {
     input[type="radio"] {

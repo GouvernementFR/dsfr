@@ -24,9 +24,6 @@
         @include spacing.padding-right(26v);
         @include display.flex(column, flex-start, center);
 
-        /**
-        * On applique la taille sm pour le bouton radio riche
-        */
         @include selector.before {
           @include spacing.size(4v, 4v);
           @include spacing.absolute(50%, null, null, 7v);
@@ -68,79 +65,6 @@
       svg {
         max-width: spacing.space(20v);
         object-fit: cover;
-      }
-    }
-  }
-
-  /**
- * Style spécifique des radios intégrés dans un fiedset
- */
-  #{selector.ns(fieldset)} {
-    #{selector.ns(radio-rich)} {
-      &:first-child {
-        input[type='radio'] + label {
-          @include spacing.margin-top(3v);
-        }
-      }
-
-      input[type='radio'] + label {
-        @include spacing.margin-top(2v);
-        @include spacing.margin-bottom(4v);
-      }
-
-      &:last-child {
-        input[type='radio'] + label {
-          @include spacing.margin-bottom(7v);
-        }
-      }
-    }
-
-    /**
-   * Modificateur pour afficher les radios en ligne
-   */
-    &--inline {
-      #{selector.ns(radio-rich)} {
-        &:not(:last-child) {
-          input[type='radio'] + label {
-            @include spacing.margin-right(3v);
-            @include spacing.margin-bottom(2v);
-          }
-
-          #{selector.ns(radio-rich)}__img {
-            right: spacing.space(4v);
-          }
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-
-          input[type='radio'] + label {
-            @include spacing.margin-bottom(3v);
-          }
-        }
-
-        &:first-child {
-          #{selector.ns(radio-rich)}__img {
-            top: spacing.space(4v);
-          }
-        }
-
-        &__img {
-          top: spacing.space(3v);
-        }
-      }
-
-      /**
-     * Écart entre le text d'aide et les radios riches dans le cas des radios inline
-     */
-      #{selector.ns(hint-text)} + #{selector.ns(fieldset__content)} {
-        #{selector.ns(radio-rich)} {
-          &:first-child {
-            input[type='radio'] + label {
-              @include spacing.margin-top(6v);
-            }
-          }
-        }
       }
     }
   }

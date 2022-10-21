@@ -1,9 +1,12 @@
 title: Bouton radio
 description: Le bouton radio permettent à l’utilisateur de sélectionner une seule option dans une liste.
 doc:
-  - url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/217088553/Boutons+radio+-+Radio+button
+  - url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/boutons-radio
     title: Bouton radio
-  - url: https://gouvfr.atlassian.net/wiki/spaces/DB/pages/368935129/Bouton+radio+riche+-+radio+button+extended
+  - url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/boutons-radio-riches
     title: Bouton radio riche
 option:
   no-answer: Sans réponse
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée

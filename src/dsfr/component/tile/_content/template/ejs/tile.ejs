@@ -3,6 +3,8 @@
 
 * tile.title (string, required) : titre de la tuile
 
+* tile.markup (string, optional) : (default: h3) Niveau de titre de la tuile
+
 * tile.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la tuile
 
 * tile.horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
@@ -45,7 +47,7 @@ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 
 <div <%- includeClasses(classes)%>>
   <div class="<%= prefix %>-tile__body">
-    <h4 class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></h4>
+    <<%= markup %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></<%= markup %>>
     <% if(tile.description !== undefined) { %>
     <p class="<%= prefix %>-tile__desc"><%= tile.description %></p>
     <% } %>
