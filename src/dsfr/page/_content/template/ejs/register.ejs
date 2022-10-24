@@ -1,0 +1,93 @@
+<%#
+# paramètres register
+
+* title (String, optional): Titre de la page
+* chapo (String, optional): Chapô de la page
+* hint (String, optional): hint text
+
+* stepper (object, optional) : Bloc de connexion
+** ... voir composant stepper
+
+* connect (object, optional) : Bloc bouton France connect
+** connect.title (String, optional) : Titre du bloc france connect
+** ... Autre paramètres connect (voir composant connect)
+
+* create (object, optional) : Bloc bouton s'enregistrer
+** create.title (String, optional) : Titre du bloc
+** create.desc (String, optional) : description du bloc
+** create.alert (object, optional) : paramètre une alerte
+** create.hint (String, optional) : texte additionnel du bloc
+** create.form (object, optional) : paramètres du formulaire
+
+%>
+
+<%
+  const register = locals.register;
+
+  const connect = register.connect || {};
+%>
+
+<main role="main" id="content">
+  <div class="<%= prefix %>-container <%= prefix %>-mt-8v <%= prefix %>-mt-md-14v">
+    <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+      <% if (register.title) { %>
+        <h2><%= register.title %></h2>
+      <% } %>
+
+      <% if (register.chapo) { %>
+        <p class="<%= prefix %>-text--lead"><%= register.chapo %></p>
+      <% } %>
+      </div>
+    </div>
+  </div>
+
+  <div class="<%= prefix %>-container <%= prefix %>-container--fluid">
+    <div class="<%= prefix %>-mb-md-7w <%= prefix %>-grid-row <%= prefix %>-grid-row--gutters <%= prefix %>-grid-row--center">
+      <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-10 <%= prefix %>-col-lg-8">
+        <div class="<%= prefix %>-container <%= prefix %>-px-md-0 <%= prefix %>-background-alt--grey <%= prefix %>-pb-md-10v <%= prefix %>-pb-6v <%= prefix %>-pt-10v  <%= prefix %>-mt-2v <%= prefix %>-mt-md-5v <%= prefix %>-pt-md-14v">
+          <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center <%= prefix %>-grid-row--gutters">
+            <div class="<%= prefix %>-col-12 <%= prefix %>-col-md-9">
+              <% if (register.stepper) { %>
+                <%- include('../../../../component/stepper/template/ejs/stepper.ejs', {stepper: register.stepper})  %>
+                <hr class="<%= prefix %>-mt-5w <%= prefix %>-mb-2w">
+              <% } %>
+
+              <% if (register.connect) { %>
+                <div>
+                  <% if (register.connect.title) { %>
+                  <h6><%= register.connect.title %></h6>
+                  <% } %>
+
+                  <%- include('../../../../component/connect/template/ejs/connect.ejs', {connect: register.connect})  %>
+                </div>
+
+                <% if(register.create) { %>
+                  <p class="<%= prefix %>-hr--or <%= prefix %>-mt-6v">OU</p>
+                <% } %>
+              <% } %>
+
+              <% if(register.create) { %>
+                <div>
+                  <% if (register.create.title) { %>
+                  <h6 class="<%= prefix %>-mb-4v"><%= register.create.title %></h6>
+                  <% } %>
+
+                  <% if (register.create.desc) { %>
+                  <p class="<%= prefix %>-text--sm <%= prefix %>-mb-4v"><%= register.create.desc %></p>
+                  <% } %>
+
+                  <% if (register.create.alert) { %>
+                    <%- include('../../../../component/alert/template/ejs/alert.ejs', {alert: register.create.alert})  %>
+                  <% } %>
+
+                  <%- include('../../../../component/form/template/ejs/form.ejs', {form: { ...register.create.form, hint: register.create.hint}}) %>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

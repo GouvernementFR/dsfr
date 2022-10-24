@@ -1,0 +1,37 @@
+<%
+const page = locals.page;
+const buttons = [];
+
+let align = 'right';
+
+if (page.stepCount > 1) {
+  align = 'between';
+  const previous = {
+    label: getText('button.previous', 'register'),
+    kind: 2
+  };
+  if (page.currentStep === 1) {
+    previous.attributes = {
+      style: 'visibility: hidden;'
+    }
+  }
+  buttons.push(previous);
+}
+
+buttons.push({
+  label: getText('button.valid', 'register'),
+  kind: 1,
+  type: 'submit'
+});
+
+const buttonsGroup = {
+  type: 'buttonsGroup',
+  data: {
+    inline: true,
+    align: align,
+    classes: [`${prefix}-mt-2v`],
+    buttons: buttons
+  }
+};
+%>
+<%- JSON.stringify(buttonsGroup); %>

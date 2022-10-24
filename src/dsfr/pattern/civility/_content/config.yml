@@ -1,9 +1,0 @@
-id: civility
-style:
-  dependencies:
-    - core
-example:
-  wrapper: container
-  style:
-    - radio
-    - select

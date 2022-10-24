@@ -1,0 +1,20 @@
+<%
+ const segment = locals.segment;
+ const data = segment.data || {};
+
+ const alert = {
+   id: uniqueId('alert'),
+   size: 'sm',
+   text: data.text,
+   type: data.type,
+   classes: [prefix + '-mb-6v']
+ }
+ %>
+
+<div>
+  <%- include('../../../../../component/alert/template/ejs/alert.ejs', { alert: alert })  %>
+
+  <% if (data.hint) { %>
+    <%- include('../../../../../component/form/template/ejs/hint.ejs', { hint: { text: data.hint, markup: 'p' } });  %>
+  <% } %>
+</div>
