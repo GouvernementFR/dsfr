@@ -12,6 +12,7 @@
 
     &__link {
       &[aria-current] {
+        @include color.box-shadow(active blue-france, (legacy: $legacy), all-1-in);
         @include color.background(active blue-france, (legacy: $legacy, hover: true));
         @include color.text(inverted blue-france, (legacy: $legacy));
       }
