@@ -125,6 +125,7 @@ class Scheme extends api.core.Instance {
         this._theme = value;
         this.setAttribute(SchemeAttribute.THEME, value);
         this.descend(SchemeEmission.THEME, value);
+        this.dispatch(SchemeEvent.THEME, this._theme);
         break;
     }
   }
