@@ -13,6 +13,4 @@ sample:
   default: Bouton upload 1 seul fichier
   error: Bouton upload avec erreur
   multiple: Bouton upload fichiers multiples
-  form:
-    error: Bouton upload avec erreur globale
-    disabled: Bouton upload désactivé
+  disabled: Bouton upload désactivé

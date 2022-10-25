@@ -44,8 +44,11 @@ if (upload.error) {
   groupClasses.push(`${prefix}-upload-group--error`);
   builder.addError(upload.error);
 }
+if (upload.disabled) {
+  groupClasses.push(`${prefix}-upload-group--disabled`);
+  attributes['disabled'] = '';
+}
 if (builder.describedby.length > 0) attributes['aria-describedby'] = builder.describedby.join(' ');
-if (upload.disabled) attributes['disabled'] = '';
 if (upload.multiple) attributes['multiple'] = '';
 %>
 

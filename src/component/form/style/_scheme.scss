@@ -7,6 +7,32 @@
 @use 'module/disabled';
 
 @mixin _form-scheme($legacy: false) {
+  #{ns-group(select), ns-group(input), ns-group(upload)} {
+    &--valid {
+      label {
+        @include color.text(default success, (legacy:$legacy));
+      }
+    }
+
+    &--error {
+      label {
+        @include color.text(default error, (legacy:$legacy));
+      }
+    }
+
+    &--info {
+      label {
+        @include color.text(default info, (legacy:$legacy));
+      }
+    }
+
+    &--disabled {
+      label {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
+  }
+
   #{ns(label)} {
     @include color.text(label grey, (legacy:$legacy));
 
@@ -52,8 +78,7 @@
   #{ns(fieldset)} {
     @include disabled.selector {
       label,
-      legend,
-      #{ns(hint-text)} {
+      legend {
         @include disabled.colors((legacy: $legacy, text: true));
       }
     }
