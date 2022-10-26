@@ -16,5 +16,6 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/contrast';
 
-@include _pagination-scheme;
+@include _pagination-contrast;
