@@ -1,7 +1,7 @@
-import ns from '../../../core/script/api/utilities/namespace.js';
+import api from '../../api.js';
 
 const SchemeEvent = {
-  SCHEME: ns.event('scheme')
+  SCHEME: api.ns.event('scheme')
 };
 
 export { SchemeEvent };
