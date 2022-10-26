@@ -1,16 +1,10 @@
 <%#
 # paramètres upload
-
 * upload.id (string, required) : id de l'upload
-
 * upload.name (string, required) : nom de l'input
-
 * upload.label (string, required) : texte du label
-
 * upload.hint (string, optional) : texte de description sous le label
-
 * upload.labelAttrs (object, optional) : Pour passer des attributs au label
-
 * upload.labelClasses (array, optional) : Pour passer des classes au label
 * upload.attributes (array, optional) : Pour passer des attributs au input
 * upload.error (string, optional) : ajoute un texte d'erreur
@@ -29,10 +23,19 @@ const attributes = upload.attributes || [];
 const labelAttrs = upload.labelAttrs || {};
 const labelClass = upload.labelClasses || [];
 const builder = new MessageBuilder(upload.id);
-if (upload.valid) builder.addError(upload.valid);
-if (upload.error) builder.addError(upload.error);
+if (upload.valid) {
+  groupClasses.push(`${prefix}-upload-group--valid`);
+  builder.addError(upload.valid);
+}
+if (upload.error) {
+  groupClasses.push(`${prefix}-upload-group--error`);
+  builder.addError(upload.error);
+}
+if (upload.disabled) {
+  groupClasses.push(`${prefix}-upload-group--disabled`);
+  attributes['disabled'] = '';
+}
 if (builder.describedby.length > 0) attributes['aria-describedby'] = builder.describedby.join(' ');
-if (upload.disabled) attributes['disabled'] = '';
 if (upload.multiple) attributes['multiple'] = '';
 %>
 <div <%- includeClasses(groupClasses); %>>

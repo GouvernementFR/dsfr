@@ -5,21 +5,22 @@ attrModal['aria-controls'] = prefix + '-theme-modal';
 attrModal[`data-${prefix}-opened`] = false;
 
 const button = {
-    classes: [prefix + "-display-button", prefix + '-background-default--grey'],
-    icon: 'theme-fill',
-    attributes: {...attrModal, style: 'z-index: 1600'},
-    tag: 'button',
-    kind: 2,
-    size: 'lg'
+  classes: [prefix + "-display-button", prefix + '-background-default--grey'],
+  icon: 'theme-fill',
+  attributes: {
+    ...attrModal,
+    style: 'z-index: 1600'
+  },
+  markup: 'button',
+  kind: 2,
+  size: 'lg'
 };
-
 let dataModal = {
   id: prefix + "-theme-modal",
   title: 'Paramètres d’affichage',
-  body: '../../../../display/_content/example/sample/body',
+  body: include('../../src/component/display/example/sample/body'),
   size: "sm"
 }
-
 %>
 
 

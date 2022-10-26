@@ -25,6 +25,8 @@
     }
   }
 
+  // button,
+  // input[type=button] {
   @include action.clickable-selector {
     @include selector.class(tag, (combine: true)) {
       @include color.text(action-high blue-france, (legacy: $legacy));
@@ -36,20 +38,30 @@
       }
 
       @include pressed-selector(true) {
-        @include color.text(inverted grey, (legacy: $legacy));
-        @include color.transparent-background((legacy:$legacy));
-        @include tag-punched-background(background action-high blue-france, md, $legacy);
-
-        @include disabled.selector {
-          background-image: none;
+        &:not(:disabled) {
+          @include color.transparent-background((legacy:$legacy));
+          @include color.text(inverted grey, (legacy: $legacy));
+          @include tag-punched-background(background action-high blue-france, md, $legacy);
         }
 
-        @include selector.after {
+        @include after {
           @include color.text(action-high blue-france, (legacy: $legacy));
         }
 
-        &#{selector.ns(tag)}--sm {
+        @include disabled.selector {
+          @include color.transparent-background((legacy:$legacy));
+          @include tag-punched-background(background disabled grey, md, $legacy, false);
+          @include after {
+            @include color.text(disabled grey, (legacy: $legacy));
+          }
+        }
+
+        &#{ns(tag)}--sm {
           @include tag-punched-background(background action-high blue-france, sm, $legacy);
+
+          @include disabled.selector {
+            @include tag-punched-background(background disabled grey, sm, $legacy, false);
+          }
         }
       }
 
@@ -59,10 +71,16 @@
 
   #{selector.ns-group(tags)} {
     &#{selector.ns-group(tags)}--sm {
+      // button,
+      // input[type=button] {
       @include action.clickable-selector {
         &#{selector.ns(tag)} {
           @include pressed-selector(true) {
             @include tag-punched-background(background action-high blue-france, sm, $legacy);
+
+
+            @include disabled.selector {
+              @include tag-punched-background(background disabled grey, sm, $legacy, false);
           }
         }
       }

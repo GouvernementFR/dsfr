@@ -8,30 +8,6 @@
 
 @mixin _deprecated-form-scheme($legacy: false) {
   #{ns-group(select), ns-group(input)} {
-    &--valid {
-      label {
-        @include color.text(default success, (legacy:$legacy));
-      }
-    }
-
-    &--error {
-      label {
-        @include color.text(default error, (legacy:$legacy));
-      }
-    }
-
-    &--info {
-      label {
-        @include color.text(default info, (legacy:$legacy));
-      }
-    }
-
-    &--disabled {
-      label {
-        @include disabled.colors((legacy: $legacy, text: true));
-      }
-    }
-  }
 
   #{ns(error-text)} {
     @include color.text(default error, (legacy:$legacy));

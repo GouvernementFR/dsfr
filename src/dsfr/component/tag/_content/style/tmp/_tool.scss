@@ -28,7 +28,7 @@
   }
 }
 
-@mixin tag-punched-background ($token, $size: md, $legacy: false) {
+@mixin tag-punched-background ($token, $size: md, $legacy: false, $hover: true) {
   $top: 1v;
   $stop-1: 2.3125v;
   $stop-2: 2.5v;
@@ -39,5 +39,5 @@
     $stop-2: 2v;
   }
 
-  @include color.background-image($token, (legacy: $legacy, hover: true), 'radial-gradient(circle at 100% #{spacing.space($top)}, transparent #{spacing.space($stop-1)}, $COLOR #{spacing.space($stop-2)})');
+  @include color.background-image($token, (legacy: $legacy, hover: $hover), 'radial-gradient(circle at 100% #{spacing.space($top)}, transparent #{spacing.space($stop-1)}, $COLOR #{spacing.space($stop-2)})');
 }
