@@ -21,6 +21,9 @@ label:
 hint:
   address: Numéro et voie
   complement: Bâtiment, immeuble, escalier et numéro d’appartement
+legend:
+  address: Adresse postale
+  complement: Complément d'adresse postale
 sample:
   national: Demande d’une adresse postale nationale
   complement: Complément d'adresse

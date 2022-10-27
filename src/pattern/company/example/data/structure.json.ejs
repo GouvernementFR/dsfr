@@ -6,7 +6,10 @@ const options = structures.map(structure => { return {value: structure, label: g
 
 const data = {
   id: uniqueId('structure'),
-  label: getText('fieldset.structure', 'company'),
+  legend: {
+    label: getText('fieldset.structure', 'company'),
+    sr: true
+  },
   elements: [
     {
       type: 'select',

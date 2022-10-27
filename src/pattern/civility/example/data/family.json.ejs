@@ -2,7 +2,10 @@
 let civility = locals.civility || {};
 const data = {
   id: uniqueId('family'),
-  label: getText('sample.family', 'civility'),
+  legend: {
+    label: getText('sample.family', 'civility'),
+    sr: true
+  },
   elements: [
     {
       type: 'select',
