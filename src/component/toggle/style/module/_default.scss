@@ -75,15 +75,16 @@
      */
     @include before {
       flex-shrink: 0;
+      display: block;
       min-width: spacing.space(10v);
       height: spacing.space(calc(5v + 1px));
       @include margin-top(6v);
       @include margin-left(-10v);
       @include margin-right(4v);
       @include text-style(xs);
-      white-space: pre-wrap;
-      overflow: hidden;
-      outline: none !important;
+      // white-space: pre-wrap;
+      // overflow: hidden;
+      // outline: none !important;
       width: var(--toggle-status-width);
     }
 
