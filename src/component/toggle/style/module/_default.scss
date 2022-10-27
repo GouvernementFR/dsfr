@@ -82,9 +82,7 @@
       @include margin-left(-10v);
       @include margin-right(4v);
       @include text-style(xs);
-      // white-space: pre-wrap;
-      // overflow: hidden;
-      // outline: none !important;
+      outline: none !important;
       width: var(--toggle-status-width);
     }
 
