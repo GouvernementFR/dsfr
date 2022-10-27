@@ -17,6 +17,12 @@
       }
     }
 
+    label {
+      @include before {
+        @include margin-top(9v);
+      }
+    }
+
     &__list {
       list-style: none;
     }
