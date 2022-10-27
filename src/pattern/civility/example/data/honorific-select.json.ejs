@@ -3,7 +3,10 @@ const civility = locals.civility || {};
 
 const data = {
   id: uniqueId('honorific'),
-  label: getText('sample.honorific', 'civility'),
+  legend: {
+    label: getText('sample.honorific', 'civility'),
+    sr: true
+  },
   elements: [{
     type: 'select',
     data: {

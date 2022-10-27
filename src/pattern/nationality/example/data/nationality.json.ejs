@@ -21,7 +21,10 @@ elements.push(select);
 
 const data = {
   id: nationality.id || uniqueId('nationality'),
-  label: nationality.label || getText('label.fieldset', 'nationality'),
+  legend: {
+    label: getText('legend.nationality', 'nationality'),
+    sr: true
+  },
   elements: elements
 }
 %>

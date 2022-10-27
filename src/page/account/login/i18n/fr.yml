@@ -9,6 +9,7 @@ login:
   legend: Se connecter avec son compte
   desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   hint: Sauf mention contraire, tous les champs sont obligatoires.
+  credentials: identifiants
   password: Mot de passe
   username:
     default: Identifiant

@@ -4,7 +4,8 @@ description: La demande de nom et prénom permet d’aider un utilisateur à sai
 doc:
 
 label:
-  fieldset: Demande de nationalité
+  nationality: Nationalité
+legend:
   nationality: Nationalité
 sample:
   default: Demande de nationalité

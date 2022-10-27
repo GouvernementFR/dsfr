@@ -58,10 +58,19 @@ if (fieldset.legend || fieldset.hint) {
 
   legend = {
     id: ids.legend,
-    label: fieldset.legend,
     hint: hint,
     classes: legendClasses
   };
+
+  switch (typeof fieldset.legend) {
+    case 'string':
+      legend.label = fieldset.legend;
+      break;
+
+    case 'object':
+      legend = { ...legend, ...fieldset.legend };
+      break;
+  }
 }
 
 const builder = new MessageBuilder(fieldset.id, fieldset.includeEmptyMessagesGroup);
