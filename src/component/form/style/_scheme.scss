@@ -77,8 +77,8 @@
 
   #{ns(fieldset)} {
     @include disabled.selector {
-      label,
-      legend {
+      #{ns(label)},
+      #{ns(fieldset__legend)} {
         @include disabled.colors((legacy: $legacy, text: true));
       }
     }

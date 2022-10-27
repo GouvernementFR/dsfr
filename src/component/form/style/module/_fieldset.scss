@@ -15,7 +15,7 @@
     @include font-weight(bold);
     @include width(100%);
 
-    &--default {
+    &--regular {
       @include font-weight(regular);
     }
 
