@@ -19,5 +19,9 @@
     }
 
     @include color.background-image((border default grey), (legacy:$legacy));
+
+    &__source {
+      @include color.text(mention grey, (legacy:$legacy));
+    }
   }
 }
