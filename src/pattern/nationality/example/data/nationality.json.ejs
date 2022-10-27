@@ -1,9 +1,11 @@
+
 <%
-const nationality = locals.nationality || {};
-const fields = nationality.fields || [];
+const nationalies = locals.nationalies || {};
+const fields = nationalies.fields || [];
 const elements = [];
 
-const countries = JSON.parse(include('../../../address/example/data/countries-select-options.json.ejs', { countries: { minimal: true }}));
+const nationalitiesOptions = JSON.parse(include('nationality-select-options.json.ejs', { nationalities: { minimal: true }}));
+
 const select = {
   type: 'select',
   data: {
@@ -11,7 +13,7 @@ const select = {
     label: getText('label.nationality', 'nationality'),
     placeholder: getText('option.placeholder', 'select'),
     name: 'country',
-    options: countries
+    options: nationalitiesOptions
   }
 };
 
