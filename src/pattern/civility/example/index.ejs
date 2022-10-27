@@ -1,0 +1,15 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- sample(getText('sample.sex', 'civility'), './sample/civility-sex', {}, true, '../../example/layout'); %>
+
+<%- sample(getText('sample.family', 'civility'), './sample/civility-family', {}, true, '../../example/layout'); %>
+
+<%- section(null, getText('section.recommandation', 'civility'), 0) %>
+
+<%- sample(getText('sample.honorific', 'civility'), './sample/civility-honorific-radio',{}, true,'../../example/layout'); %>
+
+<%- section(null, getText('section.preference', 'civility'), 0) %>
+
+<%- sample(getText('sample.honorific', 'civility'), './sample/civility-honorific-select', {}, true, '../../example/layout'); %>

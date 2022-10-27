@@ -1,0 +1,28 @@
+<%#
+# paramètres fieldset label
+
+* label.label (string, required) : texte du label
+
+* label.id (string, required) : id de l'input référencé
+
+* label.hint (string, required) : texte additionel dans le label
+
+* label.classes (array, optional) : Classes supplémentaires sur le label
+
+* label.attributes (object, optional) : Attributs supplémentaires sur le label
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+let label = locals.label || { label: 'label'};
+let labelClasses = label.classes || [];
+labelClasses.push(prefix + '-label');
+let labelAttrs = label.attributes || {};
+let id = label.id || '';
+%>
+
+<label <%- includeClasses(labelClasses); %> for="<%= label.id %>" <%- includeAttrs(labelAttrs); %>>
+  <%- label.label %>
+  <% if (label.hint != undefined) { %><%- include('./hint', {form: label});%><% } %>
+</label>

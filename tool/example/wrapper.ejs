@@ -1,24 +1,23 @@
 <% if (locals.prepend === true) { %>
-<%- include(`${root}/${path}/example/prepend.ejs`) %>
+  <%- include(`${root}/${path}/example/prepend.ejs`) %>
 <% } %>
 
 <% if (!locals.noHeading) { %>
-<%- include('heading'); %>
+  <%- include('heading'); %>
 <% } %>
-
 <%
 switch(type) {
-case 'package':
+  case 'package':
 %>
 <%- include(root + 'tool/example/package', {type:undefined}); %>
 <%
-    break;
+  break;
 
-case 'folder':
+  case 'folder':
 %>
 <%- include(root + 'tool/example/folder', {type:undefined}); %>
 <%
-    break;
+  break;
 }
 %>
 

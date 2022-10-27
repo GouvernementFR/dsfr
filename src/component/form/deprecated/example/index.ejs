@@ -1,0 +1,33 @@
+<script>
+  function preventSubmit(e) {
+    e.preventDefault();
+    return false;
+  }
+</script>
+
+<form onsubmit="return preventSubmit(event)">
+
+<% const sample = getSample(include); %>
+
+<%- sample('Ensemble de champs de saisie', '../../../input/input-base/deprecated/example/sample/inputs', { inputs: { id:'text-deprecated' }}, true);  %>
+
+<%- sample('Ensemble de boutons radio', '../../../radio/deprecated/example/sample/radios', { radios: { id:'radio-deprecated' }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher', '../../../checkbox/deprecated/example/sample/checkboxes', { checkboxes: { id:'checkbox-deprecated' }}, true);  %>
+
+<%- sample('Ensemble de boutons radio, en ligne', '../../../radio/deprecated/example/sample/radios', { radios: { id:'radio-inline-deprecated', inline:true }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher, en ligne', '../../../checkbox/deprecated/example/sample/checkboxes', { checkboxes: { id:'checkbox-inline-deprecated', inline:true }}, true);  %>
+
+<%- sample('Ensemble de boutons radio avec erreur', '../../../radio/deprecated/example/sample/radios', { radios: { id:'radio-error-deprecated', error:true, hint:true }}, true);  %>
+
+<%- sample('Ensemble de boutons radio riches', '../../../radio/deprecated/example/sample/radios', { radios: { id:'radio-disabled-deprecated', hint: true}, radio: { rich: true, hint: true }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher, avec erreur', '../../../checkbox/deprecated/example/sample/checkboxes', { checkboxes: { id:'checkbox-error-deprecated', error: true, hint: true }}, true);  %>
+
+<%- sample('Ensemble de champs de saisie désactivés', '../../../input/input-base/deprecated/example/sample/inputs', { inputs: { id:'text-disabled-deprecated', hint: true }, input: { disabled: true, hint: true }}, true);  %>
+
+<%- sample('Ensemble de boutons radio désactivés', '../../../radio/deprecated/example/sample/radios', { radios: { id:'radio-disabled-deprecated', hint: true}, radio: { disabled: true, hint: true }}, true);  %>
+
+<%- sample('Ensemble de cases à cocher désactivés', '../../../checkbox/deprecated/example/sample/checkboxes', { checkboxes: { id: 'checkbox-disabled-deprecated', hint: true}, checkbox: { disabled: true, hint: true }}, true);  %>
+</form>

@@ -1,0 +1,32 @@
+<%
+let civility = locals.civility || {};
+const data = {
+  id: uniqueId('family'),
+  legend: {
+    label: getText('sample.family', 'civility'),
+    sr: true
+  },
+  elements: [
+    {
+      type: 'select',
+      data: {
+        id: uniqueId('family'),
+        label: getText('legend.family', 'civility'),
+        placeholder: getText('option.placeholder', 'select'),
+        name: 'family',
+        options: [
+          {value:'1', label: getText('option.family.single', 'civility')},
+          {value:'2', label: getText('option.family.concubinage', 'civility')},
+          {value:'3', label: getText('option.family.pacsed', 'civility')},
+          {value:'4', label: getText('option.family.maried', 'civility')},
+          {value:'5', label: getText('option.family.widow', 'civility')},
+          {value:'6', label: getText('option.family.divorced', 'civility')},
+          {value:'7', label: getText('option.no-answer', 'select')}
+        ]
+      }
+    }
+  ]
+}
+%>
+
+<%- JSON.stringify(data); %>

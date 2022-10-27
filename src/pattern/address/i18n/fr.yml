@@ -1,0 +1,274 @@
+title: Modèle de bloc d'adresse'
+description: La demande de civilité permet à un utilisateur de donner sa civilité (sexe, situation familière, titre d’appel).
+doc:
+
+label:
+  address: Adresse
+  complement: Complément d’adresse
+  optional: (optionnel)
+  locality: Lieu-dit, commune déléguée ou boîte postale
+  postal: Code postal
+  city: Ville ou commune
+  number: Numéro
+  street: Voie
+  block: Immeuble
+  building: Bâtiment
+  stare: Escalier
+  apartment: Numéro d'appartement
+  cedex: Cedex
+  name: Dénomination
+  country: Pays
+hint:
+  address: Numéro et voie
+  complement: Bâtiment, immeuble, escalier et numéro d’appartement
+legend:
+  address: Adresse postale
+  complement: Complément d'adresse postale
+sample:
+  national: Demande d’une adresse postale nationale
+  complement: Complément d'adresse
+  international: Demande d’une adresse postale internationale
+
+country:
+  ZA: Afrique du Sud
+  AL: Albanie
+  DZ: Algérie
+  DE: Allemagne
+  AD: Andorre
+  AO: Angola
+  AI: Anguilla
+  AQ: Antarctique
+  AG: Antigua-et-Barbuda
+  AN: Antilles néerlandaises
+  SA: Arabie Saoudite
+  AR: Argentine
+  AM: Arménie
+  AW: Aruba
+  AU: Australie
+  AT: Autriche
+  AZ: Azerbaïdjan
+  BS: Bahamas
+  BH: Bahreïn
+  BD: Bangladesh
+  BB: Barbade
+  BE: Belgique
+  BZ: Bélize
+  BJ: Bénin
+  BM: Bermudes
+  BT: Bhoutan
+  BY: Biélorussie
+  BO: Bolivie
+  BQ: Bonaire, Saint Eustatius et Saba
+  BA: Bosnie-Herzégovine
+  BW: Botswana
+  BR: Brésil
+  BN: Brunéi Darussalam
+  BG: Bulgarie
+  BF: Burkina Faso
+  BI: Burundi
+  KH: Cambodge
+  CM: Cameroun
+  CA: Canada
+  CV: Cap Vert
+  CL: Chili
+  CN: Chine
+  CY: Chypre
+  CO: Colombie
+  KM: Comores
+  CG: Congo
+  CD: Congo, République démocratique du
+  KR: Corée, République de
+  CR: Costa Rica
+  CI: Côte d\'ivoire
+  HR: Croatie
+  CW: Curaçao
+  DK: Danemark
+  DJ: Djibouti
+  DM: Dominique
+  EG: Égypte
+  SV: El Salvador
+  AE: Émirats arabes unis
+  EC: Équateur
+  ER: Érythrée
+  ES: Espagne
+  EE: Estonie
+  US: États-Unis
+  ET: Ethiopie
+  RU: Fédération de Russie
+  FJ: Fidji
+  FI: Finlande
+  FR: France
+  GA: Gabon
+  GM: Gambie
+  GE: Géorgie
+  GS: Géorgie du Sud et les Îles Sandwich du Sud
+  GH: Ghana
+  GI: Gibraltar
+  GR: Grèce
+  GD: Grenade
+  GL: Groenland
+  GP: Guadeloupe
+  GU: Guam
+  GT: Guatemala
+  GN: Guinée
+  GW: Guinée-Bissau
+  GQ: Guinée équatoriale
+  GY: Guyane
+  GF: Guyane française
+  HT: Haïti
+  HN: Honduras
+  HK: Hong Kong
+  HU: Hongrie
+  BV: Île Bouvet
+  CX: Île Christmas
+  HM: Île Heard et îles McDonald
+  NF: Île Norfolk
+  AX: Îles Åland
+  KY: Îles Caïmans
+  IC: Îles Canaries
+  CC: Îles Cocos (Keeling)
+  CK: Îles Cook
+  FK: Îles Falkland (Malouines)
+  FO: Îles Féroé
+  MP: Îles Mariannes du Nord
+  MH: Îles Marshall
+  UM: Îles mineures éloignées des États-Unis
+  SB: Îles Salomon
+  TC: Îles Turques-et-Caïques
+  VI: Îles Vierges américaines
+  VG: Îles Vierges britanniques
+  IN: Inde
+  ID: Indonésie
+  IE: Irlande
+  IS: Islande
+  IL: Israël
+  IT: Italie
+  JM: Jamaïque
+  JP: Japon
+  JO: Jordanie
+  KZ: Kazakhstan
+  KE: Kenya
+  KG: Kirghizistan
+  KI: Kiribati
+  XK: Kosovo
+  KW: Koweït
+  LS: Lesotho
+  LV: Lettonie
+  LB: Liban
+  LR: Liberia
+  LY: Libye
+  LI: Liechtenstein
+  LT: Lituanie
+  LU: Luxembourg
+  MO: Macao
+  MK: Macédoine, Ex-République yougoslave de
+  MG: Madagascar
+  MY: Malaisie
+  MW: Malawi
+  MV: Maldives
+  ML: Mali
+  MT: Malte
+  MA: Maroc
+  MQ: Martinique
+  MU: Maurice
+  MR: Mauritanie
+  YT: Mayotte
+  MX: Mexique
+  FM: Micronésie, États fédérés de
+  MC: Monaco
+  MN: Mongolie
+  ME: Montenegro
+  MS: Montserrat
+  MZ: Mozambique
+  MM: Myanmar
+  NA: Namibie
+  NR: Nauru
+  NP: Népal
+  NI: Nicaragua
+  NE: Niger
+  NG: Nigeria
+  NU: Niué
+  NO: Norvège
+  NC: Nouvelle-Calédonie
+  NZ: Nouvelle-Zélande
+  OM: Oman
+  UG: Ouganda
+  UZ: Ouzbékistan
+  PK: Pakistan
+  PW: Palaos
+  PA: Panama
+  PG: Papouasie-Nouvelle-Guinée
+  PY: Paraguay
+  NL: Pays-Bas
+  PE: Pérou
+  PH: Philippines
+  PN: Pitcairn
+  PL: Pologne
+  PF: Polynésie française
+  PR: Porto Rico
+  PT: Portugal
+  QA: Qatar
+  CF: République centrafricaine
+  LA: République démocratique populaire lao
+  MD: République de Moldavie
+  DO: République dominicaine
+  CZ: République Tchèque
+  RE: Réunion
+  RO: Roumanie
+  GB: Royaume-Uni
+  RW: Rwanda
+  EH: Sahara occidental
+  BL: Saint-Barthélemy
+  SH: Sainte-Hélène, Ascension et Tristan da Cunha
+  LC: Sainte-Lucie
+  KN: Saint-Kitts-et-Nevis
+  SM: Saint-Marin
+  MF: Saint-Martin (France)
+  SX: Saint-Martin (Pays Bas)
+  PM: Saint-Pierre-et-Miquelon
+  VA: Saint-Siège
+  VC: Saint-Vincent-et-les Grenadines
+  WS: Samoa
+  AS: Samoa américaines
+  ST: Sao-Tomé-et-Principe
+  SN: Sénégal
+  RS: Serbie
+  SC: Seychelles
+  SL: Sierra Leone
+  SG: Singapour
+  SK: Slovaquie
+  SI: Slovénie
+  SO: Somalie
+  SS: Soudan du Sud
+  LK: Sri Lanka
+  SE: Suède
+  CH: Suisse
+  SR: Surinam
+  SJ: Svalbard et Jan Mayen
+  SZ: Swaziland
+  TJ: Tadjikistan
+  TW: Taïwan
+  TZ: Tanzanie, République unie de
+  TD: Tchad
+  TF: Terres australes et antarctiques françaises
+  IO: Territoire britannique de l\'océan Indien
+  PS: Territoires palestiniens
+  TH: Thaïlande
+  TL: Timor-leste
+  TG: Togo
+  TK: Tokelau
+  TO: Tonga
+  TT: Trinité-et-Tobago
+  TN: Tunisie
+  TM: Turkménistan
+  TR: Turquie
+  TV: Tuvalu
+  UA: Ukraine
+  UY: Uruguay
+  VU: Vanuatu
+  VE: Venezuela
+  VN: Vietnam
+  WF: Wallis-et-Futuna
+  YE: Yémen
+  ZM: Zambie
+  ZW: Zimbabwe

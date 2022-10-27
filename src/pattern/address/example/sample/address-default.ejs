@@ -1,0 +1,9 @@
+<%
+const address = locals.address || {};
+const data = {
+  ...address,
+  id: uniqueId('address')
+}
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset/fieldset', {fieldset: data}); %>

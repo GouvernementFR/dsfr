@@ -3,15 +3,12 @@
 /// @group radio
 ////
 
-/**
- * Modificateur pour la taille sm
- */
 #{ns-group(radio)}--sm {
   input[type="radio"] {
     & + label {
       @include before {
         @include size(4v, 4v);
-        @include margin-top(4v);
+        @include margin-top(1v);
       }
     }
   }

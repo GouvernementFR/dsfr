@@ -12,7 +12,9 @@
   @include set-text-margin(0 0 4v);
 
   &__newsletter {
-    // bloc newsletter
+    #{ns-group(input)} {
+      @include margin-bottom(0);
+    }
 
     #{ns(label)} {
       @include sr-only();
@@ -46,34 +48,13 @@
       }
     }
 
-    #{ns(hint-text)} {
-      @include margin-top(6v);
-      @include margin-bottom(0);
-    }
-
-    #{ns(valid-text)},
-    #{ns(error-text)} {
+    #{ns-group(messages)} {
       @include margin-top(4v);
-      + #{ns(hint-text)} {
-        @include margin-top(4v);
-        @include margin-top(2v, md);
-      }
-    }
-
-    @include respond-from(sm) {
-      #{ns(hint-text)} {
-        @include margin-top(2v);
-      }
-
-      #{ns(valid-text)},
-      #{ns(error-text)} {
-        @include margin-top(4v);
-      }
+      @include margin-bottom(2v, sm);
     }
   }
 
   &__social {
-    // bloc social
     @include set-text-margin(0 0 3v);
     @include set-title-margin(0 0 3v);
 

@@ -1,0 +1,25 @@
+<%#
+# paramètres message
+
+* message.id (string, required) : id du fieldset référencé
+
+* message.error (string, optional): message d'erreur
+
+* message.valid (string, optional): message de succès
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<%
+let message = locals.message || {}
+%>
+<% if(message.error != undefined) { %>
+  <p id="<%= message.id %>-desc-error" class="<%= prefix %>-error-text" >
+    <%= message.error %>
+  </p>
+<% } %>
+
+<% if(message.valid != undefined) { %>
+  <p id="<%= message.id %>-desc-valid" class="<%= prefix %>-valid-text" >
+    <%= message.valid %>
+  </p>
+<% } %>

@@ -1,0 +1,13 @@
+<%
+let data = {
+  input: {value: 'x8A@'},
+  messages: [
+    { text: getText('format.label', 'password') },
+    { text: getText('format.characters', 'password'), type: 'error' },
+    { text: getText('format.special', 'password'), type: 'valid' },
+    { text: getText('format.digit', 'password'), type: 'valid' }
+  ]
+}
+%>
+
+<%- include('./password-register.ejs', {password: data}); %>

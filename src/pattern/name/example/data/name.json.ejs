@@ -1,0 +1,185 @@
+<%
+const name = locals.name || {};
+const fields = name.fields || [];
+const elements = [];
+
+const countries = JSON.parse(include('../../../address/example/data/countries-select-options.json.ejs', { countries: { minimal: true }}));
+const country = {
+  type: 'select',
+  data: {
+    id: uniqueId('country'),
+    label: getText('label.country', 'address'),
+    placeholder: getText('option.placeholder', 'select'),
+    name: 'country',
+    options: countries
+  }
+};
+
+const lastname = {
+  type: 'input',
+  data: {
+    id: uniqueId('family-name'),
+    label: getText('label.family', 'name'),
+    name: 'family-name',
+    spellcheck: false,
+    attributes: {
+      autocomplete: 'family-name'
+    }
+  }
+};
+
+const usual = {
+  type: 'input',
+  data: {
+    id: uniqueId('usual'),
+    label: getText('label.usual', 'name'),
+    name: 'usual-name',
+    spellcheck: false
+  }
+};
+
+const birth = {
+  type: 'input',
+  data: {
+    id: uniqueId('birth'),
+    label: getText('label.birth', 'name'),
+    hint: getText('hint.birth', 'name'),
+    name: 'birth-name',
+    spellcheck: false
+  }
+};
+
+const married = {
+  type: 'input',
+  data: {
+    id: uniqueId('married'),
+    label: getText('label.usual', 'name'),
+    hint: getText('hint.married', 'name'),
+    name: 'married-name',
+    spellcheck: false
+  }
+};
+
+const firstnames = {
+  type: 'input',
+  data: {
+    id: uniqueId('givens'),
+    label: getText('label.givens', 'name'),
+    name: 'give-names',
+    spellcheck: false
+  }
+};
+
+const firstnameId = uniqueId('given');
+const firstname = {
+  type: 'input',
+  data: {
+    id: firstnameId,
+    label: getText('label.given', 'name'),
+    name: 'given-name',
+    spellcheck: false,
+    attributes: {
+      autocomplete: 'given-name'
+    }
+  }
+};
+
+const button = {
+  type: 'button',
+  data: {
+    label: getText('label.add-firstname', 'name'),
+    kind: 3,
+    size: 'sm',
+    icon: 'add-line',
+    iconPlace: 'left',
+    attributes: {
+      onclick: include('js/add-firstname.js', { id: firstnameId }),
+      type: 'button'
+    }
+  }
+};
+
+const buildFieldset = () => {
+  const firstnameElements = [];
+  firstnameElements.push(firstname);
+  if (name.button) firstnameElements.push(button);
+
+  const fieldsetId = uniqueId('firstname-fieldset');
+
+  const fieldset = {
+    type: 'fieldset',
+    data: {
+      id: fieldsetId,
+      legend: {
+        label: getText('legend.firstname', 'name'),
+        sr: true
+      },
+      elements: firstnameElements,
+      disabled: name.disabled,
+      classes: [`${prefix}-mb-n4v`]
+    }
+  };
+
+  elements.push(fieldset);
+
+  const checkbox = {
+    type: 'checkbox',
+    data: {
+      id: uniqueId('disabler'),
+      label: getText('label.no-firstname', 'name'),
+      name: 'firstname-disabled',
+      checked: name.checked || false,
+      size: 'sm',
+      attributes: {
+        onclick: include('js/toggle-disable.js', { id: fieldsetId })
+      }
+    }
+  };
+  elements.push(checkbox);
+
+};
+
+for (const field of fields) {
+  switch (field) {
+    case 'country':
+      elements.push(country);
+      break;
+
+    case 'lastname':
+      elements.push(lastname);
+      break;
+
+    case 'usual':
+      elements.push(usual);
+      break;
+
+    case 'birth':
+      elements.push(birth);
+      break;
+
+    case 'married':
+      elements.push(married);
+      break;
+
+    case 'firstnames':
+      elements.push(firstnames);
+      break;
+
+    case 'firstname':
+      if (name.checkbox) buildFieldset();
+      else {
+        elements.push(firstname);
+        if (name.button) elements.push(button);
+      }
+      break;
+  }
+}
+
+const data = {
+  id: name.id || uniqueId('name'),
+  legend: name.legend || { label: getText('legend.name', 'name'), sr: true },
+  elements: elements
+}
+%>
+
+<%- JSON.stringify(data); %>

@@ -7,9 +7,6 @@
 @use 'module/legacy';
 
 @include legacy.is(ie11) {
-  /**
-  * Correctif radio
-  */
   #{ns(fieldset--inline)} {
     #{ns(radio-rich)} {
       &:last-child {
@@ -20,10 +17,8 @@
     }
   }
 
-  /**
-  * Correctif alignement vertical IE
-  * Inconvéniant : fixe la height à la min-height, soit 5.5 rem
-  */
+  // Correctif alignement vertical IE
+  // Inconvéniant : fixe la height à la min-height, soit 5.5 rem
   #{ns(radio-rich)} {
     input[type="radio"] + #{ns(label)} {
       @include height(1px);

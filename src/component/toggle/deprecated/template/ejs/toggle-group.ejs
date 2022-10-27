@@ -1,0 +1,19 @@
+<%#
+# paramètres toggle group
+
+* toggle.hint (string, optional): texte additionel
+
+// TODO: templatisation
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+<% let toggle = locals.toggle || {}; %>
+<ul class="<%= prefix %>-toggle__list">
+  <%
+    for (let i = 0; i < 5; i++) {
+  %>
+    <li>
+        <%- include('./toggle', {toggle: {...toggle, id: toggle.hint ? 'toggle-hint-' + i : 'toggle-' + i}} ); %>
+    </li>
+  <% } %>
+</ul>

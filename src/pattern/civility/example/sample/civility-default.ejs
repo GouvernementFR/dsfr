@@ -1,0 +1,6 @@
+<%
+const civility = locals.civility || {};
+civility.id = civility.id || uniqueId('civility');
+%>
+
+<%- include('../../../../component/form/template/ejs/fieldset/fieldset', { fieldset: civility }); %>

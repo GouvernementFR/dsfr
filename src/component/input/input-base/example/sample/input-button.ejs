@@ -1,0 +1,6 @@
+<%
+const input = locals.input || {}
+input.addon = true;
+input.button = input.button || {label:'Envoyer', type: 'submit'};
+%>
+<%- include('input-text', { input: input }); %>

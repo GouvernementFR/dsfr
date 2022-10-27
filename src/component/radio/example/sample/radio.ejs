@@ -1,8 +1,0 @@
-<%
-let radio = locals.radio || {}
-let jsonData = JSON.parse(include('../../../form/example/sample/data', {form:radio}));
-let data = {...radio, ...jsonData};
-
-data.label = radio.label || 'Label radio';
-%>
-<%- include('../../template/ejs/radio-group', {radio: data}); %>

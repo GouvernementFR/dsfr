@@ -25,7 +25,7 @@ let newsletterClasses = [prefix + '-follow__newsletter'];
 
 <div <%- includeClasses(newsletterClasses); %> >
   <div>
-    <p class="<%= prefix %>-h5"><%- newsletter.title %></p>
+    <h2 class="<%= prefix %>-h5"><%- newsletter.title %></h2>
     <% if (newsletter.desc) { %>
     <p class="<%= prefix %>-text--sm"><%- newsletter.desc %></p>
     <% } %>
@@ -34,7 +34,7 @@ let newsletterClasses = [prefix + '-follow__newsletter'];
     <% if (newsletter.type === 'form') { %>
       <% if (newsletter.form && newsletter.form.input) { %>
         <form action="">
-          <%- include('../../../input/template/ejs/input.ejs', {input: {addon: true, hint: newsletter.form.hint != undefined, error: newsletter.form.error, valid: newsletter.form.valid, ...newsletter.form.input}}); %>
+          <%- include('../../../input/input-base/template/ejs/input-group.ejs', {input: {addon: true, describedby: [`${newsletter.form.input.id}-hint-text`], ...newsletter.form.input}}); %>
           <% if (newsletter.form.hint) { %>
             <p id="<%= newsletter.form.input.id %>-hint-text" class="<%= prefix %>-hint-text"><%- newsletter.form.hint %></p>
           <% } %>

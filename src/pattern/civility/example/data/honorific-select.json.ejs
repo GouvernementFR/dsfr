@@ -1,0 +1,28 @@
+<%
+const civility = locals.civility || {};
+
+const data = {
+  id: uniqueId('honorific'),
+  legend: {
+    label: getText('sample.honorific', 'civility'),
+    sr: true
+  },
+  elements: [{
+    type: 'select',
+    data: {
+      id: uniqueId('honorific'),
+      name: 'honorific',
+      label: getText('legend.honorific', 'civility'),
+      placeholder: getText('option.placeholder', 'select'),
+      options: ['honorific.rector', 'honorific.inspector', 'honorific.provisor', 'honorific.professor', 'honorific.doctor', 'honorific.principal', 'no-answer'].map((key, index )=> {
+        return {
+          value: index + 1,
+          label: getText(`option.${key}`, key === 'no-answer' ? 'select' : 'civility')
+        }
+      })
+    }
+  }]
+};
+
+%>
+<%- JSON.stringify(data); %>

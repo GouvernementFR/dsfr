@@ -1,0 +1,8 @@
+<%
+const data = {
+  id: uniqueId('date-error'),
+  error: getText('error.global', 'date'),
+};
+%>
+
+<%- include('./date-default', {date: data}); %>

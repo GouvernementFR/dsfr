@@ -1,0 +1,22 @@
+title: Récupération de compte
+description: Modèles de pages de récupération de mot de passe
+doc:
+
+heading:
+  title: Récupération de mot de passe sur [Nom du service-site]
+  desc: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+recover:
+  legend: Récupérer le mot de passe de votre compte
+  desc: Description — Veuillez saisir l’adresse électronique associée à votre compte. Nous vous enverrons plus d’informations sur pour réinitialiser votre mot de passe
+  username:
+    default: Identifiant
+    hint: "Format attendu : nom@domaine.fr"
+  button: Valider
+confirmation:
+  alert:
+    default: Votre demande de récupération de mot de passe a été transmise. Vous recevrez un courriel dans quelques instants.
+    hint: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
+subdir:
+  title: Pages de Récupération - Mot de passe oublié
+  1-form: Récupération de mot de passe
+  2-confirmation: Confirmation de récupération de mot de passe

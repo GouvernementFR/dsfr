@@ -7,28 +7,25 @@
 @use 'module/disabled';
 
 @mixin _form-scheme($legacy: false) {
-  #{ns-group(select), ns-group(input)} {
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état validé aux labels
-    */
+  #{ns-group(select), ns-group(input), ns-group(upload)} {
     &--valid {
       label {
         @include color.text(default success, (legacy:$legacy));
       }
     }
 
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état d'erreur aux labels
-    */
     &--error {
       label {
         @include color.text(default error, (legacy:$legacy));
       }
     }
 
-    /**
-    * Modificateur au niveau du groupe pour appliquer un état inactif aux labels
-    */
+    &--info {
+      label {
+        @include color.text(default info, (legacy:$legacy));
+      }
+    }
+
     &--disabled {
       label {
         @include disabled.colors((legacy: $legacy, text: true));
@@ -39,51 +36,49 @@
   #{ns(label)} {
     @include color.text(label grey, (legacy:$legacy));
 
-    /**
-    * Modificateur au niveau du label pour appliquer un état d'erreur au label
-    */
     &--error {
       @include color.text(default error, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur au niveau du label pour appliquer un état de succès au label
-    */
     &--success {
       @include color.text(default success, (legacy:$legacy));
     }
+
+    &--info {
+      @include color.text(default info, (legacy:$legacy));
+    }
+
+    &--disabled {
+      &,
+      & #{ns(hint-text)} {
+        @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
   }
 
-  /**
-  * Style du texte d'aide
-  */
-  #{ns(hint-text)} {
+  #{ns(hint-text)},
+  #{ns(message)} {
     @include color.text(mention grey, (legacy:$legacy));
   }
 
-  /**
-  * Style du texte d'erreur
-  */
-  #{ns(error-text)} {
-    @include color.text(default error, (legacy:$legacy));
+  #{ns(message)} {
+    &--error {
+      @include color.text(default error, (legacy:$legacy));
+    }
+
+    &--valid {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info {
+      @include color.text(default info, (legacy:$legacy));
+    }
   }
 
-  /**
-  * Style du texte de l'état validé
-  */
-  #{ns(valid-text)} {
-    @include color.text(default success, (legacy:$legacy));
-  }
-
-  /**
-  * Style d'un ensemble de champs
-  */
   #{ns(fieldset)} {
-    /**
-    * Mixin disabled pour gérer l'état disabled
-    */
     @include disabled.selector {
-      label {
+      #{ns(label)},
+      #{ns(fieldset__legend)} {
         @include disabled.colors((legacy: $legacy, text: true));
       }
     }
@@ -92,34 +87,34 @@
       @include color.text(title grey, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur pour gérer l'état d'erreur
-    */
-    &--error {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
-        }
-      }
-
-      label {
-        @include color.text(default error, (legacy:$legacy));
-      }
+    &--error,
+    &--error &__legend {
+      @include color.background-image(border plain error, (legacy:$legacy));
     }
 
-    /**
-    * Modificateur pour gérer l'état de validation
-    */
-    &--valid {
-      #{ns(fieldset__content)} {
-        @include before {
-          @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
-        }
-      }
+    &--error &__legend,
+    &--error #{ns(label)} {
+      @include color.text(default error, (legacy:$legacy));
+    }
 
-      label {
-        @include color.text(default success, (legacy:$legacy));
-      }
+    &--valid,
+    &--valid &__legend {
+      @include color.background-image(border plain success, (legacy:$legacy));
+    }
+
+    &--valid &__legend,
+    &--valid #{ns(label)} {
+      @include color.text(default success, (legacy:$legacy));
+    }
+
+    &--info,
+    &--info &__legend {
+      @include color.background-image(border plain info, (legacy:$legacy));
+    }
+
+    &--info &__legend,
+    &--info #{ns(label)} {
+      @include color.text(default info, (legacy:$legacy));
     }
   }
 }

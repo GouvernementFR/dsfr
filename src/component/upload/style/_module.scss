@@ -4,7 +4,6 @@
 ////
 
 #{ns-group(upload)} {
-
   #{ns(label)} {
     #{ns(hint-text)} {
       @include margin-top(3v);
@@ -12,6 +11,12 @@
 
     + #{ns(upload)} {
       @include margin-top(4v);
+    }
+  }
+
+  #{ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
     }
   }
 }

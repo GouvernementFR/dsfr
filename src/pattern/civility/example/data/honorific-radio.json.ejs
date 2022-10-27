@@ -1,0 +1,22 @@
+<%
+const civility = locals.civility || {};
+
+const data = {
+  id: uniqueId('honorific'),
+  legend: getText('legend.honorific', 'civility'),
+  choice: true,
+  elements: ['honorific.doctor', 'honorific.inspector', 'no-answer'].map(key => {
+    return {
+      type: 'radio',
+      data: {
+        name: 'honorific',
+        id: uniqueId('honorific'),
+        label: getText(`option.${key}`, key === 'no-answer' ? 'radio' : 'civility')
+      }
+    };
+  })
+};
+
+%>
+<%- JSON.stringify(data); %>
+

@@ -1,0 +1,32 @@
+
+<%
+const nationalies = locals.nationalies || {};
+const fields = nationalies.fields || [];
+const elements = [];
+
+const nationalitiesOptions = JSON.parse(include('nationality-select-options.json.ejs', { nationalities: { minimal: true }}));
+
+const select = {
+  type: 'select',
+  data: {
+    id: uniqueId('nationality-select'),
+    label: getText('label.nationality', 'nationality'),
+    placeholder: getText('option.placeholder', 'select'),
+    name: 'country',
+    options: nationalitiesOptions
+  }
+};
+
+elements.push(select);
+
+const data = {
+  id: nationality.id || uniqueId('nationality'),
+  legend: {
+    label: getText('legend.nationality', 'nationality'),
+    sr: true
+  },
+  elements: elements
+}
+%>
+
+<%- JSON.stringify(data); %>

@@ -1,0 +1,28 @@
+<%
+let company = locals.company || {};
+
+const structures = ['EI', 'EURL', 'SARL', 'SASU', 'SAS', 'SA', 'SNC', 'SCS', 'SCA'];
+const options = structures.map(structure => { return {value: structure, label: getText(`structure.${structure}`, 'company')}; })
+
+const data = {
+  id: uniqueId('structure'),
+  legend: {
+    label: getText('fieldset.structure', 'company'),
+    sr: true
+  },
+  elements: [
+    {
+      type: 'select',
+      data: {
+        name: 'structure',
+        id: uniqueId('structure'),
+        label: getText('label.type', 'company'),
+        placeholder: getText('option.placeholder', 'select'),
+        options: options
+      }
+    }
+  ]
+}
+%>
+
+<%- JSON.stringify(data); %>

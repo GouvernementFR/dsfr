@@ -1,0 +1,49 @@
+title: Création de compte
+description: Modèles de pages de création de compte
+doc:
+
+heading:
+  title: Création de compte sur [Nom de service-site]
+  desc: Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.
+steps:
+  login: Choisir un identifiant
+  identity: Renseigner une identité
+  address: Saisir des coordonnées
+connect:
+  title: Se créer un compte avec FranceConnect
+  desc: FranceConnect est la solution proposée par l’État pour sécuriser et simplifier la connexion aux services en ligne.
+login:
+  legend: Se créer un compte en choisissant un identifiant
+  desc: Description — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  username:
+    default: Identifiant
+    hint: "Format attendu : nom@domaine.fr"
+  password: Mot de passe
+  optin: Mention CNIL — Lorem ipsum dolor sit amet, consectetur adipicing est
+  button: Valider
+identity:
+  legend: Identité personnelle
+address:
+  legend: Coordonnées personnelles
+confirmation:
+  create:
+    alert:
+      default: Votre compte a bien été créé. Vous recevrez un courriel dans quelques instants contenant un lien de confirmation.
+      hint: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
+  activate:
+    alert:
+      default: Votre compte a bien été activé. Vous pouvez dès maintenant commencer à l’utiliser.
+      hint: Détail — Si vous n’avez pas reçu de courriel (n’hésitez pas à vérifier dans les indérisables), vous pouvez re saisir votre adresse électronique.
+button:
+  valid: Valider
+  previous: Précédent
+subdir:
+  title: Pages de création de compte
+  1-single: Page de création de compte
+  2-steps: Page de création de compte en plusieurs étapes
+  2a-login: Étape 1 - Formulaires de création de compte - identifiant
+  2b-identity: Étape 2 - Formulaires de création de compte - identité
+  2c-address: Étape 3 - Formulaires de création de compte - coordonnées
+  3-confirmation: Page de confirmation
+  3a-create: Confirmation de création de compte
+  3b-activate: Confirmation d'activation de compte

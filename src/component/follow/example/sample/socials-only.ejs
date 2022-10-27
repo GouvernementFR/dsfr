@@ -1,8 +1,7 @@
 
 <%
 let data = {};
-data = JSON.parse(include('./data.ejs'));
-data.newsletter = undefined;
+data = JSON.parse(include('../data/socials.json.ejs'));
 %>
 
 <%- include('../../template/ejs/follow.ejs', {follow: data}); %>

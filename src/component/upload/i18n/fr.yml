@@ -1,0 +1,16 @@
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
+
+label:
+  default: Ajouter un fichier
+  multiple: Ajouter des fichiers
+hint:
+  default: 'Taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.'
+error:
+  default: Format de fichier non supporté
+sample:
+  default: Bouton upload 1 seul fichier
+  error: Bouton upload avec erreur
+  multiple: Bouton upload fichiers multiples
+  disabled: Bouton upload désactivé

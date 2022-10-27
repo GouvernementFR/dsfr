@@ -1,0 +1,6 @@
+<%
+const civility = locals.civility || {};
+const data = JSON.parse(include('../data/honorific-radio.json.ejs', { civility: {}}));
+%>
+
+<%- include('./civility-default', {civility: data}); %>

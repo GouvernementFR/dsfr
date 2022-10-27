@@ -13,6 +13,16 @@
     flex-wrap: wrap;
   }
 
+  #{ns(valid-text)},
+  #{ns(error-text)} {
+    @include margin-top(4v);
+  }
+
+  #{ns(hint-text)} {
+    @include margin-top(4v);
+    @include margin-top(2v, md);
+  }
+
   &__social {
     #{ns(link)} {
       @include disable-underline;

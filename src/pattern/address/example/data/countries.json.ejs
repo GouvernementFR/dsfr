@@ -1,0 +1,24 @@
+<%#
+  Données d'options de selecteur de pays
+  * countries.ids (array, optional): tableau des pays attendus
+
+  * option.minimal (Boolean): tableau de pays - exemple avec 5 pays
+
+  retourne un array d'objets :
+  {
+    id: code iso alpha-2 du pays en casse haute
+    value: Nom du pays dans la langue de la locale
+  }
+%>
+<%
+const json = JSON.parse(include('../../data/countries.json'));
+const countries = locals.countries;
+const data = [];
+const ids = countries.minimal ? ['DE', 'ES', 'FR', 'GB', 'IT'] : countries.ids;
+for (const country of json) {
+  const id = country.alpha2.toUpperCase();
+  const name = country[i18n.locale];
+  if (!ids || ids.includes(id)) data.push({ id: id, name: name });
+}
+%>
+<%- JSON.stringify(data); %>

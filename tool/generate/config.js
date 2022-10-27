@@ -6,6 +6,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
 const { Example } = require('../classes/example/example');
+const { generatePictogram } = require('./pictogram');
 
 const analyse = (id, path, ascendants = []) => {
   const absolute = root(path);
@@ -208,6 +209,7 @@ const generateJSON = () => {
 const generateConfig = async () => {
   generateCore();
   await generateIcon('src/core/icon');
+  await generatePictogram('src/core/asset/artwork/pictograms');
   generateJSON();
 };
 

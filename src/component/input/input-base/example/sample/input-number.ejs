@@ -1,0 +1,11 @@
+<%
+const input = locals.input || {};
+input.type = 'number';
+input.attributes = {
+  ...input.attributes,
+  pattern: '[0-9]*',
+  inputmode: 'numeric'
+}
+ %>
+
+<%- include('./input-text', { input: input }); %>

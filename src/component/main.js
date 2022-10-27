@@ -5,6 +5,7 @@ import './breadcrumb/main.js';
 import './toggle/main.js';
 import './sidemenu/main.js';
 import './modal/main.js';
+import './password/main.js';
 import './navigation/main.js';
 import './tab/main.js';
 import './table/main.js';

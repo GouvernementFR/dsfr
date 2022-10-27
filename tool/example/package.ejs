@@ -1,23 +1,23 @@
 <div class="<%= prefix %>-mb-12w">
-    <%
-    const data = { id: undefined };
-    const content = include(`${root}/${src}`, data);
+  <%
+  const data = { id: undefined };
+  const content = include(`${root}/${src}`, data);
 
-    if (locals.wrapper === undefined) {
-    %>
+  if (locals.wrapper === undefined) {
+  %>
     <%- content %>
-    <% } else if (wrapper === 'col-8') {
-    %>
+  <% } else if (wrapper === 'col-8') {
+  %>
     <div class="<%= prefix %>-container">
-        <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center" >
-            <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12" >
-                <%- content %>
-            </div>
+      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
+        <div class="<%= prefix %>-col-md-8 <%= prefix %>-col-12">
+          <%- content %>
         </div>
+      </div>
     </div>
-    <% } else if (wrapper === 'container') { %>
+  <% } else if (wrapper === 'container') { %>
     <div class="<%= prefix %>-container">
-        <%- content %>
+      <%- content %>
     </div>
-    <% } %>
+  <% } %>
 </div>

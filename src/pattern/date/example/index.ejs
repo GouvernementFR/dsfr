@@ -1,0 +1,9 @@
+<%
+const sample = getSample(include);
+%>
+
+<%- sample(getText('sample.default', 'date'), './sample/date-default', {}, true, '../../example/layout'); %>
+
+<%- sample(getText('sample.single-error', 'date'), './sample/date-single-error', {}, true, '../../example/layout'); %>
+
+<%- sample(getText('sample.global-error', 'date'), './sample/date-global-error', {}, true, '../../example/layout'); %>

@@ -1,0 +1,24 @@
+<%
+const company = locals.company || {};
+const name = {
+  id: company.id || uniqueId('representative'),
+  legend: {
+    label: company.label || getText('fieldset.representative', 'company'),
+    sr: true
+  },
+  fields: ['usual', 'birth', 'firstnames']
+}
+const data = JSON.parse(include('../../../name/example/data/name.json.ejs', { name : name }));
+
+data.elements.push({
+  type: 'input',
+  data: {
+    id: company.id || uniqueId('representative'),
+    label: getText('label.position', 'company'),
+    name: 'position'
+  }
+});
+
+%>
+
+<%- JSON.stringify(data); %>

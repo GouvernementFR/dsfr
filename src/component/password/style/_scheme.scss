@@ -1,0 +1,24 @@
+////
+/// Password Scheme
+/// @group password
+////
+
+@use 'module/color';
+
+@mixin _password-scheme($legacy: false) {
+  #{ns(password)} {
+    &__btn {
+      @include btn-kind-scheme(4, $legacy);
+    }
+
+    #{ns-attr(capslock)} {
+      @include before {
+        @include color.data-uri-svg(default grey, (legacy: $legacy), $capslock-svg);
+      }
+    }
+
+    & &__checkbox #{ns(label)} {
+      @include color.text(default grey, (legacy: $legacy));
+    }
+  }
+}
