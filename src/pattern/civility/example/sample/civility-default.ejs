@@ -1,7 +1,6 @@
 <%
 const civility = locals.civility || {};
 civility.id = civility.id || uniqueId('civility');
-civility.elements.push({ type: 'button', data: { title: 'submit', attributes: { type: 'submit', style: 'visibility:hidden;'}}});
 %>
 
 <%- include('../../../../component/form/template/ejs/fieldset/fieldset', { fieldset: civility }); %>
