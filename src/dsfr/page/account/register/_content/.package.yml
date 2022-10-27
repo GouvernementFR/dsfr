@@ -1,0 +1,27 @@
+id: register
+title: Pages de création de compte
+description: Modèles de pages de création de compte
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+  - stepper
+  - connect
+  - checkbox
+  - input
+  - radio
+  - password
+  - button
+  - form
+script:
+  - core
+  - password
+example:
+  style:
+    - header
+    - footer
+    - breadcrumb
+  script:
+    - header
+    - breadcrumb

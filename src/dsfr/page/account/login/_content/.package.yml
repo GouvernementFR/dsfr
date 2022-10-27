@@ -1,0 +1,25 @@
+id: login
+title: Pages de connexion
+description: Modèles de pages de connexion
+doc:
+no-heading: true
+style:
+  - core
+  - alert
+  - connect
+  - checkbox
+  - input
+  - password
+  - button
+  - form
+script:
+  - core
+  - password
+example:
+  style:
+    - header
+    - footer
+    - breadcrumb
+  script:
+    - header
+    - breadcrumb

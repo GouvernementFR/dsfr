@@ -1,0 +1,7 @@
+<%
+const data = {
+  id: uniqueId('firstname-disabled'),
+  fields: ['lastname', 'firstname']
+}
+%>
+<%- include('./default', { name: data }); %>

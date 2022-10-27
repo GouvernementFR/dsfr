@@ -1,0 +1,5 @@
+<%
+const civility = JSON.parse(include('../data/sex.json.ejs'));
+%>
+
+<%- include('./civility-default', {civility: civility}); %>

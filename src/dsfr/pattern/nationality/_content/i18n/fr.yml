@@ -1,0 +1,10 @@
+id: name
+title: Modèle de bloc de nom et prénom
+description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
+doc:
+
+label:
+  fieldset: Demande de nationalité
+  nationality: Nationalité
+sample:
+  default: Demande de nationalité

@@ -1,0 +1,6 @@
+<%
+let address = locals.address || {};
+const data = JSON.parse(include('../data/complement.json.ejs'));
+%>
+
+<%- include('./address-default', {address: data}); %>

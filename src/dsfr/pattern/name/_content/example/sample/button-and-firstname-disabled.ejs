@@ -1,0 +1,12 @@
+<%
+const data = {
+  id: uniqueId('button-and-firstname-disabled'),
+  fields: ['lastname', 'firstname'],
+  disabled: true,
+  checkbox: true,
+  button: true,
+  checked: true
+}
+%>
+
+<%- include('./default', {name: data}); %>

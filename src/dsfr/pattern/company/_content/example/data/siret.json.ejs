@@ -1,0 +1,31 @@
+<%
+let company = locals.company || {};
+const data = {
+  id: uniqueId('siret'),
+  label: getText('fieldset.siret', 'company'),
+  elements: [
+    {
+      type: 'input',
+      data: {
+        id: uniqueId('siret'),
+        label: getText('label.siret', 'company'),
+        name: 'siret'
+      }
+    },
+    {
+      type: 'link',
+      classes: [prefix + '-mt-n1v'],
+      data: {
+        label: getText('directory.label', 'company'),
+        href: getText('directory.href', 'company'),
+        attributes: {
+          target: '_blank',
+          rel: 'noopener'
+        },
+      }
+    }
+  ]
+}
+%>
+
+<%- JSON.stringify(data); %>

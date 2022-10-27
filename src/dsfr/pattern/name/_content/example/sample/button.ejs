@@ -1,0 +1,10 @@
+<%
+const data = {
+  id: uniqueId('button'),
+  fields: ['lastname', 'firstname'],
+  button: true,
+  checkbox: true
+}
+%>
+
+<%- include('./default', { name: data }); %>

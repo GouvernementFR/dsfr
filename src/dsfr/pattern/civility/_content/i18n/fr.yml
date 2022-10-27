@@ -1,0 +1,32 @@
+title: Civilité
+description:
+option:
+  sex:
+    female: Feminin
+    male: Masculin
+  family:
+    concubinage: Concubinage
+    divorced: Divorcé
+    maried: Marié
+    pacsed: Pacsé
+    single: Célibataire
+    widow: Veuf
+  honorific:
+    doctor: Docteur
+    inspector: Inspecteur
+    principal: Principal
+    professor: Professeur
+    provisor: Proviseur
+    rector: Recteur
+legend:
+  honorific: Titre d’appel
+  family: Situation familiale
+  sex: Sexe
+sample:
+  honorific: Demande du titre d’appel
+  family: Demande de situation familiale
+  sex: Demande du sexe
+section:
+  preference: Au delà de 5 choix ou lorsque l’espace n’est pas suffisant, il est préférable d’utiliser une liste déroulante.
+  recommandation: Les boutons radios sont recommandés lorsque l’utilisateur doit choisir un élément parmi 2 à 5 choix possibles.
+
