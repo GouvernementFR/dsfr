@@ -1,5 +1,4 @@
 @mixin selector() {
-  // contrast windows
   @media (forced-colors: active ),
   (prefers-contrast: more) {
     @content;
