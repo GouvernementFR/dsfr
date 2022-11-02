@@ -6,7 +6,7 @@
 @use 'module/color';
 
 @mixin _pagination-contrast($legacy: false) {
-  @media (prefers-contrast: more) {
+  @media (forced-colors: active) {
     #{ns(pagination)} {
       &__link {
         &[aria-current] {
