@@ -1,11 +1,7 @@
 @mixin selector() {
   // contrast windows
-  @media (forced-colors: active ) {
-    @content;
-  }
-
-  // contrast mac
-  @media (prefers-contrast: more) {
+  @media (forced-colors: active ),
+  (prefers-contrast: more) {
     @content;
   }
 }
