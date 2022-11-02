@@ -4,9 +4,10 @@
 ////
 
 @use 'module/color';
+@use 'module/contrast';
 
 @mixin _pagination-contrast($legacy: false) {
-  @media (forced-colors: active) {
+  @include contrast.selector() {
     #{ns(pagination)} {
       &__link {
         &[aria-current] {
