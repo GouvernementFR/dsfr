@@ -4,13 +4,17 @@
 ////
 
 @use 'module/color';
-@use 'module/contrast';
+@use 'module/media-query';
 
 @mixin _pagination-contrast($legacy: false) {
-  @include contrast.selector() {
+  @include media-query.high-contrast() {
     #{ns(pagination)} {
       &__link {
         &[aria-current] {
+          @if (not $legacy) {
+            justify-content: center;
+            @include padding(calc(1v - 1px) calc(3v - 1px));
+          }
           @include color.border(active blue-france, (legacy: $legacy, hover: true));
         }
       }

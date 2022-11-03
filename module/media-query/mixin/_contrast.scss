@@ -1,4 +1,4 @@
-@mixin selector() {
+@mixin high-contrast() {
   @media (forced-colors: active ),
   (prefers-contrast: more) {
     @content;
