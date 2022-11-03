@@ -1,5 +1,5 @@
 class Colors {
-  getColors (context, use, tint, options = {}) {
+  getColor (context, use, tint, options = {}) {
     const option = getOption(options);
     const decision = `--${context}-${use}-${tint}${option}`;
     return getComputedStyle(document.documentElement).getPropertyValue(decision).trim() || null;
