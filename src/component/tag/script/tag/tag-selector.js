@@ -1,5 +1,6 @@
 import api from '../../api.js';
 
 export const TagSelector = {
-  TAG_PRESSABLE: `${api.internals.ns.selector('tag')}[aria-pressed]`
+  PRESSABLE: `${api.internals.ns.selector('tag')}[aria-pressed]`,
+  DISMISSIBLE: `${api.internals.ns.selector('tag--dismiss')}`
 };
