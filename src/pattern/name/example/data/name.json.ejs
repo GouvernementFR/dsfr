@@ -110,6 +110,10 @@ const buildFieldset = () => {
     type: 'fieldset',
     data: {
       id: fieldsetId,
+      legend: {
+        label: getText('legend.firstname', 'name'),
+        sr: true
+      },
       elements: firstnameElements,
       disabled: name.disabled,
       classes: [`${prefix}-mb-n4v`]
@@ -173,7 +177,7 @@ for (const field of fields) {
 
 const data = {
   id: name.id || uniqueId('name'),
-  label: name.label || getText('label.fieldset', 'name'),
+  legend: name.legend || { label: getText('legend.name', 'name'), sr: true },
   elements: elements
 }
 %>

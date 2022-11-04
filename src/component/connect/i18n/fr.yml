@@ -6,11 +6,11 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/bouto
 default:
   login: S’identifier avec
   brand: FranceConnect
-  link: Qu’est ce que FranceConnect ?
+  link: Qu’est-ce que FranceConnect ?
   href: https://franceconnect.gouv.fr/
 plus:
   brand: FranceConnect+
-  link: Qu’est ce que FranceConnect+ ?
+  link: Qu’est-ce que FranceConnect+ ?
   href: https://franceconnect.gouv.fr/france-connect-plus
 agent:
   brand: AgentConnect

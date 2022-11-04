@@ -22,7 +22,8 @@
     }
   }
 
-  @include clickable-selector {
+  button,
+  input[type=button] {
     &#{ns(tag)} {
       @include color.text(action-high blue-france, (legacy: $legacy));
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
@@ -33,20 +34,30 @@
       }
 
       @include pressed-selector(true) {
-        @include color.text(inverted grey, (legacy: $legacy));
-        @include color.transparent-background((legacy:$legacy));
-        @include tag-punched-background(background action-high blue-france, md, $legacy);
-
-        @include disabled.selector {
-          background-image: none;
+        &:not(:disabled) {
+          @include color.transparent-background((legacy:$legacy));
+          @include color.text(inverted grey, (legacy: $legacy));
+          @include tag-punched-background(background action-high blue-france, md, $legacy);
         }
 
         @include after {
           @include color.text(action-high blue-france, (legacy: $legacy));
         }
 
+        @include disabled.selector {
+          @include color.transparent-background((legacy:$legacy));
+          @include tag-punched-background(background disabled grey, md, $legacy, false);
+          @include after {
+            @include color.text(disabled grey, (legacy: $legacy));
+          }
+        }
+
         &#{ns(tag)}--sm {
           @include tag-punched-background(background action-high blue-france, sm, $legacy);
+
+          @include disabled.selector {
+            @include tag-punched-background(background disabled grey, sm, $legacy, false);
+          }
         }
       }
 
@@ -56,10 +67,15 @@
 
   #{ns-group(tags)} {
     &#{ns-group(tags)}--sm {
-      @include clickable-selector {
+      button,
+      input[type=button] {
         &#{ns(tag)} {
           @include pressed-selector(true) {
             @include tag-punched-background(background action-high blue-france, sm, $legacy);
+
+            @include disabled.selector {
+              @include tag-punched-background(background disabled grey, sm, $legacy, false);
+            }
           }
         }
       }

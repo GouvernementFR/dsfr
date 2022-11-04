@@ -2,6 +2,10 @@
 const complement = locals.complement || {};
 const data = {
   id: uniqueId('complement'),
+  legend: {
+    label: getText('legend.complement', 'address'),
+    sr: true
+  },
   elements: [
     {
       type: 'input',

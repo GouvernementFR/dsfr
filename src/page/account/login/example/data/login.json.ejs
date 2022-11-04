@@ -82,6 +82,10 @@ elements.push({
   type: 'fieldset',
   data: {
     id: 'credentials',
+    legend: {
+      label: getText('login.credentials', 'login'),
+      sr: true
+    },
     elements: fieldsetElements,
     error: login.error
   }

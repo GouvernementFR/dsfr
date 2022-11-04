@@ -36,10 +36,19 @@ const attributes = upload.attributes || [];
 const labelAttrs = upload.labelAttrs || {};
 const labelClass = upload.labelClasses || [];
 const builder = new MessageBuilder(upload.id);
-if (upload.valid) builder.addError(upload.valid);
-if (upload.error) builder.addError(upload.error);
+if (upload.valid) {
+  groupClasses.push(`${prefix}-upload-group--valid`);
+  builder.addError(upload.valid);
+}
+if (upload.error) {
+  groupClasses.push(`${prefix}-upload-group--error`);
+  builder.addError(upload.error);
+}
+if (upload.disabled) {
+  groupClasses.push(`${prefix}-upload-group--disabled`);
+  attributes['disabled'] = '';
+}
 if (builder.describedby.length > 0) attributes['aria-describedby'] = builder.describedby.join(' ');
-if (upload.disabled) attributes['disabled'] = '';
 if (upload.multiple) attributes['multiple'] = '';
 %>
 
