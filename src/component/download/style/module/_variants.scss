@@ -16,7 +16,7 @@
   &--card &__link {
     @include title-style(h5);
 
-    @include after {
+    @include before {
       @include absolute(null, 6v, 6v);
       @include icon-size(sm);
       @include margin(0);

@@ -14,7 +14,7 @@
       #{ns(download__link)} {
         @include color.text(title grey, (legacy:$legacy));
 
-        @include after {
+        @include before {
           @include color.text(action-high blue-france, (legacy:$legacy));
         }
       }
