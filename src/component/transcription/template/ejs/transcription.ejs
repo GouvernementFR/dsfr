@@ -17,6 +17,7 @@ const isExpanded = transcription.isExpanded === false;
 const title = getText('collapse.title', 'transcription');
 
 let modal = {
+  title: transcription.title,
   body: transcription.content,
   customFooter: include('../../example/sample/footer/actions'),
   size: 'lg',
@@ -29,5 +30,5 @@ let collapseId = prefix + '-transcription__collapse-' + transcription.id;
   <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
   <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
     <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
-  </div>  
+  </div>
 </div>
