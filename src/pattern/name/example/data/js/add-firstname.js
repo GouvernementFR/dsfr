@@ -12,6 +12,6 @@ const firstname = getFieldsetElement(document.getElementById('<%= id %>'));
 const reference = getFieldsetElement(this);
 
 const copy = firstname.cloneNode(true);
-copy.innerHTML = copy.innerHTML.replace(/<%= id %>/g, `<%= id %>-added-${this.firstnamesCount}`).replace('name=&quot;firstname&quot;', `name=&quot;firstname-${this.firstnamesCount}&quot;`);
+copy.innerHTML = copy.innerHTML.replace(/<%= id %>/g, `<%= id %>-added-${this.firstnamesCount}`).replace('name=&quot;given-name&quot;', `name=&quot;additional-name-${this.firstnamesCount}&quot;`).replace('autocomplete=&quot;given-name&quot;', 'autocomplete=&quot;additional-name&quot;');
 const container = reference.parentNode;
 container.insertBefore(copy, reference);
