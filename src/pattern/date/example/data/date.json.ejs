@@ -19,7 +19,8 @@ const data = {
         name: `${prepend}day`,
         includeEmptyMessagesGroup: false,
         label: getText('option.day', 'date'),
-        hint: getText('hint.day', 'date')
+        hint: getText('hint.day', 'date'),
+        autocomplete: 'bday-day',
       }
     },
     {
@@ -31,7 +32,8 @@ const data = {
         name: `${prepend}month`,
         includeEmptyMessagesGroup: false,
         label: getText('option.month', 'date'),
-        hint: getText('hint.month', 'date')
+        hint: getText('hint.month', 'date'),
+        autocomplete: 'bday-month',
       }
     },
     {
@@ -44,7 +46,8 @@ const data = {
         name: `${prepend}year`,
         includeEmptyMessagesGroup: false,
         label: getText('option.year', 'date'),
-        hint: getText('hint.year', 'date')
+        hint: getText('hint.year', 'date'),
+        autocomplete: 'bday-year',
       }
     }
   ]

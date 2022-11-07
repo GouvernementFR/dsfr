@@ -8,7 +8,8 @@ if (address.professional) {
     data: {
       id: uniqueId('name'),
       label: getText('label.name', 'address'),
-      name: 'name'
+      name: 'organization-name',
+      autocomplete: 'organization'
     }
   });
 }
@@ -20,6 +21,7 @@ elements.push({
     label: getText('label.address', 'address'),
     hint: getText('hint.address', 'address'),
     name: 'address-line1',
+    autocomplete: 'address-line1',
   }
 });
 
@@ -30,6 +32,7 @@ elements.push({
     label: getText('label.complement', 'address') + ' ' + getText('label.optional', 'address'),
     hint: getText('hint.complement', 'address'),
     name: 'address-line2',
+    autocomplete: 'address-line2',
   }
 });
 
@@ -40,6 +43,7 @@ if (address.locality) {
       id: uniqueId('locality'),
       label: getText('label.locality', 'address'),
       name: 'address-level3',
+      autocomplete: 'address-line3',
     }
   });
 }
@@ -51,7 +55,8 @@ elements.push({
   data: {
     id: uniqueId('postal'),
     label: getText('label.postal', 'address'),
-    name: 'postal-code'
+    name: 'postal-code',
+    autocomplete: 'postal-code',
   }
 });
 
@@ -62,7 +67,8 @@ elements.push({
   data: {
     id: uniqueId('city'),
     label: getText('label.city', 'address'),
-    name: 'address-level2'
+    name: 'address-level2',
+    autocomplete: 'address-level2',
   }
 });
 
@@ -72,7 +78,8 @@ if (address.professional) {
     data: {
       id: uniqueId('cedex'),
       label: getText('label.cedex', 'address'),
-      name: 'business-postal-code'
+      name: 'business-postal-code',
+      autocomplete: 'cedex', // n'existe pas mais permet au prochain autocomplete de fonctionner
     }
   });
 }
@@ -86,6 +93,7 @@ if (address.international) {
       id: uniqueId('country'),
       label: getText('label.country', 'address'),
       placeholder: getText('option.placeholder', 'select'),
+      autocomplete: 'country',
       options: options
     }
   };
