@@ -11,8 +11,8 @@
 
 @import 'index';
 @import 'style/scheme';
-@import 'style/contrast';
+@import 'style/contrast-scheme';
 @import 'style/legacy';
 
 @include _pagination-scheme(true);
-@include _pagination-contrast(true);
+@include _pagination-contrast-scheme(true);
