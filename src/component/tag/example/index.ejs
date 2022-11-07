@@ -21,9 +21,9 @@
 <%- sample('Tag sélectionnable désactivé', './sample/tag-pressable', {tag:{disabled:true}}, true); %>
 
 <%- section('Tag supprimable', 'Le tag supprimable n\'autorise ni accentuation ni icône personnalisée. <br>Le javascript présent dans l\’attribut onclick est donné à titre d’exemple, à vous de l\’implémenter dans votre contexte technique.') %>
-<%- sample('Tag supprimable', './sample/tag-dismissable', {}, true); %>
-<%- sample('Tag supprimable taille sm', './sample/tag-dismissable', {tag:{size:'sm'}}, true); %>
-<%- sample('Tag supprimable désactivé', './sample/tag-dismissable', {tag:{disabled:true}}, true); %>
+<%- sample('Tag supprimable', './sample/tag-dismissible', {}, true); %>
+<%- sample('Tag supprimable taille sm', './sample/tag-dismissible', {tag:{size:'sm'}}, true); %>
+<%- sample('Tag supprimable désactivé', './sample/tag-dismissible', {tag:{disabled:true}}, true); %>
 
 <%- section('Groupe de tags', 'Lorsque que l\'on a plus d\'un tag, il convient d\'utiliser un groupe de tags. <br>La taille de tous les tags peut être définie au niveau du groupe.') %>
 <%- sample('Groupe de tags non cliquables', './sample/tags-group', {tagsGroup:{groupCount: 9}}, true); %>
@@ -32,5 +32,5 @@
 <%- sample('Groupe de tags cliquables SM', './sample/tags-group', {tagsGroup:{type:'clickable', size: 'sm', groupCount: 9}}, true); %>
 <%- sample('Groupe de tags sélectionnables', './sample/tags-group', {tagsGroup:{type:'pressable', groupCount: 9}}, true); %>
 <%- sample('Groupe de tags sélectionnables SM', './sample/tags-group', {tagsGroup:{type:'pressable', size: 'sm', groupCount: 9}}, true); %>
-<%- sample('Groupe de tags supprimables', './sample/tags-group', {tagsGroup:{type:'dismissable', tagAttributes: {onclick: 'event.preventDefault(); this.parentNode.removeChild(this);'}, groupCount: 9}}, true); %>
-<%- sample('Groupe de tags supprimables SM', './sample/tags-group', {tagsGroup:{type:'dismissable', tagAttributes: {onclick: 'event.preventDefault(); this.parentNode.removeChild(this);'}, size: 'sm', groupCount: 9}}, true); %>
+<%- sample('Groupe de tags supprimables', './sample/tags-group', {tagsGroup:{type:'dismissible', groupCount: 9}}, true); %>
+<%- sample('Groupe de tags supprimables SM', './sample/tags-group', {tagsGroup:{type:'dismissible', size: 'sm', groupCount: 9}}, true); %>
