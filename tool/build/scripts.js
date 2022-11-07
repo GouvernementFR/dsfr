@@ -96,4 +96,33 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
   }
 };
 
-module.exports = { buildScript };
+const buildSchemeBootScript = async () => {
+  const src = root('src/scheme');
+  const data = `import '${src}/boot.js'\n`;
+
+  const input = {
+    input: 'entry',
+    plugins: [
+      virtual({
+        entry: data
+      }),
+      terser()
+    ]
+  };
+
+  const output = {
+    format: 'esm',
+    minifyInternalExports: true
+  };
+
+  try {
+    const bundle = await rollup.rollup(input);
+    const result = await bundle.generate(output);
+    await bundle.close();
+    return result.output[0].code;
+  } catch (e) {
+    log.error(e);
+  }
+};
+
+module.exports = { buildScript, buildSchemeBootScript };
