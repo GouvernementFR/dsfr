@@ -50,7 +50,7 @@
     --toggle-status-width: auto;
     display: inline-flex;
     width: spacing.space(calc(100% - 10v));
-    flex: 0;
+    flex: 1;
     min-height: spacing.space(6v);
     @include padding-left(8v);
     @include text-style(md);
