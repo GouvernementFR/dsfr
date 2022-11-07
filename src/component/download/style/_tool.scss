@@ -10,7 +10,7 @@
 }
 
 @mixin nest-download-link() {
-  @include _nest-link($download-settings, md, right, download-line) {
+  @include _nest-link($download-settings, md, right, download-line, null, true, false, false) {
     @content;
   }
 }
