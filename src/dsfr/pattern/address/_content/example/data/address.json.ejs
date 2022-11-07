@@ -94,7 +94,10 @@ if (address.international) {
 
 const data = {
   id: address.id || uniqueId('address'),
-  label: address.label,
+  legend: {
+    label: getText('legend.address', 'address'),
+    sr: true
+  },
   elements: elements
 }
 %>

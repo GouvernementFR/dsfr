@@ -2,7 +2,10 @@
 let company = locals.company || {};
 const data = {
   id: uniqueId('siret'),
-  label: getText('fieldset.siret', 'company'),
+  legend: {
+    label: getText('fieldset.siret', 'company'),
+    sr: true
+  },
   elements: [
     {
       type: 'input',
