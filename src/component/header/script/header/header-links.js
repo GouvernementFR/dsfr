@@ -15,8 +15,8 @@ class HeaderLinks extends api.core.Instance {
     const toolsHtml = this.toolsLinks.innerHTML.replace(/  +/g, ' ');
     const menuHtml = this.menuLinks.innerHTML.replace(/  +/g, ' ');
     // Pour éviter de dupliquer des id, on ajoute un suffixe aux id et aria-controls duppliqués.
-    let toolsHtmlDuplicateId = toolsHtml.replace(/-translate [.\s\S]* id="(.*?)"/gm, ' id="$1' + copySuffix + '"');
-    toolsHtmlDuplicateId = toolsHtmlDuplicateId.replace(/-translate [.\s\S]* aria-controls="(.*?)"/gm, ' aria-controls="$1' + copySuffix + '"');
+    let toolsHtmlDuplicateId = toolsHtml.replace(/(-translate [.\s\S]*) id="(.*?)"/gm, '$1 id="$2' + copySuffix + '"');
+    toolsHtmlDuplicateId = toolsHtmlDuplicateId.replace(/(-translate [.\s\S]*) aria-controls="(.*?)"/gm, '$1 aria-controls="$2' + copySuffix + '"');
 
     if (toolsHtmlDuplicateId === menuHtml) return;
 
