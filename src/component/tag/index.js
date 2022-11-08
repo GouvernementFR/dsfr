@@ -6,7 +6,7 @@ import { TagEvent } from './script/tag/tag-event';
 api.tag = {
   TagDismissible: TagDismissible,
   TagSelector: TagSelector,
-  TagEvent: TagEvent,
+  TagEvent: TagEvent
 };
 
 export default api;

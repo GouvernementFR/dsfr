@@ -5,7 +5,6 @@ import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
-import api from '../../../../../component/tag/api';
 
 class Instance {
   constructor (jsAttribute = true) {

@@ -11,7 +11,6 @@ class TagDismissible extends api.core.Instance {
   }
 
   click () {
-
     this.focusClosest();
 
     switch (api.mode) {

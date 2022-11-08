@@ -6,7 +6,7 @@
 @use 'module/color';
 @use 'module/media-query';
 
-@mixin _pagination-contras-scheme($legacy: false) {
+@mixin _pagination-contrast-scheme($legacy: false) {
   @include media-query.high-contrast() {
     #{ns(pagination)} {
       &__link {
