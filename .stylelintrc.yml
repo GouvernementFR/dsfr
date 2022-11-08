@@ -9,6 +9,7 @@
     "scss/at-rule-no-unknown": true,
     "no-descending-specificity": null,
     "unit-case": null,
+    "media-feature-name-no-unknown": [true, {"ignoreMediaFeatureNames": ["prefers-contrast"]}],
     "unit-no-unknown": [true, { "ignoreFunctions": ["space", "calc"], "ignoreUnits": ["Hz", "kHz", "N", "v", "w", "/x[0-9]+/"] }],
     "at-rule-empty-line-before": null,
     "declaration-empty-line-before": null,
