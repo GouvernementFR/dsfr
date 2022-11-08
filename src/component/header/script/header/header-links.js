@@ -10,7 +10,7 @@ class HeaderLinks extends api.core.Instance {
     const header = this.queryParentSelector(HeaderSelector.HEADER);
     this.toolsLinks = header.querySelector(HeaderSelector.TOOLS_LINKS);
     this.menuLinks = header.querySelector(HeaderSelector.MENU_LINKS);
-    const copySuffix = '_mobile';
+    const copySuffix = '-mobile';
 
     const toolsHtml = this.toolsLinks.innerHTML.replace(/  +/g, ' ');
     const menuHtml = this.menuLinks.innerHTML.replace(/  +/g, ' ');
