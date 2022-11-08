@@ -132,7 +132,8 @@ $values: (
   ),
   artwork: (
     major: (
-      primary: strong,
+      primary: strong (hover: true),
+      accent: strong (hover: true),
     ),
     minor: (
       primary: main,

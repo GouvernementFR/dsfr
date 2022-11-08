@@ -2,6 +2,7 @@ const root = require('../utilities/root');
 const fs = require('fs');
 const ejs = require('ejs');
 const global = require('../../package.json');
+const buildSchemeBootScript = require('./scripts').buildSchemeBootScript;
 const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
@@ -13,6 +14,7 @@ beautyOpts.max_preserve_newlines = 0;
 beautyOpts.indent_inner_html = false;
 beautyOpts.indent_handlebars = true;
 beautyOpts.inline = [];
+beautyOpts.unformatted = ['script'];
 
 let count = 0;
 
@@ -26,8 +28,10 @@ const imgToBase64 = (path, format = 'png') => {
   return `data:image/${format};base64,${img}`;
 };
 
-const buildExample = (pck, locale) => {
+const buildExample = async (pck, locale) => {
   if (!pck.example || !pck.example.root) return;
+
+  const schemeBootScript = await buildSchemeBootScript();
 
   const packages = getPackages();
 
@@ -92,7 +96,8 @@ const buildExample = (pck, locale) => {
     beautify: (html) => { return beautify(html, beautyOpts); },
     uniqueId: uniqueId,
     // i18n: new I18n(locale),
-    locale: locale
+    locale: locale,
+    schemeBootScript: schemeBootScript
   };
 
   renderExample(options, pck.example.root);

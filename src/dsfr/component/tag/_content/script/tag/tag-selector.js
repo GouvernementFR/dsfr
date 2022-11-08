@@ -1,5 +1,6 @@
 import ref from '../../../ref.js';
 
 export const TagSelector = {
-  TAG_PRESSABLE: `${ref.internals.ns.selector('tag')}[aria-pressed]`
+  TAG_PRESSABLE: `${ref.internals.ns.selector('tag')}[aria-pressed]`,
+  DISMISSIBLE: `${ref.internals.ns.selector('tag--dismiss')}`
 };

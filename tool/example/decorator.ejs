@@ -30,7 +30,7 @@ function getSample (include) {
 
     if (snippet === true) {
         sampling = true;
-        let html =  include(path, {...data});
+        let html =  include(path, {...data, sampling: true });
         sampling = false;
         html = beautify(html);
 

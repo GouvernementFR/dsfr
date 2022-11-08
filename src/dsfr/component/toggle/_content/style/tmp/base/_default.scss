@@ -56,7 +56,8 @@
     label {
       --toggle-status-width: auto;
       display: inline-flex;
-      flex-basis: spacing.space(calc(100% - 10v));
+      width: spacing.space(calc(100% - 10v));
+      flex: 1;
       min-height: spacing.space(6v);
       @include spacing.padding-left(8v);
       @include typography.text-style(md);
@@ -81,14 +82,13 @@
      */
       @include selector.before {
         flex-shrink: 0;
+        display: block;
         min-width: spacing.space(10v);
         height: spacing.space(calc(5v + 1px));
         @include spacing.margin-top(6v);
         @include spacing.margin-left(-10v);
         @include spacing.margin-right(4v);
         @include typography.text-style(xs);
-        white-space: pre-wrap;
-        overflow: hidden;
         outline: none !important;
         width: var(--toggle-status-width);
       }

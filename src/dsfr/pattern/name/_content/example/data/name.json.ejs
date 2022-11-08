@@ -22,9 +22,7 @@ const lastname = {
     label: getText('label.family', 'name'),
     name: 'family-name',
     spellcheck: false,
-    attributes: {
-      autocomplete: 'family-name'
-    }
+    autocomplete: 'family-name'
   }
 };
 
@@ -34,6 +32,7 @@ const usual = {
     id: uniqueId('usual'),
     label: getText('label.usual', 'name'),
     name: 'usual-name',
+    autocomplete: 'family-name',
     spellcheck: false
   }
 };
@@ -45,6 +44,7 @@ const birth = {
     label: getText('label.birth', 'name'),
     hint: getText('hint.birth', 'name'),
     name: 'birth-name',
+    autocomplete: 'family-name',
     spellcheck: false
   }
 };
@@ -56,6 +56,7 @@ const married = {
     label: getText('label.usual', 'name'),
     hint: getText('hint.married', 'name'),
     name: 'married-name',
+    autocomplete: 'family-name',
     spellcheck: false
   }
 };
@@ -66,6 +67,7 @@ const firstnames = {
     id: uniqueId('givens'),
     label: getText('label.givens', 'name'),
     name: 'give-names',
+    autocomplete: 'given-name',
     spellcheck: false
   }
 };
@@ -78,9 +80,7 @@ const firstname = {
     label: getText('label.given', 'name'),
     name: 'given-name',
     spellcheck: false,
-    attributes: {
-      autocomplete: 'given-name'
-    }
+    autocomplete: 'given-name'
   }
 };
 

@@ -110,7 +110,7 @@ class Scheme extends ref.api.Instance {
       localStorage.setItem('scheme', value);
     }
     this.setAttribute(SchemeAttribute.SCHEME, value);
-    this.dispatch(SchemeEvent.SCHEME, this.scheme);
+    this.dispatch(SchemeEvent.SCHEME, { scheme: this._scheme });
   }
 
   get theme () {
@@ -125,7 +125,7 @@ class Scheme extends ref.api.Instance {
         this._theme = value;
         this.setAttribute(SchemeAttribute.THEME, value);
         this.descend(SchemeEmission.THEME, value);
-        this.dispatch(SchemeEvent.THEME, this._theme);
+        this.dispatch(SchemeEvent.THEME, { theme: this._theme });
         break;
     }
   }

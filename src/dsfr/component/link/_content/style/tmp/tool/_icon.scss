@@ -7,7 +7,7 @@
 @use '../../../../../../../sass/selector';
 @use '../../../../../../../sass/spacing';
 
-@mixin _build-link-icon($size-settings, $place, $size:md, $override: true) {
+@mixin _build-link-icon($size-settings, $place, $size:md) {
 
   $icon-size: icon-size(map_get($size-settings, icon));
 
@@ -32,7 +32,7 @@
     overflow: initial;
     max-width: 100%;
     max-height: none;
-    @include icon.content(false, $override) {
+    @include selector.after {
       --icon-size: #{$icon-size};
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
