@@ -9,7 +9,7 @@
 @import '../tool';
 
 @mixin first() {
-  @include selector.class(btn, (modifier: display)) {
+  #{selector.class(btn, (modifier: display))} {
     @include nest-btn(md, left, theme-fill, null, false);
   }
 }

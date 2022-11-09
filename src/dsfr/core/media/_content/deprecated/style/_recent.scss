@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@include selector.class(responsive-img) {
+#{selector.class(responsive-img)} {
   @each $ratio, $value in $ratio-scale {
     &--#{$ratio} {
       @include media.aspect-ratio($ratio, true);
@@ -12,7 +12,7 @@
   }
 }
 
-@include selector.class(responsive-vid) {
+#{selector.class(responsive-vid)} {
   @each $ratio in (16x9 4x3 1x1) {
     &--#{$ratio} {
       @include media.aspect-ratio($ratio, true);

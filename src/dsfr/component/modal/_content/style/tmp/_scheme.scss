@@ -8,12 +8,12 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(modal) {
-    @include selector.body {
+  #{selector.class(modal)} {
+    @include selector.block-body {
       @include elevation.elevate(lifted, (legacy: $legacy));
 
-      // @include selector.class(scroll-shadow, (combine: true)) {
-      //   @include selector.class(modal, (element: footer)) {
+      // #{selector.class(scroll-shadow, (combine: true))} {
+      //   #{selector.class(modal, (element: footer))} {
       //     @include color.background(elevated grey, (legacy:$legacy));
       //   }
       // }

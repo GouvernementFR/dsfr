@@ -7,7 +7,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(logo) {
+  #{selector.class(logo)} {
     @include color.text(title grey, (legacy:$legacy));
   }
 }

@@ -2,7 +2,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin img() {
-  @include selector.class(responsive-img) {
+  #{selector.class(responsive-img)} {
     @include image.responsive;
   }
 }

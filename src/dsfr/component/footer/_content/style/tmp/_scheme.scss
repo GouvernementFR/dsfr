@@ -44,7 +44,7 @@
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
 
       @if not $legacy {
-        @include selector.class(footer, (element: partners-link)) {
+        #{selector.class(footer, (element: partners-link))} {
           &,
           &:hover,
           &:active {

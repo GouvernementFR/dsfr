@@ -8,7 +8,7 @@
 @use '../../../../../../sass/media';
 
 @include legacy.is(ie11) {
-  @include selector.class(responsive-vid) {
+  #{selector.class(responsive-vid)} {
     @include media.aspect-ratio-legacy();
 
     @each $ratio in (16x9 4x3 1x1) {

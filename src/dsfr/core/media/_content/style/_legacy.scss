@@ -7,7 +7,7 @@
 @use '../../../../../sass/legacy';
 
 @include legacy.is(ie11) {
-  @include selector.class(responsive-vid) {
+  #{selector.class(responsive-vid)} {
     @include media.aspect-ratio-legacy();
   }
 }

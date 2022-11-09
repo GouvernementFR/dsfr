@@ -8,7 +8,7 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include selector.class(select) {
+  #{selector.class(select)} {
     display: block;
     appearance: none;
     -moz-appearance: none;

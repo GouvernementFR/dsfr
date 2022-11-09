@@ -3,23 +3,24 @@
 /// @group core
 ////
 
-@use '../../../../../../../sass/legacy/index';
+@use '../../../../../../../sass/legacy';
+@use '../../../../../../../sass/selector';
 
 @include legacy.is(ie11) {
   [href],
-  @include selector.class(reset-link) {
+  #{selector.class(reset-link)} {
     text-decoration: underline;
   }
 
-  @include selector.class(raw-link) {
+  #{selector.class(raw-link)} {
     text-decoration: none;
   }
 
-  @include selector.class(reset-link) {
+  #{selector.class(reset-link)} {
     @include after(none);
   }
 
-  @include selector.generic-attribute(target, '_blank') {
+  #{selector.generic-attribute(target, '_blank')} {
     @include icon-legacy(external-link-line, sm, after);
   }
 }

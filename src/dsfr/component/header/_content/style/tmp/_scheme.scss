@@ -38,26 +38,26 @@
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
 
-      @include selector.class(btn) {
+      #{selector.class(btn)} {
         @include btn-kind-scheme(4, $legacy);
         @include color.no-box-shadow((legacy: $legacy));
       }
     }
 
     &__tools-links {
-      @include selector.class(btn) {
+      #{selector.class(btn)} {
         @include btn-kind-scheme(4, $legacy);
       }
     }
 
     &__navbar {
-      @include selector.class(service) {
+      #{selector.class(service)} {
         @include selector.title {
           @include color.text(title grey, (legacy:$legacy));
         }
       }
 
-      @include selector.class(btn) {
+      #{selector.class(btn)} {
         @include btn-kind-scheme(4, $legacy);
 
         &--menu {
@@ -66,13 +66,13 @@
       }
     }
 
-    @include selector.class(header, (element: menu)) {
+    #{selector.class(header, (element: menu))} {
       @include media-query.from(lg) {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }
     }
 
-    @include selector.class(modal) {
+    #{selector.class(modal)} {
       @include color.background(lifted grey, (legacy:$legacy));
     }
   }

@@ -7,8 +7,8 @@
 @use '../../../../../../sass/spacing';
 
 @mixin first() {
-  @include selector.class(fieldset, (modifier: inline)) {
-    @include selector.class(radio-rich) {
+  #{selector.class(fieldset, (modifier: inline))} {
+    #{selector.class(radio-rich)} {
       &:last-child {
         input[type="radio"] + label {
           @include spacing.margin-bottom(2v !important);
@@ -19,9 +19,9 @@
 
   // Correctif alignement vertical IE
   // Inconvéniant : fixe la height à la min-height, soit 5.5 rem
-  @include selector.class(radio-rich) {
+  #{selector.class(radio-rich)} {
     input[type="radio"] {
-      @include selector.class(label, (combine: adjacent)) {
+      #{selector.class(label, (combine: adjacent))} {
         @include spacing.height(1px);
       }
     }

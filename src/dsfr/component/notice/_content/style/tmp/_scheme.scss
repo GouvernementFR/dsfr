@@ -3,11 +3,11 @@
 /// @group notice
 ////
 
-@use '../../../../../sass/color';
-@use '../../../../../sass/selector';
+@use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(notice) {
+  #{selector.class(notice)} {
     @include color.background(contrast grey, (legacy:$legacy, hover: false, active: false));
     @include color.text(title grey, (legacy:$legacy));
 

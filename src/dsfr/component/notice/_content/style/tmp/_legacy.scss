@@ -10,21 +10,21 @@
   /**
   * reset des marges dans le bandeau
   */
-  @include selector.class(notice) {
+  #{selector.class(notice)} {
     &__title,
     p {
       @include spacing.margin(0);
     }
 
     &--info {
-      @include selector.class(notice, (element: body)) {
+      #{selector.class(notice, (element: body))} {
         @include icon.icon-legacy(info-fill, md, before, false) {
           color: transparent;
         }
       }
     }
 
-    @include selector.class(btn, (modifier: close)) {
+    #{selector.class(btn, (modifier: close))} {
       @include icon.icon-legacy(close-line, sm);
     }
   }

@@ -11,7 +11,7 @@
   /**
   * Reset liste à puce
   */
-  @include selector.class((tabs) {
+  #{selector.class((tabs))} {
     @include typography.disable-list-style-legacy;
 
     &__panel {

@@ -8,7 +8,7 @@
 @mixin first() {  /**
   * Cache l'icone native du select sur IE
   */
-  @include selector.class(select) {
+  #{selector.class(select)} {
     &::-ms-expand {
       display: none;
     }

@@ -8,7 +8,7 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include selector.class(link) {
+  #{selector.class(link)} {
     background-image: none;
     text-decoration: underline;
     @include icon.icon-legacy(null, sm, before);
@@ -22,7 +22,7 @@
     }
   }
 
-  @include selector.class(links, (group: true))} {
+  #{selector.class(links, (group: true))} {
     @include typography.disable-list-style-legacy(true);
   }
 }

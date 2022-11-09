@@ -3,11 +3,12 @@
 /// @group core
 ////
 
-@use '../../../../../../../sass/color/index';
-@use '../../../../../../../sass/legacy/index';
+@use '../../../../../../../sass/color';
+@use '../../../../../../../sass/legacy';
+@use '../../../../../../../sass/selector';
 
 @include legacy.is(ie11) {
-  @include selector.class(enlarge-link) {
+  #{selector.class(enlarge-link)} {
     @include color.transparent-background((legacy: true, hover: true));
 
     @include disable-underline-legacy;

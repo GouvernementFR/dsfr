@@ -10,7 +10,7 @@
 @import './tool';
 
 @mixin _table-scheme($legacy: false) {
-  @include selector.class(tag) {
+  #{selector.class(tag)} {
     @include color.text(label grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
 
@@ -19,7 +19,7 @@
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
     }
 
-    @include selector.class(tag, (modifier: dismiss, combine: true)) {
+    #{selector.class(tag, (modifier: dismiss, combine: true))} {
       @include color.text(inverted grey, (legacy: $legacy));
       @include color.background(action-high blue-france, (legacy: $legacy, hover: true));
     }
@@ -28,7 +28,7 @@
   // button,
   // input[type=button] {
   @include action.clickable-selector {
-    @include selector.class(tag, (combine: true)) {
+    #{selector.class(tag, (combine: true))} {
       @include color.text(action-high blue-france, (legacy: $legacy));
       @include color.background(action-low blue-france, (legacy: $legacy, hover: true));
 

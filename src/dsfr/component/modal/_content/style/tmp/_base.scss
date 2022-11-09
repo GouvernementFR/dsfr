@@ -12,7 +12,7 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include selector.class(modal) {
+  #{selector.class(modal)} {
     // reset dialog @TODO à déplacer dans reset ?
     border: none;
     color: inherit;
@@ -29,7 +29,7 @@
     // transition in/out
     transition: opacity 0.3s, visibility 0.3s;
 
-    @include selector.class(container, (combine: child)) {
+    #{selector.class(container, (combine: child))} {
       pointer-events: none;
     }
 
@@ -137,8 +137,8 @@
     }
 
     &__body {
-      @include selector.class(scroll-shadow, (combine: true)) {
-        @include selector.class(modal, (element: footer)) {
+      #{selector.class(scroll-shadow, (combine: true))} {
+        #{selector.class(modal, (element: footer))} {
           box-shadow: spacing.space(inset 0 -8v 6v -8v color.$black);
         }
       }

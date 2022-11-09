@@ -3,6 +3,8 @@
 /// @group core
 ////
 
-@include selector.class(collapse) {
+@import '../../../../../../../sass/selector';
+
+#{selector.class(collapse)} {
   @include collapse();
 }

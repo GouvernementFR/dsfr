@@ -19,7 +19,7 @@
         @each $tint, $shades in map.get(color.$sets, $family) {
           @if map.has-key($shades, $shade) {
             $selector: '#{$context}-#{$use}--#{$tint}';
-            @include selector.class('#{$context}-#{$use}', (modifier: $tint)) {
+            #{selector.class('#{$context}-#{$use}', (modifier: $tint))} {
               @if $context == background {
                 $hover: false;
                 @if list.length($settings) > 1 {

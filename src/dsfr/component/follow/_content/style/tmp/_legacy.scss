@@ -24,7 +24,7 @@
 
     #{selector.class(btns, (group: true))} {
       &:not(#{(selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg)))}) {
-        @include selector.class(btn) {
+        #{selector.class(btn)} {
           @include icon.not-selector {
             @include icon.icon-legacy(null, md);
           }
@@ -32,7 +32,7 @@
       }
 
       &--lg {
-        @include selector.class(btn) {
+        #{selector.class(btn)} {
           @include icon.not-selector {
             @include icon.icon-legacy(null, lg);
           }

@@ -2,7 +2,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin vid() {
-  @include selector.class(responsive-vid) {
+  #{selector.class(responsive-vid)} {
     @include video.responsive;
 
     &__player {

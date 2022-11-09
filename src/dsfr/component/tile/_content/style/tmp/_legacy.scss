@@ -7,7 +7,7 @@
 @use '../../../../../../sass/spacing';
 
 @mixin first() {
-  @include selector.class(tile) {
+  #{selector.class(tile)} {
     &__body,
     &__body > * {
       max-width: 100%;

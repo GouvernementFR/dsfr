@@ -3,7 +3,7 @@
 /// @group core
 ////
 
-@include selector.class(enlarge-link) {
+#{selector.class(enlarge-link)} {
   position: relative;
 
   a {

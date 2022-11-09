@@ -38,7 +38,7 @@
 }
 
 @mixin logo($size: md, $size-md: null) {
-  @include selector.class(logo) {
+  #{selector.class(logo)} {
     @include logo-size($size);
     @include spacing.padding(map-get($logo-sizes, $size));
 

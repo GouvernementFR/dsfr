@@ -12,7 +12,7 @@
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin first() {
-  @include selector.class(share) {
+  #{selector.class(share)} {
     @include display.flex(column);
     @include typography.set-text-margin(0 0 4v);
     @include typography.set-title-margin(0 0 4v);
@@ -28,17 +28,17 @@
       order: 3;
     }
 
-    @include selector.class(btns, (group: true)) {
+    #{selector.class(btns, (group: true))} {
       @include horizontal-btns-group;
       @include spacing.width(auto);
       order: 2;
 
-      @include selector.class(btn) {
+      #{selector.class(btn)} {
         justify-content: flex-start;
       }
 
       &:not(#{selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg))}) {
-        @include selector.class(btn) {
+        #{selector.class(btn)} {
           @include icon.not-selector {
             @include nest-btn(md, only, null, null, false);
             @include icon.icon(null, md, before);

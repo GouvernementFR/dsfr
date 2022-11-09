@@ -6,7 +6,7 @@
   $block: map.get(icon.$situations, $situation);
 
   @each $size, $value in icon.$sizes {
-    @include selector.class($block, (modifier: $size)) {
+    #{selector.class($block, (modifier: $size))} {
       @if $legacy {
         @include icon.legacy-size($size);
       }

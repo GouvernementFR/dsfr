@@ -35,23 +35,23 @@
         @include spacing.max-width(150v);
         @include spacing.margin-top(0);
 
-        @include selector.class(input) {
+        #{selector.class(input)} {
           @include spacing.margin-bottom(4v);
           @include spacing.margin-top(0);
         }
 
-        @include selector.class(btn) {
+        #{selector.class(btn)} {
           justify-content: center;
         }
 
         @include media-query.from(sm) {
           flex-direction: row;
 
-          @include selector.class(btn) {
+          #{selector.class(btn)} {
             border-radius: 0 #{spacing.space(1v)} 0 0;
           }
 
-          @include selector.class(input) {
+          #{selector.class(input)} {
             @include spacing.margin-bottom(0);
             border-radius: #{spacing.space(1v)} 0 0 0;
           }
@@ -69,7 +69,7 @@
       @include typography.set-text-margin(0 0 3v);
       @include typography.set-title-margin(0 0 3v);
 
-      #@include selector.class(btns, (group: true)) {
+      #{selector.class(btns, (group: true))} {
         @include horizontal-btns-group;
         @include spacing.margin(0 -4v -4v -4v);
         @include spacing.width(auto);

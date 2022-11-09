@@ -13,7 +13,7 @@
     /**
     * reset liste à puce
     */
-    @include selector.class(breadcrumb) {
+    #{selector.class(breadcrumb)} {
       @include typography.disable-list-style-legacy;
 
       &__link {
