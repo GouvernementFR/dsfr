@@ -4,6 +4,7 @@ import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
+import { queryActions } from '../../utilities/dom/actions.js';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -295,6 +296,10 @@ class Instance {
     return getClassNames(this.node);
   }
 
+  remove () {
+    this.node.parentNode.removeChild(this.node);
+  }
+
   setAttribute (attributeName, value) {
     this.node.setAttribute(attributeName, value);
   }
@@ -321,6 +326,22 @@ class Instance {
 
   focus () {
     this.node.focus();
+  }
+
+  focusClosest () {
+    const closest = this._focusClosest(this.node.parentNode);
+    if (closest) closest.focus();
+  }
+
+  _focusClosest (parent) {
+    if (!parent) return null;
+    const actions = [...queryActions(parent)];
+    if (actions.length <= 1) {
+      return this._focusClosest(parent.parentNode);
+    } else {
+      const index = actions.indexOf(this.node);
+      return actions[index + (index < actions.length - 1 ? 1 : -1)];
+    }
   }
 
   get hasFocus () {

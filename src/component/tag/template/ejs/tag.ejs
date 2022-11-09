@@ -69,7 +69,7 @@ switch(tag.type) {
       if (tag.markup === undefined) tag.markup = 'button';
       tagAttrs["aria-pressed"] = 'false';
   break;
-  case 'dismissable':
+  case 'dismissible':
       if (tag.markup === undefined) tag.markup = 'button';
       tagClasses.push(prefix + '-tag--dismiss');
       tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);

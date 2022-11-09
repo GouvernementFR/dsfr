@@ -1,0 +1,17 @@
+////
+/// Pagination Constrast
+/// @group pagination
+////
+
+@use 'module/media-query';
+
+@include media-query.high-contrast() {
+  #{ns(pagination)} {
+    &__link {
+      &[aria-current] {
+        justify-content: center;
+        @include padding(calc(1v - 1px) calc(3v - 1px));
+      }
+    }
+  }
+}

@@ -2,7 +2,8 @@
 let transcription = locals.transcription || {};
 let data = {
   id: uniqueId('transcription'),
-  content: transcription.content || randomContent(['title', 'text', 'list']),
+  title: getText('modal.title', 'transcription'),
+  content: transcription.content || randomContent(['text', 'list']),
   ...transcription
 }
 %>

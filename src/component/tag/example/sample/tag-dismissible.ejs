@@ -1,0 +1,10 @@
+<%
+let tag = locals.tag || {};
+let data = {
+  ...tag,
+  type: 'dismissible'
+}
+
+%>
+
+<%- include('./tag-default', {tag:data}); %>

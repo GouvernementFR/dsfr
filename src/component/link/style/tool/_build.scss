@@ -87,7 +87,7 @@
 
         @if map_get($settings, blank) {
           @include target-blank(true) {
-            @include _build-link-icon($size-settings, right, $size, false);
+            @include _build-link-icon($size-settings, right, $size);
           }
         }
       }

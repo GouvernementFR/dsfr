@@ -14,3 +14,9 @@
 @import 'style/legacy';
 
 @include _form-scheme(true);
+
+// deprecated
+@import 'deprecated/style/scheme';
+@import 'deprecated/style/legacy';
+
+@include _deprecated-form-scheme(true);
