@@ -15,7 +15,7 @@
 @import 'tool';
 
 @mixin first() {
-  @include selector.class(content-media) {
+  #{selector.class(content-media)} {
     @include spacing.size(100%);
     @include spacing.margin(10v 0);
     @include display.flex(column, center);

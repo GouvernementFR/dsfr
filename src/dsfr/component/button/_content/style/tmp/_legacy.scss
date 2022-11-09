@@ -9,7 +9,7 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include selector.class(btn) {
+  #{selector.class(btn)} {
     @include icon.icon-legacy(null, sm);
 
     @include selector.not-start(btn, (modifier: icon-)) {
@@ -39,24 +39,24 @@
     }
   }
 
-  @include selector.class(btn, (modifier: close)) {
+  #{selector.class(btn, (modifier: close))} {
     @include icon.icon-legacy(close-line, sm);
   }
 
-  @include selector.class(btn, (modifier: fullscreen)) {
+  #{selector.class(btn, (modifier: fullscreen))} {
     @include icon-legacy(fullscreen-line, sm);
   }
 
-  @include selector.class(btn, (modifier: display)) {
+  #{selector.class(btn, (modifier: display))} {
     @include icon.icon-legacy(theme-fill, sm);
   }
 
-  @include selector.class(btns, (group: true)) {
+  #{selector.class(btns, (group: true))} {
     @include typography.disable-list-style-legacy(true);
 
     &--sm {
       @include selector.not-start(btns, (group: true, modifier: icon-)) {
-        @include selector.class(btn) {
+        #{selector.class(btn)} {
           @include icon.selector {
             @include icon.icon-legacy(null, sm);
           }
@@ -66,7 +66,7 @@
 
     &--lg {
       @include selector.not-start(btns, (group: true, modifier: icon-)) {
-        @include selector.class(btn) {
+        #{selector.class(btn)} {
           @include icon.selector {
             @include icon.icon-legacy(null, lg);
           }

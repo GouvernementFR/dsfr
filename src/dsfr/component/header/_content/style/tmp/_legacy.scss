@@ -10,11 +10,11 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include selector.class(header) {
+  #{selector.class(header)} {
     @include typography.disable-list-style-legacy;
     @include action.disable-underline-legacy;
 
-    @include selector.class(btns, (group: true)) {
+    #{selector.class(btns, (group: true))} {
       &:not(#{(selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg)))}) {
         @include selector.not-start(btns, (group: true, modifier: icon-)) {
           @include selector.class(btn) {

@@ -8,7 +8,7 @@
 @use '../../../../../../sass/typography';
 
 @mixin first() {
-  @include selector.class(callout) {
+  #{selector.class(callout)} {
     @include spacing.relative();
     @include spacing.padding(6v);
     @include spacing.padding(8v 12v, md);
@@ -41,7 +41,7 @@
     /**
     * Ajout de marge quand on inclut un bouton (optionnel)
     */
-    @include selector.class(btn) {
+    #{selector.class(btn)} {
       @include spacing.margin-top(4v);
     }
   }

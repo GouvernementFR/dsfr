@@ -8,11 +8,11 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(consent-placeholder) {
+  #{selector.class(consent-placeholder)} {
     @include color.background(contrast grey, (legacy:$legacy));
   }
 
-  @include selector.class(consent-banner) {
+  #{selector.class(consent-banner)} {
     // @include color.background(contrast grey, (legacy:$legacy));
     @include elevation.elevate(overlap-above, (legacy:$legacy, usage: alt));
     @include color.box-shadow(default grey, (legacy:$legacy));
@@ -23,8 +23,8 @@
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
     @include color.text(default grey, (legacy:$legacy));
 
-    @include selector.class(radio, (group: true)) {
-      @include selector.class(radio, (group: true, combine: adjacent)) {
+    #{selector.class(radio, (group: true))} {
+      #{selector.class(radio, (group: true, combine: adjacent))} {
         @include selector.before {
           @include color.box-shadow(default grey, (legacy:$legacy));
         }
@@ -32,7 +32,7 @@
     }
   }
 
-  @include selector.class(consent-service) {
+  #{selector.class(consent-service)} {
     &:last-of-type,
     #{selector.class(consent-service)} {
       @include color.no-box-shadow((legacy: $legacy));

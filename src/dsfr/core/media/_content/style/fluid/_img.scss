@@ -2,7 +2,7 @@
 @use '../../../../../../sass/media/image';
 
 @mixin img() {
-  @include selector.class(fluid-img) {
+  #{selector.class(fluid-img)} {
     @include image.fluid;
   }
 }

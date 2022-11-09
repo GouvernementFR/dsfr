@@ -13,16 +13,16 @@
   /**
   * Correctif de la largeur max des textes
   */
-  @include selector.class(follow, (element: newsletter)} {
+  #{selector.class(follow, (element: newsletter))} {
     & > * {
       max-width: 100%;
     }
   }
 
-  @include selector.class(follow) {
+  #{selector.class(follow)} {
     @include build-follow-social-icons-legacy();
 
-    @include selector.class(btns, (group: true)) {
+    #{selector.class(btns, (group: true))} {
       &:not(#{(selector.class(btns, (group: true, modifier: sm)), selector.class(btns, (group: true, modifier: lg)))}) {
         @include selector.class(btn) {
           @include icon.not-selector {

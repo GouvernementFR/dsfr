@@ -4,9 +4,10 @@
 ////
 
 @use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(callout) {
+  #{selector.class(callout)} {
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);
 

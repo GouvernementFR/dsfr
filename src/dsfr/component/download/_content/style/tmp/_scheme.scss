@@ -7,7 +7,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(download) {
+  #{selector.class(download)} {
     &--card {
       @include color.background(default grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);

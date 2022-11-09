@@ -11,10 +11,10 @@
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(follow) {
+  #{selector.class(follow)} {
     @include color.background(alt blue-france, (legacy: $legacy));
 
-    @include selector.class(input) {
+    #{selector.class(input)} {
       @include color.background(default grey, (legacy: $legacy));
     }
 
@@ -29,12 +29,12 @@
     }
 
     &__social {
-      @include selector.class(btn) {
+      #{selector.class(btn)} {
         @include btn-kind-scheme(4, $legacy);
       }
     }
 
-    @include selector.class(grid-row) {
+    #{selector.class(grid-row)} {
       > *:not(:first-child) {
         // Séparateur en box-shadow
         @include color.box-shadow(default blue-france, (legacy: $legacy), top-1-out);

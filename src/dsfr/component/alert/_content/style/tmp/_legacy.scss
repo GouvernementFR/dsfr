@@ -10,7 +10,7 @@
 
 @mixin first() {
   @include legacy.is(ie11) {
-    @include selector.class(alert) {
+    #{selector.class(alert)} {
       @include icon.icon-legacy(null, md);
 
       &__title,
@@ -34,7 +34,7 @@
         @include icon.icon-legacy(warning-fill, null, before, false);
       }
 
-      @include selector.class(btn, (modifier: close)) {
+      #{selector.class(btn, (modifier: close))} {
         @include icon.icon-legacy(close-line, sm);
       }
     }

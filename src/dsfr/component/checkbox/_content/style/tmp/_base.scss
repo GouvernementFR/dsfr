@@ -8,7 +8,7 @@
 @use '../../../../../../sass/display';
 
 @mixin first() {
-  @include selector.class(checkbox-group) {
+  #{selector.class(checkbox-group)} {
     @include spacing.relative;
 
     input[type="checkbox"] {
@@ -24,7 +24,7 @@
         @include display.flex(row, center, flex-start, wrap);
         @include spacing.margin-left(8v);
 
-        @include selector.class(hint-text) {
+        #{selector.class(hint-text)} {
           @include spacing.margin(0);
           @include spacing.size(100%);
         }

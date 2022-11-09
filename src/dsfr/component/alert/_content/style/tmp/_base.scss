@@ -10,7 +10,7 @@
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin first() {
-  @include selector.class(alert) {
+  #{selector.class(alert)} {
     @include spacing.relative();
     @include spacing.padding(4v 9v 3v 14v);
     @include typography.set-title-margin(0 0 1v);
@@ -25,12 +25,12 @@
       @include typography.title-style(h6);
     }
 
-    @include selector.class(btn, (modifier: close))} {
+    #{selector.class(btn, (modifier: close))} {
       @include spacing.absolute(1v,5v);
       @include nest-btn(sm, only, close-line, null, false);
     }
 
-    @include selector.class(alert, (combine: adjacent)) {
+    #{selector.class(alert, (combine: adjacent))} {
       @include spacing.margin-top(4v);
     }
 

@@ -12,7 +12,7 @@
 @import '../../../../button/_content/style/tmp/tool';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(header) {
+  #{selector.class(header)} {
     &__brand {
       @include elevation.elevate(raised, (legacy: $legacy));
     }

@@ -7,7 +7,7 @@
 @use '../../../../../../sass/action';
 
 @mixin first {
-  @include selector.class(footer) {
+  #{selector.class(footer)} {
     @include typography.disable-list-style-legacy;
 
     &__content-desc {

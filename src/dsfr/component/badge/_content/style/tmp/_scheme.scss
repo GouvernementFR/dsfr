@@ -7,7 +7,7 @@
 @use '../../../../../../sass/color';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(badge)} {
+  #{selector.class(badge)} {
     @include color.text(default grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
 

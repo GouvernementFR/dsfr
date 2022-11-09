@@ -7,7 +7,7 @@
 @use '../../../../../../sass/color';
 
 @mixin scheme($legacy: false) {
-  @include selector.class(alert) {
+  #{selector.class(alert)} {
     @include color.box-shadow((plain grey) (background flat grey), (legacy:$legacy), all-1-in left-10v-in);
 
     @include selector.before {

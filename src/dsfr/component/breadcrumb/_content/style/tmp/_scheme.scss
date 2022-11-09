@@ -4,9 +4,10 @@
 ////
 
 @use '../../../../../../sass/color';
+@use '../../../../../../sass/selector';
 
 @mixin scheme ($legacy: false) {
-  @include selector.class(breadcrumb) {
+  #{selector.class(breadcrumb)} {
     @include color.text(mention grey, (legacy:$legacy));
 
     &__link[aria-current] {

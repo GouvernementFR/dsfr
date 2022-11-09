@@ -4,7 +4,7 @@
 @use '../../../../../../sass/selector';
 
 @mixin utility ($ratio, $support: recent, $important: false) {
-  @include selector.class(ratio, (modifier: $ratio)) {
+  #{selector.class(ratio, (modifier: $ratio))} {
     @if $support == recent {
       @include media.aspect-ratio($ratio);
     }

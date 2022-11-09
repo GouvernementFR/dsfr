@@ -7,7 +7,7 @@
 @use '../../../../../../sass/elevation/index';
 
 @mixin _card-scheme($legacy: false) {
-  @include selector.class(card) {
+  #{selector.class(card)} {
     @include color.background(default grey, (legacy:$legacy));
 
     &:not(&--no-border):not(&--shadow) {
