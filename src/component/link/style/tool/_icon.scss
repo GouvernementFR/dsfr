@@ -5,7 +5,7 @@
 
 @use 'module/spacing';
 
-@mixin _build-link-icon($size-settings, $place, $size:md, $override-icon: true) {
+@mixin _build-link-icon($size-settings, $place, $size:md, $override-icon: false) {
 
   $icon-size: icon-size(map_get($size-settings, icon));
 
