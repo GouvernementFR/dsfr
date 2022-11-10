@@ -37,7 +37,6 @@ class TabsGroup extends api.core.DisclosuresGroup {
   }
 
   pressKey (key) {
-    console.log(key);
     switch (key) {
       case TabKeys.LEFT:
         this.pressLeft();
