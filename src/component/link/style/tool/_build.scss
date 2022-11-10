@@ -101,7 +101,7 @@
       @if $places != null {
         @each $place in $places {
           @include _link-class($base, $size, $place) {
-            @include _build-link-icon($size-settings, $place, $size, false);
+            @include _build-link-icon($size-settings, $place, $size, true);
           }
 
           @if $align-on-content {
