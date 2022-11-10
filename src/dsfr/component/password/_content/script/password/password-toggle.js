@@ -29,10 +29,9 @@ class PasswordToggle extends ref.api.Instance {
 
   toggle () {
     this.isChecked = !this._isChecked;
-    // this.node.checked = this.isChecked;
   }
 
-  swapFont (families) {
+  swapFont () {
     this.ascend(PasswordEmission.ADJUST, this.width);
   }
 }

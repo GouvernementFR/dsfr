@@ -1,0 +1,4 @@
+id: pressable
+script:
+  dependencies:
+    - api

@@ -1,0 +1,7 @@
+@use 'collapse';
+
+$options: () !default;
+
+@mixin first () {
+  @include collapse.legacy;
+}

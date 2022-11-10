@@ -1,0 +1,8 @@
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/action';
+
+@mixin legacy () {
+  #{selector.class(collapse)} {
+    @include action.legacy-collapse();
+  }
+}

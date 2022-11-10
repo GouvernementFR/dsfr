@@ -47,7 +47,7 @@
     @include icon-legacy(fullscreen-line, sm);
   }
 
-  #{selector.class(btn, (modifier: display))} {
+  #{selector.class(btn, (modifier: theme))} {
     @include icon.icon-legacy(theme-fill, sm);
   }
 

@@ -1,0 +1,8 @@
+@use '../../../../../../../sass/selector';
+@use '../../../../../../../sass/action';
+
+@mixin base () {
+  #{selector.class(collapse)} {
+    @include action.collapse();
+  }
+}

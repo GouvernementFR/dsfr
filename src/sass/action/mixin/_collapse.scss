@@ -1,0 +1,24 @@
+@use '../../selector';
+@use '../../spacing';
+
+@mixin collapse() {
+  --collapse-max-height: 0;
+  --collapse: -99999px;
+  --collapser: '';
+
+  overflow: hidden;
+  transition: visibility 0.3s;
+  @include spacing.max-height(var(--collapse-max-height));
+
+  @include selector.before(var(--collapser), block) {
+    transition: margin-top 0.3s;
+    @include spacing.margin-top(0);
+  }
+
+  #{&}:not(&--expanded) {
+    visibility: hidden;
+    @include selector.before {
+      @include spacing.margin-top(var(--collapse));
+    }
+  }
+}

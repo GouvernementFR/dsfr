@@ -1,0 +1,11 @@
+@use '../../../../../../../sass/selector/index';
+
+@mixin generate($breakpoint: null) {
+  #{selector.class(no-before, (breakpoint: $breakpoint))} {
+    @include selector.before(none);
+  }
+
+  #{selector.class(no-after, (breakpoint: $breakpoint))} {
+    @include selector.after(none);
+  }
+}

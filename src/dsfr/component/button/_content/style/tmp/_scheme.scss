@@ -30,7 +30,7 @@
     // Ghost variant
     &--tertiary-no-outline,
     &--close,
-    &--display,
+    &--theme,
     &--fullscreen {
       @include btn-kind-scheme(4, $legacy);
     }

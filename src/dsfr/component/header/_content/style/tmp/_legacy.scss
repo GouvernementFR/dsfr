@@ -19,7 +19,7 @@
         @include selector.not-start(btns, (group: true, modifier: icon-)) {
           #{selector.class(btn)} {
             @include icon.not-selector {
-              #{selector.class(btn, (modifier: display, combine: not))} {
+              #{selector.class(btn, (modifier: theme, combine: not))} {
                 @include icon.icon-legacy(null, sm, before, false);
               }
             }
@@ -28,7 +28,7 @@
               @include icon.icon-legacy(null, sm, before, false);
             }
 
-            #{selector.class(btn, (modifier: display, combine: true))} {
+            #{selector.class(btn, (modifier: theme, combine: true))} {
               @include icon.icon-legacy(null, sm, before, false);
             }
           }

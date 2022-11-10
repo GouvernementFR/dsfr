@@ -1,0 +1,14 @@
+@use '../../../selector';
+@use '../../../spacing';
+
+@mixin collapse () {
+  @include spacing.max-height(0);
+
+  @include selector.before('');
+
+  #{&}:not(&--expanded) {
+    @include selector.before {
+      @include spacing.max-height(-99999px);
+    }
+  }
+}

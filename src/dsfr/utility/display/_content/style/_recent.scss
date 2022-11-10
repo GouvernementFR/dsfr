@@ -1,5 +1,0 @@
-@use 'reset';
-
-@mixin first() {
-  @include reset.box-sizing;
-}

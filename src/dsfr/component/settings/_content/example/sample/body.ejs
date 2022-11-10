@@ -1,0 +1,32 @@
+<%
+const name = `${prefix}-radios-theme`;
+const getRadioData = (label, pictogram, scheme, hint) => {
+  return {
+    type: 'radio',
+    data: {
+      name: name,
+      rich: true,
+      image: { name: pictogram, type: 'pictogram' },
+      label: label,
+      hint: hint,
+      attributes: { value: scheme},
+      id: `${name}-${scheme}`
+    }
+  };
+};
+const fieldset = {
+  legend: 'Choisissez un thème pour personnaliser l’apparence du site.',
+  id: 'theme-fieldset',
+  choice: true,
+  includeEmptyMessagesGroup: false,
+  elements: [
+    getRadioData('Thème clair', 'sun', 'light'),
+    getRadioData('Thème sombre', 'moon', 'dark'),
+    getRadioData('Système', 'system', 'system', 'Utilise les paramètres système')
+  ]
+}
+%>
+
+<div id="<%= prefix %>-theme" class="<%= prefix %>-theme">
+  <%- include('../../../form/example/sample/fieldset', { fieldset: fieldset }) %>
+</div>
