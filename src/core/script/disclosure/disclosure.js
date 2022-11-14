@@ -24,6 +24,7 @@ class Disclosure extends Instance {
     this.addDescent(DisclosureEmission.UNGROUP, this.update.bind(this));
     this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
     this.ascend(DisclosureEmission.ADDED);
+    this.listenHash(this.id, this.disclose.bind(this), this.conceal.bind(this));
     this.update();
   }
 
@@ -81,6 +82,7 @@ class Disclosure extends Instance {
     this.pristine = false;
     this.disclosed = true;
     if (!withhold && this.group) this.group.current = this;
+    this.hash = this.id;
     return true;
   }
 
@@ -92,6 +94,7 @@ class Disclosure extends Instance {
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
     if (!preventFocus) this.focus();
     this.descend(DisclosureEmission.RESET);
+    if (withhold && this.hash === this.id) this.hash = '';
     return true;
   }
 

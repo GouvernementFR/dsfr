@@ -16,7 +16,7 @@ class DisclosureButton extends Instance {
     this.controlsId = this.getAttribute('aria-controls');
     this.isPrimary = this.hasAttribute(this.attributeName);
     if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
-    this.listen('click', this.click.bind(this));
+    this.listenClick();
   }
 
   get proxy () {
@@ -26,7 +26,7 @@ class DisclosureButton extends Instance {
     });
   }
 
-  click (e) {
+  handleClick (e) {
     if (this.registration.creator) this.registration.creator.toggle(this.isPrimary);
   }
 
