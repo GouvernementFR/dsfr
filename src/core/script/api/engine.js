@@ -6,6 +6,7 @@ import { ScrollLocker } from './modules/scroll/scroll-locker.js';
 import { Load } from './modules/load/load.js';
 import { FontSwap } from './modules/font-swap/font-swap';
 import { MouseMove } from './modules/mouse-move/mouse-move';
+import { Hash } from './modules/hash/hash';
 import inspector from './inspect/inspector.js';
 import state from './state.js';
 
@@ -19,6 +20,7 @@ class Engine {
     state.create(Load);
     state.create(FontSwap);
     state.create(MouseMove);
+    state.create(Hash);
 
     const registerModule = state.getModule('register');
     this.register = registerModule.register.bind(registerModule);

@@ -16,6 +16,10 @@ class Instance {
     this._isLoading = false;
     this._isSwappingFont = false;
     this._listeners = {};
+    this.handlingClick = this.handleClick.bind(this);
+    this._hashes = [];
+    this._hash = '';
+    this.handlingHash = this.handleHash.bind(this);
     this._keyListenerTypes = [];
     this._keys = [];
     this.handlingKey = this.handleKey.bind(this);
@@ -97,6 +101,40 @@ class Instance {
     const removal = listeners.filter(listener => listener.closure === closure && listener.matchOptions(options));
     removal.forEach(listener => listener.unlisten());
     this._listeners[type] = listeners.filter(listener => removal.indexOf(listener) === -1);
+  }
+
+  listenClick () {
+    this.listen('click', this.handlingClick);
+  }
+
+  unlistenClick () {
+    this.unlisten('click', this.handlingClick);
+  }
+
+  handleClick (e) {}
+
+  set hash (value) {
+    state.getModule('hash').hash = value;
+  }
+
+  get hash () {
+    return state.getModule('hash').hash;
+  }
+
+  listenHash (hash, add, remove) {
+    if (this._hashes.length === 0) state.add('hash', this);
+    const action = new HashAction(hash, add, remove);
+    this._hashes = this._hashes.filter(action => action.hash !== hash);
+    this._hashes.push(action);
+  }
+
+  unlistenHash (hash) {
+    this._hashes = this._hashes.filter(action => action.hash !== hash);
+    if (this._hashes.length === 0) state.remove('hash', this);
+  }
+
+  handleHash (hash, e) {
+    for (const action of this._hashes) action.handle(hash, e);
   }
 
   listenKey (code, closure, preventDefault = false, stopPropagation = false, type = 'down') {
@@ -231,6 +269,7 @@ class Instance {
     inspector.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
     this.unlisten();
+    this._hashes = null;
     this._keys = null;
     this.isRendering = false;
     this.isResizing = false;
@@ -445,6 +484,33 @@ class Listener {
 
   unlisten () {
     this._node.removeEventListener(this._type, this._closure, this._options);
+  }
+}
+
+class HashAction {
+  constructor (hash, add, remove) {
+    this.hash = hash;
+    this.add = add;
+    this.remove = remove;
+    this._isAadded = false;
+  }
+
+  handle (hash, e) {
+    switch (true) {
+      case this._isAadded && hash !== this.hash:
+        e.preventDefault();
+        e.stopPropagation();
+        this._isAadded = false;
+        this.remove(e);
+        break;
+
+      case !this._isAadded && hash === this.hash:
+        e.preventDefault();
+        e.stopPropagation();
+        this._isAadded = true;
+        this.add(e);
+        break;
+    }
   }
 }
 
