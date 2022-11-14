@@ -5,7 +5,7 @@
 
 @use 'module/spacing';
 
-@mixin _build-link-icon($size-settings, $place, $size:md) {
+@mixin _build-link-icon($size-settings, $place, $size:md, $override-icon: true) {
 
   $icon-size: icon-size(map_get($size-settings, icon));
 
@@ -30,7 +30,7 @@
     overflow: initial;
     max-width: 100%;
     max-height: none;
-    @include after {
+    @include icon-content(false, $override-icon) {
       --icon-size: #{$icon-size};
       margin-right: -($icon-margin);
       margin-left: $icon-margin-x;
