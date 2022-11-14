@@ -15,14 +15,15 @@ class HeaderModal extends api.core.Instance {
   }
 
   resize () {
-    if (this.isBreakpoint(api.core.Breakpoints.LG)) this.unqualify();
-    else this.qualify();
+    if (this.isBreakpoint(api.core.Breakpoints.LG)) this.deactivateModal();
+    else this.activateModal();
   }
 
-  qualify () {
+  activateModal () {
     this.setAttribute('role', 'dialog');
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
+    modal.active = true;
     const buttons = modal.buttons;
     let id = '';
     for (const button of buttons) {
@@ -33,9 +34,11 @@ class HeaderModal extends api.core.Instance {
     this.listen('click', this._clickHandling, { capture: true });
   }
 
-  unqualify () {
+  deactivateModal () {
     const modal = this.element.getInstance('Modal');
-    if (modal) modal.conceal();
+    if (!modal) return;
+    modal.conceal();
+    modal.active = false;
     this.removeAttribute('role');
     this.removeAttribute('aria-labelledby');
     this.unlisten('click', this._clickHandling, { capture: true });

@@ -121,9 +121,9 @@ class Instance {
     return state.getModule('hash').hash;
   }
 
-  listenHash (hash, add, remove) {
+  listenHash (hash, add) {
     if (this._hashes.length === 0) state.add('hash', this);
-    const action = new HashAction(hash, add, remove);
+    const action = new HashAction(hash, add);
     this._hashes = this._hashes.filter(action => action.hash !== hash);
     this._hashes.push(action);
   }
@@ -488,29 +488,13 @@ class Listener {
 }
 
 class HashAction {
-  constructor (hash, add, remove) {
+  constructor (hash, add) {
     this.hash = hash;
     this.add = add;
-    this.remove = remove;
-    this._isAadded = false;
   }
 
   handle (hash, e) {
-    switch (true) {
-      case this._isAadded && hash !== this.hash:
-        e.preventDefault();
-        e.stopPropagation();
-        this._isAadded = false;
-        this.remove(e);
-        break;
-
-      case !this._isAadded && hash === this.hash:
-        e.preventDefault();
-        e.stopPropagation();
-        this._isAadded = true;
-        this.add(e);
-        break;
-    }
+    if (this.hash === hash) this.add(e);
   }
 }
 

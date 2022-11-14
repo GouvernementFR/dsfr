@@ -116,6 +116,8 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   render () {
     if (this.current === null) return;
+    this.node.scrollTop = 0;
+    this.node.scrollLeft = 0;
     const paneHeight = Math.round(this.current.node.offsetHeight);
     if (this.panelHeight === paneHeight) return;
     this.panelHeight = paneHeight;
