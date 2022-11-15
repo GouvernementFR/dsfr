@@ -91,7 +91,6 @@ class Disclosure extends Instance {
     this.pristine = false;
     this.disclosed = true;
     if (!withhold && this.group) this.group.current = this;
-    console.log('hash', this.id, !withhold, this.hash);
     if (this.hash !== this.id) this.hash = this.id;
     return true;
   }
