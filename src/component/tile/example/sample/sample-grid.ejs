@@ -19,13 +19,3 @@ const tileSm = { pictogram: true, size:'sm', col: {sm:'6', md:'4', lg:'3'}};
         { ...tileSm, content: { details: true }},
         { ...tileSm, content: { details: true, tag: true }},
     ]}, true, './tiles-layout'); %>
-
-<%
-const tileLg = { pictogram: true, size:'lg', col: { md:'6'}};
-%>
-<%- sample('Grilles de tuiles verticales lg', './tiles-grid', { tiles : [
-        { ...tileLg, content: { tag: true }},
-        { ...tileLg, content: { badge: true }},
-        { ...tileLg, content: { details: true }},
-        { ...tileLg, content: { details: true, tag: true }},
-    ]}, true, './tiles-layout'); %>

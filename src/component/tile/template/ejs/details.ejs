@@ -9,10 +9,7 @@
 
 %>
 
-<% for (const detail of details) {
-    const detailClasses = [`${prefix}-tile__detail`];
-
-    if (detail.icon) detailClasses.push(`${prefix}-icon-${detail.icon}`);
+<%
+  const detailClasses = [`${prefix}-tile__detail`];
 %>
-<p <%- includeClasses(detailClasses); %>><%- detail.label %></p>
-<% } %>
+<p <%- includeClasses(detailClasses); %>><%- details %></p>
