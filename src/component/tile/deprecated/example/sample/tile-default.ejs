@@ -1,0 +1,16 @@
+<%
+let tile = locals.tile || {};
+let data = {
+  title: 'Titre M bold',
+  enlarge: tile.enlarge !== false,
+  description: lorem(null, 80),
+  ...tile
+}
+
+if (tile.img !== false) {
+  data.img = imgData('img/placeholder.1x1.png', 'unrendered');
+} else data.img = undefined;
+
+%>
+
+<%- include('../../template/ejs/tile', {tile:data}); %>

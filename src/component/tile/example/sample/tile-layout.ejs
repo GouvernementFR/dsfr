@@ -1,0 +1,40 @@
+<%
+ const layout = locals.layout || {};
+ const layoutClasses = layout.classes || [];
+ %>
+<div <%- includeClasses(layoutClasses); %>>
+    <div class="<%= prefix %>-container" >
+        <% if (locals.title !== undefined && locals.title.length) { %>
+        <h4><%= title %></h4>
+        <% } %>
+        <% if (locals.desc !== undefined && locals.desc.length) { %>
+        <p><%= desc %></p>
+        <% } %>
+        <div class="<%= prefix %>-mb-6v" >
+            <%
+            if (locals.col) {
+            %>
+            <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--gutters">
+                <%
+                    const colClasses = col.classes || [];
+                    colClasses.push(`${prefix}-col-${col.start || 12}`);
+                    for (const bp of ['sm', 'md', 'lg', 'xl']) if (col[bp]) colClasses.push(`${prefix}-col-${bp}-${col[bp]}`);
+                %>
+                <div <%- includeClasses(colClasses); %>>
+                    <%- component; %>
+                </div>
+            </div>
+
+            <%
+            } else {
+            %>
+            <%- component %>
+            <% } %>
+        </div>
+        <% if (locals.snippet !== undefined) { %>
+        <div class="<%= prefix %>-mb-12v" >
+            <%- snippet %>
+        </div>
+        <% } %>
+    </div>
+</div>
