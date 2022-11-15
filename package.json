@@ -14,7 +14,6 @@
     "node": ">=14.18.0"
   },
   "scripts": {
-    "styleguide": "./node_modules/.bin/sassdoc src/*/styles/** -d ./doc/sassdoc",
     "test": "node tool/tool.js test",
     "build": "node tool/tool.js build",
     "release": "node tool/tool.js release",
@@ -71,7 +70,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.56.1",
     "sass-true": "^6.1.0",
-    "sassdoc": "^2.7.4",
     "standard": "^16.0.4",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
