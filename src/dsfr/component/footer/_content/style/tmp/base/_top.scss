@@ -17,8 +17,8 @@
   #{selector.ns(footer)} {
     &__top {
       @include display.flex(null);
-      @include spacing.margin(-10v 0 4v);
-      @include spacing.margin(-10v 0 10v, md);
+      @include spacing.margin(-9.5v 0 4v);
+      @include spacing.margin(-9.5v 0 10v, md);
       @include spacing.padding(8v 0 4v);
     }
 

@@ -1,0 +1,10 @@
+<%
+const content = locals.content || {};
+if (content.transcription === true) content.transcription = {
+  id: uniqueId('transcription'),
+  title: getText('modal.title', 'transcription'),
+  content: randomContent(['text', 'list'])
+};
+%>
+
+<%- include('../../template/ejs/media', { content: content }); %>

@@ -81,6 +81,7 @@
       opacity: inherit;
       background-color: inherit;
       position: relative;
+      z-index: auto;
 
       &::after {
         content: none;
@@ -124,6 +125,10 @@
         max-height: var(--transcription-max-height);
         @include margin(0);
         @include padding(4v);
+      }
+
+      #{ns(modal)}__title {
+        display: none;
       }
     }
 

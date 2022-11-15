@@ -1,11 +1,12 @@
 <%
 const content = locals.content || {};
 const data = {
-  vid: { ...vidData(null, null, content.ratio || null)},
+  vid: {
+    ...vidData(null, null, content.ratio || null)},
   caption: 'Description / Source',
   link: 'Label lien',
   ...content
 };
 %>
 
-<%- include('../../template/ejs/media', {content:data}); %>
+<%- include('media-default', {content:data}); %>
