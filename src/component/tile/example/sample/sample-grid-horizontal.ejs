@@ -1,7 +1,7 @@
 <% const sample = getSample(include); %>
 
 <%
-const tileH = { pictogram: true, horizontal: true, col: {md:'8'}};
+const tileH = { pictogram: true, horizontal: true, col: {md:'6', lg:'4'}};
 %>
 <%- sample('Grilles de tuiles horizontales', './tiles-grid', { tiles : [
         { ...tileH, content: { tag: true }},
@@ -11,7 +11,7 @@ const tileH = { pictogram: true, horizontal: true, col: {md:'8'}};
     ]}, true, './tiles-layout'); %>
 
 <%
-const tileHSm = { pictogram: true, horizontal: true, size:'sm', col: { md:'6'}};
+const tileHSm = { pictogram: true, horizontal: true, size:'sm', col: { sm:'6', md:'4', lg:'3'}};
 %>
 <%- sample('Grilles de tuiles horizontales sm', './tiles-grid', { tiles : [
         { ...tileHSm, content: { tag: true }},
@@ -20,12 +20,3 @@ const tileHSm = { pictogram: true, horizontal: true, size:'sm', col: { md:'6'}};
         { ...tileHSm, content: { details: true, tag: true }},
     ]}, true, './tiles-layout'); %>
 
-<%
-const tileHLg = { pictogram: true, horizontal: true, size:'lg', col: { md:'12'}};
-%>
-<%- sample('Grilles de tuiles horizontales lg', './tiles-grid', { tiles : [
-        { ...tileHLg, content: { tag: true }},
-        { ...tileHLg, content: { badge: true }},
-        { ...tileHLg, content: { details: true }},
-        { ...tileHLg, content: { details: true, tag: true }},
-    ]}, true, './tiles-layout'); %>

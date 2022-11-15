@@ -1,10 +1,10 @@
 <%
 const tile = locals.tile || {};
+const content = tile.content || {};
 const data = {
   content: {
-    title: tile.title || 'Intitulé de la tuile',
-    description: tile.description || lorem('', 60),
-    detail: tile.detail === true ? 'Détail (optionel)' : tile.detail || undefined
+    title: content.title || 'Intitulé de la tuile',
+    description: content.description !== false ? content.description || lorem('', 60) : undefined,
   },
   size: tile.size,
   enlarge: tile.enlarge !== false && tile.footer === undefined,
@@ -12,16 +12,7 @@ const data = {
 }
 
 if (tile.horizontal) {
-  const horizontal = {};
-
-  switch (tile.horizontal) {
-    case 'half':
-    case 'tier':
-      horizontal.proportion = tile.horizontal;
-      break;
-  }
-
-  data.horizontal = horizontal;
+  data.horizontal = tile.horizontal;
 }
 
 if (tile.pictogram === true) {
@@ -30,6 +21,9 @@ if (tile.pictogram === true) {
 }
 
 if (tile.content) {
+  if (tile.content.details) {
+    data.content.details = content.details === true ? 'Détail (optionel)' : tile.content.details
+  }
 
   if (tile.content.badge) {
     data.content.badge = { size: 'sm', label: 'label badge', accent: 'purple-glycines'};

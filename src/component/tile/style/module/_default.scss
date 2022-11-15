@@ -5,27 +5,25 @@
 
 #{ns(tile)} {
   @include relative;
-  @include display-flex(column-reverse);
+  @include display-flex(column);
   @include set-text-margin(0);
   @include set-title-margin(0 0 1v);
   background-size: 100% 4px, 1px 100%, 1px 100%, 100% 1px;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+  @include padding(6v 6v 7v);
+  @include padding(8v 8v 9v, md);
+  text-align: center;
 
   #{ns(grid-row)} & {
     @include size(null, 100%);
   }
 
-  // &__link {
-  //   display: inline-flex;
-  //   @include disable-underline;
-  //   @include size(100%);
-  // }
-
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
+  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
 
   &__header {
-    @include margin-top(8v);
+    order: 1;
+    @include margin-bottom(4v);
   }
 
   &__pictogram {
@@ -45,14 +43,9 @@
     @include display-flex(column, center, center);
   }
 
-  &__header {
-    @include margin-bottom(-4v);
-  }
-
   &__body {
+    order: 2;
     flex: 1 1 auto;
-    text-align: center;
-    @include padding(8v 8v 9v);
   }
 
   @include title {
