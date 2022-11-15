@@ -1,0 +1,23 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuiles verticales', './sample/tiles-default', {}, true) %>
+<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
+<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{img: false}}, true) %>
+<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+
+<%- sample('Tuiles verticales accentuées', './sample/tiles-default', {tile:{accent:'grey'}}, true) %>
+
+<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {}, true) %>
+<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
+<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {tile:{img: false}}, true) %>
+<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {}, true) %>
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{img: false}}, true) %>
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+
+<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {}, true) %>
+<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
+<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {tile:{img: false}}, true) %>
+<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>

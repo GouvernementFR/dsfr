@@ -1,0 +1,19 @@
+#{ns(tile--sm)} {
+  #{ns(tile)} {
+    &__body {
+      @include padding(8v 6v 7v 6v);
+    }
+
+    &__title {
+      @include text-style(md);
+    }
+
+    &__desc {
+      @include text-style(sm);
+    }
+
+    &__start {
+      @include margin-bottom(3v);
+    }
+  }
+}
