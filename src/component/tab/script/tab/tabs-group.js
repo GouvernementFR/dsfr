@@ -22,6 +22,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
     this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
     this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
     this.isRendering = true;
+    this.tabs = this.node.getElementsByClassName('fr-tabs__tab');
 
     if (this.list) this.list.apply();
   }
@@ -44,12 +45,14 @@ class TabsGroup extends api.core.DisclosuresGroup {
    */
   pressRight () {
     if (this.buttonHasFocus) {
-      if (this.index < this.length - 1) {
-        this.index++;
-      } else {
-        this.index = 0;
+      do {
+        if (this.index < this.length - 1) {
+          this.index++;
+        } else {
+          this.index = 0;
+        }
       }
-
+      while (this.tabs[this.index].hasAttribute('disabled'));
       this.focus();
     }
   };
@@ -60,11 +63,14 @@ class TabsGroup extends api.core.DisclosuresGroup {
    */
   pressLeft () {
     if (this.buttonHasFocus) {
-      if (this.index > 0) {
-        this.index--;
-      } else {
-        this.index = this.length - 1;
+      do {
+        if (this.index > 0) {
+          this.index--;
+        } else {
+          this.index = this.length - 1;
+        }
       }
+      while (this.tabs[this.index].hasAttribute('disabled'));
 
       this.focus();
     }
