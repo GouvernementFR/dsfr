@@ -40,10 +40,12 @@
   }
 
   &__content {
-    @include display-flex(column, center, center);
+    @include display-flex(column, center, space-between);
+    @include height(100%);
   }
 
   &__body {
+    @include height(100%);
     order: 2;
     flex: 1 1 auto;
   }
@@ -56,6 +58,7 @@
 
   &__desc {
     @include text-style(md);
+    flex: 1 1 auto;
     order: 3;
   }
 
