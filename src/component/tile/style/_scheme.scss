@@ -13,6 +13,7 @@
     &__title {
       @include color.text(title blue-france, (legacy: $legacy));
     }
+
     &--grey {
       @include color.background(contrast grey, (legacy: $legacy));
     }
