@@ -7,7 +7,7 @@ class SidemenuList extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return member.node.matches(SidemenuSelector.COLLAPSE);
+    return super.validate(member) && member.node.matches(SidemenuSelector.COLLAPSE);
   }
 }
 

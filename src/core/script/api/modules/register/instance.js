@@ -14,6 +14,7 @@ class Instance {
     this._isScrollLocked = false;
     this._isLoading = false;
     this._isSwappingFont = false;
+    this._isEnabled = true;
     this._listeners = {};
     this.handlingClick = this.handleClick.bind(this);
     this._hashes = [];
@@ -142,6 +143,12 @@ class Instance {
 
   handleKey (e) {
     for (const key of this._keys) key.handle(e);
+  }
+
+  get isEnabled () { return this._isEnabled; }
+
+  set isEnabled (value) {
+    this._isEnabled = value;
   }
 
   get isRendering () { return this._isRendering; }

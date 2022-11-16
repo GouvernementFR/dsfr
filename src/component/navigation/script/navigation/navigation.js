@@ -16,7 +16,7 @@ class Navigation extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return member.element.node.matches(NavigationSelector.COLLAPSE);
+    return super.validate(member) && member.element.node.matches(NavigationSelector.COLLAPSE);
   }
 
   down (e) {

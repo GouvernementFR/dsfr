@@ -12,10 +12,18 @@ class DisclosureButton extends Instance {
     return 'DisclosureButton';
   }
 
+  get isPrimary () {
+    return this.canDisclose && !this.registration.creator.node.contains(this.node);
+  }
+
+  get canDisclose () {
+    return this.hasAttribute(this.attributeName);
+  }
+
   init () {
     this.controlsId = this.getAttribute('aria-controls');
-    this.isPrimary = this.hasAttribute(this.attributeName);
     if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
+    this.enableCreator();
     this.listenClick();
   }
 
@@ -27,7 +35,7 @@ class DisclosureButton extends Instance {
   }
 
   handleClick (e) {
-    if (this.registration.creator) this.registration.creator.toggle(this.isPrimary);
+    if (this.registration.creator) this.registration.creator.toggle(this.canDisclose);
   }
 
   mutate (attributeNames) {
@@ -35,6 +43,12 @@ class DisclosureButton extends Instance {
       if (this.disclosed) this.registration.creator.disclose();
       else if (this.type.canConceal) this.registration.creator.conceal();
     }
+
+    this.enableCreator();
+  }
+
+  enableCreator () {
+    if (this.isPrimary) this.registration.creator.isEnabled = !this.type.canDisable || !this.hasAttribute('disabled');
   }
 
   apply (value) {

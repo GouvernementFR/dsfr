@@ -49,7 +49,7 @@ class DisclosuresGroup extends Instance {
   }
 
   validate (member) {
-    return true;
+    return member.isEnabled;
   }
 
   getMembers () {
