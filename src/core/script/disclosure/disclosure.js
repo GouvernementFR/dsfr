@@ -26,6 +26,7 @@ class Disclosure extends Instance {
     this.ascend(DisclosureEmission.ADDED);
     this.listenHash(this.id, () => { this.disclose(); });
     this.update();
+    if (this.hash === this.id) this.disclose();
   }
 
   get isEnabled () { return super.isEnabled; }
