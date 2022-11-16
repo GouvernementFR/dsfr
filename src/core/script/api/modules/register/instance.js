@@ -5,6 +5,7 @@ import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
+import { completeAssign } from '../../utilities/property/complete-assign';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -19,7 +20,6 @@ class Instance {
     this.handlingClick = this.handleClick.bind(this);
     this._hashes = [];
     this._hash = '';
-    this.handlingHash = this.handleHash.bind(this);
     this._keyListenerTypes = [];
     this._keys = [];
     this.handlingKey = this.handleKey.bind(this);
@@ -47,10 +47,21 @@ class Instance {
 
   get proxy () {
     const scope = this;
-    return {
+    const proxy = {
       render: () => scope.render(),
       resize: () => scope.resize()
     };
+
+    const proxyAccessors = {
+      get isEnabled () {
+        return scope.isEnabled;
+      },
+      set isEnabled (value) {
+        scope.isEnabled = value;
+      }
+    };
+
+    return completeAssign(proxy, proxyAccessors);
   }
 
   register (selector, InstanceClass) {
