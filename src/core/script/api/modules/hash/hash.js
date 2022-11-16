@@ -4,6 +4,7 @@ class Hash extends Module {
   constructor () {
     super('hash');
     this.handling = this.handle.bind(this);
+    this.getLocationHash();
   }
 
   activate () {
@@ -23,9 +24,13 @@ class Hash extends Module {
     return this._hash;
   }
 
-  handle (e) {
+  getLocationHash () {
     const hash = window.location.hash;
     this._hash = hash.charAt(0) === '#' ? hash.substring(1) : hash;
+  }
+
+  handle (e) {
+    this.getLocationHash();
     this.forEach((instance) => instance.handleHash(this._hash, e));
   }
 }

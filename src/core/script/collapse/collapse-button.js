@@ -11,9 +11,7 @@ class CollapseButton extends DisclosureButton {
   }
 
   get isPrimary () {
-    const ip = super.isPrimary && this.registration.creator.isButtonPrimary(this);
-    console.log(this.node, ip);
-    return ip;
+    return super.isPrimary && this.registration.creator.isButtonPrimary(this);
   }
 }
 
