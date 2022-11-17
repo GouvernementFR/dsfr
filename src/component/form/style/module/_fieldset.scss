@@ -49,6 +49,7 @@
 
   &__element {
     flex: 1 1 100%;
+    @include max-width(100%);
     @include padding-x(2v);
     @include margin-bottom(4v);
 

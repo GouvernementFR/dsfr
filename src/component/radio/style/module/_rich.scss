@@ -7,22 +7,30 @@
 
 #{ns(radio-rich)} {
   @include relative;
+  @include display-flex(row, center);
+  @include max-width(100%);
+  @include padding(1px);
 
   input[type="radio"] {
     + label {
+      position: initial;
       @include padding-left(14v);
       @include margin-left(0);
       min-height: spacing.space(22v);
       @include size(100%);
       @include padding-top(2v);
       @include padding-bottom(2v);
-      @include padding-right(26v);
-      @include display-flex(column, flex-start, center);
+      @include padding-right(6v);
+      @include display-flex(column, stretch, center);
 
       @include before {
         @include size(4v, 4v);
         @include absolute(50%, null, null, 7v);
         @include margin-top(-2v);
+      }
+
+      @include after('', block) {
+        @include absolute(0, 0, 0, 0, 100%, 100%);
       }
 
       #{ns(hint-text)} {
@@ -40,23 +48,37 @@
     &:not(:disabled) ~ label {
       @include hover-tint;
       @include enable-tint;
+
+      &:hover {
+        + #{ns(radio-rich__img)} {
+          background-color: var(--hover);
+        }
+      }
+
+      &:active {
+        + #{ns(radio-rich__img)} {
+          background-color: var(--active);
+        }
+      }
     }
 
     @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__img)}');
   }
 
   &__img {
-    @include hover-brighten-filter;
-    @include padding-left(1v);
-    @include size(21v, 20v);
-    @include absolute(1v, 1v);
     @include display-flex;
+    align-self: stretch;
+    background-size: 1px calc(100% - 0.5rem);
+    background-repeat: no-repeat;
+    background-position: 0 0.25rem;
     pointer-events: none;
 
     img,
     svg {
-      max-width: spacing.space(20v);
       object-fit: cover;
+      @include size(22v, 22v);
+      @include hover-brighten-filter;
+      @include padding(1v);
     }
   }
 }

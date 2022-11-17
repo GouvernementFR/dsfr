@@ -2,7 +2,7 @@
   const radios = locals.radios || {}
   const radio = locals.radio || {};
   radio.rich = true;
-  radio.image = radio.image || imgData('img/placeholder.1x1.png', 'unknown');
+  radio.image = radio.image !== false ? imgData('img/placeholder.1x1.png', 'unknown') : radio.image;
 %>
 
 <%- include('radios', { radios: radios, radio: radio }); %>

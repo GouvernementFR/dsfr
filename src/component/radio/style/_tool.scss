@@ -15,5 +15,5 @@
     $out: $max;
   }
 
-  @return all-1-in all-#{$out}-in all-#{$max}-in;
+  @return all-1-out all-#{$out}-in all-#{$max}-in;
 }

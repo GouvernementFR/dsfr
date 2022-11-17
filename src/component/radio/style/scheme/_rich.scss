@@ -8,43 +8,55 @@
 
 @mixin _radio-scheme-rich($legacy: false) {
   #{ns(radio-rich)} {
+
     &__img {
-      @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
+      @include color.background-image((border default grey), (legacy: $legacy));
+      @include color.box-shadow(border default grey, (legacy:$legacy), top-1-out right-1-out bottom-1-out);
+      @include color.background((background default grey), (legacy: $legacy));
     }
 
     input[type="radio"] {
       + label {
-        @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
-        @include color.background(default grey, (legacy:$legacy));
+        @include color.box-shadow(border default grey, (legacy:$legacy), all-1-out);
+        @include color.background((background default grey), (legacy: $legacy));
 
         @include before {
-          @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(false, sm));
+          @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true, sm));
         }
       }
 
       @include disabled.selector {
         + label {
           @include before {
-            @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(false, sm));
+            @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true, sm));
           }
         }
       }
 
       &:checked {
         + label {
-          @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-in);
+          @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-out);
 
           @include before {
             @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true, sm));
           }
         }
 
+        ~ #{ns(radio-rich__img)} {
+          @include color.box-shadow(action-high blue-france, (legacy:$legacy), top-1-out right-1-out bottom-1-out);
+        }
+
         @include disabled.selector {
           + label {
-            @include color.box-shadow(text disabled grey, (legacy:$legacy), all-1-in);
+            @include color.box-shadow(text disabled grey, (legacy:$legacy), all-1-out);
+
             @include before {
               @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true, sm));
             }
+          }
+
+          ~ #{ns(radio-rich__img)} {
+            @include color.box-shadow(text disabled grey, (legacy:$legacy), top-1-out right-1-out bottom-1-out);
           }
         }
       }
