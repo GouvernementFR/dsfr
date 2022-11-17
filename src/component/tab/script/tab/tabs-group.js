@@ -16,6 +16,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   init () {
     super.init();
+
     this.listen('transitionend', this.transitionend.bind(this));
     this.listenKey(api.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
     this.listenKey(api.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
@@ -24,6 +25,20 @@ class TabsGroup extends api.core.DisclosuresGroup {
     this.isRendering = true;
 
     if (this.list) this.list.apply();
+  }
+
+  getIndex (defaultIndex = 0) {
+    console.log(this.hash);
+    if (this.hash) {
+      for (let i = 0; i < this.length - 1; i++) {
+        console.log(i, this.members[i].id);
+        if (this.hash === this.members[i].id) {
+          super.getIndex(i);
+          return;
+        }
+      }
+    }
+    super.getIndex(0);
   }
 
   get list () {

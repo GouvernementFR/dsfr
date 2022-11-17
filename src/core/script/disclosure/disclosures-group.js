@@ -70,14 +70,15 @@ class DisclosuresGroup extends Instance {
     return this.members ? this.members.length : 0;
   }
 
-  getIndex () {
+  getIndex (defaultIndex = -1) {
     this._index = -1;
+    let index = -1;
     for (let i = 0; i < this.length; i++) {
-      if (this.index > -1) this.members[i].conceal(true, true);
-      else if (this.members[i].disclosed) {
-        this.index = i;
-      }
+      if (index !== -1 && this.members[i].disclosed) index = i;
     }
+
+    console.log(this.index, defaultIndex, index);
+    this.index = index > -1 ? index : defaultIndex;
   }
 
   get index () {
