@@ -415,6 +415,20 @@ class Instance {
     return this.node === document.activeElement;
   }
 
+  scrollIntoView () {
+    const rect = this.getRect();
+
+    const scroll = state.getModule('lock');
+
+    if (rect.top < 0) {
+      scroll.move(rect.top - 50);
+    }
+
+    if (rect.bottom > window.innerHeight) {
+      scroll.move(rect.bottom - window.innerHeight + 50);
+    }
+  }
+
   matches (selectors) {
     return this.node.matches(selectors);
   }
