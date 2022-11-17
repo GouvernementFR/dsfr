@@ -55,7 +55,7 @@ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
   </div>
   <% if (tile.img !== undefined) { %>
   <div class="<%= prefix %>-tile__img">
-    <%- include('../../../../../core/template/ejs/media/responsive-img.ejs', {media:tile.img}); %>
+    <%- include('../../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: tile.img}); %>
   </div>
   <% } %>
 </div>
