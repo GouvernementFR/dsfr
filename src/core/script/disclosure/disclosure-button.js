@@ -59,6 +59,11 @@ class DisclosureButton extends Instance {
   get disclosed () {
     return this.getAttribute(this.attributeName) === 'true';
   }
+
+  focus () {
+    super.focus();
+    this.scrollIntoView();
+  }
 }
 
 export { DisclosureButton };
