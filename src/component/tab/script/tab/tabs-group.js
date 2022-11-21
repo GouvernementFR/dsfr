@@ -1,5 +1,7 @@
 import api from '../../api.js';
 import { TabPanelDirection } from './tab-panel-direction.js';
+import { TabKeys } from './tab-keys';
+import { TabEmission } from './tab-emission';
 
 /**
 * TabGroup est la classe étendue de DiscosuresGroup
@@ -17,17 +19,13 @@ class TabsGroup extends api.core.DisclosuresGroup {
   init () {
     super.init();
     this.listen('transitionend', this.transitionend.bind(this));
-    this.listenKey(api.core.KeyCodes.RIGHT, this.pressRight.bind(this), true, true);
-    this.listenKey(api.core.KeyCodes.LEFT, this.pressLeft.bind(this), true, true);
-    this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this), true, true);
-    this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this), true, true);
+    this.addAscent(TabEmission.PRESS_KEY, this.pressKey.bind(this));
+    this.addAscent(TabEmission.LIST_HEIGHT, this.setListHeight.bind(this));
     this.isRendering = true;
-
-    if (this.list) this.list.apply();
   }
 
-  get list () {
-    return this.element.getDescendantInstances('TabsList', 'TabsGroup', true)[0];
+  setListHeight (value) {
+    this.listHeight = value;
   }
 
   transitionend (e) {
@@ -36,6 +34,26 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   get buttonHasFocus () {
     return this.members.some(member => member.buttonHasFocus);
+  }
+
+  pressKey (key) {
+    switch (key) {
+      case TabKeys.LEFT:
+        this.pressLeft();
+        break;
+
+      case TabKeys.RIGHT:
+        this.pressRight();
+        break;
+
+      case TabKeys.HOME:
+        this.pressHome();
+        break;
+
+      case TabKeys.END:
+        this.pressEnd();
+        break;
+    }
   }
 
   /**
@@ -119,9 +137,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
     const paneHeight = Math.round(this.current.node.offsetHeight);
     if (this.panelHeight === paneHeight) return;
     this.panelHeight = paneHeight;
-    let listHeight = 0;
-    if (this.list) listHeight = this.list.node.offsetHeight;
-    this.style.setProperty('--tabs-height', (this.panelHeight + listHeight) + 'px');
+    this.style.setProperty('--tabs-height', (this.panelHeight + this.listHeight) + 'px');
   }
 }
 
