@@ -16,7 +16,7 @@ class Modal extends api.core.Disclosure {
 
   init () {
     super.init();
-    this.listen('click', this.click.bind(this));
+    this.listenClick();
     this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
   }
 
@@ -24,7 +24,7 @@ class Modal extends api.core.Disclosure {
     return this.element.getDescendantInstances('ModalBody', 'Modal')[0];
   }
 
-  click (e) {
+  handleClick (e) {
     if (e.target === this.node && this.getAttribute(ModalAttribute.CONCEALING_BACKDROP) !== 'false') this.conceal();
   }
 

@@ -7,7 +7,7 @@ class PasswordToggle extends api.core.Instance {
   }
 
   init () {
-    this.listen('click', this.toggle.bind(this));
+    this.listenClick();
     this.ascend(PasswordEmission.ADJUST, this.width);
     this.isSwappingFont = true;
     this._isChecked = this.isChecked;
@@ -27,7 +27,7 @@ class PasswordToggle extends api.core.Instance {
     this.ascend(PasswordEmission.TOGGLE, value);
   }
 
-  toggle () {
+  handleClick () {
     this.isChecked = !this._isChecked;
     // this.node.checked = this.isChecked;
   }

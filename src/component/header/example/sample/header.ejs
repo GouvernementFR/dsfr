@@ -59,8 +59,8 @@ if (header.links !== undefined || header.search) {
     : header.search;
 
     tools.search.id = header.searchId || uniqueId('search');
-    tools.search.modalId = uniqueId('modal'),
-    tools.search.btnId = uniqueId('button')
+    tools.search.modalId = tools.search.modalId || uniqueId('modal'),
+    tools.search.btnId = tools.search.btnId || uniqueId('button')
   }
 }
 
@@ -88,8 +88,9 @@ if (header.navigation !== undefined) {
 
 if (hasMenu) {
   hasNavbar = true;
-  menu.modalId = uniqueId('modal');
-  menu.id = uniqueId('button');
+  const headerMenu = header.menu || {};
+  menu.modalId = headerMenu.modalId || uniqueId('modal');
+  menu.id = headerMenu.id || uniqueId('button');
 
   if (header.navigation !== undefined) {
     menu.navigation.id = header.navigationId || uniqueId('navigation');
