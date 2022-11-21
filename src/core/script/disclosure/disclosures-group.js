@@ -77,7 +77,6 @@ class DisclosuresGroup extends Instance {
       if (index !== -1 && this.members[i].disclosed) index = i;
     }
 
-    console.log(this.index, defaultIndex, index);
     this.index = index > -1 ? index : defaultIndex;
   }
 
