@@ -16,7 +16,7 @@
       @include padding-left(14v);
       @include margin-left(0);
       align-self: stretch;
-      min-height: spacing.space(22v);
+      min-height: spacing.space(20v);
       @include size(100%);
       @include padding-top(2v);
       @include padding-bottom(2v);
@@ -69,9 +69,11 @@
   }
 
   &__img {
-    @include display-flex;
+    @include display-flex(row, center, center);
     @include margin-left(-1px);
-    @include padding(1px);
+    @include padding(1v);
+    @include size(22v, 22v);
+    @include min-width(22v);
     align-self: stretch;
     pointer-events: none;
     background-size: 100% 1px, 100% 1px, 1px 100%, 1px calc(100% - 0.5rem);
@@ -81,9 +83,7 @@
     img,
     svg {
       object-fit: cover;
-      @include size(22v, 22v);
       @include hover-brighten-filter;
-      @include padding(1v);
     }
   }
 }
