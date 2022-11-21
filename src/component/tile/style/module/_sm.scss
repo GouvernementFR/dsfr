@@ -1,0 +1,33 @@
+#{ns(tile--sm)} {
+  @include padding(6v 6v 7v, md);
+
+  #{ns(tile)} {
+    &__title {
+      @include text-style(md);
+    }
+
+    &__desc {
+      @include text-style(sm);
+    }
+
+    &__start {
+      @include margin-bottom(3v);
+    }
+
+    &__pictogram {
+      @include size(14v, 14v);
+    }
+  }
+
+  &#{ns(tile--horizontal)} {
+    #{ns(tile)} {
+      &__header {
+        @include margin-right(6v);
+      }
+
+      &__pictogram {
+        @include size(10v, 10v);
+      }
+    }
+  }
+}

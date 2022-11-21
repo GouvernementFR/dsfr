@@ -1,16 +1,40 @@
 <%
-let tile = locals.tile || {};
-let data = {
-  title: 'Titre M bold',
-  enlarge: tile.enlarge !== false,
-  description: lorem(null, 80),
-  ...tile
+const tile = locals.tile || {};
+const content = tile.content || {};
+const data = {
+  content: {
+    title: content.title || 'Intitulé de la tuile',
+    description: content.description !== false ? content.description || lorem('', 60) : undefined,
+  },
+  size: tile.size,
+  enlarge: tile.enlarge !== false && tile.footer === undefined,
+  icon: tile.icon,
 }
 
-if (tile.img !== false) {
-  data.img = imgData('img/placeholder.1x1.png', 'unrendered');
-} else data.img = undefined;
+if (tile.horizontal) {
+  data.horizontal = tile.horizontal;
+}
+
+if (tile.pictogram === true) {
+  data.header = {};
+  data.header.pictogram = {name: 'city-hall'};
+}
+
+if (tile.content) {
+  if (tile.content.details) {
+    data.content.details = content.details === true ? 'Détail (optionel)' : tile.content.details
+  }
+
+  if (tile.content.badge) {
+    data.content.badge = { size: 'sm', label: 'label badge', accent: 'purple-glycine'};
+  }
+
+  if (tile.content.tag) {
+    data.content.tag = { size: 'sm', label: 'label tag'};
+  }
+
+}
 
 %>
 
-<%- include('../../template/ejs/tile', {tile:data}); %>
+<%- include('../../template/ejs/tile', {tile: data}); %>

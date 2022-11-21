@@ -1,0 +1,45 @@
+<%#
+# paramètres du contenu principal de la carte
+
+* content.title (string, required) : Titre de la carte
+
+* content.description (string, optional) : Description
+
+* content.badgesGroup (array, optional) : Groupe de badges (voir badge)
+
+* content.tagsGroup (array, optional) : Groupe de tags (voir tag)
+
+* content.details (array, optional) : Détails
+
+* content.markup (string, optional) : (défaut : h3) niveau de titre
+
+%>
+<%
+let start = {};
+
+const markup = content.markup || 'h3';
+
+if (content.badgesGroup) start.badgesGroup = content.badgesGroup;
+if (content.tagsGroup) start.tagsGroup = content.tagsGroup;
+if (content.tag) start.tag = content.tag;
+if (content.badge) start.badge = content.badge;
+
+%>
+
+<div class="<%= prefix %>-tile__content">
+  <<%= markup %> class="<%= prefix %>-tile__title">
+    <a href="#" ><%- content.title %></a>
+  </<%= markup %>>
+
+  <% if (content.description !== undefined) { %>
+  <p class="<%= prefix %>-tile__desc"><%- content.description %></p>
+  <% } %>
+
+  <% if (content.details !== undefined) { %>
+  <%- include('details', { details: content.details }); %>
+  <% } %>
+
+  <% if (Object.keys(start).length) { %>
+  <%- include('start', {start: start }); %>
+  <% } %>
+</div>

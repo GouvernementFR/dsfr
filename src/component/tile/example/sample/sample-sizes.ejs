@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('tuile verticale md, taille par défaut', './tile-default', { tile : { pictogram: true }}, true, './tile-layout', {col: {start: 9, md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('tuile taille sm', './tile-default', { tile: { pictogram: true, size: 'sm' }}, true, './tile-layout', {col: {start: 6, md:3}, desc: 'dans une grille sur 3 à 4 colonnes en version desktop'}); %>
