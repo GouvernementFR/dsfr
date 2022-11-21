@@ -1,5 +1,8 @@
 import api from '../../api.js';
 import { TabSelector } from './tab-selector';
+import { TabKeys } from './tab-keys';
+import { TabEmission } from './tab-emission';
+import { TableEmission } from '../../../table/script/table/table-emission';
 
 const FOCALIZE_OFFSET = 16;
 const SCROLL_OFFSET = 16; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
@@ -11,11 +14,11 @@ class TabsList extends api.core.Instance {
 
   init () {
     this.listen('scroll', this.scroll.bind(this));
+    this.listenKey(api.core.KeyCodes.RIGHT, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.RIGHT), true, true);
+    this.listenKey(api.core.KeyCodes.LEFT, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.LEFT), true, true);
+    this.listenKey(api.core.KeyCodes.HOME, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.HOME), true, true);
+    this.listenKey(api.core.KeyCodes.END, this.ascend.bind(this, TabEmission.PRESS_KEY, TabKeys.END), true, true);
     this.isResizing = true;
-  }
-
-  get group () {
-    return this.element.getAscendantInstance('TabsGroup', 'TabsList');
   }
 
   focalize (btn) {
@@ -37,20 +40,18 @@ class TabsList extends api.core.Instance {
   }
 
   apply () {
-    if (!this.group) return;
     if (this._isScrolling) {
-      this.group.addClass(TabSelector.SHADOW);
+      this.addClass(TabSelector.SHADOW);
       this.scroll();
     } else {
-      this.group.removeClass(TabSelector.SHADOW_RIGHT);
-      this.group.removeClass(TabSelector.SHADOW_LEFT);
-      this.group.removeClass(TabSelector.SHADOW);
+      this.removeClass(TabSelector.SHADOW_RIGHT);
+      this.removeClass(TabSelector.SHADOW_LEFT);
+      this.removeClass(TabSelector.SHADOW);
     }
   }
 
   /* ajoute la classe fr-table__shadow-left ou fr-table__shadow-right sur fr-table en fonction d'une valeur de scroll et du sens (right, left) */
   scroll () {
-    if (!this.group) return;
     const scrollLeft = this.node.scrollLeft;
     const isMin = scrollLeft <= SCROLL_OFFSET;
     const max = this.node.scrollWidth - this.node.clientWidth - SCROLL_OFFSET;
@@ -61,21 +62,23 @@ class TabsList extends api.core.Instance {
     const maxSelector = isRtl ? TabSelector.SHADOW_LEFT : TabSelector.SHADOW_RIGHT;
 
     if (isMin) {
-      this.group.removeClass(minSelector);
+      this.removeClass(minSelector);
     } else {
-      this.group.addClass(minSelector);
+      this.addClass(minSelector);
     }
 
     if (isMax) {
-      this.group.removeClass(maxSelector);
+      this.removeClass(maxSelector);
     } else {
-      this.group.addClass(maxSelector);
+      this.addClass(maxSelector);
     }
   }
 
   resize () {
     this.isScrolling = this.node.scrollWidth > this.node.clientWidth + SCROLL_OFFSET;
-    this.setProperty('--tab-list-height', `${this.getRect().height}px`);
+    const height = this.getRect().height;
+    this.setProperty('--tabs-list-height', `${height}px`);
+    this.ascend(TabEmission.LIST_HEIGHT, height);
   }
 
   dispose () {
