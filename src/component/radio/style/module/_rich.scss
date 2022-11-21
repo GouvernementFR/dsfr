@@ -9,19 +9,22 @@
   @include relative;
   @include display-flex(row, center);
   @include max-width(100%);
-  @include padding(1px);
 
   input[type="radio"] {
     + label {
       position: initial;
       @include padding-left(14v);
       @include margin-left(0);
+      align-self: stretch;
       min-height: spacing.space(22v);
       @include size(100%);
       @include padding-top(2v);
       @include padding-bottom(2v);
       @include padding-right(6v);
       @include display-flex(column, stretch, center);
+      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: 0 0, 100% 0, 0 100%, 0 0;
 
       @include before {
         @include size(4v, 4v);
@@ -67,11 +70,13 @@
 
   &__img {
     @include display-flex;
+    @include margin-left(-1px);
+    @include padding(1px);
     align-self: stretch;
-    background-size: 1px calc(100% - 0.5rem);
-    background-repeat: no-repeat;
-    background-position: 0 0.25rem;
     pointer-events: none;
+    background-size: 100% 1px, 100% 1px, 1px 100%, 1px calc(100% - 0.5rem);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 100%, 100% 0, 0 0.25rem;
 
     img,
     svg {
