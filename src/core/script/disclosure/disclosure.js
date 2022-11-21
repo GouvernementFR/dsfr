@@ -24,7 +24,18 @@ class Disclosure extends Instance {
     this.addDescent(DisclosureEmission.UNGROUP, this.update.bind(this));
     this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
     this.ascend(DisclosureEmission.ADDED);
+    this.listenHash(this.id, () => { this.disclose(); });
     this.update();
+    if (this.hash === this.id) this.disclose();
+  }
+
+  get isEnabled () { return super.isEnabled; }
+
+  set isEnabled (value) {
+    if (this.isEnabled === value) return;
+    super.isEnabled = value;
+    if (value) this.ascend(DisclosureEmission.ADDED);
+    else this.ascend(DisclosureEmission.REMOVED);
   }
 
   get proxy () {
@@ -77,7 +88,7 @@ class Disclosure extends Instance {
   }
 
   disclose (withhold) {
-    if (this.disclosed) return false;
+    if (this.disclosed || !this.isEnabled) return false;
     this.pristine = false;
     this.disclosed = true;
     if (!withhold && this.group) this.group.current = this;
@@ -85,7 +96,7 @@ class Disclosure extends Instance {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.disclosed) return false;
+    if (!this.disclosed || !this.isEnabled) return false;
     if (!this.type.canConceal && this.group && this.group.current === this) return false;
     this.pristine = false;
     this.disclosed = false;
@@ -100,7 +111,7 @@ class Disclosure extends Instance {
   }
 
   set disclosed (value) {
-    if (this._disclosed === value) return;
+    if (this._disclosed === value || !this.isEnabled) return;
     this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this.type);
     this._disclosed = value;
     if (value) this.addClass(this.modifier);
@@ -110,11 +121,11 @@ class Disclosure extends Instance {
 
   reset () {}
 
-  toggle (isPrimary) {
+  toggle (canDisclose) {
     if (!this.type.canConceal) this.disclose();
     else {
       switch (true) {
-        case !isPrimary:
+        case !canDisclose:
         case this.disclosed:
           this.conceal();
           break;

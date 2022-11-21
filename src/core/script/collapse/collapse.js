@@ -36,7 +36,7 @@ class Collapse extends Disclosure {
   }
 
   disclose (withhold) {
-    if (this.disclosed) return;
+    if (this.disclosed || !this.isEnabled) return false;
     this.unbound();
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
@@ -48,7 +48,7 @@ class Collapse extends Disclosure {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.disclosed) return;
+    if (!this.disclosed || !this.isEnabled) return false;
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
       this.adjust();
@@ -67,6 +67,45 @@ class Collapse extends Disclosure {
 
   reset () {
     if (!this.pristine) this.disclosed = false;
+  }
+
+  isButtonPrimary (button) {
+    let p = this.node;
+    const parents = [];
+    while (p) {
+      p = p.parentNode;
+      parents.push(p);
+    }
+
+    const rect = this.getRect();
+
+    let index = -1;
+    p = button.node;
+    while (index === -1) {
+      p = p.parentNode;
+      index = parents.indexOf(p);
+    }
+
+    const buttonRect = button.getRect();
+    let i;
+
+    for (const other of this.buttons) {
+      if (other === button || !other.canDisclose || this.node.contains(other.node)) continue;
+      p = other.node;
+      while (p) {
+        p = p.parentNode;
+        i = parents.indexOf(p);
+        if (i > -1) {
+          if (i < index) return false;
+          if (i > index) break;
+          const otherRect = other.getRect();
+          if (Math.abs(rect.y - buttonRect.y) > Math.abs(rect.y - otherRect.y)) return false;
+          if (Math.abs(rect.x - buttonRect.x) > Math.abs(rect.x - otherRect.x)) return false;
+          break;
+        }
+      }
+    }
+    return true;
   }
 }
 

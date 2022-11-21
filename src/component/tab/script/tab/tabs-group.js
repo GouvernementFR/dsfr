@@ -18,10 +18,25 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   init () {
     super.init();
+
     this.listen('transitionend', this.transitionend.bind(this));
     this.addAscent(TabEmission.PRESS_KEY, this.pressKey.bind(this));
     this.addAscent(TabEmission.LIST_HEIGHT, this.setListHeight.bind(this));
     this.isRendering = true;
+  }
+
+  getIndex (defaultIndex = 0) {
+    console.log(this.hash);
+    if (this.hash) {
+      for (let i = 0; i < this.length - 1; i++) {
+        console.log(i, this.members[i].id);
+        if (this.hash === this.members[i].id) {
+          super.getIndex(i);
+          return;
+        }
+      }
+    }
+    super.getIndex(0);
   }
 
   setListHeight (value) {
@@ -134,6 +149,8 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   render () {
     if (this.current === null) return;
+    this.node.scrollTop = 0;
+    this.node.scrollLeft = 0;
     const paneHeight = Math.round(this.current.node.offsetHeight);
     if (this.panelHeight === paneHeight) return;
     this.panelHeight = paneHeight;
