@@ -1,4 +1,5 @@
 import api from '../../api.js';
+import { TabSelector } from './tab-selector';
 
 /**
   * TabButton correspond au bouton cliquable qui change le panel
@@ -12,6 +13,15 @@ class TabButton extends api.core.DisclosureButton {
 
   static get instanceClassName () {
     return 'TabButton';
+  }
+
+  get isPrimary () {
+    return this.node.closest(TabSelector.LIST).closest(TabSelector.GROUP) === this.registration.creator.node.closest(TabSelector.GROUP) && super.isPrimary;
+  }
+
+  handleClick (e) {
+    super.handleClick(e);
+    this.focus();
   }
 
   apply (value) {

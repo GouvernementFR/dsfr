@@ -5,6 +5,7 @@ import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
+import { completeAssign } from '../../utilities/property/complete-assign';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -14,7 +15,11 @@ class Instance {
     this._isScrollLocked = false;
     this._isLoading = false;
     this._isSwappingFont = false;
+    this._isEnabled = true;
     this._listeners = {};
+    this.handlingClick = this.handleClick.bind(this);
+    this._hashes = [];
+    this._hash = '';
     this._keyListenerTypes = [];
     this._keys = [];
     this.handlingKey = this.handleKey.bind(this);
@@ -42,10 +47,21 @@ class Instance {
 
   get proxy () {
     const scope = this;
-    return {
+    const proxy = {
       render: () => scope.render(),
       resize: () => scope.resize()
     };
+
+    const proxyAccessors = {
+      get isEnabled () {
+        return scope.isEnabled;
+      },
+      set isEnabled (value) {
+        scope.isEnabled = value;
+      }
+    };
+
+    return completeAssign(proxy, proxyAccessors);
   }
 
   register (selector, InstanceClass) {
@@ -85,6 +101,40 @@ class Instance {
     }
   }
 
+  listenClick () {
+    this.listen('click', this.handlingClick);
+  }
+
+  unlistenClick () {
+    this.unlisten('click', this.handlingClick);
+  }
+
+  handleClick (e) {}
+
+  set hash (value) {
+    state.getModule('hash').hash = value;
+  }
+
+  get hash () {
+    return state.getModule('hash').hash;
+  }
+
+  listenHash (hash, add) {
+    if (this._hashes.length === 0) state.add('hash', this);
+    const action = new HashAction(hash, add);
+    this._hashes = this._hashes.filter(action => action.hash !== hash);
+    this._hashes.push(action);
+  }
+
+  unlistenHash (hash) {
+    this._hashes = this._hashes.filter(action => action.hash !== hash);
+    if (this._hashes.length === 0) state.remove('hash', this);
+  }
+
+  handleHash (hash, e) {
+    for (const action of this._hashes) action.handle(hash, e);
+  }
+
   listenKey (code, closure, preventDefault = false, stopPropagation = false, type = 'down') {
     if (this._keyListenerTypes.indexOf(type) === -1) {
       this.listen(`key${type}`, this.handlingKey);
@@ -104,6 +154,12 @@ class Instance {
 
   handleKey (e) {
     for (const key of this._keys) key.handle(e);
+  }
+
+  get isEnabled () { return this._isEnabled; }
+
+  set isEnabled (value) {
+    this._isEnabled = value;
   }
 
   get isRendering () { return this._isRendering; }
@@ -217,6 +273,7 @@ class Instance {
     inspector.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
     this.unlisten();
+    this._hashes = null;
     this._keys = null;
     this.isRendering = false;
     this.isResizing = false;
@@ -348,6 +405,20 @@ class Instance {
     return this.node === document.activeElement;
   }
 
+  scrollIntoView () {
+    const rect = this.getRect();
+
+    const scroll = state.getModule('lock');
+
+    if (rect.top < 0) {
+      scroll.move(rect.top - 50);
+    }
+
+    if (rect.bottom > window.innerHeight) {
+      scroll.move(rect.bottom - window.innerHeight + 50);
+    }
+  }
+
   matches (selectors) {
     return this.node.matches(selectors);
   }
@@ -394,6 +465,17 @@ class KeyAction {
         e.stopPropagation();
       }
     }
+  }
+}
+
+class HashAction {
+  constructor (hash, add) {
+    this.hash = hash;
+    this.add = add;
+  }
+
+  handle (hash, e) {
+    if (this.hash === hash) this.add(e);
   }
 }
 
