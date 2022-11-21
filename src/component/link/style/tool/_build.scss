@@ -44,7 +44,6 @@
 @mixin _build-link-base {
   @include set-text-margin(0);
   @include set-title-margin(0);
-  @include z-index(over);
 }
 
 @mixin _link-display($display) {

@@ -11,7 +11,7 @@
     @include color.background(default grey, (legacy:$legacy));
 
     &:not(&--no-border):not(&--shadow) {
-      @include color.box-shadow(default grey, (legacy:$legacy), all-1-out);
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
     }
 
     &--grey {

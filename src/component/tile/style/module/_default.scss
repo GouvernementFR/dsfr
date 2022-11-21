@@ -5,70 +5,84 @@
 
 #{ns(tile)} {
   @include relative;
-  @include display-flex(column-reverse);
+  @include display-flex(column);
   @include set-text-margin(0);
-  @include set-title-margin(0 0 2v);
+  @include set-title-margin(0 0 1v);
+  background-size: 100% 4px, 1px 100%, 1px 100%, 100% 1px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+  @include padding(6v 6v 7v);
+  @include padding(8v 8v 9v, md);
+  text-align: center;
 
-  /**
-   * Forcer la hauteur à 100% pour que les tuiles aient la même hauteur dans le contexte de la grille
-   */
   #{ns(grid-row)} & {
     @include size(null, 100%);
   }
 
-  &__link {
-    display: inline-flex;
-    @include disable-underline;
-    @include size(100%);
+  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
+
+  &__header {
+    order: 1;
+    @include margin-bottom(4v);
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
-
-  /**
-   * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
-   * ne respectant pas cette taille :
-   * Si l'image est plus grande, elle sera croppée afin de ne jamais dépasser 80x80.
-   * Si l'image est plus petite, elle sera centrée, en hauteur, en largeur ou bien les deux.
-   */
-  &__img {
+  &__pictogram {
     @include display-flex(null, center, center);
     flex-shrink: 0;
     @include size(20v, 20v);
-    @include margin(8v auto 0);
+    @include margin(0 auto);
     overflow: hidden;
     @include hover-brighten-filter;
 
-    /**
-     * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
-     */
     > svg {
       @include size(100%);
     }
   }
 
-  /**
-   * Partie de la tuile contenant le titre (obligatoire) et la description (optionnel)
-   */
-  @include body {
-    @include display-flex(column, center, center);
-    flex-grow: 1;
-    @include padding(4v);
-    @include padding(6v,md);
-    text-align: center;
+  &__content {
+    @include display-flex(column, center, space-between);
+    @include height(100%);
   }
 
-  /**
-   * Titre de la tuile
-   */
+  &__body {
+    @include height(100%);
+    order: 2;
+    flex: 1 1 auto;
+  }
+
   @include title {
-    @include text-style(md);
-    @include font-weight(bold);
+    @include title-style(h6);
+    @include margin-bottom(1v);
+    order: 2;
   }
 
-  /**
-   * Description de la tuile
-   */
   &__desc {
     @include text-style(md);
+    flex: 1 1 auto;
+    order: 3;
+  }
+
+  &__start {
+    order: 1;
+    @include margin-bottom(4v);
+
+    #{ns(badges-group)},
+    #{ns(tags-group)} {
+      @include margin-bottom(-2v);
+    }
+  }
+
+  &__detail {
+    @include text-style(xs);
+    @include display-flex(row, flex-start);
+    @include margin-bottom(0);
+    @include margin-top(3v);
+    order: 4;
+
+    @include has-icon {
+      @include icon-size(sm, before) {
+        @include margin-right(2v);
+      }
+    }
   }
 }
