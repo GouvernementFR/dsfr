@@ -23,7 +23,7 @@
         $is-before: _get-link-is-before($places, $place);
         $icon-size: _get-link-icon-size($size-settings, $places, $place);
         @if $place != null {
-          @include _build-link-icon($size-settings, $place, $size);
+          @include _build-link-icon($size-settings, $place, $size, $override-icon);
         }
         @include icon-style($restrain);
         @include icon-image($icon, $restrain);

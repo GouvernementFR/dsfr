@@ -10,8 +10,8 @@
 #{ns(footer)} {
   &__top {
     @include display-flex(null);
-    @include margin(-10v 0 4v);
-    @include margin(-10v 0 10v, md);
+    @include margin(-9.5v 0 4v);
+    @include margin(-9.5v 0 10v, md);
     @include padding(8v 0 4v);
   }
 
