@@ -8,6 +8,13 @@
   @include relative();
   @include icon(arrow-right-line);
 
+  &:not(&--no-border):not(&--shadow) {
+    background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 100% 100%, 0 0, 100% 0, 100% 0;
+    @include padding(1px);
+  }
+
   &--no-icon,
   &:not(#{ns(enlarge-link)}) {
     @include before(none);

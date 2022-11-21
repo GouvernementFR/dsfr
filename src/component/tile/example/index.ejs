@@ -1,23 +1,46 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Tuiles verticales', './sample/tiles-default', {}, true) %>
-<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
-<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{img: false}}, true) %>
-<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+<%
+  const elements = [
+    {
+      title: 'Tailles',
+      path: 'sample-sizes'
+    },
+    {
+      title: 'Sans image',
+      path: 'sample-no-img'
+    },
+    {
+      title: 'Contenu',
+      path: 'sample-content'
+    },
+    {
+      title: 'Tuile horizontale',
+      path: 'sample-horizontal'
+    },
+    {
+      title: 'Grille de tuiles',
+      path: 'sample-grid'
+    },
+    {
+      title: 'Grille de tuiles horizontales',
+      path: 'sample-grid-horizontal'
+    },
+  ];
 
-<%- sample('Tuiles verticales accentuées', './sample/tiles-default', {tile:{accent:'grey'}}, true) %>
+  const accordions = [];
 
-<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {}, true) %>
-<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
-<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {tile:{img: false}}, true) %>
-<%- sample('Tuiles verticales, horizontales au dessus du breakpoint md', './sample/tiles-vertical-md', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+  for (let element of elements) {
+    accordions.push({
+      label: element.title,
+      id: uniqueId('tile'),
+      content: include(`./sample/${element.path}`)
+    })
+  }
 
-<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {}, true) %>
-<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
-<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{img: false}}, true) %>
-<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+  const data = {
+    accordions: accordions
+  }
+ %>
 
-<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {}, true) %>
-<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
-<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {tile:{img: false}}, true) %>
-<%- sample('Tuiles horizontales, verticales au dessus du breakpoint md', './sample/tiles-horizontal-md', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+<%- include('../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>
