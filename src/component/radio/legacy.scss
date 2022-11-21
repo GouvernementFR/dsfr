@@ -14,3 +14,7 @@
 @import 'style/scheme';
 
 @include _radio-scheme(true);
+
+@import 'deprecated/style/scheme';
+
+@include _radio-scheme-deprecated(true);

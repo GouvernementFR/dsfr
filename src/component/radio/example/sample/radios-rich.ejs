@@ -2,7 +2,7 @@
   const radios = locals.radios || {}
   const radio = locals.radio || {};
   radio.rich = true;
-  radio.image = radio.image !== false ? {type: 'pictogram', name: 'city-hall'} : radio.image;
+  radio.pictogram = radio.pictogram !== false ? radio.pictogram || {name: 'city-hall'} : radio.pictogram;
 %>
 
 <%- include('radios', { radios: radios, radio: radio }); %>

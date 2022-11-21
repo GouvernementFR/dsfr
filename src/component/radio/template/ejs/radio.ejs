@@ -41,8 +41,7 @@ const label = {
   hint: radio.hint || undefined
 };
 
-let element, imageAttrs = {};
-// if (radio.element) element = radio.element;
+let element = {};
 if (radio.disabled) attributes.disabled = '';
 if (radio.checked) attributes.checked = '';
 
@@ -50,13 +49,8 @@ if (radio.checked) attributes.checked = '';
 
 <input <%- includeAttrs(attributes); %> type="radio" id="<%= radio.id %>" name="<%= radio.name %>">
 <%- include('../../../form/template/ejs/label', { label: label }); %>
-<% if (radio.image) { %>
-  <% if (radio.image.type && radio.image.type === 'svg') imageAttrs['data-' + prefix + '-inject-svg'] = ''; %>
-  <div class="<%= prefix %>-radio-rich__img" <%- includeAttrs(imageAttrs) %>>
-    <% if (radio.image.type && radio.image.type === 'pictogram') { %>
-      <%- include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: radio.image}); %>
-    <% } else { %>
-      <%- include('../../../../core/template/ejs/media/img.ejs', {media: radio.image}); %>
-    <% } %>
+<% if (radio.pictogram) { %>
+  <div class="<%= prefix %>-radio-rich__pictogram">
+      <%- include('../../../../core/template/ejs/artwork/pictogram.ejs', {pictogram: radio.pictogram}); %>
   </div>
 <% } %>

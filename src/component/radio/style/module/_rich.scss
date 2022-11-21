@@ -43,7 +43,7 @@
 
     &:disabled,
     &[disabled] {
-      ~ #{ns(radio-rich__img)} {
+      ~ #{ns(radio-rich__pictogram)} {
         filter: grayscale(1);
       }
     }
@@ -53,22 +53,22 @@
       @include enable-tint;
 
       &:hover {
-        + #{ns(radio-rich__img)} {
+        + #{ns(radio-rich__pictogram)} {
           background-color: var(--hover);
         }
       }
 
       &:active {
-        + #{ns(radio-rich__img)} {
+        + #{ns(radio-rich__pictogram)} {
           background-color: var(--active);
         }
       }
     }
 
-    @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__img)}');
+    @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__pictogram)}');
   }
 
-  &__img {
+  &__pictogram {
     @include display-flex(row, center, center);
     @include margin-left(-1px);
     @include padding(1v);

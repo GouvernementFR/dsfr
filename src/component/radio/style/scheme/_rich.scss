@@ -8,7 +8,7 @@
 
 @mixin _radio-scheme-rich($legacy: false) {
   #{ns(radio-rich)} {
-    &__img {
+    &__pictogram {
       @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
       @include color.background((background default grey), (legacy: $legacy));
     }
@@ -40,7 +40,7 @@
           }
         }
 
-        ~ #{ns(radio-rich__img)} {
+        ~ #{ns(radio-rich__pictogram)} {
           @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france) (border default grey) , (legacy: $legacy));
         }
 
@@ -53,7 +53,7 @@
             }
           }
 
-          ~ #{ns(radio-rich__img)} {
+          ~ #{ns(radio-rich__pictogram)} {
             @include color.background-image((text disabled grey) (text disabled grey) (text disabled grey) (border default grey), (legacy: $legacy));
           }
         }
