@@ -126,6 +126,7 @@ class Scheme extends api.core.Instance {
         this.setAttribute(SchemeAttribute.THEME, value);
         this.descend(SchemeEmission.THEME, value);
         this.dispatch(SchemeEvent.THEME, { theme: this._theme });
+        document.documentElement.style.colorScheme = value === SchemeTheme.DARK ? 'dark' : '';
         break;
     }
   }
