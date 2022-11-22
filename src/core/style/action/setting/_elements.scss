@@ -116,7 +116,6 @@ $action-elements: (
     selector: 'textarea',
     focus: (),
     cursor: (
-      pointer: (),
       not-allowed: (
         selector: '&:disabled'
       )
