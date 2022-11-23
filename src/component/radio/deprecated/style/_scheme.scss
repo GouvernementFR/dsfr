@@ -5,6 +5,7 @@
 
 @use 'module/color';
 @use 'module/disabled';
+@use 'module/selector';
 
 // img devient pictogram
 @mixin _radio-scheme-deprecated($legacy: false) {
@@ -15,6 +16,14 @@
     }
 
     input[type="radio"] {
+      @include disabled.selector {
+        ~ #{selector.ns(radio-rich__img)} {
+          svg * {
+            @include color.fill(text disabled grey, (legacy: $legacy));
+          }
+        }
+      }
+
       &:checked {
         ~ #{ns(radio-rich__img)} {
           @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france) (border default grey) , (legacy: $legacy));

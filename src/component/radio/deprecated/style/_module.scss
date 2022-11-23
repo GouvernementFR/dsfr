@@ -65,7 +65,7 @@
     @include display-flex(row, center, center);
     @include margin-left(-1px);
     @include padding(1v);
-    @include size(22v, 22v);
+    @include size(22v);
     @include min-width(22v);
     align-self: stretch;
     pointer-events: none;
@@ -75,19 +75,11 @@
 
     img,
     svg {
-      object-fit: cover;
-      @include hover-brighten-filter;
+      @include max-size(14v, 14v);
     }
   }
 
   input[type="radio"] {
-    &:disabled,
-    &[disabled] {
-      ~ #{ns(radio-rich__img)} {
-        filter: grayscale(1);
-      }
-    }
-
     &:not(:disabled) ~ label {
       &:hover {
         + #{ns(radio-rich__img)} {

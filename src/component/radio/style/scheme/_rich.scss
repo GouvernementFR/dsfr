@@ -3,11 +3,12 @@
 /// @group radio
 ////
 
+@use 'module/selector';
 @use 'module/color';
 @use 'module/disabled';
 
 @mixin _radio-scheme-rich($legacy: false) {
-  #{ns(radio-rich)} {
+  #{selector.ns(radio-rich)} {
     &__pictogram {
       @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
       @include color.background((background default grey), (legacy: $legacy));
@@ -29,6 +30,12 @@
             @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true, sm));
           }
         }
+
+        ~ #{selector.ns(radio-rich__pictogram)} {
+          svg * {
+            @include color.fill(text disabled grey, (legacy: $legacy));
+          }
+        }
       }
 
       &:checked {
@@ -40,7 +47,7 @@
           }
         }
 
-        ~ #{ns(radio-rich__pictogram)} {
+        ~ #{selector.ns(radio-rich__pictogram)} {
           @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france) (border default grey) , (legacy: $legacy));
         }
 
@@ -53,7 +60,7 @@
             }
           }
 
-          ~ #{ns(radio-rich__pictogram)} {
+          ~ #{selector.ns(radio-rich__pictogram)} {
             @include color.background-image((text disabled grey) (text disabled grey) (text disabled grey) (border default grey), (legacy: $legacy));
           }
         }

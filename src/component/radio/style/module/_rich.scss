@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/selector';
 
 #{ns(radio-rich)} {
   @include relative;
@@ -41,13 +42,6 @@
       }
     }
 
-    &:disabled,
-    &[disabled] {
-      ~ #{ns(radio-rich__pictogram)} {
-        filter: grayscale(1);
-      }
-    }
-
     &:not(:disabled) ~ label {
       @include hover-tint;
       @include enable-tint;
@@ -72,7 +66,7 @@
     @include display-flex(row, center, center);
     @include margin-left(-1px);
     @include padding(1v);
-    @include size(22v, 22v);
+    @include size(22v);
     @include min-width(22v);
     align-self: stretch;
     pointer-events: none;
@@ -82,7 +76,7 @@
 
     img,
     svg {
-      object-fit: cover;
+      @include max-size(14v, 14v);
       @include hover-brighten-filter;
     }
   }
