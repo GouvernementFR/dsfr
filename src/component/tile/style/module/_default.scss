@@ -35,7 +35,7 @@
     @include hover-brighten-filter;
 
     > svg {
-      @include size(100%);
+      @include size(100%, 100%);
     }
   }
 
