@@ -23,7 +23,8 @@
   &#{ns-group(tags)}--sm {
     @include nest-tag(sm, null);
 
-    @include clickable-selector {
+    button,
+    input[type=button] {
       &#{ns(tag)} {
         &#{ns(tag)}--dismiss {
           @include icon(null, xs, after) {

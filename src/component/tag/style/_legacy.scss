@@ -16,7 +16,8 @@
     }
   }
 
-  @include clickable-selector {
+  button,
+  input[type=button] {
     #{ns(tag)} {
       // empeche le hover du tag pressable sur ie
       @include pressed-selector(true) {
