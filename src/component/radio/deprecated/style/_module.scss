@@ -93,7 +93,5 @@
         }
       }
     }
-
-    @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__img)}');
   }
 }

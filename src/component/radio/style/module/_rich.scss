@@ -58,8 +58,6 @@
         }
       }
     }
-
-    @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__pictogram)}');
   }
 
   &__pictogram {
@@ -77,7 +75,6 @@
     img,
     svg {
       @include max-size(14v, 14v);
-      @include hover-brighten-filter;
     }
   }
 }
