@@ -1,0 +1,12 @@
+<%
+let link = locals.link || {};
+let data = {
+  label: link.label || 'Label lien',
+  href: link.href || '/example/img/image.jpg',
+  variations: ['download'],
+  ...link
+}
+
+%>
+
+<%- include('../../template/ejs/link', {link: data}); %>

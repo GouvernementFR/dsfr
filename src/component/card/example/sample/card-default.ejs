@@ -4,6 +4,8 @@ const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
     description: card.description || lorem('', 160),
+    href: card.href || '#',
+    download: card.download
   },
   size: card.size,
   enlarge: card.enlarge !== false && card.footer === undefined,
@@ -44,6 +46,8 @@ if (card.img || card.vid) {
 }
 
 if (card.content) {
+  if (card.content.assess) data.content.assess = card.content.assess;
+  if (card.content.download) data.content.download = card.content.download;
 
   if (card.content.badges) {
     data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'label badge'}})};

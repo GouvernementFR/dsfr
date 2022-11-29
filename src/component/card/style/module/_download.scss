@@ -1,0 +1,20 @@
+#{ns(card--download)} {
+  @include icon(download-line, null, before);
+
+  #{ns(card__header)} {
+    @include padding(2v);
+  }
+
+  #{ns(card)},
+  #{ns(card)}#{ns(card--horizontal)} {
+    &__img img,
+    &__img svg,
+    &__vid iframe,
+    &__vid video {
+      @include aspect-ratio(auto);
+      filter: none;
+      object-fit: contain;
+    }
+  }
+
+}

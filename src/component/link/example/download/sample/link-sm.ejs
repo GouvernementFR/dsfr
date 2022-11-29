@@ -1,0 +1,11 @@
+<%
+const link = locals.link || {};
+
+let data = {
+  ...link,
+  size: 'sm'
+}
+
+%>
+
+<%- include('./link-default', {link: data}); %>

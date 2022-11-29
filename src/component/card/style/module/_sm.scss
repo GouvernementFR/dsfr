@@ -5,8 +5,8 @@
 
 #{ns(card)} {
   &--sm {
+    @include icon-size(sm, before);
     @include before {
-      @include icon-size(sm);
       @include right(6v);
       @include bottom(6v);
     }
