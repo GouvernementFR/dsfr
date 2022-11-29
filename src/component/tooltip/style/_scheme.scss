@@ -1,0 +1,35 @@
+////
+/// Tooltip Scheme
+/// @group tooltip
+////
+
+@use 'module/color';
+@use 'module/elevation';
+
+@mixin _tooltip-scheme($legacy: false) {
+  #{ns(tooltip)} {
+    @include elevation.elevate(overlap, (legacy: $legacy));
+    // @include color.text(mention grey, (legacy:$legacy));
+    @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+
+    @include before('', block) {
+      border-color: var(--border-default-grey) transparent transparent  transparent;
+    }
+
+    @include after('', block) {
+      border-color: var(--background-default-grey) transparent transparent transparent;
+    }
+    
+    &--bottom {
+      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+  
+      @include before('', block) {
+        border-color: transparent transparent var(--border-default-grey) transparent;
+      }
+  
+      @include after('', block) {
+        border-color: transparent transparent var(--background-default-grey) transparent;
+      }
+    }
+  }
+}

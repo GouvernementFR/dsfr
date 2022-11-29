@@ -1,0 +1,73 @@
+////
+/// Tooltip Module : tooltip
+/// @group tooltip
+////
+
+#{ns(tooltip)} {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  max-width: min(24rem, calc((100vw - 2rem) * 2 / 3));
+  @include padding(2v);
+  @include text-style(xs);
+
+  @include before('', block) {
+    border-width: .375rem .25rem 0 .25rem;
+    bottom: -.375rem;
+    border-style: solid;
+    position: absolute;
+    transition: left 0.5s;
+    left: calc(50% - .1875rem);
+  }
+
+  @include after('', block) {
+    border-width: .375rem .25rem 0 .25rem;
+    bottom: -.25rem;
+    border-style: solid;
+    position: absolute;
+    transition: left 0.5s;
+    left: calc(50% - .1875rem);
+  }
+
+  &--opened {
+    // transition in/out
+    visibility: inherit;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  &--bottom {
+    @include before('', block) {
+      border-width: 0 .25rem .375rem .25rem;
+      top: -.375rem;
+      bottom: inherit;
+    }
+
+    @include after('', block) {
+      border-width: 0 .25rem .375rem .25rem;
+      top: -.25rem;
+      bottom: inherit;
+    }
+  }
+
+  &--left {
+    @include before('', block) {
+      left: calc(100% - 1.1875rem);
+    }
+
+    @include after('', block) {
+      left: calc(100% - 1.1875rem);
+    }
+  }
+
+  &--right {
+    @include before('', block) {
+      left: 1.1875rem;
+    }
+
+    @include after('', block) {
+      left: 1.1875rem;
+    }
+  }
+}
