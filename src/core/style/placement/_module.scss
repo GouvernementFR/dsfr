@@ -1,0 +1,10 @@
+////
+/// Core Module : Placement
+/// @group core
+////
+
+@use 'module/spacing';
+
+#{ns(placement)} {
+  @include fixed(0, null, null, 0);
+}

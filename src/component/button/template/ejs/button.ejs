@@ -32,6 +32,8 @@ valeurs :
 
 * button.attributes (object, optional) : Attributs suplémentaires sur le bouton
 
+* button.tooltip (object, optional) : Paramètres de l'infobulle associée au bouton
+
 %>
 
 <% eval(include('../../../../core/index.ejs')); %>
@@ -117,9 +119,14 @@ if (button.disabled === true) {
 
 if (button.title) btnAttrs['title'] = button.title;
 if (button.type !== undefined) btnAttrs['type'] = button.type;
+if (button.tooltip && button.tooltip.id) btnAttrs['aria-describedby'] = button.tooltip.id;
 %>
 
 <% if (button.comments) { %><!-- <%= button.comments %> --><% } %>
 <<%= markup %> <%- includeClasses(btnClasses) %> <%- includeAttrs(btnAttrs); %> >
   <%- button.label %>
 </<%= markup %>>
+
+<% if (button.tooltip) { %>
+  <%- include('../../../tooltip/template/ejs/tooltip', {tooltip: button.tooltip}); %>
+<% } %>

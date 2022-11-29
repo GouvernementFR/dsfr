@@ -2,6 +2,7 @@ import api from './api.js';
 import './accordion/main.js';
 import './button/main.js';
 import './breadcrumb/main.js';
+import './tooltip/main.js';
 import './toggle/main.js';
 import './sidemenu/main.js';
 import './modal/main.js';

@@ -436,7 +436,10 @@ class Instance {
   }
 
   getRect () {
-    return this.node.getBoundingClientRect();
+    const rect = this.node.getBoundingClientRect();
+    rect.center = rect.left + rect.width * 0.5;
+    rect.middle = rect.top + rect.height * 0.5;
+    return rect;
   }
 
   get isLegacy () {
