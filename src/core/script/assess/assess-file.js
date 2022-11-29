@@ -1,7 +1,8 @@
-import api from '../../api.js';
-import { DownloadSelector } from './download-selector';
+import ns from '../api/utilities/namespace.js';
+import { Instance } from '../api/modules/register/instance.js';
+import { AssessEmission } from './assess-emission';
 
-class AssessFile extends api.core.Instance {
+class AssessFile extends Instance {
   static get instanceClassName () {
     return 'AssessFile';
   }
@@ -9,11 +10,11 @@ class AssessFile extends api.core.Instance {
   init () {
     this.lang = this.getLang(this.node);
     this.href = this.getAttribute('href');
-
     this.hreflang = this.getAttribute('hreflang');
     this.file = {};
-    this.detail = this.querySelector(DownloadSelector.DOWNLOAD_DETAIL);
-    this.update();
+    this.gather();
+    this.addAscent(AssessEmission.ADDED, this.update.bind(this));
+    this.addDescent(AssessEmission.ADDED, this.update.bind(this));
   }
 
   getFileLength () {
@@ -27,11 +28,23 @@ class AssessFile extends api.core.Instance {
       if (this.length === -1) {
         api.inspector.warn('File size unknown: ' + this.href + '\nUnable to get HTTP header: "content-length"');
       }
-      this.update();
+      this.gather();
     });
   }
 
-  update () {
+  mutate (attributeNames) {
+    if (attributeNames.indexOf('href') !== -1) {
+      this.href = this.getAttribute('href');
+      this.getFileLength();
+    }
+
+    if (attributeNames.indexOf('hreflang') !== -1) {
+      this.hreflang = this.getAttribute('hreflang');
+      this.gather();
+    }
+  }
+
+  gather () {
     // TODO V2: implémenter async
     if (this.isLegacy) this.length = -1;
 
@@ -40,26 +53,32 @@ class AssessFile extends api.core.Instance {
       return;
     }
 
-    const details = [];
-    if (this.detail) {
-      if (this.href) {
-        const extension = this.parseExtension(this.href);
-        if (extension) details.push(extension.toUpperCase());
-      }
+    this.details = [];
 
-      if (this.length !== -1) {
-        details.push(this.bytesToSize(this.length));
-      }
-
-      if (this.hreflang) {
-        details.push(this.getLangDisplayName(this.hreflang));
-      }
-
-      this.detail.innerHTML = details.join(' - ');
+    if (this.href) {
+      const extension = this.parseExtension(this.href);
+      if (extension) this.details.push(extension.toUpperCase());
     }
+
+    if (this.length !== -1) {
+      this.details.push(this.bytesToSize(this.length));
+    }
+
+    if (this.hreflang) {
+      this.details.push(this.getLangDisplayName(this.hreflang));
+    }
+
+    this.update();
+  }
+
+  update () {
+    if (!this.details) return;
+    this.descend(AssessEmission.UPDATE, this.details);
+    this.ascend(AssessEmission.UPDATE, this.details);
   }
 
   getLang (elem) {
+    // todo: ajouter un listener global de changement de langue
     if (elem.lang) return elem.lang;
     if (document.documentElement === elem) return window.navigator.language;
     return this.getLang(elem.parentElement);
@@ -81,7 +100,7 @@ class AssessFile extends api.core.Instance {
     if (bytes === -1) return null;
 
     let sizeUnits = ['octets', 'ko', 'Mo', 'Go', 'To'];
-    if (this.getAttribute(api.internals.ns.attr('assess-file')) === 'bytes') {
+    if (this.getAttribute(ns.attr('assess-file')) === 'bytes') {
       sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB'];
     }
 

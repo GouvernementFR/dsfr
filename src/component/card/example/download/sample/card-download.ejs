@@ -1,0 +1,9 @@
+<%
+
+const card = locals.card || {}
+const data = {
+  variations: ['download'],
+  ...card
+} %>
+
+<%- include('../../sample/card-default', {card: data}) %>

@@ -6,7 +6,7 @@
 #{ns(card)} {
   @include display-flex(column);
   @include relative();
-  @include icon(arrow-right-line);
+  @include icon(arrow-right-line, md, before);
 
   &--no-icon,
   &:not(#{ns(enlarge-link)}) {
@@ -15,7 +15,6 @@
 
   @include before {
     @include absolute(null, 8v, 8v);
-    @include icon-size(md);
   }
 
   @include body() {
