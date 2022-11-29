@@ -1,0 +1,15 @@
+title: Tooltip
+description:
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tooltip
+
+collapse:
+  title: Tooltip
+modal:
+  title: Titre de la vidéo
+button:
+  close: Fermer
+  fullscreen: Agrandir
+link:
+  download: Télécharger
+sample:
+  default: Tooltip avec zone d’action

@@ -1,0 +1,10 @@
+id: tooltip
+title: Tooltip
+description:
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/tooltip
+wrapper: col-8
+style:
+  - core
+  - button
+script:
+  - core

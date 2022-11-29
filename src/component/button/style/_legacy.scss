@@ -40,6 +40,10 @@
     @include icon-legacy(close-line, sm);
   }
 
+  #{ns(btn--tooltip)} {
+    @include icon-legacy(question-line, sm);
+  }
+
   #{ns(btn--fullscreen)} {
     @include icon-legacy(fullscreen-line, sm);
   }

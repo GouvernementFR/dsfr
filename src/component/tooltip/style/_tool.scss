@@ -1,0 +1,10 @@
+////
+/// Tooltip Tool
+/// @group tooltip
+////
+
+@mixin nest-tooltip-button($icon:null) {
+  @include _nest-link($tooltip-settings, md, right, $icon, null, false) {
+    @content;
+  }
+}
