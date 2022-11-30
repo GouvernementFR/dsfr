@@ -22,6 +22,8 @@ let groupAttrs = linksGroup.attributes || {};
 let links = linksGroup.links || [];
 groupClasses.push(prefix + '-links-group');
 
+if (linksGroup.inline) groupClasses.push(prefix + '-links-group--inline');
+
 switch(linksGroup.size) {
     case 'sm':
         groupClasses.push(prefix + '-links-group--sm');

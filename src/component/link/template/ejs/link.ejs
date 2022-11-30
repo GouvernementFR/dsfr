@@ -35,6 +35,8 @@ const link = locals.link || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
 
+let label = link.label || 'lorem ipsum';
+
 const markup = link.markup || 'a';
 
 linkClasses.push(prefix + '-link');
@@ -48,6 +50,12 @@ switch (link.size) {
 
     case 'lg':
         linkClasses.push(prefix + '-link--lg');
+        break;
+}
+
+if (link.variations) for (const variation of link.variations) switch(variation) {
+    case 'download':
+        linkClasses.push(prefix + '-link--download');
         break;
 }
 
@@ -100,8 +108,12 @@ if (link.disabled === true) {
     }
 }
 
+if (link.detail) {
+    label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+}
+
 %>
 
 <<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
-<%- link.label %>
+<%- label %>
 </<%= markup %>>
