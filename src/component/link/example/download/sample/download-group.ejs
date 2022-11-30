@@ -9,6 +9,8 @@ let data = {
   ...link,
 }
 
+const links = [data, data, data];
+
 %>
 
-<%- include('../../../template/ejs/link', {link: data}); %>
+<%- include('../../../template/ejs/links-group', {linksGroup: {links: links}}); %>

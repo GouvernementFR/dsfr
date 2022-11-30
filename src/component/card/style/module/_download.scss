@@ -1,20 +1,43 @@
+@use '../../../../../module/media-query';
+
 #{ns(card--download)} {
   @include icon(download-line, null, before);
 
   #{ns(card__header)} {
     @include padding(2v);
-  }
 
-  #{ns(card)},
-  #{ns(card)}#{ns(card--horizontal)} {
-    &__img img,
-    &__img svg,
-    &__vid iframe,
-    &__vid video {
-      @include aspect-ratio(auto);
+    #{ns(card__img)} img,
+    #{ns(card__img)} svg,
+    #{ns(card__vid)} iframe,
+    #{ns(card__vid)} video {
+      aspect-ratio: auto;
       filter: none;
       object-fit: contain;
     }
   }
 
+  &#{ns(card--horizontal)} {
+    @include media-query.respond-from(md) {
+      #{ns(card__header)} {
+        width: 25%;
+        flex: 0 0 25%;
+      }
+    }
+  }
+
+  &#{ns(enlarge-link)} {
+    @include hover-media-query {
+      &:hover {
+        #{ns(card__header)} {
+          background-color: var(--hover);
+        }
+      }
+
+      &:active {
+        #{ns(card__header)} {
+          background-color: var(--active);
+        }
+      }
+    }
+  }
 }
