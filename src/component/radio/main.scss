@@ -21,3 +21,7 @@
 
 // deprecated
 @import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
+
+@include _radio-scheme-deprecated;
+

@@ -1,5 +1,6 @@
 @use 'module/spacing';
 
+// refacto form
 #{ns(fieldset)} {
   #{ns(fieldset__content)} {
     #{ns-group(radio)} {
@@ -13,21 +14,15 @@
     }
 
     #{ns(radio-rich)} {
-      &:first-child {
-        input[type="radio"] + label {
-          @include margin-top(3v);
-        }
-      }
-
-      input[type="radio"] + label {
-        @include margin-top(2v);
-        @include margin-bottom(4v);
-      }
+      @include margin-top(2v);
+      @include margin-bottom(4v);
 
       &:last-child {
-        input[type="radio"] + label {
-          @include margin-bottom(3v);
-        }
+        @include margin-bottom(3v);
+      }
+
+      &:first-child {
+        @include margin-top(0);
       }
     }
   }
@@ -36,25 +31,13 @@
     #{ns(fieldset__content)} {
       #{ns(radio-rich)} {
         &:not(:last-child) {
-          input[type="radio"] + label {
-            @include margin-right(3v);
-            @include margin-bottom(2v);
-          }
-
-          #{ns(radio-rich)}__img {
-            right: spacing.space(4v);
-          }
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-
-          input[type="radio"] + label {
-            @include margin-bottom(3v);
-          }
+          @include margin-right(3v);
+          @include margin-bottom(2v);
         }
 
         &:first-child {
+          @include margin-top(3v);
+
           #{ns(radio-rich)}__img {
             top: spacing.space(4v);
           }
@@ -69,9 +52,44 @@
     #{ns(hint-text)} + #{ns(fieldset__content)} {
       #{ns(radio-rich)} {
         &:first-child {
-          input[type="radio"] + label {
-            @include margin-top(6v);
-          }
+          @include margin-top(6v);
+        }
+      }
+    }
+  }
+}
+
+// img devient pictogram
+#{ns(radio-rich)} {
+  &__img {
+    @include display-flex(row, center, center);
+    @include margin-left(-1px);
+    @include padding(1v);
+    @include size(22v);
+    @include min-width(22v);
+    align-self: stretch;
+    pointer-events: none;
+    background-size: 100% 1px, 100% 1px, 1px 100%, 1px calc(100% - 0.5rem);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: 0 0, 0 100%, 100% 0, 0 0.25rem;
+
+    img,
+    svg {
+      @include max-size(14v, 14v);
+    }
+  }
+
+  input[type="radio"] {
+    &:not(:disabled) ~ label {
+      &:hover {
+        + #{ns(radio-rich__img)} {
+          background-color: var(--hover);
+        }
+      }
+
+      &:active {
+        + #{ns(radio-rich__img)} {
+          background-color: var(--active);
         }
       }
     }
