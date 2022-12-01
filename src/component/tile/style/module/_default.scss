@@ -19,8 +19,6 @@
     @include size(null, 100%);
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__pictogram);
-
   &__header {
     order: 1;
     @include margin-bottom(4v);
@@ -32,7 +30,6 @@
     @include size(20v, 20v);
     @include margin(0 auto);
     overflow: hidden;
-    @include hover-brighten-filter;
 
     > svg {
       @include size(100%, 100%);
