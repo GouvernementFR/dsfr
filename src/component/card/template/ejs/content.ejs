@@ -36,7 +36,9 @@ if (content.assess === true) {
 }
 if (content.disabled !== true) attributes.href = href;
 if (content.lang) attributes.hreflang = content.lang;
-if (content.download === true) attributes.download = '';
+
+if (content.downloadable === true) attributes.download = '';
+else if (content.downloadable === false) attributes.target = '_blank';
 
 
 switch (true) {

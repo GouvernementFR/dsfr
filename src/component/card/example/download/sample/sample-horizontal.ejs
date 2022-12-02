@@ -1,5 +1,4 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte de téléchargement sm horizontale', './card-download', { card : { img: imgData('img/placeholder.9x16.png', 'unknown'), size: 'sm', horizontal: true, content: { details: ['end'] }}}, true, '../../sample/card-layout', {col: {md:6}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
-<%- sample('Carte de téléchargement md horizontale', './card-download', { card : { img: imgData('img/placeholder.9x16.png', 'unknown'), size: 'md', horizontal: true, content: { details: ['end'] }}}, true, '../../sample/card-layout', {col: {md:8}, desc: 'dans une grille sur 6 à 8 colonnes en version desktop'}); %>
-<%- sample('Carte de téléchargement lg horizontale', './card-download', { card : { img: imgData('img/placeholder.9x16.png', 'unknown'), size: 'lg', horizontal: true, content: { details: ['end'] }}}, true, '../../sample/card-layout', {col: {md:12}, desc: 'dans une grille sur 8 à 12 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement sm horizontale', './card-download', { card : { size: 'sm', horizontal: true }}, true, '../../sample/card-layout', {col: {sm:6}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement md horizontale', './card-download', { card : { size: 'md', horizontal: true }}, true, '../../sample/card-layout', {col: {sm:6}, desc: 'dans une grille sur 6 à 8 colonnes en version desktop'}); %>
