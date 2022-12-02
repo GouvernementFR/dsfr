@@ -1,7 +1,7 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte de téléchargement, image 3x4', './card-download', { card : { img: imgData('img/placeholder.9x16.png', 'unknown'), content: { details: ['end']} }}, true, '../../sample/card-layout'); %>
-<%- sample('Carte de téléchargement, image 4x3', './card-download', { card : { img: imgData('img/placeholder.16x9.png', 'unknown'), content: { details: ['end']} }}, true, '../../sample/card-layout'); %>
+<%- sample('Carte de téléchargement, image 3x4', './card-download', {}, true, '../../sample/card-layout', {col: {sm:6, md: 4}}); %>
+<%- sample('Carte de téléchargement, image 4x3', './card-download', { card : { img: imgData('img/placeholder.4x3.png', 'unknown') }}, true, '../../sample/card-layout', {col: {sm:6, md: 4}}); %>
 
-<%- sample('Carte de téléchargement horizontale, image 3x4', './card-download', { card : { horizontal: true, img: imgData('img/placeholder.9x16.png', 'unknown'), content: { details: ['end']} }}, true, '../../sample/card-layout'); %>
-<%- sample('Carte de téléchargement horizontale, image 4x3', './card-download', { card : { horizontal: true, img: imgData('img/placeholder.16x9.png', 'unknown'), content: { details: ['end']} }}, true, '../../sample/card-layout'); %>
+<%- sample('Carte de téléchargement horizontale, image 3x4', './card-download', { card : { horizontal: true }}, true, '../../sample/card-layout', {col: {md:6}}); %>
+<%- sample('Carte de téléchargement horizontale, image 4x3', './card-download', { card : { horizontal: true, img: imgData('img/placeholder.4x3.png', 'unknown') }}, true, '../../sample/card-layout', {col: {md:6}}); %>

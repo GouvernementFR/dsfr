@@ -1,11 +1,11 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte de téléchargement, sans image', './card-download', { card : { href: '/example/img/culture-logo.png', content: {details: ['end']} }}, true, '../../sample/card-layout', {col: {md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement, cas maximum', './card-download', { card : { content: {details: ['icon', 'download'], badges: true} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
 
-<%- sample('Carte de téléchargement, avec badges', './card-download', { card : { badges: true, href: '/example/img/culture-logo.png', content: {details: ['end'], href: '/example/img/culture-logo.png'} }}, true, '../../sample/card-layout', {col: {md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement, cas minimum', './card-download', { card : { img: false, content: {details: ['download'], description: false} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
 
-<%- sample('Carte de téléchargement, avec tags', './card-download', { card : { tags: true, href: '/example/img/culture-logo.png', content: {details: ['end'], href: '/example/img/culture-logo.png'} }}, true, '../../sample/card-layout', {col: {md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement, avec tags', './card-download', { card : {content: {details: ['download'], tags: true} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
 
-<%- sample('Carte de téléchargement, avec remplissage automatique des détails', './card-download', { card : { img: imgData('img/placeholder.9x16.png', 'unknown'), href: '/example/img/placeholder.9x16.png', content: {assess: true, details: ['end']} }}, true, '../../sample/card-layout', {col: {md:4}, desc: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le detail par les information du fichier (poids, extension, langue)'}); %>
+<%- sample('Carte de téléchargement, avec remplissage automatique des détails', './card-download', { card : { content: {details: ['download'], assess: true} }}, true, '../../sample/card-layout', {col: {sm: 6}, desc: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le detail depuis les informations du fichier (extension, poids, langue)'}); %>
 
-<%- sample('Carte de téléchargement, avec attribut "download"', './card-download', { card : { img: imgData('img/placeholder.9x16.png', 'unknown'), href: '/example/img/placeholder.9x16.png', content: {download: true, assess: true, details: ['end']} }}, true, '../../sample/card-layout', {col: {md:4}, desc: 'Permet de forcer le téléchargement du fichier. Sans cela le fichier s\'ouvre directement dans un nouvel onglet si le format le permet.'}); %>
+<%- sample('Carte de téléchargement, ouverture dans un onglet', './card-download', { card : { content: {details: ['download'], downloadable: false} }}, true, '../../sample/card-layout', {col: {sm: 6}, desc: 'Permet d\'ouvrir le fichier dans un nouvel onglet lorsque le format le permet.'}); %>

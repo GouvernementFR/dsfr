@@ -3,9 +3,7 @@ const card = locals.card || {};
 const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
-    description: card.description || lorem('', 160),
     href: card.href || '#',
-    download: card.download
   },
   size: card.size,
   enlarge: card.enlarge !== false && card.footer === undefined,
@@ -47,10 +45,12 @@ if (card.img || card.vid) {
 
 if (card.content) {
   if (card.content.assess) data.content.assess = card.content.assess;
-  if (card.content.download) data.content.download = card.content.download;
+  if (card.content.downloadable) data.content.downloadable = card.content.downloadable;
+
+  if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);
 
   if (card.content.badges) {
-    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'label badge'}})};
+    data.content.badgesGroup = { badges: [...Array(2)].map(() => { return { label: 'label badge', accent: 'purple-glycine'}})};
   }
 
   if (card.content.tags) {
@@ -65,6 +65,10 @@ if (card.content) {
       if (typeof detail === 'string') {
         if (detail.indexOf('icon') > -1) d.icon = 'warning-fill';
         if (detail.indexOf('end') > -1) d.position = 'end';
+        if (detail.indexOf('download') > -1) {
+          d.label = 'PNG - 1,1 ko';
+          d.position = 'end';
+        }
       }
       data.content.details.push(d);
     }

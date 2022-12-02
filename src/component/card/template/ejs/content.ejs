@@ -30,7 +30,9 @@ if (content.assess === true) {
     attributes[`data-${prefix}-assess-file`] = content.assess
 }
 if (content.lang) attributes.hreflang = content.lang;
-if (content.download === true) attributes.download = ''
+
+if (content.downloadable === true) attributes.download = '';
+else if (content.downloadable === false) attributes.target = '_blank';
 
 
 switch (true) {
