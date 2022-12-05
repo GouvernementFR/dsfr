@@ -3,7 +3,10 @@
 /// @group tooltip
 ////
 
+@use '../../../../module/spacing';
+
 #{ns(tooltip)} {
+  --trigger-center: spacing.space(4v);
   display: block;
   position: fixed;
   top: 0;
@@ -53,21 +56,21 @@
 
   &--left {
     @include before('', block) {
-      left: 1.1875rem;
+      left: spacing.space(calc(var(--trigger-center) - 1v));
     }
 
     @include after('', block) {
-      left: 1.1875rem;
+      left: spacing.space(calc(var(--trigger-center) - 1v));
     }
   }
 
   &--right {
     @include before('', block) {
-      left: calc(100% - 1.1875rem);
+      left: spacing.space(calc(100% - var(--trigger-center) - 1v));
     }
 
     @include after('', block) {
-      left: calc(100% - 1.1875rem);
+      left: spacing.space(calc(100% - var(--trigger-center) - 1v));
     }
   }
 }

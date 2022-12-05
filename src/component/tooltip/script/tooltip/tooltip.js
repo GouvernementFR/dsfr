@@ -77,23 +77,26 @@ class Tooltip extends api.core.Instance {
       this.vertical = TooltipVertical.TOP;
     }
 
-    const center = trigger.left + trigger.width * 0.5;
+    const center = trigger.width * 0.5;
+    const middle = trigger.left + center;
     const half = rect.width * 0.5;
 
     switch (true) {
-      case center - half < 0:
+      case middle - half < 0:
         this.horizontal = TooltipHorizontal.LEFT;
         x = trigger.left;
+        this.setProperty('--trigger-center', `${center}px`);
         break;
 
-      case center + half > window.innerWidth:
+      case middle + half > window.innerWidth:
         this.horizontal = TooltipHorizontal.RIGHT;
         x = trigger.right - rect.width;
+        this.setProperty('--trigger-center', `${center}px`);
         break;
 
       default:
         this.horizontal = TooltipHorizontal.CENTER;
-        x = center - half;
+        x = middle - half;
     }
 
     if (this._x !== x || this._y !== y) {
