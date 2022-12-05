@@ -6,8 +6,9 @@
 #{ns(tooltip)} {
   display: block;
   position: fixed;
-  visibility: hidden;
-  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s, visibility 0.3s;
   max-width: min(24rem, calc((100vw - 2rem) * 2 / 3));
   @include padding(2v);
   @include text-style(xs);
@@ -30,11 +31,10 @@
     left: calc(50% - .1875rem);
   }
 
-  &--opened {
+  &:not(&--shown) {
     // transition in/out
-    visibility: inherit;
-    opacity: 1;
-    transition: opacity 0.3s, visibility 0.3s;
+    visibility: hidden;
+    opacity: 0;
   }
 
   &--bottom {
@@ -53,21 +53,21 @@
 
   &--left {
     @include before('', block) {
-      left: calc(100% - 1.1875rem);
+      left: 1.1875rem;
     }
 
     @include after('', block) {
-      left: calc(100% - 1.1875rem);
+      left: 1.1875rem;
     }
   }
 
   &--right {
     @include before('', block) {
-      left: 1.1875rem;
+      left: calc(100% - 1.1875rem);
     }
 
     @include after('', block) {
-      left: 1.1875rem;
+      left: calc(100% - 1.1875rem);
     }
   }
 }
