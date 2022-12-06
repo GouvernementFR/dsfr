@@ -1,3 +1,9 @@
 <% const sample = getSample(include); %>
 
-<%- sample(getText('sample', 'tooltip'), './sample/tooltip-default.ejs', {}, true);  %>
+<%- sample(getText('sample', 'tooltip'), './sample/tooltip-button.ejs', {}, true);  %>
+
+<%- sample(getText('sample.hover', 'tooltip'), './sample/tooltip-hover.ejs', {}, true);  %>
+
+<%- sample(getText('sample.border', 'tooltip'), './sample/tooltip-input.ejs', {}, true);  %>
+
+<%- sample(getText('sample.table', 'tooltip'), './sample/tooltip-table.ejs', {}, true);  %>
