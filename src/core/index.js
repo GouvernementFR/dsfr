@@ -24,6 +24,7 @@ import { Artwork } from './script/artwork/artwork';
 import { ArtworkSelector } from './script/artwork/artwork-selector';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
+import { TooltipEvent } from '../component/tooltip/script/tooltip/tooltip-event';
 
 api.core = {
   Instance: Instance,
@@ -49,7 +50,8 @@ api.core = {
   Artwork: Artwork,
   ArtworkSelector: ArtworkSelector,
   Ratio: Ratio,
-  RatioSelector: RatioSelector
+  RatioSelector: RatioSelector,
+  TooltipEvent: TooltipEvent
 };
 
 export default api;

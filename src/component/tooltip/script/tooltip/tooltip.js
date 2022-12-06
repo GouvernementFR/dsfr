@@ -3,11 +3,13 @@ import { TooltipTrigger } from './tooltip-trigger';
 import { TooltipSelector } from './tooltip-selector';
 import { TooltipVertical } from './tooltip-vertical';
 import { TooltipHorizontal } from './tooltip-horizontal';
+import { TooltipEvent } from './tooltip-event.js';
+import { completeAssign } from '../../../../core/script/api//utilities/property/complete-assign.js';
 
 class Tooltip extends api.core.Instance {
   constructor () {
     super();
-    this._shown = false;
+    this._isShown = false;
     this.modifier = '';
   }
 
@@ -16,27 +18,26 @@ class Tooltip extends api.core.Instance {
   }
 
   init () {
-    console.log('TOOLTIP');
     super.init();
     this.register(`[aria-describedby="${this.id}"]`, TooltipTrigger);
   }
 
   show () {
-    this.shown = true;
+    this.isShown = true;
   }
 
   hide () {
-    this.shown = false;
+    this.isShown = false;
   }
 
-  get shown () {
-    return this._shown;
+  get isShown () {
+    return this._isShown;
   }
 
-  set shown (value) {
-    if (this._shown === value || !this.isEnabled) return;
-    // this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this.type);
-    this._shown = value;
+  set isShown (value) {
+    if (this._isShown === value || !this.isEnabled) return;
+    this.dispatch(value ? TooltipEvent.SHOW : TooltipEvent.HIDE);
+    this._isShown = value;
     if (value) this.addClass(TooltipSelector.SHOWN);
     else this.removeClass(TooltipSelector.SHOWN);
   }
@@ -63,6 +64,37 @@ class Tooltip extends api.core.Instance {
     this._horizontal = value;
     if (this._horizontal === TooltipHorizontal.LEFT) this.addClass(TooltipSelector.LEFT);
     if (this._horizontal === TooltipHorizontal.RIGHT) this.addClass(TooltipSelector.RIGHT);
+  }
+
+  get proxy () {
+    const scope = this;
+    const proxy = Object.assign(super.proxy, {
+      show: scope.show.bind(scope),
+      hide: scope.hide.bind(scope)
+    });
+
+    const proxyAccessors = {
+      get isShown () {
+        return scope.isShown;
+      },
+      set isShown (value) {
+        scope.isShown = value;
+      },
+      get vertical () {
+        return scope.vertical;
+      },
+      set vertical (value) {
+        scope.vertical = value;
+      },
+      get horizontal () {
+        return scope.horizontal;
+      },
+      set horizontal (value) {
+        scope.horizontal = value;
+      }
+    };
+
+    return completeAssign(proxy, proxyAccessors);
   }
 
   update (trigger) {

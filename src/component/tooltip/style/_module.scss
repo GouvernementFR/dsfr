@@ -3,7 +3,7 @@
 /// @group tooltip
 ////
 
-@use '../../../../module/spacing';
+@use 'module/spacing';
 
 #{ns(tooltip)} {
   --trigger-center: spacing.space(4v);
@@ -11,27 +11,27 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: opacity 0.3s, visibility 0.3s;
-  max-width: min(24rem, calc((100vw - 2rem) * 2 / 3));
+  // transition: opacity 0.3s, visibility 0.3s;
+  max-width: min(spacing.space(96v), spacing.space(calc((100vw - 8v) * 2 / 3)));
   @include padding(2v);
   @include text-style(xs);
 
   @include before('', block) {
-    border-width: .375rem .25rem 0 .25rem;
-    bottom: -.375rem;
+    border-width: spacing.space(1.5v) spacing.space(1v) 0 spacing.space(1v);
+    bottom: spacing.space(-1.5v);
     border-style: solid;
     position: absolute;
-    transition: left 0.5s;
-    left: calc(50% - .1875rem);
+    // transition: left 0.5s;
+    left: calc(50% - #{spacing.space(0.75v)});
   }
 
   @include after('', block) {
-    border-width: .375rem .25rem 0 .25rem;
-    bottom: -.25rem;
+    border-width: spacing.space(1.5v) spacing.space(1v) 0 spacing.space(1v);
+    bottom: spacing.space(-1v);
     border-style: solid;
     position: absolute;
-    transition: left 0.5s;
-    left: calc(50% - .1875rem);
+    // transition: left 0.5s;
+    left: calc(50% - #{spacing.space(0.75v)});
   }
 
   &:not(&--shown) {
@@ -42,14 +42,14 @@
 
   &--bottom {
     @include before('', block) {
-      border-width: 0 .25rem .375rem .25rem;
-      top: -.375rem;
+      border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
+      top: spacing.space(-1.5v);
       bottom: inherit;
     }
 
     @include after('', block) {
-      border-width: 0 .25rem .375rem .25rem;
-      top: -.25rem;
+      border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
+      top: spacing.space(-1v);
       bottom: inherit;
     }
   }

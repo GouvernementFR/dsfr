@@ -2,7 +2,6 @@ import api from '../../api.js';
 import { TabSelector } from './tab-selector';
 import { TabKeys } from './tab-keys';
 import { TabEmission } from './tab-emission';
-import { TableEmission } from '../../../table/script/table/table-emission';
 
 const FOCALIZE_OFFSET = 16;
 const SCROLL_OFFSET = 16; // valeur en px du scroll avant laquelle le shadow s'active ou se desactive
