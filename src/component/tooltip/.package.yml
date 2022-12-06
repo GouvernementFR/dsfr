@@ -6,5 +6,8 @@ wrapper: col-8
 style:
   - core
   - button
+  - share
+  - input
+  - table
 script:
   - core

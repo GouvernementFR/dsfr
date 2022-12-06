@@ -1,7 +1,7 @@
 <%
 let tooltip = locals.tooltip || {};
 let data = {
-  id: uniqueId('tooltip'),
+  id: tooltip.id || uniqueId('tooltip'),
   content: tooltip.content || lorem(),
   ...tooltip
 }

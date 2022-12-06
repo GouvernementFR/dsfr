@@ -9,7 +9,6 @@
 @mixin _tooltip-scheme($legacy: false) {
   #{ns(tooltip)} {
     @include elevation.elevate(overlap, (legacy: $legacy));
-    // @include color.text(mention grey, (legacy:$legacy));
     @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
 
     @include before('', block) {
@@ -17,7 +16,7 @@
     }
 
     @include after('', block) {
-      border-color: var(--background-default-grey) transparent transparent transparent;
+      border-color: var(--background-overlap-grey) transparent transparent transparent;
     }
 
     &--bottom {

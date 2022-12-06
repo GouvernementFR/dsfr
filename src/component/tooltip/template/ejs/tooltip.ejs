@@ -5,8 +5,6 @@
 
 * tooltip.content (string, optional) : contenu du composant
 
-* tooltip.isExpanded (boolean, optional) [default: false] : le composant est-il ouvert au départ.
-
 #%>
 
 <% eval(include('../../../../core/index.ejs')); %>
@@ -15,5 +13,4 @@
 const tooltip = locals.tooltip || {};
 %>
 
-<button class="<%= prefix %>-btn <%= prefix %>-btn--tooltip" aria-describedby="<%= tooltip.id %>"></button>
 <span class="<%= prefix %>-tooltip" id="<%= tooltip.id %>"><%- tooltip.content %></span>

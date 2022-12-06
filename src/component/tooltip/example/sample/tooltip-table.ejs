@@ -1,0 +1,38 @@
+<%
+let tooltip = locals.tooltip || {};
+let tooltipId = uniqueId('tooltip');
+let data = {
+  id: tooltipId,
+  content: 'Facebook.com',
+  ...tooltip
+};
+let table = {
+  bordered: true,
+  noScroll: false,
+  noCaption: false,
+  captionBottom: false,
+  data: [
+    [ 'Nom', 'Prenom', 'Status', 'Prix', 'Documentation', 'Commits' ],
+    [
+      'Nakamoto',
+      'Sarah',
+      '<p class="fr-badge fr-badge--success fr-badge fr-badge--success">Livré</p>',
+      '30,00€',
+      `<a class="fr-link fr-icon-arrow-left-line fr-link--icon-left" href="#" aria-describedby="${tooltipId}">Facebook.com</a>`,
+      'transmit primary protocol'
+    ],
+    [
+      'Nakamoto',
+      'Sarah',
+      '<p class="fr-badge fr-badge--success fr-badge fr-badge--success">Livré</p>',
+      '30,00€',
+      '<a class="fr-link fr-icon-arrow-left-line fr-link--icon-left" href="#">Label lien</a>',
+      'transmit primary protocol'
+    ],
+  ]
+};
+
+%>
+
+<%- include('../../../table/template/ejs/table', { table: table }); %>
+<%- include('../sample/tooltip-default', {tooltip: data}); %>
