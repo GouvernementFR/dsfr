@@ -1,0 +1,9 @@
+title: Page article
+description: Modèles de page article
+doc:
+
+heading:
+  title: H1, titre de la page
+entity:
+  title: Entité
+  desc: Description de l’entité émettrice de l’article sur deux à trois lignes au maximum

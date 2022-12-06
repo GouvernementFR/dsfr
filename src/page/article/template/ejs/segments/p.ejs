@@ -1,0 +1,7 @@
+<%
+const segment = locals.segment || {};
+const data = segment.data || {};
+const content = data.content || lorem();
+%>
+
+<p <%- includeClasses(data.classes) %> <%- includeAttrs(data.attributes) %>><%- content %></p>

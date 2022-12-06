@@ -32,4 +32,14 @@ hr {
       @include margin-left(3v);
     }
   }
+
+  &--dash {
+    background-size: #{space(4v)} 1px;
+  }
+
+  &--square {
+    background-size: #{space(3v)} #{space(3v)};
+    background-position: 50% 0;
+    @include height(9v);
+  }
 }

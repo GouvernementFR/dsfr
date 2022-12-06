@@ -1,0 +1,16 @@
+<%
+const segment = locals.segment || {};
+const data = segment.data || {};
+const markup = data.markup || 'h6';
+ %>
+<<%= markup %>><%- data.title %></<%= markup %>>
+
+<% if (data.content) { %>
+  <p class="<%= prefix %>-mb-3v"><%- data.content %></p>
+<% } %>
+
+<% if (data.link) { %>
+  <p class="<%= prefix %>-mb-10v">
+    <%- include('link', {link: data.link})  %>
+  </p>
+<% } %>

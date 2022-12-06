@@ -1,0 +1,20 @@
+id: article
+title: Page article
+description: Modèle de page article
+doc:
+no-heading: true
+style:
+  - core
+  - share
+  - content
+  - link
+script:
+  - core
+example:
+  style:
+    - header
+    - footer
+    - breadcrumb
+  script:
+    - header
+    - breadcrumb

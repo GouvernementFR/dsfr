@@ -1,0 +1,8 @@
+
+<%
+const segment = locals.segment;
+const data = segment.data || {};
+%>
+<% if (data.content) { %>
+  <p class="<%= prefix %>-text--lead"><%= data.content %></p>
+<% } %>

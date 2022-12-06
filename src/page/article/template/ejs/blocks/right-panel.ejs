@@ -1,0 +1,20 @@
+<%
+
+const sidebar = locals.sidebar || {};
+const classes = {
+  outer: {
+    col: [`${prefix}-col-12`, `${prefix}-col-offset-lg-1`, `${prefix}-col-lg-3`, `${prefix}-mt-n4v`]
+  },
+}
+
+%>
+
+
+    <div <%- includeClasses(classes.outer.col); %> >
+
+      <% if (sidebar.segments) { %>
+      <%- include('../segments/segments', { segments: sidebar.segments }); %>
+      <% } %>
+
+    </div>
+

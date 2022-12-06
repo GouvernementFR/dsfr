@@ -1,0 +1,94 @@
+<%
+const sample = getSample(include);
+const shareData = JSON.parse(include('../data/share.json.ejs'));
+
+const contentSegments = [
+  {
+    type: 'chapo',
+    data: {
+      content: lorem()
+    }
+  },
+  {
+    type: 'share',
+    data: shareData
+  },
+  {
+    type: 'media',
+    data: {
+      size: 'lg',
+      img: imgData('img/placeholder.16x9.png', 'unknown', '16x9'),
+      caption: 'Description / Source',
+    }
+  },
+  {
+    type: 'p',
+    content: lorem()
+  },
+  {
+    type: 'p',
+    content: lorem()
+  },
+  {
+    type: 'link',
+    data: {
+      label: 'Haut de page',
+      href: '#top',
+      icon: 'arrow-up-fill',
+      iconPlace: 'left',
+    }
+  },
+  {
+    type: 'hr',
+    square: true
+  },
+];
+
+const sidebarSegments = [
+  {
+    type: 'hr',
+    dash: true,
+  },
+  {
+    type: 'entity',
+    data: {
+      title: getText('entity.title', 'article'),
+      content: getText('entity.desc', 'article'),
+      link: {}
+    }
+  },
+  {
+    type: 'hr',
+    dash: true,
+  },
+  {
+    type: 'entity',
+    data: {
+      title: getText('entity.title', 'article'),
+      content: getText('entity.desc', 'article'),
+      link: {}
+    }
+  },
+  {
+    type: 'hr',
+    dash: true,
+  },
+];
+
+const page = {
+  heading: {
+    title: getText('heading.title', 'article'),
+  },
+  block: {
+    type: 'left-content',
+    segments: contentSegments
+  },
+  sidebar: {
+    type: 'right-panel',
+    segments: sidebarSegments
+  }
+};
+
+%>
+
+<%- include('../../template/ejs/page.ejs', { page: page }); %>

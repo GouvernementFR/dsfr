@@ -1,6 +1,15 @@
 <%
-const _break = locals.break;
+const hr = locals.hr || {};
+const classes = hr.classes || [];
+switch (hr.variation) {
+  case 'square':
+    classes.push(`${prefix}-hr--square`);
+    break;
+  case 'dash':
+    classes.push(`${prefix}-hr--dash`);
+    break;
+}
  %>
-<hr>
+<hr <%- includeClasses(classes) %>>
 
 

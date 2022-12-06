@@ -1,0 +1,14 @@
+<%
+const segment = locals.segment;
+const data = segment.data || {};
+%>
+<% if (segment.or) { %>
+  <%- include('../../../../../core/template/ejs/display/hr-or', { hr: data })  %>
+<% }  else if (segment.dash) { %>
+  <%- include('../../../../../core/template/ejs/display/hr', {hr: {variation: 'dash'}})  %>
+<% } else if (segment.square) { %>
+  <%- include('../../../../../core/template/ejs/display/hr', {hr: {variation: 'square'}})  %>
+<% } else { %>
+  <%- include('../../../../../core/template/ejs/display/hr')  %>
+<% } %>
+

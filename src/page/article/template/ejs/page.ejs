@@ -1,0 +1,34 @@
+<%
+ const page = locals.page || {};
+ const classes = page.classes || [];
+ const attributes = {
+   ...page.attributes || {},
+   role: 'main',
+   id: 'article'
+ };
+ const containerClasses = {
+   outer: {
+     container: [`${prefix}-container`, `${prefix}-mb-10v`],
+     grid: [`${prefix}-grid-row`, `${prefix}-grid-row--gutters`],
+    }
+  }
+%>
+
+<main <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
+  <% if (page.heading) { %>
+    <%- include('blocks/heading', { heading: page.heading }); %>
+  <% } %>
+
+  <div <%- includeClasses(containerClasses.outer.container); %> >
+    <div <%- includeClasses(containerClasses.outer.grid); %> >
+
+      <% if (page.block) { %>
+        <%- include(`blocks/${page.block.type}`, { block: page.block }); %>
+      <% } %>
+
+      <% if (page.sidebar) { %>
+        <%- include(`blocks/${page.sidebar.type}`, { sidebar: page.sidebar }); %>
+      <% } %>
+    </div>
+  </div>
+</main>

@@ -16,6 +16,14 @@
         @include color.background(border default grey, (legacy:$legacy));
       }
     }
+
+    &--square {
+      @include color.background-image(artwork minor blue-france, (legacy:$legacy));
+    }
+
+    &--dash {
+      @include color.background-image(border plain grey, (legacy:$legacy));
+    }
   }
 
   @include build-utility(display, hr) {
