@@ -40,37 +40,39 @@
     opacity: 0;
   }
 
-  &--bottom {
-    @include before('', block) {
-      border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
-      top: spacing.space(-1.5v);
-      bottom: inherit;
+  &#{ns(place)} {
+    &--bottom {
+      @include before('', block) {
+        border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
+        top: spacing.space(-1.5v);
+        bottom: inherit;
+      }
+
+      @include after('', block) {
+        border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
+        top: spacing.space(-1v);
+        bottom: inherit;
+      }
     }
 
-    @include after('', block) {
-      border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
-      top: spacing.space(-1v);
-      bottom: inherit;
-    }
-  }
+    &--left {
+      @include before('', block) {
+        left: spacing.space(calc(var(--trigger-center) - 1v));
+      }
 
-  &--left {
-    @include before('', block) {
-      left: spacing.space(calc(var(--trigger-center) - 1v));
+      @include after('', block) {
+        left: spacing.space(calc(var(--trigger-center) - 1v));
+      }
     }
 
-    @include after('', block) {
-      left: spacing.space(calc(var(--trigger-center) - 1v));
-    }
-  }
+    &--right {
+      @include before('', block) {
+        left: spacing.space(calc(100% - var(--trigger-center) - 1v));
+      }
 
-  &--right {
-    @include before('', block) {
-      left: spacing.space(calc(100% - var(--trigger-center) - 1v));
-    }
-
-    @include after('', block) {
-      left: spacing.space(calc(100% - var(--trigger-center) - 1v));
+      @include after('', block) {
+        left: spacing.space(calc(100% - var(--trigger-center) - 1v));
+      }
     }
   }
 }

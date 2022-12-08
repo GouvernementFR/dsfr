@@ -19,15 +19,17 @@
       border-color: var(--background-overlap-grey) transparent transparent transparent;
     }
 
-    &--bottom {
-      @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+    &#{ns(place)} {
+      &--bottom {
+        @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
 
-      @include before('', block) {
-        border-color: transparent transparent var(--border-default-grey) transparent;
-      }
+        @include before('', block) {
+          border-color: transparent transparent var(--border-default-grey) transparent;
+        }
 
-      @include after('', block) {
-        border-color: transparent transparent var(--background-default-grey) transparent;
+        @include after('', block) {
+          border-color: transparent transparent var(--background-default-grey) transparent;
+        }
       }
     }
   }

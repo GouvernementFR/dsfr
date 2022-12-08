@@ -24,6 +24,7 @@ import { Artwork } from './script/artwork/artwork';
 import { ArtworkSelector } from './script/artwork/artwork-selector';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
+import { Placement } from './script/placement/placement.js';
 import { TooltipEvent } from '../component/tooltip/script/tooltip/tooltip-event';
 
 api.core = {
@@ -51,6 +52,7 @@ api.core = {
   ArtworkSelector: ArtworkSelector,
   Ratio: Ratio,
   RatioSelector: RatioSelector,
+  Placement: Placement,
   TooltipEvent: TooltipEvent
 };
 
