@@ -34,7 +34,7 @@
       @include color.text(action-high blue-france, (legacy:$legacy));
     }
 
-    &--download {
+    &--download:not(#{ns(card--no-background)}) {
       #{ns(card__header)} {
         @include color.background(alt grey, (legacy:$legacy));
       }

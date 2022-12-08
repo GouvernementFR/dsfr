@@ -86,7 +86,7 @@ if (card.footer) {
     data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
   }
   if (card.footer.links) {
-    data.footer.linksGroup = { links: [...Array(2)].map(() => { return { label: 'label', href: href, icon: 'arrow-right-line', iconPlace: 'right'}})};
+    data.footer.linksGroup = { inline: true, links: [...Array(2)].map(() => { return { label: 'label', inline: true, href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
   }
 }
 
