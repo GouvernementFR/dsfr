@@ -32,12 +32,23 @@
 <% eval(include('../../../../core/index.ejs')); %>
 <%
 const link = locals.link || {};
+const content = link.content || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
 
 let label = link.label || 'lorem ipsum';
 
 const markup = link.markup || 'a';
+
+if (content.assess === true) {
+    linkAttrs[`data-${prefix}-assess-file`] = ''
+} else if (typeof(content.assess) === 'string') {
+    linkAttrs[`data-${prefix}-assess-file`] = content.assess
+}
+if (content.hreflang) linkAttrs.hreflang = content.hreflang;
+
+if (content.downloadable === true) linkAttrs.download = '';
+else if (content.downloadable === false) linkAttrs.target = '_blank';
 
 linkClasses.push(prefix + '-link');
 
