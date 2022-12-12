@@ -10,7 +10,4 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/scheme';
 @import 'style/legacy';
-
-@include _tooltip-scheme(true);
