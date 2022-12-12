@@ -1,9 +1,9 @@
 import api from '../../api.js';
 import { TooltipSelector } from './tooltip-selector';
 
-class TooltipTrigger extends api.core.Instance {
+class TooltipReferent extends api.core.Instance {
   static get instanceClassName () {
-    return 'TooltipTrigger';
+    return 'TooltipReferent';
   }
 
   init () {
@@ -33,4 +33,4 @@ class TooltipTrigger extends api.core.Instance {
   }
 }
 
-export { TooltipTrigger };
+export { TooltipReferent };

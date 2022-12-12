@@ -40,8 +40,10 @@ class Placement extends Instance {
 
   set vertical (value) {
     if (this._vertical === value) return;
+    if (this._vertical === Vertical.TOP) this.removeClass(VerticalSelector.TOP);
     if (this._vertical === Vertical.BOTTOM) this.removeClass(VerticalSelector.BOTTOM);
     this._vertical = value;
+    if (this._vertical === Vertical.TOP) this.addClass(VerticalSelector.TOP);
     if (this._vertical === Vertical.BOTTOM) this.addClass(VerticalSelector.BOTTOM);
   }
 
@@ -53,42 +55,45 @@ class Placement extends Instance {
     if (this._horizontal === value) return;
     if (this._horizontal === Horizontal.LEFT) this.removeClass(HorizontalSelector.LEFT);
     if (this._horizontal === Horizontal.RIGHT) this.removeClass(HorizontalSelector.RIGHT);
+    if (this._horizontal === Horizontal.MIDDLE) this.removeClass(HorizontalSelector.MIDDLE);
     this._horizontal = value;
     if (this._horizontal === Horizontal.LEFT) this.addClass(HorizontalSelector.LEFT);
     if (this._horizontal === Horizontal.RIGHT) this.addClass(HorizontalSelector.RIGHT);
+    if (this._horizontal === Horizontal.MIDDLE) this.addClass(HorizontalSelector.MIDDLE);
   }
 
-  update (trigger) {
+  update (referent) {
     let x, y;
     const rect = this.getRect();
-    const top = trigger.top - rect.height - 12;
+    const top = referent.top - rect.height - 12;
+
     if (top < 0) {
       this.vertical = Vertical.BOTTOM;
-      y = trigger.bottom + 12;
+      y = referent.bottom + 12;
     } else {
       y = top;
       this.vertical = Vertical.TOP;
     }
 
-    const center = trigger.width * 0.5;
-    const middle = trigger.left + center;
+    const center = referent.width * 0.5;
+    const middle = referent.left + center;
     const half = rect.width * 0.5;
 
     switch (true) {
       case middle - half < 0:
         this.horizontal = Horizontal.LEFT;
-        x = trigger.left;
-        this.setProperty('--trigger-center', `${center}px`);
+        x = referent.left;
+        this.setProperty('--referent-middle', `${center}px`);
         break;
 
       case middle + half > window.innerWidth:
         this.horizontal = Horizontal.RIGHT;
-        x = trigger.right - rect.width;
-        this.setProperty('--trigger-center', `${center}px`);
+        x = referent.right - rect.width;
+        this.setProperty('--referent-middle', `${center}px`);
         break;
 
       default:
-        this.horizontal = Horizontal.CENTER;
+        this.horizontal = Horizontal.MIDDLE;
         x = middle - half;
     }
 

@@ -6,18 +6,14 @@
 @use 'module/spacing';
 
 #{ns(tooltip)} {
-  --trigger-center: spacing.space(4v);
+  --referent-middle: spacing.space(4v);
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  // transition: opacity 0.3s, visibility 0.3s;
   max-width: min(spacing.space(96v), spacing.space(calc((100vw - 8v) * 2 / 3)));
   @include padding(2v);
   @include text-style(xs);
 
   @include before('', block) {
-    border-width: spacing.space(1.5v) spacing.space(1v) 0 spacing.space(1v);
+    border-width: spacing.space(1.5v 1v 0 1v);
     bottom: spacing.space(-1.5v);
     border-style: solid;
     position: absolute;
@@ -26,7 +22,7 @@
   }
 
   @include after('', block) {
-    border-width: spacing.space(1.5v) spacing.space(1v) 0 spacing.space(1v);
+    border-width: spacing.space(1.5v 1v 0 1v);
     bottom: spacing.space(-1v);
     border-style: solid;
     position: absolute;
@@ -40,16 +36,16 @@
     opacity: 0;
   }
 
-  &#{ns(place)} {
+  &#{ns(placement)} {
     &--bottom {
       @include before('', block) {
-        border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
+        border-width: spacing.space(0 1v 1.5v 1v);
         top: spacing.space(-1.5v);
         bottom: inherit;
       }
 
       @include after('', block) {
-        border-width: 0 spacing.space(1v) spacing.space(1.5v) spacing.space(1v);
+        border-width: spacing.space(0 1v 1.5v 1v);
         top: spacing.space(-1v);
         bottom: inherit;
       }
@@ -57,21 +53,21 @@
 
     &--left {
       @include before('', block) {
-        left: spacing.space(calc(var(--trigger-center) - 1v));
+        left: spacing.space(calc(var(--referent-middle) - 1v));
       }
 
       @include after('', block) {
-        left: spacing.space(calc(var(--trigger-center) - 1v));
+        left: spacing.space(calc(var(--referent-middle) - 1v));
       }
     }
 
     &--right {
       @include before('', block) {
-        left: spacing.space(calc(100% - var(--trigger-center) - 1v));
+        left: spacing.space(calc(100% - var(--referent-middle) - 1v));
       }
 
       @include after('', block) {
-        left: spacing.space(calc(100% - var(--trigger-center) - 1v));
+        left: spacing.space(calc(100% - var(--referent-middle) - 1v));
       }
     }
   }
