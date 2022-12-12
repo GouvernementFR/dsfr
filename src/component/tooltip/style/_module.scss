@@ -6,69 +6,14 @@
 @use 'module/spacing';
 
 #{ns(tooltip)} {
-  --referent-middle: spacing.space(4v);
   display: block;
   max-width: min(spacing.space(96v), spacing.space(calc((100vw - 8v) * 2 / 3)));
   @include padding(2v);
   @include text-style(xs);
 
-  @include before('', block) {
-    border-width: spacing.space(1.5v 1v 0 1v);
-    bottom: spacing.space(-1.5v);
-    border-style: solid;
-    position: absolute;
-    // transition: left 0.5s;
-    left: calc(50% - #{spacing.space(0.75v)});
-  }
-
-  @include after('', block) {
-    border-width: spacing.space(1.5v 1v 0 1v);
-    bottom: spacing.space(-1v);
-    border-style: solid;
-    position: absolute;
-    // transition: left 0.5s;
-    left: calc(50% - #{spacing.space(0.75v)});
-  }
-
   &:not(&--shown) {
     // transition in/out
     visibility: hidden;
     opacity: 0;
-  }
-
-  &#{ns(placement)} {
-    &--bottom {
-      @include before('', block) {
-        border-width: spacing.space(0 1v 1.5v 1v);
-        top: spacing.space(-1.5v);
-        bottom: inherit;
-      }
-
-      @include after('', block) {
-        border-width: spacing.space(0 1v 1.5v 1v);
-        top: spacing.space(-1v);
-        bottom: inherit;
-      }
-    }
-
-    &--left {
-      @include before('', block) {
-        left: spacing.space(calc(var(--referent-middle) - 1v));
-      }
-
-      @include after('', block) {
-        left: spacing.space(calc(var(--referent-middle) - 1v));
-      }
-    }
-
-    &--right {
-      @include before('', block) {
-        left: spacing.space(calc(100% - var(--referent-middle) - 1v));
-      }
-
-      @include after('', block) {
-        left: spacing.space(calc(100% - var(--referent-middle) - 1v));
-      }
-    }
   }
 }
