@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import { TooltipTrigger } from './tooltip-trigger';
+import { TooltipReferent } from './tooltip-referent';
 import { TooltipSelector } from './tooltip-selector';
 import { TooltipEvent } from './tooltip-event.js';
 import { completeAssign } from '../../../../core/script/api//utilities/property/complete-assign.js';
@@ -17,7 +17,7 @@ class Tooltip extends api.core.Placement {
 
   init () {
     super.init();
-    this.register(`[aria-describedby="${this.id}"]`, TooltipTrigger);
+    this.register(`[aria-describedby="${this.id}"]`, TooltipReferent);
   }
 
   show () {

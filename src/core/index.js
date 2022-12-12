@@ -30,7 +30,6 @@ import { AssessEmission } from './script/assess/assess-emission';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
 import { Placement } from './script/placement/placement.js';
-import { TooltipEvent } from '../component/tooltip/script/tooltip/tooltip-event';
 
 api.core = {
   Instance: Instance,
@@ -62,8 +61,7 @@ api.core = {
   AssessSelector: AssessSelector,
   Ratio: Ratio,
   RatioSelector: RatioSelector,
-  Placement: Placement,
-  TooltipEvent: TooltipEvent
+  Placement: Placement
 };
 
 export default api;

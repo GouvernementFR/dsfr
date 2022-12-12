@@ -1,0 +1,14 @@
+////
+/// Core Module : Placement
+/// @group core
+////
+
+@use 'module/color';
+@use 'module/elevation';
+
+@mixin _core-placement-default-scheme($legacy: false) {
+  #{ns(placement)} {
+    @include elevation.elevate(overlap, (legacy: $legacy));
+    // transition: opacity 0.3s, visibility 0.3s;
+  }
+}

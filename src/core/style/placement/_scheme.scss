@@ -1,0 +1,10 @@
+////
+/// Core Scheme : Placement
+/// @group core
+////
+
+@import 'scheme/default';
+
+@mixin _core-placement-scheme($legacy: false) {
+  @include _core-placement-default-scheme($legacy);
+}
