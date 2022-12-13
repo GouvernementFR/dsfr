@@ -100,7 +100,10 @@ class Placement extends Instance {
     if (this._x !== x || this._y !== y) {
       this._x = Math.round(x);
       this._y = Math.round(y);
-      this.node.style.transform = `translate(${this._x}px, ${this._y}px)`;
+      Object.assign(this.node.style, {
+        left: `${this._x}px)`,
+        top: `${this._y}px`
+      });
     }
   }
 }
