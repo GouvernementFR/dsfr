@@ -6,9 +6,7 @@
 @use 'module/media-query/variable/breakpoints';
 
 :root {
-  --breakpoint-xs: #{nth(map-get(breakpoints.$values, xs), 1)};
-  --breakpoint-sm: #{nth(map-get(breakpoints.$values, sm), 1)};
-  --breakpoint-md: #{nth(map-get(breakpoints.$values, md), 1)};
-  --breakpoint-lg: #{nth(map-get(breakpoints.$values, lg), 1)};
-  --breakpoint-xl: #{nth(map-get(breakpoints.$values, xl), 1)};
+  @each $bp, $limits in breakpoints.$values {
+    --breakpoint-#{$bp}: #{nth($limits, 1)};
+  }
 }
