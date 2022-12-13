@@ -20,6 +20,8 @@
   }
 
   [target="_blank"] {
-    @include icon-legacy(external-link-line, sm, after);
+    @include icon-legacy(external-link-line, sm, after){
+      content: "";
+    }
   }
 }
