@@ -19,7 +19,7 @@ const removeField = reference.cloneNode(true);
 removeField.classList.add('<%= prefix %>-fieldset__element--inline');
 
 const removeButton = removeField.getElementsByTagName('button')[0];
-const labelRemoveButton = 'Supprimer le prénom';
+const labelRemoveButton = '<%= getText("label.remove-firstname", "name") %>';
 removeButton.classList = '<%= prefix %>-btn <%= prefix %>-btn--tertiary <%= prefix %>-icon-delete-line';
 removeButton.innerHTML = labelRemoveButton;
 removeButton.title = labelRemoveButton;
