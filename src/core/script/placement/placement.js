@@ -100,7 +100,6 @@ class Placement extends Instance {
     if (this._x !== x || this._y !== y) {
       this._x = (x + 0.5) | 0;
       this._y = (y + 0.5) | 0;
-      console.log('x', this._x);
       Object.assign(this.node.style, {
         left: `${this._x}px`,
         top: `${this._y}px`
