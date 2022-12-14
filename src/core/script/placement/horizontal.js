@@ -1,5 +1,5 @@
 export const Horizontal = {
   LEFT: 'left',
-  MIDDLE: 'middle',
+  CENTER: 'center',
   RIGHT: 'right'
 };

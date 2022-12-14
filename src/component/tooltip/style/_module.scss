@@ -10,6 +10,9 @@
   max-width: min(spacing.space(96v), spacing.space(calc((100vw - 8v) * 2 / 3)));
   @include padding(2v);
   @include text-style(xs);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
 
   &:not(&--shown) {
     // transition in/out
@@ -18,7 +21,7 @@
   }
 
   &#{ns(placement)} {
-    --referent-middle: spacing.space(4v);
+    --referent-center: spacing.space(4v);
 
     @include before('', block) {
       border-style: solid;
@@ -58,7 +61,7 @@
       }
     }
 
-    &--middle {
+    &--center {
       @include before('', block) {
         left: calc(50% - #{spacing.space(0.75v)});
       }
@@ -70,21 +73,21 @@
 
     &--left {
       @include before('', block) {
-        left: spacing.space(calc(var(--referent-middle) - 1v));
+        left: spacing.space(calc(var(--referent-center) - 1v));
       }
 
       @include after('', block) {
-        left: spacing.space(calc(var(--referent-middle) - 1v));
+        left: spacing.space(calc(var(--referent-center) - 1v));
       }
     }
 
     &--right {
       @include before('', block) {
-        left: spacing.space(calc(100% - var(--referent-middle) - 1v));
+        left: spacing.space(calc(100% - var(--referent-center) - 1v));
       }
 
       @include after('', block) {
-        left: spacing.space(calc(100% - var(--referent-middle) - 1v));
+        left: spacing.space(calc(100% - var(--referent-center) - 1v));
       }
     }
   }
