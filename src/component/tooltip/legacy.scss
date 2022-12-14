@@ -11,3 +11,6 @@
 
 @import 'index';
 @import 'style/legacy';
+@import 'style/scheme';
+
+@include _tooltip-scheme(true);
