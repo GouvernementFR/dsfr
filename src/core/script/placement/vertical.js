@@ -1,5 +1,5 @@
 export const Vertical = {
   TOP: 'top',
-  CENTER: 'center',
+  MIDDLE: 'middle',
   BOTTOM: 'bottom'
 };

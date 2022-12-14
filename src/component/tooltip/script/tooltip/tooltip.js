@@ -18,14 +18,20 @@ class Tooltip extends api.core.Placement {
   init () {
     super.init();
     this.register(`[aria-describedby="${this.id}"]`, TooltipReferent);
+    this.listen('transitionend', this.transitionEnd.bind(this));
   }
 
   show () {
+    super.show();
     this.isShown = true;
   }
 
   hide () {
     this.isShown = false;
+  }
+
+  transitionEnd () {
+    if (!this.isShown) super.hide();
   }
 
   get isShown () {
@@ -38,6 +44,11 @@ class Tooltip extends api.core.Placement {
     this._isShown = value;
     if (value) this.addClass(TooltipSelector.SHOWN);
     else this.removeClass(TooltipSelector.SHOWN);
+  }
+
+  render () {
+    super.render();
+    this.setProperty('--referent-center', `${this.center}px`);
   }
 
   get proxy () {

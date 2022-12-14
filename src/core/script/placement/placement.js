@@ -42,9 +42,11 @@ class Placement extends Instance {
     if (this._vertical === value) return;
     if (this._vertical === Vertical.TOP) this.removeClass(VerticalSelector.TOP);
     if (this._vertical === Vertical.BOTTOM) this.removeClass(VerticalSelector.BOTTOM);
+    if (this._vertical === Vertical.MIDDLE) this.removeClass(VerticalSelector.MIDDLE);
     this._vertical = value;
     if (this._vertical === Vertical.TOP) this.addClass(VerticalSelector.TOP);
     if (this._vertical === Vertical.BOTTOM) this.addClass(VerticalSelector.BOTTOM);
+    if (this._vertical === Vertical.MIDDLE) this.addClass(VerticalSelector.MIDDLE);
   }
 
   get horizontal () {
@@ -55,46 +57,58 @@ class Placement extends Instance {
     if (this._horizontal === value) return;
     if (this._horizontal === Horizontal.LEFT) this.removeClass(HorizontalSelector.LEFT);
     if (this._horizontal === Horizontal.RIGHT) this.removeClass(HorizontalSelector.RIGHT);
-    if (this._horizontal === Horizontal.MIDDLE) this.removeClass(HorizontalSelector.MIDDLE);
+    if (this._horizontal === Horizontal.CENTER) this.removeClass(HorizontalSelector.CENTER);
     this._horizontal = value;
     if (this._horizontal === Horizontal.LEFT) this.addClass(HorizontalSelector.LEFT);
     if (this._horizontal === Horizontal.RIGHT) this.addClass(HorizontalSelector.RIGHT);
-    if (this._horizontal === Horizontal.MIDDLE) this.addClass(HorizontalSelector.MIDDLE);
+    if (this._horizontal === Horizontal.CENTER) this.addClass(HorizontalSelector.CENTER);
   }
 
-  update (referent) {
+  show () {
+    this.isRendering = true;
+  }
+
+  hide () {
+    this.isRendering = false;
+  }
+
+  setReferent (referent) {
+    this.referent = referent;
+  }
+
+  render () {
+    if (!this.referent) return;
     let x, y;
     const rect = this.getRect();
-    const top = referent.top - rect.height - 12;
+    const referentRect = this.referent.getRect();
+    const top = referentRect.top - rect.height - 12;
 
     if (top < 0) {
       this.vertical = Vertical.BOTTOM;
-      y = referent.bottom + 12;
+      y = referentRect.bottom + 12;
     } else {
       y = top;
       this.vertical = Vertical.TOP;
     }
 
-    const center = referent.width * 0.5;
-    const middle = referent.left + center;
+    this.center = referentRect.width * 0.5;
+    const referentX = referentRect.left + this.center;
     const half = rect.width * 0.5;
 
     switch (true) {
-      case middle - half < 0:
+      case referentX - half < 0:
         this.horizontal = Horizontal.LEFT;
-        x = referent.left;
-        this.setProperty('--referent-middle', `${center}px`);
+        x = referentRect.left;
         break;
 
-      case middle + half > window.innerWidth:
+      case referentX + half > window.innerWidth:
         this.horizontal = Horizontal.RIGHT;
-        x = referent.right - rect.width;
-        this.setProperty('--referent-middle', `${center}px`);
+        x = referentRect.right - rect.width;
         break;
 
       default:
-        this.horizontal = Horizontal.MIDDLE;
-        x = middle - half;
+        this.horizontal = Horizontal.CENTER;
+        x = referentX - half;
     }
 
     if (this._x !== x || this._y !== y) {
