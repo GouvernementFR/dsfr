@@ -12,13 +12,13 @@
 
     &--top {
       @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
-
-      @include before('', block) {
-        border-color: var(--border-default-grey) transparent transparent  transparent;
+      
+      @include before {
+        @include color.element(border-color, border, default grey, (legacy:$legacy), color.$COLOR transparent transparent transparent);
       }
 
-      @include after('', block) {
-        border-color: var(--background-overlap-grey) transparent transparent transparent;
+      @include after {
+        @include color.element(border-color, border, background default grey, (legacy:$legacy), color.$COLOR transparent transparent transparent);
       }
     }
 
@@ -26,11 +26,11 @@
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
 
       @include before('', block) {
-        border-color: transparent transparent var(--border-default-grey) transparent;
+        @include color.element(border-color, border, default grey, (legacy:$legacy), transparent transparent color.$COLOR transparent);
       }
 
       @include after('', block) {
-        border-color: transparent transparent var(--background-default-grey) transparent;
+        @include color.element(border-color, border, background default grey, (legacy:$legacy), transparent transparent color.$COLOR transparent);
       }
     }
   }

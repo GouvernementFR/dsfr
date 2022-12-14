@@ -10,18 +10,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  // transition: opacity 0.3s, visibility 0.3s;
 
   @include before('', block) {
     border-style: solid;
     position: absolute;
-    // transition: left 0.5s;
   }
 
   @include after('', block) {
     border-style: solid;
     position: absolute;
-    // transition: left 0.5s;
   }
 
   &--top {
