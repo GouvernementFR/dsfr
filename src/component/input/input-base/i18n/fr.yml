@@ -9,7 +9,8 @@ sample:
   date: Champs de type "date"
   textarea: Champs de type "textarea"
   password: Champs de type "password"
-  button: Combo champs + bouton
+  button: Combo champs + bouton d'envoi
+  action: Combo champs + bouton d'action
   placeholder: Champs avec placeholder
   value: Champs avec valeur initiale
   disabled: Champs désactivé
