@@ -4,11 +4,17 @@ import { TooltipSelector } from './tooltip-selector';
 import { TooltipEvent } from './tooltip-event.js';
 import { completeAssign } from '../../../../core/script/api//utilities/property/complete-assign.js';
 
+const TooltipState = {
+  HIDDEN: 'hidden',
+  SHOWN: 'shown',
+  HIDING: 'hiding'
+};
+
 class Tooltip extends api.core.Placement {
   constructor () {
     super();
-    this._isShown = false;
     this.modifier = '';
+    this._state = TooltipState.HIDDEN;
   }
 
   static get instanceClassName () {
@@ -21,34 +27,47 @@ class Tooltip extends api.core.Placement {
     this.listen('transitionend', this.transitionEnd.bind(this));
   }
 
-  show () {
-    super.show();
-    this.isShown = true;
-  }
-
-  hide () {
-    this.isShown = false;
-  }
-
   transitionEnd () {
-    if (!this.isShown) super.hide();
+    if (this._state === TooltipState.HIDING) {
+      this._state = TooltipState.HIDDEN;
+      this.isShown = false;
+    }
   }
 
   get isShown () {
-    return this._isShown;
+    return super.isShown;
   }
 
   set isShown (value) {
-    if (this._isShown === value || !this.isEnabled) return;
-    this.dispatch(value ? TooltipEvent.SHOW : TooltipEvent.HIDE);
-    this._isShown = value;
-    if (value) this.addClass(TooltipSelector.SHOWN);
-    else this.removeClass(TooltipSelector.SHOWN);
+    if (!this.isEnabled) return;
+    switch (true) {
+      case value:
+        this._state = TooltipState.SHOWN;
+        this.addClass(TooltipSelector.SHOWN);
+        this.dispatch(TooltipEvent.SHOW);
+        super.isShown = true;
+        break;
+
+      case this.isShown && !value && this._state === TooltipState.SHOWN:
+        this._state = TooltipState.HIDING;
+        this.removeClass(TooltipSelector.SHOWN);
+        break;
+
+      case this.isShown && !value && this._state === TooltipState.HIDDEN:
+        this.dispatch(TooltipEvent.HIDE);
+        super.isShown = false;
+        break;
+    }
   }
 
-  render () {
-    super.render();
-    this.setProperty('--referent-center', `${this.center}px`);
+  get referentCenter () {
+    return super.referentCenter;
+  }
+
+  set referentCenter (value) {
+    if (this.referentCenter === value) return;
+    super.referentCenter = value;
+    this.setProperty('--referent-center', `${value}px`);
   }
 
   get proxy () {

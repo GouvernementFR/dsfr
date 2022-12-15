@@ -1,6 +1,11 @@
 import { Instance } from '../api/modules/register/instance.js';
 
 class PlacementReferent extends Instance {
+  constructor () {
+    super();
+    this._isShown = false;
+  }
+
   static get instanceClassName () {
     return 'PlacementReferent';
   }
@@ -9,12 +14,23 @@ class PlacementReferent extends Instance {
     this.registration.creator.setReferent(this);
   }
 
+  get isShown () {
+    return this._isShown;
+  }
+
+  set isShown (value) {
+    if (this._isShown === value || !this.isEnabled) return;
+    this._isShown = value;
+    if (value) this.registration.creator.show();
+    else this.registration.creator.hide();
+  }
+
   show () {
-    this.registration.creator.show();
+    this.isShown = true;
   }
 
   hide () {
-    this.registration.creator.hide();
+    this.isShown = false;
   }
 }
 
