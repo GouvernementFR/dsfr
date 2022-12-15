@@ -2,8 +2,8 @@ import api from '../../api.js';
 import { TooltipSelector } from './tooltip-selector';
 
 const TooltipReferentState = {
-  FOCUS: 1,
-  HOVER: 2
+  FOCUS: 1 << 0,
+  HOVER: 1 << 1
 };
 
 class TooltipReferent extends api.core.PlacementReferent {
@@ -32,25 +32,24 @@ class TooltipReferent extends api.core.PlacementReferent {
 
   set state (value) {
     if (this._state === value) return;
-    if (value === 0) this.isShown = false;
-    else this.isShown = true;
+    this.isShown = value > 0;
     this._state = value;
   }
 
   focusin () {
-    this.state |= 1 << TooltipReferentState.FOCUS;
+    this.state |= TooltipReferentState.FOCUS;
   }
 
   focusout () {
-    this.state &= ~(1 << TooltipReferentState.FOCUS);
+    this.state &= ~TooltipReferentState.FOCUS;
   }
 
   mouseover () {
-    this.state |= 1 << TooltipReferentState.HOVER;
+    this.state |= TooltipReferentState.HOVER;
   }
 
   mouseout () {
-    this.state &= ~(1 << TooltipReferentState.HOVER);
+    this.state &= ~TooltipReferentState.HOVER;
   }
 }
 
