@@ -6,6 +6,11 @@ import { Horizontal } from './horizontal';
 import { completeAssign } from '../api/utilities/property/complete-assign.js';
 
 class Placement extends Instance {
+  constructor () {
+    super();
+    this._isShown = false;
+  }
+
   static get instanceClassName () {
     return 'Placement';
   }
@@ -65,34 +70,52 @@ class Placement extends Instance {
   }
 
   show () {
-    this.isRendering = true;
+    this.isShown = true;
   }
 
   hide () {
-    this.isRendering = false;
+    this.isShown = false;
+  }
+
+  get isShown () {
+    return this._isShown;
+  }
+
+  set isShown (value) {
+    if (this._isShown === value || !this.isEnabled) return;
+    this.isRendering = value;
+    this._isShown = value;
   }
 
   setReferent (referent) {
-    this.referent = referent;
+    this._referent = referent;
+  }
+
+  get referentCenter () {
+    return this._referentCenter;
+  }
+
+  set referentCenter (value) {
+    this._referentCenter = value;
   }
 
   render () {
-    if (!this.referent) return;
+    if (!this._referent) return;
     let x, y;
     const rect = this.getRect();
-    const referentRect = this.referent.getRect();
-    const top = referentRect.top - rect.height - 12;
+    const referentRect = this._referent.getRect();
+    const top = referentRect.top - rect.height;
 
     if (top < 0) {
       this.vertical = Vertical.BOTTOM;
-      y = referentRect.bottom + 12;
+      y = referentRect.bottom;
     } else {
       y = top;
       this.vertical = Vertical.TOP;
     }
 
-    this.center = referentRect.width * 0.5;
-    const referentX = referentRect.left + this.center;
+    this.referentCenter = referentRect.width * 0.5;
+    const referentX = referentRect.left + this.referentCenter;
     const half = rect.width * 0.5;
 
     switch (true) {
@@ -119,6 +142,11 @@ class Placement extends Instance {
         top: `${this._y}px`
       });
     }
+  }
+
+  dispose () {
+    this._referent = null;
+    super.dispose();
   }
 }
 
