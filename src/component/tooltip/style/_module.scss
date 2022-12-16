@@ -6,6 +6,7 @@
 @use 'module/spacing';
 
 #{ns(tooltip)} {
+  --arrow-x: 0;
   display: block;
   @include max-width('min(96v, calc((100vw - 8v) * 2 / 3))');
   @include padding(2v 2v 5v);
@@ -14,7 +15,7 @@
   visibility: visible;
   transition: opacity 0.3s, visibility 0.3s;
   background-repeat: no-repeat;
-  background-position: spacing.space(center calc(100% - 2v)), spacing.space(center calc(100% - 1.5v)), spacing.space(center calc(100% - 3v)), spacing.space(center calc(100% - 3v));
+  background-position: spacing.space(calc(50% + var(--arrow-x)) calc(100% - 2v)), spacing.space(calc(50% + var(--arrow-x)) calc(100% - 1.5v)), spacing.space(50% calc(100% - 3v)), spacing.space(50% calc(100% - 3v));
   background-size: spacing.space(2v 1.5v), spacing.space(2v 1.5v), 100% 1px, spacing.space(100% calc(100% - 3v));
 
   &:not(&--shown) {
@@ -24,20 +25,10 @@
   }
 
   &#{ns(placement)} {
-    --referent-center: spacing.space(4v);
-
     &--bottom {
       @include padding-top(5v);
       @include padding-bottom(2v);
-      background-position: spacing.space(center 2v), spacing.space(center 1.5v), spacing.space(center 3v), spacing.space(center 3v);
-    }
-
-    &--left {
-      background-position-x:  spacing.space(calc(var(--referent-center) - 1v)), spacing.space(calc(var(--referent-center) - 1v)), center, center;
-    }
-
-    &--right {
-      background-position-x:  spacing.space(calc(100% - var(--referent-center) + 1v)), spacing.space(calc(100% - var(--referent-center) + 1v)), center, center;
+      background-position-y: spacing.space('2v, 1.5v, 3v, 3v');
     }
   }
 }

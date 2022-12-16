@@ -2,7 +2,6 @@ import api from '../../api.js';
 import { TooltipReferent } from './tooltip-referent';
 import { TooltipSelector } from './tooltip-selector';
 import { TooltipEvent } from './tooltip-event.js';
-import { completeAssign } from '../../../../core/script/api//utilities/property/complete-assign.js';
 
 const TooltipState = {
   HIDDEN: 'hidden',
@@ -12,7 +11,7 @@ const TooltipState = {
 
 class Tooltip extends api.core.Placement {
   constructor () {
-    super();
+    super(api.core.Mode.AUTO, [api.core.Place.TOP, api.core.Place.BOTTOM], [api.core.Align.CENTER, api.core.Align.START, api.core.Align.END]);
     this.modifier = '';
     this._state = TooltipState.HIDDEN;
   }
@@ -60,6 +59,16 @@ class Tooltip extends api.core.Placement {
     }
   }
 
+  render () {
+    super.render();
+    let x = this.referentRect.center - this.rect.center;
+    const limit = this.rect.width * 0.5 - 8;
+    if (x < -limit) x = -limit;
+    if (x > limit) x = limit;
+    this.setProperty('--arrow-x', `${x}px`);
+  }
+
+  /*
   get referentCenter () {
     return super.referentCenter;
   }
@@ -69,25 +78,7 @@ class Tooltip extends api.core.Placement {
     super.referentCenter = value;
     this.setProperty('--referent-center', `${value}px`);
   }
-
-  get proxy () {
-    const scope = this;
-    const proxy = Object.assign(super.proxy, {
-      show: scope.show.bind(scope),
-      hide: scope.hide.bind(scope)
-    });
-
-    const proxyAccessors = {
-      get isShown () {
-        return scope.isShown;
-      },
-      set isShown (value) {
-        scope.isShown = value;
-      }
-    };
-
-    return completeAssign(proxy, proxyAccessors);
-  }
+   */
 }
 
 export { Tooltip };
