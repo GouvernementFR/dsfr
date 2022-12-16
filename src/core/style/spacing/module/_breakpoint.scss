@@ -1,0 +1,12 @@
+////
+/// Core Module : Breakpoint
+/// @group core
+////
+
+@use 'module/media-query/variable/breakpoints';
+
+:root {
+  @each $bp, $limits in breakpoints.$values {
+    --breakpoint-#{$bp}: #{nth($limits, 1)};
+  }
+}
