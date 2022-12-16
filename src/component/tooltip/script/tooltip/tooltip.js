@@ -67,18 +67,6 @@ class Tooltip extends api.core.Placement {
     if (x > limit) x = limit;
     this.setProperty('--arrow-x', `${x}px`);
   }
-
-  /*
-  get referentCenter () {
-    return super.referentCenter;
-  }
-
-  set referentCenter (value) {
-    if (this.referentCenter === value) return;
-    super.referentCenter = value;
-    this.setProperty('--referent-center', `${value}px`);
-  }
-   */
 }
 
 export { Tooltip };
