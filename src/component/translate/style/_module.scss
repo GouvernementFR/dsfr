@@ -20,10 +20,15 @@
       @include margin-left(auto);
       @include margin-left(1v, lg);
       @include margin-right(-1v, lg);
+      @mixin rtl() {
+        @include margin-right(auto);
+        @include margin-right(1v, lg);
+        @include margin-left(-1v, lg);
+      }
       transition: transform 0.3s;
     }
 
-    &[aria-expanded=true] {
+    &[aria-expanded="true"] {
       @include after {
         transform: rotate(-180deg);
       }

@@ -41,7 +41,7 @@
   & &__menu-links {
     #{ns(links-group)} {
       #{ns(link)} {
-        @include size(100%);
+        @include size(auto);
         @include min-size(null, 12v);
         @include padding-left(0);
         @include margin-bottom(0);

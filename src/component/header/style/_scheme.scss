@@ -63,6 +63,10 @@
     }
 
     #{ns(header__menu)} {
+      right: 0;
+      @include rtl() {
+        left: 0;
+      }
       @include respond-from(lg) {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
       }

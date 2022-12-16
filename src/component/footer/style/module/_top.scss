@@ -23,7 +23,7 @@
     @include text-style(xs);
     display: block;
     font-weight: font-weight(bold);
-    text-align: left;
+    @include text-align;
   }
 
   /**

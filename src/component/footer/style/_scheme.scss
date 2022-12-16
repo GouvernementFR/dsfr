@@ -28,6 +28,9 @@
     &__bottom-item {
       @include before {
         @include color.box-shadow(default grey, (legacy:$legacy));
+        @include rtl() {
+          margin-left:0.75rem;
+        }
       }
     }
 

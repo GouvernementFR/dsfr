@@ -33,6 +33,7 @@
       & > #{ns(nav__link)},
       & > #{ns(nav__btn)} {
         font-weight: bold;
+        @include text-align;
 
         @include respond-from(lg) {
           @include padding(4v);
@@ -87,7 +88,7 @@
     @include size(100%);
     @include padding(3v 0);
     @include text-style(md);
-    text-align: left;
+    @include text-align;
 
     @include respond-from(lg) {
       @include text-style(sm);

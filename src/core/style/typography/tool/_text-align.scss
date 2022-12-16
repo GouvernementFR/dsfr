@@ -1,0 +1,6 @@
+@mixin text-align {
+    text-align: left;
+    @include rtl() {
+        text-align: right;
+    }
+}
