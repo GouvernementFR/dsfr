@@ -9,12 +9,14 @@
     top: #{space(1v)};
 
     & + label {
-      @include margin-left(6v);
+      @include padding-left(6v);
+      background-position: calc(-#{space(0.5v)} + 1px) calc(#{space(1v)} - 1px), calc(-#{space(0.5v)} + 1px) calc(#{space(1v)} - 1px);
+      background-size: #{space(4.5v)} #{space(4.5v)}, #{space(4.5v)} #{space(4.5v)};
 
       @include before {
-        left: #{space(-6v)};
         @include size(4v, 4v);
-        @include margin-top(1v);
+        border-radius: #{space(4v)};
+        @include margin-left(-6v);
       }
     }
   }

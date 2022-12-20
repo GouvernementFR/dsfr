@@ -3,17 +3,26 @@
 /// @group radio
 ////
 
-@function radio-box-shadow ($checked: true, $size: md) {
+@use 'sass:math';
+
+@function radio-background-image($checked: true, $size: md) {
   $max: 12;
   @if $size == sm {
     $max: 8;
   }
 
-  $out: $max * 0.5;
-
-  @if not $checked {
-    $out: $max;
+  @if $checked {
+    $in: $max * 0.5;
+    @return 'radial-gradient(transparent #{$max - 2}px, $color#1 #{$max - 1}px, transparent #{$max}px), radial-gradient($color#2 #{$in - 1}px, transparent #{$in}px)';
   }
-
-  @return all-1-in all-#{$out}-in all-#{$max}-in;
+  @else {
+    @return 'radial-gradient(transparent #{$max - 2}px, $color#1 #{$max - 1}px, transparent #{$max}px)';
+  }
 }
+
+@function radio-rich-background-image($checked: true) {
+    @return 'linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), #{radio-background-image($checked, sm)}';
+}
+
+
+

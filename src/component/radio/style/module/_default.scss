@@ -16,19 +16,22 @@
       @include relative;
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
-      @include margin-left(8v);
+      @include padding-left(8v);
+      background-position: calc(-#{space(1v)} + 1px) calc(-#{space(1v)} + 1px), calc(-#{space(1v)} + 1px) calc(-#{space(1v)} + 1px);
+      background-size: #{space(7.5v)} #{space(7.5v)}, #{space(7.5v)} #{space(7.5v)};
+      background-repeat: no-repeat, no-repeat;
+
+      // empty efore for the focus
+      @include before('') {
+        @include size(6v, 6v);
+        @include absolute;
+        border-radius: #{space(6v)};
+        @include margin-left(-8v);
+      }
 
       #{ns(hint-text)} {
         @include margin(0);
         @include size(100%);
-      }
-
-      @include before('', inline-block) {
-        @include absolute(0, null, null, -8v);
-        @include size(6v, 6v);
-        @include margin-right(2v);
-        border-radius: 50%;
-        // transition: box-shadow 0.3s;
       }
     }
   }

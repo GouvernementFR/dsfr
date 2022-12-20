@@ -11,6 +11,7 @@
     label {
       @include before {
         @include color.text(active blue-france, (legacy:$legacy));
+        @include color.data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-unchecked-svg);
       }
 
       @include after {
@@ -27,6 +28,10 @@
         @include color.background(active blue-france, (legacy:$legacy));
 
         ~ #{ns(toggle__label)} {
+          @include before {
+            @include color.data-uri-svg((action-high blue-france) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
+          }
+
           @include after {
             @include color.data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-svg);
           }
@@ -38,6 +43,10 @@
           @include disabled.colors((legacy: $legacy, background: true));
 
           ~ #{ns(toggle__label)} {
+            @include before {
+              @include color.data-uri-svg((background disabled grey) (background disabled grey), (legacy: $legacy), $toggle-checked-svg);
+            }
+
             @include after {
               @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $toggle-svg);
             }
@@ -47,6 +56,7 @@
         ~ #{ns(toggle__label)} {
           @include before {
             @include disabled.colors((legacy: $legacy, text: true));
+            @include color.data-uri-svg((background disabled grey), (legacy: $legacy), $toggle-unchecked-svg);
           }
 
           @include after {
@@ -60,11 +70,61 @@
       @include color.text(mention grey, (legacy:$legacy));
     }
 
-    /*
-    * Ajout d'un séparateur
-    */
     &--border-bottom {
       @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
     }
   }
+
+  #{ns(toggle--error)},
+  #{ns(fieldset--error)} #{ns(toggle)} {
+    label {
+      @include color.text(default error, (legacy:$legacy));
+
+      @include before {
+        @include color.text(default error, (legacy:$legacy));
+        @include color.data-uri-svg(border plain error, (legacy: $legacy), $toggle-unchecked-svg);
+      }
+
+      @include after {
+        @include color.box-shadow(border plain error, (legacy:$legacy), all-1-in);
+      }
+    }
+
+    input[type="checkbox"] {
+      &:checked {
+        ~ #{ns(toggle__label)}  {
+          @include before {
+            @include color.data-uri-svg((border plain error) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
+          }
+        }
+      }
+    }
+  }
+
+  #{ns(toggle--valid)},
+  #{ns(fieldset--valid)} #{ns(toggle)} {
+    label {
+      @include color.text(default success, (legacy:$legacy));
+
+      @include before {
+        @include color.text(default success, (legacy:$legacy));
+        @include color.data-uri-svg(border plain success, (legacy: $legacy), $toggle-unchecked-svg);
+      }
+
+      @include after {
+        @include color.box-shadow(border plain success, (legacy:$legacy), all-1-in);
+      }
+    }
+
+    input[type="checkbox"] {
+      &:checked {
+        ~ #{ns(toggle__label)} {
+          @include before {
+            @include color.data-uri-svg((border plain success) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
+          }
+        }
+      }
+    }
+  }
+
 }

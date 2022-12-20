@@ -10,31 +10,80 @@
   #{ns-group(radio)} {
     input[type="radio"] {
       & + label {
-        @include before {
-          @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(false));
-        }
+        @include color.background-image((action-high blue-france), (legacy:$legacy), radio-background-image(false));
       }
 
       @include disabled.selector {
         + label {
-          @include before {
-            @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(false));
-          }
+          @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false));
         }
       }
 
       &:checked {
         + label {
-          @include before {
-            @include color.box-shadow((action-high grey) (background default grey) (background action-high blue-france), (legacy:$legacy), radio-box-shadow(true));
-          }
+          @include color.background-image((action-high blue-france) (action-high blue-france), (legacy:$legacy), radio-background-image(true));
         }
 
         @include disabled.selector {
           + label {
-            @include before {
-              @include color.box-shadow((disabled grey) (background default grey) (text disabled grey), (legacy:$legacy), radio-box-shadow(true));
-            }
+            @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+  }
+
+  #{ns(fieldset)} {
+    &--error {
+      #{ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border plain error), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((border plain error) (action-high blue-france), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+
+    &--valid {
+      #{ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border plain success), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((border plain success) (action-high blue-france), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+
+    &--info {
+      #{ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((border plain info), (legacy:$legacy), radio-background-image(false));
+          }
+
+          &:checked + label {
+            @include color.background-image((border plain info) (action-high blue-france), (legacy:$legacy), radio-background-image(true));
+          }
+        }
+      }
+    }
+
+    @include disabled.selector {
+      #{ns-group(radio)} {
+        input[type="radio"] {
+          & + label {
+            @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false));
+          }
+          &:checked + label {
+            @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true));
           }
         }
       }

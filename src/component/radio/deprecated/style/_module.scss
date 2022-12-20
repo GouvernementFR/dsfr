@@ -2,12 +2,18 @@
 
 #{ns(fieldset)} {
   #{ns(fieldset__content)} {
-    #{ns-group(radio)} {
-      &--sm {
-        label {
-          &::before {
-            @include margin-top(4v);
-          }
+    #{ns-group(radio)}:not(#{ns(radio-rich)}) {
+      input[type="radio"] {
+        + label {
+          background-position: calc(-#{space(1v)} + 1px) calc(#{space(2v)} + 1px), calc(-#{space(1v)} + 1px) calc(#{space(2v)} + 1px);
+        }
+      }
+    }
+
+    #{ns-group(radio)}--sm:not(#{ns(radio-rich)}) {
+      input[type="radio"] {
+        + label {
+          background-position: calc(-#{space(0.5v)} + 1px) calc(#{space(4v)} - 1px), calc(-#{space(0.5v)} + 1px) calc(#{space(4v)} - 1px);
         }
       }
     }

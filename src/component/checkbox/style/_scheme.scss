@@ -6,26 +6,15 @@
 @use 'module/color';
 @use 'module/disabled';
 
-/**
- * L'input de type checkbox avec son label est contenu dans un groupe
- * Ce groupe contient également les textes de validation, d'erreur et d'aide (optionnels)
- */
 @mixin _checkbox-scheme($legacy: false) {
   #{ns(checkbox-group)} {
-    /**
-    * On cache l'input de type checkbox pour le styler via le label
-    */
     input[type="checkbox"] {
       + label {
         @include before {
-          @include color.box-shadow(action-high grey, (legacy:$legacy));
+          @include color.box-shadow(action-high blue-france, (legacy:$legacy));
         }
       }
 
-      /**
-      * On applique les styles au pseudo élément before du label quand l'input présente
-      * un état check ou active
-      */
       &:checked,
       &:active:not(:disabled) {
         + label {
@@ -36,9 +25,6 @@
         }
       }
 
-      /**
-      * Mixins pour appliquer les styles correspondant au focus ainsi qu'à l'état disabled
-      */
       @include disabled.selector {
         & + label {
           @include before {
@@ -57,12 +43,13 @@
       }
     }
 
-    /**
-    * Modificateur pour gérer l'état erreur
-    */
     &--error {
       input[type="checkbox"] + label {
         @include color.text(default error, (legacy:$legacy));
+
+        @include before {
+          @include color.box-shadow(border plain error, (legacy:$legacy));
+        }
       }
 
       @include before {
@@ -70,16 +57,43 @@
       }
     }
 
-    /**
-    * Modificateur pour gérer l'état validé
-    */
     &--valid {
       input[type="checkbox"] + label {
         @include color.text(default success, (legacy:$legacy));
+
+        @include before {
+          @include color.box-shadow(border plain success, (legacy:$legacy));
+        }
       }
 
       @include before {
         @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
+      }
+    }
+  }
+
+  #{ns(fieldset)} {
+    &--error {
+      #{ns(checkbox-group)} {
+        input[type="checkbox"] {
+          + label {
+            @include before {
+              @include color.box-shadow(border plain error, (legacy:$legacy));
+            }
+          }
+        }
+      }
+    }
+
+    &--valid {
+      #{ns(checkbox-group)} {
+        input[type="checkbox"] {
+          + label {
+            @include before {
+              @include color.box-shadow(border plain success, (legacy:$legacy));
+            }
+          }
+        }
       }
     }
   }
