@@ -36,7 +36,6 @@
     --toggle-status-width: auto;
     display: inline-flex;
     width: spacing.space(calc(100% - 10v));
-    flex: 1;
     min-height: spacing.space(6v);
     @include text-style(md);
 
