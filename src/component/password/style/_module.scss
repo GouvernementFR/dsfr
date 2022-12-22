@@ -20,6 +20,10 @@
 
   &__input {
     @include margin-bottom(3v);
+
+    &::-webkit-caps-lock-indicator {
+      content: none;
+    }
   }
 
   &__label {
