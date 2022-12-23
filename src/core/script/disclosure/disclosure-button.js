@@ -13,16 +13,28 @@ class DisclosureButton extends Instance {
   }
 
   get isPrimary () {
-    return this.canDisclose && !this.registration.creator.node.contains(this.node);
+    console.log('isPrimary');
+    return this.getCanDisclose() && !this.registration.creator.node.contains(this.node);
   }
 
   get canDisclose () {
+    console.log('canDisclose', this);
+    return this.getCanDisclose();
+  }
+
+  // TODO : A rationaliser dans la version NEXT
+  getCanDisclose () {
+    console.log('getCanDisclose');
     return this.hasAttribute(this.attributeName);
   }
 
   init () {
     this.controlsId = this.getAttribute('aria-controls');
+    console.log('init before');
+    const toto = this.isPrimary;
+    console.log('init middle', toto);
     if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
+    console.log('init after');
     this.enableCreator();
     this.listenClick();
   }
@@ -35,10 +47,12 @@ class DisclosureButton extends Instance {
   }
 
   handleClick (e) {
+    console.log('handleClick');
     if (this.registration.creator) this.registration.creator.toggle(this.canDisclose);
   }
 
   mutate (attributeNames) {
+    console.log('mutate');
     if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
       if (this.disclosed) this.registration.creator.disclose();
       else if (this.type.canConceal) this.registration.creator.conceal();
@@ -48,10 +62,13 @@ class DisclosureButton extends Instance {
   }
 
   enableCreator () {
+    console.log('enableCreator');
+
     if (this.isPrimary) this.registration.creator.isEnabled = !this.type.canDisable || !this.hasAttribute('disabled');
   }
 
   apply (value) {
+    console.log('apply');
     if (!this.isPrimary) return;
     this.setAttribute(this.attributeName, value);
   }
