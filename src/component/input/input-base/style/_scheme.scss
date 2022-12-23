@@ -16,6 +16,10 @@
       @include color.text(mention grey, (legacy:$legacy));
     }
 
+    @include contact-auto-fill-button {
+      @include color.background(text label grey, (legacy:$legacy, hover: true));
+    }
+
     @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in));
 
     @include autofill {
