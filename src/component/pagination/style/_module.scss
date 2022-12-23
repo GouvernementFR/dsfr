@@ -29,7 +29,7 @@
 
   &__link {
     @include min-size(8v);
-    @include margin-x(0.5v);
+    @include margin-x(2v);
     @include margin-bottom(4v);
     @include disable-underline;
     @include relative;
@@ -85,18 +85,6 @@
       &#{ns(pagination__link--lg-label)} {
         @include nest-pagination(right, arrow-right-s-last-line, lg);
       }
-    }
-
-    &--first,
-    &--prev {
-      @include margin-right(3.5v);
-      @include margin-left(-2.5v);
-    }
-
-    &--next,
-    &--last {
-      @include margin-right(-2.5v);
-      @include margin-left(3.5v);
     }
   }
 }
