@@ -12,24 +12,29 @@ class DisclosureButton extends Instance {
     return 'DisclosureButton';
   }
 
-  get isPrimary () {
+  init () {
+    this.controlsId = this.getAttribute('aria-controls');
+    if (this.getIsPrimary() && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
+    this.enableCreator();
+    this.listenClick();
+  }
+
+  // TODO : A rationaliser dans la version NEXT
+  getIsPrimary () {
     return this.getCanDisclose() && !this.registration.creator.node.contains(this.node);
   }
 
-  get canDisclose () {
-    return this.getCanDisclose();
+  get isPrimary () {
+    return this.getIsPrimary();
   }
 
   // TODO : A rationaliser dans la version NEXT
   getCanDisclose () {
-    return this.hasAttribute(this.attributeName);
+    return this.node ? this.hasAttribute(this.attributeName) : false;
   }
 
-  init () {
-    this.controlsId = this.getAttribute('aria-controls');
-    if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
-    this.enableCreator();
-    this.listenClick();
+  get canDisclose () {
+    return this.getCanDisclose();
   }
 
   get proxy () {
@@ -40,11 +45,11 @@ class DisclosureButton extends Instance {
   }
 
   handleClick (e) {
-    if (this.registration.creator) this.registration.creator.toggle(this.canDisclose);
+    if (this.registration.creator) this.registration.creator.toggle(this.getCanDisclose());
   }
 
   mutate (attributeNames) {
-    if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
+    if (this.getIsPrimary() && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
       if (this.disclosed) this.registration.creator.disclose();
       else if (this.type.canConceal) this.registration.creator.conceal();
     }
@@ -53,11 +58,11 @@ class DisclosureButton extends Instance {
   }
 
   enableCreator () {
-    if (this.isPrimary) this.registration.creator.isEnabled = !this.type.canDisable || !this.hasAttribute('disabled');
+    if (this.getIsPrimary()) this.registration.creator.isEnabled = !this.type.canDisable || !this.hasAttribute('disabled');
   }
 
   apply (value) {
-    if (!this.isPrimary) return;
+    if (!this.getIsPrimary()) return;
     this.setAttribute(this.attributeName, value);
   }
 
