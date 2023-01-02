@@ -24,7 +24,7 @@ class Collapse extends Disclosure {
 
   transitionend (e) {
     this.removeClass(CollapseSelector.COLLAPSING);
-    if (!this.disclosed) {
+    if (!this.isDisclosed) {
       if (this.isLegacy) this.style.maxHeight = '';
       else this.style.removeProperty('--collapse-max-height');
     }
@@ -36,7 +36,7 @@ class Collapse extends Disclosure {
   }
 
   disclose (withhold) {
-    if (this.disclosed || !this.isEnabled) return false;
+    if (this.isDisclosed || !this.isEnabled) return false;
     this.unbound();
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
@@ -48,7 +48,7 @@ class Collapse extends Disclosure {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.disclosed || !this.isEnabled) return false;
+    if (!this.isDisclosed || !this.isEnabled) return false;
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
       this.adjust();
@@ -66,7 +66,7 @@ class Collapse extends Disclosure {
   }
 
   reset () {
-    if (!this.pristine) this.disclosed = false;
+    if (!this.isPristine) this.isDisclosed = false;
   }
 
   isButtonPrimary (button) {

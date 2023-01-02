@@ -1,0 +1,34 @@
+////
+/// Tooltip Module : tooltip
+/// @group tooltip
+////
+
+@use 'module/spacing';
+
+#{ns(tooltip)} {
+  --arrow-x: 0;
+  display: block;
+  @include max-width('min(96v, calc((100vw - 8v) * 2 / 3))');
+  @include padding(2v 2v 5v);
+  @include text-style(xs);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
+  background-repeat: no-repeat;
+  background-position: spacing.space(calc(50% + var(--arrow-x)) calc(100% - 2v)), spacing.space(calc(50% + var(--arrow-x)) calc(100% - 1.5v)), spacing.space(50% calc(100% - 3v)), spacing.space(50% calc(100% - 3v));
+  background-size: spacing.space(2v 1.5v), spacing.space(2v 1.5v), 100% 1px, spacing.space(100% calc(100% - 3v));
+
+  &:not(&--shown) {
+    // transition in/out
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &#{ns(placement)} {
+    &--bottom {
+      @include padding-top(5v);
+      @include padding-bottom(2v);
+      background-position-y: spacing.space('2v, 1.5v, 3v, 3v');
+    }
+  }
+}

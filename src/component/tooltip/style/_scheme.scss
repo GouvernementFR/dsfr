@@ -1,0 +1,23 @@
+////
+/// Tooltip Scheme : tooltip
+/// @group core
+////
+
+@use 'module/color';
+@use 'module/elevation';
+
+@mixin _tooltip-scheme($legacy: false) {
+  #{ns(tooltip)} {
+    &#{ns(placement)} {
+      @include elevation.elevate(overlap, (legacy: $legacy, no-background: true));
+
+      &--top {
+        @include color.background-image((overlap grey) (border default grey), (legacy: $legacy), 'conic-gradient(from -33.69deg at 50% 100%, transparent 0deg, $color#1 0deg, $color#1 67.38deg, transparent 67.38deg), conic-gradient(from -33.69deg at 50% 100%, transparent 0deg, $color#2 0deg, $color#2 67.38deg, transparent 67.38deg), linear-gradient(90deg, $color#2, $color#2), linear-gradient(90deg, $color#1, $color#1)');
+      }
+
+      &--bottom {
+        @include color.background-image((overlap grey) (border default grey), (legacy: $legacy), 'conic-gradient(from 146.31deg at 50% 0%, transparent 0deg, $color#1 0deg, $color#1 67.38deg, transparent 67.38deg), conic-gradient(from 146.31deg at 50% 0%, transparent 0deg, $color#2 0deg, $color#2 67.38deg, transparent 67.38deg), linear-gradient(90deg, $color#2, $color#2), linear-gradient(90deg, $color#1, $color#1)');
+      }
+    }
+  }
+}

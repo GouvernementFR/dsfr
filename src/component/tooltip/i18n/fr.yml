@@ -1,0 +1,5 @@
+sample:
+  default: Tooltip avec zone d’action (au clic)
+  hover: Tooltip au survol
+  border: Tooltip au survol en bout de ligne
+  table: Tooltip dans un tableau
