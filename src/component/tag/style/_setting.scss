@@ -23,6 +23,7 @@ $tags-settings:(
   ),
   places: left,
   border-radius: true,
-  display: flex,
+  display: inline-block,
+  ellipsis: true,
   blank: true
 );

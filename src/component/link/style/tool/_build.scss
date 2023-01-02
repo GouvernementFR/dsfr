@@ -55,8 +55,23 @@
       display: block;
     }
   }
+  @else if $display == inline-block {
+    display: inline-block;
+    vertical-align: text-bottom;
+    @include _pseudo(before after) {
+      display: inline-block;
+    }
+  }
   @else {
     display: inline;
+  }
+}
+
+@mixin _link-ellipsis($ellipsis) {
+  @if $ellipsis == true {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
@@ -71,6 +86,7 @@
   #{$base} {
     @include _build-link-base;
     @include _link-display(map-get($settings, display));
+    @include _link-ellipsis(map-get($settings, ellipsis));
 
     @if $underline != true {
       @include disable-underline;

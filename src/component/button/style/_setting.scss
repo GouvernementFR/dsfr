@@ -32,7 +32,8 @@ $btn-settings:(
     )
   ),
   places: only left right,
-  display: flex,
+  display: inline-block,
+  ellipsis: true,
   align-on-content: true,
   blank: true
 );

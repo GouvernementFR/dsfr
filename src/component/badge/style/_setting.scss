@@ -22,5 +22,6 @@ $badge-settings:(
     )
   ),
   places: left,
-  display: flex
+  display: inline-block,
+  ellipsis: true,
 );

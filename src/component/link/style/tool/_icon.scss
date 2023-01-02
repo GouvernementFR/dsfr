@@ -15,9 +15,9 @@
 
   $icon-margin: _link-icon-margin(map_get($size-settings, icon));
   $icon-margin-x: spacing.space(map_get($size-settings, icon-margin-x));
+  overflow: hidden;
 
   @if $place == left {
-    overflow: initial;
     max-width: 100%;
     max-height: none;
     @include before {
@@ -27,7 +27,6 @@
     }
   }
   @else if $place == right {
-    overflow: initial;
     max-width: 100%;
     max-height: none;
     @include icon-content(false, $override-icon) {
@@ -40,7 +39,6 @@
     $min-height: spacing.space(map_get($size-settings, min-height));
     $padding-x: ($min-height - $icon-size) * 0.5;
 
-    overflow: hidden;
     white-space: nowrap;
     max-width: $min-height;
     max-height: $min-height;
