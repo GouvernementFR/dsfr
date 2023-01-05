@@ -1,5 +1,6 @@
 sample:
-  default: Tooltip avec zone d’action (au clic)
-  hover: Tooltip au survol
-  border: Tooltip au survol en bout de ligne
-  table: Tooltip dans un tableau
+  default: Infobulle
+  list: Information contextuelle dans une liste
+  input: Information contextuelle en bout de ligne
+  text: Information contextuelle dans un texte
+  table: Information contextuelle dans un tableau

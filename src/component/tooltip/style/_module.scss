@@ -13,7 +13,9 @@
   @include text-style(xs);
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none;
+  transition: opacity 0s 0.15s, visibility 0s 0.15s;
+  text-align: left;
   background-repeat: no-repeat;
   background-position: spacing.space(calc(50% + var(--arrow-x)) calc(100% - 2v)), spacing.space(calc(50% + var(--arrow-x)) calc(100% - 1.5v)), spacing.space(50% calc(100% - 3v)), spacing.space(50% calc(100% - 3v));
   background-size: spacing.space(2v 1.5v), spacing.space(2v 1.5v), 100% 1px, spacing.space(100% calc(100% - 3v));

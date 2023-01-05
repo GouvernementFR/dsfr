@@ -13,4 +13,4 @@
 const tooltip = locals.tooltip || {};
 %>
 
-<span class="<%= prefix %>-tooltip <%= prefix %>-placement" id="<%= tooltip.id %>"><%- tooltip.content %></span>
+<span class="<%= prefix %>-tooltip <%= prefix %>-placement" id="<%= tooltip.id %>" role="tooltip" aria-hidden="true"><%- tooltip.content %></span>

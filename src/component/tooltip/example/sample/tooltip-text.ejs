@@ -1,0 +1,14 @@
+<%
+let tooltip = locals.tooltip || {};
+let tooltipId = uniqueId('tooltip');
+let data = {
+  id: tooltipId,
+  content: lorem(),
+  ...tooltip
+};
+let triggerText = tooltip.triggerText || 'Information contextuelle';
+let tooltipTarget = `<span class="fr-text--bold" aria-describedby="${tooltipId}">${triggerText}</span>`;
+%>
+
+<%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: lorem(tooltipTarget)} }); %>
+<%- include('../sample/tooltip-default', {tooltip: data}); %>

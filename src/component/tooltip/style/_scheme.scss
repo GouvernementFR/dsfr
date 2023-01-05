@@ -8,6 +8,8 @@
 
 @mixin _tooltip-scheme($legacy: false) {
   #{ns(tooltip)} {
+    @include color.text(default grey, (legacy: $legacy));
+
     &#{ns(placement)} {
       @include elevation.elevate(overlap, (legacy: $legacy, no-background: true));
 
