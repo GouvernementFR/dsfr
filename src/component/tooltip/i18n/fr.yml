@@ -1,6 +1,6 @@
 sample:
   default: Infobulle
   list: Information contextuelle dans une liste
-  input: Information contextuelle en bout de ligne
+  grid: Information contextuelle en bout de ligne
   text: Information contextuelle dans un texte
   table: Information contextuelle dans un tableau

@@ -25,7 +25,8 @@ const mapShareButton = (data) => {
     classes: [`${prefix}-btn--${data.type}`],
     label: data.label,
     title: data.title,
-    attributes: data.attributes
+    attributes: data.attributes,
+    tooltip: data.tooltip,
   }
 
   if (data.comments) button.comments = data.comments;

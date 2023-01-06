@@ -6,6 +6,7 @@ let data = {
   content: lorem(),
   ...tooltip
 };
+let tooltipExample = include('../sample/tooltip-default', {tooltip: data});
 let table = {
   bordered: true,
   noScroll: false,
@@ -18,7 +19,7 @@ let table = {
       'Sarah',
       '<p class="fr-badge fr-badge--success fr-badge fr-badge--success">Livré</p>',
       '30,00€',
-      `<a class="fr-link fr-icon-arrow-left-line fr-link--icon-left" href="#" aria-describedby="${tooltipId}">Facebook.com</a>`,
+      `<a class="fr-link fr-icon-arrow-left-line fr-link--icon-left" href="#" aria-describedby="${tooltipId}">Exemple</a>${tooltipExample}`,
       'transmit primary protocol',
       'Japan',
       'Tokyo',
@@ -41,4 +42,3 @@ let table = {
 %>
 
 <%- include('../../../table/template/ejs/table', { table: table }); %>
-<%- include('../sample/tooltip-default', {tooltip: data}); %>

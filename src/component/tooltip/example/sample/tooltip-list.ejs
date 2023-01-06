@@ -16,7 +16,7 @@ let share = {
       type: 'facebook',
       label: 'Partager sur Facebook',
       url: `https://www.facebook.com/sharer.php?u=${contentPlaceholder('url de la page')}`,
-      attributes: {'aria-describedby': tooltipId}
+      tooltip: data
     },
     {
       type: 'twitter',
@@ -43,4 +43,3 @@ let share = {
 %>
 
 <%- include('../../../share/template/ejs/share', {share: share}); %>
-<%- include('../sample/tooltip-default', {tooltip: data}); %>

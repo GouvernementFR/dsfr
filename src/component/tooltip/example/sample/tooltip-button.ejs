@@ -2,11 +2,15 @@
 let tooltip = locals.tooltip || {};
 let data = {
   id: uniqueId('tooltip'),
-  text: tooltip.triggerText || 'Infobulle',
   content: lorem(),
   ...tooltip
 }
+
+let button = {
+  label: tooltip.triggerText || 'Infobulle',
+  classes: ['fr-btn--tooltip'],
+  tooltip: data
+}
 %>
 
-<%- include('../../template/ejs/button.ejs', {tooltipButton: data}) %>
-<%- include('../sample/tooltip-default', {tooltip: data}); %>
+<%- include('../../../../component/button/template/ejs/button.ejs', {button: button}); %>

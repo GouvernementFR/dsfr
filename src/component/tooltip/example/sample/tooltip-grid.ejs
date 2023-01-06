@@ -1,0 +1,25 @@
+<%
+let tooltip = locals.tooltip || {};
+let tooltipId = uniqueId('tooltip');
+let data = {
+  id: tooltipId,
+  content: lorem(),
+  ...tooltip
+};
+
+let tooltipExample = include('../sample/tooltip-default', {tooltip: data});
+let grid = {
+  gutters: true,
+  cols: [
+    { 
+      col: { first: 8, sm: 10},
+      content: `<p>${lorem()}</p>`,
+    },
+    { 
+      col: { first: 4, sm: 2},
+      content: `<a class="fr-link" href="#" aria-describedby="${tooltipId}">Exemple</a>${tooltipExample}`
+    }
+  ]};
+%>
+
+<%- include('../../../../core/example/grid/sample/grid', { grid: grid }); %>

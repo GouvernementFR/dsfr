@@ -6,9 +6,9 @@ let data = {
   content: lorem(),
   ...tooltip
 };
-let triggerText = tooltip.triggerText || 'Information contextuelle';
+let triggerText = tooltip.triggerText || 'Exemple';
 let tooltipTarget = `<span class="fr-text--bold" aria-describedby="${tooltipId}">${triggerText}</span>`;
+let paragraphInsert = tooltipTarget + include('../sample/tooltip-default', {tooltip: data});
 %>
 
-<%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: lorem(tooltipTarget)} }); %>
-<%- include('../sample/tooltip-default', {tooltip: data}); %>
+<%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: lorem(paragraphInsert)} }); %>
