@@ -11,7 +11,7 @@ const TooltipState = {
 
 class Tooltip extends api.core.Placement {
   constructor () {
-    super(api.core.Mode.AUTO, [api.core.Place.TOP, api.core.Place.BOTTOM], [api.core.Align.CENTER, api.core.Align.START, api.core.Align.END]);
+    super(api.core.PlacementMode.AUTO, [api.core.PlacementPosition.TOP, api.core.PlacementPosition.BOTTOM], [api.core.PlacementAlign.CENTER, api.core.PlacementAlign.START, api.core.PlacementAlign.END]);
     this.modifier = '';
     this._state = TooltipState.HIDDEN;
   }

@@ -31,9 +31,9 @@ import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
 import { Placement } from './script/placement/placement.js';
 import { PlacementReferent } from './script/placement/placement-referent';
-import { Align } from './script/placement/align';
-import { Place } from './script/placement/place';
-import { Mode } from './script/placement/mode';
+import { PlacementAlign } from './script/placement/placement-align';
+import { PlacementPosition } from './script/placement/placement-position';
+import { PlacementMode } from './script/placement/placement-mode';
 
 api.core = {
   Instance: Instance,
@@ -67,9 +67,9 @@ api.core = {
   RatioSelector: RatioSelector,
   Placement: Placement,
   PlacementReferent: PlacementReferent,
-  Align: Align,
-  Place: Place,
-  Mode: Mode
+  PlacementAlign: PlacementAlign,
+  PlacementPosition: PlacementPosition,
+  PlacementMode: PlacementMode
 };
 
 export default api;

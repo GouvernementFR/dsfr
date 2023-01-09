@@ -2,12 +2,12 @@ import { Instance } from '../api/modules/register/instance.js';
 import { PlaceSelector } from './place-selector';
 import { AlignSelector } from './align-selector';
 import { completeAssign } from '../api/utilities/property/complete-assign.js';
-import { Place } from './place';
-import { Align } from './align';
-import { Mode } from './mode';
+import { PlacementPosition } from './placement-position';
+import { PlacementAlign } from './placement-align';
+import { PlacementMode } from './placement-mode';
 
 class Placement extends Instance {
-  constructor (mode = Mode.AUTO, places = [Place.BOTTOM, Place.TOP, Place.LEFT, Place.RIGHT], aligns = [Align.CENTER, Align.START, Align.END], safeAreaMargin = 16) {
+  constructor (mode = PlacementMode.AUTO, places = [PlacementPosition.BOTTOM, PlacementPosition.TOP, PlacementPosition.LEFT, PlacementPosition.RIGHT], aligns = [PlacementAlign.CENTER, PlacementAlign.START, PlacementAlign.END], safeAreaMargin = 16) {
     super();
     this._mode = mode;
     this._places = places;
@@ -77,37 +77,37 @@ class Placement extends Instance {
   set place (value) {
     if (this._place === value) return;
     switch (this._place) {
-      case Place.TOP:
+      case PlacementPosition.TOP:
         this.removeClass(PlaceSelector.TOP);
         break;
 
-      case Place.RIGHT:
+      case PlacementPosition.RIGHT:
         this.removeClass(PlaceSelector.RIGHT);
         break;
 
-      case Place.BOTTOM:
+      case PlacementPosition.BOTTOM:
         this.removeClass(PlaceSelector.BOTTOM);
         break;
 
-      case Place.LEFT:
+      case PlacementPosition.LEFT:
         this.removeClass(PlaceSelector.LEFT);
         break;
     }
     this._place = value;
     switch (this._place) {
-      case Place.TOP:
+      case PlacementPosition.TOP:
         this.addClass(PlaceSelector.TOP);
         break;
 
-      case Place.RIGHT:
+      case PlacementPosition.RIGHT:
         this.addClass(PlaceSelector.RIGHT);
         break;
 
-      case Place.BOTTOM:
+      case PlacementPosition.BOTTOM:
         this.addClass(PlaceSelector.BOTTOM);
         break;
 
-      case Place.LEFT:
+      case PlacementPosition.LEFT:
         this.addClass(PlaceSelector.LEFT);
         break;
     }
@@ -120,29 +120,29 @@ class Placement extends Instance {
   set align (value) {
     if (this._align === value) return;
     switch (this._align) {
-      case Align.START:
+      case PlacementAlign.START:
         this.removeClass(AlignSelector.START);
         break;
 
-      case Align.CENTER:
+      case PlacementAlign.CENTER:
         this.removeClass(AlignSelector.CENTER);
         break;
 
-      case Align.END:
+      case PlacementAlign.END:
         this.removeClass(AlignSelector.END);
         break;
     }
     this._align = value;
     switch (this._align) {
-      case Align.START:
+      case PlacementAlign.START:
         this.addClass(AlignSelector.START);
         break;
 
-      case Align.CENTER:
+      case PlacementAlign.CENTER:
         this.addClass(AlignSelector.CENTER);
         break;
 
-      case Align.END:
+      case PlacementAlign.END:
         this.addClass(AlignSelector.END);
         break;
     }
@@ -186,16 +186,16 @@ class Placement extends Instance {
     this.rect = this.getRect();
     this.referentRect = this._referent.getRect();
 
-    if (this.mode === Mode.AUTO) {
+    if (this.mode === PlacementMode.AUTO) {
       this.place = this.getPlace();
       switch (this.place) {
-        case Place.TOP:
-        case Place.BOTTOM:
+        case PlacementPosition.TOP:
+        case PlacementPosition.BOTTOM:
           this.align = this.getHorizontalAlign();
           break;
 
-        case Place.LEFT:
-        case Place.RIGHT:
+        case PlacementPosition.LEFT:
+        case PlacementPosition.RIGHT:
           this.align = this.getVerticalAlign();
       }
     }
@@ -203,53 +203,53 @@ class Placement extends Instance {
     let x, y;
 
     switch (this.place) {
-      case Place.TOP:
+      case PlacementPosition.TOP:
         y = this.referentRect.top - this.rect.height;
         break;
 
-      case Place.RIGHT:
+      case PlacementPosition.RIGHT:
         x = this.referentRect.right;
         break;
 
-      case Place.BOTTOM:
+      case PlacementPosition.BOTTOM:
         y = this.referentRect.bottom;
         break;
 
-      case Place.LEFT:
+      case PlacementPosition.LEFT:
         x = this.referentRect.left - this.rect.width;
         break;
     }
 
     switch (this.place) {
-      case Place.TOP:
-      case Place.BOTTOM:
+      case PlacementPosition.TOP:
+      case PlacementPosition.BOTTOM:
         switch (this.align) {
-          case Align.CENTER:
+          case PlacementAlign.CENTER:
             x = this.referentRect.center - this.rect.width * 0.5;
             break;
 
-          case Align.START:
+          case PlacementAlign.START:
             x = this.referentRect.left;
             break;
 
-          case Align.END:
+          case PlacementAlign.END:
             x = this.referentRect.right - this.rect.width;
             break;
         }
         break;
 
-      case Place.RIGHT:
-      case Place.LEFT:
+      case PlacementPosition.RIGHT:
+      case PlacementPosition.LEFT:
         switch (this.align) {
-          case Align.CENTER:
+          case PlacementAlign.CENTER:
             y = this.referentRect.middle - this.rect.height * 0.5;
             break;
 
-          case Align.START:
+          case PlacementAlign.START:
             y = this.referentRect.top;
             break;
 
-          case Align.END:
+          case PlacementAlign.END:
             y = this.referentRect.bottom - this.rect.height;
             break;
         }
@@ -266,20 +266,20 @@ class Placement extends Instance {
   getPlace () {
     for (const place of this._places) {
       switch (place) {
-        case Place.TOP:
-          if (this.referentRect.top - this.rect.height > this.safeArea.top) return Place.TOP;
+        case PlacementPosition.TOP:
+          if (this.referentRect.top - this.rect.height > this.safeArea.top) return PlacementPosition.TOP;
           break;
 
-        case Place.RIGHT:
-          if (this.referentRect.right + this.rect.width < this.safeArea.right) return Place.RIGHT;
+        case PlacementPosition.RIGHT:
+          if (this.referentRect.right + this.rect.width < this.safeArea.right) return PlacementPosition.RIGHT;
           break;
 
-        case Place.BOTTOM:
-          if (this.referentRect.bottom + this.rect.height < this.safeArea.bottom) return Place.BOTTOM;
+        case PlacementPosition.BOTTOM:
+          if (this.referentRect.bottom + this.rect.height < this.safeArea.bottom) return PlacementPosition.BOTTOM;
           break;
 
-        case Place.LEFT:
-          if (this.referentRect.left - this.rect.width > this.safeArea.left) return Place.LEFT;
+        case PlacementPosition.LEFT:
+          if (this.referentRect.left - this.rect.width > this.safeArea.left) return PlacementPosition.LEFT;
           break;
       }
     }
@@ -290,16 +290,16 @@ class Placement extends Instance {
   getHorizontalAlign () {
     for (const align of this._aligns) {
       switch (align) {
-        case Align.CENTER:
-          if (this.referentRect.center - this.rect.width * 0.5 > this.safeArea.left && this.referentRect.center + this.rect.width * 0.5 < this.safeArea.right) return Align.CENTER;
+        case PlacementAlign.CENTER:
+          if (this.referentRect.center - this.rect.width * 0.5 > this.safeArea.left && this.referentRect.center + this.rect.width * 0.5 < this.safeArea.right) return PlacementAlign.CENTER;
           break;
 
-        case Align.START:
-          if (this.referentRect.left + this.rect.width < this.safeArea.right) return Align.START;
+        case PlacementAlign.START:
+          if (this.referentRect.left + this.rect.width < this.safeArea.right) return PlacementAlign.START;
           break;
 
-        case Align.END:
-          if (this.referentRect.right - this.rect.width > this.safeArea.left) return Align.END;
+        case PlacementAlign.END:
+          if (this.referentRect.right - this.rect.width > this.safeArea.left) return PlacementAlign.END;
           break;
       }
     }
@@ -310,16 +310,16 @@ class Placement extends Instance {
   getVerticalAlign () {
     for (const align of this._aligns) {
       switch (align) {
-        case Align.CENTER:
-          if (this.referentRect.middle - this.rect.height * 0.5 > this.safeArea.top && this.referentRect.middle + this.rect.height * 0.5 < this.safeArea.bottom) return Align.CENTER;
+        case PlacementAlign.CENTER:
+          if (this.referentRect.middle - this.rect.height * 0.5 > this.safeArea.top && this.referentRect.middle + this.rect.height * 0.5 < this.safeArea.bottom) return PlacementAlign.CENTER;
           break;
 
-        case Align.START:
-          if (this.referentRect.top + this.rect.height < this.safeArea.bottom) return Align.START;
+        case PlacementAlign.START:
+          if (this.referentRect.top + this.rect.height < this.safeArea.bottom) return PlacementAlign.START;
           break;
 
-        case Align.END:
-          if (this.referentRect.bottom - this.rect.height > this.safeArea.top) return Align.END;
+        case PlacementAlign.END:
+          if (this.referentRect.bottom - this.rect.height > this.safeArea.top) return PlacementAlign.END;
           break;
       }
     }
