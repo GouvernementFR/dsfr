@@ -1,0 +1,17 @@
+<%
+const button = {
+  classes: [prefix + "-rtl-button", prefix + '-background-default--grey'],
+  label: 'RTL',
+  attributes: {
+    style: 'z-index: 1600',
+    onclick: 'document.body.dir = document.body.dir === \'rtl\' ? \'ltr\' : \'rtl\';',
+  },
+  markup: 'button',
+  kind: 2,
+  size: 'md'
+};
+
+%>
+
+
+<%- include('../../src/component/button/example/sample/button-default', {button: button}, true) %>

@@ -3,6 +3,8 @@
 /// @group header
 ////
 
+@use 'module/selector';
+
 #{ns(translate)} {
   --rows: 8;
   position: relative;
@@ -20,7 +22,7 @@
       @include margin-left(auto);
       @include margin-left(1v, lg);
       @include margin-right(-1v, lg);
-      @mixin rtl() {
+      @include selector.rtl() {
         @include margin-right(auto);
         @include margin-right(1v, lg);
         @include margin-left(-1v, lg);

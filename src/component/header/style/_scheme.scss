@@ -6,6 +6,7 @@
 @use 'module/color';
 @use 'module/elevation';
 @use 'module/media-query';
+@use 'module/selector';
 
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
@@ -64,7 +65,7 @@
 
     #{ns(header__menu)} {
       right: 0;
-      @include rtl() {
+      @include selector.rtl() {
         left: 0;
       }
       @include respond-from(lg) {

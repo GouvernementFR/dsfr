@@ -3,6 +3,8 @@
 /// @group Footer
 ////
 
+@use 'module/selector';
+
 /**
  * La partie "content" représente les informations sous forme de texte rajoutées dans le footer
  * ainsi que les éventuels liens simples
@@ -22,7 +24,7 @@
       flex-basis: calc(100% - (100% / 2));
     }
 
-    @include rtl() {
+    @include selector.rtl() {
       @include margin-right(auto);
     }
   }

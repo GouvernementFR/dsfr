@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/typography';
+
 @if (map-get($reset-settings, body)) {
   body {
     @include font-family;
@@ -10,6 +12,6 @@
     @include margin(0);
     @include padding(0);
     @include text-style(md);
-    @include text-align;
+    @include typography.text-align;
   }
 }

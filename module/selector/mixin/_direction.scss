@@ -1,0 +1,15 @@
+// Selecteur de direction: Right to Left
+@mixin rtl() {
+  &[dir="rtl"],
+  [dir="rtl"] & {
+    @content;
+  }
+}
+
+// Selecteur de direction: Left to Right
+@mixin ltr() {
+  &[dir="ltr"],
+  [dir="ltr"] & {
+    @content;
+  }
+}
