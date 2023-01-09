@@ -1,3 +1,5 @@
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let tooltip = locals.tooltip || {};
 let tooltipId = uniqueId('tooltip');
@@ -17,7 +19,7 @@ let grid = {
     },
     { 
       col: { first: 4, sm: 2},
-      content: `<a class="fr-link" href="#" aria-describedby="${tooltipId}">Exemple</a>${tooltipExample}`
+      content: `<a class="${prefix}-link" href="#" aria-describedby="${tooltipId}">${getText('sample.example', 'tooltip')}</a>${tooltipExample}`
     }
   ]};
 %>

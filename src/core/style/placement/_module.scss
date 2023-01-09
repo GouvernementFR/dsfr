@@ -6,7 +6,5 @@
 @use 'module/spacing';
 
 #{ns(placement)} {
-  position: fixed;
-  top: 0;
-  left: 0;
+  @include fixed(0, null, null, 0);
 }

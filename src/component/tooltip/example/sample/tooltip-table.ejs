@@ -1,3 +1,5 @@
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let tooltip = locals.tooltip || {};
 let tooltipId = uniqueId('tooltip');
@@ -17,9 +19,9 @@ let table = {
     [
       'Nakamoto',
       'Sarah',
-      '<p class="fr-badge fr-badge--success fr-badge fr-badge--success">Livré</p>',
+      `<p class="${prefix}-badge ${prefix}-badge--success ${prefix}-badge ${prefix}-badge--success">Livré</p>`,
       '30,00€',
-      `<a class="fr-link fr-icon-arrow-left-line fr-link--icon-left" href="#" aria-describedby="${tooltipId}">Exemple</a>${tooltipExample}`,
+      `<a class="${prefix}-link ${prefix}-icon-arrow-left-line ${prefix}-link--icon-left" href="#" aria-describedby="${tooltipId}">${getText('sample.example', 'tooltip')}</a>${tooltipExample}`,
       'transmit primary protocol',
       'Japan',
       'Tokyo',
@@ -28,9 +30,9 @@ let table = {
     [
       'Nakamoto',
       'Sarah',
-      '<p class="fr-badge fr-badge--success fr-badge fr-badge--success">Livré</p>',
+      `<p class="${prefix}-badge ${prefix}-badge--success ${prefix}-badge ${prefix}-badge--success">Livré</p>`,
       '30,00€',
-      '<a class="fr-link fr-icon-arrow-left-line fr-link--icon-left" href="#">Label lien</a>',
+      `<a class="${prefix}-link ${prefix}-icon-arrow-left-line ${prefix}-link--icon-left" href="#">Label lien</a>`,
       'transmit primary protocol',
       'Japan',
       'Tokyo',

@@ -26,7 +26,7 @@
     #{ns(modal)} {
       &:not(#{ns(modal)}--opened) {
         #{ns(modal)}__content {
-          max-height: spacing.space(38v);
+          @include max-height(38v);
         }
       }
     }

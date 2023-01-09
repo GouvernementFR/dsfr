@@ -4,3 +4,4 @@ sample:
   grid: Information contextuelle en bout de ligne
   text: Information contextuelle dans un texte
   table: Information contextuelle dans un tableau
+  example: Exemple

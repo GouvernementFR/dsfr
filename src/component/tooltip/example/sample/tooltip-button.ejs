@@ -1,3 +1,5 @@
+<% eval(include('../../../../core/index.ejs')); %>
+
 <%
 let tooltip = locals.tooltip || {};
 let data = {
@@ -7,8 +9,8 @@ let data = {
 }
 
 let button = {
-  label: tooltip.triggerText || 'Infobulle',
-  classes: ['fr-btn--tooltip'],
+  label: tooltip.triggerText || getText('sample', 'tooltip'),
+  classes: [`${prefix}-btn--tooltip`],
   tooltip: data
 }
 %>
