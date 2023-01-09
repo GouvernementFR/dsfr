@@ -3,6 +3,8 @@
 /// @group Footer
 ////
 
+@use 'module/typography';
+
 /**
  * La partie "top" du footer est constituée de colonnes basées sur le système de grille du Design System
  * Ces colonnes sont constituées d’une catégorie (optionnel) et d'une liste verticale de liens
@@ -23,7 +25,6 @@
     @include text-style(xs);
     display: block;
     font-weight: font-weight(bold);
-    text-align: left;
   }
 
   /**

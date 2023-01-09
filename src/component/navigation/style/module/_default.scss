@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/typography';
 
 #{ns(nav)} {
   @include disable-underline;
@@ -87,7 +88,6 @@
     @include size(100%);
     @include padding(3v 0);
     @include text-style(md);
-    text-align: left;
 
     @include respond-from(lg) {
       @include text-style(sm);

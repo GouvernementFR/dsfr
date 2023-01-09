@@ -3,6 +3,8 @@
 /// @group header
 ////
 
+@use 'module/selector';
+
 #{ns(translate)} {
   --rows: 8;
   position: relative;

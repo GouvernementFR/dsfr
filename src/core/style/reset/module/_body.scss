@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/typography';
+
 @if (map-get($reset-settings, body)) {
   body {
     @include font-family;
