@@ -1,5 +1,6 @@
 sample:
   default: Infobulle
+  subtitle: ouverture du tooltip au focus
   list: Information contextuelle dans une liste
   grid: Information contextuelle en bout de ligne
   text: Information contextuelle dans un texte

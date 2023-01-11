@@ -1,6 +1,6 @@
 <% const sample = getSample(include); %>
 
-<%- sample(getText('sample', 'tooltip'), './sample/tooltip-button.ejs', {}, true);  %>
+<%- sample({title: getText('sample', 'tooltip'), subtitle: getText('sample.subtitle', 'tooltip')}, './sample/tooltip-button.ejs', {}, true);  %>
 
 <%- sample(getText('sample.list', 'tooltip'), './sample/tooltip-list.ejs', {}, true);  %>
 
