@@ -14,11 +14,11 @@
       @include elevation.elevate(overlap, (legacy: $legacy, no-background: true));
 
       &--top {
-        @include color.background-image((overlap grey) (border default grey), (legacy: $legacy), 'conic-gradient(from -33.69deg at 50% 100%, transparent 0deg, $color#1 0deg, $color#1 67.38deg, transparent 67.38deg), conic-gradient(from -33.69deg at 50% 100%, transparent 0deg, $color#2 0deg, $color#2 67.38deg, transparent 67.38deg), linear-gradient(90deg, $color#2, $color#2), linear-gradient(90deg, $color#1, $color#1)');
+        @include tooltip-border((overlap grey) (border default grey), top, $legacy);
       }
 
       &--bottom {
-        @include color.background-image((overlap grey) (border default grey), (legacy: $legacy), 'conic-gradient(from 146.31deg at 50% 0%, transparent 0deg, $color#1 0deg, $color#1 67.38deg, transparent 67.38deg), conic-gradient(from 146.31deg at 50% 0%, transparent 0deg, $color#2 0deg, $color#2 67.38deg, transparent 67.38deg), linear-gradient(90deg, $color#2, $color#2), linear-gradient(90deg, $color#1, $color#1)');
+        @include tooltip-border((overlap grey) (border default grey), bottom, $legacy);
       }
     }
   }
