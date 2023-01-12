@@ -1,5 +1,6 @@
 import inspector from '../inspect/inspector.js';
 import { startAtDomContentLoaded, startAuto } from './starters.js';
+import config from '../../../config';
 
 export const Modes = {
   AUTO: 'auto',
@@ -22,6 +23,8 @@ class Options {
   configure (settings = {}, start) {
     this.startCallback = start;
     if (settings.verbose === true) inspector.level = 0;
+    if (settings.production === true) inspector.level = 999;
+    inspector.info(`version ${config.version}`);
     this.mode = settings.mode || Modes.AUTO;
   }
 
