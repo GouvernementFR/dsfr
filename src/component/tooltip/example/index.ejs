@@ -1,11 +1,15 @@
 <% const sample = getSample(include); %>
 
-<%- sample({title: getText('sample', 'tooltip'), subtitle: getText('sample.subtitle', 'tooltip')}, './sample/tooltip-button.ejs', {}, true);  %>
+<%- sample({title: getText('sample', 'tooltip'), subtitle: getText('sample.hover', 'tooltip')}, './sample/tooltip-hover.ejs', {}, true);  %>
 
-<%- sample(getText('sample.list', 'tooltip'), './sample/tooltip-list.ejs', {}, true);  %>
+<%- sample({title: getText('sample.tooltip', 'tooltip'), subtitle: getText('sample.click', 'tooltip')}, './sample/tooltip-button.ejs', {}, true);  %>
 
-<%- sample(getText('sample.grid', 'tooltip'), './sample/tooltip-grid.ejs', {}, true);  %>
+<%- sample(getText('sample.grid.left', 'tooltip'), './sample/tooltip-grid.ejs', {}, true);  %>
+
+<%- sample(getText('sample.grid.right', 'tooltip'), './sample/tooltip-grid.ejs', {tooltip: {position: 'right'}}, true);  %>
 
 <%- sample(getText('sample.text', 'tooltip'), './sample/tooltip-text.ejs', {}, true);  %>
+
+<%- sample(getText('sample.list', 'tooltip'), './sample/tooltip-list.ejs', {}, true);  %>
 
 <%- sample(getText('sample.table', 'tooltip'), './sample/tooltip-table.ejs', {}, true);  %>

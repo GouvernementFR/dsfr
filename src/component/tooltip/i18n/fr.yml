@@ -1,8 +1,12 @@
 sample:
-  default: Infobulle
-  subtitle: ouverture du tooltip au focus
-  list: Information contextuelle dans une liste
-  grid: Information contextuelle en bout de ligne
+  default: Information contextuelle
+  hover: Ouverture du tooltip au survol
+  tooltip: Infobulle
+  click: L'ajout de la classe '<code>fr-btn--tooltip</code>' déclenche l'ouverture du tooltip au click.
+  grid: 
+    left: Information contextuelle dans une grille à gauche
+    right: Information contextuelle dans une grille à droite
   text: Information contextuelle dans un texte
+  list: Information contextuelle dans une liste
   table: Information contextuelle dans un tableau
   example: Exemple

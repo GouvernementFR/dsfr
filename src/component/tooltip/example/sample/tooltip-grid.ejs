@@ -10,18 +10,22 @@ let data = {
 };
 
 let tooltipExample = include('../sample/tooltip-default', {tooltip: data});
+
+let columns = [
+  { 
+    col: { first: 4, sm: 2},
+    content: `<a class="${prefix}-link" href="#" aria-describedby="${tooltipId}">${getText('sample.example', 'tooltip')}</a>${tooltipExample}`
+  },
+  { 
+    col: { first: 8, sm: 10},
+    content: `<p>${lorem()}</p>`,
+  }
+];
+
 let grid = {
-  gutters: true,
-  cols: [
-    { 
-      col: { first: 8, sm: 10},
-      content: `<p>${lorem()}</p>`,
-    },
-    { 
-      col: { first: 4, sm: 2},
-      content: `<a class="${prefix}-link" href="#" aria-describedby="${tooltipId}">${getText('sample.example', 'tooltip')}</a>${tooltipExample}`
-    }
-  ]};
+    gutters: true,
+    cols: tooltip.position && tooltip.position === 'right' ? columns.reverse() : columns
+  };
 %>
 
 <%- include('../../../../core/example/grid/sample/grid', { grid: grid }); %>
