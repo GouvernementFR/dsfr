@@ -3,6 +3,8 @@
 /// @group header
 ////
 
+@use 'module/animate';
+
 #{ns(translate)} {
   --rows: 8;
   position: relative;
@@ -15,18 +17,12 @@
     @include width(100%);
     @include width(auto, lg);
     @include margin-bottom(4v, lg);
+    @include animate.caret();
 
-    @include icon(arrow-down-s-fill, sm, after) {
+    @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(auto);
       @include margin-left(1v, lg);
       @include margin-right(-1v, lg);
-      transition: transform 0.3s;
-    }
-
-    &[aria-expanded=true] {
-      @include after {
-        transform: rotate(-180deg);
-      }
     }
 
     @include respond-from(lg) {
