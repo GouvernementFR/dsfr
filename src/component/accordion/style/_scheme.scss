@@ -12,10 +12,11 @@
     }
 
     &__btn {
-      @include color.text(action-high grey, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
 
       &[aria-expanded="true"] {
-        @include color.text(active grey, (legacy:$legacy));
+        @include color.text(inverted blue-france, (legacy:$legacy));
+        @include color.background(action-high blue-france, (legacy:$legacy));
       }
     }
   }
