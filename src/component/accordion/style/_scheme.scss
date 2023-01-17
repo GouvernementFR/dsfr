@@ -15,8 +15,7 @@
       @include color.text(action-high blue-france, (legacy:$legacy));
 
       &[aria-expanded="true"] {
-        @include color.text(inverted blue-france, (legacy:$legacy));
-        @include color.background(action-high blue-france, (legacy:$legacy));
+        @include color.background(open blue-france, (legacy:$legacy));
       }
     }
   }
