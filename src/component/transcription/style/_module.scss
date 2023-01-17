@@ -4,6 +4,7 @@
 ////
 
 @use 'module/media-query';
+@use 'module/animate';
 
 #{ns(transcription)} {
   position: relative;
@@ -16,7 +17,7 @@
   &__btn {
     @include _build-link-base;
     @include _link-display(flex);
-    @include nest-transcription-button(add-line);
+    @include nest-transcription-button(arrow-down-s-line);
     @include size(100%);
     text-align: left;
     @include margin(0);
@@ -28,10 +29,7 @@
     @include icon(align-left, sm, before) {
       @include margin-right(2v);
     }
-
-    &[aria-expanded='true'] {
-      @include icon-image(subtract-line, after);
-    }
+    @include animate.caret();
   }
 
   &__content {
