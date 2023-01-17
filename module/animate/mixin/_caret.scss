@@ -1,0 +1,11 @@
+@mixin caret() {
+  &::after {
+    transition: transform 0.3s;
+  }
+
+  &[aria-expanded='true'] {
+    &::after {
+      transform: rotate(-180deg);
+    }
+  }
+}

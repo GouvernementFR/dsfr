@@ -3,6 +3,8 @@
 /// @group accordion
 ////
 
+@use 'module/animate';
+
 #{ns(accordion)} {
   position: relative;
 
@@ -27,16 +29,11 @@
     @include size(100%);
     text-align: left;
     @include margin(0);
-
+    @include animate.caret();
+    
     @include after {
       @include margin-right(0);
       @include margin-left(auto);
-    }
-
-    &[aria-expanded="true"] {
-      @include after {
-        transform: rotate(-180deg);
-      }
     }
 
     @include padding(3v 0);
