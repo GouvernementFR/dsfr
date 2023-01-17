@@ -16,7 +16,7 @@
     @include width(auto, lg);
     @include margin-bottom(4v, lg);
 
-    @include icon(arrow-down-s-fill, sm, after) {
+    @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(auto);
       @include margin-left(1v, lg);
       @include margin-right(-1v, lg);

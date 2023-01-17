@@ -9,7 +9,7 @@
   #{ns(translate)} {
     #{ns(translate)} &__btn {
       @include icon-legacy(translate-2, sm, before);
-      @include icon-legacy(arrow-down-s-fill, sm, after);
+      @include icon-legacy(arrow-down-s-line, sm, after);
     }
   }
 }
