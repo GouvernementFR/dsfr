@@ -1,0 +1,62 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _alert-direction($is-supported: true) {
+  #{selector.ns('alert')} {
+
+    @include direction.ltr($is-supported) {
+      @include padding(4v 9v 3v 14v);
+      background-position: 100% 100%, 0 0, 100% 0, 100% 0, 0 0;
+    }
+
+    @include direction.rtl($is-supported) {
+      @include padding(4v 14v 3v 9v);
+      background-position: 100% 100%, 0 0, 100% 0, 100% 0, 100% 100%;
+    }
+
+    @include before {
+      @include direction.ltr($is-supported) {
+        left: 0;
+        right: auto;
+      }
+
+      @include direction.rtl($is-supported) {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    &--sm {
+      @include direction.ltr($is-supported) {
+        @include padding(2v 9v 1v 12v);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include padding(2v 12v 1v 9v);
+      }
+    }
+
+    #{selector.ns(btn--close)} {
+      @include direction.ltr($is-supported) {
+        left: auto;
+        right: spacing.space(5v);
+
+        @include before {
+          @include margin-right(2v);
+          @include margin-left(0);
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        left: spacing.space(1v);
+        right: auto;
+
+        @include before {
+          @include margin-left(2v);
+          @include margin-right(0);
+        }
+      }
+    }
+  }
+}

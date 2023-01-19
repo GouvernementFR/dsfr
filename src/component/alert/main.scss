@@ -16,8 +16,14 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
+
+@include _alert-direction(true);
 
 // deprecated
 @import 'deprecated/style/module';
+@import 'deprecated/style/direction';
+
+@include _alert-deprecated-direction(true);
 
 @include _alert-scheme;

@@ -3,9 +3,10 @@
 /// @group alert
 ////
 
+@use 'module/spacing';
+
 #{ns(alert)} {
   @include relative();
-  @include padding(4v 9v 3v 14v);
   @include set-title-margin(0 0 1v);
   @include set-text-margin(0 0 1v);
   @include icon-size(md, before);
@@ -13,13 +14,15 @@
     @include absolute(0, null, null, 0);
     @include margin(4v 2v);
   }
+  background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px, spacing.space(10v) 100%;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
 
   &__title {
     @include title-style(h6);
   }
 
   #{ns(btn--close)} {
-    @include absolute(1v,5v);
+    @include absolute(1v);
     @include nest-btn(sm, only, close-line, null, false);
   }
 
@@ -51,8 +54,6 @@
   }
 
   &--sm {
-    @include padding(2v 9v 1v 12v);
-
     @include before {
       @include margin(2v 2v);
     }

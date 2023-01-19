@@ -1,0 +1,29 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _alert-deprecated-direction($is-supported: true) {
+  #{selector.ns('alert')} {
+    #{selector.ns(link--close)} {
+      @include direction.ltr($is-supported) {
+        left: auto;
+        right: spacing.space(5v);
+
+        @include before {
+          @include margin-left(0);
+          @include margin-right(2v);
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        left: spacing.space(1v);
+        right: auto;
+
+        @include before {
+          @include margin-left(2v);
+          @include margin-right(0);
+        }
+      }
+    }
+  }
+}

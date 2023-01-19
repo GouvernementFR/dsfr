@@ -4,7 +4,7 @@ const button = {
   label: 'RTL',
   attributes: {
     style: 'z-index: 1600',
-    onclick: 'document.body.dir = document.body.dir === \'rtl\' ? \'ltr\' : \'rtl\';',
+    onclick: 'document.documentElement.dir = document.documentElement.dir === \'rtl\' ? \'ltr\' : \'rtl\';',
   },
   markup: 'button',
   kind: 2,

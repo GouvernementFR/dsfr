@@ -1,0 +1,53 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _header-rtl($is-supported: true) {
+  #{selector.ns('header')} {
+    &__navbar {
+      @include direction.ltr($is-supported) {
+        @include margin-right(0);
+        @include margin-left(auto);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-right(auto);
+        @include margin-left(0);
+      }
+    }
+
+    &__tools {
+      #{selector.ns('header__search')} {
+        @include respond-from(lg) {
+          @include direction.ltr($is-supported) {
+            @include margin-left(auto);
+          }
+
+          @include direction.rtl($is-supported) {
+            @include margin-right(auto);
+          }
+        }
+      }
+    }
+  }
+
+  #{selector.ns-group(btns)} {
+    &:not(#{selector.ns-group(btns)}--sm):not(#{selector.ns-group(btns)}--lg) {
+      @include class-not-start-with(#{selector.ns(btns-group--icon-, '')}) {
+        #{selector.ns(btn)} {
+          @include before() {
+            @include direction.ltr($is-supported) {
+              @include margin-left(-0.5v);
+              @include margin-right(2v);
+            }
+
+            @include direction.rtl($is-supported) {
+              @include margin-right(-0.5v);
+              @include margin-left(2v);
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
