@@ -1,0 +1,23 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _accordion-direction($is-supported: true) {
+  #{selector.ns('accordion')} {
+    &__btn {
+      @include direction.ltr($is-supported) {
+        @include after {
+          @include margin-right(0);
+          @include margin-left(auto);
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include after {
+          @include margin-right(auto);
+          @include margin-left(0);
+        }
+      }
+    }
+  }
+}

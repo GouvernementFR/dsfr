@@ -17,6 +17,10 @@
 @import 'style/module';
 @import 'style/scheme';
 
+// rtl
+@import 'style/direction';
+@include _header-rtl();
+
 // deprecated
 @import 'deprecated/style/module';
 @import 'deprecated/style/scheme';

@@ -1,0 +1,22 @@
+// Selecteur de direction: Right to Left
+@mixin rtl($is-supported: true) {
+  @if $is-supported {
+    [dir=rtl] &,
+    [dir=ltr] [dir=rtl] & {
+      @content;
+    }
+  }
+}
+
+// Selecteur de direction: Left to Right
+@mixin ltr($is-supported: true) {
+  @if $is-supported {
+    &,
+    [dir=ltr] &,
+    [dir=rtl] [dir=ltr] & {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

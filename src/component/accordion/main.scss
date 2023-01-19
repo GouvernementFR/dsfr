@@ -16,5 +16,8 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
+
+@include _accordion-direction(true);
 
 @include _accordion-scheme;

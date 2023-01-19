@@ -9,7 +9,6 @@
   &__navbar {
     @include display-flex(row,flex-end);
     @include padding(1v);
-    @include margin-left(auto);
     order: 3;
     flex: 0 0 auto;
     align-self: flex-start;

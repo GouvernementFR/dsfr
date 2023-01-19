@@ -1,0 +1,35 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _search-direction($is-supported: true) {
+  #{selector.ns('search-bar')} {
+    #{selector.ns('input')} {
+      @include direction.ltr($is-supported) {
+        border-radius: spacing.space(1v) 0 0;
+      }
+
+      @include direction.rtl($is-supported) {
+        border-radius: 0 spacing.space(1v) 0 0;
+      }
+    }
+
+    #{selector.ns('btn')} {
+      @include direction.ltr($is-supported) {
+        border-radius: 0 spacing.space(1v) 0 0;
+        @include before {
+          @include margin-left(0);
+          @include margin-right(2v);
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        border-radius: spacing.space(1v) 0 0;
+        @include before {
+          @include margin-left(2v);
+          @include margin-right(0);
+        }
+      }
+    }
+  }
+}

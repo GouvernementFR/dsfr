@@ -14,7 +14,6 @@
 
   #{ns(input)} {
     @include margin(0);
-    border-radius: spacing.space(1v) 0 0;
     max-height: none;
 
     /* TODO: intégrer la croix en background pour effacer la search bar
@@ -30,7 +29,6 @@
 
   @include nest-btn(md, only, search-line) {
     flex: 1 0 auto;
-    border-radius: 0 spacing.space(1v) 0 0;
   }
 
   &--lg {

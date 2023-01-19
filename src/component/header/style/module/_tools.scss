@@ -21,7 +21,6 @@
     #{ns(header__search)} {
       @include respond-from(lg) {
         @include max-size(100v);
-        @include margin-left(auto);
       }
     }
   }
