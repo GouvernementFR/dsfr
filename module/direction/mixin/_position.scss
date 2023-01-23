@@ -1,0 +1,9 @@
+@use 'module/spacing';
+
+@mixin right ($value) {
+  right: spacing.space($value);
+}
+
+@mixin left ($value) {
+  left: spacing.space($value);
+}

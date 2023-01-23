@@ -39,9 +39,6 @@
   #{ns(nav__link)} {
     @include padding-x(4v);
     @include padding(3v 4v, lg);
-    @include before {
-      left: 0;
-    }
   }
 
   &__leader {
