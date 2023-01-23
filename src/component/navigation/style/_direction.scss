@@ -1,0 +1,55 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/typography';
+
+@mixin _navigation-direction($is-supported: true) {
+
+  #{selector.ns('nav')} {
+    &__link,
+    &__btn {
+      &[aria-current] {
+        @include before('', block) {
+          @include direction.ltr($is-supported) {
+            @include direction.left(-4v);
+          }
+
+          @include direction.rtl($is-supported) {
+            @include direction.right(-4v);
+          }
+        }
+      }
+    }
+  }
+
+  #{selector.ns('mega-menu')} {
+    #{selector.ns('nav__link')} {
+      @include before {
+        @include direction.ltr($is-supported) {
+          @include direction.left(0);
+          @include direction.right(auto);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include direction.left(auto);
+          @include direction.right(0);
+        }
+      }
+    }
+  }
+
+  #{selector.ns('menu')} {
+    #{selector.ns('nav__link')} {
+      @include before {
+        @include direction.ltr($is-supported) {
+          @include direction.left(0);
+          @include direction.right(auto);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include direction.left(auto);
+          @include direction.right(0);
+        }
+      }
+    }
+  }
+}

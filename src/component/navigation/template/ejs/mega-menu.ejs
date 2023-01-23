@@ -25,11 +25,13 @@
 
       <% } %>
 
-      <%
-        let category;
-        for (let j = 0; j < menu.categories.length; j++) {
-          category = menu.categories[j];
-      %>
+      </div>
+      <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row-lg--gutters">
+        <%
+          let category;
+          for (let j = 0; j < menu.categories.length; j++) {
+            category = menu.categories[j];
+        %>
 
       <div class="<%= prefix%>-col-12 <%= prefix%>-col-lg-3">
         <h5 class="<%= prefix %>-mega-menu__category">

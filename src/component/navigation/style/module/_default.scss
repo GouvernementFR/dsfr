@@ -4,7 +4,6 @@
 ////
 
 @use 'module/spacing';
-@use 'module/typography';
 
 #{ns(nav)} {
   @include disable-underline;
@@ -46,7 +45,7 @@
 
           &[aria-current] {
             @include before {
-              @include absolute(auto, null, 0, 0, 100%, 2px);
+              @include absolute(auto, 0, 0, 0, 100%, 2px);
               @include margin-top(0);
             }
           }
@@ -98,7 +97,7 @@
     &[aria-current] {
       position: relative;
       @include before('', block) {
-        @include absolute(50%, null, null, -4v, 2px, 6v);
+        @include absolute(50%, null, null, null, 2px, 6v);
         @include margin-top(-3v);
       }
     }

@@ -1,12 +1,4 @@
-// Text align mixin and RTL support
-@use 'module/selector';
-
-@mixin text-align($value: left, $rtl: true) {
+// Text align mixin
+@mixin text-align($value: left) {
   text-align: $value;
-
-  @if $rtl {
-    @include selector.rtl() {
-      text-align: if($value==left, right, left);
-    }
-  }
 }
