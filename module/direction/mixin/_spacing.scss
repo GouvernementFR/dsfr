@@ -1,0 +1,65 @@
+////
+/// Core Tool : Spacing space
+/// @group core
+////
+
+@use 'module/spacing';
+@use 'module/media-query';
+
+/// Set space property
+///
+/// @param {String} $property ['margin'] - propriété à appliquer à l'espacement `['margin-inline', 'margin-block', 'padding-inline', 'padding-block']`
+/// @param {Number | list} $value [2] - valeur de l'espacement en v ou w. peut être une liste si la direction n'est pas renseignée
+/// @param {String} $direction - direction de l'espacement `['start', 'end']`
+///
+/// @example scss - Set margin-bottom to 24px
+///   .foo {
+///     @include _spacing('margin', 6v, 'bottom');
+///   }
+@mixin _directional-spacing($property: margin, $value: 0, $direction: null) {
+  $v: spacing.space($value);
+  @if $direction != null {
+    #{$property}-#{$direction}: $v;
+  }
+  @else {
+    #{$property}: $v;
+  }
+}
+
+@mixin _spacing-from($property: margin, $value: 0, $direction: null, $from: null) {
+  @include media-query.respond-from($from) {
+    @include _directional-spacing($property, $value, $direction);
+  }
+}
+
+@mixin padding-block-start($value: 0, $from: null) {
+  @include _spacing-from(padding-block, $value, 'start', $from);
+}
+
+@mixin padding-inline-end($value: 0, $from: null) {
+  @include _spacing-from(padding-inline, $value, 'end', $from);
+}
+
+@mixin padding-block-end($value: 0, $from: null) {
+  @include _spacing-from(padding-block, $value, 'end', $from);
+}
+
+@mixin padding-inline-start($value: 0, $from: null) {
+  @include _spacing-from(padding-inline, $value, 'start', $from);
+}
+
+@mixin margin-block-start($value: 0, $from: null) {
+  @include _spacing-from(margin-block, $value, 'start', $from);
+}
+
+@mixin margin-inline-end($value: 0, $from: null) {
+  @include _spacing-from(margin-inline, $value, 'end', $from);
+}
+
+@mixin margin-block-end($value: 0, $from: null) {
+  @include _spacing-from(margin-block, $value, 'end', $from);
+}
+
+@mixin margin-inline-start($value: 0, $from: null) {
+  @include _spacing-from(margin-inline, $value, 'start', $from);
+}
