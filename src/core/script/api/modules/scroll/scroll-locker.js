@@ -27,7 +27,7 @@ class ScrollLocker extends Module {
         if (scrollBarGap > 0) {
           const computedBodyPaddingRight = parseInt(getComputedStyle(document.body).getPropertyValue('padding-right'), 10);
           document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarGap}px`;
-          document.body.style.setProperty('--scrollBarWidth', `${scrollBarGap}px`);
+          document.body.style.setProperty('--scrollbar-width', `${scrollBarGap}px`);
         }
       }
     }
@@ -41,7 +41,7 @@ class ScrollLocker extends Module {
       window.scrollTo(0, this._scrollY);
       if (this.previousBodyPaddingRight !== undefined) {
         document.body.style.paddingRight = this.previousBodyPaddingRight;
-        document.body.style.removeProperty('--scrollBarWidth');
+        document.body.style.removeProperty('--scrollbar-width');
         this.previousBodyPaddingRight = undefined;
       }
     }
