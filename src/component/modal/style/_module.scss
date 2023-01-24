@@ -21,6 +21,7 @@
   @include margin(0);
   @include display-flex(column, stretch, space-between);
   @include fixed(0, 0, 0, 0, 100%, 100%);
+  @include padding-right(var(--scrollbar-width));
   // transition in/out
   transition: opacity 0.3s, visibility 0.3s;
 
