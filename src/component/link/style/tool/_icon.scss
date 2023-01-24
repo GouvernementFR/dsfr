@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/direction';
 
 @mixin _build-link-icon($size-settings, $place, $size:md, $override-icon: true) {
 
@@ -22,8 +23,8 @@
     max-height: none;
     @include before {
       --icon-size: #{$icon-size};
-      margin-left: -($icon-margin);
-      margin-right: $icon-margin-x;
+      @include direction.margin-inline-start(-$icon-margin);
+      @include direction.margin-inline-end($icon-margin-x);
     }
   }
   @else if $place == right {
@@ -32,8 +33,8 @@
     max-height: none;
     @include icon-content(false, $override-icon) {
       --icon-size: #{$icon-size};
-      margin-right: -($icon-margin);
-      margin-left: $icon-margin-x;
+      @include direction.margin-inline-end(-$icon-margin);
+      @include direction.margin-inline-start($icon-margin-x);
     }
   }
   @else if $place == only {
@@ -44,13 +45,13 @@
     white-space: nowrap;
     max-width: $min-height;
     max-height: $min-height;
-    padding-left: $padding-x;
-    padding-right: $padding-x;
+    @include direction.padding-inline-start($padding-x);
+    @include direction.padding-inline-end($padding-x);
 
     @include before {
       --icon-size: #{$icon-size};
-      margin-left: 0;
-      margin-right: $padding-x;
+      @include direction.margin-inline-start(0);
+      @include direction.margin-inline-end($padding-x);
     }
   }
 }
