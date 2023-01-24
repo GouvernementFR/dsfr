@@ -15,10 +15,6 @@
     flex-basis: 100%;
     @include margin-top(6v);
 
-    @include respond-from(md) {
-      @include margin-left(auto);
-    }
-
     @include respond-from(lg) {
       @include margin-top(0);
       flex-basis: calc(100% - (100% / 2));
@@ -46,16 +42,10 @@
     flex-wrap: wrap;
 
     > li {
-      @include margin-right(4v);
-      @include margin-right(6v, sm);
       @include margin-top(2v);
       @include margin-bottom(2v);
 
       @include before(none);
-
-      &:last-child {
-        @include margin-right(0);
-      }
     }
   }
 

@@ -1,0 +1,18 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _breadcrumb-direction($is-supported: true) {
+  #{selector.ns('breadcrumb')} {
+    @include list() {
+      li {
+        @include direction.rtl($is-supported) {
+          display: inline-block;
+          @include before {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
