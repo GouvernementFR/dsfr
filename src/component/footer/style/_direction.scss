@@ -1,0 +1,44 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _footer-direction($is-supported: true) {
+  #{selector.ns(footer)} {
+    &__content {
+      @include respond-from(md) {
+        @include direction.rtl($is-supported) {
+          @include margin-right(auto);
+        }
+
+        @include direction.ltr($is-supported) {
+          @include margin-left(auto);
+        }
+      }
+    }
+
+    &__content-list > li {
+      @include direction.rtl($is-supported) {
+        @include margin-right(4v);
+        @include margin-right(6v, sm);
+
+        &:last-child {
+          @include margin-right(0);
+        }
+      }
+
+      @include direction.ltr($is-supported) {
+        @include margin-left(4v);
+        @include margin-left(6v, sm);
+
+        &:last-child {
+          @include margin-left(0);
+        }
+      }
+    }
+
+    &__bottom-copy a {
+      @include direction.rtl($is-supported) {
+        display: inline-block;
+      }
+    }
+  }
+}
