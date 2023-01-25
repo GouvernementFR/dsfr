@@ -18,7 +18,7 @@
     {
       "label": "DSFR - Accordion",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "url": "http://localhost:8081/example/component/accordion/",
+      "url": "http://localhost:8080/example/component/accordion/",
       "referenceUrl": "",
       "readyEvent": "",
       "readySelector": "",
@@ -31,7 +31,7 @@
       "selectors": [],
       "selectorExpansion": true,
       "expect": 0,
-      "misMatchThreshold" : 0.1,
+      "misMatchThreshold" : 0,
       "requireSameDimensions": true
     }
   ],
