@@ -9,6 +9,7 @@ class ScrollLocker extends Module {
     this.onPopulate = this.lock.bind(this);
     this.onEmpty = this.unlock.bind(this);
     this.previousBodyPaddingRight = undefined;
+    this.previousScrollBehavior = getComputedStyle(document.documentElement).getPropertyValue('scroll-behavior');
   }
 
   get isLocked () {
@@ -21,8 +22,8 @@ class ScrollLocker extends Module {
       this._scrollY = window.scrollY;
       const scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
       document.documentElement.setAttribute(ns.attr('scrolling'), 'false');
-      document.documentElement.style.scrollBehavior = 'auto';
       document.body.style.top = `${this._scrollY * -1}px`;
+      if (this.previousScrollBehavior === 'smooth') document.documentElement.style.scrollBehavior = 'auto';
       if (this.previousBodyPaddingRight === undefined) {
         this.previousBodyPaddingRight = document.body.style.paddingRight;
         if (scrollBarGap > 0) {
@@ -40,7 +41,7 @@ class ScrollLocker extends Module {
       document.documentElement.removeAttribute(ns.attr('scrolling'));
       document.body.style.top = '';
       window.scrollTo(0, this._scrollY);
-      document.documentElement.style.removeProperty('scroll-behavior');
+      if (this.previousScrollBehavior === 'smooth') document.documentElement.style.removeProperty('scroll-behavior');
       if (this.previousBodyPaddingRight !== undefined) {
         document.body.style.paddingRight = this.previousBodyPaddingRight;
         document.body.style.removeProperty('--scrollbar-width');
