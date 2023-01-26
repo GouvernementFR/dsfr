@@ -1,4 +1,4 @@
-export const TrackingEventTypes = {
+export const ActionTypes = {
   EVENT: 'event',
   LINK: 'link',
   BUTTON: 'button',

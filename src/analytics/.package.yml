@@ -1,1 +1,7 @@
 id: analytics
+title: Outils d'analyse
+description:
+detached: true
+draft: true
+script:
+  - core
