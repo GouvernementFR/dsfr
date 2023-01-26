@@ -4,7 +4,7 @@ const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
-const { test } = require('./test/test');
+const { testing } = require('./test/testing');
 const standalone = require('./build/standalone');
 
 /**
@@ -52,7 +52,7 @@ const buildBuilder = (yargs) => {
       describe: 'Compilation des scripts et styles avec sourcemaps',
       type: 'boolean'
     })
-    .option('test', {
+    .option('testing', {
       alias: '-t',
       describe: 'Applique les tests de styles et d‘accessibilité',
       type: 'boolean'
@@ -89,7 +89,7 @@ const buildHandler = async (argv) => {
     sourcemap: argv.sourcemap,
     clean: argv.clean,
     config: argv.config,
-    test: argv.test,
+    testing: argv.testing,
     markdowns: argv.markdowns,
     locale: argv.locale
   };
@@ -121,7 +121,7 @@ const releaseHandler = async (argv) => {
     scripts: true,
     examples: true,
     clean: true,
-    test: true,
+    testing: true,
     minify: true,
     legacy: true,
     sourcemap: true,
@@ -183,7 +183,7 @@ const testHandler = async (argv) => {
     packages: argv.packages || []
   };
 
-  await test(settings);
+  await testing(settings);
 };
 
 /**
@@ -286,7 +286,7 @@ yargs
     deployHandler
   )
   .command(
-    'test',
+    'testing',
     'lint et test pa11y',
     testBuilder,
     testHandler
