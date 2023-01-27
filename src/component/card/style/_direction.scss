@@ -1,0 +1,51 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _card-direction($is-supported: true) {
+  #{selector.ns('card')} {
+    @include has-not-icon {
+      @include direction.rtl($is-supported) {
+        @include before {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    @include before {
+      @include direction.ltr($is-supported) {
+        right: spacing.space(8v);
+        left: auto;
+      }
+
+      @include direction.rtl($is-supported) {
+        left: spacing.space(8v);
+        right: auto;
+      }
+    }
+
+    &__detail {
+      @include before {
+        @include direction.ltr($is-supported) {
+          @include margin-right(2v);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-left(2v);
+          @include margin-right(0);
+        }
+      }
+    }
+
+    &#{ns(enlarge-link)}:not(&--no-icon) &__end {
+      @include direction.ltr($is-supported) {
+        @include padding-right(8v);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include padding-left(8v);
+        @include padding-right(0);
+      }
+    }
+  }
+}

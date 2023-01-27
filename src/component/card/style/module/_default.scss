@@ -21,7 +21,7 @@
   }
 
   @include before {
-    @include absolute(null, 8v, 8v);
+    @include absolute(null, null, 8v);
     @include icon-size(md);
   }
 
