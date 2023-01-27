@@ -64,28 +64,6 @@
   }
 
   /**
-  * fr-btns-group--left : (Défaut) aligne les boutons sur la gauche (en lecture L-t-R)
-  */
-  &--left {
-    &,
-    li {
-      justify-content: flex-start;
-      text-align: left;
-    }
-  }
-
-  /**
-  * fr-btns-group--right : aligne les boutons sur la droite
-  */
-  &--right {
-    &,
-    li {
-      justify-content: flex-end;
-      text-align: right;
-    }
-  }
-
-  /**
   * fr-btns-group--center : aligne les boutons au centre du conteneur
   */
   &--center {

@@ -1,0 +1,51 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _button-direction($is-supported: true) {
+  #{selector.ns('btn')} {
+    &--close {
+      @include direction.ltr($is-supported) {
+        @include margin-left(auto);
+        @include margin-right(-4v);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-left(-4v);
+        @include margin-right(auto);
+      }
+    }
+  }
+
+  #{ns-group(btns)} {
+    &--left,
+    &--start {
+      &,
+      li {
+        justify-content: flex-start;
+        @include direction.ltr($is-supported) {
+          text-align: left;
+        }
+
+        @include direction.rtl($is-supported) {
+          text-align: right;
+        }
+      }
+    }
+
+    &--right,
+    &--end {
+      &,
+      li {
+        justify-content: flex-end;
+        @include direction.ltr($is-supported) {
+          text-align: right;
+        }
+
+        @include direction.rtl($is-supported) {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

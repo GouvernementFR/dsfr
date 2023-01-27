@@ -74,14 +74,10 @@
   #{ns-group(radio)} {
     position: relative;
 
-    &:not(:last-child) input[type="radio"] + label {
-      @include margin-right(12v);
-    }
-
     &:not(:first-child) {
       @include before('','block') {
         @include size(1px, 6v);
-        @include absolute(0, null, null, calc(#{space(-6v)} - 1px));
+        @include absolute(0);
       }
     }
   }
@@ -93,7 +89,6 @@
     @include disable-tint;
     @include link-underline;
     @include after {
-      @include margin-right(-5v);
       transition: transform 0.3s;
     }
 

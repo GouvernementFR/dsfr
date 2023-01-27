@@ -16,7 +16,6 @@
       @include relative;
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
-      @include margin-left(8v);
 
       #{ns(hint-text)} {
         @include margin(0);
@@ -26,7 +25,6 @@
       @include before('', inline-block) {
         @include absolute(0, null, null, -8v);
         @include size(6v, 6v);
-        @include margin-right(2v);
         border-radius: 50%;
         // transition: box-shadow 0.3s;
       }

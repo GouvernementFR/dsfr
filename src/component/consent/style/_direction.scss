@@ -1,0 +1,40 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _consent-direction($is-supported: true) {
+  #{selector.ns('consent-service')} {
+    #{selector.ns('consent-service__collapse-btn')} {
+      @include after {
+        @include direction.margin-inline-end(-5v);
+      }
+    }
+
+    #{ns-group(radio)} {
+      &:not(:last-child) {
+        @include direction.ltr($is-supported) {
+          @include margin-right(12v);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-left(12v);
+          @include margin-right(0);
+        }
+      }
+
+      &:not(:first-child) {
+        @include before {
+          @include direction.ltr($is-supported) {
+            left: spacing.space(calc(-6v - 1px));
+            right: auto;
+          }
+
+          @include direction.rtl($is-supported) {
+            right: spacing.space(calc(-6v - 1px));
+            left: auto;
+          }
+        }
+      }
+    }
+  }
+}
