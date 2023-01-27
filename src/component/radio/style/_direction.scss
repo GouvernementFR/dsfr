@@ -1,0 +1,31 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _radio-direction($is-supported: true) {
+  #{selector.ns('radio-group')} {
+    input[type=radio] + label {
+      @include direction.ltr($is-supported) {
+        @include margin-left(8v);
+
+        @include before {
+          @include margin-right(2v);
+          left: spacing.space(-8v);
+          right: auto;
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-right(8v);
+        @include margin-left(0);
+
+        @include before {
+          @include margin-left(2v);
+          @include margin-right(0);
+          right: spacing.space(-8v);
+          left: auto;
+        }
+      }
+    }
+  }
+}
