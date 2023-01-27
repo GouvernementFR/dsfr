@@ -16,8 +16,10 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
 
 // deprecated
 @import 'deprecated/style/module';
 
+@include _card-direction(true);
 @include _card-scheme;

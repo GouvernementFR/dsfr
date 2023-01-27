@@ -1,0 +1,19 @@
+////
+/// Callout Direction
+/// @group callout
+////
+
+@use 'module/color';
+@use 'module/direction';
+
+@mixin _callout-direction($is-supported: true) {
+
+  #{ns(callout)} {
+    @include direction.ltr($is-supported) {
+      background-position: 0 0;
+    }
+    @include direction.rtl($is-supported) {
+      background-position: 100% 0;
+    }
+  }
+}
