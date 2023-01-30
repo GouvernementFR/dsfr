@@ -18,6 +18,8 @@
 
 * card.variations (array, optional): variations ésthétiques de la carte (valeurs: accent, no-border, no-background, shadow
 
+* card.download (boolean, optional): Si true, carte de téléchargement
+
 * card.classes (array, optional): Classes suplémentaires sur le composant
 
 %>
@@ -82,6 +84,10 @@ if (card.variations) for (const variation of card.variations) switch(variation) 
 
   case 'shadow':
     classes.push(`${prefix}-card--shadow`);
+    break;
+
+  case 'download':
+    classes.push(`${prefix}-card--download`);
     break;
 }
 

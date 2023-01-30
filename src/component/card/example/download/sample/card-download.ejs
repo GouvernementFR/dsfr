@@ -1,0 +1,19 @@
+<%
+
+const card = locals.card || {}
+const data = {
+  variations: ['download'],
+  img: imgData('img/placeholder.3x4.png', 'unknown'),
+  title: "Télécharger le/la [Typologie de document] « [Nom du document] »",
+  href: '/example/img/placeholder.3x4.png',
+  content: {
+    description: "Texte de description (facultatif)",
+    details: ['download'],
+    downloadable: true,
+  },
+  ...card
+} %>
+
+<%- include('../../sample/card-default', {card: data}) %>
+
+

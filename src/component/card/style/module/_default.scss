@@ -6,7 +6,7 @@
 #{ns(card)} {
   @include display-flex(column);
   @include relative();
-  @include icon(arrow-right-line);
+  @include icon(arrow-right-line, md, before);
 
   &:not(&--no-border):not(&--shadow) {
     background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
@@ -21,7 +21,7 @@
   }
 
   @include before {
-    @include absolute(null, null, 8v);
+    @include absolute(null, 8v, 8v);
     @include icon-size(md);
   }
 

@@ -32,10 +32,23 @@
 <% eval(include('../../../../core/index.ejs')); %>
 <%
 const link = locals.link || {};
+const content = link.content || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
 
+let label = link.label || 'lorem ipsum';
+
 const markup = link.markup || 'a';
+
+if (content.assess === true) {
+    linkAttrs[`data-${prefix}-assess-file`] = ''
+} else if (typeof(content.assess) === 'string') {
+    linkAttrs[`data-${prefix}-assess-file`] = content.assess
+}
+if (content.hreflang) linkAttrs.hreflang = content.hreflang;
+
+if (content.downloadable === true) linkAttrs.download = '';
+else if (content.downloadable === false) linkAttrs.target = '_blank';
 
 linkClasses.push(prefix + '-link');
 
@@ -46,6 +59,12 @@ switch (link.size) {
 
     case 'lg':
         linkClasses.push(prefix + '-link--lg');
+        break;
+}
+
+if (link.variations) for (const variation of link.variations) switch(variation) {
+    case 'download':
+        linkClasses.push(prefix + '-link--download');
         break;
 }
 
@@ -94,8 +113,12 @@ if (link.disabled === true) {
     }
 }
 
+if (link.detail) {
+    label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+}
+
 %>
 
 <<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
-<%- link.label %>
+<%- label %>
 </<%= markup %>>

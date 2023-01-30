@@ -22,6 +22,10 @@ import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
 import { Artwork } from './script/artwork/artwork';
 import { ArtworkSelector } from './script/artwork/artwork-selector';
+import { AssessSelector } from './script/assess/assess-selector';
+import { AssessFile } from './script/assess/assess-file';
+import { AssessDetail } from './script/assess/assess-detail';
+import { AssessEmission } from './script/assess/assess-emission';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
 
@@ -48,6 +52,10 @@ api.core = {
   InjectSvgSelector: InjectSvgSelector,
   Artwork: Artwork,
   ArtworkSelector: ArtworkSelector,
+  AssessFile: AssessFile,
+  AssessDetail: AssessDetail,
+  AssessEmission: AssessEmission,
+  AssessSelector: AssessSelector,
   Ratio: Ratio,
   RatioSelector: RatioSelector
 };

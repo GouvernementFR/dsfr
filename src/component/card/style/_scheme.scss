@@ -34,12 +34,18 @@
       @include color.text(action-high blue-france, (legacy:$legacy));
     }
 
+    &--download:not(#{ns(card--no-background)}) {
+      #{ns(card__header)} {
+        @include color.background(alt grey, (legacy:$legacy));
+      }
+    }
+
     &__detail {
       @include color.text(mention grey, (legacy:$legacy));
     }
 
     &__title {
-      @include color.text(title grey, (legacy:$legacy));
+      @include color.text(title blue-france, (legacy:$legacy));
     }
   }
 }

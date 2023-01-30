@@ -1,0 +1,7 @@
+title: Case à cocher
+description: La case à cocher permet à l’utilisateur de sélectionner une ou plusieurs options dans une liste. Elle est utilisée pour effectuer des sélections multiples (de 0 à N éléments), ou bien pour permettre un choix binaire, lorsque l’utilisateur peut sélectionner ou désélectionner une seule option.
+subdir:
+  title: Autres versions
+  download: lien de téléchargement
+  back-to-top: lien de retour en haut de page
+
