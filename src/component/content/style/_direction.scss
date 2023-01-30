@@ -1,0 +1,19 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _content-direction($is-supported: true) {
+  #{selector.ns('content-media')} {
+    &__caption {
+      #{selector.ns('link')} {
+        @include direction.ltr($is-supported) {
+          @include margin-right(auto);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-left(auto);
+          @include margin-right(0);
+        }
+      }
+    }
+  }
+}

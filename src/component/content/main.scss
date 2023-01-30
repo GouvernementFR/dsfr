@@ -16,11 +16,13 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
 
 // deprecated
 @import 'deprecated/style/module';
 @import 'deprecated/style/scheme';
 
+@include _content-direction(true);
 @include _content-scheme;
 
 // deprecated
