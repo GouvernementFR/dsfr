@@ -1,0 +1,91 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _follow-direction($is-supported: true) {
+  #{selector.ns('follow__newsletter')} {
+    #{ns(input-wrap)} {
+      @include respond-from(sm) {
+        #{ns(btn)} {
+          @include direction.ltr($is-supported) {
+            border-radius: 0 #{spacing.space(1v)} 0 0;
+          }
+
+          @include direction.rtl($is-supported) {
+            border-radius: #{spacing.space(1v)} 0 0 0;
+          }
+        }
+
+        #{ns(input)} {
+          @include direction.ltr($is-supported) {
+            border-radius: #{spacing.space(1v)} 0 0 0;
+          }
+
+          @include direction.rtl($is-supported) {
+            border-radius: 0 #{spacing.space(1v)} 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  #{ns(grid-row)} {
+    > *:not(:first-child) {
+      @include direction.ltr($is-supported) {
+        @include respond-from(md) {
+          @include padding-left(calc(100% / 12));
+          background-position: 0 0;
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include respond-from(md) {
+          @include padding-right(calc(100% / 12));
+          @include padding-left(0);
+          background-position: 100% 0;
+        }
+      }
+    }
+
+    > *:not(:last-child) {
+      @include direction.ltr($is-supported) {
+        @include padding-right(calc(100% / 12), md);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include padding-left(calc(100% / 12), md);
+        @include padding-right(0, md);
+      }
+    }
+
+    > *:first-child:last-child {
+      > #{ns(follow)}__newsletter {
+        @include respond-from(md) {
+          & > :first-child {
+            @include direction.ltr($is-supported) {
+              @include padding-right(3v);
+              @include padding-left(0);
+            }
+
+            @include direction.ltr($is-supported) {
+              @include padding-right(0);
+              @include padding-left(3v);
+            }
+          }
+
+          & > :last-child {
+            @include direction.ltr($is-supported) {
+              @include padding-right(0);
+              @include padding-left(3v);
+            }
+
+            @include direction.ltr($is-supported) {
+              @include padding-right(3v);
+              @include padding-left(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

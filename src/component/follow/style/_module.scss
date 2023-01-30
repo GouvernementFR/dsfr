@@ -37,13 +37,8 @@
       @include respond-from(sm) {
         flex-direction: row;
 
-        #{ns(btn)} {
-          border-radius: 0 #{spacing.space(1v)} 0 0;
-        }
-
         #{ns(input)} {
           @include margin-bottom(0);
-          border-radius: #{spacing.space(1v)} 0 0 0;
         }
       }
     }
@@ -97,15 +92,10 @@
 
     > *:not(:first-child) {
       // Séparateur en box-shadow dans schemes
-      @include padding-left(calc(100% / 12), md);
       @include margin-top(6v);
       @include padding-top(6v);
       @include padding-top(0, md);
       @include margin-top(0, md);
-    }
-
-    > *:not(:last-child) {
-      @include padding-right(calc(100% / 12), md);
     }
 
     > *:first-child:last-child {
@@ -124,16 +114,6 @@
             @include padding-right(3v);
             @include padding-left(3v);
           }
-
-          & > :first-child {
-            @include padding-right(3v);
-            @include padding-left(0);
-          }
-
-          & > :last-child {
-            @include padding-right(0);
-            @include padding-left(3v);
-          }
         }
       }
 
@@ -141,6 +121,16 @@
         // code spécifique à social seul
         @include set-title-margin(0, md);
       }
+    }
+  }
+
+  #{ns(grid-row)} > *:not(:first-child) {
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: 0 0;
+
+    @include respond-from(md) {
+      background-size: 1px 100%;
     }
   }
 
