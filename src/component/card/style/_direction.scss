@@ -7,7 +7,7 @@
     @include has-not-icon {
       @include direction.rtl($is-supported) {
         @include before {
-          transform: rotate(180deg);
+          transform: rotateY(180deg);
         }
       }
     }
