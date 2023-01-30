@@ -30,11 +30,7 @@
     }
 
     #{ns(grid-row)} > *:not(:first-child) {
-      // Séparateur en box-shadow
-      @include color.box-shadow(default blue-france, (legacy: $legacy), top-1-out);
-      @include respond-from(md) {
-        @include color.box-shadow(default blue-france, (legacy: $legacy), left-1-out);
-      }
+      @include color.background-image(border default blue-france, (legacy: $legacy));
     }
   }
 }

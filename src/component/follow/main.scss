@@ -16,12 +16,14 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
 
 // deprecated
 @import 'deprecated/style/tool';
 @import 'deprecated/style/module';
 @import 'deprecated/style/scheme';
 
+@include _follow-direction(true);
 @include _follow-scheme;
 
 // deprecated
