@@ -24,9 +24,7 @@
     @include size(100%);
     @include margin-top(3v);
     @include text-style(xs);
-    @include nest-link(xs, null) {
-      @include margin-right(auto);
-    }
+    @include nest-link(xs, null);
   }
 
   #{ns(transcription)} {
