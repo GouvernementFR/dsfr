@@ -16,7 +16,9 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
 
+@include _form-direction(true);
 @include _form-scheme;
 
 // deprecated

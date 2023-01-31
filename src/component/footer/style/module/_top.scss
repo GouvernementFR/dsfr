@@ -25,7 +25,6 @@
     @include text-style(xs);
     display: block;
     font-weight: font-weight(bold);
-    @include typography.text-align;
   }
 
   /**

@@ -36,7 +36,7 @@
     text-align: center;
 
     @include respond-from(sm) {
-      text-align: left;
+      text-align: inherit;
     }
   }
 
@@ -49,7 +49,6 @@
 
     @include respond-from(sm) {
       @include display-flex(row, flex-start, flex-start);
-      @include margin-right(-2v);
       @include before('', block) {
         order: 2;
         flex: 1;
@@ -57,7 +56,6 @@
     }
 
     @include respond-from(md) {
-      @include margin-right(-4v);
       flex-wrap: nowrap;
     }
   }
@@ -81,7 +79,6 @@
         & > ul {
           justify-content: flex-end;
         }
-        @include padding-left(4v);
         @include padding-top(0);
       }
     }

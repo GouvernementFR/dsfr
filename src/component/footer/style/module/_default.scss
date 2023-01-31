@@ -35,22 +35,11 @@
       @include display-flex;
     }
 
-    /**
-     * Si on ajoute un logo opérateur à côté du logo principal, on lui applique une marge à gauche
-     * On prévoit que le logo soit encapsulé dans un <a>, ou bien directement en img ou en svg
-     * (Eventuellement prévoir une classe pour pouvoir le mettre en background image)
-     */
-    #{ns(logo)} + #{ns(footer__brand-link)} {
-      @include margin-left(6v);
-      @include margin-left(12v, md);
-    }
-
     @include respond-from(md) {
       flex-basis: auto;
-      @include margin-right(4v);
 
       &#{ns(enlarge-link)} {
-        @include margin(-4v 0 -4v -4v);
+        @include margin-y(-4v -4v);
         @include padding(4v);
         align-self: flex-start;
       }

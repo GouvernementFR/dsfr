@@ -1,0 +1,38 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _form-direction($is-supported: true) {
+  #{selector.ns('message')} {
+    &--error,
+    &--valid,
+    &--info {
+      @include before {
+        @include direction.ltr($is-supported) {
+          @include margin-right(1v);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-left(1v);
+          @include margin-right(0);
+        }
+      }
+    }
+  }
+
+  #{selector.ns('fieldset')} {
+    &--valid,
+    &--valid &__legend,
+    &--error,
+    &--error &__legend,
+    &--info,
+    &--info &__legend {
+      @include direction.ltr($is-supported) {
+        background-position: 0 0;
+      }
+
+      @include direction.rtl($is-supported) {
+        background-position: 100% 0;
+      }
+    }
+  }
+}

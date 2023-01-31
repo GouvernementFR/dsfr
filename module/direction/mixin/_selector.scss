@@ -16,7 +16,8 @@
     [dir=rtl] [dir=ltr] & {
       @content;
     }
-  } @else {
+  }
+  @else {
     @content;
   }
 }

@@ -25,12 +25,12 @@
       &:not(:first-child) {
         @include before {
           @include direction.ltr($is-supported) {
-            left: spacing.space(calc(-6v - 1px));
+            left: spacing.space('calc(-6v - 1px)');
             right: auto;
           }
 
           @include direction.rtl($is-supported) {
-            right: spacing.space(calc(-6v - 1px));
+            right: spacing.space('calc(-6v - 1px)');
             left: auto;
           }
         }
