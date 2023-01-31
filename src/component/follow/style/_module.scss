@@ -96,6 +96,13 @@
       @include padding-top(6v);
       @include padding-top(0, md);
       @include margin-top(0, md);
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+      background-position: 0 0;
+
+      @include respond-from(md) {
+        background-size: 1px 100%;
+      }
     }
 
     > *:first-child:last-child {
@@ -121,16 +128,6 @@
         // code spécifique à social seul
         @include set-title-margin(0, md);
       }
-    }
-  }
-
-  #{ns(grid-row)} > *:not(:first-child) {
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
-    background-position: 0 0;
-
-    @include respond-from(md) {
-      background-size: 1px 100%;
     }
   }
 

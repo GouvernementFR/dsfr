@@ -1,0 +1,72 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _checkbox-direction($is-supported: true) {
+  #{selector.ns('checkbox-group')} {
+    input[type="checkbox"] {
+      + label {
+        @include direction.ltr($is-supported) {
+          @include margin-left(8v);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-right(8v);
+          @include margin-left(0);
+        }
+
+        @include before {
+          @include direction.ltr($is-supported) {
+            left: spacing.space(-8v);
+            right: auto;
+            @include margin-right(2v);
+          }
+
+          @include direction.rtl($is-supported) {
+            @include margin-left(2v);
+            right: spacing.space(-8v);
+            left: auto;
+            @include margin-right(0);
+          }
+        }
+      }
+    }
+
+    &--sm {
+      input[type="checkbox"] {
+        + label {
+          @include direction.ltr($is-supported) {
+            @include margin-left(6v);
+            @include before {
+              left: spacing.space(-6v);
+              right: auto;
+            }
+          }
+
+          @include direction.rtl($is-supported) {
+            @include margin-right(6v);
+            @include margin-left(0);
+            @include before {
+              right: spacing.space(-6v);
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+
+    &--error,
+    &--valid {
+      @include before {
+        @include direction.ltr($is-supported) {
+          left: spacing.space(-3v);
+        }
+
+        @include direction.rtl($is-supported) {
+          right: spacing.space(-3v);
+          left: auto;
+        }
+      }
+    }
+  }
+}

@@ -29,16 +29,14 @@
 
   &__bottom-item {
     @include relative;
-    @include margin(2v 0 0 1v);
-    @include margin(2v 0 0 3v, md);
+    @include margin-top(2v);
+    @include margin-top(2v, md);
     display: inline;
 
     @include before('', inline-block) {
       vertical-align: middle;
       @include relative;
       @include size(1px, 4v);
-      @include margin-right(1v);
-      @include margin-right(3v, md);
       @include margin-bottom(2v);
       @include margin-bottom(1v, md);
       @include margin-top(2v);
@@ -46,7 +44,7 @@
     }
 
     &:first-child {
-      @include margin(2v 0 0);
+      @include margin-top(2v);
       @include before(none);
     }
   }

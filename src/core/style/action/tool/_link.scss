@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/direction';
+
 $underline-thickness: 0.0625em;
 
 @mixin a-reset ($minimal: false) {
@@ -64,7 +66,7 @@ $underline-thickness: 0.0625em;
   @include icon-size(sm, after);
   @include icon-image(external-link-line, after);
   @include after(var(--external-link-content)) {
-    @include margin-left(1v);
+    @include direction.margin-inline-start(1v);
   }
 }
 

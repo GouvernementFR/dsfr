@@ -5,18 +5,19 @@
   #{selector.ns(footer)} {
     &__content {
       @include respond-from(md) {
-        @include direction.rtl($is-supported) {
-          @include margin-right(auto);
-        }
-
         @include direction.ltr($is-supported) {
           @include margin-left(auto);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-right(auto);
+          @include margin-left(0);
         }
       }
     }
 
     &__content-list > li {
-      @include direction.rtl($is-supported) {
+      @include direction.ltr($is-supported) {
         @include margin-right(4v);
         @include margin-right(6v, sm);
 
@@ -25,12 +26,117 @@
         }
       }
 
-      @include direction.ltr($is-supported) {
+      @include direction.rtl($is-supported) {
         @include margin-left(4v);
+        @include margin-right(0);
+        @include margin-right(0, sm);
         @include margin-left(6v, sm);
 
         &:last-child {
           @include margin-left(0);
+        }
+      }
+    }
+
+    &__brand {
+      @include direction.ltr($is-supported) {
+        @include respond-from(md) {
+          @include margin-right(4v);
+
+          &#{ns(enlarge-link)} {
+            @include margin-x(0 -4v);
+          }
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include respond-from(md) {
+          @include margin-left(4v);
+          @include margin-right(0);
+
+          &#{ns(enlarge-link)} {
+            @include margin-x(-4v 0);
+          }
+        }
+      }
+
+      #{ns(logo)} + #{ns(footer__brand-link)} {
+        @include direction.ltr($is-supported) {
+          @include margin-left(6v);
+          @include margin-left(12v, md);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-left(0);
+          @include margin-left(0, md);
+          @include margin-right(6v);
+          @include margin-right(12v, md);
+        }
+      }
+    }
+
+    &__bottom-item {
+      @include direction.ltr($is-supported) {
+        @include margin-left(1v);
+        @include margin-left(3v, md);
+
+        &:first-child {
+          @include margin-left(0);
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-left(0);
+        @include margin-left(0, md);
+        @include margin-right(1v);
+        @include margin-right(3v, md);
+        display: inline-block;
+
+        &:first-child {
+          @include margin-right(0);
+        }
+      }
+
+      @include before {
+        @include direction.ltr($is-supported) {
+          @include margin-right(1v);
+          @include margin-right(3v, md);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-right(0);
+          @include margin-right(0, md);
+          @include margin-left(1v);
+          @include margin-left(3v, md);
+        }
+      }
+    }
+
+    &__partners-logos {
+      @include direction.ltr($is-supported) {
+        @include margin-right(-2v, sm);
+        @include margin-right(-4v, md);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-right(0, sm);
+        @include margin-right(0, md);
+        @include margin-left(-2v, sm);
+        @include margin-left(-4v, md);
+      }
+    }
+
+    &__partners-main {
+      + #{ns(footer__partners-sub)} {
+        & > ul > li {
+          @include direction.ltr($is-supported) {
+            @include padding-left(4v, md);
+          }
+
+          @include direction.rtl($is-supported) {
+            @include padding-left(0, md);
+            @include padding-right(4v, md);
+          }
         }
       }
     }

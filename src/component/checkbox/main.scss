@@ -16,7 +16,9 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
 
+@include _checkbox-direction(true);
 @include _checkbox-scheme;
 
 // deprecated
