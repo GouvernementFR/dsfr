@@ -25,8 +25,7 @@ class HeaderLinks extends api.core.Instance {
       case api.Modes.REACT:
       case api.Modes.VUE:
         api.inspector.warn(`header__tools-links content is different from header__menu-links content.
-As you're using a dynamic framework, you should handle duplication of this content yourself, please refer to documentation:
-${api.header.doc}`);
+As you're using a dynamic framework, you should handle duplication of this content yourself, please refer to documentation.`);
         break;
 
       default:
