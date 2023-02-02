@@ -21,9 +21,20 @@
       analytics: {
         domain: 'gva.et-gv.fr',
         // preventAutomaticPageTracking: true, // disable automatic path tracking
-        uid: 'user_id', // user id
-        profile: 'visitor', // user profile
-        newcustomer: '1', // user is new
+        user: {
+          uid: 'XXX', // user id
+          email: 'email@domain.com', // encoded user email
+          profile: 'visitor', // user profile
+          newCustomer: '1', // user just regitered
+          loginStatus: '',
+          language: '',
+          type: '',
+
+        },
+        site: {
+
+        }
+
         // path: 'path', // path for page tracking
         // labels: ['label1', 'label2', 'label3', 'label4', 'label5'],
         // group: 'group', // page group for page tracking
