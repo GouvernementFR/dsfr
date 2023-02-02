@@ -1,0 +1,5 @@
+class Binding {
+  constructor (node) {
+
+  }
+}
