@@ -27,7 +27,6 @@ class Placement extends Instance {
   get proxy () {
     const scope = this;
     const proxy = Object.assign(super.proxy, {
-      update: scope.update.bind(scope),
       show: scope.show.bind(scope),
       hide: scope.hide.bind(scope)
     });
