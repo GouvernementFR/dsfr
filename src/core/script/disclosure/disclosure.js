@@ -11,7 +11,7 @@ class Disclosure extends Instance {
     this.DisclosureButtonInstanceClass = DisclosureButtonInstanceClass;
     this.disclosuresGroupInstanceClassName = disclosuresGroupInstanceClassName;
     this.modifier = this._selector + '--' + this.type.id;
-    this.pristine = true;
+    this.isPristine = true;
   }
 
   static get instanceClassName () {
@@ -77,32 +77,32 @@ class Disclosure extends Instance {
   }
 
   disclose (withhold) {
-    if (this.disclosed) return false;
-    this.pristine = false;
-    this.disclosed = true;
+    if (this.isDisclosed) return false;
+    this.isPristine = false;
+    this.isDisclosed = true;
     if (!withhold && this.group) this.group.current = this;
     return true;
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.disclosed) return false;
+    if (!this.isDisclosed) return false;
     if (!this.type.canConceal && this.group && this.group.current === this) return false;
-    this.pristine = false;
-    this.disclosed = false;
+    this.isPristine = false;
+    this.isDisclosed = false;
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
     if (!preventFocus) this.focus();
     this.descend(DisclosureEmission.RESET);
     return true;
   }
 
-  get disclosed () {
-    return this._disclosed;
+  get isDisclosed () {
+    return this._isDisclosed;
   }
 
-  set disclosed (value) {
-    if (this._disclosed === value) return;
+  set isDisclosed (value) {
+    if (this._isDisclosed === value) return;
     this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this.type);
-    this._disclosed = value;
+    this._isDisclosed = value;
     if (value) this.addClass(this.modifier);
     else this.removeClass(this.modifier);
     for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
@@ -115,7 +115,7 @@ class Disclosure extends Instance {
     else {
       switch (true) {
         case !isPrimary:
-        case this.disclosed:
+        case this.isDisclosed:
           this.conceal();
           break;
 

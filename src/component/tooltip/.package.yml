@@ -1,0 +1,15 @@
+id: tooltip
+title: Information contextuelle et Infobulle
+description:
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/information-contextuelle
+wrapper: col-8
+style:
+  - core
+script:
+  - core
+example:
+  style:
+    - button
+    - share
+    - input
+    - table

@@ -5,6 +5,7 @@ import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
+import { completeAssign } from '../../utilities/property/complete-assign';
 
 class Instance {
   constructor (jsAttribute = true) {
@@ -14,6 +15,7 @@ class Instance {
     this._isScrollLocked = false;
     this._isLoading = false;
     this._isSwappingFont = false;
+    this._isEnabled = true;
     this._listeners = {};
     this._keyListenerTypes = [];
     this._keys = [];
@@ -42,10 +44,21 @@ class Instance {
 
   get proxy () {
     const scope = this;
-    return {
+    const proxy = {
       render: () => scope.render(),
       resize: () => scope.resize()
     };
+
+    const proxyAccessors = {
+      get isEnabled () {
+        return scope.isEnabled;
+      },
+      set isEnabled (value) {
+        scope.isEnabled = value;
+      }
+    };
+
+    return completeAssign(proxy, proxyAccessors);
   }
 
   register (selector, InstanceClass) {
@@ -104,6 +117,12 @@ class Instance {
 
   handleKey (e) {
     for (const key of this._keys) key.handle(e);
+  }
+
+  get isEnabled () { return this._isEnabled; }
+
+  set isEnabled (value) {
+    this._isEnabled = value;
   }
 
   get isRendering () { return this._isRendering; }
@@ -365,7 +384,10 @@ class Instance {
   }
 
   getRect () {
-    return this.node.getBoundingClientRect();
+    const rect = this.node.getBoundingClientRect();
+    rect.center = rect.left + rect.width * 0.5;
+    rect.middle = rect.top + rect.height * 0.5;
+    return rect;
   }
 
   get isLegacy () {

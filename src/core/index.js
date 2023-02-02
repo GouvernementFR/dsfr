@@ -24,6 +24,11 @@ import { Artwork } from './script/artwork/artwork';
 import { ArtworkSelector } from './script/artwork/artwork-selector';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
+import { Placement } from './script/placement/placement.js';
+import { PlacementReferent } from './script/placement/placement-referent';
+import { PlacementAlign } from './script/placement/placement-align';
+import { PlacementPosition } from './script/placement/placement-position';
+import { PlacementMode } from './script/placement/placement-mode';
 
 api.core = {
   Instance: Instance,
@@ -49,7 +54,12 @@ api.core = {
   Artwork: Artwork,
   ArtworkSelector: ArtworkSelector,
   Ratio: Ratio,
-  RatioSelector: RatioSelector
+  RatioSelector: RatioSelector,
+  Placement: Placement,
+  PlacementReferent: PlacementReferent,
+  PlacementAlign: PlacementAlign,
+  PlacementPosition: PlacementPosition,
+  PlacementMode: PlacementMode
 };
 
 export default api;
