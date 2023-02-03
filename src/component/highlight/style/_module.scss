@@ -3,9 +3,11 @@
 /// @group Highlight
 ////
 
-#{ns(highlight)} {
-  @include padding-left(6v);
+@use 'module/selector';
+@use 'module/spacing';
+
+#{selector.ns('highlight')} {
   @include text-style(md);
-  @include padding-left(8v, md);
-  @include margin-left(8v, md);
+  background-size: spacing.space(1v) 100%;
+  background-repeat: no-repeat;
 }
