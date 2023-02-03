@@ -17,4 +17,7 @@
 @import 'style/module';
 @import 'style/scheme';
 
+// deprecated
+@import 'deprecated/style/module';
+
 @include _modal-scheme;

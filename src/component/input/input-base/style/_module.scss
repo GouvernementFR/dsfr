@@ -52,7 +52,7 @@
 
   @include has-icon {
     @include icon-size(sm, before) {
-      @include absolute(3v, 3v, 3v);
+      @include absolute(3v, null, 3v);
       @include margin(auto);
       pointer-events: none;
     }
@@ -61,26 +61,6 @@
   &--addon {
     @include display-flex;
     @include size(100%);
-  }
-
-  #{ns(input)} {
-    @include padding-right(10v);
-  }
-
-  > *:first-child:not(:last-child) {
-    &#{ns(input)} {
-      @include padding-right(4v);
-    }
-
-    @include respond-from(md) {
-      border-radius: spacing.space(1v 0 0 0);
-    }
-  }
-
-  > *:last-child:not(:first-child) {
-    @include respond-from(md) {
-      border-radius: spacing.space(0 1v 0 0);
-    }
   }
 
   + #{ns(hint-text)} {

@@ -1,0 +1,14 @@
+////
+/// modal Deprecated Module
+/// @group modal
+////
+
+@use 'module/selector';
+
+#{selector.ns('modal')} {
+  &__title {
+    @include has-icon {
+      @include margin-right(2v);
+    }
+  }
+}
