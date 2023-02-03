@@ -5,10 +5,12 @@
 
 @if (map-get($reset-settings, body)) {
   body {
+    --scrollbar-width: 0;
     @include font-family;
     @include text-adjustments;
     @include margin(0);
     @include padding(0);
     @include text-style(md);
+    border-right: var(--scrollbar-width) solid transparent;
   }
 }
