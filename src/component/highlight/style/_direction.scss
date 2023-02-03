@@ -1,0 +1,22 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _highlight-direction($is-supported: true) {
+  #{selector.ns('highlight')} {
+    @include direction.ltr($is-supported) {
+      background-position: 0 0;
+      @include padding-left(6v);
+      @include padding-left(8v, md);
+      @include margin-left(8v, md);
+    }
+
+    @include direction.rtl($is-supported) {
+      background-position: 100% 0;
+      @include padding-left(0);
+      @include margin-left(0);
+      @include padding-right(6v);
+      @include padding-right(8v, md);
+      @include margin-right(8v, md);
+    }
+  }
+}
