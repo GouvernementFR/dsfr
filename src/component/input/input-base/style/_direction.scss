@@ -1,0 +1,67 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _input-direction($is-supported: true) {
+  #{selector.ns('input-wrap')} {
+    @include has-icon {
+      @include before {
+        @include direction.ltr($is-supported) {
+          right: spacing.space(3v);
+        }
+
+
+        @include direction.rtl($is-supported) {
+          left: spacing.space(3v);
+          right: auto;
+        }
+      }
+    }
+
+    #{selector.ns('input')} {
+      @include direction.ltr($is-supported) {
+        @include padding-right(10v);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include padding-left(10v);
+        @include padding-right(4v);
+      }
+    }
+
+    >*:first-child:not(:last-child) {
+      &#{ns(input)} {
+        @include direction.ltr($is-supported) {
+          @include padding-right(4v);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include padding-right(4);
+          @include padding-left(4v);
+        }
+      }
+
+      @include respond-from(md) {
+        @include direction.ltr($is-supported) {
+          border-radius: spacing.space(1v 0 0 0);
+        }
+
+        @include direction.rtl($is-supported) {
+          border-radius: spacing.space(0 1v 0 0);
+        }
+      }
+    }
+
+    >*:last-child:not(:first-child) {
+      @include respond-from(md) {
+        @include direction.ltr($is-supported) {
+          border-radius: spacing.space(0 1v 0 0);
+        }
+
+        @include direction.rtl($is-supported) {
+          border-radius: spacing.space(1v 0 0 0);
+        }
+      }
+    }
+  }
+}
