@@ -9,20 +9,16 @@
 
   #{ns-attr(capslock)} {
     @include before('', block) {
-      @include absolute(3v, 3v, null, null, 4v, 4v);
+      @include absolute(3v, null, null, null, 4v, 4v);
       pointer-events: none;
     }
   }
 
   &__checkbox {
-    @include absolute(0, 0);
+    @include absolute(0);
   }
 
   &__input {
     @include margin-bottom(3v);
-  }
-
-  &__label {
-    @include padding-right(24v);
   }
 }

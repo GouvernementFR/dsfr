@@ -1,0 +1,31 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _notice-direction($is-supported: true) {
+  #{selector.ns('notice')} {
+    &__body {
+      @include before {
+        @include direction.ltr($is-supported) {
+          left: 0;
+        }
+
+        @include direction.rtl($is-supported) {
+          right: 0;
+          left: auto;
+        }
+      }
+    }
+
+    #{ns(btn--close)} {
+      @include direction.ltr($is-supported) {
+        right: spacing.space(4v);
+      }
+
+      @include direction.rtl($is-supported) {
+        left: spacing.space(4v);
+        right: 0;
+      }
+    }
+  }
+}

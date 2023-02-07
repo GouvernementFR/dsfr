@@ -15,7 +15,7 @@
 
     @include icon-size(md, before);
     @include icon-style(before) {
-      @include absolute(null, null, null, 0);
+      @include absolute;
     }
   }
 
@@ -27,7 +27,7 @@
 
   #{ns(btn--close)} {
     @include nest-btn(sm, only, close-line, null, false);
-    @include absolute(-1v, 4v);
+    @include absolute(-1v);
   }
 
   &--info {
