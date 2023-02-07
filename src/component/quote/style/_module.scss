@@ -13,11 +13,9 @@
 
   background-size: 50% 1px;
   background-repeat: no-repeat;
-  background-position: spacing.space(2v 100%);
 
   @include respond-from(md) {
     background-size: 1px 100%;
-    background-position: 0 0;
   }
 
   @include icon(quote-line,lg) {
@@ -27,20 +25,9 @@
 
   &--column {
     @include display-flex(column, flex-start, center);
-    @include margin-left(52v, md);
 
     @include respond-from(md) {
       @include min-height(52v);
-    }
-
-    #{ns(quote__author)} {
-      @include margin-left(21v);
-      @include margin-left(0, md);
-    }
-
-    #{ns(quote__source)} {
-      @include margin-left(21v);
-      @include margin-left(0, md);
     }
 
     figcaption {
@@ -89,7 +76,7 @@
     }
 
     @include respond-from(md) {
-      @include absolute(50%,null,null,-52v,46v,46v);
+      @include absolute(50%,null,null,null,46v,46v);
       @include margin-top(-23v);
     }
   }

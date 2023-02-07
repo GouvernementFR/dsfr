@@ -1,0 +1,78 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _quote-direction($is-supported: true) {
+  #{selector.ns('quote')} {
+    @include direction.ltr($is-supported) {
+      @include padding-left(8v, md);
+      @include padding-right(0, md);
+      background-position: spacing.space(2v 100%);
+
+      @include respond-from(md) {
+        background-position: 0 0;
+      }
+    }
+
+    @include direction.rtl($is-supported) {
+      @include padding-right(8v, md);
+      @include padding-left(0, md);
+      background-position: spacing.space('calc(100% - 2v) 100%');
+
+      @include respond-from(md) {
+        background-position: 100% 0;
+      }
+    }
+
+    &--column {
+      @include direction.ltr($is-supported) {
+        @include margin-left(52v, md);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-right(52v, md);
+        @include margin-left(0, md);
+
+      }
+
+      #{ns(quote__author)} {
+        @include direction.ltr($is-supported) {
+          @include margin-left(21v);
+          @include margin-left(0, md);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-right(21v);
+          @include margin-right(0, md);
+        }
+      }
+
+      #{ns(quote__source)} {
+        @include direction.ltr($is-supported) {
+          @include margin-left(21v);
+          @include margin-left(0, md);
+        }
+
+        @include direction.rtl($is-supported) {
+          @include margin-right(21v);
+          @include margin-right(0, md);
+        }
+      }
+    }
+
+    &__image {
+      @include direction.ltr($is-supported) {
+        @include respond-from(md) {
+          left: spacing.space(-52v);
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include respond-from(md) {
+          right: spacing.space(-52v);
+          left: auto;
+        }
+      }
+    }
+  }
+}

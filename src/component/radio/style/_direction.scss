@@ -4,7 +4,7 @@
 
 @mixin _radio-direction($is-supported: true) {
   #{selector.ns('radio-group')} {
-    input[type=radio] + label {
+    input[type=radio]+label {
       @include direction.ltr($is-supported) {
         @include margin-left(8v);
 
@@ -25,6 +25,66 @@
           right: spacing.space(-8v);
           left: auto;
         }
+      }
+    }
+  }
+
+
+  #{ns(radio-rich)} {
+    input[type="radio"] {
+      @include direction.ltr($is-supported) {
+        left: #{space(7v)};
+      }
+
+      @include direction.ltr($is-supported) {
+        right: #{space(7v)};
+        left: auto;
+      }
+
+      + label {
+        @include direction.ltr($is-supported) {
+          @include padding-left(14v);
+          @include margin-left(0);
+          @include padding-right(6v);
+          background-position: 0 0, 100% 0, 0 100%, 0 0;
+
+          @include before {
+            left: spacing.space(7v);
+          }
+
+          #{ns(hint-text)} {
+            @include margin-left(0);
+          }
+        }
+
+        @include direction.rtl($is-supported) {
+          @include padding-right(14v);
+          @include margin-right(0);
+          @include padding-left(6v);
+          background-position: 100% 100%, 0 100%, 100% 0, 100% 100%;
+
+          @include before {
+            right: spacing.space(7v);
+            left: auto;
+          }
+
+          #{ns(hint-text)} {
+            @include margin-left(0);
+          }
+        }
+      }
+    }
+
+    &__pictogram {
+      @include direction.ltr($is-supported) {
+        @include margin-left(-1px);
+        background-position: 0 0, 0 100%, 100% 0, 0 spacing.space(1v);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include margin-right(-1px);
+        @include margin-left(0);
+        background-position: 100% 100%, 100% 0, 0 100%, 100% spacing.space(1v);
       }
     }
   }

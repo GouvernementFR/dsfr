@@ -1,0 +1,42 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _password-direction($is-supported: true) {
+  #{selector.ns('password')} {
+    #{ns-attr(capslock)} {
+      @include before {
+        @include direction.ltr($is-supported) {
+          right: spacing.space(3v);
+        }
+
+        @include direction.rtl($is-supported) {
+          left: spacing.space(3v);
+          right: auto;
+        }
+      }
+    }
+
+    &__checkbox {
+      @include direction.ltr($is-supported) {
+        right: 0;
+      }
+
+      @include direction.rtl($is-supported) {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    &__label {
+      @include direction.ltr($is-supported) {
+        @include padding-right(24v);
+      }
+
+      @include direction.rtl($is-supported) {
+        @include padding-left(24v);
+        @include padding-right(0);
+      }
+    }
+  }
+}
