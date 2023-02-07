@@ -1,12 +1,12 @@
 import api from '../api.js';
-// import { ActionTypes } from './action-types';
 import { Init } from './init';
-import normalize from './normalize.js';
-import { Action } from './action';
+import TrackingMode from './tracking-mode';
+import { Page } from './page/page';
+import { Site } from './site/site';
+import { User } from './user/user';
 
 class Tracker {
   constructor () {
-    this._requestUser = false;
     this._configure(api);
   }
 
@@ -25,23 +25,71 @@ class Tracker {
         return;
     }
 
-    if (this._config.uid) this.setUser(this._config.uid, this._config.email, this._config.profile);
+    switch (this._config.mode) {
+      case TrackingMode.MANUAL:
+        this._mode = TrackingMode.MANUAL;
+        break;
 
-    this._init = new Init();
-    this._init.configure(this._config, this._start.bind(this));
+      case TrackingMode.NO_COMPONENTS:
+        this._mode = TrackingMode.NO_COMPONENTS;
+        break;
+
+      case TrackingMode.AUTO:
+      default:
+        this._mode = TrackingMode.AUTO;
+    }
+
+    this._user = new User(this._config.user);
+    this._site = new Site(this._config.site);
+    this._page = new Page(this._config.page);
+
+    this.reset();
+
+    this._init = new Init(this._config.domain);
+    this._init.configure(this._start.bind(this));
   }
 
   _start () {
-    if (this._config.preventAutomaticPageTracking !== true) {
-      this.trackPage(
-        this._config.path || document.location.pathname, this._config.labels, this._config.group);
+    switch (this._mode) {
+      case TrackingMode.AUTO:
+      case TrackingMode.NO_COMPONENTS:
+        this.collect();
+        break;
     }
+  }
+
+  get page () {
+    return this._page;
   }
 
   get isAvailable () {
     return typeof window.EA_push === 'function';
   }
 
+  push (layer, type = 'collector') {
+    if (!this.isAvailable) return;
+
+    api.inspector.log('analytics', type, layer);
+
+    window.EA_push(type, layer);
+  }
+
+  reset (clear = false) {
+    this._user.reset(clear);
+    this._site.reset(clear);
+    this._page.reset(clear);
+  }
+
+  collect () {
+    const layer = [
+      ...this._user.layer,
+      ...this._site.layer,
+      ...this._page.layer
+    ];
+    this.push(layer);
+  }
+
+  /*
   setUser (uid, email = null, profile = null, newCustomer = null) {
     this._requestUser = true;
     this._uid = uid;
@@ -58,18 +106,7 @@ class Tracker {
     return this._uid;
   }
 
-  _push (layer, type = 'collector') {
-    if (!this.isAvailable) return;
-
-    if (this._requestUser) {
-      layer = [...this._user, ...layer];
-      this._requestUser = false;
-    }
-
-    window.EA_push(type, layer);
-  }
-
-  trackPage (path, labels = [], group, custom = {}) {
+  _trackPage (path, labels = [], group, custom = {}) {
     const layer = [];
 
     if (path) layer.push('path', path);
@@ -103,8 +140,11 @@ class Tracker {
   trackAction (action, type, data) {
     this._push('action', action.getAction(data));
   }
+  */
 }
 
 const tracker = new Tracker();
+
+tracker.TrackingMode = TrackingMode;
 
 export default tracker;

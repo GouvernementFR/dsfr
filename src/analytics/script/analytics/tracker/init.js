@@ -3,11 +3,13 @@ import api from '../api.js';
 const PUSH = 'EA_push';
 
 class Init {
-  configure (config, closure) {
-    this.closure = closure;
+  constructor (domain) {
+    this._domain = domain;
+  }
+
+  configure (closure) {
+    this._closure = closure;
     this._isLoaded = false;
-    this.config = config;
-    this.domain = config.domain;
     this.pushing();
     this.load();
   }
@@ -15,7 +17,7 @@ class Init {
   get id () {
     if (!this._id) {
       let bit = 5381;
-      for (let i = this.domain.length - 1; i > 0; i--) bit = (bit * 33) ^ this.domain.charCodeAt(i);
+      for (let i = this._domain.length - 1; i > 0; i--) bit = (bit * 33) ^ this._domain.charCodeAt(i);
       bit >>>= 0;
       this._id = `_EA_${bit}`;
     }
@@ -25,7 +27,7 @@ class Init {
   get store () {
     if (!this._store) {
       this._store = [];
-      this._store.eah = this.domain;
+      this._store.eah = this._domain;
       window[this.id] = this._store;
     }
     return this._store;
@@ -39,14 +41,14 @@ class Init {
     const stamp = new Date() / 1E7 | 0;
     const offset = stamp % 26;
     const key = String.fromCharCode(97 + offset, 122 - offset, 65 + offset) + (stamp % 1E3);
-    this.script = document.createElement('script');
-    this.script.ea = this.id;
-    this.script.async = true;
-    this.script.addEventListener('load', this.loaded.bind(this));
-    this.script.addEventListener('error', this.error.bind(this));
-    this.script.src = `//${this.domain}/${key}.js?2`;
+    this._script = document.createElement('script');
+    this._script.ea = this.id;
+    this._script.async = true;
+    this._script.addEventListener('load', this.loaded.bind(this));
+    this._script.addEventListener('error', this.error.bind(this));
+    this._script.src = `//${this._domain}/${key}.js?2`;
     const node = document.getElementsByTagName('script')[0];
-    node.parentNode.insertBefore(this.script, node);
+    node.parentNode.insertBefore(this._script, node);
   }
 
   error () {
@@ -56,7 +58,7 @@ class Init {
   loaded () {
     if (this._isLoaded) return;
     this._isLoaded = true;
-    this.closure();
+    this._closure();
   }
 }
 

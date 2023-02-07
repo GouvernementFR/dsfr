@@ -8,6 +8,7 @@
  */
 
 const normalize = (text) => {
+  if (!text) return text;
   // text = [...text].map(char => TABLE[charCodeHex(char)] || char).join('');
   text = text.replace(/\s/g, '_');
   text = text.toLowerCase();

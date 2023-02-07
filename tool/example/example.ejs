@@ -16,28 +16,44 @@
 
   <script>
     window['<%= namespace %>'] = {
-      verbose: false,
-      //mode: 'manual',
+      verbose: true,
+      // mode: 'manual',
       analytics: {
         domain: 'gva.et-gv.fr',
-        // preventAutomaticPageTracking: true, // disable automatic path tracking
+        // mode: 'manual', // disable automatic path tracking, by default: auto
+        page: {
+          path: 'path_name/from/url', // path for page tracking
+          // referrer: 'path_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+          // title: 'page title', // page title for virtual pages
+          // name: 'page name', // equivalent to title if not defined
+          labels: ['label1', 'label2', 'label3', 'label4', 'label5'],
+          template: 'template', // page template
+          group: 'group', // page group. if not defined, fallback to template value
+          segment: 'segment', // site segment. if not defined, fallback to template value
+          isError: true, // is this an error page (404, 500, 503...)
+          current: 4, // In case of pagination, current page number
+          total: 40, // In case of pagination, total pages number
+          filters: ['actualités', 'Dossier de presse'] // array of filters that were applied on the page (strings)
+        },
         user: {
-          uid: 'XXX', // user id
-          email: 'email@domain.com', // encoded user email
+          connect: {
+            uid: 'XXX', // user id - required when connected
+            email: 'email@domain.com', // encoded user email - required when connected
+            isNew: true, // user just registered
+          },
           profile: 'visitor', // user profile
-          newCustomer: '1', // user just regitered
-          loginStatus: '',
           language: '',
-          type: '',
-
+          type: 'pro',
         },
         site: {
-
+          environment: 'production', // by default development ['development', 'stage', 'production']
+          entity: 'Ministère des armées', // Entity responsible for website
+          language: '', // language of the website (ISO 639-1). default to html lang
+          target: 'target', // site target
+          type: 'type', // site type
+          region: 'FR-IDF', // region of the website (ISO 3166-2:FR)
+          department: 'FR-75', // department of the website (ISO 3166-2:FR)
         }
-
-        // path: 'path', // path for page tracking
-        // labels: ['label1', 'label2', 'label3', 'label4', 'label5'],
-        // group: 'group', // page group for page tracking
       }
     };
   </script>
