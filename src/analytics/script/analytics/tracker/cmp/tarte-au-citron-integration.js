@@ -72,7 +72,7 @@ class TarteAuCitronIntegration {
   }
 
   update () {
-    if (!this._state < State.READY) return;
+    if (this._state < State.READY) return;
     console.log('update');
     this._cmpApi('tac', window.tarteaucitron, 1);
   }
