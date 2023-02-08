@@ -64,16 +64,16 @@ class TarteAuCitronIntegration {
   integrate (cmpApi) {
     console.log('before integrate');
     if (this._state >= State.READY) return;
-    console.log('integrate');
+    console.log('integrate', cmpApi);
     this._state = State.READY;
     this._cmpApi = cmpApi;
-    console.log('update');
     this._resolve();
     this.update();
   }
 
   update () {
     if (!this._state < State.READY) return;
+    console.log('update');
     this._cmpApi('tac', window.tarteaucitron, 1);
   }
 }
