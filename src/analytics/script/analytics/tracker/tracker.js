@@ -72,8 +72,6 @@ class Tracker {
     this._isReady = true;
     if (this._resolve) this._resolve();
 
-    console.log('ready');
-
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
 
     switch (this._mode) {

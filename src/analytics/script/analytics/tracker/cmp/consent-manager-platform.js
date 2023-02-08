@@ -15,7 +15,7 @@ class ConsentManagerPlatform {
 
   integrateTarteAuCitron () {
     this._tac = new TarteAuCitronIntegration(this._config);
-    this._tac.configure();
+    return this._tac.configure();
   }
 }
 

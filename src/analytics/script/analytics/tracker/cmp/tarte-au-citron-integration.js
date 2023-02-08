@@ -1,3 +1,5 @@
+import api from '../../api.js';
+
 const State = {
   UNKNOWN: -1,
   CONFIGURING: 0,
@@ -17,9 +19,11 @@ class TarteAuCitronIntegration {
   }
 
   configure () {
-    console.log('configure');
     if (this._state >= State.CONFIGURED) return this._promise;
     if (this._state === State.UNKNOWN) this._state = State.CONFIGURING;
+
+    api.inspector.info('analytics configures tarteaucitron');
+
     const tarteaucitron = window.tarteaucitron;
     if (!tarteaucitron || !tarteaucitron.services) {
       window.requestAnimationFrame(this.init.bind(this));
@@ -27,8 +31,6 @@ class TarteAuCitronIntegration {
     }
 
     this._state = State.CONFIGURED;
-
-    console.log('configured', tarteaucitron);
     const init = this.init.bind(this);
 
     const data = {
@@ -50,11 +52,8 @@ class TarteAuCitronIntegration {
   }
 
   init () {
-    console.log('before');
     if (this._state >= State.INITIATED) return;
     this._state = State.INITIATED;
-    console.log('init');
-
     window.__eaGenericCmpApi = this.integrate.bind(this);
     const update = this.update.bind(this);
     window.addEventListener('tac.close_alert', update);
@@ -62,18 +61,18 @@ class TarteAuCitronIntegration {
   }
 
   integrate (cmpApi) {
-    console.log('before integrate');
     if (this._state >= State.READY) return;
-    console.log('integrate', cmpApi);
     this._state = State.READY;
     this._cmpApi = cmpApi;
+
+    api.inspector.info('analytics has integrated tarteaucitron');
+
     this._resolve();
     this.update();
   }
 
   update () {
     if (this._state < State.READY) return;
-    console.log('update');
     this._cmpApi('tac', window.tarteaucitron, 1);
   }
 }
