@@ -1,4 +1,4 @@
-const EnvironmentType = {
+const Environment = {
   DEVELOPMENT: {
     id: 'development',
     value: 'dev'
@@ -13,4 +13,4 @@ const EnvironmentType = {
   }
 };
 
-export default EnvironmentType;
+export default Environment;

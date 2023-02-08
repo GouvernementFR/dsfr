@@ -1,4 +1,4 @@
-import EnvironmentType from './environment-type';
+import Environment from './environment';
 import api from '../../api';
 import normalize from '../normalize';
 
@@ -19,20 +19,20 @@ class Site {
 
   set environment (value) {
     switch (value) {
-      case EnvironmentType.PRODUCTION.id:
-      case EnvironmentType.PRODUCTION.value:
-        this._environment = EnvironmentType.PRODUCTION;
+      case Environment.PRODUCTION.id:
+      case Environment.PRODUCTION.value:
+        this._environment = Environment.PRODUCTION;
         break;
 
-      case EnvironmentType.STAGE.id:
-      case EnvironmentType.STAGE.value:
-        this._environment = EnvironmentType.STAGE;
+      case Environment.STAGE.id:
+      case Environment.STAGE.value:
+        this._environment = Environment.STAGE;
         break;
 
-      case EnvironmentType.DEVELOPMENT.id:
-      case EnvironmentType.DEVELOPMENT.value:
+      case Environment.DEVELOPMENT.id:
+      case Environment.DEVELOPMENT.value:
       default:
-        this._environment = EnvironmentType.DEVELOPMENT;
+        this._environment = Environment.DEVELOPMENT;
     }
   }
 
@@ -102,6 +102,6 @@ class Site {
   }
 }
 
-Site.EnvironmentType = EnvironmentType;
+Site.Environment = Environment;
 
 export { Site };

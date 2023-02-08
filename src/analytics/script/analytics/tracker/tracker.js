@@ -1,12 +1,16 @@
 import api from '../api.js';
-import { Init } from './init';
-import TrackingMode from './tracking-mode';
+import Mode from './mode';
+import { Init } from './facade/init';
 import { Page } from './page/page';
 import { Site } from './site/site';
 import { User } from './user/user';
+import push from './facade/push';
+import PushType from './facade/push-type';
+import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 
 class Tracker {
   constructor () {
+    this._isReady = false;
     this._configure(api);
   }
 
@@ -26,17 +30,17 @@ class Tracker {
     }
 
     switch (this._config.mode) {
-      case TrackingMode.MANUAL:
-        this._mode = TrackingMode.MANUAL;
+      case Mode.MANUAL:
+        this._mode = Mode.MANUAL;
         break;
 
-      case TrackingMode.NO_COMPONENTS:
-        this._mode = TrackingMode.NO_COMPONENTS;
+      case Mode.NO_COMPONENTS:
+        this._mode = Mode.NO_COMPONENTS;
         break;
 
-      case TrackingMode.AUTO:
+      case Mode.AUTO:
       default:
-        this._mode = TrackingMode.AUTO;
+        this._mode = Mode.AUTO;
     }
 
     this._user = new User(this._config.user);
@@ -46,13 +50,35 @@ class Tracker {
     this.reset();
 
     this._init = new Init(this._config.domain);
-    this._init.configure(this._start.bind(this));
+    this._init.configure(this._start.bind(this)).then(this._start.bind(this), () => { if (this._reject) this._reject(); });
+  }
+
+  get isReady () {
+    return this._isReady;
+  }
+
+  get readiness () {
+    const promise = new Promise((resolve, reject) => {
+      if (this._isReady) resolve();
+      else {
+        this._resolve = resolve;
+        this._reject = reject;
+      }
+    });
+    return promise;
   }
 
   _start () {
+    this._isReady = true;
+    if (this._resolve) this._resolve();
+    
+    console.log('ready');
+
+    this._cmp = new ConsentManagerPlatform(this._config.cmp);
+
     switch (this._mode) {
-      case TrackingMode.AUTO:
-      case TrackingMode.NO_COMPONENTS:
+      case Mode.AUTO:
+      case Mode.NO_COMPONENTS:
         this.collect();
         break;
     }
@@ -62,16 +88,20 @@ class Tracker {
     return this._page;
   }
 
-  get isAvailable () {
-    return typeof window.EA_push === 'function';
+  get user () {
+    return this._user;
   }
 
-  push (layer, type = 'collector') {
-    if (!this.isAvailable) return;
+  get site () {
+    return this._site;
+  }
 
-    api.inspector.log('analytics', type, layer);
+  get cmp () {
+    return this._cmp;
+  }
 
-    window.EA_push(type, layer);
+  push (type, layer) {
+    push(type, layer);
   }
 
   reset (clear = false) {
@@ -86,65 +116,13 @@ class Tracker {
       ...this._site.layer,
       ...this._page.layer
     ];
-    this.push(layer);
+    this.push(PushType.COLLECTOR, layer);
   }
-
-  /*
-  setUser (uid, email = null, profile = null, newCustomer = null) {
-    this._requestUser = true;
-    this._uid = uid;
-    this._email = email;
-    this._profile = profile;
-    this._newCustomer = newCustomer;
-    this._user = ['uid', this._uid];
-    if (this._profile) this._user.push('profile', this._profile);
-    if (this._newCustomer) this._newCustomer.push('newcustomer', this._newCustomer);
-    if (this._email) this._user.push('email', this._email);
-  }
-
-  get uid () {
-    return this._uid;
-  }
-
-  _trackPage (path, labels = [], group, custom = {}) {
-    const layer = [];
-
-    if (path) layer.push('path', path);
-    else {
-      api.inspector.error('trackPage method requires a valid path');
-      return;
-    }
-
-    if (group) layer.push('pagegroup', normalize(group));
-    if (labels && labels.length) layer.push('pagelabel', normalize(labels.map(label => label !== 0 && !label ? '' : label).join(',')));
-
-    if (custom) layer.push.apply(layer, Object.entries(custom).flat());
-
-    this._push(layer);
-  }
-
-  getAction (id, label) {
-    const name = Action.getName(id, label)
-    if (!this._actions[name]) this._actions[name] = new Action(name);
-    return this._actions[name];
-  }
-
-  impressAction (action, data) {
-    this._push('action', action.getImpression(data));
-  }
-
-  fillAction (action, data) {
-    this._push('actionparam', action.getFiller(data));
-  }
-
-  trackAction (action, type, data) {
-    this._push('action', action.getAction(data));
-  }
-  */
 }
 
 const tracker = new Tracker();
 
-tracker.TrackingMode = TrackingMode;
+tracker.Mode = Mode;
+tracker.PushType = PushType;
 
 export default tracker;

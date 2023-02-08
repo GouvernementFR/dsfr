@@ -1,7 +1,7 @@
-const TrackingMode = {
+const Mode = {
   MANUAL: 'manual',
   AUTO: 'auto',
   NO_COMPONENTS: 'no_components'
 };
 
-export default TrackingMode;
+export default Mode;

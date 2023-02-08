@@ -51,7 +51,6 @@ class User {
   }
 
   set profile (id) {
-    console.log(id, Object.values(Profile), Object.values(Profile).filter(profile => profile.id === id || profile.value === id));
     this._profile = Object.values(Profile).filter(profile => profile.id === id || profile.value === id)[0];
   }
 
@@ -80,11 +79,9 @@ class User {
     if (this._uid) layer.push('uid', this._uid);
     if (this._email) layer.push('email', this._email);
     if (this._isNew) layer.push('newcustomer', '1');
-    console.log(this._profile);
     if (this._profile) layer.push('profile', this._profile.value);
     if (this._status) layer.push('user_login_status', this._status.value);
     if (this._language) layer.push('user_language', this._language);
-    console.log(this._type);
     if (this._type) layer.push('user_type', this._type.value);
     return layer;
   }

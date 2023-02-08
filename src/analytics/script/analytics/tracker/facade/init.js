@@ -1,4 +1,4 @@
-import api from '../api.js';
+import api from '../../api.js';
 
 const PUSH = 'EA_push';
 
@@ -7,11 +7,15 @@ class Init {
     this._domain = domain;
   }
 
-  configure (closure) {
-    this._closure = closure;
+  configure () {
+    const promise = new Promise((resolve, reject) => {
+      this._resolve = resolve;
+      this._reject = reject;
+    });
     this._isLoaded = false;
     this.pushing();
     this.load();
+    return promise;
   }
 
   get id () {
@@ -53,12 +57,13 @@ class Init {
 
   error () {
     api.inspector.error('unable to load Eulerian script file. the domain declared in your configuration must match the domain provided by the Eulerian interface (tag creation)');
+    this._reject();
   }
 
   loaded () {
     if (this._isLoaded) return;
     this._isLoaded = true;
-    this._closure();
+    this._resolve();
   }
 }
 
