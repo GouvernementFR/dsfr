@@ -20,13 +20,14 @@ class TarteAuCitronIntegration {
 
   configure () {
     if (this._state >= State.CONFIGURED) return this._promise;
-    if (this._state === State.UNKNOWN) this._state = State.CONFIGURING;
-
-    api.inspector.info('analytics configures tarteaucitron');
+    if (this._state === State.UNKNOWN) {
+      api.inspector.info('analytics configures tarteaucitron');
+      this._state = State.CONFIGURING;
+    }
 
     const tarteaucitron = window.tarteaucitron;
     if (!tarteaucitron || !tarteaucitron.services) {
-      window.requestAnimationFrame(this.init.bind(this));
+      window.requestAnimationFrame(this.configure.bind(this));
       return;
     }
 
