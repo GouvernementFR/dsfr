@@ -5,17 +5,17 @@ const PUSH = 'EA_push';
 class Init {
   constructor (domain) {
     this._domain = domain;
-  }
-
-  configure () {
-    const promise = new Promise((resolve, reject) => {
+    this._isLoaded = false;
+    this._promise = new Promise((resolve, reject) => {
       this._resolve = resolve;
       this._reject = reject;
     });
-    this._isLoaded = false;
+  }
+
+  configure () {
     this.pushing();
     this.load();
-    return promise;
+    return this._promise;
   }
 
   get id () {

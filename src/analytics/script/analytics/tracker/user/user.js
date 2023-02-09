@@ -4,7 +4,7 @@ import Type from './type';
 
 class User {
   constructor (config) {
-    this._config = config;
+    this._config = config || {};
   }
 
   reset (clear = false) {

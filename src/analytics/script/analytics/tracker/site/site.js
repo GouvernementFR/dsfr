@@ -4,7 +4,7 @@ import normalize from '../normalize';
 
 class Site {
   constructor (config) {
-    this._config = config;
+    this._config = config || {};
   }
 
   reset (clear = false) {

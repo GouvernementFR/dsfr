@@ -11,6 +11,13 @@ import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 class Tracker {
   constructor () {
     this._isReady = false;
+    this._readiness = new Promise((resolve, reject) => {
+      if (this._isReady) resolve();
+      else {
+        this._resolve = resolve;
+        this._reject = reject;
+      }
+    });
     this._configure(api);
   }
 
@@ -43,14 +50,15 @@ class Tracker {
         this._mode = Mode.AUTO;
     }
 
+    this._init = new Init(this._config.domain);
+
     this._user = new User(this._config.user);
     this._site = new Site(this._config.site);
     this._page = new Page(this._config.page);
 
     this.reset();
 
-    this._init = new Init(this._config.domain);
-    this._init.configure(this._start.bind(this)).then(this._start.bind(this), () => { if (this._reject) this._reject(); });
+    this._init.configure().then(this._start.bind(this), this._reject);
   }
 
   get isReady () {
@@ -58,19 +66,13 @@ class Tracker {
   }
 
   get readiness () {
-    const promise = new Promise((resolve, reject) => {
-      if (this._isReady) resolve();
-      else {
-        this._resolve = resolve;
-        this._reject = reject;
-      }
-    });
-    return promise;
+    return this._readiness;
   }
 
   _start () {
+    if (this._isReady) return;
     this._isReady = true;
-    if (this._resolve) this._resolve();
+    this._resolve();
 
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
 

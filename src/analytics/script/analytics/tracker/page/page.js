@@ -3,7 +3,7 @@ import normalize from '../normalize';
 
 class Page {
   constructor (config) {
-    this._config = config;
+    this._config = config || {};
   }
 
   reset (clear = false) {
@@ -12,15 +12,15 @@ class Page {
     const title = this._config.title || document.title;
     this.title = clear ? undefined : title;
     this.name = clear ? undefined : this._config.name || title;
-    this._labels = clear && this._config.labels ? [undefined, undefined, undefined, undefined, undefined] : this._config.labels.map(label => normalize(label));
+    this._labels = clear || !this._config.labels ? [undefined, undefined, undefined, undefined, undefined] : this._config.labels;
     this._labels.length = 5;
     this.isError = !clear && this._config.isError;
     this.template = clear ? undefined : this._config.template;
     this.group = clear ? undefined : this._config.group;
     this.segment = clear ? undefined : this._config.segment;
-    this.current = clear ? -1 : this._config.current;
-    this.total = clear ? -1 : this._config.total;
-    this._filters = clear ? [] : this._config.filters;
+    this.current = clear || isNaN(this._current) ? -1 : this._config.current;
+    this.total = clear || isNaN(this._total) ? -1 : this._config.total;
+    this._filters = clear || !this._config.filters ? [] : this._config.filters;
   }
 
   set path (value) {

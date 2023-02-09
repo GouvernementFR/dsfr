@@ -69,7 +69,7 @@ const buildExample = async (pck, locale) => {
     }
   });
 
-  const requiredScript = ['legacy', 'core', 'scheme', 'accordion', 'modal', 'display','analytics'];
+  const requiredScript = ['legacy', 'core', 'scheme', 'accordion', 'modal', 'display', 'analytics'];
   const exampleScript = pck.example.script.map(id => packages.filter(i => i.id === id)[0].usage.script).flat();
   const neededScript = [...pck.usage.script, ...requiredScript, ...exampleScript].filter((id, index, array) => array.indexOf(id) === index);
   const replaceScript = neededScript.map(id => packages.filter(p => p.id === id)[0].replace.script).flat();
