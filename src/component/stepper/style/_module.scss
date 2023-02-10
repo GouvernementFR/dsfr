@@ -43,7 +43,6 @@
     @include size(100%, 6px);
     background-repeat: no-repeat;
     background-size: calc((100% + 6px) * var(--current-step) / var(--steps) - 6px) 100%, 100% 100%;
-    background-position: 0 0, 0 0;
     @include stepper-build();
   }
 }

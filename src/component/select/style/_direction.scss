@@ -1,0 +1,19 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _select-direction($is-supported: true) {
+  #{selector.ns('select')} {
+    @include direction.ltr($is-supported) {
+      @include padding-right(10v);
+      @include padding-left(4v);
+      background-position: spacing.space(calc(100% - 2v) 50%);
+    }
+
+    @include direction.rtl($is-supported) {
+      @include padding-left(10v);
+      @include padding-right(4v);
+      background-position: spacing.space(2v 50%);
+    }
+  }
+}

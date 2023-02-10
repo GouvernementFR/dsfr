@@ -9,10 +9,7 @@
 
 @mixin _sidemenu-scheme($legacy: false) {
   #{ns(sidemenu)} {
-    @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in top-1-in);
-    @include media-query.respond-from(md) {
-      @include color.no-box-shadow((legacy: $legacy));
-    }
+    @include color.background-image((border default grey) (border default grey), (legacy:$legacy));
 
     /*
     @include elevation.elevate(raised, (legacy:$legacy));
@@ -23,44 +20,29 @@
 
     @include title {
       @include color.text(title grey, (legacy:$legacy));
-      @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
-      @include color.no-box-shadow((breakpoint: md, legacy: $legacy));
+      @include color.background-image((border default grey), (legacy:$legacy));
     }
 
     @include list-item {
-      @include before {
-        @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
-      }
-
-      &:first-child {
-        @include before {
-          @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
-        }
-      }
-
-      &:last-child {
-        @include before {
-          @include color.box-shadow(default grey, (legacy:$legacy), top-1-out);
-        }
-      }
+      @include color.background-image((border default grey), (legacy:$legacy));
     }
 
     &__inner {
       @include media-query.respond-from(md) {
-        @include color.box-shadow(default grey, (legacy:$legacy), right-1-in);
+        @include color.background-image(border default grey, (legacy:$legacy));
       }
     }
 
     @include media-query.respond-from(md) {
       &--right {
         #{ns(sidemenu__inner)} {
-          @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
+          @include color.background-image(border default grey, (legacy:$legacy));
         }
       }
 
       &--full-border {
         #{ns(sidemenu__inner)} {
-          @include color.box-shadow(default grey, (legacy:$legacy));
+          @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy:$legacy));
         }
       }
     }

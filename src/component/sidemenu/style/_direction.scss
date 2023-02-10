@@ -1,0 +1,113 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _sidemenu-direction($is-supported: true) {
+  #{selector.ns('sidemenu')} {
+    @include direction.ltr($is-supported) {
+      @include padding-right(8v, md);
+    }
+
+    @include direction.rtl($is-supported) {
+      @include padding-left(8v, md);
+      @include padding-right(0, md);
+    }
+
+    &:not(#{selector.ns('sidemenu--full-border')}) &__inner {
+      @include direction.ltr($is-supported) {
+        @include padding(0 8v 0 1v, md);
+
+        @include respond-from(md) {
+          background-position: 100% 0;
+        }
+
+        & > #{selector.ns(sidemenu__btn)} {
+          @include after {
+            @include margin-right(4v);
+          }
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include padding(0 1v 0 8v, md);
+
+        @include respond-from(md) {
+          background-position: 0 0;
+        }
+
+        & > #{selector.ns(sidemenu__btn)} {
+          @include after {
+            @include margin-right(4v);
+          }
+        }
+      }
+    }
+
+    &__btn {
+      &[aria-expanded] {
+        @include direction.ltr($is-supported) {
+          @include padding-right(8v, md);
+          @include padding-left(2v, md);
+
+          @include after {
+            @include margin-left(auto);
+            @include margin-right(0);
+            @include margin-right(-6v, md);
+          }
+        }
+        @include direction.rtl($is-supported) {
+          @include padding-left(8v, md);
+          @include padding-right(2v, md);
+
+          @include after {
+            @include margin-right(auto);
+            @include margin-left(0);
+            @include margin-left(-6v, md);
+          }
+        }
+      }
+    }
+
+    &__link,
+    &__btn {
+      &[aria-current] {
+        @include before {
+          @include direction.ltr($is-supported) {
+            left: 0;
+          }
+
+          @include direction.rtl($is-supported) {
+            right: 0;
+            left: auto;
+          }
+        }
+      }
+    }
+
+    &#{selector.ns('sidemenu--right')} {
+      @include direction.ltr($is-supported) {
+        @include respond-from(md) {
+          @include padding-left(8v);
+          @include padding-right(0);
+
+          #{ns(sidemenu__inner)} {
+            @include padding(0 4v 0 8v);
+            background-position: 0 0;
+          }
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        @include respond-from(md) {
+          @include padding-right(8v);
+          @include padding-left(0);
+
+          #{ns(sidemenu__inner)} {
+            @include padding(0 8v 0 4v);
+            background-position: 100% 0;
+          }
+        }
+      }
+    }
+  }
+}

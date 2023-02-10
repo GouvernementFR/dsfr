@@ -1,0 +1,16 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _stepper-direction($is-supported: true) {
+  #{selector.ns('stepper')} {
+    &__steps {
+      @include direction.ltr($is-supported) {
+        background-position: 0 0, 0 0;
+      }
+
+      @include direction.rtl($is-supported) {
+        background-position: 100% 0, 100% 0;
+      }
+    }
+  }
+}
