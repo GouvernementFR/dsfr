@@ -1,9 +1,9 @@
 import api from '../api.js';
 import Mode from './mode';
 import { Init } from './facade/init';
-import { Page } from './page/page';
-import { Site } from './site/site';
-import { User } from './user/user';
+import { Page } from './collector/page/page';
+import { Site } from './collector/site/site';
+import { User } from './collector/user/user';
 import push from './facade/push';
 import PushType from './facade/push-type';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';

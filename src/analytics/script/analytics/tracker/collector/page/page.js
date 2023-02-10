@@ -1,5 +1,6 @@
-import api from '../../api.js';
-import normalize from '../normalize';
+import api from '../../../api.js';
+import normalize from '../../utils/normalize';
+import { validateBoolean, validateNumber, validateString } from '../../utils/type-validator';
 
 class Page {
   constructor (config) {
@@ -7,24 +8,25 @@ class Page {
   }
 
   reset (clear = false) {
-    this.path = clear ? undefined : this._config.path || document.location.pathname;
-    this.referrer = clear ? undefined : this._config.referrer;
+    this.path = clear ? '' : this._config.path || document.location.pathname;
+    this.referrer = clear ? '' : this._config.referrer;
     const title = this._config.title || document.title;
-    this.title = clear ? undefined : title;
-    this.name = clear ? undefined : this._config.name || title;
-    this._labels = clear || !this._config.labels ? [undefined, undefined, undefined, undefined, undefined] : this._config.labels;
+    this.title = clear ? '' : title;
+    this.name = clear ? '' : this._config.name || title;
+    this._labels = clear || !this._config.labels ? ['', '', '', '', ''] : this._config.labels;
     this._labels.length = 5;
     this.isError = !clear && this._config.isError;
-    this.template = clear ? undefined : this._config.template;
-    this.group = clear ? undefined : this._config.group;
-    this.segment = clear ? undefined : this._config.segment;
+    this.template = clear ? '' : this._config.template;
+    this.group = clear ? '' : this._config.group;
+    this.segment = clear ? '' : this._config.segment;
     this.current = clear || isNaN(this._current) ? -1 : this._config.current;
     this.total = clear || isNaN(this._total) ? -1 : this._config.total;
     this._filters = clear || !this._config.filters ? [] : this._config.filters;
   }
 
   set path (value) {
-    this._path = value;
+    const valid = validateString(value, 'page.path');
+    if (valid !== null) this._path = valid;
   }
 
   get path () {
@@ -32,7 +34,8 @@ class Page {
   }
 
   set referrer (value) {
-    this._referrer = value;
+    const valid = validateString(value, 'page.referrer');
+    if (valid !== null) this._referrer = valid;
   }
 
   get referrer () {
@@ -40,7 +43,8 @@ class Page {
   }
 
   set title (value) {
-    this._title = value;
+    const valid = validateString(value, 'page.title');
+    if (valid !== null) this._title = valid;
   }
 
   get title () {
@@ -48,7 +52,8 @@ class Page {
   }
 
   set name (value) {
-    this._name = value;
+    const valid = validateString(value, 'page.name');
+    if (valid !== null) this._name = valid;
   }
 
   get name () {
@@ -60,7 +65,8 @@ class Page {
   }
 
   set isError (value) {
-    this._isError = value;
+    const valid = validateBoolean(value, 'page.isError');
+    if (valid !== null) this._isError = valid;
   }
 
   get isError () {
@@ -68,7 +74,8 @@ class Page {
   }
 
   set template (value) {
-    this._template = value;
+    const valid = validateString(value, 'page.template');
+    if (valid !== null) this._template = valid;
   }
 
   get template () {
@@ -76,7 +83,8 @@ class Page {
   }
 
   set segment (value) {
-    this._segment = value;
+    const valid = validateString(value, 'page.segment');
+    if (valid !== null) this._segment = valid;
   }
 
   get segment () {
@@ -84,7 +92,8 @@ class Page {
   }
 
   set group (value) {
-    this._group = value;
+    const valid = validateString(value, 'page.group');
+    if (valid !== null) this._group = valid;
   }
 
   get group () {
@@ -92,8 +101,8 @@ class Page {
   }
 
   set current (value) {
-    if (isNaN(value)) api.inspector.warn(`unexpected value '${value}' set at analytics.page.current. Expecting a Number`);
-    this._current = Number(value);
+    const valid = validateNumber(value, 'page.current');
+    if (valid !== null) this._current = valid;
   }
 
   get current () {
@@ -101,8 +110,8 @@ class Page {
   }
 
   set total (value) {
-    if (isNaN(value)) api.inspector.warn(`unexpected value '${value}' set at analytics.page.total. Expecting a Number`);
-    this._total = Number(value);
+    const valid = validateNumber(value, 'page.total');
+    if (valid !== null) this._total = valid;
   }
 
   get total () {
@@ -114,8 +123,9 @@ class Page {
   }
 
   get layer () {
-    const layer = ['path', this._path];
-    if (this._referrer) layer.push('referrer', this._referrer);
+    const layer = [];
+    if (this._path) layer.push('path', normalize(this._path));
+    if (this._referrer) layer.push('referrer', normalize(this._referrer));
 
     const title = normalize(this._title);
     if (title) layer.push('page_title', title);
@@ -132,20 +142,20 @@ class Page {
     if (this._isError) layer.push('error', '1');
 
     const template = normalize(this._template);
-    if (this._template) layer.push('page_template', template);
-    else api.inspector.warn('template is required in page analytics');
+    if (this._template) layer.push('page_template', normalize(template));
+    else api.inspector.warn('template is required in analytics.page');
     if (this._group || this._template) layer.push('pagegroup', normalize(this._group) || template);
     if (this._segment || this._template) layer.push('site-segment', normalize(this._segment) || template);
 
-    if (!isNaN(this._current) && this._current !== -1) {
+    if (!isNaN(this._current) && this._current > -1) {
       let pagination = `${this._current}`;
-      if (!isNaN(this._total) && this._total !== -1) pagination += `/${this._total}`;
+      if (!isNaN(this._total) && this._total > -1) pagination += `/${this._total}`;
       layer.push('page_pagination', pagination);
     } else {
       // TODO: get pagination value
     }
 
-    if (this._filters.length) {
+    if (this._filters.length && this._filters.some(label => label)) {
       const filters = this._filters.map(filter => typeof filter === 'string' ? normalize(filter) : '');
       layer.push('page_filters', filters.join(','));
     }

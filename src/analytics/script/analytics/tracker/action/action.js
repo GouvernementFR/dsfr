@@ -1,5 +1,5 @@
 import api from '../../api.js';
-import normalize from '../normalize';
+import normalize from '../utils/normalize';
 
 const getName = (id, title, type) => `${normalize(title)}[${id}](${type.id})`;
 
