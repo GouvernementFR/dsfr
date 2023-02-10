@@ -24,6 +24,7 @@
 
           @include direction.rtl($is-supported) {
             @include margin-right(auto);
+            @include margin-left(0);
           }
         }
       }

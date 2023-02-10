@@ -5,7 +5,10 @@
 
 #{ns(sidemenu)} {
   &__inner {
-    @include padding(0 8v 0 1v, md);
+    @include respond-from(md) {
+      background-size: 1px 100%;
+      background-repeat: no-repeat;
+    }
 
     /**
     * Ce wrapper ne sert que pour la version mobile

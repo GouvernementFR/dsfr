@@ -58,6 +58,8 @@
 
       #{ns(sidemenu__inner)} {
         @include padding(2v 4v);
+        background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
       }
     }
   }

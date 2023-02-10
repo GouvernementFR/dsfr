@@ -32,13 +32,16 @@
 
   @include list-item {
     @include relative;
-    @include before('', block) {
-      @include absolute(0, 0, 0, 0, 100%, 100%);
-      pointer-events: none;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
 
-      @include respond-from(md) {
-        content: none;
-      }
+    @include respond-from(md) {
+      background-image: none;
+    }
+
+    &:first-child {
+      background-image: none;
     }
 
     & & & {
