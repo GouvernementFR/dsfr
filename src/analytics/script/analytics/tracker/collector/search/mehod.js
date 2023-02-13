@@ -1,7 +1,8 @@
 const Method = {
   STANDARD: {
     id: 'standard',
-    value: 'standard'
+    value: 'standard',
+    isDefault: true
   },
   AUTOCOMPLETE: {
     id: 'autocomplete',

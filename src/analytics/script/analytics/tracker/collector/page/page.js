@@ -1,4 +1,3 @@
-import api from '../../../api.js';
 import normalize from '../../utils/normalize';
 import { validateBoolean, validateNumber, validateString } from '../../utils/type-validator';
 
@@ -14,13 +13,14 @@ class Page {
     this.title = clear ? '' : title;
     this.name = clear ? '' : this._config.name || title;
     this._labels = clear || !this._config.labels ? ['', '', '', '', ''] : this._config.labels;
+    this._categories = clear || !this._config.categories ? ['', '', ''] : this._config.categories;
     this._labels.length = 5;
     this.isError = !clear && this._config.isError;
     this.template = clear ? '' : this._config.template;
     this.group = clear ? '' : this._config.group;
     this.segment = clear ? '' : this._config.segment;
-    this.current = clear || isNaN(this._current) ? -1 : this._config.current;
-    this.total = clear || isNaN(this._total) ? -1 : this._config.total;
+    this.current = clear || isNaN(this._config.current) ? -1 : this._config.current;
+    this.total = clear || isNaN(this._config.total) ? -1 : this._config.total;
     this._filters = clear || !this._config.filters ? [] : this._config.filters;
   }
 
@@ -62,6 +62,10 @@ class Page {
 
   get labels () {
     return this._labels;
+  }
+
+  get categories () {
+    return this._categories;
   }
 
   set isError (value) {
@@ -131,21 +135,20 @@ class Page {
     if (title) layer.push('page_title', title);
     if (this._name || title) layer.push('page_name', normalize(this._name) || title);
 
-    if (this._labels.some(label => label)) {
-      const labels = this._labels.map(label => typeof label === 'string' ? normalize(label) : '');
-      layer.push('pagelabel', labels.join(','));
-      if (labels[0]) layer.push('page_category1', labels[0]);
-      if (labels[1]) layer.push('page_category2', labels[1]);
-      if (labels[2]) layer.push('page_category3', labels[2]);
-    }
+    const labels = this._labels.slice(0, 5);
+    labels.length = 5;
+    if (labels.some(label => label)) layer.push('pagelabel', labels.map(label => typeof label === 'string' ? normalize(label) : '').join(','));
+
+    const categories = this._categories.slice(0, 3);
+    categories.length = 3;
+    categories.forEach((category, index) => layer.push(`page_category${index + 1}`, category));
 
     if (this._isError) layer.push('error', '1');
 
-    const template = normalize(this._template);
-    if (this._template) layer.push('page_template', normalize(template));
-    else api.inspector.warn('template is required in analytics.page');
-    if (this._group || this._template) layer.push('pagegroup', normalize(this._group) || template);
-    if (this._segment || this._template) layer.push('site-segment', normalize(this._segment) || template);
+    const template = normalize(this._template) || 'autres';
+    layer.push('page_template', template);
+    layer.push('pagegroup', normalize(this._group) || template);
+    layer.push('site-segment', normalize(this._segment) || template);
 
     if (!isNaN(this._current) && this._current > -1) {
       let pagination = `${this._current}`;

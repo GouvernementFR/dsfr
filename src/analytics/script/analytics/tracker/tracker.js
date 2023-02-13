@@ -4,9 +4,11 @@ import { Init } from './facade/init';
 import { Page } from './collector/page/page';
 import { Site } from './collector/site/site';
 import { User } from './collector/user/user';
+import { Search } from './collector/search/search';
+import { Funnel } from './collector/funnel/funnel';
+import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
 import PushType from './facade/push-type';
-import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 
 class Tracker {
   constructor () {
@@ -55,6 +57,8 @@ class Tracker {
     this._user = new User(this._config.user);
     this._site = new Site(this._config.site);
     this._page = new Page(this._config.page);
+    this._search = new Search(this._config.search);
+    this._funnel = new Funnel(this._config.search);
 
     this.reset();
 
@@ -96,6 +100,14 @@ class Tracker {
     return this._site;
   }
 
+  get search () {
+    return this._search;
+  }
+
+  get funnel () {
+    return this._funnel;
+  }
+
   get cmp () {
     return this._cmp;
   }
@@ -108,13 +120,17 @@ class Tracker {
     this._user.reset(clear);
     this._site.reset(clear);
     this._page.reset(clear);
+    this._search.reset(clear);
+    this._funnel.reset(clear);
   }
 
   collect () {
     const layer = [
       ...this._user.layer,
       ...this._site.layer,
-      ...this._page.layer
+      ...this._page.layer,
+      ...this._search.layer,
+      ...this._funnel.layer
     ];
     this.push(PushType.COLLECTOR, layer);
   }

@@ -13,7 +13,7 @@ const validateString = (value, name, allowNull = true) => {
       return '';
   }
 
-  api.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a String`);
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a String`);
   return null;
 };
 
@@ -30,7 +30,7 @@ const validateNumber = (value, name, allowNull = true) => {
       return -1;
   }
 
-  api.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a Number`);
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a Number`);
   return null;
 };
 
@@ -50,7 +50,7 @@ const validateBoolean = (value, name) => {
       return false;
   }
 
-  api.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a Boolean`);
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a Boolean`);
   return null;
 };
 
@@ -64,13 +64,14 @@ const validateLang = (value, name, allowNull = true) => {
       return '';
   }
 
-  api.warn(`unexpected value '${value}' set at analytics.${name}. Expecting language as a String following ISO 639-1 format`);
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting language as a String following ISO 639-1 format`);
   return null;
 };
 
 const validateGeography = (value, name, allowNull = true) => {
   switch (true) {
-    case typeof value === 'string' && /^FR-[A-Z0-9]{2,3}$/.test(value):
+    case typeof value === 'string':
+      if (!/^FR-[A-Z0-9]{2,3}$/.test(value)) api.inspector.warn(`value '${value}' set at analytics.${name} with wrong format. Geographic location should be a String following ISO 3166-2:FR format`);
       return value;
 
     case value === undefined && allowNull:
@@ -78,7 +79,7 @@ const validateGeography = (value, name, allowNull = true) => {
       return '';
   }
 
-  api.warn(`unexpected value '${value}' set at analytics.${name}. Expecting geographic location as a String following ISO 3166-2:FR format`);
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting geographic location as a String following ISO 3166-2:FR format`);
   return null;
 };
 

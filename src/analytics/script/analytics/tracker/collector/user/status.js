@@ -10,6 +10,11 @@ const Status = {
     value: 'anonyme',
     isConnected: false,
     isDefault: true
+  },
+  GUEST: {
+    id: 'guest',
+    value: 'invité',
+    isConnected: false
   }
 };
 

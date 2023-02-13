@@ -26,7 +26,7 @@ class User {
 
   connect (uid, email, isNew = false) {
     this._uid = validateString(uid, 'user.uid');
-    if (/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{2,}@[a-zA-Z0-9-]{2,}\.[a-zA-Z]{2,}$/.test(email)) api.warn('Please check analytics.user.email is properly encrypted ');
+    if (/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~.-]{2,}@[a-zA-Z0-9-]{2,}\.[a-zA-Z]{2,}$/.test(email)) api.inspector.warn('Please check analytics.user.email is properly encrypted ');
     this._email = validateString(email, 'user.email');
     this._isNew = validateBoolean(isNew);
     this._isConnected = true;
