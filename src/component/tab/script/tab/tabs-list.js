@@ -52,13 +52,12 @@ class TabsList extends api.core.Instance {
   scroll () {
     if (!this.group) return;
     const scrollLeft = this.node.scrollLeft;
-    const isMin = scrollLeft <= SCROLL_OFFSET;
+    const isMin = Math.abs(scrollLeft) <= SCROLL_OFFSET;
     const max = this.node.scrollWidth - this.node.clientWidth - SCROLL_OFFSET;
-
     const isMax = Math.abs(scrollLeft) >= max;
-    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    const minSelector = isRtl ? TabSelector.SHADOW_RIGHT : TabSelector.SHADOW_LEFT;
-    const maxSelector = isRtl ? TabSelector.SHADOW_LEFT : TabSelector.SHADOW_RIGHT;
+    this._isRtl = getComputedStyle(this.node).direction === 'rtl';
+    const minSelector = this._isRtl ? TabSelector.SHADOW_RIGHT : TabSelector.SHADOW_LEFT;
+    const maxSelector = this._isRtl ? TabSelector.SHADOW_LEFT : TabSelector.SHADOW_RIGHT;
 
     if (isMin) {
       this.group.removeClass(minSelector);

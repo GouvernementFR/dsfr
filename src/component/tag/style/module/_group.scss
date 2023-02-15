@@ -27,9 +27,7 @@
     input[type=button] {
       &#{ns(tag)} {
         &#{ns(tag)}--dismiss {
-          @include icon(null, xs, after) {
-            @include margin-right(-0.75v);
-          }
+          @include icon(null, xs, after);
         }
 
         @include pressed-selector(true) {

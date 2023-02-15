@@ -1,0 +1,39 @@
+@use 'module/selector';
+@use 'module/direction';
+
+@mixin _tab-direction($is-supported: true) {
+  #{selector.ns('tabs')} {
+    @include direction.ltr($is-supported) {
+      &__panel {
+        @include margin-right(-100%);
+        left: -100%;
+
+        &--direction-end {
+          transform: translate(100%);
+        }
+
+        &--direction-start {
+          transform: translate(-100%);
+        }
+      }
+    }
+
+    @include direction.rtl($is-supported) {
+      &__panel {
+        @include margin-left(-100%);
+        @include margin-right(0);
+        right: -100%;
+        left: auto;
+
+        &--direction-end {
+          transform: translate(-100%);
+        }
+
+        &--direction-start {
+          transform: translate(100%);
+        }
+      }
+
+    }
+  }
+}
