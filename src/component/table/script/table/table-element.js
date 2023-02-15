@@ -34,12 +34,13 @@ class TableElement extends api.core.Instance {
 
   /* ajoute la classe fr-table__shadow-left ou fr-table__shadow-right sur fr-table en fonction d'une valeur de scroll et du sens (right, left) */
   scroll () {
-    const isMin = this.node.scrollLeft <= SCROLL_OFFSET;
-    const max = this.content.offsetWidth - this.node.offsetWidth - SCROLL_OFFSET;
-    const isMax = Math.abs(this.node.scrollLeft) >= max;
-    const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-    const minSelector = isRtl ? TableSelector.SHADOW_RIGHT : TableSelector.SHADOW_LEFT;
-    const maxSelector = isRtl ? TableSelector.SHADOW_LEFT : TableSelector.SHADOW_RIGHT;
+    const scrollLeft = this.node.scrollLeft;
+    const isMin = Math.abs(scrollLeft) <= SCROLL_OFFSET;
+    const max = this.node.scrollWidth - this.node.clientWidth - SCROLL_OFFSET;
+    const isMax = Math.abs(scrollLeft) >= max;
+    this._isRtl = getComputedStyle(this.node).direction === 'rtl';
+    const minSelector = this._isRtl ? TableSelector.SHADOW_RIGHT : TableSelector.SHADOW_LEFT;
+    const maxSelector = this._isRtl ? TableSelector.SHADOW_LEFT : TableSelector.SHADOW_RIGHT;
 
     if (isMin) {
       this.removeClass(minSelector);

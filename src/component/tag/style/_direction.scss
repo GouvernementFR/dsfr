@@ -1,0 +1,66 @@
+@use 'module/selector';
+@use 'module/direction';
+@use 'module/spacing';
+
+@mixin _tag-direction($is-supported: true) {
+  @include clickable-selector {
+    &#{ns(tag)} {
+      @include direction.ltr($is-supported) {
+        // tag supprimable
+        &#{ns(tag)}--dismiss {
+          @include after {
+            @include margin-left(1v);
+            @include margin-right(-1v);
+          }
+
+          &#{ns(tag)}--sm {
+            @include after {
+              @include margin-right(-0.75v);
+              @include margin-left(0.5v);
+            }
+          }
+        }
+      }
+
+      @include direction.rtl($is-supported) {
+        // tag supprimable
+        &#{ns(tag)}--dismiss {
+          @include after {
+            @include margin-right(1v);
+            @include margin-left(-1v);
+          }
+
+          &#{ns(tag)}--sm {
+            @include after {
+              @include margin-left(-0.75v);
+              @include margin-right(0.5v);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #{selector.ns-group(tags)} {
+    &#{ns-group(tags)}--sm {
+
+      button,
+      input[type=button] {
+        &#{ns(tag)} {
+          &#{ns(tag)}--dismiss {
+            @include after {
+              @include direction.ltr($is-supported) {
+                @include margin-right(-0.75v);
+              }
+
+              @include direction.rtl($is-supported) {
+                @include margin-left(-0.75v);
+                @include margin-right(1v);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

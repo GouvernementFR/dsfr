@@ -16,5 +16,7 @@
 @import 'index';
 @import 'style/module';
 @import 'style/scheme';
+@import 'style/direction';
 
+@include _tab-direction(true);
 @include _tab-scheme;

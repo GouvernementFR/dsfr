@@ -20,7 +20,7 @@
 
       &#{ns(tag)}--sm {
         @include icon(null, xs, after, false) {
-          @include absolute(3px, 0);
+          @include absolute(3px);
           @include margin(-1.5v);
         }
       }
@@ -33,16 +33,10 @@
       content: none;
     }
 
-    @include icon(close-line, sm, after) {
-      @include margin-left(1v);
-      @include margin-right(-1v);
-    }
+    @include icon(close-line, sm, after);
 
     &#{ns(tag)}--sm {
-      @include icon(null, xs, after) {
-        @include margin-right(-0.75v);
-        @include margin-left(0.5v);
-      }
+      @include icon(null, xs, after);
     }
   }
 }

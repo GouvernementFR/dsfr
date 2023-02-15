@@ -80,10 +80,9 @@
     @include enable-list-style;
     display: block;
     order: 3;
-    @include relative(null, null, null, -100%, 100%, auto);
+    @include relative(null, null, null, null, 100%, auto);
     @include padding(4v);
     @include padding(8v, md);
-    @include margin-right(-100%);
     flex: 0 0 100%;
     transition: visibility $tabs-transition-duration, transform $tabs-transition-duration;
 
@@ -93,14 +92,6 @@
       @include respond-from(md) {
         outline-offset: calc(-2rem + 2px);
       }
-    }
-
-    &--direction-end {
-      transform: translate(100%);
-    }
-
-    &--direction-start {
-      transform: translate(-100%);
     }
 
     /**
