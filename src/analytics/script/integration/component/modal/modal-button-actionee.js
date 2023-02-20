@@ -15,7 +15,7 @@ class ModalButtonActionee extends ComponentActionee {
   }
 
   click () {
-    if (!this._button.disclosed) this._actionElement.act();
+    if (this._button.disclosed) this._actionElement.act();
   }
 
   get label () {
