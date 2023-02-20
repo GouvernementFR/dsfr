@@ -71,7 +71,7 @@ export const Type = {
     method: 'eventListener'
   },
   FOCUS: {
-    id: 'open', // open event
+    id: 'focus', // focus event
     mode: null,
     binding: false,
     type: 'event',
@@ -102,10 +102,11 @@ export const Type = {
     type: 'event'
   },
   CHANGE: {
-    id: 'change', // button click
+    id: 'change', // input event change
     mode: 'out',
     binding: true,
     type: 'event',
+    event: 'change',
     method: 'change'
   },
   PROGRESS: {

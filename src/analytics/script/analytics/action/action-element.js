@@ -8,16 +8,18 @@ class ActionElement {
     this._node = node;
     this._type = type;
 
+    // requestAnimationFrame(this._init.bind(this));
     this._init();
   }
 
   _init () {
+    console.log('init');
     this._hierarchy = new Hierarchy(this._node);
 
     let id = '';
     let type = '';
-    if (this._node.id) id = `[${this._node.id}]`;
-    if (this._type) type = `(${this._type.id})`;
+    if (this._node.id) id = `_[${this._node.id}]`;
+    if (this._type) type = `_(${this._type.id})`;
     this._name = `${this._hierarchy.title}${id}${type}`;
 
     this._action = actions.getAction(this._name, true);
@@ -31,7 +33,7 @@ class ActionElement {
     return this._action;
   }
 
-  act (data) {
+  act (data = {}) {
     const layer = this._action.end(data);
     push(PushType.ACTION, layer);
   }

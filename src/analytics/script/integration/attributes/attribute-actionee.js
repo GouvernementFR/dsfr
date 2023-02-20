@@ -2,9 +2,9 @@ import api from '../../../api';
 import Type from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
 
-class AttributeBinding extends api.core.Instance {
+class AttributeActionee extends api.core.Instance {
   static get instanceClassName () {
-    return 'Binding';
+    return 'AttributeActionee';
   }
 
   init () {
@@ -16,6 +16,10 @@ class AttributeBinding extends api.core.Instance {
     switch (this._type.method) {
       case 'eventListener':
         this.listen(this._type.event, this.handleEvent.bind(this));
+        break;
+
+      case 'change':
+        this.listen(this._type.event, this.handleChange.bind(this));
         break;
     }
   }
@@ -34,4 +38,4 @@ class AttributeBinding extends api.core.Instance {
   }
 }
 
-export { AttributeBinding };
+export { AttributeActionee };
