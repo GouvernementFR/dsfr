@@ -30,7 +30,7 @@ class Member {
   }
 
   _parseHeadings () {
-    const selector = Array.from({ length: this._level - 1 }, (v, i) => `h${i + 2}`).join(',');
+    const selector = Array.from({ length: this._level }, (v, i) => `:scope > h${i + 1}, :scope > * > h${i + 1}`).join(',');
     this._headings = [...this.node.querySelectorAll(selector)].filter(heading => (this.target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
   }
 
@@ -61,7 +61,7 @@ class Member {
     const labels = [];
     this._headings.forEach(heading => {
       if (heading.level <= this._level) {
-        labels.unshift(heading.label);
+        if (heading.level > 1) labels.unshift(heading.label);
         this._level = heading.level - 1;
       }
     });

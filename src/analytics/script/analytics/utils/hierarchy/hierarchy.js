@@ -1,4 +1,3 @@
-import api from '../../../../api';
 import normalize from '../normalize';
 import { Member } from './member';
 import { Type } from './type';
@@ -10,8 +9,6 @@ class Hierarchy {
   }
 
   _process () {
-    console.log('#####################');
-    console.log(this._node);
     const member = new Member(this._node, this._node, 6);
     console.log('- FIRST MEMBER', member);
     this._level = member.level;

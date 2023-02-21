@@ -10,11 +10,20 @@ const getParametersLayer = (data) => {
 
 class Action {
   constructor (name, isCollectable = false) {
+    this._isMuted = false;
     this._name = name;
     this._isCollectable = isCollectable;
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
     this._parameters = {};
+  }
+
+  get isMuted () {
+    return this._isMuted;
+  }
+
+  set isMuted (value) {
+    this._isMuted = value;
   }
 
   get isCollectable () {
@@ -59,6 +68,7 @@ class Action {
   }
 
   _getLayer (mode, data = {}) {
+    if (this._isMuted) return [];
     const layer = this._base;
     switch (mode) {
       case ActionMode.IN:
@@ -94,9 +104,10 @@ class Action {
   }
 
   resume (data) {
+    if (this._isMuted) return [];
     if (this._status.value >= ActionStatus.ENDED.value) {
       api.inspector.error(`unexpected resuming on action ${this._name} with status ${this._status.id}`);
-      return;
+      return [];
     }
     const layer = this._base;
     if (data) layer.push.apply(layer, getParametersLayer(data));

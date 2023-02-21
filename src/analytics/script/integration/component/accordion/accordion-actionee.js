@@ -7,6 +7,10 @@ import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class AccordionActionee extends ComponentActionee {
+  constructor () {
+    super(Type.DISCLOSE, 2);
+  }
+
   static get instanceClassName () {
     return 'AccordionActionee';
   }
@@ -14,12 +18,11 @@ class AccordionActionee extends ComponentActionee {
   init () {
     this.register(`[aria-controls="${this.id}"]`, AccordionButtonActionee);
     this._instance = this.element.getInstance('Collapse');
-    this._actionElement = new ActionElement(this.node, Type.DISCLOSE);
     this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
   }
 
   handleDisclose () {
-    this._actionElement.act();
+    this.act();
   }
 
   get label () {
