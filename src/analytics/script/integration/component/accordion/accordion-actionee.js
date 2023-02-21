@@ -1,8 +1,9 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
 import { ActionElement } from '../../../analytics/action/action-element';
-import { Type } from '../../../analytics/action/type';
+import { AccordionSelector } from './accordion-selector';
 import { AccordionButtonActionee } from './accordion-button-actionee';
+import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class AccordionActionee extends ComponentActionee {
@@ -22,10 +23,14 @@ class AccordionActionee extends ComponentActionee {
   }
 
   get label () {
+    const accordion = this.node.closest(AccordionSelector.ACCORDION)[0];
+    if (accordion) {
+      const title = accordion.querySelector(AccordionSelector.TITLE)[0];
+      if (title) return title.textContent.trim();
+    }
     const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    console.log('button', button, button.node, button.node.textContent.trim());
-    if (!button) return null;
-    return button.node.textContent.trim();
+    if (button) return button.node.textContent.trim();
+    return null;
   }
 
   get component () {

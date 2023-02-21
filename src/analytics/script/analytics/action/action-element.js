@@ -1,15 +1,16 @@
 import actions from './actions';
 import push from '../facade/push';
 import PushType from '../facade/push-type';
-import { Hierarchy } from '../utils/hierarchy';
+import { Hierarchy } from '../utils/hierarchy/hierarchy';
 
 class ActionElement {
-  constructor (node, type) {
+  constructor (node, type, id) {
     this._node = node;
     this._type = type;
+    this._id = id || this._node.id;
 
-    // requestAnimationFrame(this._init.bind(this));
-    this._init();
+    requestAnimationFrame(this._init.bind(this));
+    // this._init();
   }
 
   _init () {
@@ -18,7 +19,7 @@ class ActionElement {
 
     let id = '';
     let type = '';
-    if (this._node.id) id = `_[${this._node.id}]`;
+    if (this._id) id = `_[${this._id}]`;
     if (this._type) type = `_(${this._type.id})`;
     this._name = `${this._hierarchy.title}${id}${type}`;
 
