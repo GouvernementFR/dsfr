@@ -1,6 +1,5 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { ActionElement } from '../../../analytics/action/action-element';
 import { Type } from '../../../analytics/action/type';
 import { TabButtonActionee } from './tab-button-actionee';
 import ID from './id';
@@ -20,7 +19,7 @@ class TabActionee extends ComponentActionee {
   }
 
   handleDisclose () {
-    this._actionElement.act();
+    this.act();
   }
 
   get label () {

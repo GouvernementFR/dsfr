@@ -1,5 +1,4 @@
 import { ComponentActionee } from '../component-actionee';
-import { ActionElement } from '../../../analytics/action/action-element';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
@@ -19,7 +18,7 @@ class ModalButtonActionee extends ComponentActionee {
   }
 
   click () {
-    if (this._button.disclosed) this._actionElement.act();
+    if (this._button.disclosed) this.act();
   }
 
   get label () {

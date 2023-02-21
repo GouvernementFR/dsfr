@@ -2,18 +2,17 @@ import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
-class TabButtonActionee extends ComponentActionee {
+class SearchActionee extends ComponentActionee {
   constructor () {
-    super(Type.CLICK, 2);
+    super(Type.CLICK, 1);
   }
 
   static get instanceClassName () {
-    return 'TabButtonActionee';
+    return 'SearchActionee';
   }
 
   init () {
-    this.id = this.node.id || this.registration.creator.node.id;
-    this._button = this.element.getInstance('TabButton');
+    console.log('SEARCH BAR');
     this.listen('click', this.click.bind(this));
   }
 
@@ -30,4 +29,4 @@ class TabButtonActionee extends ComponentActionee {
   }
 }
 
-export { TabButtonActionee };
+export { SearchActionee };
