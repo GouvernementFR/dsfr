@@ -1,5 +1,4 @@
 import { ComponentActionee } from '../component-actionee';
-import { ActionElement } from '../../../analytics/action/action-element';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 

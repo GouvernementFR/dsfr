@@ -1,6 +1,5 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { ActionElement } from '../../../analytics/action/action-element';
 import { AccordionSelector } from './accordion-selector';
 import { AccordionButtonActionee } from './accordion-button-actionee';
 import { Type } from '../../../analytics/action/type';

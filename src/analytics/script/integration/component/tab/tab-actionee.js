@@ -6,13 +6,16 @@ import { TabButtonActionee } from './tab-button-actionee';
 import ID from './id';
 
 class TabActionee extends ComponentActionee {
+  constructor () {
+    super(Type.DISCLOSE, 2);
+  }
+
   static get instanceClassName () {
     return 'TabActionee';
   }
 
   init () {
     this.register(`[aria-controls="${this.id}"]`, TabButtonActionee);
-    this._actionElement = new ActionElement(this.node, Type.DISCLOSE);
     this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
   }
 
