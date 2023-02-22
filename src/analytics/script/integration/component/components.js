@@ -5,6 +5,8 @@ import { BreadcrumbSelector} from './breadcrumb/breadcrumb-selector';
 import { ButtonActionee } from './button/button-actionee';
 import { BreadcrumbActionee } from './breadcrumb/breadcrumb-actionee';
 import { BreadcrumbLinkActionee } from './breadcrumb/breadcrumb-link-actionee';
+import { LinkSelector } from './link/link-selector';
+import { LinkActionee } from './link/link-actionee';
 import { ModalActionee } from './modal/modal-actionee';
 import { SearchSelector} from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
@@ -20,6 +22,8 @@ if (api.breadcrumb) {
   api.internals.register(BreadcrumbSelector.COLLAPSE, BreadcrumbActionee);
   api.internals.register(BreadcrumbSelector.LINK, BreadcrumbLinkActionee);
 }
+
+api.internals.register(LinkSelector.LINK, LinkActionee);
 
 if (api.modal) {
   api.internals.register(api.modal.ModalSelector.MODAL, ModalActionee);
