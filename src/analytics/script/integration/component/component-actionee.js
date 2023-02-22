@@ -71,6 +71,14 @@ class ComponentActionee extends api.core.Instance {
     }
   }
 
+  detectCheckedOrUnchecked () {
+    const isChecked = this.node.checked;
+    console.log('isChecked', isChecked);
+    if (isChecked === undefined) return;
+    this._type = isChecked ? Type.CHECK : Type.UNCHECK;
+    this._data.component_value = this.node.value;
+  }
+
   act (data = {}) {
     if (this._actionElement !== undefined) this._actionElement.act(Object.assign(this._data, data));
   }
