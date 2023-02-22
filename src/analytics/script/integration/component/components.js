@@ -1,10 +1,12 @@
 import api from '../../../api';
 import { AccordionActionee } from './accordion/accordion-actionee';
-import { ButtonSelector} from './button/button-selector';
 import { BreadcrumbSelector} from './breadcrumb/breadcrumb-selector';
-import { ButtonActionee } from './button/button-actionee';
 import { BreadcrumbActionee } from './breadcrumb/breadcrumb-actionee';
 import { BreadcrumbLinkActionee } from './breadcrumb/breadcrumb-link-actionee';
+import { ButtonSelector} from './button/button-selector';
+import { ButtonActionee } from './button/button-actionee';
+import { CardSelector} from './card/card-selector';
+import { CardActionee } from './card/card-actionee';
 import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
 import { ModalActionee } from './modal/modal-actionee';
@@ -16,12 +18,14 @@ if (api.accordion) {
   api.internals.register(api.accordion.AccordionSelector.COLLAPSE, AccordionActionee);
 }
 
-api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
-
 if (api.breadcrumb) {
   api.internals.register(BreadcrumbSelector.COLLAPSE, BreadcrumbActionee);
   api.internals.register(BreadcrumbSelector.LINK, BreadcrumbLinkActionee);
 }
+
+api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
+
+api.internals.register(CardSelector.CARD, CardActionee);
 
 api.internals.register(LinkSelector.LINK, LinkActionee);
 

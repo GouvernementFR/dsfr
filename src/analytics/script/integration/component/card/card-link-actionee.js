@@ -2,22 +2,21 @@ import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
-class LinkActionee extends ComponentActionee {
+class CardLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 1);
+    super(Type.INTERNAL, 2);
   }
 
   static get instanceClassName () {
-    return 'LinkActionee';
+    return 'CardLinkActionee';
   }
 
   init () {
-    console.log('LINK');
-    this.listen('click', this.click.bind(this), { capture: true });
+    this.listen('click', this.handleClick.bind(this), { capture: true });
   }
 
-  click () {
-    const data = { component_value: this.getAttribute('href')};
+  handleClick () {
+    const data = { component_value: this.getAttribute('href') };
     this.act(data);
   }
 
@@ -30,4 +29,4 @@ class LinkActionee extends ComponentActionee {
   }
 }
 
-export { LinkActionee };
+export { CardLinkActionee };
