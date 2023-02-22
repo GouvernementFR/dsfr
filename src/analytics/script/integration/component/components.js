@@ -9,6 +9,8 @@ import { CalloutSelector} from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
 import { CardSelector} from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
+import { HeaderSelector} from './header/header-selector';
+import { HeaderActionee } from './header/header-actionee';
 import { HighlightSelector} from './highlight/highlight-selector';
 import { HighlightActionee } from './highlight/highlight-actionee';
 import { LinkSelector } from './link/link-selector';
@@ -32,6 +34,8 @@ api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
+
+api.internals.register(HeaderSelector.HEADER, HeaderActionee);
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
