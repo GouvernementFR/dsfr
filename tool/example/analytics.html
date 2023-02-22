@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="fr" data-fr-theme="light" data-fr-js="true" data-fr-scheme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Pages de création de compte - Design System</title>
+  <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
+  <link rel="apple-touch-icon" href="../../dist/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="icon" href="../../dist/favicon/favicon.svg" type="image/svg+xml">
+  <!-- si favicon.ico peut etre placé à la racine du serveur, retirer la ligne ci-dessous -->
+  <link rel="shortcut icon" href="../../dist/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+  <link rel="manifest" href="../../dist/favicon/manifest.webmanifest" crossorigin="use-credentials">
+  <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+  <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+  <link href="../../dist/core/core.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/button/button.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/stepper/stepper.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/connect/connect.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/form/form.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/link/link.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/scheme/scheme.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/accordion/accordion.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/logo/logo.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/badge/badge.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/breadcrumb/breadcrumb.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/alert/alert.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/checkbox/checkbox.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/radio/radio.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/modal/modal.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/navigation/navigation.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/footer/footer.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/input/input.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/utility/utility.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/translate/translate.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/password/password.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/search/search.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/component/header/header.main.css" rel="stylesheet" file="main">
+  <link href="../../dist/core/core.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/button/button.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/stepper/stepper.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/connect/connect.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/form/form.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/link/link.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/accordion/accordion.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/logo/logo.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/badge/badge.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/breadcrumb/breadcrumb.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/alert/alert.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/checkbox/checkbox.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/radio/radio.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/modal/modal.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/navigation/navigation.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/footer/footer.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/input/input.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/utility/utility.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/translate/translate.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/password/password.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/search/search.legacy.css" rel="stylesheet" file="legacy">
+  <link href="../../dist/component/header/header.legacy.css" rel="stylesheet" file="legacy">
+
+  <script>
+    window.dsfr = {
+      verbose: true,
+      analytics: {
+        domain: 'gva.et-gv.fr',
+        mode: 'auto',
+        page: {
+          template: 'article'
+        },
+        site: {
+          environment: 'development', // by default development ['development', 'stage', 'production']
+          entity: 'Entité test', // Entity responsible for website
+        }
+      }
+    };
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CObject.getOwnPropertySymbols%2CObject.values"></script>
+
+</head>
+
+<body id="top" class="fr-mb-12w">
+
+  <div class="fr-mb-12w">
+    <div class="fr-mb-6v">
+      <header role="banner" class="fr-header">
+        <div class="fr-header__body">
+          <div class="fr-container">
+            <div class="fr-header__body-row">
+              <div class="fr-header__brand fr-enlarge-link">
+                <div class="fr-header__brand-top">
+                  <div class="fr-header__logo">
+                    <p class="fr-logo">
+                      Intitulé
+                      <br>officiel
+                    </p>
+                  </div>
+                  <div class="fr-header__navbar">
+                    <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-1884"
+                      aria-haspopup="menu" id="button-1885" title="Menu" data-fr-js-modal-button="true">
+                      Menu
+                    </button>
+                  </div>
+                </div>
+                <div class="fr-header__service">
+                  <a href="/"
+                    title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
+                    <p class="fr-header__service-title">
+                      Nom du site / service
+                    </p>
+                  </a>
+                  <p class="fr-header__service-tagline">baseline - précisions sur l‘organisation</p>
+                </div>
+              </div>
+              <div class="fr-header__tools">
+                <div class="fr-header__tools-links">
+                  <ul class="fr-btns-group" data-fr-js-header-links="true">
+                    <li>
+                      <a class="fr-btn fr-icon-add-circle-line" href="[url - à modifier]">
+                        Créer un espace
+                      </a>
+                    </li>
+                    <li>
+                      <a class="fr-btn fr-icon-lock-line" href="[url - à modifier]">
+                        Se connecter
+                      </a>
+                    </li>
+                    <li>
+                      <a class="fr-btn fr-icon-account-line" href="[url - à modifier]">
+                        S’enregistrer
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fr-header__menu fr-modal" id="modal-1884" data-fr-js-modal="true" data-fr-js-header-modal="true"
+          role="dialog" aria-labelledby="button-1885">
+          <div class="fr-container">
+            <button class="fr-btn--close fr-btn" aria-controls="modal-1884" title="Fermer"
+              data-fr-js-modal-button="true">
+              Fermer
+            </button>
+            <div class="fr-header__menu-links">
+              <ul class="fr-btns-group" data-fr-js-header-links="true">
+                <li>
+                  <a class="fr-btn fr-icon-add-circle-line" href="[url - à modifier]">
+                    Créer un espace
+                  </a>
+                </li>
+                <li>
+                  <a class="fr-btn fr-icon-lock-line" href="[url - à modifier]">
+                    Se connecter
+                  </a>
+                </li>
+                <li>
+                  <a class="fr-btn fr-icon-account-line" href="[url - à modifier]">
+                    S’enregistrer
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <nav class="fr-nav" id="navigation-1886" role="navigation" aria-label="Menu principal"
+              data-fr-js-navigation="true">
+              <ul class="fr-nav__list">
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-1887"
+                    data-fr-js-collapse-button="true">Entrée menu</button>
+                  <div class="fr-collapse fr-menu" id="menu-1887" data-fr-js-collapse="true">
+                    <ul class="fr-menu__list">
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="mega-menu-1888"
+                    data-fr-js-collapse-button="true">Entrée mega menu</button>
+                  <div class="fr-collapse fr-mega-menu" id="mega-menu-1888" data-fr-js-collapse="true">
+                    <div class="fr-container fr-container--fluid fr-container-lg">
+                      <div class="fr-grid-row fr-grid-row-lg--gutters">
+                        <div class="fr-col-12 fr-mb-n3v">
+                          <button class="fr-btn--close fr-btn" aria-controls="mega-menu-1888" title="Fermer"
+                            data-fr-js-collapse-button="true">
+                            Fermer
+                          </button>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-8 fr-col-offset-lg-4--right fr-mb-4v">
+                          <div class="fr-mega-menu__leader">
+                            <h4 class="fr-h4 fr-mb-2v">Titre éditorialisé</h4>
+                            <p class="fr-hidden fr-unhidden-lg">Lorem ipsum dolor sit amet, consectetur adipiscing,
+                              incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi
+                              tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat
+                              est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing
+                              elit ut.</p>
+                            <a class="fr-link fr-icon-arrow-right-line fr-link--icon-right" href="#">
+                              Voir toute la rubrique
+                            </a>
+                          </div>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self" aria-current="page">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a class="fr-nav__link" href="#" target="_self">accès direct</a>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-1889" aria-current="true"
+                    data-fr-js-collapse-button="true">Entrée menu active</button>
+                  <div class="fr-collapse fr-menu" id="menu-1889" data-fr-js-collapse="true">
+                    <ul class="fr-menu__list">
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self" aria-current="page">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="mega-menu-1890"
+                    data-fr-js-collapse-button="true">Entrée mega menu</button>
+                  <div class="fr-collapse fr-mega-menu" id="mega-menu-1890" data-fr-js-collapse="true">
+                    <div class="fr-container fr-container--fluid fr-container-lg">
+                      <div class="fr-grid-row fr-grid-row-lg--gutters">
+                        <div class="fr-col-12 fr-mb-n3v">
+                          <button class="fr-btn--close fr-btn" aria-controls="mega-menu-1890" title="Fermer"
+                            data-fr-js-collapse-button="true">
+                            Fermer
+                          </button>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-8 fr-col-offset-lg-4--right fr-mb-4v">
+                          <div class="fr-mega-menu__leader">
+                            <h4 class="fr-h4 fr-mb-2v">Titre éditorialisé</h4>
+                            <p class="fr-hidden fr-unhidden-lg">Lorem ipsum dolor sit amet, consectetur adipiscing,
+                              incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi
+                              tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat
+                              est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing
+                              elit ut.</p>
+                            <a class="fr-link fr-icon-arrow-right-line fr-link--icon-right" href="#">
+                              Voir toute la rubrique
+                            </a>
+                          </div>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self" aria-current="page">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <a class="fr-nav__link" href="#" target="_self">accès direct</a>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="mega-menu-1891"
+                    data-fr-js-collapse-button="true">Entrée mega menu</button>
+                  <div class="fr-collapse fr-mega-menu" id="mega-menu-1891" data-fr-js-collapse="true">
+                    <div class="fr-container fr-container--fluid fr-container-lg">
+                      <div class="fr-grid-row fr-grid-row-lg--gutters">
+                        <div class="fr-col-12 fr-mb-n3v">
+                          <button class="fr-btn--close fr-btn" aria-controls="mega-menu-1891" title="Fermer"
+                            data-fr-js-collapse-button="true">
+                            Fermer
+                          </button>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self" aria-current="true">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self" aria-current="page">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="fr-col-12 fr-col-lg-3">
+                          <h5 class="fr-mega-menu__category">
+                            <a class="fr-nav__link" href="#" target="_self">Nom de catégorie</a>
+                          </h5>
+                          <ul class="fr-mega-menu__list">
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                            <li>
+                              <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="fr-nav__item" data-fr-js-navigation-item="true">
+                  <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-1892"
+                    data-fr-js-collapse-button="true">Entrée menu</button>
+                  <div class="fr-collapse fr-menu" id="menu-1892" data-fr-js-collapse="true">
+                    <ul class="fr-menu__list">
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                      <li>
+                        <a class="fr-nav__link" href="#" target="_self">Lien de navigation</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <div class="fr-container">
+        <nav role="navigation" class="fr-breadcrumb" aria-label="vous êtes ici :" data-fr-js-breadcrumb="true">
+          <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-1893"
+            data-fr-js-collapse-button="true">Voir le fil d’Ariane</button>
+          <div class="fr-collapse" id="breadcrumb-1893" data-fr-js-collapse="true">
+            <ol class="fr-breadcrumb__list">
+              <li>
+                <a class="fr-breadcrumb__link" href="/">Accueil</a>
+              </li>
+              <li>
+                <a class="fr-breadcrumb__link" href="/segment-1/">Nom de la page</a>
+              </li>
+              <li>
+                <a class="fr-breadcrumb__link" href="/segment-1/segment-2/">Nom de la page</a>
+              </li>
+              <li>
+                <a class="fr-breadcrumb__link" aria-current="page">Page Actuelle</a>
+              </li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+      <main role="main" id="content">
+        <div class="fr-container fr-mt-8v fr-mt-md-14v fr-mb-2v fr-mb-md-8v">
+          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
+            <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
+              <h2>Création de compte sur [Nom de service-site]</h2>
+              <p class="fr-text--lead">Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius
+                tortor nibh, sit amet tempor nibh finibus et.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fr-container fr-container--fluid fr-mb-md-14v">
+          <div class="fr-grid-row fr-grid-row-gutters fr-grid-row--center">
+            <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
+              <div class="fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v">
+                <div class="fr-grid-row fr-grid-row-gutters fr-grid-row--center">
+                  <div class="fr-col-12 fr-col-md-10 fr-col-lg-9">
+                    <div class="fr-stepper">
+                      <h3 class="fr-stepper__title">
+                        <span class="fr-stepper__state">Étape 2 sur 3</span>
+                        Renseigner une identité
+                      </h3>
+                      <div class="fr-stepper__steps" data-fr-current-step="2" data-fr-steps="3"></div>
+                      <p class="fr-stepper__details">
+                        <span class="fr-text--bold">Étape suivante&nbsp;:</span> Saisir des coordonnées
+                      </p>
+                    </div>
+                    <hr>
+                    <div>
+                      <form class="fr-mb-0" id="identity">
+                        <fieldset class="fr-mb-0 fr-fieldset" id="identity-fieldset"
+                          aria-labelledby="identity-fieldset-legend identity-fieldset-messages">
+                          <legend class="fr-fieldset__legend" id="identity-fieldset-legend">
+                            <h5>Identité personnelle</h5>
+                          </legend>
+                          <div class="fr-fieldset__element">
+                            <span class="fr-hint-text">Sauf mention contraire, tous les champs sont obligatoires.</span>
+                          </div>
+                          <div class="fr-fieldset__element">
+                            <fieldset class="fr-fieldset" id="sex-1870"
+                              aria-labelledby="sex-1870-legend sex-1870-messages">
+                              <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="sex-1870-legend">
+                                Sexe
+                              </legend>
+                              <div class="fr-fieldset__element">
+                                <div class="fr-radio-group fr-radio-group--sm">
+                                  <input type="radio" id="female-1871" name="sex">
+                                  <label class="fr-label" for="female-1871">
+                                    Feminin
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="fr-fieldset__element">
+                                <div class="fr-radio-group fr-radio-group--sm">
+                                  <input type="radio" id="male-1872" name="sex">
+                                  <label class="fr-label" for="male-1872">
+                                    Masculin
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="fr-messages-group" id="sex-1870-messages" aria-live="assertive">
+                              </div>
+                            </fieldset>
+                          </div>
+                          <div class="fr-fieldset__element">
+                            <fieldset class="fr-fieldset" id="name-1882"
+                              aria-labelledby="name-1882-legend name-1882-messages">
+                              <legend class="fr-sr-only" id="name-1882-legend">
+                                Nom
+                              </legend>
+                              <div class="fr-fieldset__element">
+                                <div class="fr-input-group">
+                                  <label class="fr-label" for="family-name-1874">
+                                    Nom
+                                  </label>
+                                  <input class="fr-input" aria-describedby="family-name-1874-messages"
+                                    name="family-name" autocomplete="family-name" id="family-name-1874"
+                                    spellcheck="false" type="text">
+                                  <div class="fr-messages-group" id="family-name-1874-messages" aria-live="assertive">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="fr-fieldset__element">
+                                <fieldset class="fr-mb-n4v fr-fieldset" id="firstname-fieldset-1880"
+                                  aria-labelledby="firstname-fieldset-1880-legend firstname-fieldset-1880-messages">
+                                  <legend class="fr-sr-only" id="firstname-fieldset-1880-legend">
+                                    Prénom(s)
+                                  </legend>
+                                  <div class="fr-fieldset__element">
+                                    <div class="fr-input-group">
+                                      <label class="fr-label" for="given-1879">
+                                        Prénom
+                                      </label>
+                                      <input class="fr-input" aria-describedby="given-1879-messages" name="given-name"
+                                        autocomplete="given-name" id="given-1879" spellcheck="false" type="text">
+                                      <div class="fr-messages-group" id="given-1879-messages" aria-live="assertive">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="fr-messages-group" id="firstname-fieldset-1880-messages"
+                                    aria-live="assertive">
+                                  </div>
+                                </fieldset>
+                              </div>
+                              <div class="fr-fieldset__element">
+                                <div class="fr-checkbox-group fr-checkbox-group--sm">
+                                  <input onclick="const fieldset = document.getElementById('firstname-fieldset-1880');
+if (this.checked) fieldset.setAttribute('disabled', '');
+else fieldset.removeAttribute('disabled');
+" name="firstname-disabled" id="disabler-1881" type="checkbox" aria-describedby="disabler-1881-messages">
+                                  <label class="fr-label" for="disabler-1881">
+                                    Je n'ai pas de prénom
+                                  </label>
+                                  <div class="fr-messages-group" id="disabler-1881-messages" aria-live="assertive">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="fr-messages-group" id="name-1882-messages" aria-live="assertive">
+                              </div>
+                            </fieldset>
+                          </div>
+                          <div class="fr-fieldset__element">
+                            <ul class="fr-mt-2v fr-btns-group fr-btns-group--between fr-btns-group--inline">
+                              <li>
+                                <button class="fr-btn fr-btn--secondary">
+                                  Précédent
+                                </button>
+                              </li>
+                              <li>
+                                <button class="fr-btn" type="submit">
+                                  Valider
+                                </button>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="fr-messages-group" id="identity-fieldset-messages" aria-live="assertive">
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="fr-footer" role="contentinfo" id="footer-1894">
+        <div class="fr-container">
+          <div class="fr-footer__body">
+            <div class="fr-footer__brand fr-enlarge-link">
+              <a href="/"
+                title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
+                <p class="fr-logo">
+                  Intitulé
+                  <br>officiel
+                </p>
+              </a>
+            </div>
+            <div class="fr-footer__content">
+              <p class="fr-footer__content-desc">Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut
+                labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam
+                maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem
+                ipsum dolor sit amet consectetur adipiscing elit ut.</p>
+              <ul class="fr-footer__content-list">
+                <li class="fr-footer__content-item">
+                  <a class="fr-footer__content-link" target="_blank"
+                    href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+                </li>
+                <li class="fr-footer__content-item">
+                  <a class="fr-footer__content-link" target="_blank" href="https://gouvernement.fr">gouvernement.fr</a>
+                </li>
+                <li class="fr-footer__content-item">
+                  <a class="fr-footer__content-link" target="_blank"
+                    href="https://service-public.fr">service-public.fr</a>
+                </li>
+                <li class="fr-footer__content-item">
+                  <a class="fr-footer__content-link" target="_blank" href="https://data.gouv.fr">data.gouv.fr</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="fr-footer__bottom">
+            <ul class="fr-footer__bottom-list">
+              <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="#">Plan du site</a>
+              </li>
+              <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="#">Accessibilité : non/partiellement/totalement conforme</a>
+              </li>
+              <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="#">Mentions légales</a>
+              </li>
+              <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="#">Données personnelles</a>
+              </li>
+              <li class="fr-footer__bottom-item">
+                <a class="fr-footer__bottom-link" href="#">Gestion des cookies</a>
+              </li>
+            </ul>
+            <div class="fr-footer__bottom-copy">
+              <p>Sauf mention contraire, tous les contenus de ce site sont sous <a
+                  href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence
+                  etalab-2.0</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="fr-mb-12v">
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button class="fr-accordion__btn" aria-expanded="false" aria-controls="snippet-1883"
+            data-fr-js-collapse-button="true">Extrait de code</button>
+        </h3>
+        <div class="fr-collapse" id="snippet-1883" data-fr-js-collapse="true">
+          <div class="code-toolbar">
+            <pre
+              class="  language-html"><code class="  language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-container fr-mt-8v fr-mt-md-14v fr-mb-2v fr-mb-md-8v<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-grid-row fr-grid-row--gutters fr-grid-row--center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-col-12 fr-col-md-10 fr-col-lg-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Création de compte sur [Nom de service-site]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-text--lead<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Chapô — Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-container fr-container--fluid fr-mb-md-14v<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-grid-row fr-grid-row-gutters fr-grid-row--center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-col-12 fr-col-md-10 fr-col-lg-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-container fr-background-alt--grey fr-px-md-0 fr-pt-10v fr-pt-md-14v fr-pb-6v fr-pb-md-10v<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-grid-row fr-grid-row-gutters fr-grid-row--center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-col-12 fr-col-md-10 fr-col-lg-9<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-stepper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-stepper__title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-stepper__state<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Étape 2 sur 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                  Renseigner une identité
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-stepper__steps<span class="token punctuation">"</span></span> <span class="token attr-name">data-fr-current-step</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span> <span class="token attr-name">data-fr-steps</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-stepper__details<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-text--bold<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Étape suivante :<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span> Saisir des coordonnées
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>hr</span><span class="token punctuation">&gt;</span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-mb-0<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>identity<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-mb-0 fr-fieldset<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>identity-fieldset<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>identity-fieldset-legend identity-fieldset-messages<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__legend<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>identity-fieldset-legend<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">&gt;</span></span>Identité personnelle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-hint-text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Sauf mention contraire, tous les champs sont obligatoires.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sex-1870<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sex-1870-legend sex-1870-messages<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__legend--regular fr-fieldset__legend<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sex-1870-legend<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  Sexe
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-radio-group fr-radio-group--sm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>female-1871<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>female-1871<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          Feminin
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-radio-group fr-radio-group--sm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>male-1872<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sex<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>male-1872<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          Masculin
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sex-1870-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name-1882<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name-1882-legend name-1882-messages<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-sr-only<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name-1882-legend<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  Nom
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-input-group<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>family-name-1874<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          Nom
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-input<span class="token punctuation">"</span></span> <span class="token attr-name">aria-describedby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>family-name-1874-messages<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>family-name<span class="token punctuation">"</span></span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>family-name<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>family-name-1874<span class="token punctuation">"</span></span> <span class="token attr-name">spellcheck</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>family-name-1874-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-mb-n4v fr-fieldset<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname-fieldset-1880<span class="token punctuation">"</span></span> <span class="token attr-name">aria-labelledby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname-fieldset-1880-legend firstname-fieldset-1880-messages<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-sr-only<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname-fieldset-1880-legend<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          Prénom(s)
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-input-group<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>given-1879<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                                  Prénom
+                                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-input<span class="token punctuation">"</span></span> <span class="token attr-name">aria-describedby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>given-1879-messages<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>given-name<span class="token punctuation">"</span></span> <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>given-name<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>given-1879<span class="token punctuation">"</span></span> <span class="token attr-name">spellcheck</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>given-1879-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname-fieldset-1880-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-checkbox-group fr-checkbox-group--sm<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>const fieldset = document.getElementById('firstname-fieldset-1880');
+if (this.checked) fieldset.setAttribute('disabled', '');
+else fieldset.removeAttribute('disabled');
+<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstname-disabled<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disabler-1881<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">aria-describedby</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disabler-1881-messages<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-label<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disabler-1881<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                          Je n'ai pas de prénom
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>disabler-1881-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>name-1882-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-fieldset__element<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-mt-2v fr-btns-group fr-btns-group--between fr-btns-group--inline fr-btns-group fr-btns-group--between fr-btns-group--inline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-btn fr-btn--secondary<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      Précédent
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-btn<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                                      Valider
+                                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+                                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+                                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fr-messages-group<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>identity-fieldset-messages<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">&gt;</span></span>
+                              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+                          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+                  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span></code></pre>
+            <div class="toolbar">
+              <div class="toolbar-item"><button>Copy</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <button class="fr-display-button fr-background-default--grey fr-btn fr-btn--lg fr-icon-theme-fill fr-btn--secondary"
+    aria-controls="fr-theme-modal" data-fr-opened="false" style="z-index: 1600" data-fr-js-modal-button="true">
+    Label bouton
+  </button>
+  <dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title"
+    data-fr-js-modal="true">
+    <div class="fr-container fr-container--fluid fr-container-md">
+      <div class="fr-grid-row fr-grid-row--center">
+        <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+          <div class="fr-modal__body" data-fr-js-modal-body="true">
+            <div class="fr-modal__header">
+              <button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="Fermer"
+                data-fr-js-modal-button="true">
+                Fermer
+              </button>
+            </div>
+            <div class="fr-modal__content">
+              <h1 id="fr-theme-modal-title" class="fr-modal__title">
+                Paramètres d’affichage
+              </h1>
+              <div id="fr-display" class="fr-display" data-fr-js-display="true">
+                <fieldset class="fr-fieldset" id="display-fieldset">
+                  <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="display-fieldset-legend">
+                    Choisissez un thème pour personnaliser l’apparence du site.
+                  </legend>
+                  <div class="fr-fieldset__element">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-light">
+                        Thème clair
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
+                          <use class="fr-artwork-decorative"
+                            xlink:href="../../dist/artwork/pictograms/environment/sun.svg#artwork-decorative">
+                          </use>
+                          <use class="fr-artwork-minor"
+                            xlink:href="../../dist/artwork/pictograms/environment/sun.svg#artwork-minor">
+                          </use>
+                          <use class="fr-artwork-major"
+                            xlink:href="../../dist/artwork/pictograms/environment/sun.svg#artwork-major">
+                          </use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fr-fieldset__element">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-dark">
+                        Thème sombre
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
+                          <use class="fr-artwork-decorative"
+                            xlink:href="../../dist/artwork/pictograms/environment/moon.svg#artwork-decorative">
+                          </use>
+                          <use class="fr-artwork-minor"
+                            xlink:href="../../dist/artwork/pictograms/environment/moon.svg#artwork-minor">
+                          </use>
+                          <use class="fr-artwork-major"
+                            xlink:href="../../dist/artwork/pictograms/environment/moon.svg#artwork-major">
+                          </use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fr-fieldset__element">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-system">
+                        Système
+                        <span class="fr-hint-text">Utilise les paramètres système</span>
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg aria-hidden="true" class="fr-artwork" viewBox="0 0 80 80" width="80px" height="80px">
+                          <use class="fr-artwork-decorative"
+                            xlink:href="../../dist/artwork/pictograms/system/system.svg#artwork-decorative">
+                          </use>
+                          <use class="fr-artwork-minor"
+                            xlink:href="../../dist/artwork/pictograms/system/system.svg#artwork-minor">
+                          </use>
+                          <use class="fr-artwork-major"
+                            xlink:href="../../dist/artwork/pictograms/system/system.svg#artwork-major">
+                          </use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <script type="module" src="../../dist/dsfr.module.js" ></script>
+  <script type="text/javascript" nomodule src="../../dist/dsfr.nomodule.js"></script>
+  <script type="module" src="analytics/analytics.module.js" ></script>
+  <script type="text/javascript" nomodule  src="analytics/analytics.nomodule.js" ></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js">
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js">
+  </script>
+
+
+
+</body>
+
+</html>
