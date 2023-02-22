@@ -36,15 +36,10 @@ class Member {
 
   _getComponent () {
     if (typeof api !== 'function') return false;
-    console.log('func');
     const element = api(this.node);
     if (!element) return false;
-    console.log('element');
-
     const instance = Object.values(element).filter(actionee => actionee.isComponentActionee).sort((a, b) => b.priority - a.priority)[0];
-    console.log('filter', Object.values(element));
     if (!instance) return false;
-    console.log('instance');
 
     this._type = Type.COMPONENT;
     if (this._headings.length) {
@@ -72,8 +67,6 @@ class Member {
   }
 
   analyse () {
-    console.log('--- node', this.node);
-
     this._parseHeadings();
     if (this._getComponent()) return;
     if (this._getHeading()) return;

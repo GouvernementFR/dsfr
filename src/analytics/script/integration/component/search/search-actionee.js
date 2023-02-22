@@ -1,27 +1,22 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
+import { ButtonEmission } from '../button/button-emission';
 
 class SearchActionee extends ComponentActionee {
-  constructor () {
-    super(Type.CLICK, 1);
-  }
-
   static get instanceClassName () {
     return 'SearchActionee';
   }
 
   init () {
-    console.log('SEARCH BAR');
-    this.listen('click', this.click.bind(this));
+    this.addAscent(ButtonEmission.GET_DATA, this.getData);
   }
 
-  click () {
-    this.act();
+  getData () {
+    return { search_terms: 'my_search_terms' };
   }
 
   get label () {
-    return this.node.textContent.trim();
+    return 'barre de recherche';
   }
 
   get component () {

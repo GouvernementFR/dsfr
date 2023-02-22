@@ -10,12 +10,11 @@ class ActionElement {
     this._id = id || this._node.id;
     this._isMuted = false;
 
-    requestAnimationFrame(this._init.bind(this));
     // this._init();
+    requestAnimationFrame(this._init.bind(this));
   }
 
   _init () {
-    console.log('init');
     this._hierarchy = new Hierarchy(this._node);
 
     let id = '';
@@ -26,6 +25,11 @@ class ActionElement {
 
     this._action = actions.getAction(this._name, true);
     this._action.isMuted = this._isMuted;
+
+    this._action.labels[0] = this._type.id;
+    this._action.labels[1] = this._hierarchy.globalComponent;
+    this._action.labels[2] = this._hierarchy.localComponent;
+    this._action.labels[4] = 'dsfr_component';
 
     if (this._hierarchy.label) this._action.addParameter('component_label', this._hierarchy.label);
     if (this._hierarchy.title) this._action.addParameter('heading_hierarchy', this._hierarchy.title);

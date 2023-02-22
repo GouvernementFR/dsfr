@@ -17,7 +17,7 @@ if (api.modal) {
   api.internals.register(api.modal.ModalSelector.MODAL, ModalActionee);
 }
 
-api.internals.register(SearchSelector.SEARCH, SearchActionee);
+api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
 
 if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);

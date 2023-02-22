@@ -9,6 +9,7 @@ class Hierarchy {
   }
 
   _process () {
+    console.log('_______________ start ____________________');
     const member = new Member(this._node, this._node, 6);
     console.log('- FIRST MEMBER', member);
     this._level = member.level;
@@ -40,9 +41,20 @@ class Hierarchy {
 
     this._label = normalize(this._members[this._members.length - 1].label);
     this._title = normalize(this._members.filter(member => member.label).map(member => member.label).join(' ＞ '));
-    this._component = normalize(this._members.filter(member => member.component).map(member => member.component).join(' ＞ '));
+    const components = this._members.filter(member => member.component).map(member => member.component);
+    this._component = normalize(components.join(' ＞ '));
+    this._localComponent = components[components.length - 1];
+    this._globalComponent = components[0];
 
-    console.log('====================');
+    console.log('========= end ===========');
+  }
+
+  get localComponent () {
+    return this._localComponent;
+  }
+
+  get globalComponent () {
+    return this._globalComponent;
   }
 
   get label () {

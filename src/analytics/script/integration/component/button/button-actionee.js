@@ -1,10 +1,12 @@
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
+import { ButtonEmission } from './button-emission';
 
 class ButtonActionee extends ComponentActionee {
   constructor () {
-    super(Type.BUTTON, 1);
+    super(null, 1);
+    this._data = {};
   }
 
   static get instanceClassName () {
@@ -12,12 +14,13 @@ class ButtonActionee extends ComponentActionee {
   }
 
   init () {
-    console.log('BUTTON');
+    this.detectLinkOrButton();
     this.listen('click', this.click.bind(this));
   }
 
   click () {
-    this.act();
+    const data = this.ascend(ButtonEmission.GET_DATA);
+    this.act(Object.assign({}, ...data));
   }
 
   get label () {
