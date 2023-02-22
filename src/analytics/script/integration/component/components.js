@@ -5,6 +5,8 @@ import { BreadcrumbActionee } from './breadcrumb/breadcrumb-actionee';
 import { BreadcrumbLinkActionee } from './breadcrumb/breadcrumb-link-actionee';
 import { ButtonSelector} from './button/button-selector';
 import { ButtonActionee } from './button/button-actionee';
+import { CalloutSelector} from './callout/callout-selector';
+import { CalloutActionee } from './callout/callout-actionee';
 import { CardSelector} from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
 import { LinkSelector } from './link/link-selector';
@@ -24,6 +26,8 @@ if (api.breadcrumb) {
 }
 
 api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
+
+api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
 

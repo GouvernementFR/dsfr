@@ -1,7 +1,6 @@
 import { ComponentActionee } from '../component-actionee';
 import { CardLinkActionee } from './card-link-actionee';
 import { CardSelector} from './card-selector';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class CardActionee extends ComponentActionee {
@@ -18,7 +17,7 @@ class CardActionee extends ComponentActionee {
     const cardTitle = this.node.querySelector(CardSelector.TITLE);
     if (cardTitle) return cardTitle.textContent.trim();
 
-    const selector = Array.from({ length: 2 }, (v, i) => `h${i + 1}`).join(',');
+    const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
     const headings = [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0);
     if (headings.length) return headings[0].textContent.trim();
 
