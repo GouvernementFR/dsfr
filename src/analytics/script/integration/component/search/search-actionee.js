@@ -8,11 +8,12 @@ class SearchActionee extends ComponentActionee {
   }
 
   init () {
-    this.addAscent(ButtonEmission.GET_DATA, this.getData);
+    this.addAscent(ButtonEmission.GET_DATA, this.getData.bind(this));
+    this._input = this.querySelector('input[type="search"],input[type="text"]');
   }
 
   getData () {
-    return { search_terms: 'my_search_terms' };
+    return { search_terms: this._input.value };
   }
 
   get label () {
