@@ -14,7 +14,7 @@ class ButtonActionee extends ComponentActionee {
 
   init () {
     this.detectLinkOrButton();
-    this.listen('click', this.click.bind(this));
+    this.listen('click', this.click.bind(this), { capture: true });
   }
 
   click () {

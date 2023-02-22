@@ -2,23 +2,23 @@ import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
-class ModalButtonActionee extends ComponentActionee {
+class BreadcrumbButtonActionee extends ComponentActionee {
   constructor () {
     super(Type.CLICK, 2);
   }
 
   static get instanceClassName () {
-    return 'ModalButtonActionee';
+    return 'BreadcrumbButtonActionee';
   }
 
   init () {
     this.id = this.node.id || this.registration.creator.node.id;
-    this._button = this.element.getInstance('ModalButton');
-    this.listen('click', this.click.bind(this), { capture: true });
+    this._button = this.element.getInstance('BreadcrumbButton');
+    this.listen('click', this.click.bind(this));
   }
 
   click () {
-    if (this._button.disclosed) this.act();
+    this._actionElement.act();
   }
 
   get label () {
@@ -30,4 +30,4 @@ class ModalButtonActionee extends ComponentActionee {
   }
 }
 
-export { ModalButtonActionee };
+export { BreadcrumbButtonActionee };

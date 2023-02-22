@@ -14,7 +14,7 @@ class AccordionButtonActionee extends ComponentActionee {
   init () {
     this.id = this.node.id || this.registration.creator.node.id;
     this._button = this.element.getInstance('CollapseButton');
-    this.listen('click', this.click.bind(this));
+    this.listen('click', this.click.bind(this), { capture: true });
   }
 
   click () {
