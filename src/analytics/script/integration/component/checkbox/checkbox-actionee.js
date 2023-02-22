@@ -17,6 +17,11 @@ class CheckboxActionee extends ComponentActionee {
     this.listenCheckable();
   }
 
+  handleChange () {
+    this.detectCheckedOrUnchecked();
+    this.act();
+  }
+
   get label () {
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
     return label.textContent.trim();

@@ -102,6 +102,11 @@ api.internals.register(ShareSelector.SHARE, ShareActionee);
 api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
 api.internals.register(SummarySelector.LINK, SummaryLinkActionee);
 api.internals.register(SummarySelector.ITEM, SummarySectionActionee);
+api.internals.register(RadioSelector.INPUT, RadioActionee);
+
+api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+
+api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
 if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);

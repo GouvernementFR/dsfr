@@ -51,6 +51,21 @@ class ComponentActionee extends Actionee {
   detectCheckable () {
     const isChecked = this.node.checked;
     this._type = isChecked ? Type.UNCHECK : Type.CHECK;
+    if (isChecked === undefined) return;
+    this._type = isChecked ? Type.CHECK : Type.UNCHECK;
+    this._data.component_value = this.node.value;
+  }
+
+  act (data = {}) {
+    if (this._actionElement !== undefined) this._actionElement.act(Object.assign(this._data, data));
+  }
+
+  get actionElement () {
+    return this._actionElement;
+  }
+
+  get label () {
+    return null;
   }
 
   get component () {
