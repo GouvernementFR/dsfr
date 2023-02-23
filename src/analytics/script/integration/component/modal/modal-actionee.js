@@ -1,7 +1,7 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
-import { ModalButtonActionee } from './modal-button-actionee';
+// import { ModalButtonActionee } from './modal-button-actionee';
 import { ModalSelector } from './modal-selector.js';
 import ID from './id';
 

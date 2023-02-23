@@ -5,4 +5,9 @@ subdir:
   title: Composants
   button: Boutons (button)
   breadcrumb: Fil d’ariane (breadcrumb)
+  callout: Mise en avant (callout)
+  card: Carte (card)
   checkbox: Case à cocher (checkbox)
+  header: En-tête (header)
+  highlight: Mises en exergue (highlight)
+  footer: Pied de page (footer)

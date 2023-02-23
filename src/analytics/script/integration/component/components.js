@@ -9,6 +9,8 @@ import { CalloutSelector } from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
 import { CardSelector } from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
+import { FooterSelector } from './footer/footer-selector';
+import { FooterActionee } from './footer/footer-actionee';
 import { HeaderSelector } from './header/header-selector';
 import { HeaderActionee } from './header/header-actionee';
 import { HighlightSelector } from './highlight/highlight-selector';
@@ -40,6 +42,8 @@ api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
+
+api.internals.register(FooterSelector.FOOTER, FooterActionee);
 
 api.internals.register(HeaderSelector.HEADER, HeaderActionee);
 
