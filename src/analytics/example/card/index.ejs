@@ -2,8 +2,8 @@
 
 <div class="<%= prefix %>-container" >
   <%- section('Carte', null, 0) %>
-  <div class="fr-grid-row fr-grid-row--gutters">
-    <div class="fr-col-12 fr-col-md-4">
+  <div class="<%= prefix%>-grid-row <%= prefix%>-grid-row--gutters">
+    <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-4">
       <%- sample('card', '../../../component/card/example/sample/card-default', { card : { img: true }}); %>
     </div>
   </div>

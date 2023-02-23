@@ -9,6 +9,8 @@ import { CalloutSelector } from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
 import { CardSelector } from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
+import { CheckboxSelector } from './checkbox/checkbox-selector';
+import { CheckboxActionee } from './checkbox/checkbox-actionee';
 import { FooterSelector } from './footer/footer-selector';
 import { FooterActionee } from './footer/footer-actionee';
 import { HeaderSelector } from './header/header-selector';
@@ -24,8 +26,8 @@ import { SearchSelector } from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
-import { CheckboxSelector } from './checkbox/checkbox-selector';
-import { CheckboxActionee } from './checkbox/checkbox-actionee';
+import { SidemenuSelector } from './sidemenu/sidemenu-selector';
+import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TabActionee } from './tab/tab-actionee';
@@ -64,6 +66,8 @@ api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
 api.internals.register(RadioSelector.INPUT, RadioActionee);
 
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+
+api.internals.register(SidemenuSelector.LINK, SidemenuActionee);
 
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
