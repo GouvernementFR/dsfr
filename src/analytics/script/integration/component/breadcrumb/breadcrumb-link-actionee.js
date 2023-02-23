@@ -1,5 +1,4 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class BreadcrumbLinkActionee extends ComponentActionee {

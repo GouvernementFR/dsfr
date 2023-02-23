@@ -1,4 +1,3 @@
-import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
 import { AccordionSelector } from './accordion-selector';
 import { AccordionButtonActionee } from './accordion-button-actionee';
