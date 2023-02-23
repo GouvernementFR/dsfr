@@ -17,6 +17,8 @@ import { HighlightSelector } from './highlight/highlight-selector';
 import { HighlightActionee } from './highlight/highlight-actionee';
 import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
+import { NavigationSelector } from './navigation/navigation-selector';
+import { NavigationActionee } from './navigation/navigation-actionee';
 import { ModalActionee } from './modal/modal-actionee';
 import { SearchSelector } from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
@@ -48,6 +50,8 @@ api.internals.register(FooterSelector.FOOTER, FooterActionee);
 api.internals.register(HeaderSelector.HEADER, HeaderActionee);
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
+
+api.internals.register(NavigationSelector.NAVIGATION, NavigationActionee);
 
 api.internals.register(LinkSelector.LINK, LinkActionee);
 

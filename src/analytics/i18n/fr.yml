@@ -3,11 +3,12 @@ description:
 doc:
 subdir:
   title: Composants
-  button: Boutons (button)
   breadcrumb: Fil d’ariane (breadcrumb)
+  button: Bouton (button)
   callout: Mise en avant (callout)
   card: Carte (card)
   checkbox: Case à cocher (checkbox)
   header: En-tête (header)
-  highlight: Mises en exergue (highlight)
+  highlight: Mise en exergue (highlight)
+  navigation: Navigation principale (navigation)
   footer: Pied de page (footer)
