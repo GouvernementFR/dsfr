@@ -1,6 +1,6 @@
 import { ComponentActionee } from '../component-actionee';
 import { CardLinkActionee } from './card-link-actionee';
-import { CardSelector} from './card-selector';
+import { CardSelector } from './card-selector';
 import ID from './id';
 
 class CardActionee extends ComponentActionee {

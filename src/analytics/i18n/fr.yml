@@ -4,5 +4,8 @@ doc:
 subdir:
   title: Composants
   button: Boutons (button)
+  callout: Mise en avant (callout)
+  card: Carte (card)
   header: En-tête (header)
+  highlight: Mises en exergue (highlight)
   footer: Pied de page (footer)

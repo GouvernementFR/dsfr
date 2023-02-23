@@ -6,5 +6,8 @@ script:
   - core
 style:
   - core
+  - callout
+  - card
   - footer
   - header
+  - highlight
