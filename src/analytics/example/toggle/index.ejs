@@ -1,0 +1,6 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Interrupteur', null, 0) %>
+  <%- sample('toggle', '../../../component/toggle/example/sample/toggle-default.ejs', {toggle: {state: true}});  %>
+</div>

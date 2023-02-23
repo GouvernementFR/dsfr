@@ -3,6 +3,7 @@ description:
 doc:
 subdir:
   title: Composants
+  accordion: Accordéon (accordion)
   breadcrumb: Fil d’ariane (breadcrumb)
   button: Bouton (button)
   callout: Mise en avant (callout)
@@ -11,5 +12,11 @@ subdir:
   footer: Pied de page (footer)
   header: En-tête (header)
   highlight: Mise en exergue (highlight)
+  link: Lien (link)
+  modal: Modale (modal)
   navigation: Navigation principale (navigation)
+  radio: Bouton radio (radio)
+  search: Barre de recherche (search)
   sidemenu: Menu latéral (sidemenu)
+  tab: Onglets (tab)
+  toggle: Interrupteur (toggle)

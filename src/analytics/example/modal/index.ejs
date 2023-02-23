@@ -1,0 +1,14 @@
+<% 
+  const sample = getSample(include); 
+  let dataFooterButtons = {
+    title: 'Titre de la modale',
+    icon: 'arrow-right-line',
+    body: include('../../../component/modal/example/sample/body/text'),
+    footer: include('../../../component/modal/example/sample/footer/buttons')
+  }
+%>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Modale', null, 0) %>
+  <%- sample('Modale avec zone d\'action', '../../../component/modal/example/sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale avec zone d\'action'}});  %>
+</div>
