@@ -18,5 +18,6 @@ subdir:
   radio: Bouton radio (radio)
   search: Barre de recherche (search)
   sidemenu: Menu latéral (sidemenu)
+  summary: Sommaire (summary)
   tab: Onglets (tab)
   toggle: Interrupteur (toggle)

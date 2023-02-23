@@ -28,6 +28,8 @@ import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
 import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
+import { SummarySelector } from './summary/summary-selector';
+import { SummaryActionee } from './summary/summary-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TabActionee } from './tab/tab-actionee';
@@ -68,6 +70,8 @@ api.internals.register(RadioSelector.INPUT, RadioActionee);
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 
 api.internals.register(SidemenuSelector.LINK, SidemenuActionee);
+
+api.internals.register(SummarySelector.LINK, SummaryActionee);
 
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 

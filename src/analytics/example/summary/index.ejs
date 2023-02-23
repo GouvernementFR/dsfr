@@ -1,0 +1,35 @@
+<% const sample = getSample(include); %>
+
+<%
+const getItem = (id) => {
+    return {
+        href: `#anchor-${id}`,
+        label: String(id).indexOf('6') > -1 ? lorem() : 'Titre du lien'
+    }
+};
+
+const links = [12,0,2,2,0,0,0,0,0,0,0,0,12];
+let data = {list:[]};
+data.title = 'Sommaire';
+
+for (let i = 0; i < links.length; i++) {
+    let id = i + 1
+    const item = getItem(id);
+
+    if (links[i]) {
+        item.list = [];
+        for (let j = 0; j < links[i]; j++) {
+            id = `${i + 1}.${j + 1}`;
+            item.list.push(getItem(id));
+        }
+    }
+
+    data.list.push(item);
+}
+
+%>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Sommaire', null, 0) %>
+  <%- include('../../../component/summary/template/ejs/summary', {summary:data}); %>
+</div>
