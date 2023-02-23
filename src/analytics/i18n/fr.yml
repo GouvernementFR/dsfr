@@ -4,3 +4,5 @@ doc:
 subdir:
   title: Composants
   button: Boutons (button)
+  breadcrumb: Fil d’ariane (breadcrumb)
+  checkbox: Case à cocher (checkbox)

@@ -13,13 +13,8 @@ class CheckboxActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectCheckedOrUnchecked();
-    this.listen('change', this.handleChange.bind(this));
-  }
-
-  handleChange () {
-    this.detectCheckedOrUnchecked();
-    this.act();
+    this.detectChoice();
+    this.listenChoice();
   }
 
   get label () {

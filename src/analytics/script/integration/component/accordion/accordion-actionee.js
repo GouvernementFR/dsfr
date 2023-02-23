@@ -17,11 +17,7 @@ class AccordionActionee extends ComponentActionee {
   init () {
     this.register(`[aria-controls="${this.id}"]`, AccordionButtonActionee);
     this._instance = this.element.getInstance('Collapse');
-    this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
-  }
-
-  handleDisclose () {
-    this.act();
+    this.listenDisclose();
   }
 
   get label () {

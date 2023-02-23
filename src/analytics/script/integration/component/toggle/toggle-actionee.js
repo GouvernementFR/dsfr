@@ -13,12 +13,12 @@ class ToggleActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectCheckedOrUnchecked();
+    this.detectChoice();
     this.listen('change', this.handleChange.bind(this));
   }
 
   handleChange () {
-    this.detectCheckedOrUnchecked();
+    this.detectChoice();
     this.act();
   }
 

@@ -34,6 +34,35 @@ class ComponentActionee extends api.core.Instance {
     return api.internals.property.completeAssign(super.proxy, proxyAccessors);
   }
 
+  listenClick () {
+    this.listen('click', this.handleClick.bind(this), { capture: true });
+  }
+
+  handleClick () {
+
+  }
+
+  listenDisclose () {
+    this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this), { capture: true });
+  }
+
+  handleDisclose () {
+    this.act();
+  }
+
+  listenChoice () {
+    this.listen('change', this.handleChoice.bind(this), { capture: true });
+  }
+
+  handleChoice (e) {
+    switch (true) {
+      case this._type === Type.CHECK && e.target.checked:
+      case this._type === Type.UNCHECK && !e.target.checked:
+        this.act();
+        break;
+    }
+  }
+
   _config (element, registration) {
     super._config(element, registration);
     if (this._type !== null) this._actionElement = new ActionElement(this.node, this._type, this.id);
@@ -44,11 +73,11 @@ class ComponentActionee extends api.core.Instance {
     actionees.slice(1).forEach(actionee => { actionee.actionElement.isMuted = true; });
   }
 
-  detectLinkOrButton () {
+  detectInteraction () {
     const tag = this.node.tagName.toLowerCase();
     const href = this.getAttribute('href');
     const target = this.getAttribute('target');
-    const isDownload = this.getAttribute('download');
+    const isDownload = this.hasAttribute('download');
 
     switch (true) {
       case tag === 'a' && isDownload:
@@ -71,12 +100,10 @@ class ComponentActionee extends api.core.Instance {
     }
   }
 
-  detectCheckedOrUnchecked () {
+  detectChoice () {
     const isChecked = this.node.checked;
     console.log('isChecked', isChecked);
-    if (isChecked === undefined) return;
-    this._type = isChecked ? Type.CHECK : Type.UNCHECK;
-    this._data.component_value = this.node.value;
+    this._type = isChecked ? Type.UNCHECK : Type.CHECK;
   }
 
   act (data = {}) {

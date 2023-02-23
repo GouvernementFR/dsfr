@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+
+  <%- sample('case à cocher', '../../../component/checkbox/template/ejs/checkbox-group.ejs', { checkbox: { label: 'label case à cocher', id: uniqueId('checkbox')  } }); %>
+
+  <%- sample('case à cocher cochée', '../../../component/checkbox/template/ejs/checkbox-group.ejs', { checkbox: { label: 'label case à cocher', id: uniqueId('checkbox'), checked: true  } }); %>
+
+</div>

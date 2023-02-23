@@ -2,14 +2,14 @@
 
 <div class="<%= prefix %>-container" >
 
-  <%- section('Bouton étiquette d’élément button', null, 0) %>
-  <%- sample('button', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label button' } }); %>
+  <%- section('Étiquette d’élément BUTTON', null, 0) %>
+  <%- sample('button', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label button', id: uniqueId('button')  } }); %>
 
-  <%- section('Bouton étiquette d’élément a', null, 0) %>
-  <%- sample('lien interne', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label a interne', markup:'a', attributes: { href:'#'} } }); %>
+  <%- section('Étiquette d’élément A', null, 0) %>
+  <%- sample('lien interne', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label a interne', id: uniqueId('button'), markup:'a', attributes: { href:'#'} } }); %>
 
-  <%- sample('lien externe', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label a externe', markup:'a', attributes: { href:'#', target: '_blank' } } }); %>
+  <%- sample('lien externe', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label a externe', id: uniqueId('button'), markup:'a', attributes: { href:'#', target: '_blank' } } }); %>
 
-  <%- sample('lien download', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label a download', markup:'a', attributes: { href:'#', download: '' } } }); %>
+  <%- sample('lien download', '../../../component/button/template/ejs/button.ejs', { button: { label: 'label a download', id: uniqueId('button'), markup:'a', attributes: { href:'#', download: '' } } }); %>
 
 </div>

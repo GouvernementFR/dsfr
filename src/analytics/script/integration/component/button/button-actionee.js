@@ -13,11 +13,11 @@ class ButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectLinkOrButton();
-    this.listen('click', this.click.bind(this), { capture: true });
+    this.detectInteraction();
+    this.listenClick();
   }
 
-  click () {
+  handleClick () {
     const data = this.ascend(ButtonEmission.GET_DATA);
     this.act(Object.assign({}, ...data));
   }

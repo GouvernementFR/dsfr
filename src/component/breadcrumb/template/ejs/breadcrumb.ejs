@@ -16,6 +16,7 @@
 <%
 let breadcrumb = locals.breadcrumb || {segments : []};
 if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane';
+const markup = breadcrumb.markup || 'a';
 %>
 
 <nav role="navigation" class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
@@ -33,7 +34,7 @@ if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane
                 else attrs['href'] = href;
             %>
       <li>
-        <a class="<%= prefix %>-breadcrumb__link" <%- includeAttrs(attrs);%>><%= segment.label %></a>
+        <<%= markup %> class="<%= prefix %>-breadcrumb__link" <%- includeAttrs(attrs);%>><%= segment.label %></<%= markup %>>
       </li>
       <% } %>
     </ol>

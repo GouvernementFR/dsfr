@@ -4,7 +4,7 @@ import ID from './id';
 
 class BreadcrumbLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 2);
+    super(null, 2);
   }
 
   static get instanceClassName () {
@@ -12,12 +12,12 @@ class BreadcrumbLinkActionee extends ComponentActionee {
   }
 
   init () {
+    this.detectInteraction();
     this.listen('click', this.handleClick.bind(this), { capture: true });
   }
 
   handleClick () {
-    const data = { component_value: this.getAttribute('href') };
-    this.act(data);
+    this.act();
   }
 
   get label () {
