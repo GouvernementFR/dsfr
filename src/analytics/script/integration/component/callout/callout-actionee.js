@@ -1,5 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
-import { CalloutSelector} from './callout-selector';
+import { CalloutSelector } from './callout-selector';
 import ID from './id';
 
 class CalloutActionee extends ComponentActionee {

@@ -4,3 +4,7 @@ description:
 detached: true
 script:
   - core
+style:
+  - core
+  - footer
+  - header

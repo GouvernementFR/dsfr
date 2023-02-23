@@ -17,7 +17,7 @@ class LinkActionee extends ComponentActionee {
   }
 
   click () {
-    const data = { component_value: this.getAttribute('href')};
+    const data = { component_value: this.getAttribute('href') };
     this.act(data);
   }
 

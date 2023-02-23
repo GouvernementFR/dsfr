@@ -4,3 +4,5 @@ doc:
 subdir:
   title: Composants
   button: Boutons (button)
+  header: En-tête (header)
+  footer: Pied de page (footer)
