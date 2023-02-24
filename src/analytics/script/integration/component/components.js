@@ -24,12 +24,13 @@ import { NavigationSelector } from './navigation/navigation-selector';
 import { NavigationActionee } from './navigation/navigation-actionee';
 import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
 import { ModalActionee } from './modal/modal-actionee';
-import { SearchSelector } from './search/search-selector';
-import { SearchActionee } from './search/search-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
+import { SearchSelector } from './search/search-selector';
+import { SearchActionee } from './search/search-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
 import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
+import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
 import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
@@ -75,7 +76,8 @@ api.internals.register(RadioSelector.INPUT, RadioActionee);
 
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 
-api.internals.register(SidemenuSelector.LINK, SidemenuActionee);
+api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
+api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
 
 api.internals.register(SummarySelector.LINK, SummaryActionee);
 

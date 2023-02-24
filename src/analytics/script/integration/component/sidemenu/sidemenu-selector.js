@@ -1,5 +1,7 @@
 import api from '../../../../api';
 
 export const SidemenuSelector = {
-  LINK: api.internals.ns.selector('sidemenu__link')
+  SIDEMENU: api.internals.ns.selector('sidemenu'),
+  LINK: api.internals.ns.selector('sidemenu__link'),
+  TITLE: api.internals.ns.selector('sidemenu__title')
 };

@@ -1,12 +1,12 @@
 import { ComponentActionee } from '../component-actionee';
 
-class NavigationLinkActionee extends ComponentActionee {
+class SidemenuLinkActionee extends ComponentActionee {
   constructor () {
     super(null, 2);
   }
 
   static get instanceClassName () {
-    return 'NavigationLinkActionee';
+    return 'SidemenuLinkActionee';
   }
 
   init () {
@@ -27,4 +27,4 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 }
 
-export { NavigationLinkActionee };
+export { SidemenuLinkActionee };
