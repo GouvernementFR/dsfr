@@ -1,5 +1,6 @@
 import { ComponentActionee } from '../component-actionee';
 import ID from './id';
+import { Type } from '../../../analytics/action/type';
 
 class HeaderActionee extends ComponentActionee {
   constructor () {
