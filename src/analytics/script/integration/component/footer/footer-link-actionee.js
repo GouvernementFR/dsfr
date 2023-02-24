@@ -3,23 +3,22 @@ import { Type } from '../../../analytics/action/type';
 import { ButtonEmission } from '../button/button-emission';
 import ID from './id';
 
-class FooterContentLinkActionee extends ComponentActionee {
+class FooterLinkActionee extends ComponentActionee {
   constructor () {
     super(Type.INTERNAL, 2);
   }
 
   static get instanceClassName () {
-    return 'FooterContentLinkActionee';
+    return 'FooterBottomLinkActionee';
   }
 
   init () {
-    this.detectLinkOrButton();
-    this.listen('click', this.handleClick.bind(this), { capture: true });
+    this.detectInteraction();
+    this.listenClick();
   }
 
   handleClick () {
-    const data = this.ascend(ButtonEmission.GET_DATA);
-    this.act(Object.assign({}, ...data));
+    this.act();
   }
 
   get label () {
@@ -31,4 +30,4 @@ class FooterContentLinkActionee extends ComponentActionee {
   }
 }
 
-export { FooterContentLinkActionee };
+export { FooterLinkActionee };
