@@ -1,16 +1,14 @@
 import { ComponentActionee } from '../component-actionee';
-import { NavigationSelector } from './navigation-selector';
-import { NavigationLinkActionee } from './navigation-link-actionee';
+import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class NavigationActionee extends ComponentActionee {
-  static get instanceClassName () {
-    return 'NavigationActionee';
+  constructor () {
+    super(Type.IMPRESSION, 1);
   }
 
-  init () {
-    console.log('NAVIGATION');
-    this.register(NavigationSelector.LINK, NavigationLinkActionee);
+  static get instanceClassName () {
+    return 'NavigationActionee';
   }
 
   get label () {

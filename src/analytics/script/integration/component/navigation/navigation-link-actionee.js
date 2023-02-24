@@ -5,7 +5,7 @@ import ID from './id';
 
 class NavigationLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 2);
+    super(null, 2);
   }
 
   static get instanceClassName () {
@@ -13,8 +13,8 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectLinkOrButton();
-    this.listen('click', this.handleClick.bind(this), { capture: true });
+    this.detectInteraction();
+    this.listenClick();
   }
 
   handleClick () {

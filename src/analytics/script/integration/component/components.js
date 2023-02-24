@@ -21,6 +21,7 @@ import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
 import { NavigationSelector } from './navigation/navigation-selector';
 import { NavigationActionee } from './navigation/navigation-actionee';
+import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
 import { ModalActionee } from './modal/modal-actionee';
 import { SearchSelector } from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
@@ -55,7 +56,11 @@ api.internals.register(HeaderSelector.HEADER, HeaderActionee);
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
-api.internals.register(NavigationSelector.NAVIGATION, NavigationActionee);
+if (api.navigation) {
+  api.internals.register(NavigationSelector.NAVIGATION, NavigationActionee);
+  api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
+}
+
 
 api.internals.register(LinkSelector.LINK, LinkActionee);
 

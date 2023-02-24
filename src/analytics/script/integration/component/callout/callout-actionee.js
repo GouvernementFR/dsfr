@@ -5,7 +5,7 @@ import ID from './id';
 
 class CalloutActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
+    super(Type.IMPRESSION, 1);
   }
 
   static get instanceClassName () {
