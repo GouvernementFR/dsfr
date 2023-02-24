@@ -61,7 +61,6 @@ if (api.navigation) {
   api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
 }
 
-
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
 if (api.modal) {

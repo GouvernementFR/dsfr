@@ -13,8 +13,8 @@ class CheckboxActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectChoice();
-    this.listenChoice();
+    this.detectCheckable();
+    this.listenCheckable();
   }
 
   get label () {

@@ -50,11 +50,11 @@ class ComponentActionee extends api.core.Instance {
     this.act();
   }
 
-  listenChoice () {
-    this.listen('change', this.handleChoice.bind(this), { capture: true });
+  listenCheckable () {
+    this.listen('change', this.handleCheckable.bind(this), { capture: true });
   }
 
-  handleChoice (e) {
+  handleCheckable (e) {
     switch (true) {
       case this._type === Type.CHECK && e.target.checked:
       case this._type === Type.UNCHECK && !e.target.checked:
@@ -100,7 +100,7 @@ class ComponentActionee extends api.core.Instance {
     }
   }
 
-  detectChoice () {
+  detectCheckable () {
     const isChecked = this.node.checked;
     console.log('isChecked', isChecked);
     this._type = isChecked ? Type.UNCHECK : Type.CHECK;

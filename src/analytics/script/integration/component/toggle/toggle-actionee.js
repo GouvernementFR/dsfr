@@ -13,13 +13,8 @@ class ToggleActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectChoice();
-    this.listen('change', this.handleChange.bind(this));
-  }
-
-  handleChange () {
-    this.detectChoice();
-    this.act();
+    this.detectCheckable();
+    this.listenCheckable();
   }
 
   get label () {
