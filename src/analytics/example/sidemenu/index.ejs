@@ -1,11 +1,10 @@
 <% const sample = getSample(include); %>
 
 <div class="<%= prefix %>-container" >
-  <%- section('Menu latéral', null, 0) %>
   <div class="<%= prefix%>-container">
     <div class="<%= prefix%>-grid-row <%= prefix%>-grid-row--gutters">
       <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-4">
-        <%- sample('sidemenu', '../../../component/sidemenu/example/sample/sidemenu', {}); %>
+        <%- sample('Menu latéral', '../../../component/sidemenu/example/sample/sidemenu', {}); %>
       </div>
       <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-8">
         <h4>Navigation latérale de base</h4>

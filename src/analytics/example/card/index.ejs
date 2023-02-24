@@ -1,10 +1,9 @@
 <% const sample = getSample(include); %>
 
 <div class="<%= prefix %>-container" >
-  <%- section('Carte', null, 0) %>
   <div class="<%= prefix%>-grid-row <%= prefix%>-grid-row--gutters">
     <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-4">
-      <%- sample('card', '../../../component/card/example/sample/card-default', { card : { img: true }}); %>
+      <%- sample('Carte', '../../../component/card/example/sample/card-default', { card : { img: true }}); %>
     </div>
   </div>
 </div>

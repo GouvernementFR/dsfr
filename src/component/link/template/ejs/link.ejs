@@ -81,6 +81,10 @@ if (link.disabled === true) {
         case 'a':
             linkAttrs.href = link.href || '[url - à modifier]';
             switch (true) {
+                case link.download:
+                    linkAttrs.download = 'true';
+                    break;
+
                 case link.blank:
                     linkAttrs.target = '_blank';
                     break;

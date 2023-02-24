@@ -3,6 +3,10 @@ import ID from './id';
 import { ButtonEmission } from '../button/button-emission';
 
 class SearchActionee extends ComponentActionee {
+  constructor () {
+    super(Type.IMPRESSION);
+  }
+  
   static get instanceClassName () {
     return 'SearchActionee';
   }
