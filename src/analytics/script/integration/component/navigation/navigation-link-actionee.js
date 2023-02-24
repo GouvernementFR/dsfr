@@ -27,7 +27,7 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 
   get component () {
-    return ID;
+    return null;
   }
 }
 

@@ -73,11 +73,12 @@ class ComponentActionee extends api.core.Instance {
     actionees.slice(1).forEach(actionee => { actionee.actionElement.isMuted = true; });
   }
 
-  detectInteraction () {
-    const tag = this.node.tagName.toLowerCase();
-    const href = this.getAttribute('href');
-    const target = this.getAttribute('target');
-    const isDownload = this.hasAttribute('download');
+  detectInteraction (node) {
+    if (!node) node = this.node;
+    const tag = node.tagName.toLowerCase();
+    const href = node.getAttribute('href');
+    const target = node.getAttribute('target');
+    const isDownload = node.hasAttribute('download');
 
     switch (true) {
       case tag === 'a' && isDownload:
