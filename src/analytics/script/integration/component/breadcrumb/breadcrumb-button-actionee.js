@@ -1,6 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
-import ID from './id';
 
 class BreadcrumbButtonActionee extends ComponentActionee {
   constructor () {
@@ -14,10 +13,10 @@ class BreadcrumbButtonActionee extends ComponentActionee {
   init () {
     this.id = this.node.id || this.registration.creator.node.id;
     this._button = this.element.getInstance('BreadcrumbButton');
-    this.listen('click', this.click.bind(this));
+    this.listenClick();
   }
 
-  click () {
+  handleClick () {
     this._actionElement.act();
   }
 

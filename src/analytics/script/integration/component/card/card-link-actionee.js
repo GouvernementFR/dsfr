@@ -1,6 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
-import ID from './id';
 
 class CardLinkActionee extends ComponentActionee {
   constructor () {
@@ -12,7 +11,8 @@ class CardLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.listen('click', this.handleClick.bind(this), { capture: true });
+    this.detectInteraction();
+    this.listenClick();
   }
 
   handleClick () {
@@ -25,7 +25,7 @@ class CardLinkActionee extends ComponentActionee {
   }
 
   get component () {
-    return ID;
+    return null;
   }
 }
 

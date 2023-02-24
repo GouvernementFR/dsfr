@@ -1,5 +1,4 @@
 import { ComponentActionee } from '../component-actionee';
-import ID from './id';
 
 class BreadcrumbLinkActionee extends ComponentActionee {
   constructor () {
@@ -12,7 +11,7 @@ class BreadcrumbLinkActionee extends ComponentActionee {
 
   init () {
     this.detectInteraction();
-    this.listen('click', this.handleClick.bind(this), { capture: true });
+    this.listenClick();
   }
 
   handleClick () {
