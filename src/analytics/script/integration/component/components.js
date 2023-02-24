@@ -33,6 +33,7 @@ import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
 import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
 import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
+import { SummaryLinkActionee } from './summary/summary-link-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TabActionee } from './tab/tab-actionee';
@@ -79,7 +80,8 @@ api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
 api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
 
-api.internals.register(SummarySelector.LINK, SummaryActionee);
+api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
+api.internals.register(SummarySelector.LINK, SummaryLinkActionee);
 
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
