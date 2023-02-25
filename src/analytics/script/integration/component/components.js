@@ -31,6 +31,8 @@ import { SearchActionee } from './search/search-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
 import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
 import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
+import { ShareSelector } from './share/share-selector';
+import { ShareActionee } from './share/share-actionee';
 import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
 import { SummaryLinkActionee } from './summary/summary-link-actionee';
@@ -53,6 +55,8 @@ api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
 
+api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+
 api.internals.register(FooterSelector.FOOTER, FooterActionee);
 api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
 
@@ -60,33 +64,33 @@ api.internals.register(HeaderSelector.HEADER, HeaderActionee);
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
-if (api.navigation) {
-  api.internals.register(NavigationSelector.NAVIGATION, NavigationActionee);
-  api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
-}
-
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
 if (api.modal) {
   api.internals.register(api.modal.ModalSelector.MODAL, ModalActionee);
 }
 
-api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
+if (api.navigation) {
+  api.internals.register(NavigationSelector.NAVIGATION, NavigationActionee);
+  api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
+}
 
 api.internals.register(RadioSelector.INPUT, RadioActionee);
 
-api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
 
 api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
 api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
 
+api.internals.register(ShareSelector.SHARE, ShareActionee);
+
 api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
 api.internals.register(SummarySelector.LINK, SummaryLinkActionee);
-
-api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
 if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
 }
+
+api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
 export default api;

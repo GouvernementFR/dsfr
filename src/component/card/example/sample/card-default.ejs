@@ -11,6 +11,8 @@ const data = {
   variations: card.variations
 }
 
+if (card.noLink) data.content.noLink = true;
+
 if (card.horizontal) {
   const horizontal = {};
 

@@ -14,7 +14,7 @@ class AccordionActionee extends ComponentActionee {
   }
 
   init () {
-    this.wrapper = this.node.closest(AccordionSelector.ACCORDION)[0];
+    this.wrapper = this.node.closest(AccordionSelector.ACCORDION);
     this.detectLevel(this.wrapper);
     this.register(`[aria-controls="${this.id}"]`, AccordionButtonActionee);
     this._instance = this.element.getInstance('Collapse');

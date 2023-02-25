@@ -31,6 +31,11 @@ class Hierarchy {
           // do nothing
           break;
 
+        case member.label === this._members[0].label && member.type === Type.COMPONENT && this._members[0].type === Type.HEADING:
+          console.log('***** SAME INVERT');
+          this._members.splice(0, 1, member);
+          break;
+
         default:
           this._members.unshift(member);
           this._level = member.level;

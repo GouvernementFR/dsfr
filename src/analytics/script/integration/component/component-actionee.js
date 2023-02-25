@@ -28,6 +28,9 @@ class ComponentActionee extends api.core.Instance {
       },
       get priority () {
         return scope.priority;
+      },
+      get level () {
+        return scope.level;
       }
     };
 
@@ -107,7 +110,6 @@ class ComponentActionee extends api.core.Instance {
 
   detectCheckable () {
     const isChecked = this.node.checked;
-    console.log('isChecked', isChecked);
     this._type = isChecked ? Type.UNCHECK : Type.CHECK;
   }
 
@@ -119,8 +121,7 @@ class ComponentActionee extends api.core.Instance {
     if (!node) node = this.node;
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
     const levels = [...node.querySelectorAll(selector)].map(heading => Number(heading.tagName.charAt(1)));
-    console.log('levels', levels);
-    if (levels.length) this._level = Math.min.apply(null, levels);
+    if (levels.length) this._level = Math.min.apply(null, levels) - 1;
   }
 
   get actionElement () {
