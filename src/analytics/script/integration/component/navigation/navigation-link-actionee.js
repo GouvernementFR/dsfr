@@ -1,7 +1,4 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
-import { ButtonEmission } from '../button/button-emission';
-import ID from './id';
 
 class NavigationLinkActionee extends ComponentActionee {
   constructor () {
@@ -18,8 +15,7 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 
   handleClick () {
-    const data = this.ascend(ButtonEmission.GET_DATA);
-    this.act(Object.assign({}, ...data));
+    this.act();
   }
 
   get label () {

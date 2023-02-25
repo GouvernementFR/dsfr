@@ -1,5 +1,7 @@
 import api from '../../../../api';
 
 export const SummarySelector = {
-  LINK: api.internals.ns.selector('summary__link')
+  SUMMARY: api.internals.ns.selector('summary'),
+  LINK: api.internals.ns.selector('summary__link'),
+  TITLE: api.internals.ns.selector('summary__title')
 };

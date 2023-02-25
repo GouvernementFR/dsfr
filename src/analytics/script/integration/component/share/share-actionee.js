@@ -2,21 +2,21 @@ import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
-class HeaderActionee extends ComponentActionee {
+class ShareActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
+    super(Type.IMPRESSION, 1);
   }
 
   static get instanceClassName () {
-    return 'HeaderActionee';
+    return 'ShareActionee';
   }
 
   init () {
-    console.log('HEADER');
+    console.log('SHARE');
   }
 
   get label () {
-    return 'En-tête';
+    return 'Boutons de partage';
   }
 
   get component () {
@@ -24,4 +24,4 @@ class HeaderActionee extends ComponentActionee {
   }
 }
 
-export { HeaderActionee };
+export { ShareActionee };

@@ -17,6 +17,7 @@ subdir:
   navigation: Navigation principale (navigation)
   radio: Bouton radio (radio)
   search: Barre de recherche (search)
+  share: Boutons de partage (share)
   sidemenu: Menu latéral (sidemenu)
   summary: Sommaire (summary)
   tab: Onglets (tab)

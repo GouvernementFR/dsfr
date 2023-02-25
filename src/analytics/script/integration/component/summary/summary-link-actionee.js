@@ -1,14 +1,14 @@
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
-import ID from './id';
+import { ButtonEmission } from '../button/button-emission';
 
-class FooterLinkActionee extends ComponentActionee {
+class SummaryLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 2);
+    super(Type.INTERNAL, 1);
   }
 
   static get instanceClassName () {
-    return 'FooterLinkActionee';
+    return 'SummaryLinkActionee';
   }
 
   init () {
@@ -17,7 +17,8 @@ class FooterLinkActionee extends ComponentActionee {
   }
 
   handleClick () {
-    this.act();
+    const data = this.ascend(ButtonEmission.GET_DATA);
+    this.act(Object.assign({}, ...data));
   }
 
   get label () {
@@ -25,8 +26,8 @@ class FooterLinkActionee extends ComponentActionee {
   }
 
   get component () {
-    return ID;
+    return null;
   }
 }
 
-export { FooterLinkActionee };
+export { SummaryLinkActionee };

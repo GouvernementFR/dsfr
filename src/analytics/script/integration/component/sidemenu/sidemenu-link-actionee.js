@@ -1,14 +1,12 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
-import ID from './id';
 
-class FooterLinkActionee extends ComponentActionee {
+class SidemenuLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 2);
+    super(null, 2);
   }
 
   static get instanceClassName () {
-    return 'FooterLinkActionee';
+    return 'SidemenuLinkActionee';
   }
 
   init () {
@@ -25,8 +23,8 @@ class FooterLinkActionee extends ComponentActionee {
   }
 
   get component () {
-    return ID;
+    return null;
   }
 }
 
-export { FooterLinkActionee };
+export { SidemenuLinkActionee };

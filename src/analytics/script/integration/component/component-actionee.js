@@ -55,7 +55,7 @@ class ComponentActionee extends api.core.Instance {
   }
 
   handleCheckable (e) {
-    if (e.target.value !== 'on') {
+    if (e.target && e.target.value !== 'on') {
       this._data.component_value = e.target.value;
     }
 

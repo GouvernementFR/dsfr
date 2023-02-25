@@ -1,16 +1,21 @@
 import { ComponentActionee } from '../component-actionee';
+import { Type } from '../../../analytics/action/type';
 import { CardLinkActionee } from './card-link-actionee';
 import { CardSelector } from './card-selector';
 import ID from './id';
 
 class CardActionee extends ComponentActionee {
+  constructor () {
+    super(Type.IMPRESSION);
+  }
+
   static get instanceClassName () {
     return 'CardActionee';
   }
 
   init () {
     console.log('CARD');
-    this.register(CardSelector.LINK, CardLinkActionee);
+    if (this.node.querySelector(CardSelector.LINK)) this.register(CardSelector.LINK, CardLinkActionee);
   }
 
   get label () {
