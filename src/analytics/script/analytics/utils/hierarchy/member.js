@@ -42,10 +42,14 @@ class Member {
     if (!instance) return false;
 
     this._type = Type.COMPONENT;
-    if (this._headings.length) {
-      const level = Math.min.apply(null, this._headings.map(heading => heading.level));
-      this._level = level - 1;
+    const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
+    const heading = this.node.closest(selector);
+    if (heading) {
+      this._level = Number(heading.tagName.charAt(1)) - 1;
     }
+    console.log('INSTANCE LEVEL', instance.level, this._level);
+
+    if (instance.level && instance.level < this._level) this._level = instance.level;
     this._label = instance.label;
     this._component = instance.component;
     return true;

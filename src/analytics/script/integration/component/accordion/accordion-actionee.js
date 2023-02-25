@@ -14,15 +14,16 @@ class AccordionActionee extends ComponentActionee {
   }
 
   init () {
+    this.wrapper = this.node.closest(AccordionSelector.ACCORDION)[0];
+    this.detectLevel(this.wrapper);
     this.register(`[aria-controls="${this.id}"]`, AccordionButtonActionee);
     this._instance = this.element.getInstance('Collapse');
     this.listenDisclose();
   }
 
   get label () {
-    const accordion = this.node.closest(AccordionSelector.ACCORDION)[0];
-    if (accordion) {
-      const title = accordion.querySelector(AccordionSelector.TITLE)[0];
+    if (this.wrapper) {
+      const title = this.wrapper.querySelector(AccordionSelector.TITLE)[0];
       if (title) return title.textContent.trim();
     }
     const button = this._instance.buttons.filter(button => button.isPrimary)[0];

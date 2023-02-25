@@ -115,6 +115,14 @@ class ComponentActionee extends api.core.Instance {
     if (this._actionElement !== undefined) this._actionElement.act(Object.assign(this._data, data));
   }
 
+  detectLevel (node) {
+    if (!node) node = this.node;
+    const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
+    const levels = [...node.querySelectorAll(selector)].map(heading => Number(heading.tagName.charAt(1)));
+    console.log('levels', levels);
+    if (levels.length) this._level = Math.min.apply(null, levels);
+  }
+
   get actionElement () {
     return this._actionElement;
   }
@@ -133,6 +141,10 @@ class ComponentActionee extends api.core.Instance {
 
   get isComponentActionee () {
     return true;
+  }
+
+  get level () {
+    return this._level;
   }
 }
 
