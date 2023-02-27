@@ -15,7 +15,8 @@ class ModalActionee extends ComponentActionee {
   }
 
   init () {
-    // this.register(`[aria-controls="${this.id}"]`, ModalButtonActionee);
+    this.detectLevel();
+    console.log('MODALE LEVEL', this._level);
     this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
   }
 

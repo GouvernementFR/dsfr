@@ -1,44 +1,5 @@
 <% const sample = getSample(include); %>
 
-<% 
-const attrModal = {};
-attrModal['aria-controls'] = prefix + '-theme-modal';
-attrModal[`data-${prefix}-opened`] = false;
-
-let dataFooter = {
-  id: uniqueId('footer'),
-  brand: {
-    logo: {
-        title: 'république<br>française',
-    },
-  },
-  content: {
-    desc: lorem(),
-    links: [
-      {label: 'legifrance.gouv.fr'},
-      {label: 'gouvernement.fr'},
-      {label: 'service-public.fr'},
-      {label: 'data.gouv.fr'}
-    ]
-  },
-  bottom: {
-    links: [
-      {label: 'Plan du site'},
-      {label: 'Accessibilité : non/partiellement/totalement conforme'},
-      {label: 'Mentions légales'},
-      {label: 'Données personnelles'},
-      {label: 'Gestion des cookies'},
-      {
-        label: 'Paramètres d\'affichage',
-        template: 'display',
-        attributes: attrModal
-      }
-    ],
-    copyright: 'Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>'
-  }
-}
-%>
-
 <div class="<%= prefix %>-container" >
-  <%- sample('Pied de page', '../../../component/footer/template/ejs/footer.ejs',  {footer: dataFooter }); %>
+  <%- sample('Pied de page', '../../../component/footer/example/sample/footer.ejs', {footer: {brand: true, operator: true, bottom: true, content: true, partners: true, top: true}}); %>
 </div>

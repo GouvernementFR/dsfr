@@ -49,7 +49,7 @@ class Member {
     }
     console.log('INSTANCE LEVEL', instance.level, this._level);
 
-    if (instance.level && instance.level < this._level) this._level = instance.level;
+    if (!isNaN(instance.level) && instance.level < this._level) this._level = instance.level;
     this._label = instance.label;
     this._component = instance.component;
     return true;

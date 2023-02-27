@@ -117,6 +117,19 @@ class ComponentActionee extends api.core.Instance {
     if (this._actionElement !== undefined) this._actionElement.act(Object.assign(this._data, data));
   }
 
+  getInteractionLabel () {
+    const title = this.getAttribute('title');
+    if (title) return title;
+
+    const content = this.node.textContent.trim();
+    if (content) return content;
+
+    const img = this.node.querySelector('img');
+    if (img) return img.getAttribute('alt').trim();
+
+    return null;
+  }
+
   detectLevel (node) {
     if (!node) node = this.node;
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');

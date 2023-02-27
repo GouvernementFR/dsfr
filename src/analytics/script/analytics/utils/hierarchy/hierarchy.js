@@ -17,7 +17,7 @@ class Hierarchy {
 
     let node = this._node.parentNode;
 
-    while (document.documentElement.contains(node) && node !== document.documentElement && this._level > 1) {
+    while (document.documentElement.contains(node) && node !== document.documentElement && this._level > 0) {
       console.log('MEMBERS ARRAY', this._members);
       console.log('NODE ANALYSIS', node);
       const member = new Member(node, this._node, this._level);
@@ -38,7 +38,7 @@ class Hierarchy {
 
         default:
           this._members.unshift(member);
-          this._level = member.level;
+          if (member.level < this._level) this._level = member.level;
       }
 
       node = node.parentNode;

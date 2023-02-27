@@ -21,7 +21,7 @@ class FooterLinkActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    return this.getInteractionLabel();
   }
 
   get component () {
