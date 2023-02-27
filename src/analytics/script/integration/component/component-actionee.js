@@ -16,6 +16,11 @@ class ComponentActionee extends api.core.Instance {
 
   get proxy () {
     const scope = this;
+
+    const proxy = {
+      validate: (target, members) => scope.validate(target, members)
+    };
+
     const proxyAccessors = {
       get isComponentActionee () {
         return true;
@@ -31,10 +36,13 @@ class ComponentActionee extends api.core.Instance {
       },
       get level () {
         return scope.level;
+      },
+      get node () {
+        return scope.node; // TODO: remove in v2
       }
     };
 
-    return api.internals.property.completeAssign(super.proxy, proxyAccessors);
+    return api.internals.property.completeAssign(super.proxy, proxy, proxyAccessors);
   }
 
   listenClick () {
@@ -135,6 +143,10 @@ class ComponentActionee extends api.core.Instance {
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
     const levels = [...node.querySelectorAll(selector)].map(heading => Number(heading.tagName.charAt(1)));
     if (levels.length) this._level = Math.min.apply(null, levels) - 1;
+  }
+
+  validate (target) {
+    return true;
   }
 
   get actionElement () {

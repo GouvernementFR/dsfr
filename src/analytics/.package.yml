@@ -2,6 +2,7 @@ id: analytics
 title: Outils d'analyse
 description:
 detached: true
+no-parameter: true
 script:
   - core
   - scheme

@@ -3,6 +3,7 @@ import state from '../../state.js';
 import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
+import { completeAssign } from '../../utilities/property/complete-assign.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
 
@@ -42,10 +43,16 @@ class Instance {
 
   get proxy () {
     const scope = this;
-    return {
+    const proxy = {
       render: () => scope.render(),
       resize: () => scope.resize()
     };
+    const proxyAccessors = {
+      get node () {
+        return this.node;
+      }
+    };
+    return completeAssign(proxy, proxyAccessors);
   }
 
   register (selector, InstanceClass) {

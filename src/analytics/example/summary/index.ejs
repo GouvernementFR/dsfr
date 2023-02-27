@@ -4,11 +4,11 @@
 const getItem = (id) => {
     return {
         href: `#anchor-${id}`,
-        label: String(id).indexOf('6') > -1 ? lorem() : 'Titre du lien'
+        label: `Titre du lien ${id}`
     }
 };
 
-const links = [12,0,2,2,0,0,0,0,0,0,0,0,12];
+const links = [3,0,2,2];
 let data = {list:[]};
 data.title = 'Titre sommaire';
 

@@ -21,29 +21,31 @@ class Heading {
 class Member {
   constructor (node, target, level) {
     this._type = Type.UNDEFINED;
-    this.node = node;
-    this.target = target;
+    this._node = node;
+    this._target = target;
     this._level = level;
     this._label = '';
     this._component = '';
+    this._isValid = true;
     this.analyse();
   }
 
   _parseHeadings () {
     const selector = Array.from({ length: this._level }, (v, i) => `:scope > h${i + 1}, :scope > * > h${i + 1}`).join(',');
-    this._headings = [...this.node.querySelectorAll(selector)].filter(heading => (this.target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
+    this._headings = [...this._node.querySelectorAll(selector)].filter(heading => (this._target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
   }
 
   _getComponent () {
     if (typeof api !== 'function') return false;
-    const element = api(this.node);
+    const element = api(this._node);
     if (!element) return false;
     const instance = Object.values(element).filter(actionee => actionee.isComponentActionee).sort((a, b) => b.priority - a.priority)[0];
     if (!instance) return false;
 
     this._type = Type.COMPONENT;
+    this._isValid = instance.validate(this._target);
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
-    const heading = this.node.closest(selector);
+    const heading = this._node.closest(selector);
     if (heading) {
       this._level = Number(heading.tagName.charAt(1)) - 1;
     }
@@ -74,9 +76,9 @@ class Member {
     this._parseHeadings();
     if (this._getComponent()) return;
     if (this._getHeading()) return;
-    if (this.node !== this.target) return;
+    if (this._node !== this._target) return;
 
-    const label = this.node.textContent.trim();
+    const label = this._node.textContent.trim();
     if (!label) return;
     this._type = Type.CONTENT;
     this._label = label;
@@ -96,6 +98,18 @@ class Member {
 
   get component () {
     return this._component;
+  }
+
+  get node () {
+    return this._node;
+  }
+
+  get target () {
+    return this._target;
+  }
+
+  get isValid () {
+    return this._isValid;
   }
 }
 

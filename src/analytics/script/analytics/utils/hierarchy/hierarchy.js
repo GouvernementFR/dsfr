@@ -26,6 +26,11 @@ class Hierarchy {
         case member.type === Type.UNDEFINED:
           console.log('****UNDEFINED');
           break;
+
+        case !member.isValid:
+          console.log('****INVALID');
+          break;
+
         case member.label === this._members[0].label && member.type === Type.HEADING && this._members[0].type === Type.COMPONENT:
           console.log('***** SAME');
           // do nothing

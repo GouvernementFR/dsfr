@@ -98,7 +98,9 @@
 </script>
 <%- include('wrapper'); %>
 
-<%- include('parameter'); %>
+<% if (!locals.noParameter) { %>
+  <%- include('parameter'); %>
+<% } %>
 
 <script type="module" src="<%= relativeRoot %>dist/patch/patch.module.js"></script>
 

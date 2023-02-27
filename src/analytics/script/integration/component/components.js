@@ -14,7 +14,6 @@ import { CheckboxActionee } from './checkbox/checkbox-actionee';
 import { FooterSelector } from './footer/footer-selector';
 import { FooterActionee } from './footer/footer-actionee';
 import { FooterLinkActionee } from './footer/footer-link-actionee';
-import { HeaderSelector } from './header/header-selector';
 import { HeaderActionee } from './header/header-actionee';
 import { HighlightSelector } from './highlight/highlight-selector';
 import { HighlightActionee } from './highlight/highlight-actionee';
@@ -22,6 +21,7 @@ import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
 import { NavigationSelector } from './navigation/navigation-selector';
 import { NavigationActionee } from './navigation/navigation-actionee';
+import { NavigationSectionActionee } from './navigation/navigation-section-actionee';
 import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
 import { ModalActionee } from './modal/modal-actionee';
 import { RadioSelector } from './radio/radio-selector';
@@ -31,11 +31,13 @@ import { SearchActionee } from './search/search-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
 import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
 import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
+import { SidemenuSectionActionee } from './sidemenu/sidemenu-section-actionee';
 import { ShareSelector } from './share/share-selector';
 import { ShareActionee } from './share/share-actionee';
 import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
 import { SummaryLinkActionee } from './summary/summary-link-actionee';
+import { SummarySectionActionee } from './summary/summary-section-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TabActionee } from './tab/tab-actionee';
@@ -60,7 +62,9 @@ api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 api.internals.register(FooterSelector.FOOTER, FooterActionee);
 api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
 
-api.internals.register(HeaderSelector.HEADER, HeaderActionee);
+if (api.header) {
+  api.internals.register(api.header.HeaderSelector.HEADER, HeaderActionee);
+}
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
@@ -71,21 +75,26 @@ if (api.modal) {
 }
 
 if (api.navigation) {
-  api.internals.register(NavigationSelector.NAVIGATION, NavigationActionee);
+  api.internals.register(api.navigation.NavigationSelector.NAVIGATION, NavigationActionee);
   api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
+  api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
 }
 
 api.internals.register(RadioSelector.INPUT, RadioActionee);
 
 api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
 
-api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
-api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
+if (api.sidemenu) {
+  api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
+  api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
+  api.internals.register(api.sidemenu.SidemenuSelector.COLLAPSE, SidemenuSectionActionee);
+}
 
 api.internals.register(ShareSelector.SHARE, ShareActionee);
 
 api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
 api.internals.register(SummarySelector.LINK, SummaryLinkActionee);
+api.internals.register(SummarySelector.ITEM , SummarySectionActionee);
 
 if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
