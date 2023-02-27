@@ -1,11 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { SidemenuSelector } from './sidemenu-selector';
-import ID from './id';
 
 class SidemenuActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(null, 1);
   }
 
   static get instanceClassName () {
@@ -20,10 +18,6 @@ class SidemenuActionee extends ComponentActionee {
     }
 
     return 'Sidemenu';
-  }
-
-  get component () {
-    return ID;
   }
 }
 

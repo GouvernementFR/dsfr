@@ -1,10 +1,8 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
-import ID from './id';
 
 class NavigationActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(null, 1);
   }
 
   static get instanceClassName () {
@@ -13,10 +11,6 @@ class NavigationActionee extends ComponentActionee {
 
   get label () {
     return 'Navigation';
-  }
-
-  get component () {
-    return ID;
   }
 }
 

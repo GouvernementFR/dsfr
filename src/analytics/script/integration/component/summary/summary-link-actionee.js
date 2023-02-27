@@ -1,6 +1,7 @@
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
 import { ButtonEmission } from '../button/button-emission';
+import ID from './id';
 
 class SummaryLinkActionee extends ComponentActionee {
   constructor () {
@@ -26,7 +27,7 @@ class SummaryLinkActionee extends ComponentActionee {
   }
 
   get component () {
-    return null;
+    return ID;
   }
 }
 

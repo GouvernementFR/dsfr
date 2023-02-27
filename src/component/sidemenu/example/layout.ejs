@@ -6,7 +6,9 @@
     </div>
     <% } %>
     <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-8">
-      <h4><%- title %></h4>
+      <% if (title) { %>
+        <h4><%- title %></h4>
+      <% } %>
       <%
       for (let i = 0; i < 7; i++) {
       %>

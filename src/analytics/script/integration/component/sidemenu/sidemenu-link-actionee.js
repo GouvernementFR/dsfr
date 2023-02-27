@@ -1,4 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
+import ID from './id';
 
 class SidemenuLinkActionee extends ComponentActionee {
   constructor () {
@@ -23,7 +24,7 @@ class SidemenuLinkActionee extends ComponentActionee {
   }
 
   get component () {
-    return null;
+    return ID;
   }
 }
 

@@ -1,3 +1,7 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Menu latéral', '../../../component/sidemenu/example/sample/sidemenu', {}, false, '../../../component/sidemenu/example/layout'); %>
+<div class="<%= prefix %>-container" >
+  <%- section('Menu latéral'); %>
+</div>
+
+<%- sample('', '../../../component/sidemenu/example/sample/sidemenu', {}, false, '../../../component/sidemenu/example/layout'); %>
