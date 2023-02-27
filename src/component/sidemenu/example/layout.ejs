@@ -19,8 +19,10 @@
       <%- component %>
     </div>
     <% } %>
+    <% if (locals.snippet) { %>
     <div class="<%= prefix %>-col-12">
       <%- snippet %>
     </div>
+    <% } %>
   </div>
 </div>

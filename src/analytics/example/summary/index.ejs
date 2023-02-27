@@ -30,5 +30,5 @@ for (let i = 0; i < links.length; i++) {
 %>
 
 <div class="<%= prefix %>-container" >
-  <%- include('../../../component/summary/template/ejs/summary', {summary:data}); %>
+  <%- sample('Sommaire', '../../../component/summary/example/sample/summary', { summary: {links: links} }); %>
 </div>

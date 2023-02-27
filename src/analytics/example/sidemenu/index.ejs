@@ -1,18 +1,3 @@
 <% const sample = getSample(include); %>
 
-<div class="<%= prefix %>-container" >
-  <div class="<%= prefix%>-container">
-    <div class="<%= prefix%>-grid-row <%= prefix%>-grid-row--gutters">
-      <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-4">
-        <%- sample('Menu latéral', '../../../component/sidemenu/example/sample/sidemenu', {}); %>
-      </div>
-      <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-8">
-        <h4>Navigation latérale de base</h4>
-        <% for (let i = 0; i < 7; i++) { %>
-          <h6>Section <%= (i + 1) %></h6>
-          <p><%- lorem(); %></p>
-        <% } %>
-      </div>
-    </div>
-  </div>
-</div>
+<%- sample('Menu latéral', '../../../component/sidemenu/example/sample/sidemenu', {}, false, '../../../component/sidemenu/example/layout'); %>
