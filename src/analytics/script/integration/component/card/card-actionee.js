@@ -15,13 +15,11 @@ class CardActionee extends ComponentActionee {
 
   init () {
     const link = this.node.querySelector(CardSelector.LINK);
-    console.log(link);
     if (link) {
       this.link = link;
       this.detectInteraction(link);
       this.link.addEventListener('click', this.handlingClick, { capture: true });
     }
-    console.log('CARD');
   }
 
   handleClick () {

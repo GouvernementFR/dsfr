@@ -9,35 +9,35 @@ class Hierarchy {
   }
 
   _process () {
-    console.log('_______________ start ____________________');
+    // console.log('_______________ start ____________________');
     const member = new Member(this._node, this._node, 6);
-    console.log('- FIRST MEMBER', member);
+    // console.log('- FIRST MEMBER', member);
     this._level = member.level;
     this._members = [member];
 
     let node = this._node.parentNode;
 
     while (document.documentElement.contains(node) && node !== document.documentElement && this._level > 0) {
-      console.log('MEMBERS ARRAY', this._members);
-      console.log('NODE ANALYSIS', node);
+      // console.log('MEMBERS ARRAY', this._members);
+      // console.log('NODE ANALYSIS', node);
       const member = new Member(node, this._node, this._level);
-      console.log('NEW MEMBER', member);
+      // console.log('NEW MEMBER', member);
       switch (true) {
         case member.type === Type.UNDEFINED:
-          console.log('****UNDEFINED');
+          // console.log('****UNDEFINED');
           break;
 
         case !member.isValid:
-          console.log('****INVALID');
+          // console.log('****INVALID');
           break;
 
         case member.label === this._members[0].label && member.type === Type.HEADING && this._members[0].type === Type.COMPONENT:
-          console.log('***** SAME');
+          // console.log('***** SAME');
           // do nothing
           break;
 
         case member.label === this._members[0].label && member.type === Type.COMPONENT && this._members[0].type === Type.HEADING:
-          console.log('***** SAME INVERT');
+          // console.log('***** SAME INVERT');
           this._members.splice(0, 1, member);
           break;
 
@@ -56,7 +56,7 @@ class Hierarchy {
     this._localComponent = components[components.length - 1];
     this._globalComponent = components[0];
 
-    console.log('========= end ===========');
+    // console.log('========= end ===========');
   }
 
   get localComponent () {

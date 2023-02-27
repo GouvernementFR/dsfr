@@ -11,10 +11,6 @@ class HeaderActionee extends ComponentActionee {
     return 'HeaderActionee';
   }
 
-  init () {
-    console.log('HEADER');
-  }
-
   get label () {
     return 'En-tête';
   }

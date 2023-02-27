@@ -12,7 +12,6 @@ class LinkActionee extends ComponentActionee {
   }
 
   init () {
-    console.log('LINK');
     this.listen('click', this.click.bind(this), { capture: true });
   }
 

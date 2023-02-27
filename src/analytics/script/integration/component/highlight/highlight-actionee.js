@@ -11,10 +11,6 @@ class HighlightActionee extends ComponentActionee {
     return 'HighlightActionee';
   }
 
-  init () {
-    console.log('HIGHLIGHT');
-  }
-
   get label () {
     return 'Mise en exergue';
   }
