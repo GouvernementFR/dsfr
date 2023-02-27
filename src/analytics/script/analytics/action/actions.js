@@ -26,8 +26,8 @@ class Actions {
     return true;
   }
 
-  get layer () {
-    return this._actions.filter(action => action.isCollectable).map(action => action.start()).flat();
+  get layers () {
+    return this._actions.filter(action => action.isCollectable).map(action => action.start());
   }
 }
 

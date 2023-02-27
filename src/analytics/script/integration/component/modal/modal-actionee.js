@@ -16,7 +16,6 @@ class ModalActionee extends ComponentActionee {
 
   init () {
     this.detectLevel();
-    console.log('MODALE LEVEL', this._level);
     this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
   }
 

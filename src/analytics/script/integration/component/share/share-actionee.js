@@ -12,10 +12,6 @@ class ShareActionee extends ComponentActionee {
     return 'ShareActionee';
   }
 
-  init () {
-    console.log('SHARE');
-  }
-
   get label () {
     const title = this.querySelector(ShareSelector.TITLE);
     if (title) return title.textContent.trim();

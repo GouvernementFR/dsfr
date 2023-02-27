@@ -12,6 +12,8 @@ import actions from './action/actions';
 import push from './facade/push';
 import PushType from './facade/push-type';
 
+const SLICE = 50;
+
 class Analytics {
   constructor () {
     this._isReady = false;
@@ -135,15 +137,23 @@ class Analytics {
   }
 
   collect () {
-    const layer = [
+    const actionLayers = actions.layers;
+
+    let layer = [
       ...this._user.layer,
       ...this._site.layer,
       ...this._page.layer,
       ...this._search.layer,
-      ...this._funnel.layer,
-      ...actions.layer
+      ...this._funnel.layer
     ];
-    this.push(PushType.COLLECTOR, layer);
+
+    const length = ((actionLayers.length / SLICE) + 1) | 0;
+    for (let i = 0; i < length; i++) {
+      const slice = actionLayers.slice(i * SLICE, (i + 1) * SLICE);
+      layer.push(...slice.flat());
+      this.push(PushType.COLLECTOR, layer);
+      layer = [];
+    }
   }
 }
 

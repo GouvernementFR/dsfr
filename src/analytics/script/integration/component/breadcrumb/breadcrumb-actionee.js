@@ -6,7 +6,7 @@ import ID from './id';
 
 class BreadcrumbActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(Type.IMPRESSION, 2);
   }
 
   static get instanceClassName () {
@@ -14,8 +14,10 @@ class BreadcrumbActionee extends ComponentActionee {
   }
 
   init () {
-    this.register(`[aria-controls="${this.id}"]`, BreadcrumbButtonActionee);
-    this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
+    if (!this.isBreakpoint(api.core.Breakpoints.MD)) {
+      this.register(`[aria-controls="${this.id}"]`, BreadcrumbButtonActionee);
+      this.listenDisclose();
+    }
   }
 
   handleDisclose () {

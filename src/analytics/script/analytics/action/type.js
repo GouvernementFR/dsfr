@@ -48,7 +48,7 @@ export const Type = {
     method: 'eventListener'
   },
   DOUBLE_CLICK: {
-    id: 'button', // button click
+    id: 'dblclick', // double click
     mode: 'out',
     binding: true,
     type: 'interaction',
@@ -98,7 +98,7 @@ export const Type = {
   DISPLAY: {
     id: 'display', // display event
     mode: null,
-    binding: true,
+    binding: false,
     type: 'event'
   },
   CHANGE: {

@@ -6,7 +6,7 @@ class ComponentActionee extends api.core.Instance {
   constructor (type = null, priority = 0) {
     super();
     this._type = type;
-    this._priority = 0;
+    this._priority = priority;
     this._data = {};
   }
 
@@ -84,8 +84,15 @@ class ComponentActionee extends api.core.Instance {
 
     const actionees = element.instances.filter(instance => instance.isComponentActionee).sort((a, b) => b.priority - a.priority);
     if (actionees.length <= 1) return;
-    actionees[0].isMuted = false;
-    actionees.slice(1).forEach(actionee => { actionee.actionElement.isMuted = true; });
+    actionees.forEach((actionee, index) => { actionee.isMuted = index > 0; });
+  }
+
+  get isMuted () {
+    return !this._actionElement && this._actionElement.isMuted;
+  }
+
+  set isMuted (value) {
+    if (this._actionElement) this._actionElement.isMuted = value;
   }
 
   detectInteraction (node) {

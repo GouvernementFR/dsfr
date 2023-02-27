@@ -15,6 +15,10 @@ import { FooterSelector } from './footer/footer-selector';
 import { FooterActionee } from './footer/footer-actionee';
 import { FooterLinkActionee } from './footer/footer-link-actionee';
 import { HeaderActionee } from './header/header-actionee';
+import { HeaderSelector } from './header/header-selector';
+import { HeaderModalActionee } from './header/header-modal-actionee';
+import { HeaderToolsButtonActionee } from './header/header-tools-button-actionee';
+import { HeaderMenuButtonActionee } from './header/header-menu-button-actionee';
 import { HighlightSelector } from './highlight/highlight-selector';
 import { HighlightActionee } from './highlight/highlight-actionee';
 import { LinkSelector } from './link/link-selector';
@@ -64,6 +68,9 @@ api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
 
 if (api.header) {
   api.internals.register(api.header.HeaderSelector.HEADER, HeaderActionee);
+  api.internals.register(api.header.HeaderSelector.MODALS, HeaderModalActionee);
+  api.internals.register(HeaderSelector.TOOLS_BUTTON, HeaderToolsButtonActionee);
+  api.internals.register(HeaderSelector.MENU_BUTTON, HeaderMenuButtonActionee);
 }
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
