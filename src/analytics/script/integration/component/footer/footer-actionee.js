@@ -6,7 +6,7 @@ class FooterActionee extends ComponentActionee {
   constructor () {
     super(Type.IMPRESSION);
   }
-  
+
   static get instanceClassName () {
     return 'FooterActionee';
   }
