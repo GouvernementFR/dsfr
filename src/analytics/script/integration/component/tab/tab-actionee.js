@@ -16,6 +16,7 @@ class TabActionee extends ComponentActionee {
   init () {
     this.register(`[aria-controls="${this.id}"]`, TabButtonActionee);
     this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
+    this._instance = this.element.getInstance('TabPanel');
   }
 
   handleDisclose () {
@@ -23,17 +24,15 @@ class TabActionee extends ComponentActionee {
   }
 
   get label () {
-    /*
-    const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
-    const query = this.node.querySelectorAll(selector);
-    if (query.length) {
-      const headings = [...query].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0);
-      if (headings.length) return headings[0].textContent.trim();
+    const tabs = this.node.closest(api.tab.TabSelector.GROUP);
+    if (tabs) {
+      const tab = tabs.querySelector(`${api.tab.TabSelector.LIST} [aria-controls="${this.id}"]${api.tab.TabSelector.TAB}`);
+      if (tab) return tab.textContent.trim();
     }
-     */
 
-    const button = document.querySelector(`[aria-controls="${this.id}"]`);
-    return button.node.textContent.trim();
+    const button = this._instance.buttons.filter(button => button.isPrimary)[0];
+    if (button) return button.node.textContent.trim();
+    return null;
   }
 
   get component () {
