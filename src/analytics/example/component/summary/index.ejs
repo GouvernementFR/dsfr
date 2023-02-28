@@ -3,6 +3,7 @@
 <%
 const getItem = (id) => {
     return {
+        id: `summary-link-${String(id).replace('.', '-')}`,
         href: `#anchor-${id}`,
         label: `Titre du lien ${id}`
     }

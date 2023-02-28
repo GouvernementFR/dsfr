@@ -6,6 +6,7 @@ const models2 = ['MALMMLMMLM', 'LMALLL', 'LLLL'];
 
 function link(level, active) {
   return {
+    id: uniqueId('sidemenu-item'),
     type: 'link',
     active: active === true,
     label: 'Accès direct' + (level > 1 ? ' niveau ' + level: '')
