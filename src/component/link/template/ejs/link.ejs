@@ -39,6 +39,8 @@ const markup = link.markup || 'a';
 
 linkClasses.push(prefix + '-link');
 
+if (link.id !== undefined) linkAttrs.id = link.id;
+
 switch (link.size) {
     case 'sm':
         linkClasses.push(prefix + '-link--sm');

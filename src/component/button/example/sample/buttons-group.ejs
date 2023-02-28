@@ -23,6 +23,7 @@ if (!buttons.length && buttonsGroup.groupCount !== undefined) {
     buttons.push({
       label: buttonsGroup.label || lbl,
       icon: buttonsGroup.icon,
+      id: uniqueId('button'),
       iconPlace: buttonsGroup.iconPlace,
       title: buttonsGroup.iconPlace === 'only' ? locals.contentPlaceholder(lbl) : undefined,
       type: buttonsGroup.type,
