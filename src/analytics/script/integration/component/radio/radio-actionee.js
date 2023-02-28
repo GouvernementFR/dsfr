@@ -26,7 +26,7 @@ class RadioActionee extends ComponentActionee {
       if (legend) parts.push(legend.textContent.trim());
     }
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    if (label) parts.push(label.textContent.trim())
+    if (label) parts.push(label.textContent.trim());
     return parts.join(' ＞ ');
   }
 
