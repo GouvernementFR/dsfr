@@ -5,6 +5,7 @@ const data = {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
     description: card.description || lorem('', 160),
   },
+  id: card.id || uniqueId('card'),
   size: card.size,
   enlarge: card.enlarge !== false && card.footer === undefined,
   icon: card.icon,
