@@ -1,6 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
 import api from '../../../../api';
-import { HeaderModalButtonActionee } from './header-modal-button-actionee';
 
 class HeaderToolsButtonActionee extends ComponentActionee {
   constructor () {

@@ -17,7 +17,7 @@ class SidemenuActionee extends ComponentActionee {
       if (title) return title.textContent.trim();
     }
 
-    return 'Sidemenu';
+    return 'Menu Latéral';
   }
 }
 

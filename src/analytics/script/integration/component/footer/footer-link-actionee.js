@@ -23,10 +23,6 @@ class FooterLinkActionee extends ComponentActionee {
   get label () {
     return this.getInteractionLabel();
   }
-
-  get component () {
-    return ID;
-  }
 }
 
 export { FooterLinkActionee };
