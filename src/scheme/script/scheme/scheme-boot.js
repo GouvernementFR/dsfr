@@ -8,6 +8,7 @@ const SELECTOR_SCHEME = `:root[${ATTRIBUTE_THEME}], :root[${ATTRIBUTE_SCHEME}]`;
 
 const setDarkTheme = () => {
   document.documentElement.setAttribute(ATTRIBUTE_THEME, SchemeTheme.DARK);
+  document.documentElement.style.colorScheme = 'dark';
 };
 
 const checkPreferences = () => {
