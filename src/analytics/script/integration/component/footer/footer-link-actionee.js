@@ -1,6 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
 import { Type } from '../../../analytics/action/type';
-import ID from './id';
 
 class FooterLinkActionee extends ComponentActionee {
   constructor () {
@@ -14,10 +13,6 @@ class FooterLinkActionee extends ComponentActionee {
   init () {
     this.detectInteraction();
     this.listenClick();
-  }
-
-  handleClick () {
-    this.act();
   }
 
   get label () {

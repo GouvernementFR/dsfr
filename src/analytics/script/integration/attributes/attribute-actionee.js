@@ -1,8 +1,11 @@
-import api from '../../../api';
 import Type from '../../analytics/action/type';
-import { ActionElement } from '../../analytics/action/action-element';
+import { Actionee } from '../core/actionee';
 
-class AttributeActionee extends api.core.Instance {
+class AttributeActionee extends Actionee {
+  constructor () {
+    super(null, 100);
+  }
+
   static get instanceClassName () {
     return 'AttributeActionee';
   }
@@ -12,7 +15,7 @@ class AttributeActionee extends api.core.Instance {
     const id = this._attribute.split('-').pop();
     this._type = Object.values(Type).filter(type => type.id === id)[0];
 
-    this._actionElement = new ActionElement(this.node, this._type, this.id, this.getAttribute(this._attribute));
+    this._title = this.getAttribute(this._attribute);
 
     switch (this._type.method) {
       case 'eventListener':

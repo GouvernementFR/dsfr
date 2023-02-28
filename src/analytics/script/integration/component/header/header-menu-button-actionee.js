@@ -2,10 +2,6 @@ import { ComponentActionee } from '../component-actionee';
 import api from '../../../../api';
 
 class HeaderMenuButtonActionee extends ComponentActionee {
-  constructor () {
-    super(null, 0);
-  }
-
   static get instanceClassName () {
     return 'HeaderMenuButtonActionee';
   }

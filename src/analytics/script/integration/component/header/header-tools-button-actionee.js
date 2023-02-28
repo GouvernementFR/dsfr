@@ -11,7 +11,7 @@ class HeaderToolsButtonActionee extends ComponentActionee {
   }
 
   init () {
-    if (this.isBreakpoint(api.core.Breakpoints.LG)) this._priority = 0;
+    if (this.isBreakpoint(api.core.Breakpoints.LG)) this._priority = -1;
   }
 }
 

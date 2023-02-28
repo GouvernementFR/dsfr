@@ -16,17 +16,13 @@ class ModalActionee extends ComponentActionee {
 
   init () {
     this.detectLevel();
-    this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
-  }
-
-  handleDisclose () {
-    this.act();
+    this.listenDisclose();
   }
 
   get label () {
-    const modalTitle = this.node.querySelector(ModalSelector.TITLE);
+    const title = this.node.querySelector(ModalSelector.TITLE);
 
-    if (modalTitle) return modalTitle.textContent.trim();
+    if (title) return title.textContent.trim();
 
     const selector = Array.from({ length: 2 }, (v, i) => `h${i + 1}`).join(',');
     const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];

@@ -22,10 +22,6 @@ class CardActionee extends ComponentActionee {
     }
   }
 
-  handleClick () {
-    this.act();
-  }
-
   get label () {
     const cardTitle = this.node.querySelector(CardSelector.TITLE);
     if (cardTitle) return cardTitle.textContent.trim();

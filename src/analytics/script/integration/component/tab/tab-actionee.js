@@ -15,12 +15,8 @@ class TabActionee extends ComponentActionee {
 
   init () {
     this.register(`[aria-controls="${this.id}"]`, TabButtonActionee);
-    this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this));
     this._instance = this.element.getInstance('TabPanel');
-  }
-
-  handleDisclose () {
-    this.act();
+    this.listenDisclose();
   }
 
   get label () {

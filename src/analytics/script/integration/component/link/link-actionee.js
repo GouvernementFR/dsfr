@@ -12,12 +12,8 @@ class LinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.listen('click', this.click.bind(this), { capture: true });
-  }
-
-  click () {
-    const data = { component_value: this.getAttribute('href') };
-    this.act(data);
+    this.detectInteraction();
+    this.listenClick();
   }
 
   get label () {

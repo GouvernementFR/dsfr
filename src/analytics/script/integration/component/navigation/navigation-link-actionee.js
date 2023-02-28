@@ -15,10 +15,6 @@ class NavigationLinkActionee extends ComponentActionee {
     this.listenClick();
   }
 
-  handleClick () {
-    this.act();
-  }
-
   get label () {
     return this.node.textContent.trim();
   }

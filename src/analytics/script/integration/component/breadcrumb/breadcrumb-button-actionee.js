@@ -16,10 +16,6 @@ class BreadcrumbButtonActionee extends ComponentActionee {
     this.listenClick();
   }
 
-  handleClick () {
-    this._actionElement.act();
-  }
-
   get label () {
     return this.node.textContent.trim();
   }

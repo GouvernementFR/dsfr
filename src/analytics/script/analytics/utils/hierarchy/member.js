@@ -39,7 +39,7 @@ class Member {
     if (typeof api !== 'function') return false;
     const element = api(this._node);
     if (!element) return false;
-    const instance = Object.values(element).filter(actionee => actionee.isComponentActionee).sort((a, b) => b.priority - a.priority)[0];
+    const instance = Object.values(element).filter(actionee => actionee.isActionee).sort((a, b) => b.priority - a.priority)[0];
     if (!instance) return false;
 
     this._type = Type.COMPONENT;

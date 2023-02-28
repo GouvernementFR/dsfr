@@ -17,11 +17,6 @@ class SummaryLinkActionee extends ComponentActionee {
     this.listenClick();
   }
 
-  handleClick () {
-    const data = this.ascend(ButtonEmission.GET_DATA);
-    this.act(Object.assign({}, ...data));
-  }
-
   get label () {
     return this.node.textContent.trim();
   }
