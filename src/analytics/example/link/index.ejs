@@ -1,9 +1,0 @@
-<% const sample = getSample(include); %>
-
-<div class="<%= prefix %>-container" >
-  <%- sample('lien interne', '../../../component/link/example/sample/link-default'); %>
-
-  <%- sample('lien externe', '../../../component/link/example/sample/link-default', { link: { label: 'label externe', href:'#', blank: true } }); %>
-
-  <%- sample('lien download', '../../../component/link/example/sample/link-default', { link: { label: 'label download', href:'#', download: true } }); %>
-</div>

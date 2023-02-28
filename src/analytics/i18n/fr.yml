@@ -3,6 +3,8 @@ description:
 doc:
 subdir:
   title: Composants
+  attribute: Attribut
+  component: Composants
   accordion: Accordéon (accordion)
   breadcrumb: Fil d’ariane (breadcrumb)
   button: Bouton (button)

@@ -8,10 +8,11 @@ class AttributeActionee extends api.core.Instance {
   }
 
   init () {
-    const id = this.registration.selector.replace(/[[\]]/g, '').split('-').pop();
+    this._attribute = this.registration.selector.replace(/[[\]]/g, '');
+    const id = this._attribute.split('-').pop();
     this._type = Object.values(Type).filter(type => type.id === id)[0];
 
-    this._actionElement = new ActionElement(this.node, this._type);
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this.getAttribute(this._attribute));
 
     switch (this._type.method) {
       case 'eventListener':

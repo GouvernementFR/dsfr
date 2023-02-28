@@ -1,0 +1,11 @@
+<% const sample = getSample(include); %>
+
+<%
+let title = 'Titre mise en avant';
+let buttonTpl = '../../../button/example/sample/button-default';
+let icon = 'icon-info-line';
+%>
+
+<div class="<%= prefix %>-container" >
+  <%- sample('Mise en avant', '../../../../component/callout/example/sample/callout-default', {callout: {title:title, buttonTpl:buttonTpl, icon: icon}}); %>
+</div>

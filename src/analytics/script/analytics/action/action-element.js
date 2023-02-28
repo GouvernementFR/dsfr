@@ -4,11 +4,12 @@ import PushType from '../facade/push-type';
 import { Hierarchy } from '../utils/hierarchy/hierarchy';
 
 class ActionElement {
-  constructor (node, type, id) {
+  constructor (node, type, id, title = null) {
     this._node = node;
     this._type = type;
     this._id = id || this._node.id;
     this._isMuted = false;
+    this._title = title;
 
     // this._init();
     requestAnimationFrame(this._init.bind(this));
@@ -21,7 +22,7 @@ class ActionElement {
     let type = '';
     if (this._id) id = `_[${this._id}]`;
     if (this._type) type = `_(${this._type.id})`;
-    this._name = `${this._hierarchy.title}${id}${type}`;
+    this._name = `${this._title || this._hierarchy.title}${id}${type}`;
 
     this._action = actions.getAction(this._name, true);
     this._action.isMuted = this._isMuted;
