@@ -17,13 +17,13 @@ class Page {
     this._labels.length = 5;
     this.isError = !clear && this._config.isError;
     this.template = clear ? '' : this._config.template;
+    this.group = clear ? '' : this._config.group;
+    this.segment = clear ? '' : this._config.segment;
     this.subtemplate = clear ? '' : this._config.subtemplate;
     this.theme = clear ? '' : this._config.theme;
     this.subtheme = clear ? '' : this._config.subtheme;
     this.related = clear ? '' : this._config.related;
     this.depth = clear || isNaN(this._config.depth) ? 0 : this._config.depth;
-    this.group = clear ? '' : this._config.group;
-    this.segment = clear ? '' : this._config.segment;
     this.current = clear || isNaN(this._config.current) ? -1 : this._config.current;
     this.total = clear || isNaN(this._config.total) ? -1 : this._config.total;
     this._filters = clear || !this._config.filters ? [] : this._config.filters;
@@ -91,6 +91,24 @@ class Page {
     return this._template;
   }
 
+  set segment (value) {
+    const valid = validateString(value, 'page.segment');
+    if (valid !== null) this._segment = valid;
+  }
+
+  get segment () {
+    return this._segment;
+  }
+
+  set group (value) {
+    const valid = validateString(value, 'page.group');
+    if (valid !== null) this._group = valid;
+  }
+
+  get group () {
+    return this._group;
+  }
+
   set subtemplate (value) {
     const valid = validateString(value, 'page.subtemplate');
     if (valid !== null) this._subtemplate = valid;
@@ -134,24 +152,6 @@ class Page {
 
   get depth () {
     return this._depth;
-  }
-
-  set segment (value) {
-    const valid = validateString(value, 'page.segment');
-    if (valid !== null) this._segment = valid;
-  }
-
-  get segment () {
-    return this._segment;
-  }
-
-  set group (value) {
-    const valid = validateString(value, 'page.group');
-    if (valid !== null) this._group = valid;
-  }
-
-  get group () {
-    return this._group;
   }
 
   set current (value) {
