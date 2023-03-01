@@ -8,19 +8,8 @@
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
       @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
         #{ns(btn)} {
-          @include has-not-icon {
-            &:not(#{ns(btn--display)}) {
-              @include nest-btn(sm, null, null, null, false);
-            }
-          }
-
-          @include has-icon {
-            @include nest-btn(sm, left, null, null, false);
-          }
-
-          &#{ns(btn--display)} {
-            @include nest-btn(sm, left, null, null, false);
-          }
+          @include nest-btn(sm, left, null, null, false);
+          justify-content: flex-start;
         }
       }
     }

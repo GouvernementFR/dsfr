@@ -11,9 +11,8 @@
   input[type="checkbox"] {
     @include absolute;
     @include margin(0);
+    @include size(6v, 6v);
     opacity: 0;
-    top: 50%;
-    transform: translateY(-50%);
 
     + label {
       @include relative;
@@ -44,11 +43,16 @@
 
   &--sm {
     input[type="checkbox"] {
+      top: #{space(1v)};
+      @include size(4v, 4v);
+
       + label {
+        @include margin-left(6v);
+
         @include before {
           @include size(4v, 4v);
           @include margin-top(1v);
-          left: #{space(-7v)};
+          left: #{space(-6v)};
         }
       }
     }

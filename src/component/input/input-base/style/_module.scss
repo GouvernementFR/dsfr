@@ -32,10 +32,12 @@
     background-repeat: no-repeat;
     background-position: spacing.space(calc(100% - 3v) 50%);
     background-size: spacing.space(4v) spacing.space(4v);
+    @include padding-right(9v);
 
     &::-webkit-calendar-picker-indicator {
       display: block;
-      @include margin-right(-1.5v);
+      @include padding(4v);
+      @include margin-right(-10v);
       opacity: 0;
     }
   }

@@ -1,84 +1,99 @@
 <%
 let navigation = locals.navigation || {};
 
-let link = {
-  type: 'link',
-  label: 'accès direct',
-  href:'#'
+const getLink = () => {
+  const id = uniqueId('nav');
+  return {
+    type: 'link',
+    label: `accès direct ${id}`,
+    id: id,
+    href:'#'
+  };
+
 }
 
-let sublink = { label: 'Lien de navigation', href:'#' };
-
-let items = [sublink, sublink, sublink, sublink, sublink, sublink];
-
-let menu = {
-  type: 'menu',
-  label: 'Entrée menu',
-  items: items,
+const getSubLink = (active = false) => {
+  const id = uniqueId('nav');
+  return {
+    label: `Lien de navigation ${id}`,
+    id: id,
+    href:'#',
+    active: active
+  }
 }
 
-
-let itemsAct = items.slice();
-itemsAct[3] = { ...sublink, active: true }
-
-let active = {
-  ...menu,
-  active: true,
-  label: 'Entrée menu active',
-  items: itemsAct
-};
-
-let category = {
-  label: 'Nom de catégorie',
-  href: '#',
-  items: items
+const getItems = (active = false) => {
+  return [
+    getSubLink(),
+    getSubLink(),
+    getSubLink(active),
+    getSubLink(),
+    getSubLink(),
+    getSubLink(),
+    getSubLink(),
+    getSubLink()
+  ];
 }
 
-let mega = {
-  type: 'mega-menu',
-  label: 'Entrée mega menu',
-  close: 'Fermer le menu',
-  leader: {
-    title: 'Titre éditorialisé',
-    text: lorem(),
-    link: {
-      label: 'Voir toute la rubrique',
-      iconPlace:'right',
-      icon: 'arrow-right-line'
-    }
-  },
-  categories: [
-    category,
-    category,
-    { ...category, items: itemsAct },
-    category
-  ]
+const getMenu = (active = false) => {
+  return {
+    id: uniqueId('menu'),
+    collapseId: uniqueId('collapse'),
+    type: 'menu',
+    label: 'Entrée menu',
+    items: getItems(active),
+    active: active
+  }
 }
 
-let mega2 = {
-  ...mega,
-  leader: undefined,
-  categories: [
-    { ...category },
-    { ...category },
-    { ...category, active: true, items: itemsAct },
-    { ...category },
-  ]
+const getCategory = (active = false) => {
+  return {
+    label: 'Nom de catégorie',
+    href: '#',
+    items: getItems(active)
+  };
+}
+
+const getMega = (active = false, leader = false) => {
+
+  return {
+    id: uniqueId('mega-menu'),
+    collapseId: uniqueId('collapse'),
+    type: 'mega-menu',
+    label: 'Entrée mega menu',
+    close: 'Fermer le menu',
+    leader: leader ? {
+      title: 'Titre éditorialisé',
+      text: lorem(),
+      link: {
+        id: uniqueId('link'),
+        label: 'Voir toute la rubrique',
+        iconPlace:'right',
+        icon: 'arrow-right-line'
+      }
+    } : null,
+    categories: [
+      getCategory(),
+      getCategory(),
+      getCategory(true),
+      getCategory()
+    ]
+  }
 }
 
 let data = {
   id: navigation.id || uniqueId('navigation'),
   items: navigation.min === true ?
-    [link, link, link, link] :
+    [getLink(), getLink(), getLink(), getLink()] :
     [
-        {...menu, collapseId: uniqueId('menu')},
-        {...mega, collapseId: uniqueId('mega-menu')},
-        link,
-        {...active, collapseId: uniqueId('menu') },
-        {...mega, collapseId: uniqueId('mega-menu')},
-        link,
-        {...mega2, collapseId: uniqueId('mega-menu')},
-        {...menu, collapseId: uniqueId('menu')}
+        getMenu(),
+        getMega(),
+        getLink(),
+        getMenu(true),
+        getMega(false, true),
+        getLink(),
+        getMega(true, false),
+        getMenu()
     ]
 }
 %>

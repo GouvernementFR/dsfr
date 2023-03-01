@@ -20,7 +20,6 @@ Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des document
 - [Compilation](#compilation)
 - [Autres commandes](#autres-commandes)
   - [Icônes](#icônes)
-  - [Sassdoc](#sassdoc)
   - [Tests](#tests)
     - [tests Sass](#tests-sass)
     - [tests Accessibilité](#tests-accessibilité)
@@ -323,13 +322,6 @@ Il définit pour chaque icône :
 - sa catégorie, défini par son dossier
 - sa famille (dsfr ou remix), par défaut remix, dsfr si le nom de l’icone est préfixé par “fr--”
 - son chemin d’accès
-### Sassdoc
-Des commentaires spéciaux sont utilisés sur l'ensemble des fichier `scss`, afin de permettre la génération d'une [Sassdoc](http://sassdoc.com/) automatiquement, documentant l'ensemble des `mixins` et `functions` utilisés sur le DSFR :
-
-```
-yarn styleguide
-```
-Cette commande permet la génération de la doc dans le dossier `sassdoc`, à la racine du projet.
 
 ### Tests
 Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés qu'il est nécessaire d'exécuter régulièrement pour vérifier que le code du DSFR reste valide et cohérent, notamment avant d'effectuer des pull requests sur le repository de production, et avant publication sur NPM.

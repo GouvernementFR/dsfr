@@ -15,12 +15,14 @@
 <%
 let highlight = locals.highlight || {};
 let classes = highlight.classes || [];
+let attributes = highlight.attributes || {};
 
 if (highlight.accent !== undefined) classes.push(prefix + '-highlight--' + highlight.accent);
+if (highlight.id !== undefined) attributes.id = highlight.id;
 
 classes.push(prefix + '-highlight');
 %>
 
-<div <%- includeClasses(classes)%>>
+<div <%- includeClasses(classes)%> <%- includeAttrs(attributes)%>>
   <%- include('../../../../core/template/ejs/typography/paragraph', {paragraph: {content: highlight.text, size: highlight.size}}) %>
 </div>

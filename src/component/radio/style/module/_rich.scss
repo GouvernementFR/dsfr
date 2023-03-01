@@ -9,6 +9,10 @@
   @include relative;
 
   input[type="radio"] {
+    @include size(4v, 4v);
+    left: #{space(7v)};
+    top: calc(50% - #{space(2v)});
+
     + label {
       @include padding-left(14v);
       @include margin-left(0);
