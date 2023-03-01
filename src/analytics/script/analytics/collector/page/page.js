@@ -17,14 +17,14 @@ class Page {
     this._labels.length = 5;
     this.isError = !clear && this._config.isError;
     this.template = clear ? '' : this._config.template;
-    this.subTemplate = clear ? '' : this._config.subTemplate;
+    this.subtemplate = clear ? '' : this._config.subtemplate;
     this.theme = clear ? '' : this._config.theme;
-    this.subTheme = clear ? '' : this._config.subTheme;
+    this.subtheme = clear ? '' : this._config.subtheme;
     this.related = clear ? '' : this._config.related;
+    this.depth = clear || isNaN(this._config.depth) ? 0 : this._config.depth;
     this.group = clear ? '' : this._config.group;
     this.segment = clear ? '' : this._config.segment;
     this.current = clear || isNaN(this._config.current) ? -1 : this._config.current;
-    this.depth = clear || isNaN(this._config.depth) ? 0 : this._config.depth;
     this.total = clear || isNaN(this._config.total) ? -1 : this._config.total;
     this._filters = clear || !this._config.filters ? [] : this._config.filters;
   }
@@ -91,13 +91,13 @@ class Page {
     return this._template;
   }
 
-  set subTemplate (value) {
+  set subtemplate (value) {
     const valid = validateString(value, 'page.subtemplate');
-    if (valid !== null) this._subTemplate = valid;
+    if (valid !== null) this._subtemplate = valid;
   }
 
-  get subTemplate () {
-    return this._subTemplate;
+  get subtemplate () {
+    return this._subtemplate;
   }
 
   set theme (value) {
@@ -109,13 +109,13 @@ class Page {
     return this._theme;
   }
 
-  set subTheme (value) {
+  set subtheme (value) {
     const valid = validateString(value, 'page.subtheme');
-    if (valid !== null) this._subTheme = valid;
+    if (valid !== null) this._subtheme = valid;
   }
 
-  get subTheme () {
-    return this._subTheme;
+  get subtheme () {
+    return this._subtheme;
   }
 
   set related (value) {
@@ -125,6 +125,15 @@ class Page {
 
   get related () {
     return this._related;
+  }
+
+  set depth (value) {
+    const valid = validateNumber(value, 'page.depth');
+    if (valid !== null) this._depth = valid;
+  }
+
+  get depth () {
+    return this._depth;
   }
 
   set segment (value) {
@@ -152,15 +161,6 @@ class Page {
 
   get current () {
     return this._current;
-  }
-
-  set depth (value) {
-    const valid = validateNumber(value, 'page.depth');
-    if (valid !== null) this._depth = valid;
-  }
-
-  get depth () {
-    return this._depth;
   }
 
   set total (value) {
@@ -198,11 +198,11 @@ class Page {
     layer.push('page_template', template);
     layer.push('pagegroup', normalize(this._group) || template);
     layer.push('site-segment', normalize(this._segment) || template);
-    if (this._subTemplate) layer.push('page_subtemplate', normalize(this._subTemplate));
-    if (this._theme) layer.push('page_theme', normalize(this._theme));
-    if (this._subTheme) layer.push('page_subtheme', normalize(this._subTheme));
-    if (this._related) layer.push('page_related', normalize(this._related));
 
+    if (this._subtemplate) layer.push('page_subtemplate', normalize(this._subtemplate));
+    if (this._theme) layer.push('page_theme', normalize(this._theme));
+    if (this._subtheme) layer.push('page_subtheme', normalize(this._subtheme));
+    if (this._related) layer.push('page_related', normalize(this._related));
     if (!isNaN(this._depth)) layer.push('page_depth', this._depth);
 
     if (!isNaN(this._current) && this._current > -1) {
