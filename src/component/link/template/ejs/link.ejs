@@ -39,6 +39,8 @@ const markup = link.markup || 'a';
 
 linkClasses.push(prefix + '-link');
 
+if (link.id !== undefined) linkAttrs.id = link.id;
+
 switch (link.size) {
     case 'sm':
         linkClasses.push(prefix + '-link--sm');
@@ -81,6 +83,10 @@ if (link.disabled === true) {
         case 'a':
             linkAttrs.href = link.href || '[url - à modifier]';
             switch (true) {
+                case link.download:
+                    linkAttrs.download = 'true';
+                    break;
+
                 case link.blank:
                     linkAttrs.target = '_blank';
                     break;

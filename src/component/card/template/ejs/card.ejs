@@ -26,7 +26,10 @@
 <%
 let card = locals.card || {};
 let classes = card.classes || [];
+let attributes = card.attributes || {};
 classes.push(`${prefix}-card`);
+
+if (card.id) attributes.id = card.id;
 
 if (card.enlarge) classes.push(`${prefix}-enlarge-link`);
 
@@ -85,9 +88,9 @@ if (card.variations) for (const variation of card.variations) switch(variation) 
     break;
 }
 
-if (card.accent !== undefined)
+// if (card.accent !== undefined)
 %>
-<div <%- includeClasses(classes) %>>
+<div <%- includeAttrs(attributes) %> <%- includeClasses(classes) %>>
   <div class="<%= prefix %>-card__body" >
     <%- include('content', { content: card.content}) %>
     <% if (card.footer !== undefined) { %>

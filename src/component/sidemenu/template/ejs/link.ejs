@@ -8,6 +8,9 @@ Paramètres de sidemenu item
 
 %>
 
-<% let sidemenuItem = locals.sidemenuItem || {}; %>
+<% let sidemenuItem = locals.sidemenuItem || {};
+  const linkAttrs = {};
+  if (sidemenuItem.id) linkAttrs.id = sidemenuItem.id;
+%>
 
-<a class="<%= prefix %>-sidemenu__link" <%- sidemenuItem.active ? 'aria-current="page"' : 'href="#" target="_self"' %>><%- sidemenuItem.label %></a>
+<a class="<%= prefix %>-sidemenu__link" <%- includeAttrs(linkAttrs) %> <%- sidemenuItem.active ? 'aria-current="page"' : 'href="#" target="_self"' %>><%- sidemenuItem.label %></a>

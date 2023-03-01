@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+  <%- sample('En-tête', '../../../../component/header/example/sample/header.ejs', {header: { id: uniqueId('header'), logo:{ title: 'République<br>Française'}, operator: imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:9.0625rem;'), service: true, links:true, search: true, navigation: 'min' }});  %>
+</div>

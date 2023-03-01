@@ -69,7 +69,7 @@ class Message {
 }
 
 const LEVELS = {
-  trace: new LogLevel(0, '#616161', '#989898'),
+  log: new LogLevel(0, '#616161', '#989898'),
   debug: new LogLevel(1, '#000091', '#8B8BFF'),
   info: new LogLevel(2, '#007c3b', '#00ed70'),
   warn: new LogLevel(3, '#ba4500', '#fa5c00', 'warn'),
@@ -92,7 +92,7 @@ class Inspector {
   state () {
     const message = new Message();
     message.add(state);
-    this.trace.print(message);
+    this.log.print(message);
   }
 
   tree () {
@@ -100,7 +100,7 @@ class Inspector {
     if (!stage) return;
     const message = new Message();
     this._branch(stage.root, 0, message);
-    this.trace.print(message);
+    this.log.print(message);
   }
 
   _branch (element, space, message) {

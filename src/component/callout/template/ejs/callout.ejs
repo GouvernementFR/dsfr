@@ -23,17 +23,18 @@
 <%
  let callout = locals.callout || {};
  let classes = callout.classes || [];
+ let attributes = callout.attributes || {};
  classes.push(prefix + '-callout');
  const markup = locals.markup || 'h3';
 
  if (callout.icon !== undefined) classes.push(prefix + '-' + callout.icon);
  if (callout.accent !== undefined) classes.push(prefix + '-callout--' + callout.accent);
-
+ if (callout.id !== undefined) attributes.id = callout.id;
  let pClasses = [];
 
  %>
 
-<div <%- includeClasses(classes); %>>
+<div <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>
 
   <% if(callout.title !== undefined) { %>
     <<%= markup %> class="<%= prefix%>-callout__title"><%= callout.title %></<%= markup %>>

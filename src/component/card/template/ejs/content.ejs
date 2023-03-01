@@ -3,6 +3,8 @@
 
 * content.title (string, required) : Titre de la carte
 
+* content.noLink (boolean, optional) : présence du lien
+
 * content.description (string, optional) : Description
 
 * content.badgesGroup (array, optional) : Groupe de badges (voir badge)
@@ -20,6 +22,7 @@ let start, end;
 const startDetails = content.details ? content.details.filter(detail => !detail.position || detail.position === 'start') : [];
 
 const markup = content.markup || 'h3';
+const hasLink = !content.noLink;
 
 switch (true) {
     case content.badgesGroup !== undefined :
@@ -44,7 +47,9 @@ switch (true) {
 
 <div class="<%= prefix %>-card__content">
     <<%= markup %> class="<%= prefix %>-card__title">
-        <a href="#" ><%- content.title %></a>
+        <% if (hasLink) { %><a href="#" ><% } %>
+          <%- content.title %>
+        <% if (hasLink) { %></a><% } %>
     </<%= markup %>>
 
     <% if (content.description !== undefined) { %>

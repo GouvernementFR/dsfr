@@ -33,7 +33,7 @@
 
       <div class="<%= prefix%>-col-12 <%= prefix%>-col-lg-3">
         <h5 class="<%= prefix %>-mega-menu__category">
-          <%- include('./link', {menu: category}); %>
+          <%- include('./link', {link: category}); %>
         </h5>
 
         <ul class="<%= prefix %>-mega-menu__list">
@@ -43,7 +43,7 @@
               item.isPage = true;
           %>
           <li>
-            <%- include('./link', {menu: item}); %>
+            <%- include('./link', {link: item}); %>
           </li>
           <% } %>
         </ul>
