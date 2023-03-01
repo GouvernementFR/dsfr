@@ -17,9 +17,14 @@ class Page {
     this._labels.length = 5;
     this.isError = !clear && this._config.isError;
     this.template = clear ? '' : this._config.template;
+    this.subTemplate = clear ? '' : this._config.subTemplate;
+    this.theme = clear ? '' : this._config.theme;
+    this.subTheme = clear ? '' : this._config.subTheme;
+    this.related = clear ? '' : this._config.related;
     this.group = clear ? '' : this._config.group;
     this.segment = clear ? '' : this._config.segment;
     this.current = clear || isNaN(this._config.current) ? -1 : this._config.current;
+    this.depth = clear || isNaN(this._config.depth) ? 0 : this._config.depth;
     this.total = clear || isNaN(this._config.total) ? -1 : this._config.total;
     this._filters = clear || !this._config.filters ? [] : this._config.filters;
   }
@@ -86,6 +91,42 @@ class Page {
     return this._template;
   }
 
+  set subTemplate (value) {
+    const valid = validateString(value, 'page.subtemplate');
+    if (valid !== null) this._subTemplate = valid;
+  }
+
+  get subTemplate () {
+    return this._subTemplate;
+  }
+
+  set theme (value) {
+    const valid = validateString(value, 'page.theme');
+    if (valid !== null) this._theme = valid;
+  }
+
+  get theme () {
+    return this._theme;
+  }
+
+  set subTheme (value) {
+    const valid = validateString(value, 'page.subtheme');
+    if (valid !== null) this._subTheme = valid;
+  }
+
+  get subTheme () {
+    return this._subTheme;
+  }
+
+  set related (value) {
+    const valid = validateString(value, 'page.related');
+    if (valid !== null) this._related = valid;
+  }
+
+  get related () {
+    return this._related;
+  }
+
   set segment (value) {
     const valid = validateString(value, 'page.segment');
     if (valid !== null) this._segment = valid;
@@ -113,6 +154,15 @@ class Page {
     return this._current;
   }
 
+  set depth (value) {
+    const valid = validateNumber(value, 'page.depth');
+    if (valid !== null) this._depth = valid;
+  }
+
+  get depth () {
+    return this._depth;
+  }
+
   set total (value) {
     const valid = validateNumber(value, 'page.total');
     if (valid !== null) this._total = valid;
@@ -130,7 +180,6 @@ class Page {
     const layer = [];
     if (this._path) layer.push('path', normalize(this._path));
     if (this._referrer) layer.push('referrer', normalize(this._referrer));
-
     const title = normalize(this._title);
     if (title) layer.push('page_title', title);
     if (this._name || title) layer.push('page_name', normalize(this._name) || title);
@@ -149,6 +198,12 @@ class Page {
     layer.push('page_template', template);
     layer.push('pagegroup', normalize(this._group) || template);
     layer.push('site-segment', normalize(this._segment) || template);
+    if (this._subTemplate) layer.push('page_subtemplate', normalize(this._subTemplate));
+    if (this._theme) layer.push('page_theme', normalize(this._theme));
+    if (this._subTheme) layer.push('page_subtheme', normalize(this._subTheme));
+    if (this._related) layer.push('page_related', normalize(this._related));
+
+    if (!isNaN(this._depth)) layer.push('page_depth', this._depth);
 
     if (!isNaN(this._current) && this._current > -1) {
       let pagination = `${this._current}`;
