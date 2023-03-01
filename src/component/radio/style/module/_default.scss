@@ -9,9 +9,8 @@
   input[type="radio"] {
     @include absolute;
     @include margin(0);
+    @include size(6v, 6v);
     opacity: 0;
-    top: 50%;
-    transform: translateY(-50%);
 
     + label {
       @include relative;

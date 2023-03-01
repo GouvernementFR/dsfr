@@ -5,8 +5,14 @@
 
 #{ns-group(radio)}--sm {
   input[type="radio"] {
+    @include size(4v, 4v);
+    top: #{space(1v)};
+
     & + label {
+      @include margin-left(6v);
+
       @include before {
+        left: #{space(-6v)};
         @include size(4v, 4v);
         @include margin-top(1v);
       }
