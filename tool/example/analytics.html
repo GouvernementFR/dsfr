@@ -64,7 +64,6 @@
       verbose: true,
       analytics: {
         domain: 'gva.et-gv.fr',
-        mode: 'auto',
         page: {
           template: 'article'
         },
@@ -1114,8 +1113,9 @@ else fieldset.removeAttribute('disabled');
       </div>
     </div>
   </dialog>
-  <script type="module" src="../../dist/dsfr.module.js" ></script>
-  <script type="text/javascript" nomodule src="../../dist/dsfr.nomodule.js"></script>
+  <script type="module" src="analytics/patch.module.js" ></script>
+  <script type="module" src="analytics/1.3/dsfr.module.js" ></script>
+  <script type="text/javascript" nomodule src="analytics/1.3/dsfr.nomodule.js"></script>
   <script type="module" src="analytics/analytics.module.js" ></script>
   <script type="text/javascript" nomodule  src="analytics/analytics.nomodule.js" ></script>
 
