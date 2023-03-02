@@ -34,6 +34,8 @@ import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
 import { ModalActionee } from './modal/modal-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
+import { QuoteSelector } from './quote/quote-selector';
+import { QuoteActionee } from './quote/quote-actionee';
 import { SearchSelector } from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
@@ -94,6 +96,8 @@ if (api.navigation) {
   api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
   api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
 }
+
+api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
 
 api.internals.register(RadioSelector.INPUT, RadioActionee);
 

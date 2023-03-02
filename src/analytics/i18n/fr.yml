@@ -5,7 +5,9 @@ subdir:
   title: Composants
   attribute: Attribut
   component: Composants
+  alert: Alerte (alert)
   accordion: Accordéon (accordion)
+  badge: Badge (badge)
   breadcrumb: Fil d’ariane (breadcrumb)
   button: Bouton (button)
   callout: Mise en avant (callout)
@@ -17,6 +19,7 @@ subdir:
   link: Lien (link)
   modal: Modale (modal)
   navigation: Navigation principale (navigation)
+  quote: Citation (quote)
   radio: Bouton radio (radio)
   search: Barre de recherche (search)
   share: Boutons de partage (share)
