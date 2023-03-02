@@ -5,6 +5,10 @@ import { BreadcrumbActionee } from './breadcrumb/breadcrumb-actionee';
 import { BreadcrumbLinkActionee } from './breadcrumb/breadcrumb-link-actionee';
 import { ButtonSelector } from './button/button-selector';
 import { ButtonActionee } from './button/button-actionee';
+import { AlertSelector } from './alert/alert-selector';
+import { AlertActionee } from './alert/alert-actionee';
+import { BadgeSelector } from './badge/badge-selector';
+import { BadgeActionee } from './badge/badge-actionee';
 import { CalloutSelector } from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
 import { CardSelector } from './card/card-selector';
@@ -54,6 +58,10 @@ if (api.breadcrumb) {
   api.internals.register(BreadcrumbSelector.COLLAPSE, BreadcrumbActionee);
   api.internals.register(BreadcrumbSelector.LINK, BreadcrumbLinkActionee);
 }
+
+api.internals.register(AlertSelector.ALERT, AlertActionee);
+
+api.internals.register(BadgeSelector.BADGE, BadgeActionee);
 
 api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 
