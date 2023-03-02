@@ -19,6 +19,7 @@
     }
   }
 
+  // todo: prevent a (seulement button + input[type=button])
   @include action.clickable-selector {
     #{selector.ns(tag)} {
       // empeche le hover du tag pressable sur ie

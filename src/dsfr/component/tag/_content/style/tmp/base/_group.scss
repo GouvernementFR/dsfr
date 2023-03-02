@@ -27,6 +27,7 @@
     &#{selector.ns-group(tags)}--sm {
       @include nest-tag(sm, null);
 
+      // todo: prevent a (seulement button + input[type=button])
       @include action.clickable-selector {
         &#{selector.ns(tag)} {
           &#{selector.ns(tag)}--dismiss {

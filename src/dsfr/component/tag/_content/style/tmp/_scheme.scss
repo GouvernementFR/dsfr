@@ -9,7 +9,7 @@
 @use '../../../../../../sass/selector';
 @import './tool';
 
-@mixin _table-scheme($legacy: false) {
+@mixin _tag-scheme($legacy: false) {
   #{selector.class(tag)} {
     @include color.text(label grey, (legacy: $legacy));
     @include color.background(contrast grey, (legacy: $legacy));
@@ -25,6 +25,7 @@
     }
   }
 
+  // a,
   // button,
   // input[type=button] {
   @include action.clickable-selector {
@@ -36,7 +37,14 @@
         @include color.text(action-high accent, (legacy: $legacy));
         @include color.background(action-low accent, (legacy: $legacy, hover: true));
       }
+    }
+  }
 
+  // a,
+  // button,
+  // input[type=button] {
+  @include action.clickable-selector {
+    #{selector.class(tag, (combine: true))} {
       @include pressed-selector(true) {
         &:not(:disabled) {
           @include color.transparent-background((legacy:$legacy));
