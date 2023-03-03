@@ -1,3 +1,4 @@
+import api from '../../../api';
 import actions from './actions';
 import push from '../facade/push';
 import PushType from '../facade/push-type';
@@ -22,8 +23,9 @@ class ActionElement {
     let id = '';
     let type = '';
     if (this._id) id = `_[${this._id}]`;
-    if (this._type) type = `_(${this._type.id})`;
-    this._name = `${this._title || this._hierarchy.title}${id}${type}`;
+    else api.inspector.warn(`Analytics API requires an id to be set on tracked element. Missing on ${this._node.outerHTML}`);
+    if (this._type) type = `(${this._type.id})_`;
+    this._name = `${type}${this._title || this._hierarchy.title}${id}`;
 
     this._action = actions.getAction(this._name, true);
     this._action.isMuted = this._isMuted;
