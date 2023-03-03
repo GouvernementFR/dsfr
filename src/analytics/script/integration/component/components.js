@@ -49,6 +49,8 @@ import { SummaryActionee } from './summary/summary-actionee';
 import { SummaryLinkActionee } from './summary/summary-link-actionee';
 import { SummarySectionActionee } from './summary/summary-section-actionee';
 import { TabActionee } from './tab/tab-actionee';
+import { TableSelector } from './table/table-selector';
+import { TableActionee } from './table/table-actionee';
 import { TileSelector } from './tile/tile-selector';
 import { TileActionee } from './tile/tile-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
@@ -122,6 +124,8 @@ api.internals.register(SummarySelector.ITEM, SummarySectionActionee);
 if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
 }
+
+api.internals.register(TableSelector.TABLE, TableActionee);
 
 api.internals.register(TileSelector.TILE, TileActionee);
 
