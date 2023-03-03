@@ -1,3 +1,5 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Exemple de citation', '../../../../component/quote/example/sample/quote-default', {quote: {id: uniqueId('quote')}}); %>
+<div class="<%= prefix %>-container">
+  <%- sample('Exemple de citation', '../../../../component/quote/example/sample/quote-default', {quote: {id: uniqueId('quote')}}); %>
+</div>

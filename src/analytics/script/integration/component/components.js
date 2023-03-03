@@ -51,6 +51,8 @@ import { SummarySectionActionee } from './summary/summary-section-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TabActionee } from './tab/tab-actionee';
+import { TranscriptionSelector } from './transcription/transcription-selector';
+import { TranscriptionActionee } from './transcription/transcription-actionee';
 
 if (api.accordion) {
   api.internals.register(api.accordion.AccordionSelector.COLLAPSE, AccordionActionee);
@@ -120,5 +122,7 @@ if (api.tab) {
 }
 
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
+
+api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
 
 export default api;

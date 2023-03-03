@@ -1,3 +1,5 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Alert', '../../../../component/alert/example/sample/alert-default', {alert: {id: uniqueId('alert'), type: "success", title: "Succès de l'envoi"}}); %>
+<div class="<%= prefix %>-container">
+  <%- sample('Alert', '../../../../component/alert/example/sample/alert-default', {alert: {id: uniqueId('alert'), type: "success", title: "Succès de l'envoi"}}); %>
+</div>
