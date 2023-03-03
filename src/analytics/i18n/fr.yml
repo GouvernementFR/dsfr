@@ -26,5 +26,6 @@ subdir:
   sidemenu: Menu latéral (sidemenu)
   summary: Sommaire (summary)
   tab: Onglets (tab)
+  tile: Tuile (tile)
   toggle: Interrupteur (toggle)
   transcription: Transcription (transcription)

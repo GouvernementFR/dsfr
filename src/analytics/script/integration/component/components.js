@@ -48,9 +48,11 @@ import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
 import { SummaryLinkActionee } from './summary/summary-link-actionee';
 import { SummarySectionActionee } from './summary/summary-section-actionee';
+import { TabActionee } from './tab/tab-actionee';
+import { TileSelector } from './tile/tile-selector';
+import { TileActionee } from './tile/tile-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
-import { TabActionee } from './tab/tab-actionee';
 import { TranscriptionSelector } from './transcription/transcription-selector';
 import { TranscriptionActionee } from './transcription/transcription-actionee';
 
@@ -120,6 +122,8 @@ api.internals.register(SummarySelector.ITEM, SummarySectionActionee);
 if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
 }
+
+api.internals.register(TileSelector.TILE, TileActionee);
 
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 

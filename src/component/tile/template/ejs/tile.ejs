@@ -48,7 +48,7 @@ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 
 <div <%- includeClasses(classes)%>>
   <div class="<%= prefix %>-tile__body">
-    <<%= markup %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href><%- tile.title %></a></<%= markup %>>
+    <<%= markup %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href="<%- tile.href %>"><%- tile.title %></a></<%= markup %>>
     <% if(tile.description !== undefined) { %>
     <p class="<%= prefix %>-tile__desc"><%= tile.description %></p>
     <% } %>
