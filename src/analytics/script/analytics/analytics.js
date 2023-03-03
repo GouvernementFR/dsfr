@@ -16,6 +16,7 @@ const SLICE = 50;
 
 class Analytics {
   constructor () {
+    this._delaying = this._delay.bind(this);
     this._isReady = false;
     this._readiness = new Promise((resolve, reject) => {
       if (this._isReady) resolve();
@@ -137,6 +138,20 @@ class Analytics {
   }
 
   collect () {
+    this._delayFrames = -4;
+    requestAnimationFrame(this._delaying);
+  }
+
+  _delay () {
+    if (this._delayFrames >= 0) {
+      this._collect();
+      return;
+    }
+    this._delayFrames++;
+    requestAnimationFrame(this._delaying);
+  }
+
+  _collect () {
     const actionLayers = actions.layers;
 
     let layer = [
