@@ -15,6 +15,8 @@ import { CardSelector } from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
 import { CheckboxSelector } from './checkbox/checkbox-selector';
 import { CheckboxActionee } from './checkbox/checkbox-actionee';
+import { DownloadSelector } from './download/download-selector';
+import { DownloadActionee } from './download/download-actionee';
 import { FooterSelector } from './footer/footer-selector';
 import { FooterActionee } from './footer/footer-actionee';
 import { FooterLinkActionee } from './footer/footer-link-actionee';
@@ -78,6 +80,8 @@ api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 api.internals.register(CardSelector.CARD, CardActionee);
 
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+
+api.internals.register(DownloadSelector.LINK, DownloadActionee);
 
 api.internals.register(FooterSelector.FOOTER, FooterActionee);
 api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
