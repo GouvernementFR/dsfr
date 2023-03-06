@@ -22,8 +22,6 @@
     @include size(100%);
   }
 
-  @include hover-brighten(#{&}#{ns(enlarge-link)}, #{&}__img);
-
   /**
    * Conteneur pour l'image, on force les dimensions à 80x80 tout en permettant de mettre une image
    * ne respectant pas cette taille :
@@ -36,7 +34,6 @@
     @include size(20v, 20v);
     @include margin(8v auto 0);
     overflow: hidden;
-    @include hover-brighten-filter;
 
     /**
      * Dans le cas d'un svg inline sans largeur et hauteur spécifiées, on lui attribue une largeur de 100%.
