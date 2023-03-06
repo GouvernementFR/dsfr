@@ -5,5 +5,3 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/telec
 wrapper: container
 style:
   - core
-script:
-  - core
