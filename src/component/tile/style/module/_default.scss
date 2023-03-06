@@ -32,7 +32,6 @@
     @include size(20v, 20v);
     @include margin(0 auto);
     overflow: hidden;
-    @include hover-brighten-filter;
 
     > svg {
       @include size(100%, 100%);
