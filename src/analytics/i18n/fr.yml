@@ -17,6 +17,7 @@ subdir:
   footer: Pied de page (footer)
   header: En-tête (header)
   highlight: Mise en exergue (highlight)
+  input: Champ de saisie (input)
   link: Lien (link)
   modal: Modale (modal)
   navigation: Navigation principale (navigation)

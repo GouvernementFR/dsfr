@@ -27,6 +27,8 @@ import { HeaderToolsButtonActionee } from './header/header-tools-button-actionee
 import { HeaderMenuButtonActionee } from './header/header-menu-button-actionee';
 import { HighlightSelector } from './highlight/highlight-selector';
 import { HighlightActionee } from './highlight/highlight-actionee';
+import { InputSelector } from './input/input-selector';
+import { InputActionee } from './input/input-actionee';
 import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
 import { NavigationSelector } from './navigation/navigation-selector';
@@ -96,6 +98,8 @@ if (api.header) {
 }
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
+
+api.internals.register(InputSelector.INPUT, InputActionee);
 
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
