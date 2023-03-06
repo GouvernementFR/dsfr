@@ -33,6 +33,8 @@ import { NavigationSelector } from './navigation/navigation-selector';
 import { NavigationActionee } from './navigation/navigation-actionee';
 import { NavigationSectionActionee } from './navigation/navigation-section-actionee';
 import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
+import { NoticeSelector } from './notice/notice-selector';
+import { NoticeActionee } from './notice/notice-actionee';
 import { ModalActionee } from './modal/modal-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
@@ -106,6 +108,8 @@ if (api.navigation) {
   api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
   api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
 }
+
+api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
 
 api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
 

@@ -20,6 +20,7 @@ subdir:
   link: Lien (link)
   modal: Modale (modal)
   navigation: Navigation principale (navigation)
+  notice: Bandeau d'information (notice)
   quote: Citation (quote)
   radio: Bouton radio (radio)
   search: Barre de recherche (search)

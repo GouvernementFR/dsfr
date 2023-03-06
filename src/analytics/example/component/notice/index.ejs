@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Bandeau d\'information simple', '../../../../component/notice/example/sample/notice-default', {notice: {id: uniqueId('notice'), type: "info", title: "Titre du bandeau d'information"}}, true, '../../../../component/notice/example/layout.ejs'); %>
+
+<%- sample('Bandeau d\'information avec bouton fermer', '../../../../component/notice/example/sample/notice-dismissable', {notice: {id: uniqueId('notice'), type: "info", title: "Titre du bandeau refermable"}}, true, '../../../../component/notice/example/layout.ejs'); %>
