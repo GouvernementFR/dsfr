@@ -31,13 +31,15 @@ import { InputSelector } from './input/input-selector';
 import { InputActionee } from './input/input-actionee';
 import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
+import { ModalActionee } from './modal/modal-actionee';
 import { NavigationSelector } from './navigation/navigation-selector';
 import { NavigationActionee } from './navigation/navigation-actionee';
 import { NavigationSectionActionee } from './navigation/navigation-section-actionee';
 import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
 import { NoticeSelector } from './notice/notice-selector';
 import { NoticeActionee } from './notice/notice-actionee';
-import { ModalActionee } from './modal/modal-actionee';
+import { PaginationSelector } from './pagination/pagination-selector';
+import { PaginationActionee } from './pagination/pagination-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
 import { QuoteSelector } from './quote/quote-selector';
@@ -114,6 +116,8 @@ if (api.navigation) {
 }
 
 api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
+
+api.internals.register(PaginationSelector.LINK, PaginationActionee);
 
 api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
 
