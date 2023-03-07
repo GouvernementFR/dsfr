@@ -1,4 +1,4 @@
-# Système de design de l’État
+# Système de Design de l’État
 
 Le Système de design de l’État (ci-après, le **DSFR**) est un ensemble de composants html / css / js ayant pour but de faciliter la vie des développeurs et intégrateurs pour bâtir leurs interfaces.
 
