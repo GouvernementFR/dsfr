@@ -1,18 +1,16 @@
 # 🇫🇷 Système de Design de l’État
 
-[![GitHub release](https://img.shields.io/github/v/release/gouvernementFR/dsfr.svg)](https://GitHub.com/gouvernementFR/dsfr/releases/) [![Npm package version](https://badgen.net/npm/v/@gouvfr/dsfr)](https://www.npmjs.com/package/@gouvfr/dsfr) [![Generic badge](https://img.shields.io/badge/license-grey.svg)](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md) [![Npm package monthly downloads](https://badgen.net/npm/dm/@gouvfr/dsfr)](https://npmjs.com/package/@gouvfr/dsfr)
-
+[![GitHub release](https://img.shields.io/github/v/release/gouvernementFR/dsfr.svg)](https://GitHub.com/gouvernementFR/dsfr/releases/) [![Generic badge](https://img.shields.io/badge/npm-orange.svg)](https://www.npmjs.com/package/@gouvfr/dsfr) [![Generic badge](https://img.shields.io/badge/license-grey.svg)](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md) [![Npm package monthly downloads](https://badgen.net/npm/dm/@gouvfr/dsfr)](https://npmjs.com/package/@gouvfr/dsfr)
 
 
 Le Système de design de l’État (ci-après, le **DSFR**) est un ensemble de composants web HTML, CSS et Javascript ayant pour but de faciliter la vie des développeurs et intégrateurs pour bâtir leurs interfaces.
 
 [Voir la documentation officielle](https://www.systeme-de-design.gouv.fr)
 
-
-##Licence et droit d'utilisation
+## Licence et droit d'utilisation
 Le contenu de ce projet est placé sous licence MIT License, à l'exception de la fonte Marianne. Voir [LICENSE.md](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md)
 
-##### Utilisation interdite en dehors des sites Internet de l'État
+#### Utilisation interdite en dehors des sites Internet de l'État
 >Il est formellement interdit à tout autre acteur d’utiliser le Système de Design de l’État (les administrations territoriales ou tout autre acteur privé). Le Système de Design de l’État représente l’identité numérique de l’État. En cas d’usage à des fins trompeuses ou frauduleuses, l'État se réserve le droit d’entreprendre les actions nécessaires pour y mettre un terme.
 Voir les [conditions générales d'utilisation](doc/legal/cgu.md).
 
