@@ -46,6 +46,8 @@ import { QuoteSelector } from './quote/quote-selector';
 import { QuoteActionee } from './quote/quote-actionee';
 import { SearchSelector } from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
+import { SelectSelector } from './select/select-selector';
+import { SelectActionee } from './select/select-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
 import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
 import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
@@ -124,6 +126,8 @@ api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
 api.internals.register(RadioSelector.INPUT, RadioActionee);
 
 api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
+
+api.internals.register(SelectSelector.SELECT, SelectActionee);
 
 if (api.sidemenu) {
   api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);

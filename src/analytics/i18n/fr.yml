@@ -26,6 +26,7 @@ subdir:
   quote: Citation (quote)
   radio: Bouton radio (radio)
   search: Barre de recherche (search)
+  select: Liste déroulante (select)
   share: Boutons de partage (share)
   sidemenu: Menu latéral (sidemenu)
   summary: Sommaire (summary)

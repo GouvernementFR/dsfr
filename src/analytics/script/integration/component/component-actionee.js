@@ -31,8 +31,19 @@ class ComponentActionee extends Actionee {
     this.act();
   }
 
+  listenChange () {
+    this.listen('change', this.handleChange.bind(this), { capture: true });
+  }
+
   listenCheckable () {
     this.listen('change', this.handleCheckable.bind(this), { capture: true });
+  }
+
+  handleChange (e) {
+    if (e.target && e.target.value) {
+      this._data.component_value = e.target.value;
+      this.act();
+    }
   }
 
   handleCheckable (e) {
