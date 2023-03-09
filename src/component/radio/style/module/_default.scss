@@ -17,7 +17,7 @@
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
       @include padding-left(8v);
-      background-position: calc(-#{space(1v)} + 1px) calc(-#{space(1v)} + 1px), calc(-#{space(1v)} + 1px) calc(-#{space(1v)} + 1px);
+      background-position: calc(#{space(-1v)} + 1px) calc(#{space(-1v)} + 1px), calc(#{space(-1v)} + 1px) calc(#{space(-1v)} + 1px);
       background-size: #{space(7.5v)} #{space(7.5v)}, #{space(7.5v)} #{space(7.5v)};
       background-repeat: no-repeat, no-repeat;
 

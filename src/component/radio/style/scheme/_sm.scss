@@ -82,6 +82,7 @@
           & + label {
             @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false, sm));
           }
+
           &:checked + label {
             @include color.background-image((disabled grey) (disabled grey), (legacy:$legacy), radio-background-image(true, sm));
           }

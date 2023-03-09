@@ -42,7 +42,7 @@
     &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
       @include padding-left(0);
 
-      @include before(attr(#{ns-attr(unchecked-label, null, true)})){
+      @include before(attr(#{ns-attr(unchecked-label, null, true)})) {
         @include margin-right(calc(var(--toggle-status-width) - #{spacing.space(2v)}));
       };
 

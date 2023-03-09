@@ -5,6 +5,7 @@
 
 @use 'module/color';
 @use 'module/disabled';
+@use 'module/selector';
 
 @mixin _radio-scheme-rich($legacy: false) {
   #{ns(radio-rich)} {

@@ -92,7 +92,7 @@
 
     input[type="checkbox"] {
       &:checked {
-        ~ #{ns(toggle__label)}  {
+        ~ #{ns(toggle__label)} {
           @include before {
             @include color.data-uri-svg((border plain error) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
           }
@@ -126,5 +126,4 @@
       }
     }
   }
-
 }

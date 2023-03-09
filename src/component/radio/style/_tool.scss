@@ -21,8 +21,5 @@
 }
 
 @function radio-rich-background-image($checked: true) {
-    @return 'linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), #{radio-background-image($checked, sm)}';
+  @return 'linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), #{radio-background-image($checked, sm)}';
 }
-
-
-
