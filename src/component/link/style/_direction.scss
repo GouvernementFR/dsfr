@@ -16,4 +16,12 @@
       }
     }
   }
+
+  #{selector.ns-group('links')} {
+    > li {
+      @include direction.rtl($is-supported) {
+        display: inline-block;
+      }
+    }
+  }
 }
