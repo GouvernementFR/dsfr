@@ -13,6 +13,9 @@ const api = (node) => {
   return stage.getProxy(node);
 };
 
+api.version = config.version;
+api.prefix = config.prefix;
+api.organisation = config.organisation;
 api.Modes = Modes;
 
 Object.defineProperty(api, 'mode', {

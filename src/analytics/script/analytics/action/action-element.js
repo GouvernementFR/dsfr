@@ -5,13 +5,14 @@ import PushType from '../facade/push-type';
 import { Hierarchy } from '../utils/hierarchy/hierarchy';
 
 class ActionElement {
-  constructor (node, type, id, category = '', title = null) {
+  constructor (node, type, id, category = '', title = null, parameters = {}) {
     this._node = node;
     this._type = type;
     this._id = id || this._node.id;
     this._isMuted = false;
     this._title = title;
     this._category = category;
+    this._parameters = parameters;
 
     // this._init();
     requestAnimationFrame(this._init.bind(this));
@@ -28,6 +29,7 @@ class ActionElement {
     this._name = `${type}${this._title || this._hierarchy.title}${id}`;
 
     this._action = actions.getAction(this._name, true);
+    Object.keys(this._parameters).forEach(key => this._action.addParameter(key, this._parameters[key]));
     this._action.isMuted = this._isMuted;
 
     this._action.labels[0] = this._type.id;

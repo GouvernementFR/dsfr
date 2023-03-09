@@ -9,7 +9,9 @@ class Actionee extends api.core.Instance {
     this._priority = priority;
     this._category = category;
     this._title = title;
+    this._parameters = {};
     this._data = {};
+    this._requestImpression = false;
   }
 
   static get instanceClassName () {
@@ -54,7 +56,9 @@ class Actionee extends api.core.Instance {
 
   _config (element, registration) {
     super._config(element, registration);
-    if (this._type !== null) this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title);
+    if (this._type !== null) {
+      this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters);
+    }
 
     const actionees = element.instances.filter(instance => instance.isActionee).sort((a, b) => b.priority - a.priority);
     if (actionees.length <= 1) return;
@@ -79,22 +83,27 @@ class Actionee extends api.core.Instance {
     switch (true) {
       case tag === 'a' && isDownload:
         this._type = Type.DOWNLOAD;
-        this._data.component_value = href;
+        this._parameters.component_value = href;
         break;
 
       case tag === 'a' && typeof target === 'string' && target.toLowerCase() === '_blank':
         this._type = Type.EXTERNAL;
-        this._data.component_value = href;
+        this._parameters.component_value = href;
         break;
 
       case tag === 'a':
         this._type = Type.INTERNAL;
-        this._data.component_value = href;
+        this._parameters.component_value = href;
         break;
 
       default:
         this._type = Type.CLICK;
     }
+  }
+
+  impress (data = {}) {
+    this._type = Type.IMPRESSION;
+    this._requestImpression = true;
   }
 
   act (data = {}) {

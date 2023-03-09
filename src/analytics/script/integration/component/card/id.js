@@ -1,3 +1,3 @@
-const ID = 'dsfr_card';
+const ID = 'card';
 
 export default ID;

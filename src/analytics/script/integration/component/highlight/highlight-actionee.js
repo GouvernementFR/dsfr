@@ -1,14 +1,17 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class HighlightActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(null, 1);
   }
 
   static get instanceClassName () {
     return 'HighlightActionee';
+  }
+
+  init () {
+    this.impress();
   }
 
   get label () {

@@ -16,6 +16,7 @@ class Site {
     this.type = clear ? undefined : this._config.type;
     this.region = clear ? undefined : this._config.region;
     this.department = clear ? undefined : this._config.department;
+    this._api = api.version;
   }
 
   set environment (value) {
@@ -99,6 +100,10 @@ class Site {
     return this._department;
   }
 
+  get api () {
+    return this._api;
+  }
+
   get layer () {
     const layer = [];
     layer.push('site_environment', this._environment.value);
@@ -109,6 +114,7 @@ class Site {
     if (this._type) layer.push('site_type', normalize(this._type));
     if (this._region) layer.push('site_region', this._region);
     if (this._department) layer.push('site_department', this._department);
+    if (this._api) layer.push('api_version', this._api);
     return layer;
   }
 }
