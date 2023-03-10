@@ -12,6 +12,8 @@
 
 * radio.element (object, optional) : paramètre de chacun des radios d'un group
 
+* radio.value (String, optional) : valeur du radio
+
 * radio.icon (string, optional) : nom de l'icone illustrative
 
 * radio.disabled (boolean, optional) : si true, désactive le radio
@@ -43,6 +45,7 @@ const label = {
 
 let element, imageAttrs = {};
 // if (radio.element) element = radio.element;
+if (radio.value) attributes.value = radio.value;
 if (radio.disabled) attributes.disabled = '';
 if (radio.checked) attributes.checked = '';
 

@@ -51,6 +51,8 @@ header = {
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 <% let header = locals.header || {body:{}, menu: {}};
+const attributes = header.attributes || {};
+if (header.id) attributes.id = header.id;
 if (header.menu.tools && header.menu.tools.duplicateLinks) {
   header.menu.tools.links = header.body.tools.links;
 }
@@ -65,7 +67,7 @@ if (header.menu.navigation && header.menu.modalId) {
 }
 %>
 
-<header role="banner" class="<%= prefix %>-header">
+<header role="banner" class="<%= prefix %>-header" <%- includeAttrs(attributes) %>>
   <%- include('./body', {body: header.body});%>
   <% if ((header.menu.navigation && header.body.brand.navbar) || (header.body.tools && header.body.tools.links)) { %>
     <%- include('./menu', {menu: header.menu});%>

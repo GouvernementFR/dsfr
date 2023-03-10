@@ -76,6 +76,7 @@ const analyse = (id, path, ascendants = []) => {
   if (data.wrapper) config.wrapper = data.wrapper;
   config.prepend = data.prepend === true;
   config.noHeading = data['no-heading'] === true;
+  config.noParameter = data['no-parameter'] === true;
   config.module = data.module !== false;
   config.nomodule = data.nomodule !== false;
   config.detached = data.detached === true;

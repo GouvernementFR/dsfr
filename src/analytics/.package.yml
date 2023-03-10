@@ -1,0 +1,69 @@
+id: analytics
+title: Outils d'analyse
+description:
+detached: true
+no-parameter: true
+script:
+  - core
+  - scheme
+  - accordion
+  - button
+  - header
+  - breadcrumb
+  - toggle
+  - sidemenu
+  - modal
+  - password
+  - navigation
+  - tab
+  - display
+  - table
+  - tag
+  - download
+example:
+  style:
+    - core
+    - scheme
+    - accordion
+    - alert
+    - badge
+    - breadcrumb
+    - button
+    - callout
+    - card
+    - checkbox
+    - connect
+    - consent
+    - content
+    - display
+    - download
+    - follow
+    - footer
+    - form
+    - header
+    - highlight
+    - input
+    - link
+    - logo
+    - modal
+    - navigation
+    - notice
+    - pagination
+    - password
+    - quote
+    - radio
+    - search
+    - select
+    - share
+    - sidemenu
+    - skiplink
+    - stepper
+    - summary
+    - tab
+    - table
+    - tag
+    - tile
+    - toggle
+    - transcription
+    - translate
+    - upload

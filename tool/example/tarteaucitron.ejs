@@ -1,0 +1,77 @@
+<link rel="stylesheet" type="text/css" media="all" href="https://www.gouvernement.fr/sites/all/modules/custom/pmv6_tarteaucitron/js/tarteaucitron/css/tac-custom.min.css">
+
+<script id=""  src="https://www.gouvernement.fr/sites/all/modules/custom/pmv6_tarteaucitron/js/tarteaucitron/tarteaucitron.js?v=20210310"></script>
+<script id=""  src="https://www.gouvernement.fr/sites/all/modules/custom/pmv6_tarteaucitron/js/tarteaucitron/lang/tarteaucitron.en.js?v=20210310"></script>
+<script id=""  src="https://www.gouvernement.fr/sites/all/modules/custom/pmv6_tarteaucitron/js/tarteaucitron/tarteaucitron.services.js?v=20210310"></script>
+
+<script type="text/javascript">
+  tarteaucitron.init({
+    "privacyUrl": "", /* Privacy policy url */
+    "bodyPosition": "bottom", /* or top to bring it as first element for accessibility */
+
+    "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+    "cookieName": "tarteaucitron", /* Cookie name */
+
+    "orientation": "middle", /* Banner position (top - bottom) */
+
+    "groupServices": false, /* Group services by category */
+    "serviceDefaultState": "wait", /* Default state (true - wait - false) */
+
+    "showAlertSmall": false, /* Show the small banner on bottom right */
+    "cookieslist": false, /* Show the cookie list */
+
+    "closePopup": false, /* Show a close X on the banner */
+
+    "showIcon": true, /* Show cookie icon to manage cookies */
+    //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
+    "iconPosition": "BottomRight", /* BottomRight, BottomLeft, TopRight and TopLeft */
+
+    "adblocker": false, /* Show a Warning if an adblocker is detected */
+
+    "DenyAllCta" : true, /* Show the deny all button */
+    "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+    "highPrivacy": true, /* HIGHLY RECOMMANDED Disable auto consent */
+
+    "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+
+    "removeCredit": false, /* Remove credit link */
+    "moreInfoLink": true, /* Show more info link */
+
+    "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+    "useExternalJs": false, /* If false, the tarteaucitron.js file will be loaded */
+
+    //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+
+    "readmoreLink": "", /* Change the default readmore link */
+
+    "mandatory": true, /* Show a message about mandatory cookies */
+    "mandatoryCta": true /* Show the disabled accept button when mandatory on */
+  });
+</script>
+
+<script>
+  /*
+   tarteaucitron.services.eulerian = {
+   "key": "eulerian",
+   "type": "analytic",
+   "name": "Eulerian Analytics",
+   "needConsent": true,
+   "cookies": ["etuix"],
+   "uri" : "https://eulerian.com/vie-privee",
+   "js": function () {
+   "use strict";
+   console.log('js');
+   (function(x,w){ if (!x._ld){ x._ld = 1;
+   let ff = function() { console.log('ff', x._f);if(x._f){ console.log('consent');x._f('tac',tarteaucitron,1)} };
+   w.__eaGenericCmpApi = function(f) { console.log('cmpApi', f);x._f = f; ff(); };
+   w.addEventListener("tac.close_alert", ff);
+   w.addEventListener("tac.close_panel", ff);
+   }})(this,window);
+   },
+   "fallback": function () { console.log('fallback');this.js(); }
+   };
+   (tarteaucitron.job = tarteaucitron.job || []).push('eulerian');
+
+   */
+
+</script>

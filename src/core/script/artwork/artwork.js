@@ -19,7 +19,7 @@ class Artwork extends Instance {
   }
 
   fetch () {
-    this.xlink = this.node.getAttribute('xlink:href');
+    this.xlink = this.node.getAttribute('href');
     const splitUrl = this.xlink.split('#');
     this.svgUrl = splitUrl[0];
     this.svgName = splitUrl[1];
