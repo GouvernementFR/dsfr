@@ -16,7 +16,9 @@
 eval(include('../../../../core/index.ejs'));
 let share = locals.share || {};
 let shareClasses = share.classes || [];
+let shareAttrs = share.attributes || {};
 shareClasses = [`${prefix}-share`];
+if (share.id) shareAttrs.id = share.id;
 
 const mapShareButton = (data) => {
   const button = {
@@ -27,6 +29,7 @@ const mapShareButton = (data) => {
 
   if (data.comments) button.comments = data.comments;
   if (data.onclick) button.onclick = data.onclick;
+  if (data.id) button.id = data.id;
 
   switch (data.type) {
     case 'facebook':
@@ -61,7 +64,7 @@ const buttonsGroup = {
 
 %>
 
-<div <%- includeClasses(shareClasses); %> >
+<div <%- includeClasses(shareClasses); %> <%- includeAttrs(shareAttrs); %> >
   <p class="<%= prefix %>-share__title"><%- share.title %></p>
 
   <% if (share.disabled) { %>

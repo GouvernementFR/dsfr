@@ -104,7 +104,7 @@ const buildExample = async (pck, locale) => {
 };
 
 const renderExample = (options, node) => {
-  if (node.hasData) {
+  if (node && node.hasData) {
     const opts = {
       ...options,
       src: node.src,
@@ -125,7 +125,7 @@ const renderExample = (options, node) => {
       });
   }
 
-  if (node.children) {
+  if (node && node.children) {
     for (const child of node.children) renderExample(options, child);
   }
 };

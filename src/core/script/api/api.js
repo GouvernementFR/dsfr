@@ -28,7 +28,10 @@ api.stop = engine.stop;
 api.inspector = inspector;
 api.colors = colors;
 
-options.configure(window[config.namespace], api.start);
+const configuration = window[config.namespace];
+api.internals.configuration = configuration;
+
+options.configure(configuration, api.start);
 
 window[config.namespace] = api;
 export default api;

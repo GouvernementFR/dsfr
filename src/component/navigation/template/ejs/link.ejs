@@ -14,13 +14,14 @@
 %>
 
 <%
-let menu = locals.menu || {};
+let link = locals.link || {};
 const attrs = {
-  href: menu.href,
-  target: menu.target || '_self'
+  href: link.href,
+  target: link.target || '_self',
+  id: link.id
 }
 
-if (menu.active) attrs['aria-current'] = menu.isPage ? 'page' : 'true';
+if (link.active) attrs['aria-current'] = link.isPage ? 'page' : 'true';
 
 %>
-<a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> ><%- menu.label %></a>
+<a class="<%= prefix %>-nav__link" <%- includeAttrs(attrs); %> ><%- link.label %></a>

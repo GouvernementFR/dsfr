@@ -8,9 +8,12 @@
 * summaryItem.list (array, optional) : Tableau de liens enfants (href, label)
 
 %>
-<% let summaryItem = locals.summaryItem || {}; %>
+<% let summaryItem = locals.summaryItem || {};
+  const linkAttrs = {};
+  if (summaryItem.id) linkAttrs.id = summaryItem.id;
+%>
 <li>
-  <a class="<%= prefix %>-summary__link" href="<%- summaryItem.href %>"><%- summaryItem.label %></a>
+  <a class="<%= prefix %>-summary__link" <%- includeAttrs(linkAttrs) %> href="<%- summaryItem.href %>"><%- summaryItem.label %></a>
   <% if (summaryItem.list) { %>
     <%- include('./list', {summaryList: summaryItem.list}); %>
   <% } %>
