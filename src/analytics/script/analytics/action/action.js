@@ -83,10 +83,7 @@ class Action {
 
     if (this._reference) layer.push('actionref', this._reference);
 
-    if (data) {
-      const merge = Object.assign({}, this._parameters, data);
-      layer.push.apply(layer, getParametersLayer(merge));
-    }
+    if (data) layer.push.apply(layer, getParametersLayer({ ...this._parameters, ...data }));
     return layer;
   }
 

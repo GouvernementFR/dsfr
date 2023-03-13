@@ -4,7 +4,7 @@
 const getItem = (id) => {
     return {
         id: `summary-link-${String(id).replace('.', '-')}`,
-        href: `#[url - à modifier]`,
+        href: `#anchor-${id}`,
         label: `Titre du lien ${id}`
     }
 };
@@ -31,5 +31,5 @@ for (let i = 0; i < links.length; i++) {
 %>
 
 <div class="<%= prefix %>-container" >
-  <%- sample('Sommaire', '../../../../component/summary/example/sample/summary', { summary: { links: links } }); %>
+  <%- sample('Sommaire', '../../../../component/summary/example/sample/summary', { summary: {links: links} }); %>
 </div>
