@@ -20,10 +20,6 @@ class BreadcrumbActionee extends ComponentActionee {
     }
   }
 
-  handleDisclose () {
-    this.act();
-  }
-
   get label () {
     return 'fil d\'ariane';
   }
