@@ -5,12 +5,18 @@ import { BreadcrumbActionee } from './breadcrumb/breadcrumb-actionee';
 import { BreadcrumbLinkActionee } from './breadcrumb/breadcrumb-link-actionee';
 import { ButtonSelector } from './button/button-selector';
 import { ButtonActionee } from './button/button-actionee';
+import { AlertSelector } from './alert/alert-selector';
+import { AlertActionee } from './alert/alert-actionee';
+import { BadgeSelector } from './badge/badge-selector';
+import { BadgeActionee } from './badge/badge-actionee';
 import { CalloutSelector } from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
 import { CardSelector } from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
 import { CheckboxSelector } from './checkbox/checkbox-selector';
 import { CheckboxActionee } from './checkbox/checkbox-actionee';
+import { DownloadSelector } from './download/download-selector';
+import { DownloadActionee } from './download/download-actionee';
 import { FooterSelector } from './footer/footer-selector';
 import { FooterActionee } from './footer/footer-actionee';
 import { FooterLinkActionee } from './footer/footer-link-actionee';
@@ -21,17 +27,27 @@ import { HeaderToolsButtonActionee } from './header/header-tools-button-actionee
 import { HeaderMenuButtonActionee } from './header/header-menu-button-actionee';
 import { HighlightSelector } from './highlight/highlight-selector';
 import { HighlightActionee } from './highlight/highlight-actionee';
+import { InputSelector } from './input/input-selector';
+import { InputActionee } from './input/input-actionee';
 import { LinkSelector } from './link/link-selector';
 import { LinkActionee } from './link/link-actionee';
+import { ModalActionee } from './modal/modal-actionee';
 import { NavigationSelector } from './navigation/navigation-selector';
 import { NavigationActionee } from './navigation/navigation-actionee';
 import { NavigationSectionActionee } from './navigation/navigation-section-actionee';
 import { NavigationLinkActionee } from './navigation/navigation-link-actionee';
-import { ModalActionee } from './modal/modal-actionee';
+import { NoticeSelector } from './notice/notice-selector';
+import { NoticeActionee } from './notice/notice-actionee';
+import { PaginationSelector } from './pagination/pagination-selector';
+import { PaginationActionee } from './pagination/pagination-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
+import { QuoteSelector } from './quote/quote-selector';
+import { QuoteActionee } from './quote/quote-actionee';
 import { SearchSelector } from './search/search-selector';
 import { SearchActionee } from './search/search-actionee';
+import { SelectSelector } from './select/select-selector';
+import { SelectActionee } from './select/select-actionee';
 import { SidemenuSelector } from './sidemenu/sidemenu-selector';
 import { SidemenuActionee } from './sidemenu/sidemenu-actionee';
 import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
@@ -42,9 +58,15 @@ import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
 import { SummaryLinkActionee } from './summary/summary-link-actionee';
 import { SummarySectionActionee } from './summary/summary-section-actionee';
+import { TabActionee } from './tab/tab-actionee';
+import { TableSelector } from './table/table-selector';
+import { TableActionee } from './table/table-actionee';
+import { TileSelector } from './tile/tile-selector';
+import { TileActionee } from './tile/tile-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
-import { TabActionee } from './tab/tab-actionee';
+import { TranscriptionSelector } from './transcription/transcription-selector';
+import { TranscriptionActionee } from './transcription/transcription-actionee';
 
 if (api.accordion) {
   api.internals.register(api.accordion.AccordionSelector.COLLAPSE, AccordionActionee);
@@ -55,6 +77,10 @@ if (api.breadcrumb) {
   api.internals.register(BreadcrumbSelector.LINK, BreadcrumbLinkActionee);
 }
 
+api.internals.register(AlertSelector.ALERT, AlertActionee);
+
+api.internals.register(BadgeSelector.BADGE, BadgeActionee);
+
 api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 
 api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
@@ -62,6 +88,8 @@ api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 api.internals.register(CardSelector.CARD, CardActionee);
 
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+
+api.internals.register(DownloadSelector.LINK, DownloadActionee);
 
 api.internals.register(FooterSelector.FOOTER, FooterActionee);
 api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
@@ -75,6 +103,8 @@ if (api.header) {
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
+api.internals.register(InputSelector.INPUT, InputActionee);
+
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
 if (api.modal) {
@@ -87,9 +117,17 @@ if (api.navigation) {
   api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
 }
 
+api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
+
+api.internals.register(PaginationSelector.LINK, PaginationActionee);
+
+api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
+
 api.internals.register(RadioSelector.INPUT, RadioActionee);
 
 api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
+
+api.internals.register(SelectSelector.SELECT, SelectActionee);
 
 if (api.sidemenu) {
   api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
@@ -107,6 +145,12 @@ if (api.tab) {
   api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
 }
 
+api.internals.register(TableSelector.TABLE, TableActionee);
+
+api.internals.register(TileSelector.TILE, TileActionee);
+
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
+
+api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
 
 export default api;

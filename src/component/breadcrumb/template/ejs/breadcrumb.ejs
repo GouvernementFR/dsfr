@@ -30,6 +30,7 @@ const markup = breadcrumb.markup || 'a';
         for (let i = 0; i < breadcrumb.segments.length; i++) {
             const segment = breadcrumb.segments[i];
             path += segment.path + '/';
+            if (segment.id) attrs.id = segment.id;
             if (segment.href) {
               attrs['href'] = segment.href;
             } else {
