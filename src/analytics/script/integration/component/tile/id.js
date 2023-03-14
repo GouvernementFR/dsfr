@@ -1,3 +1,3 @@
-const ID = 'dsfr_tile';
+const ID = 'tile';
 
 export default ID;

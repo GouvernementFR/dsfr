@@ -1,3 +1,3 @@
-const ID = 'dsfr_input';
+const ID = 'input';
 
 export default ID;

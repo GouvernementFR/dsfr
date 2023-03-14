@@ -1,3 +1,3 @@
-const ID = 'dsfr_badge';
+const ID = 'badge';
 
 export default ID;

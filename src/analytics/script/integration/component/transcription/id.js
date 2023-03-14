@@ -1,3 +1,3 @@
-const ID = 'dsfr_transcription';
+const ID = 'transcription';
 
 export default ID;

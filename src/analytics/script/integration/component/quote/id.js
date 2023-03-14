@@ -1,3 +1,3 @@
-const ID = 'dsfr_quote';
+const ID = 'quote';
 
 export default ID;
