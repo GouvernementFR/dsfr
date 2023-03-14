@@ -54,6 +54,8 @@ import { SidemenuLinkActionee } from './sidemenu/sidemenu-link-actionee';
 import { SidemenuSectionActionee } from './sidemenu/sidemenu-section-actionee';
 import { ShareSelector } from './share/share-selector';
 import { ShareActionee } from './share/share-actionee';
+import { StepperSelector } from './stepper/stepper-selector';
+import { StepperActionee } from './stepper/stepper-actionee';
 import { SummarySelector } from './summary/summary-selector';
 import { SummaryActionee } from './summary/summary-actionee';
 import { SummaryLinkActionee } from './summary/summary-link-actionee';
@@ -136,6 +138,8 @@ if (api.sidemenu) {
 }
 
 api.internals.register(ShareSelector.SHARE, ShareActionee);
+
+api.internals.register(StepperSelector.STEPPER, StepperActionee);
 
 api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
 api.internals.register(SummarySelector.LINK, SummaryLinkActionee);

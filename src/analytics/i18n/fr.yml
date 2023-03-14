@@ -29,6 +29,7 @@ subdir:
   select: Liste déroulante (select)
   share: Boutons de partage (share)
   sidemenu: Menu latéral (sidemenu)
+  stepper: Indicateur d'étapes (stepper)
   summary: Sommaire (summary)
   tab: Onglets (tab)
   table: Tableau (table)
