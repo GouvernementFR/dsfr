@@ -12,6 +12,7 @@ subdir:
   button: Bouton (button)
   callout: Mise en avant (callout)
   card: Carte (card)
+  connect: Bouton France Connect (connect)
   content: Contenu média (content)
   checkbox: Case à cocher (checkbox)
   download: Téléchargement de fichier (download)
