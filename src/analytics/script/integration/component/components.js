@@ -11,6 +11,8 @@ import { BadgeSelector } from './badge/badge-selector';
 import { BadgeActionee } from './badge/badge-actionee';
 import { CalloutSelector } from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
+import { ContentSelector } from './content/content-selector';
+import { ContentActionee } from './content/content-actionee';
 import { CardSelector } from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
 import { CheckboxSelector } from './checkbox/checkbox-selector';
@@ -86,6 +88,8 @@ api.internals.register(BadgeSelector.BADGE, BadgeActionee);
 api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 
 api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
+
+api.internals.register(ContentSelector.CONTENT, ContentActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
 

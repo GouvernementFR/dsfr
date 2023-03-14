@@ -27,6 +27,8 @@ let classes = content.classes || [];
 let attributes = content.attributes || [];
 classes.push(prefix + '-content-media');
 
+if (content.id) attributes.id = content.id;
+
 switch (content.size) {
     case 'sm':
         classes.push(prefix + '-content-media--sm');

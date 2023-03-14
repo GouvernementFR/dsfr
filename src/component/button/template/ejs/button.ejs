@@ -40,7 +40,7 @@ valeurs :
 const button = locals.button || {};
 let btnClasses = button.classes || [];
 let btnAttrs = button.attributes || {};
-if (button.id) btnAttrs.id = button.id;
+btnAttrs.id = button.id || uniqueId('button');
 
 const markup = button.markup || 'button';
 

@@ -1,0 +1,12 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+  <div class="<%= prefix%>-grid-row <%= prefix%>-grid-row--center <%= prefix%>-grid-row--gutters">
+    <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-6">
+      <%- sample('Média image', '../../../../component/content/example/sample/media-img'); %>
+
+      <%- sample('Média image, SVG décoratif', '../../../../component/content/example/sample/media-svg', { content: { illustration: true } }); %>
+
+      <%- sample('Média vidéo avec transcription', '../../../../component/content/example/sample/media-vid-4x3', { content: { transcription: true } }); %>
+    </div>
+</div>
