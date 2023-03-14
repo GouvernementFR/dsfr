@@ -1,3 +1,3 @@
-const ID = 'dsfr_checkbox';
+const ID = 'select';
 
 export default ID;

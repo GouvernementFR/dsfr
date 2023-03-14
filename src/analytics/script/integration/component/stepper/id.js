@@ -1,3 +1,3 @@
-const ID = 'dsfr_stepper';
+const ID = 'stepper';
 
 export default ID;
