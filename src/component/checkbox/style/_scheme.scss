@@ -15,8 +15,7 @@
         }
       }
 
-      &:checked,
-      &:active:not(:disabled) {
+      &:checked {
         + label {
           @include before {
             @include color.background(active blue-france, (legacy:$legacy));
