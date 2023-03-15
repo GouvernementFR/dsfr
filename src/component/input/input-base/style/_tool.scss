@@ -20,8 +20,7 @@
 }
 
 @mixin contact-auto-fill-button {
-  &::-webkit-contacts-auto-fill-button{
+  &::-webkit-contacts-auto-fill-button {
     @content;
   }
-
 }
