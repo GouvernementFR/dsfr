@@ -76,9 +76,9 @@
       }
     }
 
-    @include disabled.selector {
-      #{ns-group(radio)}--sm {
-        input[type="radio"] {
+    #{ns-group(radio)}--sm {
+      input[type="radio"] {
+        @include disabled.selector {
           & + label {
             @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false, sm));
           }

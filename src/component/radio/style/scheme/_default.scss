@@ -5,9 +5,10 @@
 
 @use 'module/color';
 @use 'module/disabled';
+@use 'module/selector';
 
 @mixin _radio-scheme-md($legacy: false) {
-  #{ns-group(radio)} {
+  #{selector.ns-group(radio)} {
     input[type="radio"] {
       & + label {
         @include color.background-image((action-high blue-france), (legacy:$legacy), radio-background-image(false));
@@ -33,9 +34,9 @@
     }
   }
 
-  #{ns(fieldset)} {
+  #{selector.ns(fieldset)} {
     &--error {
-      #{ns-group(radio)} {
+      #{selector.ns-group(radio)} {
         input[type="radio"] {
           & + label {
             @include color.background-image((border plain error), (legacy:$legacy), radio-background-image(false));
@@ -49,7 +50,7 @@
     }
 
     &--valid {
-      #{ns-group(radio)} {
+      #{selector.ns-group(radio)} {
         input[type="radio"] {
           & + label {
             @include color.background-image((border plain success), (legacy:$legacy), radio-background-image(false));
@@ -63,7 +64,7 @@
     }
 
     &--info {
-      #{ns-group(radio)} {
+      #{selector.ns-group(radio)} {
         input[type="radio"] {
           & + label {
             @include color.background-image((border plain info), (legacy:$legacy), radio-background-image(false));
@@ -76,9 +77,9 @@
       }
     }
 
-    @include disabled.selector {
-      #{ns-group(radio)} {
-        input[type="radio"] {
+    & #{selector.ns-group(radio)} {
+      input[type="radio"] {
+        @include disabled.selector {
           & + label {
             @include color.background-image((disabled grey), (legacy:$legacy), radio-background-image(false));
           }

@@ -88,9 +88,9 @@
       }
     }
 
-    @include disabled.selector {
-      #{ns(radio-rich)} {
-        input[type="radio"] {
+    #{ns(radio-rich)} {
+      input[type="radio"] {
+        @include disabled.selector {
           & + label {
             @include color.background-image((disabled grey) (disabled grey) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
           }

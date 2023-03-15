@@ -3,7 +3,10 @@
 /// @group radio
 ////
 
-#{ns-group(radio)} {
+@use 'module/spacing';
+@use 'module/selector';
+
+#{selector.ns-group(radio)} {
   @include relative;
 
   input[type="radio"] {
@@ -17,19 +20,19 @@
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
       @include padding-left(8v);
-      background-position: calc(#{space(-1v)} + 1px) calc(#{space(-1v)} + 1px), calc(#{space(-1v)} + 1px) calc(#{space(-1v)} + 1px);
-      background-size: #{space(7.5v)} #{space(7.5v)}, #{space(7.5v)} #{space(7.5v)};
+      background-position: calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px), calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px);
+      background-size: #{spacing.space(7.5v)} #{spacing.space(7.5v)}, #{spacing.space(7.5v)} #{spacing.space(7.5v)};
       background-repeat: no-repeat, no-repeat;
 
-      // empty efore for the focus
+      // empty before for the focus
       @include before('') {
         @include size(6v, 6v);
-        @include absolute;
-        border-radius: #{space(6v)};
+        @include absolute(0);
+        border-radius: #{spacing.space(6v)};
         @include margin-left(-8v);
       }
 
-      #{ns(hint-text)} {
+      #{selector.ns(hint-text)} {
         @include margin(0);
         @include size(100%);
       }
