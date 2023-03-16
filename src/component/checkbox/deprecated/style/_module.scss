@@ -18,3 +18,9 @@
     }
   }
 }
+
+#{ns-group(checkbox)} {
+  input[type='checkbox'] {
+    margin-top: spacing.space(3v);
+  }
+}

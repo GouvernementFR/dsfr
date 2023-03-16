@@ -5,21 +5,22 @@
 
 @use 'module/color';
 @use 'module/disabled';
+@use 'module/selector';
 
 @mixin _checkbox-scheme($legacy: false) {
-  #{ns(checkbox-group)} {
+  #{selector.ns(checkbox-group)} {
     input[type="checkbox"] {
       + label {
         @include before {
-          @include color.box-shadow(action-high blue-france, (legacy:$legacy));
+          @include color.background-image(border action-high blue-france, (), checkbox-background-image());
         }
       }
 
       &:checked {
         + label {
           @include before {
-            @include color.background(active blue-france, (legacy:$legacy));
-            @include color.data-uri-svg(inverted grey, (legacy: $legacy), $checkbox-svg);
+            @include color.background(active blue-france);
+            @include color.data-uri-svg(inverted grey, (), $checkbox-svg, false);
           }
         }
       }
@@ -27,15 +28,16 @@
       @include disabled.selector {
         & + label {
           @include before {
-            @include disabled.colors((legacy: $legacy, box-shadow: true));
+            @include disabled.colors();
+            @include color.background-image(disabled grey, (), checkbox-background-image());
           }
         }
 
         &:checked {
           & + label {
             @include before {
-              @include disabled.colors((legacy: $legacy, text: true, background: true));
-              @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $checkbox-svg);
+              @include disabled.colors((background: true));
+              @include color.data-uri-svg(text disabled grey, (), $checkbox-svg, false);
             }
           }
         }
@@ -47,12 +49,12 @@
         @include color.text(default error, (legacy:$legacy));
 
         @include before {
-          @include color.box-shadow(border plain error, (legacy:$legacy));
+          @include color.background-image(border plain error, (), checkbox-background-image());
         }
       }
 
       @include before {
-        @include color.box-shadow(plain error, (legacy:$legacy), left-2-in);
+        @include color.background(border plain error, (legacy:$legacy));
       }
     }
 
@@ -61,23 +63,23 @@
         @include color.text(default success, (legacy:$legacy));
 
         @include before {
-          @include color.box-shadow(border plain success, (legacy:$legacy));
+          @include color.background-image(border plain success, (), checkbox-background-image());
         }
       }
 
       @include before {
-        @include color.box-shadow(plain success, (legacy:$legacy), left-2-in);
+        @include color.background(border plain success, (legacy:$legacy));
       }
     }
   }
 
-  #{ns(fieldset)} {
+  #{selector.ns(fieldset)} {
     &--error {
-      #{ns(checkbox-group)} {
+      #{selector.ns(checkbox-group)} {
         input[type="checkbox"] {
           + label {
             @include before {
-              @include color.box-shadow(border plain error, (legacy:$legacy));
+              @include color.background-image(border plain error, (), checkbox-background-image());
             }
           }
         }
@@ -85,11 +87,11 @@
     }
 
     &--valid {
-      #{ns(checkbox-group)} {
+      #{selector.ns(checkbox-group)} {
         input[type="checkbox"] {
           + label {
             @include before {
-              @include color.box-shadow(border plain success, (legacy:$legacy));
+              @include color.background-image(border plain success, (), checkbox-background-image());
             }
           }
         }

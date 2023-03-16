@@ -4,8 +4,9 @@
 ////
 
 @use 'module/spacing';
+@use 'module/selector';
 
-#{ns(checkbox-group)} {
+#{selector.ns(checkbox-group)} {
   @include relative;
 
   input[type="checkbox"] {
@@ -19,8 +20,9 @@
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
       @include margin-left(8v);
+      --data-uri-svg: none;
 
-      #{ns(hint-text)} {
+      #{selector.ns(hint-text)} {
         @include margin(0);
         @include size(100%);
       }
@@ -32,10 +34,10 @@
         @include absolute(0, null, null, -8v);
         @include size(6v, 6v);
         @include margin-right(2v);
-        background-size: spacing.space(4v);
-        background-position: center;
-        background-repeat: no-repeat;
         border-radius: spacing.space(1v);
+        background-size: spacing.space(1v 1v), spacing.space(calc(100% - 1v) 1px), spacing.space(1v 1v), spacing.space(1px calc(100% - 2v)), spacing.space(1v 1v), spacing.space(calc(100% - 2v) 1px), spacing.space(1v 1v), spacing.space(1px calc(100% - 2v)), spacing.space(4v);
+		    background-position: 0 0, spacing.space(1v) 0, 100% 0, 0 spacing.space(1v), 100% 100%, calc(100% - spacing.space(1v)) 100%, 0 100%, 100% spacing.space(1v), center;
+		    background-repeat: no-repeat;
         // transition: background-color 0.1s, color 0.1s;
       }
     }
@@ -70,7 +72,7 @@
     }
   }
 
-  #{ns(message)} {
+  #{selector.ns(message)} {
     &:first-child {
       @include margin-top(2v);
     }
