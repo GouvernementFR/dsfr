@@ -45,7 +45,7 @@
     }
 
     &__title {
-      @include color.text(title blue-france, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
     }
   }
 }

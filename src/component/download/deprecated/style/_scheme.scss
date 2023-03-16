@@ -12,7 +12,7 @@
       @include color.box-shadow(default grey, (legacy:$legacy), all-1-in);
 
       #{ns(download__link)} {
-        @include color.text(title grey, (legacy:$legacy));
+        @include color.text(action-high blue-france, (legacy:$legacy));
 
         @include after {
           @include color.text(action-high blue-france, (legacy:$legacy));
