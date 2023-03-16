@@ -16,7 +16,8 @@ class ConnectActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    if (this.node.classList.contains('fr-connect--plus')) return 'FranceConnect+';
+    return 'FranceConnect';
   }
 
   get component () {

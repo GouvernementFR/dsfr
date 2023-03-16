@@ -13,16 +13,25 @@ class ContentActionee extends ComponentActionee {
   }
 
   get label () {
-    const contentImg = this.node.querySelector(ContentSelector.IMG);
-    const contentIframe = this.node.querySelector('iframe');
-    const contentVideo = this.node.querySelector('video');
-    if (contentImg) {
-      const alt = contentImg.querySelector('img, svg').getAttribute('alt');
-      if (alt !== '') return alt;
-      return 'Contenu média';
-    } else if (contentIframe) return contentIframe.getAttribute('title') || contentIframe.getAttribute('aria-label');
-    else if (contentVideo) return contentVideo.getAttribute('aria-label') || contentVideo.getAttribute('title');
-    return this.node.getAttribute('aria-label') || 'Contenu média';
+    if (this.getAttribute('aria-label')) return this.getAttribute('aria-label');
+
+    const selectorImg = this.querySelector(ContentSelector.IMG);
+    if (selectorImg) {
+      const contentImg = selectorImg.querySelector('img');
+      const labelImg = contentImg.getAttribute('alt') || contentImg.getAttribute('aria-label');
+      const contentSvg = selectorImg.querySelector('svg');
+      const labelSvg = contentSvg.getAttribute('aria-label') || contentSvg.querySelector('title').textContent.trim();
+      if (labelImg && labelImg !== '') return labelImg;
+      if (labelSvg && labelSvg !== '') return labelSvg;
+    }
+
+    const contentIframe = this.querySelector('iframe');
+    if (contentIframe) return contentIframe.getAttribute('title') || contentIframe.getAttribute('aria-label');
+
+    const contentVideo = this.querySelector('video');
+    if (contentVideo) return contentVideo.getAttribute('aria-label');
+
+    return 'Contenu média';
   }
 
   get component () {
