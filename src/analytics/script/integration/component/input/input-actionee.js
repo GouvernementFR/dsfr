@@ -1,7 +1,6 @@
 import { ComponentActionee } from '../component-actionee';
 import api from '../../../../api.js';
 import { Type } from '../../../analytics/action/type';
-import { ButtonEmission } from '../button/button-emission';
 import ID from './id';
 
 class InputActionee extends ComponentActionee {
@@ -14,7 +13,7 @@ class InputActionee extends ComponentActionee {
   }
 
   init () {
-    this.addAscent(ButtonEmission.GET_DATA, this.getData.bind(this));
+    console.log('input');
     this._input = this.node.querySelector(api.internals.ns.selector('input'));
     this._label = this.node.querySelector(api.internals.ns.selector('label'));
   }
@@ -26,7 +25,7 @@ class InputActionee extends ComponentActionee {
   }
 
   getData () {
-    if (this._input) return { search_terms: this._input.value.trim() };
+    if (this._input) return { component_value: this._input.value.trim() };
     return '';
   }
 

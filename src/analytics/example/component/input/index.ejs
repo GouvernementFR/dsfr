@@ -1,32 +1,5 @@
 <% const sample = getSample(include); %>
 
-<%- sample(getText('sample.indication', 'input-email'), '../../../../component/input/input-email/example/sample/email-default', {email: {hint: `${getText('hint.indication', 'input-email')} ${getText('hint.format', 'input-email')}`}}, true); %>
-
-
-<%- sample(getText('sample.text', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-text'}}, true); %>
-
-<%- sample(getText('sample.number', 'input-base'), '../../../../component/input/input-base/example/sample/input-number.ejs', {input: { id:'text-input-number'}}, true); %>
-
-<%- sample(getText('sample.search', 'input-base'), '../../../../component/input/input-base/example/sample/input-search.ejs', {input: { id:'text-input-search'}}, true); %>
-
-<%- sample(getText('sample.date', 'input-base'), '../../../../component/input/input-base/example/sample/input-date.ejs', {input: { id:'text-input-date' }}, true); %>
-
-<%- sample(getText('sample.textarea', 'input-base'), '../../../../component/input/input-base/example/sample/textarea.ejs', {input: { id:'textarea' }}, true); %>
-
-<%- sample(getText('sample.password', 'input-base'), '../../../../component/input/input-base/example/sample/input-password.ejs', {input: { id:'text-input-password' }}, true); %>
-
-<%- sample(getText('sample.button', 'input-base'), '../../../../component/input/input-base/example/sample/input-button.ejs', {input: { id:'text-input-button' }}, true); %>
-
-<%- sample(getText('sample.placeholder', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-placeholder', placeholder:'placeholder'}}, true); %>
-
-<%- sample(getText('sample.value', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-value', attributes: {value:'value'}}}, true); %>
-
-<%- sample(getText('sample.icon', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-icon', hint: true, icon:'alert-line'}}, true); %>
-
-<%- sample(getText('sample.disabled', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-disabled', disabled:true}}, true); %>
-
-<%- sample(getText('sample.hint', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-hint', hint: true}}, true); %>
-
-<%- sample(getText('sample.valid', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-valid', valid: true}}, true); %>
-
-<%- sample(getText('sample.error', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-error', error: true}}, true); %>
+<div class="<%= prefix %>-container" >
+  <%- sample(getText('sample.text', 'input-base'), '../../../../component/input/input-base/example/sample/input-text.ejs', {input: { id:'text-input-text'} }); %>
+</div>

@@ -173,7 +173,13 @@ export const Type = {
   // component event
   DISCLOSE: {
     id: 'disclose', // component disclose event (accordion, modal, tab)
-    mode: null,
+    mode: 'out',
+    binding: false,
+    type: 'event'
+  },
+  SEARCH: {
+    id: 'search', // component disclose event (accordion, modal, tab)
+    mode: 'out',
     binding: false,
     type: 'event'
   },

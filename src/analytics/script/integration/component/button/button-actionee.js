@@ -18,9 +18,8 @@ class ButtonActionee extends ComponentActionee {
   }
 
   handleClick () {
-    /* GET_DATA permet d'aller retrouver search_terms dans la search-bar */
-    const data = this.ascend(ButtonEmission.GET_DATA);
-    this.act(Object.assign({}, ...data));
+    this.ascend(ButtonEmission.CLICK);
+    this.act();
   }
 
   get label () {

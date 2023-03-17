@@ -2,10 +2,11 @@ import { ComponentActionee } from '../component-actionee';
 import { ButtonEmission } from '../button/button-emission';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
+import { SearchSelector } from './search-selector';
 
 class SearchActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
+    super(Type.SEARCH, 2);
   }
 
   static get instanceClassName () {
@@ -13,12 +14,22 @@ class SearchActionee extends ComponentActionee {
   }
 
   init () {
-    this.addAscent(ButtonEmission.GET_DATA, this.getData.bind(this));
-    this._input = this.querySelector('input[type="search"],input[type="text"]');
+    this.addAscent(ButtonEmission.CLICK, this.search.bind(this));
+    const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
+    button.isMuted = true;
+    this._input = this.querySelector(SearchSelector.INPUT);
+    console.log(this._input);
+    this._input.addEventListener('keydown', this.handleKey.bind(this));
   }
 
-  getData () {
-    return { search_terms: this._input.value };
+  handleKey (e) {
+    if (e.keyCode === 13) {
+      this.search();
+    }
+  }
+
+  search () {
+    this.act({ component_value: this._input.value.trim() });
   }
 
   get label () {

@@ -12,6 +12,7 @@ class Actionee extends api.core.Instance {
     this._parameters = {};
     this._data = {};
     this._requestImpression = false;
+    this._isMuted = false;
   }
 
   static get instanceClassName () {
@@ -58,6 +59,7 @@ class Actionee extends api.core.Instance {
     super._config(element, registration);
     if (this._type !== null) {
       this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters);
+      if (this._isMuted) this._actionElement.isMuted = true;
     }
 
     const actionees = element.instances.filter(instance => instance.isActionee).sort((a, b) => b.priority - a.priority);
@@ -70,6 +72,7 @@ class Actionee extends api.core.Instance {
   }
 
   set isMuted (value) {
+    this._isMuted = value;
     if (this._actionElement) this._actionElement.isMuted = value;
   }
 

@@ -56,6 +56,7 @@ class ActionElement {
   }
 
   act (data = {}) {
+    if (this._isMuted) return;
     const layer = this._action.end(data);
     push(PushType.ACTION, layer);
   }
