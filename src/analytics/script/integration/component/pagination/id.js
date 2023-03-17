@@ -1,3 +1,3 @@
-const ID = 'dsfr_pagination';
+const ID = 'pagination';
 
 export default ID;

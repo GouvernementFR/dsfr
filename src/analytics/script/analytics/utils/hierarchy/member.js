@@ -68,7 +68,7 @@ class Member {
     });
     if (!labels.length) return false;
     this._type = Type.HEADING;
-    this._label = labels.join(' ＞ ');
+    this._label = labels.join(' › ');
     return true;
   }
 
