@@ -13,6 +13,7 @@ import { CalloutSelector } from './callout/callout-selector';
 import { CalloutActionee } from './callout/callout-actionee';
 import { ConnectSelector } from './connect/connect-selector';
 import { ConnectActionee } from './connect/connect-actionee';
+import { ConnectLinkActionee } from './connect/connect-link-actionee';
 import { ContentSelector } from './content/content-selector';
 import { ContentActionee } from './content/content-actionee';
 import { CardSelector } from './card/card-selector';
@@ -92,6 +93,7 @@ api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 
 api.internals.register(ConnectSelector.CONNECT, ConnectActionee);
+api.internals.register(ConnectSelector.LINK, ConnectLinkActionee);
 
 api.internals.register(ContentSelector.CONTENT, ContentActionee);
 
