@@ -15,6 +15,7 @@
     const attributes = {};
     attributes[`data-${prefix}-opened`] = modalButton.opened === true;
     attributes['aria-controls'] = modalButton.id;
+    attributes.id = modalButton.id;
 
 %>
 

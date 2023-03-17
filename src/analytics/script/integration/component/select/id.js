@@ -1,3 +1,3 @@
-const ID = 'checkbox';
+const ID = 'select';
 
 export default ID;

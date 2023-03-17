@@ -5,6 +5,7 @@ let data = {
   ...content,
   ...locals.content || {},
   caption: 'Description / Source',
+  id: content.id || uniqueId('media'),
   link: 'Label lien',
 };
 

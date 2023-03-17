@@ -38,7 +38,7 @@ switch(connect.type) {
 }
 
 const linkAttributes = connect.link.attributes || {};
-
+linkAttributes.id = connect.link.id || uniqueId('connect-link');
 linkAttributes.target = '_blank';
 linkAttributes.rel = 'noopener';
 linkAttributes.title = `${connect.link.label} - nouvelle fenêtre`;
