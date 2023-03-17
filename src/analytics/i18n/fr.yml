@@ -14,6 +14,7 @@ subdir:
   card: Carte (card)
   connect: Bouton France Connect (connect)
   content: Contenu média (content)
+  consent: Gestionnaire de consentement (consent)
   checkbox: Case à cocher (checkbox)
   download: Téléchargement de fichier (download)
   footer: Pied de page (footer)
