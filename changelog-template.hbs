@@ -1,0 +1,38 @@
+# Changelog du Système de design de l’État
+
+Toutes les modifications notables apportées à ce projet seront documentées dans ce fichier.
+
+Le format est basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+et ce projet respecte [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Pour plus d’informations : [Voir la documentation](https://www.systeme-de-design.gouv.fr/)
+
+{{#each releases}}
+  {{#if href}}
+    ## [{{title}}]({{href}}){{#if tag}} - {{isoDate}}{{/if}}
+  {{else}}
+    ## {{title}}{{#if tag}} - {{isoDate}}{{/if}}
+  {{/if}}
+
+  {{#if summary}}
+    {{summary}}
+  {{/if}}
+
+  {{#if merges}}
+    ### Merged
+
+    {{#each merges}}
+      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.message}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}
+
+    {{/each}}
+  {{/if}}
+
+  {{#if fixes}}
+    ### Fixed
+
+    {{#each fixes}}
+      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.subject}}{{#each fixes}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}{{/each}}
+    {{/each}}
+  {{/if}}
+{{/each}}
+
