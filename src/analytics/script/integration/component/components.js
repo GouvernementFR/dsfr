@@ -16,6 +16,8 @@ import { ConnectActionee } from './connect/connect-actionee';
 import { ConnectLinkActionee } from './connect/connect-link-actionee';
 import { ContentSelector } from './content/content-selector';
 import { ContentActionee } from './content/content-actionee';
+import { ConsentSelector } from './consent/consent-selector';
+import { ConsentActionee } from './consent/consent-actionee';
 import { CardSelector } from './card/card-selector';
 import { CardActionee } from './card/card-actionee';
 import { CheckboxSelector } from './checkbox/checkbox-selector';
@@ -96,6 +98,8 @@ api.internals.register(ConnectSelector.CONNECT, ConnectActionee);
 api.internals.register(ConnectSelector.LINK, ConnectLinkActionee);
 
 api.internals.register(ContentSelector.CONTENT, ContentActionee);
+
+api.internals.register(ConsentSelector.BANNER, ConsentActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
 
