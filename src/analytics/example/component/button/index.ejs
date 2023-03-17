@@ -6,10 +6,10 @@
   <%- sample('bouton', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label button', id: uniqueId('button')  } }); %>
 
   <%- section('Étiquette d’élément A', null, 0) %>
-  <%- sample('lien interne', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a interne', id: uniqueId('button'), markup:'a', attributes: { href:'#'} } }); %>
+  <%- sample('lien interne', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a interne', id: uniqueId('button'), markup:'a', href:'#' } }); %>
 
-  <%- sample('lien externe', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a externe', id: uniqueId('button'), markup:'a', attributes: { href:'#', target: '_blank' } } }); %>
+  <%- sample('lien externe', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a externe', id: uniqueId('button'), markup:'a', href:'https:google.com', blank: true } }); %>
 
-  <%- sample('lien download', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a download', id: uniqueId('button'), markup:'a', attributes: { href:'#', download: '' } } }); %>
+  <%- sample('lien download', '../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a download', id: uniqueId('button'), markup:'a', href:'#', attributes: { download: '' } } }); %>
 
 </div>
