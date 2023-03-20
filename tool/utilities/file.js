@@ -5,12 +5,12 @@ const log = require('./log');
 
 // Create Directories
 const createDir = (dirPath) => {
-  if (dirPath != '') fs.mkdirSync(dirPath, { recursive: true }, (error) => {
+  if (dirPath !== '') fs.mkdirSync(dirPath, { recursive: true }, (error) => {
     if (error) log.error(error);
   });
 };
 
-// Create Files Parent 
+// Create Files Parent
 const createFileParent = (filePath) => {
   const pathParse = path.parse(filePath);
   const parent = pathParse.dir;
