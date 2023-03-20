@@ -26,6 +26,8 @@ import { DownloadSelector } from './download/download-selector';
 import { DownloadActionee } from './download/download-actionee';
 import { FooterSelector } from './footer/footer-selector';
 import { FooterActionee } from './footer/footer-actionee';
+import { FollowSelector } from './follow/follow-selector';
+import { FollowActionee } from './follow/follow-actionee';
 import { FooterLinkActionee } from './footer/footer-link-actionee';
 import { HeaderActionee } from './header/header-actionee';
 import { HeaderSelector } from './header/header-selector';
@@ -109,6 +111,8 @@ api.internals.register(DownloadSelector.LINK, DownloadActionee);
 
 api.internals.register(FooterSelector.FOOTER, FooterActionee);
 api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
+
+api.internals.register(FollowSelector.FOLLOW, FollowActionee);
 
 if (api.header) {
   api.internals.register(api.header.HeaderSelector.HEADER, HeaderActionee);

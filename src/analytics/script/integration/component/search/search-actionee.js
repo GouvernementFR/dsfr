@@ -18,7 +18,6 @@ class SearchActionee extends ComponentActionee {
     const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
     button.isMuted = true;
     this._input = this.querySelector(SearchSelector.INPUT);
-    console.log(this._input);
     this._input.addEventListener('keydown', this.handleKey.bind(this));
   }
 
