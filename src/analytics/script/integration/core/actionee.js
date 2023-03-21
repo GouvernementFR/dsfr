@@ -80,29 +80,32 @@ class Actionee extends api.core.Instance {
     if (!node) node = this.node;
     const tag = node.tagName.toLowerCase();
     const href = node.getAttribute('href');
-    const target = node.getAttribute('target');
     const isDownload = node.hasAttribute('download');
-    const hostname = location.hostname.replace('www.', '');
-    const isRelative = !/^(((http|https|ftp|ftps|mailto|file|data):)|\/\/)/.test(href);
+    const hostname = node.hostname;
 
     switch (true) {
-      case tag === 'a' && isDownload:
+      case tag !== 'a':
+        this._type = Type.CLICK;
+        break;
+
+      case isDownload:
         this._type = Type.DOWNLOAD;
         this._parameters.component_value = href;
         break;
 
-      case tag === 'a' && (href.indexOf(hostname) > -1 || isRelative) :
+      case hostname === location.hostname :
         this._type = Type.INTERNAL;
         this._parameters.component_value = href;
         break;
 
-      case tag === 'a' :
+      case hostname.length > 0 :
         this._type = Type.EXTERNAL;
         this._parameters.component_value = href;
         break;
 
       default:
         this._type = Type.CLICK;
+        break;
     }
   }
 
