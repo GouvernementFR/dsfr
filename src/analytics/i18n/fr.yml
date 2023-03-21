@@ -2,10 +2,12 @@ title: Analytics
 description:
 doc:
 subdir:
-  title: Composants
-  attribute: Attribut
+  title: Pages
+  attribute: Attributs
   component: Composants
   alert: Alerte (alert)
+  alert-close: Alerte avec bouton de fermeture
+  alert-dynamic: Alerte ajoutée dynamiquement
   accordion: Accordéon (accordion)
   badge: Badge (badge)
   breadcrumb: Fil d’ariane (breadcrumb)
