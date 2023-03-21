@@ -14,13 +14,15 @@ class FollowActionee extends ComponentActionee {
   }
 
   init () {
-    this._input = this.querySelector(FollowSelector.NEWSLETTER_INPUT);
-    if (this._input) {
+    this._inputGroup = this.querySelector(FollowSelector.NEWSLETTER_INPUT_GROUP);
+    if (this._inputGroup) {
+      this._type = Type.SUBSCRIBE;
+      const input = this.element.getDescendantInstances('InputActionee', null, true)[0];
+      input.isMuted = true;
+      this._input = this._inputGroup.querySelector('input');
       this.addAscent(ButtonEmission.CLICK, this.subscribe.bind(this));
       const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
       button.isMuted = true;
-      this._type = Type.SUBSCRIBE;
-      this._input.addEventListener('keydown', this.handleKey.bind(this));
     }
   }
 

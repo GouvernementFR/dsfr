@@ -1,5 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
-import api from '../../../../api.js';
+// import api from '../../../../api.js';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
@@ -13,19 +13,18 @@ class UploadActionee extends ComponentActionee {
   }
 
   init () {
-    this._input = this.querySelector(api.internals.ns.selector('input'));
-    this._label = this.querySelector(api.internals.ns.selector('label'));
+    // this._label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
+    this.detectInteraction();
+    this.listenClick();
   }
 
   get label () {
-    if (this._label) return this._label.textContent.trim();
-
+    // if (this._label) return this._label.textContent.trim();
     return 'Ajout de fichier';
   }
 
   getData () {
-    if (this._input) return { component_value: this._input.value.trim() };
-    return '';
+    return { component_value: this.node.value.trim() };
   }
 
   get component () {

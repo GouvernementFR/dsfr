@@ -1,5 +1,5 @@
 import api from '../../../../api';
 
 export const UploadSelector = {
-  UPLOAD: api.internals.ns.selector('upload-group')
+  UPLOAD: api.internals.ns.selector('upload')
 };

@@ -107,6 +107,8 @@ api.internals.register(ConsentSelector.BANNER, ConsentActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
 
+api.internals.register(InputSelector.INPUT, InputActionee);
+
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 
 api.internals.register(DownloadSelector.LINK, DownloadActionee);
@@ -125,7 +127,6 @@ if (api.header) {
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
-api.internals.register(InputSelector.INPUT, InputActionee);
 
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
