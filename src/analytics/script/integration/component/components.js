@@ -78,6 +78,8 @@ import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TranscriptionSelector } from './transcription/transcription-selector';
 import { TranscriptionActionee } from './transcription/transcription-actionee';
+import { UploadSelector } from './upload/upload-selector';
+import { UploadActionee } from './upload/upload-actionee';
 
 if (api.accordion) {
   api.internals.register(api.accordion.AccordionSelector.COLLAPSE, AccordionActionee);
@@ -105,6 +107,8 @@ api.internals.register(ConsentSelector.BANNER, ConsentActionee);
 
 api.internals.register(CardSelector.CARD, CardActionee);
 
+api.internals.register(InputSelector.INPUT, InputActionee);
+
 api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 
 api.internals.register(DownloadSelector.LINK, DownloadActionee);
@@ -123,7 +127,6 @@ if (api.header) {
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
-api.internals.register(InputSelector.INPUT, InputActionee);
 
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
@@ -174,5 +177,7 @@ api.internals.register(TileSelector.TILE, TileActionee);
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
 api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
+
+api.internals.register(UploadSelector.UPLOAD, UploadActionee);
 
 export default api;
