@@ -92,6 +92,7 @@
     color: inherit;
     @include disable-tint;
     @include link-underline;
+    @include hover-underline;
     @include after {
       @include margin-right(-5v);
       transition: transform 0.3s;

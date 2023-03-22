@@ -8,9 +8,12 @@
 #{ns(connect)} {
   @include relative;
   @include padding(1v 3v 1v 16v);
-  @include display-flex(column, flex-start, center);
+  @include display-flex(column, flex-start, center, null, true);
   height: spacing.space(14v);
   @include margin-bottom(3v);
+  @include disable-underline;
+  @include enable-tint;
+  @include hover-tint;
 
   @include before('', block) {
     @include absolute(1v, null, 1v, 3v, 10v, 12v);
