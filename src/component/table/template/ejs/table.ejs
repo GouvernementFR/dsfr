@@ -21,6 +21,8 @@
 
 * table.accent (string, optional): couleur d'accenturation du composant
 
+* table.id (string) : id de l'élément
+
 * table.classes (array, optional): classes supplémentaires du composant
 
 * table.attributes (array, optional): attributs supplémentaires du composant
@@ -31,6 +33,7 @@
 let table = locals.table || {};
 let classes = table.classes || [];
 const attributes = table.attributes || {};
+attributes.id = table.id || uniqueId('table');
 const data = table.data || [[]];
 
 classes.push(prefix + '-table');
