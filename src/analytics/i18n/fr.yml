@@ -26,6 +26,7 @@ subdir:
   input: Champ de saisie (input)
   link: Lien (link)
   modal: Modale (modal)
+  modal-links: Modale avec zone d'action et liens
   navigation: Navigation principale (navigation)
   notice: Bandeau d'information (notice)
   pagination: Pagination (pagination)

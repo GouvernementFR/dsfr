@@ -19,6 +19,8 @@
 
 * tile.description (string, optional) : description de la tuile
 
+* tile.id (string) : id de l'élément
+
 * tile.accent (string, optional) : accentuation du composant
 
 * tile.classes (array, optional) : Classes suplémentaires sur la tuile
@@ -29,6 +31,8 @@
 <%
 let tile = locals.tile || {};
 let classes = tile.classes || [];
+const attributes = tile.attributes || {};
+attributes.id = tile.id || uniqueId('tile');
 const markup = tile.markup || 'h3';
 classes.push(`${prefix}-tile`);
 
@@ -46,7 +50,7 @@ if (tile.verticalMd !== undefined) {
 if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 %>
 
-<div <%- includeClasses(classes)%>>
+<div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>
   <div class="<%= prefix %>-tile__body">
     <<%= markup %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href="<%- tile.href %>"><%- tile.title %></a></<%= markup %>>
     <% if(tile.description !== undefined) { %>
