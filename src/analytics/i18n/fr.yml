@@ -31,6 +31,7 @@ subdir:
   pagination: Pagination (pagination)
   quote: Citation (quote)
   radio: Bouton radio (radio)
+  radio-rich: Bouton radio riche
   search: Barre de recherche (search)
   select: Liste déroulante (select)
   share: Boutons de partage (share)
@@ -41,5 +42,6 @@ subdir:
   table: Tableau (table)
   tile: Tuile (tile)
   toggle: Interrupteur (toggle)
+  toggle-checked: Interrupteur coché
   transcription: Transcription (transcription)
   upload: Ajout de fichier (upload)
