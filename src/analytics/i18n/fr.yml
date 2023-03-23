@@ -60,4 +60,5 @@ subdir:
   toggle: Interrupteur (toggle)
   toggle-checked: Interrupteur coché
   transcription: Transcription (transcription)
+  translate: Sélecteur de langue (translate)
   upload: Ajout de fichier (upload)

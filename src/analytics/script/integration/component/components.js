@@ -78,6 +78,8 @@ import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
 import { TranscriptionSelector } from './transcription/transcription-selector';
 import { TranscriptionActionee } from './transcription/transcription-actionee';
+import { TranslateSelector } from './translate/translate-selector';
+import { TranslateActionee } from './translate/translate-actionee';
 import { UploadSelector } from './upload/upload-selector';
 import { UploadActionee } from './upload/upload-actionee';
 
@@ -177,6 +179,8 @@ api.internals.register(TileSelector.TILE, TileActionee);
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
 api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
+
+api.internals.register(TranslateSelector.COLLAPSE, TranslateActionee);
 
 api.internals.register(UploadSelector.UPLOAD, UploadActionee);
 
