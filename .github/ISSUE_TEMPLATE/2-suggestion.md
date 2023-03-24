@@ -1,8 +1,8 @@
 ---
-name: Proposer une suggestion
+name: Proposer une évolution
 about: Suggérer une nouvelle idée, une amélioration, au Système de Design de l'État.
 title: ''
-labels: suggestion
+labels: évolution
 assignees: ''
 
 ---
