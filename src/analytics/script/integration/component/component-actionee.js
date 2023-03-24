@@ -39,6 +39,10 @@ class ComponentActionee extends Actionee {
     this.listen('change', this.handleCheckable.bind(this), { capture: true });
   }
 
+  listenPressable () {
+    this.listen('click', this.handlePressable.bind(this), { capture: true });
+  }
+
   handleChange (e) {
     if (e.target && e.target.value) {
       this._data.component_value = e.target.value;
@@ -59,9 +63,31 @@ class ComponentActionee extends Actionee {
     }
   }
 
+  handlePressable (e) {
+    // if (e.target && e.target.value !== 'on') {
+    //   this._data.component_value = e.target.value;
+    // }
+
+    switch (true) {
+      case this._type === Type.PRESS && e.target.getAttribute('aria-pressed') === 'false':
+      case this._type === Type.RELEASE && e.target.getAttribute('aria-pressed') === 'true':
+        this.act();
+        break;
+    }
+  }
+
   detectCheckable () {
     const isChecked = this.node.checked;
     this._type = isChecked ? Type.UNCHECK : Type.CHECK;
+  }
+
+  detectPressable () {
+    const isPressable = this.node.hasAttribute('aria-pressed');
+    if (isPressable) {
+      const isPressed = this.node.getAttribute('aria-pressed') === 'true';
+      this._type = isPressed ? Type.RELEASE : Type.PRESS;
+    }
+    return isPressable;
   }
 
   get component () {

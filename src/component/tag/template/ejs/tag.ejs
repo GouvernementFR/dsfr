@@ -39,7 +39,7 @@
 let tag = locals.tag || {};
 let tagClasses = tag.classes || [];
 let tagAttrs = tag.attributes || {};
-
+tagAttrs.id = tag.id || uniqueId('tag');
 tagClasses.push(prefix + '-tag');
 
 if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
@@ -67,7 +67,7 @@ switch(tag.type) {
   break;
   case 'pressable':
       if (tag.markup === undefined) tag.markup = 'button';
-      tagAttrs["aria-pressed"] = 'false';
+      tagAttrs["aria-pressed"] = tag.pressed === true ? 'true' : 'false';
   break;
   case 'dismissible':
       if (tag.markup === undefined) tag.markup = 'button';
