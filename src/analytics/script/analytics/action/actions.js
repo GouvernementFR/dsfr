@@ -25,10 +25,6 @@ class Actions {
     this._actions.splice(index, 1);
     return true;
   }
-
-  get layers () {
-    return this._actions.filter(action => action.isCollectable).map(action => action.start());
-  }
 }
 
 Actions.ActionMode = ActionMode;

@@ -11,8 +11,7 @@ import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import actions from './action/actions';
 import push from './facade/push';
 import PushType from './facade/push-type';
-
-const SLICE = 50;
+import queue from './queue/queue';
 
 class Analytics {
   constructor () {
@@ -138,6 +137,7 @@ class Analytics {
   }
 
   collect () {
+    queue.collect(this.layer);
     this._delayFrames = -4;
     requestAnimationFrame(this._delaying);
   }
@@ -152,23 +152,17 @@ class Analytics {
   }
 
   _collect () {
-    const actionLayers = actions.layers;
+    queue.collect(this.layer);
+  }
 
-    let layer = [
+  get layer () {
+    return [
       ...this._user.layer,
       ...this._site.layer,
       ...this._page.layer,
       ...this._search.layer,
       ...this._funnel.layer
     ];
-
-    const length = ((actionLayers.length / SLICE) + 1) | 0;
-    for (let i = 0; i < length; i++) {
-      const slice = actionLayers.slice(i * SLICE, (i + 1) * SLICE);
-      layer.push(...slice.flat());
-      this.push(PushType.COLLECTOR, layer);
-      layer = [];
-    }
   }
 }
 
