@@ -13,7 +13,7 @@
 
       &#{ns(scroll-shadow)} {
         #{ns(modal)}__footer {
-          // @include color.background(elevated grey, (legacy:$legacy));
+          @include color.background(lifted grey, (legacy:$legacy));
         }
       }
     }
@@ -24,6 +24,12 @@
 
     &__footer {
       @include color.background(default grey, (legacy:$legacy));
+    }
+
+    &__body#{ns(scroll-shadow)} {
+      #{ns(modal)}__footer {
+        @include color.background-image(border default grey, (legacy:$legacy));
+      }
     }
   }
 }
