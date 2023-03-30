@@ -7,11 +7,10 @@ class Page {
   }
 
   reset (clear = false) {
-    this.path = clear ? '' : this._config.path || document.location.pathname;
+    this.path = clear ? '' : this._config.path;
     this.referrer = clear ? '' : this._config.referrer;
-    const title = this._config.title || document.title;
-    this.title = clear ? '' : title;
-    this.name = clear ? '' : this._config.name || title;
+    this.title = clear ? '' : this._config.title;
+    this.name = clear ? '' : this._config.name;
     this._labels = clear || !this._config.labels ? ['', '', '', '', ''] : this._config.labels;
     this._categories = clear || !this._config.categories ? ['', '', ''] : this._config.categories;
     this._labels.length = 5;
@@ -35,7 +34,7 @@ class Page {
   }
 
   get path () {
-    return this._path;
+    return this._path || document.location.pathname;
   }
 
   set referrer (value) {
@@ -53,7 +52,7 @@ class Page {
   }
 
   get title () {
-    return this._title;
+    return this._title || document.title;
   }
 
   set name (value) {
@@ -62,7 +61,7 @@ class Page {
   }
 
   get name () {
-    return this._name;
+    return this._name || this.title;
   }
 
   get labels () {
@@ -88,7 +87,7 @@ class Page {
   }
 
   get template () {
-    return this._template;
+    return this._template || 'autres';
   }
 
   set segment (value) {
@@ -97,7 +96,7 @@ class Page {
   }
 
   get segment () {
-    return this._segment;
+    return this._segment || this.template;
   }
 
   set group (value) {
@@ -106,7 +105,7 @@ class Page {
   }
 
   get group () {
-    return this._group;
+    return this._group || this.template;
   }
 
   set subtemplate (value) {
@@ -178,11 +177,10 @@ class Page {
 
   get layer () {
     const layer = [];
-    if (this._path) layer.push('path', normalize(this._path));
-    if (this._referrer) layer.push('referrer', normalize(this._referrer));
-    const title = normalize(this._title);
-    if (title) layer.push('page_title', title);
-    if (this._name || title) layer.push('page_name', normalize(this._name) || title);
+    if (this.path) layer.push('path', normalize(this.path));
+    if (this.referrer) layer.push('referrer', normalize(this.referrer));
+    if (this.title) layer.push('page_title', normalize(this.title));
+    if (this.name) layer.push('page_name', normalize(this.name));
 
     const labels = this._labels.slice(0, 5);
     labels.length = 5;
@@ -194,27 +192,26 @@ class Page {
 
     if (this._isError) layer.push('error', '1');
 
-    const template = normalize(this._template) || 'autres';
-    layer.push('page_template', template);
-    layer.push('pagegroup', normalize(this._group) || template);
-    layer.push('site-segment', normalize(this._segment) || template);
+    layer.push('page_template', normalize(this.template));
+    layer.push('pagegroup', normalize(this.group));
+    layer.push('site-segment', normalize(this.segment));
 
-    if (this._subtemplate) layer.push('page_subtemplate', normalize(this._subtemplate));
-    if (this._theme) layer.push('page_theme', normalize(this._theme));
-    if (this._subtheme) layer.push('page_subtheme', normalize(this._subtheme));
-    if (this._related) layer.push('page_related', normalize(this._related));
-    if (!isNaN(this._depth)) layer.push('page_depth', this._depth);
+    if (this.subtemplate) layer.push('page_subtemplate', normalize(this.subtemplate));
+    if (this.theme) layer.push('page_theme', normalize(this.theme));
+    if (this.subtheme) layer.push('page_subtheme', normalize(this.subtheme));
+    if (this.related) layer.push('page_related', normalize(this.related));
+    if (!isNaN(this.depth)) layer.push('page_depth', this.depth);
 
-    if (!isNaN(this._current) && this._current > -1) {
-      let pagination = `${this._current}`;
-      if (!isNaN(this._total) && this._total > -1) pagination += `/${this._total}`;
+    if (!isNaN(this.current) && this.current > -1) {
+      let pagination = `${this.current}`;
+      if (!isNaN(this.total) && this.total > -1) pagination += `/${this.total}`;
       layer.push('page_pagination', pagination);
     } else {
       // TODO: get pagination value
     }
 
-    if (this._filters.length && this._filters.some(label => label)) {
-      const filters = this._filters.map(filter => typeof filter === 'string' ? normalize(filter) : '');
+    if (this.filters.length && this.filters.some(label => label)) {
+      const filters = this.filters.map(filter => typeof filter === 'string' ? normalize(filter) : '');
       layer.push('page_filters', filters.join(','));
     }
     return layer;

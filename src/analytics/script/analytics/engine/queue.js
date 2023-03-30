@@ -3,7 +3,7 @@ import PushType from '../facade/push-type.js';
 import push from '../facade/push.js';
 import renderer from './renderer';
 
-const SLICE = 50;
+const SLICE = 80;
 
 class Queue {
   constructor () {
@@ -89,12 +89,18 @@ class Queue {
   send () {
     if (!this._isRequested) return;
     const length = ((this._actionLayers.length / SLICE) + 1) | 0;
-    const layer = [...this._collectionLayer];
-
+    const slices = [];
     for (let i = 0; i < length; i++) {
       const slice = this._actionLayers.slice(i * SLICE, (i + 1) * SLICE);
-      layer.push(...slice.flat());
-      push(this._type, layer);
+      slices.push(slice.flat());
+    }
+
+    push(this._type, [...this._collectionLayer, ...slices[0]]);
+
+    if (slices.length > 1) {
+      for (let i = 1; i < slices.length; i++) {
+        push(PushType.ACTION, slices[i]);
+      }
     }
 
     this.reset();

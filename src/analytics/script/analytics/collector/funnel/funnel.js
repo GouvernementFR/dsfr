@@ -93,14 +93,14 @@ class Funnel {
 
   get layer () {
     const layer = [];
-    if (this._id) layer.push('funnel_id', normalize(this._id));
-    if (this._type) layer.push('funnel_type', normalize(this._type));
-    if (this._name) layer.push('funnel_name', normalize(this._name));
-    if (this._step) layer.push('funnel_step_name', normalize(this._step));
-    if (!isNaN(this._current) && this._current > -1) layer.push('funnel_step_number', this._current);
-    if (!isNaN(this._total) && this._total > -1) layer.push('funnel_step_max', this._total);
-    if (this._objective) layer.push('funnel_objective', normalize(this._objective));
-    if (this._error) layer.push('funnel_error', normalize(this._error));
+    if (this.id) layer.push('funnel_id', normalize(this.id));
+    if (this.type) layer.push('funnel_type', normalize(this.type));
+    if (this.name) layer.push('funnel_name', normalize(this.name));
+    if (this.step) layer.push('funnel_step_name', normalize(this.step));
+    if (!isNaN(this.current) && this.current > -1) layer.push('funnel_step_number', this.current);
+    if (!isNaN(this.total) && this.total > -1) layer.push('funnel_step_max', this.total);
+    if (this.objective) layer.push('funnel_objective', normalize(this.objective));
+    if (this.error) layer.push('funnel_error', normalize(this.error));
     return layer;
   }
 }
