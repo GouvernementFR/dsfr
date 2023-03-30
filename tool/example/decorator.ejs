@@ -274,7 +274,7 @@ const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
     if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
   }
   if (types.includes('text')) {
-    for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="test" target="_blank">link test</a>')}</p>`;
+    for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="https://www.systeme-de-design.gouv.fr/" target="_blank">link test</a>')}</p>`;
   }
   if (types.includes('list')) {
     content += '<ul>';
