@@ -9,10 +9,9 @@ const getParametersLayer = (data) => {
 };
 
 class Action {
-  constructor (name, isCollectable = false) {
+  constructor (name) {
     this._isMuted = false;
     this._name = name;
-    this._isCollectable = isCollectable;
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
     this._parameters = {};
@@ -24,10 +23,6 @@ class Action {
 
   set isMuted (value) {
     this._isMuted = value;
-  }
-
-  get isCollectable () {
-    return this._isCollectable && this._status === ActionStatus.UNSTARTED;
   }
 
   get status () {
@@ -48,6 +43,10 @@ class Action {
 
   get parameters () {
     return this._parameters;
+  }
+
+  singularize () {
+    this._status = ActionStatus.SINGULAR;
   }
 
   addParameter (key, value) {
@@ -88,17 +87,39 @@ class Action {
   }
 
   start (data) {
-    if (this._status.value > ActionStatus.UNSTARTED.value) {
-      api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
-      return;
+    let mode;
+    switch (this._status) {
+      case ActionStatus.UNSTARTED:
+        mode = ActionMode.IN;
+        break;
+
+      case ActionStatus.SINGULAR:
+        mode = ActionMode.NONE;
+        break;
+
+      default:
+        api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
+        return;
     }
-    const layer = this._getLayer(ActionMode.IN, data);
+    const layer = this._getLayer(mode, data);
     this._status = ActionStatus.STARTED;
     return layer;
   }
 
   end (data) {
-    const layer = this._getLayer(this._status === ActionStatus.STARTED ? ActionMode.OUT : ActionMode.NONE, data);
+    let mode;
+    switch (this._status) {
+      case ActionStatus.STARTED:
+        mode = ActionMode.OUT;
+        break;
+
+      case ActionStatus.UNSTARTED:
+      case ActionStatus.ENDED:
+      case ActionStatus.SINGULAR:
+        mode = ActionMode.NONE;
+        break;
+    }
+    const layer = this._getLayer(mode, data);
     this._status = ActionStatus.ENDED;
     return layer;
   }

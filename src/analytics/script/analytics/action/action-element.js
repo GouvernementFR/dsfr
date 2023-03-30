@@ -1,8 +1,7 @@
 import api from '../../../api';
 import actions from './actions';
-import push from '../facade/push';
-import PushType from '../facade/push-type';
 import { Hierarchy } from '../utils/hierarchy/hierarchy';
+import queue from '../engine/queue';
 
 class ActionElement {
   constructor (node, type, id, category = '', title = null, parameters = {}) {
@@ -28,7 +27,8 @@ class ActionElement {
     if (this._type) type = `(${this._type.id})_`;
     this._name = `${type}${this._title || this._hierarchy.title}${id}`;
 
-    this._action = actions.getAction(this._name, true);
+    this._action = actions.getAction(this._name, this._type.status);
+    if (this._type.isSingular) this._action.singularize();
     Object.keys(this._parameters).forEach(key => this._action.addParameter(key, this._parameters[key]));
     this._action.isMuted = this._isMuted;
 
@@ -40,6 +40,7 @@ class ActionElement {
     if (this._hierarchy.label) this._action.addParameter('component_label', this._hierarchy.label);
     if (this._hierarchy.title) this._action.addParameter('heading_hierarchy', this._hierarchy.title);
     if (this._hierarchy.component) this._action.addParameter('component_hierarchy', this._hierarchy.component);
+    if (this._type.isStarting) queue.append(this._action.start());
   }
 
   get isMuted () {
@@ -57,8 +58,7 @@ class ActionElement {
 
   act (data = {}) {
     if (this._isMuted) return;
-    const layer = this._action.end(data);
-    push(PushType.ACTION, layer);
+    queue.append(this._action.end(data));
   }
 
   dispose () {

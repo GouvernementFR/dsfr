@@ -15,6 +15,7 @@ class AccordionButtonActionee extends ComponentActionee {
     this.id = this.node.id || this.registration.creator.node.id;
     this._button = this.element.getInstance('CollapseButton');
     this.listenClick();
+    console.log('init accordion button');
   }
 
   handleClick () {

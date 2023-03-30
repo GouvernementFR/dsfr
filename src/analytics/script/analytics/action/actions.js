@@ -6,10 +6,10 @@ class Actions {
     this._actions = [];
   }
 
-  getAction (name, isCollectable = false) {
+  getAction (name) {
     let action = this._actions.filter(action => action.name === name)[0];
     if (!action) {
-      action = new Action(name, isCollectable);
+      action = new Action(name);
       this._actions.push(action);
     }
     return action;

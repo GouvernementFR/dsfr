@@ -8,14 +8,12 @@ import { User } from './collector/user/user';
 import { Search } from './collector/search/search';
 import { Funnel } from './collector/funnel/funnel';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
-import actions from './action/actions';
 import push from './facade/push';
 import PushType from './facade/push-type';
-import queue from './queue/queue';
+import queue from './engine/queue';
 
 class Analytics {
   constructor () {
-    this._delaying = this._delay.bind(this);
     this._isReady = false;
     this._readiness = new Promise((resolve, reject) => {
       if (this._isReady) resolve();
@@ -98,6 +96,8 @@ class Analytics {
         this.collect();
         break;
     }
+
+    queue.start();
   }
 
   get page () {
@@ -137,21 +137,6 @@ class Analytics {
   }
 
   collect () {
-    queue.collect(this.layer);
-    this._delayFrames = -4;
-    requestAnimationFrame(this._delaying);
-  }
-
-  _delay () {
-    if (this._delayFrames >= 0) {
-      this._collect();
-      return;
-    }
-    this._delayFrames++;
-    requestAnimationFrame(this._delaying);
-  }
-
-  _collect () {
     queue.collect(this.layer);
   }
 
