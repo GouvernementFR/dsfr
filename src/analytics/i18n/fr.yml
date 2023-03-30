@@ -55,9 +55,15 @@ subdir:
   stepper: Indicateur d'étapes (stepper)
   summary: Sommaire (summary)
   tab: Onglets (tab)
+  tag: Tag (tag)
+  tag-dismissible: Tag supprimable
+  tag-pressable: Tag pressable
+  tag-pressable-checked: Tag pressable coché
+  tag-clickable: Tag cliquable
   table: Tableau (table)
   tile: Tuile (tile)
   toggle: Interrupteur (toggle)
   toggle-checked: Interrupteur coché
   transcription: Transcription (transcription)
+  translate: Sélecteur de langue (translate)
   upload: Ajout de fichier (upload)

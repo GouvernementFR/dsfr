@@ -76,8 +76,12 @@ import { TileSelector } from './tile/tile-selector';
 import { TileActionee } from './tile/tile-actionee';
 import { ToggleSelector } from './toggle/toggle-selector';
 import { ToggleActionee } from './toggle/toggle-actionee';
+import { TagSelector } from './tag/tag-selector';
+import { TagActionee } from './tag/tag-actionee';
 import { TranscriptionSelector } from './transcription/transcription-selector';
 import { TranscriptionActionee } from './transcription/transcription-actionee';
+import { TranslateSelector } from './translate/translate-selector';
+import { TranslateActionee } from './translate/translate-actionee';
 import { UploadSelector } from './upload/upload-selector';
 import { UploadActionee } from './upload/upload-actionee';
 
@@ -127,7 +131,6 @@ if (api.header) {
 
 api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
-
 api.internals.register(LinkSelector.LINK, LinkActionee);
 
 if (api.modal) {
@@ -172,11 +175,15 @@ if (api.tab) {
 
 api.internals.register(TableSelector.TABLE, TableActionee);
 
+api.internals.register(TagSelector.TAG, TagActionee);
+
 api.internals.register(TileSelector.TILE, TileActionee);
 
 api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
 api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
+
+api.internals.register(TranslateSelector.COLLAPSE, TranslateActionee);
 
 api.internals.register(UploadSelector.UPLOAD, UploadActionee);
 

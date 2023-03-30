@@ -13,7 +13,10 @@ class QuoteActionee extends ComponentActionee {
 
   get label () {
     const blockquote = this.node.querySelector('blockquote');
-    if (blockquote) return blockquote.textContent.trim();
+    if (blockquote) {
+      const quote = blockquote.textContent.trim();
+      return quote.length > 50 ? `${quote.substring(0, 35).trim()}[...]` : quote;
+    }
     return 'Citation';
   }
 
