@@ -23,9 +23,7 @@ class PasswordInput extends api.core.Instance {
   }
 
   capslock (event) {
-    if (typeof event?.getModifierState !== 'function') {
-      return;
-    }
+    if (event && typeof event.getModifierState !== 'function') return;
     if (event.getModifierState('CapsLock')) {
       this.node.parentNode.setAttribute(api.internals.ns.attr('capslock'), '');
     } else {
