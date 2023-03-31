@@ -14,8 +14,8 @@ class AttributeActionee extends Actionee {
     this._attribute = this.registration.selector.replace(/[[\]]/g, '');
     const id = this._attribute.split('-').pop();
     this._type = Object.values(Type).filter(type => type.id === id)[0];
-    if (this._type === Type.CLICK) this.detectInteraction();
     this._title = this.getAttribute(this._attribute);
+    if (this._type === Type.CLICK) this.detectInteraction();
 
     switch (this._type.method) {
       case 'eventListener':

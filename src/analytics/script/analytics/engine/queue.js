@@ -28,7 +28,7 @@ class Queue {
   start () {
     if (this._isStarted) return;
     this._isStarted = true;
-    renderer.add(this.render.bind(this));
+    renderer.add(this);
   }
 
   collect (layer) {

@@ -1,6 +1,6 @@
 import api from '../../api.js';
 import patch from '../../../patch/script/patch';
-import Mode from './mode';
+import Mode from './engine/mode';
 import { Init } from './facade/init';
 import { Page } from './collector/page/page';
 import { Site } from './collector/site/site';
@@ -11,6 +11,8 @@ import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
 import PushType from './facade/push-type';
 import queue from './engine/queue';
+import opt from './facade/opt';
+import { Collector } from './engine/collector';
 
 class Analytics {
   constructor () {
@@ -48,27 +50,7 @@ class Analytics {
   }
 
   _build () {
-    switch (this._config.mode) {
-      case Mode.MANUAL:
-        this._mode = Mode.MANUAL;
-        break;
-
-      case Mode.NO_COMPONENTS:
-        this._mode = Mode.NO_COMPONENTS;
-        break;
-
-      case Mode.AUTO:
-      default:
-        this._mode = Mode.AUTO;
-    }
-
     this._init = new Init(this._config.domain);
-
-    this._user = new User(this._config.user);
-    this._site = new Site(this._config.site);
-    this._page = new Page(this._config.page);
-    this._search = new Search(this._config.search);
-    this._funnel = new Funnel(this._config.funnel);
 
     this.reset();
 
@@ -89,39 +71,38 @@ class Analytics {
     this._resolve();
 
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
-
-    switch (this._mode) {
-      case Mode.AUTO:
-      case Mode.NO_COMPONENTS:
-        this.collect();
-        break;
-    }
+    this._collector = new Collector(this._config.mode, this);
 
     queue.start();
+    this._collector.start();
   }
 
   get page () {
-    return this._page;
+    return this._collector.page;
   }
 
   get user () {
-    return this._user;
+    return this._collector.user;
   }
 
   get site () {
-    return this._site;
+    return this._collector._site;
   }
 
   get search () {
-    return this._search;
+    return this._collector.search;
   }
 
   get funnel () {
-    return this._funnel;
+    return this._collector.funnel;
   }
 
   get cmp () {
     return this._cmp;
+  }
+
+  get opt () {
+    return opt;
   }
 
   push (type, layer) {
@@ -129,25 +110,11 @@ class Analytics {
   }
 
   reset (clear = false) {
-    this._user.reset(clear);
-    this._site.reset(clear);
-    this._page.reset(clear);
-    this._search.reset(clear);
-    this._funnel.reset(clear);
+    this._collector.reset();
   }
 
   collect () {
-    queue.collect(this.layer);
-  }
-
-  get layer () {
-    return [
-      ...this._user.layer,
-      ...this._site.layer,
-      ...this._page.layer,
-      ...this._search.layer,
-      ...this._funnel.layer
-    ];
+    this._collector.collect();
   }
 }
 

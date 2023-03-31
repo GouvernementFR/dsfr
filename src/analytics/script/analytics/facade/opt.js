@@ -10,7 +10,7 @@ class Opt {
   _configure () {
     const scope = this;
     window[DISABLED] = () => scope.isDisabled;
-    window[TOGGLE] = () => scope.toggle;
+    window[TOGGLE] = this.toggle.bind(this);
   }
 
   get isDisabled () {

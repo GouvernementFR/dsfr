@@ -34,7 +34,7 @@ class Page {
   }
 
   get path () {
-    return this._path || document.location.pathname;
+    return this._path || `${document.location.pathname}${document.location.search}`;
   }
 
   set referrer (value) {

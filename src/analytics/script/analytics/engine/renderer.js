@@ -1,16 +1,21 @@
 class Renderer {
   constructor () {
-    this._closures = [];
+    this._renderables = [];
     this._rendering = this.render.bind(this);
     requestAnimationFrame(this._rendering);
   }
 
-  add (closure) {
-    this._closures.push(closure);
+  add (renderable) {
+    this._renderables.push(renderable);
+  }
+
+  remove (renderable) {
+    const index = this._renderables.indexOf(renderable);
+    if (index > -1) this._renderables.splice(index, 1);
   }
 
   render () {
-    this._closures.forEach(closure => closure.call());
+    this._renderables.forEach(renderable => renderable.render());
     requestAnimationFrame(this._rendering);
   }
 }

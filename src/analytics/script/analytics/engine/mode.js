@@ -1,7 +1,8 @@
 const Mode = {
   MANUAL: 'manual',
-  AUTO: 'auto',
-  NO_COMPONENTS: 'no_components'
+  LOAD: 'load',
+  FULL: 'full',
+  HASH: 'hash'
 };
 
 export default Mode;

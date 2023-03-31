@@ -15,8 +15,8 @@ class Init {
 
   configure () {
     this.pushing();
-    if (!opt.isOut) this.load();
-    else this._reject();
+    if (opt.isDisabled) this._reject();
+    else this.load();
     return this._promise;
   }
 
