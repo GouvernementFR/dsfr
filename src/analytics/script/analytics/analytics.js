@@ -2,11 +2,6 @@ import api from '../../api.js';
 import patch from '../../../patch/script/patch';
 import Mode from './engine/mode';
 import { Init } from './facade/init';
-import { Page } from './collector/page/page';
-import { Site } from './collector/site/site';
-import { User } from './collector/user/user';
-import { Search } from './collector/search/search';
-import { Funnel } from './collector/funnel/funnel';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
 import PushType from './facade/push-type';
@@ -51,9 +46,6 @@ class Analytics {
 
   _build () {
     this._init = new Init(this._config.domain);
-
-    this.reset();
-
     this._init.configure().then(this._start.bind(this), this._reject);
   }
 
@@ -71,7 +63,8 @@ class Analytics {
     this._resolve();
 
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
-    this._collector = new Collector(this._config.mode, this);
+    this._collector = new Collector(this._config);
+    this._collector.reset();
 
     queue.start();
     this._collector.start();

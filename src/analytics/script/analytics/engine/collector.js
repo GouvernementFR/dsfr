@@ -81,6 +81,7 @@ class Collector {
   }
 
   _handleChange () {
+    this._isCollected = false;
     this._page.referrer = this._location.referrer;
     if (this._location.hasTitle) this._page.title = this._location.title;
     this._page.path = this._location.path;
