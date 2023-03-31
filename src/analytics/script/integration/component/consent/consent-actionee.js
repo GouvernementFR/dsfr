@@ -12,7 +12,7 @@ class ConsentActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Gestionnnaire de consentement';
+    return 'Gestionnaire de consentement';
   }
 
   get component () {
