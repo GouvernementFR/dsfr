@@ -6,8 +6,6 @@ import inspector from './inspect/inspector.js';
 import colors from './utilities/colors/colors.js';
 import internals from './internals.js';
 
-inspector.info(`version ${config.version}`);
-
 const api = (node) => {
   const stage = state.getModule('stage');
   return stage.getProxy(node);
@@ -24,6 +22,7 @@ Object.defineProperty(api, 'mode', {
 });
 
 api.internals = internals;
+api.version = config.version;
 
 api.start = engine.start;
 api.stop = engine.stop;
