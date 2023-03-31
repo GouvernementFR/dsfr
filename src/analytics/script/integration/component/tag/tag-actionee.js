@@ -19,10 +19,10 @@ class TagActionee extends ComponentActionee {
     }
 
     if (this.node.tagName === 'A' || this.node.tagName === 'BUTTON') {
-      this.detectInteraction();
-
       if (this.node.classList.contains(TagSelector.DISMISSIBLE)) {
         this._type = Type.DISMISS;
+      } else {
+        this.detectInteraction();
       }
       this.listenClick();
     }
