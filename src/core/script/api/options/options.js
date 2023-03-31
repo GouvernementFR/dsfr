@@ -1,5 +1,7 @@
 import inspector from '../inspect/inspector.js';
 import { startAtDomContentLoaded, startAuto } from './starters.js';
+import config from '../../../config';
+import api from '../api.js';
 
 export const Modes = {
   AUTO: 'auto',
@@ -21,7 +23,34 @@ class Options {
 
   configure (settings = {}, start) {
     this.startCallback = start;
-    if (settings.verbose === true) inspector.level = 0;
+    if (
+      settings.verbose === true ||
+      (
+        api.internals.query &&
+        api.internals.query.verbose &&
+        api.internals.query.verbose === 'true'
+      )
+    ) {
+      inspector.level = 0;
+    }
+    if (
+      settings.production === true ||
+      (
+        api.internals.query &&
+        api.internals.query.production &&
+        api.internals.query.production === 'true'
+      )
+    ) {
+      inspector.level = 999;
+    }
+    if (
+      api.internals.query &&
+      api.internals.query.level
+    ) {
+      const level = api.internals.query.level;
+      if (!isNaN(Number(level))) inspector.level = level;
+    }
+    inspector.info(`version ${config.version}`);
     this.mode = settings.mode || Modes.AUTO;
   }
 

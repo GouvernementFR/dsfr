@@ -6,6 +6,7 @@ import ns from './utilities/namespace.js';
 import support from './utilities/support/index';
 import motion from './utilities/motion/index';
 import property from './utilities/property/index';
+import searchParams from './utilities/search-params/index.js';
 
 const internals = {};
 const legacy = {};
@@ -26,6 +27,7 @@ internals.property = property;
 internals.ns = ns;
 internals.register = engine.register;
 internals.state = state;
+internals.query = searchParams(window.location);
 
 Object.defineProperty(internals, 'preventManipulation', {
   get: () => options.preventManipulation
