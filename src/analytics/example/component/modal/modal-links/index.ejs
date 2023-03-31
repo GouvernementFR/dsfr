@@ -4,10 +4,10 @@
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
     body: include('../../../../../component/modal/example/sample/body/text'),
-    footer: include('../../../../../component/link/example/sample/links-group.ejs', { linksGroup: { groupCount: 2, size: 'md' } }),
+    footer: include('../../../../../component/link/example/sample/links-group.ejs', { linksGroup: { groupCount: 2, size: 'md', href: '../' } }),
 }
 %>
 
 <div class="<%= prefix %>-container" >
-  <%- sample('Modale avec zone d\'action et liens', '../../../../../component/modal/example/sample/modal-default', {modal: { ...dataFooterLinks, label: 'libellé bouton modale'}}, true ); %>
+  <%- sample('Modale avec zone d\'action et liens', '../../../../../component/modal/example/sample/modal-default', {modal: { ...dataFooterLinks, label: 'libellé bouton modale'}} ); %>
 </div>

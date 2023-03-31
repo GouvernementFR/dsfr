@@ -1,3 +1,5 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Bandeau d\'information simple', '../../../../component/notice/example/sample/notice-default', {notice: {id: uniqueId('notice'), type: "info", title: "Titre du bandeau d'information"}}, true, '../../../../component/notice/example/layout.ejs'); %>
+<div class="<%= prefix %>-container" >
+  <%- sample('Bandeau d\'information simple', '../../../../component/notice/example/sample/notice-default', {notice: {id: uniqueId('notice'), type: "info", title: "Titre du bandeau d'information"}}); %>
+</div>

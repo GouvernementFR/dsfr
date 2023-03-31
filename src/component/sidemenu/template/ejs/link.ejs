@@ -13,4 +13,4 @@ Paramètres de sidemenu item
   if (sidemenuItem.id) linkAttrs.id = sidemenuItem.id;
 %>
 
-<a class="<%= prefix %>-sidemenu__link" <%- includeAttrs(linkAttrs) %> <%- sidemenuItem.active ? 'aria-current="page"' : 'href="#" target="_self"' %>><%- sidemenuItem.label %></a>
+<a class="<%= prefix %>-sidemenu__link" <%- includeAttrs(linkAttrs) %> <%- sidemenuItem.active ? 'aria-current="page"' : 'href="' + sidemenuItem.href + '" target="_self"' %>><%- sidemenuItem.label %></a>

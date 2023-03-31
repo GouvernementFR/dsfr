@@ -1,5 +1,6 @@
 <%
 let navigation = locals.navigation || {};
+const href = navigation.href || '#'
 
 const getLink = () => {
   const id = uniqueId('nav');
@@ -7,7 +8,7 @@ const getLink = () => {
     type: 'link',
     label: `accès direct ${id}`,
     id: id,
-    href:'#'
+    href: href
   };
 
 }
@@ -17,7 +18,7 @@ const getSubLink = (active = false) => {
   return {
     label: `Lien de navigation ${id}`,
     id: id,
-    href:'#',
+    href: href,
     active: active
   }
 }
@@ -48,8 +49,9 @@ const getMenu = (active = false) => {
 
 const getCategory = (active = false) => {
   return {
+    id: uniqueId('category'),
     label: 'Nom de catégorie',
-    href: '#',
+    href: href,
     items: getItems(active)
   };
 }
