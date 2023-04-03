@@ -2,6 +2,7 @@
 /// Core Module : Reset input & form field
 /// @group core
 ////
+@use 'module/media-query';
 
 input,
 select,
@@ -15,6 +16,10 @@ textarea {
   border: 0;
   background-color: transparent;
   margin: 0; // Address margins set differently in Firefox 4+, Safari, and Chrome.
+
+  @include media-query.high-contrast() {
+    border: 1px solid var(--border-plain-grey);
+  }
 }
 
 // Fix for NVDA
