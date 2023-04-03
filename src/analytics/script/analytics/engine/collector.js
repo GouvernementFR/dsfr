@@ -1,4 +1,4 @@
-import Mode from './mode.js';
+import Collection from './collection.js';
 import api from '../../../api';
 import { User } from '../collector/user/user';
 import { Site } from '../collector/site/site';
@@ -11,24 +11,39 @@ import { CollectorEvent } from './collector-event';
 
 class Collector {
   constructor (config) {
-    switch (config.mode) {
-      case Mode.MANUAL:
-      case Mode.LOAD:
-      case Mode.FULL:
-      case Mode.HASH:
-        this._mode = config.mode;
+    switch (config.collection) {
+      case Collection.MANUAL:
+      case Collection.LOAD:
+      case Collection.FULL:
+      case Collection.HASH:
+        this._collection = config.collection;
         break;
 
       default:
+        /* deprecated start */
+        if (config.mode) {
+          switch (config.mode) {
+            case 'manual':
+              this._collection = config.collection;
+              break;
+          }
+        }
+        /* deprecated end */
+
         switch (true) {
+          /* deprecated */
+          case config.mode === 'manual':
+            this._collection = Collection.MANUAL;
+            break;
+
           case api.mode === api.Modes.ANGULAR:
           case api.mode === api.Modes.REACT:
           case api.mode === api.Modes.VUE:
-            this._mode = Mode.FULL;
+            this._collection = Collection.FULL;
             break;
 
           default:
-            this._mode = Mode.LOAD;
+            this._collection = Collection.LOAD;
         }
     }
 
@@ -63,17 +78,17 @@ class Collector {
 
   start () {
     const handleChange = this._handleChange.bind(this);
-    switch (this._mode) {
-      case Mode.LOAD:
+    switch (this._collection) {
+      case Collection.LOAD:
         this.collect();
         break;
 
-      case Mode.FULL:
+      case Collection.FULL:
         this.collect();
         this._location = new Location(handleChange);
         break;
 
-      case Mode.HASH:
+      case Collection.HASH:
         this.collect();
         this._location = new Location(handleChange, true);
         break;
@@ -104,8 +119,8 @@ class Collector {
     this._isCollected = true;
   }
 
-  get mode () {
-    return this._mode;
+  get collection () {
+    return this._collection;
   }
 
   get layer () {

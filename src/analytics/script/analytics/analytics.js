@@ -1,6 +1,6 @@
 import api from '../../api.js';
 import patch from '../../../patch/script/patch';
-import Mode from './engine/mode';
+import Collection from './engine/collection';
 import { Init } from './facade/init';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
@@ -98,6 +98,10 @@ class Analytics {
     return opt;
   }
 
+  get collection () {
+    return this._collector.collection;
+  }
+
   push (type, layer) {
     push(type, layer);
   }
@@ -113,7 +117,7 @@ class Analytics {
 
 const analytics = new Analytics();
 
-analytics.Mode = Mode;
+analytics.Collection = Collection;
 analytics.PushType = PushType;
 
 export default analytics;

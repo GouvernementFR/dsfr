@@ -1,8 +1,8 @@
-const Mode = {
+const Collection = {
   MANUAL: 'manual',
   LOAD: 'load',
   FULL: 'full',
   HASH: 'hash'
 };
 
-export default Mode;
+export default Collection;

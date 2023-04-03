@@ -16,12 +16,13 @@
 
   <script>
     window['<%= namespace %>'] = {
-      verbose: false,
+      verbose: true,
       production: false,
       // mode: 'manual',
       analytics: {
         domain: 'gva.et-gv.fr',
-        // mode: 'manual', // disable automatic path tracking, by default: auto
+        // collection: 'manual', // method of collection [manual, load, full, hash]
+        // rating: false, // is click rate enabled
         cmp: {
           id: 'tarteaucitron'
         },
