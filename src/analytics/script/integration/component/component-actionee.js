@@ -56,7 +56,6 @@ class ComponentActionee extends Actionee {
     this._type = type;
     this.addAscent(ButtonEmission.CLICK, this._actValidatedInput.bind(this));
     const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
-    console.log(button);
     if (button) button.isMuted = true;
     this._validatedInput = node.querySelector('input');
     this._inputValidationHandler = this._handleInputValidation.bind(this);

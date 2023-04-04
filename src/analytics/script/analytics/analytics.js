@@ -61,8 +61,6 @@ class Analytics {
   _start () {
     if (this._isReady) return;
 
-    console.log('start');
-
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
     this._collector = new Collector(this._config);
     this._collector.reset();

@@ -99,7 +99,6 @@ class Action {
     let mode;
     switch (this._status) {
       case ActionStatus.UNSTARTED:
-        console.log('start', this._isRatingActive, Action.isRatingEnabled);
         if (!this._isRatingActive || !Action.isRatingEnabled) return [];
         mode = ActionMode.IN;
         break;

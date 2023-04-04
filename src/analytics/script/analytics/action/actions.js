@@ -11,7 +11,6 @@ class Actions {
   }
 
   getAction (name) {
-    console.log('actions');
     let action = this._actions.filter(action => action.name === name)[0];
     if (!action) {
       action = new Action(name);
