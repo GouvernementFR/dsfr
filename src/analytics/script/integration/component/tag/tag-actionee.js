@@ -1,11 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
 import { TagSelector } from './tag-selector';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class TagActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -13,18 +12,23 @@ class TagActionee extends ComponentActionee {
   }
 
   init () {
-    if (this.detectPressable()) {
-      this.listenPressable();
-      return;
-    }
+    switch (true) {
+      case this.detectPressableType():
+        this.listenPressable();
+        break;
 
-    if (this.node.tagName === 'A' || this.node.tagName === 'BUTTON') {
-      if (this.node.classList.contains(TagSelector.DISMISSIBLE)) {
-        this._type = Type.DISMISS;
-      } else {
-        this.detectInteraction();
-      }
-      this.listenClick();
+      case this.isInteractive && this.classList.contains(TagSelector.DISMISSIBLE):
+        this.setDismissType();
+        this.listenClick();
+        break;
+
+      case this.isInteractive:
+        this.detectInteractionType();
+        this.listenClick();
+        break;
+
+      default:
+        this.setImpressionType();
     }
   }
 

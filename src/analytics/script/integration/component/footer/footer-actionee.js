@@ -4,11 +4,15 @@ import ID from './id';
 
 class FooterActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
+    super(1);
   }
 
   static get instanceClassName () {
     return 'FooterActionee';
+  }
+
+  init () {
+    this.setImpressionType();
   }
 
   get label () {

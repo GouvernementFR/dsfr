@@ -4,7 +4,7 @@ import { NavigationSelector } from './navigation-selector';
 
 class NavigationSectionActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {

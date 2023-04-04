@@ -3,6 +3,7 @@ export const Type = {
   IMPRESSION: {
     id: 'impression', // element appeared in the page
     isSingular: true,
+    isStarting: true,
     attributed: false,
     type: 'impression'
   },

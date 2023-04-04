@@ -3,16 +3,16 @@ import { Type } from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
 
 class Actionee extends api.core.Instance {
-  constructor (type = null, priority = -1, category = '', title = null) {
+  constructor (priority = -1, isRating = true, category = '', title = null) {
     super();
-    this._type = type;
+    this._type = null;
     this._priority = priority;
     this._category = category;
     this._title = title;
     this._parameters = {};
     this._data = {};
-    this._requestImpression = false;
     this._isMuted = false;
+    this._isRating = isRating;
   }
 
   static get instanceClassName () {
@@ -47,22 +47,18 @@ class Actionee extends api.core.Instance {
     return api.internals.property.completeAssign(super.proxy, proxy, proxyAccessors);
   }
 
-  listenClick () {
-    this.listen('click', this.handleClick.bind(this), { capture: true });
-  }
-
-  handleClick () {
-    this.act();
-  }
-
   _config (element, registration) {
     super._config(element, registration);
-    if (this._type !== null) {
-      this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters);
-      if (this._isMuted) this._actionElement.isMuted = true;
+
+    if (this._type === null) {
+      this._isMuted = true;
+      return;
     }
 
-    const actionees = element.instances.filter(instance => instance.isActionee).sort((a, b) => b.priority - a.priority);
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters);
+    if (this._isMuted) this._actionElement.isMuted = true;
+
+    const actionees = element.instances.filter(instance => instance.isActionee && instance.type).sort((a, b) => b.priority - a.priority);
     if (actionees.length <= 1) return;
     actionees.forEach((actionee, index) => { actionee.isMuted = index > 0; });
   }
@@ -76,15 +72,27 @@ class Actionee extends api.core.Instance {
     if (this._actionElement) this._actionElement.isMuted = value;
   }
 
-  detectInteraction (node) {
+  get priority () {
+    return this._priority;
+  }
+
+  setPriority (value) {
+    this._priority = value;
+  }
+
+  get isInteractive () {
+    return this.node.tagName === 'A' || this.node.tagName === 'BUTTON';
+  }
+
+  detectInteractionType (node) {
     if (!node) node = this.node;
-    const tag = node.tagName.toLowerCase();
+    const tag = node.tagName;
     const href = node.getAttribute('href');
     const isDownload = node.hasAttribute('download');
     const hostname = node.hostname;
 
     switch (true) {
-      case tag !== 'a':
+      case tag !== 'A':
         this._type = Type.CLICK;
         break;
 
@@ -109,9 +117,24 @@ class Actionee extends api.core.Instance {
     }
   }
 
-  impress (data = {}) {
+  setClickType () {
+    this._type = Type.CLICK;
+  }
+
+  listenClick (target) {
+    if (target) {
+      this._clickTarget = target;
+      this._clickHandler = this.handleClick.bind(this);
+      this._clickTarget.addEventListener('click', this._clickHandler, { capture: true });
+    } else this.listen('click', this.handleClick.bind(this), { capture: true });
+  }
+
+  handleClick () {
+    this.act();
+  }
+
+  setImpressionType () {
     this._type = Type.IMPRESSION;
-    this._requestImpression = true;
   }
 
   act (data = {}) {
@@ -150,16 +173,23 @@ class Actionee extends api.core.Instance {
     return null;
   }
 
-  get priority () {
-    return this._priority;
-  }
-
   get isActionee () {
     return true;
   }
 
   get level () {
     return this._level;
+  }
+
+  get type () {
+    return this._type;
+  }
+
+  dispose () {
+    if (this._clickTarget) {
+      this._clickTarget.removeEventListener('click', this._clickHandler);
+    }
+    super.dispose();
   }
 }
 

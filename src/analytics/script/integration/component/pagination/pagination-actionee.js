@@ -3,8 +3,7 @@ import ID from './id';
 
 class PaginationActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
-    this._data = {};
+    super(1);
   }
 
   static get instanceClassName () {
@@ -12,12 +11,8 @@ class PaginationActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
-  }
-
-  handleClick () {
-    this.act();
   }
 
   get label () {

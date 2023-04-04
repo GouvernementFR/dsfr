@@ -1,11 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
 // import api from '../../../../api.js';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class UploadActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -13,8 +12,8 @@ class UploadActionee extends ComponentActionee {
   }
 
   init () {
+    this.setClickType();
     // this._label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    this.detectInteraction();
     this.listenClick();
   }
 

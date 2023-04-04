@@ -3,7 +3,7 @@ import ID from './id';
 
 class HighlightActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -11,7 +11,7 @@ class HighlightActionee extends ComponentActionee {
   }
 
   init () {
-    this.impress();
+    this.setImpressionType();
   }
 
   get label () {

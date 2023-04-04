@@ -1,12 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { CardSelector } from './card-selector';
 import ID from './id';
 
 class CardActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
-    this.handlingClick = this.handleClick.bind(this);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -17,9 +15,9 @@ class CardActionee extends ComponentActionee {
     const link = this.node.querySelector(CardSelector.LINK);
     if (link) {
       this.link = link;
-      this.detectInteraction(link);
-      this.link.addEventListener('click', this.handlingClick, { capture: true });
-    }
+      this.detectInteractionType(link);
+      this.listenClick(link);
+    } else this.setImpressionType();
   }
 
   get label () {

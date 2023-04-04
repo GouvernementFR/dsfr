@@ -1,15 +1,18 @@
 import { ComponentActionee } from '../component-actionee';
 import { ContentSelector } from './content-selector';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class ContentActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(1);
   }
 
   static get instanceClassName () {
     return 'ContentActionee';
+  }
+
+  init () {
+    this.setImpressionType();
   }
 
   get label () {

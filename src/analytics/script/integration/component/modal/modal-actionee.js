@@ -1,11 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { ModalSelector } from './modal-selector.js';
 import ID from './id';
 
 class ModalActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -13,6 +12,7 @@ class ModalActionee extends ComponentActionee {
   }
 
   init () {
+    this.setDiscloseType();
     this.detectLevel();
     this.listenDisclose();
   }

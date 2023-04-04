@@ -1,12 +1,11 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { TabButtonActionee } from './tab-button-actionee';
 import ID from './id';
 
 class TabActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -14,6 +13,7 @@ class TabActionee extends ComponentActionee {
   }
 
   init () {
+    this.setDiscloseType();
     this.register(`[aria-controls="${this.id}"]`, TabButtonActionee);
     this._instance = this.element.getInstance('TabPanel');
     this.listenDisclose();

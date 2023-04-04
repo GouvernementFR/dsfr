@@ -2,7 +2,7 @@ import { ComponentActionee } from '../component-actionee';
 
 class HeaderModalButtonActionee extends ComponentActionee {
   constructor () {
-    super(null, 4);
+    super(4);
   }
 
   static get instanceClassName () {

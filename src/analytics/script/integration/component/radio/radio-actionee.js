@@ -6,7 +6,7 @@ import ID from './id';
 
 class RadioActionee extends ComponentActionee {
   constructor () {
-    super(Type.CHECK, 1);
+    super(1);
     this._data = {};
   }
 
@@ -15,6 +15,7 @@ class RadioActionee extends ComponentActionee {
   }
 
   init () {
+    this.setCheckType();
     this.listenCheckable();
   }
 

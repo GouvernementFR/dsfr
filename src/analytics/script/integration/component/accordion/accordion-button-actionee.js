@@ -1,10 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class AccordionButtonActionee extends ComponentActionee {
   constructor () {
-    super(Type.CLICK, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -12,10 +11,10 @@ class AccordionButtonActionee extends ComponentActionee {
   }
 
   init () {
+    this.setClickType();
     this.id = this.node.id || this.registration.creator.node.id;
     this._button = this.element.getInstance('CollapseButton');
     this.listenClick();
-    console.log('init accordion button');
   }
 
   handleClick () {

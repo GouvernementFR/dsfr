@@ -1,12 +1,11 @@
 import { ComponentActionee } from '../component-actionee';
 import { TranscriptionSelector } from './transcription-selector';
 import { TranscriptionButtonActionee } from './transcription-button-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class TranscriptionActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -14,6 +13,7 @@ class TranscriptionActionee extends ComponentActionee {
   }
 
   init () {
+    this.setDiscloseType();
     this.wrapper = this.node.closest(TranscriptionSelector.ACCORDION);
     this.detectLevel(this.wrapper);
     this.register(`[aria-controls="${this.id}"]`, TranscriptionButtonActionee);

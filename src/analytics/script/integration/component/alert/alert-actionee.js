@@ -1,15 +1,18 @@
 import { ComponentActionee } from '../component-actionee';
 import { AlertSelector } from './alert-selector';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class AlertActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(1);
   }
 
   static get instanceClassName () {
     return 'AlertActionee';
+  }
+
+  init () {
+    this.setImpressionType();
   }
 
   get label () {

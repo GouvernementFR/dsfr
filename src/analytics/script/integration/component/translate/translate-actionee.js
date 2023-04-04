@@ -1,12 +1,11 @@
 import { ComponentActionee } from '../component-actionee';
 import { TranslateSelector } from './translate-selector';
 import { TranslateButtonActionee } from './translate-button-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class TranslateActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -14,6 +13,7 @@ class TranslateActionee extends ComponentActionee {
   }
 
   init () {
+    this.setDiscloseType();
     this.register(`[aria-controls="${this.id}"]`, TranslateButtonActionee);
     this._instance = this.element.getInstance('Collapse');
     this.listenDisclose();

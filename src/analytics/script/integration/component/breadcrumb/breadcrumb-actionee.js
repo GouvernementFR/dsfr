@@ -5,7 +5,7 @@ import ID from './id';
 
 class BreadcrumbActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -14,10 +14,11 @@ class BreadcrumbActionee extends ComponentActionee {
 
   init () {
     if (!this.isBreakpoint(api.core.Breakpoints.MD)) {
+      this.setDiscloseType();
       this.register(`[aria-controls="${this.id}"]`, BreadcrumbButtonActionee);
       this.listenDisclose();
     } else {
-      this.impress();
+      this.setImpressionType();
     }
   }
 

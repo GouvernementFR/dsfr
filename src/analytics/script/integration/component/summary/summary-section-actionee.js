@@ -3,7 +3,7 @@ import { SummarySelector } from './summary-selector';
 
 class SummarySectionActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {

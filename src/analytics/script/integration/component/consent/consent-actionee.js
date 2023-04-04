@@ -1,10 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class ConsentActionee extends ComponentActionee {
   constructor () {
-    super(Type.null);
+    super(1);
   }
 
   static get instanceClassName () {

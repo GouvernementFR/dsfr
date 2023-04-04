@@ -4,7 +4,7 @@ import { ButtonEmission } from './button-emission';
 
 class ButtonActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
     this._data = {};
   }
 
@@ -13,7 +13,7 @@ class ButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 

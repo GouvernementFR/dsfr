@@ -3,7 +3,7 @@ import ID from './id';
 
 class ConnectActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -11,7 +11,7 @@ class ConnectActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 

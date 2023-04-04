@@ -1,11 +1,10 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class SelectActionee extends ComponentActionee {
   constructor () {
-    super(Type.CHANGE, 1);
+    super(1);
     this._data = {};
   }
 
@@ -14,6 +13,7 @@ class SelectActionee extends ComponentActionee {
   }
 
   init () {
+    this.setChangeType();
     this.listenChange();
   }
 

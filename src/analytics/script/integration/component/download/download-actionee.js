@@ -1,10 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class DownloadActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -12,7 +11,7 @@ class DownloadActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 

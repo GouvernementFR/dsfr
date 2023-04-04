@@ -1,10 +1,11 @@
 import api from '../../../api.js';
 import { Type } from '../../analytics/action/type';
 import { Actionee } from '../core/actionee';
+import { ButtonEmission } from './button/button-emission';
 
 class ComponentActionee extends Actionee {
-  constructor (type = null, priority = -1) {
-    super(type, priority, 'dsfr_component');
+  constructor (priority = -1, isRating = true) {
+    super(priority, isRating, 'dsfr_component');
   }
 
   static get instanceClassName () {
@@ -23,34 +24,62 @@ class ComponentActionee extends Actionee {
     return api.internals.property.completeAssign(super.proxy, proxyAccessors);
   }
 
-  listenDisclose () {
-    this.listen(api.core.DisclosureEvent.DISCLOSE, this.handleDisclose.bind(this), { capture: true });
+  setDiscloseType () {
+    this._type = Type.DISCLOSE;
   }
 
-  handleDisclose () {
+  listenDisclose () {
+    this.listen(api.core.DisclosureEvent.DISCLOSE, this._handleDisclose.bind(this), { capture: true });
+  }
+
+  _handleDisclose () {
     this.act();
   }
 
+  setChangeType () {
+    this._type = Type.CHANGE;
+  }
+
   listenChange () {
-    this.listen('change', this.handleChange.bind(this), { capture: true });
+    this.listen('change', this._handleChange.bind(this), { capture: true });
   }
 
-  listenCheckable () {
-    this.listen('change', this.handleCheckable.bind(this), { capture: true });
-  }
-
-  listenPressable () {
-    this.listen('click', this.handlePressable.bind(this), { capture: true });
-  }
-
-  handleChange (e) {
+  _handleChange (e) {
     if (e.target && e.target.value) {
       this._data.component_value = e.target.value;
       this.act();
     }
   }
 
-  handleCheckable (e) {
+  listenInputValidation (node, type = Type.CLICK) {
+    if (!node) node = this.node;
+    this._type = type;
+    this.addAscent(ButtonEmission.CLICK, this.send.bind(this));
+    const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
+    if (button) button.isMuted = true;
+    this._validatedInput = node.querySelector('input');
+    this._inputValidationHandler = this._handleInputValidation.bind(this);
+    if (this._validatedInput) this._validatedInput.addEventListener('keydown', this._inputValidationHandler);
+  }
+
+  _handleInputValidation (e) {
+    if (e.keyCode === 13) this.act({ component_value: this._validatedInput.value.trim() });
+  }
+
+  setCheckType () {
+    this._type = Type.CHECK;
+  }
+
+  detectCheckableType () {
+    const isChecked = this.node.checked;
+    this._type = isChecked ? Type.UNCHECK : Type.CHECK;
+  }
+
+  listenCheckable () {
+    this.listen('change', this._handleCheckable.bind(this), { capture: true });
+  }
+
+  _handleCheckable (e) {
     if (e.target && e.target.value !== 'on') {
       this._data.component_value = e.target.value;
     }
@@ -63,7 +92,20 @@ class ComponentActionee extends Actionee {
     }
   }
 
-  handlePressable (e) {
+  detectPressableType () {
+    const isPressable = this.node.hasAttribute('aria-pressed');
+    if (isPressable) {
+      const isPressed = this.node.getAttribute('aria-pressed') === 'true';
+      this._type = isPressed ? Type.RELEASE : Type.PRESS;
+    }
+    return isPressable;
+  }
+
+  listenPressable () {
+    this.listen('click', this._handlePressable.bind(this), { capture: true });
+  }
+
+  _handlePressable (e) {
     // if (e.target && e.target.value !== 'on') {
     //   this._data.component_value = e.target.value;
     // }
@@ -76,22 +118,20 @@ class ComponentActionee extends Actionee {
     }
   }
 
-  detectCheckable () {
-    const isChecked = this.node.checked;
-    this._type = isChecked ? Type.UNCHECK : Type.CHECK;
-  }
-
-  detectPressable () {
-    const isPressable = this.node.hasAttribute('aria-pressed');
-    if (isPressable) {
-      const isPressed = this.node.getAttribute('aria-pressed') === 'true';
-      this._type = isPressed ? Type.RELEASE : Type.PRESS;
-    }
-    return isPressable;
+  setDismissType () {
+    this._type = Type.DISMISS;
   }
 
   get component () {
     return null;
+  }
+
+  dispose () {
+    if (this._validatedInput) {
+      this._validatedInput.removeEventListener('keydown', this._inputValidationHandler);
+    }
+
+    super.dispose();
   }
 }
 

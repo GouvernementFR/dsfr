@@ -1,12 +1,11 @@
 import { ComponentActionee } from '../component-actionee';
 import { AccordionSelector } from './accordion-selector';
 import { AccordionButtonActionee } from './accordion-button-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class AccordionActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -14,6 +13,7 @@ class AccordionActionee extends ComponentActionee {
   }
 
   init () {
+    this.setDiscloseType();
     this.wrapper = this.node.closest(AccordionSelector.ACCORDION);
     this.detectLevel(this.wrapper);
     this.register(`[aria-controls="${this.id}"]`, AccordionButtonActionee);

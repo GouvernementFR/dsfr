@@ -3,7 +3,7 @@ import { SidemenuSelector } from './sidemenu-selector';
 
 class SidemenuActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
   }
 
   static get instanceClassName () {
