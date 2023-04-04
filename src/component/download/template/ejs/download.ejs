@@ -34,6 +34,7 @@ if (download.id) attributes.id = download.id;
 const markup = download.markup || 'h3';
 const href = download.href || '#';
 const assessAttrs = download.assess ? {'data-fr-assess-file': typeof(download.assess) === 'string' ? download.assess : ''} : {};
+assessAttrs.id = download.id || uniqueId(prefix + '-download-link');
 classes.push(`${prefix}-download`);
 if (download.id) assessAttrs.id = `${download.id}-link`;
 

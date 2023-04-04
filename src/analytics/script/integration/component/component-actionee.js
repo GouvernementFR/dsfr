@@ -141,6 +141,17 @@ class ComponentActionee extends Actionee {
 
     super.dispose();
   }
+
+  getFirstText (node) {
+    if (!node) node = this.node;
+    if (node.childNodes.length === 0) return '';
+    if (node.childNodes[0].nodeType === Node.TEXT_NODE) {
+      if (node.childNodes[0].textContent.trim() === '') return node.childNodes[1] ? node.childNodes[1].textContent.trim() : '';
+      return node.childNodes[0].textContent.trim();
+    } else {
+      return this.getFirstText(node.childNodes[0]);
+    }
+  }
 }
 
 export { ComponentActionee };
