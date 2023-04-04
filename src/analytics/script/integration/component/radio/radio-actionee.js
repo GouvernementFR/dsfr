@@ -1,6 +1,5 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { FormSelector } from '../form/form-selector';
 import ID from './id';
 
