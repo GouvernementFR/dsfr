@@ -4,7 +4,7 @@ import { Hierarchy } from '../utils/hierarchy/hierarchy';
 import queue from '../engine/queue';
 
 class ActionElement {
-  constructor (node, type, id, category = '', title = null, parameters = {}) {
+  constructor (node, type, id, category = '', title = null, parameters = {}, isRatingActive) {
     this._node = node;
     this._type = type;
     this._id = id || this._node.id;
@@ -12,6 +12,7 @@ class ActionElement {
     this._title = title;
     this._category = category;
     this._parameters = parameters;
+    this._isRatingActive = isRatingActive;
 
     // this._init();
     requestAnimationFrame(this._init.bind(this));
@@ -28,6 +29,7 @@ class ActionElement {
     this._name = `${type}${this._title || this._hierarchy.title}${id}`;
 
     this._action = actions.getAction(this._name, this._type.status);
+    this._action.isRatingActive = this._isRatingActive;
     if (this._type.isSingular) this._action.singularize();
     Object.keys(this._parameters).forEach(key => this._action.addParameter(key, this._parameters[key]));
     this._action.isMuted = this._isMuted;

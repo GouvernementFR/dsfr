@@ -4,7 +4,7 @@ import ID from './id';
 
 class ToggleActionee extends ComponentActionee {
   constructor () {
-    super(1);
+    super(1, true);
     this._data = {};
   }
 

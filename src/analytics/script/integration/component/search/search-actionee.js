@@ -4,7 +4,7 @@ import ID from './id';
 
 class SearchActionee extends ComponentActionee {
   constructor () {
-    super(2);
+    super(2, true);
   }
 
   static get instanceClassName () {

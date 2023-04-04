@@ -85,106 +85,108 @@ import { TranslateActionee } from './translate/translate-actionee';
 import { UploadSelector } from './upload/upload-selector';
 import { UploadActionee } from './upload/upload-actionee';
 
-if (api.accordion) {
-  api.internals.register(api.accordion.AccordionSelector.COLLAPSE, AccordionActionee);
-}
+const integrateComponents = () => {
+  if (api.accordion) {
+    api.internals.register(api.accordion.AccordionSelector.COLLAPSE, AccordionActionee);
+  }
 
-if (api.breadcrumb) {
-  api.internals.register(BreadcrumbSelector.COLLAPSE, BreadcrumbActionee);
-  api.internals.register(BreadcrumbSelector.LINK, BreadcrumbLinkActionee);
-}
+  if (api.breadcrumb) {
+    api.internals.register(BreadcrumbSelector.COLLAPSE, BreadcrumbActionee);
+    api.internals.register(BreadcrumbSelector.LINK, BreadcrumbLinkActionee);
+  }
 
-api.internals.register(AlertSelector.ALERT, AlertActionee);
+  api.internals.register(AlertSelector.ALERT, AlertActionee);
 
-api.internals.register(BadgeSelector.BADGE, BadgeActionee);
+  api.internals.register(BadgeSelector.BADGE, BadgeActionee);
 
-api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
+  api.internals.register(ButtonSelector.BUTTON, ButtonActionee);
 
-api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
+  api.internals.register(CalloutSelector.CALLOUT, CalloutActionee);
 
-api.internals.register(ConnectSelector.CONNECT, ConnectActionee);
-api.internals.register(ConnectSelector.LINK, ConnectLinkActionee);
+  api.internals.register(ConnectSelector.CONNECT, ConnectActionee);
+  api.internals.register(ConnectSelector.LINK, ConnectLinkActionee);
 
-api.internals.register(ContentSelector.CONTENT, ContentActionee);
+  api.internals.register(ContentSelector.CONTENT, ContentActionee);
 
-api.internals.register(ConsentSelector.BANNER, ConsentActionee);
+  api.internals.register(ConsentSelector.BANNER, ConsentActionee);
 
-api.internals.register(CardSelector.CARD, CardActionee);
+  api.internals.register(CardSelector.CARD, CardActionee);
 
-api.internals.register(InputSelector.INPUT, InputActionee);
+  api.internals.register(InputSelector.INPUT, InputActionee);
 
-api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
+  api.internals.register(CheckboxSelector.INPUT, CheckboxActionee);
 
-api.internals.register(DownloadSelector.LINK, DownloadActionee);
+  api.internals.register(DownloadSelector.LINK, DownloadActionee);
 
-api.internals.register(FooterSelector.FOOTER, FooterActionee);
-api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
+  api.internals.register(FooterSelector.FOOTER, FooterActionee);
+  api.internals.register(FooterSelector.FOOTER_LINKS, FooterLinkActionee);
 
-api.internals.register(FollowSelector.FOLLOW, FollowActionee);
+  api.internals.register(FollowSelector.FOLLOW, FollowActionee);
 
-if (api.header) {
-  api.internals.register(api.header.HeaderSelector.HEADER, HeaderActionee);
-  api.internals.register(api.header.HeaderSelector.MODALS, HeaderModalActionee);
-  api.internals.register(HeaderSelector.TOOLS_BUTTON, HeaderToolsButtonActionee);
-  api.internals.register(HeaderSelector.MENU_BUTTON, HeaderMenuButtonActionee);
-}
+  if (api.header) {
+    api.internals.register(api.header.HeaderSelector.HEADER, HeaderActionee);
+    api.internals.register(api.header.HeaderSelector.MODALS, HeaderModalActionee);
+    api.internals.register(HeaderSelector.TOOLS_BUTTON, HeaderToolsButtonActionee);
+    api.internals.register(HeaderSelector.MENU_BUTTON, HeaderMenuButtonActionee);
+  }
 
-api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
+  api.internals.register(HighlightSelector.HIGHLIGHT, HighlightActionee);
 
-api.internals.register(LinkSelector.LINK, LinkActionee);
+  api.internals.register(LinkSelector.LINK, LinkActionee);
 
-if (api.modal) {
-  api.internals.register(api.modal.ModalSelector.MODAL, ModalActionee);
-}
+  if (api.modal) {
+    api.internals.register(api.modal.ModalSelector.MODAL, ModalActionee);
+  }
 
-if (api.navigation) {
-  api.internals.register(api.navigation.NavigationSelector.NAVIGATION, NavigationActionee);
-  api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
-  api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
-}
+  if (api.navigation) {
+    api.internals.register(api.navigation.NavigationSelector.NAVIGATION, NavigationActionee);
+    api.internals.register(NavigationSelector.LINK, NavigationLinkActionee);
+    api.internals.register(api.navigation.NavigationSelector.COLLAPSE, NavigationSectionActionee);
+  }
 
-api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
+  api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
 
-api.internals.register(PaginationSelector.LINK, PaginationActionee);
+  api.internals.register(PaginationSelector.LINK, PaginationActionee);
 
-api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
+  api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
 
-api.internals.register(RadioSelector.INPUT, RadioActionee);
+  api.internals.register(RadioSelector.INPUT, RadioActionee);
 
-api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
+  api.internals.register(SearchSelector.SEARCH_BAR, SearchActionee);
 
-api.internals.register(SelectSelector.SELECT, SelectActionee);
+  api.internals.register(SelectSelector.SELECT, SelectActionee);
 
-if (api.sidemenu) {
-  api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
-  api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
-  api.internals.register(api.sidemenu.SidemenuSelector.COLLAPSE, SidemenuSectionActionee);
-}
+  if (api.sidemenu) {
+    api.internals.register(SidemenuSelector.SIDEMENU, SidemenuActionee);
+    api.internals.register(SidemenuSelector.LINK, SidemenuLinkActionee);
+    api.internals.register(api.sidemenu.SidemenuSelector.COLLAPSE, SidemenuSectionActionee);
+  }
 
-api.internals.register(ShareSelector.SHARE, ShareActionee);
+  api.internals.register(ShareSelector.SHARE, ShareActionee);
 
-api.internals.register(StepperSelector.STEPPER, StepperActionee);
+  api.internals.register(StepperSelector.STEPPER, StepperActionee);
 
-api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
-api.internals.register(SummarySelector.LINK, SummaryLinkActionee);
-api.internals.register(SummarySelector.ITEM, SummarySectionActionee);
+  api.internals.register(SummarySelector.SUMMARY, SummaryActionee);
+  api.internals.register(SummarySelector.LINK, SummaryLinkActionee);
+  api.internals.register(SummarySelector.ITEM, SummarySectionActionee);
 
-if (api.tab) {
-  api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
-}
+  if (api.tab) {
+    api.internals.register(api.tab.TabSelector.PANEL, TabActionee);
+  }
 
-api.internals.register(TableSelector.TABLE, TableActionee);
+  api.internals.register(TableSelector.TABLE, TableActionee);
 
-api.internals.register(TagSelector.TAG, TagActionee);
+  api.internals.register(TagSelector.TAG, TagActionee);
 
-api.internals.register(TileSelector.TILE, TileActionee);
+  api.internals.register(TileSelector.TILE, TileActionee);
 
-api.internals.register(ToggleSelector.INPUT, ToggleActionee);
+  api.internals.register(ToggleSelector.INPUT, ToggleActionee);
 
-api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
+  api.internals.register(TranscriptionSelector.COLLAPSE, TranscriptionActionee);
 
-api.internals.register(TranslateSelector.COLLAPSE, TranslateActionee);
+  api.internals.register(TranslateSelector.COLLAPSE, TranslateActionee);
 
-api.internals.register(UploadSelector.UPLOAD, UploadActionee);
+  api.internals.register(UploadSelector.UPLOAD, UploadActionee);
+};
 
-export default api;
+export default integrateComponents;

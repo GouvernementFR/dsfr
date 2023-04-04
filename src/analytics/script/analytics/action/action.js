@@ -15,6 +15,7 @@ class Action {
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
     this._parameters = {};
+    this._isRatingActive = true;
   }
 
   get isMuted () {
@@ -47,6 +48,14 @@ class Action {
 
   singularize () {
     this._status = ActionStatus.SINGULAR;
+  }
+
+  get isRatingActive () {
+    return this._isRatingActive;
+  }
+
+  set isRatingActive (value) {
+    this._isRatingActive = value;
   }
 
   addParameter (key, value) {
@@ -90,6 +99,8 @@ class Action {
     let mode;
     switch (this._status) {
       case ActionStatus.UNSTARTED:
+        console.log('start', this._isRatingActive, Action.isRatingEnabled);
+        if (!this._isRatingActive || !Action.isRatingEnabled) return [];
         mode = ActionMode.IN;
         break;
 
@@ -135,5 +146,7 @@ class Action {
     return layer;
   }
 }
+
+Action.isRatingEnabled = false;
 
 export { Action };

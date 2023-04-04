@@ -1,10 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class ConnectLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.CLICK, 2);
+    super(2);
   }
 
   static get instanceClassName () {

@@ -5,7 +5,7 @@ import ID from './id';
 
 class TranscriptionActionee extends ComponentActionee {
   constructor () {
-    super(2);
+    super(2, true);
   }
 
   static get instanceClassName () {

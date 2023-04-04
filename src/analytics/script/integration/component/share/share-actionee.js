@@ -1,11 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 import { ShareSelector } from './share-selector';
 
 class ShareActionee extends ComponentActionee {
   constructor () {
-    super(1);
+    super(1, true);
   }
 
   static get instanceClassName () {

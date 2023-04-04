@@ -4,7 +4,7 @@ import { ButtonEmission } from './button-emission';
 
 class ButtonActionee extends ComponentActionee {
   constructor () {
-    super(1);
+    super(1, true);
     this._data = {};
   }
 

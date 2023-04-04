@@ -5,7 +5,7 @@ import ID from './id';
 
 class FollowActionee extends ComponentActionee {
   constructor () {
-    super(2);
+    super(2, true);
   }
 
   static get instanceClassName () {

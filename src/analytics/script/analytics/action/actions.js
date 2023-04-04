@@ -6,7 +6,12 @@ class Actions {
     this._actions = [];
   }
 
+  configure (config) {
+    Action.isRatingEnabled = config.enableRating === true;
+  }
+
   getAction (name) {
+    console.log('actions');
     let action = this._actions.filter(action => action.name === name)[0];
     if (!action) {
       action = new Action(name);

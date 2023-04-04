@@ -5,6 +5,7 @@ import { Init } from './facade/init';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
 import PushType from './facade/push-type';
+import actions from './action/actions';
 import queue from './engine/queue';
 import opt from './facade/opt';
 import { Collector } from './engine/collector';
@@ -19,10 +20,10 @@ class Analytics {
         this._reject = reject;
       }
     });
-    this._configure(api);
+    this._configure();
   }
 
-  _configure (api) {
+  _configure () {
     switch (true) {
       case window[patch.namespace] !== undefined:
         this._config = window[patch.namespace].configuration.analytics;
@@ -59,12 +60,16 @@ class Analytics {
 
   _start () {
     if (this._isReady) return;
-    this._isReady = true;
-    this._resolve();
+
+    console.log('start');
 
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
     this._collector = new Collector(this._config);
     this._collector.reset();
+    actions.configure(this._config);
+
+    this._isReady = true;
+    this._resolve();
 
     queue.start();
     this._collector.start();

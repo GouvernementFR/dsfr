@@ -3,7 +3,7 @@ import { Type } from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
 
 class Actionee extends api.core.Instance {
-  constructor (priority = -1, isRating = true, category = '', title = null) {
+  constructor (priority = -1, isRatingActive = false, category = '', title = null) {
     super();
     this._type = null;
     this._priority = priority;
@@ -12,7 +12,7 @@ class Actionee extends api.core.Instance {
     this._parameters = {};
     this._data = {};
     this._isMuted = false;
-    this._isRating = isRating;
+    this._isRatingActive = isRatingActive;
   }
 
   static get instanceClassName () {
@@ -55,7 +55,7 @@ class Actionee extends api.core.Instance {
       return;
     }
 
-    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters);
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters, this._isRatingActive);
     if (this._isMuted) this._actionElement.isMuted = true;
 
     const actionees = element.instances.filter(instance => instance.isActionee && instance.type).sort((a, b) => b.priority - a.priority);
