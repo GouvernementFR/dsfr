@@ -54,8 +54,9 @@ class ComponentActionee extends Actionee {
   listenInputValidation (node, type = Type.CLICK) {
     if (!node) node = this.node;
     this._type = type;
-    this.addAscent(ButtonEmission.CLICK, this.send.bind(this));
+    this.addAscent(ButtonEmission.CLICK, this._actValidatedInput.bind(this));
     const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
+    console.log(button);
     if (button) button.isMuted = true;
     this._validatedInput = node.querySelector('input');
     this._inputValidationHandler = this._handleInputValidation.bind(this);
@@ -63,7 +64,14 @@ class ComponentActionee extends Actionee {
   }
 
   _handleInputValidation (e) {
-    if (e.keyCode === 13) this.act({ component_value: this._validatedInput.value.trim() });
+    if (e.keyCode === 13) this._actValidatedInput();
+  }
+
+  _actValidatedInput () {
+    if (this._isActingValidatedInput) return;
+    this._isActingValidatedInput = true;
+    this.act({ component_value: this._validatedInput.value.trim() });
+    this.request(() => { this._isActingValidatedInput = true; });
   }
 
   setCheckType () {

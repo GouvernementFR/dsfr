@@ -44,12 +44,12 @@ class ActionElement {
   }
 
   get isMuted () {
-    return this._isMuted;
+    return this._action ? this._action.isMuted : this._isMuted;
   }
 
   set isMuted (value) {
     this._isMuted = value;
-    if (this._action) this.action.isMuted = value;
+    if (this._action) this._action.isMuted = value;
   }
 
   get action () {

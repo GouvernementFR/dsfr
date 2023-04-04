@@ -64,7 +64,7 @@ class Actionee extends api.core.Instance {
   }
 
   get isMuted () {
-    return !this._actionElement && this._actionElement.isMuted;
+    return this._actionElement ? this._actionElement.isMuted : this._isMuted;
   }
 
   set isMuted (value) {

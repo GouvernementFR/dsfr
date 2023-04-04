@@ -14,7 +14,11 @@ class FollowActionee extends ComponentActionee {
 
   init () {
     this._inputGroup = this.querySelector(FollowSelector.NEWSLETTER_INPUT_GROUP);
-    if (this._inputGroup) this.listenInputValidation(this._inputGroup, Type.SUBSCRIBE);
+    if (this._inputGroup) {
+      this.listenInputValidation(this._inputGroup, Type.SUBSCRIBE);
+      const input = this.element.getDescendantInstances('InputActionee', null, true)[0];
+      if (input) input.isMuted = true;
+    }
   }
 
   get label () {

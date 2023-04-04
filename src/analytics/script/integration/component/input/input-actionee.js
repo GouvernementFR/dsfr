@@ -1,7 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
 import api from '../../../../api.js';
-import { ButtonEmission } from '../button/button-emission';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class InputActionee extends ComponentActionee {
