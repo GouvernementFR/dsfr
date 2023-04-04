@@ -20,8 +20,8 @@ class TranslateActionee extends ComponentActionee {
   }
 
   get label () {
-    const translateBtn = this.node.querySelector(TranslateSelector.BTN);
-    return translateBtn.getAttribute('title') || 'Sélecteur de langue';
+    const button = this.node.querySelector(TranslateSelector.BUTTON);
+    return button.getAttribute('title') || 'Sélecteur de langue';
   }
 
   get component () {

@@ -17,7 +17,7 @@ class TagActionee extends ComponentActionee {
         this.listenPressable();
         break;
 
-      case this.isInteractive && this.classList.contains(TagSelector.DISMISSIBLE):
+      case this.isInteractive && this.node.classList.contains(TagSelector.DISMISSIBLE):
         this.setDismissType();
         this.listenClick();
         break;
