@@ -16,7 +16,7 @@ subdir:
   button: Bouton (button)
   button-a-internal: Bouton interne avec etiquette a
   button-a-external: Bouton externe avec etiquette a
-  button-a-download: Bouton de telechargement avec etiquette a
+  button-a-download: Bouton de téléchargement avec etiquette a
   callout: Mise en avant (callout)
   card: Carte (card)
   card-button: Carte avec boutons
