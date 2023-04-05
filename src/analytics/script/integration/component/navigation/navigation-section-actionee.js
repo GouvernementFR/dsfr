@@ -19,10 +19,11 @@ class NavigationSectionActionee extends ComponentActionee {
   get label () {
     if (this._wrapper) {
       const button = this._wrapper.querySelector(NavigationSelector.BUTTON);
-      if (button) return button.textContent.trim();
+      if (button) return this.getFirstText(button);
+    } else {
+      const button = this._instance.buttons.filter(button => button.isPrimary)[0];
+      if (button) return this.getFirstText(button);
     }
-    const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    if (button) return button.node.textContent.trim();
     return null;
   }
 }

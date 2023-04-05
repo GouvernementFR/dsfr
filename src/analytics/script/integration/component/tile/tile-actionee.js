@@ -22,7 +22,7 @@ class TileActionee extends ComponentActionee {
 
   get label () {
     const tileTitle = this.node.querySelector(TileSelector.TITLE);
-    if (tileTitle) return tileTitle.textContent.trim();
+    if (tileTitle) return this.getFirstText(tileTitle);
 
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
     const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];

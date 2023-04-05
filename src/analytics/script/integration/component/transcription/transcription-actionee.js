@@ -24,7 +24,7 @@ class TranscriptionActionee extends ComponentActionee {
   get label () {
     if (this.wrapper) {
       const title = this.wrapper.querySelector(TranscriptionSelector.TITLE);
-      if (title) return title.textContent.trim();
+      if (title) return this.getFirstText(title);
     }
     const button = this._instance;
     if (button) return button.node.textContent.trim();

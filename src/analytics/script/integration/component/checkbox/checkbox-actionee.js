@@ -19,7 +19,7 @@ class CheckboxActionee extends ComponentActionee {
 
   get label () {
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    return label.textContent.trim();
+    return this.getFirstText(label);
   }
 
   get component () {

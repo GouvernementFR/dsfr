@@ -20,7 +20,7 @@ class SummarySectionActionee extends ComponentActionee {
 
   get label () {
     if (!this._link) return null;
-    return this._link.textContent.trim();
+    return this.getFirstText(this._link);
   }
 }
 

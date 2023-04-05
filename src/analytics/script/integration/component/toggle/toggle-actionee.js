@@ -19,7 +19,7 @@ class ToggleActionee extends ComponentActionee {
 
   get label () {
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('toggle__label'));
-    return label.textContent.trim();
+    return this.getFirstText(label) || 'Interrupteur';
   }
 
   get component () {
