@@ -27,7 +27,7 @@ Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des document
 
 ## Installation
 ### Installation locale
-Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est donc nécessaire d’installer une version récente de nodeJs. Dans le terminal nous utiliserons les commandes de **npm** ou **yarn** pour lancer les scripts.
+Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est donc nécessaire d’installer une version récente de nodeJs. Dans le terminal nous utiliserons les commandes de **npm** ou **yarn** (v1.22.19) pour lancer les scripts.
 
 Le dépôt est disponible à cette adresse: https://github.com/GouvernementFR/dsfr
 
