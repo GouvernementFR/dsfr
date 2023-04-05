@@ -96,6 +96,13 @@ class Collector {
   }
 
   _handleChange () {
+    console.log('changing, sending previous');
+    queue.send();
+    requestAnimationFrame(this._changed.bind(this));
+  }
+
+  _changed () {
+    console.log('changed, collect');
     this._isCollected = false;
     this._page.referrer = this._location.referrer;
     if (this._location.hasTitle) this._page.title = this._location.title;

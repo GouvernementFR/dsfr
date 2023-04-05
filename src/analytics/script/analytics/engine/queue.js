@@ -32,13 +32,13 @@ class Queue {
   }
 
   collect (layer) {
-    this.send();
     this._type = PushType.COLLECTOR;
     this._collectionLayer = layer;
     this._request();
   }
 
   append (layer) {
+    console.log('append action', layer);
     this._actionLayers.push(layer);
     this._request();
   }
@@ -88,6 +88,7 @@ class Queue {
   }
 
   send () {
+    console.log('send', this._isRequested);
     if (!this._isRequested) return;
     const length = ((this._actionLayers.length / SLICE) + 1) | 0;
     const slices = [];
@@ -103,6 +104,8 @@ class Queue {
         push(PushType.ACTION, slices[i]);
       }
     }
+
+    console.log('sent');
 
     this.reset();
   }
