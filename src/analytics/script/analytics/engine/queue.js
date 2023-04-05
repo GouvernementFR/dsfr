@@ -32,6 +32,7 @@ class Queue {
   }
 
   collect (layer) {
+    this.send();
     this._type = PushType.COLLECTOR;
     this._collectionLayer = layer;
     this._request();
