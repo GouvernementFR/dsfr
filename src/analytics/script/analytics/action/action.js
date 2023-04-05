@@ -109,7 +109,7 @@ class Action {
 
       default:
         api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
-        return;
+        return [];
     }
     const layer = this._getLayer(mode, data);
     this._status = ActionStatus.STARTED;

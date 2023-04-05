@@ -22,32 +22,23 @@ class Options {
 
   configure (settings = {}, start, query) {
     this.startCallback = start;
-    if (
-      settings.verbose === true ||
-      (
-        query &&
-        query.verbose &&
-        query.verbose === 'true'
-      )
-    ) {
-      inspector.level = 0;
-    }
-    if (
-      settings.production === true ||
-      (
-        query &&
-        query.production &&
-        query.production === 'true'
-      )
-    ) {
-      inspector.level = 999;
-    }
-    if (
-      query &&
-      query.level
-    ) {
-      const level = query.level;
-      if (!isNaN(Number(level))) inspector.level = level;
+    const isProduction = settings.production && (!query || query.production !== 'false');
+    switch (true) {
+      case query && !isNaN(query.level):
+        inspector.level = query.level;
+        break;
+
+      case query && query.verbose:
+        inspector.level = 0;
+        break;
+
+      case isProduction:
+        inspector.level = 999;
+        break;
+
+      case settings.verbose:
+        inspector.level = 0;
+        break;
     }
     inspector.info(`version ${config.version}`);
     this.mode = settings.mode || Modes.AUTO;
