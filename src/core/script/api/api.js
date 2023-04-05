@@ -33,7 +33,7 @@ api.colors = colors;
 const configuration = window[config.namespace];
 api.internals.configuration = configuration;
 
-options.configure(configuration, api.start);
+options.configure(configuration, api.start, api.query);
 
 window[config.namespace] = api;
 export default api;
