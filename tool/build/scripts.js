@@ -74,7 +74,7 @@ const process = async (pck, data, dir, filename, minify, legacy, map, standalone
 };
 
 const buildScript = async (pck, minify, legacy, map, standalone) => {
-  const regExp = new RegExp(path.sep, 'g');
+  const regExp = new RegExp('\\' + path.sep, 'g');
   const src = root(`${pck.path}${standalone ? '/standalone' : ''}`).replace(regExp, '/');
   const dir = root(`${standalone ? pck.standalone.dist : pck.dist}/`);
   let data = `import '${src}/main.js'\n`;
@@ -99,7 +99,7 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
 };
 
 const buildSchemeBootScript = async () => {
-  const regExp = new RegExp(path.sep, 'g');
+  const regExp = new RegExp('\\' + path.sep, 'g');
   const src = root('src/scheme').replace(regExp, '/');
   const data = `import '${src}/boot.js'\n`;
 
