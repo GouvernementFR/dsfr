@@ -21,7 +21,7 @@ class InputActionee extends ComponentActionee {
   }
 
   get label () {
-    if (this._label) return this._label.textContent.trim();
+    if (this._label) return this.getFirstText(this._label);
 
     return 'Champ de saisie';
   }

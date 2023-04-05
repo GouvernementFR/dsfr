@@ -16,7 +16,7 @@ class ConnectLinkActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim() || 'Qu\'est-ce que FranceConnect ?';
+    return this.getFirstText() || 'Qu\'est-ce que FranceConnect ?';
   }
 
   get component () {

@@ -23,11 +23,11 @@ class TabActionee extends ComponentActionee {
     const tabs = this.node.closest(api.tab.TabSelector.GROUP);
     if (tabs) {
       const tab = tabs.querySelector(`${api.tab.TabSelector.LIST} [aria-controls="${this.id}"]${api.tab.TabSelector.TAB}`);
-      if (tab) return tab.textContent.trim();
+      if (tab) return this.getFirstText();
     }
 
     const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    if (button) return button.node.textContent.trim();
+    if (button) return this.getFirstText(button);
     return null;
   }
 

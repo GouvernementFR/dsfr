@@ -17,7 +17,7 @@ class AlertActionee extends ComponentActionee {
 
   get label () {
     const alertTitle = this.node.querySelector(AlertSelector.TITLE);
-    if (alertTitle) return alertTitle.textContent.trim();
+    if (alertTitle) return this.getFirstText(alertTitle);
 
     return 'Alerte';
   }

@@ -16,7 +16,7 @@ class SummaryLinkActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    return this.getFirstText();
   }
 
   get component () {

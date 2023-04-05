@@ -17,7 +17,7 @@ class CalloutActionee extends ComponentActionee {
 
   get label () {
     const calloutTitle = this.node.querySelector(CalloutSelector.TITLE);
-    if (calloutTitle) return calloutTitle.textContent.trim();
+    if (calloutTitle) return this.getFirstText(calloutTitle);
 
     return 'Mise en avant';
   }

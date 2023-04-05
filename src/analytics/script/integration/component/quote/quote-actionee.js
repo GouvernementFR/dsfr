@@ -17,7 +17,7 @@ class QuoteActionee extends ComponentActionee {
   get label () {
     const blockquote = this.node.querySelector('blockquote');
     if (blockquote) {
-      const quote = blockquote.textContent.trim();
+      const quote = this.getFirstText(blockquote);
       return quote.length > 50 ? `${quote.substring(0, 35).trim()}[...]` : quote;
     }
     return 'Citation';
