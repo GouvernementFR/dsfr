@@ -1,5 +1,7 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Gestionnaire de consentement', '../../../../component/consent/example/sample/banner.ejs', {}); %>
+<div class="<%= prefix %>-container" >
+  <%- sample('Gestionnaire de consentement', '../../../../component/consent/example/sample/banner.ejs', {}); %>
 
-<%- sample('Panneau de gestion des cookies', '../../../../component/consent/example/sample/modal.ejs', {} ); %>
+  <%- sample('Panneau de gestion des cookies', '../../../../component/consent/example/sample/modal.ejs', {} ); %>
+</div>
