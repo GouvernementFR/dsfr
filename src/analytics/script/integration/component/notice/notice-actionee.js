@@ -19,7 +19,7 @@ class NoticeActionee extends ComponentActionee {
     const noticeTitle = this.node.querySelector(NoticeSelector.TITLE);
     if (noticeTitle) return this.getFirstText(noticeTitle);
 
-    return 'Bandeau information';
+    return 'Bandeau information importante';
   }
 
   get component () {
