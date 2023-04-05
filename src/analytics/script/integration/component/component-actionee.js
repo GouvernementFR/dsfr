@@ -70,7 +70,7 @@ class ComponentActionee extends Actionee {
     if (this._isActingValidatedInput) return;
     this._isActingValidatedInput = true;
     this.act({ component_value: this._validatedInput.value.trim() });
-    this.request(() => { this._isActingValidatedInput = true; });
+    this.request(() => { this._isActingValidatedInput = false; });
   }
 
   setCheckType () {
