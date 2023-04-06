@@ -10,6 +10,10 @@ class Actions {
     Action.isRatingEnabled = config.enableRating === true;
   }
 
+  rewind () {
+    this._actions.forEach(action => action.rewind());
+  }
+
   getAction (name) {
     let action = this._actions.filter(action => action.name === name)[0];
     if (!action) {

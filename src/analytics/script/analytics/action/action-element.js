@@ -13,6 +13,7 @@ class ActionElement {
     this._category = category;
     this._parameters = parameters;
     this._isRatingActive = isRatingActive;
+    this._hasBegun = false;
 
     // this._init();
     requestAnimationFrame(this._init.bind(this));
@@ -42,7 +43,8 @@ class ActionElement {
     if (this._hierarchy.label) this._action.addParameter('component_label', this._hierarchy.label);
     if (this._hierarchy.title) this._action.addParameter('heading_hierarchy', this._hierarchy.title);
     if (this._hierarchy.component) this._action.addParameter('component_hierarchy', this._hierarchy.component);
-    if (this._type.isStarting) queue.appendStartingAction(this._action);
+
+    this.begin();
   }
 
   get isMuted () {
@@ -56,6 +58,17 @@ class ActionElement {
 
   get action () {
     return this._action;
+  }
+
+  rewind () {
+    this._hasBegun = false;
+    this.begin();
+  }
+
+  begin () {
+    if (this._hasBegun) return;
+    this._hasBegun = true;
+    if (this._type.isBeginning) queue.appendStartingAction(this._action);
   }
 
   act (data = {}) {

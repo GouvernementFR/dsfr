@@ -3,14 +3,14 @@ export const Type = {
   IMPRESSION: {
     id: 'impression', // element appeared in the page
     isSingular: true,
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'impression'
   },
   // interaction
   CLICK: {
     id: 'click', // generic click interaction
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'interaction',
     event: 'click',
@@ -18,7 +18,7 @@ export const Type = {
   },
   INTERNAL: {
     id: 'internal', // anchor click redirecting on an internal url
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'interaction',
     event: 'click',
@@ -26,7 +26,7 @@ export const Type = {
   },
   EXTERNAL: {
     id: 'external', // anchor click redirecting on an external url
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'interaction',
     event: 'click',
@@ -34,7 +34,7 @@ export const Type = {
   },
   DOWNLOAD: {
     id: 'download', // anchor click downloading a file
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'interaction',
     event: 'click',
@@ -42,7 +42,7 @@ export const Type = {
   },
   BUTTON: {
     id: 'button', // button click
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'interaction',
     event: 'click',
@@ -50,7 +50,7 @@ export const Type = {
   },
   DOUBLE_CLICK: {
     id: 'dblclick', // double click
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'interaction',
     event: 'dblclick',
@@ -112,75 +112,75 @@ export const Type = {
   },
   PROGRESS: {
     id: 'progress', // video retention event with percent of the part reached
-    isStarting: true,
+    isBeginning: true,
     attributed: true,
     type: 'event'
   },
   // component interaction
   SHARE: {
     id: 'share', // component share click (share)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   PRESS: {
     id: 'press', // component press click (pressable tag)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   RELEASE: {
     id: 'release', // component release click (pressable tag)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   DISMISS: {
     id: 'dismiss', // component dismiss click (dismissible tag)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   UPLOAD: {
     id: 'upload', // component upload click (upload)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   CHECK: {
     id: 'check', // component check click (checkbox, radio, toggle)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   UNCHECK: {
     id: 'uncheck', // component uncheck click (checkbox, radio, toggle)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   SELECT: {
     id: 'select', // component select change (select)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   SUBSCRIBE: {
     id: 'subscribe', // component subscribe click (follow)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   // component event
   DISCLOSE: {
     id: 'disclose', // component disclose event (accordion, modal, tab)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'event'
   },
   SEARCH: {
     id: 'search', // component disclose event (accordion, modal, tab)
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'event'
   },
@@ -199,25 +199,25 @@ export const Type = {
   // video
   AUTOPLAY: {
     id: 'autoplay', // video autoplay event
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'event'
   },
   PLAY: {
     id: 'play', // video play click
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   PAUSE: {
     id: 'pause', // video pause click
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'interaction'
   },
   END: {
     id: 'end', // video end event
-    isStarting: true,
+    isBeginning: true,
     attributed: false,
     type: 'event'
   }

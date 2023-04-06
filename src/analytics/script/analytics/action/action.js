@@ -50,6 +50,14 @@ class Action {
     this._status = ActionStatus.SINGULAR;
   }
 
+  rewind () {
+    switch (this._status) {
+      case ActionStatus.STARTED:
+      case ActionStatus.ENDED:
+        this._status = ActionStatus.UNSTARTED;
+    }
+  }
+
   get isRatingActive () {
     return this._isRatingActive;
   }

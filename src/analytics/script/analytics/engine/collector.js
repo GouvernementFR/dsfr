@@ -6,8 +6,10 @@ import { Page } from '../collector/page/page';
 import { Search } from '../collector/search/search';
 import { Funnel } from '../collector/funnel/funnel';
 import queue from './queue';
+import actions from '../action/actions';
 import { Location } from './location';
 import { CollectorEvent } from './collector-event';
+import { ActioneeEmission } from '../../integration/core/actionee-emission';
 
 class Collector {
   constructor (config) {
@@ -104,6 +106,8 @@ class Collector {
   _changed () {
     console.log('changed, collect');
     this._isCollected = false;
+    actions.rewind();
+    if (api.internals && api.internals.stage && api.internals.stage.root) api.internals.stage.root.descend(ActioneeEmission.REWIND);
     this._page.referrer = this._location.referrer;
     if (this._location.hasTitle) this._page.title = this._location.title;
     this._page.path = this._location.path;

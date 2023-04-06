@@ -1,6 +1,7 @@
 import api from '../../../api.js';
 import { Type } from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
+import { ActioneeEmission } from './actionee-emission';
 
 class Actionee extends api.core.Instance {
   constructor (priority = -1, isRatingActive = false, category = '', title = null) {
@@ -61,6 +62,8 @@ class Actionee extends api.core.Instance {
     const actionees = element.instances.filter(instance => instance.isActionee && instance.type).sort((a, b) => b.priority - a.priority);
     if (actionees.length <= 1) return;
     actionees.forEach((actionee, index) => { actionee.isMuted = index > 0; });
+
+    this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));
   }
 
   get isMuted () {
@@ -135,6 +138,10 @@ class Actionee extends api.core.Instance {
 
   setImpressionType () {
     this._type = Type.IMPRESSION;
+  }
+
+  rewind () {
+    if (this._actionElement) this._actionElement.rewind();
   }
 
   act (data = {}) {
