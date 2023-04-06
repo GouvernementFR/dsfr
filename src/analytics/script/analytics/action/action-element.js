@@ -42,7 +42,7 @@ class ActionElement {
     if (this._hierarchy.label) this._action.addParameter('component_label', this._hierarchy.label);
     if (this._hierarchy.title) this._action.addParameter('heading_hierarchy', this._hierarchy.title);
     if (this._hierarchy.component) this._action.addParameter('component_hierarchy', this._hierarchy.component);
-    if (this._type.isStarting) queue.append(this._action.start());
+    if (this._type.isStarting) queue.appendStartingAction(this._action);
   }
 
   get isMuted () {
@@ -60,7 +60,7 @@ class ActionElement {
 
   act (data = {}) {
     if (this._isMuted) return;
-    queue.append(this._action.end(data));
+    queue.appendEndingAction(this._action);
   }
 
   dispose () {

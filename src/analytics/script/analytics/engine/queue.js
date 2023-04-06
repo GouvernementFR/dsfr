@@ -7,7 +7,8 @@ const SLICE = 80;
 
 class Queue {
   constructor () {
-    this._actionLayers = [];
+    this._startingActions = [];
+    this._endingActions = [];
     this._handlingVisibilityChange = this._handleVisibilityChange.bind(this);
     this._handlingEnd = this._handleEnd.bind(this);
     this._isStarted = false;
@@ -15,9 +16,10 @@ class Queue {
     this.reset();
   }
 
-  reset () {
+  reset (ending = false) {
     this._type = PushType.ACTION;
-    this._actionLayers.length = 0;
+    if (!ending) this._startingActions.length = 0;
+    this._endingActions.length = 0;
     this._collectionLayer = [];
     this._count = 0;
     this._delay = -1;
@@ -37,9 +39,15 @@ class Queue {
     this._request();
   }
 
-  append (layer) {
-    console.log('append action', layer);
-    this._actionLayers.push(layer);
+  appendStartingAction (action) {
+    console.log('append starting action', action);
+    this._startingActions.push(action);
+    this._request();
+  }
+
+  appendEndingAction (action) {
+    console.log('append ending action', action);
+    this._endingActions.push(action);
     this._request();
   }
 
@@ -87,13 +95,17 @@ class Queue {
     }
   }
 
-  send () {
+  send (ending = false) {
     console.log('send', this._isRequested);
     if (!this._isRequested) return;
-    const length = ((this._actionLayers.length / SLICE) + 1) | 0;
+    const actionLayers = [];
+    if (!ending) actionLayers.push(...this._startingActions.map(action => action.start()));
+    actionLayers.push(...this._endingActions.map(action => action.end()));
+
+    const length = ((actionLayers.length / SLICE) + 1) | 0;
     const slices = [];
     for (let i = 0; i < length; i++) {
-      const slice = this._actionLayers.slice(i * SLICE, (i + 1) * SLICE);
+      const slice = actionLayers.slice(i * SLICE, (i + 1) * SLICE);
       slices.push(slice.flat());
     }
 
@@ -107,7 +119,7 @@ class Queue {
 
     console.log('sent');
 
-    this.reset();
+    this.reset(ending);
   }
 }
 

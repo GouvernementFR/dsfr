@@ -97,7 +97,7 @@ class Collector {
 
   _handleChange () {
     console.log('changing, sending previous');
-    queue.send();
+    queue.send(true);
     requestAnimationFrame(this._changed.bind(this));
   }
 

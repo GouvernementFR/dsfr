@@ -25,10 +25,10 @@ class Options {
     const isProduction = settings.production && (!query || query.production !== 'false');
     switch (true) {
       case query && !isNaN(query.level):
-        inspector.level = query.level;
+        inspector.level = Number(query.level);
         break;
 
-      case query && query.verbose:
+      case query && query.verbose && (query.verbose === 'true' || query.verbose === 1):
         inspector.level = 0;
         break;
 
