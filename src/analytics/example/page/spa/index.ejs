@@ -1,0 +1,135 @@
+<div class="<%= prefix %>-container">
+  <div id="vue-container">
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script>
+  new Vue({
+    el: "#vue-container",
+    data: {
+      pagination: 1
+    },
+    template: `
+<div>
+  <header role="banner" class="<%= prefix %>-header" id="header-120">
+    <div class="<%= prefix %>-header__body">
+        <div class="<%= prefix %>-container">
+            <div class="<%= prefix %>-header__body-row">
+                <div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
+                    <div class="<%= prefix %>-header__brand-top">
+                        <div class="<%= prefix %>-header__logo">
+                            <p class="<%= prefix %>-logo">
+                                République
+                                <br>Française
+                            </p>
+                        </div>
+                        <div class="<%= prefix %>-header__operator">
+                            <img class="<%= prefix %>-responsive-img" style="max-width:9.0625rem;" src="../../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" data-<%= prefix %>-js-ratio="true">
+                            <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+                        </div>
+                        <div class="<%= prefix %>-header__navbar">
+                            <button class="<%= prefix %>-btn--search <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-122" id="button-123" title="Rechercher" data-<%= prefix %>-js-modal-button="true" >
+                                Rechercher
+                            </button>
+                            <button class="<%= prefix %>-btn--menu <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-124" aria-haspopup="menu" id="button-125" title="Menu">
+                                Menu
+                            </button>
+                        </div>
+                    </div>
+                    <div class="<%= prefix %>-header__service">
+                        <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                            <p class="<%= prefix %>-header__service-title">
+                                Nom du site / service
+                            </p>
+                        </a>
+                        <p class="<%= prefix %>-header__service-tagline">baseline - précisions sur l‘organisation</p>
+                    </div>
+                </div>
+                <div class="<%= prefix %>-header__tools">
+                    <div class="<%= prefix %>-header__tools-links">
+                        <ul class="<%= prefix %>-btns-group">
+                            <li>
+                                <a class="<%= prefix %>-btn <%= prefix %>-icon-account-line" id="button-129"  v-on:click.prevent="pagination = 3" href="#[url - à modifier]">
+                                    Page 3
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="modal-122">
+                        <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid">
+                            <button class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-122" id="button-130" title="Fermer">
+                                Fermer
+                            </button>
+                            <div class="<%= prefix %>-search-bar" id="search-121" role="search">
+                                <label class="<%= prefix %>-label" for="search-121-input">
+                                    Rechercher
+                                </label>
+                                <input class="<%= prefix %>-input" aria-describedby="search-121-input-messages" placeholder="Rechercher" id="search-121-input" type="search">
+                                <div class="<%= prefix %>-messages-group" id="search-121-input-messages" aria-live="assertive">
+                                </div>
+                                <button class="<%= prefix %>-btn" id="search-btn-132" title="Rechercher">
+                                    Rechercher
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="modal-124">
+        <div class="<%= prefix %>-container">
+            <button class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-124" id="button-133" title="Fermer">
+                Fermer
+            </button>
+            <div class="<%= prefix %>-header__menu-links">
+            </div>
+            <nav class="<%= prefix %>-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
+              <ul class="<%= prefix %>-nav__list">
+                <li class="<%= prefix %>-nav__item">
+                  <a class="<%= prefix %>-nav__link" v-on:click.prevent="pagination = 2" href="#" target="_self" id="nav-135">Page 2</a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+    </div>
+  </header>
+
+  <div class="<%= prefix %>-container <%= prefix %>-mt-8v">
+    <div v-if="pagination==1">
+      <h1>Page {{pagination}}</h1>
+      <a href="#" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-click" >Home</a>
+    </div>
+    <div v-if="pagination==2">
+      <h1>Page {{pagination}}</h1>
+      <button id="btn-1" class="<%= prefix %>-btn">Button 1</button>
+    </div>
+    <div v-if="pagination==3">
+      <h1>Page {{pagination}}</h1>
+      <button id="btn-2" class="<%= prefix %>-btn">Button 2</button>
+    </div>
+
+    <nav role="navigation" class="<%= prefix %>-pagination <%= prefix %>-mt-8v" aria-label="Pagination">
+      <ul class="<%= prefix %>-pagination__list">
+          <li>
+              <a class="<%= prefix %>-pagination__link <%= prefix %>-pagination__link--lg-label" id="pagination__link-309" href="" v-on:click.prevent="pagination=1">
+                  1
+              </a>
+          </li>
+          <li>
+              <a class="<%= prefix %>-pagination__link" id="pagination__link-310" href="prevented" title="Page 1" data-<%= prefix %>-js-pagination-actionee="true" v-on:click.prevent="pagination = 2" >
+                  2
+              </a>
+          </li>
+          <li>
+              <a class="<%= prefix %>-pagination__link <%= prefix %>-pagination__link--lg-label" id="pagination__link-317" href="/ici" v-on:click.prevent="pagination = 3">
+                  3
+              </a>
+          </li>
+      </ul>
+    </nav>
+  </div>
+</div>`
+  });
+</script>

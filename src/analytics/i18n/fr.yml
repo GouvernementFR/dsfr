@@ -5,6 +5,7 @@ subdir:
   title: Pages
   attribute: Attributs
   component: Composants
+  page: Pages
   alert: Alerte (alert)
   alert-close: Alerte avec bouton de fermeture
   alert-dynamic: Alerte ajoutée dynamiquement
