@@ -98,13 +98,11 @@ class Collector {
   }
 
   _handleChange () {
-    console.log('changing, sending previous');
     queue.send(true);
     requestAnimationFrame(this._changed.bind(this));
   }
 
   _changed () {
-    console.log('changed, collect');
     this._isCollected = false;
     actions.rewind();
     if (api.internals && api.internals.stage && api.internals.stage.root) api.internals.stage.root.descend(ActioneeEmission.REWIND);

@@ -70,3 +70,4 @@ subdir:
   translate: Sélecteur de langue (translate)
   upload: Ajout de fichier (upload)
   spa: Single-page application
+  agnostic: sans framework

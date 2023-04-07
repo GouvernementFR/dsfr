@@ -40,14 +40,12 @@ class Queue {
   }
 
   appendStartingAction (action) {
-    console.log('append starting action', action);
     if (this._startingActions.indexOf(action) > -1) return;
     this._startingActions.push(action);
     this._request();
   }
 
   appendEndingAction (action) {
-    console.log('append ending action', action);
     if (this._endingActions.indexOf(action) > -1) return;
     this._endingActions.push(action);
     this._request();
@@ -98,7 +96,6 @@ class Queue {
   }
 
   send (ending = false) {
-    console.log('send', this._isRequested);
     if (!this._isRequested) return;
     const actionLayers = [];
     if (!ending) actionLayers.push(...this._startingActions.map(action => action.start()).filter(layer => layer.length > 0));
@@ -118,8 +115,6 @@ class Queue {
         push(PushType.ACTION, slices[i]);
       }
     }
-
-    console.log('sent');
 
     this.reset(ending);
   }

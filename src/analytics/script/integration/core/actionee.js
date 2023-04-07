@@ -59,11 +59,11 @@ class Actionee extends api.core.Instance {
     this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters, this._isRatingActive);
     if (this._isMuted) this._actionElement.isMuted = true;
 
+    this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));
+
     const actionees = element.instances.filter(instance => instance.isActionee && instance.type).sort((a, b) => b.priority - a.priority);
     if (actionees.length <= 1) return;
     actionees.forEach((actionee, index) => { actionee.isMuted = index > 0; });
-
-    this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));
   }
 
   get isMuted () {
