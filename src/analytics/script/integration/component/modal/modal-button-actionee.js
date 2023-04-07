@@ -13,7 +13,6 @@ class ModalButtonActionee extends ComponentActionee {
   init () {
     this.setClickType();
     this.id = this.node.id || this.registration.creator.node.id;
-    this._button = this.element.getInstance('ModalButton');
     this.listenClick();
   }
 
@@ -22,7 +21,7 @@ class ModalButtonActionee extends ComponentActionee {
   }
 
   click () {
-    if (this.button.disclosed) this.act();
+    if (this.button && !this.button.disclosed) this.act();
   }
 
   get label () {

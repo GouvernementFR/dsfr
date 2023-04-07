@@ -27,8 +27,12 @@ class ModalActionee extends ComponentActionee {
 
     if (headings.length) return headings[0].textContent.trim();
 
-    const button = this.element.getInstance('Modal').buttons.filter(button => button.isPrimary)[0];
-    return this.getFirstText(button.node);
+    const instance = this.element.getInstance('Modal');
+    if (instance) {
+      const button = instance.buttons.filter(button => button.isPrimary)[0];
+      return this.getFirstText(button.node);
+    }
+    return null;
   }
 
   get component () {

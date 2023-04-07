@@ -17,7 +17,6 @@ class TranscriptionActionee extends ComponentActionee {
     this.wrapper = this.node.closest(TranscriptionSelector.ACCORDION);
     this.detectLevel(this.wrapper);
     this.register(`[aria-controls="${this.id}"]`, TranscriptionButtonActionee);
-    this._instance = this.element.getInstance('Collapse');
     this.listenDisclose();
   }
 
@@ -26,8 +25,11 @@ class TranscriptionActionee extends ComponentActionee {
       const title = this.wrapper.querySelector(TranscriptionSelector.TITLE);
       if (title) return this.getFirstText(title);
     }
-    const button = this._instance;
-    if (button) return button.node.textContent.trim();
+    const instance = this.element.getInstance('Collapse');
+    if (instance) {
+      const button = instance.buttons.filter(button => button.isPrimary)[0];
+      if (button) return this.getFirstText(button);
+    }
     return null;
   }
 

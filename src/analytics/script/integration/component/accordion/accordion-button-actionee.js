@@ -21,7 +21,7 @@ class AccordionButtonActionee extends ComponentActionee {
   }
 
   handleClick () {
-    if (!this.button.disclosed) this.act();
+    if (this.button && !this.button.disclosed) this.act();
   }
 
   get label () {

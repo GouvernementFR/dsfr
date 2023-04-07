@@ -15,7 +15,6 @@ class TranslateActionee extends ComponentActionee {
   init () {
     this.setDiscloseType();
     this.register(`[aria-controls="${this.id}"]`, TranslateButtonActionee);
-    this._instance = this.element.getInstance('Collapse');
     this.listenDisclose();
   }
 

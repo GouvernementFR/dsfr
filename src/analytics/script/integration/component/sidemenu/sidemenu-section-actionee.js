@@ -12,7 +12,6 @@ class SidemenuSectionActionee extends ComponentActionee {
 
   init () {
     this._wrapper = this.node.closest(SidemenuSelector.ITEM);
-    this._instance = this.element.getInstance('Collapse');
   }
 
   get label () {
@@ -20,8 +19,11 @@ class SidemenuSectionActionee extends ComponentActionee {
       const button = this._wrapper.querySelector(SidemenuSelector.BUTTON);
       if (button) return button.textContent.trim();
     }
-    const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    if (button) return button.node.textContent.trim();
+    const instance = this.element.getInstance('Collapse');
+    if (instance) {
+      const button = instance.buttons.filter(button => button.isPrimary)[0];
+      if (button) return this.getFirstText(button);
+    }
     return null;
   }
 }

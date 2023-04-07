@@ -21,7 +21,8 @@ class TranscriptionButtonActionee extends ComponentActionee {
   }
 
   handleClick () {
-    if (!this.button.disclosed) this.act();
+    const button = this.button;
+    if (button && !button.disclosed) this.act();
   }
 
   get label () {

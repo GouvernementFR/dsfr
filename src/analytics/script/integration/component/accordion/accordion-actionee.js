@@ -17,7 +17,6 @@ class AccordionActionee extends ComponentActionee {
     this.wrapper = this.node.closest(AccordionSelector.ACCORDION);
     this.detectLevel(this.wrapper);
     this.register(`[aria-controls="${this.id}"]`, AccordionButtonActionee);
-    this._instance = this.element.getInstance('Collapse');
     this.listenDisclose();
   }
 
@@ -26,8 +25,11 @@ class AccordionActionee extends ComponentActionee {
       const title = this.wrapper.querySelector(AccordionSelector.TITLE);
       if (title) return this.getFirstText(title);
     }
-    const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    if (button) return this.getFirstText(button);
+    const instance = this.element.getInstance('Collapse');
+    if (instance) {
+      const button = instance.buttons.filter(button => button.isPrimary)[0];
+      if (button) return this.getFirstText(button);
+    }
     return null;
   }
 
