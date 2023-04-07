@@ -17,8 +17,12 @@ class ModalButtonActionee extends ComponentActionee {
     this.listenClick();
   }
 
+  get button () {
+    return this.element.getInstance('ModalButton');
+  }
+
   click () {
-    if (this._button.disclosed) this.act();
+    if (this.button.disclosed) this.act();
   }
 
   get label () {

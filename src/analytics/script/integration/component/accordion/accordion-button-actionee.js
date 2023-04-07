@@ -13,12 +13,15 @@ class AccordionButtonActionee extends ComponentActionee {
   init () {
     this.setClickType();
     this.id = this.node.id || this.registration.creator.node.id;
-    this._button = this.element.getInstance('CollapseButton');
     this.listenClick();
   }
 
+  get button () {
+    return this.element.getInstance('CollapseButton');
+  }
+
   handleClick () {
-    if (!this._button.disclosed) this.act();
+    if (!this.button.disclosed) this.act();
   }
 
   get label () {

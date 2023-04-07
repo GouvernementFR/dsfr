@@ -14,7 +14,6 @@ class BreadcrumbButtonActionee extends ComponentActionee {
     if (this.isBreakpoint(api.core.Breakpoints.MD)) return;
     this.setClickType();
     this.id = this.node.id || this.registration.creator.node.id;
-    this._button = this.element.getInstance('BreadcrumbButton');
     this.listenClick();
   }
 
