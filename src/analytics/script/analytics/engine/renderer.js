@@ -6,7 +6,8 @@ class Renderer {
   }
 
   add (renderable) {
-    this._renderables.push(renderable);
+    const index = this._renderables.indexOf(renderable);
+    if (index === -1) this._renderables.push(renderable);
   }
 
   remove (renderable) {

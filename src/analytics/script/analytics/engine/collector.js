@@ -6,6 +6,7 @@ import { Page } from '../collector/page/page';
 import { Search } from '../collector/search/search';
 import { Funnel } from '../collector/funnel/funnel';
 import queue from './queue';
+import renderer from './renderer';
 import actions from '../action/actions';
 import { Location } from './location';
 import { CollectorEvent } from './collector-event';
@@ -56,6 +57,7 @@ class Collector {
     this._funnel = new Funnel(config.funnel);
 
     this._isCollected = false;
+    this._delay = -1;
   }
 
   get page () {
@@ -99,7 +101,16 @@ class Collector {
 
   _handleChange () {
     queue.send(true);
-    requestAnimationFrame(this._changed.bind(this));
+    this._delay = 6;
+    renderer.add(this);
+  }
+
+  render () {
+    this._delay--;
+    if (this._delay < 0) {
+      renderer.remove(this);
+      this._changed();
+    }
   }
 
   _changed () {
