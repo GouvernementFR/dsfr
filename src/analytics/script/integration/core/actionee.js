@@ -141,6 +141,7 @@ class Actionee extends api.core.Instance {
   }
 
   rewind () {
+    console.log(this._title, document.documentElement.contains(this.node));
     if (this._actionElement) this._actionElement.rewind();
   }
 

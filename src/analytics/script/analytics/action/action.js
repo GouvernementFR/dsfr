@@ -109,6 +109,7 @@ class Action {
       case ActionStatus.UNSTARTED:
         if (!this._isRatingActive || !Action.isRatingEnabled) return [];
         mode = ActionMode.IN;
+        this._status = ActionStatus.STARTED;
         break;
 
       case ActionStatus.SINGULAR:
@@ -120,7 +121,6 @@ class Action {
         return [];
     }
     const layer = this._getLayer(mode, data);
-    this._status = ActionStatus.STARTED;
     return layer;
   }
 
@@ -129,16 +129,20 @@ class Action {
     switch (this._status) {
       case ActionStatus.STARTED:
         mode = ActionMode.OUT;
+        this._status = ActionStatus.ENDED;
         break;
 
       case ActionStatus.UNSTARTED:
       case ActionStatus.ENDED:
+        mode = ActionMode.NONE;
+        this._status = ActionStatus.ENDED;
+        break;
+
       case ActionStatus.SINGULAR:
         mode = ActionMode.NONE;
         break;
     }
     const layer = this._getLayer(mode, data);
-    this._status = ActionStatus.ENDED;
     return layer;
   }
 

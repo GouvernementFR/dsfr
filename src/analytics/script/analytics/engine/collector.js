@@ -105,13 +105,13 @@ class Collector {
   _changed () {
     this._isCollected = false;
     actions.rewind();
-    if (api.internals && api.internals.stage && api.internals.stage.root) api.internals.stage.root.descend(ActioneeEmission.REWIND);
     this._page.referrer = this._location.referrer;
     if (this._location.hasTitle) this._page.title = this._location.title;
     this._page.path = this._location.path;
     const event = new CustomEvent(CollectorEvent.COLLECT);
     document.documentElement.dispatchEvent(event);
     this.collect();
+    if (api.internals && api.internals.stage && api.internals.stage.root) api.internals.stage.root.descend(ActioneeEmission.REWIND);
   }
 
   reset (clear = false) {
