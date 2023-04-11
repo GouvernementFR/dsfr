@@ -1,6 +1,11 @@
 import api from '../../api.js';
 
 class HeaderModal extends api.core.Instance {
+  constructor () {
+    super();
+    this._clickHandling = this.clickHandler.bind(this);
+  }
+
   static get instanceClassName () {
     return 'HeaderModal';
   }
@@ -25,6 +30,7 @@ class HeaderModal extends api.core.Instance {
       if (button.isPrimary && id) break;
     }
     this.setAttribute('aria-labelledby', id);
+    this.listen('click', this._clickHandling, { capture: true });
   }
 
   unqualify () {
@@ -32,6 +38,14 @@ class HeaderModal extends api.core.Instance {
     if (modal) modal.conceal();
     this.removeAttribute('role');
     this.removeAttribute('aria-labelledby');
+    this.unlisten('click', this._clickHandling, { capture: true });
+  }
+
+  clickHandler (e) {
+    if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) {
+      const modal = this.element.getInstance('Modal');
+      modal.conceal();
+    }
   }
 }
 

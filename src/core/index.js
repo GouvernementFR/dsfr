@@ -8,6 +8,7 @@ import { DisclosureButton } from './script/disclosure/disclosure-button.js';
 import { DisclosuresGroup } from './script/disclosure/disclosures-group.js';
 import { DisclosureType } from './script/disclosure/disclosure-type.js';
 import { DisclosureEvent } from './script/disclosure/disclosure-event.js';
+import { DisclosureSelector } from './script/disclosure/disclosure-selector.js';
 import { DisclosureEmission } from './script/disclosure/disclosure-emission.js';
 import { CollapseButton } from './script/collapse/collapse-button.js';
 import { Collapse } from './script/collapse/collapse.js';
@@ -34,6 +35,7 @@ api.core = {
   DisclosuresGroup: DisclosuresGroup,
   DisclosureType: DisclosureType,
   DisclosureEvent: DisclosureEvent,
+  DisclosureSelector: DisclosureSelector,
   DisclosureEmission: DisclosureEmission,
   Collapse: Collapse,
   CollapseButton: CollapseButton,
