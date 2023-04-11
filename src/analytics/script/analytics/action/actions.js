@@ -6,10 +6,18 @@ class Actions {
     this._actions = [];
   }
 
-  getAction (name, isCollectable = false) {
+  configure (config) {
+    Action.isRatingEnabled = config.enableRating === true;
+  }
+
+  rewind () {
+    this._actions.forEach(action => action.rewind());
+  }
+
+  getAction (name) {
     let action = this._actions.filter(action => action.name === name)[0];
     if (!action) {
-      action = new Action(name, isCollectable);
+      action = new Action(name);
       this._actions.push(action);
     }
     return action;
@@ -24,10 +32,6 @@ class Actions {
     if (index === -1) return false;
     this._actions.splice(index, 1);
     return true;
-  }
-
-  get layers () {
-    return this._actions.filter(action => action.isCollectable).map(action => action.start());
   }
 }
 

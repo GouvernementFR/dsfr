@@ -13,7 +13,7 @@ class HeaderModalActionee extends ComponentActionee {
 
   init () {
     if (this.isBreakpoint(api.core.Breakpoints.LG)) {
-      this._priority = 4;
+      this.setPriority(4);
       this.register(`[aria-controls="${this.id}"]`, HeaderModalButtonActionee);
     }
   }

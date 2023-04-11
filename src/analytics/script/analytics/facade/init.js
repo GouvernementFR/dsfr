@@ -1,4 +1,5 @@
 import api from '../../../api.js';
+import opt from './opt';
 
 const PUSH = 'EA_push';
 
@@ -14,7 +15,8 @@ class Init {
 
   configure () {
     this.pushing();
-    this.load();
+    if (opt.isDisabled) this._reject();
+    else this.load();
     return this._promise;
   }
 
@@ -68,3 +70,73 @@ class Init {
 }
 
 export { Init };
+
+/*
+(function(e, a) {
+  var i = e.length,
+    y = 5381,
+    k = 'script',
+    s = window,
+    v = document,
+    o = v.createElement(k);
+  for (; i;) {
+    i -= 1;
+    y = (y * 33) ^ e.charCodeAt(i)
+  }
+  y = '_EA_' + (y >>>= 0);
+  (function(e, a, s, y) {
+    s[a] = s[a] || function() {
+      (s[y] = s[y] || []).push(arguments);
+      s[y].eah = e;
+    };
+  }(e, a, s, y));
+  i = new Date / 1E7 | 0;
+  o.ea = y;
+  y = i % 26;
+  o.async = 1;
+  o.src = '//' + e + '/' + String.fromCharCode(97 + y, 122 - y, 65 + y) + (i % 1E3) + '.js?2';
+  s = v.getElementsByTagName(k)[0];
+  s.parentNode.insertBefore(o, s);
+})
+('mon.domainedetracking.com', 'EA_push');
+*/
+
+/*
+(function(e, a) {
+  var i = e.length,
+    y = 5381,
+    k = 'script',
+    z = '_EA_',
+    zd = z + 'disabled',
+    s = window,
+    v = document,
+    o = v.createElement(k),
+    l = s.localStorage;
+  for (; i;) {
+    i -= 1;
+    y = (y * 33) ^ e.charCodeAt(i)
+  }
+  y = z + (y >>>= 0);
+  (function(e, a, s, y, z, zd, l) {
+    s[a] = s[a] || function() {
+      (s[y] = s[y] || []).push(arguments);
+      s[y].eah = e;
+    };
+    s[zd] = function() {
+      return l.getItem(z);
+    };
+    s[z + 'toggle'] = function() {
+      (s[zd]()) ? l.removeItem(z): l.setItem(z, 1);
+    }
+  }(e, a, s, y, z, zd, l));
+  if (!s[zd]()) {
+    i = new Date / 1E7 | 0;
+    o.ea = y;
+    y = i % 26;
+    o.async = 1;
+    o.src = '//' + e + '/' + String.fromCharCode(97 + y, 122 - y, 65 + y) + (i % 1E3) + '.js?2';
+    s = v.getElementsByTagName(k)[0];
+    s.parentNode.insertBefore(o, s);
+  }
+})('mon.domainedetracking.com', 'EA_push');
+*/

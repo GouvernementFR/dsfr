@@ -1,3 +1,3 @@
-const ID = 'dsfr_sidemenu';
+const ID = 'sidemenu';
 
 export default ID;

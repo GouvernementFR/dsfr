@@ -12,6 +12,7 @@ Paramètres de sidemenu btn
   <%
   for (let i = 0; i < sidemenuItems.length; i++) {
     let item = sidemenuItems[i];
+    item.href = sidemenuItems.href;
     let classes = [prefix + '-sidemenu__item'];
   %>
     <li <%- includeClasses(classes); %>>

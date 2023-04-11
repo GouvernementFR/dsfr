@@ -1,3 +1,3 @@
-const ID = 'dsfr_button';
+const ID = 'button';
 
 export default ID;

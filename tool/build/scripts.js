@@ -5,6 +5,7 @@ const { terser } = require('rollup-plugin-terser');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 const virtual = require('@rollup/plugin-virtual');
 const banner2 = require('rollup-plugin-banner2');
+const path = require('path');
 // const prettier = require('rollup-plugin-prettier');
 const fs = require('fs');
 const log = require('../utilities/log');
@@ -73,7 +74,8 @@ const process = async (pck, data, dir, filename, minify, legacy, map, standalone
 };
 
 const buildScript = async (pck, minify, legacy, map, standalone) => {
-  const src = root(`${pck.path}${standalone ? '/standalone' : ''}`);
+  const regExp = new RegExp('\\' + path.sep, 'g');
+  const src = root(`${pck.path}${standalone ? '/standalone' : ''}`).replace(regExp, '/');
   const dir = root(`${standalone ? pck.standalone.dist : pck.dist}/`);
   let data = `import '${src}/main.js'\n`;
 
@@ -97,7 +99,8 @@ const buildScript = async (pck, minify, legacy, map, standalone) => {
 };
 
 const buildSchemeBootScript = async () => {
-  const src = root('src/scheme');
+  const regExp = new RegExp('\\' + path.sep, 'g');
+  const src = root('src/scheme').replace(regExp, '/');
   const data = `import '${src}/boot.js'\n`;
 
   const input = {

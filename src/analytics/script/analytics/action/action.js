@@ -9,13 +9,13 @@ const getParametersLayer = (data) => {
 };
 
 class Action {
-  constructor (name, isCollectable = false) {
+  constructor (name) {
     this._isMuted = false;
     this._name = name;
-    this._isCollectable = isCollectable;
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
     this._parameters = {};
+    this._isRatingActive = true;
   }
 
   get isMuted () {
@@ -24,10 +24,6 @@ class Action {
 
   set isMuted (value) {
     this._isMuted = value;
-  }
-
-  get isCollectable () {
-    return this._isCollectable && this._status === ActionStatus.UNSTARTED;
   }
 
   get status () {
@@ -48,6 +44,26 @@ class Action {
 
   get parameters () {
     return this._parameters;
+  }
+
+  singularize () {
+    this._status = ActionStatus.SINGULAR;
+  }
+
+  rewind () {
+    switch (this._status) {
+      case ActionStatus.STARTED:
+      case ActionStatus.ENDED:
+        this._status = ActionStatus.UNSTARTED;
+    }
+  }
+
+  get isRatingActive () {
+    return this._isRatingActive;
+  }
+
+  set isRatingActive (value) {
+    this._isRatingActive = value;
   }
 
   addParameter (key, value) {
@@ -83,26 +99,50 @@ class Action {
 
     if (this._reference) layer.push('actionref', this._reference);
 
-    if (data) {
-      const merge = Object.assign({}, this._parameters, data);
-      layer.push.apply(layer, getParametersLayer(merge));
-    }
+    if (data) layer.push.apply(layer, getParametersLayer({ ...this._parameters, ...data }));
     return layer;
   }
 
   start (data) {
-    if (this._status.value > ActionStatus.UNSTARTED.value) {
-      api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
-      return;
+    let mode;
+    switch (this._status) {
+      case ActionStatus.UNSTARTED:
+        if (!this._isRatingActive || !Action.isRatingEnabled) return [];
+        mode = ActionMode.IN;
+        this._status = ActionStatus.STARTED;
+        break;
+
+      case ActionStatus.SINGULAR:
+        mode = ActionMode.NONE;
+        break;
+
+      default:
+        api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
+        return [];
     }
-    const layer = this._getLayer(ActionMode.IN, data);
-    this._status = ActionStatus.STARTED;
+    const layer = this._getLayer(mode, data);
     return layer;
   }
 
   end (data) {
-    const layer = this._getLayer(this._status === ActionStatus.STARTED ? ActionMode.OUT : ActionMode.NONE, data);
-    this._status = ActionStatus.ENDED;
+    let mode;
+    switch (this._status) {
+      case ActionStatus.STARTED:
+        mode = ActionMode.OUT;
+        this._status = ActionStatus.ENDED;
+        break;
+
+      case ActionStatus.UNSTARTED:
+      case ActionStatus.ENDED:
+        mode = ActionMode.NONE;
+        this._status = ActionStatus.ENDED;
+        break;
+
+      case ActionStatus.SINGULAR:
+        mode = ActionMode.NONE;
+        break;
+    }
+    const layer = this._getLayer(mode, data);
     return layer;
   }
 
@@ -117,5 +157,7 @@ class Action {
     return layer;
   }
 }
+
+Action.isRatingEnabled = false;
 
 export { Action };

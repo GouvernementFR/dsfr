@@ -3,6 +3,8 @@
 
 * notice.title (String, optional): Titre du bandeau
 
+* notice.id (String, optional): Id du bandeau
+
 * notice.text (string, optional) : Texte de decription de bandeau
 
 * notice.type (String, optional): Type de bandeau [info]
@@ -31,6 +33,7 @@ let attributes = notice.attributes || {};
 classes.push(prefix + '-notice');
 if (type) classes.push(prefix + '-notice--' + type);
 if (notice.notice) attributes.role = "notice";
+if (notice.id) attributes.id = notice.id;
  %>
 
 <div <%- includeAttrs(attributes); %> <%- includeClasses(classes); %>>

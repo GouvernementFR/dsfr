@@ -1,3 +1,3 @@
-const ID = 'dsfr_callout';
+const ID = 'callout';
 
 export default ID;

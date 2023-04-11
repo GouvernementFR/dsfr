@@ -1,3 +1,3 @@
-const ID = 'dsfr_tab';
+const ID = 'tab';
 
 export default ID;

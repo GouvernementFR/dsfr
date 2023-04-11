@@ -7,7 +7,7 @@ class HeaderMenuButtonActionee extends ComponentActionee {
   }
 
   init () {
-    if (this.isBreakpoint(api.core.Breakpoints.LG)) this._priority = 4;
+    if (this.isBreakpoint(api.core.Breakpoints.LG)) this.setPriority(4);
   }
 }
 

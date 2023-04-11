@@ -6,7 +6,7 @@ const push = (type, layer) => {
     return;
   }
 
-  api.inspector.log('analytics', type, layer);
+  api.inspector.info('analytics', type, layer);
 
   window.EA_push(type, layer);
 };

@@ -7,6 +7,10 @@
 
 * button.title (string, optional) : titre du lien
 
+* button.id (string) : id de l'élément
+
+* button.classes (array, optional) : Classes supplémentaires sur l'élément
+
 %>
 
 <%
@@ -18,6 +22,7 @@ if (!button.attributes) button.attributes = {};
 button.classes.push(prefix + '-btn--close');
 button.label = button.label || 'Fermer';
 button.title = button.title || button.label || 'Fermer';
+button.id = button.id || uniqueId('button');
 if (button.closeId) button.attributes['aria-controls'] = button.closeId;
 
 %>

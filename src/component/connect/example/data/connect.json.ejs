@@ -3,8 +3,11 @@ const connect = locals.connect || {};
 const type = connect.type || 'default';
 
 const data = {
+  markup: connect.markup || 'button',
+  id: connect.id || uniqueId('connect'),
   login: getText('default.login', 'connect'),
-  brand: getText(`${type}.brand`, 'connect', true)
+  brand: getText(`${type}.brand`, 'connect', true),
+  type: type,
 };
 
 const linkType = hasText(`${type}.link`, 'connect') && hasText(`${type}.href`, 'connect') ? type : 'default';

@@ -1,0 +1,27 @@
+import { ComponentActionee } from '../component-actionee';
+import ID from './id';
+
+class ConnectLinkActionee extends ComponentActionee {
+  constructor () {
+    super(2);
+  }
+
+  static get instanceClassName () {
+    return 'ConnectLinkActionee';
+  }
+
+  init () {
+    this.detectInteractionType();
+    this.listenClick();
+  }
+
+  get label () {
+    return this.getFirstText() || 'Qu\'est-ce que FranceConnect ?';
+  }
+
+  get component () {
+    return ID;
+  }
+}
+
+export { ConnectLinkActionee };

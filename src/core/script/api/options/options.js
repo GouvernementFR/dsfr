@@ -1,5 +1,6 @@
 import inspector from '../inspect/inspector.js';
 import { startAtDomContentLoaded, startAuto } from './starters.js';
+import config from '../../../config';
 
 export const Modes = {
   AUTO: 'auto',
@@ -19,9 +20,27 @@ class Options {
     this.preventManipulation = false;
   }
 
-  configure (settings = {}, start) {
+  configure (settings = {}, start, query) {
     this.startCallback = start;
-    if (settings.verbose === true) inspector.level = 0;
+    const isProduction = settings.production && (!query || query.production !== 'false');
+    switch (true) {
+      case query && !isNaN(query.level):
+        inspector.level = Number(query.level);
+        break;
+
+      case query && query.verbose && (query.verbose === 'true' || query.verbose === 1):
+        inspector.level = 0;
+        break;
+
+      case isProduction:
+        inspector.level = 999;
+        break;
+
+      case settings.verbose:
+        inspector.level = 0;
+        break;
+    }
+    inspector.info(`version ${config.version}`);
     this.mode = settings.mode || Modes.AUTO;
   }
 

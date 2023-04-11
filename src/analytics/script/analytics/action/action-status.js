@@ -10,6 +10,10 @@ const ActionStatus = {
   ENDED: {
     id: 'ended',
     value: 2
+  },
+  SINGULAR: {
+    id: 'singular',
+    value: 3
   }
 };
 

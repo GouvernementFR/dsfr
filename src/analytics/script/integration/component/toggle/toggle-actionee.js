@@ -4,7 +4,7 @@ import ID from './id';
 
 class ToggleActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1, true);
     this._data = {};
   }
 
@@ -13,13 +13,13 @@ class ToggleActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectCheckable();
+    this.detectCheckableType();
     this.listenCheckable();
   }
 
   get label () {
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('toggle__label'));
-    return label.textContent.trim();
+    return this.getFirstText(label) || 'Interrupteur';
   }
 
   get component () {

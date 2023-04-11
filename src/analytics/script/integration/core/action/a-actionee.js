@@ -2,7 +2,7 @@ import { Actionee } from '../actionee';
 
 class AActionee extends Actionee {
   constructor () {
-    super(null, 0);
+    super(0);
   }
 
   static get instanceClassName () {
@@ -10,7 +10,7 @@ class AActionee extends Actionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 

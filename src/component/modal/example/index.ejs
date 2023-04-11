@@ -19,6 +19,13 @@ let dataFooterButtons = {
     body: include('../example/sample/body/text'),
     footer: include('../example/sample/footer/buttons'),
 }
+
+let dataFooterLinks = {
+    title: 'Titre de la modale',
+    icon: 'arrow-right-line',
+    body: include('../example/sample/body/text'),
+    footer: include('../../link/example/sample/links-group.ejs', { linksGroup: { groupCount: 2, size: 'md' } }),
+}
 %>
 
 <%- sample('Modale simple', './sample/modal-default', {modal: { ...dataText, label: 'Modal simple'}}, true ); %>
@@ -31,8 +38,10 @@ let dataFooterButtons = {
 
 <%- sample('Modale avec iframe', './sample/modal-default', {modal: { ...dataText, label: 'Modal iframe', body: include('../example/sample/body/iframe')}}, true ); %>
 
-<%- sample('Modal avec zone d\'action', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale avec zone d\'action'}}, true ); %>
+<%- sample('Modale avec zone d\'action et boutons', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale avec zone d\'action'}}, true ); %>
 
-<%- sample('Modal avec zone d\'action ancré en haut', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale ancrée en haut', top: true}}, true ); %>
+<%- sample('Modale avec zone d\'action et liens', './sample/modal-default', {modal: { ...dataFooterLinks, label: 'Modale avec zone d\'action'}}, true ); %>
+
+<%- sample('Modale avec zone d\'action ancré en haut', './sample/modal-default', {modal: { ...dataFooterButtons, label: 'Modale ancrée en haut', top: true}}, true ); %>
 
 <%- sample('Modale simple non refermable au click sur le fond', './sample/modal-default', {modal: { ...dataText, label: 'Modal simple', concealingBackdrop: false}}, true ); %>
