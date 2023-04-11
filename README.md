@@ -1,6 +1,27 @@
-# Système de design de l’État
+# 🇫🇷 Système de Design de l’État
 
-Le Système de design de l’État (ci-après, le **DSFR**) est un ensemble de composants html / css / js ayant pour but de faciliter la vie des développeurs et intégrateurs pour bâtir leurs interfaces.
+[![GitHub release](https://img.shields.io/github/v/release/gouvernementFR/dsfr.svg)](https://GitHub.com/gouvernementFR/dsfr/releases/) [![Generic badge](https://img.shields.io/badge/npm-yellow.svg)](https://www.npmjs.com/package/@gouvfr/dsfr) [![Generic badge](https://img.shields.io/badge/license-grey.svg)](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md) [![Npm package monthly downloads](https://badgen.net/npm/dm/@gouvfr/dsfr)](https://npmjs.com/package/@gouvfr/dsfr)
+
+
+Le Système de Design de l’État (ci-après, le **DSFR**) est un ensemble de composants web HTML, CSS et Javascript pour faciliter le travail des équipes projets des sites Internet publics, et créer des interfaces numériques de qualité et accessibles.
+
+
+L'outil est développé, maintenu et géré par le [Service d'Information du Gouvernement (SIG)](https://www.gouvernement.fr/service-d-information-du-gouvernement-sig).
+
+Son utilisation par les administrations est soumise à une demande d'agrément (voir partie 5 des Conditions Générales d'Utilisation).
+
+[Voir la documentation officielle](https://www.systeme-de-design.gouv.fr)
+
+## Licence et droit d'utilisation
+Le contenu de ce projet est placé sous licence MIT License, à l'exception de la fonte Marianne. Voir [LICENSE.md](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md) 
+
+#### ⚠️ Utilisation interdite en dehors des sites Internet de l'État
+>Il est formellement interdit à tout autre acteur d’utiliser le Système de Design de l’État (les administrations territoriales ou tout autre acteur privé). Le Système de Design de l’État représente l’identité numérique de l’État. En cas d’usage à des fins trompeuses ou frauduleuses, l'État se réserve le droit d’entreprendre les actions nécessaires pour y mettre un terme.
+Voir les [conditions générales d'utilisation](doc/legal/cgu.md).
+
+
+#### ⚠️ Prohibited Use Outside Government Websites
+>This Design System is only meant to be used by official French public services' websites and apps. Its main purpose is to make it easy to identify governmental websites for citizens. See terms.
 
 ## Installation
 
@@ -63,7 +84,7 @@ Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spe
 ### Le HTML
 Le point de départ de l’utilisation du DSFR  est la création de fichiers HTML, afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. L’exemple ci dessous est le code minimal afin de pouvoir utiliser le DSFR.
 
-L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont system, light, dark.La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
+L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont `system`, `light`, `dark`. La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
 Consulter la [documentation des paramètres d’affichage](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametres-d-affichage) afin d’en savoir plus.
 
 ```html
@@ -100,21 +121,31 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
 
 **Les CSS**
 
-Afin d’inclure la totalité des composants et des styles du DS, il est nécessaire d’inclure la feuille de style `dist/dsfr.min.css`. Les classes utilitaires, notamment les icônes, sont disponibles dans un fichier à part dans `dist/utility/utility.scss`.
-
+Afin d’inclure la totalité des composants et des styles du système de design, il est nécessaire d’inclure la feuille de style `dist/dsfr.min.css`.
+Les classes utilitaires, notamment les icônes, sont disponibles dans un fichier à part dans `dist/utility/utility.scss`.
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="dsfr.min.css">
+    <link rel="stylesheet" href="utility/utility.min.css">
+```
 Il est aussi possible d’importer uniquement ce que l’on souhaite utiliser. En effet, pour ajouter un composant seul il suffit d’importer son CSS ainsi que celui de chacune des dépendances de ce composant. Ces dépendances sont listés dans le `README.md` de chaque package.
-
+```html
+<html>
+  <head>
+    <link rel="stylesheet" href="core.min.css">
+    <link rel="stylesheet" href="link.min.css">
+    <link rel="stylesheet" href="button.min.css">
+```
 
 
 **Le Javascript**
 
 L’ensemble du code javascript nécessaire au bon fonctionnement du DS se trouve dans deux fichiers `dist/dsfr.module.min.js` et `dist/dsfr.nomodule.min.js`.
 
-De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
-
 
 Le fichier dsfr.module.min.js utilise les modules javascript natifs - sa balise script d’appel doit avoir l’attribut **type=”module”**.
-Le fichier dsfr.nomodule.min.js est utilisé par les anciens navigateurs ne supportant pas les modules javascript - sa balise script doit contenir l’attribut **nomodule**.
+Le fichier dsfr.nomodule.min.js est utilisé par les anciens navigateurs ne supportant pas les modules javascript (es6) - sa balise script doit contenir l’attribut **nomodule**.
 Il est **impératif** d’appeler les **deux fichiers** javascript afin que le code s’exécute correctement sur l’ensemble des navigateurs supportés :
 
 ```html
@@ -124,6 +155,9 @@ Il est **impératif** d’appeler les **deux fichiers** javascript afin que le c
 </html>
 ```
 
+> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/doc/Analytics-1.9.0.pdf)
+
+De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
 ### Icônes
 Les icônes sont stockées dans `dist/icons` et classées par catégories.
 Le design système utilise principalement des icônes de la librairie remixIcon. Il existe aussi des icônes personnalisées, celles-ci sont préfixée par “fr--”.

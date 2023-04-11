@@ -11,21 +11,26 @@ class Navigation extends api.core.CollapsesGroup {
     super.init();
     this.clicked = false;
     this.out = false;
-    this.listen('focusout', this.focusOut.bind(this));
-    this.listen('mousedown', this.down.bind(this));
+    this.listen('focusout', this.focusOutHandler.bind(this));
+    this.listen('mousedown', this.mouseDownHandler.bind(this));
+    this.listen('click', this.clickHandler.bind(this), { capture: true });
   }
 
   validate (member) {
     return member.element.node.matches(NavigationSelector.COLLAPSE);
   }
 
-  down (e) {
+  mouseDownHandler (e) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
     this.position = this.current.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
     this.requestPosition();
   }
 
-  focusOut (e) {
+  clickHandler (e) {
+    if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) this.index = -1;
+  }
+
+  focusOutHandler (e) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
     this.out = true;
     this.requestPosition();
