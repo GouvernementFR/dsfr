@@ -34,6 +34,11 @@
     background-size: spacing.space(4v) spacing.space(4v);
     @include padding-right(9v);
 
+    @supports not selector(::-webkit-calendar-picker-indicator) {
+      background-image: none;
+      @include padding-right(4v);
+    }
+
     &::-webkit-calendar-picker-indicator {
       display: block;
       @include padding(4v);
