@@ -3,7 +3,7 @@ import { SummarySelector } from './summary-selector';
 
 class SummarySectionActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -20,7 +20,7 @@ class SummarySectionActionee extends ComponentActionee {
 
   get label () {
     if (!this._link) return null;
-    return this._link.textContent.trim();
+    return this.getFirstText(this._link);
   }
 }
 

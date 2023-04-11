@@ -3,7 +3,7 @@ import { SummarySelector } from './summary-selector';
 
 class SummaryActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -12,7 +12,7 @@ class SummaryActionee extends ComponentActionee {
 
   get label () {
     const title = this.node.querySelector(SummarySelector.TITLE);
-    if (title) return title.textContent.trim();
+    if (title) return this.getFirstText(title);
     return 'Sommaire';
   }
 }

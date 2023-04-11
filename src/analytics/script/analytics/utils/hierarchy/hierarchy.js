@@ -50,9 +50,9 @@ class Hierarchy {
     }
 
     this._label = normalize(this._members[this._members.length - 1].label);
-    this._title = normalize(this._members.filter(member => member.label).map(member => member.label).join(' ＞ '));
+    this._title = normalize(this._members.filter(member => member.label).map(member => member.label).join(' › '));
     const components = this._members.filter(member => member.component).map(member => member.component);
-    this._component = normalize(components.join(' ＞ '));
+    this._component = normalize(components.join(' › '));
     this._localComponent = components[components.length - 1];
     this._globalComponent = components[0];
 

@@ -4,7 +4,7 @@ import ID from './id';
 
 class CheckboxActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1, true);
     this._data = {};
   }
 
@@ -13,13 +13,13 @@ class CheckboxActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectCheckable();
+    this.detectCheckableType();
     this.listenCheckable();
   }
 
   get label () {
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    return label.textContent.trim();
+    return this.getFirstText(label);
   }
 
   get component () {

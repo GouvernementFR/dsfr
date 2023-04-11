@@ -49,7 +49,6 @@ class Member {
     if (heading) {
       this._level = Number(heading.tagName.charAt(1)) - 1;
     }
-    // console.log('INSTANCE LEVEL', instance.level, this._level);
 
     if (!isNaN(instance.level) && instance.level < this._level) this._level = instance.level;
     this._label = instance.label;
@@ -68,7 +67,7 @@ class Member {
     });
     if (!labels.length) return false;
     this._type = Type.HEADING;
-    this._label = labels.join(' ＞ ');
+    this._label = labels.join(' › ');
     return true;
   }
 

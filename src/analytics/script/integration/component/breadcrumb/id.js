@@ -1,3 +1,3 @@
-const ID = 'dsfr_breadcrumb';
+const ID = 'breadcrumb';
 
 export default ID;

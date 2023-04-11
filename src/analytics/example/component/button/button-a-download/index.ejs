@@ -1,0 +1,8 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+
+  <%- section('Étiquette d’élément A', null, 0) %>
+
+  <%- sample('lien download', '../../../../../component/button/template/ejs/button.ejs', { button: { label: 'label a download', id: uniqueId('button'), markup:'a', href:'../../../../../example/img/image.jpg', attributes: { download: '' } } }); %>
+</div>

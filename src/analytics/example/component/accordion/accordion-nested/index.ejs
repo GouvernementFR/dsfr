@@ -1,0 +1,15 @@
+<% const sample = getSample(include); %>
+<%
+  const accordionImbricated = {
+    label: 'Intitulé accordéon',
+    content: include('../../../../../component/accordion/example/sample/accordion'),
+    id: uniqueId('accordion-imbricated'),
+  }
+%>
+
+<div class="<%= prefix %>-container" >
+  <div class="<%= prefix %>-mb-6v">
+    <%- section('Accordéon dans un accordéon', null, 0) %>
+    <%- include('../../../../../component/accordion/template/ejs/accordion', {accordion: accordionImbricated}); %>
+  </div>
+</div>

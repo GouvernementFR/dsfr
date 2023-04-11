@@ -1,3 +1,10 @@
 // import './core/core';
-import './attributes/attributes';
-import './component/components';
+import integrateAttributes from './attributes/attributes';
+import integrateComponents from './component/components';
+
+const integration = () => {
+  integrateAttributes();
+  integrateComponents();
+};
+
+export default integration;

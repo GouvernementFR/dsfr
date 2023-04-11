@@ -17,7 +17,7 @@ function items(level, active) {
   const items = [];
   let model = models1[level];
   (active===true) ? model = models2[level] : models1[level];
-
+  items.href = sidemenu.href || '#';
   for (let i = 0; i < model.length; i++) switch(model.charAt(i)) {
     case 'L': // 'L' pour Link
       items.push(link(level + 1, active && i === 1));

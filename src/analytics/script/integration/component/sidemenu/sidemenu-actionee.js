@@ -3,7 +3,7 @@ import { SidemenuSelector } from './sidemenu-selector';
 
 class SidemenuActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -14,7 +14,7 @@ class SidemenuActionee extends ComponentActionee {
     const sidemenu = this.node.closest(SidemenuSelector.SIDEMENU);
     if (sidemenu) {
       const title = sidemenu.querySelector(SidemenuSelector.TITLE);
-      if (title) return title.textContent.trim();
+      if (title) return this.getFirstText(title);
     }
 
     return 'Menu Latéral';

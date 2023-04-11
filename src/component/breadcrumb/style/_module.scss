@@ -20,6 +20,8 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include text-style(xs);
     @include margin(0);
     @include padding(0);
+    @include disable-tint;
+    @include hover-underline;
     color: inherit;
 
     &[aria-expanded="true"] {
@@ -71,18 +73,20 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     }
   }
 
-  /**
-   * margin-bottom de 2v pour créer cet espace entre chaque ligne
-   */
   &__link {
     vertical-align: top;
     position: relative;
+    @include link-underline;
+    @include disable-tint;
     @include text-style(xs);
+    @include padding(0);
+    @include hover-underline;
 
     &[aria-current] {
-      &:not([href]) {
+      &:not(button):not([href]) {
         pointer-events: none;
         cursor: default;
+        @include disable-underline;
       }
     }
   }

@@ -3,7 +3,7 @@ import api from '../../../../api';
 
 class HeaderToolsButtonActionee extends ComponentActionee {
   constructor () {
-    super(null, 4);
+    super(4);
   }
 
   static get instanceClassName () {

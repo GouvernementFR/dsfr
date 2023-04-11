@@ -1,3 +1,3 @@
-const ID = 'dsfr_modal';
+const ID = 'modal';
 
 export default ID;

@@ -1,12 +1,11 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { TabButtonActionee } from './tab-button-actionee';
 import ID from './id';
 
 class TabActionee extends ComponentActionee {
   constructor () {
-    super(Type.DISCLOSE, 2);
+    super(2, true);
   }
 
   static get instanceClassName () {
@@ -14,6 +13,7 @@ class TabActionee extends ComponentActionee {
   }
 
   init () {
+    this.setDiscloseType();
     this.register(`[aria-controls="${this.id}"]`, TabButtonActionee);
     this._instance = this.element.getInstance('TabPanel');
     this.listenDisclose();
@@ -23,11 +23,11 @@ class TabActionee extends ComponentActionee {
     const tabs = this.node.closest(api.tab.TabSelector.GROUP);
     if (tabs) {
       const tab = tabs.querySelector(`${api.tab.TabSelector.LIST} [aria-controls="${this.id}"]${api.tab.TabSelector.TAB}`);
-      if (tab) return tab.textContent.trim();
+      if (tab) return this.getFirstText();
     }
 
     const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    if (button) return button.node.textContent.trim();
+    if (button) return this.getFirstText(button);
     return null;
   }
 

@@ -1,4 +1,6 @@
 import api from './index.js';
-import './script/integration/integration';
+import integration from './script/integration/integration';
+
+api.analytics.readiness.then(() => integration());
 
 export default api;
