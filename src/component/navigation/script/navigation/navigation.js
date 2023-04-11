@@ -13,7 +13,7 @@ class Navigation extends api.core.CollapsesGroup {
     this.out = false;
     this.listen('focusout', this.focusOutHandler.bind(this));
     this.listen('mousedown', this.mouseDownHandler.bind(this));
-    this.listen('mouseup', this.mouseUpHandler.bind(this), { capture: true });
+    this.listen('click', this.clickHandler.bind(this), { capture: true });
   }
 
   validate (member) {
@@ -26,7 +26,7 @@ class Navigation extends api.core.CollapsesGroup {
     this.requestPosition();
   }
 
-  mouseUpHandler (e) {
+  clickHandler (e) {
     if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) this.index = -1;
   }
 
