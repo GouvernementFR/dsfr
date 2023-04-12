@@ -31,8 +31,9 @@ class Member {
   }
 
   _parseHeadings () {
+    // retirer les :scope pour IE
     const selector = Array.from({ length: this._level }, (v, i) => `:scope > h${i + 1}, :scope > * > h${i + 1}`).join(',');
-    this._headings = [...this._node.querySelectorAll(selector)].filter(heading => (this._target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
+    this._headings = Array.from(this._node.querySelectorAll(selector)).filter(heading => (this._target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
   }
 
   _getComponent () {
