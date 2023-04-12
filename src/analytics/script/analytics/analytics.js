@@ -8,6 +8,7 @@ import PushType from './facade/push-type';
 import actions from './action/actions';
 import queue from './engine/queue';
 import opt from './facade/opt';
+import debug from './facade/debug';
 import { Collector } from './engine/collector';
 
 class Analytics {
@@ -103,6 +104,14 @@ class Analytics {
 
   get collection () {
     return this._collector.collection;
+  }
+
+  get isDebugging () {
+    return debug.isActive;
+  }
+
+  set isDebugging (value) {
+    debug.isActive = value;
   }
 
   push (type, layer) {
