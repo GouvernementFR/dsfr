@@ -5,12 +5,13 @@ subdir:
   title: Pages
   attribute: Attributs
   component: Composants
-  page: Pages
+  agnostic: sans framework
   alert: Alerte (alert)
   alert-close: Alerte avec bouton de fermeture
   alert-dynamic: Alerte ajoutée dynamiquement
   accordion: Accordéon (accordion)
   accordion-nested: Accordéon imbriqué
+  angular: Angular (angular)
   badge: Badge (badge)
   breadcrumb: Fil d’ariane (breadcrumb)
   breadcrumb-button: Fil d’ariane avec boutons
@@ -47,14 +48,17 @@ subdir:
   modal-links: Modale avec zone d'action et liens
   navigation: Navigation principale (navigation)
   notice: Bandeau d'information (notice)
+  page: Pages
   pagination: Pagination (pagination)
   quote: Citation (quote)
   radio: Bouton radio (radio)
   radio-rich: Bouton radio riche
+  react: React (react)
   search: Barre de recherche (search)
   select: Liste déroulante (select)
   share: Boutons de partage (share)
   sidemenu: Menu latéral (sidemenu)
+  spa: Single-page application
   stepper: Indicateur d'étapes (stepper)
   summary: Sommaire (summary)
   tab: Onglets (tab)
@@ -70,5 +74,5 @@ subdir:
   transcription: Transcription (transcription)
   translate: Sélecteur de langue (translate)
   upload: Ajout de fichier (upload)
-  spa: Single-page application
-  agnostic: sans framework
+  vue: Vue (vue)
+

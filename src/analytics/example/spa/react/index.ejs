@@ -1,0 +1,172 @@
+<div class="<%= prefix %>-container">
+  <div id="react-container">
+    <div>
+      <header role="banner" class="<%= prefix %>-header" id="header-120">
+        <div class="<%= prefix %>-header__body">
+            <div class="<%= prefix %>-container">
+                <div class="<%= prefix %>-header__body-row">
+                    <div class="<%= prefix %>-header__brand <%= prefix %>-enlarge-link">
+                        <div class="<%= prefix %>-header__brand-top">
+                            <div class="<%= prefix %>-header__logo">
+                                <p class="<%= prefix %>-logo">
+                                    République
+                                    <br>Française
+                                </p>
+                            </div>
+                            <div class="<%= prefix %>-header__operator">
+                                <img class="<%= prefix %>-responsive-img" style="max-width:9.0625rem;" src="../../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - texte alternatif de l’image]" data-<%= prefix %>-js-ratio="true">
+                                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+                            </div>
+                            <div class="<%= prefix %>-header__navbar">
+                                <button class="<%= prefix %>-btn--search <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-122" id="button-123" title="Rechercher" data-<%= prefix %>-js-modal-button="true" >
+                                    Rechercher
+                                </button>
+                                <button class="<%= prefix %>-btn--menu <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-124" aria-haspopup="menu" id="button-125" title="Menu">
+                                    Menu
+                                </button>
+                            </div>
+                        </div>
+                        <div class="<%= prefix %>-header__service">
+                            <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                                <p class="<%= prefix %>-header__service-title">
+                                    Nom du site / service
+                                </p>
+                            </a>
+                            <p class="<%= prefix %>-header__service-tagline">baseline - précisions sur l‘organisation</p>
+                        </div>
+                    </div>
+                    <div class="<%= prefix %>-header__tools">
+                        <div class="<%= prefix %>-header__tools-links">
+                            <ul class="<%= prefix %>-btns-group">
+                                <li>
+                                    <router-link class="<%= prefix %>-btn" to="/link">Lien</router-link>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="<%= prefix %>-header__search <%= prefix %>-modal" id="modal-122">
+                            <div class="<%= prefix %>-container <%= prefix %>-container-lg--fluid">
+                                <button class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-122" id="button-130" title="Fermer">
+                                    Fermer
+                                </button>
+                                <div class="<%= prefix %>-search-bar" id="search-121" role="search">
+                                    <label class="<%= prefix %>-label" for="search-121-input">
+                                        Rechercher
+                                    </label>
+                                    <input class="<%= prefix %>-input" aria-describedby="search-121-input-messages" placeholder="Rechercher" id="search-121-input" type="search">
+                                    <div class="<%= prefix %>-messages-group" id="search-121-input-messages" aria-live="assertive">
+                                    </div>
+                                    <button class="<%= prefix %>-btn" id="search-btn-132" title="Rechercher">
+                                        Rechercher
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="<%= prefix %>-header__menu <%= prefix %>-modal" id="modal-124">
+            <div class="<%= prefix %>-container">
+                <button class="<%= prefix %>-btn--close <%= prefix %>-btn" aria-controls="modal-124" id="button-133" title="Fermer">
+                    Fermer
+                </button>
+                <div class="<%= prefix %>-header__menu-links">
+                </div>
+                <nav class="<%= prefix %>-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
+                  <ul class="<%= prefix %>-nav__list">
+                    <li class="<%= prefix %>-nav__item">
+                      <router-link class="<%= prefix %>-nav__link" to="/">Base</router-link>
+                    </li>
+                    <li class="<%= prefix %>-nav__item">
+                      <router-link class="<%= prefix %>-nav__link" to="/link">Liens</router-link>
+                    </li>
+                    <li class="<%= prefix %>-nav__item">
+                      <router-link class="<%= prefix %>-nav__link" to="/button">Boutons</router-link>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
+        </div>
+      </header>
+
+      <div class="<%= prefix %>-container <%= prefix %>-mt-8v">
+
+        <h2>Contenu router view</h2>
+        <router-view></router-view>
+
+        <br>
+        <hr class="<%=prefix%>-my-12v">
+
+        <h2>Affichage conditionné (v-if)</h2>
+        <div v-if="pagination==1">
+          <h1>Page {{pagination}}</h1>
+          <a href="#" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-click" >Home</a>
+        </div>
+        <div v-if="pagination==2">
+          <h1>Page {{pagination}}</h1>
+          <button id="btn-1" class="<%= prefix %>-btn">Button 1</button>
+        </div>
+        <div v-if="pagination==3">
+          <h1>Page {{pagination}}</h1>
+          <button id="btn-2" class="<%= prefix %>-btn">Button 2</button>
+        </div>
+
+        <nav role="navigation" class="<%= prefix %>-pagination <%= prefix %>-mt-8v" aria-label="Pagination">
+          <ul class="<%= prefix %>-pagination__list">
+              <li>
+                  <a class="<%= prefix %>-pagination__link <%= prefix %>-pagination__link--lg-label" id="pagination__link-309" href="" v-on:click.prevent="pagination=1">
+                      1
+                  </a>
+              </li>
+              <li>
+                  <a class="<%= prefix %>-pagination__link" id="pagination__link-310" href="prevented" title="Page 1" data-<%= prefix %>-js-pagination-actionee="true" v-on:click.prevent="pagination = 2" >
+                      2
+                  </a>
+              </li>
+              <li>
+                  <a class="<%= prefix %>-pagination__link <%= prefix %>-pagination__link--lg-label" id="pagination__link-317" href="/ici" v-on:click.prevent="pagination = 3">
+                      3
+                  </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js" integrity="sha512-WUYHkznU63aC8fRUc3wq/WdXwZITqMX/9kEBK61WnAL4HHJIliIAFmFVD8yU/JHvCRmkO+MdkhAfGS1J0ckRJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-router/6.10.0/react-router.production.min.js" integrity="sha512-SDCLfzy/l9gtT7Ubz0C7uz2qeh33PwHVsjn2ijATWVExwzPshL0kV4urhfx5bmeomYtujU5UMseX9uN6vw4fHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  const Link = ReactRouterDOM.Link;
+  const Route = ReactRouterDOM.Route;
+
+  const { createApp } = Vue
+  const { createRouter, createWebHashHistory } = VueRouter
+
+
+  const App = () => (
+    <ReactRouterDOM.HashRouter>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/register">Register</Link></li>
+      </ul>
+    </ReactRouterDOM.HashRouter>
+  )
+  ReactDOM.render(<App />, document.querySelector('#react-container'));
+
+  const Home = () => <h1>Home</h1>
+ const Login = () => <h1>Login</h1>
+ const Register = () => <h1>Register</h1>
+
+  const Base = () => <p>>lorem ipsum dolor sit amet</p>
+  const Link = () =>  <a href="#" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a>
+  const Button = () => <button id="btn-3" class="<%= prefix %>-btn">Button page 3</button>
+
+  <Route path="/" exact component={Base} />
+  <Route path="/link" component={Link} />
+  <Route path="/button" component={Button} />
+
+</script>
