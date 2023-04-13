@@ -43,11 +43,12 @@ class Init {
   }
 
   pushing () {
+    console.log('init pushing', window[PUSH]);
     if (!window[PUSH]) window[PUSH] = (...args) => this.store.push(args);
   }
 
   load () {
-    requestAnimationFrame(this._load.bind(this));
+    setTimeout(this._load.bind(this), 250);
   }
 
   _load () {
@@ -71,7 +72,7 @@ class Init {
   }
 
   loaded () {
-    requestAnimationFrame(this._loaded.bind(this));
+   setTimeout(this._loaded.bind(this), 250);
   }
 
   _loaded () {
