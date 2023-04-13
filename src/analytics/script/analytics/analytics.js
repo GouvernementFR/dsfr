@@ -25,6 +25,7 @@ class Analytics {
   }
 
   _configure () {
+    console.log('analytics configure');
     switch (true) {
       case window[patch.namespace] !== undefined:
         this._config = window[patch.namespace].configuration.analytics;
@@ -47,6 +48,7 @@ class Analytics {
   }
 
   _build () {
+    console.log('analytics build');
     this._init = new Init(this._config.domain);
     this._init.configure().then(this._start.bind(this), this._reject);
   }
@@ -61,6 +63,8 @@ class Analytics {
 
   _start () {
     if (this._isReady) return;
+
+    console.log('analytics start');
 
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
     this._collector = new Collector(this._config);

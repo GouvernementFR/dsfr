@@ -15,6 +15,7 @@ class Init {
 
   configure () {
     this.pushing();
+    console.log('init configure', opt.isDisabled);
     if (opt.isDisabled) this._reject();
     else this.load();
     return this._promise;
@@ -44,6 +45,7 @@ class Init {
   }
 
   load () {
+    console.log('init load');
     const stamp = new Date() / 1E7 | 0;
     const offset = stamp % 26;
     const key = String.fromCharCode(97 + offset, 122 - offset, 65 + offset) + (stamp % 1E3);
@@ -64,6 +66,7 @@ class Init {
 
   loaded () {
     if (this._isLoaded) return;
+    console.log('init loaded');
     this._isLoaded = true;
     this._resolve();
   }

@@ -31,9 +31,11 @@ class Queue {
     if (this._isStarted) return;
     this._isStarted = true;
     renderer.add(this);
+    console.log('collector started');
   }
 
   collect (layer) {
+    console.log('collector collect');
     this._type = PushType.COLLECTOR;
     this._collectionLayer = layer;
     this._request();

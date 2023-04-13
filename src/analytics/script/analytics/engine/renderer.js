@@ -2,6 +2,7 @@ class Renderer {
   constructor () {
     this._renderables = [];
     this._rendering = this.render.bind(this);
+    console.log('renderer construct');
     requestAnimationFrame(this._rendering);
   }
 
