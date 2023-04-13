@@ -67,10 +67,6 @@ class ActionElement {
 
   begin () {
     if (this._hasBegun) return;
-    if (!this._action) {
-      requestAnimationFrame(this.begin.bind(this));
-      return;
-    }
     this._hasBegun = true;
     if (this._type.isBeginning) queue.appendStartingAction(this._action);
   }
