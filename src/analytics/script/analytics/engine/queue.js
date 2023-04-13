@@ -2,6 +2,7 @@
 import PushType from '../facade/push-type.js';
 import push from '../facade/push.js';
 import renderer from './renderer';
+import api from '../../../api';
 
 const SLICE = 80;
 
@@ -42,13 +43,19 @@ class Queue {
   }
 
   appendStartingAction (action) {
-    if (this._startingActions.indexOf(action) > -1) return;
+    if (!action || this._startingActions.indexOf(action) > -1) {
+      api.inspector.log('appendStartingAction', action, `index: ${this._startingActions.indexOf(action)}`);
+      return;
+    }
     this._startingActions.push(action);
     this._request();
   }
 
   appendEndingAction (action) {
-    if (this._endingActions.indexOf(action) > -1) return;
+    if (!action || this._endingActions.indexOf(action) > -1) {
+      api.inspector.log('appendEndingAction', action, `index: ${this._endingActions.indexOf(action)}`);
+      return;
+    }
     this._endingActions.push(action);
     this._request();
   }
