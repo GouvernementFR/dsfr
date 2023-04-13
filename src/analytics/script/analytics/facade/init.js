@@ -47,6 +47,10 @@ class Init {
   }
 
   load () {
+    requestAnimationFrame(this._load.bind(this));
+  }
+
+  _load () {
     console.log('init load');
     const stamp = new Date() / 1E7 | 0;
     const offset = stamp % 26;
@@ -67,6 +71,10 @@ class Init {
   }
 
   loaded () {
+    requestAnimationFrame(this._loaded.bind(this));
+  }
+
+  _loaded () {
     if (this._isLoaded) return;
     console.log('init loaded');
     this._isLoaded = true;
