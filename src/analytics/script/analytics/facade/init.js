@@ -28,6 +28,7 @@ class Init {
       bit >>>= 0;
       this._id = `_EA_${bit}`;
     }
+    console.log(this._id);
     return this._id;
   }
 
@@ -37,6 +38,7 @@ class Init {
       this._store.eah = this._domain;
       window[this.id] = this._store;
     }
+    console.log(this._store);
     return this._store;
   }
 
