@@ -13,46 +13,36 @@ class Init {
     });
   }
 
-  configure () {
-    this.pushing();
-    console.log('init configure', opt.isDisabled);
-    if (opt.isDisabled) this._reject();
-    else this.load();
-    return this._promise;
-  }
-
   get id () {
-    if (!this._id) {
-      let bit = 5381;
-      for (let i = this._domain.length - 1; i > 0; i--) bit = (bit * 33) ^ this._domain.charCodeAt(i);
-      bit >>>= 0;
-      this._id = `_EA_${bit}`;
-    }
-    console.log(this._id);
     return this._id;
   }
 
   get store () {
-    if (!this._store) {
-      this._store = [];
-      this._store.eah = this._domain;
-      window[this.id] = this._store;
-    }
-    console.log(this._store);
     return this._store;
   }
 
-  pushing () {
-    console.log('init pushing', window[PUSH]);
+  configure () {
+    if (opt.isDisabled) this._reject();
+    else this.init();
+    return this._promise;
+  }
+
+  init () {
+    let bit = 5381;
+    for (let i = this._domain.length - 1; i > 0; i--) bit = (bit * 33) ^ this._domain.charCodeAt(i);
+    bit >>>= 0;
+    this._id = `_EA_${bit}`;
+
+    this._store = [];
+    this._store.eah = this._domain;
+    window[this._id] = this._store;
+
     if (!window[PUSH]) window[PUSH] = (...args) => this.store.push(args);
+
+    this.load();
   }
 
   load () {
-    setTimeout(this._load.bind(this), 250);
-  }
-
-  _load () {
-    console.log('init load');
     const stamp = new Date() / 1E7 | 0;
     const offset = stamp % 26;
     const key = String.fromCharCode(97 + offset, 122 - offset, 65 + offset) + (stamp % 1E3);
@@ -72,10 +62,6 @@ class Init {
   }
 
   loaded () {
-   setTimeout(this._loaded.bind(this), 250);
-  }
-
-  _loaded () {
     if (this._isLoaded) return;
     console.log('init loaded');
     this._isLoaded = true;
