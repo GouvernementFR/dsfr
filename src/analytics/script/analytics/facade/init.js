@@ -63,7 +63,6 @@ class Init {
 
   loaded () {
     if (this._isLoaded) return;
-    console.log('init loaded');
     this._isLoaded = true;
     this._resolve();
   }
