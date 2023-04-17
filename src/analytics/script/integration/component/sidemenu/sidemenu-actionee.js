@@ -14,7 +14,10 @@ class SidemenuActionee extends ComponentActionee {
     const sidemenu = this.node.closest(SidemenuSelector.SIDEMENU);
     if (sidemenu) {
       const title = sidemenu.querySelector(SidemenuSelector.TITLE);
-      if (title) return this.getFirstText(title);
+      if (title) {
+        const firstText = this.getFirstText(title);
+        if (firstText) return firstText;
+      }
     }
 
     return 'Menu Latéral';

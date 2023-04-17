@@ -12,7 +12,10 @@ class SummaryActionee extends ComponentActionee {
 
   get label () {
     const title = this.node.querySelector(SummarySelector.TITLE);
-    if (title) return this.getFirstText(title);
+    if (title) {
+      const firstText = this.getFirstText(title);
+      if (firstText) return firstText;
+    }
     return 'Sommaire';
   }
 }

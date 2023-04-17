@@ -17,12 +17,18 @@ class SidemenuSectionActionee extends ComponentActionee {
   get label () {
     if (this._wrapper) {
       const button = this._wrapper.querySelector(SidemenuSelector.BUTTON);
-      if (button) return button.textContent.trim();
+      if (button) {
+        const firstText = this.getFirstText(button);
+        if (firstText) return firstText;
+      }
     }
     const instance = this.element.getInstance('Collapse');
     if (instance) {
       const button = instance.buttons.filter(button => button.isPrimary)[0];
-      if (button) return this.getFirstText(button);
+      if (button) {
+        const firstTextBtn = this.getFirstText(button);
+        if (firstTextBtn) return firstTextBtn;
+      }
     }
     return null;
   }
