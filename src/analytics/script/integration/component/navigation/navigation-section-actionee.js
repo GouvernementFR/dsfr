@@ -18,13 +18,19 @@ class NavigationSectionActionee extends ComponentActionee {
   get label () {
     if (this._wrapper) {
       const button = this._wrapper.querySelector(NavigationSelector.BUTTON);
-      if (button) return this.getFirstText(button);
+      if (button) {
+        const firstTextBtn = this.getFirstText(button);
+        if (firstTextBtn) return firstTextBtn;
+      }
     }
 
     const instance = this.element.getInstance('Collapse');
     if (instance) {
       const button = instance.buttons.filter(button => button.isPrimary)[0];
-      if (button) return this.getFirstText(button);
+      if (button) {
+        const firstTextCollapse = this.getFirstText(button);
+        if (firstTextCollapse) return firstTextCollapse;
+      }
     }
     return null;
   }
