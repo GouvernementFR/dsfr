@@ -2,13 +2,18 @@
   "id": "DSFR",
   "viewports": [
     {
-      "label": "phone",
-      "width": 320,
-      "height": 480
+      "label": "xs",
+      "width": 575,
+      "height": 768
     },
     {
-      "label": "tablet",
-      "width": 1024,
+      "label": "md",
+      "width": 991,
+      "height": 768
+    },
+    {
+      "label": "lg",
+      "width": 1247,
       "height": 768
     }
   ],
