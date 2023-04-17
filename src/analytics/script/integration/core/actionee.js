@@ -154,21 +154,29 @@ class Actionee extends api.core.Instance {
       for (let i = 0; i < node.childNodes.length; i++) {
         if (node.childNodes[i].nodeType === Node.TEXT_NODE) {
           const text = node.childNodes[i].textContent.trim();
-          if (text) return text;
+          if (text) {
+            return this.cropText(text);
+          }
         }
       }
 
       for (let i = 0; i < node.childNodes.length; i++) {
         const text = this.getFirstText(node.childNodes[i]);
-        if (text) return text;
+        if (text) {
+          return this.cropText(text);
+        }
       }
     }
     return '';
   }
 
+  cropText (text, length = 50) {
+    return text.length > 50 ? `${text.substring(0, 50).trim()}[...]` : text;
+  }
+
   getInteractionLabel () {
     const title = this.getAttribute('title');
-    if (title) return title;
+    if (title) return this.cropText(title);
 
     const text = this.getFirstText();
     if (text) return text;
@@ -176,7 +184,7 @@ class Actionee extends api.core.Instance {
     const img = this.node.querySelector('img');
     if (img) {
       const alt = img.getAttribute('alt');
-      if (alt) return alt;
+      if (alt) return this.cropText(alt);
     }
 
     return null;
