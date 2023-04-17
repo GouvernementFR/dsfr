@@ -25,7 +25,10 @@ class AccordionButtonActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getFirstText(this.node);
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+
+    return null;
   }
 
   get component () {

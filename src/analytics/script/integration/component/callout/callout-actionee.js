@@ -22,7 +22,7 @@ class CalloutActionee extends ComponentActionee {
       if (text) return text;
     }
 
-    return 'Mise en avant';
+    return null;
   }
 
   get component () {
