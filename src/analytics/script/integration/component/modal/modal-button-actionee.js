@@ -27,7 +27,7 @@ class ModalButtonActionee extends ComponentActionee {
   get label () {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
-    return null;
+    return 'bouton de modale';
   }
 
   get component () {

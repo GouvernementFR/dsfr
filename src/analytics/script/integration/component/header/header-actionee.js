@@ -15,7 +15,7 @@ class HeaderActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'En-tête';
+    return 'en-tête';
   }
 
   get component () {

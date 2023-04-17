@@ -10,7 +10,7 @@ class NavigationActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Navigation';
+    return 'navigation';
   }
 }
 

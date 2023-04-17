@@ -26,7 +26,7 @@ class InputActionee extends ComponentActionee {
       if (text) return text;
     }
 
-    return 'Champ de saisie';
+    return 'champ de saisie';
   }
 
   get component () {

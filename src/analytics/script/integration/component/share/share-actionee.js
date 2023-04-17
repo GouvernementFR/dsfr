@@ -21,7 +21,7 @@ class ShareActionee extends ComponentActionee {
       const firstText = this.getFirstText(title);
       if (firstText) return firstText;
     }
-    return 'Boutons de partage';
+    return 'boutons de partage';
   }
 
   get component () {

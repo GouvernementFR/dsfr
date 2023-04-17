@@ -20,7 +20,7 @@ class TableActionee extends ComponentActionee {
       const firstText = this.getFirstText(caption);
       if (firstText) return firstText;
     }
-    return null;
+    return 'tableau';
   }
 
   get component () {

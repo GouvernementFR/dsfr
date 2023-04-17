@@ -15,7 +15,7 @@ class FooterActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Pied de page';
+    return 'pied de page';
   }
 
   get component () {

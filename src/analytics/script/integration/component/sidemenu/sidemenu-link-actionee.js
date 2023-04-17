@@ -19,7 +19,7 @@ class SidemenuLinkActionee extends ComponentActionee {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
 
-    return null;
+    return 'lien menu latéral';
   }
 
   get component () {

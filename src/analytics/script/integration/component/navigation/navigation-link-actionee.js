@@ -19,7 +19,7 @@ class NavigationLinkActionee extends ComponentActionee {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
 
-    return null;
+    return 'lien de navigation';
   }
 
   get component () {

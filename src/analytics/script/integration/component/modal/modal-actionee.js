@@ -36,7 +36,7 @@ class ModalActionee extends ComponentActionee {
         if (text) return text;
       }
     }
-    return null;
+    return 'modale';
   }
 
   get component () {

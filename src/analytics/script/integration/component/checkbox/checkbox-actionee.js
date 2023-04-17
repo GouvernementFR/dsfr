@@ -23,7 +23,7 @@ class CheckboxActionee extends ComponentActionee {
       const text = this.getFirstText(label);
       if (text) return text;
     }
-    return null;
+    return 'case à cocher';
   }
 
   get component () {

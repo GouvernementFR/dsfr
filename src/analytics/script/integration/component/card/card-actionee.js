@@ -30,7 +30,7 @@ class CardActionee extends ComponentActionee {
     const heading = this.getHeadingLabel();
     if (heading) return heading;
 
-    return null;
+    return 'carte';
   }
 
   get component () {

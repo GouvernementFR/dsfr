@@ -25,7 +25,7 @@ class ButtonActionee extends ComponentActionee {
   get label () {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
-    return null;
+    return 'bouton';
   }
 
   get component () {

@@ -30,7 +30,7 @@ class SidemenuSectionActionee extends ComponentActionee {
         if (firstTextBtn) return firstTextBtn;
       }
     }
-    return null;
+    return 'section menu latéral';
   }
 }
 

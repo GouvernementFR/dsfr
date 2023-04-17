@@ -23,7 +23,7 @@ class UploadActionee extends ComponentActionee {
       if (text) return text;
     }
 
-    return null;
+    return 'ajout de fichier';
   }
 
   getData () {

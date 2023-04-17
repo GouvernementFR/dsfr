@@ -18,7 +18,7 @@ class SummaryLinkActionee extends ComponentActionee {
   get label () {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
-    return null;
+    return 'lien sommaire';
   }
 
   get component () {

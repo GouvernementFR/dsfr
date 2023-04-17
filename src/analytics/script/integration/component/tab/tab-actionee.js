@@ -34,7 +34,7 @@ class TabActionee extends ComponentActionee {
       const firstTextBtn = this.getFirstText(button);
       if (firstTextBtn) return firstTextBtn;
     }
-    return null;
+    return 'onglet';
   }
 
   get component () {

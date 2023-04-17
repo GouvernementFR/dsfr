@@ -15,7 +15,7 @@ class StepperActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Indicateur d\'étapes';
+    return 'indicateur d\'étapes';
   }
 
   get component () {

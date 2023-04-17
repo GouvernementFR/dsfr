@@ -22,7 +22,7 @@ class SummarySectionActionee extends ComponentActionee {
     if (!this._link) return null;
     const firstText = this.getFirstText(this._link);
     if (firstText) return firstText;
-    return null;
+    return 'section sommaire';
   }
 }
 

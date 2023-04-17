@@ -18,7 +18,7 @@ class PaginationActionee extends ComponentActionee {
   get label () {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
-    return null;
+    return 'pagination';
   }
 
   get component () {

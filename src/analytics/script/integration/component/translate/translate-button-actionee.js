@@ -28,7 +28,7 @@ class TranslateButtonActionee extends ComponentActionee {
   get label () {
     const label = this.getInteractionLabel();
     if (label) return label;
-    return null;
+    return 'bouton sélecteur de langue';
   }
 
   get component () {

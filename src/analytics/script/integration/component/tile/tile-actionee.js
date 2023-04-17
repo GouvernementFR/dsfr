@@ -27,7 +27,7 @@ class TileActionee extends ComponentActionee {
     const heading = this.getHeadingLabel();
     if (heading) return heading;
 
-    return null;
+    return 'tuile';
   }
 
   get component () {

@@ -23,6 +23,8 @@ class SelectActionee extends ComponentActionee {
       const firstText = this.getFirstText(label);
       if (firstText) return firstText;
     }
+
+    return 'liste déroulante';
   }
 
   get component () {

@@ -16,7 +16,7 @@ class SummaryActionee extends ComponentActionee {
       const firstText = this.getFirstText(title);
       if (firstText) return firstText;
     }
-    return 'Sommaire';
+    return 'sommaire';
   }
 }
 

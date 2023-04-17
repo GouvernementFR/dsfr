@@ -32,7 +32,7 @@ class NavigationSectionActionee extends ComponentActionee {
         if (text) return text;
       }
     }
-    return null;
+    return 'section de navigation';
   }
 }
 

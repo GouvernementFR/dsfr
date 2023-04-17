@@ -20,7 +20,7 @@ class SidemenuActionee extends ComponentActionee {
       }
     }
 
-    return 'Menu Latéral';
+    return 'menu Latéral';
   }
 }
 

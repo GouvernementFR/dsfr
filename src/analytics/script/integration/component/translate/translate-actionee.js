@@ -25,7 +25,7 @@ class TranslateActionee extends ComponentActionee {
       if (title) return title;
     }
 
-    return 'Sélecteur de langue';
+    return 'sélecteur de langue';
   }
 
   get component () {

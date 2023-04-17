@@ -36,7 +36,7 @@ class TranscriptionActionee extends ComponentActionee {
         if (firstTextBtn) return firstTextBtn;
       }
     }
-    return null;
+    return 'transcription';
   }
 
   get component () {

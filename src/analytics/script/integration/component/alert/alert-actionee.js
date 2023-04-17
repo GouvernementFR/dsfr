@@ -21,7 +21,7 @@ class AlertActionee extends ComponentActionee {
       const text = this.getFirstText(alertTitle);
       if (text) return text;
     }
-    return 'Alerte';
+    return 'alerte';
   }
 
   get component () {

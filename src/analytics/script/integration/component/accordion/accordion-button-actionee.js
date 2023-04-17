@@ -28,7 +28,7 @@ class AccordionButtonActionee extends ComponentActionee {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
 
-    return null;
+    return 'bouton d\'accordéon';
   }
 
   get component () {

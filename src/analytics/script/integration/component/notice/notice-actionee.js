@@ -22,7 +22,7 @@ class NoticeActionee extends ComponentActionee {
       if (firstText) return firstText;
     }
 
-    return null;
+    return 'bandeau d\'information importante';
   }
 
   get component () {

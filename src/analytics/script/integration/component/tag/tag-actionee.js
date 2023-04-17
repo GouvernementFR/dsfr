@@ -36,7 +36,7 @@ class TagActionee extends ComponentActionee {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
 
-    return 'Tag';
+    return 'tag';
   }
 
   get component () {

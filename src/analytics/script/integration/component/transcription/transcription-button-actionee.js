@@ -28,7 +28,7 @@ class TranscriptionButtonActionee extends ComponentActionee {
   get label () {
     const text = this.getFirstText();
     if (text) return text;
-    return null;
+    return 'bouton transcription';
   }
 
   get component () {

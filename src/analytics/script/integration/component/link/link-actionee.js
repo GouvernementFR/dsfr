@@ -19,7 +19,7 @@ class LinkActionee extends ComponentActionee {
     const firstText = this.getFirstText();
     if (firstText) return firstText;
 
-    return null;
+    return 'lien';
   }
 
   get component () {

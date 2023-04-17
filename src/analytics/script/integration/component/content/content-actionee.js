@@ -59,7 +59,7 @@ class ContentActionee extends ComponentActionee {
       if (ariaLabel) return ariaLabel;
     }
 
-    return 'Contenu média';
+    return 'contenu média';
   }
 
   get component () {

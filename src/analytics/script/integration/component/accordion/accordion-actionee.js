@@ -36,7 +36,7 @@ class AccordionActionee extends ComponentActionee {
         if (text) return text;
       }
     }
-    return null;
+    return 'accordéon';
   }
 
   get component () {
