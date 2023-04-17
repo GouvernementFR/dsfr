@@ -9,13 +9,14 @@ class Site {
   }
 
   reset (clear = false) {
-    this.environment = clear ? undefined : this._config.environment;
+    this.environment = clear ? Environment.DEVELOPMENT.id : this._config.environment;
     this.entity = clear ? undefined : this._config.entity;
-    this.language = clear ? document.documentElement.lang : this._config.language || document.documentElement.lang;
+    this.language = clear ? undefined : this._config.language;
     this.target = clear ? undefined : this._config.target;
     this.type = clear ? undefined : this._config.type;
     this.region = clear ? undefined : this._config.region;
     this.department = clear ? undefined : this._config.department;
+    this._api = api.version;
   }
 
   set environment (value) {
@@ -36,13 +37,12 @@ class Site {
         break;
 
       default:
-
         this._environment = Environment.DEVELOPMENT;
     }
   }
 
   get environment () {
-    return this._environment.id;
+    return this._environment ? this._environment.id : Environment.DEVELOPMENT.id;
   }
 
   set entity (value) {
@@ -60,7 +60,7 @@ class Site {
   }
 
   get language () {
-    return this._language;
+    return this._language || document.documentElement.lang;
   }
 
   set target (value) {
@@ -99,16 +99,21 @@ class Site {
     return this._department;
   }
 
+  get api () {
+    return this._api;
+  }
+
   get layer () {
     const layer = [];
     layer.push('site_environment', this._environment.value);
-    if (this._entity) layer.push('site_entity', normalize(this._entity));
+    if (this.entity) layer.push('site_entity', normalize(this.entity));
     else api.inspector.warn('entity is required in analytics.site');
-    if (this._language) layer.push('site_language', this._language);
-    if (this._target) layer.push('site_target', normalize(this._target));
-    if (this._type) layer.push('site_type', normalize(this._type));
-    if (this._region) layer.push('site_region', this._region);
-    if (this._department) layer.push('site_department', this._department);
+    if (this.language) layer.push('site_language', this.language);
+    if (this.target) layer.push('site_target', normalize(this.target));
+    if (this.type) layer.push('site_type', normalize(this.type));
+    if (this.region) layer.push('site_region', this.region);
+    if (this.department) layer.push('site_department', this.department);
+    if (this.api) layer.push('api_version', this.api);
     return layer;
   }
 }

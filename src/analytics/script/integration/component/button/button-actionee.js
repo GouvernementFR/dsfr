@@ -4,7 +4,7 @@ import { ButtonEmission } from './button-emission';
 
 class ButtonActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1, true);
     this._data = {};
   }
 
@@ -13,18 +13,17 @@ class ButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 
   handleClick () {
-    /* GET_DATA permet d'aller retrouver search_terms dans la search-bar */
-    const data = this.ascend(ButtonEmission.GET_DATA);
-    this.act(Object.assign({}, ...data));
+    this.ascend(ButtonEmission.CLICK);
+    this.act();
   }
 
   get label () {
-    return this.node.textContent.trim();
+    return this.getFirstText();
   }
 
   get component () {

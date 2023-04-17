@@ -1,3 +1,3 @@
-const ID = 'dsfr_toggle';
+const ID = 'toggle';
 
 export default ID;

@@ -8,6 +8,7 @@ const cssnano = require('cssnano');
 const mqpacker = require('mqpacker');
 const postcssBanner = require('postcss-banner');
 const root = require('../utilities/root');
+const path = require('path');
 const log = require('../utilities/log');
 const getBanner = require('../generate/banner').getBanner;
 
@@ -15,7 +16,7 @@ const process = async (pck, css, plugins, options) => {
   plugins.push(postcssBanner({ banner: getBanner(), important: true }));
   const result = await postcss(plugins)
     .process(css, options);
-  const filename = result.opts.to.substring(result.opts.to.lastIndexOf('/') + 1);
+  const filename = path.parse(result.opts.to).base;
 
   if (pck.inject) {
     if (!pck.injection) pck.injection = {};

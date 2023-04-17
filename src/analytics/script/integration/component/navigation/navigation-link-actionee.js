@@ -3,7 +3,7 @@ import ID from './id';
 
 class NavigationLinkActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -11,12 +11,12 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 
   get label () {
-    return this.node.textContent.trim();
+    return this.getFirstText();
   }
 
   get component () {

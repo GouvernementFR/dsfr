@@ -39,7 +39,7 @@ const markup = link.markup || 'a';
 
 linkClasses.push(prefix + '-link');
 
-if (link.id !== undefined) linkAttrs.id = link.id;
+linkAttrs.id = link.id || uniqueId('link');
 
 switch (link.size) {
     case 'sm':

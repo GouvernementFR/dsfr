@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+  <div class="<%= prefix%>-grid-row <%= prefix%>-grid-row--gutters">
+    <div class="<%= prefix%>-col-12 <%= prefix%>-col-md-4">
+      <%- sample('Carte avec tag', '../../../../../component/card/example/sample/card-default', { card : { title: 'Intitulé de la carte', img: true, enlarge: false, href: '../', content: { tags: true, details: ['icon', 'end-icon'] } }}); %>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,3 @@
-const ID = 'dsfr_accordion';
+const ID = 'accordion';
 
 export default ID;

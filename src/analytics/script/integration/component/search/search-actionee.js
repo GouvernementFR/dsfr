@@ -1,11 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
-import { ButtonEmission } from '../button/button-emission';
 import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class SearchActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
+    super(2, true);
   }
 
   static get instanceClassName () {
@@ -13,12 +12,7 @@ class SearchActionee extends ComponentActionee {
   }
 
   init () {
-    this.addAscent(ButtonEmission.GET_DATA, this.getData.bind(this));
-    this._input = this.querySelector('input[type="search"],input[type="text"]');
-  }
-
-  getData () {
-    return { search_terms: this._input.value };
+    this.listenInputValidation(this.node, Type.SEARCH);
   }
 
   get label () {

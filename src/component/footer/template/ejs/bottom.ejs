@@ -16,7 +16,7 @@
 <% let links = bottom.links || [] %>
 <ul class="<%= prefix %>-footer__bottom-list">
   <%
-    for (let i = 0; i < links.length; i++) {
+    for (let i = 0; i < links.length; i++) {      
   %>
     <li class="<%= prefix %>-footer__bottom-item">
       <%
@@ -32,6 +32,7 @@
             const classes = link.classes || [];
             const markup = link.markup || 'a';
             const attributes = link.attributes || {};
+            attributes.id = uniqueId('footer__bottom-link');
             if (markup === 'a') attributes["href"] = link.url|| '#';
             classes.push(`${prefix}-footer__bottom-link`);
             %><<%= markup %> <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>><%- links[i].label %></<%= markup %>><%

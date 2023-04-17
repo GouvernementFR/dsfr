@@ -1,20 +1,23 @@
 import { ComponentActionee } from '../component-actionee';
 import { CalloutSelector } from './callout-selector';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class CalloutActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(1);
   }
 
   static get instanceClassName () {
     return 'CalloutActionee';
   }
 
+  init () {
+    this.setImpressionType();
+  }
+
   get label () {
     const calloutTitle = this.node.querySelector(CalloutSelector.TITLE);
-    if (calloutTitle) return calloutTitle.textContent.trim();
+    if (calloutTitle) return this.getFirstText(calloutTitle);
 
     return 'Mise en avant';
   }

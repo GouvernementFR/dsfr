@@ -1,9 +1,11 @@
 <%
 const card = locals.card || {};
+const href = card.href || '#'
 const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
     description: card.description || lorem('', 160),
+    href: href
   },
   id: card.id || uniqueId('card'),
   size: card.size,
@@ -77,7 +79,7 @@ if (card.footer) {
     data.footer.buttonsGroup = { buttons: [{label: label, kind: 2}, {label: label, kind: 1}], reverse: true, inline:'lg' }
   }
   if (card.footer.links) {
-    data.footer.linksGroup = { links: [...Array(2)].map(() => { return { label: 'label', href:'#', icon: 'arrow-right-line', iconPlace: 'right'}})};
+    data.footer.linksGroup = { links: [...Array(2)].map(() => { return { label: 'label', href: href, icon: 'arrow-right-line', iconPlace: 'right'}})};
   }
 }
 

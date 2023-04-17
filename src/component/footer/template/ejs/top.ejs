@@ -16,9 +16,11 @@
   <ul class="<%= prefix %>-footer__top-list">
   <%
     for (let i = 0; i < 6; i++) {
+      const attributes = {};
+      attributes.id = uniqueId('footer__top-link');
   %>
     <li>
-      <a class="<%= prefix %>-footer__top-link" href="#"><%- top.categories.link %></a>
+      <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__top-link" href="../"><%- top.categories.link %></a>
     </li>
   <% } %>
   </ul>

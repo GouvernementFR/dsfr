@@ -14,7 +14,7 @@
     @include aspect-ratio();
     display: block;
 
-    &__player, & > #{ns(consent-placeholder)} {
+    &__player {
       @include size(100%, 100%);
       display: block;
       border: 0;

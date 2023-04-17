@@ -32,13 +32,14 @@ let quoteClasses = [prefix + '-quote'];
 let citeAttr = [];
 let sizeClasses = [];
 const blockAttrs = {cite: href};
-
+const quoteAttrs = {};
+if (quote.id) quoteAttrs.id = quote.id;
 if (quote.accent !== undefined) quoteClasses.push(prefix + '-quote--' + quote.accent);
 if (image) quoteClasses.push(prefix + '-quote--column');
 if (size) sizeClasses = [prefix+'-text--'+size];
 %>
 
-<figure <%- includeClasses(quoteClasses) %>>
+<figure <%- includeAttrs(quoteAttrs) %> <%- includeClasses(quoteClasses) %>>
   <blockquote <%- includeAttrs(blockAttrs) %>>
     <p <%- includeClasses(sizeClasses) %>>« <%= text %> »</p>
   </blockquote>

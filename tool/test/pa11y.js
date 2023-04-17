@@ -21,7 +21,7 @@ const displayResults = (results, darkmode) => {
 };
 
 // Run pa11y tests on each package
-const runPa11yTest = async (path, browser, hasDarkMode) => {
+const runPa11yTest = async (path, browser) => {
   const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label, [class*="--disabled"] > label';
 
   log(38, `\n${path}`);
@@ -40,21 +40,19 @@ const runPa11yTest = async (path, browser, hasDarkMode) => {
     displayResults(results);
   });
 
-  if (hasDarkMode) {
-    // pa11y - dark mode
-    await Pa11y(url, {
-      browser,
-      page,
-      timeout: 120000,
-      hideElements: hideElements,
-      ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
-      actions: [
-        'check field #fr-radios-theme-dark'
-      ]
-    }).then(results => {
-      displayResults(results, true);
-    });
-  }
+  // pa11y - dark mode
+  await Pa11y(url, {
+    browser,
+    page,
+    timeout: 120000,
+    hideElements: hideElements,
+    ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
+    actions: [
+      'check field #fr-radios-theme-dark'
+    ]
+  }).then(results => {
+    displayResults(results, true);
+  });
 
   await page.close();
 };
@@ -73,13 +71,13 @@ const testPa11y = async (packages) => {
 
   const publisheds = packages.filter(pck => !pck.draft);
 
+  const paths = publisheds.map(pck => {
+    return pck.example.root ? getPackageNodeDest(pck.example.root) : [];
+  }).flat(1000);
+
   const browser = await Puppeteer.launch();
 
-  for (const pck of publisheds) {
-    if (!pck.example.root) continue;
-    const paths = getPackageNodeDest(pck.example.root).flat(1000);
-    for (const path of paths) await runPa11yTest(path, browser, !pck.noParameter);
-  }
+  for (const path of paths) await runPa11yTest(path, browser);
 
   await browser.close();
 

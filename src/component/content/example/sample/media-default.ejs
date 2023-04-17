@@ -1,5 +1,6 @@
 <%
 const content = locals.content || {};
+content.id = content.id || uniqueId('media');
 
 if (content.transcription === true) content.transcription = {
   id: uniqueId('transcription'),
