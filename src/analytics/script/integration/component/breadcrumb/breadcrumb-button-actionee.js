@@ -18,7 +18,9 @@ class BreadcrumbButtonActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getFirstText();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+    return null;
   }
 
   get component () {
