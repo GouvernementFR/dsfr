@@ -22,7 +22,7 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
     ### Merged
 
     {{#each merges}}
-      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.message}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}
+      #### {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.message}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}
 
     {{/each}}
   {{/if}}
@@ -31,10 +31,10 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
     ### Fixed
 
     {{#each fixes}}
-      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.subject}}{{#each fixes}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}{{/each}}
+      #### {{#if commit.breaking}}**Breaking change:** {{/if}}{{commit.subject}}{{#each fixes}} {{#if href}}[`#{{id}}`]({{href}}){{/if}}{{/each}}
 
     {{/each}}
   {{/if}}
-  
+
 {{/each}}
 
