@@ -25,7 +25,7 @@ class AccordionButtonActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    return this.getFirstText(this.node);
   }
 
   get component () {

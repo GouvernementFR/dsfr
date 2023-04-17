@@ -23,12 +23,18 @@ class AccordionActionee extends ComponentActionee {
   get label () {
     if (this.wrapper) {
       const title = this.wrapper.querySelector(AccordionSelector.TITLE);
-      if (title) return this.getFirstText(title);
+      if (title) {
+        const text = this.getFirstText(title);
+        if (text) return text;
+      }
     }
     const instance = this.element.getInstance('Collapse');
     if (instance) {
       const button = instance.buttons.filter(button => button.isPrimary)[0];
-      if (button) return this.getFirstText(button);
+      if (button) {
+        const text = this.getFirstText(button);
+        if (text) return text;
+      }
     }
     return null;
   }
