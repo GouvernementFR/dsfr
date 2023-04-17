@@ -164,7 +164,7 @@ class Actionee extends api.core.Instance {
   detectLevel (node) {
     if (!node) node = this.node;
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
-    const levels = [...node.querySelectorAll(selector)].map(heading => Number(heading.tagName.charAt(1)));
+    const levels = Array.from(node.querySelectorAll(selector)).map(heading => Number(heading.tagName.charAt(1)));
     if (levels.length) this._level = Math.min.apply(null, levels) - 1;
   }
 
