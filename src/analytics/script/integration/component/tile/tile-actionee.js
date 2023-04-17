@@ -34,10 +34,6 @@ class TileActionee extends ComponentActionee {
     return ID;
   }
 
-  dispose () {
-    if (this.link) this.link.removeEventListener('click', this.handlingClick, { capture: true });
-    super.dispose();
-  }
 }
 
 export { TileActionee };

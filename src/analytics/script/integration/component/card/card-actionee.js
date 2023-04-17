@@ -36,11 +36,6 @@ class CardActionee extends ComponentActionee {
   get component () {
     return ID;
   }
-
-  dispose () {
-    if (this.link) this.link.removeEventListener('click', this.handlingClick, { capture: true });
-    super.dispose();
-  }
 }
 
 export { CardActionee };

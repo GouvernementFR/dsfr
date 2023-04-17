@@ -24,7 +24,7 @@ class ToggleActionee extends ComponentActionee {
       if (firstText) return firstText;
     }
 
-    return 'Interrupteur';
+    return null;
   }
 
   get component () {

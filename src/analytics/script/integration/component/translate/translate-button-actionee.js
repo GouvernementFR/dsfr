@@ -26,7 +26,9 @@ class TranslateButtonActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    const label = this.getInteractionLabel();
+    if (label) return label;
+    return null;
   }
 
   get component () {

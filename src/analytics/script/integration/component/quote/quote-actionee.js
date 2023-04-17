@@ -19,10 +19,10 @@ class QuoteActionee extends ComponentActionee {
     if (blockquote) {
       const quote = this.getFirstText(blockquote);
       if (quote) {
-        return quote.length > 50 ? `${quote.substring(0, 35).trim()}[...]` : quote;
+        return quote.length > 50 ? `${quote.substring(0, 35)}[...]` : quote;
       }
     }
-    return 'Citation';
+    return null;
   }
 
   get component () {
