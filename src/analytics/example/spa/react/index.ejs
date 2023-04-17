@@ -13,7 +13,8 @@
 
 <script type='text/babel'>
   const Link = ReactRouterDOM.Link,
-  Route = ReactRouterDOM.Route;
+  Route = ReactRouterDOM.Route,
+  BrowserRouter = ReactRouterDOM.BrowserRouter;
 
   const App = props => (
     <div>
@@ -51,7 +52,7 @@
                         <div class="fr-header__tools-links">
                             <ul class="fr-btns-group">
                                 <li>
-                                  <Link id="to-home-1" class="fr-btn" to="/">HOME</Link>
+                                  <Link id="to-home-1" class="fr-btn" to="/example/analytics/spa/react/">HOME</Link>
                                 </li>
                             </ul>
                         </div>
@@ -88,9 +89,9 @@
             </div>
             <nav class="fr-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
               <ul class="fr-nav__list">
-                <li class="fr-nav__item"><Link id="to-home-2" class="fr-nav__link" to="/">HOME</Link></li>
-                <li class="fr-nav__item"><Link id="to-link-2" class="fr-nav__link" to="/link">Link</Link></li>
-                <li class="fr-nav__item"><Link id="to-button-2" class="fr-nav__link" to="/button">Button</Link></li>
+                <li class="fr-nav__item"><Link id="to-home-2" class="fr-nav__link" to="/example/analytics/spa/react/">HOME</Link></li>
+                <li class="fr-nav__item"><Link id="to-link-2" class="fr-nav__link" to="/example/analytics/spa/react/link">Link</Link></li>
+                <li class="fr-nav__item"><Link id="to-button-2" class="fr-nav__link" to="/example/analytics/spa/react/button">Button</Link></li>
               </ul>
             </nav>
           </div>
@@ -98,9 +99,9 @@
       </header>
 
       <div class="fr-container fr-mt-8v">
-        <Route path="/" exact component={Home} />
-        <Route path="/link" component={Links} />
-        <Route path="/button" component={Button} />
+        <Route path="/example/analytics/spa/react/" exact component={Home} />
+        <Route path="/example/analytics/spa/react/link" component={Links} />
+        <Route path="/example/analytics/spa/react/button" component={Button} />
       </div>
     </div>
   )
@@ -109,7 +110,7 @@
   const Links = props => <div><h2>LINK</h2><a href="#" data-fr-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a></div>
   const Button = props => <div><h2>BUTTON</h2><button id="btn-3" class="<%= prefix %>-btn">Button</button></div>
 
-  ReactDOM.render(<ReactRouterDOM.HashRouter><App /></ReactRouterDOM.HashRouter>, document.querySelector('#react-container'));
+  ReactDOM.render(<ReactRouterDOM.BrowserRouter><App /></ReactRouterDOM.BrowserRouter>, document.querySelector('#react-container'));
 
 
 </script>
