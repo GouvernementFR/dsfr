@@ -23,10 +23,16 @@ class RadioActionee extends ComponentActionee {
     const fieldset = this.node.closest(FormSelector.FIELDSET);
     if (fieldset) {
       const legend = fieldset.querySelector(FormSelector.LEGEND);
-      if (legend) parts.push(this.getFirstText(legend));
+      if (legend) {
+        const firstTextLegend = this.getFirstText(legend);
+        if (firstTextLegend) parts.push(firstTextLegend);
+      }
     }
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    if (label) parts.push(this.getFirstText(label));
+    if (label) {
+      const firstTextLabel = this.getFirstText(label);
+      if (firstTextLabel) parts.push(firstTextLabel);
+    }
     return parts.join(' › ');
   }
 

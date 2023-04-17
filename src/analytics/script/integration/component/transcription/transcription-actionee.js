@@ -23,12 +23,18 @@ class TranscriptionActionee extends ComponentActionee {
   get label () {
     if (this.wrapper) {
       const title = this.wrapper.querySelector(TranscriptionSelector.TITLE);
-      if (title) return this.getFirstText(title);
+      if (title) {
+        const firstTextTitle = this.getFirstText(title);
+        if (firstTextTitle) return firstTextTitle;
+      }
     }
     const instance = this.element.getInstance('Collapse');
     if (instance) {
       const button = instance.buttons.filter(button => button.isPrimary)[0];
-      if (button) return this.getFirstText(button);
+      if (button) {
+        const firstTextBtn = this.getFirstText(button);
+        if (firstTextBtn) return firstTextBtn;
+      }
     }
     return null;
   }
