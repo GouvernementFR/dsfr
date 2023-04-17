@@ -15,26 +15,51 @@ class ContentActionee extends ComponentActionee {
     this.setImpressionType();
   }
 
-  get label () {
-    if (this.getAttribute('aria-label')) return this.getAttribute('aria-label');
+  _getImageLabel () {
+    const contentImg = this.querySelector(ContentSelector.IMG);
+    if (!contentImg) return false;
+    const img = contentImg.getElementsByTagName('img')[0];
+    if (img) {
+      const alt = img.getAttribute('alt');
+      if (alt) return alt;
+      const ariaLabel = img.getAttribute('aria-label');
+      if (ariaLabel) return ariaLabel;
+    }
+    const svg = contentImg.getElementsByTagName('svg')[0];
+    if (svg) {
+      const ariaLabel = svg.getAttribute('aria-label');
+      if (ariaLabel) return ariaLabel;
+      const title = svg.querySelector('title');
+      if (title) {
+        const textContent = title.textContent;
+        if (textContent) return textContent.trim();
+      }
+    }
+    return false;
+  }
 
-    const selectorImg = this.querySelector(ContentSelector.IMG);
-    if (selectorImg) {
-      const contentImg = selectorImg.querySelector('img');
-      const labelImg = contentImg.getAttribute('alt') || contentImg.getAttribute('aria-label');
-      const contentSvg = selectorImg.querySelector('svg');
-      const labelSvg = contentSvg.getAttribute('aria-label') || contentSvg.querySelector('title').textContent.trim();
-      if (labelImg && labelImg !== '') return labelImg;
-      if (labelSvg && labelSvg !== '') return labelSvg;
+  get label () {
+    const ariaLabel = this.getAttribute('aria-label');
+    if (ariaLabel) return ariaLabel;
+
+    const imageLabel = this._getImageLabel();
+    if (imageLabel) return imageLabel;
+
+    const iframe = this.querySelector('iframe');
+    if (iframe) {
+      const title = iframe.getAttribute('title');
+      if (title) return title;
+      const ariaLabel = iframe.getAttribute('aria-label');
+      if (ariaLabel) return ariaLabel;
     }
 
-    const contentIframe = this.querySelector('iframe');
-    if (contentIframe) return contentIframe.getAttribute('title') || contentIframe.getAttribute('aria-label');
+    const video = this.querySelector('video');
+    if (video) {
+      const ariaLabel = video.getAttribute('aria-label');
+      if (ariaLabel) return ariaLabel;
+    }
 
-    const contentVideo = this.querySelector('video');
-    if (contentVideo) return contentVideo.getAttribute('aria-label');
-
-    return 'Contenu média';
+    return 'contenu média';
   }
 
   get component () {

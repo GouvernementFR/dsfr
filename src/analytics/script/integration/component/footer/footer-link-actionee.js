@@ -15,7 +15,10 @@ class FooterLinkActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getInteractionLabel();
+    const label = this.getInteractionLabel();
+    if (label) return label;
+
+    return 'lien pied de page';
   }
 }
 

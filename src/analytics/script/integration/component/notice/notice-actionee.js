@@ -17,9 +17,12 @@ class NoticeActionee extends ComponentActionee {
 
   get label () {
     const noticeTitle = this.node.querySelector(NoticeSelector.TITLE);
-    if (noticeTitle) return this.getFirstText(noticeTitle);
+    if (noticeTitle) {
+      const firstText = this.getFirstText(noticeTitle);
+      if (firstText) return firstText;
+    }
 
-    return 'Bandeau information importante';
+    return 'bandeau d\'information importante';
   }
 
   get component () {

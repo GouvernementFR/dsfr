@@ -21,9 +21,12 @@ class InputActionee extends ComponentActionee {
   }
 
   get label () {
-    if (this._label) return this.getFirstText(this._label);
+    if (this._label) {
+      const text = this.getFirstText(this._label);
+      if (text) return text;
+    }
 
-    return 'Champ de saisie';
+    return 'champ de saisie';
   }
 
   get component () {

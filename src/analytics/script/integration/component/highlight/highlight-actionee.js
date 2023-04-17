@@ -15,7 +15,7 @@ class HighlightActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Mise en exergue';
+    return 'mise en exergue';
   }
 
   get component () {

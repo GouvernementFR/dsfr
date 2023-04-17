@@ -148,17 +148,57 @@ class Actionee extends api.core.Instance {
     if (this._actionElement !== undefined) this._actionElement.act(Object.assign(this._data, data));
   }
 
+  getFirstText (node) {
+    if (!node) node = this.node;
+    if (node.childNodes && node.childNodes.length > 0) {
+      for (let i = 0; i < node.childNodes.length; i++) {
+        if (node.childNodes[i].nodeType === Node.TEXT_NODE) {
+          const text = node.childNodes[i].textContent.trim();
+          if (text) {
+            return this.cropText(text);
+          }
+        }
+      }
+
+      for (let i = 0; i < node.childNodes.length; i++) {
+        const text = this.getFirstText(node.childNodes[i]);
+        if (text) {
+          return this.cropText(text);
+        }
+      }
+    }
+    return '';
+  }
+
+  cropText (text, length = 50) {
+    return text.length > 50 ? `${text.substring(0, 50).trim()}[...]` : text;
+  }
+
   getInteractionLabel () {
     const title = this.getAttribute('title');
-    if (title) return title;
+    if (title) return this.cropText(title);
 
-    const content = this.node.textContent.trim();
-    if (content) return content;
+    const text = this.getFirstText();
+    if (text) return text;
 
     const img = this.node.querySelector('img');
-    if (img) return img.getAttribute('alt').trim();
+    if (img) {
+      const alt = img.getAttribute('alt');
+      if (alt) return this.cropText(alt);
+    }
 
     return null;
+  }
+
+  getHeadingLabel (length = 6) {
+    const selector = Array.from({ length: length }, (v, i) => `h${i + 1}`).join(',');
+    const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];
+    if (headings.length) {
+      for (const heading of headings) {
+        const text = this.getFirstText(heading);
+        if (text) return text;
+      }
+    }
   }
 
   detectLevel (node) {

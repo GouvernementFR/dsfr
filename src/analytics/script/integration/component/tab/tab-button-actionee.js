@@ -21,7 +21,9 @@ class TabButtonActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getFirstText();
+    const text = this.getFirstText();
+    if (text) return text;
+    return 'bouton onglet';
   }
 
   get component () {

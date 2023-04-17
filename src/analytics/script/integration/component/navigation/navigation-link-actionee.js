@@ -16,7 +16,10 @@ class NavigationLinkActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getFirstText();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+
+    return 'lien de navigation';
   }
 
   get component () {

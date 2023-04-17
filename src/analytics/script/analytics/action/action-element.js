@@ -73,6 +73,10 @@ class ActionElement {
 
   act (data = {}) {
     if (this._isMuted) return;
+    if (!this._action) {
+      requestAnimationFrame(() => this.act(data));
+      return;
+    }
     queue.appendEndingAction(this._action);
   }
 

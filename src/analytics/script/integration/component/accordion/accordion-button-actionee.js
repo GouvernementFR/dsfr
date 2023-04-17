@@ -25,7 +25,10 @@ class AccordionButtonActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+
+    return 'bouton d\'accordéon';
   }
 
   get component () {

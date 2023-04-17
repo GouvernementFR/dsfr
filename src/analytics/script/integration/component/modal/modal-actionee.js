@@ -20,19 +20,23 @@ class ModalActionee extends ComponentActionee {
   get label () {
     const title = this.node.querySelector(ModalSelector.TITLE);
 
-    if (title) return title.textContent.trim();
+    if (title) {
+      const text = this.getFirstText(title);
+      if (text) return text;
+    }
 
-    const selector = Array.from({ length: 2 }, (v, i) => `h${i + 1}`).join(',');
-    const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];
-
-    if (headings.length) return headings[0].textContent.trim();
+    const heading = this.getHeadingLabel(2);
+    if (heading) return heading;
 
     const instance = this.element.getInstance('Modal');
     if (instance) {
       const button = instance.buttons.filter(button => button.isPrimary)[0];
-      return this.getFirstText(button.node);
+      if (button) {
+        const text = this.getFirstText(button.node);
+        if (text) return text;
+      }
     }
-    return null;
+    return 'modale';
   }
 
   get component () {

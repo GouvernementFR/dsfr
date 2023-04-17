@@ -33,7 +33,10 @@ class TagActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getFirstText();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+
+    return 'tag';
   }
 
   get component () {
