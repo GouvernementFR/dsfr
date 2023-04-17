@@ -12,16 +12,6 @@ class HeaderModal extends api.core.Instance {
 
   init () {
     this.isResizing = true;
-    this.querySelectorAll('a:not([aria-controls]), button:not([aria-controls])').forEach((link) => {
-      link.addEventListener('click', () => this.unqualify());
-    });
-    this.search = this.querySelector('.fr-search-bar input[type=search]');
-    if (this.search) this.search.addEventListener('keydown', this.handleKeyDown.bind(this));
-  }
-
-  handleKeyDown (e) {
-    console.log(this, e);
-    if (e.keyCode === 13) this.unqualify();
   }
 
   resize () {
@@ -30,7 +20,6 @@ class HeaderModal extends api.core.Instance {
   }
 
   qualify () {
-    console.log("qualify");
     this.setAttribute('role', 'dialog');
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
@@ -46,10 +35,7 @@ class HeaderModal extends api.core.Instance {
 
   unqualify () {
     const modal = this.element.getInstance('Modal');
-    if (modal) {
-      console.log("modale conceal");
-      modal.conceal();
-    }
+    if (modal) modal.conceal();
     this.removeAttribute('role');
     this.removeAttribute('aria-labelledby');
     this.unlisten('click', this._clickHandling, { capture: true });
