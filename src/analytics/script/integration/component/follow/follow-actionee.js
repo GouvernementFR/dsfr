@@ -22,7 +22,7 @@ class FollowActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Lettre d\'information et Réseaux Sociaux';
+    return 'lettre d\'information et réseaux sociaux';
   }
 
   get component () {

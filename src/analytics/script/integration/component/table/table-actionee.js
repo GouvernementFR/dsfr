@@ -16,8 +16,11 @@ class TableActionee extends ComponentActionee {
 
   get label () {
     const caption = this.node.querySelector('caption');
-    if (caption) return this.getFirstText(caption);
-    return 'Tableau';
+    if (caption) {
+      const firstText = this.getFirstText(caption);
+      if (firstText) return firstText;
+    }
+    return 'tableau';
   }
 
   get component () {

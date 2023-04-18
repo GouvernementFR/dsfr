@@ -17,8 +17,11 @@ class ShareActionee extends ComponentActionee {
 
   get label () {
     const title = this.querySelector(ShareSelector.TITLE);
-    if (title) return this.getFirstText(title);
-    return 'Boutons de partage';
+    if (title) {
+      const firstText = this.getFirstText(title);
+      if (firstText) return firstText;
+    }
+    return 'boutons de partage';
   }
 
   get component () {

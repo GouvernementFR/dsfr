@@ -15,7 +15,10 @@ class BadgeActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.getFirstText();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+
+    return 'Badge';
   }
 
   get component () {

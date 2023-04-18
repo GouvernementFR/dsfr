@@ -140,25 +140,6 @@ class ComponentActionee extends Actionee {
 
     super.dispose();
   }
-
-  getFirstText (node) {
-    if (!node) node = this.node;
-    if (node.childNodes.length === 0) return '';
-
-    for (let i = 0; i < node.childNodes.length; i++) {
-      if (node.childNodes[i].nodeType === Node.TEXT_NODE) {
-        const text = node.childNodes[i].textContent.trim();
-        if (text) return text;
-      }
-    }
-
-    for (let i = 0; i < node.childNodes.length; i++) {
-      const text = this.getFirstText(node.childNodes[i]);
-      if (text) return text;
-    }
-
-    return '';
-  }
 }
 
 export { ComponentActionee };

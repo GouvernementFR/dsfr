@@ -20,7 +20,9 @@ class SummarySectionActionee extends ComponentActionee {
 
   get label () {
     if (!this._link) return null;
-    return this.getFirstText(this._link);
+    const firstText = this.getFirstText(this._link);
+    if (firstText) return firstText;
+    return 'section sommaire';
   }
 }
 

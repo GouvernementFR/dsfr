@@ -19,7 +19,12 @@ class SelectActionee extends ComponentActionee {
 
   get label () {
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    return this.getFirstText(label);
+    if (label) {
+      const firstText = this.getFirstText(label);
+      if (firstText) return firstText;
+    }
+
+    return 'liste déroulante';
   }
 
   get component () {

@@ -13,34 +13,33 @@ class Init {
     });
   }
 
-  configure () {
-    this.pushing();
-    if (opt.isDisabled) this._reject();
-    else this.load();
-    return this._promise;
-  }
-
   get id () {
-    if (!this._id) {
-      let bit = 5381;
-      for (let i = this._domain.length - 1; i > 0; i--) bit = (bit * 33) ^ this._domain.charCodeAt(i);
-      bit >>>= 0;
-      this._id = `_EA_${bit}`;
-    }
     return this._id;
   }
 
   get store () {
-    if (!this._store) {
-      this._store = [];
-      this._store.eah = this._domain;
-      window[this.id] = this._store;
-    }
     return this._store;
   }
 
-  pushing () {
+  configure () {
+    if (opt.isDisabled) this._reject();
+    else this.init();
+    return this._promise;
+  }
+
+  init () {
+    let bit = 5381;
+    for (let i = this._domain.length - 1; i > 0; i--) bit = (bit * 33) ^ this._domain.charCodeAt(i);
+    bit >>>= 0;
+    this._id = `_EA_${bit}`;
+
+    this._store = [];
+    this._store.eah = this._domain;
+    window[this._id] = this._store;
+
     if (!window[PUSH]) window[PUSH] = (...args) => this.store.push(args);
+
+    this.load();
   }
 
   load () {
