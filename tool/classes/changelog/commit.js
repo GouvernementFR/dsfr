@@ -1,4 +1,4 @@
-const { cmd } = require('./utils');
+const { cmd, gitmoji } = require('./utils');
 const { remote } = require('./remote');
 const log = require('../../utilities/log');
 
@@ -37,13 +37,15 @@ class Commit {
       this._id = id[1];
       this._href = remote.pull(this._id);
     }
-    this._subject = subject.replace(regex, '').trim();
+    this._subject = gitmoji(subject.replace(regex, '').trim());
     this._details = lines.slice(1).join('\n').trim();
     this._details = this._details.replace(/^#{1,6}\s/g, '').replace(/\n#{1,6}\s/g, '');
 
     switch (true) {
       case this._subject.match(/chore.+DSFR/) !== null:
       case this._subject.match(/chore.+changelog/) !== null:
+      case this._subject.match(/chore.+incrémentation/) !== null:
+      case this._subject.match(/chore.+incémentation/) !== null:
       case this._subject.match(/^((..|.|(:\w+:))\s*)?(build|chore|ci|doc|docs|feat|feature|fix|perf|refactor|revert|style|test)(\(.*\))?/i) === null:
         this._isValid = false;
         log.error(this._subject, true);

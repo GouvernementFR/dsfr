@@ -10,7 +10,7 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 <% for (const major of locals.majors) { %><% for (const minor of major.minors) { %>
 ## <%= minor.title %>
 <% for (const tag of minor.tags) { %>
-### [<%= tag.tag %>](<%= tag.href %>)
+### [<%= tag.tag %>](<%= tag.href %>) - <%- tag.niceDate %>
 <% for (const commit of tag.commits) { %>
 #### <%= commit.subject %><% if (commit.href) { %> [(#<%= commit.id %>)](<%= commit.href %>)<% } %>
 <% if (commit.details) { %><%= commit.details %>

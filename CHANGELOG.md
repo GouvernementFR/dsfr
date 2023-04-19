@@ -10,7 +10,7 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.9
 
-### [v1.9.2](https://github.com/GouvernementFR/dsfr/compare/v1.9.1...v1.9.2)
+### [v1.9.2](https://github.com/GouvernementFR/dsfr/compare/v1.9.1...v1.9.2) - 18 Avril 2023
 
 #### 🐛 fix(analytics): correctifs analytics &amp; page test spa [DS-3200,DS-3218] [(#587)](https://github.com/GouvernementFR/dsfr/pull/587)
 * Amélioration de la qualité des labels envoyés à Eulerian
@@ -47,7 +47,7 @@ La gestion de l&#39;affichage du changelog est présente dans le template [Handl
 
 
 
-### [v1.9.1](https://github.com/GouvernementFR/dsfr/compare/v1.9.0...v1.9.1)
+### [v1.9.1](https://github.com/GouvernementFR/dsfr/compare/v1.9.0...v1.9.1) - 11 Avril 2023
 
 #### fix(input): correction bug icone date-picker firefox version 109+ [DS-2547] [(#585)](https://github.com/GouvernementFR/dsfr/pull/585)
 Depuis la version 109 de Firefox, l&#39;icone date-picker est en double sur les champs type date
@@ -83,7 +83,7 @@ Depuis la version 109 de Firefox, l&#39;icone date-picker est en double sur les 
   - [x] Transcription
 
 
-#### :sparkles: feat(header,navigation): fermeture de la navigation au clic sur lien ou bouton [DS-2742] [(#583)](https://github.com/GouvernementFR/dsfr/pull/583)
+#### ✨ feat(header,navigation): fermeture de la navigation au clic sur lien ou bouton [DS-2742] [(#583)](https://github.com/GouvernementFR/dsfr/pull/583)
 Actuellement, la navigation reste présente en mobile et en desktop lorsque l&#39;on clique sur un lien ou un bouton qu&#39;elle contient, ce qui pose problème dans le cas des Single-page application.
 La fonctionnalité est maintenant modifiée pour que tout clic sur un élément `&lt;button&gt;` ou `&lt;a&gt;` entraîne la fermeture de la navigation (modale et/ou menu).
 L&#39;ajout de l&#39;attribut `data-fr-prevent-conceal` permet de préserver un lien ou un bouton particulier de ce nouveau comportement.
@@ -101,7 +101,7 @@ Création de template d&#39;issue Github pour indiquer les informations demandé
 - documentation
 
 
-#### :bug: fix(core): correction icone lien externe IE [(#548)](https://github.com/GouvernementFR/dsfr/pull/548)
+#### 🐛 fix(core): correction icone lien externe IE [(#548)](https://github.com/GouvernementFR/dsfr/pull/548)
 Sur Internet Explorer, les icônes des liens externes ne s&#39;affichent plus.
 Correction css sur core.
 
@@ -127,7 +127,7 @@ Dans le cas d&#39;une vidéo le placeholder est en display block
 Retrait de la propriété non désirée
 
 
-#### :bug: fix(password): correctif erreur getModifierState [DS-2940] [(#574)](https://github.com/GouvernementFR/dsfr/pull/574)
+#### 🐛 fix(password): correctif erreur getModifierState [DS-2940] [(#574)](https://github.com/GouvernementFR/dsfr/pull/574)
 Lorsque le navigateur fait l&#39;autocompletion du champ password, il lance un événement qui n&#39;est pas forcément un évènement de clavier et provoque une erreur indiquant que la fonction getModifierState n&#39;existe pas.
 
 
@@ -138,7 +138,7 @@ Ce comportement pose problème lorsque le focus est déjà sur un des éléments
 Ajout d&#39;une condition qui vérifie que le focus n&#39;est pas déjà sur un des éléments interactifs de la modale avant de déplacer le focus.
 
 
-#### :sparkles: feat(readme): Mise à jour du readme [DS-3193] [(#559)](https://github.com/GouvernementFR/dsfr/pull/559)
+#### ✨ feat(readme): Mise à jour du readme [DS-3193] [(#559)](https://github.com/GouvernementFR/dsfr/pull/559)
 Fine tuning, ajout de licence et droit d&#39;utilisation et corrections.
 
 
@@ -147,11 +147,8 @@ Ajout pictogramme :
 - document/document-add
 
 
-#### chore(*): incémentation du numéro de version
 
-
-
-### [v1.9.0](https://github.com/GouvernementFR/dsfr/compare/v1.8.5...v1.9.0)
+### [v1.9.0](https://github.com/GouvernementFR/dsfr/compare/v1.8.5...v1.9.0) - 1er Mars 2023
 
 #### fix(*): correctifs mineurs pa11y et buble + lint [(#555)](https://github.com/GouvernementFR/dsfr/pull/555)
 correction du chemin relatif du layout dans les exemples du package response
@@ -231,14 +228,11 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(toggle): rend le composant compatible avec vite+svelte [(#518)](https://github.com/GouvernementFR/dsfr/pull/518)
 
 
-#### chore: incrémentation du numéro de version
-
-
 
 
 ## v1.8
 
-### [v1.8.5](https://github.com/GouvernementFR/dsfr/compare/v1.8.4...v1.8.5)
+### [v1.8.5](https://github.com/GouvernementFR/dsfr/compare/v1.8.4...v1.8.5) - 28 Novembre 2022
 
 #### fix(tag): correction régression lien tag [DS-2975] [(#480)](https://github.com/GouvernementFR/dsfr/pull/480)
 
@@ -246,11 +240,8 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(transcription): correction de la pleine largeur du composant [(#483)](https://github.com/GouvernementFR/dsfr/pull/483)
 
 
-#### chore(global): incrémentation du numéro de version
 
-
-
-### [v1.8.4](https://github.com/GouvernementFR/dsfr/compare/v1.8.3...v1.8.4)
+### [v1.8.4](https://github.com/GouvernementFR/dsfr/compare/v1.8.3...v1.8.4) - 15 Novembre 2022
 
 #### fix(footer): correction sur le séparateur bleu du pied de page [(#465)](https://github.com/GouvernementFR/dsfr/pull/465)
 
@@ -258,20 +249,14 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(transcription): correction sur la présence du titre de la modale [(#466)](https://github.com/GouvernementFR/dsfr/pull/466)
 
 
-#### chore(global): incrémentation du numéro de version
 
-
-
-### [v1.8.3](https://github.com/GouvernementFR/dsfr/compare/v1.8.2...v1.8.3)
+### [v1.8.3](https://github.com/GouvernementFR/dsfr/compare/v1.8.2...v1.8.3) - 15 Novembre 2022
 
 #### fix(link): correction régression icône à droite sur les éléments interactifs [(#461)](https://github.com/GouvernementFR/dsfr/pull/461)
 
 
-#### chore: incrémentation du numéro de version
 
-
-
-### [v1.8.2](https://github.com/GouvernementFR/dsfr/compare/v1.8.1...v1.8.2)
+### [v1.8.2](https://github.com/GouvernementFR/dsfr/compare/v1.8.1...v1.8.2) - 9 Novembre 2022
 
 #### fix(global): fix build, lint, clean [(#456)](https://github.com/GouvernementFR/dsfr/pull/456)
 
@@ -313,21 +298,15 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 
 
-### [v1.8.1](https://github.com/GouvernementFR/dsfr/compare/v1.8.0...v1.8.1)
+### [v1.8.1](https://github.com/GouvernementFR/dsfr/compare/v1.8.0...v1.8.1) - 27 Octobre 2022
 
 #### fix(scheme): correctif thème sombre (fix #440) [(#442)](https://github.com/GouvernementFR/dsfr/pull/442)
 
 
-#### chore: incrémentation du numéro de version
 
-
-
-### [v1.8.0](https://github.com/GouvernementFR/dsfr/compare/v1.7.3...v1.8.0)
+### [v1.8.0](https://github.com/GouvernementFR/dsfr/compare/v1.7.3...v1.8.0) - 27 Octobre 2022
 
 #### fix(header): retrait du log de la documentation dans la console [(#524)](https://github.com/GouvernementFR/dsfr/pull/524)
-
-
-#### chore(global): incrémentation du numéro de version
 
 
 #### fix(form): correction accessiblité des formulaires [(#438)](https://github.com/GouvernementFR/dsfr/pull/438)
@@ -426,26 +405,17 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### feat(page-unexpected): ajoute le modele de page erreur inattendue [DS-2762] [(#383)](https://github.com/GouvernementFR/dsfr/pull/383)
 
 
-#### chore(global): incrémentation de version
-
-
 
 
 ## v1.7
 
-### [v1.7.3](https://github.com/GouvernementFR/dsfr/compare/v1.7.2...v1.7.3)
+### [v1.7.3](https://github.com/GouvernementFR/dsfr/compare/v1.7.2...v1.7.3) - 2 Février 2023
 
 #### fix(header): retrait du log de la documentation dans la console [(#524)](https://github.com/GouvernementFR/dsfr/pull/524)
 
 
-#### chore(global): incrémentation du numéro de version
 
-
-
-### [v1.7.2](https://github.com/GouvernementFR/dsfr/compare/v1.7.1...v1.7.2)
-
-#### chore(global): incrémentation du numéro de version
-
+### [v1.7.2](https://github.com/GouvernementFR/dsfr/compare/v1.7.1...v1.7.2) - 29 Juillet 2022
 
 #### fix(global): ajout des dossiers &#34;standalone&#34; et &#34;i18n&#34; au package.json
 
@@ -454,16 +424,13 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 
 
-### [v1.7.1](https://github.com/GouvernementFR/dsfr/compare/v1.7.0...v1.7.1)
+### [v1.7.1](https://github.com/GouvernementFR/dsfr/compare/v1.7.0...v1.7.1) - 25 Juillet 2022
 
 #### fix(elevation): legacy z-index [DS-2761] [(#384)](https://github.com/GouvernementFR/dsfr/pull/384)
 
 
-#### chore(global): incrémentation du numéro de version
 
-
-
-### [v1.7.0](https://github.com/GouvernementFR/dsfr/compare/v1.6.0...v1.7.0)
+### [v1.7.0](https://github.com/GouvernementFR/dsfr/compare/v1.6.0...v1.7.0) - 21 Juillet 2022
 
 #### fix(module): correction lint [(#382)](https://github.com/GouvernementFR/dsfr/pull/382)
 
@@ -531,14 +498,11 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### feat(global): multiplication des pages d&#39;exemple et internationalisation [DS-1381] [(#357)](https://github.com/GouvernementFR/dsfr/pull/357)
 
 
-#### chore(global): incrémentation du numéro de version
-
-
 
 
 ## v1.6
 
-### [v1.6.0](https://github.com/GouvernementFR/dsfr/compare/v1.5.2...v1.6.0)
+### [v1.6.0](https://github.com/GouvernementFR/dsfr/compare/v1.5.2...v1.6.0) - 14 Juin 2022
 
 #### fix(core): correction de l&#39;épaisseur du soulignement des liens [(#346)](https://github.com/GouvernementFR/dsfr/pull/346)
 
@@ -636,23 +600,17 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(follow): correction link icon déprecié [(#301)](https://github.com/GouvernementFR/dsfr/pull/301)
 
 
-#### chore(global): incrémentation du numéro de version
-
-
 #### fix(core): correction de l&#39;implémentation de $DIST-PATH [(#300)](https://github.com/GouvernementFR/dsfr/pull/300)
 
 
 #### chore: suppression de node-sass-magic-importer [(#279)](https://github.com/GouvernementFR/dsfr/pull/279)
 
 
-#### chore(global): incrémentation du numéro de version
-
-
 
 
 ## v1.5
 
-### [v1.5.2](https://github.com/GouvernementFR/dsfr/compare/v1.5.1...v1.5.2)
+### [v1.5.2](https://github.com/GouvernementFR/dsfr/compare/v1.5.1...v1.5.2) - 14 Juin 2022
 
 #### fix(core): correction de l&#39;épaisseur du soulignement des liens [(#346)](https://github.com/GouvernementFR/dsfr/pull/346)
 
@@ -672,11 +630,8 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(follow): correction link icon déprecié [(#301)](https://github.com/GouvernementFR/dsfr/pull/301)
 
 
-#### chore(global): incrémentation du numéro de version
 
-
-
-### [v1.5.1](https://github.com/GouvernementFR/dsfr/compare/v1.5.0...v1.5.1)
+### [v1.5.1](https://github.com/GouvernementFR/dsfr/compare/v1.5.0...v1.5.1) - 26 Avril 2022
 
 #### docs(utility): description et liens vers la documentation [(#299)](https://github.com/GouvernementFR/dsfr/pull/299)
 
@@ -696,25 +651,16 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(dsfr-deprecated): correction du nom de fichier sur le js legacy [(#295)](https://github.com/GouvernementFR/dsfr/pull/295)
 
 
-#### chore(global): incrémentation du numéro de version
 
-
-
-### [v1.5.0](https://github.com/GouvernementFR/dsfr/compare/v1.4.3...v1.5.0)
+### [v1.5.0](https://github.com/GouvernementFR/dsfr/compare/v1.4.3...v1.5.0) - 21 Avril 2022
 
 #### fix(core): correction soulignement des liens [(#348)](https://github.com/GouvernementFR/dsfr/pull/348)
-
-
-#### chore(global): incrémentation du numéro de version [(#347)](https://github.com/GouvernementFR/dsfr/pull/347)
 
 
 #### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#341)](https://github.com/GouvernementFR/dsfr/pull/341)
 
 
 #### fix(link): retrait du soulignement des icônes
-
-
-#### chore(global): incrémentation du numéro de version
 
 
 #### fix(global): retour au soulignement natif pour les liens
@@ -789,23 +735,17 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### refactor(connect): généralisation du build du standalone [DS-2434] [(#255)](https://github.com/GouvernementFR/dsfr/pull/255)
 
 
-#### chore(global): incrémentation du numéro de version 1.5.0
-
-
 
 
 ## v1.4
 
-### [v1.4.3](https://github.com/GouvernementFR/dsfr/compare/v1.4.2...v1.4.3)
+### [v1.4.3](https://github.com/GouvernementFR/dsfr/compare/v1.4.2...v1.4.3) - 14 Juin 2022
 
 #### fix(core): correction soulignement des liens [(#348)](https://github.com/GouvernementFR/dsfr/pull/348)
 
 
-#### chore(global): incrémentation du numéro de version [(#347)](https://github.com/GouvernementFR/dsfr/pull/347)
 
-
-
-### [v1.4.2](https://github.com/GouvernementFR/dsfr/compare/v1.4.1...v1.4.2)
+### [v1.4.2](https://github.com/GouvernementFR/dsfr/compare/v1.4.1...v1.4.2) - 13 Juin 2022
 
 #### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#341)](https://github.com/GouvernementFR/dsfr/pull/341)
 
@@ -813,14 +753,11 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(link): retrait du soulignement des icônes
 
 
-#### chore(global): incrémentation du numéro de version
-
-
 #### fix(global): retour au soulignement natif pour les liens
 
 
 
-### [v1.4.1](https://github.com/GouvernementFR/dsfr/compare/v1.4.0...v1.4.1)
+### [v1.4.1](https://github.com/GouvernementFR/dsfr/compare/v1.4.0...v1.4.1) - 29 Mars 2022
 
 #### fix(connect): correction du titre du lien [DS-2490]
 
@@ -837,11 +774,8 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(connect): libelle FranceConnect attaché [DS-2479] [(#260)](https://github.com/GouvernementFR/dsfr/pull/260)
 
 
-#### chore(global): incrémentation numéro de version
 
-
-
-### [v1.4.0](https://github.com/GouvernementFR/dsfr/compare/v1.3.1...v1.4.0)
+### [v1.4.0](https://github.com/GouvernementFR/dsfr/compare/v1.3.1...v1.4.0) - 16 Mars 2022
 
 #### fix(display): correction et support des versions dépréciées [(#247)](https://github.com/GouvernementFR/dsfr/pull/247)
 
@@ -924,14 +858,11 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(core): nouvelle fonte Marianne avec correction de l&#39;alignement [DS-1394] [(#169)](https://github.com/GouvernementFR/dsfr/pull/169)
 
 
-#### chore(global): incrémentation numéro de version
-
-
 
 
 ## v1.3
 
-### [v1.3.1](https://github.com/GouvernementFR/dsfr/compare/v1.3.0...v1.3.1)
+### [v1.3.1](https://github.com/GouvernementFR/dsfr/compare/v1.3.0...v1.3.1) - 7 Février 2022
 
 #### fix(toggle): correction de l&#39;état précoché de l&#39;interrupteur [DS-2392] [(#210)](https://github.com/GouvernementFR/dsfr/pull/210)
 
@@ -988,7 +919,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 
 
-### [v1.3.0](https://github.com/GouvernementFR/dsfr/compare/v1.2.1...v1.3.0)
+### [v1.3.0](https://github.com/GouvernementFR/dsfr/compare/v1.2.1...v1.3.0) - 18 Janvier 2022
 
 #### fix(core): icones statut &amp; remix [DS-2371] [(#190)](https://github.com/GouvernementFR/dsfr/pull/190)
 
@@ -1093,7 +1024,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ## v1.2
 
-### [v1.2.1](https://github.com/GouvernementFR/dsfr/compare/v1.2.0...v1.2.1)
+### [v1.2.1](https://github.com/GouvernementFR/dsfr/compare/v1.2.0...v1.2.1) - 29 Novembre 2021
 
 #### feat(modal): ajout d&#39;un attribut pour la fermeture au click [DS-2284] [(#158)](https://github.com/GouvernementFR/dsfr/pull/158)
 
@@ -1150,7 +1081,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 
 
-### [v1.2.0](https://github.com/GouvernementFR/dsfr/compare/v1.1.0...v1.2.0)
+### [v1.2.0](https://github.com/GouvernementFR/dsfr/compare/v1.1.0...v1.2.0) - 17 Novembre 2021
 
 #### fix(table): correction tableau avec bordure gris [(#136)](https://github.com/GouvernementFR/dsfr/pull/136)
 
@@ -1418,7 +1349,7 @@ dsfr-dev devient dsfr
 
 ## v1.1
 
-### [v1.1.0](https://github.com/GouvernementFR/dsfr/compare/v1.0.0...v1.1.0)
+### [v1.1.0](https://github.com/GouvernementFR/dsfr/compare/v1.0.0...v1.1.0) - 27 Juillet 2021
 
 #### fix: problème de visibilité avec visibility: visible [DS-1885]
 
@@ -1606,7 +1537,7 @@ ajout !important pour forcer le modifieur
 
 ## v1.0
 
-### [v1.0.0](https://github.com/GouvernementFR/dsfr/compare/v0.6.0...v1.0.0)
+### [v1.0.0](https://github.com/GouvernementFR/dsfr/compare/v0.6.0...v1.0.0) - 7 Avril 2021
 
 #### feat(readme): édition et publication du readme global et public
 
@@ -1746,7 +1677,7 @@ ajout !important pour forcer le modifieur
 
 ## v0.6
 
-### [v0.6.0](https://github.com/GouvernementFR/dsfr/compare/v0.5.3...v0.6.0)
+### [v0.6.0](https://github.com/GouvernementFR/dsfr/compare/v0.5.3...v0.6.0) - 7 Avril 2021
 
 #### fix(footer): marge mention légale
 
@@ -2127,7 +2058,7 @@ Déplacement svg-encode dans core
 
 ## v0.5
 
-### [v0.5.3](https://github.com/GouvernementFR/dsfr/compare/v0.4.0...v0.5.3)
+### [v0.5.3](https://github.com/GouvernementFR/dsfr/compare/v0.4.0...v0.5.3) - 7 Avril 2021
 
 #### fix(all): Design System de l&#39;Etat v0.5.3
 fix: retrait du scritp post-install
@@ -2223,7 +2154,7 @@ sidemenu:
 
 ## v0.4
 
-### [v0.4.0](https://github.com/GouvernementFR/dsfr/compare/v0.3.4...v0.4.0)
+### [v0.4.0](https://github.com/GouvernementFR/dsfr/compare/v0.3.4...v0.4.0) - 17 Décembre 2020
 
 #### fix(all): Mise à jour des liens de documentations
 
@@ -2399,7 +2330,7 @@ sidemenu:
 
 ## v0.3
 
-### [v0.3.4](https://github.com/GouvernementFR/dsfr/compare/v0.3.1...v0.3.4)
+### [v0.3.4](https://github.com/GouvernementFR/dsfr/compare/v0.3.1...v0.3.4) - 9 Novembre 2020
 
 #### chore(packages): release
 
@@ -2423,7 +2354,7 @@ sidemenu:
 
 
 
-### [v0.3.1](https://github.com/GouvernementFR/dsfr/compare/v0.3.0...v0.3.1)
+### [v0.3.1](https://github.com/GouvernementFR/dsfr/compare/v0.3.0...v0.3.1) - 3 Novembre 2020
 
 #### chore(packages): release
 
@@ -2438,7 +2369,7 @@ sidemenu:
 
 
 
-### [v0.3.0](https://github.com/GouvernementFR/dsfr/compare/v0.2.0...v0.3.0)
+### [v0.3.0](https://github.com/GouvernementFR/dsfr/compare/v0.2.0...v0.3.0) - 3 Novembre 2020
 
 #### chore(packages): release
 
@@ -2465,7 +2396,7 @@ sidemenu:
 
 ## v0.2
 
-### [v0.2.0](https://github.com/GouvernementFR/dsfr/compare/v0.1.0...v0.2.0)
+### [v0.2.0](https://github.com/GouvernementFR/dsfr/compare/v0.1.0...v0.2.0) - 19 Octobre 2020
 
 #### chore: pre-release configuration
 
@@ -2492,7 +2423,7 @@ sidemenu:
 
 ## v0.1
 
-### [v0.1.0]()
+### [v0.1.0]() - 19 Octobre 2020
 
 #### feat: Design System de l&#39;Etat, commit initial
 Design System de l&#39;Etat v0.1.0

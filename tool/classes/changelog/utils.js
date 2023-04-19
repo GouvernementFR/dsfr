@@ -1,12 +1,14 @@
 const { spawn } = require('child_process');
 
-const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MONTH_NAMES = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
 const niceDate = (string) => {
   const date = new Date(string);
-  const day = date.getUTCDate();
+  const dayNum = date.getUTCDate();
+  const day = dayNum === 1 ? '1er' : dayNum;
   const month = MONTH_NAMES[date.getUTCMonth()];
   const year = date.getUTCFullYear();
+
   return `${day} ${month} ${year}`;
 };
 
@@ -27,4 +29,14 @@ const cmd = (string, onProgress) => {
   });
 };
 
-module.exports = { cmd, niceDate };
+const GITMOJIS = {
+  ':bug:': '🐛',
+  ':sparkles:': '✨'
+};
+
+const gitmoji = (string) => {
+  for (const code in GITMOJIS) string = string.replace(code, GITMOJIS[code]);
+  return string;
+};
+
+module.exports = { cmd, niceDate, gitmoji };
