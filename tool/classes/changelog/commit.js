@@ -47,7 +47,7 @@ class Commit {
       this._jira = ids.map(id => `[${id}](<https://gouvfr.atlassian.net/browse/${id}>)`).join(',');
     }
 
-    this._subject = gitmoji(subject.replace(regex, '').replace(/\[DS-[DS-\d,]+]/g, '').trim());
+    this._subject = gitmoji(subject.replace(regex, '').replace(/\[DS-[DS-\d, ]+]/g, '').trim());
     this._details = lines.slice(1).join('\n').trim();
     this._details = this._details.replace(/^#{1,6}\s/g, '').replace(/\n#{1,6}\s/g, '');
 

@@ -320,7 +320,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(quote): couleur du texte quote__sources [[DS-2806](<https://gouvfr.atlassian.net/browse/DS-2806>)] [(#437)](https://github.com/GouvernementFR/dsfr/pull/437)
 
 
-#### fix(form, upload): error &amp; disabled [DS-2746, DS-2700] [[DS-2746](<https://gouvfr.atlassian.net/browse/DS-2746>),[DS-2700](<https://gouvfr.atlassian.net/browse/DS-2700>)] [(#428)](https://github.com/GouvernementFR/dsfr/pull/428)
+#### fix(form, upload): error &amp; disabled [[DS-2746](<https://gouvfr.atlassian.net/browse/DS-2746>),[DS-2700](<https://gouvfr.atlassian.net/browse/DS-2700>)] [(#428)](https://github.com/GouvernementFR/dsfr/pull/428)
 
 
 #### fix(tag): correction tag selectionnable hover [[DS-2724](<https://gouvfr.atlassian.net/browse/DS-2724>)] [(#430)](https://github.com/GouvernementFR/dsfr/pull/430)
@@ -371,7 +371,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(password): correction template password [[DS-2637](<https://gouvfr.atlassian.net/browse/DS-2637>)] [(#399)](https://github.com/GouvernementFR/dsfr/pull/399)
 
 
-#### feat(account, register, login): ajout de modèles de page de connexion et création de compte [DS-2625, DS-2666, DS-2670, DS-2628] [[DS-2625](<https://gouvfr.atlassian.net/browse/DS-2625>),[DS-2666](<https://gouvfr.atlassian.net/browse/DS-2666>),[DS-2670](<https://gouvfr.atlassian.net/browse/DS-2670>),[DS-2628](<https://gouvfr.atlassian.net/browse/DS-2628>)] [(#403)](https://github.com/GouvernementFR/dsfr/pull/403)
+#### feat(account, register, login): ajout de modèles de page de connexion et création de compte [[DS-2625](<https://gouvfr.atlassian.net/browse/DS-2625>),[DS-2666](<https://gouvfr.atlassian.net/browse/DS-2666>),[DS-2670](<https://gouvfr.atlassian.net/browse/DS-2670>),[DS-2628](<https://gouvfr.atlassian.net/browse/DS-2628>)] [(#403)](https://github.com/GouvernementFR/dsfr/pull/403)
 
 
 #### Feat(pattern): ajoute le modele de date unique [[DS-2655](<https://gouvfr.atlassian.net/browse/DS-2655>)] [(#396)](https://github.com/GouvernementFR/dsfr/pull/396)
