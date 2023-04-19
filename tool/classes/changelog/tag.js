@@ -155,7 +155,7 @@ class Tag {
 class Major {
   constructor (major) {
     this._major = major;
-    this._title = `v${major}`;
+    this._title = `VERSION MAJEURE ${major}`;
     this._minors = [];
   }
 

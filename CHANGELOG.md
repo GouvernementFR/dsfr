@@ -8,18 +8,6 @@ et ce projet respecte [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 Pour plus d’informations : [Voir la documentation](https://www.systeme-de-design.gouv.fr/)
 
 
-# v2
-
-## v2.0
-
-### [2.0.0](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...2.0.0)
-
-
-
----
-
-# v1
-
 ## v1.9
 
 ### [v1.9.2](https://github.com/GouvernementFR/dsfr/compare/v1.9.1...v1.9.2)
@@ -1755,8 +1743,6 @@ ajout !important pour forcer le modifieur
 
 
 ---
-
-# v0
 
 ## v0.6
 
