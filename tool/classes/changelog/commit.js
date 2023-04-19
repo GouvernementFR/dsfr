@@ -23,6 +23,10 @@ class Commit {
     return this._href;
   }
 
+  get jira () {
+    return this._jira;
+  }
+
   get isValid () {
     return this._isValid;
   }
@@ -37,7 +41,13 @@ class Commit {
       this._id = id[1];
       this._href = remote.pull(this._id);
     }
-    this._subject = gitmoji(subject.replace(regex, '').trim());
+    const idsRegex = /DS-\d+/g;
+    const ids = subject.match(idsRegex);
+    if (Array.isArray(ids) && ids.length > 0) {
+      this._jira = ids.map(id => `[${id}](<https://gouvfr.atlassian.net/browse/${id}>)`).join(',');
+    }
+
+    this._subject = gitmoji(subject.replace(regex, '').replace(/\[DS-[DS-\d,]+]/g, '').trim());
     this._details = lines.slice(1).join('\n').trim();
     this._details = this._details.replace(/^#{1,6}\s/g, '').replace(/\n#{1,6}\s/g, '');
 

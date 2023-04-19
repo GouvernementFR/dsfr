@@ -8,11 +8,13 @@ et ce projet respecte [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 Pour plus d’informations : [Voir la documentation](https://www.systeme-de-design.gouv.fr/)
 
 
+> ## DSFR v1
+
 ## v1.9
 
 ### [v1.9.2](https://github.com/GouvernementFR/dsfr/compare/v1.9.1...v1.9.2) - 18 Avril 2023
 
-#### 🐛 fix(analytics): correctifs analytics &amp; page test spa [DS-3200,DS-3218] [(#587)](https://github.com/GouvernementFR/dsfr/pull/587)
+#### 🐛 fix(analytics): correctifs analytics &amp; page test spa [[DS-3200](<https://gouvfr.atlassian.net/browse/DS-3200>),[DS-3218](<https://gouvfr.atlassian.net/browse/DS-3218>)] [(#587)](https://github.com/GouvernementFR/dsfr/pull/587)
 * Amélioration de la qualité des labels envoyés à Eulerian
   * Maximum 50 caractères, couper avec […] au delà
   * Récupère uniquement le premier texte
@@ -22,11 +24,11 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 * Ajout d’exemples de SPA (Vue &amp; React)
 
 
-#### ✨ feat(analytics): polyfill legacy [DS-3221] [(#588)](https://github.com/GouvernementFR/dsfr/pull/588)
+#### ✨ feat(analytics): polyfill legacy [[DS-3221](<https://gouvfr.atlassian.net/browse/DS-3221>)] [(#588)](https://github.com/GouvernementFR/dsfr/pull/588)
 Ajout des polyfills et correctifs nécessaires au support d&#39;IE11
 
 
-#### ✨ feat(changelog): ajoute changelog auto-généré [DS-3070] [(#561)](https://github.com/GouvernementFR/dsfr/pull/561)
+#### ✨ feat(changelog): ajoute changelog auto-généré [[DS-3070](<https://gouvfr.atlassian.net/browse/DS-3070>)] [(#561)](https://github.com/GouvernementFR/dsfr/pull/561)
 Outil en ligne de commande pour générer un journal des modifications `CHANGELOG.md` à partir des balises git et de l&#39;historique des commits, nous utilisons [Auto-changelog](https://github.com/cookpete/auto-changelog).
 
 Commande à executer à la racine du projet, `git log` est exécuté en arrière-plan afin d&#39;analyser l&#39;historique des commits, en lançant :
@@ -49,12 +51,12 @@ La gestion de l&#39;affichage du changelog est présente dans le template [Handl
 
 ### [v1.9.1](https://github.com/GouvernementFR/dsfr/compare/v1.9.0...v1.9.1) - 11 Avril 2023
 
-#### fix(input): correction bug icone date-picker firefox version 109+ [DS-2547] [(#585)](https://github.com/GouvernementFR/dsfr/pull/585)
+#### fix(input): correction bug icone date-picker firefox version 109+ [[DS-2547](<https://gouvfr.atlassian.net/browse/DS-2547>)] [(#585)](https://github.com/GouvernementFR/dsfr/pull/585)
 Depuis la version 109 de Firefox, l&#39;icone date-picker est en double sur les champs type date
 - Ajout de l&#39;icone date-picker si le navigateur le supporte uniquement
 
 
-#### ✨ feat(analytics): évolution et ajout de nouveaux composants [DS-3199,DS-3200] [(#560)](https://github.com/GouvernementFR/dsfr/pull/560)
+#### ✨ feat(analytics): évolution et ajout de nouveaux composants [[DS-3199](<https://gouvfr.atlassian.net/browse/DS-3199>),[DS-3200](<https://gouvfr.atlassian.net/browse/DS-3200>)] [(#560)](https://github.com/GouvernementFR/dsfr/pull/560)
 - Ajout d’un attribut id sur tous les éléments marqués. Les éléments où l&#39;id manque sont recensés en warning dans la console.
 - ⚠ Modification de la configuration analytics : 
   ⋅ dsfr.analytics.mode devient dsfr.analytics.collection et peut maintenant prendre les valeurs MANUAL, LOAD, FULL, HASH (voir doc). 
@@ -83,18 +85,18 @@ Depuis la version 109 de Firefox, l&#39;icone date-picker est en double sur les 
   - [x] Transcription
 
 
-#### ✨ feat(header,navigation): fermeture de la navigation au clic sur lien ou bouton [DS-2742] [(#583)](https://github.com/GouvernementFR/dsfr/pull/583)
+#### ✨ feat(header,navigation): fermeture de la navigation au clic sur lien ou bouton [[DS-2742](<https://gouvfr.atlassian.net/browse/DS-2742>)] [(#583)](https://github.com/GouvernementFR/dsfr/pull/583)
 Actuellement, la navigation reste présente en mobile et en desktop lorsque l&#39;on clique sur un lien ou un bouton qu&#39;elle contient, ce qui pose problème dans le cas des Single-page application.
 La fonctionnalité est maintenant modifiée pour que tout clic sur un élément `&lt;button&gt;` ou `&lt;a&gt;` entraîne la fermeture de la navigation (modale et/ou menu).
 L&#39;ajout de l&#39;attribut `data-fr-prevent-conceal` permet de préserver un lien ou un bouton particulier de ce nouveau comportement.
 
 
-#### 🐛 fix(build): changement des path pour compiler sur windows [DS-2992] [(#580)](https://github.com/GouvernementFR/dsfr/pull/580)
+#### 🐛 fix(build): changement des path pour compiler sur windows [[DS-2992](<https://gouvfr.atlassian.net/browse/DS-2992>)] [(#580)](https://github.com/GouvernementFR/dsfr/pull/580)
 Sur windows il n&#39;est pas possible de recompiler le projet avec yarn build
 Correction des path dans les tools (windows utilise &#34;&#34; et linux et mac &#34;/&#34;)
 
 
-#### ✨ feat(github): ajout de templates d&#39;issue github [DS-3201] [(#569)](https://github.com/GouvernementFR/dsfr/pull/569)
+#### ✨ feat(github): ajout de templates d&#39;issue github [[DS-3201](<https://gouvfr.atlassian.net/browse/DS-3201>)] [(#569)](https://github.com/GouvernementFR/dsfr/pull/569)
 Création de template d&#39;issue Github pour indiquer les informations demandées lors d&#39;un report de 
 - bug
 - évolution
@@ -106,43 +108,43 @@ Sur Internet Explorer, les icônes des liens externes ne s&#39;affichent plus.
 Correction css sur core.
 
 
-#### ⬆️ feat(deps): mise à jour des dépendances [DS-3011] [(#553)](https://github.com/GouvernementFR/dsfr/pull/553)
+#### ⬆️ feat(deps): mise à jour des dépendances [[DS-3011](<https://gouvfr.atlassian.net/browse/DS-3011>)] [(#553)](https://github.com/GouvernementFR/dsfr/pull/553)
 
 
-#### 🐛 fix(transcription): corrige largeur du bouton a l&#39;ouverture de la modale [DS-3070] [(#565)](https://github.com/GouvernementFR/dsfr/pull/565)
+#### 🐛 fix(transcription): corrige largeur du bouton a l&#39;ouverture de la modale [[DS-3070](<https://gouvfr.atlassian.net/browse/DS-3070>)] [(#565)](https://github.com/GouvernementFR/dsfr/pull/565)
 à l&#39;ouverture de la modale de la transcription, le déplacement des éléments en position fixed change la taille du bouton de la transcription à sa taille minimum. 
 La largeur étendue à 100% permet de la conserver constante.
 
 
-#### 🐛 fix(notice): ajoute &#39;importante&#39; au bandeau d&#39;information importante [DS-3073] [(#563)](https://github.com/GouvernementFR/dsfr/pull/563)
+#### 🐛 fix(notice): ajoute &#39;importante&#39; au bandeau d&#39;information importante [[DS-3073](<https://gouvfr.atlassian.net/browse/DS-3073>)] [(#563)](https://github.com/GouvernementFR/dsfr/pull/563)
 Le nom du composant devient &#34;Bandeau information importante&#34;
 
 
-#### ✨ feat(footer): évolution des mentions légales [DS-3140] [(#568)](https://github.com/GouvernementFR/dsfr/pull/568)
+#### ✨ feat(footer): évolution des mentions légales [[DS-3140](<https://gouvfr.atlassian.net/browse/DS-3140>)] [(#568)](https://github.com/GouvernementFR/dsfr/pull/568)
 Nouveau texte : ”Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous”
 
 
-#### 🐛 fix(consent): consent placeholder video mal centré [DS-3026] [(#573)](https://github.com/GouvernementFR/dsfr/pull/573)
+#### 🐛 fix(consent): consent placeholder video mal centré [[DS-3026](<https://gouvfr.atlassian.net/browse/DS-3026>)] [(#573)](https://github.com/GouvernementFR/dsfr/pull/573)
 Dans le cas d&#39;une vidéo le placeholder est en display block
 Retrait de la propriété non désirée
 
 
-#### 🐛 fix(password): correctif erreur getModifierState [DS-2940] [(#574)](https://github.com/GouvernementFR/dsfr/pull/574)
+#### 🐛 fix(password): correctif erreur getModifierState [[DS-2940](<https://gouvfr.atlassian.net/browse/DS-2940>)] [(#574)](https://github.com/GouvernementFR/dsfr/pull/574)
 Lorsque le navigateur fait l&#39;autocompletion du champ password, il lance un événement qui n&#39;est pas forcément un évènement de clavier et provoque une erreur indiquant que la fonction getModifierState n&#39;existe pas.
 
 
-#### 🐛 fix(modal): correctif prise de focus au focus-trap [DS-3211] [(#566)](https://github.com/GouvernementFR/dsfr/pull/566)
+#### 🐛 fix(modal): correctif prise de focus au focus-trap [[DS-3211](<https://gouvfr.atlassian.net/browse/DS-3211>)] [(#566)](https://github.com/GouvernementFR/dsfr/pull/566)
 à l&#39;ouverture de la modale, le focus est automatiquement déplacé sur le premier des éléments interactifs de la modale.
 Ce comportement pose problème lorsque le focus est déjà sur un des éléments contenus dans la modale.
 
 Ajout d&#39;une condition qui vérifie que le focus n&#39;est pas déjà sur un des éléments interactifs de la modale avant de déplacer le focus.
 
 
-#### ✨ feat(readme): Mise à jour du readme [DS-3193] [(#559)](https://github.com/GouvernementFR/dsfr/pull/559)
+#### ✨ feat(readme): Mise à jour du readme [[DS-3193](<https://gouvfr.atlassian.net/browse/DS-3193>)] [(#559)](https://github.com/GouvernementFR/dsfr/pull/559)
 Fine tuning, ajout de licence et droit d&#39;utilisation et corrections.
 
 
-#### ✨ feat(artwork): ajout picto document-add [DS-3210] [(#571)](https://github.com/GouvernementFR/dsfr/pull/571)
+#### ✨ feat(artwork): ajout picto document-add [[DS-3210](<https://gouvfr.atlassian.net/browse/DS-3210>)] [(#571)](https://github.com/GouvernementFR/dsfr/pull/571)
 Ajout pictogramme : 
 - document/document-add
 
@@ -156,7 +158,7 @@ spread operator non supporté par buble, remplacé par Object.assign pour la tra
 correctifs de false positive pa11y
 
 
-#### feat(analytics): ajout de la fonctionnalité Analytics [DS-2981,DS-2982] [(#528)](https://github.com/GouvernementFR/dsfr/pull/528)
+#### feat(analytics): ajout de la fonctionnalité Analytics [[DS-2981](<https://gouvfr.atlassian.net/browse/DS-2981>),[DS-2982](<https://gouvfr.atlassian.net/browse/DS-2982>)] [(#528)](https://github.com/GouvernementFR/dsfr/pull/528)
 Outil de collecte de données basé sur la solution Eulerian
 
 
@@ -168,40 +170,40 @@ Le code inline du scheme boot provoque des erreurs interrompant l&#39;exécution
 Il faut ajouter l&#39;attribut type=&#34;module&#34; sur l&#39;étiquette d&#39;élément script liée au scheme-boot
 
 
-#### fix(header): copie du sélecteur de langue sans accès rapide [DS-2950] [(#547)](https://github.com/GouvernementFR/dsfr/pull/547)
+#### fix(header): copie du sélecteur de langue sans accès rapide [[DS-2950](<https://gouvfr.atlassian.net/browse/DS-2950>)] [(#547)](https://github.com/GouvernementFR/dsfr/pull/547)
 Les accès rapides sont dupliqués dans le menu mobile par le JS (sauf dans les modes SPA)
 En l&#39;absence d&#39;accès rapide, le sélecteur de langue n&#39;était pas dupliqué comme attendu
 
 
-#### fix(artwork): depreciation des xlink dans les artwork [DS-2979] [(#545)](https://github.com/GouvernementFR/dsfr/pull/545)
+#### fix(artwork): depreciation des xlink dans les artwork [[DS-2979](<https://gouvfr.atlassian.net/browse/DS-2979>)] [(#545)](https://github.com/GouvernementFR/dsfr/pull/545)
 xlink-href est déprécié : https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/xlink:href
 Il était privilégié jusqu&#39;ici pour le support d&#39;IE11. Un polyfill a été mis en place pour assurer la rétrocompatibilité avec IE11
 
 
-#### fix(address): Inversion ordre immeuble et batiment [DS-2976] [(#544)](https://github.com/GouvernementFR/dsfr/pull/544)
+#### fix(address): Inversion ordre immeuble et batiment [[DS-2976](<https://gouvfr.atlassian.net/browse/DS-2976>)] [(#544)](https://github.com/GouvernementFR/dsfr/pull/544)
 inversion de 2 champs dans les modèles formulaire d&#39;adresse
 
 
-#### fix(core): correctif de la taille minimum de l&#39;underline des liens [DS-2987] [(#543)](https://github.com/GouvernementFR/dsfr/pull/543)
+#### fix(core): correctif de la taille minimum de l&#39;underline des liens [[DS-2987](<https://gouvfr.atlassian.net/browse/DS-2987>)] [(#543)](https://github.com/GouvernementFR/dsfr/pull/543)
 Sur Firefox, la relativité de l&#39;épaisseur du lien (en em) provoque parfois son invisibilité lorsque celui-ci est inférieur à 1px. Ce correctif met en place un minimum de 1px pour l&#39;épaisseur du lien.
 
 
-#### fix(header): alignement à gauche des raccourcis sans icônes [DS-2951] [(#542)](https://github.com/GouvernementFR/dsfr/pull/542)
+#### fix(header): alignement à gauche des raccourcis sans icônes [[DS-2951](<https://gouvfr.atlassian.net/browse/DS-2951>)] [(#542)](https://github.com/GouvernementFR/dsfr/pull/542)
 L&#39;absence d&#39;icône sur les accès rapides de l&#39;En-tête provoque un alignement centré au lieu d&#39;un alignement gauche attendu.
 
 
-#### fix(checkbox, radio): placement de l&#39;input caché &amp; alignement sm [DS-2941] [(#539)](https://github.com/GouvernementFR/dsfr/pull/539)
+#### fix(checkbox, radio): placement de l&#39;input caché &amp; alignement sm [[DS-2941](<https://gouvfr.atlassian.net/browse/DS-2941>)] [(#539)](https://github.com/GouvernementFR/dsfr/pull/539)
 Corrige le mauvais placement du curseur sur les cases à cocher et les boutons radio lors de l&#39;utilisation de VoiceOver (screen reader de MacOs)
 
 
-#### fix(core): correction du curseur des textarea [DS-2952] [(#537)](https://github.com/GouvernementFR/dsfr/pull/537)
+#### fix(core): correction du curseur des textarea [[DS-2952](<https://gouvfr.atlassian.net/browse/DS-2952>)] [(#537)](https://github.com/GouvernementFR/dsfr/pull/537)
 
 
-#### fix(input): correction placement icone calendrier sur input type=&#34;date&#34; [DS-2547] [(#536)](https://github.com/GouvernementFR/dsfr/pull/536)
+#### fix(input): correction placement icone calendrier sur input type=&#34;date&#34; [[DS-2547](<https://gouvfr.atlassian.net/browse/DS-2547>)] [(#536)](https://github.com/GouvernementFR/dsfr/pull/536)
 corrige le problème de double icône remonté dans #530
 
 
-#### feat(icon): ajout icones system [DS-3188] [(#551)](https://github.com/GouvernementFR/dsfr/pull/551)
+#### feat(icon): ajout icones system [[DS-3188](<https://gouvfr.atlassian.net/browse/DS-3188>)] [(#551)](https://github.com/GouvernementFR/dsfr/pull/551)
 Ajout d&#39;icônes dans system :
 fr--arrow-right-up-circle-fill,
 fr--arrow-right-down-circle-fill,
@@ -219,10 +221,10 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### feat(pictograms): Ajouts des pictogrammes food, grocery, house [(#520)](https://github.com/GouvernementFR/dsfr/pull/520)
 
 
-#### feat(deps): mise à jour des dependances npm [DS-2936] [(#533)](https://github.com/GouvernementFR/dsfr/pull/533)
+#### feat(deps): mise à jour des dependances npm [[DS-2936](<https://gouvfr.atlassian.net/browse/DS-2936>)] [(#533)](https://github.com/GouvernementFR/dsfr/pull/533)
 
 
-#### fix(response): retrait du fil d&#39;Arianne sur les pages d&#39;erreur [DS-3012] [(#507)](https://github.com/GouvernementFR/dsfr/pull/507)
+#### fix(response): retrait du fil d&#39;Arianne sur les pages d&#39;erreur [[DS-3012](<https://gouvfr.atlassian.net/browse/DS-3012>)] [(#507)](https://github.com/GouvernementFR/dsfr/pull/507)
 
 
 #### fix(toggle): rend le composant compatible avec vite+svelte [(#518)](https://github.com/GouvernementFR/dsfr/pull/518)
@@ -234,7 +236,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.8.5](https://github.com/GouvernementFR/dsfr/compare/v1.8.4...v1.8.5) - 28 Novembre 2022
 
-#### fix(tag): correction régression lien tag [DS-2975] [(#480)](https://github.com/GouvernementFR/dsfr/pull/480)
+#### fix(tag): correction régression lien tag [[DS-2975](<https://gouvfr.atlassian.net/browse/DS-2975>)] [(#480)](https://github.com/GouvernementFR/dsfr/pull/480)
 
 
 #### fix(transcription): correction de la pleine largeur du composant [(#483)](https://github.com/GouvernementFR/dsfr/pull/483)
@@ -261,37 +263,37 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(global): fix build, lint, clean [(#456)](https://github.com/GouvernementFR/dsfr/pull/456)
 
 
-#### fix(display): correctif duplication du sélecteur de langue [DS-2908] [(#454)](https://github.com/GouvernementFR/dsfr/pull/454)
+#### fix(display): correctif duplication du sélecteur de langue [[DS-2908](<https://gouvfr.atlassian.net/browse/DS-2908>)] [(#454)](https://github.com/GouvernementFR/dsfr/pull/454)
 
 
-#### feat(pagination): border active sur version constrasté [DS-2717] [(#436)](https://github.com/GouvernementFR/dsfr/pull/436)
+#### feat(pagination): border active sur version constrasté [[DS-2717](<https://gouvfr.atlassian.net/browse/DS-2717>)] [(#436)](https://github.com/GouvernementFR/dsfr/pull/436)
 
 
-#### fix(toggle): bug IE label et statut actif [DS-2286] [(#443)](https://github.com/GouvernementFR/dsfr/pull/443)
+#### fix(toggle): bug IE label et statut actif [[DS-2286](<https://gouvfr.atlassian.net/browse/DS-2286>)] [(#443)](https://github.com/GouvernementFR/dsfr/pull/443)
 
 
-#### fix(tag): déplacement du focus sur les tags supprimables [DS-2905] [(#453)](https://github.com/GouvernementFR/dsfr/pull/453)
+#### fix(tag): déplacement du focus sur les tags supprimables [[DS-2905](<https://gouvfr.atlassian.net/browse/DS-2905>)] [(#453)](https://github.com/GouvernementFR/dsfr/pull/453)
 
 
-#### fix(transcription): titre du contenu (a11y) [DS-2906] [(#452)](https://github.com/GouvernementFR/dsfr/pull/452)
+#### fix(transcription): titre du contenu (a11y) [[DS-2906](<https://gouvfr.atlassian.net/browse/DS-2906>)] [(#452)](https://github.com/GouvernementFR/dsfr/pull/452)
 
 
-#### fix(core, download): correction du enlarge link [DS-2777] [(#451)](https://github.com/GouvernementFR/dsfr/pull/451)
+#### fix(core, download): correction du enlarge link [[DS-2777](<https://gouvfr.atlassian.net/browse/DS-2777>)] [(#451)](https://github.com/GouvernementFR/dsfr/pull/451)
 
 
-#### fix(download): titre des cartes en h3 [DS-2904] [(#449)](https://github.com/GouvernementFR/dsfr/pull/449)
+#### fix(download): titre des cartes en h3 [[DS-2904](<https://gouvfr.atlassian.net/browse/DS-2904>)] [(#449)](https://github.com/GouvernementFR/dsfr/pull/449)
 
 
-#### fix(scheme): ajout du scheme-boot permettant d&#39;éliminer le flash au load de la page en dark mode [DS-2166] [(#455)](https://github.com/GouvernementFR/dsfr/pull/455)
+#### fix(scheme): ajout du scheme-boot permettant d&#39;éliminer le flash au load de la page en dark mode [[DS-2166](<https://gouvfr.atlassian.net/browse/DS-2166>)] [(#455)](https://github.com/GouvernementFR/dsfr/pull/455)
 
 
-#### fix(scheme): correctifs de l&#39;API JS de couleur [DS-2907] [(#448)](https://github.com/GouvernementFR/dsfr/pull/448)
+#### fix(scheme): correctifs de l&#39;API JS de couleur [[DS-2907](<https://gouvfr.atlassian.net/browse/DS-2907>)] [(#448)](https://github.com/GouvernementFR/dsfr/pull/448)
 
 
 #### fix(form): ajout du css deprecated legacy [(#439)](https://github.com/GouvernementFR/dsfr/pull/439)
 
 
-#### feat(pattern): form autocomplete [DS-2889] [(#425)](https://github.com/GouvernementFR/dsfr/pull/425)
+#### feat(pattern): form autocomplete [[DS-2889](<https://gouvfr.atlassian.net/browse/DS-2889>)] [(#425)](https://github.com/GouvernementFR/dsfr/pull/425)
 
 
 #### chore: incrementation du numéro de version
@@ -312,46 +314,46 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(form): correction accessiblité des formulaires [(#438)](https://github.com/GouvernementFR/dsfr/pull/438)
 
 
-#### feat(nationality): pattern nationalité [DS-2658] [(#426)](https://github.com/GouvernementFR/dsfr/pull/426)
+#### feat(nationality): pattern nationalité [[DS-2658](<https://gouvfr.atlassian.net/browse/DS-2658>)] [(#426)](https://github.com/GouvernementFR/dsfr/pull/426)
 
 
-#### fix(quote): couleur du texte quote__sources [DS-2806] [(#437)](https://github.com/GouvernementFR/dsfr/pull/437)
+#### fix(quote): couleur du texte quote__sources [[DS-2806](<https://gouvfr.atlassian.net/browse/DS-2806>)] [(#437)](https://github.com/GouvernementFR/dsfr/pull/437)
 
 
-#### fix(form, upload): error &amp; disabled [DS-2746, DS-2700] [(#428)](https://github.com/GouvernementFR/dsfr/pull/428)
+#### fix(form, upload): error &amp; disabled [DS-2746, DS-2700] [[DS-2746](<https://gouvfr.atlassian.net/browse/DS-2746>),[DS-2700](<https://gouvfr.atlassian.net/browse/DS-2700>)] [(#428)](https://github.com/GouvernementFR/dsfr/pull/428)
 
 
-#### fix(tag): correction tag selectionnable hover [DS-2724] [(#430)](https://github.com/GouvernementFR/dsfr/pull/430)
+#### fix(tag): correction tag selectionnable hover [[DS-2724](<https://gouvfr.atlassian.net/browse/DS-2724>)] [(#430)](https://github.com/GouvernementFR/dsfr/pull/430)
 
 
-#### fix(connect): correction wording &#34;qu&#39;est-ce que france connect&#34; [DS-2700] [(#431)](https://github.com/GouvernementFR/dsfr/pull/431)
+#### fix(connect): correction wording &#34;qu&#39;est-ce que france connect&#34; [[DS-2700](<https://gouvfr.atlassian.net/browse/DS-2700>)] [(#431)](https://github.com/GouvernementFR/dsfr/pull/431)
 
 
-#### fix(accordion): correction token de couleur [DS-2700] [(#432)](https://github.com/GouvernementFR/dsfr/pull/432)
+#### fix(accordion): correction token de couleur [[DS-2700](<https://gouvfr.atlassian.net/browse/DS-2700>)] [(#432)](https://github.com/GouvernementFR/dsfr/pull/432)
 
 
-#### feat(api): ajout d&#39;événements sur le scheme [DS-2888] [(#434)](https://github.com/GouvernementFR/dsfr/pull/434)
+#### feat(api): ajout d&#39;événements sur le scheme [[DS-2888](<https://gouvfr.atlassian.net/browse/DS-2888>)] [(#434)](https://github.com/GouvernementFR/dsfr/pull/434)
 
 
-#### feat(api): ajoute la class Colors [DS-2888] [(#424)](https://github.com/GouvernementFR/dsfr/pull/424)
+#### feat(api): ajoute la class Colors [[DS-2888](<https://gouvfr.atlassian.net/browse/DS-2888>)] [(#424)](https://github.com/GouvernementFR/dsfr/pull/424)
 
 
 #### refactor(pattern,page): réagencement des modèles de bloc et de page [2625,2628,2631,2634,2643,2649,2655,2666,2670] #423
 
 
-#### fix(tile, summary, sidemenu): niveau de titre des composants [DS-1805] [(#420)](https://github.com/GouvernementFR/dsfr/pull/420)
+#### fix(tile, summary, sidemenu): niveau de titre des composants [[DS-1805](<https://gouvfr.atlassian.net/browse/DS-1805>)] [(#420)](https://github.com/GouvernementFR/dsfr/pull/420)
 
 
-#### feat(transcription): ajoute le composant transcription [DS-895] [(#412)](https://github.com/GouvernementFR/dsfr/pull/412)
+#### feat(transcription): ajoute le composant transcription [[DS-895](<https://gouvfr.atlassian.net/browse/DS-895>)] [(#412)](https://github.com/GouvernementFR/dsfr/pull/412)
 
 
-#### fix(doc): met a jour les urls de documentation [DS-2764] [(#413)](https://github.com/GouvernementFR/dsfr/pull/413)
+#### fix(doc): met a jour les urls de documentation [[DS-2764](<https://gouvfr.atlassian.net/browse/DS-2764>)] [(#413)](https://github.com/GouvernementFR/dsfr/pull/413)
 
 
-#### fix(tabs): Ouverture de modal à l&#39;intérieur d&#39;un composant onglet [DS-2731] [(#405)](https://github.com/GouvernementFR/dsfr/pull/405)
+#### fix(tabs): Ouverture de modal à l&#39;intérieur d&#39;un composant onglet [[DS-2731](<https://gouvfr.atlassian.net/browse/DS-2731>)] [(#405)](https://github.com/GouvernementFR/dsfr/pull/405)
 
 
-#### fix(sidemenu): sidemenu disparait à l&#39;ouverture modale FF [DS-2723] [(#406)](https://github.com/GouvernementFR/dsfr/pull/406)
+#### fix(sidemenu): sidemenu disparait à l&#39;ouverture modale FF [[DS-2723](<https://gouvfr.atlassian.net/browse/DS-2723>)] [(#406)](https://github.com/GouvernementFR/dsfr/pull/406)
 
 
 #### fix(page): ajustement des imbrications de container [(#417)](https://github.com/GouvernementFR/dsfr/pull/417)
@@ -360,49 +362,49 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(footer): bordure bleu inset &amp; logo toujours aligné en haut [(#410)](https://github.com/GouvernementFR/dsfr/pull/410)
 
 
-#### fix(response): met a jour les espacements des pages erreur [DS-2762] [(#402)](https://github.com/GouvernementFR/dsfr/pull/402)
+#### fix(response): met a jour les espacements des pages erreur [[DS-2762](<https://gouvfr.atlassian.net/browse/DS-2762>)] [(#402)](https://github.com/GouvernementFR/dsfr/pull/402)
 
 
-#### fix(response): Mise à jour des path des pictogrammes [DS-2762] [(#400)](https://github.com/GouvernementFR/dsfr/pull/400)
+#### fix(response): Mise à jour des path des pictogrammes [[DS-2762](<https://gouvfr.atlassian.net/browse/DS-2762>)] [(#400)](https://github.com/GouvernementFR/dsfr/pull/400)
 
 
-#### fix(password): correction template password [DS-2637] [(#399)](https://github.com/GouvernementFR/dsfr/pull/399)
+#### fix(password): correction template password [[DS-2637](<https://gouvfr.atlassian.net/browse/DS-2637>)] [(#399)](https://github.com/GouvernementFR/dsfr/pull/399)
 
 
-#### feat(account, register, login): ajout de modèles de page de connexion et création de compte [DS-2625, DS-2666, DS-2670, DS-2628] [(#403)](https://github.com/GouvernementFR/dsfr/pull/403)
+#### feat(account, register, login): ajout de modèles de page de connexion et création de compte [DS-2625, DS-2666, DS-2670, DS-2628] [[DS-2625](<https://gouvfr.atlassian.net/browse/DS-2625>),[DS-2666](<https://gouvfr.atlassian.net/browse/DS-2666>),[DS-2670](<https://gouvfr.atlassian.net/browse/DS-2670>),[DS-2628](<https://gouvfr.atlassian.net/browse/DS-2628>)] [(#403)](https://github.com/GouvernementFR/dsfr/pull/403)
 
 
-#### Feat(pattern): ajoute le modele de date unique [DS-2655] [(#396)](https://github.com/GouvernementFR/dsfr/pull/396)
+#### Feat(pattern): ajoute le modele de date unique [[DS-2655](<https://gouvfr.atlassian.net/browse/DS-2655>)] [(#396)](https://github.com/GouvernementFR/dsfr/pull/396)
 
 
-#### feat(society): Ajout du pattern société [DS-2649] [(#415)](https://github.com/GouvernementFR/dsfr/pull/415)
+#### feat(society): Ajout du pattern société [[DS-2649](<https://gouvfr.atlassian.net/browse/DS-2649>)] [(#415)](https://github.com/GouvernementFR/dsfr/pull/415)
 
 
-#### feat(address): Ajout du pattern adresse [DS-2643] [(#398)](https://github.com/GouvernementFR/dsfr/pull/398)
+#### feat(address): Ajout du pattern adresse [[DS-2643](<https://gouvfr.atlassian.net/browse/DS-2643>)] [(#398)](https://github.com/GouvernementFR/dsfr/pull/398)
 
 
 #### refactor(form): Ajout des fr-control et correction des pattern civility &amp; name [(#401)](https://github.com/GouvernementFR/dsfr/pull/401)
 
 
-#### feat(password): ajout du composant mot de passe [DS-2637] [(#391)](https://github.com/GouvernementFR/dsfr/pull/391)
+#### feat(password): ajout du composant mot de passe [[DS-2637](<https://gouvfr.atlassian.net/browse/DS-2637>)] [(#391)](https://github.com/GouvernementFR/dsfr/pull/391)
 
 
-#### feat(artwork): ajout de pictogrammes à la librairie [DS-2709] [(#375)](https://github.com/GouvernementFR/dsfr/pull/375)
+#### feat(artwork): ajout de pictogrammes à la librairie [[DS-2709](<https://gouvfr.atlassian.net/browse/DS-2709>)] [(#375)](https://github.com/GouvernementFR/dsfr/pull/375)
 
 
-#### feat(pattern): ajoute le modele de civilite [DS-2631] [(#355)](https://github.com/GouvernementFR/dsfr/pull/355)
+#### feat(pattern): ajoute le modele de civilite [[DS-2631](<https://gouvfr.atlassian.net/browse/DS-2631>)] [(#355)](https://github.com/GouvernementFR/dsfr/pull/355)
 
 
-#### feat(pattern): ajoute le modele de nom et prenom [DS-2634] [(#356)](https://github.com/GouvernementFR/dsfr/pull/356)
+#### feat(pattern): ajoute le modele de nom et prenom [[DS-2634](<https://gouvfr.atlassian.net/browse/DS-2634>)] [(#356)](https://github.com/GouvernementFR/dsfr/pull/356)
 
 
-#### refactor(input): Séparation en sous composant d&#39;input, ajout de input-email et input-tel [DS-2640] [DS-2646] [(#363)](https://github.com/GouvernementFR/dsfr/pull/363)
+#### refactor(input): Séparation en sous composant d&#39;input, ajout de input-email et input-tel [[DS-2640](<https://gouvfr.atlassian.net/browse/DS-2640>),[DS-2646](<https://gouvfr.atlassian.net/browse/DS-2646>)] [(#363)](https://github.com/GouvernementFR/dsfr/pull/363)
 
 
 #### feat(global): évolution global pour les modèles de bloc et de page
 
 
-#### feat(page-unexpected): ajoute le modele de page erreur inattendue [DS-2762] [(#383)](https://github.com/GouvernementFR/dsfr/pull/383)
+#### feat(page-unexpected): ajoute le modele de page erreur inattendue [[DS-2762](<https://gouvfr.atlassian.net/browse/DS-2762>)] [(#383)](https://github.com/GouvernementFR/dsfr/pull/383)
 
 
 
@@ -426,7 +428,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.7.1](https://github.com/GouvernementFR/dsfr/compare/v1.7.0...v1.7.1) - 25 Juillet 2022
 
-#### fix(elevation): legacy z-index [DS-2761] [(#384)](https://github.com/GouvernementFR/dsfr/pull/384)
+#### fix(elevation): legacy z-index [[DS-2761](<https://gouvfr.atlassian.net/browse/DS-2761>)] [(#384)](https://github.com/GouvernementFR/dsfr/pull/384)
 
 
 
@@ -438,37 +440,37 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### chore(global): mis à jour des dépendances [(#381)](https://github.com/GouvernementFR/dsfr/pull/381)
 
 
-#### fix(unavailable): ajout de la page d&#39;exemple [DS-2662] [(#380)](https://github.com/GouvernementFR/dsfr/pull/380)
+#### fix(unavailable): ajout de la page d&#39;exemple [[DS-2662](<https://gouvfr.atlassian.net/browse/DS-2662>)] [(#380)](https://github.com/GouvernementFR/dsfr/pull/380)
 
 
-#### fix(card): correction de l&#39;aspect ratio par défaut des vidéos [DS-2729] [(#378)](https://github.com/GouvernementFR/dsfr/pull/378)
+#### fix(card): correction de l&#39;aspect ratio par défaut des vidéos [[DS-2729](<https://gouvfr.atlassian.net/browse/DS-2729>)] [(#378)](https://github.com/GouvernementFR/dsfr/pull/378)
 
 
-#### fix(not-found): ajuste la template not-found [DS-1941] [(#379)](https://github.com/GouvernementFR/dsfr/pull/379)
+#### fix(not-found): ajuste la template not-found [[DS-1941](<https://gouvfr.atlassian.net/browse/DS-1941>)] [(#379)](https://github.com/GouvernementFR/dsfr/pull/379)
 
 
-#### fix(card): correction aspect ratio par défaut [DS-2729] [(#374)](https://github.com/GouvernementFR/dsfr/pull/374)
+#### fix(card): correction aspect ratio par défaut [[DS-2729](<https://gouvfr.atlassian.net/browse/DS-2729>)] [(#374)](https://github.com/GouvernementFR/dsfr/pull/374)
 
 
-#### feat(server): Ajout page erreur serveur [DS-2662] [(#330)](https://github.com/GouvernementFR/dsfr/pull/330)
+#### feat(server): Ajout page erreur serveur [[DS-2662](<https://gouvfr.atlassian.net/browse/DS-2662>)] [(#330)](https://github.com/GouvernementFR/dsfr/pull/330)
 
 
-#### feat(not-found): ajoute les modèles de page erreur 404 [DS-1941] [(#371)](https://github.com/GouvernementFR/dsfr/pull/371)
+#### feat(not-found): ajoute les modèles de page erreur 404 [[DS-1941](<https://gouvfr.atlassian.net/browse/DS-1941>)] [(#371)](https://github.com/GouvernementFR/dsfr/pull/371)
 
 
 #### fix(global): correction des erreurs pa11y [(#376)](https://github.com/GouvernementFR/dsfr/pull/376)
 
 
-#### feat(translate) : Ajout du sélecteur de langue [DS-2017] [(#359)](https://github.com/GouvernementFR/dsfr/pull/359)
+#### feat(translate) : Ajout du sélecteur de langue [[DS-2017](<https://gouvfr.atlassian.net/browse/DS-2017>)] [(#359)](https://github.com/GouvernementFR/dsfr/pull/359)
 
 
-#### fix(footer, header): généralisation de l&#39;attribut &#39;title&#39; du lien retour/accueil du logo [DS-2682] [(#353)](https://github.com/GouvernementFR/dsfr/pull/353)
+#### fix(footer, header): généralisation de l&#39;attribut &#39;title&#39; du lien retour/accueil du logo [[DS-2682](<https://gouvfr.atlassian.net/browse/DS-2682>)] [(#353)](https://github.com/GouvernementFR/dsfr/pull/353)
 
 
-#### fix(stepper): correction barre d&#39;étape masquée sur Firefox [DS-2760] [(#373)](https://github.com/GouvernementFR/dsfr/pull/373)
+#### fix(stepper): correction barre d&#39;étape masquée sur Firefox [[DS-2760](<https://gouvfr.atlassian.net/browse/DS-2760>)] [(#373)](https://github.com/GouvernementFR/dsfr/pull/373)
 
 
-#### feat(global): évolution du système d&#39;élévation et des ombres [DS-2128] [(#372)](https://github.com/GouvernementFR/dsfr/pull/372)
+#### feat(global): évolution du système d&#39;élévation et des ombres [[DS-2128](<https://gouvfr.atlassian.net/browse/DS-2128>)] [(#372)](https://github.com/GouvernementFR/dsfr/pull/372)
 
 
 #### fix(global): Amendements sur les CGU du DSFR [(#370)](https://github.com/GouvernementFR/dsfr/pull/370)
@@ -477,10 +479,10 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### feat(i18n): système i18n globalisé [(#365)](https://github.com/GouvernementFR/dsfr/pull/365)
 
 
-#### fix(content, core): bug ratio vidéos ios [DS-2188] [(#352)](https://github.com/GouvernementFR/dsfr/pull/352)
+#### fix(content, core): bug ratio vidéos ios [[DS-2188](<https://gouvfr.atlassian.net/browse/DS-2188>)] [(#352)](https://github.com/GouvernementFR/dsfr/pull/352)
 
 
-#### fix(pagination): correction couleur des liens de pagination en &#39;button&#39; [DS-2577] [(#354)](https://github.com/GouvernementFR/dsfr/pull/354)
+#### fix(pagination): correction couleur des liens de pagination en &#39;button&#39; [[DS-2577](<https://gouvfr.atlassian.net/browse/DS-2577>)] [(#354)](https://github.com/GouvernementFR/dsfr/pull/354)
 
 
 #### fix(global): correction standalone locale pour i18n [(#364)](https://github.com/GouvernementFR/dsfr/pull/364)
@@ -495,7 +497,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### feat(global): module sass dsfr [(#358)](https://github.com/GouvernementFR/dsfr/pull/358)
 
 
-#### feat(global): multiplication des pages d&#39;exemple et internationalisation [DS-1381] [(#357)](https://github.com/GouvernementFR/dsfr/pull/357)
+#### feat(global): multiplication des pages d&#39;exemple et internationalisation [[DS-1381](<https://gouvfr.atlassian.net/browse/DS-1381>)] [(#357)](https://github.com/GouvernementFR/dsfr/pull/357)
 
 
 
@@ -519,43 +521,43 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(core): correction du text-decoration sur les liens pour les version antérieures [(#342)](https://github.com/GouvernementFR/dsfr/pull/342)
 
 
-#### fix(card): correctif des tailles fixes des cartes horizontales [DS-2707] [(#338)](https://github.com/GouvernementFR/dsfr/pull/338)
+#### fix(card): correctif des tailles fixes des cartes horizontales [[DS-2707](<https://gouvfr.atlassian.net/browse/DS-2707>)] [(#338)](https://github.com/GouvernementFR/dsfr/pull/338)
 
 
-#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#340)](https://github.com/GouvernementFR/dsfr/pull/340)
+#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [[DS-2706](<https://gouvfr.atlassian.net/browse/DS-2706>)] [(#340)](https://github.com/GouvernementFR/dsfr/pull/340)
 
 
-#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#339)](https://github.com/GouvernementFR/dsfr/pull/339)
+#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [[DS-2706](<https://gouvfr.atlassian.net/browse/DS-2706>)] [(#339)](https://github.com/GouvernementFR/dsfr/pull/339)
 
 
 #### fix(global): stylelint [(#337)](https://github.com/GouvernementFR/dsfr/pull/337)
 
 
-#### fix(follow, share): ajout texte explicatif icones RS disponibles [DS-2598][DS-2597] [(#331)](https://github.com/GouvernementFR/dsfr/pull/331)
+#### fix(follow, share): ajout texte explicatif icones RS disponibles [[DS-2598](<https://gouvfr.atlassian.net/browse/DS-2598>),[DS-2597](<https://gouvfr.atlassian.net/browse/DS-2597>)] [(#331)](https://github.com/GouvernementFR/dsfr/pull/331)
 
 
-#### fix(core,link,button,tag,card): correctif icône lien extérieur [DS-2510] [(#333)](https://github.com/GouvernementFR/dsfr/pull/333)
+#### fix(core,link,button,tag,card): correctif icône lien extérieur [[DS-2510](<https://gouvfr.atlassian.net/browse/DS-2510>)] [(#333)](https://github.com/GouvernementFR/dsfr/pull/333)
 
 
-#### fix(icons): correctif depreciation fr-fi-checkbox-circle-line [DS-2702] [(#334)](https://github.com/GouvernementFR/dsfr/pull/334)
+#### fix(icons): correctif depreciation fr-fi-checkbox-circle-line [[DS-2702](<https://gouvfr.atlassian.net/browse/DS-2702>)] [(#334)](https://github.com/GouvernementFR/dsfr/pull/334)
 
 
-#### fix(navigation): correctif focus au clic sur les liens [DS-2677] [(#336)](https://github.com/GouvernementFR/dsfr/pull/336)
+#### fix(navigation): correctif focus au clic sur les liens [[DS-2677](<https://gouvfr.atlassian.net/browse/DS-2677>)] [(#336)](https://github.com/GouvernementFR/dsfr/pull/336)
 
 
-#### fix(header): correctif espacement liens rapides [DS-2680] [(#335)](https://github.com/GouvernementFR/dsfr/pull/335)
+#### fix(header): correctif espacement liens rapides [[DS-2680](<https://gouvfr.atlassian.net/browse/DS-2680>)] [(#335)](https://github.com/GouvernementFR/dsfr/pull/335)
 
 
-#### fix(stepper): cache le détail de la dernière étape en css [DS-2446] [(#329)](https://github.com/GouvernementFR/dsfr/pull/329)
+#### fix(stepper): cache le détail de la dernière étape en css [[DS-2446](<https://gouvfr.atlassian.net/browse/DS-2446>)] [(#329)](https://github.com/GouvernementFR/dsfr/pull/329)
 
 
-#### fix(table): bug ios bordures qui n&#39;apparaissent pas [DS-2186] [(#332)](https://github.com/GouvernementFR/dsfr/pull/332)
+#### fix(table): bug ios bordures qui n&#39;apparaissent pas [[DS-2186](<https://gouvfr.atlassian.net/browse/DS-2186>)] [(#332)](https://github.com/GouvernementFR/dsfr/pull/332)
 
 
-#### feat(global): mise en place de l&#39;injection du code dans le html [DS-2662] [(#327)](https://github.com/GouvernementFR/dsfr/pull/327)
+#### feat(global): mise en place de l&#39;injection du code dans le html [[DS-2662](<https://gouvfr.atlassian.net/browse/DS-2662>)] [(#327)](https://github.com/GouvernementFR/dsfr/pull/327)
 
 
-#### fix(link): correctif lien multiligne [DS-2562] [(#322)](https://github.com/GouvernementFR/dsfr/pull/322)
+#### fix(link): correctif lien multiligne [[DS-2562](<https://gouvfr.atlassian.net/browse/DS-2562>)] [(#322)](https://github.com/GouvernementFR/dsfr/pull/322)
 
 
 #### fix(share,, follow): ajout icones réseau sociaux [(#324)](https://github.com/GouvernementFR/dsfr/pull/324)
@@ -567,31 +569,31 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### chore(deps): mise à jour des dépendances [(#325)](https://github.com/GouvernementFR/dsfr/pull/325)
 
 
-#### feat(stepper): ajout du composant indicateur d&#39;étapes [DS-2446] [(#319)](https://github.com/GouvernementFR/dsfr/pull/319)
+#### feat(stepper): ajout du composant indicateur d&#39;étapes [[DS-2446](<https://gouvfr.atlassian.net/browse/DS-2446>)] [(#319)](https://github.com/GouvernementFR/dsfr/pull/319)
 
 
-#### feat(artwork): ajout des pictogrammes illustratifs [DS-2483] [(#317)](https://github.com/GouvernementFR/dsfr/pull/317)
+#### feat(artwork): ajout des pictogrammes illustratifs [[DS-2483](<https://gouvfr.atlassian.net/browse/DS-2483>)] [(#317)](https://github.com/GouvernementFR/dsfr/pull/317)
 
 
-#### refactor(core, card, content): ajout utilitaire fr-ratio et aspect-ratio des content img &amp; vid [DS-2543] [DS-2571] [(#316)](https://github.com/GouvernementFR/dsfr/pull/316)
+#### refactor(core, card, content): ajout utilitaire fr-ratio et aspect-ratio des content img &amp; vid [[DS-2543](<https://gouvfr.atlassian.net/browse/DS-2543>),[DS-2571](<https://gouvfr.atlassian.net/browse/DS-2571>)] [(#316)](https://github.com/GouvernementFR/dsfr/pull/316)
 
 
-#### feat(notice): Ajout du composant bandeau d&#39;information [DS-2014] [(#302)](https://github.com/GouvernementFR/dsfr/pull/302)
+#### feat(notice): Ajout du composant bandeau d&#39;information [[DS-2014](<https://gouvfr.atlassian.net/browse/DS-2014>)] [(#302)](https://github.com/GouvernementFR/dsfr/pull/302)
 
 
-#### fix(download):  couleur puce groupe de lien de téléchargement [DS-246] [(#313)](https://github.com/GouvernementFR/dsfr/pull/313)
+#### fix(download):  couleur puce groupe de lien de téléchargement [[DS-246](<https://gouvfr.atlassian.net/browse/DS-246>)] [(#313)](https://github.com/GouvernementFR/dsfr/pull/313)
 
 
-#### chore(global): migration vers sass dart [DS-1859] [(#310)](https://github.com/GouvernementFR/dsfr/pull/310)
+#### chore(global): migration vers sass dart [[DS-1859](<https://gouvfr.atlassian.net/browse/DS-1859>)] [(#310)](https://github.com/GouvernementFR/dsfr/pull/310)
 
 
-#### refactor(global): implémentation du positionnement des icônes en inline [DS-2526] [(#320)](https://github.com/GouvernementFR/dsfr/pull/320)
+#### refactor(global): implémentation du positionnement des icônes en inline [[DS-2526](<https://gouvfr.atlassian.net/browse/DS-2526>)] [(#320)](https://github.com/GouvernementFR/dsfr/pull/320)
 
 
-#### refactor(header, link, button, follow, share, tag, badge): correction espacements des groupes [DS-2559] [(#311)](https://github.com/GouvernementFR/dsfr/pull/311)
+#### refactor(header, link, button, follow, share, tag, badge): correction espacements des groupes [[DS-2559](<https://gouvfr.atlassian.net/browse/DS-2559>)] [(#311)](https://github.com/GouvernementFR/dsfr/pull/311)
 
 
-#### fix(sidemenu): changement balise du titre [DS-2508] [(#290)](https://github.com/GouvernementFR/dsfr/pull/290)
+#### fix(sidemenu): changement balise du titre [[DS-2508](<https://gouvfr.atlassian.net/browse/DS-2508>)] [(#290)](https://github.com/GouvernementFR/dsfr/pull/290)
 
 
 #### fix(follow): correction link icon déprecié [(#306)](https://github.com/GouvernementFR/dsfr/pull/306)
@@ -621,10 +623,10 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(core): correction du text-decoration sur les liens pour les version antérieures [(#342)](https://github.com/GouvernementFR/dsfr/pull/342)
 
 
-#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#339)](https://github.com/GouvernementFR/dsfr/pull/339)
+#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [[DS-2706](<https://gouvfr.atlassian.net/browse/DS-2706>)] [(#339)](https://github.com/GouvernementFR/dsfr/pull/339)
 
 
-#### fix(link): correctif lien multiligne [DS-2562] [(#322)](https://github.com/GouvernementFR/dsfr/pull/322)
+#### fix(link): correctif lien multiligne [[DS-2562](<https://gouvfr.atlassian.net/browse/DS-2562>)] [(#322)](https://github.com/GouvernementFR/dsfr/pull/322)
 
 
 #### fix(follow): correction link icon déprecié [(#301)](https://github.com/GouvernementFR/dsfr/pull/301)
@@ -639,13 +641,13 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(icons-system): correction lint [(#298)](https://github.com/GouvernementFR/dsfr/pull/298)
 
 
-#### fix(icons): icônes dépréciées de la v1.4.0 [DS-2541] [(#297)](https://github.com/GouvernementFR/dsfr/pull/297)
+#### fix(icons): icônes dépréciées de la v1.4.0 [[DS-2541](<https://gouvfr.atlassian.net/browse/DS-2541>)] [(#297)](https://github.com/GouvernementFR/dsfr/pull/297)
 
 
-#### fix(core, utility): icones dépréciées [DS-2541] [(#296)](https://github.com/GouvernementFR/dsfr/pull/296)
+#### fix(core, utility): icones dépréciées [[DS-2541](<https://gouvfr.atlassian.net/browse/DS-2541>)] [(#296)](https://github.com/GouvernementFR/dsfr/pull/296)
 
 
-#### fix(download): correction erreur js legacy [DS-2540] [(#292)](https://github.com/GouvernementFR/dsfr/pull/292)
+#### fix(download): correction erreur js legacy [[DS-2540](<https://gouvfr.atlassian.net/browse/DS-2540>)] [(#292)](https://github.com/GouvernementFR/dsfr/pull/292)
 
 
 #### fix(dsfr-deprecated): correction du nom de fichier sur le js legacy [(#295)](https://github.com/GouvernementFR/dsfr/pull/295)
@@ -657,7 +659,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(core): correction soulignement des liens [(#348)](https://github.com/GouvernementFR/dsfr/pull/348)
 
 
-#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#341)](https://github.com/GouvernementFR/dsfr/pull/341)
+#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [[DS-2706](<https://gouvfr.atlassian.net/browse/DS-2706>)] [(#341)](https://github.com/GouvernementFR/dsfr/pull/341)
 
 
 #### fix(link): retrait du soulignement des icônes
@@ -666,7 +668,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(global): retour au soulignement natif pour les liens
 
 
-#### fix(download): titre groupe de liens en classe BEM [DS-246] [(#289)](https://github.com/GouvernementFR/dsfr/pull/289)
+#### fix(download): titre groupe de liens en classe BEM [[DS-246](<https://gouvfr.atlassian.net/browse/DS-246>)] [(#289)](https://github.com/GouvernementFR/dsfr/pull/289)
 
 
 #### fix: contributing.md et readme.md 1.5.0 [(#286)](https://github.com/GouvernementFR/dsfr/pull/286)
@@ -678,61 +680,61 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(legacy): media query legacy manquante [(#285)](https://github.com/GouvernementFR/dsfr/pull/285)
 
 
-#### fix(download): retrait exemple groupe sm [DS-246] [(#284)](https://github.com/GouvernementFR/dsfr/pull/284)
+#### fix(download): retrait exemple groupe sm [[DS-246](<https://gouvfr.atlassian.net/browse/DS-246>)] [(#284)](https://github.com/GouvernementFR/dsfr/pull/284)
 
 
 #### fix(download,card): transpilation async et commentaire [(#283)](https://github.com/GouvernementFR/dsfr/pull/283)
 
 
-#### refactor(icon): Ajouts nouvelles icones &amp; séparation en familles [DS-2514] [(#280)](https://github.com/GouvernementFR/dsfr/pull/280)
+#### refactor(icon): Ajouts nouvelles icones &amp; séparation en familles [[DS-2514](<https://gouvfr.atlassian.net/browse/DS-2514>)] [(#280)](https://github.com/GouvernementFR/dsfr/pull/280)
 
 
-#### feat(download): Ajout du composant téléchargement de fichier [DS-246] [DS-2507] [(#272)](https://github.com/GouvernementFR/dsfr/pull/272)
+#### feat(download): Ajout du composant téléchargement de fichier [[DS-246](<https://gouvfr.atlassian.net/browse/DS-246>),[DS-2507](<https://gouvfr.atlassian.net/browse/DS-2507>)] [(#272)](https://github.com/GouvernementFR/dsfr/pull/272)
 
 
-#### fix(connect): correction de la variable de build isStandalone [DS-2528] [(#281)](https://github.com/GouvernementFR/dsfr/pull/281)
+#### fix(connect): correction de la variable de build isStandalone [[DS-2528](<https://gouvfr.atlassian.net/browse/DS-2528>)] [(#281)](https://github.com/GouvernementFR/dsfr/pull/281)
 
 
-#### fix(card): typo dans l&#39;exemple grille [DS-2023] [(#282)](https://github.com/GouvernementFR/dsfr/pull/282)
+#### fix(card): typo dans l&#39;exemple grille [[DS-2023](<https://gouvfr.atlassian.net/browse/DS-2023>)] [(#282)](https://github.com/GouvernementFR/dsfr/pull/282)
 
 
-#### fix(input): correction icone date [DS-2280] [(#276)](https://github.com/GouvernementFR/dsfr/pull/276)
+#### fix(input): correction icone date [[DS-2280](<https://gouvfr.atlassian.net/browse/DS-2280>)] [(#276)](https://github.com/GouvernementFR/dsfr/pull/276)
 
 
-#### feat(header): bandeau de site en beta [DS-2417] [(#269)](https://github.com/GouvernementFR/dsfr/pull/269)
+#### feat(header): bandeau de site en beta [[DS-2417](<https://gouvfr.atlassian.net/browse/DS-2417>)] [(#269)](https://github.com/GouvernementFR/dsfr/pull/269)
 
 
-#### fix(footer): alignement des logos partenaires [DS-2530] [(#277)](https://github.com/GouvernementFR/dsfr/pull/277)
+#### fix(footer): alignement des logos partenaires [[DS-2530](<https://gouvfr.atlassian.net/browse/DS-2530>)] [(#277)](https://github.com/GouvernementFR/dsfr/pull/277)
 
 
 #### chore: suppression de node-sass-json-importer [(#278)](https://github.com/GouvernementFR/dsfr/pull/278)
 
 
-#### fix(accordion) icone moins n&#39;apparait plus [DS-2280] [(#275)](https://github.com/GouvernementFR/dsfr/pull/275)
+#### fix(accordion) icone moins n&#39;apparait plus [[DS-2280](<https://gouvfr.atlassian.net/browse/DS-2280>)] [(#275)](https://github.com/GouvernementFR/dsfr/pull/275)
 
 
-#### feat(card): ajout de la fonctionnalité card v2 [DS-2023] [(#270)](https://github.com/GouvernementFR/dsfr/pull/270)
+#### feat(card): ajout de la fonctionnalité card v2 [[DS-2023](<https://gouvfr.atlassian.net/browse/DS-2023>)] [(#270)](https://github.com/GouvernementFR/dsfr/pull/270)
 
 
-#### fix(connect): retrait import json &amp; ajout rel noopener [DS-2525] [DS-2528] [(#273)](https://github.com/GouvernementFR/dsfr/pull/273)
+#### fix(connect): retrait import json &amp; ajout rel noopener [[DS-2525](<https://gouvfr.atlassian.net/browse/DS-2525>),[DS-2528](<https://gouvfr.atlassian.net/browse/DS-2528>)] [(#273)](https://github.com/GouvernementFR/dsfr/pull/273)
 
 
 #### fix(global): mise à jour des dépendances [(#274)](https://github.com/GouvernementFR/dsfr/pull/274)
 
 
-#### feat(button): changement de la taille des boutons (padding) [DS-2500] [(#266)](https://github.com/GouvernementFR/dsfr/pull/266)
+#### feat(button): changement de la taille des boutons (padding) [[DS-2500](<https://gouvfr.atlassian.net/browse/DS-2500>)] [(#266)](https://github.com/GouvernementFR/dsfr/pull/266)
 
 
-#### fix(core): correction liste à puce sur android [DS-2287] [(#268)](https://github.com/GouvernementFR/dsfr/pull/268)
+#### fix(core): correction liste à puce sur android [[DS-2287](<https://gouvfr.atlassian.net/browse/DS-2287>)] [(#268)](https://github.com/GouvernementFR/dsfr/pull/268)
 
 
-#### fix(global): restitution des icones en background + mask [DS-2280] [(#256)](https://github.com/GouvernementFR/dsfr/pull/256)
+#### fix(global): restitution des icones en background + mask [[DS-2280](<https://gouvfr.atlassian.net/browse/DS-2280>)] [(#256)](https://github.com/GouvernementFR/dsfr/pull/256)
 
 
-#### fix(core): bug checkbox NVDA - correction du reset appearance [DS-2442] [(#252)](https://github.com/GouvernementFR/dsfr/pull/252)
+#### fix(core): bug checkbox NVDA - correction du reset appearance [[DS-2442](<https://gouvfr.atlassian.net/browse/DS-2442>)] [(#252)](https://github.com/GouvernementFR/dsfr/pull/252)
 
 
-#### refactor(connect): généralisation du build du standalone [DS-2434] [(#255)](https://github.com/GouvernementFR/dsfr/pull/255)
+#### refactor(connect): généralisation du build du standalone [[DS-2434](<https://gouvfr.atlassian.net/browse/DS-2434>)] [(#255)](https://github.com/GouvernementFR/dsfr/pull/255)
 
 
 
@@ -747,7 +749,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.4.2](https://github.com/GouvernementFR/dsfr/compare/v1.4.1...v1.4.2) - 13 Juin 2022
 
-#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [DS-2706] [(#341)](https://github.com/GouvernementFR/dsfr/pull/341)
+#### fix(core): suppression de l&#39;icône lien extérieur sur une balise form [[DS-2706](<https://gouvfr.atlassian.net/browse/DS-2706>)] [(#341)](https://github.com/GouvernementFR/dsfr/pull/341)
 
 
 #### fix(link): retrait du soulignement des icônes
@@ -759,19 +761,19 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.4.1](https://github.com/GouvernementFR/dsfr/compare/v1.4.0...v1.4.1) - 29 Mars 2022
 
-#### fix(connect): correction du titre du lien [DS-2490]
+#### fix(connect): correction du titre du lien [[DS-2490](<https://gouvfr.atlassian.net/browse/DS-2490>)]
 
 
-#### fix(tag): correction tag activable sm et dans un group sm [DS-2491] [(#258)](https://github.com/GouvernementFR/dsfr/pull/258)
+#### fix(tag): correction tag activable sm et dans un group sm [[DS-2491](<https://gouvfr.atlassian.net/browse/DS-2491>)] [(#258)](https://github.com/GouvernementFR/dsfr/pull/258)
 
 
-#### fix(connect): retrait description &amp; ajout target blank [DS-2490] [(#261)](https://github.com/GouvernementFR/dsfr/pull/261)
+#### fix(connect): retrait description &amp; ajout target blank [[DS-2490](<https://gouvfr.atlassian.net/browse/DS-2490>)] [(#261)](https://github.com/GouvernementFR/dsfr/pull/261)
 
 
-#### fix(follow): correction de la dépréciation pour être plus générique [DS-2484] [(#257)](https://github.com/GouvernementFR/dsfr/pull/257)
+#### fix(follow): correction de la dépréciation pour être plus générique [[DS-2484](<https://gouvfr.atlassian.net/browse/DS-2484>)] [(#257)](https://github.com/GouvernementFR/dsfr/pull/257)
 
 
-#### fix(connect): libelle FranceConnect attaché [DS-2479] [(#260)](https://github.com/GouvernementFR/dsfr/pull/260)
+#### fix(connect): libelle FranceConnect attaché [[DS-2479](<https://gouvfr.atlassian.net/browse/DS-2479>)] [(#260)](https://github.com/GouvernementFR/dsfr/pull/260)
 
 
 
@@ -780,82 +782,82 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(display): correction et support des versions dépréciées [(#247)](https://github.com/GouvernementFR/dsfr/pull/247)
 
 
-#### fix(header,follow,content): retours dépréciation [DS-2474] [(#241)](https://github.com/GouvernementFR/dsfr/pull/241)
+#### fix(header,follow,content): retours dépréciation [[DS-2474](<https://gouvfr.atlassian.net/browse/DS-2474>)] [(#241)](https://github.com/GouvernementFR/dsfr/pull/241)
 
 
-#### fix(sidemenu): correction hauteur &amp; scroll sidemenu sticky [DS-2473] [(#243)](https://github.com/GouvernementFR/dsfr/pull/243)
+#### fix(sidemenu): correction hauteur &amp; scroll sidemenu sticky [[DS-2473](<https://gouvfr.atlassian.net/browse/DS-2473>)] [(#243)](https://github.com/GouvernementFR/dsfr/pull/243)
 
 
-#### fix(navigation): correction affichage mega-menu [DS-2476] [(#242)](https://github.com/GouvernementFR/dsfr/pull/242)
+#### fix(navigation): correction affichage mega-menu [[DS-2476](<https://gouvfr.atlassian.net/browse/DS-2476>)] [(#242)](https://github.com/GouvernementFR/dsfr/pull/242)
 
 
-#### fix(connect): correction taille du lien en sm [DS-2402] [(#239)](https://github.com/GouvernementFR/dsfr/pull/239)
+#### fix(connect): correction taille du lien en sm [[DS-2402](<https://gouvfr.atlassian.net/browse/DS-2402>)] [(#239)](https://github.com/GouvernementFR/dsfr/pull/239)
 
 
-#### feat(global): mise en place de la stratégie de dépréciation des composants [DS-2463] [(#237)](https://github.com/GouvernementFR/dsfr/pull/237)
+#### feat(global): mise en place de la stratégie de dépréciation des composants [[DS-2463](<https://gouvfr.atlassian.net/browse/DS-2463>)] [(#237)](https://github.com/GouvernementFR/dsfr/pull/237)
 
 
-#### fix: corrections des retours dev 1.4.0 [DS-2467] [(#240)](https://github.com/GouvernementFR/dsfr/pull/240)
+#### fix: corrections des retours dev 1.4.0 [[DS-2467](<https://gouvfr.atlassian.net/browse/DS-2467>)] [(#240)](https://github.com/GouvernementFR/dsfr/pull/240)
 
 
-#### fix(connect): retrait du hint text [DS-2402] [(#238)](https://github.com/GouvernementFR/dsfr/pull/238)
+#### fix(connect): retrait du hint text [[DS-2402](<https://gouvfr.atlassian.net/browse/DS-2402>)] [(#238)](https://github.com/GouvernementFR/dsfr/pull/238)
 
 
-#### feat(link): Ajout du lien &#34;back to top&#34; [DS-286] [(#233)](https://github.com/GouvernementFR/dsfr/pull/233)
+#### feat(link): Ajout du lien &#34;back to top&#34; [[DS-286](<https://gouvfr.atlassian.net/browse/DS-286>)] [(#233)](https://github.com/GouvernementFR/dsfr/pull/233)
 
 
-#### fix(megamenu): corrige erreur js en mode no-module [DS-2379] [(#226)](https://github.com/GouvernementFR/dsfr/pull/226)
+#### fix(megamenu): corrige erreur js en mode no-module [[DS-2379](<https://gouvfr.atlassian.net/browse/DS-2379>)] [(#226)](https://github.com/GouvernementFR/dsfr/pull/226)
 
 
-#### fix(collapse): corrige le collapse multi-navigateurs [DS-2332] [(#227)](https://github.com/GouvernementFR/dsfr/pull/227)
+#### fix(collapse): corrige le collapse multi-navigateurs [[DS-2332](<https://gouvfr.atlassian.net/browse/DS-2332>)] [(#227)](https://github.com/GouvernementFR/dsfr/pull/227)
 
 
-#### fix: templates plus paramétrables [DS-2408][DS-2138] [(#221)](https://github.com/GouvernementFR/dsfr/pull/221)
+#### fix: templates plus paramétrables [[DS-2408](<https://gouvfr.atlassian.net/browse/DS-2408>),[DS-2138](<https://gouvfr.atlassian.net/browse/DS-2138>)] [(#221)](https://github.com/GouvernementFR/dsfr/pull/221)
 
 
-#### feat(footer): ajout d&#39;un sample de footer paramétrable [DS-2132][DS-2408] [(#215)](https://github.com/GouvernementFR/dsfr/pull/215)
+#### feat(footer): ajout d&#39;un sample de footer paramétrable [[DS-2132](<https://gouvfr.atlassian.net/browse/DS-2132>),[DS-2408](<https://gouvfr.atlassian.net/browse/DS-2408>)] [(#215)](https://github.com/GouvernementFR/dsfr/pull/215)
 
 
-#### fix(sidemenu): correction hauteur sidemenu sticky [DS-2355] [(#223)](https://github.com/GouvernementFR/dsfr/pull/223)
+#### fix(sidemenu): correction hauteur sidemenu sticky [[DS-2355](<https://gouvfr.atlassian.net/browse/DS-2355>)] [(#223)](https://github.com/GouvernementFR/dsfr/pull/223)
 
 
-#### fix(modal): &lt;dialog&gt; masqué en no-css [DS-2423] [(#230)](https://github.com/GouvernementFR/dsfr/pull/230)
+#### fix(modal): &lt;dialog&gt; masqué en no-css [[DS-2423](<https://gouvfr.atlassian.net/browse/DS-2423>)] [(#230)](https://github.com/GouvernementFR/dsfr/pull/230)
 
 
-#### fix(tab): correction z-index des tab-panels [DS-2420] [(#232)](https://github.com/GouvernementFR/dsfr/pull/232)
+#### fix(tab): correction z-index des tab-panels [[DS-2420](<https://gouvfr.atlassian.net/browse/DS-2420>)] [(#232)](https://github.com/GouvernementFR/dsfr/pull/232)
 
 
-#### fix: margin bottom des textes et titres en css prop [DS-2013] [(#229)](https://github.com/GouvernementFR/dsfr/pull/229)
+#### fix: margin bottom des textes et titres en css prop [[DS-2013](<https://gouvfr.atlassian.net/browse/DS-2013>)] [(#229)](https://github.com/GouvernementFR/dsfr/pull/229)
 
 
-#### feat(core): ajout d&#39;icones [DS-2405] [(#231)](https://github.com/GouvernementFR/dsfr/pull/231)
+#### feat(core): ajout d&#39;icones [[DS-2405](<https://gouvfr.atlassian.net/browse/DS-2405>)] [(#231)](https://github.com/GouvernementFR/dsfr/pull/231)
 
 
-#### refactor(global): soulignement des liens et ajout des boutons tertiaires [DS-2022][DS-2427] [(#234)](https://github.com/GouvernementFR/dsfr/pull/234)
+#### refactor(global): soulignement des liens et ajout des boutons tertiaires [[DS-2022](<https://gouvfr.atlassian.net/browse/DS-2022>),[DS-2427](<https://gouvfr.atlassian.net/browse/DS-2427>)] [(#234)](https://github.com/GouvernementFR/dsfr/pull/234)
 
 
-#### feat(connect): ajout description et lien france connect [DS-2402] [(#224)](https://github.com/GouvernementFR/dsfr/pull/224)
+#### feat(connect): ajout description et lien france connect [[DS-2402](<https://gouvfr.atlassian.net/browse/DS-2402>)] [(#224)](https://github.com/GouvernementFR/dsfr/pull/224)
 
 
-#### fix(core, tab, modal, button): injection js de styles en variables css [DS-2409][DS-2373] [(#225)](https://github.com/GouvernementFR/dsfr/pull/225)
+#### fix(core, tab, modal, button): injection js de styles en variables css [[DS-2409](<https://gouvfr.atlassian.net/browse/DS-2409>),[DS-2373](<https://gouvfr.atlassian.net/browse/DS-2373>)] [(#225)](https://github.com/GouvernementFR/dsfr/pull/225)
 
 
-#### feat(core): variabilisation du core [DS-2315] [(#212)](https://github.com/GouvernementFR/dsfr/pull/212)
+#### feat(core): variabilisation du core [[DS-2315](<https://gouvfr.atlassian.net/browse/DS-2315>)] [(#212)](https://github.com/GouvernementFR/dsfr/pull/212)
 
 
 #### feat(dependencies): mise a jour des dépendances node mineures [(#228)](https://github.com/GouvernementFR/dsfr/pull/228)
 
 
-#### feat(connect): Ajout de la fonctionnalité FranceConnect [DS-551] [(#211)](https://github.com/GouvernementFR/dsfr/pull/211)
+#### feat(connect): Ajout de la fonctionnalité FranceConnect [[DS-551](<https://gouvfr.atlassian.net/browse/DS-551>)] [(#211)](https://github.com/GouvernementFR/dsfr/pull/211)
 
 
-#### fix(toggle, modal): correction z-index de toggle [DS-2385] [(#213)](https://github.com/GouvernementFR/dsfr/pull/213)
+#### fix(toggle, modal): correction z-index de toggle [[DS-2385](<https://gouvfr.atlassian.net/browse/DS-2385>)] [(#213)](https://github.com/GouvernementFR/dsfr/pull/213)
 
 
-#### fix(accordion): a11y retrait des ul li du groupe d&#39;accordéon [DS-2348] [(#214)](https://github.com/GouvernementFR/dsfr/pull/214)
+#### fix(accordion): a11y retrait des ul li du groupe d&#39;accordéon [[DS-2348](<https://gouvfr.atlassian.net/browse/DS-2348>)] [(#214)](https://github.com/GouvernementFR/dsfr/pull/214)
 
 
-#### fix(core): nouvelle fonte Marianne avec correction de l&#39;alignement [DS-1394] [(#169)](https://github.com/GouvernementFR/dsfr/pull/169)
+#### fix(core): nouvelle fonte Marianne avec correction de l&#39;alignement [[DS-1394](<https://gouvfr.atlassian.net/browse/DS-1394>)] [(#169)](https://github.com/GouvernementFR/dsfr/pull/169)
 
 
 
@@ -864,55 +866,55 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.3.1](https://github.com/GouvernementFR/dsfr/compare/v1.3.0...v1.3.1) - 7 Février 2022
 
-#### fix(toggle): correction de l&#39;état précoché de l&#39;interrupteur [DS-2392] [(#210)](https://github.com/GouvernementFR/dsfr/pull/210)
+#### fix(toggle): correction de l&#39;état précoché de l&#39;interrupteur [[DS-2392](<https://gouvfr.atlassian.net/browse/DS-2392>)] [(#210)](https://github.com/GouvernementFR/dsfr/pull/210)
 
 
-#### fix(navigation, sidemenu): correction focus coupés [DS-2322][DS-2309][DS-2089] [(#204)](https://github.com/GouvernementFR/dsfr/pull/204)
+#### fix(navigation, sidemenu): correction focus coupés [[DS-2322](<https://gouvfr.atlassian.net/browse/DS-2322>),[DS-2309](<https://gouvfr.atlassian.net/browse/DS-2309>),[DS-2089](<https://gouvfr.atlassian.net/browse/DS-2089>)] [(#204)](https://github.com/GouvernementFR/dsfr/pull/204)
 
 
 #### chore(deps): mise a jour des dépendances [(#209)](https://github.com/GouvernementFR/dsfr/pull/209)
 
 
-#### fix(checkbox,form, radio,toggle): correction de la gestion de l&#39;attribut checked et de la page d&#39;exemple de form [DS-2376] [(#208)](https://github.com/GouvernementFR/dsfr/pull/208)
+#### fix(checkbox,form, radio,toggle): correction de la gestion de l&#39;attribut checked et de la page d&#39;exemple de form [[DS-2376](<https://gouvfr.atlassian.net/browse/DS-2376>)] [(#208)](https://github.com/GouvernementFR/dsfr/pull/208)
 
 
-#### fix(core): correction de la mixin has-icon et has-not-icon [DS-2386] [(#205)](https://github.com/GouvernementFR/dsfr/pull/205)
+#### fix(core): correction de la mixin has-icon et has-not-icon [[DS-2386](<https://gouvfr.atlassian.net/browse/DS-2386>)] [(#205)](https://github.com/GouvernementFR/dsfr/pull/205)
 
 
-#### fix(core): faute dans le texte alternatif [DS-2153] [(#206)](https://github.com/GouvernementFR/dsfr/pull/206)
+#### fix(core): faute dans le texte alternatif [[DS-2153](<https://gouvfr.atlassian.net/browse/DS-2153>)] [(#206)](https://github.com/GouvernementFR/dsfr/pull/206)
 
 
-#### fix(core): ordre media query [DS-2381]
+#### fix(core): ordre media query [[DS-2381](<https://gouvfr.atlassian.net/browse/DS-2381>)]
 
 
-#### fix(doc): met a jour la doc des templates ejs [DS-1787] [(#171)](https://github.com/GouvernementFR/dsfr/pull/171)
+#### fix(doc): met a jour la doc des templates ejs [[DS-1787](<https://gouvfr.atlassian.net/browse/DS-1787>)] [(#171)](https://github.com/GouvernementFR/dsfr/pull/171)
 
 
-#### fix(checkbox,radio,toggle): ajout de l&#39;attribut checked [DS-2376] [(#198)](https://github.com/GouvernementFR/dsfr/pull/198)
+#### fix(checkbox,radio,toggle): ajout de l&#39;attribut checked [[DS-2376](<https://gouvfr.atlassian.net/browse/DS-2376>)] [(#198)](https://github.com/GouvernementFR/dsfr/pull/198)
 
 
-#### fix: ordre des media query au build css [DS-2381] [(#202)](https://github.com/GouvernementFR/dsfr/pull/202)
+#### fix: ordre des media query au build css [[DS-2381](<https://gouvfr.atlassian.net/browse/DS-2381>)] [(#202)](https://github.com/GouvernementFR/dsfr/pull/202)
 
 
-#### fix(core): correction font-icon descent [DS-2382] [(#201)](https://github.com/GouvernementFR/dsfr/pull/201)
+#### fix(core): correction font-icon descent [[DS-2382](<https://gouvfr.atlassian.net/browse/DS-2382>)] [(#201)](https://github.com/GouvernementFR/dsfr/pull/201)
 
 
 #### refactor(alert): alerte dynamique refermable [(#199)](https://github.com/GouvernementFR/dsfr/pull/199)
 
 
-#### feat(alert): ajout exemple dynamique [DS-2368] [(#194)](https://github.com/GouvernementFR/dsfr/pull/194)
+#### feat(alert): ajout exemple dynamique [[DS-2368](<https://gouvfr.atlassian.net/browse/DS-2368>)] [(#194)](https://github.com/GouvernementFR/dsfr/pull/194)
 
 
-#### refactor(core): standardisation des icones [DS-2367] [(#196)](https://github.com/GouvernementFR/dsfr/pull/196)
+#### refactor(core): standardisation des icones [[DS-2367](<https://gouvfr.atlassian.net/browse/DS-2367>)] [(#196)](https://github.com/GouvernementFR/dsfr/pull/196)
 
 
-#### fix(checkbox): exemple checkbox sup et sub [DS-2041] [(#197)](https://github.com/GouvernementFR/dsfr/pull/197)
+#### fix(checkbox): exemple checkbox sup et sub [[DS-2041](<https://gouvfr.atlassian.net/browse/DS-2041>)] [(#197)](https://github.com/GouvernementFR/dsfr/pull/197)
 
 
-#### feat(core): ajout du module font-swap [DS-2272] [(#195)](https://github.com/GouvernementFR/dsfr/pull/195)
+#### feat(core): ajout du module font-swap [[DS-2272](<https://gouvfr.atlassian.net/browse/DS-2272>)] [(#195)](https://github.com/GouvernementFR/dsfr/pull/195)
 
 
-#### fix(toggle): status width [DS-2272] [(#193)](https://github.com/GouvernementFR/dsfr/pull/193)
+#### fix(toggle): status width [[DS-2272](<https://gouvfr.atlassian.net/browse/DS-2272>)] [(#193)](https://github.com/GouvernementFR/dsfr/pull/193)
 
 
 #### fix(toggle, modal): patch 1.3.1 - status width &amp; modal icon aria-hidden [(#192)](https://github.com/GouvernementFR/dsfr/pull/192)
@@ -921,31 +923,31 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.3.0](https://github.com/GouvernementFR/dsfr/compare/v1.2.1...v1.3.0) - 18 Janvier 2022
 
-#### fix(core): icones statut &amp; remix [DS-2371] [(#190)](https://github.com/GouvernementFR/dsfr/pull/190)
+#### fix(core): icones statut &amp; remix [[DS-2371](<https://gouvfr.atlassian.net/browse/DS-2371>)] [(#190)](https://github.com/GouvernementFR/dsfr/pull/190)
 
 
-#### fix(tag): sélectionnable [DS-2105] [(#189)](https://github.com/GouvernementFR/dsfr/pull/189)
+#### fix(tag): sélectionnable [[DS-2105](<https://gouvfr.atlassian.net/browse/DS-2105>)] [(#189)](https://github.com/GouvernementFR/dsfr/pull/189)
 
 
-#### fix(toggle): statut activer/desactiver a11y [DS-2272] [(#185)](https://github.com/GouvernementFR/dsfr/pull/185)
+#### fix(toggle): statut activer/desactiver a11y [[DS-2272](<https://gouvfr.atlassian.net/browse/DS-2272>)] [(#185)](https://github.com/GouvernementFR/dsfr/pull/185)
 
 
-#### fix(alert): retrait attribut role=&#39;alert&#39; et collapse [DS-2274] [(#182)](https://github.com/GouvernementFR/dsfr/pull/182)
+#### fix(alert): retrait attribut role=&#39;alert&#39; et collapse [[DS-2274](<https://gouvfr.atlassian.net/browse/DS-2274>)] [(#182)](https://github.com/GouvernementFR/dsfr/pull/182)
 
 
-#### fix(radio): sup sub exemple [DS-2041] [(#188)](https://github.com/GouvernementFR/dsfr/pull/188)
+#### fix(radio): sup sub exemple [[DS-2041](<https://gouvfr.atlassian.net/browse/DS-2041>)] [(#188)](https://github.com/GouvernementFR/dsfr/pull/188)
 
 
-#### fix(follow): texte d&#39;erreur email &amp; centrage alignement icône erreur/valid [DS-2261] [(#186)](https://github.com/GouvernementFR/dsfr/pull/186)
+#### fix(follow): texte d&#39;erreur email &amp; centrage alignement icône erreur/valid [[DS-2261](<https://gouvfr.atlassian.net/browse/DS-2261>)] [(#186)](https://github.com/GouvernementFR/dsfr/pull/186)
 
 
-#### fix(consent): titre bandeau en h2 [DS-2250] [(#187)](https://github.com/GouvernementFR/dsfr/pull/187)
+#### fix(consent): titre bandeau en h2 [[DS-2250](<https://gouvfr.atlassian.net/browse/DS-2250>)] [(#187)](https://github.com/GouvernementFR/dsfr/pull/187)
 
 
 #### chore(deps): mise a jour des dépendances [(#184)](https://github.com/GouvernementFR/dsfr/pull/184)
 
 
-#### fix(link, tag, pagination, share): role &amp; aria link disabled [DS-2274] [(#181)](https://github.com/GouvernementFR/dsfr/pull/181)
+#### fix(link, tag, pagination, share): role &amp; aria link disabled [[DS-2274](<https://gouvfr.atlassian.net/browse/DS-2274>)] [(#181)](https://github.com/GouvernementFR/dsfr/pull/181)
 
 
 #### fix(tag): correctif js tag [(#180)](https://github.com/GouvernementFR/dsfr/pull/180)
@@ -957,67 +959,67 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(core): correctif lint + js [(#179)](https://github.com/GouvernementFR/dsfr/pull/179)
 
 
-#### feat(tag): Ajout des composants tag activable et tag supprimable [DS-2235] [(#166)](https://github.com/GouvernementFR/dsfr/pull/166)
+#### feat(tag): Ajout des composants tag activable et tag supprimable [[DS-2235](<https://gouvfr.atlassian.net/browse/DS-2235>)] [(#166)](https://github.com/GouvernementFR/dsfr/pull/166)
 
 
-#### feat(badge): ajout du composant badge [DS-1921] [(#59)](https://github.com/GouvernementFR/dsfr/pull/59)
+#### feat(badge): ajout du composant badge [[DS-1921](<https://gouvfr.atlassian.net/browse/DS-1921>)] [(#59)](https://github.com/GouvernementFR/dsfr/pull/59)
 
 
-#### feat(core): Ajout des valeurs d&#39;espacement 0.5v et 1.5v [DS-2246] [(#174)](https://github.com/GouvernementFR/dsfr/pull/174)
+#### feat(core): Ajout des valeurs d&#39;espacement 0.5v et 1.5v [[DS-2246](<https://gouvfr.atlassian.net/browse/DS-2246>)] [(#174)](https://github.com/GouvernementFR/dsfr/pull/174)
 
 
-#### fix: commentaire des textes alternatif des images [DS-2153] [(#175)](https://github.com/GouvernementFR/dsfr/pull/175)
+#### fix: commentaire des textes alternatif des images [[DS-2153](<https://gouvfr.atlassian.net/browse/DS-2153>)] [(#175)](https://github.com/GouvernementFR/dsfr/pull/175)
 
 
-#### fix: retours d&#39;accessibilité a11y [DS-2253][DS-2255][DS-2256][DS-2260][DS-2261][DS-2262][DS-2263][DS-2267][DS-2273] [(#176)](https://github.com/GouvernementFR/dsfr/pull/176)
+#### fix: retours d&#39;accessibilité a11y [[DS-2253](<https://gouvfr.atlassian.net/browse/DS-2253>),[DS-2255](<https://gouvfr.atlassian.net/browse/DS-2255>),[DS-2256](<https://gouvfr.atlassian.net/browse/DS-2256>),[DS-2260](<https://gouvfr.atlassian.net/browse/DS-2260>),[DS-2261](<https://gouvfr.atlassian.net/browse/DS-2261>),[DS-2262](<https://gouvfr.atlassian.net/browse/DS-2262>),[DS-2263](<https://gouvfr.atlassian.net/browse/DS-2263>),[DS-2267](<https://gouvfr.atlassian.net/browse/DS-2267>),[DS-2273](<https://gouvfr.atlassian.net/browse/DS-2273>)] [(#176)](https://github.com/GouvernementFR/dsfr/pull/176)
 
 
-#### fix(core): correctif des imports js [DS-2328] [(#178)](https://github.com/GouvernementFR/dsfr/pull/178)
+#### fix(core): correctif des imports js [[DS-2328](<https://gouvfr.atlassian.net/browse/DS-2328>)] [(#178)](https://github.com/GouvernementFR/dsfr/pull/178)
 
 
-#### fix(scheme): ajoute methode de detection du localstorage [DS-2328] [(#170)](https://github.com/GouvernementFR/dsfr/pull/170)
+#### fix(scheme): ajoute methode de detection du localstorage [[DS-2328](<https://gouvfr.atlassian.net/browse/DS-2328>)] [(#170)](https://github.com/GouvernementFR/dsfr/pull/170)
 
 
-#### feat(icon): ajoute la nouvelle font-icon [DS-2327] [(#168)](https://github.com/GouvernementFR/dsfr/pull/168)
+#### feat(icon): ajoute la nouvelle font-icon [[DS-2327](<https://gouvfr.atlassian.net/browse/DS-2327>)] [(#168)](https://github.com/GouvernementFR/dsfr/pull/168)
 
 
 #### fix(core): correctif du hover des actions [(#177)](https://github.com/GouvernementFR/dsfr/pull/177)
 
 
-#### fix(radio-checkbox): met a jour le style pour les indices et exposants [DS-2041] [(#86)](https://github.com/GouvernementFR/dsfr/pull/86)
+#### fix(radio-checkbox): met a jour le style pour les indices et exposants [[DS-2041](<https://gouvfr.atlassian.net/browse/DS-2041>)] [(#86)](https://github.com/GouvernementFR/dsfr/pull/86)
 
 
-#### feat(logo): modifie l&#39;intitulé par défaut [DS-2249] [(#165)](https://github.com/GouvernementFR/dsfr/pull/165)
+#### feat(logo): modifie l&#39;intitulé par défaut [[DS-2249](<https://gouvfr.atlassian.net/browse/DS-2249>)] [(#165)](https://github.com/GouvernementFR/dsfr/pull/165)
 
 
-#### fix(legacy): retire les polyfills legacy du script module [DS-2304] [(#173)](https://github.com/GouvernementFR/dsfr/pull/173)
+#### fix(legacy): retire les polyfills legacy du script module [[DS-2304](<https://gouvfr.atlassian.net/browse/DS-2304>)] [(#173)](https://github.com/GouvernementFR/dsfr/pull/173)
 
 
-#### fix(tab): retrait du smooth scroll [DS-2042] [(#172)](https://github.com/GouvernementFR/dsfr/pull/172)
+#### fix(tab): retrait du smooth scroll [[DS-2042](<https://gouvfr.atlassian.net/browse/DS-2042>)] [(#172)](https://github.com/GouvernementFR/dsfr/pull/172)
 
 
-#### feat(tab): ajout de l&#39;ombre au scroll &amp; recentrage des boutons [DS-2073] [DS-2042] [(#159)](https://github.com/GouvernementFR/dsfr/pull/159)
+#### feat(tab): ajout de l&#39;ombre au scroll &amp; recentrage des boutons [[DS-2073](<https://gouvfr.atlassian.net/browse/DS-2073>),[DS-2042](<https://gouvfr.atlassian.net/browse/DS-2042>)] [(#159)](https://github.com/GouvernementFR/dsfr/pull/159)
 
 
-#### fix(legacy): ie listes et marges [DS-1088] [(#154)](https://github.com/GouvernementFR/dsfr/pull/154)
+#### fix(legacy): ie listes et marges [[DS-1088](<https://gouvfr.atlassian.net/browse/DS-1088>)] [(#154)](https://github.com/GouvernementFR/dsfr/pull/154)
 
 
-#### fix(tile): background tile [DS-2329] [(#167)](https://github.com/GouvernementFR/dsfr/pull/167)
+#### fix(tile): background tile [[DS-2329](<https://gouvfr.atlassian.net/browse/DS-2329>)] [(#167)](https://github.com/GouvernementFR/dsfr/pull/167)
 
 
-#### feat(tab): ajout modifieur viewport-width [DS-2075] [(#142)](https://github.com/GouvernementFR/dsfr/pull/142)
+#### feat(tab): ajout modifieur viewport-width [[DS-2075](<https://gouvfr.atlassian.net/browse/DS-2075>)] [(#142)](https://github.com/GouvernementFR/dsfr/pull/142)
 
 
-#### fix(tab): corrige le scroll horizontal [DS-2074] [(#89)](https://github.com/GouvernementFR/dsfr/pull/89)
+#### fix(tab): corrige le scroll horizontal [[DS-2074](<https://gouvfr.atlassian.net/browse/DS-2074>)] [(#89)](https://github.com/GouvernementFR/dsfr/pull/89)
 
 
 #### fix(card): corrige erreur à la compilation [(#164)](https://github.com/GouvernementFR/dsfr/pull/164)
 
 
-#### fix(card): bordure extérieure sur les cartes [DS-2295] [(#162)](https://github.com/GouvernementFR/dsfr/pull/162)
+#### fix(card): bordure extérieure sur les cartes [[DS-2295](<https://gouvfr.atlassian.net/browse/DS-2295>)] [(#162)](https://github.com/GouvernementFR/dsfr/pull/162)
 
 
-#### refactor: nettoyage et simplification du système de couleur [DS-2212] [(#160)](https://github.com/GouvernementFR/dsfr/pull/160)
+#### refactor: nettoyage et simplification du système de couleur [[DS-2212](<https://gouvfr.atlassian.net/browse/DS-2212>)] [(#160)](https://github.com/GouvernementFR/dsfr/pull/160)
 
 
 
@@ -1026,58 +1028,58 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 ### [v1.2.1](https://github.com/GouvernementFR/dsfr/compare/v1.2.0...v1.2.1) - 29 Novembre 2021
 
-#### feat(modal): ajout d&#39;un attribut pour la fermeture au click [DS-2284] [(#158)](https://github.com/GouvernementFR/dsfr/pull/158)
+#### feat(modal): ajout d&#39;un attribut pour la fermeture au click [[DS-2284](<https://gouvfr.atlassian.net/browse/DS-2284>)] [(#158)](https://github.com/GouvernementFR/dsfr/pull/158)
 
 
-#### fix(modal): ajout de l&#39;attribut aria-modal [DS-2281] [(#157)](https://github.com/GouvernementFR/dsfr/pull/157)
+#### fix(modal): ajout de l&#39;attribut aria-modal [[DS-2281](<https://gouvfr.atlassian.net/browse/DS-2281>)] [(#157)](https://github.com/GouvernementFR/dsfr/pull/157)
 
 
 #### fix(header):  allègement hover bloc marque [(#155)](https://github.com/GouvernementFR/dsfr/pull/155)
 
 
-#### refactor: passage du noir et du blanc dans l&#39;échelle des gris [DS-2236] [(#156)](https://github.com/GouvernementFR/dsfr/pull/156)
+#### refactor: passage du noir et du blanc dans l&#39;échelle des gris [[DS-2236](<https://gouvfr.atlassian.net/browse/DS-2236>)] [(#156)](https://github.com/GouvernementFR/dsfr/pull/156)
 
 
-#### fix(modal): accessibilité du focus [DS-2080] [(#145)](https://github.com/GouvernementFR/dsfr/pull/145)
+#### fix(modal): accessibilité du focus [[DS-2080](<https://gouvfr.atlassian.net/browse/DS-2080>)] [(#145)](https://github.com/GouvernementFR/dsfr/pull/145)
 
 
-#### fix(card-tile): correction hover enlarge-link [DS-2248] [(#153)](https://github.com/GouvernementFR/dsfr/pull/153)
+#### fix(card-tile): correction hover enlarge-link [[DS-2248](<https://gouvfr.atlassian.net/browse/DS-2248>)] [(#153)](https://github.com/GouvernementFR/dsfr/pull/153)
 
 
-#### fix: correction de la version minimum node [DS-2196] [(#152)](https://github.com/GouvernementFR/dsfr/pull/152)
+#### fix: correction de la version minimum node [[DS-2196](<https://gouvfr.atlassian.net/browse/DS-2196>)] [(#152)](https://github.com/GouvernementFR/dsfr/pull/152)
 
 
-#### fix(sidemenu): correction du hover des liens [DS-2230] [(#151)](https://github.com/GouvernementFR/dsfr/pull/151)
+#### fix(sidemenu): correction du hover des liens [[DS-2230](<https://gouvfr.atlassian.net/browse/DS-2230>)] [(#151)](https://github.com/GouvernementFR/dsfr/pull/151)
 
 
-#### fix(header): corrections css pour IE, valeur initial [DS-1088] [(#144)](https://github.com/GouvernementFR/dsfr/pull/144)
+#### fix(header): corrections css pour IE, valeur initial [[DS-1088](<https://gouvfr.atlassian.net/browse/DS-1088>)] [(#144)](https://github.com/GouvernementFR/dsfr/pull/144)
 
 
-#### fix(card-tile): met a jour les noms de class d&#39;accentuation [DS-2227] [(#147)](https://github.com/GouvernementFR/dsfr/pull/147)
+#### fix(card-tile): met a jour les noms de class d&#39;accentuation [[DS-2227](<https://gouvfr.atlassian.net/browse/DS-2227>)] [(#147)](https://github.com/GouvernementFR/dsfr/pull/147)
 
 
-#### feat(core): ajout meta theme-color dans favicon [DS-2231] [(#148)](https://github.com/GouvernementFR/dsfr/pull/148)
+#### feat(core): ajout meta theme-color dans favicon [[DS-2231](<https://gouvfr.atlassian.net/browse/DS-2231>)] [(#148)](https://github.com/GouvernementFR/dsfr/pull/148)
 
 
-#### feat(core): ajout icone filter [DS-2228] [(#149)](https://github.com/GouvernementFR/dsfr/pull/149)
+#### feat(core): ajout icone filter [[DS-2228](<https://gouvfr.atlassian.net/browse/DS-2228>)] [(#149)](https://github.com/GouvernementFR/dsfr/pull/149)
 
 
-#### fix(core): bug js tab conceal [DS-2218] [(#150)](https://github.com/GouvernementFR/dsfr/pull/150)
+#### fix(core): bug js tab conceal [[DS-2218](<https://gouvfr.atlassian.net/browse/DS-2218>)] [(#150)](https://github.com/GouvernementFR/dsfr/pull/150)
 
 
-#### feat(sidemenu): ajoute le chevron sur le aria-expanded [DS-2229] [(#146)](https://github.com/GouvernementFR/dsfr/pull/146)
+#### feat(sidemenu): ajoute le chevron sur le aria-expanded [[DS-2229](<https://gouvfr.atlassian.net/browse/DS-2229>)] [(#146)](https://github.com/GouvernementFR/dsfr/pull/146)
 
 
-#### fix(upload): ajout aria described [DS-2213] [(#141)](https://github.com/GouvernementFR/dsfr/pull/141)
+#### fix(upload): ajout aria described [[DS-2213](<https://gouvfr.atlassian.net/browse/DS-2213>)] [(#141)](https://github.com/GouvernementFR/dsfr/pull/141)
 
 
-#### feat(yarn) : mise à jour des dépendances de développement majeures et mineures [DS-2196] [(#143)](https://github.com/GouvernementFR/dsfr/pull/143)
+#### feat(yarn) : mise à jour des dépendances de développement majeures et mineures [[DS-2196](<https://gouvfr.atlassian.net/browse/DS-2196>)] [(#143)](https://github.com/GouvernementFR/dsfr/pull/143)
 
 
-#### fix: hover ajusté dans navigation, consent et summary [DS-2195] [DS-2199] [(#140)](https://github.com/GouvernementFR/dsfr/pull/140)
+#### fix: hover ajusté dans navigation, consent et summary [[DS-2195](<https://gouvfr.atlassian.net/browse/DS-2195>),[DS-2199](<https://gouvfr.atlassian.net/browse/DS-2199>)] [(#140)](https://github.com/GouvernementFR/dsfr/pull/140)
 
 
-#### fix: bug legacy IE [DS-1088] [(#139)](https://github.com/GouvernementFR/dsfr/pull/139)
+#### fix: bug legacy IE [[DS-1088](<https://gouvfr.atlassian.net/browse/DS-1088>)] [(#139)](https://github.com/GouvernementFR/dsfr/pull/139)
 
 
 
@@ -1086,7 +1088,7 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix(table): correction tableau avec bordure gris [(#136)](https://github.com/GouvernementFR/dsfr/pull/136)
 
 
-#### feat(tile): ajout de l&#39;accentuation en usage contrast [DS-2164] [(#134)](https://github.com/GouvernementFR/dsfr/pull/134)
+#### feat(tile): ajout de l&#39;accentuation en usage contrast [[DS-2164](<https://gouvfr.atlassian.net/browse/DS-2164>)] [(#134)](https://github.com/GouvernementFR/dsfr/pull/134)
 
 
 #### fix(select): ajout temporaire du chevron [(#133)](https://github.com/GouvernementFR/dsfr/pull/133)
@@ -1095,79 +1097,79 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### chore: lint [(#132)](https://github.com/GouvernementFR/dsfr/pull/132)
 
 
-#### fix(inject-svg): ajoute une methode globale sur l&#39;api pour definir legacy [DS-2103] [(#127)](https://github.com/GouvernementFR/dsfr/pull/127)
+#### fix(inject-svg): ajoute une methode globale sur l&#39;api pour definir legacy [[DS-2103](<https://gouvfr.atlassian.net/browse/DS-2103>)] [(#127)](https://github.com/GouvernementFR/dsfr/pull/127)
 
 
-#### fix(footer): couleur catégorie menu [DS-1436] [(#131)](https://github.com/GouvernementFR/dsfr/pull/131)
+#### fix(footer): couleur catégorie menu [[DS-1436](<https://gouvfr.atlassian.net/browse/DS-1436>)] [(#131)](https://github.com/GouvernementFR/dsfr/pull/131)
 
 
 #### fix: correction icon theme-fill [(#130)](https://github.com/GouvernementFR/dsfr/pull/130)
 
 
-#### fix(footer): correction couleur des liens [DS-1436] [(#129)](https://github.com/GouvernementFR/dsfr/pull/129)
+#### fix(footer): correction couleur des liens [[DS-1436](<https://gouvfr.atlassian.net/browse/DS-1436>)] [(#129)](https://github.com/GouvernementFR/dsfr/pull/129)
 
 
-#### fix(callout): accentuation du background [DS-2181] [(#125)](https://github.com/GouvernementFR/dsfr/pull/125)
+#### fix(callout): accentuation du background [[DS-2181](<https://gouvfr.atlassian.net/browse/DS-2181>)] [(#125)](https://github.com/GouvernementFR/dsfr/pull/125)
 
 
 #### fix(radio): bordure sur la classe radio-rich__img [(#122)](https://github.com/GouvernementFR/dsfr/pull/122)
 
 
-#### fix: correction hover sur lien fil du texte et card [DS-2146][DS-2179] [(#128)](https://github.com/GouvernementFR/dsfr/pull/128)
+#### fix: correction hover sur lien fil du texte et card [[DS-2146](<https://gouvfr.atlassian.net/browse/DS-2146>),[DS-2179](<https://gouvfr.atlassian.net/browse/DS-2179>)] [(#128)](https://github.com/GouvernementFR/dsfr/pull/128)
 
 
-#### fix(card): met a jour le modifier d&#39;accent [DS-2164] [(#123)](https://github.com/GouvernementFR/dsfr/pull/123)
+#### fix(card): met a jour le modifier d&#39;accent [[DS-2164](<https://gouvfr.atlassian.net/browse/DS-2164>)] [(#123)](https://github.com/GouvernementFR/dsfr/pull/123)
 
 
-#### fix: pa11y hide disable elements &amp; fix lint dependance [DS-2177]
+#### fix: pa11y hide disable elements &amp; fix lint dependance [[DS-2177](<https://gouvfr.atlassian.net/browse/DS-2177>)]
 
 
-#### fix(search): met à jour le reset des boutons et champs de saisie pour Safari [DS-2168] [(#115)](https://github.com/GouvernementFR/dsfr/pull/115)
+#### fix(search): met à jour le reset des boutons et champs de saisie pour Safari [[DS-2168](<https://gouvfr.atlassian.net/browse/DS-2168>)] [(#115)](https://github.com/GouvernementFR/dsfr/pull/115)
 
 
-#### fix(display): corrige bouton d&#39;affichage et bug a la selection du mode [DS-2147] [DS-2176] [(#119)](https://github.com/GouvernementFR/dsfr/pull/119)
+#### fix(display): corrige bouton d&#39;affichage et bug a la selection du mode [[DS-2147](<https://gouvfr.atlassian.net/browse/DS-2147>),[DS-2176](<https://gouvfr.atlassian.net/browse/DS-2176>)] [(#119)](https://github.com/GouvernementFR/dsfr/pull/119)
 
 
-#### fix: correctifs ejs form [DS-1854] [(#120)](https://github.com/GouvernementFR/dsfr/pull/120)
+#### fix: correctifs ejs form [[DS-1854](<https://gouvfr.atlassian.net/browse/DS-1854>)] [(#120)](https://github.com/GouvernementFR/dsfr/pull/120)
 
 
-#### fix(card): ajoute un modifier d&#39;accentuation [DS-2164] [(#121)](https://github.com/GouvernementFR/dsfr/pull/121)
+#### fix(card): ajoute un modifier d&#39;accentuation [[DS-2164](<https://gouvfr.atlassian.net/browse/DS-2164>)] [(#121)](https://github.com/GouvernementFR/dsfr/pull/121)
 
 
 #### refactor(consent): fonctions pour générer l&#39;objet consent [(#103)](https://github.com/GouvernementFR/dsfr/pull/103)
 
 
-#### fix(display): ajoute des attributs d&#39;accessibilité sur les svg [DS-2103] [(#118)](https://github.com/GouvernementFR/dsfr/pull/118)
+#### fix(display): ajoute des attributs d&#39;accessibilité sur les svg [[DS-2103](<https://gouvfr.atlassian.net/browse/DS-2103>)] [(#118)](https://github.com/GouvernementFR/dsfr/pull/118)
 
 
 #### fix(summary): correction du token [(#117)](https://github.com/GouvernementFR/dsfr/pull/117)
 
 
-#### feat(modal): mise en place de l&#39;overlay [DS-2101] [(#116)](https://github.com/GouvernementFR/dsfr/pull/116)
+#### feat(modal): mise en place de l&#39;overlay [[DS-2101](<https://gouvfr.atlassian.net/browse/DS-2101>)] [(#116)](https://github.com/GouvernementFR/dsfr/pull/116)
 
 
-#### fix: hover radio / retour couleur [DS-2104][DS-2158][DS-2157][DS-2159][DS-2163][DS-2170][DS-2171] [(#114)](https://github.com/GouvernementFR/dsfr/pull/114)
+#### fix: hover radio / retour couleur [[DS-2104](<https://gouvfr.atlassian.net/browse/DS-2104>),[DS-2158](<https://gouvfr.atlassian.net/browse/DS-2158>),[DS-2157](<https://gouvfr.atlassian.net/browse/DS-2157>),[DS-2159](<https://gouvfr.atlassian.net/browse/DS-2159>),[DS-2163](<https://gouvfr.atlassian.net/browse/DS-2163>),[DS-2170](<https://gouvfr.atlassian.net/browse/DS-2170>),[DS-2171](<https://gouvfr.atlassian.net/browse/DS-2171>)] [(#114)](https://github.com/GouvernementFR/dsfr/pull/114)
 
 
-#### feat(example): ajoute un bouton fixe pour les parametre d&#39;affichage [DS-2166] [(#113)](https://github.com/GouvernementFR/dsfr/pull/113)
+#### feat(example): ajoute un bouton fixe pour les parametre d&#39;affichage [[DS-2166](<https://gouvfr.atlassian.net/browse/DS-2166>)] [(#113)](https://github.com/GouvernementFR/dsfr/pull/113)
 
 
-#### fix: ejs corrections multiples [DS-1854] [(#112)](https://github.com/GouvernementFR/dsfr/pull/112)
+#### fix: ejs corrections multiples [[DS-1854](<https://gouvfr.atlassian.net/browse/DS-1854>)] [(#112)](https://github.com/GouvernementFR/dsfr/pull/112)
 
 
-#### feat: couleurs accentuation [DS-1183] [(#111)](https://github.com/GouvernementFR/dsfr/pull/111)
+#### feat: couleurs accentuation [[DS-1183](<https://gouvfr.atlassian.net/browse/DS-1183>)] [(#111)](https://github.com/GouvernementFR/dsfr/pull/111)
 
 
 #### fix: correction ombre table + lint / pa11y [(#110)](https://github.com/GouvernementFR/dsfr/pull/110)
 
 
-#### feat(display): Ajout icones illustratives &amp; thème systeme [DS-2103] [(#109)](https://github.com/GouvernementFR/dsfr/pull/109)
+#### feat(display): Ajout icones illustratives &amp; thème systeme [[DS-2103](<https://gouvfr.atlassian.net/browse/DS-2103>)] [(#109)](https://github.com/GouvernementFR/dsfr/pull/109)
 
 
-#### refactor: restructuration custom props / legacy [DS-2107] [(#108)](https://github.com/GouvernementFR/dsfr/pull/108)
+#### refactor: restructuration custom props / legacy [[DS-2107](<https://gouvfr.atlassian.net/browse/DS-2107>)] [(#108)](https://github.com/GouvernementFR/dsfr/pull/108)
 
 
-#### fix(cards): corrige taille image mode horizontal [DS-1986] [(#88)](https://github.com/GouvernementFR/dsfr/pull/88)
+#### fix(cards): corrige taille image mode horizontal [[DS-1986](<https://gouvfr.atlassian.net/browse/DS-1986>)] [(#88)](https://github.com/GouvernementFR/dsfr/pull/88)
 
 
 #### fix(navigation): espacement catégories mobile [(#105)](https://github.com/GouvernementFR/dsfr/pull/105)
@@ -1179,40 +1181,40 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### refactor(ejs): ajoute des exemples disabled et checked [(#94)](https://github.com/GouvernementFR/dsfr/pull/94)
 
 
-#### feat(icon): ajout icon logout [DS-2128] [(#93)](https://github.com/GouvernementFR/dsfr/pull/93)
+#### feat(icon): ajout icon logout [[DS-2128](<https://gouvfr.atlassian.net/browse/DS-2128>)] [(#93)](https://github.com/GouvernementFR/dsfr/pull/93)
 
 
-#### fix(navigation): nav-link hover sur a et button uniquement [DS-1982] [(#68)](https://github.com/GouvernementFR/dsfr/pull/68)
+#### fix(navigation): nav-link hover sur a et button uniquement [[DS-1982](<https://gouvfr.atlassian.net/browse/DS-1982>)] [(#68)](https://github.com/GouvernementFR/dsfr/pull/68)
 
 
-#### fix: margin bottom &lt;p&gt; et &lt;hx&gt; des composants [DS-2013] [(#73)](https://github.com/GouvernementFR/dsfr/pull/73)
+#### fix: margin bottom &lt;p&gt; et &lt;hx&gt; des composants [[DS-2013](<https://gouvfr.atlassian.net/browse/DS-2013>)] [(#73)](https://github.com/GouvernementFR/dsfr/pull/73)
 
 
-#### feat(core): ajout du reset de hr [DS-1882] [(#60)](https://github.com/GouvernementFR/dsfr/pull/60)
+#### feat(core): ajout du reset de hr [[DS-1882](<https://gouvfr.atlassian.net/browse/DS-1882>)] [(#60)](https://github.com/GouvernementFR/dsfr/pull/60)
 
 
 #### fix(upload): disabled input-upload &amp; curseur pointeur [(#102)](https://github.com/GouvernementFR/dsfr/pull/102)
 
 
-#### feat(upload): ajout du composant upload [DS-1918] [(#43)](https://github.com/GouvernementFR/dsfr/pull/43)
+#### feat(upload): ajout du composant upload [[DS-1918](<https://gouvfr.atlassian.net/browse/DS-1918>)] [(#43)](https://github.com/GouvernementFR/dsfr/pull/43)
 
 
-#### fix(modale): corrige la hauteur de la modale sur desktop [DS-2076] [(#80)](https://github.com/GouvernementFR/dsfr/pull/80)
+#### fix(modale): corrige la hauteur de la modale sur desktop [[DS-2076](<https://gouvfr.atlassian.net/browse/DS-2076>)] [(#80)](https://github.com/GouvernementFR/dsfr/pull/80)
 
 
 #### fix(consent): ajout d&#39;id aux services [(#101)](https://github.com/GouvernementFR/dsfr/pull/101)
 
 
-#### fix(footer): met a jour le wording du copyright [DS-2064] [(#87)](https://github.com/GouvernementFR/dsfr/pull/87)
+#### fix(footer): met a jour le wording du copyright [[DS-2064](<https://gouvfr.atlassian.net/browse/DS-2064>)] [(#87)](https://github.com/GouvernementFR/dsfr/pull/87)
 
 
-#### fix(modal): focus trap avec iframe [DS-2127] [(#92)](https://github.com/GouvernementFR/dsfr/pull/92)
+#### fix(modal): focus trap avec iframe [[DS-2127](<https://gouvfr.atlassian.net/browse/DS-2127>)] [(#92)](https://github.com/GouvernementFR/dsfr/pull/92)
 
 
-#### fix: readme et contributing [DS-2078] [(#90)](https://github.com/GouvernementFR/dsfr/pull/90)
+#### fix: readme et contributing [[DS-2078](<https://gouvfr.atlassian.net/browse/DS-2078>)] [(#90)](https://github.com/GouvernementFR/dsfr/pull/90)
 
 
-#### refactor: inclusion des composants ejs dans locals.nomComposant [DS-1854] [(#76)](https://github.com/GouvernementFR/dsfr/pull/76)
+#### refactor: inclusion des composants ejs dans locals.nomComposant [[DS-1854](<https://gouvfr.atlassian.net/browse/DS-1854>)] [(#76)](https://github.com/GouvernementFR/dsfr/pull/76)
 
 
 #### fix: bouton sidemenu display none / scheme package.yml / fr-input code inutile / table refactor et couleurs [(#100)](https://github.com/GouvernementFR/dsfr/pull/100)
@@ -1233,56 +1235,56 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 #### fix: corrige le lint en l&#39;absence de fichier sass [(#95)](https://github.com/GouvernementFR/dsfr/pull/95)
 
 
-#### Fix(pa11y) : met a jour le scope des tests pa11y [DS-2090] [(#85)](https://github.com/GouvernementFR/dsfr/pull/85)
+#### Fix(pa11y) : met a jour le scope des tests pa11y [[DS-2090](<https://gouvfr.atlassian.net/browse/DS-2090>)] [(#85)](https://github.com/GouvernementFR/dsfr/pull/85)
 
 
-#### refactor(scheme): nouveau système de couleur [DS-1186] [(#83)](https://github.com/GouvernementFR/dsfr/pull/83)
+#### refactor(scheme): nouveau système de couleur [[DS-1186](<https://gouvfr.atlassian.net/browse/DS-1186>)] [(#83)](https://github.com/GouvernementFR/dsfr/pull/83)
 
 
-#### fix: dsfr license npm [DS-1777] [(#82)](https://github.com/GouvernementFR/dsfr/pull/82)
+#### fix: dsfr license npm [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#82)](https://github.com/GouvernementFR/dsfr/pull/82)
 
 
-#### fix(sidemenu): bordures en desktop [DS-2077] [(#77)](https://github.com/GouvernementFR/dsfr/pull/77)
+#### fix(sidemenu): bordures en desktop [[DS-2077](<https://gouvfr.atlassian.net/browse/DS-2077>)] [(#77)](https://github.com/GouvernementFR/dsfr/pull/77)
 
 
-#### fix(lint): supprime les polyfill du linter eslint [DS-2088] [(#84)](https://github.com/GouvernementFR/dsfr/pull/84)
+#### fix(lint): supprime les polyfill du linter eslint [[DS-2088](<https://gouvfr.atlassian.net/browse/DS-2088>)] [(#84)](https://github.com/GouvernementFR/dsfr/pull/84)
 
 
-#### Fix: définition d&#39;une valeur par défaut de l&#39;objet de configuration window.dsfr [DS-2085] [(#79)](https://github.com/GouvernementFR/dsfr/pull/79)
+#### Fix: définition d&#39;une valeur par défaut de l&#39;objet de configuration window.dsfr [[DS-2085](<https://gouvfr.atlassian.net/browse/DS-2085>)] [(#79)](https://github.com/GouvernementFR/dsfr/pull/79)
 
 
-#### fix: licence.md devient license.md  [DS-1777] [(#78)](https://github.com/GouvernementFR/dsfr/pull/78)
+#### fix: licence.md devient license.md [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#78)](https://github.com/GouvernementFR/dsfr/pull/78)
 
 
-#### fix(legacy-browser): corrige les erreurs JS sous ie11 [DS-1967] [(#72)](https://github.com/GouvernementFR/dsfr/pull/72)
+#### fix(legacy-browser): corrige les erreurs JS sous ie11 [[DS-1967](<https://gouvfr.atlassian.net/browse/DS-1967>)] [(#72)](https://github.com/GouvernementFR/dsfr/pull/72)
 
 
-#### fix: correction du package.json [DS-1777] [(#74)](https://github.com/GouvernementFR/dsfr/pull/74)
+#### fix: correction du package.json [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#74)](https://github.com/GouvernementFR/dsfr/pull/74)
 
 
-#### fix(api): Bug Modal JS [DS-1996] [(#69)](https://github.com/GouvernementFR/dsfr/pull/69)
+#### fix(api): Bug Modal JS [[DS-1996](<https://gouvfr.atlassian.net/browse/DS-1996>)] [(#69)](https://github.com/GouvernementFR/dsfr/pull/69)
 
 
-#### fix: page/pattern dossier vide et npm deploy [DS-1777] [(#67)](https://github.com/GouvernementFR/dsfr/pull/67)
+#### fix: page/pattern dossier vide et npm deploy [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#67)](https://github.com/GouvernementFR/dsfr/pull/67)
 
 
-#### fix(core): exemple texte taille md [DS-1851] [(#71)](https://github.com/GouvernementFR/dsfr/pull/71)
+#### fix(core): exemple texte taille md [[DS-1851](<https://gouvfr.atlassian.net/browse/DS-1851>)] [(#71)](https://github.com/GouvernementFR/dsfr/pull/71)
 
 
-#### fix: input type submit désactivé [DS-1994] [(#70)](https://github.com/GouvernementFR/dsfr/pull/70)
+#### fix: input type submit désactivé [[DS-1994](<https://gouvfr.atlassian.net/browse/DS-1994>)] [(#70)](https://github.com/GouvernementFR/dsfr/pull/70)
 
 
-#### feat(core): ajout d&#39;icones [DS-1973] [(#65)](https://github.com/GouvernementFR/dsfr/pull/65)
+#### feat(core): ajout d&#39;icones [[DS-1973](<https://gouvfr.atlassian.net/browse/DS-1973>)] [(#65)](https://github.com/GouvernementFR/dsfr/pull/65)
 
 
-#### feat: ajout d&#39;un robots.txt à la racine de public [DS-1837] [(#53)](https://github.com/GouvernementFR/dsfr/pull/53)
+#### feat: ajout d&#39;un robots.txt à la racine de public [[DS-1837](<https://gouvfr.atlassian.net/browse/DS-1837>)] [(#53)](https://github.com/GouvernementFR/dsfr/pull/53)
 
 
 #### fix: favicon path [(#66)](https://github.com/GouvernementFR/dsfr/pull/66)
 dsfr-dev devient dsfr
 
 
-#### fix(navigation): mega menu category bold [DS-1982] [(#61)](https://github.com/GouvernementFR/dsfr/pull/61)
+#### fix(navigation): mega menu category bold [[DS-1982](<https://gouvfr.atlassian.net/browse/DS-1982>)] [(#61)](https://github.com/GouvernementFR/dsfr/pull/61)
 
 
 #### refactor: modification du gitignore [(#62)](https://github.com/GouvernementFR/dsfr/pull/62)
@@ -1291,40 +1293,40 @@ dsfr-dev devient dsfr
 #### fix(core): fr-text devient fr-text--md [(#63)](https://github.com/GouvernementFR/dsfr/pull/63)
 
 
-#### fix(core): reset bordure des inputs (ios) [DS-1983] [(#58)](https://github.com/GouvernementFR/dsfr/pull/58)
+#### fix(core): reset bordure des inputs (ios) [[DS-1983](<https://gouvfr.atlassian.net/browse/DS-1983>)] [(#58)](https://github.com/GouvernementFR/dsfr/pull/58)
 
 
-#### fix(search): correction fr-input--error et fr-input--valid [DS-1937] [(#57)](https://github.com/GouvernementFR/dsfr/pull/57)
+#### fix(search): correction fr-input--error et fr-input--valid [[DS-1937](<https://gouvfr.atlassian.net/browse/DS-1937>)] [(#57)](https://github.com/GouvernementFR/dsfr/pull/57)
 
 
-#### fix(content): Le composant media ne fonctionne pas avec une image svg [DS-1966] [(#54)](https://github.com/GouvernementFR/dsfr/pull/54)
+#### fix(content): Le composant media ne fonctionne pas avec une image svg [[DS-1966](<https://gouvfr.atlassian.net/browse/DS-1966>)] [(#54)](https://github.com/GouvernementFR/dsfr/pull/54)
 
 
-#### fix: correction structure dev, retrait underscore dist exemple [DS-1777] [(#55)](https://github.com/GouvernementFR/dsfr/pull/55)
+#### fix: correction structure dev, retrait underscore dist exemple [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#55)](https://github.com/GouvernementFR/dsfr/pull/55)
 
 
-#### fix(core): marge sous les textes et titres [DS-1870] [(#52)](https://github.com/GouvernementFR/dsfr/pull/52)
+#### fix(core): marge sous les textes et titres [[DS-1870](<https://gouvfr.atlassian.net/browse/DS-1870>)] [(#52)](https://github.com/GouvernementFR/dsfr/pull/52)
 
 
 #### fix(header): correction semicolon manquant devant last-child [(#50)](https://github.com/GouvernementFR/dsfr/pull/50)
 
 
-#### fix(input): fr-input--error sur un textarea le passe en rouge [DS-1577] [(#47)](https://github.com/GouvernementFR/dsfr/pull/47)
+#### fix(input): fr-input--error sur un textarea le passe en rouge [[DS-1577](<https://gouvfr.atlassian.net/browse/DS-1577>)] [(#47)](https://github.com/GouvernementFR/dsfr/pull/47)
 
 
-#### fix(share): correction espacements des boutons de partage [DS-1961] [(#49)](https://github.com/GouvernementFR/dsfr/pull/49)
+#### fix(share): correction espacements des boutons de partage [[DS-1961](<https://gouvfr.atlassian.net/browse/DS-1961>)] [(#49)](https://github.com/GouvernementFR/dsfr/pull/49)
 
 
-#### fix(table): couleur lignes odd des tableaux [DS-1930] #48
+#### fix(table): couleur lignes odd des tableaux  #48 [[DS-1930](<https://gouvfr.atlassian.net/browse/DS-1930>)]
 
 
 #### fix: correction href des listes d&#39;exemple &amp; maj dependance caniuse-lite
 
 
-#### chore: passage au singulier des noms de fichiers et packages [DS-1777] [(#45)](https://github.com/GouvernementFR/dsfr/pull/45)
+#### chore: passage au singulier des noms de fichiers et packages [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#45)](https://github.com/GouvernementFR/dsfr/pull/45)
 
 
-#### refactor(pattern): évolution de la structure pattern, composant, page et du build [DS-1777] [(#44)](https://github.com/GouvernementFR/dsfr/pull/44)
+#### refactor(pattern): évolution de la structure pattern, composant, page et du build [[DS-1777](<https://gouvfr.atlassian.net/browse/DS-1777>)] [(#44)](https://github.com/GouvernementFR/dsfr/pull/44)
 
 
 #### fix: dynamic js instances et minification [(#41)](https://github.com/GouvernementFR/dsfr/pull/41)
@@ -1333,16 +1335,16 @@ dsfr-dev devient dsfr
 #### fix(core): correction font-display [(#40)](https://github.com/GouvernementFR/dsfr/pull/40)
 
 
-#### refactor: implémentation du js dynamique [DS-1372][DS-1540] [(#9)](https://github.com/GouvernementFR/dsfr/pull/9)
+#### refactor: implémentation du js dynamique [[DS-1372](<https://gouvfr.atlassian.net/browse/DS-1372>),[DS-1540](<https://gouvfr.atlassian.net/browse/DS-1540>)] [(#9)](https://github.com/GouvernementFR/dsfr/pull/9)
 
 
-#### fix(core): text-rendering en optimizeLegibility [DS-1834] [(#37)](https://github.com/GouvernementFR/dsfr/pull/37)
+#### fix(core): text-rendering en optimizeLegibility [[DS-1834](<https://gouvfr.atlassian.net/browse/DS-1834>)] [(#37)](https://github.com/GouvernementFR/dsfr/pull/37)
 * fix(core): text-rendering en optimizeLegibility
 
 * fix(core): inputs en text rendering optimizeLegibility
 
 
-#### fix(core): font-display swap par défaut [DS-1802] [(#38)](https://github.com/GouvernementFR/dsfr/pull/38)
+#### fix(core): font-display swap par défaut [[DS-1802](<https://gouvfr.atlassian.net/browse/DS-1802>)] [(#38)](https://github.com/GouvernementFR/dsfr/pull/38)
 
 
 
@@ -1351,10 +1353,10 @@ dsfr-dev devient dsfr
 
 ### [v1.1.0](https://github.com/GouvernementFR/dsfr/compare/v1.0.0...v1.1.0) - 27 Juillet 2021
 
-#### fix: problème de visibilité avec visibility: visible [DS-1885]
+#### fix: problème de visibilité avec visibility: visible [[DS-1885](<https://gouvfr.atlassian.net/browse/DS-1885>)]
 
 
-#### fix(quotes): Suppression du alt de l&#39;image [DS-1929] [(#35)](https://github.com/GouvernementFR/dsfr/pull/35)
+#### fix(quotes): Suppression du alt de l&#39;image [[DS-1929](<https://gouvfr.atlassian.net/browse/DS-1929>)] [(#35)](https://github.com/GouvernementFR/dsfr/pull/35)
 
 
 #### fix(share): correction title désactivé [(#34)](https://github.com/GouvernementFR/dsfr/pull/34)
@@ -1363,31 +1365,31 @@ dsfr-dev devient dsfr
 #### fix(doc): maj contributing.md [(#33)](https://github.com/GouvernementFR/dsfr/pull/33)
 
 
-#### fix(checkboxes, radios): input en position absolue [DS-1924] [(#31)](https://github.com/GouvernementFR/dsfr/pull/31)
+#### fix(checkboxes, radios): input en position absolue [[DS-1924](<https://gouvfr.atlassian.net/browse/DS-1924>)] [(#31)](https://github.com/GouvernementFR/dsfr/pull/31)
 
 
 #### fix(share): tailles des popup de partage [(#32)](https://github.com/GouvernementFR/dsfr/pull/32)
 
 
-#### fix(follow): séparateur en box shadow [DS-1915] [(#29)](https://github.com/GouvernementFR/dsfr/pull/29)
+#### fix(follow): séparateur en box shadow [[DS-1915](<https://gouvfr.atlassian.net/browse/DS-1915>)] [(#29)](https://github.com/GouvernementFR/dsfr/pull/29)
 
 
-#### fix(share): correction template ejs et nom du composant [DS-510] [(#30)](https://github.com/GouvernementFR/dsfr/pull/30)
+#### fix(share): correction template ejs et nom du composant [[DS-510](<https://gouvfr.atlassian.net/browse/DS-510>)] [(#30)](https://github.com/GouvernementFR/dsfr/pull/30)
 
 
 #### fix(follow): corrections et nouveau nom composant [(#28)](https://github.com/GouvernementFR/dsfr/pull/28)
 
 
-#### feat: ajout du composant follow (nous suivre) [DS-801][DS-805] [(#10)](https://github.com/GouvernementFR/dsfr/pull/10)
+#### feat: ajout du composant follow (nous suivre) [[DS-801](<https://gouvfr.atlassian.net/browse/DS-801>),[DS-805](<https://gouvfr.atlassian.net/browse/DS-805>)] [(#10)](https://github.com/GouvernementFR/dsfr/pull/10)
 
 
-#### feat: ajout du composant quotes (citation) [DS-424] [(#23)](https://github.com/GouvernementFR/dsfr/pull/23)
+#### feat: ajout du composant quotes (citation) [[DS-424](<https://gouvfr.atlassian.net/browse/DS-424>)] [(#23)](https://github.com/GouvernementFR/dsfr/pull/23)
 
 
-#### feat: ajout du composant share (boutons de partage) [DS-510] [(#21)](https://github.com/GouvernementFR/dsfr/pull/21)
+#### feat: ajout du composant share (boutons de partage) [[DS-510](<https://gouvfr.atlassian.net/browse/DS-510>)] [(#21)](https://github.com/GouvernementFR/dsfr/pull/21)
 
 
-#### refactor(table): fonctionnement sans js [DS-1687] [(#16)](https://github.com/GouvernementFR/dsfr/pull/16)
+#### refactor(table): fonctionnement sans js [[DS-1687](<https://gouvfr.atlassian.net/browse/DS-1687>)] [(#16)](https://github.com/GouvernementFR/dsfr/pull/16)
 
 
 #### fix(buttons, modal, tabs): correction nouveau nom d&#39;icône [(#19)](https://github.com/GouvernementFR/dsfr/pull/19)
@@ -1396,13 +1398,13 @@ dsfr-dev devient dsfr
 #### fix(alerts): Correction texte explicatif [(#17)](https://github.com/GouvernementFR/dsfr/pull/17)
 
 
-#### fix(modal): ajustements et correctifs [DS-1430][DS-1431][DS-1432] [(#11)](https://github.com/GouvernementFR/dsfr/pull/11)
+#### fix(modal): ajustements et correctifs [[DS-1430](<https://gouvfr.atlassian.net/browse/DS-1430>),[DS-1431](<https://gouvfr.atlassian.net/browse/DS-1431>),[DS-1432](<https://gouvfr.atlassian.net/browse/DS-1432>)] [(#11)](https://github.com/GouvernementFR/dsfr/pull/11)
 
 
-#### feat(consent): Ajout du composant gestionnaire de consentement [DS-378] [(#12)](https://github.com/GouvernementFR/dsfr/pull/12)
+#### feat(consent): Ajout du composant gestionnaire de consentement [[DS-378](<https://gouvfr.atlassian.net/browse/DS-378>)] [(#12)](https://github.com/GouvernementFR/dsfr/pull/12)
 
 
-#### feat(alerts): ajout du composant alerts [DS-495] [(#7)](https://github.com/GouvernementFR/dsfr/pull/7)
+#### feat(alerts): ajout du composant alerts [[DS-495](<https://gouvfr.atlassian.net/browse/DS-495>)] [(#7)](https://github.com/GouvernementFR/dsfr/pull/7)
 * feat(alerts): style alertes
 
 * feat(alerts): ajout d&#39;exemples
@@ -1418,7 +1420,7 @@ dsfr-dev devient dsfr
 * fix(alerts): margin p, hx et lien documentation
 
 
-#### fix(summary): Ajustement de summary avec les nouvelles listes [DS-1813] [(#6)](https://github.com/GouvernementFR/dsfr/pull/6)
+#### fix(summary): Ajustement de summary avec les nouvelles listes [[DS-1813](<https://gouvfr.atlassian.net/browse/DS-1813>)] [(#6)](https://github.com/GouvernementFR/dsfr/pull/6)
 * fix(summary): Ajustement de summary avec les nouvelles listes
 
 * doc(summary): Commentaire d&#39;explication sur les nombres utilisés pour créer le décalage de l&#39;hover
@@ -1429,7 +1431,7 @@ dsfr-dev devient dsfr
 #### fix(cards): ordre détail dans le snippet [(#8)](https://github.com/GouvernementFR/dsfr/pull/8)
 
 
-#### fix(core): correction des listes à puces [DS-1461] [(#4)](https://github.com/GouvernementFR/dsfr/pull/4)
+#### fix(core): correction des listes à puces [[DS-1461](<https://gouvfr.atlassian.net/browse/DS-1461>)] [(#4)](https://github.com/GouvernementFR/dsfr/pull/4)
 * fix(core): correction des listes pour un retour à un fonctionnement proche de celui par défaut
 
 * fix(core): correction espacement des listes
@@ -1437,7 +1439,7 @@ dsfr-dev devient dsfr
 * fix(core): nettoyage code commenté
 
 
-#### fix(radios checkboxes): correction bug windows inversion des nombres [DS-1639] [(#5)](https://github.com/GouvernementFR/dsfr/pull/5)
+#### fix(radios checkboxes): correction bug windows inversion des nombres [[DS-1639](<https://gouvfr.atlassian.net/browse/DS-1639>)] [(#5)](https://github.com/GouvernementFR/dsfr/pull/5)
 * fix(radios, checkboxes): correction display des labels
 
 * feat: label checkbox &amp; radios
@@ -1509,7 +1511,7 @@ ajout !important pour forcer le modifieur
 #### fix(tabs): correctif bug de transition
 
 
-#### fix(header): Correction modale a11y, arial-labelledby ajouté dynamiquement et id du bouton rétablie [https://gouvfr.atlassian.net/browse/DS-1445?focusedCommentId=14946]
+#### fix(header): Correction modale a11y, arial-labelledby ajouté dynamiquement et id du bouton rétablie [https://gouvfr.atlassian.net/browse/DS-1445?focusedCommentId=14946] [[DS-1445](<https://gouvfr.atlassian.net/browse/DS-1445>)]
 
 
 #### feat(build): génération de la font icon incluse dans le build
@@ -1674,6 +1676,8 @@ ajout !important pour forcer le modifieur
 
 
 ---
+
+> ## DSFR v0
 
 ## v0.6
 
