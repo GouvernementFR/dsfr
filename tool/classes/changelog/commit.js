@@ -24,7 +24,7 @@ class Commit {
   }
 
   get jira () {
-    return this._jira;
+    return false; // this._jira;
   }
 
   get isValid () {
