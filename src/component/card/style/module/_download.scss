@@ -33,7 +33,7 @@
   }
 
   &#{ns(enlarge-link)} {
-    #{media-query.ns(card__title a)} {
+    #{ns(card__title a)} {
       @include icon(download-line, null, after);
     }
 

@@ -1,6 +1,7 @@
 import ns from '../api/utilities/namespace.js';
 import { Instance } from '../api/modules/register/instance.js';
 import { AssessEmission } from './assess-emission';
+import { inspector } from '../api/utilities/inspector.js';
 
 class AssessFile extends Instance {
   static get instanceClassName () {
@@ -26,7 +27,7 @@ class AssessFile extends Instance {
     fetch(this.href, { method: 'HEAD', mode: 'cors' }).then(response => {
       this.length = response.headers.get('content-length') || -1;
       if (this.length === -1) {
-        api.inspector.warn('File size unknown: ' + this.href + '\nUnable to get HTTP header: "content-length"');
+        inspector.warn('File size unknown: ' + this.href + '\nUnable to get HTTP header: "content-length"');
       }
       this.gather();
     });

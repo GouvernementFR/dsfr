@@ -6,12 +6,11 @@
 #{ns(card)} {
   @include display-flex(column);
   @include relative();
-  @include icon(arrow-right-line, md, before);
 
   &__title a {
-      @include after {
-        @include absolute(null, 8v, 8v);
-      }
+    @include icon(arrow-right-line, md, after) {
+      @include absolute(null, 8v, 8v);
+    }
   }
 
   &--no-icon,
