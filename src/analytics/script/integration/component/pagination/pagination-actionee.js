@@ -1,4 +1,6 @@
+import api from '../../../../api';
 import { ComponentActionee } from '../component-actionee';
+import { PaginationSelector } from './pagination-selector';
 import ID from './id';
 
 class PaginationActionee extends ComponentActionee {
@@ -11,18 +13,41 @@ class PaginationActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteractionType();
-    this.listenClick();
+    this.setPagination();
   }
 
   get label () {
-    const firstText = this.getFirstText();
-    if (firstText) return firstText;
     return 'pagination';
   }
 
   get component () {
     return ID;
+  }
+
+  setPagination () {
+    let totalValue = parseInt(this.node.getAttribute(PaginationSelector.ANALYTICS_TOTAL));
+    if (!totalValue) {
+      const links = this.node.querySelectorAll(`${PaginationSelector.LINK}:not(${PaginationSelector.NEXT_LINK}):not(${PaginationSelector.LAST_LINK})`);
+      if (links) {
+        const totalLabel = this.getFirstText(links[links.length - 1]);
+        if (totalLabel) totalValue = this.getInt(totalLabel);
+      }
+    }
+    if (totalValue) {
+      api.analytics.page.total = totalValue;
+    }
+
+    const currentLink = this.node.querySelector(PaginationSelector.CURRENT);
+    if (currentLink) {
+      const currentLabel = this.getFirstText(currentLink);
+      if (currentLabel) {
+        api.analytics.page.current = this.getInt(currentLabel);
+      }
+    }
+  }
+
+  getInt (val) {
+    return parseInt(val.match(/\d+/)[0]);
   }
 }
 
