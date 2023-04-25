@@ -1,0 +1,19 @@
+{
+  "label": "accordion",
+  "cookiePath": "backstop_data/engine_scripts/cookies.json",
+  "url": "http://localhost:8080/example/component/accordion/",
+  "referenceUrl": "",
+  "readyEvent": "",
+  "readySelector": "",
+  "delay": 0,
+  "hideSelectors": [],
+  "removeSelectors": [],
+  "hoverSelector": "",
+  "clickSelector": "",
+  "postInteractionWait": 0,
+  "selectors": [],
+  "selectorExpansion": true,
+  "expect": 0,
+  "misMatchThreshold" : 0,
+  "requireSameDimensions": true
+}
