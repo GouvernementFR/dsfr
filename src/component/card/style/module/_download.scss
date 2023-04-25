@@ -1,8 +1,6 @@
 @use '../../../../../module/media-query';
 
 #{ns(card--download)} {
-  @include icon(download-line, null, before);
-
   #{ns(card__header)} {
     aspect-ratio: #{16/9};
 
@@ -35,6 +33,10 @@
   }
 
   &#{ns(enlarge-link)} {
+    #{media-query.ns(card__title a)} {
+      @include icon(download-line, null, after);
+    }
+
     @include hover-media-query {
       &:hover {
         #{ns(card__header)} {

@@ -8,13 +8,17 @@
   @include relative();
   @include icon(arrow-right-line, md, before);
 
-  &--no-icon,
-  &:not(#{ns(enlarge-link)}) {
-    @include before(none);
+  &__title a {
+      @include after {
+        @include absolute(null, 8v, 8v);
+      }
   }
 
-  @include before {
-    @include absolute(null, 8v, 8v);
+  &--no-icon,
+  &:not(#{ns(enlarge-link)}) {
+    #{ns(card__title a)} {
+      @include after(none);
+    }
   }
 
   @include body() {
