@@ -1,7 +1,7 @@
 import ns from '../api/utilities/namespace.js';
 import { Instance } from '../api/modules/register/instance.js';
 import { AssessEmission } from './assess-emission';
-import { inspector } from '../api/utilities/inspector.js';
+import inspector from '../api/inspect/inspector.js';
 
 class AssessFile extends Instance {
   static get instanceClassName () {
