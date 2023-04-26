@@ -87,6 +87,7 @@ if (modal.top) modalClasses.push(`${prefix}-modal--top`);
 
 if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealing-backdrop`] = modal.concealingBackdrop;
 
+const markup = modal.markup || 'h2';
 %>
 
 <dialog id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
@@ -98,22 +99,22 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
             <%- include('../../../button/template/ejs/button-close', {button: closeButton} )%>
           </div>
           <div class="<%= prefix %>-modal__content">
-            <% if(modal.title !== undefined) { %>
-            <h1 id="<%= titleId %>" class="<%= prefix %>-modal__title">
+            <% if (modal.title !== undefined) { %>
+            <<%= markup %> id="<%= titleId %>" class="<%= prefix %>-modal__title">
               <% if (modal.icon !== undefined) { %>
               <span class="<%= prefix %>-icon-<%= modal.icon %> <%= prefix %>-icon--lg" aria-hidden="true"></span>
               <% } %>
               <%= modal.title %>
-            </h1>
+            </<%= markup %>>
             <% } %>
             <%- modal.body %>
           </div>
-          <% if(modal.footer !== undefined) { %>
+          <% if (modal.footer !== undefined) { %>
           <div class="<%= prefix %>-modal__footer">
             <%- modal.footer %>
           </div>
           <% } %>
-          <% if(modal.customFooter !== undefined) { %>
+          <% if (modal.customFooter !== undefined) { %>
             <%- modal.customFooter %>
           <% } %>
         </div>
