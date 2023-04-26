@@ -65,10 +65,10 @@ class ActionElement {
     this.begin();
   }
 
-  begin () {
+  begin (data = {}) {
     if (this._hasBegun) return;
     this._hasBegun = true;
-    if (this._type.isBeginning) queue.appendStartingAction(this._action);
+    if (this._type.isBeginning) queue.appendStartingAction(this._action, data);
   }
 
   act (data = {}) {
@@ -77,7 +77,7 @@ class ActionElement {
       requestAnimationFrame(() => this.act(data));
       return;
     }
-    queue.appendEndingAction(this._action);
+    queue.appendEndingAction(this._action, data);
   }
 
   dispose () {

@@ -120,8 +120,7 @@ class Action {
         api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
         return [];
     }
-    const layer = this._getLayer(mode, data);
-    return layer;
+    return this._getLayer(mode, data);
   }
 
   end (data) {
@@ -142,8 +141,7 @@ class Action {
         mode = ActionMode.NONE;
         break;
     }
-    const layer = this._getLayer(mode, data);
-    return layer;
+    return this._getLayer(mode, data);
   }
 
   resume (data) {
