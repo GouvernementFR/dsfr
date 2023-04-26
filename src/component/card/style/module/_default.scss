@@ -7,9 +7,15 @@
   @include display-flex(column);
   @include relative();
 
-  &__title a {
-    @include icon(arrow-right-line, md, after) {
-      @include absolute(null, 8v, 8v);
+  &__title {
+    a {
+      @include icon(arrow-right-line, md, after) {
+        @include absolute(null, 8v, 8v);
+      }
+    }
+
+    a[target=_blank] {
+      @include icon(external-link-line, md, after);
     }
   }
 

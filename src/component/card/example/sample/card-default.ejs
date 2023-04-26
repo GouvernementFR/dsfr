@@ -1,6 +1,6 @@
 <%
 const card = locals.card || {};
-const href = card.href || '#'
+const href = card.href || '#';
 const data = {
   content: {
     title: card.title || 'Intitulé de la carte (sur lequel se trouve le lien)',
@@ -49,6 +49,7 @@ if (card.img || card.vid) {
 
 if (card.content) {
   if (card.content.assess) data.content.assess = card.content.assess;
+  if (card.content.blank) data.content.blank = card.content.blank;
   if (card.content.downloadable) data.content.downloadable = card.content.downloadable;
 
   if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);
