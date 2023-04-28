@@ -174,7 +174,10 @@ class Element {
   }
 
   dispose () {
-    for (const instance of this.instances) instance._dispose();
+    for (let i = this.instances.length - 1; i >= 0; i--) {
+      const instance = this.instances[i];
+      if (instance) instance._dispose();
+    }
     this.instances.length = 0;
     state.remove('stage', this);
     this.parent.removeChild(this);
