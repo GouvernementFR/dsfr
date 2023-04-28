@@ -1,5 +1,10 @@
 import api from '../../../../api.js';
 
 export const PaginationSelector = {
-  LINK: api.internals.ns.selector('pagination__link')
+  PAGINATION: api.internals.ns.selector('pagination'),
+  LINK: api.internals.ns.selector('pagination__link'),
+  NEXT_LINK: api.internals.ns.selector('pagination__link--next'),
+  LAST_LINK: api.internals.ns.selector('pagination__link--last'),
+  ANALYTICS_TOTAL: 'data-fr-analytics-page-total',
+  CURRENT: '[aria-current="page"]'
 };

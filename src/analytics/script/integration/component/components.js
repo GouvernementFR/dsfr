@@ -49,6 +49,7 @@ import { NoticeSelector } from './notice/notice-selector';
 import { NoticeActionee } from './notice/notice-actionee';
 import { PaginationSelector } from './pagination/pagination-selector';
 import { PaginationActionee } from './pagination/pagination-actionee';
+import { PaginationLinkActionee } from './pagination/pagination-link-actionee';
 import { RadioSelector } from './radio/radio-selector';
 import { RadioActionee } from './radio/radio-actionee';
 import { QuoteSelector } from './quote/quote-selector';
@@ -146,7 +147,8 @@ const integrateComponents = () => {
 
   api.internals.register(NoticeSelector.NOTICE, NoticeActionee);
 
-  api.internals.register(PaginationSelector.LINK, PaginationActionee);
+  api.internals.register(PaginationSelector.PAGINATION, PaginationActionee);
+  api.internals.register(PaginationSelector.LINK, PaginationLinkActionee);
 
   api.internals.register(QuoteSelector.QUOTE, QuoteActionee);
 
