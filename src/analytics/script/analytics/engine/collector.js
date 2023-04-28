@@ -58,6 +58,7 @@ class Collector {
 
     this._isCollected = false;
     this._delay = -1;
+    queue.setCollector(this);
   }
 
   get page () {
@@ -135,7 +136,7 @@ class Collector {
 
   collect () {
     if (this._isCollected) return;
-    queue.collect(this.layer);
+    queue.collect();
     this._isCollected = true;
   }
 

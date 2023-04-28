@@ -17,11 +17,14 @@ class Queue {
     this.reset();
   }
 
+  setCollector (collector) {
+    this._collector = collector;
+  }
+
   reset (ending = false) {
     this._type = PushType.ACTION;
     if (!ending) this._startingActions.length = 0;
     this._endingActions.length = 0;
-    this._collectionLayer = [];
     this._count = 0;
     this._delay = -1;
     this._isRequested = false;
@@ -34,9 +37,8 @@ class Queue {
     renderer.add(this);
   }
 
-  collect (layer) {
+  collect () {
     this._type = PushType.COLLECTOR;
-    this._collectionLayer = layer;
     this._request();
   }
 
@@ -117,11 +119,20 @@ class Queue {
       slices.push(slice.flat());
     }
 
-    push(this._type, [...this._collectionLayer, ...slices[0]]);
+    if (this._type === PushType.COLLECTOR) {
+      const layer = this._collector.layer;
+      if (slices.length > 0) {
+        const slice = slices.splice(0, 1)[0];
+        if (slice.length > 0) layer.push.apply(layer, slice);
+      }
+      layer.flat();
+      if (layer.length > 0) push(PushType.COLLECTOR, layer);
+    }
 
-    if (slices.length > 1) {
-      for (let i = 1; i < slices.length; i++) {
-        push(PushType.ACTION, slices[i]);
+    if (slices.length > 0) {
+      for (let i = 0; i < slices.length; i++) {
+        const slice = slices[i];
+        if (slice.length > 0) push(PushType.ACTION, slice);
       }
     }
 
