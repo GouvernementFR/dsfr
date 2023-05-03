@@ -16,7 +16,6 @@
 <%
 let breadcrumb = locals.breadcrumb || {segments : []};
 if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane';
-const markup = breadcrumb.markup || 'a';
 %>
 
 <nav role="navigation" class="<%= prefix %>-breadcrumb" aria-label="vous êtes ici :">
@@ -26,20 +25,24 @@ const markup = breadcrumb.markup || 'a';
     <ol class="<%= prefix %>-breadcrumb__list">
       <%
         let path = '';
-        const attrs = {};
         for (let i = 0; i < breadcrumb.segments.length; i++) {
+            const segmentAttrs = {};
             const segment = breadcrumb.segments[i];
+            const markup = segment.markup || 'a';
             if (segment.path != undefined) path += segment.path + '/';
-            if (segment.id) attrs.id = segment.id;
+            if (segment.id) segmentAttrs.id = segment.id;
             if (segment.href) {
-              attrs['href'] = segment.href;
+              segmentAttrs['href'] = segment.href;
             } else {
-              if (i === breadcrumb.segments.length - 1) attrs['aria-current'] = 'page';
-              else if (path !== '') attrs['href'] = path;
+              if (i === breadcrumb.segments.length - 1) {
+                segmentAttrs['aria-current'] = 'page';
+              } else {
+                segmentAttrs['href'] = path;
+              }
             }
         %>
       <li>
-        <<%= markup %> class="<%= prefix %>-breadcrumb__link" <%- includeAttrs(attrs);%>><%= segment.label %></<%= markup %>>
+        <<%= markup %> class="<%= prefix %>-breadcrumb__link" <%- includeAttrs(segmentAttrs);%>><%= segment.label %></<%= markup %>>
       </li>
       <% } %>
     </ol>
