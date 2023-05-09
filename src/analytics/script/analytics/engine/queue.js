@@ -119,8 +119,6 @@ class Queue {
       slices.push(slice.flat());
     }
 
-    console.log('send', slices);
-
     if (this._type === PushType.COLLECTOR) {
       const layer = this._collector.layer;
       if (slices.length > 0) {

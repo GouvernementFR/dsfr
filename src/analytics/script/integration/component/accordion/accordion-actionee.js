@@ -44,7 +44,6 @@ class AccordionActionee extends ComponentActionee {
   }
 
   dispose () {
-    console.log('dispose accordion');
     super.dispose();
   }
 }
