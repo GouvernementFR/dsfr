@@ -21,9 +21,10 @@
     "standalone": "node tool/tool.js standalone",
     "changelog": "node tool/tool.js changelog",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
-    "visual-serve": "browser-sync start --server --port 8081 --startPath backstop_data/html_report/",
-    "visual-test": "./node_modules/.bin/backstop test --config=./backstop.json",
-    "visual-approve": "./node_modules/.bin/backstop approve"
+    "visual-serve": "browser-sync start --watch --server --port 8081 --startPath backstop_data/html_report/",
+    "visual-test": "./node_modules/.bin/backstop test --config=./backstop.config.js",
+    "visual-reference": "./node_modules/.bin/backstop approve",
+    "visual-remote": "./node_modules/.bin/backstop BACKSTOP_REMOTE_HTTP_PORT=3000 backstop remote --config=./backstop.config.js"
   },
   "files": [
     "/dist",
@@ -68,6 +69,7 @@
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-discard-duplicates": "^5.1.0",
     "prettier": "^2.8.4",
+    "pure-rand": "^6.0.2",
     "rollup": "^2.68.0",
     "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-modify": "^3.0.0",

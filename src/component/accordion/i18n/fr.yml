@@ -3,4 +3,5 @@ description: L'accordéon permet aux utilisateurs d'afficher et de masquer des s
 doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/accordeon
 subdir:
   title: Mises en situation
+  group: Groupe d'accordéons
   imbrication: Imbrication d'accordéons

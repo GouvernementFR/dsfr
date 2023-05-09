@@ -1,17 +1,19 @@
-<% if (locals.title !== undefined && locals.title.length) { %>
-  <h3><%= title %></h3>
-<% } %>
+<div class="example-layout">
+  <% if (locals.title !== undefined && locals.title.length) { %>
+    <h3><%= title %></h3>
+  <% } %>
 
-<% if (locals.subtitle !== undefined && locals.subtitle.length) { %>
-  <p class="fr-text--sm fr-text-mention-grey"><%- subtitle %></p>
-<% } %>
+  <% if (locals.subtitle !== undefined && locals.subtitle.length) { %>
+    <p class="fr-text--sm fr-text-mention-grey"><%- subtitle %></p>
+  <% } %>
 
-<div class="<%= prefix %>-mb-6v">
-  <%- component %>
-</div>
-<% if (locals.snippet) { %>
-  <div class="<%= prefix %>-mb-12v">
-    <%- snippet %>
+  <div class="<%= prefix %>-mb-6v">
+    <%- component %>
   </div>
-<% } %>
+  <% if (locals.snippet) { %>
+    <div class="<%= prefix %>-mb-12v snippet-accordion">
+      <%- snippet %>
+    </div>
+  <% } %>
+</div>
 
