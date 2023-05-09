@@ -31,13 +31,15 @@ if (breadcrumb.button === undefined) breadcrumb.button = 'Voir le fil d’Ariane
             const markup = segment.markup || 'a';
             if (segment.path != undefined) path += segment.path + '/';
             if (segment.id) segmentAttrs.id = segment.id;
-            if (segment.href) {
-              segmentAttrs['href'] = segment.href;
+            if (i === breadcrumb.segments.length - 1) {
+              segmentAttrs['aria-current'] = 'page';
             } else {
-              if (i === breadcrumb.segments.length - 1) {
-                segmentAttrs['aria-current'] = 'page';
-              } else {
-                segmentAttrs['href'] = path;
+              if (markup == 'a') {
+                if (segment.href) {
+                  segmentAttrs['href'] = segment.href;
+                } else {
+                  segmentAttrs['href'] = path;
+                }
               }
             }
         %>
