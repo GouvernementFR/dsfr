@@ -1,0 +1,183 @@
+## class Analytics
+
+L’instance d’Analytics est accessible depuis `window.dsfr.analytics`
+
+### CONFIGURATION
+
+```javascript
+<script>
+    window.dsfr = {
+        analytics: {
+            domain: 'mon.domainedetracking.com',
+            // collection: 'manual',
+            // enableRating: true
+        }
+    };
+</script>
+```
+
+##### domain
+
+_String_ (required)
+
+Il est requis de définir la propriété `domain` avec le [domaine récupéré auprès d’Eulerian](https://eulerian.wiki/doku.php?id=fr:quickonboarding:installation:domain_implementation).
+
+* * *
+
+##### ~~mode~~ collection
+
+_String_
+
+Défini le mode de récolte des données de la page :
+
+* `manual` : Les données de pages ne sont pas envoyées. Attend l’execution de la fonction `collect()`.
+
+* `load` : Les données de page sont envoyées automatiquement au chargement de la page. (par défaut)
+
+* `full` : Les données sont envoyées à chaque changement de path dans l’URL, permettant le support des “Single-page
+application” (par défaut si dsfr en mode ‘vue’, ‘react’ ou ‘angular’)
+
+* `hash` : Les données sont envoyées à chaque changement de hash dans l'URL
+
+* * *
+
+##### enableRating
+
+_Boolean_
+
+Permet d’activer le taux de click. (défaut: false)
+Voir les [actions](actions.md)
+
+* * *
+
+### PROPRIÉTÉS
+
+##### page
+
+_Page_
+
+`window.dsfr.analytics.page`
+
+Getter qui retourne l’instance de [Page](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-Page)
+
+* * *
+
+##### site
+
+_Site_
+
+`window.dsfr.analytics.site`
+
+Getter qui retourne l’instance de [Site](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-Site)
+
+* * *
+
+##### user
+
+_User_
+
+`window.dsfr.analytics.user`
+
+Getter qui retourne l’instance de [User](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-User)
+
+* * *
+
+##### cmp
+
+_ConsentManagerPlatform_
+
+`window.dsfr.analytics.cmp`
+
+Getter qui retourne l’instance de [ConsentManagerPlatform](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-ConsentManagerPlaform)
+
+* * *
+
+##### isReady
+
+_Boolean_
+
+`window.dsfr.analytics.isReady`
+
+Getter qui retourne l'état du package
+
+* * *
+
+##### readiness
+
+_Promise_
+
+`window.dsfr.analytics.readiness`
+
+Getter qui retourne une Promise permettant de se synchroniser sur le package
+
+    window.dsfr.analytics.readiness.then(() => { // start }, () => { // error } );
+
+* * *
+
+##### isDebugging
+
+_Boolean_
+
+`window.dsfr.analytics.isDebugging`
+
+Permet d’activer / désactiver le debug Eulerian.
+
+⚠️ le debug Eulerian reste persistant sur la page par le biais du LocalStorage jusqu'à désactivation.
+
+* * *
+
+### MÉTHODES
+
+##### push (type, layer)
+
+`window.dsfr.analytics.push(type, layer)`
+
+Alias de la fonction EA\_push d’Eulerian via le package. (voir doc Eulerian [https://eulerian.wiki/doku.php?id=fr:quickonboarding:installation:tag\_installation\_guide#types\_d\_appels](https://eulerian.wiki/doku.php?id=fr:quickonboarding:installation:tag_installation_guide#types_d_appels))
+
+* * *
+
+##### reset (clear = false)
+
+`window.dsfr.analytics.reset(clear)`
+
+Permet de remettre les données dans l'état d’origine de la configuration.
+
+Si le paramètre `clear = true` => toutes les données sont remises en état indéfini.
+
+* * *
+
+###### collect {#collect}
+
+`window.dsfr.analytics.collect()`
+
+Envoie au collector le datalayer constitué par l’ensemble des données consolidées depuis :
+
+* Page
+
+* Site
+
+* User
+
+* * *
+
+### USAGE
+
+:::note
+Le package Analytics repose sur 2 principes de fonctionnement pour traquer les pages :
+    * Par le biais de la configuration, il est possible de définir toutes les données qui seront envoyées au chargement de la page (via le mode automatique)
+
+    * Par le biais de l’API, on peut définir toutes les données propriété par propriété pour ensuite envoyer l’ensemble
+    grâce à la méthode **collect**
+:::
+
+```javascript
+dsfr.analytics.readiness.then(() => { // l'API analytics est prête à l'utilisation
+    dsfr.analytics.isDebugging = true; // active le debugging eulerian
+    dsfr.analytics.reset(); // remet les données à l'état de configuration
+    dsfr.analytics.user.connect('USER\_ID', 'ENCRYPTED\_EMAIL', true);
+    dsfr.analytics.page.path = 'my/virtual/page';
+    dsfr.analytics.page.isError = true;
+    dsfr.analytics.page.template = 'page404';
+    dsfr.analytics.collect(); // envoie les données
+});
+```

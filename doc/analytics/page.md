@@ -1,0 +1,244 @@
+
+## class Page
+
+L’instance de Page est accessible depuis
+
+window.dsfr.analytics.page
+
+### CONFIGURATION
+
+```javascript
+<script>
+    window.dsfr = {
+        analytics: {
+            page: {
+                path: 'path\_name/from/url', // path for page tracking
+                referrer: 'path\_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+                title: 'page title', // page title for virtual pages
+                name: 'page name', // equivalent to title if not defined
+                labels: \['label1', 'label2', 'label3', 'label4', 'label5'\],
+                template: 'nom template', // page template
+                group: 'group', // page group. if not defined, fallback to template value
+                segment: 'segment', // site segment. if not defined, fallback to template value
+                subtemplate: 'sous template', // page subtemplate
+                theme: 'theme page', // page theme
+                subtheme: 'sous theme', // page subtheme
+                related: 'page liée', // related page id
+                depth: 2, // page depth
+                isError: true, // is this an error page (404, 500, 503...)
+                current: 4, // In case of pagination, current page number
+                total: 40, // In case of pagination, total pages number
+                filters: \['actualités', 'Dossier de presse'\] // array of filters that were applied on the page (strings)
+            },
+        }
+    };
+</script>
+```
+
+### PROPRIÉTÉS
+:::note
+Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
+:::
+
+##### path
+
+_String_ (EA: path)
+
+`window.dsfr.analytics.page.path`
+
+* Défini le chemin de la page.
+
+* Utilise `document.location.pathname` si non défini.
+
+* * *
+
+##### referrer
+
+_String_ (EA: referrer)
+
+`window.dsfr.analytics.page.referrer`
+
+* Défini la page précédente si différente de `document.referer` (si page virtuelle)
+
+* * *
+
+##### title
+
+_String_ (EA: page\_title)
+
+`window.dsfr.analytics.page.title`
+
+* Défini le titre de page si différent de la balise `title` de la page (si page virtuelle)
+
+* * *
+
+##### name
+
+_String_ (EA: page\_name)
+
+`window.dsfr.analytics.page.name`
+
+* Défini un nom de page (égal à title par défaut)
+
+* * *
+
+##### labels
+
+_Array`<String>`_ (EA: pagelabel)
+
+`window.dsfr.analytics.page.labels`
+
+* Liste de 5 regroupements de contenus maximum
+
+* * *
+
+##### categories
+
+_Array`<String>`_ (EA: page\_category1, page\_category2, page\_category1)
+
+`window.dsfr.analytics.page.categories`
+
+* Liste de 5 regroupements de contenus maximum
+
+* Les 3 premiers labels servent à renseigner (EA: page\_category1), (EA: page\_category2), et (EA:
+page\_category3)
+
+* * *
+
+##### template
+
+_String_ (EA: template)
+
+`window.dsfr.analytics.page.template`
+
+* Permet de définir un nom de template
+
+* * *
+
+##### group
+
+_String_ (EA: pagegroup)
+
+`window.dsfr.analytics.page.group`
+
+* Permet de définir un nom de groupe (par défaut égal à template)
+
+* * *
+
+##### segment
+
+_String_ (EA: segment-site)
+
+`window.dsfr.analytics.page.segment`
+
+* Permet de définir un nom de segment (par défaut égal à template)
+
+* * *
+
+##### subtemplate
+
+_String_ (EA: page\_subtemplate)
+
+`window.dsfr.analytics.page.subtemplate`
+
+Apporte un niveau de détail supplémentaire lié au contenu pour les page\_template comprenant beaucoup de pages
+sur
+des thèmes différents
+
+* * *
+
+##### theme
+
+_String_ (EA: page\_theme)
+
+`window.dsfr.analytics.page.theme`
+
+* Permet de définir le thème principal des contenus
+
+* * *
+
+##### subtheme
+
+_String_ (EA: page\_subtheme)
+
+`window.dsfr.analytics.page.subtheme`
+
+* Permet de définir un sous-theme
+
+* * *
+
+##### related
+
+_String_ (EA: page\_related)
+
+`window.dsfr.analytics.page.related`
+
+* Clé unique passée sur l'ensemble des pages avec des contenus liés
+
+* * *
+
+##### depth
+
+_Integer_ (EA: page\_depth)
+
+`window.dsfr.analytics.page.depth`
+
+Niveau de profondeur de la page (default: 0)
+
+* * *
+
+##### isError
+
+_Boolean_ (EA: error) \- default: false (required)
+
+`window.dsfr.analytics.page.isError`
+
+* Défini si la page est une page d’erreur (**obligatoire** si page d’erreur)
+
+* * *
+
+##### current
+
+_Integer_ (EA: page\_pagination)
+
+`window.dsfr.analytics.page.current`
+
+Numéro de page si au sein d’un découpage ou d’une pagination
+
+* Récupération automatique depuis le composant Pagination (Implémentation à venir)
+
+* * *
+
+##### total
+
+_Integer_
+
+`window.dsfr.analytics.page.total`
+
+Nombre de page au sein du découpage ou de la pagination
+
+Vient compléter la valeur envoyée à (EA: page\_pagination) si renseignée (valant : “current / total”)
+
+* * *
+
+##### filters
+
+* _Array`<String>`_ (EA: page\_filters)
+
+`window.dsfr.analytics.page.filters`
+
+Défini les filtres appliqués à la page
+
+* * *
+
+### MÉTHODES
+
+##### reset (clear = false)
+
+`window.dsfr.analytics.page.reset(clear)`
+
+Permet de remettre les données dans l'état d’origine de la configuration.
+
+Si le paramètre `clear = true` => toutes les données sont remises en état indéfini.
+
+* * *
