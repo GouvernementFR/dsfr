@@ -108,6 +108,7 @@ const renderExample = (options, node) => {
     const opts = {
       ...options,
       src: node.src,
+      config: node.config,
       relativeRoot: '../'.repeat(node.dest.split('/').length - 1),
       subdir: node.subdir || []
     };

@@ -1,23 +1,27 @@
 const fs = require('fs');
 
 class ExampleNode {
-  constructor (dir, relative = '', isStandalone) {
+  constructor (dir, relative = '', isStandalone, config = 'tool/example/config.ejs') {
     this.dir = dir;
     this.relative = relative;
     this.isStandalone = isStandalone;
     this.path = `${dir}${relative}/`;
     this._hasData = false;
     this._children = [];
+    this._config = config;
 
     if (fs.existsSync(this.path)) this._parse();
   }
 
   _parse () {
     const entries = fs.readdirSync(this.path, { withFileTypes: true });
+    const config = `${this.path}config.ejs`;
 
     for (const entry of entries) {
       switch (true) {
         case entry.isFile() && entry.name === 'index.ejs':
+
+          if (fs.existsSync(config)) this._config = config;
           this._hasData = true;
           break;
 
@@ -29,7 +33,7 @@ class ExampleNode {
   }
 
   addChild (name) {
-    const child = new ExampleNode(this.path, name);
+    const child = new ExampleNode(this.path, name, false, this._config);
     if (child.hasData) this._children.push(child);
   }
 
@@ -48,7 +52,8 @@ class ExampleNode {
       hasData: this._hasData === true,
       src: `${this.path}index.ejs`,
       dest: this._dest,
-      subdir: this._children.map(child => child.relative)
+      subdir: this._children.map(child => child.relative),
+      config: this._config
     };
 
     if (this._children.length) data.children = this._children.map(child => child.data);
