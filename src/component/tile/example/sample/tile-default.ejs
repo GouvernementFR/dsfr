@@ -5,10 +5,12 @@ const data = {
   content: {
     title: content.title || 'Intitulé de la tuile',
     description: content.description !== false ? content.description || lorem('', 60) : undefined,
+    ...content,
   },
   size: tile.size,
   enlarge: tile.enlarge !== false && tile.footer === undefined,
-  icon: tile.icon
+  icon: tile.icon,
+  download: tile.download,
 }
 
 if (tile.horizontal) {

@@ -7,6 +7,8 @@
 
 * tile.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la tuile
 
+* tile.download (boolean, optional) : si true, passe la tuile en mode téléchargement
+
 * tile.size (string, optionnal) : Taille de la tuile ("md" - default | "sm").
 
 * tile.horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
@@ -22,6 +24,8 @@
 * tile.id (string) : id de l'élément
 
 * tile.accent (string, optional) : accentuation du composant
+
+* tile.icon (boolean, optional) : Si false, ajoute la classe fr-tile--no-icon pour désactiver l'icone associée au lien
 
 * tile.classes (array, optional) : Classes suplémentaires sur la tuile
 
@@ -41,8 +45,10 @@ switch (tile.size) {
   case 'sm':
     classes.push(`${prefix}-tile--sm`);
     break;
-}
+  }
 
+if (tile.download) classes.push(`${prefix}-tile--download`);
+if (tile.icon === false) classes.push(`${prefix}-tile--no-icon`);
 if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
 if (tile.horizontal !== undefined) {
   classes.push(`${prefix}-tile--horizontal`);

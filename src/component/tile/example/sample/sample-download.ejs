@@ -1,0 +1,7 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile avec icone de téléchargement', './tile-default', { tile : { pictogram: true, download: true, content: { title: 'Télécharger le document XX', details: true} }}, true, './tile-layout', {col: {md:6}}); %>
+
+<%- sample('Tuile avec lien téléchargeable', './tile-default', { tile : { pictogram: true, download: true, content: { title: 'Télécharger le document XX', downloadable: true, description: undefined, details: true} }}, true, './tile-layout', {col: {md:6}, desc: 'Ajouter un attribut "download" sur le lien permet de forcer le téléchargement et éviter l\'ouverture dans le navigateur. Y ajouter une valeur permet de renommer le fichier téléchargé.'}); %>
+
+<%- sample('Tuile téléchargeable avec détail renseigné automatiquement', './tile-default', { tile : { pictogram: true, download: true, content: { href: '../../img/image.jpg', downloadable: true, title: 'Télécharger le document XX', assess: true, description: undefined, details: 'Ce texte est remplacé en js par les informations du fichier, insérer ici les données connues ou laisser vide'} }}, true, './tile-layout', {col: {md:6}}); %>

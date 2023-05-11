@@ -81,7 +81,7 @@
   &--no-icon,
   &:not(#{ns(enlarge-link)}) {
     #{ns(tile__title a)} {
-      @include after('');
+      @include after(none);
     }
   }
 

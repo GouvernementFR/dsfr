@@ -8,3 +8,5 @@ style:
   - button
   - badge
   - tag
+script:
+  - core
