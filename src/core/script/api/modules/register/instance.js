@@ -87,6 +87,8 @@ class Instance {
 
     const listeners = this._listeners[type];
 
+    if (!listeners) return;
+
     if (!closure) {
       listeners.forEach(listener => this.unlisten(type, listener.closure));
       return;
