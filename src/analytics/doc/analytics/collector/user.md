@@ -27,9 +27,9 @@ window.dsfr.analytics.user
 
 ### PROPRIÉTÉS
 
-:::note
-Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
-:::
+> **Note**
+> Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
+
 
 ##### uid
 

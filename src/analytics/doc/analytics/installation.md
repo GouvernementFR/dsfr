@@ -15,3 +15,5 @@ Une version standalone des analytics permet d’utiliser ce package en dehors de
 
 - Analytics/Installation
   - [Configuration](installation/configuration.md)
+  - [ConsentManagementPlatform](installation/cmp.md)
+  - [Opt](installation/opt.md)

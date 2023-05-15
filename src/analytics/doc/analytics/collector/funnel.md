@@ -27,9 +27,9 @@ L’instance de Funnel est accessible depuis
 
 ### PROPRIÉTÉS
 
-:::note
-Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
-:::
+> **Note**
+> Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
+
 
 ##### id
 

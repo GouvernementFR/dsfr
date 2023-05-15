@@ -26,15 +26,14 @@ L’instance de Search est accessible depuis :
 
 ### PROPRIÉTÉS
 
-:::note
-Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
-:::
+> **Note**
+> Les noms entre parenthèses (EA: …) correspondent au nom des variables restituées dans le datalayer et envoyées à Eulerian.
 
-:::note
-[paramètre supplémentaire] indique qu’il s’agit d’un paramètre supplémentaire du moteur de recherche.
-L'ajout de cette nouvelle variable nécessite l'implémentation d'un couple de paramètres isearchkey et isearchdata, isearchkey contenant le nom du paramètre et isearchdata la valeur.
-On retrouve en sortie dans le datalayer 4 valeurs ['isearchkey', ‘PARAMETER\_NAME', ‘isearchdata’, 'PARAMETER\_VALUE’\]
-:::
+> **Note**
+> [paramètre supplémentaire] indique qu’il s’agit d’un paramètre supplémentaire du moteur de recherche.
+> L'ajout de cette nouvelle variable nécessite l'implémentation d'un couple de paramètres isearchkey et isearchdata, isearchkey contenant le nom du paramètre et isearchdata la valeur.
+> On retrouve en sortie dans le datalayer 4 valeurs ['isearchkey', ‘PARAMETER\_NAME', ‘isearchdata’, 'PARAMETER\_VALUE’\]
+
 
 ##### engine
 
