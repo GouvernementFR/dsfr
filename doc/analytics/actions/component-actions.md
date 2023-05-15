@@ -68,4 +68,4 @@ Ce tableau regroupe les différentes actions remontées à Eulérian pour chaque
 |dsfr_upload|fr-upload|IMPRESSION|“component_value”: input_value|Libellé du `fr-label` ou "Ajout de fichier"|✅|
 
 Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires
-`data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](actions.md)).
+`data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](component-actions.md)).

@@ -58,7 +58,7 @@ _Page_
 
 `window.dsfr.analytics.page`
 
-Getter qui retourne l’instance de [Page](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-Page)
+Getter qui retourne l’instance de [Page](page.md)
 
 * * *
 
@@ -68,7 +68,7 @@ _Site_
 
 `window.dsfr.analytics.site`
 
-Getter qui retourne l’instance de [Site](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-Site)
+Getter qui retourne l’instance de [Site](site.md)
 
 * * *
 
@@ -78,7 +78,28 @@ _User_
 
 `window.dsfr.analytics.user`
 
-Getter qui retourne l’instance de [User](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-User)
+Getter qui retourne l’instance de [User](user.md)
+
+* * *
+
+
+##### search
+
+_Search_
+
+`window.dsfr.analytics.search`
+
+Getter qui retourne l’instance de [Search](search.md)
+
+* * *
+
+##### funnel :
+
+_Funnel_
+
+`window.dsfr.analytics.funnel`
+
+Getter qui retourne l’instance de [Funnel](funnel.md)
 
 * * *
 
@@ -88,9 +109,17 @@ _ConsentManagerPlatform_
 
 `window.dsfr.analytics.cmp`
 
-Getter qui retourne l’instance de [ConsentManagerPlatform](https://gouvfr.atlassian.net/wiki/spaces/DOC/pages/1151270968/Analytics+1.9.2#class-ConsentManagerPlaform)
+Getter qui retourne l’instance de [ConsentManagerPlatform](cmp.md)
 
 * * *
+
+##### opt
+
+_Opt_
+
+`window.dsfr.analytics.opt`
+
+Getter qui retourne l’instance de [Opt](opt.md)
 
 ##### isReady
 
@@ -157,6 +186,10 @@ Envoie au collector le datalayer constitué par l’ensemble des données consol
 * Site
 
 * User
+
+* Search
+
+* Funnel
 
 * * *
 

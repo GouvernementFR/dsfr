@@ -11,3 +11,7 @@ d'éviter les doublons.
 Analytics est un package à part, il n’est pas compris dans le fichier js global du dsfr.
 Le package dispose tout de même d’une dépendance au DSFR, notamment au core.
 Une version standalone des analytics permet d’utiliser ce package en dehors de toutes dépendances au DSFR.
+
+
+- Analytics/Installation
+  - [Configuration](installation/configuration.md)

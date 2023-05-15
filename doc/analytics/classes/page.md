@@ -205,7 +205,7 @@ _Integer_ (EA: page\_pagination)
 
 Numéro de page si au sein d’un découpage ou d’une pagination
 
-* Récupération automatique depuis le composant Pagination (Implémentation à venir)
+* Récupération automatique depuis le composant Pagination si celui-ci est présent
 
 * * *
 
@@ -218,6 +218,10 @@ _Integer_
 Nombre de page au sein du découpage ou de la pagination
 
 Vient compléter la valeur envoyée à (EA: page\_pagination) si renseignée (valant : “current / total”)
+Si le composant Pagination est présent, la récupération automatique se fait de deux manière, dans l’ordre de priorité :
+
+  - la valeur renseignée dans l’attribut data-fr-analytics-page-total sur le composant fr-pagination
+  - la valeur la plus haute dans les numéros de pages présentés dans la pagination ((avertissement) attention de toujours avoir la dernière page dans les entrées de la navigation)
 
 * * *
 
