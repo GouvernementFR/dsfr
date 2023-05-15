@@ -92,6 +92,7 @@ const buildHandler = async (argv) => {
     clean: argv.clean,
     config: argv.config,
     test: argv.test,
+    testVisual: argv.testVisual,
     markdowns: argv.markdowns,
     locale: argv.locale
   };

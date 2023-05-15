@@ -1,16 +1,17 @@
 {
-  "label":"accordion-closed",
+  "label":"accordion-opened",
   "url":"http://localhost:8080/example/component/accordion/",
   "delay":500,
   "removeSelectors":[
     ".snippet-accordion",
     ".fr-display-button"
   ],
+  "hoverSelector":"",
+  "clickSelector":".fr-accordion__btn",
+  "postInteractionWait":500,
   "selectors":[
     ".example-layout"
   ],
-  "selectorExpansion":true,
-  "expect":0,
   "misMatchThreshold":0,
   "requireSameDimensions":true,
   "viewports":[

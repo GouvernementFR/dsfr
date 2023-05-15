@@ -1,6 +1,7 @@
 const { buildStyles } = require('./styles');
 const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
+const { buildScenaris } = require('./test-visual');
 const { concatenate } = require('../generate/concatenate');
 const { copyImages, copyIcons, copyAssets } = require('./copy');
 const global = require('../../package.json');
@@ -71,6 +72,19 @@ const build = async (settings) => {
       if (pck.draft || !pck.example) continue;
       try {
         await buildExample(pck, settings.locale);
+      } catch (e) {
+        log.error(e);
+      }
+    }
+  }
+
+  console.log('build', settings);
+  if (settings.testVisual) {
+    log.section('test visual', true);
+
+    for (const pck of packages) {
+      try {
+        await buildScenaris(pck, settings.locale);
       } catch (e) {
         log.error(e);
       }

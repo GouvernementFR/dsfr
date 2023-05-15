@@ -1,18 +1,20 @@
 {
-  "label":"accordion-closed",
-  "url":"http://localhost:8080/example/component/accordion/",
+  "label":"accordion-imbrication-opened",
+  "url":"http://localhost:8080/example/component/accordion/imbrication/",
   "delay":500,
   "removeSelectors":[
     ".snippet-accordion",
     ".fr-display-button"
   ],
+  "hoverSelector":"",
+  "clickSelector":".fr-accordion__btn",
+  "postInteractionWait":4000,
   "selectors":[
     ".example-layout"
   ],
-  "selectorExpansion":true,
-  "expect":0,
   "misMatchThreshold":0,
   "requireSameDimensions":true,
+  "onReadyScript":"accordion-imbrication-opened.js",
   "viewports":[
     {
       "label":"lg",

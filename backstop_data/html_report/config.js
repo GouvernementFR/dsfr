@@ -4,7 +4,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/DSFR_accordion-closed_0_example-layout_0_lg.png",
-        "test": "../bitmaps_test/20230509-120603/DSFR_accordion-closed_0_example-layout_0_lg.png",
+        "test": "../bitmaps_test/20230512-113454/DSFR_accordion-closed_0_example-layout_0_lg.png",
         "selector": ".example-layout",
         "fileName": "DSFR_accordion-closed_0_example-layout_0_lg.png",
         "label": "accordion-closed",
@@ -27,7 +27,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/DSFR_accordion-opened_0_example-layout_0_lg.png",
-        "test": "../bitmaps_test/20230509-120603/DSFR_accordion-opened_0_example-layout_0_lg.png",
+        "test": "../bitmaps_test/20230512-113454/DSFR_accordion-opened_0_example-layout_0_lg.png",
         "selector": ".example-layout",
         "fileName": "DSFR_accordion-opened_0_example-layout_0_lg.png",
         "label": "accordion-opened",
@@ -50,7 +50,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/DSFR_accordion-group-closed_0_example-layout_0_lg.png",
-        "test": "../bitmaps_test/20230509-120603/DSFR_accordion-group-closed_0_example-layout_0_lg.png",
+        "test": "../bitmaps_test/20230512-113454/DSFR_accordion-group-closed_0_example-layout_0_lg.png",
         "selector": ".example-layout",
         "fileName": "DSFR_accordion-group-closed_0_example-layout_0_lg.png",
         "label": "accordion-group-closed",
@@ -73,7 +73,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/DSFR_accordion-group-opened_0_example-layout_0_lg.png",
-        "test": "../bitmaps_test/20230509-120603/DSFR_accordion-group-opened_0_example-layout_0_lg.png",
+        "test": "../bitmaps_test/20230512-113454/DSFR_accordion-group-opened_0_example-layout_0_lg.png",
         "selector": ".example-layout",
         "fileName": "DSFR_accordion-group-opened_0_example-layout_0_lg.png",
         "label": "accordion-group-opened",
@@ -96,7 +96,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/DSFR_accordion-imbrication-closed_0_example-layout_0_lg.png",
-        "test": "../bitmaps_test/20230509-120603/DSFR_accordion-imbrication-closed_0_example-layout_0_lg.png",
+        "test": "../bitmaps_test/20230512-113454/DSFR_accordion-imbrication-closed_0_example-layout_0_lg.png",
         "selector": ".example-layout",
         "fileName": "DSFR_accordion-imbrication-closed_0_example-layout_0_lg.png",
         "label": "accordion-imbrication-closed",
@@ -119,7 +119,7 @@ report({
     {
       "pair": {
         "reference": "../bitmaps_reference/DSFR_accordion-imbrication-opened_0_example-layout_0_lg.png",
-        "test": "../bitmaps_test/20230509-120603/DSFR_accordion-imbrication-opened_0_example-layout_0_lg.png",
+        "test": "../bitmaps_test/20230512-113454/DSFR_accordion-imbrication-opened_0_example-layout_0_lg.png",
         "selector": ".example-layout",
         "fileName": "DSFR_accordion-imbrication-opened_0_example-layout_0_lg.png",
         "label": "accordion-imbrication-opened",

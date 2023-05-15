@@ -1,6 +1,6 @@
 {
-  "label":"accordion-closed",
-  "url":"http://localhost:8080/example/component/accordion/",
+  "label":"accordion-group-closed",
+  "url":"http://localhost:8080/example/component/accordion/group/",
   "delay":500,
   "removeSelectors":[
     ".snippet-accordion",
