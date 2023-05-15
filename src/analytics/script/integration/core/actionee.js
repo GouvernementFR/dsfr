@@ -48,6 +48,10 @@ class Actionee extends api.core.Instance {
     return api.internals.property.completeAssign(super.proxy, proxy, proxyAccessors);
   }
 
+  get data () {
+    return this._data;
+  }
+
   _config (element, registration) {
     super._config(element, registration);
 

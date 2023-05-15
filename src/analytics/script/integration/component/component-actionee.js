@@ -88,7 +88,7 @@ class ComponentActionee extends Actionee {
 
   _handleCheckable (e) {
     if (e.target && e.target.value !== 'on') {
-      this._data.component_value = e.target.value;
+      this.data.component_value = e.target.value;
     }
 
     switch (true) {
