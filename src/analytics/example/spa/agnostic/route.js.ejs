@@ -1,16 +1,16 @@
 <script>
   const urlPageTitle = 'JS Single Page Application Router';
+  const HREF = document.location.href;
 
   // create document click that watches the nav links only
   document.addEventListener('click', (e) => {
-    const {
-      target
-    } = e;
-    if (!target.matches('a[href]')) {
-      return;
-    }
+    if (!e.target.matches('a[href]')) return;
+    const href = e.target.href;
+    if (href.indexOf(HREF) === -1) return;
+
     e.preventDefault();
-    urlRoute();
+    window.history.pushState({}, '', href);
+    urlLocationHandler();
   });
 
   // create an object that maps the url to the template, title, and description
@@ -20,39 +20,29 @@
       title: '404 | ' + urlPageTitle,
       description: 'Page not found',
     },
-    '/example/analytics/spa/agnostic/': {
+    '': {
       template: 'lorem ipsum dolor sit amet',
       title: 'Home | ' + urlPageTitle,
       description: 'This is the home page',
     },
-    '/example/analytics/spa/agnostic/link': {
+    'link': {
       template: `<a href="#" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a>`,
       title: 'Links | ' + urlPageTitle,
       description: 'This is the about page',
     },
-    '/example/analytics/spa/agnostic/button': {
+    'button': {
       template: `<button id="btn-3" class="<%= prefix %>-btn">Button page 3</button>`,
       title: 'Buttons | ' + urlPageTitle,
       description: 'This is the contact page',
     },
   };
 
-  // create a function that watches the url and calls the urlLocationHandler
-  const urlRoute = (event) => {
-    event = event || window.event; // get window.event if event argument not provided
-    event.preventDefault();
-    // window.history.pushState(state, unused, target link);
-    window.history.pushState({}, '', event.target.href);
-    urlLocationHandler();
-  };
-
   // create a function that handles the url location
   const urlLocationHandler = async () => {
-    let location = window.location.pathname; // get the url path
-    // if the path length is 0, set it to primary page route
-    if (location.length === 0) {
-      location = '/example/analytics/spa/agnostic';
-    }
+    let location = window.location.href.replace(HREF, ''); // get the url route
+
+    console.log('route', location);
+
     // get the route object from the urlRoutes object
     const route = urlRoutes[location] || urlRoutes['404'];
     // get the html from the template
@@ -70,7 +60,7 @@
   // add an event listener to the window that watches for url changes
   window.onpopstate = urlLocationHandler;
   // call the urlLocationHandler function to handle the initial url
-  window.route = urlRoute;
+  window.route = urlLocationHandler;
   // call the urlLocationHandler function to handle the initial url
   urlLocationHandler();
 </script>
