@@ -17,7 +17,7 @@ Ce tableau regroupe les différentes actions remontées à Eulérian pour chaque
 ||fr-breadcrumb__link|CLICK|href<sup>1</sup>|Libellé du lien| |
 |button|fr-btn|CLICK|label<sup>3</sup>|Libellé du bouton|✅|
 |callout|fr-callout|IMPRESSION|label<sup>3</sup>|Titre de la mise en avant ou `Mise en avant`| |
-|card|fr-card|IMPRESSION(sans lien)|label<sup>3</sup>|Titre de la carte| |
+|card|fr-card|IMPRESSION (sans lien)|label<sup>3</sup>|Titre de la carte| |
 ||fr-card__title a|CLICK|href<sup>1</sup>|Lien de la carte|✅|
 |checkbox|fr-checkbox-group [type="checkbox"]|CHECK|value<sup>2</sup> \|\| label<sup>3</sup>|Libellé du champ sélectionné|✅|
 ||fr-checkbox-group [type="checkbox"]|UNCHECK|value<sup>2</sup> \|\| label<sup>3</sup>|Libellé du champ désélectionné|✅|
@@ -71,9 +71,13 @@ Ce tableau regroupe les différentes actions remontées à Eulérian pour chaque
 
 
 <sup>1</sup> Attribut "href" de l'élément. Doit avoir une valeur pour être envoyé.
+
 <sup>2</sup> Attribut "value" de l'élément. Doit avoir une valeur pour être envoyé.
+
 <sup>3</sup> Le label correspond au permier contenu texte de l'élément ou, à défaut de texte, à l'attribut `aria-label`, `alt`, ou `title`
 
 
-Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires
-`data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](component-actions.md)).
+* * *
+
+> **Note**
+> Il reste possible d’ajouter plus d’actions à remonter, en utilisant les attributs utilitaires `data-fr-analytics-{action}` sur un élément HTML d’un composant (voir : [Actions](component-actions.md)).
