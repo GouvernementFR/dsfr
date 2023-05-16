@@ -48,6 +48,10 @@ class Actionee extends api.core.Instance {
     return api.internals.property.completeAssign(super.proxy, proxy, proxyAccessors);
   }
 
+  get data () {
+    return this._data;
+  }
+
   _config (element, registration) {
     super._config(element, registration);
 
@@ -192,7 +196,7 @@ class Actionee extends api.core.Instance {
 
   getHeadingLabel (length = 6) {
     const selector = Array.from({ length: length }, (v, i) => `h${i + 1}`).join(',');
-    const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];
+    const headings = Array.from(this.querySelectorAll(selector)).filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0);
     if (headings.length) {
       for (const heading of headings) {
         const text = this.getFirstText(heading);

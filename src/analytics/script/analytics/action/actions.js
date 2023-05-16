@@ -4,10 +4,15 @@ import { Action } from './action';
 class Actions {
   constructor () {
     this._actions = [];
+    this._isRatingEnabled = false;
   }
 
   configure (config) {
-    Action.isRatingEnabled = config.enableRating === true;
+    this._isRatingEnabled = config.enableRating === true;
+  }
+
+  get isRatingEnabled () {
+    return this._isRatingEnabled;
   }
 
   rewind () {

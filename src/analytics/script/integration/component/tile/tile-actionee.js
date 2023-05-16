@@ -33,7 +33,6 @@ class TileActionee extends ComponentActionee {
   get component () {
     return ID;
   }
-
 }
 
 export { TileActionee };

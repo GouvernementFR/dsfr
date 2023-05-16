@@ -46,9 +46,14 @@ class ComponentActionee extends Actionee {
 
   _handleChange (e) {
     if (e.target && e.target.value) {
-      this._data.component_value = e.target.value;
+      const value = this.getChangeValue(e);
+      if (value) this.data.component_value = value;
       this.act();
     }
+  }
+
+  getChangeValue (e) {
+    return e.target.value;
   }
 
   listenInputValidation (node, type = Type.CLICK) {
@@ -88,7 +93,7 @@ class ComponentActionee extends Actionee {
 
   _handleCheckable (e) {
     if (e.target && e.target.value !== 'on') {
-      this._data.component_value = e.target.value;
+      this.data.component_value = e.target.value;
     }
 
     switch (true) {

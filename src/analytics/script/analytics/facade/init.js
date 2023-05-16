@@ -22,8 +22,7 @@ class Init {
   }
 
   configure () {
-    if (opt.isDisabled) this._reject();
-    else this.init();
+    this.init();
     return this._promise;
   }
 
@@ -39,7 +38,10 @@ class Init {
 
     if (!window[PUSH]) window[PUSH] = (...args) => this.store.push(args);
 
-    this.load();
+    if (opt.isDisabled) {
+      api.inspector.warn('User opted out, eulerian is disabled');
+      this._reject('User opted out, eulerian is disabled');
+    } else this.load();
   }
 
   load () {
@@ -58,7 +60,7 @@ class Init {
 
   error () {
     api.inspector.error('unable to load Eulerian script file. the domain declared in your configuration must match the domain provided by the Eulerian interface (tag creation)');
-    this._reject();
+    this._reject('eulerian script loading error');
   }
 
   loaded () {
