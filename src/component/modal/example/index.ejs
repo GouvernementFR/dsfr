@@ -4,20 +4,20 @@ const sample = getSample(include);
 let dataText = {
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
-    body: include('../example/sample/body/text'),
+    body: include('sample/body/text')
 }
 
 let dataForm = {
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
-    body: include('../example/sample/body/form'),
+    body: include('sample/body/form')
 }
 
 let dataFooterButtons = {
     title: 'Titre de la modale',
     icon: 'arrow-right-line',
-    body: include('../example/sample/body/text') + include('../example/sample/body/text'),
-    footer: include('../example/sample/footer/buttons'),
+    body: include('sample/body/text', { text: { paragraphs: 6 } }),
+    footer: include('../example/sample/footer/buttons')
 }
 %>
 
