@@ -39,7 +39,7 @@
                         <div class="<%= prefix %>-header__tools-links">
                             <ul class="<%= prefix %>-btns-group">
                                 <li>
-                                    <router-link class="<%= prefix %>-btn" to="/link">Lien</router-link>
+                                    <router-link id="btn-shortcut-1" class="<%= prefix %>-btn" to="/link">Lien</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -75,13 +75,13 @@
                 <nav class="<%= prefix %>-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
                   <ul class="<%= prefix %>-nav__list">
                     <li class="<%= prefix %>-nav__item">
-                      <router-link class="<%= prefix %>-nav__link" to="/">Base</router-link>
+                      <router-link id="link-3" class="<%= prefix %>-nav__link" to="/">Base</router-link>
                     </li>
                     <li class="<%= prefix %>-nav__item">
-                      <router-link class="<%= prefix %>-nav__link" to="/link">Liens</router-link>
+                      <router-link id="link-3" class="<%= prefix %>-nav__link" to="/link">Liens</router-link>
                     </li>
                     <li class="<%= prefix %>-nav__item">
-                      <router-link class="<%= prefix %>-nav__link" to="/button">Boutons</router-link>
+                      <router-link id="link-3" class="<%= prefix %>-nav__link" to="/button">Boutons</router-link>
                     </li>
                   </ul>
                 </nav>
@@ -100,7 +100,7 @@
         <h2>Affichage conditionné (v-if)</h2>
         <div v-if="pagination==1">
           <h1>Page {{pagination}}</h1>
-          <a href="#" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-click" >Home</a>
+          <a id="btn-0" href="#" data-<%= prefix %>-analytics-click="libellé envoyé à l'analytics" id="attr-click" >Home</a>
         </div>
         <div v-if="pagination==2">
           <h1>Page {{pagination}}</h1>
@@ -119,7 +119,7 @@
                   </a>
               </li>
               <li>
-                  <a class="<%= prefix %>-pagination__link" id="pagination__link-310" href="prevented" title="Page 1" data-<%= prefix %>-js-pagination-actionee="true" v-on:click.prevent="pagination = 2" >
+                  <a class="<%= prefix %>-pagination__link" id="pagination__link-310" href="prevented" title="Page 1" v-on:click.prevent="pagination = 2" >
                       2
                   </a>
               </li>
@@ -142,8 +142,8 @@
   const { createRouter, createWebHashHistory } = VueRouter
 
   const Base = { template: `lorem ipsum dolor sit amet` };
-  const Link = { template: `<a href="#" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a>` };
-  const Button = { template: `<button id="btn-3" class="<%= prefix %>-btn">Button page 3</button>` };
+  const Link = { template: `<a href="#" id="btn-4" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a>` };
+  const Button = { template: `<button id="btn-5" class="<%= prefix %>-btn">Button page 3</button>` };
 
   const routes = [
       { path: "/", component: Base },
