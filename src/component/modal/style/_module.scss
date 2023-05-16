@@ -131,7 +131,7 @@
     }
   }
 
-  &__body#{ns(scroll-shadow)} {
+  &__body#{ns(scroll-divider)} {
     #{ns(modal)}__footer {
       background-position: 0 0;
       background-repeat: no-repeat;
