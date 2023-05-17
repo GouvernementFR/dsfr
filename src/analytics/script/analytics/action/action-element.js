@@ -67,7 +67,6 @@ class ActionElement {
   begin (data = {}) {
     if (this._hasBegun) return;
     this._hasBegun = true;
-    if (!this._action.isSingular && !(this._isRatingActive && actions.isRatingEnabled)) return;
     if (this._type.isBeginning) queue.appendStartingAction(this._action, data);
   }
 
