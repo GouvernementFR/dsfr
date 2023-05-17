@@ -10,12 +10,6 @@
   #{ns(modal)} {
     @include body {
       @include elevation.elevate(lifted, (legacy: $legacy));
-
-      &#{ns(scroll-shadow)} {
-        #{ns(modal)}__footer {
-          // @include color.background(elevated grey, (legacy:$legacy));
-        }
-      }
     }
 
     &__title {
@@ -23,7 +17,13 @@
     }
 
     &__footer {
-      @include color.background(default grey, (legacy:$legacy));
+      @include color.background(lifted grey, (legacy:$legacy));
+    }
+
+    &__body#{ns(scroll-divider)} {
+      #{ns(modal)}__footer {
+        @include color.background-image(border default grey, (legacy:$legacy));
+      }
     }
   }
 }

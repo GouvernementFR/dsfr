@@ -10,7 +10,6 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/legacy';
 @import 'style/scheme';
 
 @include _modal-scheme(true);
