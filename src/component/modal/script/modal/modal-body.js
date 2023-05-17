@@ -9,7 +9,7 @@ class ModalBody extends api.core.Instance {
   }
 
   init () {
-    this.listen('scroll', this.shade.bind(this));
+    this.listen('scroll', this.divide.bind(this));
   }
 
   activate () {
@@ -21,15 +21,15 @@ class ModalBody extends api.core.Instance {
     this.isResizing = false;
   }
 
-  shade () {
+  divide () {
     if (this.node.scrollHeight > this.node.clientHeight) {
       if (this.node.offsetHeight + this.node.scrollTop >= this.node.scrollHeight) {
-        this.removeClass(ModalSelector.SCROLL_SHADOW);
+        this.removeClass(ModalSelector.SCROLL_DIVIDER);
       } else {
-        this.addClass(ModalSelector.SCROLL_SHADOW);
+        this.addClass(ModalSelector.SCROLL_DIVIDER);
       }
     } else {
-      this.removeClass(ModalSelector.SCROLL_SHADOW);
+      this.removeClass(ModalSelector.SCROLL_DIVIDER);
     }
   }
 
@@ -42,7 +42,7 @@ class ModalBody extends api.core.Instance {
     const offset = OFFSET * (this.isBreakpoint(api.core.Breakpoints.MD) ? 2 : 1);
     if (this.isLegacy) this.style.maxHeight = `${window.innerHeight - offset}px`;
     else this.style.setProperty('--modal-max-height', `${window.innerHeight - offset}px`);
-    this.shade();
+    this.divide();
   }
 }
 
