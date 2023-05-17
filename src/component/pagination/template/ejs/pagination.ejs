@@ -12,10 +12,15 @@
 * pagination.last (object, optional): item last
 
 %>
-<% let pagination = locals.pagination || {}; %>
+<% 
+  let pagination = locals.pagination || {};
+  const attrPagination = pagination.attr || {};
+  attrPagination['aria-label'] = 'Pagination';
+  if (pagination.pages && pagination.pages.length) attrPagination['data-fr-analytics-page-total'] = pagination.pages[pagination.pages.length - 1].label;
+%>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<nav role="navigation" class="<%= prefix %>-pagination" aria-label="Pagination">
+<nav role="navigation" class="<%= prefix %>-pagination" <%- includeAttrs(attrPagination) %>>
   <ul class="<%= prefix %>-pagination__list">
     <%
     let disabled = pagination.pages && pagination.pages[0].active === true;

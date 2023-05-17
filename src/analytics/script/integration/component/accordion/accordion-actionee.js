@@ -42,6 +42,10 @@ class AccordionActionee extends ComponentActionee {
   get component () {
     return ID;
   }
+
+  dispose () {
+    super.dispose();
+  }
 }
 
 export { AccordionActionee };

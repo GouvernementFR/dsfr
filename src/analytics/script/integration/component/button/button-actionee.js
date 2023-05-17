@@ -23,6 +23,13 @@ class ButtonActionee extends ComponentActionee {
   }
 
   get label () {
+    if (this.node.tagName === 'input') {
+      switch (this.node.type) {
+        case 'button':
+        case 'submit':
+          if (this.hasAttribute('value')) return this.getAttribute('value');
+      }
+    }
     const firstText = this.getFirstText();
     if (firstText) return firstText;
     return 'bouton';

@@ -12,9 +12,15 @@ class UploadActionee extends ComponentActionee {
   }
 
   init () {
-    this.setClickType();
+    this.setChangeType();
     this._label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    this.listenClick();
+    this.listenChange();
+  }
+
+  setChangeValue (e) {
+    if (!e.target || !e.target.files) return;
+    const value = Array.from(e.target.files).map(file => /(?:\.([^.]+))?$/.exec(file.name)[1]).filter((name, index, array) => array.indexOf(name) === index).join(' - ');
+    if (value) this.value = value;
   }
 
   get label () {
@@ -24,10 +30,6 @@ class UploadActionee extends ComponentActionee {
     }
 
     return 'ajout de fichier';
-  }
-
-  getData () {
-    return { component_value: this.node.value.trim() };
   }
 
   get component () {

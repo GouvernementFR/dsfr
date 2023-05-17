@@ -48,6 +48,10 @@ class Actionee extends api.core.Instance {
     return api.internals.property.completeAssign(super.proxy, proxy, proxyAccessors);
   }
 
+  get data () {
+    return this._data;
+  }
+
   _config (element, registration) {
     super._config(element, registration);
 
@@ -101,17 +105,17 @@ class Actionee extends api.core.Instance {
 
       case isDownload:
         this._type = Type.DOWNLOAD;
-        this._parameters.component_value = href;
+        this.value = href;
         break;
 
       case hostname === location.hostname :
         this._type = Type.INTERNAL;
-        this._parameters.component_value = href;
+        this.value = href;
         break;
 
       case hostname.length > 0 :
         this._type = Type.EXTERNAL;
-        this._parameters.component_value = href;
+        this.value = href;
         break;
 
       default:
@@ -145,7 +149,10 @@ class Actionee extends api.core.Instance {
   }
 
   act (data = {}) {
-    if (this._actionElement !== undefined) this._actionElement.act(Object.assign(this._data, data));
+    if (this._actionElement !== undefined) {
+      this._data.component_value = this.value;
+      this._actionElement.act(Object.assign(this._data, data));
+    }
   }
 
   getFirstText (node) {
@@ -192,7 +199,7 @@ class Actionee extends api.core.Instance {
 
   getHeadingLabel (length = 6) {
     const selector = Array.from({ length: length }, (v, i) => `h${i + 1}`).join(',');
-    const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];
+    const headings = Array.from(this.querySelectorAll(selector)).filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0);
     if (headings.length) {
       for (const heading of headings) {
         const text = this.getFirstText(heading);
@@ -218,6 +225,14 @@ class Actionee extends api.core.Instance {
 
   get label () {
     return null;
+  }
+
+  get value () {
+    return this._value || this.label;
+  }
+
+  set value (value) {
+    this._value = value;
   }
 
   get isActionee () {

@@ -9,7 +9,7 @@ class Debug {
   }
 
   set isActive (value) {
-    if (this.isActive === value) return;
+    if (!this.debugger || this.isActive === value) return;
     this.debugger.debug(value ? 1 : 0);
   }
 }

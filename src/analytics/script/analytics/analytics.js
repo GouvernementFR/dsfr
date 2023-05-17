@@ -48,7 +48,7 @@ class Analytics {
 
   _build () {
     this._init = new Init(this._config.domain);
-    this._init.configure().then(this._start.bind(this), this._reject);
+    this._init.configure().then(this._start.bind(this), (reason) => this._reject(reason));
   }
 
   get isReady () {
