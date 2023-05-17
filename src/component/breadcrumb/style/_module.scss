@@ -72,7 +72,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       }
     }
   }
-  
+
   &__link {
     vertical-align: top;
     position: relative;
@@ -81,7 +81,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include text-style(xs);
     @include hover-underline;
     @include padding(0);
-    
+
     &[aria-current] {
       pointer-events: none;
       cursor: default;

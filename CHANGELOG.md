@@ -12,6 +12,77 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.9
 
+### [1.9.3](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...1.9.3) - 17 Mai 2023
+
+#### 🐛 fix(breadcrumb): ajoute une page exemple alternative [(#600)](https://github.com/GouvernementFR/dsfr/pull/600)
+- étiquette d&#39;élément span rendue possible sur l&#39;élément courant du fil d&#39;ariane
+- ajout d&#39;une page d&#39;exemple avec boutons
+
+
+#### 📝 doc(analytics): doc analytics en markdown [(#599)](https://github.com/GouvernementFR/dsfr/pull/599)
+Transformation du pdf de la doc analytics en fichiers markdown
+
+
+#### 🐛 fix(analytics): correctifs divers [(#596)](https://github.com/GouvernementFR/dsfr/pull/596)
+- Ajout de la récupération automatique de la pagination (voir [page.md](https://github.com/GouvernementFR/dsfr/blob/main/src/analytics/doc/analytics/collector/page.md))
+- Correction action dynamique vide
+- Correction envoi data
+- Correction erreur querySelector dans la hiérarchie
+- Revue de la profondeur de la hiérarchie
+- Correction de la version standalone
+- Collection désynchronisée pour attendre l’initialisation
+- Correction du cycle de vie des instances et garbage collection
+- Ajout d’une fonctionnalité d’Opt-in/out (voir [opt.md](https://github.com/GouvernementFR/dsfr/blob/main/src/analytics/doc/analytics/cmp/opt.md))
+- Ajout de la valeur dans le label au submit (button, input)
+- Ajustements component_value sur chaque composant
+
+
+#### 🐛 fix(core): La valeur no-wrap n’existe pas dans la spécification CSS [(#594)](https://github.com/GouvernementFR/dsfr/pull/594)
+Il y a un `-` en trop.
+
+Voir https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property
+
+partial-fix de #593
+
+
+#### 🐛 fix(button, theme): retrait propriété css :where [(#597)](https://github.com/GouvernementFR/dsfr/pull/597)
+La propriété CSS :where est encore trop récente (chrome 88).
+
+-&gt; retrait de cette propriété
+
+
+#### 🐛 fix(modal): correction ombre modal footer [(#572)](https://github.com/GouvernementFR/dsfr/pull/572)
+L&#39;ombre du footer de la modal scrollable est mal placée et trop forte.
+
+- Remplacement de l&#39;ombre par une bordure d&#39;1px en defaut-grey en haut du footer
+- remplacement du token de background-color du footer par background-lifted-grey
+- ajout d&#39;un texte plus long dans l&#39;exemple modal + footer pour faire apparaître le scroll
+
+
+#### 🐛 fix(password, account): correction capslock safari [(#503)](https://github.com/GouvernementFR/dsfr/pull/503)
+- Correction erreur js sur le champ password au clic sur le trousseau (safari)
+- Retrait icone native capslock safari
+- Ajout attribut `autocapitalize=&#39;off&#39;` sur les champs password et email pour désactiver la majuscule au début (mobile)
+- Ajout attribut `autocorrect` sur les champs password et email pour désactiver la correction orthographique
+
+
+#### ✨ feat(*): nouvelle version interne changelog [(#590)](https://github.com/GouvernementFR/dsfr/pull/590)
+Outil en ligne de commande pour générer un journal des modifications CHANGELOG.md à partir des balises git et de l&#39;historique des commits.
+
+Commande à exécuter à la racine du projet, git log est exécuté en arrière-plan afin d&#39;analyser l&#39;historique des commits, en lançant :
+```
+yarn changelog
+```
+
+Pour ajouter les commits d&#39;une nouvelle version en préparation, renseigner le futur tag : 
+```
+yarn changelog -t X.X.X
+```
+
+La gestion de l&#39;affichage du changelog est présente dans le template EJS `tools/classes/changelog/changelog.ejs`
+
+
+
 ### [v1.9.2](https://github.com/GouvernementFR/dsfr/compare/v1.9.1...v1.9.2) - 18 Avril 2023
 
 #### 🐛 fix(analytics): correctifs analytics &amp; page test spa [(#587)](https://github.com/GouvernementFR/dsfr/pull/587)
