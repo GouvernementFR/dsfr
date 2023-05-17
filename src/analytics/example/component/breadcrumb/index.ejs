@@ -1,8 +1,5 @@
 <% const sample = getSample(include); %>
 
-<div class="<%= prefix %>-container" >
-
-  <%- section('Étiquette d’élément A' , null, 0) %>
-  <%- include('../../../../component/breadcrumb/example/sample/sample-a.ejs', {}); %>
-
+<div class="<%= prefix %>-container">
+  <%- sample('Étiquette d’élément a', '../../../../component/breadcrumb/example/sample/sample-a'); %>
 </div>
