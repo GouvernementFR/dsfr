@@ -76,6 +76,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
   &__link {
     vertical-align: top;
     position: relative;
+    @include link-underline;
     @include disable-tint;
     @include text-style(xs);
     @include hover-underline;
