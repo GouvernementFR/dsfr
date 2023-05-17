@@ -12,7 +12,7 @@ class SearchActionee extends ComponentActionee {
   }
 
   init () {
-    this.listenInputValidation(this.node, Type.SEARCH);
+    this.listenInputValidation(this.node, Type.SEARCH, true);
   }
 
   get label () {

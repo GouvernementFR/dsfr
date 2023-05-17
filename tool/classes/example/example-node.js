@@ -2,6 +2,7 @@ const fs = require('fs');
 
 class ExampleNode {
   constructor (dir, relative = '', isStandalone, config = 'tool/example/config.ejs') {
+    // console.log(dir, config);
     this.dir = dir;
     this.relative = relative;
     this.isStandalone = isStandalone;
@@ -14,14 +15,14 @@ class ExampleNode {
   }
 
   _parse () {
-    const entries = fs.readdirSync(this.path, { withFileTypes: true });
     const config = `${this.path}config.ejs`;
+    if (fs.existsSync(config)) this._config = config;
+
+    const entries = fs.readdirSync(this.path, { withFileTypes: true });
 
     for (const entry of entries) {
       switch (true) {
         case entry.isFile() && entry.name === 'index.ejs':
-
-          if (fs.existsSync(config)) this._config = config;
           this._hasData = true;
           break;
 
