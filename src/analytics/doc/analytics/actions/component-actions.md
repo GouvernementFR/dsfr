@@ -83,7 +83,7 @@ Vous trouverez pour chaque composant une colonne :
 |               | .fr-translate__btn                                                                                          |              CLICK              |                 |    label<sup>2</sup>     | <ul><li>libellé du bouton</li><li>`bouton sélecteur de langue`</li></ul>                                                                                     |                       |
 | upload        | .fr-upload                                                                                                  |             CHANGE              |                 |  extension<sup>7</sup>   | <ul><li>Libellé de l'ajout de fichier</li><li>`Ajout de fichier`</li></ul>                                                                                   |           ✅           |
 
-<sup>1</sup> Type INTERNAL si lien interne (meme domaine), ou EXTERNAL si lien externe, déterminé par le `href`. (CLICK si pas de href)
+<sup>1</sup> Type INTERNAL si lien interne (meme domaine), ou EXTERNAL si lien externe, déterminé par le `href`. Dans les autres cas, type CLICK
 
 <sup>2</sup> Voir le label associé dans la colonne "label" du tableau
 

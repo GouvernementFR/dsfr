@@ -35,8 +35,11 @@ Mode : [out] | type : _interaction_
 
 Interaction générique du clic.
 
-L’action click renverra automatiquement l’action ‘internal', ‘external’, ‘download’, ou par défaut 'click’,
-en fonction des attributs de l'élément (href, download)
+De manière automatique, le type de l'action approprié sera sélectionné : 
+* `DOWNLOAD` s'il s'agit d'un anchor avec href et attribut download
+* `INTERNAL` s'il s'agit d'un anchor avec href qui pointe sur le même domaine
+* `EXTERNAL` s'il s'agit d'un anchor avec href qui pointe sur un domaine différent
+* `CLICK` dans les autres cas
 
 * * *
 
