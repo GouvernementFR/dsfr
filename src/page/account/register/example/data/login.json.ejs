@@ -23,7 +23,11 @@ elements.push({
     id: uniqueId('username'),
     label: getText('login.username', 'login'),
     hint: getText('login.username.hint', 'login'),
-    name: 'username'
+    name: 'username',
+    attributes: {
+      'autocapitalize': 'off',
+      'autocorrect': 'off',
+    },
   }
 })
 

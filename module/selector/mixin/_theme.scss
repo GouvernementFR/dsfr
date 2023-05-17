@@ -8,7 +8,7 @@
   }
   $selector: &;
   @at-root {
-    :root:where(#{namespace.ns-attr(theme, $theme)}) {
+    :root#{namespace.ns-attr(theme, $theme)} {
       @include utilities.nest($selector) {
         @content;
       }

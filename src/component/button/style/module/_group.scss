@@ -158,7 +158,7 @@
   /**
   * fr-btns-group--md : (défaut) Fixe les boutons à la taille MD
   */
-  &:where(:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg)) {
+  &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
     #{ns(btn)} {
       @include has-not-icon {
         @include nest-btn(md, false, null, null, false);

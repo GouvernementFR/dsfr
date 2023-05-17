@@ -20,7 +20,7 @@ hr {
     @include text-style(sm);
     text-transform: uppercase;
     @include font-weight(bold);
-    @include display-flex(row, center, center, no-wrap, inline);
+    @include display-flex(row, center, center, nowrap, inline);
     @include _pseudo(before after, '', inline-flex) {
       height: 1px;
       width: 100%;

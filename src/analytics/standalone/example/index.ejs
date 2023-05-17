@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Analytics standalone</title>
+    <link href="../component/connect/connect.standalone.css" rel="stylesheet" />
+    <script>
+      window['<%= namespace %>'] = {
+        verbose: true,
+        production: false,
+        analytics: {
+          domain: 'gva.et-gv.fr',
+          page: {
+            categories: ['category1', 'category2', 'category3'],
+            template: 'nom template', // page template
+          },
+          site: {
+            entity: 'Pages de test du SIG', // Entity responsible for website
+          },
+        }
+      };
+    </script>
+  </head>
+
+  <body style="margin: 20px; padding: 0;">
+    <h1>Titre de la page standalone</h1>
+    <p>Ouvrir l'inspecteur pour tester l'envoi des données</p>
+    <script src='analytics.module.standalone.js'></script>
+  </body>
+</html>
