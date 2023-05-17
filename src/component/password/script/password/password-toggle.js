@@ -29,7 +29,6 @@ class PasswordToggle extends api.core.Instance {
 
   toggle () {
     this.isChecked = !this._isChecked;
-    // this.node.checked = this.isChecked;
   }
 
   swapFont (families) {
