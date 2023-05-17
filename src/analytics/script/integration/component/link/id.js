@@ -1,3 +1,3 @@
-const ID = 'dsfr_link';
+const ID = 'link';
 
 export default ID;

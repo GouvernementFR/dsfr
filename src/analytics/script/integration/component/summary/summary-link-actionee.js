@@ -1,10 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class SummaryLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -12,12 +11,14 @@ class SummaryLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 
   get label () {
-    return this.node.textContent.trim();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+    return 'lien sommaire';
   }
 
   get component () {

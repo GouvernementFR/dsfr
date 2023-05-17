@@ -1,12 +1,11 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { FormSelector } from '../form/form-selector';
 import ID from './id';
 
 class RadioActionee extends ComponentActionee {
   constructor () {
-    super(Type.CHECK, 1);
+    super(1, true);
     this._data = {};
   }
 
@@ -15,6 +14,7 @@ class RadioActionee extends ComponentActionee {
   }
 
   init () {
+    this.setCheckType();
     this.listenCheckable();
   }
 
@@ -23,11 +23,17 @@ class RadioActionee extends ComponentActionee {
     const fieldset = this.node.closest(FormSelector.FIELDSET);
     if (fieldset) {
       const legend = fieldset.querySelector(FormSelector.LEGEND);
-      if (legend) parts.push(legend.textContent.trim());
+      if (legend) {
+        const firstTextLegend = this.getFirstText(legend);
+        if (firstTextLegend) parts.push(firstTextLegend);
+      }
     }
     const label = this.node.parentNode.querySelector(api.internals.ns.selector('label'));
-    if (label) parts.push(label.textContent.trim());
-    return parts.join(' ＞ ');
+    if (label) {
+      const firstTextLabel = this.getFirstText(label);
+      if (firstTextLabel) parts.push(firstTextLabel);
+    }
+    return parts.join(' › ');
   }
 
   get component () {

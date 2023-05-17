@@ -1,12 +1,11 @@
 import api from '../../../../api.js';
 import { ComponentActionee } from '../component-actionee';
 import { BreadcrumbButtonActionee } from './breadcrumb-button-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 
 class BreadcrumbActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -15,13 +14,12 @@ class BreadcrumbActionee extends ComponentActionee {
 
   init () {
     if (!this.isBreakpoint(api.core.Breakpoints.MD)) {
+      this.setDiscloseType();
       this.register(`[aria-controls="${this.id}"]`, BreadcrumbButtonActionee);
       this.listenDisclose();
+    } else {
+      this.setImpressionType();
     }
-  }
-
-  handleDisclose () {
-    this.act();
   }
 
   get label () {

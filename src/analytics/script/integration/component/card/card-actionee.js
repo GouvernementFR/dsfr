@@ -1,12 +1,10 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import { CardSelector } from './card-selector';
 import ID from './id';
 
 class CardActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION);
-    this.handlingClick = this.handleClick.bind(this);
+    super(1, true);
   }
 
   static get instanceClassName () {
@@ -17,29 +15,26 @@ class CardActionee extends ComponentActionee {
     const link = this.node.querySelector(CardSelector.LINK);
     if (link) {
       this.link = link;
-      this.detectInteraction(link);
-      this.link.addEventListener('click', this.handlingClick, { capture: true });
-    }
+      this.detectInteractionType(link);
+      this.listenClick(link);
+    } else this.setImpressionType();
   }
 
   get label () {
     const cardTitle = this.node.querySelector(CardSelector.TITLE);
-    if (cardTitle) return cardTitle.textContent.trim();
+    if (cardTitle) {
+      const text = this.getFirstText(cardTitle);
+      if (text) return text;
+    }
 
-    const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
-    const headings = this.node.querySelector(selector) ? [...this.node.querySelector(selector)].filter(heading => (this.node.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_CONTAINED_BY) > 0) : [];
-    if (headings.length) return headings[0].textContent.trim();
+    const heading = this.getHeadingLabel();
+    if (heading) return heading;
 
-    return null;
+    return 'carte';
   }
 
   get component () {
     return ID;
-  }
-
-  dispose () {
-    if (this.link) this.link.removeEventListener('click', this.handlingClick, { capture: true });
-    super.dispose();
   }
 }
 

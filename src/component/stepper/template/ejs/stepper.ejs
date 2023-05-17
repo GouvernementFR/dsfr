@@ -3,6 +3,8 @@
 
 * stepper.title (string, required): Titre de l'indicateur d'étapes
 
+* stepper.id (String, optional): Id du composant
+
 * stepper.currentStep (integer, required): Numéro de l'étape courrante
 
 * stepper.stepCount (integer, required): Nombre d'étapes
@@ -19,11 +21,13 @@
  let classes = stepper.classes || [];
  const markup = stepper.markup || 'h2';
 
+ let attributes = {};
  let stepAttrs = {};
+ if (stepper.id) attributes.id = stepper.id;
  classes.push(prefix + '-stepper');
 %>
 
-<div <%- includeClasses(classes); %>>
+<div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
   <% if (stepper.title !== undefined) { %>
     <<%= markup %> class="<%= prefix%>-stepper__title">
       <% if (stepper.currentStep && stepper.stepCount) { %>

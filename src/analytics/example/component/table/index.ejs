@@ -1,0 +1,9 @@
+<% 
+  const sample = getSample(include);
+  let data = { caption: 'Caption du tableau (accessibilité)', col: 6, row: 3};
+%>
+
+
+<div class="<%= prefix %>-container">
+  <%- sample('Tableau', '../../../../component/table/example/sample/table-default', {table:data});  %>
+</div>

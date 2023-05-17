@@ -2,7 +2,7 @@ import { ComponentActionee } from '../component-actionee';
 
 class NavigationActionee extends ComponentActionee {
   constructor () {
-    super(null, 1);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -10,7 +10,7 @@ class NavigationActionee extends ComponentActionee {
   }
 
   get label () {
-    return 'Navigation';
+    return 'navigation';
   }
 }
 

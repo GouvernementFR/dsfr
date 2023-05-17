@@ -1,12 +1,10 @@
 <%
 const fullscreen = getText('button.fullscreen', 'transcription');
-let modalId = prefix + '-transcription__modal-' + transcription.id;
-%> 
+let modalId = prefix + '-transcription-modal-' + transcription.id;
+%>
 
 <div class="<%= prefix %>-transcription__footer">
   <div class="<%= prefix %>-transcription__actions-group">
-    <button class="<%= prefix %>-btn <%= prefix %>-btn--fullscreen" aria-controls="<%= modalId %>" data-fr-opened="false" title="<%= transcription.fullscreen %>">
-      <%= fullscreen %>
-    </button>
+    <%- include('../../../../button/template/ejs/button.ejs', { button: {label: fullscreen, title: fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'data-fr-opened': false} } } ); %>
   </div>
 </div>

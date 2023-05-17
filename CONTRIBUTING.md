@@ -24,10 +24,11 @@ Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des document
     - [tests Sass](#tests-sass)
     - [tests Accessibilité](#tests-accessibilité)
     - [Lint](#lint)
+    - [Changelog](#changelog)
 
 ## Installation
 ### Installation locale
-Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est donc nécessaire d’installer une version récente de nodeJs. Dans le terminal nous utiliserons les commandes de **npm** ou **yarn** pour lancer les scripts.
+Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est donc nécessaire d’installer une version récente de nodeJs. Dans le terminal nous utiliserons les commandes de **npm** ou **yarn** (v1.22.19) pour lancer les scripts.
 
 Le dépôt est disponible à cette adresse: https://github.com/GouvernementFR/dsfr
 
@@ -365,3 +366,21 @@ yarn build --test
 ```
 La configuration est présente dans le fichier `.eslintrc.json`. Elle reprend en grande partie la configuration standard de esLint
 
+#### Changelog
+Outil en ligne de commande pour générer un journal des modifications `CHANGELOG.md` à partir des balises git et de l'historique des commits, nous utilisons [Auto-changelog](https://github.com/cookpete/auto-changelog).
+
+Commande à executer à la racine du projet, `git log` est exécuté en arrière-plan afin d'analyser l'historique des commits, en lançant :
+
+```
+yarn version
+```
+
+Il faut ensuite renseigner le numéro de version de la prochaine release :
+```
+info Current version: x.x.x
+question New version: [X.X.X]
+```
+
+La configuration est présente dans le fichier `.auto-changelog`.
+
+La gestion de l'affichage du changelog est présente dans le template [Handlebars](https://handlebarsjs.com/) `changelog-template.hbs`.

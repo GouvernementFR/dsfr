@@ -1,9 +1,8 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 
 class FooterLinkActionee extends ComponentActionee {
   constructor () {
-    super(Type.INTERNAL, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -11,12 +10,15 @@ class FooterLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 
   get label () {
-    return this.getInteractionLabel();
+    const label = this.getInteractionLabel();
+    if (label) return label;
+
+    return 'lien pied de page';
   }
 }
 

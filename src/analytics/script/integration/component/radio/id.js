@@ -1,3 +1,3 @@
-const ID = 'dsfr_radio';
+const ID = 'radio';
 
 export default ID;

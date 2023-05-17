@@ -1,9 +1,9 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
+import api from '../../../../api';
 
 class BreadcrumbButtonActionee extends ComponentActionee {
   constructor () {
-    super(Type.CLICK, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -11,13 +11,16 @@ class BreadcrumbButtonActionee extends ComponentActionee {
   }
 
   init () {
+    if (this.isBreakpoint(api.core.Breakpoints.MD)) return;
+    this.setClickType();
     this.id = this.node.id || this.registration.creator.node.id;
-    this._button = this.element.getInstance('BreadcrumbButton');
     this.listenClick();
   }
 
   get label () {
-    return this.node.textContent.trim();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+    return 'voir le fil d\'ariane';
   }
 
   get component () {

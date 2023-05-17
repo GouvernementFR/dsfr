@@ -3,7 +3,7 @@ import { SidemenuSelector } from './sidemenu-selector';
 
 class SidemenuSectionActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -12,17 +12,25 @@ class SidemenuSectionActionee extends ComponentActionee {
 
   init () {
     this._wrapper = this.node.closest(SidemenuSelector.ITEM);
-    this._instance = this.element.getInstance('Collapse');
   }
 
   get label () {
     if (this._wrapper) {
       const button = this._wrapper.querySelector(SidemenuSelector.BUTTON);
-      if (button) return button.textContent.trim();
+      if (button) {
+        const firstText = this.getFirstText(button);
+        if (firstText) return firstText;
+      }
     }
-    const button = this._instance.buttons.filter(button => button.isPrimary)[0];
-    if (button) return button.node.textContent.trim();
-    return null;
+    const instance = this.element.getInstance('Collapse');
+    if (instance) {
+      const button = instance.buttons.filter(button => button.isPrimary)[0];
+      if (button) {
+        const firstTextBtn = this.getFirstText(button);
+        if (firstTextBtn) return firstTextBtn;
+      }
+    }
+    return 'section menu latéral';
   }
 }
 

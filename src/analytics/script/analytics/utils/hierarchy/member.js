@@ -31,8 +31,8 @@ class Member {
   }
 
   _parseHeadings () {
-    const selector = Array.from({ length: this._level }, (v, i) => `:scope > h${i + 1}, :scope > * > h${i + 1}`).join(',');
-    this._headings = [...this._node.querySelectorAll(selector)].filter(heading => (this._target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
+    const selector = Array.from({ length: this._level }, (v, i) => `h${i + 1}`).join(',');
+    this._headings = Array.from(this._node.querySelectorAll(selector)).filter(heading => heading === this._node || heading.parentNode === this._node || (heading.parentNode != null && heading.parentNode.parentNode === this._node)).filter(heading => (this._target.compareDocumentPosition(heading) & NODE_POSITION) > 0).map(heading => new Heading(heading)).reverse();
   }
 
   _getComponent () {
@@ -49,7 +49,6 @@ class Member {
     if (heading) {
       this._level = Number(heading.tagName.charAt(1)) - 1;
     }
-    // console.log('INSTANCE LEVEL', instance.level, this._level);
 
     if (!isNaN(instance.level) && instance.level < this._level) this._level = instance.level;
     this._label = instance.label;
@@ -68,7 +67,7 @@ class Member {
     });
     if (!labels.length) return false;
     this._type = Type.HEADING;
-    this._label = labels.join(' ＞ ');
+    this._label = labels.join(' › ');
     return true;
   }
 

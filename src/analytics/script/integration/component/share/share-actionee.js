@@ -1,21 +1,27 @@
 import { ComponentActionee } from '../component-actionee';
-import { Type } from '../../../analytics/action/type';
 import ID from './id';
 import { ShareSelector } from './share-selector';
 
 class ShareActionee extends ComponentActionee {
   constructor () {
-    super(Type.IMPRESSION, 1);
+    super(1, true);
   }
 
   static get instanceClassName () {
     return 'ShareActionee';
   }
 
+  init () {
+    this.setImpressionType();
+  }
+
   get label () {
     const title = this.querySelector(ShareSelector.TITLE);
-    if (title) return title.textContent.trim();
-    return 'Boutons de partage';
+    if (title) {
+      const firstText = this.getFirstText(title);
+      if (firstText) return firstText;
+    }
+    return 'boutons de partage';
   }
 
   get component () {

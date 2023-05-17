@@ -1,18 +1,15 @@
 import api from '../../api.js';
 import patch from '../../../patch/script/patch';
-import Mode from './mode';
+import Collection from './engine/collection';
 import { Init } from './facade/init';
-import { Page } from './collector/page/page';
-import { Site } from './collector/site/site';
-import { User } from './collector/user/user';
-import { Search } from './collector/search/search';
-import { Funnel } from './collector/funnel/funnel';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
-import actions from './action/actions';
 import push from './facade/push';
 import PushType from './facade/push-type';
-
-const SLICE = 50;
+import actions from './action/actions';
+import queue from './engine/queue';
+import opt from './facade/opt';
+import debug from './facade/debug';
+import { Collector } from './engine/collector';
 
 class Analytics {
   constructor () {
@@ -24,10 +21,10 @@ class Analytics {
         this._reject = reject;
       }
     });
-    this._configure(api);
+    this._configure();
   }
 
-  _configure (api) {
+  _configure () {
     switch (true) {
       case window[patch.namespace] !== undefined:
         this._config = window[patch.namespace].configuration.analytics;
@@ -50,30 +47,7 @@ class Analytics {
   }
 
   _build () {
-    switch (this._config.mode) {
-      case Mode.MANUAL:
-        this._mode = Mode.MANUAL;
-        break;
-
-      case Mode.NO_COMPONENTS:
-        this._mode = Mode.NO_COMPONENTS;
-        break;
-
-      case Mode.AUTO:
-      default:
-        this._mode = Mode.AUTO;
-    }
-
     this._init = new Init(this._config.domain);
-
-    this._user = new User(this._config.user);
-    this._site = new Site(this._config.site);
-    this._page = new Page(this._config.page);
-    this._search = new Search(this._config.search);
-    this._funnel = new Funnel(this._config.funnel);
-
-    this.reset();
-
     this._init.configure().then(this._start.bind(this), this._reject);
   }
 
@@ -87,41 +61,57 @@ class Analytics {
 
   _start () {
     if (this._isReady) return;
+
+    this._cmp = new ConsentManagerPlatform(this._config.cmp);
+    this._collector = new Collector(this._config);
+    this._collector.reset();
+    actions.configure(this._config);
+
     this._isReady = true;
     this._resolve();
 
-    this._cmp = new ConsentManagerPlatform(this._config.cmp);
-
-    switch (this._mode) {
-      case Mode.AUTO:
-      case Mode.NO_COMPONENTS:
-        this.collect();
-        break;
-    }
+    queue.start();
+    this._collector.start();
   }
 
   get page () {
-    return this._page;
+    return this._collector.page;
   }
 
   get user () {
-    return this._user;
+    return this._collector.user;
   }
 
   get site () {
-    return this._site;
+    return this._collector._site;
   }
 
   get search () {
-    return this._search;
+    return this._collector.search;
   }
 
   get funnel () {
-    return this._funnel;
+    return this._collector.funnel;
   }
 
   get cmp () {
     return this._cmp;
+  }
+
+  get opt () {
+    return opt;
+  }
+
+  get collection () {
+    return this._collector.collection;
+  }
+
+  get isDebugging () {
+    return debug.isActive;
+  }
+
+  set isDebugging (value) {
+    debug.isActive = value;
   }
 
   push (type, layer) {
@@ -129,37 +119,17 @@ class Analytics {
   }
 
   reset (clear = false) {
-    this._user.reset(clear);
-    this._site.reset(clear);
-    this._page.reset(clear);
-    this._search.reset(clear);
-    this._funnel.reset(clear);
+    this._collector.reset();
   }
 
   collect () {
-    const actionLayers = actions.layers;
-
-    let layer = [
-      ...this._user.layer,
-      ...this._site.layer,
-      ...this._page.layer,
-      ...this._search.layer,
-      ...this._funnel.layer
-    ];
-
-    const length = ((actionLayers.length / SLICE) + 1) | 0;
-    for (let i = 0; i < length; i++) {
-      const slice = actionLayers.slice(i * SLICE, (i + 1) * SLICE);
-      layer.push(...slice.flat());
-      this.push(PushType.COLLECTOR, layer);
-      layer = [];
-    }
+    this._collector.collect();
   }
 }
 
 const analytics = new Analytics();
 
-analytics.Mode = Mode;
+analytics.Collection = Collection;
 analytics.PushType = PushType;
 
 export default analytics;

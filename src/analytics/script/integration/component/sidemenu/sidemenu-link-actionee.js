@@ -3,7 +3,7 @@ import ID from './id';
 
 class SidemenuLinkActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -11,12 +11,15 @@ class SidemenuLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 
   get label () {
-    return this.node.textContent.trim();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+
+    return 'lien menu latéral';
   }
 
   get component () {

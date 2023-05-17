@@ -2,7 +2,7 @@ import { ComponentActionee } from '../component-actionee';
 
 class BreadcrumbLinkActionee extends ComponentActionee {
   constructor () {
-    super(null, 2);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -10,7 +10,7 @@ class BreadcrumbLinkActionee extends ComponentActionee {
   }
 
   init () {
-    this.detectInteraction();
+    this.detectInteractionType();
     this.listenClick();
   }
 
@@ -19,7 +19,9 @@ class BreadcrumbLinkActionee extends ComponentActionee {
   }
 
   get label () {
-    return this.node.textContent.trim();
+    const firstText = this.getFirstText();
+    if (firstText) return firstText;
+    return 'lien fil d\'ariane';
   }
 
   get component () {

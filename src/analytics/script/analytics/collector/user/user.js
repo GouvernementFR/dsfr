@@ -20,7 +20,7 @@ class User {
       this._isNew = false;
     }
     this.profile = clear ? undefined : this._config.profile;
-    this.language = clear ? navigator.language : this._config.language || navigator.language;
+    this.language = clear ? undefined : this._config.language;
     this.type = clear ? undefined : this._config.type;
   }
 
@@ -68,7 +68,7 @@ class User {
   }
 
   get language () {
-    return this._language;
+    return this._language || navigator.language;
   }
 
   set type (id) {
@@ -81,12 +81,12 @@ class User {
 
   get layer () {
     const layer = [];
-    if (this._uid) layer.push('uid', normalize(this._uid));
-    if (this._email) layer.push('email', normalize(this._email));
-    if (this._isNew) layer.push('newcustomer', '1');
+    if (this.uid) layer.push('uid', normalize(this.uid));
+    if (this.email) layer.push('email', normalize(this.email));
+    if (this.isNew) layer.push('newcustomer', '1');
+    if (this.language) layer.push('user_language', this.language);
+    layer.push('user_login_status', this._status.value);
     if (this._profile) layer.push('profile', this._profile.value);
-    if (this._status) layer.push('user_login_status', this._status.value);
-    if (this._language) layer.push('user_language', this._language);
     if (this._type) layer.push('user_type', this._type.value);
     return layer;
   }

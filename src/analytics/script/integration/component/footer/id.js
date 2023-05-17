@@ -1,3 +1,3 @@
-const ID = 'dsfr_footer';
+const ID = 'footer';
 
 export default ID;

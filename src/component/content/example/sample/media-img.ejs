@@ -5,6 +5,7 @@ let data = {
   img: imgData('img/placeholder.16x9.png', 'unknown', ratio ? ratio : '16x9'),
   caption: 'Description / Source',
   link: 'Label lien',
+  id: content.id || uniqueId('media'),
   ...content
 };
 %>

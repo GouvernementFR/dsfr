@@ -1,6 +1,6 @@
 <%
 const connect = locals.connect || {};
 const data = JSON.parse(include('../data/connect.json.ejs', { connect: connect }));
-
 %>
+
 <%- include('../../template/ejs/connect.ejs', { connect: data }) %>

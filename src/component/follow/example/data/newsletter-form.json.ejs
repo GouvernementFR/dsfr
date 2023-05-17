@@ -7,7 +7,7 @@ data.newsletter = {
   type: 'form',
   form: {
     input: {
-      id: "newsletter-email",
+      id: uniqueId("newsletter-email"),
       placeholder: "Votre adresse électronique (ex. : nom@domaine.fr)",
       label: "Votre adresse électronique (ex. : nom@domaine.fr)",
       type: "email",
@@ -17,7 +17,7 @@ data.newsletter = {
         autocomplete: 'email'
       },
       button: {
-        id: "newsletter-button",
+        id: uniqueId("newsletter-button"),
         label: "S\'abonner",
         type: "submit",
         title: "S‘abonner à notre lettre d’information",

@@ -28,6 +28,7 @@ if (!badge.classes) badge.classes = [];
 if (!badge.attrs) badge.attrs = {};
 const markup = badge.markup || 'p';
 badge.classes.push(prefix + '-badge');
+if (badge.id) badge.attrs.id = badge.id;
 
 switch(badge.size) {
 	case 'sm':
@@ -45,4 +46,4 @@ else if (badge.icon !== undefined) badge.classes.push(prefix + '-icon-' + badge.
 if (badge.ellipsis) badge.label = `<span class="${prefix}-ellipsis">${badge.label}</span>`;
 %>
 
-<<%= markup %> <%- includeClasses(badge.classes)%>><%- badge.label %></<%= markup %>>
+<<%= markup %> <%- includeAttrs(badge.attrs)%> <%- includeClasses(badge.classes)%>><%- badge.label %></<%= markup %>>

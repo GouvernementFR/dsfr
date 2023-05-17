@@ -83,12 +83,12 @@ class Search {
 
   get layer () {
     const layer = [];
-    if (this._engine) layer.push('isearchengine', normalize(this._engine));
-    if (this._results > -1) layer.push('isearchresults', this._results);
-    if (this._terms) layer.push('isearchkey', 'search_terms', 'isearchdata', normalize(this._terms));
-    if (this._category) layer.push('isearchkey', 'search_category', 'isearchdata', normalize(this._category));
-    if (this._theme) layer.push('isearchkey', 'search_theme', 'isearchdata', normalize(this._theme));
-    if (this._type) layer.push('isearchkey', 'search_type', 'isearchdata', normalize(this._type));
+    if (this.engine) layer.push('isearchengine', normalize(this.engine));
+    if (this.results > -1) layer.push('isearchresults', this.results);
+    if (this.terms) layer.push('isearchkey', 'search_terms', 'isearchdata', normalize(this.terms));
+    if (this.category) layer.push('isearchkey', 'search_category', 'isearchdata', normalize(this.category));
+    if (this.theme) layer.push('isearchkey', 'search_theme', 'isearchdata', normalize(this.theme));
+    if (this.type) layer.push('isearchkey', 'search_type', 'isearchdata', normalize(this.type));
     if (this._method && layer.length) layer.push('isearchkey', 'search_method', 'isearchdata', this._method.value);
     return layer;
   }

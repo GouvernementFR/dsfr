@@ -3,6 +3,8 @@
 
 * content.title (string, required) : Titre de la carte
 
+* content.href (string, optional) : href du lien de la carte
+
 * content.noLink (boolean, optional) : présence du lien
 
 * content.description (string, optional) : Description
@@ -47,7 +49,7 @@ switch (true) {
 
 <div class="<%= prefix %>-card__content">
     <<%= markup %> class="<%= prefix %>-card__title">
-        <% if (hasLink) { %><a href="#" ><% } %>
+        <% if (hasLink) { %><a href="<%- content.href %>" ><% } %>
           <%- content.title %>
         <% if (hasLink) { %></a><% } %>
     </<%= markup %>>
