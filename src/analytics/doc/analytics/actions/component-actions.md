@@ -15,12 +15,12 @@ Vous trouverez pour chaque composant une colonne :
 
 |**Composant**|**Elément**|**Type**|**Breakpoints**|**Valeur**|**Label**|**Taux** **de click**|
 |:----|:----|:----|:----|:----|:----|:----|
-|accordion|.fr-collapse|DISCLOSE|||label<sup>1</sup>|Titre de l’accordéon ou libellé du bouton|✅|
+|accordion|.fr-collapse|DISCLOSE||label<sup>1</sup>|Titre de l’accordéon ou libellé du bouton|✅|
 ||.fr-accordion__btn|CLICK||label<sup>1</sup>|Libellé du bouton| |
 |alert|.fr-alert|IMPRESSION||label<sup>1</sup>|Titre de l’alerte| |
 |badge|.fr-badge|IMPRESSION||label<sup>1</sup>|Libellé du badge| |
 |breadcrumb|.fr-collapse|IMPRESSION| [MD] [LG] [XL]|label<sup>1</sup>|"fil d’ariane"| |
-||.fr-collapse|DISCLOSE|| [XS]  [SM]|label<sup>1</sup>|"fil d’ariane"| |
+||.fr-collapse|DISCLOSE| [XS]  [SM]|label<sup>1</sup>|"fil d’ariane"| |
 ||.fr-breadcrumb__button|CLICK| [XS] [SM]|label<sup>1</sup>|Libellé du bouton| |
 ||.fr-breadcrumb__link[href]|INTERNAL<sup>4</sup>||href<sup>3</sup>|Libellé du lien| |
 |button|.fr-btn|CLICK||label<sup>1</sup>|Libellé du bouton|✅|
@@ -28,7 +28,7 @@ Vous trouverez pour chaque composant une colonne :
 ||a.fr-btn[download]|DOWNLOAD||label<sup>1</sup>|Libellé du bouton|✅|
 |callout|.fr-callout|IMPRESSION||label<sup>1</sup>|Titre de la mise en avant ou `Mise en avant`| |
 |card|.fr-card|IMPRESSION <br>(sans lien)||label<sup>1</sup>|Titre de la carte| |
-||.fr-card__title a[href]|INTERNAL / EXTERNAL<sup>4</sup>||Lien de la carte|✅|
+||.fr-card__title a[href]|INTERNAL / EXTERNAL<sup>4</sup>||href<sup>3</sup>|Lien de la carte|✅|
 ||.fr-card__title a[download]|DOWNLOAD||href<sup>3</sup>|Lien de la carte de téléchargement|✅|
 |checkbox|.fr-checkbox-group [type="checkbox"]|CHECK||value<sup>2</sup>|Libellé du champ sélectionné|✅|
 ||.fr-checkbox-group [type="checkbox"]|UNCHECK||value<sup>2</sup>|Libellé du champ désélectionné|✅|
@@ -43,13 +43,13 @@ Vous trouverez pour chaque composant une colonne :
 |header|.fr-header|IMPRESSION||label<sup>1</sup>|En-tête| |
 ||.fr-header__tools-links .fr-btn|CLICK| [LG]</span> [XL]</span>|href<sup>3</sup>|Libellé du bouton d’accès rapide|
 ||.fr-header__menu-links .fr-btn|CLICK|  [XS]  [SM] [MD]</span>|href<sup>3</sup>|Libellé du bouton d’accès rapide| |
-||.fr-header__menu .fr-modal, <br>.fr-header__search .fr-modal|DISCLOSE|| [XS]  [SM] [MD]</span>|label<sup>1</sup>|menu rechercher| |
+||.fr-header__menu .fr-modal, <br>.fr-header__search .fr-modal|DISCLOSE| [XS]  [SM] [MD]</span>|label<sup>1</sup>|menu rechercher| |
 |highlight|.fr-highlight|IMPRESSION||label<sup>1</sup>|Mise en exergue| |
 |input|.fr-input-group|IMPRESSION||label<sup>1</sup>|Libéllé du label| |
 |link|.fr-link|CLICK||href<sup>3</sup>|Libellé du lien|✅|
-| |.fr-link[href]|INTERNAL / EXTERNAL<sup>4</sup>||Libellé du lien|✅|
+| |.fr-link[href]|INTERNAL / EXTERNAL<sup>4</sup>||href<sup>3</sup>|Libellé du lien|✅|
 | |.fr-link[download]|DOWNLOAD||href<sup>3</sup>|Libellé du lien de téléchargement|✅|
-|modal|.fr-modal|DISCLOSE|||label<sup>1</sup>|Titre de la modale|✅|
+|modal|.fr-modal|DISCLOSE||label<sup>1</sup>|Titre de la modale|✅|
 |navigation|.fr-nav__link|INTERNAL / EXTERNAL<sup>4</sup>||href<sup>3</sup>|Libellé du lien| |
 |notice|.fr-notice|IMPRESSION||label<sup>1</sup>|Titre du bandeau d’information importante `.fr-notice__title`| |
 |pagination|.fr-pagination__link|INTERNAL<sup>4</sup>||href<sup>3</sup>|Libellé du lien de pagination| |
@@ -61,21 +61,21 @@ Vous trouverez pour chaque composant une colonne :
 |sidemenu|.fr-sidemenu__link|INTERNAL / EXTERNAL<sup>4</sup>||href<sup>3</sup>|Arborescence du lien| |
 |stepper|.fr-stepper|IMPRESSION||label<sup>1</sup> |"Indicateur d'étapes"||
 |summary|.fr-summary__link|INTERNAL<sup>4</sup>||href<sup>3</sup>|Arborescence du lien| |
-|tab|.fr-tabs|DISCLOSE|||label<sup>1</sup>|Libellé du tab button|✅|
+|tab|.fr-tabs|DISCLOSE||label<sup>1</sup>|Libellé du tab button|✅|
 ||.fr-tabs__tab|CLICK||label<sup>1</sup>|Libellé du tab button| |
 |table|.fr-table|IMPRESSION||label<sup>1</sup>|Caption du tableau| |
 |tag|.fr-tag|IMPRESSION||label<sup>1</sup> |Libellé du tag |
 ||button.fr-tag|CLICK||label<sup>1</sup> |Libellé du tag cliquable|✅|
-||a.fr-tag|INTERNAL / EXTERNAL<sup>4</sup>||Libellé du tag cliquable|✅|
+||a.fr-tag[href]|INTERNAL / EXTERNAL<sup>4</sup>||href<sup>3</sup>|Libellé du tag cliquable|✅|
 ||.fr-tag--dismiss|DISMISS||label<sup>1</sup>|Libellé du tag supprimable|✅|
 ||.fr-tag[aria-pressed='false']|PRESS||label<sup>1</sup>|Libellé du tag pressable|✅|
 ||.fr-tag[aria-pressed='true']|RELEASE||label<sup>1</sup>|Libellé du tag pressable|✅|
 |tile|.fr-tile|IMPRESSION||label<sup>1</sup>|Titre de la tuile `fr-tile__title`|
-||.fr-tile .fr-tile__link|INTERNAL / EXTERNAL<sup>4</sup>||Titre de la tuile|✅|
+||.fr-tile .fr-tile__link|INTERNAL / EXTERNAL<sup>4</sup>||href<sup>3</sup>|Titre de la tuile|✅|
 ||.fr-tile .fr-tile__link[download]|DOWNLOAD||href<sup>3</sup>|Titre de la tuile|✅|
 |toggle|.fr-toggle [type="checkbox"]|CHECK||value<sup>2</sup>|Libellé du champ sélectionné|✅|
 ||.fr-toggle [type="checkbox"]|UNCHECK||value<sup>2</sup>|Libellé du champ désélectionné|✅|
-|transcription|.fr-transcription .fr-collapse|DISCLOSE|||label<sup>1</sup>|Titre de la transcription `fr-transcription__title` ou libellé du bouton|✅|
+|transcription|.fr-transcription .fr-collapse|DISCLOSE||label<sup>1</sup>|Titre de la transcription `fr-transcription__title` ou libellé du bouton|✅|
 ||.fr-transcription__btn|CLICK||label<sup>1</sup>|Libellé du bouton| |
 |upload|.fr-upload|CHANGE||Extension du fichier ajouté|Libellé du `fr-label` ou "Ajout de fichier"|✅|
 
