@@ -17,9 +17,10 @@ class UploadActionee extends ComponentActionee {
     this.listenChange();
   }
 
-  getChangeValue (e) {
-    if (!e.target || !e.target.files) return null;
-    return Array.from(e.target.files).map(file => /(?:\.([^.]+))?$/.exec(file.name)[1]).filter((name, index, array) => array.indexOf(name) === index).join(' - ');
+  setChangeValue (e) {
+    if (!e.target || !e.target.files) return;
+    const value = Array.from(e.target.files).map(file => /(?:\.([^.]+))?$/.exec(file.name)[1]).filter((name, index, array) => array.indexOf(name) === index).join(' - ');
+    if (value) this.value = value;
   }
 
   get label () {

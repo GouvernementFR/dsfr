@@ -17,9 +17,10 @@ class SelectActionee extends ComponentActionee {
     this.listenChange();
   }
 
-  getChangeValue (e) {
-    if (!e.target || !e.target.selectedOptions) return null;
-    return Array.from(e.target.selectedOptions).map(option => option.text).join(' - ');
+  setChangeValue (e) {
+    if (!e.target || !e.target.selectedOptions) return;
+    const value = Array.from(e.target.selectedOptions).map(option => option.text).join(' - ');
+    if (value) this.value = value;
   }
 
   get label () {
