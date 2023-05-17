@@ -17,11 +17,14 @@ class Queue {
     this.reset();
   }
 
+  setCollector (collector) {
+    this._collector = collector;
+  }
+
   reset (ending = false) {
     this._type = PushType.ACTION;
     if (!ending) this._startingActions.length = 0;
     this._endingActions.length = 0;
-    this._collectionLayer = [];
     this._count = 0;
     this._delay = -1;
     this._isRequested = false;
@@ -34,27 +37,28 @@ class Queue {
     renderer.add(this);
   }
 
-  collect (layer) {
+  collect () {
     this._type = PushType.COLLECTOR;
-    this._collectionLayer = layer;
     this._request();
   }
 
-  appendStartingAction (action) {
-    if (!action || this._startingActions.indexOf(action) > -1) {
-      api.inspector.log('appendStartingAction', action, `index: ${this._startingActions.indexOf(action)}`);
+  appendStartingAction (action, data) {
+    if (!action || this._startingActions.some(queued => queued.test(action))) {
+      api.inspector.log('appendStartingAction exists or null', action);
       return;
     }
-    this._startingActions.push(action);
+    const queued = new QueuedAction(action, data);
+    this._startingActions.push(queued);
     this._request();
   }
 
-  appendEndingAction (action) {
-    if (!action || this._endingActions.indexOf(action) > -1) {
-      api.inspector.log('appendEndingAction', action, `index: ${this._endingActions.indexOf(action)}`);
+  appendEndingAction (action, data) {
+    if (!action || this._endingActions.some(queued => queued.test(action))) {
+      api.inspector.log('appendEndingAction exists or null', action);
       return;
     }
-    this._endingActions.push(action);
+    const queued = new QueuedAction(action, data);
+    this._endingActions.push(queued);
     this._request();
   }
 
@@ -105,8 +109,8 @@ class Queue {
   send (ending = false) {
     if (!this._isRequested) return;
     const actionLayers = [];
-    if (!ending) actionLayers.push(...this._startingActions.map(action => action.start()).filter(layer => layer.length > 0));
-    actionLayers.push(...this._endingActions.map(action => action.end()).filter(layer => layer.length > 0));
+    if (!ending) actionLayers.push(...this._startingActions.map(queued => queued.start()).filter(layer => layer.length > 0));
+    actionLayers.push(...this._endingActions.map(queued => queued.end()).filter(layer => layer.length > 0));
 
     const length = ((actionLayers.length / SLICE) + 1) | 0;
     const slices = [];
@@ -115,15 +119,43 @@ class Queue {
       slices.push(slice.flat());
     }
 
-    push(this._type, [...this._collectionLayer, ...slices[0]]);
+    if (this._type === PushType.COLLECTOR) {
+      const layer = this._collector.layer;
+      if (slices.length > 0) {
+        const slice = slices.splice(0, 1)[0];
+        if (slice.length > 0) layer.push.apply(layer, slice);
+      }
+      layer.flat();
+      if (layer.length > 0) push(PushType.COLLECTOR, layer);
+    }
 
-    if (slices.length > 1) {
-      for (let i = 1; i < slices.length; i++) {
-        push(PushType.ACTION, slices[i]);
+    if (slices.length > 0) {
+      for (let i = 0; i < slices.length; i++) {
+        const slice = slices[i];
+        if (slice.length > 0) push(PushType.ACTION, slice);
       }
     }
 
     this.reset(ending);
+  }
+}
+
+class QueuedAction {
+  constructor (action, data) {
+    this._action = action;
+    this._data = data;
+  }
+
+  test (action) {
+    return this._action === action;
+  }
+
+  start () {
+    return this._action.start(this._data);
+  }
+
+  end () {
+    return this._action.end(this._data);
   }
 }
 

@@ -46,14 +46,19 @@ class ComponentActionee extends Actionee {
 
   _handleChange (e) {
     if (e.target && e.target.value) {
-      this._data.component_value = e.target.value;
+      this.setChangeValue(e);
       this.act();
     }
   }
 
-  listenInputValidation (node, type = Type.CLICK) {
+  setChangeValue (e) {
+    this.value = e.target.value;
+  }
+
+  listenInputValidation (node, type = Type.CLICK, isSendingInputValue = false) {
     if (!node) node = this.node;
     this._type = type;
+    this._isSendingInputValue = isSendingInputValue;
     this.addAscent(ButtonEmission.CLICK, this._actValidatedInput.bind(this));
     const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
     if (button) button.isMuted = true;
@@ -69,7 +74,8 @@ class ComponentActionee extends Actionee {
   _actValidatedInput () {
     if (this._isActingValidatedInput) return;
     this._isActingValidatedInput = true;
-    this.act({ component_value: this._validatedInput.value.trim() });
+    if (this._isSendingInputValue) this.value = this._validatedInput.value.trim();
+    this.act();
     this.request(() => { this._isActingValidatedInput = false; });
   }
 
@@ -88,7 +94,7 @@ class ComponentActionee extends Actionee {
 
   _handleCheckable (e) {
     if (e.target && e.target.value !== 'on') {
-      this._data.component_value = e.target.value;
+      this.value = e.target.value;
     }
 
     switch (true) {
@@ -113,10 +119,6 @@ class ComponentActionee extends Actionee {
   }
 
   _handlePressable (e) {
-    // if (e.target && e.target.value !== 'on') {
-    //   this._data.component_value = e.target.value;
-    // }
-
     switch (true) {
       case this._type === Type.PRESS && e.target.getAttribute('aria-pressed') === 'false':
       case this._type === Type.RELEASE && e.target.getAttribute('aria-pressed') === 'true':

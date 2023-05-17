@@ -30,7 +30,6 @@ class ActionElement {
     this._name = `${type}${this._title || this._hierarchy.title}${id}`;
 
     this._action = actions.getAction(this._name, this._type.status);
-    this._action.isRatingActive = this._isRatingActive;
     if (this._type.isSingular) this._action.singularize();
     Object.keys(this._parameters).forEach(key => this._action.addParameter(key, this._parameters[key]));
     this._action.isMuted = this._isMuted;
@@ -65,10 +64,10 @@ class ActionElement {
     this.begin();
   }
 
-  begin () {
+  begin (data = {}) {
     if (this._hasBegun) return;
     this._hasBegun = true;
-    if (this._type.isBeginning) queue.appendStartingAction(this._action);
+    if (this._type.isBeginning) queue.appendStartingAction(this._action, data);
   }
 
   act (data = {}) {
@@ -77,12 +76,14 @@ class ActionElement {
       requestAnimationFrame(() => this.act(data));
       return;
     }
-    queue.appendEndingAction(this._action);
+    queue.appendEndingAction(this._action, data);
   }
 
   dispose () {
     actions.remove(this._action);
   }
 }
+
+ActionElement.isRatingEnabled = false;
 
 export { ActionElement };

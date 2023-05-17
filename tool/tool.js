@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const { Changelog } = require('./classes/changelog/changelog');
+
 const yargs = require('yargs');
 const build = require('./build/build');
 const buildRouting = require('./generate/routing');
@@ -265,6 +267,32 @@ const standaloneHandler = async (argv) => {
   await standalone(settings);
 };
 
+/**
+ * Changelog
+ */
+const changelogBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0 -t X.X.X')
+    .example(
+      '$0 -t X.X.X',
+      'génère le fichier changelog'
+    )
+    .option('tag', {
+      alias: '-t',
+      describe: 'prochain tag',
+      type: 'string'
+    });
+};
+
+const changelogHandler = async (argv) => {
+  const settings = {
+    tag: argv.tag
+  };
+
+  const changelog = new Changelog(settings.tag);
+  await changelog.build();
+};
+
 yargs
   .scriptName('tool')
   .command(
@@ -296,6 +324,12 @@ yargs
     'compilation pour la version standalone de FranceConnect',
     standaloneBuilder,
     standaloneHandler
+  )
+  .command(
+    'changelog',
+    'génération du changelog',
+    changelogBuilder,
+    changelogHandler
   )
   .help()
   .argv;

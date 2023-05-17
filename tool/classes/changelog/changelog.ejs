@@ -1,0 +1,24 @@
+# Changelog du Système de design de l’État
+
+Toutes les modifications notables apportées à ce projet sont documentées dans ce fichier.
+
+Le format est basé sur [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+et ce projet respecte [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+Pour plus d’informations : [Voir la documentation](https://www.systeme-de-design.gouv.fr/)
+
+<% for (const major of locals.majors) { %>
+> ## <%= major.title %>
+<% for (const minor of major.minors) { %>
+## <%= minor.title %>
+<% for (const tag of minor.tags) { %>
+### [<%= tag.tag %>](<%= tag.href %>) - <%- tag.niceDate %>
+<% for (const commit of tag.commits) { %>
+#### <%= commit.subject %><% if (commit.jira) { %> [<%- commit.jira %>]<% } %><% if (commit.href) { %> [(#<%= commit.id %>)](<%= commit.href %>)<% } %>
+<% if (commit.details) { %><%= commit.details %>
+<% } %>
+<% } %>
+<% } %>
+<% } %>
+---
+<% } %>

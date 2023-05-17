@@ -21,7 +21,7 @@ const displayResults = (results, darkmode) => {
 };
 
 // Run pa11y tests on each package
-const runPa11yTest = async (path, browser) => {
+const runPa11yTest = async (path, browser, hasDarkMode) => {
   const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label, [class*="--disabled"] > label';
 
   log(38, `\n${path}`);
@@ -40,19 +40,21 @@ const runPa11yTest = async (path, browser) => {
     displayResults(results);
   });
 
-  // pa11y - dark mode
-  await Pa11y(url, {
-    browser,
-    page,
-    timeout: 120000,
-    hideElements: hideElements,
-    ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
-    actions: [
-      'check field #fr-radios-theme-dark'
-    ]
-  }).then(results => {
-    displayResults(results, true);
-  });
+  if (hasDarkMode) {
+    // pa11y - dark mode
+    await Pa11y(url, {
+      browser,
+      page,
+      timeout: 120000,
+      hideElements: hideElements,
+      ignore: ['WCAG2AA.Principle4.Guideline4_1.4_1_1.F77'], /* Ignore duplicate ID rule */
+      actions: [
+        'check field #fr-radios-theme-dark'
+      ]
+    }).then(results => {
+      displayResults(results, true);
+    });
+  }
 
   await page.close();
 };
@@ -60,7 +62,7 @@ const runPa11yTest = async (path, browser) => {
 const getPackageNodeDest = (node) => {
   const dest = [node.dest];
   if (node.children) dest.push(...node.children.map(child => getPackageNodeDest(child)));
-  return dest;
+  return dest.flat(1000);
 };
 
 const testPa11y = async (packages) => {
@@ -71,13 +73,14 @@ const testPa11y = async (packages) => {
 
   const publisheds = packages.filter(pck => !pck.draft);
 
-  const paths = publisheds.map(pck => {
-    return pck.example.root ? getPackageNodeDest(pck.example.root) : [];
-  }).flat(1000);
-
   const browser = await Puppeteer.launch();
 
-  for (const path of paths) await runPa11yTest(path, browser);
+  for (const pck of publisheds) {
+    if (!pck.example.root) continue;
+    const paths = getPackageNodeDest(pck.example.root);
+
+    for (const path of paths) await runPa11yTest(path, browser, !pck.noParameter);
+  }
 
   await browser.close();
 

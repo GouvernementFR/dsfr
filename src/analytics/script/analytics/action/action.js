@@ -15,7 +15,6 @@ class Action {
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
     this._parameters = {};
-    this._isRatingActive = true;
   }
 
   get isMuted () {
@@ -24,6 +23,10 @@ class Action {
 
   set isMuted (value) {
     this._isMuted = value;
+  }
+
+  get isSingular () {
+    return this._status === ActionStatus.SINGULAR;
   }
 
   get status () {
@@ -56,14 +59,6 @@ class Action {
       case ActionStatus.ENDED:
         this._status = ActionStatus.UNSTARTED;
     }
-  }
-
-  get isRatingActive () {
-    return this._isRatingActive;
-  }
-
-  set isRatingActive (value) {
-    this._isRatingActive = value;
   }
 
   addParameter (key, value) {
@@ -107,7 +102,6 @@ class Action {
     let mode;
     switch (this._status) {
       case ActionStatus.UNSTARTED:
-        if (!this._isRatingActive || !Action.isRatingEnabled) return [];
         mode = ActionMode.IN;
         this._status = ActionStatus.STARTED;
         break;
@@ -120,8 +114,7 @@ class Action {
         api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
         return [];
     }
-    const layer = this._getLayer(mode, data);
-    return layer;
+    return this._getLayer(mode, data);
   }
 
   end (data) {
@@ -142,8 +135,7 @@ class Action {
         mode = ActionMode.NONE;
         break;
     }
-    const layer = this._getLayer(mode, data);
-    return layer;
+    return this._getLayer(mode, data);
   }
 
   resume (data) {
@@ -157,7 +149,5 @@ class Action {
     return layer;
   }
 }
-
-Action.isRatingEnabled = false;
 
 export { Action };

@@ -14,12 +14,22 @@
     }
   }
 
+  :not(#{ns-attr(capslock)}) {
+    #{ns(password__input)} {
+      @include padding-right(4v);
+    }
+  }
+
   &__checkbox {
     @include absolute(0, 0);
   }
 
   &__input {
     @include margin-bottom(3v);
+
+    &::-webkit-caps-lock-indicator {
+      content: none;
+    }
   }
 
   &__label {
