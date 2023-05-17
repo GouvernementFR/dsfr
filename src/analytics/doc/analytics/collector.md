@@ -4,9 +4,9 @@ Le package analytics est livré avec un ensemble de classes Javascript. Chacunes
 
 
 - Analytics/Collector
-  - [class Analytics](classes/analytics.md)
-  - [class Page](classes/page.md)
-  - [class User](classes/user.md)
-  - [class Site](classes/site.md)
-  - [class Search](classes/search.md)
-  - [class Funnel](classes/funnel.md)
+  - [class Analytics](collector/analytics.md)
+  - [class Page](collector/page.md)
+  - [class User](collector/user.md)
+  - [class Site](collector/site.md)
+  - [class Search](collector/search.md)
+  - [class Funnel](collector/funnel.md)
