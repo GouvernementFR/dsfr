@@ -1,4 +1,4 @@
-### Actions d’interaction hors composant {#custom-action}
+### Actions d’interaction hors composant
 
 Il est possible de remonter à Eulérian des actions effectuées sur des éléments HTML hors composants du DSFR.
 
