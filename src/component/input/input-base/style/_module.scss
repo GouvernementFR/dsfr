@@ -25,10 +25,6 @@
     cursor: pointer;
   }
 
-  &:not(textarea) {
-    max-height: 2.5rem;
-  }
-
   &[type=date] {
     min-height: 2.5rem;
 
