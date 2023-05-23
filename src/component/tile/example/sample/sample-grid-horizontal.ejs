@@ -5,8 +5,8 @@ const tileH = { pictogram: true, horizontal: true, col: {md:'6', lg:'4'}};
 %>
 <%- sample('Grilles de tuiles horizontales', './tiles-grid', { tiles : [
         { ...tileH, content: { tag: true }},
-        { ...tileH, content: { badge: true }},
-        { ...tileH, content: { details: true }},
+        { ...tileH, content: { badge: true, description: undefined }},
+        { ...tileH, content: { details: true}},
         { ...tileH, content: { details: true, tag: true }},
     ]}, true, './tiles-layout'); %>
 
@@ -15,7 +15,7 @@ const tileHSm = { pictogram: true, horizontal: true, size:'sm', col: { sm:'6', m
 %>
 <%- sample('Grilles de tuiles horizontales sm', './tiles-grid', { tiles : [
         { ...tileHSm, content: { tag: true }},
-        { ...tileHSm, content: { badge: true }},
+        { ...tileHSm, content: { badge: true, description: undefined }},
         { ...tileHSm, content: { details: true }},
         { ...tileHSm, content: { details: true, tag: true }},
     ]}, true, './tiles-layout'); %>

@@ -6,7 +6,9 @@ style:
   - core
   - link
   - button
-  - badge
-  - tag
 script:
   - core
+example:
+  style:
+    - badge
+    - tag

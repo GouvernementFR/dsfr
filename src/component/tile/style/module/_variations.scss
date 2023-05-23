@@ -5,9 +5,6 @@
 
 @use 'module/spacing';
 
-/**
- * Modificateur tuile horizontale
- **/
 #{ns(tile)} {
   &--horizontal {
     flex-direction: row;
@@ -18,12 +15,18 @@
       @include margin-right(8v);
     }
 
+    #{ns(tile__detail)} {
+      @include padding-right(8v);
+      @include margin-bottom(-8v);
+    }
+
     #{ns(tile__pictogram)} {
       @include size(16v, 16v);
     }
 
     #{ns(tile__content)} {
       align-items: flex-start;
+      @include padding-bottom(8v);
     }
   }
 }

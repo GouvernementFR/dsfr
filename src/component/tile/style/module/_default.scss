@@ -115,7 +115,7 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon):not(&--horizontal) &__content {
     @include padding-bottom(10v);
     @include padding-bottom(12v, md);
   }
