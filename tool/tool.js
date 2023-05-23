@@ -8,6 +8,7 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
+const { generateReference } = require('./test/visual');
 
 /**
  * Build
@@ -92,7 +93,6 @@ const buildHandler = async (argv) => {
     clean: argv.clean,
     config: argv.config,
     test: argv.test,
-    testVisual: argv.testVisual,
     markdowns: argv.markdowns,
     locale: argv.locale
   };
@@ -174,6 +174,21 @@ const testBuilder = (yargs) => {
       '$0 -p core accordion -jcm',
       'compile les fichiers scripts et styles du package core et accordion en les minifiant'
     )
+    .option('lint', {
+      alias: 'l',
+      describe: 'css et js linter',
+      type: 'boolean'
+    })
+    .option('pa11y', {
+      alias: 'p',
+      describe: 'tests d\'accessibilité',
+      type: 'boolean'
+    })
+    .option('visual', {
+      alias: 'v',
+      describe: 'test de régression visuelle',
+      type: 'boolean'
+    })
     .option('packages', {
       alias: 'p',
       describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
@@ -182,7 +197,11 @@ const testBuilder = (yargs) => {
 };
 
 const testHandler = async (argv) => {
+  const all = argv.lint === undefined && argv.pa11y === undefined && argv.visual === undefined;
   const settings = {
+    lint: argv.lint || all,
+    pa11y: argv.pa11y || all,
+    visual: argv.visual || all,
     packages: argv.packages || []
   };
 
@@ -294,6 +313,31 @@ const changelogHandler = async (argv) => {
   await changelog.build();
 };
 
+/**
+ * Visual
+ */
+const visualBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0 -p accordion')
+    .example(
+      '$0 -p accordion',
+      'génère les captures visuelle de l\'accordéon'
+    )
+    .option('packages', {
+      alias: 'p',
+      describe: 'liste des id des packages à générer. Si non renseigné, tous les packages sont générés',
+      type: 'array'
+    });
+};
+
+const visualHandler = async (argv) => {
+  const settings = {
+    packages: argv.packages || []
+  };
+
+  await generateReference(settings);
+};
+
 yargs
   .scriptName('tool')
   .command(
@@ -331,6 +375,12 @@ yargs
     'génération du changelog',
     changelogBuilder,
     changelogHandler
+  )
+  .command(
+    'reference',
+    'génération des captures de référence pour la régression visuelle',
+    visualBuilder,
+    visualHandler
   )
   .help()
   .argv;

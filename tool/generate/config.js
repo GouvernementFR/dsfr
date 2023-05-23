@@ -6,6 +6,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const { flatten } = require('../utilities/config');
 const { Example } = require('../classes/example/example');
+const { Test } = require('../classes/test/test');
 const { generatePictogram } = require('./pictogram');
 
 const analyse = (id, path, ascendants = []) => {
@@ -86,6 +87,9 @@ const analyse = (id, path, ascendants = []) => {
 
   const example = new Example(type, `${path}/example`, data.example);
   config.example = example.data;
+
+  const test = new Test(`${path}/test`);
+  config.test = test.data;
 
   const dependencies = {
     style: [],

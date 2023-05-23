@@ -20,6 +20,7 @@
     "deploy": "node tool/tool.js deploy",
     "standalone": "node tool/tool.js standalone",
     "changelog": "node tool/tool.js changelog",
+    "reference": "node tool/tool.js reference",
     "serve": "browser-sync start --server --port 8080 --startPath example/",
     "visual-serve": "browser-sync start --watch --server --port 8081 --startPath backstop_data/html_report/",
     "visual-test": "./node_modules/.bin/backstop test --config=./backstop.config.js",

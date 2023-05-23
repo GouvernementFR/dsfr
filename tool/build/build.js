@@ -1,12 +1,12 @@
 const { buildStyles } = require('./styles');
 const { buildScript } = require('./scripts');
 const { buildExample } = require('./example');
-const { buildScenaris } = require('./test-visual');
 const { concatenate } = require('../generate/concatenate');
 const { copyImages, copyIcons, copyAssets } = require('./copy');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
+const testVisual = require('../test/pa11y');
 const { generateMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 const generateConfig = require('../generate/config');
@@ -78,19 +78,6 @@ const build = async (settings) => {
     }
   }
 
-  console.log('build', settings);
-  if (settings.testVisual) {
-    log.section('test visual', true);
-
-    for (const pck of packages) {
-      try {
-        await buildScenaris(pck, settings.locale);
-      } catch (e) {
-        log.error(e);
-      }
-    }
-  }
-
   if (settings.markdowns) {
     log.section('markdowns', true);
     for (const pck of packages) {
@@ -105,6 +92,8 @@ const build = async (settings) => {
   if (settings.test) {
     log.section('pa11y');
     await testPa11y(packages);
+    log.section('visual');
+    await testVisual(packages);
   }
 };
 
