@@ -54,7 +54,7 @@
 
   @include title {
     @include title-style(h6);
-    @include margin-bottom(1v);
+    @include margin-bottom(2v);
     order: 2;
 
     a {

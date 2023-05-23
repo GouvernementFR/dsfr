@@ -13,11 +13,7 @@
 
     #{ns(tile__header)} {
       @include margin-right(8v);
-    }
-
-    #{ns(tile__detail)} {
-      @include padding-right(8v);
-      @include margin-bottom(-8v);
+      @include margin-bottom(0);
     }
 
     #{ns(tile__pictogram)} {
@@ -26,7 +22,21 @@
 
     #{ns(tile__content)} {
       align-items: flex-start;
-      @include padding-bottom(8v);
+    }
+
+    #{ns(tile__detail)} {
+        @include margin-top(4v);
+    }
+
+    &:not(#{ns(tile--no-icon)}) {
+      #{ns(tile__detail)} {
+        @include padding-right(8v);
+        @include margin-bottom(-8v);
+      }
+
+      #{ns(tile__content)} {
+        @include padding-bottom(8v);
+      }
     }
   }
 }

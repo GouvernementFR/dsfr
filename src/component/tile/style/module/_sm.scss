@@ -9,9 +9,10 @@
   #{ns(tile)} {
     &__title {
       @include text-style(md);
+      @include margin-bottom(1v);
 
       a {
-        @include after {
+        @include icon-size(sm, after) {
           @include absolute(null, 6v, 7v);
         };
       }
@@ -19,6 +20,10 @@
 
     &__desc {
       @include text-style(sm);
+    }
+
+    &__detail {
+      @include margin-top(3v);
     }
 
     &__start {
@@ -34,6 +39,10 @@
     #{ns(tile)} {
       &__header {
         @include margin-right(6v);
+      }
+
+      &__detail {
+        @include margin-top(3v);
       }
 
       &__pictogram {
