@@ -179,8 +179,8 @@ const testBuilder = (yargs) => {
       describe: 'css et js linter',
       type: 'boolean'
     })
-    .option('pa11y', {
-      alias: 'p',
+    .option('a11y', {
+      alias: 'a',
       describe: 'tests d\'accessibilité',
       type: 'boolean'
     })
