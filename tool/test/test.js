@@ -14,7 +14,7 @@ const test = async (settings) => {
     await lint(packages);
   }
 
-  if (settings.pa11y) {
+  if (settings.a11y) {
     log.section('pa11y');
     await testPa11y(packages);
   }

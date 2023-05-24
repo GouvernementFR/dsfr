@@ -197,10 +197,10 @@ const testBuilder = (yargs) => {
 };
 
 const testHandler = async (argv) => {
-  const all = argv.lint === undefined && argv.pa11y === undefined && argv.visual === undefined;
+  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined;
   const settings = {
     lint: argv.lint || all,
-    pa11y: argv.pa11y || all,
+    a11y: argv.a11y || all,
     visual: argv.visual || all,
     packages: argv.packages || []
   };
