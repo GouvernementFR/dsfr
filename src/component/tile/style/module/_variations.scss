@@ -6,7 +6,8 @@
 @use 'module/spacing';
 
 #{ns(tile)} {
-  &--horizontal {
+  &--horizontal,
+  &--download {
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
