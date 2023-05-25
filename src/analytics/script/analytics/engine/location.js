@@ -1,8 +1,8 @@
 import renderer from './renderer';
 
 class Location {
-  constructor (onChange, isListeningHash = false) {
-    this._onChange = onChange;
+  constructor (onRouteChange, isListeningHash = false) {
+    this._onRouteChange = onRouteChange;
     this._isListeningHash = isListeningHash;
     this._update();
     renderer.add(this);
@@ -26,7 +26,7 @@ class Location {
   change () {
     this._referrer = this._path;
     this._update();
-    this._onChange();
+    this._onRouteChange();
   }
 
   get path () {

@@ -56,7 +56,6 @@ class Collector {
     this._search = new Search(config.search);
     this._funnel = new Funnel(config.funnel);
 
-    this._isCollected = false;
     this._delay = -1;
     queue.setCollector(this);
   }
@@ -82,7 +81,7 @@ class Collector {
   }
 
   start () {
-    const handleChange = this._handleChange.bind(this);
+    const handleRouteChange = this._handleRouteChange.bind(this);
     switch (this._collection) {
       case Collection.LOAD:
         this.collect();
@@ -90,17 +89,17 @@ class Collector {
 
       case Collection.FULL:
         this.collect();
-        this._location = new Location(handleChange);
+        this._location = new Location(handleRouteChange);
         break;
 
       case Collection.HASH:
         this.collect();
-        this._location = new Location(handleChange, true);
+        this._location = new Location(handleRouteChange, true);
         break;
     }
   }
 
-  _handleChange () {
+  _handleRouteChange () {
     queue.send(true);
     this._delay = 6;
     renderer.add(this);
@@ -110,12 +109,11 @@ class Collector {
     this._delay--;
     if (this._delay < 0) {
       renderer.remove(this);
-      this._changed();
+      this._routeChanged();
     }
   }
 
-  _changed () {
-    this._isCollected = false;
+  _routeChanged () {
     actions.rewind();
     this._page.referrer = this._location.referrer;
     if (this._location.hasTitle) this._page.title = this._location.title;
@@ -135,13 +133,17 @@ class Collector {
   }
 
   collect () {
-    if (this._isCollected) return;
+    console.log('collect');
+    if (!this.page.collecting()) return;
     queue.collect();
-    this._isCollected = true;
   }
 
   get collection () {
     return this._collection;
+  }
+
+  get isCollecting () {
+    return this._page.isCollecting;
   }
 
   get layer () {

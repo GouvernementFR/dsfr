@@ -1,9 +1,17 @@
+import api from '../../../../api';
 import normalize from '../../utils/normalize';
 import { validateBoolean, validateNumber, validateString } from '../../utils/type-validator';
+
+const CollectionState = {
+  COLLECTABLE: 'collectable',
+  COLLECTING: 'collecting',
+  COLLECTED: 'collected'
+};
 
 class Page {
   constructor (config) {
     this._config = config || {};
+    this._state = CollectionState.COLLECTABLE;
   }
 
   reset (clear = false) {
@@ -28,9 +36,26 @@ class Page {
     this._filters = clear || !this._config.filters ? [] : this._config.filters;
   }
 
+  collecting () {
+    console.log('collecting', this._state);
+    if (this._state !== CollectionState.COLLECTABLE) {
+      api.inspector.warn(`current path '${this.path}' was already collected`);
+      return false;
+    }
+    this._state = CollectionState.COLLECTING;
+    return true;
+  }
+
+  get isCollecting () {
+    return this._state === CollectionState.COLLECTING;
+  }
+
   set path (value) {
     const valid = validateString(value, 'page.path');
-    if (valid !== null) this._path = valid;
+    if (valid !== null) {
+      this._path = valid;
+      this._state = CollectionState.COLLECTABLE;
+    }
   }
 
   get path () {
@@ -176,6 +201,7 @@ class Page {
   }
 
   get layer () {
+    this._state = CollectionState.COLLECTED;
     const layer = [];
     if (this.path) layer.push('path', normalize(this.path));
     if (this.referrer) layer.push('referrer', normalize(this.referrer));
@@ -206,8 +232,6 @@ class Page {
       let pagination = `${this.current}`;
       if (!isNaN(this.total) && this.total > -1) pagination += `/${this.total}`;
       layer.push('page_pagination', pagination);
-    } else {
-      // TODO: get pagination value
     }
 
     if (this.filters.length && this.filters.some(label => label)) {
