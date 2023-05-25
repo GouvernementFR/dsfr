@@ -43,7 +43,7 @@ class ActionElement {
     if (this._hierarchy.title) this._action.addParameter('heading_hierarchy', this._hierarchy.title);
     if (this._hierarchy.component) this._action.addParameter('component_hierarchy', this._hierarchy.component);
 
-    this.begin();
+    if (this._isRatingActive) this.begin();
   }
 
   get isMuted () {
