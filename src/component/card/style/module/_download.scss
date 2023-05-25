@@ -1,6 +1,31 @@
 @use '../../../../../module/media-query';
 
 #{ns(card--download)} {
+  @include media-query.respond-from(md) {
+    flex-direction: row;
+
+    #{ns(card__header)} {
+      @include width(40%);
+      flex: 0 0 40%;
+      aspect-ratio: auto;
+
+      #{ns(card__img)} {
+        img {
+          object-position: 50% 0;
+        }
+      }
+    }
+
+    #{ns(card__img)} {
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
   #{ns(card__header)} {
     aspect-ratio: #{16/9};
 
@@ -11,23 +36,6 @@
         @include max-width(100%);
         @include max-height(100%);
         object-fit: contain;
-      }
-    }
-  }
-
-  &#{ns(card--horizontal)} {
-    @include media-query.respond-from(md) {
-      #{ns(card__header)} {
-        aspect-ratio: auto;
-
-        #{ns(card__img)} {
-          img {
-            object-position: 50% 0;
-          }
-        }
-
-        width: 25%;
-        flex: 0 0 25%;
       }
     }
   }
