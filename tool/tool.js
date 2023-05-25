@@ -189,6 +189,11 @@ const testBuilder = (yargs) => {
       describe: 'test de régression visuelle',
       type: 'boolean'
     })
+    .option('reference', {
+      alias: 'r',
+      describe: 'test de régression visuelle - reference',
+      type: 'boolean'
+    })
     .option('packages', {
       alias: 'p',
       describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
@@ -197,11 +202,12 @@ const testBuilder = (yargs) => {
 };
 
 const testHandler = async (argv) => {
-  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined;
+  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined && argv.reference === undefined;;
   const settings = {
     lint: argv.lint || all,
     a11y: argv.a11y || all,
     visual: argv.visual || all,
+    reference: argv.reference || all,
     packages: argv.packages || []
   };
 

@@ -3,7 +3,7 @@ const global = require('../../package.json');
 const { getPackages } = require('../utilities/config');
 const { lint } = require('../test/lint');
 const testPa11y = require('../test/pa11y');
-const { testVisual } = require('../test/visual');
+const { testVisual, generateReference } = require('../test/visual');
 const test = async (settings) => {
   log(36, `test ${global.config.namespace} - version ${global.version}`);
 
@@ -22,6 +22,11 @@ const test = async (settings) => {
   if (settings.visual) {
     log.section('visual');
     await testVisual(packages);
+  }
+
+  if (settings.reference) {
+    log.section('visual reference');
+    await generateReference(packages);
   }
 };
 
