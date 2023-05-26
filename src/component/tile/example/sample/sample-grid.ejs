@@ -4,18 +4,18 @@
  const tile = { pictogram: true, col: {md:'6', lg:'4'}};
  %>
 <%- sample('Grilles de tuiles verticales', './tiles-grid', { tiles : [
-        { ...tile, content: { tag: true }},
-        { ...tile, content: { badge: true }},
+        { ...tile, content: { tag: true, description: true, details: true }},
+        { ...tile, content: { badge: true, description: true }},
         { ...tile, content: { details: true }},
-        { ...tile, content: { details: true, tag: true }},
+        { ...tile, content: { }},
     ]}, true, './tiles-layout'); %>
 
 <%
 const tileSm = { pictogram: true, size:'sm', col: {sm:'6', md:'4', lg:'3'}};
 %>
 <%- sample('Grilles de tuiles verticales sm', './tiles-grid', { tiles : [
-        { ...tileSm, content: { tag: true }},
-        { ...tileSm, content: { badge: true }},
+        { ...tileSm, content: { tag: true, description: true, details: true }},
+        { ...tileSm, content: { badge: true, description: true }},
         { ...tileSm, content: { details: true }},
-        { ...tileSm, content: { details: true, tag: true }},
+        { ...tileSm, content: { }},
     ]}, true, './tiles-layout'); %>

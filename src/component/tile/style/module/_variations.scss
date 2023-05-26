@@ -4,40 +4,23 @@
 ////
 
 @use 'module/spacing';
+@use 'module/media-query';
 
 #{ns(tile)} {
   &--horizontal,
   &--download {
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
+    @include build-tile-horizontal();
+  }
 
-    #{ns(tile__header)} {
-      @include margin-right(8v);
-      @include margin-bottom(0);
+  &--vertical\@md {
+    @include media-query.respond-from(md) {
+      @include build-tile-vertical();
     }
+  }
 
-    #{ns(tile__pictogram)} {
-      @include size(16v, 16v);
-    }
-
-    #{ns(tile__content)} {
-      align-items: flex-start;
-    }
-
-    #{ns(tile__detail)} {
-        @include margin-top(4v);
-    }
-
-    &:not(#{ns(tile--no-icon)}) {
-      #{ns(tile__detail)} {
-        @include padding-right(8v);
-        @include margin-bottom(-8v);
-      }
-
-      #{ns(tile__content)} {
-        @include padding-bottom(8v);
-      }
+  &--vertical\@lg {
+    @include media-query.respond-from(lg) {
+      @include build-tile-vertical();
     }
   }
 }

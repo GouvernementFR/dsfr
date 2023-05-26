@@ -3,9 +3,9 @@ const tile = locals.tile || {};
 const content = tile.content || {};
 const data = {
   content: {
-    title: content.title || 'Intitulé de la tuile',
-    description: content.description !== false ? content.description || lorem('', 60) : undefined,
     ...content,
+    title: content.title || 'Intitulé de la tuile',
+    ...(content.description && {description: content.description === true ? lorem('', 60) : content.description})
   },
   size: tile.size,
   enlarge: tile.enlarge !== false && tile.footer === undefined,
@@ -15,6 +15,10 @@ const data = {
 
 if (tile.horizontal) {
   data.horizontal = tile.horizontal;
+}
+
+if (tile.vertical) {
+  data.vertical = tile.vertical;
 }
 
 if (tile.pictogram === true) {
@@ -34,7 +38,6 @@ if (tile.content) {
   if (tile.content.tag) {
     data.content.tag = { size: 'sm', label: 'label tag'};
   }
-
 }
 
 %>

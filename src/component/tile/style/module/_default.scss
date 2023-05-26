@@ -14,8 +14,7 @@
   background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-position: 0 100%, 0 0, 100% 0, 100% 0;
-  @include padding(6v 6v 7v);
-  @include padding(8v 8v 9v, md);
+  @include padding(8v 8v 9v);
   text-align: center;
 
   #{ns(grid-row)} & {
@@ -93,7 +92,7 @@
 
   &__start {
     order: 1;
-    @include margin-bottom(4v);
+    @include margin-bottom(3v);
 
     #{ns(badges-group)},
     #{ns(tags-group)} {
@@ -115,8 +114,7 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon):not(&--horizontal) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
     @include padding-bottom(10v);
-    @include padding-bottom(12v, md);
   }
 }

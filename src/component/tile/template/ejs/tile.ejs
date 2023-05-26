@@ -45,21 +45,31 @@ switch (tile.size) {
   case 'sm':
     classes.push(`${prefix}-tile--sm`);
     break;
-  }
+}
+
+switch (tile.horizontal) {
+  case true:
+    classes.push(`${prefix}-tile--horizontal`);
+    break;
+}
+
+switch (tile.vertical) {
+  case true:
+    classes.push(`${prefix}-tile--vertical`);
+    break;
+
+  case 'md':
+    classes.push(`${prefix}-tile--vertical@md`);
+    break;
+
+  case 'lg':
+    classes.push(`${prefix}-tile--vertical@lg`);
+    break;
+}
 
 if (tile.download) classes.push(`${prefix}-tile--download`);
 if (tile.icon === false) classes.push(`${prefix}-tile--no-icon`);
 if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
-if (tile.horizontal !== undefined) {
-  classes.push(`${prefix}-tile--horizontal`);
-}
-if (tile.horizontalMd !== undefined) {
-  classes.push(`${prefix}-tile--horizontal-md`);
-}
-if (tile.verticalMd !== undefined) {
-  classes.push(`${prefix}-tile--vertical-md`);
-}
-
 if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 %>
 
