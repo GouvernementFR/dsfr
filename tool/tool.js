@@ -8,7 +8,6 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
-const { generateReference } = require('./test/visual');
 
 /**
  * Build
@@ -194,6 +193,10 @@ const testBuilder = (yargs) => {
       describe: 'test de régression visuelle - reference',
       type: 'boolean'
     })
+    .option('report', {
+      describe: 'rapport de régression visuelle - report',
+      type: 'boolean'
+    })
     .option('packages', {
       alias: 'p',
       describe: 'liste des id des packages à compiler. Si non renseigné, tous les packages sont compilés',
@@ -202,12 +205,13 @@ const testBuilder = (yargs) => {
 };
 
 const testHandler = async (argv) => {
-  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined && argv.reference === undefined;;
+  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined && argv.reference === undefined && argv.report === undefined;
   const settings = {
     lint: argv.lint || all,
     a11y: argv.a11y || all,
     visual: argv.visual || all,
     reference: argv.reference || all,
+    report: argv.report || all,
     packages: argv.packages || []
   };
 
@@ -319,31 +323,6 @@ const changelogHandler = async (argv) => {
   await changelog.build();
 };
 
-/**
- * Visual
- */
-const visualBuilder = (yargs) => {
-  return yargs
-    .usage('Usage: $0 -p accordion')
-    .example(
-      '$0 -p accordion',
-      'génère les captures visuelle de l\'accordéon'
-    )
-    .option('packages', {
-      alias: 'p',
-      describe: 'liste des id des packages à générer. Si non renseigné, tous les packages sont générés',
-      type: 'array'
-    });
-};
-
-const visualHandler = async (argv) => {
-  const settings = {
-    packages: argv.packages || []
-  };
-
-  await generateReference(settings);
-};
-
 yargs
   .scriptName('tool')
   .command(
@@ -381,12 +360,6 @@ yargs
     'génération du changelog',
     changelogBuilder,
     changelogHandler
-  )
-  .command(
-    'reference',
-    'génération des captures de référence pour la régression visuelle',
-    visualBuilder,
-    visualHandler
   )
   .help()
   .argv;

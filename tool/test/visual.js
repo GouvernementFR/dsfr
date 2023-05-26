@@ -1,5 +1,3 @@
-const { execFileSync } = require('child_process');
-const root = require('../utilities/root');
 const backstop = require('backstopjs');
 
 const BACKSTOP_CONFIG = {
@@ -90,29 +88,9 @@ const generateReference = (packages) => {
   backstop('approve', { config: config });
 };
 
-const REPORT = root('.backstop_data/html_report/');
-
-const openReport = () => {
-  const platform = process.platform;
-  const url = encodeURI(REPORT);
-
-  switch (platform) {
-    case 'android':
-    case 'linux':
-      execFileSync('xdg-open', [url]);
-      break;
-
-    case 'darwin':
-      execFileSync('open', [url]);
-      break;
-
-    case 'win32':
-      execFileSync('cmd', ['/c', 'start', url]);
-      break;
-
-    default:
-      throw new Error(`Platform ${platform} isn't supported.`);
-  }
+const openReport = (packages) => {
+  const config = generateConfig(packages);
+  backstop('openReport', { config: config });
 };
 
-module.exports = { testVisual, generateReference };
+module.exports = { testVisual, generateReference, openReport };
