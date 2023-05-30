@@ -19,7 +19,6 @@
     @include respond-from(lg) {
       flex-direction: row;
       flex-wrap: nowrap;
-      @include margin(0 -4v);
 
       & > *:first-child:nth-last-child(2) ~ *,
       & > *:first-child:nth-last-child(3) ~ *,
