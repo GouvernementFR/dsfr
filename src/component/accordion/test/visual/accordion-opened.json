@@ -1,4 +1,7 @@
 {
   "label":"accordion-opened",
-  "url":"http://localhost:8080/example/component/accordion/"
+  "specific": {
+    "clickSelector": ".fr-accordion__btn",
+    "delay": 10000
+  }
 }

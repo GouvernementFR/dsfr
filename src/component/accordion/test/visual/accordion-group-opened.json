@@ -1,4 +1,8 @@
 {
   "label":"accordion-group-opened",
-  "url":"http://localhost:8080/example/component/accordion/group/"
+  "url":"group",
+  "specific": {
+    "clickSelector": ".fr-accordion__btn",
+    "delay": 20000
+  }
 }

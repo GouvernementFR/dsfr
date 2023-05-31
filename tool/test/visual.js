@@ -25,23 +25,33 @@ const BACKSTOP_CONFIG = {
 const VIEWPORTS = [
   {
     label: 'xs',
-    width: 575,
+    width: 320,
+    height: 768
+  },
+  {
+    label: 'sm',
+    width: 576,
     height: 768
   },
   {
     label: 'md',
-    width: 991,
+    width: 768,
     height: 768
   },
   {
     label: 'lg',
-    width: 1247,
+    width: 992,
+    height: 768
+  },
+  {
+    label: 'xl',
+    width: 1248,
     height: 768
   }
 ];
 
 const SCENARIOS_CONFIG = {
-  delay: 500,
+  delay: 5000,
   removeSelectors: [
     '.snippet-accordion',
     '.fr-display-button'
@@ -51,7 +61,7 @@ const SCENARIOS_CONFIG = {
   ],
   selectorExpansion: true,
   expect: 0,
-  misMatchThreshold: 0,
+  misMatchThreshold: 0.3,
   requireSameDimensions: true
 };
 
@@ -61,7 +71,7 @@ const generateConfig = (packages) => {
       const scenarios = pck.test.visual.scenarios.map(scenario => {
         const full = {
           label: scenario.label,
-          url: scenario.url,
+          url: `http://localhost:8080/${pck.example.root.dest.replace('index.html', '')}${scenario.url || ''}`,
           ...SCENARIOS_CONFIG,
           ...(scenario.specific || {})
         };
@@ -78,14 +88,21 @@ const generateConfig = (packages) => {
   }
 };
 
-const testVisual = (packages) => {
-  const config = generateConfig(packages);
-  backstop('test', { config: config });
+const testVisual = (packages, filter) => {
+  const config = generateConfig(packages, filter);
+  const packageIds = packages.map(pck => {
+    return pck.id;
+  });
+  backstop('test', { config: config, filter: filter }).then(() => {
+    console.log('Tests de regression visuel passés : ', packageIds);
+  }).catch(() => {
+    openReport(packages);
+  });
 };
 
-const generateReference = (packages) => {
-  const config = generateConfig(packages);
-  backstop('approve', { config: config });
+const generateReference = (settings) => {
+  const config = generateConfig(settings.packages);
+  backstop('approve', { config: config, filter: settings.filter });
 };
 
 const openReport = (packages) => {

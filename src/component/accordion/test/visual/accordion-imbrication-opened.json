@@ -1,4 +1,8 @@
 {
   "label":"accordion-imbrication-opened",
-  "url":"http://localhost:8080/example/component/accordion/imbrication/"
+  "url":"imbrication",
+  "specific": {
+    "clickSelector": ".fr-accordion__btn",
+    "delay": 20000
+  }
 }

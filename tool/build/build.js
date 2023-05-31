@@ -6,7 +6,7 @@ const { copyImages, copyIcons, copyAssets } = require('./copy');
 const global = require('../../package.json');
 const log = require('../utilities/log');
 const testPa11y = require('../test/pa11y');
-const { testVisual, generateReference } = require('../test/visual');
+const { testVisual } = require('../test/visual');
 const { generateMarkdown } = require('../generate/markdown');
 const { lint } = require('../test/lint');
 const generateConfig = require('../generate/config');
@@ -30,6 +30,11 @@ const build = async (settings) => {
   const config = await Config.get();
 
   const packages = config.getPackagesByIds(settings.packages);
+
+  if (settings.test) {
+    log.section('lint');
+    await lint(packages);
+  }
 
   if (settings.styles) {
     log.section('styles', true);
@@ -85,17 +90,11 @@ const build = async (settings) => {
   }
 
   if (settings.test) {
-    log.section('lint');
-    await lint(packages);
-
-    log.section('pa11y');
-    await testPa11y(packages);
-
     log.section('visual');
     await testVisual(packages);
 
-    log.section('visual reference');
-    await generateReference(packages);
+    log.section('pa11y');
+    await testPa11y(packages);
   }
 };
 

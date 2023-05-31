@@ -8,6 +8,8 @@ const buildRouting = require('./generate/routing');
 const { deployFavicons, deployFiles, deployRobots } = require('./build/copy');
 const { test } = require('./test/test');
 const standalone = require('./build/standalone');
+const { generateReference } = require('./test/visual');
+const { Config } = require('./classes/config/config');
 
 /**
  * Build
@@ -188,12 +190,13 @@ const testBuilder = (yargs) => {
       describe: 'test de régression visuelle',
       type: 'boolean'
     })
-    .option('reference', {
-      alias: 'r',
-      describe: 'test de régression visuelle - reference',
-      type: 'boolean'
+    .option('filter', {
+      alias: 'f',
+      describe: 'filtre les régressions visuelles - filter',
+      type: 'string'
     })
     .option('report', {
+      alias: 'r',
       describe: 'rapport de régression visuelle - report',
       type: 'boolean'
     })
@@ -205,13 +208,14 @@ const testBuilder = (yargs) => {
 };
 
 const testHandler = async (argv) => {
-  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined && argv.reference === undefined && argv.report === undefined;
+  const all = argv.lint === undefined && argv.a11y === undefined && argv.visual === undefined;
+  const report = argv.report === true;
   const settings = {
-    lint: argv.lint || all,
-    a11y: argv.a11y || all,
-    visual: argv.visual || all,
-    reference: argv.reference || all,
-    report: argv.report || all,
+    lint: (argv.lint || all) && !report,
+    a11y: (argv.a11y || all) && !report,
+    visual: (argv.visual || all) && !report,
+    filter: argv.filter || '',
+    report: report,
     packages: argv.packages || []
   };
 
@@ -298,6 +302,40 @@ const standaloneHandler = async (argv) => {
 };
 
 /**
+ * Visual
+ */
+const visualBuilder = (yargs) => {
+  return yargs
+    .usage('Usage: $0 -p accordion')
+    .example(
+      '$0 -p accordion',
+      'génère les captures visuelle de l\'accordéon'
+    )
+    .option('packages', {
+      alias: 'p',
+      describe: 'liste des id des packages à générer. Si non renseigné, tous les packages sont générés',
+      type: 'array'
+    })
+    .option('filter', {
+      alias: 'f',
+      describe: 'filtre les régressions visuelles - filter',
+      type: 'string'
+    });
+};
+
+const visualHandler = async (argv) => {
+  const config = await Config.get();
+  const packages = config.getPackagesByIds(argv.packages);
+
+  const settings = {
+    packages: packages || [],
+    filter: argv.filter || ''
+  };
+
+  await generateReference(settings);
+};
+
+/**
  * Changelog
  */
 const changelogBuilder = (yargs) => {
@@ -360,6 +398,12 @@ yargs
     'génération du changelog',
     changelogBuilder,
     changelogHandler
+  )
+  .command(
+    'reference',
+    'génération des captures de référence pour la régression visuelle',
+    visualBuilder,
+    visualHandler
   )
   .help()
   .argv;
