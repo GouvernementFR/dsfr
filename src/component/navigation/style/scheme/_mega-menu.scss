@@ -14,6 +14,12 @@
       @include color.box-shadow(open blue-france, (legacy:$legacy), top-1-in);
     }
 
+    &__list {
+      @include before {
+        @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-out);
+      }
+    }
+
     &__category {
       @include respond-from(lg) {
         @include color.box-shadow(default grey, (legacy:$legacy), 0 calc(4v + 1px) 0 -4v color.$constant);
