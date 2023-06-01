@@ -14,6 +14,10 @@
       @include color.text(title blue-france, (legacy: $legacy));
     }
 
+    &__title {
+      @include color.text(action-high blue-france, (legacy: $legacy));
+    }
+
     &--grey {
       @include color.background(contrast grey, (legacy: $legacy));
     }

@@ -6,7 +6,18 @@
 #{ns(card)} {
   @include display-flex(column);
   @include relative();
-  @include icon(arrow-right-line);
+
+  &__title {
+    a {
+      @include icon(arrow-right-line, md, after) {
+        @include absolute(null, 8v, 8v);
+      }
+    }
+
+    a[target=_blank] {
+      @include icon(external-link-line, md, after);
+    }
+  }
 
   &:not(&--no-border):not(&--shadow) {
     background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
@@ -17,12 +28,9 @@
 
   &--no-icon,
   &:not(#{ns(enlarge-link)}) {
-    @include before(none);
-  }
-
-  @include before {
-    @include absolute(null, 8v, 8v);
-    @include icon-size(md);
+    #{ns(card__title a)} {
+      @include after(none);
+    }
   }
 
   @include body() {

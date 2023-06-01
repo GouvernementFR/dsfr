@@ -18,6 +18,8 @@
 
 * link.icon (string, optional) : icon du lien
 
+* link.download (boolean, optional): Si true, lien de téléchargement
+
 * link.iconPlace (string, optional) : emplacement de l'icone
   si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
   valeurs :
@@ -35,7 +37,21 @@ const link = locals.link || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
 
+let label = link.label || 'lorem ipsum';
+
 const markup = link.markup || 'a';
+
+if (link.assess === true) {
+    linkAttrs[`data-${prefix}-assess-file`] = ''
+} else if (typeof(link.assess) === 'string') {
+    linkAttrs[`data-${prefix}-assess-file`] = link.assess
+}
+if (link.hreflang) linkAttrs.hreflang = link.hreflang;
+
+if (link.download === true) {
+  linkAttrs.download = '';
+  linkClasses.push(prefix + '-link--download');
+}
 
 linkClasses.push(prefix + '-link');
 
@@ -100,8 +116,12 @@ if (link.disabled === true) {
     }
 }
 
+if (link.detail) {
+    label += ` <span class="${prefix}-link__detail">${link.detail}</span>`;
+}
+
 %>
 
 <<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
-<%- link.label %>
+<%- label %>
 </<%= markup %>>
