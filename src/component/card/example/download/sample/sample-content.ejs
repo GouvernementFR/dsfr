@@ -1,11 +1,9 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Carte de téléchargement, cas maximum', './card-download', { card : { content: {details: ['icon', 'download'], badges: true} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
+<%- sample('Carte de téléchargement, cas maximum', './card-download', { card : { content: { details: ['icon'], badges: true } } }, true, '../../sample/card-layout', {col: {sm: 6}}); %>
 
-<%- sample('Carte de téléchargement, cas minimum', './card-download', { card : { img: false, content: {details: ['download'], description: false} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
+<%- sample('Carte de téléchargement, cas minimum', './card-download', { card : { img: false, content: { description: false } } }, true, '../../sample/card-layout', {col: {sm: 6}}); %>
 
-<%- sample('Carte de téléchargement, avec tags', './card-download', { card : {content: {details: ['download'], tags: true} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
+<%- sample('Carte de téléchargement, avec tags', './card-download', { card : { content: { tags: true} }}, true, '../../sample/card-layout', {col: {sm: 6}}); %>
 
-<%- sample('Carte de téléchargement, avec remplissage automatique des détails', './card-download', { card : { content: {details: ['download'], assess: true} }}, true, '../../sample/card-layout', {col: {sm: 6}, desc: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le detail depuis les informations du fichier (extension, poids, langue)'}); %>
-
-<%- sample('Carte de téléchargement, ouverture dans un onglet', './card-download', { card : { content: {details: ['download'], downloadable: false} }}, true, '../../sample/card-layout', {col: {sm: 6}, desc: 'Permet d\'ouvrir le fichier dans un nouvel onglet lorsque le format le permet.'}); %>
+<%- sample('Carte de téléchargement, avec remplissage automatique des détails', './card-download', { card : { content: { assess: true} }}, true, '../../sample/card-layout', {col: {sm: 6}, desc: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le detail depuis les informations du fichier (extension, poids, langue)'}); %>

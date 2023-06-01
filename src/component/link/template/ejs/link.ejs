@@ -18,6 +18,8 @@
 
 * link.icon (string, optional) : icon du lien
 
+* link.download (boolean, optional): Si true, lien de téléchargement
+
 * link.iconPlace (string, optional) : emplacement de l'icone
   si non défini alors que le paramètre icon est défini, bouton avec icone seule, sans label
   valeurs :
@@ -32,7 +34,6 @@
 <% eval(include('../../../../core/index.ejs')); %>
 <%
 const link = locals.link || {};
-const content = link.content || {};
 let linkClasses = link.classes || [];
 let linkAttrs = link.attributes || {};
 
@@ -40,15 +41,17 @@ let label = link.label || 'lorem ipsum';
 
 const markup = link.markup || 'a';
 
-if (content.assess === true) {
+if (link.assess === true) {
     linkAttrs[`data-${prefix}-assess-file`] = ''
-} else if (typeof(content.assess) === 'string') {
-    linkAttrs[`data-${prefix}-assess-file`] = content.assess
+} else if (typeof(link.assess) === 'string') {
+    linkAttrs[`data-${prefix}-assess-file`] = link.assess
 }
-if (content.hreflang) linkAttrs.hreflang = content.hreflang;
+if (link.hreflang) linkAttrs.hreflang = link.hreflang;
 
-if (content.downloadable === true) linkAttrs.download = '';
-else if (content.downloadable === false) linkAttrs.target = '_blank';
+if (link.download === true) {
+  linkAttrs.download = '';
+  linkClasses.push(prefix + '-link--download');
+}
 
 linkClasses.push(prefix + '-link');
 
@@ -61,12 +64,6 @@ switch (link.size) {
 
     case 'lg':
         linkClasses.push(prefix + '-link--lg');
-        break;
-}
-
-if (link.variations) for (const variation of link.variations) switch(variation) {
-    case 'download':
-        linkClasses.push(prefix + '-link--download');
         break;
 }
 

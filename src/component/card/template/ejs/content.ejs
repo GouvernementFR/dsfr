@@ -38,8 +38,6 @@ if (content.disabled !== true) attributes.href = href;
 if (content.lang) attributes.hreflang = content.lang;
 if (content.blank === true) attributes.target = '_blank';
 if (content.downloadable === true) attributes.download = '';
-else if (content.downloadable === false) attributes.target = '_blank';
-
 
 switch (true) {
     case content.badgesGroup !== undefined :

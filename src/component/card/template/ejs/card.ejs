@@ -16,7 +16,7 @@
 
 * card.icon (string or boolean, optional) : icône illustrative ou suppression de l'icon avec false
 
-* card.variations (array, optional): variations ésthétiques de la carte (valeurs: accent, no-border, no-background, shadow
+* card.variations (array, optional): variations ésthétiques de la carte (valeurs: accent, no-border, no-background, shadow)
 
 * card.download (boolean, optional): Si true, carte de téléchargement
 
@@ -26,10 +26,11 @@
 <% eval(include('../../../../core/index.ejs')); %>
 
 <%
-let card = locals.card || {};
-let classes = card.classes || [];
-let attributes = card.attributes || {};
+const card = locals.card || {};
+const classes = card.classes || [];
+const attributes = card.attributes || {};
 classes.push(`${prefix}-card`);
+const content = card.content || {};
 
 if (card.id) attributes.id = card.id;
 
@@ -60,6 +61,11 @@ if (card.horizontal !== undefined) {
   }
 }
 
+if (card.download === true) {
+  classes.push(`${prefix}-card--download`);
+  content.downloadable = true;
+}
+
 switch (card.icon) {
   case undefined:
     break;
@@ -88,17 +94,12 @@ if (card.variations) for (const variation of card.variations) switch(variation) 
   case 'shadow':
     classes.push(`${prefix}-card--shadow`);
     break;
-
-  case 'download':
-    classes.push(`${prefix}-card--download`);
-    break;
 }
 
-// if (card.accent !== undefined)
 %>
 <div <%- includeAttrs(attributes) %> <%- includeClasses(classes) %>>
   <div class="<%= prefix %>-card__body" >
-    <%- include('content', { content: card.content}) %>
+    <%- include('content', { content: content}) %>
     <% if (card.footer !== undefined) { %>
     <%- include('footer', { footer: card.footer}) %>
     <% } %>
