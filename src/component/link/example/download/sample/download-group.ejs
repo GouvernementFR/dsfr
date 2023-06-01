@@ -1,0 +1,16 @@
+<%
+let link = locals.link || {};
+
+let data = {
+  download: true,
+  href: link.href || contentPlaceholder(relativeRoot + 'example/img/image.jpg'),
+  detail: link.detail !== false ? link.detail || 'JPG – 61,88 ko' + (link.hreflang === 'en' ? ' – Anglais': '') : undefined,
+  label: link.label || 'Télécharger le document lorem ipsum sit dolores amet',
+  ...link
+}
+
+const links = [data, data, data];
+
+%>
+
+<%- include('../../../template/ejs/links-group', {linksGroup: {links: links}}); %>

@@ -1,0 +1,6 @@
+title: Téléchargement de fichier
+description:  Ce composant est déprécié. La fonctionnalité "téléchargement de fichier" est maintenant disponible directement sur le composant carte et le composant lien.
+
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
