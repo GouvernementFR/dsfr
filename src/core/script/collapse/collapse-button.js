@@ -9,10 +9,6 @@ class CollapseButton extends DisclosureButton {
   static get instanceClassName () {
     return 'CollapseButton';
   }
-
-  get isPrimary () {
-    return super.isPrimary && this.registration.creator.isButtonPrimary(this);
-  }
 }
 
 export { CollapseButton };

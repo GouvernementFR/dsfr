@@ -13,7 +13,7 @@ class Navigation extends api.core.CollapsesGroup {
     this.out = false;
     this.listen('focusout', this.focusOutHandler.bind(this));
     this.listen('mousedown', this.mouseDownHandler.bind(this));
-    this.listen('click', this.clickHandler.bind(this), { capture: true });
+    this.listenClick({ capture: true });
   }
 
   validate (member) {

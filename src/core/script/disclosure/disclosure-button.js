@@ -6,6 +6,7 @@ class DisclosureButton extends Instance {
     super();
     this.type = type;
     this.attributeName = type.ariaState ? 'aria-' + type.id : ns.attr(type.id);
+    this._canDisclose = false;
   }
 
   static get instanceClassName () {
@@ -13,17 +14,22 @@ class DisclosureButton extends Instance {
   }
 
   get isPrimary () {
-    return this.canDisclose && !this.registration.creator.node.contains(this.node);
+    return this.registration.creator.primaryButton === this;
   }
 
   get canDisclose () {
-    return this.hasAttribute(this.attributeName);
+    return this._canDisclose;
+  }
+
+  get isDisabled () {
+    return this.type.canDisable && this.hasAttribute('disabled');
   }
 
   init () {
+    this._canDisclose = this.hasAttribute(this.attributeName);
+    this._isContained = this.registration.creator.node.contains(this.node);
     this.controlsId = this.getAttribute('aria-controls');
-    if (this.isPrimary && this.disclosed && this.registration.creator.pristine) this.registration.creator.disclose();
-    this.enableCreator();
+    this.registration.creator.retrievePrimary();
     this.listenClick();
   }
 
@@ -39,16 +45,13 @@ class DisclosureButton extends Instance {
   }
 
   mutate (attributeNames) {
+    this._canDisclose = this.hasAttribute(this.attributeName);
     if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
-      if (this.disclosed) this.registration.creator.disclose();
+      if (this.isDisclosed) this.registration.creator.disclose();
       else if (this.type.canConceal) this.registration.creator.conceal();
     }
 
-    this.enableCreator();
-  }
-
-  enableCreator () {
-    if (this.isPrimary) this.registration.creator.isEnabled = !this.type.canDisable || !this.hasAttribute('disabled');
+    this.registration.creator.retrievePrimary();
   }
 
   apply (value) {
@@ -56,13 +59,27 @@ class DisclosureButton extends Instance {
     this.setAttribute(this.attributeName, value);
   }
 
-  get disclosed () {
+  get isDisclosed () {
     return this.getAttribute(this.attributeName) === 'true';
   }
 
   focus () {
     super.focus();
     this.scrollIntoView();
+  }
+
+  measure (rect) {
+    const buttonRect = this.rect;
+    this._dx = rect.x - buttonRect.x;
+    this._dy = rect.y - buttonRect.y;
+  }
+
+  get dx () {
+    return this._dx;
+  }
+
+  get dy () {
+    return this._dy;
   }
 }
 

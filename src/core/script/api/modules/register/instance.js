@@ -16,6 +16,7 @@ class Instance {
     this._isLoading = false;
     this._isSwappingFont = false;
     this._isEnabled = true;
+    this._isDisposed = false;
     this._listeners = {};
     this.handlingClick = this.handleClick.bind(this);
     this._hashes = [];
@@ -111,12 +112,12 @@ class Instance {
     this._listeners[type] = listeners.filter(listener => removal.indexOf(listener) === -1);
   }
 
-  listenClick () {
-    this.listen('click', this.handlingClick);
+  listenClick (options) {
+    this.listen('click', this.handlingClick, options);
   }
 
-  unlistenClick () {
-    this.unlisten('click', this.handlingClick);
+  unlistenClick (options) {
+    this.unlisten('click', this.handlingClick, options);
   }
 
   handleClick (e) {}
@@ -279,6 +280,10 @@ class Instance {
 
   mutate (attributeNames) {}
 
+  get isDisposed () {
+    return this._isDisposed;
+  }
+
   _dispose () {
     inspector.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
@@ -302,6 +307,7 @@ class Instance {
     for (const registration of this._registrations) state.remove('register', registration);
     this._registrations = null;
     this.registration.remove(this);
+    this._isDisposed = true;
     this.dispose();
   }
 

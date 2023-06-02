@@ -24,7 +24,7 @@ class Collapse extends Disclosure {
 
   transitionend (e) {
     this.removeClass(CollapseSelector.COLLAPSING);
-    if (!this.disclosed) {
+    if (!this.isDisclosed) {
       if (this.isLegacy) this.style.maxHeight = '';
       else this.style.removeProperty('--collapse-max-height');
     }
@@ -36,7 +36,7 @@ class Collapse extends Disclosure {
   }
 
   disclose (withhold) {
-    if (this.disclosed || !this.isEnabled) return false;
+    if (this.isDisclosed || !this.isEnabled) return false;
     this.unbound();
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
@@ -48,7 +48,7 @@ class Collapse extends Disclosure {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.disclosed || !this.isEnabled) return false;
+    if (!this.isDisclosed || !this.isEnabled) return false;
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
       this.adjust();
@@ -66,46 +66,25 @@ class Collapse extends Disclosure {
   }
 
   reset () {
-    if (!this.pristine) this.disclosed = false;
+    if (!this.isPristine) this.isDisclosed = false;
   }
 
-  isButtonPrimary (button) {
-    let p = this.node;
-    const parents = [];
-    while (p) {
-      p = p.parentNode;
-      parents.push(p);
-    }
+  _electPrimary (candidates) {
+    if (candidates.length === 1) return candidates[0];
+    const before = candidates.filter(candidate => candidate.dy >= 0);
+    if (before.length > 0) candidates = before;
+    if (candidates.length === 1) return candidates[0];
+    const min = Math.min(...candidates.map(candidate => candidate.dy));
+    const mins = candidates.filter(candidate => candidate.dy === min);
+    if (mins.length > 0) candidates = mins;
+    if (candidates.length === 1) return candidates[0];
+    candidates.sort((a, b) => Math.abs(b.dx) - Math.abs(a.dx));
+    return candidates[0];
+  }
 
-    const rect = this.getRect();
-
-    let index = -1;
-    p = button.node;
-    while (index === -1) {
-      p = p.parentNode;
-      index = parents.indexOf(p);
-    }
-
-    const buttonRect = button.getRect();
-    let i;
-
-    for (const other of this.buttons) {
-      if (other === button || !other.canDisclose || this.node.contains(other.node)) continue;
-      p = other.node;
-      while (p) {
-        p = p.parentNode;
-        i = parents.indexOf(p);
-        if (i > -1) {
-          if (i < index) return false;
-          if (i > index) break;
-          const otherRect = other.getRect();
-          if (Math.abs(rect.y - buttonRect.y) > Math.abs(rect.y - otherRect.y)) return false;
-          if (Math.abs(rect.x - buttonRect.x) > Math.abs(rect.x - otherRect.x)) return false;
-          break;
-        }
-      }
-    }
-    return true;
+  dispose () {
+    this._primaryButton = null;
+    super.dispose();
   }
 }
 
