@@ -2,6 +2,14 @@
   "label":"accordion-opened",
   "specific": {
     "clickSelector": ".fr-accordion__btn",
-    "delay": 10000
+    "postInteractionWait": 5000,
+    "viewports": 
+      [
+          {
+              "label": "md",
+              "width": 768,
+              "height": 768
+          }
+      ]
   }
 }

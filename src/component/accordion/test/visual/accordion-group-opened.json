@@ -3,6 +3,14 @@
   "url":"group",
   "specific": {
     "clickSelector": ".fr-accordion__btn",
-    "delay": 20000
+    "postInteractionWait": 5000,
+    "viewports": 
+      [
+          {
+              "label": "md",
+              "width": 768,
+              "height": 768
+          }
+      ]
   }
 }
