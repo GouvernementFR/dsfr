@@ -33,7 +33,7 @@
 <%
 const link = locals.link || {};
 let linkClasses = link.classes || [];
-if (!linkClasses.includes(prefix + '-link')) linkClasses.push(prefix + '-link');
+linkClasses.push(prefix + '-link');
 
 let linkAttrs = link.attributes || {};
 
