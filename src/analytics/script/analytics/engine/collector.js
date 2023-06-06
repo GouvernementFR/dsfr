@@ -133,7 +133,6 @@ class Collector {
   }
 
   collect () {
-    console.log('collect');
     if (!this.page.collecting()) return;
     queue.collect();
   }

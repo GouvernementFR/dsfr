@@ -37,7 +37,6 @@ class Page {
   }
 
   collecting () {
-    console.log('collecting', this._state);
     if (this._state !== CollectionState.COLLECTABLE) {
       api.inspector.warn(`current path '${this.path}' was already collected`);
       return false;
