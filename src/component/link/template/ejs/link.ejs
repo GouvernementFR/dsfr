@@ -33,11 +33,12 @@
 <%
 const link = locals.link || {};
 let linkClasses = link.classes || [];
-linkClasses.push(prefix + '-link');
 
 let linkAttrs = link.attributes || {};
 
 const markup = link.markup || 'a';
+
+linkClasses.push(prefix + '-link');
 
 linkAttrs.id = link.id || uniqueId('link');
 
