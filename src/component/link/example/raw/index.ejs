@@ -1,7 +1,0 @@
-<% const sample = getSample(include); %>
-
-<%- sample('Lien brut', '../sample/link-default', {link: { classes: [`${prefix}-raw-link`] } }, true); %>
-
-<%- sample('Lien externe brut', '../sample/link-default', {link: { label: 'Lien externe', href:'https://www.systeme-de-design.gouv.fr/', classes: [`${prefix}-raw-link`], attributes: { target: '_blank'} } }, true); %>
-
-<%- sample('Groupe de liens bruts', '../sample/links-group', { linksGroup: { classes: [`${prefix}-raw-link`], links: [{ label: 'Lien externe', href:'https://www.systeme-de-design.gouv.fr/', attributes: { target: '_blank'} }, { label: 'Label lien', href:'../' }, { label: 'Label lien', href:'../' }  ] } }, true); %>

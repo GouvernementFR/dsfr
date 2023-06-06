@@ -34,6 +34,7 @@ form {
 
 #{ns(raw-link)} {
   @include disable-underline;
+  @include disable-external-link;
 }
 
 #{ns(reset-link)} {

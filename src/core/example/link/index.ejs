@@ -1,0 +1,23 @@
+<% const sample = getSample(include); %>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Liens bruts', null, 0) %>
+  <p>
+    Utilisation de la classe <code><%= `${prefix}-raw-link` %></code> pour afficher de manière brut les liens.
+  </p>
+  
+  <%- sample('Lien brut', '../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-raw-link" title="titre lien" href="../">titre lien</a>`} }, true); %>
+
+  <%- sample('Lien externe brut', '../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-raw-link" title="titre lien externe - nouvelle fenêtre" href="https://www.systeme-de-design.gouv.fr/" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>`} }, true); %>
+</div>
+
+<div class="<%= prefix %>-container" >
+  <%- section('Liens reinitialisés', null, 0) %>
+  <p>
+    Utilisation de la classe <code><%= `${prefix}-reset-link` %></code> pour reinitialiser le style des liens.
+  </p>
+
+  <%- sample('Lien reinitialisé', '../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-reset-link" title="titre lien" href="../">titre lien</a>`} }, true); %>
+
+  <%- sample('Lien externe reinitialisé', '../reset/sample/paragraph', { paragraph: {insert: `<a class="${prefix}-reset-link" title="titre lien externe - nouvelle fenêtre" href="https://www.systeme-de-design.gouv.fr/" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>`} }, true); %>
+</div>

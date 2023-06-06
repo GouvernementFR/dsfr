@@ -68,6 +68,10 @@ $underline-thickness: 0.0625em;
   }
 }
 
+@mixin disable-external-link() {
+  --external-link-content: none;
+}
+
 @mixin enable-external() {
   --external-link-content: '';
 }
