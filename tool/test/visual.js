@@ -12,7 +12,7 @@ const BACKSTOP_CONFIG = {
     ci_report: '.backstop_data/ci_report'
   },
   report: [],
-  engine: 'puppeteer',
+  engine: 'playwright',
   engineOptions: {
     args: ['--no-sandbox']
   },
