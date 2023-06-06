@@ -13,6 +13,8 @@ class Disclosure extends Instance {
     this.modifier = this._selector + '--' + this.type.id;
     this.isRetrievingPrimary = false;
     this.isPristine = true;
+    this._hasRetrieved = false;
+    this._discloseOnRetrieval = false;
   }
 
   static get instanceClassName () {
@@ -25,9 +27,8 @@ class Disclosure extends Instance {
     this.addDescent(DisclosureEmission.UNGROUP, this.update.bind(this));
     this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
     this.ascend(DisclosureEmission.ADDED);
-    this.listenHash(this.id, () => { this.disclose(); });
+    this.listenHash(this.id, () => this.disclose());
     this.update();
-    if (this.hash === this.id) this.disclose();
   }
 
   get isEnabled () { return super.isEnabled; }
@@ -89,6 +90,11 @@ class Disclosure extends Instance {
   }
 
   disclose (withhold) {
+    console.log('disclose', this.id);
+    if (!this._hasRetrieved) {
+      this._discloseOnRetrieval = true;
+      return false;
+    }
     if (this.isDisclosed || !this.isEnabled) return false;
     this.isPristine = false;
     this.isDisclosed = true;
@@ -97,9 +103,8 @@ class Disclosure extends Instance {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.isDisclosed || !this.isEnabled) return false;
+    if (!this.isDisclosed) return false;
     if (!this.type.canConceal && this.group && this.group.current === this) return false;
-    this.isPristine = false;
     this.isDisclosed = false;
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
     if (!preventFocus) this.focus();
@@ -162,6 +167,10 @@ class Disclosure extends Instance {
     return this._primaryButton;
   }
 
+  get initial () {
+    return this._initial;
+  }
+
   retrievePrimary () {
     if (this.isRetrievingPrimary) return;
     this.isRetrievingPrimary = true;
@@ -169,6 +178,9 @@ class Disclosure extends Instance {
   }
 
   _retrievePrimary () {
+    this.isRetrievingPrimary = false;
+    this._hasRetrieved = true;
+
     const candidates = this.buttons.filter(button => button.canDisclose && !this.node.contains(button.node));
 
     if (candidates.length === 0) {
@@ -178,10 +190,33 @@ class Disclosure extends Instance {
 
     this._primaryButton = this._electPrimary(candidates);
 
-    this.isEnabled = !this._primaryButton.isDisabled;
-    if (this.isEnabled && this._primaryButton.isDisclosed && this.isPristine) this.disclose();
+    if (!this._primaryButton) return;
 
-    this.isRetrievingPrimary = false;
+    console.log(this.id, this.isPristine, this.isEnabled, this._primaryButton.isDisclosed, this.hash === this.id);
+
+    this.isEnabled = !this._primaryButton.isDisabled;
+    this.ascend(DisclosureEmission.RETRIEVE);
+
+    switch (true) {
+      case this.isEnabled && this._discloseOnRetrieval:
+        console.log('on retrieval', this.id);
+        this._discloseOnRetrieval = false;
+        this.disclose();
+        break;
+
+      case this.isEnabled && this.isPristine && this._primaryButton.isDisclosed:
+        console.log('retrievePrimary primary true', this.id);
+        this.disclose();
+        break;
+
+      case this.isEnabled && this.isPristine && this.hash === this.id:
+        this.disclose();
+        break;
+
+      case !this.isEnabled && this.isDisclosed:
+        this.conceal();
+        break;
+    }
   }
 
   _electPrimary (candidates) {

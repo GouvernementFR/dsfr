@@ -6,6 +6,7 @@ class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
     super(jsAttribute);
     this.disclosureInstanceClassName = disclosureInstanceClassName;
+    this._members = [];
     this._index = -1;
   }
 
@@ -15,6 +16,7 @@ class DisclosuresGroup extends Instance {
 
   init () {
     this.addAscent(DisclosureEmission.ADDED, this.update.bind(this));
+    this.addAscent(DisclosureEmission.RETRIEVE, this.retrieve.bind(this));
     this.addAscent(DisclosureEmission.REMOVED, this.update.bind(this));
     this.descend(DisclosureEmission.GROUP);
     this.update();
@@ -57,7 +59,27 @@ class DisclosuresGroup extends Instance {
     this._members = members.filter(this.validate.bind(this));
   }
 
+  retrieve () {
+    if (this._isRetrieving) return;
+    this._isRetrieving = true;
+    this.request(this._retrieve.bind(this));
+  }
+
+  _retrieve () {
+    if (this.hash) {
+      for (let i = 0; i < this.length - 1; i++) {
+        console.log('loop', i, this.hash, this.members[i].id);
+        if (this.hash === this.members[i].id) {
+          console.log('group retrieve', i);
+          this.index = i;
+          return;
+        }
+      }
+    }
+  }
+
   update () {
+    console.log('update');
     this.getMembers();
     this.getIndex();
   }
@@ -71,7 +93,8 @@ class DisclosuresGroup extends Instance {
   }
 
   getIndex (defaultIndex = -1) {
-    this._index = -1;
+    console.log('disclosure getIndex', this.index);
+    this._index = undefined;
     let index = -1;
     for (let i = 0; i < this.length; i++) {
       if (index !== -1 && this.members[i].isDisclosed) index = i;
@@ -85,6 +108,7 @@ class DisclosuresGroup extends Instance {
   }
 
   set index (value) {
+    console.log('set group index', value);
     if (value < -1 || value >= this.length || value === this._index) return;
     this._index = value;
     for (let i = 0; i < this.length; i++) {
@@ -103,6 +127,7 @@ class DisclosuresGroup extends Instance {
   }
 
   set current (member) {
+    console.log('set current', member.id);
     this.index = this.members.indexOf(member);
   }
 

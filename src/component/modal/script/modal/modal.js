@@ -45,6 +45,10 @@ class Modal extends api.core.Disclosure {
     if (this.body) this.body.deactivate();
     return true;
   }
+
+  _electPrimary (candidates) {
+    return null;
+  }
 }
 
 export { Modal };
