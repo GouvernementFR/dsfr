@@ -29,7 +29,7 @@ class DisclosureButton extends Instance {
     this._canDisclose = this.hasAttribute(this.attributeName);
     this._isContained = this.registration.creator.node.contains(this.node);
     this.controlsId = this.getAttribute('aria-controls');
-    this.registration.creator.retrievePrimary();
+    this.registration.creator.retrievePrimaries();
     this.listenClick();
   }
 
@@ -51,7 +51,7 @@ class DisclosureButton extends Instance {
       else if (this.type.canConceal) this.registration.creator.conceal();
     }
 
-    this.registration.creator.retrievePrimary();
+    this.registration.creator.retrievePrimaries();
   }
 
   apply (value) {
