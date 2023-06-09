@@ -11,6 +11,7 @@ a {
   @include init-underline;
   @include enable-underline;
   @include enable-external;
+  --text-decoration: none;
 }
 
 // TODO: à checker avec <area href="" >
@@ -33,12 +34,21 @@ form {
 }
 
 #{ns(raw-link)} {
-  @include disable-underline;
-  @include disable-external;
+  --text-decoration: none;
+  
+  &[href],
+  [href] {
+    @include disable-underline;
+    @include disable-external;
+  }
 }
 
 #{ns(reset-link)} {
-  @include disable-underline;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  --text-decoration: underline;
+
+  &[href],
+  [href] {
+    @include disable-underline;
+    text-underline-offset: 2px;
+  }
 }
