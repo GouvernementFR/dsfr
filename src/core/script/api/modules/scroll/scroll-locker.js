@@ -20,7 +20,7 @@ class ScrollLocker extends Module {
       this._scrollY = window.scrollY;
       const scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
       document.documentElement.setAttribute(ns.attr('scrolling'), 'false');
-      document.body.style.top = `${this._scrollY * -1}px`;
+      document.body.style.top = `${-this._scrollY}px`;
       this.behavior = getComputedStyle(document.documentElement).getPropertyValue('scroll-behavior');
       if (this.behavior === 'smooth') document.documentElement.style.scrollBehavior = 'auto';
       if (scrollBarGap > 0) {
