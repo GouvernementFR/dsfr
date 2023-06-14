@@ -27,6 +27,7 @@ class DisclosureButton extends Instance {
 
   init () {
     this._canDisclose = this.hasAttribute(this.attributeName);
+    this._isInitiallyDisclosed = this.isDisclosed;
     this._isContained = this.registration.creator.node.contains(this.node);
     this.controlsId = this.getAttribute('aria-controls');
     this.registration.creator.retrievePrimaries();
@@ -46,12 +47,11 @@ class DisclosureButton extends Instance {
 
   mutate (attributeNames) {
     this._canDisclose = this.hasAttribute(this.attributeName);
+    this.registration.creator.applyAbility();
     if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
       if (this.isDisclosed) this.registration.creator.disclose();
       else if (this.type.canConceal) this.registration.creator.conceal();
     }
-
-    this.registration.creator.retrievePrimaries();
   }
 
   apply (value) {
@@ -61,6 +61,10 @@ class DisclosureButton extends Instance {
 
   get isDisclosed () {
     return this.getAttribute(this.attributeName) === 'true';
+  }
+
+  get isInitiallyDisclosed () {
+    return this._isInitiallyDisclosed;
   }
 
   focus () {

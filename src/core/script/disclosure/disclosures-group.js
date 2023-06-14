@@ -92,6 +92,10 @@ class DisclosuresGroup extends Instance {
     return this.members ? this.members.length : 0;
   }
 
+  retrieveCurrent () {
+
+  }
+
   getIndex (defaultIndex = -1) {
     console.log('disclosure getIndex', this.index);
     this._index = undefined;

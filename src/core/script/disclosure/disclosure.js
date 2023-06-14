@@ -2,7 +2,6 @@ import { Instance } from '../api/modules/register/instance.js';
 import { DisclosureEvent } from './disclosure-event.js';
 import { DisclosureEmission } from './disclosure-emission.js';
 import { completeAssign } from '../api/utilities/property/complete-assign.js';
-import { Initial } from './initial';
 
 class Disclosure extends Instance {
   constructor (type, selector, DisclosureButtonInstanceClass, disclosuresGroupInstanceClassName) {
@@ -120,6 +119,10 @@ class Disclosure extends Instance {
     for (let i = 0; i < this.buttons.length; i++) this.buttons[i].apply(value);
   }
 
+  get isInitiallyDisclosed () {
+    return this.primaryButtons.some(button => button.isInitiallyDisclosed);
+  }
+
   reset () {}
 
   toggle (canDisclose) {
@@ -155,10 +158,6 @@ class Disclosure extends Instance {
     return this._primaryButtons;
   }
 
-  get initial () {
-    return this._initial;
-  }
-
   retrievePrimaries () {
     if (this._isRetrievingPrimaries) return;
     this._isRetrievingPrimaries = true;
@@ -175,29 +174,61 @@ class Disclosure extends Instance {
 
     console.log(this.id, this._isPristine, this.isEnabled, this._primaryButton.isDisclosed, this.hash === this.id);
 
-    this.isEnabled = !this._primaryButtons.some(button => button.isDisabled);
-    this.ascend(DisclosureEmission.RETRIEVE);
+    this.applyAbility(true);
+
+    if (this.group) {
+
+    }
+
+    if (this._isPristine && this.isEnabled && !this.group) {
+      switch (true) {
+        case this.hash === this.id:
+
+          }
+    }
+
+
 
     switch (true) {
-      case this.isEnabled && this._isPristine && this._primaryButtons.some(button => button.isDisclosed):
+      case this.isEnabled && this._isPristine:
+        if (this.hash === this.id) {
+          this._initial |= Initial.HASH;
+        }
+        if (this._primaryButtons.some(button => button.isDisclosed)) {
+          this._initial |= Initial.ATTRIBUTE;
+        }
         console.log('retrievePrimary primary true', this.id);
-        this._initial ||= Initial.ATTRIBUTE;
+
         if (!this.group) this.disclose();
         break;
 
-      case this.isEnabled && this._isPristine && this.hash === this.id:
-        this._initial ||= Initial.ATTRIBUTE;
+      case this.isEnabled && this._isPristine && :
+        this._initial |= Initial.ATTRIBUTE;
         if (!this.group) this.disclose();
-        break;
-
-      case !this.isEnabled && this.isDisclosed:
-        this.conceal();
         break;
     }
   }
 
   _electPrimaries (candidates) {
     return candidates.filter(button => button.canDisclose && !this.node.contains(button.node));
+  }
+
+  applyAbility (withold = false) {
+    const isEnabled = this.isEnabled;
+    this.isEnabled = !this._primaryButtons.every(button => button.isDisabled);
+
+    if (this.isEnabled === isEnabled || withold) return;
+
+    switch (true) {
+      case isEnabled && !this.isEnabled && this.isDisclosed:
+        if (this.type.canConceal) this.conceal();
+        else if (this.group) this.group.retrieveCurrent();
+        break;
+
+      case !isEnabled && this.isEnabled:
+        if (this.hash === this.id) this.disclose();
+        break;
+    }
   }
 
   dispose () {
