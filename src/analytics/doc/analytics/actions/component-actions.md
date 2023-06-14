@@ -1,6 +1,6 @@
 ## Actions sur les composants DSFR
 
-Les composants du DSFR envoient automatiquement des actions prédéfinies, aucune action supplémentaire n’est nécessaire pour ces actions.
+Les composants du DSFR envoient automatiquement des actions prédéfinies.
 
 Le tableau, ci-dessous, regroupe les différentes actions remontées à Eulérian pour chaque composant du DSFR.
 Vous trouverez pour chaque composant une colonne :
@@ -10,7 +10,7 @@ Vous trouverez pour chaque composant une colonne :
   * **Type** : Type d'action envoyé à Eulérian
   * **Breakpoints** : Si renseigné, l'action est définie uniquement sur ces [breakpoints] de largeur de page. Si vide, sur tous les [breakpoints].
   * **Valeur** : Valeur de l'action envoyée à Eulérian
-  * **Label** : Valeurs possibles du label, dans l'ordre de priorité, en fonction de leur présence 
+  * **Label** : Valeurs possibles du label, dans l'ordre de priorité, en fonction de leur présence
 
 
 | **Composant** | **Elément**                                                                                                 |            **Type**             | **Breakpoints** |        **Valeur**        | **Label**                                                                                                                                                    | **Taux** **de click** |
