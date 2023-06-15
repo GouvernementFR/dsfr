@@ -15,10 +15,6 @@ class TabButton extends api.core.DisclosureButton {
     return 'TabButton';
   }
 
-  get isPrimary () {
-    return this.node.closest(TabSelector.LIST).closest(TabSelector.GROUP) === this.registration.creator.node.closest(TabSelector.GROUP) && super.isPrimary;
-  }
-
   handleClick (e) {
     super.handleClick(e);
     this.focus();
