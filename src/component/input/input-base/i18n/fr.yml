@@ -18,6 +18,7 @@ sample:
   icon: Champs avec icône personalisée
   valid: Champs valide avec texte de succès
   error: Champs en erreur avec texte d'erreur
+remove-field: Supprimer le champ
 subdir:
   title: Autres versions
   deprecated: version dépréciée
