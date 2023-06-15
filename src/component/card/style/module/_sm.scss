@@ -4,14 +4,6 @@
 ////
 
 #{ns(card)} {
-  &--sm {
-    @include before {
-      @include icon-size(sm);
-      @include right(6v);
-      @include bottom(6v);
-    }
-  }
-
   &--sm &__header {
     @include nest-badge(sm);
   }
@@ -53,6 +45,15 @@
 
   &--sm#{ns(enlarge-link)}:not(&--no-icon) &__content {
     @include padding-bottom(14v); // 6v (padding card) + 4v (icon) + 1v (padding end) + 3v (marge texte icon)
+  }
+
+  &--sm#{ns(enlarge-link)}:not(&--no-icon) &__title {
+    a {
+      @include icon-size(sm, after) {
+        @include right(6v);
+        @include bottom(6v);
+      }
+    }
   }
 
   &--sm &__footer {

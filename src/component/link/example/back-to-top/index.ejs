@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- section('Retour en haut de page', 'Le lien de “retour en haut de page” est une ancre vers un élément dont l’id est "top".<br> Afin de le faire fonctionner correctement, il est nécessaire d’ajouter l’attribut id (id="top") sur l’élement le plus haut de la page comme le body (&lt;body id="top" ...&gt;) ou les liens d’évitement (&lt;div class="fr-skiplinks" id="top"&gt;), afin que le focus de navigation soit lui aussi replacé en haut de page.<br>Le lien haut de page est un lien classique <code>fr-link</code> composé de l\'icone <code>arrow-up-fill</code>, alignée à gauche, et du label "Haut de page".<br><br>Le lien peut être aligné sur la gauche ou la droite du contenu.<br><b>Actuce:</b> Pour aligner le lien à droite, l\'insérer dans une <<code>div class="fr-grid-row fr-grid-row--right"></code>.'); %>
+
+<%- sample('Lien Haut de page - id="top"', './sample/link-back-to-top', {link: {href: '#top'}}, true); %>

@@ -19,7 +19,6 @@ script:
   - display
   - table
   - tag
-  - download
 example:
   style:
     - core

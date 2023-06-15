@@ -1,0 +1,14 @@
+<%
+let link = locals.link || {};
+
+let data = {
+  download: true,
+  href: link.href || '/example/img/image.jpg',
+  detail: link.detail !== false ? link.detail || 'JPG – 61,88 ko' + (link.hreflang === 'en' ? ' – Anglais': '') : '',
+  label: link.label || 'Télécharger le document lorem ipsum sit dolores amet',
+  ...link
+}
+
+%>
+
+<%- include('../../../template/ejs/link', {link: data}); %>

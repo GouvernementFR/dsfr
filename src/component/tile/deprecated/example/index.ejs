@@ -1,0 +1,15 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuiles verticales', './sample/tiles-default', {}, true) %>
+<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
+<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{img: false}}, true) %>
+<%- sample('Tuiles verticales', './sample/tiles-default', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+
+<%- sample('Tuiles verticales accentuées', './sample/tiles-default', {tile:{accent:'grey'}}, true) %>
+
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {}, true) %>
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{description: 'Texte M regular 2 lignes max'}}, true) %>
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{img: false}}, true) %>
+<%- sample('Tuiles horizontales', './sample/tiles-horizontal', {tile:{description: 'Texte M regular 2 lignes max', img: false}}, true) %>
+
+<%- section('Breaking change', 'Les modifieurs "fr-tile--horizontal-md" et "fr-tile--vertical-md" ne sont plus supportés') %>
