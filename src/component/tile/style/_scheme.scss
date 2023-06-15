@@ -4,18 +4,31 @@
 ////
 
 @use 'module/color';
+@use 'module/disabled';
 
 @mixin _tile-scheme($legacy: false) {
   #{ns(tile)} {
     @include color.background(default grey, (legacy: $legacy));
-    @include color.background-image((border active blue-france) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+    @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
 
     &__title {
-      @include color.text(title blue-france, (legacy: $legacy));
-    }
+      @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
 
-    &__title {
-      @include color.text(action-high blue-france, (legacy: $legacy));
+      a {
+        @include color.text(action-high blue-france, (legacy: $legacy));
+
+        @include before {
+          @include color.background-image((border active blue-france), (legacy: $legacy));
+        }
+
+        &:not([href]) {
+          @include disabled.colors((legacy: $legacy, text: true));
+
+          @include before {
+            @include color.background-image((border disabled grey), (legacy: $legacy));
+          }
+        }
+      }
     }
 
     &--grey {

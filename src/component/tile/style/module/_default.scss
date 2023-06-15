@@ -3,16 +3,18 @@
 /// @group tile
 ////
 
+@use 'module/spacing';
+@use 'module/media-query';
+
 #{ns(tile)} {
   @include relative;
   @include display-flex(column);
   @include set-text-margin(0);
   @include set-title-margin(0 0 1v);
-  background-size: 100% 4px, 1px 100%, 1px 100%, 100% 1px;
+  background-size: 100% 1px, 1px 100%, 1px 100%, 100% 1px;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-position: 100% 100%, 0 0, 100% 0, 100% 0;
-  @include padding(6v 6v 7v);
-  @include padding(8v 8v 9v, md);
+  background-position: 0 100%, 0 0, 100% 0, 100% 0;
+  @include padding(8v 8v 9v);
   text-align: center;
 
   #{ns(grid-row)} & {
@@ -39,7 +41,7 @@
   }
 
   &__content {
-    @include display-flex(column, center, space-between);
+    @include display-flex(column, center);
     @include height(100%);
   }
 
@@ -51,8 +53,35 @@
 
   @include title {
     @include title-style(h6);
-    @include margin-bottom(1v);
+    @include margin-bottom(2v);
     order: 2;
+
+    a {
+      @include before {
+        background-position: 0 100%;
+        background-size: 100% spacing.space(1v);
+        background-repeat: no-repeat;
+      }
+
+      @include icon(arrow-right-line, md, after) {
+        @include absolute(null, 6v, 7v);
+
+        @include media-query.respond-from(md) {
+          @include absolute(null, 8v, 9v);
+        }
+      }
+
+      &[target=_blank] {
+        @include icon(external-link-line, md, after);
+      }
+    }
+  }
+
+  &--no-icon,
+  &:not(#{ns(enlarge-link)}) {
+    #{ns(tile__title a)} {
+      @include after(none);
+    }
   }
 
   &__desc {
@@ -63,7 +92,7 @@
 
   &__start {
     order: 1;
-    @include margin-bottom(4v);
+    @include margin-bottom(3v);
 
     #{ns(badges-group)},
     #{ns(tags-group)} {
@@ -83,5 +112,9 @@
         @include margin-right(2v);
       }
     }
+  }
+
+  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+    @include padding-bottom(10v);
   }
 }
