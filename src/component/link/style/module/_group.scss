@@ -6,17 +6,24 @@
 @use 'module/spacing';
 
 #{ns-group(links)} {
-  @include disable-list-style;
-  display: inline-block;
-  @include margin(0 -2v);
+  --li-bottom: #{space(2v)};
 
-  > li {
+  &--inline {
+    @include disable-list-style;
     display: inline;
-    line-height: spacing.space(11v);
+    @include margin(0 -2v);
+
+    > li {
+      display: inline;
+      line-height: spacing.space(11v);
+    }
+
+    #{ns(link)} {
+      @include margin(0 2v 4v);
+    }
   }
 
   #{ns(link)} {
-    @include margin(0 2v 4v);
     vertical-align: top;
   }
 
@@ -26,5 +33,15 @@
 
   &--lg {
     @include nest-link(lg, null);
+  }
+
+  &__title {
+    @include title-style(h4);
+    @include margin(var(--title-spacing));
+  }
+
+  &--bordered {
+    @include padding(6v 6v 2v);
+    @include padding(8v 8v 2v, md);
   }
 }

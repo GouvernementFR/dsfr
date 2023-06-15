@@ -4,14 +4,6 @@
 ////
 
 #{ns(card)} {
-  &--lg {
-    @include before {
-      @include icon-size(lg);
-      @include right(10v);
-      @include bottom(10v);
-    }
-  }
-
   &--lg &__content {
     @include nest-tag(md);
     @include padding(10v);
@@ -52,6 +44,15 @@
 
   &--lg#{ns(enlarge-link)}:not(&--no-icon) &__content {
     @include padding-bottom(26v); // 10v (padding card) + 8v (icon) + 2v (padding end) + 6v (marge texte icon)
+  }
+
+  &--lg#{ns(enlarge-link)}:not(&--no-icon) &__title {
+    a {
+      @include icon-size(lg, after) {
+        @include right(10v);
+        @include bottom(10v);
+      }
+    }
   }
 
   &--lg &__footer {

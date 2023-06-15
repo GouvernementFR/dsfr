@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte de téléchargement sm', './card-download', { card : { size: 'sm' }}, true, '../../sample/card-layout', {col: {sm: 6, md:4}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement md', './card-download', { card : { size: 'md' }}, true, '../../sample/card-layout', {col: {md:6}, desc: 'dans une grille sur 6 à 8 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement lg', './card-download', { card : { size: 'lg' }}, true, '../../sample/card-layout', {col: {md:6}, desc: 'dans une grille sur 8 à 12 colonnes en version desktop'}); %>
+
+<%- sample('Carte de téléchargement sm horizontal', './card-download', { card : { size: 'sm', horizontal: true}}, true, '../../sample/card-layout', {col: {sm:6}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement md horizontal', './card-download', { card : { size: 'md', horizontal: true}}, true, '../../sample/card-layout', {col: {md:6}, desc: 'dans une grille sur 6 à 8 colonnes en version desktop'}); %>
+<%- sample('Carte de téléchargement lg horizontal', './card-download', { card : { size: 'lg', horizontal: true}}, true, '../../sample/card-layout', {col: {md:6}, desc: 'dans une grille sur 8 à 12 colonnes en version desktop'}); %>

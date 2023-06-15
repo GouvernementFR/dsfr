@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile horizontale avec détails et tag', './tile-default', { tile : { pictogram: true, horizontal: true, content: { tag: true, details: true } }}, true, './tile-layout', {col: {md:'6', lg:'4'}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile horizontale sm avec détails et badge', './tile-default', { tile : { pictogram: true, size: 'sm', horizontal: true, content: { badge: true, details: true }}}, true, './tile-layout', {col: { sm:'6', md:'4', lg:'3'}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>

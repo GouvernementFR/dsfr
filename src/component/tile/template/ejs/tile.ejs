@@ -7,15 +7,15 @@
 
 * tile.enlarge (boolean, optional) : si true, agrandi la zone de clic à toute la tuile
 
+* tile.size (string, optionnal) : Taille de la tuile ("md" - default | "sm").
+
 * tile.horizontal (boolean, optional) : si true, passe la tuile en mode horizontal
 
 * tile.horizontalMd (boolean, optional) : si true, passe en mode horizontal en dessous du breakpoint md
 
 * tile.verticalMd (boolean, optional) : si true, passe en mode vertical en dessous du breakpoint md
 
-* tile.img (object, optional) : Paramètres de l'image
-    ** src (string, optional) : url de l'image
-    ** alt (string, optional) : texte alternatif de l'image
+* tile.pictogram (object, optional) : Paramètres d'atrwork ou d'icone
 
 * tile.description (string, optional) : description de la tuile
 
@@ -30,11 +30,18 @@
 
 <%
 let tile = locals.tile || {};
+const content = tile.content || {};
 let classes = tile.classes || [];
 const attributes = tile.attributes || {};
 attributes.id = tile.id || uniqueId('tile');
 const markup = tile.markup || 'h3';
 classes.push(`${prefix}-tile`);
+
+switch (tile.size) {
+  case 'sm':
+    classes.push(`${prefix}-tile--sm`);
+    break;
+}
 
 if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
 if (tile.horizontal !== undefined) {
@@ -51,15 +58,15 @@ if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 %>
 
 <div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>
-  <div class="<%= prefix %>-tile__body">
-    <<%= markup %> class="<%= prefix %>-tile__title"><a class="<%= prefix %>-tile__link" href="<%- tile.href %>"><%- tile.title %></a></<%= markup %>>
-    <% if(tile.description !== undefined) { %>
-    <p class="<%= prefix %>-tile__desc"><%= tile.description %></p>
+
+  <div class="<%= prefix %>-tile__body" >
+    <%- include('content', { content: tile.content}) %>
+    <% if (tile.footer !== undefined) { %>
+      <%- include('footer', { footer: tile.footer}) %>
     <% } %>
   </div>
-  <% if (tile.img !== undefined) { %>
-  <div class="<%= prefix %>-tile__img">
-    <%- include('../../../../core/template/ejs/media/responsive-img.ejs', {media:tile.img}); %>
-  </div>
+
+  <% if (tile.header !== undefined) { %>
+    <%- include('header.ejs', {header: tile.header}) %>
   <% } %>
 </div>

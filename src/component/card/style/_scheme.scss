@@ -5,13 +5,14 @@
 
 @use 'module/color';
 @use 'module/elevation';
+@use 'module/disabled';
 
 @mixin _card-scheme($legacy: false) {
   #{ns(card)} {
     @include color.background(default grey, (legacy:$legacy));
 
     &:not(&--no-border):not(&--shadow) {
-      @include color.box-shadow(default grey, (legacy:$legacy), all-1-out);
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
     }
 
     &--grey {
@@ -30,8 +31,10 @@
       @include color.transparent-background((legacy:$legacy, hover: true));
     }
 
-    @include before {
-      @include color.text(action-high blue-france, (legacy:$legacy));
+    &--download:not(#{ns(card--no-background)}) {
+      #{ns(card__header)} {
+        @include color.background(alt grey, (legacy:$legacy));
+      }
     }
 
     &__detail {
@@ -39,7 +42,9 @@
     }
 
     &__title {
-      @include color.text(title grey, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
+
+      @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
     }
   }
 }

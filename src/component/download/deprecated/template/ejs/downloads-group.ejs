@@ -1,0 +1,48 @@
+<%#
+# paramètres groupe de downloads
+
+* downloadsGroup.downloads (array, required): tableau de paramètres de download
+
+* downloadsGroup.bordered (boolean, optional): applique une bordure autour des liens
+
+* downloadsGroup.title (string, optional): titre du groupe (facultatif)
+
+* downloadsGroup.size (string, optional) : définie la taille des éléments dans le groupe (default md)
+  * sm : downloads taille sm
+
+* downloadsGroup.classes (array, optionnal) : classes suplémentaires sur le groupe de downloads
+
+* downloadsGroup.attributes (object, optionnal) : attributs suplémentaires sur le groupe de downloads
+
+#%>
+
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+const downloadsGroup = locals.downloadsGroup || {};
+let groupClasses = downloadsGroup.classes || [];
+let groupAttrs = downloadsGroup.attributes || {};
+let downloads = downloadsGroup.downloads || [];
+groupClasses.push(prefix + '-downloads-group');
+
+if (downloadsGroup.bordered === true) groupClasses.push(prefix + '-downloads-group--bordered');
+
+switch (downloadsGroup.size) {
+  case 'sm':
+    groupClasses.push(prefix + '-downloads-group--sm');
+    break;
+ }
+ %>
+
+<div <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
+  <% if (downloadsGroup.title) { %>
+    <p class="<%= prefix %>-downloads-group__title"><%- downloadsGroup.title %></p>
+  <% } %>
+  <ul>
+    <% for (let i = 0; i < downloads.length; i++) { %>
+      <li>
+        <%- include('./download.ejs', {download:{...downloads[i]}}); %>
+      </li>
+    <% } %>
+  </ul>
+</div>
