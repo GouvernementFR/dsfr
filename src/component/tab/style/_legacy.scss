@@ -17,6 +17,11 @@
       left: 0;
       @include enable-list-style-legacy;
       @include enable-underline-legacy;
+
+       > * {
+        @include padding(4v);
+        @include padding(8v, md);
+      }
     }
   }
 }
