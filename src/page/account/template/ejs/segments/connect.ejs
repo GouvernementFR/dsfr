@@ -4,11 +4,11 @@ const data = segment.data || {};
 %>
 <div class="<%= prefix %>-mb-6v">
   <% if (data.title) { %>
-    <h5><%= data.title %></h5>
+    <h2 class="<%= prefix %>-h5"><%= data.title %></h2>
   <% } %>
 
   <% if (data.desc) { %>
-    <p class="<%= prefix %>-text--sm <%= prefix %>"><%= data.desc %></p>
+    <p class="<%= prefix %>-text--sm"><%= data.desc %></p>
   <% } %>
 
   <%- include('../../../../../component/connect/template/ejs/connect.ejs', { connect: data.connect })  %>
