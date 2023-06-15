@@ -77,6 +77,7 @@ class DisclosuresGroup extends Instance {
         const member = this.members[i];
         if (this.hash === member.id) {
           this.index = i;
+          this.request(() => { this.ascend(DisclosureEmission.SPOTLIGHT); });
           return i;
         }
       }

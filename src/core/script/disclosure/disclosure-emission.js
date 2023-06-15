@@ -6,7 +6,8 @@ const DisclosureEmission = {
   RETRIEVE: ns.emission('disclosure', 'retrieve'),
   REMOVED: ns.emission('disclosure', 'removed'),
   GROUP: ns.emission('disclosure', 'group'),
-  UNGROUP: ns.emission('disclosure', 'ungroup')
+  UNGROUP: ns.emission('disclosure', 'ungroup'),
+  SPOTLIGHT: ns.emission('disclosure', 'spotlight')
 };
 
 export { DisclosureEmission };

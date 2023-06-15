@@ -25,6 +25,7 @@ class Disclosure extends Instance {
     this.addDescent(DisclosureEmission.RESET, this.reset.bind(this));
     this.addDescent(DisclosureEmission.GROUP, this.update.bind(this));
     this.addDescent(DisclosureEmission.UNGROUP, this.update.bind(this));
+    this.addAscent(DisclosureEmission.SPOTLIGHT, this.disclose.bind(this));
     this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
     this.ascend(DisclosureEmission.ADDED);
     this.listenHash(this.id, () => this.disclose());
@@ -193,11 +194,19 @@ class Disclosure extends Instance {
     if (this._isPristine && this.isEnabled && !this.group) {
       switch (true) {
         case this.hash === this.id:
+          this._spotlight();
+          break;
+
         case this.isInitiallyDisclosed:
           this.disclose();
           break;
       }
     }
+  }
+
+  _spotlight () {
+    this.disclose();
+    this.request(() => { this.ascend(DisclosureEmission.SPOTLIGHT); });
   }
 
   _electPrimaries (candidates) {
@@ -218,7 +227,9 @@ class Disclosure extends Instance {
 
     if (this.isEnabled) {
       if (this.group) this.ascend(DisclosureEmission.ADDED);
-      if (this.hash === this.id) this.disclose();
+      if (this.hash === this.id) {
+        this._spotlight();
+      }
     }
   }
 
