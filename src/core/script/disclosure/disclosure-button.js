@@ -14,7 +14,7 @@ class DisclosureButton extends Instance {
   }
 
   get isPrimary () {
-    return this.registration.creator.primaryButton === this;
+    return this.registration.creator.primaryButtons.includes(this);
   }
 
   get canDisclose () {
@@ -48,15 +48,17 @@ class DisclosureButton extends Instance {
   mutate (attributeNames) {
     this._canDisclose = this.hasAttribute(this.attributeName);
     this.registration.creator.applyAbility();
-    if (this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
+    if (!this._isApplying && this.isPrimary && attributeNames.indexOf(this.attributeName) > -1 && this.registration.creator) {
       if (this.isDisclosed) this.registration.creator.disclose();
       else if (this.type.canConceal) this.registration.creator.conceal();
     }
   }
 
   apply (value) {
-    if (!this.isPrimary) return;
+    if (!this.canDisclose) return;
+    this._isApplying = true;
     this.setAttribute(this.attributeName, value);
+    this.request(() => { this._isApplying = false; });
   }
 
   get isDisclosed () {

@@ -42,6 +42,11 @@ class NavigationItem extends api.core.Instance {
     if (value) api.internals.dom.addClass(this.element.node, NavigationSelector.ITEM_RIGHT);
     else api.internals.dom.removeClass(this.element.node, NavigationSelector.ITEM_RIGHT);
   }
+
+  get collapsePrimary () {
+    const buttons = this.element.children.map(child => child.getInstance('CollapseButton')).filter(button => button !== null && (button.hasClass(NavigationSelector.BUTTON) || button.hasClass(NavigationSelector.TRANSLATE_BUTTON)));
+    return buttons[0];
+  }
 }
 
 export { NavigationItem };

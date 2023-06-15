@@ -70,7 +70,7 @@ class Navigation extends api.core.CollapsesGroup {
   get index () { return super.index; }
 
   set index (value) {
-    if (value === -1 && this.current !== null && this.current.hasFocus) this.current.focus();
+    if (value === -1 && this.current && this.current.hasFocus) this.current.focus();
     super.index = value;
   }
 }

@@ -7,6 +7,8 @@ export const NavigationSelector = {
   NAVIGATION: api.internals.ns.selector('nav'),
   COLLAPSE: `${ITEM} > ${COLLAPSE}, ${ITEM} > *:not(${ITEM}, ${COLLAPSE}) > ${COLLAPSE}, ${ITEM} > *:not(${ITEM}, ${COLLAPSE}) > *:not(${ITEM}, ${COLLAPSE}) > ${COLLAPSE}`,
   ITEM: ITEM,
-  ITEM_RIGHT: `${ITEM}--right`,
-  MENU: api.internals.ns.selector('menu')
+  ITEM_RIGHT: `${ITEM}--align-right`,
+  MENU: api.internals.ns.selector('menu'),
+  BUTTON: api.internals.ns.selector('nav__btn'),
+  TRANSLATE_BUTTON: api.internals.ns.selector('translate__btn')
 };

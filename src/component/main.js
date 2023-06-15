@@ -11,6 +11,7 @@ import './tab/main.js';
 import './table/main.js';
 import './tag/main.js';
 import './download/main.js';
+import './transcription/main.js';
 import './header/main.js';
 import './display/main.js';
 export default api;

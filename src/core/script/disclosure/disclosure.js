@@ -13,6 +13,7 @@ class Disclosure extends Instance {
     this.modifier = this._selector + '--' + this.type.id;
     this._isPristine = true;
     this._isRetrievingPrimaries = false;
+    this._hasRetrieved = false;
     this._primaryButtons = [];
   }
 
@@ -39,6 +40,10 @@ class Disclosure extends Instance {
     else this.ascend(DisclosureEmission.REMOVED);
   }
 
+  get isPristine () {
+    return this._isPristine;
+  }
+
   get proxy () {
     const scope = this;
     const proxy = Object.assign(super.proxy, {
@@ -55,6 +60,9 @@ class Disclosure extends Instance {
       get group () {
         const group = scope.group;
         return group ? group.proxy : null;
+      },
+      get isDisclosed () {
+        return scope.isDisclosed;
       }
     };
 
@@ -89,7 +97,7 @@ class Disclosure extends Instance {
   }
 
   disclose (withhold) {
-    if (this.isDisclosed || !this.isEnabled) return false;
+    if (this.isDisclosed === true || !this.isEnabled) return false;
     this._isPristine = false;
     this.isDisclosed = true;
     if (!withhold && this.group) this.group.current = this;
@@ -97,7 +105,7 @@ class Disclosure extends Instance {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.isDisclosed) return false;
+    if (this.isDisclosed === false) return false;
     if (!this.type.canConceal && this.group && this.group.current === this) return false;
     this.isDisclosed = false;
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
@@ -111,7 +119,7 @@ class Disclosure extends Instance {
   }
 
   set isDisclosed (value) {
-    if (this._isDisclosed === value || !this.isEnabled) return;
+    if (this._isDisclosed === value || (!this.isEnabled && value === true)) return;
     this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this.type);
     this._isDisclosed = value;
     if (value) this.addClass(this.modifier);
@@ -121,6 +129,10 @@ class Disclosure extends Instance {
 
   get isInitiallyDisclosed () {
     return this.primaryButtons.some(button => button.isInitiallyDisclosed);
+  }
+
+  hasRetrieved () {
+    return this._hasRetrieved;
   }
 
   reset () {}
@@ -166,46 +178,25 @@ class Disclosure extends Instance {
 
   _retrievePrimaries () {
     this._isRetrievingPrimaries = false;
-    this._hasRetrieved = true;
-
     this._primaryButtons = this._electPrimaries(this.buttons);
 
-    if (this._primaryButtons.length === 0) return;
-
-    console.log(this.id, this._isPristine, this.isEnabled, this._primaryButton.isDisclosed, this.hash === this.id);
+    if (this._hasRetrieved || this._primaryButtons.length === 0) return;
+    this._hasRetrieved = true;
 
     this.applyAbility(true);
 
     if (this.group) {
-
+      this.group.retrieve();
+      return;
     }
 
     if (this._isPristine && this.isEnabled && !this.group) {
       switch (true) {
         case this.hash === this.id:
-
-          }
-    }
-
-
-
-    switch (true) {
-      case this.isEnabled && this._isPristine:
-        if (this.hash === this.id) {
-          this._initial |= Initial.HASH;
-        }
-        if (this._primaryButtons.some(button => button.isDisclosed)) {
-          this._initial |= Initial.ATTRIBUTE;
-        }
-        console.log('retrievePrimary primary true', this.id);
-
-        if (!this.group) this.disclose();
-        break;
-
-      case this.isEnabled && this._isPristine && :
-        this._initial |= Initial.ATTRIBUTE;
-        if (!this.group) this.disclose();
-        break;
+        case this.isInitiallyDisclosed:
+          this.disclose();
+          break;
+      }
     }
   }
 
@@ -214,25 +205,26 @@ class Disclosure extends Instance {
   }
 
   applyAbility (withold = false) {
-    const isEnabled = this.isEnabled;
-    this.isEnabled = !this._primaryButtons.every(button => button.isDisabled);
+    const isEnabled = !this._primaryButtons.every(button => button.isDisabled);
 
     if (this.isEnabled === isEnabled || withold) return;
 
-    switch (true) {
-      case isEnabled && !this.isEnabled && this.isDisclosed:
-        if (this.type.canConceal) this.conceal();
-        else if (this.group) this.group.retrieveCurrent();
-        break;
+    this.isEnabled = isEnabled;
 
-      case !isEnabled && this.isEnabled:
-        if (this.hash === this.id) this.disclose();
-        break;
+    if (!this.isEnabled && this.isDisclosed) {
+      if (this.group) this.ascend(DisclosureEmission.REMOVED);
+      else if (this.type.canConceal) this.conceal();
+    }
+
+    if (this.isEnabled) {
+      if (this.group) this.ascend(DisclosureEmission.ADDED);
+      if (this.hash === this.id) this.disclose();
     }
   }
 
   dispose () {
     this._group = null;
+    this._primaryButtons = null;
     super.dispose();
     this.ascend(DisclosureEmission.REMOVED);
   }
