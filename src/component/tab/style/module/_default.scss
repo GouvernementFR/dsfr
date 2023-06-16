@@ -29,7 +29,7 @@
   }
 
   @include before('', block) {
-    @include absolute(12v, 0, 0, 0, 100%, 100%);
+    @include size(100%, 100%);
     @include margin-top(-1px);
     order: 2;
   }

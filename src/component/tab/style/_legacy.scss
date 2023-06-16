@@ -13,6 +13,7 @@
     @include disable-list-style-legacy;
 
     &__panel {
+      @include absolute(12v, 0, 0, 0);
       @include padding(0 0.1px);
       @include margin-top(12v);
       @include enable-list-style-legacy;
