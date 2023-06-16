@@ -6,7 +6,10 @@ class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
     super(jsAttribute);
     this.disclosureInstanceClassName = disclosureInstanceClassName;
+    this._members = [];
     this._index = -1;
+    this._isRetrieving = false;
+    this._hasRetrieved = false;
   }
 
   static get instanceClassName () {
@@ -15,6 +18,7 @@ class DisclosuresGroup extends Instance {
 
   init () {
     this.addAscent(DisclosureEmission.ADDED, this.update.bind(this));
+    this.addAscent(DisclosureEmission.RETRIEVE, this.retrieve.bind(this));
     this.addAscent(DisclosureEmission.REMOVED, this.update.bind(this));
     this.descend(DisclosureEmission.GROUP);
     this.update();
@@ -49,17 +53,50 @@ class DisclosuresGroup extends Instance {
   }
 
   validate (member) {
-    return true;
+    return member.isEnabled;
   }
 
   getMembers () {
     const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.instanceClassName, true);
     this._members = members.filter(this.validate.bind(this));
+    const invalids = members.filter(member => !this._members.includes(member));
+    invalids.forEach(invalid => invalid.conceal());
+  }
+
+  retrieve () {
+    if (this._isRetrieving || this._hasRetrieved) return;
+    this._isRetrieving = true;
+    this.request(this._retrieve.bind(this));
+  }
+
+  _retrieve () {
+    this._isRetrieving = false;
+    this._hasRetrieved = true;
+    if (this.hash) {
+      for (let i = 0; i < this.length - 1; i++) {
+        const member = this.members[i];
+        if (this.hash === member.id) {
+          this.index = i;
+          this.request(() => { this.ascend(DisclosureEmission.SPOTLIGHT); });
+          return i;
+        }
+      }
+    }
+
+    for (let i = 0; i < this.length - 1; i++) {
+      const member = this.members[i];
+      if (member.isInitiallyDisclosed) {
+        this.index = i;
+        return i;
+      }
+    }
+
+    return this.getIndex();
   }
 
   update () {
     this.getMembers();
-    this.getIndex();
+    if (this._hasRetrieved) this.getIndex();
   }
 
   get members () {
@@ -70,14 +107,17 @@ class DisclosuresGroup extends Instance {
     return this.members ? this.members.length : 0;
   }
 
-  getIndex () {
-    this._index = -1;
+  getIndex (defaultIndex = -1) {
+    this._index = undefined;
+    let index = defaultIndex;
     for (let i = 0; i < this.length; i++) {
-      if (this.index > -1) this.members[i].conceal(true, true);
-      else if (this.members[i].disclosed) {
-        this.index = i;
+      if (index !== -1 && this.members[i].isDisclosed) {
+        index = i;
       }
     }
+
+    this.index = index;
+    return index;
   }
 
   get index () {
@@ -99,7 +139,8 @@ class DisclosuresGroup extends Instance {
   }
 
   get current () {
-    return this._index === -1 ? null : this.members[this._index];
+    if (this._index === -1 || isNaN(this._index)) return null;
+    return this._members[this._index] || null;
   }
 
   set current (member) {

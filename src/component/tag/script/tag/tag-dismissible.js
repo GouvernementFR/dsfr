@@ -7,10 +7,10 @@ class TagDismissible extends api.core.Instance {
   }
 
   init () {
-    this.listen('click', this.click.bind(this));
+    this.listenClick();
   }
 
-  click () {
+  handleClick () {
     this.focusClosest();
 
     switch (api.mode) {

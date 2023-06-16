@@ -13,11 +13,11 @@ class Navigation extends api.core.CollapsesGroup {
     this.out = false;
     this.listen('focusout', this.focusOutHandler.bind(this));
     this.listen('mousedown', this.mouseDownHandler.bind(this));
-    this.listen('click', this.clickHandler.bind(this), { capture: true });
+    this.listenClick({ capture: true });
   }
 
   validate (member) {
-    return member.element.node.matches(NavigationSelector.COLLAPSE);
+    return super.validate(member) && member.element.node.matches(NavigationSelector.COLLAPSE);
   }
 
   mouseDownHandler (e) {
@@ -70,7 +70,7 @@ class Navigation extends api.core.CollapsesGroup {
   get index () { return super.index; }
 
   set index (value) {
-    if (value === -1 && this.current !== null && this.current.hasFocus) this.current.focus();
+    if (value === -1 && this.current && this.current.hasFocus) this.current.focus();
     super.index = value;
   }
 }

@@ -73,6 +73,12 @@ class TabPanel extends api.core.Disclosure {
   reset () {
     this.group.index = 0;
   }
+
+  _electPrimaries (candidates) {
+    if (!this.group || !this.group.list) return [];
+    const primaries = super._electPrimaries(candidates).filter(candidate => this.group.list.node.contains(candidate.node));
+    return primaries;
+  }
 }
 
 export { TabPanel };
