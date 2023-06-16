@@ -28,7 +28,7 @@ class Disclosure extends Instance {
     this.addAscent(DisclosureEmission.SPOTLIGHT, this.disclose.bind(this));
     this.register(`[aria-controls="${this.id}"]`, this.DisclosureButtonInstanceClass);
     this.ascend(DisclosureEmission.ADDED);
-    this.listenHash(this.id, () => this.disclose());
+    this.listenHash(this.id, this._spotlight.bind(this));
     this.update();
   }
 
