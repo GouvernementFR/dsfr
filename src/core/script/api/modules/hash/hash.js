@@ -15,8 +15,13 @@ class Hash extends Module {
     window.removeEventListener('hashchange', this.handling);
   }
 
+  _sanitize (hash) {
+    if (hash.charAt(0) === '#') return hash.substring(1);
+    return hash;
+  }
+
   set hash (value) {
-    const hash = value.charAt(0) === '#' ? value.substring(1) : value;
+    const hash = this._sanitize(value);
     if (this._hash !== hash) window.location.hash = hash;
   }
 
@@ -26,7 +31,7 @@ class Hash extends Module {
 
   getLocationHash () {
     const hash = window.location.hash;
-    this._hash = hash.charAt(0) === '#' ? hash.substring(1) : hash;
+    this._hash = this._sanitize(hash);
   }
 
   handle (e) {
