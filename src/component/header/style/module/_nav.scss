@@ -10,7 +10,7 @@
 
       &__list {
         max-width: calc(100% + #{space(4v)});
-        @include margin(0 -1rem);
+        @include margin(0 -4v);
       }
     }
   }
