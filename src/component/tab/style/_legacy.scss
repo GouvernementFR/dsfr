@@ -9,9 +9,13 @@
   #{ns(tabs)} {
     @include disable-list-style-legacy;
 
-    &__panel {
+    @include before {
       @include absolute(12v, 0, 0, 0);
+    }
+
+    &__panel {
       @include padding(0 0.1px);
+      @include margin-top(12v);
       @include enable-list-style-legacy;
       @include enable-underline-legacy;
 
