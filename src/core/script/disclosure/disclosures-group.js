@@ -139,7 +139,7 @@ class DisclosuresGroup extends Instance {
   }
 
   get current () {
-    return this._index === -1 ? null : this._members[this._index];
+    return this._index === -1 || isNaN(this._index) ? null : this._members[this._index];
   }
 
   set current (member) {
