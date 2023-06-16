@@ -12,9 +12,10 @@
   @include text-style(md);
   @include padding(2v 4v);
 
-  /**
-   * Style du placeholder
-   */
+  &:not(textarea) {
+    max-height: 2.5rem;
+  }
+
   @include placeholder {
     opacity: 1;
     font-style: italic;
@@ -22,13 +23,6 @@
 
   @include contact-auto-fill-button {
     cursor: pointer;
-  }
-
-  /**
-   * On applique une hauteur maximale si l'élément n'est pas un textarea
-   */
-  &:not(textarea) {
-    max-height: 2.5rem;
   }
 
   &[type=date] {
@@ -50,14 +44,15 @@
   }
 }
 
-/**
- * Ajout d'un wrapper quand on a besoin de mettre une icône
- */
 #{ns(input-wrap)} {
   @include relative;
   display: block;
 
   @include has-icon {
+    #{ns(input)} {
+      @include padding-right(10v);
+    }
+
     @include icon-size(sm, before) {
       @include absolute(3v, 3v, 3v);
       @include margin(auto);
@@ -65,29 +60,28 @@
     }
   }
 
-  &--addon {
+  &--addon,
+  &--action {
     @include display-flex;
     @include size(100%);
   }
 
-  #{ns(input)} {
-    @include padding-right(10v);
-  }
-
-  > *:first-child:not(:last-child) {
-    &#{ns(input)} {
-      @include padding-right(4v);
-    }
-
-    @include respond-from(md) {
+  &--addon {
+    > *:first-child:not(:last-child) {
       border-radius: spacing.space(1v 0 0 0);
     }
-  }
 
-  > *:last-child:not(:first-child) {
-    @include respond-from(md) {
+    > *:last-child:not(:first-child) {
       border-radius: spacing.space(0 1v 0 0);
     }
+  }
+
+  &--action #{ns(btn)} {
+    @include margin-left(4v);
+  }
+
+  &--action #{ns(btn)} {
+    @include margin-left(4v);
   }
 
   + #{ns(hint-text)} {

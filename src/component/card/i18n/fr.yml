@@ -5,3 +5,4 @@ subdir:
   title: Carte de téléchargement de fichier
   description: Ce composant permet aux utilisateurs de télécharger un fichier.
   download: Carte de téléchargement
+  deprecated: Version dépréciée
