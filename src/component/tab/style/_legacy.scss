@@ -13,8 +13,8 @@
     @include disable-list-style-legacy;
 
     &__panel {
-      @include padding(1px);
-      left: 0;
+      @include padding(0 0.1px);
+      @include margin-top(12v);
       @include enable-list-style-legacy;
       @include enable-underline-legacy;
 
