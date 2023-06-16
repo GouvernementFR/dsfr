@@ -7,6 +7,7 @@ hint:
   birth: Nom de famille non rectifié après décision du tribunal
 label:
   add-firstname: Ajouter un prénom
+  remove-firstname: Supprimer le prénom
   country: Pays
   family: Nom
   given: Prénom

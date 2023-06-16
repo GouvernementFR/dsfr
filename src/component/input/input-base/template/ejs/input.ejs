@@ -96,34 +96,32 @@ if (input.value) attributes.value = input.value;
 if (input.autocomplete) attributes.autocomplete = input.autocomplete;
 attributes.id = input.id;
 if (input.spellcheck === true || input.spellcheck === false) attributes.spellcheck = `${input.spellcheck}`;
+
+const inputWrapClass = [];
+if (input.button || input.icon) inputWrapClass.push(`${prefix}-input-wrap`);
+if (input.icon) inputWrapClass.push(`${prefix}-icon-${input.icon === true ? '' : input.icon}`);
+if (input.addon) inputWrapClass.push(`${prefix}-input-wrap--addon`);
+if (input.action) inputWrapClass.push(`${prefix}-input-wrap--action`);
 %>
 
 <%- include('../../../../form/template/ejs/label', { label: label }); %>
 
-<% if (input.icon) { %>
-  <% let icon = prefix + '-icon-' + input.icon; %>
-  <% if (input.icon === true) icon = '';
-  %>
- <div class="<%= prefix %>-input-wrap <%= icon %>" >
+<% if (input.icon || input.button) { %>
+<div <%- includeClasses(inputWrapClass); %>>
 <% } %>
 
-<% if (input.addon && input.button) { %>
-  <div class="<%= prefix %>-input-wrap <%- prefix %>-input-wrap--addon" >
-<% } %>
+  <% if (input.type === 'textarea') { %>
+  <textarea <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>></textarea>
+  <% }
+  else {%>
+  <input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="<%= inputType %>">
+  <% } %>
 
-<% if (input.type === 'textarea') { %>
-<textarea <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>></textarea>
-<% }
-else {%>
-<input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="<%= inputType %>">
-<% } %>
-
-<% if (input.addon && input.button) { %>
+  <% if (input.button) { %>
   <%- include('../../../../button/template/ejs/button', { button:input.button }); %>
-  </div>
-<% } %>
+  <% } %>
 
-<% if (input.icon) { %>
+<% if (input.icon || input.button) { %>
 </div>
 <% } %>
 

@@ -50,7 +50,7 @@
     }
   }
 
-  #{ns(input-wrap)} {
+  #{ns(input-wrap--addon)} {
     > *:not(:last-child) {
       &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
         @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
