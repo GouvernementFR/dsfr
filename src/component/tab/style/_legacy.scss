@@ -6,22 +6,28 @@
 @use 'module/legacy';
 
 @include legacy.is(ie11) {
-  /**
-  * Reset liste à puce
-  */
   #{ns(tabs)} {
     @include disable-list-style-legacy;
 
     &__panel {
       @include absolute(12v, 0, 0, 0);
       @include padding(0 0.1px);
-      @include margin-top(12v);
       @include enable-list-style-legacy;
       @include enable-underline-legacy;
 
-       > * {
-        @include padding(4v);
-        @include padding(8v, md);
+      > * {
+        @include padding-x(4v);
+        @include padding-x(8v, md);
+      }
+
+      > *:first-child {
+        @include padding-top(4v);
+        @include padding-top(8v, md);
+      }
+
+      > *:last-child {
+        @include padding-bottom(4v);
+        @include padding-bottom(8v, md);
       }
     }
   }
