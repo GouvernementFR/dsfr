@@ -13,9 +13,17 @@
       @include absolute(12v, 0, 0, 0);
     }
 
+    #{ns(tabs__list)} {
+      @include padding(1v 3v);
+    }
+
+    &__tab {
+      @include icon-size-legacy(sm);
+    }
+
     &__panel {
       @include padding(0 0.1px);
-      @include margin-top(12v);
+      left: 0;
       @include enable-list-style-legacy;
       @include enable-underline-legacy;
 
@@ -25,8 +33,8 @@
       }
 
       > *:first-child {
-        @include padding-top(4v);
-        @include padding-top(8v, md);
+        @include padding-top(3v);
+        @include padding-top(7v, md);
       }
 
       > *:last-child {
