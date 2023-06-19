@@ -27,11 +27,11 @@ doc:
   - title: Typographie
     url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-identite-de-l-etat/typographie
   - title: Icônes
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone
   - title: Icônes de favoris - Favicon
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/icones-de-favoris
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone-de-favoris
   - title: Médias fondamentaux
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/contenu-medias
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/medias
   - title: Grille
     url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/grille-et-points-de-rupture
 wrapper: container
