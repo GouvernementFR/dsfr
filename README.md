@@ -166,10 +166,10 @@ Afin d’utiliser ces icônes, des classes utilitaires CSS sont associés à cha
 Ces classes sont disponible dans `utility` qui importe `dist/utility/icons/icons.css`.
 Il est aussi possible d’importer uniquement certaines catégories d’icônes afin d’optimiser le poids. Par ex. :  `dist/utility/icons/system/system.css` pour les icônes “system”.
 
-Pour plus d’informations : [Voir la documentation des icônes](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones).
+Pour plus d’informations : [Voir la documentation des icônes](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone).
 
 ### Favicon
-[La documentation des favicons](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/icones-de-favoris) détaille la façon de les implémenter dans vos pages.
+[La documentation des favicons](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/icone-de-favoris) détaille la façon de les implémenter dans vos pages.
 
 ## Fonctionnement
 
