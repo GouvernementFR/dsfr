@@ -32,7 +32,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
   get list () {
     return this.element.getDescendantInstances('TabsList', 'TabsGroup', true)[0];
   }
-  
+
   setListHeight (value) {
     this.listHeight = value;
   }

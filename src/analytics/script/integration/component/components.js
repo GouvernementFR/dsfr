@@ -1,4 +1,3 @@
-import api from '../../../api';
 import integrateAccordion from './accordion/integrate';
 import integrateAlert from './alert/integrate';
 import integrateBreadcrumb from './breadcrumb/integrate';

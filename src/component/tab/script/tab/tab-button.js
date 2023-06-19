@@ -1,5 +1,4 @@
 import api from '../../api.js';
-import { TabSelector } from './tab-selector';
 
 /**
   * TabButton correspond au bouton cliquable qui change le panel
