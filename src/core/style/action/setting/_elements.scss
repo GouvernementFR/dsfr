@@ -69,6 +69,12 @@ $action-elements: (
       selector: '&:disabled, &:disabled + label',
     )
   ),
+  radio-rich: (
+    selector: '.fr-radio-rich > input[type="radio"]',
+    focus: (
+      selector: ' + label'
+    )
+  ),
   input-upload: (
     selector: 'input[type="file"]',
     cursor: (

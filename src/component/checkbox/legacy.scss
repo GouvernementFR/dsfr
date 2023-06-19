@@ -11,5 +11,6 @@
 
 @import 'index';
 @import 'style/scheme';
+@import 'style/legacy';
 
 @include _checkbox-scheme(true);
