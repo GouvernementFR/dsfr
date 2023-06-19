@@ -11,10 +11,10 @@ for (i = 130; i < 133; i++) pages.push({label:i, title:'Page ' + i, href: href, 
 if (pagination.index !== undefined) pages[pagination.index].active = true;
 
 let data = {
-  first: { label: 'Première page', href: href },
-  prev: { label: 'Page précédente', href: href, hasLgLabel: true },
-  next: { label: 'Page suivante', href: href, hasLgLabel: true },
-  last: { label: 'Dernière page', href: href },
+  first: { label: 'Première page', title: 'Première page', href:href },
+  prev: { label: 'Page précédente', title: 'Page précédente', href:href, hasLgLabel: true },
+  next: { label: 'Page suivante', title: 'Page suivante', href:href, hasLgLabel: true },
+  last: { label: 'Dernière page', title: 'Dernière page', href:href },
   pages : pages
 }
 %>
