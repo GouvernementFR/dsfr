@@ -8,9 +8,10 @@
 @use 'module/selector';
 
 @mixin _radio-scheme-rich($legacy: false) {
-  #{ns(radio-rich)} {
-    &__img {
-      @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
+  #{selector.ns(radio-rich)} {
+    &__pictogram {
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+      @include color.background((background default grey), (legacy: $legacy));
     }
 
     input[type="radio"] {
@@ -36,9 +37,17 @@
           @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
         }
 
+        ~ #{selector.ns(radio-rich__pictogram)} {
+          @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france) (border default grey), (legacy: $legacy));
+        }
+
         @include disabled.selector {
           + label {
             @include color.background-image((disabled grey) (disabled grey) (text disabled grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          }
+
+          ~ #{selector.ns(radio-rich__pictogram)} {
+            @include color.background-image((disabled grey) (disabled grey) (disabled grey) (border default grey), (legacy: $legacy));
           }
         }
       }

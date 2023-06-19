@@ -10,7 +10,10 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/legacy';
 @import 'style/scheme';
 
 @include _radio-scheme(true);
+
+@import 'deprecated/style/scheme';
+
+@include _radio-scheme-deprecated(true);

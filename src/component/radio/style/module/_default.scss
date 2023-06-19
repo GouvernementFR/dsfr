@@ -8,6 +8,7 @@
 
 #{selector.ns-group(radio)} {
   @include relative;
+  @include max-width('max-content');
 
   input[type="radio"] {
     @include absolute;
@@ -16,9 +17,9 @@
     opacity: 0;
 
     + label {
-      @include relative;
+      // @include relative;
       -webkit-tap-highlight-color: transparent;
-      @include display-flex(row, center, flex-start, wrap);
+      @include display-flex(column, flex-start, flex-start);
       @include padding-left(8v);
       background-position: calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px), calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px);
       background-size: #{spacing.space(7.5v)} #{spacing.space(7.5v)}, #{spacing.space(7.5v)} #{spacing.space(7.5v)};
