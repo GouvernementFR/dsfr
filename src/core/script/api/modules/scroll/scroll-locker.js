@@ -24,7 +24,7 @@ class ScrollLocker extends Module {
       this.behavior = getComputedStyle(document.documentElement).getPropertyValue('scroll-behavior');
       if (this.behavior === 'smooth') document.documentElement.style.scrollBehavior = 'auto';
       if (scrollBarGap > 0) {
-        document.body.style.setProperty('--scrollbar-width', `${scrollBarGap}px`);
+        document.documentElement.style.setProperty('--scrollbar-width', `${scrollBarGap}px`);
       }
     }
   }
@@ -36,7 +36,7 @@ class ScrollLocker extends Module {
       document.body.style.top = '';
       window.scrollTo(0, this._scrollY);
       if (this.behavior === 'smooth') document.documentElement.style.removeProperty('scroll-behavior');
-      document.body.style.removeProperty('--scrollbar-width');
+      document.documentElement.style.removeProperty('--scrollbar-width');
     }
   }
 
