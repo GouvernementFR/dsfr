@@ -4,3 +4,7 @@
 ////
 
 $toggle-svg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='$COLOR' d='M10 15.17l9.2-9.2 1.4 1.42L10 18l-6.36-6.36 1.4-1.42z'/></svg>";
+
+$toggle-unchecked-svg: "<svg width='40' stroke='$COLOR' height='24' viewBox='0 0 40 24' fill='transparent' xmlns='http://www.w3.org/2000/svg'><rect x='0.5' y='0.5' width='39' height='23' rx='11.5' /></svg>";
+
+$toggle-checked-svg: "<svg width='40' stroke='$color#1' height='24' viewBox='0 0 40 24' fill='$color#2' xmlns='http://www.w3.org/2000/svg'><rect x='0.5' y='0.5' width='39' height='23' rx='11.5' /></svg>";

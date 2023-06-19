@@ -1,0 +1,13 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile horizontale avec détails et tag', './tile-default', { tile : { pictogram: true, horizontal: true, content: { tag: true, details: true } }}, true, './tile-layout', {col: {md:'6', lg:'4'}, desc: 'dans une grille sur 4 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile sm horizontale avec détails et badge', './tile-default', { tile : { pictogram: true, size: 'sm', horizontal: true, content: { badge: true, details: true }}}, true, './tile-layout', {col: {md:'6', lg:'4'}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile horizontale puis vertical en md', './tile-default', { tile : { pictogram: true, horizontal: true, vertical: 'md', content: { details: true }}}, true, './tile-layout', {col: { md:'6', lg:'4'}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile sm horizontale puis vertical en md', './tile-default', { tile : { pictogram: true, size: 'sm', horizontal: true, vertical: 'md', content: { details: true }}}, true, './tile-layout', {col: { md:'6', lg:'4'}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile horizontale puis vertical en lg', './tile-default', { tile : { pictogram: true, horizontal: true, vertical: 'lg', content: { details: true }}}, true, './tile-layout', {col: { md:'6', lg:'4'}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>
+
+<%- sample('Tuile sm horizontale puis vertical en lg', './tile-default', { tile : { pictogram: true, size: 'sm', horizontal: true, vertical: 'lg', content: { details: true }}}, true, './tile-layout', {col: { md:'6', lg:'4'}, desc: 'dans une grille sur 3 à 6 colonnes en version desktop'}); %>

@@ -9,10 +9,10 @@ class Toggle extends Instance {
 
   init () {
     this.pressed = this.pressed === 'true';
-    this.listen('click', this.toggle.bind(this));
+    this.listenClick();
   }
 
-  toggle () {
+  handleClick () {
     this.pressed = this.pressed !== 'true';
   }
 

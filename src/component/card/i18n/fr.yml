@@ -1,0 +1,8 @@
+title: Carte
+description: La carte donne des aperçus cliquables d’une page de contenu à l’utilisateur. Elle fait généralement partie d'une collection ou liste d’aperçus de contenu similaires. La carte n’est jamais présentée de manière isolée.
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/carte
+subdir:
+  title: Carte de téléchargement de fichier
+  description: Ce composant permet aux utilisateurs de télécharger un fichier.
+  download: Carte de téléchargement
+  deprecated: Version dépréciée

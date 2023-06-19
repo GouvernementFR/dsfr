@@ -1,0 +1,13 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Lien de téléchargement', './sample/download-default', {}, true); %>
+
+<%- sample('Groupe de lien de téléchargement', './sample/download-group', {}, true); %>
+
+<%- sample({title: 'Fichier en langue étrangère', subtitle: 'Indiquer le code langue (ISO 639‑1) du fichier dans l\'attribut "hreflang" et la langue en toute lettre dans le détail'}, './sample/download-default', {link: {href: 'exemple.pdf', detail: 'PDF – 1,81 Mo - Anglais', hreflang: 'en' } }, true); %>
+
+<%- sample({title: 'Remplissage automatique des détails', subtitle: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le détail avec le type, le poids, et la langue (hreflang) du fichier.'}, './sample/download-default', { link: {detail: ' ', assess: true } }, true); %>
+
+<div lang="en">
+  <%- sample({title: 'Remplissage automatique des détails en Bytes', subtitle: 'Sur une page en anglais, ou toute autre langue utilisant l\'unité "Bytes" plutot que "Octet", ajouter la valeur "bytes" sur l\'attribut : data-fr-assess-file="bytes".'}, './sample/download-default', { link: {label:'Download the french document lorem ipsum', detail: ' ', hreflang: 'fr', assess: 'bytes' } }, true); %>
+</div>

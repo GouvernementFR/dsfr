@@ -1,0 +1,49 @@
+////
+/// Tile Module : sm
+/// @group tile
+////
+
+#{ns(tile--sm)} {
+  @include padding(6v 6v 7v);
+
+  #{ns(tile)} {
+    &__title {
+      @include text-style(md);
+      @include margin-bottom(1v);
+
+      a {
+        @include icon-size(sm, after) {
+          @include absolute(null, 6v, 7v);
+        };
+      }
+    }
+
+    &__desc {
+      @include text-style(sm);
+    }
+
+    &__start {
+      @include margin-bottom(2v);
+    }
+
+    &__pictogram {
+      @include size(14v, 14v);
+    }
+  }
+
+  &#{ns(tile--horizontal)} {
+    #{ns(tile)} {
+      &__header {
+        @include margin-right(6v);
+      }
+
+      &__pictogram {
+        @include size(10v, 10v);
+      }
+    }
+  }
+
+  &#{ns(enlarge-link)}:not(#{ns(tile--no-icon)}) #{ns(tile__content)} {
+    @include padding-bottom(8v);
+  }
+}

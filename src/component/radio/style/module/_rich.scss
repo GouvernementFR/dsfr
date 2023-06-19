@@ -4,8 +4,9 @@
 ////
 
 @use 'module/spacing';
+@use 'module/selector';
 
-#{ns(radio-rich)} {
+#{selector.ns(radio-rich)} {
   @include relative;
 
   input[type="radio"] {
@@ -20,23 +21,22 @@
       @include size(100%);
       @include padding-top(2v);
       @include padding-bottom(2v);
-      @include padding-right(26v);
-      @include display-flex(column, flex-start, center);
+      @include padding-right(6v);
+      @include display-flex(column, stretch, center);
+      background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%, #{space(4.5v)} #{space(4.5v)}, #{space(4.5v)} #{space(4.5v)};
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: 0 0, 100% 0, 0 100%, 0 0, #{space(7v)} 50%, #{space(7v) 50%};
+      // retire le focus sur l'input
+      @include before(none);
 
-      @include before {
-        @include size(4v, 4v);
-        @include absolute(50%, null, null, 7v);
-        @include margin-top(-2v);
-      }
-
-      #{ns(hint-text)} {
+      #{selector.ns(hint-text)} {
         @include margin-left(0);
       }
     }
 
     &:disabled,
     &[disabled] {
-      ~ #{ns(radio-rich__img)} {
+      ~ #{selector.ns(radio-rich__img)} {
         filter: grayscale(1);
       }
     }
@@ -46,7 +46,7 @@
       @include enable-tint;
     }
 
-    @include hover-brighten('&:not(:disabled) ~ label', '~ #{ns(radio-rich__img)}');
+    @include hover-brighten('&:not(:disabled) ~ label', '~ #{selector.ns(radio-rich__img)}');
   }
 
   &__img {
@@ -65,8 +65,8 @@
   }
 }
 
-#{ns(control)} {
-  > #{ns(radio-rich)}#{ns-group(radio)} {
+#{selector.ns(control)} {
+  > #{selector.ns(radio-rich)}#{selector.ns-group(radio)} {
     @include margin-y(0);
   }
 }

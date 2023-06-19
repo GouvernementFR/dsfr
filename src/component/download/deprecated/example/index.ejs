@@ -1,0 +1,45 @@
+<%
+const sample = getSample(include);
+const elements = [
+  {
+    title: 'Lien de téléchargement',
+    path: 'sample-default'
+  },
+  {
+    title: 'Groupe de liens',
+    path: 'sample-group-link'
+  },
+  {
+    title: 'Carte de téléchargement',
+    path: 'sample-card'
+  },
+  {
+    title: 'Groupe de cartes',
+    path: 'sample-card-group'
+  },
+  {
+    title: 'Fichier en langue étrangère',
+    path: 'sample-lang'
+  },
+  {
+    title: 'Utilitaire js',
+    path: 'sample-assess-js'
+  },
+];
+
+const accordions = [];
+for (let element of elements) {
+  accordions.push({
+    label: element.title,
+    id: uniqueId('download'),
+    content: include(`./sample/${element.path}`)
+  })
+}
+const data = {
+  accordions: accordions
+}
+%>
+
+<%- section('Téléchargement de fichier', 'Il existe 2 variantes possible pour ce composant. La forme de lien, et la forme de carte.<br> L\'intitulé du lien doit commencer par ‘Télécharger’.<br> Le détail est obligatoire et doit conntenir le type (extension du fichier), le poids, la langue (si différente)). Laisser le détail vide si utilisation de l\'utilitaire js de remplissage automatique', 0); %>
+
+<%- include('../../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>
