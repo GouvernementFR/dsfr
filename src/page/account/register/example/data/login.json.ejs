@@ -1,5 +1,8 @@
 <%
 
+const login = locals.login || {};
+const markup = login.markup || 'h2';
+
 const elements = [];
 
 elements.push({
@@ -76,7 +79,7 @@ elements.push({
 
 const data = {
   id: uniqueId('login'),
-  legend: `<h3 class=${prefix}-h5>${getText('login.legend', 'register')}</h3>`,
+  legend: `<${markup} class=${prefix}-h5>${getText('login.legend', 'register')}<${markup}/>`,
   classes: [prefix + '-mb-0'],
   elements: elements
 };
