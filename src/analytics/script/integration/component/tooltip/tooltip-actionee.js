@@ -3,7 +3,7 @@ import ID from './id';
 
 class TooltipActionee extends ComponentActionee {
   constructor () {
-    super(2, true);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -11,12 +11,11 @@ class TooltipActionee extends ComponentActionee {
   }
 
   init () {
-    this.setDiscloseType();
-    this.listenDisclose();
+    this.setImpressionType();
   }
 
   get label () {
-    return 'Information contextuelle';
+    return 'information contextuelle';
   }
 
   get component () {
