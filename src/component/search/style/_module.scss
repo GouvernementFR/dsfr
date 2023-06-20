@@ -17,6 +17,12 @@
     border-radius: spacing.space(1v) 0 0;
     max-height: none;
 
+    /* TODO: intégrer la croix en background pour effacer la search bar
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+    }
+    */
+
     &[type=search] {
       -webkit-appearance: none;
       appearance: none;
