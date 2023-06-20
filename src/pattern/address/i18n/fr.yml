@@ -19,8 +19,10 @@ label:
   name: Dénomination
   country: Pays
 hint:
-  address: Numéro et voie
-  complement: Bâtiment, immeuble, escalier et numéro d’appartement
+  address: 'Indication : Numéro et voie'
+  complement: 'Indication : Bâtiment, immeuble, escalier et numéro d’appartement'
+  city: 'Exemple : Montpellier'
+  postal: 'Format attendu : 5 chiffres'
 legend:
   address: Adresse postale
   complement: Complément d'adresse postale

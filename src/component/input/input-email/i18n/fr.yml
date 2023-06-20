@@ -8,5 +8,5 @@ sample:
 label: Adresse électronique
 hint:
   format: 'Format attendu : nom@domaine.fr'
-  indication: Cette adresse est utilisée uniquement pour la connexion au service.
+  indication: 'Indication : Cette adresse est utilisée uniquement pour la connexion au service'
 error: 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@exemple.org'
