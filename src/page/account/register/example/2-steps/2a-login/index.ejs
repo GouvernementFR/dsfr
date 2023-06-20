@@ -2,7 +2,7 @@
 const sample = getSample(include);
 
 const connect = JSON.parse(include('../../../../../../component/connect/example/data/connect.json.ejs'));
-const form = JSON.parse(include('../../data/login.json.ejs', {}));
+const form = JSON.parse(include('../../data/login.json.ejs', { login: { markup: 'h3' }}));
 
 const buttonsGroup = JSON.parse(include('../../data/buttons-group.json.ejs', { page: { currentStep: 1, stepCount: 3}}));
 
@@ -26,6 +26,7 @@ const register = {
     {
       type: 'connect',
       data: {
+        markup: 'h3',
         title: getText('connect.title', 'register'),
         desc: getText('connect.desc', 'register'),
         connect: connect
