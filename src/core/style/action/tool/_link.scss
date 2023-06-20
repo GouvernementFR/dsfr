@@ -6,7 +6,7 @@
 $underline-thickness: 0.0625em;
 
 @mixin a-reset ($minimal: false) {
-  text-decoration: none;
+  text-decoration: var(--text-decoration);
   @if not $minimal {
     color: inherit;
   }
