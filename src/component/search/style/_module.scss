@@ -23,11 +23,6 @@
     }
     */
 
-    &[type=search] {
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
     &::placeholder {
       font-style: italic;
     }
