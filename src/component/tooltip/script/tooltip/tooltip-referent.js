@@ -24,6 +24,11 @@ class TooltipReferent extends api.core.PlacementReferent {
       this.listen('mouseover', this.mouseover.bind(this));
       this.listen('mouseout', this.mouseout.bind(this));
     }
+    this.listenKey(api.core.KeyCodes.ESCAPE, this.escape.bind(this), true, true);
+  }
+
+  escape () {
+    this.state = 0;
   }
 
   get state () {
