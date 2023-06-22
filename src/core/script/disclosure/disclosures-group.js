@@ -53,27 +53,28 @@ class DisclosuresGroup extends Instance {
   }
 
   validate (member) {
-    return member.isEnabled;
+    return true;
   }
 
   getMembers () {
     const members = this.element.getDescendantInstances(this.disclosureInstanceClassName, this.constructor.instanceClassName, true);
-    this._members = members.filter(this.validate.bind(this));
+    this._members = members.filter(this.validate.bind(this)).filter(member => member.isEnabled);
     const invalids = members.filter(member => !this._members.includes(member));
     invalids.forEach(invalid => invalid.conceal());
   }
 
-  retrieve () {
-    if (this._isRetrieving || this._hasRetrieved) return;
+  retrieve (bypassPrevention = false) {
+    if (this._isRetrieving || (this._hasRetrieved && !bypassPrevention)) return;
     this._isRetrieving = true;
     this.request(this._retrieve.bind(this));
   }
 
   _retrieve () {
+    this.getMembers();
     this._isRetrieving = false;
     this._hasRetrieved = true;
     if (this.hash) {
-      for (let i = 0; i < this.length - 1; i++) {
+      for (let i = 0; i < this.length; i++) {
         const member = this.members[i];
         if (this.hash === member.id) {
           this.index = i;
@@ -83,7 +84,7 @@ class DisclosuresGroup extends Instance {
       }
     }
 
-    for (let i = 0; i < this.length - 1; i++) {
+    for (let i = 0; i < this.length; i++) {
       const member = this.members[i];
       if (member.isInitiallyDisclosed) {
         this.index = i;

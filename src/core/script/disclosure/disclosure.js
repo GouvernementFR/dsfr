@@ -76,6 +76,7 @@ class Disclosure extends Instance {
 
   update () {
     this.getGroup();
+    this.retrievePrimaries();
   }
 
   getGroup () {
@@ -111,7 +112,7 @@ class Disclosure extends Instance {
     this.isDisclosed = false;
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
     if (!preventFocus) this.focus();
-    this.descend(DisclosureEmission.RESET);
+    if (!this._isPristine) this.descend(DisclosureEmission.RESET);
     return true;
   }
 
@@ -213,12 +214,14 @@ class Disclosure extends Instance {
     return candidates.filter(button => button.canDisclose && !this.node.contains(button.node));
   }
 
-  applyAbility (withold = false) {
+  applyAbility (withhold = false) {
     const isEnabled = !this._primaryButtons.every(button => button.isDisabled);
 
-    if (this.isEnabled === isEnabled || withold) return;
+    if (this.isEnabled === isEnabled) return;
 
     this.isEnabled = isEnabled;
+
+    if (withhold) return;
 
     if (!this.isEnabled && this.isDisclosed) {
       if (this.group) this.ascend(DisclosureEmission.REMOVED);

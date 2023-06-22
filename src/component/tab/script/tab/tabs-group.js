@@ -32,7 +32,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
   get list () {
     return this.element.getDescendantInstances('TabsList', 'TabsGroup', true)[0];
   }
-  
+
   setListHeight (value) {
     this.listHeight = value;
   }
@@ -125,7 +125,7 @@ class TabsGroup extends api.core.DisclosuresGroup {
 
   apply () {
     for (let i = 0; i < this._index; i++) this.members[i].translate(TabPanelDirection.START);
-    this.current.translate(TabPanelDirection.NONE);
+    if (this.current) this.current.translate(TabPanelDirection.NONE);
     for (let i = this._index + 1; i < this.length; i++) this.members[i].translate(TabPanelDirection.END);
     this.isPreventingTransition = false;
   }

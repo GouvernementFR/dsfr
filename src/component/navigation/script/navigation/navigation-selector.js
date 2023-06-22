@@ -6,6 +6,7 @@ const COLLAPSE = api.internals.ns.selector('collapse');
 export const NavigationSelector = {
   NAVIGATION: api.internals.ns.selector('nav'),
   COLLAPSE: `${ITEM} > ${COLLAPSE}, ${ITEM} > *:not(${ITEM}, ${COLLAPSE}) > ${COLLAPSE}, ${ITEM} > *:not(${ITEM}, ${COLLAPSE}) > *:not(${ITEM}, ${COLLAPSE}) > ${COLLAPSE}`,
+  COLLAPSE_LEGACY: `${ITEM} ${COLLAPSE}`,
   ITEM: ITEM,
   ITEM_RIGHT: `${ITEM}--align-right`,
   MENU: api.internals.ns.selector('menu'),

@@ -17,7 +17,7 @@ class Navigation extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return super.validate(member) && member.element.node.matches(NavigationSelector.COLLAPSE);
+    return super.validate(member) && member.element.node.matches(api.internals.legacy.isLegacy ? NavigationSelector.COLLAPSE_LEGACY : NavigationSelector.COLLAPSE);
   }
 
   mouseDownHandler (e) {
