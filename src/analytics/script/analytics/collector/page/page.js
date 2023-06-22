@@ -23,10 +23,9 @@ class Page {
     this.author = clear ? '' : this._config.author;
     this.date = clear ? '' : this._config.date;
     this._labels = clear || !this._config.labels ? ['', '', '', '', ''] : this._config.labels;
-    this._tags = clear || !this._config.tags ? ['', '', '', '', ''] : this._config.tags;
-    this._categories = clear || !this._config.categories ? ['', '', ''] : this._config.categories;
     this._labels.length = 5;
-    this._tags.length = 5;
+    this._tags = clear || !this._config.tags ? [] : this._config.tags;
+    this._categories = clear || !this._config.categories ? ['', '', ''] : this._config.categories;
     this.isError = !clear && this._config.isError;
     this.template = clear ? '' : this._config.template;
     this.group = clear ? '' : this._config.group;
@@ -244,13 +243,13 @@ class Page {
     if (this.name) layer.push('page_name', normalize(this.name));
     if (this.id) layer.push('page_id', normalize(this.id));
     if (this.author) layer.push('page_author', normalize(this.author));
+    if (this.date) layer.push('page_date', normalize(this.date));
 
     const labels = this._labels.slice(0, 5);
     labels.length = 5;
     if (labels.some(label => label)) layer.push('pagelabel', labels.map(label => typeof label === 'string' ? normalize(label) : '').join(','));
 
-    const tags = this._tags.slice(0, 5);
-    tags.length = 5;
+    const tags = this._tags;
     if (tags.some(tag => tag)) layer.push('pagetag', tags.map(tag => typeof tag === 'string' ? normalize(tag) : '').join(','));
 
     this._categories.forEach((category, index) => {
