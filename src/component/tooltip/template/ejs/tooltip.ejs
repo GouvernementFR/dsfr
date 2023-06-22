@@ -1,0 +1,16 @@
+<%#
+# paramètres tooltip
+
+* tooltip.id (string, required) : Identifiant du composant (lie le bouton au collapse).
+
+* tooltip.content (string, optional) : contenu du composant
+
+#%>
+
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const tooltip = locals.tooltip || {};
+%>
+
+<span class="<%= prefix %>-tooltip <%= prefix %>-placement" id="<%= tooltip.id %>" role="tooltip" aria-hidden="true"><%- tooltip.content %></span>

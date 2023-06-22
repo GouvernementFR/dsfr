@@ -80,10 +80,6 @@
     @include margin-left(4v);
   }
 
-  &--action #{ns(btn)} {
-    @include margin-left(4v);
-  }
-
   + #{ns(hint-text)} {
     @include margin-top(4v);
   }

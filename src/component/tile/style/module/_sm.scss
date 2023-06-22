@@ -14,7 +14,7 @@
       a {
         @include icon-size(sm, after) {
           @include absolute(null, 6v, 7v);
-        };
+        }
       }
     }
 

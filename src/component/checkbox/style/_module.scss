@@ -20,6 +20,7 @@
       -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
       @include margin-left(8v);
+
       --data-uri-svg: none;
 
       #{selector.ns(hint-text)} {
@@ -36,8 +37,8 @@
         @include margin-right(2v);
         border-radius: spacing.space(1v);
         background-size: spacing.space(1v 1v), spacing.space(calc(100% - 1v) 1px), spacing.space(1v 1v), spacing.space(1px calc(100% - 2v)), spacing.space(1v 1v), spacing.space(calc(100% - 2v) 1px), spacing.space(1v 1v), spacing.space(1px calc(100% - 2v)), spacing.space(4v);
-		    background-position: 0 0, spacing.space(1v) 0, 100% 0, 0 spacing.space(1v), 100% 100%, calc(100% - spacing.space(1v)) 100%, 0 100%, 100% spacing.space(1v), center;
-		    background-repeat: no-repeat;
+        background-position: 0 0, spacing.space(1v) 0, 100% 0, 0 spacing.space(1v), 100% 100%, spacing.space(calc(100% - 1v)) 100%, 0 100%, 100% spacing.space(1v), center;
+        background-repeat: no-repeat;
         // transition: background-color 0.1s, color 0.1s;
       }
     }
