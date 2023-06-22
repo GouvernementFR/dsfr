@@ -133,7 +133,7 @@ class DisclosuresGroup extends Instance {
       if (value === i) {
         member.disclose(true);
       } else {
-        member.conceal(true, true);
+        member.conceal(true);
       }
     }
     this.apply();

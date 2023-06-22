@@ -106,7 +106,7 @@ class Disclosure extends Instance {
     return true;
   }
 
-  conceal (withhold, preventFocus) {
+  conceal (withhold, preventFocus = true) {
     if (this.isDisclosed === false) return false;
     if (!this.type.canConceal && this.group && this.group.current === this) return false;
     this.isDisclosed = false;
@@ -145,7 +145,7 @@ class Disclosure extends Instance {
       switch (true) {
         case !canDisclose:
         case this.isDisclosed:
-          this.conceal();
+          this.conceal(false, false);
           break;
 
         default:
