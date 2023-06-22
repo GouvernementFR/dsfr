@@ -14,9 +14,13 @@ window.dsfr.analytics.page
             page: {
                 path: 'path\_name/from/url', // path for page tracking
                 referrer: 'path\_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+                id: 'page-id', // unique page id (string)
+                author: 'John Doe', // page author name
+                date: 'YYYY/MM/DD' // page creation date
                 title: 'page title', // page title for virtual pages
                 name: 'page name', // equivalent to title if not defined
                 labels: \['label1', 'label2', 'label3', 'label4', 'label5'\],
+                tags: \['tag1', 'tag2', 'tag3', 'tag4', 'tag5'\],
                 template: 'nom template', // page template
                 group: 'group', // page group. if not defined, fallback to template value
                 segment: 'segment', // site segment. if not defined, fallback to template value

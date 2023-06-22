@@ -1,6 +1,6 @@
 import api from '../../../../api';
 import normalize from '../../utils/normalize';
-import { validateBoolean, validateNumber, validateString } from '../../utils/type-validator';
+import { validateBoolean, validateNumber, validateString, validateDate } from '../../utils/type-validator';
 
 const CollectionState = {
   COLLECTABLE: 'collectable',
@@ -19,9 +19,14 @@ class Page {
     this.referrer = clear ? '' : this._config.referrer;
     this.title = clear ? '' : this._config.title;
     this.name = clear ? '' : this._config.name;
+    this.id = clear ? '' : this._config.id;
+    this.author = clear ? '' : this._config.author;
+    this.date = clear ? '' : this._config.date;
     this._labels = clear || !this._config.labels ? ['', '', '', '', ''] : this._config.labels;
+    this._tags = clear || !this._config.tags ? ['', '', '', '', ''] : this._config.tags;
     this._categories = clear || !this._config.categories ? ['', '', ''] : this._config.categories;
     this._labels.length = 5;
+    this._tags.length = 5;
     this.isError = !clear && this._config.isError;
     this.template = clear ? '' : this._config.template;
     this.group = clear ? '' : this._config.group;
@@ -77,6 +82,37 @@ class Page {
 
   get title () {
     return this._title || document.title;
+  }
+
+  set id (value) {
+    const valid = validateString(value, 'page.id');
+    if (valid !== null) this._id = valid;
+  }
+
+  get id () {
+    return this._id;
+  }
+
+  set author (value) {
+    const valid = validateString(value, 'page.author');
+    if (valid !== null) this._author = valid;
+  }
+
+  get author () {
+    return this._author;
+  }
+
+  set date (value) {
+    const valid = validateDate(value, 'page.date');
+    if (valid !== null) this._date = valid;
+  }
+
+  get date () {
+    return this._date;
+  }
+
+  get tags () {
+    return this._tags;
   }
 
   set name (value) {
@@ -206,10 +242,16 @@ class Page {
     if (this.referrer) layer.push('referrer', normalize(this.referrer));
     if (this.title) layer.push('page_title', normalize(this.title));
     if (this.name) layer.push('page_name', normalize(this.name));
+    if (this.id) layer.push('page_id', normalize(this.id));
+    if (this.author) layer.push('page_author', normalize(this.author));
 
     const labels = this._labels.slice(0, 5);
     labels.length = 5;
     if (labels.some(label => label)) layer.push('pagelabel', labels.map(label => typeof label === 'string' ? normalize(label) : '').join(','));
+
+    const tags = this._tags.slice(0, 5);
+    tags.length = 5;
+    if (tags.some(tag => tag)) layer.push('pagetag', tags.map(tag => typeof tag === 'string' ? normalize(tag) : '').join(','));
 
     this._categories.forEach((category, index) => {
       if (category) layer.push(`page_category${index + 1}`, category);
