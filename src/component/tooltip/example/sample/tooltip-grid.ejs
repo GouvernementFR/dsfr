@@ -1,0 +1,31 @@
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let tooltip = locals.tooltip || {};
+let tooltipId = uniqueId('tooltip');
+let data = {
+  id: tooltipId,
+  content: lorem(),
+  ...tooltip
+};
+
+let tooltipExample = include('../sample/tooltip-default', {tooltip: data});
+
+let columns = [
+  { 
+    col: { first: 4, sm: 2},
+    content: `<a class="${prefix}-link" href="#" aria-describedby="${tooltipId}">${getText('sample.example', 'tooltip')}</a>${tooltipExample}`
+  },
+  { 
+    col: { first: 8, sm: 10},
+    content: `<p>${lorem()}</p>`,
+  }
+];
+
+let grid = {
+    gutters: true,
+    cols: tooltip.position && tooltip.position === 'right' ? columns.reverse() : columns
+  };
+%>
+
+<%- include('../../../../core/example/grid/sample/grid', { grid: grid }); %>

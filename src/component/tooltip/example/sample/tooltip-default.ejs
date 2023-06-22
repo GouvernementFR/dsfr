@@ -1,0 +1,10 @@
+<%
+let tooltip = locals.tooltip || {};
+let data = {
+  id: tooltip.id || uniqueId('tooltip'),
+  content: tooltip.content || lorem(),
+  ...tooltip
+}
+%>
+
+<%- include('../../template/ejs/tooltip', {tooltip: data}); %>
