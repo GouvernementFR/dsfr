@@ -28,18 +28,18 @@
       @include enable-underline-legacy;
 
       > * {
-        @include padding-x(4v);
-        @include padding-x(8v, md);
+        @include margin-x(4v);
+        @include margin-x(8v, md);
       }
 
       > *:first-child {
-        @include padding-top(3v);
-        @include padding-top(7v, md);
+        @include margin-top(3v);
+        @include margin-top(7v, md);
       }
 
       > *:last-child {
-        @include padding-bottom(4v);
-        @include padding-bottom(8v, md);
+        @include margin-bottom(4v);
+        @include margin-bottom(8v, md);
       }
     }
   }

@@ -76,6 +76,7 @@ class Disclosure extends Instance {
 
   update () {
     this.getGroup();
+    this.retrievePrimaries();
   }
 
   getGroup () {
@@ -105,13 +106,13 @@ class Disclosure extends Instance {
     return true;
   }
 
-  conceal (withhold, preventFocus) {
+  conceal (withhold, preventFocus = true) {
     if (this.isDisclosed === false) return false;
     if (!this.type.canConceal && this.group && this.group.current === this) return false;
     this.isDisclosed = false;
     if (!withhold && this.group && this.group.current === this) this.group.current = null;
     if (!preventFocus) this.focus();
-    this.descend(DisclosureEmission.RESET);
+    if (!this._isPristine) this.descend(DisclosureEmission.RESET);
     return true;
   }
 
@@ -144,7 +145,7 @@ class Disclosure extends Instance {
       switch (true) {
         case !canDisclose:
         case this.isDisclosed:
-          this.conceal();
+          this.conceal(false, false);
           break;
 
         default:
@@ -213,12 +214,14 @@ class Disclosure extends Instance {
     return candidates.filter(button => button.canDisclose && !this.node.contains(button.node));
   }
 
-  applyAbility (withold = false) {
+  applyAbility (withhold = false) {
     const isEnabled = !this._primaryButtons.every(button => button.isDisabled);
 
-    if (this.isEnabled === isEnabled || withold) return;
+    if (this.isEnabled === isEnabled) return;
 
     this.isEnabled = isEnabled;
+
+    if (withhold) return;
 
     if (!this.isEnabled && this.isDisclosed) {
       if (this.group) this.ascend(DisclosureEmission.REMOVED);
