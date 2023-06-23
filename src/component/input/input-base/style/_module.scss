@@ -86,9 +86,23 @@
 }
 
 #{ns(input-group)} {
+  @include relative;
+
   #{ns(message)} {
     &:first-child {
       @include margin-top(2v);
+    }
+  }
+
+  &--valid,
+  &--error,
+  &--info {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
     }
   }
 }
