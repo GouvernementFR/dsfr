@@ -34,4 +34,10 @@
       }
     }
   }
+
+  [disabled] {
+    #{selector.ns(artwork)} * {
+      @include color.fill(text disabled grey, (legacy: $legacy));
+    }
+  }
 }

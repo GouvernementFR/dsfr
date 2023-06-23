@@ -23,8 +23,17 @@ import { InjectSvg } from './script/inject/inject-svg';
 import { InjectSvgSelector } from './script/inject/inject-svg-selector';
 import { Artwork } from './script/artwork/artwork';
 import { ArtworkSelector } from './script/artwork/artwork-selector';
+import { AssessSelector } from './script/assess/assess-selector';
+import { AssessFile } from './script/assess/assess-file';
+import { AssessDetail } from './script/assess/assess-detail';
+import { AssessEmission } from './script/assess/assess-emission';
 import { RatioSelector } from './script/ratio/ratio-selector.js';
 import { Ratio } from './script/ratio/ratio.js';
+import { Placement } from './script/placement/placement.js';
+import { PlacementReferent } from './script/placement/placement-referent';
+import { PlacementAlign } from './script/placement/placement-align';
+import { PlacementPosition } from './script/placement/placement-position';
+import { PlacementMode } from './script/placement/placement-mode';
 
 api.core = {
   Instance: Instance,
@@ -50,8 +59,17 @@ api.core = {
   InjectSvgSelector: InjectSvgSelector,
   Artwork: Artwork,
   ArtworkSelector: ArtworkSelector,
+  AssessFile: AssessFile,
+  AssessDetail: AssessDetail,
+  AssessEmission: AssessEmission,
+  AssessSelector: AssessSelector,
   Ratio: Ratio,
-  RatioSelector: RatioSelector
+  RatioSelector: RatioSelector,
+  Placement: Placement,
+  PlacementReferent: PlacementReferent,
+  PlacementAlign: PlacementAlign,
+  PlacementPosition: PlacementPosition,
+  PlacementMode: PlacementMode
 };
 
 export default api;

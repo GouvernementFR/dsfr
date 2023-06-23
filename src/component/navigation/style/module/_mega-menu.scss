@@ -5,7 +5,6 @@
 
 #{ns(mega-menu)} {
   @include margin(0 -4v 1px);
-  @include padding(0 4v 0);
 
   @include respond-from(lg) {
     @include absolute(100%, 0, null, 0);
@@ -13,7 +12,7 @@
     @include padding(0);
 
     @include after('', block) {
-      @include padding-bottom(9v);
+      @include padding-bottom(6v);
     }
   }
 
@@ -22,6 +21,8 @@
   }
 
   > #{ns(container)} {
+    @include padding(2v 4v 0);
+    @include padding(0 6v, lg);
     @include respond-from(lg) {
       @include before('', block) {
         @include padding-top(4v);
@@ -33,6 +34,7 @@
     display: none;
     @include respond-from(lg) {
       display: flex;
+      @include margin-right(0);
     }
   }
 
@@ -47,7 +49,7 @@
   &__leader {
     @include enable-underline;
     @include padding-x(4v);
-    @include padding-top(4v);
+    @include padding-top(2v);
     @include padding-top(0, lg);
     @include padding-x(0, lg);
     @include set-text-margin(0 0 2v);

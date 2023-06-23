@@ -64,7 +64,7 @@ const getMega = (active = false, leader = false) => {
     type: 'mega-menu',
     label: 'Entrée mega menu',
     close: 'Fermer le menu',
-    leader: leader ? {
+    ...(leader && {leader: {
       title: 'Titre éditorialisé',
       text: lorem(),
       link: {
@@ -73,7 +73,7 @@ const getMega = (active = false, leader = false) => {
         iconPlace:'right',
         icon: 'arrow-right-line'
       }
-    } : null,
+  }}),
     categories: [
       getCategory(),
       getCategory(),

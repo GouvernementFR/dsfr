@@ -5,17 +5,16 @@
 
 @use 'module/spacing';
 
-/*
- * Passage du label ferré à gauche, le toggle ferré à droite
- */
 #{ns(toggle--label-left)} {
   #{ns(toggle__input)} {
     order: 1;
     @include margin(0 0 0 auto);
 
-    &#{ns-attr(checked-label)} ~ #{ns(toggle__label)} {
-      @include padding-left(0);
-      @include padding-right(4v);
+    + label#{ns-attr(checked-label)} {
+      @include before {
+        @include margin-right(0);
+        @include margin-left(calc(var(--toggle-status-width) - #{spacing.space(2v)}));
+      }
     }
   }
 
@@ -28,9 +27,10 @@
     @include before {
       flex-shrink: 0;
       order: 1;
-      @include margin-right(-10v);
       @include margin-left(4v);
+      @include margin-right(0);
       text-align: right;
+      direction: rtl;
     }
 
     @include after {

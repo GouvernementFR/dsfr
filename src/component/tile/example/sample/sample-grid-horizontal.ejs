@@ -1,0 +1,22 @@
+<% const sample = getSample(include); %>
+
+<%
+const tileH = { pictogram: true, horizontal: true, col: {md:'6', lg:'4'}};
+%>
+<%- sample('Grilles de tuiles horizontales', './tiles-grid', { tiles : [
+        { ...tileH, content: { tag: true, description: true, details: true }},
+        { ...tileH, content: { badge: true, description: true }},
+        { ...tileH, content: { details: true}},
+        { ...tileH, content: { }},
+    ]}, true, './tiles-layout'); %>
+
+<%
+const tileHSm = { pictogram: true, horizontal: true, size:'sm', col: { sm:'6', md:'4', lg:'3'}};
+%>
+<%- sample('Grilles de tuiles horizontales sm', './tiles-grid', { tiles : [
+        { ...tileHSm, content: { tag: true, description: true, details: true }},
+        { ...tileHSm, content: { badge: true, description: true }},
+        { ...tileHSm, content: { details: true }},
+        { ...tileHSm, content: { }},
+    ]}, true, './tiles-layout'); %>
+

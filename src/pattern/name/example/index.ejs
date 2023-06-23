@@ -1,6 +1,10 @@
 <%
 const sample = getSample(include);
 %>
+<script type="module">
+  <%- include('./js/add-firstname.js'); %>
+  <%- include('./js/toggle-disabled.js'); %>
+</script>
 
 <%- section(getText('section.default', 'name'), '', 0); %>
 

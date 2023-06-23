@@ -3,7 +3,7 @@ const segment = locals.segment || {};
 const data = segment.data;
 %>
 <% if (data.title) { %>
-  <h5><%= data.title %></h5>
+  <h2 class="<%= prefix %>-h5"><%= data.title %></h2>
 <% } %>
 <% if (data.buttonsGroup) { %>
   <%- include('../../../../../component/button/template/ejs/buttons-group', { buttonsGroup: data.buttonsGroup })  %>

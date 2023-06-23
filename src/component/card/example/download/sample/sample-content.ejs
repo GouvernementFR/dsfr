@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte de téléchargement, cas maximum', './card-download', { card : { content: { details: ['icon'], badges: true } } }, true, '../../sample/card-layout', {}); %>
+
+<%- sample('Carte de téléchargement, cas minimum', './card-download', { card : { img: false, content: { description: false } } }, true, '../../sample/card-layout', {}); %>
+
+<%- sample('Carte de téléchargement, avec tags', './card-download', { card : { content: { tags: true} }}, true, '../../sample/card-layout', {}); %>
+
+<%- sample('Carte de téléchargement, avec remplissage automatique des détails', './card-download', { card : { content: { assess: true} }}, true, '../../sample/card-layout', {desc: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le detail depuis les informations du fichier (extension, poids, langue)'}); %>

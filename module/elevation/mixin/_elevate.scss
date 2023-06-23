@@ -10,7 +10,9 @@
   $legacy: map.get($options, legacy);
 
   @include z-index.z-index($level, $legacy);
-  @include background.background($layer, $options);
+  @if not map.get($options, no-background) {
+    @include background.background($layer, $options);
+  }
 
   @if not $legacy {
     @include shadow.shadow($layer);

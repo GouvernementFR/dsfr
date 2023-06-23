@@ -3,8 +3,12 @@
 /// @group radio
 ////
 
-#{ns-group(radio)} {
+@use 'module/spacing';
+@use 'module/selector';
+
+#{selector.ns-group(radio)} {
   @include relative;
+  @include max-width('max-content');
 
   input[type="radio"] {
     @include absolute;
@@ -13,22 +17,25 @@
     opacity: 0;
 
     + label {
-      @include relative;
+      // @include relative;
       -webkit-tap-highlight-color: transparent;
-      @include display-flex(row, center, flex-start, wrap);
-      @include margin-left(8v);
+      @include display-flex(column, flex-start, flex-start);
+      @include padding-left(8v);
+      background-position: calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px), calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px);
+      background-size: #{spacing.space(7.5v)} #{spacing.space(7.5v)}, #{spacing.space(7.5v)} #{spacing.space(7.5v)};
+      background-repeat: no-repeat, no-repeat;
 
-      #{ns(hint-text)} {
-        @include margin(0);
-        @include size(100%);
+      // empty before for the focus
+      @include before('') {
+        @include size(6v, 6v);
+        @include absolute(0);
+        border-radius: #{spacing.space(6v)};
+        @include margin-left(-8v);
       }
 
-      @include before('', inline-block) {
-        @include absolute(0, null, null, -8v);
-        @include size(6v, 6v);
-        @include margin-right(2v);
-        border-radius: 50%;
-        // transition: box-shadow 0.3s;
+      #{selector.ns(hint-text)} {
+        @include margin(0);
+        @include size(100%);
       }
     }
   }

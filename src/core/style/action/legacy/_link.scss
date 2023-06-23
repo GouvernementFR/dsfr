@@ -8,15 +8,18 @@
 @include legacy.is(ie11) {
   [href],
   #{ns(reset-link)} {
-    text-decoration: underline;
+    &[href],
+    [href] {
+      text-decoration: underline;
+    }
   }
 
   #{ns(raw-link)} {
-    text-decoration: none;
-  }
-
-  #{ns(reset-link)} {
-    @include after(none);
+    &[href],
+    [href] {
+      text-decoration: none;
+      @include after(none);
+    }
   }
 
   [target="_blank"] {

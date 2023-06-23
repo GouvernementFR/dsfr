@@ -43,25 +43,15 @@
       display: inline-flex;
 
       &:not(:last-child) {
-        input[type="radio"] + label {
-          @include margin-right(7v);
-        }
+        @include margin-right(7v);
       }
 
       &:first-child {
         @include margin-top(0);
-
-        input[type="radio"] + label {
-          @include margin-top(0);
-        }
       }
 
       &:last-child {
         @include margin-bottom(0);
-
-        input[type="radio"] + label {
-          @include margin-bottom(0);
-        }
       }
     }
   }
@@ -74,7 +64,7 @@
     #{ns-group(radio)},
     #{ns-group(checkbox)} {
       &:first-child {
-        @include margin-top(-4v);
+        @include margin-top(-3v);
       }
 
       label {

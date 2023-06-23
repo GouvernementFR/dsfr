@@ -7,12 +7,12 @@ $pagination-build-settings:(
   selector: pagination__link,
   sizes: (
     md: (
-      font-size: 4v,
+      font-size: 3.5v,
       min-height: 8v,
       padding-x: 3v,
-      icon: md,
+      icon: sm,
       icon-margin-x: 2v,
-      icon-only: md
+      icon-only: sm,
     )
   ),
   display: flex

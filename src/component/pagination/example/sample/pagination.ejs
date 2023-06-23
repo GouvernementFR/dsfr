@@ -19,7 +19,7 @@ const getPageData = (pageNumber, displayedLg) => {
 }
 
 const getNavData = (label, hasLgLabel) => {
-  return getData(label, false, hasLgLabel === true);
+  return getData(label, false, hasLgLabel === true, label);
 }
 
 for (i = 1; i < 4; i++) pages.push(getPageData(i, i > 2));

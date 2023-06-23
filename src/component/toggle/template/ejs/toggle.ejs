@@ -43,6 +43,12 @@ if (toggle.border !== undefined) {
 if (toggle.left !== undefined) {
   classes.push(prefix +'-toggle--label-left');
 }
+if (toggle.error !== undefined) {
+  classes.push(prefix +'-toggle--error');
+}
+if (toggle.valid !== undefined) {
+  classes.push(prefix +'-toggle--valid');
+}
 if (toggle.disabled) inputAttr['disabled'] = '';
 if (toggle.checked) inputAttr['checked'] = '';
 %>

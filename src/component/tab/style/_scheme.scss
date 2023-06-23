@@ -18,7 +18,7 @@
     * Tab button
     */
     &__tab {
-      @include color.background-image((border active blue-france) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
       @include color.box-shadow(background default grey, (legacy: $legacy), bottom-2-out);
 
       &:not([aria-selected=true]) {
@@ -26,7 +26,8 @@
         @include color.text(action-high grey, (legacy: $legacy));
       }
 
-      &[aria-selected=true] {
+      &[aria-selected=true]:not(:disabled) {
+        @include color.background-image((border active blue-france) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
         @include color.background(default grey, (legacy: $legacy));
         @include color.text(active blue-france, (legacy: $legacy));
       }

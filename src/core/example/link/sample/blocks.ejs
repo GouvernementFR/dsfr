@@ -1,0 +1,10 @@
+<%
+ let classes = locals.classes || [];
+ let paragraphes = locals.paragraphes || [];
+ %>
+
+<div <%- includeClasses(classes); %>>
+  <% for (const paragraph of paragraphes) { %>
+    <%- include('../../../template/ejs/typography/paragraph', {paragraph: { ...paragraph, content: lorem(paragraph.insert) }}); %>
+  <% } %>
+</div>

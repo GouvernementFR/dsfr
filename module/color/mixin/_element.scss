@@ -14,7 +14,7 @@
 
 $COLOR: constant.$value;
 
-@mixin _element($prop, $context, $tokens, $options: (), $value: $COLOR) {
+@mixin element($prop, $context, $tokens, $options: (), $value: $COLOR) {
   $legacy: map.get($options, legacy);
   $important: map.get($options, important);
   $hover: map.get($options, hover);
@@ -101,7 +101,7 @@ $COLOR: constant.$value;
   @if not map.has-key($options, hover) {
     $options: map.merge($options, (hover: inherit));
   }
-  @include _element(background-color, background, $tokens, $options);
+  @include element(background-color, background, $tokens, $options);
 }
 
 /// @param {list} $tokens - liste des tokens de décision
@@ -156,7 +156,7 @@ $COLOR: constant.$value;
     }
     $value: $transformed;
   }
-  @include _element(background-image, background, $tokens, $options, $value);
+  @include element(background-image, background, $tokens, $options, $value);
 }
 
 /// Ajout d'une couleur de texte sur un élément
@@ -166,7 +166,7 @@ $COLOR: constant.$value;
 ///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
 ///   - important {boolean}: si true, applique !important à la règle css
 @mixin text($tokens, $options) {
-  @include _element(color, text, $tokens, $options);
+  @include element(color, text, $tokens, $options);
 }
 
 /// Ajout d'une couleur de texte sur un élément
@@ -176,7 +176,7 @@ $COLOR: constant.$value;
 ///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
 ///   - important {boolean}: si true, applique !important à la règle css
 @mixin text-fill($tokens, $options) {
-  @include _element(-webkit-text-fill-color, text, $tokens, $options);
+  @include element(-webkit-text-fill-color, text, $tokens, $options);
 }
 
 /// Ajout d'une couleur de fill sur un élément
@@ -186,7 +186,7 @@ $COLOR: constant.$value;
 ///   - legacy {boolean}: version pour navigateurs modernes ou anciens.
 ///   - important {boolean}: si true, applique !important à la règle css
 @mixin fill($tokens, $options) {
-  @include _element(fill, background , $tokens, $options);
+  @include element(fill, background , $tokens, $options);
 }
 
 /// Ajout d'une couleur de border sur un élément
@@ -202,7 +202,7 @@ $COLOR: constant.$value;
   @if map.has-key($options, side) {
     $prop:border-#{map.get($options, side)};
   }
-  @include _element($prop, border, $tokens, $options, $value);
+  @include element($prop, border, $tokens, $options, $value);
 }
 
 @mixin no-border($options: ()) {
@@ -228,7 +228,7 @@ $COLOR: constant.$value;
 ///   - important {boolean}: si true, applique !important à la règle css
 /// @param {List} $value - définition des propriétés d'outline
 @mixin outline($tokens, $options, $value:1px solid $COLOR) {
-  @include _element(outline, border, $tokens, $options, $value);
+  @include element(outline, border, $tokens, $options, $value);
 }
 
 /// Ajout d'une couleur de box-shadow sur un élément
@@ -257,7 +257,7 @@ $COLOR: constant.$value;
   @if $has-keys {
     $value: $transformed;
   }
-  @include _element(box-shadow, border, $tokens, $options, spacing.space($value));
+  @include element(box-shadow, border, $tokens, $options, spacing.space($value));
 }
 
 /// Supprime la shadow-box sur l'élément

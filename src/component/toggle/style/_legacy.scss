@@ -19,6 +19,7 @@
 
     &__list {
       list-style: none;
+      @include padding(0);
     }
   }
 }

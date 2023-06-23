@@ -1,0 +1,39 @@
+
+<% const sample = getSample(include); %>
+
+<%
+  const elements = [
+    {
+      title: 'Tailles',
+      path: 'sample-sizes'
+    },
+    {
+      title: 'Sans image',
+      path: 'sample-no-img'
+    },
+    {
+      title: 'Image et ratio',
+      path: 'sample-img'
+    },
+    {
+      title: 'Contenu',
+      path: 'sample-content'
+    },
+  ];
+
+  const accordions = [];
+
+  for (let element of elements) {
+    accordions.push({
+      label: element.title,
+      id: uniqueId('card-download'),
+      content: include(`./sample/${element.path}`)
+    })
+  }
+
+  const data = {
+    accordions: accordions
+  }
+ %>
+
+<%- include('../../../accordion/template/ejs/accordions-group', {accordionsGroup: data }); %>

@@ -25,7 +25,7 @@
   $light: result.get($light-colors, $value);
   $light: specificity.important($light, $important);
 
-  @if $legacy {
+  @if $legacy and $prop != false {
     @include legacy.is(ie11) {
       #{$prop}: #{url(utilities.data-uri(string.encode-svg($light, true), svg))};
     }
@@ -41,6 +41,8 @@
       --data-uri-svg: #{url(utilities.data-uri(string.encode-svg($dark, false), svg))};
     }
 
-    #{$prop}: var(--data-uri-svg);
+    @if $prop != false {
+      #{$prop}: var(--data-uri-svg);
+    }
   }
 }
