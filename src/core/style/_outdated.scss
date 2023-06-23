@@ -7,7 +7,7 @@
   :root#{ns-attr(scrolling)} body {
     position: sticky;
   }
-  
+
   :root {
     --underline-thickness: calc(#{$underline-thickness} + 0.25px);
   }
