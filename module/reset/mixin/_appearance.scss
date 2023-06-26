@@ -1,0 +1,12 @@
+/// Mixin de propriété appearance avec support des plateformes antérieures
+///
+/// @example scss -
+///   .foo {
+///     @include appearance(none);
+///   }
+
+@mixin appearance($appearance: auto) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  appearance: $appearance;
+}

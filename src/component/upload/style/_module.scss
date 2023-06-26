@@ -3,6 +3,8 @@
 /// @group upload
 ////
 
+@use 'module/reset';
+
 #{ns-group(upload)} {
   #{ns(label)} {
     #{ns(hint-text)} {
@@ -35,7 +37,7 @@
   }
 
   &::-webkit-file-upload-button {
-    -webkit-appearance: button;
+    @include reset.appearance(button);
     font: inherit;
     cursor: pointer;
     @include margin-right(2v);

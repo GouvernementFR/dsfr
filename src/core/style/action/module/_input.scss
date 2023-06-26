@@ -3,10 +3,12 @@
 /// @group core
 ////
 
+@use 'module/reset';
+
 input,
 select,
 textarea {
-  @include appearance(none);
+  @include reset.appearance(none);
   @include font-family;
   @include text-adjustments;
   border-radius: 0;
@@ -17,11 +19,11 @@ textarea {
 
 // Fix for normalize.css
 input[type=search] {
-  @include appearance(none);
+  @include reset.appearance(none);
 }
 
 // Fix for NVDA
 input[type="checkbox"],
 input[type="radio"] {
-  @include appearance;
+  @include reset.appearance;
 }
