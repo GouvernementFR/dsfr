@@ -72,7 +72,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.59.2",
     "sass-true": "^6.1.0",
-    "semver": "^7.5.0",
+    "semver": "^7.5.3",
     "standard": "^16.0.4",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^20.0.0",
