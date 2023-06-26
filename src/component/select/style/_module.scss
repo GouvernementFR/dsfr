@@ -4,12 +4,11 @@
 ////
 
 @use 'module/spacing';
+@use 'module/reset';
 
 #{ns(select)} {
   display: block;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  @include reset.appearance(none);
   @include size(100%);
   border-radius: spacing.space(1v 1v 0 0);
   @include text-style(md);
