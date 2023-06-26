@@ -11,6 +11,7 @@ a {
   @include init-underline;
   @include enable-underline;
   @include enable-external;
+
   --text-decoration: none;
 }
 
@@ -35,7 +36,7 @@ form {
 
 #{ns(raw-link)} {
   --text-decoration: none;
-  
+
   &[href],
   [href] {
     @include disable-underline;

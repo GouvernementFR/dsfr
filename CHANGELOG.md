@@ -10,9 +10,363 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 > ## DSFR v1
 
+## v1.10
+
+### [1.10.0](https://github.com/GouvernementFR/dsfr/compare/v1.9.3...1.10.0) - 26 Juin 2023
+
+#### fix(1.10): corrige erreurs de lint
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#638)](https://github.com/GouvernementFR/dsfr/pull/638)
+- Mise à jour de sécurité
+
+
+#### 🐛 fix(core): apparence du champ de recherche iOS [(#639)](https://github.com/GouvernementFR/dsfr/pull/639)
+- En utilisant des librairies tierces (telles que normalize.css), le champ de recherche reprend son aspect natif arrondi en mobile IOS.
+- Spécificité renforcée sur le sélecteur afin de conserver le appearance: none
+
+
+#### 🐛 fix(header): duplication des id généralisée pour les quick access [(#637)](https://github.com/GouvernementFR/dsfr/pull/637)
+- L&#39;ensemble des id présents dans les accès rapides du header doivent être suffixés par -mobile à la duplication
+
+
+#### 🐛 fix(analytics): correctifs divers et ajouts de propriétés de page [(#612)](https://github.com/GouvernementFR/dsfr/pull/612)
+- liens cassés de la documentation
+- retrait du patch js des pages d&#39;exemple
+- correctif du collect manuel au changement d&#39;url
+- correctif du taux de clic désactivé sur certains composants
+- ajustements pages d&#39;exemple
+-  retrait des limitation de valeurs sur la propriété`user.profile` 
+- ajouts de propriétés dans la configuration de page 
+  - page_id
+  - page_author
+  - page_tags
+  - page_date
+
+
+#### 🐛 fix(search): hauteur du champ trop grande de 1px sur ios [(#632)](https://github.com/GouvernementFR/dsfr/pull/632)
+Sur ios le champ dépasse de 1px par rapport au bouton.
+
+-&gt; Correction du max-height
+
+
+#### ✨ feat(select, input): ajout de la bordure en état erreur / succés / info [(#635)](https://github.com/GouvernementFR/dsfr/pull/635)
+Actuellement la bordure gauche montrant l&#39;état d&#39;erreur/succès/info n&#39;est appliqué que dans le cas d&#39;un groupe de champ en erreur via les modificateur .fr-fieldset--error, .fr-fieldset--valid, .fr-fieldset--info
+
+Afin d&#39;être ISO avec l&#39;UI nous rajoutons cet élément visuel sur : 
+- les champs seuls (.fr-input-group) : 
+  - `.fr-input-group--error`
+  - `.fr-input-group--valid`
+  - `.fr-input-group--info`
+- les selects (.fr-select-group)
+  - `.fr-select-group--error`
+  - `.fr-select-group--valid`
+  - `.fr-select-group--info`
+
+
+#### 🐛 fix(tab): correction onglets imbriqués en legacy [(#628)](https://github.com/GouvernementFR/dsfr/pull/628)
+- correction des marges sur les tabs imbriqués sur IE
+- correction disclosure et disclosureGroup IE
+- correction syntax error selecteur Collapse
+
+
+#### 🐛 fix(example): retire les attributs file des &lt;link&gt; [(#631)](https://github.com/GouvernementFR/dsfr/pull/631)
+- l&#39;attribut file n&#39;est pas un attribut possible pour les éléments &lt;link&gt;
+
+
+#### 🐛 fix(link, button, tag, badge): retrait du z-index [(#630)](https://github.com/GouvernementFR/dsfr/pull/630)
+- retrait du z-index: 1 qui pose problème dans une modale avec footer.
+
+
+#### 🎉 feat(tooltip): ajout de la fonctionnalité Tooltip [(#486)](https://github.com/GouvernementFR/dsfr/pull/486)
+Le composant `Infobulle` (ou `bulle d’aide`, `aide contextuelle`) permet d’afficher du contenu dans le contexte de navigation (non modal), à propos et lors de l’interaction avec un élément précis de l’interface. Il est caché par défaut, et s’affiche au survol ou au clic de l’élément associé, par-dessus le reste de la page.
+
+
+#### 🐛 fix(share): correction copie url dans presse papier [(#629)](https://github.com/GouvernementFR/dsfr/pull/629)
+- Gestion de la Promise retournée par `navigator.clipboard.writeText()`
+
+
+#### ✨ feat(address): met a jour les message d&#39;aide des champs de formulaire [(#624)](https://github.com/GouvernementFR/dsfr/pull/624)
+- ajout d&#39;indication et de description du format attendu
+
+
+#### 🐛 fix(account): met a jour la hiérarchie html des modèles de page [(#618)](https://github.com/GouvernementFR/dsfr/pull/618)
+- Mise en place d&#39;une hiérarchie sans saut de niveau de titre, plus cohérente
+- Correctif typo sur la classe `fr-grid-row--gutters`
+
+
+#### 🐛 fix(accordion, transcription, translate, sidemenu): Ajustement sur l&#39;état défaut et actif [(#564)](https://github.com/GouvernementFR/dsfr/pull/564)
+Harmonisation avec la navigation sur Accordion, Sidemenu, Translate et Transcription :
+- Passage icône et intitulé en action-high-blue-france
+- Ajout background-open-blue-france sur le bouton lorsque l&#39;élément est ouvert
+- Icône “arrow-down-s-ligne” (la même que sur navigation)
+- Accordion, Translate : Retrait changement de graisse (normal -&gt; bold) à l&#39;ouverture et graisse constante en medium
+
+
+#### 🐛 fix(tab, core): correctif tab legacy &amp; margin top des headings [(#621)](https://github.com/GouvernementFR/dsfr/pull/621)
+- Corrige la taille de l&#39;icône
+- Corrige l&#39;alignement du contenu du tab_panel
+- Ajustement du padding de la tab__list
+- Retire les margin-top des headings (h1 -&gt; h6)
+
+
+#### 📝 doc(core): ajoute des exemples liens bruts et resets [(#613)](https://github.com/GouvernementFR/dsfr/pull/613)
+Par défaut, le dsfr stylise les liens natifs, ce qui peut poser problème dans l&#39;utilisation de librairie tierce.
+2 classes utilitaires sont mise à disposition pour contrecarrer le style fort du lien : 
+- `.fr-raw-link` retire toute stylisation sur les liens natifs
+- `.fr-reset-link` remet le soulignement natif du navigateur (`text-decoration: underline;`)
+Des pages d&#39;exemples en illustrant l&#39;utilisation ont été ajoutées dans les pages d&#39;exemples des fondamentaux.
+
+
+#### ✨ feat(radio): radio rich sans images &amp; pictogram à la place d&#39;img [(#540)](https://github.com/GouvernementFR/dsfr/pull/540)
+Les radios riches doivent utiliser des pictogrammes et non des images :
+- Retrait des images
+- Ajout de pictogramme
+
+Le snippet :
+```html
+&lt;div class=&#34;fr-radio-group fr-radio-rich&#34;&gt;
+  &lt;input value=&#34;1&#34; type=&#34;radio&#34; id=&#34;radio-rich-1&#34; name=&#34;radio-rich&#34;&gt;
+  &lt;label class=&#34;fr-label&#34; for=&#34;radio-rich-1&#34;&gt;
+      Libellé bouton radio
+  &lt;/label&gt;
+  &lt;div class=&#34;fr-radio-rich__img&#34;&gt;
+      &lt;img src=&#34;../../../example/img/placeholder.1x1.png&#34; alt=&#34;[À MODIFIER - vide ou texte alternatif de l’image]&#34; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;div class=&#34;fr-radio-group fr-radio-rich&#34;&gt;
+  &lt;input value=&#34;1&#34; type=&#34;radio&#34; id=&#34;radio-rich-1&#34; name=&#34;radio-rich&#34;&gt;
+  &lt;label class=&#34;fr-label&#34; for=&#34;radio-rich-1&#34;&gt;
+      Libellé bouton radio
+  &lt;/label&gt;
+  &lt;div class=&#34;fr-radio-rich__pictogram&#34;&gt;
+      &lt;svg aria-hidden=&#34;true&#34; class=&#34;fr-artwork&#34; viewBox=&#34;0 0 80 80&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
+          &lt;use class=&#34;fr-artwork-decorative&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative&#34;&gt;&lt;/use&gt;
+          &lt;use class=&#34;fr-artwork-minor&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor&#34;&gt;&lt;/use&gt;
+          &lt;use class=&#34;fr-artwork-major&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-major&#34;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+Remplacer buildings/city-hall par la catégorie et le nom du pictogramme désiré
+
+BREAKING CHANGE : `fr-radio-rich__img` devient `fr-radio-rich__pictogram`
+
+
+#### 📝 doc(core): corrige les liens vers les pages de documentation des fondamentaux [(#623)](https://github.com/GouvernementFR/dsfr/pull/623)
+- Mise à jour des liens vers les fondamentaux sur le site de documentation
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#622)](https://github.com/GouvernementFR/dsfr/pull/622)
+- Mise à jour de sécurité
+
+
+#### ✨ feat(card): image des cartes de téléchargement format a4 [(#620)](https://github.com/GouvernementFR/dsfr/pull/620)
+- Ajout d&#39;une image de placeholder au format a4 (21x29.7)
+
+
+#### 🐛 fix(core): corrige liens pour retro-compat sur firefox [(#615)](https://github.com/GouvernementFR/dsfr/pull/615)
+- La fonction css max(), mise en place pour corriger le bug d&#39;affichage d&#39;un soulignement d&#39;une épaisseur inférieure à 1px, est supportée à partir de la version 78 de firefox, ce qui est insuffisant.
+- Le précédent bug est maintenant corrigé avec un léger épaississement du trait sur firefox (0.25px)
+
+
+#### 🐛 fix(header, navigation): focus des nav-items mobile &amp; ajustements [(#609)](https://github.com/GouvernementFR/dsfr/pull/609)
+- L&#39;outline de focus est maintenant entièrement visible sur les liens des sous menu en mobile
+- Ajustement de l&#39;alignement du bouton fermé en desktop
+- Retrait du mega-menu__leader vide dans les examples
+
+
+#### ✨ feat(pagination): évolution taille et écart des boutons [(#549)](https://github.com/GouvernementFR/dsfr/pull/549)
+Harmonisation de l&#39;espacement entre les boutons de pagination :
+- L&#39;espacement passe à 16px entre tous les boutons
+- Les boutons passent en taille SM
+
+
+#### 🐛 fix(core, modal): décalage scrollbar à l&#39;ouverture/fermeture modale &amp; fix scroll behavior [(#519)](https://github.com/GouvernementFR/dsfr/pull/519)
+Lorsque la page est scrollable, un décalage se produit à l&#39;ouverture d&#39;une modal (la page étant figé elle n&#39;est plus scrollable).
+
+Une marge est donc appliquée à l&#39;ouverture de la modale pour simuler la barre de scroll et ainsi éviter le mouvement du contenu en arrière plan.
+
+
+#### ♻️ refactor(radio,checkbox,toggle): passage input en bleu et refactorisation [(#502)](https://github.com/GouvernementFR/dsfr/pull/502)
+Uniformisation des champs à cocher toggle/radio/checkbox
+
+toggle:
+- Ajout des variants toggle error/valid
+- Retrait du css sur input `appearance:none` 
+- bordure en background svg
+- le toggle est maintenant placé dans un fieldset
+
+radio:
+- Le contour devient bleu
+- retrait du fond blanc du radio bouton (transparence)
+- input déssiné en background image
+
+radio-rich: 
+- L&#39;outline au focus englobe tout le radio-riche, plus l&#39;input
+
+checkbox:
+- Le contour devient bleu
+- correction changement d&#39;état au mouse-down (:active), maintenant au mouse up
+
+Form: 
+- les hint-text des champs désactivés passent en couleur `--text-disabled-grey`
+
+
+#### ✨ feat(core): ouverture des disclosures à partir des ancres, état disabled désactive disclosure [(#532)](https://github.com/GouvernementFR/dsfr/pull/532)
+- Correctif de l&#39;état disabled sur les boutons associés à une modale, un onglet ou un accordéon. La fonctionnalité d&#39;ouverture est désactivée si les boutons primaires sont désactivés.
+- Ajout de la fonctionnalité d&#39;ouverture d&#39;une modale, d&#39;un onglet ou d&#39;un accordéon si la partie ancre de l&#39;url correspond à l&#39;id de l&#39;élément -&gt; les liens d&#39;évitements peuvent ouvrir le menu et la recherche en mobile.
+
+
+#### 🐛 fix(tab): écoute des événements de clavier déplacé sur la liste d&#39;onglets [(#531)](https://github.com/GouvernementFR/dsfr/pull/531)
+L&#39;écoute des événements de clavier se faisant sur le composant, il est impossible d&#39;interagir avec des éléments de formulaire dans le contenu de l&#39;onglet -&gt; l&#39;écoute est déplacée au niveau de la liste des onglets, ce qui en exclut le contenu
+
+
+#### ✨ feat(name): ajout bouton de suppression de prénom [(#493)](https://github.com/GouvernementFR/dsfr/pull/493)
+Dans le modèle de de bloc nom/prénom, un bouton permet d&#39;ajouter des champs de saisie pour les prénoms secondaires -&gt; ajout d&#39;un bouton permettant de supprimer ces champs ajoutés
+
+
+#### ✨ feat(tile): Ajout icône flèche, état désactivé, icone lien externe, tuile de téléchargement [(#602)](https://github.com/GouvernementFR/dsfr/pull/602)
+Les tuiles peuvent maintenant être de type téléchargement (comme les cartes)
+  - Les tuiles de téléchargement sont par défaut horizontales
+  - Le détail de la tuile de téléchargement est obligatoire et il peut être rempli automatiquement en fonction du fichier à télécharger en plaçant à l&#39;attribut &#34;data-fr-assess-file&#34; sur le lien (comme pour carte)
+
+Les tuiles ont maintenant par défaut une icone.
+  - arrow-right (par défaut)
+  - external-link (en target=&#34;_blank&#34;)
+  - download (avec la classe fr-tile--download)
+
+Les tuiles désactivées (a sans href) ont à présent:
+  - la bordure bottom en grise
+  - l&#39;icone et le titre en gris
+  
+Ajout des classes &#34;fr-tile--vertical@md&#34; et  &#34;fr-tile--vertical@lg&#34; pour passer une tuile horizontale, ou download, en vertical à partir des breakpoints md et lg
+
+
+#### 🎉 feat(tile): évolution des tuiles [(#534)](https://github.com/GouvernementFR/dsfr/pull/534)
+**Evolution majeur du composant Tuile :**
+Nous souhaitons revoir la structure html de la tuile pour étendre les variations de contenu (avec détails, badge, etc), et uniformiser avec les comportements de la Carte (card).
+
+Changements apportés :
+- Ajout d&#39;un niveau d&#39;encapsulation dans la structure html
+  - Ajout d&#39;un wrapper &#34;fr-tile__content&#34; pour englober le contenu
+  - Ajout d&#39;un wrapper &#34;fr-tile__header&#34; pour englober l&#39;image
+- L&#39;image des tuiles est remplacée par un pictogramme
+  - La classe &#34;fr-tile__img&#34; devient &#34;fr-tile__pictogram&#34; 
+  - Son contenu est maintenant un svg &#34;fr-artwork&#34;
+- Ajout de la possibilité de placer un badge, un tag, un texte de détail, dans le contenu de la tuile
+- Ajout d&#39;une taille de tuile SM : &#34;fr-tile--sm&#34;
+
+**⚠️ Breaking Change**
+Le snippet de code d&#39;une tuile : 
+```html
+&lt;div class=&#34;fr-tile fr-enlarge-link&#34;&gt;
+    &lt;div class=&#34;fr-tile__body&#34;&gt;
+        &lt;h4 class=&#34;fr-tile__title&#34;&gt;
+            &lt;a class=&#34;fr-tile__link&#34; href&gt;Titre M bold&lt;/a&gt;
+        &lt;/h4&gt;
+        &lt;p class=&#34;fr-tile__desc&#34;&gt;Texte M regular 2 lignes max&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;fr-tile__img&#34;&gt;
+       &lt;img class=&#34;fr-responsive-img&#34; src=&#34;../../../example/img/placeholder.1x1.png&#34; alt=&#34;&#34; /&gt;
+       &lt;!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+Devient : 
+```html
+&lt;div class=&#34;fr-tile fr-enlarge-link&#34; id=&#34;tile-6584&#34;&gt;
+    &lt;div class=&#34;fr-tile__body&#34;&gt;
+        &lt;div class=&#34;fr-tile__content&#34;&gt;
+            &lt;h3 class=&#34;fr-tile__title&#34;&gt;
+                &lt;a href=&#34;#&#34;&gt;Intitulé de la tuile&lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class=&#34;fr-tile__desc&#34;&gt;Lorem [...] elit ut.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;fr-tile__header&#34;&gt;
+        &lt;div class=&#34;fr-tile__pictogram&#34;&gt;
+            &lt;svg aria-hidden=&#34;true&#34; class=&#34;fr-artwork&#34; viewBox=&#34;0 0 80 80&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
+                &lt;use class=&#34;fr-artwork-decorative&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative&#34;&gt;&lt;/use&gt;
+                &lt;use class=&#34;fr-artwork-minor&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor&#34;&gt;&lt;/use&gt;
+                &lt;use class=&#34;fr-artwork-major&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-major&#34;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+
+#### 🚚 refactor(download): séparation du download en carte et lien [(#487)](https://github.com/GouvernementFR/dsfr/pull/487)
+Pour mutualiser les comportements de la carte et du lien au composant download, celui-ci doit devenir une variante de ces composants et non pas l&#39;inverse.
+
+Retrait du composant : téléchargement de fichier - Download -&gt; déprécié
+Ajout de la variante de carte : fr-card--download 
+Ajout de la variante de lien : fr-link--download 
+
+Le lien de téléchargement : 
+```html
+&lt;div class=&#34;fr-download&#34;&gt;
+    &lt;h3&gt;
+        &lt;a href=&#34;[À MODIFIER - /example/img/image.jpg]&#34; download class=&#34;fr-download__link&#34;&gt;Télécharger le document lorem ipsum sit dolores amet
+            &lt;span class=&#34;fr-download__detail&#34;&gt;
+                JPG – 61,88 ko
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h3&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;a class=&#34;fr-link fr-link--download&#34; download href=&#34;[À MODIFIER - example/img/image.jpg]&#34;&gt;
+    Télécharger le document lorem ipsum sit dolores amet &lt;span class=&#34;fr-link__detail&#34;&gt;JPG – 61,88 ko&lt;/span&gt;
+&lt;/a&gt;
+```
+
+et la carte de téléchargement : 
+```html
+&lt;div class=&#34;fr-download fr-enlarge-link fr-download--card&#34;&gt;
+    &lt;h3&gt;
+        &lt;a href=&#34;[À MODIFIER - example/img/image.jpg]&#34; download class=&#34;fr-download__link&#34;&gt;Télécharger le document lorem ipsum sit dolores amet
+            &lt;span class=&#34;fr-download__detail&#34;&gt;
+                JPG – 61,88 ko
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;p class=&#34;fr-download__desc&#34;&gt;Texte de description&lt;&lt;/p&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;div class=&#34;fr-card fr-enlarge-link fr-card--download&#34;&gt;
+    &lt;div class=&#34;fr-card__body&#34;&gt;
+        &lt;div class=&#34;fr-card__content&#34;&gt;
+            &lt;h3 class=&#34;fr-card__title&#34;&gt;
+                &lt;a download href=&#34;[À MODIFIER - example/img/image.jpg]&#34;&gt;
+                    Télécharger le document lorem ipsum sit dolores amet
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class=&#34;fr-card__desc&#34;&gt;Texte de description&lt;/p&gt;
+            &lt;div class=&#34;fr-card__end&#34;&gt;
+                &lt;p class=&#34;fr-card__detail&#34;&gt;JPG – 61,88 ko&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+BREAKING CHANGE : Remplacer le composant fr-download par la variante de link fr-link--download et remplacer le composant fr-download--card par une carte fr-card--download
+
+
+
+
 ## v1.9
 
-### [1.9.3](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...1.9.3) - 17 Mai 2023
+### [v1.9.3](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...v1.9.3) - 17 Mai 2023
 
 #### 🐛 fix(breadcrumb): ajoute une page exemple alternative [(#600)](https://github.com/GouvernementFR/dsfr/pull/600)
 - étiquette d&#39;élément span rendue possible sur l&#39;élément courant du fil d&#39;ariane
