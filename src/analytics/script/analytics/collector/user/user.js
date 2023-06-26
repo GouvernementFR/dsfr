@@ -1,6 +1,5 @@
 import api from '../../../../api';
 import Status from './status';
-import Profile from './profile';
 import Type from './type';
 import normalize from '../../utils/normalize';
 import { validateBoolean, validateLang, validateString } from '../../utils/type-validator';
@@ -54,8 +53,9 @@ class User {
     return this._status.id;
   }
 
-  set profile (id) {
-    this._profile = Object.values(Profile).filter(profile => profile.id === id || profile.value === id)[0];
+  set profile (value) {
+    const valid = validateString(value, 'user.profile');
+    if (valid !== null) this._profile = valid;
   }
 
   get profile () {
@@ -86,14 +86,13 @@ class User {
     if (this.isNew) layer.push('newcustomer', '1');
     if (this.language) layer.push('user_language', this.language);
     layer.push('user_login_status', this._status.value);
-    if (this._profile) layer.push('profile', this._profile.value);
+    if (this._profile) layer.push('profile', this._profile);
     if (this._type) layer.push('user_type', this._type.value);
     return layer;
   }
 }
 
 User.Status = Status;
-User.Profile = Profile;
 User.Type = Type;
 
 export { User };

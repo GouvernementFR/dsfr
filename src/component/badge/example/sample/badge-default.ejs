@@ -1,6 +1,7 @@
 <%
 let badge = locals.badge || {}
-badge.label = 'Label badge';
+badge.id ??= uniqueId('badge');
+badge.label ??= 'Label badge';
 %>
 
-<%- include('../../template/ejs/badge', {badge}); %>
+<%- include('../../template/ejs/badge', { badge }); %>

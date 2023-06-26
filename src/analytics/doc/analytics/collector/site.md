@@ -96,7 +96,8 @@ _String_ (EA: site\_region)
 
 `window.dsfr.analytics.site.region`
 
-Défini la région du site en ISO 3166-2:FR (pour les sites régionaux)
+Défini la région du site (pour les sites régionaux) au format 
+[ISO 3166-2:FR](https://fr.wikipedia.org/wiki/ISO_3166-2:FR#R.C3.A9gions_m.C3.A9tropolitaines)
 
 * * *
 
@@ -106,7 +107,8 @@ _String_ (EA: site\_department)
 
 `window.dsfr.analytics.site.department`
 
-Défini le département du site (pour les sites départementaux)
+Défini le département du site (pour les sites départementaux) au format
+[ISO 3166-2:FR](https://fr.wikipedia.org/wiki/ISO_3166-2:FR#D.C3.A9partements_m.C3.A9tropolitains_.2896.29)
 
 * * *
 
