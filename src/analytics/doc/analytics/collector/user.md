@@ -91,7 +91,7 @@ _String_ (EA: profile)
 
 `window.dsfr.analytics.user.profile`
 
-Défini la catégorie de profil de l’utilisateur. (En cours de définition)
+Défini la catégorie de profil de l’utilisateur
 
 * * *
 

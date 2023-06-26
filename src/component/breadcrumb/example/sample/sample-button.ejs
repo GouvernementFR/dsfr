@@ -1,14 +1,1 @@
-<% const data = {
-  id: uniqueId('breadcrumb'),
-  segments: [
-    { markup: 'button', path: undefined, label: 'Accueil' },
-    { markup: 'button', path: undefined, label: 'Segment 1 : lorem ipsum' },
-    { markup: 'button', path: undefined, label: 'Segment 2 : lorem ipsum' },
-    { markup: 'button', path: undefined, label: 'Segment 3 : lorem ipsum dolor sit amet' },
-    { markup: 'span', path: undefined, label: 'Page Actuelle' }
-  ],
-  ...locals.breadcrumb
-}
-%>
-
-<%- include('../../template/ejs/breadcrumb.ejs', {breadcrumb: data}); %>
+<%- include('./sample-a', { breadcrumb: { markup: 'button' } }); %>

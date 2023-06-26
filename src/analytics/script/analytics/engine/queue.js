@@ -119,7 +119,7 @@ class Queue {
       slices.push(slice.flat());
     }
 
-    if (this._type === PushType.COLLECTOR) {
+    if (this._type === PushType.COLLECTOR && this._collector.isCollecting) {
       const layer = this._collector.layer;
       if (slices.length > 0) {
         const slice = slices.splice(0, 1)[0];

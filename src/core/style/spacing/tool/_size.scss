@@ -3,10 +3,12 @@
 /// @group core
 ////
 
+@use '../../../../../module/spacing';
+
 @mixin width($width:null, $from: null) {
   @include respond-from($from) {
     @if $width != null {
-      width: #{space($width)};
+      width: #{spacing.space($width)};
     }
   }
 }
@@ -14,7 +16,7 @@
 @mixin min-width($width:null, $from: null) {
   @include respond-from($from) {
     @if $width != null {
-      min-width: #{space($width)};
+      min-width: #{spacing.space($width)};
     }
   }
 }
@@ -22,7 +24,7 @@
 @mixin max-width($width:null, $from: null) {
   @include respond-from($from) {
     @if $width != null {
-      max-width: #{space($width)};
+      max-width: #{spacing.space($width)};
     }
   }
 }
@@ -30,7 +32,7 @@
 @mixin height($height:null, $from: null) {
   @include respond-from($from) {
     @if $height != null {
-      height: #{space($height)};
+      height: #{spacing.space($height)};
     }
   }
 }
@@ -38,7 +40,7 @@
 @mixin min-height($height:null, $from: null) {
   @include respond-from($from) {
     @if $height != null {
-      min-height: #{space($height)};
+      min-height: #{spacing.space($height)};
     }
   }
 }
@@ -46,7 +48,7 @@
 @mixin max-height($height:null, $from: null) {
   @include respond-from($from) {
     @if $height != null {
-      max-height: #{space($height)};
+      max-height: #{spacing.space($height)};
     }
   }
 }
@@ -54,10 +56,10 @@
 @mixin size($width:null, $height:null, $from: null) {
   @include respond-from($from) {
     @if $width != null {
-      width: #{space($width)};
+      width: #{spacing.space($width)};
     }
     @if $height != null {
-      height: #{space($height)};
+      height: #{spacing.space($height)};
     }
   }
 }
@@ -65,10 +67,10 @@
 @mixin min-size($min-width:null, $min-height:null, $from: null) {
   @include respond-from($from) {
     @if $min-width != null {
-      min-width: #{space($min-width)};
+      min-width: #{spacing.space($min-width)};
     }
     @if $min-height != null {
-      min-height: #{space($min-height)};
+      min-height: #{spacing.space($min-height)};
     }
   }
 }
@@ -76,10 +78,10 @@
 @mixin max-size($max-width:null, $max-height:null, $from: null) {
   @include respond-from($from) {
     @if $max-width != null {
-      max-width: #{space($max-width)};
+      max-width: #{spacing.space($max-width)};
     }
     @if $max-height != null {
-      max-height: #{space($max-height)};
+      max-height: #{spacing.space($max-height)};
     }
   }
 }

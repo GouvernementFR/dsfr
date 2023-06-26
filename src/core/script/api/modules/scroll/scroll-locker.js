@@ -18,9 +18,14 @@ class ScrollLocker extends Module {
     if (!this._isLocked) {
       this._isLocked = true;
       this._scrollY = window.scrollY;
-      if (this.isLegacy) document.body.style.top = this._scrollY * -1 + 'px';
-      else document.body.style.setProperty('--scroll-top', this._scrollY * -1 + 'px');
+      const scrollBarGap = window.innerWidth - document.documentElement.clientWidth;
       document.documentElement.setAttribute(ns.attr('scrolling'), 'false');
+      document.body.style.top = `${-this._scrollY}px`;
+      this.behavior = getComputedStyle(document.documentElement).getPropertyValue('scroll-behavior');
+      if (this.behavior === 'smooth') document.documentElement.style.scrollBehavior = 'auto';
+      if (scrollBarGap > 0) {
+        document.documentElement.style.setProperty('--scrollbar-width', `${scrollBarGap}px`);
+      }
     }
   }
 
@@ -28,9 +33,19 @@ class ScrollLocker extends Module {
     if (this._isLocked) {
       this._isLocked = false;
       document.documentElement.removeAttribute(ns.attr('scrolling'));
-      if (this.isLegacy) document.body.style.top = '';
-      else document.body.style.removeProperty('--scroll-top');
-      window.scroll(0, this._scrollY);
+      document.body.style.top = '';
+      window.scrollTo(0, this._scrollY);
+      if (this.behavior === 'smooth') document.documentElement.style.removeProperty('scroll-behavior');
+      document.documentElement.style.removeProperty('--scrollbar-width');
+    }
+  }
+
+  move (value) {
+    if (this._isLocked) {
+      this._scrollY += value;
+      document.body.style.top = `${-this._scrollY}px`;
+    } else {
+      window.scrollTo(0, window.scrollY + value);
     }
   }
 }

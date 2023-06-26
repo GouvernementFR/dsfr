@@ -27,7 +27,8 @@
     }
 
     &--disabled {
-      label {
+      label,
+      #{ns(hint-text)} {
         @include disabled.colors((legacy: $legacy, text: true));
       }
     }
@@ -78,8 +79,19 @@
   #{ns(fieldset)} {
     @include disabled.selector {
       #{ns(label)},
+      #{ns(hint-text)},
       #{ns(fieldset__legend)} {
         @include disabled.colors((legacy: $legacy, text: true));
+      }
+    }
+
+    input {
+      @include disabled.selector {
+        + label,
+        + label #{ns(hint-text)},
+        + label + #{ns(hint-text)} {
+          @include disabled.colors((legacy: $legacy, text: true));
+        }
       }
     }
 

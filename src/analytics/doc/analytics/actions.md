@@ -17,13 +17,9 @@ Ce nom d’action est constitué du type d’action, de l’intitulé de l'élé
 > **Note**
 > ⚠️ **Un id est obligatoire sur tous les éléments traqués** (retrouvez les éléments du dsfr nécéssitant un id dans la colonne “element” du [tableau d'actions des composants du dsfr](actions/component-actions.md)).
 >Il est nécessaire que l’id soit :
-
 >  * unique : L’id doit être unique au site, ex:
-
 >  * Deux boutons différents ne doivent pas avoir le même id, même sur des pages différentes
-
 >  * Le header peut avoir le même id sur toute les pages s’il est identique
-
 >  * pérenne : L’id doit être le même pour tous les utilisateurs et figé dans le temps.
 
 exemple d’actionName : `(click)_titre_niveau_2_›_titre_niveau_3_›_label_de_l_element_[button-id-1]`
@@ -45,7 +41,7 @@ L’activation de cette fonctionnalité se fait d’abord dans le fichier de [co
 Après avoir été activée, elle sera automatiquement en place sur les composants qui supportent la fonctionnalité (voir dernière colonne dans le [tableau](actions/component-actions.md)).
 
 > ***Note**
-> Cette fonctionnalité peut entraîner un envoi de données très important, puisque chaque composant permettant de suivre le taux de click enverra la donnée d’affichage. Il est important de s’assurer de la pertinence de cette fonctionnalité.
+> Cette fonctionnalité est désactivée par défaut car elle peut entraîner un envoi de données très important (puisque chaque composant permettant de suivre le taux de click enverra la donnée d’affichage). Il est important de s’assurer de la pertinence de cette fonctionnalité.
 
 
 - Analytics/Actions

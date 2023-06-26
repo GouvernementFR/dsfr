@@ -1,9 +1,15 @@
 import api from '../../api.js';
 
+const ITEM = api.internals.ns.selector('nav__item');
+const COLLAPSE = api.internals.ns.selector('collapse');
+
 export const NavigationSelector = {
   NAVIGATION: api.internals.ns.selector('nav'),
-  COLLAPSE: `${api.internals.ns.selector('nav__item')} > ${api.internals.ns.selector('collapse')}`,
-  ITEM: api.internals.ns.selector('nav__item'),
-  ITEM_RIGHT: api.internals.ns('nav__item--align-right'),
-  MENU: api.internals.ns.selector('menu')
+  COLLAPSE: `${ITEM} > ${COLLAPSE}, ${ITEM} > *:not(${ITEM}, ${COLLAPSE}) > ${COLLAPSE}, ${ITEM} > *:not(${ITEM}, ${COLLAPSE}) > *:not(${ITEM}, ${COLLAPSE}) > ${COLLAPSE}`,
+  COLLAPSE_LEGACY: `${ITEM} ${COLLAPSE}`,
+  ITEM: ITEM,
+  ITEM_RIGHT: `${ITEM}--align-right`,
+  MENU: api.internals.ns.selector('menu'),
+  BUTTON: api.internals.ns.selector('nav__btn'),
+  TRANSLATE_BUTTON: api.internals.ns.selector('translate__btn')
 };

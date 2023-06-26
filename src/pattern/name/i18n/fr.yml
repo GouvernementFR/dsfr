@@ -3,10 +3,11 @@ title: Modèle de bloc de nom et prénom
 description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
 doc:
 hint:
-  married: Ancien nom…
-  birth: Nom de famille non rectifié après décision du tribunal
+  married: 'Indication : Ancien nom…'
+  birth: 'Indication : Nom de famille non rectifié après décision du tribunal'
 label:
   add-firstname: Ajouter un prénom
+  remove-firstname: Supprimer le prénom
   country: Pays
   family: Nom
   given: Prénom

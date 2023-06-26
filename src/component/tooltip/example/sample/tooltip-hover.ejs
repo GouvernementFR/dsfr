@@ -1,0 +1,19 @@
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let tooltip = locals.tooltip || {};
+let data = {
+  id: uniqueId('tooltip'),
+  content: lorem(),
+  ...tooltip
+}
+
+let link = {
+  label: tooltip.triggerText || getText('sample.example', 'tooltip'),
+  href: '#',
+  attributes: {'aria-describedby': data.id}
+}
+%>
+
+<%- include('../../../../component/link/template/ejs/link.ejs', {link: link}); %>
+<%- include('../sample/tooltip-default', {tooltip: data}); %>

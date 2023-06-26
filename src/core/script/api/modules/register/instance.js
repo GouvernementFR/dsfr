@@ -15,7 +15,12 @@ class Instance {
     this._isScrollLocked = false;
     this._isLoading = false;
     this._isSwappingFont = false;
+    this._isEnabled = true;
+    this._isDisposed = false;
     this._listeners = {};
+    this.handlingClick = this.handleClick.bind(this);
+    this._hashes = [];
+    this._hash = '';
     this._keyListenerTypes = [];
     this._keys = [];
     this.handlingKey = this.handleKey.bind(this);
@@ -47,11 +52,19 @@ class Instance {
       render: () => scope.render(),
       resize: () => scope.resize()
     };
+
     const proxyAccessors = {
       get node () {
         return this.node;
+      },
+      get isEnabled () {
+        return scope.isEnabled;
+      },
+      set isEnabled (value) {
+        scope.isEnabled = value;
       }
     };
+
     return completeAssign(proxy, proxyAccessors);
   }
 
@@ -99,6 +112,40 @@ class Instance {
     this._listeners[type] = listeners.filter(listener => removal.indexOf(listener) === -1);
   }
 
+  listenClick (options) {
+    this.listen('click', this.handlingClick, options);
+  }
+
+  unlistenClick (options) {
+    this.unlisten('click', this.handlingClick, options);
+  }
+
+  handleClick (e) {}
+
+  set hash (value) {
+    state.getModule('hash').hash = value;
+  }
+
+  get hash () {
+    return state.getModule('hash').hash;
+  }
+
+  listenHash (hash, add) {
+    if (this._hashes.length === 0) state.add('hash', this);
+    const action = new HashAction(hash, add);
+    this._hashes = this._hashes.filter(action => action.hash !== hash);
+    this._hashes.push(action);
+  }
+
+  unlistenHash (hash) {
+    this._hashes = this._hashes.filter(action => action.hash !== hash);
+    if (this._hashes.length === 0) state.remove('hash', this);
+  }
+
+  handleHash (hash, e) {
+    for (const action of this._hashes) action.handle(hash, e);
+  }
+
   listenKey (code, closure, preventDefault = false, stopPropagation = false, type = 'down') {
     if (this._keyListenerTypes.indexOf(type) === -1) {
       this.listen(`key${type}`, this.handlingKey);
@@ -118,6 +165,12 @@ class Instance {
 
   handleKey (e) {
     for (const key of this._keys) key.handle(e);
+  }
+
+  get isEnabled () { return this._isEnabled; }
+
+  set isEnabled (value) {
+    this._isEnabled = value;
   }
 
   get isRendering () { return this._isRendering; }
@@ -227,10 +280,15 @@ class Instance {
 
   mutate (attributeNames) {}
 
+  get isDisposed () {
+    return this._isDisposed;
+  }
+
   _dispose () {
     inspector.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
     this.unlisten();
+    this._hashes = null;
     this._keys = null;
     this.isRendering = false;
     this.isResizing = false;
@@ -249,6 +307,7 @@ class Instance {
     for (const registration of this._registrations) state.remove('register', registration);
     this._registrations = null;
     this.registration.remove(this);
+    this._isDisposed = true;
     this.dispose();
   }
 
@@ -362,6 +421,20 @@ class Instance {
     return this.node === document.activeElement;
   }
 
+  scrollIntoView () {
+    const rect = this.getRect();
+
+    const scroll = state.getModule('lock');
+
+    if (rect.top < 0) {
+      scroll.move(rect.top - 50);
+    }
+
+    if (rect.bottom > window.innerHeight) {
+      scroll.move(rect.bottom - window.innerHeight + 50);
+    }
+  }
+
   matches (selectors) {
     return this.node.matches(selectors);
   }
@@ -379,7 +452,10 @@ class Instance {
   }
 
   getRect () {
-    return this.node.getBoundingClientRect();
+    const rect = this.node.getBoundingClientRect();
+    rect.center = rect.left + rect.width * 0.5;
+    rect.middle = rect.top + rect.height * 0.5;
+    return rect;
   }
 
   get isLegacy () {
@@ -445,6 +521,17 @@ class Listener {
 
   unlisten () {
     this._node.removeEventListener(this._type, this._closure, this._options);
+  }
+}
+
+class HashAction {
+  constructor (hash, add) {
+    this.hash = hash;
+    this.add = add;
+  }
+
+  handle (hash, e) {
+    if (this.hash === hash) this.add(e);
   }
 }
 

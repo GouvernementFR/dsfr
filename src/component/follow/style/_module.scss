@@ -13,6 +13,11 @@
 
   &__newsletter {
     #{ns-group(input)} {
+      @include margin-bottom(4v);
+      @include margin-bottom(2v, sm);
+    }
+
+    #{ns(hint-text)} {
       @include margin-bottom(0);
     }
 
@@ -28,10 +33,14 @@
       #{ns(input)} {
         @include margin-bottom(4v);
         @include margin-top(0);
+        border-radius: #{spacing.space(1v)} #{spacing.space(1v)} 0 0;
       }
 
       #{ns(btn)} {
         justify-content: center;
+        @include width(100%);
+        @include width(auto, sm);
+        border-radius: 0;
       }
 
       @include respond-from(sm) {

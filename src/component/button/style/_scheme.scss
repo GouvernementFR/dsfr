@@ -27,7 +27,8 @@
     &--tertiary-no-outline,
     &--close,
     &--display,
-    &--fullscreen {
+    &--fullscreen,
+    &--tooltip {
       @include btn-kind-scheme(4, $legacy);
     }
   }

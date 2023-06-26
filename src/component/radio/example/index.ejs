@@ -32,6 +32,10 @@
 
 <%- sample('Ensemble de boutons radio riches, en ligne, simple', './sample/radios-rich.ejs', { radios: { id:'radio-rich-inline', inline:true } }, true); %>
 
+<%- sample('Ensemble de boutons radio riches sans pictogramme', './sample/radios-rich.ejs', { radios: { id:'radio-rich-no-img'}, radio: { pictogram: false }}, true); %>
+
+<%- sample('Ensemble de boutons radio riches sans pictogramme', './sample/radios-rich.ejs', { radios: { id:'radio-rich-no-pictogram-inline', inline: true }, radio: { pictogram: false }}, true); %>
+
 <%- sample('Ensemble de boutons radio riches avec textes d\'aide', './sample/radios-rich.ejs', { radios: { id:'radio-rich-hint', hint: true }, radio: { hint: 'Texte de description additionnel' }}, true); %>
 
 <%- sample('Ensemble de boutons radio riches avec textes d\'aide, en ligne', './sample/radios-rich.ejs', { radios: { id:'radio-rich-hint-inline', hint: true, inline:true }, radio: { hint: 'Texte de description additionnel' } }, true); %>

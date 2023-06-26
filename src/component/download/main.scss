@@ -14,7 +14,7 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/module';
-@import 'style/scheme';
+@import 'deprecated/style/module';
+@import 'deprecated/style/scheme';
 
 @include _download-scheme;
