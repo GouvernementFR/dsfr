@@ -1,0 +1,10 @@
+////
+/// Core Tool : input
+/// @group core
+////
+
+@mixin appearance($appearance: auto) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  appearance: $appearance;
+}
