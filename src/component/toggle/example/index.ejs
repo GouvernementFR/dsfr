@@ -18,13 +18,27 @@
 
 <%- sample('Toggle simple disabled et pré-coché avec bouton + label à droite + état', './sample/toggle-default.ejs', {toggle: {state: true, disabled: true, checked:true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-1-'}}, true, './layout'); %>
+<%- sample('Toggle simple en erreur', './sample/toggle-default.ejs', {toggle: {state: false, error: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-1-', hint: true}}, true, './layout'); %>
+<%- sample('Toggle avec état - en erreur', './sample/toggle-default.ejs', {toggle: {state: true, error: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-2-'}}, true, './layout'); %>
+<%- sample('Toggle simple valide', './sample/toggle-default.ejs', {toggle: {state: false, valid: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-2-', hint: true}}, true, './layout'); %>
+<%- sample('Toggle avec état - valide', './sample/toggle-default.ejs', {toggle: {state: true, valid: true}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite', './sample/toggle-group.ejs', {toggle: {groupId: 'group-1-'}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-2-'}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-3-', hint: true}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-4-'}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-5-', hint: true}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur + texte d’aide + erreur', './sample/toggle-group.ejs', {toggles: {error: true}, toggle: {border: true, state: true, groupId: 'group-6-', hint: true}}, true, './layout'); %>
+
+<%- sample('Groupe de toggles simple avec bouton + label à droite + état + séparateur + texte d’aide + valide', './sample/toggle-group.ejs', {toggles: {valid: true}, toggle: {border: true, state: true, groupId: 'group-7-', hint: true}}, true, './layout'); %>
 
 <%- sample('Toggle simple avec bouton + label à gauche', './sample/toggle-default.ejs', {toggle: {state: false, left: true}}, true, './layout'); %>
 
@@ -42,11 +56,11 @@
 
 <%- sample('Toggle simple disabled avec bouton + label à gauche + état', './sample/toggle-default.ejs', {toggle: {state: true, left: true, disabled: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-3-', left: true}}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-8-', left: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-3-', left: true, hint: true}}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border:true, groupId: 'group-9-', left: true, hint: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-4-', left: true}}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-10-', left: true}}, true, './layout'); %>
 
-<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-4-', left: true, hint: true}}, true, './layout'); %>
+<%- sample('Groupe de toggles simple avec bouton + label à gauche + état + séparateur + texte d’aide', './sample/toggle-group.ejs', {toggle: {border: true, state: true, groupId: 'group-11-', left: true, hint: true}}, true, './layout'); %>
 

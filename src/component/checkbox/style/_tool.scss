@@ -1,0 +1,9 @@
+////
+/// Radio Tool
+/// @group radio
+////
+
+@function checkbox-background-image() {
+  $data: 'radial-gradient(at 5px 4px, transparent 4px, $COLOR 4px, $COLOR 5px, transparent 6px), linear-gradient($COLOR, $COLOR), radial-gradient(at calc(100% - 5px) 4px, transparent 4px, $COLOR 4px, $COLOR 5px, transparent 6px), linear-gradient($COLOR, $COLOR), radial-gradient(at calc(100% - 5px) calc(100% - 4px), transparent 4px, $COLOR 4px, $COLOR 5px, transparent 6px), linear-gradient($COLOR, $COLOR), radial-gradient(at 5px calc(100% - 4px), transparent 4px, $COLOR 4px, $COLOR 5px, transparent 6px), linear-gradient($COLOR, $COLOR), var(--data-uri-svg)';
+  @return $data;
+}

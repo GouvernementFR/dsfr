@@ -1,20 +1,40 @@
 <%
-let pagination = locals.pagination || {};
-let href = pagination.href || '#';
-let pages = [];
+const pagination = locals.pagination || {};
+const href = pagination.href || '#';
+const pages = [];
 let i;
 
-for (i = 1; i < 4; i++) pages.push({label:i, title:'Page ' + i, href: href, displayedLg: i > 2});
-pages.push({label:'…', displayedLg:true});
-for (i = 130; i < 133; i++) pages.push({label:i, title:'Page ' + i, href: href, displayedLg: i < 132});
+const getData = (label, displayedLg = false, hasLgLabel = false, title = null) => {
+  return {
+    id: uniqueId('pagination'),
+    label: label,
+    title: title,
+    displayedLg: displayedLg === true,
+    hasLgLabel: hasLgLabel === true
+  };
+};
+
+const getPageData = (pageNumber, displayedLg) => {
+  return getData(pageNumber, displayedLg === true, false, `Page ${pageNumber}`);
+}
+
+const getNavData = (label, hasLgLabel) => {
+  return getData(label, false, hasLgLabel === true, label);
+}
+
+for (i = 1; i < 4; i++) pages.push(getPageData(i, i > 2));
+pages.push(getData('…', true));
+for (i = 130; i < 133; i++) pages.push(getPageData(i, i < 132));
 
 if (pagination.index !== undefined) pages[pagination.index].active = true;
 
+
+
 let data = {
-  first: { label: 'Première page', href: href },
-  prev: { label: 'Page précédente', href: href, hasLgLabel: true },
-  next: { label: 'Page suivante', href: href, hasLgLabel: true },
-  last: { label: 'Dernière page', href: href },
+  first: getNavData('Première page'),
+  prev: getNavData('Page précédente', true),
+  next: getNavData('Page suivante', true),
+  last: getNavData('Dernière page'),
   pages : pages
 }
 %>

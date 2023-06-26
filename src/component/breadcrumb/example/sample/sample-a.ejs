@@ -1,17 +1,28 @@
-<% const data = {
+<%
+  const breadcrumb = locals.breadcrumb || {};
+  const getData = (label, href) => {
+    return {
+      id: uniqueId('breadcrumb'),
+      href: href,
+      label: label,
+      markup: breadcrumb.markup
+    };
+  }
+
+  const getSegmentData = (id) => {
+    return getData(`Segment ${id}: lorem ipsum`, '../');
+  }
+
+  const segments = [];
+  segments.push(getData('Accueil', '../'));
+  for (let i = 1; i <= 7; i++) segments.push(getSegmentData(i));
+  segments.push({ label: 'Page Actuelle'});
+
+
+  const data = {
   id: uniqueId('breadcrumb'),
-  segments: [
-    { path: '', label: 'Accueil' },
-    { path: 'segment-1', label: 'Segment 1 : lorem ipsum' },
-    { path: 'segment-2', label: 'Segment 2 : lorem ipsum' },
-    { path: 'segment-3', label: 'Segment 3 : lorem ipsum' },
-    { path: 'segment-4', label: 'Segment 4 : lorem ipsum dolor sit amet' },
-    { path: 'segment-5', label: 'Segment 5 : lorem ipsum' },
-    { path: 'segment-6', label: 'Segment 6 : lorem ipsum' },
-    { path: 'segment-7', label: 'Segment 7 : lorem ipsum' },
-    { label: 'Page Actuelle' }
-  ],
-  ...locals.breadcrumb
+  segments: segments,
+  ...breadcrumb
 }
 %>
 

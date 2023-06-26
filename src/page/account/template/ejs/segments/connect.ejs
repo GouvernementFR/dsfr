@@ -1,14 +1,15 @@
 <%
 const segment = locals.segment;
 const data = segment.data || {};
+const markup = data.markup || 'h2';
 %>
 <div class="<%= prefix %>-mb-6v">
   <% if (data.title) { %>
-    <h5><%= data.title %></h5>
+    <<%= markup %> class="<%= prefix %>-h5"><%= data.title %></<%= markup %>>
   <% } %>
 
   <% if (data.desc) { %>
-    <p class="<%= prefix %>-text--sm <%= prefix %>"><%= data.desc %></p>
+    <p class="<%= prefix %>-text--sm"><%= data.desc %></p>
   <% } %>
 
   <%- include('../../../../../component/connect/template/ejs/connect.ejs', { connect: data.connect })  %>

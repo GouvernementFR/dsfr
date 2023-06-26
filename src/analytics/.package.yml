@@ -16,10 +16,10 @@ script:
   - password
   - navigation
   - tab
+  - tooltip
   - display
   - table
   - tag
-  - download
 example:
   style:
     - core
@@ -64,6 +64,7 @@ example:
     - tag
     - tile
     - toggle
+    - tooltip
     - transcription
     - translate
     - upload

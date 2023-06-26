@@ -39,7 +39,7 @@ let size = alert.size || "md";
 let classes = alert.classes || [];
 const markup = alert.markup || 'h3';
 let attributes = alert.attributes || {};
-attributes.id = alert.id || uniqueId('alert');
+if (alert.id) attributes.id = alert.id;
 classes.push(prefix + '-alert');
 if (type) classes.push(prefix + '-alert--' + type);
 if (alert.alert) attributes.role = "alert";

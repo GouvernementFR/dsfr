@@ -6,7 +6,7 @@
 $underline-thickness: 0.0625em;
 
 @mixin a-reset ($minimal: false) {
-  text-decoration: none;
+  text-decoration: var(--text-decoration);
   @if not $minimal {
     color: inherit;
   }
@@ -17,7 +17,7 @@ $underline-thickness: 0.0625em;
   --underline-hover-width: 0;
   --underline-idle-width: var(--underline-max-width);
   --underline-x: calc(var(--underline-max-width) * 0);
-  --underline-thickness: max(1px, #{$underline-thickness});
+  --underline-thickness: #{$underline-thickness};
 }
 
 @mixin enable-underline() {

@@ -14,9 +14,13 @@ window.dsfr.analytics.page
             page: {
                 path: 'path\_name/from/url', // path for page tracking
                 referrer: 'path\_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+                id: 'page-id', // unique page id (string)
                 title: 'page title', // page title for virtual pages
                 name: 'page name', // equivalent to title if not defined
+                author: 'John Doe', // page author name
+                date: 'YYYY/MM/DD' // page creation date
                 labels: \['label1', 'label2', 'label3', 'label4', 'label5'\],
+                tags: \['tag1', 'tag2', 'tagN'\], // no tags limit
                 template: 'nom template', // page template
                 group: 'group', // page group. if not defined, fallback to template value
                 segment: 'segment', // site segment. if not defined, fallback to template value
@@ -46,9 +50,9 @@ _String_ (EA: path)
 
 `window.dsfr.analytics.page.path`
 
-* Défini le chemin de la page.
+* Défini le chemin de la page
 
-* Utilise `document.location.pathname` si non défini.
+* Utilise `document.location.pathname` si non défini
 
 * * *
 
@@ -59,6 +63,16 @@ _String_ (EA: referrer)
 `window.dsfr.analytics.page.referrer`
 
 * Défini la page précédente si différente de `document.referer` (si page virtuelle)
+
+* * *
+
+##### id
+
+_String_ (EA: page\_id)
+
+`window.dsfr.analytics.page.id`
+
+* Défini l'identifiant unique de la page
 
 * * *
 
@@ -82,6 +96,28 @@ _String_ (EA: page\_name)
 
 * * *
 
+##### author
+
+_String_ (EA: page\_author)
+
+`window.dsfr.analytics.page.author`
+
+* Défini le nom de l'auteur de la page
+
+* * *
+
+##### date
+
+_Date_ (EA: page\_date)
+
+`window.dsfr.analytics.page.date`
+
+* Défini la date de publication de la page
+
+* * *
+
+
+
 ##### labels
 
 _Array`<String>`_ (EA: pagelabel)
@@ -102,6 +138,16 @@ _Array`<String>`_ (EA: page\_category1, page\_category2, page\_category1)
 
 * Les 3 premiers labels servent à renseigner (EA: page\_category1), (EA: page\_category2), et (EA:
 page\_category3)
+
+* * *
+
+##### tags
+
+_Array`<String>`_ (EA: page\_tags)
+
+`window.dsfr.analytics.page.tags`
+
+* Défini les tags associés à la page. Si plusieurs tags, ils doivent être séparés par une virgule sans espaces (pas de limite)
 
 * * *
 
@@ -141,9 +187,7 @@ _String_ (EA: page\_subtemplate)
 
 `window.dsfr.analytics.page.subtemplate`
 
-Apporte un niveau de détail supplémentaire lié au contenu pour les page\_template comprenant beaucoup de pages
-sur
-des thèmes différents
+Apporte un niveau de détail supplémentaire lié au contenu pour les page\_template comprenant beaucoup de pages sur des thèmes différents
 
 * * *
 

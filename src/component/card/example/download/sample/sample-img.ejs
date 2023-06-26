@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte de téléchargement, image 3x4', './card-download', {}, true, '../../sample/card-layout', {}); %>
+<%- sample('Carte de téléchargement, image 4x3', './card-download', { card : { img: imgData('img/placeholder.4x3.png', 'unknown') }}, true, '../../sample/card-layout', {}); %>
+<%- sample('Carte de téléchargement, image 32x9', './card-download', { card : { img: imgData('img/placeholder.32x9.png', 'unknown') }}, true, '../../sample/card-layout', {}); %>

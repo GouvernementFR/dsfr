@@ -1,0 +1,63 @@
+<%#
+# paramètres download
+
+* download.title (string, required) : Titre de la carte
+
+* download.enlarge (boolean, optional) : Si true, agrandi la zone de clic à toute la carte
+
+* download.description (string, optional) : Description, unniquement si card = true
+
+* download.detail (string, optional) : Détail de l'élément download (extension, poids, et langue si différente)
+
+* download.lang (string, optional) : Code langue (ex: "en") du fichier à télécharger (si différent de la langue de la page)
+
+* download.href (string, optional) : url du fichier à télécharger
+
+* download.downloadable (string/boolean, optional) : Si true : le fichier est téléchargé sans être ouvert, Si false : le fichier s'ouvre dans le navigateur (si possible, sinon télécharge), Si String : Renomme le fichier avant de le télécharger
+
+* download.card (boolean, optional) : Détermine si c'est une carte ou un lien
+
+* download.size (string, optional) : Si type=card, valeur possible de size : 'sm' (default: md)
+
+* download.classes (array, optional): Classes suplémentaires sur le composant
+
+* download.attributes (object, optional): Attributs suplémentaires sur le composant
+
+%>
+<% eval(include('../../../../../core/index.ejs')); %>
+
+<%
+let download = locals.download || {};
+const classes = download.classes || [];
+const attributes = download.attributes || {};
+if (download.id) attributes.id = download.id;
+const markup = download.markup || 'h3';
+const href = download.href || '#';
+const assessAttrs = download.assess ? {'data-fr-assess-file': typeof(download.assess) === 'string' ? download.assess : ''} : {};
+assessAttrs.id = download.id || uniqueId(prefix + '-download-link');
+classes.push(`${prefix}-download`);
+if (download.id) assessAttrs.id = `${download.id}-link`;
+
+if (download.downloadable !== false) assessAttrs.download = '';
+if (typeof download.downloadable === 'string') assessAttrs.download = download.downloadable;
+if (download.lang) assessAttrs.hreflang = download.lang;
+if (download.enlarge) classes.push(`${prefix}-enlarge-link`);
+if (download.card) classes.push(`${prefix}-download--card`);
+switch (download.size) {
+  case 'sm':
+    classes.push(`${prefix}-download--card`);
+    break;
+}
+%>
+<div <%- includeClasses(classes) %> <%- includeAttrs(attributes) %>>
+  <<%= markup %>>
+    <a href="<%- href %>" <%- includeAttrs(assessAttrs) %> class="<%= prefix %>-download__link"><%- download.title %>
+      <span class="<%= prefix %>-download__detail">
+        <% if (download.detail) { %>
+          <%- download.detail %>
+        <% } %>
+      </span>
+    </a>
+  </<%= markup %>>
+  <% if (download.description && download.card) { %><p class="<%= prefix %>-download__desc"><%- download.description %></p><% } %>
+</div>

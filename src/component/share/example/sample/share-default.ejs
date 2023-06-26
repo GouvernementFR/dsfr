@@ -44,7 +44,7 @@ data.share = {
       id: uniqueId('share'),
       type: 'copy',
       label: 'Copier dans le presse-papier',
-      onclick: `navigator.clipboard.writeText(window.location);alert('Adresse copiée dans le presse papier.');` // @TODO: ajouter un polyfill pour IE11
+      onclick: `navigator.clipboard.writeText(window.location).then(function() {alert('Adresse copiée dans le presse papier.')});` // @TODO: ajouter un polyfill pour IE11
     }
   ]
 } %>

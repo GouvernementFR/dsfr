@@ -93,7 +93,7 @@ const button = {
     icon: 'add-line',
     iconPlace: 'left',
     attributes: {
-      onclick: include('js/add-firstname.js', { id: firstnameId }),
+      onclick: `addFirstname(this, '${firstnameId}')`,
       type: 'button'
     }
   }
@@ -131,7 +131,7 @@ const buildFieldset = () => {
       checked: name.checked || false,
       size: 'sm',
       attributes: {
-        onclick: include('js/toggle-disable.js', { id: fieldsetId })
+        onclick: `toggleDisabled(this, '${fieldsetId}')`
       }
     }
   };

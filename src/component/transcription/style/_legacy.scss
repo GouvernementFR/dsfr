@@ -11,10 +11,12 @@
 
     &__btn {
       @include icon-legacy(align-left, sm, before);
-      @include icon-legacy(add-line, sm, after);
+      @include icon-legacy(arrow-down-s-line, sm, after);
 
       &[aria-expanded="true"] {
-        @include icon-image-legacy(subtract-line);
+        @include after {
+          transform: rotate(-180deg);
+        }
       }
     }
 

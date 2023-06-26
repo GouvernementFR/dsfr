@@ -1,0 +1,18 @@
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+let tooltip = locals.tooltip || {};
+let data = {
+  id: uniqueId('tooltip'),
+  content: lorem(),
+  ...tooltip
+}
+
+let button = {
+  label: tooltip.triggerText || getText('sample', 'tooltip'),
+  classes: [`${prefix}-btn--tooltip`],
+  tooltip: data
+}
+%>
+
+<%- include('../../../../component/button/template/ejs/button.ejs', {button: button}); %>

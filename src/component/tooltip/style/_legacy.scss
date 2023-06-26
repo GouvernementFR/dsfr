@@ -1,0 +1,34 @@
+////
+/// Tooltip Legacy
+/// @group tooltip
+////
+
+@use 'module/legacy';
+@use 'module/spacing';
+
+@include legacy.is(ie11) {
+  #{ns(tooltip)} {
+    position: relative;
+
+    &__btn {
+      @include icon-legacy(align-left, sm, before);
+      @include icon-legacy(add-line, sm, after);
+
+      &[aria-expanded="true"] {
+        @include icon-image-legacy(subtract-line);
+      }
+    }
+
+    &__actions-group {
+      @include disable-list-style-legacy(true);
+    }
+
+    #{ns(modal)} {
+      &:not(#{ns(modal)}--opened) {
+        #{ns(modal)}__content {
+          @include max-height(38v);
+        }
+      }
+    }
+  }
+}

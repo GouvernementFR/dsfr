@@ -3,9 +3,20 @@
 /// @group toggle
 ////
 
-/*
- * On surcharge les styles de base
- */
 #{ns(toggle)}__list {
   @include disable-list-style;
+}
+
+#{ns(fieldset)} {
+  #{ns(toggle)}__list {
+    li:first-child #{ns(toggle)} {
+      @include padding-top(0);
+
+      label {
+        @include after {
+          top: 0;
+        }
+      }
+    }
+  }
 }

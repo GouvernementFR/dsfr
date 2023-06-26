@@ -7,7 +7,8 @@ class AccordionsGroup extends api.core.CollapsesGroup {
   }
 
   validate (member) {
-    return member.node.matches(AccordionSelector.COLLAPSE);
+    const match = member.node.matches(api.internals.legacy.isLegacy ? AccordionSelector.COLLAPSE_LEGACY : AccordionSelector.COLLAPSE);
+    return super.validate(member) && match;
   }
 }
 

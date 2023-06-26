@@ -76,5 +76,11 @@
         }
       }
     }
+
+    &__btn {
+      &[aria-expanded='true'] {
+        @include color.background(open blue-france, (legacy: $legacy));
+      }
+    }
   }
 }

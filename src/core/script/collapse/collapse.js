@@ -24,7 +24,7 @@ class Collapse extends Disclosure {
 
   transitionend (e) {
     this.removeClass(CollapseSelector.COLLAPSING);
-    if (!this.disclosed) {
+    if (!this.isDisclosed) {
       if (this.isLegacy) this.style.maxHeight = '';
       else this.style.removeProperty('--collapse-max-height');
     }
@@ -36,7 +36,7 @@ class Collapse extends Disclosure {
   }
 
   disclose (withhold) {
-    if (this.disclosed) return;
+    if (this.isDisclosed === true || !this.isEnabled) return false;
     this.unbound();
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
@@ -48,7 +48,7 @@ class Collapse extends Disclosure {
   }
 
   conceal (withhold, preventFocus) {
-    if (!this.disclosed) return;
+    if (this.isDisclosed === false) return false;
     this.request(() => {
       this.addClass(CollapseSelector.COLLAPSING);
       this.adjust();
@@ -66,7 +66,23 @@ class Collapse extends Disclosure {
   }
 
   reset () {
-    if (!this.pristine) this.disclosed = false;
+    if (!this.isPristine) this.isDisclosed = false;
+  }
+
+  _electPrimaries (candidates) {
+    const primary = this.element.parent.instances.map(instance => instance.collapsePrimary).filter(button => button !== undefined && candidates.indexOf(button) > -1);
+    if (primary.length === 1) return primary;
+    candidates = super._electPrimaries(candidates);
+    if (candidates.length === 1) return candidates;
+    const before = candidates.filter(candidate => candidate.dy >= 0);
+    if (before.length > 0) candidates = before;
+    if (candidates.length === 1) return candidates;
+    const min = Math.min(...candidates.map(candidate => candidate.dy));
+    const mins = candidates.filter(candidate => candidate.dy === min);
+    if (mins.length > 0) candidates = mins;
+    if (candidates.length === 1) return candidates;
+    candidates.sort((a, b) => Math.abs(b.dx) - Math.abs(a.dx));
+    return candidates;
   }
 }
 

@@ -49,6 +49,7 @@
 
   &__element {
     flex: 1 1 100%;
+    @include max-width(100%);
     @include padding-x(2v);
     @include margin-bottom(4v);
 
@@ -67,22 +68,26 @@
       }
     }
 
+    $postal-year-width: 64v;
+
     &--year,
     &--postal {
-      flex: 0 0 space(32v);
+      flex: space(0 0 #{$postal-year-width});
     }
 
     &--year:not(&--inline),
     &--postal:not(&--inline) {
-      @include margin-right(calc(100% - 32v));
+      @include margin-right(calc(100% - #{$postal-year-width}));
     }
 
+    $number-width: 22v;
+
     &--number {
-      flex: 0 0 space(22v);
+      flex: space(0 0 #{$number-width});
     }
 
     &--number:not(&--inline) {
-      @include margin-right(calc(100% - 22v));
+      @include margin-right(calc(100% - #{$number-width}));
     }
   }
 

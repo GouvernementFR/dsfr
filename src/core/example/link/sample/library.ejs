@@ -1,0 +1,62 @@
+<% const sample = getSample(include); %>
+
+<!-- Based on Leaflet Quick Start Guide [https://leafletjs.com/examples/quick-start/]  -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+
+<% let classes = locals.classes || []; %>
+
+<div <%- includeClasses(classes); %>
+  >
+  <div id="map" class="map"></div>
+
+  <%- include('../../../../component/toggle/template/ejs/toggle.ejs', {toggle:
+  {state: true, checked: true, label: `Interupteur de la classe
+  <code class="${prefix}-px-1w">${classes[0]}</code>sur le wrapper`, id:
+  classes[0]}}); %>
+</div>
+
+<style>
+  .map {
+    height: 400px;
+  }
+</style>
+
+<script>
+  const map = L.map('map', {
+    center: [48.8588897, 2.320041],
+    zoom: 13,
+  });
+  const linkClass = '<%- classes[0] %>';
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>',
+  }).addTo(map);
+
+  L.popup({ closeButton: false })
+    .setLatLng([48.8588897, 2.320041])
+    .setContent('20 avenue de Ségur 75007 Paris')
+    .openOn(map);
+
+  const toggle = document.getElementById(linkClass);
+  const wrapper = document.getElementById('map').parentNode;
+
+  toggle.addEventListener('change', function () {
+    if (this.checked) {
+      wrapper.classList.add(linkClass);
+    } else {
+      wrapper.classList.remove(linkClass);
+    }
+  });
+</script>

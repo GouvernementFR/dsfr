@@ -1,4 +1,5 @@
 import api from '../../api.js';
+import { BreadcrumbSelector } from './breadcrumb-selector.js';
 
 class Breadcrumb extends api.core.Instance {
   constructor () {
@@ -71,6 +72,11 @@ class Breadcrumb extends api.core.Instance {
     const link = this.links[0];
     if (!link) return;
     if (document.activeElement !== link) this._focus();
+  }
+
+  get collapsePrimary () {
+    const buttons = this.element.children.map(child => child.getInstance('CollapseButton')).filter(button => button !== null && button.hasClass(BreadcrumbSelector.BUTTON));
+    return buttons[0];
   }
 }
 

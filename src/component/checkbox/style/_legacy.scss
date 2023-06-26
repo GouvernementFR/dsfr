@@ -1,0 +1,15 @@
+////
+/// Checkbox legacy
+/// @group checkbox
+////
+
+@use 'module/selector';
+@use 'module/legacy';
+
+@include legacy.is(ie11) {
+  #{selector.ns(checkbox-group)} {
+    input[type="checkbox"] {
+      opacity: 1;
+    }
+  }
+}

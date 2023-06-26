@@ -1,5 +1,4 @@
 <%
-
 const accordions = [];
 
 for (let i = 0; i < 6; i++) accordions.push({
@@ -8,9 +7,9 @@ for (let i = 0; i < 6; i++) accordions.push({
   id: uniqueId('accordion'),
 });
 
-const data = {
-  accordions: accordions,
+const accordionsGroup = {
+  accordions: accordions
 }
 %>
 
-<%- include('../../template/ejs/accordions-group', {accordionsGroup: data}); %>
+<%- include('../../template/ejs/accordions-group', { accordionsGroup: accordionsGroup }); %>

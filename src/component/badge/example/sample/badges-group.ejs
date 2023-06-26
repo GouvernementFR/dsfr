@@ -5,6 +5,7 @@ const badges = badgesGroup.badges || [];
 if (!badges.length && badgesGroup.groupCount !== undefined) {
   for (let i = 0; i < badgesGroup.groupCount; i++) {
     badges.push({
+      id: uniqueId('badge'),
       label: badgesGroup.label || 'Label badge ' + (i+1),
       icon: badgesGroup.icon,
       type: badgesGroup.type,

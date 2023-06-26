@@ -1,0 +1,13 @@
+<%
+let link = locals.link || {};
+let data = {
+  label: 'Haut de page',
+  href: '#top',
+  ...link,
+  icon: 'arrow-up-fill',
+  iconPlace: 'left',
+}
+
+%>
+
+<%- include('../../sample/link-default', {link: data}); %>
