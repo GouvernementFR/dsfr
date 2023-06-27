@@ -13,7 +13,7 @@ Son utilisation par les administrations est soumise à une demande d'agrément (
 [Voir la documentation officielle](https://www.systeme-de-design.gouv.fr)
 
 ## Licence et droit d'utilisation
-Le contenu de ce projet est placé sous licence MIT License, à l'exception de la fonte Marianne. Voir [LICENSE.md](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md) 
+Le contenu de ce projet est placé sous licence MIT License, à l'exception de la fonte Marianne. Voir [LICENSE.md](https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md)
 
 #### ⚠️ Utilisation interdite en dehors des sites Internet de l'État
 >Il est formellement interdit à tout autre acteur d’utiliser le Système de Design de l’État (les administrations territoriales ou tout autre acteur privé). Le Système de Design de l’État représente l’identité numérique de l’État. En cas d’usage à des fins trompeuses ou frauduleuses, l'État se réserve le droit d’entreprendre les actions nécessaires pour y mettre un terme.
@@ -28,9 +28,9 @@ Voir les [conditions générales d'utilisation](doc/legal/cgu.md).
 L'installation du Système de Design de l'État (ci-après, le **DSFR**) peut se faire de manières différentes. En téléchargeant l'ensemble des fichiers nécessaires à son utilisation, en utilisant le gestionnaire de paquets **NPM**, ou encore via **git**.
 
 ### Fichiers statiques
-Il est possible de télécharger l'ensemble du **DSFR** au format zip ci-dessous. Le zip contient un ensemble de fichiers CSS et Javascript, ainsi que les différentes polices web utilisées, à savoir la Marianne et la Spectral.
+Il est possible de télécharger l'ensemble du **DSFR** au format zip ci-dessous. Le zip contient un ensemble de fichiers CSS et Javascript, ainsi que les différentes polices web utilisées (Marianne et Spectral), et un ensemble d'icônes et de pictogrammes.
 
-[Fichiers statiques](https://www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs/prise-en-main-du-dsfr)
+Vous trouverez sur [la page Release de Github](https://github.com/GouvernementFR/dsfr/releases), toutes les sources des versions précédentes et la dernière en date.
 
 ### NPM
 Le **DSFR** est disponible sur NPM via un ensemble de packages qu'il est possible d'ajouter directement à votre projet. Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org), et d'avoir un fichier **package.json** à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).
@@ -73,13 +73,14 @@ Une structure minimale serait :
 └── dsfr.min.css
 └── dsfr.module.min.js
 └── dsfr.nomodule.min.js
-└── favicon
-└── font
-└── icons
-└── utility
-  └── icons
+└── icons/
+└── favicon/
+└── fonts/
+└── utility/
+  └── utilities.min.css
 ```
-Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spectral, sont des fichiers .woff et .woff2, ils doivent se trouver dans le répertoire font. Ce dossier doit être placé au même niveau que le dossier contenant le CSS du core dsfr ('dsfr' dans notre exemple puisque dsfr.min.css contient le core)
+Les polices de caractères utilisées sur le DS, à savoir la Marianne et la Spectral, sont des fichiers .woff et .woff2, ils doivent se trouver dans le répertoire `fonts`. Les dossiers `fonts` et `favicon` doivent être placés au même niveau que le dossier contenant le CSS du core du dsfr (ou au même niveau que le css `dsfr.min.css` à la racine de dist, qui contient le core).
+Le fichier `utilities.min.css` doit être placé un niveau plus bas que le dossier `icons`, dans dossier utility par exemple, pour respecter les chemins d'accès vers les icônes.
 
 ### Le HTML
 Le point de départ de l’utilisation du DSFR  est la création de fichiers HTML, afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. L’exemple ci dessous est le code minimal afin de pouvoir utiliser le DSFR.
