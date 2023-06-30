@@ -13,6 +13,10 @@ class Toggle extends Instance {
   }
 
   handleClick () {
+    this.toggle();
+  }
+
+  toggle () {
     this.pressed = this.pressed !== 'true';
   }
 
