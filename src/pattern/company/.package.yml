@@ -1,5 +1,5 @@
 id: company
-title: Bloc fonctionnel de formulaire société
+title: Bloc fonctionnel de société
 description: La demande de renseignement sur la société permet d’aider un utilisateur à saisir ses renseignements concernant sa société.
 doc:
 wrapper: container
