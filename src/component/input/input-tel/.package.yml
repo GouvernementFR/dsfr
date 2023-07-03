@@ -1,5 +1,5 @@
 id: input-tel
-title: Modèle de champ numéro de téléphone
+title: Bloc fonctionnel de champ numéro de téléphone
 wrapper: col-8
 style:
   - core
