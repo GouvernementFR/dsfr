@@ -11,7 +11,7 @@ window.dsfr.analytics.site
     window.dsfr = {
         analytics: {
             site: {
-                environment: 'production', // by default development \['development', 'stage', 'production'\]
+                environment: 'production', // by default development ['development', 'stage', 'production']
                 entity: 'Ministère des armées', // Entity responsible for website
                 language: '', // language of the website (ISO 639-1). default to html lang
                 target: 'target', // site target
