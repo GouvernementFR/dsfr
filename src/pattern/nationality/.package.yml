@@ -1,5 +1,5 @@
 id: nationality
-title: Modèle de bloc de nationalité
+title: Bloc fonctionnel de nationalité
 description: La demande de nationalité permet d’aider un utilisateur à saisir sa nationalité.
 doc:
 wrapper: container

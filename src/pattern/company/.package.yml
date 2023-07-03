@@ -1,6 +1,6 @@
 id: company
-title: Modèle de formulaire société
-description: La demande de renseignement sur la société permet d’aider un utilisateur à saisir ses renseignements concernant sa société.
+title: Bloc fonctionnel de société
+description: La demande de renseignement sur la société permet d’aider un utilisateur à saisir les renseignements concernant sa société.
 doc:
 wrapper: container
 style:
