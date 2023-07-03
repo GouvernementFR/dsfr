@@ -11,6 +11,10 @@
 
   &--lg &__title {
     @include title-style(h4);
+
+    @include target-blank {
+      @include icon-size(md, after);
+    }
   }
 
   &--lg &__desc {

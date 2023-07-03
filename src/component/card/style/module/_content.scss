@@ -19,7 +19,9 @@
     @include margin-bottom(0);
 
     @include target-blank {
-      @include icon-size(md, after);
+      @include after {
+        --icon-size: 1.375rem;
+      }
     }
   }
 

@@ -5,6 +5,8 @@
 
 #{ns(tile--sm)} {
   @include padding(6v 6v 7v);
+  @include nest-badge(sm);
+  @include nest-tag(sm);
 
   #{ns(tile)} {
     &__title {

@@ -56,6 +56,15 @@
     @include margin-bottom(2v);
     order: 2;
 
+    @include before('', block) {
+      @include absolute(0, 0, 0, 0, 100%, 100%);
+      @include z-index(over);
+      pointer-events: none;
+      background-position: 0 100%;
+      background-size: 100% spacing.space(1v);
+      background-repeat: no-repeat;
+    }
+
     a {
       @include before {
         background-position: 0 100%;

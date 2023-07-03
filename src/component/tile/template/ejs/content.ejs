@@ -29,6 +29,7 @@ let start = {};
 const markup = content.markup || 'h3';
 const href = content.href || '#';
 const attributes = {}
+const hasLink = !content.noLink;
 if (content.assess === true) {
     attributes[`data-${prefix}-assess-file`] = '';
 } else if (typeof(content.assess) === 'string') {
@@ -49,7 +50,9 @@ if (content.badge) start.badge = content.badge;
 
 <div class="<%= prefix %>-tile__content">
   <<%= markup %> class="<%= prefix %>-tile__title">
-    <a <%- includeAttrs(attributes) %>><%- content.title %></a>
+      <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %>
+        <%- content.title %></a>
+      <% if (hasLink) { %></a><% } %>
   </<%= markup %>>
 
   <% if (content.description !== undefined) { %>

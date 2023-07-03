@@ -15,6 +15,12 @@
 
   &--sm &__title {
     @include title-style(h6);
+
+    @include target-blank {
+      @include after {
+        --icon-size: 1.25rem;
+      }
+    }
   }
 
   &--sm &__desc {

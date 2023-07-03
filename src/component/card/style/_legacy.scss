@@ -20,7 +20,7 @@
 
     &__title {
       @include target-blank {
-        @include icon-size-legacy(lg, after);
+        @include icon-size-legacy(md, after);
       }
     }
 
