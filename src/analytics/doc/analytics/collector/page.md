@@ -18,9 +18,9 @@ window.dsfr.analytics.page
                 title: 'page title', // page title for virtual pages
                 name: 'page name', // equivalent to title if not defined
                 author: 'John Doe', // page author name
-                date: 'YYYY/MM/DD' // page creation date
-                labels: \['label1', 'label2', 'label3', 'label4', 'label5'\],
-                tags: \['tag1', 'tag2', 'tagN'\], // no tags limit
+                date: 'YYYY/MM/DD', // page creation date
+                labels: ['label1', 'label2', 'label3', 'label4', 'label5'],
+                tags: ['tag1', 'tag2', 'tagN'], // no tags limit
                 template: 'nom template', // page template
                 group: 'group', // page group. if not defined, fallback to template value
                 segment: 'segment', // site segment. if not defined, fallback to template value
@@ -32,7 +32,7 @@ window.dsfr.analytics.page
                 isError: true, // is this an error page (404, 500, 503...)
                 current: 4, // In case of pagination, current page number
                 total: 40, // In case of pagination, total pages number
-                filters: \['actualités', 'Dossier de presse'\] // array of filters that were applied on the page (strings)
+                filters: ['actualités', 'Dossier de presse'] // array of filters that were applied on the page (strings)
             },
         }
     };
