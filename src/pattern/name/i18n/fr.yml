@@ -11,7 +11,6 @@ label:
   country: Pays
   family: Nom
   given: Prénom
-  givens: Prénom(s)
   usual: Nom d'usage
   birth: Nom de naissance
   no-firstname: Je n'ai pas de prénom
@@ -21,9 +20,6 @@ country:
   japan: Japon
   france: France
   england: Angleterre
-legend:
-  name: Nom
-  firstname: Prénom(s)
 sample:
   default: Défaut
   button: bouton
