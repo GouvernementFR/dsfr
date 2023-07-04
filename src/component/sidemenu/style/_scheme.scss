@@ -57,17 +57,11 @@
           @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
         }
       }
-
-      &--full-border {
-        #{ns(sidemenu__inner)} {
-          @include color.box-shadow(default grey, (legacy:$legacy));
-        }
-      }
     }
 
     &__link,
     &__btn {
-      @include color.text(action-high grey, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
 
       &[aria-current] {
         @include color.text(active blue-france, (legacy:$legacy));
