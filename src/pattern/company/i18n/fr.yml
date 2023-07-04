@@ -5,7 +5,7 @@ doc:
 label:
   siret: Numéro de SIRET
   type: Type de société
-  position: Fonction(s) dans la société
+  position: Fonction dans la société
 structure:
   EI: Entrepreneur individuel (EI)
   EURL: Entreprise unipersonnelle à responsabilité limitée (EURL)
