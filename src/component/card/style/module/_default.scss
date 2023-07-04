@@ -9,7 +9,7 @@
 
   
   &#{ns(enlarge-link)} {
-    &__title {
+    #{ns(card)}__title {
       a {
         @include icon(arrow-right-line, md, after) {
           @include absolute(null, 8v, 8v);
