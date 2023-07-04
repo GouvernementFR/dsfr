@@ -99,7 +99,7 @@ if (input.spellcheck === true || input.spellcheck === false) attributes.spellche
 
 const inputWrapClass = [];
 if (input.button || input.icon) inputWrapClass.push(`${prefix}-input-wrap`);
-if (input.icon && typeof(input.icon) === 'string') inputWrapClass.push(`${prefix}-icon-${input.icon === true ? '' : input.icon}`);
+if (input.icon && typeof(input.icon) === 'string') inputWrapClass.push(`${prefix}-icon-${input.icon}`);
 if (input.addon) inputWrapClass.push(`${prefix}-input-wrap--addon`);
 if (input.action) inputWrapClass.push(`${prefix}-input-wrap--action`);
 %>
