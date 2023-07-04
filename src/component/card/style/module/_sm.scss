@@ -16,7 +16,7 @@
   &--sm &__title {
     @include title-style(h6);
 
-    @include target-blank {
+    a {
       @include icon-size(sm, after);
     }
   }

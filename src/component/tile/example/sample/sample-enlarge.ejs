@@ -1,3 +1,5 @@
 <% const sample = getSample(include); %>
 
 <%- sample('Tuile verticale sans lien étendu à la tuile', './tile-default', { tile: { pictogram: true, enlarge: false }}, true, './tile-layout', {col: {md:4, lg:3}}); %>
+
+<%- sample('Tuile verticale sans lien étendu à la tuile, nouvelle fenêtre', './tile-default', { tile: { pictogram: true, enlarge: false, content: {blank: true}}}, true, './tile-layout', {col: {md:4, lg:3}}); %>

@@ -18,8 +18,12 @@
     @include font-weight(bold);
     @include margin-bottom(0);
 
+    a {
+      @include icon(arrow-right-line, sm, after);
+    }
+
     @include target-blank {
-      @include icon-size(sm, after);
+      @include icon(external-link-line, sm, after);
     }
   }
 

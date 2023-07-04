@@ -12,7 +12,7 @@
   &--lg &__title {
     @include title-style(h4);
 
-    @include target-blank {
+    a {
       @include icon-size(md, after);
     }
   }
