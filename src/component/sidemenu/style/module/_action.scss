@@ -67,7 +67,7 @@
 // @TODO transformer en modifier
 #{ns(sidemenu__inner)} > #{ns(sidemenu__btn)} {
   @include size(100%);
-  font-weight: normal;
+  font-weight: font-weight(medium);
   @include after {
     @include margin-right(4v);
   }
