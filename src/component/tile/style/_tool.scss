@@ -9,6 +9,7 @@
 @mixin build-tile-horizontal() {
   flex-direction: row;
   align-items: flex-start;
+  justify-content: center;
   text-align: left;
 
   #{ns(tile__header)} {
