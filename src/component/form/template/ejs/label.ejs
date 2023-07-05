@@ -22,5 +22,16 @@ const attributes = { ...label.attributes, 'for': label.for };
 
 <label <%- includeClasses(classes); %> <%- includeAttrs(attributes); %>>
   <%- label.label %>
-  <% if (label.hint) { %><%- include('./hint', { hint: { text: label.hint } });%><% } %>
+  <% if (label.hint) { %>
+    <% if (Array.isArray(label.hint)) {
+      for (let i = 0; i < label.hint.length; i++) {
+        %>
+        <%- include('./hint', { hint: { text: label.hint[i] } });%>
+        <% 
+      }
+    } else {
+    %>
+      <%- include('./hint', { hint: { text: label.hint } });%>
+    <% } %>
+  <% } %>
 </label>

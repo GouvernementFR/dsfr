@@ -86,7 +86,7 @@
       @include _spacing-property-variations($prop, $i, $breakpoint);
       // ajoute 0.5v & 1.5v et -0.5v & -1.5v ($half=2)
       @if $i > -$half and $i < $half {
-        @if $i <= 0 {
+        @if $i <= 0 and $from < 0 {
           @include _spacing-property-variations($prop, $i - 0.5, $breakpoint);
         }
         @if $i >= 0 {

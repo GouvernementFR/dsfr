@@ -8,7 +8,7 @@ const data = {
   },
   id: card.id || uniqueId('card'),
   size: card.size,
-  enlarge: card.enlarge !== false && card.footer === undefined,
+  enlarge: card.enlarge !== false && card.footer === undefined && !card.noLink,
   icon: card.icon,
   variations: card.variations
 }
@@ -51,6 +51,7 @@ if (card.content) {
   if (card.content.assess) data.content.assess = card.content.assess;
   if (card.content.disabled) data.content.disabled = card.content.disabled;
   if (card.content.blank) data.content.blank = card.content.blank;
+  if (card.content.lang) data.content.lang = card.content.lang;
 
   if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);
 
@@ -70,6 +71,10 @@ if (card.content) {
       if (typeof detail === 'string') {
         if (detail.indexOf('icon') > -1) d.icon = 'warning-fill';
         if (detail.indexOf('end') > -1) d.position = 'end';
+      } else if (typeof detail === 'object') {
+        d.label = detail.label || d.label;
+        d.icon = detail.icon || undefined;
+        d.position = detail.position || 'end';
       }
       data.content.details.push(d);
     }
@@ -78,8 +83,13 @@ if (card.content) {
 
 if (card.download) {
   data.download = true;
-  if (!data.content.details) data.content.details = [];
-  data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+  if (!data.content.details) {
+    data.content.details = [];
+    data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+  } else {
+    const hasEnd = data.content.details.find(detail => detail.position === 'end');
+    if (!hasEnd) data.content.details.push({ label: 'PNG - 1,1 ko', position: 'end'});
+  }
 }
 
 if (card.footer) {

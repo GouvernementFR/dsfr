@@ -12,15 +12,15 @@ window.dsfr.analytics.page
     window.dsfr = {
         analytics: {
             page: {
-                path: 'path\_name/from/url', // path for page tracking
-                referrer: 'path\_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
+                path: 'path_name/from/url', // path for page tracking
+                referrer: 'path_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
                 id: 'page-id', // unique page id (string)
                 title: 'page title', // page title for virtual pages
                 name: 'page name', // equivalent to title if not defined
                 author: 'John Doe', // page author name
-                date: 'YYYY-MM-DD' // page creation date ISO 8601 format
-                labels: \['label1', 'label2', 'label3', 'label4', 'label5'\],
-                tags: \['tag1', 'tag2', 'tagN'\], // no tags limit
+                date: 'YYYY/MM/DD', // page creation date
+                labels: ['label1', 'label2', 'label3', 'label4', 'label5'],
+                tags: ['tag1', 'tag2', 'tagN'], // no tags limit
                 template: 'nom template', // page template
                 group: 'group', // page group. if not defined, fallback to template value
                 segment: 'segment', // site segment. if not defined, fallback to template value
@@ -32,7 +32,7 @@ window.dsfr.analytics.page
                 isError: true, // is this an error page (404, 500, 503...)
                 current: 4, // In case of pagination, current page number
                 total: 40, // In case of pagination, total pages number
-                filters: \['actualités', 'Dossier de presse'\] // array of filters that were applied on the page (strings)
+                filters: ['actualités', 'Dossier de presse'] // array of filters that were applied on the page (strings)
             },
         }
     };
@@ -68,7 +68,7 @@ _String_ (EA: referrer)
 
 ##### id
 
-_String_ (EA: page\_id)
+_String_ (EA: page_id)
 
 `window.dsfr.analytics.page.id`
 
@@ -78,7 +78,7 @@ _String_ (EA: page\_id)
 
 ##### title
 
-_String_ (EA: page\_title)
+_String_ (EA: page_title)
 
 `window.dsfr.analytics.page.title`
 
@@ -88,7 +88,7 @@ _String_ (EA: page\_title)
 
 ##### name
 
-_String_ (EA: page\_name)
+_String_ (EA: page_name)
 
 `window.dsfr.analytics.page.name`
 
@@ -98,7 +98,7 @@ _String_ (EA: page\_name)
 
 ##### author
 
-_String_ (EA: page\_author)
+_String_ (EA: page_author)
 
 `window.dsfr.analytics.page.author`
 
@@ -108,7 +108,7 @@ _String_ (EA: page\_author)
 
 ##### date
 
-_Date_ (EA: page\_date)
+_Date_ (EA: page_date)
 
 `window.dsfr.analytics.page.date`
 
@@ -130,20 +130,20 @@ _Array`<String>`_ (EA: pagelabel)
 
 ##### categories
 
-_Array`<String>`_ (EA: page\_category1, page\_category2, page\_category1)
+_Array`<String>`_ (EA: page_category1, page_category2, page_category1)
 
 `window.dsfr.analytics.page.categories`
 
 * Liste de 5 regroupements de contenus maximum
 
-* Les 3 premiers labels servent à renseigner (EA: page\_category1), (EA: page\_category2), et (EA:
-page\_category3)
+* Les 3 premiers labels servent à renseigner (EA: page_category1), (EA: page_category2), et (EA:
+page_category3)
 
 * * *
 
 ##### tags
 
-_Array`<String>`_ (EA: page\_tags)
+_Array`<String>`_ (EA: page_tags)
 
 `window.dsfr.analytics.page.tags`
 
@@ -183,17 +183,17 @@ _String_ (EA: segment-site)
 
 ##### subtemplate
 
-_String_ (EA: page\_subtemplate)
+_String_ (EA: page_subtemplate)
 
 `window.dsfr.analytics.page.subtemplate`
 
-Apporte un niveau de détail supplémentaire lié au contenu pour les page\_template comprenant beaucoup de pages sur des thèmes différents
+Apporte un niveau de détail supplémentaire lié au contenu pour les page_template comprenant beaucoup de pages sur des thèmes différents
 
 * * *
 
 ##### theme
 
-_String_ (EA: page\_theme)
+_String_ (EA: page_theme)
 
 `window.dsfr.analytics.page.theme`
 
@@ -203,7 +203,7 @@ _String_ (EA: page\_theme)
 
 ##### subtheme
 
-_String_ (EA: page\_subtheme)
+_String_ (EA: page_subtheme)
 
 `window.dsfr.analytics.page.subtheme`
 
@@ -213,7 +213,7 @@ _String_ (EA: page\_subtheme)
 
 ##### related
 
-_String_ (EA: page\_related)
+_String_ (EA: page_related)
 
 `window.dsfr.analytics.page.related`
 
@@ -223,7 +223,7 @@ _String_ (EA: page\_related)
 
 ##### depth
 
-_Integer_ (EA: page\_depth)
+_Integer_ (EA: page_depth)
 
 `window.dsfr.analytics.page.depth`
 
@@ -233,7 +233,7 @@ Niveau de profondeur de la page (default: 0)
 
 ##### isError
 
-_Boolean_ (EA: error) \- default: false (required)
+_Boolean_ (EA: error) - default: false (required)
 
 `window.dsfr.analytics.page.isError`
 
@@ -243,7 +243,7 @@ _Boolean_ (EA: error) \- default: false (required)
 
 ##### current
 
-_Integer_ (EA: page\_pagination)
+_Integer_ (EA: page_pagination)
 
 `window.dsfr.analytics.page.current`
 
@@ -261,7 +261,7 @@ _Integer_
 
 Nombre de page au sein du découpage ou de la pagination
 
-Vient compléter la valeur envoyée à (EA: page\_pagination) si renseignée (valant : “current / total”)
+Vient compléter la valeur envoyée à (EA: page_pagination) si renseignée (valant : “current / total”)
 Si le composant Pagination est présent, la récupération automatique se fait de deux manière, dans l’ordre de priorité :
 
   - la valeur renseignée dans l’attribut data-fr-analytics-page-total sur le composant fr-pagination
@@ -271,7 +271,7 @@ Si le composant Pagination est présent, la récupération automatique se fait d
 
 ##### filters
 
-* _Array`<String>`_ (EA: page\_filters)
+* _Array`<String>`_ (EA: page_filters)
 
 `window.dsfr.analytics.page.filters`
 

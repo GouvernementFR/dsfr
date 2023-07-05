@@ -1,3 +1,9 @@
 <% const sample = getSample(include); %>
 
 <%- sample('Carte verticale sans lien étendu à la carte', './card-default', { card : { img: true, enlarge: false }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale sans lien étendu et ouverture dans une nouvelle fenêtre', './card-default', { card : { img: true, content: {blank:true}, enlarge: false }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale SM sans lien étendu et ouverture dans une nouvelle fenêtre', './card-default', { card : { size: 'sm', img: true, content: {blank:true}, enlarge: false }}, true, './card-layout', {col: {md:4}}); %>
+
+<%- sample('Carte verticale LG sans lien étendu et ouverture dans une nouvelle fenêtre', './card-default', { card : { size: 'lg', img: true, content: {blank:true}, enlarge: false }}, true, './card-layout', {col: {md:4}}); %>

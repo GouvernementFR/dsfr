@@ -47,18 +47,5 @@
         @include size(null, 100%);
       }
     }
-
-    /**
-     * Modificateur pour avoir une bordure tout autour du sidemenu
-     */
-    &--full-border {
-      #{ns(sidemenu__title)} {
-        @include padding-top(2v);
-      }
-
-      #{ns(sidemenu__inner)} {
-        @include padding(2v 4v);
-      }
-    }
   }
 }

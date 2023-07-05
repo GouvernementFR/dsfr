@@ -15,6 +15,10 @@
 
   &--sm &__title {
     @include title-style(h6);
+
+    a {
+      @include icon-size(sm, after);
+    }
   }
 
   &--sm &__desc {

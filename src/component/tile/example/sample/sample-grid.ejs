@@ -1,7 +1,7 @@
 <% const sample = getSample(include); %>
 
 <%
- const tile = { pictogram: true, col: {md:'6', lg:'4'}};
+ const tile = { pictogram: true, col: {md:'4', lg:'3'}};
  %>
 <%- sample('Grilles de tuiles verticales', './tiles-grid', { tiles : [
         { ...tile, content: { tag: true, description: true, details: true }},
@@ -11,7 +11,7 @@
     ]}, true, './tiles-layout'); %>
 
 <%
-const tileSm = { pictogram: true, size:'sm', col: {sm:'6', md:'4', lg:'3'}};
+const tileSm = { pictogram: true, size:'sm', col: {sm:'6', md:'3', lg:'2'}};
 %>
 <%- sample('Grilles de tuiles verticales sm', './tiles-grid', { tiles : [
         { ...tileSm, content: { tag: true, description: true, details: true }},

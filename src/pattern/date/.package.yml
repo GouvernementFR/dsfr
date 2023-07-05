@@ -1,5 +1,5 @@
 id: date
-title: Modèle de date unique
+title: Bloc fonctionnel de date unique
 description: Le champ de saisie de date fixe reprend trois champs de saisie de texte.
 wrapper: container
 doc:
