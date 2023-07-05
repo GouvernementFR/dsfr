@@ -11,7 +11,7 @@
   @include relative;
   @include display-flex(row, center);
   @include size(100%);
-  @include padding(3v 2v);
+  @include padding(3v 4v);
   @include margin(0, md);
   @include text-style(md);
   text-align: left;
@@ -42,7 +42,7 @@
 #{ns(sidemenu__btn)} {
   &[aria-expanded] {
     @include display-flex(row, center);
-    @include padding(3v 8v 3v 2v, md);
+    @include padding(3v 10v 3v 4v, md);
 
     @include icon(arrow-down-s-line, sm, after) {
       @include margin-left(auto);

@@ -43,7 +43,7 @@
 
   & &__menu-links {
     @include after('', block) {
-      @include margin(3v -4v);
+      @include margin(3v -4v 0);
       @include size(calc(100% + 8v), 1px);
     }
 
