@@ -88,7 +88,7 @@
       @include margin-right(calc(100% - #{$postal-width}));
     }
 
-    $number-width: 22v;
+    $number-width: 24v;
 
     &--number {
       flex: space(0 0 #{$number-width});
