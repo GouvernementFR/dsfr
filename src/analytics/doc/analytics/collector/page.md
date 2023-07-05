@@ -18,7 +18,7 @@ window.dsfr.analytics.page
                 title: 'page title', // page title for virtual pages
                 name: 'page name', // equivalent to title if not defined
                 author: 'John Doe', // page author name
-                date: 'YYYY/MM/DD' // page creation date
+                date: 'YYYY-MM-DD' // page creation date ISO 8601 format
                 labels: \['label1', 'label2', 'label3', 'label4', 'label5'\],
                 tags: \['tag1', 'tag2', 'tagN'\], // no tags limit
                 template: 'nom template', // page template
@@ -112,7 +112,7 @@ _Date_ (EA: page\_date)
 
 `window.dsfr.analytics.page.date`
 
-* Défini la date de publication de la page
+* Défini la date de publication de la page restituée au format de date calendaire [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) [YYYY-MM-DD]
 
 * * *
 

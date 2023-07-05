@@ -87,14 +87,16 @@ const validateGeography = (value, name, allowNull = true) => {
   return null;
 };
 
+const normaliseISODate = (date) => date.toISOString().split('T')[0];
+
 const validateDate = (value, name, allowNull = true) => {
   switch (true) {
     case value instanceof Date:
-      return value;
+      return normaliseISODate(value);
 
     case typeof value === 'string': {
       const date = new Date(value);
-      if (date.toString() !== 'Invalid Date') return date;
+      if (date.toString() !== 'Invalid Date') return normaliseISODate(date);
       break;
     }
 

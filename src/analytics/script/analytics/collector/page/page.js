@@ -243,6 +243,7 @@ class Page {
     if (this.name) layer.push('page_name', normalize(this.name));
     if (this.id) layer.push('page_id', normalize(this.id));
     if (this.author) layer.push('page_author', normalize(this.author));
+    console.log(this.date);
     if (this.date) layer.push('page_date', normalize(this.date));
 
     const labels = this._labels.slice(0, 5);
