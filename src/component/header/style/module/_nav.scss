@@ -5,12 +5,12 @@
 
 #{ns(header)} {
   #{ns(nav)} {
-    &__list {
-      @include margin(0 -4v);
-    }
-
     @include respond-from(lg) {
       justify-content: flex-start;
+
+      &__list {
+        @include margin(0 -4v);
+      }
     }
   }
 }
