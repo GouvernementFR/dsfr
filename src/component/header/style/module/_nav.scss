@@ -11,10 +11,6 @@
 
     @include respond-from(lg) {
       justify-content: flex-start;
-
-      &__list {
-        max-width: calc(100% + #{space(4v)});
-      }
     }
   }
 }
