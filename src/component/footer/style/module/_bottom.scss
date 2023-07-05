@@ -19,8 +19,6 @@
   * Liste de liens avec séparateur
   */
   &__bottom-list {
-    flex-wrap: wrap;
-    align-items: center;
     @include size(100%);
     @include padding(2v 0 4v);
     @include size(100%);
