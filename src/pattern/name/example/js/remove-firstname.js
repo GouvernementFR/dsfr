@@ -1,9 +1,12 @@
 window.removeFirstname = (copy) => {
   const attrGivenName = '[name=given-name]';
-  const givens = copy.parentNode.querySelectorAll(attrGivenName);
-  copy.remove();
-  if (givens.length) {
-    const lastGiven = givens[givens.length - 1] !== copy.querySelector(attrGivenName) ? givens[givens.length - 1] : givens[givens.length - 2];
-    lastGiven.focus();
+  const fieldsetElements = copy.parentNode.querySelectorAll('.fr-fieldset__element');
+  if (copy.nextSibling.querySelector(attrGivenName)) {
+    copy.nextSibling.querySelector(attrGivenName).focus();
+  } else {
+    if (fieldsetElements.length) {
+      fieldsetElements[fieldsetElements.length - 1].querySelector('button').focus();
+    }
   }
+  copy.remove();
 };
