@@ -6,7 +6,7 @@ label:
   default: Ajouter un fichier
   multiple: Ajouter des fichiers
 hint:
-  default: 'Indication : Taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.'
+  default: 'Indication : taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.'
 error:
   default: Format de fichier non supporté
 sample:
