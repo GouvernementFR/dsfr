@@ -36,5 +36,9 @@
     #{ns(consent-service)} {
       @include color.no-box-shadow((legacy: $legacy));
     }
+
+    #{ns(consent-service__collapse-btn)} {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
   }
 }

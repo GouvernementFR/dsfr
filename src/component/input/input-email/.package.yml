@@ -1,5 +1,5 @@
 id: input-email
-title: Modèle de champ email
+title: Bloc fonctionnel d'adresse électronique
 wrapper: col-8
 style:
   - core

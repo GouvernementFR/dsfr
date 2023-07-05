@@ -11,7 +11,7 @@ window.dsfr.analytics.site
     window.dsfr = {
         analytics: {
             site: {
-                environment: 'production', // by default development \['development', 'stage', 'production'\]
+                environment: 'production', // by default development ['development', 'stage', 'production']
                 entity: 'Ministère des armées', // Entity responsible for website
                 language: '', // language of the website (ISO 639-1). default to html lang
                 target: 'target', // site target
@@ -96,7 +96,7 @@ _String_ (EA: site\_region)
 
 `window.dsfr.analytics.site.region`
 
-Défini la région du site (pour les sites régionaux) au format 
+Défini la région du site (pour les sites régionaux) au format
 [ISO 3166-2:FR](https://fr.wikipedia.org/wiki/ISO_3166-2:FR#R.C3.A9gions_m.C3.A9tropolitaines)
 
 * * *

@@ -1,0 +1,4 @@
+<% const sample = getSample(include); %>
+
+<%- section('Fichier d\'une autre langue', 'Si la langue du fichier à télécharger est différente de celle de la page courante, il est nécéssaire d\'ajouter l\'attribut <b>hreflang</b> avec comme valeur le code langue (ex: hreflang="en") sur le lien. L’attribut prend pour valeur le code langue selon la norme ISO 639-1 (<a href="https://fr.wikipedia.org/wiki/Liste_des_codes_ISO_639-1" target="_blank">Liste des codes ISO 639-1</a>).<br> Il faut aussi <b>ajouter le nom de la langue dans les détails</b> (sauf remplissage automatique en js)', 0) %>
+<%- sample('', './card-download', {card: { content : { lang: 'en', details: [{ label: 'PDF - 1,3 Mo - Anglais', position: 'end'}] } }}, true, '../../sample/card-layout', {col: {md:8, lg:6}}) %>

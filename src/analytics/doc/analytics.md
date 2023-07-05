@@ -1,7 +1,7 @@
 
 # Analytics
 
-> **Warnning**
+> **Warning**
 > Ce package est prévu pour fonctionner de manière optimale avec la version dsfr-1.9.0 ou suppérieure.
 > L'ajout d'un patch, présent dans `dist/patch/`, permet le support des versions précédentes (à partir de la version dsfr-1.3.0).
 > Pour ce faire, importer `dist/patch/patch.module.min.js` et `dist/patch/patch.nomodule.min.js` après l'élément de configuration window.dsfr.analytics et avant le JS du DSFR.

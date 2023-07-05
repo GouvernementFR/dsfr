@@ -14,6 +14,10 @@
     &__title {
       @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
 
+      @include before {
+        @include color.background-image((border plain grey), (legacy: $legacy));
+      }
+
       a {
         @include color.text(action-high blue-france, (legacy: $legacy));
 
