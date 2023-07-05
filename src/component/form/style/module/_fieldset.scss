@@ -68,16 +68,24 @@
       }
     }
 
-    $postal-year-width: 64v;
+    $year-width: 32v;
 
-    &--year,
-    &--postal {
-      flex: space(0 0 #{$postal-year-width});
+    &--year {
+      flex: space(0 0 #{$year-width});
     }
 
-    &--year:not(&--inline),
+    &--year:not(&--inline) {
+      @include margin-right(calc(100% - #{$year-width}));
+    }
+
+    $postal-width: 64v;
+
+    &--postal {
+      flex: space(0 0 #{$postal-width});
+    }
+
     &--postal:not(&--inline) {
-      @include margin-right(calc(100% - #{$postal-year-width}));
+      @include margin-right(calc(100% - #{$postal-width}));
     }
 
     $number-width: 22v;
