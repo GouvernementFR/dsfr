@@ -6,7 +6,7 @@ import { ModalAttribute } from './modal-attribute';
 class Modal extends api.core.Disclosure {
   constructor () {
     super(api.core.DisclosureType.OPENED, ModalSelector.MODAL, ModalButton, 'ModalsGroup');
-    this._isDialog = true;
+    this._isActive = false;
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
   }
@@ -66,13 +66,21 @@ class Modal extends api.core.Disclosure {
   }
 
   activateModal () {
-    this.setAttribute('role', 'dialog');
-    if (this.modalTitle) this.setAttribute('aria-labelledby', this.modalTitle.id);
+    if (this._isActive) return;
+    this._isActive = true;
+
+    this._hasDialogRole = this.getAttribute('role') === 'dialog';
+    this._hasAriaLablledBy = this.hasAttribute('aria-labelledby');
+    if (!this._hasDialogRole) this.setAttribute('role', 'dialog');
+    if (!this._hasAriaLablledBy && this.modalTitle) this.setAttribute('aria-labelledby', this.modalTitle.id);
   }
 
   deactivateModal () {
-    this.removeAttribute('role');
-    this.removeAttribute('aria-labelledby');
+    if (!this._isActive) return;
+    this._isActive = false;
+
+    if (!this._hasDialogRole) this.removeAttribute('role');
+    if (!this._hasAriaLablledBy) this.removeAttribute('aria-labelledby');
   }
 
   setTitleId () {

@@ -83,8 +83,6 @@ switch(modal.size) {
 
 const titleId = modal.id + '-title';
 
-modalAttrs.role = 'dialog';
-
 if (isDialog && modal.title) modalAttrs['aria-labelledby'] = titleId;
 
 if (modal.top) modalClasses.push(`${prefix}-modal--top`);
