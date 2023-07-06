@@ -84,7 +84,7 @@
   &__link,
   &__btn {
     @include size(100%);
-    @include padding(3v 0);
+    @include padding(3v 4v);
     @include text-style(md);
     text-align: left;
 
@@ -97,7 +97,7 @@
     &[aria-current] {
       position: relative;
       @include before('', block) {
-        @include absolute(50%, null, null, -4v, 2px, 6v);
+        @include absolute(50%, null, null, 0, 2px, 6v);
         @include margin-top(-3v);
       }
     }
