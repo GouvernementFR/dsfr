@@ -19,7 +19,7 @@
 
 * content.lang (boolean, optional) : Ajoute l'attribut hreflang au lien, pour définir la langue du document lié
 
-* content.disabled (boolean, optional) : Si true, retire le href du lien pour le désactiver
+* content.disabled (boolean, optional) : Si true, retire le href du lien pour le désactiver et les attributs role="link" aria-disabled="true"
 
 * content.assess (String, optional): Si true, remplissage automatique du poid et type de fichier à telecharger
 %>
@@ -35,9 +35,17 @@ if (content.assess === true) {
 } else if (typeof(content.assess) === 'string') {
     attributes[`data-${prefix}-assess-file`] = content.assess;
 }
-if (content.disabled !== true) attributes.href = href;
+if (content.disabled !== true) {
+  attributes.href = href;
+} else {
+  attributes.role = 'link';
+  attributes['aria-disabled'] = true;
+}
 if (content.lang) attributes.hreflang = content.lang;
-if (content.blank === true) attributes.target = '_blank';
+if (content.blank === true) {
+  attributes.target = '_blank';
+  attributes.title = (attributes.title ? attributes.title : contentPlaceholder('Intitulé')) + ' - nouvelle fenêtre';
+}
 if (content.downloadable === true) attributes.download = '';
 else if (content.downloadable === false) attributes.target = '_blank';
 
