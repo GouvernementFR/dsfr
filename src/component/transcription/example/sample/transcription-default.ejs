@@ -4,6 +4,7 @@ let data = {
   id: uniqueId('transcription'),
   title: getText('modal.title', 'transcription'),
   content: transcription.content || randomContent(['text', 'list']),
+  fullscreen: getText('button.fullscreen', 'transcription'),
   ...transcription
 }
 %>

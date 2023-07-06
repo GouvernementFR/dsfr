@@ -28,9 +28,8 @@ if (transcription.id) attributes.id = transcription.id;
 let modal = {
   title: transcription.title,
   body: transcription.content,
-  id: transcription.modalId || uniqueId('modal-transcription'),
-  customFooter: include('../../example/sample/footer/actions'),
-  size: 'lg',
+  id: transcription.modalId || uniqueId('modal-transcription'),
+  size: 'lg'
 }
 let modalId = prefix + '-transcription-modal-' + transcription.id;
 let collapseId = prefix + '-transcription-collapse-' + transcription.id;
@@ -40,5 +39,10 @@ let collapseId = prefix + '-transcription-collapse-' + transcription.id;
   <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
   <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
     <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
+    <div class="<%= prefix %>-transcription__footer">
+      <div class="<%= prefix %>-transcription__actions-group">
+        <%- include('../../../button/template/ejs/button.ejs', { button: {label: transcription.fullscreen, title: transcription.fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'data-fr-opened': false} } } ); %>
+      </div>
+    </div>
   </div>
 </div>
