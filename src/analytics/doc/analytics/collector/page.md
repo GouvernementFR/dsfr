@@ -112,7 +112,7 @@ _Date_ (EA: page_date)
 
 `window.dsfr.analytics.page.date`
 
-* Défini la date de publication de la page
+* Défini la date de publication de la page restituée au format de date calendaire [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) [YYYY-MM-DD]
 
 * * *
 
