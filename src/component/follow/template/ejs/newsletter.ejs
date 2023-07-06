@@ -42,6 +42,8 @@ let newsletterClasses = [prefix + '-follow__newsletter'];
       <% } %>
     <% } else if (newsletter.type === 'button') { %>
       <%- include('../../../button/template/ejs/button.ejs', {button: newsletter.button}); %>
+    <% } else if (newsletter.type === 'alert') { %>
+      <%- include('../../../alert/template/ejs/alert.ejs', {alert: newsletter.alert}); %>
     <% } %>
   </div>
 </div>
