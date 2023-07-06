@@ -20,7 +20,6 @@ class HeaderModal extends api.core.Instance {
   }
 
   activateModal () {
-    this.setAttribute('role', 'dialog');
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
     modal.isEnabled = true;
@@ -39,7 +38,6 @@ class HeaderModal extends api.core.Instance {
     if (!modal) return;
     modal.conceal();
     modal.isEnabled = false;
-    this.removeAttribute('role');
     this.removeAttribute('aria-labelledby');
     this.unlisten('click', this._clickHandling, { capture: true });
   }

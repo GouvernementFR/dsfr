@@ -6,6 +6,7 @@ import { ModalAttribute } from './modal-attribute';
 class Modal extends api.core.Disclosure {
   constructor () {
     super(api.core.DisclosureType.OPENED, ModalSelector.MODAL, ModalButton, 'ModalsGroup');
+    this._isDialog = true;
     this.scrolling = this.resize.bind(this, false);
     this.resizing = this.resize.bind(this, true);
   }
@@ -16,6 +17,10 @@ class Modal extends api.core.Disclosure {
 
   init () {
     super.init();
+    this._isDialog = this.node.tagName === 'DIALOG';
+    this.modalTitle = this.node.querySelector(ModalSelector.TITLE);
+    if (this._isDialog) this.setTitleId();
+    this.isScrolling = false;
     this.listenClick();
     this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
   }
@@ -34,6 +39,9 @@ class Modal extends api.core.Disclosure {
     this.isScrollLocked = true;
     this.setAttribute('aria-modal', 'true');
     this.setAttribute('open', 'true');
+    if (!this._isDialog) {
+      this.activateModal();
+    }
     return true;
   }
 
@@ -43,7 +51,38 @@ class Modal extends api.core.Disclosure {
     this.removeAttribute('aria-modal');
     this.removeAttribute('open');
     if (this.body) this.body.deactivate();
+    if (!this._isDialog) {
+      this.deactivateModal();
+    }
     return true;
+  }
+
+  get isDialog () {
+    return this._isDialog;
+  }
+
+  set isDialog (value) {
+    this._isDialog = value;
+  }
+
+  activateModal () {
+    this.setAttribute('role', 'dialog');
+    if (this.modalTitle) this.setAttribute('aria-labelledby', this.modalTitle.id);
+  }
+
+  deactivateModal () {
+    this.removeAttribute('role');
+    this.removeAttribute('aria-labelledby');
+  }
+
+  setTitleId () {
+    if (this.modalTitle) {
+      if (!this.modalTitle.id && this.id) {
+        this.modalTitle.setAttribute('id', `${this.id}-title`);
+      }
+    } else {
+      console.warn('modal component requires a title with class .modal__title');
+    }
   }
 
   _electPrimary (candidates) {

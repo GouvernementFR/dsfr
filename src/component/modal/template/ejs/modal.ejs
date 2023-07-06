@@ -3,6 +3,8 @@
 
 * modal.id (string, required) : id de la modale
 
+* modal.tag (string, required) : balise de la modale (dialog, div>)
+
 * modal.label (string, required) : label du bouton de la modale
 
 * modal.title (string, required) : titre de la modale
@@ -35,6 +37,8 @@
 
 <%
 let modal = locals.modal || {};
+let modalTag = modal.tag || 'dialog';
+const isDialog = modalTag === 'dialog';
 let modalClasses = modal.classes || [];
 modalClasses.push(`${prefix}-modal`);
 
@@ -81,7 +85,7 @@ const titleId = modal.id + '-title';
 
 modalAttrs.role = 'dialog';
 
-if (modal.title) modalAttrs['aria-labelledby'] = titleId;
+if (isDialog && modal.title) modalAttrs['aria-labelledby'] = titleId;
 
 if (modal.top) modalClasses.push(`${prefix}-modal--top`);
 
@@ -89,7 +93,7 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
 
 %>
 
-<dialog id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
+<<%= modalTag %> id="<%= modal.id %>" <%- includeClasses(modalClasses) %> <%- includeAttrs(modalAttrs); %>>
   <div class="<%= prefix %>-container <%= prefix %>-container--fluid <%= prefix %>-container-md">
     <div class="<%= prefix %>-grid-row <%= prefix %>-grid-row--center">
       <div <%- includeClasses(gridClasses); %>>
@@ -120,4 +124,4 @@ if (modal.concealingBackdrop !== undefined) modalAttrs[`data-${prefix}-concealin
       </div>
     </div>
   </div>
-</dialog>
+</<%= modalTag %>>
