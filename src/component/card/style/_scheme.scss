@@ -42,7 +42,7 @@
     }
 
     &__title {
-      @include color.text(default grey, (legacy:$legacy));
+      @include color.text(title grey, (legacy:$legacy));
 
       a[href] {
         @include color.text(action-high blue-france, (legacy:$legacy));

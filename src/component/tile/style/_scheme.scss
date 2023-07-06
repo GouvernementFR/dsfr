@@ -12,6 +12,7 @@
     @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
 
     &__title {
+      @include color.text(title grey, (legacy: $legacy));
       @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
 
       @include before {
