@@ -42,6 +42,15 @@ if (tile.pictogram) {
 if (tile.noLink) data.content.noLink = true;
 
 if (tile.content) {
+  if (tile.content.attributes) data.content.attributes = tile.content.attributes;
+  if (tile.content.assess) data.content.assess = tile.content.assess;
+  if (tile.content.lang) data.content.lang = tile.content.lang;
+  if (tile.content.blank === true) {
+    data.content.blank = tile.content.blank;
+    if (!data.content.attributes) data.content.attributes = {};
+    data.content.attributes.title = (tile.content.attributes?.title ? tile.content.attributes.title : contentPlaceholder('Intitulé')) + getText('blank');
+  } 
+
   if (tile.content.disabled) data.content.disabled = tile.content.disabled;
 
   if (tile.content.details) {
