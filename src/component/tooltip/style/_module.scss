@@ -24,7 +24,7 @@
 
   &:not(&--shown) {
     // transition in/out
-    visibility: hidden;
+    display: none;
     opacity: 0;
   }
 
