@@ -7,7 +7,6 @@
   @include display-flex(column);
   @include relative();
 
-  
   &#{ns(enlarge-link)} {
     #{ns(card)}__title {
       a {
