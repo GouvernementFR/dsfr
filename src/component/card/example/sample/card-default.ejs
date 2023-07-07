@@ -10,7 +10,7 @@ const data = {
   size: card.size,
   enlarge: card.enlarge !== false && card.footer === undefined && !card.noLink,
   icon: card.icon,
-  variations: card.variations
+  ...(card.variations && {variations: card.variations})
 }
 
 if (card.noLink) data.content.noLink = true;

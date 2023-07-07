@@ -11,6 +11,7 @@ const data = {
   enlarge: tile.enlarge !== false && tile.footer === undefined && !tile.noLink,
   icon: tile.icon,
   download: tile.download,
+  ...(tile.variations && {variations: tile.variations})
 }
 
 if (tile.horizontal) {
