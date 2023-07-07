@@ -22,6 +22,9 @@ class Tooltip extends api.core.Placement {
 
   init () {
     super.init();
+    if (!this.node.parentNode.querySelector(`[aria-describedby="${this.id}"]`).classList.contains(api.internals.ns.selector('btn--tooltip', ''))) {
+      this.register(`span[id="${this.id}"]`, TooltipReferent);
+    }
     this.register(`[aria-describedby="${this.id}"]`, TooltipReferent);
     this.listen('transitionend', this.transitionEnd.bind(this));
   }
@@ -65,7 +68,7 @@ class Tooltip extends api.core.Placement {
     const limit = this.rect.width * 0.5 - 8;
     if (x < -limit) x = -limit;
     if (x > limit) x = limit;
-    const roundedX = Math.round((x + Number.EPSILON) * 100) / 100; // arrondi a 2 décimal
+    const roundedX = Math.round((x + Number.EPSILON) * 100) / 100; // arrondi à 2 décimal
     this.setProperty('--arrow-x', `${roundedX}px`);
   }
 }

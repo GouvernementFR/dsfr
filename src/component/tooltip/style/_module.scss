@@ -15,7 +15,6 @@
   @include text-style(xs);
   opacity: 1;
   visibility: visible;
-  pointer-events: none;
   transition: opacity 0s 0.15s, visibility 0s 0.15s;
   text-align: left;
   background-repeat: no-repeat;
