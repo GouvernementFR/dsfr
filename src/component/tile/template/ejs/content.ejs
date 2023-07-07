@@ -13,22 +13,26 @@
 
 * content.markup (string, optional) : (défaut : h3) niveau de titre
 
-* content.blank (boolean, optional) : Ajoute l'attribut target="_blank" pour ouvrir le lien dans une nouvelle fenêtre
+* content.blank (boolean, optional) : Ajoute l'attribut target="_blank" pour ouvrir le lien dans une nouvelle fenêtre, nécessite l'ajout d'un attribut title "intitulé - nouvelle fenêtre"
 
-* content.downloadable (boolean, optional) : Ajoute l'attribut download au lien
+* content.downloadable (boolean || string, optional) : Ajoute l'attribut download au lien, si string, ajoute la valeur comme nom de fichier
 
 * content.lang (boolean, optional) : Ajoute l'attribut hreflang au lien, pour définir la langue du document lié
 
 * content.disabled (boolean, optional) : Si true, retire le href du lien pour le désactiver
 
 * content.assess (String, optional): Si true, remplissage automatique du poid et type de fichier à telecharger
+
+* content.noLink (boolean, optional) : Présence du lien
+
+* content.attributes (object, optional) : Attributs à ajouter au lien
 %>
 <%
 let start = {};
 
 const markup = content.markup || 'h3';
 const href = content.href || '#';
-const attributes = {}
+const attributes = content.attributes || {};
 const hasLink = !content.noLink;
 if (content.assess === true) {
     attributes[`data-${prefix}-assess-file`] = '';
@@ -37,9 +41,9 @@ if (content.assess === true) {
 }
 if (content.disabled !== true) attributes.href = href;
 if (content.lang) attributes.hreflang = content.lang;
-if (content.blank === true) attributes.target = '_blank';
 if (content.downloadable === true) attributes.download = '';
-else if (content.downloadable === false) attributes.target = '_blank';
+if (typeof(content.downloadable) === 'string') attributes.download = content.downloadable;
+if (content.blank === true) attributes.target = '_blank';
 
 if (content.badgesGroup) start.badgesGroup = content.badgesGroup;
 if (content.tagsGroup) start.tagsGroup = content.tagsGroup;
