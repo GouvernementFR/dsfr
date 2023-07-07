@@ -9,7 +9,7 @@ let data = {
   ...tooltip
 };
 let triggerText = tooltip.triggerText || getText('sample.example', 'tooltip');
-let tooltipTarget = `<span class="${prefix}-text--bold" aria-describedby="${tooltipId}">${triggerText}</span>`;
+let tooltipTarget = `<span class="${prefix}-text--bold" tabindex="0" aria-describedby="${tooltipId}">${triggerText}</span>`;
 let paragraphInsert = tooltipTarget + include('../sample/tooltip-default', {tooltip: data});
 %>
 
