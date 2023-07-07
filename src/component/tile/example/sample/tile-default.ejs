@@ -33,7 +33,7 @@ if (tile.pictogram) {
     case 'object':
       data.header.pictogram = tile.pictogram;
       break;
-  
+
     default:
       data.header.pictogram = {name: 'city-hall'};
       break;
@@ -43,6 +43,14 @@ if (tile.pictogram) {
 if (tile.noLink) data.content.noLink = true;
 
 if (tile.content) {
+  data.content.attributes = tile.content.attributes ?? {};
+  if (tile.content.assess) data.content.assess = tile.content.assess;
+  if (tile.content.lang) data.content.lang = tile.content.lang;
+  if (tile.content.blank === true) {
+    data.content.blank = tile.content.blank;
+    data.content.attributes.title = tile.content.attributes?.title ? tile.content.attributes.title : `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
+  }
+
   if (tile.content.disabled) data.content.disabled = tile.content.disabled;
 
   if (tile.content.details) {
