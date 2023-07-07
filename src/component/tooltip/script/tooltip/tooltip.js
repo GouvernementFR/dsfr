@@ -65,7 +65,8 @@ class Tooltip extends api.core.Placement {
     const limit = this.rect.width * 0.5 - 8;
     if (x < -limit) x = -limit;
     if (x > limit) x = limit;
-    this.setProperty('--arrow-x', `${x}px`);
+    const roundedX = Math.round((x + Number.EPSILON) * 100) / 100; // arrondi a 2 décimal
+    this.setProperty('--arrow-x', `${roundedX}px`);
   }
 }
 
