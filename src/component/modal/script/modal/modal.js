@@ -18,11 +18,13 @@ class Modal extends api.core.Disclosure {
   init () {
     super.init();
     this._isDialog = this.node.tagName === 'DIALOG';
-    this.modalTitle = this.node.querySelector(ModalSelector.TITLE);
-    if (this._isDialog) this.setTitleId();
     this.isScrolling = false;
     this.listenClick();
     this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
+  }
+
+  retrieved () {
+    this._ensureAccessibleName();
   }
 
   get body () {
@@ -68,33 +70,46 @@ class Modal extends api.core.Disclosure {
   activateModal () {
     if (this._isActive) return;
     this._isActive = true;
-
     this._hasDialogRole = this.getAttribute('role') === 'dialog';
-    this._hasAriaLablledBy = this.hasAttribute('aria-labelledby');
     if (!this._hasDialogRole) this.setAttribute('role', 'dialog');
-    if (!this._hasAriaLablledBy && this.modalTitle) this.setAttribute('aria-labelledby', this.modalTitle.id);
   }
 
   deactivateModal () {
     if (!this._isActive) return;
     this._isActive = false;
-
     if (!this._hasDialogRole) this.removeAttribute('role');
-    if (!this._hasAriaLablledBy) this.removeAttribute('aria-labelledby');
   }
 
-  setTitleId () {
-    if (this.modalTitle) {
-      if (!this.modalTitle.id && this.id) {
-        this.modalTitle.setAttribute('id', `${this.id}-title`);
-      }
-    } else {
-      console.warn('modal component requires a title with class .modal__title');
+  _setAccessibleName (element, type, log) {
+    let id;
+    if (element.id) id = element.id;
+    else {
+      id = api.internals.dom.uniqueId(`${this.id}-${type}`);
+      api.inspector.warn(`modal '${this.id}' - add id '${id}' to ${log}`);
+      element.setAttribute('id', id);
+    }
+    if (id) {
+      api.inspector.warn(`modal '${this.id}' - add reference to ${log} for accessible name (aria-labelledby)`);
+      this.setAttribute('aria-labelledby', id);
     }
   }
 
-  _electPrimary (candidates) {
-    return null;
+  _ensureAccessibleName () {
+    if (this.hasAttribute('aria-labelledby') || this.hasAttribute('aria-label')) return;
+    api.inspector.warn(`modal '${this.id}' - missing accessible name`);
+    const title = this.node.querySelector(ModalSelector.TITLE);
+    const primary = this.primaryButtons[0];
+
+    switch (true) {
+      case title !== null:
+        this._setAccessibleName(title, 'title', 'title');
+        break;
+
+      case primary !== undefined:
+        api.inspector.warn(`modal '${this.id}' - missing required title, fallback to primary button`);
+        this._setAccessibleName(primary, 'primary', 'primary button');
+        break;
+    }
   }
 }
 
