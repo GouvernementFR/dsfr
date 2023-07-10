@@ -22,7 +22,9 @@ class TooltipReferent extends api.core.PlacementReferent {
     this.listen('focusout', this.focusout.bind(this));
     if (!this.matches(TooltipSelector.BUTTON)) {
       this.listen('mouseover', this.mouseover.bind(this));
+      this.placement.listen('mouseover', this.mouseover.bind(this));
       this.listen('mouseout', this.mouseout.bind(this));
+      this.placement.listen('mouseout', this.mouseout.bind(this));
     }
     this.listenKey(api.core.KeyCodes.ESCAPE, this.escape.bind(this), true, true);
   }
