@@ -80,34 +80,26 @@ class Modal extends api.core.Disclosure {
     if (!this._hasDialogRole) this.removeAttribute('role');
   }
 
-  _setAccessibleName (element, type, log) {
-    let id;
-    if (element.id) id = element.id;
-    else {
-      id = api.internals.dom.uniqueId(`${this.id}-${type}`);
-      api.inspector.warn(`modal '${this.id}' - add id '${id}' to ${log}`);
-      element.setAttribute('id', id);
-    }
-    if (id) {
-      api.inspector.warn(`modal '${this.id}' - add reference to ${log} for accessible name (aria-labelledby)`);
-      this.setAttribute('aria-labelledby', id);
-    }
+  _setAccessibleName (node, append) {
+    const id = this.retrieveNodeId(node, append);
+    this.warn(`add reference to ${append} for accessible name (aria-labelledby)`);
+    this.setAttribute('aria-labelledby', id);
   }
 
   _ensureAccessibleName () {
     if (this.hasAttribute('aria-labelledby') || this.hasAttribute('aria-label')) return;
-    api.inspector.warn(`modal '${this.id}' - missing accessible name`);
+    this.warn('missing accessible name');
     const title = this.node.querySelector(ModalSelector.TITLE);
     const primary = this.primaryButtons[0];
 
     switch (true) {
       case title !== null:
-        this._setAccessibleName(title, 'title', 'title');
+        this._setAccessibleName(title, 'title');
         break;
 
       case primary !== undefined:
-        api.inspector.warn(`modal '${this.id}' - missing required title, fallback to primary button`);
-        this._setAccessibleName(primary, 'primary', 'primary button');
+        this.warn('missing required title, fallback to primary button');
+        this._setAccessibleName(primary, 'primary');
         break;
     }
   }
