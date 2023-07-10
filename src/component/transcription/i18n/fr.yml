@@ -9,6 +9,7 @@ modal:
 button:
   close: Fermer
   fullscreen: Agrandir
+  fullscreenAriaLabel: Agrandir la transcription
 link:
   download: Télécharger
 sample:

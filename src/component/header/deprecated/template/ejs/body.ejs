@@ -14,7 +14,7 @@
       <%- include('./brand', {brand: body.brand}); %>
 
       <% if (body.tools) { %>
-        <%- include('./tools', {tools: body.tools}); %>
+        <%- include('./tools', { tools: body.tools, navbar: body.brand.navbar }); %>
       <% } %>
     </div>
   </div>

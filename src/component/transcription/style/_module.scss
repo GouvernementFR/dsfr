@@ -70,6 +70,8 @@
   }
 
   #{ns(collapse)} {
+    @include display-flex(column-reverse);
+
     &--expanded {
       @include margin(0 0.25v);
     }

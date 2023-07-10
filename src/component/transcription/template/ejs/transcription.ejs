@@ -26,6 +26,7 @@ const title = getText('collapse.title', 'transcription');
 if (transcription.id) attributes.id = transcription.id;
 
 let modal = {
+  tag: 'div',
   title: transcription.title,
   body: transcription.content,
   id: transcription.modalId || uniqueId('modal-transcription'),
@@ -38,11 +39,11 @@ let collapseId = prefix + '-transcription-collapse-' + transcription.id;
 <div class="<%= prefix %>-transcription" <%- includeAttrs(attributes) %>>
   <button class="<%= prefix %>-transcription__btn" aria-expanded="<%= isExpanded %>" aria-controls="<%= collapseId %>"><%= title %></button>
   <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
-    <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
     <div class="<%= prefix %>-transcription__footer">
       <div class="<%= prefix %>-transcription__actions-group">
-        <%- include('../../../button/template/ejs/button.ejs', { button: {label: transcription.fullscreen, title: transcription.fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'data-fr-opened': false} } } ); %>
+        <%- include('../../../button/template/ejs/button.ejs', { button: {label: transcription.fullscreen, title: transcription.fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'aria-label': transcription.fullscreenAriaLabel, 'data-fr-opened': false} } } ); %>
       </div>
     </div>
+    <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
   </div>
 </div>
