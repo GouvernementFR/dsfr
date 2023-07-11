@@ -1,5 +1,5 @@
 #{ns(message)} {
-  @include display-flex(row, center);
+  @include display-flex(row, flex-start);
   @include text-style(xs);
   @include margin(0 0 1v 0);
 
@@ -13,6 +13,7 @@
     @include icon(null, sm, before) {
       display: inline-block;
       @include margin-right(1v);
+      @include margin-top(0.5v);
     }
   }
 

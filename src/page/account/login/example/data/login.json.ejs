@@ -9,15 +9,6 @@ const alert = {
 };
 
 const elements = [];
-/*
-elements.push({
-  type: 'paragraph',
-  data: {
-    content: getText('login.desc', 'login'),
-    size: 'sm'
-  }
-});
- */
 
 if (login.error) {
   elements.push({
@@ -27,15 +18,6 @@ if (login.error) {
 }
 
 const fieldsetElements = [];
-
-/*
-fieldsetElements.push({
-  type: 'hint',
-  data: {
-    text: getText('hint.mandatory', 'form')
-  }
-})
- */
 
 const classes = [];
 const attributes = {};
@@ -119,7 +101,7 @@ elements.push({
 
 const data = {
   id: uniqueId('login'),
-  legend: `<h2 class=${prefix}-h5>${getText('login.legend', 'login')}</h2>`,
+  legend: `<h2 class="${prefix}-h5">${getText('login.legend', 'login')}</h2>`,
   elements: elements
 };
  %>

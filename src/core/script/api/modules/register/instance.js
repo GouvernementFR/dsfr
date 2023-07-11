@@ -3,6 +3,7 @@ import state from '../../state.js';
 import inspector from '../../inspect/inspector.js';
 import { Breakpoints } from './breakpoints.js';
 import { addClass, removeClass, hasClass, getClassNames } from '../../utilities/dom/classes.js';
+import { uniqueId } from '../../utilities/dom/id';
 import { completeAssign } from '../../utilities/property/complete-assign.js';
 import { queryParentSelector, querySelectorAllArray } from '../../utilities/dom/query-selector.js';
 import { queryActions } from '../../utilities/dom/actions.js';
@@ -68,6 +69,31 @@ class Instance {
     return completeAssign(proxy, proxyAccessors);
   }
 
+  log (...values) {
+    values.unshift(`${this.registration.instanceClassName} #${this.id} - `);
+    inspector.log.apply(inspector, values);
+  }
+
+  debug (...values) {
+    values.unshift(`${this.registration.instanceClassName} #${this.id} - `);
+    inspector.debug.apply(inspector, values);
+  }
+
+  info (...values) {
+    values.unshift(`${this.registration.instanceClassName} #${this.id} - `);
+    inspector.info.apply(inspector, values);
+  }
+
+  warn (...values) {
+    values.unshift(`${this.registration.instanceClassName} #${this.id} - `);
+    inspector.warn.apply(inspector, values);
+  }
+
+  error (...values) {
+    values.unshift(`${this.registration.instanceClassName} #${this.id} - `);
+    inspector.error.apply(inspector, values);
+  }
+
   register (selector, InstanceClass) {
     const registration = state.getModule('register').register(selector, InstanceClass, this);
     this._registrations.push(registration);
@@ -83,6 +109,7 @@ class Instance {
     this.node.dispatchEvent(event);
   }
 
+  // TODO v2 => listener au niveau des éléments qui redistribuent aux instances.
   listen (type, closure, options) {
     if (!this._listeners[type]) this._listeners[type] = [];
     const listeners = this._listeners[type];
@@ -280,12 +307,20 @@ class Instance {
 
   mutate (attributeNames) {}
 
+  retrieveNodeId (node, append) {
+    if (node.id) return node.id;
+    const id = uniqueId(`${this.id}-${append}`);
+    this.warn(`add id '${id}' to ${append}`);
+    node.setAttribute('id', id);
+    return id;
+  }
+
   get isDisposed () {
     return this._isDisposed;
   }
 
   _dispose () {
-    inspector.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
+    this.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
     this.unlisten();
     this._hashes = null;
@@ -399,6 +434,10 @@ class Instance {
 
   focus () {
     this.node.focus();
+  }
+
+  blur () {
+    this.node.blur();
   }
 
   focusClosest () {

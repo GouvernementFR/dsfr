@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile de téléchargement, cas max', '../../sample/tile-default', { tile : { pictogram: 'document-download', download: true, content: { title: 'Télécharger le document XX', description: 'Description (optionnelle)', downloadable: true, details: 'Détail obligatoire (Extension - Poids - Langue)'} }}, true, '../../sample/tile-layout', {col: {md:6, lg:4}, desc: 'Ajouter un attribut "download" sur le lien permet de forcer le téléchargement et éviter l\'ouverture dans le navigateur. Ajoutez-y une valeur pour renommer le fichier au téléchargement.'}); %>
+
+<%- sample('Tuile de téléchargement, contenu minimum', '../../sample/tile-default', { tile : { download: true, content: { title: 'Télécharger le document XX', downloadable: true, details: 'Détail obligatoire (Extension - Poids - Langue)'} }}, true, '../../sample/tile-layout', {col: {md:6, lg:4}}); %>

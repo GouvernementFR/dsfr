@@ -1,0 +1,7 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile de téléchargement avec détail renseigné automatiquement', '../../sample/tile-default', { tile : {  pictogram: 'document-download', download: true, content: { href: '../../../img/image.jpg', downloadable: true, title: 'Télécharger le document XX', description: 'Description (optionnelle)', assess: true, details: contentPlaceholder('Ce texte est remplacé en js par les informations du fichier, insérer ici les données connues ou laisser vide')} }}, true, '../../sample/tile-layout', {col: {md:6, lg:4}}); %>
+
+<div lang="en">
+    <%- sample({title: 'Remplissage automatique des détails en Bytes', subtitle: 'Sur une page en anglais, ou toute autre langue utilisant l\'unité "Bytes" plutot que "Octet", ajouter la valeur "bytes" sur l\'attribut : data-fr-assess-file="bytes".'}, '../../sample/tile-default', { tile: {pictogram: 'document-download', download: true, content: { href: '../../../img/image.jpg', downloadable: true, title:'Download the french document lorem ipsum', details: ' ', hreflang: 'fr', assess: 'bytes' }} }, true, '../../sample/tile-layout', {col: {md:6, lg:4}}); %>
+</div>

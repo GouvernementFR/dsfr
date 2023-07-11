@@ -42,7 +42,11 @@
     }
 
     &__title {
-      @include color.text(action-high blue-france, (legacy:$legacy));
+      @include color.text(title grey, (legacy:$legacy));
+
+      a[href] {
+        @include color.text(action-high blue-france, (legacy:$legacy));
+      }
 
       @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
     }

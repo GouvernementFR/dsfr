@@ -1,0 +1,9 @@
+
+<%
+let data = {};
+const newsletter = JSON.parse(include('../data/newsletter-alert.json.ejs'), {newsletter: {success: follow.newsletter.success}});
+const socials = JSON.parse(include('../data/socials.json.ejs'));
+data = {...newsletter, ...socials};
+ %>
+<%- include('../../template/ejs/follow.ejs', {follow: data}); %>
+

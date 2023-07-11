@@ -1,17 +1,16 @@
 id: name
-title: Modèle de bloc de nom et prénom
+title: Bloc fonctionnel de nom et prénom
 description: La demande de nom et prénom permet d’aider un utilisateur à saisir son nom et son prénom.
 doc:
 hint:
-  married: 'Indication : Ancien nom…'
-  birth: 'Indication : Nom de famille non rectifié après décision du tribunal'
+  married: 'Indication : ancien nom…'
+  birth: 'Indication : nom de famille non rectifié après décision du tribunal.'
 label:
   add-firstname: Ajouter un prénom
   remove-firstname: Supprimer le prénom
   country: Pays
   family: Nom
   given: Prénom
-  givens: Prénom(s)
   usual: Nom d'usage
   birth: Nom de naissance
   no-firstname: Je n'ai pas de prénom
@@ -21,9 +20,6 @@ country:
   japan: Japon
   france: France
   england: Angleterre
-legend:
-  name: Nom
-  firstname: Prénom(s)
 sample:
   default: Défaut
   button: bouton

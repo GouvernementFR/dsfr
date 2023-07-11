@@ -65,7 +65,7 @@ const firstnames = {
   type: 'input',
   data: {
     id: uniqueId('givens'),
-    label: getText('label.givens', 'name'),
+    label: getText('label.given', 'name'),
     name: 'given-names',
     autocomplete: 'given-name',
     spellcheck: false
@@ -111,7 +111,7 @@ const buildFieldset = () => {
     data: {
       id: fieldsetId,
       legend: {
-        label: getText('legend.firstname', 'name'),
+        label: getText('label.given', 'name'),
         sr: true
       },
       elements: firstnameElements,
@@ -177,7 +177,7 @@ for (const field of fields) {
 
 const data = {
   id: name.id || uniqueId('name'),
-  legend: name.legend || { label: getText('legend.name', 'name'), sr: true },
+  legend: name.legend || { label: getText('label.family', 'name'), sr: true },
   elements: elements
 }
 %>

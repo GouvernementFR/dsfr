@@ -1,0 +1,7 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Carte de téléchargement, avec remplissage automatique des détails', './card-download', { card : { content: { assess: true, details: [{ label: contentPlaceholder('Ce texte est remplacé en js par les informations du fichier, insérer ici les données connues ou laisser vide'), position: 'end'}]} }}, true, '../../sample/card-layout', {desc: 'L\'attribut data-fr-assess-file permet de remplir automatiquement le detail depuis les informations du fichier (extension, poids, langue)', col: {md:8, lg:6}}); %>
+
+<div lang="en">
+  <%- sample({title: 'Remplissage automatique des détails en Bytes', subtitle: 'Sur une page en anglais, ou toute autre langue utilisant l\'unité "Bytes" plutot que "Octet", ajouter la valeur "bytes" sur l\'attribut : data-fr-assess-file="bytes".'}, './card-download', { card: {title:'Download the french document lorem ipsum', description: false, content: { details: [{ label: contentPlaceholder('Ce texte est remplacé en js par les informations du fichier, insérer ici les données connues ou laisser vide'), position: 'end'}], assess: 'bytes' } } }, true, '../../sample/card-layout', {col: {md:8, lg:6}}); %>
+</div>

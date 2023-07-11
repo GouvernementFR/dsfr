@@ -1,13 +1,15 @@
 <%
 
 const card = locals.card || {}
+const content = card.content || {}
 const data = {
   img: imgData('img/placeholder.A4.png', 'unknown'),
   title: "Télécharger le/la [Typologie de document] « [Nom du document] »",
   href: '/example/img/placeholder.3x4.png',
   download: true,
   content: {
-    description: "Texte de description (facultatif)"
+    description: "Texte de description (facultatif)",
+    ...content,
   },
   ...card
 } %>

@@ -1,4 +1,4 @@
-title: Modèle de date unique
+title: Bloc fonctionnel de date unique
 description:
 error:
   day: Le jour est invalide
@@ -6,7 +6,7 @@ error:
   month: Le mois est invalide
   year: L’année est invalide
 hint:
-  birthdate : 'Indication : Texte de description additionnel'
+  birthdate : 'Indication : texte de description additionnel'
   day: 'Exemple : 14'
   month: 'Exemple : 12'
   year: 'Exemple : 1984'

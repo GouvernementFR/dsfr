@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile de téléchargement MD, taille par défaut', '../../sample/tile-default', { tile : { pictogram: 'document-download', download: true, content: { title: 'Télécharger le document XX', description: 'Description (optionnelle)', downloadable: true, details: 'Détail obligatoire (Extension - Poids - Langue)'} }}, true, '../../sample/tile-layout', {col: {md:6, lg:4}}); %>
+
+<%- sample('Tuile de téléchargement SM', '../../sample/tile-default', { tile : { size: 'sm', pictogram: 'document-download', download: true, content: { title: 'Télécharger le document XX', description: 'Description (optionnelle)', downloadable: true, details: 'Détail obligatoire (Extension - Poids - Langue)'} }}, true, '../../sample/tile-layout', {col: {md:4, lg:3}}); %>

@@ -1,0 +1,3 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile de téléchargement avec fichier en langue étrangère ', '../../sample/tile-default', { tile : {  pictogram: 'document-download', download: true, content: { href: '../../../img/image.jpg', lang: 'en', downloadable: true, title: 'Télécharger le document XX', description: 'Description (optionnelle)', assess: true, details: contentPlaceholder('Ce texte est remplacé en js par les informations du fichier, insérer ici les données connues ou laisser vide')} }}, true, '../../sample/tile-layout', {col: {md:6, lg:4}}); %>

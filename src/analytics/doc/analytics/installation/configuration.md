@@ -7,7 +7,6 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
 ```javascript
 <script>
     window.dsfr = {
-        verbose: true,
         analytics: {
             domain: ' mon.domainedetracking.com',
             // collection: 'manual',
@@ -19,7 +18,6 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
                 // ...
             },
             site: {
-                production: 'false',
                 entity: 'Ministère des armées', // Entity responsible for website
             }
         }

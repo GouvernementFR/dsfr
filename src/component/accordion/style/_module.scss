@@ -35,9 +35,6 @@
       @include margin-right(0);
       @include margin-left(auto);
     }
-
-    @include padding(3v 0);
-    @include padding(3v 4v, md);
   }
 
   #{ns(collapse)} {

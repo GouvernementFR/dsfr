@@ -1,5 +1,5 @@
-title: Modèle de bloc d'adresse'
-description: La demande de civilité permet à un utilisateur de donner sa civilité (sexe, situation familière, titre d’appel).
+title: Bloc fonctionnel d'adresse postale'
+description: La demande d’adresse postale permet d’aider un utilisateur à saisir son adresse.
 doc:
 
 label:
@@ -19,8 +19,8 @@ label:
   name: Dénomination
   country: Pays
 hint:
-  address: 'Indication : Numéro et voie'
-  complement: 'Indication : Bâtiment, immeuble, escalier et numéro d’appartement'
+  address: 'Indication : numéro et voie'
+  complement: 'Indication : bâtiment, immeuble, escalier et numéro d’appartement'
   city: 'Exemple : Montpellier'
   postal: 'Format attendu : 5 chiffres'
 legend:

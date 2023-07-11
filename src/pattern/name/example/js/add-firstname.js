@@ -27,7 +27,7 @@ window.addFirstname = (button, id) => {
   removeButton.innerHTML = labelRemoveButton;
   removeButton.title = labelRemoveButton;
 
-  removeButton.setAttribute('onclick', 'this.copy.remove()');
+  removeButton.setAttribute('onclick', 'removeFirstname(this.copy)');
   removeButton.copy = copy;
 
   wrapper.appendChild(copy.getElementsByTagName('input')[0]);

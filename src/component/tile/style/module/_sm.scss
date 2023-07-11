@@ -5,6 +5,8 @@
 
 #{ns(tile--sm)} {
   @include padding(6v 6v 7v);
+  @include nest-badge(sm);
+  @include nest-tag(sm);
 
   #{ns(tile)} {
     &__title {
@@ -12,9 +14,7 @@
       @include margin-bottom(1v);
 
       a {
-        @include icon-size(sm, after) {
-          @include absolute(null, 6v, 7v);
-        }
+        @include icon-size(sm, after);
       }
     }
 
@@ -43,7 +43,15 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(#{ns(tile--no-icon)}) #{ns(tile__content)} {
-    @include padding-bottom(8v);
+  &#{ns(enlarge-link)}:not(#{ns(tile--no-icon)}) {
+    #{ns(tile__title)} a {
+      @include icon-size(sm, after) {
+        @include absolute(null, 6v, 7v);
+      }
+    }
+
+    #{ns(tile__content)} {
+      @include padding-bottom(8v);
+    }
   }
 }

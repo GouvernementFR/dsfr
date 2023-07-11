@@ -183,6 +183,7 @@ class Disclosure extends Instance {
     this._primaryButtons = this._electPrimaries(this.buttons);
 
     if (this._hasRetrieved || this._primaryButtons.length === 0) return;
+    this.retrieved();
     this._hasRetrieved = true;
 
     this.applyAbility(true);
@@ -204,6 +205,8 @@ class Disclosure extends Instance {
       }
     }
   }
+
+  retrieved () {}
 
   _spotlight () {
     this.disclose();

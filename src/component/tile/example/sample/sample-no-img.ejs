@@ -1,9 +1,9 @@
 <% const sample = getSample(include); %>
 
-<%- sample('Tuile sans image', './tile-default', {}, true, './tile-layout', {col: {md:4}}); %>
+<%- sample('Tuile sans image cas max', './tile-default', {tile: {content: {description:true, badge: true, details: true}}}, true, './tile-layout', {col: {md:4, lg:3}}); %>
 
-<%- sample('Tuile titre et description', './tile-default', {content: {description: true}}, true, './tile-layout', {col: {md:4}}); %>
+<%- sample('Tuile sans image, minimum', './tile-default', {}, true, './tile-layout', {col: {md:4, lg:3}}); %>
 
-<%- sample('Tuile titre et détails', './tile-default', {tile: {content: {details: true}}}, true, './tile-layout', {col: {md:4}}); %>
+<%- sample('Tuile titre et description', './tile-default', {tile: { content: {description:true} } }, true, './tile-layout', {col: {md:4, lg:3}}); %>
 
-<%- sample('Tuile sans image full contenu', './tile-default', {tile: {content: {description:true, badge: true, details: true}}}, true, './tile-layout', {col: {md:4}}); %>
+<%- sample('Tuile titre et détails', './tile-default', {tile: {content: {details: true}}}, true, './tile-layout', {col: {md:4, lg:3}}); %>
