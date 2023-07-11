@@ -12,6 +12,11 @@ class PlacementReferent extends Instance {
 
   init () {
     this.registration.creator.setReferent(this);
+    this._placement = this.registration.creator;
+  }
+
+  get placement () {
+    return this._placement;
   }
 
   get isShown () {
