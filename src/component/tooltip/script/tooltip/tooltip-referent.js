@@ -18,18 +18,39 @@ class TooltipReferent extends api.core.PlacementReferent {
 
   init () {
     super.init();
-    this.listen('focusin', this.focusin.bind(this));
-    this.listen('focusout', this.focusout.bind(this));
+    this.listen('focusin', this.focusIn.bind(this));
+    this.listen('focusout', this.focusOut.bind(this));
     if (!this.matches(TooltipSelector.BUTTON)) {
-      this.listen('mouseover', this.mouseover.bind(this));
-      this.placement.listen('mouseover', this.mouseover.bind(this));
-      this.listen('mouseout', this.mouseout.bind(this));
-      this.placement.listen('mouseout', this.mouseout.bind(this));
+      const mouseover = this.mouseover.bind(this);
+      this.listen('mouseover', mouseover);
+      this.placement.listen('mouseover', mouseover);
+      const mouseout = this.mouseout.bind(this);
+      this.listen('mouseout', mouseout);
+      this.placement.listen('mouseout', mouseout);
     }
-    this.listenKey(api.core.KeyCodes.ESCAPE, this.escape.bind(this), true, true);
+    this.addEmission(api.core.RootEmission.KEYDOWN, this._keydown.bind(this));
+    this.listen('click', this._click.bind(this));
+    this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
   }
 
-  escape () {
+  _click () {
+    this.focus();
+  }
+
+  _clickOut (target) {
+    if (!this.node.contains(target)) this.blur();
+  }
+
+  _keydown (keyCode) {
+    switch (keyCode) {
+      case api.core.KeyCodes.ESCAPE:
+        this.blur();
+        this.close();
+        break;
+    }
+  }
+
+  close () {
     this.state = 0;
   }
 
@@ -43,11 +64,11 @@ class TooltipReferent extends api.core.PlacementReferent {
     this._state = value;
   }
 
-  focusin () {
+  focusIn () {
     this.state |= TooltipReferentState.FOCUS;
   }
 
-  focusout () {
+  focusOut () {
     this.state &= ~TooltipReferentState.FOCUS;
   }
 
