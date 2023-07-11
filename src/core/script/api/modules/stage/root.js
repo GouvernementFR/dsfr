@@ -22,11 +22,11 @@ class Root extends Element {
   }
 
   keydown (e) {
-    this.emit(RootEmission.KEYDOWN, getKeyCode(e.code));
+    this.emit(RootEmission.KEYDOWN, getKeyCode(e.keyCode));
   }
 
   keyup (e) {
-    this.emit(RootEmission.KEYUP, getKeyCode(e.code));
+    this.emit(RootEmission.KEYUP, getKeyCode(e.keyCode));
   }
 }
 
