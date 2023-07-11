@@ -109,6 +109,7 @@ class Instance {
     this.node.dispatchEvent(event);
   }
 
+  // TODO v2 => listener au niveau des éléments qui redistribuent aux instances.
   listen (type, closure, options) {
     if (!this._listeners[type]) this._listeners[type] = [];
     const listeners = this._listeners[type];
@@ -433,6 +434,10 @@ class Instance {
 
   focus () {
     this.node.focus();
+  }
+
+  blur () {
+    this.node.blur();
   }
 
   focusClosest () {

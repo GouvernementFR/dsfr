@@ -8,3 +8,7 @@ export const KeyCodes = {
   RIGHT: 39,
   DOWN: 40
 };
+
+export const getKeyCode = (code) => {
+  for (const keyCode in KeyCodes) if (KeyCodes[keyCode] === code) return keyCode;
+};
