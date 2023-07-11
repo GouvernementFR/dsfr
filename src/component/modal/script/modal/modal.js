@@ -20,7 +20,33 @@ class Modal extends api.core.Disclosure {
     this._isDialog = this.node.tagName === 'DIALOG';
     this.isScrolling = false;
     this.listenClick();
-    this.listenKey(api.core.KeyCodes.ESCAPE, this.conceal.bind(this, false, false), true, true);
+    this.addEmission(api.core.RootEmission.KEYDOWN, this._keydown.bind(this));
+  }
+
+  _keydown (keyCode) {
+    switch (keyCode) {
+      case api.core.KeyCodes.ESCAPE:
+        this._escape();
+        break;
+    }
+  }
+
+  // TODO v2 : passer les tagName d'action en constante
+  _escape () {
+    const tagName = document.activeElement ? document.activeElement.tagName : undefined;
+
+    switch (tagName) {
+      case 'INPUT':
+      case 'LABEL':
+      case 'TEXTAREA':
+      case 'SELECT':
+      case 'AUDIO':
+      case 'VIDEO':
+        break;
+
+      default:
+        this.conceal();
+    }
   }
 
   retrieved () {
