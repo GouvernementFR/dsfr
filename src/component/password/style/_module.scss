@@ -50,10 +50,7 @@
 
   #{ns(message)} {
     @include after {
-      position: absolute;
-      overflow: hidden;
-      width: 0;
-      height: 0;
+      @include sr-only();
     }
   }
 }
