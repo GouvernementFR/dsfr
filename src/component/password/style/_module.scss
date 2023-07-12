@@ -39,4 +39,21 @@
   &__label {
     @include padding-right(24v);
   }
+
+  #{ns(message--valid)}#{ns-attr(valid)} {
+    @include after('\00a0-\00a0' attr(#{ns-attr(valid, null, true)}));
+  }
+
+  #{ns(message--error)}#{ns-attr(error)} {
+    @include after('\00a0-\00a0' attr(#{ns-attr(error, null, true)}));
+  }
+
+  #{ns(message)} {
+    @include after {
+      position: absolute;
+      overflow: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
 }
