@@ -28,6 +28,11 @@
     }
 
     @include list-item {
+      #{ns(sidemenu)}__link,
+      #{ns(sidemenu)}__btn {
+        @include color.text(default grey, (legacy:$legacy));
+      }
+
       @include before {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
       }
