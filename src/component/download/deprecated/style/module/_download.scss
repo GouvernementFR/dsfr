@@ -12,7 +12,9 @@
   @include padding-bottom(6v);
   @include margin(0 0 4v 0);
 
-  @include nest-download-link;
+  @include nest-download-link {
+    font-weight: 400;
+  }
 
   &__desc {
     @include text-style(sm);
