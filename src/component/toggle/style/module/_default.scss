@@ -64,7 +64,6 @@
       min-width: spacing.space(10v);
       max-width: spacing.space(10v);
       background-repeat: no-repeat;
-      -webkit-tap-highlight-color: transparent;
     }
 
     @include after('') {
@@ -74,7 +73,6 @@
       background-repeat: no-repeat;
       background-size: spacing.space(4v);
       background-position: center;
-      -webkit-tap-highlight-color: transparent;
     }
   }
 
