@@ -1,5 +1,5 @@
 #{ns(message)} {
-  --comma: ",";
+  --comma: ", ";
   --content: var(--comma);
   @include display-flex(row, flex-start);
   @include text-style(xs);
@@ -11,7 +11,7 @@
 
   &:last-child {
     @include margin-bottom(0);
-    --comma: "";
+    --comma: " ";
   }
 
   &--error,
