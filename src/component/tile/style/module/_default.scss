@@ -128,7 +128,7 @@
     }
   }
 
-  &#{ns(enlarge-link)}:not(&--no-icon) &__content {
+  &#{ns(enlarge-link)}:not(&--no-icon) &__body {
     @include padding-bottom(10v);
   }
 }

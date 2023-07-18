@@ -32,7 +32,7 @@
       @include margin-top(5v);
     }
 
-    #{ns(tile__content)} {
+    #{ns(tile__body)} {
       @include padding-bottom(10v);
     }
 
@@ -43,7 +43,7 @@
         @include margin-top(3v);
       }
 
-      #{ns(tile__content)} {
+      #{ns(tile__body)} {
         @include padding-bottom(8v);
       }
     }
@@ -73,7 +73,7 @@
   }
 
   &#{ns(enlarge-link)}:not(#{ns(tile--no-icon)}) {
-    #{ns(tile__content)} {
+    #{ns(tile__body)} {
       @include padding-bottom(10v);
     }
 
