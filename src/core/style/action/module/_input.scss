@@ -27,3 +27,10 @@ input[type="checkbox"],
 input[type="radio"] {
   @include reset.appearance;
 }
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  @include margin-left(4v);
+  @include margin-right(-1px);
+  @include size(5v, 5v);
+}

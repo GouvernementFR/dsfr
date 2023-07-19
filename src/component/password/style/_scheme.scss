@@ -14,7 +14,7 @@
 
     #{selector.ns-attr(capslock)} {
       @include before {
-        @include color.data-uri-svg(default grey, (legacy: $legacy), $capslock-svg);
+        @include color.data-uri-svg(label grey, (legacy: $legacy), $capslock-svg);
       }
     }
 
