@@ -17,6 +17,7 @@
     @include size(10v, 6v);
     @include absolute;
     opacity: 0;
+    -webkit-tap-highlight-color: transparent;
 
     &:checked {
       ~ #{ns(toggle__label)} {
@@ -38,6 +39,7 @@
     width: spacing.space(calc(100% - 10v));
     min-height: spacing.space(6v);
     @include text-style(md);
+    -webkit-tap-highlight-color: transparent;
 
     &#{ns-attr(unchecked-label)}#{ns-attr(checked-label)} {
       @include padding-left(0);

@@ -3,7 +3,7 @@
 /// @group tile
 ////
 
-#{ns(tile--download)} {
+#{ns(tile)}#{ns(tile--download)} {
   #{ns(tile__title a)} {
     @include icon(download-line, null, after);
   }

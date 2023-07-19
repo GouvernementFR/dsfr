@@ -13,15 +13,12 @@
   }
 
   #{ns(link__detail)} {
-    @include absolute(7v, null, null, 0);
+    @include absolute(calc(100% + 1v), null, null, 0);
     @include text-style(xs);
     @include font-weight(regular);
-    max-width: 100%;
     white-space: nowrap;
     pointer-events: none;
     cursor: text;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     abbr {
       text-decoration: none;

@@ -8,15 +8,13 @@
   @include set-text-margin(0 0 2v 0);
 
   #{ns-attr(capslock)} {
-    @include before('', block) {
-      @include absolute(3v, 3v, null, null, 4v, 4v);
-      pointer-events: none;
-    }
-  }
-
-  :not(#{ns-attr(capslock)}) {
     #{ns(password__input)} {
-      @include padding-right(4v);
+      @include padding-right(12v);
+    }
+
+    @include before('', block) {
+      @include absolute(3v, 4v, null, null, 4v, 4v);
+      pointer-events: none;
     }
   }
 
@@ -38,5 +36,19 @@
 
   &__label {
     @include padding-right(24v);
+  }
+
+  #{ns(message)} {
+    &:first-child {
+      --comma: " ";
+    }
+  }
+
+  #{ns(message--valid)}#{ns-attr(valid)} {
+    --content: "\00a0-\00a0" attr(#{ns-attr(valid, null, true)}) var(--comma);
+  }
+
+  #{ns(message--error)}#{ns-attr(error)} {
+    --content: "\00a0-\00a0" attr(#{ns-attr(error, null, true)}) var(--comma);
   }
 }

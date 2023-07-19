@@ -173,13 +173,13 @@ class Instance {
     for (const action of this._hashes) action.handle(hash, e);
   }
 
-  listenKey (code, closure, preventDefault = false, stopPropagation = false, type = 'down') {
+  listenKey (keyCode, closure, preventDefault = false, stopPropagation = false, type = 'down') {
     if (this._keyListenerTypes.indexOf(type) === -1) {
       this.listen(`key${type}`, this.handlingKey);
       this._keyListenerTypes.push(type);
     }
 
-    this._keys.push(new KeyAction(type, code, closure, preventDefault, stopPropagation));
+    this._keys.push(new KeyAction(type, keyCode, closure, preventDefault, stopPropagation));
   }
 
   unlistenKey (code, closure) {
@@ -503,10 +503,10 @@ class Instance {
 }
 
 class KeyAction {
-  constructor (type, code, closure, preventDefault, stopPropagation) {
+  constructor (type, keyCode, closure, preventDefault, stopPropagation) {
     this.type = type;
     this.eventType = `key${type}`;
-    this.code = code;
+    this.keyCode = keyCode;
     this.closure = closure;
     this.preventDefault = preventDefault === true;
     this.stopPropagation = stopPropagation === true;
@@ -514,7 +514,7 @@ class KeyAction {
 
   handle (e) {
     if (e.type !== this.eventType) return;
-    if (e.keyCode === this.code) {
+    if (e.keyCode === this.keyCode.value) {
       this.closure(e);
       if (this.preventDefault) {
         e.preventDefault();

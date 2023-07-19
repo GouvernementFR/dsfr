@@ -7,10 +7,8 @@
 
 @include legacy.is(ie11) {
   #{ns(card)} {
-    @include icon-legacy(arrow-right-line, md, before);
-
     &--no-icon {
-      @include before(none);
+      @include after(none);
     }
 
     &__title,
@@ -19,8 +17,14 @@
     }
 
     &__title {
+      a {
+        @include icon-legacy(arrow-right-line, sm, after) {
+          background-color: transparent;
+        }
+      }
+
       @include target-blank {
-        @include icon-size-legacy(md, after);
+        @include icon-legacy(external-link-line, sm, after);
       }
     }
 
@@ -28,8 +32,64 @@
       @include icon-size-legacy(sm, before);
     }
 
-    &--horizontal &__body {
-      flex-basis: 100%;
+    &--download {
+      #{ns(tile__title a)} {
+        @include icon-legacy(download-line, null, after);
+      }
+    }
+
+    &#{ns(enlarge-link)} {
+      #{ns(card)}__title {
+        a {
+          text-decoration: none;
+          @include icon-size-legacy(md, after) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    @include respond-from(md) {
+      &--download,
+      &--horizontal,
+      &--horizontal-half,
+      &--horizontal-tier {
+        #{ns(card__body)} {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  #{ns(card--sm)} {
+    &#{ns(enlarge-link)} {
+      #{ns(card)}__title {
+        a {
+          @include icon-size-legacy(sm, after);
+        }
+      }
+    }
+
+    #{ns(card)}__title {
+      a {
+        @include icon-size-legacy(sm, after);
+      }
+    }
+  }
+
+  #{ns(card--lg)} {
+    &#{ns(enlarge-link)} {
+      #{ns(card)}__title {
+        a {
+          @include icon-size-legacy(lg, after);
+        }
+      }
+    }
+
+    #{ns(card)}__title {
+      a {
+        @include icon-size-legacy(md, after);
+      }
     }
   }
 }

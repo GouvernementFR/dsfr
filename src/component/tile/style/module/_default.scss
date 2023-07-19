@@ -53,9 +53,15 @@
   &#{ns(enlarge-link)} {
     #{ns(tile)}__title {
       a {
-        @include icon-size(md, after) {
+        @include icon(arrow-right-line, md, after) {
           @include absolute(null, 8v, 9v);
         }
+      }
+    }
+
+    &#{ns(tile--no-icon)} {
+      #{ns(tile__title a)} {
+        @include after(none);
       }
     }
   }
@@ -75,8 +81,6 @@
     }
 
     a {
-      @include icon(arrow-right-line, sm, after);
-
       @include before {
         background-position: 0 100%;
         background-size: 100% spacing.space(1v);
@@ -86,15 +90,6 @@
 
     @include target-blank {
       @include icon(external-link-line, sm, after);
-    }
-  }
-
-  &--no-icon,
-  &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
-    #{ns(tile__title a)} {
-      &:not([target="_blank"]) {
-        @include after(none);
-      }
     }
   }
 

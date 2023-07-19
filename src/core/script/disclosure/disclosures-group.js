@@ -112,8 +112,9 @@ class DisclosuresGroup extends Instance {
     this._index = undefined;
     let index = defaultIndex;
     for (let i = 0; i < this.length; i++) {
-      if (index !== -1 && this.members[i].isDisclosed) {
+      if (this.members[i].isDisclosed) {
         index = i;
+        break;
       }
     }
 
@@ -131,9 +132,9 @@ class DisclosuresGroup extends Instance {
     for (let i = 0; i < this.length; i++) {
       const member = this.members[i];
       if (value === i) {
-        member.disclose(true);
+        if (!member.isDisclosed) member.disclose(true);
       } else {
-        member.conceal(true);
+        if (member.isDisclosed) member.conceal(true);
       }
     }
     this.apply();

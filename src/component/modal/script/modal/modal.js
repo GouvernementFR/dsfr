@@ -45,7 +45,10 @@ class Modal extends api.core.Disclosure {
         break;
 
       default:
-        this.conceal();
+        if (this.isDisclosed) {
+          this.conceal();
+          this.focus();
+        }
     }
   }
 

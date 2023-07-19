@@ -17,6 +17,8 @@ format:
   digit: 1 chiffre minimum
   special: 1 caractère spécial minimum
   characters: 12 caractères minimum
+  valid: validé
+  error: en erreur
 link:
   label: Mot de passe oublié ?
   href: url de la page de récupération

@@ -86,7 +86,7 @@ Le fichier `utilities.min.css` doit être placé un niveau plus bas que le dossi
 Le point de départ de l’utilisation du DSFR  est la création de fichiers HTML, afin de pouvoir utiliser les différents composants. Ces fichiers sont à mettre à la racine de votre projet. L’exemple ci dessous est le code minimal afin de pouvoir utiliser le DSFR.
 
 L’ajout de l’attribut **data-fr-scheme** sur la balise html permet d’activer la gestion des thèmes clair et sombre. Les valeurs possibles sont `system`, `light`, `dark`. La valeur “system” permet d’utiliser la configuration définie sur le système d’exploitation de l’utilisateur.
-Consulter la [documentation des paramètres d’affichage](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametres-d-affichage) afin d’en savoir plus.
+Consulter la [documentation des paramètres d’affichage](https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/parametre-d-affichage) afin d’en savoir plus.
 
 ```html
 <!doctype html>
@@ -94,8 +94,7 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="dsfr.min.css">
-    <link rel="stylesheet" href="utility/utility.min.css">
+    <meta name="format-detection" content="telephone=no">
 
     <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
@@ -104,6 +103,9 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
     <link rel="manifest" href="favicon/manifest.webmanifest" crossorigin="use-credentials">
     <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
     <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+    
+    <link rel="stylesheet" href="dsfr.min.css">
+    <link rel="stylesheet" href="utility/utility.min.css">
 
     <title>Titre de la page - Nom du site</title>
   </head>
@@ -156,7 +158,7 @@ Il est **impératif** d’appeler les **deux fichiers** javascript afin que le c
 </html>
 ```
 
-> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/doc/Analytics-1.9.0.pdf)
+> NB : Le package analytics est géré indépendament et doit être ajouté après le js du dsfr. Voir [documention analytics](https://github.com/GouvernementFR/dsfr/blob/main/src/analytics/doc/analytics.md)
 
 De la même façon que le CSS il est possible d’importer uniquement le JS des composants utilisés (et leurs dépendances).
 ### Icônes
@@ -192,4 +194,4 @@ Le processus de contribution est détaillé sur la [page CONTRIBUTING.md](CONTRI
 
 ## Documentation
 
-[Documentation développeurs](https://www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs)
+[Documentation développeurs](https://www.systeme-de-design.gouv.fr/utilisation-et-organisation/developpeurs/)
