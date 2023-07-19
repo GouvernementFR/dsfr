@@ -99,7 +99,7 @@ class Disclosure extends Instance {
   }
 
   disclose (withhold) {
-    if ((this.isDisclosed === true) || (!this.isEnabled)) return false;
+    if (this.isDisclosed === true || !this.isEnabled) return false;
     this._isPristine = false;
     this.isDisclosed = true;
     if (!withhold && this.group) this.group.current = this;
