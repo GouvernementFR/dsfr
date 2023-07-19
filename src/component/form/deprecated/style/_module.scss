@@ -69,10 +69,13 @@
 
       label {
         @include padding(3v 0);
+      }
+    }
 
-        &::before {
-          @include margin-top(3v);
-        }
+    #{ns-group(radio)}:not(#{ns(radio-rich)}) input[type="radio"] + label,
+    #{ns-group(checkbox)} input[type="checkbox"] + label {
+      &::before {
+        top: #{space(3v)};
       }
     }
 
