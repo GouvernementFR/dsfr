@@ -8,22 +8,20 @@
   @include set-text-margin(0 0 2v 0);
 
   #{ns-attr(capslock)} {
+    #{ns(password__input)} {
+      @include padding-right(12v);
+    }
+    
     @include before('', block) {
-      @include absolute(3v, 3v, null, null, 4v, 4v);
+      @include absolute(3v, 4v, null, null, 4v, 4v);
       pointer-events: none;
     }
   }
-
-  :not(#{ns-attr(capslock)}) {
-    #{ns(password__input)} {
-      @include padding-right(4v);
-    }
-  }
-
+  
   &__checkbox {
     @include absolute(0, 0);
   }
-
+  
   &__input {
     @include margin-bottom(3v);
 
