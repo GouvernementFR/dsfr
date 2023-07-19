@@ -28,8 +28,8 @@
     }
 
     @include list-item {
-      #{ns(sidemenu)}__link,
-      #{ns(sidemenu)}__btn {
+      #{ns(sidemenu__link)},
+      #{ns(sidemenu__btn)} {
         @include color.text(default grey, (legacy:$legacy));
       }
 
