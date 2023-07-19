@@ -8,5 +8,5 @@ sample:
     right: Information contextuelle dans une grille à droite
   text: Information contextuelle dans un texte
   list: Information contextuelle dans une liste
-  table: Information contextuelle dans un tableau
+  table: Infobulle dans un tableau
   example: Exemple

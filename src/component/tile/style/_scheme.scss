@@ -4,15 +4,40 @@
 ////
 
 @use 'module/color';
+@use 'module/elevation';
 @use 'module/disabled';
 
 @mixin _tile-scheme($legacy: false) {
   #{ns(tile)} {
     @include color.background(default grey, (legacy: $legacy));
-    @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+
+    &:not(&--no-border):not(&--shadow) {
+      @include color.background-image((border default grey) (border default grey) (border default grey) (border default grey), (legacy: $legacy));
+    }
+
+    &--grey {
+      @include color.background(contrast grey, (legacy:$legacy));
+    }
+
+    &--shadow {
+      @include elevation.elevate(raised, (legacy: $legacy));
+    }
+
+    &--shadow#{&}--grey {
+      @include color.background(contrast-raised grey, (legacy:$legacy));
+    }
+
+    &--no-background {
+      @include color.transparent-background((legacy:$legacy, hover: true));
+    }
 
     &__title {
+      @include color.text(title grey, (legacy: $legacy));
       @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
+
+      @include before {
+        @include color.background-image((border plain grey), (legacy: $legacy));
+      }
 
       a {
         @include color.text(action-high blue-france, (legacy: $legacy));
@@ -29,10 +54,6 @@
           }
         }
       }
-    }
-
-    &--grey {
-      @include color.background(contrast grey, (legacy: $legacy));
     }
   }
 }

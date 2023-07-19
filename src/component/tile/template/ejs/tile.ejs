@@ -23,9 +23,13 @@
 
 * tile.id (string) : id de l'élément
 
-* tile.accent (string, optional) : accentuation du composant
+* tile.variations (array, optional) : variations de la tuile (valeurs : grey, no-border, no-background, shadow)
+
+* tile.content (object, optional) : Paramètres du contenu de la tuile
 
 * tile.icon (boolean, optional) : Si false, ajoute la classe fr-tile--no-icon pour désactiver l'icone associée au lien
+
+* tile.attributes (object, optional) : attributs de la tuile
 
 * tile.classes (array, optional) : Classes suplémentaires sur la tuile
 
@@ -67,10 +71,27 @@ switch (tile.vertical) {
     break;
 }
 
+if (tile.variations) for (const variation of tile.variations) switch(variation) {
+  case 'grey':
+    classes.push(`${prefix}-tile--grey`);
+    break;
+
+  case 'no-border':
+    classes.push(`${prefix}-tile--no-border`);
+    break;
+
+  case 'no-background':
+    classes.push(`${prefix}-tile--no-background`);
+    break;
+
+  case 'shadow':
+    classes.push(`${prefix}-tile--shadow`);
+    break;
+}
+
 if (tile.download) classes.push(`${prefix}-tile--download`);
 if (tile.icon === false) classes.push(`${prefix}-tile--no-icon`);
 if (tile.enlarge) classes.push(`${prefix}-enlarge-link`);
-if (tile.accent !== undefined) classes.push(`${prefix}-tile--${tile.accent}`);
 %>
 
 <div <%- includeClasses(classes)%> <%- includeAttrs(attributes) %>>

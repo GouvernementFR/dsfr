@@ -45,9 +45,13 @@ class Member {
     this._type = Type.COMPONENT;
     this._isValid = instance.validate(this._target);
     const selector = Array.from({ length: 6 }, (v, i) => `h${i + 1}`).join(',');
-    const heading = this._node.closest(selector);
-    if (heading) {
-      this._level = Number(heading.tagName.charAt(1)) - 1;
+    const top = Array.from(this._node.querySelectorAll(selector)).map(heading => new Heading(heading)).sort((a, b) => a.level - b.level)[0];
+    if (top && top.level <= this._level) this._level = top.level - 1;
+
+    const hx = this._node.closest(selector);
+    if (hx) {
+      const heading = new Heading(hx);
+      if (heading.level <= this._level) this._level = heading.level - 1;
     }
 
     if (!isNaN(instance.level) && instance.level < this._level) this._level = instance.level;

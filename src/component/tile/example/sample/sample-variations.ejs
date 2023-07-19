@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile verticale variation accentuée en contrast grey', './tile-default', { tile : { pictogram: true, variations: ['grey'] ,content: { badge: true, description: true } }}, true, './tile-layout', {col: {md:4, lg:3}}); %>
+
+<%- sample('Tuile verticale variation sans bordure', './tile-default', { tile : { pictogram: true, variations: ['no-border'] ,content: { badge: true, description: true } }}, true, './tile-layout', {col: {md:4, lg:3}}); %>
+
+<%- sample('Tuile verticale variation sans fond', './tile-default', { tile : { pictogram: true, variations: ['no-background'] ,content: { badge: true, description: true } }}, true, './tile-layout', {col: {md:4, lg:3}, layout: { classes: [`${prefix}-background-alt--grey`] }}); %>
+
+<%- sample('Tuile verticale variation ombre portée', './tile-default', { tile : { pictogram: true, variations: ['shadow'] ,content: { badge: true, description: true } }}, true, './tile-layout', {col: {md:4, lg:3}}); %>

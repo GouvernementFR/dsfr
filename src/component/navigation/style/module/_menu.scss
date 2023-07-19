@@ -20,7 +20,7 @@
 
   @include list {
     @include margin(0);
-    @include padding(2v 0 6v);
+    @include padding(0 4v 4v);
 
     @include respond-from(lg) {
       @include width(80v);

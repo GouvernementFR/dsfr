@@ -7,15 +7,13 @@
   @include display-flex(column);
   @include relative();
 
-  &__title {
-    a {
-      @include icon(arrow-right-line, md, after) {
-        @include absolute(null, 8v, 8v);
+  &#{ns(enlarge-link)} {
+    #{ns(card)}__title {
+      a {
+        @include icon-size(md, after) {
+          @include absolute(null, 8v, 8v);
+        }
       }
-    }
-
-    a[target=_blank] {
-      @include icon(external-link-line, md, after);
     }
   }
 
@@ -27,9 +25,11 @@
   }
 
   &--no-icon,
-  &:not(#{ns(enlarge-link)}) {
+  &:not(#{ns(enlarge-link)}):not(#{ns(card--download)}) {
     #{ns(card__title a)} {
-      @include after(none);
+      &:not([target="_blank"]) {
+        @include after(none);
+      }
     }
   }
 

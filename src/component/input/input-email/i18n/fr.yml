@@ -1,4 +1,4 @@
-title: Modèle de champ email
+title: Bloc fonctionnel d'adresse électronique
 description: La demande d’une adresse électronique permet d’aider un utilisateur à saisir une adresse électronique. Précisez à l’utilisateur le format de saisie attendu.
 doc:
 
@@ -8,5 +8,5 @@ sample:
 label: Adresse électronique
 hint:
   format: 'Format attendu : nom@domaine.fr'
-  indication: 'Indication : Cette adresse est utilisée uniquement pour la connexion au service'
+  indication: 'Indication : cette adresse est utilisée uniquement pour la connexion au service.'
 error: 'Le format de l’adresse electronique saisie n’est pas valide. Le format attendu est : nom@exemple.org'

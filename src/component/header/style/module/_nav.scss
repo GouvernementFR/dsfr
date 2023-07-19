@@ -9,8 +9,8 @@
       justify-content: flex-start;
 
       &__list {
-        max-width: calc(100% + #{space(4v)});
         @include margin(0 -4v);
+        @include max-width(calc(100% + 4v));
       }
     }
   }

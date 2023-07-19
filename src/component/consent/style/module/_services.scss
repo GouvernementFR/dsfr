@@ -45,10 +45,10 @@
 
   &__desc {
     @include text-style(sm);
-    @include set-text-margin(3v 0 3v 0);
+    @include set-text-margin(3v 0 2v 0);
 
     @include respond-from(md) {
-      @include set-text-margin(1v 6v 3v 0);
+      @include set-text-margin(1v 6v 2v 0);
       @include size(60%);
     }
   }

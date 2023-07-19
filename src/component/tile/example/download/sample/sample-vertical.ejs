@@ -1,0 +1,5 @@
+<% const sample = getSample(include); %>
+
+<%- sample('Tuile de téléchargement vertical à partir du breakpoint md', '../../sample/tile-default', { tile : {  pictogram: 'document-download', download: true, vertical: 'md', content: { href: '../../img/image.jpg', downloadable: true, title: 'Télécharger le document XX', details: 'Détail obligatoire (Extension - Poids - Langue)'} }}, true, '../../sample/tile-layout', {col: {md:4, lg:3}}); %>
+
+<%- sample('Tuile de téléchargement vertical à partir du breakpoint lg', '../../sample/tile-default', { tile : {  pictogram: 'document-download', download: true, vertical: 'lg', content: { href: '../../img/image.jpg', downloadable: true, title: 'Télécharger le document XX', details: 'Détail obligatoire (Extension - Poids - Langue)'} }}, true, '../../sample/tile-layout', {col: {md:6, lg:3}}); %>

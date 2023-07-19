@@ -28,6 +28,11 @@
     }
 
     @include list-item {
+      #{ns(sidemenu__link)},
+      #{ns(sidemenu__btn)} {
+        @include color.text(default grey, (legacy:$legacy));
+      }
+
       @include before {
         @include color.box-shadow(default grey, (legacy:$legacy), top-1-out bottom-1-in);
       }
@@ -57,17 +62,11 @@
           @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
         }
       }
-
-      &--full-border {
-        #{ns(sidemenu__inner)} {
-          @include color.box-shadow(default grey, (legacy:$legacy));
-        }
-      }
     }
 
     &__link,
     &__btn {
-      @include color.text(action-high grey, (legacy:$legacy));
+      @include color.text(action-high blue-france, (legacy:$legacy));
 
       &[aria-current] {
         @include color.text(active blue-france, (legacy:$legacy));

@@ -4,8 +4,6 @@
 ////
 
 #{ns(mega-menu)} {
-  @include margin(0 -4v 1px);
-
   @include respond-from(lg) {
     @include absolute(100%, 0, null, 0);
     @include margin(0);
@@ -48,10 +46,8 @@
 
   &__leader {
     @include enable-underline;
-    @include padding-x(4v);
     @include padding-top(2v);
     @include padding-top(0, lg);
-    @include padding-x(0, lg);
     @include set-text-margin(0 0 2v);
     @include set-title-margin(0 0 2v);
   }
@@ -61,7 +57,7 @@
   }
 
   &__list {
-    @include padding-bottom(6v);
+    @include padding-bottom(4v);
 
     @include relative;
     @include before('', block) {

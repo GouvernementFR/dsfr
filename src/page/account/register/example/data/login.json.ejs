@@ -16,6 +16,7 @@ elements.push({
 elements.push({
   type: 'hint',
   data: {
+    markup: 'p',
     text: getText('hint.mandatory', 'form')
   }
 })
@@ -79,7 +80,7 @@ elements.push({
 
 const data = {
   id: uniqueId('login'),
-  legend: `<${markup} class=${prefix}-h5>${getText('login.legend', 'register')}<${markup}/>`,
+  legend: `<${markup} class="${prefix}-h5">${getText('login.legend', 'register')}</${markup}>`,
   classes: [prefix + '-mb-0'],
   elements: elements
 };

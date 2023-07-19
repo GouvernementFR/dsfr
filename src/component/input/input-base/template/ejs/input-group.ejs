@@ -5,7 +5,11 @@
 
 * input.error (string, optional) : message d'erreur
 
-* input.disabled (boolean, optional)
+* input.disabled (boolean, optional) : champ désactivé
+
+* input.groupId (string, optional) : id du groupe
+
+* input.groupAttributes (object, optional) : attributs supplémentaires sur le groupe
 
 %>
 <% eval(include('../../../../../core/index.ejs')); %>
@@ -13,7 +17,7 @@
 <%
 const input = locals.input || {};
 let groupClasses = [prefix + '-input-group'];
-const groupAttributes = input.attributes || {};
+const groupAttributes = input.groupAttributes || {};
 groupAttributes.id = input.groupId || uniqueId('input-group');
 
 if (input.error !== undefined) groupClasses.push(prefix + '-input-group--error');
@@ -22,5 +26,5 @@ if (input.valid !== undefined) groupClasses.push(prefix + '-input-group--valid')
 %>
 
 <div <%- includeClasses(groupClasses); %> <%- includeAttrs(groupAttributes); %>>
-  <%- include('./input'); %>
+  <%- include('./input', input); %>
 </div>

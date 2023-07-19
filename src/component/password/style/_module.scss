@@ -30,9 +30,27 @@
     &::-webkit-caps-lock-indicator {
       content: none;
     }
+
+    &::-ms-reveal {
+      display: none;
+    }
   }
 
   &__label {
     @include padding-right(24v);
+  }
+
+  #{ns(message)} {
+    &:first-child {
+      --comma: " ";
+    }
+  }
+
+  #{ns(message--valid)}#{ns-attr(valid)} {
+    --content: "\00a0-\00a0" attr(#{ns-attr(valid, null, true)}) var(--comma);
+  }
+
+  #{ns(message--error)}#{ns-attr(error)} {
+    --content: "\00a0-\00a0" attr(#{ns-attr(error, null, true)}) var(--comma);
   }
 }

@@ -28,7 +28,7 @@ class TagDismissible extends api.core.Instance {
   }
 
   verify () {
-    if (document.body.contains(this.node)) api.inspector.warn(`a TagDismissible has just been dismissed and should be removed from the dom. In ${api.mode} mode, the api doesn't handle dom modification. An event ${TagEvent.DISMISS} is dispatched by the element to trigger the removal`);
+    if (document.body.contains(this.node)) this.warn(`a TagDismissible has just been dismissed and should be removed from the dom. In ${api.mode} mode, the api doesn't handle dom modification. An event ${TagEvent.DISMISS} is dispatched by the element to trigger the removal`);
   }
 }
 

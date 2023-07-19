@@ -40,11 +40,11 @@
     }
   }
 
-  &#{ns(enlarge-link)} {
-    #{ns(card__title a)} {
-      @include icon(download-line, null, after);
-    }
+  #{ns(card__title a)} {
+    @include icon(download-line, null, after);
+  }
 
+  &#{ns(enlarge-link)} {
     @include hover-media-query {
       &:hover {
         #{ns(card__header)} {
