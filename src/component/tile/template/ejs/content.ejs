@@ -39,8 +39,9 @@ if (content.assess === true) {
 } else if (typeof(content.assess) === 'string') {
     attributes[`data-${prefix}-assess-file`] = content.assess;
 }
-if (content.disabled !== true) attributes.href = href;
-else {
+if (content.disabled !== true) {
+  attributes.href = href;
+} else {
   attributes.role = 'link';
   attributes['aria-disabled'] = true;
 }

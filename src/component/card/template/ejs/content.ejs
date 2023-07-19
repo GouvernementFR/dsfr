@@ -43,7 +43,12 @@ if (content.assess === true) {
 } else if (typeof(content.assess) === 'string') {
     attributes[`data-${prefix}-assess-file`] = content.assess;
 }
-if (content.disabled !== true) attributes.href = href;
+if (content.disabled !== true) {
+    attributes.href = href;
+} else {
+  attributes.role = 'link';
+  attributes['aria-disabled'] = true;
+}
 if (content.lang) attributes.hreflang = content.lang;
 if (content.downloadable === true) attributes.download = '';
 if (typeof(content.downloadable) === 'string') attributes.download = content.downloadable;
