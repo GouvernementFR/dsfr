@@ -76,7 +76,7 @@ if (input.error) {
 }
 
 if (input.messages) {
-  input.messages.forEach(message => builder.add(message.type, message.text));
+  input.messages.forEach(message => builder.add(message.type, message.text, message.attributes));
 }
 
 if (builder.isIncluded) describedby.push(...builder.ids);

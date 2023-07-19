@@ -87,7 +87,7 @@ if (fieldset.valid) {
 }
 
 if (fieldset.messages) {
-  fieldset.messages.forEach(message => builder.add(message.type, message.text));
+  fieldset.messages.forEach(message => builder.add(message.type, message.text, message.attributes));
 }
 
 if (builder.isIncluded) labelledBy.push(...builder.ids);

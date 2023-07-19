@@ -41,8 +41,6 @@
   const urlLocationHandler = async () => {
     let location = window.location.href.replace(HREF, ''); // get the url route
 
-    console.log('route', location);
-
     // get the route object from the urlRoutes object
     const route = urlRoutes[location] || urlRoutes['404'];
     // get the html from the template
