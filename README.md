@@ -94,8 +94,7 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="dsfr.min.css">
-    <link rel="stylesheet" href="utility/utility.min.css">
+    <meta name="format-detection" content="telephone=no">
 
     <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
     <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png"><!-- 180×180 -->
@@ -104,6 +103,9 @@ Consulter la [documentation des paramètres d’affichage](https://www.systeme-d
     <link rel="manifest" href="favicon/manifest.webmanifest" crossorigin="use-credentials">
     <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
     <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+    
+    <link rel="stylesheet" href="dsfr.min.css">
+    <link rel="stylesheet" href="utility/utility.min.css">
 
     <title>Titre de la page - Nom du site</title>
   </head>
