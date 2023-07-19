@@ -12,7 +12,111 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.10
 
-### [1.10.0-rc.2](https://github.com/GouvernementFR/dsfr/compare/v1.9.3...1.10.0-rc.2) - 11 Juillet 2023
+### [1.10.0](https://github.com/GouvernementFR/dsfr/compare/v1.9.3...1.10.0) - 19 Juillet 2023
+
+#### 🐛 fix(form): correctif barre état iOS [(#712)](https://github.com/GouvernementFR/dsfr/pull/712)
+- Sur iOS, la barre d'état d'erreur ou validation est discontinue
+- corrige le problème de manière générique
+
+
+#### 🐛 fix(modal): retour de focus fermeture clavier [(#716)](https://github.com/GouvernementFR/dsfr/pull/716)
+- Mise en place du retour du focus à la fermeture en pressant la touche ESC
+
+
+#### 🐛 fix(form): correctif focus des radios riches dépréciés [(#715)](https://github.com/GouvernementFR/dsfr/pull/715)
+- corrige le décalage du focus sur les boutons radio en version dépréciée
+
+
+#### 🐛 fix(follow): orthographe message de confirmation [(#714)](https://github.com/GouvernementFR/dsfr/pull/714)
+
+
+#### ✨ feat(core, password): boutons spéciaux input Safari [(#711)](https://github.com/GouvernementFR/dsfr/pull/711)
+- Dans les champs de type password, sur safari Mac, il y a une icône apportant des outils supplémentaire qui se superpose à l’icône des signalant la hauteur de casse
+- Déplacement des icônes natives pour qu'elles ne se superposent pas
+- Retrait de l'icône capslock native, privilégiant la nôtre
+
+
+#### 🐛 fix(core): stabilisation disclosure [(#713)](https://github.com/GouvernementFR/dsfr/pull/713)
+- L'ouverture des paramètres d'affichage est par moment non réactive
+- L'élément est fermé avant même d'être ouvert à cause de boucle de déclenchement
+- Ajout de condition permettant de limiter les boucles
+
+
+#### 📝 doc(tooltip): retrait exemple texte [(#710)](https://github.com/GouvernementFR/dsfr/pull/710)
+- l'utilisation d'un tooltip sur un texte pose des problèmes de restitution
+- cet usage est déconseillé
+- retrait de l'exemple
+
+
+#### 🐛 fix(tile): correctif espacements version dépreciée [(#704)](https://github.com/GouvernementFR/dsfr/pull/704)
+- L'icône et le contenu se retrouvent superposés dans la version dépréciée, ce correctif rétablit l'espacement nécessaire
+
+
+#### 🐛 fix(tile, card): A11Y liens désactivés [(#709)](https://github.com/GouvernementFR/dsfr/pull/709)
+- Ajout des attributs `role="link"` et `aria-disabled=true` sur les version désactivées
+
+
+#### 🐛 fix(transcription, content): correctif title et label bouton Agrandir [(#708)](https://github.com/GouvernementFR/dsfr/pull/708)
+- Retrait du title sur le bouton agrandir
+- Ajout label agrandir dans les exemples de content
+
+
+#### ✨ feat(*): Ajout d'un meta tag iOS [(#707)](https://github.com/GouvernementFR/dsfr/pull/707)
+- Sur iOS, les numéros de téléphone sont automatiquement transformés en lien
+- Entraîne un mauvais rendu dans le bloc fonctionnel de numéro de téléphone
+- Correction par l'ajout général du meta tag `<meta name="format-detection" content="telephone=no">`
+
+
+#### 🐛 fix(card, tile): correctif IE 11 [(#705)](https://github.com/GouvernementFR/dsfr/pull/705)
+- correctif sur les tuiles et card sur la version legacy pour éviter les bugs de dépassement de texte et placement des icônes
+
+
+#### 🐛  fix(toggle): retrait tap-highlight-color iOS [(#703)](https://github.com/GouvernementFR/dsfr/pull/703)
+- Au clic sur le toggle sur iOS, l'effet de highlight est présent
+- Retrait de cet effet avec la propriété [-webkit-tap-highlight-color](https://developer.mozilla.org/fr/docs/Web/CSS/-webkit-tap-highlight-color)
+
+
+#### 🐛 fix(link): correctif téléchargement multiligne [(#702)](https://github.com/GouvernementFR/dsfr/pull/702)
+- les liens de téléchargement étaient limités à une seul ligne avec une ellipse sur le text dépassant
+- correctif prenant en compte le retour à la ligne
+
+
+#### 🐛 fix(download): graisse du titre des liens [(#701)](https://github.com/GouvernementFR/dsfr/pull/701)
+- Passage des liens dépréciés en graisse regular
+
+
+#### 🐛 fix(*): mise à jour des liens du readme [(#700)](https://github.com/GouvernementFR/dsfr/pull/700)
+- Mise à jour des liens vers [https://www.systeme-de-design.gouv.fr](https://www.systeme-de-design.gouv.fr) dans le readme
+
+
+#### 🐛 fix(modal): préviens décalage mobile [(#699)](https://github.com/GouvernementFR/dsfr/pull/699)
+- l'ajout d'un padding à l'ouverture permet de se substituer au décalage créé potentiellement par la disparition de la scrollbar en desktop
+- En mobile, la modale occupe 100% de la largeur, ce padding créé un espacement incorrect
+- ajout d'une media query sur le breakpoint MD pour corriger le problème
+
+
+#### 🐛 fix(header): correctif régression scroll horizontal [(#697)](https://github.com/GouvernementFR/dsfr/pull/697)
+- La navigation du header créée un scroll horizontal dans la page
+- l'ajout d'un max-width prévient le problème
+
+
+#### 🐛 fix(password): correctif accessibilité des messages [(#694)](https://github.com/GouvernementFR/dsfr/pull/694)
+- ajout sur les messages de validation et d'erreur de la composition du mot de passe d'un statut en after uniquement pour les lecteurs d'écrans
+- BREAKING CHANGE : il est nécessaire d'ajouter les attributs `data-fr-valid`et `data-fr-error` avec les textes correspondants à l'état (respectivement, en français, "validé" et "en erreur"
+
+
+#### 🐛 fix(sidemenu): correction de la couleur des liens du sidemenu [(#698)](https://github.com/GouvernementFR/dsfr/pull/698)
+- Effet de bord du passage du bouton mobile en bleu, l'ensemble des boutons du sidemenu est passé en bleu.
+- Ce correctif amène la spécificité nécessaire pour avoir les boutons et lien en `text default grey`
+
+
+#### 🐛 fix(core): correctif sur KeyAction [(#696)](https://github.com/GouvernementFR/dsfr/pull/696)
+- Corrige la régression sur l'écoute des interactions avec le clavier dû à l'évolution de la structure de la constante KeyCodes, non répercutée dans KeyAction
+
+
+#### ✨ feat(colors): ajout des utilitaires de couleur flat [(#693)](https://github.com/GouvernementFR/dsfr/pull/693)
+- Ajout des classes utilitaires pour le token background flat avec les variations de couleur d'accent
+
 
 #### 🐛 fix(tooltip,modal): interaction globale et focus iOS [(#691)](https://github.com/GouvernementFR/dsfr/pull/691)
 - Correctif à la pression de la touche Escape sur la modale : si l'élément actif (focus) est un élément de formulaire ou un média, la modale n'est pas refermée pas pour permettre l'interaction native de l'élément actif

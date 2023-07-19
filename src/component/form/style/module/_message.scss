@@ -10,8 +10,8 @@
   }
 
   &:last-child {
-    @include margin-bottom(0);
     --comma: ". ";
+    @include margin-bottom(0);
   }
 
   &--error,
