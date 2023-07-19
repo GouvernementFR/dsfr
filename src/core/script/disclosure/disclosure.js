@@ -99,7 +99,7 @@ class Disclosure extends Instance {
   }
 
   disclose (withhold) {
-    if (this.isDisclosed === true || !this.isEnabled) return false;
+    if ((this.isDisclosed === true) || (!this.isEnabled)) return false;
     this._isPristine = false;
     this.isDisclosed = true;
     if (!withhold && this.group) this.group.current = this;
@@ -121,7 +121,7 @@ class Disclosure extends Instance {
   }
 
   set isDisclosed (value) {
-    if (this._isDisclosed === value || (!this.isEnabled && value === true)) return;
+    if ((this._isDisclosed === value) || (!this.isEnabled && value === true)) return;
     this.dispatch(value ? DisclosureEvent.DISCLOSE : DisclosureEvent.CONCEAL, this.type);
     this._isDisclosed = value;
     if (value) this.addClass(this.modifier);
