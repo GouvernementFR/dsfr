@@ -30,6 +30,7 @@
   &--info {
     background-repeat: no-repeat;
     background-position: 0 spacing.space(-9v);
+    background-size: spacing.space(2px calc(100% + (5v)));
   }
 
   &--valid &__legend,
@@ -37,17 +38,6 @@
   &--info &__legend {
     background-repeat: no-repeat;
     background-position: 0 0;
-  }
-
-  &--valid,
-  &--error,
-  &--info {
-    background-size: spacing.space(2px calc(100% + (5v)));
-  }
-
-  &--valid &__legend,
-  &--error &__legend,
-  &--info &__legend {
     background-size: 2px 100%;
   }
 
