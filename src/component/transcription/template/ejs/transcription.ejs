@@ -41,7 +41,7 @@ let collapseId = prefix + '-transcription-collapse-' + transcription.id;
   <div class="<%= prefix %>-collapse" id="<%= collapseId %>">
     <div class="<%= prefix %>-transcription__footer">
       <div class="<%= prefix %>-transcription__actions-group">
-        <%- include('../../../button/template/ejs/button.ejs', { button: {label: transcription.fullscreen, title: transcription.fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'aria-label': transcription.fullscreenAriaLabel, 'data-fr-opened': false} } } ); %>
+        <%- include('../../../button/template/ejs/button.ejs', { button: {label: transcription.fullscreen, classes: [prefix + '-btn--fullscreen'], attributes: {'aria-controls': modalId, 'aria-label': transcription.fullscreenAriaLabel, 'data-fr-opened': false} } } ); %>
       </div>
     </div>
     <%- include('../../../modal/template/ejs/modal.ejs', {modal: { ...modal, id: modalId }}) %>
