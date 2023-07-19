@@ -8,7 +8,7 @@
   border: 0;
 
   &__legend {
-    @include margin-bottom(4v);
+    @include padding-bottom(4v);
     @include padding-x(3v);
     @include margin-x(-1v);
     @include text-style(md);
@@ -26,10 +26,14 @@
   }
 
   &--valid,
-  &--valid &__legend,
   &--error,
+  &--info {
+    background-repeat: no-repeat;
+    background-position: 0 spacing.space(-9v);
+  }
+
+  &--valid &__legend,
   &--error &__legend,
-  &--info,
   &--info &__legend {
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -38,7 +42,7 @@
   &--valid,
   &--error,
   &--info {
-    background-size: spacing.space(2px calc(100% - (4v)));
+    background-size: spacing.space(2px calc(100% + (5v)));
   }
 
   &--valid &__legend,

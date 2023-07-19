@@ -81,6 +81,7 @@
     & + #{ns(info-text)} {
       @include margin-top(0);
       @include margin-left(2v);
+      @include margin-bottom(4v);
     }
   }
 }
