@@ -10,7 +10,8 @@
     @include margin-x(2v);
   }
 
-  > li {
+  > li,
+  > div {
     display: inline-flex;
     max-width: 100%;
     width: auto;
@@ -18,7 +19,8 @@
 }
 
 @mixin vertical-btns-group() {
-  > li {
+  > li,
+  > div {
     width: 100%;
     max-width: 100%;
   }
