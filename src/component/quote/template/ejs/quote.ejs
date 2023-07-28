@@ -48,12 +48,16 @@ if (size) sizeClasses = [prefix+'-text--'+size];
       <p class="<%= prefix %>-quote__author"><%= author %></p>
     <% } %>
 
-    <% if (sources.length > 0) { %>
+    <% if (sources && sources.length > 1) { %>
       <ul class="<%= prefix %>-quote__source">
       <% for (source in sources) { %>
         <li><%- sources[source] %></li>
       <% } %>
       </ul>
+    <% } else { %>
+      <div class="<%= prefix %>-quote__source">
+        <%- sources[0] %>
+      </div>
     <% } %>
 
     <% if (image) { %>
