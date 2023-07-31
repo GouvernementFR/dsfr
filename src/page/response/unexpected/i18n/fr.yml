@@ -3,8 +3,8 @@ description:
 button:
   contact: Contactez-nous
 page:
-  description: Désolé, le service rencontre un problème, nous travaillons pour le résoudre le plus rapidement possible.
-  lead: Essayez de rafraichir la page ou bien ressayez plus tard.
+  description: Essayez de rafraichir la page ou bien ressayez plus tard.
+  lead: Désolé, le service rencontre un problème, nous travaillons pour le résoudre le plus rapidement possible.
   subtitle: Erreur 500
   title: Erreur inattendue
 subdir:
