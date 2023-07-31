@@ -10,6 +10,7 @@
     @include display-flex(row,flex-end);
     @include padding(1v);
     @include margin-left(auto);
+    @include margin-right(-2v);
     order: 3;
     flex: 0 0 auto;
     align-self: flex-start;
@@ -20,6 +21,8 @@
     }
 
     @include nest-btn(md, only) {
+      @include margin-left(2v);
+      @include margin-right(2v);
       flex: 0 0 auto;
       white-space: nowrap;
 
