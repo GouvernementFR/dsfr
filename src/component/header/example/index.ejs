@@ -8,13 +8,13 @@
     }
 </style>
 
-<%- sample('Header avec Navigation complète', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>
-
 <%- sample('Header minimal', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, navigation: 'min' }}, true, './layout');  %>
 
 <%- sample('Header sans navigation', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: true }}, true, './layout');  %>
 
 <%- sample('Header sans navigation avec raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec Navigation complète', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>
 
 <%- sample('Header avec selecteur de langues', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, navigation: true, translate: true, service: true}}, true, './layout');  %>
 

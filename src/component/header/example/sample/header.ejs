@@ -16,7 +16,7 @@ if (header.links !== undefined || header.search) {
   if (header.translate !== undefined) {
     tools.translate = {
       collapseId: header.translate.collapseId || uniqueId('translate'),
-      button: header.translate.button || {kind: 3},
+      button: header.translate.button || {kind: 1},
       languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
     }
   }
@@ -26,22 +26,24 @@ if (header.links !== undefined || header.search) {
     tools.links = {
       buttons: [
         {
-          icon: 'add-circle-line',
+          icon: 'team-line',
           url: '#',
-          label: 'Créer un espace',
+          label: 'Contact',
           markup: 'a'
         },
         {
-          icon: 'lock-line',
+          icon: 'briefcase-fill',
           url: '#',
-          label: 'Se connecter',
+          label: 'Espace recruteur',
           markup: 'a'
+          
         },
         {
-          icon: 'account-line',
+          icon: 'account-fill',
           url: '#',
-          label: 'S’enregistrer',
-          markup: 'a'
+          label: 'Espace particulier',
+          markup: 'a',
+          classes: [`${prefix}-btn--tertiary`]
         }
       ]
     };
