@@ -13,14 +13,6 @@ if (header.links !== undefined || header.search) {
   const tools = {};
   data.body.tools = tools;
 
-  if (header.translate !== undefined) {
-    tools.translate = {
-      collapseId: header.translate.collapseId || uniqueId('translate'),
-      button: header.translate.button || {kind: 1},
-      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
-    }
-  }
-
   if (header.links === true) {
     hasMenu = true;
     tools.links = {
@@ -51,6 +43,16 @@ if (header.links !== undefined || header.search) {
   else if (header.links !== undefined) {
     hasMenu = true;
     tools.links = header.links;
+  }
+
+  if (header.translate !== undefined) {
+    const translateKind = header.links && tools.links.buttons.length ? 1 : 3;
+    hasMenu = true;
+    tools.translate = {
+      collapseId: header.translate.collapseId || uniqueId('translate'),
+      button: header.translate.button || {kind: translateKind},
+      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
+    }
   }
 
   if (header.search) {

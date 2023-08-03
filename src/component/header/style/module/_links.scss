@@ -21,14 +21,13 @@
     @include respond-from(lg) {
       @include display-flex(row, null, flex-end);
       gap: space(2v);
-      @include margin-bottom(-4v);
     }
 
     #{ns-group(btns)} {
       @include respond-from(lg) {
         @include horizontal-btns-group;
         justify-content: flex-end;
-        @include margin(0 -1v);
+        @include margin(0 -1v -4v);
 
         & > li {
           align-items: flex-start;

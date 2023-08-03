@@ -12,11 +12,15 @@
 
 <%- sample('Header sans navigation', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: true }}, true, './layout');  %>
 
-<%- sample('Header sans navigation avec raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>
+<%- sample('Header sans navigation avec un seul raccourci', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links: { buttons: [{ icon: 'account-fill', url: '#', label: 'Espace particulier', markup: 'a', classes: [`${prefix}-btn--icon-left`, `${prefix}-btn--sm`, `${prefix}-btn--tertiary`]}] }, service: true}}, true, './layout');  %>
+
+<%- sample('Header sans navigation avec une liste de raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, service: true}}, true, './layout');  %>
 
 <%- sample('Header avec Navigation complète', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service:true, links:true, search: true, navigation: true }}, true, './layout');  %>
 
-<%- sample('Header avec selecteur de langues', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, navigation: true, translate: true, service: true}}, true, './layout');  %>
+<%- sample('Header avec selecteur de langues', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:{ buttons: []}, navigation: true, translate: true, service: true}}, true, './layout');  %>
+
+<%- sample('Header avec selecteur de langues et raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, navigation: true, translate: true, service: true}}, true, './layout');  %>
 
 <%- sample('Header avec nom de service, lien d’accès', './sample/header.ejs', {header: { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }}, true, './layout');  %>
 
