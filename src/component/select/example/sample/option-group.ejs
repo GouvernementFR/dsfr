@@ -1,0 +1,30 @@
+<%
+  let select = locals.select || {};
+  select.valid = validData(select.valid);
+  select.error = errorData(select.error);
+  select.hint = hintData(select.hint);
+  select.placeholder = select.placeholder || 'Selectionnez une option';
+  select.label = select.label ||  'Label pour liste déroulante';
+
+  select.optionGroups = [
+    {
+      label: 'Groupe 1',
+      options: [
+        {value:'1', label:'Option 1'},
+        {value:'2', label:'Option 2'},
+        {value:'3', label:'Option 3'},
+        {value:'4', label:'Option 4'}
+      ]
+    },
+    {
+      label: 'Groupe 2',
+      options: [
+        {value:'5', label:'Option 5'},
+        {value:'6', label:'Option 6'},
+        {value:'7', label:'Option 7'},
+      ]
+    }
+  ];
+%>
+
+<%- include('../../template/ejs/select-group', {select: select}); %>
