@@ -7,6 +7,6 @@
 
 @mixin _logo-scheme($legacy: false) {
   #{ns(logo)} {
-    @include color.text(title grey, (legacy:$legacy));
+    @include color.text(black-white grey, (legacy:$legacy));
   }
 }
