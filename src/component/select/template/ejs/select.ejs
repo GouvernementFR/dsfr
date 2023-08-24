@@ -5,7 +5,13 @@
 
 * select.label (string, required) : label
 
-* select.options (array, required) : options du select, un array d'objets avec :
+* select.optionGroups (array) : groupes d'options du select, un array d'objets avec :
+  * label : label du groupe d'options
+  * options (array) : options du select, un array d'objets avec :
+    * value : attribut value de l'option
+    * label : label de l'option
+
+* select.options (array) : options du select, un array d'objets avec :
   * value : attribut value de l'option
   * label : label de l'option
 
