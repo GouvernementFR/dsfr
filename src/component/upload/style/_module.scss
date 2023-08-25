@@ -36,10 +36,12 @@
     }
   }
 
-  &::-webkit-file-upload-button {
+  &::-webkit-file-upload-button,
+  &::file-selector-button {
     @include reset.appearance(button);
     font: inherit;
     cursor: pointer;
+    border-radius: 2px;
     @include margin-right(2v);
   }
 }
