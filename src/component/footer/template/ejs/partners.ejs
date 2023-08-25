@@ -15,11 +15,14 @@
 
 <h4 class="<%= prefix %>-footer__partners-title"><%- partners.title %></h4>
 <div class="<%= prefix %>-footer__partners-logos">
-  <div class="<%= prefix %>-footer__partners-main">
-    <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.href %>">
-      <%- include('../../../../core/template/ejs/media/img.ejs',  {media: {...partners.mainPartner, classes: [prefix + '-footer__logo']}}); %>
-    </a>
-  </div>
+  <% if (partners.mainPartner) { %>
+    <div class="<%= prefix %>-footer__partners-main">
+      <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.href %>">
+        <%- include('../../../../core/template/ejs/media/img.ejs',  {media: {...partners.mainPartner, classes: [prefix + '-footer__logo']}}); %>
+      </a>
+    </div>
+  <% } %>
+
   <div class="<%= prefix %>-footer__partners-sub">
     <ul>
       <%

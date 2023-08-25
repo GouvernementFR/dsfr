@@ -21,16 +21,31 @@ if (footer.content === true) data.content = {
   ]
 };
 
-if (footer.partners === true) data.partners = {
-  title: 'Nos partenaires',
-  href: footer.href,
-  mainPartner: imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
-  subPartners: [
-      imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
-      imgData('img/placeholder.1x1.png', 'rendered', null, null, 'height: 5.625rem'),
-      imgData('img/placeholder.9x16.png', 'rendered', null, null, 'height: 5.625rem')
-  ]
-};
+if (footer.partners !== undefined) {
+  data.partners = {
+    title: 'Nos partenaires',
+    href: footer.href,
+    subPartners: [
+        imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
+        imgData('img/placeholder.1x1.png', 'rendered', null, null, 'height: 5.625rem'),
+        imgData('img/placeholder.9x16.png', 'rendered', null, null, 'height: 5.625rem')
+    ]
+  }
+
+  if (footer.partners.mainPartner === true) {
+    data.partners.mainPartner = imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem');
+  }
+
+  if (footer.partners.subPartners === true) {
+    data.partners.subPartners = [
+        imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
+        imgData('img/placeholder.1x1.png', 'rendered', null, null, 'height: 5.625rem'),
+        imgData('img/placeholder.9x16.png', 'rendered', null, null, 'height: 5.625rem')
+    ]
+  }
+}
+
+
 
 if (footer.bottom === true) data.bottom = {
   links: [
