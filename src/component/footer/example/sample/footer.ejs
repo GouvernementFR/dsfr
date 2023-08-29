@@ -23,13 +23,8 @@ if (footer.content === true) data.content = {
 
 if (footer.partners !== undefined) {
   data.partners = {
-    title: 'Nos partenaires',
-    href: footer.href,
-    subPartners: [
-        imgData('img/placeholder.16x9.png', 'rendered', null, null, 'height: 5.625rem'),
-        imgData('img/placeholder.1x1.png', 'rendered', null, null, 'height: 5.625rem'),
-        imgData('img/placeholder.9x16.png', 'rendered', null, null, 'height: 5.625rem')
-    ]
+    title: footer.partners.subPartners ? 'Nos partenaires' : 'Notre partenaire',
+    href: footer.href
   }
 
   if (footer.partners.mainPartner === true) {

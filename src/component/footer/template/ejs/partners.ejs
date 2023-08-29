@@ -23,19 +23,21 @@
     </div>
   <% } %>
 
-  <div class="<%= prefix %>-footer__partners-sub">
-    <ul>
-      <%
-        for (let i = 0; i < partners.subPartners.length; i++) {
-          const attributes = {};
-      	  attributes.id = uniqueId('footer__subpartners-link');
-      %>
-      <li>
-        <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.href %>">
-          <%- include('../../../../core/template/ejs/media/img.ejs', {media: {...partners.subPartners[i], classes: [prefix + '-footer__logo']}}); %>
-        </a>
-      </li>
-    <% } %>
-    </ul>
-  </div>
+  <% if (partners.subPartners && partners.subPartners.length) { %>
+    <div class="<%= prefix %>-footer__partners-sub">
+      <ul>
+        <%
+          for (let i = 0; i < partners.subPartners.length; i++) {
+            const attributes = {};
+            attributes.id = uniqueId('footer__subpartners-link');
+        %>
+          <li>
+            <a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__partners-link" href="<%- partners.href %>">
+              <%- include('../../../../core/template/ejs/media/img.ejs', {media: {...partners.subPartners[i], classes: [prefix + '-footer__logo']}}); %>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  <% } %>
 </div>
