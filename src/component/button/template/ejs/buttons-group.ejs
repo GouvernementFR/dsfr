@@ -3,7 +3,7 @@
 
 * buttonsGroup.buttons (array, required): paramètres spécifique de chaque bouton du groupe
 
-* buttonsGroup.markup (string) : si non défini, ul
+* buttonsGroup.groupMarkup (string) : si non défini, ul
 
 * buttonsGroup.inline (string|boolean, optional) : aligne les boutons horizontalement (dans la mesure du possible)
 valeurs :
@@ -45,8 +45,8 @@ valeurs :
 
 <%
  const buttonsGroup = locals.buttonsGroup || {};
- const groupMarkup = buttonsGroup.markup || 'ul';
- const itemMarkup = buttonsGroup.markup || 'li';
+ const groupMarkup = buttonsGroup.groupMarkup || 'ul';
+ const itemMarkup = buttonsGroup.groupMarkup || 'li';
  let groupClasses = buttonsGroup.classes || [];
  let groupAttrs = buttonsGroup.attributes || {};
  let buttons = buttonsGroup.buttons || [];
