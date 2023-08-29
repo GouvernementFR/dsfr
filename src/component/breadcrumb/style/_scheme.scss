@@ -9,7 +9,7 @@
   #{ns(breadcrumb)} {
     @include color.text(mention grey, (legacy:$legacy));
 
-    &__link[aria-current] {
+    &__link[aria-current]:not([aria-current="false"]) {
       @include color.text(active grey, (legacy:$legacy));
     }
   }

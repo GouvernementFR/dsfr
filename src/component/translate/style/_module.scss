@@ -36,7 +36,7 @@
   &__language {
     white-space: nowrap;
 
-    &[aria-current] {
+    &[aria-current]:not([aria-current="false"]) {
       display: none;
       @include respond-from(lg) {
         display: inline-flex;

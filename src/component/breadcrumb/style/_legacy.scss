@@ -13,7 +13,8 @@
     @include disable-list-style-legacy;
 
     &__link {
-      &:not([aria-current]) {
+      &:not([aria-current]),
+      &[aria-current="false"] {
         @include icon-legacy(arrow-right-s-line, sm, after);
       }
     }

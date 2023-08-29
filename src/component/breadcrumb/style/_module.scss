@@ -82,7 +82,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include hover-underline;
     @include padding(0);
 
-    &[aria-current] {
+    &[aria-current]:not([aria-current="false"]) {
       pointer-events: none;
       cursor: default;
       @include disable-underline;

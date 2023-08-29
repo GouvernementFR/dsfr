@@ -11,12 +11,13 @@
     @include color.text(action-high grey, (legacy: $legacy));
 
     &__link {
-      &[aria-current] {
+      &[aria-current]:not([aria-current="false"]) {
         @include color.background(active blue-france, (legacy: $legacy, hover: true));
         @include color.text(inverted blue-france, (legacy: $legacy));
       }
 
-      &:not([aria-current]) {
+      &:not([aria-current]),
+      &:[aria-current="false"] {
         @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true,));
       }
     }

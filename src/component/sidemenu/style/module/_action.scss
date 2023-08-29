@@ -19,7 +19,7 @@
 
   @include enable-tint;
 
-  &[aria-current] {
+  &[aria-current]:not([aria-current="false"]) {
     @include before('') {
       @include absolute(3v, null, 3v, 0, 2px);
     }
@@ -29,7 +29,7 @@
 }
 
 #{ns(sidemenu__link)} {
-  &[aria-current]:not([href]) {
+  &[aria-current]:not([aria-current="false"]):not([href]) {
     pointer-events: none;
     cursor: default;
   }

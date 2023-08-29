@@ -11,7 +11,7 @@
     &__btn {
       @include color.text(action-high grey, (legacy: $legacy));
 
-      &[aria-current] {
+      &[aria-current]:not([aria-current="false"]) {
         @include color.text(active blue-france, (legacy: $legacy));
         @include before {
           @include color.background(active blue-france, (legacy: $legacy));

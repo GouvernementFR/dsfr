@@ -10,7 +10,7 @@
   @include media-query.high-contrast() {
     #{ns(pagination)} {
       &__link {
-        &[aria-current] {
+        &[aria-current]:not([aria-current="false"]) {
           @include color.border(active blue-france, (legacy: $legacy, hover: true));
         }
       }
