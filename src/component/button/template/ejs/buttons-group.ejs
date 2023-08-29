@@ -46,7 +46,7 @@ valeurs :
 <%
  const buttonsGroup = locals.buttonsGroup || {};
  const groupMarkup = buttonsGroup.groupMarkup || 'ul';
- const itemMarkup = buttonsGroup.groupMarkup || 'li';
+ const isList = groupMarkup === 'ul';
  let groupClasses = buttonsGroup.classes || [];
  let groupAttrs = buttonsGroup.attributes || {};
  let buttons = buttonsGroup.buttons || [];
@@ -97,24 +97,28 @@ valeurs :
 
 <<%= groupMarkup %> <%- includeClasses(groupClasses) %> <%- includeAttrs(groupAttrs) %>>
   <% for (let i = 0; i < buttons.length; i++) { %>
-  <<%= itemMarkup %>>
-      <%
-          const button = buttons[i];
-          let path;
-          switch(button.template) {
-              case 'display':
-                path = './button-display.ejs';
-                break;
+    <% if (isList) { %>
+      <li>
+    <% } %>
+    <%
+      const button = buttons[i];
+      let path;
+      switch(button.template) {
+        case 'display':
+          path = './button-display.ejs';
+          break;
 
-              case 'close':
-                path = './button-close.ejs';
-                break;
+        case 'close':
+          path = './button-close.ejs';
+          break;
 
-              default:
-                path = './button.ejs';
-          }
-        %>
+        default:
+          path = './button.ejs';
+      }
+    %>
     <%- include(path, {button:button}); %>
-  </<%= itemMarkup %>>
+    <% if (isList) { %>
+      </li>
+    <% } %>
   <% } %>
 </<%= groupMarkup %>>
