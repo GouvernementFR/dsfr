@@ -3,9 +3,14 @@
 /// @group Highlight
 ////
 
+@use 'module/spacing';
+
 #{ns(highlight)} {
   @include padding-left(6v);
   @include text-style(md);
   @include padding-left(8v, md);
   @include margin-left(8v, md);
+  background-size: spacing.space(1v 100%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
