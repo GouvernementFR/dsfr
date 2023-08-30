@@ -10,8 +10,7 @@
     @include margin-x(2v);
   }
 
-  > li,
-  > div {
+  > li {
     display: inline-flex;
     max-width: 100%;
     width: auto;
