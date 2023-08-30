@@ -12,7 +12,9 @@
     @include display-flex(row, center, null, wrap);
     @include margin-top(10v);
 
-    @include nest-footer-bottom-btn(xs, left);
+    @include nest-footer-bottom-btn(xs, left) {
+      display: inline;
+    };
   }
 
   /**
