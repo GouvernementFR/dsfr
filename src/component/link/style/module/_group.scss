@@ -23,12 +23,12 @@
     }
   }
 
-  #{ns(link)} {
-    vertical-align: top;
-  }
-
   &--sm {
     @include nest-link(sm, null);
+
+    #{ns(link)}:not(#{ns(link--download)}) {
+      vertical-align: top;
+    }
   }
 
   &--lg {
