@@ -1,9 +1,0 @@
-
-<%
-let data = {};
-data = JSON.parse(include('../data/socials.json.ejs'));
-data.socials.buttons[1].type = undefined;
-data.socials.buttons[1].classes = [`${prefix}-icon-twitter-x-fill`];
-%>
-
-<%- include('../../template/ejs/follow.ejs', {follow: data}); %>

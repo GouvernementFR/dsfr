@@ -1,6 +1,6 @@
 <% const sample = getSample(include); %>
 
-<%- section('Réseaux sociaux seuls', 'Les icônes réseaux sociaux disponibles pour ce composant sont définies dans :', 0, true); %>
+<%- section('Réseaux sociaux seuls', 'Les icones réseaux sociaux disponibles pour ce composant sont définies dans :', 0, true); %>
 
 <div class="fr-container">
     <%
@@ -14,13 +14,12 @@
         <%- include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion}); %>
     </div>
 
+
+    <%- section(null, 'Il est aussi possible d\'appliquer une classe utilitaire sur un bouton pour utiliser une icone du dsfr (ex: "fr-icon-rss-line")', 0); %>
+
 </div>
 
 <%- sample('', './sample/socials-only.ejs', {}, true); %>
-
-<%- section('Réseaux sociaux avec icône personalisée', 'Exemple avec utilisation du logo X à la place de twitter (non recommandé pour le moment)', 0, true); %>
-
-<%- sample('', './sample/socials-icon-custom.ejs', {}, true); %>
 
 <%- sample('Lettre d\'info seule', './sample/newsletter-only.ejs', {}, true); %>
 

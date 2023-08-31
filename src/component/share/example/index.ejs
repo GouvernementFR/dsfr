@@ -16,12 +16,9 @@ const accordion = {
 <div class="<%= prefix %>-mb-4v" >
     <%- include(root + 'src/component/accordion/template/ejs/accordion', {accordion: accordion}); %>
 </div>
+<%- section(null, 'Il est aussi possible d\'appliquer une classe utilitaire sur un bouton pour utiliser une icone du dsfr (ex: "fr-icon-rss-line")', 0); %>
 
 <%- sample('', './sample/share-default', {}, true); %>
-
-<%- section('Boutons de partage avec icone personalisée', 'Il est aussi possible d\'appliquer une classe utilitaire sur un bouton pour utiliser une icone du dsfr. Exemple avec le logo X de twitter (non recommandé pour le moment).', 0); %>
-
-<%- sample('', './sample/share-icon-custom', {}, true); %>
 
 <%- sample('Boutons de partage version inactive', './sample/share-default', {share:{disabled: true}}, true); %>
 
