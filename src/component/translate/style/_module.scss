@@ -4,6 +4,7 @@
 ////
 
 @use 'module/animate';
+@use 'module/selector';
 
 #{ns(translate)} {
   --rows: 8;
@@ -36,7 +37,7 @@
   &__language {
     white-space: nowrap;
 
-    &[aria-current]:not([aria-current="false"]) {
+    @include selector.current {
       display: none;
       @include respond-from(lg) {
         display: inline-flex;

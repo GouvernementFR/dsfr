@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/selector';
 
 /**
 un padding de 4px et une marge négative en compensation sont mis en place afin d'éviter de couper le focus.
@@ -82,7 +83,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
     @include hover-underline;
     @include padding(0);
 
-    &[aria-current]:not([aria-current="false"]) {
+    @include selector.current {
       pointer-events: none;
       cursor: default;
       @include disable-underline;

@@ -5,12 +5,13 @@
 
 @use 'module/color';
 @use 'module/media-query';
+@use 'module/selector';
 
 @mixin _pagination-contrast-scheme($legacy: false) {
   @include media-query.high-contrast() {
     #{ns(pagination)} {
       &__link {
-        &[aria-current]:not([aria-current="false"]) {
+        @include selector.current {
           @include color.border(active blue-france, (legacy: $legacy, hover: true));
         }
       }

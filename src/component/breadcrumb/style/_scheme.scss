@@ -4,13 +4,16 @@
 ////
 
 @use 'module/color';
+@use 'module/selector';
 
 @mixin _breadcrumb-scheme($legacy: false) {
   #{ns(breadcrumb)} {
     @include color.text(mention grey, (legacy:$legacy));
 
-    &__link[aria-current]:not([aria-current="false"]) {
-      @include color.text(active grey, (legacy:$legacy));
+    &__link {
+      @include selector.current {
+        @include color.text(default grey, (legacy:$legacy));
+      }
     }
   }
 }

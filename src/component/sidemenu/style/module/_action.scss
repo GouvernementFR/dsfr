@@ -3,6 +3,8 @@
 /// @group sidemenu
 ////
 
+@use 'module/selector';
+
 /**
  * Styles du bouton et du lien d'accès direct du sidemnu
  */
@@ -19,7 +21,7 @@
 
   @include enable-tint;
 
-  &[aria-current]:not([aria-current="false"]) {
+  @include selector.current {
     @include before('') {
       @include absolute(3v, null, 3v, 0, 2px);
     }
@@ -29,9 +31,11 @@
 }
 
 #{ns(sidemenu__link)} {
-  &[aria-current]:not([aria-current="false"]):not([href]) {
-    pointer-events: none;
-    cursor: default;
+  &:not([href]) {
+    @include selector.current {
+      pointer-events: none;
+      cursor: default;
+    }
   }
 }
 
