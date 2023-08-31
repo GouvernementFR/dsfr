@@ -22,12 +22,14 @@ if (share.id) shareAttrs.id = share.id;
 
 const mapShareButton = (data) => {
   const button = {
-    classes: [`${prefix}-btn--${data.type}`],
     label: data.label,
     title: data.title,
     attributes: data.attributes,
     tooltip: data.tooltip,
+    classes: [],
   }
+  if (data.classes) button.classes = data.classes;
+  if (data.type) button.classes.push(`${prefix}-btn--${data.type}`);
 
   if (data.comments) button.comments = data.comments;
   if (data.onclick) button.onclick = data.onclick;
@@ -36,6 +38,7 @@ const mapShareButton = (data) => {
   switch (data.type) {
     case 'facebook':
     case 'twitter':
+    case 'twitter-x':
     case 'linkedin':
       button.disabled = share.disabled;
       button.markup = 'a';
