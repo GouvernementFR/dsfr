@@ -104,7 +104,7 @@ if (button.disabled === true) {
       btnAttrs.href = button.href || '#[url - à modifier]';
       switch (true) {
         case button.blank:
-          btnAttrs.target = '_blank';
+          btnAttrs = {...targetBlankData(), ...btnAttrs};
           break;
 
         case button.self:

@@ -263,6 +263,17 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
+const targetBlankData = () => {
+  const attr = {};
+  attr.target = '_blank';
+  attr.rel = 'noopener';
+  attr.title = `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
+  return attr;
+}
+
+locals.targetBlankData = targetBlankData;
+
+
 const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;
