@@ -53,7 +53,7 @@
   &#{ns(enlarge-link)} {
     #{ns(tile)}__title {
       a {
-        @include icon(arrow-right-line, md, after) {
+        @include icon-size(md) {
           @include absolute(null, 8v, 9v);
         }
       }
@@ -86,10 +86,12 @@
         background-size: 100% spacing.space(1v);
         background-repeat: no-repeat;
       }
+
+      @include icon(arrow-right-line, md, after);
     }
 
     @include target-blank {
-      @include icon(external-link-line, sm, after);
+      @include icon(external-link-line, null, after);
     }
   }
 
