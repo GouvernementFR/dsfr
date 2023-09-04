@@ -11,7 +11,7 @@
   #{selector.ns-group(radio)} {
     input[type="radio"] {
       & + label {
-        @include color.background-image((action-high blue-france), (legacy:$legacy), radio-background-image(false));
+        @include color.background-image((border active blue-france), (legacy:$legacy), radio-background-image(false));
       }
 
       @include disabled.selector {
@@ -22,7 +22,7 @@
 
       &:checked {
         + label {
-          @include color.background-image((action-high blue-france) (action-high blue-france), (legacy:$legacy), radio-background-image(true));
+          @include color.background-image((border active blue-france) (active blue-france), (legacy:$legacy), radio-background-image(true));
         }
 
         @include disabled.selector {
