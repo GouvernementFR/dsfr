@@ -21,8 +21,12 @@ const mapSocialButton = (data) => {
       href: data.url,
       id: data.id || uniqueId('social-button'),
       blank: true,
-      classes: [`${prefix}-btn--${data.type}`]
+      classes: []
   }
+  if (data.classes) button.classes = data.classes;
+  if (data.type) button.classes.push(`${prefix}-btn--${data.type}`);
+  if (data.attributes) button.attributes = data.attributes;
+
   return button;
 };
 

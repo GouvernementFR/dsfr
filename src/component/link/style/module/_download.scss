@@ -13,9 +13,10 @@
   }
 
   #{ns(link__detail)} {
-    @include absolute(calc(100% + 1v), null, null, 0);
+    @include absolute(null, null, null, 0);
     @include text-style(xs);
     @include font-weight(regular);
+    @include margin-top(7v);
     white-space: nowrap;
     pointer-events: none;
     cursor: text;
