@@ -74,7 +74,7 @@
   #{ns-group(radio)} {
     position: relative;
 
-    &:not(:last-child) input[type="radio"] + label {
+    &:not(:last-child) {
       @include margin-right(12v);
     }
 
