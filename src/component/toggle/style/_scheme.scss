@@ -10,12 +10,10 @@
   #{ns(toggle)} {
     label {
       @include before {
-        @include color.text(active blue-france, (legacy:$legacy));
         @include color.data-uri-svg(border action-high blue-france, (legacy: $legacy), $toggle-unchecked-svg);
       }
 
       @include after {
-        @include color.text(active blue-france, (legacy:$legacy));
         @include color.box-shadow(action-high blue-france, (legacy:$legacy), all-1-in);
         @include color.background(default grey, (legacy:$legacy));
       }
@@ -81,7 +79,6 @@
       @include color.text(default error, (legacy:$legacy));
 
       @include before {
-        @include color.text(default error, (legacy:$legacy));
         @include color.data-uri-svg(border plain error, (legacy: $legacy), $toggle-unchecked-svg);
       }
 
@@ -107,7 +104,6 @@
       @include color.text(default success, (legacy:$legacy));
 
       @include before {
-        @include color.text(default success, (legacy:$legacy));
         @include color.data-uri-svg(border plain success, (legacy: $legacy), $toggle-unchecked-svg);
       }
 
