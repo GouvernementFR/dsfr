@@ -42,8 +42,8 @@
       @include pressed-selector(true) {
         &:not(:disabled) {
           @include color.transparent-background((legacy:$legacy));
-          @include color.text(inverted grey, (legacy: $legacy));
-          @include tag-punched-background(background action-high blue-france, md, $legacy);
+          @include color.text(inverted blue-france, (legacy: $legacy));
+          @include tag-punched-background(background active blue-france, md, $legacy);
         }
 
         @include after {
