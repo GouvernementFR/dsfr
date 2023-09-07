@@ -17,7 +17,7 @@
     }
 
     &#{ns(tag)}--dismiss {
-      @include color.text(inverted grey, (legacy: $legacy));
+      @include color.text(inverted blue-france, (legacy: $legacy));
       @include color.background(action-high blue-france, (legacy: $legacy, hover: true));
     }
   }
@@ -59,7 +59,7 @@
         }
 
         &#{ns(tag)}--sm {
-          @include tag-punched-background(background action-high blue-france, sm, $legacy);
+          @include tag-punched-background(background active blue-france, sm, $legacy);
 
           @include disabled.selector {
             @include tag-punched-background(background disabled grey, sm, $legacy, false);
@@ -77,7 +77,7 @@
       input[type=button] {
         &#{ns(tag)} {
           @include pressed-selector(true) {
-            @include tag-punched-background(background action-high blue-france, sm, $legacy);
+            @include tag-punched-background(background active blue-france, sm, $legacy);
 
             @include disabled.selector {
               @include tag-punched-background(background disabled grey, sm, $legacy, false);
