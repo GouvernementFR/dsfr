@@ -96,7 +96,7 @@
     }
 
     &__legend {
-      @include color.text(title grey, (legacy:$legacy));
+      @include color.text(label grey, (legacy:$legacy));
     }
 
     &--error,
