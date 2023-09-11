@@ -19,7 +19,8 @@
     }
 
     // Grey outline variant
-    &--tertiary {
+    &--tertiary,
+    &--account {
       @include btn-kind-scheme(3, $legacy);
     }
 
@@ -28,7 +29,9 @@
     &--close,
     &--display,
     &--fullscreen,
-    &--tooltip {
+    &--tooltip,
+    &--briefcase,
+    &--team {
       @include btn-kind-scheme(4, $legacy);
     }
   }

@@ -13,37 +13,28 @@ if (header.links !== undefined || header.search) {
   const tools = {};
   data.body.tools = tools;
 
-  if (header.translate !== undefined) {
-    tools.translate = {
-      collapseId: header.translate.collapseId || uniqueId('translate'),
-      button: header.translate.button || {kind: 1},
-      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
-    }
-  }
-
   if (header.links === true) {
     hasMenu = true;
     tools.links = {
       buttons: [
         {
-          icon: 'team-line',
           url: '#',
           label: 'Contact',
-          markup: 'a'
+          markup: 'a',
+          classes: [`${prefix}-btn--team`]
         },
         {
-          icon: 'briefcase-fill',
           url: '#',
           label: 'Espace recruteur',
-          markup: 'a'
+          markup: 'a',
+          classes: [`${prefix}-btn--briefcase`]
           
         },
         {
-          icon: 'account-fill',
           url: '#',
           label: 'Espace particulier',
           markup: 'a',
-          kind: 3
+          classes: [`${prefix}-btn--account`]
         }
       ]
     };
@@ -51,6 +42,15 @@ if (header.links !== undefined || header.search) {
   else if (header.links !== undefined) {
     hasMenu = true;
     tools.links = header.links;
+  }
+
+  if (header.translate !== undefined) {
+    hasMenu = true;
+    tools.translate = {
+      collapseId: header.translate.collapseId || uniqueId('translate'),
+      button: header.translate.button,
+      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
+    }
   }
 
   if (header.search) {
