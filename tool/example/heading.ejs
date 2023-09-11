@@ -17,7 +17,7 @@
     <%
     for (const d of doc) {
     %>
-      <li><a href="<%= d.url %>" target="_blank" rel="noopener"><%= d.title %></a></li>
+      <li><a href="<%= d.url %>" <%- includeAttrs(targetBlankData()) %> <%= d.title %></a></li>
     <%
     }
     %>
@@ -27,7 +27,7 @@
 
   case typeof doc === 'string':
   %>
-  <a href="<%= doc %>" target="_blank" rel="noopener">Documentation</a>
+  <a href="<%= doc %>" <%- includeAttrs(targetBlankData()) %>>Documentation</a>
   <%
     break;
   }
