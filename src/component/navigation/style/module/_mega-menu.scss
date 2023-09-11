@@ -32,7 +32,6 @@
     display: none;
     @include respond-from(lg) {
       display: flex;
-      @include margin-right(0);
     }
   }
 
