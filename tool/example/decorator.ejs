@@ -140,7 +140,7 @@ const brandData = (component = 'header', logo = true, service = false, operator 
     fullTitle.push(contentPlaceholder(operatorPlaceholder));
     switch (typeof operator) {
       case 'boolean':
-        if (operator) data.operator = imgData('img/placeholder.9x16.png', 'rendered', null, null, 'width:3.5rem;');
+        if (operator) data.operator = imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:8rem;');
         break;
       default:
         data.operator = operator;

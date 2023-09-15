@@ -43,10 +43,6 @@
   &__operator,
   &__service {
     @include padding(4v, lg);
-
-    &:not(:last-child) {
-      @include margin-right(2v, lg);
-    }
   }
 
   &__logo {
@@ -65,6 +61,7 @@
 
     img {
       display: block;
+      @include min-width(14v);
     }
   }
 
