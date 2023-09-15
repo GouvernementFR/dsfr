@@ -42,7 +42,7 @@
      */
     #{ns(logo)} + #{ns(footer__brand-link)} {
       @include margin-left(6v);
-      @include margin-left(12v, md);
+      @include margin-left(8v, md);
     }
 
     @include respond-from(md) {

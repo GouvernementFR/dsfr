@@ -39,8 +39,7 @@
   &__content-list {
     @include display-flex(row);
     align-self: center;
-    // @include margin-bottom(-4v);
-    // @include margin-bottom(4v, md);
+    @include margin-bottom(-2v);
     flex-wrap: wrap;
 
     > li {

@@ -20,7 +20,7 @@
   */
   &__bottom-list {
     @include size(100%);
-    @include padding(2v 0 4v);
+    @include padding(4v 0 4v);
     @include size(100%);
     @include margin(0);
   }

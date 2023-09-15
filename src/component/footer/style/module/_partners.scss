@@ -21,7 +21,6 @@
     */
     #{ns(footer__logo)} {
       @include size(auto, auto);
-      @include padding(1v);
     }
 
     + #{ns(footer__bottom)} {
@@ -30,8 +29,9 @@
   }
 
   &__partners-title {
-    @include set-title-margin(0 0 2v 0);
+    @include set-title-margin(0 0 3v 0);
     @include text-style(sm);
+    @include font-weight(regular);
     flex-basis: 100%;
     text-align: center;
 
@@ -110,7 +110,8 @@
     * On surcharge le style du lien pour les logos secondaires
     */
     #{ns(footer)}__partners-link {
-      @include margin-bottom(2v);
+      @include margin-bottom(4v);
+      @include margin-bottom(2v, md);
     }
 
     @include respond-from(sm) {

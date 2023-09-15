@@ -11,7 +11,7 @@
   &__top {
     @include display-flex(null);
     @include margin(-9.5v 0 4v);
-    @include margin(-9.5v 0 10v, md);
+    @include margin(-9.5v 0 8v, md);
     @include padding(8v 0 4v);
   }
 
