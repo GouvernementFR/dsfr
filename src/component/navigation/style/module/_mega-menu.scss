@@ -51,9 +51,9 @@
     @include padding-top(0, lg);
     @include set-text-margin(0 0 2v);
     @include set-title-margin(0 0 2v);
+    @include nest-link(sm, null);
 
-    p,
-    #{ns(link)} {
+    p {
       @include text-style(sm);
     }
   }
