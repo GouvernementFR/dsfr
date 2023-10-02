@@ -1,0 +1,167 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'module/reset';
+@use 'module/spacing';
+@use 'module/selector';
+
+#{selector.ns-group(range)} {
+  --thumb-size: 24px;
+  --track-height: 4px;
+  --track-offset-y : calc(var(--thumb-size) / 2 - var(--track-height) / 2);
+  --min: 0;
+  --max: 1;
+  --value: 1;
+  --value-a: var(--value, 0); // default value ("--value" is used in single-range markup)
+  --value-b: var(--value, 0); // default value
+  --text-value-a: var(--text-value, "");
+  --completed-a: calc(
+    (var(--value-a) - var(--min)) / (var(--max) - var(--min))
+  );
+  --percent-completed-a: calc(12px + (100% - 24px) * var(--completed-a));
+  --completed-b: calc(
+    (var(--value-b) - var(--min)) / (var(--max) - var(--min))
+  );
+  --percent-completed-b: calc(12px + (100% - 24px) * var(--completed-b) + #{spacing.space(6v)});
+
+  @include relative;
+
+  #{selector.ns(label)} {
+    @include relative;
+
+    // mix/max texts
+    &::before,
+    &::after {
+      content: counter(x);
+      @include text-style(xs);
+      @include absolute(calc(100% + #{spacing.space(11.5v)}));
+      pointer-events: none;
+    }
+
+    &::before {
+      counter-reset: x var(--min);
+      left: 0;
+    }
+
+    &::after {
+      counter-reset: x var(--max);
+      right: 0;
+    }
+  }
+
+  #{selector.ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
+    }
+  }
+
+  input[type=range] {
+    @include reset.appearance(none);
+    @include size(100%, var(--track-height));
+    @include margin(7.5v 0 8v);
+    cursor: pointer;
+    outline: none;
+    background: none;
+
+    &:disabled {
+      outline-style: none;
+      cursor: not-allowed;
+    }
+
+    &:not(:only-of-type) {
+      pointer-events: none;
+    }
+
+    @include selector.range-thumb {
+      @include reset.appearance(none);
+      @include size(6v, 6v);
+      border-radius: 50%;
+      border: none;
+      pointer-events: auto;
+      cursor: -webkit-grab;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+        @include z-index(above);
+      }
+    }
+
+    @include selector.range-track {
+      background-repeat: no-repeat;
+      background-position: 0 var(--track-offset-y);
+      background-size: 100% var(--track-height);
+    }
+  }
+
+  output {
+    --pos: var(--percent-completed-a);
+    @include absolute;
+    @include min-width(6v);
+    @include z-index(above);
+    @include text-style(xs);
+    text-align: center;
+    pointer-events: none;
+    left: var(--pos);
+    transform: translateX(-50%);
+
+    @include after {
+      content: var(--prefix, "") var(--text-value-a) var(--suffix, "");
+    }
+  }
+
+  &--double {
+    output {
+      --pos: calc((var(--thumb-size) / 2 + (100% - var(--thumb-size) * 2 ) * var(--completed-a) + var(--thumb-size) / 2  + (100% - var(--thumb-size) * 2 ) * var(--completed-b) + var(--thumb-size)) * .5);
+
+      @include min-width(12v);
+
+      @include after {
+        content: var(--prefix, "") var(--text-value-a) var(--suffix, "") "\00a0-\00a0" var(--prefix, "") var(--text-value-b) var(--suffix, "");
+      }
+    }
+
+    input[type=range] {
+      @include width(calc(100% - var(--thumb-size)));
+    }
+
+    input[type=range]:nth-of-type(2) {
+      @include absolute;
+      left: var(--thumb-size);
+    }
+  }
+
+  &--step {
+    --steps: ((var(--max) - var(--min)) / var(--step));
+    --completed-step-width: calc(100% / (var(--completed-a) * var(--steps)) );
+    --step-width: calc(100% / var(--steps));
+    --step-gap: #{spacing.space(1v)};
+    
+    input[type=range]:first-of-type {
+      @include selector.range-track {
+        background-position: calc(var(--thumb-size) / 2) var(--track-offset-y), calc(100% - var(--thumb-size) / 2) var(--track-offset-y);
+        background-size: calc(var(--percent-completed-a) - calc(var(--thumb-size) / 2)) var(--track-height), calc(100% - var(--thumb-size)) var(--track-height);
+      }
+    }
+  }
+
+  &--no-indicators {
+    #{selector.ns(label)} {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    input[type=range] {
+      @include margin-bottom(var(--track-offset-y));
+    }
+  }
+}
+
+  // input[type='range']:focus-visible::-webkit-slider-thumb {
+  //   outline: solid 2px lightblue;
+  //   outline-offset: 2px;
+  // } 

@@ -1,0 +1,9 @@
+<% const sample = getSample(include); %>
+
+<%- sample(getText('sample.default', 'range'), './sample/range.ejs', { range: {min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.no-indicators', 'range'), './sample/range.ejs', { range: {indicators: false, min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.step', 'range'), './sample/range-step.ejs', { range: {min: 0, max: 100, step: 10, value: 50}}, true); %>
+
+<%- sample(getText('sample.double', 'range'), './sample/range-double.ejs', { range: {min: 0, max: 100, value: 50}}, true); %>

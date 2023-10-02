@@ -87,6 +87,10 @@ $action-elements: (
       )
     )
   ),
+  input-range-thumb: (
+    selector: 'input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-range-thumb, input[type="range"]::-ms-thumb',
+    focus: (),
+  ),
   input-buttons: (
     selector: 'input[type="button"], input[type="image"], input[type="reset"], input[type="submit"]',
     focus: (),

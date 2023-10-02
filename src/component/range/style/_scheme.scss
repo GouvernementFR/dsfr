@@ -1,0 +1,50 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'module/color';
+@use 'module/selector';
+@use 'module/elevation';
+
+@mixin _range-scheme($legacy: false) {
+  #{selector.ns-group(range)} {
+
+    output {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    input[type=range] {
+      @include selector.range-thumb {
+        @include elevation.elevate(raised, (legacy: $legacy));
+        @include color.background(action-high blue-france, (legacy:$legacy));
+      }
+
+      @include selector.range-track {
+        @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, $color#1 0, $color#1 var(--percent-completed-a), $color#2 var(--percent-completed-a), $color#2 100%)');
+      }
+    }
+
+    &--double {
+      input[type=range]:first-of-type {
+        @include selector.range-track() {
+          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, $color#2 0%, $color#2 var(--percent-completed-a), $color#1 var(--percent-completed-a), $color#1 var(--percent-completed-b), $color#2 var(--percent-completed-b), $color#2 100%)');
+        }
+      }
+  
+      input[type=range]:nth-of-type(2) {
+        @include selector.range-track() {
+          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, transparent 0%, transparent calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 100%)');
+        }
+      }
+    }
+
+    &--step {
+      input[type=range]:first-of-type {
+        @include selector.range-track() {
+          @include color.background-image((active blue-france) (contrast grey), (), 'repeating-linear-gradient(to right, transparent 0, transparent calc(var(--step-gap) / 2), $color#1 calc(var(--step-gap) / 2), $color#1 calc(var(--completed-step-width) - var(--step-gap) / 2), transparent calc(var(--completed-step-width) - var(--step-gap) / 2), transparent var(--completed-step-width)), repeating-linear-gradient(to left, transparent 0, transparent calc(var(--step-gap) / 2), $color#2 calc(var(--step-gap) / 2), $color#2 calc(var(--step-width) - var(--step-gap) / 2), transparent calc(var(--step-width) - var(--step-gap) / 2), transparent var(--step-width))');
+        }
+      }
+    }
+  }
+}

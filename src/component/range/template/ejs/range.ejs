@@ -1,0 +1,79 @@
+<%#
+# paramètres range
+
+* range.id (string, required) : id de l'range
+
+* range.name (string, required) : nom de l'input
+
+* range.label (string, required) : texte du label
+
+* range.hint (string, optional) : texte de description sous le label
+
+* range.labelAttrs (object, optional) : Pour passer des attributs au label
+
+* range.labelClasses (array, optional) : Pour passer des classes au label
+
+* range.attributes (array, optional) : Pour passer des attributs au input
+
+* range.indicators (boolean, optionnal): Pour afficher les valeurs min et max sous le curseur [default: true]
+
+* range.error (string, optional) : ajoute un texte d'erreur
+
+* range.valid (string, optional) : ajoute un texte de succès
+
+* range.success (string, optional) : ajoute un texte de succès
+
+* range.multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
+
+* range.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../form/template/ejs/message/builder.js.ejs')); %>
+<%
+const range = locals.range || {};
+const groupAttributes = range.attributes || {};
+const classes = [prefix + '-range'];
+const groupClasses = [prefix + '-range-group'];
+const attributes = range.attributes || [];
+const labelAttrs = range.labelAttrs || {};
+const labelClass = range.labelClasses || [];
+groupAttributes.id = range.groupId || uniqueId('range-group');
+if (range.min) attributes.min = range.min;
+if (range.max) attributes.max = range.max;
+if (range.value || range.valueA) attributes.value = range.value || range.valueA;
+if (range.step) attributes.step = range.step;
+if (range.type) groupClasses.push(`${prefix}-range-group--${range.type}`);
+if (range.indicators === false) groupClasses.push(`${prefix}-range-group--no-indicators`);
+
+const builder = new MessageBuilder(range.id);
+if (range.valid) {
+  groupClasses.push(`${prefix}-range-group--valid`);
+  builder.addError(range.valid);
+}
+if (range.error) {
+  groupClasses.push(`${prefix}-range-group--error`);
+  builder.addError(range.error);
+}
+if (range.disabled) {
+  groupClasses.push(`${prefix}-range-group--disabled`);
+  attributes['disabled'] = '';
+}
+if (builder.describedby.length > 0) attributes['aria-describedby'] = builder.describedby.join(' ');
+%>
+
+<div <%- includeClasses(groupClasses); %> <%- includeAttrs(groupAttributes); %>>
+  <%- include('../../../form/template/ejs/label', {label : {label: range.label, hint: range.hint, for: range.id, attributes: labelAttrs}}); %>
+  <output></output>
+
+  <% if (range.type === 'double') { %>
+    <input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="range" id="<%= range.id %>-min" name="<%= range.name %>-min">
+    <% const attributesMax = {...attributes, value: range.valueB} %>
+    <input <%- includeClasses(classes); %> <%- includeAttrs(attributesMax); %> type="range" id="<%= range.id %>-max" name="<%= range.name %>-max">
+  <% } else { %>
+    <input <%- includeClasses(classes); %> <%- includeAttrs(attributes); %> type="range" id="<%= range.id %>" name="<%= range.name %>">
+  <% } %>
+
+
+  <%- include('../../../form/template/ejs/message/messages-group', { messagesGroup: builder.messagesGroup }); %>
+</div>

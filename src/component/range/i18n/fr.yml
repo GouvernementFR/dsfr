@@ -1,0 +1,16 @@
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
+
+label:
+  default: label
+hint:
+  default: texte de description additionel
+error:
+  default: Plage sélectionnée impossible 
+sample:
+  default: Curseur simple
+  no-indicators: Curseur simple sans les indicateurs min/max
+  step: Curseur avec étapes
+  double: Curseur double avec min et max
+  disabled: Curseur désactivé
