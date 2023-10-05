@@ -2,13 +2,11 @@ import api from './api.js';
 import { RangeSelector } from './script/range/range-selector.js';
 import { RangeEmission } from './script/range/range-emission.js';
 import { Range } from './script/range/range.js';
-// import { RangeInputMin } from './script/range/range-input-min.js';
-// import { RangeInputMax } from './script/range/range-input-max.js';
+import { RangeInput } from './script/range/range-input.js';
 
 api.range = {
   Range: Range,
-  // RangeInputMin: RangeInputMin,
-  // RangeInputMax: RangeInputMax,
+  RangeInput: RangeInput,
   RangeEmission: RangeEmission,
   RangeSelector: RangeSelector
 };

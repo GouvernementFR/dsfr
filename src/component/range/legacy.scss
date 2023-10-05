@@ -1,11 +1,7 @@
 ////
-/// Range Main
+/// Range Legacy
 /// @group range
 ////
-
-/* ¯¯¯¯¯¯¯¯¯ *\
-  RANGE
-\* ˍˍˍˍˍˍˍˍˍ */
 
 @use 'module/path';
 @use 'module/shame/media-query';
@@ -14,7 +10,7 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/module';
 @import 'style/scheme';
+@import 'style/legacy';
 
-@include _range-scheme;
+@include _range-scheme(true);

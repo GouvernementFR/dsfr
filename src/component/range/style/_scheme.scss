@@ -6,14 +6,10 @@
 @use 'module/color';
 @use 'module/selector';
 @use 'module/elevation';
+@use 'module/disabled';
 
 @mixin _range-scheme($legacy: false) {
   #{selector.ns-group(range)} {
-
-    output {
-      @include color.text(action-high blue-france, (legacy:$legacy));
-    }
-
     input[type=range] {
       @include selector.range-thumb {
         @include elevation.elevate(raised, (legacy: $legacy));
@@ -23,27 +19,125 @@
       @include selector.range-track {
         @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, $color#1 0, $color#1 var(--percent-completed-a), $color#2 var(--percent-completed-a), $color#2 100%)');
       }
+
+      @include selector.range-moz-progress {
+        @include color.background(active blue-france);
+      }
+
+      @include selector.range-moz-track {
+        @include color.background(contrast grey);
+      }
+
+      @include disabled.selector {
+        @include selector.range-thumb {
+          @include color.background(disabled grey, (legacy:$legacy));
+        }
+
+        @include selector.range-track {
+          @include color.background-image((disabled grey) (contrast grey), (), 'linear-gradient(to right, $color#1 0, $color#1 var(--percent-completed-a), $color#2 var(--percent-completed-a), $color#2 100%)');
+        }
+
+        @include selector.range-moz-progress {
+          @include color.background(disabled grey);
+        }
+      }
+    }
+
+    output {
+      @include color.text(action-high blue-france, (legacy:$legacy));
+    }
+
+    &:not(&--disabled) {
+      #{selector.ns(label)} {
+        @include _pseudo(before after) {
+          @include color.text(label grey, (legacy:$legacy));
+        }
+      }
     }
 
     &--double {
       input[type=range]:first-of-type {
         @include selector.range-track() {
-          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, $color#2 0%, $color#2 var(--percent-completed-a), $color#1 var(--percent-completed-a), $color#1 var(--percent-completed-b), $color#2 var(--percent-completed-b), $color#2 100%)');
+          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, $color#2 0, $color#2 var(--percent-completed-a), $color#1 var(--percent-completed-a), $color#1 var(--percent-completed-b), $color#2 var(--percent-completed-b), $color#2 100%)');
+        }
+
+        @include selector.range-moz-progress {
+          @include color.background(contrast grey);
+        }
+
+        @include disabled.selector {
+          @include selector.range-track {
+            @include color.background-image((disabled grey) (contrast grey), (), 'linear-gradient(to right, $color#2 0, $color#2 var(--percent-completed-a), $color#1 var(--percent-completed-a), $color#1 var(--percent-completed-b), $color#2 var(--percent-completed-b), $color#2 100%)');
+          }
         }
       }
-  
+
       input[type=range]:nth-of-type(2) {
         @include selector.range-track() {
-          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, transparent 0%, transparent calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 100%)');
+          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, transparent 0, transparent calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 100%)');
+        }
+
+        @include selector.range-moz-track {
+          @include color.background(contrast grey);
+        }
+
+        @include selector.range-moz-progress {
+          @include color.background(active blue-france);
+        }
+
+        @include disabled.selector {
+          @include selector.range-track {
+            @include color.background-image((disabled grey) (contrast grey), (), 'linear-gradient(to right, transparent 0, transparent calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-a) - var(--thumb-size)), $color#1 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 calc(var(--percent-completed-b) - var(--thumb-size)), $color#2 100%)');
+          }
+
+          @include selector.range-moz-progress {
+            @include color.background(disabled grey);
+          }
         }
       }
     }
 
     &--step {
-      input[type=range]:first-of-type {
+      input[type=range] {
         @include selector.range-track() {
-          @include color.background-image((active blue-france) (contrast grey), (), 'repeating-linear-gradient(to right, transparent 0, transparent calc(var(--step-gap) / 2), $color#1 calc(var(--step-gap) / 2), $color#1 calc(var(--completed-step-width) - var(--step-gap) / 2), transparent calc(var(--completed-step-width) - var(--step-gap) / 2), transparent var(--completed-step-width)), repeating-linear-gradient(to left, transparent 0, transparent calc(var(--step-gap) / 2), $color#2 calc(var(--step-gap) / 2), $color#2 calc(var(--step-width) - var(--step-gap) / 2), transparent calc(var(--step-width) - var(--step-gap) / 2), transparent var(--step-width))');
+          @include color.background-image((active blue-france) (contrast grey), (), 'linear-gradient(to right, $color#1  0, $color#1 100%), repeating-linear-gradient(to right, transparent 0, transparent calc(var(--step-gap) / 2), $color#1 calc(var(--step-gap) / 2), $color#1 calc(var(--completed-step-width) - var(--step-gap) / 2), transparent calc(var(--completed-step-width) - var(--step-gap) / 2), transparent var(--completed-step-width)), repeating-linear-gradient(to left, transparent 0, transparent calc(var(--step-gap) / 2), $color#2 calc(var(--step-gap) / 2), $color#2 calc(var(--step-width) - var(--step-gap) / 2), transparent calc(var(--step-width) - var(--step-gap) / 2), transparent var(--step-width)), linear-gradient(to right, $color#2 0%, $color#2 100%)');
         }
+
+        @include selector.range-moz-track {
+          @include color.data-uri-svg(background contrast grey, (), $step-svg, false);
+        }
+
+        @include selector.range-moz-progress {
+          @include color.data-uri-svg(background active blue-france, (), $step-svg, false);
+        }
+
+        @include disabled.selector {
+          @include selector.range-track {
+            @include color.background-image((disabled grey) (contrast grey), (), 'linear-gradient(to right, $color#1  0, $color#1 100%), repeating-linear-gradient(to right, transparent 0, transparent calc(var(--step-gap) / 2), $color#1 calc(var(--step-gap) / 2), $color#1 calc(var(--completed-step-width) - var(--step-gap) / 2), transparent calc(var(--completed-step-width) - var(--step-gap) / 2), transparent var(--completed-step-width)), repeating-linear-gradient(to left, transparent 0, transparent calc(var(--step-gap) / 2), $color#2 calc(var(--step-gap) / 2), $color#2 calc(var(--step-width) - var(--step-gap) / 2), transparent calc(var(--step-width) - var(--step-gap) / 2), transparent var(--step-width)), linear-gradient(to right, $color#2 0%, $color#2 100%)');
+          }
+
+          @include selector.range-moz-progress {
+            @include color.data-uri-svg(background disabled grey, (), $step-svg, false);
+          }
+        }
+      }
+    }
+
+    &--error {
+      @include before {
+        @include color.background-image(border plain error, (legacy:$legacy));
+      }
+    }
+
+    &--valid {
+      @include before {
+        @include color.background-image(border plain success, (legacy:$legacy));
+      }
+    }
+
+    &--disabled {
+      output {
+        @include color.text(disabled grey, (legacy:$legacy));
       }
     }
   }

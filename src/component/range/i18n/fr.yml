@@ -7,10 +7,17 @@ label:
 hint:
   default: texte de description additionel
 error:
-  default: Plage sélectionnée impossible 
+  default: Valeur sélectionnée impossible 
+valid:
+  default: Message de succès
 sample:
   default: Curseur simple
+  sm: Curseur simple taille SM
   no-indicators: Curseur simple sans les indicateurs min/max
   step: Curseur avec étapes
-  double: Curseur double avec min et max
+  step-sm: Curseur avec étapes taille SM
+  double: Curseur double avec valeurs min et max
+  double-sm: Curseur double taille SM
   disabled: Curseur désactivé
+  prefix-suffix: Curseur avec préfixe et suffixe
+  error: Curseur avec erreur

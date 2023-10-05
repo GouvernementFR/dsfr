@@ -1,0 +1,72 @@
+////
+/// Input Legacy
+/// @group input
+////
+
+@use 'module/legacy';
+@use 'module/selector';
+@use 'module/color';
+@use 'module/spacing';
+
+@include legacy.is(ie11) {
+  #{selector.ns-group(range)} {
+    input[type=range] {
+      @include margin(0);
+      @include selector.range-ms-fill-lower {
+        @include color.background(action-high blue-france, (legacy:true));
+      }
+
+      @include selector.range-ms-fill-upper {
+        @include color.background(contrast grey, (legacy:true));
+      }
+
+      @include selector.range-ms-track {
+        @include height(1v);
+        background: transparent;
+      
+        /*leave room for the larger thumb to overflow with a transparent border */
+        border-color: transparent;
+        border-width: 16px 0;
+    
+        /*remove default tick marks*/
+        color: transparent;
+      }
+      @include selector.range-ms-thumb {
+        @include size(6v, 6v);
+        border-radius: 50%;
+        border: none;
+        height: 16px;
+        width: 16px;
+        @include color.background(action-high blue-france, (legacy:true));
+      }
+    }
+
+    &--sm {
+      input[type=range] {
+        @include selector.range-ms-thumb {
+          @include size(4v, 4v);
+        }
+      }
+
+      &#{selector.ns-group(range-double)} {
+        input[type=range] {
+          width: calc(100% - #{spacing.space(3v)});
+        }
+
+        input[type=range]:nth-of-type(2) {
+          left: #{spacing.space(6v)};
+        }
+      }
+    }
+
+    &-double {
+      input[type=range] {
+        width: calc(100% - #{spacing.space(3v)});
+      }
+
+      input[type=range]:nth-of-type(2) {
+        left: #{spacing.space(6v)};
+      }
+    }
+  }
+}

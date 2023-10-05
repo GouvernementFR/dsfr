@@ -6,47 +6,49 @@
 @use 'module/reset';
 @use 'module/spacing';
 @use 'module/selector';
+@use 'module/disabled';
 
 #{selector.ns-group(range)} {
-  --thumb-size: 24px;
-  --track-height: 4px;
-  --track-offset-y : calc(var(--thumb-size) / 2 - var(--track-height) / 2);
+  --thumb-size: #{spacing.space(6v)};
+  --track-height: #{spacing.space(1v)};
+  --track-offset-y: calc(var(--thumb-size) / 2 - var(--track-height) / 2);
+  --step-gap: #{spacing.space(1v)};
   --min: 0;
   --max: 1;
   --value: 1;
   --value-a: var(--value, 0); // default value ("--value" is used in single-range markup)
   --value-b: var(--value, 0); // default value
   --text-value-a: var(--text-value, "");
-  --completed-a: calc(
-    (var(--value-a) - var(--min)) / (var(--max) - var(--min))
-  );
-  --percent-completed-a: calc(12px + (100% - 24px) * var(--completed-a));
-  --completed-b: calc(
-    (var(--value-b) - var(--min)) / (var(--max) - var(--min))
-  );
-  --percent-completed-b: calc(12px + (100% - 24px) * var(--completed-b) + #{spacing.space(6v)});
+  --completed-a: calc((var(--value-a) - var(--min)) / (var(--max) - var(--min)));
+  --percent-completed-a: calc(var(--thumb-size) / 2 + (100% - var(--thumb-size)) * var(--completed-a));
+  --completed-b: calc((var(--value-b) - var(--min)) / (var(--max) - var(--min)));
+  --percent-completed-b: calc(var(--thumb-size) / 2 + (100% - var(--thumb-size)) * var(--completed-b) + var(--thumb-size));
 
   @include relative;
+
+  &--sm {
+    --thumb-size: #{spacing.space(4v)};
+    --track-height: #{spacing.space(0.5v)};
+    --step-gap: #{spacing.space(0.5v)};
+  }
 
   #{selector.ns(label)} {
     @include relative;
 
-    // mix/max texts
     &::before,
     &::after {
-      content: counter(x);
       @include text-style(xs);
-      @include absolute(calc(100% + #{spacing.space(11.5v)}));
+      @include absolute(calc(100% + var(--thumb-size) + #{spacing.space(5v)}));
       pointer-events: none;
     }
 
     &::before {
-      counter-reset: x var(--min);
+      content: var(--prefix, "") var(--text-min, "") var(--suffix, "");
       left: 0;
     }
 
     &::after {
-      counter-reset: x var(--max);
+      content: var(--prefix, "") var(--text-max, "") var(--suffix, "");
       right: 0;
     }
   }
@@ -59,16 +61,10 @@
 
   input[type=range] {
     @include reset.appearance(none);
-    @include size(100%, var(--track-height));
-    @include margin(7.5v 0 8v);
-    cursor: pointer;
+    @include size(100%, var(--thumb-size));
+    @include margin(5v 0);
     outline: none;
     background: none;
-
-    &:disabled {
-      outline-style: none;
-      cursor: not-allowed;
-    }
 
     &:not(:only-of-type) {
       pointer-events: none;
@@ -76,15 +72,12 @@
 
     @include selector.range-thumb {
       @include reset.appearance(none);
-      @include size(6v, 6v);
+      @include size(var(--thumb-size), var(--thumb-size));
       border-radius: 50%;
       border: none;
       pointer-events: auto;
-      cursor: -webkit-grab;
-      cursor: grab;
 
       &:active {
-        cursor: grabbing;
         @include z-index(above);
       }
     }
@@ -94,55 +87,90 @@
       background-position: 0 var(--track-offset-y);
       background-size: 100% var(--track-height);
     }
+
+    @include selector.range-moz-track {
+      @include height(var(--track-height));
+    }
+
+    @include selector.range-moz-progress {
+      @include height(var(--track-height));
+    }
   }
 
   output {
     --pos: var(--percent-completed-a);
     @include absolute;
-    @include min-width(6v);
+    @include min-width(var(--thumb-size));
     @include z-index(above);
     @include text-style(xs);
     text-align: center;
     pointer-events: none;
     left: var(--pos);
     transform: translateX(-50%);
-
-    @include after {
-      content: var(--prefix, "") var(--text-value-a) var(--suffix, "");
-    }
   }
 
-  &--double {
+  &#{selector.ns-group(range)}--double {
     output {
-      --pos: calc((var(--thumb-size) / 2 + (100% - var(--thumb-size) * 2 ) * var(--completed-a) + var(--thumb-size) / 2  + (100% - var(--thumb-size) * 2 ) * var(--completed-b) + var(--thumb-size)) * .5);
-
+      --pos: calc((var(--thumb-size) / 2 + (100% - var(--thumb-size) * 2 ) * var(--completed-a) + var(--thumb-size) / 2  + (100% - var(--thumb-size) * 2 ) * var(--completed-b) + var(--thumb-size)) / 2);
       @include min-width(12v);
-
-      @include after {
-        content: var(--prefix, "") var(--text-value-a) var(--suffix, "") "\00a0-\00a0" var(--prefix, "") var(--text-value-b) var(--suffix, "");
-      }
     }
 
     input[type=range] {
       @include width(calc(100% - var(--thumb-size)));
+
+      &:first-of-type {
+        @supports (-moz-appearance:none) {
+          position: relative;
+          z-index: 2;
+
+          @include selector.range-moz-track {
+            background-color: transparent;
+          }
+        }
+      }
     }
 
     input[type=range]:nth-of-type(2) {
       @include absolute;
       left: var(--thumb-size);
+
+      @include selector.range-moz-progress {
+        z-index: 0;
+      }
     }
   }
 
-  &--step {
+  &#{selector.ns-group(range)}--step {
     --steps: ((var(--max) - var(--min)) / var(--step));
-    --completed-step-width: calc(100% / (var(--completed-a) * var(--steps)) );
+    --completed-step-width: calc(100% / (var(--completed-a) * var(--steps)));
     --step-width: calc(100% / var(--steps));
-    --step-gap: #{spacing.space(1v)};
-    
-    input[type=range]:first-of-type {
+
+    input[type=range] {
       @include selector.range-track {
-        background-position: calc(var(--thumb-size) / 2) var(--track-offset-y), calc(100% - var(--thumb-size) / 2) var(--track-offset-y);
-        background-size: calc(var(--percent-completed-a) - calc(var(--thumb-size) / 2)) var(--track-height), calc(100% - var(--thumb-size)) var(--track-height);
+        background-position: 0 var(--track-offset-y), calc(var(--thumb-size) / 2) var(--track-offset-y), calc(100% - var(--thumb-size) / 2) var(--track-offset-y), 100% var(--track-offset-y);
+        background-size: calc(var(--thumb-size) / 2 - var(--step-gap) / 2) var(--track-height), calc(var(--percent-completed-a) - calc(var(--thumb-size) / 2)) var(--track-height), calc(100% - var(--thumb-size)) var(--track-height), calc(var(--thumb-size) / 2 - var(--step-gap) / 2) var(--track-height);
+      }
+
+      @include selector.range-moz-track {
+        background-color: transparent;
+        background-image: var(--data-uri-svg);
+        background-size: calc(var(--step-width) - var(--thumb-size) / var(--steps)) 100%;
+        background-position: calc(var(--thumb-size) / 2) 0;
+        background-repeat: repeat-x;
+      }
+
+      @include selector.range-moz-progress {
+        background-color: transparent;
+        background-image: var(--data-uri-svg);
+        background-size: calc(var(--completed-step-width) - var(--thumb-size) / var(--steps)) 100%;
+        background-position: calc(var(--thumb-size) / 2) 0;
+        background-repeat: repeat-x;
+      }
+
+      @include disabled.selector {
+        @include selector.range-moz-progress {
+          background-color: transparent;
+        }
       }
     }
   }
@@ -159,9 +187,15 @@
       @include margin-bottom(var(--track-offset-y));
     }
   }
-}
 
-  // input[type='range']:focus-visible::-webkit-slider-thumb {
-  //   outline: solid 2px lightblue;
-  //   outline-offset: 2px;
-  // } 
+  &--valid,
+  &--error {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
+    }
+  }
+}
