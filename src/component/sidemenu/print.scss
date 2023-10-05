@@ -1,0 +1,13 @@
+////
+/// Sidemenu Print
+/// @group sidemenu
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _sidemenu-scheme('print');
+
+  @import 'style/print';
+}

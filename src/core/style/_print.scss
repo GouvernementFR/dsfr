@@ -1,0 +1,9 @@
+// TODO : remove before merge
+#{ns(accordion)} {
+  // display: none;
+}
+
+#{ns(text)}--sm,
+#{ns(text)}--xs {
+  @include text-style(md, true, true, null, true);
+}

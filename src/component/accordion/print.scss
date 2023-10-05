@@ -1,0 +1,13 @@
+////
+/// Accordion Print
+/// @group accordion
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _accordion-scheme('print');
+
+  @import 'style/print';
+}

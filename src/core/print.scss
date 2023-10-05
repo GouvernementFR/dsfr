@@ -1,0 +1,8 @@
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _core-scheme('print');
+
+  @import 'style/print';
+}
