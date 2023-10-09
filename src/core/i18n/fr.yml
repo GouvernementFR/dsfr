@@ -11,6 +11,7 @@ subdir:
   spacing: Espacements
   typography: Typographie
   utility: Utilitaires
+  print: Impression
   link: Liens natifs
   link-raw: Liens bruts
   link-reset: Liens réinitialisés
