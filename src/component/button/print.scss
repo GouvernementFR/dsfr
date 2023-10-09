@@ -8,4 +8,6 @@
   @import 'style/scheme';
 
   @include _button-scheme('print');
+
+  @import 'style/print';
 }

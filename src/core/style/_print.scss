@@ -1,6 +1,14 @@
-// TODO : remove before merge
-#{ns(accordion)} {
-  // display: none;
+h1,
+h2,
+h3,
+h4 {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
 }
 
 #{ns(text)}--sm,
