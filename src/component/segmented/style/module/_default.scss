@@ -1,0 +1,97 @@
+////
+/// Radio Module : radio md
+/// @group radio
+////
+
+@use 'module/spacing';
+@use 'module/selector';
+
+#{selector.ns(segmented)} {
+  @include nest-segmented-element();
+  @include relative;
+  @include padding(0);
+  @include margin(0);
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+
+  &__legend {
+    @include margin-bottom(3v);
+    @include padding(0);
+
+    #{selector.ns(hint-text)} {
+      @include margin-top(1v);
+    }
+
+    &--inline {
+      float: left;
+      display: contents;
+
+      + #{selector.ns(segmented)}__elements {
+        @include margin-left(4v);
+      }
+    }
+  }
+
+  &__elements {
+    @include display-flex;
+    border-radius: #{spacing.space(1v)};
+  }
+
+  &__element {
+    @include relative;
+
+    input {
+      @include absolute;
+      @include margin(0);
+      @include size(100%, 100%);
+      opacity: 0;
+      -webkit-tap-highlight-color: transparent;
+      z-index: -1;
+
+      + label {
+        @include font-weight(medium);
+        display: block;
+        border-radius: #{spacing.space(1v)};
+        -webkit-tap-highlight-color: transparent;
+        background-position: #{spacing.space(1v 1.5v)}, #{spacing.space(1.5v 1v)}, #{spacing.space('-1.5v -1.5v')}, #{spacing.space('calc(100% + 1.5v) -1.5v')}, #{spacing.space('-1.5v calc(100% + 1.5v)')}, #{spacing.space('calc(100% + 1.5v) calc(100% + 1.5v)')};
+        background-repeat: no-repeat;
+        white-space: nowrap;
+
+        &:hover,
+        &:active {
+          background-size: #{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}, #{spacing.space(3v 3v)}, #{spacing.space(3v 3v)}, #{spacing.space(3v 3v)}, #{spacing.space(3v 3v)};
+        }
+      }
+    }
+  }
+
+  &--vertical {
+    #{selector.ns(segmented)}__elements {
+      flex-direction: column;
+      @include margin-left(0);
+    }
+
+    #{selector.ns(segmented)}__legend--inline {
+      float: none;
+      display: block;
+    }
+  }
+
+  &--no-legend {
+    legend {
+      @include sr-only();
+
+      + #{selector.ns(segmented)}__elements {
+        @include margin-left(0);
+      }
+    }
+  }
+}
+
+@include focusable((choices: (
+  selector: '#{selector.ns(segmented__element)} input',
+  focus: (
+    selector: ' + label'
+  )
+)));

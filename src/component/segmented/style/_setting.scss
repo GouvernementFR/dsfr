@@ -1,0 +1,28 @@
+////
+/// Button Setting
+/// @group button
+////
+
+$segmented-element-settings:(
+  selector: 'segmented__element input + label',
+  sizes: (
+    sm: (
+      font-size: 3.5v,
+      min-height: 8v,
+      padding-x: 3v,
+      icon: sm,
+      icon-margin-x: 2v,
+      icon-only: sm,
+    ),
+    md: (
+      font-size: 4v,
+      min-height: 10v,
+      padding-x: 4v,
+      icon: sm,
+      icon-margin-x: 2v,
+      icon-only: md,
+    ),
+  ),
+);
+
+$rounded-corner-svg: '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><circle fill="$COLOR" r="2" cx="0" cy="0" /><circle fill="$COLOR" r="2" cx="0" cy="12" /><circle fill="$COLOR" r="2" cx="12" cy="0" /><circle fill="$COLOR" r="2" cx="12" cy="12" /></svg>';
