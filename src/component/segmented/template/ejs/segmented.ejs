@@ -1,15 +1,13 @@
 <%#
-# paramètres segmented group
-
-* segmented.legend (string, required) : Texte de la légende
-
-* segmented.hint (array, optional) : texte additionel dans la légende
+# paramètres segmented
 
 * segmented.elements (array, required) : Tableau d'éléments segmented-element
 
-* segmented.size (string, optional) : la valeur "sm" permet d'opter pour de petites cases à cocher
+* segmented.legend (string, required) : Texte de la légende
 
-* segmented.disabled (boolean, optional) : si true, désactive les semgents
+* segmented.hint (array, optional) : texte additionel dans la légende (uniquement si inlineLegend = false)
+
+* segmented.size (string, optional) : la valeur "sm" permet d'opter pour une taille plus petite
 
 * segmented.inlineLegend (boolean, optional) : si true, affiche la légende sur la même ligne que les segments [default: false]
 
@@ -19,7 +17,9 @@
 
 * segmented.groupAttributes (object, optional) : Attributs supplémentaires sur le groupe
 %>
+
 <% eval(include('../../../../core/index.ejs')); %>
+
 <%
 const segmented = locals.segmented || {};
 const groupClasses = segmented.classes || [];

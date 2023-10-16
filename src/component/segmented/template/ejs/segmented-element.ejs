@@ -3,22 +3,23 @@
 
 * element.id (string, required) : id de l'élément
 
-* element.classes (array, optional) : Classes supplémentaires sur l'element
+* element.name (string, optional) : attribut name de l'input
 
-* element.attributes (object, optional) : Attributs supplémentaires sur l'element
+* element.value (String, optional) : valeur de l'input
 
-* element.value (String, optional) : valeur du element
+* element.icon (string, optional) : nom de l'icône dans le label
 
-* element.icon (string, optional) : nom de l'icone dans le label
+* element.disabled (boolean, optional) : si true, désactive l'élément [default: false]
 
-* element.disabled (boolean, optional) : si true, désactive l'element
+* element.checked (boolean, optional) : si true, l'élement est actif (1 seul possible par segmented) [default: false]
 
-* element.checked (boolean, optional) : si true, l'élement est actif (1 seul possible) [default: false]
+* element.classes (array, optional) : classes supplémentaires sur l'élément
 
-* element.name (string, optional) : Attribut name de l'élément
-
+* element.attributes (object, optional) : attributs supplémentaires sur l'élément
 %>
+
 <% eval(include('../../../../core/index.ejs')); %>
+
 <%
 const element = locals.element || {};
 const attributes = element.attributes || {};
