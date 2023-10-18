@@ -10,10 +10,6 @@ class HighlightActionee extends ComponentActionee {
     return 'HighlightActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     return 'mise en exergue';
   }

@@ -11,9 +11,7 @@ class TranslateButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.setClickType();
-    this.id = this.node.id || this.registration.creator.node.id;
-    this.listenClick();
+    this.isMuted = true;
   }
 
   get button () {

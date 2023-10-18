@@ -3,8 +3,10 @@ import { Type } from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
 import { ActioneeEmission } from './actionee-emission';
 
+const RATING_ATTRIBUTE = api.internals.ns.attr('analytics-rating');
+
 class Actionee extends api.core.Instance {
-  constructor (priority = -1, isRatingActive = false, category = '', title = null) {
+  constructor (priority = -1, category = '', title = null) {
     super();
     this._type = null;
     this._priority = priority;
@@ -13,7 +15,6 @@ class Actionee extends api.core.Instance {
     this._parameters = {};
     this._data = {};
     this._isMuted = false;
-    this._isRatingActive = isRatingActive;
   }
 
   static get instanceClassName () {
@@ -60,7 +61,7 @@ class Actionee extends api.core.Instance {
       return;
     }
 
-    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters, this._isRatingActive);
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters, this.hasAttribute(RATING_ATTRIBUTE));
     if (this._isMuted) this._actionElement.isMuted = true;
 
     this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));

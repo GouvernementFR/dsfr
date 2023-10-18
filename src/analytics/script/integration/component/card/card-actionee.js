@@ -4,7 +4,7 @@ import ID from './id';
 
 class CardActionee extends ComponentActionee {
   constructor () {
-    super(1, true);
+    super(1);
   }
 
   static get instanceClassName () {
@@ -17,7 +17,7 @@ class CardActionee extends ComponentActionee {
       this.link = link;
       this.detectInteractionType(link);
       this.listenClick(link);
-    } else this.setImpressionType();
+    }
   }
 
   get label () {

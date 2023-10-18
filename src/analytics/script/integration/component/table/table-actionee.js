@@ -10,10 +10,6 @@ class TableActionee extends ComponentActionee {
     return 'TableActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     const caption = this.node.querySelector('caption');
     if (caption) {

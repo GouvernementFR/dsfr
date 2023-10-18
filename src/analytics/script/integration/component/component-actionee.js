@@ -4,8 +4,8 @@ import { Actionee } from '../core/actionee';
 import { ButtonEmission } from './button/button-emission';
 
 class ComponentActionee extends Actionee {
-  constructor (priority = -1, isRatingActive = false) {
-    super(priority, isRatingActive, 'dsfr_component');
+  constructor (priority = -1) {
+    super(priority, 'dsfr_component');
   }
 
   static get instanceClassName () {

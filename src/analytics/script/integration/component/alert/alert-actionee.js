@@ -11,10 +11,6 @@ class AlertActionee extends ComponentActionee {
     return 'AlertActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     const alertTitle = this.node.querySelector(AlertSelector.TITLE);
     if (alertTitle) {
