@@ -57,6 +57,7 @@ class Actionee extends api.core.Instance {
     super._config(element, registration);
 
     if (this._type === null) {
+      this._sort(element);
       this._isMuted = true;
       return;
     }
@@ -66,7 +67,11 @@ class Actionee extends api.core.Instance {
 
     this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));
 
-    const actionees = element.instances.filter(instance => instance.isActionee && instance.type).sort((a, b) => b.priority - a.priority);
+    this._sort(element);
+  }
+
+  _sort (element) {
+    const actionees = element.instances.filter(instance => instance.isActionee).sort((a, b) => b.priority - a.priority);
     if (actionees.length <= 1) return;
     actionees.forEach((actionee, index) => { actionee.isMuted = index > 0; });
   }

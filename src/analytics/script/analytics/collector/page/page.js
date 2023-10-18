@@ -1,6 +1,7 @@
 import api from '../../../../api';
 import normalize from '../../utils/normalize';
 import { validateBoolean, validateNumber, validateString, validateDate } from '../../utils/type-validator';
+import { Inventory } from './inventory';
 
 const CollectionState = {
   COLLECTABLE: 'collectable',
@@ -244,6 +245,9 @@ class Page {
     if (this.id) layer.push('page_id', normalize(this.id));
     if (this.author) layer.push('page_author', normalize(this.author));
     if (this.date) layer.push('page_date', normalize(this.date));
+
+    const components = Object.keys(Inventory).map(id => document.querySelector(Inventory[id]) !== null ? id : null).filter(id => id !== null).join(',');
+    if (components) layer.push('page_components', components);
 
     const labels = this._labels.slice(0, 5);
     labels.length = 5;

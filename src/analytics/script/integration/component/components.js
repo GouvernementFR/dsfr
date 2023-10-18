@@ -18,7 +18,7 @@ import integrateLink from './link/integrate';
 import integrateInput from './input/integrate';
 import integrateModal from './modal/integrate';
 import integrateNavigation from './navigation/integrate';
-import integrateNotice from './notice/integrate';
+// import integrateNotice from './notice/integrate';
 import integratePagination from './pagination/integrate';
 import integrateQuote from './quote/integrate';
 import integrateRadio from './radio/integrate';
@@ -59,7 +59,7 @@ const integrateComponents = () => {
   integrateLink();
   integrateModal();
   integrateNavigation();
-  integrateNotice();
+  // integrateNotice();
   integratePagination();
   integrateQuote();
   integrateRadio();
