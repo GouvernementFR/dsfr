@@ -1,0 +1,51 @@
+<%
+let share = locals.share || {};
+let data = {};
+
+data.share = {
+  id: uniqueId('share'),
+  title: 'Partager la page',
+  text: 'Veuillez <a href=' + contentPlaceholder("url page autorisation cookies") + '>autoriser le dépôt de cookies</a> pour partager sur Facebook, Twitter et LinkedIn.',
+  disabled: share.disabled === true,
+  buttons: [
+    {
+      id: uniqueId('share'),
+      type: 'facebook',
+      label: 'Partager sur Facebook',
+      url: `https://www.facebook.com/sharer.php?u=${contentPlaceholder('url de la page')}`,
+      width: 600,
+      height: 450
+    },
+    {
+      id: uniqueId('share'),
+      type: 'twitter',
+      label: 'Partager sur Twitter',
+      url: `https://twitter.com/intent/tweet?url=${contentPlaceholder('url de la page')}&text=${contentPlaceholder('titre ou texte descriptif de la page')}&via=${contentPlaceholder('via')}&hashtags=${contentPlaceholder('hashtags')}`,
+      width: 600,
+      height: 420,
+      comments: !share.disabled ? 'Les paramètres de la reqûete doivent être URI-encodés (ex: encodeURIComponent() en js)': undefined
+    },
+    {
+      id: uniqueId('share'),
+      type: 'linkedin',
+      label: 'Partager sur LinkedIn',
+      url: `https://www.linkedin.com/shareArticle?url=${contentPlaceholder('url de la page')}&title=${contentPlaceholder('titre ou texte descriptif de la page')}`,
+      width: 550,
+      height: 550
+    },
+    {
+      id: uniqueId('share'),
+      type: 'mail',
+      label: 'Partager par email',
+      url: `mailto:?subject=${contentPlaceholder('objet du mail')}&body=${contentPlaceholder('titre ou texte descriptif de la page')} ${contentPlaceholder('url de la page')}`
+    },
+    {
+      id: uniqueId('share'),
+      type: 'copy',
+      label: 'Copier dans le presse-papier',
+      onclick: `navigator.clipboard.writeText(window.location).then(function() {alert('Adresse copiée dans le presse papier.')});` // @TODO: ajouter un polyfill pour IE11
+    }
+  ]
+} %>
+
+<%- JSON.stringify(data); %>

@@ -45,12 +45,14 @@ function getRadios (id, itemId, type) {
   let elementAccept = type === 'all' ? {label: 'Tout accepter'} : { label : 'Accepter'};
   let elementRefuse = type === 'all' ? {label: 'Tout refuser'} : { label : 'Refuser'};
   let disabled = type === 'mandatory';
+  let checked = type === 'mandatory';
 
   return [
     {
       name: id + '-' + name,
       ...elementAccept,
       id: id + '-' + name + '-accept',
+      checked: checked
     },
     {
       name: id + '-' + name,

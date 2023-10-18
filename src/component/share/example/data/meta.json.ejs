@@ -1,0 +1,56 @@
+<%
+const metaTag = [
+  {
+    // Format de la card twitter de partage (large ou résumé)
+    name: 'twitter:card',
+    content: 'summary_large_image' // ou 'summary' si non défini
+  },
+  {
+    // Nom du compte twitter lié à la page partagée ('@username')
+    name: 'twitter:site',
+    content: contentPlaceholder('@usernameTwitter')
+  },
+  {
+    // titre de la page partagée
+    property: 'og:title',
+    content: contentPlaceholder('Système de Design de l\'État')
+  },
+  {
+    // Description du contenu de la page / de l'article
+    property: 'og:description',
+    content: contentPlaceholder('Développer vos sites et applications en utilisant des composants prêts à l\'emploi, accessibles et ergonomiques')
+  },
+  {
+    // url d'une image pour illustrer le contenu de la page
+    property: 'og:image',
+    content: contentPlaceholder('https://systeme-de-design.gouv.fr/src/img/systeme-de-design.gouv.fr.jpg')
+  },
+  {
+    // Type de contenu (généralement 'website', éventuellement 'article')
+    property: 'og:type',
+    content: 'website'
+  },
+  {
+    // Adresse url du site
+    property: 'og:url',
+    content: contentPlaceholder('https://systeme-de-design.gouv.fr/')
+  },
+  {
+    // Nom complet du site
+    property: 'og:site_name',
+    content: contentPlaceholder('Site officiel du Système de Design de l\'État')
+  },
+  {
+    // texte alternatif de l'image
+    property: 'og:image:alt',
+    content: contentPlaceholder('République Française - Système de Design de l\'État')
+  },
+  {
+    // texte alternatif de l'image pour twitter
+    name: 'twitter:image:alt',
+    content: contentPlaceholder('République Française - Système de Design de l\'État')
+  }
+];
+%>
+
+<%- JSON.stringify(metaTag); %>
