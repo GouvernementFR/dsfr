@@ -1,5 +1,6 @@
 import api from '../../api.js';
 import { SegmentedSelector } from './segmented-selector.js';
+import { SegmentedEmission } from './segmented-emission.js';
 
 class Segmented extends api.core.Instance {
   static get instanceClassName () {
@@ -9,6 +10,8 @@ class Segmented extends api.core.Instance {
   init () {
     this.elements = this.node.querySelector(SegmentedSelector.SEGMENTED_ELEMENTS);
     this.legend = this.node.querySelector(SegmentedSelector.SEGMENTED_LEGEND);
+    this.addAscent(SegmentedEmission.ADDED, this.resize.bind(this));
+    this.addAscent(SegmentedEmission.REMOVED, this.resize.bind(this));
     this._isLegendInline = this.legend && this.legend.classList.contains(`${api.prefix}-segmented__legend--inline`);
     this.isResizing = true;
   }
