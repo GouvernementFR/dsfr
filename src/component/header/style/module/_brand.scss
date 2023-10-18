@@ -83,5 +83,9 @@
         @include margin(-1v 0 0 1v);
       }
     }
+
+    &-tagline {
+      @include text-style(sm);
+    }
   }
 }
