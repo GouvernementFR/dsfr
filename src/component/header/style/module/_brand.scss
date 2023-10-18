@@ -11,6 +11,7 @@
     @include margin-y(-4v, lg);
     @include size(100%);
     @include padding-x(1v);
+    overflow: hidden;
 
     @include media-query.respond-from(lg) {
       flex-wrap: nowrap;
