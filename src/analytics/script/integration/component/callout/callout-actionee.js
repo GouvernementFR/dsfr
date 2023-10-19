@@ -11,10 +11,6 @@ class CalloutActionee extends ComponentActionee {
     return 'CalloutActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     const calloutTitle = this.node.querySelector(CalloutSelector.TITLE);
     if (calloutTitle) {

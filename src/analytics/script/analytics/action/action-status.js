@@ -7,12 +7,12 @@ const ActionStatus = {
     id: 'started',
     value: 1
   },
-  ENDED: {
-    id: 'ended',
-    value: 2
-  },
   SINGULAR: {
     id: 'singular',
+    value: 2
+  },
+  ENDED: {
+    id: 'ended',
     value: 3
   }
 };
