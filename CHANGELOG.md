@@ -12,7 +12,19 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.10
 
-### [1.10.1](https://github.com/GouvernementFR/dsfr/compare/v1.10.0...1.10.1) - 4 Septembre 2023
+### [1.10.2](https://github.com/GouvernementFR/dsfr/compare/v1.10.1...1.10.2) - 19 Octobre 2023
+
+#### 🐛 fix(analytics): réduction d'envoi des données [(#806)](https://github.com/GouvernementFR/dsfr/pull/806)
+- suppression du taux d'interaction global
+- ajout de l'attribut data-fr-analytics-rating qui permet de mesurer le taux d'interaction sur un élément particulier
+- suppression de l'impression des composants sans interactions
+- limitation de l'envoi de donnée à la première interaction
+- bouton associé à l'accordéon, l'onglet et la transcription rendu muet
+- recensement des composants de la page dans une nouvelle donnée de page `page_components`
+
+
+
+### [v1.10.1](https://github.com/GouvernementFR/dsfr/compare/v1.10.0...v1.10.1) - 4 Septembre 2023
 
 #### 🐛 fix(radio): correctif couleur manquante [(#757)](https://github.com/GouvernementFR/dsfr/pull/757)
 - Erreur dans le build du CSS suite au manque d'une couleur
@@ -2146,12 +2158,6 @@ dsfr-dev devient dsfr
 #### refactor(table): fonctionnement sans js [(#16)](https://github.com/GouvernementFR/dsfr/pull/16)
 
 
-
-
-## v1.0
-
-### [v1.0.0](https://github.com/GouvernementFR/dsfr/compare/v0.6.0...v1.0.0) - 24 Juin 2021
-
 #### fix(buttons, modal, tabs): correction nouveau nom d'icône [(#19)](https://github.com/GouvernementFR/dsfr/pull/19)
 
 
@@ -2294,6 +2300,12 @@ ajout !important pour forcer le modifieur
 
 #### fix(sassdoc): correction config sassdoc
 
+
+
+
+## v1.0
+
+### [v1.0.0](https://github.com/GouvernementFR/dsfr/compare/v0.6.0...v1.0.0) - 7 Avril 2021
 
 #### feat(readme): édition et publication du readme global et public
 
@@ -2816,22 +2828,13 @@ Déplacement svg-encode dans core
 
 ## v0.5
 
-### [v0.5.3](https://github.com/GouvernementFR/dsfr/compare/v0.5.0...v0.5.3) - 7 Avril 2021
+### [v0.5.3](https://github.com/GouvernementFR/dsfr/compare/v0.4.0...v0.5.3) - 7 Avril 2021
 
 #### fix(all): Design System de l'Etat v0.5.3
 fix: retrait du scritp post-install
 
 
 #### feat: Design System de l'Etat v0.5.0
-
-
-#### chore: Design System de l'Etat v0.5.0
-
-
-
-### [v0.5.0](https://github.com/GouvernementFR/dsfr/compare/v0.4.0...v0.5.0) - 10 Février 2021
-
-#### chore: Design System de l'Etat v0.5.0
 
 
 #### fix(links): links font-size à 0 retiré
@@ -2914,14 +2917,14 @@ sidemenu:
 - rf-sidemenu__content devient rf-collapse
 
 
+#### fix(all): corrections taille checkboxes et content / corrections multiligne toggle
+
+
 
 
 ## v0.4
 
-### [v0.4.0](https://github.com/GouvernementFR/dsfr/compare/v0.3.1...v0.4.0) - 3 Février 2021
-
-#### fix(all): corrections taille checkboxes et content / corrections multiligne toggle
-
+### [v0.4.0](https://github.com/GouvernementFR/dsfr/compare/v0.3.4...v0.4.0) - 17 Décembre 2020
 
 #### fix(all): Mise à jour des liens de documentations
 
@@ -2961,23 +2964,8 @@ sidemenu:
 #### chore(packages): v0.3.1
 
 
-#### chore(packages): release
-
-
-
-
-## v0.3
-
-### [v0.3.1](https://github.com/GouvernementFR/dsfr/compare/v0.3.0...v0.3.1) - 18 Novembre 2020
-
-#### chore(packages): release
-
-
 #### fix(all): correctif package.json et dist.scss sur le package all
 
-
-
-### [v0.3.0](https://github.com/GouvernementFR/dsfr/compare/v0.2.0...v0.3.0) - 17 Novembre 2020
 
 #### chore(packages): Design System de l'Etat v0.3.0
 
@@ -3063,7 +3051,103 @@ sidemenu:
 #### fix: scheme Color Btn disabled & couleurs fonctionnelles
 
 
+#### chore(packages): release
+
+
+#### test: restricted package
+
+
+#### fix: merge
+
+
 #### refactor(core): ajout d'un prefix pour sr-only / ajout d'options scheme focus
+
+
+#### fix: merge
+
+
+#### chore(packages): release
+
+
+#### fix: test
+
+
+#### fix: test
+
+
+#### test: x
+
+
+#### chore(packages): release
+
+
+#### fix: version
+
+
+#### fix: change scope
+
+
+#### fix(webpack): ajout dossier tests
+
+
+#### feat(webpack): génération des dist par package + package all
+
+
+#### feat(webpack): mise en place provisoire dist packages
+
+
+
+
+## v0.3
+
+### [v0.3.4](https://github.com/GouvernementFR/dsfr/compare/v0.3.1...v0.3.4) - 9 Novembre 2020
+
+#### chore(packages): release
+
+
+#### test: restricted package
+
+
+#### fix: merge
+
+
+#### fix: merge
+
+
+#### fix(webpack): ajout dossier tests
+
+
+#### feat(webpack): génération des dist par package + package all
+
+
+#### feat(webpack): mise en place provisoire dist packages
+
+
+
+### [v0.3.1](https://github.com/GouvernementFR/dsfr/compare/v0.3.0...v0.3.1) - 3 Novembre 2020
+
+#### chore(packages): release
+
+
+#### fix: test
+
+
+#### fix: test
+
+
+#### test: x
+
+
+
+### [v0.3.0](https://github.com/GouvernementFR/dsfr/compare/v0.2.0...v0.3.0) - 3 Novembre 2020
+
+#### chore(packages): release
+
+
+#### fix: version
+
+
+#### fix: change scope
 
 
 #### fix(search): reduce placeholder to "rechercher"
