@@ -4,8 +4,8 @@ import { Actionee } from '../core/actionee';
 import { ButtonEmission } from './button/button-emission';
 
 class ComponentActionee extends Actionee {
-  constructor (priority = -1, isRatingActive = false) {
-    super(priority, isRatingActive, 'dsfr_component');
+  constructor (priority = -1) {
+    super(priority, 'dsfr_component');
   }
 
   static get instanceClassName () {
@@ -76,7 +76,11 @@ class ComponentActionee extends Actionee {
     this._isActingValidatedInput = true;
     if (this._isSendingInputValue) this.value = this._validatedInput.value.trim();
     this.act();
-    this.request(() => { this._isActingValidatedInput = false; });
+    this.request(this._actedValidatedInput.bind(this));
+  }
+
+  _actedValidatedInput () {
+    this._isActingValidatedInput = false;
   }
 
   setCheckType () {

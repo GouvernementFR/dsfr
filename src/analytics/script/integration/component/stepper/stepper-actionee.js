@@ -10,10 +10,6 @@ class StepperActionee extends ComponentActionee {
     return 'StepperActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     return 'indicateur d\'étapes';
   }

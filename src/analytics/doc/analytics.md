@@ -1,6 +1,9 @@
 
 # Analytics
 
+> **Important**
+> La propriété de configuration `enableRating` a été retirée, celle-ci entraînant des envois de données trop importants. En remplacement, un attribut `data-fr-analytics-rating` peut être ajouté sur un élément dont on veut mesurer spécifiquement le taux de click. 
+
 > **Warning**
 > Ce package est prévu pour fonctionner de manière optimale avec la version dsfr-1.9.0 ou suppérieure.
 > L'ajout d'un patch, présent dans `dist/patch/`, permet le support des versions précédentes (à partir de la version dsfr-1.3.0).

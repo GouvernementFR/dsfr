@@ -4,7 +4,7 @@ import ID from './id';
 
 class CheckboxActionee extends ComponentActionee {
   constructor () {
-    super(1, true);
+    super(1);
     this._data = {};
   }
 

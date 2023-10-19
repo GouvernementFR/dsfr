@@ -15,6 +15,7 @@ class Action {
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
     this._parameters = {};
+    this._sentData = [];
   }
 
   get isMuted () {
@@ -49,16 +50,17 @@ class Action {
     return this._parameters;
   }
 
+  get mode () {
+    return this._mode;
+  }
+
   singularize () {
     this._status = ActionStatus.SINGULAR;
   }
 
   rewind () {
-    switch (this._status) {
-      case ActionStatus.STARTED:
-      case ActionStatus.ENDED:
-        this._status = ActionStatus.UNSTARTED;
-    }
+    this._sentData = [];
+    this._status = ActionStatus.UNSTARTED;
   }
 
   addParameter (key, value) {
@@ -78,13 +80,16 @@ class Action {
     return ['actionname', this._name];
   }
 
-  _getLayer (mode, data = {}) {
+  _getLayer (data = {}) {
     if (this._isMuted) return [];
+
+    if (this._mode !== ActionMode.IN) this._sentData.push(JSON.stringify(data));
+
     const layer = this._base;
-    switch (mode) {
+    switch (this._mode) {
       case ActionMode.IN:
       case ActionMode.OUT:
-        layer.push('actionmode', mode);
+        layer.push('actionmode', this._mode);
         break;
     }
 
@@ -99,43 +104,51 @@ class Action {
   }
 
   start (data) {
-    let mode;
     switch (this._status) {
       case ActionStatus.UNSTARTED:
-        mode = ActionMode.IN;
+        this._mode = ActionMode.IN;
         this._status = ActionStatus.STARTED;
         break;
 
       case ActionStatus.SINGULAR:
-        mode = ActionMode.NONE;
+        this._mode = ActionMode.NONE;
+        this._status = ActionStatus.ENDED;
         break;
 
       default:
         api.inspector.error(`unexpected start on action ${this._name} with status ${this._status.id}`);
         return [];
     }
-    return this._getLayer(mode, data);
+    return this._getLayer(data);
   }
 
   end (data) {
-    let mode;
     switch (this._status) {
       case ActionStatus.STARTED:
-        mode = ActionMode.OUT;
+        this._mode = ActionMode.OUT;
         this._status = ActionStatus.ENDED;
         break;
 
       case ActionStatus.UNSTARTED:
-      case ActionStatus.ENDED:
-        mode = ActionMode.NONE;
+        this._mode = ActionMode.NONE;
         this._status = ActionStatus.ENDED;
         break;
 
       case ActionStatus.SINGULAR:
-        mode = ActionMode.NONE;
+        this._mode = ActionMode.NONE;
+        this._status = ActionStatus.ENDED;
         break;
+
+      case ActionStatus.ENDED:
+        if (this._sentData.includes(JSON.stringify(data))) return [];
+        this._mode = ActionMode.NONE;
+        this._status = ActionStatus.ENDED;
+        break;
+
+      default:
+        return [];
     }
-    return this._getLayer(mode, data);
+    return this._getLayer(data);
   }
 
   resume (data) {

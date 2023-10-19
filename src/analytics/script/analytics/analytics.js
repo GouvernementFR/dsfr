@@ -65,7 +65,6 @@ class Analytics {
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
     this._collector = new Collector(this._config);
     this._collector.reset();
-    actions.configure(this._config);
 
     this._isReady = true;
     this._resolve();
