@@ -5,7 +5,6 @@ import { Init } from './facade/init';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
 import PushType from './facade/push-type';
-import actions from './action/actions';
 import queue from './engine/queue';
 import opt from './facade/opt';
 import debug from './facade/debug';
