@@ -16,7 +16,6 @@ script:
   - password
   - navigation
   - tab
-  - tooltip
   - display
   - table
   - tag
@@ -64,7 +63,6 @@ example:
     - tag
     - tile
     - toggle
-    - tooltip
     - transcription
     - translate
     - upload

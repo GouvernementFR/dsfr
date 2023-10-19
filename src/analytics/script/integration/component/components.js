@@ -33,7 +33,6 @@ import integrateTable from './table/integrate';
 import integrateTag from './tag/integrate';
 import integrateTile from './tile/integrate';
 import integrateToggle from './toggle/integrate';
-// import integrateTooltip from './tooltip/integrate';
 import integrateTranscription from './transcription/integrate';
 import integrateTranslate from './translate/integrate';
 import integrateUpload from './upload/integrate';
@@ -74,7 +73,6 @@ const integrateComponents = () => {
   integrateTag();
   integrateTile();
   integrateToggle();
-  // integrateTooltip();
   integrateTranscription();
   integrateTranslate();
   integrateUpload();
