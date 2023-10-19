@@ -5,7 +5,6 @@
   analytics: {
     domain: 'gva.et-gv.fr',
     // collection: 'manual', // method of collection [manual, load, full, hash]
-    enableRating: true, // is click rate enabled
     cmp: {
       id: 'tarteaucitron'
     },
@@ -14,15 +13,16 @@
       // referrer: 'path_name/ref/url/', // referrer for virtual pages (not for real page, eulerian automatically collects document.referrer)
       // title: 'page title', // page title for virtual pages
       // name: 'page name', // equivalent to title if not defined
-      // labels: ['category1', 'label2', 'label3', 'label4', 'label5'],
+      labels: ['category1', 'label2', 'label3', 'label4', 'label5'],
       categories: ['category1', 'category2', 'category3'],
       template: 'nom template', // page template
       // group: 'group', // page group. if not defined, fallback to template value
       // segment: 'segment', // site segment. if not defined, fallback to template value
-      // subtemplate: 'sous template', // page sub template
-      // theme: 'theme page', // page theme
-      // subtheme: 'page sous theme', // page subtheme
-      // related: 'page liée', // related page id
+      date: '2021-11-08',
+      subtemplate: 'sous template', // page sub template
+      theme: 'theme page', // page theme
+      subtheme: 'page sous theme', // page subtheme
+      related: 'page liée', // related page id
       // depth: 2, // page depth
       // isError: true, // is this an error page (404, 500, 503...)
       // current: 4, // In case of pagination, current page number

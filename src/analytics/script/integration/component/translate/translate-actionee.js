@@ -1,6 +1,5 @@
 import { ComponentActionee } from '../component-actionee';
 import { TranslateSelector } from './translate-selector';
-import { TranslateButtonActionee } from './translate-button-actionee';
 import ID from './id';
 
 class TranslateActionee extends ComponentActionee {
@@ -10,12 +9,6 @@ class TranslateActionee extends ComponentActionee {
 
   static get instanceClassName () {
     return 'TranslateActionee';
-  }
-
-  init () {
-    this.setDiscloseType();
-    this.register(`[aria-controls="${this.id}"]`, TranslateButtonActionee);
-    this.listenDisclose();
   }
 
   get label () {

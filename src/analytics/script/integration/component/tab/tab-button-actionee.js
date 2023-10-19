@@ -11,13 +11,7 @@ class TabButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.setClickType();
-    this.id = this.node.id || this.registration.creator.node.id;
-    this.listen('click', this.click.bind(this), { capture: true });
-  }
-
-  click () {
-    this.act();
+    this.isMuted = true;
   }
 
   get label () {

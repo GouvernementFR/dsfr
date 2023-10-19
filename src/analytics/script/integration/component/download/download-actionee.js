@@ -3,7 +3,7 @@ import ID from './id';
 
 class DownloadActionee extends ComponentActionee {
   constructor () {
-    super(1, true);
+    super(1);
   }
 
   static get instanceClassName () {
