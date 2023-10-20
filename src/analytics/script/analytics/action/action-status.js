@@ -14,7 +14,7 @@ const ActionStatus = {
   ENDED: {
     id: 'ended',
     value: 3
-  },
+  }
 };
 
 export { ActionStatus };

@@ -70,8 +70,6 @@ subdir:
   tile: Tuile (tile)
   toggle: Interrupteur (toggle)
   toggle-checked: Interrupteur coché
-  tooltip: Information contextuelle (tooltip)
-  tooltip-btn: Infobulle
   transcription: Transcription (transcription)
   translate: Sélecteur de langue (translate)
   upload: Ajout de fichier (upload)
