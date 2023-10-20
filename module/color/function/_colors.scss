@@ -56,7 +56,6 @@
   @if list.length($settings) > 2 {
     $setting: list.nth($settings, 3);
     @if map.has-key($setting, alpha) {
-      @debug $hex;
       @return rgba($hex, map.get($setting, alpha));
     }
   }

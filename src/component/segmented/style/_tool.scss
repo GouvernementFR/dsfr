@@ -3,12 +3,6 @@
 /// @group segmented
 ////
 
-// @mixin build-segmented-element() {
-//   @include _build-link($segmented-element-settings) {
-//     @content;
-//   }
-// }
-
 @mixin nest-segmented-element($size: md, $place: null, $icon:null, $from: null, $insert: true, $align-on-content: false) {
   @include _nest-link($segmented-element-settings, $size, $place, $icon, $from, $insert, $align-on-content) {
     @content;
