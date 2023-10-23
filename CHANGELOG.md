@@ -12,7 +12,702 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.9
 
-### [1.9.3](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...1.9.3) - 17 Mai 2023
+### [1.9.4](https://github.com/GouvernementFR/dsfr/compare/v1.10.2...1.9.4) - 23 Octobre 2023
+
+#### 🐛 fix(analytics): réduction d&#39;envoi des données [(#807)](https://github.com/GouvernementFR/dsfr/pull/807)
+- suppression du taux d&#39;interaction global
+- ajout de l&#39;attribut data-fr-analytics-rating qui permet de mesurer le taux d&#39;interaction sur un élément particulier
+- suppression de l&#39;impression des composants sans interactions
+- limitation de l&#39;envoi de donnée à la première interaction
+- bouton associé à l&#39;accordéon, l&#39;onglet et la transcription rendu muet
+- recensement des composants de la page dans une nouvelle donnée de page `page_components`
+
+
+#### 🐛 fix(analytics): réduction d&#39;envoi des données [(#806)](https://github.com/GouvernementFR/dsfr/pull/806)
+- suppression du taux d&#39;interaction global
+- ajout de l&#39;attribut data-fr-analytics-rating qui permet de mesurer le taux d&#39;interaction sur un élément particulier
+- suppression de l&#39;impression des composants sans interactions
+- limitation de l&#39;envoi de donnée à la première interaction
+- bouton associé à l&#39;accordéon, l&#39;onglet et la transcription rendu muet
+- recensement des composants de la page dans une nouvelle donnée de page `page_components`
+
+
+#### 🐛 fix(radio): correctif couleur manquante [(#757)](https://github.com/GouvernementFR/dsfr/pull/757)
+- Erreur dans le build du CSS suite au manque d&#39;une couleur
+
+
+#### 🐛 fix(link): correction des liens de téléchargement sur firefox et des groupes de liens sur safari [(#755)](https://github.com/GouvernementFR/dsfr/pull/755)
+
+
+#### ✨ feat(share, follow, utility): icone personalisée, et ajout twitter-x et threads [(#752)](https://github.com/GouvernementFR/dsfr/pull/752)
+- ajoute la possibilité de mettre une icone de réseau social personalisée dans &#34;follow&#34;
+- ajouts d&#39;exemples d&#39;icone personalisée dans &#34;share&#34; et &#34;follow&#34;
+- ajouts des icones dans utility : 
+  - twitter-x-fill
+  - twitter-x-line
+  - threads-fill
+  - threads-line
+
+
+#### 🐛 fix(tile): correction de l&#39;icone des tuiles avec lien externe [(#753)](https://github.com/GouvernementFR/dsfr/pull/753)
+
+
+#### 🐛 fix(form): correctif barre état iOS [(#712)](https://github.com/GouvernementFR/dsfr/pull/712)
+- Sur iOS, la barre d&#39;état d&#39;erreur ou validation est discontinue
+- corrige le problème de manière générique
+
+
+#### 🐛 fix(modal): retour de focus fermeture clavier [(#716)](https://github.com/GouvernementFR/dsfr/pull/716)
+- Mise en place du retour du focus à la fermeture en pressant la touche ESC
+
+
+#### 🐛 fix(form): correctif focus des radios riches dépréciés [(#715)](https://github.com/GouvernementFR/dsfr/pull/715)
+- corrige le décalage du focus sur les boutons radio en version dépréciée
+
+
+#### 🐛 fix(follow): orthographe message de confirmation [(#714)](https://github.com/GouvernementFR/dsfr/pull/714)
+
+
+#### ✨ feat(core, password): boutons spéciaux input Safari [(#711)](https://github.com/GouvernementFR/dsfr/pull/711)
+- Dans les champs de type password, sur safari Mac, il y a une icône apportant des outils supplémentaire qui se superpose à l’icône des signalant la hauteur de casse
+- Déplacement des icônes natives pour qu&#39;elles ne se superposent pas
+- Retrait de l&#39;icône capslock native, privilégiant la nôtre
+
+
+#### 🐛 fix(core): stabilisation disclosure [(#713)](https://github.com/GouvernementFR/dsfr/pull/713)
+- L&#39;ouverture des paramètres d&#39;affichage est par moment non réactive
+- L&#39;élément est fermé avant même d&#39;être ouvert à cause de boucle de déclenchement
+- Ajout de condition permettant de limiter les boucles
+
+
+#### 📝 doc(tooltip): retrait exemple texte [(#710)](https://github.com/GouvernementFR/dsfr/pull/710)
+- l&#39;utilisation d&#39;un tooltip sur un texte pose des problèmes de restitution
+- cet usage est déconseillé
+- retrait de l&#39;exemple
+
+
+#### 🐛 fix(tile): correctif espacements version dépreciée [(#704)](https://github.com/GouvernementFR/dsfr/pull/704)
+- L&#39;icône et le contenu se retrouvent superposés dans la version dépréciée, ce correctif rétablit l&#39;espacement nécessaire
+
+
+#### 🐛 fix(tile, card): A11Y liens désactivés [(#709)](https://github.com/GouvernementFR/dsfr/pull/709)
+- Ajout des attributs `role=&#34;link&#34;` et `aria-disabled=true` sur les version désactivées
+
+
+#### 🐛 fix(transcription, content): correctif title et label bouton Agrandir [(#708)](https://github.com/GouvernementFR/dsfr/pull/708)
+- Retrait du title sur le bouton agrandir
+- Ajout label agrandir dans les exemples de content
+
+
+#### ✨ feat(*): Ajout d&#39;un meta tag iOS [(#707)](https://github.com/GouvernementFR/dsfr/pull/707)
+- Sur iOS, les numéros de téléphone sont automatiquement transformés en lien
+- Entraîne un mauvais rendu dans le bloc fonctionnel de numéro de téléphone
+- Correction par l&#39;ajout général du meta tag `&lt;meta name=&#34;format-detection&#34; content=&#34;telephone=no&#34;&gt;`
+
+
+#### 🐛 fix(card, tile): correctif IE 11 [(#705)](https://github.com/GouvernementFR/dsfr/pull/705)
+- correctif sur les tuiles et card sur la version legacy pour éviter les bugs de dépassement de texte et placement des icônes
+
+
+#### 🐛  fix(toggle): retrait tap-highlight-color iOS [(#703)](https://github.com/GouvernementFR/dsfr/pull/703)
+- Au clic sur le toggle sur iOS, l&#39;effet de highlight est présent
+- Retrait de cet effet avec la propriété [-webkit-tap-highlight-color](https://developer.mozilla.org/fr/docs/Web/CSS/-webkit-tap-highlight-color)
+
+
+#### 🐛 fix(link): correctif téléchargement multiligne [(#702)](https://github.com/GouvernementFR/dsfr/pull/702)
+- les liens de téléchargement étaient limités à une seul ligne avec une ellipse sur le text dépassant
+- correctif prenant en compte le retour à la ligne
+
+
+#### 🐛 fix(download): graisse du titre des liens [(#701)](https://github.com/GouvernementFR/dsfr/pull/701)
+- Passage des liens dépréciés en graisse regular
+
+
+#### 🐛 fix(*): mise à jour des liens du readme [(#700)](https://github.com/GouvernementFR/dsfr/pull/700)
+- Mise à jour des liens vers [https://www.systeme-de-design.gouv.fr](https://www.systeme-de-design.gouv.fr) dans le readme
+
+
+#### 🐛 fix(modal): préviens décalage mobile [(#699)](https://github.com/GouvernementFR/dsfr/pull/699)
+- l&#39;ajout d&#39;un padding à l&#39;ouverture permet de se substituer au décalage créé potentiellement par la disparition de la scrollbar en desktop
+- En mobile, la modale occupe 100% de la largeur, ce padding créé un espacement incorrect
+- ajout d&#39;une media query sur le breakpoint MD pour corriger le problème
+
+
+#### 🐛 fix(header): correctif régression scroll horizontal [(#697)](https://github.com/GouvernementFR/dsfr/pull/697)
+- La navigation du header créée un scroll horizontal dans la page
+- l&#39;ajout d&#39;un max-width prévient le problème
+
+
+#### 🐛 fix(password): correctif accessibilité des messages [(#694)](https://github.com/GouvernementFR/dsfr/pull/694)
+- ajout sur les messages de validation et d&#39;erreur de la composition du mot de passe d&#39;un statut en after uniquement pour les lecteurs d&#39;écrans
+- BREAKING CHANGE : il est nécessaire d&#39;ajouter les attributs `data-fr-valid`et `data-fr-error` avec les textes correspondants à l&#39;état (respectivement, en français, &#34;validé&#34; et &#34;en erreur&#34;
+
+
+#### 🐛 fix(sidemenu): correction de la couleur des liens du sidemenu [(#698)](https://github.com/GouvernementFR/dsfr/pull/698)
+- Effet de bord du passage du bouton mobile en bleu, l&#39;ensemble des boutons du sidemenu est passé en bleu.
+- Ce correctif amène la spécificité nécessaire pour avoir les boutons et lien en `text default grey`
+
+
+#### 🐛 fix(core): correctif sur KeyAction [(#696)](https://github.com/GouvernementFR/dsfr/pull/696)
+- Corrige la régression sur l&#39;écoute des interactions avec le clavier dû à l&#39;évolution de la structure de la constante KeyCodes, non répercutée dans KeyAction
+
+
+#### ✨ feat(colors): ajout des utilitaires de couleur flat [(#693)](https://github.com/GouvernementFR/dsfr/pull/693)
+- Ajout des classes utilitaires pour le token background flat avec les variations de couleur d&#39;accent
+
+
+#### 🐛 fix(tooltip,modal): interaction globale et focus iOS [(#691)](https://github.com/GouvernementFR/dsfr/pull/691)
+- Correctif à la pression de la touche Escape sur la modale : si l&#39;élément actif (focus) est un élément de formulaire ou un média, la modale n&#39;est pas refermée pas pour permettre l&#39;interaction native de l&#39;élément actif
+- Correctif iOS de la prise de focus au clic
+- Fermeture des tooltips dés au clic sur n&#39;importe quel endroit
+- Fermeture des tooltip à la pression sur la touche escape, où que soit le focus
+
+
+#### 🐛 fix(tooltip) : a11y tooltip hover [(#686)](https://github.com/GouvernementFR/dsfr/pull/686)
+- autorise le survol sur l&#39;information contextuelle
+- ajoute un `tabindex=&#34;0&#34;` sur l&#39;example dans un texte
+- arrondi la valeur de placements de la flèche verticale à 2 décimales
+- retire le `aria-hidden=&#34;true&#34;` et ajoute `display=&#34;none&#34;`
+
+
+#### 🐛 fix(transcription): a11y retour audit [(#684)](https://github.com/GouvernementFR/dsfr/pull/684)
+- place le bouton d’agrandissement avant la modale et inverse les élements via css
+- ajoute `aria-label=”Agrandir la transcription”` sur le bouton d’agrandissement
+- remplace la balise dialog par une balise div
+- système d&#39;activation / désactivation de la modale avec ajout / retrait dynamique de `role=&#34;dialog&#34;` à l&#39;ouverture / fermeture de la modale
+- système de vérification et de correction pour l&#39;**accessible name** de la modale, avec warning explicatifs
+
+
+#### ✨ feat(tile): ajouts de variations de tuiles [(#685)](https://github.com/GouvernementFR/dsfr/pull/685)
+Ajouts des mêmes variations que la carte : 
+- `.fr-tile--no-border` sans le bordure encadrant la tuile (mais la barre épaisse basse reste)
+- `.fr-tile--shadow` avec élévation
+- `.fr-tile--grey` en gris contrast
+- `.fr-tile--no-background` couleur de fond transparente
+
+
+#### 🐛 fix(card,tile): corrige erreur de syntaxe ejs + lint [(#687)](https://github.com/GouvernementFR/dsfr/pull/687)
+
+
+#### 🐛 fix(card, tile): correctif lien externe et désactivé [(#683)](https://github.com/GouvernementFR/dsfr/pull/683)
+- sur les exemples avec lien externe, ajout de title=&#34;[Intitulé] - nouvelle fenêtre&#34;
+- sur les exemples avec liens désactivés, ajout de role=&#34;link&#34; et aria-disabled=&#34;true&#34;
+
+
+#### 🐛 fix(card, tile): correctif token title [(#682)](https://github.com/GouvernementFR/dsfr/pull/682)
+- le titre des cartes et tuiles doivent utiliser le token de couleur text-title-grey
+
+
+#### ✨ feat(navigation, header, sidemenu): homogénéisation des espacements et indentation [(#678)](https://github.com/GouvernementFR/dsfr/pull/678)
+- Uniformisation du menu latéral, navigation, et accordéon
+  - ajout d&#39;un fond open-blue-france et du texte en blue-france sur les boutons d&#39;ouverture en état ouvert
+  - ajout de marge pour indenter les sous menus
+  - ajustement des espacements
+- Ajustement de la navigation du header en mobile
+- Ajustement de la taille max de la navigation dans le header en desktop
+
+
+#### 🐛 fix(input): ajustement champs particuliers [(#679)](https://github.com/GouvernementFR/dsfr/pull/679)
+- Ajuste la largeur des champs de code postal, année et nombre à des multiples de 8v
+
+
+#### 🐛 fix(civility): correctif taille des boutons radio [(#676)](https://github.com/GouvernementFR/dsfr/pull/676)
+- Corrige la taille des boutons radio du titre d&#39;appel en sm au lieu de md
+
+
+#### 🐛 fix(follow): ajoute d&#39;exemple [(#675)](https://github.com/GouvernementFR/dsfr/pull/675)
+- Ajout de l&#39;exemple de succès à l&#39;abonnement à la lettre d&#39;information
+
+
+#### 🐛 fix(analytics): correctif page.date [(#681)](https://github.com/GouvernementFR/dsfr/pull/681)
+- la collecte de donnée page.date génére une erreur -&gt; correctif
+- mise en conformité avec le standard de date calendaire ISO 8601 [YYYY-MM-DD]
+
+
+#### 🐛 fix(transcription): déplacement bouton modale [(#680)](https://github.com/GouvernementFR/dsfr/pull/680)
+- Pour déterminer le bouton primaire qui sert à l’ouverture, un disclosure filtre parmi les boutons qui lui sont reliés et retire ceux qui se trouve à l’intérieur du contenu du disclosure (ce sont les boutons de fermeture)
+- Actuellement, la transcription a le bouton d&#39;ouverture de modale à l&#39;intérieur de son contenu, ce qui bloque le fonctionnement, le bouton n&#39;étant pas reconnu comme primaire.
+- Le correctif déplace le bouton après la dialog de la modal et restitue le fonctionnement de la transcription
+
+
+#### 🐛 fix(form): met a jour les libelles des indications [(#674)](https://github.com/GouvernementFR/dsfr/pull/674)
+- retrait de la capitalisation des mentions d&#39;indication
+
+
+#### 🐛 fix(date): ajustement exemples [(#671)](https://github.com/GouvernementFR/dsfr/pull/671)
+- mise en place de date cohérentes avec les erreurs affichées dans les exemples
+
+
+#### 🐛 fix(form): correctif alignement icône des messages [(#670)](https://github.com/GouvernementFR/dsfr/pull/670)
+- l&#39;icône à gauche des messages d&#39;erreur/succès sur plusieurs lignes doit être accrochée en haut et non pas centrée
+
+
+#### 🐛 fix(password): retrait du bouton natif sur edge [(#669)](https://github.com/GouvernementFR/dsfr/pull/669)
+- Sur edge une icône oeil apparaît au focus d&#39;un champ de type &#34;password&#34;
+- Retrait de l&#39;icone native
+
+
+#### 🐛 fix(name): a11y - gestion du focus [(#664)](https://github.com/GouvernementFR/dsfr/pull/664)
+Ajoute dans la page d’exemple le déplacement du focus : 
+- au click sur la checkbox de désactivation pour activer, le premier champ ou bouton prend le focus
+- au click sur l’ajout d’un prénom, le champs ajouté prend le focus
+- au click sur la suppression, le champ ou bouton suivant prend le focus
+
+
+#### 🐛 fix(footer): retrait de CSS obsolète [(#668)](https://github.com/GouvernementFR/dsfr/pull/668)
+- retrait de CSS résiduel de précédentes versions dans le footer-bottom__list
+
+
+#### 🐛 fix(password): correctif états de la case à cocher [(#667)](https://github.com/GouvernementFR/dsfr/pull/667)
+- force l&#39;état de la checkbox à l&#39;état par défaut, pour éviter qu&#39;elle ne passe en erreur/succès si elle hérite de cet état sur le composant.
+
+
+#### 🐛 fix(tooltip): mise a jour exemple [(#666)](https://github.com/GouvernementFR/dsfr/pull/666)
+- Dans l&#39;exemple &#34;Information contextuelle dans un tableau&#34;, remplacement de l&#39;information contextuelle par une infobulle (interaction au clic plutôt qu&#39;au survol)
+
+
+#### 🐛 fix(input): fix groupe attributes &amp; multiple hint text [(#665)](https://github.com/GouvernementFR/dsfr/pull/665)
+- Correction attribut en trop sur les input-group
+- multiple texte additionnel sur le modèle de champs d&#39;adresse électronique
+- Correction des textes additionnels
+
+
+#### 🐛 fix(modal): suppression exemple des liens dans la zone d&#39;action [(#663)](https://github.com/GouvernementFR/dsfr/pull/663)
+- Ce cas n&#39;est pas recommandé, la zone d&#39;action étant plutôt prévue pour des boutons
+
+
+#### 🐛 fix(consent): correctif espacement et couleur [(#662)](https://github.com/GouvernementFR/dsfr/pull/662)
+- Corrige description d&#39;une finalité de 3v à 2v en margin-bottom
+- Homogénéité avec accordion, nav et sidemenu sur le bouton de la modale de consentement “voir plus de détails” :
+   - enlever le soulignement
+   - mettre en bleu le lien “voir plus de détail”
+
+
+#### 🐛 fix(card, tile): ajout version sans liens, target blank, et mise à jour des exemples [(#657)](https://github.com/GouvernementFR/dsfr/pull/657)
+- Ajout de version carte et tuile sans lien (en noir)
+- Ajout de l&#39;icone target blank sur les cartes avec lien non élargi en target=&#34;_blank&#34;
+- Ajout d&#39;exemples de carte et tuile de téléchargement avec remplissage automatique des détails (en Octet ou en Bytes)
+- Ajout d&#39;exemple de carte et tuile de téléchargement avec fichier en langue étrangère
+- Séparation des exemples de tuile de téléchargement
+- Changement des pictogrammes des tuiles de téléchargement
+- Ajustement de la grille dans les exemples de tuiles
+
+
+#### 🐛 fix(pagination): correctif régression href des exemples [(#661)](https://github.com/GouvernementFR/dsfr/pull/661)
+- Corrige la régression qui a supprimé les liens des éléments de pagination
+
+
+#### 🐛 fix(sidemenu):  suppression variante et correctif style bouton mobile [(#660)](https://github.com/GouvernementFR/dsfr/pull/660)
+- Suppression de la variante avec bordure
+- Corrige le style du bouton mobile en action-high-blue-france (cohérence navigation/accordion)
+
+
+#### 🐛 fix(company): retrait des pluriels [(#659)](https://github.com/GouvernementFR/dsfr/pull/659)
+- Correction du langage dans la demande d&#39;un représentant moral, suppression des pluriels optionnels
+
+
+#### 🐛 fix(link): corrige graisse lien de téléchargement [(#658)](https://github.com/GouvernementFR/dsfr/pull/658)
+- retire le font-weight bold sur le lien de téléchargement
+
+
+#### 🐛 fix(password): bug icône [(#648)](https://github.com/GouvernementFR/dsfr/pull/648)
+- conditionne l&#39;ajout de la classe utile `fr-icon` à l&#39;utilisation d&#39;une string en paramètre `icon`
+
+
+#### 🐛 feat(company): accessibilité lien externe [(#656)](https://github.com/GouvernementFR/dsfr/pull/656)
+- corrige l&#39;accessibilité du lien en `target=&#34;_blank&#34;` par l&#39;ajout d&#39;un attribut `title`  :  &#34;Annuaire des entreprises – nouvelle fenêtre&#34;
+
+
+#### 🐛 fix(unexpected): corrige groupe de bouton vide [(#655)](https://github.com/GouvernementFR/dsfr/pull/655)
+- ajoute une condition sur l&#39;ajout du wrapper `.fr-btns-group` dans la template `ejs`
+
+
+#### 🐛 fix(*): accessibilité aria-live [(#654)](https://github.com/GouvernementFR/dsfr/pull/654)
+- remplace la valeur aria-live `assertive` par `polite`
+
+
+#### 🐛 fix(account): accessibilité champs obligatoires [(#652)](https://github.com/GouvernementFR/dsfr/pull/652)
+-  La mention de &#34;champs obligatoires&#34; doit être mise dans un élément `&lt;p&gt;` sur les pages de connexion et création de compte
+
+
+#### 🐛 fix(pattern): dénomination des blocs fonctionnels [(#649)](https://github.com/GouvernementFR/dsfr/pull/649)
+- Mise à jour et harmonisation de la dénomination des blocs fonctionnels
+
+
+#### 🐛 fix(core): correctif padding négatif [(#650)](https://github.com/GouvernementFR/dsfr/pull/650)
+- ajoute une condition pour éviter le padding négatif actuellement présent dans les classes utiles
+
+
+#### ⬆️ chore(*): montée de version NodeJS 18 [(#644)](https://github.com/GouvernementFR/dsfr/pull/644)
+- Monte la version minimale de NodeJS en 18.16.1
+
+
+#### 🐛 fix(core): correctif bug proxy Toggle [(#646)](https://github.com/GouvernementFR/dsfr/pull/646)
+- Dans la class Toggle, le proxy appelle la fonction toggle qui a été remplacée par la fonction générique handleClick : 
+- Ce correctif restaure la fonction toggle et implémente son appel dans handleClick
+
+
+#### 📝 docs(analytics): correction doc analytics &amp; readme [(#643)](https://github.com/GouvernementFR/dsfr/pull/643)
+- mise à jour du readme
+- corrections diverses documentation analytics
+
+
+#### 🐛 fix(analytics): correctif hiérarchie [(#647)](https://github.com/GouvernementFR/dsfr/pull/647)
+- l&#39;analyse de hiérarchie ignorait les headings présents dans un composant. 
+- ce correctif permet de les inclure dans l&#39;analyse.
+
+
+#### 🐛 fix(changelog): correctif inclusion des html [(#642)](https://github.com/GouvernementFR/dsfr/pull/642)
+- inclusion des caractères spéciaux html pour que les snippets soient affichés correctement
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#638)](https://github.com/GouvernementFR/dsfr/pull/638)
+- Mise à jour de sécurité
+
+
+#### 🐛 fix(core): apparence du champ de recherche iOS [(#639)](https://github.com/GouvernementFR/dsfr/pull/639)
+- En utilisant des librairies tierces (telles que normalize.css), le champ de recherche reprend son aspect natif arrondi en mobile IOS.
+- Spécificité renforcée sur le sélecteur afin de conserver le appearance: none
+
+
+#### 🐛 fix(header): duplication des id généralisée pour les quick access [(#637)](https://github.com/GouvernementFR/dsfr/pull/637)
+- L&#39;ensemble des id présents dans les accès rapides du header doivent être suffixés par -mobile à la duplication
+
+
+#### 🐛 fix(analytics): correctifs divers et ajouts de propriétés de page [(#612)](https://github.com/GouvernementFR/dsfr/pull/612)
+- liens cassés de la documentation
+- retrait du patch js des pages d&#39;exemple
+- correctif du collect manuel au changement d&#39;url
+- correctif du taux de clic désactivé sur certains composants
+- ajustements pages d&#39;exemple
+-  retrait des limitation de valeurs sur la propriété`user.profile` 
+- ajouts de propriétés dans la configuration de page 
+  - page_id
+  - page_author
+  - page_tags
+  - page_date
+
+
+#### 🐛 fix(search): hauteur du champ trop grande de 1px sur ios [(#632)](https://github.com/GouvernementFR/dsfr/pull/632)
+Sur ios le champ dépasse de 1px par rapport au bouton.
+
+-&gt; Correction du max-height
+
+
+#### ✨ feat(select, input): ajout de la bordure en état erreur / succés / info [(#635)](https://github.com/GouvernementFR/dsfr/pull/635)
+Actuellement la bordure gauche montrant l&#39;état d&#39;erreur/succès/info n&#39;est appliqué que dans le cas d&#39;un groupe de champ en erreur via les modificateur .fr-fieldset--error, .fr-fieldset--valid, .fr-fieldset--info
+
+Afin d&#39;être ISO avec l&#39;UI nous rajoutons cet élément visuel sur : 
+- les champs seuls (.fr-input-group) : 
+  - `.fr-input-group--error`
+  - `.fr-input-group--valid`
+  - `.fr-input-group--info`
+- les selects (.fr-select-group)
+  - `.fr-select-group--error`
+  - `.fr-select-group--valid`
+  - `.fr-select-group--info`
+
+
+#### 🐛 fix(tab): correction onglets imbriqués en legacy [(#628)](https://github.com/GouvernementFR/dsfr/pull/628)
+- correction des marges sur les tabs imbriqués sur IE
+- correction disclosure et disclosureGroup IE
+- correction syntax error selecteur Collapse
+
+
+#### 🐛 fix(example): retire les attributs file des &lt;link&gt; [(#631)](https://github.com/GouvernementFR/dsfr/pull/631)
+- l&#39;attribut file n&#39;est pas un attribut possible pour les éléments &lt;link&gt;
+
+
+#### 🐛 fix(link, button, tag, badge): retrait du z-index [(#630)](https://github.com/GouvernementFR/dsfr/pull/630)
+- retrait du z-index: 1 qui pose problème dans une modale avec footer.
+
+
+#### 🎉 feat(tooltip): ajout de la fonctionnalité Tooltip [(#486)](https://github.com/GouvernementFR/dsfr/pull/486)
+Le composant `Infobulle` (ou `bulle d’aide`, `aide contextuelle`) permet d’afficher du contenu dans le contexte de navigation (non modal), à propos et lors de l’interaction avec un élément précis de l’interface. Il est caché par défaut, et s’affiche au survol ou au clic de l’élément associé, par-dessus le reste de la page.
+
+
+#### 🐛 fix(share): correction copie url dans presse papier [(#629)](https://github.com/GouvernementFR/dsfr/pull/629)
+- Gestion de la Promise retournée par `navigator.clipboard.writeText()`
+
+
+#### ✨ feat(address): met a jour les message d&#39;aide des champs de formulaire [(#624)](https://github.com/GouvernementFR/dsfr/pull/624)
+- ajout d&#39;indication et de description du format attendu
+
+
+#### 🐛 fix(account): met a jour la hiérarchie html des modèles de page [(#618)](https://github.com/GouvernementFR/dsfr/pull/618)
+- Mise en place d&#39;une hiérarchie sans saut de niveau de titre, plus cohérente
+- Correctif typo sur la classe `fr-grid-row--gutters`
+
+
+#### 🐛 fix(accordion, transcription, translate, sidemenu): Ajustement sur l&#39;état défaut et actif [(#564)](https://github.com/GouvernementFR/dsfr/pull/564)
+Harmonisation avec la navigation sur Accordion, Sidemenu, Translate et Transcription :
+- Passage icône et intitulé en action-high-blue-france
+- Ajout background-open-blue-france sur le bouton lorsque l&#39;élément est ouvert
+- Icône “arrow-down-s-ligne” (la même que sur navigation)
+- Accordion, Translate : Retrait changement de graisse (normal -&gt; bold) à l&#39;ouverture et graisse constante en medium
+
+
+#### 🐛 fix(tab, core): correctif tab legacy &amp; margin top des headings [(#621)](https://github.com/GouvernementFR/dsfr/pull/621)
+- Corrige la taille de l&#39;icône
+- Corrige l&#39;alignement du contenu du tab_panel
+- Ajustement du padding de la tab__list
+- Retire les margin-top des headings (h1 -&gt; h6)
+
+
+#### 📝 doc(core): ajoute des exemples liens bruts et resets [(#613)](https://github.com/GouvernementFR/dsfr/pull/613)
+Par défaut, le dsfr stylise les liens natifs, ce qui peut poser problème dans l&#39;utilisation de librairie tierce.
+2 classes utilitaires sont mise à disposition pour contrecarrer le style fort du lien : 
+- `.fr-raw-link` retire toute stylisation sur les liens natifs
+- `.fr-reset-link` remet le soulignement natif du navigateur (`text-decoration: underline;`)
+Des pages d&#39;exemples en illustrant l&#39;utilisation ont été ajoutées dans les pages d&#39;exemples des fondamentaux.
+
+
+#### ✨ feat(radio): radio rich sans images &amp; pictogram à la place d&#39;img [(#540)](https://github.com/GouvernementFR/dsfr/pull/540)
+Les radios riches doivent utiliser des pictogrammes et non des images :
+- Retrait des images
+- Ajout de pictogramme
+
+Le snippet :
+```html
+&lt;div class=&#34;fr-radio-group fr-radio-rich&#34;&gt;
+  &lt;input value=&#34;1&#34; type=&#34;radio&#34; id=&#34;radio-rich-1&#34; name=&#34;radio-rich&#34;&gt;
+  &lt;label class=&#34;fr-label&#34; for=&#34;radio-rich-1&#34;&gt;
+      Libellé bouton radio
+  &lt;/label&gt;
+  &lt;div class=&#34;fr-radio-rich__img&#34;&gt;
+      &lt;img src=&#34;../../../example/img/placeholder.1x1.png&#34; alt=&#34;[À MODIFIER - vide ou texte alternatif de l’image]&#34; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;div class=&#34;fr-radio-group fr-radio-rich&#34;&gt;
+  &lt;input value=&#34;1&#34; type=&#34;radio&#34; id=&#34;radio-rich-1&#34; name=&#34;radio-rich&#34;&gt;
+  &lt;label class=&#34;fr-label&#34; for=&#34;radio-rich-1&#34;&gt;
+      Libellé bouton radio
+  &lt;/label&gt;
+  &lt;div class=&#34;fr-radio-rich__pictogram&#34;&gt;
+      &lt;svg aria-hidden=&#34;true&#34; class=&#34;fr-artwork&#34; viewBox=&#34;0 0 80 80&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
+          &lt;use class=&#34;fr-artwork-decorative&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative&#34;&gt;&lt;/use&gt;
+          &lt;use class=&#34;fr-artwork-minor&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor&#34;&gt;&lt;/use&gt;
+          &lt;use class=&#34;fr-artwork-major&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-major&#34;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+Remplacer buildings/city-hall par la catégorie et le nom du pictogramme désiré
+
+BREAKING CHANGE : `fr-radio-rich__img` devient `fr-radio-rich__pictogram`
+
+
+#### 📝 doc(core): corrige les liens vers les pages de documentation des fondamentaux [(#623)](https://github.com/GouvernementFR/dsfr/pull/623)
+- Mise à jour des liens vers les fondamentaux sur le site de documentation
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#622)](https://github.com/GouvernementFR/dsfr/pull/622)
+- Mise à jour de sécurité
+
+
+#### ✨ feat(card): image des cartes de téléchargement format a4 [(#620)](https://github.com/GouvernementFR/dsfr/pull/620)
+- Ajout d&#39;une image de placeholder au format a4 (21x29.7)
+
+
+#### 🐛 fix(core): corrige liens pour retro-compat sur firefox [(#615)](https://github.com/GouvernementFR/dsfr/pull/615)
+- La fonction css max(), mise en place pour corriger le bug d&#39;affichage d&#39;un soulignement d&#39;une épaisseur inférieure à 1px, est supportée à partir de la version 78 de firefox, ce qui est insuffisant.
+- Le précédent bug est maintenant corrigé avec un léger épaississement du trait sur firefox (0.25px)
+
+
+#### 🐛 fix(header, navigation): focus des nav-items mobile &amp; ajustements [(#609)](https://github.com/GouvernementFR/dsfr/pull/609)
+- L&#39;outline de focus est maintenant entièrement visible sur les liens des sous menu en mobile
+- Ajustement de l&#39;alignement du bouton fermé en desktop
+- Retrait du mega-menu__leader vide dans les examples
+
+
+#### ✨ feat(pagination): évolution taille et écart des boutons [(#549)](https://github.com/GouvernementFR/dsfr/pull/549)
+Harmonisation de l&#39;espacement entre les boutons de pagination :
+- L&#39;espacement passe à 16px entre tous les boutons
+- Les boutons passent en taille SM
+
+
+#### 🐛 fix(core, modal): décalage scrollbar à l&#39;ouverture/fermeture modale &amp; fix scroll behavior [(#519)](https://github.com/GouvernementFR/dsfr/pull/519)
+Lorsque la page est scrollable, un décalage se produit à l&#39;ouverture d&#39;une modal (la page étant figé elle n&#39;est plus scrollable).
+
+Une marge est donc appliquée à l&#39;ouverture de la modale pour simuler la barre de scroll et ainsi éviter le mouvement du contenu en arrière plan.
+
+
+#### ♻️ refactor(radio,checkbox,toggle): passage input en bleu et refactorisation [(#502)](https://github.com/GouvernementFR/dsfr/pull/502)
+Uniformisation des champs à cocher toggle/radio/checkbox
+
+toggle:
+- Ajout des variants toggle error/valid
+- Retrait du css sur input `appearance:none` 
+- bordure en background svg
+- le toggle est maintenant placé dans un fieldset
+
+radio:
+- Le contour devient bleu
+- retrait du fond blanc du radio bouton (transparence)
+- input déssiné en background image
+
+radio-rich: 
+- L&#39;outline au focus englobe tout le radio-riche, plus l&#39;input
+
+checkbox:
+- Le contour devient bleu
+- correction changement d&#39;état au mouse-down (:active), maintenant au mouse up
+
+Form: 
+- les hint-text des champs désactivés passent en couleur `--text-disabled-grey`
+
+
+#### ✨ feat(core): ouverture des disclosures à partir des ancres, état disabled désactive disclosure [(#532)](https://github.com/GouvernementFR/dsfr/pull/532)
+- Correctif de l&#39;état disabled sur les boutons associés à une modale, un onglet ou un accordéon. La fonctionnalité d&#39;ouverture est désactivée si les boutons primaires sont désactivés.
+- Ajout de la fonctionnalité d&#39;ouverture d&#39;une modale, d&#39;un onglet ou d&#39;un accordéon si la partie ancre de l&#39;url correspond à l&#39;id de l&#39;élément -&gt; les liens d&#39;évitements peuvent ouvrir le menu et la recherche en mobile.
+
+
+#### 🐛 fix(tab): écoute des événements de clavier déplacé sur la liste d&#39;onglets [(#531)](https://github.com/GouvernementFR/dsfr/pull/531)
+L&#39;écoute des événements de clavier se faisant sur le composant, il est impossible d&#39;interagir avec des éléments de formulaire dans le contenu de l&#39;onglet -&gt; l&#39;écoute est déplacée au niveau de la liste des onglets, ce qui en exclut le contenu
+
+
+#### ✨ feat(name): ajout bouton de suppression de prénom [(#493)](https://github.com/GouvernementFR/dsfr/pull/493)
+Dans le modèle de de bloc nom/prénom, un bouton permet d&#39;ajouter des champs de saisie pour les prénoms secondaires -&gt; ajout d&#39;un bouton permettant de supprimer ces champs ajoutés
+
+
+#### ✨ feat(tile): Ajout icône flèche, état désactivé, icone lien externe, tuile de téléchargement [(#602)](https://github.com/GouvernementFR/dsfr/pull/602)
+Les tuiles peuvent maintenant être de type téléchargement (comme les cartes)
+  - Les tuiles de téléchargement sont par défaut horizontales
+  - Le détail de la tuile de téléchargement est obligatoire et il peut être rempli automatiquement en fonction du fichier à télécharger en plaçant à l&#39;attribut &#34;data-fr-assess-file&#34; sur le lien (comme pour carte)
+
+Les tuiles ont maintenant par défaut une icone.
+  - arrow-right (par défaut)
+  - external-link (en target=&#34;_blank&#34;)
+  - download (avec la classe fr-tile--download)
+
+Les tuiles désactivées (a sans href) ont à présent:
+  - la bordure bottom en grise
+  - l&#39;icone et le titre en gris
+  
+Ajout des classes &#34;fr-tile--vertical@md&#34; et  &#34;fr-tile--vertical@lg&#34; pour passer une tuile horizontale, ou download, en vertical à partir des breakpoints md et lg
+
+
+#### 🎉 feat(tile): évolution des tuiles [(#534)](https://github.com/GouvernementFR/dsfr/pull/534)
+**Evolution majeur du composant Tuile :**
+Nous souhaitons revoir la structure html de la tuile pour étendre les variations de contenu (avec détails, badge, etc), et uniformiser avec les comportements de la Carte (card).
+
+Changements apportés :
+- Ajout d&#39;un niveau d&#39;encapsulation dans la structure html
+  - Ajout d&#39;un wrapper &#34;fr-tile__content&#34; pour englober le contenu
+  - Ajout d&#39;un wrapper &#34;fr-tile__header&#34; pour englober l&#39;image
+- L&#39;image des tuiles est remplacée par un pictogramme
+  - La classe &#34;fr-tile__img&#34; devient &#34;fr-tile__pictogram&#34; 
+  - Son contenu est maintenant un svg &#34;fr-artwork&#34;
+- Ajout de la possibilité de placer un badge, un tag, un texte de détail, dans le contenu de la tuile
+- Ajout d&#39;une taille de tuile SM : &#34;fr-tile--sm&#34;
+
+**⚠️ Breaking Change**
+Le snippet de code d&#39;une tuile : 
+```html
+&lt;div class=&#34;fr-tile fr-enlarge-link&#34;&gt;
+    &lt;div class=&#34;fr-tile__body&#34;&gt;
+        &lt;h4 class=&#34;fr-tile__title&#34;&gt;
+            &lt;a class=&#34;fr-tile__link&#34; href&gt;Titre M bold&lt;/a&gt;
+        &lt;/h4&gt;
+        &lt;p class=&#34;fr-tile__desc&#34;&gt;Texte M regular 2 lignes max&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;fr-tile__img&#34;&gt;
+       &lt;img class=&#34;fr-responsive-img&#34; src=&#34;../../../example/img/placeholder.1x1.png&#34; alt=&#34;&#34; /&gt;
+       &lt;!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+Devient : 
+```html
+&lt;div class=&#34;fr-tile fr-enlarge-link&#34; id=&#34;tile-6584&#34;&gt;
+    &lt;div class=&#34;fr-tile__body&#34;&gt;
+        &lt;div class=&#34;fr-tile__content&#34;&gt;
+            &lt;h3 class=&#34;fr-tile__title&#34;&gt;
+                &lt;a href=&#34;#&#34;&gt;Intitulé de la tuile&lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class=&#34;fr-tile__desc&#34;&gt;Lorem [...] elit ut.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;fr-tile__header&#34;&gt;
+        &lt;div class=&#34;fr-tile__pictogram&#34;&gt;
+            &lt;svg aria-hidden=&#34;true&#34; class=&#34;fr-artwork&#34; viewBox=&#34;0 0 80 80&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
+                &lt;use class=&#34;fr-artwork-decorative&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative&#34;&gt;&lt;/use&gt;
+                &lt;use class=&#34;fr-artwork-minor&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor&#34;&gt;&lt;/use&gt;
+                &lt;use class=&#34;fr-artwork-major&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-major&#34;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+
+#### 🚚 refactor(download): séparation du download en carte et lien [(#487)](https://github.com/GouvernementFR/dsfr/pull/487)
+Pour mutualiser les comportements de la carte et du lien au composant download, celui-ci doit devenir une variante de ces composants et non pas l&#39;inverse.
+
+Retrait du composant : téléchargement de fichier - Download -&gt; déprécié
+Ajout de la variante de carte : fr-card--download 
+Ajout de la variante de lien : fr-link--download 
+
+Le lien de téléchargement : 
+```html
+&lt;div class=&#34;fr-download&#34;&gt;
+    &lt;h3&gt;
+        &lt;a href=&#34;[À MODIFIER - /example/img/image.jpg]&#34; download class=&#34;fr-download__link&#34;&gt;Télécharger le document lorem ipsum sit dolores amet
+            &lt;span class=&#34;fr-download__detail&#34;&gt;
+                JPG – 61,88 ko
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h3&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;a class=&#34;fr-link fr-link--download&#34; download href=&#34;[À MODIFIER - example/img/image.jpg]&#34;&gt;
+    Télécharger le document lorem ipsum sit dolores amet &lt;span class=&#34;fr-link__detail&#34;&gt;JPG – 61,88 ko&lt;/span&gt;
+&lt;/a&gt;
+```
+
+et la carte de téléchargement : 
+```html
+&lt;div class=&#34;fr-download fr-enlarge-link fr-download--card&#34;&gt;
+    &lt;h3&gt;
+        &lt;a href=&#34;[À MODIFIER - example/img/image.jpg]&#34; download class=&#34;fr-download__link&#34;&gt;Télécharger le document lorem ipsum sit dolores amet
+            &lt;span class=&#34;fr-download__detail&#34;&gt;
+                JPG – 61,88 ko
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;p class=&#34;fr-download__desc&#34;&gt;Texte de description&lt;&lt;/p&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;div class=&#34;fr-card fr-enlarge-link fr-card--download&#34;&gt;
+    &lt;div class=&#34;fr-card__body&#34;&gt;
+        &lt;div class=&#34;fr-card__content&#34;&gt;
+            &lt;h3 class=&#34;fr-card__title&#34;&gt;
+                &lt;a download href=&#34;[À MODIFIER - example/img/image.jpg]&#34;&gt;
+                    Télécharger le document lorem ipsum sit dolores amet
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class=&#34;fr-card__desc&#34;&gt;Texte de description&lt;/p&gt;
+            &lt;div class=&#34;fr-card__end&#34;&gt;
+                &lt;p class=&#34;fr-card__detail&#34;&gt;JPG – 61,88 ko&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+BREAKING CHANGE : Remplacer le composant fr-download par la variante de link fr-link--download et remplacer le composant fr-download--card par une carte fr-card--download
+
+
+
+### [v1.9.3](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...v1.9.3) - 17 Mai 2023
 
 #### 🐛 fix(breadcrumb): ajoute une page exemple alternative [(#600)](https://github.com/GouvernementFR/dsfr/pull/600)
 - étiquette d&#39;élément span rendue possible sur l&#39;élément courant du fil d&#39;ariane
@@ -299,6 +994,701 @@ Ajoute les tokens des familles de couleurs neutral, primary et accent sur artwor
 
 
 #### fix(toggle): rend le composant compatible avec vite+svelte [(#518)](https://github.com/GouvernementFR/dsfr/pull/518)
+
+
+
+
+## v1.10
+
+### [v1.10.2](https://github.com/GouvernementFR/dsfr/compare/v1.10.1...v1.10.2) - 19 Octobre 2023
+
+#### 🐛 fix(analytics): réduction d&#39;envoi des données [(#806)](https://github.com/GouvernementFR/dsfr/pull/806)
+- suppression du taux d&#39;interaction global
+- ajout de l&#39;attribut data-fr-analytics-rating qui permet de mesurer le taux d&#39;interaction sur un élément particulier
+- suppression de l&#39;impression des composants sans interactions
+- limitation de l&#39;envoi de donnée à la première interaction
+- bouton associé à l&#39;accordéon, l&#39;onglet et la transcription rendu muet
+- recensement des composants de la page dans une nouvelle donnée de page `page_components`
+
+
+
+### [v1.10.1](https://github.com/GouvernementFR/dsfr/compare/v1.10.0...v1.10.1) - 4 Septembre 2023
+
+#### 🐛 fix(radio): correctif couleur manquante [(#757)](https://github.com/GouvernementFR/dsfr/pull/757)
+- Erreur dans le build du CSS suite au manque d&#39;une couleur
+
+
+#### 🐛 fix(link): correction des liens de téléchargement sur firefox et des groupes de liens sur safari [(#755)](https://github.com/GouvernementFR/dsfr/pull/755)
+
+
+#### ✨ feat(share, follow, utility): icone personalisée, et ajout twitter-x et threads [(#752)](https://github.com/GouvernementFR/dsfr/pull/752)
+- ajoute la possibilité de mettre une icone de réseau social personalisée dans &#34;follow&#34;
+- ajouts d&#39;exemples d&#39;icone personalisée dans &#34;share&#34; et &#34;follow&#34;
+- ajouts des icones dans utility : 
+  - twitter-x-fill
+  - twitter-x-line
+  - threads-fill
+  - threads-line
+
+
+#### 🐛 fix(tile): correction de l&#39;icone des tuiles avec lien externe [(#753)](https://github.com/GouvernementFR/dsfr/pull/753)
+
+
+
+### [v1.10.0](https://github.com/GouvernementFR/dsfr/compare/v1.9.3...v1.10.0) - 19 Juillet 2023
+
+#### 🐛 fix(form): correctif barre état iOS [(#712)](https://github.com/GouvernementFR/dsfr/pull/712)
+- Sur iOS, la barre d&#39;état d&#39;erreur ou validation est discontinue
+- corrige le problème de manière générique
+
+
+#### 🐛 fix(modal): retour de focus fermeture clavier [(#716)](https://github.com/GouvernementFR/dsfr/pull/716)
+- Mise en place du retour du focus à la fermeture en pressant la touche ESC
+
+
+#### 🐛 fix(form): correctif focus des radios riches dépréciés [(#715)](https://github.com/GouvernementFR/dsfr/pull/715)
+- corrige le décalage du focus sur les boutons radio en version dépréciée
+
+
+#### 🐛 fix(follow): orthographe message de confirmation [(#714)](https://github.com/GouvernementFR/dsfr/pull/714)
+
+
+#### ✨ feat(core, password): boutons spéciaux input Safari [(#711)](https://github.com/GouvernementFR/dsfr/pull/711)
+- Dans les champs de type password, sur safari Mac, il y a une icône apportant des outils supplémentaire qui se superpose à l’icône des signalant la hauteur de casse
+- Déplacement des icônes natives pour qu&#39;elles ne se superposent pas
+- Retrait de l&#39;icône capslock native, privilégiant la nôtre
+
+
+#### 🐛 fix(core): stabilisation disclosure [(#713)](https://github.com/GouvernementFR/dsfr/pull/713)
+- L&#39;ouverture des paramètres d&#39;affichage est par moment non réactive
+- L&#39;élément est fermé avant même d&#39;être ouvert à cause de boucle de déclenchement
+- Ajout de condition permettant de limiter les boucles
+
+
+#### 📝 doc(tooltip): retrait exemple texte [(#710)](https://github.com/GouvernementFR/dsfr/pull/710)
+- l&#39;utilisation d&#39;un tooltip sur un texte pose des problèmes de restitution
+- cet usage est déconseillé
+- retrait de l&#39;exemple
+
+
+#### 🐛 fix(tile): correctif espacements version dépreciée [(#704)](https://github.com/GouvernementFR/dsfr/pull/704)
+- L&#39;icône et le contenu se retrouvent superposés dans la version dépréciée, ce correctif rétablit l&#39;espacement nécessaire
+
+
+#### 🐛 fix(tile, card): A11Y liens désactivés [(#709)](https://github.com/GouvernementFR/dsfr/pull/709)
+- Ajout des attributs `role=&#34;link&#34;` et `aria-disabled=true` sur les version désactivées
+
+
+#### 🐛 fix(transcription, content): correctif title et label bouton Agrandir [(#708)](https://github.com/GouvernementFR/dsfr/pull/708)
+- Retrait du title sur le bouton agrandir
+- Ajout label agrandir dans les exemples de content
+
+
+#### ✨ feat(*): Ajout d&#39;un meta tag iOS [(#707)](https://github.com/GouvernementFR/dsfr/pull/707)
+- Sur iOS, les numéros de téléphone sont automatiquement transformés en lien
+- Entraîne un mauvais rendu dans le bloc fonctionnel de numéro de téléphone
+- Correction par l&#39;ajout général du meta tag `&lt;meta name=&#34;format-detection&#34; content=&#34;telephone=no&#34;&gt;`
+
+
+#### 🐛 fix(card, tile): correctif IE 11 [(#705)](https://github.com/GouvernementFR/dsfr/pull/705)
+- correctif sur les tuiles et card sur la version legacy pour éviter les bugs de dépassement de texte et placement des icônes
+
+
+#### 🐛  fix(toggle): retrait tap-highlight-color iOS [(#703)](https://github.com/GouvernementFR/dsfr/pull/703)
+- Au clic sur le toggle sur iOS, l&#39;effet de highlight est présent
+- Retrait de cet effet avec la propriété [-webkit-tap-highlight-color](https://developer.mozilla.org/fr/docs/Web/CSS/-webkit-tap-highlight-color)
+
+
+#### 🐛 fix(link): correctif téléchargement multiligne [(#702)](https://github.com/GouvernementFR/dsfr/pull/702)
+- les liens de téléchargement étaient limités à une seul ligne avec une ellipse sur le text dépassant
+- correctif prenant en compte le retour à la ligne
+
+
+#### 🐛 fix(download): graisse du titre des liens [(#701)](https://github.com/GouvernementFR/dsfr/pull/701)
+- Passage des liens dépréciés en graisse regular
+
+
+#### 🐛 fix(*): mise à jour des liens du readme [(#700)](https://github.com/GouvernementFR/dsfr/pull/700)
+- Mise à jour des liens vers [https://www.systeme-de-design.gouv.fr](https://www.systeme-de-design.gouv.fr) dans le readme
+
+
+#### 🐛 fix(modal): préviens décalage mobile [(#699)](https://github.com/GouvernementFR/dsfr/pull/699)
+- l&#39;ajout d&#39;un padding à l&#39;ouverture permet de se substituer au décalage créé potentiellement par la disparition de la scrollbar en desktop
+- En mobile, la modale occupe 100% de la largeur, ce padding créé un espacement incorrect
+- ajout d&#39;une media query sur le breakpoint MD pour corriger le problème
+
+
+#### 🐛 fix(header): correctif régression scroll horizontal [(#697)](https://github.com/GouvernementFR/dsfr/pull/697)
+- La navigation du header créée un scroll horizontal dans la page
+- l&#39;ajout d&#39;un max-width prévient le problème
+
+
+#### 🐛 fix(password): correctif accessibilité des messages [(#694)](https://github.com/GouvernementFR/dsfr/pull/694)
+- ajout sur les messages de validation et d&#39;erreur de la composition du mot de passe d&#39;un statut en after uniquement pour les lecteurs d&#39;écrans
+- BREAKING CHANGE : il est nécessaire d&#39;ajouter les attributs `data-fr-valid`et `data-fr-error` avec les textes correspondants à l&#39;état (respectivement, en français, &#34;validé&#34; et &#34;en erreur&#34;
+
+
+#### 🐛 fix(sidemenu): correction de la couleur des liens du sidemenu [(#698)](https://github.com/GouvernementFR/dsfr/pull/698)
+- Effet de bord du passage du bouton mobile en bleu, l&#39;ensemble des boutons du sidemenu est passé en bleu.
+- Ce correctif amène la spécificité nécessaire pour avoir les boutons et lien en `text default grey`
+
+
+#### 🐛 fix(core): correctif sur KeyAction [(#696)](https://github.com/GouvernementFR/dsfr/pull/696)
+- Corrige la régression sur l&#39;écoute des interactions avec le clavier dû à l&#39;évolution de la structure de la constante KeyCodes, non répercutée dans KeyAction
+
+
+#### ✨ feat(colors): ajout des utilitaires de couleur flat [(#693)](https://github.com/GouvernementFR/dsfr/pull/693)
+- Ajout des classes utilitaires pour le token background flat avec les variations de couleur d&#39;accent
+
+
+#### 🐛 fix(tooltip,modal): interaction globale et focus iOS [(#691)](https://github.com/GouvernementFR/dsfr/pull/691)
+- Correctif à la pression de la touche Escape sur la modale : si l&#39;élément actif (focus) est un élément de formulaire ou un média, la modale n&#39;est pas refermée pas pour permettre l&#39;interaction native de l&#39;élément actif
+- Correctif iOS de la prise de focus au clic
+- Fermeture des tooltips dés au clic sur n&#39;importe quel endroit
+- Fermeture des tooltip à la pression sur la touche escape, où que soit le focus
+
+
+#### 🐛 fix(tooltip) : a11y tooltip hover [(#686)](https://github.com/GouvernementFR/dsfr/pull/686)
+- autorise le survol sur l&#39;information contextuelle
+- ajoute un `tabindex=&#34;0&#34;` sur l&#39;example dans un texte
+- arrondi la valeur de placements de la flèche verticale à 2 décimales
+- retire le `aria-hidden=&#34;true&#34;` et ajoute `display=&#34;none&#34;`
+
+
+#### 🐛 fix(transcription): a11y retour audit [(#684)](https://github.com/GouvernementFR/dsfr/pull/684)
+- place le bouton d’agrandissement avant la modale et inverse les élements via css
+- ajoute `aria-label=”Agrandir la transcription”` sur le bouton d’agrandissement
+- remplace la balise dialog par une balise div
+- système d&#39;activation / désactivation de la modale avec ajout / retrait dynamique de `role=&#34;dialog&#34;` à l&#39;ouverture / fermeture de la modale
+- système de vérification et de correction pour l&#39;**accessible name** de la modale, avec warning explicatifs
+
+
+#### ✨ feat(tile): ajouts de variations de tuiles [(#685)](https://github.com/GouvernementFR/dsfr/pull/685)
+Ajouts des mêmes variations que la carte : 
+- `.fr-tile--no-border` sans le bordure encadrant la tuile (mais la barre épaisse basse reste)
+- `.fr-tile--shadow` avec élévation
+- `.fr-tile--grey` en gris contrast
+- `.fr-tile--no-background` couleur de fond transparente
+
+
+#### 🐛 fix(card,tile): corrige erreur de syntaxe ejs + lint [(#687)](https://github.com/GouvernementFR/dsfr/pull/687)
+
+
+#### 🐛 fix(card, tile): correctif lien externe et désactivé [(#683)](https://github.com/GouvernementFR/dsfr/pull/683)
+- sur les exemples avec lien externe, ajout de title=&#34;[Intitulé] - nouvelle fenêtre&#34;
+- sur les exemples avec liens désactivés, ajout de role=&#34;link&#34; et aria-disabled=&#34;true&#34;
+
+
+#### 🐛 fix(card, tile): correctif token title [(#682)](https://github.com/GouvernementFR/dsfr/pull/682)
+- le titre des cartes et tuiles doivent utiliser le token de couleur text-title-grey
+
+
+#### ✨ feat(navigation, header, sidemenu): homogénéisation des espacements et indentation [(#678)](https://github.com/GouvernementFR/dsfr/pull/678)
+- Uniformisation du menu latéral, navigation, et accordéon
+  - ajout d&#39;un fond open-blue-france et du texte en blue-france sur les boutons d&#39;ouverture en état ouvert
+  - ajout de marge pour indenter les sous menus
+  - ajustement des espacements
+- Ajustement de la navigation du header en mobile
+- Ajustement de la taille max de la navigation dans le header en desktop
+
+
+#### 🐛 fix(input): ajustement champs particuliers [(#679)](https://github.com/GouvernementFR/dsfr/pull/679)
+- Ajuste la largeur des champs de code postal, année et nombre à des multiples de 8v
+
+
+#### 🐛 fix(civility): correctif taille des boutons radio [(#676)](https://github.com/GouvernementFR/dsfr/pull/676)
+- Corrige la taille des boutons radio du titre d&#39;appel en sm au lieu de md
+
+
+#### 🐛 fix(follow): ajoute d&#39;exemple [(#675)](https://github.com/GouvernementFR/dsfr/pull/675)
+- Ajout de l&#39;exemple de succès à l&#39;abonnement à la lettre d&#39;information
+
+
+#### 🐛 fix(analytics): correctif page.date [(#681)](https://github.com/GouvernementFR/dsfr/pull/681)
+- la collecte de donnée page.date génére une erreur -&gt; correctif
+- mise en conformité avec le standard de date calendaire ISO 8601 [YYYY-MM-DD]
+
+
+#### 🐛 fix(transcription): déplacement bouton modale [(#680)](https://github.com/GouvernementFR/dsfr/pull/680)
+- Pour déterminer le bouton primaire qui sert à l’ouverture, un disclosure filtre parmi les boutons qui lui sont reliés et retire ceux qui se trouve à l’intérieur du contenu du disclosure (ce sont les boutons de fermeture)
+- Actuellement, la transcription a le bouton d&#39;ouverture de modale à l&#39;intérieur de son contenu, ce qui bloque le fonctionnement, le bouton n&#39;étant pas reconnu comme primaire.
+- Le correctif déplace le bouton après la dialog de la modal et restitue le fonctionnement de la transcription
+
+
+#### 🐛 fix(form): met a jour les libelles des indications [(#674)](https://github.com/GouvernementFR/dsfr/pull/674)
+- retrait de la capitalisation des mentions d&#39;indication
+
+
+#### 🐛 fix(date): ajustement exemples [(#671)](https://github.com/GouvernementFR/dsfr/pull/671)
+- mise en place de date cohérentes avec les erreurs affichées dans les exemples
+
+
+#### 🐛 fix(form): correctif alignement icône des messages [(#670)](https://github.com/GouvernementFR/dsfr/pull/670)
+- l&#39;icône à gauche des messages d&#39;erreur/succès sur plusieurs lignes doit être accrochée en haut et non pas centrée
+
+
+#### 🐛 fix(password): retrait du bouton natif sur edge [(#669)](https://github.com/GouvernementFR/dsfr/pull/669)
+- Sur edge une icône oeil apparaît au focus d&#39;un champ de type &#34;password&#34;
+- Retrait de l&#39;icone native
+
+
+#### 🐛 fix(name): a11y - gestion du focus [(#664)](https://github.com/GouvernementFR/dsfr/pull/664)
+Ajoute dans la page d’exemple le déplacement du focus : 
+- au click sur la checkbox de désactivation pour activer, le premier champ ou bouton prend le focus
+- au click sur l’ajout d’un prénom, le champs ajouté prend le focus
+- au click sur la suppression, le champ ou bouton suivant prend le focus
+
+
+#### 🐛 fix(footer): retrait de CSS obsolète [(#668)](https://github.com/GouvernementFR/dsfr/pull/668)
+- retrait de CSS résiduel de précédentes versions dans le footer-bottom__list
+
+
+#### 🐛 fix(password): correctif états de la case à cocher [(#667)](https://github.com/GouvernementFR/dsfr/pull/667)
+- force l&#39;état de la checkbox à l&#39;état par défaut, pour éviter qu&#39;elle ne passe en erreur/succès si elle hérite de cet état sur le composant.
+
+
+#### 🐛 fix(tooltip): mise a jour exemple [(#666)](https://github.com/GouvernementFR/dsfr/pull/666)
+- Dans l&#39;exemple &#34;Information contextuelle dans un tableau&#34;, remplacement de l&#39;information contextuelle par une infobulle (interaction au clic plutôt qu&#39;au survol)
+
+
+#### 🐛 fix(input): fix groupe attributes &amp; multiple hint text [(#665)](https://github.com/GouvernementFR/dsfr/pull/665)
+- Correction attribut en trop sur les input-group
+- multiple texte additionnel sur le modèle de champs d&#39;adresse électronique
+- Correction des textes additionnels
+
+
+#### 🐛 fix(modal): suppression exemple des liens dans la zone d&#39;action [(#663)](https://github.com/GouvernementFR/dsfr/pull/663)
+- Ce cas n&#39;est pas recommandé, la zone d&#39;action étant plutôt prévue pour des boutons
+
+
+#### 🐛 fix(consent): correctif espacement et couleur [(#662)](https://github.com/GouvernementFR/dsfr/pull/662)
+- Corrige description d&#39;une finalité de 3v à 2v en margin-bottom
+- Homogénéité avec accordion, nav et sidemenu sur le bouton de la modale de consentement “voir plus de détails” :
+   - enlever le soulignement
+   - mettre en bleu le lien “voir plus de détail”
+
+
+#### 🐛 fix(card, tile): ajout version sans liens, target blank, et mise à jour des exemples [(#657)](https://github.com/GouvernementFR/dsfr/pull/657)
+- Ajout de version carte et tuile sans lien (en noir)
+- Ajout de l&#39;icone target blank sur les cartes avec lien non élargi en target=&#34;_blank&#34;
+- Ajout d&#39;exemples de carte et tuile de téléchargement avec remplissage automatique des détails (en Octet ou en Bytes)
+- Ajout d&#39;exemple de carte et tuile de téléchargement avec fichier en langue étrangère
+- Séparation des exemples de tuile de téléchargement
+- Changement des pictogrammes des tuiles de téléchargement
+- Ajustement de la grille dans les exemples de tuiles
+
+
+#### 🐛 fix(pagination): correctif régression href des exemples [(#661)](https://github.com/GouvernementFR/dsfr/pull/661)
+- Corrige la régression qui a supprimé les liens des éléments de pagination
+
+
+#### 🐛 fix(sidemenu):  suppression variante et correctif style bouton mobile [(#660)](https://github.com/GouvernementFR/dsfr/pull/660)
+- Suppression de la variante avec bordure
+- Corrige le style du bouton mobile en action-high-blue-france (cohérence navigation/accordion)
+
+
+#### 🐛 fix(company): retrait des pluriels [(#659)](https://github.com/GouvernementFR/dsfr/pull/659)
+- Correction du langage dans la demande d&#39;un représentant moral, suppression des pluriels optionnels
+
+
+#### 🐛 fix(link): corrige graisse lien de téléchargement [(#658)](https://github.com/GouvernementFR/dsfr/pull/658)
+- retire le font-weight bold sur le lien de téléchargement
+
+
+#### 🐛 fix(password): bug icône [(#648)](https://github.com/GouvernementFR/dsfr/pull/648)
+- conditionne l&#39;ajout de la classe utile `fr-icon` à l&#39;utilisation d&#39;une string en paramètre `icon`
+
+
+#### 🐛 feat(company): accessibilité lien externe [(#656)](https://github.com/GouvernementFR/dsfr/pull/656)
+- corrige l&#39;accessibilité du lien en `target=&#34;_blank&#34;` par l&#39;ajout d&#39;un attribut `title`  :  &#34;Annuaire des entreprises – nouvelle fenêtre&#34;
+
+
+#### 🐛 fix(unexpected): corrige groupe de bouton vide [(#655)](https://github.com/GouvernementFR/dsfr/pull/655)
+- ajoute une condition sur l&#39;ajout du wrapper `.fr-btns-group` dans la template `ejs`
+
+
+#### 🐛 fix(*): accessibilité aria-live [(#654)](https://github.com/GouvernementFR/dsfr/pull/654)
+- remplace la valeur aria-live `assertive` par `polite`
+
+
+#### 🐛 fix(account): accessibilité champs obligatoires [(#652)](https://github.com/GouvernementFR/dsfr/pull/652)
+-  La mention de &#34;champs obligatoires&#34; doit être mise dans un élément `&lt;p&gt;` sur les pages de connexion et création de compte
+
+
+#### 🐛 fix(pattern): dénomination des blocs fonctionnels [(#649)](https://github.com/GouvernementFR/dsfr/pull/649)
+- Mise à jour et harmonisation de la dénomination des blocs fonctionnels
+
+
+#### 🐛 fix(core): correctif padding négatif [(#650)](https://github.com/GouvernementFR/dsfr/pull/650)
+- ajoute une condition pour éviter le padding négatif actuellement présent dans les classes utiles
+
+
+#### ⬆️ chore(*): montée de version NodeJS 18 [(#644)](https://github.com/GouvernementFR/dsfr/pull/644)
+- Monte la version minimale de NodeJS en 18.16.1
+
+
+#### 🐛 fix(core): correctif bug proxy Toggle [(#646)](https://github.com/GouvernementFR/dsfr/pull/646)
+- Dans la class Toggle, le proxy appelle la fonction toggle qui a été remplacée par la fonction générique handleClick : 
+- Ce correctif restaure la fonction toggle et implémente son appel dans handleClick
+
+
+#### 📝 docs(analytics): correction doc analytics &amp; readme [(#643)](https://github.com/GouvernementFR/dsfr/pull/643)
+- mise à jour du readme
+- corrections diverses documentation analytics
+
+
+#### 🐛 fix(analytics): correctif hiérarchie [(#647)](https://github.com/GouvernementFR/dsfr/pull/647)
+- l&#39;analyse de hiérarchie ignorait les headings présents dans un composant. 
+- ce correctif permet de les inclure dans l&#39;analyse.
+
+
+#### 🐛 fix(changelog): correctif inclusion des html [(#642)](https://github.com/GouvernementFR/dsfr/pull/642)
+- inclusion des caractères spéciaux html pour que les snippets soient affichés correctement
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#638)](https://github.com/GouvernementFR/dsfr/pull/638)
+- Mise à jour de sécurité
+
+
+#### 🐛 fix(core): apparence du champ de recherche iOS [(#639)](https://github.com/GouvernementFR/dsfr/pull/639)
+- En utilisant des librairies tierces (telles que normalize.css), le champ de recherche reprend son aspect natif arrondi en mobile IOS.
+- Spécificité renforcée sur le sélecteur afin de conserver le appearance: none
+
+
+#### 🐛 fix(header): duplication des id généralisée pour les quick access [(#637)](https://github.com/GouvernementFR/dsfr/pull/637)
+- L&#39;ensemble des id présents dans les accès rapides du header doivent être suffixés par -mobile à la duplication
+
+
+#### 🐛 fix(analytics): correctifs divers et ajouts de propriétés de page [(#612)](https://github.com/GouvernementFR/dsfr/pull/612)
+- liens cassés de la documentation
+- retrait du patch js des pages d&#39;exemple
+- correctif du collect manuel au changement d&#39;url
+- correctif du taux de clic désactivé sur certains composants
+- ajustements pages d&#39;exemple
+-  retrait des limitation de valeurs sur la propriété`user.profile` 
+- ajouts de propriétés dans la configuration de page 
+  - page_id
+  - page_author
+  - page_tags
+  - page_date
+
+
+#### 🐛 fix(search): hauteur du champ trop grande de 1px sur ios [(#632)](https://github.com/GouvernementFR/dsfr/pull/632)
+Sur ios le champ dépasse de 1px par rapport au bouton.
+
+-&gt; Correction du max-height
+
+
+#### ✨ feat(select, input): ajout de la bordure en état erreur / succés / info [(#635)](https://github.com/GouvernementFR/dsfr/pull/635)
+Actuellement la bordure gauche montrant l&#39;état d&#39;erreur/succès/info n&#39;est appliqué que dans le cas d&#39;un groupe de champ en erreur via les modificateur .fr-fieldset--error, .fr-fieldset--valid, .fr-fieldset--info
+
+Afin d&#39;être ISO avec l&#39;UI nous rajoutons cet élément visuel sur : 
+- les champs seuls (.fr-input-group) : 
+  - `.fr-input-group--error`
+  - `.fr-input-group--valid`
+  - `.fr-input-group--info`
+- les selects (.fr-select-group)
+  - `.fr-select-group--error`
+  - `.fr-select-group--valid`
+  - `.fr-select-group--info`
+
+
+#### 🐛 fix(tab): correction onglets imbriqués en legacy [(#628)](https://github.com/GouvernementFR/dsfr/pull/628)
+- correction des marges sur les tabs imbriqués sur IE
+- correction disclosure et disclosureGroup IE
+- correction syntax error selecteur Collapse
+
+
+#### 🐛 fix(example): retire les attributs file des &lt;link&gt; [(#631)](https://github.com/GouvernementFR/dsfr/pull/631)
+- l&#39;attribut file n&#39;est pas un attribut possible pour les éléments &lt;link&gt;
+
+
+#### 🐛 fix(link, button, tag, badge): retrait du z-index [(#630)](https://github.com/GouvernementFR/dsfr/pull/630)
+- retrait du z-index: 1 qui pose problème dans une modale avec footer.
+
+
+#### 🎉 feat(tooltip): ajout de la fonctionnalité Tooltip [(#486)](https://github.com/GouvernementFR/dsfr/pull/486)
+Le composant `Infobulle` (ou `bulle d’aide`, `aide contextuelle`) permet d’afficher du contenu dans le contexte de navigation (non modal), à propos et lors de l’interaction avec un élément précis de l’interface. Il est caché par défaut, et s’affiche au survol ou au clic de l’élément associé, par-dessus le reste de la page.
+
+
+#### 🐛 fix(share): correction copie url dans presse papier [(#629)](https://github.com/GouvernementFR/dsfr/pull/629)
+- Gestion de la Promise retournée par `navigator.clipboard.writeText()`
+
+
+#### ✨ feat(address): met a jour les message d&#39;aide des champs de formulaire [(#624)](https://github.com/GouvernementFR/dsfr/pull/624)
+- ajout d&#39;indication et de description du format attendu
+
+
+#### 🐛 fix(account): met a jour la hiérarchie html des modèles de page [(#618)](https://github.com/GouvernementFR/dsfr/pull/618)
+- Mise en place d&#39;une hiérarchie sans saut de niveau de titre, plus cohérente
+- Correctif typo sur la classe `fr-grid-row--gutters`
+
+
+#### 🐛 fix(accordion, transcription, translate, sidemenu): Ajustement sur l&#39;état défaut et actif [(#564)](https://github.com/GouvernementFR/dsfr/pull/564)
+Harmonisation avec la navigation sur Accordion, Sidemenu, Translate et Transcription :
+- Passage icône et intitulé en action-high-blue-france
+- Ajout background-open-blue-france sur le bouton lorsque l&#39;élément est ouvert
+- Icône “arrow-down-s-ligne” (la même que sur navigation)
+- Accordion, Translate : Retrait changement de graisse (normal -&gt; bold) à l&#39;ouverture et graisse constante en medium
+
+
+#### 🐛 fix(tab, core): correctif tab legacy &amp; margin top des headings [(#621)](https://github.com/GouvernementFR/dsfr/pull/621)
+- Corrige la taille de l&#39;icône
+- Corrige l&#39;alignement du contenu du tab_panel
+- Ajustement du padding de la tab__list
+- Retire les margin-top des headings (h1 -&gt; h6)
+
+
+#### 📝 doc(core): ajoute des exemples liens bruts et resets [(#613)](https://github.com/GouvernementFR/dsfr/pull/613)
+Par défaut, le dsfr stylise les liens natifs, ce qui peut poser problème dans l&#39;utilisation de librairie tierce.
+2 classes utilitaires sont mise à disposition pour contrecarrer le style fort du lien : 
+- `.fr-raw-link` retire toute stylisation sur les liens natifs
+- `.fr-reset-link` remet le soulignement natif du navigateur (`text-decoration: underline;`)
+Des pages d&#39;exemples en illustrant l&#39;utilisation ont été ajoutées dans les pages d&#39;exemples des fondamentaux.
+
+
+#### ✨ feat(radio): radio rich sans images &amp; pictogram à la place d&#39;img [(#540)](https://github.com/GouvernementFR/dsfr/pull/540)
+Les radios riches doivent utiliser des pictogrammes et non des images :
+- Retrait des images
+- Ajout de pictogramme
+
+Le snippet :
+```html
+&lt;div class=&#34;fr-radio-group fr-radio-rich&#34;&gt;
+  &lt;input value=&#34;1&#34; type=&#34;radio&#34; id=&#34;radio-rich-1&#34; name=&#34;radio-rich&#34;&gt;
+  &lt;label class=&#34;fr-label&#34; for=&#34;radio-rich-1&#34;&gt;
+      Libellé bouton radio
+  &lt;/label&gt;
+  &lt;div class=&#34;fr-radio-rich__img&#34;&gt;
+      &lt;img src=&#34;../../../example/img/placeholder.1x1.png&#34; alt=&#34;[À MODIFIER - vide ou texte alternatif de l’image]&#34; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;div class=&#34;fr-radio-group fr-radio-rich&#34;&gt;
+  &lt;input value=&#34;1&#34; type=&#34;radio&#34; id=&#34;radio-rich-1&#34; name=&#34;radio-rich&#34;&gt;
+  &lt;label class=&#34;fr-label&#34; for=&#34;radio-rich-1&#34;&gt;
+      Libellé bouton radio
+  &lt;/label&gt;
+  &lt;div class=&#34;fr-radio-rich__pictogram&#34;&gt;
+      &lt;svg aria-hidden=&#34;true&#34; class=&#34;fr-artwork&#34; viewBox=&#34;0 0 80 80&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
+          &lt;use class=&#34;fr-artwork-decorative&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative&#34;&gt;&lt;/use&gt;
+          &lt;use class=&#34;fr-artwork-minor&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor&#34;&gt;&lt;/use&gt;
+          &lt;use class=&#34;fr-artwork-major&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-major&#34;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+```
+Remplacer buildings/city-hall par la catégorie et le nom du pictogramme désiré
+
+BREAKING CHANGE : `fr-radio-rich__img` devient `fr-radio-rich__pictogram`
+
+
+#### 📝 doc(core): corrige les liens vers les pages de documentation des fondamentaux [(#623)](https://github.com/GouvernementFR/dsfr/pull/623)
+- Mise à jour des liens vers les fondamentaux sur le site de documentation
+
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#622)](https://github.com/GouvernementFR/dsfr/pull/622)
+- Mise à jour de sécurité
+
+
+#### ✨ feat(card): image des cartes de téléchargement format a4 [(#620)](https://github.com/GouvernementFR/dsfr/pull/620)
+- Ajout d&#39;une image de placeholder au format a4 (21x29.7)
+
+
+#### 🐛 fix(core): corrige liens pour retro-compat sur firefox [(#615)](https://github.com/GouvernementFR/dsfr/pull/615)
+- La fonction css max(), mise en place pour corriger le bug d&#39;affichage d&#39;un soulignement d&#39;une épaisseur inférieure à 1px, est supportée à partir de la version 78 de firefox, ce qui est insuffisant.
+- Le précédent bug est maintenant corrigé avec un léger épaississement du trait sur firefox (0.25px)
+
+
+#### 🐛 fix(header, navigation): focus des nav-items mobile &amp; ajustements [(#609)](https://github.com/GouvernementFR/dsfr/pull/609)
+- L&#39;outline de focus est maintenant entièrement visible sur les liens des sous menu en mobile
+- Ajustement de l&#39;alignement du bouton fermé en desktop
+- Retrait du mega-menu__leader vide dans les examples
+
+
+#### ✨ feat(pagination): évolution taille et écart des boutons [(#549)](https://github.com/GouvernementFR/dsfr/pull/549)
+Harmonisation de l&#39;espacement entre les boutons de pagination :
+- L&#39;espacement passe à 16px entre tous les boutons
+- Les boutons passent en taille SM
+
+
+#### 🐛 fix(core, modal): décalage scrollbar à l&#39;ouverture/fermeture modale &amp; fix scroll behavior [(#519)](https://github.com/GouvernementFR/dsfr/pull/519)
+Lorsque la page est scrollable, un décalage se produit à l&#39;ouverture d&#39;une modal (la page étant figé elle n&#39;est plus scrollable).
+
+Une marge est donc appliquée à l&#39;ouverture de la modale pour simuler la barre de scroll et ainsi éviter le mouvement du contenu en arrière plan.
+
+
+#### ♻️ refactor(radio,checkbox,toggle): passage input en bleu et refactorisation [(#502)](https://github.com/GouvernementFR/dsfr/pull/502)
+Uniformisation des champs à cocher toggle/radio/checkbox
+
+toggle:
+- Ajout des variants toggle error/valid
+- Retrait du css sur input `appearance:none` 
+- bordure en background svg
+- le toggle est maintenant placé dans un fieldset
+
+radio:
+- Le contour devient bleu
+- retrait du fond blanc du radio bouton (transparence)
+- input déssiné en background image
+
+radio-rich: 
+- L&#39;outline au focus englobe tout le radio-riche, plus l&#39;input
+
+checkbox:
+- Le contour devient bleu
+- correction changement d&#39;état au mouse-down (:active), maintenant au mouse up
+
+Form: 
+- les hint-text des champs désactivés passent en couleur `--text-disabled-grey`
+
+
+#### ✨ feat(core): ouverture des disclosures à partir des ancres, état disabled désactive disclosure [(#532)](https://github.com/GouvernementFR/dsfr/pull/532)
+- Correctif de l&#39;état disabled sur les boutons associés à une modale, un onglet ou un accordéon. La fonctionnalité d&#39;ouverture est désactivée si les boutons primaires sont désactivés.
+- Ajout de la fonctionnalité d&#39;ouverture d&#39;une modale, d&#39;un onglet ou d&#39;un accordéon si la partie ancre de l&#39;url correspond à l&#39;id de l&#39;élément -&gt; les liens d&#39;évitements peuvent ouvrir le menu et la recherche en mobile.
+
+
+#### 🐛 fix(tab): écoute des événements de clavier déplacé sur la liste d&#39;onglets [(#531)](https://github.com/GouvernementFR/dsfr/pull/531)
+L&#39;écoute des événements de clavier se faisant sur le composant, il est impossible d&#39;interagir avec des éléments de formulaire dans le contenu de l&#39;onglet -&gt; l&#39;écoute est déplacée au niveau de la liste des onglets, ce qui en exclut le contenu
+
+
+#### ✨ feat(name): ajout bouton de suppression de prénom [(#493)](https://github.com/GouvernementFR/dsfr/pull/493)
+Dans le modèle de de bloc nom/prénom, un bouton permet d&#39;ajouter des champs de saisie pour les prénoms secondaires -&gt; ajout d&#39;un bouton permettant de supprimer ces champs ajoutés
+
+
+#### ✨ feat(tile): Ajout icône flèche, état désactivé, icone lien externe, tuile de téléchargement [(#602)](https://github.com/GouvernementFR/dsfr/pull/602)
+Les tuiles peuvent maintenant être de type téléchargement (comme les cartes)
+  - Les tuiles de téléchargement sont par défaut horizontales
+  - Le détail de la tuile de téléchargement est obligatoire et il peut être rempli automatiquement en fonction du fichier à télécharger en plaçant à l&#39;attribut &#34;data-fr-assess-file&#34; sur le lien (comme pour carte)
+
+Les tuiles ont maintenant par défaut une icone.
+  - arrow-right (par défaut)
+  - external-link (en target=&#34;_blank&#34;)
+  - download (avec la classe fr-tile--download)
+
+Les tuiles désactivées (a sans href) ont à présent:
+  - la bordure bottom en grise
+  - l&#39;icone et le titre en gris
+  
+Ajout des classes &#34;fr-tile--vertical@md&#34; et  &#34;fr-tile--vertical@lg&#34; pour passer une tuile horizontale, ou download, en vertical à partir des breakpoints md et lg
+
+
+#### 🎉 feat(tile): évolution des tuiles [(#534)](https://github.com/GouvernementFR/dsfr/pull/534)
+**Evolution majeur du composant Tuile :**
+Nous souhaitons revoir la structure html de la tuile pour étendre les variations de contenu (avec détails, badge, etc), et uniformiser avec les comportements de la Carte (card).
+
+Changements apportés :
+- Ajout d&#39;un niveau d&#39;encapsulation dans la structure html
+  - Ajout d&#39;un wrapper &#34;fr-tile__content&#34; pour englober le contenu
+  - Ajout d&#39;un wrapper &#34;fr-tile__header&#34; pour englober l&#39;image
+- L&#39;image des tuiles est remplacée par un pictogramme
+  - La classe &#34;fr-tile__img&#34; devient &#34;fr-tile__pictogram&#34; 
+  - Son contenu est maintenant un svg &#34;fr-artwork&#34;
+- Ajout de la possibilité de placer un badge, un tag, un texte de détail, dans le contenu de la tuile
+- Ajout d&#39;une taille de tuile SM : &#34;fr-tile--sm&#34;
+
+**⚠️ Breaking Change**
+Le snippet de code d&#39;une tuile : 
+```html
+&lt;div class=&#34;fr-tile fr-enlarge-link&#34;&gt;
+    &lt;div class=&#34;fr-tile__body&#34;&gt;
+        &lt;h4 class=&#34;fr-tile__title&#34;&gt;
+            &lt;a class=&#34;fr-tile__link&#34; href&gt;Titre M bold&lt;/a&gt;
+        &lt;/h4&gt;
+        &lt;p class=&#34;fr-tile__desc&#34;&gt;Texte M regular 2 lignes max&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;fr-tile__img&#34;&gt;
+       &lt;img class=&#34;fr-responsive-img&#34; src=&#34;../../../example/img/placeholder.1x1.png&#34; alt=&#34;&#34; /&gt;
+       &lt;!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+Devient : 
+```html
+&lt;div class=&#34;fr-tile fr-enlarge-link&#34; id=&#34;tile-6584&#34;&gt;
+    &lt;div class=&#34;fr-tile__body&#34;&gt;
+        &lt;div class=&#34;fr-tile__content&#34;&gt;
+            &lt;h3 class=&#34;fr-tile__title&#34;&gt;
+                &lt;a href=&#34;#&#34;&gt;Intitulé de la tuile&lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class=&#34;fr-tile__desc&#34;&gt;Lorem [...] elit ut.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;fr-tile__header&#34;&gt;
+        &lt;div class=&#34;fr-tile__pictogram&#34;&gt;
+            &lt;svg aria-hidden=&#34;true&#34; class=&#34;fr-artwork&#34; viewBox=&#34;0 0 80 80&#34; width=&#34;80px&#34; height=&#34;80px&#34;&gt;
+                &lt;use class=&#34;fr-artwork-decorative&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-decorative&#34;&gt;&lt;/use&gt;
+                &lt;use class=&#34;fr-artwork-minor&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-minor&#34;&gt;&lt;/use&gt;
+                &lt;use class=&#34;fr-artwork-major&#34; href=&#34;../../../dist/artwork/pictograms/buildings/city-hall.svg#artwork-major&#34;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+
+#### 🚚 refactor(download): séparation du download en carte et lien [(#487)](https://github.com/GouvernementFR/dsfr/pull/487)
+Pour mutualiser les comportements de la carte et du lien au composant download, celui-ci doit devenir une variante de ces composants et non pas l&#39;inverse.
+
+Retrait du composant : téléchargement de fichier - Download -&gt; déprécié
+Ajout de la variante de carte : fr-card--download 
+Ajout de la variante de lien : fr-link--download 
+
+Le lien de téléchargement : 
+```html
+&lt;div class=&#34;fr-download&#34;&gt;
+    &lt;h3&gt;
+        &lt;a href=&#34;[À MODIFIER - /example/img/image.jpg]&#34; download class=&#34;fr-download__link&#34;&gt;Télécharger le document lorem ipsum sit dolores amet
+            &lt;span class=&#34;fr-download__detail&#34;&gt;
+                JPG – 61,88 ko
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h3&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;a class=&#34;fr-link fr-link--download&#34; download href=&#34;[À MODIFIER - example/img/image.jpg]&#34;&gt;
+    Télécharger le document lorem ipsum sit dolores amet &lt;span class=&#34;fr-link__detail&#34;&gt;JPG – 61,88 ko&lt;/span&gt;
+&lt;/a&gt;
+```
+
+et la carte de téléchargement : 
+```html
+&lt;div class=&#34;fr-download fr-enlarge-link fr-download--card&#34;&gt;
+    &lt;h3&gt;
+        &lt;a href=&#34;[À MODIFIER - example/img/image.jpg]&#34; download class=&#34;fr-download__link&#34;&gt;Télécharger le document lorem ipsum sit dolores amet
+            &lt;span class=&#34;fr-download__detail&#34;&gt;
+                JPG – 61,88 ko
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;p class=&#34;fr-download__desc&#34;&gt;Texte de description&lt;&lt;/p&gt;
+&lt;/div&gt;
+```
+DEVIENT : 
+```html
+&lt;div class=&#34;fr-card fr-enlarge-link fr-card--download&#34;&gt;
+    &lt;div class=&#34;fr-card__body&#34;&gt;
+        &lt;div class=&#34;fr-card__content&#34;&gt;
+            &lt;h3 class=&#34;fr-card__title&#34;&gt;
+                &lt;a download href=&#34;[À MODIFIER - example/img/image.jpg]&#34;&gt;
+                    Télécharger le document lorem ipsum sit dolores amet
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class=&#34;fr-card__desc&#34;&gt;Texte de description&lt;/p&gt;
+            &lt;div class=&#34;fr-card__end&#34;&gt;
+                &lt;p class=&#34;fr-card__detail&#34;&gt;JPG – 61,88 ko&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+BREAKING CHANGE : Remplacer le composant fr-download par la variante de link fr-link--download et remplacer le composant fr-download--card par une carte fr-card--download
 
 
 
