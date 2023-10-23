@@ -4,7 +4,7 @@ import ID from './id';
 
 class TagActionee extends ComponentActionee {
   constructor () {
-    super(2, true);
+    super(2);
   }
 
   static get instanceClassName () {
@@ -26,9 +26,6 @@ class TagActionee extends ComponentActionee {
         this.detectInteractionType();
         this.listenClick();
         break;
-
-      default:
-        this.setImpressionType();
     }
   }
 

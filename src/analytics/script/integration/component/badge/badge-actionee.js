@@ -10,10 +10,6 @@ class BadgeActionee extends ComponentActionee {
     return 'BadgeActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     const firstText = this.getFirstText();
     if (firstText) return firstText;

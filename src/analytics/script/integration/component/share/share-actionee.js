@@ -4,15 +4,11 @@ import { ShareSelector } from './share-selector';
 
 class ShareActionee extends ComponentActionee {
   constructor () {
-    super(1, true);
+    super(1);
   }
 
   static get instanceClassName () {
     return 'ShareActionee';
-  }
-
-  init () {
-    this.setImpressionType();
   }
 
   get label () {

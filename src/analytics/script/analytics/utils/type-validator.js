@@ -87,4 +87,26 @@ const validateGeography = (value, name, allowNull = true) => {
   return null;
 };
 
-export { validateString, validateNumber, validateBoolean, validateLang, validateGeography };
+const normaliseISODate = (date) => date.toISOString().split('T')[0];
+
+const validateDate = (value, name, allowNull = true) => {
+  switch (true) {
+    case value instanceof Date:
+      return normaliseISODate(value);
+
+    case typeof value === 'string': {
+      const date = new Date(value);
+      if (date.toString() !== 'Invalid Date') return normaliseISODate(date);
+      break;
+    }
+
+    case value === undefined && allowNull:
+    case value === null && allowNull:
+      return null;
+  }
+
+  api.inspector.warn(`unexpected value '${value}' set at analytics.${name}. Expecting a Date`);
+  return null;
+};
+
+export { validateString, validateNumber, validateBoolean, validateLang, validateGeography, validateDate };
