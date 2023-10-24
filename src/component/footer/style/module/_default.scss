@@ -6,7 +6,7 @@
 #{ns(footer)} {
   @include disable-list-style;
   @include size(100%);
-  @include padding-top(10v);
+  @include padding-top(8v);
 
   @include body {
     @include display-flex(row, center, null, wrap);
