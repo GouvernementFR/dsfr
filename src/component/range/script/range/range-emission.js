@@ -1,6 +1,7 @@
 import api from '../../api.js';
 
 export const RangeEmission = {
+  SVG: api.internals.ns.emission('range', 'svg'),
   VALUE: api.internals.ns.emission('range', 'value'),
   VALUE_MAX: api.internals.ns.emission('range', 'value-max'),
   MIN: api.internals.ns.emission('range', 'min'),

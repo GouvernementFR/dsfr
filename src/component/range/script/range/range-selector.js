@@ -2,6 +2,9 @@ import api from '../../api.js';
 
 export const RangeSelector = {
   RANGE: api.internals.ns.selector('range-group'),
+  RANGE_SM: api.internals.ns.selector('range-group--sm'),
+  RANGE_STEP: api.internals.ns.selector('range-group--step'),
+  RANGE_DOUBLE: api.internals.ns.selector('range-group--double'),
   RANGE_INPUT: api.internals.ns.selector('range-group input[type=range]'),
   RANGE_INPUT_MAX: `${api.internals.ns.selector('range-group--double')} input[type=range]:nth-of-type(2)`,
   RANGE_PREFIX: api.internals.ns.attr('prefix'),
