@@ -8,5 +8,6 @@ export const RangeEmission = {
   MAX: api.internals.ns.emission('range', 'max'),
   STEP: api.internals.ns.emission('range', 'step'),
   PREFIX: api.internals.ns.emission('range', 'prefix'),
-  SUFFIX: api.internals.ns.emission('range', 'suffix')
+  SUFFIX: api.internals.ns.emission('range', 'suffix'),
+  DISABLED: api.internals.ns.emission('range', 'disabled')
 };

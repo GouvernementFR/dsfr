@@ -1,14 +1,6 @@
 import api from '../../api.js';
-// import { RangeSelector } from './range-selector.js';
 import { RangeEmission } from './range-emission.js';
-import { RangeInput } from './range-input.js';
 import { RangeSelector } from './range-selector.js';
-
-const RangeType = {
-  STEP: 'step',
-  DOUBLE: 'double',
-  DEFAULT: 'default'
-};
 
 class Range extends api.core.Instance {
   static get instanceClassName () {
@@ -17,38 +9,40 @@ class Range extends api.core.Instance {
 
   init () {
     this.output = this.node.querySelector(RangeSelector.RANGE_OUTPUT);
+    this.retrieveType();
     this.addAscent(RangeEmission.MIN, this.setMin.bind(this));
     this.addAscent(RangeEmission.MAX, this.setMax.bind(this));
     this.addAscent(RangeEmission.VALUE, this.setValue.bind(this));
     this.addAscent(RangeEmission.DISABLED, this.setDisabled.bind(this));
+
     // this.addAscent(RangeEmission.VALUE_MAX, this.setValueMax.bind(this));
     // this.addAscent(RangeEmission.STEP, this.setStep.bind(this));
     // if (this.getAttribute(RangeSelector.RANGE_PREFIX)) this.setPrefix(this.getAttribute(RangeSelector.RANGE_PREFIX));
     // if (this.getAttribute(RangeSelector.RANGE_SUFFIX)) this.setSuffix(this.getAttribute(RangeSelector.RANGE_SUFFIX));
-    this.retrieveSize();
-    this.retrieveType();
+
     this.update();
   }
 
   retrieveType () {
     switch (true) {
       case this.matches(RangeSelector.RANGE_STEP):
-        this._type = RangeType.STEP;
+        this._model = new RangeModelStep();
         break;
 
       case this.matches(RangeSelector.RANGE_DOUBLE):
-        this._type = RangeType.DOUBLE;
+        this._model = new RangeModelDouble();
         break;
 
       default:
-        this._type = RangeType.DEFAULT;
+        this._type = new RangeModel();
         break;
     }
+
+    this.retrieveSize();
   }
 
   retrieveSize () {
-    this._isSm = this.matches(RangeSelector.RANGE_SM);
-    this._thumbSize = this._isSm ? 16 : 24;
+    this._model.isSm = this.matches(RangeSelector.RANGE_SM);
   }
 
   setValue (value) {
@@ -64,8 +58,7 @@ class Range extends api.core.Instance {
   }
 
   setDisabled (value) {
-    this.disabled = value;
-    this.update();
+    this._model.isDisabled = value;
   }
 
   setMin (value) {
@@ -130,7 +123,114 @@ class Range extends api.core.Instance {
     return `data:image/svg+xml;charset=utf8,${cleanSvg}`;
   }
 
-  cleanSvg (svg) {
+  update () {
+    this.rangeWidth = this.getRect().width;
+    this.activeWidth = this.rangeWidth - this._thumbSize;
+    this.ratio = (this._value - this._min) / (this._max - this._min);
+    this.progressX = this.activeWidth * this.ratio + this._thumbSize / 2;
+    this.strokeWidth = this._isSm ? 2 : 4;
+    if (this.output) this.output.innerText = `${this.prefix || ''}${this._value}${this.suffix || ''}${this.valueMax ? ` - ${this.prefix || ''}${this.valueMax}${this.suffix || ''}` : ''}`;
+
+    this.descend(RangeEmission.SVG, this.model.svg);
+  }
+
+  dispose () {
+    for (const input of this.inputs) input.removeEventListener('input', this.changing);
+  }
+}
+
+class RangeModel {
+  constructor () {
+    this.build();
+  }
+
+  build () {
+    this._svg = new RangeSVG();
+  }
+
+  get isDisabled () {
+    return this._svg.isDisabled;
+  }
+
+  set isDisabled (value) {
+    this._svg.isDisabled = value;
+  }
+
+  get isSm () {
+    return this._isSm;
+  }
+
+  set isSm (value) {
+    if (this._isSm === value) return;
+    this._isSm = value;
+    this._thumbSize = this._isSm ? 16 : 24;
+    this._svg.strokeWidth = this._isSm ? 2 : 4;
+  }
+
+  get svg () {
+    return this._svg.svg;
+  }
+}
+
+class RangeModelStep extends RangeModel {
+  build () {
+    this._svg = new RangeSVGStep();
+  }
+}
+
+class RangeModelDouble extends RangeModel {
+  build () {
+    this._svg = new RangeSVGDouble();
+  }
+}
+
+class RangeSVG {
+  constructor (StrokeConstructor = StrokeLine) {
+    this._value = 0;
+    this._width = 0;
+    this._track = new StrokeConstructor();
+    this._track.setToken(['background', 'contrast', 'grey']);
+    this._progress = new StrokeConstructor();
+  }
+
+  get width () {
+    return this._width;
+  }
+
+  set width (value) {
+    this._width = value;
+  }
+
+  get value () {
+    return this._value;
+  }
+
+  set value (value) {
+    this._value = value;
+  }
+
+  get strokeWidth () {
+    return this._track.strokeWidth;
+  }
+
+  set strokeWidth (value) {
+    this._track.strokeWidth = value;
+    this._progress.strokeWidth = value;
+  }
+
+  get isDisabled () {
+    return this._isDisabled;
+  }
+
+  set isDisabled (value) {
+    if (this._isDisabled === value) return;
+    this._isDisabled = value;
+    this._progress.setToken(this._isDisabled ? ['background', 'disabled', 'grey'] : ['background', 'active', 'blue-france']);
+  }
+
+  get svg () {
+    let svg = `<svg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 ${this._width} ${this.strokeWidth}' width='${this._width}px' height='${this.strokeWidth}px'>${this._track.line}${this._progress.line}</svg>`;
+
     svg = svg.replace(/#/gi, '%23');
     // if (this.isLegacy) {
     //   svg = svg.replace('<', '%3C');
@@ -142,28 +242,112 @@ class Range extends api.core.Instance {
     // }
     return svg;
   }
+}
 
-  update () {
-    this.rangeWidth = this.getRect().width;
-    this.activeWidth = this.rangeWidth - this._thumbSize;
-    this.ratio = (this._value - this._min) / (this._max - this._min);
-    this.progressX = this.activeWidth * this.ratio + this._thumbSize / 2;
-    this.strokeWidth = this._isSm ? 2 : 4;
-    if (this.output) this.output.innerText = `${this.prefix || ''}${this._value}${this.suffix || ''}${this.valueMax ? ` - ${this.prefix || ''}${this.valueMax}${this.suffix || ''}` : ''}`;
-
-    const rangeColors = new RangeColors();
-    this.descend(RangeEmission.SVG, this.getSvg(rangeColors.track, rangeColors.progress));
+class RangeSVGStep extends RangeSVG {
+  constructor () {
+    super(StrokeLineStep);
   }
 
-  dispose () {
-    for (const input of this.inputs) input.removeEventListener('input', this.changing);
+  get strokeWidth () {
+    return super.strokeWidth;
+  }
+
+  set strokeWidth (value) {
+    super.strokeWidth = value;
+    // dasharray
   }
 }
 
-class RangeColors {
+class RangeSVGDouble extends RangeSVG {
+  get value2 () {
+    return this._value2;
+  }
+
+  set value2 (value) {
+    this._value2 = value;
+  }
+}
+
+class StrokeLine {
   constructor () {
-    this.track = api.colors.getColor('background', 'contrast', 'grey');
-    this.progress = api.colors.getColor('background', 'active', 'blue-france');
+    this._strokeWidth = 4;
+    this._x1 = 0;
+    this._y1 = 0;
+    this._x2 = 0;
+    this._y2 = 0;
+  }
+
+  setToken (token) {
+    this._token = token;
+  }
+
+  get strokeWidth () {
+    return this._strokeWidth;
+  }
+
+  set strokeWidth (value) {
+    this._strokeWidth = value;
+  }
+
+  get x1 () {
+    return this._x1;
+  }
+
+  set x1 (value) {
+    this._x1 = value;
+  }
+
+  get y1 () {
+    return this._y1;
+  }
+
+  set y1 (value) {
+    this._y1 = value;
+  }
+
+  get x2 () {
+    return this._x2;
+  }
+
+  set x2 (value) {
+    this._x2 = value;
+  }
+
+  get y2 () {
+    return this._y2;
+  }
+
+  set y2 (value) {
+    this._y2 = value;
+  }
+
+  get data () {
+    return {
+      'stroke-width': this._strokeWidth,
+      stroke: api.colors.getColor.apply(api.colors, this._token),
+      x1: this._x1,
+      y1: this._y1,
+      x2: this._x2,
+      y2: this._y2
+    };
+  }
+
+  get line () {
+    const data = this.data;
+    const attributes = Object.keys(data).map(key => `${key}="${data[key]}"`).join(' ');
+
+    return `<line ${attributes} />`;
+  }
+}
+
+class StrokeLineStep extends StrokeLine {
+  get data () {
+    return {
+      ...super.data,
+      'stroke-dasharray': this._dashArray,
+      'stroke-dashoffset': this._dashOffset
+    };
   }
 }
 
