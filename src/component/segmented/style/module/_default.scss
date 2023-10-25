@@ -7,7 +7,6 @@
 @use 'module/selector';
 
 #{selector.ns(segmented)} {
-  @include nest-segmented-element();
   @include relative;
   @include padding(0);
   @include margin(0);
@@ -40,27 +39,40 @@
 
   &__element {
     @include relative;
+  }
 
-    input {
-      @include absolute;
-      @include margin(0);
-      @include size(100%, 100%);
-      opacity: 0;
+  input {
+    @include absolute;
+    @include margin(0);
+    @include size(100%, 100%);
+    opacity: 0;
+    -webkit-tap-highlight-color: transparent;
+    z-index: -1;
+
+    + label {
+      @include nest-segmented-element(md, left);
+
+      @include font-weight(medium);
+      display: inline-flex;
+      align-items: center;
+      border-radius: #{spacing.space(1v)};
       -webkit-tap-highlight-color: transparent;
-      z-index: -1;
+      white-space: nowrap;
+    }
 
+    &:not(:checked) {
       + label {
-        @include font-weight(medium);
-        display: block;
-        border-radius: #{spacing.space(1v)};
-        -webkit-tap-highlight-color: transparent;
-        background-position: #{spacing.space(1v 1.5v)}, #{spacing.space(1.5v 1v)}, #{spacing.space('-1.5v -1.5v')}, #{spacing.space('calc(100% + 1.5v) -1.5v')}, #{spacing.space('-1.5v calc(100% + 1.5v)')}, #{spacing.space('calc(100% + 1.5v) calc(100% + 1.5v)')};
-        background-repeat: no-repeat;
-        white-space: nowrap;
+        @include mask-image((url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), linear-gradient(0deg, #fff 0, #fff 100%), linear-gradient(0deg, #fff 0, #fff 100%)));
+        @include mask-image-size((#{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}));
+        @include mask-image-position((#{spacing.space(1v 1v)}, #{spacing.space(calc(100% - 1v) 1v)}, #{spacing.space(1v calc(100% - 1v))}, #{spacing.space(calc(100% - 1v) calc(100% - 1v))}, #{spacing.space(1v 1.5v)}, #{spacing.space(1.5v 1v)}));
+        @include mask-image-repeat(no-repeat);
 
-        &:hover,
+        &:hover {
+          background-color: var(--hover);
+        }
+
         &:active {
-          background-size: #{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}, #{spacing.space(3v 3v)}, #{spacing.space(3v 3v)}, #{spacing.space(3v 3v)}, #{spacing.space(3v 3v)};
+          background-color: var(--active);
         }
       }
     }

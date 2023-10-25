@@ -11,7 +11,6 @@
 @mixin _segmented-scheme($legacy: false) {
   #{selector.ns(segmented)} {
     &__elements {
-      @include color.background(default grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy));
     }
 
@@ -21,39 +20,22 @@
       }
 
       input {
-        &:not([disabled]) {
-          &:not(:checked) {
-            + label {
-              @if not $legacy {
-                @include color.element(background-image, background, (default grey), (active: true, hover:true), 'linear-gradient(0deg, $COLOR 0, $COLOR 100%), linear-gradient(0deg, $COLOR 0, $COLOR 100%), var(--rounded-corner), var(--rounded-corner), var(--rounded-corner), var(--rounded-corner)');
-
-                &:hover {
-                  @include color.data-uri-svg((background default grey), (hover:true), $rounded-corner-svg, false, 'rounded-corner');
-                }
-
-                &:active {
-                  @include color.data-uri-svg((background default grey), (active:true), $rounded-corner-svg, false, 'rounded-corner');
-                }
-              }
-            }
-          }
-
-          &:checked {
-            + label {
-              @include color.box-shadow(active blue-france, (legacy:$legacy));
-              @include color.text(active blue-france, (legacy:$legacy));
-            }
+        &:checked {
+          + label {
+            @include color.box-shadow(active blue-france, (legacy:$legacy));
+            @include color.text(active blue-france, (legacy:$legacy));
           }
         }
+      }
 
-        &:checked {
-          @include disabled.selector {
-            + label {
-              @include color.box-shadow(text disabled grey, (legacy:$legacy));
-            }
+      &:checked {
+        @include disabled.selector {
+          + label {
+            @include color.box-shadow(text disabled grey, (legacy:$legacy));
           }
         }
       }
     }
   }
 }
+

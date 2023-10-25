@@ -7,9 +7,13 @@
 @use 'module/selector';
 
 #{selector.ns(segmented)}--sm {
-  @include nest-segmented-element(sm);
-
   #{selector.ns(segmented)}__legend {
     @include text-style(sm);
+  }
+
+  input {
+    + label {
+      @include nest-segmented-element(sm, left);
+    }
   }
 }

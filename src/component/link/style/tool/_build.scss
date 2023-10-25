@@ -3,7 +3,7 @@
 /// @group link
 ////
 
-@mixin _link-class($base, $size: md, $place: null, $align-on-content: false) {
+@mixin _link-class($base, $size: md, $place: null, $align-on-content: false, $append: '') {
   $selector: '';
   $base: '#{$base}';
 
@@ -27,6 +27,10 @@
 
   @if $selector == '' {
     $selector: $base;
+  }
+
+  @if $append != '' {
+    $selector: '#{$selector} #{$append}';
   }
 
   #{$selector} {
@@ -67,6 +71,7 @@
   $align-on-content: map-get($settings, align-on-content);
   $base: ns(map-get($settings, selector));
   $underline: map-get($settings, underline);
+  $append: map-get($settings, append);
 
   #{$base} {
     @include _build-link-base;
@@ -81,7 +86,7 @@
 
   @if map_get($settings, no-modifier) != true {
     @each $size, $size-settings in $sizes {
-      @include _link-class($base, $size) {
+      @include _link-class($base, $size, null, false, $append) {
         @include _build-link-size($size-settings, $border-radius);
 
         @if map_get($settings, blank) {
@@ -92,26 +97,26 @@
       }
 
       @if $align-on-content {
-        @include _link-class($base, $size, null, true) {
+        @include _link-class($base, $size, null, true, $append) {
           @include _link-align-on-content($size, null, $size-settings);
         }
       }
 
       @if $places != null {
         @each $place in $places {
-          @include _link-class($base, $size, $place) {
+          @include _link-class($base, $size, $place, false, $append) {
             @include _build-link-icon($size-settings, $place, $size, true);
           }
 
           @if $align-on-content {
-            @include _link-class($base, $size, $place, true) {
+            @include _link-class($base, $size, $place, true, $append) {
               @include _link-align-on-content($size, $place, $size-settings);
             }
           }
         }
 
         @if index($places, only) == null {
-          @include _link-class($base, $size, only) {
+          @include _link-class($base, $size, only, false, $append) {
             @include before(none);
           }
         }
