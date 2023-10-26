@@ -41,11 +41,16 @@
     @include relative;
   }
 
+  & &__element {
+    input {
+      opacity: 0;
+    }
+  }
+
   input {
     @include absolute;
     @include margin(0);
     @include size(100%, 100%);
-    opacity: 0;
     -webkit-tap-highlight-color: transparent;
     z-index: -1;
 
@@ -60,7 +65,7 @@
       white-space: nowrap;
     }
 
-    &:not(:checked) {
+    &:not([disabled]):not(:checked) {
       + label {
         @include mask-image((url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), url("#{$rounded-corner-svg}"), linear-gradient(0deg, #fff 0, #fff 100%), linear-gradient(0deg, #fff 0, #fff 100%)));
         @include mask-image-size((#{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space(1v 1v)}, #{spacing.space('calc(100% - 2v) calc(100% - 3v)')}, #{spacing.space('calc(100% - 3v) calc(100% - 2v)')}));

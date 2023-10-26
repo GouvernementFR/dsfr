@@ -25,17 +25,15 @@
             @include color.box-shadow(active blue-france, (legacy:$legacy));
             @include color.text(active blue-france, (legacy:$legacy));
           }
-        }
-      }
 
-      &:checked {
-        @include disabled.selector {
-          + label {
-            @include color.box-shadow(text disabled grey, (legacy:$legacy));
+          @include disabled.selector {
+            + label {
+              @include color.box-shadow(text disabled grey, (legacy:$legacy));
+              @include color.text(disabled grey, (legacy:$legacy));
+            }
           }
         }
       }
     }
   }
 }
-
