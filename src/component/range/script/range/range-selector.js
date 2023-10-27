@@ -5,8 +5,8 @@ export const RangeSelector = {
   RANGE_SM: api.internals.ns.selector('range-group--sm'),
   RANGE_STEP: api.internals.ns.selector('range-group--step'),
   RANGE_DOUBLE: api.internals.ns.selector('range-group--double'),
-  RANGE_INPUT: api.internals.ns.selector('range-group input[type=range]'),
-  RANGE_INPUT_MAX: `${api.internals.ns.selector('range-group--double')} input[type=range]:nth-of-type(2)`,
+  RANGE_INPUT: api.internals.ns.selector('range-group input[type=range]:nth-of-type(1)'),
+  RANGE_INPUT2: `${api.internals.ns.selector('range-group--double')} input[type=range]:nth-of-type(2)`,
   RANGE_PREFIX: api.internals.ns.attr('prefix'),
   RANGE_SUFFIX: api.internals.ns.attr('suffix'),
   RANGE_OUTPUT: 'output'

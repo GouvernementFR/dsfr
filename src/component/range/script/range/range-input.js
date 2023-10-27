@@ -1,63 +1,53 @@
 import api from '../../api.js';
 import { RangeSelector } from './range-selector.js';
 import { RangeEmission } from './range-emission.js';
+import { RangeConstraints } from './range-constraints';
 
 class RangeInput extends api.core.Instance {
   static get instanceClassName () {
-    return 'RangeInputMin';
+    return 'RangeInput';
   }
 
   init () {
-    this._isInputMax = this.node.matches(RangeSelector.RANGE_INPUT_MAX);
-
-    if (this._isInputMax) {
-      this.addDescent(RangeEmission.MIN, this.setMin.bind(this));
-      this.addDescent(RangeEmission.MAX, this.setMax.bind(this));
-      this.addDescent(RangeEmission.STEP, this.setStep.bind(this));
-    } else {
-      this.request(() => {
-        this.ascend(RangeEmission.MIN, this.node.min);
-        this.ascend(RangeEmission.MAX, this.node.max);
-        this.ascend(RangeEmission.STEP, this.node.step);
-      });
-    }
-
-    this.addDescent(RangeEmission.SVG, this.setSVG.bind(this));
+    this._init();
+    this.addDescent(RangeEmission.BACKGROUND, this.setBackgroundImage.bind(this));
+    this.node.value = this.getAttribute('value');
     this.changing = this.change.bind(this);
     this.node.addEventListener('input', this.changing);
     this.change();
   }
 
-  change () {
-    if (!this._isInputMax) {
-      this.ascend(RangeEmission.VALUE, this.node.value);
-    } else {
-      this.ascend(RangeEmission.VALUE_MAX, this.node.value);
+  _init () {
+    this.request(() => {
+      if (!this.hasAttribute('min')) this.setAttribute('min', 0);
+      this.ascend(RangeEmission.CONSTRAINTS, new RangeConstraints(this.node));
+      this.ascend(RangeEmission.DISABLED, this.node.disabled);
+    });
+
+    this.addDescent(RangeEmission.VALUE2, this.setValue.bind(this));
+  }
+
+  setValue (value) {
+    if (parseFloat(this.node.value) > value) {
+      this.node.value = value;
+      this.change();
     }
   }
 
-  setSVG (svg) {
-    this.node.style.backgroundImage = `url("${svg}")`;
+  change () {
+    this.ascend(RangeEmission.VALUE, parseFloat(this.node.value));
   }
 
-  setMin (value) {
-    this.node.min = value;
-  }
-
-  setMax (value) {
-    this.node.max = value;
-  }
-
-  setStep (value) {
-    this.node.step = value;
+  setBackgroundImage (backgroundImage) {
+    this.node.style.backgroundImage = backgroundImage[0];
   }
 
   mutate (attributesNames) {
-    if (this._isInputMax) return;
-    this.ascend(RangeEmission.DISABLED, this.node.disabled);
-    if (attributesNames.includes('min')) this.ascend(RangeEmission.MIN, this.node.min);
-    if (attributesNames.includes('max')) this.ascend(RangeEmission.MAX, this.node.max);
-    if (attributesNames.includes('step')) this.ascend(RangeEmission.STEP, this.node.step);
+    if (attributesNames.includes('disabled')) this.ascend(RangeEmission.DISABLED, this.node.disabled);
+    if (attributesNames.includes('min') || attributesNames.includes('max') || attributesNames.includes('step')) {
+      this.ascend(RangeEmission.CONSTRAINTS, new RangeConstraints(this.node));
+      this.change();
+    }
   }
 
   dispose () {

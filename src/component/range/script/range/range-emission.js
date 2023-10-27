@@ -1,10 +1,10 @@
 import api from '../../api.js';
 
 export const RangeEmission = {
-  SVG: api.internals.ns.emission('range', 'svg'),
+  BACKGROUND: api.internals.ns.emission('range', 'background'),
   VALUE: api.internals.ns.emission('range', 'value'),
-  VALUE_MAX: api.internals.ns.emission('range', 'value-max'),
-  MIN: api.internals.ns.emission('range', 'min'),
+  VALUE2: api.internals.ns.emission('range', 'value2'),
+  CONSTRAINTS: api.internals.ns.emission('range', 'contraints'),
   MAX: api.internals.ns.emission('range', 'max'),
   STEP: api.internals.ns.emission('range', 'step'),
   PREFIX: api.internals.ns.emission('range', 'prefix'),
