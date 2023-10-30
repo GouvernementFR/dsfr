@@ -56,7 +56,7 @@
 
     + label {
       @include nest-segmented-element(md, left);
-
+      @include width(100%);
       @include font-weight(medium);
       display: inline-flex;
       align-items: center;
