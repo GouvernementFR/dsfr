@@ -2,6 +2,7 @@ import api from '../../api.js';
 
 export const RangeEmission = {
   BACKGROUND: api.internals.ns.emission('range', 'background'),
+  CLEAR: api.internals.ns.emission('range', 'clear'),
   VALUE: api.internals.ns.emission('range', 'value'),
   VALUE2: api.internals.ns.emission('range', 'value2'),
   CONSTRAINTS: api.internals.ns.emission('range', 'contraints'),

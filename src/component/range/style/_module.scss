@@ -15,10 +15,12 @@
 
   &--sm {
     --thumb-size: #{spacing.space(4v)};
+    background-size: 100% 2px;
   }
 
   #{selector.ns(label)} {
     @include relative;
+    background-size: 0 0;
 
     &::before,
     &::after {

@@ -70,6 +70,8 @@ class Range extends api.core.Instance {
         this._model = new RangeModel();
     }
 
+    this.descend(RangeEmission.CLEAR);
+
     this._model.configure(oldModel, this.paint.bind(this));
   }
 
@@ -157,7 +159,9 @@ class Range extends api.core.Instance {
   }
 
   _paint () {
-    this.descend(RangeEmission.BACKGROUND, this._model.background);
+    const background = this._model.background;
+    this.descend(RangeEmission.BACKGROUND, background);
+    this.output.style.transform = `translateX(${this._model.outputX}px) translateX(-50%)`;
     this._isPainting = false;
   }
 

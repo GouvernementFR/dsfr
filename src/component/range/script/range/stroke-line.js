@@ -35,26 +35,6 @@ class StrokeLine {
     this._x2 = value;
   }
 
-  get data () {
-    return {
-      'stroke-width': this._strokeWidth,
-      stroke: api.colors.getColor.apply(api.colors, this._token),
-      x1: this._x1,
-      y1: 2,
-      x2: this._x2,
-      y2: 2
-    };
-  }
-
-  get line () {
-    const data = this.data;
-    const attributes = Object.keys(data).map(key => `${key}='${data[key]}'`).join(' ');
-
-    return `<line ${attributes} />`;
-  }
-}
-
-class StrokeLineStep extends StrokeLine {
   get offset () {
     return this._offset;
   }
@@ -72,12 +52,27 @@ class StrokeLineStep extends StrokeLine {
   }
 
   get data () {
-    return {
-      ...super.data,
-      'stroke-dasharray': `${this._stepWidth} ${this._strokeWidth}`,
-      'stroke-dashoffset': this._offset
+    const data = {
+      'stroke-width': this._strokeWidth,
+      stroke: api.colors.getColor.apply(api.colors, this._token),
+      x1: this._x1,
+      y1: 2,
+      x2: this._x2,
+      y2: 2
     };
+
+    if (this._stepWidth) data['stroke-dasharray'] = `${this._stepWidth} ${this._strokeWidth}`;
+    if (this._offset) data['stroke-dashoffset'] = this._offset;
+
+    return data;
+  }
+
+  get line () {
+    const data = this.data;
+    const attributes = Object.keys(data).map(key => `${key}='${data[key]}'`).join(' ');
+
+    return `<line ${attributes} />`;
   }
 }
 
-export { StrokeLine, StrokeLineStep };
+export { StrokeLine };

@@ -11,13 +11,19 @@
 @mixin _range-scheme($legacy: false) {
   #{selector.ns-group(range)} {
     input[type=range] {
+      @include color.background-image((active blue-france) (contrast grey), (legacy:$legacy));
+
+      &:nth-of-type(2) {
+        @include color.background-image((action-high error) (contrast grey), (legacy:$legacy));
+      }
+
       @include selector.range-thumb {
         @include elevation.elevate(raised, (legacy: $legacy));
         @include color.background(action-high blue-france, (legacy:$legacy));
       }
 
-
       @include disabled.selector {
+        @include color.background-image((disabled grey) (contrast grey), (legacy:$legacy));
         @include selector.range-thumb {
           @include color.background(disabled grey, (legacy:$legacy));
         }
