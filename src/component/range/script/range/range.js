@@ -24,6 +24,7 @@ class Range extends api.core.Instance {
       this._observer = new ResizeObserver(this._retrieveWidth.bind(this));
       this._observer.observe(this.node);
       this._retrieveWidth();
+      this.addDescent(api.scheme.SchemeEmission.SCHEME, this._model.update.bind(this._model));
     }
 
     this.addAscent(RangeEmission.CONSTRAINTS, this.setConstraints.bind(this));
@@ -32,7 +33,6 @@ class Range extends api.core.Instance {
     this.addAscent(RangeEmission.VALUE2, this.setValue2.bind(this));
     if (this.getAttribute(RangeSelector.RANGE_PREFIX)) this.setPrefix(this.getAttribute(RangeSelector.RANGE_PREFIX));
     if (this.getAttribute(RangeSelector.RANGE_SUFFIX)) this.setSuffix(this.getAttribute(RangeSelector.RANGE_SUFFIX));
-    if (!this.isLegacy) this.addDescent(api.scheme.SchemeEmission.SCHEME, this._model.update.bind(this._model));
 
     this.paint();
   }
