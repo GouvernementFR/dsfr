@@ -18,20 +18,26 @@
     background-size: 100% 2px;
   }
 
-  &::before,
-  &::after {
-    @include text-style(xs);
-    @include absolute(null, null, 0);
-  }
+  #{selector.ns(label)} {
+    @include relative;
+    background-size: 0 0;
 
-  &::before {
-    content: attr(#{selector.ns-attr(text-min, null, true)});
-    left: 0;
-  }
+    &::before,
+    &::after {
+      @include text-style(xs);
+      @include absolute(calc(100% + var(--thumb-size) + #{spacing.space(5v)}));
+      pointer-events: none;
+    }
 
-  &::after {
-    content: attr(#{selector.ns-attr(text-max, null, true)});
-    right: 0;
+    &::before {
+      content: var(--text-min, "");
+      left: 0;
+    }
+
+    &::after {
+      content: var(--text-max, "");
+      right: 0;
+    }
   }
 
   #{selector.ns(message)} {
@@ -106,9 +112,11 @@
   }
 
   &--no-indicators {
-    &::before,
-    &::after {
-      content: none;
+    #{selector.ns(label)} {
+      &::before,
+      &::after {
+        content: none;
+      }
     }
 
     &#{selector.ns-attr(js-range)} input[type=range] {

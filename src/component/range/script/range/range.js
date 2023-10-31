@@ -119,8 +119,8 @@ class Range extends api.core.Instance {
   }
 
   _assignConstraints () {
-    this.setAttribute(RangeSelector.RANGE_TEXT_MIN, this._model.textMin);
-    this.setAttribute(RangeSelector.RANGE_TEXT_MAX, this._model.textMax);
+    this.style.setProperty('--text-min', this._model.textMin);
+    this.style.setProperty('--text-max', this._model.textMax);
   }
 
   setPrefix (value) {

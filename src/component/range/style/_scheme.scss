@@ -10,18 +10,20 @@
 
 @mixin _range-scheme($legacy: false) {
   #{selector.ns-group(range)} {
-    input[type=range] {
-      @include color.background-image((active blue-france) (contrast grey), (legacy:$legacy));
+    &#{selector.ns-attr(js-range)} {
+      input[type=range] {
+        @include color.background-image((active blue-france) (contrast grey), (legacy:$legacy));
 
-      @include selector.range-thumb($legacy) {
-        @include elevation.elevate(raised, (legacy: $legacy));
-        @include color.background(action-high blue-france, (legacy:$legacy));
-      }
-
-      @include disabled.selector {
-        @include color.background-image((disabled grey) (contrast grey), (legacy:$legacy));
         @include selector.range-thumb($legacy) {
-          @include color.background(disabled grey, (legacy:$legacy));
+          @include elevation.elevate(raised, (legacy: $legacy));
+          @include color.background(action-high blue-france, (legacy:$legacy));
+        }
+
+        @include disabled.selector {
+          @include color.background-image((disabled grey) (contrast grey), (legacy:$legacy));
+          @include selector.range-thumb($legacy) {
+            @include color.background(disabled grey, (legacy:$legacy));
+          }
         }
       }
     }

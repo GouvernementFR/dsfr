@@ -10,17 +10,20 @@
 
 @include legacy.is(ie11) {
   #{selector.ns-group(range)} {
+    input[type=range] {
+      @include padding(0);
+
+      @include selector.range-ms-track {
+        @include height(1v);
+        background: transparent;
+        border-color: transparent;
+        border-width: #{spacing.space(3v)} 0;
+        color: transparent;
+      }
+    }
+
     &#{selector.ns-attr(js-range)} {
       input[type=range] {
-        @include padding(0);
-
-        @include selector.range-ms-track {
-          @include height(1v);
-          background: transparent;
-          border-color: transparent;
-          border-width: #{spacing.space(3v)} 0;
-          color: transparent;
-        }
 
         @include selector.range-ms-fill-lower {
           @include height(1v);

@@ -9,7 +9,5 @@ export const RangeSelector = {
   RANGE_INPUT2: `${api.internals.ns.selector('range-group--double')} input[type=range]:nth-of-type(2)`,
   RANGE_PREFIX: api.internals.ns.attr('prefix'),
   RANGE_SUFFIX: api.internals.ns.attr('suffix'),
-  RANGE_TEXT_MIN: api.internals.ns.attr('text-min'),
-  RANGE_TEXT_MAX: api.internals.ns.attr('text-max'),
   RANGE_OUTPUT: 'output'
 };
