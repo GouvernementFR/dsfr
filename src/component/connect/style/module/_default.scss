@@ -7,9 +7,9 @@
 
 #{ns(connect)} {
   @include relative;
-  @include padding(1v 3v 1v 16v);
+  @include padding(2.5v 3v 2.5v 16v);
   @include display-flex(column, flex-start, center, null, true);
-  height: spacing.space(14v);
+  min-height: spacing.space(14v);
   @include margin-bottom(3v);
   @include disable-underline;
   @include enable-tint;
