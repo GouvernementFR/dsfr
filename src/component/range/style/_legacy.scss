@@ -67,11 +67,11 @@
 
         &#{selector.ns-group(range)}--double {
           input[type=range] {
-            width: calc(100% - #{spacing.space(3v)});
+            width: calc(100% - #{spacing.space(2v)});
           }
 
           input[type=range]:nth-of-type(2) {
-            left: #{spacing.space(6v)};
+            left: #{spacing.space(4v)};
           }
         }
       }
