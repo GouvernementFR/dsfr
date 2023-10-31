@@ -109,7 +109,7 @@ class RangeModel {
   }
 
   get textMin () {
-    return `"${this._decorate(this._min)}"`;
+    return this._decorate(this._min);
   }
 
   get max () {
@@ -117,7 +117,7 @@ class RangeModel {
   }
 
   get textMax () {
-    return `"${this._decorate(this._max)}"`;
+    return this._decorate(this._max);
   }
 
   get step () {
@@ -135,7 +135,6 @@ class RangeModel {
 
   _update () {
     this._innerWidth = this._width - this._innerPadding;
-
   }
 
   render () {
