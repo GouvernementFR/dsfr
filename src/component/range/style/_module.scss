@@ -47,14 +47,19 @@
   }
 
   input[type=range] {
-    @include reset.appearance(none);
-    @include size(100%, var(--thumb-size));
-    @include margin(5v 0);
-    outline: none;
-    background: none;
     background-repeat: no-repeat;
     background-size: 100% 4px;
     background-position: 0 50%;
+    outline: none;
+    @include width(100%);
+    @include margin(1v 0 0);
+  }
+
+  &#{selector.ns-attr(js-range)} input[type=range] {
+    @include reset.appearance(none);
+    background-color: transparent;
+    @include margin(5v 0);
+    @include size(100%, var(--thumb-size));
 
     &:not(:only-of-type) {
       pointer-events: none;
@@ -74,35 +79,36 @@
   }
 
   output {
+    display: block;
+    text-align: right;
+  }
+
+  &#{selector.ns-attr(js-range)} output {
     @include absolute;
     @include min-width(var(--thumb-size));
     @include z-index(above);
     @include text-style(xs);
+    display: inline;
     text-align: center;
     pointer-events: none;
-    left: var(--pos);
-    transform: translateX(-50%);
+    left: 0;
   }
 
   &#{selector.ns-group(range)}--double {
     output {
-      --pos: calc((var(--thumb-size) / 2 + (100% - var(--thumb-size) * 2 ) * var(--completed-a) + var(--thumb-size) / 2  + (100% - var(--thumb-size) * 2 ) * var(--completed-b) + var(--thumb-size)) / 2);
       @include min-width(12v);
     }
 
-    input[type=range] {
+    &#{selector.ns-attr(js-range)} input[type=range] {
       @include width(calc(100% - var(--thumb-size)));
     }
 
-    input[type=range]:nth-of-type(2) {
+    &#{selector.ns-attr(js-range)} input[type=range]:nth-of-type(2) {
       @include absolute;
       left: var(--thumb-size);
       background-position: 100% 50%;
       background-size: var(--thumb-size) 4px;
     }
-  }
-
-  &#{selector.ns-group(range)}--step {
   }
 
   &--no-indicators {
@@ -113,8 +119,8 @@
       }
     }
 
-    input[type=range] {
-      @include margin-bottom(var(--track-offset-y));
+    &#{selector.ns-attr(js-range)} input[type=range] {
+      @include margin-bottom(1v);
     }
   }
 

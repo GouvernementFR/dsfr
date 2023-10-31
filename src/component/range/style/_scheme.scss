@@ -13,10 +13,6 @@
     input[type=range] {
       @include color.background-image((active blue-france) (contrast grey), (legacy:$legacy));
 
-      &:nth-of-type(2) {
-        @include color.background-image((action-high error) (contrast grey), (legacy:$legacy));
-      }
-
       @include selector.range-thumb {
         @include elevation.elevate(raised, (legacy: $legacy));
         @include color.background(action-high blue-france, (legacy:$legacy));

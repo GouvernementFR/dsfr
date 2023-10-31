@@ -9,108 +9,108 @@
 @use 'module/spacing';
 
 @include legacy.is(ie11) {
-  #{selector.ns-group(range)} {
-    input[type=range] {
-      @include padding(0);
-      @include selector.range-ms-fill-lower {
-        @include height(1v);
-        @include color.background(action-high blue-france, (legacy:true));
-      }
+  // #{selector.ns-group(range)} {
+  //   input[type=range] {
+  //     @include padding(0);
+  //     @include selector.range-ms-fill-lower {
+  //       @include height(1v);
+  //       @include color.background(action-high blue-france, (legacy:true));
+  //     }
 
-      @include selector.range-ms-fill-upper {
-        @include height(1v);
-        @include color.background(contrast grey, (legacy:true));
-      }
+  //     @include selector.range-ms-fill-upper {
+  //       @include height(1v);
+  //       @include color.background(contrast grey, (legacy:true));
+  //     }
 
-      @include selector.range-ms-track {
-        @include height(1v);
-        background: transparent;
-        border-color: transparent;
-        border-width: #{spacing.space(3v)} 0;
-        color: transparent;
-      }
+  //     @include selector.range-ms-track {
+  //       @include height(1v);
+  //       background: transparent;
+  //       border-color: transparent;
+  //       border-width: #{spacing.space(3v)} 0;
+  //       color: transparent;
+  //     }
 
-      @include selector.range-ms-thumb {
-        @include size(6v, 6v);
-        border-radius: 50%;
-        border: none;
-        @include color.background(action-high blue-france, (legacy:true));
-      }
+  //     @include selector.range-ms-thumb {
+  //       @include size(6v, 6v);
+  //       border-radius: 50%;
+  //       border: none;
+  //       @include color.background(action-high blue-france, (legacy:true));
+  //     }
 
-      &:not(:only-of-type) {
-        pointer-events: auto;
-      }
-    }
+  //     &:not(:only-of-type) {
+  //       pointer-events: auto;
+  //     }
+  //   }
 
-    &#{selector.ns-group(range)}--double {
-      input[type=range] {
-        width: calc(100% - #{spacing.space(3v)});
-      }
+  //   &#{selector.ns-group(range)}--double {
+  //     input[type=range] {
+  //       width: calc(100% - #{spacing.space(3v)});
+  //     }
 
-      input[type=range]:first-of-type {
-        position: relative;
-        z-index: 2;
-        @include selector.range-ms-fill-upper {
-          background-color: transparent;
-        }
+  //     input[type=range]:first-of-type {
+  //       position: relative;
+  //       z-index: 2;
+  //       @include selector.range-ms-fill-upper {
+  //         background-color: transparent;
+  //       }
 
-        @include selector.range-ms-fill-lower {
-          @include color.background(contrast grey, (legacy:true));
-        }
-      }
+  //       @include selector.range-ms-fill-lower {
+  //         @include color.background(contrast grey, (legacy:true));
+  //       }
+  //     }
 
-      input[type=range]:nth-of-type(2) {
-        left: #{spacing.space(6v)};
-        margin-top: 16px;
+  //     input[type=range]:nth-of-type(2) {
+  //       left: #{spacing.space(6v)};
+  //       margin-top: 16px;
 
-        @include selector.range-ms-track {
-          border-width: 16px 0;
-        }
+  //       @include selector.range-ms-track {
+  //         border-width: 16px 0;
+  //       }
 
-        @include selector.range-ms-thumb {
-          @include size(8v, 8v);
-        }
+  //       @include selector.range-ms-thumb {
+  //         @include size(8v, 8v);
+  //       }
 
-        @include selector.range-ms-fill-upper {
-          @include color.background(contrast grey, (legacy:true));
-        }
+  //       @include selector.range-ms-fill-upper {
+  //         @include color.background(contrast grey, (legacy:true));
+  //       }
 
-        @include selector.range-ms-fill-lower {
-          @include color.background(active blue-france, (legacy:true));
-        }
-      }
-    }
+  //       @include selector.range-ms-fill-lower {
+  //         @include color.background(active blue-france, (legacy:true));
+  //       }
+  //     }
+  //   }
 
-    &--sm {
-      input[type=range] {
-        @include selector.range-ms-track {
-          @include height(0.5v);
-          border-width: #{spacing.space(2.5v)} 0;
-        }
+  //   &--sm {
+  //     input[type=range] {
+  //       @include selector.range-ms-track {
+  //         @include height(0.5v);
+  //         border-width: #{spacing.space(2.5v)} 0;
+  //       }
 
-        @include selector.range-ms-fill-lower {
-          @include height(0.5v);
-        }
+  //       @include selector.range-ms-fill-lower {
+  //         @include height(0.5v);
+  //       }
 
-        @include selector.range-ms-fill-upper {
-          @include height(0.5v);
-        }
+  //       @include selector.range-ms-fill-upper {
+  //         @include height(0.5v);
+  //       }
 
-        @include selector.range-ms-thumb {
-          @include size(4v, 4v);
-        }
-      }
+  //       @include selector.range-ms-thumb {
+  //         @include size(4v, 4v);
+  //       }
+  //     }
 
-      &#{selector.ns-group(range)}--double {
-        input[type=range] {
-          width: calc(100% - #{spacing.space(3v)});
-        }
+  //     &#{selector.ns-group(range)}--double {
+  //       input[type=range] {
+  //         width: calc(100% - #{spacing.space(3v)});
+  //       }
 
-        input[type=range]:nth-of-type(2) {
-          left: #{spacing.space(6v)};
-          margin-top: 14px;
-        }
-      }
-    }
-  }
+  //       input[type=range]:nth-of-type(2) {
+  //         left: #{spacing.space(6v)};
+  //         margin-top: 14px;
+  //       }
+  //     }
+  //   }
+  // }
 }
