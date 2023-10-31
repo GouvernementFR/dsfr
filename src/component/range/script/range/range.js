@@ -20,6 +20,7 @@ class Range extends api.core.Instance {
     this._retrieveSize();
     if (this.isLegacy) {
       this.isResizing = true;
+      this.isMouseMoving = true;
     } else {
       this._observer = new ResizeObserver(this._retrieveWidth.bind(this));
       this._observer.observe(this.node);
@@ -163,6 +164,12 @@ class Range extends api.core.Instance {
     this.descend(RangeEmission.BACKGROUND, background);
     this.output.style.transform = `translateX(${this._model.outputX}px) translateX(-50%)`;
     this._isPainting = false;
+  }
+
+  mouseMove (point) {
+    if (this._type !== RangeTypes.DOUBLE) return;
+    const x = point.x - this.getRect().left;
+    this.descend(RangeEmission.ENABLE_POINTER, this._model.outputX < x ? 2 : 1);
   }
 
   dispose () {

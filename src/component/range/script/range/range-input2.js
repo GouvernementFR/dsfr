@@ -7,6 +7,7 @@ class RangeInput2 extends RangeInput {
   }
 
   _init () {
+    this._pointerId = 2;
     this.addDescent(RangeEmission.CONSTRAINTS, this.setConstraints.bind(this));
     this.addDescent(RangeEmission.VALUE, this.setValue.bind(this));
   }

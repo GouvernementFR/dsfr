@@ -10,6 +10,10 @@
 
 @include legacy.is(ie11) {
   #{selector.ns-group(range)} {
+    output {
+      min-width: 48px;
+    }
+
     input[type=range] {
       @include padding(0);
 
@@ -24,7 +28,6 @@
 
     &#{selector.ns-attr(js-range)} {
       input[type=range] {
-
         @include selector.range-ms-fill-lower {
           @include height(1v);
           background: transparent;

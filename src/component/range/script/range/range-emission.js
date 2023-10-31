@@ -10,5 +10,6 @@ export const RangeEmission = {
   STEP: api.internals.ns.emission('range', 'step'),
   PREFIX: api.internals.ns.emission('range', 'prefix'),
   SUFFIX: api.internals.ns.emission('range', 'suffix'),
-  DISABLED: api.internals.ns.emission('range', 'disabled')
+  DISABLED: api.internals.ns.emission('range', 'disabled'),
+  ENABLE_POINTER: api.internals.ns.emission('range', 'enable_pointer')
 };
