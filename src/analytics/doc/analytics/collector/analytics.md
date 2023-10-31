@@ -79,7 +79,7 @@ _Boolean_
 
 `window.dsfr.analytics.isReady`
 
-Getter qui retourne l'état du package
+Getter qui retourne l'état de l'API, à savoir `true` quand elle est prête à être utilisée.
 
 * * *
 
@@ -89,9 +89,42 @@ _Promise_
 
 `window.dsfr.analytics.readiness`
 
-Getter qui retourne une Promise permettant de se synchroniser sur le package
+Getter qui retourne une Promise permettant de se synchroniser sur l'API, lorsque celle-ci est prête à être utilisée.
 
     window.dsfr.analytics.readiness.then(() => { // start }, () => { // error } );
+
+* * *
+
+##### collection
+
+_String_
+
+`window.dsfr.analytics.collection`
+
+Getter qui retourne le mode de récolte des données de la page. Défini dans la configuration (voir propriété `collection` de la [configuration](../installation/configuration.md#collection))
+
+* `manual` : Les données de pages ne sont pas envoyées. Attend l’execution de la fonction `collect()`.
+
+* `load` : Les données de page sont envoyées automatiquement au chargement de la page. (par défaut)
+
+* `full` : Les données sont envoyées à chaque changement de path dans l’URL, permettant le support des “Single-page
+  application” (par défaut si dsfr en mode ‘vue’, ‘react’ ou ‘angular’)
+  
+* `hash` : Les données sont envoyées à chaque changement de hash dans l'URL
+
+* * *
+
+##### isActionEnabled
+
+_Boolean_
+
+`window.dsfr.analytics.isActionEnabled`
+
+Permet d’activer / désactiver la mesure d'audience des actions.
+
+* Par défaut, la mesure d'audience des actions est activée.
+
+Défini dans la configuration (voir propriété `isActionEnabled` de la [configuration](../installation/configuration.md#isactionenabled))
 
 * * *
 

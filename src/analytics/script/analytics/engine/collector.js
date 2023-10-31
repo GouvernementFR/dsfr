@@ -50,6 +50,8 @@ class Collector {
         }
     }
 
+    this._isActionEnabled = config.isActionEnabled !== 'false' && config.isActionEnabled !== false;
+
     this._user = new User(config.user);
     this._site = new Site(config.site);
     this._page = new Page(config.page);
@@ -143,6 +145,14 @@ class Collector {
 
   get isCollecting () {
     return this._page.isCollecting;
+  }
+
+  get isActionEnabled () {
+    return this._isActionEnabled;
+  }
+
+  set isActionEnabled (value) {
+    this._isActionEnabled = value;
   }
 
   get layer () {

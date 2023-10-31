@@ -1,6 +1,9 @@
 
 # Analytics
 
+> **Note**
+> Ajout de la propriété `isActionEnabled` dans la configuration et sur l'objet `window.dsfr.analytics` permettant de désactiver l'envoi des données d'actions si nécessaire.
+
 > **Important**
 > La propriété de configuration `enableRating` a été retirée, celle-ci entraînant des envois de données trop importants. En remplacement, un attribut `data-fr-analytics-rating` peut être ajouté sur un élément dont on veut mesurer spécifiquement le taux de click. 
 

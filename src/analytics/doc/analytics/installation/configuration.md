@@ -10,6 +10,7 @@ La configuration doit être placée **avant** les fichiers `patch.module.js`, `d
         analytics: {
             domain: ' mon.domainedetracking.com',
             // collection: 'manual',
+            // isActionEnabled: false,
             page: {
                 template: 'article'
             },
