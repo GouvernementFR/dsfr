@@ -34,7 +34,6 @@
           @include size(6v, 6v);
           border-radius: 50%;
           border: none;
-          @include color.background(action-high blue-france, (legacy:true));
         }
 
         &:not(:only-of-type) {

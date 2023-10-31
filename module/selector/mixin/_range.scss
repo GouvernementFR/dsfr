@@ -1,10 +1,17 @@
-@mixin range-thumb {
-  &::-webkit-slider-thumb {
-    @content;
-  }
+@mixin range-thumb($legacy: false) {
+  @if not $legacy {
+    &::-webkit-slider-thumb {
+      @content;
+    }
 
-  &::-moz-range-thumb {
-    @content;
+    &::-moz-range-thumb {
+      @content;
+    }
+  }
+  @else {
+    &::-ms-thumb {
+      @content;
+    }
   }
 }
 
