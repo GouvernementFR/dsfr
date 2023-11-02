@@ -74,12 +74,11 @@ class RangeSVG {
 
     svg = svg.replace(/#/gi, '%23');
     if (api.internals.legacy.isLegacy) {
-      svg = svg.replace('<', '%3C');
-      svg = svg.replace('>', '%3E');
-      svg = svg.replace('"', '\'');
-      svg = svg.replace('{', '%7B');
-      svg = svg.replace('}', '%7D');
-      svg = svg.replace('’', '%E2%80%99');
+      svg = svg.replace(/</gi, '%3C');
+      svg = svg.replace(/>/gi, '%3E');
+      svg = svg.replace(/"/gi, '\'');
+      svg = svg.replace(/{/gi, '%7B');
+      svg = svg.replace(/}/gi, '%7D');
     }
     return `data:image/svg+xml;charset=utf8,${svg}`;
   }

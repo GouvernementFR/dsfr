@@ -16,6 +16,7 @@ class Range extends api.core.Instance {
 
   init () {
     this.output = this.node.querySelector(RangeSelector.RANGE_OUTPUT);
+    this.label = this.node.querySelector(RangeSelector.RANGE_LABEL);
     this._retrieveType();
     this._retrieveSize();
     if (this.isLegacy) {
@@ -106,7 +107,8 @@ class Range extends api.core.Instance {
   }
 
   _assignValue () {
-    if (this.output) this.output.innerText = this._model.textValue;
+    if (!this.output) return;
+    this.output.innerText = this._model.textValue;
   }
 
   setDisabled (value) {
@@ -120,8 +122,9 @@ class Range extends api.core.Instance {
   }
 
   _assignConstraints () {
-    this.style.setProperty('--text-min', this._model.textMin);
-    this.style.setProperty('--text-max', this._model.textMax);
+    if (!this.label) return;
+    this.label.setAttribute(api.internals.ns.attr('min'), this._model.textMin);
+    this.label.setAttribute(api.internals.ns.attr('max'), this._model.textMax);
   }
 
   setPrefix (value) {
@@ -162,8 +165,13 @@ class Range extends api.core.Instance {
   _paint () {
     const background = this._model.background;
     this.descend(RangeEmission.BACKGROUND, background);
-    this.output.style.transform = `translateX(${this._model.outputX}px) translateX(-50%)`;
+    this.placeOutput();
     this._isPainting = false;
+  }
+
+  placeOutput () {
+    const outputX = Math.min(Math.max(this._model.outputX - this.output.offsetWidth * 0.5, 0), this._model.width - this.output.offsetWidth);
+    this.output.style.transform = `translateX(${outputX}px)`;
   }
 
   mouseMove (point) {

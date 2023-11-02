@@ -1,4 +1,5 @@
 import api from '../../api';
+import { LegacyColors } from './range-legacy-colors';
 
 class StrokeLine {
   constructor () {
@@ -9,6 +10,10 @@ class StrokeLine {
 
   setToken (token) {
     this._token = token;
+  }
+
+  get legacyColor () {
+    return LegacyColors[this._token.join('-')];
   }
 
   get strokeWidth () {
@@ -54,7 +59,7 @@ class StrokeLine {
   get data () {
     const data = {
       'stroke-width': this._strokeWidth,
-      stroke: api.colors.getColor.apply(api.colors, this._token),
+      stroke: api.colors.getColor.apply(api.colors, this._token) || this.legacyColor,
       x1: this._x1,
       y1: 2,
       x2: this._x2,

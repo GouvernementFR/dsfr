@@ -29,7 +29,7 @@
     }
 
     output {
-      @include color.text(action-high blue-france, (legacy:$legacy));
+      @include color.text(active blue-france, (legacy:$legacy));
     }
 
     &:not(&--disabled) {

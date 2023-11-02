@@ -30,12 +30,12 @@
     }
 
     &::before {
-      content: var(--text-min, "");
+      content: attr(#{selector.ns-attr(min, null, true)});
       left: 0;
     }
 
     &::after {
-      content: var(--text-max, "");
+      content: attr(#{selector.ns-attr(max, null, true)});
       right: 0;
     }
   }
@@ -52,7 +52,7 @@
     background-position: 0 50%;
     outline: none;
     @include width(100%);
-    @include margin(1v 0 0);
+    @include margin(1v 0);
   }
 
   &#{selector.ns-attr(js-range)} input[type=range] {
@@ -79,8 +79,7 @@
   }
 
   output {
-    display: block;
-    text-align: right;
+    display: none;
   }
 
   &#{selector.ns-attr(js-range)} output {

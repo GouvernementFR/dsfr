@@ -3,9 +3,9 @@ subdir:
   deprecated: version dépréciée
 
 label:
-  default: label
+  default: Label
 hint:
-  default: texte de description additionel
+  default: Texte de description additionnel.
 error:
   default: Valeur sélectionnée impossible 
 valid:
