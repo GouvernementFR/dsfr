@@ -7,36 +7,35 @@
 
 #{ns(connect)} {
   @include relative;
-  @include padding(2.5v 3v 2.5v 16v);
+  @include padding(0.625em 0.75em 0.625em 4em);
   @include display-flex(column, flex-start, center, null, true);
-  min-height: spacing.space(14v);
   @include margin-bottom(3v);
   @include disable-underline;
   @include enable-tint;
   @include hover-tint;
 
   @include before('', block) {
-    @include absolute(1v, null, 1v, 3v, 10v, 12v);
+    @include absolute(50%, null, 0.25em, 0.75em, 2.5em, 3em);
+    @include margin-top(-1.5em);
     background-image: url(svg-encode($fc-logo-svg, true));
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: spacing.space(10v 12v);
+    background-size: 2.5em 3em;
   }
 
   &__login,
   &__brand {
     line-height: 1;
     @include z-index(over);
+    white-space: nowrap;
   }
 
   &__login {
     font-size: map-get($login-size, default);
-    height: map-get($login-size, default);
   }
 
   &__brand {
     font-weight: bold;
     font-size: map-get($brand-size, default);
-    height: map-get($brand-size, default);
   }
 }
