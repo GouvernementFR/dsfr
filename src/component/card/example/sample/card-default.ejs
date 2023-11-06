@@ -51,10 +51,7 @@ if (card.content) {
   data.content.attributes = card.content.attributes ?? {};
   if (card.content.assess) data.content.assess = card.content.assess;
   if (card.content.disabled) data.content.disabled = card.content.disabled;
-  if (card.content.blank === true) {
-    data.content.blank = card.content.blank;
-    data.content.attributes.title = card.content.attributes?.title ? card.content.attributes.title : `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
-  }
+  if (card.content.blank === true) data.content.blank = card.content.blank;
   if (card.content.lang) data.content.lang = card.content.lang;
 
   if (card.content.description !== false) data.content.description = card.content.description || lorem('', 160);

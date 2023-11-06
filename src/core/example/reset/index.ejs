@@ -24,7 +24,7 @@ let ol = {
 
 <%- sample('Test de paragraphe et de lien interne :', './sample/paragraph', { paragraph: {insert: '<a title="titre lien interne" href="#" target="_self">lien interne</a>'} }, true); %>
 
-<%- sample('Test de paragraphe et de lien externe :', './sample/paragraph', { paragraph: {insert: '<a title="titre lien externe - nouvelle fenêtre" href="#" target="_blank" rel="noopener">lien externe - nouvelle fenêtre</a>'} }, true); %>
+<%- sample('Test de paragraphe et de lien externe :', './sample/paragraph', { paragraph: {insert: `<a href="#" ${includeAttrs(targetBlankData())}>lien externe - nouvelle fenêtre</a>`} }, true); %>
 
 <%- sample('Test de liste non-ordonnée:', './sample/ul', {list:ul}, true); %>
 

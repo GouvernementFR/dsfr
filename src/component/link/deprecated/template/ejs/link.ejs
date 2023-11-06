@@ -81,7 +81,7 @@ if (link.disabled === true) {
     linkAttrs.href = link.href || '[url - à modifier]';
     switch (true) {
         case link.blank:
-            linkAttrs.target = '_blank';
+            linkAttrs = {...targetBlankData(), ...linkAttrs};
             break;
 
         case link.self:

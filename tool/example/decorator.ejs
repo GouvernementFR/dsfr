@@ -264,6 +264,16 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
+const targetBlankData = () => {
+  const attr = {};
+  attr.target = '_blank';
+  attr.rel = 'noopener external';
+  attr.title = `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
+  return attr;
+}
+
+locals.targetBlankData = targetBlankData;
+
 const randomSeed = (seed) => {
   const rng = prand.xoroshiro128plus(seed);
   locals.rng = rng;
