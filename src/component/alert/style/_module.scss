@@ -3,11 +3,16 @@
 /// @group alert
 ////
 
+@use 'module/spacing';
+
 #{ns(alert)} {
   @include relative();
   @include padding(4v 9v 3v 14v);
   @include set-title-margin(0 0 1v);
   @include set-text-margin(0 0 1v);
+  background-size: 100% 1px, 1px 100%, 100% 1px, spacing.space(10v) 100%;
+  background-position: 0 0, 100% 0, 0 100%, 0 0, 100% 100%;
+  background-repeat: no-repeat, no-repeat no-repeat, no-repeat;
   @include icon-size(md, before);
   @include icon-style(before) {
     @include absolute(0, null, null, 0);
