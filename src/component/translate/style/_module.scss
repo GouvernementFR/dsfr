@@ -16,7 +16,6 @@
     @include min-height(auto, lg);
     @include width(100%);
     @include width(auto, lg);
-    @include margin-bottom(4v, lg);
     @include animate.caret();
 
     @include icon(arrow-down-s-line, sm, after) {
@@ -47,9 +46,6 @@
   &__menu {
     @include margin(0);
     @include margin(-1v -4v 0, lg);
-    @include respond-from(lg) {
-      @include top(calc(100% - 4v));
-    }
   }
 
   #{ns(nav)} {

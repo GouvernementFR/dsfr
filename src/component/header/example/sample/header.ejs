@@ -13,35 +13,28 @@ if (header.links !== undefined || header.search) {
   const tools = {};
   data.body.tools = tools;
 
-  if (header.translate !== undefined) {
-    tools.translate = {
-      collapseId: header.translate.collapseId || uniqueId('translate'),
-      button: header.translate.button || {kind: 3},
-      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
-    }
-  }
-
   if (header.links === true) {
     hasMenu = true;
     tools.links = {
       buttons: [
         {
-          icon: 'add-circle-line',
           url: '#',
-          label: 'Créer un espace',
-          markup: 'a'
+          label: 'Contact',
+          markup: 'a',
+          classes: [`${prefix}-btn--team`]
         },
         {
-          icon: 'lock-line',
           url: '#',
-          label: 'Se connecter',
-          markup: 'a'
+          label: 'Espace recruteur',
+          markup: 'a',
+          classes: [`${prefix}-btn--briefcase`]
+          
         },
         {
-          icon: 'account-line',
           url: '#',
-          label: 'S’enregistrer',
-          markup: 'a'
+          label: 'Espace particulier',
+          markup: 'a',
+          classes: [`${prefix}-btn--account`]
         }
       ]
     };
@@ -49,6 +42,15 @@ if (header.links !== undefined || header.search) {
   else if (header.links !== undefined) {
     hasMenu = true;
     tools.links = header.links;
+  }
+
+  if (header.translate !== undefined) {
+    hasMenu = true;
+    tools.translate = {
+      collapseId: header.translate.collapseId || uniqueId('translate'),
+      button: header.translate.button,
+      languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
+    }
   }
 
   if (header.search) {

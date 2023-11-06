@@ -101,10 +101,7 @@
 
   figcaption {
     @include disable-list-style;
-
-    li {
-      @include text-style(xs);
-    }
+    @include text-style(xs);
 
     #{ns(quote)}__source {
       @include display-flex(row,null,flex-start,wrap);

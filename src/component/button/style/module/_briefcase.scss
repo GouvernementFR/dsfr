@@ -1,0 +1,8 @@
+////
+/// Button Module - Briefcase
+/// @group button
+////
+
+#{ns(btn--briefcase)} {
+  @include nest-btn(sm, left, briefcase-fill, null, false);
+}
