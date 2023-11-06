@@ -3,6 +3,8 @@
 /// @group callout
 ////
 
+@use 'module/spacing';
+
 #{ns(callout)} {
   @include relative();
   @include padding(6v);
@@ -10,6 +12,9 @@
   @include set-title-margin(0 0 2v);
   @include set-text-margin(0);
   @include margin(map-get($text-spacing, text));
+  background-size: spacing.space(1v 100%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
 
   /**
    * Inclusion de l'icône (optionnel)
