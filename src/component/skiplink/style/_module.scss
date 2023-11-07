@@ -8,10 +8,12 @@
   @include absolute(0);
   @include padding(4v 0);
   transform: translateY(-100%);
+  opacity: 0;
 
   &:focus-within {
     @include relative;
     transform: translateY(0);
+    opacity: 1;
   }
 
   @include list {
