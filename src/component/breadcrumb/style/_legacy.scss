@@ -4,6 +4,7 @@
 ////
 
 @use 'module/legacy';
+@use 'module/selector';
 
 @include legacy.is(ie11) {
   /**
@@ -13,7 +14,7 @@
     @include disable-list-style-legacy;
 
     &__link {
-      &:not([aria-current]) {
+      @include selector.not-current {
         @include icon-legacy(arrow-right-s-line, sm, after);
       }
     }
