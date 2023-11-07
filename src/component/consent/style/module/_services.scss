@@ -88,7 +88,7 @@
 
   @include build-consent-btn {
     background: transparent;
-    @include padding(0);
+    @include padding(0 1v 0 0);
     color: inherit;
     @include disable-tint;
     @include link-underline;
