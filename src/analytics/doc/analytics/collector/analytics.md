@@ -122,9 +122,9 @@ _Boolean_
 
 Permet d’activer / désactiver la mesure d'audience des actions.
 
-* Par défaut, la mesure d'audience des actions est activée.
+* Par défaut, la mesure d'audience des actions est désactivée.
 
-Défini dans la configuration (voir propriété `isActionEnabled` de la [configuration](../installation/configuration.md#isactionenabled))
+Défini dans la configuration (voir propriété `isActionEnabled` de la [configuration](../installation/configuration.md))
 
 * * *
 

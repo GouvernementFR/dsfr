@@ -43,7 +43,7 @@ class Queue {
   }
 
   appendStartingAction (action, data) {
-    if (!this._collector.isActionEnabled) return;
+    if (!this._collector.isActionEnabled && !action.isForced) return;
     if (!action || this._startingActions.some(queued => queued.test(action))) {
       api.inspector.log('appendStartingAction exists or null', action);
       return;
@@ -54,7 +54,7 @@ class Queue {
   }
 
   appendEndingAction (action, data) {
-    if (!this._collector.isActionEnabled) return;
+    if (!this._collector.isActionEnabled && !action.isForced) return;
     if (!action || this._endingActions.some(queued => queued.test(action))) {
       api.inspector.log('appendEndingAction exists or null', action);
       return;

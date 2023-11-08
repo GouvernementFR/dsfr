@@ -50,7 +50,7 @@ class Collector {
         }
     }
 
-    this._isActionEnabled = config.isActionEnabled !== 'false' && config.isActionEnabled !== false;
+    this._isActionEnabled = config.isActionEnabled === 'false' || config.isActionEnabled;
 
     this._user = new User(config.user);
     this._site = new Site(config.site);

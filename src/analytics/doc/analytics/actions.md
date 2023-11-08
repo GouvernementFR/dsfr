@@ -15,14 +15,20 @@ Les actions correspondent aux évènements et aux interactions que l’on souhai
 #### ActionName
 
 Lorsqu’une action est émise, un actionName est envoyé à Eulérian.
-Ce nom d’action est constitué du type d’action, de l’intitulé de l'élément à remonté, de sa hiérarchie, et de son id.
+Ce nom d’action est constitué de 3 éléments :
+```
+(type)_title_[id]
+```
+* Type : type d'action. (voir [types d'actions](actions/custom-actions.md#ActionType) et [types d'actions sur les composants DSFR](actions/component-actions.md)) 
+* Title : la hiérarchie des intitulés des éléments ou la valeur de l'attribut `data-fr-analytics-action`
+* Id : l'id de l'élément (correspondant à l'attribut `id`sur l'élément) - obligatoire.
 
 > **Important**
-> ⚠️ **Un id est obligatoire sur tous les éléments traqués** (retrouvez les éléments du dsfr nécéssitant un id dans la colonne “element” du [tableau d'actions des composants du dsfr](actions/component-actions.md)).
+> ⚠️ **Un id est obligatoire sur tous les éléments traqués** (retrouvez les éléments du dsfr nécessitant un id dans la colonne “element” du [tableau d'actions des composants du dsfr](actions/component-actions.md)).
 >Il est nécessaire que l’id soit :
->  * unique : L’id doit être unique au site, ex:
->  * Deux boutons différents ne doivent pas avoir le même id, même sur des pages différentes
->  * Le header peut avoir le même id sur toute les pages s’il est identique
+>  * unique : L’id doit être unique au site, par exemple:
+>    * Deux boutons différents ne doivent pas avoir le même id, même sur des pages différentes
+>    * Le header peut avoir le même id sur toute les pages s’il est identique
 >  * pérenne : L’id doit être le même pour tous les utilisateurs et figé dans le temps.
 
 exemple d’actionName : `(click)_titre_niveau_2_›_titre_niveau_3_›_label_de_l_element_[button-id-1]`
@@ -32,6 +38,10 @@ exemple d’actionName : `(click)_titre_niveau_2_›_titre_niveau_3_›_label_de
 > Les niveaux de hiérarchie sont séparé par des `›` [› | single right-pointing angle quotation mark (U+203A) @ Graphemica](https://graphemica.com/%E2%80%BA)
 > Les caractères suivants `"'<>*$&~`|\?^~` étant restreints par Eulerian, ils sont remplacés par une équivalence en caractère fullwidth : [Graphemica | Halfwidth and Fullwidth Forms](https://graphemica.com/blocks/halfwidth-and-fullwidth-forms)
 
+#### Activer les actions
+
+Par défaut, l'envoi des actions est désactivé. Le paramètre de configuration `isActionEnabled` permet de l'activer. (voir [isActionEnabled dans Analytics](collector/analytics.md#isActionEnabled)). 
+Il est possible de d'activer l'envoi sporadiquement sur un élément particulier en utilisant l'attribut `data-fr-analytics-action`, qui permet également de donner une valeur spécifique au title de l'[ActionName](#ActionName).
 
 #### Taux d'interaction
 
