@@ -23,7 +23,7 @@
     &__btn {
       &[aria-expanded="true"]:not(:disabled) {
         @include color.background(open blue-france, (legacy: $legacy));
-        @include color.text(active blue-france, (legacy: $legacy));
+        @include color.text(action-high blue-france, (legacy: $legacy));
       }
     }
 
