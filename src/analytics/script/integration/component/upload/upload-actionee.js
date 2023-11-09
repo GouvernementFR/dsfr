@@ -4,7 +4,7 @@ import ID from './id';
 
 class UploadActionee extends ComponentActionee {
   constructor () {
-    super(1, true);
+    super(1);
   }
 
   static get instanceClassName () {

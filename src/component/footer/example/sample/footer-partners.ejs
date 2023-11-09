@@ -2,6 +2,7 @@
 let footer = locals.footer || {};
 let data = {};
 if (footer.logo) data.logo = footer.logo;
+if (footer.partners) data.partners = footer.partners;
 %>
 
 <%- include('footer.ejs', {footer: {brand: true, partners: true, content: true, bottom: true, ...data}}); %>

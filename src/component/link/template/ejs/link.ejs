@@ -104,7 +104,7 @@ if (link.disabled === true) {
                     break;
 
                 case link.blank:
-                    linkAttrs.target = '_blank';
+                    linkAttrs = {...targetBlankData(), ...linkAttrs};
                     break;
 
                 case link.self:

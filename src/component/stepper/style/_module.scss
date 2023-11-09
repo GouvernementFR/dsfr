@@ -12,6 +12,7 @@
   @include display-flex(column);
 
   @include title {
+    @include display-flex(column-reverse);
     @include title-style(h6);
     @include set-title-margin(0 0 3v 0);
     @include set-text-margin(0 0 3v 0);

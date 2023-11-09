@@ -3,6 +3,7 @@ const login = locals.login || {};
 
 const alert = {
   id: uniqueId('alert'),
+  classes: ['fr-mb-2v'],
   size: 'sm',
   text: getText('login.error', 'login'),
   type: 'error'
@@ -66,6 +67,7 @@ elements.push({
   type: 'fieldset',
   data: {
     id: 'credentials',
+    classes: ['fr-mb-n4v'],
     legend: {
       label: getText('login.credentials', 'login'),
       sr: true

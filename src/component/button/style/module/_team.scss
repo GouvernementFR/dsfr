@@ -1,0 +1,8 @@
+////
+/// Button Module - Team
+/// @group button
+////
+
+#{ns(btn--team)} {
+  @include nest-btn(sm, left, team-line, null, false);
+}

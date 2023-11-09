@@ -10,10 +10,6 @@ class HeaderActionee extends ComponentActionee {
     return 'HeaderActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     return 'en-tête';
   }

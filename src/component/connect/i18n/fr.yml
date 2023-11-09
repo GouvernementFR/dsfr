@@ -9,7 +9,7 @@ default:
   link: Qu’est-ce que FranceConnect ?
   href: https://franceconnect.gouv.fr/
 plus:
-  brand: FranceConnect+
+  brand: FranceConnect
   link: Qu’est-ce que FranceConnect+ ?
   href: https://franceconnect.gouv.fr/france-connect-plus
 agent:

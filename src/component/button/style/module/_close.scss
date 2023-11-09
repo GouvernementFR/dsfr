@@ -7,5 +7,4 @@
   @include nest-btn(sm, right, close-line, null, false);
   display: flex;
   @include margin-left(auto);
-  @include margin-right(-4v);
 }

@@ -10,8 +10,7 @@ Chacune de ces données est répartie dans différentes catégories qui sont dis
     window.dsfr = {
         analytics: {
             domain: 'mon.domainedetracking.com',
-            // collection: 'manual',
-            // enableRating: true
+            // collection: 'manual'
         }
     };
 </script>
@@ -39,15 +38,6 @@ Défini le mode de récolte des données de la page :
   application” (par défaut si dsfr en mode ‘vue’, ‘react’ ou ‘angular’)
 
 * `hash` : Les données sont envoyées à chaque changement de hash dans l'URL
-
-* * *
-
-##### enableRating
-
-_Boolean_
-
-Permet d’activer le taux de click. (défaut: false)
-Voir les [actions](actions.md)
 
 * * *
 

@@ -11,10 +11,6 @@ class NoticeActionee extends ComponentActionee {
     return 'NoticeActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     const noticeTitle = this.node.querySelector(NoticeSelector.TITLE);
     if (noticeTitle) {

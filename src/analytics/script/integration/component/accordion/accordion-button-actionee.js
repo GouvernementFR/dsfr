@@ -11,17 +11,11 @@ class AccordionButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.setClickType();
-    this.id = this.node.id || this.registration.creator.node.id;
-    this.listenClick();
+    this.isMuted = true;
   }
 
   get button () {
     return this.element.getInstance('CollapseButton');
-  }
-
-  handleClick () {
-    if (this.button && !this.button.disclosed) this.act();
   }
 
   get label () {

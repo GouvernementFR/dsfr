@@ -8,7 +8,7 @@
 
 @mixin _input-scheme($legacy: false) {
   #{ns(input)} {
-    @include color.text(label grey, (legacy:$legacy));
+    @include color.text(default grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
 
@@ -30,7 +30,7 @@
     @if not $legacy {
       @supports selector(::-webkit-calendar-picker-indicator) {
         &[type=date] {
-          @include color.data-uri-svg(text title grey, (legacy: $legacy), $input-calendar-line);
+          @include color.data-uri-svg(text action-high grey, (legacy: $legacy), $input-calendar-line);
 
           @include disabled.selector((legacy: $legacy), (text: true, box-shadow: bottom-2-in)) {
             @include color.data-uri-svg(text disabled grey, (legacy: $legacy), $input-calendar-line);
@@ -39,14 +39,26 @@
       }
     }
 
-    #{ns(fieldset--valid)} &,
-    &-group--valid & {
-      @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
+    &-wrap--addon {
+      > #{ns(input)}:not(:last-child) {
+        @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
+      }
     }
 
-    #{ns(fieldset--error)} &,
-    &-group--error & {
-      @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
+    #{ns(fieldset--valid)},
+    &-group--valid {
+      #{ns(input)}, 
+      #{ns(input-wrap--addon)} > #{ns(input)}:not(:last-child) {
+        @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
+      }
+    }
+
+    #{ns(fieldset--error)},
+    &-group--error {
+      #{ns(input)}, 
+      #{ns(input-wrap--addon)} > #{ns(input)}:not(:last-child) {
+        @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
+      }
     }
 
     &-group--error {
@@ -64,14 +76,6 @@
     &-group--info {
       @include before {
         @include color.background-image(border plain info, (legacy:$legacy));
-      }
-    }
-  }
-
-  #{ns(input-wrap--addon)} {
-    > *:not(:last-child) {
-      &#{ns(input)}:not(#{ns(input--valid)}):not(#{ns(input--error)}) {
-        @include color.box-shadow(action-high blue-france, (legacy:$legacy), bottom-2-in);
       }
     }
   }

@@ -32,7 +32,7 @@ let start = {};
 
 const markup = content.markup || 'h3';
 const href = content.href || '#';
-const attributes = content.attributes || {};
+let attributes = content.attributes || {};
 const hasLink = !content.noLink;
 if (content.assess === true) {
     attributes[`data-${prefix}-assess-file`] = '';
@@ -48,7 +48,7 @@ if (content.disabled !== true) {
 if (content.lang) attributes.hreflang = content.lang;
 if (content.downloadable === true) attributes.download = '';
 if (typeof(content.downloadable) === 'string') attributes.download = content.downloadable;
-if (content.blank === true) attributes.target = '_blank';
+if (content.blank === true) attributes = {...targetBlankData(), ...attributes};
 
 if (content.badgesGroup) start.badgesGroup = content.badgesGroup;
 if (content.tagsGroup) start.tagsGroup = content.tagsGroup;

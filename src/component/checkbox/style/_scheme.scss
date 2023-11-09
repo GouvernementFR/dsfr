@@ -20,7 +20,7 @@
         + label {
           @include before {
             @include color.background(active blue-france);
-            @include color.data-uri-svg(inverted grey, (), $checkbox-svg, false);
+            @include color.data-uri-svg(text inverted blue-france, (), $checkbox-svg, false);
           }
         }
       }

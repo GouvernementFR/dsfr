@@ -46,33 +46,33 @@ if (tag.accent !== undefined) tagClasses.push(prefix + '-tag--' + tag.accent);
 
 switch(tag.size) {
   case 'sm':
-      tagClasses.push(prefix + '-tag--sm');
+    tagClasses.push(prefix + '-tag--sm');
   break;
 }
 
 switch(tag.type) {
   case 'clickable':
-      if (tag.markup === undefined) tag.markup = 'a';
-      if (tag.disabled !== true) {
-          tagAttrs.href = tag.href || contentPlaceholder('url');
-          switch (true) {
-              case tag.blank:
-                  tagAttrs.target = '_blank';
-              break;
-              case tag.self:
-                  tagAttrs.target = '_self';
-              break;
-          }
+    if (tag.markup === undefined) tag.markup = 'a';
+    if (tag.disabled !== true) {
+      tagAttrs.href = tag.href || contentPlaceholder('url');
+      switch (true) {
+        case tag.blank:
+          tagAttrs = {...targetBlankData(), ...tagAttrs};
+        break;
+        case tag.self:
+          tagAttrs.target = '_self';
+        break;
       }
+    }
   break;
   case 'pressable':
-      if (tag.markup === undefined) tag.markup = 'button';
-      tagAttrs["aria-pressed"] = tag.pressed === true ? 'true' : 'false';
+    if (tag.markup === undefined) tag.markup = 'button';
+    tagAttrs["aria-pressed"] = tag.pressed === true ? 'true' : 'false';
   break;
   case 'dismissible':
-      if (tag.markup === undefined) tag.markup = 'button';
-      tagClasses.push(prefix + '-tag--dismiss');
-      tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
+    if (tag.markup === undefined) tag.markup = 'button';
+    tagClasses.push(prefix + '-tag--dismiss');
+    tagAttrs["aria-label"] = 'Retirer ' + contentPlaceholder('le filtre ' + tag.label);
   break;
   default:
       if (tag.markup === undefined) tag.markup = 'p';
@@ -83,12 +83,12 @@ if (tag.icon !== undefined) tagClasses.push(prefix + '-icon-' + tag.icon);
 
 if (tag.iconPlace !== undefined) switch(tag.iconPlace) {
   case 'left':
-      tagClasses.push(prefix + '-tag--icon-left');
-      break;
+    tagClasses.push(prefix + '-tag--icon-left');
+    break;
 
   case 'right':
-      tagClasses.push(prefix + '-tag--icon-right');
-      break;
+    tagClasses.push(prefix + '-tag--icon-right');
+    break;
 }
 
 if (tag.disabled === true) {
