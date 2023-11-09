@@ -35,6 +35,7 @@
 
   @include body() {
     @include display-flex(column);
+    @include height(100%);
     flex: 1 1 auto;
     order: 2;
   }
