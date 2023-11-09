@@ -7,24 +7,30 @@
   @include disable-list-style;
   @include absolute(0);
   @include padding(4v 0);
+  @include padding(3v 0, md);
   transform: translateY(-100%);
+  opacity: 0;
 
   &:focus-within {
     @include relative;
     transform: translateY(0);
+    opacity: 1;
   }
 
   @include list {
     @include display-flex(column);
-    @include margin(0 -4v -6v);
 
     > li {
-      @include margin(0 4v 6v);
-      @include margin(0 4v, md);
+      @include margin-bottom(4v);
+      @include margin(0 2v, md);
 
       @include before(none);
 
       @include nest-link(md, null, null, null, true);
+
+      &:last-child {
+        @include margin-bottom(0);
+      }
     }
 
     @include respond-from(md) {

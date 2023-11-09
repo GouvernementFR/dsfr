@@ -30,10 +30,10 @@
 <div <%- includeClasses(classes); %> <%- includeAttrs(attributes) %>>
   <% if (stepper.title !== undefined) { %>
     <<%= markup %> class="<%= prefix%>-stepper__title">
+      <%- stepper.title %>
       <% if (stepper.currentStep && stepper.stepCount) { %>
         <span class="<%= prefix %>-stepper__state">Étape <%= stepper.currentStep %> sur <%= stepper.stepCount %></span>
       <% } %>
-      <%- stepper.title %>
     </<%= markup %>>
   <% } %>
 

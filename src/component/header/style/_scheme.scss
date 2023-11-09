@@ -14,6 +14,7 @@
     }
 
     &__service {
+      @include color.text(title grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
     }
 
@@ -43,6 +44,12 @@
     &__tools-links {
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
+      }
+
+      > #{ns(translate)}:first-child:last-child {
+        #{ns(btn)} {
+          @include btn-kind-scheme(3, $legacy);
+        }
       }
     }
 

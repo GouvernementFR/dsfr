@@ -9,6 +9,8 @@
 @mixin _toggle-scheme($legacy: false) {
   #{ns(toggle)} {
     label {
+      @include color.text(label grey, (legacy:$legacy));
+
       @include before {
         @include color.text(active blue-france, (legacy:$legacy));
         @include color.data-uri-svg(border action-high blue-france, (legacy: $legacy), $toggle-unchecked-svg);

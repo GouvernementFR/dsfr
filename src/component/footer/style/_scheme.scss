@@ -9,7 +9,10 @@
   #{ns(footer)} {
     @include color.box-shadow((plain blue-france) (default grey), (legacy:$legacy), top-2-in bottom-1-in);
 
-    &__content-link,
+    &__content-link {
+      @include color.text(default grey, (legacy:$legacy));
+    }
+
     &__top-cat {
       @include color.text(title grey, (legacy:$legacy));
     }
@@ -41,6 +44,15 @@
 
     &__partners {
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
+
+      &-title {
+        @include color.text(default grey, (legacy:$legacy));
+      }
+
+      #{ns(footer__logo)} {
+        @include color.background(default grey, (legacy:$legacy));
+        @include color.box-shadow(default grey, (legacy:$legacy));
+      }
 
       @if not $legacy {
         #{ns(footer__partners-link)} {

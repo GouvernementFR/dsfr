@@ -10,10 +10,6 @@ class QuoteActionee extends ComponentActionee {
     return 'QuoteActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     const blockquote = this.node.querySelector('blockquote');
     if (blockquote) {

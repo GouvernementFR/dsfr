@@ -11,10 +11,6 @@ class ContentActionee extends ComponentActionee {
     return 'ContentActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   _getImageLabel () {
     const contentImg = this.querySelector(ContentSelector.IMG);
     if (!contentImg) return false;

@@ -19,7 +19,7 @@
       	attributes.id = uniqueId('footer__content-link');
 		%>
 		<li class="<%= prefix %>-footer__content-item">
-			<a <%- includeAttrs(attributes) %> class="<%= prefix %>-footer__content-link" target="_blank" href="https://<%= links[i].label %>"><%= links[i].label %></a>
+			<a <%- includeAttrs({...targetBlankData(), ...attributes}) %> class="<%= prefix %>-footer__content-link" href="https://<%= links[i].label %>"><%= links[i].label %></a>
 		</li>
 		<% } %>
 	</ul>

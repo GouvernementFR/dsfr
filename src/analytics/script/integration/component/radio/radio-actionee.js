@@ -5,7 +5,7 @@ import ID from './id';
 
 class RadioActionee extends ComponentActionee {
   constructor () {
-    super(1, true);
+    super(1);
     this._data = {};
   }
 

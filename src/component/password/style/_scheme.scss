@@ -21,7 +21,7 @@
     & &__checkbox {
       input[type="checkbox"] {
         + label {
-          @include color.text(default grey, (legacy: $legacy));
+          @include color.text(label grey, (legacy: $legacy));
           @include before {
             @include color.background-image(border action-high blue-france, (), checkbox-background-image());
           }
