@@ -5,7 +5,9 @@
 
 @use 'sass:math';
 
-@function radio-background-image($checked: true, $size: md) {
+@function radio-background-image($checked: true, $size: md, $index: 1) {
+  $color1: '$color##{$index}';
+  $color2: '$color##{$index + 1}';
   $max: 12;
   @if $size == sm {
     $max: 8;
@@ -13,13 +15,13 @@
 
   @if $checked {
     $in: $max * 0.5;
-    @return 'radial-gradient(transparent #{$max - 2}px, $color#1 #{$max - 1}px, transparent #{$max}px), radial-gradient($color#2 #{$in - 1}px, transparent #{$in}px)';
+    @return 'radial-gradient(transparent #{$max - 2}px, #{$color1} #{$max - 1}px, transparent #{$max}px), radial-gradient(#{$color2} #{$in - 1}px, transparent #{$in}px)';
   }
   @else {
-    @return 'radial-gradient(transparent #{$max - 2}px, $color#1 #{$max - 1}px, transparent #{$max}px)';
+    @return 'radial-gradient(transparent #{$max - 2}px, #{$color1} #{$max - 1}px, transparent #{$max}px)';
   }
 }
 
 @function radio-rich-background-image($checked: true) {
-  @return 'linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), linear-gradient(0deg, $color#3, $color#3), #{radio-background-image($checked, sm)}';
+  @return 'linear-gradient(0deg, $color#1, $color#1), linear-gradient(0deg, $color#1, $color#1), linear-gradient(0deg, $color#1, $color#1), linear-gradient(0deg, $color#1, $color#1), #{radio-background-image($checked, sm, 2)}';
 }
