@@ -7,11 +7,11 @@ Le Service d’Information du Gouvernement (« SIG ») vous remercie de bien vou
 ### PRÉAMBULE
 
 Le SIG est le pilote de la transformation numérique de la communication de l’État . À ce titre, le SIG a pour mission de placer toutes les actions du Gouvernement sous la marque de l’État afin de garantir l’homogénéité et la reconnaissance de l’ensemble des initiatives ministérielles ou interministérielles.
-Dans ce cadre, le SIG a mis en place la nouvelle stratégie de la marque de l’État pour rendre l’action de l’État plus concrète, lisible et visible grâce à un signe commun pour les citoyens .
+Dans ce cadre, le SIG a mis en place la nouvelle stratégie de la marque de l’État pour rendre l’action de l’État plus concrète, lisible et visible grâce à un signe commun pour les citoyens.
 
 Dans la continuité de la mise en œuvre de la marque de l’État, le SIG a structuré dans le cadre d’une plateforme, le Système de Design de l'État visant à mettre à disposition des librairies de Ressources permettant notamment de standardiser et d’harmoniser l’expérience numérique de l’État et des citoyens grâce à une interface commune des sites Internet et applications de l’État. Le Système de Design de l’État permet ainsi de générer des économies, en rationalisant les développements numériques, de garantir la qualité et l’efficacité de l’expérience utilisateur, la cohérence et une meilleure reconnaissance des services de l’État.
 
-Les présentes Conditions Générales définissent les conditions selon lesquelles l’Utilisateur de l’État ou les Autres Utilisateurs peuvent naviguer sur la Plateforme accessible sur l’URL systeme-de-design.gouv.fr, accéder et exploiter les Ressources et Contribuer à leur amélioration ou leur enrichissement.
+Les présentes Conditions Générales définissent les conditions selon lesquelles l’Utilisateur de l’État ou les Autres Utilisateurs peuvent naviguer sur la Plateforme accessible sur l’URL https://www.systeme-de-design.gouv.fr, accéder et exploiter les Ressources et Contribuer à leur amélioration ou leur enrichissement.
 
 
 
