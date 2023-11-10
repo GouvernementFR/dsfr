@@ -16,13 +16,13 @@
 
     input[type="radio"] {
       + label {
-        @include color.background-image((action-high blue-france) (action-high blue-france) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+        @include color.background-image((border default grey) (border action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(false)}');
         @include color.background((background default grey), (legacy: $legacy));
       }
 
       @include disabled.selector {
         + label {
-          @include color.background-image((disabled grey) (disabled grey) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+          @include color.background-image((border default grey) (disabled grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
         }
 
         ~ #{selector.ns(radio-rich__pictogram)} {
@@ -34,7 +34,7 @@
 
       &:checked {
         + label {
-          @include color.background-image((action-high blue-france) (action-high blue-france) (action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+          @include color.background-image((border active blue-france) (border active blue-france) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
         }
 
         ~ #{selector.ns(radio-rich__pictogram)} {
@@ -43,7 +43,7 @@
 
         @include disabled.selector {
           + label {
-            @include color.background-image((disabled grey) (disabled grey) (text disabled grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+            @include color.background-image((text disabled grey) (disabled grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
           }
 
           ~ #{selector.ns(radio-rich__pictogram)} {
@@ -59,11 +59,11 @@
       #{ns(radio-rich)} {
         input[type="radio"] {
           & + label {
-            @include color.background-image((border plain error) (action-high blue-france) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+            @include color.background-image((border default grey) (border plain error), (legacy: $legacy), '#{radio-rich-background-image(false)}');
           }
 
           &:checked + label {
-            @include color.background-image((border plain error) (action-high blue-france) (action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+            @include color.background-image((action-high blue-france) (border plain error) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
           }
         }
       }
@@ -73,11 +73,11 @@
       #{ns(radio-rich)} {
         input[type="radio"] {
           & + label {
-            @include color.background-image((border plain success) (action-high blue-france) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+            @include color.background-image((border default grey) (border plain success), (legacy: $legacy), '#{radio-rich-background-image(false)}');
           }
 
           &:checked + label {
-            @include color.background-image((border plain success) (action-high blue-france) (action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+            @include color.background-image((action-high blue-france) (border plain success) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
           }
         }
       }
@@ -87,11 +87,11 @@
       #{ns(radio-rich)} {
         input[type="radio"] {
           & + label {
-            @include color.background-image((border plain info) (action-high blue-france) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+            @include color.background-image((border default grey) (border plain info), (legacy: $legacy), '#{radio-rich-background-image(false)}');
           }
 
           &:checked + label {
-            @include color.background-image((border plain info) (action-high blue-france) (action-high blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+            @include color.background-image((action-high blue-france) (border plain info) (active blue-france), (legacy: $legacy), '#{radio-rich-background-image(true)}');
           }
         }
       }
@@ -101,11 +101,11 @@
       input[type="radio"] {
         @include disabled.selector {
           & + label {
-            @include color.background-image((disabled grey) (disabled grey) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
+            @include color.background-image((border default grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(false)}');
           }
 
           &:checked + label {
-            @include color.background-image((disabled grey) (disabled grey) (border default grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
+            @include color.background-image((border default grey) (disabled grey) (disabled grey), (legacy: $legacy), '#{radio-rich-background-image(true)}');
           }
         }
       }

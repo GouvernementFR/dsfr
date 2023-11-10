@@ -20,6 +20,7 @@
         + label {
           @include before {
             @include color.background(active blue-france);
+            @include color.background-image(border active blue-france, (), checkbox-background-image());
             @include color.data-uri-svg(text inverted blue-france, (), $checkbox-svg, false);
           }
         }
