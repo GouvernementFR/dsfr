@@ -158,6 +158,7 @@ class Instance {
   }
 
   listenHash (hash, add) {
+    if (!this._hashes) return;
     if (this._hashes.length === 0) state.add('hash', this);
     const action = new HashAction(hash, add);
     this._hashes = this._hashes.filter(action => action.hash !== hash);
@@ -165,11 +166,13 @@ class Instance {
   }
 
   unlistenHash (hash) {
+    if (!this._hashes) return;
     this._hashes = this._hashes.filter(action => action.hash !== hash);
     if (this._hashes.length === 0) state.remove('hash', this);
   }
 
   handleHash (hash, e) {
+    if (!this._hashes) return;
     for (const action of this._hashes) action.handle(hash, e);
   }
 
@@ -323,6 +326,7 @@ class Instance {
     this.debug(`dispose instance of ${this.registration.instanceClassName} on element [${this.element.id}]`);
     this.removeAttribute(this.registration.attribute);
     this.unlisten();
+    state.remove('hash', this);
     this._hashes = null;
     this._keys = null;
     this.isRendering = false;
@@ -332,6 +336,7 @@ class Instance {
     this.isScrollLocked = false;
     this.isLoading = false;
     this.isSwappingFont = false;
+    this.isMouseMoving = false;
     this._emitter.dispose();
     this._emitter = null;
     this._ascent.dispose();
