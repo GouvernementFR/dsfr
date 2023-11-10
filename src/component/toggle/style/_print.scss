@@ -1,0 +1,11 @@
+#{ns(toggle)} {
+  label {
+    @include before('', block) {
+      @include text-style(md);
+    }
+  }
+
+  #{ns(hint-text)} {
+    @include text-style(md);
+  }
+}

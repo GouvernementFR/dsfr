@@ -1,0 +1,11 @@
+////
+/// Highlight Print
+/// @group highlight
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _highlight-scheme('print');
+}

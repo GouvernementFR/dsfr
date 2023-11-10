@@ -1,0 +1,11 @@
+////
+/// Link Print
+/// @group link
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _link-scheme('print');
+}

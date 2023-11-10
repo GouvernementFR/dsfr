@@ -1,0 +1,13 @@
+////
+/// Connect Print
+/// @group connect
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _connect-scheme('print');
+
+  @import 'style/print';
+}

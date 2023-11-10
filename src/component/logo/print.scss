@@ -1,0 +1,13 @@
+////
+/// Logo Print
+/// @group logo
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _logo-scheme('print');
+
+  @import 'style/print';
+}

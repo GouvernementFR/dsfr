@@ -1,0 +1,11 @@
+#{ns(btn)} {
+  &--secondary,
+  &--tertiary,
+  &--tertiary-no-outline,
+  &--close,
+  &--display,
+  &--fullscreen,
+  &--tooltip {
+    background-color: transparent;
+  }
+}

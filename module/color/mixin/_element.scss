@@ -21,7 +21,7 @@ $COLOR: constant.$value;
   $standalone: map.get($options, standalone);
 
   $legacy-target: null;
-  @if $legacy {
+  @if $legacy == true {
     $legacy-target: ie11;
   }
 

@@ -1,0 +1,10 @@
+#{ns(card)} {
+  &__detail,
+  &__desc {
+    @include text-style(md);
+  }
+
+  &__detail {
+    line-height: 1rem !important;
+  }
+}

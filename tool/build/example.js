@@ -40,7 +40,8 @@ const buildExample = async (pck, locale) => {
     style: {
       main: [],
       scheme: [],
-      legacy: []
+      legacy: [],
+      print: []
     },
     script: {
       module: [],

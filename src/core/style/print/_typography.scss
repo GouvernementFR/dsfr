@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+h4 {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+#{ns(text)}--sm,
+#{ns(text)}--xs {
+  @include text-style(md, true, true, null, true);
+}

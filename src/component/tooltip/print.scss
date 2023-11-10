@@ -1,0 +1,13 @@
+////
+/// Tooltip Print
+/// @group tooltip
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _tooltip-scheme('print');
+
+  @import 'style/print';
+}

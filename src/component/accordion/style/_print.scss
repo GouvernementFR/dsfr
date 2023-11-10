@@ -1,0 +1,13 @@
+#{ns(accordion)} {
+  &__btn::after {
+    transform: rotate(-180deg);
+  }
+
+  #{ns(collapse)}:not(#{ns(collapse--expanded)}) {
+    --collapse-max-height: none !important;
+    --collapse: inherit !important;
+
+    visibility: visible;
+    @include padding(1rem);
+  }
+}

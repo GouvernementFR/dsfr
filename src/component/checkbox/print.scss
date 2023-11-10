@@ -1,0 +1,11 @@
+////
+/// Checkbox Print
+/// @group checkbox
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _checkbox-scheme('print');
+}

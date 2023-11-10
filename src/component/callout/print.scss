@@ -1,0 +1,11 @@
+////
+/// Callout Print
+/// @group callout
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _callout-scheme('print');
+}

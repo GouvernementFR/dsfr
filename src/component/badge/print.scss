@@ -1,0 +1,11 @@
+////
+/// Badge Print
+/// @group badge
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _badge-scheme('print');
+}

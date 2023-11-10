@@ -1,0 +1,13 @@
+////
+/// Stepper Print
+/// @group stepper
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _stepper-scheme('print');
+
+  @import 'style/print';
+}
