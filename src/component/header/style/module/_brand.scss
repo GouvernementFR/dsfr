@@ -11,6 +11,7 @@
     @include margin-y(-4v, lg);
     @include size(100%);
     @include padding-x(1v);
+    overflow: hidden;
 
     @include media-query.respond-from(lg) {
       flex-wrap: nowrap;
@@ -43,10 +44,6 @@
   &__operator,
   &__service {
     @include padding(4v, lg);
-
-    &:not(:last-child) {
-      @include margin-right(2v, lg);
-    }
   }
 
   &__logo {
@@ -65,6 +62,7 @@
 
     img {
       display: block;
+      @include min-width(14v);
     }
   }
 
@@ -85,6 +83,10 @@
         vertical-align: middle;
         @include margin(-1v 0 0 1v);
       }
+    }
+
+    &-tagline {
+      @include text-style(sm);
     }
   }
 }

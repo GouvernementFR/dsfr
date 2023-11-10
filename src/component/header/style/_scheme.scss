@@ -64,7 +64,7 @@
         @include btn-kind-scheme(4, $legacy);
 
         &--menu {
-          @include color.text(default grey, (legacy:$legacy));
+          @include btn-kind-scheme(3, $legacy);
         }
       }
     }
