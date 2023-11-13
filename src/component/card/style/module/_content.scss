@@ -19,7 +19,9 @@
     @include margin-bottom(0);
 
     a {
-      @include icon(arrow-right-line, sm, after);
+      @include icon(arrow-right-line, sm, after) {
+        @include margin-left(2v);
+      }
     }
 
     @include target-blank {

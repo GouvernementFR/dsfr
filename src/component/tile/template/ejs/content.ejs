@@ -59,9 +59,7 @@ if (content.badge) start.badge = content.badge;
 
 <div class="<%= prefix %>-tile__content">
   <<%= markup %> class="<%= prefix %>-tile__title">
-      <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %>
-        <%- content.title %>
-      <% if (hasLink) { %></a><% } %>
+      <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %><%- content.title %><% if (hasLink) { %></a><% } %>
   </<%= markup %>>
 
   <% if (content.description !== undefined) { %>
