@@ -3,10 +3,13 @@ import { Type } from '../../analytics/action/type';
 import { ActionElement } from '../../analytics/action/action-element';
 import { ActioneeEmission } from './actionee-emission';
 
-const RATING_ATTRIBUTE = api.internals.ns.attr('analytics-rating');
+const ActionAttributes = {
+  RATING: api.internals.ns.attr('analytics-rating'),
+  ACTION: api.internals.ns.attr('analytics-action')
+};
 
 class Actionee extends api.core.Instance {
-  constructor (priority = -1, category = '', title = null) {
+  constructor (priority = -1, category = '', title = null, isForced = false) {
     super();
     this._type = null;
     this._priority = priority;
@@ -15,6 +18,7 @@ class Actionee extends api.core.Instance {
     this._parameters = {};
     this._data = {};
     this._isMuted = false;
+    this._isForced = isForced;
   }
 
   static get instanceClassName () {
@@ -62,7 +66,7 @@ class Actionee extends api.core.Instance {
       return;
     }
 
-    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this._title, this._parameters, this.hasAttribute(RATING_ATTRIBUTE));
+    this._actionElement = new ActionElement(this.node, this._type, this.id, this._category, this.getAttribute(ActionAttributes.ACTION) || this._title, this._parameters, this.hasAttribute(ActionAttributes.RATING), this.hasAttribute(ActionAttributes.ACTION) || this._isForced);
     if (this._isMuted) this._actionElement.isMuted = true;
 
     this.addDescent(ActioneeEmission.REWIND, this.rewind.bind(this));

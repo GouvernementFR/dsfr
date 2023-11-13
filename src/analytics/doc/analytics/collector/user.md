@@ -101,9 +101,9 @@ _String_ (EA: user\_language)
 
 `window.dsfr.analytics.user.language`
 
-langage de l’utilisateur au format ISO 639-1.
+Langage de l’utilisateur au format ISO 639-1.
 
-par défaut, langage du navigateur
+Par défaut, langage du navigateur
 
 * * *
 
