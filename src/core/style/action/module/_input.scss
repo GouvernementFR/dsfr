@@ -25,7 +25,8 @@ input[type=search] {
 
 // Fix for NVDA
 input[type="checkbox"],
-input[type="radio"] {
+input[type="radio"],
+input[type="range"] {
   @include reset.appearance;
 }
 

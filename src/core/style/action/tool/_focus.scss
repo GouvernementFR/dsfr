@@ -7,9 +7,18 @@
   $selectors: ();
   @each $element, $setting in $elements {
     $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, map-get($focus, selector)), 'comma');
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+      }
     }
   }
 
@@ -22,9 +31,18 @@
   $selectors: ();
   @each $element, $setting in $elements {
     $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus', map-get($focus, selector)), 'comma');
+      }
     }
   }
 
@@ -37,9 +55,18 @@
   $selectors: ();
   @each $element, $setting in $elements {
     $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus:not(:focus-visible)', map-get($focus, selector)), 'comma');
+      }
     }
   }
 
@@ -53,9 +80,18 @@
 
   @each $element, $setting in $elements {
     $focus: map-get($setting, focus);
+    $isolated: map-get($setting, isolated);
     $selector: map-get($setting, selector);
     @if $focus {
-      $selectors: append($selectors, nest($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
+      @if $isolated {
+        $isolated-selectors: nest($selector, '&:focus-visible', map-get($focus, selector));
+        #{$isolated-selectors} {
+          @content;
+        }
+      }
+      @else {
+        $selectors: append($selectors, nest($selector, '&:focus-visible', map-get($focus, selector)), 'comma');
+      }
     }
   }
 

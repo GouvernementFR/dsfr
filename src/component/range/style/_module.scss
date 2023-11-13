@@ -1,0 +1,136 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'module/reset';
+@use 'module/spacing';
+@use 'module/selector';
+@use 'module/disabled';
+
+#{selector.ns-group(range)} {
+  --thumb-size: #{spacing.space(6v)};
+
+  @include relative;
+
+  &--sm {
+    --thumb-size: #{spacing.space(4v)};
+    background-size: 100% 2px;
+  }
+
+  #{selector.ns(label)} {
+    @include relative;
+    background-size: 0 0;
+
+    &::before,
+    &::after {
+      @include text-style(xs);
+      @include absolute(calc(100% + var(--thumb-size) + #{spacing.space(5v)}));
+      pointer-events: none;
+    }
+
+    &::before {
+      content: attr(#{selector.ns-attr(min, null, true)});
+      left: 0;
+    }
+
+    &::after {
+      content: attr(#{selector.ns-attr(max, null, true)});
+      right: 0;
+    }
+  }
+
+  #{selector.ns(message)} {
+    &:first-child {
+      @include margin-top(2v);
+    }
+  }
+
+  input[type=range] {
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: 0 50%;
+    outline: none;
+    @include width(100%);
+    @include margin(1v 0);
+  }
+
+  &#{selector.ns-attr(js-range)} input[type=range] {
+    @include reset.appearance(none);
+    background-color: transparent;
+    @include margin(5v 0);
+    @include size(100%, var(--thumb-size));
+
+    &:not(:only-of-type) {
+      pointer-events: none;
+    }
+
+    @include selector.range-thumb {
+      @include reset.appearance(none);
+      @include size(var(--thumb-size), var(--thumb-size));
+      border-radius: 50%;
+      border: none;
+      pointer-events: auto;
+
+      &:active {
+        @include z-index(above);
+      }
+    }
+  }
+
+  output {
+    display: none;
+  }
+
+  &#{selector.ns-attr(js-range)} output {
+    @include absolute;
+    @include min-width(var(--thumb-size));
+    @include z-index(above);
+    @include text-style(xs);
+    display: inline;
+    text-align: center;
+    pointer-events: none;
+    left: 0;
+  }
+
+  &#{selector.ns-group(range)}--double {
+    output {
+      @include min-width(12v);
+    }
+
+    &#{selector.ns-attr(js-range)} input[type=range] {
+      @include width(calc(100% - var(--thumb-size)));
+    }
+
+    &#{selector.ns-attr(js-range)} input[type=range]:nth-of-type(2) {
+      @include absolute;
+      left: var(--thumb-size);
+      background-position: 100% 50%;
+      background-size: var(--thumb-size) 4px;
+    }
+  }
+
+  &--no-indicators {
+    #{selector.ns(label)} {
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+
+    &#{selector.ns-attr(js-range)} input[type=range] {
+      @include margin-bottom(1v);
+    }
+  }
+
+  &--valid,
+  &--error {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
+    }
+  }
+}

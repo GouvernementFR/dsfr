@@ -1,0 +1,61 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'module/color';
+@use 'module/selector';
+@use 'module/elevation';
+@use 'module/disabled';
+
+@mixin _range-scheme($legacy: false) {
+  #{selector.ns-group(range)} {
+    &#{selector.ns-attr(js-range)} {
+      input[type=range] {
+        @include color.background-image((active blue-france) (contrast grey), (legacy:$legacy));
+
+        @include selector.range-thumb($legacy) {
+          @include elevation.elevate(raised, (legacy: $legacy));
+          @include color.background(action-high blue-france, (legacy:$legacy));
+        }
+
+        @include disabled.selector {
+          @include color.background-image((disabled grey) (contrast grey), (legacy:$legacy));
+          @include selector.range-thumb($legacy) {
+            @include color.background(disabled grey, (legacy:$legacy));
+          }
+        }
+      }
+    }
+
+    output {
+      @include color.text(active blue-france, (legacy:$legacy));
+    }
+
+    &:not(&--disabled) {
+      #{selector.ns(label)} {
+        @include _pseudo(before after) {
+          @include color.text(label grey, (legacy:$legacy));
+        }
+      }
+    }
+
+    &--error {
+      @include before {
+        @include color.background-image(border plain error, (legacy:$legacy));
+      }
+    }
+
+    &--valid {
+      @include before {
+        @include color.background-image(border plain success, (legacy:$legacy));
+      }
+    }
+
+    &--disabled {
+      output {
+        @include color.text(disabled grey, (legacy:$legacy));
+      }
+    }
+  }
+}

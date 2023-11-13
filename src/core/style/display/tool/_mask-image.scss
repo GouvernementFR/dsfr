@@ -17,3 +17,8 @@
   -webkit-mask-position: $value;
   mask-position: $value;
 }
+
+@mixin mask-image-repeat($value) {
+  -webkit-mask-repeat: $value;
+  mask-repeat: $value;
+}
