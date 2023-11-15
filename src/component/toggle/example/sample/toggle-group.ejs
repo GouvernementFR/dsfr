@@ -3,9 +3,9 @@ const toggles = locals.toggles || {};
 const toggle = locals.toggle || {};
 
 let data = {
-  label: 'Label action interrupteur',
+  label: 'Label de l\'interrupteur',
   ...toggle || {},
-  hint: toggle.hint === true ? 'Texte d’aide pour clarifier l’action' : toggle.hint,
+  hint: toggle.hint === true ? 'Texte de description additionnel' : toggle.hint,
 }
 
 const elements = [];
