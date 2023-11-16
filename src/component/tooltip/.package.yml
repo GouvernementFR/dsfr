@@ -1,7 +1,7 @@
 id: tooltip
 title: Information contextuelle et Infobulle
 description:
-doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/information-contextuelle
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/infobulle
 wrapper: col-8
 style:
   - core
