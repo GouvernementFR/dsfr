@@ -26,7 +26,7 @@ class Range extends api.core.Instance {
       this._observer = new ResizeObserver(this._retrieveWidth.bind(this));
       this._observer.observe(this.node);
       this._retrieveWidth();
-      this.addDescent(api.scheme.SchemeEmission.SCHEME, this._model.update.bind(this._model));
+      if (api.scheme) this.addDescent(api.scheme.SchemeEmission.SCHEME, this._model.update.bind(this._model));
     }
 
     this.addAscent(RangeEmission.CONSTRAINTS, this.setConstraints.bind(this));
