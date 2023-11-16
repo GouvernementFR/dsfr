@@ -3,6 +3,8 @@
 /// @group core
 ////
 
+@use 'module/color';
+
 @mixin focusable-selector($elements: $action-elements) {
   $selectors: ();
   @each $element, $setting in $elements {
@@ -97,5 +99,25 @@
 
   #{$selectors} {
     @content;
+  }
+}
+
+@mixin focusable($elements: $action-elements) {
+  @include focusable-selector($elements) {
+    outline-offset: 2px;
+    outline-width: 2px;
+    outline-color: color.$focus;
+  }
+
+  @include focusable-selector-focus($elements) {
+    outline-style: solid;
+  }
+
+  @include focusable-selector-focus-not-visible($elements) {
+    outline-style: none;
+  }
+
+  @include focusable-selector-focus-visible($elements) {
+    outline-style: solid;
   }
 }

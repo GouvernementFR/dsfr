@@ -1,0 +1,26 @@
+<%
+const segmented = locals.segmented || {}
+const elements = segmented.elements || [];
+
+const id = segmented.id || uniqueId('segmented');
+segmented.legend = segmented.legend || getText('fieldset.legend', 'segmented');
+const elementLength = elements.length || 0;
+
+for (let i = elementLength + 1; i < elementLength + 4; i++) elements.push({
+  id: `${id}-${i}`,
+  label: elements.label || getText('label', 'form'),
+  name: id,
+  value: i,
+  icon: segmented.icon,
+  checked: i === 2,
+  disabled: segmented.disabled && i === 3,
+});
+
+const data = {
+  elements: elements,
+  ...segmented,
+}
+
+%>
+
+<%- include('../../template/ejs/segmented.ejs', {segmented: data}) %>

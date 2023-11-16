@@ -1,0 +1,15 @@
+title: Contrôle segmenté
+description: Le composant "contrôle segmenté" incite l'utilisateur à choisir entre plusieurs options d'affichage disponibles (vues), mutuellement exclusives avec une valeur sélectionnée par défaut.
+
+fieldset: 
+  legend: Légende 
+
+sample: 
+  default: Contrôle segmenté simple
+  sm: Contrôle segmenté taille SM
+  disabled: Contrôle segmenté désactivé
+  icon: Contrôle segmenté avec icônes
+  no-legend: Contrôle segmenté sans légende
+  legend-inline: Contrôle segmenté avec légende en ligne
+  hint-text: Contrôle segmenté avec texte d'aide
+  max: Contrôle segmenté cas maximum (non recommandé)
