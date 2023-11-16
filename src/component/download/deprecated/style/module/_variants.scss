@@ -15,14 +15,17 @@
 
   &--card &__link {
     @include title-style(h5);
+    @include icon-size(sm, after);
+
+    @include respond-from(md) {
+      @include icon-size(md, after);
+    }
 
     @include after {
       @include absolute(null, 6v, 6v);
-      @include icon-size(sm);
       @include margin(0);
 
       @include respond-from(md) {
-        @include icon-size(md);
         bottom: spacing.space(8v);
         right: spacing.space(8v);
       }
@@ -45,8 +48,8 @@
     }
 
     @include has-icon {
+      @include icon-size(sm, before);
       @include before {
-        @include icon-size(sm);
         @include margin-right(2v);
       }
     }

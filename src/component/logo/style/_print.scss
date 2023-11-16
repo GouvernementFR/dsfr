@@ -1,0 +1,5 @@
+#{ns(logo)} {
+  &::after {
+    background-position: 0 calc(100% + 1.875rem) !important;
+  }
+}

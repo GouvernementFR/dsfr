@@ -12,7 +12,6 @@ class InputActionee extends ComponentActionee {
   }
 
   init () {
-    this.setImpressionType();
     this._input = this.querySelector(api.internals.ns.selector('input'));
     this._label = this.querySelector(api.internals.ns.selector('label'));
     this._inputWrap = this.querySelector(api.internals.ns.selector('input-wrap'));

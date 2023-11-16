@@ -1,0 +1,11 @@
+////
+/// Follow Print
+/// @group follow
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _follow-scheme('print');
+}

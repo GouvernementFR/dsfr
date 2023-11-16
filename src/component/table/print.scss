@@ -1,0 +1,13 @@
+////
+/// Table Print
+/// @group table
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _table-scheme('print');
+
+  @import 'style/print';
+}

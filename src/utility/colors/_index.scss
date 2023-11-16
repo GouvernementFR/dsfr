@@ -11,6 +11,10 @@ $setting: setting.$setting !default;
   @include scheme.scheme(true);
 }
 
+@mixin print() {
+  @include scheme.scheme('print');
+}
+
 @mixin full() {
   @include base;
   @include legacy;

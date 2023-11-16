@@ -4,6 +4,7 @@
 ////
 
 @use 'module/color';
+@use 'module/selector';
 
 @mixin _navigation-scheme-nav($legacy: false) {
   #{ns(nav)} {
@@ -11,7 +12,7 @@
     &__btn {
       @include color.text(action-high grey, (legacy: $legacy));
 
-      &[aria-current] {
+      @include selector.current {
         @include color.text(active blue-france, (legacy: $legacy));
         @include before {
           @include color.background(active blue-france, (legacy: $legacy));
@@ -22,7 +23,7 @@
     &__btn {
       &[aria-expanded="true"]:not(:disabled) {
         @include color.background(open blue-france, (legacy: $legacy));
-        @include color.text(active blue-france, (legacy: $legacy));
+        @include color.text(action-high blue-france, (legacy: $legacy));
       }
     }
 

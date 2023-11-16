@@ -21,7 +21,7 @@
   #{ns(toggle__label)} {
     justify-content: space-between;
     @include padding-left(0);
-    width: calc(100% - #{space(10v)});
+    width: calc(100% - #{space(8v)});
     flex: 1;
 
     @include before {

@@ -4,7 +4,7 @@ import { HeaderModalButtonActionee } from './header-modal-button-actionee';
 
 class HeaderModalActionee extends ComponentActionee {
   constructor () {
-    super(null, 0);
+    super(0);
   }
 
   static get instanceClassName () {

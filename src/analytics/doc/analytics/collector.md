@@ -11,7 +11,7 @@ Chacune de ces données est répartie dans différentes catégories qui sont dis
         analytics: {
             domain: 'mon.domainedetracking.com',
             // collection: 'manual',
-            // enableRating: true
+            // isActionEnabled: false,  
         }
     };
 </script>
@@ -42,12 +42,13 @@ Défini le mode de récolte des données de la page :
 
 * * *
 
-##### enableRating
+##### isActionEnabled
 
 _Boolean_
 
-Permet d’activer le taux de click. (défaut: false)
-Voir les [actions](actions.md)
+Défini si la mesure d'audience des actions est activée ou non.
+
+* Par défaut, la mesure d'audience des actions est activée.
 
 * * *
 

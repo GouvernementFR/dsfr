@@ -5,7 +5,6 @@ import { Init } from './facade/init';
 import { ConsentManagerPlatform } from './cmp/consent-manager-platform';
 import push from './facade/push';
 import PushType from './facade/push-type';
-import actions from './action/actions';
 import queue from './engine/queue';
 import opt from './facade/opt';
 import debug from './facade/debug';
@@ -65,7 +64,6 @@ class Analytics {
     this._cmp = new ConsentManagerPlatform(this._config.cmp);
     this._collector = new Collector(this._config);
     this._collector.reset();
-    actions.configure(this._config);
 
     this._isReady = true;
     this._resolve();
@@ -104,6 +102,14 @@ class Analytics {
 
   get collection () {
     return this._collector.collection;
+  }
+
+  get isActionEnabled () {
+    return this._collector.isActionEnabled;
+  }
+
+  set isActionEnabled (value) {
+    this._collector.isActionEnabled = value;
   }
 
   get isDebugging () {

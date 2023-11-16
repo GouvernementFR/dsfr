@@ -36,7 +36,7 @@
   label {
     --toggle-status-width: auto;
     display: inline-flex;
-    width: spacing.space(calc(100% - 10v));
+    width: spacing.space(calc(100% - 8v));
     min-height: spacing.space(6v);
     @include text-style(md);
     -webkit-tap-highlight-color: transparent;
@@ -57,7 +57,7 @@
     @include before('', block) {
       flex-shrink: 0;
       height: spacing.space(calc(5v + 1px));
-      @include padding-top(6v);
+      @include padding-top(7v);
       @include text-style(xs);
       border-radius: spacing.space(3v);
       @include margin-right(8v);

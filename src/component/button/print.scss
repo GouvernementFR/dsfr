@@ -1,0 +1,13 @@
+////
+/// Button Print
+/// @group button
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _button-scheme('print');
+
+  @import 'style/print';
+}

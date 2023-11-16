@@ -5,7 +5,13 @@
 
 * select.label (string, required) : label
 
-* select.options (array, required) : options du select, un array d'objets avec :
+* select.optionGroups (array) : groupes d'options du select, un array d'objets avec :
+  * label : label du groupe d'options
+  * options (array) : options du select, un array d'objets avec :
+    * value : attribut value de l'option
+    * label : label de l'option
+
+* select.options (array) : options du select, un array d'objets avec :
   * value : attribut value de l'option
   * label : label de l'option
 
@@ -77,11 +83,27 @@ if (select.disabled === true) attributes['disabled'] = '';
   <option value="" selected disabled hidden><%= select.placeholder %></option>
   <% } %>
 
-  <%
-  for (let i = 0; i < select.options.length; i++) {
-    let option = select.options[i];
-  %>
-  <option value="<%= option.value %>"><%= option.label %></option>
+  <% if (select.optionGroups != undefined) { %>
+    <%
+    for (let i = 0; i < select.optionGroups.length; i++) {
+      let optionGroup = select.optionGroups[i];
+    %>
+      <optgroup label="<%= optionGroup.label %>">
+      <%
+      for (let i = 0; i < optionGroup.options.length; i++) {
+        let option = optionGroup.options[i];
+      %>
+        <option value="<%= option.value %>"><%= option.label %></option>
+      <% } %>
+      </optgroup>
+    <% } %>
+  <% } else { %>
+    <%
+    for (let i = 0; i < select.options.length; i++) {
+      let option = select.options[i];
+    %>
+    <option value="<%= option.value %>"><%= option.label %></option>
+    <% } %>
   <% } %>
 </select>
 

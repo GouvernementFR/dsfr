@@ -4,6 +4,7 @@
 ////
 
 @use 'module/spacing';
+@use 'module/selector';
 
 #{ns(nav)} {
   @include disable-underline;
@@ -42,7 +43,7 @@
 
           // @include z-index(auto);
 
-          &[aria-current] {
+          @include selector.current {
             @include before {
               @include absolute(auto, null, 0, 0, 100%, 2px);
               @include margin-top(0);
@@ -94,7 +95,7 @@
 
     @include enable-tint;
 
-    &[aria-current] {
+    @include selector.current {
       position: relative;
       @include before('', block) {
         @include absolute(50%, null, null, 0, 2px, 6v);
@@ -106,9 +107,11 @@
   &__link {
     display: block;
 
-    &[aria-current]:not([href]) {
-      pointer-events: none;
-      cursor: default;
+    &:not([href]) {
+      @include selector.current {
+        pointer-events: none;
+        cursor: default;
+      }
     }
   }
 

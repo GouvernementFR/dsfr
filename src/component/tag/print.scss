@@ -1,0 +1,11 @@
+////
+/// Tag Print
+/// @group tag
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _tag-scheme('print');
+}

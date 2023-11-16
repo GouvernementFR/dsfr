@@ -1,0 +1,7 @@
+<%
+let range = locals.range || {};
+let data = {...range};
+data.type = 'step';
+%>
+
+<%- include('./range', {range:data}); %>

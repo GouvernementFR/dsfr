@@ -28,6 +28,7 @@ const analyse = (id, path, ascendants = []) => {
     if (fs.existsSync(`${absolute}/main.scss`)) {
       files = ['main'];
       files.push(...['legacy'].filter(file => fs.existsSync(`${absolute}/${file}.scss`)));
+      files.push(...['print'].filter(file => fs.existsSync(`${absolute}/${file}.scss`)));
       config.style = { level: -1, files: files };
     }
 
@@ -52,6 +53,7 @@ const analyse = (id, path, ascendants = []) => {
     if (children.some(child => child.style)) {
       files = ['main'];
       files.push(...['legacy'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
+      files.push(...['print'].filter(file => children.some(child => child.style && child.style.files.indexOf(file) > -1)));
       config.style = { level: -1, files: files };
       replace.style = [...children.map(child => !child.detached ? child.replace.style : []).flat(), ...children.filter(child => child.style && !child.detached).map(child => child.id)].filter((id, index, array) => array.indexOf(id) === index);
     }

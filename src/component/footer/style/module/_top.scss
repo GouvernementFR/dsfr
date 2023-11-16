@@ -10,9 +10,9 @@
 #{ns(footer)} {
   &__top {
     @include display-flex(null);
-    @include margin(-9.5v 0 4v);
-    @include margin(-9.5v 0 10v, md);
-    @include padding(8v 0 4v);
+    @include margin(-7.5v 0 6v);
+    @include margin(-7.5v 0 8v, md);
+    @include padding(8v 0 5v);
   }
 
   /**
@@ -30,6 +30,7 @@
   * Style de la liste
   */
   &__top-list {
+    @include text-style(xs);
     @include margin(0);
 
     li {

@@ -9,9 +9,11 @@
 @mixin _toggle-scheme($legacy: false) {
   #{ns(toggle)} {
     label {
+      @include color.text(label grey, (legacy:$legacy));
+
       @include before {
         @include color.text(active blue-france, (legacy:$legacy));
-        @include color.data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-unchecked-svg);
+        @include color.data-uri-svg(border action-high blue-france, (legacy: $legacy), $toggle-unchecked-svg);
       }
 
       @include after {
@@ -29,11 +31,11 @@
 
         ~ #{ns(toggle__label)} {
           @include before {
-            @include color.data-uri-svg((action-high blue-france) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
+            @include color.data-uri-svg((border active blue-france) (border active blue-france), (legacy: $legacy), $toggle-checked-svg);
           }
 
           @include after {
-            @include color.data-uri-svg(action-high blue-france, (legacy: $legacy), $toggle-svg);
+            @include color.data-uri-svg(active blue-france, (legacy: $legacy), $toggle-svg);
           }
         }
       }
@@ -94,7 +96,7 @@
       &:checked {
         ~ #{ns(toggle__label)} {
           @include before {
-            @include color.data-uri-svg((border plain error) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
+            @include color.data-uri-svg((border plain error) (active blue-france), (legacy: $legacy), $toggle-checked-svg);
           }
         }
       }
@@ -120,7 +122,7 @@
       &:checked {
         ~ #{ns(toggle__label)} {
           @include before {
-            @include color.data-uri-svg((border plain success) (action-high blue-france), (legacy: $legacy), $toggle-checked-svg);
+            @include color.data-uri-svg((border plain success) (active blue-france), (legacy: $legacy), $toggle-checked-svg);
           }
         }
       }

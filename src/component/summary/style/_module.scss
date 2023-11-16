@@ -23,6 +23,7 @@
 
   @include title {
     @include text-style(xs);
+    @include padding-left(2v);
     font-weight: font-weight(bold);
     text-transform: uppercase;
   }

@@ -1,0 +1,13 @@
+////
+/// Summary Print
+/// @group summary
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _summary-scheme('print');
+
+  @import 'style/print';
+}

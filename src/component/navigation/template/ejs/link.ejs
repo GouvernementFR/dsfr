@@ -1,25 +1,27 @@
 <%#
 # paramètres navigation menu link
 
-* menu.label (string, required) : label du lien
+* link.label (string, required) : label du lien
 
-* menu.href (string, required) : url du lien
+* link.id (string, required) : id du lien
 
-* menu.target (string, optional) [default: '_self'] : tableau d'éléments de navigation ('_blank' ou '_self')
+* link.href (string, required) : url du lien
 
-* menu.active (boolean, optional) : si true l'élément est actif
+* link.blank (boolean, optional) [default: false] : si true, target '_blank' 
 
-* menu.isPage (boolean, optional) : si true aria-current: 'page', sinon aria-current: 'true'
+* link.active (boolean, optional) : si true l'élément est actif
+
+* link.isPage (boolean, optional) : si true aria-current: 'page', sinon aria-current: 'true'
 
 %>
 
 <%
 let link = locals.link || {};
-const attrs = {
+let attrs = {
   href: link.href,
-  target: link.target || '_self',
   id: link.id
 }
+if (link.blank) attrs = {...targetBlankData(), ...attrs};
 
 if (link.active) attrs['aria-current'] = link.isPage ? 'page' : 'true';
 

@@ -4,7 +4,7 @@ import { Hierarchy } from '../utils/hierarchy/hierarchy';
 import queue from '../engine/queue';
 
 class ActionElement {
-  constructor (node, type, id, category = '', title = null, parameters = {}, isRatingActive) {
+  constructor (node, type, id, category = '', title = null, parameters = {}, isRating = false, isForced = false) {
     this._node = node;
     this._type = type;
     this._id = id || this._node.id;
@@ -12,7 +12,8 @@ class ActionElement {
     this._title = title;
     this._category = category;
     this._parameters = parameters;
-    this._isRatingActive = isRatingActive;
+    this._isRating = isRating;
+    this._isForced = isForced;
     this._hasBegun = false;
 
     // this._init();
@@ -33,6 +34,7 @@ class ActionElement {
     if (this._type.isSingular) this._action.singularize();
     Object.keys(this._parameters).forEach(key => this._action.addParameter(key, this._parameters[key]));
     this._action.isMuted = this._isMuted;
+    this._action.isForced = this._isForced;
 
     this._action.labels[0] = this._type.id;
     this._action.labels[1] = this._hierarchy.globalComponent;
@@ -65,9 +67,9 @@ class ActionElement {
   }
 
   begin (data = {}) {
-    if (this._hasBegun || !this._isRatingActive) return;
+    if (this._hasBegun) return;
     this._hasBegun = true;
-    if (this._type.isBeginning) queue.appendStartingAction(this._action, data);
+    if (this._type.isBeginning && (this._type.isSingular || this._isRating)) queue.appendStartingAction(this._action, data);
   }
 
   act (data = {}) {
@@ -83,7 +85,5 @@ class ActionElement {
     actions.remove(this._action);
   }
 }
-
-ActionElement.isRatingEnabled = false;
 
 export { ActionElement };

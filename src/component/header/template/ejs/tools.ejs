@@ -15,16 +15,19 @@
 <div class="<%= prefix %>-header__tools">
   <% if (tools.links !== undefined || tools.translate !== undefined) { %>
     <div class="<%= prefix %>-header__tools-links">
-      <ul class="<%= prefix %>-btns-group">
-        <% if (tools.links.buttons) { %>
-          <% for (let i = 0; i < tools.links.buttons.length; i++) { %>
-          <li>
-            <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[i]}); %>
-          </li>
-          <% } %>
+      <% if (tools.links.buttons.length) { %>
+        <% if (tools.links.buttons.length > 1) { %>
+          <ul class="<%= prefix %>-btns-group">
+            <% for (let i = 0; i < tools.links.buttons.length; i++) { %>
+              <li>
+                <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[i]}); %>
+              </li>
+            <% } %>
+          </ul>
+        <% } else { %>
+          <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[0]}); %>
         <% } %>
-      </ul>
-
+      <% } %>
       <% if (tools.translate !== undefined) { %>
         <%- include('../../../translate/template/ejs/translate.ejs', { translate: tools.translate }); %>
       <% } %>

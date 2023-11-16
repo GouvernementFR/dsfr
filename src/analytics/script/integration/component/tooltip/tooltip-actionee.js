@@ -10,10 +10,6 @@ class TooltipActionee extends ComponentActionee {
     return 'TooltipActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     return 'information contextuelle';
   }

@@ -10,10 +10,6 @@ class FooterActionee extends ComponentActionee {
     return 'FooterActionee';
   }
 
-  init () {
-    this.setImpressionType();
-  }
-
   get label () {
     return 'pied de page';
   }

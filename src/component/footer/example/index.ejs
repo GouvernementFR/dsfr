@@ -6,6 +6,10 @@
 
 <%- sample('Pied de page avec logo opérateur', './sample/footer-operator.ejs', {}, true); %>
 
-<%- sample('Pied de page avec logos partenaires', './sample/footer-partners.ejs', {}, true); %>
+<%- sample('Pied de page avec logos partenaires', './sample/footer-partners.ejs', {footer: {partners: {mainPartner: true, subPartners: true}}}, true); %>
 
-<%- sample('Pied de page complet', './sample/footer.ejs', {footer: {brand: true, operator: true, bottom: true, content: true, partners: true, top: true}}, true); %>
+<%- sample('Pied de page avec logo partenaire primaire uniquement', './sample/footer-partners.ejs', {footer: {partners: {mainPartner: true}}}, true); %>
+
+<%- sample('Pied de page avec logos partenaires secondaires uniquement', './sample/footer-partners.ejs', {footer: {partners: {subPartners: true}}}, true); %>
+
+<%- sample('Pied de page complet', './sample/footer.ejs', {footer: {brand: true, operator: true, bottom: true, content: true, partners: {mainPartner: true, subPartners: true}, top: true}}, true); %>

@@ -23,7 +23,7 @@ window.addFirstname = (button, id) => {
 
   const removeButton = document.createElement('button');
   const labelRemoveButton = '<%= getText("label.remove-firstname", "name") %>';
-  removeButton.classList = '<%= prefix %>-btn <%= prefix %>-btn--tertiary <%= prefix %>-icon-delete-line';
+  removeButton.classList = '<%= prefix %>-btn <%= prefix %>-btn--secondary <%= prefix %>-icon-delete-line';
   removeButton.innerHTML = labelRemoveButton;
   removeButton.title = labelRemoveButton;
 

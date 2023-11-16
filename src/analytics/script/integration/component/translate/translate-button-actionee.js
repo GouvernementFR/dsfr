@@ -11,18 +11,11 @@ class TranslateButtonActionee extends ComponentActionee {
   }
 
   init () {
-    this.setClickType();
-    this.id = this.node.id || this.registration.creator.node.id;
-    this.listenClick();
+    this.isMuted = true;
   }
 
   get button () {
     return this.element.getInstance('CollapseButton');
-  }
-
-  handleClick () {
-    const button = this.button;
-    if (button && !button.disclosed) this.act();
   }
 
   get label () {

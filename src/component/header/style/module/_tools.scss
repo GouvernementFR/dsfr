@@ -20,7 +20,7 @@
 
     #{ns(header__search)} {
       @include respond-from(lg) {
-        @include max-size(100v);
+        @include max-size(96v);
         @include margin-left(auto);
       }
     }

@@ -6,7 +6,7 @@
 #{ns(footer)} {
   @include disable-list-style;
   @include size(100%);
-  @include padding-top(10v);
+  @include padding-top(8v);
 
   @include body {
     @include display-flex(row, center, null, wrap);
@@ -42,7 +42,7 @@
      */
     #{ns(logo)} + #{ns(footer__brand-link)} {
       @include margin-left(6v);
-      @include margin-left(12v, md);
+      @include margin-left(8v, md);
     }
 
     @include respond-from(md) {
