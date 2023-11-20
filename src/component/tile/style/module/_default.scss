@@ -58,9 +58,12 @@
         }
       }
     }
+  }
 
-    &#{ns(tile--no-icon)} {
-      #{ns(tile__title a)} {
+  &--no-icon,
+  &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
+    #{ns(tile__title a)} {
+      &:not([target="_blank"]) {
         @include after(none);
       }
     }
@@ -87,11 +90,13 @@
         background-repeat: no-repeat;
       }
 
-      @include icon(arrow-right-line, md, after);
+      @include icon(arrow-right-line, sm, after) {
+        @include margin-left(2v);
+      }
     }
 
     @include target-blank {
-      @include icon(external-link-line, null, after);
+      @include icon(external-link-line, sm, after);
     }
   }
 

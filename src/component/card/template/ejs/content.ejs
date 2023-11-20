@@ -77,9 +77,7 @@ switch (true) {
 
 <div class="<%= prefix %>-card__content">
     <<%= markup %> class="<%= prefix %>-card__title">
-        <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %>
-          <%- content.title %>
-        <% if (hasLink) { %></a><% } %>
+        <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %><%- content.title %><% if (hasLink) { %></a><% } %>
     </<%= markup %>>
 
     <% if (content.description !== undefined) { %>
