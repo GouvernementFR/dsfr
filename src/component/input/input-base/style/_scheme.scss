@@ -45,17 +45,17 @@
       }
     }
 
-    #{ns(fieldset--valid)},
+    @at-root #{ns(fieldset--valid)},
     &-group--valid {
-      #{ns(input)}, 
+      #{ns(input)},
       #{ns(input-wrap--addon)} > #{ns(input)}:not(:last-child) {
         @include color.box-shadow(plain success, (legacy:$legacy), bottom-2-in);
       }
     }
 
-    #{ns(fieldset--error)},
+    @at-root #{ns(fieldset--error)},
     &-group--error {
-      #{ns(input)}, 
+      #{ns(input)},
       #{ns(input-wrap--addon)} > #{ns(input)}:not(:last-child) {
         @include color.box-shadow(plain error, (legacy:$legacy), bottom-2-in);
       }
