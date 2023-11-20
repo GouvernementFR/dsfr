@@ -27,7 +27,12 @@
     input + label {
       @include icon-size-legacy(sm, before) {
         vertical-align: -2px;
-        outline-width: 0;
+      }
+    }
+
+    input:focus + label {
+      @include before {
+        outline: none;
       }
     }
   }

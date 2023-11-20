@@ -10,11 +10,11 @@
     @include padding-right(3em);
 
     @include after ('+', block) {
-      @include absolute(null, 0.25em);
+      @include absolute(null, 0.25em, 0);
       font-size: 3em;
       font-weight: bold;
       line-height: 1;
-      transform: translate(5%, -10%);
+      transform: translate(5%, -17%);
     }
   }
 }

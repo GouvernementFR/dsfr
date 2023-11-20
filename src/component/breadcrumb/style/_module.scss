@@ -45,7 +45,7 @@ un padding de 4px et une marge négative en compensation sont mis en place afin 
       transform: none;
       visibility: inherit;
       overflow: visible;
-      max-height: initial;
+      max-height: none;
       @include before(none);
     }
   }

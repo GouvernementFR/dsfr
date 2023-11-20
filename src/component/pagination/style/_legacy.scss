@@ -17,19 +17,19 @@
     &__link {
       @include color.transparent-background((legacy: true, hover: true));
 
-      &--first {
+      #{ns(pagination)} &--first {
         @include icon-legacy(arrow-left-s-first-line, md);
       }
 
-      &--prev {
+      #{ns(pagination)} &--prev {
         @include icon-legacy(arrow-left-s-line, md);
       }
 
-      &--next {
+      #{ns(pagination)} &--next {
         @include icon-legacy(arrow-right-s-line, md);
       }
 
-      &--last {
+      #{ns(pagination)} &--last {
         @include icon-legacy(arrow-right-s-last-line, md);
       }
     }

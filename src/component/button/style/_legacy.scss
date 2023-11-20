@@ -9,6 +9,10 @@
   #{ns(btn)} {
     @include icon-legacy(null, sm);
 
+    &[href] {
+      text-decoration: none;
+    }
+
     @include class-not-start-with(#{ns(btn--icon-, '')}) {
       @include has-icon {
         @include icon-legacy(null, md);
@@ -50,6 +54,18 @@
 
   #{ns(btn--display)} {
     @include icon-legacy(theme-fill, sm);
+  }
+
+  #{ns(btn--briefcase)} {
+    @include icon-legacy(briefcase-fill, sm);
+  }
+
+  #{ns(btn--account)} {
+    @include icon-legacy(account-circle-fill, sm);
+  }
+
+  #{ns(btn--team)} {
+    @include icon-legacy(team-line, sm);
   }
 
   #{ns-group(btns)} {
