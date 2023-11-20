@@ -189,7 +189,7 @@ Pour plus d’informations : [Voir la documentation des icônes](https://www.sys
 
 ### Favicon
 
-[La documentation des favicons](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone-de-favoris) détaille la façon de les implémenter dans vos pages.
+[La documentation des favicons](https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones-de-favoris) détaille la façon de les implémenter dans vos pages.
 
 ## Fonctionnement
 
