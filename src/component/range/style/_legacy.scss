@@ -11,7 +11,7 @@
 @include legacy.is(ie11) {
   #{selector.ns-group(range)} {
     output {
-      min-width: spacing.space(12v);
+      min-width: spacing.space(4v);
     }
 
     input[type=range] {
@@ -27,8 +27,15 @@
     }
 
     &#{selector.ns-attr(js-range)} {
+      #{selector.ns(label)} {
+        &::before,
+        &::after {
+          top: calc(100% + #{spacing.space(12v)});
+        }
+      }
+
       input[type=range] {
-        @include margin-bottom(1v);
+        @include margin-bottom(4v);
 
         @include selector.range-ms-fill-lower {
           @include height(1v);
@@ -62,6 +69,13 @@
 
     &--sm {
       &#{selector.ns-attr(js-range)} {
+        #{selector.ns(label)} {
+          &::before,
+          &::after {
+            top: calc(100% + #{spacing.space(10v)});
+          }
+        }
+
         input[type=range] {
           @include selector.range-ms-track {
             @include height(0.5v);

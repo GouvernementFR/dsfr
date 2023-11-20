@@ -11,16 +11,14 @@
       &--sm {
         label {
           &::before {
-            @include margin-top(4v);
+            @include margin-top(1v);
           }
         }
       }
-    }
-  }
-}
 
-#{ns-group(checkbox)} {
-  input[type='checkbox'] {
-    margin-top: spacing.space(3v);
+      input[type='checkbox'] {
+        margin-top: spacing.space(3v);
+      }
+    }
   }
 }

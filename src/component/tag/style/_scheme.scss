@@ -22,7 +22,7 @@
     }
   }
 
-  a,
+  a[href],
   button,
   input[type=button] {
     &#{ns(tag)} {
