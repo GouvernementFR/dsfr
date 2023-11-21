@@ -10,7 +10,7 @@
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
     &__brand {
-      @include elevation.elevate(raised, (legacy: $legacy));
+      @include elevation.elevate(raised-over, (legacy: $legacy));
     }
 
     &__service {
@@ -19,7 +19,7 @@
     }
 
     @include media-query.respond-from(lg) {
-      @include elevation.elevate(raised, (legacy: $legacy));
+      @include elevation.elevate(raised-over, (legacy: $legacy));
 
       &__brand {
         @include elevation.drop((legacy:$legacy));
