@@ -8,7 +8,6 @@
     order: 1;
     @include display-flex(column);
     @include padding(8v);
-    @include nest-tag(sm);
     @include height(100%);
   }
 
