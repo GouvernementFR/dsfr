@@ -31,7 +31,7 @@
     @include list-item {
       #{ns(sidemenu__link)},
       #{ns(sidemenu__btn)} {
-        @include color.text(default grey, (legacy:$legacy));
+        @include color.text(action-high grey, (legacy: $legacy));
       }
 
       @include before {
