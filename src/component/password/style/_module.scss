@@ -5,7 +5,8 @@
 
 #{ns(password)} {
   @include relative;
-  @include display-flex(column);
+  @include display-flex(row);
+  flex-wrap: wrap;
   @include set-text-margin(0 0 2v 0);
 
   #{ns-attr(capslock)} {
@@ -21,8 +22,18 @@
 
   &__checkbox {
     order: -1;
-    @include margin-top(-6v);
+    flex: 0;
+    align-self: flex-end;
     @include margin-left(auto);
+    @include padding-left(2v);
+
+    #{ns(label)} {
+      text-wrap: nowrap;
+    }
+  }
+
+  #{ns(input-wrap)} {
+    flex: 1 0 100%;
   }
 
   &__input {
@@ -39,7 +50,8 @@
 
   & > #{ns(label)} {
     order: -1;
-    max-width: calc(100% - #{space(24v)});
+    flex: 1;
+    min-width: 50%;
   }
 
   #{ns(message)} {
