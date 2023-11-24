@@ -9,11 +9,9 @@
   #{ns(translate)} {
     #{ns(translate)}__btn {
       &[aria-expanded="true"] {
-        @include respond-from(lg) {
-          @include color.text(active blue-france, (legacy: $legacy));
-          @include color.background(open blue-france, (legacy: $legacy));
-          @include hover-tint;
-        }
+        @include color.text(active blue-france, (legacy: $legacy));
+        @include color.background(open blue-france, (legacy: $legacy));
+        @include hover-tint;
       }
     }
 
