@@ -67,7 +67,14 @@
         }
       }
 
-      @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true, background: true));
+      @include disabled.selector((), (legacy: $legacy, text: true, background: true));
+    }
+  }
+
+  a:not([href]) {
+    &#{ns(tag)} {
+      @include color.text(disabled grey, (legacy: $legacy));
+      @include color.background(disabled grey, (legacy: $legacy));
     }
   }
 
