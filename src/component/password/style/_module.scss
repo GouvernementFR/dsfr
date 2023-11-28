@@ -5,6 +5,8 @@
 
 #{ns(password)} {
   @include relative;
+  @include display-flex(row);
+  flex-wrap: wrap;
   @include set-text-margin(0 0 2v 0);
 
   #{ns-attr(capslock)} {
@@ -19,7 +21,19 @@
   }
 
   &__checkbox {
-    @include absolute(0, 0);
+    order: -1;
+    flex: 0;
+    align-self: flex-end;
+    @include margin-left(auto);
+    @include padding-left(2v);
+
+    #{ns(label)} {
+      text-wrap: nowrap;
+    }
+  }
+
+  #{ns(input-wrap)} {
+    flex: 1 0 100%;
   }
 
   &__input {
@@ -34,21 +48,23 @@
     }
   }
 
-  &__label {
-    @include padding-right(24v);
+  & > #{ns(label)} {
+    order: -1;
+    flex: 1;
+    min-width: 50%;
   }
 
   #{ns(message)} {
     &:first-child {
-      --comma: " ";
+      --comma: ' ';
     }
   }
 
   #{ns(message--valid)}#{ns-attr(valid)} {
-    --content: "\00a0-\00a0" attr(#{ns-attr(valid, null, true)}) var(--comma);
+    --content: '\00a0-\00a0'attr(#{ns-attr(valid, null, true)}) var(--comma);
   }
 
   #{ns(message--error)}#{ns-attr(error)} {
-    --content: "\00a0-\00a0" attr(#{ns-attr(error, null, true)}) var(--comma);
+    --content: '\00a0-\00a0'attr(#{ns-attr(error, null, true)}) var(--comma);
   }
 }

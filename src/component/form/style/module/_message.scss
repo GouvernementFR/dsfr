@@ -33,6 +33,6 @@
   }
 
   &--info {
-    @include icon-image(information-fill, before);
+    @include icon-image(info-fill, before);
   }
 }

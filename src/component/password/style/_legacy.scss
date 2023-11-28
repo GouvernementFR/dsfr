@@ -4,9 +4,17 @@
 ////
 
 @use 'module/legacy';
+@use 'module/spacing';
 
-// @include legacy.is(ie11) {
-//   #{ns(password)} {
+@include legacy.is(ie11) {
+  #{ns(password)} {
+    &__checkbox {
+      @include absolute(0, 0);
+      @include margin(0);
 
-//   }
-// }
+      input[type="checkbox"] {
+        top: spacing.space(-2v);
+      }
+    }
+  }
+}
