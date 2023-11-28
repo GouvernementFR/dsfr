@@ -46,11 +46,14 @@
     }
 
     &--error {
-      input[type="checkbox"] + label {
-        @include color.text(default error, (legacy:$legacy));
+      input[type="checkbox"],
+      input[type="checkbox"]:checked {
+        & + label {
+          @include color.text(default error, (legacy:$legacy));
 
-        @include before {
-          @include color.background-image(border plain error, (), checkbox-background-image());
+          @include before {
+            @include color.background-image(border plain error, (), checkbox-background-image());
+          }
         }
       }
 
@@ -60,11 +63,14 @@
     }
 
     &--valid {
-      input[type="checkbox"] + label {
-        @include color.text(default success, (legacy:$legacy));
+      input[type="checkbox"],
+      input[type="checkbox"]:checked {
+        & + label {
+          @include color.text(default success, (legacy:$legacy));
 
-        @include before {
-          @include color.background-image(border plain success, (), checkbox-background-image());
+          @include before {
+            @include color.background-image(border plain success, (), checkbox-background-image());
+          }
         }
       }
 

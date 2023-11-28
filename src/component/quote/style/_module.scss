@@ -27,7 +27,7 @@
 
   &--column {
     @include display-flex(column, flex-start, center);
-    @include margin-left(52v, md);
+    @include margin-left(54v, md);
 
     @include respond-from(md) {
       @include min-height(52v);
@@ -72,7 +72,7 @@
 
   &__author {
     @include font-weight(bold);
-    @include text-style(sm);
+    @include text-style(md);
     @include set-text-margin(0 0 1v);
   }
 
@@ -89,22 +89,21 @@
     }
 
     @include respond-from(md) {
-      @include absolute(50%,null,null,-52v,46v,46v);
+      @include absolute(50%,null,null,-54v,46v,46v);
       @include margin-top(-23v);
     }
   }
 
   cite {
-    @include text-style(xs);
     font-style: italic;
   }
 
   figcaption {
     @include disable-list-style;
-    @include text-style(xs);
 
     #{ns(quote)}__source {
       @include display-flex(row,null,flex-start,wrap);
+      @include text-style(xs);
 
       li {
         display: inline-block;

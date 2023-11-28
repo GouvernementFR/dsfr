@@ -95,7 +95,7 @@
 
   &#{selector.ns-group(range)}--double {
     output {
-      @include min-width(12v);
+      @include min-width(calc(var(--thumb-size) * 2));
     }
 
     &#{selector.ns-attr(js-range)} input[type=range] {

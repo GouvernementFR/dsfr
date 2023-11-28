@@ -5,7 +5,6 @@
 
 #{ns(card)} {
   &--lg &__content {
-    @include nest-tag(md);
     @include padding(10v);
   }
 
