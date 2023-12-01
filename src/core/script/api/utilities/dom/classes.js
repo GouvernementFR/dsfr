@@ -3,7 +3,7 @@ const sanitize = (className) => className.charAt(0) === '.' ? className.substr(1
 const getClassNames = (element) => {
   let className;
   switch (true) {
-    case element instanceof SVGAElement:
+    case typeof element.className.baseVal === 'string':
       className = element.className.baseVal;
       break;
 
