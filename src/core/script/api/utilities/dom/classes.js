@@ -1,17 +1,18 @@
 const sanitize = (className) => className.charAt(0) === '.' ? className.substr(1) : className;
 
 const getClassNames = (element) => {
-  let className;
   switch (true) {
-    case typeof element.className.baseVal === 'string':
-      className = element.className.baseVal;
-      break;
+    case !element.className:
+      return [];
 
-    default:
-      className = element.className;
+    case typeof element.className === 'string':
+      return element.className.split(' ');
+
+    case typeof element.className.baseVal === 'string':
+      return element.className.baseVal.split(' ');
   }
 
-  return className ? className.split(' ') : [];
+  return [];
 };
 
 export { getClassNames };
