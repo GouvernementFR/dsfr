@@ -11,7 +11,7 @@ class Navigation extends api.core.CollapsesGroup {
     super.init();
     this.clicked = false;
     this.out = false;
-    this.listen('focusout', this.focusOutHandler.bind(this));
+    this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
     this.listen('mousedown', this.mouseDownHandler.bind(this));
     this.listenClick({ capture: true });
   }
@@ -30,7 +30,7 @@ class Navigation extends api.core.CollapsesGroup {
     if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) this.index = -1;
   }
 
-  focusOutHandler (e) {
+  _clickOut () {
     if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
     this.out = true;
     this.requestPosition();
