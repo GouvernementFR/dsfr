@@ -11,6 +11,7 @@ class Navigation extends api.core.CollapsesGroup {
     super.init();
     this.clicked = false;
     this.out = false;
+    this.listen('click', this._clickHandling.bind(this));
     this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
     this.listen('mousedown', this.mouseDownHandler.bind(this));
     this.listenClick({ capture: true });
@@ -26,14 +27,18 @@ class Navigation extends api.core.CollapsesGroup {
     this.requestPosition();
   }
 
-  clickHandler (e) {
-    if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) this.index = -1;
+  _clickHandling (e) {
+    if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) {
+      this.index = -1;
+    }
   }
 
-  _clickOut () {
+  _clickOut (target) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
-    this.out = true;
-    this.requestPosition();
+    if (!this.node.contains(target)) {
+      this.out = true;
+      this.requestPosition();
+    }
   }
 
   requestPosition () {
