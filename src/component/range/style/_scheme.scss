@@ -22,8 +22,7 @@
       input[type=range] {
         @include selector.range-thumb($legacy) {
           @include elevation.elevate(raised, (legacy: $legacy));
-          background: transparent;
-          // @include color.background(default grey, (legacy:$legacy));
+          @include color.background(default grey, (legacy:$legacy));
           @include color.border(action-high blue-france, (legacy:$legacy));
         }
 

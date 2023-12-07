@@ -3,7 +3,13 @@
 
 * range.id (string, required) : id du curseur
 
-* range.size (string, optional) : taille du curseur (valeur : 'sm')
+* range.groupId (string, optional) : id du groupe
+
+* range.classes (array, optional) : classes du groupe
+
+* range.attributes (object, optional) : attributs du groupe
+
+* range.id (string, required) : id de l'input
 
 * range.name (string, required) : attribut 'name' de l'input
 
@@ -11,11 +17,9 @@
 
 * range.hint (string, optional) : texte de description sous le label
 
-* range.labelAttrs (object, optional) : Pour passer des attributs au label
+* range.size (string, optional) : taille du curseur (valeur : 'sm')
 
-* range.labelClasses (array, optional) : Pour passer des classes au label
-
-* range.attributesInput (array, optional) : Pour passer des attributs au input
+* range.inputAttributes (array, optional) : attributs de l'input
 
 * range.min (number, required) : valeur minimale du curseur
 
@@ -37,11 +41,7 @@
 
 * range.valid (string, optional) : ajoute un texte de succès
 
-* range.multiple (boolean, optional) : Active la selection multiple de fichiers [defaut: false]
-
 * range.disabled (boolean, optional) : Permet de désactiver le champ [defaut: false]
-
-* range.groupAttributes (object, optional) : Pour passer des attributs au groupe
 
 %>
 

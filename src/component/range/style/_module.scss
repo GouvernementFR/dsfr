@@ -101,17 +101,16 @@
         border-radius: spacing.space(1v);
       }
     }
-
   }
 
   &--step {
     &#{selector.ns-attr(js-range)} {
       --step-width: 4096px;
       @include _pseudo(before after) {
-        @include padding-x(10px);
+        @include padding-x(2.5v);
         background-repeat: repeat-x;
         background-size: var(--step-width) 100%;
-        background-position: 10px 0;
+        background-position: spacing.space(2.5v 0);
         background-clip: content-box;
       }
     }
@@ -120,32 +119,31 @@
   &--step#{&}--sm {
     &#{selector.ns-attr(js-range)} {
       @include _pseudo(before after) {
-        background-position: 6px 0;
-        @include padding-x(6px);
+        background-position: spacing.space(1.5v 0);
+        @include padding-x(1.5v);
       }
     }
   }
-
-
 
   &--double &__output {
     @include min-width(calc(var(--thumb-size) * 2));
   }
 
   &--double {
+    &#{selector.ns-attr(js-range)} {
+      input[type=range] {
+        @include width(calc(100% - var(--thumb-size)));
 
-    &#{selector.ns-attr(js-range)} input[type=range] {
-      @include width(calc(100% - var(--thumb-size)));
-    }
+        &:nth-of-type(1) {
+          @include margin-right(var(--thumb-size));
+        }
 
-    &#{selector.ns-attr(js-range)} input[type=range]:nth-of-type(1) {
-      @include margin-right(var(--thumb-size));
-    }
-
-    &#{selector.ns-attr(js-range)} input[type=range]:nth-of-type(2) {
-      @include absolute;
-      @include right(0);
-      @include top(5v);
+        &:nth-of-type(2) {
+          @include absolute;
+          @include right(0);
+          @include top(5v);
+        }
+      }
     }
   }
 }
