@@ -5,7 +5,7 @@ subdir:
 label:
   default: Label
 hint:
-  default: Texte de description additionnel.
+  default: Texte de description additionnel, valeur de 0 à 100.
 error:
   default: Valeur sélectionnée impossible
 valid:
