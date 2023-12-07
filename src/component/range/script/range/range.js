@@ -99,7 +99,12 @@ class Range extends api.core.Instance {
 
   setValue (value) {
     this._model.value = value;
-    if (this._type === RangeTypes.DOUBLE) this.descend(RangeEmission.VALUE, value);
+    switch (this._type) {
+      case RangeTypes.DOUBLE_STEP:
+      case RangeTypes.DOUBLE:
+        this.descend(RangeEmission.VALUE, value);
+        break;
+    }
     this.update();
   }
 
@@ -156,7 +161,7 @@ class Range extends api.core.Instance {
   }
 
   mouseMove (point) {
-    if (this._type !== RangeTypes.DOUBLE) return;
+    if (this._type !== RangeTypes.DOUBLE && this._type !== RangeTypes.DOUBLE_STEP) return;
     const x = point.x - this.getRect().left;
     this.descend(RangeEmission.ENABLE_POINTER, this._model.outputX < x ? 2 : 1);
   }
