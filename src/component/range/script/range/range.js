@@ -152,10 +152,26 @@ class Range extends api.core.Instance {
     this.descend(RangeEmission.MIN, this._model.textMin);
     this.descend(RangeEmission.MAX, this._model.textMax);
     const progress = this._model.progress;
-    if (progress.left) this.style.setProperty('--progress-left', progress.left);
-    else this.style.removeProperty('--progress-left');
-    if (progress.right) this.style.setProperty('--progress-right', progress.right);
-    else this.style.removeProperty('--progress-right');
+    if (progress.left) {
+      this.style.setProperty('--progress-left', progress.left);
+    } else {
+      this.style.removeProperty('--progress-left');
+    }
+    if (progress.right) {
+      this.style.setProperty('--progress-right', progress.right);
+      if (this.isLegacy) {
+        if (progress.left) {
+          this.style.setProperty('background-position-x', progress.left);
+          this.style.setProperty('background-size', `${parseFloat(progress.right) - parseFloat(progress.left)}px ${this._model.isSm ? '8px' : '12px'}`);
+        }
+      }
+    } else {
+      this.style.removeProperty('--progress-right');
+      if (this.isLegacy) {
+        this.style.removeProperty('background-size');
+        this.style.removeProperty('background-position-x');
+      }
+    }
     if (this._model.stepWidth) this.style.setProperty('--step-width', this._model.stepWidth);
     else this.style.removeProperty('--step-width');
   }
@@ -163,7 +179,7 @@ class Range extends api.core.Instance {
   mouseMove (point) {
     if (this._type !== RangeTypes.DOUBLE && this._type !== RangeTypes.DOUBLE_STEP) return;
     const x = point.x - this.getRect().left;
-    this.descend(RangeEmission.ENABLE_POINTER, this._model.outputX < x ? 2 : 1);
+    this.descend(RangeEmission.ENABLE_POINTER, (parseFloat(this._model.progress.right) - parseFloat(this._model.progress.left)) / 2 + parseFloat(this._model.progress.left) < x ? 2 : 1);
   }
 
   dispose () {
