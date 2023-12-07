@@ -146,4 +146,22 @@
       }
     }
   }
+
+  &--double#{&}--step {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        @include padding-x(5.5v);
+        background-position: spacing.space(5.5v 0);
+      }
+    }
+  }
+
+  &--double#{&}--step#{&}--sm {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        @include padding-x(3.5v);
+        background-position: spacing.space(3.5v 0);
+      }
+    }
+  }
 }

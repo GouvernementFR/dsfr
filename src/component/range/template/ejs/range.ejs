@@ -65,14 +65,8 @@ if (range.prefix) rangeAttributes[`data-${prefix}-prefix`] = range.prefix;
 if (range.suffix) rangeAttributes[`data-${prefix}-suffix`] = range.suffix;
 const rangeClasses = [`${prefix}-range`];
 if (range.size) rangeClasses.push(`${prefix}-range--${range.size}`);
-switch (range.type) {
-  case 'double':
-    rangeClasses.push(`${prefix}-range--double`);
-    break;
-  case 'step':
-    rangeClasses.push(`${prefix}-range--step`);
-    break;
-}
+if (range.isDouble) rangeClasses.push(`${prefix}-range--double`);
+if (range.isStep) rangeClasses.push(`${prefix}-range--step`);
 
 const inputAttributes = range.inputAttributes || {};
 inputAttributes.id = range.id;
@@ -119,7 +113,7 @@ if (builder.describedby.length > 0) {
 
     <input <%- includeAttrs(inputAttributes); %> >
 
-    <% if (range.type === 'double') { %>
+    <% if (range.isDouble) { %>
       <input <%- includeAttrs(input2Attributes); %> >
     <% } %>
 

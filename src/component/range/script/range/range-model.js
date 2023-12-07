@@ -176,4 +176,17 @@ class RangeModelDouble extends RangeModel {
   }
 }
 
-export { RangeModel, RangeModelStep, RangeModelDouble };
+class RangeModelDoubleStep extends RangeModelDouble {
+  get stepWidth () {
+    return `${this._stepWidth.toFixed(3)}px`;
+  }
+
+  _update () {
+    super._update();
+    const steps = this._rangeWidth / this._step;
+    this._stepWidth = this._innerWidth / steps;
+    while (this._stepWidth < 4) this._stepWidth *= 2;
+  }
+}
+
+export { RangeModel, RangeModelStep, RangeModelDouble, RangeModelDoubleStep };

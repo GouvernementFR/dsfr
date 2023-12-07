@@ -1,11 +1,12 @@
 import api from '../../api.js';
 import { RangeEmission } from './range-emission.js';
 import { RangeSelector } from './range-selector.js';
-import { RangeModel, RangeModelStep, RangeModelDouble } from './range-model';
+import { RangeModel, RangeModelStep, RangeModelDouble, RangeModelDoubleStep } from './range-model';
 
 const RangeTypes = {
   STEP: 'step',
   DOUBLE: 'double',
+  DOUBLE_STEP: 'double-step',
   DEFAULT: 'default'
 };
 
@@ -36,6 +37,10 @@ class Range extends api.core.Instance {
 
   _retrieveType () {
     switch (true) {
+      case this.matches(RangeSelector.RANGE_DOUBLE_STEP):
+        this.type = RangeTypes.DOUBLE_STEP;
+        break;
+
       case this.matches(RangeSelector.RANGE_STEP):
         this.type = RangeTypes.STEP;
         break;
@@ -56,6 +61,10 @@ class Range extends api.core.Instance {
     const oldModel = this._model;
 
     switch (this._type) {
+      case RangeTypes.DOUBLE_STEP:
+        this._model = new RangeModelDoubleStep();
+        break;
+
       case RangeTypes.STEP:
         this._model = new RangeModelStep();
         break;

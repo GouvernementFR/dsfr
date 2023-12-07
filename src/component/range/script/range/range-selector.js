@@ -5,6 +5,7 @@ export const RangeSelector = {
   RANGE_SM: api.internals.ns.selector('range--sm'),
   RANGE_STEP: api.internals.ns.selector('range--step'),
   RANGE_DOUBLE: api.internals.ns.selector('range--double'),
+  RANGE_DOUBLE_STEP: api.internals.ns.selector('range--double') + api.internals.ns.selector('range--step'),
   RANGE_INPUT: api.internals.ns.selector('range input[type=range]:nth-of-type(1)'),
   RANGE_INPUT2: `${api.internals.ns.selector('range--double')} input[type=range]:nth-of-type(2)`,
   RANGE_OUTPUT: api.internals.ns.selector('range__output'),

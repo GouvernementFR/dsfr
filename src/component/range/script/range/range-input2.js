@@ -27,6 +27,7 @@ class RangeInput2 extends RangeInput {
     this.node.min = constraints.min;
     this.node.max = constraints.max;
     this.node.step = constraints.step;
+    this.change();
   }
 
   mutate (attributesNames) {}

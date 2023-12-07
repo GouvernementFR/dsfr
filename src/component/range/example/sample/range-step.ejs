@@ -4,7 +4,7 @@ range.min = range.min ?? 0;
 range.max = range.max ?? 100;
 let data = {
   ...range,
-  type: 'step',
+  isStep: true,
   step: isNaN(range.step) ? ((range.max - range.min) / 10) | 0 : range.step
 };
 %>

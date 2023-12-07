@@ -63,6 +63,22 @@
         }
       }
     }
+
+    &--double#{&}--step {
+      &#{selector.ns-attr(js-range)} {
+        @include after {
+          @include color.box-shadow(active blue-france, (legacy:$legacy), left-22-in right-22-in);
+        }
+      }
+    }
+
+    &--double#{&}--step#{&}--sm {
+      &#{selector.ns-attr(js-range)} {
+        @include after {
+          @include color.box-shadow(active blue-france, (legacy:$legacy), left-14-in right-14-in);
+        }
+      }
+    }
   }
 
   #{selector.ns-group(range)} {
