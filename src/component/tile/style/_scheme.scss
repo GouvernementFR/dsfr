@@ -39,14 +39,27 @@
         @include color.background-image((border plain grey), (legacy: $legacy));
       }
 
-      a {
+      a,
+      button {
         @include color.text(action-high blue-france, (legacy: $legacy));
 
         @include before {
           @include color.background-image((border active blue-france), (legacy: $legacy));
         }
+      }
 
+      a {
         &:not([href]) {
+          @include disabled.colors((legacy: $legacy, text: true));
+  
+          @include before {
+            @include color.background-image((border disabled grey), (legacy: $legacy));
+          }
+        }
+      }
+
+      button {
+        &:disabled {
           @include disabled.colors((legacy: $legacy, text: true));
 
           @include before {

@@ -28,6 +28,8 @@
 * content.disabled (boolean, optional) : Si true, retire le href du lien pour le désactiver
 
 * content.attributes (object, optional) : Attributs à ajouter au lien
+
+* content.actioneeMarkup (string, optional) : balise de l'actionneur du composant (button)
 %>
 <%
 let start, end;
@@ -35,6 +37,7 @@ let start, end;
 const startDetails = content.details ? content.details.filter(detail => !detail.position || detail.position === 'start') : [];
 
 const markup = content.markup || 'h3';
+const actioneeMarkup = content.actioneeMarkup || 'a';
 const hasLink = !content.noLink;
 const href = content.href || '#';
 let attributes = content.attributes || {};
@@ -43,14 +46,18 @@ if (content.assess === true) {
 } else if (typeof(content.assess) === 'string') {
     attributes[`data-${prefix}-assess-file`] = content.assess;
 }
-if (content.disabled !== true) {
-    attributes.href = href;
+if (actioneeMarkup === 'a') {
+    if (content.disabled !== true) {
+        attributes.href = href;
+    } else {
+      attributes.role = 'link';
+      attributes['aria-disabled'] = true;
+    }
 } else {
-  attributes.role = 'link';
-  attributes['aria-disabled'] = true;
+    attributes.disabled = content.disabled ? null : undefined;
 }
 if (content.lang) attributes.hreflang = content.lang;
-if (content.downloadable === true) attributes.download = '';
+if (content.downloadable === true && actioneeMarkup === 'a') attributes.download = '';
 if (typeof(content.downloadable) === 'string') attributes.download = content.downloadable;
 if (content.blank === true) attributes = { ...targetBlankData(), ...attributes};
 
@@ -77,7 +84,13 @@ switch (true) {
 
 <div class="<%= prefix %>-card__content">
     <<%= markup %> class="<%= prefix %>-card__title">
-        <% if (hasLink) { %><a <%- includeAttrs(attributes) %>><% } %><%- content.title %><% if (hasLink) { %></a><% } %>
+        <% if (hasLink) { %>
+            <<%= actioneeMarkup %> <%- includeAttrs(attributes) %>>
+        <% } %>
+        <%- content.title %>
+        <% if (hasLink) { %>
+            </<%= actioneeMarkup %>>
+        <% } %>
     </<%= markup %>>
 
     <% if (content.description !== undefined) { %>

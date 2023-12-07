@@ -52,18 +52,27 @@
 
   &#{ns(enlarge-link)} {
     #{ns(tile)}__title {
-      a {
+      a,
+      button {
         @include icon-size(md) {
           @include absolute(null, 8v, 9v);
         }
+      }
+
+      button {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        @include padding(0);
       }
     }
   }
 
   &--no-icon,
   &:not(#{ns(enlarge-link)}):not(#{ns(tile--download)}) {
-    #{ns(tile__title a)} {
-      &:not([target="_blank"]) {
+    #{ns(tile__title)} {
+      a:not([target="_blank"]),
+      button {
         @include after(none);
       }
     }
@@ -83,7 +92,8 @@
       background-repeat: no-repeat;
     }
 
-    a {
+    a,
+    button {
       @include before {
         background-position: 0 100%;
         background-size: 100% spacing.space(1v);
