@@ -185,7 +185,7 @@ class RangeModelDoubleStep extends RangeModelDouble {
     super._update();
     const steps = this._rangeWidth / this._step;
     this._stepWidth = this._innerWidth / steps;
-    while (this._stepWidth < 4) this._stepWidth *= 2;
+    if (this._stepWidth < 4) this._stepWidth *= Math.ceil(4 / this._stepWidth);
   }
 }
 
