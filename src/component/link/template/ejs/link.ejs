@@ -3,7 +3,7 @@
 
 * link.label (string, required) : contenu texte
 
-* link.markup (string, optional) : si non défini, a
+* link.markup (string, optional) : balise de l'actionneur du composant (a, button)
 
 * link.href (string, required) : adresse url du lien
 
@@ -49,7 +49,6 @@ if (link.assess === true) {
 if (link.hreflang) linkAttrs.hreflang = link.hreflang;
 
 if (link.download === true) {
-  linkAttrs.download = '';
   linkClasses.push(prefix + '-link--download');
 }
 
@@ -100,7 +99,7 @@ if (link.disabled === true) {
             linkAttrs.href = link.href || '[url - à modifier]';
             switch (true) {
                 case link.download:
-                    linkAttrs.download = 'true';
+                    linkAttrs.download = '';
                     break;
 
                 case link.blank:
