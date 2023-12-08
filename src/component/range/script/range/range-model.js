@@ -167,6 +167,7 @@ class RangeModelDouble extends RangeModel {
     super._update();
     const ratio = this._getRatio((this._value + this._value2) * 0.5);
     this._translateX = ratio * this._width;
+    this._centerPercent = ratio * 100;
     const ratio1 = this._getRatio(this._value);
     const ratio2 = this._getRatio(this._value2);
     this._progress = {
