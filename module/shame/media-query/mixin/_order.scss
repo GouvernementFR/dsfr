@@ -5,7 +5,7 @@
   @each $bp, $limits in breakpoints.$values {
     @if $bp != xs {
       @include media-query.respond-from($bp) {
-        /*! media #{$bp} */
+        /* media #{$bp} */
       }
     }
   }
