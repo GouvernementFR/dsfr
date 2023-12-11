@@ -6,7 +6,6 @@
 @use 'module/media-query';
 @use 'module/selector';
 
-
 @include media-query.high-contrast() {
   #{ns(pagination)} {
     &__link {

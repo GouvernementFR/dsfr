@@ -13,7 +13,7 @@
           @include has-icon {
             @include nest-btn(sm, left, null, null, false);
           }
-          
+
           @include has-not-icon {
             @include nest-btn(sm, left, null, null, false);
           }

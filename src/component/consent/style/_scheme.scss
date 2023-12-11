@@ -35,7 +35,7 @@
     &__title {
       @include color.text(title grey, (legacy:$legacy));
     }
-    
+
     &:last-of-type,
     #{ns(consent-service)} {
       @include color.no-box-shadow((legacy: $legacy));

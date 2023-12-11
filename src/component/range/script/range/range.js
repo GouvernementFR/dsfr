@@ -1,11 +1,12 @@
 import api from '../../api.js';
 import { RangeEmission } from './range-emission.js';
 import { RangeSelector } from './range-selector.js';
-import { RangeModel, RangeModelStep, RangeModelDouble } from './range-model';
+import { RangeModel, RangeModelStep, RangeModelDouble, RangeModelDoubleStep } from './range-model';
 
 const RangeTypes = {
   STEP: 'step',
   DOUBLE: 'double',
+  DOUBLE_STEP: 'double-step',
   DEFAULT: 'default'
 };
 
@@ -15,38 +16,36 @@ class Range extends api.core.Instance {
   }
 
   init () {
-    this.output = this.node.querySelector(RangeSelector.RANGE_OUTPUT);
-    this.label = this.node.querySelector(RangeSelector.RANGE_LABEL);
     this._retrieveType();
     this._retrieveSize();
     if (this.isLegacy) {
       this.isResizing = true;
       this.isMouseMoving = true;
     } else {
-      this._observer = new ResizeObserver(this._retrieveWidth.bind(this));
+      this._observer = new ResizeObserver(this.resize.bind(this));
       this._observer.observe(this.node);
-      this._retrieveWidth();
-      if (api.scheme) this.addDescent(api.scheme.SchemeEmission.SCHEME, this._model.update.bind(this._model));
     }
 
     this.addAscent(RangeEmission.CONSTRAINTS, this.setConstraints.bind(this));
     this.addAscent(RangeEmission.VALUE, this.setValue.bind(this));
-    this.addAscent(RangeEmission.DISABLED, this.setDisabled.bind(this));
     this.addAscent(RangeEmission.VALUE2, this.setValue2.bind(this));
     if (this.getAttribute(RangeSelector.RANGE_PREFIX)) this.setPrefix(this.getAttribute(RangeSelector.RANGE_PREFIX));
     if (this.getAttribute(RangeSelector.RANGE_SUFFIX)) this.setSuffix(this.getAttribute(RangeSelector.RANGE_SUFFIX));
-
-    this.paint();
+    this.update();
   }
 
   _retrieveType () {
     switch (true) {
-      case this.matches(RangeSelector.RANGE_STEP):
-        this.type = RangeTypes.STEP;
+      case this.matches(RangeSelector.RANGE_DOUBLE_STEP):
+        this.type = RangeTypes.DOUBLE;
         break;
 
       case this.matches(RangeSelector.RANGE_DOUBLE):
         this.type = RangeTypes.DOUBLE;
+        break;
+
+      case this.matches(RangeSelector.RANGE_STEP):
+        this.type = RangeTypes.STEP;
         break;
 
       default:
@@ -60,22 +59,24 @@ class Range extends api.core.Instance {
 
     const oldModel = this._model;
 
-    switch (true) {
-      case this.matches(RangeSelector.RANGE_STEP):
-        this._model = new RangeModelStep();
+    switch (this._type) {
+      case RangeTypes.DOUBLE_STEP:
+        this._model = new RangeModelDoubleStep();
         break;
 
-      case this.matches(RangeSelector.RANGE_DOUBLE):
+      case RangeTypes.DOUBLE:
         this._model = new RangeModelDouble();
+        break;
+
+      case RangeTypes.STEP:
+        this._model = new RangeModelStep();
         break;
 
       default:
         this._model = new RangeModel();
     }
 
-    this.descend(RangeEmission.CLEAR);
-
-    this._model.configure(oldModel, this.paint.bind(this));
+    this._model.configure(oldModel);
   }
 
   get type () {
@@ -88,6 +89,7 @@ class Range extends api.core.Instance {
 
   resize () {
     this._retrieveWidth();
+    this.update();
   }
 
   _retrieveWidth () {
@@ -96,47 +98,35 @@ class Range extends api.core.Instance {
 
   setValue (value) {
     this._model.value = value;
-    if (this._type === RangeTypes.DOUBLE) this.descend(RangeEmission.VALUE, value);
-    this._assignValue();
+    switch (this._type) {
+      case RangeTypes.DOUBLE_STEP:
+      case RangeTypes.DOUBLE:
+        this.descend(RangeEmission.VALUE, value);
+        break;
+    }
+    this.update();
   }
 
   setValue2 (value) {
     this._model.value2 = value;
     this.descend(RangeEmission.VALUE2, value);
-    this._assignValue();
-  }
-
-  _assignValue () {
-    if (!this.output) return;
-    this.output.innerText = this._model.textValue;
-  }
-
-  setDisabled (value) {
-    this._model.isDisabled = value;
+    this.update();
   }
 
   setConstraints (constraints) {
     this._model.setConstraints(constraints);
-    this._assignConstraints();
+    this.update();
     this.descend(RangeEmission.CONSTRAINTS, constraints);
-  }
-
-  _assignConstraints () {
-    if (!this.label) return;
-    this.label.setAttribute(api.internals.ns.attr('min'), this._model.textMin);
-    this.label.setAttribute(api.internals.ns.attr('max'), this._model.textMax);
   }
 
   setPrefix (value) {
     this._model.setPrefix(value);
-    this._assignValue();
-    this._assignConstraints();
+    this.update();
   }
 
   setSuffix (value) {
     this._model.setSuffix(value);
-    this._assignValue();
-    this._assignConstraints();
+    this.update();
   }
 
   mutate (attributesNames) {
@@ -150,38 +140,48 @@ class Range extends api.core.Instance {
       case attributesNames.includes(RangeSelector.RANGE_SUFFIX):
         this._model.setPrefix(this.getAttribute(RangeSelector.RANGE_PREFIX));
         this._model.setSuffix(this.getAttribute(RangeSelector.RANGE_SUFFIX));
-        this._assignValue();
-        this._assignConstraints();
+        this.update();
         break;
     }
   }
 
-  paint () {
-    if (this._isPainting) return;
-    this._isPainting = true;
-    window.requestAnimationFrame(this._paint.bind(this));
-  }
-
-  _paint () {
-    const background = this._model.background;
-    this.descend(RangeEmission.BACKGROUND, background);
-    this.placeOutput();
-    this._isPainting = false;
-  }
-
-  placeOutput () {
-    const outputX = Math.min(Math.max(this._model.outputX - this.output.offsetWidth * 0.5, 0), this._model.width - this.output.offsetWidth);
-    this.output.style.transform = `translateX(${outputX}px)`;
+  update () {
+    this._model.update();
+    this.descend(RangeEmission.OUTPUT, this._model.output);
+    this.descend(RangeEmission.MIN, this._model.textMin);
+    this.descend(RangeEmission.MAX, this._model.textMax);
+    const progress = this._model.progress;
+    if (progress.left) {
+      this.style.setProperty('--progress-left', progress.left);
+    } else {
+      this.style.removeProperty('--progress-left');
+    }
+    if (progress.right) {
+      this.style.setProperty('--progress-right', progress.right);
+      if (this.isLegacy) {
+        if (progress.left) {
+          this.style.setProperty('background-position-x', progress.left);
+          this.style.setProperty('background-size', `${parseFloat(progress.right) - parseFloat(progress.left)}px ${this._model.isSm ? '8px' : '12px'}`);
+        }
+      }
+    } else {
+      this.style.removeProperty('--progress-right');
+      if (this.isLegacy) {
+        this.style.removeProperty('background-size');
+        this.style.removeProperty('background-position-x');
+      }
+    }
+    if (this._model.stepWidth) this.style.setProperty('--step-width', this._model.stepWidth);
+    else this.style.removeProperty('--step-width');
   }
 
   mouseMove (point) {
-    if (this._type !== RangeTypes.DOUBLE) return;
+    if (this._type !== RangeTypes.DOUBLE && this._type !== RangeTypes.DOUBLE_STEP) return;
     const x = point.x - this.getRect().left;
-    this.descend(RangeEmission.ENABLE_POINTER, this._model.outputX < x ? 2 : 1);
+    this.descend(RangeEmission.ENABLE_POINTER, (parseFloat(this._model.progress.right) - parseFloat(this._model.progress.left)) / 2 + parseFloat(this._model.progress.left) < x ? 2 : 1);
   }
 
   dispose () {
-    for (const input of this.inputs) input.removeEventListener('input', this.changing);
     this._observer.disconnect();
   }
 }

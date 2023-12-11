@@ -19,12 +19,6 @@ class RangeInput2 extends RangeInput {
     }
   }
 
-  setBackground (background) {
-    if (!background) return;
-    if (background.position2) this.node.style.backgroundPosition = background.position2;
-    if (background.size2) this.node.style.backgroundSize = background.size2;
-  }
-
   change () {
     this.ascend(RangeEmission.VALUE2, parseFloat(this.node.value));
   }
@@ -33,6 +27,7 @@ class RangeInput2 extends RangeInput {
     this.node.min = constraints.min;
     this.node.max = constraints.max;
     this.node.step = constraints.step;
+    this.change();
   }
 
   mutate (attributesNames) {}

@@ -9,8 +9,6 @@ class RangeInput extends api.core.Instance {
 
   init () {
     this._init();
-    this.addDescent(RangeEmission.BACKGROUND, this.setBackground.bind(this));
-    this.addDescent(RangeEmission.CLEAR, this.clear.bind(this));
     this.node.value = this.getAttribute('value');
     this.changing = this.change.bind(this);
     this.node.addEventListener(this.isLegacy ? 'change' : 'input', this.changing);
@@ -46,17 +44,6 @@ class RangeInput extends api.core.Instance {
 
   change () {
     this.ascend(RangeEmission.VALUE, parseFloat(this.node.value));
-  }
-
-  clear () {
-    ['background-image', 'background-position', 'background-size'].forEach(property => this.style.removeProperty(property));
-  }
-
-  setBackground (background) {
-    if (!background) return;
-    if (background.image) this.node.style.backgroundImage = background.image;
-    if (background.position) this.node.style.backgroundPosition = background.position;
-    if (background.size) this.node.style.backgroundSize = background.size;
   }
 
   mutate (attributesNames) {

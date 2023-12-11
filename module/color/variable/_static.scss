@@ -1,7 +1,7 @@
 @use 'options';
 
 $focus: #0a76f6;
-$absolute-black: #000000;
+$absolute-black: #000;
 $black: nth(map-get(options.$values, grey-50), 1);
 $black-a0: rgba(nth(map-get(options.$values, grey-50), 1), 0);
 $black-a64: rgba(nth(map-get(options.$values, grey-50), 1), 64%);

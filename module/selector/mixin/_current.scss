@@ -4,12 +4,12 @@
 @mixin current {
   &[aria-current]:not([aria-current="false"]) {
     @content;
-  };
+  }
 }
 
 @mixin not-current {
   &:not([aria-current]),
-  &[aria-current="false"]{
-    @content; 
+  &[aria-current="false"] {
+    @content;
   }
 }
