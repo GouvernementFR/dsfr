@@ -144,9 +144,13 @@
           @include top(5v);
         }
       }
+    }
+  }
 
-      // step désactivé sur le curseur double
-      &#{selector.ns-attr(range--step)} {
+  // step désactivé sur le curseur double
+  &--double#{&}--step {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
         background-size: 0;
       }
     }

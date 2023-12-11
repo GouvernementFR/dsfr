@@ -28,7 +28,6 @@ class Range extends api.core.Instance {
 
     this.addAscent(RangeEmission.CONSTRAINTS, this.setConstraints.bind(this));
     this.addAscent(RangeEmission.VALUE, this.setValue.bind(this));
-    // this.addAscent(RangeEmission.DISABLED, this.setDisabled.bind(this)); // group level
     this.addAscent(RangeEmission.VALUE2, this.setValue2.bind(this));
     if (this.getAttribute(RangeSelector.RANGE_PREFIX)) this.setPrefix(this.getAttribute(RangeSelector.RANGE_PREFIX));
     if (this.getAttribute(RangeSelector.RANGE_SUFFIX)) this.setSuffix(this.getAttribute(RangeSelector.RANGE_SUFFIX));
@@ -38,15 +37,15 @@ class Range extends api.core.Instance {
   _retrieveType () {
     switch (true) {
       case this.matches(RangeSelector.RANGE_DOUBLE_STEP):
-        this.type = RangeTypes.DOUBLE_STEP;
-        break;
-
-      case this.matches(RangeSelector.RANGE_STEP):
-        this.type = RangeTypes.STEP;
+        this.type = RangeTypes.DOUBLE;
         break;
 
       case this.matches(RangeSelector.RANGE_DOUBLE):
         this.type = RangeTypes.DOUBLE;
+        break;
+
+      case this.matches(RangeSelector.RANGE_STEP):
+        this.type = RangeTypes.STEP;
         break;
 
       default:
@@ -65,12 +64,12 @@ class Range extends api.core.Instance {
         this._model = new RangeModelDoubleStep();
         break;
 
-      case RangeTypes.STEP:
-        this._model = new RangeModelStep();
-        break;
-
       case RangeTypes.DOUBLE:
         this._model = new RangeModelDouble();
+        break;
+
+      case RangeTypes.STEP:
+        this._model = new RangeModelStep();
         break;
 
       default:
