@@ -1,0 +1,25 @@
+<% const sample = getSample(include); %>
+
+<%- sample(getText('sample.default', 'range'), './sample/range.ejs', { range: {min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.sm', 'range'), './sample/range.ejs', { range: {size: 'sm', min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.no-indicators', 'range'), './sample/range.ejs', { range: {indicators: false, min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.step', 'range'), './sample/range-step.ejs', { range: {min: 0, max: 100, step: 10, value: 50}}, true); %>
+
+<%- sample(getText('sample.step-sm', 'range'), './sample/range-step.ejs', { range: {size: 'sm', min: 0, max: 100, step: 10, value: 50}}, true); %>
+
+<%- sample(getText('sample.double', 'range'), './sample/range-double.ejs', { range: {min: 0, max: 100, value: 25, value2: 75}}, true); %>
+
+<%- sample(getText('sample.double-sm', 'range'), './sample/range-double.ejs', { range: {size: 'sm', min: 0, max: 100, value: 25, value2: 75}}, true); %>
+
+<%- // sample(getText('sample.double-step', 'range'), './sample/range-double-step.ejs', { range: {min: 0, max: 100, step: 10, value: 25, value2: 75}}, true); %>
+
+<%- // sample(getText('sample.double-step-sm', 'range'), './sample/range-double-step.ejs', { range: {size: 'sm', min: 0, max: 100, step: 10, value: 25, value2: 75}}, true); %>
+
+<%- sample(getText('sample.prefix-suffix', 'range'), './sample/range.ejs', { range: {prefix: '~', suffix: '%', min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.disabled', 'range'), './sample/range.ejs', { range: {disabled: true, min: 0, max: 100, value: 50}}, true); %>
+
+<%- sample(getText('sample.error', 'range'), './sample/range.ejs', { range: {error: true, min: 0, max: 100, value: 50}}, true); %>

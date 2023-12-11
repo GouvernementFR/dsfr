@@ -1,6 +1,6 @@
 {
   "name": "@gouvfr/dsfr",
-  "version": "1.10.2",
+  "version": "1.11.0",
   "description": "Système de Design de l'Etat - DSFR",
   "repository": "git@github.com:GouvernementFR/dsfr.git",
   "author": "Service d'Information du Gouvernement <jean-charles.hourdeaux@pm.gouv.fr>",
@@ -64,6 +64,7 @@
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-discard-duplicates": "^5.1.0",
     "prettier": "^2.8.4",
+    "pure-rand": "^6.0.2",
     "rollup": "^2.68.0",
     "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-modify": "^3.0.0",

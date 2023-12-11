@@ -6,7 +6,8 @@
 @include enable-list-style;
 
 ul,
-ol {
+ol,
+dl {
   @include margin(0);
   @include padding(0);
 
@@ -41,7 +42,15 @@ ol {
   }
 }
 
-li {
+dl,
+dd {
+  @include margin(0);
+  padding-inline-start: var(--ul-start);
+}
+
+li,
+dd,
+dt {
   --xl-base: calc(var(--xl-size) * 0.9);
   @include padding-bottom(var(--li-bottom));
 }

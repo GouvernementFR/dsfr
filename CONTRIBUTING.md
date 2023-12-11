@@ -1,7 +1,7 @@
 # Contribuer au Système de Design de l'État <!-- omit in toc -->
 
 Avant de commencer à utiliser le Système de Design de l'État (ci-après, **DSFR**), veillez à prendre connaissance
-des [conditions générales d'utilisations](doc/legal/cgu.md).
+des [conditions générales d'utilisation](doc/legal/cgu.md).
 
 Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des documents relatifs à la [cession des droits d'auteur](doc/legal/cession.md) et du [certificat garantissant l'originalité](doc/legal/cgod.md) de votre contribution.
 
@@ -28,14 +28,14 @@ Si vous souhaitez contribuer au DSFR, veuillez prendre connaissance des document
 
 ## Installation
 ### Installation locale
-Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est donc nécessaire d’installer une version récente de nodeJs. Dans le terminal nous utiliserons les commandes de **npm** ou **yarn** (v1.22.19) pour lancer les scripts.
+Le **DSFR** est basé sur une architecture [NodeJS](https://nodejs.org/), il est donc nécessaire d’installer une version récente de NodeJS. Dans le terminal nous utiliserons les commandes de **npm** ou **yarn** (v1.22.19) pour lancer les scripts.
 
-Le dépôt est disponible à cette adresse: https://github.com/GouvernementFR/dsfr
+Le dépôt est disponible à cette adresse : https://github.com/GouvernementFR/dsfr
 
 Afin de pouvoir commencer à développer et contribuer au DSFR, assurez-vous tout d'abord de faire un fork du projet depuis votre compte GitHub (https://help.github.com/articles/fork-a-repo/)
 
 Il suffit ensuite de cloner votre fork, en téléchargeant les sources depuis le bouton “clone” de github, ou via un terminal avec commande :
-```
+```shell
 git clone https://github.com/VOTRE_NOM_UTILISATEUR_GITHUB/dsfr
 ```
 
@@ -43,32 +43,32 @@ La branche **dev** est la principale branche de travail - la branche main corres
 
 Une fois le projet récupéré, il est nécessaire d'installer les dépendances (node_modules) avec :
 
-```
+```shell
 yarn
 ```
 OU
 
-```
+```shell
 npm i
 ```
 Puis pour compiler les css/js et générer les pages d’exemples, utilisez :
 
-```
+```shell
 yarn release
 ```
 OU
 
-```
+```shell
 npm run release
 ```
-Enfin, il est nécessaire de lancez un serveur local pour visualiser les pages d’exemples :
+Enfin, il est nécessaire de lancer un serveur local pour visualiser les pages d’exemples :
 
-```
+```shell
 yarn serve
 ```
 OU
 
-```
+```shell
 npm run serve
 ```
 Un serveur local sera alors lancé sur l'adresse localhost:8080. Accéder à http://localhost:8080/example/ pour voir la liste des exemples.
@@ -102,7 +102,7 @@ Celui-ci gère les imports et le wrapper des examples html générés ainsi que 
 ```
 id: id du package, en anglais, unique, au singulier et composé d'un seul mot (ex: button)
 title: nom du composant, en français (ex: Bouton)
-description: description insérée dans le readme
+description: description insérée dans le readmed
 doc: lien vers la documentation
 wrapper: conteneur dans lequel on insert l'example. valeurs possibles : [container, col-8]
 style: liste des id des packages dont dépend le css
@@ -149,11 +149,11 @@ Dans le dossier style, on retrouve les fichiers suivants lorsqu'ils s'avèrent p
  - _function.scss : Contient les `functions` pouvant être utilisés par le composant
  - _tool.scss : Contient les `mixins` pouvant être utilisées par le composant
 
-Afin de limiter la longueur des fichiers de code (maximum une centaine de ligne), ces fichiers peuvent être découpés en sous fichiers qui prendront place dans des sous-dossier du même nom.
+Afin de limiter la longueur des fichiers de code (maximum une centaine de lignes), ces fichiers peuvent être découpés en sous fichiers qui prendront place dans des sous-dossiers du même nom.
 
 
 ### Javascript
-Certains packages font utilisation de javascript, afin d'apporter une couche interactive à ceux-ci. C'est le cas par exemple du package navigation, où le javascript est utilisé pour déplier les sous-menus. La couche javascript est structurée comme ceci, par exemple pour le composant `navigation` :
+Certains packages font utilisation de JavaScript, afin d'apporter une couche interactive à ceux-ci. C'est le cas par exemple du package navigation, où le JavaScript est utilisé pour déplier les sous-menus. La couche JavaScript est structurée comme ceci, par exemple pour le composant `navigation` :
 
 ```
 /src/component/navigation
@@ -176,7 +176,7 @@ Certains packages font utilisation de javascript, afin d'apporter une couche int
 
 Un dossier `script` qui contient un dossier par fonctionnalité js, ici `navigation` puis :
 
-`navigation.js` (ou nom-classe.js) contient le code de la fonctionnalité js, structurée en classes instanciables (es6) .
+`navigation.js` (ou nom-classe.js) contient le code de la fonctionnalité js, structurée en classes instanciables (es6).
 
 Lors du `yarn release`, le javascript est compilé en version "module" (es6) et "nomodule" (es5), ainsi qu'en version .min et .map.
 En mode développement, `yarn build` permet de générer uniquement la version .module.js (es6 non minifié)
@@ -211,7 +211,7 @@ Plus spécifiquement avec la commande `yarn build`, le paramètre `-h` permet de
 
 #### Branches
 Afin de travailler sur un nouveau package, ou un correctif d'un package existant, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`.
-```
+```shell
 git checkout -b prefixe/ma-branche dev
 ```
 
@@ -279,7 +279,7 @@ Important
 Pour contribuer sur le git DSFR, il convient d’utiliser une “pull-request” (PR).
 Lorsque vous estimez que votre développement est terminé et qu'il peut-être révisé par l'équipe DSFR, vos devez créer une pull request depuis github (https://github.com/GouvernementFR/dsfr/pulls ) ou github cli (gh).
 La pull-request suit les même règles de nommage décrites précédemment (branches, commits), à savoir le [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
-Une description détaillant le problème à résoudre, la façon dont la contribution résout le problème et toute autre information utile à la revue de code est fortement conseillée!
+Une description détaillant le problème à résoudre, la façon dont la contribution résout le problème et toute autre information utile à la revue de code est fortement conseillée !
 
 La pull request doit être faite depuis la branche de votre fork vers la branche **dev** du dépôt officiel
 
@@ -293,13 +293,13 @@ Les fichiers `icon.scss` et `icon.json` définissent les variables d'icônes pou
 Le dossier `example` contient les exemples HTML générés depuis les samples ejs. L'ordre des imports css et js est défini par l'ordre des dépendances dans le `package.yml`.
 
 La commande générale pour lancer la génération des fichiers dist, des exemples, ainsi que les tests est :
-```
+```shell
 yarn release
 ```
 
 
 En mode développement, il est possible d'utiliser la commande :
-```
+```shell
 yarn build
 ```
 Cette commande permet de générer uniquement les fichiers css/js/html. Cette commande est plus rapide puisqu'elle n'exécute pas les test, et ne compile pas les fichier .map, .md, .min.css, .nomodule.js...
@@ -313,7 +313,7 @@ Pour voir les différents paramètres disponibles : `yarn build --help`
 Les icônes, placées dans le répertoire `src/core/icon/`, sont exportées à la compilation dans dist/icons et des classes utilitaires CSS sont créées dans dist/utility/icons.
 Il est possible d'ajouter des icônes, en ajoutant des fichiers `.svg` dans `src/core/icon`, et en relançant le build :
 
-```
+```shell
 yarn build --clean
 ```
 
@@ -330,7 +330,7 @@ Afin de s'assurer de la qualité du code, nous utilisons des tests automatisés 
 Ces tests sont exécutés lors de la commande : `yarn release`
 Ou plus spécifiquement avec :
 
-```
+```shell
 yarn build --test
 ```
 Qui peut être combiner avec `-p nomPackage` pour spécifier un ou des package(s).
@@ -343,7 +343,7 @@ Afin de tester les différentes `functions` et `mixins`, nous utilisons jest et 
 Ces tests permettent de vérifier que le code renvoyé par ces derniers est bien conforme. (Par exemple, vérifier que le mixin de line-height renvoie bien la bonne valeur).
 Ces tests sont effectués lors du yarn release, ou plus spécifiquement avec :
 
-```
+```shell
 yarn build --test
 ```
 
@@ -351,7 +351,7 @@ yarn build --test
 Pour tester de manière automatisée l'accessibilité des composants du DSFR, nous utilisons [Pa11y](https://pa11y.org/) sur les pages de tests des différents packages.
 Ces tests sont effectués lors du yarn release, ou plus spécifiquement avec :
 
-```
+```shell
 yarn build --test
 ```
 
@@ -361,7 +361,7 @@ Les tests se jouent automatiquement sur chaque page de test de package, en mode 
 #### Lint
 Pour vérifier de manière automatisée les erreurs de syntax, de mise en forme du code, ou de non respect des bonne pratiques, nous utilisons **esLint** lors du `yarn release` ou plus spécifiquement avec :
 
-```
+```shell
 yarn build --test
 ```
 La configuration est présente dans le fichier `.eslintrc.json`. Elle reprend en grande partie la configuration standard de esLint
@@ -371,7 +371,7 @@ Outil en ligne de commande pour générer un journal des modifications `CHANGELO
 
 Commande à executer à la racine du projet, `git log` est exécuté en arrière-plan afin d'analyser l'historique des commits, en lançant :
 
-```
+```shell
 yarn version
 ```
 

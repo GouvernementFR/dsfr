@@ -20,7 +20,8 @@ function deprecation () {
 
 locals.deprecation = deprecation;
 
-function getSample (include) {
+function getSample (include, seed) {
+  randomSeed(seed || 0);
   return (title, path, data, snippet, layout, layoutData) => {
     sampling = false;
     let component = include(path, { ...data });
@@ -140,7 +141,7 @@ const brandData = (component = 'header', logo = true, service = false, operator 
     fullTitle.push(contentPlaceholder(operatorPlaceholder));
     switch (typeof operator) {
       case 'boolean':
-        if (operator) data.operator = imgData('img/placeholder.9x16.png', 'rendered', null, null, 'width:3.5rem;');
+        if (operator) data.operator = imgData('img/placeholder.16x9.png', 'rendered', null, null, 'max-width:10rem;');
         break;
       default:
         data.operator = operator;
@@ -263,6 +264,21 @@ const errorData = (error) => {
 
 locals.errorData = errorData;
 
+const targetBlankData = () => {
+  const attr = {};
+  attr.target = '_blank';
+  attr.rel = 'noopener external';
+  attr.title = `${contentPlaceholder('Intitulé')} - ${getText('blank')}`;
+  return attr;
+}
+
+locals.targetBlankData = targetBlankData;
+
+const randomSeed = (seed) => {
+  const rng = prand.xoroshiro128plus(seed);
+  locals.rng = rng;
+}
+
 const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
   let content = '<!-- données de test -->';
   if (sampling) return content;
@@ -271,19 +287,18 @@ const randomContent = (types = ['title', 'img', 'text', 'list'], id) => {
     content += `<h4 class="${prefix}-h4" >Contenu ${id || ''}</h4>`;
   }
   if (types.includes('img')) {
-    if (Math.random() < .4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
+    if (prand.unsafeUniformIntDistribution(0, 10, locals.rng) < 4) content += include(root + 'src/core/template/ejs/media/responsive-img.ejs', {media: imgData()});
   }
   if (types.includes('text')) {
-    for (let i = Math.random() * 2; i > 0; i--) content += `<p>${lorem('<a href="https://www.systeme-de-design.gouv.fr/" target="_blank">link test</a>')}</p>`;
+    for (let i = prand.unsafeUniformIntDistribution(0, 1, locals.rng); i > 0; i--) content += `<p>${lorem('<a href="https://www.systeme-de-design.gouv.fr/" target="_blank">link test</a>')}</p>`;
   }
   if (types.includes('list')) {
     content += '<ul>';
-    for (let i = Math.random() * 2 + 1; i > 0; i--) {
+    for (let i = prand.unsafeUniformIntDistribution(1, 2, locals.rng); i > 0; i--) {
       content += '<li>list item';
-      if (Math.random() < .4) {
+      if (prand.unsafeUniformIntDistribution(0, 10, locals.rng) < 4) {
         content += '<ul>';
-        for (let j = Math.random() * 2 + 1; j > 0; j--) content += '<li>list item niveau 2</li>';
-
+        for (let j = prand.unsafeUniformIntDistribution(1, 2, locals.rng); j > 0; j--) content += '<li>list item niveau 2</li>';
         content += '</ul>';
       }
       content += '</li>';

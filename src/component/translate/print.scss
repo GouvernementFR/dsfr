@@ -1,0 +1,13 @@
+////
+/// Translate Print
+/// @group translate
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _translate-scheme('print');
+
+  @import 'style/print';
+}

@@ -3,6 +3,8 @@
 /// @group pagination
 ////
 
+@use 'module/selector';
+
 @include build-pagination();
 
 #{ns(pagination)} {
@@ -34,9 +36,11 @@
     @include disable-underline;
     @include relative;
 
-    &[aria-current]:not([href]) {
-      cursor: default;
-      pointer-events: none;
+    &:not([href]) {
+      @include selector.current {
+        cursor: default;
+        pointer-events: none;
+      }
     }
 
     &--first {

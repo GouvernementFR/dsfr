@@ -38,6 +38,12 @@
       }
     }
 
+    &__operator {
+      img {
+        height: auto !important;
+      }
+    }
+
     #{ns(modal)} {
       @include respond-from(lg) {
         position: static;

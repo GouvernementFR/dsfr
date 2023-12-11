@@ -1,0 +1,13 @@
+////
+/// Modal Print
+/// @group modal
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _modal-scheme('print');
+
+  @import 'style/print';
+}

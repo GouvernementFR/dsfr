@@ -1,0 +1,10 @@
+////
+/// Colors Legacy
+/// @group colors
+////
+
+@use '../colors';
+
+@media print {
+  @include colors.print;
+}

@@ -1,0 +1,13 @@
+////
+/// Consent Print
+/// @group consent
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _consent-scheme('print');
+
+  @import 'style/print';
+}

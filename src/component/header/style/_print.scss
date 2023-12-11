@@ -1,0 +1,28 @@
+#{ns(header)} {
+  &__menu {
+    display: none;
+  }
+
+  &__body {
+    &-row {
+      @include padding(0);
+    }
+
+    #{ns(header)}__tools,
+    #{ns(header)}__navbar {
+      display: none;
+    }
+  }
+
+  &__brand {
+    flex-wrap: nowrap;
+
+    &-top {
+      width: auto;
+    }
+  }
+
+  &__service {
+    box-shadow: none;
+  }
+}

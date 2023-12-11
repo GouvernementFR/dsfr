@@ -1,0 +1,13 @@
+////
+/// Quote Print
+/// @group quote
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _quote-scheme('print');
+
+  @import 'style/print';
+}

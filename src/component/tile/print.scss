@@ -1,0 +1,13 @@
+////
+/// Tile Print
+/// @group tile
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _tile-scheme('print');
+
+  @import 'style/print';
+}

@@ -1,0 +1,11 @@
+////
+/// Tab Print
+/// @group tab
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _tab-scheme('print');
+}

@@ -1,0 +1,10 @@
+id: segmented
+title: Contrôle segmenté
+description: Le composant "contrôle segmenté" incite l'utilisateur à choisir entre plusieurs options d'affichage disponibles (vues), mutuellement exclusives avec une valeur sélectionnée par défaut.
+doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/controle-segmente
+wrapper: col-8
+style:
+  - core
+  - form
+script:
+  - core

@@ -17,32 +17,34 @@
 /// @param {Object} $value - le SVG en data-uri
 /// @param {String} $prop - propriété sur laquelle est assignée le svg
 /// @example @include scheme-element-data-uri-svg(text title grey, false, "<svg><path fill='$COLOR'></path></svg>"));
-@mixin data-uri-svg($tokens, $options: (), $value: "<svg><path fill='$COLOR'></path></svg>", $prop: background-image) {
+@mixin data-uri-svg($tokens, $options: (), $value: "<svg><path fill='$COLOR'></path></svg>", $prop: background-image, $var: 'data-uri-svg') {
   $legacy: map.get($options, legacy);
   $important: map.get($options, important);
   $tokens: token.normalise($tokens);
-  $light-colors: colors.from-list($tokens, hex, (theme: light));
+  $light-colors: colors.from-list($tokens, hex, (theme: light, hover: map.get($options, hover), active: map.get($options, active)));
   $light: result.get($light-colors, $value);
   $light: specificity.important($light, $important);
 
   @if $legacy and $prop != false {
     @include legacy.is(ie11) {
-      #{$prop}: #{url(utilities.data-uri(string.encode-svg($light, true), svg))};
+      @if $prop != false {
+        #{$prop}: #{url(utilities.data-uri(string.encode-svg($light, true), svg))};
+      }
     }
   }
   @else {
-    --data-uri-svg: #{url(utilities.data-uri(string.encode-svg($light, false), svg))};
+    --#{$var}: #{url(utilities.data-uri(string.encode-svg($light, false), svg))};
 
-    $dark-colors: colors.from-list($tokens, hex, (theme: dark));
+    $dark-colors: colors.from-list($tokens, hex, (theme: dark, hover: map.get($options, hover), active: map.get($options, active)));
     $dark: result.get($dark-colors, $value);
     $dark: specificity.important($dark, $important);
 
     @include selector.theme(dark) {
-      --data-uri-svg: #{url(utilities.data-uri(string.encode-svg($dark, false), svg))};
+      --#{$var}: #{url(utilities.data-uri(string.encode-svg($dark, false), svg))};
     }
 
     @if $prop != false {
-      #{$prop}: var(--data-uri-svg);
+      #{$prop}: var(--#{$var});
     }
   }
 }

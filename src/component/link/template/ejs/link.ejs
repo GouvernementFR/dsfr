@@ -104,7 +104,7 @@ if (link.disabled === true) {
                     break;
 
                 case link.blank:
-                    linkAttrs.target = '_blank';
+                    linkAttrs = {...targetBlankData(), ...linkAttrs};
                     break;
 
                 case link.self:
@@ -122,6 +122,4 @@ if (link.detail) {
 
 %>
 
-<<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> >
-<%- label %>
-</<%= markup %>>
+<<%= markup %> <%- includeClasses(linkClasses); %> <%- includeAttrs(linkAttrs); %> ><%- label %></<%= markup %>>

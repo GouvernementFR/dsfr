@@ -10,7 +10,8 @@ Chacune de ces données est répartie dans différentes catégories qui sont dis
     window.dsfr = {
         analytics: {
             domain: 'mon.domainedetracking.com',
-            // collection: 'manual'
+            // collection: 'manual',
+            // isActionEnabled: false,  
         }
     };
 </script>
@@ -38,6 +39,16 @@ Défini le mode de récolte des données de la page :
   application” (par défaut si dsfr en mode ‘vue’, ‘react’ ou ‘angular’)
 
 * `hash` : Les données sont envoyées à chaque changement de hash dans l'URL
+
+* * *
+
+##### isActionEnabled
+
+_Boolean_
+
+Défini si la mesure d'audience des actions est activée ou non.
+
+* Par défaut, la mesure d'audience des actions est activée.
 
 * * *
 

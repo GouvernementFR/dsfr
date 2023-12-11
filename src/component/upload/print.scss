@@ -1,0 +1,9 @@
+////
+/// Upload Print
+/// @group upload
+////
+
+@media print {
+  @import 'index';
+  @import 'style/print';
+}

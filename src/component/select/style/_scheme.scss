@@ -8,11 +8,11 @@
 
 @mixin _select-scheme($legacy: false) {
   #{ns(select)} {
-    @include color.text(title grey, (legacy:$legacy));
+    @include color.text(default grey, (legacy:$legacy));
     @include color.background(contrast grey, (legacy:$legacy));
     @include color.box-shadow(plain grey, (legacy:$legacy), bottom-2-in);
 
-    @include color.data-uri-svg(text title grey, (legacy: $legacy), $select-arrow-down-svg);
+    @include color.data-uri-svg(text label grey, (legacy: $legacy), $select-arrow-down-svg);
 
     #{ns(fieldset--valid)} &,
     &-group--valid & {

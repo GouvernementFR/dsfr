@@ -6,10 +6,12 @@
 #{ns(card)} {
   &--sm &__header {
     @include nest-badge(sm);
+    @include nest-tag(sm);
   }
 
   &--sm &__content {
     @include nest-badge(sm);
+    @include nest-tag(sm);
     @include padding(6v);
   }
 

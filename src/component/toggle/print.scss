@@ -1,0 +1,13 @@
+////
+/// Toggle Print
+/// @group toggle
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _toggle-scheme('print');
+
+  @import 'style/print';
+}

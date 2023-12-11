@@ -1,0 +1,176 @@
+////
+/// Range Module
+/// @group range
+////
+
+@use 'module/reset';
+@use 'module/spacing';
+@use 'module/selector';
+@use 'module/disabled';
+
+#{selector.ns-group(range)} {
+  @include relative;
+
+  &--valid,
+  &--error {
+    @include before('', block) {
+      pointer-events: none;
+      @include absolute(0, -3v, 0, -3v);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: spacing.space(0.5v 100%);
+    }
+  }
+}
+
+#{selector.ns(range)} {
+  --thumb-size: #{spacing.space(6v)};
+  @include relative;
+  @include display-flex(row, null, space-between, wrap);
+
+  input[type=range] {
+    outline: none;
+    @include width(100%);
+  }
+
+  &__output {
+    visibility: hidden;
+  }
+
+  &__output,
+  &__min,
+  &__max {
+    text-align: center;
+    @include min-width(var(--thumb-size));
+    @include text-style(xs);
+  }
+
+  &#{selector.ns-attr(js-range)} {
+    --progress-left: 0;
+    --progress-right: calc(var(--thumb-size) * 0.5);
+
+    @include _pseudo (before after, '', block) {
+      @include absolute(6.5v, 0, null, 0);
+      @include size(100%, 3v);
+      border-radius: spacing.space(1.5v);
+    }
+
+    @include before {
+      outline-offset: -1px;
+    }
+
+    @include after {
+      clip-path: polygon(var(--progress-left) 0, var(--progress-right) 0, var(--progress-right) 100%, var(--progress-left) 100%);
+    }
+
+    input[type=range] {
+      @include reset.appearance(none);
+      background-color: transparent;
+      @include size(100%, var(--thumb-size));
+      @include z-index(over);
+
+      &:not(:only-of-type) {
+        pointer-events: none;
+      }
+
+      @include selector.range-thumb {
+        @include reset.appearance(none);
+        @include size(var(--thumb-size), var(--thumb-size));
+        border-radius: 50%;
+        border: none;
+        pointer-events: auto;
+
+        &:active {
+          @include z-index(above);
+        }
+      }
+    }
+
+    #{selector.ns(range__output)} {
+      visibility: visible;
+    }
+  }
+
+  &--sm {
+    --thumb-size: #{spacing.space(4v)};
+
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        @include top(6v);
+        @include height(2v);
+        border-radius: spacing.space(1v);
+      }
+    }
+  }
+
+  &--step {
+    &#{selector.ns-attr(js-range)} {
+      --step-width: 0;
+      @include _pseudo(before after) {
+        @include padding-x(2.5v);
+        background-repeat: repeat-x;
+        background-size: var(--step-width) 100%;
+        background-position: spacing.space(2.5v 0);
+        background-clip: content-box;
+      }
+    }
+  }
+
+  &--step#{&}--sm {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        background-position: spacing.space(1.5v 0);
+        @include padding-x(1.5v);
+      }
+    }
+  }
+
+  &--double &__output {
+    @include min-width(calc(var(--thumb-size) * 2));
+  }
+
+  &--double {
+    &#{selector.ns-attr(js-range)} {
+      input[type=range] {
+        @include width(calc(100% - var(--thumb-size)));
+
+        &:nth-of-type(1) {
+          @include margin-right(var(--thumb-size));
+        }
+
+        &:nth-of-type(2) {
+          @include absolute;
+          @include right(0);
+          @include top(5v);
+        }
+      }
+    }
+  }
+
+  // step désactivé sur le curseur double
+  &--double#{&}--step {
+    &#{selector.ns-attr(js-range)} {
+      @include _pseudo(before after) {
+        background-size: 0;
+      }
+    }
+  }
+
+  // &--double#{&}--step {
+  //   &#{selector.ns-attr(js-range)} {
+  //     @include _pseudo(before after) {
+  //       @include padding-x(5.5v);
+  //       background-position: spacing.space(5.5v 0);
+  //     }
+  //   }
+  // }
+
+  // &--double#{&}--step#{&}--sm {
+  //   &#{selector.ns-attr(js-range)} {
+  //     @include _pseudo(before after) {
+  //       @include padding-x(3.5v);
+  //       background-position: spacing.space(3.5v 0);
+  //     }
+  //   }
+  // }
+}

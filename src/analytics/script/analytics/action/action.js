@@ -11,6 +11,7 @@ const getParametersLayer = (data) => {
 class Action {
   constructor (name) {
     this._isMuted = false;
+    this._isForced = false;
     this._name = name;
     this._status = ActionStatus.UNSTARTED;
     this._labels = [];
@@ -24,6 +25,14 @@ class Action {
 
   set isMuted (value) {
     this._isMuted = value;
+  }
+
+  get isForced () {
+    return this._isForced;
+  }
+
+  set isForced (value) {
+    this._isForced = value;
   }
 
   get isSingular () {

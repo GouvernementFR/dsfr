@@ -6,6 +6,7 @@
 @use 'module/color';
 @use 'module/elevation';
 @use 'module/media-query';
+@use 'module/selector';
 
 @mixin _sidemenu-scheme($legacy: false) {
   #{ns(sidemenu)} {
@@ -30,7 +31,7 @@
     @include list-item {
       #{ns(sidemenu__link)},
       #{ns(sidemenu__btn)} {
-        @include color.text(default grey, (legacy:$legacy));
+        @include color.text(action-high grey, (legacy: $legacy));
       }
 
       @include before {
@@ -68,7 +69,7 @@
     &__btn {
       @include color.text(action-high blue-france, (legacy:$legacy));
 
-      &[aria-current] {
+      @include selector.current {
         @include color.text(active blue-france, (legacy:$legacy));
         @include before {
           @include color.background(border active blue-france, (legacy:$legacy));

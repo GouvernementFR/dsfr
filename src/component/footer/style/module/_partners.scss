@@ -21,7 +21,6 @@
     */
     #{ns(footer__logo)} {
       @include size(auto, auto);
-      @include padding(1v);
     }
 
     + #{ns(footer__bottom)} {
@@ -30,8 +29,9 @@
   }
 
   &__partners-title {
-    @include set-title-margin(0 0 2v 0);
+    @include set-title-margin(0 0 3v 0);
     @include text-style(sm);
+    @include font-weight(regular);
     flex-basis: 100%;
     text-align: center;
 
@@ -48,12 +48,8 @@
     @include margin(0 0 -2v 0);
 
     @include respond-from(sm) {
-      @include display-flex(row, flex-start, flex-start);
+      @include display-flex(row, flex-start, space-between);
       @include margin-right(-2v);
-      @include before('', block) {
-        order: 2;
-        flex: 1;
-      }
     }
 
     @include respond-from(md) {
@@ -67,27 +63,13 @@
   */
   &__partners-main {
     @include display-flex(row,null,center);
-    @include margin-x(auto);
     @include margin-bottom(8v);
     @include margin-bottom(4v, sm);
 
     + #{ns(footer__partners-sub)} {
-      & > ul > li {
-        @include margin(0 2v 0 2v, sm);
-        @include margin(0 4v 0 4v, md);
-      }
-
       @include respond-from(md) {
-        & > ul {
-          justify-content: flex-end;
-        }
         @include padding-left(4v);
-        @include padding-top(0);
       }
-    }
-
-    @include respond-from(sm) {
-      order: 1;
     }
   }
 
@@ -100,9 +82,26 @@
     &,
     & > ul {
       @include display-flex(column, center, null, wrap);
+
       @include respond-from(sm) {
         flex-direction: row;
         align-items: flex-start;
+      }
+
+      @include respond-from(md) {
+        & > ul {
+          justify-content: flex-end;
+        }
+        @include padding-top(0);
+      }
+
+      & > li {
+        @include margin(0 2v 0 2v, sm);
+        @include margin(0 4v 0 4v, md);
+
+        &:first-child {
+          @include margin-left(0);
+        }
       }
     }
 
@@ -110,7 +109,8 @@
     * On surcharge le style du lien pour les logos secondaires
     */
     #{ns(footer)}__partners-link {
-      @include margin-bottom(2v);
+      @include margin-bottom(4v);
+      @include margin-bottom(2v, md);
     }
 
     @include respond-from(sm) {

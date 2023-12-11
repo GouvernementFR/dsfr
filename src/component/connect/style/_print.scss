@@ -1,0 +1,9 @@
+#{ns-group(connect)} {
+  p {
+    @include text-style(md);
+  }
+
+  #{ns(connect)} + p a {
+    @include text-style(md);
+  }
+}

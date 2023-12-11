@@ -1,0 +1,13 @@
+////
+/// Skiplink Print
+/// @group skiplink
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _skiplink-scheme('print');
+
+  @import 'style/print';
+}

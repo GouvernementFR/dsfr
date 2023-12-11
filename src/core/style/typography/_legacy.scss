@@ -16,4 +16,8 @@
   h6 {
     @include margin(0 0 6v);
   }
+
+  p {
+    @include margin(0 0 4v);
+  }
 }

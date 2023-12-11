@@ -8,5 +8,7 @@ description: |
   Les icônes fonctionnelles sont des symboles visuels qui accompagnent l’utilisateur dans ses actions et qui aident à sa compréhension de l’interface.
 doc:
   - title: Icônes
-    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icone
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/icones
+  - title: Pictogramme
+    url: https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-techniques/pictogramme
 detached: true

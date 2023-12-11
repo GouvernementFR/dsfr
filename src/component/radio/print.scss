@@ -1,0 +1,11 @@
+////
+/// Radio Print
+/// @group radio
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _radio-scheme('print');
+}

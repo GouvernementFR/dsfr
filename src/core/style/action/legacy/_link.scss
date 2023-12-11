@@ -4,20 +4,12 @@
 ////
 
 @use 'module/legacy';
+@use 'module/spacing';
 
 @include legacy.is(ie11) {
-  [href],
-  #{ns(reset-link)} {
-    &[href],
-    [href] {
-      text-decoration: underline;
-    }
-  }
-
   #{ns(raw-link)} {
     &[href],
     [href] {
-      text-decoration: none;
       @include after(none);
     }
   }
@@ -25,6 +17,7 @@
   [target="_blank"] {
     @include icon-legacy(external-link-line, sm, after) {
       content: "";
+      vertical-align: sub;
     }
   }
 }

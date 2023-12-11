@@ -1,0 +1,25 @@
+subdir:
+  title: Autres versions
+  deprecated: version dépréciée
+
+label:
+  default: Label
+hint:
+  default: Texte de description additionnel, valeur de 0 à 100.
+error:
+  default: Valeur sélectionnée impossible
+valid:
+  default: Message de succès
+sample:
+  default: Curseur simple
+  sm: Curseur simple taille SM
+  no-indicators: Curseur simple sans les indicateurs min/max
+  step: Curseur avec étapes
+  step-sm: Curseur avec étapes taille SM
+  double: Curseur double avec valeurs min et max
+  double-sm: Curseur double taille SM
+  double-step: Curseur double avec étapes
+  double-step-sm: Curseur double avec étapes taille SM
+  disabled: Curseur désactivé
+  prefix-suffix: Curseur avec préfixe et suffixe
+  error: Curseur avec erreur

@@ -10,15 +10,16 @@
 @mixin _header-scheme($legacy: false) {
   #{ns(header)} {
     &__brand {
-      @include elevation.elevate(raised, (legacy: $legacy));
+      @include elevation.elevate(raised-over, (legacy: $legacy));
     }
 
     &__service {
+      @include color.text(title grey, (legacy:$legacy));
       @include color.box-shadow(default grey, (legacy:$legacy), top-1-in);
     }
 
     @include media-query.respond-from(lg) {
-      @include elevation.elevate(raised, (legacy: $legacy));
+      @include elevation.elevate(raised-over, (legacy: $legacy));
 
       &__brand {
         @include elevation.drop((legacy:$legacy));
@@ -44,6 +45,12 @@
       #{ns(btn)} {
         @include btn-kind-scheme(4, $legacy);
       }
+
+      > #{ns(translate)}:first-child:last-child {
+        #{ns(btn)} {
+          @include btn-kind-scheme(3, $legacy);
+        }
+      }
     }
 
     &__navbar {
@@ -57,7 +64,7 @@
         @include btn-kind-scheme(4, $legacy);
 
         &--menu {
-          @include color.text(default grey, (legacy:$legacy));
+          @include btn-kind-scheme(3, $legacy);
         }
       }
     }

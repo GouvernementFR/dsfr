@@ -3,7 +3,7 @@ import { Actionee } from '../core/actionee';
 
 class AttributeActionee extends Actionee {
   constructor () {
-    super(100);
+    super(100, '', null, true);
   }
 
   static get instanceClassName () {

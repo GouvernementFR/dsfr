@@ -7,26 +7,26 @@
 
 @mixin _alert-scheme($legacy: false) {
   #{ns(alert)} {
-    @include color.box-shadow((plain grey) (background flat grey), (legacy:$legacy), all-1-in left-10v-in);
+    @include color.background-image((border plain grey) (border plain grey) (border plain grey) (border plain grey) (flat grey), (legacy:$legacy));
 
     @include before {
       @include color.text(inverted grey, (legacy:$legacy));
     }
 
     &--info {
-      @include color.box-shadow((plain info) (background flat info), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.background-image((border plain info) (border plain info) (border plain info) (border plain info) (flat info), (legacy:$legacy));
     }
 
     &--error {
-      @include color.box-shadow((plain error) (background flat error), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.background-image((border plain error) (border plain error) (border plain error) (border plain error) (flat error), (legacy:$legacy));
     }
 
     &--success {
-      @include color.box-shadow((plain success) (background flat success), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.background-image((border plain success) (border plain success) (border plain success) (border plain success) (flat success), (legacy:$legacy));
     }
 
     &--warning {
-      @include color.box-shadow((plain warning) (background flat warning), (legacy:$legacy), all-1-in left-10v-in);
+      @include color.background-image((border plain warning) (border plain warning) (border plain warning) (border plain warning) (flat warning), (legacy:$legacy));
     }
   }
 }

@@ -1,7 +1,7 @@
 import { TransitionSelector } from './transition-selector';
 
-const selector = {};
-
-selector.TransitionSelector = TransitionSelector;
+const selector = {
+  TransitionSelector: TransitionSelector
+};
 
 export default selector;

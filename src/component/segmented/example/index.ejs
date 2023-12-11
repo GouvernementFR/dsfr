@@ -1,0 +1,19 @@
+<% const sample = getSample(include); %>
+
+<%- sample(getText('sample.default', 'segmented'), './sample/segmented-default.ejs', {}, true); %>
+
+<%- sample(getText('sample.sm', 'segmented'), './sample/segmented-default.ejs', {segmented: {size: 'sm'}}, true); %>
+
+<%- sample(getText('sample.legend-inline', 'segmented'), './sample/segmented-default.ejs', {segmented: {legendInline: true}}, true); %>
+
+<%- sample(getText('sample.hint-text', 'segmented'), './sample/segmented-default.ejs', {segmented: {hint: 'texte additionel'}}, true); %>
+
+<%- sample(getText('sample.icon', 'segmented'), './sample/segmented-default.ejs', {segmented: {icon: 'road-map-line'}}, true); %>
+
+<%- sample(getText('sample.no-legend', 'segmented'), './sample/segmented-default.ejs', {segmented: {noLegend: true}}, true); %>
+
+<%- sample(getText('sample.disabled', 'segmented'), './sample/segmented-default.ejs', {segmented: {disabled: true}}, true); %>
+
+<%- section(getText('sample.max', 'segmented'), 'Lorsque la largeur du contrôle segmenté dépasse celle de son conteneur, la légende ne reste pas sur la même ligne. Si cela ne rentre toujours pas, les boutons passent en vertical. Réduisez la fenêtre pour voir le comportement de ce script.', 0) %>
+
+<%- sample('', './sample/segmented-default.ejs', {segmented: {id: 'segmented-max', legendInline: true, icon: 'road-map-line', elements: [{id: 'segmented-max-1', icon: 'star-line', name: 'segmented-max', value: '1', label: 'label long'}, {id: 'segmented-max-2', icon: 'time-line', name: 'segmented-max', value: '2', checked: true, label: 'label trop long'}]}}, true); %>

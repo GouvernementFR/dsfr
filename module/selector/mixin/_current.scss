@@ -1,0 +1,15 @@
+/// Ajout d'un sélecteur pour l'élément courant
+/// @access public
+
+@mixin current {
+  &[aria-current]:not([aria-current="false"]) {
+    @content;
+  }
+}
+
+@mixin not-current {
+  &:not([aria-current]),
+  &[aria-current="false"] {
+    @content;
+  }
+}

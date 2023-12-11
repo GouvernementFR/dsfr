@@ -1,0 +1,6 @@
+#{ns(table)} {
+  td,
+  th {
+    @include text-style(md);
+  }
+}

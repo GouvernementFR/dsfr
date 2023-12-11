@@ -1,0 +1,11 @@
+////
+/// Pagination Print
+/// @group pagination
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _pagination-scheme('print');
+}

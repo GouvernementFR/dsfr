@@ -87,6 +87,60 @@ $action-elements: (
       )
     )
   ),
+  input-range-webkit: (
+    selector: 'input[type="range"]',
+    isolated: true,
+    focus: (
+      selector: '&::-webkit-slider-thumb'
+    ),
+    cursor: (
+      grab: (
+        selector: '&::-webkit-slider-thumb'
+      ),
+      grabbing: (
+        selector: '&::-webkit-slider-thumb:active'
+      ),
+      not-allowed: (
+        selector: '&:disabled::-webkit-slider-thumb, &:disabled::-webkit-slider-thumb:active'
+      )
+    )
+  ),
+  input-range-moz: (
+    selector: 'input[type="range"]',
+    isolated: true,
+    focus: (
+      selector: '&::-moz-range-thumb'
+    ),
+    cursor: (
+      grab: (
+        selector: '&::-moz-range-thumb'
+      ),
+      grabbing: (
+        selector: '&::-moz-range-thumb:active'
+      ),
+      not-allowed: (
+        selector: '&:disabled::-moz-range-thumb, &:disabled::-moz-range-thumb:active'
+      )
+    )
+  ),
+  input-range-ms: (
+    selector: 'input[type="range"]',
+    isolated: true,
+    focus: (
+      selector: '&::-ms-thumb'
+    ),
+    cursor: (
+      grab: (
+        selector: '&::-ms-thumb'
+      ),
+      grabbing: (
+        selector: '&::-ms-thumb:active'
+      ),
+      not-allowed: (
+        selector: '&:disabled::-ms-thumb, &:disabled::-ms-thumb:active'
+      )
+    )
+  ),
   input-buttons: (
     selector: 'input[type="button"], input[type="image"], input[type="reset"], input[type="submit"]',
     focus: (),

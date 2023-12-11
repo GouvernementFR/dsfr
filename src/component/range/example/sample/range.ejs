@@ -1,0 +1,25 @@
+<%
+let range = locals.range || {};
+let data = {};
+data.id = range.id || uniqueId('range');
+data.groupId = (range.id || uniqueId('range')) + '-group';
+data.name = data.id;
+data.isStep = range.isStep;
+data.isDouble = range.isDouble;
+data.disabled = range.disabled;
+data.min = range.min ?? 0;
+data.max = range.max ?? 100;
+if (range.indicators === false) data.indicators = range.indicators;
+data.value = range.value || (data.min + data.max) / 2;
+if (range.size) data.size = range.size;
+if (range.step) data.step = range.step;
+if (range.prefix) data.prefix = range.prefix;
+if (range.suffix) data.suffix = range.suffix;
+
+data.label = getText('label.default', 'range');
+data.hint = getText('hint.default', 'range');
+if(range.error) data.error = getText('error.default', 'range');
+if(range.valid) data.valid = getText('valid.default', 'range');
+%>
+
+<%- include('../../template/ejs/range', {range:data}); %>

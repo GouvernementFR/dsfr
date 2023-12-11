@@ -5,7 +5,7 @@
 
 #{ns(sidemenu)} {
   &__inner {
-    @include padding(0 8v 0 1v, md);
+    @include padding(0 6v 0 0, md);
 
     /**
     * Ce wrapper ne sert que pour la version mobile

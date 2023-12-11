@@ -19,7 +19,7 @@
   &--inline {
     #{ns(fieldset__content)} {
       @include display-flex(null, baseline, flex-start, wrap);
-      @include margin(-3v 0 0 2v);
+      @include margin(-3v 2v 0 2v);
     }
 
     #{ns-group(checkbox)} {
@@ -58,7 +58,7 @@
 
   &__content {
     @include relative;
-    @include margin-left(2v);
+    @include margin(0 2v);
     width: 100%;
 
     #{ns-group(radio)},
@@ -117,5 +117,5 @@
 }
 
 #{ns(info-text)} {
-  @include icon-image(information-fill, before);
+  @include icon-image(info-fill, before);
 }

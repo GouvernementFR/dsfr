@@ -104,6 +104,14 @@ class Analytics {
     return this._collector.collection;
   }
 
+  get isActionEnabled () {
+    return this._collector.isActionEnabled;
+  }
+
+  set isActionEnabled (value) {
+    this._collector.isActionEnabled = value;
+  }
+
   get isDebugging () {
     return debug.isActive;
   }

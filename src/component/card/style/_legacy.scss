@@ -36,6 +36,22 @@
       #{ns(tile__title a)} {
         @include icon-legacy(download-line, null, after);
       }
+
+      #{ns(card__header)} {
+        padding-top: 56.25%;
+
+        @include respond-from(md) {
+          padding-top: 0;
+        }
+
+        #{ns(card__img)} {
+          img {
+            height: auto !important;
+            width: auto;
+            margin: auto;
+          }
+        }
+      }
     }
 
     &#{ns(enlarge-link)} {

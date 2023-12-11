@@ -1,0 +1,10 @@
+#{ns(tile)},
+#{ns(tile--sm)} {
+
+  #{ns(tile)}__desc,
+  #{ns(tile)}__detail,
+  &__desc,
+  &__detail {
+    @include text-style(md);
+  }
+}

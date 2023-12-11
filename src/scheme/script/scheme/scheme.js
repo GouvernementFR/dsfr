@@ -135,7 +135,7 @@ class Scheme extends api.core.Instance {
     if (this.isListening) return;
     this.isListening = true;
     this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    this.mediaQuery.addEventListener('change', this.changing);
+    if (this.mediaQuery.addEventListener) this.mediaQuery.addEventListener('change', this.changing);
     this.change();
   }
 

@@ -1,0 +1,11 @@
+////
+/// Select Print
+/// @group select
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _select-scheme('print');
+}

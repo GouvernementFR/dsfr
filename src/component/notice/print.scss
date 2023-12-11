@@ -1,0 +1,11 @@
+////
+/// Notice Print
+/// @group notice
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _notice-scheme('print');
+}

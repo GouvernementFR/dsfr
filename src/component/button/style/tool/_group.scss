@@ -18,7 +18,8 @@
 }
 
 @mixin vertical-btns-group() {
-  > li {
+  > li,
+  > div {
     width: 100%;
     max-width: 100%;
   }

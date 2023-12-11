@@ -1,0 +1,7 @@
+#{ns(quote)} {
+  &__author,
+  cite,
+  figcaption li {
+    @include text-style(md);
+  }
+}

@@ -1,0 +1,10 @@
+////
+/// Segmented Tool
+/// @group segmented
+////
+
+@mixin nest-segmented-element($size: md, $place: null, $icon:null, $from: null, $insert: false, $align-on-content: false) {
+  @include _nest-link($segmented-element-settings, $size, $place, $icon, $from, $insert, $align-on-content) {
+    @content;
+  }
+}

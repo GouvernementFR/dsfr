@@ -9,9 +9,14 @@
   $size-settings: map_get($sizes, $size);
   $border-radius: map-get($settings, border-radius);
   $places: map-get($links-settings, places);
+  $append: map-get($settings, append);
 
   @if $insert {
     $selector: ns(map-get($settings, selector));
+
+    @if $append != null {
+      $selector: '#{$selector} #{$append}';
+    }
   }
 
   @include nest($selector) {

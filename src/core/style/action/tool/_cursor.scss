@@ -7,16 +7,27 @@
   $selectors: ();
   @each $element, $setting in $elements {
     $cursor: map-get($setting, cursor);
+    $isolated: map-get($setting, isolated);
     $selector: map-get($setting, selector);
     @if $cursor {
       $kind: map-get($cursor, $type);
       @if $kind {
-        $selectors: append($selectors, nest($selector, map-get($kind, selector)), 'comma');
+        @if $isolated {
+          $isolated-selectors: nest($selector, map-get($kind, selector));
+          #{$isolated-selectors} {
+            @content;
+          }
+        }
+        @else {
+          $selectors: append($selectors, nest($selector, map-get($kind, selector)), 'comma');
+        }
       }
     }
   }
 
-  #{$selectors} {
-    @content;
+  @if (length($selectors) > 0) {
+    #{$selectors} {
+      @content;
+    }
   }
 }

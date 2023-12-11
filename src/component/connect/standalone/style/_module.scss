@@ -10,4 +10,6 @@
   @include btn-reset(true);
   @include standalone-cursor(get-clickable-elements());
   @include standalone-focus(get-clickable-elements());
+  @include text-style(md);
+  font-size: max(1rem, 16px);
 }

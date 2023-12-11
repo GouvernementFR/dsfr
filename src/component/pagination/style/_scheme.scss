@@ -5,18 +5,19 @@
 
 @use 'module/color';
 @use 'module/disabled';
+@use 'module/selector';
 
 @mixin _pagination-scheme($legacy: false) {
   #{ns(pagination)} {
     @include color.text(action-high grey, (legacy: $legacy));
 
     &__link {
-      &[aria-current] {
+      @include selector.current {
         @include color.background(active blue-france, (legacy: $legacy, hover: true));
         @include color.text(inverted blue-france, (legacy: $legacy));
       }
 
-      &:not([aria-current]) {
+      @include selector.not-current {
         @include disabled.selector((can-be-link: true), (legacy: $legacy, text: true,));
       }
     }

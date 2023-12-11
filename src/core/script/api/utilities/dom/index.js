@@ -3,14 +3,14 @@ import { queryParentSelector, querySelectorAllArray } from './query-selector.js'
 import { queryActions } from './actions';
 import { uniqueId } from './id';
 
-const dom = {};
-
-dom.addClass = addClass;
-dom.hasClass = hasClass;
-dom.removeClass = removeClass;
-dom.queryParentSelector = queryParentSelector;
-dom.querySelectorAllArray = querySelectorAllArray;
-dom.queryActions = queryActions;
-dom.uniqueId = uniqueId;
+const dom = {
+  addClass: addClass,
+  hasClass: hasClass,
+  removeClass: removeClass,
+  queryParentSelector: queryParentSelector,
+  querySelectorAllArray: querySelectorAllArray,
+  queryActions: queryActions,
+  uniqueId: uniqueId
+};
 
 export default dom;

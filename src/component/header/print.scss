@@ -1,0 +1,13 @@
+////
+/// Header Print
+/// @group header
+////
+
+@media print {
+  @import 'index';
+  @import 'style/scheme';
+
+  @include _header-scheme('print');
+
+  @import 'style/print';
+}

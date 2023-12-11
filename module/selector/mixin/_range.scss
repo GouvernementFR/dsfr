@@ -1,0 +1,58 @@
+@mixin range-thumb($legacy: false) {
+  @if not $legacy {
+    &::-webkit-slider-thumb {
+      @content;
+    }
+
+    &::-moz-range-thumb {
+      @content;
+    }
+  }
+  @else {
+    &::-ms-thumb {
+      @content;
+    }
+  }
+}
+
+@mixin range-track {
+  &::-webkit-slider-runnable-track {
+    @content;
+  }
+}
+
+@mixin range-moz-track {
+  &::-moz-range-track {
+    @content;
+  }
+}
+
+@mixin range-moz-progress {
+  &::-moz-range-progress {
+    @content;
+  }
+}
+
+@mixin range-ms-thumb {
+  &::-ms-thumb {
+    @content;
+  }
+}
+
+@mixin range-ms-track {
+  &::-ms-track {
+    @content;
+  }
+}
+
+@mixin range-ms-fill-lower {
+  &::-ms-fill-lower {
+    @content;
+  }
+}
+
+@mixin range-ms-fill-upper {
+  &::-ms-fill-upper {
+    @content;
+  }
+}

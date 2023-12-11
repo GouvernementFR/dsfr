@@ -6,7 +6,7 @@
 @use 'module/color';
 
 body {
-  @include color.background(alt grey, (standalone: true));
+  @include color.background(alt blue-france, (standalone: true));
 }
 
 a {

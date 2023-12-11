@@ -7,6 +7,7 @@ const { createFile } = require('../utilities/file');
 const beautify = require('js-beautify').html;
 const log = require('../utilities/log');
 const { getPackages } = require('../utilities/config');
+const prand = require('pure-rand');
 const { I18n } = require('../classes/i18n/i18n');
 const beautyOpts = beautify.defaultOptions();
 beautyOpts.end_with_newline = true;
@@ -39,7 +40,8 @@ const buildExample = async (pck, locale) => {
     style: {
       main: [],
       scheme: [],
-      legacy: []
+      legacy: [],
+      print: []
     },
     script: {
       module: [],
@@ -97,7 +99,8 @@ const buildExample = async (pck, locale) => {
     uniqueId: uniqueId,
     i18n: new I18n(locale),
     locale: locale,
-    schemeBootScript: schemeBootScript
+    schemeBootScript: schemeBootScript,
+    prand: prand
   };
 
   renderExample(options, pck.example.root);
@@ -141,7 +144,8 @@ const buildStandaloneExample = (pck, locale) => {
     isStandalone: true,
     uniqueId: uniqueId,
     i18n: new I18n(locale),
-    locale: locale
+    locale: locale,
+    prand: prand
   };
 
   renderExample(options, pck.standalone.example.root);

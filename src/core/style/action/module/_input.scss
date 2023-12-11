@@ -25,7 +25,8 @@ input[type=search] {
 
 // Fix for NVDA
 input[type="checkbox"],
-input[type="radio"] {
+input[type="radio"],
+input[type="range"] {
   @include reset.appearance;
 }
 
@@ -34,5 +35,5 @@ input::-webkit-credentials-auto-fill-button {
   @include margin-left(4v);
   @include margin-right(-1px);
   @include size(5v, 5v);
-  mask-size: #{spacing.space(5v 5v)};
+  -webkit-mask-size: #{spacing.space(5v 5v)};
 }

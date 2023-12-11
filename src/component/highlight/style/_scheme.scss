@@ -7,10 +7,10 @@
 
 @mixin _highlight-scheme($legacy: false) {
   #{ns(highlight)} {
-    @include color.box-shadow(default blue-france, (legacy:$legacy), left-1v-in);
+    @include color.background-image(border default blue-france, (legacy:$legacy));
 
     @include color.accentuate {
-      @include color.box-shadow(default accent, (legacy:$legacy), left-1v-in);
+      @include color.background-image(border default accent, (legacy:$legacy));
     }
   }
 }
