@@ -10,9 +10,404 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 > ## DSFR v1
 
+## v1.11
+
+### [v1.11.0](https://github.com/GouvernementFR/dsfr/compare/v1.10.2...v1.11.0) - 11 Décembre 2023
+
+#### ✨ feat(range): version optimisée en accessibilité [(#841)](https://github.com/GouvernementFR/dsfr/pull/841)
+- redesign du composant en ajoutant une bordure à la track pour être plus visible
+- changement de la structure html pour être accessible
+- lint
+
+
+#### 🐛 fix(core): erreur js classname [(#837)](https://github.com/GouvernementFR/dsfr/pull/837)
+- régression sur la fonction getClassname du core
+
+
+#### 🐛 fix(core): classname IE [(#828)](https://github.com/GouvernementFR/dsfr/pull/828)
+- correction d'une erreur js sur IE lors de la récupération du classname dans l'instance
+
+
+#### 🐛 fix(header): augmente le z-index du header [(#830)](https://github.com/GouvernementFR/dsfr/pull/830)
+- ajout d'un niveau d'élévation `raised-over`
+- le header passe en z-index `raised-over` pour passer par dessus les cartes avec ombre
+
+
+#### 🐛 fix(examples): met a jour les pages d'exemple [(#831)](https://github.com/GouvernementFR/dsfr/pull/831)
+- mise en forme d'exemples
+
+
+#### 🐛 fix(password): placement checkbox & icon info [(#832)](https://github.com/GouvernementFR/dsfr/pull/832)
+- met a jour l'icône de message d'information
+- met a jour le placement de la checkbox
+
+
+#### 🐛 fix(*): corrections diverses [(#833)](https://github.com/GouvernementFR/dsfr/pull/833)
+- Ajout de la balise meta `format detection` pour désactiver le style automatique des url, date, email, et tél sur IOS
+- Passage des tag/badge en taille md sur les cartes md
+- augmentation de la marge au dessus du message d'erreur sur checkbox, input, select (16px)
+- correction d'une régression de la couleur de bordure des checkbox en erreur/succès
+- augmentation de la marge droite de l'image du composant citation
+- alignement de la valeur sur le curseur double quand tout à gauche
+- augmentation de l'épaisseur du stepper à 8px
+- passage du token de couleur des liens du menu latéral en $text-action-high-grey
+- passage en bleu du bouton d'ouverture du sélecteur de langue en mobile
+- alignement des chevrons du fil d'arianne
+- correction du token des tags cliquables désactivés
+
+
+#### 🐛 fix(input): fieldset error/valid [(#827)](https://github.com/GouvernementFR/dsfr/pull/827)
+- correction de la couleur de la bordure des champs en fieldset-error/valid
+
+
+#### 🐛 fix(doc): lien page d'exemple [(#826)](https://github.com/GouvernementFR/dsfr/pull/826)
+- mise à jour du lien vers le site de documentation dans la page d'exemple icone de favori
+
+
+#### 🐛 fix(legacy): bugs IE divers [(#825)](https://github.com/GouvernementFR/dsfr/pull/825)
+- Retrait du soulignement sur les bouton et tags en `a` sur IE
+- Retrait de la marge top des paragraphes `p` sur IE
+- Changement du placement du '+' de franceConnect+
+- Correction du ratio d'image sur les cartes de téléchargement sur IE
+- Réglage de l'alignement de l'icône des liens en target blank sur IE
+- Correction de l'alignement de la case des cases à cocher sur IE
+- Correction des min/max/valeur du curseur sur IE
+- Retrait du focus autour de l'icône des controles segmentés sur IE
+- Correction de la hauteur du composant fil d'arianne sur IE
+- Ajout des modifiers de bouton pour les accès rapide du header sur IE
+- Correction des icones prev/next de la pagination sur IE
+- Correction des couleurs du tag désactivé sur IE
+- Retrait du soulignement dans le reset des liens `a`
+
+
+#### 🐛 fix(range): dépendance à scheme [(#823)](https://github.com/GouvernementFR/dsfr/pull/823)
+- ajout de la dépendance à scheme dans la configuration du package range
+
+
+#### ✨ feat(follow,share): icône twitter-x par défaut [(#824)](https://github.com/GouvernementFR/dsfr/pull/824)
+- mise en place de l'icône X pour Twitter, avec changement du title pour "X (anciennement Twitter)" sur les composants follow et share
+
+
+#### 🐛 fix(link, card, tile): espacement entre libellé et icone [(#818)](https://github.com/GouvernementFR/dsfr/pull/818)
+- retrait du saut de ligne entre la balise `a` et son libellé pour corriger l'écart entre le libellé du lien et l'icone
+- ajout d'un exemple "lien externe" dans les exemples de lien
+- correction de la taille de l'icone sur les tuiles sans lien étendu
+- retrait de l'icone `arrow-right` sur les tuiles sans lien étendu, pour être iso avec les cartes
+
+
+#### 🐛 fix(doc): met a jour les liens des pages d'exemple [(#822)](https://github.com/GouvernementFR/dsfr/pull/822)
+- mise à jour des liens vers le site de documentation dans les pages d'exemple
+
+
+#### ✨ feat(segmented): ajout du composant contrôle segmenté [(#805)](https://github.com/GouvernementFR/dsfr/pull/805)
+- le composant "contrôle segmenté" incite l'utilisateur à choisir entre plusieurs options d'affichage disponibles (vues), mutuellement exclusives avec une valeur sélectionnée par défaut.
+
+
+#### 🐛 fix(build): liens doc sur core & utility [(#821)](https://github.com/GouvernementFR/dsfr/pull/821)
+- correction des liens de la documentation qui ne s'affichent plus dans les exemples
+
+
+#### 🐛 fix(toggle): largeur max du label & libellé [(#819)](https://github.com/GouvernementFR/dsfr/pull/819)
+- augmentation de la largeur max du libellé du label, la marge de 10v passe à 8v
+- changement du libellé du label et du texte additionnel
+
+
+#### 📈 feat(analytics): gestion des actions [(#812)](https://github.com/GouvernementFR/dsfr/pull/812)
+- ajout de la propriété `isActionEnabled` dans la configuration et sur l'objet `window.dsfr.analytics` permettant d'activer l'envoi des données d'actions si nécessaire.
+- ajout de l'attribut `data-fr-action` permettant d'activer l'envoi d'action sur un élément particulier et de spécifier la partie title de l'actionName envoyé
+- correctif sur les sélecteurs des card, title pour traquer des boutons
+
+
+#### 📝 doc(contributing): typos et formattage de la doc de contribution [(#810)](https://github.com/GouvernementFR/dsfr/pull/810)
+- ajout du formattage shell pour les snippets de code
+- correction de fautes d'ortographe
+
+
+#### 🐛 fix(core): correctif garbage collection hash [(#816)](https://github.com/GouvernementFR/dsfr/pull/816)
+- correction de la fonction dispose sur Instance pour enlever les écouteurs sur la modification du hash de l'url
+
+
+#### ✨ feat(range): ajout du composant curseur [(#817)](https://github.com/GouvernementFR/dsfr/pull/817)
+- Les curseurs sont des entrées numériques qui permettent de voir graphiquement la sélection d'une plage entre une valeur minimale et une valeur maximale. Ils servent à montrer en temps réelle les options choisies et éclairer la prise de décision.
+
+
+#### 🐛 feat(css-print): ajoute la feuille de style impression [(#802)](https://github.com/GouvernementFR/dsfr/pull/802)
+- génere une feuille de style "dist/dsfr.print.css" à charger pour appliquer les règles d'impression du DSFR
+- ajoute la classe utilitaire `.fr-no-print` pour retirer un élement de l'impression
+
+
+#### ⬆️ chore(dependencies): met a jour les dependances Node [(#815)](https://github.com/GouvernementFR/dsfr/pull/815)
+- mise à jour de :
+   - modules babel
+   - nanoid
+   - postCss
+   - word-wrap
+
+
+#### 🐛 fix(header): ajustements header [(#791)](https://github.com/GouvernementFR/dsfr/pull/791)
+- change la couleur du menu burger en $action-high-bleu-france en mobile
+- passe l'écart entre bloc marque et logo opérateur à 32px et l'écart entre logo opérateur et nom du site à 32px
+- réduit la taille de la barre de recherche à 96v (24rem) au lieu de 25rem
+- bloque la taille du logo opérateur à 8rem max (144px)
+- passe la taille du texte de la tagline en sm (14px) au lieu de md
+- passe le bouton burger en tertiaire avec border
+
+
+#### 🐛 fix(radio, radio-rich, toggle, checkbox): tokens de couleur [(#760)](https://github.com/GouvernementFR/dsfr/pull/760)
+- mise à jour des tokens de couleurs sur checkbox, radio, radio-rich, toggle
+
+
+#### 📝 doc(readme): mise en forme et précision du README.md [(#774)](https://github.com/GouvernementFR/dsfr/pull/774)
+- correction d'espacements et de fautes de frappe
+- précise l'interdiction d'utilisation "pour des sites web ou des applications", sans interdire d'utiliser le DSFR pour
+créer, par exemple, un système de design entièrement différent (d'où l'intérêt de la licence libre).
+
+
+#### 🐛 fix(connect): taille de la fonte adapatable [(#813)](https://github.com/GouvernementFR/dsfr/pull/813)
+- Le bouton FranceConnect doit répondre aux critères d’accessibilité qui redéfinissent le letter-spacing et la taille de fonte.
+  - Passage des valeurs de tailles et d'espacements en 'em' pour les rendre relatives à la taille de fonte du bouton
+  - Retrait du '+' de 'FranceConnect+' dans l'intitulé de `fr-connect__brand`. Celui-ci est désormais placé en contenu du pseudo-élément after du bouton
+
+
+#### 📝 doc(readme): correction du lien de la documentation des icônes [(#804)](https://github.com/GouvernementFR/dsfr/pull/804)
+- corrige le lien vers la documentation des icones dans le readme
+
+
+#### 📝 doc(cgu): correction URL du système de design [(#799)](https://github.com/GouvernementFR/dsfr/pull/799)
+- ajout de "www" dans l'url du site de documentation des CGU
+
+
+#### 🐛 fix(icon): correction de l'icone user-setting-line [(#797)](https://github.com/GouvernementFR/dsfr/pull/797)
+- correction du contenu du svg de l'icone `user-setting-line` qui ne correspondait pas à la bonne icone
+
+
+#### 🐛 fix(card, scheme): alignement du détail carte & erreur js sur safari <14 [(#796)](https://github.com/GouvernementFR/dsfr/pull/796)
+- Sur les anciennes version de safari macOS (inférieure à 14.0)
+  - corrige l'alignement du détail de la carte dans une grille de carte
+  - corrige une erreur de javascript liée au dark mode sur scheme.js
+
+
+#### 🐛 fix(sidemenu): correction marge interne [(#793)](https://github.com/GouvernementFR/dsfr/pull/793)
+- retire 1v de padding gauche et droite sur `fr-sidemenu__inner` en desktop
+
+
+#### 🐛 fix(footer): ajustements [(#792)](https://github.com/GouvernementFR/dsfr/pull/792)
+- corrige le niveau de titre des partenaires
+- le texte filler de footer__content-desc doit faire maximum 3 lignes en desktop
+- passe les liens .fr-footer__content-link en $text-default-grey
+- passe le padding top de .fr-footer__bottom-list à 4v
+- correction des espacements autour de fr-footer-body :  en mobile et en desktop (32px en haut et 24px en bas)
+- titre “nos partenaire“ → fr-footer__partners-title passe en graisse régular, couleur text-default-grey
+- ecart de 12px sous “Nos partenaire” en mobile/desktop
+- enleve le padding sur .fr-footer__partners .fr-footer__logo, ajoute une border 1px en $border-default-grey + un background en background-default-grey
+- en desktop l’ecart entre logo et bloc mark passe à 32px
+- passe le logo opérateur en 16x9
+- ajoute un margin bottom négatif de 8px sur le groupe de lien pour garder 24px en dessous
+- retire le padding sur les images des logos partenaire
+- passe à 16px entre les logos partenaires secondaires
+- rend les partenaires secondaires facultatifs
+- corrige alignement des liens en bas du footer
+
+
+#### 🐛 fix(download): icon-size bug compilation [(#788)](https://github.com/GouvernementFR/dsfr/pull/788)
+- correctif taille de l'icone du composant download (déprécié)
+
+
+#### ♻️ refactor(*): selecteur not combiné [(#786)](https://github.com/GouvernementFR/dsfr/pull/786)
+- remplacement des selecteurs :not(.selecteurA, .selecteurB) par :not(.selecteurA):not(.selecteurB) dans le js des composants : accordion, navigation, sidemenu, translate, transcription
+
+
+#### 🐛 fix(highlight): met à jour les espacements [(#777)](https://github.com/GouvernementFR/dsfr/pull/777)
+- passe le padding à 5v en mobile et 9v en desktop
+
+
+#### 🐛 fix(navigation): correctifs de style mega-menu [(#785)](https://github.com/GouvernementFR/dsfr/pull/785)
+- ajoute un margin-top: -1.25rem (-20px) sur le fr-mega-menu__leader
+- passe le texte de description et le lien du fr-mega-menu__leader en taille sm
+- supprime la classe fr-mb-4v de la colonne entourant le fr-mega-menu__leader
+- le texte du bouton de navigation passe en $text-action-high-blue-france à l'ouverture
+
+
+#### 🐛 fix(unavailable): couleur de fond et image décorative [(#787)](https://github.com/GouvernementFR/dsfr/pull/787)
+- change la couleur de fond de page pour du $background-alt-blue-france
+- remplace l'image décorative par un SVG
+
+
+#### 🐛 fix(close-btn): retire le `margin-left` négatif [(#784)](https://github.com/GouvernementFR/dsfr/pull/784)
+- retire la marge négative sur le modifier .fr-btn--close et corrige l'impact sur les composants 'alert', 'navigation', et 'notice'
+
+
+#### 🐛 fix(form): token de couleur de la légende [(#783)](https://github.com/GouvernementFR/dsfr/pull/783)
+- la légende du fieldset passe en $text-label-grey à la place de $text-title-grey
+
+
+#### 🐛 fix(skiplink): espacements des liens d'évitement [(#782)](https://github.com/GouvernementFR/dsfr/pull/782)
+- l'ecart entre les liens d'évitement passe à 16px (4v)
+- en desktop la marge en haut et en bas du composant passe à 12px (3v)
+
+
+#### 🐛 fix(follow): corrige affichage [(#781)](https://github.com/GouvernementFR/dsfr/pull/781)
+- inverse l'ordre des boutons "Instagram" et "LinkedIn"
+- supprime les margin left et right du groupe de boutons
+- place le bouton d'action dans un groupe de bouton fr-btns-group--inline-md sur les exemples "Lettre d'info seule" et "Réseaux sociaux et Lettre d'info mise en avant" pour que le bouton prenne l’ensemble de la largeur en vue mobile.
+
+
+#### 🐛 fix(tag): token de couleur du tag selectionnable [(#780)](https://github.com/GouvernementFR/dsfr/pull/780)
+- utilisation du token $text-inverted-blue-france sur la couleur du texte des tag selectionnable et supprimable à la place de $text-inverted-grey
+- remplacement du token de couleur de fond des tag selectionnable par $background-active-blue-france au lieu de $background-action-high-blue-france
+
+
+#### 🐛 fix(summary): alignement du titre du sommaire [(#779)](https://github.com/GouvernementFR/dsfr/pull/779)
+- ajout d'un padding-left de 8px pour aligner le titre avec le premier élément de la liste
+
+
+#### 🐛 fix(share): token couleur texte cookies désactivés [(#778)](https://github.com/GouvernementFR/dsfr/pull/778)
+- Le token de couleur du texte lorsque les cookies sont désactivés passe en $text-mention-grey
+
+
+#### 🐛 fix(core): mise à jour lien vers la doc typographie [(#775)](https://github.com/GouvernementFR/dsfr/pull/775)
+met à jour le lien vers la page "Typographie" du site de documentation.
+
+
+#### 🐛 fix(name): bouton ajout et suppression en secondaire [(#773)](https://github.com/GouvernementFR/dsfr/pull/773)
+- dans le pattern de nom prénom, les boutons d'ajout et de suppression de prénom passent en secondaire à la place de tertiaire
+
+
+#### 🐛 fix(input): combo champ + button en erreur [(#772)](https://github.com/GouvernementFR/dsfr/pull/772)
+- lorsque le champ newsletter de la lettre d'information est en erreur le champs doit être souligné en rouge et non en bleu
+
+
+#### 🐛 fix(toggle): couleur label & espacements [(#771)](https://github.com/GouvernementFR/dsfr/pull/771)
+- utilisation du token de couleur $text-label-grey sur le label de l'interrupteur
+- ajout de 4px de marge entre la coche et le texte activer/desactiver
+
+
+#### 🐛 fix(consent): correction espacement des radios accepter [(#768)](https://github.com/GouvernementFR/dsfr/pull/768)
+- ajustement de la marge droite des radios "accepter"
+
+
+#### 🐛 fix(consent): token de couleur des titres de finalité [(#767)](https://github.com/GouvernementFR/dsfr/pull/767)
+- passe la couleur des titres de finalité en $text-title-grey
+
+
+#### 🐛 fix(form, input): met a jour les espacements des icônes [(#766)](https://github.com/GouvernementFR/dsfr/pull/766)
+- place l’icône à 16px du bord droit des champs de saisie
+- ajuste le padding-right à 44px sur les champs de saisie avec icône
+- corrige la largeur des class fr-fieldset__content pour la version dépréciée
+
+
+#### 🐛 fix(checkbox): met a jour le token de la coche [(#762)](https://github.com/GouvernementFR/dsfr/pull/762)
+- passe la couleur de la coche en $text-inverted-blue-france
+
+
+#### 🐛 fix(login): correction espacements [(#759)](https://github.com/GouvernementFR/dsfr/pull/759)
+- corrige l'espace en trop entre le lien "Mot de passe oublié ?" et la checkbox "Se souvenir de moi",
+- ajoute une marge supplémentaire sous l’alerte d’erreur
+
+
+#### 🐛 fix(consent): correction lien & cookies obligatoires [(#754)](https://github.com/GouvernementFR/dsfr/pull/754)
+- coche les cookies obligatoires par defaut
+- étend le lien voir plus de detail
+
+
+#### 🐛 fix(password): couleur du texte de la checkbox "afficher" [(#750)](https://github.com/GouvernementFR/dsfr/pull/750)
+- utilisation du token de couleur : text-label-grey
+
+
+#### 🐛 fix(skiplink): visible avec elastic scrolling [(#749)](https://github.com/GouvernementFR/dsfr/pull/749)
+- cache le skiplink lors du rebond du scroll sur ios
+
+
+#### ✨ feat(core): description list dl dt dd [(#748)](https://github.com/GouvernementFR/dsfr/pull/748)
+- ajout du style par défaut des listes de description dl dt dd
+
+
+#### 🐛 fix(*): selecteur aria-current [(#747)](https://github.com/GouvernementFR/dsfr/pull/747)
+* correction sur breadcrumb, navigation, pagination, sidemenu, et translate de l'attribut [aria-current] lorsqu'il est à "false"
+
+
+#### ♻️ refactor(highlight, callout): background image à la place de box shadow [(#746)](https://github.com/GouvernementFR/dsfr/pull/746)
+- refactorisation de la bordure en background-image à la place de box-shadow
+
+
+#### 🐛 fix(header): token titre service [(#745)](https://github.com/GouvernementFR/dsfr/pull/745)
+- le token de couleur du texte de service passe en text-title-grey à la place de text-default-grey
+
+
+#### 🐛 fix(alert): remplacement des box-shadow en background-image [(#742)](https://github.com/GouvernementFR/dsfr/pull/742)
+- les bordures sont dessinées en background image à la place de box shadow
+
+
+#### 🐛 fix(link): rel noopener external & title target blank [(#737)](https://github.com/GouvernementFR/dsfr/pull/737)
+- ajout d'attribut title et rel noopener external sur les liens en target blank
+- modification des exemple de card, tile, link, footer, quote, notice
+
+
+#### 🐛 fix(search, input, select): color token & cancel button [(#740)](https://github.com/GouvernementFR/dsfr/pull/740)
+- corrige le token de couleur de l'intitulé et des icones dans les champs de saisie et du select.
+- customisation de l'icone de suppression du champs de recherche : close-circle-fill
+
+
+#### 🐛 fix(logo): intitulé et motto en noir absolu [(#738)](https://github.com/GouvernementFR/dsfr/pull/738)
+- intitulé et moto en noir absolu
+- ajout token absolute black
+
+
+#### 🐛 fix(select): correctifs flèche et intitulé [(#736)](https://github.com/GouvernementFR/dsfr/pull/736)
+- réduit la taille de l'icone et ajuste sa position
+- corrige l'intitulé du placeholder
+
+
+#### ✨ feat(select): ajout exemple `<optgroup>` [(#734)](https://github.com/GouvernementFR/dsfr/pull/734)
+- ajout d'un example de select avec groupe d'options
+
+
+#### 🐛 fix(header): mise à jour des exemples [(#727)](https://github.com/GouvernementFR/dsfr/pull/727)
+- ajout exemple utilisateur connecté
+- ajoute des exemples avec un seul raccourcis (sans liste)
+- ajoute les modifier de bouton account briefcase et team
+
+
+#### 🐛 fix(register): alignement boutons [(#726)](https://github.com/GouvernementFR/dsfr/pull/726)
+- corrige l'alignement des boutons : 
+  - en mobile, aligné l’un au dessus de l’autre, bouton primaire en premier
+  - en desktop, les 2 alignés à droite, bouton primaire à droite
+
+
+#### 🐛 fix(stepper): mise à jour de la structure [(#724)](https://github.com/GouvernementFR/dsfr/pull/724)
+- inverse le stepper step et le title dans la pile html
+
+
+#### 🐛 fix(page-unexpected): textes [(#723)](https://github.com/GouvernementFR/dsfr/pull/723)
+- inverse le texte principal et le texte de description du model de page
+
+
+#### 🐛 fix(quote): ajoute un exemple avec un seul detail [(#721)](https://github.com/GouvernementFR/dsfr/pull/721)
+- il n'est plus obligatoire d'avoir une liste dans le figcaption de la citation
+
+
+#### 🐛 fix(modal): a11y retire la liste dans la zone d'actions [(#720)](https://github.com/GouvernementFR/dsfr/pull/720)
+- le groupe de bouton peut désormais être une `div` à la place d'un `ul``li` 
+- retrait de la liste non ordonnée dans le footer de la modale
+
+
+#### fix(consent): ajoute un niveau de titre sur la banniere de consentement [(#719)](https://github.com/GouvernementFR/dsfr/pull/719)
+- le titre de la baniière devient un `<h4>` à la place d'un `<p>` dans la structure HTML du composant
+
+
+#### ✨ feat(prng): ajoute la librairie js pure-rand [(#718)](https://github.com/GouvernementFR/dsfr/pull/718)
+- implémente une lib js de PRNG dans le rendu EJS pour pouvoir mettre une seed sur chaque contenu.
+
+
+#### 🐛 fix(consent): coche les cookies obligatoires par defaut [(#735)](https://github.com/GouvernementFR/dsfr/pull/735)
+- Les cookies obligatoires doivent être systématiquement cochés
+
+
+
+
 ## v1.10
 
-### [1.10.2](https://github.com/GouvernementFR/dsfr/compare/v1.10.1...1.10.2) - 19 Octobre 2023
+### [v1.10.2](https://github.com/GouvernementFR/dsfr/compare/v1.10.1...v1.10.2) - 19 Octobre 2023
 
 #### 🐛 fix(analytics): réduction d'envoi des données [(#806)](https://github.com/GouvernementFR/dsfr/pull/806)
 - suppression du taux d'interaction global
@@ -47,7 +442,16 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 
 
-### [v1.10.0](https://github.com/GouvernementFR/dsfr/compare/v1.9.3...v1.10.0) - 19 Juillet 2023
+### [v1.10.0](https://github.com/GouvernementFR/dsfr/compare/v1.9.4...v1.10.0) - 19 Juillet 2023
+
+#### 🐛 fix(analytics): réduction d'envoi des données [(#807)](https://github.com/GouvernementFR/dsfr/pull/807)
+- suppression du taux d'interaction global
+- ajout de l'attribut data-fr-analytics-rating qui permet de mesurer le taux d'interaction sur un élément particulier
+- suppression de l'impression des composants sans interactions
+- limitation de l'envoi de donnée à la première interaction
+- bouton associé à l'accordéon, l'onglet et la transcription rendu muet
+- recensement des composants de la page dans une nouvelle donnée de page `page_components`
+
 
 #### 🐛 fix(form): correctif barre état iOS [(#712)](https://github.com/GouvernementFR/dsfr/pull/712)
 - Sur iOS, la barre d'état d'erreur ou validation est discontinue
@@ -706,6 +1110,18 @@ BREAKING CHANGE : Remplacer le composant fr-download par la variante de link fr-
 
 
 ## v1.9
+
+### [v1.9.4](https://github.com/GouvernementFR/dsfr/compare/v1.9.3...v1.9.4) - 23 Octobre 2023
+
+#### 🐛 fix(analytics): réduction d'envoi des données [(#807)](https://github.com/GouvernementFR/dsfr/pull/807)
+- suppression du taux d'interaction global
+- ajout de l'attribut data-fr-analytics-rating qui permet de mesurer le taux d'interaction sur un élément particulier
+- suppression de l'impression des composants sans interactions
+- limitation de l'envoi de donnée à la première interaction
+- bouton associé à l'accordéon, l'onglet et la transcription rendu muet
+- recensement des composants de la page dans une nouvelle donnée de page `page_components`
+
+
 
 ### [v1.9.3](https://github.com/GouvernementFR/dsfr/compare/v1.9.2...v1.9.3) - 17 Mai 2023
 
@@ -2158,6 +2574,12 @@ dsfr-dev devient dsfr
 #### refactor(table): fonctionnement sans js [(#16)](https://github.com/GouvernementFR/dsfr/pull/16)
 
 
+
+
+## v1.0
+
+### [v1.0.0](https://github.com/GouvernementFR/dsfr/compare/v0.6.0...v1.0.0) - 24 Juin 2021
+
 #### fix(buttons, modal, tabs): correction nouveau nom d'icône [(#19)](https://github.com/GouvernementFR/dsfr/pull/19)
 
 
@@ -2300,12 +2722,6 @@ ajout !important pour forcer le modifieur
 
 #### fix(sassdoc): correction config sassdoc
 
-
-
-
-## v1.0
-
-### [v1.0.0](https://github.com/GouvernementFR/dsfr/compare/v0.6.0...v1.0.0) - 7 Avril 2021
 
 #### feat(readme): édition et publication du readme global et public
 
@@ -2828,13 +3244,22 @@ Déplacement svg-encode dans core
 
 ## v0.5
 
-### [v0.5.3](https://github.com/GouvernementFR/dsfr/compare/v0.4.0...v0.5.3) - 7 Avril 2021
+### [v0.5.3](https://github.com/GouvernementFR/dsfr/compare/v0.5.0...v0.5.3) - 7 Avril 2021
 
 #### fix(all): Design System de l'Etat v0.5.3
 fix: retrait du scritp post-install
 
 
 #### feat: Design System de l'Etat v0.5.0
+
+
+#### chore: Design System de l'Etat v0.5.0
+
+
+
+### [v0.5.0](https://github.com/GouvernementFR/dsfr/compare/v0.4.0...v0.5.0) - 10 Février 2021
+
+#### chore: Design System de l'Etat v0.5.0
 
 
 #### fix(links): links font-size à 0 retiré
@@ -2917,14 +3342,14 @@ sidemenu:
 - rf-sidemenu__content devient rf-collapse
 
 
-#### fix(all): corrections taille checkboxes et content / corrections multiligne toggle
-
-
 
 
 ## v0.4
 
-### [v0.4.0](https://github.com/GouvernementFR/dsfr/compare/v0.3.4...v0.4.0) - 17 Décembre 2020
+### [v0.4.0](https://github.com/GouvernementFR/dsfr/compare/v0.3.1...v0.4.0) - 3 Février 2021
+
+#### fix(all): corrections taille checkboxes et content / corrections multiligne toggle
+
 
 #### fix(all): Mise à jour des liens de documentations
 
@@ -2964,8 +3389,23 @@ sidemenu:
 #### chore(packages): v0.3.1
 
 
+#### chore(packages): release
+
+
+
+
+## v0.3
+
+### [v0.3.1](https://github.com/GouvernementFR/dsfr/compare/v0.3.0...v0.3.1) - 18 Novembre 2020
+
+#### chore(packages): release
+
+
 #### fix(all): correctif package.json et dist.scss sur le package all
 
+
+
+### [v0.3.0](https://github.com/GouvernementFR/dsfr/compare/v0.2.0...v0.3.0) - 17 Novembre 2020
 
 #### chore(packages): Design System de l'Etat v0.3.0
 
@@ -3051,103 +3491,7 @@ sidemenu:
 #### fix: scheme Color Btn disabled & couleurs fonctionnelles
 
 
-#### chore(packages): release
-
-
-#### test: restricted package
-
-
-#### fix: merge
-
-
 #### refactor(core): ajout d'un prefix pour sr-only / ajout d'options scheme focus
-
-
-#### fix: merge
-
-
-#### chore(packages): release
-
-
-#### fix: test
-
-
-#### fix: test
-
-
-#### test: x
-
-
-#### chore(packages): release
-
-
-#### fix: version
-
-
-#### fix: change scope
-
-
-#### fix(webpack): ajout dossier tests
-
-
-#### feat(webpack): génération des dist par package + package all
-
-
-#### feat(webpack): mise en place provisoire dist packages
-
-
-
-
-## v0.3
-
-### [v0.3.4](https://github.com/GouvernementFR/dsfr/compare/v0.3.1...v0.3.4) - 9 Novembre 2020
-
-#### chore(packages): release
-
-
-#### test: restricted package
-
-
-#### fix: merge
-
-
-#### fix: merge
-
-
-#### fix(webpack): ajout dossier tests
-
-
-#### feat(webpack): génération des dist par package + package all
-
-
-#### feat(webpack): mise en place provisoire dist packages
-
-
-
-### [v0.3.1](https://github.com/GouvernementFR/dsfr/compare/v0.3.0...v0.3.1) - 3 Novembre 2020
-
-#### chore(packages): release
-
-
-#### fix: test
-
-
-#### fix: test
-
-
-#### test: x
-
-
-
-### [v0.3.0](https://github.com/GouvernementFR/dsfr/compare/v0.2.0...v0.3.0) - 3 Novembre 2020
-
-#### chore(packages): release
-
-
-#### fix: version
-
-
-#### fix: change scope
 
 
 #### fix(search): reduce placeholder to "rechercher"
