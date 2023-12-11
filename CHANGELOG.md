@@ -12,7 +12,7 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.11
 
-### [1.11.0](https://github.com/GouvernementFR/dsfr/compare/v1.10.2...1.11.0) - 11 Décembre 2023
+### [v1.11.0](https://github.com/GouvernementFR/dsfr/compare/v1.10.2...v1.11.0) - 11 Décembre 2023
 
 #### ✨ feat(range): version optimisée en accessibilité [(#841)](https://github.com/GouvernementFR/dsfr/pull/841)
 - redesign du composant en ajoutant une bordure à la track pour être plus visible
