@@ -105,7 +105,7 @@
 
   &--step {
     &#{selector.ns-attr(js-range)} {
-      --step-width: 4096px;
+      --step-width: 0;
       @include _pseudo(before after) {
         @include padding-x(2.5v);
         background-repeat: repeat-x;
