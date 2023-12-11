@@ -2,15 +2,17 @@ const sanitize = (className) => className.charAt(0) === '.' ? className.substr(1
 
 const getClassNames = (element) => {
   switch (true) {
-    case typeof element === 'string':
-      return element.split(' ');
-
-    case element instanceof SVGAElement && typeof element.className.baseVal === 'string':
-      return element.className.baseVal.split(' ');
-
-    default:
+    case !element.className:
       return [];
+
+    case typeof element.className === 'string':
+      return element.className.split(' ');
+
+    case typeof element.className.baseVal === 'string':
+      return element.className.baseVal.split(' ');
   }
+
+  return [];
 };
 
 export { getClassNames };
