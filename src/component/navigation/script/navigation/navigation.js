@@ -11,9 +11,8 @@ class Navigation extends api.core.CollapsesGroup {
     super.init();
     this.clicked = false;
     this.out = false;
-    this.listen('click', this._clickHandling.bind(this));
-    this.addEmission(api.core.RootEmission.CLICK, this._clickOut.bind(this));
-    this.listen('mousedown', this.mouseDownHandler.bind(this));
+    this.addEmission(api.core.RootEmission.CLICK, this._handleRootClick.bind(this));
+    this.listen('mousedown', this.handleMouseDown.bind(this));
     this.listenClick({ capture: true });
   }
 
@@ -21,19 +20,19 @@ class Navigation extends api.core.CollapsesGroup {
     return super.validate(member) && member.element.node.matches(api.internals.legacy.isLegacy ? NavigationSelector.COLLAPSE_LEGACY : NavigationSelector.COLLAPSE);
   }
 
-  mouseDownHandler (e) {
+  handleMouseDown (e) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG) || this.index === -1 || !this.current) return;
     this.position = this.current.node.contains(e.target) ? NavigationMousePosition.INSIDE : NavigationMousePosition.OUTSIDE;
     this.requestPosition();
   }
 
-  _clickHandling (e) {
+  handleClick (e) {
     if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) {
       this.index = -1;
     }
   }
 
-  _clickOut (target) {
+  _handleRootClick (target) {
     if (!this.isBreakpoint(api.core.Breakpoints.LG)) return;
     if (!this.node.contains(target)) {
       this.out = true;
