@@ -144,6 +144,11 @@
           @include top(5v);
         }
       }
+
+      // step désactivé sur le curseur double
+      &#{selector.ns-attr(range--step)} {
+        background-size: 0;
+      }
     }
   }
 
