@@ -42,12 +42,15 @@ ol {
   }
 }
 
-dl, dd {
+dl,
+dd {
   @include margin(0);
   padding-inline-start: var(--ul-start);
 }
 
-li, dd, dt {
+li,
+dd,
+dt {
   --xl-base: calc(var(--xl-size) * 0.9);
   @include padding-bottom(var(--li-bottom));
 }

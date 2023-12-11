@@ -6,6 +6,6 @@
 @media print {
   @import 'index';
   @import 'style/scheme';
-  
+
   @include _search-scheme('print');
 }

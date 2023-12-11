@@ -6,7 +6,7 @@
 @media print {
   @import 'index';
   @import 'style/scheme';
-  
+
   @include _footer-scheme('print');
 
   @import 'style/print';
