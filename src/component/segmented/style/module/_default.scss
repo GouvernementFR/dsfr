@@ -51,7 +51,6 @@
     @include absolute;
     @include margin(0);
     @include size(100%, 100%);
-    -webkit-tap-highlight-color: transparent;
     z-index: -1;
 
     + label {
@@ -61,7 +60,6 @@
       display: inline-flex;
       align-items: center;
       border-radius: #{spacing.space(1v)};
-      -webkit-tap-highlight-color: transparent;
       white-space: nowrap;
     }
 

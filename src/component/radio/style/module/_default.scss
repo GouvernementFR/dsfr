@@ -18,7 +18,6 @@
 
     + label {
       // @include relative;
-      -webkit-tap-highlight-color: transparent;
       @include display-flex(column, flex-start, flex-start);
       @include padding-left(8v);
       background-position: calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px), calc(#{spacing.space(-1v)} + 1px) calc(#{spacing.space(-1v)} + 1px);
