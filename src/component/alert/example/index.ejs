@@ -14,6 +14,8 @@ const sample = getSample(include);
 
 <%- sample('Alerte attention', './sample/alert-default', {alert: {type: "warning", title: "Attention"}}, true); %>
 
+<%- sample('Alerte avec description seule', './sample/alert-default', {alert: {title:false, text: "Information : titre de l'information"}}, true); %>
+
 <%- sample('Alerte avec bouton fermer', './sample/alert-dismissable', {alert: {type: "info", title: "Information Covid"}}, true); %>
 
 <%- sample('Alerte taille SM', './sample/alert-default', {alert: {title:false, size: "sm", type: "info", text: "Information : titre de l'information"}}, true); %>
