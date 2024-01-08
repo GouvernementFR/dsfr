@@ -30,6 +30,9 @@ attributes.role = "search";
 let button = search.button || {};
 button.span = true;
 
+const input = search.input || {};
+if (!input.id) input.id = search.id + '-input';
+
 switch(search.size) {
 case 'lg':
   searchClasses.push(prefix + '-search-bar--lg');
@@ -38,6 +41,6 @@ case 'lg':
 %>
 
 <div <%- includeClasses(searchClasses); %> <%- includeAttrs(attributes) %>>
-  <%- include('../../../input/input-base/template/ejs/input.ejs', {input:{...search.input, type: 'search', id: search.id + '-input' }}); %>
+  <%- include('../../../input/input-base/template/ejs/input.ejs', {input:{...search.input, type: 'search'}}); %>
   <%- include('../../../button/template/ejs/button.ejs', {button: button}); %>
 </div>

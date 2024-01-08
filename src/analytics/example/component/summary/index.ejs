@@ -1,6 +1,13 @@
 <% const sample = getSample(include); %>
 
 <%
+const getContent = (id) => {
+    return `<div id="anchor-${id}">
+        <h2>Contenu ${id}</h2>
+    <p>${lorem()}</p>
+</div>`;
+}
+
 const getItem = (id) => {
     return {
         id: `summary-link-${String(id).replace('.', '-')}`,
@@ -12,16 +19,19 @@ const getItem = (id) => {
 const links = [3,0,2,2];
 let data = {list:[]};
 data.title = 'Titre sommaire';
+let content = '';
 
 for (let i = 0; i < links.length; i++) {
     let id = i + 1
     const item = getItem(id);
+    content += getContent(id);
 
     if (links[i]) {
         item.list = [];
         for (let j = 0; j < links[i]; j++) {
             id = `${i + 1}.${j + 1}`;
             item.list.push(getItem(id));
+            content += getContent(id);
         }
     }
 
@@ -31,5 +41,6 @@ for (let i = 0; i < links.length; i++) {
 %>
 
 <div class="<%= prefix %>-container" >
-  <%- sample('Sommaire', '../../../../component/summary/example/sample/summary', { summary: {links: links} }); %>
+    <%- sample('Sommaire', '../../../../component/summary/example/sample/summary', { summary: {links: links} }); %>
+    <%- content; %>
 </div>
