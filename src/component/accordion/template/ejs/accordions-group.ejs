@@ -6,8 +6,14 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<% let accordionsGroup = locals.accordionsGroup || {accordions: []} %>
-<div class="<%= prefix %>-accordions-group" >
+<% 
+let accordionsGroup = locals.accordionsGroup || {accordions: []}
+let classes = accordionsGroup.classes || [];
+classes.push(prefix + '-accordions-group');
+if (accordionsGroup.dissociate) classes.push(prefix + '-accordions-group--dissociate');
+%>
+
+<div <%- includeClasses(classes); %>>
 <%
   for (let i = 0; i < accordionsGroup.accordions.length; i++) {
 %>
