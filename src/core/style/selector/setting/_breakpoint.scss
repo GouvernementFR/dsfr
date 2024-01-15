@@ -3,10 +3,6 @@
 /// @group core
 ////
 
-$breakpoints: (
-  xs: 0 35.98em,
-  sm: 36em 47.98em,
-  md: 48em 61.98em,
-  lg: 62em 77.98em,
-  xl: 78em,
-) !default;
+@use 'module/media-query/variable/breakpoints';
+
+$breakpoints: breakpoints.$values !default;

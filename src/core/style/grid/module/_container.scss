@@ -6,4 +6,8 @@
 #{ns(container)} {
   @include size(100%);
   @include margin-x(auto);
+
+  &--editorial {
+    @include max-width(300v);
+  }
 }
