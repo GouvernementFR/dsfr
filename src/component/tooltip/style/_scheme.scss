@@ -12,6 +12,7 @@
 
     &#{ns(placement)} {
       @include elevation.elevate(overlap, (legacy: $legacy, no-background: true));
+      @include color.background-image(overlap grey, (legacy: $legacy), 'linear-gradient(90deg, $color#1, $color#1)'); // fallback for conic gradient
 
       &--top {
         @include tooltip-border((overlap grey) (border default grey), top, $legacy);
