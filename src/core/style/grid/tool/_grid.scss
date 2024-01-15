@@ -67,7 +67,7 @@
                     @include max-size($mw + $last-gutter * 4);
                   }
                 } @else {
-                  @at-root :root#{ns-attr(layout, $layout)} & {
+                  @at-root :root#{ns-attr(container, $layout)} & {
                     @if $mw == none {
                       @include max-size(none);
                     } @else {
@@ -96,7 +96,7 @@
                   @include max-size($mw + $last-gutter * 4);
                 }
               } @else {
-                @at-root :root#{ns-attr(layout, $layout)} & {
+                @at-root :root#{ns-attr(container, $layout)} & {
                   @if $mw == none {
                     @include max-size(none);
                   } @else {
