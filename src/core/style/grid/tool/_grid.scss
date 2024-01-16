@@ -63,14 +63,17 @@
                 @if $layout == default {
                   @if $mw == none {
                     @include max-size(none);
-                  } @else {
+                  }
+                  @else {
                     @include max-size($mw + $last-gutter * 4);
                   }
-                } @else {
-                  @at-root :root#{ns-attr(container, $layout)} & {
+                }
+                @else {
+                  @at-root #{ns-attr(container, $layout)} & {
                     @if $mw == none {
                       @include max-size(none);
-                    } @else {
+                    }
+                    @else {
                       @include max-size($mw + $last-gutter * 4);
                     }
                   }
@@ -92,14 +95,17 @@
               @if $layout == default {
                 @if $mw == none {
                   @include max-size(none);
-                } @else {
+                }
+                @else {
                   @include max-size($mw + $last-gutter * 4);
                 }
-              } @else {
-                @at-root :root#{ns-attr(container, $layout)} & {
+              }
+              @else {
+                @at-root #{ns-attr(container, $layout)} & {
                   @if $mw == none {
                     @include max-size(none);
-                  } @else {
+                  }
+                  @else {
                     @include max-size($mw + $last-gutter * 4);
                   }
                 }
