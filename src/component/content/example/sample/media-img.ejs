@@ -1,10 +1,12 @@
 <%
 const content = locals.content || {};
 const ratio = content.ratio || null;
+const imgSrc = content.img  && content.img.src || 'img/placeholder.16x9.png';
+
 let data = {
-  img: imgData('img/placeholder.16x9.png', 'unknown', ratio ? ratio : '16x9'),
-  caption: 'Description / Source',
-  link: 'Label lien',
+  img: imgData(imgSrc, 'unknown', ratio ? ratio : '16x9'),
+  caption: content.img && content.img.caption || 'Description / Source',
+  link: content.img && content.img.link || 'Label lien',
   id: content.id || uniqueId('media'),
   ...content
 };

@@ -2,13 +2,15 @@
 const content = locals.content || {};
 content.id = content.id || uniqueId('media');
 
-if (content.transcription === true) content.transcription = {
-  id: uniqueId('transcription'),
-  title: getText('modal.title', 'transcription'),
-  content: randomContent(['text', 'list']),
-  fullscreen: getText('button.fullscreen', 'transcription'),
-  fullscreenAriaLabel: getText('button.fullscreenAriaLabel', 'transcription'),
-};
+if (content.transcription) {
+  content.transcription = {
+    id: uniqueId('transcription'),
+    title: content.transcription.title || getText('modal.title', 'transcription'),
+    content: content.transcription.content || randomContent(['text', 'list']),
+    fullscreen: getText('button.fullscreen', 'transcription'),
+    fullscreenAriaLabel: getText('button.fullscreenAriaLabel', 'transcription'),
+  };
+}
 
 %>
 
