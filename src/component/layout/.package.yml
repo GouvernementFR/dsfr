@@ -1,0 +1,13 @@
+id: layout
+title: Mise en page
+description: La mise en page permet d'agencer les éléments d'une page. Elle est composée d'un contenu et d'un ou plusieurs panneaux.
+doc:
+style:
+  - core
+script:
+  - core
+example:
+  style:
+    - form
+    - radio
+    - tag

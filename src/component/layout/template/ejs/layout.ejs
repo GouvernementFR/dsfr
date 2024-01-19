@@ -1,0 +1,78 @@
+<%#
+# paramètres de la mise en page
+
+* layout.id (string, required) : id de la mise en page
+
+* layout.tag (string, required) : balise de la mise en page (dialog, div>)
+
+* layout.label (string, required) : label du bouton de la mise en page
+
+* layout.title (string, required) : titre de la mise en page
+
+* layout.icon (string, optional) : icône de la mise en page
+
+* layout.body (string, required) : contenu de la mise en page
+
+* layout.footer (string, optional) : contenu du footer de la mise en page, généralement des boutons
+
+* layout.customFooter (string, optional) : contenu du footer custom de la mise en page
+
+* layout.size (string, optional) : modificateur de taille
+  valeurs :
+  * sm : mise en page étroite
+  * lg : mise en page large
+
+* layout.classes (array, optional) : classes supplémentaires sur la mise en page
+
+* layout.closeButton (object, optional) : paramètres du bouton de fermeture
+
+* layout.attributes (object, optional) : attributs supplémentaires sur la mise en page
+
+* layout.concealingBackdrop (boolean, optional) : par défaut considéré à true, si la valeur false est passée, la mise en page ne se referme pas au click sur le backdrop.
+
+  // TODO: revoir le template pour remettre les éléments de sample dans sample (footer en array d'objet de config de button par exemple)
+
+
+-----------
+Structure du panneau
+<div class="fr-layout">
+  <div class="fr-panel fr-panel--right fr-panel--sticky">
+    // panneau
+  </div>
+  <div>
+    // contenu
+  </div>
+</div>
+-----------
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+const layout = locals.layout || {};
+const layoutClasses = layout.classes || [];
+layoutClasses.push(`${prefix}-layout`);
+const layoutAttrs = layout.attributes || {};
+const content = layout.content || {};
+const contentClasses = content.classes || [];
+contentClasses.push(`${prefix}-layout__content`);
+const contentAttrs = content.attributes || {};
+
+%>
+
+
+
+<div <%- includeClasses(layoutClasses) %> <%- includeAttrs(layoutAttrs); %>>
+  <% for (panel of layout.panels) { %>
+    <% if (!panel.isAfterContent) { %>
+      <%- include('panel', {panel: panel}); %>
+    <% } %>
+  <% } %>
+
+  <div <%- includeClasses(contentClasses) %> <%- includeAttrs(contentAttrs) %>><%- content.data %></div>
+
+  <% for (panel of layout.panels) { %>
+    <% if (panel.isAfterContent) { %>
+      <%- include('panel', {panel: panel}); %>
+    <% } %>
+  <% } %>
+</div>

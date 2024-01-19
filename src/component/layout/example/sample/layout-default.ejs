@@ -1,0 +1,6 @@
+<%
+  let layout = locals.layout || {};
+%>
+<%- include('../../../button/example/sample/buttons-group', {buttonsGroup: {groupMarkup: 'div', sizes:{md : {size:'md'}}, label: 'filtrer', kind: 'secondary', iconPlace:'left', inline:'lg', icon :'checkbox-circle-line', group: true, groupCount: 1}}) %>
+
+<%- include('../../template/ejs/layout.ejs', {layout: { ...layout, content: {classes: [`${prefix}-background-alt--grey`], data: include('content/layout.ejs')}, panels: [{position: 'right', title: 'Affiner la recherche', collapse: { id: uniqueId('layout-collapse')}, content: include('content/panel.ejs')}] }}) %>

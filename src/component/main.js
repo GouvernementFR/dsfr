@@ -7,6 +7,7 @@ import './breadcrumb/main.js';
 import './tooltip/main.js';
 import './toggle/main.js';
 import './sidemenu/main.js';
+import './layout/main.js';
 import './modal/main.js';
 import './password/main.js';
 import './navigation/main.js';

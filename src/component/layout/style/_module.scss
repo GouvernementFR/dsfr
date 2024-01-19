@@ -1,0 +1,76 @@
+////
+/// layout Module
+/// @group layout
+////
+
+@use 'module/selector';
+@use 'module/media-query';
+
+#{selector.ns(layout)} {
+  @include display-flex(column, flex-start, stretch, wrap);
+
+  @include media-query.respond-from(lg) {
+    flex-direction: row;
+  }
+
+  &__content {
+    flex: 1;
+    @include width(100%);
+    @include padding(4v);
+    @include padding(6v, lg);
+
+    @include media-query.respond-from(lg) {
+      order: 3;
+    }
+  }
+
+  &__panel {
+    @include width(100%);
+    @include width(auto, lg);
+
+    @include media-query.respond-from(lg) {
+      &--top {
+        order: 1;
+      }
+
+      &--left {
+        order: 2;
+      }
+
+      &--right {
+        order: 4;
+      }
+
+      &--bottom {
+        order: 5;
+      }
+
+      &--sticky {
+        > div {
+          position: sticky;
+          top: 0;
+        }
+      }
+    }
+
+    &-header {
+      @include display-flex(row, center, space-between);
+      @include set-title-margin(0);
+      @include padding(4v);
+      @include padding(6v, lg);
+    }
+
+    &-body {
+      @include padding(4v);
+      @include padding(6v, lg);
+    }
+
+    &-close {
+      @include margin-left(4v);
+    }
+
+    &-title {
+      @include title-style(h6);
+    }
+  }
+}

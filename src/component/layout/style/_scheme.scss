@@ -1,0 +1,15 @@
+////
+/// layout Scheme
+/// @group layout
+////
+
+@use 'module/color';
+@use 'module/elevation';
+
+@mixin _layout-scheme($legacy: false) {
+  #{ns(layout)} {
+    &__panel {
+      @include color.background(default grey, (legacy:$legacy));
+    }
+  }
+}
