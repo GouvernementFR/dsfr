@@ -8,8 +8,34 @@
 
 @mixin _layout-scheme($legacy: false) {
   #{ns(layout)} {
-    &__panel {
-      @include color.background(default grey, (legacy:$legacy));
+    &__content {
+      @include color.background(contrast grey, (legacy:$legacy));
+    }
+  }
+
+  #{ns(panel)} {
+    @include color.background(default grey, (legacy:$legacy));
+
+    &--top {
+      @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+    }
+
+    &--left {
+      @include color.box-shadow(default grey, (legacy:$legacy), right-1-in);
+    }
+
+    &--right {
+      @include color.box-shadow(default grey, (legacy:$legacy), left-1-in);
+    }
+
+    &--bottom {
+      @include color.box-shadow(default grey, (legacy:$legacy), bottom-1-in);
+    }
+
+    &__header {
+      #{ns(btn--close)} {
+        @include btn-kind-scheme(3, $legacy);
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 <%
   let layout = locals.layout || {};
+  const collapseId = uniqueId('collapse');
 %>
-<%- include('../../../button/example/sample/buttons-group', {buttonsGroup: {groupMarkup: 'div', sizes:{md : {size:'md'}}, label: 'filtrer', kind: 'secondary', iconPlace:'left', inline:'lg', icon :'checkbox-circle-line', group: true, groupCount: 1}}) %>
+<%- include('../../../button/example/sample/buttons-group', {buttonsGroup: {groupMarkup: 'div', sizes:{md : {size:'md'}}, buttons: [{attributes: {'aria-controls': collapseId, 'aria-expanded': true}, label: 'filtrer', kind: 2, icon :'checkbox-circle-line'}], iconPlace:'left', inline:'lg', group: true, groupCount: 1}}) %>
 
-<%- include('../../template/ejs/layout.ejs', {layout: { ...layout, content: {classes: [`${prefix}-background-alt--grey`], data: include('content/layout.ejs')}, panels: [{position: 'right', title: 'Affiner la recherche', collapse: { id: uniqueId('layout-collapse')}, content: include('content/panel.ejs')}] }}) %>
+<%- include('../../template/ejs/layout.ejs', {layout: { ...layout, content: {data: include('content/layout.ejs')}, panels: [{position: 'right', title: 'Affiner la recherche', collapse: { id: collapseId}, content: include('content/panel.ejs')}] }}) %>

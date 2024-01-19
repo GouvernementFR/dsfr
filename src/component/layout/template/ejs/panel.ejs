@@ -7,8 +7,8 @@
 Structure du panneau
 
 <div class="fr-panel fr-panel--right fr-panel--sticky">
-  <div class="fr-panel__collapse fr-collapse" id="panel-1">
-    <div class="fr-panel__content">
+  <div class="fr-collapse" id="panel-1">
+    <div class="fr-panel__body">
       <div class="fr-panel__header">
         <div class="fr-panel__title">
           <h2>Titre du panneau</h2>
@@ -19,7 +19,7 @@ Structure du panneau
           </button>
         </div>
       </div>
-      <div class="fr-panel__body">
+      <div class="fr-panel__content">
         <p>Contenu du panneau</p>
       </div>
     </div>
@@ -36,28 +36,25 @@ Structure du panneau
   const panelAttrs = panel.attributes || {};
   panelAttrs.id = panel.id;
 
-  if (panel.position) panelClasses.push(`${prefix}-layout__panel--${panel.position}`);
-  if (panel.sticky) panelClasses.push(`${prefix}-layout__panel--sticky`);
+  if (panel.position) panelClasses.push(`${prefix}-panel--${panel.position}`);
+  if (panel.sticky) panelClasses.push(`${prefix}-panel--sticky`);
 
   const titleMarkup = panel.titleMarkup || 'h2';
   const collapse = panel.collapse || {};
   const collapseAttrs = collapse.attributes || {};
-  collapseAttrs[`aria-expanded`] = collapse.opened === true;
-  collapseAttrs['aria-controls'] = collapse.id;
+  collapseAttrs.id = collapse.id;
 %>
 
 <div <%- includeClasses(panelClasses) %> <%- includeAttrs(panelAttrs); %>>
-  <div class="<%=prefix%>-layout__panel-collapse" <%- includeAttrs(collapseAttrs) %>>
-    <div class="<%=prefix%>-layout__panel-content">
-      <div class="<%=prefix%>-layout__panel-header">
-        <<%=titleMarkup%> class="<%=prefix%>-layout__panel-title">
+  <div class="<%=prefix%>-collapse" <%- includeAttrs(collapseAttrs) %>>
+    <div class="<%=prefix%>-panel__body">
+      <div class="<%=prefix%>-panel__header">
+        <<%=titleMarkup%> class="<%=prefix%>-panel__title">
           <%=panel.title%>
         </<%=titleMarkup%>>
-        <div class="<%=prefix%>-layout__panel-close">
-          <button class="<%=prefix%>-btn <%=prefix%>-btn--sm <%=prefix%>-btn--secondary <%=prefix%>-icon-close-line" aria-controls="<%=collapse.id%>" aria-expanded="<%=collapse.opened%>">Fermer le panneau</button>
-        </div>
+        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" aria-controls="<%=collapse.id%>" aria-expanded="<%=collapse.opened%>">Fermer le panneau</button>
       </div>
-      <div class="<%=prefix%>-layout__panel-body">
+      <div class="<%=prefix%>-panel__content">
         <%-panel.content%>
       </div>
     </div>

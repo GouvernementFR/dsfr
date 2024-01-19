@@ -7,7 +7,7 @@
 @use 'module/media-query';
 
 #{selector.ns(layout)} {
-  @include display-flex(column, flex-start, stretch, wrap);
+  @include display-flex(column, stretch, flex-start, wrap);
 
   @include media-query.respond-from(lg) {
     flex-direction: row;
@@ -23,54 +23,56 @@
       order: 3;
     }
   }
+}
 
-  &__panel {
-    @include width(100%);
-    @include width(auto, lg);
+#{selector.ns(panel)} {
+  @include width(100%);
+  @include width(auto, lg);
 
-    @include media-query.respond-from(lg) {
-      &--top {
-        order: 1;
-      }
-
-      &--left {
-        order: 2;
-      }
-
-      &--right {
-        order: 4;
-      }
-
-      &--bottom {
-        order: 5;
-      }
-
-      &--sticky {
-        > div {
-          position: sticky;
-          top: 0;
-        }
-      }
+  @include media-query.respond-from(lg) {
+    &--top {
+      order: 1;
     }
 
-    &-header {
-      @include display-flex(row, center, space-between);
-      @include set-title-margin(0);
-      @include padding(4v);
-      @include padding(6v, lg);
+    &--left {
+      order: 2;
     }
 
-    &-body {
-      @include padding(4v);
-      @include padding(6v, lg);
+    &--right {
+      order: 4;
     }
 
-    &-close {
-      @include margin-left(4v);
+    &--bottom {
+      order: 5;
     }
 
-    &-title {
-      @include title-style(h6);
+    &--sticky {
+      > * {
+        position: sticky;
+        top: 0;
+      }
     }
+  }
+
+  &__header {
+    @include display-flex(row, center, space-between);
+    @include set-title-margin(0);
+    @include padding(4v);
+    @include padding(6v, lg);
+
+    #{selector.ns(btn--close)} {
+      @include nest-btn(sm, only, close-line, null, false);
+    }
+  }
+
+  &__content {
+    @include padding(4v);
+    @include padding(6v, lg);
+  }
+
+  &__title {
+    @include title-style(h6);
+    @include margin-right(4v);
+    @include margin-top(0.5v);
   }
 }
