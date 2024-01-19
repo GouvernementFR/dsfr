@@ -18,6 +18,7 @@ window.dsfr.analytics.site
                 type: 'type', // site type
                 region: 'FR-IDF', // region of the website (ISO 3166-2:FR)
                 department: 'FR-75', // department of the website (ISO 3166-2:FR)
+                version: '1.0.0', // version of the website
             },
         }
     };
@@ -109,6 +110,26 @@ _String_ (EA: site\_department)
 
 Défini le département du site (pour les sites départementaux) au format
 [ISO 3166-2:FR](https://fr.wikipedia.org/wiki/ISO_3166-2:FR#D.C3.A9partements_m.C3.A9tropolitains_.2896.29)
+
+* * *
+
+##### version
+
+_String_ (EA: site\_version)
+
+`window.dsfr.analytics.site.version`
+
+Défini la version du site
+
+* * *
+
+##### api
+
+_String_ (EA: api\_version)
+
+`window.dsfr.analytics.site.api`
+
+Retourne la version de l’API DSFR, géré et injecté automatiquement par le script
 
 * * *
 
