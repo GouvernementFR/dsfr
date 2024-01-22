@@ -14,6 +14,12 @@ class Navigation extends api.core.CollapsesGroup {
     this.listen('focusout', this.focusOutHandler.bind(this));
     this.listen('mousedown', this.mouseDownHandler.bind(this));
     this.listenClick({ capture: true });
+    this.listenKey(api.core.KeyCodes.RIGHT, this.pressRight.bind(this));
+    this.listenKey(api.core.KeyCodes.LEFT, this.pressLeft.bind(this));
+    this.listenKey(api.core.KeyCodes.UP, this.pressUp.bind(this));
+    this.listenKey(api.core.KeyCodes.DOWN, this.pressDown.bind(this));
+    this.listenKey(api.core.KeyCodes.HOME, this.pressHome.bind(this));
+    this.listenKey(api.core.KeyCodes.END, this.pressEnd.bind(this));
   }
 
   validate (member) {
@@ -65,6 +71,79 @@ class Navigation extends api.core.CollapsesGroup {
     this.position = NavigationMousePosition.NONE;
     this.out = false;
     this.isRequesting = false;
+  }
+
+  /**
+   * Selectionne l'element suivant de la liste si on est sur un bouton
+   * Si on est à la fin on retourne au début
+   */
+  pressRight () {
+    console.log('pressRight');
+    if (this.hasFocus) {
+      if (this.index < this.length - 1) {
+        this.index++;
+      } else {
+        this.index = 0;
+      }
+
+      this.focus();
+    }
+  };
+
+  /**
+   * Selectionne l'element précédent de la liste si on est sur un bouton
+   * Si on est au debut retourne a la fin
+   */
+  pressLeft () {
+    console.log('pressLeft');
+    debugger;
+    // if (this.hasFocus) {
+    if (this.index > 0) {
+      this.index--;
+    } else {
+      this.index = this.length - 1;
+    }
+
+    this.focus();
+    // }
+  };
+
+  pressUp () {
+    console.log('pressUp');
+    this.pressLeft();
+  }
+
+  pressDown () {
+    console.log('pressDown');
+    this.pressRight();
+  }
+
+  /**
+   * Selectionne le permier element de la liste si on est sur un bouton
+   */
+  pressHome () {
+    console.log('pressHome');
+    if (this.hasFocus) {
+      this.index = 0;
+      this.focus();
+    }
+  };
+
+  /**
+   * Selectionne le dernier element de la liste si on est sur un bouton
+   */
+  pressEnd () {
+    console.log('pressEnd');
+    if (this.hasFocus) {
+      this.index = this.length - 1;
+      this.focus();
+    }
+  };
+
+  focus () {
+    if (this.current) {
+      this.current.focus();
+    }
   }
 
   get index () { return super.index; }
