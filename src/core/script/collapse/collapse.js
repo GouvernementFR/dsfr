@@ -26,15 +26,34 @@ class Collapse extends Disclosure {
 
   transitionend (e) {
     this.removeClass(CollapseSelector.COLLAPSING);
-    if (!this.isDisclosed) {
-      if (this.isLegacy) this.style.maxHeight = '';
-      else this.style.removeProperty('--collapse-max-height');
+    switch (this._method) {
+      case CollapseMethod.HEIGHT:
+        break;
+
+      case CollapseMethod.WIDTH:
+        break;
+
+      default:
+        if (!this.isDisclosed) {
+          if (this.isLegacy) this.style.maxHeight = '';
+          else this.style.removeProperty('--collapse-max-height');
+        }
     }
   }
 
   unbound () {
-    if (this.isLegacy) this.style.maxHeight = 'none';
-    else this.style.setProperty('--collapse-max-height', 'none');
+    this.removeClass(CollapseSelector.COLLAPSING);
+    switch (this._method) {
+      case CollapseMethod.HEIGHT:
+        break;
+
+      case CollapseMethod.WIDTH:
+        break;
+
+      default:
+        if (this.isLegacy) this.style.maxHeight = 'none';
+        else this.style.setProperty('--collapse-max-height', 'none');
+    }
   }
 
   disclose (withhold) {
@@ -67,8 +86,18 @@ class Collapse extends Disclosure {
     this.setProperty('--collapser', '');
   }
 
-  adjustSize () {
+  adjustWidth () {
+    this.node.style.width = 'auto';
+    const width = this.node.offsetWidth;
+    this.node.style.width = '';
+    this.setProperty('--collapse-width', width);
+  }
 
+  adjustHeight () {
+    this.node.style.height = 'auto';
+    const height = this.node.offsetHeight;
+    this.node.style.height = '';
+    this.setProperty('--collapse-height', height);
   }
 
   get method () {
@@ -77,12 +106,12 @@ class Collapse extends Disclosure {
 
   set method (value) {
     switch (value) {
-      case CollapseMethod.HEIGTH:
-        this.adjust = this.adjustHeight;
-        break;
-
       case CollapseMethod.WIDTH:
         this.adjust = this.adjustWidth;
+        break;
+
+      case CollapseMethod.HEIGHT:
+        this.adjust = this.adjustHeight;
         break;
 
       default:

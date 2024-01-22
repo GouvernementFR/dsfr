@@ -5,8 +5,14 @@
 
 @use 'module/selector';
 
-#{selector.ns(collapse)}:not(#{selector.ns-attr(method)}) {
-  @include collapse-margin-top();
+#{selector.ns(collapse)} {
+  @include collapse;
+}
+
+#{selector.ns(collapse)}:not(#{selector.ns-attr(method)}),
+#{selector.ns(collapse)}#{selector.ns-attr(method, margin-top)} {
+
+  @include collapse-margin-top;
 }
 
 #{selector.ns(collapse)}#{selector.ns-attr(method, width)} {

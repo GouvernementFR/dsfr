@@ -5,12 +5,19 @@
 
 @use 'module/selector';
 
-@mixin collapse-margin-top($className: collapse) {
+@mixin collapse () {
+  overflow: hidden;
+
+  #{&}:not(#{selector.ns(collapse--expanded)}) {
+    visibility: hidden;
+  }
+}
+
+@mixin collapse-margin-top() {
   --collapse-max-height: 0;
   --collapse: -99999px;
   --collapser: '';
 
-  overflow: hidden;
   transition: visibility 0.3s;
   max-height: 0;
   max-height: var(--collapse-max-height);
@@ -24,8 +31,6 @@
   }
 
   #{&}:not(#{selector.ns(collapse--expanded)}) {
-    visibility: hidden;
-
     @include before {
       margin-top: -99999px;
       margin-top: var(--collapse);
@@ -33,18 +38,28 @@
   }
 }
 
-@mixin collapse-width($className: collapse) {
-  --collapseSize: 0;
-
-  width: 0;
-  width: var(--collapseSize);
+@mixin collapse-width() {
+  --collapse-width: auto;
   transition: visibility 0.3s, width 0.3s;
 
   #{&}:not(#{selector.ns(collapse--expanded)}) {
-    visibility: hidden;
+    width: 0;
   }
 
   #{selector.ns(collapse--expanded)} {
-    width: auto;
+    width: var(--collapse-width);
+  }
+}
+
+@mixin collapse-height() {
+  --collapse-height: auto;
+  transition: visibility 0.3s, height 0.3s;
+
+  #{&}:not(#{selector.ns(collapse--expanded)}) {
+    height: 0;
+  }
+
+  #{selector.ns(collapse--expanded)} {
+    width: var(--collapse-height);
   }
 }
