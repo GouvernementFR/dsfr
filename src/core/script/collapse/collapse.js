@@ -2,6 +2,7 @@ import { Disclosure } from '../disclosure/disclosure.js';
 import { CollapseSelector } from './collapse-selector.js';
 import { DisclosureType } from '../disclosure/disclosure-type.js';
 import { CollapseButton } from './collapse-button.js';
+import { CollapseMethod } from './collapse-method.js';
 
 /**
  * Tab coorespond au panel d'un élement Tabs (tab panel)
@@ -20,6 +21,7 @@ class Collapse extends Disclosure {
   init () {
     super.init();
     this.listen('transitionend', this.transitionend.bind(this));
+    this.method = this.getAttribute(CollapseSelector.COLLAPSE_METHOD);
   }
 
   transitionend (e) {
@@ -58,11 +60,41 @@ class Collapse extends Disclosure {
     });
   }
 
-  adjust () {
+  adjustMargin () {
     this.setProperty('--collapser', 'none');
     const height = this.node.offsetHeight;
     this.setProperty('--collapse', -height + 'px');
     this.setProperty('--collapser', '');
+  }
+
+  adjustSize () {
+
+  }
+
+  get method () {
+    return this._method;
+  }
+
+  set method (value) {
+    switch (value) {
+      case CollapseMethod.HEIGTH:
+        this.adjust = this.adjustHeight;
+        break;
+
+      case CollapseMethod.WIDTH:
+        this.adjust = this.adjustWidth;
+        break;
+
+      default:
+        this.adjust = this.adjustMargin;
+        break;
+    }
+  }
+
+  mutate (attributesNames) {
+    if (attributesNames.includes(CollapseSelector.COLLAPSE_METHOD)) {
+      this.method = this.getAttribute(CollapseSelector.COLLAPSE_METHOD);
+    }
   }
 
   reset () {
