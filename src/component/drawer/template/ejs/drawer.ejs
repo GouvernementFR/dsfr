@@ -1,7 +1,34 @@
 <%#
-# paramètres du panneau
+# paramètres du tiroir
 
-* drawer.id (string, required) : id du panneau
+* drawer.id (string, required) : id du tiroir
+
+* drawer.title (string, required) : titre du tiroir
+
+* drawer.titleMarkup (string, optional) : balise du titre du tiroir (default : h2)
+
+* drawer.closeLabel (string, required) : label du bouton de fermeture du tiroir
+
+* drawer.position (string, required) : position du tiroir
+  valeurs:
+  * top : tiroir en haut
+  * left : tiroir à gauche
+  * right : tiroir à droite
+  * bottom : tiroir en bas
+
+* drawer.size (string, optional) : modificateur de taille du tiroir.
+  valeurs:
+  * sm : tiroir petit (180px)
+  * md : tiroir moyen (282px)
+  * lg : tiroir grand (384px)
+
+* drawer.sticky (boolean, optional) : si true, le tiroir est sticky
+
+* drawer.collapse (object, optional) : paramètres du collapse du tiroir
+  * drawer.collapse.id (string, required) : id du collapse du tiroir
+  * drawer.collapse.opened (boolean, optional) : si true, le collapse est ouvert
+
+* drawer.content (string, required) : contenu du tiroir
 
 -----------
 Structure du panneau
@@ -39,24 +66,45 @@ Structure du panneau
   if (drawer.position) drawerClasses.push(`${prefix}-drawer--${drawer.position}`);
   if (drawer.sticky) drawerClasses.push(`${prefix}-drawer--sticky`);
 
+  switch (drawer.size) {
+    case 'sm':
+      drawerClasses.push(`${prefix}-drawer--sm`);
+      break;
+
+    case 'md':
+      drawerClasses.push(`${prefix}-drawer--md`);
+      break;
+
+    case 'lg':
+      drawerClasses.push(`${prefix}-drawer--lg`);
+      break;
+  }
+
   const titleMarkup = drawer.titleMarkup || 'h2';
   const collapse = drawer.collapse || {};
   const collapseAttrs = collapse.attributes || {};
   collapseAttrs.id = collapse.id;
+  const closeLabel = drawer.closeLabel;
 %>
 
 <div <%- includeClasses(drawerClasses) %> <%- includeAttrs(drawerAttrs); %>>
+  <% if (drawer.collapse) { %>
   <div class="<%=prefix%>-collapse" <%- includeAttrs(collapseAttrs) %>>
+  <% } %>
     <div class="<%=prefix%>-drawer__body">
-      <div class="<%=prefix%>-drawer__header">
+      <div class="<%=prefix%>-drawer__header <%=prefix%>-container">
         <<%=titleMarkup%> class="<%=prefix%>-drawer__title">
           <%=drawer.title%>
         </<%=titleMarkup%>>
-        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" aria-controls="<%=collapse.id%>" aria-expanded="<%=collapse.opened%>">Fermer le panneau</button>
+        <% if (drawer.collapse) { %>
+        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" aria-controls="<%=collapse.id%>" aria-expanded="<%=collapse.opened%>"><%= closeLabel %></button>
+        <% } %>
       </div>
       <div class="<%=prefix%>-drawer__content">
         <%-drawer.content%>
       </div>
     </div>
+  <% if (drawer.collapse) { %>
   </div>
+  <% } %>
 </div>

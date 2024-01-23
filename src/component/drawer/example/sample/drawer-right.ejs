@@ -1,0 +1,13 @@
+<%
+  const layout = locals.layout || {};
+  const collapseId = uniqueId('collapse');
+  const position = 'right';
+  const button = {label: 'Filtrer', kind: 2, icon :'filter-fill', iconPlace: 'left', attributes: {'aria-controls': collapseId, 'aria-expanded': true}};
+  const elements = layout.drawers || [{path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: {size: 'md', position: position, title: 'Afficher la recherche', closeButton: {label: 'Fermer la recherche'}, collapse: { id: collapseId }, content: include('content/drawer-form.ejs')}}}];
+%>
+
+<div class="<%=prefix%>-container">
+  <%- include('../../../button/example/sample/button-default', {button: {...button, sizes:{md : {size:'md'}}, inline:'lg'}}) %>
+</div>
+
+<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout.ejs')}, elements: elements }}) %>

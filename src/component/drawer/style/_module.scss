@@ -83,10 +83,10 @@
   }
 
   &__header {
-    @include display-flex(row, center, space-between);
+    @include display-flex(row, flex-start, space-between);
     @include set-title-margin(0);
-    @include padding(4v);
-    @include padding(6v, lg);
+    @include padding-y(4v);
+    @include padding-y(6v, lg);
 
     #{selector.ns(btn--close)} {
       @include nest-btn(sm, only, close-line, null, false);
@@ -99,10 +99,22 @@
     @include margin-top(0.5v);
   }
 
-  &__content {
-    min-width: 180px;
-    max-width: 384px;
-    @include padding(4v);
-    @include padding(6v, lg);
+  @include media-query.respond-from(lg) {
+    &__content {
+      @include min-width(45v);
+      @include max-width(96v);
+    }
+
+    &--sm &__content {
+      @include width(45v);
+    }
+
+    &--md &__content {
+      @include width(70.5v);
+    }
+
+    &--lg &__content {
+      @include width(96v);
+    }
   }
 }

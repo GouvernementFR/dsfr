@@ -2,4 +2,10 @@
 const sample = getSample(include);
 %>
 
-<%- sample('mise en page panel à droite', './sample/drawer-default', {}, true ); %>
+<%- sample('Mise en page avec tiroir à droite', './sample/drawer-right', {layout: {background: 'contrast'}}, true ); %>
+
+<%- sample('Mise en page avec fond contrasté', './sample/drawer-left', {layout: {background: 'contrast'}}, true ); %>
+
+<%- sample('Tiroir sans collapse', './sample/drawer-static', {layout: {background: 'alt'}}, true ); %>
+
+<%- sample('Tiroirs dans une mise en page', './sample/drawer-full', {}, true ); %>

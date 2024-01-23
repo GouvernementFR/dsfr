@@ -19,6 +19,15 @@ Structure du panneau
 const layout = locals.layout || {};
 const layoutClasses = layout.classes || [];
 layoutClasses.push(`${prefix}-layout`);
+switch (layout.background) {
+  case 'contrast':
+    layoutClasses.push(`${prefix}-layout--contrast`);
+  break;
+
+  case 'alt':
+    layoutClasses.push(`${prefix}-layout--alt`);
+  break;
+}
 const layoutAttrs = layout.attributes || {};
 const content = layout.content || {};
 const contentClasses = content.classes || [];
