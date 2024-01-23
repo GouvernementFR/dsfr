@@ -1,0 +1,18 @@
+////
+/// Core Module : Layout
+/// @group core
+////
+
+@use 'module/selector';
+
+#{selector.ns(layout)} {
+  @include display-flex(row, stretch, flex-start, wrap);
+
+  &__content {
+    flex: 1;
+    @include width(100%);
+    @include padding(4v);
+    @include padding(6v, lg);
+    order: 4;
+  }
+}

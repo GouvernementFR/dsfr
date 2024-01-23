@@ -22,7 +22,7 @@
   max-height: 0;
   max-height: var(--collapse-max-height);
 
-  #{&}::before {
+  @at-root #{&}::before {
     display: block;
     content: '';
     content: var(--collapser);
@@ -30,7 +30,7 @@
     margin-top: 0;
   }
 
-  #{&}:not(#{selector.ns(collapse--expanded)}) {
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
     @include before {
       margin-top: -99999px;
       margin-top: var(--collapse);
@@ -42,11 +42,14 @@
   --collapse-width: auto;
   transition: visibility 0.3s, width 0.3s;
 
-  #{&}:not(#{selector.ns(collapse--expanded)}) {
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
     width: 0;
+    @at-root #{&}:not(#{selector.ns(collapsing)}) {
+      // height: 0;
+    }
   }
 
-  #{selector.ns(collapse--expanded)} {
+  @at-root #{&}#{selector.ns(collapse--expanded)} {
     width: var(--collapse-width);
   }
 }
@@ -55,11 +58,11 @@
   --collapse-height: auto;
   transition: visibility 0.3s, height 0.3s;
 
-  #{&}:not(#{selector.ns(collapse--expanded)}) {
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
     height: 0;
   }
 
-  #{selector.ns(collapse--expanded)} {
-    width: var(--collapse-height);
+  @at-root #{&}#{selector.ns(collapse--expanded)} {
+    height: var(--collapse-height);
   }
 }

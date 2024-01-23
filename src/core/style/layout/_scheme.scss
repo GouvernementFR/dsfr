@@ -1,0 +1,14 @@
+////
+/// layout Scheme
+/// @group core
+////
+
+@use 'module/color';
+
+@mixin _core-layout-scheme($legacy: false) {
+  #{ns(layout--contrast)} {
+    &__content {
+      @include color.background(contrast grey, (legacy:$legacy));
+    }
+  }
+}

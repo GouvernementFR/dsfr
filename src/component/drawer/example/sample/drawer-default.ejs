@@ -1,0 +1,15 @@
+<%
+  const drawer = locals.drawer || {};
+  const collapseIds = [uniqueId('collapse'), uniqueId('collapse'), uniqueId('collapse'), uniqueId('collapse')];
+  const positions = ['top', 'left', 'right', 'bottom'];
+  const attributes = {};
+  const button = {  kind: 2, icon :'checkbox-circle-line'}
+  const buttons = collapseIds.map((id, index) => ({...button, label: `ouvrir ${positions[index]}`, attributes: {'aria-controls': id, 'aria-expanded': true}}));
+
+  const drawers = collapseIds.map((id, index) => ({position: positions[index], title: 'Affiner la recherche', collapse: { id: id }, content: include('content/drawer.ejs')}));
+
+  const elements = drawers.map(drawer => ({path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: drawer}}));
+%>
+<%- include('../../../button/example/sample/buttons-group', {buttonsGroup: {groupMarkup: 'div', sizes:{md : {size:'md'}}, buttons: buttons, iconPlace:'left', inline:'lg', group: true, groupCount: 1}}) %>
+
+<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...drawer, content: {data: include('content/layout.ejs')}, elements: elements }}) %>

@@ -1,0 +1,62 @@
+<%#
+# paramètres du panneau
+
+* drawer.id (string, required) : id du panneau
+
+-----------
+Structure du panneau
+
+<div class="fr-drawer fr-drawer--right fr-drawer--sticky">
+  <div class="fr-collapse" id="drawer-1">
+    <div class="fr-drawer__body">
+      <div class="fr-drawer__header">
+        <div class="fr-drawer__title">
+          <h2>Titre du panneau</h2>
+        </div>
+        <div class="fr-drawer__close">
+          <button class="fr-btn fr-btn--close" aria-controls="drawer-1" aria-expanded="false" id="drawer-1-btn">
+            <span class="sr-only">Fermer le panneau</span>
+          </button>
+        </div>
+      </div>
+      <div class="fr-drawer__content">
+        <p>Contenu du panneau</p>
+      </div>
+    </div>
+  </div>
+</div>
+-----------
+
+%>
+<% eval(include('../../../../core/index.ejs')); %>
+
+<%
+  const drawer = locals.drawer || {};
+  const drawerClasses = [`${prefix}-drawer`];
+  const drawerAttrs = drawer.attributes || {};
+  drawerAttrs.id = drawer.id;
+
+  if (drawer.position) drawerClasses.push(`${prefix}-drawer--${drawer.position}`);
+  if (drawer.sticky) drawerClasses.push(`${prefix}-drawer--sticky`);
+
+  const titleMarkup = drawer.titleMarkup || 'h2';
+  const collapse = drawer.collapse || {};
+  const collapseAttrs = collapse.attributes || {};
+  collapseAttrs.id = collapse.id;
+%>
+
+<div <%- includeClasses(drawerClasses) %> <%- includeAttrs(drawerAttrs); %>>
+  <div class="<%=prefix%>-collapse" <%- includeAttrs(collapseAttrs) %>>
+    <div class="<%=prefix%>-drawer__body">
+      <div class="<%=prefix%>-drawer__header">
+        <<%=titleMarkup%> class="<%=prefix%>-drawer__title">
+          <%=drawer.title%>
+        </<%=titleMarkup%>>
+        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" aria-controls="<%=collapse.id%>" aria-expanded="<%=collapse.opened%>">Fermer le panneau</button>
+      </div>
+      <div class="<%=prefix%>-drawer__content">
+        <%-drawer.content%>
+      </div>
+    </div>
+  </div>
+</div>

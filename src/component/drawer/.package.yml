@@ -1,0 +1,14 @@
+id: drawer
+title: Tiroir
+description: Panneau dépliant s'intégrant dans un layout
+doc:
+wrapper: container
+style:
+  - core
+script:
+  - core
+example:
+  style:
+    - form
+    - radio
+    - tag

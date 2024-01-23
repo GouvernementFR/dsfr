@@ -1,0 +1,108 @@
+////
+/// drawer Module
+/// @group drawer
+////
+
+@use 'module/selector';
+@use 'module/media-query';
+
+#{selector.ns(drawer)} {
+  @include width(100%);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+
+  #{selector.ns(collapse)}#{selector.ns-attr(method, width)},
+  #{selector.ns(collapse)}#{selector.ns-attr(method, height)} {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &--top {
+    order: 1;
+    @include media-query.respond-from(lg) {
+      width: 100.01%;
+    }
+  }
+
+  &--left {
+    order: 2;
+    @include media-query.respond-from(lg) {
+      flex: 0 0 auto;
+      width: auto;
+      background-position: 100% 0;
+      background-size: 1px 100%;
+    }
+  }
+
+  &--right {
+    order: 3;
+    @include media-query.respond-from(lg) {
+      order: 5;
+      flex: 0 0 auto;
+      width: auto;
+      background-position: 0 0;
+      background-size: 1px 100%;
+    }
+  }
+
+  &--bottom {
+    order: 6;
+    background-position: 0 0;
+  }
+
+  @include media-query.respond-from(lg) {
+    &--sticky {
+      > * {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+
+  @include media-query.respond-from(lg) {
+    &--left &__body,
+    &--right &__body {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: min-content;
+    }
+
+    &--left &__header,
+    &--right &__header {
+      flex: 1 1 auto;
+    }
+
+    &--left #{selector.ns(collapse)}#{selector.ns-attr(method, width)} {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  &__header {
+    @include display-flex(row, center, space-between);
+    @include set-title-margin(0);
+    @include padding(4v);
+    @include padding(6v, lg);
+
+    #{selector.ns(btn--close)} {
+      @include nest-btn(sm, only, close-line, null, false);
+    }
+  }
+
+  &__title {
+    @include title-style(h6);
+    @include margin-right(4v);
+    @include margin-top(0.5v);
+  }
+
+  &__content {
+    min-width: 180px;
+    max-width: 384px;
+    @include padding(4v);
+    @include padding(6v, lg);
+  }
+}

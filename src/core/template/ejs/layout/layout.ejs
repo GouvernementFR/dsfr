@@ -5,14 +5,15 @@
 -----------
 Structure du panneau
 <div class="fr-layout">
-  // pannel
+  // elements avant le contenu
   <div class="fr-layout__content">
     // contenu
   </div>
+  // elements après le contenu
 </div>
 -----------
 %>
-<% eval(include('../../../../core/index.ejs')); %>
+<% eval(include('../../../index.ejs')); %>
 
 <%
 const layout = locals.layout || {};
@@ -23,18 +24,18 @@ const content = layout.content || {};
 const contentClasses = content.classes || [];
 contentClasses.push(`${prefix}-layout__content`);
 const contentAttrs = content.attributes || {};
-const panelsBefore = layout.panels.filter(panel => !panel.isAfterContent);
-const panelsAfter = layout.panels.filter(panel => panel.isAfterContent);
+const elementsBefore = layout.elements.filter(element => !element.isAfterContent);
+const elementsAfter = layout.elements.filter(drawer => drawer.isAfterContent);
 %>
 
 <div <%- includeClasses(layoutClasses) %> <%- includeAttrs(layoutAttrs); %>>
-  <% for (panel of panelsBefore) { %>
-    <%- include('panel', {panel: panel}); %>
+  <% for (element of elementsBefore) { %>
+    <%- include(element.path, element.data); %>
   <% } %>
 
   <div <%- includeClasses(contentClasses) %> <%- includeAttrs(contentAttrs) %>><%- content.data %></div>
 
-  <% for (panel of panelsAfter) { %>
-    <%- include('panel', {panel: panel}); %>
+  <% for (element of elementsAfter) { %>
+    <%- include(element.path, element.data); %>
   <% } %>
 </div>

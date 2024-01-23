@@ -1,11 +1,7 @@
 ////
-/// layout
+/// layout Legacy
 /// @group layout
 ////
-
-/* ¯¯¯¯¯¯¯¯¯ *\
-  layout
-\* ˍˍˍˍˍˍˍˍˍ */
 
 @use 'module/path';
 @use 'module/shame/media-query';
@@ -14,7 +10,6 @@
 @include media-query.order;
 
 @import 'index';
-@import 'style/module';
 @import 'style/scheme';
 
-@include _layout-scheme;
+@include _drawer-scheme(true);

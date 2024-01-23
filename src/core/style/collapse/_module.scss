@@ -9,9 +9,7 @@
   @include collapse;
 }
 
-#{selector.ns(collapse)}:not(#{selector.ns-attr(method)}),
-#{selector.ns(collapse)}#{selector.ns-attr(method, margin-top)} {
-
+#{selector.ns(collapse)}:not(#{selector.ns-attr(method)}) {
   @include collapse-margin-top;
 }
 

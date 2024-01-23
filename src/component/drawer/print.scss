@@ -7,7 +7,7 @@
   @import 'index';
   @import 'style/scheme';
 
-  @include _layout-scheme('print');
+  @include _drawer-scheme('print');
 
   @import 'style/print';
 }

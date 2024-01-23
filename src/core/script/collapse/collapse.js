@@ -90,14 +90,14 @@ class Collapse extends Disclosure {
     this.node.style.width = 'auto';
     const width = this.node.offsetWidth;
     this.node.style.width = '';
-    this.setProperty('--collapse-width', width);
+    this.setProperty('--collapse-width', `${width}px`);
   }
 
   adjustHeight () {
     this.node.style.height = 'auto';
     const height = this.node.offsetHeight;
     this.node.style.height = '';
-    this.setProperty('--collapse-height', height);
+    this.setProperty('--collapse-height', `${height}px`);
   }
 
   get method () {
@@ -105,24 +105,30 @@ class Collapse extends Disclosure {
   }
 
   set method (value) {
+    this.removeProperty('--collapse');
+    this.removeProperty('--collapser');
+    this.removeProperty('--collapse-max-height');
+    this.removeProperty('--collapse-width');
+    this.removeProperty('--collapse-height');
     switch (value) {
       case CollapseMethod.WIDTH:
-        this.adjust = this.adjustWidth;
+        this.adjust = this.adjustWidth.bind(this);
         break;
 
       case CollapseMethod.HEIGHT:
-        this.adjust = this.adjustHeight;
+        this.adjust = this.adjustHeight.bind(this);
         break;
 
       default:
-        this.adjust = this.adjustMargin;
+        this.adjust = this.adjustMargin.bind(this);
         break;
     }
+    this.adjust();
   }
 
   mutate (attributesNames) {
-    if (attributesNames.includes(CollapseSelector.COLLAPSE_METHOD)) {
-      this.method = this.getAttribute(CollapseSelector.COLLAPSE_METHOD);
+    if (attributesNames.includes(CollapseSelector.METHOD)) {
+      this.method = this.getAttribute(CollapseSelector.METHOD);
     }
   }
 
