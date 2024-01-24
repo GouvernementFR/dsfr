@@ -8,7 +8,7 @@
 @mixin collapse () {
   overflow: hidden;
 
-  #{&}:not(#{selector.ns(collapse--expanded)}) {
+  @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
     visibility: hidden;
   }
 }
@@ -44,9 +44,6 @@
 
   @at-root #{&}:not(#{selector.ns(collapse--expanded)}) {
     width: 0;
-    @at-root #{&}:not(#{selector.ns(collapsing)}) {
-      // height: 0;
-    }
   }
 
   @at-root #{&}#{selector.ns(collapse--expanded)} {

@@ -69,7 +69,7 @@ Structure du panneau
   const closeBtnAttr = {};
   closeBtnAttr['aria-controls'] = collapse.id;
   closeBtnAttr['aria-expanded'] = collapse.opened;
-  if (drawer.closeTitle) closeBtnAttr.title = drawer.closeTitle;
+  const closeTitle = drawer.closeTitle;
   const closeLabel = drawer.closeLabel;
 %>
 
@@ -83,7 +83,7 @@ Structure du panneau
           <%=drawer.title%>
         </<%=titleMarkup%>>
         <% if (drawer.collapse) { %>
-        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" <%- includeAttrs(closeBtnAttr)%>><%- closeLabel %></button>
+        <%- include ('../../../button/template/ejs/button-close.ejs', {button: {attributes: closeBtnAttr, label: closeLabel, title: closeTitle}}); %>
         <% } %>
       </div>
       <div class="<%=prefix%>-drawer__content">

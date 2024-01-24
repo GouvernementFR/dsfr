@@ -69,8 +69,8 @@
 
     &--left #{selector.ns(collapse)}#{selector.ns-attr(method, width)} {
       display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
+      flex-direction: column;
+      align-items: flex-end;
     }
   }
 
@@ -92,8 +92,8 @@
   }
 
   @include media-query.respond-from(lg) {
-    &--left &__content,
-    &--right &__content {
+    &--left &__body,
+    &--right &__body {
       @include width(80v);
     }
   }

@@ -3,15 +3,15 @@ const radios = locals.radios || {}
 const radio = locals.radio || {};
 radio.label = getText('label', 'form') + ' ' + getText('title', 'radio').toLowerCase();
 
-const radioId = uniqueId('radio');
+const id = uniqueId('radio');
 const elements = [];
 for (let i = 1; i < 4; i++) elements.push({
   type: 'radio',
   inline: radios.inline || null,
   data: {
     ...radio,
-    id: `${radioId}-${i}`,
-    name: radioId,
+    id: `${id}-${i}`,
+    name: id,
     value: i,
     checked: i === 2 && radios.checked
   }
@@ -20,7 +20,8 @@ for (let i = 1; i < 4; i++) elements.push({
 const fieldset = {
   ...radios,
   choice: true,
-  elements: elements
+  elements: elements,
+  id: uniqueId('fieldset')
 }
 
 %>
