@@ -1,0 +1,24 @@
+<div class="<%=prefix%>-container">
+  <div class="<%=prefix%>-grid-row <%=prefix%>-grid-row--gutters">
+    <% for (let i = 0; i < 6; i++) { %>
+    <div class="<%=prefix%>-col-12 <%=prefix%>-col-md-6 <%=prefix%>-col-lg-4 <%=prefix%>-col-xxl-3">
+      <div id="card-<%=id%>" class="<%=prefix%>-card <%=prefix%>-card--sm <%=prefix%>-enlarge-link">
+        <div class="<%=prefix%>-card__body">
+            <div class="<%=prefix%>-card__content">
+                <h3 class="<%=prefix%>-card__title">
+                    <a href="#">Intitulé de la carte</a>
+                </h3>
+                <p class="<%=prefix%>-card__desc">Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et</p>
+            </div>
+        </div>
+        <div class="<%=prefix%>-card__header">
+          <div class="<%=prefix%>-card__img">
+              <img class="<%=prefix%>-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]">
+              <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>

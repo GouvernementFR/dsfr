@@ -62,14 +62,6 @@
   }
 
   @include media-query.respond-from(lg) {
-    &--left &__body,
-    &--right &__body {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: min-content;
-    }
-
     &--left &__header,
     &--right &__header {
       flex: 1 1 auto;
@@ -100,21 +92,9 @@
   }
 
   @include media-query.respond-from(lg) {
-    &__content {
-      @include min-width(45v);
-      @include max-width(96v);
-    }
-
-    &--sm &__content {
-      @include width(45v);
-    }
-
-    &--md &__content {
-      @include width(70.5v);
-    }
-
-    &--lg &__content {
-      @include width(96v);
+    &--left &__content,
+    &--right &__content {
+      @include width(80v);
     }
   }
 }

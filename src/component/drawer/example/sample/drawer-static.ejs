@@ -1,7 +1,7 @@
 <%
   const layout = locals.layout || {};
   const position = 'left';
-  const elements = layout.drawers || [{path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: {size: 'md', position: position, title: 'Menu latéral', content: include('content/drawer-menu.ejs')}}}];
+  const elements = layout.drawers || [{path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: {position: position, title: 'Menu latéral', content: include('content/drawer-menu.ejs')}}}];
 %>
 
-<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout.ejs')}, elements: elements }}) %>
+<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout-cards.ejs')}, elements: elements }}) %>

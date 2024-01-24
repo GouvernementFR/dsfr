@@ -1,6 +1,6 @@
 id: drawer
 title: Tiroir
-description: Panneau dépliant s'intégrant dans un layout
+description: Panneau dépliant s'intégrant dans un layout.
 doc:
 style:
   - core
@@ -12,3 +12,4 @@ example:
     - radio
     - navigation
     - sidemenu
+    - card

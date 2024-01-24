@@ -3,9 +3,9 @@
   const collapseId = uniqueId('collapse');
   const position = 'left';
   const button = {label: 'menu', kind: 2, icon:'menu-fill', attributes: {'aria-controls': collapseId, 'aria-expanded': true}};
-  const elements = layout.drawers || [{path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: {size: 'md', position: position, title: 'Menu latéral', closeButton: {label: 'Fermer le menu'}, collapse: { id: collapseId }, content: include('content/drawer-menu.ejs')}}}];
+  const elements = layout.drawers || [{path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: {position: position, title: 'Menu latéral', closeLabel: 'Fermer le menu', closeTitle: 'Fermer le menu', collapse: { id: collapseId }, content: include('content/drawer-menu.ejs')}}}];
 %>
 
 <%- include('../../../button/example/sample/button-default', {button: {...button, sizes:{md : {size:'md'}}, inline:'lg'}}) %>
 
-<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout.ejs')}, elements: elements }}) %>
+<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout-cards.ejs')}, elements: elements }}) %>

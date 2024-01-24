@@ -16,12 +16,6 @@
   * right : tiroir à droite
   * bottom : tiroir en bas
 
-* drawer.size (string, optional) : modificateur de taille du tiroir.
-  valeurs:
-  * sm : tiroir petit (180px)
-  * md : tiroir moyen (282px)
-  * lg : tiroir grand (384px)
-
 * drawer.sticky (boolean, optional) : si true, le tiroir est sticky
 
 * drawer.collapse (object, optional) : paramètres du collapse du tiroir
@@ -30,13 +24,15 @@
 
 * drawer.content (string, required) : contenu du tiroir
 
+* drawer.attributes (object, optional) : attributs spécifiques à rajouter sur le tiroir
+
 -----------
 Structure du panneau
 
 <div class="fr-drawer fr-drawer--right fr-drawer--sticky">
   <div class="fr-collapse" id="drawer-1">
     <div class="fr-drawer__body">
-      <div class="fr-drawer__header">
+      <div class="fr-drawer__header fr-container">
         <div class="fr-drawer__title">
           <h2>Titre du panneau</h2>
         </div>
@@ -66,24 +62,14 @@ Structure du panneau
   if (drawer.position) drawerClasses.push(`${prefix}-drawer--${drawer.position}`);
   if (drawer.sticky) drawerClasses.push(`${prefix}-drawer--sticky`);
 
-  switch (drawer.size) {
-    case 'sm':
-      drawerClasses.push(`${prefix}-drawer--sm`);
-      break;
-
-    case 'md':
-      drawerClasses.push(`${prefix}-drawer--md`);
-      break;
-
-    case 'lg':
-      drawerClasses.push(`${prefix}-drawer--lg`);
-      break;
-  }
-
   const titleMarkup = drawer.titleMarkup || 'h2';
   const collapse = drawer.collapse || {};
   const collapseAttrs = collapse.attributes || {};
   collapseAttrs.id = collapse.id;
+  const closeBtnAttr = {};
+  closeBtnAttr['aria-controls'] = collapse.id;
+  closeBtnAttr['aria-expanded'] = collapse.opened;
+  if (drawer.closeTitle) closeBtnAttr.title = drawer.closeTitle;
   const closeLabel = drawer.closeLabel;
 %>
 
@@ -97,7 +83,7 @@ Structure du panneau
           <%=drawer.title%>
         </<%=titleMarkup%>>
         <% if (drawer.collapse) { %>
-        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" aria-controls="<%=collapse.id%>" aria-expanded="<%=collapse.opened%>"><%= closeLabel %></button>
+        <button class="<%=prefix%>-btn <%=prefix%>-btn--close" <%- includeAttrs(closeBtnAttr)%>><%- closeLabel %></button>
         <% } %>
       </div>
       <div class="<%=prefix%>-drawer__content">

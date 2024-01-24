@@ -6,7 +6,7 @@
   const button = { kind: 2, icon :'checkbox-circle-line'}
   const buttons = layout.buttons || collapseIds.map((id, index) => ({...button, label: `ouvrir ${positions[index]}`, attributes: {'aria-controls': id, 'aria-expanded': true}}));
 
-  const drawers = collapseIds.map((id, index) => ({position: positions[index], title: 'Affiner la recherche', closeButton: {label: 'Fermer le panneau'}, collapse: { id: id }, content: include('content/drawer-form.ejs')}));
+  const drawers = collapseIds.map((id, index) => ({position: positions[index], title: 'Affiner la recherche', closeLlabel: 'Fermer le panneau', collapse: { id: id }, content: include('content/drawer-form.ejs')}));
 
   const elements = layout.drawers || drawers.map(drawer => ({path: '../../../../component/drawer/template/ejs/drawer.ejs', data: { drawer: drawer}}));
 %>
@@ -15,4 +15,4 @@
 <%- include('../../../button/example/sample/buttons-group', {buttonsGroup: {groupMarkup: 'div', sizes:{md : {size:'md'}}, buttons: buttons, iconPlace:'left', inline:'lg', group: true}}) %>
 </div>
 
-<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout.ejs')}, elements: elements }}) %>
+<%- include('../../../../core/template/ejs/layout/layout.ejs', {layout: { ...layout, content: {data: include('content/layout-cards.ejs')}, elements: elements }}) %>
