@@ -23,6 +23,10 @@
     background-size: 2.5em 3em;
   }
 
+  @include target-blank(true) {
+    @include after(none);
+  }
+
   &__login,
   &__brand {
     line-height: 1;

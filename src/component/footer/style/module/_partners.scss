@@ -40,6 +40,12 @@
     }
   }
 
+  &__partners-link {
+    @include target-blank(true) {
+      @include after(none);
+    }
+  }
+
   /**
   * Container des logos partenaires (principaux et secondaires)
   */
