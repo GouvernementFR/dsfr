@@ -8,8 +8,6 @@
 #{ns(accordion)} {
   position: relative;
 
-
-
   @include before('', block) {
     @include absolute(0, 0, 0 , 0, 100%, 100%);
     pointer-events: none;
@@ -24,7 +22,7 @@
   }
 
   &:focus-within {
-    z-index: 1;
+    @include z-index(over);
   }
 
   &__btn {
