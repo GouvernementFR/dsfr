@@ -10,7 +10,7 @@
 
     e.preventDefault();
     window.history.pushState({}, '', href);
-    urlLocationHandler();
+    handleUrlLocation();
   });
 
   // create an object that maps the url to the template, title, and description
@@ -38,7 +38,7 @@
   };
 
   // create a function that handles the url location
-  const urlLocationHandler = async () => {
+  const handleUrlLocation = async () => {
     let location = window.location.href.replace(HREF, ''); // get the url route
 
     // get the route object from the urlRoutes object
@@ -56,9 +56,9 @@
   };
 
   // add an event listener to the window that watches for url changes
-  window.onpopstate = urlLocationHandler;
-  // call the urlLocationHandler function to handle the initial url
-  window.route = urlLocationHandler;
-  // call the urlLocationHandler function to handle the initial url
-  urlLocationHandler();
+  window.onpopstate = handleUrlLocation;
+  // call the handleUrlLocation function to handle the initial url
+  window.route = handleUrlLocation;
+  // call the handleUrlLocation function to handle the initial url
+  handleUrlLocation();
 </script>
