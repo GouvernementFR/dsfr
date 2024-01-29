@@ -22,6 +22,8 @@
 
 <%- sample('Header avec selecteur de langues et raccourcis', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:true, navigation: true, translate: true, service: true}}, true, './layout');  %>
 
+<%- sample('Header avec selecteur de langues et paramètre d\'affichage', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, links:{ buttons: [{ label: 'Paramètres d\'affichage', classes: [`${prefix}-icon-theme-fill`, `${prefix}-btn--icon-left`], attributes: {'aria-controls': `${prefix}-theme-modal`, 'data-fr-opened': false}}]}, navigation: true, translate: true, dropdown: true, display: true, service: true}}, true, './layout');  %>
+
 <%- sample('Header avec nom de service, lien d’accès', './sample/header.ejs', {header: { logo:{ title: 'Ministère<br>de l’europe<br>et des affaires<br>étrangères'}, service: true, links: true, navigation: 'min' }}, true, './layout');  %>
 
 <%- sample('Header avec nom de service, recherche', './sample/header.ejs', {header: { logo:{ title: 'Intitulé<br>officiel'}, service: 'title', search: true, navigation: 'min' }}, true, './layout');  %>
