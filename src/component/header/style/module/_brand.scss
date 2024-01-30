@@ -72,9 +72,7 @@
     @include margin-x(0, lg);
     @include size(100%);
 
-    @include target-blank {
-      @include after(none);
-    }
+    @include disable-external();
 
     @include media-query.respond-from(lg) {
       width: auto;

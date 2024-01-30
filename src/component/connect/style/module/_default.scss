@@ -23,9 +23,7 @@
     background-size: 2.5em 3em;
   }
 
-  @include target-blank(true) {
-    @include after(none);
-  }
+  @include disable-external();
 
   &__login,
   &__brand {
