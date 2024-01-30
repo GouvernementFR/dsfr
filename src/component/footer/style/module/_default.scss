@@ -33,6 +33,7 @@
 
     &-link {
       @include display-flex;
+      @include disable-external();
     }
 
     /**
