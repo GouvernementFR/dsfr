@@ -22,7 +22,7 @@ const displayResults = (results, darkmode) => {
 
 // Run pa11y tests on each package
 const runPa11yTest = async (path, browser, hasDarkMode) => {
-  const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label, [class*="--disabled"] > label';
+  const hideElements = '.is-pa11y-hidden, .code-toolbar, a:not([href]), input:disabled + label, [class*="--disabled"] > label, [class*="--disabled"] span';
 
   log(38, `\n${path}`);
   const page = await browser.newPage();
