@@ -5,7 +5,7 @@ doc: https://www.systeme-de-design.gouv.fr/elements-d-interface/composants/trans
 collapse:
   title: Transcription
 modal:
-  title: Titre de la vidéo
+  title: Titre de la transcription
 button:
   close: Fermer
   fullscreen: Agrandir
