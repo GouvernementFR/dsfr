@@ -5,7 +5,7 @@ const data = {
   content: {
     ...content,
     title: content.title || 'Intitulé de la tuile',
-    actioneeMarkup: content.actioneeMarkup || undefined,
+    actionMarkup: content.actionMarkup || undefined,
     ...(content.description && {description: content.description === true ? lorem('', 60) : content.description})
   },
   size: tile.size,
