@@ -1,0 +1,17 @@
+<%
+const sample = getSample(include);
+const recover = {
+  segments: [
+    {
+      type: 'alert',
+      data: {
+        text: getText('recover.confirmation.alert', 'login'),
+        type: 'success',
+        hint: getText('recover.confirmation.alert.hint', 'login')
+      }
+    }
+  ]
+};
+%>
+
+<%- sample('', '../../sample/recover.ejs', { recover: recover }, true, '../../../../../example/layout', {}); %>
