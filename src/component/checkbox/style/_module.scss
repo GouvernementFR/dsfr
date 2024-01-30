@@ -17,7 +17,6 @@
 
     + label {
       @include relative;
-      -webkit-tap-highlight-color: transparent;
       @include display-flex(row, center, flex-start, wrap);
       @include margin-left(8v);
 

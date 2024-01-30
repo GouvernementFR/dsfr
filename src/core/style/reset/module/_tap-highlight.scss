@@ -1,0 +1,13 @@
+////
+/// Core Module : Reset tap-highlight
+/// @group core
+////
+
+input,
+select,
+textarea,
+label,
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
