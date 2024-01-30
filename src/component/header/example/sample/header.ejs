@@ -53,6 +53,16 @@ if (header.links !== undefined || header.search) {
     }
   }
 
+  if (header.dropdown !== undefined) {
+    hasMenu = true;
+    // TODO  : Replace by dropdown attributes when implemented
+    tools.dropdown = {
+      collapseId: header.dropdown.collapseId || uniqueId('dropdown'),
+      button: {title: 'Sélectionner une version', label: 'Version', icon: 'arrow-down-s-line', iconPlace:'right', kind: 3},
+      languages: [{name: '0.0.1',locale: 'v1',active: true}, {name: '0.0.1',locale: 'v2'}]
+    }
+  }
+
   if (header.search) {
     tools.search = header.search === true ?
     {
