@@ -1,0 +1,14 @@
+<%
+const sample = getSample(include);
+
+const recover = {
+  segments: [
+    {
+      type: 'form',
+      data: JSON.parse(include('../../data/recover.json.ejs'))
+    }
+  ]
+}
+%>
+
+<%- sample('', '../../sample/recover.ejs', { recover: recover }, true, '../../../../../example/layout', {}); %>

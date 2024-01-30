@@ -16,6 +16,7 @@ class Site {
     this.type = clear ? undefined : this._config.type;
     this.region = clear ? undefined : this._config.region;
     this.department = clear ? undefined : this._config.department;
+    this.version = clear ? undefined : this._config.version;
     this._api = api.version;
   }
 
@@ -99,6 +100,15 @@ class Site {
     return this._department;
   }
 
+  set version (value) {
+    const valid = validateString(value, 'site.version');
+    if (valid !== null) this._version = valid;
+  }
+
+  get version () {
+    return this._version;
+  }
+
   get api () {
     return this._api;
   }
@@ -113,6 +123,7 @@ class Site {
     if (this.type) layer.push('site_type', normalize(this.type));
     if (this.region) layer.push('site_region', this.region);
     if (this.department) layer.push('site_department', this.department);
+    if (this.version) layer.push('site_version', this.version);
     if (this.api) layer.push('api_version', this.api);
     return layer;
   }

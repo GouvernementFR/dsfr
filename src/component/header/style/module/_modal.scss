@@ -37,6 +37,7 @@
       @include padding-top(4v);
       @include padding-bottom(18v);
       @include height(100%);
+      overflow: inherit;
 
       @include respond-from(lg) {
         @include padding-y(0);

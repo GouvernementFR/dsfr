@@ -40,6 +40,10 @@
     }
   }
 
+  &__partners-link {
+    @include disable-external();
+  }
+
   /**
   * Container des logos partenaires (principaux et secondaires)
   */

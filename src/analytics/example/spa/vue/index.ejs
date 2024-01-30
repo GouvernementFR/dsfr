@@ -21,7 +21,7 @@
                                 <button class="<%= prefix %>-btn--search <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-122" id="button-123" title="Rechercher" data-<%= prefix %>-js-modal-button="true" >
                                     Rechercher
                                 </button>
-                                <button class="<%= prefix %>-btn--menu <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-124" aria-haspopup="menu" id="button-125" title="Menu">
+                                <button class="<%= prefix %>-btn--menu <%= prefix %>-btn" data-<%= prefix %>-opened="false" aria-controls="modal-124" id="button-125" title="Menu">
                                     Menu
                                 </button>
                             </div>
@@ -39,7 +39,7 @@
                         <div class="<%= prefix %>-header__tools-links">
                             <ul class="<%= prefix %>-btns-group">
                                 <li>
-                                    <router-link id="btn-shortcut-1" class="<%= prefix %>-btn" to="/link">Lien</router-link>
+                                    <router-link exact-path id="btn-shortcut-1" class="<%= prefix %>-btn" to="/link">Lien</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -75,13 +75,13 @@
                 <nav class="<%= prefix %>-nav" id="navigation-134" role="navigation" aria-label="Menu principal">
                   <ul class="<%= prefix %>-nav__list">
                     <li class="<%= prefix %>-nav__item">
-                      <router-link id="link-3" class="<%= prefix %>-nav__link" to="/">Base</router-link>
+                      <router-link exact-path id="link-3" class="<%= prefix %>-nav__link" to="/">Base</router-link>
                     </li>
                     <li class="<%= prefix %>-nav__item">
-                      <router-link id="link-3" class="<%= prefix %>-nav__link" to="/link">Liens</router-link>
+                      <router-link exact-path id="link-3" class="<%= prefix %>-nav__link" to="/link">Liens</router-link>
                     </li>
                     <li class="<%= prefix %>-nav__item">
-                      <router-link id="link-3" class="<%= prefix %>-nav__link" to="/button">Boutons</router-link>
+                      <router-link exact-path id="link-3" class="<%= prefix %>-nav__link" to="/button">Boutons</router-link>
                     </li>
                   </ul>
                 </nav>
@@ -139,7 +139,7 @@
 
 <script>
   const { createApp } = Vue
-  const { createRouter, createWebHashHistory } = VueRouter
+  const { createRouter, createMemoryHistory } = VueRouter
 
   const Base = { template: `lorem ipsum dolor sit amet` };
   const Link = { template: `<a href="#" id="btn-4" data-<%= prefix %>-analytics-click="libellé du lien envoyé à l'analytics" id="link-attr-click">test</a>` };
@@ -152,7 +152,7 @@
   ];
 
   const router = createRouter({
-    history: createWebHashHistory(),
+    history: createMemoryHistory(),
     routes
   });
 
