@@ -8,12 +8,10 @@
 
 <% 
 let accordionsGroup = locals.accordionsGroup || {accordions: []}
-let classes = accordionsGroup.classes || [];
-classes.push(prefix + '-accordions-group');
-if (accordionsGroup.dissociate) classes.push(prefix + '-accordions-group--dissociate');
+let attributes = accordionsGroup.attributes || {};
 %>
 
-<div <%- includeClasses(classes); %>>
+<div <%- includeAttrs(attributes); %> class="<%= prefix %>-accordions-group">
 <%
   for (let i = 0; i < accordionsGroup.accordions.length; i++) {
 %>

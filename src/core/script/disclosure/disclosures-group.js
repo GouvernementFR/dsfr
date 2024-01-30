@@ -96,6 +96,7 @@ class DisclosuresGroup extends Instance {
   }
 
   update () {
+    this._isGrouped = this.isGrouped;
     this.getMembers();
     if (this._hasRetrieved) this.getIndex();
   }
@@ -134,7 +135,7 @@ class DisclosuresGroup extends Instance {
       if (value === i) {
         if (!member.isDisclosed) member.disclose(true);
       } else {
-        if (member.isDisclosed) member.conceal(true);
+        if (this.isGrouped !== 'false' && member.isDisclosed) member.conceal(true);
       }
     }
     this.apply();
@@ -155,12 +156,26 @@ class DisclosuresGroup extends Instance {
     return false;
   }
 
+  get isGrouped () {
+    return this.getAttribute('group');
+  }
+
+  set isGrouped (value) {
+    this._isGrouped = value;
+  }
+
   apply () {}
 
   dispose () {
     super.dispose();
     this.descend(DisclosureEmission.UNGROUP);
     this._members = null;
+  }
+
+  mutate (attributesNames) {
+    if (attributesNames.includes('group')) {
+      this.update();
+    }
   }
 }
 
