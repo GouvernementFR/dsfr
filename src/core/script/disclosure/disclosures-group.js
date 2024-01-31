@@ -1,6 +1,7 @@
 import { Instance } from '../api/modules/register/instance.js';
 import { DisclosureEmission } from './disclosure-emission.js';
 import { completeAssign } from '../api/utilities/property/complete-assign.js';
+import { DisclosureSelector } from './disclosure-selector.js';
 
 class DisclosuresGroup extends Instance {
   constructor (disclosureInstanceClassName, jsAttribute) {
@@ -10,6 +11,7 @@ class DisclosuresGroup extends Instance {
     this._index = -1;
     this._isRetrieving = false;
     this._hasRetrieved = false;
+    this._isGrouped = true;
   }
 
   static get instanceClassName () {
@@ -21,6 +23,7 @@ class DisclosuresGroup extends Instance {
     this.addAscent(DisclosureEmission.RETRIEVE, this.retrieve.bind(this));
     this.addAscent(DisclosureEmission.REMOVED, this.update.bind(this));
     this.descend(DisclosureEmission.GROUP);
+    this._isGrouped = this.getAttribute(DisclosureSelector.GROUP) !== 'false';
     this.update();
   }
 
@@ -46,6 +49,12 @@ class DisclosuresGroup extends Instance {
       },
       get hasFocus () {
         return scope.hasFocus;
+      },
+      set isGrouped (value) {
+        scope.isGrouped = value;
+      },
+      get isGrouped () {
+        return scope.isGrouped;
       }
     };
 
@@ -134,7 +143,7 @@ class DisclosuresGroup extends Instance {
       if (value === i) {
         if (!member.isDisclosed) member.disclose(true);
       } else {
-        if (member.isDisclosed) member.conceal(true);
+        if ((this.isGrouped || !this.canUngroup) && member.isDisclosed) member.conceal(true);
       }
     }
     this.apply();
@@ -153,6 +162,28 @@ class DisclosuresGroup extends Instance {
     const current = this.current;
     if (current) return current.hasFocus;
     return false;
+  }
+
+  set isGrouped (value) {
+    const isGrouped = !!value;
+    if (this._isGrouped === isGrouped) return;
+    this._isGrouped = isGrouped;
+    this.setAttribute(DisclosureSelector.GROUP, !!value);
+    this.update();
+  }
+
+  get isGrouped () {
+    return this._isGrouped;
+  }
+
+  get canUngroup () {
+    return false;
+  }
+
+  mutate (attributesNames) {
+    if (attributesNames.includes(DisclosureSelector.GROUP)) {
+      this.isGrouped = this.getAttribute(DisclosureSelector.GROUP) !== 'false';
+    }
   }
 
   apply () {}

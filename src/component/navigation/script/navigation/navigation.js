@@ -14,6 +14,7 @@ class Navigation extends api.core.CollapsesGroup {
     this.addEmission(api.core.RootEmission.CLICK, this._handleRootClick.bind(this));
     this.listen('mousedown', this.handleMouseDown.bind(this));
     this.listenClick({ capture: true });
+    this.isResizing = true;
   }
 
   validate (member) {
@@ -76,6 +77,14 @@ class Navigation extends api.core.CollapsesGroup {
   set index (value) {
     if (value === -1 && this.current && this.current.hasFocus) this.current.focus();
     super.index = value;
+  }
+
+  get canUngroup () {
+    return !this.isBreakpoint(api.core.Breakpoints.LG);
+  }
+
+  resize () {
+    this.update();
   }
 }
 

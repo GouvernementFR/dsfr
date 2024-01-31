@@ -6,8 +6,13 @@
 %>
 <% eval(include('../../../../core/index.ejs')); %>
 
-<% let accordionsGroup = locals.accordionsGroup || {accordions: []} %>
-<div class="<%= prefix %>-accordions-group" >
+<% 
+let accordionsGroup = locals.accordionsGroup || {accordions: []}
+let attributes = accordionsGroup.attributes || {};
+if (accordionsGroup.group !== undefined)  attributes[`data-${prefix}-group`] = accordionsGroup.group;
+%>
+
+<div <%- includeAttrs(attributes); %> class="<%= prefix %>-accordions-group">
 <%
   for (let i = 0; i < accordionsGroup.accordions.length; i++) {
 %>

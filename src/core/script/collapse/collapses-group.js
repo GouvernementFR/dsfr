@@ -8,6 +8,10 @@ class CollapsesGroup extends DisclosuresGroup {
   static get instanceClassName () {
     return 'CollapsesGroup';
   }
+
+  get canUngroup () {
+    return true;
+  }
 }
 
 export { CollapsesGroup };

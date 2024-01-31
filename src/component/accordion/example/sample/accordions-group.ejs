@@ -1,14 +1,16 @@
 <%
-const accordions = [];
+let accordionsGroup = locals.accordionsGroup || {};
 
+const accordions = [];
 for (let i = 0; i < 6; i++) accordions.push({
   label: 'Intitulé accordéon',
   content: randomContent(),
   id: uniqueId('accordion'),
 });
 
-const accordionsGroup = {
-  accordions: accordions
+accordionsGroup = {
+  accordions: accordions,
+  ...accordionsGroup
 }
 %>
 
