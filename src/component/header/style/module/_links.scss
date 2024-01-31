@@ -4,7 +4,7 @@
 ////
 
 #{ns(header)} {
-  #{ns-group(btns)} {    
+  #{ns-group(btns)} {
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
       @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
         #{ns(btn)} {
@@ -91,7 +91,7 @@
               @include min-size(null, 12v);
               @include padding-x(0);
             }
-            
+
             @include margin-bottom(0);
           }
         }
