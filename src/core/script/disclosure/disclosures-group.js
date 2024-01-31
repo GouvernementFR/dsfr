@@ -10,6 +10,7 @@ class DisclosuresGroup extends Instance {
     this._index = -1;
     this._isRetrieving = false;
     this._hasRetrieved = false;
+    this._isGrouped = true;
   }
 
   static get instanceClassName () {
@@ -46,6 +47,9 @@ class DisclosuresGroup extends Instance {
       },
       get hasFocus () {
         return scope.hasFocus;
+      },
+      get isGrouped () {
+        return scope.isGrouped;
       }
     };
 
@@ -96,7 +100,6 @@ class DisclosuresGroup extends Instance {
   }
 
   update () {
-    this._isGrouped = this.isGrouped;
     this.getMembers();
     if (this._hasRetrieved) this.getIndex();
   }
@@ -135,7 +138,7 @@ class DisclosuresGroup extends Instance {
       if (value === i) {
         if (!member.isDisclosed) member.disclose(true);
       } else {
-        if (this.isGrouped !== 'false' && member.isDisclosed) member.conceal(true);
+        if ((this.isGrouped || !this.canUngroup) && member.isDisclosed) member.conceal(true);
       }
     }
     this.apply();
@@ -157,11 +160,11 @@ class DisclosuresGroup extends Instance {
   }
 
   get isGrouped () {
-    return this.getAttribute('group');
+    return this._isGrouped;
   }
 
-  set isGrouped (value) {
-    this._isGrouped = value;
+  get canUngroup () {
+    return false;
   }
 
   apply () {}
@@ -170,12 +173,6 @@ class DisclosuresGroup extends Instance {
     super.dispose();
     this.descend(DisclosureEmission.UNGROUP);
     this._members = null;
-  }
-
-  mutate (attributesNames) {
-    if (attributesNames.includes('group')) {
-      this.update();
-    }
   }
 }
 

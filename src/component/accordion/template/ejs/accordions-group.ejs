@@ -9,6 +9,7 @@
 <% 
 let accordionsGroup = locals.accordionsGroup || {accordions: []}
 let attributes = accordionsGroup.attributes || {};
+if (accordionsGroup.group !== undefined)  attributes[`data-${prefix}-group`] = accordionsGroup.group;
 %>
 
 <div <%- includeAttrs(attributes); %> class="<%= prefix %>-accordions-group">
