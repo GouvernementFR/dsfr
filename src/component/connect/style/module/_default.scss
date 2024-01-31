@@ -23,6 +23,8 @@
     background-size: 2.5em 3em;
   }
 
+  @include disable-external();
+
   &__login,
   &__brand {
     line-height: 1;

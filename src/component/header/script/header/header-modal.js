@@ -1,11 +1,6 @@
 import api from '../../api.js';
 
 class HeaderModal extends api.core.Instance {
-  constructor () {
-    super();
-    this._clickHandling = this.clickHandler.bind(this);
-  }
-
   static get instanceClassName () {
     return 'HeaderModal';
   }
@@ -23,7 +18,7 @@ class HeaderModal extends api.core.Instance {
     const modal = this.element.getInstance('Modal');
     if (!modal) return;
     modal.isEnabled = true;
-    this.listen('click', this._clickHandling, { capture: true });
+    this.listenClick({ capture: true });
   }
 
   deactivateModal () {
@@ -31,10 +26,10 @@ class HeaderModal extends api.core.Instance {
     if (!modal) return;
     modal.conceal();
     modal.isEnabled = false;
-    this.unlisten('click', this._clickHandling, { capture: true });
+    this.unlistenClick({ capture: true });
   }
 
-  clickHandler (e) {
+  handleClick (e) {
     if (e.target.matches('a, button') && !e.target.matches('[aria-controls]') && !e.target.matches(api.core.DisclosureSelector.PREVENT_CONCEAL)) {
       const modal = this.element.getInstance('Modal');
       modal.conceal();

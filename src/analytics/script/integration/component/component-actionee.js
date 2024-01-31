@@ -63,8 +63,8 @@ class ComponentActionee extends Actionee {
     const button = this.element.getDescendantInstances('ButtonActionee', null, true)[0];
     if (button) button.isMuted = true;
     this._validatedInput = node.querySelector('input');
-    this._inputValidationHandler = this._handleInputValidation.bind(this);
-    if (this._validatedInput) this._validatedInput.addEventListener('keydown', this._inputValidationHandler);
+    this._handlingInputValidation = this._handleInputValidation.bind(this);
+    if (this._validatedInput) this._validatedInput.addEventListener('keydown', this._handlingInputValidation);
   }
 
   _handleInputValidation (e) {
@@ -141,7 +141,7 @@ class ComponentActionee extends Actionee {
 
   dispose () {
     if (this._validatedInput) {
-      this._validatedInput.removeEventListener('keydown', this._inputValidationHandler);
+      this._validatedInput.removeEventListener('keydown', this._handlingInputValidation);
     }
 
     super.dispose();

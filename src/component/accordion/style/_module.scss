@@ -21,6 +21,10 @@
     line-height: unset;
   }
 
+  &:focus-within {
+    @include z-index(over);
+  }
+
   &__btn {
     @include _build-link-base;
     @include _link-display(flex);
