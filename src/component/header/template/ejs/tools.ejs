@@ -28,10 +28,6 @@
           <%- include('../../../button/template/ejs/button', {button:tools.links.buttons[0]}); %>
         <% } %>
       <% } %>
-      <% if (tools.dropdown !== undefined) { %>
-        <!-- TODO : Replace by dropdown include when implemented -->
-        <%- include('../../../translate/template/ejs/translate.ejs', { translate: tools.dropdown }); %>
-      <% } %>
       <% if (tools.translate !== undefined) { %>
         <%- include('../../../translate/template/ejs/translate.ejs', { translate: tools.translate }); %>
       <% } %>
