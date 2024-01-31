@@ -12,6 +12,77 @@ Pour plus d’informations : [Voir la documentation](https://www.systeme-de-desi
 
 ## v1.11
 
+### [v1.11.1](https://github.com/GouvernementFR/dsfr/compare/v1.11.0...v1.11.1) - 31 Janvier 2024
+
+#### ⬆️ chore(dependencies): met a jour les dépendances Node [(#877)](https://github.com/GouvernementFR/dsfr/pull/877)
+- monté de version des dépendances à follow-redirects et semver
+
+
+#### 🐛 fix(header): corrige les alignements des liens outils [(#876)](https://github.com/GouvernementFR/dsfr/pull/876)
+
+
+#### ✨ feat(accordions-group): ajoute un attribut pour dégrouper [(#860)](https://github.com/GouvernementFR/dsfr/pull/860)
+- ajout d'un attribut `data-fr-group="false"` pour dissocier le comportement d'ouverture/fermeture des accordéons à l'intérieur d'un groupe d'accordéons
+- étend l'utilisation de cet attribut aux composants héritant du collapses-group : la navigation (uniquement en mobile) et le menu latéral
+
+
+#### 🐛  fix(header): espacement des liens d'accès rapide en mobile [(#859)](https://github.com/GouvernementFR/dsfr/pull/859)
+- corrige la taille des boutons d'accès rapide dans le menu mobile
+
+
+#### 🐛 fix(tooltip): fallback du fond en conic gradiant [3628] [(#863)](https://github.com/GouvernementFR/dsfr/pull/863)
+- ajout d'un fallback en linear-gradiant pour les navigateur qui ne supporte pas le conic-gradiant (ex: firefox < 83)
+
+
+#### 🐛 fix(core): retrait du tap-highlight ios [(#846)](https://github.com/GouvernementFR/dsfr/pull/846)
+- retrait du tap highlight des éléments input, button, a, label, select, textarea sur IOS dans le reset du core
+
+
+#### ✨ feat(content): met a jour les mises en situation [(#866)](https://github.com/GouvernementFR/dsfr/pull/866)
+- ajoute une transcription à l'exemple de “Média image en svg, porteur d’information”
+- met à jour l'exemple de “Média image avec une transcription” avec une image porteuse de sens et renseigne la transcription correspondante
+
+
+#### 🐛 fix(pally): corrige les erreurs pally [(#857)](https://github.com/GouvernementFR/dsfr/pull/857)
+
+
+#### ✨ feat(alert): ajoute un example de taille md avec description seule [(#853)](https://github.com/GouvernementFR/dsfr/pull/853)
+
+
+#### 🐛 fix(header): corrige le focus sur le champ de recherche [(#864)](https://github.com/GouvernementFR/dsfr/pull/864)
+
+
+#### ✨ feat(header): retire l'attribut aria-haspopup du bouton burger [(#856)](https://github.com/GouvernementFR/dsfr/pull/856)
+
+
+#### ✨ feat(login): ajoute la description de france connect [(#855)](https://github.com/GouvernementFR/dsfr/pull/855)
+
+
+#### ✨ feat(recover): supprime le package recover et le deplace dans login [(#854)](https://github.com/GouvernementFR/dsfr/pull/854)
+
+
+#### 🐛 fix(accordion): corrige le focus dans un groupe [(#867)](https://github.com/GouvernementFR/dsfr/pull/867)
+
+
+#### ✨ feat(analytics): ajout de la version du site [(#868)](https://github.com/GouvernementFR/dsfr/pull/868)
+
+
+#### 🐛 fix(select): corrige l'affichage du optgroup sur firefox windows [(#870)](https://github.com/GouvernementFR/dsfr/pull/870)
+
+
+#### 🐛 fix(footer, header, connect): retrait de l'icone target blank [(#872)](https://github.com/GouvernementFR/dsfr/pull/872)
+
+
+#### 🐛 fix(follow): retrait d'un fichier inutile [(#858)](https://github.com/GouvernementFR/dsfr/pull/858)
+
+
+#### 🐛 fix(header): corrige la duplication des collapses dans le menu mobile [(#873)](https://github.com/GouvernementFR/dsfr/pull/873)
+
+
+#### 🐛 fix(navigation): corrige bugs de fermeture du composant [(#840)](https://github.com/GouvernementFR/dsfr/pull/840)
+
+
+
 ### [v1.11.0](https://github.com/GouvernementFR/dsfr/compare/v1.10.2...v1.11.0) - 11 Décembre 2023
 
 #### ✨ feat(range): version optimisée en accessibilité [(#841)](https://github.com/GouvernementFR/dsfr/pull/841)
