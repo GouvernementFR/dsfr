@@ -28,7 +28,7 @@ if (header.links !== undefined || header.search) {
           label: 'Espace recruteur',
           markup: 'a',
           classes: [`${prefix}-btn--briefcase`]
-          
+
         },
         {
           url: '#',
@@ -50,16 +50,6 @@ if (header.links !== undefined || header.search) {
       collapseId: header.translate.collapseId || uniqueId('translate'),
       button: header.translate.button,
       languages: header.translate.languages || eval(include('../../../translate/example/sample/get-translations'))(6)
-    }
-  }
-
-  if (header.dropdown !== undefined) {
-    hasMenu = true;
-    // TODO  : Replace by dropdown attributes when implemented
-    tools.dropdown = {
-      collapseId: header.dropdown.collapseId || uniqueId('dropdown'),
-      button: {title: 'Sélectionner une version', label: 'Version', icon: 'arrow-down-s-line', iconPlace:'right', kind: 3},
-      languages: [{name: '0.0.1',locale: 'v1',active: true}, {name: '0.0.1',locale: 'v2'}]
     }
   }
 
