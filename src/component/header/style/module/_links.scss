@@ -4,18 +4,21 @@
 ////
 
 #{ns(header)} {
-  #{ns-group(btns)} {
+  #{ns-group(btns)} {    
     &:not(#{ns-group(btns)}--sm):not(#{ns-group(btns)}--lg) {
       @include class-not-start-with(#{ns(btns-group--icon-, '')}) {
         #{ns(btn)} {
           justify-content: flex-start;
+          @include nest-btn(md, left, null, null, false);
 
-          @include has-icon {
-            @include nest-btn(sm, left, null, null, false);
-          }
+          @include respond-from(lg) {
+            @include has-icon {
+              @include nest-btn(sm, left, null, null, false);
+            }
 
-          @include has-not-icon {
-            @include nest-btn(sm, left, null, null, false);
+            @include has-not-icon {
+              @include nest-btn(sm, left, null, null, false);
+            }
           }
         }
       }
@@ -79,15 +82,17 @@
           @include display-flex(column);
 
           #{ns(btn)} {
-            @include width(calc(100% - 4v));
-            @include min-size(null, 12v);
-            @include padding-x(0);
-            @include margin-bottom(0);
-            @include text-style(md);
-
-            @include respond-from(lg) {
-              @include text-style(sm);
+            @include has-icon {
+              @include min-size(null, 12v);
+              @include padding-x(0);
             }
+
+            @include has-not-icon {
+              @include min-size(null, 12v);
+              @include padding-x(0);
+            }
+            
+            @include margin-bottom(0);
           }
         }
       }
