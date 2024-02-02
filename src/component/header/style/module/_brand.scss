@@ -11,7 +11,6 @@
     @include margin-y(-4v, lg);
     @include size(100%);
     @include padding-x(1v);
-    overflow: hidden;
 
     @include media-query.respond-from(lg) {
       flex-wrap: nowrap;
@@ -23,6 +22,7 @@
       @include display-flex(row, center, flex-start);
       @include size(100%);
       @include size(auto, null, lg);
+      overflow: hidden;
     }
 
     @include hover-media-query {
