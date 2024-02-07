@@ -1,0 +1,12 @@
+////
+/// Datagrid Scheme
+/// @group datagrid
+////
+
+@use 'module/color';
+
+@mixin _datagrid-scheme($legacy: false) {
+  #{ns(datagrid)} {
+
+  }
+}
