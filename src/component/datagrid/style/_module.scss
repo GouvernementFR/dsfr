@@ -87,9 +87,9 @@
         background-color: white;
 
         &--rowspan {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr;
 
             & #{ns(datagrid-cell)}:not(:last-child) {
                 border-bottom: 1px solid #e1e1e1;
