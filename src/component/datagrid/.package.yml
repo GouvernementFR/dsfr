@@ -3,3 +3,6 @@ title: Tableau complexe
 description:
 doc:
 wrapper: col-8
+style:
+  - core
+  - toggle
