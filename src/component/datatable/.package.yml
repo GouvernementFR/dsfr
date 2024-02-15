@@ -1,5 +1,5 @@
 id: datatable
-title: Tableau complexe
+title: Tableau complexe <table>
 description:
 doc:
 wrapper: col-8
