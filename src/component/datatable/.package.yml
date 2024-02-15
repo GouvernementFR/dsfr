@@ -1,4 +1,4 @@
-id: datagrid
+id: datatable
 title: Tableau complexe
 description:
 doc:
@@ -7,3 +7,4 @@ style:
   - core
   - toggle
   - checkbox
+  - alert

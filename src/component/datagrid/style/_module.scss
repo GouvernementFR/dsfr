@@ -11,7 +11,7 @@
     overflow: auto;
 
     &--fixed-height {
-        height: 20rem;
+        max-height: 20rem;
 
         & #{ns(datagrid-thead)} {
             position: sticky;
@@ -88,8 +88,15 @@
 
         &--rowspan {
             display: grid;
-            grid-template-rows: 1fr 1fr;
             grid-template-columns: 1fr;
+
+            &-2 {
+                grid-template-rows: 1fr 1fr;
+            }
+
+            &-3 {
+                grid-template-rows: 1fr 1fr 1fr;
+            }
 
             & #{ns(datagrid-cell)}:not(:last-child) {
                 border-bottom: 1px solid #e1e1e1;

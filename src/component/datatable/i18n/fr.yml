@@ -4,6 +4,5 @@ doc:
 
 sample:
   default: Tableau complexe par défaut
-  scrollable: Tableau complexe hauteur max
-  fixed-width: Tableau complexe largeur SM
+  scrollable: Tableau complexe scrollable
   expandable: Tableau complexe repliable
